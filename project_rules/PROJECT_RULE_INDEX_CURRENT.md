@@ -10,6 +10,14 @@ Entry point for Chapter 5 Two-Asset HANK Reconstruction governance.
 2. Read repository task file before execution.
 3. Treat GitHub task files as execution authority.
 4. Keep scientific scope, implementation scope and evidence scope separated.
+5. Read capability routing rules before denying available GitHub operations.
+
+## Core Rules
+
+- `PROJECT_RULE_GITHUB_CAPABILITY_AND_AUTHORITY_ROUTING_CURRENT.md`
+  - GitHub capability detection;
+  - authority routing;
+  - mutation verification boundary.
 
 ## Default Boundaries
 
@@ -27,7 +35,8 @@ GPT reviewer/route authority:
 
 - defines next gate;
 - creates task authority;
-- reviews evidence.
+- reviews evidence;
+- may perform authorized GitHub governance operations when repository access exists.
 
 Builder:
 
@@ -41,3 +50,5 @@ A task is executable only when:
 - the task file exists on live GitHub main;
 - required rule files exist;
 - authority boundaries are satisfied.
+
+A GitHub operation is considered completed only after repository evidence verifies the mutation.
