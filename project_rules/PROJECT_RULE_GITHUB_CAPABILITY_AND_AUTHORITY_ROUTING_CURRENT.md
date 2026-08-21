@@ -1,66 +1,149 @@
-# GitHub Capability and Authority Routing Current
+# PROJECT_RULE_GITHUB_CAPABILITY_AND_AUTHORITY_ROUTING_CURRENT
 
-## Purpose
+## Rule Status
 
-Prevent workflow capability misclassification in GitHub-governed projects.
+- Type: Project governance rule
+- Scope: GitHub capability detection, authority routing, task publication workflow
+- Applies to: `zcx369658780/dissertation-ch5-two-asset-hank`
 
-This rule applies when GPT reviewer/route authority has access to GitHub repository operations.
+---
 
-## Core Principle
+# 1. Purpose
 
-Do not confuse:
+This rule prevents GitHub capability misclassification in GitHub-governed research workflows.
 
-- prohibition against fabricating GitHub actions;
-- absence of GitHub write capability;
-- actual availability of GitHub repository tools.
+The project MUST distinguish between:
+
+1. inability to verify a GitHub mutation;
+2. inability to perform a GitHub mutation.
 
 These are different states.
 
-## Capability Check Order
+---
 
-Before stating that a GitHub publication cannot be performed:
+# 2. Core Principle
 
-1. Check whether the current environment provides GitHub repository operations.
-2. Check whether the target repository is accessible.
-3. Check whether the requested operation is within the role authority.
-4. Execute only the authorized operation.
-5. Verify the resulting GitHub state after mutation.
+The following reasoning pattern is forbidden:
 
-## Forbidden Reasoning Pattern
-
-Do NOT infer:
-
-"Cannot claim an unverified commit" -> "Cannot create a commit."
+```
+Cannot claim an unverified commit
+        =>
+Cannot execute GitHub operations
+```
 
 Correct interpretation:
 
-"Cannot claim an unverified commit" -> "Must perform the operation first, then verify evidence."
+```
+Cannot claim an unverified commit
+        =>
+Must execute the authorized operation first, then verify evidence
+```
 
-## GitHub Authority Workflow
+---
 
-For repositories using GitHub-governed workflow:
+# 3. Capability Check Order
 
-GPT reviewer/route authority may:
+Before stating that GitHub publication cannot be performed:
+
+1. Check available GitHub repository operations.
+2. Check target repository accessibility.
+3. Determine whether the requested operation is within role authority.
+4. Execute only authorized mutation.
+5. Read back GitHub state after mutation.
+
+Do not infer capability from historical workflow assumptions.
+
+---
+
+# 4. Authorized Governance Operations
+
+Within reviewer/task-issuer authority, allowed operations include:
 
 - create authorized task files;
 - create governance documents;
-- update repository rule files when explicitly required;
+- update repository rule files when required;
+- synchronize governance metadata;
 - verify live repository state.
 
 GPT MUST NOT:
 
-- claim a mutation before execution;
-- claim a commit hash without GitHub evidence;
+- claim mutation before execution;
+- claim commit hash without evidence;
 - bypass task authority.
 
-## Acceptance Boundary
+---
 
-A GitHub mutation is accepted only after:
+# 5. Task Authority Workflow
 
-- repository response confirms mutation;
-- resulting file state is fetched or otherwise verified;
-- live authority is distinguished from draft content.
+A task becomes executable only after live GitHub publication.
 
-## Non-Declaration
+Required sequence:
 
-This rule does not authorize scientific implementation, model execution, calibration, or Results generation. Scientific operations still require their own task authority.
+```
+Task draft
+    ↓
+GitHub publication
+    ↓
+Fresh GitHub read-back verification
+    ↓
+Codex execution prompt
+```
+
+Chat content alone is not execution authority.
+
+---
+
+# 6. Post-Mutation Verification
+
+After every GitHub mutation, verify:
+
+- repository identity;
+- branch/default branch;
+- file path;
+- file existence;
+- content identity.
+
+Successful mutation response alone is insufficient.
+
+---
+
+# 7. Scientific Boundary
+
+GitHub governance authority does NOT authorize scientific actions.
+
+The following still require independent scientific task authority:
+
+- equation specification;
+- HJB/KFE implementation;
+- solver changes;
+- calibration changes;
+- numerical experiments;
+- Results claims.
+
+---
+
+# 8. Historical Failure Prevention
+
+Avoid:
+
+```
+Historical workflow memory
+        ↓
+Assume GitHub unavailable
+        ↓
+Generate task draft only
+        ↓
+Send Codex without live authority
+```
+
+Use capability-first routing instead.
+
+---
+
+# 9. Acceptance Rule
+
+A governance publication is complete only when:
+
+1. GitHub mutation succeeds;
+2. GitHub read-back confirms the artifact;
+3. downstream agents can independently discover the authority file.
