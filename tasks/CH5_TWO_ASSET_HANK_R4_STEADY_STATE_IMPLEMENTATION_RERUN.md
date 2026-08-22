@@ -2,7 +2,7 @@
 
 ## Task
 
-Re-run the R4 steady-state implementation after the accepted zero-drift certification repair.
+Re-run the R4 steady-state implementation after the accepted interior a-zero-drift candidate repair.
 
 ## Authority
 
@@ -14,8 +14,9 @@ This task is the sole execution authority for the bounded R4 frozen fixture reru
 - R3 KFE operator engineering implementation accepted.
 - R3 stationary uniqueness resolution accepted.
 - R4 fixture authorization accepted.
-- R4 steady-state implementation previously failed due to zero-drift candidate certification mismatch.
-- R4 policy fixture resolution accepted.
+- Zero-drift certification repair accepted.
+- Interior a-zero-drift candidate construction accepted.
+- Previous R4 rerun failures were resolved through bounded policy candidate construction repairs.
 
 ## Read first
 
@@ -24,7 +25,7 @@ This task is the sole execution authority for the bounded R4 frozen fixture reru
 - R3 KFE implementation report
 - R3 stationary uniqueness reports
 - R4 fixture authorization report
-- R4 policy fixture resolution report
+- R4 policy fixture resolution reports
 - current HJB, policy, generator, indexing, contracts, economics and KFE sources
 
 ## Frozen execution requirement
@@ -75,7 +76,7 @@ Do not:
 - tune parameters after observing results;
 - change fixture values;
 - modify economic equations;
-- modify policy beyond the accepted certification repair;
+- modify accepted policy repairs outside their contracts;
 - modify generator silently;
 - select recurrent classes;
 - create invariant mixtures;
