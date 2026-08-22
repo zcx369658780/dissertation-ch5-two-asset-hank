@@ -2,7 +2,7 @@
 
 ## Task
 
-Resolve the R4 frozen fixture zero-drift candidate certification defect after policy compatibility diagnosis.
+Resolve the second R4 frozen fixture policy-selection failure caused by missing interior a-direction zero-drift candidate construction.
 
 ## Authority
 
@@ -14,8 +14,9 @@ This task is the sole execution authority for bounded R4 policy fixture resoluti
 - R3 KFE operator engineering implementation accepted.
 - R3 stationary uniqueness resolution accepted.
 - R4 fixture authorization accepted.
-- R4 steady-state implementation failed closed due to zero-drift candidate certification mismatch.
-- Diagnosis classified the blocker as numerical contract mismatch, not fixture economics failure.
+- Zero-drift certification repair accepted.
+- Second R4 rerun failed at crossing-upwind state `(a,b,z)=(0.5,0,0.75)`.
+- Diagnostic classified blocker as missing interior a-zero-drift candidate construction.
 
 ## Read first
 
@@ -23,41 +24,45 @@ This task is the sole execution authority for bounded R4 policy fixture resoluti
 - accepted R2 HJB reports
 - R3 KFE reports
 - R4 fixture authorization report
-- R4 frozen fixture compatibility diagnostic report
-- current HJB, policy, derivative, contracts and economics sources
+- R4 policy resolution report
+- R4 second policy-selection diagnostic report
+- current HJB, policy, derivative, boundary, contracts and economics sources
 
 ## Allowed operations
 
 Allowed:
 
-- define a shared zero-drift candidate certification contract;
-- implement bounded numerical consistency correction;
-- add regression tests reproducing the certified candidate;
-- verify that economic, boundary and KKT conditions remain unchanged;
+- add bounded interior a-direction zero-drift candidate construction;
+- preserve existing economic equations;
+- preserve transfer mechanism;
+- preserve existing certification contracts;
+- add regression tests reproducing `(a,b,z)=(0.5,0,0.75)`;
+- verify boundary and KKT gates;
 - generate implementation evidence report.
 
 ## Required scientific checks
 
 The repair must verify:
 
-- frozen R4 fixture remains unchanged;
-- economic equations remain unchanged;
-- zero-drift candidate remains the same economic candidate;
+- candidate is generated from unchanged household equations;
+- zero-a-drift condition is endogenous:
+  `mu_a = r_a*a + d = 0`;
+- liquid drift and boundary conditions remain valid;
 - KKT residual remains within existing gate;
-- boundary conditions remain unchanged;
-- no candidate is accepted solely by relaxed economic constraints.
+- previous zero-liquid certification remains unchanged;
+- no artificial transition or regularization is introduced.
 
 ## Forbidden operations
 
 Do not:
 
 - modify fixture parameters;
-- modify grids;
+- change grids;
 - change calibration;
 - modify economic equations;
-- modify policy logic beyond certification contract;
-- alter generator construction;
-- add artificial transitions;
+- relax constraints;
+- force candidate acceptance;
+- modify generator;
 - select recurrent classes;
 - create invariant mixtures;
 - run steady state solver;
@@ -69,7 +74,7 @@ Do not:
 
 ## Failure rule
 
-If the certified zero-drift candidate cannot pass without changing economics, stop and report a scientific blocker. Do not tune thresholds after observing results.
+If the candidate cannot satisfy existing economic, boundary and KKT contracts without changing economics, stop and report a scientific blocker.
 
 ## Output requirements
 
