@@ -2,7 +2,7 @@
 
 ## Task
 
-Re-run the R4 steady-state implementation after the accepted interior a-zero-drift candidate repair.
+Re-run the R4 steady-state implementation after the accepted zero-drift, interior-a, and upper-a boundary contract repairs.
 
 ## Authority
 
@@ -16,6 +16,7 @@ This task is the sole execution authority for the bounded R4 frozen fixture reru
 - R4 fixture authorization accepted.
 - Zero-drift certification repair accepted.
 - Interior a-zero-drift candidate construction accepted.
+- Upper-a policy boundary contract resolution accepted.
 - Previous R4 rerun failures were resolved through bounded policy candidate construction repairs.
 
 ## Read first
@@ -26,6 +27,7 @@ This task is the sole execution authority for the bounded R4 frozen fixture reru
 - R3 stationary uniqueness reports
 - R4 fixture authorization report
 - R4 policy fixture resolution reports
+- R4 upper-a diagnostic and resolution reports
 - current HJB, policy, generator, indexing, contracts, economics and KFE sources
 
 ## Frozen execution requirement
