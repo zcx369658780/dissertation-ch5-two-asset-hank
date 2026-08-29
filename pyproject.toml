@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ch5-two-asset-hank"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2.0", "scipy>=1.14"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
