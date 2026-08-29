@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import Optional
 
 import numpy as np
 from scipy import sparse
@@ -119,6 +120,11 @@ class PolicySnapshot:
     kkt_component_maxima: dict[str, float]
     boundary_violation: float
     kkt_residual: float
+    raw_candidate_id: Optional[np.ndarray] = None
+    qualifying_lower_b_alias_available: Optional[np.ndarray] = None
+    effective_shadow_b: Optional[np.ndarray] = None
+    alias_hamiltonian_gap: Optional[np.ndarray] = None
+    alias_hamiltonian_bound: Optional[np.ndarray] = None
 
 
 @dataclass(frozen=True)

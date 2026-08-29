@@ -8,7 +8,7 @@ import numpy as np
 from scipy import sparse
 from scipy.sparse import csgraph
 
-from .contracts import EconomicParams, GridSpec, HJBResult, HouseholdInputs
+from .contracts import EconomicParams, GridSpec, HJBResult, HouseholdInputs, PolicySnapshot
 from .diagnostics import normalized_change
 from .hjb import HJBNumerics, solve_hjb
 from .indexing import inverse_index
@@ -38,6 +38,8 @@ class R4SteadyStateDiagnostics:
     consumption_core_change: float
     transfer_core_change: float
     labor_core_change: float
+    adjustment_cost_core_change: float
+    mu_a_core_change: float
     upward_a_edges: int
     downward_a_edges: int
     closed_class_count: int
@@ -61,6 +63,136 @@ class R4SteadyStateResult:
     buffer_hjb: HJBResult
     kfe: KFEResult
     diagnostics: R4SteadyStateDiagnostics
+
+
+def _drift_classification(value: float) -> str:
+    if value > 1e-12:
+        return "F"
+    if value < -1e-12:
+        return "B"
+    return "Z"
+
+
+def _validate_common_core_policy_compatibility(
+    primary: PolicySnapshot,
+    buffer: PolicySnapshot,
+    core_primary: np.ndarray,
+    core_buffer: np.ndarray,
+    a_values: np.ndarray,
+    b_values: np.ndarray,
+    z_values: np.ndarray,
+) -> list[dict[str, object]]:
+    """Fail closed on raw-ID mismatches except proven lower-b physical aliases."""
+    required = (
+        "raw_candidate_id", "qualifying_lower_b_alias_available",
+        "effective_shadow_b", "alias_hamiltonian_gap", "alias_hamiltonian_bound",
+    )
+    if any(getattr(primary, name) is None or getattr(buffer, name) is None for name in required):
+        raise SteadyStateValidationError("common-core policy compatibility audit evidence is absent")
+
+    evidence: list[dict[str, object]] = []
+    for i_a in range(primary.candidate_id.shape[0]):
+        for i_b in range(primary.candidate_id.shape[1]):
+            for p_z, b_z in zip(core_primary, core_buffer):
+                left = (i_a, i_b, int(p_z))
+                right = (i_a, i_b, int(b_z))
+                raw_ids = (
+                    str(primary.raw_candidate_id[left]),
+                    str(buffer.raw_candidate_id[right]),
+                )
+                canonical_ids = (
+                    str(primary.candidate_id[left]), str(buffer.candidate_id[right]),
+                )
+                state = (float(a_values[i_a]), float(b_values[i_b]), float(z_values[int(p_z)]))
+                prefix = (
+                    f"common-core policy mismatch at index={(i_a, i_b, int(p_z))}, "
+                    f"state={state}, raw={raw_ids}, canonical={canonical_ids}: "
+                )
+                if canonical_ids[0] != canonical_ids[1]:
+                    raise SteadyStateValidationError(prefix + "canonical IDs differ")
+                drift_classes = (
+                    _drift_classification(float(primary.mu_b[left])),
+                    _drift_classification(float(buffer.mu_b[right])),
+                )
+                if drift_classes[0] != drift_classes[1]:
+                    raise SteadyStateValidationError(
+                        prefix + f"liquid-drift classifications differ: {drift_classes}"
+                    )
+                if primary.kkt_state_residual[left] > 1e-7 or buffer.kkt_state_residual[right] > 1e-7:
+                    raise SteadyStateValidationError(prefix + "KKT state residual exceeds contract")
+                if primary.boundary_violation > 1e-12 or buffer.boundary_violation > 1e-12:
+                    raise SteadyStateValidationError(prefix + "boundary feasibility exceeds contract")
+                if raw_ids[0] == raw_ids[1]:
+                    continue
+                alias_ids = (
+                    len(raw_ids[0]) >= 2 and len(raw_ids[1]) >= 2
+                    and raw_ids[0][0] == raw_ids[1][0]
+                    and raw_ids[0][2:] == raw_ids[1][2:]
+                    and {raw_ids[0][1], raw_ids[1][1]} == {"F", "Z"}
+                )
+                if i_b != 0 or not alias_ids:
+                    raise SteadyStateValidationError(prefix + "raw IDs are outside lower-b F/Z alias scope")
+                if not (
+                    bool(primary.qualifying_lower_b_alias_available[left])
+                    and bool(buffer.qualifying_lower_b_alias_available[right])
+                ):
+                    raise SteadyStateValidationError(prefix + "qualifying alias availability is absent")
+                if canonical_ids[0][1] != "Z":
+                    raise SteadyStateValidationError(prefix + "canonical IDs do not agree on Z")
+                gaps = (
+                    (float(primary.alias_hamiltonian_gap[left]), float(primary.alias_hamiltonian_bound[left])),
+                    (float(buffer.alias_hamiltonian_gap[right]), float(buffer.alias_hamiltonian_bound[right])),
+                )
+                if any(not np.isfinite(pair).all() or pair[0] > pair[1] for pair in gaps):
+                    raise SteadyStateValidationError(prefix + "Hamiltonian near-tie evidence fails")
+                evidence.append({
+                    "index": (i_a, i_b, int(p_z)), "state": state,
+                    "raw_ids": raw_ids, "canonical_ids": canonical_ids,
+                    "mu_b_classifications": drift_classes,
+                    "hamiltonian_gap_bound": gaps,
+                })
+    return evidence
+
+
+def _validate_common_core_normalized_changes(
+    primary_value: np.ndarray,
+    buffer_value: np.ndarray,
+    primary_policy: PolicySnapshot,
+    buffer_policy: PolicySnapshot,
+    core_primary: np.ndarray,
+    core_buffer: np.ndarray,
+) -> dict[str, float]:
+    changes = {
+        "value": normalized_change(
+            primary_value[:, :, core_primary], buffer_value[:, :, core_buffer],
+        ),
+        "consumption": normalized_change(
+            primary_policy.consumption[:, :, core_primary],
+            buffer_policy.consumption[:, :, core_buffer],
+        ),
+        "transfer": normalized_change(
+            primary_policy.transfer[:, :, core_primary],
+            buffer_policy.transfer[:, :, core_buffer],
+        ),
+        "labor": normalized_change(
+            primary_policy.labor[:, :, core_primary, :],
+            buffer_policy.labor[:, :, core_buffer, :],
+        ),
+        "adjustment_cost": normalized_change(
+            primary_policy.adjustment_cost[:, :, core_primary],
+            buffer_policy.adjustment_cost[:, :, core_buffer],
+        ),
+        "mu_a": normalized_change(
+            primary_policy.mu_a[:, :, core_primary],
+            buffer_policy.mu_a[:, :, core_buffer],
+        ),
+    }
+    for name, change in changes.items():
+        if change > 1e-3:
+            raise SteadyStateValidationError(
+                f"25-vs-29 common-core {name} truncation failed: {change}"
+            )
+    return changes
 
 
 def _fixture_objects(z: np.ndarray) -> tuple[GridSpec, EconomicParams, HouseholdInputs, np.ndarray]:
@@ -188,22 +320,14 @@ def run_frozen_r4_steady_state() -> R4SteadyStateResult:
     core_buffer = np.array([
         int(np.flatnonzero(np.isclose(buffer_grid.z, z))[0]) for z in primary_grid.z[core_primary]
     ])
-    changes = (
-        normalized_change(primary.value[:, :, core_primary], buffer.value[:, :, core_buffer]),
-        normalized_change(primary.policy.consumption[:, :, core_primary],
-                          buffer.policy.consumption[:, :, core_buffer]),
-        normalized_change(primary.policy.transfer[:, :, core_primary],
-                          buffer.policy.transfer[:, :, core_buffer]),
-        normalized_change(primary.policy.labor[:, :, core_primary, :],
-                          buffer.policy.labor[:, :, core_buffer, :]),
+    changes = _validate_common_core_normalized_changes(
+        primary.value, buffer.value, primary.policy, buffer.policy,
+        core_primary, core_buffer,
     )
-    if any(change > 1e-3 for change in changes):
-        raise SteadyStateValidationError(f"25-vs-29 common-core truncation failed: {changes}")
-    if not np.array_equal(
-        primary.policy.candidate_id[:, :, core_primary],
-        buffer.policy.candidate_id[:, :, core_buffer],
-    ):
-        raise SteadyStateValidationError("25-vs-29 common-core candidate identities differ")
+    _validate_common_core_policy_compatibility(
+        primary.policy, buffer.policy, core_primary, core_buffer,
+        primary_grid.a, primary_grid.b, primary_grid.z,
+    )
 
     upward, downward = _a_connectivity(primary_grid, primary)
     closed = _closed_classes(primary.operator.g, 1e-11)
@@ -238,7 +362,9 @@ def run_frozen_r4_steady_state() -> R4SteadyStateResult:
         primary.residual_sup, buffer.residual_sup,
         primary.policy.kkt_residual, buffer.policy.kkt_residual,
         primary.operator.max_row_sum, buffer.operator.max_row_sum,
-        changes[0], changes[1], changes[2], changes[3], upward, downward,
+        changes["value"], changes["consumption"], changes["transfer"],
+        changes["labor"], changes["adjustment_cost"], changes["mu_a"],
+        upward, downward,
         len(closed), int(recurrent.size), recurrent_a, left_nullity,
         kfe.diagnostics.stationarity_sup, kfe.diagnostics.normalization_error,
         kfe.diagnostics.minimum_mass, kfe.diagnostics.negative_mass_count,

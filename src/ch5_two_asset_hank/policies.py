@@ -25,6 +25,85 @@ class PolicySelectionError(RuntimeError):
     pass
 
 
+def _machine_equivalent(left: float | np.ndarray, right: float | np.ndarray) -> bool:
+    left_values = np.asarray(left, dtype=float)
+    right_values = np.asarray(right, dtype=float)
+    bound = 16.0 * np.finfo(np.float64).eps * np.maximum(
+        1.0, np.maximum(np.abs(left_values), np.abs(right_values)),
+    )
+    return bool(np.all(np.abs(left_values - right_values) <= bound))
+
+
+def _hamiltonian_tolerance(left: float, right: float) -> float:
+    return float(
+        16.0 * np.finfo(np.float64).eps
+        * max(1.0, abs(left), abs(right))
+    )
+
+
+def _direction(value: float, tolerance: float) -> str:
+    if value > tolerance:
+        return "F"
+    if value < -tolerance:
+        return "B"
+    return "Z"
+
+
+def _transfer_disposition(value: float, tolerance: float) -> int:
+    if abs(value) <= tolerance:
+        return 0
+    return 1 if value > 0.0 else -1
+
+
+def _canonicalize_lower_b_near_tie(
+    candidates: list[tuple], *, active_lower_b: bool,
+    zero_tolerance: float, gamma_c: float,
+) -> tuple[tuple, tuple, bool, float, float]:
+    """Select deterministically, narrowly canonicalizing proven lower-b F/Z aliases."""
+    ordered = sorted(
+        candidates,
+        key=lambda item: (-item[0], 0 if item[1].endswith("0") else 1, item[1]),
+    )
+    raw = ordered[0]
+    if not active_lower_b or len(raw[1]) < 2 or raw[1][1] not in "FZ":
+        return raw, raw, False, np.nan, np.nan
+
+    partner_id = raw[1][0] + ("Z" if raw[1][1] == "F" else "F") + raw[1][2:]
+    partners = [item for item in ordered if item[1] == partner_id]
+    for partner in partners:
+        left, right = raw, partner
+        gap = abs(float(left[0]) - float(right[0]))
+        bound = _hamiltonian_tolerance(float(left[0]), float(right[0]))
+        left_shadow = float(left[2]) ** (-gamma_c)
+        right_shadow = float(right[2]) ** (-gamma_c)
+        physical = (
+            gap <= bound
+            and abs(float(left[7])) <= zero_tolerance
+            and abs(float(right[7])) <= zero_tolerance
+            and _machine_equivalent(left[2], right[2])
+            and _machine_equivalent(left[3], right[3])
+            and _machine_equivalent(left[4], right[4])
+            and _machine_equivalent(left[5], right[5])
+            and _machine_equivalent(left[6], right[6])
+            and _machine_equivalent(left_shadow, right_shadow)
+            and _direction(float(left[6]), zero_tolerance)
+                == _direction(float(right[6]), zero_tolerance)
+            and _transfer_disposition(float(left[4]), zero_tolerance)
+                == _transfer_disposition(float(right[4]), zero_tolerance)
+            and max(left[10].values(), default=0.0) <= 1e-7
+            and max(right[10].values(), default=0.0) <= 1e-7
+            and float(left[9]) >= -1e-7
+            and float(right[9]) >= -1e-7
+        )
+        if physical:
+            z_candidates = [item for item in (left, right) if item[1][1] == "Z"]
+            z_candidates.sort(
+                key=lambda item: (0 if item[1].endswith("0") else 1, item[1]),
+            )
+            return raw, z_candidates[0], True, gap, bound
+    return raw, raw, False, np.nan, np.nan
+
+
 def _certified_zero_drift_root(
     liquid_drift: Callable[[float], float],
     lower: float,
@@ -397,6 +476,11 @@ def select_policy(
     mu_b_out = np.empty(shape)
     utility_out = np.empty(shape)
     candidate_out = np.empty(shape, dtype="U8")
+    raw_candidate_out = np.empty(shape, dtype="U8")
+    alias_available_out = np.zeros(shape, dtype=bool)
+    effective_shadow_b_out = np.empty(shape)
+    alias_hamiltonian_gap_out = np.full(shape, np.nan)
+    alias_hamiltonian_bound_out = np.full(shape, np.nan)
     lambda_a_out = np.zeros(shape)
     lambda_b_out = np.zeros(shape)
     kkt_state_out = np.zeros(shape)
@@ -643,8 +727,12 @@ def select_policy(
                 ))
         if not candidates:
             raise PolicySelectionError(f"no admissible self-consistent candidate at state {index}")
-        candidates.sort(key=lambda item: (-item[0], 0 if item[1].endswith("0") else 1, item[1]))
-        _, identifier, consumption, labor, transfer, cost, mu_a, mu_b, lambda_a, lambda_b, components = candidates[0]
+        raw, selected, alias_available, alias_gap, alias_bound = _canonicalize_lower_b_near_tie(
+            candidates, active_lower_b=i_b == 0, zero_tolerance=tolerance,
+            gamma_c=params.gamma_c,
+        )
+        _, identifier, consumption, labor, transfer, cost, mu_a, mu_b, lambda_a, lambda_b, components = selected
+        raw_lambda_a, raw_lambda_b = raw[8], raw[9]
         boundary = check_boundary(i_a, i_b, shape[0], shape[1], mu_a, mu_b, tolerance)
         utility = flow_utility(consumption, labor, inputs, params)
         c_out[index] = consumption
@@ -655,8 +743,15 @@ def select_policy(
         mu_b_out[index] = mu_b
         utility_out[index] = utility
         candidate_out[index] = identifier
-        lambda_a_out[index] = lambda_a
-        lambda_b_out[index] = lambda_b
+        raw_candidate_out[index] = raw[1]
+        alias_available_out[index] = alias_available
+        effective_shadow_b_out[index] = consumption ** (-params.gamma_c)
+        alias_hamiltonian_gap_out[index] = alias_gap
+        alias_hamiltonian_bound_out[index] = alias_bound
+        # Multipliers retain the pre-canonicalization representation for audit.
+        # Canonicalization changes only the physically equivalent policy identity.
+        lambda_a_out[index] = raw_lambda_a
+        lambda_b_out[index] = raw_lambda_b
         is_constrained_state = (
             i_a in (0, shape[0] - 1) or i_b in (0, shape[1] - 1)
         )
@@ -671,4 +766,6 @@ def select_policy(
         c_out, l_out, d_out, cost_out, mu_a_out, mu_b_out, utility_out,
         candidate_out, lambda_a_out, lambda_b_out, kkt_state_out, kkt_component_maxima,
         max_boundary_violation, max_kkt_residual,
+        raw_candidate_out, alias_available_out, effective_shadow_b_out,
+        alias_hamiltonian_gap_out, alias_hamiltonian_bound_out,
     )
