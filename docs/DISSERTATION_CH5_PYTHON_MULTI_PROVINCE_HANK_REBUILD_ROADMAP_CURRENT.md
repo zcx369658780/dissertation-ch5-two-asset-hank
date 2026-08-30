@@ -168,6 +168,10 @@ MP5 may audit shock law earlier, but no dynamic implementation begins before MP4
   path check incorrectly treated logical C-junction and resolved physical D paths as
   different roots. The fresh MATLAB call stopped with zero household calls and the
   Python run remained closed. Stationary parity is still not accepted.
+- The next path-equivalence successor verified the C junction to the exact D
+  target and passed static guard review, but its non-scientific MATLAB smoke
+  failed on validation-helper char concatenation before `which` or any model
+  call. Presolver and both fresh scientific budgets remained unconsumed.
 
 ### MP5 — shock/AR1 source-law reconciliation
 

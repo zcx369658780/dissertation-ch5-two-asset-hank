@@ -1,10 +1,10 @@
-function mp4b_execute_once(protected_root,run_root,canonical_sha256)
+function mp4b_execute_once(protected_root,physical_protected_root,run_root,canonical_sha256)
 % One-shot validation runner. Error persistence adds observability only.
 prepared=mp4b_build_source_prepared_state();
 profile clear;
 profile on;
 try
-    mp4b_calendar2009_stationary_wrapper(protected_root,run_root,canonical_sha256,prepared);
+    mp4b_calendar2009_stationary_wrapper(protected_root,physical_protected_root,run_root,canonical_sha256,prepared);
     profile off;
     info=profile('info');
     counts=extract_counts(info);

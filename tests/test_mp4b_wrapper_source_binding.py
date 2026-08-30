@@ -1,4 +1,5 @@
 from pathlib import Path
+from validators.multi_province.mp4b_path_guard import helper_is_in_verified_pair
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -12,7 +13,9 @@ def test_source_binding_repair_is_explicit_and_fail_closed() -> None:
     assert "N_prov = 31;" in source
     assert "~isequal(N_prov,31)" in source
     assert "addpath(protected_root)" in source
-    assert "startsWith(string(resolved),protected_root)" in source
+    assert "allowed_roots" in source
+    assert "fileparts(resolved)" in source
+    assert "fileread(logical_file),fileread(physical_file)" in source
     assert "data_year = 10;" in source
     assert "data_MAT_index = 1;" in source
     assert "multi_prov_HANK_12sts" not in source.split("% The protected annual wrapper")[1]
@@ -25,3 +28,13 @@ def test_profiler_only_observability_counts_household_calls() -> None:
     assert "HANK_mp_1turn" in source
     forbidden = ("N_prov=", "reg_threshold=", "max3iter=", "data_year=")
     assert all(token not in source.replace(" ", "") for token in forbidden)
+
+
+def test_finite_logical_physical_pair_only() -> None:
+    logical = r"C:\MatlabProgram\model"
+    physical = r"D:\MatlabProgram\model"
+    assert helper_is_in_verified_pair(r"C:\MatlabProgram\model\HANK_mp_1eq.m", logical, physical)
+    assert helper_is_in_verified_pair(r"D:\MatlabProgram\model\HANK_mp_1eq.m", logical, physical)
+    assert not helper_is_in_verified_pair(r"D:\MatlabProgram\sibling\HANK_mp_1eq.m", logical, physical)
+    assert not helper_is_in_verified_pair(r"D:\unrelated\HANK_mp_1eq.m", logical, physical)
+    assert not helper_is_in_verified_pair(r"C:\other\HANK_mp_1eq.m", logical, physical)
