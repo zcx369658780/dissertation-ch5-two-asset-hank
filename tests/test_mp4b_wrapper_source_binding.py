@@ -38,3 +38,15 @@ def test_finite_logical_physical_pair_only() -> None:
     assert not helper_is_in_verified_pair(r"D:\MatlabProgram\sibling\HANK_mp_1eq.m", logical, physical)
     assert not helper_is_in_verified_pair(r"D:\unrelated\HANK_mp_1eq.m", logical, physical)
     assert not helper_is_in_verified_pair(r"C:\other\HANK_mp_1eq.m", logical, physical)
+
+
+def test_no_active_mp4b_helper_uses_char_plus_suffix() -> None:
+    matlab_root = ROOT / "validators/multi_province/matlab"
+    for path in matlab_root.glob("mp4b*.m"):
+        source = path.read_text(encoding="utf-8")
+        assert "+'.m'" not in source
+        assert '+".m"' not in source
+    wrapper = WRAPPER.read_text(encoding="utf-8")
+    smoke = (matlab_root / "mp4b_path_equivalence_smoke.m").read_text(encoding="utf-8")
+    assert "[required_helpers{helper_index} '.m']" in wrapper
+    assert "[helpers{i} '.m']" in smoke

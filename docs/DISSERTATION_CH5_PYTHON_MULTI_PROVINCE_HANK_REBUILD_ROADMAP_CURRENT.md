@@ -172,6 +172,10 @@ MP5 may audit shock law earlier, but no dynamic implementation begins before MP4
   target and passed static guard review, but its non-scientific MATLAB smoke
   failed on validation-helper char concatenation before `which` or any model
   call. Presolver and both fresh scientific budgets remained unconsumed.
+- The bounded filename-concatenation successor repaired all four active MP4B
+  char-plus suffix sites, completed the non-scientific logical/physical smoke,
+  and re-established exact presolver equality. Scientific execution remained
+  zero and requires a separately published parity authority.
 
 ### MP5 — shock/AR1 source-law reconciliation
 

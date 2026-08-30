@@ -22,8 +22,8 @@ helpers={'load_GDPdata','load_distdata','mpHANK_equilibrium_2000', ...
 allowed=[normalize_root(logical_root),normalize_root(physical_root)];
 resolved=cell(1,numel(helpers));
 for i=1:numel(helpers)
-    logical_file=fullfile(logical_root,helpers{i}+'.m');
-    physical_file=fullfile(physical_root,helpers{i}+'.m');
+    logical_file=fullfile(logical_root,[helpers{i} '.m']);
+    physical_file=fullfile(physical_root,[helpers{i} '.m']);
     resolved{i}=which(helpers{i});
     if isempty(resolved{i}) || ~isfile(logical_file) || ~isfile(physical_file) ...
             || ~strcmp(fileread(logical_file),fileread(physical_file)) ...

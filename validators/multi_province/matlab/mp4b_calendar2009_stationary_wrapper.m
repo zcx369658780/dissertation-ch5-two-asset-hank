@@ -44,8 +44,8 @@ required_helpers = {'load_GDPdata','load_distdata','mpHANK_equilibrium_2000', ..
 allowed_roots = [normalize_root(protected_root),normalize_root(physical_protected_root)];
 for helper_index = 1:numel(required_helpers)
     resolved = which(required_helpers{helper_index});
-    logical_file = fullfile(protected_root,required_helpers{helper_index}+'.m');
-    physical_file = fullfile(physical_protected_root,required_helpers{helper_index}+'.m');
+    logical_file = fullfile(protected_root,[required_helpers{helper_index} '.m']);
+    physical_file = fullfile(physical_protected_root,[required_helpers{helper_index} '.m']);
     if isempty(resolved) || ~isfile(logical_file) || ~isfile(physical_file) ...
             || ~strcmp(fileread(logical_file),fileread(physical_file)) ...
             || ~any(normalize_root(string(fileparts(resolved))) == allowed_roots)
