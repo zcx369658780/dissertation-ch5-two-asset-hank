@@ -237,6 +237,17 @@ MP5 may audit shock law earlier, but no dynamic implementation begins before MP4
   prior trace contains the derivative cell, exact offending-cell localization
   remained blocked. The next eligible gate is one bounded first-Beijing HJB
   observability replay only, with no KFE, household aggregate, or stationary run.
+- The single bounded Beijing HJB observability replay reproduced the accepted
+  initial iterate exactly, completed four source-operator/sparse value updates,
+  and stopped before policy evaluation at iteration 5, zero-based cell
+  `(5,18,1)`. Its raw forward liquid derivative was
+  `-0.014003744365506235` while backward was positive; MATLAB floors the forward
+  derivative for consumption/labor and proceeds to raw transfer ratios, whereas
+  Python rejects before that source ordering. The exact non-source pre-floor
+  guard divergence is localized. No KFE, aggregate, second province, stationary,
+  or MATLAB model call occurred. The next eligible gate is targeted accepted-
+  oracle derivative-order repair and affected household/HJB parity revalidation,
+  with empirical stationary execution held at zero.
 
 ### MP5 — shock/AR1 source-law reconciliation
 
