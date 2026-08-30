@@ -28,6 +28,17 @@ from .province_contracts import (
     ProvinceMatrix,
     ProvinceVector,
 )
+from .steady_state import (
+    SOURCE_MAX_ITERATIONS,
+    TERMINATION_CONVERGED,
+    TERMINATION_MAX_ITERATIONS,
+    AdaptiveAction,
+    IterationRecord,
+    ManualSteadyStateInputs,
+    ManualSteadyStateResult,
+    SteadyStateConvergenceError,
+    run_manual_steady_state,
+)
 
 __all__ = [
     "DATA_PROVENANCE_MANIFEST",
@@ -36,11 +47,18 @@ __all__ = [
     "MATLAB_TO_ACCEPTED_HA_OUTPUT_MAP",
     "NO_LEGACY_R5_RUNTIME_DEPENDENCY",
     "SOURCE_UPDATE_ORDER",
+    "SOURCE_MAX_ITERATIONS",
+    "TERMINATION_CONVERGED",
+    "TERMINATION_MAX_ITERATIONS",
     "PROVINCE_ORDER",
     "DataArtifactProvenance",
+    "AdaptiveAction",
     "FrozenHouseholdOutputs",
     "HouseholdOuterOutputs",
     "MigrationLaborAllocation",
+    "IterationRecord",
+    "ManualSteadyStateInputs",
+    "ManualSteadyStateResult",
     "MultiProvinceHouseholdInputs",
     "OneTurnInputs",
     "OneTurnResult",
@@ -49,9 +67,11 @@ __all__ = [
     "ProvinceMatrix",
     "ProvinceVector",
     "StaticHouseholdCall",
+    "SteadyStateConvergenceError",
     "YearCacheBinding",
     "build_static_household_call",
     "compose_one_turn",
     "reject_legacy_runtime_references",
     "run_source_faithful_one_turn",
+    "run_manual_steady_state",
 ]
