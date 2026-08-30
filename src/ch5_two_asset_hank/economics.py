@@ -14,6 +14,21 @@ def adjustment_cost(d: np.ndarray | float, a: np.ndarray | float, params: Econom
 
 
 def transfer_candidate(v_a: float, v_b: float, a: float, params: EconomicParams) -> float:
+    """Return the production MATLAB-faithful bare-a transfer candidate."""
+    if not np.isfinite([v_a, v_b, a]).all() or v_b <= 0:
+        raise ValueError("transfer FOC requires finite derivatives and V_b > 0")
+    q = v_a / v_b - 1.0
+    threshold = min(q + params.chi_0, 0.0) + max(q - params.chi_0, 0.0)
+    return a * threshold / params.chi_1
+
+
+def transfer_candidate_corrected_max_scale(
+    v_a: float,
+    v_b: float,
+    a: float,
+    params: EconomicParams,
+) -> float:
+    """Retain the historical corrected-equation max-scale reference candidate."""
     if not np.isfinite([v_a, v_b, a]).all() or v_b <= 0:
         raise ValueError("transfer FOC requires finite derivatives and V_b > 0")
     q = v_a / v_b - 1.0

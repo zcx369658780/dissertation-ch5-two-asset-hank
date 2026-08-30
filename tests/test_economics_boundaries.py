@@ -3,7 +3,12 @@ import pytest
 
 from ch5_two_asset_hank.boundaries import check_boundary
 from ch5_two_asset_hank.contracts import EconomicParams, HouseholdInputs
-from ch5_two_asset_hank.economics import adjustment_cost, asset_drifts, transfer_candidate
+from ch5_two_asset_hank.economics import (
+    adjustment_cost,
+    asset_drifts,
+    transfer_candidate,
+    transfer_candidate_corrected_max_scale,
+)
 from ch5_two_asset_hank.policies import _budget_roots
 
 
@@ -11,10 +16,30 @@ PARAMS = EconomicParams(0.05, 2.0, 1.0, 0.1, 2.0, 0.5, 0.2, 0.1)
 INPUTS = HouseholdInputs(0.03, 0.02, 0.1, np.array([2.0]), np.array([0.05]), np.array([1.5]))
 
 
-def test_adjustment_cost_and_foc_share_frozen_max_scale():
-    assert adjustment_cost(2.0, 0.0, PARAMS) == adjustment_cost(2.0, 0.5, PARAMS)
-    expected = 0.5 * (1.5 - 1.0 - PARAMS.chi_0) / PARAMS.chi_1
-    assert np.isclose(transfer_candidate(1.5, 1.0, 0.0, PARAMS), expected)
+def test_adjustment_cost_retains_matlab_denominator_floor():
+    assert adjustment_cost(2.0, 0.0, PARAMS) == adjustment_cost(
+        2.0, PARAMS.a_bar, PARAMS,
+    )
+
+
+@pytest.mark.parametrize(
+    ("a", "expected"),
+    ((0.0, 0.0), (0.25, 0.05), (0.5, 0.10)),
+)
+def test_matlab_faithful_transfer_candidate_uses_bare_a_positive_branch(a, expected):
+    assert np.isclose(transfer_candidate(1.5, 1.0, a, PARAMS), expected)
+
+
+def test_matlab_faithful_transfer_candidate_uses_bare_a_negative_branch():
+    assert np.isclose(transfer_candidate(0.5, 1.0, 0.25, PARAMS), -0.05)
+
+
+@pytest.mark.parametrize("a", (0.0, 0.25))
+def test_corrected_max_scale_reference_preserves_historical_foc_evidence(a):
+    corrected = transfer_candidate_corrected_max_scale(1.5, 1.0, a, PARAMS)
+    faithful = transfer_candidate(1.5, 1.0, a, PARAMS)
+    assert np.isclose(corrected, 0.10)
+    assert not np.isclose(corrected, faithful)
 
 
 def test_budget_roots_cover_positive_and_negative_absolute_value_branches():
