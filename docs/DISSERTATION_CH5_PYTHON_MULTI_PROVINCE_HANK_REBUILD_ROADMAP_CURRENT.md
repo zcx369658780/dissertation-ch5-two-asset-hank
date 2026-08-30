@@ -156,9 +156,13 @@ MP5 may audit shock law earlier, but no dynamic implementation begins before MP4
 - MP4A2 prepares a primary-workbook canonical 2009 input, reconciles the cache only
   as a runtime representation, and prepares non-destructive MATLAB/Python parity
   entries. Its model-call budget is zero.
-- The next eligible gate after MP4A2 acceptance is exactly one corrected calendar-2009
-  stationary run per language under MP4B, with pre-solver manifest equality and
-  persisted first-divergence evidence. Shocks and the 2010--2023 batch remain closed.
+- Reauthorized MP4B established exact MATLAB/Python pre-solver identity, then its
+  sole MATLAB top-level invocation stopped before any provincial HJB because the
+  validation entry did not bind protected-source global `N_prov=31`. The Python
+  scientific call remained unconsumed under the required failure ordering.
+- MP4B stationary parity is therefore blocked, not accepted. The next eligible gate
+  is a bounded wrapper/source-binding repair review with separately authorized rerun
+  budgets. Shocks and the 2010--2023 batch remain closed.
 
 ### MP5 — shock/AR1 source-law reconciliation
 
