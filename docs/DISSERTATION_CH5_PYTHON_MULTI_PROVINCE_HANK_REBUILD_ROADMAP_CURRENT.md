@@ -2,6 +2,26 @@
 
 Status: `CURRENT`. This document supersedes the 2026-08-22 R5 Python/AR1 route and all stale multi-province status documents that predate accepted MATLAB-faithful two-asset household parity. Historical files remain evidence, not authority.
 
+## Owner route override — 2026-08-30
+
+The Owner has rejected the prior repository-retention strategy B as a continuing program-version policy and frozen a stronger replacement route:
+
+- `OWNER_SINGLE_ACTIVE_CODEBASE_TWO_ASSET_HANK_ONLY`
+- `LEGACY_ONE_ASSET_R5_SUPERSEDED_NO_ACTIVE_PROGRAM_AUTHORITY`
+- `ACTIVE_MODEL_REPOSITORY_DISSERTATION_CH5_TWO_ASSET_HANK`
+
+For this Chapter 5 project, the historical one-asset Python R5 implementation cannot represent the source-faithful household structure of the multi-province model and must not remain an active program version. The only active model codebase going forward is:
+
+`zcx369658780/dissertation-ch5-two-asset-hank`
+
+The historical repository:
+
+`zcx369658780/dissertation-ch5-r5-python-model`
+
+is frozen as read-only historical/audit evidence only. It must not receive new scientific features, bug-fix development, model extensions, calibration, transition work, or Results work. No active production module may import it or depend on it.
+
+“Replacement/coverage” means **active-code and scientific-authority supersession**, not destructive rewriting of Git history. Historical commits/reports may remain available for audit. Any reusable engineering idea from the old repository must be independently reviewed and reintroduced under the current two-asset repository; direct retention of the old one-asset scientific runtime is forbidden.
+
 ## Accepted baseline and boundaries
 
 - Numerical authority: `MATLAB_FAITHFUL_NUMERICAL_IMPLEMENTATION_IS_PRIMARY_RECONSTRUCTION_AUTHORITY`.
@@ -9,8 +29,8 @@ Status: `CURRENT`. This document supersedes the 2026-08-22 R5 Python/AR1 route a
 - Accepted markers: faithful HJB/operator parity, stationary KFE/density parity, stationary distribution parity, household aggregate parity, standalone single-file export acceptance.
 - Regression anchors: `C_ss=1.1296890749136979`, `L_ss=0.7341069339182127`, `A_ss=0.44059476682729026`, `B_ss=0.4601208223181049`, `A_ss+B_ss=0.9007155891453952`.
 - Current GE state: `MATLAB_FAITHFUL_GE_STEADY_STATE_CLOSURE_OWNER_PROVENANCE_REQUIRED`.
-- Historical R5 live identity: `9e73f7189865958fbe38a3cad4547b06b3d17aa3`; evidence-only synthetic two-region one-asset code.
-- Repository strategy: extend `dissertation-ch5-two-asset-hank` (strategy B). Do not import old scientific authority. Owner may override to a dedicated successor before MP1.
+- Historical R5 live identity: `9e73f7189865958fbe38a3cad4547b06b3d17aa3`; evidence-only synthetic two-region one-asset code, now explicitly superseded as an active program version.
+- Repository strategy: **Owner replacement route**. The current two-asset repository is the sole active model repository. No dedicated successor and no continuing one-asset implementation are planned.
 
 No Results claim follows from these baselines.
 
@@ -38,19 +58,22 @@ src/ch5_two_asset_hank/multi_province/
   diagnostics.py
   io_contracts.py
 validators/multi_province/   # source-extracted fixtures/comparators
-references/legacy_r5/        # manifests/decision records, never imports
 ```
+
+Historical one-asset source is not part of the active package tree. Audit references stay in GitHub reports and commit history rather than as importable runtime modules.
 
 The adapter passes source-defined household inputs and returns `Ct,Lt,At,Bt,AtTax` plus accepted diagnostics without editing the oracle. Capital allocation consumes `At*N`; `Bt` remains liquid. Firm labor consumes `Lt_supply`.
 
-## Legacy disposition summary
+## Legacy disposition summary under the Owner replacement route
 
-- `KEEP`: no-overwrite IO and bounded CI/type/lint/provenance utilities after path review.
-- `ADAPT`: immutable config parsing, hash/manifests, diagnostic containers, limited firm formula shell, generic test patterns.
-- `REPLACE`: one-asset HJB/KFE/grids, synthetic `W`, symmetric Brent GE, balanced fiscal/goods/NFI/CA closures, steady-state and transition runners.
-- `DEFER`: old AR1 and transition until source/dissertation laws, timing, accounting, and terminal contracts are accepted.
+The MP0 `KEEP/ADAPT/REPLACE/DEFER` matrix remains useful only as an **engineering-pattern audit**. It no longer implies that any old R5 executable module will remain as a supported program version.
 
-The full file-level matrix is in the companion audit report.
+- `DIRECT_ACTIVE_CODE_REUSE_FROM_LEGACY_ONE_ASSET_R5`: `FORBIDDEN` for scientific/runtime modules.
+- `ENGINEERING_PATTERN_REUSE_AFTER_REVIEW`: allowed for no-overwrite IO, hashing, manifests, CI/type/lint patterns, immutable configuration patterns, and generic test structure.
+- `SCIENTIFIC_REPLACEMENT_REQUIRED`: one-asset HJB/KFE/grids, synthetic `W`, symmetric Brent GE, balanced fiscal/goods/NFI/CA closures, steady-state and transition runners.
+- `DEFERRED_CONCEPTUAL_REFERENCE_ONLY`: old AR1/transition timing concepts until source/dissertation authority is accepted.
+
+No legacy scientific module gains authority by being copied, renamed, or wrapped. Any useful engineering pattern must be reintroduced as new current-repository code with current tests and provenance.
 
 ## Structure-first validation policy
 
@@ -78,15 +101,16 @@ MP5 may audit shock law earlier, but no dynamic implementation begins before MP4
 - Authority: live task `40274572...` and static sources.
 - Budget: all scientific calls zero.
 - Acceptance: `MATLAB_MULTI_PROVINCE_LOGIC_AND_LEGACY_R5_MIGRATION_AUDIT_ROADMAP_PASS`.
+- Owner post-MP0 override: only the current two-asset repository remains an active model codebase.
 - Successor: MP1 only.
 
 ### MP1 — province/data contracts and household adapter fixture freeze
 
 - Objective: freeze province order, annual schemas, calibration/cache lineage fields, source orientations, a static accepted-oracle API/hash adapter, and deterministic one-turn fixture inputs/expected outer-block outputs.
-- Authority: protected MATLAB sources plus accepted oracle; no old R5 science.
-- Targets: `provenance.py`, `province_contracts.py`, `household_adapter.py`, validator fixtures/contracts only.
+- Authority: protected MATLAB sources plus accepted oracle; no old R5 science or runtime imports.
+- Targets: `provenance.py`, `province_contracts.py`, `household_adapter.py`, validator fixtures/contracts only, all inside the current two-asset repository.
 - Budget: exactly zero scientific/model calls, including standalone oracle calls; only static hash/import/API-schema and fixture-arithmetic checks.
-- Diagnostics: byte hashes, province/order/orientation assertions, At/Bt separation, adapter schema, no hidden defaults.
+- Diagnostics: byte hashes, province/order/orientation assertions, At/Bt separation, adapter schema, no hidden defaults, and proof that no legacy R5 runtime import exists.
 - Acceptance: `MP1_SOURCE_FAITHFUL_CONTRACTS_ADAPTER_AND_ONE_TURN_FIXTURE_FREEZE_ACCEPTED`.
 - Fixture: a clearly labeled `NON_CALIBRATION_SYNTHETIC_OR_SOURCE_FORMULA_FIXTURE`, not an annual empirical row. Baseline/cache authority is recorded but not required until MP4.
 
@@ -122,7 +146,7 @@ MP5 may audit shock law earlier, but no dynamic implementation begins before MP4
 
 ### MP5 — shock/AR1 source-law reconciliation
 
-- Objective: decide whether the deterministic MATLAB decay/shock levels, dissertation law, or another approved source controls shocks; adjudicate old AR1 recursion utilities.
+- Objective: decide whether the deterministic MATLAB decay/shock levels, dissertation law, or another approved source controls shocks; adjudicate old AR1 concepts without retaining the old executable engine as authority.
 - Authority: designated dissertation path plus MATLAB source and MP4 stationary baseline.
 - Targets: shock specification/validators; no response run.
 - Budget: static/audit zero initially; later path generation separately authorized.
@@ -136,7 +160,7 @@ MP5 may audit shock law earlier, but no dynamic implementation begins before MP4
 - Targets: contracts only.
 - Budget: zero solver calls.
 - Acceptance: `MP6_TWO_ASSET_DYNAMIC_TRANSITION_SPECIFICATION_ACCEPTED`.
-- Blocker: new source/Owner specification is mandatory; old R5 transition is not authority.
+- Blocker: new source/Owner specification is mandatory; old R5 transition is not authority and will not remain an active program path.
 
 ### MP7 — time-dependent two-asset household implementation
 
@@ -178,18 +202,21 @@ MP5 may audit shock law earlier, but no dynamic implementation begins before MP4
 | dissertation Chapter 5 primary evidence path | MP5 and MP6 |
 | vectorized manual-update ordering | MP3 only if vector API is required |
 | interpretation/authority of MATLAB named IRF route | MP5/MP6 |
-| repository strategy | B is recommended; Owner override must occur before MP1 writes implementation paths |
+| repository/program-version strategy | **RESOLVED 2026-08-30**: two-asset repository is the sole active program codebase; legacy one-asset R5 is historical evidence only |
 
-## Reuse versus redo
+## Reuse versus redo after the Owner replacement decision
 
-| Class | Evidence-based range | Contents |
+The old one-asset repository is no longer counted as a retained executable codebase.
+
+| Class | Planning range | Meaning under the two-asset-only route |
 |---|---:|---|
-| reusable essentially unchanged | 10-15% | no-overwrite primitives, limited CI/lint/type/hash utilities |
-| reusable after adaptation | 10-20% | config/provenance/diagnostic shells, test patterns, limited formula containers |
-| scientifically replaced | 35-50% | one-asset HJB/KFE, W allocation, Brent GE, balanced fiscal/goods/NFI/CA |
-| new future work | 25-40% | province data contracts, faithful one-turn/manual loop, two-asset dynamics and integration |
+| accepted current two-asset household implementation | 100% retained | faithful stationary HJB/KFE/density/aggregates/oracle already accepted |
+| direct active scientific-code reuse from legacy one-asset R5 | 0% | prohibited as an active runtime dependency |
+| legacy engineering-pattern reuse | about 20-30% of engineering ideas | IO/no-overwrite, hashing, manifests, CI/type/lint/test patterns, only after current-repo review |
+| multi-province scientific outer model to rebuild | substantial | province contracts, migration, At-only capital, wage/rah/firm/fiscal, ordered fixed point, annual orchestration |
+| genuine dynamics | new future work | current MATLAB has no source-backed backward-HJB/forward-KFE transition solver |
 
-Ranges overlap in implementation effort and depend on MP1/MP6 authority; they are planning bands, not measured completion percentages. Overall engineering reuse is approximately 20-30%, while scientific replacement/new work is approximately 70-80%.
+The earlier MP0 20-30% engineering reuse estimate referred to reusable mechanisms/patterns, not to maintaining the old program as a second supported implementation. There will be only one active program version.
 
 ## Results boundary
 
@@ -207,18 +234,19 @@ Inputs:
 - protected MATLAB files/hashes listed in MP0;
 - accepted oracle/hash;
 - explicitly designated asymmetric synthetic/source-formula province subset with no empirical calibration claim;
-- legacy R5 only as engineering-pattern evidence.
+- legacy R5 only as historical engineering-pattern evidence; no runtime import or active code dependency.
 
 Proposed allowed paths:
 
 - new contract/validator modules under `src/ch5_two_asset_hank/multi_province/` and `validators/multi_province/`;
 - one task-specific report under `docs/`;
 - task-specific tests/fixtures under `tests/fixtures/multi_province/`;
-- no modification to accepted household source/oracle.
+- no modification to accepted household source/oracle;
+- no modification to the historical one-asset R5 repository.
 
 Scientific-call budget: exactly zero for MATLAB, current modular HA, standalone HA, legacy HA/KFE/steady state/transition, AR1/model response, GE, dynamics, and IRF. Only static import/hash/API-schema checks and fixture arithmetic are permitted.
 
-Acceptance outputs: hashed province/order/data schemas; explicit origin/destination and issuer/holder conventions; At/Bt and Lt/Lt_supply invariants; adapter input/output schema; asymmetric hand-check fixture; frozen one-turn expected intermediate objects; provenance manifest; no hidden economic defaults.
+Acceptance outputs: hashed province/order/data schemas; explicit origin/destination and issuer/holder conventions; At/Bt and Lt/Lt_supply invariants; adapter input/output schema; asymmetric hand-check fixture; frozen one-turn expected intermediate objects; provenance manifest; no hidden economic defaults; explicit proof that the active package has no legacy R5 runtime dependency.
 
 Stop boundary: stop after contracts, adapter conformance, and fixture freeze. Do not implement the one-turn production algorithm, solve a fixed point, select a baseline year/cache, implement shocks/dynamics, or create Results.
 
