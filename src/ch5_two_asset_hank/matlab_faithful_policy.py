@@ -41,6 +41,8 @@ class MatlabFaithfulLocalPolicy:
     b_forward_rate: float
     a_backward_rate: float
     a_forward_rate: float
+    iteration_b_backward_rate: float
+    iteration_b_forward_rate: float
 
 
 def _direction(value: float, tolerance: float) -> str:
@@ -258,4 +260,12 @@ def select_matlab_faithful_local_policy(
         b_forward_rate=max(float(mu_b), 0.0) / db,
         a_backward_rate=-float(mh_b) / da,
         a_forward_rate=float(mh_f) / da,
+        iteration_b_backward_rate=-float(
+            (sc_b if use_liquid_b else 0.0) + (sdh_b if use_transfer_b else 0.0)
+        )
+        / db,
+        iteration_b_forward_rate=float(
+            (sc_f if use_liquid_f else 0.0) + (sdh_f if use_transfer_f else 0.0)
+        )
+        / db,
     )
