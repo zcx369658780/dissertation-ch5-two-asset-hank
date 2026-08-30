@@ -36,6 +36,22 @@ def transfer_candidate_corrected_max_scale(
     return max(a, params.a_bar) * threshold / params.chi_1
 
 
+def matlab_faithful_illiquid_return(
+    a: np.ndarray | float,
+    a_max: float,
+    r_a: float,
+) -> np.ndarray:
+    """Apply the designated MATLAB finite-grid illiquid-return taper."""
+    a_array = np.asarray(a, dtype=float)
+    if not np.all(np.isfinite(a_array)) or not np.isfinite([a_max, r_a]).all():
+        raise ValueError("faithful illiquid-return inputs must be finite")
+    if a_max <= 0.0:
+        raise ValueError("faithful illiquid-return taper requires a_max > 0")
+    if np.any(a_array < 0.0) or np.any(a_array > a_max):
+        raise ValueError("faithful illiquid-return taper requires 0 <= a <= a_max")
+    return r_a * (1.0 - 0.1 * (a_array / a_max) ** 9)
+
+
 def consumption_from_vb(v_b: float, params: EconomicParams) -> float:
     if not np.isfinite(v_b) or v_b <= 0:
         raise ValueError("consumption FOC requires V_b > 0")
@@ -77,5 +93,27 @@ def asset_drifts(
     )
     mu_b = inputs.r_b * b + labor_income - transfer - cost - consumption
     mu_a = inputs.r_a * a + transfer
+    return mu_a, mu_b, cost
+
+
+def asset_drifts_matlab_faithful(
+    a: float,
+    b: float,
+    z: float,
+    consumption: float,
+    labor: np.ndarray,
+    transfer: float,
+    inputs: HouseholdInputs,
+    params: EconomicParams,
+    a_max: float,
+) -> tuple[float, float, float]:
+    """Use the MATLAB taper in mu_a while preserving the existing liquid budget."""
+    cost = float(adjustment_cost(transfer, a, params))
+    labor_income = float(
+        np.sum(inputs.wages * (1.0 - inputs.tau - inputs.migration_costs) * z * labor)
+    )
+    mu_b = inputs.r_b * b + labor_income - transfer - cost - consumption
+    r_a_effective = float(matlab_faithful_illiquid_return(a, a_max, inputs.r_a))
+    mu_a = r_a_effective * a + transfer
     return mu_a, mu_b, cost
 
