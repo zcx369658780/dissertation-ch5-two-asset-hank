@@ -109,3 +109,22 @@ def test_source_c0_and_v02_constants_match_frozen_matlab_formula():
     python_value=(c0**(1-2)/(1-2)-labor**6/6)/0.05
     matlab_frozen=(c0**(-1)/(-1)-labor**(1+1/0.2)/(1+1/0.2))/0.05
     assert python_value==matlab_frozen
+
+
+def test_direct_full_initialization_preflight_checks_all_cells_without_science(tmp_path):
+    script=REPO_ROOT/"validators"/"multi_province"/"mp4b_python_empirical.py"
+    manifest=tmp_path/"full_initialization.json"
+    env=os.environ.copy(); env.pop("PYTHONPATH",None)
+    completed=subprocess.run(
+        [sys.executable,str(script),"--full-initialization-check",str(CANONICAL),str(manifest)],
+        cwd=tmp_path,env=env,text=True,capture_output=True,check=False,
+    )
+    assert completed.returncode==0, completed.stderr
+    payload=json.loads(manifest.read_text(encoding="utf-8"))
+    assert payload["checked_cell_count"]==payload["expected_cell_count"]==31*20*20*2
+    assert payload["first_failure"] is None
+    assert payload["max_abs_source_residual"]<=1e-10
+    assert payload["minimum_c0"]>0 and payload["minimum_root_base"]>0
+    assert payload["scientific_calls"]=={
+        "household":0,"hjb":0,"kfe":0,"mp2":0,"mp3":0,"stationary":0}
+    assert not any(payload["formula_guards"].values())

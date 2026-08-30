@@ -182,6 +182,60 @@ def _source_initial_arrays(state: Mapping[str, object], grid: MatlabFaithfulHJBG
     return value,labor
 
 
+def run_full_initialization_preflight(canonical_path: Path, output_path: Path) -> dict[str, object]:
+    """Validate every first-turn source-initialization cell without model calls."""
+    canonical,states=load_entry_state(canonical_path)
+    b_grid=np.linspace(-2,5,20); a_grid=np.linspace(0,10,20); z_grid=np.array([0.8,1.3])
+    checked=0; max_residual=0.0; min_c0=float("inf"); min_root_base=float("inf")
+    min_v02=float("inf"); max_v02=float("-inf"); first_failure=None
+    try:
+        for province_index,state in enumerate(states):
+            for k,z in enumerate(z_grid):
+                for j,a in enumerate(a_grid):
+                    effective=float(matlab_faithful_illiquid_return(a,a_grid[-1],float(state["rah"])))
+                    for i,b in enumerate(b_grid):
+                        rb=float(state["rb"])+(float(state["rb_gap"]) if b<0 else 0.0)
+                        temp=effective*effective+rb*b+float(state["Tt"])
+                        wage=(1-float(state["tau"]))*float(state["w"])*z
+                        x0=wage**(0.2*(1-2)/(1+2*0.2)); boundary=-temp/wage
+                        root,bracket=_source_labor_root(wage=wage,temp=temp)
+                        residual=root-wage**0.2*(root*wage+temp)**(-0.4)
+                        c0=wage*root+rb*b+float(state["Tt"])
+                        v02=(c0**(1-2)/(1-2)-root**6/6)/0.05
+                        checks=(
+                            np.isfinite(x0) and x0>boundary,
+                            all(np.isfinite(endpoint) and endpoint>boundary for endpoint in bracket),
+                            np.isfinite(root) and root>boundary,
+                            np.isfinite(residual) and abs(residual)<=1e-10,
+                            np.isfinite(c0) and c0>0,
+                            np.isfinite(v02) and np.isreal(v02),
+                        )
+                        if not all(checks):
+                            raise ValueError(f"source initialization check failed: {checks}")
+                        checked+=1; max_residual=max(max_residual,abs(float(residual)))
+                        min_c0=min(min_c0,float(c0)); min_root_base=min(min_root_base,float(wage*root+temp))
+                        min_v02=min(min_v02,float(v02)); max_v02=max(max_v02,float(v02))
+    except Exception as exc:
+        first_failure={"province_index":province_index,"province":state["name"],
+            "indices":{"i":i,"j":j,"k":k},"b":float(b),"a":float(a),"z":float(z),
+            "checked_before_failure":checked,"error_type":type(exc).__name__,"error":str(exc)}
+    payload={"schema":"CH5_MP4B_PYTHON_FULL_FIRST_TURN_SOURCE_INITIALIZATION_PREFLIGHT_V1",
+        "calendar_year":2009,"canonical_sha256":CANONICAL_SHA,
+        "province_count":len(states),"grid_shape":[20,20,2],
+        "loop_order":"province,k,j,i","checked_cell_count":checked,
+        "expected_cell_count":len(states)*20*20*2,"max_abs_source_residual":max_residual,
+        "minimum_c0":min_c0,"minimum_root_base":min_root_base,
+        "minimum_v02":min_v02,"maximum_v02":max_v02,"first_failure":first_failure,
+        "formula_guards":{"clipping":False,"epsilon_substitution":False,
+            "nan_replacement":False,"formula_substitution":False,"alternate_solver":False},
+        "scientific_calls":{"household":0,"hjb":0,"kfe":0,"mp2":0,"mp3":0,"stationary":0},
+        "verdict":"MP4B_PYTHON_FULL_FIRST_TURN_SOURCE_INITIALIZATION_PREFLIGHT_PASS" if first_failure is None else "FAIL"}
+    _write_json(Path(output_path),payload)
+    if first_failure is not None:
+        raise RuntimeError("full initialization preflight failed")
+    return payload
+
+
 def run_python_once(canonical_path: Path, run_root: Path):
     root=Path(run_root); root.mkdir(parents=True,exist_ok=False)
     canonical,states=load_entry_state(canonical_path)
@@ -253,10 +307,14 @@ def main(argv=None) -> int:
     if len(args) == 2 and args[0] == "--bootstrap-check":
         _write_json(Path(args[1]), BOOTSTRAP_IDENTITY)
         return 0
+    if len(args) == 3 and args[0] == "--full-initialization-check":
+        run_full_initialization_preflight(Path(args[1]),Path(args[2]))
+        return 0
     if len(args) != 2:
         raise SystemExit(
             "usage: mp4b_python_empirical.py CANONICAL_JSON FRESH_RUN_ROOT | "
-            "--bootstrap-check FRESH_MANIFEST_JSON"
+            "--bootstrap-check FRESH_MANIFEST_JSON | "
+            "--full-initialization-check CANONICAL_JSON FRESH_MANIFEST_JSON"
         )
     run_python_once(Path(args[0]),Path(args[1]))
     return 0

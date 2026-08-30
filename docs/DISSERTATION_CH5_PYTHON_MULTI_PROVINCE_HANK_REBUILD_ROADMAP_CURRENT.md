@@ -216,6 +216,16 @@ MP5 may audit shock law earlier, but no dynamic implementation begins before MP4
   the frozen `1e-10` scaled bound. Eight-cell scalar root parity is accepted for
   this gate. Presolver and stationary execution remained zero and require a
   separately authorized Python-only successor; MATLAB stationary remains closed.
+- The full-initialization successor freshly passed direct bootstrap and
+  presolver equality, then validated all `31*20*20*2 = 24,800` first-turn source
+  initialization cells with zero model calls. Its sole Python stationary
+  invocation entered the first Beijing household HJB and stopped at the local
+  policy liquid-derivative admissibility guard before a household result was
+  returned. Household completions/calls were `0/0`; no repair or rerun occurred.
+  The first remaining divergence is therefore downstream of presolver and
+  source initialization, inside Python HJB policy selection. Stationary parity
+  remains unaccepted; the next eligible gate is a bounded observability-only
+  derivative witness/Matlab-source semantics diagnosis with no scientific rerun.
 
 ### MP5 — shock/AR1 source-law reconciliation
 
