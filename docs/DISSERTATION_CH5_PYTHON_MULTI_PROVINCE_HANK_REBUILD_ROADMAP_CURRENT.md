@@ -185,6 +185,17 @@ MP5 may audit shock law earlier, but no dynamic implementation begins before MP4
   next eligible gate is a bounded Python entry bootstrap repair/static
   direct-invocation proof plus a separately reauthorized Python-only one-shot
   comparison against the preserved MATLAB result. A MATLAB rerun is not needed.
+- The Python-only successor repaired the direct-file bootstrap with exact
+  current-repository and `src` bindings, passed the direct subprocess smoke with
+  zero model calls, and freshly reconfirmed presolver mismatch count zero. Its
+  single authorized Python invocation entered outer turn 1 but failed before
+  completing the first household: the validation-only initial-labor `brentq`
+  evaluated a negative consumption base to a fractional power at the lower
+  endpoint and returned NaN. Household completions/calls were `0/0`; no rerun or
+  scientific repair occurred. The preserved MATLAB run remains immutable and
+  stationary parity remains unaccepted. The next eligible gate is one bounded
+  Python initial-labor domain/source-semantics diagnosis and repair authority;
+  MATLAB rerun, MP5, and annual batch execution remain closed.
 
 ### MP5 — shock/AR1 source-law reconciliation
 

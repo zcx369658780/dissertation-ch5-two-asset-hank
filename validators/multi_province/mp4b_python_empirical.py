@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import json
+import hashlib
+import importlib.util
 import sys
 from dataclasses import fields, is_dataclass
 from pathlib import Path
@@ -9,6 +11,57 @@ from typing import Mapping
 
 import numpy as np
 from scipy.optimize import brentq
+
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+SRC_ROOT = REPO_ROOT / "src"
+ORACLE_PATH = REPO_ROOT / "exports" / "matlab_faithful_two_asset_ha.py"
+ORACLE_SHA = "276D2244B389D6EDE140DAF8B1F9B0BE1F4AA859368941CED1A12BA8A5831AB8"
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest().upper()
+
+
+def _bootstrap_repository_imports() -> dict[str, object]:
+    expected = (REPO_ROOT / ".git", SRC_ROOT / "ch5_two_asset_hank", ORACLE_PATH)
+    if not all(path.exists() for path in expected):
+        raise RuntimeError("current repository bootstrap identity is incomplete")
+    oracle_sha = _sha256(ORACLE_PATH)
+    if oracle_sha != ORACLE_SHA:
+        raise RuntimeError("standalone household oracle identity mismatch")
+    for root in (str(SRC_ROOT), str(REPO_ROOT)):
+        if root not in sys.path:
+            sys.path.insert(0, root)
+    exports_spec = importlib.util.find_spec("exports.matlab_faithful_two_asset_ha")
+    package_spec = importlib.util.find_spec("ch5_two_asset_hank")
+    exports_origin = Path(exports_spec.origin).resolve() if exports_spec and exports_spec.origin else None
+    package_origin = Path(package_spec.origin).resolve() if package_spec and package_spec.origin else None
+    if exports_origin != ORACLE_PATH.resolve():
+        raise RuntimeError("exports module resolved outside the current repository")
+    if package_origin is None or SRC_ROOT.resolve() not in package_origin.parents:
+        raise RuntimeError("ch5_two_asset_hank resolved outside the current repository src root")
+    forbidden = ("chapter5_model", "dissertation-ch5-r5-python-model")
+    resolved_text = "\n".join((str(exports_origin), str(package_origin))).lower()
+    if any(name in resolved_text for name in forbidden):
+        raise RuntimeError("forbidden historical runtime resolved during bootstrap")
+    return {
+        "schema": "CH5_MP4B_PYTHON_DIRECT_SCRIPT_BOOTSTRAP_V1",
+        "repository_root": str(REPO_ROOT.resolve()),
+        "src_root": str(SRC_ROOT.resolve()),
+        "oracle_module_path": str(exports_origin),
+        "package_module_path": str(package_origin),
+        "oracle_sha256": oracle_sha,
+        "scientific_model_calls": 0,
+        "forbidden_runtime_imports": [],
+    }
+
+
+BOOTSTRAP_IDENTITY = _bootstrap_repository_imports()
 
 from exports.matlab_faithful_two_asset_ha import (
     EconomicParams, HouseholdInputs, MatlabFaithfulHJBGrid,
@@ -153,8 +206,14 @@ def run_python_once(canonical_path: Path, run_root: Path):
 
 def main(argv=None) -> int:
     args=list(sys.argv[1:] if argv is None else argv)
+    if len(args) == 2 and args[0] == "--bootstrap-check":
+        _write_json(Path(args[1]), BOOTSTRAP_IDENTITY)
+        return 0
     if len(args) != 2:
-        raise SystemExit("usage: mp4b_python_empirical.py CANONICAL_JSON FRESH_RUN_ROOT")
+        raise SystemExit(
+            "usage: mp4b_python_empirical.py CANONICAL_JSON FRESH_RUN_ROOT | "
+            "--bootstrap-check FRESH_MANIFEST_JSON"
+        )
     run_python_once(Path(args[0]),Path(args[1]))
     return 0
 
