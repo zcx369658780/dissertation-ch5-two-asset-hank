@@ -12,6 +12,18 @@ from .household_adapter import (
     reject_legacy_runtime_references,
 )
 from .provenance import DATA_PROVENANCE_MANIFEST, DataArtifactProvenance, YearCacheBinding
+from .annual import (
+    AnnualSourceScalars,
+    CanonicalAnnualInput,
+    CompatibilityResult,
+    DecoupledAnnualIndex,
+    PrimaryAnnualSourceFiles,
+    PythonAnnualParityEntry,
+    build_python_parity_entry,
+    compare_runtime_representation,
+    load_primary_annual_input,
+    write_canonical_artifact,
+)
 from .one_turn import (
     SOURCE_UPDATE_ORDER,
     OneTurnInputs,
@@ -42,6 +54,12 @@ from .steady_state import (
 
 __all__ = [
     "DATA_PROVENANCE_MANIFEST",
+    "AnnualSourceScalars",
+    "CanonicalAnnualInput",
+    "CompatibilityResult",
+    "DecoupledAnnualIndex",
+    "PrimaryAnnualSourceFiles",
+    "PythonAnnualParityEntry",
     "ACCEPTED_HA_PUBLIC_API",
     "MATLAB_TO_ACCEPTED_HA_FIELD_MAP",
     "MATLAB_TO_ACCEPTED_HA_OUTPUT_MAP",
@@ -70,8 +88,12 @@ __all__ = [
     "SteadyStateConvergenceError",
     "YearCacheBinding",
     "build_static_household_call",
+    "build_python_parity_entry",
+    "compare_runtime_representation",
     "compose_one_turn",
     "reject_legacy_runtime_references",
+    "load_primary_annual_input",
     "run_source_faithful_one_turn",
     "run_manual_steady_state",
+    "write_canonical_artifact",
 ]

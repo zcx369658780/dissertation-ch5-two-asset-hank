@@ -1,4 +1,4 @@
-"""External-data identities and unresolved annual-cache authority for MP1."""
+"""External-data identities, preserving MP1 history and MP4A2 adjudication."""
 
 from __future__ import annotations
 
@@ -13,6 +13,7 @@ class DataArtifactProvenance:
     expected_sha256: str | None
     classification: Literal[
         "SOURCE_IDENTIFIED_EXTERNAL_DATA_PENDING_CAPTURE",
+        "PRIMARY_SOURCE_HASH_VERIFIED",
         "CACHE_DERIVED_NOT_PRIMARY_AUTHORITY",
     ]
     raw_or_derived: Literal["RAW_EXTERNAL_SOURCE", "DERIVED_CACHE"]
@@ -36,32 +37,32 @@ DATA_PROVENANCE_MANIFEST: tuple[DataArtifactProvenance, ...] = (
     DataArtifactProvenance(
         "中国各省省会地理距离矩阵.xlsx", "distances and migration costs",
         "26E44D174A8EFFBDCA526D95DA38F0E5883E0C78FDFD036D2DFF1D1FBA5A3566",
-        "SOURCE_IDENTIFIED_EXTERNAL_DATA_PENDING_CAPTURE", "RAW_EXTERNAL_SOURCE",
+        "PRIMARY_SOURCE_HASH_VERIFIED", "RAW_EXTERNAL_SOURCE",
         "NOT_YEAR_INDEXED", False, True,
     ),
     DataArtifactProvenance(
         "2000年后各省数据_填充NA.xlsx", "GDP, capital, population, and industry source",
         "C826B01B6C124EAAADC063DFC2D5510E50E72ED85BB34848F28AB318E4B88929",
-        "SOURCE_IDENTIFIED_EXTERNAL_DATA_PENDING_CAPTURE", "RAW_EXTERNAL_SOURCE",
-        "DATASET_ROW_TO_CALENDAR_YEAR_UNRESOLVED", True, True,
+        "PRIMARY_SOURCE_HASH_VERIFIED", "RAW_EXTERNAL_SOURCE",
+        "OWNER_VERIFIED_EXPLICIT_WORKBOOK_CALENDAR_2000_2023", False, True,
     ),
     DataArtifactProvenance(
         "2000年后各省数据.xlsx", "unfilled raw fallback source",
         "09814A45D933B2685A35238A15C0C7BB501F00A63597796B3CADCE15C230ECB3",
-        "SOURCE_IDENTIFIED_EXTERNAL_DATA_PENDING_CAPTURE", "RAW_EXTERNAL_SOURCE",
-        "DATASET_ROW_TO_CALENDAR_YEAR_UNRESOLVED", True, True,
+        "PRIMARY_SOURCE_HASH_VERIFIED", "RAW_EXTERNAL_SOURCE",
+        "EXPLICIT_WORKBOOK_CALENDAR_2000_2023_INACTIVE_FALLBACK", False, True,
     ),
     DataArtifactProvenance(
         "R语言估计结果_plm估计.xlsx", "regression estimates",
         "A6F444FCCCB30CB93AA5DE084F1DD163C54E5F53C4287C2CD3E13A045EB64A68",
-        "SOURCE_IDENTIFIED_EXTERNAL_DATA_PENDING_CAPTURE", "RAW_EXTERNAL_SOURCE",
-        "NOT_YEAR_INDEXED", True, True,
+        "PRIMARY_SOURCE_HASH_VERIFIED", "RAW_EXTERNAL_SOURCE",
+        "DECOUPLED_REGRESSION_VINTAGE_KEY_ANALYSIS_INDEX_PLUS_9", False, True,
     ),
     DataArtifactProvenance(
         "数据估计结果_1000_100_0.mat", "cached mydata2 calibration/data object",
         "923CC9E592C14B320C624509A0B498DBCC7D2533F77F0E4B4793521B10849E9A",
         "CACHE_DERIVED_NOT_PRIMARY_AUTHORITY", "DERIVED_CACHE",
-        "DATASET_ROW_TO_CALENDAR_YEAR_UNRESOLVED", True, True,
+        "NONPRIMARY_RUNTIME_REPRESENTATION_DECOUPLED_2009_RECONCILED", True, True,
     ),
     DataArtifactProvenance(
         "Multi_Province_12sts_<year>.mat", "derived annual steady-state st cache",
@@ -73,7 +74,10 @@ DATA_PROVENANCE_MANIFEST: tuple[DataArtifactProvenance, ...] = (
 
 @dataclass(frozen=True)
 class YearCacheBinding:
-    """Explicit binding required before any future annual execution."""
+    """Legacy MP1 coupled binding retained for forensic/backward compatibility.
+
+    New annual preparation must use ``annual.DecoupledAnnualIndex`` instead.
+    """
 
     source_ii: int
     dataset_row: int

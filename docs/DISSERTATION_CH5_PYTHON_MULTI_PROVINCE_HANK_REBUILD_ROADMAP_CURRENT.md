@@ -144,6 +144,22 @@ MP5 may audit shock law earlier, but no dynamic implementation begins before MP4
 - Acceptance: `MP4_MULTI_PROVINCE_STATIONARY_ROUTE_ACCEPTED`.
 - Blocking Owner decisions: baseline vs multi-year contract and calibration-cache authority.
 
+#### MP4 execution status — 2026-08-30
+
+- MP1, MP2, and MP3 remain accepted and unchanged.
+- MP4A correctly stopped at `YEAR_MAPPING_SOURCE_CONFLICT_BLOCKED`: the protected
+  annual wrapper coupled output position, calibration cell, and workbook row.
+- Owner/L3 adjudication resolved that blocker by freezing distinct annual identities.
+  Calendar 2009 means `analysis_index=1`, `data_MAT_index=1`, explicit workbook
+  numeric row `10`, output year `2009`, and regression-vintage key `10`; fixed-2020
+  `IND_Zt` remains a numerical initialization anchor rather than a calendar identity.
+- MP4A2 prepares a primary-workbook canonical 2009 input, reconciles the cache only
+  as a runtime representation, and prepares non-destructive MATLAB/Python parity
+  entries. Its model-call budget is zero.
+- The next eligible gate after MP4A2 acceptance is exactly one corrected calendar-2009
+  stationary run per language under MP4B, with pre-solver manifest equality and
+  persisted first-divergence evidence. Shocks and the 2010--2023 batch remain closed.
+
 ### MP5 — shock/AR1 source-law reconciliation
 
 - Objective: decide whether the deterministic MATLAB decay/shock levels, dissertation law, or another approved source controls shocks; adjudicate old AR1 concepts without retaining the old executable engine as authority.
