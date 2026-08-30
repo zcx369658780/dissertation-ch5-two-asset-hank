@@ -226,6 +226,17 @@ MP5 may audit shock law earlier, but no dynamic implementation begins before MP4
   source initialization, inside Python HJB policy selection. Stationary parity
   remains unaccepted; the next eligible gate is a bounded observability-only
   derivative witness/Matlab-source semantics diagnosis with no scientific rerun.
+- The zero-call liquid-derivative audit froze MATLAB's ordering: raw liquid
+  differences and boundary values, a `1e-6` floor only for consumption/labor
+  FOCs, raw derivatives in transfer ratios, then upwind selection. The accepted
+  oracle adds a non-source raw-positivity guard before its floor. However, a
+  deterministic reconstruction of the complete Beijing initial iterate found
+  all 800 cells' raw forward/backward liquid derivatives positive; the minimum
+  was `0.0016099189`. The observed guard failure must therefore occur after at
+  least one HJB value update. Because this gate prohibited HJB iterations and no
+  prior trace contains the derivative cell, exact offending-cell localization
+  remained blocked. The next eligible gate is one bounded first-Beijing HJB
+  observability replay only, with no KFE, household aggregate, or stationary run.
 
 ### MP5 — shock/AR1 source-law reconciliation
 
