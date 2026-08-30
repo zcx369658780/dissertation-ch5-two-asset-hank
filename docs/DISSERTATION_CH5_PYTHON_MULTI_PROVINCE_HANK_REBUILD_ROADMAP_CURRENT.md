@@ -356,3 +356,7 @@ Acceptance outputs: hashed province/order/data schemas; explicit origin/destinat
 Stop boundary: stop after contracts, adapter conformance, and fixture freeze. Do not implement the one-turn production algorithm, solve a fixed point, select a baseline year/cache, implement shocks/dynamics, or create Results.
 
 This task is proposed only. It was not created or executed by MP0.
+
+## MP4B raw-Vb repair status — 2026-08-31
+
+The accepted-oracle raw-Vb source-order repair task stopped fail-closed before production mutation. Its sole validation-only `HANK3_FOC` scalar batch failed before any protected helper call because the helper compared the logical `C:\MatlabProgram` junction path textually against MATLAB's physical `D:\MatlabProgram` resolution. No local-policy, HJB, KFE, household, empirical stationary, dynamics, or Results call followed. The accepted modular and standalone household authorities therefore remain at their predecessor bytes. The next gate is limited to a separately authorized replacement scalar edge diagnostic with an independently reviewed logical/physical protected-root equivalence guard.
