@@ -176,6 +176,15 @@ MP5 may audit shock law earlier, but no dynamic implementation begins before MP4
   char-plus suffix sites, completed the non-scientific logical/physical smoke,
   and re-established exact presolver equality. Scientific execution remained
   zero and requires a separately published parity authority.
+- The fresh scientific MP4B authority established its complete preflight and
+  completed one corrected calendar-2009 MATLAB stationary invocation in 184
+  outer turns with 5,704 household calls. The authorized Python invocation then
+  failed at direct-script bootstrap, before any household or outer-turn call,
+  because the validation entry could not import the repository-local `exports`
+  package. No repair or rerun occurred. Stationary parity remains blocked; the
+  next eligible gate is a bounded Python entry bootstrap repair/static
+  direct-invocation proof plus a separately reauthorized Python-only one-shot
+  comparison against the preserved MATLAB result. A MATLAB rerun is not needed.
 
 ### MP5 — shock/AR1 source-law reconciliation
 
