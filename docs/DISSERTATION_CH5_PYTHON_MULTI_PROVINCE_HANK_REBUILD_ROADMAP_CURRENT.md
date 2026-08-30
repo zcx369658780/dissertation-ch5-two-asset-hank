@@ -207,6 +207,15 @@ MP5 may audit shock law earlier, but no dynamic implementation begins before MP4
   Python stationary execution was zero. The next eligible gate is a scalar-
   diagnostic-helper review and one-shot rerun only; MATLAB stationary, MP5, and
   annual batch execution remain closed.
+- The replacement scalar-only successor independently reviewed the typed
+  eight-row helper, replaced R2022b-incompatible `fopen(...,'x')` with atomic
+  Java file reservation plus write-open of only that new file, and passed
+  checkcode/no-overwrite/forbidden-call review. Exactly one replacement
+  `lab_solve2`/`fzero` invocation completed all eight frozen cells. All exitflags
+  were positive; maximum MATLAB/Python root difference was `3.22e-15` against
+  the frozen `1e-10` scaled bound. Eight-cell scalar root parity is accepted for
+  this gate. Presolver and stationary execution remained zero and require a
+  separately authorized Python-only successor; MATLAB stationary remains closed.
 
 ### MP5 — shock/AR1 source-law reconciliation
 

@@ -6,8 +6,8 @@ end
 lab_path = fullfile(protected_root,'lab_solve2.m');
 expected = '74FD6AE8D76AB50A571831FAB95464AE4FCE919F3E70B660E5ABF6B9C5662C20';
 actual_bytes = System.Security.Cryptography.HashAlgorithm.Create('SHA256').ComputeHash(System.IO.File.ReadAllBytes(lab_path));
-actual = upper(reshape(dec2hex(uint8(actual_bytes),2).',1,[]));
-if ~strcmp(actual,expected), error('MP4B:SourceIdentity','lab_solve2 identity mismatch.'); end
+actual = reshape(dec2hex(uint8(actual_bytes),2).',1,[]);
+if ~strcmpi(actual,expected), error('MP4B:SourceIdentity','lab_solve2 identity mismatch.'); end
 addpath(protected_root);
 b = [-2, 4/19]; a = [0,10]; z = [0.8,1.3];
 template=struct('i',0,'j',0,'k',0,'b',0,'a',0,'z',0,'Rb',0,'raah',0, ...
@@ -32,7 +32,11 @@ end
 payload=struct('schema','CH5_MP4B_INITIAL_LABOR_SCALAR_DIAGNOSTIC_V1', ...
     'protected_root',protected_root,'lab_solve2_sha256',expected, ...
     'cell_count',n,'stationary_model_calls',0,'cells',rows);
-fid=fopen(output_json,'x');
-if fid<0, error('MP4B:NoOverwrite','Could not create output file exclusively.'); end
+output_file=java.io.File(output_json);
+if ~output_file.createNewFile()
+    error('MP4B:NoOverwrite','Could not reserve a new output file exclusively.');
+end
+fid=fopen(output_json,'w');
+if fid<0, error('MP4B:Persistence','Could not open the newly reserved output file.'); end
 cleanup=onCleanup(@() fclose(fid)); fwrite(fid,jsonencode(payload),'char');
 end
