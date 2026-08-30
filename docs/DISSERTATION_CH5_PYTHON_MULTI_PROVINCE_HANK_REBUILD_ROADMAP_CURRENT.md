@@ -163,6 +163,11 @@ MP5 may audit shock law earlier, but no dynamic implementation begins before MP4
 - MP4B stationary parity is therefore blocked, not accepted. The next eligible gate
   is a bounded wrapper/source-binding repair review with separately authorized rerun
   budgets. Shocks and the 2010--2023 batch remain closed.
+- The source-binding successor proved that `N_prov=31` is the only missing
+  computational upper-entry binding and restored it, but its new fail-closed helper
+  path check incorrectly treated logical C-junction and resolved physical D paths as
+  different roots. The fresh MATLAB call stopped with zero household calls and the
+  Python run remained closed. Stationary parity is still not accepted.
 
 ### MP5 — shock/AR1 source-law reconciliation
 

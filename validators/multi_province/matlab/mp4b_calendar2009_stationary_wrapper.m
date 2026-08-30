@@ -33,6 +33,19 @@ mkdir(run_root);
 old_path = path;
 cleanup = onCleanup(@() path(old_path));
 addpath(protected_root);
+global N_prov; %#ok<GVMIS> source-faithful binding required by protected route
+N_prov = 31;
+if ~isequal(N_prov,31)
+    error('MP4B:SourceBinding','source-required global N_prov must equal 31');
+end
+required_helpers = {'load_GDPdata','load_distdata','mpHANK_equilibrium_2000', ...
+    'HANK_mp_1eq','HANK_mp_1turn','HANK_2ASSETS_HJB'};
+for helper_index = 1:numel(required_helpers)
+    resolved = which(required_helpers{helper_index});
+    if isempty(resolved) || ~startsWith(string(resolved),protected_root)
+        error('MP4B:SourceBinding','protected helper did not resolve under protected_root');
+    end
+end
 param = prepared.param;
 data_MAT = load_GDPdata(param.GDP_multiplier, param.POP_multiplier, 0.096, ...
     param.smooth_method, param.reg_method);
@@ -46,6 +59,8 @@ manifest.data_MAT_index = data_MAT_index;
 manifest.output_filename_year = calendar_year;
 manifest.regression_vintage_key = regression_vintage_key;
 manifest.canonical_sha256 = canonical_sha256;
+manifest.source_bindings = struct('N_prov',N_prov, ...
+    'protected_root',protected_root,'path_binding','addpath(protected_root)');
 manifest.province_order = selected.prvname;
 manifest.GDP = selected.GDP{4}(data_year,:);
 manifest.CAP = selected.CAP{4}(data_year,:);
