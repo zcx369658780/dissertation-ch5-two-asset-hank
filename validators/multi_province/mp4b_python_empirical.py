@@ -119,6 +119,53 @@ def load_entry_state(canonical_path: Path) -> tuple[dict, tuple[dict[str, object
     return canonical, tuple(states)
 
 
+def _source_labor_root(
+    *, wage: float, temp: float, alphac: float = 1.0, alphal: float = 1.0,
+    frisch_l: float = 0.2, ga: float = 2.0, max_search: int = 128,
+) -> tuple[float, tuple[float, float]]:
+    """Solve the unchanged lab_solve2 residual only on its real-valued domain."""
+    values = (wage, temp, alphac, alphal, frisch_l, ga)
+    if not all(np.isfinite(value) for value in values):
+        raise ValueError("source labor parameters must be finite")
+    if wage <= 0 or alphac <= 0 or alphal <= 0 or frisch_l <= 0 or ga <= 0:
+        raise ValueError("source labor parameters are outside the frozen positive regime")
+    power = ga * frisch_l
+    coefficient = (alphac / alphal * wage) ** frisch_l
+    x0 = wage ** (frisch_l * (1.0 - ga) / (1.0 + ga * frisch_l))
+    boundary = -temp / wage
+
+    def residual(labor: float) -> float:
+        base = labor * wage + temp
+        if not np.isfinite(labor) or not base > 0:
+            raise ValueError("labor residual evaluation outside the real-valued source domain")
+        return labor - coefficient * base ** (-power)
+
+    if not x0 > boundary:
+        raise ValueError("source x0 is outside the real-valued labor domain")
+    at_x0 = residual(x0)
+    if at_x0 == 0:
+        return x0, (x0, x0)
+    if at_x0 < 0:
+        lo, hi = x0, max(1.0, 2.0 * x0)
+        for _ in range(max_search):
+            if residual(hi) > 0:
+                break
+            hi *= 2.0
+        else:
+            raise RuntimeError("finite upward labor bracket search exhausted")
+    else:
+        hi = x0
+        lo = 0.5 * (boundary + hi)
+        for _ in range(max_search):
+            if residual(lo) < 0:
+                break
+            lo = 0.5 * (boundary + lo)
+        else:
+            raise RuntimeError("finite interior labor bracket search exhausted")
+    root = brentq(residual, lo, hi, xtol=1e-14, rtol=1e-14)
+    return float(root), (float(lo), float(hi))
+
+
 def _source_initial_arrays(state: Mapping[str, object], grid: MatlabFaithfulHJBGrid, params: EconomicParams):
     shape=(grid.b.size,grid.a.size,grid.z.size); labor=np.empty(shape); value=np.empty(shape)
     for k,z in enumerate(grid.z):
@@ -128,10 +175,7 @@ def _source_initial_arrays(state: Mapping[str, object], grid: MatlabFaithfulHJBG
                 rb=float(state["rb"])+(float(state["rb_gap"]) if b<0 else 0.0)
                 temp=effective*effective+rb*b+float(state["Tt"])
                 wage=(1-float(state["tau"]))*float(state["w"])*z
-                def equation(l): return l-(wage**0.2)*(l*wage+temp)**(-0.4)
-                lo=0.0; hi=max(1.0,(wage**0.2)*max(temp,1e-12)**(-0.4))
-                while equation(hi)<0: hi*=2
-                l=brentq(equation,lo,hi,xtol=1e-14,rtol=1e-14)
+                l,_=_source_labor_root(wage=wage,temp=temp,frisch_l=1.0/params.phi,ga=params.gamma_c)
                 c=wage*l+rb*b+float(state["Tt"])
                 labor[i,j,k]=l
                 value[i,j,k]=(c**(1-params.gamma_c)/(1-params.gamma_c)-l**6/6)/params.rho

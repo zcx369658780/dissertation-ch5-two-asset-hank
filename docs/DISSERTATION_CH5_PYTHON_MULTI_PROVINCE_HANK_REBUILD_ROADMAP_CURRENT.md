@@ -196,6 +196,17 @@ MP5 may audit shock law earlier, but no dynamic implementation begins before MP4
   stationary parity remains unaccepted. The next eligible gate is one bounded
   Python initial-labor domain/source-semantics diagnosis and repair authority;
   MATLAB rerun, MP5, and annual batch execution remain closed.
+- The initial-labor successor froze the protected `lab_solve2` equation and
+  confirmed that the old Python zero endpoint was outside its open real domain.
+  A source-`x0`-anchored, domain-interior bracket repair passed Python static
+  tests. However, the sole authorized eight-cell MATLAB scalar diagnostic
+  failed before its first `fzero` result when its validation helper assigned a
+  populated row into an untyped empty structure. The helper initialization was
+  corrected statically, but no diagnostic rerun was authorized; frozen-cell
+  MATLAB/Python root parity and all later gates therefore remain unestablished.
+  Python stationary execution was zero. The next eligible gate is a scalar-
+  diagnostic-helper review and one-shot rerun only; MATLAB stationary, MP5, and
+  annual batch execution remain closed.
 
 ### MP5 — shock/AR1 source-law reconciliation
 

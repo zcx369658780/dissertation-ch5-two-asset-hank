@@ -7,7 +7,7 @@ import numpy as np
 import pytest
 
 from validators.multi_province.mp4b_python_empirical import (
-    ORACLE_SHA, REPO_ROOT, SRC_ROOT, _write_json, load_entry_state,
+    ORACLE_SHA, REPO_ROOT, SRC_ROOT, _source_labor_root, _write_json, load_entry_state,
 )
 
 
@@ -70,3 +70,42 @@ def test_direct_script_bootstrap_subprocess_has_exact_roots_and_zero_science(tmp
     )
     assert repeated.returncode!=0
     assert "refusing to overwrite" in repeated.stderr
+
+
+@pytest.mark.parametrize("b,z", [(-2.0,0.8),(-2.0,1.3),(4/19,0.8),(4/19,1.3)])
+def test_source_labor_root_stays_in_domain_for_frozen_liquid_and_z_cells(b,z):
+    rb=0.09 if b<0 else 0.02
+    temp=0.09**2+rb*b+0.1
+    wage=(1-0.05)*20*z
+    root,bracket=_source_labor_root(wage=wage,temp=temp)
+    boundary=-temp/wage
+    assert bracket[0]>boundary and bracket[1]>boundary and root>boundary
+    residual=root-wage**0.2*(root*wage+temp)**(-0.4)
+    assert abs(residual)<=1e-10
+
+
+def test_old_zero_endpoint_is_outside_first_failing_cell_domain():
+    temp=0.09**2+0.09*(-2.0)+0.1
+    wage=(1-0.05)*20*0.8
+    assert temp<0 and 0.0<=-temp/wage
+    root,bracket=_source_labor_root(wage=wage,temp=temp)
+    assert root>bracket[0]>-temp/wage
+
+
+@pytest.mark.parametrize("kwargs", [
+    {"wage":0.0,"temp":0.1},
+    {"wage":15.2,"temp":float("nan")},
+    {"wage":15.2,"temp":-100.0},
+])
+def test_source_labor_root_fails_closed_on_nonsource_or_x0_invalid_domain(kwargs):
+    with pytest.raises(ValueError):
+        _source_labor_root(**kwargs)
+
+
+def test_source_c0_and_v02_constants_match_frozen_matlab_formula():
+    wage,temp,rb_b,transfer=15.2,-0.0719,-0.18,0.1
+    labor,_=_source_labor_root(wage=wage,temp=temp)
+    c0=wage*labor+rb_b+transfer
+    python_value=(c0**(1-2)/(1-2)-labor**6/6)/0.05
+    matlab_frozen=(c0**(-1)/(-1)-labor**(1+1/0.2)/(1+1/0.2))/0.05
+    assert python_value==matlab_frozen
