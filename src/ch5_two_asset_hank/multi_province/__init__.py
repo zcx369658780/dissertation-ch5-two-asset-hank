@@ -12,6 +12,14 @@ from .household_adapter import (
     reject_legacy_runtime_references,
 )
 from .provenance import DATA_PROVENANCE_MANIFEST, DataArtifactProvenance, YearCacheBinding
+from .one_turn import (
+    SOURCE_UPDATE_ORDER,
+    OneTurnInputs,
+    OneTurnResult,
+    PreFrozenHouseholdOutputBatch,
+    compose_one_turn,
+    run_source_faithful_one_turn,
+)
 from .province_contracts import (
     PROVINCE_ORDER,
     HouseholdOuterOutputs,
@@ -27,17 +35,23 @@ __all__ = [
     "MATLAB_TO_ACCEPTED_HA_FIELD_MAP",
     "MATLAB_TO_ACCEPTED_HA_OUTPUT_MAP",
     "NO_LEGACY_R5_RUNTIME_DEPENDENCY",
+    "SOURCE_UPDATE_ORDER",
     "PROVINCE_ORDER",
     "DataArtifactProvenance",
     "FrozenHouseholdOutputs",
     "HouseholdOuterOutputs",
     "MigrationLaborAllocation",
     "MultiProvinceHouseholdInputs",
+    "OneTurnInputs",
+    "OneTurnResult",
+    "PreFrozenHouseholdOutputBatch",
     "ProvinceAxis",
     "ProvinceMatrix",
     "ProvinceVector",
     "StaticHouseholdCall",
     "YearCacheBinding",
     "build_static_household_call",
+    "compose_one_turn",
     "reject_legacy_runtime_references",
+    "run_source_faithful_one_turn",
 ]
