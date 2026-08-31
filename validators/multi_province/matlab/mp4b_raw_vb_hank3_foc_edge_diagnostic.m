@@ -1,7 +1,16 @@
-function mp4b_raw_vb_hank3_foc_edge_diagnostic(output_json, logical_root, physical_root)
+function mp4b_raw_vb_hank3_foc_edge_diagnostic(run_root, logical_root, physical_root)
 % Validation-only freeze of protected HANK3_FOC raw-pb IEEE semantics.
-if isfile(output_json) || isfolder(output_json)
-    error('MP4B:NoOverwrite','output path already exists');
+normalized_run_root=normalize_root(run_root);
+if normalize_root(string(fileparts(normalized_run_root))) ~= normalize_root("D:\ProjectTemp") ...
+        || strlength(string(fileparts(normalized_run_root))) == strlength(normalized_run_root)
+    error('MP4B:RunRoot','run_root must be a direct fresh child of D:\ProjectTemp');
+end
+if isfile(run_root) || isfolder(run_root)
+    error('MP4B:NoOverwrite','run_root already exists');
+end
+run_dir=java.io.File(char(run_root));
+if ~run_dir.mkdir()
+    error('MP4B:NoOverwrite','cannot atomically create run_root');
 end
 expected = '772B7B7BBF528DFDD246BD152B3E3026035012FE50F30DA808C1EE18C0F8463D';
 expected_logical = normalize_root("C:\MatlabProgram\2023年12月2日 多省份神经网络HANK");
@@ -34,7 +43,6 @@ if isempty(resolved) || ~finite_root_membership || ~sibling_root_rejected ...
         || ~strcmpi(file_sha256(resolved),expected)
     error('MP4B:SourceBinding','HANK3_FOC resolved outside protected root');
 end
-reserve_new_file(output_json);
 
 % Pre-frozen before the sole invocation: exact BB/BF/FB/FF witness plus edges.
 ids = {'localized_BB','localized_BF','localized_FB','localized_FF', ...
@@ -48,14 +56,38 @@ a = [9.473684210526315,9.473684210526315,9.473684210526315,9.473684210526315, ..
     1,1,1,1,1,0];
 chi = struct('chi0',0.1,'chi1',2,'fixcost',0,'fixcost2',0,'a_bar',0.5);
 template = struct('case_id','','pa',0,'pb',0,'a',0,'chi0',0,'chi1',0, ...
+    'resolved_helper_path','','resolved_helper_sha256','', ...
     'ratio_class','','ratio_value','','output_class','','output_value','');
 rows = repmat(template,numel(ids),1);
 dummy = struct();
+attempted_calls=0;
+completed_calls=0;
+resolved_sha=file_sha256(resolved);
 for k=1:numel(ids)
     ratio = pa(k)./pb(k);
-    value = HANK3_FOC(dummy,chi,pa(k),pb(k),a(k),0);
+    attempted_calls=attempted_calls+1;
+    try
+        value = HANK3_FOC(dummy,chi,pa(k),pb(k),a(k),0);
+    catch protected_error
+        failure_case=struct('case_id',ids{k},'case_index',k, ...
+            'pa',pa(k),'pb',pb(k),'a',a(k),'chi0',chi.chi0,'chi1',chi.chi1, ...
+            'resolved_helper_path',resolved,'resolved_helper_sha256',resolved_sha);
+        failure=struct('schema','CH5_MP4B_RAW_VB_HANK3_FOC_EDGE_FAILURE_V1', ...
+            'status','PROTECTED_SOURCE_ERROR','case',failure_case, ...
+            'matlab_error_identifier',protected_error.identifier, ...
+            'matlab_error_message',protected_error.message, ...
+            'logical_protected_root',logical_root,'physical_protected_root',physical_root, ...
+            'attempted_protected_calls',attempted_calls, ...
+            'completed_protected_calls',completed_calls, ...
+            'call_ledger',complete_call_ledger(attempted_calls,completed_calls));
+        write_new_json(fullfile(run_root,'failure.json'),failure);
+        rethrow(protected_error);
+    end
+    completed_calls=completed_calls+1;
     rows(k) = struct('case_id',ids{k},'pa',pa(k),'pb',pb(k),'a',a(k), ...
-        'chi0',chi.chi0,'chi1',chi.chi1,'ratio_class',classify(ratio), ...
+        'chi0',chi.chi0,'chi1',chi.chi1, ...
+        'resolved_helper_path',resolved,'resolved_helper_sha256',resolved_sha, ...
+        'ratio_class',classify(ratio), ...
         'ratio_value',encode_value(ratio),'output_class',classify(value), ...
         'output_value',encode_value(value));
 end
@@ -66,12 +98,8 @@ manifest = struct('schema','CH5_MP4B_RAW_VB_HANK3_FOC_EDGE_V1', ...
     'sibling_root_rejected',sibling_root_rejected, ...
     'unrelated_root_rejected',unrelated_root_rejected, ...
     'case_count',numel(rows),'cases',rows, ...
-    'call_ledger',struct('matlab_scalar_batch',1,'HANK3_FOC_calls',numel(rows), ...
-    'HJB',0,'KFE',0,'household',0,'multi_province',0));
-fid = fopen(output_json,'w');
-if fid < 0; error('MP4B:Persistence','cannot create output'); end
-cleanup = onCleanup(@() fclose(fid));
-fwrite(fid,jsonencode(manifest,'PrettyPrint',true),'char');
+    'call_ledger',complete_call_ledger(attempted_calls,completed_calls));
+write_new_json(fullfile(run_root,'success_manifest.json'),manifest);
 end
 
 function out=classify(x)
@@ -105,6 +133,37 @@ file=java.io.File(char(p));
 if ~file.createNewFile()
     error('MP4B:NoOverwrite','cannot atomically reserve output');
 end
+end
+function write_new_json(p,payload)
+reserve_new_file(p);
+fid=fopen(p,'w');
+if fid<0; error('MP4B:Persistence','cannot open reserved output'); end
+try
+    encoded=jsonencode(payload,'PrettyPrint',true);
+    written=fwrite(fid,encoded,'char');
+    if written ~= strlength(string(encoded))
+        error('MP4B:Persistence','incomplete JSON write');
+    end
+    status=fclose(fid); fid=-1;
+    if status ~= 0
+        error('MP4B:Persistence','cannot close durable output');
+    end
+catch persistence_error
+    if fid>=0; fclose(fid); end
+    rethrow(persistence_error);
+end
+end
+function ledger=complete_call_ledger(attempted_calls,completed_calls)
+ledger=struct('matlab_scalar_batches',1, ...
+    'HANK3_FOC_attempted_calls',attempted_calls, ...
+    'HANK3_FOC_completed_calls',completed_calls, ...
+    'matlab_HJB',0,'matlab_KFE',0,'matlab_household',0, ...
+    'matlab_multi_province',0,'matlab_stationary',0,'matlab_GE',0, ...
+    'python_local_policy',0,'python_HJB',0,'python_KFE',0, ...
+    'python_household',0,'python_stationary',0, ...
+    'old_50_state_HJB_parity',0,'Beijing_household_parity',0, ...
+    'MP2_empirical',0,'MP3_empirical',0,'annual_batch',0, ...
+    'shocks',0,'transition',0,'dynamics',0,'IRF',0,'R5',0,'Results',0);
 end
 function out=file_sha256(p)
 md=java.security.MessageDigest.getInstance('SHA-256');
