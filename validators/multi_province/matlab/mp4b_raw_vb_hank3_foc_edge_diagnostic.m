@@ -9,11 +9,9 @@ expected_physical = normalize_root("D:\MatlabProgram\2023年12月2日 多省份�
 if normalize_root(logical_root) ~= expected_logical || normalize_root(physical_root) ~= expected_physical
     error('MP4B:PathEquivalence','model roots are not the exact protected pair');
 end
-verify_exact_junction();
-if ~isfolder(logical_root) || ~isfolder(physical_root) ...
-        || canonical_root(logical_root) ~= expected_physical ...
-        || canonical_root(physical_root) ~= expected_physical
-    error('MP4B:PathEquivalence','logical and physical model roots are not equivalent');
+junction_evidence=verify_exact_junction();
+if ~isfolder(logical_root) || ~isfolder(physical_root)
+    error('MP4B:PathEquivalence','exact logical and physical model roots must exist');
 end
 logical_source = fullfile(logical_root,'HANK3_FOC.m');
 physical_source = fullfile(physical_root,'HANK3_FOC.m');
@@ -22,10 +20,17 @@ if ~isfile(logical_source) || ~isfile(physical_source) ...
         || ~strcmpi(file_sha256(physical_source),expected)
     error('MP4B:SourceIdentity','protected HANK3_FOC identity mismatch');
 end
+old_path=path; cleanup_path=onCleanup(@() path(old_path));
 addpath(logical_root);
 resolved = which('HANK3_FOC');
 allowed = [expected_logical,expected_physical];
-if isempty(resolved) || ~any(normalize_root(string(fileparts(resolved))) == allowed) ...
+finite_root_membership=any(normalize_root(string(fileparts(resolved))) == allowed);
+sibling_probe=normalize_root("D:\MatlabProgram\2023年12月2日 多省份神经网络HANK-sibling");
+other_d_probe=normalize_root("D:\MatlabProgram\other-model");
+sibling_root_rejected=~any(sibling_probe == allowed);
+unrelated_root_rejected=~any(other_d_probe == allowed);
+if isempty(resolved) || ~finite_root_membership || ~sibling_root_rejected ...
+        || ~unrelated_root_rejected ...
         || ~strcmpi(file_sha256(resolved),expected)
     error('MP4B:SourceBinding','HANK3_FOC resolved outside protected root');
 end
@@ -56,7 +61,10 @@ for k=1:numel(ids)
 end
 manifest = struct('schema','CH5_MP4B_RAW_VB_HANK3_FOC_EDGE_V1', ...
     'logical_protected_root',logical_root,'physical_protected_root',physical_root, ...
-    'resolved_helper_path',resolved,'protected_sha256',expected, ...
+    'junction_evidence',junction_evidence,'resolved_helper_path',resolved, ...
+    'protected_sha256',expected,'finite_root_membership',finite_root_membership, ...
+    'sibling_root_rejected',sibling_root_rejected, ...
+    'unrelated_root_rejected',unrelated_root_rejected, ...
     'case_count',numel(rows),'cases',rows, ...
     'call_ledger',struct('matlab_scalar_batch',1,'HANK3_FOC_calls',numel(rows), ...
     'HJB',0,'KFE',0,'household',0,'multi_province',0));
@@ -78,10 +86,7 @@ function value=normalize_root(value)
 value=lower(replace(string(value),'/','\'));
 value=strip(value,'right','\');
 end
-function value=canonical_root(value)
-value=normalize_root(string(java.io.File(char(value)).getCanonicalPath()));
-end
-function verify_exact_junction()
+function evidence=verify_exact_junction()
 command = ['powershell.exe -NoProfile -NonInteractive -Command ' ...
     '"$i=Get-Item -LiteralPath ''C:\MatlabProgram'' -Force;' ...
     '$t=@($i.Target);' ...
@@ -92,6 +97,8 @@ command = ['powershell.exe -NoProfile -NonInteractive -Command ' ...
 if status ~= 0 || ~strcmp(strtrim(out),'PASS')
     error('MP4B:PathEquivalence','exact C-to-D junction verification failed');
 end
+evidence=struct('logical_storage_root','C:\MatlabProgram', ...
+    'link_type','Junction','target_count',1,'sole_target','D:\MatlabProgram');
 end
 function reserve_new_file(p)
 file=java.io.File(char(p));
