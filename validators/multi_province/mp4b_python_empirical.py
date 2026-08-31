@@ -16,7 +16,7 @@ from scipy.optimize import brentq
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SRC_ROOT = REPO_ROOT / "src"
 ORACLE_PATH = REPO_ROOT / "exports" / "matlab_faithful_two_asset_ha.py"
-ORACLE_SHA = "276D2244B389D6EDE140DAF8B1F9B0BE1F4AA859368941CED1A12BA8A5831AB8"
+ORACLE_SHA = "B92F6EFC59D9398F89F8FB6EE67BF6C5F947282D76895051BEC194967EC9C3E3"
 
 
 def _sha256(path: Path) -> str:
@@ -236,6 +236,87 @@ def run_full_initialization_preflight(canonical_path: Path, output_path: Path) -
     return payload
 
 
+def run_first_beijing_input_preflight(
+    canonical_path: Path, accepted_contract_path: Path, output_path: Path,
+) -> dict[str, object]:
+    """Materialize the exact turn-1 Beijing household inputs without solving."""
+    canonical, states = load_entry_state(canonical_path)
+    state = states[0]
+    grid = MatlabFaithfulHJBGrid(
+        np.linspace(-2, 5, 20), np.linspace(0, 10, 20), np.array([0.8, 1.3]),
+        np.array([[-1 / 3, 1 / 3], [1 / 3, -1 / 3]]),
+    )
+    params = EconomicParams(0.05, 2.0, 5.0, 0.1, 2.0, 1e-6, 0.0, 0.0)
+    numerics = MatlabFaithfulHJBNumerics(1000.0, 1e-7, 100, 1e-12)
+    initial_value, baseline_labor = _source_initial_arrays(state, grid, params)
+    actual = {
+        "EconomicParams": [params.rho, params.gamma_c, params.phi, params.chi_0,
+                           params.chi_1, params.a_bar, params.mu_z, params.sigma_z],
+        "HouseholdInputs": [float(state["rah"]), float(state["rb"]), float(state["tau"]),
+                            [float(state["w"])], [0.0], [1.0]],
+        "MatlabFaithfulHJBGrid": _jsonable(grid),
+        "MatlabFaithfulHJBNumerics": [numerics.delta, numerics.convergence_tolerance,
+                                      numerics.max_iterations, numerics.drift_tolerance],
+        "initial_value": initial_value.tolist(),
+        "baseline_labor": baseline_labor.tolist(),
+        "transfer_income": float(state["Tt"]),
+        "borrowing_rate_gap": float(state["rb_gap"]),
+    }
+    accepted = json.loads(Path(accepted_contract_path).read_text(encoding="utf-8"))
+    expected = accepted["python_mapping"]
+    mismatches: list[str] = []
+    primitive_max_normalized_difference = 0.0
+
+    def compare(left, right, path="$"):
+        nonlocal primitive_max_normalized_difference
+        if isinstance(right, dict):
+            if not isinstance(left, dict) or set(left) != set(right):
+                mismatches.append(path + ": key/type mismatch")
+                return
+            for key in right:
+                compare(left[key], right[key], f"{path}.{key}")
+        elif isinstance(right, list):
+            if not isinstance(left, list) or len(left) != len(right):
+                mismatches.append(path + ": shape mismatch")
+                return
+            for index, item in enumerate(right):
+                compare(left[index], item, f"{path}[{index}]")
+        elif isinstance(right, (int, float)) and not isinstance(right, bool):
+            if not isinstance(left, (int, float)):
+                mismatches.append(path)
+            elif path.startswith("$.initial_value") or path.startswith("$.baseline_labor"):
+                scale = max(1.0, abs(float(left)), abs(float(right)))
+                normalized = abs(float(left) - float(right)) / scale
+                primitive_max_normalized_difference = max(primitive_max_normalized_difference, normalized)
+                if normalized > 128 * np.finfo(float).eps:
+                    mismatches.append(path)
+            elif float(left) != float(right):
+                mismatches.append(path)
+        elif left != right:
+            mismatches.append(path)
+
+    compare(actual, expected)
+    payload = {
+        "schema": "MP4B_STATIONARY_ENTRY_FIRST_BEIJING_INPUT_PREFLIGHT_V1",
+        "marker": "MP4B_STATIONARY_ENTRY_FIRST_BEIJING_INPUT_CONFORMS_TO_ACCEPTED_HOUSEHOLD_AUTHORITY",
+        "calendar_year": 2009,
+        "province": canonical["province_order"][0],
+        "canonical_sha256": CANONICAL_SHA,
+        "accepted_contract_path": str(Path(accepted_contract_path).resolve()),
+        "accepted_contract_sha256": _sha256(Path(accepted_contract_path)),
+        "semantic_mismatch_count": len(mismatches),
+        "semantic_mismatches": mismatches,
+        "primitive_array_gate": "128*eps64*max(1,abs(x),abs(y))",
+        "primitive_array_max_normalized_difference": primitive_max_normalized_difference,
+        "asset_labels": {"liquid": "b", "illiquid": "a"},
+        "scientific_calls": {"household": 0, "hjb": 0, "kfe": 0, "mp2": 0, "mp3": 0, "stationary": 0},
+    }
+    _write_json(Path(output_path), payload)
+    if mismatches:
+        raise RuntimeError("first-Beijing stationary-entry input mismatch")
+    return payload
+
+
 def run_python_once(canonical_path: Path, run_root: Path):
     root=Path(run_root); root.mkdir(parents=True,exist_ok=False)
     canonical,states=load_entry_state(canonical_path)
@@ -310,11 +391,15 @@ def main(argv=None) -> int:
     if len(args) == 3 and args[0] == "--full-initialization-check":
         run_full_initialization_preflight(Path(args[1]),Path(args[2]))
         return 0
+    if len(args) == 4 and args[0] == "--first-beijing-input-check":
+        run_first_beijing_input_preflight(Path(args[1]), Path(args[2]), Path(args[3]))
+        return 0
     if len(args) != 2:
         raise SystemExit(
             "usage: mp4b_python_empirical.py CANONICAL_JSON FRESH_RUN_ROOT | "
             "--bootstrap-check FRESH_MANIFEST_JSON | "
-            "--full-initialization-check CANONICAL_JSON FRESH_MANIFEST_JSON"
+            "--full-initialization-check CANONICAL_JSON FRESH_MANIFEST_JSON | "
+            "--first-beijing-input-check CANONICAL_JSON ACCEPTED_CONTRACT_JSON FRESH_MANIFEST_JSON"
         )
     run_python_once(Path(args[0]),Path(args[1]))
     return 0

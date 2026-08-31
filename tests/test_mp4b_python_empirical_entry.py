@@ -12,6 +12,7 @@ from validators.multi_province.mp4b_python_empirical import (
 
 
 CANONICAL=Path(r"D:\ProjectTemp\ch5-mp4a2-2009-input-binding-20260830-001\calendar_2009_primary_premodel_input.json")
+BEIJING_CONTRACT=Path(r"D:\ProjectTemp\ch5-mp4b-beijing-household-20260831-001\beijing_same_input_contract.json")
 
 
 def test_entry_prepares_exact_31_source_states_without_solving():
@@ -128,3 +129,18 @@ def test_direct_full_initialization_preflight_checks_all_cells_without_science(t
     assert payload["scientific_calls"]=={
         "household":0,"hjb":0,"kfe":0,"mp2":0,"mp3":0,"stationary":0}
     assert not any(payload["formula_guards"].values())
+
+
+def test_direct_first_beijing_input_preflight_matches_accepted_contract_without_science(tmp_path):
+    script=REPO_ROOT/"validators"/"multi_province"/"mp4b_python_empirical.py"
+    manifest=tmp_path/"first_beijing_input.json"
+    completed=subprocess.run(
+        [sys.executable,str(script),"--first-beijing-input-check",str(CANONICAL),
+         str(BEIJING_CONTRACT),str(manifest)],
+        cwd=tmp_path,text=True,capture_output=True,check=False,
+    )
+    assert completed.returncode==0, completed.stderr
+    payload=json.loads(manifest.read_text(encoding="utf-8"))
+    assert payload["semantic_mismatch_count"]==0
+    assert payload["asset_labels"]=={"liquid":"b","illiquid":"a"}
+    assert all(value==0 for value in payload["scientific_calls"].values())

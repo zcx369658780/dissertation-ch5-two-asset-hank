@@ -2,6 +2,21 @@
 
 Status: `CURRENT`. This document supersedes the 2026-08-22 R5 Python/AR1 route and all stale multi-province status documents that predate accepted MATLAB-faithful two-asset household parity. Historical files remain evidence, not authority.
 
+## MP4B corrected-2009 Python-only execution status — 2026-08-31
+
+The accepted raw-`Vb` repaired standalone household authority is SHA-256
+`B92F6EFC59D9398F89F8FB6EE67BF6C5F947282D76895051BEC194967EC9C3E3`.
+The validation entry was corrected to that identity and all zero-science gates
+passed. The sole Python corrected-calendar-2009 stationary invocation completed
+outer turn 1, then failed in the fourth province (Shanxi) household on outer
+turn 2 with `MATLAB-faithful HJB did not converge`. It completed 34 household
+solves and attempted the 35th; no rerun or MATLAB invocation occurred. Terminal:
+
+`MP4B_PYTHON_ONLY_CORRECTED_CALENDAR2009_STATIONARY_PARITY_AGAINST_PRESERVED_MATLAB_MATERIAL_MISMATCH`
+
+The first supported divergence is the turn-2 Shanxi standalone HJB convergence
+boundary. Corrected-2009 MATLAB/Python stationary parity is not accepted.
+
 ## Owner route override — 2026-08-30
 
 The Owner has rejected the prior repository-retention strategy B as a continuing program-version policy and frozen a stronger replacement route:
