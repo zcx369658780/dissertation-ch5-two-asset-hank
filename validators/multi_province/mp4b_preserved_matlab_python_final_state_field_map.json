@@ -1,0 +1,33 @@
+{
+  "schema": "MP4B_PRESERVED_MATLAB_PYTHON_FINAL_STATE_FIELD_MAP_V1",
+  "marker": "MP4B_PRESERVED_MATLAB_PYTHON_FINAL_STATE_FIELD_MAP_FROZEN",
+  "frozen_before_python_output": true,
+  "province_order_source": "manifest.province_order and st.results{i}.prvname",
+  "provincial_continuous_exact_name_map": [
+    "Ct", "At", "Bt", "Lt", "Lt_supply", "Kt_supply", "rah", "Kt",
+    "Yt", "mt", "KNratio", "w", "wjt", "rk", "ra", "GovInv", "rb",
+    "it", "Zt", "Govinc"
+  ],
+  "provincial_categorical_exact_name_map": ["convergent"],
+  "boundary_categories": {
+    "ra_upper": ["ra", "ramax"],
+    "ra_lower": ["ra", "ramin"],
+    "wjt_upper": ["wjt", "wjtmax"],
+    "wjt_lower": ["wjt", "wjtmin"]
+  },
+  "national_sums": ["Ct", "At", "Bt", "Yt"],
+  "controller_fields": [
+    "outer_turn_count", "final_household_converged_count", "ra_upper_count",
+    "ra_lower_count", "wage_upper_count", "wage_lower_count"
+  ],
+  "excluded": {
+    "AtTax": "EXCLUDED_NOT_UNIQUELY_SOURCE_BACKED_AT_HOUSEHOLD_COMPARISON_LAYER",
+    "household_Lt": "NOT_SUBSTITUTED_FOR_FINAL_FIRM_LT",
+    "At_plus_Bt": "NOT_SUBSTITUTED_FOR_PRODUCTIVE_AT"
+  },
+  "matlab_artifact": {
+    "path": "D:\\ProjectTemp\\ch5-mp4b-fresh-calendar2009-matlab-20260830-001\\matlab_calendar2009_stationary_output.mat",
+    "sha256": "6233AB8B7380BE4D4E136851BC59F747EEB78B285B3A7A5903FEFFE64BCF464B"
+  },
+  "python_terminal_schema": "ManualSteadyStateResult final_state mappings and terminal history"
+}

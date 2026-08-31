@@ -2,6 +2,21 @@
 
 Status: `CURRENT`. This document supersedes the 2026-08-22 R5 Python/AR1 route and all stale multi-province status documents that predate accepted MATLAB-faithful two-asset household parity. Historical files remain evidence, not authority.
 
+## MP4B source-postloop stationary reexecution preflight — 2026-08-31
+
+The reexecution stopped before science. Bootstrap, presolver identity, all
+24,800 source-initialization cells, first-Beijing input conformance, immutable
+identities, source-postloop static acceptance, comparator-contract reuse and the
+pre-frozen MATLAB/Python final-state field map passed. The required regression
+bundle returned `63 passed, 1 failed`: the remaining failure is a predecessor
+entry test that still requires the now-superseded
+`solve_household_steady_state` route, contradicting the accepted source-postloop
+adapter. The task did not authorize changing that test. Python stationary,
+household, HJB, KFE, aggregation and comparator calls remained zero.
+
+Terminal:
+`MP4B_PYTHON_ONLY_CORRECTED_CALENDAR2009_STATIONARY_REEXECUTION_WITH_SOURCE_POSTLOOP_ADAPTER_AGAINST_PRESERVED_MATLAB_BLOCKED`.
+
 ## MP4B nonconverged-HJB source semantics — 2026-08-31
 
 Protected MATLAB source unambiguously continues from a false inner HJB
