@@ -1,0 +1,12 @@
+{
+  "schema": "MP4B_BEIJING_FIRST_TURN_HOUSEHOLD_COMPARATOR_CONTRACT_V1",
+  "marker": "MP4B_BEIJING_FIRST_TURN_HOUSEHOLD_COMPARATOR_CONTRACT_FROZEN",
+  "mandatory_categorical": ["converged", "finite", "asset_labels", "identity_closure"],
+  "mandatory_continuous": ["Ct", "Lt", "At", "Bt", "At_plus_Bt"],
+  "scaled_gate": "abs(M-P) <= 1e-7 * max(1, abs(M), abs(P))",
+  "scaled_tolerance": 1e-7,
+  "term_count": 800,
+  "gamma_n_formula": "n*eps64/(1-n*eps64)",
+  "optional_tax_disposition": "EXCLUDED_NOT_UNIQUELY_SOURCE_BACKED",
+  "tolerance_widening_after_execution": false
+}

@@ -13,7 +13,7 @@ from .economics import (
     flow_utility,
     labor_from_vb,
     matlab_faithful_illiquid_return,
-    transfer_candidate,
+    transfer_candidate_matlab_faithful_raw_vb,
 )
 
 
@@ -115,9 +115,6 @@ def select_matlab_faithful_local_policy(
         raise ValueError("faithful local policy requires a nondegenerate illiquid grid")
     if at_lower_b and at_upper_b:
         raise ValueError("faithful local policy requires a nondegenerate liquid grid")
-    if min(v_b_forward, v_b_backward) <= 0.0:
-        raise ValueError("designated transfer FOCs require positive liquid derivatives")
-
     effective_r_b = inputs.r_b + (borrowing_rate_gap if b < 0.0 else 0.0)
     local_inputs = HouseholdInputs(
         inputs.r_a,
@@ -159,10 +156,10 @@ def select_matlab_faithful_local_policy(
     if consumption <= 0.0:
         raise ValueError("MATLAB zero/liquid branch produced non-positive consumption")
 
-    d_bb = transfer_candidate(v_a_backward, v_b_backward, a, params)
-    d_bf = transfer_candidate(v_a_forward, v_b_backward, a, params)
-    d_fb = transfer_candidate(v_a_backward, v_b_forward, a, params)
-    d_ff = transfer_candidate(v_a_forward, v_b_forward, a, params)
+    d_bb = transfer_candidate_matlab_faithful_raw_vb(v_a_backward, v_b_backward, a, params)
+    d_bf = transfer_candidate_matlab_faithful_raw_vb(v_a_forward, v_b_backward, a, params)
+    d_fb = transfer_candidate_matlab_faithful_raw_vb(v_a_backward, v_b_forward, a, params)
+    d_ff = transfer_candidate_matlab_faithful_raw_vb(v_a_forward, v_b_forward, a, params)
     d_b = (d_bf if d_bf > 0.0 else 0.0) + (d_bb if d_bb < 0.0 else 0.0)
     d_f = (d_ff if d_ff > 0.0 else 0.0) + (d_fb if d_fb < 0.0 else 0.0)
     if at_lower_a:

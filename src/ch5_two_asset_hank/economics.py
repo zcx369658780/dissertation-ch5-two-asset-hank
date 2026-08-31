@@ -22,6 +22,25 @@ def transfer_candidate(v_a: float, v_b: float, a: float, params: EconomicParams)
     return a * threshold / params.chi_1
 
 
+def transfer_candidate_matlab_faithful_raw_vb(
+    v_a: float,
+    v_b: float,
+    a: float,
+    params: EconomicParams,
+) -> float:
+    """Reproduce protected ``HANK3_FOC`` arithmetic using raw ``V_b``."""
+    if not np.isfinite([v_a, v_b, a]).all():
+        raise ValueError("faithful raw-Vb transfer FOC requires finite inputs")
+    with np.errstate(divide="ignore", invalid="ignore"):
+        ratio = np.divide(np.float64(v_a), np.float64(v_b))
+        threshold = np.fmin(ratio - 1.0 + params.chi_0, 0.0) + np.fmax(
+            ratio - 1.0 - params.chi_0,
+            0.0,
+        )
+        value = np.divide(np.float64(a) * threshold, params.chi_1)
+    return float(value)
+
+
 def transfer_candidate_corrected_max_scale(
     v_a: float,
     v_b: float,
@@ -116,4 +135,3 @@ def asset_drifts_matlab_faithful(
     r_a_effective = float(matlab_faithful_illiquid_return(a, a_max, inputs.r_a))
     mu_a = r_a_effective * a + transfer
     return mu_a, mu_b, cost
-
