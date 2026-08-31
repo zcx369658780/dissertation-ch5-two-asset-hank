@@ -1,0 +1,47 @@
+{
+  "schema": "MP4B_NONCONVERGED_HJB_POSTLOOP_SOURCE_SEMANTICS_MAP_V1",
+  "marker": "MP4B_MATLAB_HJB_NONCONVERGENCE_POSTLOOP_KFE_AGGREGATE_SEMANTICS_FROZEN",
+  "logical_root": "C:\\MatlabProgram\\2023年12月2日 多省份神经网络HANK",
+  "physical_root": "D:\\MatlabProgram\\2023年12月2日 多省份神经网络HANK",
+  "junction": {
+    "path": "C:\\MatlabProgram",
+    "link_type": "Junction",
+    "target": "D:\\MatlabProgram"
+  },
+  "sources": {
+    "HANK_2ASSETS_HJB.m": {
+      "sha256": "049136B769560040BC678F828F5D3EC5338DDCAA2090D6BED4E40732F56C3EAE",
+      "line_map": {
+        "initialize_false": "39: convergent = 0",
+        "set_true_only_on_criterion": "248-255: dist(n)<crit sets convergent=1 and breaks",
+        "maxit_nonconvergence_is_message_only": "256-260: maxit emits a message only; no error or return",
+        "postloop_policy_and_operator_rebuild": "262-333: rebuild drifts and A after the HJB loop",
+        "stationary_kfe": "334-345: contaminated-row transpose solve and density normalization",
+        "household_aggregation": "347-372: Lt/Bt/At/Ct and other aggregates",
+        "publish_flag": "397-425: publish aggregates and unchanged results.convergent"
+      },
+      "false_flag_semantics": "CONTINUE_POSTLOOP_OPERATOR_KFE_AGGREGATION_AND_RETURN_FALSE"
+    },
+    "HANK_mp_1turn.m": {
+      "sha256": "D3D03F37286ED66202673EA63D49BABCE8D5309BAC9C13793C8E60585C21FECF",
+      "line_map": {
+        "household_collection": "13-16: call HANK_2ASSETS_HJB for every province without a convergence-flag veto",
+        "downstream_turn": "21-66: consume the complete returned household batch in migration/capital/firm/wage/monetary/fiscal blocks"
+      },
+      "false_flag_semantics": "COLLECT_RESULT_AND_CONTINUE_COMPLETE_TURN"
+    },
+    "HANK_mp_1eq.m": {
+      "sha256": "ED39E661AF951E01D1F5F9D123CE0FAD980F5D3DB33FD338DE60DA87731E0AEF",
+      "line_map": {
+        "complete_turn_first": "7-8: execute one complete HANK_mp_1turn",
+        "sum_flags": "26-34: add each results{i}.convergent to convergent_total",
+        "outer_acceptance": "42-45: require convergent_total==31 with numeric gaps and ra vetoes",
+        "false_flag_continuation": "46-65: failed acceptance continues adaptation/damping and only errors at max3iter"
+      },
+      "false_flag_semantics": "VETO_CURRENT_OUTER_ACCEPTANCE_BUT_CONTINUE_OUTER_ITERATIONS"
+    }
+  },
+  "adjudication": "UNAMBIGUOUS",
+  "python_mismatch_marker": "MP4B_PYTHON_STATIONARY_ABORT_ON_HJB_NONCONVERGENCE_SOURCE_SEMANTICS_MISMATCH_CONFIRMED",
+  "classification": "PYTHON_IMPLEMENTATION_ERROR__MULTI_PROVINCE_DRIVER_ABORTS_BEFORE_MATLAB_SOURCE_POSTLOOP_KFE_AND_AGGREGATES"
+}

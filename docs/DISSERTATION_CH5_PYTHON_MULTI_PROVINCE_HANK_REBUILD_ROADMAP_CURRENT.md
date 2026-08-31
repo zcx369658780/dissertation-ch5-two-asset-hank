@@ -2,6 +2,21 @@
 
 Status: `CURRENT`. This document supersedes the 2026-08-22 R5 Python/AR1 route and all stale multi-province status documents that predate accepted MATLAB-faithful two-asset household parity. Historical files remain evidence, not authority.
 
+## MP4B nonconverged-HJB source semantics — 2026-08-31
+
+Protected MATLAB source unambiguously continues from a false inner HJB
+convergence flag through final-policy/operator rebuild, stationary KFE and
+household aggregation. `HANK_mp_1turn` retains the returned false flag in the
+complete provincial batch; `HANK_mp_1eq` uses it to veto only the current outer
+acceptance and continues the source controller. The prior Python stationary
+driver instead called a convenience wrapper that raised before KFE/aggregation.
+
+The mismatch is classified
+`PYTHON_IMPLEMENTATION_ERROR__MULTI_PROVINCE_DRIVER_ABORTS_BEFORE_MATLAB_SOURCE_POSTLOOP_KFE_AND_AGGREGATES`.
+A validation-only source-postloop composition adapter now exists under
+`validators/multi_province/`. Its static/stub acceptance does not authorize a
+stationary rerun or establish corrected-2009 parity.
+
 ## MP4B corrected-2009 Python-only execution status — 2026-08-31
 
 The accepted raw-`Vb` repaired standalone household authority is SHA-256

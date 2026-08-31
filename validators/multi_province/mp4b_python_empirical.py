@@ -66,7 +66,9 @@ BOOTSTRAP_IDENTITY = _bootstrap_repository_imports()
 from exports.matlab_faithful_two_asset_ha import (
     EconomicParams, HouseholdInputs, MatlabFaithfulHJBGrid,
     MatlabFaithfulHJBNumerics, matlab_faithful_illiquid_return,
-    solve_household_steady_state,
+)
+from validators.multi_province.mp4b_matlab_source_postloop_household_adapter import (
+    solve_matlab_source_postloop_household,
 )
 from ch5_two_asset_hank.multi_province.one_turn import PreFrozenHouseholdOutputBatch
 from ch5_two_asset_hank.multi_province.stationary_runtime import OnlineStationaryInputs, run_online_stationary
@@ -342,14 +344,15 @@ def run_python_once(canonical_path: Path, run_root: Path):
         try:
             for province_index,state in enumerate(snapshot):
                 initial,labor=_source_initial_arrays(state,grid,params)
-                result=solve_household_steady_state(grid,params,HouseholdInputs(
+                result=solve_matlab_source_postloop_household(grid,params,HouseholdInputs(
                     float(state["rah"]),float(state["rb"]),float(state["tau"]),
                     np.array([state["w"]]),np.array([0.0]),np.array([1.0])),initial,labor,
                     float(state["Tt"]),float(state["rb_gap"]),numerics)
                 call_count+=1; agg=result.aggregates; density=result.kfe.density
                 effective=matlab_faithful_illiquid_return(grid.a,grid.a[-1],float(state["rah"]))
                 at_tax=agg.a_ss*float(state["rah"])-float(np.sum(grid.a[None,:,None]*effective[None,:,None]*density)*result.kfe.cell_weight)
-                outputs.append((agg.c_ss,agg.l_ss,agg.a_ss,agg.b_ss,at_tax,result.hjb.converged,result.hjb.convergence_statistic))
+                outputs.append((agg.c_ss,agg.l_ss,agg.a_ss,agg.b_ss,at_tax,
+                    result.hjb.converged,result.hjb.iterations,result.hjb.convergence_statistic))
         except Exception as exc:
             _write_json(root/f'turn_{iteration:03d}_household_failure.json', {
                 "iteration":iteration,"completed_households":len(outputs),"household_call_count":call_count,
@@ -358,7 +361,8 @@ def run_python_once(canonical_path: Path, run_root: Path):
         batch=PreFrozenHouseholdOutputBatch(
             ct=[x[0] for x in outputs],household_lt=[x[1] for x in outputs],at=[x[2] for x in outputs],
             bt=[x[3] for x in outputs],at_tax=[x[4] for x in outputs],converged=tuple(x[5] for x in outputs),
-            diagnostics=tuple({"hjb_statistic":x[6],"iteration":iteration} for x in outputs))
+            diagnostics=tuple({"hjb_converged":x[5],"hjb_iterations":x[6],
+                "hjb_statistic":x[7],"iteration":iteration} for x in outputs))
         _write_json(root/f'turn_{iteration:03d}_household_outputs.json', batch)
         return batch
     p={"ga":2.0,"phi_l":5.0,"alphal":1.0,"epsilon":10.0,"theta":100.0,"delta":0.025,
