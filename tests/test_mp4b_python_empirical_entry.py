@@ -38,7 +38,8 @@ def test_json_persistence_handles_arrays_and_is_no_overwrite(tmp_path):
 def test_entry_freezes_source_controller_and_no_forbidden_runtime_imports():
     source=Path(__file__).parents[1]/"validators"/"multi_province"/"mp4b_python_empirical.py"
     text=source.read_text(encoding="utf-8")
-    assert "solve_household_steady_state" in text and "run_online_stationary" in text
+    assert "solve_matlab_source_postloop_household" in text and "run_online_stationary" in text
+    assert "solve_household_steady_state(" not in text
     assert "solve_root" not in text
     assert "from chapter5_model" not in text and "import chapter5_model" not in text
     assert "1e-9,500,True" in text
