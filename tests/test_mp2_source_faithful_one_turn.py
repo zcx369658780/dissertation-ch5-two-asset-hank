@@ -7,6 +7,8 @@ from pathlib import Path
 import numpy as np
 import pytest
 
+import ch5_two_asset_hank.multi_province.one_turn as one_turn_module
+
 from ch5_two_asset_hank.multi_province import (
     OneTurnInputs,
     PreFrozenHouseholdOutputBatch,
@@ -179,6 +181,48 @@ def test_firm_uses_destination_supply_and_clipping_is_literal() -> None:
     )
     assert wage_clipped.wjt == 1.0 and wage_clipped.wt0 < 1.0
     assert wage_clipped.Corptax != pytest.approx(unclipped.Corptax)
+
+
+def test_firm_source_uses_same_turn_household_labor_and_tax_without_mutating_old_state(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    fixture = load_fixture(FIXTURE_PATH)
+    baseline = _inputs(fixture)
+    same_turn_labor = tuple(10.0 + index for index in range(len(fixture["provinces"])))
+    same_turn_tax = tuple(0.5 + index for index in range(len(fixture["provinces"])))
+    household = PreFrozenHouseholdOutputBatch(
+        ct=baseline.household_outputs.ct,
+        household_lt=same_turn_labor,
+        at=baseline.household_outputs.at,
+        bt=baseline.household_outputs.bt,
+        at_tax=same_turn_tax,
+        converged=baseline.household_outputs.converged,
+        diagnostics=baseline.household_outputs.diagnostics,
+    )
+    inputs = OneTurnInputs(
+        province_order=baseline.province_order,
+        old_provinces=baseline.old_provinces,
+        params=baseline.params,
+        phi_destination_origin=baseline.phi_destination_origin,
+        migration_wedge_destination_origin=baseline.migration_wedge_destination_origin,
+        household_outputs=household,
+    )
+    old_state = tuple(dict(province) for province in inputs.old_provinces)
+    captured: list[tuple[dict, float]] = []
+    real_evaluate_firm = one_turn_module.evaluate_firm
+
+    def capture_firm_source(province, kt_supply, lt_supply, params):
+        captured.append((dict(province), float(lt_supply)))
+        return real_evaluate_firm(province, kt_supply, lt_supply, params)
+
+    monkeypatch.setattr(one_turn_module, "evaluate_firm", capture_firm_source)
+    result = run_source_faithful_one_turn(inputs)
+
+    assert [source["Lt_prev"] for source, _ in captured] == list(same_turn_labor)
+    assert [source["AtTax"] for source, _ in captured] == list(same_turn_tax)
+    assert [lt_supply for _, lt_supply in captured] == pytest.approx(result.migration.lt_supply)
+    assert [lt_supply for _, lt_supply in captured] != pytest.approx(same_turn_labor)
+    assert tuple(dict(province) for province in inputs.old_provinces) == old_state
 
 
 def test_remaining_firm_source_conditional_branches() -> None:

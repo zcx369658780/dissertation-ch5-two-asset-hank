@@ -187,6 +187,7 @@ def run_source_faithful_one_turn(inputs: OneTurnInputs) -> OneTurnResult:
     for index in range(n):
         firm_source = dict(provinces[index])
         firm_source["AtTax"] = float(household.at_tax[index])
+        firm_source["Lt_prev"] = float(household.household_lt[index])
         firms.append(evaluate_firm(
             firm_source,
             float(capital.kt_supply[index]),
