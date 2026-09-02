@@ -1,41 +1,31 @@
-# MP4C CHNCapitalStock candidate reproducibility audit
+# MP4C CHNCapitalStock reproduction audit: revised closeout
 
 ## Terminal
 
 `MP4C_STORED_R_CHNCAPITALSTOCK_REPRODUCIBILITY_UNRESOLVED__HANK_RERUN_NOT_AUTHORIZED`
 
-The Owner-designated `R语言计算资本存量` sheet remains a candidate, not an
-authorized HANK capital input. Its positivity cannot establish provenance or
-correctness.
+## Verified 2000--2022 segment
 
-## Blocking evidence
+R 4.6.1 and `CHNCapitalStock` 0.1.1 called `CompK_ZJ(prv, bt=2000)` for all
+31 accepted provinces. Compared with the stored candidate sheet, the 23 by 31
+matrix has 713 cells, 51 exact cells, maximum absolute difference
+`4.94765117764473e-10`, maximum relative difference `4.1882024315552e-15`,
+and 36 cells above `1e-10`. These are ordinary Excel floating serialization
+differences, not a material discrepancy.
 
-The required independent reconstruction cannot be uniquely recovered locally:
+The recovered function initializes 1952 capital as investment divided by 0.1,
+normalizes investment price at the requested base year, and recurs with
+`K[t]=K[t-1]*(1-delta)+RealInvest[t]`, default `delta=0.096`.
 
-- no `Rscript` executable is available on this host;
-- no identifiable local R script, `CHNCapitalStock` package source, package
-  metadata/version record, lockfile, or deterministic capital-construction source
-  was found in the protected project tree;
-- consequently package/function, version, inputs, initial-capital rule,
-  depreciation, deflator/price-base treatment, NA preprocessing, units and
-  stored-sheet generation lineage cannot be proven.
+## 2023 blocker
 
-The task forbids network installation, package upgrade, guessing defaults, and
-substitution based on positivity. Therefore no bounded R verification run was
-possible, no stored-versus-reproduced cell comparison exists, and neither V1 nor
-V2 can be claimed.
+The installed package `asset` data covers 1952--2022 only. Historical
+`D:\Rprogramme\main.r` likewise filters its output to 2000--2022. Read-only
+search found no later construction source, asset dataset, package copy, or 2023
+investment-price/deflator input proving an equal-definition extension. The stored
+2023 row cannot prove itself, and reconstructing it would require guessed inputs.
 
-## Scope preserved
-
-No MATLAB HANK, R PLM, Python stationary/household/HJB/KFE, comparator, shock,
-IRF, R5, or Results computation was run. The historical annual batch remains
-engineering-only evidence. Owner-A intended calendar semantics are not rejected,
-but corrected inputs, unit/scaling proof, the 15-year preflight, and the exactly
-eight-worker batch remain unauthorized pending recoverable capital construction
-evidence.
-
-## Required next authority
-
-Provide the exact local R runtime or an exact package/source snapshot plus the
-frozen raw input lineage used to generate the stored sheet. A new task can then
-authorize an offline deterministic reproduction and strict 24-by-31 cell audit.
+Thus the intermediate finding is
+`MP4C_STORED_R_CHNCAPITALSTOCK_2000_2022_REPRODUCIBILITY_VERIFIED__2023_EXTENSION_PENDING`.
+No HANK, PLM, MATLAB, Python stationary/household/HJB/KFE, comparator, shock,
+IRF, R5, or Results call occurred; the 8-worker batch was not started.
