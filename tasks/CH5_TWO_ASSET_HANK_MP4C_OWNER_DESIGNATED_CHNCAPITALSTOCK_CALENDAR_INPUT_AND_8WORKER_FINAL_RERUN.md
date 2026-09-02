@@ -6,13 +6,13 @@ Repository: `zcx369658780/dissertation-ch5-two-asset-hank`
 
 Issuer: ChatGPT L3 independent reviewer / scientific route authority / GitHub task issuer
 
-Builder: Codex bounded Builder / data-binding implementer / controlled batch executor
+Builder: Codex bounded Builder / data-provenance verifier / data-binding implementer / controlled batch executor
 
 Owner: final scientific authority
 
-## 1. Supersession and resolved Owner designation
+## 1. Revision, supersession, and current scientific decision
 
-This task supersedes the blocked route recorded by execution commit:
+This live task supersedes the blocked execution recorded by:
 
 `f4a905bf45a51ccc6433cc5954f39ecc59f37823`
 
@@ -20,144 +20,281 @@ with terminal:
 
 `MP4C_OWNER_A_CAPITAL_PROVENANCE_UNRESOLVED__RERUN_NOT_AUTHORIZED`.
 
-The unresolved choice is now scientifically resolved from the Owner's dissertation specification plus the Owner's prior selection of intended calendar semantics.
+It also revises the immediately preceding version of this same task. The Owner has clarified that MATLAB/R preprocessing had already computed a Zhang-Jun-method provincial capital-stock series and stored it in the **last sheet** of:
 
-The dissertation explicitly states that provincial capital stock is estimated using the Zhang-Jun methodology and that provincial total capital stock can be obtained directly using the R package `CHNCapitalStock` developed by Chen Pu et al. It further states that the multi-province model uses provincial GDP, capital stock and population data to construct per-capita output/capital and technology estimates.
+`2000年后各省数据_填充NA.xlsx`
 
-Therefore the Owner designates:
-
-`OWNER_DESIGNATES_R语言计算资本存量_AS_INTENDED_2000_2023_31_PROVINCE_HANK_CAPITAL_STOCK_SERIES`
-
-and:
-
-`OWNER_DESIGNATES_CHNCAPITALSTOCK_AS_SCIENTIFIC_CAPITAL_CONSTRUCTION_AUTHORITY`
-
-The workbook sheet named exactly:
+under the exact sheet name:
 
 `R语言计算资本存量`
 
-is the intended scientific capital-stock series for the corrected annual HANK calibration.
+The corresponding upstream/raw workbook is:
 
-The active legacy MATLAB read of `总资本存量` is retained as historical implementation evidence only. It is not final scientific authority under Owner-A intended calendar semantics.
+`2000年后各省数据.xlsx`
 
-## 2. Scientific calendar contract
+The dissertation documents the Zhang-Jun capital-stock methodology and the use of the R package `CHNCapitalStock` for provincial capital-stock construction.
+
+**Critical revision:** the stored `R语言计算资本存量` sheet is now an **Owner-designated candidate scientific capital series**, but it MUST NOT be treated as final input merely because its values are positive or because its label references R. Before any corrected HANK execution, Codex must independently verify that this stored 2000–2023 × 31-province series is a faithful output of the intended Zhang-Jun / `CHNCapitalStock` construction from the relevant upstream/raw inputs.
+
+Required candidate marker:
+
+`OWNER_DESIGNATES_R语言计算资本存量_AS_CANDIDATE_CHNCAPITALSTOCK_SERIES_PENDING_REPRODUCIBILITY_AUDIT`
+
+Only after the verification gate in Sections 4–7 passes may Codex promote it to:
+
+`OWNER_A_R语言计算资本存量_VERIFIED_AS_INTENDED_CHNCAPITALSTOCK_HANK_CAPITAL_SERIES`
+
+The Owner continues to select intended calendar semantics over the historical MATLAB annual-loop indexing defect.
+
+## 2. Frozen intended calendar semantics
 
 Freeze exactly:
 
-- processed level-data calendar: `2000–2023`, 24 years;
-- reported annual steady states: `2009–2023`, 15 years;
-- steady-state year `Y` uses rolling PLM window `[Y-9,Y]`;
+- processed annual level-data calendar: `2000–2023`, exactly 24 years;
+- reported annual steady states: `2009–2023`, exactly 15 years;
+- steady-state year `Y` uses the 10-year rolling PLM window `[Y-9,Y]`;
 - rolling-window/cache entry: `Y-2008` => `1–15`;
 - R regression vintage: `Y-1999` => `10–24`;
 - calendar level row: `Y-1999` => `10–24`;
 - level calendar year: `Y`;
-- technology/productivity objects come from the matching rolling PLM entry;
-- GDP, POP and capital levels correspond to the steady-state calendar year.
+- rolling technology/productivity objects come from the matching 10-year PLM window;
+- annual GDP, POP and intended capital levels correspond to the **window end year `Y`**.
 
-The legacy MATLAB `data_year=ii` row `1–15` annual implementation is classified as:
+The historical protected MATLAB annual loop that passes `data_year=ii` for `ii=1..15` is classified as:
 
 `LEGACY_MATLAB_CALENDAR_BINDING_DEFECT__NOT_FINAL_PAPER_SCIENCE_AUTHORITY`.
 
-## 3. Capital series contract
+This decision changes annual calendar/data binding only. It does not authorize mutation of HJB/KFE, household equations, one-turn ordering, migration, firm/wage/monetary/fiscal blocks, controllers, calibration, grids, tolerances, convergence thresholds, or the accepted MP4D shock-response semantics.
 
-Use the exact frozen sheet `R语言计算资本存量` from the provenance-qualified processed workbook.
+The corrected-2009 same-input MATLAB–Python parity remains the numerical regression anchor.
 
-Expected structure to verify before any science:
+## 3. Required live continuity
 
-- years: exactly `2000–2023`;
-- rows: 24 annual observations plus header;
-- provinces: exactly 31 mainland provinces in the accepted common province order;
+At execution start:
+
+1. fresh-fetch `origin/main`;
+2. require this exact **revised task content** live on `main`;
+3. require the revised task commit to be the direct child of the prior task-authority commit `cc5a9c3038b4ddfac32cf76d1a1bc0aca9f47427`;
+4. require `HEAD == origin/main`, ahead/behind `0/0`;
+5. require a clean tracked worktree;
+6. read completely:
+   - `AGENTS.md`;
+   - `project_rules/PROJECT_RULE_INDEX_CURRENT.md` and all CURRENT rules it names;
+   - corrected-2009 parity acceptance;
+   - prior MP4C scope/data/runtime-cache reports and tasks;
+   - the capital-provenance blocker report at `f4a905...`;
+   - MP4D source-semantics execution and L3 acceptance reports;
+   - current annual adapter/worker/scheduler/tests;
+   - dissertation passages documenting the Zhang-Jun / `CHNCapitalStock` capital-stock method.
+
+Do not use chat text as a substitute for the live revised task.
+
+## 4. Phase A0 — exact artifact identity and workbook-structure audit — ZERO HANK SCIENCE
+
+Before reconstructing capital, identify and hash the exact local artifacts actually used.
+
+Read-only inspect at minimum:
+
+- `2000年后各省数据.xlsx`;
+- `2000年后各省数据_填充NA.xlsx`;
+- `R语言估计结果_plm估计.xlsx`;
+- `数据估计结果_1000_100_0.mat`;
+- every R script / MATLAB script / helper under the protected project tree that constructs, imports, copies, transforms, or comments on provincial capital stock;
+- any locally available `CHNCapitalStock` package source, package metadata, lock/version record, R library installation, saved R workspace, generated CSV/XLSX/MAT artifact, or script invocation relevant to the stored sheet.
+
+Record SHA-256, bytes, modified time where available, workbook sheet order/names, and exact axes.
+
+For both the raw and filled workbooks, enumerate the capital-relevant sheets and source series, including at minimum where present:
+
+- `固定资产投资额`;
+- `总资本存量`;
+- `R语言计算资本存量`;
+- any investment price / deflator / depreciation / base-year / price-base series needed by the Zhang-Jun / `CHNCapitalStock` construction.
+
+Do not mutate any workbook.
+
+## 5. Phase A1 — stored `R语言计算资本存量` axis, completeness, and internal-consistency audit
+
+Treat the stored sheet as a candidate object only.
+
+Prove:
+
+- calendar years exactly `2000–2023` in order;
+- exactly 24 annual rows;
+- exactly 31 provincial columns excluding the year label;
+- province labels map exactly to the accepted common 31-province order;
 - no missing values;
-- all capital values finite and strictly positive;
-- 2022 and 2023 all 31 provinces finite and strictly positive.
+- no duplicate year/province labels;
+- all 24×31 values finite and strictly positive;
+- 2022 and 2023 all 31 provinces finite and strictly positive;
+- no hidden alternate rows/columns or formula/error cells change the interpreted data;
+- units/price-base interpretation is recoverable from source/script/package evidence rather than guessed from magnitude alone.
 
-Do not use `总资本存量` for corrected annual HANK Kt0/Kt/GovInv calibration.
+Persist a 24×31 audit receipt with exact sheet coordinates and value hashes.
 
-Do not mix the two capital series across years or provinces.
+## 6. Phase A2 — independent reproducibility audit of the Zhang-Jun / CHNCapitalStock output
 
-Do not use `abs`, clipping, epsilon replacement, manual interpolation, or ad-hoc repair.
+This is the key new gate requested by the Owner.
 
-### 3.1 Unit and scaling authority
+### 6.1 Recover the exact intended construction
 
-`CHNCapitalStock` documentation defines investment/depreciation inputs in units of 100 million yuan and returns provincial capital stock together with the investment price index. The workbook capital series is to be treated as the frozen `CHNCapitalStock` capital-stock output in its recorded price-base units, economically corresponding to `亿元`-scale provincial capital stock.
+From dissertation text, local R/package source, scripts, comments, and workbook provenance, determine the exact capital-stock construction used/intended, including as far as recoverable:
 
-Do not invent an additional empirical scaling.
+- package/function name;
+- package version or source identity;
+- Zhang-Jun methodological variant implemented;
+- required raw input series;
+- base year / initial capital rule;
+- depreciation assumptions;
+- investment-price / deflator treatment;
+- nominal-to-real transformation;
+- currency unit;
+- output price-base;
+- province ordering;
+- year ordering;
+- any NA fill or preprocessing that occurs before capital reconstruction.
 
-Before scientific execution, prove the exact conversion from workbook capital values to model-internal `Kt0/Kt/GovInv` units using the formally accepted corrected-2009 same-input anchor and the existing model input multipliers/contracts. Prefer the same monetary-unit multiplier used for GDP if and only if the 2009 anchor proves it exactly.
+Do not silently replace unknown package defaults with generic perpetual-inventory assumptions.
 
-If the exact 2009 scaling cannot be reproduced deterministically, STOP before science with:
+### 6.2 Raw-versus-filled input provenance
+
+Compare `2000年后各省数据.xlsx` with `2000年后各省数据_填充NA.xlsx` for every input that enters the capital reconstruction.
+
+Identify exactly:
+
+- which cells differ;
+- which cells were NA/missing originally;
+- how those missing values were filled, if the rule is source-recoverable;
+- whether the stored `R语言计算资本存量` sheet was generated from raw inputs, filled inputs, or another intermediate representation;
+- whether any later manual edit occurred after the R calculation.
+
+If the input lineage cannot be established uniquely, do not claim exact reproducibility.
+
+### 6.3 Bounded independent R reproduction is authorized
+
+The Owner explicitly authorizes a **data-preprocessing verification run only** of the capital-stock construction.
+
+Allowed:
+
+- run local R only to reproduce/verify the `CHNCapitalStock` capital-stock calculation from identified local inputs;
+- use an already installed/local package or locally available package source whose identity/version can be recorded;
+- execute the minimum deterministic capital reconstruction necessary for the audit;
+- write outputs only to a fresh external evidence root.
+
+Forbidden:
+
+- rerun the rolling PLM regressions;
+- install/update packages from the internet;
+- change package source;
+- change package defaults without source evidence;
+- run MATLAB HANK;
+- run Python stationary/HJB/KFE;
+- run shocks/IRFs.
+
+If the exact package/version is unavailable but local source code or a deterministic equivalent script is available, Codex may reproduce the calculation from that exact source and must label it accordingly.
+
+If neither exact package/source nor a uniquely recoverable deterministic reconstruction is available, classify reproducibility as unresolved rather than guessing.
+
+### 6.4 Stored-sheet versus independent-reproduction comparison
+
+Compare the independently reproduced 24×31 capital matrix against the stored `R语言计算资本存量` sheet.
+
+Report at minimum:
+
+- exact-match count;
+- maximum absolute difference;
+- maximum relative/normalized difference;
+- worst year/province/value pair;
+- count above numerical roundoff;
+- whether discrepancies are explained solely by workbook display/serialization precision;
+- whether any discrepancy is economically/materially nontrivial.
+
+If the same package/source and same inputs are reproduced, expect equality up to ordinary floating serialization/roundoff. Do not adopt a loose tolerance merely to force PASS.
+
+Persist both matrices and a cell-level diff table in the external evidence package; do not commit them to GitHub.
+
+## 7. Capital verification classifications
+
+Choose exactly one strongest supported classification **before correcting annual HANK inputs**:
+
+### V1 — verified stored CHNCapitalStock series
+
+Use only if construction lineage and independent reproduction support the stored 24×31 sheet:
+
+`MP4C_STORED_R_CHNCAPITALSTOCK_2000_2023_31PROV_REPRODUCIBILITY_VERIFIED__HANK_USE_AUTHORIZED`
+
+This promotes:
+
+`R语言计算资本存量`
+
+to the intended capital-stock authority for the corrected annual HANK route.
+
+### V2 — stored sheet contains a correctable deterministic generation/serialization defect
+
+Use only if exact source/package evidence proves a unique deterministic correction and the corrected matrix can be independently reproduced:
+
+`MP4C_STORED_R_CHNCAPITALSTOCK_DEFECT_IDENTIFIED__DETERMINISTIC_RECONSTRUCTION_PROVEN__OWNER_A_HANK_USE_AUTHORIZED`
+
+Do not overwrite the workbook. Use a separately generated, fully provenance-bound corrected capital artifact for Python.
+
+### V3 — unresolved
+
+If package/source/input lineage or numerical reproduction is not unique:
+
+`MP4C_STORED_R_CHNCAPITALSTOCK_REPRODUCIBILITY_UNRESOLVED__HANK_RERUN_NOT_AUTHORIZED`
+
+STOP before HANK science.
+
+### V4 — stored sheet materially wrong
+
+If independent exact-source reproduction materially contradicts the stored sheet and no uniquely proven corrected artifact exists:
+
+`MP4C_STORED_R_CHNCAPITALSTOCK_MATERIAL_ERROR_CONFIRMED__HANK_RERUN_NOT_AUTHORIZED`
+
+STOP before HANK science and report the precise error map.
+
+## 8. Model-unit/scaling gate after V1/V2 only
+
+Only after V1 or V2, prove the exact conversion from the verified capital series to model-internal `Kt0/Kt/GovInv` units.
+
+Use:
+
+- corrected-2009 same-input parity anchor;
+- existing model GDP/population multipliers;
+- source unit documentation;
+- the verified capital artifact.
+
+Do not invent scaling from magnitude alone.
+
+If exact scaling cannot be deterministically recovered, STOP with:
 
 `MP4C_CHNCAPITALSTOCK_MODEL_UNIT_SCALING_UNRESOLVED__RERUN_NOT_AUTHORIZED`.
 
-## 4. Required live continuity
+## 9. Corrected Owner-A input construction after V1/V2 + scaling PASS only
 
-At start:
+Use a representation label that explicitly distinguishes intended science from legacy MATLAB annual binding, e.g.:
 
-1. fresh-fetch `origin/main`;
-2. require this task live on `main` as direct child of `f4a905bf45a51ccc6433cc5954f39ecc59f37823`;
-3. require `HEAD == origin/main`, ahead/behind `0/0`;
-4. require clean tracked worktree;
-5. read `AGENTS.md`, rule index, all CURRENT rules, corrected-2009 parity acceptance, prior MP4C reports/tasks, MP4D acceptance, current annual adapter/worker/scheduler/tests;
-6. read the dissertation passages documenting `CHNCapitalStock` and annual parameter calibration;
-7. read-only inspect the processed workbook, `R语言估计结果_plm估计.xlsx`, runtime cache, and existing provenance-qualified data copies.
-
-## 5. Phase A — ZERO-SCIENCE implementation and preflight
-
-Exact scientific execution budget in Phase A:
-
-- MATLAB: `0`;
-- R estimation/model rerun: `0`;
-- Python stationary: `0`;
-- household/HJB/KFE: `0`;
-- comparator: `0`;
-- shock/IRF: `0`.
-
-### 5.1 Corrected input representation
-
-Create/use an explicit representation label:
-
-`OWNER_A_CHNCAPITALSTOCK_ROLLING_PLM_END_YEAR_CALENDAR_INPUT`
+`OWNER_A_VERIFIED_CHNCAPITALSTOCK_ROLLING_PLM_END_YEAR_CALENDAR_INPUT`
 
 For steady-state year `Y`:
 
-- select `IND_alpha`, `IND_Zt` and other rolling-estimation technology objects from rolling entry `Y-2008`;
-- select GDP and population for calendar year `Y` from row `Y-1999`;
-- select capital for calendar year `Y` from sheet `R语言计算资本存量`, year `Y`, same province;
-- derive `log_pgdp` deterministically from selected GDP/POP;
-- derive `log_pcap` deterministically from selected CHNCapitalStock/POP;
-- derive inter-province capital ratios from the selected positive capital/per-capita-capital representation according to the already frozen source-semantic formula;
-- bind every selected field to source artifact SHA, sheet/field, calendar year, province and conversion/scaling rule.
+- `IND_alpha`, `IND_Zt` and other rolling-estimation technology objects: correct rolling entry `Y-2008`;
+- GDP: calendar year `Y`, row `Y-1999`;
+- POP: calendar year `Y`, row `Y-1999`;
+- CAP: verified V1/V2 capital series for calendar year `Y` and province;
+- `log_pgdp`: recompute deterministically from selected GDP/POP;
+- `log_pcap`: recompute deterministically from selected verified CAP/POP;
+- inter-province asset/capital ratio: recompute from the verified intended capital representation using the frozen source-semantic formula.
 
-Do not reuse legacy complex `log_pcap` values after replacing the underlying capital series.
+Bind every field to artifact SHA, sheet/source, year, province, unit/scaling rule and semantic index.
 
-### 5.2 Implementation scope
+Do not reuse invalid legacy complex `log_pcap` after replacing CAP.
 
-Allowed minimal changes:
+## 10. Mandatory 15-year ZERO-HANK-science preflight
 
-- `validators/multi_province/mp4c_matlab_runtime_cache.py` or a new narrowly scoped Owner-A input adapter;
-- annual production/batch manifests only as necessary to expose the new representation and semantic indices;
-- focused tests;
-- PowerShell launcher only if necessary for the new representation or worker count.
+Before any annual worker launch, materialize corrected inputs for all years `2009–2023`.
 
-Forbidden scientific mutations:
-
-- HJB/KFE;
-- household equations;
-- one-turn ordering;
-- migration;
-- firm/wage/monetary/fiscal blocks;
-- controllers;
-- calibration parameters;
-- grids;
-- tolerances;
-- convergence thresholds;
-- MP4D shock semantics.
-
-### 5.3 Mandatory all-15-year preflight
-
-Materialize corrected inputs for every year 2009–2023 before starting any worker.
-
-For each year prove:
+For every year prove:
 
 - rolling window `[Y-9,Y]`;
 - rolling entry `1–15`;
@@ -165,31 +302,42 @@ For each year prove:
 - calendar level row `10–24`;
 - exact calendar year;
 - exact 31-province order;
-- exact workbook/cache/R-regression identities;
+- exact workbook/cache/R capital artifact identities;
 - GDP finite and positive;
 - POP finite and positive;
-- CHNCapitalStock finite and positive;
+- verified CAP finite and positive;
 - `log_pgdp` finite real;
 - `log_pcap` finite real;
 - technology parameters finite/admissible;
 - exact model-unit scaling contract;
-- worker launches = `0` during preflight.
+- HANK worker launches = `0` during preflight.
 
-For 2009, require explicit comparison against the formally accepted corrected-2009 same-input parity anchor. The corrected input must reproduce the accepted 2009 relevant input fields within the already accepted representation/tolerance contract. Any material unexplained contradiction stops before batch execution.
+For 2009, compare corrected relevant inputs explicitly against the formally accepted corrected-2009 same-input parity anchor. Any material unexplained contradiction stops before expensive execution.
 
-Persist a full per-year/per-province audit of the CHNCapitalStock mapping and the prior-vs-corrected capital difference.
+## 11. Phase-A/preflight scientific budget
 
-## 6. Phase A terminal
+Until Sections 4–10 PASS:
 
-If all zero-science checks pass:
+- MATLAB HANK calls: `0`;
+- R PLM regressions: `0`;
+- Python stationary: `0`;
+- Python household/HJB/KFE: `0`;
+- comparator: `0`;
+- shock/IRF/R5/Results: `0`.
 
-`MP4C_OWNER_A_CHNCAPITALSTOCK_CORRECTED_INPUTS_2009_2023_PREFLIGHT_PASS__8WORKER_BATCH_AUTHORIZED__SCIENTIFIC_CALLS_0`
+The only newly authorized executable computation before HANK is the bounded R capital-reconstruction verification described in Section 6.3.
 
-If any identity/scaling/calendar condition fails, stop without science.
+## 12. Preflight terminal
 
-## 7. Phase B — exactly 8-worker corrected annual rerun
+If and only if V1 or V2, unit/scaling PASS, corrected 2009 anchor PASS, and all 15 input preflights PASS:
 
-Upon Phase-A PASS, Codex is authorized to execute the corrected scientific batch directly.
+`MP4C_VERIFIED_CHNCAPITALSTOCK_CORRECTED_INPUTS_2009_2023_PREFLIGHT_PASS__8WORKER_BATCH_AUTHORIZED`
+
+Otherwise STOP under the strongest blocker classification above.
+
+## 13. Phase B — exactly 8-worker corrected annual HANK rerun
+
+Upon full preflight PASS, Codex is authorized to execute the corrected scientific batch directly without waiting for another Owner launch message.
 
 Use exactly:
 
@@ -206,31 +354,30 @@ Use exactly:
 - no default wall-clock kill.
 
 Do not run MATLAB.
-Do not rerun R estimation.
-Do not run comparator until the corrected Python batch has completed.
+Do not rerun R PLM estimation.
 Do not run shocks/AR(1)/IRF/R5/Results.
 
-Use a fresh no-overwrite output root, preferred:
+Use a fresh no-overwrite batch root, preferred:
 
-`D:\ProjectTemp\ch5-mp4c-owner-a-chncapitalstock-corrected-8worker-20260902-001`
+`D:\ProjectTemp\ch5-mp4c-owner-a-verified-chncapitalstock-8worker-20260902-001`
 
-Never reuse either prior batch root.
+Never reuse prior batch roots.
 
-If the batch has any infrastructure/memory failure or any scientific year failure:
+If any infrastructure/memory/scientific year failure occurs:
 
-- preserve all evidence;
+- preserve evidence;
 - no automatic rerun;
 - no worker-count change;
-- stop with the appropriate incomplete/failure terminal.
+- STOP with incomplete/failure terminal.
 
-## 8. Required scientific outputs
+## 14. Required annual and root outputs
 
 For every successful year require:
 
 - corrected annual input artifact and identity;
 - final steady state;
 - 31×20 terminal table;
-- Lt_mat;
+- `Lt_mat`;
 - final household restart NPZ;
 - MATLAB-readable Python checkpoint MAT;
 - checkpoint manifest;
@@ -246,7 +393,7 @@ Root outputs must include:
 - batch timing;
 - artifact hash manifest.
 
-## 9. Phase C — read-only closeout and comparison
+## 15. Phase C — read-only closeout
 
 After the 8-worker batch completes:
 
@@ -254,67 +401,81 @@ After the 8-worker batch completes:
 2. require 15/15 `SOURCE_CONVERGED` for full PASS;
 3. verify 31/31 household convergence per year;
 4. verify all 31×20 fields finite;
-5. verify checkpoint and root artifact hashes;
-6. verify all corrected input identities and semantic indices;
-7. compare corrected 2009 against the formally accepted corrected-2009 MATLAB–Python same-input anchor;
-8. compare other years only against provenance-qualified MATLAB artifacts whose scientific calendar/data semantics are actually compatible;
+5. verify corrected input identities and all semantic indices;
+6. verify checkpoint and root artifact hashes;
+7. compare corrected 2009 against the formally accepted corrected-2009 same-input anchor;
+8. compare other years only against scientifically/calendar-compatible reference artifacts;
 9. do not treat legacy `data_year=ii` MATLAB outputs as corrected 2010–2023 parity authority;
-10. do not rerun MATLAB.
+10. do not rerun MATLAB;
+11. do not claim blanket 2010–2023 MATLAB–Python parity without compatible reference evidence.
 
-Do not claim blanket 2010–2023 MATLAB–Python parity unless compatible reference evidence actually exists.
-
-## 10. Historical status
+## 16. Historical status
 
 Preserve the old 9-hour batch as:
 
 `LEGACY_CONFLATED_WINDOW_AND_LEVEL_ROW_BATCH__ENGINEERING_CONVERGENCE_ONLY__NOT_FINAL_CALENDAR_YEAR_AUTHORITY`.
 
-The corrected-2009 same-input parity remains valid unless this task produces direct contradictory same-input evidence.
+Corrected-2009 same-input parity remains valid unless direct contradictory same-input evidence emerges.
 
-MP4D source-semantics acceptance remains valid, but numerical shock implementation remains blocked until this corrected annual gate closes.
+MP4D source-semantics acceptance remains valid; numerical shock implementation remains blocked until this corrected annual gate closes.
 
-## 11. Evidence package
+## 17. Evidence package
 
 Use a fresh no-overwrite evidence root, preferred:
 
-`D:\ProjectTemp\ch5-mp4c-owner-a-chncapitalstock-correction-20260902-001`
+`D:\ProjectTemp\ch5-mp4c-chncapitalstock-repro-audit-20260902-001`
 
 Persist at minimum:
 
-- `owner_capital_designation_contract.json`;
-- `chncapitalstock_axis_and_unit_audit.json`;
+- `artifact_identity_manifest.json`;
+- `raw_vs_filled_capital_input_diff.csv`;
+- `chncapitalstock_package_source_and_version.json`;
+- `chncapitalstock_method_contract.json`;
+- `stored_r_capital_axis_completeness_audit.json`;
+- `independent_chncapitalstock_reproduction.csv` if reproducible;
+- `stored_vs_reproduced_chncapitalstock_cell_diff.csv` if reproducible;
+- `stored_vs_reproduced_chncapitalstock_summary.json`;
+- `capital_verification_classification.json`;
+- `model_unit_scaling_audit.json` if V1/V2;
 - `rolling_plm_calendar_contract.csv`;
-- `corrected_2009_anchor_input_check.json`;
-- `corrected_2009_2023_input_preflight.json`;
-- `capital_series_legacy_vs_chncapitalstock_diff.csv`;
-- `zero_science_test_receipt.json`;
-- `corrected_8worker_build_receipt.json`;
+- `corrected_2009_anchor_input_check.json` if V1/V2;
+- `corrected_2009_2023_input_preflight.json` if V1/V2;
+- `zero_hank_science_ledger.json`;
+- `corrected_8worker_build_receipt.json` if batch authorized;
 - `batch_execution_receipt.json` if science executes;
 - `closeout_audit.json` if science completes;
 - `manifest.json`.
 
-## 12. Git boundary
+## 18. Git boundary and report
 
-Do not commit/push large generated data, runtime MAT/NPZ/XLSX/CSV outputs, or local source workbooks.
+Do not commit/push raw/filled workbooks, R package binaries, runtime MAT/NPZ/XLSX/CSV outputs, or generated batch data.
 
 After final closeout, one bounded commit/push may include only authorized code/tests/contracts and the required repository report.
 
 Required report:
 
-`docs/CH5_TWO_ASSET_HANK_MP4C_OWNER_A_CHNCAPITALSTOCK_CORRECTED_8WORKER_RERUN_REPORT.md`
+`docs/CH5_TWO_ASSET_HANK_MP4C_CHNCAPITALSTOCK_REPRO_AUDIT_AND_CORRECTED_8WORKER_RERUN_REPORT.md`
 
-## 13. Terminal classifications
+## 19. Terminal classifications
 
-Preflight blocked:
+Capital stored-sheet verified and full rerun succeeds:
 
-`MP4C_OWNER_A_CHNCAPITALSTOCK_CORRECTED_INPUT_PREFLIGHT_BLOCKED__NO_SCIENCE`
+`MP4C_VERIFIED_CHNCAPITALSTOCK_2009_2023_CORRECTED_8WORKER_ANNUAL_STATIONARY_COVERAGE_PASS`
 
-Batch incomplete/failure:
+Capital reproducibility unresolved:
 
-`MP4C_OWNER_A_CHNCAPITALSTOCK_CORRECTED_8WORKER_BATCH_INCOMPLETE__NO_AUTOMATIC_RERUN`
+`MP4C_STORED_R_CHNCAPITALSTOCK_REPRODUCIBILITY_UNRESOLVED__HANK_RERUN_NOT_AUTHORIZED`
 
-Full success:
+Stored capital materially wrong and no unique reconstruction:
 
-`MP4C_OWNER_A_CHNCAPITALSTOCK_2009_2023_CORRECTED_8WORKER_ANNUAL_STATIONARY_COVERAGE_PASS`
+`MP4C_STORED_R_CHNCAPITALSTOCK_MATERIAL_ERROR_CONFIRMED__HANK_RERUN_NOT_AUTHORIZED`
+
+Unit/scaling unresolved:
+
+`MP4C_CHNCAPITALSTOCK_MODEL_UNIT_SCALING_UNRESOLVED__RERUN_NOT_AUTHORIZED`
+
+Corrected 8-worker batch incomplete:
+
+`MP4C_VERIFIED_CHNCAPITALSTOCK_CORRECTED_8WORKER_BATCH_INCOMPLETE__NO_AUTOMATIC_RERUN`
 
 No numerical shock/IRF implementation is authorized in this task.
