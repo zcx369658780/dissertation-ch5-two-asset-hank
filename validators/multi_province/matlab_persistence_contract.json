@@ -1,0 +1,56 @@
+{
+  "schema": "CH5_MP4C_MATLAB_PERSISTENCE_CONTRACT_V1",
+  "audit_mode": "READ_ONLY_ZERO_SCIENCE",
+  "logical_root": "C:\\MatlabProgram\\2023年12月2日 多省份神经网络HANK",
+  "physical_root": "D:\\MatlabProgram\\2023年12月2日 多省份神经网络HANK",
+  "root_relationship": "C:\\MatlabProgram is a junction to D:\\MatlabProgram; both names identify the same protected read-only storage",
+  "annual_runtime_input": {
+    "representation": "MATLAB_PROTECTED_RUNTIME_DATA_CACHE",
+    "artifact": "数据估计结果_1000_100_0.mat",
+    "sha256": "923CC9E592C14B320C624509A0B498DBCC7D2533F77F0E4B4793521B10849E9A",
+    "producer_selector": "load_GDPdata.m",
+    "selection": "when reg_file exists, load(reg_file,'mydata2') and return mydata2",
+    "consumer": "multi_prov_HANK_12sts.m passes data_MAT{ii} to mpHANK_equilibrium_2000.m",
+    "lineage": "upstream workbooks -> load_GDPdata.m processing -> protected runtime cache -> MATLAB annual runtime -> Python MATLAB-faithful runtime binding"
+  },
+  "annual_cache": {
+    "caller": "main.m -> multi_prov_HANK_12sts(i,0)",
+    "writer": "multi_prov_HANK_12sts.m",
+    "naming_expression": "strcat('Multi_Province_12sts_',num2str(year),'.mat')",
+    "save_expression": "save(stfile, 'st', '-v7.3')",
+    "st_builder": "mpHANK_equilibrium_2000.m",
+    "st_fields": ["results", "grids", "sigmau_MAT", "N_prov", "data_MAT", "param", "num", "CHI"]
+  },
+  "steady_state_workbook": {
+    "legacy_name": "12年稳态值.xlsx",
+    "writer": "main.m/writetable",
+    "sheets": ["稳态值_Yt0", "稳态值_Yt", "稳态值_Kt0", "稳态值_Kt", "稳态值_Lt0", "稳态值_Lt"],
+    "layout": "first column 省份; subsequent columns are calendar years; 31 province rows",
+    "scaling": {"Yt0": "divide param.GDP_multiplier", "Yt": "divide param.GDP_multiplier", "Kt0": "divide param.GDP_multiplier", "Kt": "divide param.GDP_multiplier", "Lt0": "results.N divided by param.POP_multiplier", "Lt": "divide param.POP_multiplier"},
+    "production_analogue": "2009_2023_稳态值.xlsx"
+  },
+  "ltmat_workbook": {
+    "legacy_name": "12年稳态Ltmat.xlsx",
+    "writer": "main.m -> Ltmat_save.m",
+    "source": "sts{iyear}.results{31}.Lt_mat",
+    "sheet_expression": "strcat(num2str(iyear+2008),'年')",
+    "layout": "31x31 numeric table; variable names are origin provinces; MATLAB source does not write row names",
+    "orientation": "destination_row_x_origin_column",
+    "production_analogue": "2009_2023_稳态Ltmat.xlsx"
+  },
+  "shock_reader": {
+    "call_chain": "main.m -> multi_prov_HANK.m -> multi_prov_HANK_12sts.m -> mpHANK_shock_2000.m",
+    "top_level_st_fields_consumed": ["results", "grids", "param", "num", "CHI"],
+    "top_level_st_fields_present_but_not_consumed_by_live_shock_body": ["data_MAT", "sigmau_MAT", "N_prov"],
+    "result_fields_read_directly_from_baseline": ["Zt", "GovInv", "tau", "corptau"],
+    "result_fields_required_by_HANK_mp_1turn_and_downstream_household_firm_controller": ["Ct", "At", "Bt", "Lt", "Lt_supply", "Kt_supply", "rah", "Kt", "Yt", "mt", "KNratio", "w", "wjt", "rk", "ra", "GovInv", "rb", "it", "Zt", "Govinc", "Tt", "rb_gap", "pit", "pit_1", "totalpit", "epsilon_pi", "tau", "AtTax", "GovSurplus", "corptau", "inter_prv_ratio", "N", "alpha", "Kt0", "Yt0", "Zt_1", "prvname", "convergent"],
+    "migration_wedge_behavior": "mpHANK_shock_2000 reloads sigmau_MAT each period using load_distdata; st.sigmau_MAT read is commented out"
+  },
+  "household_restart": {
+    "matlab_HJB_outputs_persisted_in_results": ["g", "C", "l", "aaah", "rb_neg", "Lt", "Bt", "At", "Ct", "AtTax", "convergent"],
+    "matlab_HJB_objects_computed_but_comment_disabled_in_results": ["V", "bbb", "zzz", "Income", "MPC", "u", "s"],
+    "python_available_final_objects_required_for_reproducible_restart": ["value", "initial_value", "consumption", "labor", "transfer", "adjustment_cost", "effective_illiquid_return", "mu_a", "mu_b", "utility", "liquid_label", "transfer_label", "kfe_density", "grid_b", "grid_a", "grid_z", "switch_matrix"],
+    "compatibility_claim": "Python_Multi_Province_12sts_<year>.mat is a source-backed Python checkpoint, not a byte-compatible or drop-in legacy MATLAB st replacement"
+  },
+  "diagnostic_only_objects": ["full per-turn household input/output chronology", "contaminated KFE linear-system internals", "HJB sparse operators"]
+}
