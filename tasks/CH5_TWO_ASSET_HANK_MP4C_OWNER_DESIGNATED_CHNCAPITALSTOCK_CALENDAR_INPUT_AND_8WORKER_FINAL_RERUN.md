@@ -12,15 +12,24 @@ Owner: final scientific authority
 
 ## 1. Revision, supersession, and current scientific decision
 
-This live task supersedes the blocked execution recorded by:
+This live task now supersedes the latest reproduction-block execution:
 
-`f4a905bf45a51ccc6433cc5954f39ecc59f37823`
+`ebe8b17364a1d9b860d154b7f6c21e000adb515e`
 
 with terminal:
 
-`MP4C_OWNER_A_CAPITAL_PROVENANCE_UNRESOLVED__RERUN_NOT_AUTHORIZED`.
+`MP4C_STORED_R_CHNCAPITALSTOCK_REPRODUCIBILITY_UNRESOLVED__HANK_RERUN_NOT_AUTHORIZED`.
 
-It also revises the immediately preceding version of this same task. The Owner has clarified that MATLAB/R preprocessing had already computed a Zhang-Jun-method provincial capital-stock series and stored it in the **last sheet** of:
+That execution correctly stopped because, at that time, the local R runtime/package/source required for independent reconstruction had not been recovered.
+
+The Owner has now supplied additional decisive evidence:
+
+- R `4.6.1` is available at `C:\Program Files\R\R-4.6.1\bin\Rscript.exe`;
+- an independent user library contains `CHNCapitalStock 0.1.1` and `openxlsx 4.2.8.1`;
+- `D:\Rprogramme\main.r` contains the historical capital-construction code;
+- the available `main.r` is a May-2025 backup and a later local revision may have extended the capital construction to 2023.
+
+The stored Zhang-Jun-method candidate remains the **last sheet** of:
 
 `2000年后各省数据_填充NA.xlsx`
 
@@ -44,27 +53,20 @@ Only after the verification gates below pass may Codex promote it to:
 
 `OWNER_A_R语言计算资本存量_VERIFIED_AS_INTENDED_CHNCAPITALSTOCK_HANK_CAPITAL_SERIES`.
 
-### 1.1 New decisive evidence: archived R program is only a 2000–2022 reconstruction source
+### 1.1 Archived R program proves the recovered copy is only a 2000–2022 reconstruction source
 
-The Owner has supplied the R program used in the historical workflow and states that the available copy is a **May-2025 backup**; a later local revision may have added 2023.
-
-The supplied program contains all of the following:
+The recovered program contains all of the following:
 
 - `data_list <- data.frame("省份"=2000:2023)`;
 - for every province, `CompK_ZJ(prv=..., bt=2000)`;
 - `selected_rows <- temp_result$yr >= 2000 & temp_result$yr <= 2022`;
-- the stored result is written to sheet `R语言计算资本存量`;
+- the result is written to sheet `R语言计算资本存量`;
 - the later overall and rolling PLM sections read `R语言计算资本存量` as the capital input;
 - the rolling estimation loop is `itime in 10:24`.
 
-Current local reproduction evidence also shows:
+Current package evidence shows `CompK_ZJ(..., bt=2000)` exposes years only through `2022`. Therefore the recovered May-2025 script/current package route cannot by itself reproduce the stored 2023 row.
 
-- R `4.6.1` is available at `C:\Program Files\R\R-4.6.1\bin\Rscript.exe`;
-- local verification environment contains `CHNCapitalStock 0.1.1` and `openxlsx 4.2.8.1`;
-- `CompK_ZJ(..., bt=2000)` currently exposes years only through `2022`;
-- therefore the archived script/current package combination cannot by itself reproduce the stored 2023 row.
-
-This does **not** prove the stored 2023 row is wrong. It proves only that the currently recovered May-2025 script/package route is insufficient to verify it. The Owner explicitly authorizes a bounded source-faithful investigation of the likely later 2023 extension.
+This does **not** prove the stored 2023 row is wrong. It proves only that the currently recovered archived route is insufficient to verify it. The Owner explicitly authorizes a bounded source-faithful investigation of the likely later 2023 extension.
 
 ## 2. Frozen intended calendar semantics
 
@@ -94,7 +96,7 @@ At execution start:
 
 1. fresh-fetch `origin/main`;
 2. require this exact revised task content live on `main`;
-3. require the revised-task commit to be the direct child of prior revised authority `53e899c5196aebea0ae0306f6130196a232502af`;
+3. require the revised-task commit to be the direct child of latest blocker execution `ebe8b17364a1d9b860d154b7f6c21e000adb515e`, modulo only L3 task-refinement commits that update this exact task path;
 4. require `HEAD == origin/main`, ahead/behind `0/0`;
 5. require a clean tracked worktree;
 6. read completely:
@@ -103,6 +105,7 @@ At execution start:
    - corrected-2009 parity acceptance;
    - prior MP4C scope/data/runtime-cache reports and tasks;
    - capital-provenance blocker report at `f4a905...`;
+   - reproduction-block report at `ebe8b173...`;
    - MP4D source-semantics execution and L3 acceptance reports;
    - current annual adapter/worker/scheduler/tests;
    - dissertation passages documenting Zhang-Jun / `CHNCapitalStock` capital-stock construction;
@@ -131,23 +134,23 @@ Read-only inspect at minimum:
 
 The purpose is to determine whether a **later local revision** exists that extended the package data or the reconstruction through 2023.
 
-Do not delete, overwrite, normalize or edit any recovered source.
+Do not delete, overwrite, normalize or edit any recovered source. The refused cleanup of the older R installation is not a blocker and no deletion is required by this task.
 
 Record SHA-256, bytes, modified time, path, and provenance class for every relevant artifact.
 
 ### 4.1 Current R environment identity
 
-Record, without reinstalling/updating anything:
+Record, without further install/update:
 
 - R executable/version;
 - package library paths;
 - `CHNCapitalStock` version and installed-source identity;
 - `openxlsx` version;
 - full source text or deparsed body for `CompK_ZJ` and every helper it calls;
-- package datasets/objects consumed by `CompK_ZJ`, including their year support and province support;
+- package datasets/objects consumed by `CompK_ZJ`, including their year/province support;
 - package DESCRIPTION/NAMESPACE/source hashes where accessible.
 
-The already installed local verification environment may be used. No further internet installation/update is authorized.
+The already available local verification environment may be used. No further internet installation/update is authorized.
 
 ## 5. Phase A1 — stored `R语言计算资本存量` axis, completeness, and internal-consistency audit
 
@@ -170,15 +173,15 @@ Persist a 24×31 audit receipt with exact sheet coordinates and value hashes.
 
 ## 6. Phase A2 — split reproducibility audit: 2000–2022 first, 2023 separately
 
-This is the revised decisive gate.
+This is the decisive revised gate.
 
-### 6.1 Reproduce 2000–2022 exactly with recovered May-2025/current package route
+### 6.1 Reproduce 2000–2022 exactly with recovered/current package route
 
 Using the exact recovered script semantics:
 
 `CompK_ZJ(prv=<province>, bt=2000)`
 
-and the current local package/source identity, independently reconstruct all available years `2000–2022` for all 31 provinces.
+and current local package/source identity, independently reconstruct all available years `2000–2022` for all 31 provinces.
 
 Compare the resulting `23 × 31` matrix cell-by-cell against rows `2000–2022` of the stored `R语言计算资本存量` sheet.
 
@@ -191,15 +194,15 @@ Persist:
 - count above roundoff;
 - whether any difference is only Excel serialization/display precision.
 
-If 2000–2022 does not reproduce under the recovered script/package route, STOP before any 2023 extension attempt with:
+If 2000–2022 does not reproduce under the recovered route, STOP before any 2023 extension attempt with:
 
 `MP4C_STORED_R_CHNCAPITALSTOCK_2000_2022_REPRODUCTION_MISMATCH__2023_EXTENSION_NOT_AUTHORIZED`.
 
-If it reproduces, classify the partial result:
+If it reproduces, classify:
 
 `MP4C_STORED_R_CHNCAPITALSTOCK_2000_2022_REPRODUCIBILITY_VERIFIED__2023_EXTENSION_PENDING`.
 
-This partial marker does not yet authorize HANK.
+This partial marker does not authorize HANK.
 
 ### 6.2 Determine why current `CompK_ZJ` stops at 2022
 
