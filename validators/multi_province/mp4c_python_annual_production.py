@@ -24,6 +24,7 @@ for root in (REPO_ROOT / "src", REPO_ROOT):
 from validators.multi_province import mp4b_python_empirical as anchor
 from validators.multi_province import mp4c_python_annual_empirical as empirical
 from validators.multi_province import mp4c_matlab_runtime_cache as runtime_cache
+from validators.multi_province import mp4c_owner_a_2009_2022 as owner_a
 from ch5_two_asset_hank.multi_province.one_turn import PreFrozenHouseholdOutputBatch
 from ch5_two_asset_hank.multi_province.stationary_runtime import OnlineStationaryInputs, run_online_stationary
 from ch5_two_asset_hank.multi_province.steady_state import SteadyStateConvergenceError
@@ -61,7 +62,7 @@ def write_json_no_overwrite(path: Path, payload: Any) -> None:
 
 def scientific_identities() -> dict[str, str]:
     paths = [
-        Path(__file__), Path(runtime_cache.__file__), Path(empirical.__file__), REPO_ROOT / "src/ch5_two_asset_hank/multi_province/annual.py",
+        Path(__file__), Path(runtime_cache.__file__), Path(owner_a.__file__), Path(empirical.__file__), REPO_ROOT / "src/ch5_two_asset_hank/multi_province/annual.py",
         REPO_ROOT / "src/ch5_two_asset_hank/multi_province/one_turn.py",
         REPO_ROOT / "src/ch5_two_asset_hank/multi_province/firm.py",
         REPO_ROOT / "src/ch5_two_asset_hank/multi_province/stationary_runtime.py",
@@ -143,10 +144,17 @@ def persist_checkpoint(root: Path, year: int, canonical_sha: str, source_hashes:
 
 def run_year(runtime_input_path: Path, cache_path: Path, run_root: Path) -> int:
     root = Path(run_root); root.mkdir(parents=True, exist_ok=False)
-    supplied=json.loads(Path(runtime_input_path).read_text(encoding="utf-8"));year=int(supplied["binding"]["calendar_year"])
-    rebuilt=runtime_cache.add_runtime_support(runtime_cache.load_runtime_year(cache_path,year),distance_workbook=empirical.primary_sources(REPO_ROOT/"data_local/matlab_primary_source_snapshot").distance_workbook,distance_sha256=empirical.SOURCE_HASHES["中国各省省会地理距离矩阵.xlsx"],max_sigmau=empirical.accepted_source_scalars().max_sigmau)
-    if runtime_cache.canonical_bytes(rebuilt)!=Path(runtime_input_path).read_bytes():raise ValueError("runtime input bytes do not match exact cache materialization")
-    canonical=supplied; scalars=asdict(empirical.accepted_source_scalars());states=runtime_cache.entry_states(canonical,scalars)
+    supplied=json.loads(Path(runtime_input_path).read_text(encoding="utf-8"))
+    representation=supplied.get("representation")
+    if representation == owner_a.REPRESENTATION:
+        owner_a.validate(supplied)
+        year=int(supplied["binding"]["steady_state_calendar_year"])
+        canonical=supplied; scalars=asdict(empirical.accepted_source_scalars());states=owner_a.entry_states(canonical,scalars)
+    else:
+        year=int(supplied["binding"]["calendar_year"])
+        rebuilt=runtime_cache.add_runtime_support(runtime_cache.load_runtime_year(cache_path,year),distance_workbook=empirical.primary_sources(REPO_ROOT/"data_local/matlab_primary_source_snapshot").distance_workbook,distance_sha256=empirical.SOURCE_HASHES["中国各省省会地理距离矩阵.xlsx"],max_sigmau=empirical.accepted_source_scalars().max_sigmau)
+        if runtime_cache.canonical_bytes(rebuilt)!=Path(runtime_input_path).read_bytes():raise ValueError("runtime input bytes do not match exact cache materialization")
+        canonical=supplied; scalars=asdict(empirical.accepted_source_scalars());states=runtime_cache.entry_states(canonical,scalars)
     if year not in SUPPORTED_YEARS: raise ValueError(f"unsupported calendar year: {year}")
     canonical_copy = root / f"calendar_{year}_matlab_runtime_cache_input.json"
     canonical_copy.write_bytes(Path(runtime_input_path).read_bytes())
@@ -172,7 +180,7 @@ def run_year(runtime_input_path: Path, cache_path: Path, run_root: Path) -> int:
         final_checkpoints=current
         return PreFrozenHouseholdOutputBatch(ct=[x[0] for x in outputs],household_lt=[x[1] for x in outputs],at=[x[2] for x in outputs],bt=[x[3] for x in outputs],at_tax=[x[4] for x in outputs],converged=tuple(x[5] for x in outputs),diagnostics=tuple({"hjb_converged":x[5],"hjb_iterations":x[6],"hjb_statistic":x[7],"iteration":iteration} for x in outputs))
 
-    manifest={"schema":"CH5_MP4C_ANNUAL_PRODUCTION_RUN_V2","representation":runtime_cache.REPRESENTATION,"logging_mode":"terminal-only","calendar_year":year,"runtime_input_sha256":canonical_sha,"runtime_cache_sha256":canonical["cache_sha256"],"scientific_code_identities":scientific_identities(),"max_outer_turns":empirical.MAX_OUTER_TURNS,"max_household_calls":empirical.MAX_HOUSEHOLD_CALLS,"automatic_reruns":0,"wall_clock_timeout_seconds":None,"thread_environment":{k:os.environ.get(k) for k in THREAD_ENV}}
+    manifest={"schema":"CH5_MP4C_ANNUAL_PRODUCTION_RUN_V2","representation":representation,"logging_mode":"terminal-only","calendar_year":year,"runtime_input_sha256":canonical_sha,"runtime_cache_sha256":canonical["cache_sha256"],"scientific_code_identities":scientific_identities(),"max_outer_turns":empirical.MAX_OUTER_TURNS,"max_household_calls":empirical.MAX_HOUSEHOLD_CALLS,"automatic_reruns":0,"wall_clock_timeout_seconds":None,"thread_environment":{k:os.environ.get(k) for k in THREAD_ENV}}
     write_json_no_overwrite(root/"run_manifest.json",manifest)
     model_params={"ga":2.0,"phi_l":5.0,"alphal":1.0,"epsilon":10.0,"theta":100.0,"delta":0.025,"istar":0.015,"rho_pi":1.25,"totalpit":0.02,"epsilon_pi":0.0}
     try:
@@ -189,7 +197,7 @@ def run_year(runtime_input_path: Path, cache_path: Path, run_root: Path) -> int:
     timing={"calendar_year":year,"start_epoch":started,"end_epoch":time.time(),"wall_clock_seconds":time.monotonic()-started_mono,"process_status":result.termination_reason}
     write_json_no_overwrite(root/"year_timing.json",timing)
     required=[canonical_copy,root/"run_manifest.json",root/"final_steady_state.json",root/"final_31x20.csv",root/"Lt_mat_destination_row_origin_column.npy",root/"final_household_restart.npz",root/f"Python_Multi_Province_12sts_{year}.mat",root/"checkpoint_manifest.json",root/"year_timing.json"]
-    marker={"schema":"CH5_MP4C_YEAR_SUCCESS_V2","representation":runtime_cache.REPRESENTATION,"year":year,"status":result.termination_reason,"runtime_input_sha256":canonical_sha,"runtime_cache_sha256":canonical["cache_sha256"],"scientific_code_identities":scientific_identities(),"checkpoint_schema":CHECKPOINT_SCHEMA,"outputs":{p.name:{"sha256":_sha(p),"bytes":p.stat().st_size} for p in required}}
+    marker={"schema":"CH5_MP4C_YEAR_SUCCESS_V2","representation":representation,"year":year,"status":result.termination_reason,"runtime_input_sha256":canonical_sha,"runtime_cache_sha256":canonical["cache_sha256"],"scientific_code_identities":scientific_identities(),"checkpoint_schema":CHECKPOINT_SCHEMA,"outputs":{p.name:{"sha256":_sha(p),"bytes":p.stat().st_size} for p in required}}
     name="SUCCESS.json" if result.converged else "FAILURE.json"; write_json_no_overwrite(root/name,marker)
     return 0 if result.converged else 2
 
