@@ -105,7 +105,14 @@ def phase(root):
  a=sparse.csr_matrix([[-1.,1.,0.],[0.,-1.,1.],[0.,0.,0.]]);c=Capture(d);c.ctx={'outer_iteration':0,'province_index_0based':0,'province':'DUMMY','global_household_call_number':1};c.hjb={'hjb_converged':False,'hjb_iterations':100,'hjb_convergence_statistic':1.,'kfe_path':'MATLAB_FAITHFUL_POSTLOOP_AFTER_HJB_NONCONVERGENCE'};c.before(a);c.cont=a.transpose().tolil();c.cont[0,:]=0.;c.cont[0,0]=1.;c.cont=c.cont.tocsr();c.rhs=np.array([.007,0.,0.]);c.raw=np.array([np.nan,0.,0.]);c.persist([{'category':'MatrixRankWarning','message':'dummy exactly singular'}])
  required=('first_singularity_operator_A.npz','first_singularity_operator_transpose.npz','first_singularity_contaminated_matrix.npz','first_singularity_rhs.npy','first_singularity_rank_nullity.json')
  if not all((d/x).is_file() for x in required):raise RuntimeError('phase A persistence failure')
- j(root/'phase_a_zero_science_test_receipt.json',{'dummy_matrix_only':True,'scientific_calls':{'stationary':0,'household':0,'HJB':0,'KFE':0,'MATLAB':0,'R_PLM':0},'no_overwrite_verified':True,'required_files':list(required)})
+ grid=faithful.MatlabFaithfulHJBGrid(np.array([0.,7.]),np.array([0.,10.]),np.array([.8,1.3]),np.array([[-1/3,1/3],[1/3,-1/3]]));seen=[];op=type('O',(),{'full':sparse.eye(8,format='csr')})()
+ def dh(*args):seen.append('hjb');return type('H',(),{'post_convergence_operator':op,'consumption':np.ones((2,2,2)),'labor':np.ones((2,2,2))})()
+ def dk(x,*,shape,db,da):
+  assert x is op.full and shape==(2,2,2) and db==7 and da==10;seen.append('kfe');return type('K',(),{'density':np.ones((2,2,2))})()
+ def agg(*args):seen.append('aggregate');return type('G',(),{})()
+ solve_matlab_source_postloop_household(grid,None,None,None,None,0.,0.,None,hjb_solver=dh,kfe_solver=dk,aggregator=agg)
+ if seen!=['hjb','kfe','aggregate']:raise RuntimeError('dummy adapter injection flow failed')
+ j(root/'phase_a_zero_science_test_receipt.json',{'marker':'MP4C_2018_PHASE_A_DIAGNOSTIC_FIXTURE_REPAIR_PASS__ONE_FIRST_SINGULARITY_CAPTURE_EXECUTION_AUTHORIZED','dummy_matrix_only':True,'actual_production_grid_interface':True,'adapter_dummy_sequence':seen,'faithful_hjb_identity':faithful.solve_matlab_faithful_hjb.__module__,'faithful_kfe_identity':faithful.solve_matlab_faithful_stationary_kfe.__module__,'scientific_calls':{'stationary':0,'household':0,'HJB':0,'KFE':0,'MATLAB':0,'R_PLM':0},'no_overwrite_verified':True,'required_files':list(required)})
 def main():
  p=argparse.ArgumentParser();p.add_argument('input',nargs='?');p.add_argument('root');p.add_argument('--phase-a',action='store_true');a=p.parse_args();[os.environ.__setitem__(k,v) for k,v in ENV.items()];phase(a.root) if a.phase_a else run(a.input,a.root)
 if __name__=='__main__':main()
