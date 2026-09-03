@@ -4,6 +4,7 @@ from __future__ import annotations
 import csv
 import json
 from pathlib import Path
+from types import SimpleNamespace
 import numpy as np
 import pytest
 from scipy import sparse
@@ -64,6 +65,23 @@ def _one_turn_inputs(phi, at_tax):
     return OneTurnInputs(
         province_order=tuple(fixture["province_order"]), old_provinces=tuple(provinces), params=fixture["params"],
         phi_destination_origin=phi, migration_wedge_destination_origin=fixture["sigmau_mat"], household_outputs=household,
+    )
+
+
+def _dummy_normal_completion_result():
+    order = tuple(f"DUMMY_{index:02d}" for index in range(31))
+    final_state = tuple(
+        {"name": name, **{field: float(index + 1) for field in diagnostic.FINAL_FIELDS}}
+        for index, name in enumerate(order)
+    )
+    last = SimpleNamespace(
+        household_converged_count=31, ra_upper_count=0, ra_lower_count=0,
+        wage_upper_count=0, wage_lower_count=0,
+        nk_ratio_gap=np.full(31, 2.5e-10), yt_gap=np.full(31, 5.0e-10),
+    )
+    return order, SimpleNamespace(
+        converged=True, termination_reason=diagnostic.TERMINATION_CONVERGED,
+        iteration_count=2, final_state=final_state, history=(last, last),
     )
 
 
@@ -160,20 +178,24 @@ def test_attax_matches_production_literal_and_is_not_hardcoded_zero():
 
 def test_diagnostic_batch_materialization_matches_production_fields_with_injected_dummies():
     grid = _grid()
-    states = ({"rah": 0.1}, {"rah": 0.2})
-    results = tuple(_dummy_household_result(grid, index) for index in range(2))
-    batch = diagnostic.pre_frozen_household_output_batch(grid, tuple(zip(states, results)), iteration=9)
-    expected_tax = [diagnostic.production_literal_at_tax(grid, state, result) for state, result in zip(states, results)]
-    np.testing.assert_array_equal(batch.ct, [3.0, 4.0])
-    np.testing.assert_array_equal(batch.household_lt, [4.0, 5.0])
-    np.testing.assert_array_equal(batch.at, [5.0, 6.0])
-    np.testing.assert_array_equal(batch.bt, [6.0, 7.0])
-    np.testing.assert_allclose(batch.at_tax, expected_tax)
-    assert batch.converged == (True, False)
-    assert tuple(dict(item) for item in batch.diagnostics) == (
-        {"hjb_converged": True, "hjb_iterations": 11, "hjb_statistic": 0.001, "iteration": 9},
-        {"hjb_converged": False, "hjb_iterations": 12, "hjb_statistic": 0.002, "iteration": 9},
-    )
+    for province_count in (2, 3):
+        states = tuple({"rah": 0.1 * (index + 1)} for index in range(province_count))
+        results = tuple(_dummy_household_result(grid, index) for index in range(province_count))
+        batch = diagnostic.pre_frozen_household_output_batch(grid, tuple(zip(states, results)), iteration=9)
+        expected_tax = [diagnostic.production_literal_at_tax(grid, state, result) for state, result in zip(states, results)]
+        for values in (batch.ct, batch.household_lt, batch.at, batch.bt, batch.at_tax, batch.converged, batch.diagnostics):
+            assert len(values) == province_count
+        np.testing.assert_array_equal(batch.ct, [3.0 + index for index in range(province_count)])
+        np.testing.assert_array_equal(batch.household_lt, [4.0 + index for index in range(province_count)])
+        np.testing.assert_array_equal(batch.at, [5.0 + index for index in range(province_count)])
+        np.testing.assert_array_equal(batch.bt, [6.0 + index for index in range(province_count)])
+        np.testing.assert_allclose(batch.at_tax, expected_tax)
+        assert batch.converged == tuple(index == 0 for index in range(province_count))
+        assert tuple(dict(item) for item in batch.diagnostics) == tuple(
+            {"hjb_converged": index == 0, "hjb_iterations": 11 + index, "hjb_statistic": 0.001 * (index + 1), "iteration": 9}
+            for index in range(province_count)
+        )
+        assert not np.allclose(batch.at_tax[:-1], batch.at_tax[-1])
 
 
 def test_pure_one_turn_sensitivity_exposes_phi_and_attax_path_dependence():
@@ -191,3 +213,35 @@ def test_pure_one_turn_sensitivity_exposes_phi_and_attax_path_dependence():
     tax_changed = run_source_faithful_one_turn(_one_turn_inputs(baseline_phi, changed_tax))
     assert not np.allclose([firm.Govinc for firm in tax_changed.firms], [firm.Govinc for firm in baseline.firms])
     assert not np.allclose(tax_changed.fiscal.Govinc, baseline.fiscal.Govinc)
+
+
+def test_normal_completion_summary_is_durable_exact_and_dummy_only(tmp_path, monkeypatch):
+    fsync_calls = []
+    original_fsync = diagnostic.os.fsync
+
+    def record_fsync(fd):
+        fsync_calls.append(fd)
+        return original_fsync(fd)
+
+    monkeypatch.setattr(diagnostic.os, "fsync", record_fsync)
+    order, result = _dummy_normal_completion_result()
+    digest = diagnostic.normal_completion_summary(tmp_path, result, 62, order)
+    path = tmp_path / "normal_completion_summary.json"
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    assert digest == diagnostic.sha(path)
+    assert payload["converged"] is True
+    assert payload["termination_reason"] == diagnostic.TERMINATION_CONVERGED
+    assert payload["iteration_count"] == 2
+    assert payload["household_call_count"] == 62
+    assert payload["household_converged_count"] == 31
+    assert payload["ra_upper_count"] == 0 and payload["ra_lower_count"] == 0
+    assert payload["wage_upper_count"] == 0 and payload["wage_lower_count"] == 0
+    assert payload["max_final_nk_ratio_gap"] == 2.5e-10
+    assert payload["max_final_yt_gap"] == 5.0e-10
+    assert payload["province_order"] == list(order)
+    assert len(payload["final_31x20"]) == 31
+    assert payload["final_31x20"][0]["name"] == order[0]
+    assert payload["final_state_fields"] == list(diagnostic.FINAL_FIELDS)
+    assert fsync_calls
+    with pytest.raises(FileExistsError):
+        diagnostic.normal_completion_summary(tmp_path, result, 62, order)

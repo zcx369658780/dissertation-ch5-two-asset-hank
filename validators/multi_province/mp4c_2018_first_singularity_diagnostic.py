@@ -13,10 +13,12 @@ sys.path[:0]=[str(ROOT/'src'),str(ROOT)]
 from validators.multi_province import mp4b_python_empirical as anchor
 from validators.multi_province import mp4c_python_annual_empirical as empirical
 from validators.multi_province import mp4c_owner_a_2009_2022 as owner_a
+from validators.multi_province.mp4c_python_annual_production import FINAL_FIELDS,serialize_final_state
 from validators.multi_province.mp4b_matlab_source_postloop_household_adapter import solve_matlab_source_postloop_household
 import exports.matlab_faithful_two_asset_ha as faithful
 from ch5_two_asset_hank.multi_province.one_turn import PreFrozenHouseholdOutputBatch
 from ch5_two_asset_hank.multi_province.stationary_runtime import OnlineStationaryInputs,run_online_stationary
+from ch5_two_asset_hank.multi_province.steady_state import TERMINATION_CONVERGED
 
 EXPECTED='F84D25FD49A76229CA49958764D1167CAA56FB68CF99A4ED7B20C508812E6ED0'
 ENV={x:'1' for x in ('OMP_NUM_THREADS','MKL_NUM_THREADS','OPENBLAS_NUM_THREADS','NUMEXPR_NUM_THREADS')}
@@ -114,6 +116,16 @@ def pre_frozen_household_output_batch(grid,completed,iteration):
   aggregate=result.aggregates
   outputs.append((aggregate.c_ss,aggregate.l_ss,aggregate.a_ss,aggregate.b_ss,production_literal_at_tax(grid,state,result),result.hjb.converged,result.hjb.iterations,result.hjb.convergence_statistic))
  return PreFrozenHouseholdOutputBatch(ct=[x[0] for x in outputs],household_lt=[x[1] for x in outputs],at=[x[2] for x in outputs],bt=[x[3] for x in outputs],at_tax=[x[4] for x in outputs],converged=tuple(x[5] for x in outputs),diagnostics=tuple({'hjb_converged':x[5],'hjb_iterations':x[6],'hjb_statistic':x[7],'iteration':iteration} for x in outputs))
+def normal_completion_summary(root,result,household_call_count,province_order):
+ order=tuple(province_order)
+ if not result.converged or result.termination_reason!=TERMINATION_CONVERGED:raise ValueError('normal completion requires accepted source convergence')
+ if int(result.iteration_count)<1 or len(result.history)!=int(result.iteration_count) or int(household_call_count)!=len(order)*int(result.iteration_count):raise ValueError('normal completion iteration or household-call contract failed')
+ if tuple(str(state['name']) for state in result.final_state)!=order:raise ValueError('normal completion province order mismatch')
+ rows=serialize_final_state(result.final_state);last=result.history[-1]
+ scalars=(last.household_converged_count,last.ra_upper_count,last.ra_lower_count,last.wage_upper_count,last.wage_lower_count,float(np.max(last.nk_ratio_gap)),float(np.max(last.yt_gap)))
+ if not np.isfinite(scalars).all():raise ValueError('normal completion diagnostics are non-finite')
+ payload={'schema':'MP4C_2018_NORMAL_COMPLETION_SUMMARY_V1','converged':bool(result.converged),'termination_reason':result.termination_reason,'iteration_count':int(result.iteration_count),'household_call_count':int(household_call_count),'household_converged_count':int(last.household_converged_count),'ra_upper_count':int(last.ra_upper_count),'ra_lower_count':int(last.ra_lower_count),'wage_upper_count':int(last.wage_upper_count),'wage_lower_count':int(last.wage_lower_count),'max_final_nk_ratio_gap':float(np.max(last.nk_ratio_gap)),'max_final_yt_gap':float(np.max(last.yt_gap)),'province_order':list(order),'final_31x20':rows,'final_state_fields':list(FINAL_FIELDS)}
+ path=Path(root)/'normal_completion_summary.json';j(path,payload);return sha(path)
 def run(inp,root):
  root=Path(root)
  allowed={'durable_execution_preflight.json','diagnostic_child_launch_receipt.json','first_singularity_stdout.log','first_singularity_stderr.log'}
@@ -143,14 +155,16 @@ def run(inp,root):
    def ks(a,**kw):cap.before(a);return cap.solve(lambda:faithful.solve_matlab_faithful_stationary_kfe(a,**kw))
    r=solve_matlab_source_postloop_household(grid,params,anchor.HouseholdInputs(float(state['rah']),float(state['rb']),float(state['tau']),np.array([state['w']]),np.array([0.]),np.array([1.])),initial,labor,float(state['Tt']),float(state['rb_gap']),num,hjb_solver=hs,kfe_solver=ks);out.append((state,r))
   return pre_frozen_household_output_batch(grid,out,iteration)
- terminal='COMPLETED_WITHOUT_FIRST_SINGULARITY';failure=None
- try:run_online_stationary(OnlineStationaryInputs(tuple(payload['province_order']),states,{'ga':2.,'phi_l':5.,'alphal':1.,'epsilon':10.,'theta':100.,'delta':.025,'istar':.015,'rho_pi':1.25,'totalpit':.02,'epsilon_pi':0.},phi,np.array(payload['runtime_support']['sigmau_destination_origin']),batch,1e-9,empirical.MAX_OUTER_TURNS,True))
+ terminal='COMPLETED_WITHOUT_FIRST_SINGULARITY';failure=None;normal_summary_sha256=None
+ try:
+  result=run_online_stationary(OnlineStationaryInputs(tuple(payload['province_order']),states,{'ga':2.,'phi_l':5.,'alphal':1.,'epsilon':10.,'theta':100.,'delta':.025,'istar':.015,'rho_pi':1.25,'totalpit':.02,'epsilon_pi':0.},phi,np.array(payload['runtime_support']['sigmau_destination_origin']),batch,1e-9,empirical.MAX_OUTER_TURNS,True))
+  normal_summary_sha256=normal_completion_summary(root,result,calls,payload['province_order']);terminal='COMPLETED_SOURCE_CONVERGED'
  except FirstSingularityCaptured:
   terminal='FIRST_SINGULARITY_CAPTURED_FAIL_CLOSED'
  except BaseException as exc:
   terminal='UNHANDLED_EXCEPTION';failure=exc;txt(root/'diagnostic_child_unhandled_traceback.txt',traceback.format_exc())
  finally:ledger.close();hjb_ledger.close()
- j(root/'diagnostic_execution_receipt.json',{'year':2018,'subprocesses':1,'workers':1,'automatic_reruns':0,'household_calls_started':calls,'first_capture':cap.done,'child_terminal_status':terminal,'thread_environment':ENV});j(root/'zero_or_bounded_science_ledger.json',{'phase_a_science_calls':0,'diagnostic_run_count':1,'household_calls_started':calls,'reruns':0});j(root/'diagnostic_child_terminal_sentinel.json',{'child_terminal_status':terminal,'first_capture':cap.done,'household_calls_started':calls})
+ j(root/'diagnostic_execution_receipt.json',{'year':2018,'subprocesses':1,'workers':1,'automatic_reruns':0,'household_calls_started':calls,'first_capture':cap.done,'normal_completion_summary_sha256':normal_summary_sha256,'child_terminal_status':terminal,'thread_environment':ENV});j(root/'zero_or_bounded_science_ledger.json',{'phase_a_science_calls':0,'diagnostic_run_count':1,'household_calls_started':calls,'reruns':0});j(root/'diagnostic_child_terminal_sentinel.json',{'child_terminal_status':terminal,'first_capture':cap.done,'normal_completion_summary_sha256':normal_summary_sha256,'household_calls_started':calls})
  if failure is not None:raise failure
 def postmortem(root):
  root=Path(root);required=('first_singularity_operator_A.npz','first_singularity_operator_transpose.npz','first_singularity_contaminated_matrix.npz','first_singularity_rhs.npy','first_singularity_raw_solve_vector.npy')
