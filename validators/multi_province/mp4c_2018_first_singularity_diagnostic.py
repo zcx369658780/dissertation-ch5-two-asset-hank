@@ -14,6 +14,7 @@ from validators.multi_province import mp4b_python_empirical as anchor
 from validators.multi_province import mp4c_python_annual_empirical as empirical
 from validators.multi_province import mp4c_owner_a_2009_2022 as owner_a
 from validators.multi_province.mp4b_matlab_source_postloop_household_adapter import solve_matlab_source_postloop_household
+import exports.matlab_faithful_two_asset_ha as faithful
 from ch5_two_asset_hank.multi_province.one_turn import PreFrozenHouseholdOutputBatch
 from ch5_two_asset_hank.multi_province.stationary_runtime import OnlineStationaryInputs,run_online_stationary
 
@@ -89,8 +90,8 @@ def run(inp,root):
    writer.writerow(cap.ctx);ledger.flush();os.fsync(ledger.fileno())
    initial,labor=anchor._source_initial_arrays(state,grid,params)
    def hs(*args):
-    h=anchor.solve_matlab_faithful_hjb(*args);cap.hjb={'hjb_converged':bool(h.converged),'hjb_iterations':h.iterations,'hjb_convergence_statistic':h.convergence_statistic,'kfe_path':'HJB_CONVERGED' if h.converged else 'MATLAB_FAITHFUL_POSTLOOP_AFTER_HJB_NONCONVERGENCE'};return h
-   def ks(a,**kw):cap.before(a);return cap.solve(lambda:anchor.solve_matlab_faithful_stationary_kfe(a,**kw))
+    h=faithful.solve_matlab_faithful_hjb(*args);cap.hjb={'hjb_converged':bool(h.converged),'hjb_iterations':h.iterations,'hjb_convergence_statistic':h.convergence_statistic,'kfe_path':'HJB_CONVERGED' if h.converged else 'MATLAB_FAITHFUL_POSTLOOP_AFTER_HJB_NONCONVERGENCE'};return h
+   def ks(a,**kw):cap.before(a);return cap.solve(lambda:faithful.solve_matlab_faithful_stationary_kfe(a,**kw))
    r=solve_matlab_source_postloop_household(grid,params,anchor.HouseholdInputs(float(state['rah']),float(state['rb']),float(state['tau']),np.array([state['w']]),np.array([0.]),np.array([1.])),initial,labor,float(state['Tt']),float(state['rb_gap']),num,hjb_solver=hs,kfe_solver=ks);ag=r.aggregates;out.append((ag.c_ss,ag.l_ss,ag.a_ss,ag.b_ss,0.,r.hjb.converged,r.hjb.iterations,r.hjb.convergence_statistic))
   return PreFrozenHouseholdOutputBatch(ct=[x[0] for x in out],household_lt=[x[1] for x in out],at=[x[2] for x in out],bt=[x[3] for x in out],at_tax=[x[4] for x in out],converged=tuple(x[5] for x in out),diagnostics=tuple({'hjb_converged':x[5],'hjb_iterations':x[6],'hjb_statistic':x[7],'iteration':iteration} for x in out))
  try:run_online_stationary(OnlineStationaryInputs(tuple(payload['province_order']),states,{'ga':2.,'phi_l':5.,'alphal':1.,'epsilon':10.,'theta':100.,'delta':.025,'istar':.015,'rho_pi':1.25,'totalpit':.02,'epsilon_pi':0.},phi,np.array(payload['runtime_support']['sigmau_destination_origin']),batch,1e-9,empirical.MAX_OUTER_TURNS,True))
