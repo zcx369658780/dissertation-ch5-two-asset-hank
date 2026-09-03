@@ -53,6 +53,18 @@ def summary(a):
  return {'shape':list(a.shape),'nnz':int(a.nnz),'finite_data':bool(np.isfinite(a.data).all()),'max_abs_row_sum':float(np.max(np.abs(a.sum(axis=1)))), 'max_abs_column_sum_transpose':float(np.max(np.abs(a.transpose().sum(axis=0)))), 'diagonal_min':float(d.min()),'diagonal_max':float(d.max()),'offdiagonal_min':float(data.min()) if data.size else None,'offdiagonal_max':float(data.max()) if data.size else None,'positive_offdiagonal_count':int(np.count_nonzero(data>0)),'graph_threshold':tol,'scc_count':int(ncomp),'closed_scc_count':len(closed),'closed_sccs':closed,'multiple_closed_sccs':len(closed)>1,'zero_outflow_states':np.flatnonzero(out==0).tolist(),'isolated_states':np.flatnonzero((out==0)&(inn==0)).tolist(),'state_index_order':'0-based Fortran flatten: b + a*Nb + z*Nb*Na'}
 class FirstSingularityCaptured(RuntimeError):
  pass
+class DurableCsvLedger:
+ """Diagnostic-only CSV lifecycle with one header and durable appends."""
+ def __init__(self,path):
+  self.path=Path(path);self.file=self.path.open('x',encoding='utf-8',newline='');self.writer=None;self.fieldnames=None;self.rows=0
+ def append(self,row):
+  fields=list(row)
+  if self.writer is None:
+   self.fieldnames=fields;self.writer=csv.DictWriter(self.file,fieldnames=fields);self.writer.writeheader()
+  elif fields!=self.fieldnames:raise ValueError('durable ledger field order changed')
+  self.writer.writerow(row);self.file.flush();os.fsync(self.file.fileno());self.rows+=1
+ def close(self):
+  if not self.file.closed:self.file.close()
 class Capture:
  def __init__(self,root):self.root=root;self.ctx=None;self.hjb=None;self.done=False
  def before(self,a):self.a=sparse.csr_matrix(a);self.at=self.a.transpose().tocsr()
@@ -99,10 +111,10 @@ def run(inp,root):
  if payload['binding']!={'steady_state_calendar_year':2018,'rolling_window_entry_index':10,'regression_vintage_index':19,'calendar_level_row_index':19,'rolling_window_start_year':2009,'rolling_window_end_year':2018}:raise ValueError('input binding mismatch')
  j(root/'input_2018_identity.json',{'path':str(Path(inp)),'sha256':EXPECTED,'bytes':len(raw),'binding':payload['binding'],'source_fields':payload['source_fields'],'scalars':payload['scalars'],'no_2023_scientific_input':True})
  j(root/'scientific_code_identity_manifest.json',{str(p.relative_to(ROOT)).replace('\\','/'):sha(p) for p in (ROOT/'exports/matlab_faithful_two_asset_ha.py',ROOT/'validators/multi_province/mp4b_matlab_source_postloop_household_adapter.py',ROOT/'src/ch5_two_asset_hank/multi_province/stationary_runtime.py',Path(__file__))})
- cap=Capture(root);ledger=(root/'household_call_ledger.csv').open('x',encoding='utf-8',newline='');hjb_ledger=(root/'hjb_return_ledger.csv').open('x',encoding='utf-8',newline='');writer=None;hjb_writer=None;calls=0
+ cap=Capture(root);ledger=(root/'household_call_ledger.csv').open('x',encoding='utf-8',newline='');hjb_ledger=DurableCsvLedger(root/'hjb_return_ledger.csv');writer=None;calls=0
  grid=anchor.MatlabFaithfulHJBGrid(np.linspace(-2,5,20),np.linspace(0,10,20),np.array([.8,1.3]),np.array([[-1/3,1/3],[1/3,-1/3]]));params=anchor.EconomicParams(.05,2.,5.,.1,2.,1e-6,0.,0.);num=anchor.MatlabFaithfulHJBNumerics(1000.,1e-7,100,1e-12);states=owner_a.entry_states(payload,asdict(empirical.accepted_source_scalars()));phi=np.ones((31,31))
  def batch(snapshot,iteration):
-  nonlocal calls,writer,hjb_writer
+  nonlocal calls,writer
   out=[]
   for ix,state in enumerate(snapshot):
    calls+=1;cap.ctx={'outer_iteration':iteration,'province_index_0based':ix,'province':str(state['name']),'global_household_call_number':calls,**{k:float(state[k]) for k in ('rah','rb','tau','w','Tt','rb_gap','Yt','Lt','Kt','Zt','GovInv')}}
@@ -112,8 +124,7 @@ def run(inp,root):
    def hs(*args):
     h=faithful.solve_matlab_faithful_hjb(*args);cap.hjb={'hjb_converged':bool(h.converged),'hjb_iterations':h.iterations,'hjb_convergence_statistic':h.convergence_statistic,'kfe_path':'HJB_CONVERGED' if h.converged else 'MATLAB_FAITHFUL_POSTLOOP_AFTER_HJB_NONCONVERGENCE'}
     hjb_row={**cap.ctx,**cap.hjb}
-    if hjb_writer is None:hjb_writer=csv.DictWriter(hjb_ledger,fieldnames=list(hjb_row));hjb_writer.writeheader()
-    hjb_writer.writerow(hjb_row);hjb_ledger.flush();os.fsync(hjb_ledger.fileno())
+    hjb_ledger.append(hjb_row)
     return h
    def ks(a,**kw):cap.before(a);return cap.solve(lambda:faithful.solve_matlab_faithful_stationary_kfe(a,**kw))
    r=solve_matlab_source_postloop_household(grid,params,anchor.HouseholdInputs(float(state['rah']),float(state['rb']),float(state['tau']),np.array([state['w']]),np.array([0.]),np.array([1.])),initial,labor,float(state['Tt']),float(state['rb_gap']),num,hjb_solver=hs,kfe_solver=ks);ag=r.aggregates;out.append((ag.c_ss,ag.l_ss,ag.a_ss,ag.b_ss,0.,r.hjb.converged,r.hjb.iterations,r.hjb.convergence_statistic))
@@ -139,14 +150,19 @@ def phase(root):
  a=sparse.csr_matrix([[-1.,1.,0.],[0.,-1.,1.],[0.,0.,0.]]);c=Capture(d);c.ctx={'outer_iteration':0,'province_index_0based':0,'province':'DUMMY','global_household_call_number':1};c.hjb={'hjb_converged':False,'hjb_iterations':100,'hjb_convergence_statistic':1.,'kfe_path':'MATLAB_FAITHFUL_POSTLOOP_AFTER_HJB_NONCONVERGENCE'};c.before(a);c.cont=a.transpose().tolil();c.cont[0,:]=0.;c.cont[0,0]=1.;c.cont=c.cont.tocsr();c.rhs=np.array([.007,0.,0.]);c.raw=np.array([np.nan,0.,0.]);c.persist([{'category':'MatrixRankWarning','message':'dummy exactly singular'}],'dummy zero-science capture')
  required=('first_singularity_operator_A.npz','first_singularity_operator_transpose.npz','first_singularity_contaminated_matrix.npz','first_singularity_rhs.npy','first_singularity_raw_solve_vector.npy','first_singularity_warning_and_traceback.txt')
  if not all((d/x).is_file() for x in required):raise RuntimeError('phase A persistence failure')
- grid=faithful.MatlabFaithfulHJBGrid(np.array([0.,7.]),np.array([0.,10.]),np.array([.8,1.3]),np.array([[-1/3,1/3],[1/3,-1/3]]));seen=[];op=type('O',(),{'full':sparse.eye(8,format='csr')})()
- def dh(*args):seen.append('hjb');return type('H',(),{'post_convergence_operator':op,'consumption':np.ones((2,2,2)),'labor':np.ones((2,2,2))})()
+ grid=faithful.MatlabFaithfulHJBGrid(np.array([0.,7.]),np.array([0.,10.]),np.array([.8,1.3]),np.array([[-1/3,1/3],[1/3,-1/3]]));seen=[];op=type('O',(),{'full':sparse.eye(8,format='csr')})();hjb_ledger=DurableCsvLedger(root/'hjb_return_ledger.csv');contexts=[{'outer_iteration':1,'province_index_0based':0,'province':'DUMMY_A','global_household_call_number':1,'rah':.09,'rb':.02,'tau':.05,'w':20.,'Tt':.1,'rb_gap':.07,'Yt':1000.,'Lt':100.,'Kt':500.,'Zt':1.,'GovInv':500.},{'outer_iteration':1,'province_index_0based':1,'province':'DUMMY_B','global_household_call_number':2,'rah':.09,'rb':.02,'tau':.05,'w':20.,'Tt':.1,'rb_gap':.07,'Yt':1001.,'Lt':101.,'Kt':501.,'Zt':1.1,'GovInv':501.}]
+ def dh(*args):
+  index=sum(x=='hjb' for x in seen);status={'hjb_converged':index==0,'hjb_iterations':11+index,'hjb_convergence_statistic':.001*(index+1),'kfe_path':'HJB_CONVERGED' if index==0 else 'MATLAB_FAITHFUL_POSTLOOP_AFTER_HJB_NONCONVERGENCE'};hjb_ledger.append({**contexts[index],**status});seen.append('hjb');return type('H',(),{'post_convergence_operator':op,'consumption':np.ones((2,2,2)),'labor':np.ones((2,2,2))})()
  def dk(x,*,shape,db,da):
-  assert x is op.full and shape==(2,2,2) and db==7 and da==10;seen.append('kfe');return type('K',(),{'density':np.ones((2,2,2))})()
+  rows=list(csv.DictReader((root/'hjb_return_ledger.csv').open(encoding='utf-8')));assert x is op.full and shape==(2,2,2) and db==7 and da==10 and len(rows)==sum(item=='hjb' for item in seen) and rows[-1]['province']==contexts[-1 if len(rows)==2 else 0]['province'];seen.append('kfe');return type('K',(),{'density':np.ones((2,2,2))})()
  def agg(*args):seen.append('aggregate');return type('G',(),{})()
- solve_matlab_source_postloop_household(grid,None,None,None,None,0.,0.,None,hjb_solver=dh,kfe_solver=dk,aggregator=agg)
- if seen!=['hjb','kfe','aggregate']:raise RuntimeError('dummy adapter injection flow failed')
- j(root/'phase_a_zero_science_test_receipt.json',{'marker':'MP4C_2018_PHASE_A_DIAGNOSTIC_FIXTURE_REPAIR_PASS__ONE_FIRST_SINGULARITY_CAPTURE_EXECUTION_AUTHORIZED','dummy_matrix_only':True,'actual_production_grid_interface':True,'adapter_dummy_sequence':seen,'faithful_hjb_identity':faithful.solve_matlab_faithful_hjb.__module__,'faithful_kfe_identity':faithful.solve_matlab_faithful_stationary_kfe.__module__,'scientific_calls':{'stationary':0,'household':0,'HJB':0,'KFE':0,'MATLAB':0,'R_PLM':0},'no_overwrite_verified':True,'required_files':list(required)})
+ try:
+  solve_matlab_source_postloop_household(grid,None,None,None,None,0.,0.,None,hjb_solver=dh,kfe_solver=dk,aggregator=agg);solve_matlab_source_postloop_household(grid,None,None,None,None,0.,0.,None,hjb_solver=dh,kfe_solver=dk,aggregator=agg)
+ finally:hjb_ledger.close()
+ if seen!=['hjb','kfe','aggregate','hjb','kfe','aggregate']:raise RuntimeError('dummy adapter injection flow failed')
+ header,first,second=(root/'hjb_return_ledger.csv').read_text(encoding='utf-8').splitlines()
+ if header.split(',').count('province')!=1 or len((header,first,second))!=3:raise RuntimeError('dummy HJB ledger header/row count failed')
+ j(root/'phase_a_zero_science_test_receipt.json',{'marker':'MP4C_2018_HJB_LEDGER_CLOSURE_REPAIR_ZERO_SCIENCE_PASS__ONE_DURABLE_2018_CHILD_AUTHORIZED','dummy_matrix_only':True,'actual_production_grid_interface':True,'adapter_dummy_sequence':seen,'hjb_ledger_header_count':1,'hjb_ledger_row_count':2,'first_hjb_row_context':contexts[0],'second_hjb_row_context':contexts[1],'faithful_hjb_identity':faithful.solve_matlab_faithful_hjb.__module__,'faithful_kfe_identity':faithful.solve_matlab_faithful_stationary_kfe.__module__,'scientific_calls':{'stationary':0,'household':0,'HJB':0,'KFE':0,'MATLAB':0,'R_PLM':0},'no_overwrite_verified':True,'required_files':list(required)})
 def main():
  p=argparse.ArgumentParser();p.add_argument('input',nargs='?');p.add_argument('root');p.add_argument('--phase-a',action='store_true');p.add_argument('--postmortem',action='store_true');a=p.parse_args();[os.environ.__setitem__(k,v) for k,v in ENV.items()]
  if a.phase_a:phase(a.root)
