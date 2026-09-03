@@ -101,6 +101,19 @@ class Capture:
   mat(self.root/'first_singularity_operator_A.npz',self.a);mat(self.root/'first_singularity_operator_transpose.npz',self.at);mat(self.root/'first_singularity_contaminated_matrix.npz',self.cont);arr(self.root/'first_singularity_rhs.npy',self.rhs);arr(self.root/'first_singularity_raw_solve_vector.npy',self.raw)
   txt(self.root/'first_singularity_warning_and_traceback.txt','warning_records='+json.dumps(warn,ensure_ascii=False,sort_keys=True)+'\n\n'+trace)
   self.done=True
+def recompute_phi_destination_origin(snapshot,phi):
+ prod=np.array([float(state['Yt'])/float(state['Lt']) for state in snapshot])
+ phi[:]=1+0.3*(prod[:,None]-prod[None,:])/(prod[:,None]+prod[None,:])
+ return phi
+def production_literal_at_tax(grid,state,result):
+ rah=float(state['rah']);effective=faithful.matlab_faithful_illiquid_return(grid.a,grid.a[-1],rah)
+ return result.aggregates.a_ss*rah-float(np.sum(grid.a[None,:,None]*effective[None,:,None]*result.kfe.density)*result.kfe.cell_weight)
+def pre_frozen_household_output_batch(grid,completed,iteration):
+ outputs=[]
+ for state,result in completed:
+  aggregate=result.aggregates
+  outputs.append((aggregate.c_ss,aggregate.l_ss,aggregate.a_ss,aggregate.b_ss,production_literal_at_tax(grid,state,result),result.hjb.converged,result.hjb.iterations,result.hjb.convergence_statistic))
+ return PreFrozenHouseholdOutputBatch(ct=[x[0] for x in outputs],household_lt=[x[1] for x in outputs],at=[x[2] for x in outputs],bt=[x[3] for x in outputs],at_tax=[x[4] for x in outputs],converged=tuple(x[5] for x in outputs),diagnostics=tuple({'hjb_converged':x[5],'hjb_iterations':x[6],'hjb_statistic':x[7],'iteration':iteration} for x in outputs))
 def run(inp,root):
  root=Path(root)
  allowed={'durable_execution_preflight.json','diagnostic_child_launch_receipt.json','first_singularity_stdout.log','first_singularity_stderr.log'}
@@ -115,6 +128,7 @@ def run(inp,root):
  grid=anchor.MatlabFaithfulHJBGrid(np.linspace(-2,5,20),np.linspace(0,10,20),np.array([.8,1.3]),np.array([[-1/3,1/3],[1/3,-1/3]]));params=anchor.EconomicParams(.05,2.,5.,.1,2.,1e-6,0.,0.);num=anchor.MatlabFaithfulHJBNumerics(1000.,1e-7,100,1e-12);states=owner_a.entry_states(payload,asdict(empirical.accepted_source_scalars()));phi=np.ones((31,31))
  def batch(snapshot,iteration):
   nonlocal calls,writer
+  recompute_phi_destination_origin(snapshot,phi)
   out=[]
   for ix,state in enumerate(snapshot):
    calls+=1;cap.ctx={'outer_iteration':iteration,'province_index_0based':ix,'province':str(state['name']),'global_household_call_number':calls,**{k:float(state[k]) for k in ('rah','rb','tau','w','Tt','rb_gap','Yt','Lt','Kt','Zt','GovInv')}}
@@ -127,8 +141,8 @@ def run(inp,root):
     hjb_ledger.append(hjb_row)
     return h
    def ks(a,**kw):cap.before(a);return cap.solve(lambda:faithful.solve_matlab_faithful_stationary_kfe(a,**kw))
-   r=solve_matlab_source_postloop_household(grid,params,anchor.HouseholdInputs(float(state['rah']),float(state['rb']),float(state['tau']),np.array([state['w']]),np.array([0.]),np.array([1.])),initial,labor,float(state['Tt']),float(state['rb_gap']),num,hjb_solver=hs,kfe_solver=ks);ag=r.aggregates;out.append((ag.c_ss,ag.l_ss,ag.a_ss,ag.b_ss,0.,r.hjb.converged,r.hjb.iterations,r.hjb.convergence_statistic))
-  return PreFrozenHouseholdOutputBatch(ct=[x[0] for x in out],household_lt=[x[1] for x in out],at=[x[2] for x in out],bt=[x[3] for x in out],at_tax=[x[4] for x in out],converged=tuple(x[5] for x in out),diagnostics=tuple({'hjb_converged':x[5],'hjb_iterations':x[6],'hjb_statistic':x[7],'iteration':iteration} for x in out))
+   r=solve_matlab_source_postloop_household(grid,params,anchor.HouseholdInputs(float(state['rah']),float(state['rb']),float(state['tau']),np.array([state['w']]),np.array([0.]),np.array([1.])),initial,labor,float(state['Tt']),float(state['rb_gap']),num,hjb_solver=hs,kfe_solver=ks);out.append((state,r))
+  return pre_frozen_household_output_batch(grid,out,iteration)
  terminal='COMPLETED_WITHOUT_FIRST_SINGULARITY';failure=None
  try:run_online_stationary(OnlineStationaryInputs(tuple(payload['province_order']),states,{'ga':2.,'phi_l':5.,'alphal':1.,'epsilon':10.,'theta':100.,'delta':.025,'istar':.015,'rho_pi':1.25,'totalpit':.02,'epsilon_pi':0.},phi,np.array(payload['runtime_support']['sigmau_destination_origin']),batch,1e-9,empirical.MAX_OUTER_TURNS,True))
  except FirstSingularityCaptured:
