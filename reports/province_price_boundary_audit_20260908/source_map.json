@@ -1,0 +1,103 @@
+{
+  "capture_runtime_blob_checks": [
+    {
+      "path": "src/ch5_two_asset_hank/multi_province/one_turn.py",
+      "blob": "e5d6835cdc9e6d182e1c84e11f4d51938be592e1",
+      "capture_manifest_match": true
+    },
+    {
+      "path": "src/ch5_two_asset_hank/multi_province/steady_state.py",
+      "blob": "5c5b56e6a2eb82fab4e80eb7b8e5bbbf97f08c22",
+      "capture_manifest_match": true
+    },
+    {
+      "path": "src/ch5_two_asset_hank/multi_province/stationary_runtime.py",
+      "blob": "8717cfa759948bd1ad3c8cd788f8f4736f250598",
+      "capture_manifest_match": true
+    },
+    {
+      "path": "validators/multi_province/mp4c_2018_first_singularity_diagnostic.py",
+      "blob": "a021b0749f572846a264ad206a2250dae3285e5b",
+      "capture_manifest_match": true
+    },
+    {
+      "path": "validators/multi_province/mp4c_owner_a_2009_2022.py",
+      "blob": "f89927c7a6234cf1c5106318b2b4249183b90cce",
+      "capture_manifest_match": true
+    },
+    {
+      "path": "validators/multi_province/mp4c_python_annual_production.py",
+      "blob": "7473e04418744d745000afb21d84588273cc5bca",
+      "capture_manifest_match": true
+    }
+  ],
+  "scalar_binding_reverified": {
+    "path": "D:\\ProjectTemp\\ch5-mp4c-2018-call725-first-iteration-scalar-binding-repair-20260904-001\\call725_first_iteration_scalar_binding.json",
+    "sha256": "A40D088C63FC1F7EDECEA561D649B42959C646DF528ED13298014493DB4808F6"
+  },
+  "thresholds": {
+    "low_expression": ".02+.02",
+    "low": 0.04,
+    "low_hex": "0x1.47ae147ae147bp-5",
+    "high_expression": ".09-.02",
+    "high": 0.06999999999999999,
+    "high_hex": "0x1.1eb851eb851ebp-4"
+  },
+  "source_map": [
+    {
+      "source": "multi_prov_HANK_12sts.m",
+      "lines": "49-55,85-94,118-135",
+      "meaning": "active clips, initialization and cache bypass"
+    },
+    {
+      "source": "mpHANK_equilibrium_2000.m",
+      "lines": "22-50",
+      "meaning": "initial data, GovInv and interprovincial weights"
+    },
+    {
+      "source": "HANK_mp_1turn.m",
+      "lines": "15,29-40,45-52",
+      "meaning": "old household inputs then portfolio rah then firm and wage"
+    },
+    {
+      "source": "HANK_firm.m",
+      "lines": "9-17,21-35,42-74",
+      "meaning": "current household Lt used as prior firm operand, prices and clips"
+    },
+    {
+      "source": "wage_caculate.m",
+      "lines": "7-11",
+      "meaning": "composite wage aggregation, not wjt clip"
+    },
+    {
+      "source": "HANK_mp_1eq.m",
+      "lines": "14-22,31-60",
+      "meaning": "strict final gate, conditional adaptation and smoothing"
+    },
+    {
+      "source": "HANK_2ASSETS_HJB.m",
+      "lines": "26-31",
+      "meaning": "actual household prices"
+    },
+    {
+      "source": "src/ch5_two_asset_hank/multi_province/one_turn.py",
+      "lines": "179-197",
+      "meaning": "old-ra portfolio and CURRENT household_lt substitution for firm Lt_prev"
+    },
+    {
+      "source": "src/ch5_two_asset_hank/multi_province/steady_state.py",
+      "symbol": "_diagnostics, _adapt, _post_turn_states",
+      "meaning": "gaps and before/after update semantics"
+    },
+    {
+      "source": "validators/multi_province/mp4c_2018_first_singularity_diagnostic.py",
+      "symbol": "run.batch",
+      "meaning": "725 durable selected-scalar entries before household evaluation"
+    },
+    {
+      "source": "validators/multi_province/mp4c_python_annual_production.py",
+      "lines": "76-84,144-196",
+      "meaning": "20-field terminal serializer discards ra0/wt0; successful final state exits before adaptation"
+    }
+  ]
+}
