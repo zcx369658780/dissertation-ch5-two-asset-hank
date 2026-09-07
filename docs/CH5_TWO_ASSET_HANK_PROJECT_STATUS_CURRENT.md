@@ -14,7 +14,7 @@ Reviewer 未独立读取本地 Windows MAT/NPZ；报告中的外部文件哈希�
 
 ## 已接受范围与尚未接受范围
 历史已有两资产 household、算子、KFE/分布/聚合的特定 fixture 证据；MP1–MP3 的多省份结构步骤已在历史路线记录接受。这些范围不自动升级为当前经验配置通过。
-当前完整首轮 stagewise parity 尚需在统一阶段契约下完成复核；多轮传播及 2018 多省份 stationary parity 尚未由本次证据建立。
+完整首轮 stagewise parity 已接受：candidate 25e5db97a0239d956d572359db5835cec945962f，53/53通过，V1最大绝对差3.9968028886505635e-15；Reviewer独立运行15项比较器测试全部通过。原Windows数组未由Reviewer直接重读。多轮传播及2018多省份stationary parity仍未建立。
 本次不重新裁决所有历史测试。KFE/GE/annual/dynamics/IRF/Results 均没有由治理迁移获得新授权。正式 Results eligibility 仍为 FALSE。
 
 ## 科学身份
@@ -37,16 +37,16 @@ Reviewer 未独立读取本地 Windows MAT/NPZ；报告中的外部文件哈希�
 Owner 已授权验收后自动续发无实质决策的下一任务，并采用与风险匹配的审核和有限试错。
 
 ## 当前执行任务
-`tasks/CH5_MP4C_CALL725_FIRST_ITERATION_CLOSURE.md`。
-任务合并阶段映射、wrapper/comparator 工程修复、已有输出全首轮比较、条件补采、相关检查和报告。
-默认复用现有输出；只有必要字段/输出无法恢复时才可调用冻结的一轮 evaluator。新预算最多 MATLAB 2 次、Python 2 次（每端首次必要补采1次，加经诊断的外部工程失败重试1次）；每次仅首轮及一个 direct update solve，具体条件见 task。
-native-init、第二轮及以后、KFE/GE/annual/dynamics/IRF/Results 新调用均为0。发布任务不意味着已执行或消费预算。
+`tasks/CH5_MP4C_CALL725_MULTI_ITERATION_TRAJECTORY.md`。
+首轮闭合已完成且新增科学调用全部0，验收见 docs/CH5_MP4C_CALL725_FIRST_ITERATION_CLOSURE_ACCEPTANCE.md。
+新任务：同初始化MAT的独立MATLAB/Python迭代轨迹；100步未收敛时允许外部诊断延续至500步，并可在最早差异处进行一次共同状态单步replay。生产100步上限不改。
+每端最多1次轨迹、1次条件replay、1次符合条件的外部工程失败重试；实际条件、超时及更新次数上限仅按新task。KFE/GE/annual及后继科学调用仍为0。发布不代表已执行。
 
 ## 年度路线进度补充（两种来源口径不能混算）
 - 旧 Owner 指定的 protected runtime cache 口径：历史正式接受 2009–2023 Python annual stationary 15/15 年通过、465 个省年结果；保留 corrected-2009 跨语言对比的历史接受范围，并非所有年份跨语言 parity。
 - 后来的 Owner-A 修正资本/输入口径：2009–2022 共14年，2009–2017与2019–2022共13年返回 PASS，2018 process failure；完整14年 composite coverage 未接受。
 - 2018 retry 已捕获 KFE contaminated-row singular/nonfinite 异常。call-725 历史 HJB100/500 对比中，MATLAB/Python 都呈100步未收敛、500上限内收敛，但迭代轨迹和聚合不同。首轮 staging 解释只关闭一个伪差异，不抹去后续真正差异。
-这些是已读历史报告支持的范围，不是本次重新执行或新接受的年度结果。下一步需先闭合首轮，再按结果定位多轮差异并恢复修正口径的2018及年度覆盖。
+这些是已读历史报告支持的范围，不是本次重新执行或新接受的年度结果。首轮已闭合；下一步定位多轮差异，再恢复修正口径的2018及年度覆盖。
 
 ## 关键报告
 - docs/CH5_TWO_ASSET_HANK_MP4C_2018_CALL725_RAW_LIQUID_DERIVATIVE_BOUNDARY_ROOT_CAUSE_FORENSIC_REPORT.md
