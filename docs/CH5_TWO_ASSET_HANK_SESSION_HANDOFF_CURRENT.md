@@ -1,29 +1,32 @@
 # Chapter 5 当前交接
 更新：2026-09-08。唯一仓库：zcx369658780/dissertation-ch5-two-asset-hank。
-Owner最终科学authority；ChatGPT为Reviewer/路线协调者/GitHub任务发布者；本地Codex为bounded Builder。持续授权允许证据验收后纳入main及无实质科学选择时发布精确后继任务。普通对话发布不自动启动本地计算，不修改provider。
+Owner最终科学authority；ChatGPT为Reviewer/路线协调者/GitHub任务发布者；Codex为bounded Builder。持续授权允许证据验收后纳入main及无实质科学选择时发布精确后继任务。普通对话发布不启动本地模型，不修改provider。
 
-## 启动和当前任务
-Fresh读取live main，再读AGENTS、规则索引、状态和exact task。发布前main为da543d7960451da5b2ed9f67dae906269d45b273，不能假定它仍最新。不要混入deep-learning-hank或从旧R5/R1A附件重启。
-活动任务：tasks/CH5_MP4C_PROVINCE_PRICE_BOUNDARY_AND_ADAPTATION_AUDIT.md。
-状态：OWNER_DIRECTED_PRICE_BOUNDARY_AUDIT_ACTIVE__ORIGINAL_ALGORITHM_RETAINED。
-本交接发布时尚未收到其Builder报告，不得说已完成各省清点。
+## 恢复状态
+先fresh读取live main、AGENTS、规则索引、状态与exact task。最新已接受candidate8ef4a2a6c6df2ece2cda665890201c27dd083265，验收前main c90bb26fb17f03dd9f45cea668d9e65a9ea22f43；不要把检查点当作永久main。
+活动：tasks/CH5_MP4C_2018_ORIGINAL_PARAMETER_OBSERVABLE_PREFIX_REPLAY.md。
+状态：PRICE_AUDIT_PARTIAL_EVIDENCE_ACCEPTED__ORIGINAL_PARAMETER_PREFIX_OBSERVATION_ACTIVE。
+本交接发布时新观测任务未执行、未收到报告。
 
-## Owner新方向
-Owner明确要求保留原算法及a_bar，认为rah=.09可能过高，记得稳定收敛时rah通常约.07，要求先查各省rah/wjt越界/触界，然后继续诊断。此前D1-D3修复target未采纳、未实施，暂缓，不再等待其采纳才允许价格审计；已确认边界/算子异常不撤销。
-当前任务仅允许保存状态读取、原始价格与截断价格区分、时序和控制器分析、相关测试及报告。新增HJB/KFE/线性或根求解/one-turn/GE/annual/R-PLM/shock/IRF/Results预算均0。没有关键快照就如实报告缺口，不能重跑2018、改rah=.07或修改生产实现。
+## 最新审阅结论
+价格边界审计8ef4a2a6已接受，PARTIAL_EVIDENCE保留。27新增文件均在scope，无生产变化。Reviewer读代码/报告/摘要、年度计数和控制器表、13测试定义与13/13实际日志；L3及L4日志检查。没有独立跑测试或模型、读Windows原件、重验全部45条manifest。manifest回执BD6BA6AF6BF20F9E10CAB87F1B8CBD00BB93853685018FAD3A57D55857BC9968。
+有效audit证据D:\ProjectTemp\ch5-province-price-boundary-audit-20260908-002；-001错误Lt替换和191派生不匹配明确INVALID且保留。全部新增科学调用0。
+725家户入口=23*31+12；第24轮只到安徽。Owner-A403与旧cache465省年分开，工资上/下界225/120和18/400；终点ra触界0，rah>.07为0。成功终点不证明所有中间家户价格安全，源码不排除工资触界。
+安徽外省投资比例0，entry7–24连续18次rah=.09；call725通过滞后识别turn22 firm ra=.09。SUPPORTED_LINK仅指ra→rah时序，非因果根因。
+原自适应已运行：turn4安徽国资下降、因产出严重不足Zt大幅重置，后多次国资+10%。turn22全国gap由贵州决定并关门；turn23观察更新说明调整实际发生，但全国最大误差/决定省缺失。turn24在household/KFE异常前无法完成firm/控制器。
+失败路径缺ra0/wt0/mt/actual current household Lt等。不能用旧firm Lt替代；新旧Zt/GovInv必须按生成阶段区分。详细数值见当前状态和验收报告。
 
-## 本次源证据
-Reviewer实际读Owner上传zip；SHA256 CEB94CCF34D2D218722B81E5111A8F4C530571A9F886BD4AFE0610A00321F755。32个.m与MP0库存哈希全同；一个校准MAT同旧runtime cache；无年度st。不能假定ChatGPT附件已挂载到Windows，Builder可直接用已有hash-matched保护源码。
-源码静态复核：docs/CH5_MP4C_PRICE_BOUNDARY_SOURCE_REVIEW_20260908.md。
-关键：原始ra0/wt0先算再clip为ra/wjt；rah/w为另一层家户输入；rah用旧ra在新firm计算前生成。全国maxKNratiogap<.1时才开启自适应，高ra>.07附近触发GovInv*1.1，低ra<.04附近触发*.9。源码终止检查ra触界而不检查wjt触界。初始化ra=rah=.09、wjt=.6单独标识。事实是否发生在失败路径需要保存轨迹，尚未确认。
+## 新任务是原参数观测，不是降息或修复
+新任务独立授权ONE原2018输入Python生产前缀：首次异常/原提前收敛/超时/call725结束即停，最多24轮入口、23轮完整one-turn，不到call726。源HJBmaxit100保留，正常false flag仍进入原KFE，遇异常停止。
+实现观测、合成测试、有界运行与报告在同一task完成。每轮第一户前保存完整31省状态；保存实际firm参数、raw/capped价格、真实controller/适应事件，失败前保存HJB返回与KFE输入。不再重做全年度保存表审计。
+每端预算不通用：本task仅Python一进程；HH/HJB<=725，HJB更新<=72500，KFE<=725，原初始化root<=580000；具体边界/时间/零科学启动前launch retry见exact task。科学开始后不得重启重跑。MATLAB、独立诊断求解、其他年份/IRF/Results0。
+此运行使用年度原生初始化，不能拿MATLAB共同初始化MAT覆盖；新路径必须与旧PID67056入口逐项比较，分叉后不得冒称补出了旧运行内部状态。
+Owner坚持原算法/a_bar，D1–D3未采纳、暂缓。.07敏感性、校准/公式/solver改变不在本任务内。旧审计task已完成，预算不可继承；无新报告不重复发布/执行。
 
-## 保留的历史诊断与限制
-最新接受边界规格15f51be9733b5043e738d3e522b97554e95902b9：14/14快照预算/捕获漂移一致但存在上界向外漂移；相关验收和报告均在docs。Reviewer以前做L3提交审阅/L4已发布日志检查，未重算Windows数组。D1-D3是未采纳提案，不是实现结果。
-首轮53/53，多轮共同初始化MATLAB143步收敛、Python500未收敛；M143终点18负元/15泄漏。P32极端transfer/cost和sigma丢失尚未解决。固定线性2ff3eb2已接受局部归因，不反复换solver/调容差/跑轨迹追求机器级PASS。
-旧runtime-cache15/15年、465省年历史接受；Owner-A修正13/14年PASS而2018失败，必须分组。Results eligibility=FALSE；价格审计不自动建立因果、修复、年度或动态接受。
-完整身份、预算、证据根及局限见当前状态和原报告，不重开已完成任务。
+## 尚存科学边界
+独立共同初始化轨迹MATLAB143/Python500未收敛问题、M143终点18负元/15泄漏、P32巨大transfer/cost和sigma丢失均未解决。边界规格15f51be9仅证据/提案，不能实施。首轮53/53及固定线性2ff3eb2等历史证据保留，不重跑。
+旧cache15/15年历史接受与修正Owner-A13/14年PASS分开，2018未接受。当前不是完整parity、年度恢复、因果、动态或Results接受。Results eligibility=FALSE。
 
-## 本地保护与交付
-工作目录D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001。原D:\ResearchCode\dissertation-ch5-two-asset-hank及报告中的70未跟踪文件保留；不reset/clean/stash/覆盖。保护MATLAB物理根D:\MatlabProgram\2023年12月2日 多省份神经网络HANK只读。
-UI可仍为D:\Zotero-Analytical-Workflow，repo命令明确使用Chapter5目录；仍遵守平台/全局限制，不改Zotero或全局配置。
-Builder完成任务内完整问题后按allowed paths提交并非force推送专用分支，Reviewer再读证据。后续受控实验/校准/算法选择需新明确授权。
+## 本地保护
+工作目录D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001；原D:\ResearchCode\dissertation-ch5-two-asset-hank及70未跟踪文件保留。保护MATLAB根D:\MatlabProgram\2023年12月2日 多省份神经网络HANK只读；不reset/clean/stash/force-push。不混入deep-learning-hank或Zotero，不修改全局规则。
+新证据D:\ProjectTemp\ch5-2018-observable-prefix-replay-20260908-001，已占用则fresh suffix。来源/输入哈希与已有证据根见exact task和当前状态。Builder非force发布新分支后由Reviewer继续验收。
