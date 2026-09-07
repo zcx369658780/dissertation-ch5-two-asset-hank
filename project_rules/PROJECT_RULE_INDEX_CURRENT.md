@@ -29,5 +29,5 @@
 当前状态：`docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`。
 路线正文：`docs/DISSERTATION_CH5_PYTHON_MULTI_PROVINCE_HANK_REBUILD_ROADMAP_CURRENT.md`。
 当前交接：`docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`。
-当前授权任务：`tasks/CH5_ASTRA_LOCAL_DOCUMENTATION_SYNC_2026_09_07.md`。
-任务若已完成，不能从本索引重新执行；先检查 live completion 与 successor。本次未创建科学执行 successor。
+当前授权任务：`tasks/CH5_MP4C_CALL725_FIRST_ITERATION_CLOSURE.md`。
+任务若已完成，不能从本索引重新执行；先检查 live completion 与 successor。本次已发布首轮比较闭合 successor，其中明确条件补采和工程故障重试预算；不得沿用旧 task 预算。

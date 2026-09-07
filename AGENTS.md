@@ -25,7 +25,8 @@ The Astra migration describes a working style, not a claim about the executor's 
 - Unrelated main changes are not an automatic blocker; assess the relevant diff. Material authority/input changes require reassessment.
 - Preserve unrelated dirty files. Use an isolated worktree when possible; no reset, clean, stash, force-push or overwrite of user work for convenience.
 - Stage explicit allowed paths. Verify the final changed-file list and one publication readback. Do not create a gate for each Git plumbing operation.
-- Local sync follows `tasks/CH5_ASTRA_LOCAL_DOCUMENTATION_SYNC_2026_09_07.md`. No scientific run is authorized by this agreement.
+- Local documentation sync was accepted at branch commit `d2f3e6e7cc21fffe8807f577ec2262bb77afdc07`; do not repeat it. Read the current active task in the rule index.
+- Owner standing authorization (2026-09-07): after evidence-based acceptance, Reviewer may publish the next bounded task without routine reconfirmation when no substantive scientific decision remains. Use proportionate checks and task-budgeted retries. This agreement itself does not authorize model calls.
 
 ## Reporting
 Report outcome first: completed scope, evidence, changed paths, commit/publication status, real limitations, and next useful action. Use plain language; avoid repeating forbidden-operation lists and long terminal strings when a short status plus evidence is sufficient.

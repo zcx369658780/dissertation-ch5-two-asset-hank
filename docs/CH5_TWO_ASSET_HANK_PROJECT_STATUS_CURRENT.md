@@ -30,14 +30,23 @@ Reviewer 未独立读取本地 Windows MAT/NPZ；报告中的外部文件哈希�
 这不是全项目累计调用数。前置任务曾有一次未持久化的 MATLAB invocation，仍然属于其原任务已消费预算，不得从历史抹去。
 治理更新和本地文档同步新增科学调用预算均为0。
 
-## 当前执行任务
-`tasks/CH5_ASTRA_LOCAL_DOCUMENTATION_SYNC_2026_09_07.md`：
-同步本地 repo 文档及 AGENTS，检查本仓库内生效的局部说明，发布简短同步报告。不得运行科学模型。
-报告 `docs/CH5_ASTRA_LOCAL_DOCUMENTATION_SYNC_REPORT_2026_09_07.md` 若存在，应读取完成状态；不要重复执行已完成 task。
+## 文档同步与持续授权
+本地同步报告在 commit `d2f3e6e7cc21fffe8807f577ec2262bb77afdc07` 已经 Reviewer L3 接受；报告原文现纳入 main。
+已同步 worktree：`D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001`。
+原主 checkout 的 70 个未跟踪文件和旧 HEAD 保留；不得声称原目录也已更新。Windows 文件/调用检查依据执行报告，Reviewer 未直接访问本机。
+Owner 已授权验收后自动续发无实质决策的下一任务，并采用与风险匹配的审核和有限试错。
 
-## 后续科学建议
-在已冻结的 post-boundary 主比较口径下，以一个完整任务关闭首轮比较。先使用已有数组；仅确实缺失证据且新 task 有预算时才新调用。
-当前没有发布该科学 successor。单纯命名决定无需 Owner 再审；真实方程或求解器选择仍需明确科学授权。
+## 当前执行任务
+`tasks/CH5_MP4C_CALL725_FIRST_ITERATION_CLOSURE.md`。
+任务合并阶段映射、wrapper/comparator 工程修复、已有输出全首轮比较、条件补采、相关检查和报告。
+默认复用现有输出；只有必要字段/输出无法恢复时才可调用冻结的一轮 evaluator。新预算最多 MATLAB 2 次、Python 2 次（每端首次必要补采1次，加经诊断的外部工程失败重试1次）；每次仅首轮及一个 direct update solve，具体条件见 task。
+native-init、第二轮及以后、KFE/GE/annual/dynamics/IRF/Results 新调用均为0。发布任务不意味着已执行或消费预算。
+
+## 年度路线进度补充（两种来源口径不能混算）
+- 旧 Owner 指定的 protected runtime cache 口径：历史正式接受 2009–2023 Python annual stationary 15/15 年通过、465 个省年结果；保留 corrected-2009 跨语言对比的历史接受范围，并非所有年份跨语言 parity。
+- 后来的 Owner-A 修正资本/输入口径：2009–2022 共14年，2009–2017与2019–2022共13年返回 PASS，2018 process failure；完整14年 composite coverage 未接受。
+- 2018 retry 已捕获 KFE contaminated-row singular/nonfinite 异常。call-725 历史 HJB100/500 对比中，MATLAB/Python 都呈100步未收敛、500上限内收敛，但迭代轨迹和聚合不同。首轮 staging 解释只关闭一个伪差异，不抹去后续真正差异。
+这些是已读历史报告支持的范围，不是本次重新执行或新接受的年度结果。下一步需先闭合首轮，再按结果定位多轮差异并恢复修正口径的2018及年度覆盖。
 
 ## 关键报告
 - docs/CH5_TWO_ASSET_HANK_MP4C_2018_CALL725_RAW_LIQUID_DERIVATIVE_BOUNDARY_ROOT_CAUSE_FORENSIC_REPORT.md
@@ -45,3 +54,9 @@ Reviewer 未独立读取本地 Windows MAT/NPZ；报告中的外部文件哈希�
 - docs/CH5_TWO_ASSET_HANK_MATLAB_MULTI_PROVINCE_LOGIC_AND_LEGACY_R5_MIGRATION_AUDIT_REPORT.md
 
 旧 2026-07-22 R5 状态和 2026-08-21 R1A handoff 不再是启动指令。
+
+年度进度来源：
+- docs/CH5_TWO_ASSET_HANK_MP4C_L3_FORMAL_2009_2023_ANNUAL_STATIONARY_COVERAGE_ACCEPTANCE_REPORT.md
+- docs/CH5_TWO_ASSET_HANK_MP4C_OWNER_A_2009_2022_CORRECTED_8WORKER_ANNUAL_STATIONARY_REPORT.md
+- docs/CH5_TWO_ASSET_HANK_MP4C_2018_OBSERVABILITY_REPAIR_SINGLE_RETRY_AND_2009_2022_COMPOSITE_ACCEPTANCE_REPORT.md
+- docs/CH5_TWO_ASSET_HANK_MP4C_2018_CALL725_MATLAB_SAME_ACTIVE_INPUT_HJB100_HJB500_AND_LEGACY_KFE_FRESH_EXECUTION_AFTER_PATH_RECERTIFICATION_REPORT.md

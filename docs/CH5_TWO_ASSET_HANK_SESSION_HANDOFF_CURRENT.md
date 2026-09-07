@@ -20,6 +20,12 @@
 旧 forensic 的 Owner naming 建议被新路线规则明确取代；历史事实不改写。
 
 ## 当前任务与下一步
-当前任务：tasks/CH5_ASTRA_LOCAL_DOCUMENTATION_SYNC_2026_09_07.md。
-科学 budget=0。同步完成后读取其报告，再考虑发布首轮比较闭合的完整科学任务。
-此次未发布科学 successor。旧 R5 或 R1A handoff 不得用作当前任务入口。
+本地同步已 L3 接受，报告 commit：d2f3e6e7cc21fffe8807f577ec2262bb77afdc07。
+工作目录：D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001。
+可在原 Codex 会话明确切换命令工作目录来继续；仅切换 cwd 不保证清除会话预加载指令，仍需遵守实际平台/全局规则。Zotero 的限定项目历史指令不是本仓库科学 authority。
+若 UI/权限必须另开项目，使用此既有目录，不创建新模型仓库；读取此交接及 live task 即可恢复必要状态，旧会话保留。
+
+当前任务：tasks/CH5_MP4C_CALL725_FIRST_ITERATION_CLOSURE.md。
+先用持久化数组关闭首轮全阶段比较；必要补采和一次工程失败重试已在 task 内明确授权。执行预算见 task，不从本交接推导额外调用。
+Owner 授权：Reviewer 验收后无实质决策即可续发下一任务；减少重复审核，保留真实数值标准与保护源。
+完整年度进度见当前状态：旧 runtime-cache 口径15/15已接受；修正 Owner-A 口径13/14年返回PASS，2018仍阻塞完整覆盖。不要把 raw-vb 伪差异解释当作完整模型通过。
