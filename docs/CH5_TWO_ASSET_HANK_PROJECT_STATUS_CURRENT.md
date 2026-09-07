@@ -1,16 +1,23 @@
 # Chapter 5 两资产 HANK 当前状态
-更新：2026-09-07。科学证据 checkpoint：
+更新：2026-09-07。早期raw-vb证据 checkpoint：
 `e98bfad214b0c85005fac2ce23b1e4585a20e634`。
 该 SHA 是固定证据锚点，不表示未来 live main 永远不变。
 
 ## 当前结论
 工作处于 MP4C 2018 安徽 call-725 的 MATLAB–Python HJB 对比诊断。
-最新 forensic 已在仓库提交范围和报告层面核验（L3），支持：
+早期 forensic 已在仓库提交范围和报告层面核验（L3），支持：
 `CALL725_RAW_VB_STAGE_NAMING_OR_PERSISTENCE_SEMANTICS_GAP_CONFIRMED__NO_PRODUCTION_CHANGE`。
 Reviewer 未独立读取本地 Windows MAT/NPZ；报告中的外部文件哈希和运算结果属于已发布执行证据，不能说成本会话重新运行所得。
 
 40 个 raw forward 差异全部在上界 b=5；40 个 raw backward 差异全部在下界 b=-2。MATLAB wrapper 将边界处理后数组称为 raw，Python wrapper 的 raw 在处理前保存。内部差分、边界公式和已保存的处理后导数比较支持阶段语义解释。
 现有证据不支持为此修改生产 HJB 导数。旧“首个科学源差异”的解释由最新报告收窄为表示阶段差异。
+
+## 最新多轮诊断验收
+提交dedd0f8e5fa894b83c8b20e522d66893e7b6b377已在L3范围接受：TRAJECTORY_DIVERGENCE_WITH_COMMON_STATE_PARITY_PASS。
+第2步consumption首次超界；共同MATLAB第2步前状态38/38通过。第4步输入V首次超界，第24步transfer标签/BB支持首次分叉。不能将最早局部传播解释推广为所有后期实现一致。
+两端100步均不收敛；MATLAB143步收敛，Python500步仍0.008617352704437531。算子极大值及后期稳定性待定位。
+每端2次调用；MATLAB144次、Python501次更新/求解，retry0，下游0。Reviewer独立4项可移植测试通过，另外2项依赖Windows旧wrapper未重跑。原数组未在Reviewer环境重读。
+验收记录：docs/CH5_MP4C_CALL725_MULTI_ITERATION_TRAJECTORY_ACCEPTANCE.md。
 
 ## 已接受范围与尚未接受范围
 历史已有两资产 household、算子、KFE/分布/聚合的特定 fixture 证据；MP1–MP3 的多省份结构步骤已在历史路线记录接受。这些范围不自动升级为当前经验配置通过。
@@ -37,15 +44,14 @@ Reviewer 未独立读取本地 Windows MAT/NPZ；报告中的外部文件哈希�
 Owner 已授权验收后自动续发无实质决策的下一任务，并采用与风险匹配的审核和有限试错。
 
 ## 当前执行任务
-`tasks/CH5_MP4C_CALL725_MULTI_ITERATION_TRAJECTORY.md`。
-首轮闭合已完成且新增科学调用全部0，验收见 docs/CH5_MP4C_CALL725_FIRST_ITERATION_CLOSURE_ACCEPTANCE.md。
-新任务：同初始化MAT的独立MATLAB/Python迭代轨迹；100步未收敛时允许外部诊断延续至500步，并可在最早差异处进行一次共同状态单步replay。生产100步上限不改。
-每端最多1次轨迹、1次条件replay、1次符合条件的外部工程失败重试；实际条件、超时及更新次数上限仅按新task。KFE/GE/annual及后继科学调用仍为0。发布不代表已执行。
+`tasks/CH5_MP4C_CALL725_POLICY_OPERATOR_STABILITY.md`。
+复用轨迹定位第24步策略切换、算子增长和Python后100步行为；在M24/P24/P32/M143最终值四个指定共同状态做两端单步对照。无新长轨迹。
+每端4次单步调用及至多1次符合条件的外部工程失败重试，具体条件见task；KFE/GE/annual等调用0。发布不代表执行。
 
 ## 年度路线进度补充（两种来源口径不能混算）
 - 旧 Owner 指定的 protected runtime cache 口径：历史正式接受 2009–2023 Python annual stationary 15/15 年通过、465 个省年结果；保留 corrected-2009 跨语言对比的历史接受范围，并非所有年份跨语言 parity。
 - 后来的 Owner-A 修正资本/输入口径：2009–2022 共14年，2009–2017与2019–2022共13年返回 PASS，2018 process failure；完整14年 composite coverage 未接受。
-- 2018 retry 已捕获 KFE contaminated-row singular/nonfinite 异常。call-725 历史 HJB100/500 对比中，MATLAB/Python 都呈100步未收敛、500上限内收敛，但迭代轨迹和聚合不同。首轮 staging 解释只关闭一个伪差异，不抹去后续真正差异。
+- 2018 retry 已捕获 KFE contaminated-row singular/nonfinite 异常。不同初始化绑定的历史HJB100/500对比曾出现两端500上限内收敛；本次精确共同初始化实验为MATLAB143收敛、Python500未收敛，不能混用两种实验结论。首轮 staging 解释只关闭一个伪差异，不抹去后续真正差异。
 这些是已读历史报告支持的范围，不是本次重新执行或新接受的年度结果。首轮已闭合；下一步定位多轮差异，再恢复修正口径的2018及年度覆盖。
 
 ## 关键报告

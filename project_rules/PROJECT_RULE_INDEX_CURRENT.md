@@ -29,5 +29,5 @@
 当前状态：`docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`。
 路线正文：`docs/DISSERTATION_CH5_PYTHON_MULTI_PROVINCE_HANK_REBUILD_ROADMAP_CURRENT.md`。
 当前交接：`docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`。
-当前授权任务：`tasks/CH5_MP4C_CALL725_MULTI_ITERATION_TRAJECTORY.md`。
-任务若已完成，不能从本索引重新执行；先检查 live completion 与 successor。首轮比较已验收；新任务授权同初始状态多轮诊断和条件 common-state replay，预算仅见新 task。
+当前授权任务：`tasks/CH5_MP4C_CALL725_POLICY_OPERATOR_STABILITY.md`。
+任务若已完成，不能从本索引重新执行；先检查 live completion 与 successor。多轮诊断已验收但未建立多轮parity；新任务为策略切换/算子增长诊断及四组共同状态单步对照，预算仅见新task。
