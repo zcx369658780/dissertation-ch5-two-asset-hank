@@ -1,72 +1,10 @@
-# CH5 Two-Asset HANK Reconstruction Roadmap Current
+# Chapter 5 路线入口
+更新：2026-09-07。
 
-## Phase R0
+唯一有效路线正文：
+`docs/DISSERTATION_CH5_PYTHON_MULTI_PROVINCE_HANK_REBUILD_ROADMAP_CURRENT.md`。
 
-Economic identity freeze.
+当前状态：
+`docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`。
 
-Completed:
-
-- two-asset model identity;
-- state space contract;
-- operator philosophy.
-
-## Phase R0.5
-
-External reconstruction audit.
-
-Completed:
-
-- DSH handoff audit;
-- hybrid reconstruction decision.
-
-## Phase R1
-
-Economic object and operator contract.
-
-Status:
-
-Partial freeze.
-
-Frozen:
-
-- state variables `(a,b,z)`;
-- explicit index mapping;
-- HJB/KFE shared operator requirement;
-- asset accounting separation.
-
-## Phase R1A
-
-Source provenance binding.
-
-Status:
-
-Blocked pending dissertation source designation.
-
-Completed:
-
-- MATLAB provenance manifest;
-- dependency inventory;
-- conflict ledger.
-
-## Future Route
-
-After equation authority:
-
-R2 Household equation specification
-
--> R3 HJB implementation
-
--> R4 Generator and KFE
-
--> MATLAB-Python manual comparison
-
--> steady state validation
-
--> later NK/spatial extensions
-
-## Core Principle
-
-Economic identity first.
-Code second.
-
-No solver implementation before equation freeze.
+本文件不再维护第二份阶段状态表。此前停留在 R1A、禁止 HJB/KFE 实现的描述是历史状态，已由当前路线取代。原文保留在 Git 历史，不重新执行旧 gate。
