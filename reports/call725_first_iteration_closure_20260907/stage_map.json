@@ -1,0 +1,252 @@
+{
+  "primary_fields": [
+    {
+      "stage": 1,
+      "object": "old/V0",
+      "matlab_field": "initial_value",
+      "python_field": "old",
+      "required": true,
+      "normalization": "none; logical (b,a,z) tensor"
+    },
+    {
+      "stage": 2,
+      "object": "va_f",
+      "matlab_field": "VahF",
+      "python_field": "va_f",
+      "required": true,
+      "normalization": "none; logical (b,a,z) tensor"
+    },
+    {
+      "stage": 2,
+      "object": "va_b",
+      "matlab_field": "VahB",
+      "python_field": "va_b",
+      "required": true,
+      "normalization": "none; logical (b,a,z) tensor"
+    },
+    {
+      "stage": 2,
+      "object": "post_boundary_vb_f",
+      "matlab_field": "VbF",
+      "python_field": "vb_f",
+      "required": true,
+      "normalization": "none; logical (b,a,z) tensor"
+    },
+    {
+      "stage": 2,
+      "object": "post_boundary_vb_b",
+      "matlab_field": "VbB",
+      "python_field": "vb_b",
+      "required": true,
+      "normalization": "none; logical (b,a,z) tensor"
+    },
+    {
+      "stage": 3,
+      "object": "liquid_label",
+      "matlab_field": "liquid_label",
+      "python_field": "liquid_label",
+      "required": true,
+      "normalization": "B=-1,0=0,F=1"
+    },
+    {
+      "stage": 3,
+      "object": "transfer_label",
+      "matlab_field": "transfer_label",
+      "python_field": "transfer_label",
+      "required": true,
+      "normalization": "B=-1,0=0,F=1"
+    },
+    {
+      "stage": 4,
+      "object": "consumption",
+      "matlab_field": "C",
+      "python_field": "consumption",
+      "required": true,
+      "normalization": "none; logical (b,a,z) tensor"
+    },
+    {
+      "stage": 4,
+      "object": "labor",
+      "matlab_field": "l",
+      "python_field": "labor",
+      "required": true,
+      "normalization": "none; logical (b,a,z) tensor"
+    },
+    {
+      "stage": 4,
+      "object": "transfer",
+      "matlab_field": "dh",
+      "python_field": "transfer",
+      "required": true,
+      "normalization": "none; logical (b,a,z) tensor"
+    },
+    {
+      "stage": 4,
+      "object": "adjustment_cost",
+      "matlab_field": "adjustment_cost",
+      "python_field": "adjustment_cost",
+      "required": true,
+      "normalization": "none; logical (b,a,z) tensor"
+    },
+    {
+      "stage": 4,
+      "object": "effective_illiquid_return",
+      "matlab_field": "Rah",
+      "python_field": "effective_illiquid_return",
+      "required": true,
+      "normalization": "none; logical (b,a,z) tensor"
+    },
+    {
+      "stage": 5,
+      "object": "mu_a",
+      "matlab_field": "mu_a",
+      "python_field": "mu_a",
+      "required": true,
+      "normalization": "none; logical (b,a,z) tensor"
+    },
+    {
+      "stage": 5,
+      "object": "mu_b",
+      "matlab_field": "mu_b",
+      "python_field": "mu_b",
+      "required": true,
+      "normalization": "none; logical (b,a,z) tensor"
+    },
+    {
+      "stage": 5,
+      "object": "utility",
+      "matlab_field": "u",
+      "python_field": "utility",
+      "required": true,
+      "normalization": "none; logical (b,a,z) tensor"
+    },
+    {
+      "stage": 6,
+      "object": "bb",
+      "matlab_field": "bbB",
+      "python_field": "bb",
+      "required": true,
+      "normalization": "none; logical (b,a,z) tensor"
+    },
+    {
+      "stage": 6,
+      "object": "bf",
+      "matlab_field": "bbF",
+      "python_field": "bf",
+      "required": true,
+      "normalization": "none; logical (b,a,z) tensor"
+    },
+    {
+      "stage": 6,
+      "object": "ab",
+      "matlab_field": "aaB",
+      "python_field": "ab",
+      "required": true,
+      "normalization": "none; logical (b,a,z) tensor"
+    },
+    {
+      "stage": 6,
+      "object": "af",
+      "matlab_field": "aaF",
+      "python_field": "af",
+      "required": true,
+      "normalization": "none; logical (b,a,z) tensor"
+    },
+    {
+      "stage": 8,
+      "object": "RHS",
+      "matlab_field": "rhs",
+      "python_field": "rhs",
+      "required": true,
+      "normalization": "MATLAB row/column to F-vector"
+    },
+    {
+      "stage": 9,
+      "object": "V1",
+      "matlab_field": "updated",
+      "python_field": "v1",
+      "required": true,
+      "normalization": "none; logical (b,a,z) tensor"
+    },
+    {
+      "stage": 9,
+      "object": "first_iteration_statistic",
+      "matlab_field": "dist",
+      "python_field": "statistic",
+      "required": true,
+      "normalization": "MATLAB row/column to F-vector"
+    },
+    {
+      "stage": 7,
+      "object": "BB",
+      "matlab_field": "BB",
+      "python_file": "python_strict_stagewise_BB.npz",
+      "required": true,
+      "normalization": "canonical sparse coordinates; exact stored zeros only"
+    },
+    {
+      "stage": 7,
+      "object": "AAH",
+      "matlab_field": "AAH",
+      "python_file": "python_strict_stagewise_AAH.npz",
+      "required": true,
+      "normalization": "canonical sparse coordinates; exact stored zeros only"
+    },
+    {
+      "stage": 7,
+      "object": "Bswitch",
+      "matlab_field": "Bswitch",
+      "python_file": "python_strict_stagewise_Bswitch.npz",
+      "required": true,
+      "normalization": "canonical sparse coordinates; exact stored zeros only"
+    },
+    {
+      "stage": 7,
+      "object": "A",
+      "matlab_field": "A",
+      "python_file": "python_strict_stagewise_A.npz",
+      "required": true,
+      "normalization": "canonical sparse coordinates; exact stored zeros only"
+    },
+    {
+      "stage": 8,
+      "object": "M",
+      "matlab_field": "matrix",
+      "python_file": "python_strict_stagewise_M.npz",
+      "required": true,
+      "normalization": "canonical sparse coordinates; exact stored zeros only"
+    }
+  ],
+  "mask_views": [
+    [
+      "Ic_B",
+      "liquid_label",
+      "B"
+    ],
+    [
+      "Ic_F",
+      "liquid_label",
+      "F"
+    ],
+    [
+      "Ic_0",
+      "liquid_label",
+      "0"
+    ],
+    [
+      "Idh_B",
+      "transfer_label",
+      "B"
+    ],
+    [
+      "Idh_F",
+      "transfer_label",
+      "F"
+    ]
+  ],
+  "source_locations": {
+    "matlab_wrapper": "boundary 38/40; raw copy 43; masks 50/60-61; labels 74; F-order solve 68",
+    "python_wrapper": "raw copy 23; boundary 26-29; labels 36; F-order solve 37",
+    "python_frozen_source": "liquid branches 289-300; transfer branches/boundary 348-366"
+  }
+}
