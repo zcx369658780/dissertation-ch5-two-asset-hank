@@ -1,0 +1,280 @@
+{
+  "transfer": {
+    "iteration": 24,
+    "count": 1,
+    "decisions": [
+      {
+        "matlab": {
+          "provenance": "source-formula reconstruction from persisted inputs; NOT independent runtime capture",
+          "index": [
+            5,
+            19,
+            0
+          ],
+          "physical": [
+            -0.1578947368421053,
+            10.0,
+            0.8
+          ],
+          "derivatives": {
+            "vbB": 0.004197542208258234,
+            "vbF": 0.006155877561657759,
+            "vaB": 0.005587078234509324,
+            "vaF": 0.0
+          },
+          "candidates": {
+            "BB": {
+              "va": 0.005587078234509324,
+              "vb_unclamped": 0.004197542208258234,
+              "ratio": 1.3310356292587888,
+              "lower_signed_margin": 0.4310356292587888,
+              "upper_signed_margin": 0.23103562925878882,
+              "candidate": 1.155178146293944
+            },
+            "BF": {
+              "va": 0.0,
+              "vb_unclamped": 0.004197542208258234,
+              "ratio": 0.0,
+              "lower_signed_margin": -0.9,
+              "upper_signed_margin": -1.1,
+              "candidate": -4.5
+            },
+            "FB": {
+              "va": 0.005587078234509324,
+              "vb_unclamped": 0.006155877561657759,
+              "ratio": 0.9076006107250679,
+              "lower_signed_margin": 0.00760061072506793,
+              "upper_signed_margin": -0.19239938927493208,
+              "candidate": 0.0
+            },
+            "FF": {
+              "va": 0.0,
+              "vb_unclamped": 0.006155877561657759,
+              "ratio": 0.0,
+              "lower_signed_margin": -0.9,
+              "upper_signed_margin": -1.1,
+              "candidate": -4.5
+            }
+          },
+          "dB": 0.0,
+          "dF": 0.0,
+          "costB": 0.0,
+          "costF": 0.0,
+          "sdhB": -0.0,
+          "sdhF": -0.0,
+          "Idh_B_signed_margin_sdhB_plus_tol": 1e-12,
+          "Idh_F_signed_margin_sdhF_minus_tol": -1e-12,
+          "scB": -8.227568499504846,
+          "scF": -4.971360046130679,
+          "Ic_B_signed_margin": -8.227568499503846,
+          "Ic_F_signed_margin": -4.971360046131679,
+          "reconstructed_transfer_label": 0,
+          "persisted_transfer_label": 0,
+          "persisted_liquid_label": -1,
+          "boundary_overrides": [
+            "upper a uses negative backward-a candidates < -tolerance; af=0"
+          ],
+          "consumption_clamp_active_B": false,
+          "consumption_clamp_active_F": false,
+          "transfer_denominator_clamped": false,
+          "cost_denominator": 10.0,
+          "reconstructed_bb": 22.331971641513153,
+          "reconstructed_bf": 0.0,
+          "db": 0.368421052631579,
+          "da": 0.5263157894736842,
+          "shadow_transfer_B": 0.0,
+          "shadow_transfer_F": 0.0,
+          "reconstructed_persisted_checks": {
+            "transfer": {
+              "passed": true,
+              "max_abs": 0.0,
+              "max_scaled": 0.0
+            },
+            "adjustment_cost": {
+              "passed": true,
+              "max_abs": 0.0,
+              "max_scaled": 0.0
+            },
+            "bb": {
+              "passed": true,
+              "max_abs": 0.0,
+              "max_scaled": 0.0
+            },
+            "bf": {
+              "passed": true,
+              "max_abs": 0.0,
+              "max_scaled": 0.0
+            },
+            "ab": {
+              "passed": true,
+              "max_abs": 0.0,
+              "max_scaled": 0.0
+            },
+            "af": {
+              "passed": true,
+              "max_abs": 0.0,
+              "max_scaled": 0.0
+            }
+          },
+          "persisted": {
+            "consumption": 15.434851806067002,
+            "labor": 0.5570929926216613,
+            "transfer": 0.0,
+            "adjustment_cost": 0.0,
+            "bb": 22.331971641513153,
+            "bf": -0.0,
+            "ab": -1.5390000000000001,
+            "af": 0.0,
+            "effective_illiquid_return": 0.081
+          }
+        },
+        "python": {
+          "provenance": "source-formula reconstruction from persisted inputs; NOT independent runtime capture",
+          "index": [
+            5,
+            19,
+            0
+          ],
+          "physical": [
+            -0.1578947368421053,
+            10.0,
+            0.8
+          ],
+          "derivatives": {
+            "vbB": 0.004196482159863393,
+            "vbF": 0.006158278769242083,
+            "vaB": 0.005538346889118895,
+            "vaF": 0.0
+          },
+          "candidates": {
+            "BB": {
+              "va": 0.005538346889118895,
+              "vb_unclamped": 0.004196482159863393,
+              "ratio": 1.319759426619172,
+              "lower_signed_margin": 0.41975942661917187,
+              "upper_signed_margin": 0.2197594266191719,
+              "candidate": 1.0987971330958595
+            },
+            "BF": {
+              "va": 0.0,
+              "vb_unclamped": 0.004196482159863393,
+              "ratio": 0.0,
+              "lower_signed_margin": -0.9,
+              "upper_signed_margin": -1.1,
+              "candidate": -4.5
+            },
+            "FB": {
+              "va": 0.005538346889118895,
+              "vb_unclamped": 0.006158278769242083,
+              "ratio": 0.8993335795028512,
+              "lower_signed_margin": -0.0006664204971487953,
+              "upper_signed_margin": -0.2006664204971488,
+              "candidate": -0.0033321024857439763
+            },
+            "FF": {
+              "va": 0.0,
+              "vb_unclamped": 0.006158278769242083,
+              "ratio": 0.0,
+              "lower_signed_margin": -0.9,
+              "upper_signed_margin": -1.1,
+              "candidate": -4.5
+            }
+          },
+          "dB": 0.0,
+          "dF": -0.0033321024857439763,
+          "costB": 0.0,
+          "costF": 0.0003343205392719477,
+          "sdhB": -0.0,
+          "sdhF": 0.0029977819464720285,
+          "Idh_B_signed_margin_sdhB_plus_tol": 1e-12,
+          "Idh_F_signed_margin_sdhF_minus_tol": 0.0029977819454720285,
+          "scB": -8.229877558578398,
+          "scF": -4.968275284060995,
+          "Ic_B_signed_margin": -8.229877558577398,
+          "Ic_F_signed_margin": -4.9682752840619955,
+          "reconstructed_transfer_label": 1,
+          "persisted_transfer_label": 1,
+          "persisted_liquid_label": -1,
+          "boundary_overrides": [
+            "upper a uses negative backward-a candidates < -tolerance; af=0"
+          ],
+          "consumption_clamp_active_B": false,
+          "consumption_clamp_active_F": false,
+          "transfer_denominator_clamped": false,
+          "cost_denominator": 10.0,
+          "reconstructed_bb": 22.338239087569935,
+          "reconstructed_bf": 0.008136836711852648,
+          "db": 0.368421052631579,
+          "da": 0.5263157894736842,
+          "shadow_transfer_B": -0.0033321024857439763,
+          "shadow_transfer_F": -4.5,
+          "reconstructed_persisted_checks": {
+            "transfer": {
+              "passed": true,
+              "max_abs": 0.0,
+              "max_scaled": 0.0
+            },
+            "adjustment_cost": {
+              "passed": true,
+              "max_abs": 0.0,
+              "max_scaled": 0.0
+            },
+            "bb": {
+              "passed": true,
+              "max_abs": 0.0,
+              "max_scaled": 0.0
+            },
+            "bf": {
+              "passed": true,
+              "max_abs": 0.0,
+              "max_scaled": 0.0
+            },
+            "ab": {
+              "passed": true,
+              "max_abs": 0.0,
+              "max_scaled": 0.0
+            },
+            "af": {
+              "passed": true,
+              "max_abs": 0.0,
+              "max_scaled": 0.0
+            }
+          },
+          "persisted": {
+            "consumption": 15.43680113602142,
+            "labor": 0.5570648520971853,
+            "transfer": -0.0033321024857439763,
+            "adjustment_cost": 0.0003343205392719477,
+            "bb": 22.338239087569935,
+            "bf": 0.008136836711852648,
+            "ab": -1.5326690052770866,
+            "af": 0.0,
+            "effective_illiquid_return": 0.081
+          }
+        }
+      }
+    ]
+  },
+  "BB_support": {
+    "iteration": 24,
+    "coordinates": [
+      [
+        385,
+        386
+      ]
+    ],
+    "values": [
+      {
+        "row": 385,
+        "column": 386,
+        "row_tensor": [
+          5,
+          19,
+          0
+        ],
+        "matlab": 0.0,
+        "python": 0.008136836711852648
+      }
+    ]
+  }
+}

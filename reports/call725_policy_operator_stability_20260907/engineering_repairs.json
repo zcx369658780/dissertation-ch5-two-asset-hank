@@ -1,0 +1,15 @@
+[
+  {
+    "phase": "solve-free trajectory postprocessing",
+    "error": "TypeError: Object of type int64 is not JSON serializable",
+    "cause": "numpy argwhere coordinate stored as list without int conversion",
+    "repair": "explicit Python int conversion of coordinate; repeat postprocessing only",
+    "scientific_calls": 0
+  },
+  {
+    "phase": "inspection after failed postprocessing",
+    "error": "FileNotFoundError: first_split.json",
+    "repair": "read after successful postprocessing",
+    "scientific_calls": 0
+  }
+]
