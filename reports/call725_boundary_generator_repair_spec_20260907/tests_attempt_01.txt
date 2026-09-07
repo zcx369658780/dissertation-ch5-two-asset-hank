@@ -1,0 +1,24 @@
+test_closed_generator_maximum_principle (__main__.Diagnostics.test_closed_generator_maximum_principle) ... ok
+test_decimal_preserves_stored_cancellation (__main__.Diagnostics.test_decimal_preserves_stored_cancellation) ... ok
+test_exact_snapshot_scope (__main__.Diagnostics.test_exact_snapshot_scope) ... ok
+test_f_order_association (__main__.Diagnostics.test_f_order_association) ... ok
+test_joint_corner_feasibility (__main__.Diagnostics.test_joint_corner_feasibility) ... ok
+test_local_branch_is_accepted_expression_copy (__main__.Diagnostics.test_local_branch_is_accepted_expression_copy) ... FAIL
+test_net_inward_does_not_certify_rates (__main__.Diagnostics.test_net_inward_does_not_certify_rates) ... ok
+test_omitted_edge_contaminates_other_coordinate (__main__.Diagnostics.test_omitted_edge_contaminates_other_coordinate) ... ok
+test_synthetic_budget_and_decomposition (__main__.Diagnostics.test_synthetic_budget_and_decomposition) ... ok
+test_unchanged_128_eps_rule (__main__.Diagnostics.test_unchanged_128_eps_rule) ... ok
+
+======================================================================
+FAIL: test_local_branch_is_accepted_expression_copy (__main__.Diagnostics.test_local_branch_is_accepted_expression_copy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001\tests\test_call725_boundary_generator_repair_spec.py", line 99, in test_local_branch_is_accepted_expression_copy
+    self.assertEqual(ast.dump(ast.Module(body=a.body[2:], type_ignores=[])),
+AssertionError: "Modu[284 chars](id='BINDING', ctx=Load())], keywords=[]), sli[25706 chars]=[])" != "Modu[284 chars](id='binding_path', ctx=Load())], keywords=[])[25711 chars]=[])"
+Diff is 52743 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.218s
+
+FAILED (failures=1)
