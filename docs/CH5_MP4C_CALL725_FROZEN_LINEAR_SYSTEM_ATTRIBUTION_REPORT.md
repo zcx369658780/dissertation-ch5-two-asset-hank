@@ -245,9 +245,18 @@ mocked single-solve persistence, pre-solve invalid-input rejection, single solve
 entrypoints, ordinary/fsum/Decimal residual distinctions, zero-denominator
 conventions and absence of analysis solver calls. Synthetic tests mock the solver;
 they perform no additional scientific solve. Initial and expanded test logs are
-retained; the final raw log is published as `focused_tests.log`, with hash and
+retained; `focused_tests.log` is the Git-normalized readable copy. The exact raw
+bytes are also published as base64 in `focused_tests_raw.json`, with SHA-256 and
 parsed count in `checks.json`. These are local Builder checks, not independently
 executed Reviewer tests. No unrelated model regression was run.
+
+During publication, an exact-byte check detected Git CRLF normalization of the
+readable log. The PowerShell command sequence continued past that failed Python
+assertion and published the initial commit30438ea. A follow-up non-force commit
+preserves that history, records this failure and adds the exact-byte raw-log
+payload. Original scientific artifacts and raw test evidence were unchanged;
+there was no scientific rerun. Subsequent publication checks run separately
+from dependent commit/push commands.
 
 Changed paths are limited to the task's validator directory, one test file, this
 report and `reports/call725_frozen_linear_system_20260907/`. Large MAT/NPZ and

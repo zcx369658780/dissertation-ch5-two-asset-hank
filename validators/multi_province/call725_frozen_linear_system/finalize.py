@@ -1,5 +1,6 @@
 """Publish compact diagnostics and a finite evidence receipt without circular hashes."""
 from datetime import datetime,timezone
+import base64
 import re
 import shutil
 import sys
@@ -25,6 +26,7 @@ def main(root):
         'encoding_recovery':'MATLAB JSON warning message contains replacement characters. Preserved it and decoded original process log bytes with GB18030; no solve rerun.',
         'tests':'Initial binding-only run and subsequent expanded diagnostic runs retained; final counts parsed from latest raw log.',
         'python_timer':'Worker time.monotonic solve durations rounded to 0 on this host; process wall times retained. Do not interpret 0 as no solve.',
+        'publication_check_failure':'Raw focused_tests.log bytes differed after Git CRLF normalization. The shell continued to commit/push 30438ea despite the assertion exit. Follow-up non-force commit adds exact-byte base64 log, retaining initial publication history. No science rerun.',
         'evidence_directory_created_utc':datetime.fromtimestamp(root.stat().st_ctime,timezone.utc).isoformat(),
         'finalized_utc':datetime.now(timezone.utc).isoformat(),
         'evidence_window_seconds':datetime.now(timezone.utc).timestamp()-root.stat().st_ctime})
@@ -36,6 +38,11 @@ def main(root):
                  'loaded_input_checks.json','call_ledger.json','checks.json','warnings_summary.json','engineering_notes.json'):
         shutil.copyfile(root/name,out/name)
     shutil.copyfile(log,out/'focused_tests.log')
+    raw=log.read_bytes()
+    raw_payload={'encoding':'base64','raw_sha256':sha(log),'raw_bytes':len(raw),'content':base64.b64encode(raw).decode('ascii'),
+        'readable_log':'focused_tests.log may be newline-normalized by Git; decode this payload for byte-identical original unittest output'}
+    assert base64.b64decode(raw_payload['content'])==raw
+    write(out/'focused_tests_raw.json',raw_payload)
     # Original stage rows, actual warnings, exact input receipts and all equation-unit
     # residual summaries are small JSON. Residual vectors and sparse payloads stay local.
     excluded={'manifest.json','manifest_readback.json','publication_receipt.json'}
