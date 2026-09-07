@@ -1,54 +1,51 @@
 # Chapter 5 两资产 HANK 当前状态
 更新：2026-09-07。唯一活动仓库：zcx369658780/dissertation-ch5-two-asset-hank。
-最新已接受诊断提交：`b2d7a814039a585b696d8cc5079b8b9865017501`。这是证据锚点，不表示未来 live main 恒定。
+最新已接受诊断提交：`2ff3eb212ea9a0d101183f9ff49dd1043bb6b886`。这是证据锚点，不是假定未来live main恒定。
 
 ## 当前结论与真正阻塞项
-当前处于 MP4C 2018 安徽 call-725 的数值定位。
-策略/算子任务已在 L3 仓库提交与发布报告范围接受：`COMMON_STATE_IMPLEMENTATION_OR_NUMERICAL_DIFFERENCE_LOCALIZED`。
-M24、P24、M143_FINAL 各38/38；P32为36/38，首次超界为V1，随后停止统计量。P32 V1最大绝对差8.881784197001252e-14，296个坐标超界；不能因绝对值小而改判通过。
-P32的M/RHS是容差内一致而非逐位一致；尚不能分离求解器算术与输入微差敏感性，不能认定公式缺陷或已证明病态。
+当前处于MP4C 2018安徽call-725。固定线性系统归因已接受：`FROZEN_LINEAR_SYSTEM_ATTRIBUTION_COMPLETE__TRAJECTORY_AND_GENERATOR_BLOCKERS_OPEN`。
+两套P32保存系统在精确共同M/RHS下的跨语言比较，ORIGINAL与ROW_POW2四组全部FAIL；最大绝对差分别2.802202914153895e-13、1.6830981053317373e-13、4.587441537751147e-13、4.4941828036826337e-13（顺序M原/P原/M缩放/P缩放）。原语言重放exact_equal=true；两种向量分解精确重建旧差异。固定输入求解路径差异与输入微差敏感性均存在，不能将范数相加成为因果百分比，不能据此宣称已解释整条非线性轨迹。
+固定二进制幂行缩放未普遍改善原方程后向误差，不作为生产修复。第704行两端Mii+Aii=0、浮点间距65536，而sigma约0.051；保存矩阵已丢失该对角移位。80位残差不是80位解，也不证明完整条件数或前向误差。已完成指定线性归因，不继续仅为追求1e-13一致而更换求解器/调容差/重复实验。
 
-第24步离散差异位于(5,19,0)，两条不同状态轨迹的导数比值跨过0.9阈值；各自共同状态复查均通过。算子极大值已追踪至两端未截断的transfer导数分母及平方调整成本。候选/阈值为保存输入的公式重建，不是独立runtime捕获。
-两端存储算子均存在负非对角率和边界泄漏；M143_FINAL两端仍各有18个负非对角元、15个泄漏位置。这是尚未解决的legacy算子有效性问题，不能靠忠实重构、停止标志或小线性后向误差解除。
-M143_FINAL单步距离分别2.6173063716328215e-11、2.6199042935104444e-11，输入态非线性缺陷范数均1.3374745755356798e-11；这不证明Python独立轨迹会到达该点。
-独立轨迹仍是MATLAB143步收敛、Python500步不收敛，Python最后100步统计量约0.00862并持续切换；不宣称极限环。完整多轮parity、修正2018年度及Results均未因此接受。
+独立轨迹仍为MATLAB143步收敛、Python500步未收敛，Python尾100步统计量约0.00862并持续切换，尚未证明极限环。两端legacy算子均有负非对角率与边界泄漏；M143_FINAL仍各18个负非对角元、15个泄漏位置。忠实性、小后向误差或停止标志不能解除算子有效性问题。
+P32的极大算子此前追到未截断transfer导数分母与平方调整成本。边界修复能否解决该内点极端状态及非线性不收敛尚未知，不能预先承诺。完整轨迹parity、修正2018年度、Results未接受。
 
-## 验收证据与预算口径
-验收：`docs/CH5_MP4C_CALL725_POLICY_OPERATOR_STABILITY_ACCEPTANCE.md`。
-报告：`docs/CH5_MP4C_CALL725_POLICY_OPERATOR_STABILITY_REPORT.md`。
-摘要：`reports/call725_policy_operator_stability_20260907/`。
-候选相对原main a55019d4a6fe7b36eb783223e8b20dbc73fa59fb为直接子提交，20个新增文件均在允许范围，生产文件无变动。
-本次Builder每端4次调用/更新/求解，重试0，下游0。Reviewer读取相关GitHub代码和摘要，未访问Windows原MAT/NPZ、未独立运行8项测试、未重新执行模型。8项通过及外部manifest核验按Builder发布证据记录，不升级为独立测试证明。Reviewer本轮新增科学调用0。
+## 最新验收证据及预算
+验收：docs/CH5_MP4C_CALL725_FROZEN_LINEAR_SYSTEM_ATTRIBUTION_ACCEPTANCE.md。
+报告：docs/CH5_MP4C_CALL725_FROZEN_LINEAR_SYSTEM_ATTRIBUTION_REPORT.md。
+摘要：reports/call725_frozen_linear_system_20260907/。
+候选包含30438ea初始结果和2ff3eb2日志追加修正，相对原main80ce3f2为ahead2/behind0，25个新增文件均在授权路径，生产源码未变。
+Builder每端4次直接求解，重试0，HJB/下游0。Reviewer做L3提交/报告审阅并读取L4测试日志：独立解码1472字节raw log，哈希7568599EC5860B3078CED7F48113FC6BE44D388BCEF304364053054FBCC9F560匹配；独立解析11项ok及总计；换行规范化后的Git blob与可读日志一致。Reviewer未独立运行测试或模型、未访问Windows原MAT/NPZ。
+外部manifest SHA256 A0FF925E71273345043ACE4F666E07A4C990116E7F7BF6BDC1011853A1C64BDD，176证据/26源码报告条目，属于已读Builder核验回执，不是Reviewer重验全部文件。初次发布的CRLF断言失败及shell继续问题已如实记录并追加修正，无科学重跑。本轮Reviewer科学调用0。
 
 ## 当前唯一执行任务
-`tasks/CH5_MP4C_CALL725_FROZEN_LINEAR_SYSTEM_ATTRIBUTION.md`。
-对已保存P32的两套M/RHS做两求解器交叉求解及固定二进制幂行缩放对照，分析残差、输入敏感性与浮点表示；不重算policy/HJB。
-正常每端4次直接求解，共8次；每端至多1次符合条件的外部工程失败重试，硬上限及条件以task为准。HJB、长轨迹、KFE、GE、年度和动态调用0。发布不代表执行，生产实现不变。
-策略/算子任务已完成，不从旧交接重新启动。即使线性比较全部通过，独立轨迹及算子有效性阻塞仍须另行解决。
+`tasks/CH5_MP4C_CALL725_BOUNDARY_GENERATOR_REPAIR_SPEC.md`。
+复用指定保存状态，核对预算漂移、捕获漂移与A作用于资产坐标的隐含漂移；构造边界/角点的非负性与守恒可行性证据，形成可实施修复契约、未来验证计划及最小科学决策表。
+预算为0次HJB/策略评估/任何求解及下游调用；允许已有数组的确定性算术和合成测试。生产公式、边界、参数及冻结reference不变。修复方案是提案，不是新科学法则授权；实质边界/FOC变更须先明确科学裁决。
+固定线性系统任务已完成，不重跑；当前发布也不代表已启动本地Builder。
 
 ## 已接受历史范围
-- 原raw-vb的40/40差异已解释为保存阶段差异，早期证据锚点e98bfad214b0c85005fac2ce23b1e4585a20e634。主比较为边界覆盖后导数，不能据此修生产导数。
-- 完整首轮：25e5db97a0239d956d572359db5835cec945962f，53/53通过，V1最大差3.9968028886505635e-15；当时Reviewer独立15项比较器测试通过，原Windows数组未直接重读。
-- 多轮诊断：dedd0f8e5fa894b83c8b20e522d66893e7b6b377，第2步consumption首次超界、第3步更新V1超界、第4步输入V超界、第24步离散分叉；共同MATLAB第2步前状态38/38。每端2次调用，MATLAB144/Python501次更新求解，重试0；当时Reviewer独立4项可移植测试通过，另2项依赖Windows未重跑。
-- household特定fixture以及MP0–MP3历史限定范围接受保留，不升级为所有经验输入有效。
-每个历史任务预算均已消费，不因新规则/会话重置；前置曾有未持久化MATLAB调用，仍属于原任务记录。本节不是全项目累计调用统计。
+- raw-vb 40/40为保存阶段差异，早期证据锚点e98bfad214b0c85005fac2ce23b1e4585a20e634。主比较为边界覆盖后导数，不支持生产导数修复。
+- 完整首轮25e5db97a0239d956d572359db5835cec945962f：53/53，V1最大差3.9968028886505635e-15；当时Reviewer独立15项比较器测试通过，未直接重读Windows数组。
+- 多轮诊断dedd0f8e5fa894b83c8b20e522d66893e7b6b377：第2步consumption、第3步更新V1、第4步输入V依次超界，第24步离散分叉；共同MATLAB第2步前状态38/38。每端2次调用，MATLAB144/Python501次更新求解；当时Reviewer独立4项可移植测试通过，另2项依赖Windows未重跑。
+- 策略/算子b2d7a814039a585b696d8cc5079b8b9865017501：M24/P24/M143_FINAL各38/38，P32为36/38，首差V1、随后统计量，M/RHS仅容差内一致；每端4次单步调用/更新/求解。第24步(5,19,0)为不同状态的阈值跨越。候选/阈值为公式重建，非独立runtime捕获。该轮8项测试为Builder汇总，Reviewer未独立运行。
+- household特定fixture与MP0–MP3历史限定范围接受保留，不升级为所有经验输入有效。
+历史任务预算均已消费；曾未持久化的MATLAB调用仍属于原任务记录。本节不是全项目累计调用统计。
 
 ## 年度来源口径
-旧Owner指定protected runtime-cache口径：Python2009–2023共15/15年、465省年曾正式接受；corrected-2009跨语言接受只对其历史配置成立，不代表所有年份parity。
-修正Owner-A资本/输入口径：2009–2022共14年，2009–2017及2019–2022共13年返回PASS，2018失败，完整修正覆盖未接受。2018曾捕获KFE contaminated-row singular/nonfinite异常。
-不同初始化的历史实验曾两端500步内收敛，不能覆盖当前精确共同初始化的Python500步未收敛。此次诊断不重审或撤销不同配置的历史结果。
+旧Owner指定protected runtime-cache口径：Python2009–2023共15/15年、465省年曾正式接受；corrected-2009跨语言接受仅对其历史配置成立，不代表所有年份parity。
+修正Owner-A资本/输入口径：2009–2022共14年，其中13年返回PASS、2018失败，完整修正覆盖未接受。2018曾捕获KFE contaminated-row singular/nonfinite异常。不同初始化曾两端500步内收敛，不能覆盖本次精确共同初始化Python500步未收敛。此次不重审或撤销不同配置的历史结果。
 年度来源：
 - docs/CH5_TWO_ASSET_HANK_MP4C_L3_FORMAL_2009_2023_ANNUAL_STATIONARY_COVERAGE_ACCEPTANCE_REPORT.md
 - docs/CH5_TWO_ASSET_HANK_MP4C_OWNER_A_2009_2022_CORRECTED_8WORKER_ANNUAL_STATIONARY_REPORT.md
 - docs/CH5_TWO_ASSET_HANK_MP4C_2018_OBSERVABILITY_REPAIR_SINGLE_RETRY_AND_2009_2022_COMPOSITE_ACCEPTANCE_REPORT.md
 - docs/CH5_TWO_ASSET_HANK_MP4C_2018_CALL725_MATLAB_SAME_ACTIVE_INPUT_HJB100_HJB500_AND_LEGACY_KFE_FRESH_EXECUTION_AFTER_PATH_RECERTIFICATION_REPORT.md
 
-## 科学身份与工作目录
-- protected HANK_2ASSETS_HJB.m SHA256：049136B769560040BC678F828F5D3EC5338DDCAA2090D6BED4E40732F56C3EAE。
-- exports/matlab_faithful_two_asset_ha.py Git blob：9e7dc9556a2b76811e78f89999abecc045886106。
-- authoritative initialization MAT SHA256：1718984CB588AE586F74AB8476C57AF849BB2C80CC95500329D29BC14207BB81。
-- scalar binding SHA256：A40D088C63FC1F7EDECEA561D649B42959C646DF528ED13298014493DB4808F6。
-本地文档同步d2f3e6e7cc21fffe8807f577ec2262bb77afdc07已接受，不重开。
-工作目录D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001；原主checkout及其70个未跟踪文件保留，不能声称原目录已同步。
-已存轨迹根D:\ProjectTemp\ch5-call725-multi-iteration-trajectory-20260907-001；四状态证据根D:\ProjectTemp\ch5-call725-policy-operator-stability-20260907-001。Reviewer未直接访问这些Windows目录。
-Owner最终科学authority；Reviewer获持续任务发布及验收后纳入main授权。普通对话不自动启动本地Builder。正式Results eligibility仍为FALSE。
+## 科学身份、本地目录与路线
+protected HANK_2ASSETS_HJB.m SHA256：049136B769560040BC678F828F5D3EC5338DDCAA2090D6BED4E40732F56C3EAE。
+exports/matlab_faithful_two_asset_ha.py Git blob：9e7dc9556a2b76811e78f89999abecc045886106。
+authoritative initialization MAT SHA256：1718984CB588AE586F74AB8476C57AF849BB2C80CC95500329D29BC14207BB81。
+scalar binding SHA256：A40D088C63FC1F7EDECEA561D649B42959C646DF528ED13298014493DB4808F6。
+本地文档同步d2f3e6e7cc21fffe8807f577ec2262bb77afdc07已接受，不重开。工作目录D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001；原checkout及70个未跟踪文件保留。
+轨迹、四状态、线性系统证据分别位于D:\ProjectTemp下的ch5-call725-multi-iteration-trajectory-20260907-001、ch5-call725-policy-operator-stability-20260907-001、ch5-call725-frozen-linear-system-20260907-001；Reviewer未直接访问这些Windows目录。
+后续：修复规格与科学选择→授权的有界实现/验证→收敛及算子有效性→恢复修正2018和年度覆盖→真正动态规格/集成→稳健性与Results。正式Results eligibility仍为FALSE。
