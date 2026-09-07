@@ -1,58 +1,58 @@
 # Chapter 5 两资产 HANK 当前状态
-更新：2026-09-07。唯一活动仓库：zcx369658780/dissertation-ch5-two-asset-hank。
-最新已接受诊断/规格提交：`15f51be9733b5043e738d3e522b97554e95902b9`。这是证据锚点，不是假定未来live main恒定。
+更新：2026-09-08。唯一活动仓库：zcx369658780/dissertation-ch5-two-asset-hank。
+本次任务发布前live main：da543d7960451da5b2ed9f67dae906269d45b273。最新已接受诊断/规格提交仍为15f51be9733b5043e738d3e522b97554e95902b9；均非永远不变的main。
 
-## 当前结论与真正阻塞项
-当前处于MP4C 2018安徽call-725。边界/生成算子修复规格已验收：`BOUNDARY_GENERATOR_REPAIR_SPEC_COMPLETE__SCIENTIFIC_DECISIONS_EXPLICIT__NO_MODEL_RUN`。
-路线状态：`BOUNDARY_SPEC_ACCEPTED__OWNER_TARGET_ADOPTION_PENDING`。接受证据和书面提案，不等于采纳新法则或实现通过。
-14/14保存快照的预算漂移与捕获mu_b/mu_a按128-eps一致；每份都存在上界向外预算漂移。发布2,256个异常快照行、112个角点记录和112个面/生产率汇总。异常数含不同诊断及表示误差，不能全部称为边界bug或独立状态。
-关键例：M143_FINAL row380在a上界仍有budget_a=0.81；row419在b上界有budget_b=0.003191811930404853，而存储A*b因遗漏边界外速率并保留对角贡献而显得向内。封闭非负守恒生成算子在坐标最大值处不可能给出正漂移，因此仅裁剪负率/补对角线不能同时保留这些控制和预算。必须明确边界政策或截断处理。
-联合角点KKT、总漂移生成算子、独立修复target API及未来验证方案已形成提案；未运行替代policy，也未采用新边界或FOC。
+## 当前Owner决定与活动任务
+状态：OWNER_DIRECTED_PRICE_BOUNDARY_AUDIT_ACTIVE__ORIGINAL_ALGORITHM_RETAINED。
+Owner要求保留原MATLAB算法、a_bar等设置，不采纳此前修复target，先查各省rah/wjt是否越界或触碰上下界，再诊断是否Zt偏高、资本相对不足或自适应机制未能纠正。
+活动任务：tasks/CH5_MP4C_PROVINCE_PRICE_BOUNDARY_AND_ADAPTATION_AUDIT.md。
+允许：原版/当前实现静态核对、已有失败轨迹和年度终点读取、源公式标量重建、相关测试、报告发布。所有新增HJB/KFE/线性或根求解/one-turn/GE/annual/R-PLM/shock/IRF/Results预算为0。缺关键轨迹时报告缺口，不自行重跑。
+尚未收到此任务的Builder执行报告；发布不代表本地启动或省份清点完成。
 
-## 当前等待的科学决定；没有active Builder successor
-已完成任务：`tasks/CH5_MP4C_CALL725_BOUNDARY_GENERATOR_REPAIR_SPEC.md`，不得重跑。
-目前没有新的科学执行任务。Owner需一次性决定是否将以下推荐组合用于独立诊断target：
-- D1：人工上界采用明确的有限盒数值状态约束；保留经济下界，未来必须做截断敏感性，不能当作经济储蓄上限或自动反射/吸收。
-- D2：按同一组实际消费/劳动/转移对应的总预算漂移构造非负守恒生成算子；拒绝越界输入，不裁剪掩盖。承认有限网格离散化与人工扩散变化。
-- D3：保留现有max(a,a_bar)成本及参数，target FOC/KKT从同一成本求导，适用于全部a<a_bar（包括a=0）；不添加V_b floor或transfer cap。
-这是对本次MP4C新target的采纳，不重开历史fixture或重新选择已确认的经济下界。冻结reference及原FAIL证据继续保留。
-确认后由Reviewer先发布整合实现/相关检查/有界验证的exact task，再由Builder执行；不会为每个工程阶段重复审批。本轮没有实施任务、没有新调用预算。报告中的十点/120-root方案仅为待审提案。
+## 本轮Reviewer实际读取的源码证据
+docs/CH5_MP4C_PRICE_BOUNDARY_SOURCE_REVIEW_20260908.md。
+Owner上传zip的SHA256为CEB94CCF34D2D218722B81E5111A8F4C530571A9F886BD4AFE0610A00321F755。32个.m与既有MP0哈希表32/32匹配，所含校准MAT与旧runtime cache身份相同；没有年度st。Reviewer实际读了相关源码及live Python控制器/厂商/资本聚合，但未独立读Windows年度输出或失败轨迹。
+有效clip：厂商ra=[.02,.09]、wjt=[.8,1.3]；不能直接施加给rah/w。需同时查原始ra0/wt0、截断后ra/wjt和实际家户rah/w。
+原自适应只有maxKNratiogap<.1且steady_state==1才启用；高ra>ramax-.02时GovInv乘1.1，低ra<ramin+.02时乘.9；当前阈值约为.07/.04。全国最大误差所在省可能阻止其他省调整。是否实际发生需轨迹，尚未认定。
+原最终收敛条件排除ra触界但不排除wjt触界。初始化ra=rah=.09、wjt=.6单独标识。rah在新厂商计算前用旧ra生成；不能与同快照新ra作错误同时点比较。Owner“rah约.07稳定”的回忆是待验证经验，不是新安全阈值。
 
-## 最新验收证据及预算
-验收：docs/CH5_MP4C_CALL725_BOUNDARY_GENERATOR_REPAIR_SPEC_ACCEPTANCE.md。
-报告：docs/CH5_MP4C_CALL725_BOUNDARY_GENERATOR_REPAIR_SPEC_REPORT.md。
-摘要：reports/call725_boundary_generator_repair_spec_20260907/。
-候选相对原main6de422f为ahead1/behind0，28个新增文件均在授权路径，生产/helper未变。Reviewer核对相关代码、冻结源表达式、结果/终点角点及两次测试日志；L3提交/报告审阅及L4已发布日志检查。首轮10项中1项AST-copy测试失败，修正归一化后10/10；原失败保留。
-Reviewer未独立执行测试、读取Windows MAT/NPZ、重算14快照或重验全部外部manifest。Builder的62项manifest回读SHA256为3D243B94BF048FD749FDCD1A3B46662EA862A09AE9B67E277139D3FD58F98B90，按发布回执记录。两端本任务及Reviewer新增科学调用/MATLAB启动全部0；Builder局部公式重建188个单元、1,128项标量检查通过。这些不是新模型求解。
+## 已接受边界/算子证据，修复target暂缓
+规格已验收：BOUNDARY_GENERATOR_REPAIR_SPEC_COMPLETE__SCIENTIFIC_DECISIONS_EXPLICIT__NO_MODEL_RUN。
+验收和报告：docs/CH5_MP4C_CALL725_BOUNDARY_GENERATOR_REPAIR_SPEC_ACCEPTANCE.md、docs/CH5_MP4C_CALL725_BOUNDARY_GENERATOR_REPAIR_SPEC_REPORT.md；摘要reports/call725_boundary_generator_repair_spec_20260907/。
+14/14保存快照预算漂移与捕获mu_b/mu_a按128-eps一致，每份存在上界向外预算漂移。2,256异常快照行、112角点、112面/生产率汇总；异常含不同诊断及表示误差，不全是独立状态或边界bug。
+M143_FINAL row380在a上界有budget_a=.81；row419在b上界有budget_b=.003191811930404853，但存储A*b因遗漏边界外速率而显得向内。封闭非负守恒生成算子在坐标最大值不能给出正漂移；仅裁剪负率/补对角线不能同时保留全部原控制和预算。
+D1人工上界数值状态约束、D2总预算漂移生成算子、D3同一max(a,a_bar)成本下的target FOC/KKT均只是已审提案，未采纳、未实施。Owner此次改变诊断优先级，不撤销原FAIL证据，也不把高价格自动认定为上述异常的唯一原因。
+此前候选相对6de422f为ahead1/behind0，28个新增文件均在范围，生产/helper未变。Reviewer做L3提交/报告及L4已发布两次测试日志检查；首轮10项1失败，修正AST归一化后10/10，原失败保留。未独立运行测试或读Windows数组。62项manifest回执SHA256为3D243B94BF048FD749FDCD1A3B46662EA862A09AE9B67E277139D3FD58F98B90。Builder188个局部单元/1,128项标量重建通过，非新模型求解；该任务全部新增模型/求解及MATLAB启动0。
 
 ## 尚未解决的数值问题
-独立轨迹仍为MATLAB143步收敛、Python500步未收敛，Python尾100步约0.00862并持续切换，未证明极限环。M143_FINAL两端仍有18负非对角元和15泄漏位置，停止标志不能解除算子有效性问题。
-P32内点极大算子已追到未截断transfer导数分母及平方成本；边界修复不能预先声称解决它。固定线性归因2ff3eb2已接受：精确共同M/RHS下M原/P原/M缩放/P缩放四组均FAIL，最大差2.802202914153895e-13、1.6830981053317373e-13、4.587441537751147e-13、4.4941828036826337e-13。原语言重放精确，两个向量分解复现旧差异；固定输入求解路径差异与输入微差敏感性均存在，范数不能当因果占比。
-ROW_POW2不普遍改善原方程后向误差，不采纳为生产修复。P32 row704两端Mii+Aii=0、spacing65536，sigma约0.051已丢失；80位残差不等于80位解或条件数证明。指定线性问题已完成，不为追求1e-13一致反复换solver/调容差/跑轨迹。
+独立共同初始化轨迹：MATLAB143步收敛，Python500步未收敛，尾100步约.00862持续切换，未证明极限环。M143_FINAL两端仍有18负非对角元和15泄漏位置，停止标志不能解除算子有效性问题。
+P32内点极大算子追到未截断transfer导数分母及平方成本；价格审计或边界提案均不能预先宣称解决它。固定线性归因2ff3eb2已接受：精确共同M/RHS下M原/P原/M缩放/P缩放四组均FAIL，最大差2.802202914153895e-13、1.6830981053317373e-13、4.587441537751147e-13、4.4941828036826337e-13。原语言重放精确，向量分解复现旧差异；固定输入求解路径与输入微差敏感性均存在，范数非因果占比。
+ROW_POW2不普遍改善原方程后向误差，未采纳为生产修复。P32 row704两端Mii+Aii=0、spacing65536，sigma约.051已丢失；80位残差不等于80位解或条件数证明。相关线性任务已完成，不反复换solver/调容差/跑轨迹追求1e-13一致。
 
-## 已接受历史范围
-- raw-vb 40/40为保存阶段差异，早期锚点e98bfad214b0c85005fac2ce23b1e4585a20e634。主比较为边界覆盖后导数，不支持生产导数修复。
-- 完整首轮25e5db97a0239d956d572359db5835cec945962f：53/53，V1最大差3.9968028886505635e-15；当时Reviewer独立15项比较器测试通过，未直接重读Windows数组。
-- 多轮dedd0f8e5fa894b83c8b20e522d66893e7b6b377：第2步consumption、第3步更新V1、第4步输入V依次超界，第24步离散分叉；共同MATLAB第2步前状态38/38。每端2次调用，MATLAB144/Python501次更新求解；当时Reviewer独立4项可移植测试通过，另2项依赖Windows未重跑。
-- 策略/算子b2d7a814039a585b696d8cc5079b8b9865017501：M24/P24/M143_FINAL各38/38，P32为36/38，首差V1、随后统计量，M/RHS仅容差内一致；每端4次单步调用。第24步(5,19,0)为不同状态的阈值跨越。候选/阈值为公式重建，不是独立runtime捕获。该轮8项测试是Builder汇总，Reviewer未独立运行。
-- 固定线性30438ea1468ddc59862f40574bd06c8625427e1b及追加2ff3eb212ea9a0d101183f9ff49dd1043bb6b886：每端4次直接求解、重试0、HJB/下游0。此前Reviewer独立解码/校验11项测试日志字节及换行规范化Git blob，未独立执行测试或模型。176证据/26源码报告条目的manifest为A0FF925E71273345043ACE4F666E07A4C990116E7F7BF6BDC1011853A1C64BDD；初次CRLF发布问题已追加修正，无科学重跑。
-- household特定fixture与MP0–MP3历史限定范围接受保留，不升级为所有经验输入有效。
-历史预算已消费，曾未持久化的MATLAB调用仍归原任务记录。本节不是全项目累计调用统计。
+## 已接受历史范围及证据锚点
+- raw-vb 40/40为保存阶段差异：e98bfad214b0c85005fac2ce23b1e4585a20e634。主比较为边界覆盖后导数，不支持生产导数修复。
+- 完整首轮25e5db97a0239d956d572359db5835cec945962f：53/53，V1最大差3.9968028886505635e-15；当时Reviewer独立15项比较器测试通过，未直接读Windows数组。
+- 多轮dedd0f8e5fa894b83c8b20e522d66893e7b6b377：第2步consumption、第3步更新V1、第4步输入V超界，第24步离散分叉；共同MATLAB第2步前状态38/38。每端2次调用，MATLAB144/Python501次更新求解；当时Reviewer独立4项可移植测试通过，2项Windows依赖未重跑。
+- 策略/算子b2d7a814039a585b696d8cc5079b8b9865017501：M24/P24/M143_FINAL各38/38，P32为36/38，首差V1后统计量；M/RHS仅容差内一致。每端4次单步；第24步(5,19,0)为不同状态阈值跨越。候选/阈值是公式重建，不是独立runtime捕获；8项测试是Builder汇总。
+- 固定线性30438ea1468ddc59862f40574bd06c8625427e1b及追加2ff3eb212ea9a0d101183f9ff49dd1043bb6b886：每端4次直接求解，重试/HJB/下游0。Reviewer曾独立解码校验11项日志字节及换行规范化blob，未独立执行测试/模型。176证据/26源码条目manifest为A0FF925E71273345043ACE4F666E07A4C990116E7F7BF6BDC1011853A1C64BDD；CRLF发布问题已追加修正，无科学重跑。
+- household特定fixture及MP0–MP3历史限定接受保留，不升级为所有经验输入有效。
+历史预算已消费，包括曾未持久化的MATLAB调用；本节不是全项目累计调用数。
 
-## 年度来源口径
-旧Owner指定protected runtime-cache口径：Python2009–2023共15/15年、465省年曾正式接受；corrected-2009跨语言接受仅对其历史配置成立，不代表所有年份parity。
-修正Owner-A资本/输入口径：2009–2022共14年，其中13年返回PASS、2018失败，完整修正覆盖未接受。2018曾捕获KFE contaminated-row singular/nonfinite异常。不同初始化曾两端500步内收敛，不能覆盖本次精确共同初始化Python500步未收敛。本次不重审或撤销不同配置的历史结果。
-年度来源：
+## 年度来源必须分组
+旧Owner指定protected runtime-cache口径：Python2009–2023共15/15年、465省年曾正式接受；corrected-2009跨语言仅对当时配置成立。
+Owner-A修正输入口径：2009–2022共14年，13年PASS、2018失败，完整修正覆盖未接受。2018曾捕获KFE contaminated-row singular/nonfinite异常。不同初始化曾两端500步内收敛，不能覆盖本次精确共同初始化Python500步未收敛。
+来源报告：
 - docs/CH5_TWO_ASSET_HANK_MP4C_L3_FORMAL_2009_2023_ANNUAL_STATIONARY_COVERAGE_ACCEPTANCE_REPORT.md
 - docs/CH5_TWO_ASSET_HANK_MP4C_OWNER_A_2009_2022_CORRECTED_8WORKER_ANNUAL_STATIONARY_REPORT.md
 - docs/CH5_TWO_ASSET_HANK_MP4C_2018_OBSERVABILITY_REPAIR_SINGLE_RETRY_AND_2009_2022_COMPOSITE_ACCEPTANCE_REPORT.md
 - docs/CH5_TWO_ASSET_HANK_MP4C_2018_CALL725_MATLAB_SAME_ACTIVE_INPUT_HJB100_HJB500_AND_LEGACY_KFE_FRESH_EXECUTION_AFTER_PATH_RECERTIFICATION_REPORT.md
+新审计不重跑、不混合各口径、不提前撤销历史特定配置验收，也不把历史PASS当作不存在工资触界的证明。
 
-## 科学身份、本地目录与路线
-protected HANK_2ASSETS_HJB.m SHA256：049136B769560040BC678F828F5D3EC5338DDCAA2090D6BED4E40732F56C3EAE。
-exports/matlab_faithful_two_asset_ha.py Git blob：9e7dc9556a2b76811e78f89999abecc045886106。
-authoritative initialization MAT SHA256：1718984CB588AE586F74AB8476C57AF849BB2C80CC95500329D29BC14207BB81。
+## 身份、本地保护与后续
+HJB保护SHA256：049136B769560040BC678F828F5D3EC5338DDCAA2090D6BED4E40732F56C3EAE。
+Python exports/matlab_faithful_two_asset_ha.py blob：9e7dc9556a2b76811e78f89999abecc045886106。
+共同初始化MAT SHA256：1718984CB588AE586F74AB8476C57AF849BB2C80CC95500329D29BC14207BB81。
 scalar binding SHA256：A40D088C63FC1F7EDECEA561D649B42959C646DF528ED13298014493DB4808F6。
-本地同步d2f3e6e7cc21fffe8807f577ec2262bb77afdc07已接受，不重开。工作目录D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001；原checkout及70未跟踪文件保留，Reviewer未直接检查Windows目录。
-证据根位于D:\ProjectTemp下：ch5-call725-multi-iteration-trajectory-20260907-001、ch5-call725-policy-operator-stability-20260907-001、ch5-call725-frozen-linear-system-20260907-001、ch5-call725-boundary-generator-repair-spec-20260907-001，均保留。
-后续：Owner采纳target定义→exact task下整合有界实现/验证→算子有效性与非线性收敛→恢复修正2018和年度覆盖→真正动态规格/集成→稳健性与Results。完整轨迹parity、修正2018、Results仍未接受；Results eligibility=FALSE。
+本地同步d2f3e6e7cc21fffe8807f577ec2262bb77afdc07已接受，不重开。工作目录D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001；原checkout及70未跟踪文件保留，Reviewer未直接查Windows目录。
+既有D:\ProjectTemp证据根：ch5-call725-multi-iteration-trajectory-20260907-001、ch5-call725-policy-operator-stability-20260907-001、ch5-call725-frozen-linear-system-20260907-001、ch5-call725-boundary-generator-repair-spec-20260907-001，均保留。
+下一步：完成价格/触界/原自适应的保存证据审计→Reviewer与Owner讨论真正原因及所需受控实验→再发布必要的有界后续。任何rate sensitivity、校准改动、2018恢复、替代policy仍需新明确授权。长期仍需解决数值有效性、修正年度覆盖及真正动态系统。Results eligibility=FALSE。

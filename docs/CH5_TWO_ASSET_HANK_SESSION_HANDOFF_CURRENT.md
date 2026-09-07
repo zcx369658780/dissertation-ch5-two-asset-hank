@@ -1,30 +1,29 @@
 # Chapter 5 当前交接
-更新：2026-09-07。唯一仓库：zcx369658780/dissertation-ch5-two-asset-hank。
+更新：2026-09-08。唯一仓库：zcx369658780/dissertation-ch5-two-asset-hank。
+Owner最终科学authority；ChatGPT为Reviewer/路线协调者/GitHub任务发布者；本地Codex为bounded Builder。持续授权允许证据验收后纳入main及无实质科学选择时发布精确后继任务。普通对话发布不自动启动本地计算，不修改provider。
 
-Owner最终科学authority；ChatGPT为Reviewer/路线协调者/GitHub任务发布者；本地Codex为bounded Builder。验收后纳入main及无实质科学决策时自动续发任务的授权持续有效。普通对话不自动启动本地模型，不修改provider配置。
+## 启动和当前任务
+Fresh读取live main，再读AGENTS、规则索引、状态和exact task。发布前main为da543d7960451da5b2ed9f67dae906269d45b273，不能假定它仍最新。不要混入deep-learning-hank或从旧R5/R1A附件重启。
+活动任务：tasks/CH5_MP4C_PROVINCE_PRICE_BOUNDARY_AND_ADAPTATION_AUDIT.md。
+状态：OWNER_DIRECTED_PRICE_BOUNDARY_AUDIT_ACTIVE__ORIGINAL_ALGORITHM_RETAINED。
+本交接发布时尚未收到其Builder报告，不得说已完成各省清点。
 
-## 启动
-Fresh读取live main，随后读取AGENTS、规则索引、当前状态和本交接。最新接受证据锚点15f51be9733b5043e738d3e522b97554e95902b9，不是永远不变的main。不要混入deep-learning-hank；过期R5/R1A或项目源附件不能覆盖live状态。
+## Owner新方向
+Owner明确要求保留原算法及a_bar，认为rah=.09可能过高，记得稳定收敛时rah通常约.07，要求先查各省rah/wjt越界/触界，然后继续诊断。此前D1-D3修复target未采纳、未实施，暂缓，不再等待其采纳才允许价格审计；已确认边界/算子异常不撤销。
+当前任务仅允许保存状态读取、原始价格与截断价格区分、时序和控制器分析、相关测试及报告。新增HJB/KFE/线性或根求解/one-turn/GE/annual/R-PLM/shock/IRF/Results预算均0。没有关键快照就如实报告缺口，不能重跑2018、改rah=.07或修改生产实现。
 
-## 本轮已验收
-边界/生成算子规格15f51be9已接受为诊断与书面提案，不是target采纳或实现通过。14/14快照预算/捕获漂移一致，所有快照有上界可行性冲突。2,256异常快照行、112角点、112面汇总；188局部旧公式单元、1,128标量重建比较通过。全部新模型/求解及MATLAB启动0。
-最强证据：MATLAB终点row380在a上界有budget_a=0.81；row419在b上界有向外预算漂移但A*b因泄漏显得向内。封闭非负守恒矩阵在坐标最大值不能产生正漂移，因此保留这些控制并仅裁剪速率/补对角线不可同时满足预算一致性。
-Reviewer做L3提交/代码/报告审阅及L4两次已发布测试日志检查；首轮10项1失败，AST绑定定位归一化修正后10/10。未独立重跑测试、读取Windows数组或重验外部manifest。62项manifest回执SHA256：3D243B94BF048FD749FDCD1A3B46662EA862A09AE9B67E277139D3FD58F98B90。
-验收及决策表：docs/CH5_MP4C_CALL725_BOUNDARY_GENERATOR_REPAIR_SPEC_ACCEPTANCE.md。
+## 本次源证据
+Reviewer实际读Owner上传zip；SHA256 CEB94CCF34D2D218722B81E5111A8F4C530571A9F886BD4AFE0610A00321F755。32个.m与MP0库存哈希全同；一个校准MAT同旧runtime cache；无年度st。不能假定ChatGPT附件已挂载到Windows，Builder可直接用已有hash-matched保护源码。
+源码静态复核：docs/CH5_MP4C_PRICE_BOUNDARY_SOURCE_REVIEW_20260908.md。
+关键：原始ra0/wt0先算再clip为ra/wjt；rah/w为另一层家户输入；rah用旧ra在新firm计算前生成。全国maxKNratiogap<.1时才开启自适应，高ra>.07附近触发GovInv*1.1，低ra<.04附近触发*.9。源码终止检查ra触界而不检查wjt触界。初始化ra=rah=.09、wjt=.6单独标识。事实是否发生在失败路径需要保存轨迹，尚未确认。
 
-## 当前等待Owner一次性target采纳；无active successor
-路线状态：BOUNDARY_SPEC_ACCEPTED__OWNER_TARGET_ADOPTION_PENDING。
-已完成tasks/CH5_MP4C_CALL725_BOUNDARY_GENERATOR_REPAIR_SPEC.md，不能重跑。此次没有发布替代policy/边界/FOC实现任务。
-推荐组合：D1独立诊断target采用有限盒数值状态约束（非经济储蓄上限，未来截断敏感性仍必需）；D2同一组consumed总预算漂移上风生成算子（承认离散化变化）；D3保留现有max(a,a_bar)成本及参数、target FOC从同一成本求导（全部a<a_bar，包括a=0，不添加V_b floor/cap）。
-现有下界、reference保护、同对象128-eps及比较阶段已确认，不重复询问。D1–D3是新MP4C target的采纳，不重开历史fixture。等待Owner对该组合的明确确认；收到后先发布带精确预算的整合实现/相关测试/选定单元验证任务。报告中的分阶段及120-root预算是建议，不是授权；避免再拆纯工程小门禁。
-没有Owner决定时，不发布越过边界法则的执行任务，也不为等待而新增重复诊断单。无有效task就无模型预算。
+## 保留的历史诊断与限制
+最新接受边界规格15f51be9733b5043e738d3e522b97554e95902b9：14/14快照预算/捕获漂移一致但存在上界向外漂移；相关验收和报告均在docs。Reviewer以前做L3提交审阅/L4已发布日志检查，未重算Windows数组。D1-D3是未采纳提案，不是实现结果。
+首轮53/53，多轮共同初始化MATLAB143步收敛、Python500未收敛；M143终点18负元/15泄漏。P32极端transfer/cost和sigma丢失尚未解决。固定线性2ff3eb2已接受局部归因，不反复换solver/调容差/跑轨迹追求机器级PASS。
+旧runtime-cache15/15年、465省年历史接受；Owner-A修正13/14年PASS而2018失败，必须分组。Results eligibility=FALSE；价格审计不自动建立因果、修复、年度或动态接受。
+完整身份、预算、证据根及局限见当前状态和原报告，不重开已完成任务。
 
-## 保留的诊断与阻塞
-治理迁移/本地同步/首轮53/53/多轮/四状态/冻结线性任务均已完成，不重跑。
-固定线性2ff3eb2：四组精确共同系统跨语言仍FAIL，原语言重放精确；向量分解区分solver路径和输入敏感性，整条轨迹成因未证明。行缩放不普遍改善，P32 row704移位sigma已丢失。前次11项日志字节验证属于前次审阅，不能混称本轮独立模型执行。
-独立轨迹MATLAB143步收敛、Python500步不收敛；终点18负元/15泄漏；边界修复不保证解决P32内点极端policy、表示误差或收敛。KKT书面推导不等于全局离散policy已验证。
-旧runtime-cache15/15年、465省年历史接受；修正Owner-A13/14年返回PASS、2018阻塞完整覆盖。不把顺序比较静态叫作真正IRF，不编造论文完成百分比。Results eligibility=FALSE。
-
-## 本地保护
-工作目录D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001。原D:\ResearchCode\dissertation-ch5-two-asset-hank及70个未跟踪文件保留；不reset/clean/stash/覆盖。
-Codex UI可仍为D:\Zotero-Analytical-Workflow，所有repo命令明确使用Chapter5目录；切cwd不保证清除预加载指令，仍遵守平台/全局规则，不改Zotero/全局配置。源哈希、四个证据根及历史预算见当前状态和相应报告。
+## 本地保护与交付
+工作目录D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001。原D:\ResearchCode\dissertation-ch5-two-asset-hank及报告中的70未跟踪文件保留；不reset/clean/stash/覆盖。保护MATLAB物理根D:\MatlabProgram\2023年12月2日 多省份神经网络HANK只读。
+UI可仍为D:\Zotero-Analytical-Workflow，repo命令明确使用Chapter5目录；仍遵守平台/全局限制，不改Zotero或全局配置。
+Builder完成任务内完整问题后按allowed paths提交并非force推送专用分支，Reviewer再读证据。后续受控实验/校准/算法选择需新明确授权。
