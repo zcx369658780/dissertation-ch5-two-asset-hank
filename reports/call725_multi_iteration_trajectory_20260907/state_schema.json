@@ -1,0 +1,37 @@
+{
+  "mutable_loop_state": {
+    "V": "previous completed updated/v1 tensor; exact (20,20,2), F-order linear mapping"
+  },
+  "immutable_state": [
+    "b",
+    "ah/a",
+    "z",
+    "l0",
+    "scalar_binding",
+    "switch_matrix"
+  ],
+  "recomputed_each_step": [
+    "derivatives",
+    "policy labels/controls",
+    "coefficients",
+    "operators",
+    "M",
+    "RHS"
+  ],
+  "stop": "statistic < frozen convergence_tolerance (strict <); nonfinite/fatal; maximum 500; production ceiling 100 unchanged",
+  "source_attribution": {
+    "python": "exports/matlab_faithful_two_asset_ha.py:528-559; labor0 assigned once at 524 and never updated",
+    "matlab": "protected HJB lines 113-260; V=v, v=V, l0 unchanged; uses accepted one-step source-extracted operator/evaluator semantics"
+  },
+  "replay": "MATLAB pre-step initial_value relabeled v0, plus exact l0/b/ah/z; load same MAT into both evaluators",
+  "predecessor_wrappers": [
+    {
+      "path": "D:\\ProjectTemp\\ch5-mp4c-2018-call725-postcall-residual-vectorization-repair-20260904-001\\python_postcall_vectorized_stagewise_wrapper.py",
+      "sha256": "FFD218B50BCAE20E2525F5DB806A21200E9DBD0C7E27ABC4CFBA827053CF87E0"
+    },
+    {
+      "path": "D:\\ProjectTemp\\ch5-mp4c-2018-call725-postcall-residual-vectorization-repair-20260904-001\\matlab_postcall_vectorized_stagewise_wrapper.m",
+      "sha256": "43EC8323529DBA9A7638732DC97C22ECB3120966AF65C693E73BDA003A94C9B6"
+    }
+  ]
+}

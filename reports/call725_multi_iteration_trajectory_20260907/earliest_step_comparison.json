@@ -1,0 +1,2252 @@
+{
+  "iteration": 2,
+  "passed": false,
+  "first_mismatch": {
+    "stage": 4,
+    "name": "consumption",
+    "available": true,
+    "left_shape": [
+      20,
+      20,
+      2
+    ],
+    "right_shape": [
+      20,
+      20,
+      2
+    ],
+    "expected_shape": [
+      20,
+      20,
+      2
+    ],
+    "shape_pass": true,
+    "comparison": "128*eps64*max(1,abs(left),abs(right))",
+    "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+    "finite": true,
+    "passed": false,
+    "material_mismatch_count": 519,
+    "exact_equal": false,
+    "max_abs": 1.3500311979441904e-11,
+    "max_scaled": 28.813768104363252,
+    "representative_coordinates": [
+      {
+        "index_zero_based": [
+          0,
+          0,
+          0
+        ],
+        "left": 7.9085079980249295,
+        "right": 7.908507998025227,
+        "absolute_difference": 2.9753977059954195e-13,
+        "scaled_difference": 1.3237326184172882
+      },
+      {
+        "index_zero_based": [
+          0,
+          0,
+          1
+        ],
+        "left": 10.827428654658156,
+        "right": 10.827428654657393,
+        "absolute_difference": 7.638334409421077e-13,
+        "scaled_difference": 2.482122104627112
+      },
+      {
+        "index_zero_based": [
+          0,
+          1,
+          0
+        ],
+        "left": 7.949365577358516,
+        "right": 7.949365577358818,
+        "absolute_difference": 3.019806626980426e-13,
+        "scaled_difference": 1.3365846490016582
+      },
+      {
+        "index_zero_based": [
+          0,
+          1,
+          1
+        ],
+        "left": 10.857078218595975,
+        "right": 10.857078218596746,
+        "absolute_difference": 7.709388682997087e-13,
+        "scaled_difference": 2.4983701373301748
+      },
+      {
+        "index_zero_based": [
+          0,
+          3,
+          0
+        ],
+        "left": 8.041298789491687,
+        "right": 8.041298789492002,
+        "absolute_difference": 3.1441516057384433e-13,
+        "scaled_difference": 1.3757106021798324
+      }
+    ]
+  },
+  "first_generated_mismatch": {
+    "stage": 4,
+    "name": "consumption",
+    "available": true,
+    "left_shape": [
+      20,
+      20,
+      2
+    ],
+    "right_shape": [
+      20,
+      20,
+      2
+    ],
+    "expected_shape": [
+      20,
+      20,
+      2
+    ],
+    "shape_pass": true,
+    "comparison": "128*eps64*max(1,abs(left),abs(right))",
+    "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+    "finite": true,
+    "passed": false,
+    "material_mismatch_count": 519,
+    "exact_equal": false,
+    "max_abs": 1.3500311979441904e-11,
+    "max_scaled": 28.813768104363252,
+    "representative_coordinates": [
+      {
+        "index_zero_based": [
+          0,
+          0,
+          0
+        ],
+        "left": 7.9085079980249295,
+        "right": 7.908507998025227,
+        "absolute_difference": 2.9753977059954195e-13,
+        "scaled_difference": 1.3237326184172882
+      },
+      {
+        "index_zero_based": [
+          0,
+          0,
+          1
+        ],
+        "left": 10.827428654658156,
+        "right": 10.827428654657393,
+        "absolute_difference": 7.638334409421077e-13,
+        "scaled_difference": 2.482122104627112
+      },
+      {
+        "index_zero_based": [
+          0,
+          1,
+          0
+        ],
+        "left": 7.949365577358516,
+        "right": 7.949365577358818,
+        "absolute_difference": 3.019806626980426e-13,
+        "scaled_difference": 1.3365846490016582
+      },
+      {
+        "index_zero_based": [
+          0,
+          1,
+          1
+        ],
+        "left": 10.857078218595975,
+        "right": 10.857078218596746,
+        "absolute_difference": 7.709388682997087e-13,
+        "scaled_difference": 2.4983701373301748
+      },
+      {
+        "index_zero_based": [
+          0,
+          3,
+          0
+        ],
+        "left": 8.041298789491687,
+        "right": 8.041298789492002,
+        "absolute_difference": 3.1441516057384433e-13,
+        "scaled_difference": 1.3757106021798324
+      }
+    ]
+  },
+  "rows": [
+    {
+      "stage": 1,
+      "name": "l0",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "exact",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": true,
+      "max_abs": 0.0,
+      "max_scaled": 0.0,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 1,
+      "name": "b",
+      "available": true,
+      "left_shape": [
+        20
+      ],
+      "right_shape": [
+        20
+      ],
+      "expected_shape": [
+        20
+      ],
+      "shape_pass": true,
+      "comparison": "exact",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": true,
+      "max_abs": 0.0,
+      "max_scaled": 0.0,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 1,
+      "name": "a",
+      "available": true,
+      "left_shape": [
+        20
+      ],
+      "right_shape": [
+        20
+      ],
+      "expected_shape": [
+        20
+      ],
+      "shape_pass": true,
+      "comparison": "exact",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": true,
+      "max_abs": 0.0,
+      "max_scaled": 0.0,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 1,
+      "name": "z",
+      "available": true,
+      "left_shape": [
+        2
+      ],
+      "right_shape": [
+        2
+      ],
+      "expected_shape": [
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "exact",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": true,
+      "max_abs": 0.0,
+      "max_scaled": 0.0,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 1,
+      "name": "old/V0",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": false,
+      "max_abs": 3.9968028886505635e-15,
+      "max_scaled": 0.06703665335571386,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 2,
+      "name": "va_f",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": false,
+      "max_abs": 5.906299754832034e-15,
+      "max_scaled": 0.2078094482421875,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 2,
+      "name": "va_b",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": false,
+      "max_abs": 5.906299754832034e-15,
+      "max_scaled": 0.2078094482421875,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 2,
+      "name": "post_boundary_vb_f",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": false,
+      "max_abs": 6.026863036412422e-15,
+      "max_scaled": 0.2120513916015625,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 2,
+      "name": "post_boundary_vb_b",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": false,
+      "max_abs": 6.026863036412422e-15,
+      "max_scaled": 0.2120513916015625,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 2,
+      "name": "raw_va_f",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": false,
+      "max_abs": 5.906299754832034e-15,
+      "max_scaled": 0.2078094482421875,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 2,
+      "name": "raw_va_b",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": false,
+      "max_abs": 5.906299754832034e-15,
+      "max_scaled": 0.2078094482421875,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 3,
+      "name": "liquid_label",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "exact",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": true,
+      "max_abs": 0.0,
+      "max_scaled": 0.0,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 3,
+      "name": "transfer_label",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "exact",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": true,
+      "max_abs": 0.0,
+      "max_scaled": 0.0,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 3,
+      "name": "Ic_B",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "exact",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": true,
+      "max_abs": 0.0,
+      "max_scaled": 0.0,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 3,
+      "name": "Ic_F",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "exact",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": true,
+      "max_abs": 0.0,
+      "max_scaled": 0.0,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 3,
+      "name": "Ic_0",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "exact",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": true,
+      "max_abs": 0.0,
+      "max_scaled": 0.0,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 3,
+      "name": "Idh_B",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "exact",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": true,
+      "max_abs": 0.0,
+      "max_scaled": 0.0,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 3,
+      "name": "Idh_F",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "exact",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": true,
+      "max_abs": 0.0,
+      "max_scaled": 0.0,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 4,
+      "name": "consumption",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": false,
+      "material_mismatch_count": 519,
+      "exact_equal": false,
+      "max_abs": 1.3500311979441904e-11,
+      "max_scaled": 28.813768104363252,
+      "representative_coordinates": [
+        {
+          "index_zero_based": [
+            0,
+            0,
+            0
+          ],
+          "left": 7.9085079980249295,
+          "right": 7.908507998025227,
+          "absolute_difference": 2.9753977059954195e-13,
+          "scaled_difference": 1.3237326184172882
+        },
+        {
+          "index_zero_based": [
+            0,
+            0,
+            1
+          ],
+          "left": 10.827428654658156,
+          "right": 10.827428654657393,
+          "absolute_difference": 7.638334409421077e-13,
+          "scaled_difference": 2.482122104627112
+        },
+        {
+          "index_zero_based": [
+            0,
+            1,
+            0
+          ],
+          "left": 7.949365577358516,
+          "right": 7.949365577358818,
+          "absolute_difference": 3.019806626980426e-13,
+          "scaled_difference": 1.3365846490016582
+        },
+        {
+          "index_zero_based": [
+            0,
+            1,
+            1
+          ],
+          "left": 10.857078218595975,
+          "right": 10.857078218596746,
+          "absolute_difference": 7.709388682997087e-13,
+          "scaled_difference": 2.4983701373301748
+        },
+        {
+          "index_zero_based": [
+            0,
+            3,
+            0
+          ],
+          "left": 8.041298789491687,
+          "right": 8.041298789492002,
+          "absolute_difference": 3.1441516057384433e-13,
+          "scaled_difference": 1.3757106021798324
+        }
+      ]
+    },
+    {
+      "stage": 4,
+      "name": "labor",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": false,
+      "material_mismatch_count": 277,
+      "exact_equal": false,
+      "max_abs": 1.9584334154387761e-13,
+      "max_scaled": 6.890625,
+      "representative_coordinates": [
+        {
+          "index_zero_based": [
+            0,
+            13,
+            1
+          ],
+          "left": 0.6897085027506376,
+          "right": 0.6897085027506817,
+          "absolute_difference": 4.418687638008123e-14,
+          "scaled_difference": 1.5546875
+        },
+        {
+          "index_zero_based": [
+            1,
+            2,
+            1
+          ],
+          "left": 0.7019777880034922,
+          "right": 0.7019777880035335,
+          "absolute_difference": 4.1300296516055823e-14,
+          "scaled_difference": 1.453125
+        },
+        {
+          "index_zero_based": [
+            1,
+            7,
+            1
+          ],
+          "left": 0.6944882577333769,
+          "right": 0.6944882577334415,
+          "absolute_difference": 6.461498003318411e-14,
+          "scaled_difference": 2.2734375
+        },
+        {
+          "index_zero_based": [
+            1,
+            8,
+            1
+          ],
+          "left": 0.6930632910689948,
+          "right": 0.6930632910689514,
+          "absolute_difference": 4.340972026284362e-14,
+          "scaled_difference": 1.52734375
+        },
+        {
+          "index_zero_based": [
+            2,
+            2,
+            1
+          ],
+          "left": 0.6983417343494205,
+          "right": 0.6983417343493784,
+          "absolute_difference": 4.207745263329343e-14,
+          "scaled_difference": 1.48046875
+        }
+      ]
+    },
+    {
+      "stage": 4,
+      "name": "transfer",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": false,
+      "material_mismatch_count": 688,
+      "exact_equal": false,
+      "max_abs": 5.309530592967349e-12,
+      "max_scaled": 181.20703125,
+      "representative_coordinates": [
+        {
+          "index_zero_based": [
+            0,
+            1,
+            0
+          ],
+          "left": -0.1614870607512151,
+          "right": -0.1614870607512515,
+          "absolute_difference": 3.6387559632089506e-14,
+          "scaled_difference": 1.2802734375
+        },
+        {
+          "index_zero_based": [
+            0,
+            1,
+            1
+          ],
+          "left": -0.12225497660376315,
+          "right": -0.12225497660369448,
+          "absolute_difference": 6.866729407306593e-14,
+          "scaled_difference": 2.416015625
+        },
+        {
+          "index_zero_based": [
+            0,
+            2,
+            0
+          ],
+          "left": -0.32922621033229577,
+          "right": -0.329226210332239,
+          "absolute_difference": 5.678790770957676e-14,
+          "scaled_difference": 1.998046875
+        },
+        {
+          "index_zero_based": [
+            0,
+            2,
+            1
+          ],
+          "left": -0.26295163963941004,
+          "right": -0.2629516396394629,
+          "absolute_difference": 5.284661597215745e-14,
+          "scaled_difference": 1.859375
+        },
+        {
+          "index_zero_based": [
+            0,
+            3,
+            1
+          ],
+          "left": -0.4119316068903434,
+          "right": -0.41193160689042335,
+          "absolute_difference": 7.993605777301127e-14,
+          "scaled_difference": 2.8125
+        }
+      ]
+    },
+    {
+      "stage": 4,
+      "name": "adjustment_cost",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": false,
+      "material_mismatch_count": 664,
+      "exact_equal": false,
+      "max_abs": 2.076838701015049e-12,
+      "max_scaled": 73.072265625,
+      "representative_coordinates": [
+        {
+          "index_zero_based": [
+            0,
+            1,
+            1
+          ],
+          "left": 0.040623428338711,
+          "right": 0.04062342833867223,
+          "absolute_difference": 3.8767600241129685e-14,
+          "scaled_difference": 1.364013671875
+        },
+        {
+          "index_zero_based": [
+            0,
+            2,
+            0
+          ],
+          "left": 0.13589302372450637,
+          "right": 0.13589302372446518,
+          "absolute_difference": 4.118927421359331e-14,
+          "scaled_difference": 1.44921875
+        },
+        {
+          "index_zero_based": [
+            0,
+            2,
+            1
+          ],
+          "left": 0.09198155051354247,
+          "right": 0.09198155051357415,
+          "absolute_difference": 3.1682989565240405e-14,
+          "scaled_difference": 1.11474609375
+        },
+        {
+          "index_zero_based": [
+            0,
+            3,
+            1
+          ],
+          "left": 0.14866200490069928,
+          "right": 0.14866200490074896,
+          "absolute_difference": 4.9682480351975755e-14,
+          "scaled_difference": 1.748046875
+        },
+        {
+          "index_zero_based": [
+            0,
+            4,
+            0
+          ],
+          "left": 0.28104088748062483,
+          "right": 0.2810408874805498,
+          "absolute_difference": 7.505107646466058e-14,
+          "scaled_difference": 2.640625
+        }
+      ]
+    },
+    {
+      "stage": 4,
+      "name": "effective_illiquid_return",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": false,
+      "max_abs": 1.3877787807814457e-17,
+      "max_scaled": 0.00048828125,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 5,
+      "name": "mu_a",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": false,
+      "material_mismatch_count": 688,
+      "exact_equal": false,
+      "max_abs": 5.309530592967349e-12,
+      "max_scaled": 186.8125,
+      "representative_coordinates": [
+        {
+          "index_zero_based": [
+            0,
+            1,
+            0
+          ],
+          "left": -0.11411863969859821,
+          "right": -0.1141186396986346,
+          "absolute_difference": 3.6387559632089506e-14,
+          "scaled_difference": 1.2802734375
+        },
+        {
+          "index_zero_based": [
+            0,
+            1,
+            1
+          ],
+          "left": -0.07488655555114626,
+          "right": -0.0748865555510776,
+          "absolute_difference": 6.866729407306593e-14,
+          "scaled_difference": 2.416015625
+        },
+        {
+          "index_zero_based": [
+            0,
+            2,
+            0
+          ],
+          "left": -0.23448936824206426,
+          "right": -0.23448936824200747,
+          "absolute_difference": 5.678790770957676e-14,
+          "scaled_difference": 1.998046875
+        },
+        {
+          "index_zero_based": [
+            0,
+            2,
+            1
+          ],
+          "left": -0.16821479754917854,
+          "right": -0.16821479754923138,
+          "absolute_difference": 5.284661597215745e-14,
+          "scaled_difference": 1.859375
+        },
+        {
+          "index_zero_based": [
+            0,
+            3,
+            1
+          ],
+          "left": -0.269826344599249,
+          "right": -0.2698263445993289,
+          "absolute_difference": 7.993605777301127e-14,
+          "scaled_difference": 2.8125
+        }
+      ]
+    },
+    {
+      "stage": 5,
+      "name": "mu_b",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": false,
+      "material_mismatch_count": 695,
+      "exact_equal": false,
+      "max_abs": 1.6147083670148277e-11,
+      "max_scaled": 211.5615001071384,
+      "representative_coordinates": [
+        {
+          "index_zero_based": [
+            0,
+            0,
+            0
+          ],
+          "left": 1.3168752578208016,
+          "right": 1.3168752578203637,
+          "absolute_difference": 4.3787196091216174e-13,
+          "scaled_difference": 11.699095953472959
+        },
+        {
+          "index_zero_based": [
+            0,
+            0,
+            1
+          ],
+          "left": 3.7881264042869898,
+          "right": 3.7881264042881675,
+          "absolute_difference": 1.177724584522366e-12,
+          "scaled_difference": 10.938784923621519
+        },
+        {
+          "index_zero_based": [
+            0,
+            1,
+            0
+          ],
+          "left": 1.3526472625932628,
+          "right": 1.3526472625928294,
+          "absolute_difference": 4.334310688136611e-13,
+          "scaled_difference": 11.274188342911415
+        },
+        {
+          "index_zero_based": [
+            0,
+            1,
+            1
+          ],
+          "left": 3.8240423980884426,
+          "right": 3.8240423980872222,
+          "absolute_difference": 1.220357148667972e-12,
+          "scaled_difference": 11.228301239929646
+        },
+        {
+          "index_zero_based": [
+            0,
+            3,
+            0
+          ],
+          "left": 1.413907166474461,
+          "right": 1.4139071664740115,
+          "absolute_difference": 4.4941828036826337e-13,
+          "scaled_difference": 11.18354894503296
+        }
+      ]
+    },
+    {
+      "stage": 5,
+      "name": "utility",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": false,
+      "material_mismatch_count": 29,
+      "exact_equal": false,
+      "max_abs": 6.465661339660755e-14,
+      "max_scaled": 2.27490234375,
+      "representative_coordinates": [
+        {
+          "index_zero_based": [
+            1,
+            7,
+            1
+          ],
+          "left": -0.10688874412877357,
+          "right": -0.10688874412880453,
+          "absolute_difference": 3.096134459923405e-14,
+          "scaled_difference": 1.08935546875
+        },
+        {
+          "index_zero_based": [
+            4,
+            9,
+            1
+          ],
+          "left": -0.10061251908840353,
+          "right": -0.10061251908837174,
+          "absolute_difference": 3.179401186770292e-14,
+          "scaled_difference": 1.11865234375
+        },
+        {
+          "index_zero_based": [
+            6,
+            5,
+            1
+          ],
+          "left": -0.07786272168191197,
+          "right": -0.07786272168194798,
+          "absolute_difference": 3.6012859361278515e-14,
+          "scaled_difference": 1.26708984375
+        },
+        {
+          "index_zero_based": [
+            8,
+            1,
+            1
+          ],
+          "left": -0.06721961794380484,
+          "right": -0.06721961794384397,
+          "absolute_difference": 3.913536161803677e-14,
+          "scaled_difference": 1.376953125
+        },
+        {
+          "index_zero_based": [
+            8,
+            3,
+            1
+          ],
+          "left": -0.06723876641724685,
+          "right": -0.06723876641728599,
+          "absolute_difference": 3.913536161803677e-14,
+          "scaled_difference": 1.376953125
+        }
+      ]
+    },
+    {
+      "stage": 6,
+      "name": "bb",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": false,
+      "material_mismatch_count": 402,
+      "exact_equal": false,
+      "max_abs": 4.7684522996860323e-11,
+      "max_scaled": 205.77734375,
+      "representative_coordinates": [
+        {
+          "index_zero_based": [
+            6,
+            0,
+            0
+          ],
+          "left": 5.361291531817568,
+          "right": 5.361291531815124,
+          "absolute_difference": 2.4442670110147446e-12,
+          "scaled_difference": 16.040910942749004
+        },
+        {
+          "index_zero_based": [
+            6,
+            2,
+            0
+          ],
+          "left": 8.413931856340152,
+          "right": 8.413931856346194,
+          "absolute_difference": 6.041389610800252e-12,
+          "scaled_difference": 25.263159201803507
+        },
+        {
+          "index_zero_based": [
+            6,
+            3,
+            0
+          ],
+          "left": 9.037648861375983,
+          "right": 9.03764886137913,
+          "absolute_difference": 3.147704319417244e-12,
+          "scaled_difference": 12.254293312198868
+        },
+        {
+          "index_zero_based": [
+            6,
+            3,
+            1
+          ],
+          "left": 0.6092054244281645,
+          "right": 0.609205424422316,
+          "absolute_difference": 5.848543871422862e-12,
+          "scaled_difference": 205.77734375
+        },
+        {
+          "index_zero_based": [
+            6,
+            4,
+            0
+          ],
+          "left": 9.34360766946662,
+          "right": 9.34360766946984,
+          "absolute_difference": 3.220534949832654e-12,
+          "scaled_difference": 12.127275032132143
+        }
+      ]
+    },
+    {
+      "stage": 6,
+      "name": "bf",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": false,
+      "material_mismatch_count": 644,
+      "exact_equal": false,
+      "max_abs": 1.2647660696529783e-11,
+      "max_scaled": 293.83942726572064,
+      "representative_coordinates": [
+        {
+          "index_zero_based": [
+            0,
+            0,
+            0
+          ],
+          "left": 3.5743756997993184,
+          "right": 3.57437569979813,
+          "absolute_difference": 1.1883827255587676e-12,
+          "scaled_difference": 11.697846984117406
+        },
+        {
+          "index_zero_based": [
+            0,
+            0,
+            1
+          ],
+          "left": 10.282057383064686,
+          "right": 10.282057383067881,
+          "absolute_difference": 3.1956659540810506e-12,
+          "scaled_difference": 10.935311466473431
+        },
+        {
+          "index_zero_based": [
+            0,
+            1,
+            0
+          ],
+          "left": 3.6714711413245715,
+          "right": 3.671471141323394,
+          "absolute_difference": 1.177724584522366e-12,
+          "scaled_difference": 11.286347734998245
+        },
+        {
+          "index_zero_based": [
+            0,
+            1,
+            1
+          ],
+          "left": 10.379543651954341,
+          "right": 10.379543651951034,
+          "absolute_difference": 3.3075764349632664e-12,
+          "scaled_difference": 11.211957278881718
+        },
+        {
+          "index_zero_based": [
+            0,
+            3,
+            0
+          ],
+          "left": 3.837748023287821,
+          "right": 3.837748023286601,
+          "absolute_difference": 1.219913059458122e-12,
+          "scaled_difference": 11.184130573332581
+        }
+      ]
+    },
+    {
+      "stage": 6,
+      "name": "ab",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": false,
+      "material_mismatch_count": 703,
+      "exact_equal": false,
+      "max_abs": 1.0087930490954022e-11,
+      "max_scaled": 344.29296875,
+      "representative_coordinates": [
+        {
+          "index_zero_based": [
+            0,
+            1,
+            0
+          ],
+          "left": 0.30682541542730873,
+          "right": 0.30682541542737785,
+          "absolute_difference": 6.9111383282916e-14,
+          "scaled_difference": 2.431640625
+        },
+        {
+          "index_zero_based": [
+            0,
+            1,
+            1
+          ],
+          "left": 0.23228445554715,
+          "right": 0.23228445554701954,
+          "absolute_difference": 1.304512053934559e-13,
+          "scaled_difference": 4.58984375
+        },
+        {
+          "index_zero_based": [
+            0,
+            2,
+            0
+          ],
+          "left": 0.625529799631362,
+          "right": 0.6255297996312541,
+          "absolute_difference": 1.0791367799356522e-13,
+          "scaled_difference": 3.796875
+        },
+        {
+          "index_zero_based": [
+            0,
+            2,
+            1
+          ],
+          "left": 0.4996081153148791,
+          "right": 0.4996081153149795,
+          "absolute_difference": 1.0041967257734541e-13,
+          "scaled_difference": 3.533203125
+        },
+        {
+          "index_zero_based": [
+            0,
+            3,
+            0
+          ],
+          "left": 0.9494973148459185,
+          "right": 0.9494973148459691,
+          "absolute_difference": 5.062616992290714e-14,
+          "scaled_difference": 1.78125
+        }
+      ]
+    },
+    {
+      "stage": 6,
+      "name": "af",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": false,
+      "max_abs": 2.220446049250313e-16,
+      "max_scaled": 0.006240352552536106,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 7,
+      "name": "BB",
+      "available": true,
+      "left_shape": [
+        2088
+      ],
+      "right_shape": [
+        2088
+      ],
+      "expected_shape": [
+        2088
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": false,
+      "material_mismatch_count": 1736,
+      "exact_equal": false,
+      "max_abs": 5.3375970310298726e-11,
+      "max_scaled": 293.83942726572064,
+      "representative_coordinates": [
+        {
+          "index_zero_based": [
+            0
+          ],
+          "left": -3.5743756997993184,
+          "right": -3.57437569979813,
+          "absolute_difference": 1.1883827255587676e-12,
+          "scaled_difference": 11.697846984117406,
+          "matrix_coordinate": [
+            0,
+            0
+          ]
+        },
+        {
+          "index_zero_based": [
+            1
+          ],
+          "left": 3.5743756997993184,
+          "right": 3.57437569979813,
+          "absolute_difference": 1.1883827255587676e-12,
+          "scaled_difference": 11.697846984117406,
+          "matrix_coordinate": [
+            0,
+            1
+          ]
+        },
+        {
+          "index_zero_based": [
+            4
+          ],
+          "left": -4.047914653474698,
+          "right": -4.047914653475868,
+          "absolute_difference": 1.169730978745065e-12,
+          "scaled_difference": 10.167272169303251,
+          "matrix_coordinate": [
+            2,
+            2
+          ]
+        },
+        {
+          "index_zero_based": [
+            5
+          ],
+          "left": 4.047914653474698,
+          "right": 4.047914653475868,
+          "absolute_difference": 1.169730978745065e-12,
+          "scaled_difference": 10.167272169303251,
+          "matrix_coordinate": [
+            2,
+            3
+          ]
+        },
+        {
+          "index_zero_based": [
+            10
+          ],
+          "left": 5.361291531817568,
+          "right": 5.361291531815124,
+          "absolute_difference": 2.4442670110147446e-12,
+          "scaled_difference": 16.040910942749004,
+          "matrix_coordinate": [
+            6,
+            5
+          ]
+        }
+      ],
+      "support_mismatch_count": 0,
+      "matrix_shape": [
+        800,
+        800
+      ],
+      "left_nnz": 2088,
+      "right_nnz": 2088,
+      "support_examples": []
+    },
+    {
+      "stage": 7,
+      "name": "AAH",
+      "available": true,
+      "left_shape": [
+        2240
+      ],
+      "right_shape": [
+        2240
+      ],
+      "expected_shape": [
+        2240
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": false,
+      "material_mismatch_count": 1395,
+      "exact_equal": false,
+      "max_abs": 1.0087930490954022e-11,
+      "max_scaled": 344.29296875,
+      "representative_coordinates": [
+        {
+          "index_zero_based": [
+            0
+          ],
+          "left": 0.30682541542730873,
+          "right": 0.30682541542737785,
+          "absolute_difference": 6.9111383282916e-14,
+          "scaled_difference": 2.431640625,
+          "matrix_coordinate": [
+            20,
+            0
+          ]
+        },
+        {
+          "index_zero_based": [
+            1
+          ],
+          "left": -0.39682541542728084,
+          "right": -0.39682541542734995,
+          "absolute_difference": 6.9111383282916e-14,
+          "scaled_difference": 2.431640625,
+          "matrix_coordinate": [
+            20,
+            20
+          ]
+        },
+        {
+          "index_zero_based": [
+            3
+          ],
+          "left": 0.3115691145100042,
+          "right": 0.311569114510094,
+          "absolute_difference": 8.981704269217516e-14,
+          "scaled_difference": 3.16015625,
+          "matrix_coordinate": [
+            21,
+            1
+          ]
+        },
+        {
+          "index_zero_based": [
+            4
+          ],
+          "left": -0.4015691145099763,
+          "right": -0.4015691145100661,
+          "absolute_difference": 8.981704269217516e-14,
+          "scaled_difference": 3.16015625,
+          "matrix_coordinate": [
+            21,
+            21
+          ]
+        },
+        {
+          "index_zero_based": [
+            6
+          ],
+          "left": 0.3166775822365965,
+          "right": 0.31667758223664894,
+          "absolute_difference": 5.2458037913538647e-14,
+          "scaled_difference": 1.845703125,
+          "matrix_coordinate": [
+            22,
+            2
+          ]
+        }
+      ],
+      "support_mismatch_count": 0,
+      "matrix_shape": [
+        800,
+        800
+      ],
+      "left_nnz": 2240,
+      "right_nnz": 2240,
+      "support_examples": []
+    },
+    {
+      "stage": 7,
+      "name": "Bswitch",
+      "available": true,
+      "left_shape": [
+        1600
+      ],
+      "right_shape": [
+        1600
+      ],
+      "expected_shape": [
+        1600
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": true,
+      "max_abs": 0.0,
+      "max_scaled": 0.0,
+      "representative_coordinates": [],
+      "support_mismatch_count": 0,
+      "matrix_shape": [
+        800,
+        800
+      ],
+      "left_nnz": 1600,
+      "right_nnz": 1600,
+      "support_examples": []
+    },
+    {
+      "stage": 7,
+      "name": "A",
+      "available": true,
+      "left_shape": [
+        4370
+      ],
+      "right_shape": [
+        4370
+      ],
+      "expected_shape": [
+        4370
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": false,
+      "material_mismatch_count": 2462,
+      "exact_equal": false,
+      "max_abs": 6.039613253960852e-11,
+      "max_scaled": 344.29296875,
+      "representative_coordinates": [
+        {
+          "index_zero_based": [
+            0
+          ],
+          "left": -3.907709033132652,
+          "right": -3.9077090331314634,
+          "absolute_difference": 1.1883827255587676e-12,
+          "scaled_difference": 10.700003415167432,
+          "matrix_coordinate": [
+            0,
+            0
+          ]
+        },
+        {
+          "index_zero_based": [
+            1
+          ],
+          "left": 3.5743756997993184,
+          "right": 3.57437569979813,
+          "absolute_difference": 1.1883827255587676e-12,
+          "scaled_difference": 11.697846984117406,
+          "matrix_coordinate": [
+            0,
+            1
+          ]
+        },
+        {
+          "index_zero_based": [
+            6
+          ],
+          "left": -4.381247986808031,
+          "right": -4.381247986809201,
+          "absolute_difference": 1.169730978745065e-12,
+          "scaled_difference": 9.393727568928027,
+          "matrix_coordinate": [
+            2,
+            2
+          ]
+        },
+        {
+          "index_zero_based": [
+            7
+          ],
+          "left": 4.047914653474698,
+          "right": 4.047914653475868,
+          "absolute_difference": 1.169730978745065e-12,
+          "scaled_difference": 10.167272169303251,
+          "matrix_coordinate": [
+            2,
+            3
+          ]
+        },
+        {
+          "index_zero_based": [
+            17
+          ],
+          "left": 5.361291531817568,
+          "right": 5.361291531815124,
+          "absolute_difference": 2.4442670110147446e-12,
+          "scaled_difference": 16.040910942749004,
+          "matrix_coordinate": [
+            6,
+            5
+          ]
+        }
+      ],
+      "support_mismatch_count": 0,
+      "matrix_shape": [
+        800,
+        800
+      ],
+      "left_nnz": 4370,
+      "right_nnz": 4370,
+      "support_examples": []
+    },
+    {
+      "stage": 8,
+      "name": "RHS",
+      "available": true,
+      "left_shape": [
+        800
+      ],
+      "right_shape": [
+        800
+      ],
+      "expected_shape": [
+        800
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": false,
+      "material_mismatch_count": 29,
+      "exact_equal": false,
+      "max_abs": 6.464273560879974e-14,
+      "max_scaled": 2.2744140625,
+      "representative_coordinates": [
+        {
+          "index_zero_based": [
+            52
+          ],
+          "left": -0.09814393915399436,
+          "right": -0.09814393915403005,
+          "absolute_difference": 3.569367024169878e-14,
+          "scaled_difference": 1.255859375
+        },
+        {
+          "index_zero_based": [
+            169
+          ],
+          "left": -0.0998921987302647,
+          "right": -0.09989219873029999,
+          "absolute_difference": 3.5291214395272164e-14,
+          "scaled_difference": 1.24169921875
+        },
+        {
+          "index_zero_based": [
+            174
+          ],
+          "left": -0.09647090107443088,
+          "right": -0.0964709010743948,
+          "absolute_difference": 3.608224830031759e-14,
+          "scaled_difference": 1.26953125
+        },
+        {
+          "index_zero_based": [
+            175
+          ],
+          "left": -0.09584806251355513,
+          "right": -0.09584806251360038,
+          "absolute_difference": 4.5255466041282943e-14,
+          "scaled_difference": 1.59228515625
+        },
+        {
+          "index_zero_based": [
+            296
+          ],
+          "left": -0.09465227635783632,
+          "right": -0.09465227635787284,
+          "absolute_difference": 3.6512459722359836e-14,
+          "scaled_difference": 1.28466796875
+        }
+      ]
+    },
+    {
+      "stage": 8,
+      "name": "M",
+      "available": true,
+      "left_shape": [
+        4370
+      ],
+      "right_shape": [
+        4370
+      ],
+      "expected_shape": [
+        4370
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": false,
+      "material_mismatch_count": 2462,
+      "exact_equal": false,
+      "max_abs": 6.039613253960852e-11,
+      "max_scaled": 344.29296875,
+      "representative_coordinates": [
+        {
+          "index_zero_based": [
+            0
+          ],
+          "left": 3.958709033132652,
+          "right": 3.9587090331314636,
+          "absolute_difference": 1.1883827255587676e-12,
+          "scaled_difference": 10.562155402189902,
+          "matrix_coordinate": [
+            0,
+            0
+          ]
+        },
+        {
+          "index_zero_based": [
+            1
+          ],
+          "left": -3.5743756997993184,
+          "right": -3.57437569979813,
+          "absolute_difference": 1.1883827255587676e-12,
+          "scaled_difference": 11.697846984117406,
+          "matrix_coordinate": [
+            0,
+            1
+          ]
+        },
+        {
+          "index_zero_based": [
+            6
+          ],
+          "left": 4.432247986808031,
+          "right": 4.432247986809201,
+          "absolute_difference": 1.169730978745065e-12,
+          "scaled_difference": 9.285637925153328,
+          "matrix_coordinate": [
+            2,
+            2
+          ]
+        },
+        {
+          "index_zero_based": [
+            7
+          ],
+          "left": -4.047914653474698,
+          "right": -4.047914653475868,
+          "absolute_difference": 1.169730978745065e-12,
+          "scaled_difference": 10.167272169303251,
+          "matrix_coordinate": [
+            2,
+            3
+          ]
+        },
+        {
+          "index_zero_based": [
+            17
+          ],
+          "left": -5.361291531817568,
+          "right": -5.361291531815124,
+          "absolute_difference": 2.4442670110147446e-12,
+          "scaled_difference": 16.040910942749004,
+          "matrix_coordinate": [
+            6,
+            5
+          ]
+        }
+      ],
+      "support_mismatch_count": 0,
+      "matrix_shape": [
+        800,
+        800
+      ],
+      "left_nnz": 4370,
+      "right_nnz": 4370,
+      "support_examples": []
+    },
+    {
+      "stage": 9,
+      "name": "V1",
+      "available": true,
+      "left_shape": [
+        20,
+        20,
+        2
+      ],
+      "right_shape": [
+        20,
+        20,
+        2
+      ],
+      "expected_shape": [
+        20,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": false,
+      "max_abs": 7.549516567451064e-15,
+      "max_scaled": 0.12689909245089775,
+      "representative_coordinates": []
+    },
+    {
+      "stage": 9,
+      "name": "first_iteration_statistic",
+      "available": true,
+      "left_shape": [
+        1
+      ],
+      "right_shape": [
+        1
+      ],
+      "expected_shape": [
+        1
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": false,
+      "max_abs": 4.440892098500626e-16,
+      "max_scaled": 0.015625,
+      "representative_coordinates": []
+    }
+  ],
+  "raw_interior_diagnostics": {
+    "raw_vb_f_interior": {
+      "available": true,
+      "left_shape": [
+        19,
+        20,
+        2
+      ],
+      "right_shape": [
+        19,
+        20,
+        2
+      ],
+      "expected_shape": [
+        19,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": false,
+      "max_abs": 6.026863036412422e-15,
+      "max_scaled": 0.2120513916015625,
+      "representative_coordinates": []
+    },
+    "raw_vb_b_interior": {
+      "available": true,
+      "left_shape": [
+        19,
+        20,
+        2
+      ],
+      "right_shape": [
+        19,
+        20,
+        2
+      ],
+      "expected_shape": [
+        19,
+        20,
+        2
+      ],
+      "shape_pass": true,
+      "comparison": "128*eps64*max(1,abs(left),abs(right))",
+      "order": "logical tensor (b,a,z); linear coordinate uses F-order",
+      "finite": true,
+      "passed": true,
+      "material_mismatch_count": 0,
+      "exact_equal": false,
+      "max_abs": 6.026863036412422e-15,
+      "max_scaled": 0.2120513916015625,
+      "representative_coordinates": []
+    }
+  },
+  "residuals": {
+    "matlab": {
+      "available": true,
+      "passed": true,
+      "finite": true,
+      "residual_inf": 1.2490009027033011e-14,
+      "matrix_inf_norm": 41.987932664407225,
+      "value_inf_norm": 2.215581708938138,
+      "rhs_inf_norm": 0.1572799034866728,
+      "backward_error_scale": 93.1849755108735,
+      "normwise_backward_error": 1.3403457970084015e-16,
+      "method": "persisted M @ vec_F(V1) - RHS; no solve or condition estimator"
+    },
+    "python": {
+      "available": true,
+      "passed": true,
+      "finite": true,
+      "residual_inf": 2.746414207166481e-14,
+      "matrix_inf_norm": 41.98793266442467,
+      "value_inf_norm": 2.215581708938137,
+      "rhs_inf_norm": 0.1572799034866728,
+      "backward_error_scale": 93.1849755109121,
+      "normwise_backward_error": 2.9472714803094755e-16,
+      "method": "persisted M @ vec_F(V1) - RHS; no solve or condition estimator"
+    }
+  }
+}

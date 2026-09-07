@@ -1,0 +1,66 @@
+{
+  "completion": "COMPLETE",
+  "scientific_verdict": "TRAJECTORY_DIVERGENCE_WITH_COMMON_STATE_PARITY_PASS",
+  "baseline": "373264625f0f9580575cda5a36d7a70b371a040b",
+  "earliest_generated_difference": {
+    "iteration": 2,
+    "stage": "consumption",
+    "material_entries": 519
+  },
+  "earliest_incoming_state_difference": 4,
+  "common_state_replay_pass": true,
+  "common_state_fields_compared": 38,
+  "convergence": {
+    "matlab": {
+      "at_100": {
+        "iteration": 100,
+        "statistic": 0.015407653120767195,
+        "finite": true,
+        "converged": false,
+        "diagnostic_continuation": false,
+        "value_min": -1.9778880627040383,
+        "value_max": -1.5152063913048297
+      },
+      "final": {
+        "invocations_entered": 1,
+        "iterations_entered": 143,
+        "solves_entered": 143,
+        "completed_updates": 143,
+        "converged": true,
+        "status": "CONVERGED",
+        "statistic": 1.0492009705487249e-08
+      }
+    },
+    "python": {
+      "at_100": {
+        "iteration": 100,
+        "statistic": 0.23388538498461742,
+        "finite": true,
+        "converged": false,
+        "diagnostic_continuation": false,
+        "value_min": -1.9919178301435898,
+        "value_max": -1.67338197124689
+      },
+      "final": {
+        "invocations_entered": 1,
+        "iterations_entered": 500,
+        "solves_entered": 500,
+        "completed_updates": 500,
+        "converged": false,
+        "status": "MAX_UPDATES",
+        "statistic": 0.008617352704437531
+      }
+    }
+  },
+  "new_invocations": {
+    "matlab": 2,
+    "python": 2
+  },
+  "new_direct_solves": {
+    "matlab": 144,
+    "python": 501
+  },
+  "engineering_retries": 0,
+  "results_eligibility": false,
+  "publication": "dedicated non-force branch; no main merge or successor execution"
+}

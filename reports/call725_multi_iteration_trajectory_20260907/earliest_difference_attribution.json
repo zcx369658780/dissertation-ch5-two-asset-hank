@@ -1,0 +1,29 @@
+{
+  "iteration": 2,
+  "maximum_consumption_difference_coordinate": [
+    10,
+    8,
+    1
+  ],
+  "physical_coordinate": {
+    "b": 1.6842105263157894,
+    "a": 4.2105263157894735,
+    "z": 1.3
+  },
+  "same_consumed_label": true,
+  "label": -1,
+  "derivative_field": "post_boundary_vb_b",
+  "matlab_derivative": 0.0036797040769951063,
+  "python_derivative": 0.003679704077001133,
+  "derivative_absolute_difference": 6.026863036412422e-15,
+  "matlab_consumption": 16.485174666484216,
+  "python_consumption": 16.485174666470716,
+  "consumption_absolute_difference": 1.3500311979441904e-11,
+  "source_expression": "max(vb,1e-6)**(-1/gamma), gamma=2; no evaluator invoked",
+  "arithmetic_replay_on_persisted_derivatives": [
+    16.485174666484216,
+    16.485174666470716
+  ],
+  "local_absolute_slope": 2240.0136426114764,
+  "interpretation": "Accepted tiny incoming V differences amplify in derivative/consumption arithmetic; same-state replay separately tests local cross-language agreement."
+}
