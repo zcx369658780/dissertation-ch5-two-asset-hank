@@ -1,6 +1,6 @@
 # Chapter 5 Two-Asset HANK — Working Agreement
 
-Updated: 2026-09-07. Owner-approved workflow revision: `CH5_ASTRA_WORKFLOW_2026_09_07`.
+Updated: 2026-09-09. Owner-approved workflow revision: `CH5_ASTRA_WORKFLOW_2026_09_07`.
 
 ## Identity and authority
 - Active repository: `zcx369658780/dissertation-ch5-two-asset-hank`.
@@ -8,6 +8,9 @@ Updated: 2026-09-07. Owner-approved workflow revision: `CH5_ASTRA_WORKFLOW_2026_
 - Live GitHub main is repository-state authority. Scientific execution requires an active task published there.
 - Read `project_rules/PROJECT_RULE_INDEX_CURRENT.md`, the exact task, and its relevant current sources. Do not restart historical gates from old handoffs.
 - Owner decides genuine economic/scientific choices and retains final scientific authority. Reviewer defines tasks and accepts evidence; Builder completes authorized work.
+
+## Executor routing
+Owner's standing preference: Codex Builder defaults to `gpt-5.6-sol` with `medium` reasoning; overall planning/scientific review remains with ChatGPT Reviewer. A future exact task may specify a justified model/effort exception and its applicable stage. Do not assume a preferred label verifies the actual runtime model. Do not autonomously edit global/provider configuration. Model or session changes never reset scientific-call budgets or relax evidence standards.
 
 ## Execution style
 The Astra migration describes a working style, not a claim about the executor's installed model. Do not change model/provider settings.

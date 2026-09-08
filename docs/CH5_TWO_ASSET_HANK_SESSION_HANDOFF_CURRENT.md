@@ -1,38 +1,36 @@
 # Chapter 5 当前交接
-更新：2026-09-08。唯一仓库：zcx369658780/dissertation-ch5-two-asset-hank。
-Owner最终科学authority；ChatGPT Reviewer/路线协调者/GitHub任务发布者；Codex bounded Builder。持续授权保留，普通对话不自动启动本地模型，不修改provider，不混入deep-learning-hank或Zotero。
+更新：2026-09-09。唯一活动仓库zcx369658780/dissertation-ch5-two-asset-hank。
+Owner最终科学authority；ChatGPT Reviewer规划/验收/发布；Codex bounded Builder。默认Builder gpt-5.6-sol / medium，后续task可指定有理由的阶段例外，不自动修改provider/global配置，不把该偏好说成已核验实际运行模型。
 
-## 恢复与当前执行状态
-先fresh读live main、AGENTS、规则索引、当前状态及exact task。最新接受candidate：9d76747f48858a3e9289de8f284fffbc49aaedce；本次任务发布前main为062cd3b715e9aed85e7c068063d6a099b2e30186，不假定检查点永远最新。
-状态：OWNER_APPROVED_CALL725_RAH_0P07_NATIVE_INIT_SENSITIVITY_ACTIVE。
-活动任务：tasks/CH5_MP4C_CALL725_RAH_0P07_NATIVE_INIT_SENSITIVITY.md。
-Owner已明确批准紧接前次建议的独立单户.07实验，无需再次确认。任务已发布但本交接未收到执行报告；不要宣称已运行。
-原参数prefix task已完成并接受，不重复725次前缀、年度触界表或历史HJB比较。验收：docs/CH5_MP4C_2018_ORIGINAL_PARAMETER_OBSERVABLE_PREFIX_REPLAY_ACCEPTANCE.md；报告同前缀_REPORT.md；摘要reports/2018_observable_prefix_replay_20260908/。
+## 恢复与活动任务
+先fresh读live main、AGENTS、规则索引、当前状态和exact task。审阅前main f455bdb8904f92a027bf6dc4437c75d900835bbb，最新接受candidate e3176e9352b4f7e155c91891a4cabdd517e9e232；不是永久main。
+状态RAH_0P07_SENSITIVITY_ACCEPTED__ZERO_SOLVE_KFE_MASS_BALANCE_ACTIVE。
+活动任务tasks/CH5_MP4C_CALL725_RAH_0P07_KFE_MASS_BALANCE_ATTRIBUTION.md；新初始化/根/HJB/KFE/直接或迭代solve/评价器/模型与MATLAB调用全部0。只使用现有.07保存数组定位被替换行残差、密度加权边界流和质量收支。未收到该新任务执行报告，普通对话发布不启动本地计算。
+旧rah=.07单户task、原参数725前缀和年度表审计已完成，不重跑、不继承旧预算。不混入deep-learning-hank、Zotero或旧one-asset R5。
 
-## 本次批准的具体事项与预算
-独立Python安徽call725输入副本仅改rah .09→float('0.07')；对应HouseholdInputs.r_a从此字段绑定，其余输入/网格/a_bar/原算法/HJB100步规则不变。完整状态diff只允许rah，保持生产ramax和carried firm ra不变。按原生算法一次生成.07的V0/l0；.09保存数组仅作基线比较，不作warm start。
-从前缀capture/call_0725原始对象读取输入，不从聊天近似数重建，不使用后来的MATLAB共同初始化MAT。复用保存的.09 HJB100 false/KFE非有限基线，新.09调用0。
-一份task整合输入绑定、实现、相关合成测试、一次有限求解和报告。新科学上限：一个Python进程/worker，一次初始化（最多800原劳动根）、一次HJB（最多100次更新/直接求解）、自然到达时一次原KFE及聚合。原adapter在HJB正常false后仍进入KFE；异常停止，不加fallback。科学开始后不重启；只有有证据的零科学进入启动失败可按task至多重试一次。科学15分钟/全任务90分钟。MATLAB、其他利率点、基线重跑、firm/GE/年度/动态/IRF/Results全部0。
-优先显式导入已认证的只读LF source_runtime；预先核验raw/LF身份，不因CRLF再次盲目启动，不改bootstrap expected hash或全局配置。只有相关源未变才可复用，不必重哈希历史13800引用。
-该实验包含原初始化随rah变化的求解链敏感性，不是固定初值纯效应，也不是生产替换或.07安全定理。D1–D3未采纳/未实施。不同价格输出不能按同输入parity要求相等；HJB、KFE返回、分布与生成算子有效性分开报告。
+## 最新验收
+报告/验收docs/CH5_MP4C_CALL725_RAH_0P07_NATIVE_INIT_SENSITIVITY_{REPORT,ACCEPTANCE}.md。
+接受HJB_CONVERGED_AND_KFE_RETURNED，marker CALL725_RAH_0P07_SENSITIVITY_ACCEPTED__STATIONARITY_BLOCKER_REMAINS。候选41新增文件在scope，无生产/helper/export变更。
+仅state.rah .09→float('0.07')、mapped r_a改变，carried ra/ramax仍.09。原参数/网格/a_bar/solver/maxit100不变，原生初始化一次生成.07 V0/l0，.09基线只读复用。
+.09 HJB100 false/statistic.3038218386543494，KFE非有限无有效g/aggregate；.07 HJB26收敛/statistic8.867440115523095e-11，KFE/aggregate返回。C10.292627721151788，有效z加权L.6800557026886584，A7.300066770790965，B4.69218565897191，质量.9999999999999999。只能作诊断积分，非有效稳态。
+支持包含初始化响应的局部求解链敏感性；不是固定初值纯效应、唯一原因或.07普适安全率，不授权改生产ramax。
 
-## 最新已接受事实
-725入口×11连续字段的新旧误差全0，历史HJB停止量和44控制器标量比较通过；仅已比较对象匹配，不证明全部旧内部数组同一性。
-24份完整31省共同旧状态，725实际家户入口，713firm返回、23全国controller记录。call725原生初始化HJB100步false、统计量.3038218386543494，原adapter继续KFE并复现non-finite异常，raw线性返回已保存但无有效KFE/aggregate；无call726。
-安徽turn22 raw ra0=.21979491622969854，turn23=.21906938941252802；turn23 wt0=2.5772708754207905，截断ra=.09/wjt=1.3。rk=.244069389412528，delta=.025，PIt截零、divrate0；mt=.9943859584740543。高raw不是家户直接接到21.9%的收益率。
-turn23贵州决定maxKNgap=.04124871080231385，门打开；安徽Zt下调，GovInv*1.1真实发生。raw从turn5约.53423降至turn23约.21907仍在clip上方，存储ra不变不代表未调整。第23轮全国24省ra触上界；工资19上界/5下界/7内部，不是安徽孤立现象。
-安徽外省权重0，turn23组合使用turn22 ra，之后才新firm及适应，call725的rah=.09沿此时序形成。全部同阶段价格/mt/税/劳动对象/资本身份4278项报告通过。原household Lt_prev与firm Lt_supply、firm-used与post-adaptation Zt/GovInv必须分开。
+## 核心未解除问题
+末次HJB迭代算子21负非对角元、最小-4.0056579039558065；post-loop算子非对角无负值但有29个upper-b外向rate，max4.00987105374827，row-sum+leak约2.94e-15。
+contaminated原始残差约2.05e-17，但未修改转置稳态残差3.4540415243199343、尺度比.14988946066377937。尺度比不是质量流失百分比；未加权29个rate之和也不是密度加权质量流。
+密度160个精确负值，min约-1.51e-16、带权负质量约-1.04e-16，保留不裁剪；不可用这些舍入量级负值解释O(1)残差而不核算。新任务检验pin隐含源与边界流失是否平衡，尚未证明该解释。不移动pin、不修改矩阵、不重新求解，不重做D1–D3规格。
+Owner保留原算法/a_bar；D1–D3未采纳、未实施。任何真实边界/校准/生产选择仍需明确决定。Results eligibility=FALSE。
 
-## 前缀实际预算与验收局限
-前缀Builder一次Python科学进程；另一次CRLF bootstrap失败科学进入0，同HEAD隔离LF工作树后消耗其唯一launch retry，科学后重启0。科学2874.297秒。
-HJB/KFE各725、HJB直接求解19961、KFE直接求解725/成功724；native labor roots580000（其中brentq同数，为嵌套），残差评估4837970；one-turn23/firm713/controller23。MATLAB/独立诊断求解/其他年度/动态/IRF/Results0。上述为历史预算，非本任务新预算。
-Reviewer此前为L3提交/代码/报告与L4发布日志审阅，没有独立运行15测试/模型、直接读Windows全部capture或重新核验13800引用。manifest_02 SHA256：4C18B9AA14C23356594F1A0ECCBA346B3DB2AE668B7204A73D88A226B98B0146，Builder回执13800引用/13696capture文件/8321索引条目。旧capture-time hash gap及历史环境不完整保持原限定，早期工程失败保留。本次发布未新增科学调用。
+## 预算和证据等级
+.07实际一个Python科学进程/初始化，800根及嵌套800brentq，6654残差评估；HJB1次/26更新，KFE1次/1求解，聚合1次。无科学重启、无launch retry，.09新调用0；MATLAB/firm/GE/年度/额外诊断solve0。预检-001和早期测试失败保留，不是额外科学运行。
+Reviewer做L3提交/代码/报告审阅和L4发布12/12日志检查，未独立执行测试/模型、读取Windows大数组或核验全部80引用/39 Git LF项。manifest F1C59EE5D937AABB8F5A3CE01A24456F53E9C90D26F710E3BE6F357C375CE459，21科学文件/12阶段来自Builder回执。
+有效根D:\ProjectTemp\ch5-call725-rah-0p07-native-init-20260908-002，science/index.jsonl解析实际对象；新任务只核验消费子集，不重验历史13800引用。
 
-## 尚未接受范围
-精确共同MAT初始化MATLAB143/Python500、终点18负元/15泄漏、P32巨大transfer/cost和sigma丢失未解决；不与原生100步失败混为同一实验。首轮53/53、固定线性及边界提案等历史接受仅保留原范围。
-旧runtime-cache15/15年与Owner-A13/14年PASS分开，2018修正覆盖仍未接受。原价格审计PARTIAL_EVIDENCE保留，已排除audit-001错误派生。Results eligibility=FALSE，不把顺序比较静态叫真正IRF。
+## 前缀和更早证据
+9d76747f原参数前缀：725*11输入字段零差；24份31省共同状态、713firm、23controller；call725 KFE原异常复现。安徽turn23 raw ra0=.21906938941252802、wt0=2.5772708754207905，clip .09/1.3；rk减delta解释当时ra0，分红0。贵州turn23 maxgap=.04124871080231385，门开，安徽Zt下降/GovInv*1.1。raw虽下降仍高于clip；不能说从未调整。rah使用滞后旧ra，安徽外省权重0。此为上游/时序事实，不是全数组历史同一性。
+旧price审计8ef4a2a6保留PARTIAL_EVIDENCE；Owner-A403与旧cache465省年分组，工资触界广泛、端点ra不触界。修正13/14年PASS与旧cache15/15年限定接受分开，2018未接受。
+完全共同MAT初始化MATLAB143/Python500未收敛、P32极大transfer/cost及sigma丢失、M143终点18负元/15泄漏均未修复。首轮53/53、固定线性和15f51be9边界规格保留原范围；旧预算不重置。
 
-## 本地与文件保护
-工作目录D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001；原D:\ResearchCode\dissertation-ch5-two-asset-hank及70未跟踪文件保留。保护MATLAB根D:\MatlabProgram\2023年12月2日 多省份神经网络HANK只读。
-前缀证据根D:\ProjectTemp\ch5-2018-observable-prefix-replay-20260908-001，包括source_runtime LF工作树、manifest及失败/成功启动回执，均保留。
-本次新分支codex/ch5-call725-rah-0p07-native-init-20260908，新证据D:\ProjectTemp\ch5-call725-rah-0p07-native-init-20260908-001（占用则fresh suffix）。不得reset/clean/stash/force-push或覆盖旧证据。Builder完成后非force推送，Reviewer验收，不自行合并main或追加实验。输入/源身份详见task与当前状态。
+## 工作目录与保护
+工作目录D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001。保护原D:\ResearchCode\dissertation-ch5-two-asset-hank及70未跟踪文件、历史分支、所有科学输出与LF runtime。保护MATLAB根D:\MatlabProgram\2023年12月2日 多省份神经网络HANK只读。
+新分支codex/ch5-call725-rah-0p07-kfe-mass-balance-20260909；新根D:\ProjectTemp\ch5-call725-rah-0p07-kfe-mass-balance-20260909-001，占用用fresh suffix。预算/允许路径以live exact task为准；Builder非force发布后由Reviewer验收，不自行合并main/启动后继。
