@@ -28,9 +28,9 @@
 当前状态：docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md。
 路线正文：docs/DISSERTATION_CH5_PYTHON_MULTI_PROVINCE_HANK_REBUILD_ROADMAP_CURRENT.md。
 当前交接：docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md。
-当前active Builder任务：无。
-状态：ORIGINAL_PARAMETER_PREFIX_REPLAY_ACCEPTED__CAUSAL_RATE_QUESTION_OPEN。
+当前active Builder任务：tasks/CH5_MP4C_CALL725_RAH_0P07_NATIVE_INIT_SENSITIVITY.md。
+状态：OWNER_APPROVED_CALL725_RAH_0P07_NATIVE_INIT_SENSITIVITY_ACTIVE。
 
-最新完成并验收：tasks/CH5_MP4C_2018_ORIGINAL_PARAMETER_OBSERVABLE_PREFIX_REPLAY.md，candidate9d76747f48858a3e9289de8f284fffbc49aaedce。725个已比较入口完全匹配，原call725 KFE异常复现，完整raw价格及控制器观测已获取；不是高rah因果证明、修复或年度接受。该任务及此前零调用价格审计均不得重跑或继承预算。
-Owner保留原算法/a_bar；D1–D3未采纳、暂缓。Reviewer推荐独立单户rah=.07敏感性（按原生初始化、其余标量/数值不变、复用.09基线），尚待Owner科学选择；未发布task、没有新调用预算。不擅自改生产ramax、GovInv/Zt规则或solver，不为了等待增加重复文档/观测任务。
-确认科学选择后，按持续授权发布一份完整有界任务；普通对话不自动启动本地Builder。完整轨迹parity、算子有效性、修正2018及Results仍未接受。
+Owner于2026-09-08明确批准：独立Python安徽call725副本仅改rah .09→float('0.07')，使用该价格下的原生初始化，其余输入/算法/a_bar/HJB100步规则不变；复用已保存.09失败基线，不重跑基线。此批准取代前次验收和CURRENT中“尚待Owner选择”的未来安排，不改写历史报告。
+新task独立授权一次初始化（最多800个原劳动根）、一次HJB（最多100次更新/直接求解）及自然到达时一次原KFE。科学进入后不重启；具体零进入启动重试、15分钟科学/90分钟任务上限以task为准。普通对话发布不自动启动本地Builder，尚未收到本任务执行报告。
+最新已验收9d76747f48858a3e9289de8f284fffbc49aaedce的原参数prefix及此前价格审计均已完成，不重复725调用/年度表、不继承旧预算。D1–D3未采纳、暂缓；不改生产ramax、GovInv/Zt规则、solver或容差，不增加其他利率点。单户诊断不等于生产替换、普适安全率、完整parity、生成算子有效性、修正2018或Results接受。
