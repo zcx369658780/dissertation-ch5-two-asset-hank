@@ -28,10 +28,9 @@
 当前状态：docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md。
 路线正文：docs/DISSERTATION_CH5_PYTHON_MULTI_PROVINCE_HANK_REBUILD_ROADMAP_CURRENT.md。
 当前交接：docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md。
-当前active Builder任务：tasks/CH5_MP4C_2018_ORIGINAL_PARAMETER_OBSERVABLE_PREFIX_REPLAY.md。
-状态：PRICE_AUDIT_PARTIAL_EVIDENCE_ACCEPTED__ORIGINAL_PARAMETER_PREFIX_OBSERVATION_ACTIVE。
+当前active Builder任务：无。
+状态：ORIGINAL_PARAMETER_PREFIX_REPLAY_ACCEPTED__CAUSAL_RATE_QUESTION_OPEN。
 
-价格边界保存证据审计8ef4a2a6c6df2ece2cda665890201c27dd083265已验收，保留PARTIAL_EVIDENCE；旧tasks/CH5_MP4C_PROVINCE_PRICE_BOUNDARY_AND_ADAPTATION_AUDIT.md完成，其零调用预算不扩展、不重跑年度表。
-新的exact task独立授权一次原输入、原参数、原算法Python观测前缀：首次异常/提前收敛/第725次家户结束即停，至多24轮入口、23轮完整one-turn。预算和测试以新task为准；不是完整2018重跑至成功。普通对话发布未启动本地Builder。
-Owner要求保留原算法及a_bar，D1–D3修复target未采纳、暂缓；不降低rah/ramax、不改Zt/GovInv规则、solver或容差。降低到.07的实验不在本次授权内。
-已接受证据显示原自适应确实执行、安徽高rah持续；其导致不收敛的因果仍未建立。完整轨迹parity、算子有效性、修正2018及Results均未接受。
+最新完成并验收：tasks/CH5_MP4C_2018_ORIGINAL_PARAMETER_OBSERVABLE_PREFIX_REPLAY.md，candidate9d76747f48858a3e9289de8f284fffbc49aaedce。725个已比较入口完全匹配，原call725 KFE异常复现，完整raw价格及控制器观测已获取；不是高rah因果证明、修复或年度接受。该任务及此前零调用价格审计均不得重跑或继承预算。
+Owner保留原算法/a_bar；D1–D3未采纳、暂缓。Reviewer推荐独立单户rah=.07敏感性（按原生初始化、其余标量/数值不变、复用.09基线），尚待Owner科学选择；未发布task、没有新调用预算。不擅自改生产ramax、GovInv/Zt规则或solver，不为了等待增加重复文档/观测任务。
+确认科学选择后，按持续授权发布一份完整有界任务；普通对话不自动启动本地Builder。完整轨迹parity、算子有效性、修正2018及Results仍未接受。

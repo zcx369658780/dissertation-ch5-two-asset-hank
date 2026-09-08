@@ -1,37 +1,38 @@
 # Chapter 5 Python 多省份两资产 HANK 路线
 更新：2026-09-08。唯一代码库：zcx369658780/dissertation-ch5-two-asset-hank。
 
-## 目标与来源
-完成可审计的两资产household与多省份重构，再在独立科学规格下建立真正动态响应。旧one-asset R5只读历史，deep-learning-hank为另一个项目。
-MATLAB-faithful reference冻结；忠实性、数值有效性、收敛和论文资格分开判断。Owner要求保留原算法/a_bar，先查价格及原自适应机制。独立修复target仅已审提案，未采纳、未实施、暂缓。
+## 目标与边界
+完成可审计的MATLAB→Python两资产household及多省份重构，再在独立规格下构建真正动态。旧one-asset R5只读历史，deep-learning-hank为其他项目。忠实性、数值有效性、收敛和论文资格分别判断。
+Owner保留原算法、a_bar及当前设置；D1–D3修复target仅已审提案，未采纳、未实施、暂缓。诊断发现不自动授权替换reference或修改参数。
 
 ## 阶段依赖
-| 阶段 | 状态/目标 | 退出条件 |
+| 阶段 | 当前能力/目标 | 退出条件 |
 | --- | --- | --- |
-| household特定基准 | 历史限定HJB/算子/KFE/聚合证据 | 仅对已验证fixture/版本成立 |
-| MP0–MP3 | 来源/方向/适配及ordered one-turn历史接受 | At/Bt、Lt/Lt_supply、次序与来源不变量 |
-| MP4 | 价格保存审计已接受为PARTIAL_EVIDENCE；原参数观测前缀task活动 | 明确版本的收敛、算子/来源/比较证据 |
-| MP5 | 冲击law与响应定义 | 来源、变量、频率、创新、归一化 |
-| MP6 | 真正动态两资产规格 | 时变HJB/KFE、初末条件、价格/财政/空间时序 |
-| MP7–MP8 | 动态household与多省份集成 | 冻结规格下小规模验证 |
-| MP9 | 受控响应及稳健性 | 已接受基线、路径、截断和误差 |
+| household特定基准 | 历史限定HJB/算子/KFE/聚合证据 | 仅对已验证fixture与版本 |
+| MP0–MP3 | 来源/方向/适配及ordered one-turn历史接受 | At/Bt、劳动对象、次序/来源不变量 |
+| MP4 | 原参数2018前缀复现已接受；价格致因待受控实验选择 | 明确版本下完整收敛、算子、来源与比较证据 |
+| MP5 | 冲击law与响应定义 | 来源、变量、频率、创新/归一化 |
+| MP6 | 真正动态两资产规格 | 时变HJB/KFE、初末条件及经济时序 |
+| MP7–MP8 | 动态household/多省份集成 | 冻结规格小规模验证 |
+| MP9 | 受控响应与稳健性 | 基线、路径、截断和误差证据 |
 | MP10 | 正式Results | 输出/解释/来源/稳健性最终审阅 |
 
-阶段是科学依赖，不是工程逐步审批。实现、相关检查、有界执行和报告可为一个任务，但不默许未知科学选择。
+阶段是科学依赖，不是逐工程步骤审批。一个完整任务可同时包含实现、相关检查、有界运行和报告；未知科学选择仍不能默认为授权。
 
-## 最新价格证据及路线决定
-8ef4a2a6c6df2ece2cda665890201c27dd083265已接受为PARTIAL_EVIDENCE；报告/验收见docs/CH5_MP4C_PROVINCE_PRICE_BOUNDARY_AND_ADAPTATION_AUDIT_{REPORT,ACCEPTANCE}.md。725个失败路径入口、403修正与465旧cache年度端点分组；工资触界广泛、终点ra不触界，rah>.07均0。这不是中间迭代的安全率证明。
-安徽2018零外省权重使lagged ra→rah可识别，入口7–24连续18次rah=.09。原自适应确实执行：早期低产出导致Zt重置，后反复增国资；turn22贵州决定全国误差关门；turn23发生调整但全国max/决定省未知；turn24在家户/KFE失败而未完成本轮厂商/控制器。完整raw价格和实际mt/current household Lt缺失。已排除“从未调整”，未确立高rah造成失败的因果。
-不再重复零调用年度表审计或靠错误Lt/不同阶段Zt补造raw。新任务tasks/CH5_MP4C_2018_ORIGINAL_PARAMETER_OBSERVABLE_PREFIX_REPLAY.md，授权一次不改参数/算法的原输入观测前缀。每轮开始先保存完整31省状态，捕获真实firm raw/cap与控制器事件，首次异常/原早收敛/超时/call725完成即停；预算以task为准。原HJBmaxit100，不延伸完整年度，不降rah、不采纳target。发布尚未执行。
-新运行必须与旧入口逐项比较；路径分叉后只能解释新路径，不能充作旧运行缺失内部值。原捕获时哈希gap永久保留。缺数据是真实缺口，而非要求不断进行纯文档门禁。
+## 最新结果与诊断更新
+9d76747f48858a3e9289de8f284fffbc49aaedce已接受为OBSERVABLE_PREFIX_CAPTURE_COMPLETE / MATCHED_PREFIX_AND_FAILURE_REPRODUCED，验收见docs/CH5_MP4C_2018_ORIGINAL_PARAMETER_OBSERVABLE_PREFIX_REPLAY_ACCEPTANCE.md。
+725入口11标量全匹配且误差0；24全国完整共同入口、713firm返回、23controller记录。安徽call725原HJB100步false后KFE non-finite复现；缺有效KFE返回不影响此前观测完成，不等于模型通过。
+安徽turn22/23 raw ra0分别约.219795/.219069，turn23 wt0约2.57727，实际clip为.09/1.3。原资本租金.244069减折旧.025解释该时点ra0，PIt截零，非正利润分红放大。turn23贵州决定全国gap约.041249，适应门开，安徽Zt下降/GovInv增加10%。反馈确已执行，raw虽从早期约.53423下降，仍在clip上方，因而存储ra持续.09。
+全国第23轮仍24省ra触上界，工资19上界/5下界；必须同时关注多省份校准路径与单户数值失败，不能提前认定某一项是唯一原因。原价格传递滞后、对象/单位、私人资本与国资按实际源定义保留。
+前置价格审计8ef4a2a6仍保留PARTIAL_EVIDENCE；旧文件缺口没有被倒填，本次是独立观测。旧年度403/465终点分组及工资触界结论不重复计算。旧捕获时哈希/完整环境不确定性不凭标量匹配消除。
 
-## 不掩盖已有数值风险
-首轮53/53与raw-vb阶段解释保留；共同初始化MATLAB143收敛、Python500未收敛仍未解决。M143终点18负非对角元/15泄漏，14/14快照有上界可行性冲突；15f51be9是诊断/提案接受，不是修复。
-固定线性2ff3eb2确认同输入solver路径与输入微差敏感性并存；ROW_POW2不普遍改善，P32sigma丢失。不重复换solver/放宽容差追求1e-13 PASS。
-高价格与数值异常的因果仍需区分；降低价格不能自动证明算子有效，已知算子问题也不替代上游调查。.07单因素实验、调整校准/边界/FOC或换算法仍需另行科学决定与task，当前未授权。
+## 当前暂停于真实科学选择
+状态：ORIGINAL_PARAMETER_PREFIX_REPLAY_ACCEPTED__CAUSAL_RATE_QUESTION_OPEN。active Builder successor：无。原prefix task已完成，不重跑725调用或年度触界表。
+建议Owner考虑独立单户rah .09→.07诊断，其他外生标量/网格/a_bar/算法/solver/HJB100步规则不变；采用该诊断价格下的原生初始化，复用保存.09基线。考察包括初始化响应在内的源求解链敏感性，非固定V0/l0的纯算子效应。
+尚未批准、未发布exact task、无新预算。批准后发布一份整合实现、相关测试、有界单户运行及HJB/KFE有效性检查的任务；不得将实验成功直接升级为生产ramax变更、年度覆盖或收敛定理。D1–D3不是必须先采纳才能继续的路线。
 
-## 不变量及后续
-按源At*N而非At+Bt，household Lt与firm Lt_supply/实际Lt_prev分开；保留省份次序、方向、共同旧状态、原投资权重和预算。严禁悄加本地留存资本项、归一化权重或改控制器为root solver。派生公式不是runtime捕获，原始文件和历史证据只读，历史预算不重置。
-旧runtime-cache Python15/15年、465省年历史接受非全年度parity；Owner-A13/14年PASS，2018阻塞完整修正覆盖；不同初始化和数据口径不拼接。
-近期：原参数有界观测→判断实际raw价格/mt/资本/自适应问题及必要科学选择→预定义task内验证→恢复修正2018与年度覆盖。D1–D3不是必须先采纳才能推进的路线。
-长期：独立冻结真正动态规格→集成→稳健性→Results。MATLAB顺序比较静态不等于真正IRF，不编造论文完成百分比，不预先承诺收敛。Results eligibility=FALSE。
+## 不变量与未解除风险
+按源At*N而非At+Bt；household Lt、目的地Lt_supply及实际firm Lt_prev不互换；不悄加本地资本、不归一化portfolio权重，不改外层update map为root solver。raw/clip/household价格与调整前后状态分开；初始化与求解期不能混用。
+首轮53/53与raw-vb阶段解释保留；完全共同MAT初值下MATLAB143/Python500未收敛与本次原生初值实验分开。M143终点18负非对角元/15泄漏、14/14快照上界可行性、P32巨大transfer/cost和sigma丢失均开放。固定线性2ff3eb2与ROW_POW2结论不被价格诊断覆盖；不调容差或反复换solver追求PASS。
+旧runtime-cache Python15/15年历史接受不等于全年度parity；Owner-A13/14年PASS、2018阻塞完整修正覆盖。后续科学顺序是受控原因检验/必要明确修复→数值有效性和2018→年度覆盖→真正动态规格与集成→稳健性/Results。
+MATLAB顺序比较静态不等于真正IRF，不编造论文完成百分比。Results eligibility=FALSE。
