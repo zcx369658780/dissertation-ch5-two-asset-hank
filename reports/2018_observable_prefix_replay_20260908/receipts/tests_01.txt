@@ -1,0 +1,46 @@
+test_capture_does_not_retain_mutable_references (__main__.ObservationTests.test_capture_does_not_retain_mutable_references) ... ok
+test_capture_phase_and_lag_distinction (__main__.ObservationTests.test_capture_phase_and_lag_distinction) ... ok
+test_current_household_labor_not_old_firm_labor (__main__.ObservationTests.test_current_household_labor_not_old_firm_labor) ... ok
+test_delegates_once_identical_arguments_and_return (__main__.ObservationTests.test_delegates_once_identical_arguments_and_return) ... ok
+test_dispatch_replacement_preserves_scientific_fields (__main__.ObservationTests.test_dispatch_replacement_preserves_scientific_fields) ... ok
+test_failed_entry_counted_and_exception_preserved (__main__.ObservationTests.test_failed_entry_counted_and_exception_preserved) ... ok
+test_failure_does_not_erase_saved_hjb (__main__.ObservationTests.test_failure_does_not_erase_saved_hjb) ... ok
+test_full_common_state_saved_before_first_call (__main__.ObservationTests.test_full_common_state_saved_before_first_call) ... ok
+test_hard_stop_before_call726 (__main__.ObservationTests.test_hard_stop_before_call726) ... ok
+test_import_has_no_scientific_execution (__main__.ObservationTests.test_import_has_no_scientific_execution) ... ok
+test_original_false_hjb_still_reaches_kfe_and_persists_failure (__main__.ObservationTests.test_original_false_hjb_still_reaches_kfe_and_persists_failure) ... ok
+test_per_household_solver_limits (__main__.ObservationTests.test_per_household_solver_limits) ... ok
+test_sparse_support_and_nonfinite_preserved (__main__.ObservationTests.test_sparse_support_and_nonfinite_preserved) ... ERROR
+
+======================================================================
+ERROR: test_sparse_support_and_nonfinite_preserved (__main__.ObservationTests.test_sparse_support_and_nonfinite_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\zcxve\AppData\Local\Programs\Python\Python311\Lib\shutil.py", line 632, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Users\\zcxve\\AppData\\Local\\Temp\\tmpny2tidy5\\data.npz'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001\tests\test_mp4c_observable_prefix_replay.py", line 43, in test_sparse_support_and_nonfinite_preserved
+    with tempfile.TemporaryDirectory() as tmp:
+  File "C:\Users\zcxve\AppData\Local\Programs\Python\Python311\Lib\tempfile.py", line 943, in __exit__
+    self.cleanup()
+  File "C:\Users\zcxve\AppData\Local\Programs\Python\Python311\Lib\tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Users\zcxve\AppData\Local\Programs\Python\Python311\Lib\tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "C:\Users\zcxve\AppData\Local\Programs\Python\Python311\Lib\shutil.py", line 787, in rmtree
+    return _rmtree_unsafe(path, onerror)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zcxve\AppData\Local\Programs\Python\Python311\Lib\shutil.py", line 634, in _rmtree_unsafe
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "C:\Users\zcxve\AppData\Local\Programs\Python\Python311\Lib\tempfile.py", line 893, in onerror
+    _os.unlink(path)
+PermissionError: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Users\\zcxve\\AppData\\Local\\Temp\\tmpny2tidy5\\data.npz'
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.045s
+
+FAILED (errors=1)
