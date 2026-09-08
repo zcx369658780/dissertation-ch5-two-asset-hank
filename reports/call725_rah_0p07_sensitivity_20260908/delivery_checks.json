@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "launch_observer_sources_unchanged": {
+    "control.py": {
+      "launch_sha256": "34C8AD0CE57A775148F7E78399014374867A4C46F0A09AC1309CF57220743A15",
+      "current_sha256": "34C8AD0CE57A775148F7E78399014374867A4C46F0A09AC1309CF57220743A15"
+    },
+    "evidence.py": {
+      "launch_sha256": "74554D4A5C5F7A35419221F327782C358A96D832E04513A2CB06F9701FF17B3B",
+      "current_sha256": "74554D4A5C5F7A35419221F327782C358A96D832E04513A2CB06F9701FF17B3B"
+    },
+    "run.py": {
+      "launch_sha256": "214FDABA749637B81D66929DBC9F534030B1180D3AC8236787B4D130926814C7",
+      "current_sha256": "214FDABA749637B81D66929DBC9F534030B1180D3AC8236787B4D130926814C7"
+    }
+  },
+  "science_phase_order": [
+    "environment",
+    "binding",
+    "native_initialization_return",
+    "hjb_entry",
+    "hjb_return_before_kfe",
+    "kfe_entry",
+    "kfe_direct_input",
+    "kfe_direct_return",
+    "kfe_return",
+    "aggregate_return",
+    "household_return",
+    "terminal"
+  ],
+  "hjb_saved_before_kfe": true,
+  "input_binding": {
+    "state_changed_fields": [
+      "rah"
+    ],
+    "mapped_input_changed_fields": [
+      "r_a"
+    ]
+  },
+  "budget": {
+    "within_limits": true,
+    "counts": {
+      "native_initialization": 1,
+      "labor_root": 800,
+      "brentq": 800,
+      "root_residual": 6654,
+      "root_bracketing_residual": 1600,
+      "root_brentq_residual": 5054,
+      "adapter": 1,
+      "HJB": 1,
+      "HJB_return": 1,
+      "HJB_direct_solve": 26,
+      "KFE": 1,
+      "KFE_direct_solve": 1,
+      "KFE_return": 1,
+      "aggregate": 1,
+      "aggregate_return": 1
+    }
+  },
+  "processes": {
+    "science": 1,
+    "workers": 1,
+    "science_restarts": 0,
+    "external_launch_retries": 0
+  },
+  "baseline_09_new_scientific_calls": 0
+}
