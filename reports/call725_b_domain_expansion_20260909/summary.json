@@ -1,0 +1,168 @@
+{
+  "diagnostic_completion": "COMPLETE",
+  "exact_grid_intervention_binding": "PASS",
+  "HJB_status": {
+    "converged": true,
+    "iterations": 17,
+    "statistic": 7.140894586754598e-08,
+    "finite_value": true
+  },
+  "Qh": {
+    "negative_offdiagonal_count": 11,
+    "negative_offdiagonal_min": -3.464832800963844,
+    "row_sum_fsum_max_abs": 0.005187508299787702,
+    "norm_inf": 38.4188144136559
+  },
+  "post_loop_Q": {
+    "negative_offdiagonal_count": 0,
+    "negative_offdiagonal_min": 0.0,
+    "row_sum_fsum_max_abs": 3.4690347703114806,
+    "norm_inf": 34.70786394045431,
+    "row_sum_plus_omitted_rate_max_abs": 2.942091015256665e-15
+  },
+  "boundary_faces": {
+    "lower_b": {
+      "positive_cells": 0,
+      "max_rate": 0.0,
+      "sum_rate": 0.0
+    },
+    "upper_b": {
+      "positive_cells": 17,
+      "max_rate": 3.469034770311481,
+      "sum_rate": 16.296417971077133
+    },
+    "lower_a": {
+      "positive_cells": 0,
+      "max_rate": 0.0,
+      "sum_rate": 0.0
+    },
+    "upper_a": {
+      "positive_cells": 0,
+      "max_rate": 0.0,
+      "sum_rate": 0.0
+    }
+  },
+  "expanded_upper_b_truncation_status": "PERSISTS",
+  "source_free_stationarity_status": "FAIL",
+  "stationarity": {
+    "Tg_inf": 0.5206986084614471,
+    "scale_denominator": 4.4881038184806545,
+    "scale_ratio": 0.11601750528081986,
+    "frozen_componentwise_bound_max": 2.842170943040401e-14
+  },
+  "distribution_tail_diagnostics": {
+    "total": 0.9999999999999999,
+    "b_le_5": 0.5327650526244969,
+    "b_gt_5": 0.46723494737550303,
+    "top_face": 0.06835756005310577,
+    "negative_count": 74,
+    "negative_mass": -2.394789364535285e-19
+  },
+  "density_weighted_boundary_escape": 0.10096648917534981,
+  "pin_companion_change": {
+    "old_k": 295,
+    "new_k": 576,
+    "coordinate": {
+      "state_count": 1560,
+      "k_zero_based": 576,
+      "i_b_zero_based": 30,
+      "j_a_zero_based": 14,
+      "i_z_zero_based": 0,
+      "b": 9.052631578947366,
+      "a": 7.368421052631579,
+      "z": 0.8
+    }
+  },
+  "pin_source_ledger": {
+    "candidate_source": 0.10096648917534987,
+    "off_pin_correction": -1.2016085017890576e-17,
+    "delta_weighted_correction": -7.053695300586931e-17,
+    "escape_minus_delta_plus_offpin": 0.10096648917534987,
+    "abs_discrepancy": 0.0,
+    "frozen_bound": 2.842170943040401e-14,
+    "passes": true
+  },
+  "KFE_raw": {
+    "finite": true,
+    "contaminated_residual_inf": 1.6479873021779667e-17,
+    "contaminated_ratio": 3.7724510331709097e-17
+  },
+  "common_subgrid": {
+    "native_V0": {
+      "exact_equal": 800,
+      "size": 800,
+      "max_abs": 0.0,
+      "norm_2": 0.0
+    },
+    "native_l0": {
+      "exact_equal": 800,
+      "size": 800,
+      "max_abs": 0.0,
+      "norm_2": 0.0
+    },
+    "value": {
+      "exact_equal": 0,
+      "size": 800,
+      "max_abs": 0.14996873774374486,
+      "norm_2": 3.223526092557384
+    },
+    "consumption": {
+      "exact_equal": 15,
+      "size": 800,
+      "max_abs": 3.434077526793753,
+      "norm_2": 45.345226988012286
+    },
+    "labor": {
+      "exact_equal": 15,
+      "size": 800,
+      "max_abs": 0.1058939792700837,
+      "norm_2": 1.339773815129063
+    },
+    "transfer": {
+      "exact_equal": 98,
+      "size": 800,
+      "max_abs": 1.4196175953759278,
+      "norm_2": 8.95415322156228
+    },
+    "mu_a": {
+      "exact_equal": 98,
+      "size": 800,
+      "max_abs": 1.4196175953759278,
+      "norm_2": 8.95415322156228
+    },
+    "mu_b": {
+      "exact_equal": 2,
+      "size": 800,
+      "max_abs": 5.5758154979571035,
+      "norm_2": 68.09776484199355
+    }
+  },
+  "aggregate_diagnostics": {
+    "c_ss": 10.734838396557656,
+    "l_ss": 0.6555579019227917,
+    "a_ss": 8.002891962174854,
+    "b_ss": 4.739916654430715,
+    "total_assets": 12.742808616605569,
+    "density_normalization": 0.9999999999999999
+  },
+  "truncation_sensitivity_conclusion": "EXPANSION_DOES_NOT_REMOVE_BOUNDARY_PRESSURE",
+  "call_ledger": {
+    "native_initialization": 1,
+    "labor_root": 1560,
+    "brentq": 1560,
+    "root_residual": 13059,
+    "root_bracketing_residual": 3120,
+    "root_brentq_residual": 9939,
+    "adapter": 1,
+    "HJB": 1,
+    "HJB_return": 1,
+    "HJB_direct_solve": 17,
+    "KFE": 1,
+    "KFE_direct_solve": 1,
+    "KFE_return": 1,
+    "aggregate": 1,
+    "aggregate_return": 1
+  },
+  "warnings": [],
+  "Results_eligible": false
+}

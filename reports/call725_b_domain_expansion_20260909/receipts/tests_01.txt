@@ -1,0 +1,76 @@
+test_boundary_accounting (__main__.Tests.test_boundary_accounting) ... ok
+test_budget_limits_literal (__main__.Tests.test_budget_limits_literal) ... ok
+test_exact_prefix_spacing_endpoint (__main__.Tests.test_exact_prefix_spacing_endpoint) ... FAIL
+test_import_helpers_no_science (__main__.Tests.test_import_helpers_no_science) ... ok
+test_mass_regions_signed_no_clip (__main__.Tests.test_mass_regions_signed_no_clip) ... ok
+test_no_warm_start_or_interpolation_in_run (__main__.Tests.test_no_warm_start_or_interpolation_in_run) ... ok
+test_only_liquid_dimension_changes (__main__.Tests.test_only_liquid_dimension_changes) ... ok
+test_pin_mapping (__main__.Tests.test_pin_mapping) ... ok
+test_roundtrip_and_save_order (__main__.Tests.test_roundtrip_and_save_order) ... ERROR
+C:\Users\zcxve\AppData\Local\Programs\Python\Python311\Lib\unittest\case.py:622: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\zcxve\\AppData\\Local\\Temp\\tmp4_n484j7\\science\\index.jsonl' mode='x' encoding='utf-8'>
+  with outcome.testPartExecutor(self):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+
+======================================================================
+ERROR: test_roundtrip_and_save_order (__main__.Tests.test_roundtrip_and_save_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001\tests\test_mp4c_call725_b_domain_expansion.py", line 24, in test_roundtrip_and_save_order
+    s=Store(Path(t)/"science"); s.save("hjb_return_before_kfe",{"x":np.arange(3.)}); s.save("kfe_entry",{"q":sparse.eye(2)}); s.close(); rows=(Path(t)/"science/index.jsonl").read_text().splitlines(); self.assertIn("hjb_return_before_kfe",rows[0]); self.assertTrue(np.array_equal(decode_saved(Path(t)/"science/hjb_return_before_kfe.json")["x"],np.arange(3.)))
+                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001\validators\multi_province\call725_b_domain_expansion\evidence.py", line 63, in save
+    encoded = encode(value, arrays)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001\validators\multi_province\call725_b_domain_expansion\evidence.py", line 40, in encode
+    return {str(name): encode(item, arrays, f"{key}_{name}") for name, item in value.items()}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001\validators\multi_province\call725_b_domain_expansion\evidence.py", line 40, in <dictcomp>
+    return {str(name): encode(item, arrays, f"{key}_{name}") for name, item in value.items()}
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001\validators\multi_province\call725_b_domain_expansion\evidence.py", line 32, in encode
+    arrays[f"{key}_{name}"] = getattr(matrix, name).copy()
+                              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dia_matrix' object has no attribute 'indices'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\zcxve\AppData\Local\Programs\Python\Python311\Lib\shutil.py", line 632, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Users\\zcxve\\AppData\\Local\\Temp\\tmp4_n484j7\\science\\index.jsonl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001\tests\test_mp4c_call725_b_domain_expansion.py", line 23, in test_roundtrip_and_save_order
+    with tempfile.TemporaryDirectory() as t:
+  File "C:\Users\zcxve\AppData\Local\Programs\Python\Python311\Lib\tempfile.py", line 943, in __exit__
+    self.cleanup()
+  File "C:\Users\zcxve\AppData\Local\Programs\Python\Python311\Lib\tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Users\zcxve\AppData\Local\Programs\Python\Python311\Lib\tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "C:\Users\zcxve\AppData\Local\Programs\Python\Python311\Lib\shutil.py", line 787, in rmtree
+    return _rmtree_unsafe(path, onerror)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zcxve\AppData\Local\Programs\Python\Python311\Lib\shutil.py", line 629, in _rmtree_unsafe
+    _rmtree_unsafe(fullname, onerror)
+  File "C:\Users\zcxve\AppData\Local\Programs\Python\Python311\Lib\shutil.py", line 634, in _rmtree_unsafe
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "C:\Users\zcxve\AppData\Local\Programs\Python\Python311\Lib\tempfile.py", line 893, in onerror
+    _os.unlink(path)
+PermissionError: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Users\\zcxve\\AppData\\Local\\Temp\\tmp4_n484j7\\science\\index.jsonl'
+
+======================================================================
+FAIL: test_exact_prefix_spacing_endpoint (__main__.Tests.test_exact_prefix_spacing_endpoint)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001\tests\test_mp4c_call725_b_domain_expansion.py", line 13, in test_exact_prefix_spacing_endpoint
+    new,db=expand_b(self.old); self.assertTrue(np.array_equal(new[:20],self.old)); self.assertEqual(len(new),39); self.assertTrue(np.all(new[20:]-new[19:-1]==db)); self.assertLess(abs(new[-1]-12),2e-14)
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: np.False_ is not true
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.015s
+
+FAILED (failures=1, errors=1)
