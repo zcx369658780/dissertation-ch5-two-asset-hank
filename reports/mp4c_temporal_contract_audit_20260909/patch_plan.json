@@ -1,0 +1,51 @@
+[
+  {
+    "class": "A_CONFIRMED_INDEX_DEFECT",
+    "file": "multi_prov_HANK_12sts.m",
+    "current": "mpHANK_equilibrium_2000(..., data_MAT{ii}, 4, ii)",
+    "proposed": "level_row = ii + 9; mpHANK_equilibrium_2000(..., data_MAT{ii}, 4, level_row)",
+    "meaning": "keep PLM-vintage cache entry ii; select GDP/CAP/POP levels for steady_year",
+    "estimator_change": false
+  },
+  {
+    "class": "PLM_ARTIFACT_ALIGNMENT",
+    "file": "R PLM generation source/workbook (future authorized task)",
+    "current": "all coefficient vintages retain time1..time9, supporting fixed ten-period windows",
+    "proposed": "retain PLM estimator; regenerate versioned coefficients on 2000:steady_year expanding samples",
+    "meaning": "implement the Owner-approved expanding-window contract without switching estimators",
+    "estimator_change": false
+  },
+  {
+    "class": "B_LIKELY_LEGACY_ZT_ANCHOR",
+    "file": "load_GDPdata.m",
+    "current": "Zt_new = GDP{j}(21,col)*CAP{j}(21,col)^(-alpha)*POP{j}(21,col)^(alpha-1)",
+    "proposed": "level_row = ii + 9; use GDP/CAP/POP at level_row in the unchanged formula",
+    "meaning": "align the level-implied technology index with the PLM vintage end year",
+    "estimator_change": false,
+    "requires_owner_acceptance": true
+  },
+  {
+    "class": "CACHE_IDENTITY",
+    "file": "load_GDPdata.m",
+    "current": "数据估计结果_{GDP multiplier}_{POP multiplier}_{reg_method}.mat",
+    "proposed": "use a new explicit temporal-contract cache version and refuse old unversioned cache",
+    "meaning": "prevent corrected source from silently loading stale row21 Zt",
+    "estimator_change": false
+  },
+  {
+    "class": "OUTPUT_IDENTITY",
+    "file": "multi_prov_HANK_12sts.m",
+    "current": "Multi_Province_12sts_{steady_year}.mat",
+    "proposed": "retain calendar filename but add temporal-contract metadata and reject stale files without it",
+    "meaning": "filename is already calendar-consistent; metadata proves actual rows and vintages",
+    "estimator_change": false
+  },
+  {
+    "class": "METADATA_CONTRACT",
+    "file": "annual/cache serialization path",
+    "current": "no authoritative row/vintage assertions; prior runtime metadata claimed row19 while bytes used row10",
+    "proposed": "persist and assert steady_year, level_row/year, PLM vintage, sample start/end/window type, Zt row/year, contract version",
+    "meaning": "make labels and consumed arrays mechanically auditable",
+    "estimator_change": false
+  }
+]
