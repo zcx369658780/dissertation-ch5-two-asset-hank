@@ -2,25 +2,37 @@
 更新：2026-09-09。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
 ## 当前状态
-状态：`2018_RAW_DATA_AND_INTERPOLATION_AUDIT_ACTIVE__BMAX_ROUTE_DEFERRED`。
-当前 active task：`tasks/CH5_MP4C_2018_RAW_DATA_AND_INTERPOLATION_AUDIT.md`。Builder默认`gpt-5.6-sol / medium`。Results eligibility=FALSE。
+状态：`RAW_DATA_LINEAGE_AUDIT_ACCEPTED__YEAR_INDEX_MISALIGNMENT_AND_MIXED_VINTAGE_BLOCK_PRODUCTION`。
+最新接受候选：`f850937ccb7b11b835ce5e45b9819ee25412ad03`。报告：`docs/CH5_MP4C_2018_RAW_DATA_AND_INTERPOLATION_AUDIT_REPORT.md`；验收：同前缀 `_ACCEPTANCE.md`。
+当前 active Builder task：无。Builder默认`gpt-5.6-sol / medium`。Results eligibility=FALSE。
 
-## 已接受事实
-此前单户`bmax=12`压力测试已经接受：旧`bmax=5`对保存的2018安徽call725、rah=.07诊断状态具有物质性截断，但扩至12仍有upper-b压力、Qh负非对角元和source-free `Tg=0`失败，因此不能采用生产`bmax=12`或声称网格收敛。生产网格继续为I20,b[-2,5]；J20,a[0,10]；Nz2,z[.8,1.3]。
+## 当前最高优先级阻塞：年度数据合同失配
+已接受审计证明，原MATLAB年度入口存在物质性年份语义错位：`multi_prov_HANK_12sts(ii,pp)`用`ii+2008`命名年度文件，但实际把`mydata2{ii}`与`data_year=ii`直接传入初始化器。工作簿首行对应2000，因此`ii=10`的“2018”标签实际选择2009水平数据。
 
-Owner补充了重要历史事实与路线裁决：真正收敛的既有稳态里`Bt`基本在0附近；流动资产收益低于固定/非流动资产，因此不应通过不断扩大`bmax`追逐数值PASS，生产网格保持`amax>bmax`更符合当前模型设计。此前扩箱只保留为数值压力测试，不继续搜索更大b上界。
+安徽位置为MATLAB第12位、Python零基11、Excel列N。2018标签下保存路径实际消费的安徽水平量支持2009来源：GDP=`10864.68`亿元、常住人口=`6131`万人、资本存量=`228121755.48548827`（最终loader缩放前）。真正2018工作簿对应值不同：GDP=`34010.91`亿元、常住人口=`6076`万人、派生资本存量=`1357314108.2013683`。
 
-## 新优先级：数据先行
-Owner指定原始数据路径：
-- `D:\MatlabProgram\2023年12月2日 多省份神经网络HANK\2000年后各省数据.xlsx`
-- `D:\MatlabProgram\2023年12月2日 多省份神经网络HANK\2024年数据原始版.xlsx`
-并要求核查当前使用的插值/平滑/缺失值处理数据。相关`2000年后各省数据_填充NA.xlsx`、`load_GDPdata.m`及`数据估计结果_1000_100_0.mat`等按实际存在与调用链只读审计。
+同一2018标签状态还混合不同技术参数时间口径：alpha来自regression vintage19；Zt固定使用工作簿第21行，即2020水平量。当前保存的“2018状态”因此不是一致的2018数据vintage。
 
-本任务只做哈希、工作簿/MAT读取、源码数据链追踪、描述统计与2018安徽cell-to-model lineage；所有模型/HJB/KFE/firm/one-turn/GE/annual/IRF/Results/MATLAB调用均为0。不得修改原始工作簿、cache或生产loader。
+## 数据质量问题
+填充工作簿是当前实际持久化输入；存在后运行时不会重新生成。总路径中：常住人口有3个endpoint填充；总固定资产投资有129个填充，其中128个是endpoint/extrapolation风险、1个内部填充。更广行业sheet还有额外连续缺失与endpoint填充。
 
-重点解决：真实年份映射、31省/安徽列位置、原始与填充数据差异、缺失连续段/端点插补、单位/缩放、异常跳变，以及原始Excel→filled workbook→loader→mydata2/data_MAT/cache→2018安徽最终输入的逐字段来源。
+资本递推`K0=I0/.1`、`Kt=(1-.096)K(t-1)+I(t-1)`在2022–2023产生6个负资本省年，并使`log_pcap`出现复数。它们不是call725当前2009来源的直接原因，但证明现有填充+资本递推链能生成经济上无效状态。
 
-若发现物质性数据质量/lineage问题，停止在报告阶段，并列出需要国家统计局/省统计年鉴人工核验的精确字段；不自动替换生产数据。若当前数据无明显物质问题，下一科学方向转为外层固定点/适应算法，尤其审计高收益/资本条件下各地区`GovInv`调整速度，不继续改`bmax`。
+2024原始版与旧原始工作簿之间共有8509个明确可比较数值单元，差异0；未能证明schema映射的字段保持`NOT_COMPARABLE`。
 
-## 仍未解决
-原rah=.09 call725不收敛/KFE非有限、`.07`局部敏感性、KFE边界source/escape、Qh负率、P32/sigma及2018年度覆盖等既有事实继续按各自范围有效。数据审计本身不修复这些问题，也不授权多省份重跑或生产参数改动。
+## 官方数据与Owner选择
+已生成10条官方人工核验请求。P0优先：安徽2018 GDP、常住人口、2000–2018固定资产投资/资本存量链、alpha/Zt时间口径。P1为6个负资本省年。
+
+在Owner批准年度语义与官方数据口径前：
+- 不继续扩大`bmax`；
+- 不调整alpha/GovInv收敛速度；
+- 不重跑2018年度、多省份、GE或Results；
+- 不修改生产loader、cache、原始Excel/MAT、生产参数或边界法则。
+
+## 先前数值诊断仍有效但降级为次级
+此前接受的事实继续保留各自范围：原rah=.09 call725 HJB100不收敛/KFE非有限；单户仅改rah=.07时HJB可停止；KFE边界source/escape、Qh负非对角元、P32/sigma、单户b域扩箱等均未被数据审计否定。但这些诊断建立在当前保存输入上，不能再被解释为“真正2018校准状态”的证据。
+
+生产网格继续冻结I20,b[-2,5]；J20,a[0,10]；Nz2,z[.8,1.3]。Owner历史经验：真正收敛稳态Bt基本在0附近，生产设计保留`amax>bmax`；bmax=12仅为压力测试。
+
+## 证据
+本数据审计模型科学调用全部0。Synthetic tests 6/6。Builder manifest/readback：32文件全部匹配，manifest SHA256=`A64F9B6B9CD244AA481F41BAD27C9A95BEF8A00C6CF3003781078552B8B5EDC3`；外部cell ledger 10416条，位于`D:\ProjectTemp\ch5-2018-raw-data-audit-20260909-007`。
