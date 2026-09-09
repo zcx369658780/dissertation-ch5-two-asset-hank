@@ -1,18 +1,18 @@
 # Chapter 5 当前规则入口
-更新：2026-09-09；治理修订仍为`CH5_ASTRA_WORKFLOW_2026_09_07`。
+更新：2026-09-10；治理修订仍为`CH5_ASTRA_WORKFLOW_2026_09_07`。
 
-唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。读取AGENTS、此索引、当前状态和active exact task；旧R5/R1A及过期CURRENT只作历史。
+唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。每次先读`AGENTS.md`、本索引、当前状态和active exact task；旧R5/R1A及过期CURRENT只作历史。
 
 当前状态：`docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`。
 路线：`docs/DISSERTATION_CH5_PYTHON_MULTI_PROVINCE_HANK_REBUILD_ROADMAP_CURRENT.md`。
 交接：`docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`。
-当前 active Builder task：`tasks/CH5_MP4C_2018_CORRECTED_INPUT_THREE_TURN_PROPAGATION_REEXECUTION.md`。
-状态标记：`CORRECTED_2018_THREE_TURN_CONTROLLED_FAIL_ACCEPTED__PERSISTENCE_REPAIR_FROZEN__REEXECUTION_ACTIVE`。
+当前 active Builder task：`tasks/CH5_MP4C_2018_FIVE_TURN_KFE_LEAKAGE_ATTRIBUTION.md`。
+状态标记：`CORRECTED_2018_FIVE_TURN_DIAGNOSTIC_BLOCKER_ACCEPTED__KFE_LEAKAGE_ATTRIBUTION_ACTIVE`。
 
 Builder默认`gpt-5.6-sol / medium`；host未暴露时不虚报实际模型，不改provider/global配置。
 
-2018 canonical 数据层继续绑定 SHA256=`AEA5A12B5E6474056C1C3EF84BF0156BA88442EF54B0A4FB9C4C6F33CA963F67`。
+2018 canonical 数据层继续冻结，workbook SHA256=`AEA5A12B5E6474056C1C3EF84BF0156BA88442EF54B0A4FB9C4C6F33CA963F67`。最新接受科学候选`9864129dd2e97bae97238ab9cc588aea48682d29`完成5 turns /155 updates，但Reviewer接受为KFE/distribution diagnostic blocker，不是PASS：turn4/5全31省density均`DIAGNOSTIC_ONLY`；machine-scale negative mass不是主因，实质问题是source-free stationarity residual与upper-b outward leakage（全国每轮620 positive upper-b leak cells；其余face leak=0）。
 
-最新接受候选`8b80b491421603b94a281211d683d94e2a78fdaf`是受控FAIL证据：fresh turn1/turn2完全复现，随后在turn3进入前因`predecessor_reproduction.json`第二次排他写入触发`FileExistsError`；turn3未进入，科学retry=0。该失败是evidence persistence collision，不是模型/household/HJB/KFE/firm failure。候选中的一行 persistence sequencing repair 已静态验证但未科学执行，Reviewer已冻结其工程边界。
+当前task严格zero-science-call，只能用已保存operator/density/drift做KFE mass-balance/row-replacement/escape attribution，并与accepted call725 `rah=.07`机制对照。所有household/HJB/KFE/solve/firm/controller/trajectory/MATLAB/GE/annual/IRF/Results调用必须为0。禁止turn6+、new KFE solve、steady state及production boundary/grid/source/pinning repair。Results eligibility=FALSE。
 
-当前新task授权一次fresh repaired-runner three-turn reexecution：先核验canonical/repair身份和静态门；最多turn1–3、93 province updates、1 scientific process、0 retries。turn1/turn2必须复现接受证据后才可进入turn3。禁止turn4、steady-state/GE/annual/MATLAB/IRF/Results及任何参数/solver/boundary调整。Results eligibility=FALSE。
+若当前attribution确认same finite-box upper-b leakage + pinning机制，后续必须先由Reviewer验收，再由Owner决定是否进入boundary/finite-box closure redesign；不得自动继续科学轨迹。正式发布任何后继exact task时，必须同一回复附Codex启动prompt。
