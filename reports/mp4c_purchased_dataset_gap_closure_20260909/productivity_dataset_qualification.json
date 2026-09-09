@@ -1,0 +1,68 @@
+{
+  "schema": "CH5_MP4C_PURCHASED_TFP_QUALIFICATION_V1",
+  "source_quality": "DERIVED_RESEARCH_DATASET",
+  "primary_qualification": "NOT_COMPARABLE_WITH_CURRENT_PROVINCE_ZT",
+  "possible_future_role": "INDEPENDENT_PRODUCTIVITY_VALIDATION_BENCHMARK_REQUIRES_OWNER_AGGREGATION_AND_SCALE_CONTRACT",
+  "methods": [
+    "OLS",
+    "FE",
+    "RE",
+    "DGMM",
+    "SGMM",
+    "SFA1",
+    "SFA2",
+    "SFA3",
+    "SFA3D",
+    "TFE",
+    "DEA-Malmquist nonparametric"
+  ],
+  "output_input_contract": {
+    "output": "real GDP",
+    "inputs": [
+      "perpetual-inventory capital stock",
+      "total social employment"
+    ],
+    "depreciation_rate": 0.096,
+    "deflation": "documented as applied; exact deflator series not identified",
+    "base_year_normalization": "starting-year base setting documented; exact base year and normalization not identified"
+  },
+  "source_provenance": "China City Statistical Yearbook and provincial/city statistical yearbooks; no cell-level citations",
+  "panel": {
+    "valid_rows": 18945,
+    "years": [
+      1978,
+      2022
+    ],
+    "province_count": 31,
+    "city_count": 416,
+    "duplicate_keys": 0
+  },
+  "anhui_2009_2018": {
+    "rows": 160,
+    "distinct_cities": 16,
+    "years": 10,
+    "variants": 11,
+    "missing_values": 0,
+    "stable_city_set": true
+  },
+  "aggregation_decision": "NOT_TAKEN",
+  "plm_replacement": "PROHIBITED_IN_THIS_TASK",
+  "feasible_future_aggregation_options": [
+    {
+      "option": "employment-weighted city statistic",
+      "requires": "year-matched city employment and method-specific scale contract"
+    },
+    {
+      "option": "GDP-weighted city statistic",
+      "requires": "year-matched real city GDP and price-base alignment"
+    },
+    {
+      "option": "capital-weighted city statistic",
+      "requires": "comparable city capital stock and PIM contract"
+    },
+    {
+      "option": "unweighted statistic",
+      "requires": "Owner acceptance of equal city weights and boundary coverage"
+    }
+  ]
+}
