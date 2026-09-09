@@ -1,39 +1,33 @@
 # Chapter 5 Python 多省份两资产 HANK 路线
-更新：2026-09-09。唯一代码库zcx369658780/dissertation-ch5-two-asset-hank。
+更新：2026-09-09。唯一活动代码库：zcx369658780/dissertation-ch5-two-asset-hank。
 
-## 目标与角色
-完成可审计MATLAB→Python两资产household与多省份重构，再以独立规格建立真正动态。Owner最终科学authority；Reviewer规划/验收；Builder默认gpt-5.6-sol / medium。忠实性、停止条件、source-free稳态有效性、一般均衡和论文Results分开判断。
+## 目标与阶段
+目标仍是完成可审计MATLAB→Python两资产household/多省份重构，再以独立规格建立真正动态。Owner最终科学authority；Reviewer规划/验收；Builder默认gpt-5.6-sol / medium。忠实性、HJB停止、生成算子、source-free KFE稳态、GE与Results分开判断。
 
-## 阶段
-| 阶段 | 当前能力/目标 | 退出条件 |
-| --- | --- | --- |
-| household特定基准 | 历史限定HJB/算子/KFE/聚合 | 仅指定fixture/版本有效 |
-| MP0–MP3 | 来源/方向/适配/ordered one-turn历史接受 | At/Bt、劳动、次序与来源不变量 |
-| MP4 | 收益率敏感性和有限箱source/escape已定位；当前做单户b域截断诊断 | 明确配置下HJB、生成算子、原Tg=0与截断证据 |
-| MP5 | 冲击law/响应定义 | 来源、频率、创新、归一化 |
-| MP6 | 真正动态两资产规格 | 时变HJB/KFE、初末条件、价格/财政/空间时序 |
-| MP7–MP8 | 动态household/多省集成 | 冻结规格的小规模验证 |
-| MP9 | 受控响应/稳健性 | 已接受基线、路径、截断与误差 |
-| MP10 | 正式Results | 输出/解释/来源/稳健性终审 |
+MP4当前已完成：原参数call725失败复现、rah=.07单户敏感性、KFE source/escape质量归因、以及一次单户b域扩展。MP4退出条件仍未满足，因为原source-free stationarity与Qh符号问题未解决。
 
-## 已区分的三个问题
-1. 安徽call725原参数rah=.09时原生HJB100不收敛/KFE非有限；单户改rah=.07并重新原生初始化后HJB26收敛且KFE返回。这是局部收益率+初始化链敏感性，不是生产ramax裁决。
-2. .07返回density在旧b[-2,5]有限箱中不满足原Tg=0。density-weighted upper-b escape=.6697587443279651，被污染法替换的唯一物质性方程隐含补入同量source；只支持有限箱代数解释，不批准经济source。
-3. last-HJB operator Qh仍有21负非对角元；post-loop Q的边界质量问题与Qh数值有效性问题不能互相替代。
+## 当前最重要的截断结论
+旧生产家户网格：I20、b[-2,5]；J20、a[0,10]；Nz2、z[.8,1.3]。
+Owner批准的唯一扩箱诊断保持原db，精确保留旧20节点并扩至I39、bmax=12，只运行2018安徽call725、rah=.07单户，其余算法/参数保持。
 
-## 当前Owner批准：只做单户b域扩展
-Owner提醒原网格是反复测试留下的，改变b范围可能改变稳态变量；因此只做小规模安徽单户，不直接进入多个省份。
+扩箱结果：HJB17步收敛，但Qh仍11负非对角元；post-loop Q仍17个upper-b外向单元。原`Tg=0`仍FAIL，`||Tg||inf=.5206986084614471`。返回诊断密度约46.72%位于旧b=5以上，新b=12顶面仍约6.84%，density-weighted escape约.10097。
 
-活动task：tasks/CH5_MP4C_CALL725_RAH_0P07_B_DOMAIN_EXPANSION_SINGLE_HOUSEHOLD.md。
-生产基线保持I20,b[-2,5]；J20,a[0,10]；Nz2,z[.8,1.3]。新诊断为嵌套扩箱：保留旧20个b节点字节完全一致，以相同db追加19点，I39、bmax约12；a/z/switch及rah=.07、其他参数、a_bar、原生初始化、helper/组装、solver、Delta、crit、HJB100全部不变。生产配置不修改。
+由此支持：旧bmax=5对该单户状态构成物质性截断；但bmax=12仍没有达到可接受截断，也没有建立网格收敛。生产网格继续冻结，不能因诊断改善直接替换。
 
-只新增一次expanded-grid native initialization/HJB及自然到达的一次KFE/aggregate；旧bmax5 .07结果只读复用，其他省份/firm/GE/annual/MATLAB全部0。主要看：HJB收敛和Qh符号、new upper-b outward drift/Q*1、source-free Tg残差、b>5 tail质量与bmax top-face质量、以及KFE pin/source账本。
+KFE pin公式随状态数变化，扩箱使pin从295变576，所以新旧KFE density/aggregate存在伴随pin变化。它不妨碍观察新顶面压力和旧b=5以上尾部，但阻止把聚合变化称为固定pin纯bmax因果效应。
 
-源污染row公式依赖state_count。新1560状态自动移动pin（预期k576），所以KFE密度/aggregate不是固定pin的纯bmax因果比较；若Q仍非守恒，分布和聚合须明确标注pin-dependent diagnostic。一次bmax扩展不能建立网格收敛，也不能授权生产bmax=12。
+## 当前科学停止点
+状态：`B_DOMAIN_EXPANSION_ACCEPTED__TRUNCATION_MATERIAL__B12_STILL_INSUFFICIENT__NEXT_GRID_OR_BOUNDARY_DECISION_PENDING`。active Builder task：无。
 
-## 后续路线
-若扩箱显著降低top-boundary质量/escape且原Tg残差随之收敛到机器规则附近，支持旧bmax=5截断是重要因素，但仍需决定是否做第二个预先定义的网格稳健性点或边界法则；不能直接跑31省。
-若扩箱后仍有物质性upper-b压力/source-free残差，则简单扩大b范围不足，需要Owner再决定有限箱边界处理；不继续搜索bmax直到PASS。
-无论哪种结果，D1–D3、经济source、a_bar/FOC修改均不自动批准。
+Reviewer不建议以数值pin补源作为经济机制，也不建议自动扫bmax直到PASS。下一步需Owner在以下方向中明确选择：
+1. 再冻结一个单一、更大、仍为安徽call725单户的截断稳健性点，以观察top-face mass/escape/Tg是否继续系统下降；或
+2. 停止扩箱，转入有限箱边界法则的科学定义和实现选择。
 
-随后顺序仍是：household数值有效性与截断合同→修正2018单年/必要有限省份验证→年度覆盖→真正动态规格/集成→稳健性/Results。MATLAB顺序比较静态不等于真正IRF。Results eligibility=FALSE。
+若选1，下一task必须预先固定b端点、节点构造、预算和停止标准，并保持“不直接跑多省份”。若选2，必须明确有限箱的经济/数值含义；不能默认为批准已有D1–D3、a_bar/FOC修改或经济source。
+
+## 后续顺序
+明确截断/边界合同 → household数值有效性 → 修正2018单年与必要的有限省份验证 → 修正年度覆盖 → MP5冲击law → MP6真正动态规格 → 动态household/多省集成 → 稳健性/Results。
+旧runtime-cache 15/15年与Owner-A 13/14年证据继续分开；当前不恢复年度运行。MATLAB顺序比较静态不等于真正IRF。Results eligibility=FALSE。
+
+## 不变量
+生产资本At*N、不用At+Bt；household Lt与firm Lt_supply不混；不补本地资本、不归一化portfolio权重、不改外层update map为root solver；保护MATLAB源、原算法、a_bar及生产参数。所有历史parity/失败证据按原范围保留。
