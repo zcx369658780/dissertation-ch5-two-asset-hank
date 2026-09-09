@@ -11,7 +11,8 @@
 5. 若存在active task，再读取该exact task及直接相关acceptance/report。
 
 当前状态：`FIVE_TURN_KFE_ATTRIBUTION_ACCEPTED__SAME_FINITE_BOX_UPPER_B_LEAKAGE_AND_PINNING_MECHANISM_CONFIRMED__OWNER_BOUNDARY_DECISION_REQUIRED`。
-当前 active Builder task：无。
+当前 active Builder task：`tasks/CH5_MP4C_2018_MATLAB_INPUT_DATA_AND_INITIAL_STATE_COMPARISON_AUDIT.md`。
+该任务是Owner明确要求的数据/初始状态对照审计；scientific/model call budget=`0`。
 最新接受候选：`ea4ac44fe3c65c506ff7fdfbdbf29d96078cc5c6`。
 Results eligibility=`FALSE`。
 
@@ -23,6 +24,6 @@ Five-turn accepted blocker：turn4/5 31/31 densities均`DIAGNOSTIC_ONLY`；mater
 
 HJB-loop negative offdiagonals仍是独立问题；post-loop KFE operator不能替代HJB-loop诊断。
 
-当前不得继续turn6+、new KFE solve、steady state、GE/annual/IRF/Results，也不得自动实现boundary/grid/source/pinning production repair。下一步先由Owner裁决finite-box/KFE closure路线。D1–D3仍为deferred redesign proposals。
+Owner当前要求先暂停算法层面的生产修复/模拟，优先核对原MATLAB 2018多省份路线实际使用的外部数据与初始化尺度，至少覆盖`Zt`、资本/`Kt`相关对象、GDP、POP、alpha、GovInv及已有价格状态，并与current corrected/canonical 2018对象作31省对照。当前task只允许静态源码读取、read-only数据/cache提取和确定性对比；不得调用HJB/KFE/firm/outer-turn/steady-state/GE/annual/IRF/Results。
 
 GitHub live main是repository-state authority；聊天不能替代exact task。任何新的科学执行必须先发布exact task。以后每次发布exact task，同一回复自动附Codex启动prompt。
