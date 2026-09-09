@@ -1,0 +1,47 @@
+{
+  "schema": "CH5_2018_PIM_SOURCE_PROVENANCE_V1",
+  "protected_source_identities": [
+    {
+      "file_name": "2000年后各省数据.xlsx",
+      "sha256": "09814A45D933B2685A35238A15C0C7BB501F00A63597796B3CADCE15C230ECB3",
+      "role": "raw CNKI-curated province panel; read-only"
+    },
+    {
+      "file_name": "2000年后各省数据_填充NA.xlsx",
+      "sha256": "C826B01B6C124EAAADC063DFC2D5510E50E72ED85BB34848F28AB318E4B88929",
+      "role": "filled workbook containing generated total-capital sheet; read-only"
+    },
+    {
+      "file_name": "It_to_Kt.m",
+      "sha256": "4A407DE29F2DCD370932DAE35436A1B9D3C0432A360D94ABC0F78E1F94FEBE50",
+      "role": "frozen PIM implementation; read-only"
+    },
+    {
+      "file_name": "load_GDPdata.m",
+      "sha256": "DECA8AF3F22097550B8957FE848989E6342619CB9929A1C00076E020549366C5",
+      "role": "frozen data-load and generation timing; read-only"
+    },
+    {
+      "file_name": "地级市-固定资产投资额数据（2000-2024年）.xlsx",
+      "sha256": "F585291F03218040594E1D35ACBCD55EDB80658A1AECB0AAEFD6219EF124CB94",
+      "role": "purchased city directional cross-check only; read-only"
+    }
+  ],
+  "source_timing_evidence": {
+    "It_to_Kt_m": "Kt(1,:)=Invest_vec(1,:)/0.1; for i=2..N, Kt(i,j)=(1-delta)*Kt(i-1,j)+Invest_vec(i-1,j)",
+    "load_GDPdata_m": "read B2:AG25; fillmissing makima; call It_to_Kt(temp2,delta); write total capital to B2:AG25",
+    "K2018_flow_dependency": "I2000..I2017"
+  },
+  "anhui_source_cells": {
+    "raw_and_filled_investment": "固定资产投资额!N2:N20",
+    "required_for_K2018": "N2:N19",
+    "workbook_K2000_K2018": "总资本存量!N2:N20",
+    "raw_filled_all_19_binary64_equal": true,
+    "missing_cells": 0,
+    "filled_changes": 0
+  },
+  "classification": "MODEL_CALIBRATION_SOURCE__CNKI_CURATED_PROVINCE_PANEL",
+  "comparability": "MODEL_CALIBRATION_SERIES_WITH_DOCUMENTED_2011_DEFINITION_BREAK",
+  "prohibited_adjustments_applied": [],
+  "official_continuous_same_definition_claim": false
+}

@@ -1,0 +1,55 @@
+{
+  "schema": "CH5_2018_PIM_CAPITAL_INPUT_V1",
+  "receipt_version": "1.0.0",
+  "target_year": 2018,
+  "source_investment_years": {
+    "start": 2000,
+    "end": 2017,
+    "count": 18,
+    "excluded_from_K2018": [
+      2018
+    ]
+  },
+  "province": {
+    "name": "安徽省",
+    "matlab_1based_index": 12,
+    "python_0based_index": 11,
+    "excel_column": "N"
+  },
+  "source_workbook": {
+    "file_name": "2000年后各省数据.xlsx",
+    "sha256": "09814A45D933B2685A35238A15C0C7BB501F00A63597796B3CADCE15C230ECB3",
+    "filled_workbook_file_name": "2000年后各省数据_填充NA.xlsx",
+    "filled_workbook_sha256": "C826B01B6C124EAAADC063DFC2D5510E50E72ED85BB34848F28AB318E4B88929",
+    "sheet": "固定资产投资额",
+    "required_cells": "N2:N19",
+    "lineage_check_cells": "N2:N20"
+  },
+  "source_classification": "MODEL_CALIBRATION_SOURCE__CNKI_CURATED_PROVINCE_PANEL",
+  "investment_unit": "万元",
+  "capital_unit": "万元",
+  "K0_formula": "K2000 = I2000 / 0.1",
+  "recurrence_formula": "Kt = (1 - 0.096) * K(t-1) + I(t-1)",
+  "depreciation_rate": 0.096,
+  "initialization_divisor": 0.1,
+  "timing_convention": "K(year) for year>2000 uses I(year-1); K2018 uses I2000..I2017 and excludes I2018",
+  "derived_K2018": 1357314108.2013683,
+  "derived_K2018_binary64_hex": "41D439BE0F0CE338",
+  "existing_workbook_K2018": 1357314108.2013683,
+  "existing_workbook_binary64_hex": "41D439BE0F0CE338",
+  "exact_binary64_equality": true,
+  "absolute_difference": 0.0,
+  "relative_difference": 0.0,
+  "first_divergence_year": null,
+  "V2_transformed_CAP": 1357314108201.3684,
+  "statistical_comparability": "MODEL_CALIBRATION_SERIES_WITH_DOCUMENTED_2011_DEFINITION_BREAK",
+  "statistical_definition_break_caveat": "A documented 2011 fixed-asset-investment coverage change is retained; no backcast, bridge, rescale, splice, or interpolation was applied.",
+  "source_lineage_status": "ALL_ANHUI_2000_2018_SOURCE_CELLS_ORIGINAL_OBSERVED_UNCHANGED__RAW_FILLED_BINARY64_EQUAL",
+  "purchased_city_crosscheck_status": "SECONDARY_DIRECTIONAL_CROSSCHECK_ONLY__MIXED_16_OF_17_DIRECTION_MATCH",
+  "capital_stock_is_model_derived": true,
+  "official_published_capital_stock": false,
+  "temporal_contract": "CH5_ANNUAL_TEMPORAL_CONTRACT_V2_ROLLING10Y_SAMEYEAR_ZT",
+  "production_authority": "NOT_GRANTED__REVIEWER_ACCEPTANCE_REQUIRED",
+  "scientific_calls": 0,
+  "Results_eligible": false
+}
