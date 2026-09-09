@@ -26,6 +26,12 @@ _REL_NS = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
 _PACKAGE_REL_NS = "http://schemas.openxmlformats.org/package/2006/relationships"
 _CELL_REFERENCE = re.compile(r"([A-Z]+)([0-9]+)")
 
+TEMPORAL_CONTRACT_VERSION = "CH5_ANNUAL_TEMPORAL_CONTRACT_V2_ROLLING10Y_SAMEYEAR_ZT"
+CANONICAL_ANNUAL_INPUT_SCHEMA = "CH5_CANONICAL_ANNUAL_PREMODEL_INPUT_V2"
+ANNUAL_PREMODEL_OUTPUT_IDENTITY = "CH5_CORRECTED_ANNUAL_PREMODEL_INPUT"
+ANNUAL_PREMODEL_OUTPUT_VERSION = 2
+PLM_WINDOW_TYPE = "ROLLING_10_YEAR"
+
 
 def _readonly_vector(name: str, value: object) -> np.ndarray:
     array = np.array(value, dtype=np.float64, copy=True)
@@ -83,6 +89,48 @@ class DecoupledAnnualIndex:
     def for_calendar_year(cls, calendar_year: int) -> "DecoupledAnnualIndex":
         year = int(calendar_year)
         return cls(year, year - 2008, year - 1999, year - 2008, year, year - 1999)
+
+    @property
+    def steady_year(self) -> int:
+        return self.calendar_year
+
+    @property
+    def level_calendar_year(self) -> int:
+        return self.calendar_year
+
+    @property
+    def plm_sample_start_year(self) -> int:
+        return self.calendar_year - 9
+
+    @property
+    def plm_sample_end_year(self) -> int:
+        return self.calendar_year
+
+    @property
+    def plm_sample_length(self) -> int:
+        return 10
+
+    @property
+    def plm_window_type(self) -> str:
+        return PLM_WINDOW_TYPE
+
+    def temporal_metadata(self) -> dict[str, object]:
+        return {
+            "contract_version": TEMPORAL_CONTRACT_VERSION,
+            "steady_year": self.steady_year,
+            "calendar_year": self.calendar_year,
+            "analysis_index": self.analysis_index,
+            "workbook_data_row_index": self.workbook_data_row_index,
+            "level_calendar_year": self.level_calendar_year,
+            "data_mat_index": self.data_mat_index,
+            "plm_vintage_key": self.regression_vintage_key,
+            "plm_window_type": self.plm_window_type,
+            "plm_sample_start_year": self.plm_sample_start_year,
+            "plm_sample_end_year": self.plm_sample_end_year,
+            "plm_sample_length": self.plm_sample_length,
+            "zt_source_data_row_index": self.workbook_data_row_index,
+            "zt_source_calendar_year": self.calendar_year,
+        }
 
 
 @dataclass(frozen=True)
@@ -154,7 +202,8 @@ class CanonicalAnnualInput:
     source_hashes: Mapping[str, str]
     regression_sheet: str
     industry_index: int
-    fixed_zt_calendar_year: int
+    zt_source_data_row_index: int
+    zt_source_calendar_year: int
     scalars: AnnualSourceScalars
     gdp: np.ndarray
     cap: np.ndarray
@@ -174,8 +223,11 @@ class CanonicalAnnualInput:
             raise ValueError("canonical input binding is not the decoupled annual identity")
         if self.province_axis.labels != PROVINCE_ORDER:
             raise ValueError("canonical input must use the accepted province order")
-        if self.industry_index != 4 or self.fixed_zt_calendar_year != 2020:
-            raise ValueError("MP4A2 preserves source industry 4 and the fixed-2020 Zt anchor")
+        if self.industry_index != 4:
+            raise ValueError("canonical annual input preserves source industry 4")
+        if (self.zt_source_data_row_index != self.binding.workbook_data_row_index or
+                self.zt_source_calendar_year != self.binding.calendar_year):
+            raise ValueError("Zt source must use the steady-year level row")
         for name in (
             "gdp", "cap", "pop", "log_pgdp", "log_pcap", "ind_alpha", "ind_zt",
             "initialized_zt", "gov_inv", "inter_province_asset_ratio",
@@ -200,13 +252,18 @@ class CanonicalAnnualInput:
 
     def canonical_payload(self) -> dict[str, object]:
         return {
-            "schema": "CH5_MP4A2_CANONICAL_ANNUAL_INPUT_V1",
+            "schema": CANONICAL_ANNUAL_INPUT_SCHEMA,
+            "output_identity": {
+                "name": ANNUAL_PREMODEL_OUTPUT_IDENTITY,
+                "version": ANNUAL_PREMODEL_OUTPUT_VERSION,
+            },
+            "temporal_contract": self.binding.temporal_metadata(),
             "binding": {field.name: getattr(self.binding, field.name) for field in fields(self.binding)},
             "province_order": list(self.province_axis.labels),
             "source_hashes": dict(sorted(self.source_hashes.items())),
             "regression_sheet": self.regression_sheet,
             "industry_index": self.industry_index,
-            "fixed_zt_calendar_year": self.fixed_zt_calendar_year,
+            "plm_workbook_sha256": self.source_hashes.get("R语言估计结果_plm估计.xlsx"),
             "scalars": {field.name: getattr(self.scalars, field.name) for field in fields(self.scalars)},
             "vectors": {name: getattr(self, name).tolist() for name in (
                 "gdp", "cap", "pop", "log_pgdp", "log_pcap", "ind_alpha", "ind_zt",
@@ -250,10 +307,52 @@ def write_canonical_artifact(canonical: CanonicalAnnualInput, output_root: Path)
 
     root = Path(output_root)
     root.mkdir(parents=True, exist_ok=False)
-    artifact = root / "calendar_2009_primary_premodel_input.json"
+    artifact = root / f"calendar_{canonical.binding.calendar_year}_primary_premodel_input.json"
     with artifact.open("xb") as stream:
         stream.write(canonical.canonical_bytes())
     return artifact
+
+
+def validate_corrected_annual_payload(
+    payload: Mapping[str, object],
+    *,
+    expected_source_hashes: Mapping[str, str],
+) -> DecoupledAnnualIndex:
+    """Fail closed unless serialized input implements the complete V2 contract."""
+
+    if payload.get("schema") != CANONICAL_ANNUAL_INPUT_SCHEMA:
+        raise ValueError("missing or legacy canonical annual input schema")
+    output_identity = payload.get("output_identity")
+    if output_identity != {
+        "name": ANNUAL_PREMODEL_OUTPUT_IDENTITY,
+        "version": ANNUAL_PREMODEL_OUTPUT_VERSION,
+    }:
+        raise ValueError("missing or incompatible annual output identity")
+    binding_payload = payload.get("binding")
+    if not isinstance(binding_payload, Mapping):
+        raise ValueError("missing annual binding metadata")
+    try:
+        binding = DecoupledAnnualIndex(**{
+            field.name: binding_payload[field.name] for field in fields(DecoupledAnnualIndex)
+        })
+    except (KeyError, TypeError, ValueError) as error:
+        raise ValueError("inconsistent annual binding metadata") from error
+    if payload.get("temporal_contract") != binding.temporal_metadata():
+        raise ValueError("missing or inconsistent temporal contract metadata")
+    if payload.get("regression_sheet") != (
+        f"总面板回归系数_{binding.regression_vintage_key}_行业4"
+    ):
+        raise ValueError("PLM regression vintage is inconsistent with annual binding")
+    observed_hashes = payload.get("source_hashes")
+    normalized_expected = {
+        str(name): str(digest).upper() for name, digest in expected_source_hashes.items()
+    }
+    if observed_hashes != normalized_expected:
+        raise ValueError("primary source hash metadata mismatch")
+    plm_hash = normalized_expected.get("R语言估计结果_plm估计.xlsx")
+    if not plm_hash or payload.get("plm_workbook_sha256") != plm_hash:
+        raise ValueError("PLM workbook hash metadata mismatch")
+    return binding
 
 
 def _column_index(reference: str) -> int:
@@ -367,12 +466,7 @@ def load_primary_annual_input(
     alpha = float(numeric[-1])
     ind_alpha = np.full(31, alpha, dtype=np.float64)
 
-    fixed_rows = sheet_rows
-    fixed_physical_row = 2020 - 1999 + 1
-    fixed_gdp = np.array([fixed_rows["gdp"][fixed_physical_row][column] for column in range(3, 34)]) * scalars.gdp_multiplier
-    fixed_cap = np.array([fixed_rows["cap"][fixed_physical_row][column] for column in range(3, 34)]) * scalars.gdp_multiplier
-    fixed_pop = np.array([fixed_rows["pop"][fixed_physical_row][column] for column in range(3, 34)]) * scalars.pop_multiplier
-    ind_zt = fixed_gdp * fixed_cap ** (-alpha) * fixed_pop ** (alpha - 1.0)
+    ind_zt = gdp * cap ** (-alpha) * pop ** (alpha - 1.0)
 
     distance_rows = _xlsx_sheet_rows(Path(sources.distance_workbook), "geom")
     row_labels = tuple(_normalize_province(distance_rows[row][1]) for row in range(2, 33))
@@ -391,7 +485,8 @@ def load_primary_annual_input(
         source_hashes=hashes,
         regression_sheet=regression_sheet,
         industry_index=4,
-        fixed_zt_calendar_year=2020,
+        zt_source_data_row_index=binding.workbook_data_row_index,
+        zt_source_calendar_year=binding.calendar_year,
         scalars=scalars,
         gdp=gdp,
         cap=cap,

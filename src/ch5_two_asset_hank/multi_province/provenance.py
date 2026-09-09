@@ -56,13 +56,13 @@ DATA_PROVENANCE_MANIFEST: tuple[DataArtifactProvenance, ...] = (
         "R语言估计结果_plm估计.xlsx", "regression estimates",
         "A6F444FCCCB30CB93AA5DE084F1DD163C54E5F53C4287C2CD3E13A045EB64A68",
         "PRIMARY_SOURCE_HASH_VERIFIED", "RAW_EXTERNAL_SOURCE",
-        "DECOUPLED_REGRESSION_VINTAGE_KEY_ANALYSIS_INDEX_PLUS_9", False, True,
+        "V2_ROLLING_10_YEAR_VINTAGE_ENDS_AT_STEADY_YEAR", False, True,
     ),
     DataArtifactProvenance(
         "数据估计结果_1000_100_0.mat", "cached mydata2 calibration/data object",
         "923CC9E592C14B320C624509A0B498DBCC7D2533F77F0E4B4793521B10849E9A",
         "CACHE_DERIVED_NOT_PRIMARY_AUTHORITY", "DERIVED_CACHE",
-        "NONPRIMARY_RUNTIME_REPRESENTATION_DECOUPLED_2009_RECONCILED", True, True,
+        "LEGACY_UNVERSIONED_NONPRIMARY_CACHE_REJECTED_FOR_V2_CORRECTED_EXECUTION", True, True,
     ),
     DataArtifactProvenance(
         "Multi_Province_12sts_<year>.mat", "derived annual steady-state st cache",

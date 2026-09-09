@@ -13,6 +13,11 @@ from .household_adapter import (
 )
 from .provenance import DATA_PROVENANCE_MANIFEST, DataArtifactProvenance, YearCacheBinding
 from .annual import (
+    ANNUAL_PREMODEL_OUTPUT_IDENTITY,
+    ANNUAL_PREMODEL_OUTPUT_VERSION,
+    CANONICAL_ANNUAL_INPUT_SCHEMA,
+    PLM_WINDOW_TYPE,
+    TEMPORAL_CONTRACT_VERSION,
     AnnualSourceScalars,
     CanonicalAnnualInput,
     CompatibilityResult,
@@ -22,6 +27,7 @@ from .annual import (
     build_python_parity_entry,
     compare_runtime_representation,
     load_primary_annual_input,
+    validate_corrected_annual_payload,
     write_canonical_artifact,
 )
 from .one_turn import (
@@ -53,6 +59,11 @@ from .steady_state import (
 )
 
 __all__ = [
+    "ANNUAL_PREMODEL_OUTPUT_IDENTITY",
+    "ANNUAL_PREMODEL_OUTPUT_VERSION",
+    "CANONICAL_ANNUAL_INPUT_SCHEMA",
+    "PLM_WINDOW_TYPE",
+    "TEMPORAL_CONTRACT_VERSION",
     "DATA_PROVENANCE_MANIFEST",
     "AnnualSourceScalars",
     "CanonicalAnnualInput",
@@ -93,6 +104,7 @@ __all__ = [
     "compose_one_turn",
     "reject_legacy_runtime_references",
     "load_primary_annual_input",
+    "validate_corrected_annual_payload",
     "run_source_faithful_one_turn",
     "run_manual_steady_state",
     "write_canonical_artifact",
