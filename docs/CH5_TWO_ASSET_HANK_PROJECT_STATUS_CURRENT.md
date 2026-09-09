@@ -2,35 +2,34 @@
 更新：2026-09-09。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
 ## 当前状态
-状态：`CORRECTED_2018_TWO_TURN_ACCEPTED__TURN2_PROPAGATION_PASS__TURN3_DIRECT_RATE_TRANSMISSION_ACTIVE`。
-最新接受候选：`406d4132836e08d30b42b41e09f8237e6aac66a9`。报告：`docs/CH5_MP4C_2018_CORRECTED_INPUT_TWO_TURN_PROPAGATION_REPORT.md`；Reviewer验收：同前缀 `_ACCEPTANCE.md`。
-当前 active Builder task：`tasks/CH5_MP4C_2018_CORRECTED_INPUT_THREE_TURN_PROPAGATION.md`。Builder默认`gpt-5.6-sol / medium`。Results eligibility=FALSE。
+状态：`CORRECTED_2018_THREE_TURN_CONTROLLED_FAIL_ACCEPTED__PERSISTENCE_REPAIR_FROZEN__REEXECUTION_ACTIVE`。
+最新接受候选：`8b80b491421603b94a281211d683d94e2a78fdaf`。报告：`docs/CH5_MP4C_2018_CORRECTED_INPUT_THREE_TURN_PROPAGATION_REPORT.md`；Reviewer验收：同前缀 `_ACCEPTANCE.md`。
+当前 active Builder task：`tasks/CH5_MP4C_2018_CORRECTED_INPUT_THREE_TURN_PROPAGATION_REEXECUTION.md`。Builder默认`gpt-5.6-sol / medium`。Results eligibility=FALSE。
 
-## 2018数据层
-2018 canonical 数据层继续冻结并已闭合。canonical workbook：`CH5_MULTI_PROVINCE_CANONICAL_DATA_V1.xlsx`，SHA256=`AEA5A12B5E6474056C1C3EF84BF0156BA88442EF54B0A4FB9C4C6F33CA963F67`。安徽final-use：GDP 34010.9亿元，POP 6076万人，PIM K2018=1357314108.2013683万元，PLM vintage19/window2009–2018，alpha=.772866243094144，same-year Zt≈.0006934644495858679。
+## 2018数据层与前两轮科学证据
+2018 canonical 数据层继续冻结并已闭合。canonical workbook SHA256=`AEA5A12B5E6474056C1C3EF84BF0156BA88442EF54B0A4FB9C4C6F33CA963F67`。
 
-## 已接受 corrected-2018 两轮传播
-Fresh turn1精确复现已接受单轮证据，mismatch=0；随后turn2完整31省执行，62/62 household/HJB/KFE/firm均返回，科学重试0。
+已接受 corrected-2018 turn1/turn2：fresh turn1、turn2均可完整31省执行；两轮证据已经建立turn3是corrected firm `ra=.02`第一次能够通过下一次native capital-allocation timing进入household composite `rah`的高信息量门。
 
-安徽：
-- household rah：`.09 -> .0829892058879816`；
-- turn2 rah由原生资本分配复合规则使用turn1 entering `ra`向量生成，Anhui source old ra仍为`.09`，没有人工override；
-- turn1 firm used `ra=.02`成为turn2 entering firm `ra=.02`，但不直接成为turn2 household rah；按源码时序，它第一次能够通过下一次资本分配进入household composite return是在turn3；
-- firm raw ra0：`-.02496997113112164 -> -.024968505109415375`，两轮均低于`.02`并clip到`.02`；
-- raw wage：`2.5721358283733027 -> 2.1373365306922518`，两轮均clip到1.3；
-- HJB iterations `64 -> 31`，HJB/KFE两轮均返回；
-- nk_gap `98575.17052447716 -> .34756612158493083`，yt_gap `.5829310876093212 -> .04945416591467944`。
+安徽已接受前缀：turn1 `rah=.09`、raw `ra0=-.02496997113112164`、used `ra=.02`、raw wage `2.5721358283733027`；turn2 `rah=.0829892058879816`、raw `ra0=-.024968505109415375`、used `ra=.02`、raw wage `2.1373365306922518`、HJB 31次、`nk_gap=.34756612158493083`。
 
-全国：firm rate lower/interior/upper两轮均`31/0/0`；wage `5/4/22 -> 5/8/18`；turn2 max nk_gap=`.45946738761290562`，仍高于现有`<.1` adaptation gate，所以两轮Zt/GovInv调整均0。
+## 三轮任务受控FAIL
+候选`8b80b491...`的fresh turn1/turn2再次完全复现，`mismatch_count=0`。科学进程只有1个，完成2 turns / 62 province updates，62/62 household/HJB/KFE/firm均返回，科学重试0。
 
-这些证据证明corrected-2018前两轮可执行且firm return没有落入旧高收益区；但只有两轮，不能据此声称稳态收敛或旧call725后期失败已经消失。
+进入turn3之前，runner对`predecessor_reproduction.json`执行第二次排他写入并触发`FileExistsError`。因此turn3从未进入；安徽turn3 rah/provenance、firm、controller及全国turn3指标全部保持`NOT_CHECKED`。不得用准备状态或公式推算替代科学运行观测。
 
-## 当前 active task：turn3 direct corrected-rate propagation
-严格执行一个fresh三轮轨迹，fresh turn1/turn2必须先复现接受证据。turn3是首个能让corrected turn1 firm used `ra=.02`通过native capital-allocation timing进入household composite `rah`的高信息量门。
+该失败分类为工程evidence persistence collision，不是household/HJB/KFE/firm/经济状态失败。
 
-中心问题：turn3安徽rah实际值与source vector；corrected `.02`传播幅度；turn3 raw firm return区域；wage/HJB/KFE/gap/controller变化。禁止turn4、steady-state、GE、annual、MATLAB、IRF/Results、科学重试或参数/solver/boundary调整。
+执行runner身份已保存。候选中随后完成一行证据写入顺序修复及静态回归检查；修复后runner没有科学执行，因此原任务保持FAIL。Reviewer已接受该repair仅为工程持久化修复，不改变任何模型方程、状态传播、capital allocation、controller、数值算法、grid、bounds、solver/tolerance。
+
+## 当前 active task：three-turn reexecution
+新exact task明确授权在已接受修复runner上进行一次fresh corrected-2018三轮重执行。它是新的科学授权，不是上个任务的隐式retry。
+
+执行前必须核验canonical workbook和repair身份/静态门。只允许1 scientific process、turn1+turn2+turn3、最多93 province updates、scientific retries=0。turn1/turn2必须先复现接受证据，之后才可进入turn3。
+
+即使PASS：turn4、5–10 turn prefix、steady-state、GE、annual、IRF、Results均未授权。
 
 ## 后续路线
-turn3传播验收 → 再决定是否需要5–10 turn受控prefix或可进入bounded steady-state prefix。只有corrected轨迹再次出现高收益、异常反转或不收敛证据时，才重新进入GovInv外层适应速度/household-KFE数值诊断。
+three-turn reexecution验收 → 若真实观测到turn3 direct corrected-rate transmission，再决定是否发布短5–10 turn prefix。只有后续corrected轨迹出现高收益反转、数值失败或不收敛迹象时，才重新进入GovInv/household-KFE诊断。
 
-2022–2023六个非正资本/无效Zt继续作为独立未来年份数据质量问题。生产网格仍I20,b[-2,5]；J20,a[0,10]；Nz2,z[.8,1.3]。
+2022–2023六个非正资本/无效Zt仍是独立未来年份数据质量问题。生产网格继续I20,b[-2,5]；J20,a[0,10]；Nz2,z[.8,1.3]。
