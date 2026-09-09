@@ -4,26 +4,32 @@ Owner最终科学authority；ChatGPT Reviewer规划/验收/发布；Codex Builde
 
 ## 当前入口
 先fresh读取live main、AGENTS、规则索引、当前状态和active task。
-当前状态：`TEMPORAL_CONTRACT_AND_ZT_LEGACY_AUDIT_ACTIVE__PLM_PRESERVED`。
-active task：`tasks/CH5_MP4C_TEMPORAL_CONTRACT_AND_ZT_LEGACY_AUDIT.md`。
+当前状态：`TEMPORAL_CONTRACT_MINIMAL_IMPLEMENTATION_ACTIVE__ROLLING_10Y_PLM_FROZEN`。
+active task：`tasks/CH5_MP4C_TEMPORAL_CONTRACT_MINIMAL_IMPLEMENTATION.md`。
 Results eligibility=FALSE。
 
-## 已接受的数据审计
-`f850937ccb7b11b835ce5e45b9819ee25412ad03`已接受：所谓2018的`ii=10`实际消费2009水平数据；同时使用regression vintage19 alpha和固定2020水平行构造Zt。填充数据还存在endpoint风险和2022–2023负资本/复数log_pcap，但这些不是当前2009来源call725的直接原因。
+## 已冻结科学合同
+Owner确认PLM采用rolling 10-year window，避免过旧数据干扰生产力估计：2009用2000–2009，2018用2009–2018，2023用2014–2023。`steady_year=2008+ii`；同年GDP/CAP/POP一基row=`ii+9`；PLM estimator不变。候选审计中“expanding from 2000”解释已被Reviewer验收文件撤销。
 
-## Owner最新澄清
-原年度设计意图不是从2000直接求稳态。PLM需要历史样本，因此首个目标是用2000–2009样本估计用于2009稳态的技术对象；后续年份应使用截至对应稳态年的估计。去年在`load_GDPdata.m`等代码里准备/比较过其他估计方法，但PLM效果最好，所以当前继续保留PLM，不为收敛改估计器。
+旧入口ii10/2018实际消费row10/2009水平量，是confirmed defect。固定row21/2020构造全部Zt缺少已发现经济依据，分类`LIKELY_LEGACY_FIXED_YEAR_ANCHOR`；当前批准方向为保持Zt公式，改用稳态同年level row。
 
-Owner怀疑Zt固定使用2020水平行是遗留代码，而非有意基准年锚定。
+## 当前实现任务
+只修改Python annual/pre-model输入合同及provenance/metadata：
+- 断言calendar/index/level-row/vintage/rolling-window映射；
+- same-year GDP/CAP/POP/log与same-year Zt；
+- temporal-contract version和source hashes；
+- stale/old/inconsistent cache metadata fail closed；
+- 只读生成2009/2018 corrected pre-model摘要；
+- 原MATLAB源不修改，只给未来patch spec。
 
-## 当前任务
-零模型调用复核时间合同：验证`steady_year=2008+ii`，验证同年水平量是否应使用`ii+9`数据行，核对PLM vintage/sheet是否已经与扩展估计窗口一致，并静态追踪Zt固定2020行的来源和替代分支。若没有文档化经济依据，将其分类为likely legacy fixed-year anchor，并给出最小source patch plan；不执行patch。
+本任务MATLAB model、household/HJB/KFE、root/direct/eigen、firm/one-turn/controller、annual/GE/IRF/Results调用全部0。
 
-当前禁止HJB/KFE/household/firm/GE/年度/MATLAB/root/direct/eigen等科学调用；不修改原始Excel/MAT、生产loader、PLM方法、alpha/GovInv、bmax/amax或边界法则。
+## 仍未关闭
+安徽2018官方GDP/人口/固定投资资本链等核验继续开放；ii15 industry4旧cache alpha与较新PLM workbook不一致；2022–2023六个负资本/复数log是独立数据质量问题。旧rah=.09/.07、KFE边界、Qh负率、P32/sigma和b域实验只代表旧混合年份保存输入。
 
 ## 路线
-时间合同冻结 → Owner接受Zt年度语义和必要官方数据口径 → 最小年份索引修复 → 真正2009/2018单年小规模验证 → 若仍高收益/不收敛，再审计GovInv外层适应速度。不要先用收敛算法补偿错误年份输入。
+实现验收 → 关闭2018数据身份/官方核验 → 真正2018单年小规模验证 → 若仍高收益/不收敛，再审计GovInv外层适应速度。不要用收敛算法补偿错误数据合同。
 
 生产网格仍I20,b[-2,5]；J20,a[0,10]；Nz2,z[.8,1.3]。Owner历史经验：真正收敛稳态Bt基本在0附近，b=12只保留压力测试。
 
-工作目录：`D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001`。数据审计外部证据根：`D:\ProjectTemp\ch5-2018-raw-data-audit-20260909-007`。历史证据继续保护。
+工作目录：`D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001`。历史证据继续保护。
