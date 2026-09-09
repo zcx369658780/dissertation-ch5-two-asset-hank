@@ -1,0 +1,557 @@
+{
+  "classification": [
+    "MATERIAL_DATA_QUALITY_OR_LINEAGE_ISSUE_FOUND",
+    "PARTIAL_EVIDENCE_NEEDS_OFFICIAL_DATA"
+  ],
+  "province_order": [
+    "北京市",
+    "天津市",
+    "河北省",
+    "山西省",
+    "内蒙古",
+    "辽宁省",
+    "吉林省",
+    "黑龙江",
+    "上海市",
+    "江苏省",
+    "浙江省",
+    "安徽省",
+    "福建省",
+    "江西省",
+    "山东省",
+    "河南省",
+    "湖北省",
+    "湖南省",
+    "广东省",
+    "广西",
+    "海南省",
+    "重庆市",
+    "四川省",
+    "贵州省",
+    "云南省",
+    "西藏",
+    "陕西省",
+    "甘肃省",
+    "青海省",
+    "宁夏",
+    "新疆"
+  ],
+  "anhui": {
+    "zero_based": 11,
+    "one_based": 12,
+    "excel_column": "N",
+    "header": "安徽省"
+  },
+  "years": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "data_contract": {
+    "source_raw_sheets": [
+      "GDP",
+      "固定资产投资额",
+      "总人口数",
+      "常住人口",
+      "就业人数",
+      "第一产业固定资产投资额",
+      "第一产业从业人员数",
+      "第一产业占GDP的比重",
+      "第二产业固定资产投资额",
+      "第二产业从业人员数",
+      "第二产业占GDP比重",
+      "第三产业固定资产投资额",
+      "第三产业从业人员数",
+      "第三产业占GDP的比重"
+    ],
+    "actual_annual_fields": [
+      "GDP{4}",
+      "CAP{4}",
+      "POP{4}",
+      "log_pgdp{4}",
+      "log_pcap{4}",
+      "IND_alpha{4}",
+      "IND_Zt{4}"
+    ],
+    "multipliers": {
+      "GDP": 1000,
+      "CAP": 1000,
+      "POP": 100
+    },
+    "fill": "fillmissing(...,'makima') only when filled workbook absent; existing filled workbook is read directly",
+    "capital": "It_to_Kt: K0=I0/.1; Kt=(1-.096)K(t-1)+I(t-1)",
+    "smooth_method": 0,
+    "reg_method": 0
+  },
+  "year_contract": {
+    "analysis_index_matlab_1based": 10,
+    "output_filename_year": 2018,
+    "data_mat_cell_index_matlab_1based": 10,
+    "data_year_row_matlab_1based": 10,
+    "workbook_calendar_year_at_data_row": 2009,
+    "regression_vintage_key": 19
+  },
+  "material_findings": [
+    {
+      "severity": "MATERIAL_LINEAGE",
+      "variable": "GDP/CAP/POP/logs",
+      "province": "安徽省",
+      "year": "2018 label -> 2009 data",
+      "issue": "YEAR_INDEX_MISALIGNMENT",
+      "detail": "ii=10 makes filename2018 but data_year=10 selects workbook row10/calendar2009"
+    },
+    {
+      "severity": "MATERIAL_LINEAGE",
+      "variable": "Zt/alpha",
+      "province": "安徽省",
+      "year": "2018 label mixes 2009 and 2020",
+      "issue": "MIXED_YEAR_CALIBRATION",
+      "detail": "regression vintage19 alpha; Zt uses fixed workbook row21/calendar2020"
+    },
+    {
+      "severity": "MATERIAL_LINEAGE",
+      "variable": "runtime input metadata",
+      "province": "all 31",
+      "year": "2018",
+      "issue": "METADATA_VALUE_CONTRADICTION",
+      "detail": "metadata workbook_data_row_index=19 but vectors and source paths exactly match row10"
+    }
+  ],
+  "panel_summary": {
+    "GDP": {
+      "class_counts": {
+        "OBSERVED_UNCHANGED": 744
+      },
+      "missing_run_count": 0,
+      "nonpositive_filled": 0,
+      "jump_count": 9
+    },
+    "固定资产投资额": {
+      "class_counts": {
+        "OBSERVED_UNCHANGED": 615,
+        "ENDPOINT_OR_EXTRAPOLATION_SUSPECT": 128,
+        "MISSING_FILLED_INTERIOR": 1
+      },
+      "missing_run_count": 32,
+      "nonpositive_filled": 35,
+      "jump_count": 62
+    },
+    "总人口数": {
+      "class_counts": {
+        "OBSERVED_UNCHANGED": 713,
+        "ENDPOINT_OR_EXTRAPOLATION_SUSPECT": 31
+      },
+      "missing_run_count": 31,
+      "nonpositive_filled": 0,
+      "jump_count": 36
+    },
+    "常住人口": {
+      "class_counts": {
+        "OBSERVED_UNCHANGED": 741,
+        "ENDPOINT_OR_EXTRAPOLATION_SUSPECT": 3
+      },
+      "missing_run_count": 3,
+      "nonpositive_filled": 0,
+      "jump_count": 0
+    },
+    "就业人数": {
+      "class_counts": {
+        "OBSERVED_UNCHANGED": 646,
+        "ENDPOINT_OR_EXTRAPOLATION_SUSPECT": 93,
+        "MISSING_FILLED_INTERIOR": 5
+      },
+      "missing_run_count": 34,
+      "nonpositive_filled": 0,
+      "jump_count": 13
+    },
+    "第一产业固定资产投资额": {
+      "class_counts": {
+        "OBSERVED_UNCHANGED": 437,
+        "ENDPOINT_OR_EXTRAPOLATION_SUSPECT": 227,
+        "MISSING_FILLED_INTERIOR": 80
+      },
+      "missing_run_count": 68,
+      "nonpositive_filled": 54,
+      "jump_count": 63
+    },
+    "第一产业从业人员数": {
+      "class_counts": {
+        "OBSERVED_UNCHANGED": 685,
+        "MISSING_FILLED_INTERIOR": 28,
+        "ENDPOINT_OR_EXTRAPOLATION_SUSPECT": 31
+      },
+      "missing_run_count": 38,
+      "nonpositive_filled": 0,
+      "jump_count": 1
+    },
+    "第一产业占GDP的比重": {
+      "class_counts": {
+        "OBSERVED_UNCHANGED": 743,
+        "ENDPOINT_OR_EXTRAPOLATION_SUSPECT": 1
+      },
+      "missing_run_count": 1,
+      "nonpositive_filled": 0,
+      "jump_count": 0
+    },
+    "第二产业固定资产投资额": {
+      "class_counts": {
+        "OBSERVED_UNCHANGED": 464,
+        "ENDPOINT_OR_EXTRAPOLATION_SUSPECT": 206,
+        "MISSING_FILLED_INTERIOR": 74
+      },
+      "missing_run_count": 69,
+      "nonpositive_filled": 34,
+      "jump_count": 21
+    },
+    "第二产业从业人员数": {
+      "class_counts": {
+        "OBSERVED_UNCHANGED": 685,
+        "MISSING_FILLED_INTERIOR": 28,
+        "ENDPOINT_OR_EXTRAPOLATION_SUSPECT": 31
+      },
+      "missing_run_count": 38,
+      "nonpositive_filled": 0,
+      "jump_count": 2
+    },
+    "第二产业占GDP比重": {
+      "class_counts": {
+        "OBSERVED_UNCHANGED": 743,
+        "ENDPOINT_OR_EXTRAPOLATION_SUSPECT": 1
+      },
+      "missing_run_count": 1,
+      "nonpositive_filled": 0,
+      "jump_count": 2
+    },
+    "第三产业固定资产投资额": {
+      "class_counts": {
+        "OBSERVED_UNCHANGED": 512,
+        "ENDPOINT_OR_EXTRAPOLATION_SUSPECT": 197,
+        "MISSING_FILLED_INTERIOR": 35
+      },
+      "missing_run_count": 55,
+      "nonpositive_filled": 22,
+      "jump_count": 29
+    },
+    "第三产业从业人员数": {
+      "class_counts": {
+        "OBSERVED_UNCHANGED": 692,
+        "ENDPOINT_OR_EXTRAPOLATION_SUSPECT": 31,
+        "MISSING_FILLED_INTERIOR": 21
+      },
+      "missing_run_count": 37,
+      "nonpositive_filled": 0,
+      "jump_count": 1
+    },
+    "第三产业占GDP的比重": {
+      "class_counts": {
+        "OBSERVED_UNCHANGED": 744
+      },
+      "missing_run_count": 0,
+      "nonpositive_filled": 0,
+      "jump_count": 0
+    }
+  },
+  "cache_audit": {
+    "readable": "HDF5_V7P3_READ_ONLY",
+    "top_variable": "mydata2",
+    "entry": "mydata2{10}",
+    "province_names": [
+      "北京市",
+      "天津市",
+      "河北省",
+      "山西省",
+      "内蒙古",
+      "辽宁省",
+      "吉林省",
+      "黑龙江",
+      "上海市",
+      "江苏省",
+      "浙江省",
+      "安徽省",
+      "福建省",
+      "江西省",
+      "山东省",
+      "河南省",
+      "湖北省",
+      "湖南省",
+      "广东省",
+      "广西",
+      "海南省",
+      "重庆市",
+      "四川省",
+      "贵州省",
+      "云南省",
+      "西藏",
+      "陕西省",
+      "甘肃省",
+      "青海省",
+      "宁夏",
+      "新疆"
+    ],
+    "scalars": {
+      "GDP_multiplier": 1000.0,
+      "POP_multiplier": 100.0,
+      "delta": 0.096
+    },
+    "workbook_transform_checks": {
+      "GDP": {
+        "shape": [
+          24,
+          31
+        ],
+        "max_abs_difference_vs_filled_transform": 0.0,
+        "exact_equal_cells": 744,
+        "nonzero_imaginary_cells": 0
+      },
+      "CAP": {
+        "shape": [
+          24,
+          31
+        ],
+        "max_abs_difference_vs_filled_transform": 0.0,
+        "exact_equal_cells": 744,
+        "nonzero_imaginary_cells": 0
+      },
+      "POP": {
+        "shape": [
+          24,
+          31
+        ],
+        "max_abs_difference_vs_filled_transform": 0.0,
+        "exact_equal_cells": 744,
+        "nonzero_imaginary_cells": 0
+      },
+      "log_pgdp": {
+        "shape": [
+          24,
+          31
+        ],
+        "max_abs_difference_vs_filled_transform": 8.881784197001252e-16,
+        "exact_equal_cells": 720,
+        "nonzero_imaginary_cells": 0
+      },
+      "log_pcap": {
+        "shape": [
+          24,
+          31
+        ],
+        "max_abs_difference_vs_filled_transform": 1.7763568394002505e-15,
+        "exact_equal_cells": 740,
+        "nonzero_imaginary_cells": 6
+      }
+    },
+    "complex_log_pcap_cells": [
+      {
+        "year": 2022,
+        "province": "上海市",
+        "CAP": -1124219643872.7568,
+        "log_pcap_real": 15.328584868696309,
+        "log_pcap_imag": 3.141592653589793
+      },
+      {
+        "year": 2023,
+        "province": "吉林省",
+        "CAP": -269548795292.80304,
+        "log_pcap_real": 13.96175318816553,
+        "log_pcap_imag": 3.141592653589793
+      },
+      {
+        "year": 2023,
+        "province": "上海市",
+        "CAP": -5124015031628.114,
+        "log_pcap_real": 16.840775879215435,
+        "log_pcap_imag": 3.141592653589793
+      },
+      {
+        "year": 2023,
+        "province": "江西省",
+        "CAP": -310147101039.39166,
+        "log_pcap_real": 13.439979674682597,
+        "log_pcap_imag": 3.141592653589793
+      },
+      {
+        "year": 2023,
+        "province": "湖南省",
+        "CAP": -175916839211.5376,
+        "log_pcap_real": 12.498142378718889,
+        "log_pcap_imag": 3.141592653589793
+      },
+      {
+        "year": 2023,
+        "province": "新疆",
+        "CAP": -119667485253.89499,
+        "log_pcap_real": 13.040315394086344,
+        "log_pcap_imag": 3.141592653589793
+      }
+    ],
+    "capital_recurrence_checks": {
+      "总资本存量": {
+        "max_abs_difference": 0.0,
+        "exact_equal_cells": 744,
+        "cells": 744
+      },
+      "第一产业资本存量": {
+        "max_abs_difference": 0.0,
+        "exact_equal_cells": 744,
+        "cells": 744
+      },
+      "第二产业资本存量": {
+        "max_abs_difference": 0.0,
+        "exact_equal_cells": 744,
+        "cells": 744
+      },
+      "第三产业资本存量": {
+        "max_abs_difference": 0.0,
+        "exact_equal_cells": 744,
+        "cells": 744
+      }
+    },
+    "annual_index_contract": {
+      "analysis_index_matlab_1based": 10,
+      "output_filename_year": 2018,
+      "data_mat_cell_index_matlab_1based": 10,
+      "data_year_row_matlab_1based": 10,
+      "workbook_calendar_year_at_data_row": 2009,
+      "regression_vintage_key": 19
+    },
+    "runtime_input_path": "D:\\ProjectTemp\\ch5-mp4c-full-annual-batch-runtime-cache-20260902-002\\year_2018\\calendar_2018_matlab_runtime_cache_input.json",
+    "runtime_input_sha256": "2B91E4D39CB799CDF77704CEFCF708A99851D8AEC441E3208E88EA185EB0D52A",
+    "runtime_vector_exact_match_cache_row10": {
+      "GDP": true,
+      "CAP": true,
+      "POP": true,
+      "log_pgdp": true,
+      "log_pcap": true
+    },
+    "runtime_metadata_workbook_data_row_index": 19,
+    "metadata_conflict": "metadata says row19/calendar2018, but source path strings, cache vectors, and exact values select row10/calendar2009"
+  },
+  "workbook_2024_comparison": {
+    "GDP": {
+      "schema_mapping": "GDP(亿元)",
+      "numeric_comparable_cells": 744,
+      "different_cells": 0,
+      "missing_either": 0,
+      "status": "COMPARABLE_BY_EXPLICIT_HEADER"
+    },
+    "固定资产投资额": {
+      "schema_mapping": "固定资产投资额(万元)",
+      "numeric_comparable_cells": 615,
+      "different_cells": 0,
+      "missing_either": 129,
+      "status": "COMPARABLE_BY_EXPLICIT_HEADER"
+    },
+    "总人口数": {
+      "schema_mapping": "总人口数(万人)",
+      "numeric_comparable_cells": 713,
+      "different_cells": 0,
+      "missing_either": 31,
+      "status": "COMPARABLE_BY_EXPLICIT_HEADER"
+    },
+    "常住人口": {
+      "schema_mapping": "常住人口(万人)",
+      "numeric_comparable_cells": 741,
+      "different_cells": 0,
+      "missing_either": 3,
+      "status": "COMPARABLE_BY_EXPLICIT_HEADER"
+    },
+    "就业人数": {
+      "schema_mapping": "就业人数(万人)",
+      "numeric_comparable_cells": 0,
+      "different_cells": 0,
+      "missing_either": 744,
+      "status": "NOT_COMPARABLE"
+    },
+    "第一产业固定资产投资额": {
+      "schema_mapping": "第一产业固定资产投资额(亿元)",
+      "numeric_comparable_cells": 428,
+      "different_cells": 0,
+      "missing_either": 316,
+      "status": "COMPARABLE_BY_EXPLICIT_HEADER"
+    },
+    "第一产业从业人员数": {
+      "schema_mapping": "第一产业从业人员数(万人)",
+      "numeric_comparable_cells": 685,
+      "different_cells": 0,
+      "missing_either": 59,
+      "status": "COMPARABLE_BY_EXPLICIT_HEADER"
+    },
+    "第一产业占GDP的比重": {
+      "schema_mapping": "第一产业占GDP的比重(%)",
+      "numeric_comparable_cells": 743,
+      "different_cells": 0,
+      "missing_either": 1,
+      "status": "COMPARABLE_BY_EXPLICIT_HEADER"
+    },
+    "第二产业固定资产投资额": {
+      "schema_mapping": "第二产业固定资产投资额(亿元)",
+      "numeric_comparable_cells": 464,
+      "different_cells": 0,
+      "missing_either": 280,
+      "status": "COMPARABLE_BY_EXPLICIT_HEADER"
+    },
+    "第二产业从业人员数": {
+      "schema_mapping": "第二产业从业人员数(万人)",
+      "numeric_comparable_cells": 685,
+      "different_cells": 0,
+      "missing_either": 59,
+      "status": "COMPARABLE_BY_EXPLICIT_HEADER"
+    },
+    "第二产业占GDP比重": {
+      "schema_mapping": "第二产业占GDP比重(%)",
+      "numeric_comparable_cells": 743,
+      "different_cells": 0,
+      "missing_either": 1,
+      "status": "COMPARABLE_BY_EXPLICIT_HEADER"
+    },
+    "第三产业固定资产投资额": {
+      "schema_mapping": "第三产业固定资产投资额(亿元)",
+      "numeric_comparable_cells": 512,
+      "different_cells": 0,
+      "missing_either": 232,
+      "status": "COMPARABLE_BY_EXPLICIT_HEADER"
+    },
+    "第三产业从业人员数": {
+      "schema_mapping": "第三产业从业人员数(万人)",
+      "numeric_comparable_cells": 692,
+      "different_cells": 0,
+      "missing_either": 52,
+      "status": "COMPARABLE_BY_EXPLICIT_HEADER"
+    },
+    "第三产业占GDP的比重": {
+      "schema_mapping": "第三产业占GDP的比重(%)",
+      "numeric_comparable_cells": 744,
+      "different_cells": 0,
+      "missing_either": 0,
+      "status": "COMPARABLE_BY_EXPLICIT_HEADER"
+    }
+  },
+  "zero_model_call_ledger": {
+    "MATLAB_model": 0,
+    "Python_HJB_KFE_household": 0,
+    "firm_controller_GE_annual_IRF_Results": 0,
+    "root_direct_iterative_eigen_model_solve": 0
+  },
+  "Results_eligible": false
+}

@@ -1,0 +1,11 @@
+﻿priority,variable,province,year,unit,current_raw,current_filled,reason,suggested_official_source
+P0,GDP,安徽省,2018,亿元,34010.91,34010.91,runtime labelled2018 consumes 2009 row; verify intended 2018 level,国家统计局分地区年度GDP / 安徽统计年鉴
+P0,常住人口,安徽省,2018,万人,6076,6076,runtime labelled2018 consumes 2009 row,国家统计局人口抽样调查 / 安徽统计年鉴
+P0,资本存量/固定资产投资链,安徽省,2000-2018,投资万元; 资本派生单位,资本存量无原始cell；由固定资产投资额N2:N19递推,1357314108.2013683,2018 capital is recurrence-derived; runtime instead consumes 2009 stock,国家统计局固定资产投资 / 安徽统计年鉴，并核验资本存量构造
+P1,alpha/Zt,安徽省/31省,vintage19 and 2020 anchor,share/index,0.772866243094144,0.000641551386937363,"2018-labelled state mixes 2009 levels, common alpha and 2020 Zt anchor",保存R回归设计、系数表与官方GDP/CAP/POP口径说明
+P1,固定资产投资额→总资本存量,上海市,2022,投资万元; 资本派生单位,原始投资存在缺失/非数值，见cell ledger,-1124219643872.7568,makima/endpoint-filled investment recurrence yields negative capital and complex log_pcap,国家统计局固定资产投资 / 对应省统计年鉴
+P1,固定资产投资额→总资本存量,吉林省,2023,投资万元; 资本派生单位,原始投资存在缺失/非数值，见cell ledger,-269548795292.80304,makima/endpoint-filled investment recurrence yields negative capital and complex log_pcap,国家统计局固定资产投资 / 对应省统计年鉴
+P1,固定资产投资额→总资本存量,上海市,2023,投资万元; 资本派生单位,原始投资存在缺失/非数值，见cell ledger,-5124015031628.114,makima/endpoint-filled investment recurrence yields negative capital and complex log_pcap,国家统计局固定资产投资 / 对应省统计年鉴
+P1,固定资产投资额→总资本存量,江西省,2023,投资万元; 资本派生单位,原始投资存在缺失/非数值，见cell ledger,-310147101039.39166,makima/endpoint-filled investment recurrence yields negative capital and complex log_pcap,国家统计局固定资产投资 / 对应省统计年鉴
+P1,固定资产投资额→总资本存量,湖南省,2023,投资万元; 资本派生单位,原始投资存在缺失/非数值，见cell ledger,-175916839211.5376,makima/endpoint-filled investment recurrence yields negative capital and complex log_pcap,国家统计局固定资产投资 / 对应省统计年鉴
+P1,固定资产投资额→总资本存量,新疆,2023,投资万元; 资本派生单位,原始投资存在缺失/非数值，见cell ledger,-119667485253.89499,makima/endpoint-filled investment recurrence yields negative capital and complex log_pcap,国家统计局固定资产投资 / 对应省统计年鉴

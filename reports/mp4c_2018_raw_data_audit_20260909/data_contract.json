@@ -1,0 +1,137 @@
+{
+  "province_axis": {
+    "count": 31,
+    "headers": "GDP!C1:AG1",
+    "order": [
+      "北京市",
+      "天津市",
+      "河北省",
+      "山西省",
+      "内蒙古",
+      "辽宁省",
+      "吉林省",
+      "黑龙江",
+      "上海市",
+      "江苏省",
+      "浙江省",
+      "安徽省",
+      "福建省",
+      "江西省",
+      "山东省",
+      "河南省",
+      "湖北省",
+      "湖南省",
+      "广东省",
+      "广西",
+      "海南省",
+      "重庆市",
+      "四川省",
+      "贵州省",
+      "云南省",
+      "西藏",
+      "陕西省",
+      "甘肃省",
+      "青海省",
+      "宁夏",
+      "新疆"
+    ],
+    "anhui": {
+      "matlab_1based": 12,
+      "python_0based": 11,
+      "excel_column": "N"
+    }
+  },
+  "year_axis": {
+    "workbook": "rows 2:25 are calendar 2000:2023",
+    "annual_source": {
+      "multi_prov_HANK_12sts_lines": "118-133",
+      "filename": "ii+2008",
+      "cache_cell": "mydata2{ii}",
+      "data_year": "ii",
+      "actual_workbook_year": "1999+ii"
+    },
+    "ii_10": {
+      "filename_year": 2018,
+      "actual_level_year": 2009,
+      "regression_vintage": 19,
+      "Zt_level_anchor_year": 2020
+    }
+  },
+  "raw_to_filled": {
+    "source": "load_GDPdata.m lines 5-67",
+    "raw_range": "B2:AG25; C:AG are 31 provinces after dropping national B",
+    "mechanism": "fillmissing(...,'makima')",
+    "runtime_behavior": "because filled workbook exists, lines 74-90 read it directly and do not regenerate it"
+  },
+  "consumed_fields": {
+    "GDP{4}": {
+      "sheet": "GDP",
+      "range": "C2:AG25",
+      "transform": "*1000",
+      "source_lines": "74,93"
+    },
+    "CAP{4}": {
+      "source_sheet": "固定资产投资额",
+      "derived_sheet": "总资本存量",
+      "range": "C2:AG25",
+      "transform": "It_to_Kt(delta=.096), then *1000",
+      "source_lines": "56,60-61,75,94"
+    },
+    "POP{4}": {
+      "sheet": "常住人口",
+      "range": "C2:AG25",
+      "transform": "*100",
+      "source_lines": "79,104"
+    },
+    "log_pgdp{4}": {
+      "transform": "log(GDP{4}/POP{4})",
+      "source_line": "126"
+    },
+    "log_pcap{4}": {
+      "transform": "log(CAP{4}/POP{4})",
+      "source_line": "127"
+    },
+    "IND_alpha{4}": {
+      "workbook": "R语言估计结果_plm估计.xlsx",
+      "sheet_pattern": "总面板回归系数_{ii+9}_行业4",
+      "selection": "last numeric xlsread value",
+      "source_lines": "115-120,131"
+    },
+    "IND_Zt{4}": {
+      "transform": "GDP(row21)*CAP(row21)^(-alpha)*POP(row21)^(alpha-1)",
+      "row21_year": 2020,
+      "source_lines": "132-137"
+    }
+  },
+  "capital_recurrence": {
+    "K0": "I0/0.1",
+    "Kt": "(1-.096)*K(t-1)+I(t-1)",
+    "source": "It_to_Kt.m lines 1-10"
+  },
+  "annual_initializer": {
+    "fields": [
+      "Zt",
+      "alpha",
+      "Kt0/Kt",
+      "N/Lt",
+      "Yt0/Yt",
+      "pcap",
+      "pgdp",
+      "GovInv",
+      "inter_prv_ratio"
+    ],
+    "source": "mpHANK_equilibrium_2000.m lines 21-49"
+  },
+  "smoothing_and_regression": {
+    "smooth_method": 0,
+    "reg_method": 0,
+    "note": "production call selects raw log ratios plus external PLM alpha; movmean/movmedian and MATLAB regress branches are inactive"
+  },
+  "cache": {
+    "file": "数据估计结果_1000_100_0.mat",
+    "format": "MATLAB v7.3/HDF5",
+    "entry": "mydata2{10}",
+    "identity": "GDP/CAP/POP exactly match filled transforms; log arrays differ only binary rounding",
+    "metadata_conflict": "metadata says row19/calendar2018, but source path strings, cache vectors, and exact values select row10/calendar2009"
+  }
+}
