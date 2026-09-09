@@ -2,31 +2,33 @@
 更新：2026-09-09。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
 ## 当前状态
-状态：`TEMPORAL_CONTRACT_AND_ZT_LEGACY_AUDIT_ACTIVE__PLM_PRESERVED`。
-最新接受候选：`f850937ccb7b11b835ce5e45b9819ee25412ad03`。数据审计报告：`docs/CH5_MP4C_2018_RAW_DATA_AND_INTERPOLATION_AUDIT_REPORT.md`；验收：同前缀 `_ACCEPTANCE.md`。
-当前 active Builder task：`tasks/CH5_MP4C_TEMPORAL_CONTRACT_AND_ZT_LEGACY_AUDIT.md`。Builder默认`gpt-5.6-sol / medium`。Results eligibility=FALSE。
+状态：`TEMPORAL_CONTRACT_AUDIT_ACCEPTED__ROLLING_10Y_PLM_FROZEN__LEVEL_INDEX_DEFECT_CONFIRMED__ZT_2020_ANCHOR_LIKELY_LEGACY`。
+最新接受候选：`deb2d56560ce85590b9e19d34b4d28ea6b084e27`。报告：`docs/CH5_MP4C_TEMPORAL_CONTRACT_AND_ZT_LEGACY_AUDIT_REPORT.md`；Reviewer验收/Owner口径修正：同前缀 `_ACCEPTANCE.md`。
+当前 active Builder task：无。Builder默认`gpt-5.6-sol / medium`。Results eligibility=FALSE。
 
-## Owner 最新科学澄清
-Owner确认原年度设计不是从2000直接做稳态，而是先用一段历史样本估计各省技术/生产率，再做后续年度稳态。首个意图是用2000–2009样本估计用于2009稳态的技术对象；后续年份应沿用同样的“截至该年”的估计逻辑。去年已在`load_GDPdata.m`等遗留代码中测试过其他估计方法，但PLM效果最好，因此当前继续保留PLM，不因数值收敛问题切换估计方法。
+## 已冻结年度时间合同
+Owner最终选择PLM滚动10年窗（rolling 10-year window），理由是过旧数据会干扰不断发展的生产力估计；该选择与现有PLM artifact固定10期布局和源码“前10年的数据估计本年alpha”注释一致。
 
-Owner同时表示：固定使用2020水平行构造`Zt`很可能是代码遗留，而非有意的基准年锚定。
+正式合同：
+- `steady_year = 2008 + ii`；
+- 稳态同年GDP/CAP/POP水平量使用MATLAB一基`level_row = ii + 9`；
+- PLM估计器保持不变；
+- PLM样本窗为`steady_year-9 : steady_year`；
+- 2009稳态使用2000–2009；2018使用2009–2018；2023使用2014–2023；
+- 不采用“从2000开始持续扩张窗口”，不要求因此重建PLM为expanding-window estimator。
 
-## 已接受的数据审计事实
-原MATLAB入口用`ii+2008`命名年度文件，但`mydata2{ii}`/`data_year=ii`直接选择从2000开始的数据矩阵，因此`ii=10`的“2018”标签实际消费2009水平量。安徽2018标签下实际消费GDP=`10864.68`亿元、常住人口=`6131`万人、资本存量=`228121755.48548827`，对应2009行；真正2018工作簿对应GDP=`34010.91`、人口=`6076`、派生资本存量=`1357314108.2013683`。
+## 已确认缺陷与legacy
+1. 当前生产入口仍把`data_year=ii`传给初始化器，因此ii10/2018实际读取row10/2009水平量。该level-row错位是confirmed defect。
+2. `load_GDPdata.m`固定使用row21/calendar2020构造所有年度`Zt`；源码审计未发现base-year/normalization经济依据，当前分类为`LIKELY_LEGACY_FIXED_YEAR_ANCHOR`，不是`PROVEN_BUG`。候选修复是保持原公式但使用同年`level_row=ii+9`。
+3. ii1–ii14 industry4 cache alpha与当前PLM workbook一致，但ii15 cache alpha=`0.967775174774325`，当前vintage24 workbook=`1.0219847778591`。旧cache缺乏版本身份，后续必须版本化并记录PLM source/workbook hash和时间合同metadata。
 
-同一2018标签状态还使用regression vintage19 alpha与固定2020水平行构造的Zt。数据审计另发现投资endpoint填充风险及2022–2023六个负资本/复数log_pcap单元；这些是独立数据质量问题。
+## 数据质量仍未关闭
+前序审计确认2018标签实际混用2009水平量、vintage19 alpha和2020 Zt；并发现固定资产投资endpoint填充风险，以及2022–2023六个负资本/复数`log_pcap`单元。年份合同修正不能掩盖这些问题。安徽2018 GDP、人口、固定投资/资本链等官方核验清单继续有效。
 
-## 当前任务
-当前任务不运行模型，只把Owner原设计意图与源码实际实现对齐。重点验证：
-- 是否应冻结`steady_year = 2008 + ii`；
-- 同年水平量是否应选`ii+9`数据行（2009对应row10、2018对应row19）；
-- PLM的`ii+9` vintage命名/样本终点是否已经与稳态年度一致；
-- 固定2020行Zt是否缺乏经济依据并应视为legacy anchor；
-- 最小修复是否只需修正水平量与Zt的年份索引，而不改PLM估计方法。
+## 数值诊断的当前解释
+此前rah=.09失败、.07单户敏感性、KFE source/escape、Qh负非对角元、P32/sigma与b域压力测试都继续作为“旧保存混合年份输入下”的数值诊断证据保留，但不能解释为真正2018校准状态。
 
-本任务所有HJB/KFE/firm/GE/年度/MATLAB/root/direct/eigen等科学调用均为0，只允许静态source/workbook/cache审计、索引算术、patch plan和synthetic tests。
+生产网格继续冻结I20,b[-2,5]；J20,a[0,10]；Nz2,z[.8,1.3]，保持`amax>bmax`。不继续扩大bmax；当前也不调整GovInv/alpha收敛速度。
 
-## 冻结不变项
-不继续扩大`bmax`；生产网格仍I20,b[-2,5]；J20,a[0,10]；Nz2,z[.8,1.3]，保持`amax>bmax`设计。Owner历史经验：真正收敛稳态的Bt基本在0附近。当前不调整alpha/GovInv收敛速度，不重跑2018、多省份、GE或Results，也不修改生产loader/cache/原始Excel/MAT/PLM估计方法。
-
-此前rah=.09失败、.07局部敏感性、KFE边界source/escape、Qh负率、P32/sigma和b域压力测试继续保留为当前保存输入下的数值诊断，但不能解释为真正2018校准状态。
+## 下一步
+先做有界实现：修正`level_row=ii+9`、将Zt水平行同步到稳态同年、版本化cache/output metadata并拒绝旧无版本cache；保持现有rolling-10y PLM estimator/artifact语义。第一次新的科学稳态运行前，仍需完成2018官方数据核验/身份确认，并把2022–2023负资本限制在本次2018验证范围之外。任何多省份、GE、年度批量或Results运行仍未授权。
