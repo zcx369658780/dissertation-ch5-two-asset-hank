@@ -1,0 +1,38 @@
+{
+  "export_blob": "9e7dc9556a2b76811e78f89999abecc045886106",
+  "export_path": "D:\\ProjectTemp\\ch5-astra-local-doc-sync-20260907-001\\exports\\matlab_faithful_two_asset_ha.py",
+  "protected_HJB_sha256": "049136B769560040BC678F828F5D3EC5338DDCAA2090D6BED4E40732F56C3EAE",
+  "stages": [
+    {
+      "lines": "424-450",
+      "role": "assemble_source_axis omits an outside-grid offdiagonal at the face but keeps diagonal -(rb+rf)",
+      "selected": {
+        "427": "    \"\"\"Place signed source components, truncating outward entries but not their diagonal.\"\"\"",
+        "444": "                if rb != 0.0 and ((axis == 0 and i > 0) or (axis == 1 and j > 0)):",
+        "446": "                if rf != 0.0 and ((axis == 0 and i + 1 < i_count) or (axis == 1 and j + 1 < j_count)):",
+        "448": "                rows.append(row); cols.append(row); data.append(-(rb + rf))"
+      }
+    },
+    {
+      "lines": "561-562",
+      "role": "post-loop Q is assembled from positive/negative saved drifts after HJB iteration stopping",
+      "selected": {
+        "561": "    post = assemble_source_operator(np.maximum(-arrays[\"mu_b\"],0)/db,np.maximum(arrays[\"mu_b\"],0)/db,np.maximum(-arrays[\"mu_a\"],0)/da,np.maximum(arrays[\"mu_a\"],0)/da,grid.switch_matrix)",
+        "562": "    return MatlabFaithfulHJBResult(value,initial,arrays[\"consumption\"],arrays[\"labor\"],arrays[\"transfer\"],arrays[\"adjustment_cost\"],arrays[\"effective_illiquid_return\"],arrays[\"mu_a\"],arrays[\"mu_b\"],arrays[\"utility\"],liquid,transfer_label,operator,post,iteration,converged,statistic)"
+      }
+    },
+    {
+      "lines": "592-600",
+      "role": "T=Q.T, row k is replaced, rhs[k]=.007, raw is normalized by omega*sum(x)",
+      "selected": {
+        "592": "    transpose=operator.transpose().tocsr()",
+        "593": "    row=matlab_contaminated_row_index(size)",
+        "594": "    contaminated=transpose.tolil(copy=True); contaminated[row,:]=0.0; contaminated[row,row]=1.0; contaminated=contaminated.tocsr()",
+        "595": "    rhs=np.zeros(size); rhs[row]=0.007",
+        "598": "    factor=float(np.sum(raw)*db*da)",
+        "600": "    density=raw/factor"
+      }
+    }
+  ],
+  "implicated_saved_stage": "upper-b mu_b>0 becomes b_forward=mu_b/db; the unavailable i+1 offdiagonal is omitted while -b_forward remains on Q's diagonal."
+}

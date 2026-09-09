@@ -1,0 +1,51 @@
+test_conservative_source_free_example (__main__.MassLedgerTests.test_conservative_source_free_example) ... ERROR
+test_directional_corner_rates_are_added (__main__.MassLedgerTests.test_directional_corner_rates_are_added) ... ok
+test_exact_row_replacement (__main__.MassLedgerTests.test_exact_row_replacement) ... ok
+test_f_order_pin_mapping (__main__.MassLedgerTests.test_f_order_pin_mapping) ... ok
+test_frozen_rule_is_fixed (__main__.MassLedgerTests.test_frozen_rule_is_fixed) ... ok
+test_imports_contain_no_solver_or_scientific_entry (__main__.MassLedgerTests.test_imports_contain_no_solver_or_scientific_entry) ... ok
+test_negative_probability_flux_is_not_clipped (__main__.MassLedgerTests.test_negative_probability_flux_is_not_clipped) ... ERROR
+test_nonconservative_example_keeps_off_pin_correction (__main__.MassLedgerTests.test_nonconservative_example_keeps_off_pin_correction) ... ERROR
+test_raw_to_density_normalization_preserves_negative_value (__main__.MassLedgerTests.test_raw_to_density_normalization_preserves_negative_value) ... ok
+test_sparse_orientation_mismatch_is_rejected (__main__.MassLedgerTests.test_sparse_orientation_mismatch_is_rejected) ... ok
+
+======================================================================
+ERROR: test_conservative_source_free_example (__main__.MassLedgerTests.test_conservative_source_free_example)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001\tests\test_mp4c_call725_kfe_mass_balance.py", line 44, in test_conservative_source_free_example
+    result = ledger.build_mass_balance(q, np.array([0.5, 0.5]), 1.0, np.zeros(2), 0)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001\validators\multi_province\call725_kfe_mass_balance\ledger.py", line 144, in build_mass_balance
+    "pin_abs_share": float(abs(residual[pin_row]) / residual_l1) if residual_l1 else 0.0,
+                                                                    ^^^^^^^^^^^
+NameError: name 'residual_l1' is not defined
+
+======================================================================
+ERROR: test_negative_probability_flux_is_not_clipped (__main__.MassLedgerTests.test_negative_probability_flux_is_not_clipped)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001\tests\test_mp4c_call725_kfe_mass_balance.py", line 68, in test_negative_probability_flux_is_not_clipped
+    parts = ledger.signed_parts(np.array([1.0, -1.0e-16]), np.array([2.0, 3.0]))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001\validators\multi_province\call725_kfe_mass_balance\ledger.py", line 97, in signed_parts
+    residual_l1 = math.fsum(map(abs, residual))
+                                     ^^^^^^^^
+NameError: name 'residual' is not defined
+
+======================================================================
+ERROR: test_nonconservative_example_keeps_off_pin_correction (__main__.MassLedgerTests.test_nonconservative_example_keeps_off_pin_correction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001\tests\test_mp4c_call725_kfe_mass_balance.py", line 51, in test_nonconservative_example_keeps_off_pin_correction
+    result = ledger.build_mass_balance(q, np.array([0.5, 0.5]), 1.0, np.array([0.0, 2.0]), 1)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectTemp\ch5-astra-local-doc-sync-20260907-001\validators\multi_province\call725_kfe_mass_balance\ledger.py", line 144, in build_mass_balance
+    "pin_abs_share": float(abs(residual[pin_row]) / residual_l1) if residual_l1 else 0.0,
+                                                                    ^^^^^^^^^^^
+NameError: name 'residual_l1' is not defined
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.011s
+
+FAILED (errors=3)
