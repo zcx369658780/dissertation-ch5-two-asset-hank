@@ -2,27 +2,25 @@
 更新：2026-09-09。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
 ## 当前阶段
-MP4已完成原call725失败复现、rah=.07单户敏感性、KFE source/escape归因、一次b域压力测试、原始数据/插值审计、年度时间合同/Zt legacy审计，以及V2时间合同Python pre-model静态实现。Results=FALSE。
+MP4已完成原call725失败复现、rah=.07单户敏感性、KFE source/escape归因、b域压力测试、原始数据/插值审计、年度时间合同/Zt legacy审计、V2 pre-model静态实现，以及首轮官方2018身份审计。Results=FALSE。
 
-Owner已停止继续扩大`bmax`。生产网格冻结I20,b[-2,5]、J20,a[0,10]、Nz2,z[.8,1.3]，保持`amax>bmax`。
+## 冻结年度合同
+`steady_year=2008+ii`；同年GDP/CAP/POP一基row=`ii+9`；PLM estimator保持rolling 10-year；2018=2009–2018；Zt公式保持并使用同年水平量。生产网格继续I20,b[-2,5]、J20,a[0,10]、Nz2,z[.8,1.3]。
 
-## 已冻结并实现的年度时间合同
-- `steady_year = 2008 + ii`；
-- 同年GDP/CAP/POP水平量一基row=`ii+9`；
-- PLM estimator保持；
-- PLM窗口=`steady_year-9 : steady_year`，rolling 10-year；
-- 2009=2000–2009，2018=2009–2018，2023=2014–2023；
-- 不采用expanding-from-2000；
-- Zt保持原公式但使用稳态同年level row，不再固定2020。
+## 当前数据状态
+首轮官方审计未闭合最终修订身份：2018安徽初步官方GDP/人口与当前workbook不一致；第四次经济普查后的精确修订GDP和人口后续谱系未取得。K2018只依赖I2000..I2017，且固定资产投资在2011存在统计范围断点，因此未按官方链重算CAP。
 
-Python annual/pre-model层已通过静态验收，合同版本`CH5_ANNUAL_TEMPORAL_CONTRACT_V2_ROLLING10Y_SAMEYEAR_ZT`。2018绑定analysis/data_MAT 10/10、row19/year2018、PLM vintage19、window2009–2018、Zt2018。V2 payload对legacy/missing/inconsistent/hash-mismatch fail closed。
+Owner指出原CNKI面板有缺失/潜在偏误，并提供`D:\BaiduNetdiskDownload`中的付费人工整理数据作为高质量第二来源。当前active task：`tasks/CH5_MP4C_PURCHASED_DATASET_GAP_CLOSURE_AUDIT.md`。
 
-## 当前 blocker
-2018 corrected输入仍来自provisional audited workbook，官方数据身份尚未闭合。优先核验：安徽2018 GDP、常住人口、2000–2018固定资产投资/资本存量链，以及与PLM/Zt provenance一致的来源记录。官方身份关闭前不启动新的2018科学稳态。
+任务优先审计：
+- 地级市全要素生产率1978–2022；
+- `sj479`地级市固定资产投资2000–2024；
+- `NJ73`人口与就业统计年鉴1949–2023；
+- 其他直接相关的省/市级人口、投资、GDP或生产率文件。
 
-ii15 industry4旧cache alpha与当前PLM workbook不一致；旧无版本cache继续禁止作为纠正后输入权威。2022–2023六个负资本/复数log是独立blocker，但不进入下一次2018小规模验证。
+只读判断这些数据的schema、来源、缺失、口径和可比性；购买/人工校对不等于官方authority。城市投资只有在可加总、覆盖完整、地域边界和统计口径均证明成立时才允许生成描述性省级候选；TFP不替换当前PLM，只评估为独立验证基准或未来替代候选。
 
 ## 后续顺序
-2018官方数据身份/来源闭合 → 真正2018单年小规模科学验证 → 若修正输入后仍高收益/不收敛，再审计GovInv/外层适应速度 → household/KFE数值有效性 → 必要有限省份验证 → 年度覆盖 → MP5/MP6动态路线。
+付费数据缺口闭合审计 → Reviewer判断candidate source/package与剩余官方缺口 → 数据身份足够闭合后才发布真正2018单年小规模科学验证 → 若仍高收益/不收敛，再审计GovInv外层适应速度 → household/KFE数值有效性 → 必要有限省份 → 年度覆盖 → MP5/MP6动态。
 
-继续保持不变量：At*N而非At+Bt；household Lt与firm Lt_supply分开；保护原MATLAB/Excel/MAT；不以调容差、无限扩网格、无依据补source、更换估计器或调整GovInv来补偿错误数据合同制造PASS。
+当前不运行household/HJB/KFE/firm/GE/annual，不调整GovInv/alpha，不扩大bmax，不切换PLM。2022–2023负资本问题继续独立处理。
