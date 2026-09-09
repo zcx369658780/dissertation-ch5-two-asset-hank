@@ -4,25 +4,31 @@ Owner最终科学authority；ChatGPT Reviewer规划/验收/发布；Codex Builde
 
 ## 当前入口
 先fresh读取live main、AGENTS、规则索引和当前状态。
-当前状态：`TEMPORAL_CONTRACT_IMPLEMENTATION_ACCEPTED__V2_ROLLING10Y_SAMEYEAR_ZT_STATIC_PASS__OFFICIAL_2018_DATA_STILL_BLOCKS_SCIENCE`。
+当前状态：`OFFICIAL_2018_DATA_IDENTITY_AUDIT_ACCEPTED__MANUAL_OFFICIAL_DATA_REQUIRED__SCIENCE_STILL_BLOCKED`。
 当前 active task：无。Results eligibility=FALSE。
 
 ## 已冻结并实现的合同
-Owner采用PLM rolling 10-year：2009=2000–2009、2018=2009–2018、2023=2014–2023；`steady_year=2008+ii`；同年level row=`ii+9`；PLM estimator/workbook保持；Zt公式保持但使用稳态同年GDP/CAP/POP。
+PLM使用rolling 10-year：2009=2000–2009、2018=2009–2018、2023=2014–2023；`steady_year=2008+ii`；同年level row=`ii+9`；PLM estimator/workbook保持；Zt公式保持但使用稳态同年GDP/CAP/POP。Python annual/pre-model层已实现`CH5_ANNUAL_TEMPORAL_CONTRACT_V2_ROLLING10Y_SAMEYEAR_ZT`和V2 metadata/source-hash fail-closed。
 
-Python annual/pre-model层已实现`CH5_ANNUAL_TEMPORAL_CONTRACT_V2_ROLLING10Y_SAMEYEAR_ZT`。2018静态corrected binding：analysis/data_MAT 10/10，row19/year2018，vintage19，window2009–2018，Zt2018。安徽index仍Python11/MATLAB12/Excel N；provisional输入GDP=34010910.0、POP=607600.0、CAP=1357314108201.3684、alpha=.772866243094144、IND_Zt=.0006934646534806338。
+## 最新接受的官方身份审计
+候选`729d2c13c5864e0f607ac6dc8fd863d19f02d3f7`已接受，主结论`PARTIAL_OFFICIAL_IDENTITY__MANUAL_DATA_REQUIRED`。
 
-V2 metadata/source-hash合同拒绝missing、V1/legacy、内部不一致和hash mismatch。ii15旧cache alpha=.967775174774325不能覆盖当前workbook值1.0219847778591。原MATLAB源未修改，已有patch spec。
+- 2018安徽官方统计公报的初步GDP=`30006.82`亿元，当前workbook=`34010.91`亿元；2019公报确认第四次经济普查后历史GDP修订，但修订后2018精确值尚未闭合。
+- 2018安徽年末常住人口初步值=`6323.6`万人，当前workbook=`6076`万人；后续权威修订谱系尚未闭合。
+- 冻结资本递推意味着K2018使用I2000..I2017，I2018不参与。安徽workbook投资值全部原始未填，但只证明lineage。
+- 2011固定资产投资统计范围发生官方确认的制度断点；未取得可防御地拼接的2000–2017官方绝对值链，因此没有重算candidate CAP。
+- 当前CAP=`1357314108.2013683`仍是workbook派生模型输入，不是官方资本存量；未来官方链闭合后只能称`MODEL_DERIVED_FROM_OFFICIAL_INVESTMENT`。
+- 没有生成candidate V2 correction package或candidate Zt。科学调用全部0。
 
-## 验收证据
-候选`6746565506eb953ea599536d3f745764d225ffef`已接受。Scoped tests 22 passed；manifest 32项匹配，SHA256=`F529EF14096482734BC2FB98E90A739F2BBEF5D6AE23CE3D6B3AC8F1D8C10910`。历史annual-driver收集因受保护oracle身份不匹配在测试执行前停止，保留失败日志、不计入PASS、无模型调用。全部科学调用=0，仅构造2009/2018两个静态pre-model对象。
+## Owner下一步手工资料
+请补充或上传：
+1. 第四次全国经济普查修订口径下安徽2018现价GDP精确值及官方表/版本；
+2. 安徽2018年末常住人口的后续权威值与修订/调查口径，足以解释6323.6与6076差异；
+3. 安徽2000–2017逐年固定资产投资绝对值、单位，以及2011制度变更的衔接/回溯/可比口径说明。
 
-## 当前最高优先级blocker
-2018输入仍是`PROVISIONAL_AUDITED_SOURCE__OFFICIAL_VERIFICATION_OPEN`。安徽2018 GDP、常住人口、固定投资/资本存量链尚未完成官方来源身份闭合。在此之前不运行新的2018 household/HJB/KFE/firm/GE/annual，不调GovInv/alpha，不继续扩大bmax。
-
-2022–2023六个负资本/复数log是独立问题，不进入下一次2018小规模验证。
+若官方没有一条可比连续投资链，不要静默拼接；需由Owner另行决定资本存量重构方法。
 
 ## 路线
-官方2018数据身份闭合 → 真正2018单年小规模科学验证 → 若仍高收益/不收敛，再审计GovInv外层适应速度 → household/KFE有效性 → 有限省份 → 年度覆盖 → MP5/MP6动态。
+Owner补充官方资料 → Reviewer关闭2018 data identity并生成/验收candidate V2输入（如需要） → 真正2018单年小规模科学验证 → 若仍高收益/不收敛，再审计GovInv外层适应速度。
 
-生产网格仍I20,b[-2,5]；J20,a[0,10]；Nz2,z[.8,1.3]。历史rah=.09/.07、KFE边界、Qh负率、P32/sigma和b域实验只代表旧混合年份输入。
+在数据闭合前不运行新的2018 household/HJB/KFE/firm/GE/annual，不调GovInv/alpha，不继续扩大bmax。生产网格仍I20,b[-2,5]；J20,a[0,10]；Nz2,z[.8,1.3]。
