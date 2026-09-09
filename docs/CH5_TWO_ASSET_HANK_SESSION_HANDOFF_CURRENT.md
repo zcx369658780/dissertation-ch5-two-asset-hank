@@ -3,31 +3,25 @@
 Owner最终科学authority；ChatGPT Reviewer规划/验收/发布；Codex Builder默认`gpt-5.6-sol / medium`。
 
 ## 当前入口
-fresh读取live main、AGENTS、规则索引、当前状态和active task。
-当前状态：`PURCHASED_DATASET_GAP_CLOSURE_AUDIT_ACTIVE__NO_SCIENCE_RUN`。
-active task：`tasks/CH5_MP4C_PURCHASED_DATASET_GAP_CLOSURE_AUDIT.md`。
-Results eligibility=FALSE。
+fresh读取live main、AGENTS、规则索引和当前状态。
+当前状态：`PURCHASED_DATASET_AUDIT_ACCEPTED__2018_POPULATION_IDENTITY_CLOSED__GDP_AND_INVESTMENT_REMAIN_OPEN`。
+当前 active task：无。Results eligibility=FALSE。
 
 ## 已冻结合同
-PLM rolling 10-year：2018=2009–2018；`steady_year=2008+ii`；同年level row=`ii+9`；same-year Zt；资本递推`K0=I0/.1`、`Kt=(1-.096)K(t-1)+I(t-1)`，所以K2018只需I2000..I2017。PLM、模型方程、GovInv、grid均不改。
+PLM rolling 10-year；2018=2009–2018；`steady_year=2008+ii`；同年level row=`ii+9`；same-year Zt；资本递推`K0=I0/.1`、`Kt=(1-.096)K(t-1)+I(t-1)`，所以K2018只需I2000..I2017。PLM、模型方程、GovInv、grid均不改。
 
-## 为什么新增任务
-官方身份审计只取得2018安徽初步GDP=30006.82亿元、人口=6323.6万人，与当前workbook 34010.91/6076不一致；后续修订谱系未闭合。固定资产投资2011存在制度断点，未取得可直接拼接的官方2000–2017链。
+## 最新接受结论
+候选`4db5c0691535e92d34a86c67ee96c2b8978c1de2`已接受。
 
-Owner说明原面板主要来自知网整理数据，存在较多缺失/后续校正风险；另购买了人工校对数据，位于`D:\BaiduNetdiskDownload`，质量较高，可作为第二来源补缺和交叉核验。
+- 人口：2023《中国人口和就业统计年鉴》表1-1给出安徽2018常住人口`6076`万人，并注明2011–2019年按2020人口普查修订。因此2018人口身份已闭合；权威来自官方年鉴，付费包只是本地副本。
+- GDP：仍未找到第四次经济普查后修订的安徽2018现价GDP精确官方表值，provisional`34010.91`与初步官方`30006.82`仍未裁决。
+- 投资：`sj479`对安徽2000–2017每年16市完整覆盖、无重复缺失，但省级残余/直管、行政区划、统计口径和加总授权未证明，2017还由增速推算，因此未求城市合计、未跑资本递推。
+- TFP：安徽2009–2018为16市×10年×11方法、无缺失，但基年/尺度/deflator/省级聚合合同不足，生产分类`NOT_COMPARABLE_WITH_CURRENT_PROVINCE_ZT`；PLM保持。未来可单独作为验证基准或替代方法候选。
+- 科学调用全部0；无生产数据或模型改动。
 
-## 当前task
-只读审计付费数据，优先：
-- `中国各地级市全要素生产率数据（1978-2022年）`
-- `sj479-地级市-固定资产投资额数据（2000-2024年）`
-- `NJ73-中国人口与就业统计年鉴1949-2023年`
-以及其他直接相关候选。
+## 当前路线
+人口不再是blocker。下一步需关闭：
+1. 修订后安徽2018现价GDP；
+2. 2000–2017省级可比固定资产投资链，或Owner批准新的资本存量重构方法。
 
-必须盘点文件hash/schema/粒度/年份/单位/缺失/来源说明；核对安徽2018 GDP和人口；评估城市投资能否形成2000–2017安徽候选链；评估TFP数据是否适合作为独立验证基准。城市→省份不得在覆盖、可加总和口径未证明时直接汇总。TFP不得在本task替换PLM或选择新的省级聚合方法。
-
-所有付费原始文件只读、不提交GitHub、不外传；仓库只保存必要小规模提取、hash、schema和provenance。科学模型调用全部0。
-
-## 路线
-付费数据审计 → Reviewer判断candidate data package/剩余官方缺口 → 数据身份足够闭合后真正2018小规模验证 → 若仍高收益/不收敛，再审计GovInv调整速度。
-
-生产网格继续I20,b[-2,5]；J20,a[0,10]；Nz2,z[.8,1.3]。不继续扩大bmax。
+两项关闭后才能构造最终2018 V2 candidate input并发布真正2018单年小规模科学验证。当前不运行household/HJB/KFE/firm/GE/annual，不调GovInv/alpha，不扩大bmax。
