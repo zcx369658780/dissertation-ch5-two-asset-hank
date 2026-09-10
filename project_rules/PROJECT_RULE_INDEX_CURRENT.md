@@ -10,24 +10,18 @@
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
 5. 若存在active task，再读取该exact task及直接相关acceptance/report。
 
-当前状态：`STEADY_STATE_REDESIGN_SPEC_ACCEPTED_PARTIAL__UNIT_AND_INITIALIZATION_PROBE_AUTHORIZED__PRODUCTION_RUNTIME_STILL_BLOCKED`。
-当前 active Builder task：`tasks/CH5_MP4C_UNIT_NORMALIZED_INITIALIZATION_ONLY_PROBE_AND_PRICE_RECEIPT.md`。
-最新接受候选：`abfeec3bd7443cd5a95ef3a62aedae16be81b702`。
-Reviewer acceptance：`docs/CH5_MP4C_MULTI_PROVINCE_STEADY_STATE_CALIBRATION_AND_INITIALIZATION_REDESIGN_SPEC_ACCEPTANCE.md`。
+当前状态：`UNIT_NORMALIZED_INITIALIZATION_PROBE_ACCEPTED__BROAD_FIRM_PRICE_BOUNDARY_HITS_PERSIST_AFTER_DATA_AND_MACRO_UNIT_CORRECTION__NEXT_DIAGNOSIS_MUST_TARGET_PRICE_NORMALIZATION_AND_BRIDGE_SEMANTICS`。
+当前 active Builder task：`tasks/CH5_MP4C_FIRM_PRICE_NORMALIZATION_AND_HOUSEHOLD_MACRO_BRIDGE_FORENSIC.md`。
+最新接受候选：`ff2a32e6c6eb799931b741c9a8557afdaa5c8bfa`。
+Reviewer acceptance：`docs/CH5_MP4C_UNIT_NORMALIZED_INITIALIZATION_ONLY_PROBE_ACCEPTANCE.md`。
 Results eligibility=`FALSE`。
 
-已接受的设计结论：legacy GDP亿元与资本万元被同样`×1000`导致资本相对共同货币单位放大`10,000`倍；household→macro productive-capital桥位于`At*N`，但当前隐含bridge系数1没有经济单位依据。Owner/Reviewer同意采用统一宏观单位作为下一bounded probe：`MU=10万元`、`NU=100 persons`，GDP亿元`×1000`、capital亿元`×1000`（或万元`÷10`）、POP万人`×100`。该共同单位合同已获准用于probe，但household asset-grid货币归一化仍未正式冻结。
+最新初始化-only probe已经接受：使用正确2018 GDP/POP、raw-NBS GFCF Track-A PIM、`delta_pim=.096`、`alpha=.7380939146868483`、统一宏观单位`MU=10万元`与`NU=100 persons`后，protected-source firm初始化仍广泛撞价格边界。raw `ra`对`[.02,.09]`为below/inside/above=`0/1/30`；raw `wjt`对`[.8,1.3]`为`0/0/31`；31/31至少命中一个边界。安徽raw/used `ra0=.32587797015041736/.09`，raw/used `wjt0=13.487571992789512/1.3`，source-lagged `rah0=.08895777765800762`，静态wage composite `w0=18.29792118969518`。该证据不授权扩大bounds或从收敛表现反推household asset bridge。
 
-下一probe使用Owner提供raw-NBS GFCF Track-A PIM作为诊断资本路线，`delta_pim=.096`；firm内现有`.025`折旧暂保持独立角色并必须显式记录，不静默统一。raw-NBS Track A在本probe中的选择不自动升级为Results authority。
+protected `HANK_firm.m`在zero-change初始化下给出`mt0=.92`而不是早期redesign prose简化的`.9`；已按源码留痕，不修改production source。
 
-alpha successor contract已冻结：保存`alpha_raw`，按Owner范围`[.2,.8]`取`alpha_used`并保留clip flag/reason；当前`alpha_raw=alpha_used=0.7380939146868483`。原active `reg_method=0`源码没有实际alpha clipping，旧`.3/.8`只是注释逻辑。
+当前新task继续保持zero-household/zero-steady-state，仅做firm price normalization与household↔macro bridge静态forensic。重点把raw wage分解为`mt*(1-alpha)*Y/L`等价形式，把raw `ra`分解为MPK、firm depreciation和profit/tax成分；做money/population单位缩放不变性分析；恢复HJB中`a/b/c/w/Tt/AtTax`的绝对/相对单位线索；明确`At_grid -> At*N -> Kt_supply -> Kt_supply+GovInv`桥接方程及未知货币conversion；核查legacy price bounds provenance。不得运行HJB/KFE、firm runtime、allocation、outer turn、steady state、GE/annual/IRF/Results，不得修改bounds或选择asset bridge。
 
-初始化设计已接受：不再把legacy `.09/.09/.6/20`视为合理数据初值；先绑定2018 Y/K/N、alpha与same-year Z，再按现有firm方程生成raw/clipped `ra0/wjt0`。下一task只执行initialization-only deterministic probe，不调用household HJB/KFE或steady-state loop。`rah`时序下一probe保持source-lagged baseline；after-firm timing仍为未来单独candidate。GovInv不新增damping，`w/rah` lambda与hysteresis阈值仍未冻结。
-
-原single-loop思路继续保留：Stage A stabilization、Stage B near-steady online calibration、Stage C calibration freeze/final confirmation；不采用完整nested steady-state/calibration双循环，也不换Newton/Broyden/fsolve/Brent/Anderson等solver。
-
-当前task严格禁止household HJB/KFE、outer turn、steady state、GE/annual/IRF/Results；只允许31省数据一致firm-side初始化方程及无需household solve的静态聚合/单位诊断。household asset bridge系数1仅允许作为`SOURCE_FAITHFUL_BASELINE_ONLY`诊断，不得从收敛表现反推新bridge。
-
-此前MATLAB mixed-year数据审计、raw-NBS重估、five-turn KFE attribution继续作为有效历史证据；当前优先建立正确数据、单位和初始化价格尺度，再决定是否进入first bounded outer-turn validation。
+此前的raw-NBS重估、mixed-year数据审计、steady-state redesign spec和five-turn KFE attribution继续作为有效历史证据；当前优先分离“wage单位不匹配”与“ra真实Y/K水平效应”，再决定下一步production contract。
 
 GitHub live main是repository-state authority；聊天不能替代exact task。任何新的科学执行必须先发布exact task。以后每次发布exact task，同一回复自动附Codex启动prompt。
