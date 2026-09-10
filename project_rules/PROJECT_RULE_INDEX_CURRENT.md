@@ -11,17 +11,18 @@
 5. 若存在active task，再读取该exact task及直接相关acceptance/report。
 
 当前状态：`RAW_NBS_2018_REBUILD_ACCEPTED_PARTIAL__SAME_YEAR_GDP_POP_AND_LAGGED_FLOW_CAPITAL_REBUILT__SOURCE_ROUTE_DIFFERENCE_REMAINS`。
-当前 active Builder task：无。
+当前 active Builder task：`tasks/CH5_MP4C_MULTI_PROVINCE_STEADY_STATE_CALIBRATION_AND_INITIALIZATION_REDESIGN_SPEC.md`。
+该任务是Owner与Reviewer已经达成共识后的zero-science设计/静态source-mapping任务：统一单位合同、恢复/冻结alpha `[0.2,0.8]`边界逻辑、设计2018数据一致初始化、为`w/rah`提出under-relaxation合同，并把原有单循环“接近稳态后在线校准”形式规范成stabilization / near-steady calibration / final confirmation三个阶段。不得运行HANK/HJB/KFE/firm/outer-loop/steady-state模型，也不得实现production source修改。
 最新接受候选：`3bd6343011f17d1b2273386732f06e6da6bf84e9`。
 Reviewer acceptance：`docs/CH5_MP4C_2018_RAW_NBS_DATA_REBUILD_CAPITAL_PRODUCTIVITY_REESTIMATION_ACCEPTANCE.md`。
 Results eligibility=`FALSE`。
 
-最新raw-NBS rebuild确认：GDP 1992–2022、人口2000–2022完整；固定资本形成1996–2017完整，折旧1992–2017完整；投资与折旧在2018均无31省观测，因此不存在四源完全同年2018面板，未填补或伪造。根据冻结的lagged-flow PIM定义，完整2017流量仍可构造K2018。
+Owner已明确：正确2018 GDP/POP必须使用；PIM只要明确折旧即可，现有`delta=.096`可继续作为Chapter 5估计假设；资本是model-derived calibration object而非官方资本存量。alpha模型可行域按Owner原设计为`[0.2,0.8]`，原思路允许越界后使用边界值；当前重新估计raw alpha=`0.7380939146868483`在范围内，不需要clip。
 
-Track A继续只作为primary comparable PIM rebuild：`K0=I0/.1`、`Kt=(1-.096)K(t-1)+I(t-1)`，但raw gross fixed capital formation与当前accepted canonical investment route并非同一数据概念/来源，不能自动替换production capital authority。Track B使用观察折旧进行会计诊断，不是production authority。
+Owner同意：统一宏观/household/firm之间的量纲；修改遗留的极端统一初值，优先由2018 `Y/K/L/Z/alpha`与现有firm方程反推价格初值；允许对`w/rah`采用under-relaxation；保留原来`HANK_mp_1eq.m`/`HANK_mp_1turn.m`中“接近稳态后开始校准”的高效率单循环思想，不采用完整nested steady-state/calibration双循环；可在此基础上设计staged gate与hysteresis，具体damping系数和阈值需后续bounded validation后再冻结。
 
-重新估计2009–2018 pooled alpha=`0.7380939146868483`，SE=`0.03825774803543075`，R²=`0.6924937537873637`，N=310。安徽raw-NBS 2018 GDP=`34010.9`亿元、POP=`6076`万人；Track-A K2018=`70182.43335888097`亿元；Track-B K2018=`84616.8`亿元；Track-A Z2018=`0.0018759632501672073`。安徽相对legacy mixed-year object差异material，但不是唯一或最大异常；Track-A capital相对当前canonical capital约低48.3%，该差异需作为source/concept-route scientific choice处理。
+最新raw-NBS rebuild仍为PARTIAL calibration evidence：2018原始投资/折旧缺失，lagged-flow公式可由2017流量生成K2018；raw GFCF路线与当前canonical investment route不是同一来源/概念，不能自动替换production capital authority。Track B observed-depreciation仅为诊断。
 
-此前MATLAB 2018 mixed-year audit和five-turn KFE attribution均继续作为有效历史证据；Owner当前要求先讨论生产校准应采用哪种投资/资本数据定义，不自动进入HANK/KFE production redesign，也不运行新稳态。
+此前MATLAB mixed-year数据审计、raw-NBS重估和five-turn KFE attribution均继续作为有效历史证据。Owner当前优先修复/规范数据、初始化和外层稳态迭代逻辑，不自动进入KFE boundary redesign或新稳态运行。
 
 GitHub live main是repository-state authority；聊天不能替代exact task。任何新的科学执行必须先发布exact task。以后每次发布exact task，同一回复自动附Codex启动prompt。
