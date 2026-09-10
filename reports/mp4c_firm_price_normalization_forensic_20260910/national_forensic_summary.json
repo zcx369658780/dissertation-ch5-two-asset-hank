@@ -1,0 +1,107 @@
+{
+  "schema": "CH5_FIRM_PRICE_NORMALIZATION_FORENSIC_SUMMARY_V1",
+  "verdict": "FIRM_PRICE_NORMALIZATION_FORENSIC_PASS__WAGE_UNIT_MISMATCH_AND_RETURN_LEVEL_EFFECTS_SEPARATED",
+  "wage_conclusion": "PRICE_BOUND_HITS_PRIMARILY_UNIT_NORMALIZATION_MISMATCH",
+  "return_conclusion": "PRICE_BOUND_HITS_PRIMARILY_ECONOMIC_RATIO_LEVELS",
+  "household_currency_conclusion": "HOUSEHOLD_CURRENCY_NORMALIZATION_UNRESOLVED",
+  "wage": {
+    "identity": "w_raw=mt*(1-alpha)*Y/L",
+    "Y_over_L": {
+      "min": 32.22306163021869,
+      "min_province": "甘肃",
+      "median": 51.5588270640548,
+      "max": 151.0310218978102,
+      "max_province": "北京"
+    },
+    "raw": {
+      "min": 7.764262654105002,
+      "min_province": "甘肃",
+      "median": 12.423284914909624,
+      "max": 36.39146820961234,
+      "max_province": "北京"
+    },
+    "raw_to_upper_bound": {
+      "min": 5.972509733926924,
+      "min_province": "甘肃",
+      "median": 9.556373011468942,
+      "max": 27.993437084317186,
+      "max_province": "北京"
+    },
+    "bound_counts": {
+      "below": 0,
+      "inside": 0,
+      "above": 31
+    }
+  },
+  "return": {
+    "identity": "ra_raw=mt*alpha*Y/K-delta_firm+PIt*(1-corptau)/K",
+    "collapsed_identity": "ra_raw=0.7240464015119004*Y/K-0.025",
+    "Y_over_K": {
+      "min": 0.15632815403657768,
+      "min_province": "青海",
+      "median": 0.321876044826069,
+      "max": 0.5638034659765848,
+      "max_province": "北京"
+    },
+    "mpk_component": {
+      "min": 0.10615407045353614,
+      "min_province": "青海",
+      "median": 0.21856876997202532,
+      "max": 0.3828487147313371,
+      "max_province": "北京"
+    },
+    "depreciation_component": {
+      "min": -0.025,
+      "min_province": "北京",
+      "median": -0.025,
+      "max": -0.025,
+      "max_province": "北京"
+    },
+    "dividend_component": {
+      "min": 0.007034766931645991,
+      "min_province": "青海",
+      "median": 0.014484422017173095,
+      "max": 0.0253711559689463,
+      "max_province": "北京"
+    },
+    "other_additive_component": {
+      "min": 0.0,
+      "min_province": "北京",
+      "median": 0.0,
+      "max": 0.0,
+      "max_province": "北京"
+    },
+    "raw": {
+      "min": 0.08818883738518214,
+      "min_province": "青海",
+      "median": 0.20805319198919842,
+      "max": 0.38321987070028335,
+      "max_province": "北京"
+    },
+    "raw_to_upper_bound": {
+      "min": 0.9798759709464683,
+      "min_province": "青海",
+      "median": 2.311702133213316,
+      "max": 4.257998563336482,
+      "max_province": "北京"
+    },
+    "bound_counts": {
+      "below": 0,
+      "inside": 1,
+      "above": 30
+    },
+    "Y_over_K_coefficient": 0.7240464015119004,
+    "mpk_share_of_positive_Y_over_K_coefficient": 0.9378492871367992,
+    "dividend_share_of_positive_Y_over_K_coefficient": 0.06215071286320081,
+    "K_over_Y_threshold_for_ra_0p09": 6.296055665320873
+  },
+  "asset_bridge_beta_a_1_descriptive": {
+    "status": "SOURCE_FAITHFUL_BASELINE_ONLY__BETA_A_NOT_IDENTIFIED",
+    "AtN_to_K0_min": 0.004282158069342776,
+    "min_province": "天津",
+    "AtN_to_K0_median": 0.011388983617207863,
+    "AtN_to_K0_max": 0.019977992688578954,
+    "max_province": "甘肃"
+  },
+  "results_eligible": false
+}
