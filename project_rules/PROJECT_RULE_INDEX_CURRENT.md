@@ -10,17 +10,18 @@
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
 5. 若存在active task，再读取该exact task及直接相关acceptance/report。
 
-当前状态：`MATLAB_2018_INPUT_DATA_AUDIT_ACCEPTED__MATERIAL_EXTERNAL_SCALE_AND_YEAR_MIXTURE_CONFIRMED__NO_CAUSAL_COLLAPSE_CLAIM`。
-当前 active Builder task：`tasks/CH5_MP4C_2018_RAW_NBS_DATA_REBUILD_CAPITAL_AND_PRODUCTIVITY_REESTIMATION.md`。
-该任务由Owner明确要求：直接从国家统计局原始XLS重建同年2018数据、重新估计各省资本存量与生产率，并将可复现的派生结果保存到GitHub；不得运行HANK/HJB/KFE/firm/outer-loop模型。
-最新接受候选：`1321b7a227e6b1e341623222eeecd11748189727`。
-Reviewer acceptance：`docs/CH5_MP4C_2018_MATLAB_INPUT_DATA_AND_INITIAL_STATE_COMPARISON_AUDIT_ACCEPTANCE.md`。
+当前状态：`RAW_NBS_2018_REBUILD_ACCEPTED_PARTIAL__SAME_YEAR_GDP_POP_AND_LAGGED_FLOW_CAPITAL_REBUILT__SOURCE_ROUTE_DIFFERENCE_REMAINS`。
+当前 active Builder task：无。
+最新接受候选：`3bd6343011f17d1b2273386732f06e6da6bf84e9`。
+Reviewer acceptance：`docs/CH5_MP4C_2018_RAW_NBS_DATA_REBUILD_CAPITAL_PRODUCTIVITY_REESTIMATION_ACCEPTANCE.md`。
 Results eligibility=`FALSE`。
 
-原MATLAB“2018”对象已确认混合使用2009 GDP/CAP/POP levels、2020 level-derived Zt与PLM vintage19 alpha；alpha 31/31与canonical精确一致，但GDP和资本31/31均存在material level difference。GovInv初始化自Kt0，因此继承资本年份/尺度问题。安徽差异尤其明显：GDP约-68.06%，资本约-83.19%，而POP约+0.91%、Zt约-7.49%、alpha精确一致。
+最新raw-NBS rebuild确认：GDP 1992–2022、人口2000–2022完整；固定资本形成1996–2017完整，折旧1992–2017完整；投资与折旧在2018均无31省观测，因此不存在四源完全同年2018面板，未填补或伪造。根据冻结的lagged-flow PIM定义，完整2017流量仍可构造K2018。
 
-当前新任务使用Owner提供的原始国家统计局文件：`地区生产总值 亿元.xls`、`固定资本形成总额 亿元.xls`、`固定资产折旧 亿元.xls`、`年末常住人口 万人.xls`。要求先重建clean province-year panel，再以当前accepted PIM contract作为primary Track A估计资本；同时利用实际折旧数据构建单独的Track B accounting diagnostic，不自动升级为production authority；随后按rolling 10-year、2018 vintage=2009–2018的既有PLM方程族重新估计alpha，并用同年2018 Y/K/L计算province Zt。
+Track A继续只作为primary comparable PIM rebuild：`K0=I0/.1`、`Kt=(1-.096)K(t-1)+I(t-1)`，但raw gross fixed capital formation与当前accepted canonical investment route并非同一数据概念/来源，不能自动替换production capital authority。Track B使用观察折旧进行会计诊断，不是production authority。
 
-此前five-turn KFE attribution仍是有效历史证据，但Owner当前明确要求先修正数据与校准对象，不自动进入boundary/KFE production redesign，也不运行任何模型查看是否收敛。
+重新估计2009–2018 pooled alpha=`0.7380939146868483`，SE=`0.03825774803543075`，R²=`0.6924937537873637`，N=310。安徽raw-NBS 2018 GDP=`34010.9`亿元、POP=`6076`万人；Track-A K2018=`70182.43335888097`亿元；Track-B K2018=`84616.8`亿元；Track-A Z2018=`0.0018759632501672073`。安徽相对legacy mixed-year object差异material，但不是唯一或最大异常；Track-A capital相对当前canonical capital约低48.3%，该差异需作为source/concept-route scientific choice处理。
+
+此前MATLAB 2018 mixed-year audit和five-turn KFE attribution均继续作为有效历史证据；Owner当前要求先讨论生产校准应采用哪种投资/资本数据定义，不自动进入HANK/KFE production redesign，也不运行新稳态。
 
 GitHub live main是repository-state authority；聊天不能替代exact task。任何新的科学执行必须先发布exact task。以后每次发布exact task，同一回复自动附Codex启动prompt。
