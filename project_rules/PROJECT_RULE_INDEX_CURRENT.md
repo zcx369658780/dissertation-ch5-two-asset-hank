@@ -10,20 +10,22 @@
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
 5. 若存在active task，再读取该exact task及直接相关acceptance/report。
 
-当前状态：`HJB_PROPAGATION_REPAIR_AND_25TURN_KL_ACCEPTED__GOVINV_DOMINATES_CAPITAL_OVERSHOOT__LABOR_PROXY_SCALE_MISMATCH_REQUIRES_SEPARATE_REDESIGN`。
-当前 active Builder task：`tasks/CH5_MP4C_GOVINV_INITIALIZATION_AND_LABOR_NORMALIZATION_REDESIGN_SPEC.md`。
-最新接受候选：`0616c72b1f7f82185e6216149d06f035a071511c`。
-Reviewer acceptance：`docs/CH5_MP4C_CORRECTED_2018_HJB_NONCONVERGENCE_PROPAGATION_AND_25TURN_KL_RERUN_ACCEPTANCE.md`。
+当前状态：`GOVINV_LABOR_REDESIGN_SPEC_ACCEPTED__CAPITAL_AND_LABOR_CORRECTION_PATHS_SEPARATED__OWNER_IDENTIFICATION_DECISIONS_REQUIRED_BEFORE_IMPLEMENTATION`。
+当前 active Builder task：无。
+最新接受候选：`afb1cffeba207368b78c8ac4b93958285312eb53`。
+Reviewer acceptance：`docs/CH5_MP4C_GOVINV_INITIALIZATION_AND_LABOR_NORMALIZATION_REDESIGN_SPEC_ACCEPTANCE.md`。
 Results eligibility=`FALSE`。
 
-最新25-turn corrected-2018 rerun已接受。successor harness允许有限且结构可用的`converged=false` HJB返回继续KFE/aggregate/downstream turn，同时保留`HJB_NONCONVERGED_DIAGNOSTIC_ONLY`和false flag，最终source steady-state predicate仍要求31/31 household HJB convergence。25/25 turns、775/775 household/HJB/KFE/aggregate/firm均完成，无scientific retry或第二trajectory；turn23-25 HJB为31/31 converged，但775/775 KFE仍为`DIAGNOSTIC_ONLY`，两类科学blocker继续独立存在。
+最新zero-science redesign specification已接受。资本侧：`GovInv0=Ktarget`仅保留为historical/source-faithful数值起点，不再解释为已识别公共资本；residual候选`GovInv0=max(Ktarget-Kt_supply_initial,0)`在会计/量纲上成立，但`Kt_supply_initial`的观察时点与At-grid→MU bridge尚未识别。GovInv initialization与controller redesign必须拆分，不从收敛表现反推初始化或controller参数。
 
-K reconciliation已定量：turn20-25 pooled `firm_K_total/Ktarget` min/median/max=`1.3422659595802506/2.359983542526/2.866669200187509`；late-window median `private_K/Ktarget=0.00291675418808339`，median `GovInv/Ktarget=2.3579476910000015`。29/31省late-window mean严重高于target，2/31中度偏高。overshoot明确由GovInv主导而非household private K；source-faithful `GovInv0=Ktarget`在positive private supply加入后即机械性超过target，且当前controller在该25-turn prefix中没有消化，反而使median GovInv/target进一步上升。
+劳动侧：source chain已明确区分population N、household efficiency labor、`Lt_mat(destination,origin)`与destination `firm_Lt_supply`；`Lt_seperate`只乘人口一次，但origin-column destination levels未归一化，因此`firm_Lt_supply/N0`巨大不能解释为真实就业超额。`N0`仅为population proxy；literal `Lt_seperate`还依赖内生`Ct/wjt`，所以仅凭地理距离和人均GDP无法唯一恢复其static weights。
 
-Labor reconciliation也已定量：turn20-25 pooled destination `firm_Lt_supply/N0` min/median/max=`4.589147349109114/14.2307874070677/153.05180501585224`，31/31省late-window mean均严重高于population proxy。该结果不能解释为真实workplace employment超额，因为`N0`只是假设性population/labor initialization proxy；它证明household labor、population proxy、migration allocation和destination firm labor的量纲/参考对象尚未闭合。
+候选labor reference中：L0=`N`仅为透明proxy；L1允许在Owner明确kernel后构造归一化migration-adjusted population reference；L2需要另行接受省级就业/劳动力数据，目前`DATA_NOT_AVAILABLE`；L3用migration shares配合独立全国劳动总量在结构上可行，但全国总量、origin weights与kernel均属Owner/data科学决策。
 
-当前active task因此改为zero-science redesign specification：分别审计GovInv初始化/控制器与labor object/normalization，比较`GovInv0=Ktarget`、residual-to-target、share/public-capital等候选；恢复`N`、household labor、`Lt_mat`、destination `Lt_supply`的完整维度链；分析Owner提出的“基于地理距离和人均GDP差距构造migration-adjusted labor reference”是否可作为可解释的校准/reference contract。不得运行HJB/KFE/firm/outer turn/steady state，也不得选择新GovInv、Lt、beta_a、bounds、damping或其他production参数。
+最低风险后续顺序已接受：冻结Y/K/N/alpha → Owner选择labor reference与全国总量 → 重算same-year Z和初始价格receipt → 如有必要且另行授权，仅做一次labeled household initialization observation → 识别private K supply → 决定GovInv initialization → 独立controller task → 新bounded trajectory。当前不得自动实施任何候选。
 
-此前corrected-2018 runtime input-binding repair继续作为唯一活动数据契约：actual 2018 GDP/POP、raw-NBS GFCF Track-A PIM、`delta_pim=.096`、`alpha=.7380939146868483`、`MU=10万元`、`NU=100 persons`、same-year Zt0；legacy/canonical fallback已隔离。上一错误尺度100-turn candidate仍为rejected historical evidence。
+corrected-2018 runtime input-binding repair继续作为唯一活动数据契约：actual 2018 GDP/POP、raw-NBS GFCF Track-A PIM、`delta_pim=.096`、`alpha=.7380939146868483`、`MU=10万元`、`NU=100 persons`、same-year Zt0；legacy/canonical fallback已隔离。KFE/HJB独立blockers继续存在。
+
+当前没有active Builder task。下一步需要Owner对labor reference/national labor total、private-K observation/asset bridge以及GovInv初始化路线作实质性科学选择后，Reviewer才能发布implementation exact task。
 
 GitHub live main是repository-state authority；聊天不能替代exact task。任何新科学执行必须先发布exact GitHub task；发布task时同一回复自动附Codex启动prompt。
