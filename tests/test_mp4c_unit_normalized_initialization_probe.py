@@ -68,7 +68,10 @@ def test_static_composites_and_bridge_are_complete():
 
 def test_call_ledger_and_results_boundary():
     ledger = json.loads((OUT / "call_ledger.json").read_text(encoding="utf-8"))
-    assert ledger["firm_equation_row_evaluations"] == 31
+    assert ledger["deterministic_helper_processes"] >= 1
+    assert ledger["firm_equation_row_evaluations"] == 31 * ledger["deterministic_helper_processes"]
+    assert ledger["return_composite_row_evaluations"] == 31 * ledger["deterministic_helper_processes"]
+    assert ledger["wage_composite_row_evaluations"] == 31 * ledger["deterministic_helper_processes"]
     for key in ("matlab", "household_hjb", "kfe", "household_control_solve", "outer_turn", "steady_state", "ge", "annual", "irf", "results", "parameter_tuning"):
         assert ledger[key] == 0
     summary = json.loads((OUT / "national_initialization_summary.json").read_text(encoding="utf-8"))

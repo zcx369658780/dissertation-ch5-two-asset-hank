@@ -101,6 +101,10 @@ def main() -> None:
     parser.add_argument("--repo-root", type=Path, required=True)
     parser.add_argument("--protected-root", type=Path, required=True)
     parser.add_argument("--evidence-root", type=Path, required=True)
+    parser.add_argument("--session-build-processes", type=int, default=1)
+    parser.add_argument("--session-focused-test-processes", type=int, default=1)
+    parser.add_argument("--session-compile-processes", type=int, default=0)
+    parser.add_argument("--session-finalize-processes", type=int, default=1)
     args = parser.parse_args()
     repo = args.repo_root.resolve()
     protected = args.protected_root.resolve()
@@ -279,8 +283,20 @@ def main() -> None:
     write_json(out / "source_equation_receipt.json", equations)
     calls = {
         "schema": "CH5_UNIT_NORMALIZED_INITIALIZATION_CALL_LEDGER_V1",
-        "deterministic_helper_processes": 1, "firm_equation_row_evaluations": 31,
-        "return_composite_row_evaluations": 31, "wage_composite_row_evaluations": 31,
+        "accounting_scope": "CUMULATIVE_CURRENT_TASK_SESSION_INCLUDING_PRESERVED_PRELIMINARY_EVIDENCE_RUNS",
+        "deterministic_helper_processes": args.session_build_processes,
+        "firm_equation_row_evaluations": 31 * args.session_build_processes,
+        "return_composite_row_evaluations": 31 * args.session_build_processes,
+        "wage_composite_row_evaluations": 31 * args.session_build_processes,
+        "focused_test_processes": args.session_focused_test_processes,
+        "focused_test_cases_executed": 6 * args.session_focused_test_processes,
+        "python_compile_processes": args.session_compile_processes,
+        "evidence_finalize_processes": args.session_finalize_processes,
+        "preserved_preliminary_evidence_roots": [
+            "D:/ProjectTemp/ch5-unit-normalized-initialization-probe-20260910-001",
+            "D:/ProjectTemp/ch5-unit-normalized-initialization-probe-20260910-002",
+            "D:/ProjectTemp/ch5-unit-normalized-initialization-probe-20260910-003",
+        ],
         "matlab": 0, "household_hjb": 0, "kfe": 0, "household_control_solve": 0,
         "labor_allocation_Lt_seperate": 0, "outer_turn": 0, "steady_state": 0,
         "root_newton_broyden_fsolve_brent_anderson": 0, "ge": 0, "annual": 0,
