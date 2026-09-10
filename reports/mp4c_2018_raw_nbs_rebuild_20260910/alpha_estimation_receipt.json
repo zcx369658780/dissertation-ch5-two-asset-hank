@@ -1,0 +1,92 @@
+{
+  "schema": "CH5_RAW_NBS_ALPHA_ESTIMATION_V1",
+  "estimator": "pooled ordinary least squares",
+  "equation": "log(Y_model/L_model) = intercept + linear_time_trend + alpha*log(K_track_A_model/L_model) + error",
+  "window": {
+    "start_year": 2009,
+    "end_year": 2018,
+    "years": [
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "population_proxy": "year-end resident population",
+  "capital_track": "A_PRIMARY_COMPARABLE_PIM",
+  "sample_size": 310,
+  "included_provinces": [
+    "北京",
+    "天津",
+    "河北",
+    "山西",
+    "内蒙古",
+    "辽宁",
+    "吉林",
+    "黑龙江",
+    "上海",
+    "江苏",
+    "浙江",
+    "安徽",
+    "福建",
+    "江西",
+    "山东",
+    "河南",
+    "湖北",
+    "湖南",
+    "广东",
+    "广西",
+    "海南",
+    "重庆",
+    "四川",
+    "贵州",
+    "云南",
+    "西藏",
+    "陕西",
+    "甘肃",
+    "青海",
+    "宁夏",
+    "新疆"
+  ],
+  "province_count": 31,
+  "missing_data_exclusions": [],
+  "coefficients": {
+    "intercept": -6.48154311387549,
+    "time_trend": -0.011420353724192055,
+    "alpha": 0.7380939146868483
+  },
+  "standard_errors": {
+    "intercept": 0.5055596410944483,
+    "time_trend": 0.007656212042713414,
+    "alpha": 0.03825774803543075
+  },
+  "t_statistics": {
+    "intercept": -12.820531124367605,
+    "time_trend": -1.4916454325557842,
+    "alpha": 19.292664952555352
+  },
+  "p_values": {
+    "intercept": 1.9927352762972335e-30,
+    "time_trend": 0.1368189438709187,
+    "alpha": 7.094017371850083e-55
+  },
+  "r_squared": 0.6924937537873637,
+  "adjusted_r_squared": 0.6904904557664344,
+  "degrees_of_freedom_residual": 307.0,
+  "legacy_alpha_for_comparison_only": 0.772866243094144,
+  "alpha_difference_new_minus_legacy": -0.034772328407295716,
+  "implementation": {
+    "python": "3.11.9",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "statsmodels": "0.14.6",
+    "platform": "Windows-10-10.0.26200-SP0"
+  },
+  "authority_limit": "CALIBRATION_ONLY__NOT_MODEL_OR_RESULTS_AUTHORITY"
+}
