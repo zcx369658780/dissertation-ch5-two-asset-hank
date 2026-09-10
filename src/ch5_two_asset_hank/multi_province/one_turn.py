@@ -24,7 +24,10 @@ from .fiscal_diagnostics import FiscalDiagnostics, national_fiscal_diagnostics
 from .migration_labor import (
     MigrationLaborInputs,
     MigrationLaborResult,
+    OriginPreservingNormalizedMigrationLaborInputs,
+    OriginPreservingNormalizedMigrationLaborResult,
     reconstruct_migration_labor,
+    reconstruct_origin_preserving_normalized_migration_labor,
 )
 from .monetary import MonetaryResult, taylor_assignment
 from .wage import composite_household_wages
@@ -158,6 +161,36 @@ class OneTurnResult:
             raise ValueError("household composite wages must be finite")
 
 
+@dataclass(frozen=True)
+class OriginPreservingNormalizedOneTurnResult:
+    """Separate successor composition with bilateral normalized labor provenance."""
+
+    province_order: tuple[str, ...]
+    household_outputs: PreFrozenHouseholdOutputBatch
+    migration: OriginPreservingNormalizedMigrationLaborResult
+    capital: CapitalAllocationResult
+    firms: tuple[FirmResult, ...]
+    household_composite_wage: tuple[float, ...]
+    monetary: MonetaryResult
+    fiscal: FiscalDiagnostics
+    source_update_order: tuple[str, ...] = SOURCE_UPDATE_ORDER
+
+    def __post_init__(self) -> None:
+        n = len(self.province_order)
+        if (
+            len(self.firms) != n
+            or len(self.household_composite_wage) != n
+            or self.migration.destination_firm_labor_by_destination.shape != (n,)
+            or self.capital.kt_supply.shape != (n,)
+            or len(self.fiscal.Govinc) != n
+        ):
+            raise ValueError("normalized one-turn result components do not share one province axis")
+        if self.source_update_order != SOURCE_UPDATE_ORDER:
+            raise ValueError("one-turn source update order is immutable")
+        if not all(isfinite(float(value)) for value in self.household_composite_wage):
+            raise ValueError("household composite wages must be finite")
+
+
 def run_source_faithful_one_turn(inputs: OneTurnInputs) -> OneTurnResult:
     """Compose the MP2 arithmetic once, in literal MATLAB source order."""
 
@@ -216,6 +249,85 @@ def run_source_faithful_one_turn(inputs: OneTurnInputs) -> OneTurnResult:
         [province["N"] for province in provinces],
     )
     return OneTurnResult(
+        province_order=inputs.province_order,
+        household_outputs=household,
+        migration=migration,
+        capital=capital,
+        firms=tuple(firms),
+        household_composite_wage=tuple(composite_wage),
+        monetary=monetary,
+        fiscal=fiscal,
+    )
+
+
+def run_origin_preserving_normalized_one_turn(
+    inputs: OneTurnInputs,
+) -> OriginPreservingNormalizedOneTurnResult:
+    """Compose one deterministic turn with the separately named normalized labor route.
+
+    This is deliberately not wired into steady-state or annual runtimes.  It
+    changes only the migration allocation consumed by the otherwise unchanged
+    capital, firm, wage, monetary, and fiscal component functions.
+    """
+
+    n = len(inputs.province_order)
+    household = inputs.household_outputs
+    provinces = inputs.old_provinces
+
+    migration = reconstruct_origin_preserving_normalized_migration_labor(
+        OriginPreservingNormalizedMigrationLaborInputs(
+            consumption_by_origin=household.ct,
+            household_labor_per_capita_by_origin=household.household_lt,
+            population_by_origin=[province["N"] for province in provinces],
+            old_firm_wage_by_destination=[province["wjt"] for province in provinces],
+            tax_by_origin=[province["tau"] for province in provinces],
+            phi_destination_origin=inputs.phi_destination_origin,
+            migration_wedge_destination_origin=inputs.migration_wedge_destination_origin,
+            gamma_c=inputs.params["ga"],
+            phi_l=inputs.params["phi_l"],
+        )
+    )
+
+    capital = allocate_productive_capital(CapitalAllocationInputs(
+        illiquid_assets_at=household.at,
+        population=[province["N"] for province in provinces],
+        inter_province_ratio=[province["inter_prv_ratio"] for province in provinces],
+        old_firm_return_ra=[province["ra"] for province in provinces],
+    ))
+
+    firms: list[FirmResult] = []
+    for index in range(n):
+        firm_source = dict(provinces[index])
+        firm_source["AtTax"] = float(household.at_tax[index])
+        firm_source["Lt_prev"] = float(household.household_lt[index])
+        firms.append(evaluate_firm(
+            firm_source,
+            float(capital.kt_supply[index]),
+            float(migration.destination_firm_labor_by_destination[index]),
+            inputs.params,
+        ))
+
+    composite_wage = composite_household_wages(
+        provinces,
+        [firm.wjt for firm in firms],
+        inputs.phi_destination_origin,
+        inputs.migration_wedge_destination_origin,
+        phi_l=inputs.params["phi_l"],
+        alphal=inputs.params["alphal"],
+    )
+    monetary = taylor_assignment(
+        istar=inputs.params["istar"],
+        rho_pi=inputs.params["rho_pi"],
+        totalpit=inputs.params["totalpit"],
+        epsilon_pi=inputs.params["epsilon_pi"],
+    )
+    fiscal = national_fiscal_diagnostics(
+        [firm.Govinc for firm in firms],
+        household.bt,
+        monetary.rb,
+        [province["N"] for province in provinces],
+    )
+    return OriginPreservingNormalizedOneTurnResult(
         province_order=inputs.province_order,
         household_outputs=household,
         migration=migration,

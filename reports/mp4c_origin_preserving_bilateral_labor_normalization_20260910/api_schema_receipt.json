@@ -1,0 +1,26 @@
+{
+  "schema": "origin-preserving-normalized-migration-labor/v1",
+  "orientation": "rows=destination, columns=origin",
+  "input_type": "OriginPreservingNormalizedMigrationLaborInputs",
+  "result_type": "OriginPreservingNormalizedMigrationLaborResult",
+  "function": "reconstruct_origin_preserving_normalized_migration_labor",
+  "one_turn_result_type": "OriginPreservingNormalizedOneTurnResult",
+  "one_turn_function": "run_origin_preserving_normalized_one_turn",
+  "legacy_function": "reconstruct_migration_labor",
+  "legacy_one_turn_function": "run_source_faithful_one_turn",
+  "result_fields": [
+    "raw_attractiveness_destination_origin",
+    "normalized_shares_destination_origin",
+    "origin_labor_mass_by_origin",
+    "bilateral_labor_flow_destination_origin",
+    "destination_firm_labor_by_destination",
+    "share_column_sums_by_origin",
+    "flow_column_sums_by_origin",
+    "net_labor_flow_by_province",
+    "national_conservation_residual",
+    "orientation",
+    "schema"
+  ],
+  "arrays_read_only": true,
+  "passed": true
+}

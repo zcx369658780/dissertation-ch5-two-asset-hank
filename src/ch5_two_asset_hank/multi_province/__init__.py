@@ -34,9 +34,16 @@ from .one_turn import (
     SOURCE_UPDATE_ORDER,
     OneTurnInputs,
     OneTurnResult,
+    OriginPreservingNormalizedOneTurnResult,
     PreFrozenHouseholdOutputBatch,
     compose_one_turn,
+    run_origin_preserving_normalized_one_turn,
     run_source_faithful_one_turn,
+)
+from .migration_labor import (
+    OriginPreservingNormalizedMigrationLaborInputs,
+    OriginPreservingNormalizedMigrationLaborResult,
+    reconstruct_origin_preserving_normalized_migration_labor,
 )
 from .province_contracts import (
     PROVINCE_ORDER,
@@ -91,6 +98,9 @@ __all__ = [
     "MultiProvinceHouseholdInputs",
     "OneTurnInputs",
     "OneTurnResult",
+    "OriginPreservingNormalizedMigrationLaborInputs",
+    "OriginPreservingNormalizedMigrationLaborResult",
+    "OriginPreservingNormalizedOneTurnResult",
     "PreFrozenHouseholdOutputBatch",
     "ProvinceAxis",
     "ProvinceMatrix",
@@ -106,6 +116,8 @@ __all__ = [
     "load_primary_annual_input",
     "validate_corrected_annual_payload",
     "run_source_faithful_one_turn",
+    "run_origin_preserving_normalized_one_turn",
+    "reconstruct_origin_preserving_normalized_migration_labor",
     "run_manual_steady_state",
     "write_canonical_artifact",
 ]
