@@ -10,19 +10,24 @@
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
 5. 若存在active task，再读取该exact task及直接相关acceptance/report。
 
-当前状态：`RAW_NBS_2018_REBUILD_ACCEPTED_PARTIAL__SAME_YEAR_GDP_POP_AND_LAGGED_FLOW_CAPITAL_REBUILT__SOURCE_ROUTE_DIFFERENCE_REMAINS`。
-当前 active Builder task：`tasks/CH5_MP4C_MULTI_PROVINCE_STEADY_STATE_CALIBRATION_AND_INITIALIZATION_REDESIGN_SPEC.md`。
-该任务是Owner与Reviewer已经达成共识后的zero-science设计/静态source-mapping任务：统一单位合同、恢复/冻结alpha `[0.2,0.8]`边界逻辑、设计2018数据一致初始化、为`w/rah`提出under-relaxation合同，并把原有单循环“接近稳态后在线校准”形式规范成stabilization / near-steady calibration / final confirmation三个阶段。不得运行HANK/HJB/KFE/firm/outer-loop/steady-state模型，也不得实现production source修改。
-最新接受候选：`3bd6343011f17d1b2273386732f06e6da6bf84e9`。
-Reviewer acceptance：`docs/CH5_MP4C_2018_RAW_NBS_DATA_REBUILD_CAPITAL_PRODUCTIVITY_REESTIMATION_ACCEPTANCE.md`。
+当前状态：`STEADY_STATE_REDESIGN_SPEC_ACCEPTED_PARTIAL__UNIT_AND_INITIALIZATION_PROBE_AUTHORIZED__PRODUCTION_RUNTIME_STILL_BLOCKED`。
+当前 active Builder task：`tasks/CH5_MP4C_UNIT_NORMALIZED_INITIALIZATION_ONLY_PROBE_AND_PRICE_RECEIPT.md`。
+最新接受候选：`abfeec3bd7443cd5a95ef3a62aedae16be81b702`。
+Reviewer acceptance：`docs/CH5_MP4C_MULTI_PROVINCE_STEADY_STATE_CALIBRATION_AND_INITIALIZATION_REDESIGN_SPEC_ACCEPTANCE.md`。
 Results eligibility=`FALSE`。
 
-Owner已明确：正确2018 GDP/POP必须使用；PIM只要明确折旧即可，现有`delta=.096`可继续作为Chapter 5估计假设；资本是model-derived calibration object而非官方资本存量。alpha模型可行域按Owner原设计为`[0.2,0.8]`，原思路允许越界后使用边界值；当前重新估计raw alpha=`0.7380939146868483`在范围内，不需要clip。
+已接受的设计结论：legacy GDP亿元与资本万元被同样`×1000`导致资本相对共同货币单位放大`10,000`倍；household→macro productive-capital桥位于`At*N`，但当前隐含bridge系数1没有经济单位依据。Owner/Reviewer同意采用统一宏观单位作为下一bounded probe：`MU=10万元`、`NU=100 persons`，GDP亿元`×1000`、capital亿元`×1000`（或万元`÷10`）、POP万人`×100`。该共同单位合同已获准用于probe，但household asset-grid货币归一化仍未正式冻结。
 
-Owner同意：统一宏观/household/firm之间的量纲；修改遗留的极端统一初值，优先由2018 `Y/K/L/Z/alpha`与现有firm方程反推价格初值；允许对`w/rah`采用under-relaxation；保留原来`HANK_mp_1eq.m`/`HANK_mp_1turn.m`中“接近稳态后开始校准”的高效率单循环思想，不采用完整nested steady-state/calibration双循环；可在此基础上设计staged gate与hysteresis，具体damping系数和阈值需后续bounded validation后再冻结。
+下一probe使用Owner提供raw-NBS GFCF Track-A PIM作为诊断资本路线，`delta_pim=.096`；firm内现有`.025`折旧暂保持独立角色并必须显式记录，不静默统一。raw-NBS Track A在本probe中的选择不自动升级为Results authority。
 
-最新raw-NBS rebuild仍为PARTIAL calibration evidence：2018原始投资/折旧缺失，lagged-flow公式可由2017流量生成K2018；raw GFCF路线与当前canonical investment route不是同一来源/概念，不能自动替换production capital authority。Track B observed-depreciation仅为诊断。
+alpha successor contract已冻结：保存`alpha_raw`，按Owner范围`[.2,.8]`取`alpha_used`并保留clip flag/reason；当前`alpha_raw=alpha_used=0.7380939146868483`。原active `reg_method=0`源码没有实际alpha clipping，旧`.3/.8`只是注释逻辑。
 
-此前MATLAB mixed-year数据审计、raw-NBS重估和five-turn KFE attribution均继续作为有效历史证据。Owner当前优先修复/规范数据、初始化和外层稳态迭代逻辑，不自动进入KFE boundary redesign或新稳态运行。
+初始化设计已接受：不再把legacy `.09/.09/.6/20`视为合理数据初值；先绑定2018 Y/K/N、alpha与same-year Z，再按现有firm方程生成raw/clipped `ra0/wjt0`。下一task只执行initialization-only deterministic probe，不调用household HJB/KFE或steady-state loop。`rah`时序下一probe保持source-lagged baseline；after-firm timing仍为未来单独candidate。GovInv不新增damping，`w/rah` lambda与hysteresis阈值仍未冻结。
+
+原single-loop思路继续保留：Stage A stabilization、Stage B near-steady online calibration、Stage C calibration freeze/final confirmation；不采用完整nested steady-state/calibration双循环，也不换Newton/Broyden/fsolve/Brent/Anderson等solver。
+
+当前task严格禁止household HJB/KFE、outer turn、steady state、GE/annual/IRF/Results；只允许31省数据一致firm-side初始化方程及无需household solve的静态聚合/单位诊断。household asset bridge系数1仅允许作为`SOURCE_FAITHFUL_BASELINE_ONLY`诊断，不得从收敛表现反推新bridge。
+
+此前MATLAB mixed-year数据审计、raw-NBS重估、five-turn KFE attribution继续作为有效历史证据；当前优先建立正确数据、单位和初始化价格尺度，再决定是否进入first bounded outer-turn validation。
 
 GitHub live main是repository-state authority；聊天不能替代exact task。任何新的科学执行必须先发布exact task。以后每次发布exact task，同一回复自动附Codex启动prompt。
