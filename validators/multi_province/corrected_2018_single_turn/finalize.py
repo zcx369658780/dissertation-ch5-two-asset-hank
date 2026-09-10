@@ -130,13 +130,13 @@ def finalize() -> None:
 
 `{terminal['verdict']}`
 
-The accepted canonical workbook SHA-256 is `{runtime['anhui'] and read(EVIDENCE / 'canonical_identity_receipt.json')['actual_sha256']}`. The validator bound all 31 provinces in the frozen source order under `{runtime['contract']}` and completed exactly one ordered turn. Downstream steady-state execution is **not authorized**. Results eligibility remains **FALSE**.
+The corrected raw-NBS ledger SHA-256 is `{read(EVIDENCE / 'runtime_input_payload.json')['source_identities']['corrected_raw_nbs_ledger']['sha256']}`. The validator bound all 31 provinces in the frozen source order under `{runtime['contract']}` and completed exactly one ordered turn. Downstream steady-state execution is **not authorized**. Results eligibility remains **FALSE**.
 
 ## Corrected runtime input
 
-The runtime used 2018 analysis/data_MAT index 10, level row 19, PLM vintage 19, rolling window 2009–2018, and same-year 2018 Zt. Anhui stayed at Python index 11 / MATLAB index 12 / Excel N. Its bound inputs were GDP `{anhui['GDP']}`, POP `{anhui['POP']}`, PIM CAP `{anhui['CAP']}`, alpha `{anhui['alpha']}`, Zt `{anhui['same_year_Zt']}`, and GovInv `{anhui['GovInv']}`. The grid remained I20 b[-2,5], J20 a[0,10], Nz2 z[0.8,1.3].
+The runtime used actual 2018 GDP/population, Track-A PIM capital, and same-year 2018 Zt under the explicit MU/NU contract. Anhui stayed at Python index 11 / MATLAB index 12 / Excel N. Its bound inputs were GDP `{anhui['GDP']}`, POP `{anhui['POP']}`, PIM CAP `{anhui['CAP']}`, alpha `{anhui['alpha']}`, Zt `{anhui['same_year_Zt']}`, and GovInv `{anhui['GovInv']}`. The grid remained I20 b[-2,5], J20 a[0,10], Nz2 z[0.8,1.3].
 
-The private canonical workbook was read only and was not copied into Git. The distance matrix retained SHA-256 `{read(EVIDENCE / 'runtime_input_payload.json')['distance_workbook']['sha256']}` and the existing destination-by-origin normalization.
+No private canonical workbook is an active corrected-route input. The distance matrix retained SHA-256 `{read(EVIDENCE / 'runtime_input_payload.json')['distance_workbook']['sha256']}` and the existing destination-by-origin normalization.
 
 ## Household and one-turn result
 

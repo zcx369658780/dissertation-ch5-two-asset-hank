@@ -164,7 +164,7 @@ The three observed turns do not establish monotone or stationary convergence.
 
 ## Calls and evidence
 
-Canonical workbook SHA-256: `{receipt['canonical_workbook_sha256']}`. The single scientific process took `{ledger['elapsed_seconds']:.3f}` seconds and completed {counts['turns_completed']} turns, {counts['province_updates_completed']} province updates, {counts['household_calls_attempted']} household calls, {counts['hjb_calls']} HJB calls with {counts['hjb_direct_solves']} direct solves, {counts['kfe_calls']} KFE direct solves, {counts['labor_roots_attempted']} labor roots and {counts['brentq_calls_attempted']} Brent calls. Scientific retries, MATLAB, GE, annual model, IRF, Results and turn-4-or-later calls were all zero.
+Corrected raw-NBS ledger SHA-256: `{receipt['corrected_source_identities']['corrected_raw_nbs_ledger']['sha256']}`. The single scientific process took `{ledger['elapsed_seconds']:.3f}` seconds and completed {counts['turns_completed']} turns, {counts['province_updates_completed']} province updates, {counts['household_calls_attempted']} household calls, {counts['hjb_calls']} HJB calls with {counts['hjb_direct_solves']} direct solves, {counts['kfe_calls']} KFE direct solves, {counts['labor_roots_attempted']} labor roots and {counts['brentq_calls_attempted']} Brent calls. Scientific retries, MATLAB, GE, annual model, IRF, Results and turn-4-or-later calls were all zero.
 """
     REPORT.write_text(report, encoding="utf-8", newline="\n")
 

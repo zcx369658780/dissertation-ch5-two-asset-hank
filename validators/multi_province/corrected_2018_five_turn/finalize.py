@@ -157,7 +157,7 @@ Anhui turn-3 asset collapse is retained without smoothing. Turn4/5 violent A+B r
 
 ## Calls and boundary
 
-Canonical SHA-256: `{receipt['canonical_workbook_sha256']}`. Scientific process/trajectory: 1/1; completed turns/province updates: {ledger['counts']['turns_completed']}/{ledger['counts']['province_updates_completed']}; HJB/KFE direct solves: {ledger['counts']['hjb_direct_solves']}/{ledger['counts']['kfe_direct_solves']}; labor roots/Brent calls: {ledger['counts']['labor_roots_attempted']}/{ledger['counts']['brentq_calls_attempted']}; scientific retries: 0. MATLAB/GE/annual/IRF/Results/turn6+ calls: 0.
+Corrected raw-NBS ledger SHA-256: `{receipt['corrected_source_identities']['corrected_raw_nbs_ledger']['sha256']}`. Scientific process/trajectory: 1/1; completed turns/province updates: {ledger['counts']['turns_completed']}/{ledger['counts']['province_updates_completed']}; HJB/KFE direct solves: {ledger['counts']['hjb_direct_solves']}/{ledger['counts']['kfe_direct_solves']}; labor roots/Brent calls: {ledger['counts']['labor_roots_attempted']}/{ledger['counts']['brentq_calls_attempted']}; scientific retries: 0. MATLAB/GE/annual/IRF/Results/turn6+ calls: 0.
 
 This bounded prefix does not prove steady-state convergence, global admissibility, GE or annual validity, or Results readiness. Turn 6+ authorized: **NO**. Steady state authorized: **NO**. Results eligibility: **FALSE**.
 """

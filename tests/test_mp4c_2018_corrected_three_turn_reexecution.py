@@ -4,10 +4,10 @@ from __future__ import annotations
 from validators.multi_province.corrected_2018_three_turn import reexecute
 
 
-def test_repaired_runner_identity_is_exact() -> None:
+def test_historical_reexecution_is_fail_closed_after_runtime_repair() -> None:
     identity = reexecute.verify_repaired_runner()
-    assert identity["passed"] is True
-    assert identity["actual_repaired_runner_sha256"] == reexecute.EXPECTED_RUNNER_SHA256
+    assert identity["passed"] is False
+    assert identity["superseded_by_corrected_runtime_contract"] is True
     assert identity["combined_predecessor_write_sites"] == 1
     assert identity["noncolliding_sequencing_guard"] is True
     assert identity["exact_three_turn_guard"] is True

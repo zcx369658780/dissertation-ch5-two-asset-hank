@@ -159,7 +159,7 @@ Turn 1 had 31 HJB returns at 64 iterations. Turn 2 iterations ranged from 13 to 
 
 ## Input and calls
 
-Canonical workbook SHA-256: `{receipt['canonical_workbook_sha256']}`. The private workbook was read only and was not copied into Git. The corrected 2018 temporal contract, grids, model equations, solvers and tolerances were unchanged.
+Corrected raw-NBS ledger SHA-256: `{receipt['corrected_source_identities']['corrected_raw_nbs_ledger']['sha256']}`. No private canonical workbook is an active corrected-route input. The corrected 2018 route/unit contract, grids, model equations, solvers and tolerances were unchanged.
 
 The single scientific process took `{ledger['elapsed_seconds']:.3f}` seconds. It executed {counts['turns_completed']} turns and {counts['province_updates_completed']} province updates: {counts['household_calls_attempted']} household calls, {counts['native_initializations_attempted']} native initializations, {counts['labor_roots_attempted']} labor-root attempts and {counts['brentq_calls_attempted']} Brent calls, {counts['hjb_calls']} HJB calls with {counts['hjb_direct_solves']} direct solves, {counts['kfe_calls']} KFE calls with {counts['kfe_direct_solves']} direct solves, {counts['aggregate_calls']} aggregates, {counts['firm_calls']} firm calls, {counts['wage_batch_calls']} wage batches, {counts['migration_calls']} migration calls, {counts['capital_allocation_calls']} capital allocations and {counts['controller_calls']} controller evaluations. All 62 household/HJB/KFE/firm calls returned; retries were 0. MATLAB, GE, annual model, IRF and Results calls were 0.
 """

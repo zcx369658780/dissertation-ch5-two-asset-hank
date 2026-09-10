@@ -1,4 +1,4 @@
-"""Reexecute the accepted persistence-repaired three-turn runner once."""
+"""Historical reexecution guard, superseded by the Track-A runtime contract."""
 from __future__ import annotations
 
 import argparse
@@ -32,7 +32,7 @@ def verify_repaired_runner() -> dict[str, Any]:
     write_sites = source.count('write_json(root / "predecessor_reproduction.json"')
     sequencing = 'if not reproduction["passed"] or turn_index == 2:' in source
     exact_turns = "for turn_index in (1, 2, 3):" in source
-    passed = (
+    historical_identity_match = (
         receipt["repaired_run_source_sha256"] == EXPECTED_RUNNER_SHA256 == actual
         and write_sites == 1 and sequencing and exact_turns
     )
@@ -44,16 +44,18 @@ def verify_repaired_runner() -> dict[str, Any]:
         "combined_predecessor_write_sites": write_sites,
         "noncolliding_sequencing_guard": sequencing,
         "exact_three_turn_guard": exact_turns,
-        "passed": passed,
+        "historical_identity_match": historical_identity_match,
+        "superseded_by_corrected_runtime_contract": True,
+        "passed": False,
         "scientific_calls": 0,
     }
 
 
-def prepare(canonical_workbook: Path, distance_workbook: Path, evidence_root: Path) -> None:
+def prepare(distance_workbook: Path, evidence_root: Path) -> None:
     identity = verify_repaired_runner()
     if not identity["passed"]:
-        raise RuntimeError("BLOCKED_REPAIRED_RUNNER_IDENTITY")
-    run.prepare(canonical_workbook, distance_workbook, evidence_root)
+        raise RuntimeError("BLOCKED_HISTORICAL_REEXECUTION_SUPERSEDED_BY_CORRECTED_RUNTIME_CONTRACT")
+    run.prepare(distance_workbook, evidence_root)
     run.write_json(Path(evidence_root) / "repaired_runner_identity.json", identity)
 
 
@@ -71,7 +73,7 @@ def execute(evidence_root: Path) -> int:
     identity = verify_repaired_runner()
     saved = json.loads((root / "repaired_runner_identity.json").read_text(encoding="utf-8"))
     if not identity["passed"] or saved != identity:
-        raise RuntimeError("BLOCKED_REPAIRED_RUNNER_IDENTITY")
+        raise RuntimeError("BLOCKED_HISTORICAL_REEXECUTION_SUPERSEDED_BY_CORRECTED_RUNTIME_CONTRACT")
 
     original_write_json = run.write_json
     run.VERDICT_PASS = VERDICT_PASS
@@ -95,14 +97,13 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     sub = parser.add_subparsers(dest="command", required=True)
     prep = sub.add_parser("prepare")
-    prep.add_argument("canonical_workbook", type=Path)
     prep.add_argument("distance_workbook", type=Path)
     prep.add_argument("evidence_root", type=Path)
     launch = sub.add_parser("run")
     launch.add_argument("evidence_root", type=Path)
     args = parser.parse_args(argv)
     if args.command == "prepare":
-        prepare(args.canonical_workbook, args.distance_workbook, args.evidence_root)
+        prepare(args.distance_workbook, args.evidence_root)
         return 0
     return execute(args.evidence_root)
 

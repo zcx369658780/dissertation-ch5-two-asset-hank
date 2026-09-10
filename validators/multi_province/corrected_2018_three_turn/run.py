@@ -54,10 +54,10 @@ def _value_sha(value: Any) -> str:
     return sha256(_canonical_bytes(value)).hexdigest().upper()
 
 
-def prepare(canonical_workbook: Path, distance_workbook: Path, evidence_root: Path) -> None:
+def prepare(distance_workbook: Path, evidence_root: Path) -> None:
     root = Path(evidence_root)
     root.mkdir(parents=True, exist_ok=False)
-    payload = single.build_runtime_payload(canonical_workbook, distance_workbook)
+    payload = single.build_runtime_payload(distance_workbook)
     payload["schema"] = "CH5_CORRECTED_2018_THREE_TURN_RUNTIME_INPUT_V1"
     payload_path = root / "runtime_input_payload.json"
     write_json(payload_path, payload)
@@ -73,7 +73,7 @@ def prepare(canonical_workbook: Path, distance_workbook: Path, evidence_root: Pa
         raise ValueError(f"accepted turn-1 evidence identity mismatch: {accepted_actual}")
     write_json(root / "runtime_input_receipt.json", {
         "schema": "CH5_CORRECTED_2018_THREE_TURN_RUNTIME_RECEIPT_V1",
-        "canonical_workbook_sha256": payload["canonical_workbook"]["sha256"],
+        "corrected_source_identities": payload["source_identities"],
         "runtime_payload_sha256": single.file_sha256(payload_path),
         "temporal_contract": single.CONTRACT, "province_count": 31,
         "province_order": payload["province_order"],
@@ -192,8 +192,7 @@ def execute(evidence_root: Path) -> int:
     if (root / "science_started.json").exists():
         raise RuntimeError("scientific trajectory already started; retry prohibited")
     payload = json.loads(payload_path.read_text(encoding="utf-8"))
-    if payload["canonical_workbook"]["sha256"] != single.CANONICAL_SHA256:
-        raise ValueError("prepared canonical identity mismatch")
+    single.validate_serialized_payload(payload)
     counters = {key: 0 for key in (
         "turns_entered", "turns_completed", "province_updates_attempted", "province_updates_completed",
         "household_calls_attempted", "household_calls_returned", "household_calls_failed",
@@ -441,12 +440,12 @@ def execute(evidence_root: Path) -> int:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(); sub = parser.add_subparsers(dest="command", required=True)
-    prep = sub.add_parser("prepare"); prep.add_argument("canonical_workbook", type=Path)
+    prep = sub.add_parser("prepare")
     prep.add_argument("distance_workbook", type=Path); prep.add_argument("evidence_root", type=Path)
     launch = sub.add_parser("run"); launch.add_argument("evidence_root", type=Path)
     args = parser.parse_args(argv)
     if args.command == "prepare":
-        prepare(args.canonical_workbook, args.distance_workbook, args.evidence_root); return 0
+        prepare(args.distance_workbook, args.evidence_root); return 0
     return execute(args.evidence_root)
 
 

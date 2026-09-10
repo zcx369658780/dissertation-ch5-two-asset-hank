@@ -32,6 +32,11 @@ from ch5_two_asset_hank.multi_province import one_turn as one_turn_module
 from ch5_two_asset_hank.multi_province.annual import _normalize_province, _xlsx_sheet_rows
 from ch5_two_asset_hank.multi_province.one_turn import OneTurnInputs, PreFrozenHouseholdOutputBatch
 from ch5_two_asset_hank.multi_province.province_contracts import PROVINCE_ORDER
+from ch5_two_asset_hank.multi_province.corrected_2018_runtime import (
+    build_corrected_2018_runtime_inputs,
+    payload_sha256,
+    validate_serialized_payload,
+)
 from ch5_two_asset_hank.multi_province.steady_state import _adapt, _diagnostics, _post_turn_states
 
 CANONICAL_SHA256 = "AEA5A12B5E6474056C1C3EF84BF0156BA88442EF54B0A4FB9C4C6F33CA963F67"
@@ -172,7 +177,8 @@ def source_initial_arrays(state: Mapping[str, object], grid: Any, params: Any,
     return value, labor
 
 
-def build_runtime_payload(canonical_workbook: Path, distance_workbook: Path) -> dict[str, Any]:
+def build_legacy_canonical_runtime_payload(canonical_workbook: Path, distance_workbook: Path) -> dict[str, Any]:
+    """Explicit historical replay builder; forbidden as a corrected route fallback."""
     canonical_workbook = Path(canonical_workbook)
     distance_workbook = Path(distance_workbook)
     canonical_sha = file_sha256(canonical_workbook)
@@ -281,27 +287,53 @@ def build_runtime_payload(canonical_workbook: Path, distance_workbook: Path) -> 
     }
 
 
-def prepare(canonical_workbook: Path, distance_workbook: Path, evidence_root: Path) -> None:
+def build_runtime_payload(distance_workbook: Path) -> dict[str, Any]:
+    """Build the only active corrected-2018 Track-A runtime payload."""
+    distance_workbook = Path(distance_workbook)
+    distance_sha = file_sha256(distance_workbook)
+    if distance_sha != DISTANCE_SHA256:
+        raise ValueError(f"distance workbook SHA mismatch: {distance_sha}")
+    distance_rows = _xlsx_sheet_rows(distance_workbook, "geom")
+    row_axis = tuple(_normalize_province(distance_rows[index][1]) for index in range(2, 33))
+    col_axis = tuple(_normalize_province(distance_rows[1][index]) for index in range(2, 33))
+    if row_axis != PROVINCE_ORDER or col_axis != PROVINCE_ORDER:
+        raise ValueError("distance workbook axes mismatch")
+    distance = np.array([[distance_rows[r][c] for c in range(2, 33)] for r in range(2, 33)], dtype=float)
+    sigmau = distance / np.max(distance) * 0.5
+    runtime = build_corrected_2018_runtime_inputs(
+        REPO / "reports/mp4c_2018_raw_nbs_rebuild_20260910/corrected_2018_vs_matlab_ledger.csv",
+        REPO / "reports/mp4c_unit_normalized_initialization_probe_20260910/province_initialization_receipt.csv",
+        sigmau,
+        {"sha256": distance_sha, "bytes": distance_workbook.stat().st_size,
+         "role": "CROSS_PROVINCE_DISTANCE_ONLY"},
+    )
+    payload = runtime.to_payload()
+    validate_serialized_payload(json.loads(json.dumps(payload, ensure_ascii=False, allow_nan=False)))
+    return payload
+
+
+def prepare(distance_workbook: Path, evidence_root: Path) -> None:
     root = Path(evidence_root)
     root.mkdir(parents=True, exist_ok=False)
-    payload = build_runtime_payload(canonical_workbook, distance_workbook)
+    payload = build_runtime_payload(distance_workbook)
     payload_path = root / "runtime_input_payload.json"
     write_json(payload_path, payload)
-    write_json(root / "canonical_identity_receipt.json", {
-        "schema": "CH5_CORRECTED_2018_CANONICAL_IDENTITY_RECEIPT_V1",
-        "status": "PASS", "expected_sha256": CANONICAL_SHA256,
-        "actual_sha256": payload["canonical_workbook"]["sha256"],
-        "bytes": payload["canonical_workbook"]["bytes"], "scientific_calls": 0,
+    validate_serialized_payload(json.loads(payload_path.read_text(encoding="utf-8")))
+    write_json(root / "corrected_source_identity_receipt.json", {
+        "schema": "CH5_CORRECTED_2018_TRACK_A_SOURCE_IDENTITY_RECEIPT_V2",
+        "status": "PASS", "sources": payload["source_identities"], "scientific_calls": 0,
     })
     write_json(root / "runtime_input_receipt.json", {
-        "schema": "CH5_CORRECTED_2018_RUNTIME_INPUT_RECEIPT_V1",
+        "schema": "CH5_CORRECTED_2018_RUNTIME_INPUT_RECEIPT_V2",
         "runtime_payload_sha256": file_sha256(payload_path),
+        "canonical_content_sha256": payload_sha256(payload),
         "province_count": 31, "province_order": payload["province_order"],
-        "contract": CONTRACT, "grid": {"I": 20, "b": [-2.0, 5.0], "J": 20,
+        "contract": payload["metadata"], "grid": {"I": 20, "b": [-2.0, 5.0], "J": 20,
                   "a": [0.0, 10.0], "Nz": 2, "z": [0.8, 1.3]},
         "anhui": {key: payload["vectors"][key][11] for key in
                   ("gdp_raw", "gdp", "pop_raw", "pop", "cap_raw", "cap", "alpha", "ind_zt", "gov_inv")},
-        "binding_status": "EXISTING_ECONOMIC_MAPPING_PRESERVED", "scientific_calls": 0,
+        "binding_status": "CORRECTED_2018_TRACK_A_UNIT_CONTRACT_ENFORCED",
+        "pre_science_assertion": payload["pre_science_assertion"], "scientific_calls": 0,
     })
     write_json(root / "source_code_identity.json", {
         "schema": "CH5_CORRECTED_2018_SOURCE_IDENTITY_V1",
@@ -350,8 +382,7 @@ def execute(evidence_root: Path) -> int:
     if (root / "science_started.json").exists():
         raise RuntimeError("scientific execution already started; retry prohibited")
     payload = json.loads(payload_path.read_text(encoding="utf-8"))
-    if payload["canonical_workbook"]["sha256"] != CANONICAL_SHA256 or payload["temporal_contract"]["Contract version"] != CONTRACT:
-        raise ValueError("prepared runtime identity mismatch")
+    validate_serialized_payload(payload)
     counters = {
         "scientific_processes": 1, "one_turn_executions": 0, "one_turn_returns": 0,
         "province_updates_attempted": 0, "province_updates_completed": 0,
@@ -567,14 +598,13 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     sub = parser.add_subparsers(dest="command", required=True)
     prepare_parser = sub.add_parser("prepare")
-    prepare_parser.add_argument("canonical_workbook", type=Path)
     prepare_parser.add_argument("distance_workbook", type=Path)
     prepare_parser.add_argument("evidence_root", type=Path)
     run_parser = sub.add_parser("run")
     run_parser.add_argument("evidence_root", type=Path)
     args = parser.parse_args(argv)
     if args.command == "prepare":
-        prepare(args.canonical_workbook, args.distance_workbook, args.evidence_root)
+        prepare(args.distance_workbook, args.evidence_root)
         return 0
     return execute(args.evidence_root)
 
