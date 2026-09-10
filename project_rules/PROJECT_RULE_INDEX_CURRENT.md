@@ -10,22 +10,20 @@
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
 5. 若存在active task，再读取该exact task及直接相关acceptance/report。
 
-当前状态：`GOVINV_LABOR_REDESIGN_SPEC_ACCEPTED__CAPITAL_AND_LABOR_CORRECTION_PATHS_SEPARATED__OWNER_IDENTIFICATION_DECISIONS_REQUIRED_BEFORE_IMPLEMENTATION`。
-当前 active Builder task：无。
+当前状态：`GOVINV_LABOR_REDESIGN_SPEC_ACCEPTED__OWNER_FROZE_ORIGIN_PRESERVING_BILATERAL_LABOR_NORMALIZATION__IMPLEMENTATION_ONLY_AUTHORIZED`。
+当前 active Builder task：`tasks/CH5_MP4C_ORIGIN_PRESERVING_BILATERAL_LABOR_NORMALIZATION_IMPLEMENTATION.md`。
 最新接受候选：`afb1cffeba207368b78c8ac4b93958285312eb53`。
 Reviewer acceptance：`docs/CH5_MP4C_GOVINV_INITIALIZATION_AND_LABOR_NORMALIZATION_REDESIGN_SPEC_ACCEPTANCE.md`。
 Results eligibility=`FALSE`。
 
 最新zero-science redesign specification已接受。资本侧：`GovInv0=Ktarget`仅保留为historical/source-faithful数值起点，不再解释为已识别公共资本；residual候选`GovInv0=max(Ktarget-Kt_supply_initial,0)`在会计/量纲上成立，但`Kt_supply_initial`的观察时点与At-grid→MU bridge尚未识别。GovInv initialization与controller redesign必须拆分，不从收敛表现反推初始化或controller参数。
 
-劳动侧：source chain已明确区分population N、household efficiency labor、`Lt_mat(destination,origin)`与destination `firm_Lt_supply`；`Lt_seperate`只乘人口一次，但origin-column destination levels未归一化，因此`firm_Lt_supply/N0`巨大不能解释为真实就业超额。`N0`仅为population proxy；literal `Lt_seperate`还依赖内生`Ct/wjt`，所以仅凭地理距离和人均GDP无法唯一恢复其static weights。
+Owner随后冻结劳动修正方向：必须保留完整`destination x origin`双边劳动矩阵，不能压缩成全国destination shares。每个origin省先由household block给出per-household/efficiency labor，再乘该省人口一次形成`L_origin_i`；现有`Lt_seperate` destination-attractiveness kernel生成`q[j,i]`后，必须按origin列归一化`s[j,i]=q[j,i]/sum_j q[j,i]`；双边流量`M[j,i]=s[j,i]*L_origin_i`。因此每个origin列必须守恒到该省household aggregate labor，destination firm labor为行和，全国destination labor总量必须等于全国origin household labor总量。省级origin labor与destination firm labor可以不同，差额由完整province-to-province matrix精确溯源。
 
-候选labor reference中：L0=`N`仅为透明proxy；L1允许在Owner明确kernel后构造归一化migration-adjusted population reference；L2需要另行接受省级就业/劳动力数据，目前`DATA_NOT_AVAILABLE`；L3用migration shares配合独立全国劳动总量在结构上可行，但全国总量、origin weights与kernel均属Owner/data科学决策。
+当前active task仅实现这一origin-preserving bilateral normalization contract及零科学测试。现有literal/source-faithful `reconstruct_migration_labor`和`run_source_faithful_one_turn`必须保留不变用于MATLAB parity；normalized successor必须采用显式不同API/route。当前不修改`wage_caculate`/composite wage，不修改GovInv、capital allocation、asset bridge、HJB/KFE、price bounds、controller、damping或其他经济参数，也不运行任何scientific trajectory。完整矩阵和normalized shares必须保留，以便后续单独任务验证origin-specific household wage attribution。
 
-最低风险后续顺序已接受：冻结Y/K/N/alpha → Owner选择labor reference与全国总量 → 重算same-year Z和初始价格receipt → 如有必要且另行授权，仅做一次labeled household initialization observation → 识别private K supply → 决定GovInv initialization → 独立controller task → 新bounded trajectory。当前不得自动实施任何候选。
+Owner同时强调当前稳态主要问题预计仍更直接来自GovInv而非劳动。accepted 25-turn evidence显示turn20-25 `firm_K_total/Ktarget` median约`2.36`，private K median约`0.0029`，GovInv median约`2.358`；因此劳动归一化implementation完成并验收后，下一科学优先级仍应回到GovInv initialization，而不是把不收敛主要归因于labor。
 
 corrected-2018 runtime input-binding repair继续作为唯一活动数据契约：actual 2018 GDP/POP、raw-NBS GFCF Track-A PIM、`delta_pim=.096`、`alpha=.7380939146868483`、`MU=10万元`、`NU=100 persons`、same-year Zt0；legacy/canonical fallback已隔离。KFE/HJB独立blockers继续存在。
-
-当前没有active Builder task。下一步需要Owner对labor reference/national labor total、private-K observation/asset bridge以及GovInv初始化路线作实质性科学选择后，Reviewer才能发布implementation exact task。
 
 GitHub live main是repository-state authority；聊天不能替代exact task。任何新科学执行必须先发布exact GitHub task；发布task时同一回复自动附Codex启动prompt。
