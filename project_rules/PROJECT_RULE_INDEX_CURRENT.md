@@ -10,18 +10,20 @@
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
 5. 若存在active task，再读取该exact task及直接相关acceptance/report。
 
-当前状态：`FIRM_PRICE_NORMALIZATION_FORENSIC_ACCEPTED__WAGE_UNIT_MISMATCH_AND_RETURN_LEVEL_EFFECTS_SEPARATED__BOUNDED_TRAJECTORY_DIAGNOSTIC_AUTHORIZED`。
-当前 active Builder task：`tasks/CH5_MP4C_CORRECTED_2018_SOURCE_FAITHFUL_100_TURN_BOUNDARY_TRAJECTORY_DIAGNOSTIC.md`。
-最新接受候选：`770cb06b49a8ede720fdec4bbf6450c1552a4902`。
-Reviewer acceptance：`docs/CH5_MP4C_FIRM_PRICE_NORMALIZATION_AND_HOUSEHOLD_MACRO_BRIDGE_FORENSIC_ACCEPTANCE.md`。
+当前状态：`PYTHON_RUNTIME_INPUT_BINDING_REPAIR_ACCEPTED__CORRECTED_2018_TRACK_A_UNIT_CONTRACT_ENFORCED__SCIENTIFIC_RERUN_STILL_NOT_AUTHORIZED`。
+当前 active Builder task：无。
+最新接受候选：`a7bd3b1a705ff42e2933b22a8c6563ec47248ce4`。
+Reviewer acceptance：`docs/CH5_MP4C_PYTHON_RUNTIME_INPUT_BINDING_AND_UNIT_CONTRACT_REPAIR_ACCEPTANCE.md`。
 Results eligibility=`FALSE`。
 
-最新firm-price forensic已接受：在当前统一宏观单位和corrected 2018 Track-A对象下，firm wage边界命中主要是未闭合的firm/household wage numeraire问题；`w_raw=.92*(1-alpha)*Y/L`，legacy `[.8,1.3]`不能直接当作当前MU/NU下的经济工资区间。firm return边界命中主要来自真实`Y/K`水平相对历史数值 safeguard 偏高；初始化下`ra_raw=.7240464015119004*(Y/K)-.025`，对Y、K共同货币缩放不变，因此不能靠共同货币单位重标度消除。household `a/b`绝对货币归一化和`At_grid -> At*N`中的`beta_a`仍未识别；不得用收敛结果反推。
+最新实现修复已接受：corrected-2018 active runtime现在单一路径绑定actual 2018 GDP/POP、raw-NBS GFCF Track-A PIM、`delta_pim=.096`、`alpha=.7380939146868483`、`MU=10万元`、`NU=100 persons`及same-year `Zt0`。legacy/canonical builder仅保留为显式historical replay API，不再是corrected route fallback。31/31 pre-science assertions通过；serialized payload在write/readback及science launch之前再次校验，旧尺度安徽`K/GovInv/Zt`注入会在`science_started.json`写入前fail-closed。
 
-Owner已进一步明确历史MATLAB求稳态原则：迭代途中大量边界命中本身不是失败，只要边界命中数随循环下降并最终退出边界、满足稳态要求即可。历史`ra`范围主要是HJB/数值安全区，最终稳态仍要求无`ra`边界命中。基于这一科学裁决，下一门只允许一个source-faithful corrected-2018 bounded trajectory，最多100个outer turns，逐轮记录ra/wjt边界命中数量、省份身份、KN/Y/GDP gaps、GovInv/Zt action与household/KFE有效性；不得看到轨迹后调参或运行第二个参数cell。
+安徽当前accepted corrected initialization receipt：`Y0=34010900 MU`、`N0=L0=607600 NU`、`K0=GovInv0=70182433.35888097 MU`、`alpha=.7380939146868483`、`Zt0=1.681124916844091`。`GovInv0=Ktarget`仍只是`SOURCE_FAITHFUL_INITIALIZATION_RULE__SCIENTIFIC_REDESIGN_PENDING`；`beta_a=1`仍只是`SOURCE_FAITHFUL_DIAGNOSTIC_ONLY`。
 
-该trajectory baseline冻结为：correct 2018 GDP/POP、raw-NBS GFCF Track-A PIM、`delta_pim=.096`、`alpha=.7380939146868483`、`MU=10万元`、`NU=100 persons`、source-faithful `beta_a=1`仅作diagnostic、source-lagged rah、`lambda_w=lambda_rah=1`、无新增hysteresis/GovInv damping、原price bounds不变、无KFE/HJB repair。即使outer path改善，Results仍不可用，KFE/HJB独立科学门继续有效。
+上一100-turn候选`242e853708d3d0d4f891c7a043d7d4e3fba05c50`已被Reviewer拒绝为frozen-input contract violation：该trajectory实际使用legacy/canonical old-scale capital/GovInv/Zt，不能作为Track-A/unit-normalized corrected-2018 trajectory证据。它可以保留为历史错误尺度如何压低`ra/rah`的diagnostic evidence，但不得作为后续科学验收基线。
 
-此前raw-NBS重估、mixed-year数据审计、steady-state redesign spec、initialization probe和five-turn KFE attribution均继续作为有效历史证据。
+此前firm-price forensic仍有效：wage bound主要受未闭合numeraire影响；firm return主要受`Y/K`经济比率相对历史数值safeguard影响。household绝对货币归一化、asset bridge识别、GovInv初始化科学规则、Lt迁移/生产劳动映射、KFE/HJB独立blockers均尚未解决。
 
-GitHub live main是repository-state authority；聊天不能替代exact task。任何新的科学执行必须先发布exact task。以后每次发布exact task，同一回复自动附Codex启动prompt。
+当前禁止自动运行新trajectory、steady state、GE/annual/IRF/Results。下一步先由Owner/Reviewer选择：优先做`Kt/Lt`与原始2018数据的reconciliation和GovInv/Lt initialization设计，或另行发布新的correctly-bound bounded trajectory exact task。任何新科学执行必须先发布exact GitHub task；发布task时同一回复自动附Codex启动prompt。
+
+GitHub live main是repository-state authority；聊天不能替代exact task。
