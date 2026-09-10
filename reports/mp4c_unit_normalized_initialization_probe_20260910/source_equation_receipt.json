@@ -1,0 +1,77 @@
+{
+  "schema": "CH5_UNIT_NORMALIZED_SOURCE_EQUATION_RECEIPT_V1",
+  "accepted_input_ledger": {
+    "path": "D:\\ProjectTemp\\ch5-unit-normalized-initialization-probe-repo-20260910-001\\reports\\mp4c_2018_raw_nbs_rebuild_20260910\\corrected_2018_vs_matlab_ledger.csv",
+    "sha256": "32833C11686072D11DC8E55801F7106DB4C74663485579C03188C02F35E5BFB4",
+    "rows": 31
+  },
+  "protected_sources": [
+    {
+      "file": "HANK_firm.m",
+      "path": "D:\\MatlabProgram\\2023年12月2日 多省份神经网络HANK\\HANK_firm.m",
+      "sha256": "EE02C15414ADF9F99AADE04F1F22E64FA7094C8AB77753B6130BC4BFA6CE7BD5",
+      "match": true
+    },
+    {
+      "file": "HANK_mp_1turn.m",
+      "path": "D:\\MatlabProgram\\2023年12月2日 多省份神经网络HANK\\HANK_mp_1turn.m",
+      "sha256": "D3D03F37286ED66202673EA63D49BABCE8D5309BAC9C13793C8E60585C21FECF",
+      "match": true
+    },
+    {
+      "file": "wage_caculate.m",
+      "path": "D:\\MatlabProgram\\2023年12月2日 多省份神经网络HANK\\wage_caculate.m",
+      "sha256": "0FB84B51E2BE50CD3D065D33385882311A31E12596AEEB0CE2C808A8C36B6A63",
+      "match": true
+    },
+    {
+      "file": "mpHANK_equilibrium_2000.m",
+      "path": "D:\\MatlabProgram\\2023年12月2日 多省份神经网络HANK\\mpHANK_equilibrium_2000.m",
+      "sha256": "26EA44552DA33919F8CCD777C084E15ECA0EA9575FEE80A07F9E0056F3F97DE5",
+      "match": true
+    },
+    {
+      "file": "load_GDPdata.m",
+      "path": "D:\\MatlabProgram\\2023年12月2日 多省份神经网络HANK\\load_GDPdata.m",
+      "sha256": "DECA8AF3F22097550B8957FE848989E6342619CB9929A1C00076E020549366C5",
+      "match": true
+    },
+    {
+      "file": "load_distdata.m",
+      "path": "D:\\MatlabProgram\\2023年12月2日 多省份神经网络HANK\\load_distdata.m",
+      "sha256": "18F594DD7D1ED090CA2AF576DEBCD8DCAA73C012608A8921F8D5BD6CC24F478B",
+      "match": true
+    },
+    {
+      "file": "multi_prov_HANK_12sts.m",
+      "path": "D:\\MatlabProgram\\2023年12月2日 多省份神经网络HANK\\multi_prov_HANK_12sts.m",
+      "sha256": "3C44449CFD4047B5C9E17E540AFEA2F50B4251150F8F74AB8CCEED26E15DEC97",
+      "match": true
+    },
+    {
+      "file": "中国各省省会地理距离矩阵.xlsx",
+      "path": "D:\\MatlabProgram\\2023年12月2日 多省份神经网络HANK\\中国各省省会地理距离矩阵.xlsx",
+      "sha256": "26E44D174A8EFFBDCA526D95DA38F0E5883E0C78FDFD036D2DFF1D1FBA5A3566",
+      "match": true
+    }
+  ],
+  "equations": {
+    "Zt0": "Y0/(K0^alpha_used*L0^(1-alpha_used))",
+    "mt0": "rk_old*pit*theta/epsilon + (1-1/epsilon) = 0.92 under zero changes and pit=pit_1",
+    "raw_wjt0": "mt0*(1-alpha)*Zt0*(K0/L0)^alpha",
+    "raw_ra0": "mt0*alpha*Y0/K0-delta_firm+max((1-mt0)*Y0-Thetat,0)*(1-corptau)/K0",
+    "Thetat": "theta/2*pit^2*Y0",
+    "Corptax_ra_adjustment": "(raw_ra0-used_ra0)*K0",
+    "Corptax_wage_adjustment": "(raw_wjt0-used_wjt0)*L0",
+    "inter_prv_ratio": "0.3*(K0/N0-min(K0/N0))/(max(K0/N0)-min(K0/N0))",
+    "rah0": "(1-ratio_i)*used_ra_i + ratio_i/30*(sum_j ratio_j*used_ra_j-ratio_i*used_ra_i)",
+    "phi(j,i)": "1+0.3*((Yj/Lj)-(Yi/Li))/((Yj/Lj)+(Yi/Li))",
+    "sigmau(j,i)": "distance(j,i)/max(distance)*0.5",
+    "w0": "alphal^(-phi_l/(1+phi_l))*sum_j[phi(j,i)*(used_wjt_j*(1-tau-sigmau(j,i))/phi(j,i))^(1+1/phi_l)]^(phi_l/(1+phi_l))"
+  },
+  "spec_discrepancy": {
+    "accepted_redesign_prose_mt0": 0.9,
+    "protected_source_mt0": 0.92,
+    "resolution": "SOURCE_EQUATION_GOVERNS_THIS_PROBE__NO_SOURCE_MODIFICATION"
+  }
+}
