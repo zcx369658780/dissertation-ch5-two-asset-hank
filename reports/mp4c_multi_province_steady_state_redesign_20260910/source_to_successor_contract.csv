@@ -1,0 +1,19 @@
+source_file,source_lines,source_behavior,classification,successor_contract,future_check
+load_GDPdata.m,93-104,"GDP亿元×1000; capital万元×1000; population万人×100",OWNER_FROZEN_CORRECTION,"common MU/NU conversion; capital万元÷10 rather than ×1000",Owner approves unit normalization and migration plan
+load_GDPdata.m,113-137,"active reg_method=0 loads R alpha directly with no bounds",OWNER_FROZEN_CORRECTION,"persist alpha_raw and one-time [.2,.8] clip metadata",synthetic boundary tests then static current-alpha identity
+load_GDPdata.m,173-177,"inactive commented .3/.8 guard targets coefficient index 2",UNCHANGED_SOURCE_LOGIC,"retain as historical evidence only; do not call it active clipping",none
+multi_prov_HANK_12sts.m,49-55,"ra bounds [.02,.09]; wjt bounds [.8,1.3]",UNCHANGED_SOURCE_LOGIC,"preserve bounds; save raw/clipped/flag/reason",future initialization probe records bound hits
+multi_prov_HANK_12sts.m,85-108,"generic ra/rah/wjt/w=.09/.09/.6/20 and At/Bt/Lt/Ct=2/1/.8/4",OWNER_FROZEN_CORRECTION,"replace first-household prices with source-equation/cross-province initialization receipt",initialization-only bounded probe
+mpHANK_equilibrium_2000.m,22-43,"overwrites Zt alpha Kt N Lt Yt GovInv but not first-household prices/assets/consumption",OWNER_FROZEN_CORRECTION,"explicit bind/convert/derive/clip/aggregate initialization sequence",static field-completeness test
+HANK_mp_1turn.m,14-16,31 household calls consume copied old-turn states,UNCHANGED_SOURCE_LOGIC,preserve synchronous household batch and old-state semantics,one-turn parity future gate
+Lt_seperate.m,3-15,"new Ct and old clipped wjt determine migration labor; each origin column multiplied by N",UNCHANGED_SOURCE_LOGIC,"name per-household versus aggregate labor and multiply N once",asymmetric static orientation fixture
+HANK_mp_1turn.m,28-41,"new At×N allocation and rah from prior clipped ra precede current firm; this produces an extra ra-to-household propagation lag",FUTURE_VALIDATION_REQUIRED,"insert explicit asset bridge; baseline preserves source-lagged rah; separate candidate aggregates current clipped ra after firm",asymmetric orientation fixture and bounded rah-timing comparison
+HANK_firm.m,14-30,"Kt=Kt_supply+GovInv and Y=Z K^alpha L^(1-alpha)",UNCHANGED_SOURCE_LOGIC,require common aggregate MU/NU before firm call,static dimensional contract test
+HANK_firm.m,43-74,"raw factor prices then hard clip with Corptax compensation",UNCHANGED_SOURCE_LOGIC,"persist raw and clipped values; preserve bounds/tax semantics",future initialization probe
+wage_caculate.m,3-17,"migration-weighted household wage from clipped wjt",UNCHANGED_SOURCE_LOGIC,"name w_composite_raw then damp only next household-used w",synthetic positive-domain aggregator fixture
+HANK_mp_1turn.m,49-53,"current wage composite directly becomes next household w",NUMERICAL_PATH_STABILIZATION_PROPOSAL,"convex damp w after aggregation",preregistered lambda matrix
+HANK_mp_1eq.m,31-45,"final K/N and Y gaps 1e-9 plus all HJB convergence and zero ra bound hits",UNCHANGED_SOURCE_LOGIC,preserve final predicate unchanged,static predicate test
+HANK_mp_1eq.m,47-59,"near K/N gap .1 enables direct Z reset then GovInv .9/1.1 using clipped ra",NUMERICAL_PATH_STABILIZATION_PROPOSAL,"restrict unchanged proposals to Stage B; log old/raw/used/reason",bounded stage-grid validation
+HANK_mp_1eq.m,60-62,"tKNratio=.6 new+.4 old",UNCHANGED_SOURCE_LOGIC,"preserve and identify as reference damping only",static arithmetic test
+HANK_firm.m,95,"aggregate firm/tax items add household AtTax and subtract Tt without N",FUTURE_VALIDATION_REQUIRED,"aggregate per-household fiscal flows with one explicit N multiplication",Owner fiscal-unit decision
+It_to_Kt.m,6-10,"K0=I0/.1; Kt=(1-delta)Kprev+Iprev",OWNER_FROZEN_CORRECTION,"preserve lagged-flow PIM with delta_pim=.096 and model-derived label",production PIM route choice
