@@ -1,0 +1,16 @@
+Initial focused run:
+python -m pytest -q tests\test_mp4c_2018_matlab_input_state_audit.py
+6 passed in 0.04s
+
+Combined historical static suite attempt:
+collection failed before test execution because test_mp4c_2018_pim_capital_chain.py imported the wrong same-named core module after another historical test modified sys.path.
+This was an import-name collision, not a scientific/model call and not an audit failure.
+
+Independent-process static runs after isolation:
+tests/test_mp4c_2018_matlab_input_state_audit.py: 6 passed in 0.02s
+tests/test_mp4c_2018_revised_gdp_canonical_workbook.py: 8 passed in 0.02s
+tests/test_mp4c_2018_pim_capital_chain.py: 7 passed in 0.03s
+tests/test_mp4c_2018_raw_data_audit.py: 6 passed in 0.02s
+
+Final audit test after source-hash readback addition:
+tests/test_mp4c_2018_matlab_input_state_audit.py: 7 passed in 0.04s

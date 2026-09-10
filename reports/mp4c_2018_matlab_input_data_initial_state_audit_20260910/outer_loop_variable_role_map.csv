@@ -1,0 +1,11 @@
+﻿variable,role,enters,source_status
+GDP/Y0,exogenous data target,initial Yt/Yt0 and controller Zt target,2009 row in original 2018-labelled route
+POP/N,exogenous data,"household mass, At*N and migration labor",2009 row in original 2018-labelled route
+alpha,calibration/regression derived,firm Cobb-Douglas and Zt construction,PLM vintage19
+Zt,calibration derived then controller-updated,firm output/wage/rental rate,fixed 2020 level construction in original cache
+GovInv,initialized/controller-updated state,Kt=Kt_supply+GovInv,initialized equal Kt0
+ra/rb/rah/w,initialized household price state,household call,source constants; subsequent values require model calls
+At/Bt/Lt/Ct,household output,"allocation, migration, fiscal diagnostic",only accepted replay/corrected artifacts available
+Kt_supply,capital-allocation output,firm capital,NOT_AVAILABLE_WITHOUT_SCIENTIFIC_RERUN
+firm ra/wjt,firm output with clipping,next rah and composite wage,NOT_AVAILABLE_WITHOUT_SCIENTIFIC_RERUN
+next rah/w,allocation/controller state,next household call,NOT_AVAILABLE_WITHOUT_SCIENTIFIC_RERUN

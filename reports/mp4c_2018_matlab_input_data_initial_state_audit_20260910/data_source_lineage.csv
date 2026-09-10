@@ -1,0 +1,14 @@
+﻿variable,source_type,source,operation,unit,finding
+2018 label,runtime index,multi_prov_HANK_12sts.m:118-133,year=ii+2008; data_MAT{ii}; data_year=ii,index/year,ii=10 labels 2018 but passes level row index 10
+GDP,processed workbook then cache,"load_GDPdata.m:74,93,106-110; mpHANK_equilibrium_2000.m:31,41",GDP workbook x1000; row data_year,亿元 x1000 model units,2018-labelled route consumes row10=2009
+CAP/Kt0,PIM workbook then cache,"load_GDPdata.m:75,94; mpHANK_equilibrium_2000.m:27-28",总资本存量 x1000; row data_year,万元 x1000 model units,2018-labelled route consumes row10=2009
+PIM capital construction,deterministic source transform,load_GDPdata.m:55-61; It_to_Kt.m:1-10,"K0=I0/.1; Kt=(1-delta)K(t-1)+I(t-1), delta=.096",万元,2009 capital uses investment through 2008
+POP/N,processed workbook then cache,"load_GDPdata.m:79,104; mpHANK_equilibrium_2000.m:29-30",常住人口 x100; row data_year,万人 x100 model units,2018-labelled route consumes row10=2009
+alpha,PLM workbook persisted in cache,"load_GDPdata.m:115-118,131; mpHANK_equilibrium_2000.m:26",last coefficient in 总面板回归系数_19_行业4,elasticity,vintage19 matches corrected canonical 2018
+Zt,cache derived from level data,load_GDPdata.m:126-137; mpHANK_equilibrium_2000.m:25,GDP(row21)*CAP(row21)^(-alpha)*POP(row21)^(alpha-1),model productivity,fixed row21=2020 for every mydata2 vintage; not same-year 2018
+GovInv,runtime initialization,multi_prov_HANK_12sts.m:83; mpHANK_equilibrium_2000.m:40,Kt0*GovInv_ratio; ratio=1,capital model units,equals 2009 Kt0 in 2018-labelled route
+At/Bt,runtime initialization then household output,"multi_prov_HANK_12sts.m:101-105; HANK_mp_1turn.m:15,31",initial 2/1; household return required before allocation,per household,original MATLAB persisted 2018 st cache absent
+Kt_supply/rah,allocation output,HANK_mp_1turn.m:31-40,uses household At*N and old ra vector,capital / return,NOT_AVAILABLE_WITHOUT_SCIENTIFIC_RERUN
+Kt_total/ra/wjt,firm output,"HANK_firm.m:14,54-84",Kt_supply+GovInv then firm equations and clips,capital / rates,NOT_AVAILABLE_WITHOUT_SCIENTIFIC_RERUN
+household wage,controller state,HANK_mp_1turn.m:50-53; wage_caculate.m:1-16,destination wage aggregator after firm,composite wage,initial w=20; updated value unavailable without model rerun
+sigmau migration cost,distance workbook transform,load_distdata.m:1-8,distance/max(distance)*max_sigmau,migration-cost wedge,static exogenous matrix; not a target of this numeric comparison

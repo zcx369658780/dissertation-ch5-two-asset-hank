@@ -1,0 +1,275 @@
+{
+  "schema": "CH5_MATLAB_2018_INPUT_AUDIT_SUMMARY_V1",
+  "primary_verdict": "MATLAB_2018_INPUT_DATA_AUDIT_PASS__MATERIAL_EXTERNAL_SCALE_DIFFERENCES_IDENTIFIED",
+  "province_count": 31,
+  "matlab_2018_path_clear": true,
+  "matlab_2018_actual_level_year": 2009,
+  "matlab_2018_zt_level_year": 2020,
+  "matlab_2018_plm_vintage": 19,
+  "canonical_level_year": 2018,
+  "canonical_plm_vintage": 19,
+  "authority_document_inconsistency": "rule index/task active; status and handoff still say no active task",
+  "steady_cache_2018_present": false,
+  "cache_workbook_exact_checks": {
+    "GDP_2009_after_x1000": 0.0,
+    "CAP_2009_after_x1000": 0.0,
+    "POP_2009_after_x100": 0.0
+  },
+  "zt_row21_reconstruction_max_abs_diff": 1.0842021724855044e-19,
+  "material_findings": [
+    "2018 label mixes 2009 GDP/CAP/POP levels with fixed-2020 Zt and PLM-vintage19 alpha",
+    "alpha matches canonical exactly, while GDP/POP/capital/Zt compare different years",
+    "capital transform multiplies a source documented as 万元 by the same x1000 multiplier used for GDP亿元; no dimensional conversion rationale is documented in source",
+    "GovInv starts equal to Kt0 and therefore inherits the capital year and scale",
+    "initial ra is at its upper bound and initial wjt=0.6 is below the firm-output lower bound 0.8 before the first firm call"
+  ],
+  "unavailable_without_rerun": [
+    "original MATLAB 2018 persisted At/Bt/Lt/Ct (steady cache absent)",
+    "original MATLAB 2018 Kt_supply and Kt_total",
+    "original MATLAB first-turn firm ra/wjt and next rah/household wage"
+  ],
+  "scientific_model_calls_total": 0,
+  "causality_boundary": "External-input discrepancies are candidate propagation inputs only; this audit does not identify a cause of turn3 asset collapse.",
+  "top_discrepancies": [
+    {
+      "metric": "GDP_relative_difference",
+      "rank": 1,
+      "province": "贵州",
+      "value": -0.7488043217021066
+    },
+    {
+      "metric": "GDP_relative_difference",
+      "rank": 2,
+      "province": "西藏",
+      "value": -0.7012783985165434
+    },
+    {
+      "metric": "GDP_relative_difference",
+      "rank": 3,
+      "province": "湖北",
+      "value": -0.6860654967225461
+    },
+    {
+      "metric": "GDP_relative_difference",
+      "rank": 4,
+      "province": "云南",
+      "value": -0.6851455152454691
+    },
+    {
+      "metric": "GDP_relative_difference",
+      "rank": 5,
+      "province": "安徽",
+      "value": -0.6805529991855552
+    },
+    {
+      "metric": "POP_relative_difference",
+      "rank": 1,
+      "province": "西藏",
+      "value": -0.1638418079096045
+    },
+    {
+      "metric": "POP_relative_difference",
+      "rank": 2,
+      "province": "浙江",
+      "value": -0.15893511876295233
+    },
+    {
+      "metric": "POP_relative_difference",
+      "rank": 3,
+      "province": "北京",
+      "value": -0.15145985401459855
+    },
+    {
+      "metric": "POP_relative_difference",
+      "rank": 4,
+      "province": "黑龙江",
+      "value": 0.1499849714457469
+    },
+    {
+      "metric": "POP_relative_difference",
+      "rank": 5,
+      "province": "新疆",
+      "value": -0.14325396825396824
+    },
+    {
+      "metric": "capital_relative_difference",
+      "rank": 1,
+      "province": "贵州",
+      "value": -0.892054145108348
+    },
+    {
+      "metric": "capital_relative_difference",
+      "rank": 2,
+      "province": "湖南",
+      "value": -0.869941352711614
+    },
+    {
+      "metric": "capital_relative_difference",
+      "rank": 3,
+      "province": "青海",
+      "value": -0.869864642521369
+    },
+    {
+      "metric": "capital_relative_difference",
+      "rank": 4,
+      "province": "陕西",
+      "value": -0.8404520144017903
+    },
+    {
+      "metric": "capital_relative_difference",
+      "rank": 5,
+      "province": "安徽",
+      "value": -0.8319314931546822
+    },
+    {
+      "metric": "Zt_relative_difference",
+      "rank": 1,
+      "province": "江苏",
+      "value": -0.8237134405382694
+    },
+    {
+      "metric": "Zt_relative_difference",
+      "rank": 2,
+      "province": "海南",
+      "value": -0.6293731546831177
+    },
+    {
+      "metric": "Zt_relative_difference",
+      "rank": 3,
+      "province": "河北",
+      "value": -0.6176860493709212
+    },
+    {
+      "metric": "Zt_relative_difference",
+      "rank": 4,
+      "province": "浙江",
+      "value": -0.5682905552342647
+    },
+    {
+      "metric": "Zt_relative_difference",
+      "rank": 5,
+      "province": "辽宁",
+      "value": -0.52886022393938
+    },
+    {
+      "metric": "legacy_replay_turn1_GovInv_to_private_supply",
+      "rank": 1,
+      "province": "山东",
+      "value": 1732.1270936845806
+    },
+    {
+      "metric": "legacy_replay_turn1_GovInv_to_private_supply",
+      "rank": 2,
+      "province": "广东",
+      "value": 1697.1704727572608
+    },
+    {
+      "metric": "legacy_replay_turn1_GovInv_to_private_supply",
+      "rank": 3,
+      "province": "江苏",
+      "value": 1647.2713104808024
+    },
+    {
+      "metric": "legacy_replay_turn1_GovInv_to_private_supply",
+      "rank": 4,
+      "province": "河南",
+      "value": 1385.7950005378696
+    },
+    {
+      "metric": "legacy_replay_turn1_GovInv_to_private_supply",
+      "rank": 5,
+      "province": "浙江",
+      "value": 1037.6369795984751
+    },
+    {
+      "metric": "MATLAB_initial_K_over_Y_model_units",
+      "rank": 1,
+      "province": "西藏",
+      "value": 33342.511991047664
+    },
+    {
+      "metric": "MATLAB_initial_K_over_Y_model_units",
+      "rank": 2,
+      "province": "吉林",
+      "value": 31175.246931737925
+    },
+    {
+      "metric": "MATLAB_initial_K_over_Y_model_units",
+      "rank": 3,
+      "province": "宁夏",
+      "value": 28104.249350397622
+    },
+    {
+      "metric": "MATLAB_initial_K_over_Y_model_units",
+      "rank": 4,
+      "province": "新疆",
+      "value": 25579.628515924356
+    },
+    {
+      "metric": "MATLAB_initial_K_over_Y_model_units",
+      "rank": 5,
+      "province": "辽宁",
+      "value": 24941.443141729946
+    },
+    {
+      "metric": "MATLAB_initial_K_over_L_model_units",
+      "rank": 1,
+      "province": "上海",
+      "value": 1301888.2464286773
+    },
+    {
+      "metric": "MATLAB_initial_K_over_L_model_units",
+      "rank": 2,
+      "province": "北京",
+      "value": 1212902.311796896
+    },
+    {
+      "metric": "MATLAB_initial_K_over_L_model_units",
+      "rank": 3,
+      "province": "天津",
+      "value": 1059863.649872498
+    },
+    {
+      "metric": "MATLAB_initial_K_over_L_model_units",
+      "rank": 4,
+      "province": "浙江",
+      "value": 921809.5576021237
+    },
+    {
+      "metric": "MATLAB_initial_K_over_L_model_units",
+      "rank": 5,
+      "province": "江苏",
+      "value": 808881.5328492911
+    },
+    {
+      "metric": "MATLAB_initial_Y_over_N_model_units",
+      "rank": 1,
+      "province": "上海",
+      "value": 71.2237363591943
+    },
+    {
+      "metric": "MATLAB_initial_Y_over_N_model_units",
+      "rank": 2,
+      "province": "北京",
+      "value": 63.79516129032258
+    },
+    {
+      "metric": "MATLAB_initial_Y_over_N_model_units",
+      "rank": 3,
+      "province": "天津",
+      "value": 46.49486970684039
+    },
+    {
+      "metric": "MATLAB_initial_Y_over_N_model_units",
+      "rank": 4,
+      "province": "江苏",
+      "value": 43.612291933418696
+    },
+    {
+      "metric": "MATLAB_initial_Y_over_N_model_units",
+      "rank": 5,
+      "province": "浙江",
+      "value": 43.27850644427597
+    }
+  ]
+}

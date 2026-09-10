@@ -1,0 +1,8 @@
+﻿object,raw_unit,MATLAB_transform,canonical_transform,assessment
+GDP,亿元,x1000,x1000,MATCH_AFTER_DOCUMENTED_UNIT_TRANSFORM; year differs 2009 vs 2018
+POP,万人,x100,x100,MATCH_AFTER_DOCUMENTED_UNIT_TRANSFORM; year differs 2009 vs 2018
+PIM capital,万元,x1000,x1000,"same implemented scaling, but dimensional scale is not a documented 万元-to-亿元 conversion and year differs"
+Zt,derived,fixed row21 with vintage-specific alpha,same-year level row19 with vintage19 alpha,YEAR_OR_VINTAGE_MISMATCH
+GovInv,capital model units,Kt0*1,Kt0*1,same rule; inherited capital year mismatch
+initial wjt,firm wage state,constant 0.6,same source constant,below configured firm output lower bound 0.8 before any firm call
+initial ra/rah,rate,constant 0.09,same source constant,ra at upper bound; rah only descriptively equal because rah has no native firm clip
