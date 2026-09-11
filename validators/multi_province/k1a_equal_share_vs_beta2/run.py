@@ -6,6 +6,7 @@ import argparse
 import csv
 import json
 import shutil
+import subprocess
 import sys
 from dataclasses import asdict
 from hashlib import sha256
@@ -42,10 +43,50 @@ LEGACY_SHA256 = "BB3F283BD782399A5C1C9AEE06DC50BBA61A0599BF062669DE0B1EBBB01AEE4
 PAYLOAD_SHA256 = "EBB9FD91F3D3CE5D46476FE7BF1D0662E26EEA5C87357E4B13907CC76EBE9355"
 PATHS = {"A": ("path_a_equal_share", 0.0), "B": ("path_b_geographic_beta2", 2.0)}
 PATH_VERDICT = "K1A_PATH_BOUNDED_DIAGNOSTIC_COMPLETE__ACCOUNTING_AND_SCOPE_GATES_PASS"
+ACCEPTED_PREDECESSOR = "f57fec4d66bb82d48dc02bed775761ec194e0084"
+PROTECTED_SCIENCE_PATHS = (
+    "src/ch5_two_asset_hank",
+    "validators/multi_province/c1_residual_public_asset_25turn",
+    "validators/multi_province/g1_residual_govinv_25turn_isolated",
+    "validators/multi_province/corrected_2018_hjb_propagation_25turn_kl",
+)
 
 
 def _sha(path: Path) -> str:
     return sha256(Path(path).read_bytes()).hexdigest().upper()
+
+
+def _git_text(*args: str) -> str:
+    completed = subprocess.run(
+        ["git", *args], cwd=REPO, check=True, capture_output=True, text=True, encoding="utf-8"
+    )
+    return completed.stdout.strip()
+
+
+def protected_science_identity() -> dict[str, Any]:
+    """Prove protected science paths are unchanged from the accepted predecessor."""
+
+    completed = subprocess.run(
+        ["git", "diff", "--quiet", ACCEPTED_PREDECESSOR, "--", *PROTECTED_SCIENCE_PATHS],
+        cwd=REPO,
+        check=False,
+    )
+    if completed.returncode != 0:
+        raise ValueError("protected science paths differ from the accepted K1A predecessor")
+    return {
+        "schema": "CH5_K1A_SYMMETRIC_RERUN_PROTECTED_SOURCE_IDENTITY_V1",
+        "accepted_predecessor": ACCEPTED_PREDECESSOR,
+        "worktree_head": _git_text("rev-parse", "HEAD"),
+        "protected_paths": list(PROTECTED_SCIENCE_PATHS),
+        "protected_paths_unchanged": True,
+    }
+
+
+def validate_k1a_rah_provenance(*, actual_rah: float, expected_rah: float) -> None:
+    """Fail closed unless entering ``rah`` matches the prior completed K1A allocation."""
+
+    if float(actual_rah) != float(expected_rah):
+        raise ValueError("K1A entering rah does not match prior completed allocation using the same S")
 
 
 def _jsonable(value: Any) -> Any:
@@ -152,6 +193,7 @@ def prepare(evidence_parent: Path, accepted_payload: Path, test_cases: int, test
     if sha256(payload_bytes).hexdigest().upper() != PAYLOAD_SHA256:
         raise ValueError("accepted runtime payload SHA mismatch")
     distance = load_accepted_distance_score(DISTANCE)
+    protected_receipt = protected_science_identity()
     for path_id, (name, beta) in PATHS.items():
         root = parent / name
         root.mkdir()
@@ -196,6 +238,7 @@ def prepare(evidence_parent: Path, accepted_payload: Path, test_cases: int, test
         "runtime_payload_sha256": PAYLOAD_SHA256, "payloads_byte_identical": True,
         "distance_shape": list(distance.shape), "scientific_calls": 0,
     })
+    _write_json(parent / "protected_source_identity_receipt.json", protected_receipt)
 
 
 def preflight(evidence_parent: Path) -> None:
@@ -207,6 +250,10 @@ def preflight(evidence_parent: Path) -> None:
         raise ValueError("A/B runtime payloads are not byte-identical")
     if _sha(LEGACY) != LEGACY_SHA256:
         raise ValueError("legacy capital route changed")
+    protected_receipt = json.loads((parent / "protected_source_identity_receipt.json").read_text(encoding="utf-8"))
+    if not protected_receipt.get("protected_paths_unchanged"):
+        raise ValueError("protected science identity receipt is missing or failed")
+    protected_science_identity()
     distance = load_accepted_distance_score(DISTANCE)
     configs = [K1ARuntimeConfig(PROVINCE_ORDER, distance, beta) for _, beta in PATHS.values()]
     probe = CapitalAllocationInputs(np.linspace(1, 2, 31), np.linspace(10, 20, 31),
@@ -218,6 +265,13 @@ def preflight(evidence_parent: Path) -> None:
     one_turn_text = (REPO / "src/ch5_two_asset_hank/multi_province/c1_residual_public_asset.py").read_text(encoding="utf-8")
     if "reconstruct_migration_labor" not in one_turn_text or "residual_government_asset_levels" not in one_turn_text:
         raise RuntimeError("source-faithful labor or C1 route marker missing")
+    validate_k1a_rah_provenance(actual_rah=0.09, expected_rah=0.09)
+    try:
+        validate_k1a_rah_provenance(actual_rah=0.09000000000000001, expected_rah=0.09)
+    except ValueError:
+        tampered_rah_rejected = True
+    else:
+        raise RuntimeError("K1A rah provenance validator did not reject a tampered value")
     gate = {
         "schema": "CH5_K1A_EQUAL_SHARE_VS_BETA2_PRE_RUN_GATE_V1", "status": "PASS",
         "focused_tests": "PASS", "legacy_route_sha256": LEGACY_SHA256,
@@ -225,6 +279,9 @@ def preflight(evidence_parent: Path) -> None:
         "beta_return_both": 0.0, "accepted_distance_receipt": True,
         "distance_canonical_lf_sha256": ACCEPTED_DISTANCE_CANONICAL_LF_SHA256,
         "source_faithful_labor": True, "c1_formula_unchanged": True,
+        "protected_science_paths_unchanged_from_predecessor": True,
+        "validator_valid_same_s_pass": True,
+        "validator_tampered_same_s_rejected": tampered_rah_rejected,
         "k1b_disabled": True, "portfolio_smoothing": False, "partial_adjustment": False,
         "distinct_no_overwrite_roots": True, "payloads_byte_identical": True,
         "science_calls_before_gate": 0,
@@ -329,8 +386,7 @@ def execute(evidence_parent: Path, path_id: str) -> int:
             raise ValueError("K1A lagged rah provenance is missing the prior completed allocation")
         actual = float(states[index]["rah"])
         rebuilt = float(prior_network.household_portfolio_return_by_origin[index])
-        if actual != rebuilt:
-            raise ValueError("K1A entering rah does not match prior completed allocation using the same S")
+        validate_k1a_rah_provenance(actual_rah=actual, expected_rah=rebuilt)
         return {
             "entering_state_field": "rah",
             "source": f"turn_{turn - 1}.k1a_capital_network.household_portfolio_return_by_origin -> steady_state._post_turn_states.rah",
