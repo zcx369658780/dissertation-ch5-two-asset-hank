@@ -20,6 +20,9 @@ from ch5_two_asset_hank.multi_province.k1a_runtime_adapter import (
     load_accepted_distance_score,
 )
 from ch5_two_asset_hank.multi_province.province_contracts import PROVINCE_ORDER
+from validators.multi_province.k1a_equal_share_vs_beta2.run import (
+    validate_k1a_rah_provenance,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -104,6 +107,29 @@ def test_payoff_is_current_source_used_return_not_standardized_score() -> None:
     expected = source.old_firm_return_ra @ result.network.portfolio_shares_destination_origin
     np.testing.assert_allclose(result.household_illiquid_return_rah, expected)
     assert result.payoff_classification == PAYOFF_CLASSIFICATION
+
+
+def test_k1a_rah_provenance_accepts_actual_rah_from_the_same_share_matrix() -> None:
+    source = inputs()
+    result = allocate_k1a_capital(source, config(2.0))
+    same_s_rah = float((source.old_firm_return_ra @ result.network.portfolio_shares_destination_origin)[0])
+
+    validate_k1a_rah_provenance(
+        actual_rah=same_s_rah,
+        expected_rah=same_s_rah,
+    )
+
+
+def test_k1a_rah_provenance_rejects_tampered_actual_rah_fail_closed() -> None:
+    source = inputs()
+    result = allocate_k1a_capital(source, config(2.0))
+    same_s_rah = float((source.old_firm_return_ra @ result.network.portfolio_shares_destination_origin)[0])
+
+    with pytest.raises(ValueError, match="same S"):
+        validate_k1a_rah_provenance(
+            actual_rah=same_s_rah + 1e-6,
+            expected_rah=same_s_rah,
+        )
 
 
 def test_legacy_allocator_remains_available_and_byte_identical() -> None:
