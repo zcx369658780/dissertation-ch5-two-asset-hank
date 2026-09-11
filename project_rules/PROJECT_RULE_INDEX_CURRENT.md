@@ -10,22 +10,24 @@
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
 5. 若存在active task，再读取该exact task及直接相关acceptance/report。
 
-当前状态：`G1_RESIDUAL_GOVINV_25TURN_FAIL_ACCEPTED__INITIAL_ALIGNMENT_VALID__UNCHANGED_RETURN_BOUND_CONTROLLER_RECREATES_GOVINV_OVERSHOOT__CONTROLLER_REDESIGN_SPEC_AUTHORIZED`。
-当前 active Builder task：`tasks/CH5_MP4C_GOVINV_CONTROLLER_REDESIGN_FORENSIC_AND_SPEC.md`。
-最新接受候选：`54b6736b0507bee44f433832415507c0bfb170fa`。
-Reviewer acceptance：`docs/CH5_MP4C_G1_RESIDUAL_GOVINV_INITIALIZATION_INTEGRATION_AND_25TURN_ISOLATED_DIAGNOSTIC_ACCEPTANCE.md`。
+当前状态：`GOVINV_CONTROLLER_REDESIGN_SPEC_ACCEPTED__C0_FAILURE_MECHANISM_QUANTIFIED__OWNER_IDENTIFIES_GOVINV_AS_GOVERNMENT_ASSET_RESIDUAL__C1_LEVEL_REPLACEMENT_IMPLEMENTATION_AUTHORIZED`。
+当前 active Builder task：`tasks/CH5_MP4C_C1_GOVINV_RESIDUAL_LEVEL_REPLACEMENT_IMPLEMENTATION.md`。
+最新接受候选：`ac71e396cd64ecd1e7d6b6497981042800d8411e`。
+Reviewer acceptance：`docs/CH5_MP4C_GOVINV_CONTROLLER_REDESIGN_FORENSIC_AND_SPEC_ACCEPTANCE.md`。
 Results eligibility=`FALSE`。
 
-最新 G1 isolated diagnostic 已接受为 scientific FAIL evidence，而不是 implementation rejection。G1 在 `beta_a=1` diagnostic bridge 下 31/31 将 initial accounting firm K 精确对齐 Track-A target，turn1 median total-K/target=`1.0`，成功消除 G0 的 `Ktarget+private K` 初始重复叠加；但 unchanged historical GovInv controller 随后重建 overshoot。25 turns controller decrease/increase/hold=`0/289/486`，与 accepted G0 totals 完全相同。
+最新 controller forensic/spec 已接受。历史 C0 clipped-return controller 在 accepted G1 775 条 province-turn ledger 上静态 replay 为 0 mismatch；258/775（33.290323%）在 contemporaneous K-level gap 意义上方向恶化，全部为 total K 已高于 Ktarget 时仍触发 `GovInv *= 1.1`。C0 明确是 return-bound controller，不含 Ktarget、total-K residual 或 private-K residual。
 
-G1 turns20-25 pooled `firm_K_total/Ktarget` min/median/max=`1.3257022041568054/2.353363495591088/2.8512142917573127`；median `GovInv/Ktarget=2.3503561274071445`，median `private_K/Ktarget=0.0029186382400614363`。因此 late capital overshoot 仍由 GovInv 主导。selected turns 的 raw-ra lower/interior/upper counts 与 G0 逐轮相同，支持历史 clipped-return controller 在 G1 后仍基本执行同一方向的反馈序列。
+Owner 进一步冻结 GovInv 的经济含义：GovInv 代表政府/公共生产性资产。原因是经验估计得到的总生产资本 Kt 与 household/private illiquid asset At 之间存在显著缺口，而省级政府生产性资产额度难以直接获得，因此历史 MATLAB 将 GovInv 作为内生变量，通过 return-bound heuristic 经验调整。GovInv 不能再解释为任意 numerical balancing stock，而应解释为“不可直接观测的政府/公共生产性资产 residual”。
 
-本次 accepted FAIL 说明：residual G1 initialization 本身是有效的 accounting correction，但初始化修复不足以解决资本侧稳定性；当前主要剩余机制转为 GovInv controller objective/signal/timing。HJB/KFE blockers仍独立存在，beta_a仍为 `SOURCE_FAITHFUL_DIAGNOSTIC_ONLY`；不得把 bounded path 当 production validity。
+因此下一最低风险控制对象被冻结为 C1 direct level replacement，而不是选择一个需要调参的 gain：
+`GovInv_next = max(Ktarget - Kprivate_current, 0)`。
+它在代数上等价于 generic C1 的 `lambda_K=1` one-step replacement，但本项目不把 1 解释为估计/校准 gain；它是 Owner 经济解释下的直接 residual public-asset definition。若 private K 已高于 Ktarget，则 GovInv floor 到0并显式保留 private overshoot，不允许隐藏。
 
-当前 active task 为 zero-science GovInv controller forensic/spec。必须恢复历史 `maxKNratiogap` gate、Zt/GovInv/tKNratio timing、clipped-ra ±10% 反馈及其与 Ktarget gap 的关系，并比较至少：C0 historical return-bound controller、C1 capital-target residual controller、C2 return-target controller、C3 staged/hybrid controller。允许只读 accepted ledgers 和 deterministic static replay，不允许 HJB/KFE/firm/controller runtime/trajectory/steady-state/Results 调用，也不得自动选择 gain、damping、hysteresis 或 production winner。
+当前 active task 只实现这一 C1 residual-government-asset pure function/API，并对 accepted G1 ledger 做 zero-science static replay。不得运行 HJB/KFE/firm/migration/wage/controller runtime/trajectory/steady state；不得改历史 C0；不得引入 lambda_K、ra_target、damping、hysteresis 或 staged controller。通过后才可由新的 exact task 授权一条 bounded scientific trajectory。
 
-Owner 的历史背景继续有效：旧 `HANK_mp_1eq.m` 的 GovInv ±10% 调整是无法直接观测复杂网络省级投资额时的经验逼近；其他状态不稳定时可能放大 Kt 发散。当前任务必须把 initialization 与 controller 继续分离，并明确哪些 controller objective/signal/damping 选择需要 Owner 决策。
+此前 G1 isolated diagnostic 继续作为 accepted scientific FAIL evidence：G1 initialization 31/31 对齐 initial Ktarget，但 unchanged C0 25 turns 后重新把 median total-K/target 推至约2.353，late overshoot 几乎全部来自 GovInv。HJB/KFE blockers仍独立存在，beta_a仍为 `SOURCE_FAITHFUL_DIAGNOSTIC_ONLY`。
 
-已接受 origin-preserving normalized labor successor 继续保留但不改变当前资本侧结论。corrected-2018 runtime input-binding repair继续作为唯一活动数据契约：actual 2018 GDP/POP、raw-NBS GFCF Track-A PIM、`delta_pim=.096`、`alpha=.7380939146868483`、`MU=10万元`、`NU=100 persons`、same-year Zt0；legacy/canonical fallback已隔离。
+已接受 origin-preserving normalized labor successor 继续保留但本资本侧任务不激活。corrected-2018 runtime input-binding repair继续作为唯一活动数据契约：actual 2018 GDP/POP、raw-NBS GFCF Track-A PIM、`delta_pim=.096`、`alpha=.7380939146868483`、`MU=10万元`、`NU=100 persons`、same-year Zt0；legacy/canonical fallback已隔离。
 
 GitHub live main是repository-state authority；聊天不能替代exact task。任何新科学执行必须先发布exact GitHub task；发布task时同一回复自动附Codex启动prompt。
