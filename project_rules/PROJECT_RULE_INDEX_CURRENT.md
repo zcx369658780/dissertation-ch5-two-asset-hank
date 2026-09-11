@@ -10,23 +10,21 @@
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
 5. 若存在active task，再读取该exact task及直接相关acceptance/report。
 
-当前状态：`C1_GOVINV_RESIDUAL_LEVEL_REPLACEMENT_ACCEPTED__PURE_PUBLIC_ASSET_RESIDUAL_IMPLEMENTED__STATIC_G1_REPLAY_FULLY_CLOSES_HISTORICAL_GOVINV_OVERSHOOT__BOUNDED_RUNTIME_INTEGRATION_AUTHORIZED`。
-当前 active Builder task：`tasks/CH5_MP4C_C1_RESIDUAL_PUBLIC_ASSET_25TURN_CONTEMPORANEOUS_INTEGRATION_DIAGNOSTIC.md`。
-最新接受候选：`77c17f224c466720b4c7e67250513817f584d1f8`。
-Reviewer acceptance：`docs/CH5_MP4C_C1_GOVINV_RESIDUAL_LEVEL_REPLACEMENT_IMPLEMENTATION_ACCEPTANCE.md`。
+当前状态：`C1_RESIDUAL_PUBLIC_ASSET_25TURN_ACCEPTED__CAPITAL_TARGET_HELD__GOVINV_OVERSHOOT_REMOVED__PRICE_NUMERAIRE_RAW_RA_UPPER_PRESSURE_IS_NEXT_DIRECT_NUMERICAL_BLOCKER`。
+当前 active Builder task：`tasks/CH5_MP4C_C1_PRICE_NUMERAIRE_RAW_RA_FORENSIC_AND_NORMALIZATION_SPEC.md`。
+最新接受候选：`b3183d1aa404922ee179359dc6fa43b411978090`。
+Reviewer acceptance：`docs/CH5_MP4C_C1_RESIDUAL_PUBLIC_ASSET_25TURN_CONTEMPORANEOUS_INTEGRATION_DIAGNOSTIC_ACCEPTANCE.md`。
 Results eligibility=`FALSE`。
 
-C1 pure public-asset residual implementation 已接受。独立API `residual_government_asset_level(s)` 实现 `GovInv=max(Ktarget-Kprivate_current,0)`，没有 gain、ra target、damping、hysteresis，也未连接 active steady-state runtime。private K 低于 target 时 accounting firm K 精确等于 target；private K 达到/超过 target 时 GovInv floor 为0并显式保留 private overshoot。历史 C0 clipped-return controller 继续保持 byte-identical/source-faithful authority。
+C1 contemporaneous residual-public-asset bounded diagnostic 已接受。独立 successor route 在每个 numerical outer turn 中先由 household outputs 和 At-only capital allocation 得到 current private productive K，再计算 `GovInv=max(Ktarget-Kprivate,0)`，随后进入同 turn firm evaluation；历史 source-faithful one-turn、C0 controller、firm、capital allocation 均保持不变。该 timing 是稳态数值迭代中的 capital-stock decomposition，不解释为真实时间中的政府资产瞬时变化。
 
-对 accepted G1 25-turn ledger 的 zero-science static replay 显示 775/775 rows private K 都低于 Ktarget，因此 C1 静态 replacement 全部精确闭合到 target。turn20-25 historical total-K/target median=`2.353363495591088`，static C1 median=`1.0`；pooled late historical positive overshoot `19,963,597,940.767487 MU` 在 static accounting 中全部由 residual replacement 消除，remaining private-only overshoot=`0 MU`。这些是静态 accounting counterfactual，不是动态稳定性证据。
+25/25 turns、775/775 province updates 完成；C1 accounting assertion 775/775 通过，最大 accounting residual=`1.4901161193847656e-08 MU`。private K 在全部775 rows均低于 Ktarget，residual floor从未绑定。turn20-25 pooled firm total-K/target min/median/max=`1/1/1`，此前 G0/G1+C0 的2–3倍 GovInv-driven capital overshoot 在真实 bounded dynamic path 中消失。因此当前资本数量/GovInv level divergence 不再是同一优先级的直接数值 blocker。
 
-Owner 已冻结 GovInv 的经济解释：GovInv 为不可直接观测的政府/公共生产性资产，用于填补经验 total productive capital 与 household/private productive capital 之间的缺口。C1 因而是 level definition，而不是 calibrated controller gain。
+但 firm raw return 压力显著暴露：turn25 raw-ra lower/interior/upper=`0/1/30`，而 accepted G0 与 G1+C0 均为`0/21/10`。C1 pooled `rah`仍靠近历史上界区域，没有变得明显更 interior。KN/Y/GDP 数值路径大幅改善：turn25 max KN gap=`2.0177068904558837e-09`，max Y/Yprev gap=`1.3322676295501878e-15`，max GDP-level gap=`0.007556323724974279`；Zt 只在turn4/6/7调整，turn20-25为0，因此晚期异常不能优先归因于活跃 Zt 调整。
 
-当前 active task 将 C1 接入一个显式 successor numerical steady-state one-turn route，并只运行一条最多25-turn bounded diagnostic。关键 timing 被定义为：每个 outer numerical iteration 在 household outputs 和 At-only private-capital allocation 后，使用 contemporaneous `Kprivate` 计算 C1 GovInv，再进入同一 turn firm evaluation。因此这是 steady-state 数值迭代中的 contemporaneous stock identity，不应解释成真实时间内政府资产瞬时调整。
+HJB nonconvergence仅集中于早期；turn6起31/31 HJB converged。KFE 775/775 仍为`DIAGNOSTIC_ONLY`，继续作为独立 scientific blocker。beta_a仍为`SOURCE_FAITHFUL_DIAGNOSTIC_ONLY`。已接受 origin-preserving normalized labor successor 本门仍未激活，因此本次资本侧改善不能归因于 labor normalization。
 
-为了单独识别资本块，本次 scientific trajectory 继续使用 source-faithful migration/labor route，已接受的 origin-preserving normalized labor successor 不激活；wage、firm、Zt、tKNratio、HJB/KFE、bounds、grid、solver均冻结。C1 successor route 中只禁用历史 GovInv `0.9/1.1` return-bound action，历史 C0 本身不得修改。
-
-此前 accepted G1+C0 scientific FAIL 继续有效：G1 initialization 能31/31对齐初始 Ktarget，但 historical C0 随后重建 GovInv overshoot。HJB/KFE blockers继续独立存在，beta_a仍为 `SOURCE_FAITHFUL_DIAGNOSTIC_ONLY`。
+当前 active task 为 zero-science price/numeraire/raw-ra forensic。必须用 accepted C1 saved ledgers 与 source equations 静态分解 `ra0 = rk-delta + profit*(1-corptau)/K`、`rk=mt*alpha/(K/Y)`，恢复 `.02/.09` return bounds 与 `[.8,1.3]` wage bounds 的 provenance，并梳理 firm raw wage、clipped wage、household composite wage、Y/K 与 MU/NU 的 dimensional chain。不得运行新的 HJB/KFE/firm/wage/controller/trajectory，也不得直接修改 bounds、alpha、delta、Zt、Ktarget、beta_a 或 labor normalization。
 
 corrected-2018 runtime input-binding repair继续作为唯一活动数据契约：actual 2018 GDP/POP、raw-NBS GFCF Track-A PIM、`delta_pim=.096`、`alpha=.7380939146868483`、`MU=10万元`、`NU=100 persons`、same-year Zt0；legacy/canonical fallback已隔离。
 
