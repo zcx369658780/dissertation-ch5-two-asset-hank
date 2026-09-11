@@ -2,43 +2,57 @@
 更新：2026-09-11。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
 ## 当前状态
-状态：`K1A_BOUNDED_INTEGRATION_PARTIAL_ACCEPTED__VALIDATOR_REPAIRED__SYMMETRIC_AB_RERUN_ACTIVE`。
+状态：`K1A_SYMMETRIC_BOUNDED_RERUN_ACCEPTED__PAYOFF_RETURN_REAUDIT_REQUIRED_BEFORE_K1B`。
 
-最新 accepted bounded-integration candidate：`f57fec4d66bb82d48dc02bed775761ec194e0084`。
-Reviewer acceptance：`docs/CH5_MP4C_K1A_EQUAL_SHARE_VS_GEOGRAPHIC_BETA2_BOUNDED_INTEGRATION_ACCEPTANCE.md`。
-当前 active Builder task：`tasks/CH5_MP4C_K1A_EQUAL_SHARE_VS_GEOGRAPHIC_BETA2_SYMMETRIC_RERUN.md`。
+最新 accepted K1A symmetric rerun candidate：`ca66dd5d7364f80ed2686d4d2e77a1a6adab2ecb`。
+Reviewer acceptance：`docs/CH5_MP4C_K1A_EQUAL_SHARE_VS_GEOGRAPHIC_BETA2_SYMMETRIC_RERUN_ACCEPTANCE.md`。
+当前 active Builder task：无，待发布 payoff-return re-audit exact task。
 Builder默认`gpt-5.6-sol / medium`。Results eligibility=`FALSE`。
 
-资本网络总体科学设计冻结稿：`docs/CH5_MP4C_BILATERAL_CAPITAL_NETWORK_SCIENTIFIC_DESIGN_FREEZE_CURRENT.md`。
-K1 scoring/data 冻结稿：`docs/CH5_MP4C_K1_SCORING_AND_DATA_CONTRACT_FREEZE_CURRENT.md`。
+资本网络总体科学设计冻结稿：
+`docs/CH5_MP4C_BILATERAL_CAPITAL_NETWORK_SCIENTIFIC_DESIGN_FREEZE_CURRENT.md`。
+K1 scoring/data 冻结稿：
+`docs/CH5_MP4C_K1_SCORING_AND_DATA_CONTRACT_FREEZE_CURRENT.md`。
 
-## 已冻结 K1A/K1B 参数
-- K1A equal-share：`beta_distance=0`, `beta_return=0`；
-- K1A geography benchmark：`beta_distance=2`, `beta_return=0`；
-- K1B future benchmark preregistered：`beta_return=.5`，当前不运行；
-- theta 固定为 `inter_prv_ratio_i`；
-- source-faithful labor；
-- smoothing/partial adjustment OFF；
-- K1A payoff bridge = current source-used/clipped `ra`，仅分类为 `K1A_SOURCE_FAITHFUL_PAYOFF_BRIDGE__NOT_FINAL_ECONOMIC_RETURN_AUTHORITY`；
-- C1 `GovInv=max(Ktarget-Kprivate,0)` 不变。
+## K1A symmetric bounded rerun：已接受
+两条 preregistered 路径均从 byte-identical accepted initialization 完成25/25 turns：
 
-## 前一 bounded integration：partial evidence 已接受
-Pre-run 50/50 focused tests 通过。Path A 在完成 turn 1 后，于 turn-2 entry 被 task-wrapper 中遗留的 legacy `rah` validator assertion 阻断；由于 scientific state 已推进，未重跑。该 validator 后续仅做 zero-science provenance repair：改为验证 prior completed K1A allocation 使用同一 `S` 的 `rah`，没有改变经济方程、参数、容差、solver 或 state evolution。
+1. equal-share：`beta_distance=0`, `beta_return=0`；
+2. pure-geographic：`beta_distance=2`, `beta_return=0`。
 
-Path B 在 repaired validator 下完成 25 turns。806 个已完成 province-turn 中，quantity/`rah` same-`S`、home retention、origin/national private-capital conservation 与 no destination-theta double weighting 全部通过。C1 始终保持 `GovInv=max(Ktarget-Kprivate,0)`；观察样本中 `Kprivate>=Ktarget` 为0，private-only overshoot为0。
+两条路径均保持 fixed `theta_i=inter_prv_ratio_i`、source-faithful labor、smoothing OFF、C1 `GovInv=max(Ktarget-Kprivate,0)` 和 transitional source-used/clipped-`ra` payoff bridge。
 
-Path B turn25 仍未满足冻结 outer convergence predicate：`max_nk_gap=1.8619512598405663e-09 > 1e-9`。不得调 tolerance 或 solver。
+接受证据：
+- 1550 province-turn 中 capital share/origin/national conservation、home retention、quantity/rah same-`S` 全部闭合；
+- destination-theta double weighting=0；
+- C1逐省逐轮闭合；`Kprivate>=Ktarget`=0/0，private-only overshoot=0/0；
+- total K/target 两路径均约为1；
+- geography差异从turn2开始经network-produced `rah`进入household并传播到Y、wage及后续firm states；
+- Path A/B turn25均未满足冻结final predicate，`max_nk_gap`分别约`1.94e-9`和`1.86e-9`，均高于`1e-9`；
+- HJB nonconverged-but-continued=88/92；
+- KFE仍全部`DIAGNOSTIC_ONLY`。
 
-raw-return pressure 仍很强：Path B pooled raw `ra0` 775 条中 755 条高于 `.09`，upper clipping 755 次。旧 `.02/.09` 继续仅是 empirical numerical safeguard，不获得最终经济 authority。
+## 当前主要 scientific blocker：payoff-return authority
+K1A当前仍使用：
 
-## 当前 active symmetric rerun
-新 task 只为消除 predecessor wrapper defect 造成的非对称证据：从 identical accepted initialization，在已修正 provenance validator 下重新执行两条预注册路径，每条最多25 turns。
+`K1A_SOURCE_FAITHFUL_PAYOFF_BRIDGE__NOT_FINAL_ECONOMIC_RETURN_AUTHORITY`
 
-不得改变：beta、theta、payoff bridge、labor、smoothing、C1、return/wage bounds、HJB/KFE/firm science、grids、tolerances、iteration limits、solver semantics。
+即 household payoff 暂时使用 source-used/clipped `ra`，目的仅是保持资本网络变化的 attribution，不代表历史 `[.02,.09]` return bounds 已获得经济识别。
 
-本轮要获得完整 common-prefix A/B evidence，重点比较 Kprivate、GovInv、total K、raw/used returns、rah、output、wage 与 outer convergence。若某路径科学性停止，则只报告真实共同前缀，不得重调科学对象。
+对称rerun显示持续严重 upper clipping pressure：
+- Path A raw `ra0>.09`：`754/775`；
+- Path B raw `ra0>.09`：`755/775`；
+- 两路径 lower clips 均为0。
 
-## KFE 与 Results 边界
-所有当前 empirical KFE 仍为 diagnostic-only；corrected-2018 finite-box upper-b leakage + MATLAB-style pinning 是独立 blocker。K1A bounded run 不构成 KFE closure、steady-state acceptance、annual/IRF/welfare 或 Results。
+因此在进入K1B之前必须先做 payoff-return re-audit，厘清 raw `ra0`、used/clipped `ra`、`rah` 的 source semantics、单位/周期、firm decomposition 和 clipping distortion。不得直接把 raw `ra0` 改成household payoff，也不得把 clipped `ra`升级为最终经济authority。
 
-Results eligibility=`FALSE`。
+## K1B / K2 状态
+K1B future benchmark `beta_return=0.5` 仍仅为 preregistered，不授权 runtime。K1B attractiveness 仍冻结为 completed-iteration raw unclipped `ra0` cross-sectional z-score，只能进入下一 outer iteration。
+
+K2 endogenous-theta functional form继续不授权。
+
+## KFE边界
+clean/source-free generator-KFE方法学与 corrected-2018 empirical finite-box upper-b leakage/MATLAB-style pinning 必须继续分开。当前 empirical KFE blocker 未解决；K1A bounded rerun不能被写成 KFE、steady state 或 Results PASS。
+
+## 下一步
+优先发布 zero-science payoff-return re-audit exact task。该任务只使用 accepted source与已持久化K1A evidence，禁止新增HJB/KFE/firm/trajectory科学调用，也不改变现行payoff law。
