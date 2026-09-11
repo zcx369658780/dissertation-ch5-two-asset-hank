@@ -2,15 +2,31 @@
 更新：2026-09-11。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
 ## 当前状态
-状态：`K1_BILATERAL_CAPITAL_NETWORK_ACCEPTED__HOME_CAPITAL_RESTORED__PORTFOLIO_AND_CAPITAL_CONSERVATION_ENFORCED__LAGGED_ENDOGENOUS_FOREIGN_SHARE_ENGINE_READY_FOR_PARAMETER_FREEZE`。
-最新接受候选：`742ae11dbb057c7d33650ed4bc8d4db59b90d435`。
+状态：`K1_SCORING_DATA_PARTIAL_FREEZE_ACCEPTED__K1A_ZERO_SCIENCE_DISTANCE_MAPPING_ACTIVE`。
+最新 K1 implementation 接受候选：`742ae11dbb057c7d33650ed4bc8d4db59b90d435`。
 Reviewer acceptance：`docs/CH5_MP4C_K1_BILATERAL_CAPITAL_NETWORK_REPAIR_AND_ENDOGENOUS_FOREIGN_SHARE_IMPLEMENTATION_ACCEPTANCE.md`。
-当前 active Builder task：无。
+当前 active Builder task：`tasks/CH5_MP4C_K1A_2018_DISTANCE_SCORE_MAPPING_AND_STATIC_PORTFOLIO_DIAGNOSTIC.md`。
 Builder默认`gpt-5.6-sol / medium`。Results eligibility=`FALSE`。
 
 资本网络科学设计冻结稿：
 `docs/CH5_MP4C_BILATERAL_CAPITAL_NETWORK_SCIENTIFIC_DESIGN_FREEZE_CURRENT.md`。
-后续有关K1/K2的经济解释、矩阵方向、时序、分阶段顺序和Owner待决参数，应优先以该文件为准，不再依赖聊天回忆。
+K1 scoring/data 冻结稿：
+`docs/CH5_MP4C_K1_SCORING_AND_DATA_CONTRACT_FREEZE_CURRENT.md`。
+后续有关K1/K2的经济解释、矩阵方向、时序、分阶段顺序和Owner待决参数，应优先以这两份冻结稿为准，不再依赖聊天回忆。
+
+## 当前 Owner-approved scoring/data freeze
+已冻结：
+- 顺序：K1A repaired equal-share → K1A pure-geographic → K1B lagged-return → K2；
+- K1A第一距离概念：纯地理距离；
+- distance normalization：全国共同尺度 `D[j,i]/D_max`，不做逐行/逐列归一化；
+- zero-science `beta_distance` diagnostic grid：`[0,.5,1,2,4]`，仅用于静态形状/集中度，不是最终参数；
+- K1B attractiveness：completed-iteration raw unclipped `ra0` 的跨省 z-score，只允许进入下一 outer iteration；
+- zero-science `beta_return` diagnostic grid：`[0,.25,.5,1,2]`，仅用于代数解释，不是最终参数；
+- attractiveness 与 household payoff return 严格分离；
+- 第一版 K1A/K1B 不启用 portfolio smoothing/partial adjustment；
+- 第一次 K1 scientific integration 继续 source-faithful labor。
+
+仍待 Owner freeze：最终 `beta_distance`、最终 `beta_return`、household payoff-return concept，以及未来 economic-distance/market-size 扩展、任何 smoothing 重新引入、K2 endogenous-theta functional form。
 
 ## 已接受的资本侧重构主线
 ### C1 GovInv residual public assets
@@ -57,31 +73,14 @@ K1当前只实现第二层，并暂时固定`theta_i`。foreign destination engi
 Owner明确赞成lagged timing：allocation iteration n+1只能使用completed iteration n的return-attractiveness signal，避免same-turn `firm -> ra -> shares -> K -> firm`反馈导致震荡。这个顺序是steady-state numerical fixed-point timing，不是现实时间瞬时调整。
 
 ## 分阶段 scientific route
-由于单次多省稳态可能超过2小时，后续冻结为一次只增加一个反馈机制：
-
 ### K1A
-固定`theta_i`，先做repaired equal-share或space-only资本网络，验证真实2018数据下的capital conservation、home retained K、rah一致性及C1 GovInv重新闭合。
+固定`theta_i`。先完成当前 zero-science mapping task，然后依次验证 repaired equal-share 与 pure-geographic space-only 资本网络。真实科学 integration 前仍须由Owner从静态证据冻结最终 `beta_distance` 与 payoff-return contract。
 
 ### K1B
-仍固定`theta_i`，加入lagged-return endogenous foreign destination shares。第一次K1科学trajectory继续冻结source-faithful labor，以隔离资本通道。
+仍固定`theta_i`，加入completed-iteration raw `ra0` z-score的lagged-return endogenous foreign destination shares。最终 `beta_return` 必须在trajectory前冻结，且不得same-turn更新。
 
 ### K2
 K1科学验证后，才讨论让`theta_i`自身内生化，最终使外投比例成为`1-S[i,i]`的模型结果。
-
-## K1下一Owner gate
-任何bounded trajectory前必须冻结：
-- distance/friction data mapping及dimensionless normalization；
-- lagged-return attractiveness score来源、period与normalization；
-- `beta_distance`；
-- `beta_return`；
-- portfolio smoothing/partial-adjustment是否启用；
-- portfolio payoff使用raw `ra0`、clipped `ra`、normalized return或expected return；
-- K1A是否先于K1B；
-- K2进入条件。
-
-当前建议第一版distance先比较pure geographic baseline与geographic+economic-distance（如`abs(log pgdp_i-log pgdp_j)`）两类；目的省market size应与economic-distance分开，不把发展差异与destination attractiveness混为一项。
-
-return-attractiveness与payoff-return必须继续分离。不得默认用clipped`.02-.09`作为return score，因为这些bounds尚未经济识别，并会抹平30/31 upper raw-ra差异。至少应在Owner冻结前比较raw lagged `ra0`、relative raw return、standardized score与smoothed/expected return。
 
 ## 与C1、labor、KFE的联合边界
 K1会改变`Kprivate`，因此此前C1 25-turn旧private-K量级不能直接外推。未来必须重新联合验证`K1 private capital + C1 residual GovInv`。若`Kprivate>=Ktarget`，GovInv必须floor到0并保留private-only overshoot。
@@ -94,6 +93,6 @@ KFE必须区分：clean/source-free generator-KFE合同已有稳定验证版本�
 当前活动数据契约继续使用actual 2018 GDP/POP、raw-NBS GFCF Track-A PIM capital、`delta_pim=.096`、`alpha=.7380939146868483`、MU=`10万元`、NU=`100 persons`、same-year Zt0。asset bridge `beta_a=1`仍为`SOURCE_FAITHFUL_DIAGNOSTIC_ONLY`，不能从convergence反推。
 
 ## 当前科学边界
-当前没有active Builder task。不得自动运行新的HJB/KFE/firm/outer-loop/trajectory/steady-state/GE/annual/IRF/Results。
+当前 active Builder task 仅为 zero-science 2018 distance/source mapping + static portfolio diagnostics。其 MATLAB/Python HJB/KFE/firm/outer-loop/steady-state/trajectory/GE/annual/IRF/Results scientific/model call budget 全部为 `0`。
 
-下一步应先冻结K1 scoring/data contract，再发布zero-science mapping task或后续bounded integration task。考虑稳态成本，优先完成静态数据映射、参数预注册和单次高信息量experiment设计。
+不得直接开始trajectory。当前task完成并验收后，由Owner/Reviewer根据静态矩阵证据冻结最终 `beta_distance`；在K1B前还须冻结最终 `beta_return`；任何改变 household `rah` 的runtime integration前必须另外冻结 payoff-return concept。
