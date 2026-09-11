@@ -2,69 +2,43 @@
 更新：2026-09-11。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
 ## 当前状态
-状态：`K1A_STATIC_MAPPING_ACCEPTED__BETA_DISTANCE_2_FROZEN__BETA_RETURN_POINT5_PREREGISTERED__BOUNDED_K1A_INTEGRATION_ACTIVE`。
+状态：`K1A_BOUNDED_INTEGRATION_PARTIAL_ACCEPTED__VALIDATOR_REPAIRED__SYMMETRIC_AB_RERUN_ACTIVE`。
 
-最新 accepted K1A zero-science candidate：`2ad7c74876d91326c127d8c7ef1c400991320968`。
-Reviewer acceptance：`docs/CH5_MP4C_K1A_2018_DISTANCE_SCORE_MAPPING_AND_STATIC_PORTFOLIO_DIAGNOSTIC_ACCEPTANCE.md`。
-当前 active Builder task：`tasks/CH5_MP4C_K1A_EQUAL_SHARE_VS_GEOGRAPHIC_BETA2_BOUNDED_INTEGRATION.md`。
+最新 accepted bounded-integration candidate：`f57fec4d66bb82d48dc02bed775761ec194e0084`。
+Reviewer acceptance：`docs/CH5_MP4C_K1A_EQUAL_SHARE_VS_GEOGRAPHIC_BETA2_BOUNDED_INTEGRATION_ACCEPTANCE.md`。
+当前 active Builder task：`tasks/CH5_MP4C_K1A_EQUAL_SHARE_VS_GEOGRAPHIC_BETA2_SYMMETRIC_RERUN.md`。
 Builder默认`gpt-5.6-sol / medium`。Results eligibility=`FALSE`。
 
-资本网络总体科学设计冻结稿：
-`docs/CH5_MP4C_BILATERAL_CAPITAL_NETWORK_SCIENTIFIC_DESIGN_FREEZE_CURRENT.md`。
-K1 scoring/data 冻结稿：
-`docs/CH5_MP4C_K1_SCORING_AND_DATA_CONTRACT_FREEZE_CURRENT.md`。
+资本网络总体科学设计冻结稿：`docs/CH5_MP4C_BILATERAL_CAPITAL_NETWORK_SCIENTIFIC_DESIGN_FREEZE_CURRENT.md`。
+K1 scoring/data 冻结稿：`docs/CH5_MP4C_K1_SCORING_AND_DATA_CONTRACT_FREEZE_CURRENT.md`。
 
-## K1A zero-science mapping：已接受
-保护的省会地理距离 workbook SHA-256：`26E44D174A8EFFBDCA526D95DA38F0E5883E0C78FDFD036D2DFF1D1FBA5A3566`；读取范围 `geom!B2:AF32`；31/31 label-backed mapping 完整；961/961 finite；missing=0；negative=0；`max|D-D.T|=0`；`D_max=3639.514265`，最大距离为黑龙江–西藏；normalized off-diagonal range `[0.030224736871583606,1]`。
+## 已冻结 K1A/K1B 参数
+- K1A equal-share：`beta_distance=0`, `beta_return=0`；
+- K1A geography benchmark：`beta_distance=2`, `beta_return=0`；
+- K1B future benchmark preregistered：`beta_return=.5`，当前不运行；
+- theta 固定为 `inter_prv_ratio_i`；
+- source-faithful labor；
+- smoothing/partial adjustment OFF；
+- K1A payoff bridge = current source-used/clipped `ra`，仅分类为 `K1A_SOURCE_FAITHFUL_PAYOFF_BRIDGE__NOT_FINAL_ECONOMIC_RETURN_AUTHORITY`；
+- C1 `GovInv=max(Ktarget-Kprivate,0)` 不变。
 
-2018 theta authority SHA-256：`5DAD517983CBC436A5FB3E5AD85F1257D957D844994180D15929044A049C7212`；31/31 active order；源公式复算最大残差0；theta range `[0,0.3]`。
+## 前一 bounded integration：partial evidence 已接受
+Pre-run 50/50 focused tests 通过。Path A 在完成 turn 1 后，于 turn-2 entry 被 task-wrapper 中遗留的 legacy `rah` validator assertion 阻断；由于 scientific state 已推进，未重跑。该 validator 后续仅做 zero-science provenance repair：改为验证 prior completed K1A allocation 使用同一 `S` 的 `rah`，没有改变经济方程、参数、容差、solver 或 state evolution。
 
-Static `beta_distance=[0,.5,1,2,4]` diagnostics 完成。mean normalized entropy 从 beta0 的 `1.000000` 降至 beta4 的 `0.943791`；31/31 origins entropy 随 beta weakly decreases；equal-share 与全部 capital/share conservation residuals 均在 `1e-12` 内。scientific/model/runtime calls=0。
+Path B 在 repaired validator 下完成 25 turns。806 个已完成 province-turn 中，quantity/`rah` same-`S`、home retention、origin/national private-capital conservation 与 no destination-theta double weighting 全部通过。C1 始终保持 `GovInv=max(Ktarget-Kprivate,0)`；观察样本中 `Kprivate>=Ktarget` 为0，private-only overshoot为0。
 
-## Owner 最新参数冻结
-Owner 已批准：
+Path B turn25 仍未满足冻结 outer convergence predicate：`max_nk_gap=1.8619512598405663e-09 > 1e-9`。不得调 tolerance 或 solver。
 
-- K1A pure-geographic benchmark：`beta_distance=2.0`；
-- 第一条 bounded comparison：repaired equal-share `beta_distance=0` vs pure-geographic `beta_distance=2`；
-- 两条 K1A path 均 `beta_return=0`；
-- K1B future benchmark preregistered：`beta_return=0.5`，但当前不授权 K1B runtime；
-- K1B attractiveness 继续使用 completed-iteration raw unclipped `ra0` cross-sectional z-score，只能进入下一 outer iteration；
-- K1A household payoff 暂时保持 current source-used/clipped `ra`，分类为 `K1A_SOURCE_FAITHFUL_PAYOFF_BRIDGE__NOT_FINAL_ECONOMIC_RETURN_AUTHORITY`；
-- smoothing / partial adjustment = OFF；
-- 第一次 K1 integration 继续 source-faithful labor；
-- K2 继续不授权。
+raw-return pressure 仍很强：Path B pooled raw `ra0` 775 条中 755 条高于 `.09`，upper clipping 755 次。旧 `.02/.09` 继续仅是 empirical numerical safeguard，不获得最终经济 authority。
 
-Payoff bridge 的目的只是保持 attribution：本轮改变 private-capital quantity/network，而不同时改变 household return-level law。它不代表 `[.02,.09]` 已获得经济识别。
+## 当前 active symmetric rerun
+新 task 只为消除 predecessor wrapper defect 造成的非对称证据：从 identical accepted initialization，在已修正 provenance validator 下重新执行两条预注册路径，每条最多25 turns。
 
-## 当前 active bounded K1A integration
-Exact task：`tasks/CH5_MP4C_K1A_EQUAL_SHARE_VS_GEOGRAPHIC_BETA2_BOUNDED_INTEGRATION.md`。
+不得改变：beta、theta、payoff bridge、labor、smoothing、C1、return/wage bounds、HJB/KFE/firm science、grids、tolerances、iteration limits、solver semantics。
 
-任务授权将 accepted K1 successor 接入 corrected-2018 bounded route，并执行恰好两个 preregistered trajectories：
+本轮要获得完整 common-prefix A/B evidence，重点比较 Kprivate、GovInv、total K、raw/used returns、rah、output、wage 与 outer convergence。若某路径科学性停止，则只报告真实共同前缀，不得重调科学对象。
 
-1. equal-share beta distance 0；
-2. pure-geographic beta distance 2。
+## KFE 与 Results 边界
+所有当前 empirical KFE 仍为 diagnostic-only；corrected-2018 finite-box upper-b leakage + MATLAB-style pinning 是独立 blocker。K1A bounded run 不构成 KFE closure、steady-state acceptance、annual/IRF/welfare 或 Results。
 
-每条最多25 outer turns；非资本设定、初始数据、theta、payoff bridge、labor、C1公式必须一致。
-
-本轮重点验收：
-
-- K1 origin/national private-capital conservation；
-- home retained capital；
-- quantity/rah same-matrix accounting；
-- C1 `GovInv=max(Ktarget-Kprivate,0)` 联合闭合；
-- `Kprivate>=Ktarget` 时 GovInv=0 且 private-only overshoot 被如实保留；
-- raw `ra0 = rk + profit/K - delta` decomposition；
-- `.02/.09` clipping pressure/counts 在 K1 后的变化；
-- equal-share vs geography 对 Kprivate、GovInv、K/Ktarget、raw/used returns、rah 和现有 convergence statistics 的差异；
-- source-faithful labor 确实保持；
-- corrected-2018 empirical KFE caveat 继续保留。
-
-## 仍未解决的科学对象
-
-K1A 完成后仍需根据新 private-K / raw-ra evidence 决定最终 household payoff-return concept。不得因为 trajectory convergence 事后修改 beta、return bounds、solver、tolerance、grid、C1 formula 或 smoothing。
-
-K1B 只有在 K1A bounded evidence 被 Reviewer 接受后才可启动；`beta_return=.5` 虽已预注册但尚未授权运行。K2 functional form、economic distance/market size 扩展、normalized labor stack、empirical KFE production closure 均属于后续阶段。
-
-## 当前边界
-
-本任务不是 steady-state acceptance、annual/GE、shock/IRF、welfare 或 Results。Results eligibility 继续为 `FALSE`。
+Results eligibility=`FALSE`。
