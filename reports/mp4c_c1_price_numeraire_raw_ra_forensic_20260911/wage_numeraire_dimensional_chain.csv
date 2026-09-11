@@ -1,0 +1,10 @@
+﻿object,source_equation_or_role,implied_unit,mapping_status
+Yt,aggregate firm output,MU_10WAN_YUAN_PER_MODEL_PERIOD,SOURCE_BOUND_MACRO_UNIT
+Kt,private K plus C1 residual public asset,MU_10WAN_YUAN_STOCK,SOURCE_BOUND_MACRO_UNIT
+Lt,destination firm labor supply from source-faithful migration,MODEL_LABOR_ON_NU_AXIS,NOT_OBSERVED_WORKPLACE_EMPLOYMENT
+Zt,Y/(K^alpha L^(1-alpha)),(MU/NU)^(1-alpha)_PER_MODEL_PERIOD,SAME_YEAR_IDENTITY
+KNratio,K/L,MU/NU,MACRO_RATIO
+wt0,mt*(1-alpha)*Z*(K/L)^alpha = mt*(1-alpha)*Y/L,MU/NU_PER_MODEL_PERIOD,MACRO_IMPLIED_FIRM_WAGE
+wjt,"clip(wt0,[.8,1.3]) with tax compensation",MUST_MATCH_WT0_IF_ECONOMICALLY_COMPARABLE,SOURCE_VALUE_WITH_UNRESOLVED_ECONOMIC_UNIT
+household_w,unnormalized nonlinear 31-destination CES-like composite of wjt after tax/wedge,ALGEBRAIC_WJT_UNIT_IF_PHI_IS_DIMENSIONLESS,IMPLIED_RELATIVE_UNIT_ONLY__NOT_DIRECT_LEVEL_COMPARATOR
+MU_over_NU,100000 yuan / 100 persons,1000_YUAN_PER_PERSON_PER_MODEL_PERIOD,MACRO_CONVERSION_ONLY__HOUSEHOLD_PERIOD_MAPPING_UNRESOLVED
