@@ -1,103 +1,148 @@
 # Chapter 5 当前交接
-更新：2026-09-10。唯一仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
+更新：2026-09-11。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-Owner为最终科学authority；ChatGPT为L3 independent reviewer / scientific-route authority / GitHub exact-task issuer / acceptance-gate reviewer；Codex为bounded Builder，默认`gpt-5.6-sol / medium`。GitHub live main是唯一repository-state authority；聊天不能替代task authority。
+Owner为最终scientific authority；ChatGPT为L3 independent reviewer / scientific-route authority / GitHub exact-task issuer / acceptance-gate reviewer；Codex为bounded Builder，默认`gpt-5.6-sol / medium`。GitHub live main是唯一repository-state authority；聊天不能替代task authority。
 
 ## 新会话恢复顺序
-1. fresh-fetch live `origin/main`，不要把本交接SHA当作最新值；
+1. fresh-fetch live `origin/main`，不要把本交接中的SHA假定为最新；
 2. 读取`AGENTS.md`；
 3. 读取`project_rules/PROJECT_RULE_INDEX_CURRENT.md`；
 4. 读取`docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`；
 5. 读取本交接；
-6. 读取`docs/CH5_MP4C_2018_FIVE_TURN_KFE_LEAKAGE_ATTRIBUTION_ACCEPTANCE.md`及其report；
-7. 如新会话决定继续科学工作，必须先发布新的exact GitHub task。
+6. 读取`docs/CH5_MP4C_K1_BILATERAL_CAPITAL_NETWORK_REPAIR_AND_ENDOGENOUS_FOREIGN_SHARE_IMPLEMENTATION_ACCEPTANCE.md`及其report；
+7. 如继续科学工作，必须先完成Owner/Reviewer的K1 scoring/data contract冻结，再发布新的exact GitHub task。
 
 ## 当前状态
-状态：`FIVE_TURN_KFE_ATTRIBUTION_ACCEPTED__SAME_FINITE_BOX_UPPER_B_LEAKAGE_AND_PINNING_MECHANISM_CONFIRMED__OWNER_BOUNDARY_DECISION_REQUIRED`。
+状态：`K1_BILATERAL_CAPITAL_NETWORK_ACCEPTED__HOME_CAPITAL_RESTORED__PORTFOLIO_AND_CAPITAL_CONSERVATION_ENFORCED__LAGGED_ENDOGENOUS_FOREIGN_SHARE_ENGINE_READY_FOR_PARAMETER_FREEZE`。
 当前 active Builder task：无。
-最新接受候选：`ea4ac44fe3c65c506ff7fdfbdbf29d96078cc5c6`。
+最新接受候选：`742ae11dbb057c7d33650ed4bc8d4db59b90d435`。
+Reviewer acceptance：`docs/CH5_MP4C_K1_BILATERAL_CAPITAL_NETWORK_REPAIR_AND_ENDOGENOUS_FOREIGN_SHARE_IMPLEMENTATION_ACCEPTANCE.md`。
 Results eligibility=`FALSE`。
 
-## 2018 canonical 输入已闭合
-本地私有workbook：`D:\ProjectTemp\ch5-canonical-data-workbook-20260909-001\CH5_MULTI_PROVINCE_CANONICAL_DATA_V1.xlsx`；SHA256=`AEA5A12B5E6474056C1C3EF84BF0156BA88442EF54B0A4FB9C4C6F33CA963F67`。GitHub不保存本体。
+## 本会话最重要的新科学发现：legacy private-capital network 有结构性遗漏
+Owner确认原经济意图：每省household aggregate illiquid wealth既持有本省企业资产，也持有外省企业资产；本省权重更高；household `rah`应为实际省际portfolio的收益加权。
 
-安徽2018 final-use：
-- GDP=`34010.9`亿元（四经普后安徽省统计局官方修订，一位小数精度；旧workbook `34010.91`仅在该精度下匹配）；
-- POP=`6076`万人（后续官方年鉴按2020人口普查修订）；
-- PIM `K2018=1357314108.2013683`万元，V2 transformed=`1357314108201.3684`；
-- alpha=`.772866243094144`；
-- PLM vintage19/window2009–2018；same-year Zt约`.0006934644495858679`。
+protected MATLAB / source-faithful Python旧逻辑实际上：
+- `Kt_supply_i`只计算其他省cross-province inflows，漏掉`(1-theta_i)*At_i*N_i`本省retained private capital；
+- `rah_i`外省部分再次乘destination `theta_j`，这是早期“destination investment weight”设计残留，与后来`theta`仅表示origin对外投资比例的简化意图不一致；因此portfolio weights一般不和为1。
 
-PIM继续冻结：`K0=I0/.1`、`Kt=(1-.096)K(t-1)+I(t-1)`；资本是model-derived calibration object，不是官方资本存量；2011投资统计定义断点保留。
+这很可能解释此前private-K/Ktarget过小及household return被机械压低的部分现象。旧source继续保留用于parity，但不再代表新的economic successor design。
 
-## corrected-2018 已接受轨迹
-### Turn1–3
-turn1、turn2、turn3均完整31省执行并接受。
-安徽：
-- turn1：`rah=.09`；raw `ra0=-.02496997113112164`；used `ra=.02`；raw wage `2.5721358283733027`；HJB64；
-- turn2：`rah=.0829892058879816`；raw `ra0=-.024968505109415375`；used `ra=.02`；raw wage `2.137336530692252`；HJB31；`nk_gap=.34756612158493083`；
-- turn3：`rah=.0184420457528848`；raw `ra0=-.024968792977977675`；used `ra=.02`；raw wage `2.205170377619017`；HJB11；`nk_gap=.16103719246632298`。
+## Owner冻结的资本网络理论方向：nested Scheme B
+不再尝试31-asset HJB。household继续两资产`(b,a)`；每个origin household sector的aggregate illiquid wealth在post-household portfolio layer分配到31省企业。
 
-turn3已真实证明corrected firm `ra=.02`进入下一household composite-return构造。turn3 source old-ra vector 31/31均`.02`，SHA256=`79EBB857CF8A7AD90E3418F9B2A6D2E5D294FFFB6E25C3A71BD0FC77B0A256D8`；`manual_override=false`。
+最终愿景是双层：
+1. home-vs-foreign margin；
+2. foreign destinations内部的bilateral allocation。
 
-### Five-turn bounded prefix
-候选`9864129dd2e97bae97238ab9cc588aea48682d29`完整执行5 turns/155 province updates，0 scientific retries；turn1–3 predecessor mismatch均0。
+但K1第一阶段只内生化foreign destination shares，暂时保留`theta_i=inter_prv_ratio_i`作为origin总对外投资比例。K2未来才讨论让`theta_i`本身内生。
 
-安徽A+B：turn2 `11.978258156033768` → turn3 `1.8919618910437164` → turn4 `1.8927517068346027` → turn5 `1.8926686768743746`。由于density validity失败，这些只可称diagnostic quantities。
+## K1 accepted contract
+新模块：`src/ch5_two_asset_hank/multi_province/capital_network.py`。
 
-turn4首次native adaptation gate开启；turn4/5均执行31省Zt adjustment与`LOW_RA_DECREASE_0P9` GovInv action。
+orientation：rows=destination，columns=origin。
 
-Reviewer five-turn marker：
-`CORRECTED_2018_FIVE_TURN_DIAGNOSTIC_BLOCKER_ACCEPTED__KFE_SOURCE_FREE_STATIONARITY_AND_UPPER_B_LEAKAGE_BLOCK_PREFIX_INTERPRETATION`。
+对origin i：
+- `W_i=A_i*N_i`；
+- `S[i,i]=1-theta_i`；
+- `S[j,i]=theta_i*P[j,i]` for `j!=i`；
+- `sum_j S[j,i]=1`；
+- `M_K[j,i]=S[j,i]*W_i`；
+- `Kprivate_j=sum_i M_K[j,i]`；
+- `rah_i=sum_j S[j,i]*portfolio_return_by_destination[j]`。
 
-turn4/5全31省density均`DIAGNOSTIC_ONLY`；negative density weighted mass仅机器精度，material问题是source-free stationarity residual + upper-b outward leakage；每轮全国620 positive upper-b leak cells，其余三face outward leak=0。
+quantity allocation与household return必须使用同一个`S`。
 
-## 最新全国KFE归因
-任务：`tasks/CH5_MP4C_2018_FIVE_TURN_KFE_LEAKAGE_ATTRIBUTION.md`。
-候选：`ea4ac44fe3c65c506ff7fdfbdbf29d96078cc5c6`。
-Builder verdict：`FIVE_TURN_KFE_ATTRIBUTION_PASS__SAME_UPPER_B_LEAKAGE_AND_PINNING_MECHANISM_CONFIRMED`。
-Reviewer marker：`FIVE_TURN_KFE_ATTRIBUTION_ACCEPTED__SAME_FINITE_BOX_UPPER_B_LEAKAGE_AND_PINNING_MECHANISM_CONFIRMED__OWNER_BOUNDARY_DECISION_REQUIRED`。
+foreign conditional share engine：
+`score[j,i] = -beta_distance*distance_score[j,i] + beta_return*lagged_return_score[j]`，仅foreign destinations参与stable softmax。
 
-这是0 scientific/model/solver calls的saved-artifact归因。
+`beta_distance`、`beta_return`都是显式必填参数，没有默认值；当前没有科学识别/选择。
 
-全国turn4/5：
-- material source-free residual：31/31、31/31；
-- pin-row≈全部L1 residual：31/31、31/31；
-- positive upper-b escape：31/31、31/31；
-- leak cells lower-b/upper-b/lower-a/upper-a=`0/620/0/0`每轮；
-- pin-row L1 share=`.9999999999869693–.9999999999982326`；
-- max individual off-pin residual=`5.352822169074709e-15` < `128eps≈2.842e-14`；
-- turn4 signed residual-vs-escape max error≈`1.578e-16`，turn5≈`1.793e-16`；
-- implicit-source-vs-escape max discrepancy≈`3.974e-16` / `4.566e-16`；
-- 无additional material residual source。
+return signal与payoff return分离：
+- `lagged_return_score_by_destination`只决定foreign attractiveness；
+- `portfolio_return_by_destination`只决定household `rah`。
 
-机制已确认与call725 `rah=.07`相同：upper-b finite-box outside-grid offdiagonal省略但diagonal rate保留；post-loop KFE转置后替换`k=295`方程，`rhs[k]=.007`，归一化；被丢弃source-free equation在代数上等价于balancing source for upper-b escape。此source equivalence不是源码显式的household entry/exit经济机制。
+## lagged timing必须保留
+Owner明确支持lagged update以避免same-turn nonlinear feedback导致震荡。
 
-源码定位（accepted report）：
-- `exports/matlab_faithful_two_asset_ha.py:424-450`
-- `src/ch5_two_asset_hank/matlab_faithful_hjb.py:115-116`
-- `src/ch5_two_asset_hank/matlab_faithful_kfe.py:30-47`
+冻结合同：allocation iteration n+1只能使用completed iteration n的return-attractiveness signal。禁止same-turn `firm -> return -> portfolio shares -> K -> firm`闭环。
 
-HJB-loop operator仍有独立negative-offdiagonal问题：turn4/5均19个；post-loop KFE operator为0 negative offdiagonals。不能用后者掩盖前者。
+这属于steady-state numerical iteration timing，不是现实calendar-time政府/家庭瞬时调整解释。
 
-## 当前科学边界
-没有active task。禁止自动继续turn6+、new KFE solve、steady state、GE、annual、IRF、Results。禁止自动实现production boundary/grid/source/pinning repair。
+## K1 accepted evidence
+候选：`742ae11dbb057c7d33650ed4bc8d4db59b90d435`。
 
-D1–D3仍为deferred redesign proposals，不因本次mechanism confirmation自动采用。
+final focused tests：`29/29` PASS；compile、diff/show checks PASS；manifest `15/15` readback；scientific/model/runtime calls=`0`。
 
-下一步必须先由Owner作finite-box/KFE closure科学决策，至少要区分：
-1. upper-b state-constraint/no-outflow boundary closure；
-2. generator total-drift consistency；
-3. source-free KFE / pinning formulation；
-4. grid/domain adequacy；
-5. HJB-loop operator admissibility。
+非对称fixture：
+- origin wealth `[20,60,120]`，全国200；
+- legacy destination private K `[63,50,17]`；
+- repaired `[79,80,41]`；
+- repaired-minus-legacy `[16,30,24]`，精确等于遗漏的home retained capital；
+- legacy implied `rah` weight sums `[.93,.75,.48]`；
+- repaired `[1,1,1]`；
+- national conservation residual 0。
 
-建议新会话先讨论这些设计选项及与原MATLAB经济含义/算法忠实度的关系，再冻结一份boundary/KFE closure design task；不要直接跑模型。
+`beta_distance=beta_return=0`时，foreign shares精确退化为`1/(N-1)`，即Owner原来想要的“固定theta + 外省均匀投资”版本，但现在资本与return权重都正确守恒。
 
-## Workflow偏好
-- GitHub main唯一authority；
-- ChatGPT可在Owner standing authorization下验收、非force合并已接受候选、发布下一bounded task；
+legacy `src/ch5_two_asset_hank/multi_province/capital_allocation.py`保持byte-identical，SHA256=`BB3F283BD782399A5C1C9AEE06DC50BBA61A0599BF062669DE0B1EBBB01AEE40`。
+
+## C1 GovInv：继续有效但必须在K1后重验
+Owner冻结GovInv为不可直接观测政府/公共生产性资产 residual：
+`GovInv=max(Ktarget-Kprivate,0)`。
+
+此前C1 contemporaneous 25-turn bounded path消除了GovInv-driven 2–3x capital overshoot。但该路径使用legacy private-capital allocation。K1会显著改变`Kprivate`，因此未来必须把K1 private capital与C1 residual public assets联合重新验证，不能直接沿用旧private-K量级。
+
+## price/return forensic：结论继续有效但需要K1后复核
+旧C1路径turn25 raw `ra0` 30/31高于`.09`，主要由`rk=mt*alpha*Y/K`驱动；profit/K几乎为零，delta=.025只向下。`.02/.09`是`EMPIRICAL_NUMERICAL_SAFEGUARD`，不是经济识别区间；wage `[.8,1.3]`绝对单位未闭合。
+
+但由于K1修复会改变private K spatial allocation、firm K构成及Y/K，当前不要直接扩大return bounds。K1 scientific integration后应重新做raw-ra decomposition。
+
+## labor route
+origin-preserving bilateral labor normalization successor已接受：完整destination x origin劳动矩阵、origin-column和全国劳动守恒。第一次K1 scientific integration建议仍冻结source-faithful labor，以隔离capital-network effect；K1通过后再单独叠加normalized labor。
+
+## KFE状态：必须区分clean方法与empirical blocker
+clean/source-free KFE稳定方法学已验证：
+- HJB与KFE共享同一backward generator `Q`；
+- forward=`Q.T`；
+- row sums=0；
+- off-diagonal非负；
+- unique closed recurrent class gate；
+- stationary probability mass `p`先解，再由cell weights得到density；
+- normalization不能修复boundary leakage。
+
+但当前corrected-2018 empirical finite-box upper-b leakage + MATLAB-style pinning仍是独立scientific blocker。资本网络修复不会自动解决KFE。
+
+## corrected-2018数据合同
+活动合同：actual 2018 GDP/POP、raw-NBS GFCF Track-A PIM capital、`delta_pim=.096`、`alpha=.7380939146868483`、MU=`10万元`、NU=`100 persons`、same-year Zt0。
+
+asset bridge `beta_a=1`仍为`SOURCE_FAITHFUL_DIAGNOSTIC_ONLY`，不得通过convergence/target matching反推。
+
+## 下一Owner/Reviewer决策：不要直接跑模型
+单次多省稳态可能超过2小时。下一会话先冻结K1 scoring/data contract，再授权科学运行。
+
+至少要讨论并冻结：
+1. `distance_score`第一版使用什么：纯geographical distance，还是加入pgdp/经济距离；
+2. distance如何dimensionless normalize；
+3. `lagged_return_score`使用raw `ra0`、相对return、标准化return、expected/smoothed return中的哪一种；
+4. return score的period/normalization；
+5. `beta_distance`、`beta_return`如何预注册或数据识别；
+6. 是否先跑`beta_return=0`的space-only K1A，再加入lagged-return tilt K1B；
+7. 是否需要portfolio partial adjustment/smoothing；
+8. payoff return用什么对象；
+9. 什么时候才进入K2 endogenize `theta_i`。
+
+当前Reviewer倾向的最低风险顺序：
+K1A repaired equal/space-only allocation → K1B lagged-return endogenous foreign shares → K2 endogenous home-vs-foreign margin。
+
+在任何science前，应优先做zero-science 2018 distance/score mapping receipt与static portfolio matrix diagnostics，避免边跑边调。
+
+## Workflow规则
+- GitHub main唯一repository authority；
+- Owner是最终scientific authority；
+- ChatGPT可在standing authorization下fresh-fetch、验收、non-force纳入main、更新状态与发布bounded exact task；
 - substantive scientific choice必须交Owner；
-- Codex prompt必须单一代码框；
-- 以后每次正式发布exact task时，同一回复自动附Codex启动prompt；
-- 不force push，不reset/clean/stash，不调参数/solver/tolerance求PASS；失败科学调用也计数。
+- exact task发布时同一回复附完整Codex startup prompt；
+- no force push/reset/clean/stash；
+- 不调参数/solver/tolerance求PASS；
+- Results eligibility维持FALSE，直到独立Results gate。
