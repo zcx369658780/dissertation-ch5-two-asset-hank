@@ -12,23 +12,18 @@
 6. `docs/CH5_MP4C_K1_SCORING_AND_DATA_CONTRACT_FREEZE_CURRENT.md`
 7. 若存在active task，再读取该exact task及直接相关acceptance/report。
 
-当前状态：`K1A_STATIC_MAPPING_ACCEPTED__BETA_DISTANCE_2_FROZEN__BETA_RETURN_POINT5_PREREGISTERED__BOUNDED_K1A_INTEGRATION_ACTIVE`。
-当前 active Builder task：`tasks/CH5_MP4C_K1A_EQUAL_SHARE_VS_GEOGRAPHIC_BETA2_BOUNDED_INTEGRATION.md`。
-最新 accepted K1A zero-science candidate：`2ad7c74876d91326c127d8c7ef1c400991320968`。
-Reviewer acceptance：`docs/CH5_MP4C_K1A_2018_DISTANCE_SCORE_MAPPING_AND_STATIC_PORTFOLIO_DIAGNOSTIC_ACCEPTANCE.md`。
+当前状态：`K1A_BOUNDED_INTEGRATION_PARTIAL_ACCEPTED__VALIDATOR_REPAIRED__SYMMETRIC_AB_RERUN_ACTIVE`。
+当前 active Builder task：`tasks/CH5_MP4C_K1A_EQUAL_SHARE_VS_GEOGRAPHIC_BETA2_SYMMETRIC_RERUN.md`。
+最新 accepted bounded-integration candidate：`f57fec4d66bb82d48dc02bed775761ec194e0084`。
+Reviewer acceptance：`docs/CH5_MP4C_K1A_EQUAL_SHARE_VS_GEOGRAPHIC_BETA2_BOUNDED_INTEGRATION_ACCEPTANCE.md`。
 Results eligibility=`FALSE`。
 
-资本网络总体科学设计冻结稿：
-`docs/CH5_MP4C_BILATERAL_CAPITAL_NETWORK_SCIENTIFIC_DESIGN_FREEZE_CURRENT.md`。
-K1 scoring/data 当前冻结稿：
-`docs/CH5_MP4C_K1_SCORING_AND_DATA_CONTRACT_FREEZE_CURRENT.md`。
+Owner 已冻结 K1A runtime comparison：equal-share `beta_distance=0` 对 pure-geographic `beta_distance=2`，两者 `beta_return=0`；K1B `beta_return=.5` 仅预注册。K1A household payoff 继续使用 current source-used/clipped `ra` 作为 `K1A_SOURCE_FAITHFUL_PAYOFF_BRIDGE__NOT_FINAL_ECONOMIC_RETURN_AUTHORITY`。theta 固定、source-faithful labor、smoothing OFF、C1 `GovInv=max(Ktarget-Kprivate,0)` 均保持。
 
-Owner 已根据 zero-science static diagnostics 冻结第一条 K1A runtime 比较：repaired equal-share `beta_distance=0` 对 pure-geographic `beta_distance=2`，两者均 `beta_return=0`。K1B `beta_return=.5` 已预注册但尚未授权运行。第一版 K1A household payoff 继续使用 current source-used/clipped `ra`，仅作为 `K1A_SOURCE_FAITHFUL_PAYOFF_BRIDGE__NOT_FINAL_ECONOMIC_RETURN_AUTHORITY`，用于保持资本网络变化的归因；这不认可历史 `[.02,.09]` 为最终经济回报区间。
+前一 bounded task 的实现与 Path B 25-turn evidence 已接受，但 Path A 在完成 turn 1 后被 task-wrapper 中遗留的 legacy `rah` validator assertion 阻断。由于 scientific state 已推进，Builder 正确地没有重跑。该 assertion 已作为 zero-science provenance defect 修正为对 prior completed K1A same-`S` allocation 的验证；没有改变经济方程、参数、容差或 solver。
 
-K1A/K1B 继续固定 `theta_i=inter_prv_ratio_i`。foreign destination shares 采用 accepted `destination x origin` 资本矩阵；quantity 与 `rah` 使用同一 `S`。same-turn return feedback 禁止；K1B 未来只能使用 completed-iteration raw unclipped `ra0` z-score进入下一 outer iteration。第一版 smoothing/partial adjustment 关闭，第一次 K1 integration 继续 source-faithful labor。
+当前 symmetric rerun task 只允许在 repaired validator 下，从 identical accepted initialization 重新运行两条 preregistered K1A paths，每条最多25 turns。不得改变 beta、payoff bridge、labor、C1、bounds、solver/tolerance/grid；不得进入 K1B/K2、standalone KFE、annual/GE/IRF/Results。
 
-当前 exact task 授权的科学执行仅为两条 corrected-2018 bounded K1A diagnostic trajectories：equal-share beta 0 与 geography beta 2；每条最多25 outer turns。任务必须重验 K1 private-capital conservation、C1 `GovInv=max(Ktarget-Kprivate,0)`、private-only overshoot、raw-ra decomposition/clipping pressure，并保持 source-faithful labor。K1B/K2、standalone KFE、steady-state acceptance、annual/GE/IRF/Results 均不在本任务范围。
+已接受的 partial evidence 还显示：806 个完成 province-turn 的 K1 quantity/rah same-`S` 与资本守恒均通过；Path B 25 turns 后仍未满足冻结 outer predicate；raw `ra0` pressure 仍严重，Path B `755/775` 高于 `.09`。corrected-2018 empirical finite-box upper-b leakage + MATLAB-style pinning 仍是独立 KFE blocker。
 
-C1 residual public-asset authority继续有效。KFE治理继续区分 clean/source-free generator-KFE 方法学与 corrected-2018 empirical finite-box upper-b leakage/pinning blocker。任何 bounded K1A PASS 均不能被写成 KFE 或 Results 已通过。
-
-GitHub live main是repository-state authority；聊天不能替代exact task。正式发布task时同一回复自动附Codex启动prompt。
+GitHub live main 是 repository-state authority；聊天不能替代 exact task。正式发布 task 时同一回复附 Codex startup prompt。
