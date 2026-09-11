@@ -45,6 +45,15 @@ from .migration_labor import (
     OriginPreservingNormalizedMigrationLaborResult,
     reconstruct_origin_preserving_normalized_migration_labor,
 )
+from .government_assets import (
+    CAPITAL_UNIT,
+    RESIDUAL_PUBLIC_ASSET_POSITIVE,
+    RESIDUAL_PUBLIC_ASSET_ZERO_PRIVATE_AT_OR_ABOVE_TARGET,
+    ResidualGovernmentAssetBatch,
+    ResidualGovernmentAssetLevel,
+    residual_government_asset_level,
+    residual_government_asset_levels,
+)
 from .province_contracts import (
     PROVINCE_ORDER,
     HouseholdOuterOutputs,
@@ -69,6 +78,7 @@ __all__ = [
     "ANNUAL_PREMODEL_OUTPUT_IDENTITY",
     "ANNUAL_PREMODEL_OUTPUT_VERSION",
     "CANONICAL_ANNUAL_INPUT_SCHEMA",
+    "CAPITAL_UNIT",
     "PLM_WINDOW_TYPE",
     "TEMPORAL_CONTRACT_VERSION",
     "DATA_PROVENANCE_MANIFEST",
@@ -87,6 +97,8 @@ __all__ = [
     "TERMINATION_CONVERGED",
     "TERMINATION_MAX_ITERATIONS",
     "PROVINCE_ORDER",
+    "RESIDUAL_PUBLIC_ASSET_POSITIVE",
+    "RESIDUAL_PUBLIC_ASSET_ZERO_PRIVATE_AT_OR_ABOVE_TARGET",
     "DataArtifactProvenance",
     "AdaptiveAction",
     "FrozenHouseholdOutputs",
@@ -101,6 +113,8 @@ __all__ = [
     "OriginPreservingNormalizedMigrationLaborInputs",
     "OriginPreservingNormalizedMigrationLaborResult",
     "OriginPreservingNormalizedOneTurnResult",
+    "ResidualGovernmentAssetBatch",
+    "ResidualGovernmentAssetLevel",
     "PreFrozenHouseholdOutputBatch",
     "ProvinceAxis",
     "ProvinceMatrix",
@@ -118,6 +132,8 @@ __all__ = [
     "run_source_faithful_one_turn",
     "run_origin_preserving_normalized_one_turn",
     "reconstruct_origin_preserving_normalized_migration_labor",
+    "residual_government_asset_level",
+    "residual_government_asset_levels",
     "run_manual_steady_state",
     "write_canonical_artifact",
 ]

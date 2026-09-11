@@ -1,0 +1,63 @@
+{
+  "at_or_above_target_identity": "firm_K_accounting_MU=Kprivate_current_MU; GovInv_residual_MU=0",
+  "batch_api": "residual_government_asset_levels",
+  "batch_shape": [
+    31
+  ],
+  "below_target_identity": "firm_K_accounting_MU=Ktarget_MU",
+  "capital_unit": "MU_10WAN_YUAN",
+  "classifications": [
+    "RESIDUAL_PUBLIC_ASSET_POSITIVE",
+    "RESIDUAL_PUBLIC_ASSET_ZERO_PRIVATE_AT_OR_ABOVE_TARGET"
+  ],
+  "economic_object": "UNOBSERVED_GOVERNMENT_PUBLIC_PRODUCTIVE_ASSET_RESIDUAL",
+  "fail_closed": [
+    "Ktarget_MU_NONPOSITIVE_OR_NONFINITE",
+    "Kprivate_current_MU_NEGATIVE_OR_NONFINITE",
+    "SHAPE_MISMATCH",
+    "PROVINCE_ORDER_MISMATCH"
+  ],
+  "formula": "GovInv_residual_MU=max(Ktarget_MU-Kprivate_current_MU,0)",
+  "inputs": [
+    "Ktarget_MU",
+    "Kprivate_current_MU"
+  ],
+  "province_order": [
+    "北京",
+    "天津",
+    "河北",
+    "山西",
+    "内蒙古",
+    "辽宁",
+    "吉林",
+    "黑龙江",
+    "上海",
+    "江苏",
+    "浙江",
+    "安徽",
+    "福建",
+    "江西",
+    "山东",
+    "河南",
+    "湖北",
+    "湖南",
+    "广东",
+    "广西",
+    "海南",
+    "重庆",
+    "四川",
+    "贵州",
+    "云南",
+    "西藏",
+    "陕西",
+    "甘肃",
+    "青海",
+    "宁夏",
+    "新疆"
+  ],
+  "return_signal_fields": [],
+  "runtime_connected": false,
+  "scalar_api": "residual_government_asset_level",
+  "schema": "CH5_MP4C_C1_RESIDUAL_PUBLIC_ASSET_API_CONTRACT_V1",
+  "tuning_coefficients": []
+}
