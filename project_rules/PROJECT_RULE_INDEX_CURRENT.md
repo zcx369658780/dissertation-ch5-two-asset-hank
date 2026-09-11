@@ -10,23 +10,23 @@
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
 5. 若存在active task，再读取该exact task及直接相关acceptance/report。
 
-当前状态：`C1_PRICE_NUMERAIRE_RAW_RA_FORENSIC_ACCEPTED__RAW_RA_PRESSURE_PRIMARILY_YK_MPK_GEOMETRY__RETURN_BOUNDS_NOT_ECONOMICALLY_IDENTIFIED__PRICE_NORMALIZATION_OWNER_DECISION_REQUIRED`。
-当前 active Builder task：无。
+当前状态：`C1_PRICE_NUMERAIRE_RAW_RA_FORENSIC_ACCEPTED__OWNER_FREEZES_NESTED_BILATERAL_CAPITAL_NETWORK_DIRECTION__K1_ZERO_SCIENCE_IMPLEMENTATION_AUTHORIZED`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_BILATERAL_CAPITAL_NETWORK_REPAIR_AND_ENDOGENOUS_FOREIGN_SHARE_IMPLEMENTATION.md`。
 最新接受候选：`8c0606ebc67e8f51a0a27ff06505ce67bd69ba7d`。
 Reviewer acceptance：`docs/CH5_MP4C_C1_PRICE_NUMERAIRE_RAW_RA_FORENSIC_AND_NORMALIZATION_SPEC_ACCEPTANCE.md`。
 Results eligibility=`FALSE`。
 
-最新 zero-science price/numeraire/raw-ra forensic 已接受。775/775 accepted C1 province-turn rows 完成静态 raw-return 分解，最大 `ra0` 重建误差=`2.220446049250313e-16`。turn25 raw `ra0` min/median/max=`0.08784757593701044/0.2140623214392065/0.40633797203054156`，30/31 省高于历史 `.09` 上界。
+最新 price/numeraire/raw-ra forensic 已接受：C1 25-turn 下 turn25 raw `ra0` 30/31 高于历史 `.09` safeguard，主来源是 `rk=mt*alpha*Y/K`；return bounds `[.02,.09]` 仍只属 `EMPIRICAL_NUMERICAL_SAFEGUARD`，wage bounds `[.8,1.3]` 仍为 `SOURCE_VALUE_WITH_UNRESOLVED_ECONOMIC_UNIT`。不得据此直接扩大/删除 return clips。KFE仍是独立 scientific blocker。
 
-return pressure 的主来源已定量：dominant term 为 `rk=mt*alpha*Y/K`。turn25 即使移除 profit term，仍有30/31省 `ra0_without_profit>.09`；即使静态替换 `mt->mstar=.9`，仍有30/31省超过 `.09`。profit 在28/31省被 floor 到0，折旧固定贡献 `-.025`，因此都不是主要上压来源。accepted corrected-2018 `Y/K` 相对历史 return safeguard 的几何关系是当前直接解释，`mt`仅小幅放大。
+Owner 随后重新审视 protected MATLAB `HANK_mp_1turn.m` 的 private-capital network，并确认原经济意图为：每省 household illiquid wealth 同时持有本省和外省企业资产，本省权重更高，外省持仓形成 household illiquid return 的组合收益。现 legacy source 可能存在两项结构性遗漏：第一，`Kt_supply` 只统计跨省流入而没有把 `(1-inter_prv_ratio_i)*At_i*N_i` 的本省保留资本加入 destination private K；第二，`rah` 外省收益中再次乘 destination `inter_prv_ratio_j`，与后来“theta 仅表示 origin 对外投资比例、外省平均分配”的简化意图不一致，且 portfolio weights一般不和为1。
 
-return bounds `[.02,.09]` 当前分类为 `EMPIRICAL_NUMERICAL_SAFEGUARD`，不是已识别的经济回报率区间。wage bounds `[.8,1.3]` 分类为 `SOURCE_VALUE_WITH_UNRESOLVED_ECONOMIC_UNIT`。当前证据不足以直接扩大或删除 return clips，也不足以选择新的 `ra` target/period convention。
+Owner 已冻结下一结构方向为 nested Scheme B，而不是增加31个 household asset states：household block 继续保持两资产 `(b,a)`；每个 origin household sector 的 aggregate illiquid wealth `A_i*N_i` 经一个 31x31 destination-by-origin portfolio matrix 分配到全国企业。资本流量与 household `rah` 必须使用同一矩阵，从而保证 origin-column 与全国 private-capital conservation。
 
-firm raw wage 与 household composite wage 不能按数值水平直接比较：firm wage 有 MU/NU-per-model-period 的 implied macro unit，而 legacy wage clip 缺少绝对单位映射；household `w` 是经过31个 destination 的非线性 composite aggregator。存在 numeraire/aggregation mapping 未闭合，但本 forensic 没有证明该问题直接造成当期 `ra0`；它只可能通过后续 household labor/assets、firm Y/K 与 mt 间接影响 return path。
+当前 K1 gate 先保留现有 `inter_prv_ratio_i = theta_i` 作为 origin 总对外投资比例，只内生化 foreign destination shares；home share 固定为 `1-theta_i`。foreign conditional share engine 允许使用 caller-provided dimensionless distance/friction score 与 old-turn/lagged return-attractiveness score，但本 task 不选择 `beta_distance`、`beta_return` 或其他科学系数，也不运行 trajectory。关键 timing 冻结为 lagged-return update：禁止 same-turn `firm -> return -> share -> K -> firm` circular feedback。未来 K2 才讨论是否把 home-vs-foreign margin `theta_i` 本身内生化。
 
-accepted origin-preserving normalized labor successor 继续保持 inactive；当前最低风险顺序不是叠加 labor change，而是先由 Owner 冻结一个明确、单位一致、预先注册的 price/return normalization object。Owner decision 至少需要明确：return period/concept、firm-to-household wage numeraire mapping（currency/deflator/period/labor unit/aggregator normalization），以及是否继续保留现有 return bounds 仅作为 safeguard。冻结前不得自动发布新的 scientific task。
+当前 active task 只做 zero-science implementation + deterministic accounting validation：恢复本省 private capital、实现完整 bilateral capital matrix、统一 quantity/return weights、实现可接受 distance+lagged-return score 的 foreign-share softmax engine，并保留 legacy `allocate_productive_capital` byte-identical。不得连接 active steady-state runtime，不得激活 normalized labor，不得修改 C1 GovInv、price bounds、HJB/KFE 或 beta_a。
 
-C1 residual public-asset result继续作为当前资本 authority：turn20-25 total-K/target=1/1/1，GovInv overshoot 已从 bounded dynamic path 中消失；资本数量本身不再是同一优先级的直接 numerical blocker。HJB 从turn6起31/31 converged，但 KFE 775/775 仍为 `DIAGNOSTIC_ONLY`，继续作为独立 scientific blocker；price/numeraire工作不得吞并KFE治理。
+C1 residual public-asset authority继续有效：GovInv 是不可直接观测的政府/公共生产性资产 residual，`GovInv=max(Ktarget-Kprivate,0)`；此前 C1 bounded path 已消除 GovInv-driven capital overshoot。新的 private-capital network 若未来改变 Kprivate，必须在后续单独 scientific task 中与 C1 residual public assets 一起重新验证，不能从当前 zero-science implementation 直接外推。
 
 corrected-2018 runtime input-binding repair继续作为唯一活动数据契约：actual 2018 GDP/POP、raw-NBS GFCF Track-A PIM、`delta_pim=.096`、`alpha=.7380939146868483`、`MU=10万元`、`NU=100 persons`、same-year Zt0；legacy/canonical fallback已隔离。
 
