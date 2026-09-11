@@ -1,39 +1,74 @@
 # Chapter 5 Python 多省份两资产 HANK 路线
-更新：2026-09-10。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
+更新：2026-09-11。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
 ## 当前阶段
-MP4已经完成：旧call725失败复现、rah=.07敏感性、KFE source/escape归因、b域压力测试、数据/插值审计、rolling-10y/same-year-Zt时间合同、2018官方/付费数据闭合、PIM资本链、canonical workbook、corrected-2018 turn1–5受控前缀，以及five-turn KFE全国leakage attribution。Results=`FALSE`。
+当前已从“复刻原MATLAB mixed-year流程”推进到“修正资本侧经济结构并建立可审计 successor route”。Results=`FALSE`。
 
-## 2018数据层
-数据层已闭合。canonical workbook SHA256=`AEA5A12B5E6474056C1C3EF84BF0156BA88442EF54B0A4FB9C4C6F33CA963F67`。安徽2018 final-use：GDP `34010.9`亿元；POP `6076`万人；PIM `K2018=1357314108.2013683`万元；alpha=`.772866243094144`；PLM vintage19/window2009–2018；same-year Zt约`.0006934644495858679`。
+已完成并接受的关键节点：
+1. MATLAB/Python two-asset HA parity P1–P4；
+2. corrected-2018 runtime binding与raw-NBS Track-A数据合同；
+3. HJB nonconvergence finite continuation contract；
+4. C1 residual public-asset GovInv定义与25-turn bounded validation；
+5. origin-preserving bilateral labor normalization zero-science successor；
+6. price/numeraire/raw-ra forensic；
+7. K1 bilateral private-capital network zero-science implementation。
 
-## corrected-2018已接受轨迹
-- turn1–3完整执行并接受；turn3首次直接观察corrected firm `ra=.02`进入下一household composite return。
-- five-turn候选`9864129dd2e97bae97238ab9cc588aea48682d29`完整执行5 turns/155 updates；turn4首次native adaptation gate开启，turn4/5执行31省Zt adjustment与`LOW_RA_DECREASE_0P9` GovInv action。
-- 但turn4/5 returned densities 31/31均`DIAGNOSTIC_ONLY`。material blocker是source-free stationarity residual + upper-b outward leakage；负density mass仅机器精度。
+## C1 GovInv authority
+GovInv解释为不可直接观测的政府/公共生产性资产 residual：
+`GovInv=max(Ktarget-Kprivate,0)`。
+历史C0 clipped-return `0.9/1.1` controller已证明会重新制造GovInv overshoot。C1 bounded path中775/775 capital accounting assertions通过，turn20-25 total-K/Ktarget固定为1，资本数量/GovInv level divergence不再是同一优先级的直接blocker。
 
-## 全国KFE归因已闭合
-最新接受候选`ea4ac44fe3c65c506ff7fdfbdbf29d96078cc5c6`在zero-science-call下确认：
+## K1 bilateral capital network：当前新冻结点
+最新接受候选：`742ae11dbb057c7d33650ed4bc8d4db59b90d435`。
+Reviewer acceptance：`docs/CH5_MP4C_K1_BILATERAL_CAPITAL_NETWORK_REPAIR_AND_ENDOGENOUS_FOREIGN_SHARE_IMPLEMENTATION_ACCEPTANCE.md`。
 
-`SAME_FINITE_BOX_UPPER_B_LEAKAGE_AND_PINNING_MECHANISM_CONFIRMED`。
+Owner确认原资本市场设计意图：每省household aggregate illiquid wealth同时持有本省与外省企业资产，本省权重更高；household `rah`应由实际组合权重与destination returns得到。旧source的两个结构性bug已在successor中修复：
+- 本省retained capital `(1-theta_i)*A_i*N_i`不再丢失；
+- `rah`不再把destination `theta_j`重复作为权重。
 
-机制：upper-b finite-box assembler省略outside-grid offdiagonal但保留对应diagonal rate；post-loop KFE转置后替换`k=295`方程并设置`rhs[k]=.007`；被丢弃source-free equation在代数上等价于平衡upper-b escape的source。turn4/5 62/62对象residual几乎全部在pin row；off-pin residual仅浮点量级；mass-balance与implicit-source balance均在约`10^-16`闭合。该source equivalence不是经济entry/exit机制。
+K1保持household HJB为两资产，不增加31个asset states。定义完整`destination x origin`矩阵：
+- `W_i=A_i*N_i`；
+- 当前固定`theta_i=inter_prv_ratio_i`；
+- `S[i,i]=1-theta_i`；
+- `S[j,i]=theta_i*P[j,i]`，`j!=i`；
+- `M_K[j,i]=S[j,i]*W_i`；
+- `Kprivate_j=sum_i M_K[j,i]`；
+- `rah_i=sum_j S[j,i]*portfolio_return_j`。
 
-HJB-loop operator negative offdiagonals继续是独立问题，不能被post-loop KFE operator的非负offdiagonal状态掩盖。
+`P[j,i]`由foreign-only stable softmax生成，输入为caller-provided distance/friction score与lagged/completed-iteration return score。same-turn `firm -> return -> share -> capital -> firm`反馈被禁止。`beta_distance`、`beta_return`无默认值，未识别。
+
+## K1下一路线
+在任何科学trajectory前先冻结：
+1. distance/friction数据对象与dimensionless normalization；
+2. lagged-return attractiveness signal及normalization；
+3. `beta_distance`与`beta_return`的预注册值/识别协议；
+4. portfolio payoff return概念；
+5. 是否需要partial adjustment/smoothing；
+6. 第一轮保持`theta_i`固定，K2再内生化home-vs-foreign margin。
+
+推荐分阶段：
+- K1A：先用固定`theta_i` + repaired equal/space-only foreign shares验证capital/rah accounting；
+- K1B：再加入lagged-return tilt；
+- K2：最后才让`theta_i`本身内生化。
+
+由于单次多省稳态成本可能超过2小时，所有参数和score mapping应先做zero-science/static proof与预注册，避免边跑边调。
+
+## price/return与capital network的关系
+此前C1旧capital allocation下turn25 30/31 raw `ra0`高于`.09`，主来源是`rk=mt*alpha*Y/K`；`.02/.09`仍只是historical numerical safeguard。K1修复会显著改变private capital分布与firm Y/K，所以不要在K1 integration前直接扩大return bounds。K1科学运行后必须重新分解raw-return pressure。
+
+## labor route
+origin-preserving bilateral labor normalization successor已接受，但尚未与K1同时进入scientific path。为了归因，第一次K1 bounded integration建议继续冻结source-faithful labor；资本网络验证后再单独测试normalized labor stack。
+
+## KFE路线
+clean/source-free KFE方法学合同已稳定：HJB/KFE共享同一backward generator `Q`，forward=`Q.T`，row sums/off-diagonal/closed recurrent class/mass-first stationary solve均有gate。
+
+但当前corrected-2018 empirical finite-box upper-b leakage + MATLAB-style pinning仍是独立blocker，不能因K1修复而宣称KFE已解决。未来production acceptance仍需单独boundary/source-free KFE closure decision。
+
+## 数据合同
+corrected-2018继续使用actual 2018 GDP/POP、raw-NBS GFCF Track-A PIM capital、`delta_pim=.096`、`alpha=.7380939146868483`、MU=`10万元`、NU=`100 persons`、same-year Zt0。`beta_a=1`仍是`SOURCE_FAITHFUL_DIAGNOSTIC_ONLY`。
 
 ## 当前路线节点
-当前没有active Builder task。不得继续trajectory、turn6+、steady state或Results。
+当前没有active Builder task。下一步不是立即跑模型，而是Owner/Reviewer在新会话冻结K1 economic scoring/data contract。冻结后再发布exact task。
 
-下一步是Owner scientific decision：选择finite-box/KFE closure redesign方向，再发布新的exact design/implementation task。需要明确区分：
-- boundary state-constraint / no-outflow closure；
-- generator total-drift consistency；
-- pinning/source-free KFE formulation；
-- grid/domain adequacy；
-- HJB-loop operator admissibility。
-
-D1–D3仍是此前deferred redesign proposals，不因本次机制确认自动升级为production contract。
-
-## 后续大路线
-Owner boundary/KFE closure裁决 → bounded design specification / static proof → 受控单household或极小前缀验证 → source-free KFE validity → corrected-2018短前缀 → bounded steady-state prefix → 有限省份/年份 → MP5/MP6 dynamics。任何一步均需自己的GitHub exact task和接受门。
-
-2022–2023六个非正资本/无效Zt仍是独立未来年份数据质量问题。生产网格目前仍冻结I20,b[-2,5]、J20,a[0,10]、Nz2,z[.8,1.3]，除非Owner后续明确改变。
+后续大路线：
+K1 parameter/data freeze → zero-science mapping/fixture → 单条bounded K1 integration trajectory → re-evaluate private K/C1 GovInv/raw-ra → K1 lagged-return endogenous shares → K2 endogenous home-vs-foreign margin → normalized labor stack → KFE production closure → bounded steady state → annual/GE/IRF/Results gates。
