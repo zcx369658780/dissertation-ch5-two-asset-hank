@@ -1,0 +1,140 @@
+{
+  "baseline": "0090f6d60ba7eeede09a88f2bd5c21887b45bb7b",
+  "distance_normalization": {
+    "D_max": 3639.514265,
+    "diagonal_exact_zero": true,
+    "formula": "D_score=D/D_max",
+    "national_normalization": true,
+    "off_diagonal_max": 1.0,
+    "off_diagonal_min": 0.030224736871583606,
+    "orientation": "DESTINATION_BY_ORIGIN",
+    "row_or_column_normalization": false,
+    "shape": [
+      31,
+      31
+    ],
+    "symmetry_residual_max_abs": 0.0
+  },
+  "distance_source": {
+    "column_label_range": "B1:AF1",
+    "data_range": "B2:AF32",
+    "diagonal_values": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "finite_count": 961,
+    "mapped_shape": [
+      31,
+      31
+    ],
+    "missing_count": 0,
+    "negative_count": 0,
+    "no_imputation": true,
+    "no_symmetrization": true,
+    "off_diagonal_max_D_max": 3639.514265,
+    "off_diagonal_max_unordered_pairs": [
+      [
+        "黑龙江",
+        "西藏"
+      ]
+    ],
+    "off_diagonal_min": 110.003361,
+    "off_diagonal_min_unordered_pairs": [
+      [
+        "北京",
+        "天津"
+      ]
+    ],
+    "row_label_range": "A2:A32",
+    "sheet_names": [
+      "geom",
+      "igeom",
+      "iigeom"
+    ],
+    "sheet_used": "geom",
+    "symmetry_residual_max_abs": 0.0,
+    "units": "UNRESOLVED__NO_EXPLICIT_WORKBOOK_METADATA",
+    "workbook_bytes": 39895,
+    "workbook_path": "D:\\MatlabProgram\\2023年12月2日 多省份神经网络HANK\\中国各省省会地理距离矩阵.xlsx",
+    "workbook_sha256": "26E44D174A8EFFBDCA526D95DA38F0E5883E0C78FDFD036D2DFF1D1FBA5A3566"
+  },
+  "results_eligibility": false,
+  "scientific_model_call_ledger": {
+    "GE": 0,
+    "HJB": 0,
+    "KFE": 0,
+    "MATLAB": 0,
+    "Results": 0,
+    "annual": 0,
+    "firm": 0,
+    "household": 0,
+    "migration": 0,
+    "outer_loop": 0,
+    "shock_IRF": 0,
+    "steady_state": 0,
+    "trajectory": 0
+  },
+  "task_id": "CH5_MP4C_K1A_2018_DISTANCE_SCORE_MAPPING_AND_STATIC_PORTFOLIO_DIAGNOSTIC",
+  "theta_provenance": {
+    "formula": "0.3*(K0/N0-min(K0/N0))/(max(K0/N0)-min(K0/N0))",
+    "formula_max_abs_residual": 0.0,
+    "formula_source": "validators/multi_province/corrected_2018_single_turn/run.py:246-247",
+    "province_mapping": "EXACT_ACTIVE_PROVINCE_ORDER_31_OF_31",
+    "runtime_binding_source": "src/ch5_two_asset_hank/multi_province/corrected_2018_runtime.py:228-289",
+    "source_bytes": 31612,
+    "source_path": "D:\\ProjectTemp\\ch5-k1a-distance-mapping-20260911-001\\reports\\mp4c_unit_normalized_initialization_probe_20260910\\province_initialization_receipt.csv",
+    "source_sha256": "5DAD517983CBC436A5FB3E5AD85F1257D957D844994180D15929044A049C7212",
+    "theta_max": 0.3,
+    "theta_min": 0.0
+  },
+  "validations": {
+    "accepted_tolerance": 1e-12,
+    "all_conservation_checks_pass": true,
+    "beta_return": 0.0,
+    "capital_network_orientation": "DESTINATION_BY_ORIGIN",
+    "capital_network_utility": "src/ch5_two_asset_hank/multi_province/capital_network.py",
+    "entropy_monotonicity_exceptions": [],
+    "entropy_weakly_decreases_every_origin": true,
+    "lagged_return_provenance": "COMPLETED_ITERATION_N_ZERO_SCORE_FIXTURE_FOR_ALGEBRA_ONLY",
+    "lagged_return_score": "all-zero completed-iteration fixture",
+    "max_residuals": {
+      "equal_share_residual_beta_0": 0.0,
+      "foreign_column_sum_residual": 4.440892098500626e-16,
+      "full_share_column_sum_residual": 1.3322676295501878e-15,
+      "home_share_residual": 0.0,
+      "national_capital_residual": 7.105427357601002e-15,
+      "no_destination_theta_double_weighting_residual": 0.0,
+      "origin_wealth_residual": 1.3322676295501878e-15
+    },
+    "unit_wealth_fixture": "W_i=1 for all origins; mathematical receipt only, not 2018 capital quantity"
+  }
+}
