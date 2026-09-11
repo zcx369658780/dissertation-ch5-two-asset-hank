@@ -1,0 +1,48 @@
+{
+  "active_one_turn_imports_capital_network": false,
+  "all_returned_arrays_read_only": true,
+  "beta_has_default": {
+    "beta_distance": false,
+    "beta_return": false
+  },
+  "forbidden_runtime_imports": [],
+  "input_fields": [
+    "province_order",
+    "illiquid_assets_per_capita_by_origin",
+    "population_by_origin",
+    "total_foreign_share_theta_by_origin",
+    "distance_score_destination_origin",
+    "lagged_return_score_by_destination",
+    "portfolio_return_by_destination",
+    "beta_distance",
+    "beta_return",
+    "lagged_return_provenance"
+  ],
+  "module_schema_version": "CH5_MP4C_K1_BILATERAL_CAPITAL_NETWORK_V1",
+  "orientation": "DESTINATION_BY_ORIGIN",
+  "payoff_field": "portfolio_return_by_destination",
+  "result_fields": [
+    "province_order",
+    "foreign_conditional_shares_destination_origin",
+    "portfolio_shares_destination_origin",
+    "origin_private_wealth",
+    "bilateral_private_capital_destination_origin",
+    "destination_private_productive_capital",
+    "domestic_retained_capital_by_origin",
+    "foreign_outflow_by_origin",
+    "foreign_inflow_by_destination",
+    "household_portfolio_return_by_origin",
+    "share_column_sums",
+    "capital_column_sums",
+    "national_private_capital_conservation_residual",
+    "orientation",
+    "schema_version",
+    "lagged_timing_contract",
+    "lagged_return_provenance"
+  ],
+  "results_eligible": false,
+  "same_object_for_quantity_and_return": "portfolio_shares_destination_origin",
+  "schema": "CH5_MP4C_K1_API_SCHEMA_RECEIPT_V1",
+  "scientific_coefficients_selected": 0,
+  "signal_field": "lagged_return_score_by_destination"
+}
