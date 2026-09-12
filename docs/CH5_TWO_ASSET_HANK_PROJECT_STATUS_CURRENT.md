@@ -2,60 +2,40 @@
 更新：2026-09-12。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
 ## 当前状态
-状态：`K1_ANNUAL_HJB_COMPLETE_RECALIBRATION_FROZEN__G1_GUARDED_BOUNDED_RUNTIME_DIAGNOSTIC_ACTIVE`。
+状态：`K1_ANNUAL_HJB_G1_SHORT_HORIZON_DIAGNOSTIC_ACCEPTED__RETURN_GUARD_FULLY_SATURATED__WAGE_GUARD_HIGHLY_SATURATED__OWNER_NUMERAIRE_AND_GUARD_CALIBRATION_DECISION_REQUIRED`。
 
-最新 accepted provenance-closure candidate：`c94352740f4390bbf2fbaecae93c486395afe83f`。
-Reviewer acceptance：`docs/CH5_MP4C_K1_QUARTERLY_HJB_VS_ANNUAL_FIRM_FLOW_PROVENANCE_CLOSURE_ACCEPTANCE.md`。
+最新 accepted annual-G1 candidate：`a7eccde5e0ca694f95d3b3c082bfa82e0ce8cbb1`。
+Reviewer acceptance：`docs/CH5_MP4C_K1_ANNUAL_HJB_RECALIBRATED_G1_GUARD_BOUNDED_RUNTIME_DIAGNOSTIC_ACCEPTANCE.md`。
 Owner annual recalibration freeze：`docs/CH5_MP4C_K1_ANNUAL_HJB_COMPLETE_RECALIBRATION_CONTRACT_FREEZE_CURRENT.md`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_ANNUAL_HJB_RECALIBRATED_G1_GUARD_BOUNDED_RUNTIME_DIAGNOSTIC.md`。
+当前 active Builder task：NONE。
 Builder默认`gpt-5.6-sol / medium`。Results eligibility=`FALSE`。
 
-## Owner annual continuous-time recalibration contract：已冻结
-由于现有 source 无法唯一识别 common calendar base，Owner 现作为新的 scientific calibration choice 冻结：
+## Annual recalibration：bounded route 已接受
+Owner-frozen annual continuous-time contract 已在两条5-turn路径中真实执行：`rho=.05/year`、`rb=.02/year`、borrowing gap `.07/year`、`delta=.10/year`、`Q_z=1/3/year`、annual `Y/K` 与 profit/K 不做 `/4`、`ra0_annual=rk+after_tax_profit_over_K-.10`、`chi0=.1`、`chi1=2 years`。U/G1 turn1 完全一致，same-S、lagged provenance、K1/C1 accounting、source-faithful labor、NaN/Inf hard-stop 均通过。
 
-- `MODEL_TIME_BASE=ANNUAL_CONTINUOUS_TIME`；
-- `rho=.05/year`；
-- `rb=.02/year`；
-- borrowing gap `.07/year`；
-- firm/HJB depreciation `delta=.10/year`；
-- `Q_z` off-diagonal intensity `1/3 per year`；
-- corrected-2018 annual `Y/K` 与 after-tax profit/K 保持 annual flow/stock rate，不做 `/4`；
-- `ra0_annual = rk + after_tax_profit_over_K - .10`；
-- `rah=S'ra0_annual`，quantity/payoff继续使用同一`S`；
-- `chi0=.1`，`chi1=2 years` 作为 provisional annual adjustment-cost calibration；
-- wage/consumption/transfer/adjustment-cost 统一解释为 annual household-model-unit flow；
-- household asset numeraire 暂不改变；
-- outer turn 继续只是 numerical fixed-point iteration。
+`.10` 相对旧 `.025` route 在 turn1 使每省 raw `ra0` 精确下降约 `.075`。Annual unguarded U 仍可执行，但 treatment HJB convergence 只有 `11/124`，说明仅修正 depreciation/time-base 并未建立稳定 household numerical solution。
 
-`.10` 是新的 Owner-frozen annual calibration，不声称是 `.025` 的精确复利换算。PIM `.096` 继续只用于资本存量构造。
+## G1 diagnostic guard：接受为脚手架，但不能延长
+G1 HJB return guard 为 `[-.05,.20]`。Treatment turns2-5 中 upper `.20` 命中 `124/124`、lower `0/124`、unsaturated `0/124`。因此 guard 前每轮仍保留31个不同的 converted `rah`，但进入 HJB 后全部变成 `.20`，省际 payoff ranking 被完全压平。
 
-## Diagnostic guard policy：第一阶段 G1 已 preregister
-未来 guard 必须在 raw/converted objects 保存之后，仅在 HJB interface 施加。第一阶段 G1 冻结：
+G1 HJB convergence 为 `18/124`，较 U 的 `11/124` 有小幅改善；turns3-5 worst statistic 显著降低，但 transfer、adjustment-cost、`mu_a/mu_b` 与 drift extrema 在 turns2-4 反而更大，只有 turn5 较低。故 G1 不是统一稳定化处理。
 
-- HJB illiquid return input `r_a`：`[-.05,.20]`；
-- 现有 firm `wjt [.8,1.3]` 继续仅作为 temporary diagnostic guard，并记录 hit counts。
+Existing wage guard `[.8,1.3]` 同样高度绑定：G1 treatment `112/124`（90.3%）省轮命中上下界。return 与 wage 两个 household interface 同时高度 guard-dependent，说明当前 numerical interface 过度压缩。
 
-Return-guard relaxation ladder：
-`G1 [-.05,.20] -> G2 [-.10,.35] -> G3 [-.20,.60] -> G4 OFF`。
-
-只有 G1 当前获 runtime authority；任何后续 stage 必须先验收前一阶段并重新授权。依赖 guard 的 steady state 只能称 `PROVISIONAL_STEADY_STATE`。
-
-## 当前 bounded runtime gate
-当前任务从 byte-identical accepted initialization 比较两条最多5-turn路径：
-
-- U：annual recalibration，turn1 common bootstrap，turns2-5 使用 same-path prior annual raw `ra0@S`，不加新 `r_a` guard；
-- G1：同样 annual recalibration，turn1 common bootstrap，turns2-5 在 HJB interface 将 annual converted `rah` guard 到 `[-.05,.20]`。
-
-两路径均使用 `beta_distance=2`、`beta_return=0`、fixed theta、source-faithful labor、smoothing OFF、C1 unchanged、K1B/K2 OFF。必须分别保存 raw annual `ra0`、converted annual `rah`、HJB-consumed guarded/unbounded `r_a` 与 saturation counts。
-
-该任务只测试 short-horizon annual recalibration 与 diagnostic guard 的数值作用，不构成25-turn、steady state或Results gate。
+Reviewer route decision：不发布更长 G1。更长 G1 主要会研究常数 `r_a=.20` 的 household block，而不是 intended provincial payoff heterogeneity。也不自动进入 G2；在放宽 return guard 前必须先由 Owner 决定 annual household wage/asset numeraire 与下一阶段 guard calibration 是否需要共同调整。
 
 ## 数值系统重建状态
-旧多省份 MATLAB/source-faithful 系统继续保留为 provenance/reference，但其 capital allocation、household return aggregation、historical clipping、time-scale wiring 与 empirical KFE 等关键合同已有 accepted evidence 证明存在结构缺陷、信息损失或维度冲突，不能作为最终 scientific authority。
+K1 bilateral capital network 的 accounting/home-retention/same-S quantity-payoff/bounded transmission 已 accepted；annual time-base 也已进入实际 runtime。当前主要 blocker 已转向 household interface calibration：payoff guard 完全饱和、wage guard 高度饱和、HJB convergence 仍低。旧 MATLAB/source-faithful 数值系统继续仅保留 provenance/reference。
 
-新系统已完成 K1 bilateral capital network 的 accounting/home-retention/same-S quantity-payoff/bounded dynamic transmission；现在正式进入 annual recalibration + diagnostic-guard 数值重建阶段。长期 HJB stability、empirical KFE、K1B/K2、steady state 与 Results 仍未完成。
+## 当前 Owner scientific gate
+下一步必须由 Owner 决定：
+- 是否保留当前 annual household asset numeraire；
+- firm-to-household wage scaling/normalization 是否需要重标定；
+- 下一阶段是否允许 G2 `r_a in [-.10,.35]`；
+- wage guard 是否与 G2 同时重新 preregister；
+- 或先修改 household flow/numeraire calibration 再保留 G1。
+
+确认前不发布 successor Builder task，不运行 longer G1/G2，不进入 K1B/K2。
 
 ## K1B / K2 / KFE
-K1B `beta_return=.5` 仍仅 preregistered，不授权 runtime；其 z-scored raw `ra0` 只用于 destination attractiveness，不是 payoff。K2不授权。
-
-corrected-2018 empirical finite-box upper-b leakage/MATLAB-style pinning 仍是独立 KFE blocker。KFE=`DIAGNOSTIC_ONLY`。当前任何 K1 结论均不构成 steady-state、annual/IRF/welfare 或 Results acceptance。
+K1B `beta_return=.5` 仍仅 preregistered，不授权 runtime；K2不授权。corrected-2018 empirical finite-box upper-b leakage/MATLAB-style pinning 仍是独立 KFE blocker；KFE=`DIAGNOSTIC_ONLY`。当前任何 K1 结论均不构成 steady-state、annual/IRF/welfare 或 Results acceptance。
