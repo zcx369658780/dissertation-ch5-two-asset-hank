@@ -2,41 +2,32 @@
 更新：2026-09-12。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
 ## 当前状态
-状态：`K1_G1_VS_G2_MECHANISM_FORENSIC_ACCEPTED__INSTRUMENTED_HA_HJB_DIAGNOSTIC_ACTIVE`。
+状态：`K1_G1_VS_G2_INSTRUMENTED_HA_HJB_DIAGNOSTIC_ACCEPTED__OWNER_HA_NUMERICAL_CONTRACT_DECISION_REQUIRED`。
 
-最新 accepted G1-vs-G2 runtime candidate：`ab6b19022d920a8929a2ee66cc5511be6f602557`。
-最新 accepted zero-science mechanism candidate：`f7c52f061b9eb3666d26985602ad6527774b5bb2`。
-Reviewer acceptance：`docs/CH5_MP4C_K1_G1_VS_G2_HA_HJB_MECHANISM_ZERO_SCIENCE_DIAGNOSTIC_ACCEPTANCE.md`。
-Owner annual recalibration freeze：`docs/CH5_MP4C_K1_ANNUAL_HJB_COMPLETE_RECALIBRATION_CONTRACT_FREEZE_CURRENT.md`。
-Owner price-guard continuation freeze：`docs/CH5_MP4C_K1_PRICE_GUARD_CONTINUATION_AND_BOUNDARY_HIT_MONITORING_FREEZE_CURRENT.md`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_G1_VS_G2_HA_HJB_INSTRUMENTED_BOUNDED_DIAGNOSTIC.md`。
+最新 accepted instrumented candidate：`5d28382f5914d161817642bab9f3c6d73b41c935`。
+Reviewer acceptance：`docs/CH5_MP4C_K1_G1_VS_G2_HA_HJB_INSTRUMENTED_BOUNDED_DIAGNOSTIC_ACCEPTANCE.md`。
+当前 active Builder task：NONE。
 Results eligibility=`FALSE`。
 
-## G1/G2 continuation result：已接受
-G2 从 `[-.05,.20]` 放宽到 `[-.10,.35]` 后，return upper saturation 从 `124/124` 降到 `84/124`，恢复 `40/124` unsaturated province-turn，但 treatment HJB convergence 从 G1 `18/124` 降到 G2 `6/124`。G2 不支持 longer G2，也不授权 G3/G4。
+## 已接受：turn2 common-state mechanism localization
+Instrumentation ON/OFF scientific outputs exact-parity，G1/G2 均完成5 turns。Turn1 完全一致；turn2 的31省均从同一 completed turn1 scientific state 进入。
 
-wjt safeguard `[.8,1.3]` 仍高度绑定；G1/G2 treatment wage hits 分别为 `112/124` 与 `109/124`。所有 continuation runtime 继续必须逐省逐轮记录 return/wage 上下界撞界省份、counts、shares；最终目标仍为 `ZERO_DIAGNOSTIC_PRICE_GUARD_HITS`。
+Turn2 iteration1 中，directional/value derivatives、derivative-floor activations、pre-selector transfer candidates、liquid/transfer policy labels 仍完全一致。最先产生差异的是 frozen G1/G2 return guard 导致的 `effective_illiquid_return` 与 `mu_a` / illiquid-drift assembly；随后 operator、`V_new`、HJB statistic 立即分叉。
 
-## Zero-science mechanism forensic：已接受
-Accepted classification：`G2_STRESS_MIXED_ACROSS_NEWLY_UNSATURATED_AND_STILL_SATURATED_RETURN_REGIMES__PATH_HISTORY_AND_WAGE_INTERACTION_NOT_IDENTIFIABLE_FROM_PERSISTED_EVIDENCE__BOUNDED_INSTRUMENTATION_TASK_REQUIRED`。
+Iteration2 开始 value derivatives 与 transfer candidates 全面分叉；transfer labels 同期分叉，liquid labels稍后分叉；derivative-floor activation differences 到 iteration3/4 才出现。因此 derivative floor、selector、boundary law 和 wage input 均不是 initiating mechanism。
 
-Forensic 显示：G2 stress 不是单一 newly-unsaturated 或 still-saturated return regime 的结果。`40/40` newly-unsaturated G2 observations 均 nonconverged，但最大 HJB statistic 与全局 transfer/cost/drift extrema 均落在 still-saturated partition。G2 top extreme cells 绝大多数是 interior；总 outward face hits 反而从 G1 `4362` 降到 G2 `3795`，因此不是 boundary-only failure。
+湖北 turn2 interior checkpoint 进一步证明：后期 huge transfer/cost 并非 selector 将温和 candidate 放大，而是 raw pre-selector `d_bb` candidate 已经在 evolving value-derivative / transfer-FOC feedback 中爆炸，随后 B branch 选中该 extreme candidate。
 
-G1 自身已存在巨大 extrema，且部分 G1 worst cells 在 G2 下显著改善。G1->G2 policy label 变化规模很大，但 accepted persisted evidence 没有 value derivatives、pre-selector candidate objects、iteration trace 或 standalone KKT residual，因此无法识别 return、wage、selector 与 path-history 的先后因果链。
+## 当前 scientific interpretation
+当前最小 scientific blocker 已定位到 HA transfer/adjustment-cost candidate admissibility contract：在较高但仍 frozen annual HJB return exposure 下，现行 liquid-value-derivative driven transfer FOC 是否允许极大的有限 transfer candidate，以及 quadratic adjustment cost 对该 candidate 的放大是否需要经济上可解释的 admissibility/regularization contract。
 
-## 当前 active gate
-下一门只增加 task-bounded instrumentation，不改任何科学参数、guard、方程、grid、tolerance 或 solver。重新执行相同 annual G1/G2 short-horizon route，并重点持久化：
-- HJB iteration trace；
-- directional/value derivatives；
-- pre-selector liquid/transfer candidates；
-- raw candidate drifts/controls/costs；
-- selector/branch transition与最终policy；
-- turn2 common-state immediate response 与 turns3-5 path-history response分离。
+这不是 Builder 调参问题。现有 evidence 不授权自动改 `chi0/chi1`、derivative floor、return/wage guard、boundary law、grid、tolerance 或 solver。Owner 必须先冻结下一版 HA numerical/economic contract。
 
-G1/G2 guard、wjt `[.8,1.3]`、annual calibration、K1 network、C1、source-faithful labor保持完全不变。该任务不得用于调参，只用于定位 HA/HJB 机制。
+Turns3-5 继续只属于 `PATH_HISTORY_PROPAGATION__NOT_SAME_STATE_CAUSAL`。
 
-## 数值系统重建状态
-K1 bilateral capital network、annual time-base 与 bounded price-guard continuation 均已有 accepted runtime authority。当前主要 blocker 是 HA/HJB nonlinear mechanism 的数值稳定性与 price safeguards 高度绑定。只有机制定位后才决定是否调整 `chi0/chi1`、derivative safeguard、price-interface calibration 或其他科学合同；不得由 Builder擅自改参。
+## Price guards / KFE / Results
+`ra/rah` 与 `wjt/wage` hit monitoring继续强制执行；长期目标仍为 `ZERO_DIAGNOSTIC_PRICE_GUARD_HITS`。当前不得 longer G2、G3/G4、wage relaxation、K1B/K2。
 
-## K1B / K2 / KFE
-K1B `beta_return=.5` 仍仅 preregistered，不授权 runtime；K2不授权。corrected-2018 empirical finite-box upper-b leakage/MATLAB-style pinning仍是独立KFE blocker；KFE=`DIAGNOSTIC_ONLY`。当前任何K1结论均不构成steady-state、annual/IRF/welfare或Results acceptance。
+KFE仍为`DIAGNOSTIC_ONLY`，finite-box upper-b leakage与MATLAB-style pinning独立未解决。Standalone KKT residual=`UNAVAILABLE_IN_ACCEPTED_EVIDENCE`。
+
+Results eligibility=`FALSE`。
