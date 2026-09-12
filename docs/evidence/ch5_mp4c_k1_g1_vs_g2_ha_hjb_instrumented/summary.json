@@ -1,0 +1,317 @@
+{
+  "base_monitoring_and_contract_summary": {
+    "call_ledger": {
+      "brentq_calls_attempted": 248000,
+      "hjb_calls": 310,
+      "hjb_direct_solves": 27196,
+      "kfe_calls": 310,
+      "kfe_direct_solves": 310,
+      "labor_roots_attempted": 248000,
+      "province_updates_completed": 310
+    },
+    "pre_run_gate": {
+      "beta_distance_both": 2.0,
+      "beta_return_both": 0.0,
+      "borrowing_gap_per_year": 0.07,
+      "c1_formula_unchanged": true,
+      "chi0": 0.1,
+      "chi1_years": 2.0,
+      "firm_hjb_delta_both_paths": 0.1,
+      "g1_turn2_source": "clip(same_path.completed_turn_1.firm.ra0_annual @ S,-0.05,0.20)_AT_HJB_INTERFACE_ONLY",
+      "g2_turn2_source": "clip(same_path.completed_turn_1.firm.ra0_annual @ S,-0.10,0.35)_AT_HJB_INTERFACE_ONLY",
+      "grid_tolerance_solver_unchanged": true,
+      "k1b_disabled": true,
+      "k2_disabled": true,
+      "live_baseline": "053d04a40a8a72b2babde31bb5ab23368ca9edc4",
+      "model_time_base": "ANNUAL_CONTINUOUS_TIME",
+      "no_compounding_or_log_conversion": true,
+      "no_divide_or_multiply_by_four": true,
+      "normalized_labor": false,
+      "partial_adjustment": false,
+      "payloads_byte_identical_except_path_guard_metadata": true,
+      "q_z_off_diagonal_per_year": 0.3333333333333333,
+      "quantity_bit_identical_under_payoff_switch": true,
+      "raw_ra0_formula": "rk_annual + after_tax_profit_over_K_annual - 0.10",
+      "raw_ra0_legacy_0p02_0p09_clip_before_aggregation": false,
+      "rb_per_year": 0.02,
+      "return_hit_monitoring": "RAW_CONVERTED_GUARDED_WITH_EXPLICIT_FLAGS_AND_NAMES",
+      "rho_per_year": 0.05,
+      "same_S_static_identity": true,
+      "schema": "CH5_K1_ANNUAL_G1_VS_G2_PRE_RUN_GATE_V1",
+      "science_calls_before_gate": 0,
+      "smoothing": false,
+      "source_faithful_labor": true,
+      "status": "PASS",
+      "task_id": "CH5_MP4C_K1_ANNUAL_HJB_G1_VS_G2_PRICE_GUARD_CONTINUATION_DIAGNOSTIC",
+      "turn1_common_bootstrap_identical": true,
+      "wage_guard": [
+        0.8,
+        1.3
+      ],
+      "wage_guard_unchanged": true,
+      "wage_hit_monitoring": "EXACT_EQUALITY_OF_GUARDED_WJT__TASK_SECTION_7"
+    },
+    "return_guard_treatment_totals": {
+      "G1": {
+        "lower": {
+          "count": 0,
+          "province_counts": {},
+          "share": 0.0
+        },
+        "province_turns": 124,
+        "unsaturated": {
+          "count": 0,
+          "province_counts": {},
+          "share": 0.0
+        },
+        "upper": {
+          "count": 124,
+          "province_counts": {
+            "上海": 4,
+            "云南": 4,
+            "内蒙古": 4,
+            "北京": 4,
+            "吉林": 4,
+            "四川": 4,
+            "天津": 4,
+            "宁夏": 4,
+            "安徽": 4,
+            "山东": 4,
+            "山西": 4,
+            "广东": 4,
+            "广西": 4,
+            "新疆": 4,
+            "江苏": 4,
+            "江西": 4,
+            "河北": 4,
+            "河南": 4,
+            "浙江": 4,
+            "海南": 4,
+            "湖北": 4,
+            "湖南": 4,
+            "甘肃": 4,
+            "福建": 4,
+            "西藏": 4,
+            "贵州": 4,
+            "辽宁": 4,
+            "重庆": 4,
+            "陕西": 4,
+            "青海": 4,
+            "黑龙江": 4
+          },
+          "share": 1.0
+        }
+      },
+      "G2": {
+        "lower": {
+          "count": 0,
+          "province_counts": {},
+          "share": 0.0
+        },
+        "province_turns": 124,
+        "unsaturated": {
+          "count": 40,
+          "province_counts": {
+            "云南": 1,
+            "内蒙古": 4,
+            "吉林": 4,
+            "天津": 1,
+            "宁夏": 1,
+            "山东": 4,
+            "广西": 4,
+            "新疆": 1,
+            "河北": 4,
+            "河南": 4,
+            "辽宁": 4,
+            "青海": 4,
+            "黑龙江": 4
+          },
+          "share": 0.3225806451612903
+        },
+        "upper": {
+          "count": 84,
+          "province_counts": {
+            "上海": 4,
+            "云南": 3,
+            "北京": 4,
+            "四川": 4,
+            "天津": 3,
+            "宁夏": 3,
+            "安徽": 4,
+            "山西": 4,
+            "广东": 4,
+            "新疆": 3,
+            "江苏": 4,
+            "江西": 4,
+            "浙江": 4,
+            "海南": 4,
+            "湖北": 4,
+            "湖南": 4,
+            "甘肃": 4,
+            "福建": 4,
+            "西藏": 4,
+            "贵州": 4,
+            "重庆": 4,
+            "陕西": 4
+          },
+          "share": 0.6774193548387096
+        }
+      }
+    },
+    "wage_guard_treatment_totals": {
+      "G1": {
+        "lower": {
+          "count": 16,
+          "province_counts": {
+            "宁夏": 4,
+            "海南": 4,
+            "西藏": 4,
+            "青海": 4
+          },
+          "share": 0.12903225806451613
+        },
+        "province_turns": 124,
+        "unsaturated": {
+          "count": 12,
+          "province_counts": {
+            "吉林": 4,
+            "甘肃": 4,
+            "黑龙江": 4
+          },
+          "share": 0.0967741935483871
+        },
+        "upper": {
+          "count": 96,
+          "province_counts": {
+            "上海": 4,
+            "云南": 4,
+            "内蒙古": 4,
+            "北京": 4,
+            "四川": 4,
+            "天津": 4,
+            "安徽": 4,
+            "山东": 4,
+            "山西": 4,
+            "广东": 4,
+            "广西": 4,
+            "新疆": 4,
+            "江苏": 4,
+            "江西": 4,
+            "河北": 4,
+            "河南": 4,
+            "浙江": 4,
+            "湖北": 4,
+            "湖南": 4,
+            "福建": 4,
+            "贵州": 4,
+            "辽宁": 4,
+            "重庆": 4,
+            "陕西": 4
+          },
+          "share": 0.7741935483870968
+        }
+      },
+      "G2": {
+        "lower": {
+          "count": 25,
+          "province_counts": {
+            "内蒙古": 1,
+            "吉林": 1,
+            "天津": 1,
+            "宁夏": 4,
+            "山西": 1,
+            "广西": 1,
+            "新疆": 1,
+            "海南": 4,
+            "甘肃": 1,
+            "西藏": 4,
+            "贵州": 1,
+            "青海": 4,
+            "黑龙江": 1
+          },
+          "share": 0.20161290322580644
+        },
+        "province_turns": 124,
+        "unsaturated": {
+          "count": 15,
+          "province_counts": {
+            "云南": 1,
+            "吉林": 3,
+            "江西": 1,
+            "河北": 1,
+            "甘肃": 3,
+            "辽宁": 1,
+            "重庆": 1,
+            "陕西": 1,
+            "黑龙江": 3
+          },
+          "share": 0.12096774193548387
+        },
+        "upper": {
+          "count": 84,
+          "province_counts": {
+            "上海": 4,
+            "云南": 3,
+            "内蒙古": 3,
+            "北京": 4,
+            "四川": 4,
+            "天津": 3,
+            "安徽": 4,
+            "山东": 4,
+            "山西": 3,
+            "广东": 4,
+            "广西": 3,
+            "新疆": 3,
+            "江苏": 4,
+            "江西": 3,
+            "河北": 3,
+            "河南": 4,
+            "浙江": 4,
+            "湖北": 4,
+            "湖南": 4,
+            "福建": 4,
+            "贵州": 3,
+            "辽宁": 3,
+            "重庆": 3,
+            "陕西": 3
+          },
+          "share": 0.6774193548387096
+        }
+      }
+    },
+    "zero_diagnostic_price_guard_hits": {
+      "G1": false,
+      "G2": false
+    }
+  },
+  "classification": "TURN2_COMMON_STATE_DIVERGENCE_BEGINS_IN_EFFECTIVE_RETURN_DRIFT_ASSEMBLY_AND_PROPAGATES_THROUGH_VALUE_DERIVATIVES_INTO_TRANSFER_CANDIDATE_EXPLOSION__OWNER_HA_NUMERICAL_CONTRACT_DECISION_REQUIRED",
+  "exactly_one_next_gate": "OWNER_HA_NUMERICAL_CONTRACT_DECISION: adjudicate whether the accepted HA transfer/adjustment-cost and liquid-derivative safeguard contract is adequate under the already frozen price-interface return range; no parameter change or new runtime is authorized",
+  "external_manifest": {
+    "current_hash_readback": "PASS",
+    "file_count_excluding_manifest": 1357,
+    "path": "D:\\ProjectTemp\\ch5-k1-g1-vs-g2-ha-hjb-instrumented-evidence-20260912-001\\manifest_sha256.json",
+    "readback": "PASS",
+    "sha256": "741DBF595C0DF6698F40A8FA2625102759190291B27937B88F02D6FFE9EC973A"
+  },
+  "hard_stop_triggered": false,
+  "interior_boundary_finding": "earliest mechanism is witnessed at the preregistered interior Hubei cell before any floor or label difference; it is not boundary-law initiated",
+  "kfe_classification": "DIAGNOSTIC_ONLY",
+  "kkt_residual": "UNAVAILABLE_IN_ACCEPTED_EVIDENCE",
+  "nonfinite_count": 0,
+  "results_eligible": false,
+  "schema": "CH5_K1_G1_VS_G2_HA_HJB_INSTRUMENTED_SUMMARY_V1",
+  "scientific_retries": 0,
+  "turn1_equivalent": true,
+  "turn2_common_entering_state": true,
+  "turn2_earliest_divergence": "iteration 1 effective illiquid return contribution -> mu_a / a-direction drift -> operator -> V_new",
+  "turn2_feedback": "iteration 2 derivatives and candidates diverge; labels and floors diverge later; large finite transfer/cost values are later value-derivative/FOC feedback",
+  "turn2_not_initial_causes": [
+    "value derivatives",
+    "derivative floor",
+    "transfer candidate construction",
+    "selector score",
+    "liquid label",
+    "transfer label",
+    "wage input"
+  ]
+}
