@@ -2,39 +2,58 @@
 更新：2026-09-12。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
 ## 当前状态
-状态：`K1_TIME_BASE_PROVENANCE_CLOSURE_ACCEPTED__OWNER_COMPLETE_RECALIBRATION_CONTRACT_REQUIRED`。
+状态：`K1_ANNUAL_HJB_COMPLETE_RECALIBRATION_FROZEN__G1_GUARDED_BOUNDED_RUNTIME_DIAGNOSTIC_ACTIVE`。
 
 最新 accepted provenance-closure candidate：`c94352740f4390bbf2fbaecae93c486395afe83f`。
 Reviewer acceptance：`docs/CH5_MP4C_K1_QUARTERLY_HJB_VS_ANNUAL_FIRM_FLOW_PROVENANCE_CLOSURE_ACCEPTANCE.md`。
-当前 active Builder task：NONE。
+Owner annual recalibration freeze：`docs/CH5_MP4C_K1_ANNUAL_HJB_COMPLETE_RECALIBRATION_CONTRACT_FREEZE_CURRENT.md`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_ANNUAL_HJB_RECALIBRATED_G1_GUARD_BOUNDED_RUNTIME_DIAGNOSTIC.md`。
 Builder默认`gpt-5.6-sol / medium`。Results eligibility=`FALSE`。
 
-## 已接受：common calendar base 不能由现有 source 唯一识别
-Accepted classification：`COMMON_CALENDAR_BASE_NOT_SOURCE_IDENTIFIABLE__GENUINE_DEPRECIATION_CALIBRATION_CONFLICT__OWNER_RECALIBRATION_CONTRACT_REQUIRED`。
+## Owner annual continuous-time recalibration contract：已冻结
+由于现有 source 无法唯一识别 common calendar base，Owner 现作为新的 scientific calibration choice 冻结：
 
-Corrected-2018 `Y/K` 与 profit/K 具有 annual firm flow/stock scale；Chapter 4 明确描述 `delta=.025` 为 quarterly depreciation；Chapter 5 参数表写 `.0025`；active Python/protected MATLAB 使用 `.025`；annualized prose 约为 `.10`；PIM `.096` 属于 capital-stock construction。现有 source 不足以由 Builder静默选择其中任何一个作为最终 firm/HJB depreciation。
+- `MODEL_TIME_BASE=ANNUAL_CONTINUOUS_TIME`；
+- `rho=.05/year`；
+- `rb=.02/year`；
+- borrowing gap `.07/year`；
+- firm/HJB depreciation `delta=.10/year`；
+- `Q_z` off-diagonal intensity `1/3 per year`；
+- corrected-2018 annual `Y/K` 与 after-tax profit/K 保持 annual flow/stock rate，不做 `/4`；
+- `ra0_annual = rk + after_tax_profit_over_K - .10`；
+- `rah=S'ra0_annual`，quantity/payoff继续使用同一`S`；
+- `chi0=.1`，`chi1=2 years` 作为 provisional annual adjustment-cost calibration；
+- wage/consumption/transfer/adjustment-cost 统一解释为 annual household-model-unit flow；
+- household asset numeraire 暂不改变；
+- outer turn 继续只是 numerical fixed-point iteration。
 
-同时，continuous-time HJB 的 `rho=.05`、`rb=.02`、`r_a/rah`、`Q_z=1/3`、wage/`wjt`、transfer、consumption、adjustment-cost flow 与 `chi1` 仍缺少一套共同 calendar/model-time authority。未发现完整 source-backed annual firm flow -> HJB flow bridge，因此 `/4`、`*4`、compounding 与 log conversion 均不授权。
+`.10` 是新的 Owner-frozen annual calibration，不声称是 `.025` 的精确复利换算。PIM `.096` 继续只用于资本存量构造。
+
+## Diagnostic guard policy：第一阶段 G1 已 preregister
+未来 guard 必须在 raw/converted objects 保存之后，仅在 HJB interface 施加。第一阶段 G1 冻结：
+
+- HJB illiquid return input `r_a`：`[-.05,.20]`；
+- 现有 firm `wjt [.8,1.3]` 继续仅作为 temporary diagnostic guard，并记录 hit counts。
+
+Return-guard relaxation ladder：
+`G1 [-.05,.20] -> G2 [-.10,.35] -> G3 [-.20,.60] -> G4 OFF`。
+
+只有 G1 当前获 runtime authority；任何后续 stage 必须先验收前一阶段并重新授权。依赖 guard 的 steady state 只能称 `PROVISIONAL_STEADY_STATE`。
+
+## 当前 bounded runtime gate
+当前任务从 byte-identical accepted initialization 比较两条最多5-turn路径：
+
+- U：annual recalibration，turn1 common bootstrap，turns2-5 使用 same-path prior annual raw `ra0@S`，不加新 `r_a` guard；
+- G1：同样 annual recalibration，turn1 common bootstrap，turns2-5 在 HJB interface 将 annual converted `rah` guard 到 `[-.05,.20]`。
+
+两路径均使用 `beta_distance=2`、`beta_return=0`、fixed theta、source-faithful labor、smoothing OFF、C1 unchanged、K1B/K2 OFF。必须分别保存 raw annual `ra0`、converted annual `rah`、HJB-consumed guarded/unbounded `r_a` 与 saturation counts。
+
+该任务只测试 short-horizon annual recalibration 与 diagnostic guard 的数值作用，不构成25-turn、steady state或Results gate。
 
 ## 数值系统重建状态
 旧多省份 MATLAB/source-faithful 系统继续保留为 provenance/reference，但其 capital allocation、household return aggregation、historical clipping、time-scale wiring 与 empirical KFE 等关键合同已有 accepted evidence 证明存在结构缺陷、信息损失或维度冲突，不能作为最终 scientific authority。
 
-新系统已完成 K1 bilateral capital network 的 accounting/home-retention/same-S quantity-payoff/bounded dynamic transmission；但完整 time-base recalibration、长期 HJB stability、empirical KFE、K1B/K2、steady state 与 Results 尚未完成。
-
-## Owner debugging-bound policy
-未来正确顺序冻结为：保留 raw firm objects -> 应用 Owner-frozen conversion -> 在 HJB interface 对 converted objects 施加 preregistered temporary guards。任何 guard 必须分别保存 raw/converted/guarded value 和 saturation counts；依赖 guard 的 steady state 只能称 provisional，并按 preregistered relaxation ladder 放宽/去除。历史 `[.02,.09]` 与 `[.8,1.3]` 不能在 conversion 前复用，也不能自动升级为 structural calibration。
-
-## 当前 Owner scientific gate
-下一步不是 Builder task，而是 Owner 冻结完整 common time-base / recalibration contract。必须共同决定：
-- HJB/model-time base；
-- `delta/rho/rb/Q_z`；
-- annual firm-flow conversion law；
-- wage/asset numeraire；
-- transfer/consumption/adjustment-cost flow；
-- `chi1` 的时间尺度；
-- temporary diagnostic guards 的适用层级。
-
-只有该 contract 冻结后，Reviewer 才能发布 bounded runtime diagnostic。当前不得进入25-turn Raw、K1B、K2或Results。
+新系统已完成 K1 bilateral capital network 的 accounting/home-retention/same-S quantity-payoff/bounded dynamic transmission；现在正式进入 annual recalibration + diagnostic-guard 数值重建阶段。长期 HJB stability、empirical KFE、K1B/K2、steady state 与 Results 仍未完成。
 
 ## K1B / K2 / KFE
 K1B `beta_return=.5` 仍仅 preregistered，不授权 runtime；其 z-scored raw `ra0` 只用于 destination attractiveness，不是 payoff。K2不授权。
