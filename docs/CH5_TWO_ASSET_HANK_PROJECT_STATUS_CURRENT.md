@@ -2,30 +2,41 @@
 更新：2026-09-12。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
 ## 当前状态
-状态：`K1_ANNUAL_HJB_G1_VS_G2_CONTINUATION_ACCEPTED__G2_RESTORES_PARTIAL_RETURN_HETEROGENEITY_BUT_DEGRADES_HJB__FOCUSED_HA_HJB_MECHANISM_DIAGNOSTIC_ACTIVE`。
+状态：`K1_G1_VS_G2_MECHANISM_FORENSIC_ACCEPTED__INSTRUMENTED_HA_HJB_DIAGNOSTIC_ACTIVE`。
 
-最新 accepted continuation candidate：`ab6b19022d920a8929a2ee66cc5511be6f602557`。
-Reviewer acceptance：`docs/CH5_MP4C_K1_ANNUAL_HJB_G1_VS_G2_PRICE_GUARD_CONTINUATION_DIAGNOSTIC_ACCEPTANCE.md`。
+最新 accepted G1-vs-G2 runtime candidate：`ab6b19022d920a8929a2ee66cc5511be6f602557`。
+最新 accepted zero-science mechanism candidate：`f7c52f061b9eb3666d26985602ad6527774b5bb2`。
+Reviewer acceptance：`docs/CH5_MP4C_K1_G1_VS_G2_HA_HJB_MECHANISM_ZERO_SCIENCE_DIAGNOSTIC_ACCEPTANCE.md`。
 Owner annual recalibration freeze：`docs/CH5_MP4C_K1_ANNUAL_HJB_COMPLETE_RECALIBRATION_CONTRACT_FREEZE_CURRENT.md`。
 Owner price-guard continuation freeze：`docs/CH5_MP4C_K1_PRICE_GUARD_CONTINUATION_AND_BOUNDARY_HIT_MONITORING_FREEZE_CURRENT.md`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_G1_VS_G2_HA_HJB_MECHANISM_ZERO_SCIENCE_DIAGNOSTIC.md`。
-Builder默认`gpt-5.6-sol / medium`。Results eligibility=`FALSE`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_G1_VS_G2_HA_HJB_INSTRUMENTED_BOUNDED_DIAGNOSTIC.md`。
+Results eligibility=`FALSE`。
 
-## Annual G1 vs G2：已接受
-Annual contract、K1 same-S、capital conservation、C1、source-faithful labor与own-prior return provenance均保持闭合。G1 `[-.05,.20]` treatment return upper-hit `124/124`；G2 `[-.10,.35]` 降为 `84/124`，恢复 `40/124` unsaturated province-turns，HJB-consumed return distinct counts为 `14,10,10,10`。
+## G1/G2 continuation result：已接受
+G2 从 `[-.05,.20]` 放宽到 `[-.10,.35]` 后，return upper saturation 从 `124/124` 降到 `84/124`，恢复 `40/124` unsaturated province-turn，但 treatment HJB convergence 从 G1 `18/124` 降到 G2 `6/124`。G2 不支持 longer G2，也不授权 G3/G4。
 
-但 G2 treatment HJB convergence 从 G1 `18/124` 降至 `6/124`，且若干 transfer、adjustment-cost、`mu_a/mu_b` 与 drift extrema 显著放大。因此 Reviewer 不授权 longer G2，也不进入 G3/G4。G2 证明单纯放宽 return safeguard 会恢复部分省际 payoff heterogeneity，但当前 HA/HJB nonlinear block 对这一放宽高度敏感。
+wjt safeguard `[.8,1.3]` 仍高度绑定；G1/G2 treatment wage hits 分别为 `112/124` 与 `109/124`。所有 continuation runtime 继续必须逐省逐轮记录 return/wage 上下界撞界省份、counts、shares；最终目标仍为 `ZERO_DIAGNOSTIC_PRICE_GUARD_HITS`。
 
-## Wage safeguard monitoring
-Legacy wage safeguard `[.8,1.3]` 继续固定。G1 treatment wage hits=`112/124`；G2=`109/124`，仍高度绑定。每个后续 runtime continuation task继续必须像 legacy MATLAB 一样逐省逐轮记录 `ra/rah` 与 `wjt/wage` upper/lower/unsaturated province names、counts与shares。长期理想目标仍为 `ZERO_DIAGNOSTIC_PRICE_GUARD_HITS`。
+## Zero-science mechanism forensic：已接受
+Accepted classification：`G2_STRESS_MIXED_ACROSS_NEWLY_UNSATURATED_AND_STILL_SATURATED_RETURN_REGIMES__PATH_HISTORY_AND_WAGE_INTERACTION_NOT_IDENTIFIABLE_FROM_PERSISTED_EVIDENCE__BOUNDED_INSTRUMENTATION_TASK_REQUIRED`。
 
-## 当前 focused HA/HJB mechanism gate
-当前 exact task 新增 scientific/model calls 全部为0，只分析已保存的 G1/G2 evidence 和 accepted HJB source。目标是定位 G1->G2 convergence loss 与 control/drift amplification 到具体 province/turn/grid cell、return saturation regime、wage-hit regime、policy branch、value-derivative/transfer-FOC chain 及 boundary/interior regime，并区分 G1 baseline stress 与 G2 incremental stress。
+Forensic 显示：G2 stress 不是单一 newly-unsaturated 或 still-saturated return regime 的结果。`40/40` newly-unsaturated G2 observations 均 nonconverged，但最大 HJB statistic 与全局 transfer/cost/drift extrema 均落在 still-saturated partition。G2 top extreme cells 绝大多数是 interior；总 outward face hits 反而从 G1 `4362` 降到 G2 `3795`，因此不是 boundary-only failure。
 
-在该机制诊断完成前，不发布 longer G2，不进入G3/G4，不放宽 wage guard，不修改 `chi0/chi1`、derivative floor、solver/grid/tolerance，也不进入K1B/K2。
+G1 自身已存在巨大 extrema，且部分 G1 worst cells 在 G2 下显著改善。G1->G2 policy label 变化规模很大，但 accepted persisted evidence 没有 value derivatives、pre-selector candidate objects、iteration trace 或 standalone KKT residual，因此无法识别 return、wage、selector 与 path-history 的先后因果链。
+
+## 当前 active gate
+下一门只增加 task-bounded instrumentation，不改任何科学参数、guard、方程、grid、tolerance 或 solver。重新执行相同 annual G1/G2 short-horizon route，并重点持久化：
+- HJB iteration trace；
+- directional/value derivatives；
+- pre-selector liquid/transfer candidates；
+- raw candidate drifts/controls/costs；
+- selector/branch transition与最终policy；
+- turn2 common-state immediate response 与 turns3-5 path-history response分离。
+
+G1/G2 guard、wjt `[.8,1.3]`、annual calibration、K1 network、C1、source-faithful labor保持完全不变。该任务不得用于调参，只用于定位 HA/HJB 机制。
 
 ## 数值系统重建状态
-K1 bilateral capital network与annual time-base已进入accepted bounded runtime。当前主要 blocker 是 HA/HJB nonlinear continuation：放宽return guard会恢复异质性但显著恶化HJB稳定性；wage safeguard也仍高度绑定。旧 MATLAB/source-faithful 数值系统继续仅保留 provenance/reference。
+K1 bilateral capital network、annual time-base 与 bounded price-guard continuation 均已有 accepted runtime authority。当前主要 blocker 是 HA/HJB nonlinear mechanism 的数值稳定性与 price safeguards 高度绑定。只有机制定位后才决定是否调整 `chi0/chi1`、derivative safeguard、price-interface calibration 或其他科学合同；不得由 Builder擅自改参。
 
 ## K1B / K2 / KFE
-K1B `beta_return=.5` 仍仅preregistered，不授权runtime；K2不授权。corrected-2018 empirical finite-box upper-b leakage/MATLAB-style pinning仍是独立KFE blocker；KFE=`DIAGNOSTIC_ONLY`。当前任何K1结论均不构成steady-state、annual/IRF/welfare或Results acceptance。
+K1B `beta_return=.5` 仍仅 preregistered，不授权 runtime；K2不授权。corrected-2018 empirical finite-box upper-b leakage/MATLAB-style pinning仍是独立KFE blocker；KFE=`DIAGNOSTIC_ONLY`。当前任何K1结论均不构成steady-state、annual/IRF/welfare或Results acceptance。
