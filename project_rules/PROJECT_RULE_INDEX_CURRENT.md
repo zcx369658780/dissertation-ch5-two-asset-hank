@@ -14,19 +14,20 @@
 8. `docs/CH5_MP4C_K1_RAW_RA0_PAYOFF_BOOTSTRAP_TIMING_FREEZE_CURRENT.md`
 9. 当前 active exact task 及直接相关 acceptance/report。
 
-当前状态：`K1_RAW_RA0_PAYOFF_BOOTSTRAP_TIMING_FROZEN__COMMON_TURN1_SAFETY_DIAGNOSTIC_ACTIVE`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_RAW_RA0_PAYOFF_BOUNDED_RUNTIME_SAFETY_DIAGNOSTIC_WITH_COMMON_TURN1_BOOTSTRAP.md`。
-最新 blocked-pre-run candidate：`2c29a38b153ee56e58c833297b7dad2da639d6e7`；其 blocker evidence 已接受。
+当前状态：`K1_RAW_RA0_PAYOFF_SHORT_HORIZON_SAFETY_ACCEPTED__HJB_DRIFT_FORENSIC_ACTIVE`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_RAW_RA0_PAYOFF_HJB_DRIFT_ZERO_SCIENCE_FORENSIC.md`。
+最新 accepted raw-payoff safety candidate：`678860073d3d5b653b8863b71f494f569960ced7`。
+Reviewer acceptance：`docs/CH5_MP4C_K1_RAW_RA0_PAYOFF_COMMON_TURN1_BOOTSTRAP_SAFETY_ACCEPTANCE.md`。
 Results eligibility=`FALSE`。
 
-K1 capital network 已在 corrected-2018 bounded K1A route 中真实启用并获得 accepted dynamic evidence：equal-share `beta_distance=0` 与 pure-geographic `beta_distance=2` 均完成25 turns，capital quantity 与 household `rah` 使用同一 destination-by-origin `S`，geography 差异从 turn2 开始进入 household/Y/wage/firm states。它不是仅离线测试；legacy allocator 仍保留为 reference，K1 尚未升级为无条件 production/default steady-state route。
+K1 capital network 已在 corrected-2018 bounded runtime 中真实启用并通过 capital conservation、home retention、same-`S` quantity/payoff 与 C1 accounting gates；它不是仅离线测试。Owner 已冻结 raw `ra0` 为最终 K1 household illiquid payoff source object，并冻结 common turn-1 clipped bootstrap：Raw 从turn2开始使用本路径 prior-completed `ra0 @ S`。
 
-Owner 已冻结 raw `ra0` 为最终 K1 household illiquid payoff source object；历史 `[.02,.09]` clipped `ra` 只保留为 `EMPIRICAL_NUMERICAL_SAFEGUARD`/diagnostic bridge。raw payoff 解释为 per-model-time endogenous net productive-capital return，不做 calendar annualization，不宣称外部 market-return mapping。
+最新5-turn Control/Raw safety evidence 已接受：两路径都完成5 turns，turn1科学状态一致，Raw turns2-5无NaN/Inf、same-turn feedback、same-S、K1或C1 hard failure。该结果只支持 narrow short-horizon executability。
 
-Accepted initialization 不含 prior-completed raw `ra0`。Owner 已冻结 common turn-1 bootstrap：Control 与 Raw 都用 accepted entering clipped/source-used `ra` 完成 turn1；turn1 完成后各自获得 provenance-safe raw `ra0`。从 turn2 起，Control 继续用本路径 prior-completed used `ra`，Raw 用本路径 prior-completed raw `ra0`；不允许 cross-path borrowing 或 same-turn feedback。
+同一 evidence 同时显示严重 numerical stress：treatment HJB convergence Control=`49/124`、Raw=`12/124`，Raw turn5=`0/31` converged；Raw entering `rah` 约为Control的5.3-5.6倍，且出现很大的有限drift/transfer放大。因此该路径可以作为cleanly isolated short-horizon mechanism evidence，但不能作为稳定quantitative solution，也不能进入K1B或更长runtime。
 
-当前任务每条最多5 completed turns：turn1单独作为共同bootstrap，raw-payoff treatment horizon为turns2-5。仅测试 short-horizon runtime safety，不授权25-turn、steady-state、K1B/K2或Results。
+当前 exact task 为 zero-science HJB/drift forensic：只读accepted persisted evidence与source code，按province/turn/grid/boundary/policy label定位stress，区分Control已有大drift和Raw incremental amplification，追踪`rah/r_a`进入effective return、transfer、adjustment cost、drifts和boundary laws的source chain。新增trajectory/HJB/KFE/firm/household等科学调用预算全部为0。
 
-K1B `beta_return=.5` 仍仅 preregistered，不授权 runtime；其 z-scored raw `ra0` 只用于 destination attractiveness，不是 payoff。K2不授权。corrected-2018 finite-box upper-b leakage/MATLAB-style pinning 继续是独立 KFE blocker。
+K1B `beta_return=.5` 仍仅 preregistered，不授权 runtime；K2不授权。corrected-2018 finite-box upper-b leakage/MATLAB-style pinning 继续是独立 KFE blocker，相关KFE均为`DIAGNOSTIC_ONLY`。
 
 GitHub live main是repository-state authority；聊天不能替代exact task。正式发布task时同一回复自动附Codex启动prompt。
