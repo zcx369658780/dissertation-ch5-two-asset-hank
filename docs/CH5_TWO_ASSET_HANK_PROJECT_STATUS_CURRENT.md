@@ -2,41 +2,34 @@
 更新：2026-09-12。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
 ## 当前状态
-状态：`K1_RAW_RA0_ECONOMIC_SOURCE_RETAINED__HJB_PAYOFF_SCALE_AUTHORITY_AUDIT_ACTIVE`。
+状态：`K1_HJB_PAYOFF_SCALE_AUTHORITY_AUDIT_ACCEPTED__QUARTERLY_HJB_VS_ANNUAL_FIRM_FLOW_PROVENANCE_CLOSURE_ACTIVE`。
 
-最新 accepted raw-payoff short-horizon safety candidate：`678860073d3d5b653b8863b71f494f569960ced7`。
-最新 accepted zero-science forensic candidate：`cd5abea31cfbfcdb4170970df7e0504b394571d5`。
-Reviewer acceptance：`docs/CH5_MP4C_K1_RAW_RA0_PAYOFF_HJB_DRIFT_ZERO_SCIENCE_FORENSIC_ACCEPTANCE.md`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_HJB_PAYOFF_SCALE_AUTHORITY_ZERO_SCIENCE_AUDIT.md`。
+最新 accepted payoff-scale authority audit candidate：`367de55e60d144042b0a95ad1fd49fbc5267f85f`。
+Reviewer acceptance：`docs/CH5_MP4C_K1_HJB_PAYOFF_SCALE_AUTHORITY_ZERO_SCIENCE_AUDIT_ACCEPTANCE.md`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_QUARTERLY_HJB_VS_ANNUAL_FIRM_FLOW_PROVENANCE_CLOSURE.md`。
 Builder默认`gpt-5.6-sol / medium`。Results eligibility=`FALSE`。
 
 资本网络总体科学设计冻结稿：`docs/CH5_MP4C_BILATERAL_CAPITAL_NETWORK_SCIENTIFIC_DESIGN_FREEZE_CURRENT.md`。
 K1 scoring/data 冻结稿：`docs/CH5_MP4C_K1_SCORING_AND_DATA_CONTRACT_FREEZE_CURRENT.md`。
 Payoff-return 冻结稿：`docs/CH5_MP4C_K1_PAYOFF_RETURN_CONTRACT_FREEZE_CURRENT.md`。
-Bootstrap/timing 冻结稿：`docs/CH5_MP4C_K1_RAW_RA0_PAYOFF_BOOTSTRAP_TIMING_FREEZE_CURRENT.md`。
-Payoff-scale / diagnostic-bound 冻结稿：`docs/CH5_MP4C_K1_PAYOFF_SCALE_MAPPING_AND_DIAGNOSTIC_BOUND_POLICY_FREEZE_CURRENT.md`。
+Payoff-scale/debug guard policy：`docs/CH5_MP4C_K1_PAYOFF_SCALE_MAPPING_AND_DIAGNOSTIC_BOUND_POLICY_FREEZE_CURRENT.md`。
 
-## 旧系统与重建状态
-旧多省份 MATLAB/source-faithful 数值系统继续保留为历史 provenance/reference，但其 private-capital allocation、household return aggregation、historical clipping 与 corrected-2018 empirical KFE 等若干关键合同已被接受证据证明存在结构缺陷、信息损失或未闭合科学问题，不能再作为最终 scientific authority。
+## 已接受：旧 direct raw-ra0 -> HJB r_a 数值映射失去 authority
+最新 zero-science authority audit 证明：corrected-2018 firm block 的 `Y` 是年度 GDP flow、`K` 是资本存量，因此 `rk=mt*alpha*Y/K` 与 profit/K 在现有数据合同下是年度 flow/stock rate；而论文第四章明确把 `delta=.025` 解释为季度折旧率。当前 firm 代码却直接计算 `ra0=rk+after_tax_profit_over_K-delta`，因此 raw `ra0` 本身已经混合了年度与季度尺度。
 
-新数值系统正在 gate-by-gate 重建。K1 bilateral capital network 的 accounting、home retained capital、same-`S` quantity/payoff 与 bounded dynamic transmission 已获得 accepted evidence；但 household payoff scale、长期 HJB 稳定性、empirical KFE、K1B/K2、steady state 与 Results 仍未完成。因此不能把新系统描述为已经最终建立。
+Chapter-5 参数表另写 `delta=.0025`，与 Chapter-4 `.025`、代码 `.025` 冲突。旧 MATLAB / dissertation 证明历史上 firm return 曾直接进入 `rah/r_a`，但这种 source fidelity 不能证明 calendar/model-time dimensional consistency。
 
-## Raw payoff status
-Owner 继续保留 raw firm `ra0` 作为最终 K1 household illiquid payoff 的经济 source object，但不再假定 firm-side raw numerical level 可一比一直接作为 household HJB `r_a`。Accepted short-horizon evidence 显示 direct raw-level mapping 会显著恶化 HJB convergence，并经 value-derivative -> transfer FOC -> quadratic adjustment-cost law放大；zero-science forensic 同时表明 stress 不是 boundary-only，且 Control 本身存在 baseline extremes。
+Household HJB 是连续时间方程。`rho=.05`、`rb=.02`、`r_a/rah`、productivity generator `1/3`、wage、transfer 与 adjustment-cost 系数目前都只有 model-time 或 unresolved authority，尚无完整统一的 calendar unit。因此 direct numerical identity `HouseholdInputs.r_a = firm ra0` 当前不再授权 runtime。
 
-下一步必须先审计 firm return 与 household continuous-time HJB 的 period/time-unit/numeraire authority，再决定 identity mapping、source-backed period conversion 或其他有明确来源的 mapping。当前不得人为选择 shrinkage、normalization、annualization、cap 或 smoothing。
+## 当前 scientific route
+Owner 仍保留 raw `ra0` 作为经济 payoff source object，但 numerical payoff mapping 未冻结。不得自行采用 `/4`、复利/对数转换、z-score、任意 shrinkage、normalization、smoothing 或重新把历史 `[.02,.09]` clipping 升级为 structural payoff law。
 
-## Owner debugging-bound policy
-Owner 已明确授权：未来为建立可行稳态路线，可在 fresh exact runtime task 中使用硬性的 `ra`/`rah` 与 `wjt`/wage 等上下界作为**临时 numerical diagnostic scaffolding**，并在稳态路线稳定后按 preregistered ladder 逐步放宽乃至去除。
+当前 exact task 为纯 zero-science source/calibration provenance closure。目标是解决 Chapter-4 / Chapter-5 / code 的 depreciation conflict，并统一 `rho/rb/r_a/Q_z/Y/K/wage/transfer/adjustment-cost` 的 calendar/model-time convention。只有完整 source-backed conversion 或明确 Owner recalibration contract 冻结后，才可设计新的 bounded runtime diagnostic。
 
-该授权不等于当前激活任何新 bound。未来每个 bound 必须在执行前明确对象、上下界与用途，记录 hit/saturation counts，不得观察同一 run 后调界限以强行获得 PASS；依赖 bound 的 steady state 只能标记为 provisional。历史 `[.02,.09]` 仍只是 `EMPIRICAL_NUMERICAL_SAFEGUARD`，不是最终 structural payoff law。
-
-## 当前 active gate
-`CH5_MP4C_K1_HJB_PAYOFF_SCALE_AUTHORITY_ZERO_SCIENCE_AUDIT` 新增 scientific/model call 预算全部为0。必须审计 `rho`、`r_b`、`r_a`、`delta`、`ra0`、productivity transition rates、wage/`wjt`、transfer/adjustment-cost law、annual/quarterly labels与 legacy MATLAB/dissertation authority，并 inventory 当前 hard bounds。
-
-目标是判断是否存在 source-backed HJB payoff-scale mapping；本门不运行模型、不修改科学源码、不激活新 bounds。
+## 数值调试 guard policy
+Owner 已授权未来在 exact debugging task 中对 `ra/rah`、`wjt/wage` 等使用 hard bounds 作为临时 numerical diagnostic scaffolding，以先建立 provisional steady-state route，再按 preregistered relaxation ladder 放宽或移除。但这些 guard 不得被称为 structural economics；必须事先冻结值、保存 hit/saturation counts，且不得在看完同一运行结果后反复调界求 PASS。
 
 ## K1B / K2 / KFE
-K1B `beta_return=.5` 仍仅 preregistered，不授权 runtime；其 z-scored raw `ra0` 只用于 destination attractiveness，不是 household payoff。K2不授权。
+K1B `beta_return=.5` 仍仅 preregistered，不授权 runtime；其 z-scored raw `ra0` 只用于 destination attractiveness，不是 payoff。K2 不授权。
 
 corrected-2018 empirical finite-box upper-b leakage/MATLAB-style pinning 仍是独立 KFE blocker。当前任何 K1 结论均不构成 steady-state、KFE、annual/IRF/welfare 或 Results acceptance。
