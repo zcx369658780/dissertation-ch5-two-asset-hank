@@ -13,20 +13,23 @@
 7. `docs/CH5_MP4C_K1_PAYOFF_RETURN_CONTRACT_FREEZE_CURRENT.md`
 8. `docs/CH5_MP4C_K1_RAW_RA0_PAYOFF_BOOTSTRAP_TIMING_FREEZE_CURRENT.md`
 9. `docs/CH5_MP4C_K1_PAYOFF_SCALE_MAPPING_AND_DIAGNOSTIC_BOUND_POLICY_FREEZE_CURRENT.md`
-10. 当前 active exact task 及直接相关 acceptance/report。
+10. `docs/CH5_MP4C_K1_HJB_PAYOFF_SCALE_AUTHORITY_ZERO_SCIENCE_AUDIT_ACCEPTANCE.md`
+11. 当前 active exact task 及直接相关 report/evidence。
 
-当前状态：`K1_RAW_RA0_ECONOMIC_SOURCE_RETAINED__HJB_PAYOFF_SCALE_AUTHORITY_AUDIT_ACTIVE`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_HJB_PAYOFF_SCALE_AUTHORITY_ZERO_SCIENCE_AUDIT.md`。
-最新 accepted raw-payoff safety candidate：`678860073d3d5b653b8863b71f494f569960ced7`。
-最新 accepted forensic candidate：`cd5abea31cfbfcdb4170970df7e0504b394571d5`。
-Reviewer acceptance：`docs/CH5_MP4C_K1_RAW_RA0_PAYOFF_HJB_DRIFT_ZERO_SCIENCE_FORENSIC_ACCEPTANCE.md`。
+当前状态：`K1_HJB_PAYOFF_SCALE_AUTHORITY_AUDIT_ACCEPTED__QUARTERLY_HJB_VS_ANNUAL_FIRM_FLOW_PROVENANCE_CLOSURE_ACTIVE`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_QUARTERLY_HJB_VS_ANNUAL_FIRM_FLOW_PROVENANCE_CLOSURE.md`。
+最新 accepted payoff-scale authority audit candidate：`367de55e60d144042b0a95ad1fd49fbc5267f85f`。
 Results eligibility=`FALSE`。
 
-K1 bilateral capital network 已在 corrected-2018 bounded runtime 中真实启用并获得 accepted accounting/dynamic evidence；旧 legacy allocator 仅保留为 provenance/reference。旧多省份系统的若干关键合同已被 supersede/demote，但新 numerical system 仍在重建，尚未完成 payoff scale、HJB stability、empirical KFE、K1B/K2、steady-state/Results gates。
+Accepted payoff-scale audit 已确认：corrected-2018 `Y/K` 与 profit/K 在当前数据合同下是 annual flow/stock rate；dissertation Chapter 4 明确将 `delta=.025` 定义为 quarterly depreciation，而 Chapter 5 参数表写 `.0025`、active code仍使用 `.025`。因此 current raw `ra0` 已混合冲突日历尺度，direct numerical identity `HJB r_a = current raw ra0` 不授权 runtime。
 
-Owner 继续保留 raw `ra0` 作为经济 payoff source object，但 direct numerical identity `HJB r_a = raw ra0 level` 不再被默认接受。当前 active zero-science task专门审计 firm return 与 household HJB 的 period/time-unit/numeraire authority，包括 `rho`、`r_b`、`r_a`、`delta`、productivity transition、wage/`wjt`、transfer/adjustment-cost law以及 legacy MATLAB/dissertation 频率证据。
+Household HJB 是 continuous-time；`rho=.05`、`rb=.02`、`r_a/rah`、`Q_z=1/3`、wage、transfer 与 adjustment-cost flows 尚未获得统一 calendar/model-time authority。旧 MATLAB direct wiring 仅为 provenance，不构成 dimensional authority。
 
-Owner 同时授权未来 exact debugging tasks 使用 hard `ra`/`rah` 与 `wjt`/wage 等上下界作为临时 numerical diagnostic scaffolding；但当前 task 不激活任何新 bound。任何未来 bound 必须执行前 preregister，记录 saturation counts，不得事后调界强行PASS，并按预先规定的 relaxation ladder 逐步放宽/去除。历史 `[.02,.09]` 仍不是 structural payoff law。
+Owner 仍保留 raw `ra0` 为经济 payoff source object。不得由 Builder 自行选择 `/4`、compounding/log conversion、normalization、shrinkage、smoothing 或新 structural cap。历史 `[.02,.09]` 与 `[.8,1.3]` 继续属于 safeguard/未闭合对象，而不是自动有效 structural calibration。
+
+当前 zero-science task 要解决 Chapter-4/Chapter-5/code depreciation conflict，并建立 `rho/rb/r_a/Q_z/Y/K/wage/transfer/adjustment-cost` 的统一 provenance tree 与候选 calendar convention。若 source 无法唯一决定，必须停止在 precise Owner calibration decision，不得为了下一次 runtime 发明 conversion。
+
+Owner debugging-bound policy 继续有效：未来 exact debugging task 可预先登记 `ra/rah`、`wjt/wage` 等 hard guards 作为 temporary numerical diagnostic scaffolding，并记录 hit/saturation counts、使用 preregistered relaxation ladder；当前 task 不激活任何新 bound。
 
 K1B `beta_return=.5` 仍仅 preregistered，不授权 runtime；K2不授权。corrected-2018 finite-box upper-b leakage/MATLAB-style pinning 继续是独立 KFE blocker，KFE=`DIAGNOSTIC_ONLY`。
 
