@@ -1,0 +1,13 @@
+﻿object,value,status,authority,source
+firm ra,"[.02,.09]",active and legacy,numerical safeguard,firm.py:112-125; HANK_firm.m:55-65
+firm wjt,"[.8,1.3]",active and legacy,unresolved safeguard,firm.py:114-133; multi_prov_HANK_12sts.m:53-55
+profit PIt,floor 0,active and legacy,unresolved structural/numerical,firm.py:107-109; HANK_firm.m:48-51
+liquid derivative Vb,floor 1e-6,active faithful,numerical safeguard,"matlab_faithful_two_asset_ha.py:169-175,274-277"
+consumption,no direct floor; induced cap 1000 at gamma=2 from Vb floor,active faithful,numerical consequence,"matlab_faithful_two_asset_ha.py:126-129,274-277"
+adjustment-cost denominator a,floor a_bar=1e-6,active and legacy,numerical safeguard,matlab_faithful_two_asset_ha.py:82; multi_prov_HANK_12sts.m:28-30
+asset state grids,"b in [-2,5], a in [0,10]",active and legacy,finite-domain numerical boundary,multi_prov_HANK_12sts.m:35-42
+productivity state grid,"z in [.8,1.3]",active and legacy,unresolved calibration,multi_prov_HANK_12sts.m:43-47
+transfer d,no finite hard cap; chi0 soft threshold and grid sign guards,active and legacy,structural FOC plus numerical boundary,HANK3_FOC.m:13-19; matlab_faithful_two_asset_ha.py:312-375
+labor,no explicit hard upper bound; nonnegative formula,active and legacy,structural domain,matlab_faithful_two_asset_ha.py:131-136
+effective illiquid return taper,1 to .9 across a grid,active and legacy,"source-faithful boundary taper, not a ra0 scale map",matlab_faithful_two_asset_ha.py:111-124
+GovInv residual,floor 0,active C1 successor,Owner-frozen structural accounting,government_assets.py:74-108

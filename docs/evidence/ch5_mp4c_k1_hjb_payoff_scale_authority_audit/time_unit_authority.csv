@@ -1,0 +1,11 @@
+﻿object,authority,finding
+household rho=.05,MODEL_TIME_ONLY,continuous-time discount intensity; no calendar unit stated for Chapter 5 value
+household rb=.02 / borrowing gap=.07,MODEL_TIME_ONLY,enters liquid drift; calendar frequency not stated
+household r_a/rah,MODEL_TIME_ONLY,enters illiquid drift and must share the HJB time unit
+firm delta=.025,CONFLICTING_SOURCE_AUTHORITY,code=.025; c4 calls .025 quarterly; c5 table prints .0025 without a period
+firm rk and profit/K,SOURCE_CONFIRMED_ANNUAL,corrected-2018 Y is annual GDP flow and K is an annual capital-stock object
+firm ra0,CONFLICTING_SOURCE_AUTHORITY,annual flow/stock components are combined directly with quarterly-source delta
+z transition generator 1/3,MODEL_TIME_ONLY,generator intensity is source literal; no calendar frequency stated
+wjt/w and labor-income flow,UNRESOLVED,firm wage uses annual Y/L scale; HJB wage/grid numeraire and period bridge are absent
+"Tt, d, chi0=.1, chi1=2",MODEL_TIME_ONLY,flow/drift coefficients must share HJB time but have no calendar source
+outer fixed-point turn,SOURCE_CONFIRMED_OTHER,numerical iteration only; explicitly not economic calendar time
