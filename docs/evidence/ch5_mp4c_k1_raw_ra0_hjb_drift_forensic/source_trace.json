@@ -1,0 +1,42 @@
+{
+  "actual_runtime_binding": {
+    "lines": "164-193",
+    "path": "validators/multi_province/g1_residual_govinv_25turn_isolated/run.py",
+    "statement": "the accepted runtime passes state.rah as the first HouseholdInputs argument r_a, solves the faithful HJB, then persists hjb_return.npz before KFE"
+  },
+  "asset_drifts": {
+    "lines": "148-167, 378-388",
+    "path": "exports/matlab_faithful_two_asset_ha.py",
+    "statement": "mu_a=r_a_effective*a+d; mu_b=r_b*b+labor_income-d-cost-consumption"
+  },
+  "boundary_and_policy_selector": {
+    "lines": "259-320, 348-376, 401-415",
+    "path": "exports/matlab_faithful_two_asset_ha.py",
+    "statement": "accepted lower/upper a rules alter transfer candidates; lower/upper b rules override transfer direction; drift directions and rates follow"
+  },
+  "consumption_and_labor": {
+    "lines": "126-146, 274-304, 531-559",
+    "path": "exports/matlab_faithful_two_asset_ha.py",
+    "statement": "consumption/labor are selected from V_b branches; r_a affects them indirectly through the solved value function and derivatives"
+  },
+  "effective_illiquid_return": {
+    "lines": "111-124, 371-378",
+    "path": "exports/matlab_faithful_two_asset_ha.py",
+    "statement": "r_a is multiplied by the accepted finite-grid taper; the result enters the illiquid shadow/drift construction"
+  },
+  "household_rah_to_r_a": {
+    "lines": "45, 200-219",
+    "path": "src/ch5_two_asset_hank/multi_province/household_adapter.py",
+    "statement": "results.rah is bound to HouseholdInputs.r_a before the accepted solver call"
+  },
+  "operator_boundary_law": {
+    "lines": "424-463, 549-562",
+    "path": "exports/matlab_faithful_two_asset_ha.py",
+    "statement": "outward edges are truncated while their rate remains in the diagonal; post-convergence operator instead upwinds saved total drifts"
+  },
+  "transfer_and_adjustment_cost": {
+    "lines": "80-109, 306-369",
+    "path": "exports/matlab_faithful_two_asset_ha.py",
+    "statement": "transfer candidates use raw V_a/V_b; the accepted quadratic cost uses max(a,a_bar); selectors choose B/F/0 branches"
+  }
+}
