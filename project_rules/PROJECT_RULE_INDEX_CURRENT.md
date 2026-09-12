@@ -16,23 +16,22 @@
 10. `docs/CH5_MP4C_K1_PRICE_GUARD_CONTINUATION_AND_BOUNDARY_HIT_MONITORING_FREEZE_CURRENT.md`
 11. `docs/CH5_MP4C_K1_G1_VS_G2_HA_HJB_INSTRUMENTED_BOUNDED_DIAGNOSTIC_ACCEPTANCE.md`
 12. `docs/CH5_MP4C_K1_TRANSFER_CONTROL_TEMPORARY_ADMISSIBILITY_SAFEGUARD_FREEZE_CURRENT.md`
-13. 当前 active exact task 及直接相关 report/evidence。
+13. `docs/CH5_MP4C_K1_TRANSFER_CONTROL_ADMISSIBILITY_SAFEGUARD_ZERO_SCIENCE_DESIGN_ACCEPTANCE.md`
+14. 当前 active exact task 及直接相关 report/evidence。
 
-当前状态：`K1_INSTRUMENTED_HA_HJB_MECHANISM_ACCEPTED__TEMPORARY_TRANSFER_CONTROL_SAFEGUARD_POLICY_FROZEN__ZERO_SCIENCE_NUMERIC_DESIGN_ACTIVE`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_TRANSFER_CONTROL_ADMISSIBILITY_SAFEGUARD_ZERO_SCIENCE_DESIGN.md`。
-最新 accepted instrumented candidate：`5d28382f5914d161817642bab9f3c6d73b41c935`。
+当前状态：`K1_TRANSFER_CONTROL_ZERO_SCIENCE_DESIGN_ACCEPTED__EXPLOSIVE_RAW_TAIL_CONFIRMED__EXACT_NUMERIC_LADDER_UNRESOLVED__RAW_CANDIDATE_CENSUS_DIAGNOSTIC_ACTIVE`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_TRANSFER_CONTROL_RAW_CANDIDATE_CENSUS_INSTRUMENTED_BOUNDED_DIAGNOSTIC.md`。
+最新 accepted transfer-control design candidate：`bdc2ecd48ca3408cf10138ee58d02383185ffd50`。
 Results eligibility=`FALSE`。
 
-Accepted instrumented diagnostic 已确认：turn2 common-entering-state 下最先分叉的是不同 frozen return input 导致的 effective illiquid-return contribution 与 `mu_a` / a-drift assembly；iteration2以后 value derivatives 与 transfer candidates全面分叉。湖北 turn2 extreme cell 的 raw pre-selector transfer candidate 在最终 selection 前已爆炸，因此 selector不是 initiating mechanism。
+Accepted zero-science design确认：raw transfer candidates存在many-orders-of-magnitude finite explosive tail，但accepted traces只保存per-array summaries/hashes/extrema witnesses，没有完整cell-level raw branch arrays；因此不能冻结exact numeric ladder，也不能把static `1e3/1e4/1e5/1e6` sensitivity thresholds升级为continuation stages。
 
-Owner 已批准建立 temporary transfer-control admissibility safeguard，但只作为 numerical continuation scaffolding。`chi0=.1`、`chi1=2 years`、derivative floor、return/wage guards、annual calibration、transfer FOC、selector/boundary law、grid/tolerance/solver及K1/C1/labor science全部继续冻结。
+当前preferred safeguard semantics为`C_FALLBACK_TO_EXISTING_ZERO_WITH_RAW_BRANCH_REJECTION`，理由是保留raw FOC receipt、拒绝inadmissible raw branch、继续使用already-existing zero-transfer option，并避免candidate clipping制造non-FOC endpoint surrogate。该语义尚未构成numeric implementation authority。
 
-Safeguard 层级冻结为：raw transfer candidate 按 accepted FOC 生成后、进入 final selector / drift / cost assembly 前执行 admissibility 判断；raw candidate必须完整保存，不得把 temporary cap 描述为结构经济约束。
+下一 gate 不是更多纯zero-science统计，因为缺失raw arrays无法从hash或summary反推。当前exact task重复accepted annual G1/G2 5-turn science并增加observation-only exact raw-candidate census instrumentation；每个HJB iteration × transfer branch × grid cell必须持久化raw candidate，完整census进入sealed external evidence，Git仅保存compact summaries/manifests。
 
-当前 zero-science task 只设计 exact numeric ladder与candidate semantics，不运行模型、不激活任何`d` bound。必须比较 candidate rejection、candidate clipping、fallback-to-zero/no-transfer，并基于accepted instrumented traces分析central region、heavy tail、sign/branch asymmetry和静态hit shares。若证据不足，不得发明精确阈值。
+本任务不得实现任何d safeguard。`chi0/chi1`、annual calibration、transfer FOC、derivative floor、return/wage guards、selector/boundary/KKT、grid/tolerance/solver、K1/C1/labor science全部冻结。不得 longer G2、G3/G4、wage relaxation、K1B/K2。
 
-不得 longer G2、G3/G4、wage relaxation、K1B/K2。Price-bound hit monitoring继续强制；长期目标仍为`ZERO_DIAGNOSTIC_PRICE_GUARD_HITS`，最终科学结果也不得依赖binding temporary transfer-control safeguard。
-
-KFE finite-box upper-b leakage/MATLAB-style pinning仍为独立 blocker，KFE=`DIAGNOSTIC_ONLY`；standalone KKT residual=`UNAVAILABLE_IN_ACCEPTED_EVIDENCE`。
+Price-bound hit monitoring继续强制；长期目标仍为`ZERO_DIAGNOSTIC_PRICE_GUARD_HITS`。KFE finite-box upper-b leakage/MATLAB-style pinning仍为独立blocker，KFE=`DIAGNOSTIC_ONLY`；standalone KKT residual=`UNAVAILABLE_IN_ACCEPTED_EVIDENCE`。
 
 GitHub live main是repository-state authority；聊天不能替代exact task。正式发布task时同一回复必须附Codex启动prompt。
