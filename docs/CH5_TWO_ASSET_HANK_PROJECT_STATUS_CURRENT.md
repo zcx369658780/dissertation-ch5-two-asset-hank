@@ -1,26 +1,22 @@
 # Chapter 5 两资产 HANK 当前状态
 更新：2026-09-13。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_COARSE_3X3_SCAN_TASK_ACTIVE`。
+状态：`STANDALONE_MATLAB_FAITHFUL_HJB_RA_TRANSITION_REFINEMENT_3X3_TASK_ACTIVE`。
 
-最新 accepted omega=0.5 diagnostic candidate：`5576ba2f921a3ed86a6fdd2205ffb46a3dc34c9a`。
-Reviewer acceptance：`docs/CH5_MP4C_K1_HJB_FIXED_POINT_VALUE_UPDATE_RELAXATION_OMEGA_0P5_SAME_INPUT_DIAGNOSTIC_ACCEPTANCE.md`。
-Owner/Reviewer standalone convergence-domain freeze：`docs/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_CONVERGENCE_DOMAIN_FREEZE_CURRENT.md`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_COARSE_3X3_SCAN.md`。
+最新 accepted coarse scan candidate：`5f55b474780d70921bfcf3ea2f863039c61814c1`。
+Reviewer acceptance：`docs/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_COARSE_3X3_SCAN_ACCEPTANCE.md`。
+Owner/Reviewer refinement freeze：`docs/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_TRANSITION_REFINEMENT_FREEZE_CURRENT.md`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_TRANSITION_REFINEMENT_3X3_SCAN.md`。
 Results eligibility=`FALSE`。
 
-Accepted omega=0.5 evidence is mixed only: turn1 `20/31 -> 23/31`, turn2 `2/31 -> 0/31`, all `22/62 -> 23/62`; chattering diagnostics mostly fall, but seven accepted converged calls are lost and both-converged endpoints are not generally identical. No HJB damping/relaxation is accepted as a production method, and no damping ladder/adaptive solver route is authorized.
+Accepted coarse scan facts：`rb=.02`；`ra={.02,.055,.09}`；`w={.8,1.05,1.3}`。9/9 HJB converged；0 hard error/invalid transition matrix；最大`A2max=.007712953842301029 < homecrit=.01`。`ra=.02/.055`在三个wage下均几乎全部质量位于结构性`amin=0`，保守分类为`QUALITY_AMBIGUOUS__OWNER_REVIEW_REQUIRED`；`ra=.09`在三个wage下均出现`amax=10`模态与约18.7%–20.9%的上界质量，分类为`BOUNDARY_CONVERGED_CANDIDATE`。粗网格没有GOOD点。
 
-Owner has redirected the scientific priority to the original MATLAB-faithful standalone household block. The HJB algorithm itself is not to be redesigned. The next objective is to map the healthy input domain before returning to the full multi-province model.
+当前科学解释：HJB算法本身在该粗参数域内工作正常；主要转变沿`ra`方向发生，wage在本轮未形成HJB failure或改变lower/upper-a-boundary分类。下一步只在`.055`与`.09`之间沿`ra`细化，寻找`a`分布是否出现内部模态/内部质量带。
 
-Active task runs exactly nine standalone points with `rb=.02`, borrowing gap `.07`, `ra ∈ {.02,.055,.09}`, household wage `w ∈ {.8,1.05,1.3}`. Grid remains `I=20`, `b∈[-2,5]`; `J=20`, `a∈[0,10]`; `Nz=2`, `z∈[.8,1.3]`; all other accepted MATLAB-faithful household parameters/numerics are fixed.
+Active refinement exact grid：`rb=.02`；`ra={.065,.0725,.08}`；`w={.8,1.05,1.3}`。只允许这9个Cartesian points。保持accepted standalone MATLAB-faithful HJB/KFE算法、grid、numerics、FOC、selector、boundary、contaminated-row KFE不变；不得damping、solver/tolerance/grid/derivative-floor/price-guard变化，不跑global multi-province、firm、GE、IRF或Results。
 
-Each point first receives a MATLAB-style HJB classification: hard error/invalid transition matrix, legal HJB nonconvergence, or HJB convergence. The original value-function update, upwind/selector logic, transition-matrix construction, pseudo-time/direct solve, tolerance, iteration ceiling, derivative floor and boundary law are unchanged.
+每点先做MATLAB-style HJB classification；HJB converged后才跑standalone KFE，并输出`Ct,Lt,At,Bt`、a/b marginals、四个boundary mass、modal a/b、interior-a mass、top a bins、KFE mass/residual/finite receipts。重点判断是否出现从`amin`集中到interior distribution再到`amax`集中之间的过渡。
 
-Only HJB-converged points proceed to the accepted standalone MATLAB-faithful stationary KFE solve. For those points the task records `Ct,Lt,At,Bt`, mass normalization, `a/b` marginals, exact endpoint mass shares and modal asset locations. The first scan may descriptively label converged points as boundary-converged candidate, good steady-state candidate or quality-ambiguous; no post-result numeric cutoff may be invented to force a category.
+KFE caveat：accepted standalone MATLAB-faithful contaminated-row KFE仅用于独立household parameter-domain mapping；corrected-2018 multi-province finite-box upper-b leakage与MATLAB-style pinning blocker仍独立未解决。
 
-The task does not run the global multi-province model, firm block, GE, K1B/K2, annual downstream, shocks, IRFs or Results. It does not add adaptive scan points after seeing outcomes. After independent acceptance, any refinement grid near an observed boundary requires a new Owner/Reviewer gate.
-
-Standalone KFE use in this task is limited to classifying converged household steady states with the already accepted MATLAB-faithful contaminated-row solve. The separate corrected-2018 multi-province finite-box upper-b leakage/MATLAB-style pinning blocker remains unresolved and is not waived.
-
-下一 gate：Builder完成 coarse 3×3 scan 后，由 ChatGPT Reviewer 独立 ACCEPT/REJECT，并由 Owner/Reviewer 决定下一小范围 refinement grid。
+下一gate：Builder完成active refinement task后，由ChatGPT Reviewer独立ACCEPT/REJECT并决定是否继续更窄ra refinement、冻结provisional ra health band，或重定向路线。

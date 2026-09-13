@@ -1,0 +1,70 @@
+{
+  "connected_good_coarse_region": [],
+  "connected_good_coarse_region_exists": false,
+  "counts": {
+    "BOUNDARY_CONVERGED_CANDIDATE": 3,
+    "GOOD_STEADY_STATE_CANDIDATE": 0,
+    "HJB_CONVERGED": 9,
+    "HJB_HARD_ERROR_OR_INVALID_TRANSITION_MATRIX": 0,
+    "HJB_NOT_CONVERGED": 0,
+    "QUALITY_AMBIGUOUS__OWNER_REVIEW_REQUIRED": 6
+  },
+  "external_manifest": {
+    "entry_count": 32,
+    "path": "D:\\ProjectTemp\\ch5-mp4c-k1-hjb-ra-wage-3x3-evidence-20260913-001\\sealed_manifest_sha256.json",
+    "sha256": "061CB52D5C5C1F2268DDFFA0A526FEF2454274C169805CE2EADBA5F7ACD746D0"
+  },
+  "good_candidate_aggregate_ranges": null,
+  "grid": {
+    "ra": [
+      0.02,
+      0.055,
+      0.09
+    ],
+    "rb": [
+      0.02
+    ],
+    "wage": [
+      0.8,
+      1.05,
+      1.3
+    ]
+  },
+  "kfe_caveat": "Accepted standalone MATLAB-faithful contaminated-row KFE only; it does not resolve the corrected-2018 multi-province finite-box upper-b leakage or MATLAB-style pinning blocker.",
+  "observed_transition": {
+    "between": [
+      0.055,
+      0.09
+    ],
+    "description": "All wages move from essentially all mass at structural amin to an artificial amax mode/pile-up; wage produces no HJB failure in the coarse grid.",
+    "direction": "ra"
+  },
+  "quality_semantics": {
+    "cutoff_fitted_after_results": false,
+    "interior_mode_without_upper_pileup": "GOOD_STEADY_STATE_CANDIDATE",
+    "structural_lower_endpoint_mode": "QUALITY_AMBIGUOUS__OWNER_REVIEW_REQUIRED",
+    "upper_endpoint_mode": "BOUNDARY_CONVERGED_CANDIDATE"
+  },
+  "recommended_next_gate": {
+    "grid": {
+      "ra": [
+        0.065,
+        0.0725,
+        0.08
+      ],
+      "rb": [
+        0.02
+      ],
+      "wage": [
+        0.8,
+        1.05,
+        1.3
+      ]
+    },
+    "name": "OWNER_REVIEW_STANDALONE_RA_TRANSITION_REFINEMENT_3X3",
+    "reason": "Bracket the observed lower-to-upper illiquid-boundary transition while preserving the same wage coverage.",
+    "run_now": false
+  },
+  "results_eligibility": false,
+  "terminal_classification": "ALL_HJB_CONVERGED__LOW_AND_MID_RA_LOWER_BOUND_AMBIGUOUS__HIGH_RA_UPPER_A_BOUNDARY_PILEUP"
+}
