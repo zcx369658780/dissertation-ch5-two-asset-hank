@@ -1,0 +1,181 @@
+{
+  "accepted_same_state": "CORRECTED_2018_INITIALIZATION_ONLY",
+  "dimensional_conclusion": "DIMENSIONAL_RELATION_UNRESOLVED",
+  "province_count": 31,
+  "same_state_triple": "GDP, population-derived Y/N, guarded wjt and composite w0 coexist in the accepted corrected-2018 initialization receipt; direct monetary comparability to wage is not proven.",
+  "scalings": [
+    {
+      "authority": "ACCEPTED_CORRECTED_2018",
+      "factor": 1000.0,
+      "formula": "Y0_MU=GDP_raw*1000",
+      "model_unit": "MU_10WAN_YUAN",
+      "raw_unit": "亿元",
+      "source": "load_GDPdata.m:93; corrected_2018_runtime.py",
+      "variable": "GDP"
+    },
+    {
+      "authority": "ACCEPTED_CORRECTED_2018",
+      "factor": 100.0,
+      "formula": "N0_NU=POP_raw*100",
+      "model_unit": "NU_100_PERSONS",
+      "raw_unit": "万人",
+      "source": "load_GDPdata.m:101-104; corrected_2018_runtime.py",
+      "variable": "population"
+    },
+    {
+      "authority": "ACCEPTED_CORRECTED_2018",
+      "delta": 0.096,
+      "divisor": 0.1,
+      "factor": 1000.0,
+      "formula": "K0_MU=K_raw*1000; K_1=I_1/0.1; K_t=(1-delta)K_(t-1)+I_(t-1)",
+      "model_unit": "MU_10WAN_YUAN",
+      "raw_unit": "亿元",
+      "source": "load_GDPdata.m:55-61,94; It_to_Kt.m:1-10",
+      "variable": "Track-A capital"
+    },
+    {
+      "authority": "ACCEPTED_CORRECTED_2018_RATIO",
+      "factor": 1.0,
+      "formula": "Y0_MU/N0_NU",
+      "implied_unit": "1000 yuan/person/model period",
+      "source": "load_GDPdata.m:126; mpHANK_equilibrium_2000.m:38,42",
+      "variable": "per-capita GDP"
+    },
+    {
+      "alpha": 0.7380939146868483,
+      "authority": "ACCEPTED_CORRECTED_2018",
+      "factor": 1.0,
+      "formula": "Zt0=Y0*K0^(-alpha)*N0^(alpha-1)",
+      "source": "load_GDPdata.m:132-137; corrected_2018_runtime.py",
+      "variable": "productivity"
+    },
+    {
+      "authority": "ACCEPTED_POPULATION_PROXY_ONLY",
+      "factor": 1.0,
+      "formula": "L0=N0",
+      "source": "mpHANK_equilibrium_2000.m:29-30; corrected_2018_runtime.py",
+      "variable": "labor initialization",
+      "warning": "not household labor"
+    },
+    {
+      "authority": "SOURCE_FAITHFUL_INITIALIZATION__REDESIGN_PENDING",
+      "factor": 1.0,
+      "formula": "GovInv0=K0*1",
+      "source": "mpHANK_equilibrium_2000.m:40; corrected_2018_runtime.py",
+      "variable": "GovInv initialization"
+    },
+    {
+      "authority": "PROTECTED_SOURCE_FORMULA",
+      "delta_firm": 0.025,
+      "factor": 1.0,
+      "formula": "Y=Z*K^alpha*L^(1-alpha); I=K-K_prev+delta_firm*K",
+      "source": "HANK_firm.m:30,47",
+      "variable": "firm output/investment"
+    },
+    {
+      "authority": "PROTECTED_SOURCE_GUARD",
+      "formula": "wjt=clip(mt*(1-alpha)*Z*(K/L)^alpha,0.8,1.3)",
+      "lower": 0.8,
+      "source": "HANK_firm.m:43,66-74",
+      "upper": 1.3,
+      "variable": "firm wage guard"
+    },
+    {
+      "authority": "PROTECTED_SOURCE_NORMALIZATION",
+      "factor": 0.3,
+      "formula": "0.3*(pcap-min)/(max-min)",
+      "source": "mpHANK_equilibrium_2000.m:46-50",
+      "variable": "province share"
+    },
+    {
+      "authority": "PROTECTED_SOURCE_NORMALIZATION",
+      "factor": 0.5,
+      "formula": "distance/max(distance)*0.5",
+      "source": "load_distdata.m:6-8",
+      "variable": "distance migration wedge"
+    },
+    {
+      "authority": "PROTECTED_SOURCE_TRANSFORM",
+      "divisor": 100.0,
+      "formula": "sector share/100",
+      "source": "load_GDPdata.m:95,97,99",
+      "variable": "sector GDP shares"
+    },
+    {
+      "authority": "LEGACY_HISTORICAL_ONLY",
+      "factor": 1000.0,
+      "formula": "documented raw 万元*1000",
+      "source": "unit_scaling_audit.csv",
+      "variable": "legacy PIM capital",
+      "warning": "dimensional rationale unresolved; not active corrected Track-A route"
+    }
+  ],
+  "schema": "CH5_MP4C_K1_MACRO_SCALE_TRACE_V1",
+  "statistics": {
+    "capital_K0_MU": {
+      "max": 210016973.07581103,
+      "median": 67306708.83876626,
+      "min": 6325734.326183821
+    },
+    "capital_raw_100m_yuan": {
+      "max": 210016.97307581102,
+      "median": 67306.70883876627,
+      "min": 6325.734326183821
+    },
+    "guarded_firm_wage_wjt0": {
+      "max": 1.3,
+      "median": 1.3,
+      "min": 1.3
+    },
+    "household_composite_wage_w0": {
+      "max": 18.519697907284154,
+      "median": 17.874582154052934,
+      "min": 13.837477514705718
+    },
+    "initial_labor_proxy_L0_NU": {
+      "max": 1234800.0,
+      "median": 393100.0,
+      "min": 35400.0
+    },
+    "per_capita_output_Y0_over_N0": {
+      "max": 151.0310218978102,
+      "median": 51.5588270640548,
+      "min": 32.22306163021869
+    },
+    "population_N0_NU": {
+      "max": 1234800.0,
+      "median": 393100.0,
+      "min": 35400.0
+    },
+    "population_raw_10k_persons": {
+      "max": 12348.0,
+      "median": 3931.0,
+      "min": 354.0
+    },
+    "productivity_Zt0": {
+      "max": 2.437920774687262,
+      "median": 1.2419605594280527,
+      "min": 0.695994950573659
+    },
+    "province_gdp_Y0_MU": {
+      "max": 99945200.0,
+      "median": 22716500.0,
+      "min": 1548400.0
+    },
+    "province_gdp_raw_100m_yuan": {
+      "max": 99945.2,
+      "median": 22716.5,
+      "min": 1548.4
+    },
+    "raw_firm_wage_wjt0": {
+      "max": 36.39146820961234,
+      "median": 12.423284914909623,
+      "min": 7.7642626541050035
+    }
+  },
+  "wage_mapping": {
+    "formula": "w_i=alphal^(-phi_l/(1+phi_l))*[sum_j phi(j,i)*(wjt_j*(1-tau_j-sigmau(j,i))/phi(j,i))^(1+1/phi_l)]^(phi_l/(1+phi_l))",
+    "interpretation": "Cross-province CES-style destination aggregation can map O(1) guarded wjt to O(10) composite w; monetary units are not proven.",
+    "source": "wage_caculate.m:1-17; HANK_mp_1turn.m:49-53"
+  }
+}

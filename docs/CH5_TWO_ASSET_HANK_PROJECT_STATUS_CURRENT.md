@@ -2,22 +2,14 @@
 
 更新：2026-09-13。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`REAL_COMPOSITE_WAGE_DOMAIN_STANDALONE_3X3_AND_MACRO_SCALE_AUDIT_TASK_ACTIVE`。
+状态：`REAL_WAGE_SCAN_COMPLETE__MACRO_DIMENSIONAL_RELATION_UNRESOLVED__JOINT_RECALIBRATION_OWNER_REVIEW_REQUIRED`。
 
-最新 accepted mapping audit candidate：`3975d42fae57cc25f179225857b5defce1d7731f`。
-Reviewer acceptance：`docs/CH5_MP4C_K1_WAGE_CONDITIONAL_RA_W_HEALTH_REGION_AND_PROVINCIAL_RETURN_MAPPING_AUDIT_ACCEPTANCE.md`。
-Owner/Reviewer freeze：`docs/CH5_MP4C_K1_REAL_COMPOSITE_WAGE_DOMAIN_AND_MACRO_SCALE_CONSISTENCY_FREEZE_CURRENT.md`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_REAL_COMPOSITE_WAGE_DOMAIN_STANDALONE_3X3_AND_MACRO_SCALE_AUDIT.md`。
-Results eligibility=`FALSE`。
+本轮 exact Builder task 已完成，active Builder task=`NONE`；未发布 successor task。Candidate 等待 ChatGPT Reviewer 独立 ACCEPT/REJECT。Results eligibility=`FALSE`。
 
-Accepted mapping audit：standalone `w` 与省级 household-HJB consumed `results.w` / `HouseholdInputs.wages[0]` 是同一 household-wage object；`guarded_wjt` 是上游 firm wage，必须经 source-defined aggregation 才生成 composite wage。Accepted provincial composite wage turn1 约 `13.84–18.52`、turn2 约 `12.84–17.48`，而旧 standalone map 只覆盖 `.8/1.05/1.3`，所以 62/62 provincial states 均在旧 health-map wage coverage 外。
+真实 household composite-wage standalone grid 为 `rb=.02`、`ra={.06,.0675,.07}`、`w={13,15.5,18}`。HJB 9/9 legal/converged；KFE 9/9；9/9 均为 `INTERIOR_A_DISTRIBUTION_CANDIDATE`。三个 `ra` 都在三个 wage 上保持 interior。旧 `.8/1.05/1.3` narrow map 的 2 interior/2 lower/4 ambiguous/1 upper 结构不再保持，因此 wage-domain 对 observed health labels 有实质影响，但 `1.3→13` 间连续 frontier 未观察。
 
-当前 active task 将 standalone household wage 扩展到真实 composite-wage scale，但不修改 `wjt` range。Exact grid：`rb=.02`；`ra={.06,.0675,.07}`；`w={13.0,15.5,18.0}`，共 9 个 Cartesian points。保持 accepted MATLAB-faithful HJB/KFE 算法、grid、numerics、FOC、selector、boundary、transition legality 和 contaminated-row KFE 完全不变；不得 damping、solver/tolerance/grid/derivative-floor/guard 变化，不得自适应加点。
+Macro audit 使用 accepted corrected-2018 initialization-only 31-province receipt：GDP raw=`1548.4–99945.2` 亿元，`Y0_MU=1.5484e6–9.99452e7`；`Y0/N0=32.2231–151.0310` MU/NU；initial household composite `w0=13.8375–18.5197`；guarded `wjt0=1.3`（31/31），raw `wt0=7.7643–36.3915`。虽然同一 receipt 可并列这些对象，household wage 到 macro MU/NU 及 model-period 的映射仍未证明，结论=`DIMENSIONAL_RELATION_UNRESOLVED`。
 
-同一任务增加 read-only macro-scale consistency audit：追踪省级 GDP/output、population/per-capita GDP、`wjt`、household composite `w`、investment/capital/GDP scaling multipliers/divisors、productivity/labor normalization。必须区分统计物理单位、model-normalized scale、dimensionless/calibrated object 与无法证明单位的对象；不得把变量标签直接解释为人民币/元。
+不得直接修改 `wjt` guard。唯一建议但未执行的 Owner gate：`OWNER_REVIEW_JOINT_WJT_RA_MACRO_SCALE_RECALIBRATION`。它必须共同审查 `wjt→w`、return/asset bridge→`ra/rah`、GDP/per-capita GDP、investment/capital、population、productivity/labor normalization。
 
-如果真实 composite-wage scan 广泛不收敛、KFE 严重病态或普遍撞人工边界，不得现场调 `wjt`/`ra`/GDP/投资乘数。应转入 joint recalibration Owner gate，并在未来改 `wjt` 范围前共同核对省级 GDP、人均 GDP、household average/composite wage 的数量级和现有 normalization。
-
-Runtime：HJB exactly 9；KFE<=9、仅在 HJB converged 后；global outer/firm/MATLAB/K1B/K2/GE/downstream/shock/IRF/Results 全部 0。Standalone contaminated-row KFE 与 unresolved corrected-2018 multi-province finite-box upper-b leakage/MATLAB-style pinning blocker继续分离。
-
-下一 gate：Builder完成 active exact task 后，由 ChatGPT Reviewer 独立 ACCEPT/REJECT，并依据真实 wage-domain scan 与 macro-scale audit 选择 exactly one Owner gate。
+Runtime：HJB=9，KFE=9，retries=0；global outer/firm/MATLAB/K1B/K2/GE/downstream/shock/IRF/Results 全部 0。Standalone contaminated-row KFE 不解决 multi-province finite-box upper-b leakage/MATLAB-style pinning blocker。
