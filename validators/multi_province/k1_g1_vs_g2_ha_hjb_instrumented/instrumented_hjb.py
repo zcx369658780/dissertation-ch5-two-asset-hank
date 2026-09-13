@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from collections import Counter
 from hashlib import sha256
-from typing import Any, Iterable
+from typing import Any, Callable, Iterable
 
 import numpy as np
 from scipy import sparse
@@ -149,6 +149,7 @@ def solve_with_trace(
     grid: Any, params: Any, inputs: Any, initial_value: np.ndarray,
     baseline_labor: np.ndarray, transfer_income: float, borrowing_rate_gap: float,
     numerics: Any, *, checkpoint_cells: Iterable[tuple[int, int, int]] = (),
+    iteration_observer: Callable[[int, dict[str, np.ndarray]], None] | None = None,
 ) -> tuple[Any, dict[str, Any]]:
     shape = (grid.b.size, grid.a.size, grid.z.size)
     value = np.asarray(initial_value, dtype=float).copy()
@@ -241,6 +242,19 @@ def solve_with_trace(
             "operator_sha256": array_hash(operator.full.toarray()),
             "checkpoint_cells": checkpoint_rows,
         })
+        if iteration_observer is not None:
+            observed_arrays = {
+                name: np.array(candidate_arrays[name], copy=True)
+                for name in ("d_bb", "d_bf", "d_fb", "d_ff")
+            }
+            observed_arrays.update({
+                "selected_transfer": np.array(arrays["transfer"], copy=True),
+                "selected_adjustment_cost": np.array(arrays["adjustment_cost"], copy=True),
+                "transfer_label": np.array(transfer_label, copy=True),
+            })
+            for observed_array in observed_arrays.values():
+                observed_array.setflags(write=False)
+            iteration_observer(iteration, observed_arrays)
         if statistic < numerics.convergence_tolerance: converged=True; break
     assert operator is not None
     post = oracle.assemble_source_operator(np.maximum(-arrays["mu_b"],0)/db,np.maximum(arrays["mu_b"],0)/db,np.maximum(-arrays["mu_a"],0)/da,np.maximum(arrays["mu_a"],0)/da,grid.switch_matrix)

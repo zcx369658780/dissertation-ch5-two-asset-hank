@@ -19,8 +19,8 @@
 13. `docs/CH5_MP4C_K1_TRANSFER_CONTROL_ADMISSIBILITY_SAFEGUARD_ZERO_SCIENCE_DESIGN_ACCEPTANCE.md`
 14. 当前 active exact task 及直接相关 report/evidence。
 
-当前状态：`K1_TRANSFER_CONTROL_ZERO_SCIENCE_DESIGN_ACCEPTED__EXPLOSIVE_RAW_TAIL_CONFIRMED__EXACT_NUMERIC_LADDER_UNRESOLVED__RAW_CANDIDATE_CENSUS_DIAGNOSTIC_ACTIVE`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_TRANSFER_CONTROL_RAW_CANDIDATE_CENSUS_INSTRUMENTED_BOUNDED_DIAGNOSTIC.md`。
+当前状态：`K1_TRANSFER_RAW_CANDIDATE_CENSUS_CANDIDATE_COMPLETE__INDEPENDENT_L3_REVIEW_REQUIRED__NUMERIC_LADDER_UNRESOLVED`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_TRANSFER_CONTROL_RAW_CANDIDATE_CENSUS_INSTRUMENTED_BOUNDED_DIAGNOSTIC.md` 已在candidate branch完成，尚未被独立Reviewer接受。
 最新 accepted transfer-control design candidate：`bdc2ecd48ca3408cf10138ee58d02383185ffd50`。
 Results eligibility=`FALSE`。
 
@@ -28,7 +28,7 @@ Accepted zero-science design确认：raw transfer candidates存在many-orders-of
 
 当前preferred safeguard semantics为`C_FALLBACK_TO_EXISTING_ZERO_WITH_RAW_BRANCH_REJECTION`，理由是保留raw FOC receipt、拒绝inadmissible raw branch、继续使用already-existing zero-transfer option，并避免candidate clipping制造non-FOC endpoint surrogate。该语义尚未构成numeric implementation authority。
 
-下一 gate 不是更多纯zero-science统计，因为缺失raw arrays无法从hash或summary反推。当前exact task重复accepted annual G1/G2 5-turn science并增加observation-only exact raw-candidate census instrumentation；每个HJB iteration × transfer branch × grid cell必须持久化raw candidate，完整census进入sealed external evidence，Git仅保存compact summaries/manifests。
+Candidate已重复accepted annual G1/G2 5-turn science并增加observation-only exact raw-candidate census instrumentation；87,027,200个raw observations全部finite，旧summary/hash exact reconcile。完整census进入sealed external evidence，Git仅保存compact summaries/manifests。当前唯一next gate为`INDEPENDENT_GPT_L3_ACCEPT_OR_REJECT_RAW_CANDIDATE_CENSUS_CANDIDATE`，不得自行接受或发布successor。
 
 本任务不得实现任何d safeguard。`chi0/chi1`、annual calibration、transfer FOC、derivative floor、return/wage guards、selector/boundary/KKT、grid/tolerance/solver、K1/C1/labor science全部冻结。不得 longer G2、G3/G4、wage relaxation、K1B/K2。
 
