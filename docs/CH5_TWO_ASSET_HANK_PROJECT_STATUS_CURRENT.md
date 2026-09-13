@@ -2,22 +2,20 @@
 
 更新：2026-09-13。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`STANDALONE_MATLAB_FAITHFUL_HJB_RA_TRANSITION_REFINEMENT_3X3_CANDIDATE_PUBLISHED__INDEPENDENT_REVIEW_REQUIRED`。
+状态：`STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_FRONTIER_NARROW_3X3_TASK_ACTIVE`。
 
-Baseline：`c58a64b65ce948f8ddc47dfe8c4fd3a3dc060921`。Branch：`codex/ch5-mp4c-k1-hjb-ra-transition-3x3-20260913`。Worktree：`D:\ProjectTemp\ch5-mp4c-k1-hjb-ra-transition-3x3-20260913-001`。
+最新 accepted refinement candidate：`cdaba87bae181280e182f639d4cf8fa5a5bae773`。
+Reviewer acceptance：`docs/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_TRANSITION_REFINEMENT_3X3_SCAN_ACCEPTANCE.md`。
+Owner/Reviewer narrow-frontier freeze：`docs/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_FRONTIER_NARROW_REFINEMENT_FREEZE_CURRENT.md`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_FRONTIER_NARROW_3X3_SCAN.md`。
+Results eligibility=`FALSE`。
 
-Exact Builder task 已完成，active Builder task=`NONE`；未发布 successor task。Results eligibility=`FALSE`。
+Accepted previous refinement facts：`rb=.02`；`ra={.065,.0725,.08}`；`w={.8,1.05,1.3}`。9/9 HJB legal and converged；最大 `A2max=7.10543e-15`。只有 `ra=.065,w={1.05,1.3}` 为 `INTERIOR_A_DISTRIBUTION_CANDIDATE`；`ra=.065,w=.8` transitional；`ra=.0725,w=.8` upper-bound，`w={1.05,1.3}` ambiguous；`ra=.08` 三个 wage 全部 upper-bound。transition materially depends on wage；尚无 wage-robust connected interior `ra` band。
 
-报告：`docs/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_TRANSITION_REFINEMENT_3X3_SCAN_REPORT.md`。
+当前 exact narrow grid：`rb=.02`；`ra={.06,.0675,.07}`；`w={.8,1.05,1.3}`，仅这9个 Cartesian points。每点 fresh MATLAB-style initialization；只允许 `r_a` 和 household wage 变化。HJB/KFE algorithm、grid、numerics、FOC、selector、boundary、derivative floor、contaminated-row KFE 全部冻结；不得 damping/relaxation、price guard、solver/tolerance/ceiling/grid 改动，不跑 global multi-province、firm、GE、IRF 或 Results。
 
-Terminal classification：`ALL_HJB_LEGAL_CONVERGED__INTERIOR_ONLY_AT_RA_0P065_HIGHER_WAGES__WAGE_DEPENDENT_TRANSITION__RA_0P08_UPPER_BOUNDARY`。
+任务目标：判断 narrower frontier 内是否存在至少一个对三个 wage 都为内部 `a` 分布的 `ra`，从而支持 provisional wage-robust health band；如果仍不存在，则停止盲目一维加密，下一 Owner gate 转向二维 wage-conditional `(ra,w)` health-region / provincial return-mapping review。
 
-Exact grid：`rb=.02`；`ra={.065,.0725,.08}`；`w={.8,1.05,1.3}`。HJB `9/9`、KFE `9/9`、scientific/engineering retries `0/0`。9/9 HJB legal and converged；interior candidates `2`、ambiguous `3`、upper-bound pile-up `4`、lower-bound dominated `0`。只有 `ra=.065,w={1.05,1.3}` 为 interior candidates；`ra=.08` 三点均以 `amax` 为模态。transition materially depends on wage；不存在跨三个 wage 的 connected nondegenerate interior `ra` band。
+KFE caveat：accepted standalone MATLAB-faithful contaminated-row KFE 仅用于 household parameter-domain mapping；corrected-2018 multi-province finite-box upper-b leakage 与 MATLAB-style pinning blocker 仍独立未解决。
 
-输入不变性：九点分别 fresh initialization；仅 `inputs.r_a` 和 `inputs.wages[0]` 变化，unexpected varying fields=`[]`。global outer turn/firm/MATLAB/K1B/K2/GE/downstream/shock/IRF/Results 均为 `0`。
-
-Compact evidence：`docs/evidence/ch5_mp4c_k1_standalone_hjb_ra_transition_refinement_3x3/`，sealed-manifest SHA-256=`D212336DF265B961CF78695B92B23CCFA298D8787FE0D8DE0D7D0419F7650322`。External evidence：`D:\ProjectTemp\ch5-mp4c-k1-hjb-ra-transition-refinement-3x3-evidence-20260913-001`，sealed-manifest SHA-256=`466A0DFB7E31082173AA7E95C0F1C5217F4FD29045F4E1F722566BD8395D1D5E`。
-
-KFE caveat：accepted standalone MATLAB-faithful contaminated-row KFE 仅用于 household parameter-domain mapping；corrected-2018 multi-province finite-box upper-b leakage 与 MATLAB-style pinning blocker 仍未解决。
-
-唯一当前 gate：ChatGPT Reviewer 独立 ACCEPT/REJECT。建议但未授权/未执行/未发布的唯一后续 gate 为 `OWNER_REVIEW_NARROWER_RA_REFINEMENT_AROUND_WAGE_DEPENDENT_FRONTIER`，候选 grid `rb=.02`, `ra={.06,.0675,.07}`, `w={.8,1.05,1.3}`。不要 merge main。
+下一 gate：Builder 完成 active task 后，由 ChatGPT Reviewer 独立 ACCEPT/REJECT。
