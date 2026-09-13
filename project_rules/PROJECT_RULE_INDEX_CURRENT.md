@@ -9,30 +9,24 @@
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT_20260913_HJB_MECHANISM.md`
 5. accepted bilateral-capital / scoring-data / payoff / annual-HJB / price-guard authority docs
-6. `docs/CH5_MP4C_K1_TRANSFER_CONTROL_RAW_CANDIDATE_CENSUS_INSTRUMENTED_BOUNDED_DIAGNOSTIC_ACCEPTANCE.md`
-7. `docs/CH5_MP4C_K1_TRANSFER_CONTROL_D1_1E5_ADMISSIBILITY_FREEZE_CURRENT.md`
-8. `docs/CH5_MP4C_K1_TRANSFER_CONTROL_D1_1E5_BOUNDED_RUNTIME_DIAGNOSTIC_ACCEPTANCE.md`
-9. `docs/CH5_MP4C_K1_HJB_CONVERGENCE_MECHANISM_REVIEW_FREEZE_CURRENT.md`
-10. candidate report：`docs/CH5_MP4C_K1_HJB_CONVERGENCE_MECHANISM_TURN1_TURN2_DIAGNOSTIC_REPORT.md`
-11. candidate直接相关的当前HJB实现、accepted evidence producer与compact evidence。
+6. `docs/CH5_MP4C_K1_TRANSFER_CONTROL_D1_1E5_BOUNDED_RUNTIME_DIAGNOSTIC_ACCEPTANCE.md`
+7. `docs/CH5_MP4C_K1_HJB_CONVERGENCE_MECHANISM_REVIEW_FREEZE_CURRENT.md`
+8. `docs/CH5_MP4C_K1_HJB_CONVERGENCE_MECHANISM_TURN1_TURN2_DIAGNOSTIC_ACCEPTANCE.md`
+9. accepted diagnostic report及compact evidence。
 
-当前状态：`HJB_CONVERGENCE_MECHANISM_TURN1_TURN2_CANDIDATE_PUBLISHED__INDEPENDENT_REVIEW_REQUIRED`。
+当前状态：`HJB_CONVERGENCE_MECHANISM_TURN1_TURN2_DIAGNOSTIC_ACCEPTED__OWNER_FIXED_POINT_INTERVENTION_DESIGN_FREEZE_REQUIRED`。
 当前 active Builder task：NONE。
-最新 accepted D1 candidate：`c7d29f5bc0751751f1547072eac79eff916a8240`。
+最新 accepted HJB mechanism candidate：`c6d89327933edef2b942f10f462b58cfa6b52954`。
 Results eligibility=`FALSE`。
 
-D1 exact contract保持不变：symmetric `[-1e5,+1e5]`，inclusive `abs(d_raw)<=1e5`；语义=`C_FALLBACK_TO_EXISTING_ZERO_WITH_RAW_BRANCH_REJECTION`；raw FOC receipt保留；禁止 clipping/manufactured endpoint；existing zero 与其他 admissible branches继续按 accepted selector law。
+Accepted mechanism diagnostic：62/62 exact-input replay；instrumentation parity PASS；64 HJB calls；0 scientific retries；0 KFE/outer trajectory/MATLAB/firm/K1B/K2/GE/IRF/Results；62/62 scientific outputs与final operators exact-equal accepted evidence；turn1 `20/31`、turn2 `2/31`。
 
-Accepted D1 runtime：turn1 exact equal；turn2 common-state gate PASS；turns2-5 rejection=`15,330/39,440,000`，winner changes=`3,459`，其中 zero fallback=`2,156`、other nonzero=`1,303`。D1显著压低 far-tail transfer/cost/mu/drift extrema，但 HJB convergence control=`6/124`、D1=`5/124`，不支持 longer D1 或自动进入 wider D stage。
+Accepted descriptive classification：policy chattering + non-monotone value-update oscillation precede later derivative-floor amplification；not pure two-cycle；not monotone-slow。40/40 failed calls 的policy switching早于first derivative-floor hit，38/40的value-stat non-decrease也更早。该分类是temporal/associational evidence，不是因果intervention结果。
 
-Owner/Reviewer已冻结 `HJB_CONVERGENCE_MECHANISM_REVIEW_FIRST`。优先级：HJB iteration/fixed-point mechanism → derivative/value safeguard evidence → return interface → wage interface → boundary/selector only if evidence redirects there。
+现有证据不支持仅延长100-iteration ceiling，也未支持直接修改 derivative floor、return/wage guards、solver、pseudo-time、update law、tolerance、grid、boundary/KKT 或 economic parameters。
 
-Candidate事实：accepted G2 control、D1 OFF 的 turn1/turn2 exact-input覆盖62/62；observation-only parity=PASS；2 parity + 62 replay = 64 HJB；scientific retry=0；KFE/outer advancement/MATLAB/firm/GE/IRF/Results=0；62/62 outputs/operators exact。分类为policy chattering + non-monotone value-update oscillation + later derivative-floor amplification，不支持pure two-cycle、monotone-slow或仅延长iteration ceiling。
+KFE继续`DIAGNOSTIC_ONLY`；finite-box upper-b leakage / MATLAB-style pinning独立未解决。Standalone KKT residual unavailable。长期目标仍为`ZERO_DIAGNOSTIC_PRICE_GUARD_HITS`。
 
-诊断只观察，不调 solver、tolerance、100-iteration ceiling、pseudo-time/update law、derivative floor、return/wage guards、economic parameters、grid、boundary/KKT 或 K1/C1/labor science。
-
-Return/wage safeguards仍 binding；长期目标仍为 `ZERO_DIAGNOSTIC_PRICE_GUARD_HITS`。KFE=`DIAGNOSTIC_ONLY`，KKT residual unavailable。
-
-Builder已停止scientific work，不合并main，不发布successor task。唯一当前gate是ChatGPT Reviewer独立ACCEPT/REJECT；只有验收后Reviewer/Owner才能决定下一Owner gate。
+唯一 next gate：`OWNER_HJB_ITERATION_FIXED_POINT_MECHANISM_INTERVENTION_DESIGN_FREEZE`。在Owner/Reviewer冻结一个isolated same-input HJB-map intervention之前，不发布successor runtime task。
 
 GitHub live main 是唯一 repository authority；聊天不能替代 exact task。
