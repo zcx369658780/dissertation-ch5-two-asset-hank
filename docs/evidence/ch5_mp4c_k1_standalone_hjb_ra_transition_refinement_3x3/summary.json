@@ -1,0 +1,78 @@
+{
+  "classification_semantics": {
+    "basis": "exact modal location and top-two-bin endpoint-versus-interior ordering with full raw marginals retained",
+    "post_result_numeric_cutoff": false
+  },
+  "connected_interior_candidate_band_exists": false,
+  "counts": {
+    "HJB_CONVERGED": 9,
+    "HJB_HARD_ERROR_OR_INVALID_TRANSITION_MATRIX": 0,
+    "HJB_NOT_CONVERGED": 0,
+    "INTERIOR_A_DISTRIBUTION_CANDIDATE": 2,
+    "LOWER_A_BOUNDARY_DOMINATED": 0,
+    "TRANSITION_AMBIGUOUS__OWNER_REVIEW_REQUIRED": 3,
+    "UPPER_A_BOUNDARY_PILEUP": 4
+  },
+  "external_manifest": {
+    "entry_count": 32,
+    "path": "D:\\ProjectTemp\\ch5-mp4c-k1-hjb-ra-transition-refinement-3x3-evidence-20260913-001\\sealed_manifest_sha256.json",
+    "sha256": "466A0DFB7E31082173AA7E95C0F1C5217F4FD29045F4E1F722566BD8395D1D5E"
+  },
+  "grid": {
+    "ra": [
+      0.065,
+      0.0725,
+      0.08
+    ],
+    "rb": [
+      0.02
+    ],
+    "wage": [
+      0.8,
+      1.05,
+      1.3
+    ]
+  },
+  "interior_candidate_aggregate_ranges": {
+    "At": [
+      8.89797303470002,
+      8.959369004297567
+    ],
+    "Bt": [
+      0.7300311913729753,
+      0.8149483194036385
+    ],
+    "Ct": [
+      1.4520245248118848,
+      1.648582665766757
+    ],
+    "Lt": [
+      0.873876860999354,
+      0.8788801526224764
+    ]
+  },
+  "kfe_caveat": "Accepted standalone MATLAB-faithful contaminated-row KFE only; corrected-2018 multi-province finite-box upper-b leakage and MATLAB-style pinning remain unresolved.",
+  "recommended_next_gate": {
+    "name": "OWNER_REVIEW_NARROWER_RA_REFINEMENT_AROUND_WAGE_DEPENDENT_FRONTIER",
+    "reason": "Interior candidates exist but do not form a wage-robust nondegenerate ra band; this one grid brackets both the .055-to-.065 lower/interior transition and the .065-to-.0725 wage-dependent upper frontier.",
+    "recommended_grid": {
+      "ra": [
+        0.06,
+        0.0675,
+        0.07
+      ],
+      "rb": [
+        0.02
+      ],
+      "wage": [
+        0.8,
+        1.05,
+        1.3
+      ]
+    },
+    "run_now": false
+  },
+  "results_eligibility": false,
+  "terminal_classification": "ALL_HJB_LEGAL_CONVERGED__INTERIOR_ONLY_AT_RA_0P065_HIGHER_WAGES__WAGE_DEPENDENT_TRANSITION__RA_0P08_UPPER_BOUNDARY",
+  "wage_robust_connected_interior_ra_values": []
+}
