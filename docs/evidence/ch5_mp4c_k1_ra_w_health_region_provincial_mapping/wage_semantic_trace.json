@@ -1,0 +1,74 @@
+{
+  "gate_result": "WAGE_VARIABLE_IDENTITY_PROVEN_DIRECTLY_COMPARABLE",
+  "gate_subject": "standalone household wage versus multi-province household-HJB consumed wage",
+  "matlab_chain": [
+    {
+      "object": "firm raw wage",
+      "variable": "wt0",
+      "dimension": "one scalar per destination province",
+      "operation": "guard to [grids.wjtmin, grids.wjtmax]",
+      "location": "HANK_firm.m:66-73"
+    },
+    {
+      "object": "guarded provincial firm wage",
+      "variable": "results{j}.wjt",
+      "dimension": "N_prov destination vector across j",
+      "operation": "input to wage_caculate; distinct from household results.w",
+      "location": "HANK_firm.m:81; wage_caculate.m:7-11"
+    },
+    {
+      "object": "household composite wage",
+      "variable": "wt_vec(i) -> results{i}.w",
+      "dimension": "one scalar per origin household province i",
+      "operation": "destination aggregation over j; assigned for next household turn",
+      "location": "wage_caculate.m:3-17; HANK_mp_1turn.m:49-52"
+    },
+    {
+      "object": "household-HJB consumed wage",
+      "variable": "w = results.w",
+      "dimension": "scalar for the province household call",
+      "operation": "read directly by HANK_2ASSETS_HJB",
+      "location": "HANK_2ASSETS_HJB.m:26-31"
+    }
+  ],
+  "python_chain": [
+    {
+      "object": "guarded provincial firm wages",
+      "variable": "firm_wages[destination]",
+      "dimension": "length-N destination vector",
+      "operation": "source-faithful input to composite_household_wages",
+      "location": "src/ch5_two_asset_hank/multi_province/wage.py:11-34,55-75"
+    },
+    {
+      "object": "household composite wages",
+      "variable": "output[origin] / turn.household_composite_wage[i] / state['w']",
+      "dimension": "length-N origin vector then scalar per province state",
+      "operation": "persisted into post-turn state",
+      "location": "src/ch5_two_asset_hank/multi_province/wage.py:52-76; steady_state.py:147-168"
+    },
+    {
+      "object": "household-HJB consumed wage",
+      "variable": "MultiProvinceHouseholdInputs.composite_wage -> HouseholdInputs.wages[0]",
+      "dimension": "scalar represented as a singleton labor-choice vector",
+      "operation": "direct static call mapping",
+      "location": "src/ch5_two_asset_hank/multi_province/household_adapter.py:43-65,95-137,200-219"
+    }
+  ],
+  "standalone_identity": {
+    "standalone_object": "HouseholdInputs.wages[0]",
+    "provincial_consumed_object": "results.w / HouseholdInputs.wages[0]",
+    "identity_result": "SAME_SOURCE_ROLE_AND_SAME_API_SLOT__NO_ADDITIONAL_UNIT_OR_NORMALIZATION_CONVERSION_DEFINED",
+    "units": "NOT_EXPLICIT_IN_DESIGNATED_SOURCE",
+    "normalization": "NO_ADDITIONAL_NORMALIZATION_EXPLICIT_BETWEEN_RESULTS_W_AND_HOUSEHOLDINPUTS_WAGES_0"
+  },
+  "important_nonidentity": "guarded wjt is not the standalone wage object and cannot be used as a direct projection coordinate",
+  "scale_observation": {
+    "standalone_observed_wage_values": [
+      0.8,
+      1.05,
+      1.3
+    ],
+    "accepted_provincial_consumed_composite_wage_range": "computed in association_summary.json",
+    "interpretation": "same consumed object, disjoint observed numerical coverage"
+  }
+}

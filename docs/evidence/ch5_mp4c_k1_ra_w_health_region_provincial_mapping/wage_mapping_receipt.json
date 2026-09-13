@@ -1,0 +1,22 @@
+{
+  "purpose": "document the source-defined wjt-to-results.w transformation; it is not an outcome-fitted rescaling",
+  "wage_gate": "WAGE_VARIABLE_IDENTITY_PROVEN_DIRECTLY_COMPARABLE",
+  "gate_note": "No transformation is needed between standalone w and provincial consumed results.w; this receipt explains the upstream transformation from guarded wjt.",
+  "matlab_formula": "results.w(i) = alphal^(-phi_l/(1+phi_l)) * (sum_j phi_l_mat(j,i) * (results{j}.wjt * (1-results{j}.tau-sigmau_MAT(j,i)) / phi_l_mat(j,i))^(1+1/phi_l))^(phi_l/(1+phi_l))",
+  "indices": {
+    "j": "destination",
+    "i": "origin household province"
+  },
+  "inputs": [
+    "guarded results{j}.wjt",
+    "destination results{j}.tau",
+    "phi_l_mat(j,i)",
+    "sigmau_MAT(j,i)",
+    "param.phi_l",
+    "param.alphal"
+  ],
+  "output": "wt_vec(i), assigned to results{i}.w for the next household HJB turn",
+  "matlab_location": "wage_caculate.m:1-17; HANK_mp_1turn.m:49-52",
+  "python_location": "src/ch5_two_asset_hank/multi_province/wage.py:11-76; steady_state.py:147-168",
+  "prohibited_use": "Do not rescale a provincial composite wage into [0.8,1.3], and do not substitute guarded wjt as the standalone coordinate."
+}
