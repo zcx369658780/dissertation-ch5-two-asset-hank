@@ -2,20 +2,24 @@
 
 更新：2026-09-13。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_FRONTIER_NARROW_3X3_ACCEPTED__OWNER_REVIEW_TWO_DIMENSIONAL_HEALTH_REGION_REQUIRED`。
+状态：`WAGE_CONDITIONAL_RA_W_HEALTH_REGION_AND_PROVINCIAL_RETURN_MAPPING_AUDIT_TASK_ACTIVE`。
 
-Accepted candidate：`d1401fc5154a6fb77989b0de343da20329bf724a`。
+最新 accepted narrow-frontier candidate：`d1401fc5154a6fb77989b0de343da20329bf724a`。
 Reviewer acceptance：`docs/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_FRONTIER_NARROW_3X3_SCAN_ACCEPTANCE.md`。
-当前 active Builder task：NONE。Results eligibility=`FALSE`。
+Owner/Reviewer freeze：`docs/CH5_MP4C_K1_WAGE_CONDITIONAL_RA_W_HEALTH_REGION_AND_PROVINCIAL_RETURN_MAPPING_FREEZE_CURRENT.md`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_WAGE_CONDITIONAL_RA_W_HEALTH_REGION_AND_PROVINCIAL_RETURN_MAPPING_AUDIT.md`。
+Results eligibility=`FALSE`。
 
 Accepted terminal classification：`ALL_HJB_LEGAL_CONVERGED__NO_WAGE_ROBUST_INTERIOR_RA__TWO_DIMENSIONAL_HEALTH_REGION_REQUIRED`。
 
-Exact grid：`rb=.02`；`ra={.06,.0675,.07}`；`w={.8,1.05,1.3}`。HJB `9/9`、KFE `9/9`、scientific/engineering retries `0/0`。全部 HJB legal/converged；lower `2`、interior `2`、ambiguous `4`、upper-bound `1`。Interior candidates 仅为 `(.06,1.3)` 和 `(.0675,1.3)`；没有任何 tested `ra` 对三个 wage 都 interior，也没有 connected wage-robust scalar `ra` health band。
+Accepted standalone evidence shows no universal scalar `ra` health band across tested wages. The next task therefore stops one-dimensional `ra` refinement and performs an evidence-only two-dimensional `(ra,w)` health-region / provincial mapping audit.
 
-重要边界：`.06,w=.8` contaminated-row KFE 出现显著 signed pathology（`amin mass>1`、`amax/interior-a mass<0`、`At<0`、density minimum 约 `-.01259`）。该点的 lower label 仅描述 raw modal/dominance，不是 admissibility claim；不得裁剪后升级为健康稳态。
+The task first constructs the observed standalone health map from accepted points, then audits wage semantics and scaling end-to-end (`wjt` -> any source-defined transformation -> exact wage object consumed by the household HJB). Provincial projection is allowed only if this wage comparability/mapping gate is proven. If standalone `w` and the actual multi-province HJB wage input are not directly comparable and no source-defined deterministic transformation is proven, projection must stop with a mapping/scaling blocker.
 
-科学解释：当前 standalone evidence 支持健康区域是 wage-dependent 的二维 `(ra,w)` 区域，而不是 universal scalar `ra` 区间。不得继续自动一维 `ra` refinement，也不得修改 HJB/KFE 算法来扩大可行域。
+No new HJB or KFE calls are allowed. No global outer turns, MATLAB, firm, K1B/K2, GE, downstream, shock, IRF or Results runtime. Existing accepted turn-1/turn-2 provincial HJB-input evidence may be parsed and compared only after the wage-semantic gate passes.
 
-Standalone contaminated-row KFE 仅用于 household parameter-domain mapping；corrected-2018 multi-province finite-box upper-b leakage 与 MATLAB-style pinning blocker 仍独立未解决。
+Important boundary remains: `(.06,.8)` standalone contaminated-row KFE has severe signed pathology and is not an admissible healthy point. No interpolation may create new healthy labels for unobserved `(ra,w)` coordinates.
 
-唯一下一 Owner gate：`OWNER_REVIEW_WAGE_CONDITIONAL_RA_W_HEALTH_REGION_AND_PROVINCIAL_RETURN_MAPPING`。下一步应先基于已接受 standalone evidence 构造 provisional 二维 household-health map，再审查 provincial return/wage mapping 如何把各省放入或推离该区域；尚未发布 successor runtime task。
+Standalone contaminated-row KFE remains separate from the unresolved corrected-2018 multi-province finite-box upper-b leakage and MATLAB-style pinning blocker.
+
+下一 gate：Builder完成当前 evidence-integration / mapping-audit task 后，由 ChatGPT Reviewer 独立 ACCEPT/REJECT，并根据证据在 return-mapping redesign、wage-mapping correction、bounded provincial-input replay、或 unresolved review 中选择 exactly one Owner gate。
