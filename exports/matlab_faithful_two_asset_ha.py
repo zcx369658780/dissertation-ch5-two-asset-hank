@@ -193,6 +193,70 @@ class MatlabFaithfulLocalPolicy:
     iteration_b_backward_rate: float
     iteration_b_forward_rate: float
 
+
+@dataclass(frozen=True)
+class MatlabFaithfulTransferCandidates:
+    """Raw transfer candidates plus an optional post-FOC eligibility filter."""
+
+    raw: tuple[float, float, float, float]
+    d1_admissible: tuple[bool, bool, bool, bool]
+    existing_feasible: tuple[bool, bool, bool, bool]
+    eligible_shadow: tuple[float, float, float, float]
+    d_b: float
+    d_f: float
+    zero_transfer_available: bool = True
+
+
+def select_matlab_faithful_transfer_candidates_from_raw(
+    d_bb: float,
+    d_bf: float,
+    d_fb: float,
+    d_ff: float,
+    *,
+    at_lower_a: bool,
+    at_upper_a: bool,
+    at_lower_b: bool,
+    tolerance: float,
+    transfer_candidate_abs_limit: float | None = None,
+) -> MatlabFaithfulTransferCandidates:
+    """Apply optional raw-branch eligibility after FOC construction, without clipping."""
+
+    raw = tuple(float(value) for value in (d_bb, d_bf, d_fb, d_ff))
+    if not np.all(np.isfinite(raw)):
+        raise ValueError("raw transfer candidates must be finite")
+    if at_lower_a and at_upper_a:
+        raise ValueError("transfer candidates require a nondegenerate illiquid grid")
+    if transfer_candidate_abs_limit is None:
+        admissible = (True, True, True, True)
+    else:
+        limit = float(transfer_candidate_abs_limit)
+        if not np.isfinite(limit) or limit <= 0.0:
+            raise ValueError("transfer-candidate absolute limit must be positive and finite")
+        admissible = tuple(abs(value) <= limit for value in raw)
+
+    if at_lower_a:
+        feasible = (False, d_bf > tolerance, False, d_ff > tolerance)
+    elif at_upper_a:
+        feasible = (d_bb < -tolerance, False, d_fb < -tolerance, False)
+    else:
+        feasible = (d_bb < 0.0, d_bf > 0.0, d_fb < 0.0, d_ff > 0.0)
+
+    eligible_shadow = tuple(value if keep else 0.0 for value, keep in zip(raw, admissible))
+    e_bb, e_bf, e_fb, e_ff = eligible_shadow
+    d_b = (e_bf if feasible[1] else 0.0) + (e_bb if feasible[0] else 0.0)
+    d_f = (e_ff if feasible[3] else 0.0) + (e_fb if feasible[2] else 0.0)
+    if at_lower_a and at_lower_b:
+        d_b = max(d_b, 0.0)
+    return MatlabFaithfulTransferCandidates(
+        raw=raw,
+        d1_admissible=admissible,
+        existing_feasible=feasible,
+        eligible_shadow=eligible_shadow,
+        d_b=float(d_b),
+        d_f=float(d_f),
+    )
+
+
 def _direction(value: float, tolerance: float) -> str:
     if value > tolerance:
         return "F"
@@ -222,6 +286,7 @@ def select_matlab_faithful_local_policy(
     inputs: HouseholdInputs,
     params: EconomicParams,
     tolerance: float = MATLAB_DRIFT_TOLERANCE,
+    transfer_candidate_abs_limit: float | None = None,
 ) -> MatlabFaithfulLocalPolicy:
     """Evaluate MATLAB lines 124--198 and 262--267 for one local cell.
 
@@ -307,16 +372,18 @@ def select_matlab_faithful_local_policy(
     d_bf = transfer_candidate_matlab_faithful_raw_vb(v_a_forward, v_b_backward, a, params)
     d_fb = transfer_candidate_matlab_faithful_raw_vb(v_a_backward, v_b_forward, a, params)
     d_ff = transfer_candidate_matlab_faithful_raw_vb(v_a_forward, v_b_forward, a, params)
-    d_b = (d_bf if d_bf > 0.0 else 0.0) + (d_bb if d_bb < 0.0 else 0.0)
-    d_f = (d_ff if d_ff > 0.0 else 0.0) + (d_fb if d_fb < 0.0 else 0.0)
-    if at_lower_a:
-        d_b = d_bf if d_bf > tolerance else 0.0
-        d_f = d_ff if d_ff > tolerance else 0.0
-        if at_lower_b:
-            d_b = max(d_b, 0.0)
-    if at_upper_a:
-        d_b = d_bb if d_bb < -tolerance else 0.0
-        d_f = d_fb if d_fb < -tolerance else 0.0
+    candidates = select_matlab_faithful_transfer_candidates_from_raw(
+        d_bb,
+        d_bf,
+        d_fb,
+        d_ff,
+        at_lower_a=at_lower_a,
+        at_upper_a=at_upper_a,
+        at_lower_b=at_lower_b,
+        tolerance=tolerance,
+        transfer_candidate_abs_limit=transfer_candidate_abs_limit,
+    )
+    d_b, d_f = candidates.d_b, candidates.d_f
 
     sdh_b = -d_b - float(
         # The accepted cost helper retains MATLAB's max(a, a_bar) denominator floor.
@@ -355,13 +422,13 @@ def select_matlab_faithful_local_policy(
     if use_transfer_b:
         transfer_label = "B"
         transfer = d_b
-        shadow_transfer_b = d_bb
-        shadow_transfer_f = d_bf
+        shadow_transfer_b = candidates.eligible_shadow[0]
+        shadow_transfer_f = candidates.eligible_shadow[1]
     elif use_transfer_f:
         transfer_label = "F"
         transfer = d_f
-        shadow_transfer_b = d_fb
-        shadow_transfer_f = d_ff
+        shadow_transfer_b = candidates.eligible_shadow[2]
+        shadow_transfer_f = candidates.eligible_shadow[3]
     else:
         transfer_label = "0"
         transfer = 0.0
@@ -642,7 +709,8 @@ __all__=[
     "MatlabFaithfulHJBResult","MatlabFaithfulKFEResult","StationaryHouseholdAggregates",
     "HouseholdSteadyStateResult","adjustment_cost","transfer_candidate","transfer_candidate_matlab_faithful_raw_vb",
     "matlab_faithful_illiquid_return","consumption_from_vb","labor_from_vb","flow_utility",
-    "asset_drifts_matlab_faithful","select_matlab_faithful_local_policy","assemble_source_axis",
+    "asset_drifts_matlab_faithful","select_matlab_faithful_transfer_candidates_from_raw",
+    "MatlabFaithfulTransferCandidates","select_matlab_faithful_local_policy","assemble_source_axis",
     "assemble_source_operator","matlab_contaminated_row_index","solve_matlab_faithful_hjb",
     "solve_matlab_faithful_stationary_kfe","aggregate_stationary_household","solve_household_steady_state"
 ]

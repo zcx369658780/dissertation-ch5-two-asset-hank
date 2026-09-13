@@ -1,0 +1,13 @@
+{
+  "classification": "ZERO_SCIENCE_DERIVED_SUMMARY_CORRECTION",
+  "corrected_fields": [
+    "d1.by_boundary.*.raw_candidate_count",
+    "d1.by_boundary.*.hit_share",
+    "turn1_equality.turn2_entering_wage_guard_status_exact"
+  ],
+  "external_evidence_mutated": false,
+  "reason": "The first finalizer version used the full active raw-candidate count as every boundary-partition denominator; hit counts were already correct. It also labelled an equality check on the HJB composite wage as wage-guard status. The compact candidate recomputes each denominator from its boundary mask and derives the guard status from entering-state wjt and its bounds.",
+  "scientific_calls": 0,
+  "source_external_manifest_sha256": "C60C353FE1ABC24509F5753E808F837BA19C9856B98FAE9998AB59DAC9BCE6BE",
+  "status": "CORRECTED_BEFORE_CANDIDATE_PUBLICATION"
+}
