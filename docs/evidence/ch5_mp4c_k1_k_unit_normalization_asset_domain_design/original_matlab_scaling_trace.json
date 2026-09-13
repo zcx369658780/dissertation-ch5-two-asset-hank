@@ -1,0 +1,131 @@
+{
+  "comparatively_good_version_comment": {
+    "active_values": {
+      "GDP_multiplier": 1000,
+      "POP_multiplier": 100
+    },
+    "comment": "param.GDP_multiplier=1000; param.POP_multiplier = 100; % 比较好的一个版本",
+    "source": "multi_prov_HANK_12sts.m:80-81"
+  },
+  "not_found": [
+    "global all-variables /1000 rule",
+    "household money-to-MU bridge",
+    "nominal-to-real deflator",
+    "x10000/x1e4/x1e8 conversion in designated chain"
+  ],
+  "schema": "CH5_MP4C_K1_ORIGINAL_MATLAB_SCALING_TRACE_V1",
+  "variables": [
+    {
+      "export": "/1000",
+      "internal": "raw*GDP_multiplier=raw*1000",
+      "model_unit": "MU=10万元",
+      "raw_unit": "亿元",
+      "source": "load_GDPdata.m:3,93; main.m:167-168",
+      "variable": "GDP total"
+    },
+    {
+      "export": "not separately traced",
+      "internal": "total*share/100",
+      "model_unit": "source ambiguity: sector line lacks GDP_multiplier",
+      "raw_unit": "GDP share percent",
+      "source": "load_GDPdata.m:95,97,99",
+      "variable": "sector GDP"
+    },
+    {
+      "export": "/1000",
+      "internal": "PIM then *GDP_multiplier=1000",
+      "model_unit": "legacy dimensional rationale unresolved; corrected Track-A is 亿元*1000 MU",
+      "raw_unit": "legacy comment: investment 万元",
+      "source": "load_GDPdata.m:3,55-61,94; main.m:169-170",
+      "variable": "capital"
+    },
+    {
+      "export": "none found",
+      "internal": "K0=I0/0.1; Kt=(1-.096)Kt-1+It-1",
+      "model_unit": "inherited capital route",
+      "raw_unit": "legacy source comment 万元",
+      "source": "It_to_Kt.m:1-10; multi_prov_HANK_12sts.m:128",
+      "variable": "investment/PIM"
+    },
+    {
+      "export": "none found",
+      "internal": "It=Kt-Kt_1+.025Kt",
+      "model_unit": "capital units/model period",
+      "raw_unit": "model capital flow",
+      "source": "HANK_firm.m:47",
+      "variable": "firm investment"
+    },
+    {
+      "export": "/100",
+      "internal": "raw*POP_multiplier=raw*100",
+      "model_unit": "NU=100 persons",
+      "raw_unit": "万人",
+      "source": "load_GDPdata.m:3,101-104; main.m:171",
+      "variable": "population"
+    },
+    {
+      "export": "/100",
+      "internal": "N initialized as L; household hours*N",
+      "model_unit": "NU-weighted labor",
+      "raw_unit": "person proxy/allocated labor",
+      "source": "mpHANK_equilibrium_2000.m:29-30; Lt_seperate.m:6-14; main.m:172",
+      "variable": "firm labor"
+    },
+    {
+      "export": "none found",
+      "internal": "Kt0*GovInv_ratio; ratio=1",
+      "model_unit": "capital units",
+      "raw_unit": "capital stock role",
+      "source": "mpHANK_equilibrium_2000.m:40; multi_prov_HANK_12sts.m:83",
+      "variable": "GovInv"
+    },
+    {
+      "export": "none found",
+      "internal": "no GDP multiplier/divisor found; Ct is density mean; Ct_total=Ct*N",
+      "model_unit": "household per-capita flow / aggregate after N",
+      "raw_unit": "unproven household money flow",
+      "source": "HANK_2ASSETS_HJB.m:124-136,354; HANK_firm.m:89",
+      "variable": "consumption C/Ct"
+    },
+    {
+      "export": "none found",
+      "internal": "initial .1; enters liquid budget additively",
+      "model_unit": "same as C if coherent",
+      "raw_unit": "unproven household money flow",
+      "source": "multi_prov_HANK_12sts.m:94; HANK_2ASSETS_HJB.m:111,263",
+      "variable": "transfer Tt"
+    },
+    {
+      "export": "none found",
+      "internal": "a=[0,10], b=[-2,5]; density means",
+      "model_unit": "household asset units",
+      "raw_unit": "unproven household per-capita money stock",
+      "source": "multi_prov_HANK_12sts.m:34-42; HANK_2ASSETS_HJB.m:348-351",
+      "variable": "a/b/At/Bt"
+    },
+    {
+      "export": "none found",
+      "internal": "marginal product then guard [.8,1.3]",
+      "model_unit": "firm wage scale",
+      "raw_unit": "unproven wage per labor",
+      "source": "HANK_firm.m:43,66-81",
+      "variable": "wjt"
+    },
+    {
+      "export": "none found",
+      "internal": "nonlinear homogeneous aggregation across 31 wjt",
+      "model_unit": "HJB wage input",
+      "raw_unit": "unproven wage per household labor",
+      "source": "wage_caculate.m:1-17",
+      "variable": "household composite w"
+    },
+    {
+      "export": "none found",
+      "internal": "Y*K^-alpha*N^(alpha-1); Ztratio=1",
+      "model_unit": "scale-dependent residual",
+      "raw_unit": "derived",
+      "source": "load_GDPdata.m:126-137; multi_prov_HANK_12sts.m:82",
+      "variable": "productivity Z"
+    }
+  ]
+}

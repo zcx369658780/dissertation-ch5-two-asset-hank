@@ -1,0 +1,20 @@
+﻿object,current_numeric,proposed_numeric,change_type,reason
+GDP_multiplier,1000,100000,unit conversion,1亿元=100000k
+POP_multiplier,100,10000,quantity-unit conversion,1万人=10000 persons
+aggregate Y/K/I/GovInv/taxes,x,100*x,unit conversion,MU to k
+N and aggregate firm labor,x,100*x,quantity-unit conversion,NU to persons
+Z,x,x,derived invariant,money and person factors both 100
+wjt/wjt guards,x,x,conditional invariant,K/L numeric unchanged; real-money bridge must be frozen
+household w/C/Tt/a/b/At/Bt,x,x,conditional invariant,only if current per-capita household unit is accepted as k/person
+alphac,1 hard-coded,1 if h=1; h^(gamma-1) otherwise,utility normalization,required for unit-equivalent CRRA under h!=1
+alphal/labor weights,x,x,utility normalization,canonical V-invariant gauge and wage aggregation
+a_bar,1e-6,1e-6 if h=1; h*1e-6 otherwise,unit conversion,same unit as a
+derivative floor,1e-6,1e-6 if h=1; 1e-6/h otherwise,numerical unit conversion,marginal value scales 1/h
+drift tolerance,1e-12,1e-12 if h=1; h*1e-12 otherwise,numerical unit conversion,asset drift scales h
+chi0,.1,.1,unchanged,proportional cost
+chi1,2,2,unchanged for money rebase,time dimension remains separate unresolved calibration
+ra/rb/borrowing gap,source values,unchanged,rate,never rescale with money
+rho/Qz/delta/tax rates,source values,unchanged,rate/dimensionless,time-base conflict is outside money-unit conversion
+I/J,20/20,20/20 first diagnostic,precision controls,later sensitivity mandatory
+amin/amax,0/10,0/100,economic domain expansion,not a unit conversion and not an At cap
+bmin/bmax,-2/5,-2/{20 or 50},economic domain expansion,Owner selection required

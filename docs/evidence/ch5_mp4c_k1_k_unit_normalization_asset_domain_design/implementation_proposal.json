@@ -1,0 +1,108 @@
+{
+  "candidate_changed_files": [
+    "src/ch5_two_asset_hank/multi_province/corrected_2018_runtime.py",
+    "validators/multi_province/corrected_2018_single_turn/run.py",
+    "task-owned future normalization/domain adapter and tests"
+  ],
+  "domain_after_selection": {
+    "I": 20,
+    "J": 20,
+    "amax": 100.0,
+    "amin": 0.0,
+    "bmax": "OWNER_SELECT_20_OR_50",
+    "bmin": -2.0,
+    "da": 5.2631578947368425,
+    "db": {
+      "if_bmax_20": 1.1578947368421053,
+      "if_bmax_50": 2.736842105263158
+    }
+  },
+  "falsifiers_and_hard_stops": [
+    "Any source identity mismatch or failed raw-to-k exact identity stops before HJB.",
+    "Any need to alter rates, HJB/KFE equations, wjt guard, ra mapping or time base stops and returns to Owner.",
+    "If household monetary bridge remains unproven, no scientific run is authorized.",
+    "Any parity mismatch at common physical states stops; do not tune scaling or bounds.",
+    "First diagnostic cannot establish production precision; separate I/J sensitivity is mandatory."
+  ],
+  "first_post_implementation_standalone_grid": {
+    "I": 20,
+    "J": 20,
+    "amax": 100.0,
+    "amin": 0.0,
+    "bmax": "OWNER_SELECTED_20_OR_50",
+    "bmin": -2.0,
+    "condition": "only after Owner freezes household bridge and one bmax",
+    "fresh_initialization": true,
+    "household_w_k": [
+      13.0,
+      15.5,
+      18.0
+    ],
+    "points": 9,
+    "ra": [
+      0.06,
+      0.0675,
+      0.07
+    ],
+    "rb": [
+      0.02
+    ]
+  },
+  "pre_science_parity_checks": [
+    "31/31 raw-to-k identities: GDP and K *100; N *100; Y/N and K/N invariant",
+    "31/31 Cobb-Douglas Y identity with unchanged Z and alpha",
+    "31/31 raw firm wage and return identities numerically invariant before guards",
+    "wjt-to-composite-w homogeneity receipt and household bridge assertion",
+    "household equation symbolic/unit parity including CRRA weight, a_bar, derivative floor and drift tolerance",
+    "grid endpoints/counts/spacing exact and fresh initialization; no warm start"
+  ],
+  "protected_no_change_without_separate_authority": [
+    "exports/matlab_faithful_two_asset_ha.py",
+    "protected MATLAB",
+    "HJB/KFE equations",
+    "wjt/return guard semantics",
+    "ra mapping",
+    "time-base calibration"
+  ],
+  "required_owner_freezes": [
+    "Accept or reject identity: current household w/C/Tt/a/b/At/Bt numeric unit equals k per person(/period).",
+    "Select bmax=20 or bmax=50; neither is selected by this audit.",
+    "Keep bmin=-2 for first diagnostic or issue a separate borrowing-domain calibration."
+  ],
+  "run_now": false,
+  "schema": "CH5_MP4C_K1_K_UNIT_ASSET_DOMAIN_IMPLEMENTATION_PROPOSAL_V1",
+  "status": "BLOCKED_PENDING_OWNER_HOUSEHOLD_BRIDGE_AND_BMAX_SELECTION",
+  "successor_task_published": false,
+  "unit_conversion": {
+    "GDP_multiplier": 100000.0,
+    "POP_multiplier": 10000.0,
+    "aggregate_money_factor": 100.0,
+    "conditional_numeric_invariants": [
+      "per-capita GDP",
+      "K/N",
+      "Z",
+      "raw wjt",
+      "household composite w",
+      "C/Tt/a/b/At/Bt"
+    ],
+    "person_factor": 100.0,
+    "rates_unchanged": [
+      "ra",
+      "rb",
+      "borrowing gap",
+      "rho",
+      "Qz",
+      "delta",
+      "tax rates",
+      "inflation rates"
+    ],
+    "rescale": [
+      "Y/Y0",
+      "K/K0/Kprev/Kt_supply/GovInv",
+      "I",
+      "profit",
+      "corporate/government aggregate money flows",
+      "N and firm aggregate labor"
+    ]
+  }
+}

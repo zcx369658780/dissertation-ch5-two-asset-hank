@@ -1,0 +1,62 @@
+{
+  "b_candidate_basis": {
+    "accepted_Bt_range": [
+      1.609508492120329,
+      4.699508302009303
+    ],
+    "accepted_b_mode_at_current_bmax": "9/9",
+    "accepted_bmax_mass_range": [
+      0.13089555280363818,
+      0.6834030069036136
+    ],
+    "conditional_household_wage_range_k_per_period": [
+      13.0,
+      18.0
+    ],
+    "rationale": "20 spans roughly one wage-flow unit and >4x observed maximum Bt; 50 is near median per-capita GDP and >10x observed maximum Bt. Evidence cannot select between them without runtime, so neither is frozen."
+  },
+  "b_candidates": [
+    {
+      "I": 20,
+      "bmax": 20.0,
+      "bmin": -2.0,
+      "db": 1.1578947368421053,
+      "interpretation_if_bridge_accepted": "liquid upper bound 20k per person",
+      "relative_to_current_db": 3.1428571428571432
+    },
+    {
+      "I": 20,
+      "bmax": 50.0,
+      "bmin": -2.0,
+      "db": 2.736842105263158,
+      "interpretation_if_bridge_accepted": "liquid upper bound 50k per person",
+      "relative_to_current_db": 7.428571428571429
+    }
+  ],
+  "bmax_decision": "BMAX_OWNER_SELECTION_REQUIRED",
+  "bmin": {
+    "conditional_interpretation": "-2k per person if the household bridge is accepted",
+    "evidence": "no accepted lower-b pile-up; not a claim that borrowing calibration is final",
+    "proposal": -2.0,
+    "status": "PRESERVE_FOR_FIRST_DIAGNOSTIC_ONLY"
+  },
+  "current": {
+    "I": 20,
+    "J": 20,
+    "amax": 10.0,
+    "amin": 0.0,
+    "bmax": 5.0,
+    "bmin": -2.0,
+    "da": 0.5263157894736842,
+    "db": 0.3684210526315789
+  },
+  "precision_conclusion": "I=J=20_IS_ACCEPTABLE_ONLY_FOR_FIRST_DOMAIN_DIAGNOSTIC__SEPARATE_PRECISION_SENSITIVITY_MANDATORY_BEFORE_PRODUCTION",
+  "proposed_a": {
+    "J": 20,
+    "amax": 100.0,
+    "amin": 0.0,
+    "da": 5.2631578947368425,
+    "interpretation": "individual household state-grid bound, never an At cap",
+    "relative_to_current_da": 10.0
+  }
+}

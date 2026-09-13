@@ -1,29 +1,27 @@
-# Chapter 5 当前交接 — real composite-wage standalone 3×3 + macro-scale audit candidate
+# Chapter 5 当前交接 — k-unit normalization / asset-domain design audit candidate
 
-更新：2026-09-13。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
+更新：2026-09-14。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-Baseline：`f1f95f11effa3bfc22e2045da2b04030eb9891a9`。
+Baseline：`d7d6d4718d27abe33a8915fd2b07ac042a125783`（fresh-fetched `origin/main`）。
 
-Branch：`codex/ch5-mp4c-k1-real-composite-wage-macro-scale-audit-20260913`。
+Branch：`codex/ch5-mp4c-k1-k-unit-asset-domain-design-audit-20260914`。
 
-Worktree：`D:\ProjectTemp\ch5-mp4c-k1-real-composite-wage-macro-scale-audit-20260913-001`。
+Worktree：`D:\ProjectTemp\ch5-mp4c-k1-k-unit-asset-domain-design-audit-20260914-001`。
 
-状态：`REAL_WAGE_SCAN_COMPLETE__MACRO_DIMENSIONAL_RELATION_UNRESOLVED__JOINT_RECALIBRATION_OWNER_REVIEW_REQUIRED`。
+状态：`MACRO_K_UNIT_REBASE_COHERENT__HOUSEHOLD_MONETARY_BRIDGE_UNPROVEN__BMAX_OWNER_SELECTION_REQUIRED`。
 
 Exact Builder task 已完成，active Builder task=`NONE`；未发布 successor task。Results eligibility=`FALSE`。
 
-报告：`docs/CH5_MP4C_K1_REAL_COMPOSITE_WAGE_DOMAIN_STANDALONE_3X3_AND_MACRO_SCALE_AUDIT_REPORT.md`。
+报告：`docs/CH5_MP4C_K1_K_UNIT_NORMALIZATION_AND_ASSET_DOMAIN_RECALIBRATION_DESIGN_AUDIT_REPORT.md`。
 
-Compact evidence：`docs/evidence/ch5_mp4c_k1_real_composite_wage_domain_macro_scale_audit/`。External sealed evidence：`D:\ProjectTemp\ch5-mp4c-k1-real-composite-wage-macro-scale-evidence-20260913-001`。
+Compact evidence：`docs/evidence/ch5_mp4c_k1_k_unit_normalization_asset_domain_design/`，manifest seals 10 payload files。
 
-Exact scan：`rb=.02`；`ra=.06/.0675/.07`；household composite `w=13/15.5/18`。HJB=9/9 legal/converged；KFE=9/9；9/9 `INTERIOR_A_DISTRIBUTION_CANDIDATE`；三个 `ra` 均为 wage-robust interior。无 HJB failure、invalid A、material signed KFE pathology 或 illiquid-boundary pile-up。Raw negative densities最多约 `1.07e-16`，未 clip；所有点 b-mode=`bmax=5`，保留 KFE caveat。
+Macro unit result：current aggregate monetary unit `MU=100k` rebase 到 total k 时 aggregate money `×100`；current `NU=100 persons` rebase 到 persons 时 quantity `×100`。因此 `GDP_multiplier 1000→100000`、`POP_multiplier 100→10000`，而 `Y/N`、`K/N`、`Z`、raw firm wage 与 rates 数值不变。
 
-Macro：accepted corrected-2018 same-state receipt 中 GDP raw=`1548.4–99945.2` 亿元，`Y0_MU=1.5484e6–9.99452e7`，`Y0/N0=32.2231–151.0310` MU/NU，household `w0=13.8375–18.5197`，guarded `wjt0=1.3`。`wjt→w` nonlinear aggregation解释 O(1)→O(10)，但不证明 monetary unit；GDP/per-capita GDP/household wage 维度关系仍 unresolved。
+Household bridge：source 未证明 `w/C/Tt/a/b/At/Bt` 已经是 k/person(/period)。不得为对齐 GDP、`wjt=1.3` 与 composite wage 13–18 而人为乘 10/1000/10000。结论：`MONETARY_UNIT_BRIDGE_UNPROVEN`。
 
-Scientific runtime：HJB=9、KFE=9、scientific/engineering retries=0；outer/firm/MATLAB/K1B/K2/GE/downstream/shock/IRF/Results=0。
+Domain result：`amax=100` 是 conditional individual illiquid state-grid upper bound，不是 `At=100`。`bmax` bounded candidates=`{20,50}`，Owner 必须选择；`bmin=-2` 仅 first diagnostic 暂留。I=J=20 时 `da=5.2631578947`；`db=1.1578947368` 或 `2.7368421053`。20×20 仅适合第一轮 domain diagnostic，production 前必须 precision sensitivity。
 
-唯一当前 gate：ChatGPT Reviewer 对 candidate 独立 ACCEPT/REJECT。
+Scientific runtime：HJB/KFE/global outer/firm/MATLAB/K1B/K2/GE/downstream/shock/IRF/Results 全部 0；scientific retries=0；parameter/grid/model-source changes=0；deterministic offline audit builds=1。
 
-唯一建议但未授权、未执行的下一 Owner gate：`OWNER_REVIEW_JOINT_WJT_RA_MACRO_SCALE_RECALIBRATION`。
-
-不要 merge main。
+唯一下一 Owner gate：`OWNER_REVIEW_HOUSEHOLD_K_UNIT_BRIDGE_AND_BMAX_SELECTION`。在此之前由 ChatGPT Reviewer 独立 ACCEPT/REJECT candidate；不要 merge main，不要发布 successor task。

@@ -1,0 +1,103 @@
+{
+  "bridge_conclusion": "MONETARY_UNIT_BRIDGE_UNPROVEN",
+  "conventions": {
+    "aggregate_money": "Y',K',I',GovInv',tax'=100*x (MU to k)",
+    "canonical_utility_gauge": "V'=V and alphal'=alphal",
+    "per_capita_money": "h*x; proposed h=1 only if household bridge is accepted",
+    "persons": "N',L'=100*x (NU to persons)",
+    "rates": "unchanged"
+  },
+  "equations": [
+    {
+      "equation": "u=alphac*c^(1-gamma)/(1-gamma)-alphal*l^(1+phi)/(1+phi)",
+      "name": "CRRA utility",
+      "status": "conditional on h",
+      "transform": "c'=h*c; alphac'=h^(gamma-1)*alphac; alphal'=alphal; u'=u; V'=V"
+    },
+    {
+      "equation": "c=(Vb/alphac)^(-1/gamma)",
+      "name": "marginal utility/consumption FOC",
+      "status": "exact symbolic equivalence",
+      "transform": "Vb'=Vb/h and alphac'=h^(gamma-1)alphac imply c'=h*c"
+    },
+    {
+      "equation": "l=(Vb*net_wage/alphal)^(1/phi)",
+      "name": "labor FOC",
+      "status": "exact symbolic equivalence",
+      "transform": "Vb'=Vb/h; wage'=h*w; alphal unchanged => l'=l"
+    },
+    {
+      "equation": "mu_b=rb*b+net_wage*l+Tt-d-cost-c",
+      "name": "liquid drift",
+      "status": "homogeneous",
+      "transform": "b,w,Tt,d,cost,c all *h; rates unchanged => mu_b'=h*mu_b"
+    },
+    {
+      "equation": "mu_a=r_a_eff*a+d",
+      "name": "illiquid drift",
+      "status": "homogeneous",
+      "transform": "a,d *h; r_a unchanged => mu_a'=h*mu_a"
+    },
+    {
+      "equation": "chi0*abs(d)+.5*chi1*d^2/max(a,a_bar)",
+      "name": "adjustment cost",
+      "status": "homogeneous only if a_bar scales",
+      "transform": "d,a,a_bar *h; chi0,chi1 unchanged => cost'=h*cost"
+    },
+    {
+      "equation": "d=a/chi1*[min(Va/Vb-1+chi0,0)+max(Va/Vb-1-chi0,0)]",
+      "name": "transfer FOC",
+      "status": "exact symbolic equivalence",
+      "transform": "Va/Vb invariant; a*h; chi0/chi1 unchanged => d'=h*d"
+    },
+    {
+      "equation": "Rb=rb+gap when b<0",
+      "name": "borrowing spread",
+      "status": "homogeneous",
+      "transform": "rb and gap unchanged; Rb*b scales h"
+    },
+    {
+      "equation": "w=alphal^(-phi/(1+phi))*sum(phi*(wjt*wedge/phi)^(1+1/phi))^(phi/(1+phi))",
+      "name": "wjt to household w",
+      "status": "homogeneous degree one; monetary bridge still unproven",
+      "transform": "with alphal unchanged, scaling all wjt by h scales w by h"
+    },
+    {
+      "equation": "Y=Z*K^alpha*L^(1-alpha)",
+      "name": "firm output",
+      "status": "exact under joint aggregate money/person rebase",
+      "transform": "Y,K,L all *100 => Z unchanged"
+    },
+    {
+      "equation": "wt0=mt*(1-alpha)*Z*(K/L)^alpha",
+      "name": "firm wage",
+      "status": "macro identity; household bridge unproven",
+      "transform": "K/L unchanged and Z unchanged => wage numeric unchanged, reinterpreted k/person"
+    },
+    {
+      "equation": "I=K-Kprev+delta*K",
+      "name": "firm investment",
+      "status": "homogeneous",
+      "transform": "K and I *100; delta unchanged"
+    },
+    {
+      "equation": "rk=mt*alpha*Y/K; ra0=rk-delta+profit*(1-tax)/K",
+      "name": "capital return",
+      "status": "monetary invariant; separate time-base conflict remains",
+      "transform": "Y,K,profit all *100; rates unchanged"
+    },
+    {
+      "equation": "Govinc=Corptax+Lt*tau+AtTax+GovInv*ra-Tt",
+      "name": "government account",
+      "status": "DIMENSION_UNRESOLVED",
+      "transform": "source mixes aggregate and transfer roles; all monetary terms must be placed on the same aggregate basis before implementation"
+    },
+    {
+      "equation": "derivatives, drift directions, implicit value solve",
+      "name": "HJB numerics",
+      "status": "non-homogeneous numerical constants must transform",
+      "transform": "if h!=1: derivative floor /h, drift tolerance *h; value convergence tolerance unchanged in canonical gauge"
+    }
+  ],
+  "schema": "CH5_MP4C_K1_EQUATION_SCALING_TRANSFORM_V1"
+}

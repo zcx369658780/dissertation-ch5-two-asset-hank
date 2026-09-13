@@ -1,0 +1,37 @@
+﻿variable,classification,source_role,k_unit_status
+GDP/Y,MONETARY_FLOW,province aggregate flow,current MU; proposed total k
+K,MONETARY_STOCK,province aggregate stock,current MU; proposed total k
+I,MONETARY_FLOW,province aggregate investment flow,source series/firm flow roles differ
+GovInv,MONETARY_STOCK,added to Kt in source,name says investment but equation role is stock
+C,PER_CAPITA_MONETARY_FLOW,household consumption,k/person/period only if bridge accepted
+Tt,PER_CAPITA_MONETARY_FLOW,household transfer,k/person/period only if bridge accepted
+tax flows,MONETARY_FLOW,Corptax/Govinc/AtTax,aggregate or per-capita role must remain explicit
+a,PER_CAPITA_MONETARY_STOCK,individual illiquid state,k/person only if bridge accepted
+b,PER_CAPITA_MONETARY_STOCK,individual liquid state,k/person only if bridge accepted
+At,PER_CAPITA_MONETARY_STOCK,stationary mean illiquid asset,not amax and not provincial total
+Bt,PER_CAPITA_MONETARY_STOCK,stationary mean liquid asset,not bmax and not provincial total
+adjustment cost,PER_CAPITA_MONETARY_FLOW,household transfer cost,same unit as d and C
+transfer control d,PER_CAPITA_MONETARY_FLOW,asset flow between a and b,same monetary/time unit as drifts
+wjt,DIMENSION_UNRESOLVED,firm wage per labor,numeric k/person/period mapping plausible but unproven
+household composite w,DIMENSION_UNRESOLVED,HJB wage input,homogeneous wage aggregation; real-money bridge unproven
+population,PERSON_QUANTITY,province population,current NU=100 persons; proposed persons
+labor,PERSON_QUANTITY,firm Lt_supply,household l is time/intensity; do not conflate
+household labor l,RATE_OR_DIMENSIONLESS,individual labor intensity/time,not province headcount
+productivity,DIMENSION_UNRESOLVED,Cobb-Douglas residual,numeric invariant only under joint money/person rebase
+ra,RATE_OR_DIMENSIONLESS,illiquid return rate,monetary rescale leaves unchanged
+rb,RATE_OR_DIMENSIONLESS,liquid return rate,monetary rescale leaves unchanged
+borrowing gap,RATE_OR_DIMENSIONLESS,rate spread,monetary rescale leaves unchanged
+delta,RATE_OR_DIMENSIONLESS,depreciation rate,time-base conflict remains separate
+rho,RATE_OR_DIMENSIONLESS,discount rate,time-base conflict remains separate
+tax rates,RATE_OR_DIMENSIONLESS,tau/corptau,unchanged
+price/return guards,RATE_OR_DIMENSIONLESS,ra guard is a rate,wjt guard inherits unresolved wage dimension
+chi0,RATE_OR_DIMENSIONLESS,proportional transfer cost,monetary-scale invariant
+chi1,RATE_OR_DIMENSIONLESS,quadratic transfer time coefficient,monetary-scale invariant; time-base not resolved
+a_bar,PER_CAPITA_MONETARY_STOCK,cost denominator floor,must follow household asset scale
+CRRA gamma,RATE_OR_DIMENSIONLESS,curvature,unchanged
+labor weight alphal,UTILITY_VALUE_OBJECT,labor disutility/wage aggregator weight,unchanged in canonical value gauge
+consumption weight alphac,UTILITY_VALUE_OBJECT,hard-coded consumption utility weight,changes if household money numerics change
+value function,UTILITY_VALUE_OBJECT,discounted utility,kept numerically invariant in canonical gauge
+derivative floor,NUMERICAL_ONLY,marginal-value floor,inverse household money-scale transform required
+HJB convergence tolerance,NUMERICAL_ONLY,value-space tolerance,unchanged in canonical value gauge
+drift tolerance,NUMERICAL_ONLY,asset-flow direction tolerance,follows household money scale
