@@ -14,18 +14,22 @@
 8. `docs/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_COARSE_3X3_SCAN_ACCEPTANCE.md`
 9. `docs/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_TRANSITION_REFINEMENT_3X3_SCAN_ACCEPTANCE.md`
 10. `docs/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_FRONTIER_NARROW_3X3_SCAN_ACCEPTANCE.md`
+11. `docs/CH5_MP4C_K1_WAGE_CONDITIONAL_RA_W_HEALTH_REGION_AND_PROVINCIAL_RETURN_MAPPING_FREEZE_CURRENT.md`
+12. active exact task：`tasks/CH5_MP4C_K1_WAGE_CONDITIONAL_RA_W_HEALTH_REGION_AND_PROVINCIAL_RETURN_MAPPING_AUDIT.md`
 
-当前状态：`STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_FRONTIER_NARROW_3X3_ACCEPTED__OWNER_REVIEW_TWO_DIMENSIONAL_HEALTH_REGION_REQUIRED`。
-当前 active Builder task：NONE。
+当前状态：`WAGE_CONDITIONAL_RA_W_HEALTH_REGION_AND_PROVINCIAL_RETURN_MAPPING_AUDIT_TASK_ACTIVE`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_WAGE_CONDITIONAL_RA_W_HEALTH_REGION_AND_PROVINCIAL_RETURN_MAPPING_AUDIT.md`。
 最新 accepted narrow-frontier candidate：`d1401fc5154a6fb77989b0de343da20329bf724a`。
 Results eligibility=`FALSE`。
 
-Accepted narrow-frontier evidence：`rb=.02`；`ra={.06,.0675,.07}`；`w={.8,1.05,1.3}`。9/9 HJB legal/converged；lower `2`、interior `2`、ambiguous `4`、upper `1`。Interior candidates only at `(.06,1.3)` and `(.0675,1.3)`。不存在对三种 wage 均 interior 的 tested scalar `ra`，也不存在 connected wage-robust scalar `ra` health band。
+Accepted narrow-frontier evidence：9/9 HJB legal/converged；不存在对 `w={.8,1.05,1.3}` 全部 interior 的 tested scalar `ra`。停止自动一维 `ra` refinement，健康域视为二维 `(ra,w)` 问题。
 
-重要 caveat：`(.06,.8)` contaminated-row KFE 存在显著 signed pathology（`At<0`、endpoint/interior signed masses invalid as probability shares）；该点不得作为 admissible steady state。不得通过 clipping 或算法修改掩盖此现象。
+当前 audit 只做 accepted evidence integration 和 source-trace。第一 gate 是 wage semantics/scaling：必须证明 standalone scan 的 `w` 与 multi-province household HJB 实际消费的 wage object 是否相同/可由 source-defined deterministic mapping 转换。没有证明时不得把 `wjt` 或 composite wage 强行投影到 standalone health map。
 
-科学路线：停止自动一维 `ra` refinement。下一唯一 Owner gate 为 `OWNER_REVIEW_WAGE_CONDITIONAL_RA_W_HEALTH_REGION_AND_PROVINCIAL_RETURN_MAPPING`。下一步应把 accepted standalone evidence 组织为二维 `(ra,w)` household-health map，并审查现有 provincial return/wage mapping 如何把各省映射到该区域；尚未发布 successor runtime task。
+若 wage gate 通过，才允许复用 accepted turn-1/turn-2 provincial HJB input evidence 做 conservative projection；非 exact observed coordinates 默认 `UNOBSERVED_OR_INTERPOLATION_NOT_AUTHORIZED`，不得靠插值制造 healthy label。
 
-HJB/KFE 算法继续冻结；不得 damping、solver/tolerance/grid/derivative-floor/FOC/selector/boundary/KFE 重设计。Standalone contaminated-row KFE 与 unresolved corrected-2018 multi-province finite-box upper-b leakage/MATLAB-style pinning blocker 分离。
+Scientific runtime 全部为零：HJB=0、KFE=0、outer turns=0、MATLAB=0、firm=0、K1B/K2=0、GE/downstream/shock/IRF/Results=0。HJB/KFE算法继续冻结。
+
+Important caveat：`(.06,.8)` standalone KFE 有 severe signed pathology，不是 admissible steady state。Standalone contaminated-row KFE 与 unresolved corrected-2018 multi-province finite-box upper-b leakage / MATLAB-style pinning blocker 继续分离。
 
 GitHub live main 是唯一 repository authority；聊天不能替代 exact task。
