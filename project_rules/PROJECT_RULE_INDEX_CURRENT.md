@@ -17,20 +17,22 @@
 11. `docs/CH5_MP4C_K1_G1_VS_G2_HA_HJB_INSTRUMENTED_BOUNDED_DIAGNOSTIC_ACCEPTANCE.md`
 12. `docs/CH5_MP4C_K1_TRANSFER_CONTROL_TEMPORARY_ADMISSIBILITY_SAFEGUARD_FREEZE_CURRENT.md`
 13. `docs/CH5_MP4C_K1_TRANSFER_CONTROL_ADMISSIBILITY_SAFEGUARD_ZERO_SCIENCE_DESIGN_ACCEPTANCE.md`
-14. 当前 active exact task 及直接相关 report/evidence。
+14. `docs/CH5_MP4C_K1_TRANSFER_CONTROL_RAW_CANDIDATE_CENSUS_INSTRUMENTED_BOUNDED_DIAGNOSTIC_ACCEPTANCE.md`
 
-当前状态：`K1_TRANSFER_RAW_CANDIDATE_CENSUS_CANDIDATE_COMPLETE__INDEPENDENT_L3_REVIEW_REQUIRED__NUMERIC_LADDER_UNRESOLVED`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_TRANSFER_CONTROL_RAW_CANDIDATE_CENSUS_INSTRUMENTED_BOUNDED_DIAGNOSTIC.md` 已在candidate branch完成，尚未被独立Reviewer接受。
-最新 accepted transfer-control design candidate：`bdc2ecd48ca3408cf10138ee58d02383185ffd50`。
+当前状态：`K1_TRANSFER_RAW_CANDIDATE_CENSUS_ACCEPTED__OWNER_NUMERIC_TRANSFER_SAFEGUARD_FREEZE_REQUIRED`。
+当前 active Builder task：NONE。
+最新 accepted raw-census candidate：`e6c71240e945c988958a16c67886b056376a2da4`。
 Results eligibility=`FALSE`。
 
-Accepted zero-science design确认：raw transfer candidates存在many-orders-of-magnitude finite explosive tail，但accepted traces只保存per-array summaries/hashes/extrema witnesses，没有完整cell-level raw branch arrays；因此不能冻结exact numeric ladder，也不能把static `1e3/1e4/1e5/1e6` sensitivity thresholds升级为continuation stages。
+Accepted raw-candidate census已经完整持久化 `87,027,200` 个 raw branch-cell candidates并通过old-summary/hash exact reconcile。Pooled raw `abs(d)` median约`2.76`，p99约`2.89e3`，p99.9约`5.82e4`，p99.99约`1.02e6`，极值约`-2.785e9`到`+1.715e12`。尾部跨多个数量级连续存在；唯一巨大adjacent top-gap只隔离两个positive outliers，不能作为branch/path/turn2-robust cutoff。
 
-当前preferred safeguard semantics为`C_FALLBACK_TO_EXISTING_ZERO_WITH_RAW_BRANCH_REJECTION`，理由是保留raw FOC receipt、拒绝inadmissible raw branch、继续使用already-existing zero-transfer option，并避免candidate clipping制造non-FOC endpoint surrogate。该语义尚未构成numeric implementation authority。
+Accepted exact sensitivity evidence：`|d|>1e3`=`2.145776%`，`>1e4`=`0.398441%`，`>1e5`=`0.064336%`，`>1e6`=`0.010142%`。这些不是frozen stages。
 
-Candidate已重复accepted annual G1/G2 5-turn science并增加observation-only exact raw-candidate census instrumentation；87,027,200个raw observations全部finite，旧summary/hash exact reconcile。完整census进入sealed external evidence，Git仅保存compact summaries/manifests。当前唯一next gate为`INDEPENDENT_GPT_L3_ACCEPT_OR_REJECT_RAW_CANDIDATE_CENSUS_CANDIDATE`，不得自行接受或发布successor。
+Future safeguard semantics继续首选`C_FALLBACK_TO_EXISTING_ZERO_WITH_RAW_BRANCH_REJECTION`；candidate clipping继续nonpreferred。当前没有active `d` bound/rejection/clipping，也没有numeric ladder implementation authority。
 
-本任务不得实现任何d safeguard。`chi0/chi1`、annual calibration、transfer FOC、derivative floor、return/wage guards、selector/boundary/KKT、grid/tolerance/solver、K1/C1/labor science全部冻结。不得 longer G2、G3/G4、wage relaxation、K1B/K2。
+唯一下一gate属于Owner scientific decision：`OWNER_NUMERIC_TRANSFER_SAFEGUARD_FREEZE`。Owner需选择第一套temporary transfer-control admissibility interval/ladder以及symmetric/asymmetric形式；确认前不得发布successor runtime task。
+
+`chi0=.1`、`chi1=2 years`、derivative floor、transfer FOC、selector/boundary law、return/wage guards、annual calibration、grid/tolerance/solver、K1/C1/labor science均保持冻结。不得 longer G2、G3/G4、wage relaxation、K1B/K2、GE/IRF/Results。
 
 Price-bound hit monitoring继续强制；长期目标仍为`ZERO_DIAGNOSTIC_PRICE_GUARD_HITS`。KFE finite-box upper-b leakage/MATLAB-style pinning仍为独立blocker，KFE=`DIAGNOSTIC_ONLY`；standalone KKT residual=`UNAVAILABLE_IN_ACCEPTED_EVIDENCE`。
 
