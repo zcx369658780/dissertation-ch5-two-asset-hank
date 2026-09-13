@@ -1,51 +1,32 @@
-# Chapter 5 当前交接 — 2026-09-13 HJB mechanism candidate
+# Chapter 5 当前交接 — 2026-09-13 HJB omega=0.5 candidate
 
 唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-## 当前状态
+Baseline：`f905a7236084b2f23d54894fa336e074874d0c26`。
 
-Baseline：`79ced4f7a2f5e05722a77d23d75e37ee4eada058`。
+Builder branch：`codex/ch5-mp4c-k1-hjb-omega05-same-input-20260913`。
 
-Builder branch：`codex/ch5-mp4c-k1-hjb-mechanism-t1-t2-20260913`。
+Worktree：`D:\ProjectTemp\ch5-mp4c-k1-hjb-omega05-20260913-001`。
 
-状态：`HJB_CONVERGENCE_MECHANISM_TURN1_TURN2_CANDIDATE_PUBLISHED__INDEPENDENT_REVIEW_REQUIRED`。
+状态：`HJB_FIXED_POINT_VALUE_UPDATE_RELAXATION_OMEGA_0P5_SAME_INPUT_DIAGNOSTIC_CANDIDATE_PUBLISHED__INDEPENDENT_REVIEW_REQUIRED`。
 
-Active Builder task：NONE。
-
+Active Builder task：NONE。未发布 successor task。
 Results eligibility=`FALSE`。
 
-报告：`docs/CH5_MP4C_K1_HJB_CONVERGENCE_MECHANISM_TURN1_TURN2_DIAGNOSTIC_REPORT.md`。
+报告：`docs/CH5_MP4C_K1_HJB_FIXED_POINT_VALUE_UPDATE_RELAXATION_OMEGA_0P5_SAME_INPUT_DIAGNOSTIC_REPORT.md`。
 
-Compact evidence：`docs/evidence/ch5_mp4c_k1_hjb_convergence_mechanism_turn1_turn2/`。
+Compact evidence：`docs/evidence/ch5_mp4c_k1_hjb_value_update_relaxation_omega_0p5/`。
 
-External evidence：`D:\ProjectTemp\ch5-mp4c-k1-hjb-mechanism-t1-t2-evidence-20260913-002`。
+External evidence：`D:\ProjectTemp\ch5-mp4c-k1-hjb-omega05-evidence-20260913-002`。
 
-External sealed-manifest file SHA-256：`82A979E15DF22A651348F8C4E35FFE5688513E635877269DA98DF0755D03AF77`。
+External sealed-manifest file SHA-256：`C1FDF69841B410BD3370F5066F2E7980E3F757C5A4A51ABDF1223F4486E1D09B`。
 
-## Candidate facts
+Compact sealed-manifest file SHA-256：`E50E84F81ABB33E44A00A4B7D797C35D5D0B1F7E5F81D998FB0AFEAC6697FFA9`。
 
-- exact-input coverage=`62/62`；accepted input/output/operator identities全部闭合；
-- instrumentation parity=`PASS`；
-- HJB calls=`64`（2 parity + 62 replay），HJB direct solves=`4,689`；scientific retries=`0`；
-- KFE/outer advancement/MATLAB/household steady-state/firm/K1B/K2/GE/IRF/Results=`0`；
-- accepted convergence exact reproduction：turn1=`20/31`，turn2=`2/31`；
-- turn1 converged的20省在turn2全部失败；turn2仅重庆、贵州收敛，而两省turn1均失败；
-- candidate classification=`POLICY_CHATTERING_WITH_VALUE_UPDATE_OSCILLATION_AND_LATER_DERIVATIVE_FLOOR_AMPLIFICATION__NOT_PURE_TWO_CYCLE__NOT_MONOTONE_SLOW`；
-- 40/40 failed calls 的policy switching早于首次derivative-floor hit，38/40的value-stat non-decrease也更早；
-- return/wage guard state在turn2均不能分离成功失败；
-- accepted operator已知signed off-diagonal/boundary row-sum特征在所有calls早期都出现，initial absolute solve residual全部同在约`1e-14`尺度；
-- 不支持仅延长100-iteration ceiling。
+Classification：`PARTIAL_SUPPORT__SYSTEMATIC_CHATTERING_REDUCTION__NET_ONE_CONVERGENCE_GAIN__TURN2_NONE_AND_ENDPOINT_DIVERGENCE_OUTLIERS`。
 
-这些是direct replay、cross-group association和temporal ordering；没有same-state mechanism intervention，不建立因果结论。分类是`POST_HOC_DESCRIPTIVE_FROM_PREREGISTERED_CONTINUOUS_METRICS__NOT_A_GATE`。
+Candidate facts：62/62 exact inputs；预注册 turn1 北京/安徽 omega=1 parity exact PASS；HJB calls=64、direct solves=4,823、scientific retry=0；所有零预算 runtime=0。Convergence 为 turn1 20/31→23/31、turn2 2/31→0/31、all 22/62→23/62。8个baseline-failed turn1 calls恢复，7个baseline-converged calls丢失。Switching/reversion/non-monotonicity分别在57/62、59/62、58/62下降；8个恢复calls均无floor hit。62/62 outputs finite/shape/domain normal。15个both-converged calls只有5个满足value max差<1e-6且labels一致，存在显著endpoint/control outliers。
 
-## Frozen boundaries
+保持冻结：economic equation/parameters/grid、transfer FOC/selector/boundary/KKT、derivative floor、return/wage guards、tolerance、100-iteration ceiling、direct solver、outer state、D1/K1B/K2。KFE未运行且仍`DIAGNOSTIC_ONLY`；finite-box upper-b leakage与MATLAB-style pinning仍是独立blocker；standalone KKT residual仍 unavailable。
 
-Annual science、transfer FOC/selector/boundary/KKT、derivative floor、HJB equation/pseudo-time/update law/solver/tolerance/100-iteration ceiling/grid、G2 return guard、wage guard、K1/C1/same-S/source-faithful labor全部未改。D1保持OFF。不得自动启动D1/D2/D3、return/wage relaxation、derivative/solver/ceiling调整、KFE、trajectory、K1B/K2、GE/IRF/Results。
-
-KFE仍为`DIAGNOSTIC_ONLY`，finite-box upper-b leakage与MATLAB-style pinning是独立blocker；standalone KKT residual仍 unavailable。
-
-## 唯一当前 gate
-
-ChatGPT Reviewer 对candidate SHA、报告、compact evidence、external sealed manifest与call ledger做独立 ACCEPT/REJECT。
-
-Candidate只建议在独立验收之后由Owner考虑一个gate：`OWNER_HJB_ITERATION_FIXED_POINT_MECHANISM_INTERVENTION_DESIGN_FREEZE`。该建议不发布successor task，也不授权任何科学变更或运行。
+唯一当前 gate：ChatGPT Reviewer 对 candidate SHA、报告、compact evidence、external sealed manifest 与完整 ledger 独立 ACCEPT/REJECT。若接受，唯一建议 Owner gate 为 `OWNER_HJB_RELAXATION_MIXED_EVIDENCE_AND_TURN2_FIXED_POINT_COHERENCE_REVIEW`；不授权production solver、KFE、trajectory、GE/IRF/Results或successor task。
