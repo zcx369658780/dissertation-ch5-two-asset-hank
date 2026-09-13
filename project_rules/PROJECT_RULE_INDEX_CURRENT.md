@@ -8,27 +8,26 @@
 2. 本索引
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT_20260913_HJB_MECHANISM.md`
-5. accepted bilateral-capital / scoring-data / payoff / annual-HJB / price-guard authority docs
-6. `docs/CH5_MP4C_K1_HJB_CONVERGENCE_MECHANISM_TURN1_TURN2_DIAGNOSTIC_ACCEPTANCE.md`
-7. `docs/CH5_MP4C_K1_HJB_FIXED_POINT_VALUE_UPDATE_RELAXATION_OMEGA_0P5_FREEZE_CURRENT.md`
-8. active exact task：`tasks/CH5_MP4C_K1_HJB_FIXED_POINT_VALUE_UPDATE_RELAXATION_OMEGA_0P5_SAME_INPUT_DIAGNOSTIC.md`
-9. accepted mechanism diagnostic report及compact evidence。
+5. accepted annual-HJB/KFE MATLAB-faithful authority docs and designated MATLAB source/provenance docs
+6. `docs/CH5_MP4C_K1_HJB_FIXED_POINT_VALUE_UPDATE_RELAXATION_OMEGA_0P5_SAME_INPUT_DIAGNOSTIC_ACCEPTANCE.md`
+7. `docs/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_CONVERGENCE_DOMAIN_FREEZE_CURRENT.md`
+8. active exact task：`tasks/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_COARSE_3X3_SCAN.md`
 
-当前状态：`HJB_FIXED_POINT_VALUE_UPDATE_RELAXATION_OMEGA_0P5_SAME_INPUT_DIAGNOSTIC_TASK_ACTIVE`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_HJB_FIXED_POINT_VALUE_UPDATE_RELAXATION_OMEGA_0P5_SAME_INPUT_DIAGNOSTIC.md`。
-最新 accepted HJB mechanism candidate：`c6d89327933edef2b942f10f462b58cfa6b52954`。
+当前状态：`STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_COARSE_3X3_SCAN_TASK_ACTIVE`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_COARSE_3X3_SCAN.md`。
+最新 accepted omega=0.5 diagnostic candidate：`5576ba2f921a3ed86a6fdd2205ffb46a3dc34c9a`。
 Results eligibility=`FALSE`。
 
-Accepted mechanism diagnostic：62/62 exact-input replay；instrumentation parity PASS；turn1 `20/31`、turn2 `2/31`；policy chattering与non-monotone value-update oscillation先于later derivative-floor amplification；现有证据不支持pure two-cycle、monotone-slow或仅延长100-iteration ceiling。
+Omega=0.5 experiment is accepted only as mixed diagnostic evidence and is not a production HJB cure. No damping ladder, adaptive relaxation, solver replacement, longer ceiling or HJB redesign is authorized.
 
-Owner已冻结第一isolated same-input intervention：`omega=0.5` value-update relaxation。保持accepted map到`V_solve`完全不变，之后仅令`V_next=0.5*V_old+0.5*V_solve`。accepted baseline为`omega=1`。
+Owner has redirected the immediate scientific route to the original MATLAB-faithful standalone household block. The HJB algorithm itself remains frozen. The active task runs exactly 9 points with `rb=.02`, borrowing gap `.07`, `ra∈{.02,.055,.09}`, household wage `w∈{.8,1.05,1.3}` and all other accepted MATLAB-faithful inputs fixed.
 
-Treatment convergence必须使用raw fixed-point gap `||V_solve-V_old||_inf < 1e-7`，不能用机械缩小后的relaxed update；100-iteration ceiling保持不变。
+Each point first receives a MATLAB-style HJB classification: hard error/invalid transition matrix, legal HJB nonconvergence, or HJB convergence. Only HJB-converged points proceed to the accepted standalone MATLAB-faithful KFE solve for `Ct,Lt,At,Bt`, stationary marginals and asset-boundary mass receipts.
 
-Active task不重跑完整baseline；复用accepted 62个turn1/turn2 G2-control、D1-OFF exact inputs。先做2个`omega=1` exact-equivalence HJB calls（一个accepted converged、一个accepted failed），通过后最多62个`omega=0.5` treatment calls。总HJB budget<=64；scientific retry=0；KFE/outer trajectory/MATLAB/firm/K1B/K2/GE/IRF/Results均为0。
+The scan may descriptively mark converged points as boundary-converged candidate, good steady-state candidate or quality-ambiguous. It must publish raw endpoint mass shares/marginals and may not invent a post-result cutoff to force a category. No adaptive refinement point is run in this task.
 
-不得观察结果后调整`omega`；不授权damping ladder、adaptive damping、solver替换、tolerance/grid/price guard/derivative floor/FOC/selector/boundary/KKT/economic parameter变化。
+Global multi-province outer model, firm runtime, GE, K1B/K2, shocks, IRFs and Results remain forbidden. Standalone accepted MATLAB-faithful KFE use here does not resolve or waive the separate corrected-2018 multi-province finite-box KFE blocker.
 
-KFE继续`DIAGNOSTIC_ONLY`；finite-box upper-b leakage / MATLAB-style pinning独立未解决。Standalone KKT residual unavailable。长期目标仍为`ZERO_DIAGNOSTIC_PRICE_GUARD_HITS`。
+Builder completion gate：ChatGPT Reviewer independent ACCEPT/REJECT, then Owner/Reviewer decide the next small refinement grid near any observed transition boundary.
 
-Builder完成active task后，唯一next gate为ChatGPT Reviewer独立ACCEPT/REJECT。GitHub live main是唯一repository authority；聊天不能替代exact task。
+GitHub live main is the sole repository authority; chat cannot substitute for the exact task.
