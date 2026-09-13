@@ -12,18 +12,21 @@
 6. `docs/CH5_MP4C_K1_HJB_CONVERGENCE_MECHANISM_TURN1_TURN2_DIAGNOSTIC_ACCEPTANCE.md`
 7. `docs/CH5_MP4C_K1_HJB_FIXED_POINT_VALUE_UPDATE_RELAXATION_OMEGA_0P5_SAME_INPUT_DIAGNOSTIC_ACCEPTANCE.md`
 8. `docs/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_COARSE_3X3_SCAN_ACCEPTANCE.md`
-9. `docs/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_TRANSITION_REFINEMENT_FREEZE_CURRENT.md`
-10. active exact task：`tasks/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_TRANSITION_REFINEMENT_3X3_SCAN.md`
+9. `docs/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_TRANSITION_REFINEMENT_3X3_SCAN_ACCEPTANCE.md`
+10. `docs/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_FRONTIER_NARROW_REFINEMENT_FREEZE_CURRENT.md`
+11. active exact task：`tasks/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_FRONTIER_NARROW_3X3_SCAN.md`
 
-当前状态：`STANDALONE_MATLAB_FAITHFUL_HJB_RA_TRANSITION_REFINEMENT_3X3_TASK_ACTIVE`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_TRANSITION_REFINEMENT_3X3_SCAN.md`。
-最新 accepted coarse scan candidate：`5f55b474780d70921bfcf3ea2f863039c61814c1`。
+当前状态：`STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_FRONTIER_NARROW_3X3_TASK_ACTIVE`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_FRONTIER_NARROW_3X3_SCAN.md`。
+最新 accepted refinement candidate：`cdaba87bae181280e182f639d4cf8fa5a5bae773`。
 Results eligibility=`FALSE`。
 
-Accepted coarse scan：9/9 HJB converged；0 invalid transition matrix；`ra=.02/.055`均为lower-a-bound ambiguous，`ra=.09`均为upper-a-boundary pile-up；wage方向在粗网格中未形成HJB failure。下一步只沿`ra`在`.055`与`.09`之间做预注册 refinement，不改HJB/KFE算法，不跑全局模型。
+Accepted prior refinement：9/9 HJB legal/converged；只有 `ra=.065,w={1.05,1.3}` 为 interior candidates；`.065,.8` transitional；`.0725,.8` upper-bound；`.0725` higher wages ambiguous；`.08` all wages upper-bound。不存在 wage-robust connected interior `ra` band。
 
-Refinement grid：`rb=.02`；`ra={.065,.0725,.08}`；`w={.8,1.05,1.3}`。只允许九个Cartesian points。目标是寻找从`amin`集中向`amax`集中之间是否存在interior illiquid-asset distribution。不得新增自适应点、不得调solver/tolerance/grid/derivative floor/FOC/selector/boundary/KFE。
+Active narrow refinement：`rb=.02`；`ra={.06,.0675,.07}`；`w={.8,1.05,1.3}`。只允许9个Cartesian points，fresh initialization，除 `ra`/wage 外其他 standalone MATLAB-faithful household science/numerics 全冻结。不得改 HJB/KFE、不得 damping、不得新增自适应点、不得运行 global model。
 
-KFE caveat：accepted standalone MATLAB-faithful contaminated-row KFE仅用于独立household domain mapping；corrected-2018 multi-province finite-box upper-b leakage/MATLAB-style pinning blocker仍独立未解决。
+本轮是对“是否存在 universal scalar `ra` health band”的最后一次窄区高信息量检查之一。若没有任何 tested `ra` 对三种 wage 均为 interior，后续不得自动继续一维盲扫，Owner gate 转向二维 wage-conditional `(ra,w)` health-region / provincial return-mapping review。
+
+KFE caveat：standalone contaminated-row KFE 与 unresolved corrected-2018 multi-province finite-box upper-b leakage/MATLAB-style pinning blocker 分离。
 
 GitHub live main 是唯一 repository authority；聊天不能替代 exact task。
