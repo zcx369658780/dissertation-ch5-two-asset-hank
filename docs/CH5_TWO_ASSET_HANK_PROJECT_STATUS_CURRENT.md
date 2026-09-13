@@ -1,28 +1,26 @@
 # Chapter 5 两资产 HANK 当前状态
 更新：2026-09-13。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`HJB_FIXED_POINT_VALUE_UPDATE_RELAXATION_OMEGA_0P5_SAME_INPUT_DIAGNOSTIC_CANDIDATE_PUBLISHED__INDEPENDENT_REVIEW_REQUIRED`。
+状态：`STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_COARSE_3X3_SCAN_TASK_ACTIVE`。
 
-最新 accepted HJB mechanism candidate：`c6d89327933edef2b942f10f462b58cfa6b52954`。
-Reviewer acceptance：`docs/CH5_MP4C_K1_HJB_CONVERGENCE_MECHANISM_TURN1_TURN2_DIAGNOSTIC_ACCEPTANCE.md`。
-Owner/Reviewer fixed-point intervention freeze：`docs/CH5_MP4C_K1_HJB_FIXED_POINT_VALUE_UPDATE_RELAXATION_OMEGA_0P5_FREEZE_CURRENT.md`。
-当前 active Builder task：NONE。最新完成的 exact task 为 `tasks/CH5_MP4C_K1_HJB_FIXED_POINT_VALUE_UPDATE_RELAXATION_OMEGA_0P5_SAME_INPUT_DIAGNOSTIC.md`；未发布 successor task。
+最新 accepted omega=0.5 diagnostic candidate：`5576ba2f921a3ed86a6fdd2205ffb46a3dc34c9a`。
+Reviewer acceptance：`docs/CH5_MP4C_K1_HJB_FIXED_POINT_VALUE_UPDATE_RELAXATION_OMEGA_0P5_SAME_INPUT_DIAGNOSTIC_ACCEPTANCE.md`。
+Owner/Reviewer standalone convergence-domain freeze：`docs/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_CONVERGENCE_DOMAIN_FREEZE_CURRENT.md`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_STANDALONE_MATLAB_FAITHFUL_HJB_RA_WAGE_COARSE_3X3_SCAN.md`。
 Results eligibility=`FALSE`。
 
-Accepted mechanism evidence继续有效：62/62 exact-input replay；instrumentation parity PASS；turn1 `20/31`、turn2 `2/31`；failed calls表现为policy chattering与non-monotone value-update oscillation，derivative-floor activation通常更晚；不支持pure two-cycle、monotone-slow或仅延长100-iteration ceiling。
+Accepted omega=0.5 evidence is mixed only: turn1 `20/31 -> 23/31`, turn2 `2/31 -> 0/31`, all `22/62 -> 23/62`; chattering diagnostics mostly fall, but seven accepted converged calls are lost and both-converged endpoints are not generally identical. No HJB damping/relaxation is accepted as a production method, and no damping ladder/adaptive solver route is authorized.
 
-Owner已批准第一 isolated same-input fixed-point intervention：value-update relaxation `omega=0.5`。每次HJB iteration保持accepted policy/selector/operator/RHS/direct solve不变，先得到`V_solve`，之后仅改变下一iteration的value state：`V_next=0.5*V_old+0.5*V_solve`。accepted baseline等价于`omega=1`。
+Owner has redirected the scientific priority to the original MATLAB-faithful standalone household block. The HJB algorithm itself is not to be redesigned. The next objective is to map the healthy input domain before returning to the full multi-province model.
 
-为避免false convergence，treatment convergence使用raw fixed-point gap：`||V_solve-V_old||_inf < 1e-7`；relaxed update单独记录；100-iteration ceiling不变。
+Active task runs exactly nine standalone points with `rb=.02`, borrowing gap `.07`, `ra ∈ {.02,.055,.09}`, household wage `w ∈ {.8,1.05,1.3}`. Grid remains `I=20`, `b∈[-2,5]`; `J=20`, `a∈[0,10]`; `Nz=2`, `z∈[.8,1.3]`; all other accepted MATLAB-faithful household parameters/numerics are fixed.
 
-Completed candidate复用了accepted turn1/turn2 G2-control、D1-OFF的62个proven-exact inputs，未重新跑完整baseline。一个accepted converged call和一个accepted ceiling-failure call的`omega=1` exact-equivalence gate通过后，对62个exact inputs各执行一次`omega=0.5` treatment replay。总HJB calls=64；KFE、outer trajectory/turn advancement、MATLAB、firm runtime、K1B/K2、GE/IRF/Results均为0；scientific retry=0。
+Each point first receives a MATLAB-style HJB classification: hard error/invalid transition matrix, legal HJB nonconvergence, or HJB convergence. The original value-function update, upwind/selector logic, transition-matrix construction, pseudo-time/direct solve, tolerance, iteration ceiling, derivative floor and boundary law are unchanged.
 
-继续冻结：annual continuous time；`rho=.05`、`rb=.02`、borrowing gap `.07`、`delta=.10`、`Q_z=1/3`、`chi0=.1`、`chi1=2`；transfer FOC/selector/boundary；derivative floor；HJB economic equation；accepted pseudo-time/direct-solve matrix/RHS/linear solver；tolerance、100-iteration ceiling、grid；G2 return guard；wage safeguard；K1A fixed theta、`beta_distance=2`、`beta_return=0`、same-S、source-faithful labor、C1 unchanged；D1 OFF；K1B/K2 OFF。
+Only HJB-converged points proceed to the accepted standalone MATLAB-faithful stationary KFE solve. For those points the task records `Ct,Lt,At,Bt`, mass normalization, `a/b` marginals, exact endpoint mass shares and modal asset locations. The first scan may descriptively label converged points as boundary-converged candidate, good steady-state candidate or quality-ambiguous; no post-result numeric cutoff may be invented to force a category.
 
-不得观察结果后调整`omega`；不授权damping ladder、adaptive damping、solver替换、tolerance/grid/price guard/derivative floor/FOC/boundary/KKT/economic parameter变化。
+The task does not run the global multi-province model, firm block, GE, K1B/K2, annual downstream, shocks, IRFs or Results. It does not add adaptive scan points after seeing outcomes. After independent acceptance, any refinement grid near an observed boundary requires a new Owner/Reviewer gate.
 
-KFE仍=`DIAGNOSTIC_ONLY`；finite-box upper-b leakage与MATLAB-style pinning独立未解决。Standalone KKT residual=`UNAVAILABLE_IN_ACCEPTED_EVIDENCE`。长期仍要求`ZERO_DIAGNOSTIC_PRICE_GUARD_HITS`。
+Standalone KFE use in this task is limited to classifying converged household steady states with the already accepted MATLAB-faithful contaminated-row solve. The separate corrected-2018 multi-province finite-box upper-b leakage/MATLAB-style pinning blocker remains unresolved and is not waived.
 
-Builder candidate classification：`PARTIAL_SUPPORT__SYSTEMATIC_CHATTERING_REDUCTION__NET_ONE_CONVERGENCE_GAIN__TURN2_NONE_AND_ENDPOINT_DIVERGENCE_OUTLIERS`。62/62 exact-input coverage；omega=1 two-call parity PASS；64 HJB calls、4,823 direct solves、scientific retry=0；baseline/treatment convergence分别为turn1 20/31→23/31、turn2 2/31→0/31、all 22/62→23/62。Policy-switch mean在57/62、two-step reversion mean在59/62、raw-gap non-monotonicity在58/62下降，但7个baseline-converged calls丢失，both-converged endpoint也非普遍一致。全部62 treatment outputs经metadata adjudication后finite/shape/domain normal；Results eligibility=`FALSE`。
-
-唯一下一gate：ChatGPT Reviewer独立ACCEPT/REJECT；若接受，只向Owner提交 `OWNER_HJB_RELAXATION_MIXED_EVIDENCE_AND_TURN2_FIXED_POINT_COHERENCE_REVIEW`，不得自动进入production contract或发布 successor task。
+下一 gate：Builder完成 coarse 3×3 scan 后，由 ChatGPT Reviewer 独立 ACCEPT/REJECT，并由 Owner/Reviewer 决定下一小范围 refinement grid。
