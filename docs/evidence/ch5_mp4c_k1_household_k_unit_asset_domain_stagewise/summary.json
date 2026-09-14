@@ -1,0 +1,46 @@
+{
+  "a_domain_counts": {
+    "A": {
+      "INTERIOR_A_DISTRIBUTION_CANDIDATE": 9,
+      "KFE_NUMERICALLY_PATHOLOGICAL": 0,
+      "LOWER_A_BOUNDARY_DOMINATED": 0,
+      "TRANSITION_AMBIGUOUS__OWNER_REVIEW_REQUIRED": 0,
+      "UPPER_A_BOUNDARY_PILEUP": 0
+    }
+  },
+  "b_domain_counts": {
+    "A": {
+      "B_INTERIOR_DISTRIBUTION_CANDIDATE": 9,
+      "B_LOWER_BOUNDARY_DOMINATED": 0,
+      "B_TRANSITION_AMBIGUOUS__OWNER_REVIEW_REQUIRED": 0,
+      "B_UPPER_BOUNDARY_PILEUP": 0,
+      "KFE_NUMERICALLY_PATHOLOGICAL": 0
+    }
+  },
+  "boundary_pileup_cleared": true,
+  "classification_semantics": {
+    "endpoint_mode_exact": true,
+    "pathology_rounding_band": "100*IEEE754_float64_epsilon",
+    "post_result_fitted_threshold": false
+  },
+  "final_stage": "A",
+  "final_stage_exact_bmax_modal_point_count": 0,
+  "hjb_counts": {
+    "A": {
+      "HJB_CONVERGED": 9,
+      "HJB_HARD_ERROR_OR_INVALID_TRANSITION_MATRIX": 0,
+      "HJB_NOT_CONVERGED": 0
+    }
+  },
+  "kfe_caveat": "Accepted standalone contaminated-row KFE only; raw signed density is not clipped; corrected-2018 multi-province finite-box/pinning remains separate.",
+  "precision_caveat": "I=J=20 domain diagnostic only; production precision sensitivity remains mandatory.",
+  "recommended_next_gate": {
+    "name": "OWNER_REVIEW_ASSET_DOMAIN_STAGE_A_ACCEPTANCE_AND_PRECISION_SENSITIVITY",
+    "run_now": false
+  },
+  "results_eligibility": false,
+  "schema": "CH5_MP4C_K1_HOUSEHOLD_K_UNIT_ASSET_DOMAIN_STAGEWISE_SUMMARY_V1",
+  "stage_b_trigger": false,
+  "temporary_household_bridge_h": 1.0,
+  "terminal_classification": "ASSET_DOMAIN_STAGE_A_BOUNDARY_CLEARED__PRECISION_SENSITIVITY_REQUIRED"
+}

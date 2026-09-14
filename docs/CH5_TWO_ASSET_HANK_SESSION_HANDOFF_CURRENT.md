@@ -1,27 +1,31 @@
-# Chapter 5 当前交接 — k-unit normalization / asset-domain design audit candidate
+# Chapter 5 当前交接 — household k-unit asset-domain Stage A candidate
 
 更新：2026-09-14。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-Baseline：`d7d6d4718d27abe33a8915fd2b07ac042a125783`（fresh-fetched `origin/main`）。
+Baseline：`9f6d99a32e8feb00cbae0a3a4749c331975fa587`（fresh-fetched `origin/main`）。
 
-Branch：`codex/ch5-mp4c-k1-k-unit-asset-domain-design-audit-20260914`。
+Branch：`codex/ch5-mp4c-k1-household-k-unit-asset-domain-stagewise-20260914`。
 
-Worktree：`D:\ProjectTemp\ch5-mp4c-k1-k-unit-asset-domain-design-audit-20260914-001`。
+Worktree：`D:\ProjectTemp\ch5-mp4c-k1-household-k-unit-asset-domain-stagewise-20260914-001`。
 
-状态：`MACRO_K_UNIT_REBASE_COHERENT__HOUSEHOLD_MONETARY_BRIDGE_UNPROVEN__BMAX_OWNER_SELECTION_REQUIRED`。
+状态：`ASSET_DOMAIN_STAGE_A_BOUNDARY_CLEARED__PRECISION_SENSITIVITY_REQUIRED`。
 
 Exact Builder task 已完成，active Builder task=`NONE`；未发布 successor task。Results eligibility=`FALSE`。
 
-报告：`docs/CH5_MP4C_K1_K_UNIT_NORMALIZATION_AND_ASSET_DOMAIN_RECALIBRATION_DESIGN_AUDIT_REPORT.md`。
+报告：`docs/CH5_MP4C_K1_HOUSEHOLD_K_UNIT_ASSET_DOMAIN_STAGEWISE_DIAGNOSTIC_REPORT.md`。
 
-Compact evidence：`docs/evidence/ch5_mp4c_k1_k_unit_normalization_asset_domain_design/`，manifest seals 10 payload files。
+Compact evidence：`docs/evidence/ch5_mp4c_k1_household_k_unit_asset_domain_stagewise/`。External sealed evidence：`D:\ProjectTemp\ch5-mp4c-k1-household-k-unit-asset-domain-stagewise-evidence-20260914-001`。
 
-Macro unit result：current aggregate monetary unit `MU=100k` rebase 到 total k 时 aggregate money `×100`；current `NU=100 persons` rebase 到 persons 时 quantity `×100`。因此 `GDP_multiplier 1000→100000`、`POP_multiplier 100→10000`，而 `Y/N`、`K/N`、`Z`、raw firm wage 与 rates 数值不变。
+Stage A：temporary household bridge `h=1`；`a=[0,100]`、`b=[-2,20]`、`I=J=20`；exact `rb=.02 × ra={.06,.0675,.07} × w={13,15.5,18}` grid。9/9 HJB legal/converged；9/9 KFE-valid；fresh initialization，无 warm start。
 
-Household bridge：source 未证明 `w/C/Tt/a/b/At/Bt` 已经是 k/person(/period)。不得为对齐 GDP、`wjt=1.3` 与 composite wage 13–18 而人为乘 10/1000/10000。结论：`MONETARY_UNIT_BRIDGE_UNPROVEN`。
+Liquid result：9/9 raw modal `b=2.6315789473684212`，0/9 modal `b=20`；9/9 `B_INTERIOR_DISTRIBUTION_CANDIDATE`。Stage B trigger=`false`，Stage B initialization/HJB/KFE 全部为 0。旧域 `bmax=5` mass `.130896–.683403` 降为 roundoff 至 `6.134e-08`，exact endpoint pile-up 已清除。
 
-Domain result：`amax=100` 是 conditional individual illiquid state-grid upper bound，不是 `At=100`。`bmax` bounded candidates=`{20,50}`，Owner 必须选择；`bmin=-2` 仅 first diagnostic 暂留。I=J=20 时 `da=5.2631578947`；`db=1.1578947368` 或 `2.7368421053`。20×20 仅适合第一轮 domain diagnostic，production 前必须 precision sensitivity。
+Illiquid result：9/9 `INTERIOR_A_DISTRIBUTION_CANDIDATE`，mode 为 `84.210526` 或 `89.473684`，但 `At≈84.01876–88.86351`、`amax` mass≈`.093123–.173673`。在 `da≈5.26316` 下分布明显靠近上域，必须保留 domain/precision caveat；不是 production adequacy、GE 或 calibration improvement。
 
-Scientific runtime：HJB/KFE/global outer/firm/MATLAB/K1B/K2/GE/downstream/shock/IRF/Results 全部 0；scientific retries=0；parameter/grid/model-source changes=0；deterministic offline audit builds=1。
+KFE：residual `4.909e-17–1.645e-16`；raw density min `-4.352e-18–0`，negative count `0–348`，均在 preregistered `100*epsilon` rounding band 内，未 clip。仅使用 accepted standalone contaminated-row KFE；multi-province finite-box/pinning blocker 仍独立存在。
 
-唯一下一 Owner gate：`OWNER_REVIEW_HOUSEHOLD_K_UNIT_BRIDGE_AND_BMAX_SELECTION`。在此之前由 ChatGPT Reviewer 独立 ACCEPT/REJECT candidate；不要 merge main，不要发布 successor task。
+Call ledger：Stage A HJB=`9`、KFE=`9`；Stage B HJB=`0`、KFE=`0`；scientific retries=`0`；engineering retries=`1`（首个 HJB 前）；global outer/firm/MATLAB/K1B/K2/GE/downstream/shock/IRF/Results=`0`。
+
+唯一下一 gate：`OWNER_REVIEW_ASSET_DOMAIN_STAGE_A_ACCEPTANCE_AND_PRECISION_SENSITIVITY`。
+
+先由 ChatGPT Reviewer 独立 ACCEPT/REJECT candidate；不要 merge main，不要发布 successor task。
