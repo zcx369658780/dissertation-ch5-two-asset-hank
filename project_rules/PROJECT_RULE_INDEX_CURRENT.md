@@ -11,24 +11,23 @@
 5. accepted bilateral-capital / scoring-data / payoff / annual-HJB / price-guard authority docs
 6. `docs/CH5_MP4C_K1_REAL_COMPOSITE_WAGE_DOMAIN_STANDALONE_3X3_AND_MACRO_SCALE_AUDIT_ACCEPTANCE.md`
 7. `docs/CH5_MP4C_K1_K_UNIT_NORMALIZATION_AND_ASSET_DOMAIN_RECALIBRATION_DESIGN_AUDIT_ACCEPTANCE.md`
-8. `docs/CH5_MP4C_K1_HOUSEHOLD_K_UNIT_BRIDGE_AND_ASSET_DOMAIN_DIAGNOSTIC_FREEZE_CURRENT.md`
-9. active exact task：`tasks/CH5_MP4C_K1_HOUSEHOLD_K_UNIT_ASSET_DOMAIN_STAGEWISE_DIAGNOSTIC.md`
+8. `docs/CH5_MP4C_K1_HOUSEHOLD_K_UNIT_ASSET_DOMAIN_STAGEWISE_DIAGNOSTIC_ACCEPTANCE.md`
+9. `docs/CH5_MP4C_K1_HOUSEHOLD_ASSET_GRID_PRECISION_SENSITIVITY_FREEZE_CURRENT.md`
+10. active exact task：`tasks/CH5_MP4C_K1_HOUSEHOLD_ASSET_GRID_PRECISION_SENSITIVITY_DIAGNOSTIC.md`
 
-当前状态：`HOUSEHOLD_K_UNIT_ASSET_DOMAIN_STAGEWISE_DIAGNOSTIC_TASK_ACTIVE`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_HOUSEHOLD_K_UNIT_ASSET_DOMAIN_STAGEWISE_DIAGNOSTIC.md`。
-最新 accepted design-audit candidate：`6b89d8e47f075906d463f58f3e984bf8665710f6`。
+当前状态：`HOUSEHOLD_ASSET_GRID_PRECISION_SENSITIVITY_DIAGNOSTIC_TASK_ACTIVE`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_HOUSEHOLD_ASSET_GRID_PRECISION_SENSITIVITY_DIAGNOSTIC.md`。
+最新 accepted Stage A candidate：`32763fac5a7c4a04dc8278a9069443f35c7c7e3c`。
 Results eligibility=`FALSE`。
 
-Owner 已批准本轮 diagnostic convention：household monetary bridge 临时冻结为 `h=1`，即现有 household `w/C/Tt/a/b/At/Bt` 数值作为 k-unit diagnostic numerics 使用，不做额外 monetary rescale；这不是最终现实货币单位证明。
+Accepted Stage A：diagnostic bridge `h=1`；`a=[0,100]`、`b=[-2,20]`、`I=J=20`；real-wage grid `rb=.02`、`ra={.06,.0675,.07}`、`w={13,15.5,18}`。9/9 HJB legal/converged、9/9 KFE-valid；0/9 modal `b=20`，liquid upper-bound pile-up 已在 tested grid 上清除，预注册 `bmax=50` escalation 未触发。
 
-Stage A：`amin=0`、`amax=100`、`bmin=-2`、`bmax=20`、`I=J=20`；science grid 固定为 `rb=.02`、`ra={.06,.0675,.07}`、composite `w={13,15.5,18}`，9 个 fresh standalone points。
+Illiquid levels remain precision-sensitive：`At≈84–89`、modal `a` 靠近 89.47、`amax` mass约 9%–17%，且 `J=20` 的 `da≈5.26316` 很粗。当前任务只做代表性中央状态的 grid-density sensitivity，不改 domain 或经济参数。
 
-预注册 Stage B：仅当 Stage A 至少一个 KFE-valid point 的 modal `b` 精确等于 `bmax=20` 时，运行唯一的 bounded escalation `bmax=50`，其余全部不变；禁止进一步扩大。Stage B 若仍有 exact-`bmax` mode，则停止并进入 unresolved review。
+P1：`rb=.02,ra=.0675,w=15.5,a=[0,100],b=[-2,20]`，固定 `I=20`；复用 accepted `J=20`，新跑 `J=40,80,160`。只有 P1 描述性稳定才进入 P2：固定 `J=160`，复用 `I=20`，新跑 `I=40,80`。本任务禁止自动 full 3×3 finer-grid rerun。
 
-HJB/KFE equation、FOC、selector、boundary、rates、solver、tolerance、derivative floor、`wjt` guard、`ra` mapping 均冻结。Global multi-province / firm / MATLAB / GE / Results runtime 均禁止。
+Owner 已授权 ChatGPT Reviewer 对类似局部数值校准/调试直接做 bounded、预注册决策并发布 exact task；结构方程、accepted equations/guards、主要经济校准、因果解释、Results eligibility 的变更仍由 Owner 决定。
 
-Owner 已授权 ChatGPT Reviewer 对后续类似的小范围、本地数值校准/调试直接做 bounded 决策并发布 exact task，但必须预注册、范围有限且不得改变结构性经济模型、accepted equations/guards、因果解释或 Results eligibility；结构性变更仍由 Owner 决定。
-
-即使 asset-domain boundary 清除，`I=J=20` 仍只获得 domain-diagnostic authority；production 前必须单独 precision-sensitivity gate。
+HJB/KFE science、wjt guard、ra mapping、asset bounds、rates、solver/tolerance 均冻结。Standalone contaminated-row KFE 与 unresolved corrected-2018 multi-province finite-box upper-b leakage / MATLAB-style pinning blocker 继续分离。
 
 GitHub live main 是唯一 repository authority；聊天不能替代 exact task。
