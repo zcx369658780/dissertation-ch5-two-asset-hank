@@ -1,0 +1,17 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "failure": "working-tree-only manifest validation did not account for Git EOL normalization or the documented compact-evidence boundary",
+      "status": "FAILED_BEFORE_OUTPUTS"
+    },
+    {
+      "attempt": 2,
+      "failure": "git-blob-only validation did not account for historical manifests sealed from Windows working-tree bytes",
+      "status": "FAILED_BEFORE_OUTPUTS"
+    }
+  ],
+  "repair": "per-entry exact size and SHA256 match against working-tree and git HEAD blob representations; compact-missing historical traces reported separately",
+  "scientific_calls_before_failures": 0,
+  "scientific_retries": 0
+}
