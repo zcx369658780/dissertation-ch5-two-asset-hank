@@ -13,19 +13,22 @@
 7. `docs/CH5_MP4C_K1_K_UNIT_NORMALIZATION_AND_ASSET_DOMAIN_RECALIBRATION_DESIGN_AUDIT_ACCEPTANCE.md`
 8. `docs/CH5_MP4C_K1_HOUSEHOLD_K_UNIT_ASSET_DOMAIN_STAGEWISE_DIAGNOSTIC_ACCEPTANCE.md`
 9. `docs/CH5_MP4C_K1_HOUSEHOLD_ASSET_GRID_PRECISION_SENSITIVITY_BLOCKED_EXECUTION_ACCEPTANCE.md`
-10. `docs/CH5_MP4C_K1_HOUSEHOLD_ASSET_GRID_PRECISION_RECEIPT_REPAIR_FREEZE_CURRENT.md`
-11. active exact task：`tasks/CH5_MP4C_K1_HOUSEHOLD_ASSET_GRID_PRECISION_RECEIPT_REPAIR_AND_REEXECUTION.md`
+10. `docs/CH5_MP4C_K1_HOUSEHOLD_ASSET_GRID_PRECISION_RECEIPT_REPAIR_AND_REEXECUTION_ACCEPTANCE.md`
+11. `docs/CH5_MP4C_K1_HOUSEHOLD_ILLIQUID_GRID_FINER_PRECISION_ESCALATION_FREEZE_CURRENT.md`
+12. active exact task：`tasks/CH5_MP4C_K1_HOUSEHOLD_ILLIQUID_GRID_FINER_PRECISION_ESCALATION.md`
 
-当前状态：`HOUSEHOLD_ASSET_GRID_PRECISION_RECEIPT_REPAIR_AND_REEXECUTION_TASK_ACTIVE`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_HOUSEHOLD_ASSET_GRID_PRECISION_RECEIPT_REPAIR_AND_REEXECUTION.md`。
-Accepted blocked precision candidate：`e3b470f623232fcaf52ad50474178f79a2b0b9b9`。
+当前状态：`HOUSEHOLD_ILLIQUID_GRID_FINER_PRECISION_ESCALATION_TASK_ACTIVE`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_HOUSEHOLD_ILLIQUID_GRID_FINER_PRECISION_ESCALATION.md`。
+最新 accepted precision candidate：`de4994c22303e30be9cd4c22c0a5c7f7a00db88a`。
 Results eligibility=`FALSE`。
 
-Accepted Stage A：diagnostic bridge `h=1`；`a=[0,100]`、`b=[-2,20]`、`I=J=20`；real-wage grid `rb=.02`、`ra={.06,.0675,.07}`、`w={13,15.5,18}`。Liquid upper-bound pile-up 已在 tested grid 上清除。
+Accepted Stage A / domain authority：diagnostic bridge `h=1`；`a=[0,100]`、`b=[-2,20]`；real-wage household diagnostics only。`bmax=20` 已在 tested I20 grid 上解除旧 bmax5 exact upper-bound pile-up，但尚无 I-grid production precision authority。
 
-上一 precision execution 的 P1 HJB 3/3 legal/converged，但 KFE receipt/postprocessing 因固定 20-bin illiquid marginal 假设而失去 finer-J evidence。Reviewer 将其接受为 truthful blocked execution，不视作 grid instability、KFE scientific failure 或 recalibration evidence。
+Grid-generic receipt repair 已接受为 engineering-only 修复；accepted HJB/KFE numerical science、wjt guard、ra mapping、asset bounds、rates、solver/tolerance 均未改变。KFE numeric return 后须先 persist raw scientific arrays/density/support，再进入 receipt validation。
 
-当前任务只允许 task-owned grid-generic receipt repair，并在 focused tests 通过后 fresh re-execute 同一 frozen P1 ladder；P2 仍按原 trigger。Accepted HJB/KFE science、wjt guard、ra mapping、asset bounds、rates、solver/tolerance 均冻结。禁止自动 full 3×3 finer-grid rerun。
+Accepted P1 representative-state precision ladder `I=20,J=20/40/80/160` 未在 J160 前稳定：At 和 modal a 继续移动，full a-marginal distance 亦无稳定趋势。Reviewer route=`FINER_PRECISION_ESCALATION`。
+
+当前 exact task 仅运行同一代表状态的 `I=20,J={320,640,1280}`；复用 accepted J160，不得重跑。禁止 J>1280、liquid-I ladder、multi-state/finer 3x3、asset-domain change、recalibration、global model 或 Results runtime。若到 J1280 仍未稳定，必须 STOP 并转入 domain/scale review，不得无限加密。
 
 Owner 已授权 ChatGPT Reviewer 对类似局部数值调试直接做 bounded、预注册决策并发布 exact task；结构方程、accepted equations/guards、主要经济校准、因果解释、Results eligibility 的变更仍由 Owner 决定。
 
