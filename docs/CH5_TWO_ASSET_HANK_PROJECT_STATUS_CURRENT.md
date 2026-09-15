@@ -2,20 +2,20 @@
 
 更新：2026-09-15。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`J160_FIRST_TURN_LOCAL_BASIN_INTERPOLATION_DIAGNOSTIC_ACTIVE`。
+状态：`J160_LOCAL_BASIN_A2MAX_RECEIPT_REPAIR_AND_REEXECUTION_ACTIVE`。
 
-最新 accepted input-envelope candidate：`49ea4c12692c669701cdc7bcf8fd02267a068090`。
-Reviewer acceptance：`docs/CH5_MP4C_K1_FIRST_TURN_PROVINCIAL_INPUT_OUTCOME_ENVELOPE_AUDIT_ACCEPTANCE.md`。
-Current freeze：`docs/CH5_MP4C_K1_J160_FIRST_TURN_LOCAL_BASIN_INTERPOLATION_DIAGNOSTIC_FREEZE_CURRENT.md`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_J160_FIRST_TURN_LOCAL_BASIN_INTERPOLATION_DIAGNOSTIC.md`。
+最新 accepted blocked local-basin candidate：`06b427f4f0c705a17c0d064a5f508c7e3e72ccce`。
+Reviewer acceptance：`docs/CH5_MP4C_K1_J160_FIRST_TURN_LOCAL_BASIN_INTERPOLATION_DIAGNOSTIC_ACCEPTANCE.md`。
+Current freeze：`docs/CH5_MP4C_K1_J160_LOCAL_BASIN_A2MAX_RECEIPT_REPAIR_AND_REEXECUTION_FREEZE_CURRENT.md`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_J160_LOCAL_BASIN_A2MAX_RECEIPT_REPAIR_AND_REEXECUTION.md`。
 Results eligibility=`FALSE`。
 
-Accepted practical household grid remains `I=20,J=160,a=[0,100],b=[-2,20],h=1` for bounded diagnostics only. Finer-J and finer-I escalation routes remain closed; no maxit/tolerance/damping/relaxation/line-search changes are authorized.
+Accepted practical household grid remains `I=20,J=160,a=[0,100],b=[-2,20],h=1` for bounded diagnostics only. Finer-J/finer-I routes remain closed; no maxit/tolerance/damping/relaxation/line-search changes are authorized.
 
-Accepted first-turn HJB viability remains 25/31 converged and 6 legal nonconverged. Temporal mechanisms and coordinate-resolved selector/floor footprints are heterogeneous; successful controls also display substantial upper-b activity, so a common failure-specific boundary pathology is not supported.
+The prior local-basin run passed pair input authority and executed exactly 12 fresh HJB probes with endpoint reruns=0, KFE=0 and scientific retries=0. Raw terminal sequence was 山西→河北 C/C/C, 重庆→河北 C/C/C, 江西→安徽 F/C/C, 贵州→四川 C/F/C.
 
-The accepted 31-province input/outcome envelope audit further shows substantial failure-success overlap in consumed `ra` and household composite `w`: ranges and 2D bounding boxes overlap, convex hulls overlap, no single-ra or single-w threshold separates outcomes, and the fixed k=3 standardized graph is interleaved. Return and corrected upstream `wjt` guard states show no cross-sectional discriminating variation. Raw pre-guard return equals consumed `ra`; raw provincial `wjt` is unavailable in accepted compact evidence.
+Formal topology is not yet accepted because the task-owned receipt aggregator mixed a post-convergence implicit system matrix into the A2max maximum. The exact maximum scientific source-generator A2max was not persisted. All scientific iteration operators are evidenced as preceding the sole erroneous `iterations+1` observation, but the required exact receipt cannot be reconstructed offline.
 
-Therefore a simple provincial safe-price envelope or one-variable guard rule is not authorized. The active task now performs a bounded numerical local-basin interpolation diagnostic on four preregistered close failure/success pairs. It first proves all consumed household inputs other than `ra` and composite `w` are identical within each pair, then runs only `t=.25,.50,.75` line-segment probes. Expected HJB=12, KFE=0, scientific retries=0; endpoint reruns and adaptive bisection are forbidden.
+The active task repairs only this receipt boundary and reexecutes exactly the same 12 sealed synthetic points once. No new pairs, interpolation fractions, endpoint reruns, adaptive bisection, calibration/mapping change, KFE, outer model or Results runtime is authorized.
 
-The synthetic probes are numerical basin diagnostics only and must not be interpreted as feasible provincial equilibrium states or calibration targets. The corrected-2018 multi-province finite-box upper-b leakage / MATLAB-style pinning KFE blocker remains separate and unresolved.
+The corrected-2018 multi-province finite-box upper-b leakage / MATLAB-style pinning KFE blocker remains separate and unresolved.
