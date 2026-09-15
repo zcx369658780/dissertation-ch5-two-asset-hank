@@ -1,0 +1,69 @@
+{
+  "call": 11,
+  "common_non_interpolated_inputs_exact": true,
+  "consumed_r_a": 0.08942624192094842,
+  "converged": false,
+  "failure_province": "贵州",
+  "final_max_abs_delta_v": 0.00019476215275160413,
+  "formula": "(1-t)*failure+t*success",
+  "fresh_initialization_receipt": {
+    "baseline_labor_sha256": "40F2A743C56A96A0937320E16E2168CC8CF45E6AC0A5D8CE542F4A05C7FC4887",
+    "call": 11,
+    "consumed_r_a": 0.08942624192094842,
+    "fresh_source_initialization": true,
+    "household_composite_wage": 17.59450365441625,
+    "initial_value_sha256": "245686E8CAD9AC4B01B01A8765D8840AD34C4C6D4F137AADCF0369E917CF41D0",
+    "pair_id": "pair04_贵州_to_四川",
+    "point_id": "pair04_贵州_to_四川_t50",
+    "t": 0.5,
+    "warm_start": false
+  },
+  "hard_error": null,
+  "hjb_classification": "HJB_NOT_CONVERGED",
+  "household_composite_wage": 17.59450365441625,
+  "iterations": 100,
+  "kfe_ran": false,
+  "numerically_valid": false,
+  "pair_id": "pair04_贵州_to_四川",
+  "pair_index": 4,
+  "point_id": "pair04_贵州_to_四川_t50",
+  "retried": false,
+  "success_province": "四川",
+  "t": 0.5,
+  "trace_summary": {
+    "all_finite_checks_pass": true,
+    "all_iteration_operators_legal": false,
+    "all_shape_checks_pass": true,
+    "cycle_evidence": {
+      "exact_joint_label_low_period_2_or_3": false,
+      "exact_value_low_period_2_or_3": false,
+      "first_exact_joint_label_recurrence": {
+        "iteration": 26,
+        "period": 1,
+        "prior_iteration": 25
+      },
+      "first_exact_value_recurrence": null
+    },
+    "first_derivative_floor_hit_iteration": 7,
+    "first_illegal_iteration": 101,
+    "first_policy_or_selector_switch_iteration": 2,
+    "first_value_stat_non_decrease_iteration": 6,
+    "iteration_count_observed": 100,
+    "maximum_a2max": 1.9518944809619476,
+    "mechanism_classification": "POLICY_OR_SELECTOR_CHATTER_WITH_VALUE_OSCILLATION",
+    "mechanism_event_ordering": [
+      [
+        "policy_or_selector_switch",
+        2
+      ],
+      [
+        "value_stat_non_decrease",
+        6
+      ],
+      [
+        "derivative_floor_hit",
+        7
+      ]
+    ]
+  }
+}

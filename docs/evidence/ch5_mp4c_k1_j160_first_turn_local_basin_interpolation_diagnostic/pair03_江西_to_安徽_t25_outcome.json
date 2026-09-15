@@ -1,0 +1,69 @@
+{
+  "call": 7,
+  "common_non_interpolated_inputs_exact": true,
+  "consumed_r_a": 0.08907914784004319,
+  "converged": false,
+  "failure_province": "江西",
+  "final_max_abs_delta_v": 3.334187371994979e-05,
+  "formula": "(1-t)*failure+t*success",
+  "fresh_initialization_receipt": {
+    "baseline_labor_sha256": "724788B3256EAAE1FB0B34B575C08909BFC655C5BBAB7D385CFACF2BE8C92DFB",
+    "call": 7,
+    "consumed_r_a": 0.08907914784004319,
+    "fresh_source_initialization": true,
+    "household_composite_wage": 18.124234435512243,
+    "initial_value_sha256": "A226C41E2777AB7C311CB5F7324ADF86D8E29F44C04A9D9D2BB1C717EDB08C4F",
+    "pair_id": "pair03_江西_to_安徽",
+    "point_id": "pair03_江西_to_安徽_t25",
+    "t": 0.25,
+    "warm_start": false
+  },
+  "hard_error": null,
+  "hjb_classification": "HJB_NOT_CONVERGED",
+  "household_composite_wage": 18.124234435512243,
+  "iterations": 100,
+  "kfe_ran": false,
+  "numerically_valid": false,
+  "pair_id": "pair03_江西_to_安徽",
+  "pair_index": 3,
+  "point_id": "pair03_江西_to_安徽_t25",
+  "retried": false,
+  "success_province": "安徽",
+  "t": 0.25,
+  "trace_summary": {
+    "all_finite_checks_pass": true,
+    "all_iteration_operators_legal": false,
+    "all_shape_checks_pass": true,
+    "cycle_evidence": {
+      "exact_joint_label_low_period_2_or_3": false,
+      "exact_value_low_period_2_or_3": false,
+      "first_exact_joint_label_recurrence": {
+        "iteration": 67,
+        "period": 1,
+        "prior_iteration": 66
+      },
+      "first_exact_value_recurrence": null
+    },
+    "first_derivative_floor_hit_iteration": 7,
+    "first_illegal_iteration": 101,
+    "first_policy_or_selector_switch_iteration": 2,
+    "first_value_stat_non_decrease_iteration": 8,
+    "iteration_count_observed": 100,
+    "maximum_a2max": 1.836125668754488,
+    "mechanism_classification": "DERIVATIVE_FLOOR_AMPLIFICATION_AFTER_EARLIER_SWITCHING",
+    "mechanism_event_ordering": [
+      [
+        "policy_or_selector_switch",
+        2
+      ],
+      [
+        "derivative_floor_hit",
+        7
+      ],
+      [
+        "value_stat_non_decrease",
+        8
+      ]
+    ]
+  }
+}
