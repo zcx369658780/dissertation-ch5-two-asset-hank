@@ -2,20 +2,20 @@
 
 更新：2026-09-15。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`J160_PROVINCIAL_FIRST_TURN_HJB_VIABILITY_TASK_ACTIVE`。
+状态：`J160_FIRST_TURN_SIX_FAILURE_HJB_MECHANISM_PANEL_TASK_ACTIVE`。
 
-最新 accepted liquid-grid candidate：`47fd56418500e42c24c50bcbf86d889c96db0ec5`。
-Reviewer acceptance：`docs/CH5_MP4C_K1_J160_LIQUID_GRID_BOUNDED_PRECISION_SENSITIVITY_ACCEPTANCE.md`。
-Current freeze：`docs/CH5_MP4C_K1_J160_PROVINCIAL_FIRST_TURN_HJB_VIABILITY_FREEZE_CURRENT.md`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_J160_PROVINCIAL_FIRST_TURN_HJB_VIABILITY.md`。
+最新 accepted provincial candidate：`1e9c8c6416cbd732a44d739e19b40e838993e3d4`。
+Reviewer acceptance：`docs/CH5_MP4C_K1_J160_PROVINCIAL_FIRST_TURN_HJB_VIABILITY_ACCEPTANCE.md`。
+Current freeze：`docs/CH5_MP4C_K1_J160_FIRST_TURN_SIX_FAILURE_HJB_MECHANISM_PANEL_FREEZE_CURRENT.md`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_J160_FIRST_TURN_SIX_FAILURE_HJB_MECHANISM_PANEL_DIAGNOSTIC.md`。
 Results eligibility=`FALSE`。
 
-Accepted practical household grid remains `I=20,J=160,a=[0,100],b=[-2,20]` with diagnostic bridge `h=1`. J160 cross-state confirmation passed, but this is only practical bounded diagnostic authority, not continuum convergence or production-final precision.
+Accepted practical household grid remains `I=20,J=160,a=[0,100],b=[-2,20],h=1` for bounded diagnostics only. Finer-J and finer-I escalation routes remain closed; no maxit/tolerance/damping/relaxation/line-search changes are authorized.
 
-Liquid-grid refinement route is now closed. Fresh `I=40,J=160` failed to converge by maxit=100 and first violated `A2max<=0.01` at iteration 94, with max A2max about 0.5876. KFE was correctly not run and I80 was not started. Reviewer therefore does not authorize I80/I160, longer maxit, damping, relaxation, line search, tolerance changes, or scientific-source changes to manufacture liquid-grid precision.
+First-turn provincial HJB viability has now been tested on the exact accepted 31-province household input vector. Input authority PASS. HJB converged for 25/31 provinces; 天津、山西、江西、重庆、贵州、甘肃 were legal but nonconverged at frozen maxit=100. There were 0 illegal operators and 0 hard errors; all 31 maximum A2max values remained below 0.01. KFE=0 and no upstream mappings were recomputed.
 
-Together with accepted J640 policy/selector chatter on finer J, this establishes a practical numerical boundary: simply refining either asset dimension can move the source-faithful MATLAB HJB outside its stable regime. `I20/J160` is retained for bounded diagnostics because it passed the accepted five-state cross-state household check.
+All 31 real first-turn provincial states lie outside the previously tested standalone J160 rectangle while 25 converge, so support location alone cannot explain the six failures. No recalibration is authorized yet.
 
-The route now returns to the multi-province model through an HJB-only first-turn viability test. The active task must recover the exact accepted province-level first-turn household input vector from prior repository evidence and, if unambiguous, run exactly one fresh HJB per province on the accepted practical grid. Expected HJB count is 31; KFE=0; no outer turn, firm/wage recalculation, MATLAB, GE, downstream or Results runtime.
+The active task performs instrumentation-only identical-input HJB replays for exactly the six failed provinces, one call each, to classify whether failures are slow/near-monotone, policy/selector chatter with value oscillation, floor-amplified, low-period, heterogeneous, or unresolved. KFE=0, scientific retries=0, no successful-province reruns.
 
-The unresolved corrected-2018 multi-province finite-box upper-b leakage / MATLAB-style pinning blocker remains separate and is not reopened by this HJB-only task.
+The corrected-2018 multi-province finite-box upper-b leakage / MATLAB-style pinning KFE blocker remains separate and unresolved.
