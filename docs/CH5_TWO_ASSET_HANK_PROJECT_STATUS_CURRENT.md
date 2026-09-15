@@ -2,22 +2,20 @@
 
 更新：2026-09-15。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`J160_LIQUID_GRID_BOUNDED_PRECISION_SENSITIVITY_TASK_ACTIVE`。
+状态：`J160_PROVINCIAL_FIRST_TURN_HJB_VIABILITY_TASK_ACTIVE`。
 
-最新 accepted cross-state candidate：`0430057603da6fb83ae4731ce4139def149c090c`。
-Reviewer acceptance：`docs/CH5_MP4C_K1_J160_BOUNDED_CROSS_STATE_CONFIRMATION_ACCEPTANCE.md`。
-Current freeze：`docs/CH5_MP4C_K1_J160_LIQUID_GRID_BOUNDED_PRECISION_SENSITIVITY_FREEZE_CURRENT.md`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_J160_LIQUID_GRID_BOUNDED_PRECISION_SENSITIVITY.md`。
+最新 accepted liquid-grid candidate：`47fd56418500e42c24c50bcbf86d889c96db0ec5`。
+Reviewer acceptance：`docs/CH5_MP4C_K1_J160_LIQUID_GRID_BOUNDED_PRECISION_SENSITIVITY_ACCEPTANCE.md`。
+Current freeze：`docs/CH5_MP4C_K1_J160_PROVINCIAL_FIRST_TURN_HJB_VIABILITY_FREEZE_CURRENT.md`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_J160_PROVINCIAL_FIRST_TURN_HJB_VIABILITY.md`。
 Results eligibility=`FALSE`。
 
-J160 bounded cross-state confirmation 已接受：四个 fresh corner HJB 4/4 legal/converged、KFE 4/4 valid，center reuse-only；五态均无 amax 上界绑定，modal a 内部；bmax=20 无 modal pileup，fresh bmax mass 最大约0.01630。`I=20,J=160` 因此支持作为 practical bounded household diagnostic grid，但不代表 continuum convergence 或 production-final precision。
+Accepted practical household grid remains `I=20,J=160,a=[0,100],b=[-2,20]` with diagnostic bridge `h=1`. J160 cross-state confirmation passed, but this is only practical bounded diagnostic authority, not continuum convergence or production-final precision.
 
-J20→J160 的 marginal comparison 采用 accepted unequal-support union-CDF 规则，并明确标记为 `DOMAIN_PLUS_GRID_CDF_DISTANCE`；该距离同时包含 domain expansion 和 discretization change，不能解释为 pure precision metric。
+Liquid-grid refinement route is now closed. Fresh `I=40,J=160` failed to converge by maxit=100 and first violated `A2max<=0.01` at iteration 94, with max A2max about 0.5876. KFE was correctly not run and I80 was not started. Reviewer therefore does not authorize I80/I160, longer maxit, damping, relaxation, line search, tolerance changes, or scientific-source changes to manufacture liquid-grid precision.
 
-Accepted J640 mechanism 仍为 `POLICY_OR_SELECTOR_CHATTER_WITH_VALUE_OSCILLATION`，所以 finer-J escalation route 保持关闭：不得增加 maxit、damping/relaxation/line search，也不得继续 J1280/J2560 以制造 convergence。J320 仅保留为代表状态 high-resolution sensitivity point。
+Together with accepted J640 policy/selector chatter on finer J, this establishes a practical numerical boundary: simply refining either asset dimension can move the source-faithful MATLAB HJB outside its stable regime. `I20/J160` is retained for bounded diagnostics because it passed the accepted five-state cross-state household check.
 
-当前剩余的本地 precision gap 是 liquid dimension。代表状态固定 `rb=.02,ra=.0675,w=15.5,a=[0,100],b=[-2,20],J=160,h=1`。复用 accepted `I=20,J=160` center，不重跑；fresh exactly 运行 `I=40,J=160` 与 `I=80,J=160`。每点 fresh initialization，HJB exactly once；legal/converged 时 KFE exactly once；scientific retries=0。
+The route now returns to the multi-province model through an HJB-only first-turn viability test. The active task must recover the exact accepted province-level first-turn household input vector from prior repository evidence and, if unambiguous, run exactly one fresh HJB per province on the accepted practical grid. Expected HJB count is 31; KFE=0; no outer turn, firm/wage recalculation, MATLAB, GE, downstream or Results runtime.
 
-本任务只判断 `Bt`、modal b、b marginal 及相关 aggregates 随 I refinement 是否描述性稳定。禁止 I160、J change、domain/parameter change、HJB/KFE modification、recalibration、global/GE/Results runtime。
-
-Standalone contaminated-row KFE 仍不解决 corrected-2018 multi-province finite-box upper-b leakage / MATLAB-style pinning blocker。
+The unresolved corrected-2018 multi-province finite-box upper-b leakage / MATLAB-style pinning blocker remains separate and is not reopened by this HJB-only task.
