@@ -2,21 +2,22 @@
 
 更新：2026-09-15。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`J160_SIX_FAILURE_TRACE_SPATIAL_LOCALIZATION_AUDIT_ACTIVE`。
+状态：`J160_COORDINATE_RESOLVED_SELECTOR_FLOOR_MATCHED_CONTROL_DIAGNOSTIC_ACTIVE`。
 
-最新 accepted provincial mechanism candidate：`ad4cdc8bbdf924c2ed06477abc10d1010038a5f7`。
-Reviewer acceptance：`docs/CH5_MP4C_K1_J160_FIRST_TURN_SIX_FAILURE_HJB_MECHANISM_PANEL_ACCEPTANCE.md`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_J160_SIX_FAILURE_TRACE_SPATIAL_LOCALIZATION_AUDIT.md`。
+最新 accepted spatial-audit candidate：`1e76a9222eb2ba6dff485b49f0c2c9ffa30af379`。
+Reviewer acceptance：`docs/CH5_MP4C_K1_J160_SIX_FAILURE_TRACE_SPATIAL_LOCALIZATION_AUDIT_ACCEPTANCE.md`。
+Current freeze：`docs/CH5_MP4C_K1_J160_COORDINATE_RESOLVED_SELECTOR_FLOOR_MATCHED_CONTROL_DIAGNOSTIC_FREEZE_CURRENT.md`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_J160_COORDINATE_RESOLVED_SELECTOR_FLOOR_MATCHED_CONTROL_DIAGNOSTIC.md`。
 Results eligibility=`FALSE`。
 
 Accepted practical household grid remains `I=20,J=160,a=[0,100],b=[-2,20],h=1` for bounded diagnostics only. Finer-J and finer-I escalation routes remain closed; no maxit/tolerance/damping/relaxation/line-search changes are authorized.
 
-Accepted first-turn provincial HJB viability remains 25/31 converged and 6 legal nonconverged. The six exact identical-input replays reproduced all six failures and established a heterogeneous numerical panel: 天津、山西、重庆、甘肃 are policy/selector chatter with value oscillation; 江西 is derivative-floor amplification after earlier switching; 贵州 has exact joint-selector period-2 recurrence without exact value recurrence. No reproducibility blocker occurred.
+Accepted first-turn HJB viability remains 25/31 converged and 6 legal nonconverged. Accepted six-failure mechanism panel is heterogeneous: 天津、山西、重庆、甘肃 chatter; 江西 derivative-floor amplification after earlier switching; 贵州 joint-selector period-2 recurrence without exact value recurrence.
 
-This evidence does not support a single universal HJB fix or immediate common recalibration. All six begin selector switching at iteration 2, but floor timing, oscillation strength, and recurrence evidence differ.
+The accepted trace-only spatial audit adds that value-update argmax localization is also heterogeneous: 江西 and 甘肃 are liquid-upper-bound concentrated under the preregistered argmax metric, while 天津、山西、重庆、贵州 are mixed. The four chatter provinces therefore do not share one value-argmax spatial signature.
 
-The active task is trace-only/offline. It must use the already sealed six-province iteration traces to localize the instability in `(b,a,z)` state space and determine whether switching/value argmax/floor/cycle signatures are boundary-concentrated, interior, mixed, heterogeneous, or unresolved. HJB=0, KFE=0, all model/science runtime=0.
+However, the sealed traces do not contain selector changed-cell coordinates or derivative-floor coordinates. Therefore value-argmax localization cannot be treated as the full instability footprint, and no common boundary repair, grid expansion, HJB modification, or price recalibration is authorized from that audit alone.
 
-No new `(ra,w)` experiment, calibration change, wage/return remapping, grid change, or HJB/KFE algorithm change is authorized.
+The active task replays a preregistered seven-province matched panel with observational coordinate-resolved instrumentation only: failures 天津、江西、贵州、甘肃 and successful controls 湖南、上海、福建. Exactly one fresh HJB per province; KFE=0; scientific retries=0. The purpose is to compare selector-switch and derivative-floor spatial footprints between failures and converged controls without changing science.
 
 The corrected-2018 multi-province finite-box upper-b leakage / MATLAB-style pinning KFE blocker remains separate and unresolved.
