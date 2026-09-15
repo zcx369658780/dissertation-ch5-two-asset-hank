@@ -1,21 +1,23 @@
-# Chapter 5 当前交接 — J160 provincial first-turn HJB viability active
+# Chapter 5 当前交接 — first-turn six-failure HJB mechanism panel active
 
 更新：2026-09-15。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`J160_PROVINCIAL_FIRST_TURN_HJB_VIABILITY_TASK_ACTIVE`。
+状态：`J160_FIRST_TURN_SIX_FAILURE_HJB_MECHANISM_PANEL_TASK_ACTIVE`。
 
-最新 accepted liquid-grid candidate：`47fd56418500e42c24c50bcbf86d889c96db0ec5`。
-Acceptance：`docs/CH5_MP4C_K1_J160_LIQUID_GRID_BOUNDED_PRECISION_SENSITIVITY_ACCEPTANCE.md`。
-Freeze：`docs/CH5_MP4C_K1_J160_PROVINCIAL_FIRST_TURN_HJB_VIABILITY_FREEZE_CURRENT.md`。
-Active task：`tasks/CH5_MP4C_K1_J160_PROVINCIAL_FIRST_TURN_HJB_VIABILITY.md`。
+最新 accepted provincial candidate：`1e9c8c6416cbd732a44d739e19b40e838993e3d4`。
+Acceptance：`docs/CH5_MP4C_K1_J160_PROVINCIAL_FIRST_TURN_HJB_VIABILITY_ACCEPTANCE.md`。
+Freeze：`docs/CH5_MP4C_K1_J160_FIRST_TURN_SIX_FAILURE_HJB_MECHANISM_PANEL_FREEZE_CURRENT.md`。
+Active task：`tasks/CH5_MP4C_K1_J160_FIRST_TURN_SIX_FAILURE_HJB_MECHANISM_PANEL_DIAGNOSTIC.md`。
 Results eligibility=`FALSE`。
 
-Practical household grid remains `I=20,J=160,a=[0,100],b=[-2,20],h=1` for bounded diagnostics only. J160 cross-state confirmation passed; finer-J route was closed by accepted J640 policy/selector chatter. Finer-I route is now also closed because `I40/J160` failed to converge and became operator-illegal at iteration 94 under the frozen source-faithful HJB.
+Practical household grid remains `I=20,J=160,a=[0,100],b=[-2,20],h=1` for bounded diagnostics only. Finer-J route is closed by accepted J640 policy/selector chatter; finer-I route is closed by accepted I40 operator illegality. Do not increase maxit or add damping/relaxation/line search.
 
-Do not continue I80/I160, do not increase maxit, and do not introduce damping/relaxation/line-search or tolerance/floor/selector changes. The practical-grid choice is numerical-authority by bounded robustness, not continuum-convergence authority.
+Accepted first-turn provincial viability used the exact sealed 31-province household input vector without rerunning firm, wage, or return mappings. Result: 25/31 HJBs converged. 天津、山西、江西、重庆、贵州、甘肃 were legal but nonconverged at maxit100. There were no illegal operators or hard errors, and all 31 A2max maxima were below 0.01. KFE was not run.
 
-Current exact task returns to multi-province integration without KFE. It must first recover the exact accepted first-turn per-province household input vector from prior mechanism/trajectory evidence. Expected 31 provinces. Raw provincial `wjt` must not be substituted for household composite `w`, and no firm/wage/return recalculation is allowed.
+All 31 real provincial first-turn states are outside the earlier standalone rectangle while 25 still converge, so being outside that rectangle is not sufficient to explain failure. Recalibration is therefore not authorized yet.
 
-If the first-turn vector is unambiguous, run exactly one fresh HJB per province on I20/J160 with source-style initialization, tolerance `1e-7`, maxit `100`, and `A2max<=0.01`. KFE=0, scientific retries=0. Report exact failure provinces and consumed `(ra,w)` inputs if any; do not recalibrate within the task.
+Current exact task replays only those six failed provinces with identical accepted inputs and fresh initialization, exactly one HJB each, observation-only instrumentation, maxit100/tolerance unchanged. KFE=0, scientific retries=0, no successful-province reruns. It must classify each province and the six-province panel as slow convergence, policy/selector chatter, floor-amplified behavior, low-period recurrence, heterogeneous, or unresolved.
 
-No global outer turn, firm runtime, wage recalculation, MATLAB, K1B/K2, GE, downstream, shock, IRF or Results execution is authorized. The corrected-2018 KFE finite-box/pinning blocker remains separate.
+Use accepted first-turn receipts only for offline nearest-successful-neighbor comparisons. The corrected-2018 multi-province KFE finite-box/pinning blocker remains separate.
+
+Owner has authorized ChatGPT Reviewer to make bounded local numerical/debug route decisions; structural model changes, major calibration changes, accepted-equation/guard changes, causal interpretation, and Results eligibility remain Owner authority.
