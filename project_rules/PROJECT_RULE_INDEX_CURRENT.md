@@ -15,21 +15,24 @@
 9. `docs/CH5_MP4C_K1_J160_FIRST_TURN_SIX_FAILURE_HJB_MECHANISM_PANEL_ACCEPTANCE.md`
 10. `docs/CH5_MP4C_K1_J160_SIX_FAILURE_TRACE_SPATIAL_LOCALIZATION_AUDIT_ACCEPTANCE.md`
 11. `docs/CH5_MP4C_K1_J160_COORDINATE_RESOLVED_SELECTOR_FLOOR_MATCHED_CONTROL_DIAGNOSTIC_ACCEPTANCE.md`
-12. `docs/CH5_MP4C_K1_FIRST_TURN_PROVINCIAL_INPUT_OUTCOME_ENVELOPE_AUDIT_FREEZE_CURRENT.md`
-13. active exact task：`tasks/CH5_MP4C_K1_FIRST_TURN_PROVINCIAL_INPUT_OUTCOME_ENVELOPE_AUDIT.md`
+12. `docs/CH5_MP4C_K1_FIRST_TURN_PROVINCIAL_INPUT_OUTCOME_ENVELOPE_AUDIT_ACCEPTANCE.md`
+13. `docs/CH5_MP4C_K1_J160_FIRST_TURN_LOCAL_BASIN_INTERPOLATION_DIAGNOSTIC_FREEZE_CURRENT.md`
+14. active exact task：`tasks/CH5_MP4C_K1_J160_FIRST_TURN_LOCAL_BASIN_INTERPOLATION_DIAGNOSTIC.md`
 
-当前状态：`FIRST_TURN_PROVINCIAL_INPUT_OUTCOME_ENVELOPE_AUDIT_ACTIVE`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_FIRST_TURN_PROVINCIAL_INPUT_OUTCOME_ENVELOPE_AUDIT.md`。
-最新 accepted coordinate-resolved candidate：`6179cc41dbe1ea40c5a339756690d52bc0543d87`。
+当前状态：`J160_FIRST_TURN_LOCAL_BASIN_INTERPOLATION_DIAGNOSTIC_ACTIVE`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_J160_FIRST_TURN_LOCAL_BASIN_INTERPOLATION_DIAGNOSTIC.md`。
+最新 accepted input-envelope candidate：`49ea4c12692c669701cdc7bcf8fd02267a068090`。
 Results eligibility=`FALSE`。
 
-Accepted practical household grid：`I=20,J=160,a=[0,100],b=[-2,20],h=1`，仅用于 bounded diagnostics。Finer-J 和 finer-I routes 均关闭；禁止用增加 maxit、damping/relaxation/line-search 或 tolerance/floor/selector 修改制造收敛。
+Accepted practical household grid：`I=20,J=160,a=[0,100],b=[-2,20],h=1`，仅用于 bounded diagnostics。Finer-J/finer-I routes 均关闭；禁止通过增加 maxit、damping/relaxation/line-search 或 tolerance/floor/selector 修改制造 convergence。
 
-Accepted first-turn provincial HJB：25/31 converged，六省 legal nonconverged。Temporal mechanism、value-argmax spatial pattern、以及 coordinate-resolved selector/floor matched-control evidence 均显示异质性。成功 controls 的 selector upper-b shares 与 failures 相近，且 controls 也有显著 upper-b floor activity，因此 failure-specific common upper-b pathology 不成立。
+Accepted first-turn provincial HJB 为 25/31 converged、6 legal nonconverged。Temporal mechanism、value-argmax spatial pattern、coordinate-resolved selector/floor footprints均异质；successful controls 也存在明显 upper-b activity，因此 common failure-specific boundary pathology 不成立。
 
-不得直接授权 common boundary repair、grid expansion、HJB/selector/floor change 或共同 provincial recalibration。当前 exact task 是 zero-science-runtime 的 31 省 input/outcome envelope audit，只从 accepted repository evidence 读取 consumed `ra`、composite `w`、guards 和已 sealed 的 upstream raw mapping receipts，做预注册 descriptive overlap/rank/nearest-neighbor/threshold-existence/k=3 graph 分析。
+Accepted 31省 input/outcome envelope audit 又显示 failures/successes 在 consumed `ra` 和 household composite `w` 上高度重叠：single-ra/single-w threshold 均不存在，2D bounding boxes/convex hulls overlap，固定 k=3 graph interleaved，guard states 无判别变异。简单 safe-price envelope 或单一 guard rule 不被支持。
 
-HJB=0，KFE=0，firm/wage/return/outer/MATLAB/K1B/K2/GE/downstream/shock/IRF/Results=0。Standalone contaminated-row KFE 与 unresolved corrected-2018 finite-box upper-b leakage / MATLAB-style pinning blocker继续分离。
+Active exact task 是 bounded local-basin interpolation diagnostic：仅使用 山西↔河北、重庆↔河北、江西↔安徽、贵州↔四川 四个预注册 matched pairs。必须先证明 pair 内除 `ra`/composite `w` 外全部 consumed household inputs exact equal；endpoints reuse-only。每 pair 只运行 t=.25/.50/.75 三个 synthetic probes，共 HJB exactly12，KFE=0，scientific retries=0；禁止 adaptive bisection、额外 synthetic points 或任何 calibration/mapping/HJB change。
+
+Synthetic probes 只用于 numerical basin topology，不是经济可行省级状态或校准目标。Standalone contaminated-row KFE 与 unresolved corrected-2018 finite-box upper-b leakage / MATLAB-style pinning blocker继续分离。
 
 Owner 已授权 ChatGPT Reviewer 对 bounded numerical diagnostics 作预注册决策；结构方程、accepted equations/guards、主要经济校准、因果解释与 Results eligibility 仍由 Owner 决定。
 
