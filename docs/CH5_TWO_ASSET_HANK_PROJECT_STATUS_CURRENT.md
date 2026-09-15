@@ -2,25 +2,18 @@
 
 更新：2026-09-15。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`HOUSEHOLD_ASSET_GRID_PRECISION_RECEIPT_REPAIR_AND_REEXECUTION_TASK_ACTIVE`。
+状态：`HOUSEHOLD_ASSET_GRID_PRECISION_REEXECUTION_CANDIDATE_AWAITING_REVIEW`。
 
-最新 accepted Stage A candidate：`32763fac5a7c4a04dc8278a9069443f35c7c7e3c`。
-Accepted blocked precision candidate：`e3b470f623232fcaf52ad50474178f79a2b0b9b9`。
-Blocked-execution Reviewer acceptance：`docs/CH5_MP4C_K1_HOUSEHOLD_ASSET_GRID_PRECISION_SENSITIVITY_BLOCKED_EXECUTION_ACCEPTANCE.md`。
-Repair freeze：`docs/CH5_MP4C_K1_HOUSEHOLD_ASSET_GRID_PRECISION_RECEIPT_REPAIR_FREEZE_CURRENT.md`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_HOUSEHOLD_ASSET_GRID_PRECISION_RECEIPT_REPAIR_AND_REEXECUTION.md`。
-Results eligibility=`FALSE`。
+本轮 fresh baseline：`03f30ada29ef7cea8dd0ab8f27b090df607c0909`。Active task：`tasks/CH5_MP4C_K1_HOUSEHOLD_ASSET_GRID_PRECISION_RECEIPT_REPAIR_AND_REEXECUTION.md`。Results eligibility=`FALSE`。
 
-Owner 已批准 diagnostic-only household monetary bridge `h=1`：现有 household `w/C/Tt/a/b/At/Bt` 数值暂按 k-unit diagnostic numerics 使用；这不是最终现实货币单位证明。`wjt` guard、`ra` mapping、HJB/KFE equations、rates、solver/tolerance 均继续冻结。
+R0 已 PASS：task-owned receipt extraction 支持实际 `I/J`，KFE 返回后先持久化完整 scientific arrays、raw density、grid supports 与 shape，再做 receipt validation/extraction。Accepted HJB/KFE solver、equations、parameters、bounds、mapping、guards、oracle 与 MATLAB source 均未改变。Focused tests=`17 passed`；R0 HJB/KFE=`0/0`。
 
-Accepted Stage A domain：`a=[0,100]`、`b=[-2,20]`、`I=J=20`；`rb=.02`、`ra={.06,.0675,.07}`、`w={13,15.5,18}`。9/9 HJB legal/converged，9/9 KFE-valid。Liquid result：9/9 modal `b=2.6315789473684212`，0/9 modal `b=20`，`bmax` mass 至多约 `6.13e-08`；旧 `bmax=5` upper-bound pile-up 已在该 tested real-wage grid 上清除，Stage B `bmax=50` 未触发。
+Frozen P1 `I=20,J={40,80,160}` 已 fresh 执行 exactly once。HJB 3/3 legal/converged，KFE 3/3 numeric-returned/persisted/valid；scientific retries=0。`J80→J160` 仍有 `ΔAt=+0.69078957`、modal `a:92.4051→94.3396`、a-marginal CDF distance=`0.01462234`，没有 stabilization trend。
 
-Illiquid result 尚未获得 precision authority：`At≈84.02–88.86`、modal `a` 多在 `89.47`，`amax` bin mass约 `9.3%–17.4%`，`J=20` 时 `da≈5.26316`。旧域 `At≈7.14–7.33` 到扩域 `At≈84–89` 的巨大变化仍只能视为重大 domain/discretization response。
+Terminal classification：`ILLIQUID_GRID_PRECISION_NOT_STABILIZED`。P2 trigger=false，P2 HJB/KFE=`0/0`。`At`、modal `a` 与完整 a marginal 未稳定；minimum defensible cross-state grid 未建立。
 
-上一 precision execution 已由 Reviewer 接受为 truthful blocked execution：P1 `I=20,J={40,80,160}` 三个 HJB 均合法收敛；三次 KFE numerical solve 返回后，receipt/postprocessing route 因固定 20-bin illiquid marginal 假设拒绝 finer-J result。Scientific retries=0，P2=0。这不是 grid instability、recalibration need 或 KFE scientific failure 的证据。
+旧域到扩域的巨大 At jump 主要是 domain response：相近 spacing 下 J160 `At=89.2978`，远高于旧域约 `7.14–7.33`；但扩域内 finer-J component 尚未稳定。固定 I20 的 finer-J 点上，modal b 始终为 `2.6316`，bmax mass 最大 `0.0009774`，仅支持 tested P1 points 上 nonbinding，不支持 I-grid precision 结论。
 
-当前 exact task 仅授权 grid-generic receipt/postprocessing repair，并在 repair tests 通过后重新执行同一 frozen P1 ladder；accepted HJB/KFE numerical solver、equations、parameters、bounds、wage/return mapping、guards 均不得改变。P2 仍只在原 preregistered P1 stabilization 条件满足时运行。
+唯一 next Reviewer gate：`FINER_PRECISION_ESCALATION`。不得自动运行 J320/J640、P2、full cross-state grid、recalibration、GE 或 Results。
 
-Owner 已授权 ChatGPT Reviewer 对这类 bounded 本地数值调试直接预注册并发布 exact task；结构性经济模型、accepted equations/guards、主要校准目标、因果解释和 Results eligibility 仍保留 Owner authority。
-
-Standalone contaminated-row KFE 仍不解决 corrected-2018 multi-province finite-box upper-`b` leakage / MATLAB-style pinning blocker。Results eligibility=`FALSE`。
+Compact evidence：`docs/evidence/ch5_mp4c_k1_household_asset_grid_precision_receipt_repair_reexecution/`。Report：`docs/CH5_MP4C_K1_HOUSEHOLD_ASSET_GRID_PRECISION_RECEIPT_REPAIR_AND_REEXECUTION_REPORT.md`。

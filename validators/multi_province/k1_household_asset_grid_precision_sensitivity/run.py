@@ -205,6 +205,124 @@ def _validate_invariance(receipt: dict[str, Any], point_count: int) -> None:
         raise RuntimeError("precision input invariance preflight failed")
 
 
+def _axis_marginal_receipt(
+    axis: str, grid_values: np.ndarray, marginal_mass: np.ndarray
+) -> dict[str, Any]:
+    grid = np.asarray(grid_values, dtype=float)
+    mass = np.asarray(marginal_mass, dtype=float)
+    if (
+        axis not in {"a", "b"}
+        or grid.ndim != 1
+        or mass.shape != grid.shape
+        or grid.size < 3
+        or not np.isfinite(grid).all()
+    ):
+        raise ValueError(f"{axis} grid and marginal mass must be aligned vectors")
+    order = np.argsort(-mass, kind="stable")[:3]
+    adjacent = float(mass[-2])
+    return {
+        f"interior_{axis}_mass": float(np.sum(mass[1:-1])),
+        f"top_3_{axis}_bins": [
+            {
+                axis: float(grid[index]),
+                "mass": float(mass[index]),
+                "index_zero_based": int(index),
+            }
+            for index in order
+        ],
+        f"{axis}max_to_adjacent_interior_ratio": (
+            float(mass[-1] / adjacent) if adjacent != 0.0 else None
+        ),
+        f"{axis}_marginal_finite": bool(np.isfinite(mass).all()),
+        f"{axis}_marginal_shape": list(mass.shape),
+        f"{axis}_marginal_sum": float(np.sum(mass)),
+    }
+
+
+def grid_generic_distribution_receipt(
+    grid: oracle.MatlabFaithfulHJBGrid, density: np.ndarray
+) -> dict[str, Any]:
+    """Extend the accepted distribution receipt using the actual grid supports."""
+    receipt = coarse.distribution_receipt(grid, density)
+    a_mass = np.asarray(receipt["a_marginal_mass"], dtype=float)
+    b_mass = np.asarray(receipt["b_marginal_mass"], dtype=float)
+    receipt.update(_axis_marginal_receipt("a", grid.a, a_mass))
+    receipt.update(_axis_marginal_receipt("b", grid.b, b_mass))
+    receipt["grid_support"] = {
+        "a": np.asarray(grid.a, dtype=float).tolist(),
+        "b": np.asarray(grid.b, dtype=float).tolist(),
+    }
+    return receipt
+
+
+def run_kfe_persist_first(
+    fixture: coarse.Fixture,
+    hjb: Any,
+    scientific_arrays_path: Path,
+) -> tuple[Any, Any, dict[str, Any]]:
+    """Run the accepted KFE solve and persist its raw result before receipts."""
+    shape = (fixture.grid.b.size, fixture.grid.a.size, fixture.grid.z.size)
+    kfe = oracle.solve_matlab_faithful_stationary_kfe(
+        hjb.post_convergence_operator.full,
+        shape=shape,
+        db=fixture.db,
+        da=fixture.da,
+    )
+    np.savez_compressed(
+        scientific_arrays_path,
+        value=hjb.value,
+        consumption=hjb.consumption,
+        labor=hjb.labor,
+        transfer=hjb.transfer,
+        mu_a=hjb.mu_a,
+        mu_b=hjb.mu_b,
+        density=kfe.density,
+        grid_a=fixture.grid.a,
+        grid_b=fixture.grid.b,
+        density_shape=np.asarray(kfe.density.shape, dtype=np.int64),
+    )
+
+    aggregates = oracle.aggregate_stationary_household(
+        fixture.grid, hjb.consumption, hjb.labor, kfe.density
+    )
+    distribution = grid_generic_distribution_receipt(fixture.grid, kfe.density)
+    b_grid = np.broadcast_to(fixture.grid.b[:, None, None], shape)
+    weighted_density = kfe.density * fixture.db * fixture.da
+    distribution.update(
+        {
+            "Bt_pos": float(
+                np.sum(np.where(b_grid > 0.0, b_grid, 0.0) * weighted_density)
+            ),
+            "Bt_neg": float(
+                np.sum(np.where(b_grid < 0.0, b_grid, 0.0) * weighted_density)
+            ),
+        }
+    )
+    receipt = {
+        "ran": True,
+        "aggregates": {
+            "Ct": aggregates.c_ss,
+            "Lt": aggregates.l_ss,
+            "At": aggregates.a_ss,
+            "Bt": aggregates.b_ss,
+            "total_assets": aggregates.total_assets,
+            "density_normalization": aggregates.density_normalization,
+        },
+        "kfe": {
+            "contaminated_row_index": kfe.contaminated_row_index,
+            "normalization_factor": kfe.normalization_factor,
+            "raw_residual_inf": kfe.raw_residual_inf,
+            "density_vector_shape": list(kfe.density_vector.shape),
+            "density_sha256": coarse.array_sha256(kfe.density),
+        },
+        "distribution": distribution,
+        "scientific_arrays_persisted_before_receipt": True,
+        "scientific_arrays_path": str(scientific_arrays_path.resolve()),
+        "preliminary_quality_label": "PENDING_OFFLINE_DESCRIPTIVE_REVIEW",
+    }
+    return kfe, aggregates, receipt
+
+
 def execute(phase: str, evidence_root: Path) -> int:
     if phase not in PHASE_POINTS:
         raise ValueError("phase must be P1 or P2")
@@ -232,6 +350,8 @@ def execute(phase: str, evidence_root: Path) -> int:
         "kfe_budget": len(specs),
         "kfe_calls_started": 0,
         "kfe_calls_completed": 0,
+        "kfe_numeric_solves_returned": 0,
+        "scientific_arrays_persisted": 0,
         "scientific_retries": 0,
         "engineering_retries": 0,
         "initialization_constructions": len(specs),
@@ -250,6 +370,7 @@ def execute(phase: str, evidence_root: Path) -> int:
     }
     coarse.write_json(root / "pre_science_ledger.json", ledger)
 
+    stopped_on_hard_error = False
     for spec, fixture in zip(specs, fixtures):
         point_id = f"{phase.lower()}_i{spec['I']:03d}_j{spec['J']:03d}"
         coarse.write_json(
@@ -282,25 +403,31 @@ def execute(phase: str, evidence_root: Path) -> int:
         if coarse.kfe_authorized(hjb_receipt["classification"]):
             assert hjb is not None
             ledger["kfe_calls_started"] += 1
+            scientific_arrays_path = root / f"{point_id}_scientific_arrays.npz"
             try:
-                kfe, _, kfe_receipt = stagewise.accepted.run_kfe(fixture, hjb)
+                _, _, kfe_receipt = run_kfe_persist_first(
+                    fixture, hjb, scientific_arrays_path
+                )
+                ledger["kfe_numeric_solves_returned"] += 1
+                ledger["scientific_arrays_persisted"] += 1
                 kfe_receipt["completed"] = True
                 point["kfe"] = kfe_receipt
                 ledger["kfe_calls_completed"] += 1
-                np.savez_compressed(
-                    root / f"{point_id}_scientific_arrays.npz",
-                    value=hjb.value,
-                    consumption=hjb.consumption,
-                    labor=hjb.labor,
-                    transfer=hjb.transfer,
-                    mu_a=hjb.mu_a,
-                    mu_b=hjb.mu_b,
-                    density=kfe.density,
-                )
             except Exception as exc:
+                stopped_on_hard_error = True
+                arrays_persisted = scientific_arrays_path.is_file()
+                if arrays_persisted:
+                    ledger["kfe_numeric_solves_returned"] += 1
+                    ledger["scientific_arrays_persisted"] += 1
                 point["kfe"] = {
                     "ran": True,
                     "completed": False,
+                    "scientific_arrays_persisted": arrays_persisted,
+                    "scientific_arrays_path": (
+                        str(scientific_arrays_path.resolve())
+                        if arrays_persisted
+                        else None
+                    ),
                     "hard_error": f"{type(exc).__name__}: {exc}",
                 }
         coarse.write_json(root / f"{point_id}_result.json", point)
@@ -314,19 +441,25 @@ def execute(phase: str, evidence_root: Path) -> int:
                 "kfe_valid": stagewise.kfe_valid(point),
             }
         )
+        if point["kfe"].get("hard_error"):
+            break
 
     coarse.write_json(root / "final_call_ledger.json", ledger)
     coarse.write_json(
         root / "execution_complete.json",
         {
-            "status": f"HOUSEHOLD_ASSET_GRID_PRECISION_{phase}_COMPLETE",
+            "status": (
+                f"HOUSEHOLD_ASSET_GRID_PRECISION_{phase}_STOPPED_ON_HARD_ERROR"
+                if stopped_on_hard_error
+                else f"HOUSEHOLD_ASSET_GRID_PRECISION_{phase}_COMPLETE"
+            ),
             "phase": phase,
             "results_eligibility": False,
             "hjb_calls": ledger["hjb_calls_started"],
             "kfe_calls": ledger["kfe_calls_started"],
         },
     )
-    return 0
+    return 1 if stopped_on_hard_error else 0
 
 
 def main() -> int:

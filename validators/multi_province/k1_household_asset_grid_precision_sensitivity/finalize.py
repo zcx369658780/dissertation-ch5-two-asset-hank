@@ -5,6 +5,8 @@ import argparse
 import csv
 import json
 from pathlib import Path
+import subprocess
+import sys
 from typing import Any
 
 import numpy as np
@@ -20,8 +22,118 @@ from validators.multi_province.k1_standalone_hjb_ra_wage_frontier_narrow_3x3.fin
 )
 
 
+R0_ALLOWED_PATHS = {
+    "tests/test_mp4c_k1_household_asset_grid_precision_sensitivity.py",
+    "validators/multi_province/k1_household_asset_grid_precision_sensitivity/finalize.py",
+    "validators/multi_province/k1_household_asset_grid_precision_sensitivity/run.py",
+}
+DOMAIN_CONCLUSIONS = {
+    "domain-response": "OLD_TO_EXPANDED_DOMAIN_AT_JUMP_PRIMARILY_DOMAIN_RESPONSE__FINER_J_COMPONENT_QUANTIFIED",
+    "coarse-grid-response": "OLD_TO_EXPANDED_DOMAIN_AT_JUMP_PRIMARILY_COARSE_GRID_RESPONSE",
+    "unresolved": "OLD_TO_EXPANDED_DOMAIN_AT_JUMP_REMAINS_DOMAIN_AND_DISCRETIZATION_RESPONSE__RELATIVE_COMPONENTS_UNRESOLVED",
+}
+
+
 def read_json(path: Path) -> Any:
     return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def record_r0_receipts(output_root: Path, baseline: str) -> int:
+    root = Path(output_root)
+    root.mkdir(parents=True, exist_ok=False)
+    test_command = [
+        sys.executable,
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_mp4c_k1_household_asset_grid_precision_sensitivity.py",
+        "tests/test_mp4c_k1_household_k_unit_asset_domain_stagewise.py",
+    ]
+    test_result = subprocess.run(
+        test_command, cwd=run.REPO, capture_output=True, text=True, check=False
+    )
+    compile_paths = [
+        "validators/multi_province/k1_household_asset_grid_precision_sensitivity/run.py",
+        "validators/multi_province/k1_household_asset_grid_precision_sensitivity/finalize.py",
+        "tests/test_mp4c_k1_household_asset_grid_precision_sensitivity.py",
+    ]
+    compile_result = subprocess.run(
+        [sys.executable, "-m", "py_compile", *compile_paths],
+        cwd=run.REPO,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    diff_result = subprocess.run(
+        ["git", "diff", "--name-only", baseline, "--"],
+        cwd=run.REPO,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    changed_paths = sorted(line for line in diff_result.stdout.splitlines() if line)
+    protected_paths = [
+        "exports/matlab_faithful_two_asset_ha.py",
+        "validators/multi_province/k1_standalone_hjb_ra_wage_3x3/run.py",
+        "validators/multi_province/k1_standalone_hjb_ra_wage_frontier_narrow_3x3/run.py",
+        "validators/multi_province/k1_household_k_unit_asset_domain_stagewise/run.py",
+    ]
+    protected_diff = subprocess.run(
+        ["git", "diff", "--name-only", baseline, "--", *protected_paths],
+        cwd=run.REPO,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    protected_hashes = {
+        path: coarse.file_sha256(run.REPO / path) for path in protected_paths
+    }
+    oracle_hash = coarse.file_sha256(run.ORACLE_PATH)
+    matlab_hash = coarse.file_sha256(run.MATLAB_PATH)
+    repair_pass = bool(
+        test_result.returncode == 0
+        and compile_result.returncode == 0
+        and diff_result.returncode == 0
+        and set(changed_paths) == R0_ALLOWED_PATHS
+        and protected_diff.returncode == 0
+        and not protected_diff.stdout.strip()
+        and oracle_hash == run.ORACLE_SHA256
+        and matlab_hash == run.MATLAB_SHA256
+    )
+    repair_receipt = {
+        "schema": "CH5_MP4C_K1_GRID_GENERIC_RECEIPT_REPAIR_DIFF_V1",
+        "baseline": baseline,
+        "changed_paths": changed_paths,
+        "allowed_paths": sorted(R0_ALLOWED_PATHS),
+        "only_task_owned_paths_changed": set(changed_paths) == R0_ALLOWED_PATHS,
+        "protected_paths_changed": protected_diff.stdout.splitlines(),
+        "protected_path_sha256": protected_hashes,
+        "oracle_sha256": {"expected": run.ORACLE_SHA256, "actual": oracle_hash},
+        "matlab_sha256": {"expected": run.MATLAB_SHA256, "actual": matlab_hash},
+        "kfe_numeric_solver_changed": False,
+        "hjb_numeric_solver_changed": False,
+        "science_calls": {"hjb": 0, "kfe": 0},
+        "pass": repair_pass,
+    }
+    tests_receipt = {
+        "schema": "CH5_MP4C_K1_GRID_GENERIC_RECEIPT_TESTS_V1",
+        "pytest_command": test_command,
+        "pytest_exit_code": test_result.returncode,
+        "pytest_output": (test_result.stdout + test_result.stderr).strip(),
+        "py_compile_command": [sys.executable, "-m", "py_compile", *compile_paths],
+        "py_compile_exit_code": compile_result.returncode,
+        "py_compile_output": (compile_result.stdout + compile_result.stderr).strip(),
+        "covered_illiquid_grid_lengths": [20, 40, 80, 160],
+        "covered_liquid_grid_lengths": [20, 40, 80],
+        "j20_receipt_regression_checked": True,
+        "persist_before_receipt_failure_checked": True,
+        "raw_signed_density_preserved_checked": True,
+        "science_calls": {"hjb": 0, "kfe": 0},
+        "pass": repair_pass,
+    }
+    coarse.write_json(root / "repair_diff_receipt.json", repair_receipt)
+    coarse.write_json(root / "grid_generic_tests_receipt.json", tests_receipt)
+    return 0 if repair_pass else 1
 
 
 def signed_cdf_l1_distance(
@@ -294,7 +406,14 @@ def _aggregate_ledger(p1_root: Path, p2_root: Path | None) -> dict[str, Any]:
     }
 
 
-def build(p1_root: Path, compact_root: Path, p2_root: Path | None, p2_stable: bool | None) -> int:
+def build(
+    p1_root: Path,
+    compact_root: Path,
+    p2_root: Path | None,
+    p2_stable: bool | None,
+    r0_root: Path,
+    domain_conclusion: str,
+) -> int:
     p1_root, compact_root = Path(p1_root), Path(compact_root)
     trigger = read_json(p1_root / "stage_trigger_receipt.json")
     if trigger["trigger"] != (p2_root is not None):
@@ -355,11 +474,19 @@ def build(p1_root: Path, compact_root: Path, p2_root: Path | None, p2_stable: bo
         "recommended_minimum_next_grid": recommended_grid,
         "exactly_one_next_reviewer_gate": next_gate,
         "results_eligibility": False,
-        "domain_response_conclusion": "OLD_TO_EXPANDED_DOMAIN_AT_JUMP_IS_PRIMARILY_DOMAIN_RESPONSE_BUT_GRID_COMPONENT_REMAINS_RESOLVED_ONLY_BY_THIS_PRECISION_SEQUENCE",
+        "domain_response_conclusion": DOMAIN_CONCLUSIONS[domain_conclusion],
         "kfe_caveat": "Accepted standalone contaminated-row KFE only; raw signed density is not clipped; corrected-2018 multi-province finite-box/pinning remains separate.",
     }
 
     coarse.write_json(compact_root / "source_identity.json", source)
+    coarse.write_json(
+        compact_root / "repair_diff_receipt.json",
+        read_json(Path(r0_root) / "repair_diff_receipt.json"),
+    )
+    coarse.write_json(
+        compact_root / "grid_generic_tests_receipt.json",
+        read_json(Path(r0_root) / "grid_generic_tests_receipt.json"),
+    )
     coarse.write_json(compact_root / "input_invariance_receipt.json", input_receipt)
     coarse.write_json(compact_root / "point_receipts.json", points)
     coarse.write_json(compact_root / "marginals.json", [_marginal(point) for point in points if point.get("kfe", {}).get("completed")])
@@ -380,6 +507,9 @@ def build(p1_root: Path, compact_root: Path, p2_root: Path | None, p2_stable: bo
 def main() -> int:
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(dest="command", required=True)
+    record_r0 = subparsers.add_parser("record-r0")
+    record_r0.add_argument("output_root", type=Path)
+    record_r0.add_argument("baseline")
     assess = subparsers.add_parser("assess-p1")
     assess.add_argument("p1_root", type=Path)
     assess.add_argument("decision", choices=("stable", "unstable"))
@@ -390,15 +520,28 @@ def main() -> int:
     finish = subparsers.add_parser("build")
     finish.add_argument("p1_root", type=Path)
     finish.add_argument("compact_root", type=Path)
+    finish.add_argument("--r0-root", type=Path, required=True)
     finish.add_argument("--p2-root", type=Path)
     finish.add_argument("--p2-decision", choices=("stable", "unstable"))
+    finish.add_argument(
+        "--domain-conclusion", choices=sorted(DOMAIN_CONCLUSIONS), required=True
+    )
     args = parser.parse_args()
+    if args.command == "record-r0":
+        return record_r0_receipts(args.output_root, args.baseline)
     if args.command == "assess-p1":
         return write_p1_trigger(args.p1_root, args.decision == "stable", args.rationale)
     if args.command == "preview":
         print(json.dumps(comparisons(args.p1_root, args.p2_root), indent=2))
         return 0
-    return build(args.p1_root, args.compact_root, args.p2_root, None if args.p2_decision is None else args.p2_decision == "stable")
+    return build(
+        args.p1_root,
+        args.compact_root,
+        args.p2_root,
+        None if args.p2_decision is None else args.p2_decision == "stable",
+        args.r0_root,
+        args.domain_conclusion,
+    )
 
 
 if __name__ == "__main__":
