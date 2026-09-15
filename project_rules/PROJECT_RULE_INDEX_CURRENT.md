@@ -12,23 +12,27 @@
 6. `docs/CH5_MP4C_K1_HOUSEHOLD_ASSET_GRID_PRECISION_RECEIPT_REPAIR_AND_REEXECUTION_ACCEPTANCE.md`
 7. `docs/CH5_MP4C_K1_HOUSEHOLD_ILLIQUID_GRID_FINER_PRECISION_ESCALATION_ACCEPTANCE.md`
 8. `docs/CH5_MP4C_K1_J640_HJB_NONCONVERGENCE_MECHANISM_DIAGNOSTIC_ACCEPTANCE.md`
-9. `docs/CH5_MP4C_K1_J160_CROSS_STATE_POST_SCIENCE_FINALIZATION_BLOCKER_ROUTE_DECISION.md`
-10. `docs/CH5_MP4C_K1_J160_CROSS_STATE_FINALIZER_COMMON_SUPPORT_REPAIR_FREEZE_CURRENT.md`
-11. active exact task：`tasks/CH5_MP4C_K1_J160_CROSS_STATE_FINALIZER_COMMON_SUPPORT_REPAIR_AND_CLOSEOUT.md`
+9. `docs/CH5_MP4C_K1_J160_BOUNDED_CROSS_STATE_CONFIRMATION_ACCEPTANCE.md`
+10. `docs/CH5_MP4C_K1_J160_LIQUID_GRID_BOUNDED_PRECISION_SENSITIVITY_FREEZE_CURRENT.md`
+11. active exact task：`tasks/CH5_MP4C_K1_J160_LIQUID_GRID_BOUNDED_PRECISION_SENSITIVITY.md`
 
-当前状态：`J160_CROSS_STATE_POST_SCIENCE_FINALIZER_REPAIR_TASK_ACTIVE`。
-当前 active Builder task：`tasks/CH5_MP4C_K1_J160_CROSS_STATE_FINALIZER_COMMON_SUPPORT_REPAIR_AND_CLOSEOUT.md`。
-最新 accepted mechanism candidate：`b1c4897c72e3c11c1774ec59145865ae3f5fa6ca`。
+当前状态：`J160_LIQUID_GRID_BOUNDED_PRECISION_SENSITIVITY_TASK_ACTIVE`。
+当前 active Builder task：`tasks/CH5_MP4C_K1_J160_LIQUID_GRID_BOUNDED_PRECISION_SENSITIVITY.md`。
+最新 accepted cross-state candidate：`0430057603da6fb83ae4731ce4139def149c090c`。
 Results eligibility=`FALSE`。
 
-Accepted J640 mechanism：`POLICY_OR_SELECTOR_CHATTER_WITH_VALUE_OSCILLATION`。Finer-J escalation route 已关闭；J160 只作为 provisional practical diagnostic grid 候选，不得宣称 continuum-converged 或 production-final。
+Accepted J640 mechanism：`POLICY_OR_SELECTOR_CHATTER_WITH_VALUE_OSCILLATION`。Finer-J escalation route 已关闭，不得增加 maxit、damping/relaxation/line search 或继续 J1280/J2560 制造 convergence。
 
-上一 J160 cross-state execution 已完成四个 authorized fresh science points，但没有 candidate commit：首次 offline finalizer 因 J20/J160 support 不同而失败。Reported HJB=4/4 legal/converged、KFE=4/4 completed、scientific retries=0；center J160 与 J20 references reuse-only。该 raw science 仅可在 successor task 完成 integrity gate 后用于 closeout。
+Accepted J160 cross-state authority：`I=20,J=160,a=[0,100],b=[-2,20]` 在五个 bounded real-wage/return states 上科学可解释；四个 fresh corner HJB/KFE 4/4通过，fresh amax mass全部0、modal a/b内部、最大 bmax mass约0.01630。因此 J160 支持 practical bounded diagnostic grid，但不代表 continuum convergence 或 production-final precision。
 
-当前 exact task 是 zero-science finalizer repair：HJB=0、KFE=0。必须验证 raw evidence `D:\ProjectTemp\ch5-mp4c-k1-j160-cross-state-evidence-20260915-001` 后，只修 task-owned offline CDF/finalizer。Same-support metric 语义必须不变；different-support 使用 union interval + exterior CDF extension，J20→J160 距离必须标记 `DOMAIN_PLUS_GRID_CDF_DISTANCE`，不得当作 pure precision metric。
+J20→J160 marginal metric 因 domain 与 discretization 同时变化，固定标记为 `DOMAIN_PLUS_GRID_CDF_DISTANCE`，不得用作 pure grid precision claim。
 
-禁止任何 science rerun、J320/J640/J1280、I-grid ladder、domain/parameter change、recalibration、global model 或 Results runtime。若 raw evidence integrity gate 失败，必须 STOP。
+当前 exact task 只验证 liquid-grid precision：固定 center economics、`J=160` 与 domain，复用 accepted `I20/J160`，fresh exactly 运行 `I40/J160`、`I80/J160`。每点 HJB exactly once；legal/converged 时 KFE exactly once；scientific retries=0。若 I40→I80仍明显 material，STOP，不得同任务追加 I160。
 
-Owner 已授权 ChatGPT Reviewer 对类似 bounded numerical/engineering closeout 直接做预注册决策；结构方程、accepted equations/guards、主要经济校准、因果解释、Results eligibility 的变更仍由 Owner 决定。
+禁止 J change、domain/parameter change、recalibration、HJB/KFE modification、global model 或 Results runtime。
+
+Owner 已授权 ChatGPT Reviewer 对类似 bounded numerical diagnostics 直接做预注册决策；结构方程、accepted equations/guards、主要经济校准、因果解释、Results eligibility 的变更仍由 Owner 决定。
+
+Standalone contaminated-row KFE 与 unresolved corrected-2018 multi-province finite-box upper-b leakage / MATLAB-style pinning blocker 继续分离。
 
 GitHub live main 是唯一 repository authority；聊天不能替代 exact task。
