@@ -1,0 +1,133 @@
+{
+  "comparisons": [
+    {
+      "a_marginal_direct_raw_mass_l1": null,
+      "a_marginal_signed_cdf_l1_width_normalized": 0.00212925407083872,
+      "aggregates": {
+        "At": {
+          "delta": -0.1280260529406405,
+          "new": 89.16979925690907,
+          "old": 89.29782530984971
+        },
+        "Bt": {
+          "delta": 0.007395500163486446,
+          "new": 5.817649329019787,
+          "old": 5.8102538288563
+        },
+        "Ct": {
+          "delta": 0.0023625990548019615,
+          "new": 14.261162306714496,
+          "old": 14.258799707659694
+        },
+        "Lt": {
+          "delta": -7.390797920880932e-05,
+          "new": 0.6279856624992144,
+          "old": 0.6280595704784232
+        }
+      },
+      "available": true,
+      "b_marginal_direct_raw_mass_l1": 0.008901081717182987,
+      "b_marginal_signed_cdf_l1_width_normalized": 0.0007585372870682242,
+      "endpoint_masses": {
+        "amax": {
+          "delta": 0.0,
+          "new": 0.0,
+          "old": 0.0
+        },
+        "amin": {
+          "delta": 0.0,
+          "new": 0.0,
+          "old": 0.0
+        },
+        "bmax": {
+          "delta": 8.135288747203795e-05,
+          "new": 0.0010587540841039216,
+          "old": 0.0009774011966318837
+        },
+        "bmin": {
+          "delta": -2.0417934869655425e-18,
+          "new": -6.76050685515947e-19,
+          "old": 1.3657428014495956e-18
+        }
+      },
+      "grid_change": {
+        "I": {
+          "delta": 0.0,
+          "new": 20.0,
+          "old": 20.0
+        },
+        "J": {
+          "delta": 160.0,
+          "new": 320.0,
+          "old": 160.0
+        },
+        "da": {
+          "delta": -0.31545119378561143,
+          "new": 0.31347962382445144,
+          "old": 0.6289308176100629
+        },
+        "db": {
+          "delta": 0.0,
+          "new": 1.1578947368421053,
+          "old": 1.1578947368421053
+        }
+      },
+      "modal_a": {
+        "new": [
+          95.29780564263324
+        ],
+        "old": [
+          94.33962264150944
+        ]
+      },
+      "modal_b": {
+        "new": [
+          2.6315789473684212
+        ],
+        "old": [
+          2.6315789473684212
+        ]
+      },
+      "new_point_id": "finer_i020_j0320",
+      "old_point_id": "accepted_i020_j0160",
+      "signed_mass_clipped": false,
+      "signed_mass_renormalized": false,
+      "upper_quantile_movement": {
+        "a": {
+          "p90": {
+            "delta": -0.613158257920773,
+            "new": 94.98432601880879,
+            "old": 95.59748427672956
+          },
+          "p95": {
+            "delta": -0.9286094517063788,
+            "new": 95.29780564263324,
+            "old": 96.22641509433961
+          },
+          "p99": {
+            "delta": -0.9305810216675496,
+            "new": 95.92476489028213,
+            "old": 96.85534591194968
+          }
+        },
+        "b": null
+      }
+    },
+    {
+      "available": false,
+      "new_point_id": "finer_i020_j0640",
+      "old_point_id": "finer_i020_j0320",
+      "reason": "KFE_NOT_COMPLETED_FOR_BOTH_POINTS"
+    }
+  ],
+  "method": {
+    "cdf": "cumulative node mass, piecewise-linear interpolation on union of grid nodes",
+    "clipping": false,
+    "distance": "integral absolute CDF difference divided by common support width",
+    "mass": "raw signed marginal node mass",
+    "post_result_pass_threshold": false,
+    "renormalization": false,
+    "upper_quantiles": "first grid node at or above raw cumulative q*total; unavailable if any marginal node mass is negative"
+  },
+  "schema": "CH5_MP4C_K1_HOUSEHOLD_ILLIQUID_GRID_FINER_COMPARISON_V1"
+}
