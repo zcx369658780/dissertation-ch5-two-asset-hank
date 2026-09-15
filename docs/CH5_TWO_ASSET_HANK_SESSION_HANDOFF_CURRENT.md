@@ -1,21 +1,27 @@
-# Chapter 5 当前交接 — household grid precision re-execution candidate
+# Chapter 5 当前交接 — finer illiquid-grid precision escalation active
 
 更新：2026-09-15。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`HOUSEHOLD_ASSET_GRID_PRECISION_REEXECUTION_CANDIDATE_AWAITING_REVIEW`。
+状态：`HOUSEHOLD_ILLIQUID_GRID_FINER_PRECISION_ESCALATION_TASK_ACTIVE`。
 
-Baseline=`03f30ada29ef7cea8dd0ab8f27b090df607c0909`；branch=`codex/ch5-mp4c-k1-grid-repair-reexecution-20260915`；worktree=`D:\ProjectTemp\ch5-mp4c-k1-grid-repair-reexecution-20260915-001`。
+最新 accepted precision candidate：`de4994c22303e30be9cd4c22c0a5c7f7a00db88a`。
+Reviewer acceptance：`docs/CH5_MP4C_K1_HOUSEHOLD_ASSET_GRID_PRECISION_RECEIPT_REPAIR_AND_REEXECUTION_ACCEPTANCE.md`。
+Finer-precision freeze：`docs/CH5_MP4C_K1_HOUSEHOLD_ILLIQUID_GRID_FINER_PRECISION_ESCALATION_FREEZE_CURRENT.md`。
+Active task：`tasks/CH5_MP4C_K1_HOUSEHOLD_ILLIQUID_GRID_FINER_PRECISION_ESCALATION.md`。
+Results eligibility=`FALSE`。
 
-R0 only changed task-owned precision runner/finalizer/test。Grid-generic tests cover `J=20/40/80/160` and `I=20/40/80`，J20 receipt regression unchanged，raw signed density 未 clip/smooth/renormalize；`17 passed`、`py_compile` PASS；受保护 solver/source diff=0；R0 science calls=0。
+上一 Builder candidate 已由 Reviewer 接受并 fast-forward。R0 grid-generic receipt repair 只修改 task-owned precision runner/finalizer/tests；accepted HJB/KFE solver、oracle、MATLAB source、经济方程、参数、bounds、guards、wage/return mappings 未改变。Focused tests=`17 passed`，R0 science HJB/KFE=`0/0`。
 
-P1 fresh ladder：复用 accepted I20/J20，不 rerun；新运行 I20/J40、J80、J160。HJB=`3/3` legal/converged；KFE=`3/3` numeric-returned/persisted/valid；scientific retries=0。Scientific arrays 在 postprocessing 前落盘。
+代表性中央状态继续冻结：`rb=.02,ra=.0675,w=15.5,a=[0,100],b=[-2,20],h=1,I=20`。
 
-关键 final refinement：J80→J160 `ΔAt=+0.6907895741`、`ΔBt=+0.7879809617`、modal `a 92.40506329→94.33962264`、a-CDF distance=`0.0146223444`、b-CDF distance=`0.0358173164`。相较前两次 a-CDF `0.01261160,0.01759636`，未显示 stabilization trend。
+Accepted P1：复用 J20 reference，fresh 运行 J40/J80/J160。HJB=`3/3` legal/converged；KFE=`3/3` numeric-returned/persisted/valid；scientific retries=0。`At≈87.75417→87.55005→88.60704→89.29783`；modal `a≈89.47368→89.74359→92.40506→94.33962`；a-CDF distance≈`0.01261→0.01760→0.01462`。J80→J160 `ΔAt≈+0.69079`、`ΔBt≈+0.78798`，故 Reviewer 接受 terminal=`ILLIQUID_GRID_PRECISION_NOT_STABILIZED`。P2 没有触发。
 
-Terminal=`ILLIQUID_GRID_PRECISION_NOT_STABILIZED`；P2 trigger=false；P2 HJB/KFE=`0/0`。At/modal a/a marginal/expanded-domain final level 未稳定；minimum defensible I/J 未建立。旧域→扩域巨大 At jump 主要为 domain response，但 finer-J component 仍未闭合。
+当前 bounded escalation 复用 accepted I20/J160，不重跑该 science point。新运行 exactly：`I20/J320`、`I20/J640`、`I20/J1280`。每点 fresh initialization，HJB exactly once；只有合法收敛才 KFE exactly once。KFE numeric return 后必须先持久化 raw density、scientific arrays、grid supports 与 shape，再做 receipt processing。
 
-固定 I20 的 finer-J 点上 modal b 均为 `2.63157895`，bmax mass 最大 `0.0009774012`；tested P1 points 上 nonbinding，I-grid stability 未检查。
+本任务禁止 J>1280、I-grid ladder、multi-state/finer 3×3、asset-domain change、wjt/ra recalibration、HJB/KFE modification、global outer/firm/MATLAB/K1B/K2/GE/downstream/shock/IRF/Results。
 
-Compact evidence=`docs/evidence/ch5_mp4c_k1_household_asset_grid_precision_receipt_repair_reexecution/`；external P1 manifest=`C77D85511AAD5C7B50E99144A9E84EB9E232EE77B3D67AF834C109608AECB495`。
+若 J640→J1280 相较前序 refinement 已描述性很小且 marginal sequence 明显稳定，可推荐 bounded liquid-I/cross-state confirmation；若仍 material，则停止继续 grid refinement，下一 gate 必须转为 domain/scale review。不得通过无限增加 J 制造稳定。
 
-唯一 next gate=`FINER_PRECISION_ESCALATION`。本 candidate 不授权 J320/J640、P2、full cross-state grid、recalibration、merge main、successor task 或 Results。
+Owner 已授权 ChatGPT Reviewer 对类似局部数值调试直接做 bounded、预注册决策并发布 exact task；结构模型、accepted equations/guards、主要经济校准、因果解释与 Results eligibility 仍保留 Owner authority。
+
+Standalone contaminated-row KFE 仍不解决 corrected-2018 multi-province finite-box upper-b leakage / MATLAB-style pinning blocker。
