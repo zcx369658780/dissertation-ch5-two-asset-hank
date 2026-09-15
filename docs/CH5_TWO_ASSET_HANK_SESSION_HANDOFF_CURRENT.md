@@ -1,23 +1,25 @@
-# Chapter 5 当前交接 — J160 bounded cross-state confirmation active
+# Chapter 5 当前交接 — J160 post-science finalizer repair active
 
 更新：2026-09-15。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`J160_BOUNDED_CROSS_STATE_CONFIRMATION_TASK_ACTIVE`。
+状态：`J160_CROSS_STATE_POST_SCIENCE_FINALIZER_REPAIR_TASK_ACTIVE`。
 
 最新 accepted mechanism candidate：`b1c4897c72e3c11c1774ec59145865ae3f5fa6ca`。
-Acceptance：`docs/CH5_MP4C_K1_J640_HJB_NONCONVERGENCE_MECHANISM_DIAGNOSTIC_ACCEPTANCE.md`。
-Freeze：`docs/CH5_MP4C_K1_J160_BOUNDED_CROSS_STATE_CONFIRMATION_FREEZE_CURRENT.md`。
-Active task：`tasks/CH5_MP4C_K1_J160_BOUNDED_CROSS_STATE_CONFIRMATION.md`。
+Reviewer route decision：`docs/CH5_MP4C_K1_J160_CROSS_STATE_POST_SCIENCE_FINALIZATION_BLOCKER_ROUTE_DECISION.md`。
+Freeze：`docs/CH5_MP4C_K1_J160_CROSS_STATE_FINALIZER_COMMON_SUPPORT_REPAIR_FREEZE_CURRENT.md`。
+Active task：`tasks/CH5_MP4C_K1_J160_CROSS_STATE_FINALIZER_COMMON_SUPPORT_REPAIR_AND_CLOSEOUT.md`。
 Results eligibility=`FALSE`。
 
-J640 identical-input mechanism replay 已接受为 `POLICY_OR_SELECTOR_CHATTER_WITH_VALUE_OSCILLATION`。first selector switching=iteration2，first value-stat non-decrease=iteration8，first derivative-floor hit=iteration10；无 exact low-period value cycle。该结果关闭继续堆 J/maxit/damping 的路线。
+J640 chatter diagnostic 已关闭继续追更细 J 的路线；J160 仅作为 provisional practical grid 候选。
 
-当前 practical-grid policy：J160 作为 provisional working illiquid grid；J320 仅保留为代表状态 valid high-resolution sensitivity point。J160 不是 continuum-converged 或 production-final claim。
+上一 J160 cross-state Builder execution 没有 candidate commit，但报告已完成四个授权 fresh science points：HJB 4/4 legal/converged、KFE 4/4 completed、scientific retries=0；center J160 与 J20 references reuse-only。四点没有出现 J640 式 nonconvergence，reported amax mass均0，modal a/b均在内部，bmax mass最大约0.0163。
 
-当前 exact cross-state set：固定 `rb=.02,a=[0,100],b=[-2,20],I=20,J=160,h=1,Nz=2`。复用中心 `(ra=.0675,w=15.5)`；fresh 运行四角：`(.06,13)`, `(.06,18)`, `(.07,13)`, `(.07,18)`。每个新点 fresh initialization，HJB exactly once；仅 legal/converged 才 KFE exactly once。scientific retries=0。
+首次 offline finalizer 随后因 J20 与 J160 support 不同而失败：`ValueError: CDF comparison requires a common support`。J20 使用 `a=[0,10],b=[-2,5]`，J160 使用 `a=[0,100],b=[-2,20]`。原 task 不允许 post-science engineering retry，因此 Builder 正确停止，没有报告/compact evidence/candidate commit。
 
-必须与 accepted J20 same-state results 做逐点 comparison：HJB、Ct/Lt/At/Bt、modal a/b、endpoint masses 和 deterministic marginal distances。不得新增 pass threshold。
+当前 exact task 是 zero-science closeout：先验证 raw evidence `D:\ProjectTemp\ch5-mp4c-k1-j160-cross-state-evidence-20260915-001` 的完整性和调用账，再只修 task-owned offline finalizer。different-support CDF comparison 必须采用 union interval，support 外 CDF 分别扩展为0和raw total mass，support 内保持既有 cumulative-node-mass + piecewise-linear convention；不得 clip/renormalize/smooth。
 
-禁止 J320/J640/J1280 新 runtime、I-grid ladder、domain change、maxit change、damping、HJB/KFE science change、recalibration、global outer/firm/MATLAB/K1B/K2/GE/downstream/shock/IRF/Results。
+J20→J160 的新 metric 必须标记为 `DOMAIN_PLUS_GRID_CDF_DISTANCE`，因为 domain 与 discretization 同时变化，不能作为 pure precision distance。
 
-Owner 已授权 ChatGPT Reviewer 对此类 bounded numerical diagnostics 直接决策和发布 exact task；结构模型、主要校准、accepted equations/guards、因果解释和 Results eligibility 仍保留 Owner authority。
+本任务 HJB=0、KFE=0、scientific retries=0；禁止任何 science rerun、J320/J640/J1280、global/GE/Results runtime。若 raw evidence integrity 不通过，立即 STOP。
+
+Owner 已授权 ChatGPT Reviewer 对此类 bounded numerical/engineering closeout 直接决策；结构模型、主要校准、accepted equations/guards 与 Results eligibility 仍保留 Owner authority。
