@@ -1,8 +1,8 @@
-# Chapter 5 当前交接 — route B selected / KFE Owner-decision package active
+# Chapter 5 当前交接 — KFE D1-D3 Owner-adopted / corrected diagnostic contract implementation active
 
-更新：2026-09-15。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
+更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`LOCAL_BASIN_ROUTE_CLOSED_FOR_NOW__RETURNED_TO_MULTI_PROVINCE_INTEGRATION__KFE_OWNER_DECISION_PACKAGE_ACTIVE`。
+状态：`KFE_D123_OWNER_ADOPTED__CORRECTED_DIAGNOSTIC_CONTRACT_IMPLEMENTATION_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Governance
@@ -11,40 +11,35 @@ Owner 是 final scientific authority；ChatGPT 是 L3 independent Reviewer / sci
 
 ## Accepted HJB/local-basin checkpoint
 
-Accepted practical grid仍为`I=20,J=160,Nz=2,a=[0,100],b=[-2,20],h=1`，diagnostic only。Finer-J与finer-I routes均关闭。
-
-31省first-turn HJB为25 converged + 6 legal nonconverged。六失败机制、空间footprint、matched-control activity、input/outcome envelope 与 local-basin topology 均不支持 common boundary pathology、simple safe-price envelope、universal guard 或 monotone one-dimensional basin rule。
-
-Accepted local-basin topology：
-- 山西→河北 `F→C→C→C→C`
-- 重庆→河北 `F→C→C→C→C`
-- 江西→安徽 `F→F→C→C→C`
-- 贵州→四川 `F→C→F→C→C`
-
-Reviewer route decision：停止为了细化几何而继续 synthetic basin mapping。不得自动新增`t`、adaptive bisection、matched pairs或recalibration。
+Accepted practical grid remains `I=20,J=160,Nz=2,a=[0,100],b=[-2,20],h=1`, diagnostic only. The 31-province first-turn result remains 25 converged + 6 legal nonconverged. Accepted local-basin evidence remains heterogeneous/interleaved; the route for further geometry-only basin mapping is closed for now.
 
 ## Accepted KFE checkpoint
 
-`docs/CH5_MP4C_2018_FIVE_TURN_KFE_LEAKAGE_ATTRIBUTION_ACCEPTANCE.md` 已接受全国性机制：corrected-2018 turn4/5 62/62 objects 均表现为 finite-box upper-`b` leakage 与 MATLAB-style dropped-equation/pinning algebra；material source-free residual集中在pin equation，off-pin residual machine-scale。Algebraic balancing source不是已采用的经济entry/exit process。
+The corrected-2018 five-turn KFE attribution remains controlling mechanism authority: finite-box upper-`b` escape plus MATLAB-style dropped-equation/pinning algebra explains the material source-free residual; off-pin residual is machine-scale. The balancing source is algebraic, not an adopted economic entry/exit mechanism.
 
-因此下一主线是KFE production closure，但**不能直接跑KFE或选修复**。该acceptance明确要求Owner先决定finite-box/KFE closure semantics；D1-D3仍是deferred redesign proposals。
+`docs/CH5_MP4C_2018_KFE_OWNER_DECISION_RECOVERY_AND_OPTION_MATRIX_REPORT.md` exactly recovered D1-D3 and excluded the later unrelated transfer-control D1 name collision. The candidate report was fast-forwarded to `main` after Reviewer acceptance.
+
+## Owner adoption
+
+On 2026-09-16 the Owner adopted the existing Reviewer recommendation as one **independent corrected diagnostic target bundle**:
+- D1 explicit numerical state constraint on artificial upper finite-box faces/corners;
+- D2 consumed-total-drift conservative assembly with actual distances and `Q 1 = 0` construction invariant for admissible closed-box inputs;
+- D3 transfer KKT/FOC consistent with the existing regularized `s(a)=max(a,a_bar)` cost.
+
+Production replacement, source-faithful modification and Results use are not authorized.
 
 ## Active task
 
-Route freeze：`docs/CH5_MP4C_2018_KFE_CLOSURE_ROUTE_FREEZE_20260915.md`。
+`tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_DIAGNOSTIC_CONTRACT_IMPLEMENTATION_STATIC_VALIDATION_20260916.md`
 
-Active Builder task：`tasks/CH5_MP4C_2018_KFE_OWNER_DECISION_RECOVERY_AND_OPTION_MATRIX_ZERO_SCIENCE_20260915.md`。
+Builder must create an isolated corrected-target implementation and validate it only with synthetic arithmetic and saved-control/assembler-only evidence. Real selector/evaluator, HJB, KFE, MATLAB, outer, firm, wage/return recalculation, GE, annual, shock, IRF and Results calls are all zero.
 
-该任务仅从repository authority/history恢复D1-D3的exact定义并形成Owner option matrix。若定义缺失必须fail closed，不得凭聊天或常识补写。Scientific/model/solver calls全部为0；production science不改。
-
-Expected report：`docs/CH5_MP4C_2018_KFE_OWNER_DECISION_RECOVERY_AND_OPTION_MATRIX_REPORT.md`。
+Expected report: `docs/CH5_MP4C_2018_KFE_D123_CORRECTED_DIAGNOSTIC_CONTRACT_IMPLEMENTATION_STATIC_VALIDATION_REPORT.md`.
 
 ## Next sequence
 
-1. Builder完成zero-science decision package并push task branch；
-2. Reviewer验收其authority recovery；
-3. Owner选择finite-domain/KFE closure semantics；
-4. Reviewer据Owner选择发布bounded implementation/scientific-validation task；
-5. 在KFE production closure接受前，不进入steady state / GE / annual / IRF / Results。
-
-本次Reviewer route/publication scientific runtime=`0`。
+1. Builder implements D1-D3 in an isolated corrected-diagnostic namespace and publishes the static-validation report on a task branch.
+2. Reviewer verifies exact contract fidelity, source-faithful preservation and all-zero scientific call ledger.
+3. If accepted, Reviewer may publish the next bounded task under standing authorization: the preregistered tiny real-cell corrected-target selector panel only.
+4. One target HJB step and later KFE validation remain separate downstream gates.
+5. No steady state / GE / annual / IRF / Results until corrected multi-province KFE production closure is separately accepted.

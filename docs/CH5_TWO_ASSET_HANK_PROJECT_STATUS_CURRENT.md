@@ -1,35 +1,34 @@
 # Chapter 5 两资产 HANK 当前状态
 
-更新：2026-09-15。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
+更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`LOCAL_BASIN_ROUTE_CLOSED_FOR_NOW__RETURNED_TO_MULTI_PROVINCE_INTEGRATION__KFE_OWNER_DECISION_PACKAGE_ACTIVE`。
+状态：`KFE_D123_OWNER_ADOPTED__CORRECTED_DIAGNOSTIC_CONTRACT_IMPLEMENTATION_ACTIVE__PRODUCTION_UNCHANGED`。
 
 Latest accepted local-basin Builder candidate：`c994cee14b5958e47078bd7281acffcbe56797e5`。
 Latest local-basin Reviewer acceptance：`docs/CH5_MP4C_K1_J160_LOCAL_BASIN_A2MAX_RECEIPT_REPAIR_AND_REEXECUTION_ACCEPTANCE.md`。
 KFE mechanism acceptance：`docs/CH5_MP4C_2018_FIVE_TURN_KFE_LEAKAGE_ATTRIBUTION_ACCEPTANCE.md`。
-Current route freeze：`docs/CH5_MP4C_2018_KFE_CLOSURE_ROUTE_FREEZE_20260915.md`。
-Current active Builder task：`tasks/CH5_MP4C_2018_KFE_OWNER_DECISION_RECOVERY_AND_OPTION_MATRIX_ZERO_SCIENCE_20260915.md`。
+KFE decision package：`docs/CH5_MP4C_2018_KFE_OWNER_DECISION_RECOVERY_AND_OPTION_MATRIX_REPORT.md`。
+Owner adoption acceptance：`docs/CH5_MP4C_2018_KFE_D123_DIAGNOSTIC_BUNDLE_OWNER_ADOPTION_ACCEPTANCE_20260916.md`。
+Current active Builder task：`tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_DIAGNOSTIC_CONTRACT_IMPLEMENTATION_STATIC_VALIDATION_20260916.md`。
 Results eligibility=`FALSE`。
 
 ## HJB numerical authority remains frozen
 
-Accepted practical household grid：`I=20,J=160,Nz=2,a=[0,100],b=[-2,20],h=1`，仅为 `PRACTICAL_BOUNDED_DIAGNOSTIC_GRID`。Finer-J / finer-I routes 已关闭；accepted FOC、selectors、boundary laws、derivative-floor logic、sparse solve、`tol=1e-7`、`maxit=100`、A2max legality gate `.01` 均不变。
+Accepted practical household grid remains `I=20,J=160,Nz=2,a=[0,100],b=[-2,20],h=1` and diagnostic only. Finer-J / finer-I routes remain closed. The accepted 31-province first-turn and local-basin evidence remains unchanged; no additional basin interpolation/bisection is active.
 
-31省 first-turn HJB：25/31 converged；天津、山西、江西、重庆、贵州、甘肃为 legal nonconverged；0 illegal operator、0 hard error、KFE=0。Temporal/spatial/matched-control evidence显示失败机制异质，successful controls也存在 substantial upper-b activity，因此 common failure-specific upper-b pathology 不成立。
+## KFE mechanism and Owner decision
 
-Input/outcome envelope 与 guards 不提供可分离的 safe-price rule。Local-basin四对 topology 为山西→河北 `F→C→C→C→C`、重庆→河北 `F→C→C→C→C`、江西→安徽 `F→F→C→C→C`、贵州→四川 `F→C→F→C→C`；panel=`LOCAL_BASIN_TOPOLOGY_HETEROGENEOUS_OR_INTERLEAVED`。这些仅是 numerical HJB basin evidence。
+Accepted corrected-2018 five-turn attribution established the finite-box upper-`b` escape plus MATLAB-style dropped-equation/pinning mechanism nationwide for turn4/5. The algebraic balancing source is not an accepted household entry/exit process.
 
-Reviewer 已决定当前不再增加 synthetic `t`、matched pairs、adaptive bisection 或 basin mapping。若未来出现能够直接改变 integration decision 的新问题，可另行预注册最小诊断；当前 route B 优先。
+The zero-science authority recovery report exactly recovered the historical D1-D3 definitions. Owner explicitly adopted the Reviewer bundle on 2026-09-16 for a **separate corrected diagnostic target**:
+- D1: explicit numerical state constraint at artificial upper truncations on the existing finite box;
+- D2: consumed-total-drift conservative generator assembly with actual distances, outward-input rejection and retained-rate diagonal closure;
+- D3: KKT/FOC consistent with the existing `s(a)=max(a,a_bar)` adjustment cost throughout the domain.
 
-## KFE integration blocker
+This adoption does not authorize production replacement and does not alter the frozen MATLAB-faithful reference.
 
-Accepted corrected-2018 five-turn attribution 已确认：turn4/5 全部 62 province-turn objects 存在同一 finite-box upper-`b` escape + MATLAB-style dropped-equation/pinning algebra；material source-free residual 几乎全部落在被替换的 pin equation，off-pin residual 为 machine scale。Dropped equation 等价于一个平衡 upper-b escape 的 algebraic source，但该 source 不是已接受的 household entry/exit economics。
+## Active gate
 
-因此 KFE blocker 已从“机制未知”推进到“closure semantics 未决”。不能自动通过修改 upper-b boundary、扩大 bmax、加入 source、移植/删除 pinning 或改变 production KFE 来制造 closure。
+The active Builder task implements the isolated D1-D3 contracts and runs only synthetic arithmetic plus saved-control/assembler-only validation. Real selector/HJB/KFE/MATLAB/outer/GE/annual/shock/IRF/Results calls remain zero. Production code, accepted grid/calibration/tolerances and source-faithful evidence remain unchanged.
 
-Owner 保留 finite-domain/KFE closure scientific semantics 的最终选择权。当前 Builder 只执行 zero-science D1-D3 authority recovery + option matrix，不运行模型、不选择方案。
-
-## Runtime state
-
-Reviewer本次 route decision / GitHub publication scientific runtime=`0`。
-在 Owner 选择 closure semantics 且 Reviewer 发布后续 scientific task 前：HJB=0、KFE=0、outer=0、firm=0、wage/return recalculation=0、MATLAB=0、GE=0、annual=0、shock=0、IRF=0、Results=0。
+The next scientific gate, only after Reviewer acceptance of this implementation, is a separately budgeted tiny real-cell selector panel. No such runtime is authorized yet.
