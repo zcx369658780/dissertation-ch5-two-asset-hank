@@ -2,58 +2,34 @@
 
 更新：2026-09-15。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`LOCAL_BASIN_REEXECUTION_ACCEPTED__NEXT_REVIEWER_ROUTE_PENDING`。
+状态：`LOCAL_BASIN_ROUTE_CLOSED_FOR_NOW__RETURNED_TO_MULTI_PROVINCE_INTEGRATION__KFE_OWNER_DECISION_PACKAGE_ACTIVE`。
 
-最新 accepted Builder candidate：`c994cee14b5958e47078bd7281acffcbe56797e5`。
-最新 Reviewer acceptance：`docs/CH5_MP4C_K1_J160_LOCAL_BASIN_A2MAX_RECEIPT_REPAIR_AND_REEXECUTION_ACCEPTANCE.md`。
-当前 active Builder task：无。任何新 science runtime 前，Reviewer 必须 fresh-fetch GitHub authority，并发布新的 freeze / exact task。
-
+Latest accepted local-basin Builder candidate：`c994cee14b5958e47078bd7281acffcbe56797e5`。
+Latest local-basin Reviewer acceptance：`docs/CH5_MP4C_K1_J160_LOCAL_BASIN_A2MAX_RECEIPT_REPAIR_AND_REEXECUTION_ACCEPTANCE.md`。
+KFE mechanism acceptance：`docs/CH5_MP4C_2018_FIVE_TURN_KFE_LEAKAGE_ATTRIBUTION_ACCEPTANCE.md`。
+Current route freeze：`docs/CH5_MP4C_2018_KFE_CLOSURE_ROUTE_FREEZE_20260915.md`。
+Current active Builder task：`tasks/CH5_MP4C_2018_KFE_OWNER_DECISION_RECOVERY_AND_OPTION_MATRIX_ZERO_SCIENCE_20260915.md`。
 Results eligibility=`FALSE`。
 
-## 当前 numerical authority
+## HJB numerical authority remains frozen
 
-Accepted practical household grid：`I=20,J=160,Nz=2,a=[0,100],b=[-2,20],h=1`。仅具有 `PRACTICAL_BOUNDED_DIAGNOSTIC_GRID` authority，不代表 continuum convergence 或 production-final precision。
+Accepted practical household grid：`I=20,J=160,Nz=2,a=[0,100],b=[-2,20],h=1`，仅为 `PRACTICAL_BOUNDED_DIAGNOSTIC_GRID`。Finer-J / finer-I routes 已关闭；accepted FOC、selectors、boundary laws、derivative-floor logic、sparse solve、`tol=1e-7`、`maxit=100`、A2max legality gate `.01` 均不变。
 
-Finer-J route 已因 accepted J640 `POLICY_OR_SELECTOR_CHATTER_WITH_VALUE_OSCILLATION` 关闭。Finer-I route 已因 I40/J160 在 maxit100 内 nonconverged 且 iteration94 首次 operator-illegal 关闭。禁止通过增加 maxit、damping/relaxation/line-search、tolerance/floor/selector 变化制造 convergence。
+31省 first-turn HJB：25/31 converged；天津、山西、江西、重庆、贵州、甘肃为 legal nonconverged；0 illegal operator、0 hard error、KFE=0。Temporal/spatial/matched-control evidence显示失败机制异质，successful controls也存在 substantial upper-b activity，因此 common failure-specific upper-b pathology 不成立。
 
-## First-turn provincial HJB authority
+Input/outcome envelope 与 guards 不提供可分离的 safe-price rule。Local-basin四对 topology 为山西→河北 `F→C→C→C→C`、重庆→河北 `F→C→C→C→C`、江西→安徽 `F→F→C→C→C`、贵州→四川 `F→C→F→C→C`；panel=`LOCAL_BASIN_TOPOLOGY_HETEROGENEOUS_OR_INTERLEAVED`。这些仅是 numerical HJB basin evidence。
 
-Exact accepted 31-province first-turn household input vector authority PASS。I20/J160 first-turn HJB：25/31 converged；天津、山西、江西、重庆、贵州、甘肃为 legal nonconverged；illegal operator=0，hard error=0；KFE=0。
+Reviewer 已决定当前不再增加 synthetic `t`、matched pairs、adaptive bisection 或 basin mapping。若未来出现能够直接改变 integration decision 的新问题，可另行预注册最小诊断；当前 route B 优先。
 
-六个失败的 accepted temporal mechanism heterogeneous：天津、山西、重庆、甘肃为 policy/selector chatter with value oscillation；江西为 derivative-floor amplification after earlier switching；贵州为 exact joint-selector period-2 recurrence without exact value recurrence。
+## KFE integration blocker
 
-Value-update argmax spatial audit 与 coordinate-resolved selector/floor matched-control diagnostic 进一步表明 spatial footprint heterogeneous；successful controls 也存在 substantial upper-b selector/floor activity。因此 failure-specific common upper-b pathology、统一 boundary repair、统一 grid expansion 或统一 HJB fix 均不被支持。
+Accepted corrected-2018 five-turn attribution 已确认：turn4/5 全部 62 province-turn objects 存在同一 finite-box upper-`b` escape + MATLAB-style dropped-equation/pinning algebra；material source-free residual 几乎全部落在被替换的 pin equation，off-pin residual 为 machine scale。Dropped equation 等价于一个平衡 upper-b escape 的 algebraic source，但该 source 不是已接受的 household entry/exit economics。
 
-## Input/outcome envelope authority
+因此 KFE blocker 已从“机制未知”推进到“closure semantics 未决”。不能自动通过修改 upper-b boundary、扩大 bmax、加入 source、移植/删除 pinning 或改变 production KFE 来制造 closure。
 
-31省 failures/successes 在 consumed `ra` 与 household composite `w` 上高度重叠：ranges、2D bounding boxes、convex hulls overlap；不存在 single-ra 或 single-w separating threshold；fixed k=3 standardized graph interleaved。Return guard 31/31=`NOT_APPLIED_BOOTSTRAP`，corrected upstream wjt guard 31/31=`UPPER`，无横截面判别变异。Simple safe-price envelope / universal guard route CLOSED。
+Owner 保留 finite-domain/KFE closure scientific semantics 的最终选择权。当前 Builder 只执行 zero-science D1-D3 authority recovery + option matrix，不运行模型、不选择方案。
 
-## Latest accepted local-basin authority
+## Runtime state
 
-四个 preregistered pair 均已证明除 consumed `ra` / household composite `w` 外全部 household scientific inputs exact equal。A2max receipt repair 后，同一12个 sealed synthetic probes controlled reexecution；12/12 scientific source-generator A2max maxima 均低于 `.01`，first scientific illegal iteration 全为 null，且 terminal class / iteration count / final max|dV| 与 blocked run bit-exact。
-
-Formal pair topology：
-
-- 山西→河北：`F→C→C→C→C`；`ALL_INTERIOR_PROBES_CONVERGE`
-- 重庆→河北：`F→C→C→C→C`；`ALL_INTERIOR_PROBES_CONVERGE`
-- 江西→安徽：`F→F→C→C→C`；`SINGLE_TRANSITION_FAILURE_TO_SUCCESS`
-- 贵州→四川：`F→C→F→C→C`；`NONMONOTONE_OR_INTERLEAVED_LOCAL_BASIN`
-
-Panel authority：`LOCAL_BASIN_TOPOLOGY_HETEROGENEOUS_OR_INTERLEAVED`。
-
-这只确认 numerical HJB local-basin topology 对 `(ra,w)` 变化可呈 pair-specific、甚至非单调/交错响应；不等于经济多重均衡、省级均衡多重性、mapping 错误、calibration 错误或经济反事实。当前不得据此授权 clipping、recalibration、guard/mapping change、boundary/grid change 或 HJB algorithm change。
-
-## Separate unresolved blocker
-
-Corrected-2018 multi-province finite-box upper-`b` leakage / MATLAB-style pinning KFE blocker仍独立存在且未解决。Standalone contaminated-row KFE 不替代 corrected multi-province KFE authority。
-
-## Next action
-
-本会话已收口，当前没有 active Builder task。下一会话首先 fresh-fetch GitHub live main，并读取 `AGENTS.md`、rule index、current status、current handoff、latest acceptance 与 immutable handoff snapshot。
-
-不得默认继续 synthetic interpolation、adaptive bisection 或 recalibration。Reviewer 应重新选择下一条高信息量路线：
-
-1. 仅当能直接回答 integration decision 时，设计最小 local-basin mechanism robustness/attribution diagnostic；或
-2. 停止继续 basin mapping，返回 corrected multi-province integration 的下一 unresolved gate，尤其是独立的 KFE finite-box/pinning blocker。
-
-在 Reviewer 正式发布 successor freeze/task 前，science runtime=0。
+Reviewer本次 route decision / GitHub publication scientific runtime=`0`。
+在 Owner 选择 closure semantics 且 Reviewer 发布后续 scientific task 前：HJB=0、KFE=0、outer=0、firm=0、wage/return recalculation=0、MATLAB=0、GE=0、annual=0、shock=0、IRF=0、Results=0。
