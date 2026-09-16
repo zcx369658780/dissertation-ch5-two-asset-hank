@@ -146,6 +146,18 @@ class ActiveEqualityReceipt:
 
 
 @dataclass(frozen=True)
+class LowerAZeroKinkMultiplierReceipt:
+    raw_multiplier_interval_lower: float
+    raw_kink_interval: tuple[float, float]
+    deterministic_minimum: float
+    upper_endpoint_arithmetic_bound: float
+    intersection_nonempty: bool
+    chosen_q_a: float | None
+    lambda_a: float | None
+    marker: str
+
+
+@dataclass(frozen=True)
 class SelectorCandidate:
     active_constraints: tuple[str, ...]
     transfer_branch: str
@@ -177,6 +189,7 @@ class SelectorCandidate:
     active_equality_receipts: dict[str, ActiveEqualityReceipt] = field(
         default_factory=dict
     )
+    lower_a_zero_kink_multiplier_receipt: LowerAZeroKinkMultiplierReceipt | None = None
 
 
 @dataclass(frozen=True)
@@ -405,6 +418,7 @@ def _rejected(
     branches: dict[str, str] | None = None,
     root_invoked: bool = False,
     root_status: str = "NOT_REQUIRED",
+    lower_a_zero_kink_multiplier_receipt: LowerAZeroKinkMultiplierReceipt | None = None,
 ) -> SelectorCandidate:
     return SelectorCandidate(
         active_constraints=active,
@@ -414,6 +428,41 @@ def _rejected(
         rejection_reasons=tuple(reasons),
         root_invoked=root_invoked,
         root_status=root_status,
+        lower_a_zero_kink_multiplier_receipt=lower_a_zero_kink_multiplier_receipt,
+    )
+
+
+def active_lower_a_zero_kink_shadow(
+    *, p_a: float, q_b: float, chi_0: float
+) -> LowerAZeroKinkMultiplierReceipt:
+    kink_lower = float(q_b * (1.0 - chi_0))
+    kink_upper = float(q_b * (1.0 + chi_0))
+    deterministic_minimum = float(max(p_a, kink_lower))
+    bound = _fp_bound(
+        p_a,
+        q_b,
+        chi_0,
+        kink_lower,
+        kink_upper,
+        deterministic_minimum,
+        operations=16,
+    )
+    nonempty = deterministic_minimum <= kink_upper + bound
+    chosen = deterministic_minimum if nonempty else None
+    multiplier = None if chosen is None else float(chosen - p_a)
+    return LowerAZeroKinkMultiplierReceipt(
+        raw_multiplier_interval_lower=float(p_a),
+        raw_kink_interval=(kink_lower, kink_upper),
+        deterministic_minimum=deterministic_minimum,
+        upper_endpoint_arithmetic_bound=bound,
+        intersection_nonempty=nonempty,
+        chosen_q_a=chosen,
+        lambda_a=multiplier,
+        marker=(
+            "ACTIVE_LOWER_A_ZERO_KINK_MULTIPLIER_INTERVAL_CANONICAL_MIN"
+            if nonempty
+            else "ACTIVE_LOWER_A_ZERO_KINK_MULTIPLIER_INTERVAL_EMPTY"
+        ),
     )
 
 
@@ -509,8 +558,27 @@ def _candidate(
                 branches=branches,
             )
 
+    lower_a_zero_kink_receipt = None
     try:
         q_a, d, _ = values_for(q_b)
+        if a_active and a_face == "lower_a" and regime == "zero_kink":
+            lower_a_zero_kink_receipt = active_lower_a_zero_kink_shadow(
+                p_a=p_a,
+                q_b=q_b,
+                chi_0=parameters.chi_0,
+            )
+            if not lower_a_zero_kink_receipt.intersection_nonempty:
+                return _rejected(
+                    active,
+                    regime,
+                    ["ACTIVE_LOWER_A_ZERO_KINK_MULTIPLIER_INTERSECTION_EMPTY"],
+                    branches=branches,
+                    root_invoked=root_invoked,
+                    root_status=root_status,
+                    lower_a_zero_kink_multiplier_receipt=lower_a_zero_kink_receipt,
+                )
+            assert lower_a_zero_kink_receipt.chosen_q_a is not None
+            q_a = lower_a_zero_kink_receipt.chosen_q_a
         c, l, cost, g_b, g_a, utility = _controls(q_b, d, cell, parameters)
     except (ArithmeticError, OverflowError, ValueError) as exc:
         return _rejected(
@@ -655,6 +723,7 @@ def _candidate(
         ),
         arithmetic_tolerance=tolerance,
         active_equality_receipts=active_equality_receipts,
+        lower_a_zero_kink_multiplier_receipt=lower_a_zero_kink_receipt,
     )
 
 

@@ -36,7 +36,7 @@ from .selector import (
 
 
 EVIDENCE_RELATIVE = Path(
-    "reports/ch5_mp4c_2018_kfe_d123_corrected_hjb_option_a_single_step_20260916"
+    "reports/ch5_mp4c_2018_kfe_d123_lower_a_zero_kink_option_a_reexecution_20260916"
 )
 BOUNDARY_ADAPTER_MARKER = "UNUSED_BOUNDARY_SLOT_DUPLICATES_INWARD_RAW_DERIVATIVE"
 EXPECTED_BINDING_SHA256 = "A40D088C63FC1F7EDECEA561D649B42959C646DF528ED13298014493DB4808F6"
@@ -340,7 +340,9 @@ def coordinate_action_receipt(
 def _scientific_code_hashes(repository: Path) -> dict[str, str]:
     namespace = repository / "src/ch5_two_asset_hank/corrected_diagnostic"
     paths = list(namespace.glob("*.py")) + [
-        repository / "tests/test_mp4c_2018_kfe_d123_option_a_single_step.py"
+        repository / "tests/test_mp4c_2018_kfe_d123_option_a_single_step.py",
+        repository
+        / "tests/test_mp4c_2018_kfe_d123_lower_a_zero_kink_multiplier.py",
     ]
     return {
         path.relative_to(repository).as_posix(): _sha256(path)
@@ -406,12 +408,26 @@ def preflight_receipt(repository: Path, inputs: BoundOptionAInputs) -> dict[str,
         "b": 2 * inputs.grid.a.size * inputs.grid.z.size,
         "a": 2 * inputs.grid.b.size * inputs.grid.z.size,
     }
+    cell_zero_derivatives, _ = boundary_cell_derivatives(
+        fields, (0, 0, 0), inputs.grid
+    )
+    cell_zero_shadow = selector.active_lower_a_zero_kink_shadow(
+        p_a=cell_zero_derivatives.p_a_forward,
+        q_b=cell_zero_derivatives.p_b_forward,
+        chi_0=inputs.parameters.chi_0,
+    )
     checks = {
         **static_checks,
         "exact_800_f_order_cells": len(list(iter_f_order_indices(inputs.grid.shape))) == 800,
         "boundary_marker_counts_exact": boundary_marker_counts == expected_marker_counts,
         "all_raw_derivatives_finite": all(
             np.all(np.isfinite(array)) for array in asdict(fields).values()
+        ),
+        "cell_zero_raw_p_a_exact_zero": cell_zero_derivatives.p_a_forward == 0.0,
+        "cell_zero_shadow_interval_nonempty": cell_zero_shadow.intersection_nonempty,
+        "cell_zero_shadow_marker_exact": (
+            cell_zero_shadow.marker
+            == "ACTIVE_LOWER_A_ZERO_KINK_MULTIPLIER_INTERVAL_CANONICAL_MIN"
         ),
         "git_head_resolves_before_execution": len(_git_head(repository)) == 40,
     }
@@ -421,6 +437,14 @@ def preflight_receipt(repository: Path, inputs: BoundOptionAInputs) -> dict[str,
         "boundary_adapter_marker": BOUNDARY_ADAPTER_MARKER,
         "boundary_marker_counts": boundary_marker_counts,
         "expected_boundary_marker_counts": expected_marker_counts,
+        "historical_option_a_cell_zero_algebraic_check": {
+            "index_b_a_z_zero_based": [0, 0, 0],
+            "p_b_forward": cell_zero_derivatives.p_b_forward,
+            "p_a_forward": cell_zero_derivatives.p_a_forward,
+            "shadow_receipt": asdict(cell_zero_shadow),
+            "selector_evaluations": 0,
+            "scalar_root_invocations": 0,
+        },
         "input_identity": _input_receipt(inputs),
     }
 
@@ -475,7 +499,7 @@ def _seal_manifest(evidence: Path) -> dict[str, Any]:
             }
         )
     manifest = {
-        "schema": "CH5_MP4C_2018_KFE_D123_OPTION_A_SINGLE_STEP_MANIFEST_V1",
+        "schema": "CH5_MP4C_2018_KFE_D123_LOWER_A_ZERO_KINK_OPTION_A_REEXECUTION_MANIFEST_V1",
         "entry_count": len(entries),
         "total_bytes": sum(int(row["bytes"]) for row in entries),
         "entries": entries,
@@ -712,7 +736,7 @@ def execute(repository: Path, seed_path: Path, binding_path: Path) -> str:
             )
             return terminal
         if result.outcome != "SELECTED_ADMISSIBLE" or result.selected is None:
-            terminal = "FAIL__OPTION_A_POLICY_MAP_FIRST_CELL_NOT_ADMISSIBLE__STOPPED_WITHOUT_RETRY"
+            terminal = "FAIL__OPTION_A_REEXECUTION_FIRST_CELL_NOT_ADMISSIBLE__STOPPED_WITHOUT_RETRY"
             _finalize(
                 repository,
                 evidence,
