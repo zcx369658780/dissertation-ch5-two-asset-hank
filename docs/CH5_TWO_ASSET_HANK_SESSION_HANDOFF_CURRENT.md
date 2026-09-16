@@ -1,7 +1,7 @@
-# Chapter 5 当前交接 — Q0 KFE first runtime fail-closed accepted / bounded rerun active
+# Chapter 5 当前交接 — Q0 two closed classes accepted / structural attribution active
 
 更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
-状态：`Q0_KFE_FAIL_CLOSED_ACCEPTED__SECONDARY_DIAGONAL_REAGGREGATION_AUDIT_RECLASSIFIED__BOUNDED_RERUN_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`Q0_KFE_TWO_CLOSED_CLASSES_ACCEPTED__STRUCTURAL_ATTRIBUTION_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Governance
@@ -10,16 +10,16 @@ Owner is final scientific authority; ChatGPT is L3 Reviewer/scientific-route aut
 
 ## Accepted state
 
-Corrected Option-A route has an accepted 800-cell policy map, conservative Q0 and one direct V1 step. Q0 is accepted as the next operator-level, source-free KFE diagnostic object; V1 remap is not required for that claim.
+Corrected Option-A route has an accepted 800-cell policy map, conservative Q0 and one direct V1 step. Q0 is the accepted operator-level KFE object. The first validator arithmetic issue is closed: D2 construction identity remains exact-zero authority and secondary CSR reaggregation is a bounded floating-point audit.
 
-First bounded runtime candidate `d4f643f1d26ad5a28395f60a58c545447abda7ba` stopped before SCC/SVD because independent sparse offdiagonal reaggregation differed from the serialized diagonal by `3.552713678800501e-15` rather than exact zero. Q0 hash/shape/finite data/offdiagonal signs, `Q0@1` and all four outward-face ledgers passed.
+Fresh bounded rerun candidate `132b2657c61e0707a5fff96b936b5a62a78dbb2e` then reached the exact-positive graph gate. It found 400 SCCs of size 2, exactly two closed communicating classes of size 2 each and 796 transient states. The task correctly stopped before GESVD/stationary-mass construction.
 
-Reviewer accepted this as fail-closed evidence and classified the exact-zero secondary reaggregation requirement as overstrict. The accepted D2 receipt remains exact construction authority with `diagonal_construction_error=0.0`; the independent CSR reaggregation check must instead preserve its raw discrepancy and require `<=5.222144858126786e-14`.
+For a finite conservative generator, two closed classes structurally imply a non-unique invariant stationary space for Q0. This does not establish economic multiple equilibria or any HJB/KFE fixed-point multiplicity.
 
 ## Active task
 
-`tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_Q0_KFE_OPERATOR_VALIDATION_RERUN_WITH_BOUND_REAGGREGATION_20260916.md`
+`tasks/CH5_MP4C_2018_KFE_D123_Q0_TWO_CLOSED_CLASSES_STRUCTURAL_ATTRIBUTION_20260916.md`
 
-Only the validator/test may be minimally changed for the revised secondary audit. Fresh scientific rerun only: Q0 load 1, structural audit 1, Q0@1 1, SCC 1, GESVD 1, normalized candidate 1, Q0.T@p 1. No retry, solver substitution, pin/row replacement, iterative eigensolver, selector/root/policy map/D2/HJB/V1 remap/MATLAB/downstream.
+Map both recurrent classes to exact grid states and persisted selected policies, report outgoing rates and consumed drifts, reconstruct condensation-DAG reachability basins, and attribute closure to exact zero-drift sinks, boundary/state-constraint effects, deterministic upwind topology or a mixed mechanism.
 
-A PASS remains operator-level invariant-mass evidence only, not HJB convergence, joint fixed point, stationary economic equilibrium, production readiness or Results authority.
+Structural budget only: Q0 load <=1, graph audit <=1, SCC <=1, condensation/reachability <=1, receipt reads <=800. No SVD/nullspace/stationary mass, no `Q0.T@p`, no selector/root/policy-map/D2/HJB/V1 remap/MATLAB/downstream.
