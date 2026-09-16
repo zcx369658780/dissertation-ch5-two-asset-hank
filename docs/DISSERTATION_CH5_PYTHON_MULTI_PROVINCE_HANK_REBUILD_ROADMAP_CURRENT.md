@@ -4,35 +4,30 @@ Results eligibility=`FALSE`。
 
 ## Accepted route
 
-The frozen source-faithful reference and separately governed corrected successor remain distinct. Owner-adopted corrected semantics now include D1 upper numerical state constraints, D2 consumed-total-drift conservative assembly, D3 regularized-cost-consistent KKT, active lower-a zero-kink multiplier handling, and interior zero-liquid Z switching.
+The frozen source-faithful reference and separately governed corrected successor remain distinct. Owner-adopted corrected semantics include D1 upper numerical state constraints, D2 consumed-total-drift conservative assembly, D3 regularized-cost-consistent KKT, active lower-a zero-kink multiplier handling, and interior zero-liquid Z switching.
 
 ## KFE-D2C-D — completed and accepted
 
-Candidate `9a4eb0e5ec3627743596daa9b991436d2124efa9` completed a fresh Option-A execution:
-- 800/800 corrected cells `SELECTED_ADMISSIBLE`;
-- 800 selector evaluations;
-- 442 roots total, including 206 interior-Z roots;
-- 42 selected Z policies;
-- one D2 assembly PASS;
-- one sparse direct HJB step PASS;
-- no retries, V1 selector map, nonlinear continuation, KFE, MATLAB or downstream calls.
+Candidate `9a4eb0e5ec3627743596daa9b991436d2124efa9` completed a fresh 800-cell Option-A policy map, one D2 Q0 assembly PASS and one direct HJB V1 step PASS. This closes the bounded one-step corrected-HJB integration gate only; nonlinear HJB convergence remains unproven.
 
-The direct step produced V1 SHA-256 `5C410EBC329F08B37F941A783E7F2C84BFCDCB67C6E24118114BE8C55697F2E2` with normwise backward error `1.9727855630325988e-16`.
+## KFE-D2D-A — completed and accepted
 
-This closes the single-step corrected-HJB integration gate as bounded diagnostic evidence. It does not establish nonlinear HJB convergence or a corrected fixed point.
+Zero-science design candidate `494dfc741dbf494a5b367b3abe99234a5708df4c` is accepted. It freezes Q0 itself as the next operator-level KFE validation object. A V1 policy remap is not required for that claim and remains outside the next runtime gate.
 
-## KFE-D2D-A — active: corrected KFE validation design/binding, zero science
+The accepted KFE contract is pin-free and source-free: `Q0.T @ p = 0`, F-order `(20,20,2)`, mass vector `p`, density view `g=p/(70/361)`, no row replacement or RHS injection, one exact-positive-edge SCC decomposition and one dense `gesvd` nullspace/rank decomposition.
+
+## KFE-D2D-B — active: bounded corrected Q0 KFE operator validation
 
 Active task:
-`tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_KFE_VALIDATION_DESIGN_BINDING_ZERO_SCIENCE_20260916.md`
+`tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_Q0_KFE_OPERATOR_VALIDATION_20260916.md`
 
-Before any KFE runtime, determine whether the accepted pre-step Q0 is sufficient for an operator-level source-free KFE diagnostic or whether a V1 policy remap is scientifically required. Freeze exact transpose/F-order mapping, pin-free homogeneous stationarity, normalization, conservation, nonnegative-mass, rank/nullity/uniqueness, deterministic solver budget and fail-closed rules.
+Use the exact accepted Q0 artifact. PASS requires one closed communicating class, rank 799/nullity 1 under the prospective threshold, second-smallest singular value above threshold, source-free stationarity within prospective arithmetic bounds, normalized mass, and nonnegative mass within the frozen allowance.
 
-No scientific/model call is allowed in this design gate.
+Runtime is strictly bounded to one Q0 structural audit, one SCC decomposition, one full dense `gesvd`, one normalized candidate, one `Q0 @ 1`, and one `Q0.T @ p`; no retries or solver substitutions. Selector/root/policy-map/D2/HJB/V1-remap/KFE row-replacement/MATLAB/downstream calls remain zero.
 
-## KFE-D2D-B — conditional runtime
+## KFE-D2D-C — conditional successor
 
-Only after D2D-A acceptance may Reviewer publish a bounded corrected KFE validation execution task. A future KFE PASS would be operator/stationary-density diagnostic evidence only unless a separately accepted HJB fixed point exists.
+Only after independent acceptance of D2D-B may Reviewer decide whether a post-V1 remap/nonlinear HJB continuation route or a broader HJB-KFE fixed-point design is scientifically justified. A Q0 KFE PASS alone is not a stationary economic equilibrium.
 
 ## KFE-D3 — later production closure
 
