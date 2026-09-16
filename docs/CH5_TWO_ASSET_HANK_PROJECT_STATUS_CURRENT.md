@@ -2,32 +2,24 @@
 
 更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`INTERIOR_ZERO_LIQUID_Z_OWNER_ADOPTED__OPTION_A_REEXECUTION_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`OPTION_A_COMPLETE_POLICY_MAP_D2_DIRECT_STEP_ACCEPTED__CORRECTED_KFE_VALIDATION_DESIGN_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
-## Accepted checkpoints
+## Accepted checkpoint
 
-Owner-adopted D1/D2/D3 corrected diagnostic bundle、isolated static implementation、historical ten-cell fail-closed evidence、failed-cell algebraic attribution、corrected-HJB one-step design/input binding、Option A seed adoption，以及 lower-a zero-kink multiplier repair均继续有效。Source-faithful/production paths remain frozen。
+Builder candidate `9a4eb0e5ec3627743596daa9b991436d2124efa9` is accepted by `docs/CH5_MP4C_2018_KFE_D123_OPTION_A_COMPLETE_POLICY_MAP_D2_DIRECT_STEP_ACCEPTANCE_20260916.md`.
 
-## Cell 5 attribution accepted
+Fresh Option A execution completed 800/800 durable `SELECTED_ADMISSIBLE` cells under the Owner-adopted D1+D2+D3 contract and interior liquid Z law. Runtime: 800 selector evaluations, 442 scalar roots including 206 interior-Z roots, 42 selected Z policies, retries=0. Cell 5 selected the expected lower-a zero-kink Z policy with consumed `g_b=0`.
 
-Builder candidate `fdfabfb8ba12fa52add525b68050de67c2d6369d` is accepted by `docs/CH5_MP4C_2018_KFE_D123_CELL5_LIQUID_DIRECTION_SWITCH_ATTRIBUTION_ACCEPTANCE_20260916.md`.
+D2 was assembled once after the complete map and passed all frozen conservation/coordinate-action checks. One sparse direct HJB step then passed with residual infinity norm `2.5875135367670055e-14`, backward error `1.9727855630325988e-16`, and V1 SHA-256 `5C410EBC329F08B37F941A783E7F2C84BFCDCB67C6E24118114BE8C55697F2E2`.
 
-Accepted facts: Cell 5 has one unique finite positive zero-liquid shadow `q_b*=0.01250021388291760706054915182349077777...`, strictly between the raw forward/backward liquid shadows. Historical/source-faithful `I0` and accepted Python HJB `Z` logic provide genuine zero-liquid switching precedent. The former corrected selector did not explicitly inherit that branch and its earlier root ceiling treated interior-b nodes as root-free.
-
-## Owner adoption
-
-Owner explicitly adopted inheritance of the interior zero-liquid `Z` switching law into the corrected D1-D3 selector. Authority: `docs/CH5_MP4C_2018_KFE_D123_INTERIOR_ZERO_LIQUID_Z_OWNER_ADOPTION_ACCEPTANCE_20260916.md`.
-
-The adopted Z branch is generic for interior liquid direction crossings. It is a unique zero-drift root of the frozen control equations inside the interval between positive one-sided liquid shadows; it is not an average/interpolation/floor/clip/tolerance repair. Z must pass the existing a-side D1/D3/KKT/finite checks and enter the same Hamiltonian comparison as backward/forward candidates.
-
-The one-map scalar-root ceiling is updated from 264 to 3144: retain 264 boundary-liquid roots plus at most `720*4=2880` interior-Z roots. A Z root is allowed only when the strict crossing trigger is met; the ceiling is not blanket permission to call roots.
+No V1 selector map, nonlinear continuation, KFE, MATLAB or downstream call occurred. This is one-step diagnostic evidence only; it is not nonlinear HJB convergence, a fixed point, stationary equilibrium, production replacement or Results authority.
 
 ## Active gate
 
 Current active Builder task:
-`tasks/CH5_MP4C_2018_KFE_D123_INTERIOR_Z_SWITCHING_REPAIR_AND_OPTION_A_REEXECUTION_20260916.md`。
+`tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_KFE_VALIDATION_DESIGN_BINDING_ZERO_SCIENCE_20260916.md`。
 
-After focused preflight and code freeze, run one fresh Option-A map from Cell 0. Ceiling: <=800 selectors, <=3144 scalar roots total, interior-Z roots <=2880, D2<=1 only after all 800 cells pass, sparse direct HJB solve<=1 only after D2 PASS, retries=0. No V1 selector map or nonlinear continuation.
+This is a zero-science design/binding gate. Before any KFE runtime it must determine whether the accepted pre-step `Q0` is sufficient for an operator-level corrected KFE diagnostic or whether a V1 policy remap is scientifically required, and freeze the exact pin-free stationarity/orientation/normalization/conservation/nonnegativity/rank/uniqueness contract.
 
-KFE/MATLAB/outer/firm/wage-return/GE/annual/shock/IRF/Results remain zero. Even a full-map/direct-step PASS remains one-step diagnostic evidence only; production replacement and Results remain unauthorized.
+Selector/root/policy-map/D2/HJB/KFE/MATLAB/downstream calls are all zero in this design gate. Production replacement remains unauthorized.
