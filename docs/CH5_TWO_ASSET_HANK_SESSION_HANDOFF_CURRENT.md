@@ -1,7 +1,7 @@
-# Chapter 5 当前交接 — Q0 two zero-drift sinks attributed / V1 remap Q1 topology active
+# Chapter 5 当前交接 — V1 remap Q1 single closed class accepted / Q1 KFE validation active
 
 更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
-状态：`Q0_TWO_ZERO_DRIFT_SINKS_ATTRIBUTED__V1_POLICY_REMAP_Q1_TOPOLOGY_DIAGNOSTIC_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`V1_REMAP_Q1_SINGLE_CLOSED_CLASS_ACCEPTED__Q1_SOURCE_FREE_KFE_VALIDATION_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Governance
@@ -10,20 +10,18 @@ Owner is final scientific authority; ChatGPT is L3 Reviewer/scientific-route aut
 
 ## Accepted state
 
-Corrected Option-A route has an accepted 800-cell V0 policy map, conservative Q0 and one direct HJB step V1. Q0 source-free KFE uniqueness failed structurally because its exact-positive graph contains two closed communicating classes.
+Q0 has two exact zero-asset-drift recurrent sinks under V0. Candidate `368d58c96a9e6068fd4f7b36cca0f433d7f2ec3a` then remapped the accepted V1 once and assembled Q1 under unchanged corrected laws.
 
-Structural attribution candidate `2723c475943f7e6a767a940a9a52bad7b9c25e6f` is accepted. The two recurrent classes are exactly flats `5,405` and `6,406`, corresponding to adjacent lower-a asset nodes `(5,0)` and `(6,0)`. All four selected policies use interior-liquid Z plus active lower-a zero-kink handling, with exact `g_b=0` and `g_a=0`; only productivity switching remains positive.
+The V1 map completed 800/800 cells. Q1 D2 passed and its exact-positive graph has one closed communicating class `[5,6,405,406]`. The two separate Q0 classes no longer persist because flat 405 gains a forward liquid edge and flat 6 gains a backward liquid edge, while flats 5 and 406 retain Z/zero drift. All 800 states can reach the single recurrent class.
 
-This establishes Q0 stationary-space structural nonuniqueness caused by exact zero-asset-drift sinks. It does not establish economic multiple equilibria or HJB fixed-point multiplicity.
+This does not prove HJB convergence or economic equilibrium uniqueness.
 
 ## Active task
 
-`tasks/CH5_MP4C_2018_KFE_D123_V1_POLICY_REMAP_AND_Q1_RECURRENT_TOPOLOGY_DIAGNOSTIC_20260916.md`
+`tasks/CH5_MP4C_2018_KFE_D123_Q1_SOURCE_FREE_KFE_OPERATOR_VALIDATION_20260916.md`
 
-Use only accepted V1 SHA-256 `5C410EBC329F08B37F941A783E7F2C84BFCDCB67C6E24118114BE8C55697F2E2`. Run one fresh corrected 800-cell selector map on V1, assemble Q1 once only after full-map PASS, then perform one exact-positive graph/SCC/condensation topology audit.
+Use only accepted Q1 SHA-256 `5F96C2CFAAFB3EA7EF32943A892A9191FEDCC5DBC7AB28D066F5893D3F560D1E`.
 
-The purpose is to determine whether Q0's two exact-zero sinks persist after one accepted HJB step. Runtime ceilings remain one map, <=800 selectors, <=3144 roots total / <=2880 interior-Z, Q1 D2<=1, graph/SCC/condensation<=1 each, retries=0.
+The task performs one pin-free/source-free invariant-mass validation with `Q1.T @ p = 0`, one structural audit, one SCC verification, one full dense `gesvd`, one normalization and one `Q1.T@p` residual evaluation. No row replacement/pin/source injection, retry, solver substitution, iterative eigensolver, policy remap, D2 reassembly, HJB/V2/nonlinear continuation, MATLAB or downstream calls are authorized.
 
-No additional HJB solve, nonlinear continuation, V2, KFE stationary-mass solve, SVD/eigen/nullspace, Q1.T@p, row replacement/pin/source RHS, MATLAB or downstream call is authorized.
-
-Any Q1 topology result remains diagnostic only; production and Results remain closed.
+PASS remains conditional invariant-mass evidence for the accepted one-step V1-policy operator Q1 only. Production/Results remain closed.
