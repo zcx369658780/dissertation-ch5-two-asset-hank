@@ -8,22 +8,19 @@
 2. 本索引
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
-5. `docs/CH5_MP4C_2018_KFE_D123_INTERIOR_ZERO_LIQUID_Z_OWNER_ADOPTION_ACCEPTANCE_20260916.md`
-6. `docs/CH5_MP4C_2018_KFE_D123_CELL5_LIQUID_DIRECTION_SWITCH_ATTRIBUTION_ACCEPTANCE_20260916.md`
-7. `docs/CH5_MP4C_2018_KFE_D123_CELL5_LIQUID_DIRECTION_SWITCH_ALGEBRAIC_ATTRIBUTION_REPORT.md`
-8. `docs/CH5_MP4C_2018_KFE_D123_LOWER_A_ZERO_KINK_REPAIR_OPTION_A_REEXECUTION_FAIL_CLOSED_ACCEPTANCE_20260916.md`
-9. active task and directly relevant corrected selector/Option-A/D2 source-provenance.
+5. `docs/CH5_MP4C_2018_KFE_D123_OPTION_A_COMPLETE_POLICY_MAP_D2_DIRECT_STEP_ACCEPTANCE_20260916.md`
+6. `docs/CH5_MP4C_2018_KFE_D123_INTERIOR_Z_SWITCHING_REPAIR_AND_OPTION_A_REEXECUTION_REPORT.md`
+7. accepted D1/D2/D3 and earlier KFE leakage/pinning authority
+8. active task and its directly relevant artifacts/source.
 
-Current status: `INTERIOR_ZERO_LIQUID_Z_OWNER_ADOPTED__OPTION_A_REEXECUTION_ACTIVE__PRODUCTION_UNCHANGED`。
-Current active Builder task: `tasks/CH5_MP4C_2018_KFE_D123_INTERIOR_Z_SWITCHING_REPAIR_AND_OPTION_A_REEXECUTION_20260916.md`。
+Current status: `OPTION_A_COMPLETE_POLICY_MAP_D2_DIRECT_STEP_ACCEPTED__CORRECTED_KFE_VALIDATION_DESIGN_ACTIVE__PRODUCTION_UNCHANGED`。
+Current active Builder task: `tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_KFE_VALIDATION_DESIGN_BINDING_ZERO_SCIENCE_20260916.md`。
 Results eligibility=`FALSE`。
 
-Accepted scientific semantics remain D1 numerical upper state constraints + D2 consumed-total-drift conservative assembly with strict zero-tolerance outward-face rejection + D3 regularized-cost-consistent KKT. Option A remains the Owner-selected seed. The lower-a zero-kink multiplier repair remains accepted.
+Accepted corrected semantics include D1 upper numerical state constraints, D2 consumed-total-drift conservative assembly with strict zero-tolerance outward-face rejection, D3 regularized-cost-consistent KKT, active lower-a zero-kink multiplier interval, and Owner-adopted interior zero-liquid Z switching.
 
-Owner has now explicitly inherited the repository's interior zero-liquid `Z` switching law into the corrected selector. Z is eligible only at interior liquid nodes with strict backward/forward direction crossing and a unique finite positive zero-drift root within the positive one-sided-shadow interval. Z controls/a-side KKT are recomputed from the root and enter the same admissibility/Hamiltonian comparison. No averaging/interpolation/floor/clip/tolerance tuning is authorized.
+The accepted Option-A run produced one complete 800-cell map, one passing Q0 D2 generator and one direct HJB step V1. It does not establish HJB convergence or a stationary equilibrium. No KFE call is yet authorized.
 
-One-map root ceiling is now 3144 total: 264 retained boundary-liquid roots + at most 2880 interior-Z roots. The strict trigger governs actual calls; budget alone is not permission.
-
-The active task permits one fresh Option-A map from Cell 0 after focused preflight/code freeze, <=800 selectors, <=3144 roots, D2<=1 only after complete map PASS, direct HJB solve<=1 only after D2 PASS, retries=0. KFE/MATLAB/outer/firm/wage-return/GE/annual/shock/IRF/Results remain zero.
+The active zero-science task must bind whether Q0 itself is the next operator-level KFE diagnostic object or whether a V1 policy remap is required first, and must freeze a pin-free source-free stationarity/normalization/conservation/nonnegativity/rank/uniqueness contract. All scientific/model calls remain zero in this task.
 
 Owner retains final authority over new economic laws, major calibration, production replacement, causal interpretation and Results eligibility. GitHub live main remains repository-state authority.
