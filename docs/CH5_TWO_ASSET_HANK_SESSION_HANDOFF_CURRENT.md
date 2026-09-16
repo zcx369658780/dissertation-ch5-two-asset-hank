@@ -1,45 +1,29 @@
-# Chapter 5 当前交接 — KFE D1-D3 Owner-adopted / corrected diagnostic contract implementation active
+# Chapter 5 当前交接 — D1-D3 static accepted / tiny corrected selector panel active
 
 更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
-
-状态：`KFE_D123_OWNER_ADOPTED__CORRECTED_DIAGNOSTIC_CONTRACT_IMPLEMENTATION_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`KFE_D123_STATIC_IMPLEMENTATION_ACCEPTED__TINY_REAL_CELL_SELECTOR_PANEL_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Governance
 
-Owner 是 final scientific authority；ChatGPT 是 L3 independent Reviewer / scientific-route authority / bounded local numerical-debug authority；Codex 是 bounded Builder/executor。GitHub live `main` 是唯一 repository-state authority。不得进入或把 `zcx369658780/deep-learning-hank` 当作本项目 authority。
+Owner is final scientific authority; ChatGPT is L3 independent Reviewer/scientific-route authority; Codex is bounded Builder. GitHub live `main` is repository-state authority. Do not use `deep-learning-hank` as this project's authority.
 
-## Accepted HJB/local-basin checkpoint
+## Accepted state
 
-Accepted practical grid remains `I=20,J=160,Nz=2,a=[0,100],b=[-2,20],h=1`, diagnostic only. The 31-province first-turn result remains 25 converged + 6 legal nonconverged. Accepted local-basin evidence remains heterogeneous/interleaved; the route for further geometry-only basin mapping is closed for now.
+HJB/local-basin checkpoint is unchanged: practical grid `I=20,J=160,Nz=2,a=[0,100],b=[-2,20],h=1`, 25/31 first-turn converged and six legal nonconverged, with heterogeneous/interleaved local-basin evidence. Further geometry-only basin mapping remains closed.
 
-## Accepted KFE checkpoint
+KFE mechanism authority remains the accepted nationwide finite-box upper-b leakage plus dropped-equation/pinning attribution. Owner has adopted the D1+D2+D3 corrected diagnostic bundle, not a production replacement.
 
-The corrected-2018 five-turn KFE attribution remains controlling mechanism authority: finite-box upper-`b` escape plus MATLAB-style dropped-equation/pinning algebra explains the material source-free residual; off-pin residual is machine-scale. The balancing source is algebraic, not an adopted economic entry/exit mechanism.
-
-`docs/CH5_MP4C_2018_KFE_OWNER_DECISION_RECOVERY_AND_OPTION_MATRIX_REPORT.md` exactly recovered D1-D3 and excluded the later unrelated transfer-control D1 name collision. The candidate report was fast-forwarded to `main` after Reviewer acceptance.
-
-## Owner adoption
-
-On 2026-09-16 the Owner adopted the existing Reviewer recommendation as one **independent corrected diagnostic target bundle**:
-- D1 explicit numerical state constraint on artificial upper finite-box faces/corners;
-- D2 consumed-total-drift conservative assembly with actual distances and `Q 1 = 0` construction invariant for admissible closed-box inputs;
-- D3 transfer KKT/FOC consistent with the existing regularized `s(a)=max(a,a_bar)` cost.
-
-Production replacement, source-faithful modification and Results use are not authorized.
+The isolated static implementation candidate `d8cc627d23172b17d3f4dafce0a5f41886c9815d` is now Reviewer-accepted. D1/D2/D3 synthetic tests and saved-control assembler checks pass with zero scientific/model calls. All 14 legacy saved controls are negative test objects and are rejected because of upper-face drift violations; this is not yet corrected-policy evidence.
 
 ## Active task
 
-`tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_DIAGNOSTIC_CONTRACT_IMPLEMENTATION_STATIC_VALIDATION_20260916.md`
+`tasks/CH5_MP4C_2018_KFE_D123_TINY_REAL_CELL_CORRECTED_SELECTOR_PANEL_20260916.md`
 
-Builder must create an isolated corrected-target implementation and validate it only with synthetic arithmetic and saved-control/assembler-only evidence. Real selector/evaluator, HJB, KFE, MATLAB, outer, firm, wage/return recalculation, GE, annual, shock, IRF and Results calls are all zero.
+Builder must bind exactly the eight M143_FINAL corners plus MATLAB step52 row799 and step57 row379 from accepted call725 provenance, implement the minimum corrected selector only in the isolated namespace, and execute each cell at most once. Budget: <=10 real selector evaluations and <=120 scalar root invocations overall; no HJB/KFE/MATLAB/outer/GE/annual/IRF/Results calls.
 
-Expected report: `docs/CH5_MP4C_2018_KFE_D123_CORRECTED_DIAGNOSTIC_CONTRACT_IMPLEMENTATION_STATIC_VALIDATION_REPORT.md`.
+Implementation and panel identity must be frozen before the first scientific selector evaluation. Once that first call occurs, no selector/scientific-code edits or reruns are allowed under this task.
 
 ## Next sequence
 
-1. Builder implements D1-D3 in an isolated corrected-diagnostic namespace and publishes the static-validation report on a task branch.
-2. Reviewer verifies exact contract fidelity, source-faithful preservation and all-zero scientific call ledger.
-3. If accepted, Reviewer may publish the next bounded task under standing authorization: the preregistered tiny real-cell corrected-target selector panel only.
-4. One target HJB step and later KFE validation remain separate downstream gates.
-5. No steady state / GE / annual / IRF / Results until corrected multi-province KFE production closure is separately accepted.
+If and only if this ten-cell panel is independently accepted, Reviewer may consider a separate one-target-HJB-step task. KFE mass/nonnegativity/uniqueness remains later still. Production replacement and Results remain unauthorized.
