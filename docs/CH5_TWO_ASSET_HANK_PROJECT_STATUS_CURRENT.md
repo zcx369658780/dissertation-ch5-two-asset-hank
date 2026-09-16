@@ -2,29 +2,32 @@
 
 更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`CORRECTED_HJB_OPTION_A_LOWER_A_KINK_REPAIR_ACCEPTED__CELL5_LIQUID_DIRECTION_CONFLICT_ATTRIBUTION_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`CELL5_ZERO_LIQUID_SWITCH_ATTRIBUTION_ACCEPTED__OWNER_INTERIOR_Z_LAW_DECISION_REQUIRED__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Accepted checkpoints
 
-Owner-adopted D1/D2/D3 corrected diagnostic bundle、isolated static implementation、historical ten-cell fail-closed selector evidence、failed-cell algebraic attribution、corrected-HJB one-step design/input binding，以及 Option A seed adoption均继续有效。Source-faithful/production paths remain frozen。
+Owner-adopted D1/D2/D3 corrected diagnostic bundle、isolated static implementation、historical ten-cell fail-closed selector evidence、failed-cell algebraic attribution、corrected-HJB one-step design/input binding、Option A seed adoption，以及 lower-a zero-kink multiplier repair均继续有效。Source-faithful/production paths remain frozen。
 
-## Option A reexecution checkpoint
+## Option A / Cell 5 checkpoint
 
-Builder candidate `054ba005a351d279f98b243bd2891225872ba86e` is accepted as valid fail-closed evidence by `docs/CH5_MP4C_2018_KFE_D123_LOWER_A_ZERO_KINK_REPAIR_OPTION_A_REEXECUTION_FAIL_CLOSED_ACCEPTANCE_20260916.md`.
+Fresh Option A reexecution confirmed Cells 0–4 `SELECTED_ADMISSIBLE` after the lower-a zero-kink repair. The first later failure at Cell 5 `(5,0,0)` is now independently attributed by accepted candidate `fdfabfb8ba12fa52add525b68050de67c2d6369d`.
 
-The authorized active lower-`a` zero-kink multiplier omission is repaired. Fresh Option A execution confirms Cells 0–4 are `SELECTED_ADMISSIBLE`, including Cell 0 with `q_a=lambda_a=0.020741942377698892` and marker `ACTIVE_LOWER_A_ZERO_KINK_MULTIPLIER_INTERVAL_CANONICAL_MIN`.
+Accepted findings:
+- backward liquid branch gives positive drift while forward branch gives negative drift;
+- a unique positive zero-liquid shadow exists at `q_b*=0.01250021388291760706054915182349077777...`;
+- it lies strictly between `p_b^F=0.012481806039037598` and `p_b^B=0.02256028269097067`;
+- historical/source-faithful logic contains a genuine zero-liquid `I0`/`Z` precedent, and accepted Python HJB code contains an endogenous zero-liquid shadow candidate with Hamiltonian comparison;
+- the separate corrected selector/budget does not explicitly inherit this branch and currently assumes interior-b cells consume zero scalar roots.
 
-The first new failure occurs at F-order flat index 5, coordinate `(5,0,0)`, state `b=-0.1578947368421053,a=0,z=.8`. The repaired lower-a zero-kink candidates are valid on the a side, but the frozen liquid finite-difference branches cross direction:
-- backward liquid derivative gives `g_b=3.3967923469887262>0`;
-- forward liquid derivative gives `g_b=-0.009203423814039269<0`.
-Both are rejected by the unchanged derivative-direction contract. This does not yet establish whether the corrected contract is incomplete at an interior liquid switching point or whether the Option A derivative state is structurally incompatible.
+Therefore the current issue is an Owner-level corrected-target law decision, not a Builder implementation decision and not evidence of corrected-HJB/KFE/economic nonexistence.
 
-Runtime: 6 real selector evaluations, 4 scalar roots, retries=0, D2=0, direct HJB solve=0, KFE/MATLAB/downstream=0.
+Reviewer acceptance: `docs/CH5_MP4C_2018_KFE_D123_CELL5_LIQUID_DIRECTION_SWITCH_OWNER_DECISION_REQUIRED_ACCEPTANCE_20260916.md`。
 
-## Active gate
+## Owner decision gate
 
-Current active Builder task:
-`tasks/CH5_MP4C_2018_KFE_D123_CELL5_LIQUID_DIRECTION_SWITCH_ALGEBRAIC_ATTRIBUTION_ZERO_SCIENCE_20260916.md`.
+No scientific Builder task is active.
 
-This task is zero science. It must determine from frozen equations/source/receipts whether Cell 5 requires an already-authorized zero-drift/switching Hamiltonian branch, whether the selector omitted a mathematically legal interior liquid branch, or whether the frozen Option A derivative pair is itself incompatible with the current corrected selector contract. No selector/root/HJB/KFE/MATLAB/model call, repair, rerun, tolerance/floor/cap/grid/calibration change is authorized.
+Owner must explicitly decide whether the corrected D1-D3 selector shall inherit the repository's historical/accepted interior zero-liquid `Z` switching law. If adopted, Reviewer must publish a fresh exact implementation/execution task with a new interior-root budget, eligibility conditions, Hamiltonian comparison contract and fail-closed rules before any Option-A rerun.
+
+Until Owner decision: selector/root/policy-map/D2/HJB/KFE/MATLAB/outer/firm/wage-return/GE/annual/shock/IRF/Results calls remain unauthorized. Production replacement remains unauthorized.
