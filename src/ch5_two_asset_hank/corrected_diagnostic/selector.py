@@ -137,6 +137,15 @@ class SelectorBudget:
 
 
 @dataclass(frozen=True)
+class ActiveEqualityReceipt:
+    face: str
+    raw_residual: float
+    arithmetic_bound: float
+    canonical_drift: float | None
+    marker: str
+
+
+@dataclass(frozen=True)
 class SelectorCandidate:
     active_constraints: tuple[str, ...]
     transfer_branch: str
@@ -153,6 +162,7 @@ class SelectorCandidate:
     g_a: float | None = None
     utility: float | None = None
     hamiltonian: float | None = None
+    raw_hamiltonian: float | None = None
     q_b: float | None = None
     q_a: float | None = None
     slacks: dict[str, float] = field(default_factory=dict)
@@ -164,6 +174,9 @@ class SelectorCandidate:
     closed_face_feasible: bool = False
     d2_assembler_admissible: bool = False
     arithmetic_tolerance: float | None = None
+    active_equality_receipts: dict[str, ActiveEqualityReceipt] = field(
+        default_factory=dict
+    )
 
 
 @dataclass(frozen=True)
@@ -511,6 +524,30 @@ def _candidate(
     tolerance = _fp_bound(
         c, l, d, cost, g_b, g_a, q_b, q_a, p_b, p_a, operations=96
     )
+    raw_g_b = g_b
+    raw_g_a = g_a
+    active_equality_receipts: dict[str, ActiveEqualityReceipt] = {}
+    for axis, face in faces.items():
+        if face not in active:
+            continue
+        raw_residual = raw_g_b if axis == "b" else raw_g_a
+        within_bound = abs(raw_residual) <= tolerance
+        active_equality_receipts[face] = ActiveEqualityReceipt(
+            face=face,
+            raw_residual=float(raw_residual),
+            arithmetic_bound=tolerance,
+            canonical_drift=0.0 if within_bound else None,
+            marker=(
+                "ACTIVE_EQUALITY_CANONICAL_ZERO"
+                if within_bound
+                else "ACTIVE_EQUALITY_BOUND_EXCEEDED"
+            ),
+        )
+        if within_bound:
+            if axis == "b":
+                g_b = 0.0
+            else:
+                g_a = 0.0
     reasons: list[str] = []
     if regime == "positive" and d <= tolerance:
         reasons.append("TRANSFER_SIGN_INCONSISTENT_POSITIVE")
@@ -534,7 +571,10 @@ def _candidate(
         complementarity[face] = float(residual)
         if slack < -tolerance:
             reasons.append(f"{face}_PRIMAL_INFEASIBLE")
-        if face in active and abs(slack) > tolerance:
+        if (
+            face in active
+            and abs(active_equality_receipts[face].raw_residual) > tolerance
+        ):
             reasons.append(f"{face}_ACTIVE_EQUALITY_RESIDUAL")
         if multiplier < -tolerance:
             reasons.append(f"{face}_NEGATIVE_MULTIPLIER")
@@ -561,10 +601,28 @@ def _candidate(
         transfer_kkt = None
     if transfer_kkt is not None and not transfer_kkt.satisfied:
         reasons.append("TRANSFER_KKT_RESIDUAL")
+    raw_hamiltonian = float(utility + p_b * raw_g_b + p_a * raw_g_a)
     hamiltonian = float(utility + p_b * g_b + p_a * g_a)
-    if not all(math.isfinite(value) for value in (c, l, d, cost, g_b, g_a, utility, hamiltonian, q_a)):
+    if not all(
+        math.isfinite(value)
+        for value in (
+            c,
+            l,
+            d,
+            cost,
+            g_b,
+            g_a,
+            raw_g_b,
+            raw_g_a,
+            utility,
+            hamiltonian,
+            raw_hamiltonian,
+            q_a,
+        )
+    ):
         reasons.append("NONFINITE_CANDIDATE")
     closed_face_feasible = all(value >= -tolerance for value in slacks.values())
+    d2_closed_face_feasible = all(value >= 0.0 for value in slacks.values())
     admissible = not reasons
     return SelectorCandidate(
         active_constraints=active,
@@ -582,6 +640,7 @@ def _candidate(
         g_a=g_a,
         utility=utility,
         hamiltonian=hamiltonian,
+        raw_hamiltonian=raw_hamiltonian,
         q_b=q_b,
         q_a=q_a,
         slacks=slacks,
@@ -591,8 +650,11 @@ def _candidate(
         transfer_target_interval=None if transfer_kkt is None else transfer_kkt.target_interval,
         q_b_domain_ok=q_b > 0.0,
         closed_face_feasible=closed_face_feasible,
-        d2_assembler_admissible=closed_face_feasible and math.isfinite(g_b) and math.isfinite(g_a),
+        d2_assembler_admissible=(
+            d2_closed_face_feasible and math.isfinite(g_b) and math.isfinite(g_a)
+        ),
         arithmetic_tolerance=tolerance,
+        active_equality_receipts=active_equality_receipts,
     )
 
 
