@@ -1,25 +1,27 @@
-# Chapter 5 当前交接 — complete Option-A map/D2/direct-step accepted / corrected KFE design active
+# Chapter 5 当前交接 — corrected Q0 KFE design accepted / bounded operator validation active
 
 更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
-状态：`OPTION_A_COMPLETE_POLICY_MAP_D2_DIRECT_STEP_ACCEPTED__CORRECTED_KFE_VALIDATION_DESIGN_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`CORRECTED_Q0_KFE_DESIGN_ACCEPTED__BOUNDED_SOURCE_FREE_OPERATOR_VALIDATION_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Governance
 
 Owner is final scientific authority; ChatGPT is L3 Reviewer/scientific-route authority; Codex is bounded Builder. GitHub live `main` is repository-state authority. `deep-learning-hank` is separate.
 
-## Accepted scientific state
+## Accepted state
 
-Option A remains the Owner-selected seed. Lower-a zero-kink and interior liquid Z switching laws are accepted corrected-target semantics. Candidate `9a4eb0e5ec3627743596daa9b991436d2124efa9` completed and is Reviewer-accepted: 800/800 cells selected, D2 passed once, and one direct HJB step produced finite V1 with machine-scale backward error.
+Corrected semantics include D1 upper numerical state constraints, D2 consumed-total-drift conservative assembly, D3 regularized-cost-consistent KKT, active lower-a zero-kink multiplier handling, and Owner-adopted interior liquid Z switching.
 
-The accepted run used 800 selector evaluations, 442 total roots / 206 interior-Z roots, selected 42 Z policies, and had zero retries. KFE and all downstream blocks were not called. No V1 selector map or nonlinear continuation was executed.
+Candidate `9a4eb0e5ec3627743596daa9b991436d2124efa9` produced the accepted complete Option-A map, conservative Q0 and one direct V1 step. Candidate `494dfc741dbf494a5b367b3abe99234a5708df4c` then froze the next KFE route.
 
-Interpretation remains narrow: the accepted `Q0` is a complete conservative corrected operator generated from the Option-A V0 policy map, while V1 is only the output of one direct step. Neither establishes an HJB fixed point or stationary equilibrium.
+The next experiment is explicitly an operator-level validation of Q0. No V1 policy remap is required for this claim. A future Q0 stationary-mass PASS remains conditional on the V0 policy operator and is not HJB convergence or stationary economic equilibrium.
 
 ## Active task
 
-`tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_KFE_VALIDATION_DESIGN_BINDING_ZERO_SCIENCE_20260916.md`
+`tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_Q0_KFE_OPERATOR_VALIDATION_20260916.md`
 
-Builder must perform zero-science design/provenance review only. The task must decide whether Q0 may support a bounded operator-level source-free KFE diagnostic without a V1 remap, or whether V1 policy remapping is required first. It must freeze transpose/orientation, F-order mapping, pin-free homogeneous stationarity, normalization, conservation, nonnegative-mass, rank/nullity/uniqueness, solver budget and interpretation rules.
+Use the exact accepted Q0 artifact SHA-256 `093E1AF1ADFEEE5C50D3DD91EDDD678EBAC5BBA6C42E64DE73A63B82102AF1D5`. Forward stationarity is `Q0.T @ p = 0`, state ordering is `(20,20,2)` F-order with b fastest, and density view is `g=p/(70/361)`.
 
-All selector/root/policy-map/D2/HJB/KFE/MATLAB/downstream calls remain zero in this task. Do not publish a successor task.
+Allowed runtime is one structural/conservation audit, one SCC decomposition, one dense `gesvd`, one normalized stationary candidate, one `Q0 @ 1`, and one `Q0.T @ p`. No row replacement/pin/source RHS, iterative eigensolver, solver substitution, retry, clipping, selector/root/policy-map/D2/HJB/V1-remap/MATLAB/downstream call is authorized.
+
+PASS requires exactly one closed communicating class, numerical rank 799/nullity 1, second-smallest singular value above the frozen threshold, bounded source-free residual, normalization, and nonnegative mass. Production/Results remain closed.
