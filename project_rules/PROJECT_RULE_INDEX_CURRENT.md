@@ -8,17 +8,17 @@
 2. 本索引
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
-5. `docs/CH5_MP4C_2018_KFE_D123_Q0_TWO_CLOSED_CLASSES_FAIL_CLOSED_ACCEPTANCE_20260916.md`
-6. `docs/CH5_MP4C_2018_KFE_D123_CORRECTED_Q0_KFE_OPERATOR_VALIDATION_RERUN_REPORT.md`
-7. `docs/CH5_MP4C_2018_KFE_D123_Q0_KFE_STRUCTURAL_AUDIT_ARITHMETIC_REAGGREGATION_ACCEPTANCE_20260916.md`
-8. active task and exact accepted Q0 / 800 policy receipts.
+5. `docs/CH5_MP4C_2018_KFE_D123_Q0_TWO_CLOSED_CLASSES_STRUCTURAL_ATTRIBUTION_ACCEPTANCE_20260916.md`
+6. `docs/CH5_MP4C_2018_KFE_D123_Q0_TWO_CLOSED_CLASSES_STRUCTURAL_ATTRIBUTION_REPORT.md`
+7. `docs/CH5_MP4C_2018_KFE_D123_OPTION_A_COMPLETE_POLICY_MAP_D2_DIRECT_STEP_ACCEPTANCE_20260916.md`
+8. active task and exact accepted V1/Q0 artifacts plus corrected selector/generator authority.
 
-Current status: `Q0_KFE_TWO_CLOSED_CLASSES_ACCEPTED__STRUCTURAL_ATTRIBUTION_ACTIVE__PRODUCTION_UNCHANGED`。
-Current active Builder task: `tasks/CH5_MP4C_2018_KFE_D123_Q0_TWO_CLOSED_CLASSES_STRUCTURAL_ATTRIBUTION_20260916.md`。
+Current status: `Q0_TWO_ZERO_DRIFT_SINKS_ATTRIBUTED__V1_POLICY_REMAP_Q1_TOPOLOGY_DIAGNOSTIC_ACTIVE__PRODUCTION_UNCHANGED`。
+Current active Builder task: `tasks/CH5_MP4C_2018_KFE_D123_V1_POLICY_REMAP_AND_Q1_RECURRENT_TOPOLOGY_DIAGNOSTIC_20260916.md`。
 Results eligibility=`FALSE`。
 
-Accepted Q0 passes corrected construction/conservation/closed-face checks but its exact-positive graph has two closed communicating classes. This structurally violates Q0 invariant-mass uniqueness. Do not repair graph connectivity with tolerances, diffusion, source terms, pins or clipping.
+Accepted Q0 structural attribution: recurrent classes are flats `5,405` and `6,406`, exact-zero asset-drift sinks created jointly by interior-liquid Z and active lower-a zero-kink/state-constraint handling. Do not reinterpret this as economic multiple equilibria.
 
-The active task is attribution only: recover exact recurrent-state membership, selected policies/drifts/outgoing rates, SCC condensation reachability basins and the topology/mechanism creating the two sinks. No SVD/nullspace/stationary-mass solve, `Q0.T@p`, selector/root/policy-map/D2/HJB/V1-remap/MATLAB/downstream calls are authorized.
+The active task may remap accepted V1 exactly once, assemble Q1 once after a full 800-cell PASS, and audit Q1 recurrent topology once. No new law, grid/calibration change, additional HJB solve, nonlinear continuation, KFE stationary mass, SVD/eigen/nullspace, row replacement/pin/source RHS, MATLAB or downstream work is authorized.
 
-Do not describe Q0 structural stationary-space multiplicity as economic multiple equilibria or corrected HJB fixed-point multiplicity. Owner retains final authority over any new economic or policy law.
+Owner retains final authority over new economic laws, major calibration, production replacement, causal interpretation and Results eligibility. GitHub live main remains repository-state authority.
