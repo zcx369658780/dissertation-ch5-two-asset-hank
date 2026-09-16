@@ -2,30 +2,26 @@
 
 更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`Q0_KFE_FAIL_CLOSED_ACCEPTED__SECONDARY_DIAGONAL_REAGGREGATION_AUDIT_RECLASSIFIED__BOUNDED_RERUN_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`Q0_KFE_TWO_CLOSED_CLASSES_ACCEPTED__STRUCTURAL_ATTRIBUTION_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Accepted scientific checkpoint
 
 Owner-adopted D1/D2/D3 corrected semantics、lower-a zero-kink multiplier handling、interior zero-liquid Z switching、Option-A 800-cell complete policy map、accepted Q0 conservative generator以及一次 direct HJB step均继续有效。Source-faithful/production paths remain frozen。
 
-## Q0 KFE design
+## Q0 KFE operator result
 
-`docs/CH5_MP4C_2018_KFE_D123_CORRECTED_KFE_VALIDATION_DESIGN_BINDING_REPORT.md` 已接受：Q0 可直接用于 operator-level、source-free KFE validation；无需先进行 V1 policy remap。冻结 forward equation 为 `Q0.T @ p = 0`，F-order `(20,20,2)`，`omega=70/361`，pin-free homogeneous nullspace，唯一 full `gesvd`，以及 SCC/rank/nullity/nonnegative-mass/source-free residual 检查。
+The bounded source-free Q0 validation rerun candidate `132b2657c61e0707a5fff96b936b5a62a78dbb2e` is accepted as valid fail-closed evidence by `docs/CH5_MP4C_2018_KFE_D123_Q0_TWO_CLOSED_CLASSES_FAIL_CLOSED_ACCEPTANCE_20260916.md`.
 
-## First runtime attempt
+Accepted Q0 passes construction identity, bounded sparse reaggregation, `Q0@1`, nonnegative offdiagonals and exact-zero closed-face outward flux. The exact-positive directed graph has 2318 edges, 400 SCCs of size 2, exactly two closed communicating classes of size 2 each, and 796 transient states. Because the finite conservative generator has more than one closed class, Q0 does not satisfy the frozen structural uniqueness requirement. GESVD and stationary-mass solving were correctly not executed.
 
-Builder candidate `d4f643f1d26ad5a28395f60a58c545447abda7ba` 已接受为有效 fail-closed evidence。该 run 验证 exact Q0 identity、有限 CSR、zero negative offdiagonal、`Q0@1` within frozen bound 以及四个资产边界 exact-zero outward flux，但在 secondary sparse offdiagonal reaggregation 上得到 `3.552713678800501e-15` 而非 exact zero，因此按旧 task 停在 SCC/SVD 之前。
-
-Reviewer 已裁定：accepted D2 receipt 中相对于 retained-outgoing construction array 的 `diagonal_construction_error=0.0` 仍是 exact construction authority；从 serialized CSR offdiagonals 独立重聚合是不同浮点 reduction，不应要求 bitwise exact zero。该 secondary audit 改为固定 prospective bound `<=5.222144858126786e-14`，差值必须原样持久化，不能清零或调参。
-
-Authority: `docs/CH5_MP4C_2018_KFE_D123_Q0_KFE_STRUCTURAL_AUDIT_ARITHMETIC_REAGGREGATION_ACCEPTANCE_20260916.md`。
+This is structural nonuniqueness of the invariant stationary space for the accepted V0-policy operator Q0. It is not evidence of economic multiple equilibria, nonlinear HJB nonexistence, corrected fixed-point multiplicity, production readiness or Results authority.
 
 ## Active gate
 
 Current active Builder task:
-`tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_Q0_KFE_OPERATOR_VALIDATION_RERUN_WITH_BOUND_REAGGREGATION_20260916.md`。
+`tasks/CH5_MP4C_2018_KFE_D123_Q0_TWO_CLOSED_CLASSES_STRUCTURAL_ATTRIBUTION_20260916.md`。
 
-Fresh rerun only. Scientific ceilings remain: Q0 load 1, structural audit 1, `Q0@1` 1, SCC 1, full dense GESVD 1, normalized candidate 1, `Q0.T@p` 1; retries/solver substitutions/row replacement/iterative eigensolver are zero. Selector/root/policy-map/D2/HJB/V1 remap/MATLAB/downstream remain zero.
+The task must map both closed classes to exact F-order grid states and accepted cell receipts, identify selected policies/drifts and outgoing rates, recover the SCC condensation/reachability basins, and determine whether closure is caused by exact zero asset drifts, state-constraint/boundary behavior, deterministic policy-flow topology, or a mixed mechanism.
 
-A future PASS validates only the invariant mass of accepted V0-policy operator Q0. It is not nonlinear HJB convergence, joint HJB-KFE fixed point, steady state, production readiness or Results authority.
+Allowed runtime is structural only: accepted Q0 load <=1, graph audit <=1, SCC decomposition <=1, condensation/reachability analysis <=1, accepted receipt reads <=800. GESVD/nullspace/stationary-mass solve, `Q0.T@p`, selector/root/policy-map/D2/HJB/V1-remap/MATLAB/downstream calls are all zero.
