@@ -4,37 +4,38 @@ Results eligibility=`FALSE`。
 
 ## Accepted route
 
-The frozen source-faithful reference and separately governed corrected successor remain distinct. Owner adopted D1 upper numerical state constraints, D2 consumed-total-drift conservative assembly, and D3 regularized-cost-consistent KKT for the corrected diagnostic target. Static implementation is accepted.
+The frozen source-faithful reference and separately governed corrected successor remain distinct. Owner-adopted corrected semantics now include D1 upper numerical state constraints, D2 consumed-total-drift conservative assembly, D3 regularized-cost-consistent KKT, active lower-a zero-kink multiplier handling, and interior zero-liquid Z switching.
 
-Historical derivative-panel failures are attributed and closed. Owner selected source-native Option A `hjb100_initialization.mat:v0` as the first corrected one-step seed. The lower-a zero-kink multiplier omission was repaired and accepted.
+## KFE-D2C-D — completed and accepted
 
-## Option-A route so far
+Candidate `9a4eb0e5ec3627743596daa9b991436d2124efa9` completed a fresh Option-A execution:
+- 800/800 corrected cells `SELECTED_ADMISSIBLE`;
+- 800 selector evaluations;
+- 442 roots total, including 206 interior-Z roots;
+- 42 selected Z policies;
+- one D2 assembly PASS;
+- one sparse direct HJB step PASS;
+- no retries, V1 selector map, nonlinear continuation, KFE, MATLAB or downstream calls.
 
-Fresh reexecution passed Cells 0–4 and failed at Cell 5 `(5,0,0)` because the backward liquid derivative implied positive/forward drift while the forward derivative implied negative/backward drift.
+The direct step produced V1 SHA-256 `5C410EBC329F08B37F941A783E7F2C84BFCDCB67C6E24118114BE8C55697F2E2` with normwise backward error `1.9727855630325988e-16`.
 
-The accepted zero-science attribution proves a unique finite positive zero-liquid shadow strictly between the raw one-sided liquid shadows and documents historical/source-faithful `I0` plus accepted Python HJB `Z` precedent. The previous corrected selector/budget did not explicitly inherit this branch.
+This closes the single-step corrected-HJB integration gate as bounded diagnostic evidence. It does not establish nonlinear HJB convergence or a corrected fixed point.
 
-## KFE-D2C-C — Owner decision completed
-
-Owner explicitly adopted inheritance of the interior zero-liquid `Z` switching law into the corrected D1-D3 selector.
-
-Z is a generic interior switching candidate, not a Cell-5 patch. It is eligible only under strict backward/forward direction crossing with positive finite one-sided shadows and a unique finite zero-drift root inside their interval. Controls and a-side KKT are recomputed from the root under the same frozen laws, and the candidate enters normal Hamiltonian comparison. No averaging, interpolation, floor, clipping or fitted tolerance is permitted.
-
-The one-map root ceiling is revised to 3144 total: retain 264 boundary-liquid roots and add at most `720*4=2880` interior-Z roots. Actual Z root calls remain conditional on the strict crossing trigger.
-
-## KFE-D2C-D — active: interior Z implementation + fresh Option-A map
+## KFE-D2D-A — active: corrected KFE validation design/binding, zero science
 
 Active task:
-`tasks/CH5_MP4C_2018_KFE_D123_INTERIOR_Z_SWITCHING_REPAIR_AND_OPTION_A_REEXECUTION_20260916.md`
+`tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_KFE_VALIDATION_DESIGN_BINDING_ZERO_SCIENCE_20260916.md`
 
-Implement the Owner-adopted generic Z law, run focused preflight, freeze scientific code, then restart Option A from Cell 0. Ceiling: one map, <=800 selectors, <=3144 roots total, interior-Z <=2880, D2<=1 only after all 800 cells pass, sparse direct HJB solve<=1 only after D2 passes, retries=0. First failed cell stops. No V1 selector map or nonlinear continuation.
+Before any KFE runtime, determine whether the accepted pre-step Q0 is sufficient for an operator-level source-free KFE diagnostic or whether a V1 policy remap is scientifically required. Freeze exact transpose/F-order mapping, pin-free homogeneous stationarity, normalization, conservation, nonnegative-mass, rank/nullity/uniqueness, deterministic solver budget and fail-closed rules.
 
-## KFE-D2D — later corrected KFE validation
+No scientific/model call is allowed in this design gate.
 
-Even a successful one-step HJB experiment does not establish nonlinear HJB convergence or stationary-density validity. Corrected KFE mass/nonnegativity/uniqueness requires a later exact task.
+## KFE-D2D-B — conditional runtime
+
+Only after D2D-A acceptance may Reviewer publish a bounded corrected KFE validation execution task. A future KFE PASS would be operator/stationary-density diagnostic evidence only unless a separately accepted HJB fixed point exists.
 
 ## KFE-D3 — later production closure
 
 Corrected multi-province production replacement, steady state, GE/annual/dynamics/IRF and Results remain downstream gates with separate evidence and authority.
 
-Capital/labor K1/C1/K1B/K2 routes remain deferred, not abandoned, behind the current household/KFE integration blocker.
+Capital/labor K1/C1/K1B/K2 routes remain deferred, not abandoned, behind the current household/KFE integration route.
