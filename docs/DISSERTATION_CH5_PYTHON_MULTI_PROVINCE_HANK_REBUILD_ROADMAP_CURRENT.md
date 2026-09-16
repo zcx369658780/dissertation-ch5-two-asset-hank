@@ -12,22 +12,26 @@ Candidate `9a4eb0e5ec3627743596daa9b991436d2124efa9` completed a fresh 800-cell 
 
 ## KFE-D2D-A — completed and accepted
 
-Zero-science design candidate `494dfc741dbf494a5b367b3abe99234a5708df4c` is accepted. It freezes Q0 itself as the next operator-level KFE validation object. A V1 policy remap is not required for that claim and remains outside the next runtime gate.
+Zero-science design candidate `494dfc741dbf494a5b367b3abe99234a5708df4c` freezes Q0 as the next operator-level KFE object with pin-free/source-free `Q0.T @ p = 0`, exact-positive-edge SCC analysis and one dense `gesvd`. V1 remap is not required for this operator claim.
 
-The accepted KFE contract is pin-free and source-free: `Q0.T @ p = 0`, F-order `(20,20,2)`, mass vector `p`, density view `g=p/(70/361)`, no row replacement or RHS injection, one exact-positive-edge SCC decomposition and one dense `gesvd` nullspace/rank decomposition.
+## KFE-D2D-B1 — first runtime attempt accepted fail-closed
 
-## KFE-D2D-B — active: bounded corrected Q0 KFE operator validation
+Candidate `d4f643f1d26ad5a28395f60a58c545447abda7ba` stopped before SCC/SVD because a secondary CSR offdiagonal reaggregation gave diagonal discrepancy `3.552713678800501e-15` rather than bitwise zero. Q0 identity, finite/nonnegative offdiagonals, `Q0@1` bound and exact-zero outward-face ledgers all passed.
+
+Reviewer classified this as an overstrict representation-audit condition, not a D2 generator defect. The accepted D2 retained-outgoing construction receipt remains exact-zero authority; independent CSR reaggregation must preserve its raw discrepancy and pass fixed bound `<=5.222144858126786e-14`.
+
+## KFE-D2D-B2 — active: bounded corrected Q0 KFE rerun
 
 Active task:
-`tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_Q0_KFE_OPERATOR_VALIDATION_20260916.md`
+`tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_Q0_KFE_OPERATOR_VALIDATION_RERUN_WITH_BOUND_REAGGREGATION_20260916.md`
 
-Use the exact accepted Q0 artifact. PASS requires one closed communicating class, rank 799/nullity 1 under the prospective threshold, second-smallest singular value above threshold, source-free stationarity within prospective arithmetic bounds, normalized mass, and nonnegative mass within the frozen allowance.
+Only the validator/test may be minimally changed for the secondary audit semantics. Fresh run from Q0 load: one structural audit, one Q0@1, one SCC, one full dense `gesvd`, one normalized stationary candidate, one `Q0.T@p`; no retries, solver substitutions, row replacement, pin/source RHS, iterative eigensolver, V1 remap, selector/root/policy-map/D2/HJB/MATLAB/downstream.
 
-Runtime is strictly bounded to one Q0 structural audit, one SCC decomposition, one full dense `gesvd`, one normalized candidate, one `Q0 @ 1`, and one `Q0.T @ p`; no retries or solver substitutions. Selector/root/policy-map/D2/HJB/V1-remap/KFE row-replacement/MATLAB/downstream calls remain zero.
+PASS still requires exactly one closed communicating class, rank 799/nullity 1 under frozen threshold, second-smallest singular value above threshold, source-free stationarity, normalization and nonnegative mass within prospective bounds.
 
 ## KFE-D2D-C — conditional successor
 
-Only after independent acceptance of D2D-B may Reviewer decide whether a post-V1 remap/nonlinear HJB continuation route or a broader HJB-KFE fixed-point design is scientifically justified. A Q0 KFE PASS alone is not a stationary economic equilibrium.
+Only after independent acceptance of D2D-B2 may Reviewer decide whether a post-V1 remap/nonlinear HJB continuation route or broader HJB-KFE fixed-point design is scientifically justified. A Q0 KFE PASS alone is not a stationary economic equilibrium.
 
 ## KFE-D3 — later production closure
 
