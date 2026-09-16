@@ -1,7 +1,7 @@
-# Chapter 5 当前交接 — failed-cell attribution accepted / corrected HJB one-step design active
+# Chapter 5 当前交接 — corrected HJB one-step design accepted / Owner seed decision required
 
 更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
-状态：`KFE_D123_FAILED_CELL_ATTRIBUTION_ACCEPTED__CORRECTED_HJB_ONE_STEP_DESIGN_BINDING_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`CORRECTED_HJB_ONE_STEP_DESIGN_ACCEPTED__OWNER_SEED_DECISION_REQUIRED__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Governance
@@ -10,18 +10,16 @@ Owner is final scientific authority; ChatGPT is L3 Reviewer/scientific-route aut
 
 ## Accepted state
 
-The corrected D1-D3 target remains distinct from the frozen MATLAB-faithful/production path. Static contract implementation is accepted. The fresh ten-cell selector panel is accepted as fail-closed evidence: seven cells selected and passed strict D2; Cells 4/8/10 did not admit a policy under frozen historical derivative inputs.
+D1/D2/D3 remain Owner-adopted only for a separate corrected diagnostic target. Static implementation is accepted. The fresh ten-cell historical selector panel is accepted as fail-closed evidence, and its three failures are now algebraically attributed to incompatibility of frozen historical derivative inputs with the corrected contract. No selector omission was found; do not rerun the same panel.
 
-The zero-science forensic candidate `602a96e6bb7a65cea5895fc1d6ee1887f7e5a0b5` is now Reviewer-accepted. Cells 4/8 are algebraically impossible because upper-b `p_b^B<0` implies `q_b<=p_b^B<0`; Cell 10 has an interior-a derivative-direction fixed-point conflict at the unique active-upper-b liquid-equality root. No selector branch omission was found.
+## Corrected HJB design result
 
-Interpretation boundary: the failed inputs are historical MATLAB-faithful derivative arrays, not derivatives from a corrected-target HJB fixed point. Do not infer economic nonexistence or corrected-HJB failure, and do not repeat the same historical-derivative panel.
+The zero-science design/input-binding report at candidate `202c71f757266eee38da7c52d56658680439d010` is Reviewer-accepted. The common non-seed contract is frozen: call-725 `(20,20,2)` F-order grid; fixed scalars; raw one-sided derivatives; corrected D1/D3 policy map; D2 conservative generator; one implicit direct HJB step only.
 
-## Active task
+The design remains blocked on one substantive scientific choice: the starting value function. Current authority identifies at least three distinct exact objects but does not rank them: source-native call-725 initialization, historical post-step143 terminal value state, and one MATLAB-faithful replay output. None is a corrected-target fixed point.
 
-`tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_HJB_ONE_STEP_DESIGN_AND_INPUT_BINDING_ZERO_SCIENCE_20260916.md`
+Reviewer recommendation, not adoption: choose source-native `hjb100_initialization.mat:v0` for the first corrected diagnostic because it is an accepted numerical initialization and carries less endogenous path dependence from the historical source-faithful boundary/operator trajectory. No convergence or success advantage is asserted.
 
-Builder must recover and freeze the exact starting value/seed, grid, prices/calibration, derivative construction, policy-map contract, D2 generator and one-step HJB equation for the smallest corrected-target HJB experiment. This is a design/provenance gate only: selector/root/HJB/KFE/MATLAB/model calls are all zero.
+## Current gate
 
-If repository authority does not uniquely support the seed or input contract, fail closed and return the unresolved scientific choice to Owner. Do not select a seed merely because it makes failed historical cells disappear.
-
-Only after this design gate is independently accepted may Reviewer publish a separately budgeted single corrected policy-map + at most one direct HJB solve task. KFE and production remain later gates.
+There is no active Builder task. Owner must explicitly choose the seed path/field/hash and rationale. Only then may Reviewer publish a separately budgeted task allowing exactly one corrected policy map and at most one direct HJB solve. KFE, nonlinear continuation, production replacement and Results remain later gates.
