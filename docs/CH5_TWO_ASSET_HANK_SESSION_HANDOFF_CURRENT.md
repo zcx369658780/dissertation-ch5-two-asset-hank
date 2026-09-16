@@ -1,29 +1,25 @@
-# Chapter 5 当前交接 — D1-D3 static accepted / tiny corrected selector panel active
+# Chapter 5 当前交接 — tiny selector fail-closed accepted / active-equality representation repair active
 
 更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
-状态：`KFE_D123_STATIC_IMPLEMENTATION_ACCEPTED__TINY_REAL_CELL_SELECTOR_PANEL_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`KFE_D123_TINY_SELECTOR_FAIL_CLOSED_ACCEPTED__ACTIVE_EQUALITY_REPRESENTATION_REPAIR_AND_REEXECUTION_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Governance
 
-Owner is final scientific authority; ChatGPT is L3 independent Reviewer/scientific-route authority; Codex is bounded Builder. GitHub live `main` is repository-state authority. Do not use `deep-learning-hank` as this project's authority.
+Owner is final scientific authority; ChatGPT is L3 Reviewer/scientific-route authority; Codex is bounded Builder. GitHub live `main` is repository-state authority. `deep-learning-hank` is a separate project.
 
-## Accepted state
+## Current accepted state
 
-HJB/local-basin checkpoint is unchanged: practical grid `I=20,J=160,Nz=2,a=[0,100],b=[-2,20],h=1`, 25/31 first-turn converged and six legal nonconverged, with heterogeneous/interleaved local-basin evidence. Further geometry-only basin mapping remains closed.
+D1/D2/D3 are Owner-adopted only for a separate corrected diagnostic target. Static implementation is accepted. The first tiny real-cell task is accepted as a fail-closed execution record: Cell 1 passed; Cell 2 stopped on a post-freeze selector/D2 representation mismatch; no inference is allowed for Cells 3-10.
 
-KFE mechanism authority remains the accepted nationwide finite-box upper-b leakage plus dropped-equation/pinning attribution. Owner has adopted the D1+D2+D3 corrected diagnostic bundle, not a production replacement.
+The mismatch is specific: an active upper-`b` equality produced raw floating residual `2.162339589068668e-16`. Selector equality logic allowed it under a prospectively defined arithmetic bound, while D2 preserves the adopted strict rule that every positive outward upper-face drift is rejected. D2 is not to be relaxed.
 
-The isolated static implementation candidate `d8cc627d23172b17d3f4dafce0a5f41886c9815d` is now Reviewer-accepted. D1/D2/D3 synthetic tests and saved-control assembler checks pass with zero scientific/model calls. All 14 legacy saved controls are negative test objects and are rejected because of upper-face drift violations; this is not yet corrected-policy evidence.
+Reviewer disposition: for an already-active mathematical equality only, retain the raw residual and prospective bound; if inside bound, represent the final consumed drift as exact `0.0` before D2. If outside bound, reject. Never apply this to slack faces. Persist the full selector receipt before D2 so failure evidence survives without a repeated scientific call.
 
 ## Active task
 
-`tasks/CH5_MP4C_2018_KFE_D123_TINY_REAL_CELL_CORRECTED_SELECTOR_PANEL_20260916.md`
+`tasks/CH5_MP4C_2018_KFE_D123_SELECTOR_ACTIVE_EQUALITY_CANONICALIZATION_AND_TEN_CELL_REEXECUTION_20260916.md`
 
-Builder must bind exactly the eight M143_FINAL corners plus MATLAB step52 row799 and step57 row379 from accepted call725 provenance, implement the minimum corrected selector only in the isolated namespace, and execute each cell at most once. Budget: <=10 real selector evaluations and <=120 scalar root invocations overall; no HJB/KFE/MATLAB/outer/GE/annual/IRF/Results calls.
+Builder may implement only the two bounded repairs, run synthetic preflight, freeze code, then reexecute the same exact ten-cell panel under a fresh <=10-selector / <=120-root budget with no retry. Prior Cell 1 remains historical evidence and does not substitute for the new full-panel run.
 
-Implementation and panel identity must be frozen before the first scientific selector evaluation. Once that first call occurs, no selector/scientific-code edits or reruns are allowed under this task.
-
-## Next sequence
-
-If and only if this ten-cell panel is independently accepted, Reviewer may consider a separate one-target-HJB-step task. KFE mass/nonnegativity/uniqueness remains later still. Production replacement and Results remain unauthorized.
+HJB/KFE/MATLAB/outer/GE/annual/IRF/Results remain zero. If the reexecution PASSes, a one-target-HJB-step task is still a separate future gate.

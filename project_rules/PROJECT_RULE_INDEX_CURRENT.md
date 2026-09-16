@@ -8,20 +8,19 @@
 2. 本索引
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
-5. `docs/CH5_MP4C_2018_KFE_D123_CORRECTED_DIAGNOSTIC_CONTRACT_IMPLEMENTATION_STATIC_VALIDATION_ACCEPTANCE_20260916.md`
-6. `docs/CH5_MP4C_2018_KFE_D123_CORRECTED_DIAGNOSTIC_CONTRACT_IMPLEMENTATION_STATIC_VALIDATION_REPORT.md`
-7. `docs/CH5_MP4C_2018_KFE_D123_DIAGNOSTIC_BUNDLE_OWNER_ADOPTION_ACCEPTANCE_20260916.md`
-8. `docs/CH5_MP4C_2018_KFE_OWNER_DECISION_RECOVERY_AND_OPTION_MATRIX_REPORT.md`
-9. `docs/CH5_MP4C_CALL725_BOUNDARY_GENERATOR_REPAIR_SPEC_ACCEPTANCE.md`
-10. `docs/CH5_MP4C_CALL725_BOUNDARY_GENERATOR_REPAIR_SPEC_REPORT.md`
-11. if an active task exists, read its exact task and direct authority.
+5. `docs/CH5_MP4C_2018_KFE_D123_TINY_REAL_CELL_SELECTOR_PANEL_FAILURE_ACCEPTANCE_20260916.md`
+6. `docs/CH5_MP4C_2018_KFE_D123_TINY_REAL_CELL_CORRECTED_SELECTOR_PANEL_REPORT.md`
+7. `docs/CH5_MP4C_2018_KFE_D123_CORRECTED_DIAGNOSTIC_CONTRACT_IMPLEMENTATION_STATIC_VALIDATION_ACCEPTANCE_20260916.md`
+8. `docs/CH5_MP4C_2018_KFE_D123_DIAGNOSTIC_BUNDLE_OWNER_ADOPTION_ACCEPTANCE_20260916.md`
+9. `docs/CH5_MP4C_CALL725_BOUNDARY_GENERATOR_REPAIR_SPEC_REPORT.md`
+10. active task and directly relevant receipts/source.
 
-Current status: `KFE_D123_STATIC_IMPLEMENTATION_ACCEPTED__TINY_REAL_CELL_SELECTOR_PANEL_ACTIVE__PRODUCTION_UNCHANGED`.
-Current active Builder task: `tasks/CH5_MP4C_2018_KFE_D123_TINY_REAL_CELL_CORRECTED_SELECTOR_PANEL_20260916.md`.
+Current status: `KFE_D123_TINY_SELECTOR_FAIL_CLOSED_ACCEPTED__ACTIVE_EQUALITY_REPRESENTATION_REPAIR_AND_REEXECUTION_ACTIVE__PRODUCTION_UNCHANGED`.
+Current active Builder task: `tasks/CH5_MP4C_2018_KFE_D123_SELECTOR_ACTIVE_EQUALITY_CANONICALIZATION_AND_TEN_CELL_REEXECUTION_20260916.md`.
 Results eligibility=`FALSE`.
 
-The Owner-adopted D1/D2/D3 corrected diagnostic contracts are now implemented in isolation and accepted at the static/saved-control gate. Source-faithful/production paths remain frozen. All 14 saved legacy control snapshots are accepted only as negative assembler inputs; they do not prove corrected-policy feasibility.
+Accepted scientific semantics remain D1 numerical upper state constraints + D2 consumed-total-drift conservative assembly with strict zero-tolerance outward-face rejection + D3 regularized-cost-consistent KKT. The prior Cell 2 event is an implementation representation mismatch, not authority to relax D2 or introduce a fitted tolerance.
 
-The active task is the exact preregistered ten-cell historical call725 selector panel. Runtime ceiling is <=10 corrected selector evaluations and <=120 scalar root invocations overall. HJB/KFE/MATLAB/outer/firm/wage-return/GE/annual/shock/IRF/Results remain zero. No tolerance, floor, cap, calibration, grid, production or economic-law change is authorized.
+Only an already-active equality whose raw residual is inside the prospectively defined arithmetic bound may be represented as exact zero for downstream D2; slack-face drifts remain raw. Full selector receipt must be persisted before D2. The same exact ten-cell panel may then be reexecuted once under the active task's fresh budget. No HJB/KFE/MATLAB/downstream call is authorized.
 
-Owner retains final authority over new economic laws, major calibration, production replacement, causal interpretation and Results eligibility. GitHub live main remains repository-state authority; chat does not substitute for the exact task.
+Owner retains final authority over new economic laws, major calibration, production replacement, causal interpretation and Results eligibility. GitHub live main remains repository-state authority.

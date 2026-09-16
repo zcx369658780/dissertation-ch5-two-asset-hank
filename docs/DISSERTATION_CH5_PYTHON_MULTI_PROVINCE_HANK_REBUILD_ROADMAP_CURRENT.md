@@ -2,39 +2,28 @@
 更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 Results eligibility=`FALSE`。
 
-## Accepted mainline
+## Accepted route
 
-The frozen source-faithful reference and separately governed corrected successor remain distinct. Accepted checkpoints include two-asset HA parity, corrected-2018 contracts, K1/C1 accounting, price/return forensic, practical HJB grid selection, 31-province first-turn viability, six-failure attribution, input/outcome envelope, local-basin evidence, nationwide five-turn KFE leakage attribution, Owner adoption of D1-D3, and now the isolated D1-D3 static implementation.
+The frozen source-faithful reference and separately governed corrected successor remain distinct. Owner adopted D1 upper numerical state constraints, D2 consumed-total-drift conservative assembly, and D3 regularized-cost-consistent KKT for the corrected diagnostic target. Its isolated static implementation is accepted.
 
-Accepted practical HJB grid remains `I=20,J=160,Nz=2,a=[0,100],b=[-2,20],h=1`, diagnostic only. The current ten-cell task instead uses the historical call725 snapshot objects explicitly designated by the earlier repair specification; do not remap those cells onto the practical HJB grid.
+## KFE-D2B selector gate status
 
-## KFE corrected-diagnostic staged route
+The first exact ten-cell run is accepted only as fail-closed diagnostic evidence. Cell 1 passed. Cell 2 exposed a post-freeze representation mismatch: an active upper-`b` mathematical equality had a `2.162339589068668e-16` raw floating residual within the selector's prospective equality bound, but D2 correctly rejected the positive outward sign under its strict zero-tolerance closed-face contract. The run stopped after 2 selector calls / 8 roots; Cells 3-10 were not executed.
 
-### KFE-D0 — completed
-D1-D3 authority recovery and option matrix completed with zero science.
+Reviewer preserves D2 semantics and authorizes a narrow implementation repair: active equalities may hand exact zero downstream only after their raw residual is proven inside the prospectively defined arithmetic bound and is separately recorded; slack faces are never repaired. Complete selector evidence must be persisted before D2.
 
-### KFE-D1 — completed
-Owner adopted D1 explicit upper state constraints + D2 consumed-total-drift conservative assembly + D3 regularized-cost-consistent KKT for an independent corrected diagnostic target.
+### KFE-D2B-R1 — active
 
-### KFE-D2A — completed and accepted
-Builder candidate `d8cc627d23172b17d3f4dafce0a5f41886c9815d` implemented the isolated contracts and passed synthetic/static/hash-bound saved-control validation with zero scientific calls. Reviewer acceptance: `docs/CH5_MP4C_2018_KFE_D123_CORRECTED_DIAGNOSTIC_CONTRACT_IMPLEMENTATION_STATIC_VALIDATION_ACCEPTANCE_20260916.md`.
+`tasks/CH5_MP4C_2018_KFE_D123_SELECTOR_ACTIVE_EQUALITY_CANONICALIZATION_AND_TEN_CELL_REEXECUTION_20260916.md`
 
-### KFE-D2B — ACTIVE
-`tasks/CH5_MP4C_2018_KFE_D123_TINY_REAL_CELL_CORRECTED_SELECTOR_PANEL_20260916.md`
+Implement the representation/evidence-order repairs, run synthetic preflight, freeze code, then rerun the same exact ten-cell historical panel once under a fresh <=10 selector / <=120 root budget. HJB/KFE remain zero.
 
-Exactly ten preregistered call725 cells: eight M143_FINAL asset corners plus MATLAB step52 row799 and step57 row379. Implement the minimum isolated corrected selector and execute each cell at most once. Runtime ceiling <=10 selector evaluations and <=120 scalar roots overall, with no adverse-numerics retry. HJB/KFE remain zero.
+### KFE-D2C — later only after accepted ten-cell PASS
 
-### KFE-D2C — later only after D2B acceptance
-Consider one corrected-target HJB step: one policy map and one direct solve under a separately published budget. No automatic trajectory.
+A one-target-HJB-step task may be considered only after the repaired ten-cell panel is independently accepted. That step does not automatically authorize a long HJB trajectory or KFE solve.
 
-### KFE-D2D — later
-Only after HJB-step acceptance may a bounded source-free KFE validation be designed for conservation, pin redundancy, stationary-density nonnegativity/normalization and uniqueness/rank diagnostics.
+### KFE-D3 — later production closure
 
-### KFE-D3 — production closure decision
-Corrected multi-province production replacement remains a separate decision after corrected HJB/KFE evidence. Source-faithful evidence is retained permanently.
+KFE mass/nonnegativity/uniqueness, corrected multi-province production replacement, steady state, GE/annual/dynamics/IRF and Results remain downstream gates with separate evidence and authority.
 
-## Deferred mainline
-
-K1 bilateral capital network, C1 GovInv residual public assets, lagged-return timing and labor-first attribution remain accepted but deferred behind household/KFE closure. Downstream order remains corrected selector panel → one HJB step if warranted → bounded KFE validation → production closure decision → bounded multi-province integration → K1/C1/raw-ra joint validation → later K1B/K2/labor → steady state → annual/GE/dynamics/IRF → independent Results gate.
-
-No downstream step receives runtime authority from this roadmap alone.
+Capital/labor K1/C1/K1B/K2 routes remain deferred, not abandoned, behind the current household/KFE integration blocker.

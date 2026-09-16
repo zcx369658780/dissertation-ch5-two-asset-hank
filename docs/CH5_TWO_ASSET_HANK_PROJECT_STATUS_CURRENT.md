@@ -2,27 +2,23 @@
 
 更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`KFE_D123_STATIC_IMPLEMENTATION_ACCEPTED__TINY_REAL_CELL_SELECTOR_PANEL_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`KFE_D123_TINY_SELECTOR_FAIL_CLOSED_ACCEPTED__ACTIVE_EQUALITY_REPRESENTATION_REPAIR_AND_REEXECUTION_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Accepted checkpoints
 
-Accepted practical household grid remains `I=20,J=160,Nz=2,a=[0,100],b=[-2,20],h=1`, diagnostic only. Finer-I/J and geometry-only local-basin refinement remain closed. The accepted 31-province first-turn and local-basin evidence is unchanged.
+Owner-adopted D1/D2/D3 corrected diagnostic bundle and its isolated static implementation remain accepted. Source-faithful/production paths remain frozen. HJB/local-basin and nationwide KFE-leakage checkpoints remain unchanged.
 
-The corrected-2018 five-turn KFE mechanism remains finite-box upper-`b` escape plus MATLAB-style dropped-equation/pinning algebra; the implied balancing source is algebraic, not an adopted household entry/exit process.
+## Accepted failed selector-panel evidence
 
-Owner adopted D1 state constraints + D2 consumed-total-drift conservative assembly + D3 regularized-cost-consistent KKT as a separate corrected diagnostic target. Production/source-faithful paths remain distinct.
+Builder candidate `05082f8af82afc90b8c0c168d9aeb8f345f8336a` is accepted as a valid fail-closed record, not as a ten-cell scientific PASS. Exact panel identity was recovered; Cell 1 selected an admissible policy and passed D2; Cell 2 exposed a selector-to-D2 representation mismatch: raw active upper-`b` equality residual `2.162339589068668e-16` was admitted under a prospective equality bound but strict D2 correctly rejected its positive outward sign. Execution stopped after 2 selector evaluations / 8 roots with no retry; Cells 3-10 were not executed. HJB/KFE/MATLAB/downstream calls remained zero.
 
-## Newly accepted static implementation
-
-Builder candidate `d8cc627d23172b17d3f4dafce0a5f41886c9815d` is accepted by `docs/CH5_MP4C_2018_KFE_D123_CORRECTED_DIAGNOSTIC_CONTRACT_IMPLEMENTATION_STATIC_VALIDATION_ACCEPTANCE_20260916.md`.
-
-The implementation is isolated under `src/ch5_two_asset_hank/corrected_diagnostic/`; focused static tests pass; tested conservative generator arithmetic closes `Q @ 1` at machine scale; all 14 accepted legacy saved-control snapshots are hash-verified and correctly rejected before assembly because their persisted drifts violate artificial upper faces. This acceptance does not yet prove a corrected selector can generate admissible real-cell controls.
+Reviewer classifies this as an implementation representation-contract mismatch, not evidence that the corrected scientific contract lacks a feasible policy. D2 zero-tolerance outward-face semantics remain unchanged.
 
 ## Active gate
 
-Current active Builder task: `tasks/CH5_MP4C_2018_KFE_D123_TINY_REAL_CELL_CORRECTED_SELECTOR_PANEL_20260916.md`.
+Current active task: `tasks/CH5_MP4C_2018_KFE_D123_SELECTOR_ACTIVE_EQUALITY_CANONICALIZATION_AND_TEN_CELL_REEXECUTION_20260916.md`.
 
-The preregistered panel is exactly ten historical call725 cells: eight M143_FINAL asset-boundary corners plus MATLAB step52 row799 and step57 row379. Maximum runtime authority is one corrected selector evaluation per cell, <=10 selector evaluations total, with at most four face-active sets x three transfer-sign regimes x one scalar root each, <=120 root invocations total, no retry after adverse numerics.
+The repair is narrowly limited to exact-zero representation of already-active mathematical state-constraint equalities after their raw residual passes the preregistered prospective arithmetic bound, plus durable selector receipt persistence before D2 checking. Slack-face drifts are never canonicalized. After synthetic preflight, the same exact ten-cell panel receives one fresh execution under <=10 selector evaluations / <=120 scalar roots, with no retry and code freeze after the first call.
 
-HJB=0, KFE=0, MATLAB processes=0, outer/firm/wage-return recalculation=0, GE/annual/shock/IRF/Results=0. One target HJB step remains a separate future gate.
+HJB=0, KFE=0, MATLAB=0, outer/firm/wage-return=0, GE/annual/shock/IRF/Results=0.
