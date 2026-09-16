@@ -1,7 +1,7 @@
-# Chapter 5 当前交接 — V1 remap Q1 single closed class accepted / Q1 KFE validation active
+# Chapter 5 当前交接 — Q1 unique source-free invariant mass accepted / nonlinear fixed-point design active
 
 更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
-状态：`V1_REMAP_Q1_SINGLE_CLOSED_CLASS_ACCEPTED__Q1_SOURCE_FREE_KFE_VALIDATION_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`Q1_UNIQUE_SOURCE_FREE_INVARIANT_MASS_ACCEPTED__NONLINEAR_HJB_KFE_FIXED_POINT_DESIGN_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Governance
@@ -10,18 +10,16 @@ Owner is final scientific authority; ChatGPT is L3 Reviewer/scientific-route aut
 
 ## Accepted state
 
-Q0 has two exact zero-asset-drift recurrent sinks under V0. Candidate `368d58c96a9e6068fd4f7b36cca0f433d7f2ec3a` then remapped the accepted V1 once and assembled Q1 under unchanged corrected laws.
+Corrected route now has: one accepted V0 policy map/Q0, one direct HJB step V1, one accepted V1 policy remap/Q1, and a pin-free/source-free Q1 invariant-mass validation.
 
-The V1 map completed 800/800 cells. Q1 D2 passed and its exact-positive graph has one closed communicating class `[5,6,405,406]`. The two separate Q0 classes no longer persist because flat 405 gains a forward liquid edge and flat 6 gains a backward liquid edge, while flats 5 and 406 retain Z/zero drift. All 800 states can reach the single recurrent class.
+Q1 exact-positive graph has one closed class `[5,6,405,406]`; dense full GESVD gives rank/nullity `799/1`; one normalized mass satisfies the frozen stationarity, normalization and nonnegativity checks without clipping or source injection. This is operator-level evidence for Q1 only.
 
-This does not prove HJB convergence or economic equilibrium uniqueness.
+No nonlinear HJB convergence, joint HJB-KFE fixed point, stationary economic equilibrium, production replacement or Results eligibility has yet been established.
 
 ## Active task
 
-`tasks/CH5_MP4C_2018_KFE_D123_Q1_SOURCE_FREE_KFE_OPERATOR_VALIDATION_20260916.md`
+`tasks/CH5_MP4C_2018_KFE_D123_NONLINEAR_HJB_KFE_FIXED_POINT_DESIGN_BINDING_ZERO_SCIENCE_20260916.md`
 
-Use only accepted Q1 SHA-256 `5F96C2CFAAFB3EA7EF32943A892A9191FEDCC5DBC7AB28D066F5893D3F560D1E`.
+This task is zero-science. It must bind the smallest scientifically valid route from accepted `(V1,Q1,p1)` to nonlinear HJB convergence / joint HJB-KFE fixed point: exact iteration state, update sequence, convergence metrics and thresholds, KFE timing, finite budgets, fail-closed rules, evidence per iteration and fixed-point consistency conditions.
 
-The task performs one pin-free/source-free invariant-mass validation with `Q1.T @ p = 0`, one structural audit, one SCC verification, one full dense `gesvd`, one normalization and one `Q1.T@p` residual evaluation. No row replacement/pin/source injection, retry, solver substitution, iterative eigensolver, policy remap, D2 reassembly, HJB/V2/nonlinear continuation, MATLAB or downstream calls are authorized.
-
-PASS remains conditional invariant-mass evidence for the accepted one-step V1-policy operator Q1 only. Production/Results remain closed.
+No selector/root/policy-map/D2/HJB/KFE/nullspace/MATLAB/downstream call is authorized in this design gate. Any need for damping, adaptive Delta, continuation, artificial diffusion, clipping or new convergence law must be surfaced as Owner-decision-required rather than silently adopted.
