@@ -2,13 +2,13 @@
 
 The selector enumerates geometric face active sets and the three D3 transfer
 subgradient regimes.  It has no optimizer, derivative floor, clipping, policy
-cap, damping, or retry path.  A counted scalar root is used only when a liquid
-face is hypothesized active.
+cap, damping, or retry path.  Counted scalar roots are used only for a liquid
+face active equality or an Owner-adopted strict-crossing interior Z candidate.
 """
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 import itertools
 import math
 import sys
@@ -120,8 +120,10 @@ class CorrectedSelectorCell:
 class SelectorBudget:
     max_selector_evaluations: int
     max_root_invocations: int
+    max_interior_z_root_invocations: int | None = None
     selector_evaluations: int = 0
     root_invocations: int = 0
+    interior_z_root_invocations: int = 0
 
     def begin_selector(self) -> int:
         if self.selector_evaluations >= self.max_selector_evaluations:
@@ -134,6 +136,18 @@ class SelectorBudget:
             raise RuntimeError("scalar root invocation budget exhausted")
         self.root_invocations += 1
         return self.root_invocations
+
+    def begin_interior_z_root(self) -> int:
+        ceiling = (
+            self.max_root_invocations
+            if self.max_interior_z_root_invocations is None
+            else self.max_interior_z_root_invocations
+        )
+        if self.interior_z_root_invocations >= ceiling:
+            raise RuntimeError("interior Z root invocation budget exhausted")
+        ordinal = self.begin_root()
+        self.interior_z_root_invocations += 1
+        return ordinal
 
 
 @dataclass(frozen=True)
@@ -154,6 +168,19 @@ class LowerAZeroKinkMultiplierReceipt:
     intersection_nonempty: bool
     chosen_q_a: float | None
     lambda_a: float | None
+    marker: str
+
+
+@dataclass(frozen=True)
+class InteriorZReceipt:
+    endpoint_shadows: dict[str, float]
+    endpoint_drifts: dict[str, float]
+    endpoint_bounds: dict[str, float]
+    root_bracket: tuple[float, float]
+    root_method: str
+    root_status: str
+    raw_root_residual: float | None
+    arithmetic_bound: float | None
     marker: str
 
 
@@ -190,6 +217,7 @@ class SelectorCandidate:
         default_factory=dict
     )
     lower_a_zero_kink_multiplier_receipt: LowerAZeroKinkMultiplierReceipt | None = None
+    interior_z_receipt: InteriorZReceipt | None = None
 
 
 @dataclass(frozen=True)
@@ -203,6 +231,7 @@ class SelectorResult:
     regime_attempt_count: int
     root_invocations: int
     selector_evaluation_ordinal: int
+    interior_z_root_invocations: int = 0
 
 
 def _faces(cell: CorrectedSelectorCell) -> dict[str, str]:
@@ -410,6 +439,64 @@ def _one_scalar_root(
     return float(root), "ROOT_CONVERGED"
 
 
+def _one_interior_z_root(
+    function: Callable[[float], float],
+    *,
+    lower: float,
+    upper: float,
+    budget: SelectorBudget,
+) -> tuple[float | None, str]:
+    """Certify and solve one positive root inside the two derivative endpoints."""
+
+    budget.begin_interior_z_root()
+    if (
+        not math.isfinite(lower)
+        or not math.isfinite(upper)
+        or lower <= 0.0
+        or upper <= lower
+    ):
+        return None, "ROOT_FAILURE_INVALID_DERIVATIVE_INTERVAL"
+    samples: list[tuple[float, float]] = []
+    try:
+        for log_q in np.linspace(math.log(lower), math.log(upper), 513):
+            q_b = math.exp(float(log_q))
+            samples.append((q_b, _finite_root_value(function(q_b))))
+    except (ArithmeticError, OverflowError, ValueError) as exc:
+        return None, f"ROOT_FUNCTION_FAILURE:{type(exc).__name__}"
+    exact = [q_b for q_b, value in samples if value == 0.0]
+    brackets = [
+        (left[0], right[0])
+        for left, right in zip(samples[:-1], samples[1:])
+        if (left[1] < 0.0 < right[1]) or (right[1] < 0.0 < left[1])
+    ]
+    if exact:
+        if len(exact) != 1 or brackets:
+            return None, "ROOT_FAILURE_NO_UNIQUE_BRACKET"
+        root = exact[0]
+        status = "ROOT_EXACT_GRID_POINT"
+    else:
+        if len(brackets) != 1:
+            return None, "ROOT_FAILURE_NO_UNIQUE_BRACKET"
+        try:
+            root = brentq(
+                function,
+                brackets[0][0],
+                brackets[0][1],
+                xtol=np.nextafter(0.0, 1.0),
+                rtol=4.0 * np.finfo(float).eps,
+                maxiter=256,
+            )
+        except (ArithmeticError, RuntimeError, ValueError) as exc:
+            return None, f"ROOT_FAILURE:{type(exc).__name__}"
+        status = "ROOT_CONVERGED"
+    root = float(root)
+    if not math.isfinite(root) or root <= 0.0:
+        return None, "ROOT_FAILURE_NONFINITE_OR_NONPOSITIVE"
+    if root < lower or root > upper:
+        return None, "ROOT_FAILURE_OUTSIDE_DERIVATIVE_INTERVAL"
+    return root, status
+
+
 def _rejected(
     active: tuple[str, ...],
     regime: str,
@@ -419,6 +506,7 @@ def _rejected(
     root_invoked: bool = False,
     root_status: str = "NOT_REQUIRED",
     lower_a_zero_kink_multiplier_receipt: LowerAZeroKinkMultiplierReceipt | None = None,
+    interior_z_receipt: InteriorZReceipt | None = None,
 ) -> SelectorCandidate:
     return SelectorCandidate(
         active_constraints=active,
@@ -429,6 +517,7 @@ def _rejected(
         root_invoked=root_invoked,
         root_status=root_status,
         lower_a_zero_kink_multiplier_receipt=lower_a_zero_kink_multiplier_receipt,
+        interior_z_receipt=interior_z_receipt,
     )
 
 
@@ -485,14 +574,21 @@ def _candidate(
     p_a_branch: str,
     p_a: float,
     budget: SelectorBudget,
+    *,
+    q_b_override: float | None = None,
+    interior_z_receipt: InteriorZReceipt | None = None,
 ) -> SelectorCandidate:
     branches = {"b": p_b_branch, "a": p_a_branch}
     b_face = faces.get("b")
     a_face = faces.get("a")
     b_active = b_face in active
     a_active = a_face in active
-    root_invoked = False
-    root_status = "NOT_REQUIRED"
+    root_invoked = interior_z_receipt is not None
+    root_status = (
+        interior_z_receipt.root_status
+        if interior_z_receipt is not None
+        else "NOT_REQUIRED"
+    )
 
     if a_active:
         d = -cell.effective_r_a * cell.a
@@ -524,7 +620,11 @@ def _candidate(
         g_b = _liquid_drift_for_root(q_b, local_d, cell, parameters)
         return q_a, local_d, g_b
 
-    if b_active:
+    if q_b_override is not None:
+        if b_active:
+            raise ValueError("interior Z override cannot be used at an active liquid face")
+        q_b = float(q_b_override)
+    elif b_active:
         if b_face == "upper_b" and p_b <= 0.0:
             return _rejected(
                 active,
@@ -576,6 +676,7 @@ def _candidate(
                     root_invoked=root_invoked,
                     root_status=root_status,
                     lower_a_zero_kink_multiplier_receipt=lower_a_zero_kink_receipt,
+                    interior_z_receipt=interior_z_receipt,
                 )
             assert lower_a_zero_kink_receipt.chosen_q_a is not None
             q_a = lower_a_zero_kink_receipt.chosen_q_a
@@ -588,12 +689,34 @@ def _candidate(
             branches=branches,
             root_invoked=root_invoked,
             root_status=root_status,
+            interior_z_receipt=interior_z_receipt,
         )
     tolerance = _fp_bound(
         c, l, d, cost, g_b, g_a, q_b, q_a, p_b, p_a, operations=96
     )
     raw_g_b = g_b
     raw_g_a = g_a
+    if interior_z_receipt is not None:
+        z_bound = _fp_bound(
+            c,
+            l,
+            d,
+            cost,
+            raw_g_b,
+            g_a,
+            q_b,
+            q_a,
+            *interior_z_receipt.endpoint_shadows.values(),
+            *interior_z_receipt.endpoint_drifts.values(),
+            operations=96,
+        )
+        interior_z_receipt = replace(
+            interior_z_receipt,
+            raw_root_residual=float(raw_g_b),
+            arithmetic_bound=z_bound,
+        )
+        if abs(raw_g_b) <= z_bound:
+            g_b = 0.0
     active_equality_receipts: dict[str, ActiveEqualityReceipt] = {}
     for axis, face in faces.items():
         if face not in active:
@@ -617,6 +740,10 @@ def _candidate(
             else:
                 g_a = 0.0
     reasons: list[str] = []
+    if interior_z_receipt is not None and abs(raw_g_b) > float(
+        interior_z_receipt.arithmetic_bound
+    ):
+        reasons.append("INTERIOR_Z_ROOT_RESIDUAL_BOUND_EXCEEDED")
     if regime == "positive" and d <= tolerance:
         reasons.append("TRANSFER_SIGN_INCONSISTENT_POSITIVE")
     if regime == "negative" and d >= -tolerance:
@@ -724,6 +851,120 @@ def _candidate(
         arithmetic_tolerance=tolerance,
         active_equality_receipts=active_equality_receipts,
         lower_a_zero_kink_multiplier_receipt=lower_a_zero_kink_receipt,
+        interior_z_receipt=interior_z_receipt,
+    )
+
+
+def _interior_z_candidate(
+    cell: CorrectedSelectorCell,
+    parameters: CorrectedSelectorParameters,
+    faces: dict[str, str],
+    active: tuple[str, ...],
+    regime: str,
+    p_a_branch: str,
+    p_a: float,
+    backward: SelectorCandidate,
+    forward: SelectorCandidate,
+    budget: SelectorBudget,
+) -> SelectorCandidate | None:
+    """Create one Z candidate only for a strict positive-shadow direction crossing."""
+
+    if "b" in faces:
+        return None
+    p_backward = float(cell.derivatives.p_b_backward)
+    p_forward = float(cell.derivatives.p_b_forward)
+    if not all(math.isfinite(value) and value > 0.0 for value in (p_backward, p_forward)):
+        return None
+    if (
+        backward.g_b is None
+        or forward.g_b is None
+        or backward.arithmetic_tolerance is None
+        or forward.arithmetic_tolerance is None
+    ):
+        return None
+    backward_drift = float(backward.g_b)
+    forward_drift = float(forward.g_b)
+    backward_bound = float(backward.arithmetic_tolerance)
+    forward_bound = float(forward.arithmetic_tolerance)
+    if not (
+        backward_drift > backward_bound
+        and forward_drift < -forward_bound
+    ):
+        return None
+
+    a_face = faces.get("a")
+    a_active = a_face in active
+    if a_active:
+        fixed_d = -cell.effective_r_a * cell.a
+    else:
+        fixed_d = 0.0
+
+    def drift(q_b: float) -> float:
+        if a_active:
+            q_a = (
+                p_a
+                if regime == "zero_kink"
+                else _transfer_ratio(fixed_d, cell.a, parameters) * q_b
+            )
+            local_d = fixed_d
+        else:
+            q_a = p_a
+            local_d = _transfer_from_regime(
+                regime=regime,
+                q_a=q_a,
+                q_b=q_b,
+                a=cell.a,
+                parameters=parameters,
+            )
+        return _liquid_drift_for_root(q_b, local_d, cell, parameters)
+
+    lower, upper = sorted((p_backward, p_forward))
+    root, status = _one_interior_z_root(
+        drift,
+        lower=lower,
+        upper=upper,
+        budget=budget,
+    )
+    receipt = InteriorZReceipt(
+        endpoint_shadows={"backward": p_backward, "forward": p_forward},
+        endpoint_drifts={
+            "backward": backward_drift,
+            "forward": forward_drift,
+        },
+        endpoint_bounds={
+            "backward": backward_bound,
+            "forward": forward_bound,
+        },
+        root_bracket=(lower, upper),
+        root_method="BRENTQ_UNIQUE_LOG_SCREENED_BRACKET",
+        root_status=status,
+        raw_root_residual=None,
+        arithmetic_bound=None,
+        marker="INTERIOR_LIQUID_Z_ZERO_DRIFT_SWITCH",
+    )
+    if root is None:
+        return _rejected(
+            active,
+            regime,
+            [status],
+            branches={"b": "zero", "a": p_a_branch},
+            root_invoked=True,
+            root_status=status,
+            interior_z_receipt=receipt,
+        )
+    return _candidate(
+        cell,
+        parameters,
+        faces,
+        active,
+        regime,
+        "zero",
+        root,
+        p_a_branch,
+        p_a,
+        budget,
+        q_b_override=root,
+        interior_z_receipt=receipt,
     )
 
 
@@ -745,6 +986,7 @@ def select_constrained_policy(
 
     ordinal = budget.begin_selector()
     root_start = budget.root_invocations
+    interior_z_root_start = budget.interior_z_root_invocations
     faces = _faces(cell)
     face_rows = list(faces.values())
     active_sets = [
@@ -815,11 +1057,10 @@ def select_constrained_policy(
                     _rejected(active, regime, ["NO_DIRECTIONALLY_VALID_DERIVATIVE_BRANCH"])
                 )
                 continue
-            for (p_b_branch, p_b), (p_a_branch, p_a) in itertools.product(
-                b_options, a_options
-            ):
-                candidates.append(
-                    _candidate(
+            for p_a_branch, p_a in a_options:
+                liquid_candidates: dict[str, SelectorCandidate] = {}
+                for p_b_branch, p_b in b_options:
+                    candidate = _candidate(
                         cell,
                         parameters,
                         faces,
@@ -831,7 +1072,23 @@ def select_constrained_policy(
                         p_a,
                         budget,
                     )
-                )
+                    candidates.append(candidate)
+                    liquid_candidates[p_b_branch] = candidate
+                if "backward" in liquid_candidates and "forward" in liquid_candidates:
+                    z_candidate = _interior_z_candidate(
+                        cell,
+                        parameters,
+                        faces,
+                        active,
+                        regime,
+                        p_a_branch,
+                        p_a,
+                        liquid_candidates["backward"],
+                        liquid_candidates["forward"],
+                        budget,
+                    )
+                    if z_candidate is not None:
+                        candidates.append(z_candidate)
 
     admissible = [candidate for candidate in candidates if candidate.admissible]
     policies: list[SelectorCandidate] = []
@@ -865,5 +1122,8 @@ def select_constrained_policy(
         face_active_set_count=len(active_sets),
         regime_attempt_count=len(active_sets) * len(TRANSFER_REGIMES),
         root_invocations=budget.root_invocations - root_start,
+        interior_z_root_invocations=(
+            budget.interior_z_root_invocations - interior_z_root_start
+        ),
         selector_evaluation_ordinal=ordinal,
     )

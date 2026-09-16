@@ -36,7 +36,7 @@ from .selector import (
 
 
 EVIDENCE_RELATIVE = Path(
-    "reports/ch5_mp4c_2018_kfe_d123_lower_a_zero_kink_option_a_reexecution_20260916"
+    "reports/ch5_mp4c_2018_kfe_d123_interior_z_switching_option_a_reexecution_20260916"
 )
 BOUNDARY_ADAPTER_MARKER = "UNUSED_BOUNDARY_SLOT_DUPLICATES_INWARD_RAW_DERIVATIVE"
 EXPECTED_BINDING_SHA256 = "A40D088C63FC1F7EDECEA561D649B42959C646DF528ED13298014493DB4808F6"
@@ -343,6 +343,7 @@ def _scientific_code_hashes(repository: Path) -> dict[str, str]:
         repository / "tests/test_mp4c_2018_kfe_d123_option_a_single_step.py",
         repository
         / "tests/test_mp4c_2018_kfe_d123_lower_a_zero_kink_multiplier.py",
+        repository / "tests/test_mp4c_2018_kfe_d123_interior_z_switching.py",
     ]
     return {
         path.relative_to(repository).as_posix(): _sha256(path)
@@ -416,6 +417,38 @@ def preflight_receipt(repository: Path, inputs: BoundOptionAInputs) -> dict[str,
         q_b=cell_zero_derivatives.p_b_forward,
         chi_0=inputs.parameters.chi_0,
     )
+    cell_five_q_forward = 0.012481806039037598
+    cell_five_q_backward = 0.02256028269097067
+    cell_five_budget = SelectorBudget(
+        max_selector_evaluations=0,
+        max_root_invocations=1,
+        max_interior_z_root_invocations=1,
+    )
+    cell_five_root, cell_five_root_status = selector._one_interior_z_root(
+        lambda q_b: float(
+            inputs.scalars["wage"]
+            * (1.0 - inputs.scalars["tau"])
+            * float(inputs.grid.z[0])
+            * (
+                q_b
+                * inputs.scalars["wage"]
+                * (1.0 - inputs.scalars["tau"])
+                * float(inputs.grid.z[0])
+                / inputs.parameters.labor_weight
+            )
+            ** (1.0 / inputs.parameters.phi)
+            + (
+                inputs.scalars["r_b"] + inputs.scalars["borrowing_rate_gap"]
+            )
+            * float(inputs.grid.b[5])
+            + inputs.scalars["transfer_income"]
+            - q_b ** (-1.0 / inputs.parameters.gamma_c)
+        ),
+        lower=cell_five_q_forward,
+        upper=cell_five_q_backward,
+        budget=cell_five_budget,
+    )
+    expected_cell_five_root = 0.012500213882917607
     checks = {
         **static_checks,
         "exact_800_f_order_cells": len(list(iter_f_order_indices(inputs.grid.shape))) == 800,
@@ -430,6 +463,18 @@ def preflight_receipt(repository: Path, inputs: BoundOptionAInputs) -> dict[str,
             == "ACTIVE_LOWER_A_ZERO_KINK_MULTIPLIER_INTERVAL_CANONICAL_MIN"
         ),
         "git_head_resolves_before_execution": len(_git_head(repository)) == 40,
+        "cell_five_z_root_converged": cell_five_root_status == "ROOT_CONVERGED",
+        "cell_five_z_root_inside_raw_derivative_interval": (
+            cell_five_root is not None
+            and cell_five_q_forward < cell_five_root < cell_five_q_backward
+        ),
+        "cell_five_z_root_matches_forensic_identity": (
+            cell_five_root is not None
+            and bool(
+                abs(cell_five_root - expected_cell_five_root)
+                <= np.spacing(expected_cell_five_root) * 8.0
+            )
+        ),
     }
     return {
         "status": "PASS" if all(checks.values()) else "FAIL",
@@ -444,6 +489,25 @@ def preflight_receipt(repository: Path, inputs: BoundOptionAInputs) -> dict[str,
             "shadow_receipt": asdict(cell_zero_shadow),
             "selector_evaluations": 0,
             "scalar_root_invocations": 0,
+        },
+        "historical_option_a_cell_five_interior_z_preflight": {
+            "index_b_a_z_zero_based": [5, 0, 0],
+            "p_b_forward": cell_five_q_forward,
+            "p_b_backward": cell_five_q_backward,
+            "root": cell_five_root,
+            "root_status": cell_five_root_status,
+            "expected_forensic_root": expected_cell_five_root,
+            "strictly_inside": (
+                cell_five_root is not None
+                and cell_five_q_forward < cell_five_root < cell_five_q_backward
+            ),
+            "synthetic_preflight_selector_evaluations": 0,
+            "synthetic_preflight_scalar_root_invocations": (
+                cell_five_budget.root_invocations
+            ),
+            "synthetic_preflight_interior_z_root_invocations": (
+                cell_five_budget.interior_z_root_invocations
+            ),
         },
         "input_identity": _input_receipt(inputs),
     }
@@ -466,6 +530,7 @@ def _ledger(
         "attempted_cells": attempted_cells,
         "real_selector_evaluations": budget.selector_evaluations,
         "scalar_root_invocations": budget.root_invocations,
+        "interior_z_root_invocations": budget.interior_z_root_invocations,
         "d2_generator_assemblies": d2_assemblies,
         "sparse_direct_hjb_solves": direct_solves,
         "selector_evaluations_on_v1": 0,
@@ -499,7 +564,7 @@ def _seal_manifest(evidence: Path) -> dict[str, Any]:
             }
         )
     manifest = {
-        "schema": "CH5_MP4C_2018_KFE_D123_LOWER_A_ZERO_KINK_OPTION_A_REEXECUTION_MANIFEST_V1",
+        "schema": "CH5_MP4C_2018_KFE_D123_INTERIOR_Z_OPTION_A_REEXECUTION_MANIFEST_V1",
         "entry_count": len(entries),
         "total_bytes": sum(int(row["bytes"]) for row in entries),
         "entries": entries,
@@ -586,7 +651,8 @@ def execute(repository: Path, seed_path: Path, binding_path: Path) -> str:
         "budget": {
             "corrected_policy_maps": 1,
             "real_selector_evaluations": 800,
-            "scalar_root_invocations": 264,
+            "scalar_root_invocations": 3144,
+            "interior_z_root_invocations": 2880,
             "d2_assemblies": 1,
             "sparse_direct_hjb_solves": 1,
             "retries": 0,
@@ -606,7 +672,11 @@ def execute(repository: Path, seed_path: Path, binding_path: Path) -> str:
         "scalar_binding_sha256": inputs.binding_sha256,
     }
 
-    budget = SelectorBudget(max_selector_evaluations=800, max_root_invocations=264)
+    budget = SelectorBudget(
+        max_selector_evaluations=800,
+        max_root_invocations=3144,
+        max_interior_z_root_invocations=2880,
+    )
     policy_maps = 1
     d2_assemblies = 0
     direct_solves = 0
@@ -719,7 +789,11 @@ def execute(repository: Path, seed_path: Path, binding_path: Path) -> str:
                 terminal_detail={"receipt": receipt_path.name},
             )
             return terminal
-        if budget.selector_evaluations > 800 or budget.root_invocations > 264:
+        if (
+            budget.selector_evaluations > 800
+            or budget.root_invocations > 3144
+            or budget.interior_z_root_invocations > 2880
+        ):
             terminal = "FAIL__SCIENTIFIC_CALL_BUDGET_EXCEEDED__STOPPED_WITHOUT_RETRY"
             _finalize(
                 repository,
