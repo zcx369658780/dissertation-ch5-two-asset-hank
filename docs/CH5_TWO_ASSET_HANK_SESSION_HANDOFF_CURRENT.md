@@ -1,7 +1,7 @@
-# Chapter 5 当前交接 — Option A first-cell fail-closed accepted / lower-a zero-kink multiplier repair active
+# Chapter 5 当前交接 — lower-a kink repair accepted / Cell5 liquid switch attribution active
 
 更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
-状态：`OPTION_A_FIRST_CELL_FAIL_CLOSED_ACCEPTED__LOWER_A_ZERO_KINK_MULTIPLIER_REPAIR_REEXECUTION_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`CORRECTED_HJB_OPTION_A_LOWER_A_KINK_REPAIR_ACCEPTED__CELL5_LIQUID_DIRECTION_CONFLICT_ATTRIBUTION_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Governance
@@ -10,18 +10,18 @@ Owner is final scientific authority; ChatGPT is L3 Reviewer/scientific-route aut
 
 ## Accepted state
 
-D1/D2/D3 remain Owner-adopted only for a separate corrected diagnostic target. Historical derivative failures are already attributed and closed. Owner selected Option A `hjb100_initialization.mat:v0` for the first corrected one-step diagnostic.
+Owner-selected Option A remains the frozen corrected one-step seed. The active lower-a zero-kink multiplier omission has now been repaired and accepted. Fresh execution passed Cells 0–4 and then failed closed at Cell 5 `(5,0,0)`.
 
-The first Option-A full-map attempt is now accepted only as fail-closed evidence. It stopped at Cell `(0,0,0)` before D2/HJB.
+Cell 5 is not a recurrence of the lower-a omission. Its repaired active lower-a zero-kink candidates both satisfy the a-side multiplier/KKT contract, but its two liquid derivatives imply opposite drifts relative to their branch directions: backward derivative gives forward drift; forward derivative gives backward drift.
 
-Reviewer found one concrete selector omission: at active lower-`a`, `a=0`, zero transfer, the frozen selector fixes `q_a=p_a` although the accepted lower-face KKT law allows `q_a=p_a+lambda_a`, `lambda_a>=0`. The D3 zero-kink interval must be intersected with this multiplier domain. At Cell 0 the intersection is nonempty, so the observed failure is not evidence that Option A lacks an admissible policy.
+This is not yet classified as a selector omission or structural seed incompatibility. It may correspond to an interior switching/zero-drift case, but no such branch may be added unless current authority already supports it.
 
 ## Active task
 
-`tasks/CH5_MP4C_2018_KFE_D123_LOWER_A_ZERO_KINK_MULTIPLIER_REPAIR_AND_OPTION_A_REEXECUTION_20260916.md`
+`tasks/CH5_MP4C_2018_KFE_D123_CELL5_LIQUID_DIRECTION_SWITCH_ALGEBRAIC_ATTRIBUTION_ZERO_SCIENCE_20260916.md`
 
-Builder may repair only the active lower-a zero-kink multiplier branch, using a deterministic minimum feasible shadow from the legal intersection. No generic projection, no slack-face repair, no upper-a/nonzero-transfer change, no seed/grid/calibration/tolerance/D2 change.
+Builder must use only frozen source, specification and persisted Cell 5 evidence to audit interior liquid derivative selection and derive the exact algebraic situation. It must determine whether a zero-drift/switching/Hamiltonian candidate is already authority-backed, whether the selector omitted a legal branch, or whether a new Owner-level switching law would be required.
 
-After focused synthetic preflight and scientific-code freeze, rerun the same Option-A full-map experiment from Cell 0 with a fresh budget. Ceiling: <=800 selector evaluations, <=264 roots, D2<=1 only after complete 800-cell PASS, direct HJB solve<=1 only after D2 PASS, retries=0. First failed cell stops.
+Scientific/model calls are all zero: selector=0, roots=0, policy map=0, D2=0, HJB=0, KFE=0, MATLAB=0, downstream=0. No repair or rerun is authorized.
 
-KFE/MATLAB/outer/firm/wage-return/GE/annual/shock/IRF/Results remain zero. Production replacement remains unauthorized.
+Only after independent Reviewer acceptance of this attribution may a successor scientific task be considered.
