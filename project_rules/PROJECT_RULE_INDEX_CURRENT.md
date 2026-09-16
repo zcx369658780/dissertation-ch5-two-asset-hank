@@ -8,19 +8,19 @@
 2. 本索引
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
-5. `docs/CH5_MP4C_2018_KFE_D123_OPTION_A_COMPLETE_POLICY_MAP_D2_DIRECT_STEP_ACCEPTANCE_20260916.md`
-6. `docs/CH5_MP4C_2018_KFE_D123_INTERIOR_Z_SWITCHING_REPAIR_AND_OPTION_A_REEXECUTION_REPORT.md`
-7. accepted D1/D2/D3 and earlier KFE leakage/pinning authority
-8. active task and its directly relevant artifacts/source.
+5. `docs/CH5_MP4C_2018_KFE_D123_CORRECTED_KFE_VALIDATION_DESIGN_BINDING_ACCEPTANCE_20260916.md`
+6. `docs/CH5_MP4C_2018_KFE_D123_CORRECTED_KFE_VALIDATION_DESIGN_BINDING_REPORT.md`
+7. `docs/CH5_MP4C_2018_KFE_D123_OPTION_A_COMPLETE_POLICY_MAP_D2_DIRECT_STEP_ACCEPTANCE_20260916.md`
+8. active task and exact Q0 artifact/receipt/manifest authority.
 
-Current status: `OPTION_A_COMPLETE_POLICY_MAP_D2_DIRECT_STEP_ACCEPTED__CORRECTED_KFE_VALIDATION_DESIGN_ACTIVE__PRODUCTION_UNCHANGED`。
-Current active Builder task: `tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_KFE_VALIDATION_DESIGN_BINDING_ZERO_SCIENCE_20260916.md`。
+Current status: `CORRECTED_Q0_KFE_DESIGN_ACCEPTED__BOUNDED_SOURCE_FREE_OPERATOR_VALIDATION_ACTIVE__PRODUCTION_UNCHANGED`。
+Current active Builder task: `tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_Q0_KFE_OPERATOR_VALIDATION_20260916.md`。
 Results eligibility=`FALSE`。
 
-Accepted corrected semantics include D1 upper numerical state constraints, D2 consumed-total-drift conservative assembly with strict zero-tolerance outward-face rejection, D3 regularized-cost-consistent KKT, active lower-a zero-kink multiplier interval, and Owner-adopted interior zero-liquid Z switching.
+Accepted corrected semantics remain D1 + D2 + D3, lower-a zero-kink multiplier handling, and interior zero-liquid Z switching. The accepted Option-A run produced one complete V0 policy map, one conservative Q0 and one direct HJB V1 step.
 
-The accepted Option-A run produced one complete 800-cell map, one passing Q0 D2 generator and one direct HJB step V1. It does not establish HJB convergence or a stationary equilibrium. No KFE call is yet authorized.
+The next gate validates Q0 only as a finite operator. Forward stationarity is `Q0.T @ p = 0`; no V1 policy remap is required for this bounded operator claim. The authorized route is pin-free, source-free and row-replacement-free, with exactly one SCC analysis and one dense `gesvd` nullspace/rank decomposition.
 
-The active zero-science task must bind whether Q0 itself is the next operator-level KFE diagnostic object or whether a V1 policy remap is required first, and must freeze a pin-free source-free stationarity/normalization/conservation/nonnegativity/rank/uniqueness contract. All scientific/model calls remain zero in this task.
+No selector/root/policy-map/D2/HJB/V1-remap/MATLAB/downstream calls are authorized in the active task. PASS remains conditional invariant-mass evidence only, not nonlinear HJB convergence, stationary equilibrium, production replacement or Results authority.
 
 Owner retains final authority over new economic laws, major calibration, production replacement, causal interpretation and Results eligibility. GitHub live main remains repository-state authority.
