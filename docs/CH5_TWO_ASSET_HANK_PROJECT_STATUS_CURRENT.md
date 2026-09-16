@@ -2,31 +2,28 @@
 
 更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`Q0_TWO_ZERO_DRIFT_SINKS_ATTRIBUTED__V1_POLICY_REMAP_Q1_TOPOLOGY_DIAGNOSTIC_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`V1_REMAP_Q1_SINGLE_CLOSED_CLASS_ACCEPTED__Q1_SOURCE_FREE_KFE_VALIDATION_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Accepted scientific checkpoint
 
-Owner-adopted D1/D2/D3 corrected semantics、lower-a zero-kink multiplier handling、interior zero-liquid Z switching、Option-A 800-cell complete policy map、accepted Q0 conservative generator以及一次 direct HJB step V1均继续有效。Source-faithful/production paths remain frozen。
+Owner-adopted D1/D2/D3 corrected semantics、lower-a zero-kink multiplier handling、interior zero-liquid Z switching、Option-A 800-cell V0 map、accepted Q0、一次 direct HJB step V1，以及 Q0 two-sink structural attribution均继续有效。Source-faithful/production paths remain frozen。
 
-## Q0 recurrent-class attribution accepted
+## V1 remap / Q1 topology accepted
 
-Candidate `2723c475943f7e6a767a940a9a52bad7b9c25e6f` is accepted by `docs/CH5_MP4C_2018_KFE_D123_Q0_TWO_CLOSED_CLASSES_STRUCTURAL_ATTRIBUTION_ACCEPTANCE_20260916.md`.
+Builder candidate `368d58c96a9e6068fd4f7b36cca0f433d7f2ec3a` is accepted by `docs/CH5_MP4C_2018_KFE_D123_V1_POLICY_REMAP_Q1_TOPOLOGY_ACCEPTANCE_20260916.md`.
 
-Accepted Q0 has two exact recurrent productivity pairs:
+Accepted V1 remap completed 800/800 `SELECTED_ADMISSIBLE` cells, used 408 total roots including 160 interior-Z roots, and assembled Q1 once under the unchanged D2 law. Q1 passed construction/conservation/coordinate-action/closed-face checks and has SHA-256 `5F96C2CFAAFB3EA7EF32943A892A9191FEDCC5DBC7AB28D066F5893D3F560D1E`.
 
-- flats `5,405` at asset node `(i_b,i_a)=(5,0)`, `(b,a)=(-0.1578947368421053,0)`;
-- flats `6,406` at asset node `(i_b,i_a)=(6,0)`, `(b,a)=(0.2105263157894739,0)`.
+Q1 exact-positive topology has exactly one closed communicating class `[5,6,405,406]`; all 800 states can reach it. The two separate Q0 sinks do not persist: flat 405 becomes forward-liquid directional and flat 6 becomes backward-liquid directional, joining the four recurrent states into one class; flats 5 and 406 retain Z/zero drift.
 
-At all four states, interior-liquid Z sets `g_b=0` exactly and active lower-a zero-kink handling sets `g_a=0` exactly. There are no asset outgoing rates; only the two-way productivity rate `1/3` remains. The two Q0 closed classes are therefore exact-zero-asset-drift sinks produced jointly by Z + lower-a state constraint + zero-kink handling, not by b-boundary behavior or a nonzero asset cycle.
-
-The accepted basin partition is A-only 12 states, B-only 560 states, both-reachable 228 states, neither 0. This is Q0 graph topology only, not economic multiple equilibria.
+This remains one-step policy/operator evidence only. It does not establish nonlinear HJB convergence, joint HJB-KFE fixed point, stationary economic equilibrium, production readiness or Results authority.
 
 ## Active gate
 
 Current active Builder task:
-`tasks/CH5_MP4C_2018_KFE_D123_V1_POLICY_REMAP_AND_Q1_RECURRENT_TOPOLOGY_DIAGNOSTIC_20260916.md`。
+`tasks/CH5_MP4C_2018_KFE_D123_Q1_SOURCE_FREE_KFE_OPERATOR_VALIDATION_20260916.md`。
 
-The smallest next diagnostic is one V1 policy remap and one Q1 D2 assembly/topology audit. It tests whether the two exact Q0 sinks persist after the already accepted single direct HJB step. No further HJB solve, nonlinear continuation, KFE stationary-mass solve, SVD/eigen/nullspace, MATLAB or downstream call is authorized.
+Perform one bounded, pin-free, source-free stationary-mass validation of exact accepted Q1 using `Q1.T @ p = 0`, one SCC verification and one full dense `gesvd`. No row replacement/pin/source RHS, retries, solver substitutions, iterative eigensolver, selector/root/policy-map, D2 reassembly, HJB/V2/nonlinear continuation, MATLAB or downstream call is authorized.
 
-A Q1 topology result remains a post-step policy diagnostic only. It is not HJB convergence, joint HJB-KFE fixed point, stationary economic equilibrium, production readiness or Results authority.
+A future Q1 KFE PASS would validate only the invariant mass of this accepted one-step V1-policy operator Q1. Production replacement and Results remain unauthorized.
