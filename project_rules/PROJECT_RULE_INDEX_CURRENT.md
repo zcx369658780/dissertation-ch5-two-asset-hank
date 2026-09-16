@@ -8,17 +8,18 @@
 2. 本索引
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
-5. `docs/CH5_MP4C_2018_KFE_D123_Q0_TWO_CLOSED_CLASSES_STRUCTURAL_ATTRIBUTION_ACCEPTANCE_20260916.md`
-6. `docs/CH5_MP4C_2018_KFE_D123_Q0_TWO_CLOSED_CLASSES_STRUCTURAL_ATTRIBUTION_REPORT.md`
-7. `docs/CH5_MP4C_2018_KFE_D123_OPTION_A_COMPLETE_POLICY_MAP_D2_DIRECT_STEP_ACCEPTANCE_20260916.md`
-8. active task and exact accepted V1/Q0 artifacts plus corrected selector/generator authority.
+5. `docs/CH5_MP4C_2018_KFE_D123_V1_POLICY_REMAP_Q1_TOPOLOGY_ACCEPTANCE_20260916.md`
+6. `docs/CH5_MP4C_2018_KFE_D123_V1_POLICY_REMAP_AND_Q1_RECURRENT_TOPOLOGY_DIAGNOSTIC_REPORT.md`
+7. `docs/CH5_MP4C_2018_KFE_D123_CORRECTED_KFE_VALIDATION_DESIGN_BINDING_ACCEPTANCE_20260916.md`
+8. `docs/CH5_MP4C_2018_KFE_D123_CORRECTED_KFE_VALIDATION_DESIGN_BINDING_REPORT.md`
+9. active task and exact accepted Q1 artifact/D2 receipt/manifest authority.
 
-Current status: `Q0_TWO_ZERO_DRIFT_SINKS_ATTRIBUTED__V1_POLICY_REMAP_Q1_TOPOLOGY_DIAGNOSTIC_ACTIVE__PRODUCTION_UNCHANGED`。
-Current active Builder task: `tasks/CH5_MP4C_2018_KFE_D123_V1_POLICY_REMAP_AND_Q1_RECURRENT_TOPOLOGY_DIAGNOSTIC_20260916.md`。
+Current status: `V1_REMAP_Q1_SINGLE_CLOSED_CLASS_ACCEPTED__Q1_SOURCE_FREE_KFE_VALIDATION_ACTIVE__PRODUCTION_UNCHANGED`。
+Current active Builder task: `tasks/CH5_MP4C_2018_KFE_D123_Q1_SOURCE_FREE_KFE_OPERATOR_VALIDATION_20260916.md`。
 Results eligibility=`FALSE`。
 
-Accepted Q0 structural attribution: recurrent classes are flats `5,405` and `6,406`, exact-zero asset-drift sinks created jointly by interior-liquid Z and active lower-a zero-kink/state-constraint handling. Do not reinterpret this as economic multiple equilibria.
+Accepted Q1 is the one-step V1-policy operator with exact-positive single closed class `[5,6,405,406]`. This closes the prior Q0 two-sink persistence question only; it does not establish nonlinear HJB convergence.
 
-The active task may remap accepted V1 exactly once, assemble Q1 once after a full 800-cell PASS, and audit Q1 recurrent topology once. No new law, grid/calibration change, additional HJB solve, nonlinear continuation, KFE stationary mass, SVD/eigen/nullspace, row replacement/pin/source RHS, MATLAB or downstream work is authorized.
+The active task may perform exactly one pin-free/source-free Q1 stationary-mass validation using `Q1.T @ p = 0`, one SCC verification and one full dense `gesvd`. No row replacement/pin/source RHS, retry, solver substitution, iterative eigensolver, selector/root/policy-map, D2 reassembly, HJB/V2/nonlinear continuation, MATLAB or downstream work is authorized.
 
 Owner retains final authority over new economic laws, major calibration, production replacement, causal interpretation and Results eligibility. GitHub live main remains repository-state authority.
