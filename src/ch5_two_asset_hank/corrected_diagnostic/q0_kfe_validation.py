@@ -31,6 +31,8 @@ SHAPE = (20, 20, 2)
 OMEGA = 70.0 / 361.0
 Q0_SHA256 = "093E1AF1ADFEEE5C50D3DD91EDDD678EBAC5BBA6C42E64DE73A63B82102AF1D5"
 Q0_BYTES = 22474
+D2_RECEIPT_SHA256 = "60389B54953B69C05A4DB2693272E2A32A8FB3F962AD99A285F82B266BF2237B"
+D2_RECEIPT_BYTES = 1526
 ACCEPTED_MANIFEST_SHA256 = (
     "D628E24AD421EA5A38EF80230862FE7B3BBD9BFA368CA7BEB08820528ADB643E"
 )
@@ -44,7 +46,7 @@ ACCEPTED_RELATIVE = Path(
     "reports/ch5_mp4c_2018_kfe_d123_interior_z_switching_option_a_reexecution_20260916"
 )
 OUTPUT_RELATIVE = Path(
-    "reports/ch5_mp4c_2018_kfe_d123_corrected_q0_kfe_operator_validation_20260916"
+    "reports/ch5_mp4c_2018_kfe_d123_corrected_q0_kfe_operator_validation_rerun_20260916"
 )
 SCIENTIFIC_PATHS = (
     "src/ch5_two_asset_hank/corrected_diagnostic/q0_kfe_validation.py",
@@ -219,7 +221,13 @@ def preflight_binding(repository: Path) -> dict[str, Any]:
     accepted = repository / ACCEPTED_RELATIVE
     manifest_path = accepted / "manifest.json"
     q0_path = accepted / "d2_generator.npz"
-    if not accepted.is_dir() or not manifest_path.is_file() or not q0_path.is_file():
+    d2_receipt_path = accepted / "d2_receipt.json"
+    if (
+        not accepted.is_dir()
+        or not manifest_path.is_file()
+        or not q0_path.is_file()
+        or not d2_receipt_path.is_file()
+    ):
         raise FailClosed("FAIL__ACCEPTED_Q0_EVIDENCE_MISSING__NO_SCIENCE")
     manifest_hash = _sha256(manifest_path)
     if manifest_hash != ACCEPTED_MANIFEST_SHA256 or manifest_path.stat().st_size != ACCEPTED_MANIFEST_BYTES:
@@ -237,6 +245,25 @@ def preflight_binding(repository: Path) -> dict[str, Any]:
         raise FailClosed("FAIL__Q0_MANIFEST_ENTRY_MISMATCH__NO_SCIENCE")
     if q0_path.stat().st_size != Q0_BYTES or _sha256(q0_path) != Q0_SHA256:
         raise FailClosed("FAIL__Q0_ARTIFACT_IDENTITY_MISMATCH__NO_SCIENCE")
+    d2_entry = entries.get("d2_receipt.json")
+    if d2_entry != {
+        "bytes": D2_RECEIPT_BYTES,
+        "path": "d2_receipt.json",
+        "sha256": D2_RECEIPT_SHA256,
+    }:
+        raise FailClosed("FAIL__D2_RECEIPT_MANIFEST_ENTRY_MISMATCH__NO_SCIENCE")
+    if (
+        d2_receipt_path.stat().st_size != D2_RECEIPT_BYTES
+        or _sha256(d2_receipt_path) != D2_RECEIPT_SHA256
+    ):
+        raise FailClosed("FAIL__D2_RECEIPT_IDENTITY_MISMATCH__NO_SCIENCE")
+    d2_receipt = json.loads(d2_receipt_path.read_text(encoding="utf-8"))
+    exact_construction_error = d2_receipt.get("diagonal_construction_error")
+    exact_construction_check = d2_receipt.get("checks", {}).get(
+        "diagonal_construction_error_exact_zero"
+    )
+    if exact_construction_error != 0.0 or exact_construction_check is not True:
+        raise FailClosed("FAIL__D2_EXACT_CONSTRUCTION_IDENTITY_MISMATCH__NO_SCIENCE")
 
     face = {
         "lower_b": {"cells": 0, "outward_rate_sum": 0.0, "outward_drift_sum": 0.0},
@@ -293,6 +320,13 @@ def preflight_binding(repository: Path) -> dict[str, Any]:
         "status": "PASS",
         "accepted_candidate": "9a4eb0e5ec3627743596daa9b991436d2124efa9",
         "q0": {"path": str(q0_path.relative_to(repository)), "bytes": Q0_BYTES, "sha256": Q0_SHA256},
+        "accepted_d2_construction": {
+            "path": str(d2_receipt_path.relative_to(repository)),
+            "bytes": D2_RECEIPT_BYTES,
+            "sha256": D2_RECEIPT_SHA256,
+            "diagonal_construction_error": exact_construction_error,
+            "diagonal_construction_error_exact_zero": exact_construction_check,
+        },
         "accepted_manifest": {
             "path": str(manifest_path.relative_to(repository)),
             "bytes": ACCEPTED_MANIFEST_BYTES,
@@ -326,6 +360,27 @@ def _exact_positive_adjacency(q: sparse.csr_matrix) -> sparse.csr_matrix:
         raise FailClosed("FAIL__NEGATIVE_OFFDIAGONAL__NO_SVD")
     data = np.ones(off.nnz, dtype=np.int8)
     return sparse.csr_matrix((data, off.indices.copy(), off.indptr.copy()), shape=off.shape)
+
+
+def secondary_sparse_reaggregation_audit(q: sparse.csr_matrix) -> dict[str, Any]:
+    """Audit the serialized CSR reduction without changing or repairing it."""
+
+    offdiagonal = q.copy()
+    offdiagonal.setdiag(0.0)
+    offdiagonal.eliminate_zeros()
+    stored_outgoing = np.asarray(offdiagonal.sum(axis=1)).ravel()
+    discrepancy = np.asarray(q.diagonal() + stored_outgoing).ravel()
+    finite = bool(np.all(np.isfinite(discrepancy)))
+    maximum = float(np.max(np.abs(discrepancy), initial=0.0))
+    return {
+        "formula": "diag(Q0) + row_sum(stored CSR offdiagonals)",
+        "maximum_absolute_discrepancy": maximum,
+        "discrepancy_sha256": _array_sha256(discrepancy),
+        "finite": finite,
+        "bound": Q_ONE_BOUND,
+        "within_frozen_bound": finite and maximum <= Q_ONE_BOUND,
+        "discrepancy_was_not_modified_or_zeroed": True,
+    }
 
 
 def _closed_component_receipt(
@@ -498,9 +553,7 @@ def execute(repository: Path) -> str:
         off = q.copy()
         off.setdiag(0.0)
         off.eliminate_zeros()
-        outgoing = np.asarray(off.sum(axis=1)).ravel()
-        diagonal_error = q.diagonal() + outgoing
-        diagonal_error_max = float(np.max(np.abs(diagonal_error), initial=0.0))
+        reaggregation = secondary_sparse_reaggregation_audit(q)
         ledger.q0_times_one += 1
         q_one = np.asarray(q @ np.ones(N, dtype=float)).ravel()
         q_one_max = float(np.max(np.abs(q_one), initial=0.0))
@@ -512,15 +565,17 @@ def execute(repository: Path) -> str:
             "finite": True,
             "minimum_exact_positive_offdiagonal": float(np.min(off.data)) if off.nnz else 0.0,
             "negative_offdiagonal_count": int(np.count_nonzero(off.data < 0.0)),
-            "diagonal_construction_error_max": diagonal_error_max,
-            "diagonal_construction_error_exact_zero": diagonal_error_max == 0.0,
+            "accepted_d2_construction_identity": preflight[
+                "accepted_d2_construction"
+            ],
+            "secondary_sparse_reaggregation_audit": reaggregation,
             "max_abs_q0_times_one": q_one_max,
             "q0_times_one_bound": Q_ONE_BOUND,
             "q0_times_one_passes": q_one_max <= Q_ONE_BOUND,
             "q0_times_one_sha256": _array_sha256(q_one),
             "outside_domain_flux_ledger": preflight["outside_domain_flux_ledger_before_svd"],
         }
-        if diagonal_error_max != 0.0 or q_one_max > Q_ONE_BOUND:
+        if not reaggregation["within_frozen_bound"] or q_one_max > Q_ONE_BOUND:
             structural["status"] = "FAIL"
             _write_json(evidence / "structural_conservation_receipt.json", structural)
             raise FailClosed("FAIL__Q0_STRUCTURAL_OR_CONSERVATION_AUDIT__NO_SVD", structural)

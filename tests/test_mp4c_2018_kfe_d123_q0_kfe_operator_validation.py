@@ -1,10 +1,18 @@
 import math
+from pathlib import Path
 
 import numpy as np
 import pytest
 from scipy import sparse
 
 from ch5_two_asset_hank.corrected_diagnostic import q0_kfe_validation as subject
+
+
+def test_preflight_binds_exact_accepted_d2_construction_identity():
+    receipt = subject.preflight_binding(Path("."))
+    construction = receipt["accepted_d2_construction"]
+    assert construction["diagonal_construction_error"] == 0.0
+    assert construction["diagonal_construction_error_exact_zero"] is True
 
 
 def test_gamma_is_prospective_binary64_bound():
@@ -31,6 +39,26 @@ def test_exact_positive_adjacency_rejects_negative_offdiagonal():
     q = sparse.csr_matrix(np.array([[1.0, -1.0], [0.0, 0.0]]))
     with pytest.raises(subject.FailClosed, match="NEGATIVE_OFFDIAGONAL"):
         subject._exact_positive_adjacency(q)
+
+
+def test_secondary_sparse_reaggregation_preserves_raw_discrepancy_and_uses_frozen_bound():
+    stored_rate = np.nextafter(1.0, 0.0)
+    q = sparse.csr_matrix(np.array([[-1.0, stored_rate], [0.0, 0.0]]))
+    receipt = subject.secondary_sparse_reaggregation_audit(q)
+    assert receipt["maximum_absolute_discrepancy"] == 1.0 - stored_rate
+    assert receipt["maximum_absolute_discrepancy"] > 0.0
+    assert receipt["bound"] == subject.Q_ONE_BOUND
+    assert receipt["finite"] is True
+    assert receipt["within_frozen_bound"] is True
+
+
+def test_secondary_sparse_reaggregation_does_not_tune_bound_to_outcome():
+    stored_rate = 1.0 - 1.0e-12
+    q = sparse.csr_matrix(np.array([[-1.0, stored_rate], [0.0, 0.0]]))
+    receipt = subject.secondary_sparse_reaggregation_audit(q)
+    assert receipt["maximum_absolute_discrepancy"] == 1.0 - stored_rate
+    assert receipt["bound"] == 5.222144858126786e-14
+    assert receipt["within_frozen_bound"] is False
 
 
 def test_null_vector_orientation_and_single_normalization():
