@@ -1,0 +1,441 @@
+{
+  "boundary_adapter_markers": {},
+  "code_freeze_identity": {
+    "artifact_sha256": "28A27473A4C08CCD20550B9EDF1509BABB4D7D882A9429F7F54F55DE72083173",
+    "authority_id": "CH5_MP4C_2018_KFE_D123_OWNER_ADOPTED_20260916",
+    "git_head": "83b25a428e9ee4c622690a43b55f17a2e6a7cf50",
+    "scientific_code_sha256": {
+      "src/ch5_two_asset_hank/corrected_diagnostic/__init__.py": "85D0F992F3580FC313D542A231C9E129486C9F1B701F81635065F527EF2312CF",
+      "src/ch5_two_asset_hank/corrected_diagnostic/boundary.py": "871555F59FFA2523DB9289192AAD8D1D02E469BF9559B13146AE2E454C181EE4",
+      "src/ch5_two_asset_hank/corrected_diagnostic/contracts.py": "C8FACA13ABD6A7E15E322DA96C58021E053B777771EF28961CC1CCBEE0B1296A",
+      "src/ch5_two_asset_hank/corrected_diagnostic/cost.py": "30FDA6AFA8B30E214220A70476562BE1120FCBD0101D67A3C21B7CE77CD0C1BF",
+      "src/ch5_two_asset_hank/corrected_diagnostic/generator.py": "F52451213E04EA999FE132B77AA92D1B66819B4D36BA5C539E9DD5EED4A63DB3",
+      "src/ch5_two_asset_hank/corrected_diagnostic/option_a_step.py": "9AB40DE5C621F8C0D508DCFD8556B40B3709CE0DAA4F18C5A408FCAA1CDD2A47",
+      "src/ch5_two_asset_hank/corrected_diagnostic/panel.py": "1406A8D01881F52DC2DD8FCA0D03D3248939C946411D9F5495CC2358CCCD891C",
+      "src/ch5_two_asset_hank/corrected_diagnostic/q0_kfe_validation.py": "D8B560487BE1C1555A2E1632C4A989260D2F9C37E1765E2B841E15F564A95FF1",
+      "src/ch5_two_asset_hank/corrected_diagnostic/run_panel.py": "0DD069C05AE297E5176E42B669F1788BB5C923788B7BC0EFF2F2647951297315",
+      "src/ch5_two_asset_hank/corrected_diagnostic/saved_controls.py": "3EDB97E43C58AE49529CAFA2D142BB0FF14C429644F57B25665B0DD91980F971",
+      "src/ch5_two_asset_hank/corrected_diagnostic/selector.py": "C60C584A44A143CB584563ACDAA8F7E30EBC1CA45B90F8AF39728D40AC70E5E6",
+      "src/ch5_two_asset_hank/corrected_diagnostic/v1_q1_topology.py": "B40B1E03C8E67E8FF9D62C4D03D2B538D2725CE821BAD25CA2E6AA546390959E",
+      "tests/test_mp4c_2018_kfe_d123_interior_z_switching.py": "81C2083EB3F8EE0AFF8EDC991A80DA8D34503BEF40436E4866F048D1D788E6E6",
+      "tests/test_mp4c_2018_kfe_d123_lower_a_zero_kink_multiplier.py": "AC53EB759CED78E7777C616CE73354F8E431AC1B0C21E7906E1D85B20EFB3350",
+      "tests/test_mp4c_2018_kfe_d123_option_a_single_step.py": "22BBCCD6F6DE37B7462EE43198999863B4CD7986B3E493F868F06211A4331CE9",
+      "tests/test_mp4c_2018_kfe_d123_v1_q1_topology.py": "7F40BF9B151C7B431395CF7705DEE858C50AC68C1E6DB711FA13678F5C8FD419"
+    },
+    "v1_field_sha256": "5C410EBC329F08B37F941A783E7F2C84BFCDCB67C6E24118114BE8C55697F2E2"
+  },
+  "cumulative_budget": {
+    "interior_z_root_invocations": 140,
+    "max_interior_z_root_invocations": 2880,
+    "max_root_invocations": 3144,
+    "max_selector_evaluations": 800,
+    "root_invocations": 353,
+    "selector_evaluations": 694
+  },
+  "flat_index_f_zero_based": 693,
+  "index_b_a_z_zero_based": [
+    13,
+    14,
+    1
+  ],
+  "receipt_persistence_order": "SELECTOR_RECEIPT_DURABLE_BEFORE_NEXT_CELL_OR_Q1",
+  "selector_cell": {
+    "a": 7.368421052631579,
+    "a_lower": 0.0,
+    "a_upper": 10.0,
+    "b": 2.7894736842105265,
+    "b_lower": -2.0,
+    "b_upper": 5.0,
+    "cell_id": "v1_q1_f0693_b013_a014_z001",
+    "derivatives": {
+      "p_a_backward": 0.003337241422541793,
+      "p_a_forward": 0.0033120800454748533,
+      "p_b_backward": 0.003534576694506902,
+      "p_b_forward": 0.0035728314999790983
+    },
+    "effective_r_a": 0.08942374803149963,
+    "effective_r_b": 0.02,
+    "net_wage": 20.772882861023252,
+    "transfer_income": 0.1,
+    "z": 1.3
+  },
+  "selector_result": {
+    "admissible_comparison_count": 1,
+    "candidates": [
+      {
+        "active_constraints": [],
+        "active_equality_receipts": {},
+        "admissible": false,
+        "arithmetic_tolerance": 4.893548732944283e-13,
+        "c": 16.820205412739625,
+        "closed_face_feasible": true,
+        "complementarity_residuals": {},
+        "cost": 0.019867106588777748,
+        "d": 0.16273172997036334,
+        "d2_assembler_admissible": true,
+        "derivative_branches": {
+          "a": "backward",
+          "b": "backward"
+        },
+        "g_a": 0.8216435575708869,
+        "g_b": -4.525514007377833,
+        "hamiltonian": -0.07996460771773344,
+        "interior_z_receipt": null,
+        "l": 0.5931531434838013,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {},
+        "q_a": 0.003337241422541793,
+        "q_b": 0.003534576694506902,
+        "q_b_domain_ok": true,
+        "raw_hamiltonian": -0.07996460771773344,
+        "rejection_reasons": [
+          "TRANSFER_SIGN_INCONSISTENT_NEGATIVE",
+          "A_DERIVATIVE_DIRECTION_INCONSISTENT",
+          "TRANSFER_KKT_RESIDUAL"
+        ],
+        "root_invoked": false,
+        "root_status": "NOT_REQUIRED",
+        "slacks": {},
+        "transfer_branch": "negative",
+        "transfer_kkt_residual": 0.0007069153389013803,
+        "transfer_target_interval": [
+          0.004044156761443173,
+          0.004044156761443173
+        ],
+        "utility": -0.06671085429148138
+      },
+      {
+        "active_constraints": [],
+        "active_equality_receipts": {},
+        "admissible": false,
+        "arithmetic_tolerance": 4.823656857380676e-13,
+        "c": 16.729914930769567,
+        "closed_face_feasible": true,
+        "complementarity_residuals": {},
+        "cost": 0.014685753310973923,
+        "d": 0.12548671800226605,
+        "d2_assembler_admissible": true,
+        "derivative_branches": {
+          "a": "backward",
+          "b": "forward"
+        },
+        "g_a": 0.7843985456027897,
+        "g_b": -4.36624070342813,
+        "hamiltonian": -0.08010820336297572,
+        "interior_z_receipt": null,
+        "l": 0.5944315628977755,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {},
+        "q_a": 0.003337241422541793,
+        "q_b": 0.0035728314999790983,
+        "q_b_domain_ok": true,
+        "raw_hamiltonian": -0.08010820336297572,
+        "rejection_reasons": [
+          "TRANSFER_SIGN_INCONSISTENT_NEGATIVE",
+          "B_DERIVATIVE_DIRECTION_INCONSISTENT",
+          "A_DERIVATIVE_DIRECTION_INCONSISTENT",
+          "TRANSFER_KKT_RESIDUAL"
+        ],
+        "root_invoked": false,
+        "root_status": "NOT_REQUIRED",
+        "slacks": {},
+        "transfer_branch": "negative",
+        "transfer_kkt_residual": 0.0007145662999958192,
+        "transfer_target_interval": [
+          0.004051807722537612,
+          0.004051807722537612
+        ],
+        "utility": -0.06712608835944398
+      },
+      {
+        "active_constraints": [],
+        "active_equality_receipts": {},
+        "admissible": false,
+        "arithmetic_tolerance": 4.875194242819929e-13,
+        "c": 16.820205412739625,
+        "closed_face_feasible": true,
+        "complementarity_residuals": {},
+        "cost": 0.016179370175890526,
+        "d": 0.13650516360650855,
+        "d2_assembler_admissible": true,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "backward"
+        },
+        "g_a": 0.7954169912070321,
+        "g_b": -4.495599704601091,
+        "hamiltonian": -0.07996641149078805,
+        "interior_z_receipt": null,
+        "l": 0.5931531434838013,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {},
+        "q_a": 0.0033120800454748533,
+        "q_b": 0.003534576694506902,
+        "q_b_domain_ok": true,
+        "raw_hamiltonian": -0.07996641149078805,
+        "rejection_reasons": [
+          "TRANSFER_SIGN_INCONSISTENT_NEGATIVE",
+          "TRANSFER_KKT_RESIDUAL"
+        ],
+        "root_invoked": false,
+        "root_status": "NOT_REQUIRED",
+        "slacks": {},
+        "transfer_branch": "negative",
+        "transfer_kkt_residual": 0.0007069153389013807,
+        "transfer_target_interval": [
+          0.004018995384376234,
+          0.004018995384376234
+        ],
+        "utility": -0.06671085429148138
+      },
+      {
+        "active_constraints": [],
+        "active_equality_receipts": {},
+        "admissible": false,
+        "arithmetic_tolerance": 4.805610178017878e-13,
+        "c": 16.729914930769567,
+        "closed_face_feasible": true,
+        "complementarity_residuals": {},
+        "cost": 0.011298808196811956,
+        "d": 0.09954096314448393,
+        "d2_assembler_admissible": true,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "forward"
+        },
+        "g_a": 0.7584527907450075,
+        "g_b": -4.336908003456187,
+        "hamiltonian": -0.08010907353304245,
+        "interior_z_receipt": null,
+        "l": 0.5944315628977755,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {},
+        "q_a": 0.0033120800454748533,
+        "q_b": 0.0035728314999790983,
+        "q_b_domain_ok": true,
+        "raw_hamiltonian": -0.08010907353304245,
+        "rejection_reasons": [
+          "TRANSFER_SIGN_INCONSISTENT_NEGATIVE",
+          "B_DERIVATIVE_DIRECTION_INCONSISTENT",
+          "TRANSFER_KKT_RESIDUAL"
+        ],
+        "root_invoked": false,
+        "root_status": "NOT_REQUIRED",
+        "slacks": {},
+        "transfer_branch": "negative",
+        "transfer_kkt_residual": 0.0007145662999958197,
+        "transfer_target_interval": [
+          0.004026646345470673,
+          0.004026646345470673
+        ],
+        "utility": -0.06712608835944398
+      },
+      {
+        "active_constraints": [],
+        "active_equality_receipts": {},
+        "admissible": true,
+        "arithmetic_tolerance": 4.781003085296421e-13,
+        "c": 16.820205412739625,
+        "closed_face_feasible": true,
+        "complementarity_residuals": {},
+        "cost": 0.0,
+        "d": 0.0,
+        "d2_assembler_admissible": true,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "backward"
+        },
+        "g_a": 0.6589118276005236,
+        "g_b": -4.342915170818692,
+        "hamiltonian": -0.07987885232455452,
+        "interior_z_receipt": null,
+        "l": 0.5931531434838013,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {},
+        "q_a": 0.0033120800454748533,
+        "q_b": 0.003534576694506902,
+        "q_b_domain_ok": true,
+        "raw_hamiltonian": -0.07987885232455452,
+        "rejection_reasons": [],
+        "root_invoked": false,
+        "root_status": "NOT_REQUIRED",
+        "slacks": {},
+        "transfer_branch": "zero_kink",
+        "transfer_kkt_residual": 0.0,
+        "transfer_target_interval": [
+          0.003181119025056212,
+          0.003888034363957592
+        ],
+        "utility": -0.06671085429148138
+      },
+      {
+        "active_constraints": [],
+        "active_equality_receipts": {},
+        "admissible": false,
+        "arithmetic_tolerance": 4.737137908920092e-13,
+        "c": 16.729914930769567,
+        "closed_face_feasible": true,
+        "complementarity_residuals": {},
+        "cost": 0.0,
+        "d": 0.0,
+        "d2_assembler_admissible": true,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "forward"
+        },
+        "g_a": 0.6589118276005236,
+        "g_b": -4.226068232114891,
+        "hamiltonian": -0.08004274934428197,
+        "interior_z_receipt": null,
+        "l": 0.5944315628977755,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {},
+        "q_a": 0.0033120800454748533,
+        "q_b": 0.0035728314999790983,
+        "q_b_domain_ok": true,
+        "raw_hamiltonian": -0.08004274934428197,
+        "rejection_reasons": [
+          "B_DERIVATIVE_DIRECTION_INCONSISTENT"
+        ],
+        "root_invoked": false,
+        "root_status": "NOT_REQUIRED",
+        "slacks": {},
+        "transfer_branch": "zero_kink",
+        "transfer_kkt_residual": 0.0,
+        "transfer_target_interval": [
+          0.0032155483499811885,
+          0.003930114649977008
+        ],
+        "utility": -0.06712608835944398
+      },
+      {
+        "active_constraints": [],
+        "active_equality_receipts": {},
+        "admissible": false,
+        "arithmetic_tolerance": 4.699479925855227e-13,
+        "c": 16.820205412739625,
+        "closed_face_feasible": true,
+        "complementarity_residuals": {},
+        "cost": 0.10894572578591874,
+        "d": -0.6003369416566495,
+        "d2_assembler_admissible": true,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "backward"
+        },
+        "g_a": 0.058574885943874055,
+        "g_b": -3.8515239549479614,
+        "hamiltonian": -0.08013035639007482,
+        "interior_z_receipt": null,
+        "l": 0.5931531434838013,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {},
+        "q_a": 0.0033120800454748533,
+        "q_b": 0.003534576694506902,
+        "q_b_domain_ok": true,
+        "raw_hamiltonian": -0.08013035639007482,
+        "rejection_reasons": [
+          "TRANSFER_SIGN_INCONSISTENT_POSITIVE",
+          "TRANSFER_KKT_RESIDUAL"
+        ],
+        "root_invoked": false,
+        "root_status": "NOT_REQUIRED",
+        "slacks": {},
+        "transfer_branch": "positive",
+        "transfer_kkt_residual": 0.0007069153389013803,
+        "transfer_target_interval": [
+          0.002605164706573473,
+          0.002605164706573473
+        ],
+        "utility": -0.06671085429148138
+      },
+      {
+        "active_constraints": [],
+        "active_equality_receipts": {},
+        "admissible": false,
+        "arithmetic_tolerance": 4.651958162115212e-13,
+        "c": 16.729914930769567,
+        "closed_face_feasible": true,
+        "complementarity_residuals": {},
+        "cost": 0.11885084399165002,
+        "d": -0.6373011421186742,
+        "d2_assembler_admissible": true,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "forward"
+        },
+        "g_a": 0.021610685481849412,
+        "g_b": -3.7076179339878665,
+        "hamiltonian": -0.08030120618372978,
+        "interior_z_receipt": null,
+        "l": 0.5944315628977755,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {},
+        "q_a": 0.0033120800454748533,
+        "q_b": 0.0035728314999790983,
+        "q_b_domain_ok": true,
+        "raw_hamiltonian": -0.08030120618372978,
+        "rejection_reasons": [
+          "TRANSFER_SIGN_INCONSISTENT_POSITIVE",
+          "B_DERIVATIVE_DIRECTION_INCONSISTENT",
+          "TRANSFER_KKT_RESIDUAL"
+        ],
+        "root_invoked": false,
+        "root_status": "NOT_REQUIRED",
+        "slacks": {},
+        "transfer_branch": "positive",
+        "transfer_kkt_residual": 0.0007145662999958197,
+        "transfer_target_interval": [
+          0.0025975137454790336,
+          0.0025975137454790336
+        ],
+        "utility": -0.06712608835944398
+      }
+    ],
+    "cell_id": "v1_q1_f0693_b013_a014_z001",
+    "face_active_set_count": 1,
+    "interior_z_root_invocations": 0,
+    "outcome": "SELECTED_ADMISSIBLE",
+    "regime_attempt_count": 3,
+    "root_invocations": 0,
+    "selected": {
+      "active_constraints": [],
+      "active_equality_receipts": {},
+      "admissible": true,
+      "arithmetic_tolerance": 4.781003085296421e-13,
+      "c": 16.820205412739625,
+      "closed_face_feasible": true,
+      "complementarity_residuals": {},
+      "cost": 0.0,
+      "d": 0.0,
+      "d2_assembler_admissible": true,
+      "derivative_branches": {
+        "a": "forward",
+        "b": "backward"
+      },
+      "g_a": 0.6589118276005236,
+      "g_b": -4.342915170818692,
+      "hamiltonian": -0.07987885232455452,
+      "interior_z_receipt": null,
+      "l": 0.5931531434838013,
+      "lower_a_zero_kink_multiplier_receipt": null,
+      "multipliers": {},
+      "q_a": 0.0033120800454748533,
+      "q_b": 0.003534576694506902,
+      "q_b_domain_ok": true,
+      "raw_hamiltonian": -0.07987885232455452,
+      "rejection_reasons": [],
+      "root_invoked": false,
+      "root_status": "NOT_REQUIRED",
+      "slacks": {},
+      "transfer_branch": "zero_kink",
+      "transfer_kkt_residual": 0.0,
+      "transfer_target_interval": [
+        0.003181119025056212,
+        0.003888034363957592
+      ],
+      "utility": -0.06671085429148138
+    },
+    "selector_evaluation_ordinal": 694
+  }
+}

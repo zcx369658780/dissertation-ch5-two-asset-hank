@@ -1,0 +1,1041 @@
+{
+  "boundary_adapter_markers": {
+    "a": "UNUSED_BOUNDARY_SLOT_DUPLICATES_INWARD_RAW_DERIVATIVE"
+  },
+  "code_freeze_identity": {
+    "artifact_sha256": "28A27473A4C08CCD20550B9EDF1509BABB4D7D882A9429F7F54F55DE72083173",
+    "authority_id": "CH5_MP4C_2018_KFE_D123_OWNER_ADOPTED_20260916",
+    "git_head": "83b25a428e9ee4c622690a43b55f17a2e6a7cf50",
+    "scientific_code_sha256": {
+      "src/ch5_two_asset_hank/corrected_diagnostic/__init__.py": "85D0F992F3580FC313D542A231C9E129486C9F1B701F81635065F527EF2312CF",
+      "src/ch5_two_asset_hank/corrected_diagnostic/boundary.py": "871555F59FFA2523DB9289192AAD8D1D02E469BF9559B13146AE2E454C181EE4",
+      "src/ch5_two_asset_hank/corrected_diagnostic/contracts.py": "C8FACA13ABD6A7E15E322DA96C58021E053B777771EF28961CC1CCBEE0B1296A",
+      "src/ch5_two_asset_hank/corrected_diagnostic/cost.py": "30FDA6AFA8B30E214220A70476562BE1120FCBD0101D67A3C21B7CE77CD0C1BF",
+      "src/ch5_two_asset_hank/corrected_diagnostic/generator.py": "F52451213E04EA999FE132B77AA92D1B66819B4D36BA5C539E9DD5EED4A63DB3",
+      "src/ch5_two_asset_hank/corrected_diagnostic/option_a_step.py": "9AB40DE5C621F8C0D508DCFD8556B40B3709CE0DAA4F18C5A408FCAA1CDD2A47",
+      "src/ch5_two_asset_hank/corrected_diagnostic/panel.py": "1406A8D01881F52DC2DD8FCA0D03D3248939C946411D9F5495CC2358CCCD891C",
+      "src/ch5_two_asset_hank/corrected_diagnostic/q0_kfe_validation.py": "D8B560487BE1C1555A2E1632C4A989260D2F9C37E1765E2B841E15F564A95FF1",
+      "src/ch5_two_asset_hank/corrected_diagnostic/run_panel.py": "0DD069C05AE297E5176E42B669F1788BB5C923788B7BC0EFF2F2647951297315",
+      "src/ch5_two_asset_hank/corrected_diagnostic/saved_controls.py": "3EDB97E43C58AE49529CAFA2D142BB0FF14C429644F57B25665B0DD91980F971",
+      "src/ch5_two_asset_hank/corrected_diagnostic/selector.py": "C60C584A44A143CB584563ACDAA8F7E30EBC1CA45B90F8AF39728D40AC70E5E6",
+      "src/ch5_two_asset_hank/corrected_diagnostic/v1_q1_topology.py": "B40B1E03C8E67E8FF9D62C4D03D2B538D2725CE821BAD25CA2E6AA546390959E",
+      "tests/test_mp4c_2018_kfe_d123_interior_z_switching.py": "81C2083EB3F8EE0AFF8EDC991A80DA8D34503BEF40436E4866F048D1D788E6E6",
+      "tests/test_mp4c_2018_kfe_d123_lower_a_zero_kink_multiplier.py": "AC53EB759CED78E7777C616CE73354F8E431AC1B0C21E7906E1D85B20EFB3350",
+      "tests/test_mp4c_2018_kfe_d123_option_a_single_step.py": "22BBCCD6F6DE37B7462EE43198999863B4CD7986B3E493F868F06211A4331CE9",
+      "tests/test_mp4c_2018_kfe_d123_v1_q1_topology.py": "7F40BF9B151C7B431395CF7705DEE858C50AC68C1E6DB711FA13678F5C8FD419"
+    },
+    "v1_field_sha256": "5C410EBC329F08B37F941A783E7F2C84BFCDCB67C6E24118114BE8C55697F2E2"
+  },
+  "cumulative_budget": {
+    "interior_z_root_invocations": 84,
+    "max_interior_z_root_invocations": 2880,
+    "max_root_invocations": 3144,
+    "max_selector_evaluations": 800,
+    "root_invocations": 212,
+    "selector_evaluations": 407
+  },
+  "flat_index_f_zero_based": 406,
+  "index_b_a_z_zero_based": [
+    6,
+    0,
+    1
+  ],
+  "receipt_persistence_order": "SELECTOR_RECEIPT_DURABLE_BEFORE_NEXT_CELL_OR_Q1",
+  "selector_cell": {
+    "a": 0.0,
+    "a_lower": 0.0,
+    "a_upper": 10.0,
+    "b": 0.2105263157894739,
+    "b_lower": -2.0,
+    "b_upper": 5.0,
+    "cell_id": "v1_q1_f0406_b006_a000_z001",
+    "derivatives": {
+      "p_a_backward": 0.003728607344245827,
+      "p_a_forward": 0.003728607344245827,
+      "p_b_backward": 0.008720537785666562,
+      "p_b_forward": 0.003534990894603853
+    },
+    "effective_r_a": 0.09,
+    "effective_r_b": 0.02,
+    "net_wage": 20.772882861023252,
+    "transfer_income": 0.1,
+    "z": 1.3
+  },
+  "selector_result": {
+    "admissible_comparison_count": 1,
+    "candidates": [
+      {
+        "active_constraints": [],
+        "active_equality_receipts": {},
+        "admissible": false,
+        "arithmetic_tolerance": 3.325405555310814e-13,
+        "c": 10.70849321636963,
+        "closed_face_feasible": false,
+        "complementarity_residuals": {
+          "lower_a": -0.0
+        },
+        "cost": 7.942010920892096e-08,
+        "d": -2.362168919000431e-07,
+        "d2_assembler_admissible": false,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "backward"
+        },
+        "g_a": -2.362168919000431e-07,
+        "g_b": 4.156343596433122,
+        "hamiltonian": -0.0785917022027672,
+        "interior_z_receipt": null,
+        "l": 0.7105718656598194,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {
+          "lower_a": 0.0
+        },
+        "q_a": 0.003728607344245827,
+        "q_b": 0.008720537785666562,
+        "q_b_domain_ok": true,
+        "raw_hamiltonian": -0.0785917022027672,
+        "rejection_reasons": [
+          "lower_a_PRIMAL_INFEASIBLE",
+          "B_DERIVATIVE_DIRECTION_INCONSISTENT",
+          "A_DERIVATIVE_DIRECTION_INCONSISTENT"
+        ],
+        "root_invoked": false,
+        "root_status": "NOT_REQUIRED",
+        "slacks": {
+          "lower_a": -2.362168919000431e-07
+        },
+        "transfer_branch": "negative",
+        "transfer_kkt_residual": 4.336808689942018e-19,
+        "transfer_target_interval": [
+          0.0037286073442458264,
+          0.0037286073442458264
+        ],
+        "utility": -0.11483725270491546
+      },
+      {
+        "active_constraints": [],
+        "active_equality_receipts": {},
+        "admissible": false,
+        "arithmetic_tolerance": 4.651241388758264e-13,
+        "c": 16.819219959733697,
+        "closed_face_feasible": true,
+        "complementarity_residuals": {
+          "lower_a": 0.0
+        },
+        "cost": 1.3727118343111377e-08,
+        "d": 7.738570698124408e-08,
+        "d2_assembler_admissible": true,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "forward"
+        },
+        "g_a": 7.738570698124408e-08,
+        "g_b": -4.393219990308963,
+        "hamiltonian": -0.08224535075530738,
+        "interior_z_receipt": null,
+        "l": 0.5931670445868393,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {
+          "lower_a": 0.0
+        },
+        "q_a": 0.003728607344245827,
+        "q_b": 0.003534990894603853,
+        "q_b_domain_ok": true,
+        "raw_hamiltonian": -0.08224535075530738,
+        "rejection_reasons": [
+          "TRANSFER_SIGN_INCONSISTENT_NEGATIVE",
+          "B_DERIVATIVE_DIRECTION_INCONSISTENT",
+          "TRANSFER_KKT_RESIDUAL"
+        ],
+        "root_invoked": false,
+        "root_status": "NOT_REQUIRED",
+        "slacks": {
+          "lower_a": 7.738570698124408e-08
+        },
+        "transfer_branch": "negative",
+        "transfer_kkt_residual": 0.0007069981789207705,
+        "transfer_target_interval": [
+          0.004435605523166597,
+          0.004435605523166597
+        ],
+        "utility": -0.06671535838011448
+      },
+      {
+        "active_constraints": [],
+        "active_equality_receipts": {},
+        "admissible": false,
+        "arithmetic_tolerance": 3.0284345592063194e-13,
+        "c": 13.541893076049096,
+        "closed_face_feasible": false,
+        "complementarity_residuals": {
+          "lower_a": -0.0
+        },
+        "cost": 2.2501506095283107e-08,
+        "d": -1.0811864562815831e-07,
+        "d2_assembler_admissible": false,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "zero"
+        },
+        "g_a": -1.0811864562815831e-07,
+        "g_b": 0.0,
+        "hamiltonian": -0.08605769480516884,
+        "interior_z_receipt": {
+          "arithmetic_bound": 4.851538879725415e-13,
+          "endpoint_bounds": {
+            "backward": 3.325405555310814e-13,
+            "forward": 4.651241388758264e-13
+          },
+          "endpoint_drifts": {
+            "backward": 4.156343596433122,
+            "forward": -4.393219990308963
+          },
+          "endpoint_shadows": {
+            "backward": 0.008720537785666562,
+            "forward": 0.003534990894603853
+          },
+          "marker": "INTERIOR_LIQUID_Z_ZERO_DRIFT_SWITCH",
+          "raw_root_residual": -5.114165699571914e-16,
+          "root_bracket": [
+            0.003534990894603853,
+            0.008720537785666562
+          ],
+          "root_method": "BRENTQ_UNIQUE_LOG_SCREENED_BRACKET",
+          "root_status": "ROOT_CONVERGED"
+        },
+        "l": 0.646885776712758,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {
+          "lower_a": 0.0
+        },
+        "q_a": 0.003728607344245827,
+        "q_b": 0.005453072091481286,
+        "q_b_domain_ok": true,
+        "raw_hamiltonian": -0.08605769480516884,
+        "rejection_reasons": [
+          "lower_a_PRIMAL_INFEASIBLE",
+          "A_DERIVATIVE_DIRECTION_INCONSISTENT"
+        ],
+        "root_invoked": true,
+        "root_status": "ROOT_CONVERGED",
+        "slacks": {
+          "lower_a": -1.0811864562815831e-07
+        },
+        "transfer_branch": "negative",
+        "transfer_kkt_residual": 0.0,
+        "transfer_target_interval": [
+          0.003728607344245827,
+          0.003728607344245827
+        ],
+        "utility": -0.08605769440203687
+      },
+      {
+        "active_constraints": [],
+        "active_equality_receipts": {},
+        "admissible": false,
+        "arithmetic_tolerance": 3.325405404252837e-13,
+        "c": 10.70849321636963,
+        "closed_face_feasible": true,
+        "complementarity_residuals": {
+          "lower_a": 0.0
+        },
+        "cost": 0.0,
+        "d": 0.0,
+        "d2_assembler_admissible": true,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "backward"
+        },
+        "g_a": 0.0,
+        "g_b": 4.1563434396363395,
+        "hamiltonian": -0.07859170268935944,
+        "interior_z_receipt": null,
+        "l": 0.7105718656598194,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {
+          "lower_a": 0.0
+        },
+        "q_a": 0.003728607344245827,
+        "q_b": 0.008720537785666562,
+        "q_b_domain_ok": true,
+        "raw_hamiltonian": -0.07859170268935944,
+        "rejection_reasons": [
+          "B_DERIVATIVE_DIRECTION_INCONSISTENT",
+          "TRANSFER_KKT_RESIDUAL"
+        ],
+        "root_invoked": false,
+        "root_status": "NOT_REQUIRED",
+        "slacks": {
+          "lower_a": 0.0
+        },
+        "transfer_branch": "zero_kink",
+        "transfer_kkt_residual": 0.004119876662854079,
+        "transfer_target_interval": [
+          0.007848484007099905,
+          0.009592591564233218
+        ],
+        "utility": -0.11483725270491546
+      },
+      {
+        "active_constraints": [],
+        "active_equality_receipts": {},
+        "admissible": false,
+        "arithmetic_tolerance": 4.651241333418776e-13,
+        "c": 16.819219959733697,
+        "closed_face_feasible": true,
+        "complementarity_residuals": {
+          "lower_a": 0.0
+        },
+        "cost": 0.0,
+        "d": 0.0,
+        "d2_assembler_admissible": true,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "forward"
+        },
+        "g_a": 0.0,
+        "g_b": -4.393219899196138,
+        "hamiltonian": -0.08224535072176528,
+        "interior_z_receipt": null,
+        "l": 0.5931670445868393,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {
+          "lower_a": 0.0
+        },
+        "q_a": 0.003728607344245827,
+        "q_b": 0.003534990894603853,
+        "q_b_domain_ok": true,
+        "raw_hamiltonian": -0.08224535072176528,
+        "rejection_reasons": [
+          "B_DERIVATIVE_DIRECTION_INCONSISTENT"
+        ],
+        "root_invoked": false,
+        "root_status": "NOT_REQUIRED",
+        "slacks": {
+          "lower_a": 0.0
+        },
+        "transfer_branch": "zero_kink",
+        "transfer_kkt_residual": 0.0,
+        "transfer_target_interval": [
+          0.003181491805143468,
+          0.0038884899840642383
+        ],
+        "utility": -0.06671535838011448
+      },
+      {
+        "active_constraints": [],
+        "active_equality_receipts": {},
+        "admissible": false,
+        "arithmetic_tolerance": 3.028434495522045e-13,
+        "c": 13.541893014759237,
+        "closed_face_feasible": true,
+        "complementarity_residuals": {
+          "lower_a": 0.0
+        },
+        "cost": 0.0,
+        "d": 0.0,
+        "d2_assembler_admissible": true,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "zero"
+        },
+        "g_a": 0.0,
+        "g_b": 0.0,
+        "hamiltonian": -0.0860576948689133,
+        "interior_z_receipt": {
+          "arithmetic_bound": 4.851538763185508e-13,
+          "endpoint_bounds": {
+            "backward": 3.325405404252837e-13,
+            "forward": 4.651241333418776e-13
+          },
+          "endpoint_drifts": {
+            "backward": 4.1563434396363395,
+            "forward": -4.393219899196138
+          },
+          "endpoint_shadows": {
+            "backward": 0.008720537785666562,
+            "forward": 0.003534990894603853
+          },
+          "marker": "INTERIOR_LIQUID_Z_ZERO_DRIFT_SWITCH",
+          "raw_root_residual": 0.0,
+          "root_bracket": [
+            0.003534990894603853,
+            0.008720537785666562
+          ],
+          "root_method": "BRENTQ_UNIQUE_LOG_SCREENED_BRACKET",
+          "root_status": "ROOT_CONVERGED"
+        },
+        "l": 0.6468857778838657,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {
+          "lower_a": 0.0
+        },
+        "q_a": 0.003728607344245827,
+        "q_b": 0.00545307214084189,
+        "q_b_domain_ok": true,
+        "raw_hamiltonian": -0.0860576948689133,
+        "rejection_reasons": [
+          "TRANSFER_KKT_RESIDUAL"
+        ],
+        "root_invoked": true,
+        "root_status": "ROOT_CONVERGED",
+        "slacks": {
+          "lower_a": 0.0
+        },
+        "transfer_branch": "zero_kink",
+        "transfer_kkt_residual": 0.0011791575825118744,
+        "transfer_target_interval": [
+          0.004907764926757701,
+          0.00599837935492608
+        ],
+        "utility": -0.0860576948689133
+      },
+      {
+        "active_constraints": [],
+        "active_equality_receipts": {},
+        "admissible": false,
+        "arithmetic_tolerance": 3.325405619259661e-13,
+        "c": 10.70849321636963,
+        "closed_face_feasible": false,
+        "complementarity_residuals": {
+          "lower_a": -0.0
+        },
+        "cost": 1.4666348758892958e-07,
+        "d": -3.362168919000431e-07,
+        "d2_assembler_admissible": false,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "backward"
+        },
+        "g_a": -3.362168919000431e-07,
+        "g_b": 4.1563436291897435,
+        "hamiltonian": -0.07859170228997259,
+        "interior_z_receipt": null,
+        "l": 0.7105718656598194,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {
+          "lower_a": 0.0
+        },
+        "q_a": 0.003728607344245827,
+        "q_b": 0.008720537785666562,
+        "q_b_domain_ok": true,
+        "raw_hamiltonian": -0.07859170228997259,
+        "rejection_reasons": [
+          "TRANSFER_SIGN_INCONSISTENT_POSITIVE",
+          "lower_a_PRIMAL_INFEASIBLE",
+          "B_DERIVATIVE_DIRECTION_INCONSISTENT",
+          "A_DERIVATIVE_DIRECTION_INCONSISTENT",
+          "TRANSFER_KKT_RESIDUAL"
+        ],
+        "root_invoked": false,
+        "root_status": "NOT_REQUIRED",
+        "slacks": {
+          "lower_a": -3.362168919000431e-07
+        },
+        "transfer_branch": "positive",
+        "transfer_kkt_residual": 0.0017441075571333125,
+        "transfer_target_interval": [
+          0.0019844997871125143,
+          0.0019844997871125143
+        ],
+        "utility": -0.11483725270491546
+      },
+      {
+        "active_constraints": [],
+        "active_equality_receipts": {},
+        "admissible": false,
+        "arithmetic_tolerance": 4.651241339421434e-13,
+        "c": 16.819219959733697,
+        "closed_face_feasible": false,
+        "complementarity_residuals": {
+          "lower_a": -0.0
+        },
+        "cost": 2.772835550613749e-09,
+        "d": -2.2614293018755947e-08,
+        "d2_assembler_admissible": false,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "forward"
+        },
+        "g_a": -2.2614293018755947e-08,
+        "g_b": -4.393219879354681,
+        "hamiltonian": -0.08224535073594573,
+        "interior_z_receipt": null,
+        "l": 0.5931670445868393,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {
+          "lower_a": 0.0
+        },
+        "q_a": 0.003728607344245827,
+        "q_b": 0.003534990894603853,
+        "q_b_domain_ok": true,
+        "raw_hamiltonian": -0.08224535073594573,
+        "rejection_reasons": [
+          "TRANSFER_SIGN_INCONSISTENT_POSITIVE",
+          "lower_a_PRIMAL_INFEASIBLE",
+          "B_DERIVATIVE_DIRECTION_INCONSISTENT",
+          "A_DERIVATIVE_DIRECTION_INCONSISTENT",
+          "TRANSFER_KKT_RESIDUAL"
+        ],
+        "root_invoked": false,
+        "root_status": "NOT_REQUIRED",
+        "slacks": {
+          "lower_a": -2.2614293018755947e-08
+        },
+        "transfer_branch": "positive",
+        "transfer_kkt_residual": 0.0007069981789207709,
+        "transfer_target_interval": [
+          0.003021609165325056,
+          0.003021609165325056
+        ],
+        "utility": -0.06671535838011448
+      },
+      {
+        "active_constraints": [],
+        "active_equality_receipts": {},
+        "admissible": false,
+        "arithmetic_tolerance": 3.0284346194348635e-13,
+        "c": 13.541893117838312,
+        "closed_face_feasible": false,
+        "complementarity_residuals": {
+          "lower_a": -0.0
+        },
+        "cost": 6.412523413163453e-08,
+        "d": -2.081186435181204e-07,
+        "d2_assembler_admissible": false,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "zero"
+        },
+        "g_a": -2.081186435181204e-07,
+        "g_b": 0.0,
+        "hamiltonian": -0.08605769485969957,
+        "interior_z_receipt": {
+          "arithmetic_bound": 4.851538923292299e-13,
+          "endpoint_bounds": {
+            "backward": 3.325405619259661e-13,
+            "forward": 4.651241339421434e-13
+          },
+          "endpoint_drifts": {
+            "backward": 4.1563436291897435,
+            "forward": -4.393219879354681
+          },
+          "endpoint_shadows": {
+            "backward": 0.008720537785666562,
+            "forward": 0.003534990894603853
+          },
+          "marker": "INTERIOR_LIQUID_Z_ZERO_DRIFT_SWITCH",
+          "raw_root_residual": 1.9024449992582231e-16,
+          "root_bracket": [
+            0.003534990894603853,
+            0.008720537785666562
+          ],
+          "root_method": "BRENTQ_UNIQUE_LOG_SCREENED_BRACKET",
+          "root_status": "ROOT_CONVERGED"
+        },
+        "l": 0.6468857759142626,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {
+          "lower_a": 0.0
+        },
+        "q_a": 0.003728607344245827,
+        "q_b": 0.005453072057825783,
+        "q_b_domain_ok": true,
+        "raw_hamiltonian": -0.08605769485969957,
+        "rejection_reasons": [
+          "TRANSFER_SIGN_INCONSISTENT_POSITIVE",
+          "lower_a_PRIMAL_INFEASIBLE",
+          "A_DERIVATIVE_DIRECTION_INCONSISTENT",
+          "TRANSFER_KKT_RESIDUAL"
+        ],
+        "root_invoked": true,
+        "root_status": "ROOT_CONVERGED",
+        "slacks": {
+          "lower_a": -2.081186435181204e-07
+        },
+        "transfer_branch": "positive",
+        "transfer_kkt_residual": 0.0010906144115651571,
+        "transfer_target_interval": [
+          0.0026379929326806697,
+          0.0026379929326806697
+        ],
+        "utility": -0.08605769408370686
+      },
+      {
+        "active_constraints": [
+          "lower_a"
+        ],
+        "active_equality_receipts": {},
+        "admissible": false,
+        "arithmetic_tolerance": null,
+        "c": null,
+        "closed_face_feasible": false,
+        "complementarity_residuals": {},
+        "cost": null,
+        "d": null,
+        "d2_assembler_admissible": false,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "backward"
+        },
+        "g_a": null,
+        "g_b": null,
+        "hamiltonian": null,
+        "interior_z_receipt": null,
+        "l": null,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {},
+        "q_a": null,
+        "q_b": null,
+        "q_b_domain_ok": false,
+        "raw_hamiltonian": null,
+        "rejection_reasons": [
+          "ACTIVE_A_EQUALITY_WRONG_TRANSFER_SIGN"
+        ],
+        "root_invoked": false,
+        "root_status": "NOT_REQUIRED",
+        "slacks": {},
+        "transfer_branch": "negative",
+        "transfer_kkt_residual": null,
+        "transfer_target_interval": null,
+        "utility": null
+      },
+      {
+        "active_constraints": [
+          "lower_a"
+        ],
+        "active_equality_receipts": {},
+        "admissible": false,
+        "arithmetic_tolerance": null,
+        "c": null,
+        "closed_face_feasible": false,
+        "complementarity_residuals": {},
+        "cost": null,
+        "d": null,
+        "d2_assembler_admissible": false,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "forward"
+        },
+        "g_a": null,
+        "g_b": null,
+        "hamiltonian": null,
+        "interior_z_receipt": null,
+        "l": null,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {},
+        "q_a": null,
+        "q_b": null,
+        "q_b_domain_ok": false,
+        "raw_hamiltonian": null,
+        "rejection_reasons": [
+          "ACTIVE_A_EQUALITY_WRONG_TRANSFER_SIGN"
+        ],
+        "root_invoked": false,
+        "root_status": "NOT_REQUIRED",
+        "slacks": {},
+        "transfer_branch": "negative",
+        "transfer_kkt_residual": null,
+        "transfer_target_interval": null,
+        "utility": null
+      },
+      {
+        "active_constraints": [
+          "lower_a"
+        ],
+        "active_equality_receipts": {
+          "lower_a": {
+            "arithmetic_bound": 3.3262836087833425e-13,
+            "canonical_drift": 0.0,
+            "face": "lower_a",
+            "marker": "ACTIVE_EQUALITY_CANONICAL_ZERO",
+            "raw_residual": 0.0
+          }
+        },
+        "admissible": false,
+        "arithmetic_tolerance": 3.3262836087833425e-13,
+        "c": 10.70849321636963,
+        "closed_face_feasible": true,
+        "complementarity_residuals": {
+          "lower_a": 0.0
+        },
+        "cost": 0.0,
+        "d": -0.0,
+        "d2_assembler_admissible": true,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "backward"
+        },
+        "g_a": 0.0,
+        "g_b": 4.1563434396363395,
+        "hamiltonian": -0.07859170268935944,
+        "interior_z_receipt": null,
+        "l": 0.7105718656598194,
+        "lower_a_zero_kink_multiplier_receipt": {
+          "chosen_q_a": 0.007848484007099905,
+          "deterministic_minimum": 0.007848484007099905,
+          "intersection_nonempty": true,
+          "lambda_a": 0.004119876662854079,
+          "marker": "ACTIVE_LOWER_A_ZERO_KINK_MULTIPLIER_INTERVAL_CANONICAL_MIN",
+          "raw_kink_interval": [
+            0.007848484007099905,
+            0.009592591564233218
+          ],
+          "raw_multiplier_interval_lower": 0.003728607344245827,
+          "upper_endpoint_arithmetic_bound": 3.5527136788005136e-15
+        },
+        "multipliers": {
+          "lower_a": 0.004119876662854079
+        },
+        "q_a": 0.007848484007099905,
+        "q_b": 0.008720537785666562,
+        "q_b_domain_ok": true,
+        "raw_hamiltonian": -0.07859170268935944,
+        "rejection_reasons": [
+          "B_DERIVATIVE_DIRECTION_INCONSISTENT"
+        ],
+        "root_invoked": false,
+        "root_status": "NOT_REQUIRED",
+        "slacks": {
+          "lower_a": 0.0
+        },
+        "transfer_branch": "zero_kink",
+        "transfer_kkt_residual": 0.0,
+        "transfer_target_interval": [
+          0.007848484007099905,
+          0.009592591564233218
+        ],
+        "utility": -0.11483725270491546
+      },
+      {
+        "active_constraints": [
+          "lower_a"
+        ],
+        "active_equality_receipts": {
+          "lower_a": {
+            "arithmetic_bound": 4.651241333418776e-13,
+            "canonical_drift": 0.0,
+            "face": "lower_a",
+            "marker": "ACTIVE_EQUALITY_CANONICAL_ZERO",
+            "raw_residual": 0.0
+          }
+        },
+        "admissible": false,
+        "arithmetic_tolerance": 4.651241333418776e-13,
+        "c": 16.819219959733697,
+        "closed_face_feasible": true,
+        "complementarity_residuals": {
+          "lower_a": 0.0
+        },
+        "cost": 0.0,
+        "d": -0.0,
+        "d2_assembler_admissible": true,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "forward"
+        },
+        "g_a": 0.0,
+        "g_b": -4.393219899196138,
+        "hamiltonian": -0.08224535072176528,
+        "interior_z_receipt": null,
+        "l": 0.5931670445868393,
+        "lower_a_zero_kink_multiplier_receipt": {
+          "chosen_q_a": 0.003728607344245827,
+          "deterministic_minimum": 0.003728607344245827,
+          "intersection_nonempty": true,
+          "lambda_a": 0.0,
+          "marker": "ACTIVE_LOWER_A_ZERO_KINK_MULTIPLIER_INTERVAL_CANONICAL_MIN",
+          "raw_kink_interval": [
+            0.003181491805143468,
+            0.0038884899840642383
+          ],
+          "raw_multiplier_interval_lower": 0.003728607344245827,
+          "upper_endpoint_arithmetic_bound": 3.5527136788005136e-15
+        },
+        "multipliers": {
+          "lower_a": 0.0
+        },
+        "q_a": 0.003728607344245827,
+        "q_b": 0.003534990894603853,
+        "q_b_domain_ok": true,
+        "raw_hamiltonian": -0.08224535072176528,
+        "rejection_reasons": [
+          "B_DERIVATIVE_DIRECTION_INCONSISTENT"
+        ],
+        "root_invoked": false,
+        "root_status": "NOT_REQUIRED",
+        "slacks": {
+          "lower_a": 0.0
+        },
+        "transfer_branch": "zero_kink",
+        "transfer_kkt_residual": 0.0,
+        "transfer_target_interval": [
+          0.003181491805143468,
+          0.0038884899840642383
+        ],
+        "utility": -0.06671535838011448
+      },
+      {
+        "active_constraints": [
+          "lower_a"
+        ],
+        "active_equality_receipts": {
+          "lower_a": {
+            "arithmetic_bound": 3.0286858480784163e-13,
+            "canonical_drift": 0.0,
+            "face": "lower_a",
+            "marker": "ACTIVE_EQUALITY_CANONICAL_ZERO",
+            "raw_residual": 0.0
+          }
+        },
+        "admissible": true,
+        "arithmetic_tolerance": 3.0286858480784163e-13,
+        "c": 13.541893014759237,
+        "closed_face_feasible": true,
+        "complementarity_residuals": {
+          "lower_a": 0.0
+        },
+        "cost": 0.0,
+        "d": -0.0,
+        "d2_assembler_admissible": true,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "zero"
+        },
+        "g_a": 0.0,
+        "g_b": 0.0,
+        "hamiltonian": -0.0860576948689133,
+        "interior_z_receipt": {
+          "arithmetic_bound": 4.851790115741878e-13,
+          "endpoint_bounds": {
+            "backward": 3.3262836087833425e-13,
+            "forward": 4.651241333418776e-13
+          },
+          "endpoint_drifts": {
+            "backward": 4.1563434396363395,
+            "forward": -4.393219899196138
+          },
+          "endpoint_shadows": {
+            "backward": 0.008720537785666562,
+            "forward": 0.003534990894603853
+          },
+          "marker": "INTERIOR_LIQUID_Z_ZERO_DRIFT_SWITCH",
+          "raw_root_residual": 0.0,
+          "root_bracket": [
+            0.003534990894603853,
+            0.008720537785666562
+          ],
+          "root_method": "BRENTQ_UNIQUE_LOG_SCREENED_BRACKET",
+          "root_status": "ROOT_CONVERGED"
+        },
+        "l": 0.6468857778838657,
+        "lower_a_zero_kink_multiplier_receipt": {
+          "chosen_q_a": 0.004907764926757701,
+          "deterministic_minimum": 0.004907764926757701,
+          "intersection_nonempty": true,
+          "lambda_a": 0.0011791575825118744,
+          "marker": "ACTIVE_LOWER_A_ZERO_KINK_MULTIPLIER_INTERVAL_CANONICAL_MIN",
+          "raw_kink_interval": [
+            0.004907764926757701,
+            0.00599837935492608
+          ],
+          "raw_multiplier_interval_lower": 0.003728607344245827,
+          "upper_endpoint_arithmetic_bound": 3.5527136788005136e-15
+        },
+        "multipliers": {
+          "lower_a": 0.0011791575825118744
+        },
+        "q_a": 0.004907764926757701,
+        "q_b": 0.00545307214084189,
+        "q_b_domain_ok": true,
+        "raw_hamiltonian": -0.0860576948689133,
+        "rejection_reasons": [],
+        "root_invoked": true,
+        "root_status": "ROOT_CONVERGED",
+        "slacks": {
+          "lower_a": 0.0
+        },
+        "transfer_branch": "zero_kink",
+        "transfer_kkt_residual": 0.0,
+        "transfer_target_interval": [
+          0.004907764926757701,
+          0.00599837935492608
+        ],
+        "utility": -0.0860576948689133
+      },
+      {
+        "active_constraints": [
+          "lower_a"
+        ],
+        "active_equality_receipts": {},
+        "admissible": false,
+        "arithmetic_tolerance": null,
+        "c": null,
+        "closed_face_feasible": false,
+        "complementarity_residuals": {},
+        "cost": null,
+        "d": null,
+        "d2_assembler_admissible": false,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "backward"
+        },
+        "g_a": null,
+        "g_b": null,
+        "hamiltonian": null,
+        "interior_z_receipt": null,
+        "l": null,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {},
+        "q_a": null,
+        "q_b": null,
+        "q_b_domain_ok": false,
+        "raw_hamiltonian": null,
+        "rejection_reasons": [
+          "ACTIVE_A_EQUALITY_WRONG_TRANSFER_SIGN"
+        ],
+        "root_invoked": false,
+        "root_status": "NOT_REQUIRED",
+        "slacks": {},
+        "transfer_branch": "positive",
+        "transfer_kkt_residual": null,
+        "transfer_target_interval": null,
+        "utility": null
+      },
+      {
+        "active_constraints": [
+          "lower_a"
+        ],
+        "active_equality_receipts": {},
+        "admissible": false,
+        "arithmetic_tolerance": null,
+        "c": null,
+        "closed_face_feasible": false,
+        "complementarity_residuals": {},
+        "cost": null,
+        "d": null,
+        "d2_assembler_admissible": false,
+        "derivative_branches": {
+          "a": "forward",
+          "b": "forward"
+        },
+        "g_a": null,
+        "g_b": null,
+        "hamiltonian": null,
+        "interior_z_receipt": null,
+        "l": null,
+        "lower_a_zero_kink_multiplier_receipt": null,
+        "multipliers": {},
+        "q_a": null,
+        "q_b": null,
+        "q_b_domain_ok": false,
+        "raw_hamiltonian": null,
+        "rejection_reasons": [
+          "ACTIVE_A_EQUALITY_WRONG_TRANSFER_SIGN"
+        ],
+        "root_invoked": false,
+        "root_status": "NOT_REQUIRED",
+        "slacks": {},
+        "transfer_branch": "positive",
+        "transfer_kkt_residual": null,
+        "transfer_target_interval": null,
+        "utility": null
+      }
+    ],
+    "cell_id": "v1_q1_f0406_b006_a000_z001",
+    "face_active_set_count": 2,
+    "interior_z_root_invocations": 4,
+    "outcome": "SELECTED_ADMISSIBLE",
+    "regime_attempt_count": 6,
+    "root_invocations": 4,
+    "selected": {
+      "active_constraints": [
+        "lower_a"
+      ],
+      "active_equality_receipts": {
+        "lower_a": {
+          "arithmetic_bound": 3.0286858480784163e-13,
+          "canonical_drift": 0.0,
+          "face": "lower_a",
+          "marker": "ACTIVE_EQUALITY_CANONICAL_ZERO",
+          "raw_residual": 0.0
+        }
+      },
+      "admissible": true,
+      "arithmetic_tolerance": 3.0286858480784163e-13,
+      "c": 13.541893014759237,
+      "closed_face_feasible": true,
+      "complementarity_residuals": {
+        "lower_a": 0.0
+      },
+      "cost": 0.0,
+      "d": -0.0,
+      "d2_assembler_admissible": true,
+      "derivative_branches": {
+        "a": "forward",
+        "b": "zero"
+      },
+      "g_a": 0.0,
+      "g_b": 0.0,
+      "hamiltonian": -0.0860576948689133,
+      "interior_z_receipt": {
+        "arithmetic_bound": 4.851790115741878e-13,
+        "endpoint_bounds": {
+          "backward": 3.3262836087833425e-13,
+          "forward": 4.651241333418776e-13
+        },
+        "endpoint_drifts": {
+          "backward": 4.1563434396363395,
+          "forward": -4.393219899196138
+        },
+        "endpoint_shadows": {
+          "backward": 0.008720537785666562,
+          "forward": 0.003534990894603853
+        },
+        "marker": "INTERIOR_LIQUID_Z_ZERO_DRIFT_SWITCH",
+        "raw_root_residual": 0.0,
+        "root_bracket": [
+          0.003534990894603853,
+          0.008720537785666562
+        ],
+        "root_method": "BRENTQ_UNIQUE_LOG_SCREENED_BRACKET",
+        "root_status": "ROOT_CONVERGED"
+      },
+      "l": 0.6468857778838657,
+      "lower_a_zero_kink_multiplier_receipt": {
+        "chosen_q_a": 0.004907764926757701,
+        "deterministic_minimum": 0.004907764926757701,
+        "intersection_nonempty": true,
+        "lambda_a": 0.0011791575825118744,
+        "marker": "ACTIVE_LOWER_A_ZERO_KINK_MULTIPLIER_INTERVAL_CANONICAL_MIN",
+        "raw_kink_interval": [
+          0.004907764926757701,
+          0.00599837935492608
+        ],
+        "raw_multiplier_interval_lower": 0.003728607344245827,
+        "upper_endpoint_arithmetic_bound": 3.5527136788005136e-15
+      },
+      "multipliers": {
+        "lower_a": 0.0011791575825118744
+      },
+      "q_a": 0.004907764926757701,
+      "q_b": 0.00545307214084189,
+      "q_b_domain_ok": true,
+      "raw_hamiltonian": -0.0860576948689133,
+      "rejection_reasons": [],
+      "root_invoked": true,
+      "root_status": "ROOT_CONVERGED",
+      "slacks": {
+        "lower_a": 0.0
+      },
+      "transfer_branch": "zero_kink",
+      "transfer_kkt_residual": 0.0,
+      "transfer_target_interval": [
+        0.004907764926757701,
+        0.00599837935492608
+      ],
+      "utility": -0.0860576948689133
+    },
+    "selector_evaluation_ordinal": 407
+  }
+}
