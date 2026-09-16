@@ -8,20 +8,22 @@
 2. 本索引
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
-5. `docs/CH5_MP4C_2018_KFE_D123_CELL5_LIQUID_DIRECTION_SWITCH_OWNER_DECISION_REQUIRED_ACCEPTANCE_20260916.md`
-6. `docs/CH5_MP4C_2018_KFE_D123_CELL5_LIQUID_DIRECTION_SWITCH_ALGEBRAIC_ATTRIBUTION_REPORT.md`
-7. `docs/CH5_MP4C_2018_KFE_D123_LOWER_A_ZERO_KINK_REPAIR_OPTION_A_REEXECUTION_FAIL_CLOSED_ACCEPTANCE_20260916.md`
-8. `docs/CH5_MP4C_2018_KFE_D123_LOWER_A_ZERO_KINK_MULTIPLIER_REPAIR_AND_OPTION_A_REEXECUTION_REPORT.md`
-9. directly relevant HJB/upwind/selector authority after Owner decision.
+5. `docs/CH5_MP4C_2018_KFE_D123_INTERIOR_ZERO_LIQUID_Z_OWNER_ADOPTION_ACCEPTANCE_20260916.md`
+6. `docs/CH5_MP4C_2018_KFE_D123_CELL5_LIQUID_DIRECTION_SWITCH_ATTRIBUTION_ACCEPTANCE_20260916.md`
+7. `docs/CH5_MP4C_2018_KFE_D123_CELL5_LIQUID_DIRECTION_SWITCH_ALGEBRAIC_ATTRIBUTION_REPORT.md`
+8. `docs/CH5_MP4C_2018_KFE_D123_LOWER_A_ZERO_KINK_REPAIR_OPTION_A_REEXECUTION_FAIL_CLOSED_ACCEPTANCE_20260916.md`
+9. active task and directly relevant corrected selector/Option-A/D2 source-provenance.
 
-Current status: `CELL5_ZERO_LIQUID_SWITCH_ATTRIBUTION_ACCEPTED__OWNER_INTERIOR_Z_LAW_DECISION_REQUIRED__PRODUCTION_UNCHANGED`。
-Current active Builder task: none.
+Current status: `INTERIOR_ZERO_LIQUID_Z_OWNER_ADOPTED__OPTION_A_REEXECUTION_ACTIVE__PRODUCTION_UNCHANGED`。
+Current active Builder task: `tasks/CH5_MP4C_2018_KFE_D123_INTERIOR_Z_SWITCHING_REPAIR_AND_OPTION_A_REEXECUTION_20260916.md`。
 Results eligibility=`FALSE`。
 
-Accepted scientific semantics remain D1 numerical upper state constraints + D2 consumed-total-drift conservative assembly with strict zero-tolerance outward-face rejection + D3 regularized-cost-consistent KKT. Option A remains the Owner-selected seed.
+Accepted scientific semantics remain D1 numerical upper state constraints + D2 consumed-total-drift conservative assembly with strict zero-tolerance outward-face rejection + D3 regularized-cost-consistent KKT. Option A remains the Owner-selected seed. The lower-a zero-kink multiplier repair remains accepted.
 
-Cell 5 zero-science attribution is accepted: a unique finite positive zero-liquid shadow exists strictly between the raw forward/backward liquid derivatives, and repository history contains genuine `I0`/`Z` zero-liquid switching precedent. But the separate corrected selector and accepted root budget did not explicitly inherit this interior branch.
+Owner has now explicitly inherited the repository's interior zero-liquid `Z` switching law into the corrected selector. Z is eligible only at interior liquid nodes with strict backward/forward direction crossing and a unique finite positive zero-drift root within the positive one-sided-shadow interval. Z controls/a-side KKT are recomputed from the root and enter the same admissibility/Hamiltonian comparison. No averaging/interpolation/floor/clip/tolerance tuning is authorized.
 
-No Builder may add or execute the interior `Z` branch until Owner explicitly decides whether it becomes part of the corrected D1-D3 selector contract. If adopted, a fresh exact task must freeze the root equation/domain, eligibility conditions, Hamiltonian comparison, a-side coupling, new finite root budget and fail-closed rules before any scientific rerun.
+One-map root ceiling is now 3144 total: 264 retained boundary-liquid roots + at most 2880 interior-Z roots. The strict trigger governs actual calls; budget alone is not permission.
 
-Until Owner decision: selector/root/policy-map/D2/HJB/KFE/MATLAB/downstream calls remain unauthorized. Owner retains final authority over new economic laws, derivative/switching laws, major calibration, production replacement, causal interpretation and Results eligibility. GitHub live main remains repository-state authority.
+The active task permits one fresh Option-A map from Cell 0 after focused preflight/code freeze, <=800 selectors, <=3144 roots, D2<=1 only after complete map PASS, direct HJB solve<=1 only after D2 PASS, retries=0. KFE/MATLAB/outer/firm/wage-return/GE/annual/shock/IRF/Results remain zero.
+
+Owner retains final authority over new economic laws, major calibration, production replacement, causal interpretation and Results eligibility. GitHub live main remains repository-state authority.
