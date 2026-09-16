@@ -2,26 +2,31 @@
 
 更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`Q0_KFE_TWO_CLOSED_CLASSES_ACCEPTED__STRUCTURAL_ATTRIBUTION_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`Q0_TWO_ZERO_DRIFT_SINKS_ATTRIBUTED__V1_POLICY_REMAP_Q1_TOPOLOGY_DIAGNOSTIC_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Accepted scientific checkpoint
 
-Owner-adopted D1/D2/D3 corrected semantics、lower-a zero-kink multiplier handling、interior zero-liquid Z switching、Option-A 800-cell complete policy map、accepted Q0 conservative generator以及一次 direct HJB step均继续有效。Source-faithful/production paths remain frozen。
+Owner-adopted D1/D2/D3 corrected semantics、lower-a zero-kink multiplier handling、interior zero-liquid Z switching、Option-A 800-cell complete policy map、accepted Q0 conservative generator以及一次 direct HJB step V1均继续有效。Source-faithful/production paths remain frozen。
 
-## Q0 KFE operator result
+## Q0 recurrent-class attribution accepted
 
-The bounded source-free Q0 validation rerun candidate `132b2657c61e0707a5fff96b936b5a62a78dbb2e` is accepted as valid fail-closed evidence by `docs/CH5_MP4C_2018_KFE_D123_Q0_TWO_CLOSED_CLASSES_FAIL_CLOSED_ACCEPTANCE_20260916.md`.
+Candidate `2723c475943f7e6a767a940a9a52bad7b9c25e6f` is accepted by `docs/CH5_MP4C_2018_KFE_D123_Q0_TWO_CLOSED_CLASSES_STRUCTURAL_ATTRIBUTION_ACCEPTANCE_20260916.md`.
 
-Accepted Q0 passes construction identity, bounded sparse reaggregation, `Q0@1`, nonnegative offdiagonals and exact-zero closed-face outward flux. The exact-positive directed graph has 2318 edges, 400 SCCs of size 2, exactly two closed communicating classes of size 2 each, and 796 transient states. Because the finite conservative generator has more than one closed class, Q0 does not satisfy the frozen structural uniqueness requirement. GESVD and stationary-mass solving were correctly not executed.
+Accepted Q0 has two exact recurrent productivity pairs:
 
-This is structural nonuniqueness of the invariant stationary space for the accepted V0-policy operator Q0. It is not evidence of economic multiple equilibria, nonlinear HJB nonexistence, corrected fixed-point multiplicity, production readiness or Results authority.
+- flats `5,405` at asset node `(i_b,i_a)=(5,0)`, `(b,a)=(-0.1578947368421053,0)`;
+- flats `6,406` at asset node `(i_b,i_a)=(6,0)`, `(b,a)=(0.2105263157894739,0)`.
+
+At all four states, interior-liquid Z sets `g_b=0` exactly and active lower-a zero-kink handling sets `g_a=0` exactly. There are no asset outgoing rates; only the two-way productivity rate `1/3` remains. The two Q0 closed classes are therefore exact-zero-asset-drift sinks produced jointly by Z + lower-a state constraint + zero-kink handling, not by b-boundary behavior or a nonzero asset cycle.
+
+The accepted basin partition is A-only 12 states, B-only 560 states, both-reachable 228 states, neither 0. This is Q0 graph topology only, not economic multiple equilibria.
 
 ## Active gate
 
 Current active Builder task:
-`tasks/CH5_MP4C_2018_KFE_D123_Q0_TWO_CLOSED_CLASSES_STRUCTURAL_ATTRIBUTION_20260916.md`。
+`tasks/CH5_MP4C_2018_KFE_D123_V1_POLICY_REMAP_AND_Q1_RECURRENT_TOPOLOGY_DIAGNOSTIC_20260916.md`。
 
-The task must map both closed classes to exact F-order grid states and accepted cell receipts, identify selected policies/drifts and outgoing rates, recover the SCC condensation/reachability basins, and determine whether closure is caused by exact zero asset drifts, state-constraint/boundary behavior, deterministic policy-flow topology, or a mixed mechanism.
+The smallest next diagnostic is one V1 policy remap and one Q1 D2 assembly/topology audit. It tests whether the two exact Q0 sinks persist after the already accepted single direct HJB step. No further HJB solve, nonlinear continuation, KFE stationary-mass solve, SVD/eigen/nullspace, MATLAB or downstream call is authorized.
 
-Allowed runtime is structural only: accepted Q0 load <=1, graph audit <=1, SCC decomposition <=1, condensation/reachability analysis <=1, accepted receipt reads <=800. GESVD/nullspace/stationary-mass solve, `Q0.T@p`, selector/root/policy-map/D2/HJB/V1-remap/MATLAB/downstream calls are all zero.
+A Q1 topology result remains a post-step policy diagnostic only. It is not HJB convergence, joint HJB-KFE fixed point, stationary economic equilibrium, production readiness or Results authority.
