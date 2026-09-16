@@ -1,0 +1,101 @@
+{
+  "schema": "CH5_MP4C_2018_KFE_D123_CORRECTED_DIAGNOSTIC_STATIC_VALIDATION_V1",
+  "fresh_start_main": "5360df95aae2bdb6a77032c35bf2276720803e8d",
+  "authority_id": "CH5_MP4C_2018_KFE_D123_OWNER_ADOPTED_20260916",
+  "state_order": "b,a,z",
+  "flatten_order": "F",
+  "synthetic": {
+    "d1": {
+      "dual_upper_corner_outward_faces_rejected": 2,
+      "legal_inward_faces_passed": true,
+      "tangent_upper_face_passed": true,
+      "lower_boundary_kind": "economic_lower_bound",
+      "upper_boundary_kind": "artificial_upper_state_constraint"
+    },
+    "d2": {
+      "shape": [18, 18],
+      "nnz": 72,
+      "minimum_offdiagonal": 0.05714285714285715,
+      "diagonal_construction_error": 0.0,
+      "max_abs_q_one": 1.1102230246251565e-16,
+      "arithmetic_tolerance": 4.973799150320706e-15,
+      "max_abs_b_coordinate_error": 2.220446049250313e-16,
+      "max_abs_a_coordinate_error": 1.942890293094024e-16,
+      "smallest_positive_upper_outward_input_rejected": true,
+      "z_generator_included": true
+    },
+    "d3": {
+      "tested_a_and_scale": [[0.0, 0.5], [0.25, 0.5], [0.5, 0.5], [2.0, 2.0]],
+      "positive_transfer_branch_passed": true,
+      "negative_transfer_branch_passed": true,
+      "zero_transfer_kink_passed": true,
+      "nonpositive_q_b_rejected_without_floor": true,
+      "transfer_cap": null,
+      "derivative_floor": null
+    }
+  },
+  "saved_control_provenance": {
+    "snapshot_manifest": {
+      "path": "reports/call725_boundary_generator_repair_spec_20260907/snapshots.json",
+      "sha256": "0F6E4BB3D852CF12880F9874BCE3BE1981341F0A6F6D337DC8B8885368932EC7",
+      "bytes": 2889
+    },
+    "consumed_input_receipt": {
+      "path": "reports/call725_boundary_generator_repair_spec_20260907/consumed_inputs.json",
+      "sha256": "D71F67CC840E98ECF109361A42ABC962844CFE18ABA86CAE77DB2CD08A40C526",
+      "bytes": 15855
+    },
+    "snapshot_count": 14,
+    "all_primary_files_present_and_hash_bound": true,
+    "all_rejected_before_assembly": true,
+    "total_face_violations": 365,
+    "lower_b_violations": 0,
+    "upper_b_violations": 139,
+    "lower_a_violations": 0,
+    "upper_a_violations": 226,
+    "rows": [
+      {"id": "matlab_M24", "sha256": "F474918C48CFD009DE2C2E56727DA365AF598AA6DC1A118DAF50BED833358454", "violations": 30, "upper_b": 12, "upper_a": 18, "max_outward": 1.7957758845412712, "assembler_rejected": true},
+      {"id": "python_M24", "sha256": "EC0D251DBB68973BEFBB777810B165E70CF06306F414246E479C93267F867391", "violations": 30, "upper_b": 12, "upper_a": 18, "max_outward": 1.7957758845412712, "assembler_rejected": true},
+      {"id": "matlab_P24", "sha256": "EB6A038F0C46A13F266CD1370C1EA686DCE852F8BA143133ABC36F58C9E4BAF2", "violations": 30, "upper_b": 12, "upper_a": 18, "max_outward": 1.7956545032698106, "assembler_rejected": true},
+      {"id": "python_P24", "sha256": "173E77735F4921834243F6D2A2EF2C8754D32489BA27C97EA3B674A323C2B41D", "violations": 30, "upper_b": 12, "upper_a": 18, "max_outward": 1.7956545032698106, "assembler_rejected": true},
+      {"id": "matlab_P32", "sha256": "8A6F319BBBA9BEFC118851F7152ACD808574FCF1F9289145D3C401FDB8F5C643", "violations": 32, "upper_b": 17, "upper_a": 15, "max_outward": 1.269815977705882, "assembler_rejected": true},
+      {"id": "python_P32", "sha256": "12AA5D7E3401AC0199CF979C0EA5881B2175DC413069A406A69BB0117921D383", "violations": 32, "upper_b": 17, "upper_a": 15, "max_outward": 1.269815977705882, "assembler_rejected": true},
+      {"id": "matlab_M143_FINAL", "sha256": "4EAA6695A07F8C32B42515631D1AF95AD48190990627934D7895EC7EFC9CCE63", "violations": 20, "upper_b": 2, "upper_a": 18, "max_outward": 0.81, "assembler_rejected": true},
+      {"id": "python_M143_FINAL", "sha256": "6C4A71612A32BE66C0CD5D390415A9DFE8E3CB83F3B6FC50D92A43807F80DC04", "violations": 20, "upper_b": 2, "upper_a": 18, "max_outward": 0.81, "assembler_rejected": true},
+      {"id": "matlab_trajectory_52", "sha256": "AA9DB0664FB0476AFA097C9716AAC88EB56F5779EC1A1346EEA27ED406D12FA3", "violations": 44, "upper_b": 22, "upper_a": 22, "max_outward": 0.81, "assembler_rejected": true},
+      {"id": "matlab_trajectory_57", "sha256": "81AC0E3F06E8D268C05E4E78B67F64FD6351FC55924282DB4DD44FF99EA77DDA", "violations": 42, "upper_b": 23, "upper_a": 19, "max_outward": 1.5104759465206357, "assembler_rejected": true},
+      {"id": "python_trajectory_146", "sha256": "540CDFDDC432083DB80C698C52BF357A7B05D2ED9BFDBDDE73876C23D3CA016E", "violations": 14, "upper_b": 2, "upper_a": 12, "max_outward": 0.81, "assembler_rejected": true},
+      {"id": "python_trajectory_401", "sha256": "05CDFE6F982FCF25362F5B59B72F7F5B82D737B9ED15572CDF5C8A2203803D83", "violations": 13, "upper_b": 2, "upper_a": 11, "max_outward": 0.81, "assembler_rejected": true},
+      {"id": "python_trajectory_424", "sha256": "330EFAB47D9540E00715577A3F4AA9A9E612DB46FD27137E64D8BD90D03103E6", "violations": 14, "upper_b": 2, "upper_a": 12, "max_outward": 0.81, "assembler_rejected": true},
+      {"id": "python_trajectory_500", "sha256": "6782C6F22FB2EA72AEA562798DC70C0F727FF071DA9FB51754061E0C30F20536", "violations": 14, "upper_b": 2, "upper_a": 12, "max_outward": 0.81, "assembler_rejected": true}
+    ]
+  },
+  "frozen_reference": {
+    "changed": false,
+    "files": [
+      {"path": "exports/matlab_faithful_two_asset_ha.py", "sha256": "F6007C1166C951B4A0C98B0FBF551921A2664D2E3943E7D77F847634261524F8", "git_blob": "e144c645d3f4dc842c2faa6b93b2ba0e24275dcf"},
+      {"path": "src/ch5_two_asset_hank/matlab_faithful_hjb.py", "sha256": "6CF6292C71488601CFB8D6A8BFB8C85868A3C3FE281794DCF6B5398F363FFA61", "git_blob": "e06f9871b361c8e1c8df7aab5c43c2dbd3b09b50"},
+      {"path": "src/ch5_two_asset_hank/matlab_faithful_kfe.py", "sha256": "4A0C2734D5C5AF73448C0C3D18F34EB1786DECC7E32A20854FB862A401813ABD", "git_blob": "4ccb7cec8c4754e91bd8830a95dc533811784391"}
+    ]
+  },
+  "tests": {
+    "command": "python -m pytest -q tests/test_mp4c_2018_kfe_d123_corrected_diagnostic_contract.py tests/test_call725_boundary_generator_repair_spec.py tests/test_generators_and_kfe_contract.py",
+    "passed": 24,
+    "failed": 0,
+    "py_compile": "PASS"
+  },
+  "scientific_call_ledger": {
+    "real_selector_evaluator": 0,
+    "HJB": 0,
+    "KFE": 0,
+    "outer": 0,
+    "firm": 0,
+    "wage_return_recalculation": 0,
+    "MATLAB": 0,
+    "GE": 0,
+    "annual_downstream_production": 0,
+    "shock": 0,
+    "IRF": 0,
+    "Results": 0
+  }
+}
