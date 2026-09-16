@@ -2,31 +2,29 @@
 
 更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`KFE_D123_FAILED_CELL_ATTRIBUTION_ACCEPTED__CORRECTED_HJB_ONE_STEP_DESIGN_BINDING_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`CORRECTED_HJB_ONE_STEP_DESIGN_ACCEPTED__OWNER_SEED_DECISION_REQUIRED__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Accepted checkpoints
 
-Owner-adopted D1/D2/D3 corrected diagnostic bundle and isolated static implementation remain accepted. Source-faithful/production paths remain frozen. The full ten-cell corrected-selector reexecution remains accepted as fail-closed evidence: Cells 1,2,3,5,6,7,9 selected admissible policies and passed strict D2; Cells 4,8,10 returned `NO_ADMISSIBLE_POLICY`.
+Owner-adopted D1/D2/D3 corrected diagnostic bundle、isolated static implementation、ten-cell fail-closed selector evidence，以及 Cells 4/8/10 的 zero-science algebraic attribution 均已接受。Source-faithful/production paths remain frozen.
 
-## Newly accepted failed-cell attribution
+Cells 4/8/10 的 `NO_ADMISSIBLE_POLICY` 已归因为历史 MATLAB-faithful derivative state 与 corrected D1-D3 contract 的结构性不相容；没有发现 mathematically legal selector branch omission。不得重复运行同一 historical-derivative panel，也不得把该失败解释为 corrected HJB / KFE / economic equilibrium 不存在。
 
-Builder candidate `602a96e6bb7a65cea5895fc1d6ee1887f7e5a0b5` is accepted by `docs/CH5_MP4C_2018_KFE_D123_FAILED_CELL_ALGEBRAIC_ATTRIBUTION_ACCEPTANCE_20260916.md`.
+## Corrected HJB one-step design gate
 
-Accepted classification: `ATTRIBUTED_STRUCTURAL_INCOMPATIBILITY_OF_FROZEN_DERIVATIVE_INPUTS`.
+Builder candidate `202c71f757266eee38da7c52d56658680439d010` is accepted by `docs/CH5_MP4C_2018_KFE_D123_CORRECTED_HJB_ONE_STEP_DESIGN_AND_INPUT_BINDING_BLOCKED_ACCEPTANCE_20260916.md`.
 
-- Cells 4/8: frozen upper-b inward derivative is negative; both slack and active upper-b cases imply `q_b<=p_b^B<0`, incompatible with `q_b=c^{-gamma}>0`.
-- Cell 10: active-upper-b negative/backward-a liquid-equality root lies below the derivative-direction switch, so the equality root has positive `g_a` and is inconsistent with backward-a. No second direction-valid root exists under the accepted monotonicity argument.
-- No mathematically legal frozen-contract selector branch was omitted.
+Accepted classification: `BLOCKED__NO_UNIQUE_AUTHORITY_BACKED_CORRECTED_HJB_SEED_OR_INPUT_CONTRACT`.
 
-These are incompatibilities of historical MATLAB-faithful derivative states with the corrected D1-D3 target, not economic nonexistence, corrected-HJB nonexistence, HJB convergence failure, or KFE failure. The same historical-derivative panel must not be rerun.
+Repository authority uniquely freezes the common non-seed contract: call-725 `(b,a,z)=(20,20,2)` F-order grid, fixed household prices/calibration, raw one-sided derivative construction, corrected D1/D3 selector contract, corrected D2 conservative generator, and one implicit direct HJB step. The unresolved scientific choice is only the starting value seed.
 
-## Active gate
+Current seed options include source-native `hjb100_initialization.mat:v0`, historical post-step143 terminal state, and one MATLAB-faithful replay output. None is a corrected-target fixed point and current authority does not rank them.
 
-Current active task: `tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_HJB_ONE_STEP_DESIGN_AND_INPUT_BINDING_ZERO_SCIENCE_20260916.md`.
+## Owner decision gate
 
-This task is zero-science. It must bind a unique repository-authorized starting value/seed, grid/domain, prices/calibration, derivative construction, corrected policy-map semantics, D2 generator, one-step HJB equation, finite scientific-call budget, stop conditions, and evidence contract before any corrected-target HJB execution is authorized.
+No Builder task is active. Owner must explicitly select an exact seed object (path/field/hash) and scientific rationale before Reviewer may publish the single corrected policy-map + at most one direct HJB solve task.
 
-If no unique scientifically defensible seed/input contract exists under current authority, the task must fail closed rather than choosing an initialization because it is numerically convenient.
+Reviewer recommendation, not Owner adoption: use source-native `hjb100_initialization.mat:v0` as the least path-dependent corrected-diagnostic seed because it is an accepted numerical initialization rather than an endogenous output of the source-faithful boundary/operator path. This recommendation does not claim better convergence or proximity to the corrected fixed point.
 
-Real selector/root/HJB/KFE/MATLAB/outer/firm/wage-return/GE/annual/shock/IRF/Results calls all remain zero in the active task.
+Until Owner decision: selector/root/HJB/KFE/MATLAB/outer/firm/wage-return/GE/annual/shock/IRF/Results calls remain unauthorized.
