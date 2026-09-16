@@ -8,21 +8,23 @@
 2. 本索引
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
-5. `docs/CH5_MP4C_2018_KFE_D123_FAILED_CELL_ALGEBRAIC_ATTRIBUTION_ACCEPTANCE_20260916.md`
-6. `docs/CH5_MP4C_2018_KFE_D123_FAILED_CELL_ALGEBRAIC_ATTRIBUTION_REPORT.md`
-7. `docs/CH5_MP4C_2018_KFE_D123_TEN_CELL_REEXECUTION_FAIL_CLOSED_ACCEPTANCE_20260916.md`
-8. `docs/CH5_MP4C_2018_KFE_D123_SELECTOR_ACTIVE_EQUALITY_CANONICALIZATION_AND_TEN_CELL_REEXECUTION_REPORT.md`
-9. `docs/CH5_MP4C_2018_KFE_D123_DIAGNOSTIC_BUNDLE_OWNER_ADOPTION_ACCEPTANCE_20260916.md`
-10. active task and directly relevant source/provenance.
+5. `docs/CH5_MP4C_2018_KFE_D123_CORRECTED_HJB_ONE_STEP_DESIGN_AND_INPUT_BINDING_BLOCKED_ACCEPTANCE_20260916.md`
+6. `docs/CH5_MP4C_2018_KFE_D123_CORRECTED_HJB_ONE_STEP_DESIGN_AND_INPUT_BINDING_REPORT.md`
+7. `docs/CH5_MP4C_2018_KFE_D123_FAILED_CELL_ALGEBRAIC_ATTRIBUTION_ACCEPTANCE_20260916.md`
+8. `docs/CH5_MP4C_2018_KFE_D123_FAILED_CELL_ALGEBRAIC_ATTRIBUTION_REPORT.md`
+9. `docs/CH5_MP4C_2018_KFE_D123_TEN_CELL_REEXECUTION_FAIL_CLOSED_ACCEPTANCE_20260916.md`
+10. directly relevant source/provenance after Owner seed decision.
 
-Current status: `KFE_D123_FAILED_CELL_ATTRIBUTION_ACCEPTED__CORRECTED_HJB_ONE_STEP_DESIGN_BINDING_ACTIVE__PRODUCTION_UNCHANGED`.
-Current active Builder task: `tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_HJB_ONE_STEP_DESIGN_AND_INPUT_BINDING_ZERO_SCIENCE_20260916.md`.
+Current status: `CORRECTED_HJB_ONE_STEP_DESIGN_ACCEPTED__OWNER_SEED_DECISION_REQUIRED__PRODUCTION_UNCHANGED`.
+Current active Builder task: none.
 Results eligibility=`FALSE`.
 
 Accepted scientific semantics remain D1 numerical upper state constraints + D2 consumed-total-drift conservative assembly with strict zero-tolerance outward-face rejection + D3 regularized-cost-consistent KKT.
 
-The failed-cell attribution is accepted: Cells 4/8 are structurally incompatible with the frozen historical upper-b derivatives because `p_b^B<0`; Cell 10 has a derivative-direction fixed-point conflict; no legal selector branch was omitted. These are historical-derivative incompatibilities, not corrected-HJB/KFE nonexistence evidence.
+The failed historical selector cells are attributed to structural incompatibility of frozen MATLAB-faithful derivative states with the corrected contract; no legal selector branch omission was found. Do not rerun the same historical-derivative panel.
 
-The active task is zero-science and must freeze a unique authority-backed corrected-HJB one-step input/seed contract before any HJB execution. Do not choose an initialization because it is numerically convenient. Selector/root/HJB/KFE/MATLAB/downstream calls remain zero.
+The corrected-HJB one-step design/input-binding report is accepted, but scientific execution is blocked on Owner selection of an exact starting value seed. Common grid/scalars/derivative/policy-map/generator/HJB-step semantics are already frozen. Do not choose a seed for numerical convenience, expected success, or historical fixed-point proximity.
 
-Owner retains final authority over new economic laws, major calibration, production replacement, causal interpretation and Results eligibility. GitHub live main remains repository-state authority.
+Reviewer recommendation, not Owner adoption: source-native `hjb100_initialization.mat:v0` is the least path-dependent first corrected-diagnostic seed because it is an accepted numerical initialization rather than an endogenous output of the source-faithful boundary/operator trajectory.
+
+Until Owner seed decision, selector/root/HJB/KFE/MATLAB/downstream calls remain unauthorized. Owner retains final authority over new economic laws, major calibration, production replacement, causal interpretation and Results eligibility. GitHub live main remains repository-state authority.
