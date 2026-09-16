@@ -1,7 +1,7 @@
-# Chapter 5 当前交接 — lower-a kink repair accepted / Cell5 liquid switch attribution active
+# Chapter 5 当前交接 — Cell5 zero-liquid switch attribution accepted / Owner Z-law decision required
 
 更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
-状态：`CORRECTED_HJB_OPTION_A_LOWER_A_KINK_REPAIR_ACCEPTED__CELL5_LIQUID_DIRECTION_CONFLICT_ATTRIBUTION_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`CELL5_ZERO_LIQUID_SWITCH_ATTRIBUTION_ACCEPTED__OWNER_INTERIOR_Z_LAW_DECISION_REQUIRED__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Governance
@@ -10,18 +10,16 @@ Owner is final scientific authority; ChatGPT is L3 Reviewer/scientific-route aut
 
 ## Accepted state
 
-Owner-selected Option A remains the frozen corrected one-step seed. The active lower-a zero-kink multiplier omission has now been repaired and accepted. Fresh execution passed Cells 0–4 and then failed closed at Cell 5 `(5,0,0)`.
+Owner-selected Option A remains the frozen corrected one-step seed. The active lower-a zero-kink multiplier omission is repaired and accepted. Fresh execution passed Cells 0–4 and failed closed at Cell 5 `(5,0,0)`.
 
-Cell 5 is not a recurrence of the lower-a omission. Its repaired active lower-a zero-kink candidates both satisfy the a-side multiplier/KKT contract, but its two liquid derivatives imply opposite drifts relative to their branch directions: backward derivative gives forward drift; forward derivative gives backward drift.
+The zero-science Cell-5 attribution candidate `fdfabfb8ba12fa52add525b68050de67c2d6369d` is Reviewer-accepted. It proves a unique positive zero-liquid shadow `q_b*=0.01250021388291760706054915182349077777...` strictly between the forward and backward raw slopes. Repository history/source-faithful logic has a genuine `I0`/`Z` zero-liquid precedent and accepted Python HJB logic has an endogenous zero-liquid shadow candidate with Hamiltonian comparison.
 
-This is not yet classified as a selector omission or structural seed incompatibility. It may correspond to an interior switching/zero-drift case, but no such branch may be added unless current authority already supports it.
+However, the separate corrected selector and its accepted root budget did not explicitly inherit this interior `Z` law; interior-b nodes were budgeted as root-free. Adding `Z` therefore changes the corrected-target derivative-selection/root contract and cannot be done by Builder or Reviewer without Owner adoption.
 
-## Active task
+## Current gate
 
-`tasks/CH5_MP4C_2018_KFE_D123_CELL5_LIQUID_DIRECTION_SWITCH_ALGEBRAIC_ATTRIBUTION_ZERO_SCIENCE_20260916.md`
+There is no active scientific Builder task.
 
-Builder must use only frozen source, specification and persisted Cell 5 evidence to audit interior liquid derivative selection and derive the exact algebraic situation. It must determine whether a zero-drift/switching/Hamiltonian candidate is already authority-backed, whether the selector omitted a legal branch, or whether a new Owner-level switching law would be required.
+Owner must decide whether the corrected D1-D3 selector formally inherits the historical/accepted interior zero-liquid `Z` switching law. If yes, Reviewer will publish a fresh bounded implementation/reexecution task that freezes the exact zero-liquid root equation/domain, eligibility rule, Hamiltonian comparison, a-side pairing, new finite root budget and fail-closed conditions. If no, Cell 5 remains `NO_ADMISSIBLE_POLICY` under the current two-branch corrected selector and Option-A rerun remains closed.
 
-Scientific/model calls are all zero: selector=0, roots=0, policy map=0, D2=0, HJB=0, KFE=0, MATLAB=0, downstream=0. No repair or rerun is authorized.
-
-Only after independent Reviewer acceptance of this attribution may a successor scientific task be considered.
+Until that Owner decision, selector/root/policy-map/D2/HJB/KFE/MATLAB/downstream calls remain unauthorized. Production replacement and Results remain unauthorized.
