@@ -2,24 +2,24 @@
 
 更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`OPTION_A_COMPLETE_POLICY_MAP_D2_DIRECT_STEP_ACCEPTED__CORRECTED_KFE_VALIDATION_DESIGN_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`CORRECTED_Q0_KFE_DESIGN_ACCEPTED__BOUNDED_SOURCE_FREE_OPERATOR_VALIDATION_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Accepted checkpoint
 
-Builder candidate `9a4eb0e5ec3627743596daa9b991436d2124efa9` is accepted by `docs/CH5_MP4C_2018_KFE_D123_OPTION_A_COMPLETE_POLICY_MAP_D2_DIRECT_STEP_ACCEPTANCE_20260916.md`.
+The corrected Option-A route has an accepted complete 800-cell policy map, one passing conservative Q0 D2 generator, and one passing direct HJB step V1. This remains one-step diagnostic evidence only.
 
-Fresh Option A execution completed 800/800 durable `SELECTED_ADMISSIBLE` cells under the Owner-adopted D1+D2+D3 contract and interior liquid Z law. Runtime: 800 selector evaluations, 442 scalar roots including 206 interior-Z roots, 42 selected Z policies, retries=0. Cell 5 selected the expected lower-a zero-kink Z policy with consumed `g_b=0`.
+Zero-science design candidate `494dfc741dbf494a5b367b3abe99234a5708df4c` is accepted by `docs/CH5_MP4C_2018_KFE_D123_CORRECTED_KFE_VALIDATION_DESIGN_BINDING_ACCEPTANCE_20260916.md`.
 
-D2 was assembled once after the complete map and passed all frozen conservation/coordinate-action checks. One sparse direct HJB step then passed with residual infinity norm `2.5875135367670055e-14`, backward error `1.9727855630325988e-16`, and V1 SHA-256 `5C410EBC329F08B37F941A783E7F2C84BFCDCB67C6E24118114BE8C55697F2E2`.
-
-No V1 selector map, nonlinear continuation, KFE, MATLAB or downstream call occurred. This is one-step diagnostic evidence only; it is not nonlinear HJB convergence, a fixed point, stationary equilibrium, production replacement or Results authority.
+The accepted design freezes Q0, not a V1 remap, as the next operator-level KFE diagnostic object. A Q0 KFE PASS would establish only an invariant mass for the accepted V0 policy operator; it would not establish nonlinear HJB convergence, a joint fixed point, stationary economic equilibrium, production readiness, or Results authority.
 
 ## Active gate
 
 Current active Builder task:
-`tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_KFE_VALIDATION_DESIGN_BINDING_ZERO_SCIENCE_20260916.md`。
+`tasks/CH5_MP4C_2018_KFE_D123_CORRECTED_Q0_KFE_OPERATOR_VALIDATION_20260916.md`。
 
-This is a zero-science design/binding gate. Before any KFE runtime it must determine whether the accepted pre-step `Q0` is sufficient for an operator-level corrected KFE diagnostic or whether a V1 policy remap is scientifically required, and freeze the exact pin-free stationarity/orientation/normalization/conservation/nonnegativity/rank/uniqueness contract.
+The task authorizes exactly one pin-free source-free stationary-mass validation of the accepted Q0 using `Q0.T @ p = 0`, one exact-positive-edge SCC decomposition, and one full dense `scipy.linalg.svd(..., lapack_driver="gesvd")`. No row replacement, pin, RHS/source injection, clipping, tolerance tuning, iterative eigensolver, retry, V1 remap, HJB, selector, D2 reassembly, MATLAB or downstream call is authorized.
 
-Selector/root/policy-map/D2/HJB/KFE/MATLAB/downstream calls are all zero in this design gate. Production replacement remains unauthorized.
+PASS requires one closed communicating class, numerical rank 799/nullity 1, second-smallest singular value above the frozen prospective threshold, source-free residual and normalization within prospective arithmetic bounds, and nonnegative mass within the frozen arithmetic allowance.
+
+Production replacement remains unauthorized; Results eligibility remains `FALSE`.
