@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import argparse
 from dataclasses import asdict
-import hashlib
 import json
 from pathlib import Path
 import shutil
@@ -57,12 +56,13 @@ TASK_ID = (
 )
 OUTPUT_RELATIVE = Path(
     "reports/ch5_mp4c_2018_kfe_d123_v2_lower_b_active_negative_backward_a_"
-    "selector_repair_checkpoint2_reexecution_20260917"
+    "selector_repair_checkpoint2_reexecution_20260917_run001"
 )
 BASELINE_SHA = "5B2E7E159945A70A53FCC5920E2273AE54844BE9"
 PREDECESSOR_SELECTOR_SHA256 = (
     "C60C584A44A143CB584563ACDAA8F7E30EBC1CA45B90F8AF39728D40AC70E5E6"
 )
+PREDECESSOR_SELECTOR_BLOB = "5008e16e37dc38d9ba1cbc44394286a1b9264915"
 REPAIRED_SELECTOR_SHA256 = (
     "DBEB8EDCDA18B14579F36C2B68A50A47C9E717F49E84BC31A2E4E17180E9C327"
 )
@@ -94,11 +94,10 @@ def _git_head(repository: Path) -> str:
     ).strip()
 
 
-def _git_show_sha256(repository: Path, revision: str, relative: str) -> str:
-    payload = subprocess.check_output(
-        ["git", "show", f"{revision}:{relative}"], cwd=repository
-    )
-    return hashlib.sha256(payload).hexdigest().upper()
+def _git_blob(repository: Path, revision: str, relative: str) -> str:
+    return subprocess.check_output(
+        ["git", "rev-parse", f"{revision}:{relative}"], cwd=repository, text=True
+    ).strip()
 
 
 def _new_ledger() -> dict[str, Any]:
@@ -326,6 +325,9 @@ def execute(
 ) -> str:
     repository = repository.resolve(strict=True)
     output = repository / OUTPUT_RELATIVE
+    clean_before_evidence = not subprocess.check_output(
+        ["git", "status", "--porcelain"], cwd=repository, text=True
+    ).strip()
     output.mkdir(parents=True, exist_ok=False)
     started = time.perf_counter()
     ledger = _new_ledger()
@@ -356,17 +358,15 @@ def execute(
             repository / "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
         )
         checks = {
-            "baseline_selector_exact": _git_show_sha256(
+            "baseline_selector_blob_exact": _git_blob(
                 repository,
                 BASELINE_SHA,
                 "src/ch5_two_asset_hank/corrected_diagnostic/selector.py",
             )
-            == PREDECESSOR_SELECTOR_SHA256,
+            == PREDECESSOR_SELECTOR_BLOB,
             "repaired_selector_exact": _sha256(selector_path)
             == REPAIRED_SELECTOR_SHA256,
-            "worktree_clean": not subprocess.check_output(
-                ["git", "status", "--porcelain"], cwd=repository, text=True
-            ).strip(),
+            "worktree_clean_before_evidence": clean_before_evidence,
         }
         if not all(checks.values()):
             raise FailClosed(
