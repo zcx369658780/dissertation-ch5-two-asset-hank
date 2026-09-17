@@ -1,7 +1,7 @@
-# Chapter 5 当前交接 — Q1 unique source-free invariant mass accepted / nonlinear fixed-point design active
+# Chapter 5 当前交接 — Q1 invariant mass accepted / nonlinear convergence law awaiting Owner
 
-更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
-状态：`Q1_UNIQUE_SOURCE_FREE_INVARIANT_MASS_ACCEPTED__NONLINEAR_HJB_KFE_FIXED_POINT_DESIGN_ACTIVE__PRODUCTION_UNCHANGED`。
+更新：2026-09-17。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
+状态：`Q1_SOURCE_FREE_KFE_ACCEPTED__NONLINEAR_FIXED_POINT_DESIGN_BLOCKED_ON_OWNER_CONVERGENCE_LAW__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Governance
@@ -10,16 +10,24 @@ Owner is final scientific authority; ChatGPT is L3 Reviewer/scientific-route aut
 
 ## Accepted state
 
-Corrected route now has: one accepted V0 policy map/Q0, one direct HJB step V1, one accepted V1 policy remap/Q1, and a pin-free/source-free Q1 invariant-mass validation.
+Corrected route has an accepted V0 policy map/Q0, one direct HJB step V1, one fresh V1 policy remap/Q1, and a unique pin-free/source-free Q1 invariant mass. Q1 has one closed class `[5,6,405,406]` and numerical rank/nullity `799/1`. These remain operator/one-step evidence, not nonlinear HJB convergence or economic equilibrium.
 
-Q1 exact-positive graph has one closed class `[5,6,405,406]`; dense full GESVD gives rank/nullity `799/1`; one normalized mass satisfies the frozen stationarity, normalization and nonnegativity checks without clipping or source injection. This is operator-level evidence for Q1 only.
+Zero-science nonlinear fixed-point design candidate `ee83051d40c1389618288cef61d7d97711c1a861` is Reviewer-accepted by `docs/CH5_MP4C_2018_KFE_D123_NONLINEAR_HJB_KFE_FIXED_POINT_DESIGN_BINDING_ACCEPTANCE_20260917.md`.
 
-No nonlinear HJB convergence, joint HJB-KFE fixed point, stationary economic equilibrium, production replacement or Results eligibility has yet been established.
+The nonlinear state is only `V_n`. Same-value `(P_n,u_n,Q_n)` must be freshly derived before Bellman/stability checks. KFE is terminal-only after an HJB convergence candidate, using the final same-value `Q*`. `Delta=1000` stays fixed. The call-725 path allows at most 100 HJB updates total; `V0->V1` already used update 1, leaving at most 99.
 
-## Active task
+## Owner decision required
 
-`tasks/CH5_MP4C_2018_KFE_D123_NONLINEAR_HJB_KFE_FIXED_POINT_DESIGN_BINDING_ZERO_SCIENCE_20260916.md`
+There is no active Builder scientific task.
 
-This task is zero-science. It must bind the smallest scientifically valid route from accepted `(V1,Q1,p1)` to nonlinear HJB convergence / joint HJB-KFE fixed point: exact iteration state, update sequence, convergence metrics and thresholds, KFE timing, finite budgets, fail-closed rules, evidence per iteration and fixed-point consistency conditions.
+Owner must prospectively freeze the corrected-target convergence law before any V2 or later continuation is authorized:
 
-No selector/root/policy-map/D2/HJB/KFE/nullspace/MATLAB/downstream call is authorized in this design gate. Any need for damping, adaptive Delta, continuation, artificial diffusion, clipping or new convergence law must be surfaced as Owner-decision-required rather than silently adopted.
+- Bellman residual threshold;
+- value-change threshold and conjunction rule;
+- policy/operator stability role and any consecutive-round window;
+- direct-solve backward-error rejection bound;
+- non-exact cycling/oscillation rule and window.
+
+Historical `max|V_new-V_old|<1e-7` is provenance only. No damping, relaxation, adaptive Delta, continuation, clipping, artificial diffusion or scientific retry is authorized.
+
+After Owner adoption, Reviewer may publish a bounded continuation task. Until then selector/root/policy-map/D2/HJB/KFE/MATLAB/downstream scientific calls remain unauthorized.
