@@ -1,49 +1,53 @@
 # Chapter 5 Python 多省份两资产 HANK 路线
-更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
+更新：2026-09-17。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 Results eligibility=`FALSE`。
 
 ## Accepted route
 
 The frozen source-faithful reference and separately governed corrected successor remain distinct. Owner-adopted corrected semantics include D1 upper numerical state constraints, D2 consumed-total-drift conservative assembly, D3 regularized-cost-consistent KKT, active lower-a zero-kink multiplier handling, and interior zero-liquid Z switching.
 
-## KFE-D2C-D — completed and accepted
+## KFE-D2C/D/E — accepted corrected household checkpoints
 
-Candidate `9a4eb0e5ec3627743596daa9b991436d2124efa9` completed the accepted V0 800-cell policy map, Q0 D2 assembly and one direct HJB step V1.
+The corrected route now has:
+- accepted V0 800-cell policy map and Q0;
+- one accepted direct HJB update `V0->V1`;
+- accepted V1 remap and Q1;
+- Q1 exact-positive single closed class `[5,6,405,406]`;
+- accepted pin-free/source-free unique Q1 invariant mass with rank/nullity `799/1`.
 
-## KFE-D2D — Q0 route resolved
+The earlier Q0 two-sink topology was attributed to exact zero-asset-drift sinks and did not persist after the V1 remap. These are household/operator diagnostics only, not economic equilibrium or Results evidence.
 
-Q0 source-free uniqueness failed structurally because its graph contained two exact zero-asset-drift recurrent productivity pairs at lower-a nodes `(5,0)` and `(6,0)`. This was attributed to the conjunction of interior-liquid Z and lower-a zero-kink handling. It was explicitly not interpreted as economic multiple equilibria.
+## KFE-D2F-A — nonlinear HJB-KFE fixed-point design completed
 
-## KFE-D2E-A — completed and accepted
+Zero-science candidate `ee83051d40c1389618288cef61d7d97711c1a861` is accepted. It freezes:
 
-Candidate `368d58c96a9e6068fd4f7b36cca0f433d7f2ec3a` performed one fresh V1 policy remap and one Q1 assembly/topology audit.
+- nonlinear state `V_n` only;
+- same-value derived checkpoint `(P_n,u_n,Q_n)`;
+- iteration order derivatives -> complete policy map -> D2 Q_n -> Bellman/stability metrics -> fixed-Delta implicit HJB update if required;
+- `Delta=1000` fixed;
+- KFE only once after an HJB convergence candidate and on the final same-value Q*;
+- at most 100 total HJB updates, with update 1 already consumed by `V0->V1`, leaving at most 99 future updates.
 
-Accepted results:
-- 800/800 cells `SELECTED_ADMISSIBLE`;
-- 408 total roots, 160 interior-Z roots;
-- Q1 D2 PASS;
-- Q1 SHA-256 `5F96C2CFAAFB3EA7EF32943A892A9191FEDCC5DBC7AB28D066F5893D3F560D1E`;
-- exact-positive graph has one closed class `[5,6,405,406]`;
-- all 800 states can reach it;
-- the two separate Q0 sinks do not persist because flats 405 and 6 gain opposite liquid directional edges while flats 5 and 406 retain Z/zero drift.
+Damping, relaxation, adaptive Delta, continuation, clipping, artificial diffusion and scientific retry remain unauthorized.
 
-This is still one-step policy/operator topology evidence, not HJB convergence.
+## KFE-D2F-B — Owner convergence-law decision gate
 
-## KFE-D2E-B — active: Q1 source-free invariant-mass validation
+No active Builder scientific task exists.
 
-Active task:
-`tasks/CH5_MP4C_2018_KFE_D123_Q1_SOURCE_FREE_KFE_OPERATOR_VALIDATION_20260916.md`
+Before bounded nonlinear continuation can begin, Owner must freeze prospectively:
 
-Validate exact accepted Q1 under the already accepted pin-free/source-free KFE contract: `Q1.T @ p = 0`, one structural audit, one SCC verification, one dense `gesvd`, one normalized candidate and one source-free residual evaluation.
+1. corrected-target stationary Bellman-residual threshold;
+2. value-change threshold and conjunction rule;
+3. policy/operator stability as mandatory guards or diagnostic-only evidence, with any consecutive-checkpoint window;
+4. direct-solve normwise backward-error rejection bound;
+5. non-exact cycling/oscillation criterion and window.
 
-PASS requires structural single-class uniqueness, numerical rank 799/nullity 1, second-smallest singular value above prospective threshold, normalized nonnegative mass and bounded source-free residual. No row replacement/pin/source injection, retry, alternative eigensolver, policy remap, D2 reassembly, HJB/V2/nonlinear continuation, MATLAB or downstream work is authorized.
+Historical `max|V_new-V_old|<1e-7` remains provenance only and is insufficient by itself.
 
-## KFE-D2F — conditional later route
-
-Only after independent acceptance of Q1 invariant-mass evidence may Reviewer design a bounded nonlinear HJB continuation / fixed-point convergence route. Neither Q1 topology nor Q1 KFE alone establishes an economic steady state.
+Only after Owner adoption may Reviewer publish KFE-D2F-C, the bounded nonlinear continuation task. Any terminal household HJB-KFE checkpoint would remain conditional on frozen prices/calibration and would not yet establish GE or paper Results.
 
 ## KFE-D3 — later production closure
 
-Corrected multi-province production replacement, steady state, GE/annual/dynamics/IRF and Results remain downstream gates with separate evidence and authority.
+Corrected multi-province production replacement, market clearing, GE/annual/dynamics/IRF and Results remain downstream gates with separate evidence and authority.
 
-Capital/labor K1/C1/K1B/K2 routes remain deferred, not abandoned, behind the current household/KFE integration route.
+Capital/labor K1/C1/K1B/K2 routes remain deferred, not abandoned, behind the current household fixed-point route.
