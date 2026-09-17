@@ -1,29 +1,32 @@
 # Chapter 5 两资产 HANK 当前状态
 
-更新：2026-09-16。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
+更新：2026-09-17。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`Q1_UNIQUE_SOURCE_FREE_INVARIANT_MASS_ACCEPTED__NONLINEAR_HJB_KFE_FIXED_POINT_DESIGN_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`Q1_SOURCE_FREE_KFE_ACCEPTED__NONLINEAR_FIXED_POINT_DESIGN_BLOCKED_ON_OWNER_CONVERGENCE_LAW__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Accepted scientific checkpoint
 
-Owner-adopted D1/D2/D3 corrected semantics、lower-a zero-kink multiplier handling、interior zero-liquid Z switching、Option-A 800-cell V0 map、accepted Q0、一次 direct HJB step V1、Q0 two-sink attribution、V1 remap/Q1 topology以及 Q1 source-free KFE operator validation均继续有效。Source-faithful/production paths remain frozen。
+Owner-adopted D1/D2/D3 corrected semantics、lower-a zero-kink multiplier handling、interior zero-liquid Z switching、Option-A V0 map/Q0、一次 direct HJB step V1、V1 remap Q1，以及 Q1 source-free unique invariant mass均已接受。Source-faithful/production paths remain frozen。
 
-## Q1 source-free invariant mass accepted
+## Nonlinear fixed-point design gate
 
-Builder candidate `580a48c2aa4d969f471293d6022c3cdf3bc1425e` is accepted by `docs/CH5_MP4C_2018_KFE_D123_Q1_SOURCE_FREE_KFE_OPERATOR_VALIDATION_ACCEPTANCE_20260916.md`.
+Zero-science design candidate `ee83051d40c1389618288cef61d7d97711c1a861` is accepted by `docs/CH5_MP4C_2018_KFE_D123_NONLINEAR_HJB_KFE_FIXED_POINT_DESIGN_BINDING_ACCEPTANCE_20260917.md`.
 
-The exact accepted Q1 SHA-256 `5F96C2CFAAFB3EA7EF32943A892A9191FEDCC5DBC7AB28D066F5893D3F560D1E` has exactly one closed communicating class `[5,6,405,406]`. One dense full GESVD produced numerical rank/nullity `799/1`; the second-smallest singular value `0.01704325702964291` is far above frozen `tau_rank=5.728066976324905e-12`.
+Accepted design freezes the nonlinear state as `V_n`; each same-value checkpoint freshly derives `P_n,u_n,Q_n`, computes stationary Bellman residual and stability diagnostics, and only if the Owner-bound convergence law passes may it proceed to one terminal topology/KFE validation on the same `Q*`. KFE is not run every iteration. `Delta=1000` remains fixed. Damping、relaxation、adaptive Delta、continuation、clipping 和 artificial diffusion remain unauthorized.
 
-The normalized probability mass satisfies `||Q1.T @ p||_inf=1.927355525830249e-15` below the frozen stationarity bound `3.076397750501459e-12`, `math.fsum(p)=0.9999999999999999`, and minimum stored mass `-7.838997498725127e-15` within the preregistered arithmetic nonnegativity allowance. No clipping, pin, source RHS, retry, tolerance tuning or solver substitution occurred.
+The accepted resource ceiling is at most 100 total HJB updates for this call-725 corrected trajectory; the accepted `V0->V1` update has consumed update 1, leaving at most 99 future updates through `V100`.
 
-This establishes a unique, normalized, source-free invariant mass for Q1 as a finite one-step V1-policy operator. It does not establish nonlinear HJB convergence, joint HJB-KFE fixed point, stationary economic equilibrium, production readiness or Results authority.
+## Owner decision gate
 
-## Active gate
+No active Builder scientific task exists.
 
-Current active Builder task:
-`tasks/CH5_MP4C_2018_KFE_D123_NONLINEAR_HJB_KFE_FIXED_POINT_DESIGN_BINDING_ZERO_SCIENCE_20260916.md`。
+Owner decision is required before any further selector/policy-map/D2/HJB continuation call. The repository does not yet freeze a corrected-target convergence law for:
 
-This is a zero-science design/binding gate. It must define the exact nonlinear iteration state/update sequence, HJB convergence criteria, KFE timing, fixed-point consistency conditions, finite runtime budgets, fail-closed rules and evidence protocol before any V2 or further continuation is authorized.
+- Bellman residual threshold;
+- value-change threshold and conjunction rule;
+- whether policy/operator stability is mandatory or diagnostic;
+- prospective linear-solve backward-error rejection bound;
+- non-exact cycling/oscillation criterion and window.
 
-All selector/root/policy-map/D2/HJB/KFE/MATLAB/downstream calls remain zero in this design gate. Production replacement and Results remain unauthorized.
+Historical `max|V_new-V_old|<1e-7` remains provenance only and cannot be silently promoted to corrected-target authority. Results eligibility remains `FALSE` and production replacement remains unauthorized.
