@@ -15,36 +15,39 @@ The corrected route now has:
 - Q1 exact-positive single closed class `[5,6,405,406]`;
 - accepted pin-free/source-free unique Q1 invariant mass with rank/nullity `799/1`.
 
-The earlier Q0 two-sink topology was attributed to exact zero-asset-drift sinks and did not persist after the V1 remap. These are household/operator diagnostics only, not economic equilibrium or Results evidence.
+These are household/operator diagnostics only until nonlinear HJB convergence is established.
 
-## KFE-D2F-A — nonlinear HJB-KFE fixed-point design completed
+## KFE-D2F-A — nonlinear HJB-KFE fixed-point design accepted
 
-Zero-science candidate `ee83051d40c1389618288cef61d7d97711c1a861` is accepted. It freezes:
+Zero-science candidate `ee83051d40c1389618288cef61d7d97711c1a861` is accepted. It freezes nonlinear state `V_n`, same-value derived `(P_n,u_n,Q_n)`, fixed `Delta=1000`, terminal-only KFE timing and a maximum 100 total HJB updates.
 
-- nonlinear state `V_n` only;
-- same-value derived checkpoint `(P_n,u_n,Q_n)`;
-- iteration order derivatives -> complete policy map -> D2 Q_n -> Bellman/stability metrics -> fixed-Delta implicit HJB update if required;
-- `Delta=1000` fixed;
-- KFE only once after an HJB convergence candidate and on the final same-value Q*;
-- at most 100 total HJB updates, with update 1 already consumed by `V0->V1`, leaving at most 99 future updates.
+## KFE-D2F-B — Owner convergence law adopted
 
-Damping, relaxation, adaptive Delta, continuation, clipping, artificial diffusion and scientific retry remain unauthorized.
+Owner adoption:
+`docs/CH5_MP4C_2018_KFE_D123_NONLINEAR_CONVERGENCE_LAW_OWNER_ADOPTION_20260917.md`.
 
-## KFE-D2F-B — Owner convergence-law decision gate
+Frozen law:
 
-No active Builder scientific task exists.
+1. stationary Bellman residual `||R_n||_inf <= 1e-8`;
+2. value change `||V_n-V_(n-1)||_inf <= 1e-7`;
+3. both conditions required at the same checkpoint;
+4. policy/operator stability are mandatory diagnostics only;
+5. direct-solve normwise backward error `<=1e-12`;
+6. exact period `k>=2` full-checkpoint recurrence stops fail-closed before convergence;
+7. approximate periods 2 and 3 use complete lag-k windows with `||V_j-V_(j-k)||_inf <=1e-8` after the primary convergence test fails;
+8. total update ceiling 100, with `V0->V1` already consuming update 1;
+9. no damping, relaxation, adaptive Delta, parameter continuation, clipping, artificial diffusion, solver substitution, scientific retry or post-hoc tolerance tuning.
 
-Before bounded nonlinear continuation can begin, Owner must freeze prospectively:
+## KFE-D2F-C — active bounded nonlinear continuation
 
-1. corrected-target stationary Bellman-residual threshold;
-2. value-change threshold and conjunction rule;
-3. policy/operator stability as mandatory guards or diagnostic-only evidence, with any consecutive-checkpoint window;
-4. direct-solve normwise backward-error rejection bound;
-5. non-exact cycling/oscillation criterion and window.
+Active task:
+`tasks/CH5_MP4C_2018_KFE_D123_BOUNDED_NONLINEAR_HJB_KFE_CONTINUATION_20260917.md`.
 
-Historical `max|V_new-V_old|<1e-7` remains provenance only and is insufficient by itself.
+The task starts from the exact accepted V1/P1/u1/Q1 checkpoint. It evaluates V1 first and may then execute at most 99 additional fixed-Delta HJB updates, ending no later than V100. Every new value checkpoint requires a complete corrected policy remap, D2 operator assembly, same-value Bellman/value/stability evidence and fail-closed cycle/linear-solve checks before another update.
 
-Only after Owner adoption may Reviewer publish KFE-D2F-C, the bounded nonlinear continuation task. Any terminal household HJB-KFE checkpoint would remain conditional on frozen prices/calibration and would not yet establish GE or paper Results.
+No KFE is executed during ordinary HJB rounds. If an HJB convergence candidate is reached, no further update is allowed; the final same-value Q* then proceeds directly to the accepted single-closed-class topology gate and exactly one pin-free/source-free KFE validation.
+
+A full PASS establishes only a conditional household HJB-KFE fixed point under the frozen call-725 prices/calibration. It does not establish GE, market clearing, production replacement or paper Results.
 
 ## KFE-D3 — later production closure
 
