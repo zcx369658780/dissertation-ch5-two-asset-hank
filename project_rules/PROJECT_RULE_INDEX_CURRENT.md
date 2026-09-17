@@ -8,20 +8,28 @@
 2. 本索引
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
-5. `docs/CH5_MP4C_2018_KFE_D123_NONLINEAR_HJB_KFE_FIXED_POINT_DESIGN_BINDING_ACCEPTANCE_20260917.md`
-6. `docs/CH5_MP4C_2018_KFE_D123_NONLINEAR_HJB_KFE_FIXED_POINT_DESIGN_BINDING_REPORT.md`
-7. `docs/CH5_MP4C_2018_KFE_D123_Q1_SOURCE_FREE_KFE_OPERATOR_VALIDATION_ACCEPTANCE_20260916.md`
-8. `docs/CH5_MP4C_2018_KFE_D123_Q1_SOURCE_FREE_KFE_OPERATOR_VALIDATION_REPORT.md`
-9. exact accepted V1/Q1/p1 artifacts and corrected selector/D2/HJB authority as needed.
+5. `docs/CH5_MP4C_2018_KFE_D123_NONLINEAR_CONVERGENCE_LAW_OWNER_ADOPTION_20260917.md`
+6. `docs/CH5_MP4C_2018_KFE_D123_NONLINEAR_HJB_KFE_FIXED_POINT_DESIGN_BINDING_ACCEPTANCE_20260917.md`
+7. `docs/CH5_MP4C_2018_KFE_D123_NONLINEAR_HJB_KFE_FIXED_POINT_DESIGN_BINDING_REPORT.md`
+8. `docs/CH5_MP4C_2018_KFE_D123_Q1_SOURCE_FREE_KFE_OPERATOR_VALIDATION_ACCEPTANCE_20260916.md`
+9. `docs/CH5_MP4C_2018_KFE_D123_Q1_SOURCE_FREE_KFE_OPERATOR_VALIDATION_REPORT.md`
+10. active task plus exact accepted V1/Q1/p1 artifacts and corrected selector/D2/HJB authority.
 
-Current status: `Q1_SOURCE_FREE_KFE_ACCEPTED__NONLINEAR_FIXED_POINT_DESIGN_BLOCKED_ON_OWNER_CONVERGENCE_LAW__PRODUCTION_UNCHANGED`。
-Current active Builder scientific task: none. Owner decision required.
+Current status: `OWNER_CONVERGENCE_LAW_ADOPTED__BOUNDED_NONLINEAR_HJB_KFE_CONTINUATION_ACTIVE__PRODUCTION_UNCHANGED`。
+Current active Builder scientific task: `tasks/CH5_MP4C_2018_KFE_D123_BOUNDED_NONLINEAR_HJB_KFE_CONTINUATION_20260917.md`。
 Results eligibility=`FALSE`。
 
-Accepted nonlinear design freezes `V_n` as the only nonlinear state; same-value `P_n,u_n,Q_n` are derived checkpoint objects. The sequence is derivatives -> complete corrected policy map -> D2 Q_n -> stationary Bellman/stability metrics -> one fixed-Delta implicit HJB update only if convergence has not passed. KFE is terminal-only on final same-value Q*. `Delta=1000` remains fixed.
+Owner-adopted convergence law:
+- stationary Bellman residual `<=1e-8`;
+- value change `<=1e-7`;
+- both required at one checkpoint;
+- policy/operator stability diagnostic only;
+- normwise backward error for each direct solve `<=1e-12`;
+- exact period `k>=2` recurrence fail-closed before convergence;
+- approximate period-2/3 complete-window lag tests at `1e-8` fail-closed after primary convergence fails;
+- no more than 100 total HJB updates, with `V0->V1` already consuming update 1;
+- fixed `Delta=1000` and no damping, relaxation, adaptive Delta, continuation, clipping, artificial diffusion, solver substitution, scientific retry or post-hoc tolerance tuning.
 
-At most 100 total HJB updates are allowed for the call-725 corrected trajectory; accepted `V0->V1` consumed update 1, leaving at most 99. No damping, relaxation, adaptive Delta, parameter continuation, clipping, artificial diffusion, solver substitution or scientific retry is authorized.
+The active runtime route starts from exact accepted V1/P1/u1/Q1, evaluates V1 first, and continues only as required. Ordinary rounds never execute KFE. Only an HJB convergence candidate may enter the accepted terminal topology plus pin-free/source-free KFE gate on the same Q*.
 
-Before any continuation runtime, Owner must freeze Bellman-residual threshold, value-change threshold/conjunction, policy/operator stability role/window, direct-solve backward-error bound, and non-exact cycle/oscillation rule. Historical `max|V_new-V_old|<1e-7` is provenance only.
-
-Owner retains final authority over this convergence law, new economic laws, major calibration, production replacement, causal interpretation and Results eligibility. GitHub live main remains repository-state authority.
+Owner retains final authority over new economic laws, major calibration, production replacement, causal interpretation and Results eligibility. GitHub live main remains repository-state authority.
