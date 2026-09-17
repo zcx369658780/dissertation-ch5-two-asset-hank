@@ -1,80 +1,58 @@
-# Chapter 5 当前交接 — nonlinear continuation fail-closed at V2 cell100 / zero-science attribution active
+# Chapter 5 当前交接 — V2 lower-b selector omission accepted / minimal repair and checkpoint-2 reexecution active
 
 更新：2026-09-17。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
-状态：`NONLINEAR_CONTINUATION_FAIL_CLOSED_AT_V2_CELL100__ZERO_SCIENCE_ATTRIBUTION_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`V2_LOWER_B_SELECTOR_BRANCH_OMISSION_ACCEPTED__MINIMAL_REPAIR_AND_CHECKPOINT2_REEXECUTION_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Governance
 
 Owner is final scientific authority; ChatGPT is L3 Reviewer/scientific-route authority; Codex is bounded Builder. GitHub live `main` is repository-state authority. `deep-learning-hank` is separate and must never be used for this route.
 
-Protected/source-faithful MATLAB remains read-only. Corrected diagnostic work is separate from production replacement.
+## Accepted attribution
 
-## Accepted route before the current failure
+Builder candidate `582f7fca52e47ee5303164edbc62b98add363ec6` is Reviewer-accepted as:
+`ATTRIBUTED__SELECTOR_OMITS_AUTHORITY_BACKED_LEGAL_BRANCH`.
 
-The corrected route has:
+The accepted defect is narrow:
+- lower-b active KKT requires `q_b >= p_b`;
+- the corrected selector's active lower-b negative-transfer derivative pre-screen incorrectly used `0 < q_b <= p_b`;
+- this omitted the authority-backed negative/backward-`a` case;
+- eight cases are required by the frozen lower-b/interior-a census, but the V2 cell100 receipt contains seven;
+- static algebra shows the omitted case would still be inadmissible at cell100, so this is an implementation coverage defect rather than evidence for a different cell100 selected policy;
+- positive active root failure is genuine no-root on the legal domain;
+- interior-Z is not legal at the b-boundary.
 
-- accepted V0 policy map and Q0;
-- accepted direct HJB step `V0->V1`;
-- accepted V1 remap and Q1;
-- Q1 one closed class `[5,6,405,406]`;
-- accepted pin-free/source-free Q1 invariant mass, numerical rank/nullity `799/1`;
-- accepted nonlinear design with state `V_n`, same-value derived `(P_n,u_n,Q_n)`, terminal-only KFE and fixed `Delta=1000`;
-- Owner-adopted corrected-target convergence law.
+Acceptance document:
+`docs/CH5_MP4C_2018_KFE_D123_V2_CELL100_NO_ADMISSIBLE_POLICY_ZERO_SCIENCE_ATTRIBUTION_ACCEPTANCE_20260917.md`.
 
-Owner convergence law:
+## Frozen runtime checkpoint
 
-- Bellman residual `<=1e-8`;
-- value change `<=1e-7`;
-- both at the same checkpoint;
-- policy/operator stability diagnostic only;
-- direct-solve backward error `<=1e-12`;
-- exact period `k>=2` and frozen approximate period-2/3 cycle rules fail closed;
-- maximum 100 total HJB updates;
-- no damping, relaxation, adaptive Delta, continuation, clipping, artificial diffusion, solver substitution, scientific retry or post-hoc tolerance tuning.
+Accepted V2 SHA-256:
+`A85AB791D7CFC3B0BDA52D886418B9552D79824E09EACE6B6E4A4BEC8F950DF1`.
 
-## Latest accepted fail-closed runtime
+Checkpoint 1 remains the last complete same-value checkpoint until repaired checkpoint 2 completes:
+- `B1=0.014710294187010184`;
+- `D1=0.47118375690461445`;
+- V1->V2 direct residual `1.9012569296705806e-14`;
+- backward error `2.5514110567283015e-16`.
 
-Builder candidate:
-`922cd9118d617c044209515762ccecc9ec3fd34d`
-
-Reviewer acceptance:
-`docs/CH5_MP4C_2018_KFE_D123_BOUNDED_NONLINEAR_HJB_KFE_CONTINUATION_FAIL_CLOSED_ACCEPTANCE_20260917.md`
-
-Execution report:
-`docs/CH5_MP4C_2018_KFE_D123_BOUNDED_NONLINEAR_HJB_KFE_CONTINUATION_REPORT.md`
-
-Key facts:
-
-- checkpoint 1 raw metrics: `B1=0.014710294187010184`, `D1=0.47118375690461445`; not converged;
-- exactly one new direct solve `V1->V2` passed the linear gate;
-- residual infinity norm `1.9012569296705806e-14`;
-- normwise backward error `2.5514110567283015e-16`;
-- V2 SHA-256 `A85AB791D7CFC3B0BDA52D886418B9552D79824E09EACE6B6E4A4BEC8F950DF1`;
-- checkpoint-2 policy map cells 0-99 passed;
-- first failure flat F index `100`, zero-based `(0,5,0)`, physical `b=-2.0, a=2.6315789473684212, z=0.8`;
-- derivatives at failure: `p_b^B=p_b^F=0.012333311206716577`, `p_a^B=0.00903315440190679`, `p_a^F=0.008957007194295222`;
-- outcome `NO_ADMISSIBLE_POLICY`, zero admissible comparisons;
-- no complete P2/u2/Q2; D2 assemblies 0; KFE calls 0; scientific retries 0.
-
-The raw receipt includes rejection reasons such as lower-b primal infeasibility, derivative-direction inconsistency, transfer sign/KKT failure and one `ROOT_FAILURE_NO_UNIQUE_BRACKET`. These are evidence only, not permission to repair.
+Owner nonlinear law remains frozen: Bellman `<=1e-8` and value change `<=1e-7` simultaneously; fixed `Delta=1000`; backward error `<=1e-12`; frozen cycle rules; no damping/relaxation/adaptive Delta/continuation/clipping/artificial diffusion/solver substitution/scientific retry/post-hoc tolerance tuning.
 
 ## Current active task
 
-`tasks/CH5_MP4C_2018_KFE_D123_V2_CELL100_NO_ADMISSIBLE_POLICY_ZERO_SCIENCE_ATTRIBUTION_20260917.md`
+`tasks/CH5_MP4C_2018_KFE_D123_V2_LOWER_B_ACTIVE_NEGATIVE_BACKWARD_A_SELECTOR_REPAIR_AND_CHECKPOINT2_REEXECUTION_20260917.md`
 
-This task must use only persisted evidence/static source/algebra. All selector/root/policy-map/D2/HJB/KFE/MATLAB/downstream scientific calls are exactly zero.
+This task is deliberately narrow. It may repair only the corrected diagnostic selector's accepted lower-b branch-domain omission, run focused tests, then perform exactly one fresh V2 checkpoint-2 policy-map attempt. If the full map succeeds, it may assemble one Q2 and compute checkpoint-2 Bellman/value/policy/operator/cycle diagnostics. It must stop before any `V2->V3` HJB update and before any terminal KFE/topology/SVD work.
 
-Required classification:
+No production/source-faithful change, MATLAB, outer/firm/GE/annual/IRF/Results call or scientific retry is authorized.
 
-- `ATTRIBUTED__FROZEN_V2_CELL100_LOCAL_KKT_INPUTS_STRUCTURALLY_INCOMPATIBLE`
-- `ATTRIBUTED__SELECTOR_OMITS_AUTHORITY_BACKED_LEGAL_BRANCH`
-- `ATTRIBUTED__ROOT_IMPLEMENTATION_OMISSION_WITHIN_AUTHORIZED_BRANCH`
-- `BLOCKED__OWNER_SCIENTIFIC_DECISION_REQUIRED`
-- `BLOCKED__INSUFFICIENT_PERSISTED_EVIDENCE`
+## Next Reviewer action
 
-No repair/reexecution or successor task by Builder.
+When Builder returns the repair/reexecution candidate, independently inspect:
+- exact code diff and whether only lower-face branch-domain coverage changed;
+- focused tests, especially lower-b backward/forward negative cases and upper-b regression;
+- scientific call ledger;
+- fresh V2 checkpoint-2 receipt set;
+- if reached, Q2 and B2/D2/stability/cycle evidence.
 
-## Interpretation boundary
-
-The current evidence does not establish nonlinear HJB convergence or nonexistence, a terminal KFE for V2, a household fixed point, GE, market clearing, production replacement or Results. The immediate scientific problem is strictly local attribution of the first V2 selector failure at lower-b boundary cell flat 100.
+If the repaired checkpoint-2 map exposes a different first failure, treat that as the next scientific object rather than repairing it inside the same task. If checkpoint 2 completes, decide the next bounded continuation/terminal gate from the frozen law. Production, GE and Results remain closed.
