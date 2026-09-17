@@ -8,46 +8,61 @@ The frozen source-faithful reference and separately governed corrected successor
 
 ## KFE-D2C/D/E — accepted corrected household checkpoints
 
-The corrected route now has:
+The corrected route has:
 - accepted V0 800-cell policy map and Q0;
-- one accepted direct HJB update `V0->V1`;
+- accepted direct HJB update `V0->V1`;
 - accepted V1 remap and Q1;
 - Q1 exact-positive single closed class `[5,6,405,406]`;
 - accepted pin-free/source-free unique Q1 invariant mass with rank/nullity `799/1`.
 
-These are household/operator diagnostics only until nonlinear HJB convergence is established.
+These remain household/operator diagnostics until nonlinear HJB convergence is established.
 
-## KFE-D2F-A — nonlinear HJB-KFE fixed-point design accepted
+## KFE-D2F-A/B — nonlinear design and Owner convergence law accepted
 
-Zero-science candidate `ee83051d40c1389618288cef61d7d97711c1a861` is accepted. It freezes nonlinear state `V_n`, same-value derived `(P_n,u_n,Q_n)`, fixed `Delta=1000`, terminal-only KFE timing and a maximum 100 total HJB updates.
+Accepted nonlinear design freezes state `V_n`, same-value derived `(P_n,u_n,Q_n)`, fixed `Delta=1000`, terminal-only KFE timing and at most 100 total HJB updates.
 
-## KFE-D2F-B — Owner convergence law adopted
+Owner convergence law:
+1. Bellman residual `<=1e-8`;
+2. value change `<=1e-7`;
+3. both at the same checkpoint;
+4. policy/operator stability diagnostic only;
+5. direct-solve backward error `<=1e-12`;
+6. frozen exact and approximate period-2/3 cycle rules fail closed;
+7. no damping, relaxation, adaptive Delta, continuation, clipping, artificial diffusion, solver substitution, scientific retry or post-hoc tolerance tuning.
 
-Owner adoption:
-`docs/CH5_MP4C_2018_KFE_D123_NONLINEAR_CONVERGENCE_LAW_OWNER_ADOPTION_20260917.md`.
+## KFE-D2F-C — bounded nonlinear continuation executed and fail-closed evidence accepted
 
-Frozen law:
+Builder candidate `922cd9118d617c044209515762ccecc9ec3fd34d` is accepted as fail-closed evidence.
 
-1. stationary Bellman residual `||R_n||_inf <= 1e-8`;
-2. value change `||V_n-V_(n-1)||_inf <= 1e-7`;
-3. both conditions required at the same checkpoint;
-4. policy/operator stability are mandatory diagnostics only;
-5. direct-solve normwise backward error `<=1e-12`;
-6. exact period `k>=2` full-checkpoint recurrence stops fail-closed before convergence;
-7. approximate periods 2 and 3 use complete lag-k windows with `||V_j-V_(j-k)||_inf <=1e-8` after the primary convergence test fails;
-8. total update ceiling 100, with `V0->V1` already consuming update 1;
-9. no damping, relaxation, adaptive Delta, parameter continuation, clipping, artificial diffusion, solver substitution, scientific retry or post-hoc tolerance tuning.
+Accepted trajectory facts:
 
-## KFE-D2F-C — active bounded nonlinear continuation
+- checkpoint 1: `B1=0.014710294187010184`, `D1=0.47118375690461445`; not converged;
+- one authorized `V1->V2` direct solve passed with residual `1.9012569296705806e-14` and normwise backward error `2.5514110567283015e-16`;
+- V2 SHA-256 `A85AB791D7CFC3B0BDA52D886418B9552D79824E09EACE6B6E4A4BEC8F950DF1`;
+- fresh V2 policy map passed cells 0-99 and failed first at flat 100, `(i_b,i_a,i_z)=(0,5,0)`, physical `(-2.0,2.6315789473684212,0.8)`, with `NO_ADMISSIBLE_POLICY` and zero admissible comparisons;
+- no complete P2/u2/Q2 exists, so no B2/D2/cycle/topology/KFE claim exists.
+
+The failure is not yet interpreted as nonlinear HJB nonexistence. It is a local selector/KKT gate requiring attribution.
+
+Reviewer acceptance:
+`docs/CH5_MP4C_2018_KFE_D123_BOUNDED_NONLINEAR_HJB_KFE_CONTINUATION_FAIL_CLOSED_ACCEPTANCE_20260917.md`.
+
+## KFE-D2F-D — active zero-science V2 cell100 attribution
 
 Active task:
-`tasks/CH5_MP4C_2018_KFE_D123_BOUNDED_NONLINEAR_HJB_KFE_CONTINUATION_20260917.md`.
+`tasks/CH5_MP4C_2018_KFE_D123_V2_CELL100_NO_ADMISSIBLE_POLICY_ZERO_SCIENCE_ATTRIBUTION_20260917.md`.
 
-The task starts from the exact accepted V1/P1/u1/Q1 checkpoint. It evaluates V1 first and may then execute at most 99 additional fixed-Delta HJB updates, ending no later than V100. Every new value checkpoint requires a complete corrected policy remap, D2 operator assembly, same-value Bellman/value/stability evidence and fail-closed cycle/linear-solve checks before another update.
+The task must distinguish among:
 
-No KFE is executed during ordinary HJB rounds. If an HJB convergence candidate is reached, no further update is allowed; the final same-value Q* then proceeds directly to the accepted single-closed-class topology gate and exactly one pin-free/source-free KFE validation.
+- genuine frozen local KKT/input incompatibility;
+- omitted authority-backed legal selector branch;
+- root/bracketing implementation omission inside an already-authorized branch;
+- unresolved scientific-law conflict requiring Owner decision;
+- insufficient persisted evidence.
 
-A full PASS establishes only a conditional household HJB-KFE fixed point under the frozen call-725 prices/calibration. It does not establish GE, market clearing, production replacement or paper Results.
+It is zero-science: no selector/root/policy-map/D2/HJB/KFE/MATLAB/downstream call and no repair/reexecution.
+
+Only after independent acceptance of this attribution may a repair or fresh bounded runtime successor be designed.
 
 ## KFE-D3 — later production closure
 
