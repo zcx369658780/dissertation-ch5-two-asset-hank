@@ -2,38 +2,47 @@
 
 更新：2026-09-17。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`OWNER_CONVERGENCE_LAW_ADOPTED__BOUNDED_NONLINEAR_HJB_KFE_CONTINUATION_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`NONLINEAR_CONTINUATION_FAIL_CLOSED_AT_V2_CELL100__ZERO_SCIENCE_ATTRIBUTION_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Accepted scientific checkpoint
 
 Owner-adopted D1/D2/D3 corrected semantics、lower-a zero-kink multiplier handling、interior zero-liquid Z switching、Option-A V0 map/Q0、一次 direct HJB step V1、V1 remap Q1，以及 Q1 source-free unique invariant mass均已接受。Source-faithful/production paths remain frozen。
 
-## Nonlinear fixed-point design and convergence law
+Accepted nonlinear design and Owner convergence law remain authoritative:
 
-Zero-science design candidate `ee83051d40c1389618288cef61d7d97711c1a861` is accepted by `docs/CH5_MP4C_2018_KFE_D123_NONLINEAR_HJB_KFE_FIXED_POINT_DESIGN_BINDING_ACCEPTANCE_20260917.md`.
+- Bellman residual `<=1e-8`;
+- value change `<=1e-7`;
+- both required at the same checkpoint;
+- policy/operator stability diagnostic only;
+- direct-solve normwise backward error `<=1e-12`;
+- exact period `k>=2` recurrence and frozen approximate period-2/3 rules fail closed;
+- at most 100 total HJB updates;
+- fixed `Delta=1000`;
+- no damping、relaxation、adaptive Delta、continuation、clipping、artificial diffusion、solver substitution、scientific retry or post-hoc tolerance tuning.
 
-Owner convergence-law adoption is recorded in:
-`docs/CH5_MP4C_2018_KFE_D123_NONLINEAR_CONVERGENCE_LAW_OWNER_ADOPTION_20260917.md`.
+## Bounded nonlinear continuation result
 
-The frozen corrected-target law is:
+Builder candidate `922cd9118d617c044209515762ccecc9ec3fd34d` is Reviewer-accepted as fail-closed evidence by:
+`docs/CH5_MP4C_2018_KFE_D123_BOUNDED_NONLINEAR_HJB_KFE_CONTINUATION_FAIL_CLOSED_ACCEPTANCE_20260917.md`.
 
-- same-value stationary Bellman residual `||R_n||_inf <= 1e-8`;
-- value change `||V_n-V_(n-1)||_inf <= 1e-7`;
-- both conditions are required at the same checkpoint;
-- policy/operator stability are mandatory diagnostics, not terminal convergence conditions;
-- every direct implicit HJB solve requires normwise backward error `<=1e-12`;
-- exact recurrence of full checkpoint identity at period `k>=2` before convergence is fail-closed;
-- approximate period-2/3 cycles use complete lag-k windows with `||V_j-V_(j-k)||_inf <=1e-8` and stop only after the primary convergence test has failed;
-- at most 100 total HJB updates, with `V0->V1` already consuming update 1;
-- `Delta=1000` fixed; damping、relaxation、adaptive Delta、continuation、clipping、artificial diffusion、solver substitution、scientific retry and post-hoc tolerance tuning remain unauthorized.
+Accepted facts:
+
+- checkpoint 1: `B1=0.014710294187010184`, `D1=0.47118375690461445`; both fail the Owner convergence law;
+- exactly one new direct update `V1->V2` passed the linear accuracy gate with residual `1.9012569296705806e-14` and backward error `2.5514110567283015e-16`;
+- accepted V2 field SHA-256: `A85AB791D7CFC3B0BDA52D886418B9552D79824E09EACE6B6E4A4BEC8F950DF1`;
+- fresh V2 policy remap passed cells 0-99 and failed first at flat F index `100`, `(i_b,i_a,i_z)=(0,5,0)`, physical `(-2.0,2.6315789473684212,0.8)`, with `NO_ADMISSIBLE_POLICY` and zero admissible comparisons;
+- no complete P2/u2/Q2 exists; no D2/Q2, B2/D2/cycle or KFE gate was reached;
+- no scientific retry or numerical-law modification occurred.
+
+This does not prove nonlinear HJB nonexistence. It proves only that the frozen corrected selector, at the accepted V2 derivatives for the first failing cell, currently has no admissible selected branch.
 
 ## Active Builder task
 
-`tasks/CH5_MP4C_2018_KFE_D123_BOUNDED_NONLINEAR_HJB_KFE_CONTINUATION_20260917.md`
+`tasks/CH5_MP4C_2018_KFE_D123_V2_CELL100_NO_ADMISSIBLE_POLICY_ZERO_SCIENCE_ATTRIBUTION_20260917.md`
 
-The Builder must fresh-fetch live `main`, bind exact accepted V1/P1/u1/Q1 provenance, evaluate checkpoint V1 under the adopted law, and if necessary continue no later than V100. Each new checkpoint must be fully derived and sealed before another update. The task is fail-closed on first selector/root/D2/linear-solve/evidence/cycle/ceiling failure.
+This is zero-science forensic attribution only. It must determine whether cell 100 is a genuine local KKT/input incompatibility, an omitted authority-backed legal branch, an authorized-root implementation omission, or a new Owner scientific-decision gate.
 
-If the HJB convergence candidate is reached, the same-value final Q* may proceed to the already accepted terminal topology and pin-free/source-free KFE gate. A PASS establishes only a conditional household HJB-KFE fixed point at frozen prices/calibration.
+No selector/root/policy-map/D2/HJB/KFE/MATLAB/downstream scientific call is authorized in this attribution task. No runtime repair/reexecution is authorized until independent acceptance.
 
-No production replacement、GE、market-clearing、annual calibration、dynamics、IRF、MATLAB or Results work is authorized. Results eligibility remains `FALSE`.
+Production replacement、market clearing、GE、annual calibration、dynamics、IRF、welfare、causal interpretation and Results remain unauthorized.
