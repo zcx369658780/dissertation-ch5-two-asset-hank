@@ -2,31 +2,38 @@
 
 更新：2026-09-17。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`Q1_SOURCE_FREE_KFE_ACCEPTED__NONLINEAR_FIXED_POINT_DESIGN_BLOCKED_ON_OWNER_CONVERGENCE_LAW__PRODUCTION_UNCHANGED`。
+状态：`OWNER_CONVERGENCE_LAW_ADOPTED__BOUNDED_NONLINEAR_HJB_KFE_CONTINUATION_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Accepted scientific checkpoint
 
 Owner-adopted D1/D2/D3 corrected semantics、lower-a zero-kink multiplier handling、interior zero-liquid Z switching、Option-A V0 map/Q0、一次 direct HJB step V1、V1 remap Q1，以及 Q1 source-free unique invariant mass均已接受。Source-faithful/production paths remain frozen。
 
-## Nonlinear fixed-point design gate
+## Nonlinear fixed-point design and convergence law
 
 Zero-science design candidate `ee83051d40c1389618288cef61d7d97711c1a861` is accepted by `docs/CH5_MP4C_2018_KFE_D123_NONLINEAR_HJB_KFE_FIXED_POINT_DESIGN_BINDING_ACCEPTANCE_20260917.md`.
 
-Accepted design freezes the nonlinear state as `V_n`; each same-value checkpoint freshly derives `P_n,u_n,Q_n`, computes stationary Bellman residual and stability diagnostics, and only if the Owner-bound convergence law passes may it proceed to one terminal topology/KFE validation on the same `Q*`. KFE is not run every iteration. `Delta=1000` remains fixed. Damping、relaxation、adaptive Delta、continuation、clipping 和 artificial diffusion remain unauthorized.
+Owner convergence-law adoption is recorded in:
+`docs/CH5_MP4C_2018_KFE_D123_NONLINEAR_CONVERGENCE_LAW_OWNER_ADOPTION_20260917.md`.
 
-The accepted resource ceiling is at most 100 total HJB updates for this call-725 corrected trajectory; the accepted `V0->V1` update has consumed update 1, leaving at most 99 future updates through `V100`.
+The frozen corrected-target law is:
 
-## Owner decision gate
+- same-value stationary Bellman residual `||R_n||_inf <= 1e-8`;
+- value change `||V_n-V_(n-1)||_inf <= 1e-7`;
+- both conditions are required at the same checkpoint;
+- policy/operator stability are mandatory diagnostics, not terminal convergence conditions;
+- every direct implicit HJB solve requires normwise backward error `<=1e-12`;
+- exact recurrence of full checkpoint identity at period `k>=2` before convergence is fail-closed;
+- approximate period-2/3 cycles use complete lag-k windows with `||V_j-V_(j-k)||_inf <=1e-8` and stop only after the primary convergence test has failed;
+- at most 100 total HJB updates, with `V0->V1` already consuming update 1;
+- `Delta=1000` fixed; damping、relaxation、adaptive Delta、continuation、clipping、artificial diffusion、solver substitution、scientific retry and post-hoc tolerance tuning remain unauthorized.
 
-No active Builder scientific task exists.
+## Active Builder task
 
-Owner decision is required before any further selector/policy-map/D2/HJB continuation call. The repository does not yet freeze a corrected-target convergence law for:
+`tasks/CH5_MP4C_2018_KFE_D123_BOUNDED_NONLINEAR_HJB_KFE_CONTINUATION_20260917.md`
 
-- Bellman residual threshold;
-- value-change threshold and conjunction rule;
-- whether policy/operator stability is mandatory or diagnostic;
-- prospective linear-solve backward-error rejection bound;
-- non-exact cycling/oscillation criterion and window.
+The Builder must fresh-fetch live `main`, bind exact accepted V1/P1/u1/Q1 provenance, evaluate checkpoint V1 under the adopted law, and if necessary continue no later than V100. Each new checkpoint must be fully derived and sealed before another update. The task is fail-closed on first selector/root/D2/linear-solve/evidence/cycle/ceiling failure.
 
-Historical `max|V_new-V_old|<1e-7` remains provenance only and cannot be silently promoted to corrected-target authority. Results eligibility remains `FALSE` and production replacement remains unauthorized.
+If the HJB convergence candidate is reached, the same-value final Q* may proceed to the already accepted terminal topology and pin-free/source-free KFE gate. A PASS establishes only a conditional household HJB-KFE fixed point at frozen prices/calibration.
+
+No production replacement、GE、market-clearing、annual calibration、dynamics、IRF、MATLAB or Results work is authorized. Results eligibility remains `FALSE`.
