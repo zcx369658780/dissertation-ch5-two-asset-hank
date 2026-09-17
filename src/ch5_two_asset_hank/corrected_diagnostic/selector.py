@@ -1005,9 +1005,9 @@ def select_constrained_policy(
             else:
                 a_options = _interior_options(cell, "a", regime)
 
-            # A liquid-active regime is allowed one scalar-root invocation.  If
-            # its derivative branch is not uniquely ruled in beforehand, fail
-            # closed rather than spend a second root or choose by outcome.
+            # Upper-b liquid-active regimes retain their one-root fail-closed
+            # rule.  Active lower-b negative transfer must instead represent
+            # every a-direction that is viable on q_b >= p_b.
             if faces.get("b") in active and len(b_options) * len(a_options) > 1:
                 viable_a: list[tuple[str, float]] = []
                 for branch, value in a_options:
@@ -1016,33 +1016,38 @@ def select_constrained_policy(
                     elif regime == "zero_kink" and value > 0.0:
                         viable_a.append((branch, value))
                     elif regime == "negative":
-                        # The panel's only interior-a cell has an upper-b root
-                        # domain q in (0,p_b].  A 513-point prospective domain
-                        # screen removes direction-inconsistent branches before
-                        # any counted root invocation.
                         _, p_b_screen = b_options[0]
-                        if p_b_screen > 0.0:
-                            for log_q in np.linspace(
+                        if faces["b"] == "lower_b":
+                            lower = max(float(p_b_screen), sys.float_info.min)
+                            log_grid = np.linspace(
+                                math.log(lower), math.log(sys.float_info.max), 513
+                            )
+                        elif p_b_screen > 0.0:
+                            log_grid = np.linspace(
                                 math.log(sys.float_info.min), math.log(p_b_screen), 513
+                            )
+                        else:
+                            log_grid = ()
+                        for log_q in log_grid:
+                            q_screen = math.exp(float(log_q))
+                            d_screen = _transfer_from_regime(
+                                regime=regime,
+                                q_a=value,
+                                q_b=q_screen,
+                                a=cell.a,
+                                parameters=parameters,
+                            )
+                            g_a_screen = cell.effective_r_a * cell.a + d_screen
+                            if d_screen < 0.0 and _direction_ok(
+                                branch,
+                                g_a_screen,
+                                _fp_bound(d_screen, g_a_screen),
                             ):
-                                q_screen = math.exp(float(log_q))
-                                d_screen = _transfer_from_regime(
-                                    regime=regime,
-                                    q_a=value,
-                                    q_b=q_screen,
-                                    a=cell.a,
-                                    parameters=parameters,
-                                )
-                                g_a_screen = cell.effective_r_a * cell.a + d_screen
-                                if d_screen < 0.0 and _direction_ok(
-                                    branch,
-                                    g_a_screen,
-                                    _fp_bound(d_screen, g_a_screen),
-                                ):
-                                    viable_a.append((branch, value))
-                                    break
+                                viable_a.append((branch, value))
+                                break
                 a_options = _unique_derivatives(viable_a)
-                if len(b_options) * len(a_options) != 1:
+                lower_b_negative = faces["b"] == "lower_b" and regime == "negative"
+                if not lower_b_negative and len(b_options) * len(a_options) != 1:
                     candidates.append(
                         _rejected(
                             active,
