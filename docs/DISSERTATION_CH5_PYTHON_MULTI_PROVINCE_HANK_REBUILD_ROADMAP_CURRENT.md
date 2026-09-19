@@ -2,78 +2,54 @@
 更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 Results eligibility=`FALSE`。
 
-## Household numerical foundation — largely closed
+## Accepted household numerical foundation
 
-Accepted scientific/numerical components now include:
+The corrected route has a complete and accepted checkpoint 2 under the adopted multidimensional switching laws.
 
-- D1 finite-domain/boundary law;
-- D2 consumed-total-drift conservative generator;
-- D3 regularized adjustment-cost KKT;
-- lower-`a` zero-kink multiplier law;
-- interior-liquid zero-drift `Z`;
-- lower-b complete branch coverage;
-- one-axis interior-`a` zero-drift switching;
-- simultaneous two-axis zero-drift switching;
-- corrected V0/Q0;
-- direct V0->V1;
-- V1/Q1;
-- Q1 topology and source-free KFE diagnostics;
-- direct V1->V2;
-- complete V2/P2/u2/Q2.
+Checkpoint 2:
+- complete V2/P2/u2/Q2;
+- D2 PASS;
+- `B2=0.006582827785543588`;
+- `D2=0.05439336697877817`;
+- nonconverged.
 
-The local corrected-selector closure phase has therefore reached a complete checkpoint 2.
+## First continuation update
 
-## Checkpoint 2 — complete but nonconverged
+The frozen nonlinear update from V2 to V3 passes the direct linear-solve accuracy gate.
 
-Accepted:
+Accepted V3 SHA:
 
-- `B2=0.006582827785543588`
-- `D2=0.05439336697877817`
-- D2/Q2 PASS
-- no exact cycle
-- approximate period-2/3 windows not yet available.
+`4FDB36C17ACDC60B56661AEE1C0437B65EC4A871FD4E5E08A9A996FB10EF85EF`.
 
-This is the first complete nonlinear checkpoint after V1 under the fully adopted multidimensional switching law.
+The first V3 map fails at cell100, so checkpoint 3 is incomplete.
 
-## Current stage — bounded nonlinear continuation
+## V3 cell100 implementation attribution
+
+Independent Reviewer inspection identifies a sampling-induced false negative in the already-authorized active lower-b negative branch census.
+
+A narrow legal forward-`a` interval is missed because a 513-point log screen spans an effectively unbounded `q_b` domain. Static algebra proves one legal liquid-equality root exists in that omitted interval.
+
+This is not a new HJB law.
+
+## Current stage
 
 Active task:
 
-`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT2_TO_CHECKPOINT6_BOUNDED_NONLINEAR_CONTINUATION_20260919.md`.
+`tasks/CH5_MP4C_2018_KFE_D123_V3_CELL100_LOWER_B_NEGATIVE_FORWARD_A_PRE_SCREEN_REPAIR_AND_CHECKPOINT3_REEXECUTION_20260919.md`.
 
-The route may continue through at most V6, under fixed `Delta=1000` and the Owner convergence/cycle law.
+The task repairs the filtering logic and reexecutes one V3 map only.
 
-The purpose is to determine whether the now-complete corrected household HJB:
+If the map completes:
+- assemble one Q3;
+- compute B3/D3 and checkpoint-3 diagnostics;
+- stop before V3->V4.
 
-- converges;
-- enters an exact or authorized approximate cycle;
-- exposes another scientific selector/D2 issue;
-- or remains nonconverged through checkpoint 6.
+If another scientific issue appears:
+- stop first failure;
+- return to Reviewer.
 
-No terminal KFE is run inside this continuation task.
+## After complete checkpoint 3
 
-## After HJB convergence
+If checkpoint 3 is complete and nonconverged, the nonlinear route may resume under the already adopted convergence/cycle law. Terminal household KFE remains deferred until an HJB convergence candidate exists.
 
-Once a primary HJB convergence candidate is accepted:
-
-1. same-value final D1/D2 legality confirmation;
-2. one-closed-class topology gate;
-3. pin-free/source-free homogeneous terminal KFE;
-4. dense GESVD rank/nullity and nonnegative mass;
-5. conditional household fixed-point acceptance at frozen prices/calibration.
-
-Only after household closure may the deferred multi-province production/capital/labor/market-clearing route reopen.
-
-## Downstream project stages
-
-Still downstream:
-
-- multi-province production replacement;
-- bilateral capital/labor network closure;
-- market clearing and GE;
-- annual calibration;
-- dynamics/shocks/IRFs;
-- welfare/causal interpretation;
-- dissertation Results.
-
-Capital/labor K1/C1/K1B/K2 routes remain deferred, not abandoned.
+Production/capital/labor/market clearing/GE/dynamics/Results remain downstream.

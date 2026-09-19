@@ -2,52 +2,50 @@
 
 更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`CHECKPOINT2_COMPLETE_NONCONVERGED__BOUNDED_NONLINEAR_CONTINUATION_TO_CHECKPOINT6_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`V3_CELL100_LOWER_B_NEGATIVE_FORWARD_A_PRE_SCREEN_FALSE_NEGATIVE_ATTRIBUTED__MINIMAL_REPAIR_AND_CHECKPOINT3_REEXECUTION_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
-## Accepted complete checkpoint 2
+## Accepted continuation result
 
-Reviewer accepted Builder candidate `62d01dac0eb1e516386cf6336837b5a2ef4463e5`.
+Reviewer accepted Builder candidate `d2b0d62ff7a7c9c094bb70d6eaf8bef88f8e449a`.
 
 Acceptance:
-`docs/CH5_MP4C_2018_KFE_D123_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_ACCEPTANCE_20260919.md`.
+`docs/CH5_MP4C_2018_KFE_D123_CHECKPOINT2_TO_CHECKPOINT6_BOUNDED_NONLINEAR_CONTINUATION_ACCEPTANCE_20260919.md`.
 
-The Owner-adopted joint two-axis switching law is implemented and accepted. The accepted V2 policy map completes `800/800` cells.
+Accepted complete checkpoint 2 remains the last complete nonlinear checkpoint.
 
-Key checkpoint-2 identities:
+The exact `V2->V3` direct solve passes:
 
-- V2: `A85AB791D7CFC3B0BDA52D886418B9552D79824E09EACE6B6E4A4BEC8F950DF1`
-- P2: `EBCBABC0593EF163D2E7FA300F6FFEB6E3C187D232D4CCEA5D59AB7180CD1D95`
-- u2: `C222F4B147F48EA177A28AAF289F3ED5EA76F531BC08201070DD63698BF98D73`
-- Q2: `346DBCDA13392DAF6897DC185767B0E7C5961AA76A9AAA686053AEDA33C02F9F`
-- full checkpoint identity: `71DC6975E814060A4F63961A736E6E9DDF766C51CE4672C3EF777E5E15B80C2C`.
+- V3 SHA `4FDB36C17ACDC60B56661AEE1C0437B65EC4A871FD4E5E08A9A996FB10EF85EF`
+- residual infinity norm `1.4391265956703592e-14`
+- backward error `2.439151619375125e-16`.
 
-D2 passes.
+The V3 map first fails at cell100 before P3/u3/Q3 is formed.
 
-Checkpoint 2 is nonconverged:
+## Reviewer attribution
 
-- `B2=0.006582827785543588 > 1e-8`
-- `D2=0.05439336697877817 > 1e-7`.
+The V3 cell100 seven-candidate census omits an authority-backed active lower-b negative-transfer / forward-`a` branch.
 
-No cycle is established at checkpoint 2.
+The omission is caused by the existing 513-point log viability screen spanning from the lower-b shadow floor to `sys.float_info.max`. At V3 cell100 the legal forward-`a` negative interval is:
+
+`(0.012601561934698366,0.015751950034835593)`.
+
+The first two screen points are approximately:
+
+`0.005156057482672656`, `0.020837512395988838`.
+
+Thus the complete legal interval is skipped.
+
+Static algebra also proves the missing branch's active liquid equality has exactly one root inside its legal interval.
+
+This is an implementation filtering false negative under already-adopted lower-b/D3/upwind authority, not a new scientific law.
 
 ## Active task
 
-`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT2_TO_CHECKPOINT6_BOUNDED_NONLINEAR_CONTINUATION_20260919.md`.
+`tasks/CH5_MP4C_2018_KFE_D123_V3_CELL100_LOWER_B_NEGATIVE_FORWARD_A_PRE_SCREEN_REPAIR_AND_CHECKPOINT3_REEXECUTION_20260919.md`.
 
-The task reuses accepted V2/P2/u2/Q2 and may execute up to four new direct HJB updates, ending no later than checkpoint 6.
+The task minimally repairs lower-b negative branch representation and performs one fresh policy map from the already accepted V3 field. It does not rerun V2->V3 and does not continue to V4.
 
-At every new checkpoint it must freshly map policies, assemble D2/Q, compute B/D and stability diagnostics, then apply primary convergence, exact-cycle and applicable approximate period-2/3 rules before any next update.
+If the V3 map completes, it may assemble one Q3 and evaluate checkpoint-3 B3/D3/stability/cycle metrics.
 
-It must stop immediately on any failure, convergence or cycle condition.
-
-Terminal KFE/topology/SVD, production, GE and Results remain forbidden.
-
-## Update accounting
-
-- V0->V1: accepted update 1
-- V1->V2: accepted update 2
-- active task may consume updates 3-6
-- global ceiling: 100.
-
-No damping, relaxation, adaptive Delta, solver substitution, retry or tolerance retuning is authorized.
+Production, terminal KFE, GE and Results remain closed.

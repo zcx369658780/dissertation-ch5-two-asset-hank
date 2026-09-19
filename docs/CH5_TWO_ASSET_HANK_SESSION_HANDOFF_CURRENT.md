@@ -1,58 +1,41 @@
-# Chapter 5 当前交接 — complete checkpoint 2 accepted / bounded nonlinear continuation active
+# Chapter 5 当前交接 — V3 cell100 pre-screen false negative attributed / bounded repair active
 
 更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
-状态：`CHECKPOINT2_COMPLETE_NONCONVERGED__BOUNDED_NONLINEAR_CONTINUATION_TO_CHECKPOINT6_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`V3_CELL100_LOWER_B_NEGATIVE_FORWARD_A_PRE_SCREEN_FALSE_NEGATIVE_ATTRIBUTED__MINIMAL_REPAIR_AND_CHECKPOINT3_REEXECUTION_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Governance
 
 Owner is final scientific authority; ChatGPT is L3 Reviewer/scientific-route authority; Codex is bounded Builder. GitHub live `main` is repository-state authority. `deep-learning-hank` remains separate and must never be used for this route.
 
-## Major accepted milestone
+## Last complete checkpoint
 
-The corrected V2 policy map now completes all 800 cells under the adopted multidimensional switching laws.
+Checkpoint 2 remains complete and accepted.
 
-Accepted checkpoint 2:
+The accepted `V2->V3` direct solve is also valid, producing:
 
-- V2 SHA `A85AB791D7CFC3B0BDA52D886418B9552D79824E09EACE6B6E4A4BEC8F950DF1`
-- P2 identity `EBCBABC0593EF163D2E7FA300F6FFEB6E3C187D232D4CCEA5D59AB7180CD1D95`
-- u2 SHA `C222F4B147F48EA177A28AAF289F3ED5EA76F531BC08201070DD63698BF98D73`
-- Q2 SHA `346DBCDA13392DAF6897DC185767B0E7C5961AA76A9AAA686053AEDA33C02F9F`
-- checkpoint identity `71DC6975E814060A4F63961A736E6E9DDF766C51CE4672C3EF777E5E15B80C2C`
-- D2 PASS.
+`V3=4FDB36C17ACDC60B56661AEE1C0437B65EC4A871FD4E5E08A9A996FB10EF85EF`.
 
-Primary convergence fails at checkpoint 2:
+V3 itself is only a value state; checkpoint 3 is incomplete because the policy map fails at cell100.
 
-- `B2=0.006582827785543588`
-- `D2=0.05439336697877817`.
+## V3 cell100 attribution
 
-Thus the project has moved past local selector-closure work at V2 and back into the frozen nonlinear HJB trajectory.
+The failure is attributed to coarse viability filtering in the active lower-b negative-transfer census.
+
+The forward-`a` negative branch has a real legal `q_b` interval, but the 513-point screen over an unbounded log domain jumps completely across that interval and wrongly drops the branch.
+
+Static evidence proves a unique liquid-equality root exists inside the omitted interval.
+
+No new scientific law is required.
 
 ## Active task
 
-`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT2_TO_CHECKPOINT6_BOUNDED_NONLINEAR_CONTINUATION_20260919.md`.
+`tasks/CH5_MP4C_2018_KFE_D123_V3_CELL100_LOWER_B_NEGATIVE_FORWARD_A_PRE_SCREEN_REPAIR_AND_CHECKPOINT3_REEXECUTION_20260919.md`.
 
-The task binds accepted checkpoint 2 and may perform at most four updates through V6.
+The task repairs branch representation only, preserves all scientific laws, and runs exactly one new V3 map.
 
-It does not remap V2 before the first update.
+If complete, it may create Q3 and checkpoint-3 metrics, but may not execute V3->V4.
 
-For checkpoints 3-6:
+If another scientific failure appears, stop without repairing it.
 
-- one fresh policy map each;
-- one D2/Q each only after map completion;
-- B/D and policy/operator diagnostics;
-- primary convergence first;
-- exact cycle next;
-- approximate period-2/3 only when full windows exist;
-- direct solve to next checkpoint only if all gates remain nonterminal.
-
-Earliest complete approximate period-2 window: checkpoint 4.
-Earliest complete approximate period-3 window: checkpoint 6.
-
-If any new selector/scientific issue appears, stop without repair.
-
-Even if HJB convergence is reached, terminal topology/KFE is deferred to a separate Reviewer gate.
-
-## Downstream
-
-Household HJB convergence, terminal household KFE, market clearing, production replacement, GE, annual dynamics, IRFs, welfare and Results remain open/closed according to their later gates. Results eligibility is still FALSE.
+Production, terminal KFE, GE and Results remain closed.
