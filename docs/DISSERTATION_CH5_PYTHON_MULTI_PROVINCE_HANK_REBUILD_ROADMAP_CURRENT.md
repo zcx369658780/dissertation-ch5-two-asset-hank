@@ -4,7 +4,7 @@ Results eligibility=`FALSE`。
 
 ## Accepted corrected household route
 
-Accepted corrected evidence includes V0/Q0, V0->V1, V1/Q1, Q1 single closed class and pin-free/source-free unique Q1 invariant mass. The nonlinear design retains fixed `Delta=1000`, same-value `(P_n,u_n,Q_n)`, terminal-only KFE timing and the frozen Owner convergence law.
+The route has accepted V0/Q0, V0->V1, V1/Q1, Q1 unique closed-class/KFE diagnostics and the frozen nonlinear convergence law.
 
 Checkpoint 1 remains nonconverged:
 - `B1=0.014710294187010184`;
@@ -12,42 +12,39 @@ Checkpoint 1 remains nonconverged:
 
 ## One-axis switching closures
 
-The lower-b selector omission is closed.
+The liquid-`Z` law is Owner-adopted and accepted.
 
-The Owner-adopted interior-`a` zero-drift switching law is implemented and accepted. It successfully closes V2 cell100.
+The interior-`a` zero-drift law is Owner-adopted, implemented and accepted. It closes V2 cell100.
 
-The already-adopted interior-liquid `Z` law remains unchanged.
+## Cell185 coupled failure
 
-## V2 first new failure — cell185
+The post-adoption V2 map first fails at cell185, interior in both asset dimensions. The existing liquid-`Z` candidates create opposite illiquid-drift signs and no current authority permits a simultaneously endogenous shadow pair.
 
-The single fresh post-adoption V2 map first fails at cell185 after 186 selector evaluations.
+## Simultaneous two-axis adjudication — accepted
 
-Cell185 is interior in both asset dimensions. Existing liquid-`Z` candidates associated with the two one-sided `a` derivatives have opposite `g_a` signs and neither is direction-consistent.
+The zero-science candidate `3a3df94bd80874d531d58f3710bc82d2069aa619` is accepted as:
 
-Current authority deliberately forbids creating both a new interior-`a` switching shadow and liquid-`Z` shadow simultaneously.
+`ADJUDICATED__SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_SCIENTIFICALLY_SUPPORTED__OWNER_ADOPTION_REQUIRED`.
 
-No P2/u2/Q2 or B2/D2 object exists.
+The prospective joint law solves `g_b=g_a=0` simultaneously under unchanged D3 and both derivative-interval constraints. At cell185 its exact interval is nonempty and contains a unique statically proven root.
 
-## Current stage — simultaneous two-axis zero-science adjudication
+## Current stage — Owner adoption gate
 
-Active task:
+No Builder task is active.
 
-`tasks/CH5_MP4C_2018_KFE_D123_V2_CELL185_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_20260919.md`.
+Owner must explicitly adopt, modify or reject the prospective joint law.
 
-This gate studies whether a generic interior-interior joint zero-drift closure should solve:
+If adopted, the next bounded route should be:
 
-- `g_a=0`;
-- `g_b=0`;
-- unchanged D3 transfer KKT;
-- `q_a` inside its one-sided derivative interval;
-- `q_b` inside its liquid one-sided derivative interval.
-
-It performs no scientific runtime and does not adopt a law.
-
-If supported, explicit Owner adoption is required before any implementation or V2 rerun.
+1. minimal corrected-selector joint-switch implementation;
+2. focused tests for coupled trigger, interval geometry, root uniqueness, precedence/deduplication and one-axis non-regression;
+3. exact cell185 regression;
+4. exactly one fresh accepted-V2 policy-map attempt;
+5. if complete, at most one Q2/checkpoint-2 diagnostic evaluation;
+6. no automatic V2->V3 or terminal KFE.
 
 ## Downstream closure
 
-Corrected production replacement, market clearing, GE/annual/dynamics/IRF and Results remain downstream and closed.
+No complete P2/u2/Q2 or B2/D2 object exists.
 
-Capital/labor K1/C1/K1B/K2 routes remain deferred and do not bypass the household fixed-point gate.
+Production replacement, market clearing, GE/annual/dynamics/IRF and Results remain downstream and closed.

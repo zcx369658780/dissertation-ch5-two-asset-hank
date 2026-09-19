@@ -8,20 +8,18 @@
 2. 本索引
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
-5. `docs/CH5_MP4C_2018_KFE_D123_INTERIOR_A_ZERO_DRIFT_SWITCHING_IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_ACCEPTANCE_20260919.md`
-6. its execution report and exact cell185 receipt
-7. `docs/CH5_MP4C_2018_KFE_D123_INTERIOR_A_ZERO_DRIFT_SWITCHING_OWNER_ADOPTION_20260919.md`
-8. `docs/CH5_MP4C_2018_KFE_D123_INTERIOR_ZERO_LIQUID_Z_OWNER_ADOPTION_ACCEPTANCE_20260916.md`
-9. accepted D1/D2/D3, lower-`a` zero-kink and nonlinear-convergence authorities
-10. current active task.
+5. `docs/CH5_MP4C_2018_KFE_D123_V2_CELL185_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_ACCEPTANCE_20260919.md`
+6. `docs/CH5_MP4C_2018_KFE_D123_V2_CELL185_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_REPORT.md`
+7. interior-`a` implementation/reexecution acceptance and report
+8. interior-`a` Owner adoption
+9. liquid-`Z` Owner adoption
+10. accepted D1/D2/D3, lower-`a` zero-kink and nonlinear-convergence authorities.
 
 Current status:
 
-`V2_CELL185_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_ACTIVE__PRODUCTION_UNCHANGED`.
+`SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_SCIENTIFICALLY_SUPPORTED__OWNER_ADOPTION_REQUIRED__PRODUCTION_UNCHANGED`.
 
-Current active Builder task:
-
-`tasks/CH5_MP4C_2018_KFE_D123_V2_CELL185_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_20260919.md`.
+Current active Builder scientific task: none.
 
 Results eligibility=`FALSE`.
 
@@ -29,12 +27,13 @@ Latest accepted facts:
 
 - Owner-adopted one-axis interior-`a` switching closes V2 cell100;
 - the fresh map first fails at cell185;
-- cell185 is interior in both `b` and `a`;
-- backward-`a` liquid-`Z` gives `g_a>0`;
-- forward-`a` liquid-`Z` gives `g_a<0`;
-- current law explicitly forbids simultaneous newly-created two-axis switching;
-- the failure is therefore scientific/authority-level, not an implementation defect.
+- cell185 is interior-interior;
+- a simultaneous `g_b=g_a=0` joint shadow pair is statically supported;
+- D3 maps the illiquid derivative interval to a nonempty interval entirely inside the liquid derivative interval;
+- the fixed-transfer liquid equality is strictly increasing and changes sign over that interval;
+- exactly one joint root therefore exists;
+- this is a new coupled law, not sequential reuse of the two one-axis laws.
 
-The active task is zero-science. It may derive and adjudicate a joint `g_b=g_a=0` contract but may not implement or adopt it.
+Explicit Owner adoption is required before implementation or runtime. Until Owner acts, no selector/root/policy-map/D2/HJB/KFE/MATLAB/downstream task is active.
 
 Production, GE, annual, dynamics, IRF, welfare and Results remain closed.
