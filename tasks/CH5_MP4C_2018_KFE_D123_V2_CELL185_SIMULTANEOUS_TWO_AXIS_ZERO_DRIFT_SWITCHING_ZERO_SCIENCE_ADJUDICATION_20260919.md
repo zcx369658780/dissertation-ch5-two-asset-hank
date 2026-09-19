@@ -122,7 +122,7 @@ Require simultaneously:
 - `q_b>0`;
 - all unchanged D3/domain/finite conditions hold.
 
-Map the `a)-shadow interval through D3 into an implied `q_b` interval and intersect it with the liquid derivative interval. Determine statically whether the intersection is empty or nonempty.
+Map the `a`-shadow interval through D3 into an implied `q_b` interval and intersect it with the liquid derivative interval. Determine statically whether the intersection is empty or nonempty.
 
 ### C. Joint liquid equality
 
