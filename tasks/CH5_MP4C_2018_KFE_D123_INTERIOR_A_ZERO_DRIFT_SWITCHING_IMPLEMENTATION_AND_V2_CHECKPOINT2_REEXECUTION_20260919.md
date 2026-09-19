@@ -98,7 +98,7 @@ Implement the Owner adoption literally:
 6. Preserve the existing liquid-axis law.
 7. For an active liquid face, intersect the derivative-implied `q_b` interval with the exact face multiplier domain and use the existing scalar root routine/tolerance only on that interval.
 8. Require one unique legal root; otherwise fail closed.
-9. Do not create simultaneous new `a)-switching plus liquid-`Z) switching. Such a case must fail closed for separate adjudication.
+9. Do not create simultaneous new `a`-switching plus liquid-`Z` switching. Such a case must fail closed for separate adjudication.
 10. Reconstruct controls/KKT/Hamiltonian from the switching shadows; no endpoint interpolation.
 11. Canonical zero drifts require the existing arithmetic-residual rule.
 12. Include a legal switching candidate in the unchanged deduplication/Hamiltonian comparison.
