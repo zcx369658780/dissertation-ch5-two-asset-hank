@@ -2,40 +2,45 @@
 
 更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`V2_CELL100_INTERIOR_A_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`INTERIOR_A_ZERO_DRIFT_SWITCHING_SCIENTIFICALLY_SUPPORTED__OWNER_ADOPTION_REQUIRED__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
+当前 active Builder task：无。
 
-## Accepted checkpoint before the active adjudication
+## Accepted adjudication
 
-The repaired selector candidate `19e12ff6c87b2c08490883851e7c50ef958b9c3d` is accepted.
+Reviewer accepted Builder candidate `d4ed09015f184ab8e4a39e1de019c33b8868cd20` as:
 
-The lower-b branch-coverage implementation defect is closed. The repaired V2 map still fails first at flat 100, `(i_b,i_a,i_z)=(0,5,0)`, physical `(-2.0,2.6315789473684212,0.8)`, after representing all eight frozen authority-backed cases.
+`ADJUDICATED__INTERIOR_A_ZERO_DRIFT_SWITCHING_BRANCH_SCIENTIFICALLY_SUPPORTED__OWNER_ADOPTION_REQUIRED`.
 
-Accepted local classification:
+Acceptance:
+`docs/CH5_MP4C_2018_KFE_D123_V2_CELL100_INTERIOR_A_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_ACCEPTANCE_20260919.md`.
 
-`ATTRIBUTED__FROZEN_V2_CELL100_LOCAL_KKT_INPUTS_STRUCTURALLY_INCOMPATIBLE`.
+## Accepted scientific finding
 
-The two active lower-b negative-transfer roots exhibit the key interior-`a` crossing:
-- backward-`a`: `g_a=+0.00670682022114244`;
-- forward-`a`: `g_a=-0.0005429159000894801`.
+The repaired V2 cell100 complete eight-case census remains locally incompatible under the currently frozen one-sided `a` direction law, but the incompatibility has a structured strict crossing:
 
-This does not prove global HJB nonexistence.
+- backward-`a` candidate -> `g_a=+0.00670682022114244`;
+- forward-`a` candidate -> `g_a=-0.0005429159000894801`.
 
-## Owner-authorized active task
+A prospective interior-`a` zero-drift branch is statically supported.
 
-Owner has authorized a zero-science scientific-design adjudication:
+At cell100:
 
-`tasks/CH5_MP4C_2018_KFE_D123_V2_CELL100_INTERIOR_A_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_20260919.md`.
+- `d_Z=-r_a a=-0.23684196191023801`;
+- D3 gives `q_a/q_b=0.72000010894821909`;
+- `q_a in [p_a^F,p_a^B]` maps to
+  `q_b in [0.012440285887428097,0.012546045881996438]`;
+- the entire interval satisfies lower-b active `q_b>=0.012333311206716577`;
+- fixed-`d_Z` liquid equality is strictly increasing and changes sign from
+  `-0.0039748658728543454` to `+0.048890867998731984`.
 
-The task asks whether the strict sign crossing at an interior illiquid-`a` node scientifically supports a zero-drift switching branch `g_a=0`, analogous in numerical role but not automatically identical in authority to the accepted interior-liquid `Z` branch.
+Therefore exactly one compatible local crossing exists statically.
 
-It must derive the prospective law from the frozen D3 Hamiltonian/KKT equations, test cell100 compatibility using only persisted evidence and scalar algebra, compare against existing authority, and distinguish a missing switching law from finite-domain/boundary/trajectory alternatives.
+## Authority boundary
 
-This task is **zero science**:
-- no selector/root/policy-map/D2/HJB/KFE/MATLAB/downstream calls;
-- no source or numerical-law modification;
-- no law adoption;
-- no successor publication by Builder.
+The branch is compatible with existing D1/D2/D3, but it is not already authorized by the liquid-`Z` law or lower-`a` zero-kink law. It is a new interior-`a` derivative-selection law and requires explicit Owner adoption.
+
+No implementation, root call, policy map, D2, HJB or KFE runtime is active.
 
 ## Frozen runtime facts
 
@@ -48,8 +53,12 @@ Checkpoint 1 remains the last complete same-value checkpoint:
 - V1->V2 direct residual `1.9012569296705806e-14`;
 - backward error `2.5514110567283015e-16`.
 
-No P2/u2/Q2, B2/D2/stability/cycle, topology or terminal KFE object exists.
+No P2/u2/Q2 or B2/D2/stability/cycle/topology/KFE object exists.
 
-Owner nonlinear convergence law remains frozen unless Owner later changes it.
+## Current Owner gate
+
+Owner must explicitly adopt, modify or reject the prospective interior-`a` zero-drift switching contract before further corrected-route runtime.
+
+Until that decision, active Builder task = none.
 
 Production replacement, market clearing, GE, annual calibration, dynamics, IRF, welfare, causal interpretation and Results remain unauthorized.

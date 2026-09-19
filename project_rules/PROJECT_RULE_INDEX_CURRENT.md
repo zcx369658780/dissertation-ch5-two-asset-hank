@@ -3,37 +3,40 @@
 
 唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-开始任何工作先读取:
+开始任何工作先读取：
 1. `AGENTS.md`
 2. 本索引
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
-5. `docs/CH5_MP4C_2018_KFE_D123_V2_LOWER_B_ACTIVE_NEGATIVE_BACKWARD_A_SELECTOR_REPAIR_AND_CHECKPOINT2_REEXECUTION_ACCEPTANCE_20260919.md`
-6. `docs/CH5_MP4C_2018_KFE_D123_V2_LOWER_B_ACTIVE_NEGATIVE_BACKWARD_A_SELECTOR_REPAIR_AND_CHECKPOINT2_REEXECUTION_REPORT.md`
-7. `docs/CH5_MP4C_2018_KFE_D123_INTERIOR_ZERO_LIQUID_Z_OWNER_ADOPTION_ACCEPTANCE_20260916.md`
-8. `docs/CH5_MP4C_2018_KFE_D123_LOWER_A_ZERO_KINK_MULTIPLIER_REPAIR_AND_OPTION_A_REEXECUTION_REPORT.md`
-9. current active task plus D1/D2/D3/KKT authority and exact repaired cell100 receipt.
+5. `docs/CH5_MP4C_2018_KFE_D123_V2_CELL100_INTERIOR_A_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_ACCEPTANCE_20260919.md`
+6. `docs/CH5_MP4C_2018_KFE_D123_V2_CELL100_INTERIOR_A_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_REPORT.md`
+7. `docs/CH5_MP4C_2018_KFE_D123_V2_LOWER_B_ACTIVE_NEGATIVE_BACKWARD_A_SELECTOR_REPAIR_AND_CHECKPOINT2_REEXECUTION_ACCEPTANCE_20260919.md`
+8. accepted D1/D2/D3, liquid-`Z`, lower-`a` zero-kink and nonlinear-convergence authorities as needed.
 
 Current status:
-`V2_CELL100_INTERIOR_A_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_ACTIVE__PRODUCTION_UNCHANGED`.
+`INTERIOR_A_ZERO_DRIFT_SWITCHING_SCIENTIFICALLY_SUPPORTED__OWNER_ADOPTION_REQUIRED__PRODUCTION_UNCHANGED`.
 
-Current active Builder task:
-`tasks/CH5_MP4C_2018_KFE_D123_V2_CELL100_INTERIOR_A_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_20260919.md`.
+Current active Builder scientific task: none.
 
 Results eligibility=`FALSE`.
 
-Accepted facts before this task:
-- the lower-b selector coverage defect is repaired;
-- V2 cells 0-99 remain unchanged;
-- cell100 has the complete eight-case frozen census and zero admissible comparisons;
-- backward-`a` active negative root gives `g_a>0`;
-- forward-`a` active negative root gives `g_a<0`;
-- current frozen local classification is `ATTRIBUTED__FROZEN_V2_CELL100_LOCAL_KKT_INPUTS_STRUCTURALLY_INCOMPATIBLE`.
+Latest accepted adjudication:
+- V2 cell100 is an interior-`a` strict upwind crossing;
+- imposing `g_a=0` yields `d_Z=-r_a a`;
+- unchanged D3 KKT maps the closed one-sided `a` derivative interval to a nonempty `q_b` interval;
+- that interval is entirely legal under lower-b activity;
+- fixed-transfer liquid equality is strictly increasing and changes sign across the interval;
+- therefore exactly one compatible local crossing exists statically.
 
-Owner has now authorized only a **zero-science adjudication** of whether the interior-`a` strict crossing scientifically supports an endogenous zero-drift switching branch. No new law is adopted yet.
+Accepted primary classification:
 
-The task permits static reads, persisted-evidence parsing, symbolic derivation and scalar arithmetic. It permits zero selector/root/policy-map/D2/HJB/KFE/MATLAB/downstream calls and zero source/scientific-law changes.
+`ADJUDICATED__INTERIOR_A_ZERO_DRIFT_SWITCHING_BRANCH_SCIENTIFICALLY_SUPPORTED__OWNER_ADOPTION_REQUIRED`.
 
-If a prospective interior-`a` switching contract is supported, explicit Owner adoption is required before any implementation or runtime.
+The branch is compatible with existing D1/D2/D3 but is not already authorized by liquid-`Z` or lower-`a` zero-kink authority.
 
-Owner nonlinear convergence law otherwise remains frozen. Production, GE, annual, dynamics, IRF, welfare and Results remain closed.
+Explicit Owner adoption is required before implementation or scientific runtime. Reviewer must not silently convert this adjudication into adopted law.
+
+Until Owner acts:
+- no selector/root/policy-map/D2/HJB/KFE/MATLAB/downstream task is active;
+- no implementation successor is published;
+- production, GE, annual, dynamics, IRF, welfare and Results remain closed.

@@ -1,47 +1,58 @@
-# Chapter 5 当前交接 — interior-a zero-drift switching zero-science adjudication active
+# Chapter 5 当前交接 — interior-a zero-drift switching scientifically supported / Owner adoption required
 
 更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
-状态：`V2_CELL100_INTERIOR_A_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`INTERIOR_A_ZERO_DRIFT_SWITCHING_SCIENTIFICALLY_SUPPORTED__OWNER_ADOPTION_REQUIRED__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
+当前 active Builder task：无。
 
 ## Governance
 
 Owner is final scientific authority; ChatGPT is L3 Reviewer/scientific-route authority; Codex is bounded Builder. GitHub live `main` is repository-state authority. `deep-learning-hank` is separate and must never be used for this route.
 
-## Accepted repaired V2 failure
+## Latest accepted candidate
 
-The selector implementation omission is closed. Candidate `19e12ff6c87b2c08490883851e7c50ef958b9c3d` is accepted.
+Builder candidate:
+`d4ed09015f184ab8e4a39e1de019c33b8868cd20`.
 
-At V2 cell100 all eight frozen branches are represented and none is admissible. The strongest accepted local statement remains:
+Reviewer acceptance:
+`docs/CH5_MP4C_2018_KFE_D123_V2_CELL100_INTERIOR_A_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_ACCEPTANCE_20260919.md`.
 
-`ATTRIBUTED__FROZEN_V2_CELL100_LOCAL_KKT_INPUTS_STRUCTURALLY_INCOMPATIBLE`.
+The zero-science adjudication supports a new interior-`a` zero-drift switching law but does not adopt it.
 
-The most informative new pattern is that the two negative-transfer active-lower-b roots straddle the interior-`a` direction condition:
-- backward derivative produces positive `g_a`;
-- forward derivative produces negative `g_a`.
+## Scientific core
 
-## Active task
+Cell100 is interior in `a` and lower-boundary in `b`. Under the repaired frozen branch census:
 
-`tasks/CH5_MP4C_2018_KFE_D123_V2_CELL100_INTERIOR_A_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_20260919.md`
+- backward-`a` active-negative root produces positive `g_a`;
+- forward-`a` active-negative root produces negative `g_a`.
 
-This task is scientific-design adjudication only. It must determine whether the frozen Hamiltonian/upwind problem at an interior `a` node requires or supports an endogenous `g_a=0` switching branch, and whether cell100 can satisfy the prospective branch contract.
+Neither one-sided derivative is self-consistent.
 
-It may use static source/docs, persisted receipts and scalar algebra only. All selector/root/policy-map/D2/HJB/KFE/MATLAB/downstream calls remain zero.
+Prospective zero-`a)-drift law:
 
-No code repair, no law adoption and no runtime reexecution is authorized.
+- impose `g_a=0`, hence `d_Z=-r_a a`;
+- use unchanged D3 KKT to obtain `q_a=q_b(1+partial_d C)`;
+- require `q_a` to lie in the closed interval between the one-sided `a` derivatives;
+- intersect the implied `q_b` interval with the relevant liquid-face multiplier domain;
+- for active liquid faces require a compatible `g_b=0` crossing;
+- reconstruct controls/KKT from candidate shadows, then enter the existing legality/Hamiltonian comparison.
 
-## Reviewer action after Builder return
+At cell100 the implied `q_b` interval is nonempty, entirely lower-b legal, and the fixed-`d_Z` liquid equality is strictly increasing with an endpoint sign change, proving a unique compatible crossing.
 
-Independently inspect:
-- derivation of the interior-`a` Hamiltonian and direction law;
-- derivation of `d_Z=-r_a a` and the D3 transfer FOC/KKT;
-- derivative-interval orientation and numeric cell100 interval;
-- lower-`b` active compatibility;
-- whether any claimed liquid-equality root conclusion follows statically;
-- comparison against actual accepted liquid-`Z` and lower-`a` zero-kink authority;
-- treatment of finite-domain/boundary/grid/trajectory alternatives;
-- zero-call ledger.
+## Authority boundary
 
-If the report supports a new interior-`a` switching law, Reviewer must return it to Owner for explicit adoption before implementation. If it does not, the frozen local incompatibility remains and a different Owner decision is needed.
+The proposed branch is compatible with D1/D2/D3 but is not entailed by prior liquid-`Z` or lower-`a` zero-kink authority. Owner adoption is required before implementation.
 
-No production, GE or Results work is active.
+## Owner decision
+
+No successor task is active.
+
+If Owner adopts the prospective contract, Reviewer may then publish a minimal implementation task, preferably:
+1. selector-only implementation and focused tests;
+2. static/synthetic single-cell verification;
+3. one bounded V2 remap;
+4. stop at the first new scientific failure or after checkpoint-2 metrics, with no automatic V2->V3 continuation unless separately authorized.
+
+If Owner rejects or modifies the contract, the current frozen local incompatibility remains the operative checkpoint until a different route is chosen.
+
+Production, GE and Results remain closed.

@@ -4,52 +4,57 @@ Results eligibility=`FALSE`。
 
 ## Accepted corrected household route
 
-The corrected route has accepted V0/Q0, V0->V1, V1/Q1, Q1 single closed class and pin-free/source-free unique Q1 invariant mass. The nonlinear design uses same-value `(P_n,u_n,Q_n)`, fixed `Delta=1000`, terminal-only KFE timing and the Owner-adopted Bellman/value convergence law.
+Accepted corrected evidence includes V0/Q0, V0->V1, V1/Q1, Q1 single closed class and pin-free/source-free unique Q1 invariant mass. The nonlinear design uses same-value `(P_n,u_n,Q_n)`, fixed `Delta=1000`, terminal-only KFE timing and the Owner-adopted Bellman/value convergence law.
 
 Checkpoint 1 is not converged:
 - `B1=0.014710294187010184`;
 - `D1=0.47118375690461445`.
 
-The accepted V1->V2 direct solve is numerically valid, but V2 cannot currently produce a complete corrected policy map.
+The accepted V1->V2 direct solve is numerically valid, but V2 does not yet produce a complete policy map.
 
-## V2 selector implementation omission — closed
+## V2 lower-b selector omission — closed
 
-The active lower-b negative-transfer pre-screen omission was attributed, repaired and reexecuted.
+The lower-b negative/backward-`a` branch coverage defect was attributed, repaired and reexecuted. The repaired complete eight-case cell100 census still yields no admissible policy.
 
-The repaired selector restores all eight frozen authority-backed cases at cell100. The map still returns `NO_ADMISSIBLE_POLICY`. Therefore the implementation omission is closed.
-
-Accepted local classification:
+Accepted local frozen-law classification before the latest adjudication:
 
 `ATTRIBUTED__FROZEN_V2_CELL100_LOCAL_KKT_INPUTS_STRUCTURALLY_INCOMPATIBLE`.
 
-## Current stage — interior-a switching adjudication
+## Interior-a zero-drift switching adjudication — accepted
 
-Owner has authorized a zero-science scientific-design gate:
+The zero-science adjudication candidate `d4ed09015f184ab8e4a39e1de019c33b8868cd20` is accepted as:
 
-`tasks/CH5_MP4C_2018_KFE_D123_V2_CELL100_INTERIOR_A_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_20260919.md`.
+`ADJUDICATED__INTERIOR_A_ZERO_DRIFT_SWITCHING_BRANCH_SCIENTIFICALLY_SUPPORTED__OWNER_ADOPTION_REQUIRED`.
 
-Motivation: cell100 is interior in illiquid `a`, and the two active lower-b negative-transfer roots produce opposite-sign `a` drifts relative to their chosen one-sided derivatives:
-- backward-`a` -> `g_a>0`;
-- forward-`a` -> `g_a<0`.
+The strict crossing is:
+- backward-`a` candidate has `g_a>0`;
+- forward-`a` candidate has `g_a<0`.
 
-The gate asks whether a mathematically correct upwind/viscosity treatment should contain a zero-`a)-drift switching branch `g_a=0`, analogous in numerical role to the already adopted liquid-`Z` branch, or whether the current failure is better attributed to boundary/domain/discretization/trajectory construction.
+The prospective closure imposes `g_a=0`, fixes `d_Z=-r_a a`, derives `q_a` from unchanged D3 KKT, and requires the shadow to lie between the one-sided derivatives.
 
-This gate performs no scientific runtime and does not adopt a law.
+At cell100 the implied `q_b` interval is lower-b legal and the fixed-transfer liquid equality is continuous, strictly increasing and changes sign, proving one compatible local crossing.
 
-## Decision branches after adjudication
+This supports the new switching law scientifically but does not adopt it.
 
-If an interior-`a` switching law is scientifically supported:
-1. Owner explicitly adopts or rejects the prospective contract.
-2. Only after adoption may Reviewer publish a minimal implementation/single-cell or bounded-map task.
-3. Nonlinear continuation remains separately bounded under the existing convergence law unless Owner changes it.
+## Current stage — Owner adoption gate
 
-If it is not supported:
-- the frozen local incompatibility stands;
-- Owner must choose another scientific route before further HJB runtime.
+No Builder task is active.
+
+Owner must explicitly adopt, modify or reject the prospective interior-`a` switching contract.
+
+If adopted, the next bounded route should be:
+1. minimal corrected-selector implementation only;
+2. focused tests for strict crossing, interval/domain logic, upper/lower-b interaction and non-regression;
+3. single-cell or synthetic receipt proof;
+4. exactly one fresh V2 policy-map attempt;
+5. if the full map completes, at most one Q2/checkpoint-2 diagnostic evaluation;
+6. no automatic V2->V3 continuation or terminal KFE unless separately authorized.
+
+If not adopted, another scientific route must be selected before further HJB runtime.
 
 ## Downstream closure
 
-No P2/u2/Q2, B2/D2/stability/cycle or terminal KFE object exists.
+No P2/u2/Q2 or B2/D2/stability/cycle/terminal KFE exists.
 
 Corrected production replacement, market clearing, GE/annual/dynamics/IRF and Results remain downstream and closed.
 
