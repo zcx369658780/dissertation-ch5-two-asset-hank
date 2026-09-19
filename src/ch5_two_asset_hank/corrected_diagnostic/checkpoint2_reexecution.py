@@ -1,4 +1,4 @@
-"""One-shot adopted interior-a switching V2 remap; no HJB/KFE continuation."""
+"""One-shot adopted joint-switching V2 remap; no HJB/KFE continuation."""
 
 from __future__ import annotations
 
@@ -51,20 +51,20 @@ from .selector import SelectorBudget
 
 
 TASK_ID = (
-    "CH5_MP4C_2018_KFE_D123_INTERIOR_A_ZERO_DRIFT_SWITCHING_"
+    "CH5_MP4C_2018_KFE_D123_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_"
     "IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_20260919"
 )
 OUTPUT_RELATIVE = Path(
-    "reports/ch5_mp4c_2018_kfe_d123_interior_a_zero_drift_switching_"
+    "reports/ch5_mp4c_2018_kfe_d123_simultaneous_two_axis_zero_drift_switching_"
     "implementation_v2_checkpoint2_reexecution_20260919_run001"
 )
-BASELINE_SHA = "869F4023AE7B674D483F926F85E0DE271479DA0E"
+BASELINE_SHA = "0033E61B7BFBB3080C1AEAC43B66A78D669D4571"
 PRE_ADOPTION_SELECTOR_SHA256 = (
-    "DBEB8EDCDA18B14579F36C2B68A50A47C9E717F49E84BC31A2E4E17180E9C327"
-)
-PRE_ADOPTION_SELECTOR_BLOB = "eac9b06805e2bcb69e078fd927a9a641c6cafd96"
-IMPLEMENTED_SELECTOR_SHA256 = (
     "3175FBBC99120A9735287594A27602205505048BADD11A989CEAC682BE6390D8"
+)
+PRE_ADOPTION_SELECTOR_BLOB = "61116812db4ae6024e1f77c3f791f1e8fe8a4543"
+IMPLEMENTED_SELECTOR_SHA256 = (
+    "7473C670DB67DB05B123D13755D0BFF503113C7FE65D6FB856DC137BC1DDE5DD"
 )
 V1_ARTIFACT_SHA256 = (
     "28A27473A4C08CCD20550B9EDF1509BABB4D7D882A9429F7F54F55DE72083173"
@@ -87,6 +87,7 @@ MAX_SELECTOR_EVALUATIONS = 800
 MAX_ROOT_INVOCATIONS = 311_256
 MAX_INTERIOR_Z_ROOT_INVOCATIONS = 285_120
 MAX_INTERIOR_A_SWITCHING_ROOT_INVOCATIONS = 800
+MAX_JOINT_SWITCHING_ROOT_INVOCATIONS = 800
 
 
 def _git_head(repository: Path) -> str:
@@ -111,6 +112,7 @@ def _new_ledger() -> dict[str, Any]:
         "scalar_root_invocations": 0,
         "interior_z_root_invocations": 0,
         "interior_a_switching_root_invocations": 0,
+        "joint_switching_root_invocations": 0,
         "d2_assemblies": 0,
         "checkpoint2_diagnostic_evaluations": 0,
         "direct_hjb_solves": 0,
@@ -136,6 +138,7 @@ def _check_task_ledger(ledger: dict[str, Any]) -> None:
         "interior_a_switching_root_invocations": (
             MAX_INTERIOR_A_SWITCHING_ROOT_INVOCATIONS
         ),
+        "joint_switching_root_invocations": MAX_JOINT_SWITCHING_ROOT_INVOCATIONS,
         "d2_assemblies": 1,
         "checkpoint2_diagnostic_evaluations": 1,
         "direct_hjb_solves": 0,
@@ -157,7 +160,7 @@ def _check_task_ledger(ledger: dict[str, Any]) -> None:
     }
     if breaches:
         raise FailClosed(
-            "BLOCKED__INTERIOR_A_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
+            "BLOCKED__JOINT_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
             {"stage": "task_ledger_ceiling", "breaches": breaches},
         )
 
@@ -165,7 +168,7 @@ def _check_task_ledger(ledger: dict[str, Any]) -> None:
 def _read_focused_tests(path: Path) -> dict[str, Any]:
     if not path.is_file():
         raise FailClosed(
-            "BLOCKED__INTERIOR_A_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
+            "BLOCKED__JOINT_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
             {"stage": "focused_test_receipt_missing", "path": str(path)},
         )
     root = ET.parse(path).getroot()
@@ -176,7 +179,7 @@ def _read_focused_tests(path: Path) -> dict[str, Any]:
     }
     if totals["tests"] < 1 or totals["failures"] or totals["errors"]:
         raise FailClosed(
-            "BLOCKED__INTERIOR_A_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
+            "BLOCKED__JOINT_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
             {"stage": "focused_tests_not_green", "totals": totals},
         )
     return {
@@ -187,37 +190,56 @@ def _read_focused_tests(path: Path) -> dict[str, Any]:
     }
 
 
-def _switching_statistics(directory: Path) -> tuple[dict[str, Any], dict[str, Any]]:
-    attempts = 0
-    admissible = 0
-    selected = 0
-    root_statuses: dict[str, int] = {}
-    selected_flats: list[int] = []
+def _switching_statistics(
+    directory: Path,
+) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
+    categories = {
+        "interior_a": "interior_a_switching_receipt",
+        "joint": "joint_switching_receipt",
+    }
+    statistics = {
+        name: {
+            "candidate_attempt_count": 0,
+            "admissible_candidate_count": 0,
+            "selected_policy_count": 0,
+            "selected_flat_indices_f_zero_based": [],
+            "root_status_counts": {},
+        }
+        for name in categories
+    }
     cell100: dict[str, Any] | None = None
+    cell185: dict[str, Any] | None = None
     for flat in range(N):
         receipt = json.loads(
             (directory / f"cell_{flat:04d}.json").read_text(encoding="utf-8")
         )
         result = receipt["selector_result"]
-        switching = [
-            row
-            for row in result["candidates"]
-            if row.get("interior_a_switching_receipt") is not None
-        ]
-        attempts += len(switching)
-        admissible += sum(bool(row["admissible"]) for row in switching)
-        for row in switching:
-            status = str(row["root_status"])
-            root_statuses[status] = root_statuses.get(status, 0) + 1
         chosen = result.get("selected")
-        if chosen and chosen.get("interior_a_switching_receipt") is not None:
-            selected += 1
-            selected_flats.append(flat)
+        for name, receipt_field in categories.items():
+            rows = [
+                row
+                for row in result["candidates"]
+                if row.get(receipt_field) is not None
+            ]
+            current = statistics[name]
+            current["candidate_attempt_count"] += len(rows)
+            current["admissible_candidate_count"] += sum(
+                bool(row["admissible"]) for row in rows
+            )
+            for row in rows:
+                status = str(row["root_status"])
+                statuses = current["root_status_counts"]
+                statuses[status] = statuses.get(status, 0) + 1
+            if chosen and chosen.get(receipt_field) is not None:
+                current["selected_policy_count"] += 1
+                current["selected_flat_indices_f_zero_based"].append(flat)
         if flat == 100:
             cell100 = receipt
+        if flat == 185:
+            cell185 = receipt
     if cell100 is None:
         raise FailClosed(
-            "FAIL__ADOPTED_INTERIOR_A_SWITCHING_V2_MAP_FIRST_FAILURE",
+            "FAIL__ADOPTED_JOINT_SWITCHING_V2_MAP_FIRST_FAILURE",
             {"stage": "cell100_switching_receipt_missing"},
         )
     cell100_selected = cell100["selector_result"].get("selected")
@@ -227,19 +249,25 @@ def _switching_statistics(directory: Path) -> tuple[dict[str, Any], dict[str, An
         or cell100_selected.get("interior_a_switching_receipt") is None
     ):
         raise FailClosed(
-            "FAIL__ADOPTED_INTERIOR_A_SWITCHING_V2_MAP_FIRST_FAILURE",
+            "FAIL__ADOPTED_JOINT_SWITCHING_V2_MAP_FIRST_FAILURE",
             {"stage": "cell100_switching_not_selected"},
         )
-    return (
-        {
-            "candidate_attempt_count": attempts,
-            "admissible_candidate_count": admissible,
-            "selected_policy_count": selected,
-            "selected_flat_indices_f_zero_based": selected_flats,
-            "root_status_counts": root_statuses,
-        },
-        cell100,
-    )
+    if cell185 is None:
+        raise FailClosed(
+            "FAIL__ADOPTED_JOINT_SWITCHING_V2_MAP_FIRST_FAILURE",
+            {"stage": "cell185_joint_switching_receipt_missing"},
+        )
+    cell185_selected = cell185["selector_result"].get("selected")
+    if (
+        cell185["selector_result"].get("outcome") != "SELECTED_ADMISSIBLE"
+        or not cell185_selected
+        or cell185_selected.get("joint_switching_receipt") is None
+    ):
+        raise FailClosed(
+            "FAIL__ADOPTED_JOINT_SWITCHING_V2_MAP_FIRST_FAILURE",
+            {"stage": "cell185_joint_switching_not_selected"},
+        )
+    return statistics, cell100, cell185
 
 
 def _load_sources(repository: Path, inputs: Any) -> dict[str, Any]:
@@ -261,7 +289,7 @@ def _load_sources(repository: Path, inputs: Any) -> dict[str, Any]:
     for path, sha256 in expected.items():
         if _sha256(path) != sha256:
             raise FailClosed(
-                "BLOCKED__INTERIOR_A_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
+                "BLOCKED__JOINT_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
                 {"stage": "accepted_artifact_hash", "path": str(path)},
             )
     q1_manifest = json.loads(q1_manifest_path.read_text(encoding="utf-8"))
@@ -282,7 +310,7 @@ def _load_sources(repository: Path, inputs: Any) -> dict[str, Any]:
         or _field_sha256(v2) != V2_FIELD_SHA256
     ):
         raise FailClosed(
-            "BLOCKED__INTERIOR_A_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
+            "BLOCKED__JOINT_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
             {"stage": "accepted_value_identity"},
         )
     selected_rows: list[dict[str, Any]] = []
@@ -297,14 +325,14 @@ def _load_sources(repository: Path, inputs: Any) -> dict[str, Any]:
             or not isinstance(result.get("selected"), dict)
         ):
             raise FailClosed(
-                "BLOCKED__INTERIOR_A_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
+                "BLOCKED__JOINT_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
                 {"stage": "accepted_p1_receipt", "flat": flat},
             )
         selected_rows.append(result["selected"])
     q1 = sparse.load_npz(q1_path)
     if getattr(q1, "format", None) != "csr" or q1.shape != (N, N):
         raise FailClosed(
-            "BLOCKED__INTERIOR_A_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
+            "BLOCKED__JOINT_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
             {"stage": "accepted_q1_shape_format"},
         )
     return {
@@ -339,7 +367,7 @@ def _write_manifest(output: Path) -> None:
     _write_json(
         output / "sealed_manifest.json",
         {
-            "schema": "CH5_D123_INTERIOR_A_SWITCHING_V2_CHECKPOINT2_REEXECUTION_V1",
+            "schema": "CH5_D123_JOINT_SWITCHING_V2_CHECKPOINT2_REEXECUTION_V1",
             "entry_count": len(entries),
             "total_bytes": sum(int(row["bytes"]) for row in entries),
             "entries": entries,
@@ -359,7 +387,7 @@ def _finalize(
     _check_task_ledger(ledger)
     post_hashes = _scientific_code_hashes(repository)
     if post_hashes != pre_hashes:
-        terminal = "BLOCKED__INTERIOR_A_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE"
+        terminal = "BLOCKED__JOINT_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE"
         detail = {"stage": "post_execution_code_hash", "prior_detail": detail}
     ledger["terminal_classification"] = terminal
     ledger["wall_seconds"] = float(time.perf_counter() - started)
@@ -402,7 +430,7 @@ def execute(
             "baseline_live_main": BASELINE_SHA,
             "accepted_v2_sha256": V2_FIELD_SHA256,
             "owner_adoption": (
-                "OWNER_ADOPTED__INTERIOR_A_ZERO_DRIFT_SWITCHING_LAW__"
+                "OWNER_ADOPTED__SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_LAW__"
                 "BOUNDED_CORRECTED_DIAGNOSTIC_IMPLEMENTATION_AUTHORIZED"
             ),
             "pre_adoption_selector_sha256": PRE_ADOPTION_SELECTOR_SHA256,
@@ -414,6 +442,7 @@ def execute(
                 "adopted_interior_a_switching_roots": (
                     MAX_INTERIOR_A_SWITCHING_ROOT_INVOCATIONS
                 ),
+                "adopted_joint_switching_roots": MAX_JOINT_SWITCHING_ROOT_INVOCATIONS,
                 "d2_assemblies_if_complete_map": 1,
                 "checkpoint2_diagnostics_if_q2_exists": 1,
                 "v2_to_v3_hjb_updates": 0,
@@ -435,17 +464,17 @@ def execute(
             == PRE_ADOPTION_SELECTOR_BLOB,
             "pre_adoption_selector_authority_exact": _sha256(
                 repository
-                / "docs/CH5_MP4C_2018_KFE_D123_INTERIOR_A_ZERO_DRIFT_"
+                / "docs/CH5_MP4C_2018_KFE_D123_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_"
                 "SWITCHING_OWNER_ADOPTION_20260919.md"
             )
-            == "F5C4515078BBFFE32F9924758AF2DC5DD1C344A86DEB3EB596AFF91106F2FD95",
+            == "0F2F66E67E2DC892551D12689B377E2350958806DBBBC8A01B2A23A73A1B689C",
             "implemented_selector_exact": _sha256(selector_path)
             == IMPLEMENTED_SELECTOR_SHA256,
             "worktree_clean_before_evidence": clean_before_evidence,
         }
         if not all(checks.values()):
             raise FailClosed(
-                "BLOCKED__INTERIOR_A_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
+                "BLOCKED__JOINT_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
                 {"stage": "git_or_selector_binding", "checks": checks},
             )
         focused = _read_focused_tests(focused_test_junit.resolve(strict=True))
@@ -475,6 +504,9 @@ def execute(
             max_interior_a_switching_root_invocations=(
                 MAX_INTERIOR_A_SWITCHING_ROOT_INVOCATIONS
             ),
+            max_joint_switching_root_invocations=(
+                MAX_JOINT_SWITCHING_ROOT_INVOCATIONS
+            ),
         )
         p2_rows, p2_arrays, q2, d2_receipt = _map_checkpoint(
             repository,
@@ -486,11 +518,12 @@ def execute(
             ledger,
             pre_hashes,
         )
-        switching_statistics, cell100_receipt = _switching_statistics(
+        switching_statistics, cell100_receipt, cell185_receipt = _switching_statistics(
             output / "checkpoint_002"
         )
         _write_json(output / "switching_statistics.json", switching_statistics)
         _write_json(output / "cell100_switching_receipt.json", cell100_receipt)
+        _write_json(output / "cell185_joint_switching_receipt.json", cell185_receipt)
         ledger["checkpoint2_diagnostic_evaluations"] = 1
         _check_task_ledger(ledger)
         policy_diagnostics = _policy_diagnostics(
@@ -505,7 +538,7 @@ def execute(
         value_change = sources["v2"] - sources["v1"]
         if not np.all(np.isfinite(bellman)):
             raise FailClosed(
-                "FAIL__ADOPTED_INTERIOR_A_SWITCHING_V2_MAP_FIRST_FAILURE",
+                "FAIL__ADOPTED_JOINT_SWITCHING_V2_MAP_FIRST_FAILURE",
                 {"stage": "bellman_nonfinite"},
             )
         bellman_inf = float(np.linalg.norm(bellman, ord=np.inf))
@@ -578,11 +611,11 @@ def execute(
             },
         }
         terminal = (
-            "PASS__ADOPTED_INTERIOR_A_SWITCHING_V2_MAP_COMPLETE__"
+            "PASS__ADOPTED_JOINT_SWITCHING_V2_MAP_COMPLETE__"
             "CHECKPOINT2_HJB_CONVERGENCE_"
             "CANDIDATE__TERMINAL_GATES_NOT_RUN"
             if converged
-            else "PASS__ADOPTED_INTERIOR_A_SWITCHING_V2_MAP_COMPLETE__"
+            else "PASS__ADOPTED_JOINT_SWITCHING_V2_MAP_COMPLETE__"
             "CHECKPOINT2_NONCONVERGED__NO_V3_UPDATE"
         )
         metrics["disposition"] = terminal
@@ -599,7 +632,7 @@ def execute(
     except FailClosed as failure:
         terminal = failure.terminal
         if ledger["new_corrected_policy_maps"]:
-            terminal = "FAIL__ADOPTED_INTERIOR_A_SWITCHING_V2_MAP_FIRST_FAILURE"
+            terminal = "FAIL__ADOPTED_JOINT_SWITCHING_V2_MAP_FIRST_FAILURE"
         return _finalize(
             repository,
             output,
@@ -611,9 +644,9 @@ def execute(
         )
     except Exception as exc:
         terminal = (
-            "FAIL__ADOPTED_INTERIOR_A_SWITCHING_V2_MAP_FIRST_FAILURE"
+            "FAIL__ADOPTED_JOINT_SWITCHING_V2_MAP_FIRST_FAILURE"
             if ledger["new_corrected_policy_maps"]
-            else "BLOCKED__INTERIOR_A_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE"
+            else "BLOCKED__JOINT_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE"
         )
         return _finalize(
             repository,

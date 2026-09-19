@@ -131,6 +131,10 @@ def _scientific_code_hashes(repository: Path) -> dict[str, str]:
             repository / "tests/test_mp4c_2018_kfe_d123_option_a_single_step.py",
             repository / "tests/test_mp4c_2018_kfe_d123_lower_a_zero_kink_multiplier.py",
             repository / "tests/test_mp4c_2018_kfe_d123_interior_z_switching.py",
+            repository
+            / "tests/test_mp4c_2018_kfe_d123_interior_a_zero_drift_switching.py",
+            repository
+            / "tests/test_mp4c_2018_kfe_d123_joint_two_axis_zero_drift_switching.py",
             repository / "tests/test_mp4c_2018_kfe_d123_v1_q1_topology.py",
             repository
             / "tests/test_mp4c_2018_kfe_d123_bounded_nonlinear_continuation.py",
@@ -627,6 +631,10 @@ def _map_checkpoint(
                 ledger["interior_a_switching_root_invocations"] = (
                     budget.interior_a_switching_root_invocations
                 )
+            if "joint_switching_root_invocations" in ledger:
+                ledger["joint_switching_root_invocations"] = (
+                    budget.joint_switching_root_invocations
+                )
             raise FailClosed(
                 "FAIL__CORRECTED_HJB_POLICY_MAP_OR_D2_GATE",
                 {"checkpoint": checkpoint, "flat": flat, "stage": "selector_exception"},
@@ -640,6 +648,10 @@ def _map_checkpoint(
         if "interior_a_switching_root_invocations" in ledger:
             ledger["interior_a_switching_root_invocations"] = (
                 budget.interior_a_switching_root_invocations
+            )
+        if "joint_switching_root_invocations" in ledger:
+            ledger["joint_switching_root_invocations"] = (
+                budget.joint_switching_root_invocations
             )
         _check_ledger(ledger)
         if result.outcome != "SELECTED_ADMISSIBLE" or result.selected is None:

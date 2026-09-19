@@ -122,10 +122,12 @@ class SelectorBudget:
     max_root_invocations: int
     max_interior_z_root_invocations: int | None = None
     max_interior_a_switching_root_invocations: int | None = None
+    max_joint_switching_root_invocations: int | None = None
     selector_evaluations: int = 0
     root_invocations: int = 0
     interior_z_root_invocations: int = 0
     interior_a_switching_root_invocations: int = 0
+    joint_switching_root_invocations: int = 0
 
     def begin_selector(self) -> int:
         if self.selector_evaluations >= self.max_selector_evaluations:
@@ -161,6 +163,18 @@ class SelectorBudget:
             raise RuntimeError("interior a switching root invocation budget exhausted")
         ordinal = self.begin_root()
         self.interior_a_switching_root_invocations += 1
+        return ordinal
+
+    def begin_joint_switching_root(self) -> int:
+        ceiling = (
+            self.max_root_invocations
+            if self.max_joint_switching_root_invocations is None
+            else self.max_joint_switching_root_invocations
+        )
+        if self.joint_switching_root_invocations >= ceiling:
+            raise RuntimeError("joint switching root invocation budget exhausted")
+        ordinal = self.begin_root()
+        self.joint_switching_root_invocations += 1
         return ordinal
 
 
@@ -220,6 +234,29 @@ class InteriorASwitchingReceipt:
 
 
 @dataclass(frozen=True)
+class JointSwitchingReceipt:
+    directional_derivatives: dict[str, float]
+    liquid_z_receipts: dict[str, InteriorZReceipt]
+    post_liquid_a_drifts: dict[str, float]
+    post_liquid_a_bounds: dict[str, float]
+    strict_crossing: bool
+    d_zz: float
+    transfer_regime: str
+    d3_ratio: float
+    liquid_derivative_interval: tuple[float, float]
+    illiquid_derivative_interval: tuple[float, float]
+    mapped_q_b_interval: tuple[float, float]
+    root_interval: tuple[float, float]
+    root_endpoint_drifts: tuple[float, float]
+    root_method: str
+    root_status: str
+    switching_shadows: dict[str, float] | None
+    raw_switching_drifts: dict[str, float] | None
+    canonical_switching_drifts: dict[str, float] | None
+    marker: str
+
+
+@dataclass(frozen=True)
 class SelectorCandidate:
     active_constraints: tuple[str, ...]
     transfer_branch: str
@@ -254,6 +291,7 @@ class SelectorCandidate:
     lower_a_zero_kink_multiplier_receipt: LowerAZeroKinkMultiplierReceipt | None = None
     interior_z_receipt: InteriorZReceipt | None = None
     interior_a_switching_receipt: InteriorASwitchingReceipt | None = None
+    joint_switching_receipt: JointSwitchingReceipt | None = None
 
 
 @dataclass(frozen=True)
@@ -269,6 +307,7 @@ class SelectorResult:
     selector_evaluation_ordinal: int
     interior_z_root_invocations: int = 0
     interior_a_switching_root_invocations: int = 0
+    joint_switching_root_invocations: int = 0
 
 
 def _faces(cell: CorrectedSelectorCell) -> dict[str, str]:
@@ -432,10 +471,15 @@ def _one_scalar_root(
     budget: SelectorBudget,
     exact_interval: tuple[float, float] | None = None,
     interior_a_switching: bool = False,
+    joint_switching: bool = False,
 ) -> tuple[float | None, str]:
     """Invoke one deterministic log-domain scalar-root procedure, without retry."""
 
-    if interior_a_switching:
+    if interior_a_switching and joint_switching:
+        raise ValueError("a scalar root cannot belong to two switching categories")
+    if joint_switching:
+        budget.begin_joint_switching_root()
+    elif interior_a_switching:
         budget.begin_interior_a_switching_root()
     else:
         budget.begin_root()
@@ -560,6 +604,7 @@ def _rejected(
     lower_a_zero_kink_multiplier_receipt: LowerAZeroKinkMultiplierReceipt | None = None,
     interior_z_receipt: InteriorZReceipt | None = None,
     interior_a_switching_receipt: InteriorASwitchingReceipt | None = None,
+    joint_switching_receipt: JointSwitchingReceipt | None = None,
 ) -> SelectorCandidate:
     return SelectorCandidate(
         active_constraints=active,
@@ -572,6 +617,7 @@ def _rejected(
         lower_a_zero_kink_multiplier_receipt=lower_a_zero_kink_multiplier_receipt,
         interior_z_receipt=interior_z_receipt,
         interior_a_switching_receipt=interior_a_switching_receipt,
+        joint_switching_receipt=joint_switching_receipt,
     )
 
 
@@ -632,6 +678,7 @@ def _candidate(
     q_b_override: float | None = None,
     interior_z_receipt: InteriorZReceipt | None = None,
     interior_a_switching_receipt: InteriorASwitchingReceipt | None = None,
+    joint_switching_receipt: JointSwitchingReceipt | None = None,
     switching_d: float | None = None,
     switching_q_a_ratio: float | None = None,
     q_b_root_interval: tuple[float, float] | None = None,
@@ -641,14 +688,26 @@ def _candidate(
     a_face = faces.get("a")
     b_active = b_face in active
     a_active = a_face in active
-    switching = interior_a_switching_receipt is not None
+    if (
+        interior_a_switching_receipt is not None
+        and joint_switching_receipt is not None
+    ):
+        raise ValueError("one-axis and joint switching receipts are mutually exclusive")
+    switching = (
+        interior_a_switching_receipt is not None
+        or joint_switching_receipt is not None
+    )
     if switching != (switching_d is not None and switching_q_a_ratio is not None):
-        raise ValueError("interior-a switching overrides must be supplied together")
-    root_invoked = interior_z_receipt is not None
+        raise ValueError("switching overrides must be supplied together")
+    root_invoked = interior_z_receipt is not None or joint_switching_receipt is not None
     root_status = (
-        interior_z_receipt.root_status
-        if interior_z_receipt is not None
-        else "NOT_REQUIRED"
+        joint_switching_receipt.root_status
+        if joint_switching_receipt is not None
+        else (
+            interior_z_receipt.root_status
+            if interior_z_receipt is not None
+            else "NOT_REQUIRED"
+        )
     )
 
     if switching:
@@ -766,6 +825,7 @@ def _candidate(
             root_status=root_status,
             interior_z_receipt=interior_z_receipt,
             interior_a_switching_receipt=interior_a_switching_receipt,
+            joint_switching_receipt=joint_switching_receipt,
         )
     tolerance = _fp_bound(
         c, l, d, cost, g_b, g_a, q_b, q_a, p_b, p_a, operations=96
@@ -793,6 +853,28 @@ def _candidate(
             root_status=root_status,
             switching_shadows={"q_b": float(q_b), "q_a": float(q_a)},
             raw_switching_drifts={"g_b": float(raw_g_b), "g_a": float(raw_g_a)},
+        )
+    if joint_switching_receipt is not None:
+        switching_bound = _fp_bound(
+            c,
+            l,
+            d,
+            cost,
+            raw_g_b,
+            raw_g_a,
+            q_b,
+            q_a,
+            operations=96,
+        )
+        if abs(raw_g_b) <= switching_bound:
+            g_b = 0.0
+        if abs(raw_g_a) <= switching_bound:
+            g_a = 0.0
+        joint_switching_receipt = replace(
+            joint_switching_receipt,
+            switching_shadows={"q_b": float(q_b), "q_a": float(q_a)},
+            raw_switching_drifts={"g_b": float(raw_g_b), "g_a": float(raw_g_a)},
+            canonical_switching_drifts={"g_b": float(g_b), "g_a": float(g_a)},
         )
     if interior_z_receipt is not None:
         z_bound = _fp_bound(
@@ -846,6 +928,21 @@ def _candidate(
             reasons.append("INTERIOR_A_SWITCHING_ZERO_DRIFT_RESIDUAL_BOUND_EXCEEDED")
         if b_active and abs(raw_g_b) > switching_bound:
             reasons.append("INTERIOR_A_SWITCHING_LIQUID_ROOT_RESIDUAL_BOUND_EXCEEDED")
+    if joint_switching_receipt is not None:
+        lower_b_shadow, upper_b_shadow = (
+            joint_switching_receipt.liquid_derivative_interval
+        )
+        lower_a_shadow, upper_a_shadow = (
+            joint_switching_receipt.illiquid_derivative_interval
+        )
+        if q_b < lower_b_shadow or q_b > upper_b_shadow:
+            reasons.append("JOINT_SWITCHING_LIQUID_SHADOW_OUTSIDE_DERIVATIVE_INTERVAL")
+        if q_a < lower_a_shadow or q_a > upper_a_shadow:
+            reasons.append("JOINT_SWITCHING_ILLIQUID_SHADOW_OUTSIDE_DERIVATIVE_INTERVAL")
+        if abs(raw_g_b) > switching_bound:
+            reasons.append("JOINT_SWITCHING_LIQUID_ZERO_DRIFT_RESIDUAL_BOUND_EXCEEDED")
+        if abs(raw_g_a) > switching_bound:
+            reasons.append("JOINT_SWITCHING_ILLIQUID_ZERO_DRIFT_RESIDUAL_BOUND_EXCEEDED")
     if interior_z_receipt is not None and abs(raw_g_b) > float(
         interior_z_receipt.arithmetic_bound
     ):
@@ -967,6 +1064,7 @@ def _candidate(
         lower_a_zero_kink_multiplier_receipt=lower_a_zero_kink_receipt,
         interior_z_receipt=interior_z_receipt,
         interior_a_switching_receipt=interior_a_switching_receipt,
+        joint_switching_receipt=joint_switching_receipt,
     )
 
 
@@ -1215,6 +1313,167 @@ def _interior_a_switching_candidate(
     )
 
 
+def _joint_switching_candidate(
+    cell: CorrectedSelectorCell,
+    parameters: CorrectedSelectorParameters,
+    faces: dict[str, str],
+    active: tuple[str, ...],
+    regime: str,
+    backward: SelectorCandidate,
+    forward: SelectorCandidate,
+    budget: SelectorBudget,
+) -> SelectorCandidate | None:
+    """Create one simultaneous interior-interior zero-drift candidate."""
+
+    if faces or active:
+        return None
+    for branch, candidate in (("backward", backward), ("forward", forward)):
+        if (
+            candidate.interior_z_receipt is None
+            or candidate.derivative_branches != {"b": "zero", "a": branch}
+            or candidate.transfer_branch != regime
+            or candidate.root_status not in {"ROOT_CONVERGED", "ROOT_EXACT_GRID_POINT"}
+            or candidate.g_b != 0.0
+            or candidate.g_a is None
+            or candidate.arithmetic_tolerance is None
+            or candidate.transfer_kkt_residual is None
+            or abs(float(candidate.transfer_kkt_residual))
+            > float(candidate.arithmetic_tolerance)
+            or candidate.rejection_reasons
+            != ("A_DERIVATIVE_DIRECTION_INCONSISTENT",)
+        ):
+            return None
+
+    backward_drift = float(backward.g_a)
+    forward_drift = float(forward.g_a)
+    backward_bound = float(backward.arithmetic_tolerance)
+    forward_bound = float(forward.arithmetic_tolerance)
+    if not (
+        backward_drift > backward_bound
+        and forward_drift < -forward_bound
+    ):
+        return None
+
+    d_zz = float(-cell.effective_r_a * cell.a)
+    actual_regime = (
+        "positive" if d_zz > 0.0 else "negative" if d_zz < 0.0 else "zero_kink"
+    )
+    if d_zz == 0.0 or actual_regime != regime:
+        return None
+    ratio = _transfer_ratio(d_zz, cell.a, parameters)
+    if not math.isfinite(ratio) or ratio <= 0.0:
+        return None
+
+    liquid_interval = tuple(
+        sorted(
+            (
+                float(cell.derivatives.p_b_forward),
+                float(cell.derivatives.p_b_backward),
+            )
+        )
+    )
+    illiquid_interval = tuple(
+        sorted(
+            (
+                float(cell.derivatives.p_a_forward),
+                float(cell.derivatives.p_a_backward),
+            )
+        )
+    )
+    if liquid_interval[0] <= 0.0:
+        return None
+    mapped_interval = (
+        float(illiquid_interval[0] / ratio),
+        float(illiquid_interval[1] / ratio),
+    )
+    root_interval = (
+        max(liquid_interval[0], mapped_interval[0]),
+        min(liquid_interval[1], mapped_interval[1]),
+    )
+    if (
+        not all(math.isfinite(value) and value > 0.0 for value in root_interval)
+        or root_interval[0] >= root_interval[1]
+    ):
+        return None
+
+    def liquid_drift(q_b: float) -> float:
+        return _liquid_drift_for_root(q_b, d_zz, cell, parameters)
+
+    endpoint_drifts = (
+        liquid_drift(root_interval[0]),
+        liquid_drift(root_interval[1]),
+    )
+    root, status = _one_scalar_root(
+        liquid_drift,
+        lower_b_face=False,
+        p_b=liquid_interval[0],
+        budget=budget,
+        exact_interval=root_interval,
+        joint_switching=True,
+    )
+    receipt = JointSwitchingReceipt(
+        directional_derivatives={
+            "p_b_backward": float(cell.derivatives.p_b_backward),
+            "p_b_forward": float(cell.derivatives.p_b_forward),
+            "p_a_backward": float(cell.derivatives.p_a_backward),
+            "p_a_forward": float(cell.derivatives.p_a_forward),
+        },
+        liquid_z_receipts={
+            "backward": backward.interior_z_receipt,
+            "forward": forward.interior_z_receipt,
+        },
+        post_liquid_a_drifts={
+            "backward": backward_drift,
+            "forward": forward_drift,
+        },
+        post_liquid_a_bounds={
+            "backward": backward_bound,
+            "forward": forward_bound,
+        },
+        strict_crossing=True,
+        d_zz=d_zz,
+        transfer_regime=actual_regime,
+        d3_ratio=float(ratio),
+        liquid_derivative_interval=liquid_interval,
+        illiquid_derivative_interval=illiquid_interval,
+        mapped_q_b_interval=mapped_interval,
+        root_interval=root_interval,
+        root_endpoint_drifts=endpoint_drifts,
+        root_method="BRENTQ_UNIQUE_LOG_SCREENED_EXACT_INTERVAL",
+        root_status=status,
+        switching_shadows=None,
+        raw_switching_drifts=None,
+        canonical_switching_drifts=None,
+        marker="SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_STRICT_SWITCH",
+    )
+    if root is None:
+        return _rejected(
+            active,
+            regime,
+            [status],
+            branches={"b": "zero", "a": "zero"},
+            root_invoked=True,
+            root_status=status,
+            joint_switching_receipt=receipt,
+        )
+    return _candidate(
+        cell,
+        parameters,
+        faces,
+        active,
+        regime,
+        "zero",
+        liquid_interval[0],
+        "zero",
+        illiquid_interval[0],
+        budget,
+        q_b_override=root,
+        joint_switching_receipt=receipt,
+        switching_d=d_zz,
+        switching_q_a_ratio=ratio,
+    )
+
+
 def _same_policy(left: SelectorCandidate, right: SelectorCandidate) -> bool:
     values_left = (left.c, left.l, left.d, left.cost, left.g_b, left.g_a)
     values_right = (right.c, right.l, right.d, right.cost, right.g_b, right.g_a)
@@ -1235,6 +1494,7 @@ def select_constrained_policy(
     root_start = budget.root_invocations
     interior_z_root_start = budget.interior_z_root_invocations
     interior_a_root_start = budget.interior_a_switching_root_invocations
+    joint_root_start = budget.joint_switching_root_invocations
     faces = _faces(cell)
     face_rows = list(faces.values())
     active_sets = [
@@ -1242,6 +1502,15 @@ def select_constrained_policy(
         for flags in itertools.product((False, True), repeat=len(face_rows))
     ]
     candidates: list[SelectorCandidate] = []
+    joint_contexts: list[
+        tuple[
+            dict[str, str],
+            tuple[str, ...],
+            str,
+            SelectorCandidate,
+            SelectorCandidate,
+        ]
+    ] = []
     for active in active_sets:
         for regime in TRANSFER_REGIMES:
             if "b" in faces:
@@ -1311,6 +1580,7 @@ def select_constrained_policy(
                 )
                 continue
             ordinary_candidates: dict[tuple[str, str], SelectorCandidate] = {}
+            liquid_z_candidates: dict[str, SelectorCandidate] = {}
             for p_a_branch, p_a in a_options:
                 liquid_candidates: dict[str, SelectorCandidate] = {}
                 for p_b_branch, p_b in b_options:
@@ -1344,6 +1614,7 @@ def select_constrained_policy(
                     )
                     if z_candidate is not None:
                         candidates.append(z_candidate)
+                        liquid_z_candidates[p_a_branch] = z_candidate
             for p_b_branch, p_b in b_options:
                 backward = ordinary_candidates.get((p_b_branch, "backward"))
                 forward = ordinary_candidates.get((p_b_branch, "forward"))
@@ -1363,6 +1634,31 @@ def select_constrained_policy(
                 )
                 if a_switching_candidate is not None:
                     candidates.append(a_switching_candidate)
+
+            backward_z = liquid_z_candidates.get("backward")
+            forward_z = liquid_z_candidates.get("forward")
+            if backward_z is not None and forward_z is not None:
+                joint_contexts.append(
+                    (faces, active, regime, backward_z, forward_z)
+                )
+
+    # The coupled law is a final fallback: every ordinary and one-axis
+    # candidate has already been evaluated, and no legal one-axis closure may
+    # be bypassed by constructing a joint candidate.
+    if not any(candidate.admissible for candidate in candidates):
+        for faces, active, regime, backward_z, forward_z in joint_contexts:
+            joint_candidate = _joint_switching_candidate(
+                cell,
+                parameters,
+                faces,
+                active,
+                regime,
+                backward_z,
+                forward_z,
+                budget,
+            )
+            if joint_candidate is not None:
+                candidates.append(joint_candidate)
 
     admissible = [candidate for candidate in candidates if candidate.admissible]
     policies: list[SelectorCandidate] = []
@@ -1401,6 +1697,9 @@ def select_constrained_policy(
         ),
         interior_a_switching_root_invocations=(
             budget.interior_a_switching_root_invocations - interior_a_root_start
+        ),
+        joint_switching_root_invocations=(
+            budget.joint_switching_root_invocations - joint_root_start
         ),
         selector_evaluation_ordinal=ordinal,
     )
