@@ -6,115 +6,70 @@
 
 `zcx369658780/dissertation-ch5-two-asset-hank`
 
-当前 live-main 状态应以 GitHub fresh-read 为准。
-
-当前状态：
-
-`CHECKPOINT10_COMPLETE_NONCONVERGED__BOUNDED_NONLINEAR_CONTINUATION_TO_CHECKPOINT12_ACTIVE__PRODUCTION_UNCHANGED`
-
-Results eligibility=`FALSE`。
-
-## Roles and authority
-
-- Owner/user: final scientific authority.
-- ChatGPT: L3 independent Reviewer / scientific-route advisor.
-- Codex: bounded Builder / scientific numerical analyst.
-- GitHub live `main`: repository-state authority.
-
-Absolute repository isolation:
+绝对禁止进入、读取、搜索、使用或修改：
 
 `zcx369658780/deep-learning-hank`
 
-must never be entered/read/searched/used/modified in this dissertation route unless Owner explicitly requests a cross-project comparison.
+GitHub live main 是 repository-state authority。Owner 为最终 scientific authority；ChatGPT 为 L3 independent Reviewer/scientific-route advisor；Codex 为 bounded Builder/scientific numerical analyst。
 
-Owner has authorized Reviewer to make and publish low-risk bounded numerical/debug successor decisions without re-asking, but a genuinely new scientific law still requires explicit Owner adoption.
+当前状态：
 
-## Frozen corrected household science
+`CHECKPOINT11_HJB_CONVERGENCE_CANDIDATE_ACCEPTED__TERMINAL_SOURCE_FREE_KFE_VALIDATION_ACTIVE__PRODUCTION_UNCHANGED`
 
-Accepted authority now includes:
+Results eligibility=`FALSE`。
 
-- D1 artificial-upper / economic-lower state-boundary law;
-- D2 consumed-total-drift conservative generator;
-- D3 regularized adjustment technology and consistent KKT;
-- lower-`a` zero-kink multiplier law;
-- interior-liquid zero-drift `Z`;
-- complete lower-b branch coverage;
-- one-axis interior-`a` zero-drift switching;
-- simultaneous two-axis zero-drift switching;
-- active lower-b negative branch representation without coarse-log false-negative pruning;
-- fixed `Delta=1000`;
-- primary HJB convergence iff `B_n<=1e-8` AND `D_n<=1e-7`;
-- direct-solve backward-error gate `<=1e-12`;
-- exact-cycle and approximate period-2/3 rules;
-- approximate-cycle norm `||vec_F(V_j-V_(j-k))||inf`;
-- terminal KFE only after an accepted HJB convergence candidate.
+## Frozen household science
 
-Forbidden without new authority: damping, relaxation, adaptive Delta, clipping, artificial diffusion, parameter continuation, solver substitution, scientific retry, post-hoc tolerance tuning.
+继续保持：
 
-## Key scientific decisions from the completed session
+- D1 finite-domain/boundary law
+- D2 consumed-total-drift conservative generator
+- D3 adjustment-cost/KKT law
+- lower-a zero-kink multiplier law
+- interior-liquid zero-drift Z
+- one-axis interior-a zero-drift switching
+- simultaneous two-axis zero-drift switching
+- complete active lower-b negative branch representation
+- fixed `Delta=1000`
+- primary HJB convergence iff `B<=1e-8 AND D<=1e-7`
+- direct-solve backward error `<=1e-12`
+- exact-cycle and authorized approximate period-2/3 laws
+- approximate-cycle norm `||vec_F(V_j-V_(j-k))||inf`
+- terminal KFE only after accepted HJB convergence candidate.
 
-This session closed several previously unresolved local-selector objects:
+No damping, relaxation, adaptive Delta, clipping, artificial diffusion, parameter continuation, solver substitution, scientific retry or post-hoc threshold tuning.
 
-1. V2 cell100: Owner adopted interior-`a` zero-drift switching.
-2. V2 cell185: Owner adopted simultaneous two-axis `g_b=g_a=0` switching.
-3. V3 cell100: Reviewer attributed and repaired coarse unbounded log pre-screen false-negative for active lower-b negative forward-`a`.
-4. Checkpoint-4 cycle diagnostic: representation-only repair accepted; F-order vector infinity norm is authoritative. The sealed V4 scientific prefix was reused without recomputation.
-5. No further scientific-law changes were needed through checkpoint 10.
+## Accepted checkpoint 11
 
-## Accepted nonlinear trajectory
+Builder candidate `47ab268e788c856b2515ebadca0356dbecbcda81` is accepted.
 
-Complete accepted checkpoints exist through checkpoint 10.
+- V11 `A097A3DDA767B979224638A51CEDC53EA635687CCDEFBE190FED0B899606921F`
+- P11 `89F79E4C1FC094DBEE8B82CFBAD677276D42839E915426CA0E5565865FBD87A3`
+- u11 `2E9A077FFA809F2DECEE385FD9E7F50C03E16750C2A074F990C0F3CBCC212648`
+- Q11 artifact `33367258F3EADB1482D4A5CB30A64A8574830C993B0E5280C451499CBD6913AD`
+- Q11 data `9D489C6A5C8E4A1F705CEC228EDE380FF0A5F51D569CA31DE9BCF9B4BC56537A`
+- Q11 indices `9A1E128BD9B13A6711B20FB992699DB405DEF5450543921ACAB69B57FA5474E6`
+- Q11 indptr `63190CF1D9F4C98D89C81A9990736462F19170B45F97E03AD7B507D492D9C327`
+- checkpoint identity `8093BE714CA83531816B20DFEB2BAB3DCB7AF9B971AD255C3596C1CA2A9E2A3B`
+- B11 `5.456747553811425e-11`
+- D11 `5.4012647243695255e-08`
+- D2 PASS
+- primary convergence PASS.
 
-Recent primary metrics:
+V10->V11 direct-solve backward error is `2.426444339908083e-16`. Checkpoint 12 was correctly not executed. No terminal KFE was run.
 
-- B6 `0.005940678766947715`, D6 `0.010000685482095761`
-- B7 `0.000983868092531745`, D7 `0.0027865782347942236`
-- B8 `0.00016252618227152738`, D8 `0.0006617669262674042`
-- B9 `8.986962138773924e-06`, D9 `0.00011033293848816683`
-- B10 `3.874510913493001e-08`, D10 `5.8692895192891115e-06`.
+Evidence manifest:
 
-All complete D2 gates pass. No exact or authorized approximate period-2/3 cycle has been detected.
+`5E67E595B32024213EC5E6517389A7DCA6462A24FB735B06EB2F85D6E1621E41`.
 
-Checkpoint 10 is not converged under the frozen thresholds.
+Known representation-only issue: `policy_diagnostics.identity_change_count=800` is not a valid scientific policy-change count because the comparator directly contrasts current tuple-valued `active_constraints` with JSON-loaded list-valued prior receipts. Canonical P11 and P10 identities are equal. Do not rerun HJB to address this.
 
-Exact accepted checkpoint 10:
+## Current active task
 
-- V10 `AE1610BA320F57AF73EE3C5411C298BF00610606B13B5185F2CD65BF1736FB24`
-- P10 `89F79E4C1FC094DBEE8B82CFBAD677276D42839E915426CA0E5565865FBD87A3`
-- u10 `215BEC4AABBC337147D73A227751CD6A89CC483E3CA056470A2AEF161AA41F38`
-- Q10 `917479763C4690FEAB358098D7F1CE2EBB4DD7C4939A7060156E7A4FCDEE59BD`
-- checkpoint identity `4FC2855AB4102AEAE8B173D0EBBBF40FCD334583A039BE4AE65C8DE2B1145C8D`
-- checkpoint arrays `BEA1D08A10C53E4EF3246A413A9446633DAAD6A4ACCAD4E34463BB74756C5512`.
+`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT11_TERMINAL_SOURCE_FREE_KFE_VALIDATION_20260920.md`
 
-Accepted checkpoint-6-to-10 evidence manifest:
+This task runs the already frozen terminal same-value Q11 topology/KFE gate only.
 
-`1959B54DB2EC27BA1F12493F71E9E8AAD5F5442D20099D77EC84C0C2AE902EAC`.
+If it passes, Reviewer may then consider the next household-fixed-point integration gate. If it fails, stop at the exact failed topology/rank/stationarity/nonnegativity object; do not repair science or tune tolerances inside the task.
 
-## Current active Builder task
-
-`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT10_TO_CHECKPOINT12_BOUNDED_NONLINEAR_CONTINUATION_20260920.md`
-
-It authorizes at most:
-
-`V10 -> V11 -> V12`.
-
-If checkpoint 11 satisfies both frozen primary thresholds, stop there and do not execute V11->V12.
-
-If checkpoint 12 remains nonterminal, return to Reviewer.
-
-No terminal KFE in this task.
-
-## Next Reviewer action
-
-When Builder returns:
-
-1. fresh-read live main first;
-2. independently verify candidate ancestry/diff and exact checkpoint-10 binding;
-3. verify direct-solve backward error and no rerun of accepted checkpoint 10;
-4. verify every reached policy map and D2 gate;
-5. verify primary convergence before cycle evaluation;
-6. verify exact and approximate period-2/3 cycle semantics using F-order vector infinity norm;
-7. if HJB convergence candidate appears, accept it first, then publish a separate terminal topology/KFE task;
-8. if checkpoint 12 remains nonconverged/noncyclic, decide the next bounded continuation horizon under the global 100-update ceiling.
-
-Production, market clearing, GE, annual dynamics, IRFs, welfare and Results remain unauthorized.
+Production, market clearing, GE, annual dynamics, IRFs, welfare and Results remain closed.

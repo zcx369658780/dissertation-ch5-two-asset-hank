@@ -2,42 +2,42 @@
 
 更新：2026-09-20。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`CHECKPOINT10_COMPLETE_NONCONVERGED__BOUNDED_NONLINEAR_CONTINUATION_TO_CHECKPOINT12_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：
+
+`CHECKPOINT11_HJB_CONVERGENCE_CANDIDATE_ACCEPTED__TERMINAL_SOURCE_FREE_KFE_VALIDATION_ACTIVE__PRODUCTION_UNCHANGED`
+
 Results eligibility=`FALSE`。
 
-## Accepted trajectory through checkpoint 10
+## Accepted HJB convergence candidate
 
-Reviewer accepted Builder candidate `537ed052a674d5f38f3586d6c94528af5e76b48b`.
+Reviewer accepted Builder candidate `47ab268e788c856b2515ebadca0356dbecbcda81`.
 
 Acceptance:
-`docs/CH5_MP4C_2018_KFE_D123_CHECKPOINT6_TO_CHECKPOINT10_BOUNDED_NONLINEAR_CONTINUATION_ACCEPTANCE_20260920.md`.
 
-Checkpoints 7-10 are complete. Every policy map completes 800/800. Every D2 gate passes. Every direct solve passes the frozen backward-error gate. No exact or authorized approximate cycle is detected.
+`docs/CH5_MP4C_2018_KFE_D123_CHECKPOINT10_TO_CHECKPOINT12_BOUNDED_NONLINEAR_CONTINUATION_ACCEPTANCE_20260920.md`.
 
-Recent metrics:
+Checkpoint 11:
 
-- checkpoint 7: `B7=9.83868092531745e-4`, `D7=2.7865782347942236e-3`
-- checkpoint 8: `B8=1.6252618227152738e-4`, `D8=6.617669262674042e-4`
-- checkpoint 9: `B9=8.986962138773924e-6`, `D9=1.1033293848816683e-4`
-- checkpoint 10: `B10=3.874510913493001e-8`, `D10=5.8692895192891115e-6`.
-
-Checkpoint 10 is close to, but does not satisfy, the frozen `1e-8 / 1e-7` primary thresholds.
-
-## Exact checkpoint 10
-
-- V10 `AE1610BA320F57AF73EE3C5411C298BF00610606B13B5185F2CD65BF1736FB24`
-- P10 `89F79E4C1FC094DBEE8B82CFBAD677276D42839E915426CA0E5565865FBD87A3`
-- u10 `215BEC4AABBC337147D73A227751CD6A89CC483E3CA056470A2AEF161AA41F38`
-- Q10 `917479763C4690FEAB358098D7F1CE2EBB4DD7C4939A7060156E7A4FCDEE59BD`
-- checkpoint identity `4FC2855AB4102AEAE8B173D0EBBBF40FCD334583A039BE4AE65C8DE2B1145C8D`
-- checkpoint arrays `BEA1D08A10C53E4EF3246A413A9446633DAAD6A4ACCAD4E34463BB74756C5512`
+- V11 `A097A3DDA767B979224638A51CEDC53EA635687CCDEFBE190FED0B899606921F`
+- P11 `89F79E4C1FC094DBEE8B82CFBAD677276D42839E915426CA0E5565865FBD87A3`
+- u11 `2E9A077FFA809F2DECEE385FD9E7F50C03E16750C2A074F990C0F3CBCC212648`
+- Q11 `33367258F3EADB1482D4A5CB30A64A8574830C993B0E5280C451499CBD6913AD`
+- checkpoint identity `8093BE714CA83531816B20DFEB2BAB3DCB7AF9B971AD255C3596C1CA2A9E2A3B`
+- B11 `5.456747553811425e-11`
+- D11 `5.4012647243695255e-08`
 - D2 PASS
-- exact/period-2/period-3 cycle: none.
+- primary HJB convergence PASS
+- checkpoint 12 not executed
+- terminal KFE not yet executed.
+
+The accepted direct update V10->V11 has normwise backward error `2.426444339908083e-16`. There were no scientific retries, solver substitutions or prohibited numerical adjustments.
+
+Known non-blocking diagnostic note: checkpoint-11 rowwise `identity_change_count=800` is a tuple/list representation false positive. Canonical P11 identity equals P10 and this field is not part of convergence or KFE acceptance.
 
 ## Active task
 
-`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT10_TO_CHECKPOINT12_BOUNDED_NONLINEAR_CONTINUATION_20260920.md`.
+`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT11_TERMINAL_SOURCE_FREE_KFE_VALIDATION_20260920.md`
 
-It may consume global updates 11-12 only and must stop immediately on convergence, cycle, selector/D2 failure, solve failure, or checkpoint 12.
+The task must use exact accepted Q11 only. It may run one terminal structural/topology audit and one pin-free/source-free KFE SVD/nullspace validation under the already accepted contract.
 
-Terminal topology/KFE/SVD, production, GE and Results remain closed.
+No HJB update, policy remap, Q reassembly, production, GE or Results work is authorized.
