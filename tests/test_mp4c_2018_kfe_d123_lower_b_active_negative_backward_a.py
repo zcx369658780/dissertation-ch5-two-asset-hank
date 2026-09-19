@@ -41,6 +41,29 @@ def _v2_cell100() -> CorrectedSelectorCell:
     )
 
 
+def _v3_cell100() -> CorrectedSelectorCell:
+    return CorrectedSelectorCell(
+        cell_id="v003_f0100_b000_a005_z000_regression",
+        b=-2.0,
+        a=2.6315789473684212,
+        z=0.8,
+        b_lower=-2.0,
+        b_upper=5.0,
+        a_lower=0.0,
+        a_upper=10.0,
+        net_wage=12.783312529860462,
+        effective_r_b=0.09000000000000001,
+        transfer_income=0.1,
+        effective_r_a=0.08999994552589044,
+        derivatives=CellDerivatives(
+            p_b_backward=0.005156057482672655,
+            p_b_forward=0.005156057482672655,
+            p_a_backward=0.012088089476579748,
+            p_a_forward=0.01134140574122853,
+        ),
+    )
+
+
 def _budget() -> SelectorBudget:
     return SelectorBudget(
         max_selector_evaluations=1,
@@ -92,6 +115,13 @@ def test_v2_cell100_represents_both_active_lower_b_negative_a_directions() -> No
     assert result.interior_z_root_invocations == 0
     assert result.interior_a_switching_root_invocations == 1
     assert not any(candidate.interior_z_receipt for candidate in result.candidates)
+    assert result.selected is not None
+    assert result.selected.derivative_branches == {"b": "forward", "a": "zero"}
+    assert result.selected.transfer_branch == "negative"
+    assert result.selected.interior_a_switching_receipt is not None
+    assert result.selected.q_b == 0.012448197327813425
+    assert result.selected.d == -0.236841961910238
+    assert result.selected.g_a == 0.0
     active_positive = next(
         candidate
         for candidate in result.candidates
@@ -100,6 +130,35 @@ def test_v2_cell100_represents_both_active_lower_b_negative_a_directions() -> No
     )
     assert active_positive.root_status == "ROOT_FAILURE_NO_UNIQUE_BRACKET"
     assert active_positive.q_b is None
+
+
+def test_v3_cell100_represents_both_active_lower_b_negative_a_directions() -> None:
+    result = select_constrained_policy(_v3_cell100(), _parameters(), budget=_budget())
+
+    active_negative = [
+        candidate
+        for candidate in result.candidates
+        if candidate.active_constraints == ("lower_b",)
+        and candidate.transfer_branch == "negative"
+        and candidate.interior_a_switching_receipt is None
+    ]
+
+    assert [candidate.derivative_branches["a"] for candidate in active_negative] == [
+        "backward",
+        "forward",
+    ]
+    assert all(candidate.root_invoked for candidate in active_negative)
+    forward = active_negative[1]
+    assert forward.root_status == "ROOT_CONVERGED"
+    assert forward.admissible
+    assert forward.rejection_reasons == ()
+    assert forward.q_b is not None
+    assert 0.012601561934698366 < forward.q_b < 0.015751950034835593
+    assert forward.d is not None and forward.d < 0.0
+    assert forward.g_a is not None and forward.g_a > 0.0
+    assert result.selected == forward
+    assert result.selected.derivative_branches["a"] == "forward"
+    assert result.selected.transfer_branch == "negative"
 
 
 def test_upper_b_negative_screen_retains_accepted_multiplier_domain_behavior() -> None:

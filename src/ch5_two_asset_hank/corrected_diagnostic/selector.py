@@ -1535,10 +1535,8 @@ def select_constrained_policy(
                     elif regime == "negative":
                         _, p_b_screen = b_options[0]
                         if faces["b"] == "lower_b":
-                            lower = max(float(p_b_screen), sys.float_info.min)
-                            log_grid = np.linspace(
-                                math.log(lower), math.log(sys.float_info.max), 513
-                            )
+                            viable_a.append((branch, value))
+                            continue
                         elif p_b_screen > 0.0:
                             log_grid = np.linspace(
                                 math.log(sys.float_info.min), math.log(p_b_screen), 513
