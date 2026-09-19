@@ -132,7 +132,7 @@ If B yields a nonempty candidate interval:
 
 ### D. Compare against accepted authority
 
-Audit whether a zero-`a)-drift switching branch is:
+Audit whether a zero-`a`-drift switching branch is:
 
 1. already implied by the accepted D3 Hamiltonian/upwind semantics but missing from the selector;
 2. a genuinely new scientific law analogous to, but not entailed by, the accepted liquid-`Z` law;
