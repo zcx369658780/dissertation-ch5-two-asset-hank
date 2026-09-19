@@ -2,41 +2,36 @@
 
 更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`CHECKPOINT3_COMPLETE_NONCONVERGED__BOUNDED_NONLINEAR_CONTINUATION_TO_CHECKPOINT6_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`CHECKPOINT6_COMPLETE_NONCONVERGED__BOUNDED_NONLINEAR_CONTINUATION_TO_CHECKPOINT10_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
-## Accepted checkpoint 3
+## Accepted checkpoint-3 to checkpoint-6 trajectory
 
-Reviewer accepted Builder candidate `ea97d03d065bae1c9fd7cbb98043d0e673d1e4a1`.
+Reviewer accepted Builder candidate `cc540b6d8ea4ff93ecbf4b8af9f7ece5aa2c2bb7`.
 
 Acceptance:
-`docs/CH5_MP4C_2018_KFE_D123_V3_CELL100_LOWER_B_NEGATIVE_FORWARD_A_PRE_SCREEN_REPAIR_AND_CHECKPOINT3_REEXECUTION_ACCEPTANCE_20260919.md`.
+`docs/CH5_MP4C_2018_KFE_D123_CHECKPOINT3_TO_CHECKPOINT6_BOUNDED_NONLINEAR_CONTINUATION_ACCEPTANCE_20260919.md`.
 
-The lower-b negative pre-screen false negative is repaired under existing authority.
+Checkpoints 4, 5 and 6 are complete; all three D2 gates pass.
 
-Checkpoint 3 is complete:
+Checkpoint 6:
 
-- V3 `4FDB36C17ACDC60B56661AEE1C0437B65EC4A871FD4E5E08A9A996FB10EF85EF`
-- P3 `06062946687922E1FAC83E8D4B1B19101469CC284339522595A19F4DECB6B07B`
-- u3 `9BB321A63A92154D4B733B28126AF29DC1441B95D44517D884F4C858AECFE6F4`
-- Q3 `4085E0D1B166E72650CA1E74E5CF9462F6677EEAFA8CDEF1FBD153F14088C255`
-- checkpoint identity `0DEEF7E54C4972BFF7BB67AE6B67BA5E54B588F3EEF5ACDE85048F3E02FE715D`.
+- V6 `69865ACDD71A26A3E3F4A8DAD55C964F826D34C774C9B8193FE997973EE6D89F`
+- P6 `63026FBE8BE72E3B29B5FC44EBD100C01C146179D05B55C779E9E232AEA435A3`
+- u6 `09D5A6622535709146751865931109F058FED3688FAE755C5EF9A0E00AD8B89E`
+- Q6 `039734AF0BC38AD3BD0FF38854CBE8B4B0B93BA415EC2A47B1C09F827EA7F454`
+- checkpoint identity `B26177C216DA6902226BD93E802A2B1FE0E794B29BE14EA1A1BCBFFD8F8691A1`
+- `B6=0.005940678766947715`
+- `D6=0.010000685482095761`.
 
-D2 passes.
+Primary convergence fails; no exact, period-2 or period-3 cycle is detected.
 
-Checkpoint 3 remains nonconverged:
-
-- `B3=0.1291770476282596`
-- `D3=0.05315900863346279`.
-
-No exact cycle and no complete approximate cycle window at checkpoint 3.
+The representation-only checkpoint-4 cycle diagnostic repair/resume is accepted because the sealed V4 scientific prefix was reused without recomputation and the fix only restored the adopted F-order vector infinity norm.
 
 ## Active task
 
-`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT3_TO_CHECKPOINT6_BOUNDED_NONLINEAR_CONTINUATION_20260919.md`.
+`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT6_TO_CHECKPOINT10_BOUNDED_NONLINEAR_CONTINUATION_20260919.md`.
 
-The task reuses accepted V3/P3/u3/Q3 exactly and may consume updates 4-6 only.
-
-No trend-based stop is authorized solely because B3 increased relative to B2.
+The task binds accepted checkpoint 6 and may consume global updates 7-10 only.
 
 Terminal KFE/topology/SVD, production, GE and Results remain closed.

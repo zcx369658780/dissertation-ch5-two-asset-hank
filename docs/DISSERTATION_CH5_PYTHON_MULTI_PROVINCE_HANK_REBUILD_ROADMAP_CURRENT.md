@@ -2,46 +2,40 @@
 更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 Results eligibility=`FALSE`。
 
-## Household corrected operator status
+## Corrected household numerical route
 
-The corrected household numerical law now includes accepted D1/D2/D3, all adopted switching laws, and the repaired active lower-b negative branch representation.
+The accepted corrected route now has complete same-value nonlinear checkpoints through checkpoint 6.
 
-Complete accepted nonlinear checkpoints now include checkpoint 1, checkpoint 2 and checkpoint 3.
+All accepted checkpoints 2-6 have complete policy maps and passing D2 operators after the previously accepted selector/upwind repairs.
 
-Checkpoint 3:
-- complete V3/P3/u3/Q3;
-- D2 PASS;
-- `B3=0.1291770476282596`;
-- `D3=0.05315900863346279`;
-- nonconverged.
+Checkpoint-6 metrics:
 
-## Current stage — bounded nonlinear continuation
+- `B6=0.005940678766947715`
+- `D6=0.010000685482095761`
+- no exact cycle
+- no authorized approximate period-2/3 cycle.
+
+The household HJB is therefore still nonterminal under the frozen Owner law.
+
+## Current stage
 
 Active task:
 
-`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT3_TO_CHECKPOINT6_BOUNDED_NONLINEAR_CONTINUATION_20260919.md`.
+`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT6_TO_CHECKPOINT10_BOUNDED_NONLINEAR_CONTINUATION_20260919.md`.
 
-The route may consume updates 4-6 only.
+The route may consume updates 7-10 only, stopping on convergence, cycle, policy/D2 failure, direct-solve failure, or checkpoint 10.
 
-Its purpose is to determine whether the accepted corrected operator:
+No trend-based interpretation is a stop rule. The recent fall in Bellman residual is only diagnostic evidence.
 
-- converges;
-- enters an exact/authorized approximate cycle;
-- exposes another selector/D2 issue;
-- or remains nonconverged through checkpoint 6.
+## Remaining household gates
 
-The B3 increase is not itself a terminal rule.
+Before the household block can close:
 
-## After an HJB convergence candidate
+1. reach and accept primary HJB convergence;
+2. run separate final same-value topology/KFE gate;
+3. verify one closed class, source-free homogeneous KFE, dense GESVD rank/nullity and nonnegative normalized stationary mass;
+4. accept the conditional household fixed point at frozen prices/calibration.
 
-A separate terminal household gate will require:
+Only after that may the deferred multi-province production/capital/labor/market-clearing route reopen.
 
-1. same-value D1/D2 legality;
-2. one closed communicating class;
-3. source-free homogeneous KFE;
-4. dense GESVD rank/nullity;
-5. nonnegative normalized stationary mass.
-
-Only after that conditional household fixed point may the deferred multi-province production/capital/labor/market-clearing route reopen.
-
-Production, GE, dynamics, IRF, welfare and Results remain downstream.
+GE, annual dynamics, IRFs, welfare and Results remain downstream.
