@@ -80,15 +80,17 @@ def test_v2_cell100_represents_both_active_lower_b_negative_a_directions() -> No
         for candidate in result.candidates
         if candidate.active_constraints == ("lower_b",)
         and candidate.transfer_branch == "negative"
+        and candidate.interior_a_switching_receipt is None
     ]
     assert [candidate.derivative_branches["a"] for candidate in active_negative] == [
         "backward",
         "forward",
     ]
-    assert len(result.candidates) == 8
+    assert len(result.candidates) == 9
     assert all(candidate.root_invoked for candidate in active_negative)
-    assert result.root_invocations == 4
+    assert result.root_invocations == 5
     assert result.interior_z_root_invocations == 0
+    assert result.interior_a_switching_root_invocations == 1
     assert not any(candidate.interior_z_receipt for candidate in result.candidates)
     active_positive = next(
         candidate

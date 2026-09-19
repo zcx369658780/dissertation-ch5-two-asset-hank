@@ -1,4 +1,4 @@
-"""One-shot repaired V2 checkpoint-2 remap with no HJB or KFE continuation."""
+"""One-shot adopted interior-a switching V2 remap; no HJB/KFE continuation."""
 
 from __future__ import annotations
 
@@ -51,20 +51,20 @@ from .selector import SelectorBudget
 
 
 TASK_ID = (
-    "CH5_MP4C_2018_KFE_D123_V2_LOWER_B_ACTIVE_NEGATIVE_BACKWARD_A_"
-    "SELECTOR_REPAIR_AND_CHECKPOINT2_REEXECUTION_20260917"
+    "CH5_MP4C_2018_KFE_D123_INTERIOR_A_ZERO_DRIFT_SWITCHING_"
+    "IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_20260919"
 )
 OUTPUT_RELATIVE = Path(
-    "reports/ch5_mp4c_2018_kfe_d123_v2_lower_b_active_negative_backward_a_"
-    "selector_repair_checkpoint2_reexecution_20260917_run001"
+    "reports/ch5_mp4c_2018_kfe_d123_interior_a_zero_drift_switching_"
+    "implementation_v2_checkpoint2_reexecution_20260919_run001"
 )
-BASELINE_SHA = "5B2E7E159945A70A53FCC5920E2273AE54844BE9"
-PREDECESSOR_SELECTOR_SHA256 = (
-    "C60C584A44A143CB584563ACDAA8F7E30EBC1CA45B90F8AF39728D40AC70E5E6"
-)
-PREDECESSOR_SELECTOR_BLOB = "5008e16e37dc38d9ba1cbc44394286a1b9264915"
-REPAIRED_SELECTOR_SHA256 = (
+BASELINE_SHA = "869F4023AE7B674D483F926F85E0DE271479DA0E"
+PRE_ADOPTION_SELECTOR_SHA256 = (
     "DBEB8EDCDA18B14579F36C2B68A50A47C9E717F49E84BC31A2E4E17180E9C327"
+)
+PRE_ADOPTION_SELECTOR_BLOB = "eac9b06805e2bcb69e078fd927a9a641c6cafd96"
+IMPLEMENTED_SELECTOR_SHA256 = (
+    "3175FBBC99120A9735287594A27602205505048BADD11A989CEAC682BE6390D8"
 )
 V1_ARTIFACT_SHA256 = (
     "28A27473A4C08CCD20550B9EDF1509BABB4D7D882A9429F7F54F55DE72083173"
@@ -86,6 +86,7 @@ V2_SOURCE_MANIFEST_SHA256 = (
 MAX_SELECTOR_EVALUATIONS = 800
 MAX_ROOT_INVOCATIONS = 311_256
 MAX_INTERIOR_Z_ROOT_INVOCATIONS = 285_120
+MAX_INTERIOR_A_SWITCHING_ROOT_INVOCATIONS = 800
 
 
 def _git_head(repository: Path) -> str:
@@ -109,6 +110,7 @@ def _new_ledger() -> dict[str, Any]:
         "selector_evaluations": 0,
         "scalar_root_invocations": 0,
         "interior_z_root_invocations": 0,
+        "interior_a_switching_root_invocations": 0,
         "d2_assemblies": 0,
         "checkpoint2_diagnostic_evaluations": 0,
         "direct_hjb_solves": 0,
@@ -129,6 +131,11 @@ def _check_task_ledger(ledger: dict[str, Any]) -> None:
     ceilings = {
         "new_corrected_policy_maps": 1,
         "selector_evaluations": MAX_SELECTOR_EVALUATIONS,
+        "scalar_root_invocations": MAX_ROOT_INVOCATIONS,
+        "interior_z_root_invocations": MAX_INTERIOR_Z_ROOT_INVOCATIONS,
+        "interior_a_switching_root_invocations": (
+            MAX_INTERIOR_A_SWITCHING_ROOT_INVOCATIONS
+        ),
         "d2_assemblies": 1,
         "checkpoint2_diagnostic_evaluations": 1,
         "direct_hjb_solves": 0,
@@ -150,7 +157,7 @@ def _check_task_ledger(ledger: dict[str, Any]) -> None:
     }
     if breaches:
         raise FailClosed(
-            "BLOCKED__IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENTIFIC_RUN",
+            "BLOCKED__INTERIOR_A_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
             {"stage": "task_ledger_ceiling", "breaches": breaches},
         )
 
@@ -158,7 +165,7 @@ def _check_task_ledger(ledger: dict[str, Any]) -> None:
 def _read_focused_tests(path: Path) -> dict[str, Any]:
     if not path.is_file():
         raise FailClosed(
-            "BLOCKED__IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENTIFIC_RUN",
+            "BLOCKED__INTERIOR_A_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
             {"stage": "focused_test_receipt_missing", "path": str(path)},
         )
     root = ET.parse(path).getroot()
@@ -169,7 +176,7 @@ def _read_focused_tests(path: Path) -> dict[str, Any]:
     }
     if totals["tests"] < 1 or totals["failures"] or totals["errors"]:
         raise FailClosed(
-            "BLOCKED__IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENTIFIC_RUN",
+            "BLOCKED__INTERIOR_A_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
             {"stage": "focused_tests_not_green", "totals": totals},
         )
     return {
@@ -178,6 +185,61 @@ def _read_focused_tests(path: Path) -> dict[str, Any]:
         "source_path": str(path.resolve()),
         "source_sha256": _sha256(path),
     }
+
+
+def _switching_statistics(directory: Path) -> tuple[dict[str, Any], dict[str, Any]]:
+    attempts = 0
+    admissible = 0
+    selected = 0
+    root_statuses: dict[str, int] = {}
+    selected_flats: list[int] = []
+    cell100: dict[str, Any] | None = None
+    for flat in range(N):
+        receipt = json.loads(
+            (directory / f"cell_{flat:04d}.json").read_text(encoding="utf-8")
+        )
+        result = receipt["selector_result"]
+        switching = [
+            row
+            for row in result["candidates"]
+            if row.get("interior_a_switching_receipt") is not None
+        ]
+        attempts += len(switching)
+        admissible += sum(bool(row["admissible"]) for row in switching)
+        for row in switching:
+            status = str(row["root_status"])
+            root_statuses[status] = root_statuses.get(status, 0) + 1
+        chosen = result.get("selected")
+        if chosen and chosen.get("interior_a_switching_receipt") is not None:
+            selected += 1
+            selected_flats.append(flat)
+        if flat == 100:
+            cell100 = receipt
+    if cell100 is None:
+        raise FailClosed(
+            "FAIL__ADOPTED_INTERIOR_A_SWITCHING_V2_MAP_FIRST_FAILURE",
+            {"stage": "cell100_switching_receipt_missing"},
+        )
+    cell100_selected = cell100["selector_result"].get("selected")
+    if (
+        cell100["selector_result"].get("outcome") != "SELECTED_ADMISSIBLE"
+        or not cell100_selected
+        or cell100_selected.get("interior_a_switching_receipt") is None
+    ):
+        raise FailClosed(
+            "FAIL__ADOPTED_INTERIOR_A_SWITCHING_V2_MAP_FIRST_FAILURE",
+            {"stage": "cell100_switching_not_selected"},
+        )
+    return (
+        {
+            "candidate_attempt_count": attempts,
+            "admissible_candidate_count": admissible,
+            "selected_policy_count": selected,
+            "selected_flat_indices_f_zero_based": selected_flats,
+            "root_status_counts": root_statuses,
+        },
+        cell100,
+    )
 
 
 def _load_sources(repository: Path, inputs: Any) -> dict[str, Any]:
@@ -199,7 +261,7 @@ def _load_sources(repository: Path, inputs: Any) -> dict[str, Any]:
     for path, sha256 in expected.items():
         if _sha256(path) != sha256:
             raise FailClosed(
-                "BLOCKED__IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENTIFIC_RUN",
+                "BLOCKED__INTERIOR_A_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
                 {"stage": "accepted_artifact_hash", "path": str(path)},
             )
     q1_manifest = json.loads(q1_manifest_path.read_text(encoding="utf-8"))
@@ -220,7 +282,7 @@ def _load_sources(repository: Path, inputs: Any) -> dict[str, Any]:
         or _field_sha256(v2) != V2_FIELD_SHA256
     ):
         raise FailClosed(
-            "BLOCKED__IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENTIFIC_RUN",
+            "BLOCKED__INTERIOR_A_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
             {"stage": "accepted_value_identity"},
         )
     selected_rows: list[dict[str, Any]] = []
@@ -235,14 +297,14 @@ def _load_sources(repository: Path, inputs: Any) -> dict[str, Any]:
             or not isinstance(result.get("selected"), dict)
         ):
             raise FailClosed(
-                "BLOCKED__IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENTIFIC_RUN",
+                "BLOCKED__INTERIOR_A_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
                 {"stage": "accepted_p1_receipt", "flat": flat},
             )
         selected_rows.append(result["selected"])
     q1 = sparse.load_npz(q1_path)
     if getattr(q1, "format", None) != "csr" or q1.shape != (N, N):
         raise FailClosed(
-            "BLOCKED__IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENTIFIC_RUN",
+            "BLOCKED__INTERIOR_A_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
             {"stage": "accepted_q1_shape_format"},
         )
     return {
@@ -277,7 +339,7 @@ def _write_manifest(output: Path) -> None:
     _write_json(
         output / "sealed_manifest.json",
         {
-            "schema": "CH5_D123_V2_REPAIRED_CHECKPOINT2_REEXECUTION_V1",
+            "schema": "CH5_D123_INTERIOR_A_SWITCHING_V2_CHECKPOINT2_REEXECUTION_V1",
             "entry_count": len(entries),
             "total_bytes": sum(int(row["bytes"]) for row in entries),
             "entries": entries,
@@ -297,7 +359,7 @@ def _finalize(
     _check_task_ledger(ledger)
     post_hashes = _scientific_code_hashes(repository)
     if post_hashes != pre_hashes:
-        terminal = "BLOCKED__SCIENTIFIC_CODE_CHANGED_AFTER_FREEZE"
+        terminal = "BLOCKED__INTERIOR_A_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE"
         detail = {"stage": "post_execution_code_hash", "prior_detail": detail}
     ledger["terminal_classification"] = terminal
     ledger["wall_seconds"] = float(time.perf_counter() - started)
@@ -339,12 +401,19 @@ def execute(
             "execution_head": _git_head(repository),
             "baseline_live_main": BASELINE_SHA,
             "accepted_v2_sha256": V2_FIELD_SHA256,
-            "predecessor_selector_sha256": PREDECESSOR_SELECTOR_SHA256,
-            "repaired_selector_sha256": REPAIRED_SELECTOR_SHA256,
+            "owner_adoption": (
+                "OWNER_ADOPTED__INTERIOR_A_ZERO_DRIFT_SWITCHING_LAW__"
+                "BOUNDED_CORRECTED_DIAGNOSTIC_IMPLEMENTATION_AUTHORIZED"
+            ),
+            "pre_adoption_selector_sha256": PRE_ADOPTION_SELECTOR_SHA256,
+            "implemented_selector_sha256": IMPLEMENTED_SELECTOR_SHA256,
             "scientific_code_sha256_before": pre_hashes,
             "budget": {
                 "fresh_v2_policy_map_attempts": 1,
                 "selector_evaluations": MAX_SELECTOR_EVALUATIONS,
+                "adopted_interior_a_switching_roots": (
+                    MAX_INTERIOR_A_SWITCHING_ROOT_INVOCATIONS
+                ),
                 "d2_assemblies_if_complete_map": 1,
                 "checkpoint2_diagnostics_if_q2_exists": 1,
                 "v2_to_v3_hjb_updates": 0,
@@ -358,19 +427,25 @@ def execute(
             repository / "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
         )
         checks = {
-            "baseline_selector_blob_exact": _git_blob(
+            "pre_adoption_selector_blob_at_baseline_exact": _git_blob(
                 repository,
                 BASELINE_SHA,
                 "src/ch5_two_asset_hank/corrected_diagnostic/selector.py",
             )
-            == PREDECESSOR_SELECTOR_BLOB,
-            "repaired_selector_exact": _sha256(selector_path)
-            == REPAIRED_SELECTOR_SHA256,
+            == PRE_ADOPTION_SELECTOR_BLOB,
+            "pre_adoption_selector_authority_exact": _sha256(
+                repository
+                / "docs/CH5_MP4C_2018_KFE_D123_INTERIOR_A_ZERO_DRIFT_"
+                "SWITCHING_OWNER_ADOPTION_20260919.md"
+            )
+            == "F5C4515078BBFFE32F9924758AF2DC5DD1C344A86DEB3EB596AFF91106F2FD95",
+            "implemented_selector_exact": _sha256(selector_path)
+            == IMPLEMENTED_SELECTOR_SHA256,
             "worktree_clean_before_evidence": clean_before_evidence,
         }
         if not all(checks.values()):
             raise FailClosed(
-                "BLOCKED__IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENTIFIC_RUN",
+                "BLOCKED__INTERIOR_A_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE",
                 {"stage": "git_or_selector_binding", "checks": checks},
             )
         focused = _read_focused_tests(focused_test_junit.resolve(strict=True))
@@ -397,6 +472,9 @@ def execute(
             max_selector_evaluations=MAX_SELECTOR_EVALUATIONS,
             max_root_invocations=MAX_ROOT_INVOCATIONS,
             max_interior_z_root_invocations=MAX_INTERIOR_Z_ROOT_INVOCATIONS,
+            max_interior_a_switching_root_invocations=(
+                MAX_INTERIOR_A_SWITCHING_ROOT_INVOCATIONS
+            ),
         )
         p2_rows, p2_arrays, q2, d2_receipt = _map_checkpoint(
             repository,
@@ -408,6 +486,11 @@ def execute(
             ledger,
             pre_hashes,
         )
+        switching_statistics, cell100_receipt = _switching_statistics(
+            output / "checkpoint_002"
+        )
+        _write_json(output / "switching_statistics.json", switching_statistics)
+        _write_json(output / "cell100_switching_receipt.json", cell100_receipt)
         ledger["checkpoint2_diagnostic_evaluations"] = 1
         _check_task_ledger(ledger)
         policy_diagnostics = _policy_diagnostics(
@@ -422,7 +505,7 @@ def execute(
         value_change = sources["v2"] - sources["v1"]
         if not np.all(np.isfinite(bellman)):
             raise FailClosed(
-                "FAIL__REPAIRED_SELECTOR_CHECKPOINT2_POLICY_MAP_OR_D2_GATE",
+                "FAIL__ADOPTED_INTERIOR_A_SWITCHING_V2_MAP_FIRST_FAILURE",
                 {"stage": "bellman_nonfinite"},
             )
         bellman_inf = float(np.linalg.norm(bellman, ord=np.inf))
@@ -484,6 +567,7 @@ def execute(
             "operator_diagnostics": operator_diagnostics,
             "cycle_diagnostics": cycle_receipt,
             "d2_receipt_status": d2_receipt["status"],
+            "switching_statistics": switching_statistics,
             "cumulative_scientific_ledger": dict(ledger),
             "checkpoint_arrays": {
                 "path": "checkpoint_arrays.npz",
@@ -494,10 +578,12 @@ def execute(
             },
         }
         terminal = (
-            "PASS__REPAIRED_V2_MAP_COMPLETE__CHECKPOINT2_HJB_CONVERGENCE_"
+            "PASS__ADOPTED_INTERIOR_A_SWITCHING_V2_MAP_COMPLETE__"
+            "CHECKPOINT2_HJB_CONVERGENCE_"
             "CANDIDATE__TERMINAL_GATES_NOT_RUN"
             if converged
-            else "PASS__REPAIRED_V2_MAP_COMPLETE__CHECKPOINT2_NONCONVERGED__NO_V3_UPDATE"
+            else "PASS__ADOPTED_INTERIOR_A_SWITCHING_V2_MAP_COMPLETE__"
+            "CHECKPOINT2_NONCONVERGED__NO_V3_UPDATE"
         )
         metrics["disposition"] = terminal
         _write_json(directory / "checkpoint_manifest.json", metrics)
@@ -513,7 +599,7 @@ def execute(
     except FailClosed as failure:
         terminal = failure.terminal
         if ledger["new_corrected_policy_maps"]:
-            terminal = "FAIL__REPAIRED_SELECTOR_CHECKPOINT2_POLICY_MAP_OR_D2_GATE"
+            terminal = "FAIL__ADOPTED_INTERIOR_A_SWITCHING_V2_MAP_FIRST_FAILURE"
         return _finalize(
             repository,
             output,
@@ -525,9 +611,9 @@ def execute(
         )
     except Exception as exc:
         terminal = (
-            "FAIL__REPAIRED_SELECTOR_CHECKPOINT2_POLICY_MAP_OR_D2_GATE"
+            "FAIL__ADOPTED_INTERIOR_A_SWITCHING_V2_MAP_FIRST_FAILURE"
             if ledger["new_corrected_policy_maps"]
-            else "BLOCKED__IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENTIFIC_RUN"
+            else "BLOCKED__INTERIOR_A_SWITCHING_IMPLEMENTATION_OR_PREFLIGHT_FAILURE_BEFORE_SCIENCE"
         )
         return _finalize(
             repository,

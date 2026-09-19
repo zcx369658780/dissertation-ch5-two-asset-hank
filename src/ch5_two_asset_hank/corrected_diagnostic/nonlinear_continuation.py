@@ -623,6 +623,10 @@ def _map_checkpoint(
                 scalar_root_invocations=budget.root_invocations,
                 interior_z_root_invocations=budget.interior_z_root_invocations,
             )
+            if "interior_a_switching_root_invocations" in ledger:
+                ledger["interior_a_switching_root_invocations"] = (
+                    budget.interior_a_switching_root_invocations
+                )
             raise FailClosed(
                 "FAIL__CORRECTED_HJB_POLICY_MAP_OR_D2_GATE",
                 {"checkpoint": checkpoint, "flat": flat, "stage": "selector_exception"},
@@ -633,6 +637,10 @@ def _map_checkpoint(
             scalar_root_invocations=budget.root_invocations,
             interior_z_root_invocations=budget.interior_z_root_invocations,
         )
+        if "interior_a_switching_root_invocations" in ledger:
+            ledger["interior_a_switching_root_invocations"] = (
+                budget.interior_a_switching_root_invocations
+            )
         _check_ledger(ledger)
         if result.outcome != "SELECTED_ADMISSIBLE" or result.selected is None:
             raise FailClosed(

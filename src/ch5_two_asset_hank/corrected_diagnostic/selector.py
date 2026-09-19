@@ -3,7 +3,7 @@
 The selector enumerates geometric face active sets and the three D3 transfer
 subgradient regimes.  It has no optimizer, derivative floor, clipping, policy
 cap, damping, or retry path.  Counted scalar roots are used only for a liquid
-face active equality or an Owner-adopted strict-crossing interior Z candidate.
+face active equality or an Owner-adopted strict-crossing zero-drift candidate.
 """
 
 from __future__ import annotations
@@ -121,9 +121,11 @@ class SelectorBudget:
     max_selector_evaluations: int
     max_root_invocations: int
     max_interior_z_root_invocations: int | None = None
+    max_interior_a_switching_root_invocations: int | None = None
     selector_evaluations: int = 0
     root_invocations: int = 0
     interior_z_root_invocations: int = 0
+    interior_a_switching_root_invocations: int = 0
 
     def begin_selector(self) -> int:
         if self.selector_evaluations >= self.max_selector_evaluations:
@@ -147,6 +149,18 @@ class SelectorBudget:
             raise RuntimeError("interior Z root invocation budget exhausted")
         ordinal = self.begin_root()
         self.interior_z_root_invocations += 1
+        return ordinal
+
+    def begin_interior_a_switching_root(self) -> int:
+        ceiling = (
+            self.max_root_invocations
+            if self.max_interior_a_switching_root_invocations is None
+            else self.max_interior_a_switching_root_invocations
+        )
+        if self.interior_a_switching_root_invocations >= ceiling:
+            raise RuntimeError("interior a switching root invocation budget exhausted")
+        ordinal = self.begin_root()
+        self.interior_a_switching_root_invocations += 1
         return ordinal
 
 
@@ -185,6 +199,27 @@ class InteriorZReceipt:
 
 
 @dataclass(frozen=True)
+class InteriorASwitchingReceipt:
+    endpoint_shadows: dict[str, float]
+    endpoint_drifts: dict[str, float]
+    endpoint_bounds: dict[str, float]
+    strict_crossing: bool
+    derivative_interval: tuple[float, float]
+    d_z: float
+    transfer_regime: str
+    d3_ratio: float
+    implied_q_b_interval: tuple[float, float]
+    liquid_multiplier_domain: tuple[float | None, float | None]
+    root_interval: tuple[float, float]
+    root_endpoint_drifts: tuple[float, float]
+    root_method: str
+    root_status: str
+    switching_shadows: dict[str, float] | None
+    raw_switching_drifts: dict[str, float] | None
+    marker: str
+
+
+@dataclass(frozen=True)
 class SelectorCandidate:
     active_constraints: tuple[str, ...]
     transfer_branch: str
@@ -218,6 +253,7 @@ class SelectorCandidate:
     )
     lower_a_zero_kink_multiplier_receipt: LowerAZeroKinkMultiplierReceipt | None = None
     interior_z_receipt: InteriorZReceipt | None = None
+    interior_a_switching_receipt: InteriorASwitchingReceipt | None = None
 
 
 @dataclass(frozen=True)
@@ -232,6 +268,7 @@ class SelectorResult:
     root_invocations: int
     selector_evaluation_ordinal: int
     interior_z_root_invocations: int = 0
+    interior_a_switching_root_invocations: int = 0
 
 
 def _faces(cell: CorrectedSelectorCell) -> dict[str, str]:
@@ -393,13 +430,28 @@ def _one_scalar_root(
     lower_b_face: bool,
     p_b: float,
     budget: SelectorBudget,
+    exact_interval: tuple[float, float] | None = None,
+    interior_a_switching: bool = False,
 ) -> tuple[float | None, str]:
     """Invoke one deterministic log-domain scalar-root procedure, without retry."""
 
-    budget.begin_root()
+    if interior_a_switching:
+        budget.begin_interior_a_switching_root()
+    else:
+        budget.begin_root()
     log_tiny = math.log(sys.float_info.min)
     log_huge = math.log(sys.float_info.max)
-    if lower_b_face:
+    if exact_interval is not None:
+        lower, upper = (float(value) for value in exact_interval)
+        if (
+            not math.isfinite(lower)
+            or not math.isfinite(upper)
+            or lower <= 0.0
+            or upper <= lower
+        ):
+            return None, "ROOT_FAILURE_INVALID_EXACT_INTERVAL"
+        log_grid = np.linspace(math.log(lower), math.log(upper), 513)
+    elif lower_b_face:
         lower = max(float(p_b), sys.float_info.min)
         log_grid = np.linspace(math.log(lower), log_huge, 513)
     else:
@@ -507,6 +559,7 @@ def _rejected(
     root_status: str = "NOT_REQUIRED",
     lower_a_zero_kink_multiplier_receipt: LowerAZeroKinkMultiplierReceipt | None = None,
     interior_z_receipt: InteriorZReceipt | None = None,
+    interior_a_switching_receipt: InteriorASwitchingReceipt | None = None,
 ) -> SelectorCandidate:
     return SelectorCandidate(
         active_constraints=active,
@@ -518,6 +571,7 @@ def _rejected(
         root_status=root_status,
         lower_a_zero_kink_multiplier_receipt=lower_a_zero_kink_multiplier_receipt,
         interior_z_receipt=interior_z_receipt,
+        interior_a_switching_receipt=interior_a_switching_receipt,
     )
 
 
@@ -577,12 +631,19 @@ def _candidate(
     *,
     q_b_override: float | None = None,
     interior_z_receipt: InteriorZReceipt | None = None,
+    interior_a_switching_receipt: InteriorASwitchingReceipt | None = None,
+    switching_d: float | None = None,
+    switching_q_a_ratio: float | None = None,
+    q_b_root_interval: tuple[float, float] | None = None,
 ) -> SelectorCandidate:
     branches = {"b": p_b_branch, "a": p_a_branch}
     b_face = faces.get("b")
     a_face = faces.get("a")
     b_active = b_face in active
     a_active = a_face in active
+    switching = interior_a_switching_receipt is not None
+    if switching != (switching_d is not None and switching_q_a_ratio is not None):
+        raise ValueError("interior-a switching overrides must be supplied together")
     root_invoked = interior_z_receipt is not None
     root_status = (
         interior_z_receipt.root_status
@@ -590,7 +651,11 @@ def _candidate(
         else "NOT_REQUIRED"
     )
 
-    if a_active:
+    if switching:
+        if a_active:
+            raise ValueError("interior-a switching cannot be used at an a face")
+        d = float(switching_d)
+    elif a_active:
         d = -cell.effective_r_a * cell.a
         if regime == "positive" and not d > 0.0:
             return _rejected(active, regime, ["ACTIVE_A_EQUALITY_WRONG_TRANSFER_SIGN"], branches=branches)
@@ -602,7 +667,9 @@ def _candidate(
         d = 0.0
 
     def values_for(q_b: float) -> tuple[float, float, float]:
-        if a_active:
+        if switching:
+            q_a = float(switching_q_a_ratio) * q_b
+        elif a_active:
             q_a = (
                 p_a
                 if regime == "zero_kink"
@@ -610,7 +677,7 @@ def _candidate(
             )
         else:
             q_a = p_a
-        local_d = d if a_active else _transfer_from_regime(
+        local_d = d if (a_active or switching) else _transfer_from_regime(
             regime=regime,
             q_a=q_a,
             q_b=q_b,
@@ -621,7 +688,7 @@ def _candidate(
         return q_a, local_d, g_b
 
     if q_b_override is not None:
-        if b_active:
+        if b_active and not switching:
             raise ValueError("interior Z override cannot be used at an active liquid face")
         q_b = float(q_b_override)
     elif b_active:
@@ -638,8 +705,15 @@ def _candidate(
             lower_b_face=b_face == "lower_b",
             p_b=p_b,
             budget=budget,
+            exact_interval=q_b_root_interval,
+            interior_a_switching=switching,
         )
         if q_b is None:
+            if interior_a_switching_receipt is not None:
+                interior_a_switching_receipt = replace(
+                    interior_a_switching_receipt,
+                    root_status=root_status,
+                )
             return _rejected(
                 active,
                 regime,
@@ -647,6 +721,7 @@ def _candidate(
                 branches=branches,
                 root_invoked=True,
                 root_status=root_status,
+                interior_a_switching_receipt=interior_a_switching_receipt,
             )
     else:
         q_b = p_b
@@ -690,12 +765,35 @@ def _candidate(
             root_invoked=root_invoked,
             root_status=root_status,
             interior_z_receipt=interior_z_receipt,
+            interior_a_switching_receipt=interior_a_switching_receipt,
         )
     tolerance = _fp_bound(
         c, l, d, cost, g_b, g_a, q_b, q_a, p_b, p_a, operations=96
     )
     raw_g_b = g_b
     raw_g_a = g_a
+    if interior_a_switching_receipt is not None:
+        switching_bound = _fp_bound(
+            c,
+            l,
+            d,
+            cost,
+            raw_g_b,
+            raw_g_a,
+            q_b,
+            q_a,
+            operations=96,
+        )
+        if abs(raw_g_a) <= switching_bound:
+            g_a = 0.0
+        if b_active and abs(raw_g_b) <= switching_bound:
+            g_b = 0.0
+        interior_a_switching_receipt = replace(
+            interior_a_switching_receipt,
+            root_status=root_status,
+            switching_shadows={"q_b": float(q_b), "q_a": float(q_a)},
+            raw_switching_drifts={"g_b": float(raw_g_b), "g_a": float(raw_g_a)},
+        )
     if interior_z_receipt is not None:
         z_bound = _fp_bound(
             c,
@@ -740,6 +838,14 @@ def _candidate(
             else:
                 g_a = 0.0
     reasons: list[str] = []
+    if interior_a_switching_receipt is not None:
+        lower_a_shadow, upper_a_shadow = interior_a_switching_receipt.derivative_interval
+        if q_a < lower_a_shadow or q_a > upper_a_shadow:
+            reasons.append("INTERIOR_A_SWITCHING_SHADOW_OUTSIDE_DERIVATIVE_INTERVAL")
+        if abs(raw_g_a) > switching_bound:
+            reasons.append("INTERIOR_A_SWITCHING_ZERO_DRIFT_RESIDUAL_BOUND_EXCEEDED")
+        if b_active and abs(raw_g_b) > switching_bound:
+            reasons.append("INTERIOR_A_SWITCHING_LIQUID_ROOT_RESIDUAL_BOUND_EXCEEDED")
     if interior_z_receipt is not None and abs(raw_g_b) > float(
         interior_z_receipt.arithmetic_bound
     ):
@@ -796,8 +902,16 @@ def _candidate(
         transfer_kkt = None
     if transfer_kkt is not None and not transfer_kkt.satisfied:
         reasons.append("TRANSFER_KKT_RESIDUAL")
-    raw_hamiltonian = float(utility + p_b * raw_g_b + p_a * raw_g_a)
-    hamiltonian = float(utility + p_b * g_b + p_a * g_a)
+    hamiltonian_b_shadow = q_b if switching else p_b
+    hamiltonian_a_shadow = q_a if switching else p_a
+    raw_hamiltonian = float(
+        utility
+        + hamiltonian_b_shadow * raw_g_b
+        + hamiltonian_a_shadow * raw_g_a
+    )
+    hamiltonian = float(
+        utility + hamiltonian_b_shadow * g_b + hamiltonian_a_shadow * g_a
+    )
     if not all(
         math.isfinite(value)
         for value in (
@@ -852,6 +966,7 @@ def _candidate(
         active_equality_receipts=active_equality_receipts,
         lower_a_zero_kink_multiplier_receipt=lower_a_zero_kink_receipt,
         interior_z_receipt=interior_z_receipt,
+        interior_a_switching_receipt=interior_a_switching_receipt,
     )
 
 
@@ -968,6 +1083,138 @@ def _interior_z_candidate(
     )
 
 
+def _interior_a_switching_candidate(
+    cell: CorrectedSelectorCell,
+    parameters: CorrectedSelectorParameters,
+    faces: dict[str, str],
+    active: tuple[str, ...],
+    regime: str,
+    p_b_branch: str,
+    p_b: float,
+    backward: SelectorCandidate,
+    forward: SelectorCandidate,
+    budget: SelectorBudget,
+) -> SelectorCandidate | None:
+    """Create the Owner-adopted strict-crossing interior-a zero-drift candidate."""
+
+    if "a" in faces:
+        return None
+    if (
+        backward.g_a is None
+        or forward.g_a is None
+        or backward.arithmetic_tolerance is None
+        or forward.arithmetic_tolerance is None
+    ):
+        return None
+    backward_drift = float(backward.g_a)
+    forward_drift = float(forward.g_a)
+    backward_bound = float(backward.arithmetic_tolerance)
+    forward_bound = float(forward.arithmetic_tolerance)
+    if not (
+        backward_drift > backward_bound
+        and forward_drift < -forward_bound
+    ):
+        return None
+
+    d_z = float(-cell.effective_r_a * cell.a)
+    actual_regime = "positive" if d_z > 0.0 else "negative" if d_z < 0.0 else "zero_kink"
+    if actual_regime != regime or d_z == 0.0:
+        return None
+    ratio = _transfer_ratio(d_z, cell.a, parameters)
+    derivative_interval = tuple(
+        sorted(
+            (
+                float(cell.derivatives.p_a_forward),
+                float(cell.derivatives.p_a_backward),
+            )
+        )
+    )
+    if not math.isfinite(ratio) or ratio <= 0.0:
+        return None
+    implied_q_b_interval = (
+        float(derivative_interval[0] / ratio),
+        float(derivative_interval[1] / ratio),
+    )
+    if implied_q_b_interval[0] <= 0.0:
+        return None
+
+    b_face = faces.get("b")
+    b_active = b_face in active
+    if b_active and b_face == "lower_b":
+        liquid_domain = (float(p_b), None)
+        root_interval = (
+            max(implied_q_b_interval[0], float(p_b)),
+            implied_q_b_interval[1],
+        )
+    elif b_active and b_face == "upper_b":
+        liquid_domain = (0.0, float(p_b))
+        root_interval = (
+            implied_q_b_interval[0],
+            min(implied_q_b_interval[1], float(p_b)),
+        )
+    else:
+        liquid_domain = (None, None)
+        root_interval = implied_q_b_interval
+    if root_interval[0] >= root_interval[1]:
+        return None
+
+    def liquid_drift(q_b: float) -> float:
+        return _liquid_drift_for_root(q_b, d_z, cell, parameters)
+
+    root_endpoint_drifts = (
+        liquid_drift(root_interval[0]),
+        liquid_drift(root_interval[1]),
+    )
+    receipt = InteriorASwitchingReceipt(
+        endpoint_shadows={
+            "backward": float(cell.derivatives.p_a_backward),
+            "forward": float(cell.derivatives.p_a_forward),
+        },
+        endpoint_drifts={
+            "backward": backward_drift,
+            "forward": forward_drift,
+        },
+        endpoint_bounds={
+            "backward": backward_bound,
+            "forward": forward_bound,
+        },
+        strict_crossing=True,
+        derivative_interval=derivative_interval,
+        d_z=d_z,
+        transfer_regime=actual_regime,
+        d3_ratio=float(ratio),
+        implied_q_b_interval=implied_q_b_interval,
+        liquid_multiplier_domain=liquid_domain,
+        root_interval=root_interval,
+        root_endpoint_drifts=root_endpoint_drifts,
+        root_method=(
+            "BRENTQ_UNIQUE_LOG_SCREENED_EXACT_INTERVAL"
+            if b_active
+            else "NOT_REQUIRED"
+        ),
+        root_status="NOT_REQUIRED",
+        switching_shadows=None,
+        raw_switching_drifts=None,
+        marker="INTERIOR_A_ZERO_DRIFT_STRICT_SWITCH",
+    )
+    return _candidate(
+        cell,
+        parameters,
+        faces,
+        active,
+        regime,
+        p_b_branch,
+        p_b,
+        "zero",
+        derivative_interval[0],
+        budget,
+        interior_a_switching_receipt=receipt,
+        switching_d=d_z,
+        switching_q_a_ratio=ratio,
+        q_b_root_interval=root_interval if b_active else None,
+    )
+
+
 def _same_policy(left: SelectorCandidate, right: SelectorCandidate) -> bool:
     values_left = (left.c, left.l, left.d, left.cost, left.g_b, left.g_a)
     values_right = (right.c, right.l, right.d, right.cost, right.g_b, right.g_a)
@@ -987,6 +1234,7 @@ def select_constrained_policy(
     ordinal = budget.begin_selector()
     root_start = budget.root_invocations
     interior_z_root_start = budget.interior_z_root_invocations
+    interior_a_root_start = budget.interior_a_switching_root_invocations
     faces = _faces(cell)
     face_rows = list(faces.values())
     active_sets = [
@@ -1062,6 +1310,7 @@ def select_constrained_policy(
                     _rejected(active, regime, ["NO_DIRECTIONALLY_VALID_DERIVATIVE_BRANCH"])
                 )
                 continue
+            ordinary_candidates: dict[tuple[str, str], SelectorCandidate] = {}
             for p_a_branch, p_a in a_options:
                 liquid_candidates: dict[str, SelectorCandidate] = {}
                 for p_b_branch, p_b in b_options:
@@ -1079,6 +1328,7 @@ def select_constrained_policy(
                     )
                     candidates.append(candidate)
                     liquid_candidates[p_b_branch] = candidate
+                    ordinary_candidates[(p_b_branch, p_a_branch)] = candidate
                 if "backward" in liquid_candidates and "forward" in liquid_candidates:
                     z_candidate = _interior_z_candidate(
                         cell,
@@ -1094,6 +1344,25 @@ def select_constrained_policy(
                     )
                     if z_candidate is not None:
                         candidates.append(z_candidate)
+            for p_b_branch, p_b in b_options:
+                backward = ordinary_candidates.get((p_b_branch, "backward"))
+                forward = ordinary_candidates.get((p_b_branch, "forward"))
+                if backward is None or forward is None:
+                    continue
+                a_switching_candidate = _interior_a_switching_candidate(
+                    cell,
+                    parameters,
+                    faces,
+                    active,
+                    regime,
+                    p_b_branch,
+                    p_b,
+                    backward,
+                    forward,
+                    budget,
+                )
+                if a_switching_candidate is not None:
+                    candidates.append(a_switching_candidate)
 
     admissible = [candidate for candidate in candidates if candidate.admissible]
     policies: list[SelectorCandidate] = []
@@ -1129,6 +1398,9 @@ def select_constrained_policy(
         root_invocations=budget.root_invocations - root_start,
         interior_z_root_invocations=(
             budget.interior_z_root_invocations - interior_z_root_start
+        ),
+        interior_a_switching_root_invocations=(
+            budget.interior_a_switching_root_invocations - interior_a_root_start
         ),
         selector_evaluation_ordinal=ordinal,
     )
