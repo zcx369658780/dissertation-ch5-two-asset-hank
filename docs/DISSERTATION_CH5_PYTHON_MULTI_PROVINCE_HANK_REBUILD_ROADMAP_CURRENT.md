@@ -2,49 +2,59 @@
 更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 Results eligibility=`FALSE`。
 
-## Accepted corrected household route
+## Accepted corrected household foundation
 
-The route has accepted V0/Q0, V0->V1, V1/Q1, Q1 unique closed-class/KFE diagnostics and the frozen nonlinear convergence law.
+Accepted milestones include:
+
+- corrected V0 800-cell policy map and Q0;
+- direct V0->V1 update;
+- V1 remap/Q1;
+- Q1 single closed class and unique pin-free/source-free invariant mass diagnostics;
+- frozen nonlinear HJB convergence law;
+- Owner-adopted liquid-`Z` switching;
+- repaired lower-b branch coverage;
+- Owner-adopted one-axis interior-`a` zero-drift switching, which closes cell100.
 
 Checkpoint 1 remains nonconverged:
 - `B1=0.014710294187010184`;
 - `D1=0.47118375690461445`.
 
-## One-axis switching closures
+## Cell185 coupled closure
 
-The liquid-`Z` law is Owner-adopted and accepted.
+The V2 map after one-axis interior-`a` adoption first fails at cell185.
 
-The interior-`a` zero-drift law is Owner-adopted, implemented and accepted. It closes V2 cell100.
+Zero-science adjudication proves one unique simultaneous `g_b=g_a=0` joint candidate exists inside the two derivative intervals.
 
-## Cell185 coupled failure
+Owner has now adopted the generic coupled law:
 
-The post-adoption V2 map first fails at cell185, interior in both asset dimensions. The existing liquid-`Z` candidates create opposite illiquid-drift signs and no current authority permits a simultaneously endogenous shadow pair.
+`docs/CH5_MP4C_2018_KFE_D123_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_OWNER_ADOPTION_20260919.md`.
 
-## Simultaneous two-axis adjudication — accepted
+## Current stage
 
-The zero-science candidate `3a3df94bd80874d531d58f3710bc82d2069aa619` is accepted as:
+Active task:
 
-`ADJUDICATED__SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_SCIENTIFICALLY_SUPPORTED__OWNER_ADOPTION_REQUIRED`.
+`tasks/CH5_MP4C_2018_KFE_D123_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_20260919.md`.
 
-The prospective joint law solves `g_b=g_a=0` simultaneously under unchanged D3 and both derivative-interval constraints. At cell185 its exact interval is nonempty and contains a unique statically proven root.
+The task implements/tests the joint law and executes one fresh V2 policy-map attempt.
 
-## Current stage — Owner adoption gate
+If complete:
+- assemble one Q2;
+- compute B2/D2, switching statistics, Q2-Q1, and cycle diagnostics;
+- stop before V2->V3 and terminal KFE.
 
-No Builder task is active.
+If it fails:
+- stop at the first new scientific object.
 
-Owner must explicitly adopt, modify or reject the prospective joint law.
+## Remaining major gates after a complete checkpoint 2
 
-If adopted, the next bounded route should be:
+Even if the current task completes the V2 map, the household route still requires:
 
-1. minimal corrected-selector joint-switch implementation;
-2. focused tests for coupled trigger, interval geometry, root uniqueness, precedence/deduplication and one-axis non-regression;
-3. exact cell185 regression;
-4. exactly one fresh accepted-V2 policy-map attempt;
-5. if complete, at most one Q2/checkpoint-2 diagnostic evaluation;
-6. no automatic V2->V3 or terminal KFE.
+1. nonlinear HJB convergence under the frozen Bellman/value law;
+2. terminal D2/topology/KFE acceptance at a converged HJB candidate;
+3. household fixed-point closure;
+4. only then the deferred multi-province production/capital/labor/market-clearing route;
+5. GE/annual/dynamics/IRF/welfare/Results gates.
 
-## Downstream closure
+Capital/labor K1/C1/K1B/K2 routes remain deferred, not abandoned.
 
-No complete P2/u2/Q2 or B2/D2 object exists.
-
-Production replacement, market clearing, GE/annual/dynamics/IRF and Results remain downstream and closed.
+Production replacement, GE and Results remain closed.

@@ -2,46 +2,29 @@
 
 更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_SCIENTIFICALLY_SUPPORTED__OWNER_ADOPTION_REQUIRED__PRODUCTION_UNCHANGED`。
+状态：`SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_OWNER_ADOPTED__IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
-当前 active Builder task：无。
 
-## Accepted adjudication
+## Owner adoption
 
-Reviewer accepted Builder candidate `3a3df94bd80874d531d58f3710bc82d2069aa619` as:
+Owner explicitly adopted:
 
-`ADJUDICATED__SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_SCIENTIFICALLY_SUPPORTED__OWNER_ADOPTION_REQUIRED`.
+`docs/CH5_MP4C_2018_KFE_D123_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_OWNER_ADOPTION_20260919.md`.
 
-Acceptance:
-`docs/CH5_MP4C_2018_KFE_D123_V2_CELL185_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_ACCEPTANCE_20260919.md`.
+The joint law applies only to interior-interior asset nodes after ordinary and one-axis candidates establish the accepted coupled strict-crossing evidence. It solves `g_b=g_a=0` simultaneously, uses unchanged D3, requires both shadows inside their one-sided derivative intervals, and creates one coupled candidate rather than sequentially composing one-axis switches.
 
-## Accepted cell185 finding
+## Active task
 
-Cell185 is interior in both assets. Its accepted liquid-`Z` candidates create a strict post-liquid illiquid-drift crossing:
+`tasks/CH5_MP4C_2018_KFE_D123_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_20260919.md`.
 
-- backward-`a`: `g_a=+0.009287240997760404`;
-- forward-`a`: `g_a=-0.005170298666228812`.
+The task authorizes:
 
-A simultaneous coupled closure is statically supported.
+1. minimal corrected-diagnostic joint-switch implementation;
+2. focused engineering tests including exact cell185 and one-axis non-regression;
+3. one fresh accepted-V2 checkpoint-2 policy-map attempt;
+4. only if the map completes, one Q2 assembly and one checkpoint-2 diagnostic evaluation.
 
-At cell185:
-
-- `d_ZZ=-0.42626460578345887`;
-- D3 ratio `q_a/q_b=0.7200216108914285`;
-- exact joint interval
-  `q_b in [0.011790364625750628,0.011910163904713082]`;
-- this interval lies inside the liquid derivative interval;
-- fixed-`d_ZZ` liquid equality changes sign from
-  `-0.023007467717380714` to `+0.041147374843733764`;
-- the equality is strictly increasing.
-
-Therefore exactly one coupled local solution of `g_b=g_a=0` exists statically.
-
-## Authority boundary
-
-The joint law is compatible with existing D1/D2/D3 and one-axis switching laws, but it is not already authorized by them. It is a new coupled derivative-selection law and requires explicit Owner adoption.
-
-No implementation, policy-map, D2, HJB or KFE runtime is active.
+It authorizes zero V2->V3 updates, zero terminal KFE/topology/SVD, zero MATLAB/production/GE/IRF/Results, and zero scientific retries.
 
 ## Frozen runtime facts
 
@@ -52,8 +35,8 @@ Checkpoint 1 remains the last complete same-value checkpoint:
 - `B1=0.014710294187010184`;
 - `D1=0.47118375690461445`.
 
-Cell100 is closed by the adopted one-axis interior-`a` switch. Cell185 remains the first fail-closed V2 object until Owner adopts or rejects the joint law.
+Cell100 is closed by the accepted one-axis interior-`a` law. Cell185 is the first current V2 fail-closed object and is the exact regression target of the active task.
 
-No complete P2/u2/Q2 or B2/D2/stability/cycle/topology/KFE object exists.
+No complete P2/u2/Q2 or B2/D2 object exists yet.
 
 Production replacement, market clearing, GE, annual calibration, dynamics, IRF, welfare, causal interpretation and Results remain unauthorized.
