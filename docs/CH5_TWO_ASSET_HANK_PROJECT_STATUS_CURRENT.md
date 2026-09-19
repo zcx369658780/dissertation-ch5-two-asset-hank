@@ -2,50 +2,41 @@
 
 更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`V3_CELL100_LOWER_B_NEGATIVE_FORWARD_A_PRE_SCREEN_FALSE_NEGATIVE_ATTRIBUTED__MINIMAL_REPAIR_AND_CHECKPOINT3_REEXECUTION_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`CHECKPOINT3_COMPLETE_NONCONVERGED__BOUNDED_NONLINEAR_CONTINUATION_TO_CHECKPOINT6_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
-## Accepted continuation result
+## Accepted checkpoint 3
 
-Reviewer accepted Builder candidate `d2b0d62ff7a7c9c094bb70d6eaf8bef88f8e449a`.
+Reviewer accepted Builder candidate `ea97d03d065bae1c9fd7cbb98043d0e673d1e4a1`.
 
 Acceptance:
-`docs/CH5_MP4C_2018_KFE_D123_CHECKPOINT2_TO_CHECKPOINT6_BOUNDED_NONLINEAR_CONTINUATION_ACCEPTANCE_20260919.md`.
+`docs/CH5_MP4C_2018_KFE_D123_V3_CELL100_LOWER_B_NEGATIVE_FORWARD_A_PRE_SCREEN_REPAIR_AND_CHECKPOINT3_REEXECUTION_ACCEPTANCE_20260919.md`.
 
-Accepted complete checkpoint 2 remains the last complete nonlinear checkpoint.
+The lower-b negative pre-screen false negative is repaired under existing authority.
 
-The exact `V2->V3` direct solve passes:
+Checkpoint 3 is complete:
 
-- V3 SHA `4FDB36C17ACDC60B56661AEE1C0437B65EC4A871FD4E5E08A9A996FB10EF85EF`
-- residual infinity norm `1.4391265956703592e-14`
-- backward error `2.439151619375125e-16`.
+- V3 `4FDB36C17ACDC60B56661AEE1C0437B65EC4A871FD4E5E08A9A996FB10EF85EF`
+- P3 `06062946687922E1FAC83E8D4B1B19101469CC284339522595A19F4DECB6B07B`
+- u3 `9BB321A63A92154D4B733B28126AF29DC1441B95D44517D884F4C858AECFE6F4`
+- Q3 `4085E0D1B166E72650CA1E74E5CF9462F6677EEAFA8CDEF1FBD153F14088C255`
+- checkpoint identity `0DEEF7E54C4972BFF7BB67AE6B67BA5E54B588F3EEF5ACDE85048F3E02FE715D`.
 
-The V3 map first fails at cell100 before P3/u3/Q3 is formed.
+D2 passes.
 
-## Reviewer attribution
+Checkpoint 3 remains nonconverged:
 
-The V3 cell100 seven-candidate census omits an authority-backed active lower-b negative-transfer / forward-`a` branch.
+- `B3=0.1291770476282596`
+- `D3=0.05315900863346279`.
 
-The omission is caused by the existing 513-point log viability screen spanning from the lower-b shadow floor to `sys.float_info.max`. At V3 cell100 the legal forward-`a` negative interval is:
-
-`(0.012601561934698366,0.015751950034835593)`.
-
-The first two screen points are approximately:
-
-`0.005156057482672656`, `0.020837512395988838`.
-
-Thus the complete legal interval is skipped.
-
-Static algebra also proves the missing branch's active liquid equality has exactly one root inside its legal interval.
-
-This is an implementation filtering false negative under already-adopted lower-b/D3/upwind authority, not a new scientific law.
+No exact cycle and no complete approximate cycle window at checkpoint 3.
 
 ## Active task
 
-`tasks/CH5_MP4C_2018_KFE_D123_V3_CELL100_LOWER_B_NEGATIVE_FORWARD_A_PRE_SCREEN_REPAIR_AND_CHECKPOINT3_REEXECUTION_20260919.md`.
+`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT3_TO_CHECKPOINT6_BOUNDED_NONLINEAR_CONTINUATION_20260919.md`.
 
-The task minimally repairs lower-b negative branch representation and performs one fresh policy map from the already accepted V3 field. It does not rerun V2->V3 and does not continue to V4.
+The task reuses accepted V3/P3/u3/Q3 exactly and may consume updates 4-6 only.
 
-If the V3 map completes, it may assemble one Q3 and evaluate checkpoint-3 B3/D3/stability/cycle metrics.
+No trend-based stop is authorized solely because B3 increased relative to B2.
 
-Production, terminal KFE, GE and Results remain closed.
+Terminal KFE/topology/SVD, production, GE and Results remain closed.

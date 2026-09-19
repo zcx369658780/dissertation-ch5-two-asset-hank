@@ -2,54 +2,46 @@
 更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 Results eligibility=`FALSE`。
 
-## Accepted household numerical foundation
+## Household corrected operator status
 
-The corrected route has a complete and accepted checkpoint 2 under the adopted multidimensional switching laws.
+The corrected household numerical law now includes accepted D1/D2/D3, all adopted switching laws, and the repaired active lower-b negative branch representation.
 
-Checkpoint 2:
-- complete V2/P2/u2/Q2;
+Complete accepted nonlinear checkpoints now include checkpoint 1, checkpoint 2 and checkpoint 3.
+
+Checkpoint 3:
+- complete V3/P3/u3/Q3;
 - D2 PASS;
-- `B2=0.006582827785543588`;
-- `D2=0.05439336697877817`;
+- `B3=0.1291770476282596`;
+- `D3=0.05315900863346279`;
 - nonconverged.
 
-## First continuation update
-
-The frozen nonlinear update from V2 to V3 passes the direct linear-solve accuracy gate.
-
-Accepted V3 SHA:
-
-`4FDB36C17ACDC60B56661AEE1C0437B65EC4A871FD4E5E08A9A996FB10EF85EF`.
-
-The first V3 map fails at cell100, so checkpoint 3 is incomplete.
-
-## V3 cell100 implementation attribution
-
-Independent Reviewer inspection identifies a sampling-induced false negative in the already-authorized active lower-b negative branch census.
-
-A narrow legal forward-`a` interval is missed because a 513-point log screen spans an effectively unbounded `q_b` domain. Static algebra proves one legal liquid-equality root exists in that omitted interval.
-
-This is not a new HJB law.
-
-## Current stage
+## Current stage — bounded nonlinear continuation
 
 Active task:
 
-`tasks/CH5_MP4C_2018_KFE_D123_V3_CELL100_LOWER_B_NEGATIVE_FORWARD_A_PRE_SCREEN_REPAIR_AND_CHECKPOINT3_REEXECUTION_20260919.md`.
+`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT3_TO_CHECKPOINT6_BOUNDED_NONLINEAR_CONTINUATION_20260919.md`.
 
-The task repairs the filtering logic and reexecutes one V3 map only.
+The route may consume updates 4-6 only.
 
-If the map completes:
-- assemble one Q3;
-- compute B3/D3 and checkpoint-3 diagnostics;
-- stop before V3->V4.
+Its purpose is to determine whether the accepted corrected operator:
 
-If another scientific issue appears:
-- stop first failure;
-- return to Reviewer.
+- converges;
+- enters an exact/authorized approximate cycle;
+- exposes another selector/D2 issue;
+- or remains nonconverged through checkpoint 6.
 
-## After complete checkpoint 3
+The B3 increase is not itself a terminal rule.
 
-If checkpoint 3 is complete and nonconverged, the nonlinear route may resume under the already adopted convergence/cycle law. Terminal household KFE remains deferred until an HJB convergence candidate exists.
+## After an HJB convergence candidate
 
-Production/capital/labor/market clearing/GE/dynamics/Results remain downstream.
+A separate terminal household gate will require:
+
+1. same-value D1/D2 legality;
+2. one closed communicating class;
+3. source-free homogeneous KFE;
+4. dense GESVD rank/nullity;
+5. nonnegative normalized stationary mass.
+
+Only after that conditional household fixed point may the deferred multi-province production/capital/labor/market-clearing route reopen.
+
+Production, GE, dynamics, IRF, welfare and Results remain downstream.
