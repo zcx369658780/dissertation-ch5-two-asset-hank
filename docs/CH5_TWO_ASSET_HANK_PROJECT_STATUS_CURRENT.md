@@ -1,49 +1,60 @@
 # Chapter 5 两资产 HANK 当前状态
 
-更新：2026-09-17。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
+更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`V2_LOWER_B_SELECTOR_BRANCH_OMISSION_ACCEPTED__MINIMAL_REPAIR_AND_CHECKPOINT2_REEXECUTION_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`V2_CELL100_FROZEN_LOCAL_KKT_INCOMPATIBILITY_CONFIRMED__OWNER_SCIENTIFIC_DECISION_REQUIRED__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
+当前 active Builder task：无。
 
-## Accepted attribution
+## Latest accepted repair/reexecution
 
-Reviewer accepted Builder candidate `582f7fca52e47ee5303164edbc62b98add363ec6` as:
-`ATTRIBUTED__SELECTOR_OMITS_AUTHORITY_BACKED_LEGAL_BRANCH`.
-
-Accepted causal finding:
-- lower-b active multiplier domain is `q_b >= p_b`;
-- frozen corrected selector incorrectly used upper-face-style `0 < q_b <= p_b` in the active lower-b negative-transfer derivative pre-screen;
-- this omitted the authority-backed active lower-b / negative-transfer / backward-`a` case, yielding seven persisted cases where the frozen census requires eight;
-- static algebra shows the omitted cell100 case would still be rejected under the accepted V2 inputs, so the defect is branch coverage rather than evidence of a new admissible cell100 policy;
-- positive active root failure is a genuine no-root condition on the legal lower-face domain;
-- interior-Z remains inapplicable at the liquid lower boundary.
+Reviewer accepted Builder candidate `19e12ff6c87b2c08490883851e7c50ef958b9c3d`.
 
 Acceptance:
-`docs/CH5_MP4C_2018_KFE_D123_V2_CELL100_NO_ADMISSIBLE_POLICY_ZERO_SCIENCE_ATTRIBUTION_ACCEPTANCE_20260917.md`.
+`docs/CH5_MP4C_2018_KFE_D123_V2_LOWER_B_ACTIVE_NEGATIVE_BACKWARD_A_SELECTOR_REPAIR_AND_CHECKPOINT2_REEXECUTION_ACCEPTANCE_20260919.md`.
 
-## Frozen nonlinear facts
+The accepted selector repair closes the predecessor implementation omission:
+- active lower-b negative-transfer screening now uses the lower-face domain `q_b >= p_b`;
+- both authority-backed negative-transfer `a` derivative directions are represented;
+- upper-b logic remains distinct;
+- focused tests passed `53/53`;
+- source-faithful/production code remains unchanged.
+
+## Accepted checkpoint-2 finding
+
+The single fresh repaired V2 remap again stops first at flat F index 100, `(i_b,i_a,i_z)=(0,5,0)`, physical `(-2.0,2.6315789473684212,0.8)`.
+
+Cells 0-99 are selected-policy identical to the predecessor attempt with maximum numeric change 0.
+
+Cell100 now contains the complete eight-case frozen census and zero admissible comparisons. The newly restored active lower-b / negative / backward-`a` case converges at `q_b=0.012457851515416401`, but gives `g_a=0.00670682022114244` and fails the frozen backward-direction condition. The negative/forward-`a` case converges at `q_b=0.012447419227151839`, but gives `g_a=-0.0005429159000894801` and fails the forward-direction condition. The remaining cases are rejected by the already frozen primal/KKT/sign/no-root rules.
+
+Accepted local classification:
+
+`ATTRIBUTED__FROZEN_V2_CELL100_LOCAL_KKT_INPUTS_STRUCTURALLY_INCOMPATIBLE`.
+
+This does not establish global nonlinear HJB nonexistence. It establishes that the currently frozen corrected local branch/KKT law cannot produce an admissible policy at this accepted V2 cell.
+
+## Frozen runtime facts
 
 Accepted V2 SHA-256:
 `A85AB791D7CFC3B0BDA52D886418B9552D79824E09EACE6B6E4A4BEC8F950DF1`.
 
-Checkpoint 1 remains the last complete same-value checkpoint until a repaired complete V2 map exists:
+Checkpoint 1 remains the last complete same-value checkpoint:
 - `B1=0.014710294187010184`;
 - `D1=0.47118375690461445`;
-- V1->V2 direct solve residual `1.9012569296705806e-14`;
+- V1->V2 direct residual `1.9012569296705806e-14`;
 - backward error `2.5514110567283015e-16`.
 
-Owner convergence law remains unchanged: `B<=1e-8` and `D<=1e-7` at the same checkpoint, fixed `Delta=1000`, frozen cycle rules, no damping/continuation/tolerance retuning, and maximum 100 total HJB updates.
+No P2/u2/Q2, B2/D2/stability/cycle, topology or terminal KFE object exists.
 
-## Active Builder task
+Owner nonlinear law remains frozen unless Owner changes it: Bellman `<=1e-8` and value change `<=1e-7` at the same checkpoint; fixed `Delta=1000`; backward error `<=1e-12`; frozen cycle rules; no damping/relaxation/adaptive Delta/continuation/clipping/artificial diffusion/solver substitution/scientific retry/post-hoc tolerance tuning.
 
-`tasks/CH5_MP4C_2018_KFE_D123_V2_LOWER_B_ACTIVE_NEGATIVE_BACKWARD_A_SELECTOR_REPAIR_AND_CHECKPOINT2_REEXECUTION_20260917.md`
+## Current Owner gate
 
-The task authorizes only:
-1. minimal corrected diagnostic selector repair for the accepted lower-b active negative/backward-`a` branch-domain omission;
-2. focused branch-completeness/regression tests;
-3. exactly one fresh V2 checkpoint-2 policy-map attempt;
-4. only if the full map completes, at most one Q2 assembly and checkpoint-2 Bellman/value/stability/cycle diagnostic evaluation.
+The implementation omission is closed. Any next attempt to pass cell100 would require a substantive scientific/numerical choice outside current frozen authority, for example changing a boundary/KKT law, finite-domain/discretization contract, or trajectory/initialization construction.
 
-The task explicitly authorizes zero `V2->V3` HJB updates, zero terminal topology/KFE/SVD work, zero MATLAB/production/GE/annual/IRF/Results calls and zero scientific retries.
+Reviewer must not choose among those alternatives silently.
 
-Production/source-faithful paths remain frozen. This stage does not establish nonlinear HJB convergence/nonexistence, terminal KFE, household fixed point, market clearing, GE or Results.
+Until Owner chooses a new scientific route, no new selector/root/policy-map/D2/HJB/KFE/MATLAB/downstream scientific task is active.
+
+Production replacement, market clearing, GE, annual calibration, dynamics, IRF, welfare, causal interpretation and Results remain unauthorized.

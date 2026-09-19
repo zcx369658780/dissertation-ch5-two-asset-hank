@@ -1,5 +1,5 @@
 # Chapter 5 Python 多省份两资产 HANK 路线
-更新：2026-09-17。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
+更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 Results eligibility=`FALSE`。
 
 ## Accepted route
@@ -30,42 +30,47 @@ Owner convergence law:
 6. frozen exact and approximate period-2/3 cycle rules fail closed;
 7. no damping, relaxation, adaptive Delta, continuation, clipping, artificial diffusion, solver substitution, scientific retry or post-hoc tolerance tuning.
 
-## KFE-D2F-C — bounded nonlinear continuation executed and fail-closed evidence accepted
+## KFE-D2F-C — bounded nonlinear continuation fail-closed
 
-Builder candidate `922cd9118d617c044209515762ccecc9ec3fd34d` is accepted as fail-closed evidence.
+Accepted checkpoint 1:
+- `B1=0.014710294187010184`;
+- `D1=0.47118375690461445`.
 
-Accepted trajectory facts:
+The one authorized `V1->V2` direct solve passed:
+- residual `1.9012569296705806e-14`;
+- backward error `2.5514110567283015e-16`;
+- V2 SHA-256 `A85AB791D7CFC3B0BDA52D886418B9552D79824E09EACE6B6E4A4BEC8F950DF1`.
 
-- checkpoint 1: `B1=0.014710294187010184`, `D1=0.47118375690461445`; not converged;
-- one authorized `V1->V2` direct solve passed with residual `1.9012569296705806e-14` and normwise backward error `2.5514110567283015e-16`;
-- V2 SHA-256 `A85AB791D7CFC3B0BDA52D886418B9552D79824E09EACE6B6E4A4BEC8F950DF1`;
-- fresh V2 policy map passed cells 0-99 and failed first at flat 100, `(i_b,i_a,i_z)=(0,5,0)`, physical `(-2.0,2.6315789473684212,0.8)`, with `NO_ADMISSIBLE_POLICY` and zero admissible comparisons;
-- no complete P2/u2/Q2 exists, so no B2/D2/cycle/topology/KFE claim exists.
+The original V2 remap first failed at flat 100 with seven persisted cases.
 
-The failure is not yet interpreted as nonlinear HJB nonexistence. It is a local selector/KKT gate requiring attribution.
+## KFE-D2F-D — selector attribution and repair accepted
 
-Reviewer acceptance:
-`docs/CH5_MP4C_2018_KFE_D123_BOUNDED_NONLINEAR_HJB_KFE_CONTINUATION_FAIL_CLOSED_ACCEPTANCE_20260917.md`.
+Zero-science attribution established that the active lower-b negative-transfer pre-screen incorrectly used an upper-face multiplier domain and omitted the negative/backward-`a` case.
 
-## KFE-D2F-D — active zero-science V2 cell100 attribution
+The minimal corrected-selector repair is accepted in Builder candidate `19e12ff6c87b2c08490883851e7c50ef958b9c3d`.
 
-Active task:
-`tasks/CH5_MP4C_2018_KFE_D123_V2_CELL100_NO_ADMISSIBLE_POLICY_ZERO_SCIENCE_ATTRIBUTION_20260917.md`.
+A single fresh repaired V2 remap:
+- leaves cells 0-99 selected policies byte/numerically unchanged at the reported comparison level;
+- restores the complete eight-case frozen census at cell100;
+- still yields zero admissible comparisons and `NO_ADMISSIBLE_POLICY`;
+- does not reach P2/u2/Q2 or B2/D2.
 
-The task must distinguish among:
+The restored negative/backward-`a` case converges in liquid equality but yields positive `g_a` and is backward-direction inconsistent. The negative/forward-`a` case converges but yields negative `g_a` and is forward-direction inconsistent. The remaining regimes fail the already frozen primal/KKT/sign/no-root requirements.
 
-- genuine frozen local KKT/input incompatibility;
-- omitted authority-backed legal selector branch;
-- root/bracketing implementation omission inside an already-authorized branch;
-- unresolved scientific-law conflict requiring Owner decision;
-- insufficient persisted evidence.
+Accepted local classification:
 
-It is zero-science: no selector/root/policy-map/D2/HJB/KFE/MATLAB/downstream call and no repair/reexecution.
+`ATTRIBUTED__FROZEN_V2_CELL100_LOCAL_KKT_INPUTS_STRUCTURALLY_INCOMPATIBLE`.
 
-Only after independent acceptance of this attribution may a repair or fresh bounded runtime successor be designed.
+## KFE-D2F-E — Owner scientific decision gate
+
+The implementation omission is closed. The current frozen corrected route cannot construct a complete V2 policy map under its adopted local branch/KKT law.
+
+This does not prove global HJB nonexistence. It means the next step can no longer be an implementation repair under current authority.
+
+Any successor must begin with an Owner scientific decision about which assumption or numerical contract may change, such as the boundary/KKT formulation, finite-domain/discretization choice, or trajectory/initialization construction. No successor scientific task is active until that choice is made.
 
 ## KFE-D3 — later production closure
 
 Corrected multi-province production replacement, market clearing, GE/annual/dynamics/IRF and Results remain downstream gates with separate evidence and authority.
 
-Capital/labor K1/C1/K1B/K2 routes remain deferred, not abandoned, behind the current household fixed-point route.
+Capital/labor K1/C1/K1B/K2 routes remain deferred, not abandoned. They must not be represented as having bypassed the unresolved household fixed-point route.
