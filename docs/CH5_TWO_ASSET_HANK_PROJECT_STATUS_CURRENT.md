@@ -2,63 +2,43 @@
 
 更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`INTERIOR_A_ZERO_DRIFT_SWITCHING_SCIENTIFICALLY_SUPPORTED__OWNER_ADOPTION_REQUIRED__PRODUCTION_UNCHANGED`。
+状态：`INTERIOR_A_ZERO_DRIFT_SWITCHING_OWNER_ADOPTED__IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
-当前 active Builder task：无。
 
-## Accepted adjudication
+## Owner adoption
 
-Reviewer accepted Builder candidate `d4ed09015f184ab8e4a39e1de019c33b8868cd20` as:
+Owner explicitly adopted the interior-`a` zero-drift switching law:
 
-`ADJUDICATED__INTERIOR_A_ZERO_DRIFT_SWITCHING_BRANCH_SCIENTIFICALLY_SUPPORTED__OWNER_ADOPTION_REQUIRED`.
+`docs/CH5_MP4C_2018_KFE_D123_INTERIOR_A_ZERO_DRIFT_SWITCHING_OWNER_ADOPTION_20260919.md`.
 
-Acceptance:
-`docs/CH5_MP4C_2018_KFE_D123_V2_CELL100_INTERIOR_A_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_ACCEPTANCE_20260919.md`.
+The adopted law applies at interior illiquid-`a` nodes with a strict backward-positive / forward-negative drift crossing under the same existing liquid branch/active set and transfer regime. It imposes `g_a=0`, sets `d_Z=-r_a a`, uses unchanged D3 KKT for the switching shadow, requires the shadow inside the closed one-sided derivative interval, preserves the liquid-axis law, and enters the existing Hamiltonian comparison only after all frozen legality checks pass.
 
-## Accepted scientific finding
+This is a corrected-diagnostic law only. Source-faithful/production paths remain frozen.
 
-The repaired V2 cell100 complete eight-case census remains locally incompatible under the currently frozen one-sided `a` direction law, but the incompatibility has a structured strict crossing:
+## Active Builder task
 
-- backward-`a` candidate -> `g_a=+0.00670682022114244`;
-- forward-`a` candidate -> `g_a=-0.0005429159000894801`.
+`tasks/CH5_MP4C_2018_KFE_D123_INTERIOR_A_ZERO_DRIFT_SWITCHING_IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_20260919.md`.
 
-A prospective interior-`a` zero-drift branch is statically supported.
+The task authorizes:
 
-At cell100:
+1. minimal implementation of the adopted interior-`a` switching law in the corrected-diagnostic route;
+2. focused tests and exact cell100 regression;
+3. exactly one fresh accepted-V2 checkpoint-2 policy-map attempt;
+4. if and only if all 800 cells succeed, at most one Q2 assembly and one checkpoint-2 Bellman/value/policy/operator/cycle diagnostic evaluation.
 
-- `d_Z=-r_a a=-0.23684196191023801`;
-- D3 gives `q_a/q_b=0.72000010894821909`;
-- `q_a in [p_a^F,p_a^B]` maps to
-  `q_b in [0.012440285887428097,0.012546045881996438]`;
-- the entire interval satisfies lower-b active `q_b>=0.012333311206716577`;
-- fixed-`d_Z` liquid equality is strictly increasing and changes sign from
-  `-0.0039748658728543454` to `+0.048890867998731984`.
-
-Therefore exactly one compatible local crossing exists statically.
-
-## Authority boundary
-
-The branch is compatible with existing D1/D2/D3, but it is not already authorized by the liquid-`Z` law or lower-`a` zero-kink law. It is a new interior-`a` derivative-selection law and requires explicit Owner adoption.
-
-No implementation, root call, policy map, D2, HJB or KFE runtime is active.
+It authorizes zero V2->V3 HJB updates, zero terminal topology/KFE/SVD, zero MATLAB/production/GE/annual/IRF/Results and zero scientific retries.
 
 ## Frozen runtime facts
 
 Accepted V2 SHA-256:
 `A85AB791D7CFC3B0BDA52D886418B9552D79824E09EACE6B6E4A4BEC8F950DF1`.
 
-Checkpoint 1 remains the last complete same-value checkpoint:
+Checkpoint 1 remains the last complete same-value checkpoint until a new complete V2 map exists:
 - `B1=0.014710294187010184`;
 - `D1=0.47118375690461445`;
 - V1->V2 direct residual `1.9012569296705806e-14`;
 - backward error `2.5514110567283015e-16`.
 
-No P2/u2/Q2 or B2/D2/stability/cycle/topology/KFE object exists.
-
-## Current Owner gate
-
-Owner must explicitly adopt, modify or reject the prospective interior-`a` zero-drift switching contract before further corrected-route runtime.
-
-Until that decision, active Builder task = none.
+No P2/u2/Q2 or B2/D2/stability/cycle/topology/KFE object currently exists.
 
 Production replacement, market clearing, GE, annual calibration, dynamics, IRF, welfare, causal interpretation and Results remain unauthorized.
