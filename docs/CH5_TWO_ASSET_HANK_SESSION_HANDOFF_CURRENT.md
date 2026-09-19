@@ -1,66 +1,47 @@
-# Chapter 5 当前交接 — repaired V2 selector complete / frozen local KKT incompatibility / Owner decision required
+# Chapter 5 当前交接 — interior-a zero-drift switching zero-science adjudication active
 
 更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
-状态：`V2_CELL100_FROZEN_LOCAL_KKT_INCOMPATIBILITY_CONFIRMED__OWNER_SCIENTIFIC_DECISION_REQUIRED__PRODUCTION_UNCHANGED`。
+状态：`V2_CELL100_INTERIOR_A_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
-当前 active Builder task：无。
 
 ## Governance
 
 Owner is final scientific authority; ChatGPT is L3 Reviewer/scientific-route authority; Codex is bounded Builder. GitHub live `main` is repository-state authority. `deep-learning-hank` is separate and must never be used for this route.
 
-## Latest accepted candidate
+## Accepted repaired V2 failure
 
-Builder candidate:
-`19e12ff6c87b2c08490883851e7c50ef958b9c3d`.
+The selector implementation omission is closed. Candidate `19e12ff6c87b2c08490883851e7c50ef958b9c3d` is accepted.
 
-Reviewer acceptance:
-`docs/CH5_MP4C_2018_KFE_D123_V2_LOWER_B_ACTIVE_NEGATIVE_BACKWARD_A_SELECTOR_REPAIR_AND_CHECKPOINT2_REEXECUTION_ACCEPTANCE_20260919.md`.
+At V2 cell100 all eight frozen branches are represented and none is admissible. The strongest accepted local statement remains:
 
-The repair correctly restores lower-b active negative-transfer branch completeness while preserving upper-b behavior and all frozen scientific laws. Focused tests passed `53/53`; source-faithful/production paths were not changed.
-
-## Repaired checkpoint-2 result
-
-Exactly one repaired V2 policy-map attempt was executed.
-
-Cells 0-99 are unchanged in selected policy identity and numeric controls/drifts/utility.
-
-The map again fails first at cell 100:
-- flat F index `100`;
-- zero-based `(0,5,0)`;
-- physical `(b,a,z)=(-2.0,2.6315789473684212,0.8)`;
-- eight frozen authority-backed cases persisted;
-- zero admissible comparisons;
-- outcome `NO_ADMISSIBLE_POLICY`.
-
-The restored active lower-b negative/backward-`a` case has:
-- `q_b=0.012457851515416401`;
-- `d=-0.23013514168909557`;
-- canonical `g_b=0`;
-- `g_a=0.00670682022114244`;
-- rejection `A_DERIVATIVE_DIRECTION_INCONSISTENT`.
-
-The negative/forward-`a` root gives `g_a=-0.0005429159000894801` and fails the opposite direction condition. Zero-kink and positive regimes remain rejected by the frozen transfer/KKT/no-root rules.
-
-Accepted interpretation:
 `ATTRIBUTED__FROZEN_V2_CELL100_LOCAL_KKT_INPUTS_STRUCTURALLY_INCOMPATIBLE`.
 
-This is local to the accepted V2 input and frozen corrected law. Do not call it global HJB nonexistence.
+The most informative new pattern is that the two negative-transfer active-lower-b roots straddle the interior-`a` direction condition:
+- backward derivative produces positive `g_a`;
+- forward derivative produces negative `g_a`.
 
-## Runtime boundary
+## Active task
 
-No Q2 or checkpoint-2 Bellman/value/stability/cycle object exists. No V2->V3 solve, topology/KFE/SVD, MATLAB, production, GE, annual, shock, IRF or Results call occurred.
+`tasks/CH5_MP4C_2018_KFE_D123_V2_CELL100_INTERIOR_A_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_20260919.md`
 
-Checkpoint 1 remains the last complete same-value checkpoint:
-- `B1=0.014710294187010184`;
-- `D1=0.47118375690461445`.
+This task is scientific-design adjudication only. It must determine whether the frozen Hamiltonian/upwind problem at an interior `a` node requires or supports an endogenous `g_a=0` switching branch, and whether cell100 can satisfy the prospective branch contract.
 
-## Owner decision now required
+It may use static source/docs, persisted receipts and scalar algebra only. All selector/root/policy-map/D2/HJB/KFE/MATLAB/downstream calls remain zero.
 
-The known implementation omission is closed. There is no remaining authorized implementation repair that can make the frozen eight-case cell100 census admissible.
+No code repair, no law adoption and no runtime reexecution is authorized.
 
-Any further progress on this corrected nonlinear route requires Owner to select a new scientific/numerical direction. The decision may concern the boundary/KKT law, finite-domain/discretization contract, or trajectory/initialization construction; Reviewer must not choose this silently.
+## Reviewer action after Builder return
 
-Until that decision is made, do not publish or run a successor scientific task.
+Independently inspect:
+- derivation of the interior-`a` Hamiltonian and direction law;
+- derivation of `d_Z=-r_a a` and the D3 transfer FOC/KKT;
+- derivative-interval orientation and numeric cell100 interval;
+- lower-`b` active compatibility;
+- whether any claimed liquid-equality root conclusion follows statically;
+- comparison against actual accepted liquid-`Z` and lower-`a` zero-kink authority;
+- treatment of finite-domain/boundary/grid/trajectory alternatives;
+- zero-call ledger.
 
-Production replacement, GE, annual calibration, dynamics, IRF, welfare, causal interpretation and Results remain closed.
+If the report supports a new interior-`a` switching law, Reviewer must return it to Owner for explicit adoption before implementation. If it does not, the frozen local incompatibility remains and a different Owner decision is needed.
+
+No production, GE or Results work is active.

@@ -2,75 +2,55 @@
 更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 Results eligibility=`FALSE`。
 
-## Accepted route
+## Accepted corrected household route
 
-The frozen source-faithful reference and separately governed corrected successor remain distinct. Owner-adopted corrected semantics include D1 upper numerical state constraints, D2 consumed-total-drift conservative assembly, D3 regularized-cost-consistent KKT, active lower-a zero-kink multiplier handling, and interior zero-liquid Z switching.
+The corrected route has accepted V0/Q0, V0->V1, V1/Q1, Q1 single closed class and pin-free/source-free unique Q1 invariant mass. The nonlinear design uses same-value `(P_n,u_n,Q_n)`, fixed `Delta=1000`, terminal-only KFE timing and the Owner-adopted Bellman/value convergence law.
 
-## KFE-D2C/D/E — accepted corrected household checkpoints
-
-The corrected route has:
-- accepted V0 800-cell policy map and Q0;
-- accepted direct HJB update `V0->V1`;
-- accepted V1 remap and Q1;
-- Q1 exact-positive single closed class `[5,6,405,406]`;
-- accepted pin-free/source-free unique Q1 invariant mass with rank/nullity `799/1`.
-
-These remain household/operator diagnostics until nonlinear HJB convergence is established.
-
-## KFE-D2F-A/B — nonlinear design and Owner convergence law accepted
-
-Accepted nonlinear design freezes state `V_n`, same-value derived `(P_n,u_n,Q_n)`, fixed `Delta=1000`, terminal-only KFE timing and at most 100 total HJB updates.
-
-Owner convergence law:
-1. Bellman residual `<=1e-8`;
-2. value change `<=1e-7`;
-3. both at the same checkpoint;
-4. policy/operator stability diagnostic only;
-5. direct-solve backward error `<=1e-12`;
-6. frozen exact and approximate period-2/3 cycle rules fail closed;
-7. no damping, relaxation, adaptive Delta, continuation, clipping, artificial diffusion, solver substitution, scientific retry or post-hoc tolerance tuning.
-
-## KFE-D2F-C — bounded nonlinear continuation fail-closed
-
-Accepted checkpoint 1:
+Checkpoint 1 is not converged:
 - `B1=0.014710294187010184`;
 - `D1=0.47118375690461445`.
 
-The one authorized `V1->V2` direct solve passed:
-- residual `1.9012569296705806e-14`;
-- backward error `2.5514110567283015e-16`;
-- V2 SHA-256 `A85AB791D7CFC3B0BDA52D886418B9552D79824E09EACE6B6E4A4BEC8F950DF1`.
+The accepted V1->V2 direct solve is numerically valid, but V2 cannot currently produce a complete corrected policy map.
 
-The original V2 remap first failed at flat 100 with seven persisted cases.
+## V2 selector implementation omission — closed
 
-## KFE-D2F-D — selector attribution and repair accepted
+The active lower-b negative-transfer pre-screen omission was attributed, repaired and reexecuted.
 
-Zero-science attribution established that the active lower-b negative-transfer pre-screen incorrectly used an upper-face multiplier domain and omitted the negative/backward-`a` case.
-
-The minimal corrected-selector repair is accepted in Builder candidate `19e12ff6c87b2c08490883851e7c50ef958b9c3d`.
-
-A single fresh repaired V2 remap:
-- leaves cells 0-99 selected policies byte/numerically unchanged at the reported comparison level;
-- restores the complete eight-case frozen census at cell100;
-- still yields zero admissible comparisons and `NO_ADMISSIBLE_POLICY`;
-- does not reach P2/u2/Q2 or B2/D2.
-
-The restored negative/backward-`a` case converges in liquid equality but yields positive `g_a` and is backward-direction inconsistent. The negative/forward-`a` case converges but yields negative `g_a` and is forward-direction inconsistent. The remaining regimes fail the already frozen primal/KKT/sign/no-root requirements.
+The repaired selector restores all eight frozen authority-backed cases at cell100. The map still returns `NO_ADMISSIBLE_POLICY`. Therefore the implementation omission is closed.
 
 Accepted local classification:
 
 `ATTRIBUTED__FROZEN_V2_CELL100_LOCAL_KKT_INPUTS_STRUCTURALLY_INCOMPATIBLE`.
 
-## KFE-D2F-E — Owner scientific decision gate
+## Current stage — interior-a switching adjudication
 
-The implementation omission is closed. The current frozen corrected route cannot construct a complete V2 policy map under its adopted local branch/KKT law.
+Owner has authorized a zero-science scientific-design gate:
 
-This does not prove global HJB nonexistence. It means the next step can no longer be an implementation repair under current authority.
+`tasks/CH5_MP4C_2018_KFE_D123_V2_CELL100_INTERIOR_A_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_20260919.md`.
 
-Any successor must begin with an Owner scientific decision about which assumption or numerical contract may change, such as the boundary/KKT formulation, finite-domain/discretization choice, or trajectory/initialization construction. No successor scientific task is active until that choice is made.
+Motivation: cell100 is interior in illiquid `a`, and the two active lower-b negative-transfer roots produce opposite-sign `a` drifts relative to their chosen one-sided derivatives:
+- backward-`a` -> `g_a>0`;
+- forward-`a` -> `g_a<0`.
 
-## KFE-D3 — later production closure
+The gate asks whether a mathematically correct upwind/viscosity treatment should contain a zero-`a)-drift switching branch `g_a=0`, analogous in numerical role to the already adopted liquid-`Z` branch, or whether the current failure is better attributed to boundary/domain/discretization/trajectory construction.
 
-Corrected multi-province production replacement, market clearing, GE/annual/dynamics/IRF and Results remain downstream gates with separate evidence and authority.
+This gate performs no scientific runtime and does not adopt a law.
 
-Capital/labor K1/C1/K1B/K2 routes remain deferred, not abandoned. They must not be represented as having bypassed the unresolved household fixed-point route.
+## Decision branches after adjudication
+
+If an interior-`a` switching law is scientifically supported:
+1. Owner explicitly adopts or rejects the prospective contract.
+2. Only after adoption may Reviewer publish a minimal implementation/single-cell or bounded-map task.
+3. Nonlinear continuation remains separately bounded under the existing convergence law unless Owner changes it.
+
+If it is not supported:
+- the frozen local incompatibility stands;
+- Owner must choose another scientific route before further HJB runtime.
+
+## Downstream closure
+
+No P2/u2/Q2, B2/D2/stability/cycle or terminal KFE object exists.
+
+Corrected production replacement, market clearing, GE/annual/dynamics/IRF and Results remain downstream and closed.
+
+Capital/labor K1/C1/K1B/K2 routes remain deferred, not abandoned, and do not bypass the household fixed-point gate.
