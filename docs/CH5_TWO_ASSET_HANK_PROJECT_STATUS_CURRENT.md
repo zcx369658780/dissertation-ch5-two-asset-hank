@@ -1,37 +1,43 @@
 # Chapter 5 两资产 HANK 当前状态
 
-更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
+更新：2026-09-20。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`CHECKPOINT6_COMPLETE_NONCONVERGED__BOUNDED_NONLINEAR_CONTINUATION_TO_CHECKPOINT10_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`CHECKPOINT10_COMPLETE_NONCONVERGED__BOUNDED_NONLINEAR_CONTINUATION_TO_CHECKPOINT12_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
-## Accepted checkpoint-3 to checkpoint-6 trajectory
+## Accepted trajectory through checkpoint 10
 
-Reviewer accepted Builder candidate `cc540b6d8ea4ff93ecbf4b8af9f7ece5aa2c2bb7`.
+Reviewer accepted Builder candidate `537ed052a674d5f38f3586d6c94528af5e76b48b`.
 
 Acceptance:
-`docs/CH5_MP4C_2018_KFE_D123_CHECKPOINT3_TO_CHECKPOINT6_BOUNDED_NONLINEAR_CONTINUATION_ACCEPTANCE_20260919.md`.
+`docs/CH5_MP4C_2018_KFE_D123_CHECKPOINT6_TO_CHECKPOINT10_BOUNDED_NONLINEAR_CONTINUATION_ACCEPTANCE_20260920.md`.
 
-Checkpoints 4, 5 and 6 are complete; all three D2 gates pass.
+Checkpoints 7-10 are complete. Every policy map completes 800/800. Every D2 gate passes. Every direct solve passes the frozen backward-error gate. No exact or authorized approximate cycle is detected.
 
-Checkpoint 6:
+Recent metrics:
 
-- V6 `69865ACDD71A26A3E3F4A8DAD55C964F826D34C774C9B8193FE997973EE6D89F`
-- P6 `63026FBE8BE72E3B29B5FC44EBD100C01C146179D05B55C779E9E232AEA435A3`
-- u6 `09D5A6622535709146751865931109F058FED3688FAE755C5EF9A0E00AD8B89E`
-- Q6 `039734AF0BC38AD3BD0FF38854CBE8B4B0B93BA415EC2A47B1C09F827EA7F454`
-- checkpoint identity `B26177C216DA6902226BD93E802A2B1FE0E794B29BE14EA1A1BCBFFD8F8691A1`
-- `B6=0.005940678766947715`
-- `D6=0.010000685482095761`.
+- checkpoint 7: `B7=9.83868092531745e-4`, `D7=2.7865782347942236e-3`
+- checkpoint 8: `B8=1.6252618227152738e-4`, `D8=6.617669262674042e-4`
+- checkpoint 9: `B9=8.986962138773924e-6`, `D9=1.1033293848816683e-4`
+- checkpoint 10: `B10=3.874510913493001e-8`, `D10=5.8692895192891115e-6`.
 
-Primary convergence fails; no exact, period-2 or period-3 cycle is detected.
+Checkpoint 10 is close to, but does not satisfy, the frozen `1e-8 / 1e-7` primary thresholds.
 
-The representation-only checkpoint-4 cycle diagnostic repair/resume is accepted because the sealed V4 scientific prefix was reused without recomputation and the fix only restored the adopted F-order vector infinity norm.
+## Exact checkpoint 10
+
+- V10 `AE1610BA320F57AF73EE3C5411C298BF00610606B13B5185F2CD65BF1736FB24`
+- P10 `89F79E4C1FC094DBEE8B82CFBAD677276D42839E915426CA0E5565865FBD87A3`
+- u10 `215BEC4AABBC337147D73A227751CD6A89CC483E3CA056470A2AEF161AA41F38`
+- Q10 `917479763C4690FEAB358098D7F1CE2EBB4DD7C4939A7060156E7A4FCDEE59BD`
+- checkpoint identity `4FC2855AB4102AEAE8B173D0EBBBF40FCD334583A039BE4AE65C8DE2B1145C8D`
+- checkpoint arrays `BEA1D08A10C53E4EF3246A413A9446633DAAD6A4ACCAD4E34463BB74756C5512`
+- D2 PASS
+- exact/period-2/period-3 cycle: none.
 
 ## Active task
 
-`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT6_TO_CHECKPOINT10_BOUNDED_NONLINEAR_CONTINUATION_20260919.md`.
+`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT10_TO_CHECKPOINT12_BOUNDED_NONLINEAR_CONTINUATION_20260920.md`.
 
-The task binds accepted checkpoint 6 and may consume global updates 7-10 only.
+It may consume global updates 11-12 only and must stop immediately on convergence, cycle, selector/D2 failure, solve failure, or checkpoint 12.
 
-Terminal KFE/topology/SVD, production, GE and Results remain closed.
+Terminal topology/KFE/SVD, production, GE and Results remain closed.

@@ -1,41 +1,50 @@
 # Chapter 5 Python 多省份两资产 HANK 路线
-更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
+更新：2026-09-20。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 Results eligibility=`FALSE`。
 
-## Corrected household numerical route
+## Household corrected numerical foundation
 
-The accepted corrected route now has complete same-value nonlinear checkpoints through checkpoint 6.
+The corrected household route has now reached complete accepted checkpoints through checkpoint 10.
 
-All accepted checkpoints 2-6 have complete policy maps and passing D2 operators after the previously accepted selector/upwind repairs.
+Accepted numerical/scientific closure includes D1/D2/D3, boundary KKT, lower-`a` zero-kink, liquid-`Z`, one-axis interior-`a` switching, simultaneous two-axis switching, repaired lower-b branch representation, fixed nonlinear update law and accepted cycle rules.
 
-Checkpoint-6 metrics:
+Local selector-law design is no longer the primary bottleneck.
 
-- `B6=0.005940678766947715`
-- `D6=0.010000685482095761`
-- no exact cycle
-- no authorized approximate period-2/3 cycle.
+## Current nonlinear state
 
-The household HJB is therefore still nonterminal under the frozen Owner law.
+Checkpoint 10 is complete and D2-valid:
+
+- `B10=3.874510913493001e-08`
+- `D10=5.8692895192891115e-06`.
+
+It does not satisfy the frozen convergence thresholds `1e-8 / 1e-7`.
+
+No exact, period-2 or period-3 cycle is detected.
+
+The recent trajectory is strongly approaching the frozen thresholds, but trend is diagnostic only.
 
 ## Current stage
 
 Active task:
 
-`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT6_TO_CHECKPOINT10_BOUNDED_NONLINEAR_CONTINUATION_20260919.md`.
+`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT10_TO_CHECKPOINT12_BOUNDED_NONLINEAR_CONTINUATION_20260920.md`.
 
-The route may consume updates 7-10 only, stopping on convergence, cycle, policy/D2 failure, direct-solve failure, or checkpoint 10.
+At most updates 11-12 may be consumed.
 
-No trend-based interpretation is a stop rule. The recent fall in Bellman residual is only diagnostic evidence.
+If primary convergence occurs, continuation stops immediately and the next independent gate is terminal household topology/KFE validation.
 
-## Remaining household gates
+## Remaining household closure
 
-Before the household block can close:
+After an accepted HJB convergence candidate:
 
-1. reach and accept primary HJB convergence;
-2. run separate final same-value topology/KFE gate;
-3. verify one closed class, source-free homogeneous KFE, dense GESVD rank/nullity and nonnegative normalized stationary mass;
-4. accept the conditional household fixed point at frozen prices/calibration.
+1. confirm same-value final D1/D2 legality;
+2. prove exactly one closed communicating class;
+3. solve source-free homogeneous KFE on the same Q*;
+4. verify `Q*.T p*=0`;
+5. dense GESVD rank/nullity;
+6. nonnegative normalized stationary mass;
+7. accept only a conditional household fixed point at frozen prices/calibration.
 
-Only after that may the deferred multi-province production/capital/labor/market-clearing route reopen.
+Only after household closure may the deferred multi-province production/capital/labor/market-clearing route reopen.
 
-GE, annual dynamics, IRFs, welfare and Results remain downstream.
+GE, annual calibration/dynamics, shocks, IRFs, welfare and Results remain downstream.
