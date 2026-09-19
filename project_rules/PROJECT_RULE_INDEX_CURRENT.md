@@ -8,34 +8,33 @@
 2. 本索引
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
-5. `docs/CH5_MP4C_2018_KFE_D123_INTERIOR_A_ZERO_DRIFT_SWITCHING_OWNER_ADOPTION_20260919.md`
-6. `docs/CH5_MP4C_2018_KFE_D123_V2_CELL100_INTERIOR_A_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_ACCEPTANCE_20260919.md`
-7. `docs/CH5_MP4C_2018_KFE_D123_V2_CELL100_INTERIOR_A_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_REPORT.md`
-8. repaired-selector checkpoint-2 report/acceptance
-9. accepted D1/D2/D3, liquid-`Z`, lower-`a` zero-kink and nonlinear-convergence authorities
-10. current active task and exact accepted V2 identity.
+5. `docs/CH5_MP4C_2018_KFE_D123_INTERIOR_A_ZERO_DRIFT_SWITCHING_IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_ACCEPTANCE_20260919.md`
+6. its execution report and exact cell185 receipt
+7. `docs/CH5_MP4C_2018_KFE_D123_INTERIOR_A_ZERO_DRIFT_SWITCHING_OWNER_ADOPTION_20260919.md`
+8. `docs/CH5_MP4C_2018_KFE_D123_INTERIOR_ZERO_LIQUID_Z_OWNER_ADOPTION_ACCEPTANCE_20260916.md`
+9. accepted D1/D2/D3, lower-`a` zero-kink and nonlinear-convergence authorities
+10. current active task.
 
 Current status:
 
-`INTERIOR_A_ZERO_DRIFT_SWITCHING_OWNER_ADOPTED__IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_ACTIVE__PRODUCTION_UNCHANGED`.
+`V2_CELL185_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_ACTIVE__PRODUCTION_UNCHANGED`.
 
 Current active Builder task:
 
-`tasks/CH5_MP4C_2018_KFE_D123_INTERIOR_A_ZERO_DRIFT_SWITCHING_IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_20260919.md`.
+`tasks/CH5_MP4C_2018_KFE_D123_V2_CELL185_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_20260919.md`.
 
 Results eligibility=`FALSE`.
 
-Owner-adopted law:
-- trigger only at interior `a` strict backward-positive / forward-negative drift crossing under the same existing liquid branch/active set and transfer regime;
-- impose `g_a=0`, hence `d_Z=-r_a a`;
-- use unchanged D3 KKT/subgradient;
-- require `q_a` inside the closed one-sided derivative interval;
-- preserve existing liquid-axis multiplier/domain and liquid-`Z` laws;
-- active liquid faces require one unique legal `g_b=0` root inside the exact interval intersection;
-- no simultaneous newly-created two-axis switching;
-- reconstruct controls/KKT/Hamiltonian from shadows;
-- D2 remains unchanged and consumes canonical zero drift only under existing residual rules.
+Latest accepted facts:
 
-The active task may implement/test this law and perform one fresh accepted-V2 checkpoint-2 map. If complete, it may assemble one Q2 and compute checkpoint-2 diagnostics. It authorizes zero V2->V3 updates, zero terminal KFE/topology/SVD, zero MATLAB/downstream and zero scientific retries.
+- Owner-adopted one-axis interior-`a` switching closes V2 cell100;
+- the fresh map first fails at cell185;
+- cell185 is interior in both `b` and `a`;
+- backward-`a` liquid-`Z` gives `g_a>0`;
+- forward-`a` liquid-`Z` gives `g_a<0`;
+- current law explicitly forbids simultaneous newly-created two-axis switching;
+- the failure is therefore scientific/authority-level, not an implementation defect.
+
+The active task is zero-science. It may derive and adjudicate a joint `g_b=g_a=0` contract but may not implement or adopt it.
 
 Production, GE, annual, dynamics, IRF, welfare and Results remain closed.
