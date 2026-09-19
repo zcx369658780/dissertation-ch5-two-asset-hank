@@ -1,51 +1,58 @@
-# Chapter 5 当前交接 — joint two-axis switching Owner-adopted / bounded implementation active
+# Chapter 5 当前交接 — complete checkpoint 2 accepted / bounded nonlinear continuation active
 
 更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
-状态：`SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_OWNER_ADOPTED__IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`CHECKPOINT2_COMPLETE_NONCONVERGED__BOUNDED_NONLINEAR_CONTINUATION_TO_CHECKPOINT6_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
 ## Governance
 
 Owner is final scientific authority; ChatGPT is L3 Reviewer/scientific-route authority; Codex is bounded Builder. GitHub live `main` is repository-state authority. `deep-learning-hank` remains separate and must never be used for this route.
 
-## Adopted joint law
+## Major accepted milestone
 
-Authority:
-`docs/CH5_MP4C_2018_KFE_D123_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_OWNER_ADOPTION_20260919.md`.
+The corrected V2 policy map now completes all 800 cells under the adopted multidimensional switching laws.
 
-At an interior-interior node, after ordinary and one-axis candidates establish the coupled strict-crossing trigger under one common transfer regime, the corrected-diagnostic selector may create one simultaneous candidate satisfying:
+Accepted checkpoint 2:
 
-- `g_a=0`;
-- `g_b=0`;
-- unchanged D3;
-- `q_a` inside the illiquid derivative interval;
-- `q_b` inside the liquid derivative interval.
+- V2 SHA `A85AB791D7CFC3B0BDA52D886418B9552D79824E09EACE6B6E4A4BEC8F950DF1`
+- P2 identity `EBCBABC0593EF163D2E7FA300F6FFEB6E3C187D232D4CCEA5D59AB7180CD1D95`
+- u2 SHA `C222F4B147F48EA177A28AAF289F3ED5EA76F531BC08201070DD63698BF98D73`
+- Q2 SHA `346DBCDA13392DAF6897DC185767B0E7C5961AA76A9AAA686053AEDA33C02F9F`
+- checkpoint identity `71DC6975E814060A4F63961A736E6E9DDF766C51CE4672C3EF777E5E15B80C2C`
+- D2 PASS.
 
-The candidate is solved on the exact D3/rectangle interval intersection, reconstructed from shadows, and compared under the existing Hamiltonian rule. It is not a sequential pair of one-axis switches.
+Primary convergence fails at checkpoint 2:
 
-D1/D2/D3, one-axis laws, root tolerance/solver, grid/calibration, HJB update/convergence, terminal KFE and production paths remain unchanged.
+- `B2=0.006582827785543588`
+- `D2=0.05439336697877817`.
+
+Thus the project has moved past local selector-closure work at V2 and back into the frozen nonlinear HJB trajectory.
 
 ## Active task
 
-`tasks/CH5_MP4C_2018_KFE_D123_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_20260919.md`.
+`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT2_TO_CHECKPOINT6_BOUNDED_NONLINEAR_CONTINUATION_20260919.md`.
 
-Builder first implements/tests the joint law and exact cell185 closure, then runs at most one fresh accepted-V2 policy map.
+The task binds accepted checkpoint 2 and may perform at most four updates through V6.
 
-If the map fails, stop at the first new scientific object.
+It does not remap V2 before the first update.
 
-If the map completes, assemble at most one Q2 and compute checkpoint-2 B2/D2/policy/operator/cycle diagnostics. Stop before V2->V3 and terminal KFE.
+For checkpoints 3-6:
 
-## Reviewer action after Builder return
+- one fresh policy map each;
+- one D2/Q each only after map completion;
+- B/D and policy/operator diagnostics;
+- primary convergence first;
+- exact cycle next;
+- approximate period-2/3 only when full windows exist;
+- direct solve to next checkpoint only if all gates remain nonterminal.
 
-Verify:
+Earliest complete approximate period-2 window: checkpoint 4.
+Earliest complete approximate period-3 window: checkpoint 6.
 
-- exact diff and no production/source-faithful changes;
-- joint trigger/rectangle/D3/root semantics;
-- precedence/deduplication and no sequential duplicate;
-- cell185 joint receipt;
-- cell100 and liquid-`Z` non-regression;
-- focused tests;
-- one-map/no-retry ledger;
-- first failure or complete P2/u2/Q2 and B2/D2 evidence.
+If any new selector/scientific issue appears, stop without repair.
 
-Production, GE and Results remain closed.
+Even if HJB convergence is reached, terminal topology/KFE is deferred to a separate Reviewer gate.
+
+## Downstream
+
+Household HJB convergence, terminal household KFE, market clearing, production replacement, GE, annual dynamics, IRFs, welfare and Results remain open/closed according to their later gates. Results eligibility is still FALSE.

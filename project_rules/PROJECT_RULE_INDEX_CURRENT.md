@@ -4,42 +4,38 @@
 唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
 开始任何工作先读取：
+
 1. `AGENTS.md`
 2. 本索引
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
-5. `docs/CH5_MP4C_2018_KFE_D123_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_OWNER_ADOPTION_20260919.md`
-6. cell185 zero-science adjudication acceptance/report
-7. interior-`a` implementation/reexecution acceptance/report
-8. interior-`a` Owner adoption
-9. liquid-`Z` Owner adoption
-10. accepted D1/D2/D3, lower-`a` zero-kink and nonlinear-convergence authorities
-11. current active task and exact accepted V2 identity.
+5. `docs/CH5_MP4C_2018_KFE_D123_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_ACCEPTANCE_20260919.md`
+6. its execution report and accepted checkpoint-2 evidence
+7. `docs/CH5_MP4C_2018_KFE_D123_NONLINEAR_CONVERGENCE_LAW_OWNER_ADOPTION_20260917.md`
+8. Owner-adopted liquid-`Z`, interior-`a`, joint-switching and lower-`a` zero-kink authorities
+9. accepted D1/D2/D3 and exact V0/V1/V2 identities
+10. current active task.
 
 Current status:
 
-`SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_OWNER_ADOPTED__IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_ACTIVE__PRODUCTION_UNCHANGED`.
+`CHECKPOINT2_COMPLETE_NONCONVERGED__BOUNDED_NONLINEAR_CONTINUATION_TO_CHECKPOINT6_ACTIVE__PRODUCTION_UNCHANGED`.
 
 Current active Builder task:
 
-`tasks/CH5_MP4C_2018_KFE_D123_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_20260919.md`.
+`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT2_TO_CHECKPOINT6_BOUNDED_NONLINEAR_CONTINUATION_20260919.md`.
 
 Results eligibility=`FALSE`.
 
-Owner-adopted joint law:
+Accepted checkpoint 2:
 
-- interior-interior nodes only;
-- ordinary and one-axis candidates evaluated first;
-- require the coupled strict-crossing trigger under one common transfer regime;
-- impose `g_b=g_a=0` simultaneously;
-- use unchanged D3;
-- require both shadows inside their closed one-sided derivative intervals;
-- solve fixed-transfer liquid equality only on the exact interval intersection;
-- require one unique legal root;
-- create one joint candidate, not sequential duplicates;
-- reconstruct controls/KKT/Hamiltonian from shadows;
-- D2 remains unchanged.
+- complete 800-cell map;
+- D2/Q2 PASS;
+- `B2=0.006582827785543588`;
+- `D2=0.05439336697877817`;
+- nonconverged;
+- no exact cycle;
+- no complete approximate-cycle window yet.
 
-The active task may implement/test this law and perform one fresh accepted-V2 map. If complete, it may assemble one Q2 and compute checkpoint-2 diagnostics. It authorizes zero V2->V3, zero terminal KFE/topology/SVD, zero MATLAB/downstream and zero scientific retries.
+The active task may consume updates 3-6 only, with fixed `Delta=1000`, direct-solve backward-error threshold `1e-12`, and the frozen Bellman/value/cycle laws.
 
-Production, GE, annual, dynamics, IRF, welfare and Results remain closed.
+Terminal topology/KFE, MATLAB/production, GE, annual dynamics, IRFs, welfare and Results remain closed.

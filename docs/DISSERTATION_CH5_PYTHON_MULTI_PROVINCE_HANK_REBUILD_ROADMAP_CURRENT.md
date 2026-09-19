@@ -2,59 +2,78 @@
 更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 Results eligibility=`FALSE`。
 
-## Accepted corrected household foundation
+## Household numerical foundation — largely closed
 
-Accepted milestones include:
+Accepted scientific/numerical components now include:
 
-- corrected V0 800-cell policy map and Q0;
-- direct V0->V1 update;
-- V1 remap/Q1;
-- Q1 single closed class and unique pin-free/source-free invariant mass diagnostics;
-- frozen nonlinear HJB convergence law;
-- Owner-adopted liquid-`Z` switching;
-- repaired lower-b branch coverage;
-- Owner-adopted one-axis interior-`a` zero-drift switching, which closes cell100.
+- D1 finite-domain/boundary law;
+- D2 consumed-total-drift conservative generator;
+- D3 regularized adjustment-cost KKT;
+- lower-`a` zero-kink multiplier law;
+- interior-liquid zero-drift `Z`;
+- lower-b complete branch coverage;
+- one-axis interior-`a` zero-drift switching;
+- simultaneous two-axis zero-drift switching;
+- corrected V0/Q0;
+- direct V0->V1;
+- V1/Q1;
+- Q1 topology and source-free KFE diagnostics;
+- direct V1->V2;
+- complete V2/P2/u2/Q2.
 
-Checkpoint 1 remains nonconverged:
-- `B1=0.014710294187010184`;
-- `D1=0.47118375690461445`.
+The local corrected-selector closure phase has therefore reached a complete checkpoint 2.
 
-## Cell185 coupled closure
+## Checkpoint 2 — complete but nonconverged
 
-The V2 map after one-axis interior-`a` adoption first fails at cell185.
+Accepted:
 
-Zero-science adjudication proves one unique simultaneous `g_b=g_a=0` joint candidate exists inside the two derivative intervals.
+- `B2=0.006582827785543588`
+- `D2=0.05439336697877817`
+- D2/Q2 PASS
+- no exact cycle
+- approximate period-2/3 windows not yet available.
 
-Owner has now adopted the generic coupled law:
+This is the first complete nonlinear checkpoint after V1 under the fully adopted multidimensional switching law.
 
-`docs/CH5_MP4C_2018_KFE_D123_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_OWNER_ADOPTION_20260919.md`.
-
-## Current stage
+## Current stage — bounded nonlinear continuation
 
 Active task:
 
-`tasks/CH5_MP4C_2018_KFE_D123_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_20260919.md`.
+`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT2_TO_CHECKPOINT6_BOUNDED_NONLINEAR_CONTINUATION_20260919.md`.
 
-The task implements/tests the joint law and executes one fresh V2 policy-map attempt.
+The route may continue through at most V6, under fixed `Delta=1000` and the Owner convergence/cycle law.
 
-If complete:
-- assemble one Q2;
-- compute B2/D2, switching statistics, Q2-Q1, and cycle diagnostics;
-- stop before V2->V3 and terminal KFE.
+The purpose is to determine whether the now-complete corrected household HJB:
 
-If it fails:
-- stop at the first new scientific object.
+- converges;
+- enters an exact or authorized approximate cycle;
+- exposes another scientific selector/D2 issue;
+- or remains nonconverged through checkpoint 6.
 
-## Remaining major gates after a complete checkpoint 2
+No terminal KFE is run inside this continuation task.
 
-Even if the current task completes the V2 map, the household route still requires:
+## After HJB convergence
 
-1. nonlinear HJB convergence under the frozen Bellman/value law;
-2. terminal D2/topology/KFE acceptance at a converged HJB candidate;
-3. household fixed-point closure;
-4. only then the deferred multi-province production/capital/labor/market-clearing route;
-5. GE/annual/dynamics/IRF/welfare/Results gates.
+Once a primary HJB convergence candidate is accepted:
+
+1. same-value final D1/D2 legality confirmation;
+2. one-closed-class topology gate;
+3. pin-free/source-free homogeneous terminal KFE;
+4. dense GESVD rank/nullity and nonnegative mass;
+5. conditional household fixed-point acceptance at frozen prices/calibration.
+
+Only after household closure may the deferred multi-province production/capital/labor/market-clearing route reopen.
+
+## Downstream project stages
+
+Still downstream:
+
+- multi-province production replacement;
+- bilateral capital/labor network closure;
+- market clearing and GE;
+- annual calibration;
+- dynamics/shocks/IRFs;
+- welfare/causal interpretation;
+- dissertation Results.
 
 Capital/labor K1/C1/K1B/K2 routes remain deferred, not abandoned.
-
-Production replacement, GE and Results remain closed.

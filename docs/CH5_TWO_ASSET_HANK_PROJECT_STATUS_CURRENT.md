@@ -2,41 +2,52 @@
 
 更新：2026-09-19。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 
-状态：`SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_OWNER_ADOPTED__IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_ACTIVE__PRODUCTION_UNCHANGED`。
+状态：`CHECKPOINT2_COMPLETE_NONCONVERGED__BOUNDED_NONLINEAR_CONTINUATION_TO_CHECKPOINT6_ACTIVE__PRODUCTION_UNCHANGED`。
 Results eligibility=`FALSE`。
 
-## Owner adoption
+## Accepted complete checkpoint 2
 
-Owner explicitly adopted:
+Reviewer accepted Builder candidate `62d01dac0eb1e516386cf6336837b5a2ef4463e5`.
 
-`docs/CH5_MP4C_2018_KFE_D123_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_OWNER_ADOPTION_20260919.md`.
+Acceptance:
+`docs/CH5_MP4C_2018_KFE_D123_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_ACCEPTANCE_20260919.md`.
 
-The joint law applies only to interior-interior asset nodes after ordinary and one-axis candidates establish the accepted coupled strict-crossing evidence. It solves `g_b=g_a=0` simultaneously, uses unchanged D3, requires both shadows inside their one-sided derivative intervals, and creates one coupled candidate rather than sequentially composing one-axis switches.
+The Owner-adopted joint two-axis switching law is implemented and accepted. The accepted V2 policy map completes `800/800` cells.
+
+Key checkpoint-2 identities:
+
+- V2: `A85AB791D7CFC3B0BDA52D886418B9552D79824E09EACE6B6E4A4BEC8F950DF1`
+- P2: `EBCBABC0593EF163D2E7FA300F6FFEB6E3C187D232D4CCEA5D59AB7180CD1D95`
+- u2: `C222F4B147F48EA177A28AAF289F3ED5EA76F531BC08201070DD63698BF98D73`
+- Q2: `346DBCDA13392DAF6897DC185767B0E7C5961AA76A9AAA686053AEDA33C02F9F`
+- full checkpoint identity: `71DC6975E814060A4F63961A736E6E9DDF766C51CE4672C3EF777E5E15B80C2C`.
+
+D2 passes.
+
+Checkpoint 2 is nonconverged:
+
+- `B2=0.006582827785543588 > 1e-8`
+- `D2=0.05439336697877817 > 1e-7`.
+
+No cycle is established at checkpoint 2.
 
 ## Active task
 
-`tasks/CH5_MP4C_2018_KFE_D123_SIMULTANEOUS_TWO_AXIS_ZERO_DRIFT_SWITCHING_IMPLEMENTATION_AND_V2_CHECKPOINT2_REEXECUTION_20260919.md`.
+`tasks/CH5_MP4C_2018_KFE_D123_CHECKPOINT2_TO_CHECKPOINT6_BOUNDED_NONLINEAR_CONTINUATION_20260919.md`.
 
-The task authorizes:
+The task reuses accepted V2/P2/u2/Q2 and may execute up to four new direct HJB updates, ending no later than checkpoint 6.
 
-1. minimal corrected-diagnostic joint-switch implementation;
-2. focused engineering tests including exact cell185 and one-axis non-regression;
-3. one fresh accepted-V2 checkpoint-2 policy-map attempt;
-4. only if the map completes, one Q2 assembly and one checkpoint-2 diagnostic evaluation.
+At every new checkpoint it must freshly map policies, assemble D2/Q, compute B/D and stability diagnostics, then apply primary convergence, exact-cycle and applicable approximate period-2/3 rules before any next update.
 
-It authorizes zero V2->V3 updates, zero terminal KFE/topology/SVD, zero MATLAB/production/GE/IRF/Results, and zero scientific retries.
+It must stop immediately on any failure, convergence or cycle condition.
 
-## Frozen runtime facts
+Terminal KFE/topology/SVD, production, GE and Results remain forbidden.
 
-Accepted V2 SHA-256:
-`A85AB791D7CFC3B0BDA52D886418B9552D79824E09EACE6B6E4A4BEC8F950DF1`.
+## Update accounting
 
-Checkpoint 1 remains the last complete same-value checkpoint:
-- `B1=0.014710294187010184`;
-- `D1=0.47118375690461445`.
+- V0->V1: accepted update 1
+- V1->V2: accepted update 2
+- active task may consume updates 3-6
+- global ceiling: 100.
 
-Cell100 is closed by the accepted one-axis interior-`a` law. Cell185 is the first current V2 fail-closed object and is the exact regression target of the active task.
-
-No complete P2/u2/Q2 or B2/D2 object exists yet.
-
-Production replacement, market clearing, GE, annual calibration, dynamics, IRF, welfare, causal interpretation and Results remain unauthorized.
+No damping, relaxation, adaptive Delta, solver substitution, retry or tolerance retuning is authorized.
