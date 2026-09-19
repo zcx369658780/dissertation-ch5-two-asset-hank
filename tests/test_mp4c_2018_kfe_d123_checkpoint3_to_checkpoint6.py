@@ -15,6 +15,10 @@ from ch5_two_asset_hank.corrected_diagnostic.checkpoint3_to_checkpoint6 import (
     _new_ledger,
     detect_authorized_approximate_cycle,
 )
+from ch5_two_asset_hank.corrected_diagnostic.checkpoint3_to_checkpoint6_resume import (
+    ACCEPTED_PREFIX_MANIFEST_SHA256,
+    _load_resume_prefix,
+)
 
 
 def test_accepted_checkpoint3_binding_is_exact_without_remapping() -> None:
@@ -63,23 +67,39 @@ def test_task_ledger_forbids_v3_map_and_q3_reruns() -> None:
 
 def test_approximate_cycle_windows_use_accepted_history() -> None:
     values_through_v4 = [
-        np.array([99.0]),
-        np.array([0.0]),
-        np.array([1.0]),
-        np.array([0.0]),
-        np.array([1.0]),
+        np.full((2, 2, 2), 99.0),
+        np.full((2, 2, 2), 0.0),
+        np.full((2, 2, 2), 1.0),
+        np.full((2, 2, 2), 0.0),
+        np.full((2, 2, 2), 1.0),
     ]
     result = detect_authorized_approximate_cycle(values_through_v4, checkpoint=4)
     assert result is not None and result["period"] == 2
 
     values_through_v6 = [
-        np.array([99.0]),
-        np.array([0.0]),
-        np.array([1.0]),
-        np.array([2.0]),
-        np.array([0.0]),
-        np.array([1.0]),
-        np.array([2.0]),
+        np.full((2, 2, 2), 99.0),
+        np.full((2, 2, 2), 0.0),
+        np.full((2, 2, 2), 1.0),
+        np.full((2, 2, 2), 2.0),
+        np.full((2, 2, 2), 0.0),
+        np.full((2, 2, 2), 1.0),
+        np.full((2, 2, 2), 2.0),
     ]
     result = detect_authorized_approximate_cycle(values_through_v6, checkpoint=6)
     assert result is not None and result["period"] == 3
+
+
+def test_resume_prefix_reuses_complete_v4_map_and_q_without_reexecution() -> None:
+    repository = Path(__file__).resolve().parents[1]
+
+    prefix = _load_resume_prefix(repository)
+
+    assert prefix["manifest_sha256"] == ACCEPTED_PREFIX_MANIFEST_SHA256
+    assert prefix["terminal_classification"] == "FAIL__SCIENTIFIC_GATE_AFTER_ENTRY"
+    assert prefix["terminal_message"] == "Improper number of dimensions to norm."
+    assert prefix["v4_policy_map_rerun"] is False
+    assert prefix["q4_assembly_rerun"] is False
+    assert len(prefix["p4_rows"]) == 800
+    assert prefix["ledger"]["selector_evaluations"] == 800
+    assert prefix["ledger"]["d2_assemblies"] == 1
+    assert prefix["ledger"]["scientific_retries"] == 0

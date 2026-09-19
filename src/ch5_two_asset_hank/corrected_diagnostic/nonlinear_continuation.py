@@ -190,7 +190,12 @@ def detect_approximate_cycle(
             continue
         start = len(values) - period
         comparisons = [
-            float(np.linalg.norm(values[index] - values[index - period], ord=np.inf))
+            float(
+                np.linalg.norm(
+                    (values[index] - values[index - period]).ravel(order="F"),
+                    ord=np.inf,
+                )
+            )
             for index in range(start, len(values))
         ]
         if all(np.isfinite(value) and value <= tolerance for value in comparisons):
