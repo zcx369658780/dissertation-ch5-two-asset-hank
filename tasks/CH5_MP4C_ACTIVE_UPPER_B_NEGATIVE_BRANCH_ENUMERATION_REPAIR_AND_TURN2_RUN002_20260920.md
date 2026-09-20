@@ -10,7 +10,7 @@ Task ID:
 
 `CH5_MP4C_ACTIVE_UPPER_B_NEGATIVE_BRANCH_ENUMERATION_REPAIR_AND_TURN2_RUN002_20260920`
 
-Status: `ACTIVE`
+Status: `COMPLETED_FAIL_ACCEPTED`
 
 ## Governance
 
@@ -335,3 +335,25 @@ If any new scientific failure occurs, stop at the first failing object with no r
 - do not modify CURRENT files
 - do not merge main
 - do not publish successor.
+
+
+## Reviewer closure — 2026-09-20
+
+Candidate `55dd5b81f1749e2af9e8d2a9a2507803b514131d` is accepted as failed scientific evidence.
+
+The authorized active-upper-b negative branch-enumeration repair is accepted and F0579 parity passed.
+
+Fresh turn-2 run002 then stopped at the first new scientific failure:
+
+- Beijing
+- checkpoint 5
+- flat 364
+- `(b,a,z)=(-0.5263157894736843,9.473684210526315,0.8)`
+- selector outcome `NO_ADMISSIBLE_POLICY`
+- checkpoint-5 D2/Q not assembled.
+
+Acceptance:
+`docs/CH5_MP4C_TURN2_RUN002_F0364_SELECTOR_FAILURE_ACCEPTANCE_20260920.md`
+
+Next active task:
+`tasks/CH5_MP4C_TURN2_BEIJING_F0364_NEGATIVE_RATIO_INTERIOR_A_SWITCHING_FORENSIC_20260920.md`
