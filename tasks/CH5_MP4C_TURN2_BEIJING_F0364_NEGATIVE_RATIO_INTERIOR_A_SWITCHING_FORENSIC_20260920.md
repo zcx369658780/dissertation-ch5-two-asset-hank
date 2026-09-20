@@ -10,7 +10,7 @@ Task ID:
 
 `CH5_MP4C_TURN2_BEIJING_F0364_NEGATIVE_RATIO_INTERIOR_A_SWITCHING_FORENSIC_20260920`
 
-Status: `ACTIVE`
+Status: `COMPLETED_PASS_ACCEPTED`
 
 ## Governance
 
@@ -304,3 +304,22 @@ followed by A/B/C/D.
 - do not modify CURRENT files
 - do not merge main
 - do not publish successor.
+
+
+## Reviewer closure — 2026-09-21
+
+Forensic candidate `5a6f3870ceccb7730d5417e87d801ac0bc8e210a` is accepted.
+
+Terminal:
+`PASS__TURN2_BEIJING_F0364_NEGATIVE_RATIO_INTERIOR_A_SWITCHING_FORENSIC_COMPLETE__NO_SELECTOR_CHANGE`
+
+Classification:
+`TURN2_F0364_NEGATIVE_RATIO_INTERIOR_A_SWITCHING_GUARD_FALSE_NEGATIVE_CONFIRMED`.
+
+The backward liquid derivative yields exactly one sign-aware, D3/KKT-consistent interior-a switching candidate; the forward liquid derivative is outside the mapped interval and direction-inconsistent. The positive-ratio restriction is an implementation guard, not an adopted scientific-domain law.
+
+Acceptance:
+`docs/CH5_MP4C_TURN2_F0364_NEGATIVE_RATIO_SWITCHING_FALSE_NEGATIVE_ACCEPTANCE_20260921.md`
+
+Next active task:
+`tasks/CH5_MP4C_INTERIOR_B_NEGATIVE_RATIO_SWITCHING_REPAIR_TURN1_PARITY_AND_TURN2_RUN003_20260921.md`
