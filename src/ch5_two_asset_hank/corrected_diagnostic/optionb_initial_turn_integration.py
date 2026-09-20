@@ -76,19 +76,23 @@ from .option_a_step import BoundOptionAInputs
 from .selector import CorrectedSelectorParameters, SelectorBudget
 
 
-TASK_ID = "CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_CHECKPOINT0_DIAGNOSTIC_REPAIR_AND_REEXECUTION_20260920"
-BASELINE_SHA = "67584b84d02823b56089a7eaa10e47ccaf811e5a"
+TASK_ID = "CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_TERMINAL_KFE_TOPOLOGY_SERIALIZATION_REPAIR_AND_RUN003_REEXECUTION_20260920"
+BASELINE_SHA = "829cc10785b88b02700204243e49f694ec8cf54a"
 PASS_TERMINAL = (
-    "PASS__CHECKPOINT0_DIAGNOSTIC_REPAIR__CORRECTED_INITIAL_TURN_31_PROVINCE_"
+    "PASS__TERMINAL_KFE_TOPOLOGY_SERIALIZATION_REPAIR__CORRECTED_INITIAL_TURN_31_PROVINCE_"
     "HOUSEHOLD_HJB_KFE_AND_K1A_C1_INTEGRATION__RAW_NEXT_PAYOFF_READY__TURN2_NOT_RUN"
 )
 OUTPUT_RELATIVE = Path(
     "reports/ch5_mp4c_corrected_optionb_initial_turn_31_province_household_kfe_"
-    "k1a_c1_one_turn_integration_20260920_run002"
+    "k1a_c1_one_turn_integration_20260920_run003"
 )
-PREDECESSOR_OUTPUT_RELATIVE = Path(
+RUN001_OUTPUT_RELATIVE = Path(
     "reports/ch5_mp4c_corrected_optionb_initial_turn_31_province_household_kfe_"
     "k1a_c1_one_turn_integration_20260920_run001"
+)
+RUN002_OUTPUT_RELATIVE = Path(
+    "reports/ch5_mp4c_corrected_optionb_initial_turn_31_province_household_kfe_"
+    "k1a_c1_one_turn_integration_20260920_run002"
 )
 INITIALIZATION_RELATIVE = Path(
     "reports/mp4c_c1_residual_public_asset_25turn_20260911/"
@@ -98,14 +102,15 @@ DISTANCE_RELATIVE = Path(
     "docs/evidence/ch5_mp4c_k1a_distance_mapping/normalized_distance_destination_origin.csv"
 )
 TASK_RELATIVE = Path(
-    "tasks/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_CHECKPOINT0_DIAGNOSTIC_"
-    "REPAIR_AND_REEXECUTION_20260920.md"
+    "tasks/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_TERMINAL_KFE_TOPOLOGY_"
+    "SERIALIZATION_REPAIR_AND_RUN003_REEXECUTION_20260920.md"
 )
 EXPECTED_INITIALIZATION_BLOB = "5bb902183c8cb313d986ee5a9f8bd6b7c0624ae1"
 EXPECTED_SOURCE_INITIALIZATION_BLOB = "19ba32b0c5534f2726036ab8ba30fb204e359325"
 EXPECTED_K1A_BLOB = "ac309b4dbe9f6b3ca1d3cfc691223600835d17b6"
 EXPECTED_C1_BLOB = "ba717dfdada1b47ee44af5562d3ffa01a9de8cfe"
-EXPECTED_PREDECESSOR_MANIFEST = "F447D5DF30D302963D81EB09E68BEC72C1B89F8C1DE227936533045F9A16F315"
+EXPECTED_RUN001_MANIFEST = "F447D5DF30D302963D81EB09E68BEC72C1B89F8C1DE227936533045F9A16F315"
+EXPECTED_RUN002_MANIFEST = "D01A8A0CDF6808824735FEACABD7572249970DE97606A63BEA86209B5B6F531A"
 MAX_UPDATES_PER_PROVINCE = 50
 MAX_MAPS_PER_PROVINCE = 51
 MAX_ROOTS_PER_PROVINCE = 20_000_000
@@ -384,6 +389,23 @@ def _accumulate_local(ledger: dict[str, Any], before: Mapping[str, int], after: 
     for local_name, total_name in mapping.items():
         ledger[total_name] += int(after[local_name]) - int(before[local_name])
     _check_ledger(ledger)
+
+
+def _terminal_kfe_with_accounting(
+    checkpoint: int,
+    q: sparse.csr_matrix,
+    q_one_bound: float,
+    province_root: Path,
+    local: dict[str, int],
+    ledger: dict[str, Any],
+) -> dict[str, Any]:
+    """Accumulate consumed terminal-KFE calls on both return and exception paths."""
+
+    before = dict(local)
+    try:
+        return _terminal_kfe(checkpoint, q, q_one_bound, province_root, local)
+    finally:
+        _accumulate_local(ledger, before, local)
 
 
 def _compact_checkpoint(
@@ -680,9 +702,9 @@ def _solve_province(
             value=values[-1], utility=arrays["utility"], mu_b=arrays["g_b"], mu_a=arrays["g_a"],
         )
         if checkpoint > 0 and metrics["primary_convergence_pass"]:
-            before_kfe = dict(local)
-            kfe = _terminal_kfe(checkpoint, q, float(d2["arithmetic_tolerance"]), province_root, local)
-            _accumulate_local(ledger, before_kfe, local)
+            kfe = _terminal_kfe_with_accounting(
+                checkpoint, q, float(d2["arithmetic_tolerance"]), province_root, local, ledger
+            )
             if local["terminal_topology_gates"] != 1 or local["terminal_dense_gesvd"] != 1:
                 raise FailClosed("FAIL__KFE_EXACTLY_ONCE_ACCOUNTING", {"province": province})
             with np.load(province_root / "terminal_kfe/stationary_mass_arrays.npz", allow_pickle=False) as mass:
@@ -979,16 +1001,25 @@ def _read_junit(path: Path) -> dict[str, Any]:
 
 
 def _predecessor_lineage(repository: Path) -> dict[str, Any]:
-    root = repository / PREDECESSOR_OUTPUT_RELATIVE
-    manifest_path = root / "sealed_manifest.json"
-    ledger_path = root / "scientific_ledger.json"
-    terminal_path = root / "terminal_receipt.json"
-    readback_path = root / "independent_readback_receipt.json"
-    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
-    terminal = json.loads(terminal_path.read_text(encoding="utf-8"))
-    readback = json.loads(readback_path.read_text(encoding="utf-8"))
-    expected_counts = {
+    run001_root = repository / RUN001_OUTPUT_RELATIVE
+    run002_root = repository / RUN002_OUTPUT_RELATIVE
+
+    def load(root: Path) -> tuple[Path, dict[str, Any], dict[str, Any], dict[str, Any], dict[str, Any]]:
+        manifest_path = root / "sealed_manifest.json"
+        return (
+            manifest_path,
+            json.loads(manifest_path.read_text(encoding="utf-8")),
+            json.loads((root / "scientific_ledger.json").read_text(encoding="utf-8")),
+            json.loads((root / "terminal_receipt.json").read_text(encoding="utf-8")),
+            json.loads((root / "independent_readback_receipt.json").read_text(encoding="utf-8")),
+        )
+
+    run001_manifest_path, run001_manifest, run001_ledger, run001_terminal, run001_readback = load(run001_root)
+    run002_manifest_path, run002_manifest, run002_ledger, run002_terminal, run002_readback = load(run002_root)
+    run002_reconciliation = json.loads(
+        (run002_root / "post_terminal_zero_science_diagnostic_receipt.json").read_text(encoding="utf-8")
+    )
+    expected_run001_counts = {
         "source_native_initializations": 1,
         "scalar_labor_roots_attempted": 800,
         "scalar_labor_roots_returned": 800,
@@ -1005,28 +1036,81 @@ def _predecessor_lineage(repository: Path) -> dict[str, Any]:
         "scientific_retries": 0,
         "turn2_household_calls": 0,
     }
-    checks = {
-        "manifest_sha256": _sha256(manifest_path) == EXPECTED_PREDECESSOR_MANIFEST,
-        "manifest_entries": int(manifest["entry_count"]) == 14,
-        "manifest_bytes": int(manifest["total_bytes"]) == 109_026,
-        "independent_readback": readback.get("status") == "PASS" and not readback.get("bad_paths"),
-        "terminal": terminal.get("terminal_verdict") == "FAIL__UNEXPECTED_TASK_EXCEPTION__NO_SCIENTIFIC_RETRY",
-        "historical_counts": all(int(ledger[name]) == value for name, value in expected_counts.items()),
+    expected_run002_counts = {
+        "source_native_initializations": 1,
+        "scalar_labor_roots_attempted": 800,
+        "scalar_labor_roots_returned": 800,
+        "corrected_policy_maps": 13,
+        "selector_evaluations": 10_400,
+        "scalar_selector_root_invocations": 4_148,
+        "interior_z_root_invocations": 760,
+        "interior_a_switching_root_invocations": 17,
+        "joint_switching_root_invocations": 1,
+        "d2_q_assemblies": 13,
+        "direct_hjb_updates": 12,
+        "hjb_checkpoint_evaluations_after_update": 12,
+        "scc_decompositions": 0,
+        "dense_scipy_linalg_svd_gesvd": 0,
+        "normalized_stationary_candidates": 0,
+        "q_transpose_times_p": 0,
+        "corrected_aggregate_evaluations": 0,
+        "firm_evaluations": 0,
+        "scientific_retries": 0,
+        "turn2_household_calls": 0,
     }
-    if not all(checks.values()):
-        raise FailClosed("BLOCKED__PREDECESSOR_RUN001_LINEAGE_MISMATCH", {"checks": checks})
+    run001_checks = {
+        "manifest_sha256": _sha256(run001_manifest_path) == EXPECTED_RUN001_MANIFEST,
+        "manifest_entries": int(run001_manifest["entry_count"]) == 14,
+        "manifest_bytes": int(run001_manifest["total_bytes"]) == 109_026,
+        "independent_readback": run001_readback.get("status") == "PASS" and not run001_readback.get("bad_paths"),
+        "terminal": run001_terminal.get("terminal_verdict") == "FAIL__UNEXPECTED_TASK_EXCEPTION__NO_SCIENTIFIC_RETRY",
+        "historical_counts": all(int(run001_ledger[name]) == value for name, value in expected_run001_counts.items()),
+    }
+    run002_checks = {
+        "manifest_sha256": _sha256(run002_manifest_path) == EXPECTED_RUN002_MANIFEST,
+        "manifest_entries": int(run002_manifest["entry_count"]) == 139,
+        "manifest_bytes": int(run002_manifest["total_bytes"]) == 1_949_298,
+        "independent_readback": run002_readback.get("status") == "PASS" and not run002_readback.get("bad_paths"),
+        "terminal": run002_terminal.get("terminal_verdict") == "FAIL__UNEXPECTED_TASK_EXCEPTION__NO_SCIENTIFIC_RETRY",
+        "sealed_historical_counts": all(int(run002_ledger[name]) == value for name, value in expected_run002_counts.items()),
+        "actual_scc_reconciled": (
+            run002_reconciliation["accounting_reconciliation"]["persisted_global_ledger_scc_decompositions"] == 0
+            and run002_reconciliation["accounting_reconciliation"]["audited_actual_scc_decompositions"] == 1
+            and run002_reconciliation["call_path_audit"]["second_scc_or_topology_reconstruction_performed"] is False
+        ),
+    }
+    if not all(run001_checks.values()) or not all(run002_checks.values()):
+        raise FailClosed(
+            "BLOCKED__PREDECESSOR_RUN001_RUN002_LINEAGE_MISMATCH",
+            {"run001_checks": run001_checks, "run002_checks": run002_checks},
+        )
     return {
         "status": "PASS",
-        "classification": "ACCEPTED_HISTORICAL_CONSUMPTION__NOT_SUCCESSOR_RUN002_COUNTS",
-        "root": PREDECESSOR_OUTPUT_RELATIVE.as_posix(),
-        "manifest_sha256": EXPECTED_PREDECESSOR_MANIFEST,
-        "manifest_entry_count": 14,
-        "manifest_total_bytes": 109_026,
-        "terminal_verdict": terminal["terminal_verdict"],
-        "historical_scientific_ledger": ledger,
-        "checks": checks,
-        "run001_files_modified": False,
-        "successor_scientific_calls": 0,
+        "classification": "ACCEPTED_RUN001_RUN002_HISTORICAL_CONSUMPTION__NOT_RUN003_COUNTS",
+        "run001": {
+            "root": RUN001_OUTPUT_RELATIVE.as_posix(),
+            "manifest_sha256": EXPECTED_RUN001_MANIFEST,
+            "manifest_entry_count": 14,
+            "manifest_total_bytes": 109_026,
+            "terminal_verdict": run001_terminal["terminal_verdict"],
+            "historical_scientific_ledger": run001_ledger,
+            "actual_scc_decompositions": 0,
+            "checks": run001_checks,
+        },
+        "run002": {
+            "root": RUN002_OUTPUT_RELATIVE.as_posix(),
+            "manifest_sha256": EXPECTED_RUN002_MANIFEST,
+            "manifest_entry_count": 139,
+            "manifest_total_bytes": 1_949_298,
+            "terminal_verdict": run002_terminal["terminal_verdict"],
+            "sealed_scientific_ledger": run002_ledger,
+            "sealed_scc_decompositions": 0,
+            "actual_scc_decompositions": 1,
+            "reconciliation": run002_reconciliation["accounting_reconciliation"],
+            "checks": run002_checks,
+        },
+        "run001_run002_files_modified": False,
+        "run003_scientific_calls": 0,
     }
 
 
@@ -1072,6 +1156,7 @@ def execute(repository: Path, focused_test_junit: Path) -> str:
             repository, "diff", "--name-only", f"{BASELINE_SHA}...HEAD"
         ).splitlines()))
         expected_repair_paths = sorted((
+            "src/ch5_two_asset_hank/corrected_diagnostic/nonlinear_continuation.py",
             "src/ch5_two_asset_hank/corrected_diagnostic/optionb_initial_turn_integration.py",
             "tests/test_mp4c_corrected_optionb_initial_turn_integration.py",
         ))
@@ -1094,29 +1179,50 @@ def execute(repository: Path, focused_test_junit: Path) -> str:
             "authority_blobs": blobs == expected,
             "focused_tests": focused_tests["status"] == "PASS",
             "repair_changed_paths_exact": changed_paths == expected_repair_paths,
-            "predecessor_lineage": predecessor["status"] == "PASS",
+            "run001_run002_lineage": predecessor["status"] == "PASS",
         }
         if not all(startup_checks.values()):
             raise FailClosed("BLOCKED__STARTUP_AUTHORITY_OR_ENGINEERING_GATE", {"checks": startup_checks, "blobs": blobs})
         states, state_receipt = load_initial_states(repository)
         _write_json(output / "initial_state_receipt_31province.json", state_receipt)
-        _write_json(output / "predecessor_run001_cumulative_lineage_receipt.json", predecessor)
+        _write_json(output / "run001_run002_cumulative_historical_consumption_lineage_receipt.json", predecessor)
         _write_json(output / "focused_test_receipt.json", {
             **focused_tests,
             "scientific_calls": 0,
+            "synthetic_topology_projection_without_scc_or_svd_coverage": True,
+            "terminal_kfe_success_and_exception_accounting_coverage": True,
             "checkpoint0_current_only_coverage": True,
             "checkpoint1_plus_comparative_routing_coverage": True,
         })
-        _write_json(output / "checkpoint0_diagnostic_repair_contract_receipt.json", {
+        _write_json(output / "topology_serialization_repair_contract_receipt.json", {
             "status": "PASS",
             "allowed_changed_paths": expected_repair_paths,
             "actual_changed_paths": changed_paths,
+            "topology_algorithm_modified": False,
+            "topology_call": "analyze_exact_positive_topology(Q)",
+            "projection_uses_completed_in_memory_result": True,
+            "raw_csr_or_numpy_labels_json_serialized": False,
+            "adjacency_evidence": "CSR_SHAPE_NNZ_AND_DATA_INDICES_INDPTR_IDENTITIES",
+            "labels_evidence": "LITTLE_ENDIAN_INT64_SHA256",
+            "second_scc_for_persistence": False,
+            "scientific_equations_or_tolerances_modified": False,
+            "scientific_calls": 0,
+        })
+        _write_json(output / "exception_path_ledger_repair_contract_receipt.json", {
+            "status": "PASS",
+            "mechanism": "TRY_FINALLY_ACCUMULATES_PROVINCE_LOCAL_TERMINAL_KFE_DELTAS",
+            "success_path_accumulation_count": 1,
+            "exception_path_accumulation_count": 1,
+            "duplicate_success_accumulation": False,
+            "serialization_increments_scientific_counters": False,
+            "scientific_calls": 0,
+        })
+        _write_json(output / "checkpoint0_diagnostic_repair_continuity_receipt.json", {
+            "status": "PASS",
             "checkpoint0_policy_diagnostics": "CURRENT_ONLY__NO_PREVIOUS_CHECKPOINT",
             "checkpoint0_operator_diagnostics": "CURRENT_ONLY__NO_PREVIOUS_CHECKPOINT",
             "comparison_only_fields": None,
             "checkpoint1_plus_route": "EXISTING_COMPARATIVE_HELPERS_WITH_COMPLETE_PREVIOUS_OBJECTS",
-            "nonlinear_continuation_modified": False,
-            "scientific_equations_or_tolerances_modified": False,
             "scientific_calls": 0,
         })
         _write_json(output / "startup_authority_binding.json", {
@@ -1133,6 +1239,9 @@ def execute(repository: Path, focused_test_junit: Path) -> str:
             "focused_tests": focused_tests,
             "initial_state_order_status": state_receipt["status"],
             "code_freeze_complete": True,
+            "topology_json_projection": "PASS__NO_SCC_OR_SVD_IN_TEST",
+            "terminal_kfe_exception_path_ledger_accounting": "PASS__STUBBED_ONLY",
+            "run001_run002_sealed_lineage": predecessor["status"],
             "source_native_initializations": 0,
             "selector_evaluations": 0,
             "root_invocations": 0,

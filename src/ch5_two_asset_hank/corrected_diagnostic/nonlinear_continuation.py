@@ -12,7 +12,7 @@ from pathlib import Path
 import subprocess
 import sys
 import time
-from typing import Any
+from typing import Any, Mapping
 import warnings
 
 import numpy as np
@@ -152,6 +152,56 @@ def _sparse_identity(q: sparse.csr_matrix) -> dict[str, str]:
         "data": _field_sha256(matrix.data),
         "indices": _integer_sha256(matrix.indices),
         "indptr": _integer_sha256(matrix.indptr),
+    }
+
+
+def _topology_json_receipt(topology: Mapping[str, Any]) -> dict[str, Any]:
+    """Project one completed topology result into an explicit JSON-safe receipt."""
+
+    adjacency = topology["adjacency"]
+    labels = np.asarray(topology["labels"])
+    if not sparse.isspmatrix_csr(adjacency):
+        raise TypeError("topology adjacency must be CSR")
+    if labels.ndim != 1 or labels.dtype.kind not in "iu":
+        raise TypeError("topology labels must be a one-dimensional integer vector")
+    condensation = topology["condensation"]
+    return {
+        "exact_positive_edge_count": int(topology["exact_positive_edge_count"]),
+        "component_count": int(topology["component_count"]),
+        "component_sizes": [int(value) for value in topology["component_sizes"]],
+        "closed_labels": [int(value) for value in topology["closed_labels"]],
+        "closed_members": [
+            [int(value) for value in members] for members in topology["closed_members"]
+        ],
+        "closed_class_count": int(topology["closed_class_count"]),
+        "transient_state_count": int(topology["transient_state_count"]),
+        "condensation": {
+            "edge_count": int(condensation["edge_count"]),
+            "edges": [
+                [int(left), int(right)] for left, right in condensation["edges"]
+            ],
+            "nodes": [
+                {
+                    "label": int(node["label"]),
+                    "members": [int(value) for value in node["members"]],
+                    "successors": [int(value) for value in node["successors"]],
+                    "reachable_closed_ordinals": [
+                        int(value) for value in node["reachable_closed_ordinals"]
+                    ],
+                }
+                for node in condensation["nodes"]
+            ],
+        },
+        "adjacency_csr": {
+            "shape": [int(value) for value in adjacency.shape],
+            "nnz": int(adjacency.nnz),
+            "identity": _sparse_identity(adjacency),
+        },
+        "labels": {
+            "length": int(labels.size),
+            "dtype_contract": "little_endian_int64_for_hash",
+            "sha256": _integer_sha256(labels),
+        },
     }
 
 
@@ -767,7 +817,7 @@ def _terminal_kfe(
     terminal.mkdir(parents=False, exist_ok=False)
     ledger["terminal_topology_gates"] += 1
     topology = analyze_exact_positive_topology(q)
-    _write_json(terminal / "topology_receipt.json", topology)
+    _write_json(terminal / "topology_receipt.json", _topology_json_receipt(topology))
     if len(topology["closed_members"]) != 1:
         raise FailClosed(
             "FAIL__HJB_CONVERGED__TERMINAL_TOPOLOGY_OR_KFE_GATE",
