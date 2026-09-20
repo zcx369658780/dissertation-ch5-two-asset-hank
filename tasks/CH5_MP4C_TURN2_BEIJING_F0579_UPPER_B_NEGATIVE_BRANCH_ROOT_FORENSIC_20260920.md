@@ -10,7 +10,7 @@ Task ID:
 
 `CH5_MP4C_TURN2_BEIJING_F0579_UPPER_B_NEGATIVE_BRANCH_ROOT_FORENSIC_20260920`
 
-Status: `ACTIVE`
+Status: `COMPLETED_FAIL_ACCEPTED`
 
 ## Governance
 
@@ -270,3 +270,22 @@ followed by exactly one classification A/B/C/D.
 - do not modify CURRENT files
 - do not merge main
 - do not publish successor.
+
+
+## Reviewer closure — 2026-09-20
+
+Forensic run001 candidate `d104f7da14039eac36d76f81188c717df010848d` is accepted as failed evidence.
+
+Terminal:
+`FAIL__TURN2_F0579_FORENSIC_ROOT_SCREEN_SERIALIZATION__NO_SCIENTIFIC_RETRY`
+
+Classification:
+`TURN2_F0579_FORENSIC_INCONSISTENT__NO_SELECTOR_DECISION`.
+
+The failure is task-local evidence serialization: the forensic capture persisted the raw pre-saturation root residual and encountered `-Infinity`, while the frozen selector root helper uses finite saturation internally. No A/B/C selector conclusion is inferred.
+
+Acceptance:
+`docs/CH5_MP4C_TURN2_F0579_FORENSIC_SERIALIZATION_EXCEPTION_ACCEPTANCE_20260920.md`
+
+Next active task:
+`tasks/CH5_MP4C_TURN2_F0579_FORENSIC_FINITE_SCREEN_PERSISTENCE_REPAIR_AND_RUN002_20260920.md`
