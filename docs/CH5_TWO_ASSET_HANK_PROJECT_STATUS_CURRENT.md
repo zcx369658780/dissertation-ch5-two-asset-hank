@@ -4,7 +4,7 @@
 
 状态：
 
-`TURN2_F0579_PRE_ROOT_FALSE_NEGATIVE_CONFIRMED__NARROW_UPPER_B_NEGATIVE_ENUMERATION_REPAIR_AND_TURN2_RUN002_ACTIVE`
+`TURN2_UPPER_B_NEGATIVE_REPAIR_ACCEPTED__BEIJING_CHECKPOINT5_F0364_SELECTOR_FAIL__NEGATIVE_RATIO_INTERIOR_A_SWITCHING_FORENSIC_ACTIVE`
 
 Results eligibility=`FALSE`。
 
@@ -12,54 +12,60 @@ Results eligibility=`FALSE`。
 
 The first corrected multi-province turn remains fully accepted and closed.
 
-## Accepted turn-2 blocker
+## Accepted selector repair
 
-Turn-2 run001 stopped at Beijing checkpoint 2 / flat 579 because the current selector rejected active upper-b negative transfer at a pre-root branch-uniqueness gate.
+The active-upper-b negative-transfer branch enumeration correction is accepted.
 
-No checkpoint-2 D2/Q or later science occurred.
+It changes only pre-root enumeration control flow and leaves all root/KKT/boundary/direction/Hamiltonian laws unchanged.
 
-## Accepted F0579 forensic result
+F0579 exact runtime parity passed.
+
+## Fresh turn-2 run002
 
 Candidate:
 
-`5e1b898d959bea1fbbfdda84bf4d958f3b6dbbdc`.
+`55dd5b81f1749e2af9e8d2a9a2507803b514131d`.
 
 Acceptance:
 
-`docs/CH5_MP4C_TURN2_F0579_PRE_ROOT_FALSE_NEGATIVE_FORENSIC_ACCEPTANCE_20260920.md`.
+`docs/CH5_MP4C_TURN2_RUN002_F0364_SELECTOR_FAILURE_ACCEPTANCE_20260920.md`.
 
-Classification:
+Only Beijing was reached.
 
-`TURN2_F0579_UPPER_B_NEGATIVE_PRE_ROOT_UNIQUENESS_FALSE_NEGATIVE_CONFIRMED`.
+Checkpoints 0 through 4 passed policy map, D2/Q and direct-solve gates.
 
-Branch result:
+The first new failure is checkpoint 5 / flat 364:
 
-- backward branch root converges but fails `A_DERIVATIVE_DIRECTION_INCONSISTENT`;
-- forward branch root converges and passes all existing downstream checks;
-- admissible policies = 1;
-- unique selected branch = forward;
-- switching prerequisite = false.
+- index `(4,18,0)`
+- b `-0.5263157894736843`
+- a `9.473684210526315`
+- z `0.8`
+- outcome `NO_ADMISSIBLE_POLICY`
+- checkpoint-5 D2/Q not assembled.
 
-Therefore the underlying constrained state is not a true no-policy point under the existing downstream laws.
+## F0364 scientific uncertainty
 
-## Authorized narrow repair
+F0364 has no active geometric face.
 
-For active upper-b negative transfer only:
+For negative transfer under p_b backward:
 
-- preserve the current pre-root viability screen;
-- do not reject merely because multiple a branches survive it;
-- root each surviving branch independently using the existing upper-b domain and root method;
-- apply unchanged post-root direction/KKT/boundary checks;
-- apply unchanged policy deduplication and Hamiltonian uniqueness logic.
+- a-backward ordinary candidate has g_a > 0 and fails backward-a direction;
+- a-forward ordinary candidate has g_a < 0 and fails forward-a direction.
 
-No equation, tolerance, calibration, KKT law, boundary law or solver changes.
+This is a strict interior-a drift crossing.
+
+The current switching constructor computes zero-a-drift transfer
+`d_z=-r_a*a`
+and a D3 shadow ratio
+`q_a/q_b=-0.7547777451261338`,
+then returns no switching candidate because the implementation requires the ratio to be positive.
+
+No scientific decision has yet been made on whether that positivity guard is required authority or an implementation false negative.
 
 ## Active task
 
-`tasks/CH5_MP4C_ACTIVE_UPPER_B_NEGATIVE_BRANCH_ENUMERATION_REPAIR_AND_TURN2_RUN002_20260920.md`.
+`tasks/CH5_MP4C_TURN2_BEIJING_F0364_NEGATIVE_RATIO_INTERIOR_A_SWITCHING_FORENSIC_20260920.md`.
 
-Before fresh turn-2 science the task must scan accepted turn-1 run004 and completed turn-2 checkpoint-0/1 receipts for the exact repaired rejection pattern. Any occurrence outside F0579 blocks execution for impact review.
+The task uses the persisted cell only, performs no roots and no HJB rerun, evaluates the sign-aware switching geometry under the existing D3/KKT equations, audits whether positive ratio/q_a is an explicit accepted scientific domain law, and returns A/B/C/D.
 
-If preservation audit is empty, perform one fresh turn-2 run002 and stop before turn 3.
-
-K1B, K2, GE and Results remain closed.
+Turn 3, K1B, K2, GE and Results remain closed.
