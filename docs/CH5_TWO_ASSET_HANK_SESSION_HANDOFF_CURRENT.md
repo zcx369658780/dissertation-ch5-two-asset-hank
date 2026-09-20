@@ -14,68 +14,73 @@ GitHub live main is repository-state authority. Owner is final scientific author
 
 Current status:
 
-`INTERIOR_B_NEGATIVE_RATIO_REPAIR_ACCEPTED__TURN1_POLICY_PARITY_PASS__TURN2_HEBEI_F0005_LOWER_A_LIQUID_SWITCH_FORENSIC_ACTIVE`
+`HEBEI_F0005_COMPOSITION_FALSE_NEGATIVE_CONFIRMED__LOWER_A_INTERIOR_Z_REPAIR_TURN1_POLICY_PARITY_AND_TURN2_RUN004_ACTIVE`
 
 Results eligibility=`FALSE`.
 
-## Latest accepted candidate
+## Latest accepted forensic
 
 Candidate:
 
-`f178ec24b9b62814d20ec4041380e07e2d878849`
+`26853c49a06ba0cc3da88df2df250f2f0fd22ff8`
 
 Acceptance:
 
-`docs/CH5_MP4C_INTERIOR_B_NEGATIVE_RATIO_SWITCHING_REPAIR_TURN1_PARITY_AND_TURN2_RUN003_ACCEPTANCE_20260921.md`
+`docs/CH5_MP4C_TURN2_HEBEI_F0005_LOWER_A_LIQUID_SWITCH_FORENSIC_ACCEPTANCE_20260921.md`
 
-Acceptance marker:
+Terminal:
 
-`ACCEPTED_FAIL__INTERIOR_B_NEGATIVE_RATIO_REPAIR_PASS__TURN1_408_POLICY_PARITY_PASS__TURN2_BEIJING_TIANJIN_HJB_KFE_PASS__HEBEI_F0005_NO_ADMISSIBLE_POLICY_FIRST_FAILURE_CONFIRMED`
+`PASS__TURN2_HEBEI_F0005_FORENSIC__ACTIVE_LOWER_A_INTERIOR_Z_COMPOSITION_FALSE_NEGATIVE_CONFIRMED__NO_CODE_CHANGE`
 
-## What is now accepted
+Classification:
 
-- selector repair is narrow and valid;
-- ratio zero and active-liquid-face negative ratio remain fail closed;
-- F0364 exact normal-runtime parity PASS;
-- 408/408 accepted turn-1 selected-policy identities exactly match;
-- turn-1 replay performed zero HJB, D2/Q, KFE, aggregate and integration work;
-- fresh turn-2 run003 used the exact accepted 31-province entering state;
-- Beijing and Tianjin HJB / Owner-adopted unique-closed-class KFE / aggregates PASS;
-- 河北 checkpoint 1 flat 5 is the first new failure;
-- no rescue or further science after that failure;
-- turn 3 / K1B / K2 / GE / Results remain zero.
+`IMPLEMENTATION_COMPOSITION_FALSE_NEGATIVE_UNDER_ALREADY_ADOPTED_AUTHORITY`
 
-## Exact unresolved cell
+## Accepted finding
 
-`reports/ch5_mp4c_interior_b_negative_ratio_repair_turn1_parity_turn2_run003_20260921/household/p02_河北/checkpoint_001/cell_0005.json`
+At 河北 checkpoint1 / flat5, active lower-a + zero-kink + interior liquid b:
 
-Binding:
+- backward endpoint raw liquid drift >0;
+- forward endpoint raw liquid drift <0;
+- the unique positive liquid zero is
+  `q_b=0.012085132579009488`;
+- at that switching shadow the existing lower-a multiplier/kink intersection becomes nonempty;
+- existing deterministic shadow gives
+  `q_a=0.01087661932110854`,
+  `lambda_a=0.00028489863234105843`;
+- `d=g_a=g_b=0`;
+- KKT/complementarity residuals are zero;
+- Hamiltonian is `-0.1280816705218543`;
+- candidate is admissible and unique among the persisted comparison set.
 
-- cell `v001_f0005_b005_a000_z000`
-- `b=-0.1578947368421053`
-- `a=0`
-- `z=0.8`
-- lower-`a` active; liquid `b` interior
-- `p_a^B=p_a^F=0.010591720688767481`
-- `p_b^B=0.016103423470140932`
-- `p_b^F=0.008913524380688508`
-- selector outcome `NO_ADMISSIBLE_POLICY`
+The current selector suppresses the family before root reconstruction because the forward endpoint ordinary lower-a kink intersection is empty and therefore its rejected endpoint has `g_b=None`.
 
-Do not diagnose from chat summary alone.
+The Owner-adopted Z law explicitly requires a-side KKT recomputation at the switching shadow. Therefore this is an implementation composition false negative, not a new scientific-law choice.
 
 ## Current active task
 
-`tasks/CH5_MP4C_TURN2_HEBEI_F0005_LOWER_A_LIQUID_SWITCH_FORENSIC_20260921.md`
+`tasks/CH5_MP4C_LOWER_A_INTERIOR_Z_COMPOSITION_REPAIR_TURN1_PARITY_AND_TURN2_RUN004_20260921.md`
 
-The task is zero-science only. It must bind the persisted cell, lower-`a` zero-kink authority, Owner-adopted interior-liquid `Z` switching authority and current selector control flow.
+Critical ordering:
 
-It must classify the failure as:
+1. narrow composition repair in selector.py only;
+2. exact 河北 F0005 focused parity;
+3. F0364/unrelated behavior regression checks;
+4. mandatory 408-map accepted turn-1 policy identity replay;
+5. any mismatch => STOP before turn2;
+6. only exact 408/408 parity => fresh turn2 run004 from accepted entering state;
+7. stop at first new failure or after one integration;
+8. no turn3.
 
-1. implementation/composition false negative under existing authority;
-2. legitimate fail-closed under existing authority; or
-3. unresolved authority composition requiring Owner decision.
+The fresh run must preserve the Owner-adopted unique-closed-class terminal KFE authority.
 
-No source repair or model rerun is authorized.
+## Immutable accepted history
+
+- corrected initial turn remains accepted;
+- accepted turn-1 408-map path is not silently rewritten;
+- F0364 repair remains accepted;
+- run003 Beijing/Tianjin results remain historical accepted evidence under their frozen selector;
+- no turn3 authority exists.
 
 ## New-session resume order
 
@@ -84,8 +89,8 @@ No source repair or model rerun is authorized.
 3. read rule index;
 4. read project status;
 5. read this handoff;
-6. read latest acceptance;
-7. read exact active task and its required authority files;
-8. execute/review only the zero-science forensic scope.
+6. read the latest forensic acceptance;
+7. read exact active task;
+8. execute/review only that task.
 
-Do not reopen turn-1 parity or rerun run003.
+Do not rerun the zero-science forensic.
