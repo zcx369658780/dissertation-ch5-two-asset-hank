@@ -14,61 +14,59 @@ GitHub live main 是 repository-state authority。Owner 为最终 scientific aut
 
 当前状态：
 
-`UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_SUPPORTED__OWNER_METHOD_ADOPTION_DECISION_REQUIRED`
+`OWNER_ADOPTED_UNIQUE_CLOSED_CLASS_SUPPORT_KFE__IMPLEMENTATION_AND_CORRECTED_INITIAL_TURN_RUN004_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Latest accepted result
+## Owner decision
 
-Method-candidate diagnostic candidate:
+Owner explicitly adopted:
 
-`bb5f2796b0d1b8a8c56dda40afa898cc7f8da315`
+`OWNER_ADOPTED__UNIQUE_CLOSED_CLASS_SUPPORT_KFE_AS_TERMINAL_KFE_AUTHORITY`
 
-Acceptance:
+Authority:
 
-`docs/CH5_MP4C_CORRECTED_OPTIONB_BEIJING_UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_DIAGNOSTIC_ACCEPTANCE_20260920.md`
+`docs/CH5_MP4C_UNIQUE_CLOSED_CLASS_SUPPORT_KFE_OWNER_ADOPTION_20260920.md`.
 
-Terminal:
+The adopted terminal method is now:
 
-`PASS__UNIQUE_CLOSED_CLASS_RESTRICTED_KFE_CANDIDATE_DIAGNOSTIC__OWNER_METHOD_ADOPTION_DECISION_REQUIRED`
+- run exact-positive topology once;
+- require one unique closed class C;
+- construct Q_CC;
+- one dense GESVD on Q_CC.T;
+- require rank/nullity `|C|-1/1` under both preregistered threshold views;
+- use only the smallest restricted right-singular vector;
+- one sign orientation and one normalization on C;
+- require p_C strictly positive;
+- set all transient p entries to exact positive zero by support construction;
+- validate the embedded full vector using exactly one original full-Q `Q.T@p`;
+- retain existing stationarity/source-free/normalization/finiteness/nonnegativity gates.
 
-Key accepted facts:
+The previous full-space 800-state SVD stationary construction is no longer the future terminal authority.
 
-- Q_CC is structurally closed and conservative;
-- restricted 400x400 GESVD gives rank/nullity `399/1` under both preregistered rank thresholds;
-- normalized closed-class mass is strictly positive;
-- embedding exact zero on all 400 transient states gives a finite, normalized, nonnegative 800-state candidate;
-- exactly one full original-Q stationarity validation passes far inside the frozen stationarity bound;
-- the restricted candidate and the persisted run003 full-space p agree on closed support up to the same ~1e-11 transient leakage scale.
+No clipping, projection of an old p, tolerance relaxation, pinning, source RHS, alternate solver, iterative eigensolver or full-space SVD fallback is allowed.
 
-## Owner decision required
+## Current active task
 
-The current accepted KFE method has not changed.
+`tasks/CH5_MP4C_CORRECTED_OPTIONB_UNIQUE_CLOSED_CLASS_KFE_IMPLEMENTATION_AND_INITIAL_TURN_RUN004_20260920.md`.
 
-The pending decision is whether to adopt this unique-closed-class support KFE authority:
+Before fresh run004 science, the Builder must implement the authority and parity-replay the accepted Beijing Q12 method-candidate evidence with no HJB/policy/D2 calls.
 
-1. run the already-required exact-positive topology;
-2. require exactly one closed communicating class C;
-3. extract `Q_CC`;
-4. solve `Q_CC.T p_C = 0` with one dense GESVD;
-5. require restricted rank/nullity `|C|-1 / 1`;
-6. orient once and normalize once on C;
-7. set transient mass exactly to zero by structural support;
-8. validate the embedded full-space candidate against the original Q with one `Q.T@p_full`;
-9. retain the existing finite, stationarity, normalization, source-free and nonnegativity gates.
+Only after parity PASS may fresh run004 start from the accepted 31 turn-1 initial states.
 
-Not part of the proposed method:
-- clipping;
-- tolerance relaxation;
-- projection of an already-computed full-space p;
-- row replacement/pinning;
-- source RHS;
-- iterative eigensolver;
-- alternate solver;
-- post-hoc renormalization.
+Fresh run004 route:
 
-No Builder successor is active pending explicit Owner adoption or rejection.
+accepted turn-1 initial states
+-> per-province corrected HJB
+-> adopted unique-closed-class terminal KFE
+-> aggregates
+-> all-31 household batch
+-> one source-faithful labor + K1A beta2/beta_return0 + C1 + firm turn
+-> raw_ra0_turn1 @ S
+-> STOP.
 
-If adopted, the next task should implement this method as the terminal KFE authority and rerun the bounded corrected initial-turn route from the accepted turn-1 initialization states.
+Turn 2 is not authorized.
 
-Turn 2, K1B, K2, GE and Results remain closed.
+Historical run001/run002/run003 and method-candidate evidence remain immutable.
+
+K1B, K2, full trajectory, GE and Results remain closed.
