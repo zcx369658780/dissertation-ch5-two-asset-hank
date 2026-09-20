@@ -14,59 +14,49 @@ GitHub live main 是 repository-state authority。Owner 为最终 scientific aut
 
 当前状态：
 
-`OWNER_ADOPTED_UNIQUE_CLOSED_CLASS_SUPPORT_KFE__IMPLEMENTATION_AND_CORRECTED_INITIAL_TURN_RUN004_ACTIVE`
+`RUN004_31_PROVINCE_HOUSEHOLD_AND_ADOPTED_KFE_ACCEPTED__RAW_NEXT_PAYOFF_REDUCTION_ORDER_GUARD_FAIL__INTEGRATION_ONLY_REPLAY_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Owner decision
+## Latest Reviewer decision
 
-Owner explicitly adopted:
+Run004 candidate `af770c1fb787098569df2a25471cdc8101eda3a3` is accepted as failed evidence.
 
-`OWNER_ADOPTED__UNIQUE_CLOSED_CLASS_SUPPORT_KFE_AS_TERMINAL_KFE_AUTHORITY`
+Acceptance:
 
-Authority:
+`docs/CH5_MP4C_RUN004_31PROVINCE_HOUSEHOLD_KFE_PASS_RAW_NEXT_PAYOFF_REDUCTION_ORDER_GUARD_ACCEPTANCE_20260920.md`.
 
-`docs/CH5_MP4C_UNIQUE_CLOSED_CLASS_SUPPORT_KFE_OWNER_ADOPTION_20260920.md`.
+Accepted from run004:
 
-The adopted terminal method is now:
+- Owner-adopted unique-closed-class KFE implementation parity PASS;
+- 31/31 corrected household HJB PASS;
+- 31/31 terminal KFE PASS;
+- 31/31 stationary aggregates PASS;
+- household batch identity:
+  `8B7875F3BD603038E4D415D9F9FF759D4FDDC93E2E677C13BF0B649571B2EB05`.
 
-- run exact-positive topology once;
-- require one unique closed class C;
-- construct Q_CC;
-- one dense GESVD on Q_CC.T;
-- require rank/nullity `|C|-1/1` under both preregistered threshold views;
-- use only the smallest restricted right-singular vector;
-- one sign orientation and one normalization on C;
-- require p_C strictly positive;
-- set all transient p entries to exact positive zero by support construction;
-- validate the embedded full vector using exactly one original full-Q `Q.T@p`;
-- retain existing stationarity/source-free/normalization/finiteness/nonnegativity gates.
+The run stopped only when a same-S accounting guard required bitwise equality between two different floating-point reduction orders.
 
-The previous full-space 800-state SVD stationary construction is no longer the future terminal authority.
-
-No clipping, projection of an old p, tolerance relaxation, pinning, source RHS, alternate solver, iterative eigensolver or full-space SVD fallback is allowed.
+This is not treated as a payoff-law or S-orientation failure.
 
 ## Current active task
 
-`tasks/CH5_MP4C_CORRECTED_OPTIONB_UNIQUE_CLOSED_CLASS_KFE_IMPLEMENTATION_AND_INITIAL_TURN_RUN004_20260920.md`.
+`tasks/CH5_MP4C_RUN004_CANONICAL_SAME_S_RAW_NEXT_PAYOFF_REPAIR_AND_INTEGRATION_ONLY_REPLAY_20260920.md`.
 
-Before fresh run004 science, the Builder must implement the authority and parity-replay the accepted Beijing Q12 method-candidate evidence with no HJB/policy/D2 calls.
+The successor:
 
-Only after parity PASS may fresh run004 start from the accepted 31 turn-1 initial states.
+1. hash-binds the accepted run004 manifest and all 31 aggregate/terminal receipts;
+2. reconstructs the exact accepted household batch and verifies its identity;
+3. makes no HJB/KFE/aggregate calls;
+4. replays exactly one source-faithful labor + K1A beta2/beta_return0 + C1 + 31-firm + wage/monetary/fiscal integration;
+5. computes raw next payoff canonically by per-origin `math.fsum` over the exact same K1A S matrix;
+6. persists raw-ra0, S, product-term hash and canonical payoff before accounting gates;
+7. records BLAS matrix-product comparison as diagnostic only;
+8. evaluates the remaining integration accounting gates and next-state candidate;
+9. stops without turn 2.
 
-Fresh run004 route:
+No tolerance relaxation or payoff transformation is authorized.
 
-accepted turn-1 initial states
--> per-province corrected HJB
--> adopted unique-closed-class terminal KFE
--> aggregates
--> all-31 household batch
--> one source-faithful labor + K1A beta2/beta_return0 + C1 + firm turn
--> raw_ra0_turn1 @ S
--> STOP.
+Historical run001/run002/run003/run004 evidence remains immutable.
 
-Turn 2 is not authorized.
-
-Historical run001/run002/run003 and method-candidate evidence remain immutable.
-
-K1B, K2, full trajectory, GE and Results remain closed.
+Turn 2, K1B, K2, full trajectory, GE and Results remain closed.
