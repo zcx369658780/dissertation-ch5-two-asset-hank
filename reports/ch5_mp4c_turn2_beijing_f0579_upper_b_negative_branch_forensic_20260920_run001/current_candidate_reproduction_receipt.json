@@ -1,0 +1,128 @@
+{
+  "candidates": [
+    {
+      "active_constraints": [],
+      "admissible": false,
+      "derivative_branches": {
+        "a": "backward",
+        "b": "backward"
+      },
+      "ordinal": 0,
+      "rejection_reasons": [
+        "upper_b_PRIMAL_INFEASIBLE",
+        "B_DERIVATIVE_DIRECTION_INCONSISTENT",
+        "A_DERIVATIVE_DIRECTION_INCONSISTENT"
+      ],
+      "root_invoked": false,
+      "root_status": "NOT_REQUIRED",
+      "transfer_branch": "negative"
+    },
+    {
+      "active_constraints": [],
+      "admissible": false,
+      "derivative_branches": {
+        "a": "forward",
+        "b": "backward"
+      },
+      "ordinal": 1,
+      "rejection_reasons": [
+        "upper_b_PRIMAL_INFEASIBLE",
+        "B_DERIVATIVE_DIRECTION_INCONSISTENT"
+      ],
+      "root_invoked": false,
+      "root_status": "NOT_REQUIRED",
+      "transfer_branch": "negative"
+    },
+    {
+      "active_constraints": [],
+      "admissible": false,
+      "derivative_branches": {
+        "a": "forward",
+        "b": "backward"
+      },
+      "ordinal": 2,
+      "rejection_reasons": [
+        "TRANSFER_KKT_RESIDUAL"
+      ],
+      "root_invoked": false,
+      "root_status": "NOT_REQUIRED",
+      "transfer_branch": "zero_kink"
+    },
+    {
+      "active_constraints": [],
+      "admissible": false,
+      "derivative_branches": {
+        "a": "forward",
+        "b": "backward"
+      },
+      "ordinal": 3,
+      "rejection_reasons": [
+        "TRANSFER_SIGN_INCONSISTENT_POSITIVE",
+        "upper_b_PRIMAL_INFEASIBLE",
+        "B_DERIVATIVE_DIRECTION_INCONSISTENT",
+        "TRANSFER_KKT_RESIDUAL"
+      ],
+      "root_invoked": false,
+      "root_status": "NOT_REQUIRED",
+      "transfer_branch": "positive"
+    },
+    {
+      "active_constraints": [
+        "upper_b"
+      ],
+      "admissible": false,
+      "derivative_branches": {},
+      "ordinal": 4,
+      "rejection_reasons": [
+        "DERIVATIVE_BRANCH_NOT_UNIQUE_BEFORE_ROOT"
+      ],
+      "root_invoked": false,
+      "root_status": "NOT_REQUIRED",
+      "transfer_branch": "negative"
+    },
+    {
+      "active_constraints": [
+        "upper_b"
+      ],
+      "admissible": false,
+      "derivative_branches": {
+        "a": "forward",
+        "b": "backward"
+      },
+      "ordinal": 5,
+      "rejection_reasons": [
+        "ROOT_FAILURE_NO_UNIQUE_BRACKET"
+      ],
+      "root_invoked": true,
+      "root_status": "ROOT_FAILURE_NO_UNIQUE_BRACKET",
+      "transfer_branch": "zero_kink"
+    },
+    {
+      "active_constraints": [
+        "upper_b"
+      ],
+      "admissible": false,
+      "derivative_branches": {
+        "a": "forward",
+        "b": "backward"
+      },
+      "ordinal": 6,
+      "rejection_reasons": [
+        "TRANSFER_SIGN_INCONSISTENT_POSITIVE",
+        "TRANSFER_KKT_RESIDUAL"
+      ],
+      "root_invoked": true,
+      "root_status": "ROOT_CONVERGED",
+      "transfer_branch": "positive"
+    }
+  ],
+  "checks": {
+    "active_negative_pre_root": true,
+    "active_positive_sign_and_kkt": true,
+    "active_zero_no_unique_bracket": true,
+    "all_inadmissible": true,
+    "inactive_reasons_preserved": true,
+    "seven_persisted_candidates": true
+  },
+  "status": "PASS"
+}
