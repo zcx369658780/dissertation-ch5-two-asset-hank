@@ -14,56 +14,61 @@ GitHub live main 是 repository-state authority。Owner 为最终 scientific aut
 
 当前状态：
 
-`RUN003_TRANSIENT_ONLY_NEGATIVITY_FORENSIC_ACCEPTED__UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_DIAGNOSTIC_ACTIVE`
+`UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_SUPPORTED__OWNER_METHOD_ADOPTION_DECISION_REQUIRED`
 
 Results eligibility=`FALSE`。
 
 ## Latest accepted result
 
-The zero-science stationary-mass support forensic is accepted.
+Method-candidate diagnostic candidate:
 
-Candidate:
-
-`633e93d3ab114df95ac5d127170ced7da67a2cb1`.
+`bb5f2796b0d1b8a8c56dda40afa898cc7f8da315`
 
 Acceptance:
 
-`docs/CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_SUPPORT_FORENSIC_ACCEPTANCE_20260920.md`.
+`docs/CH5_MP4C_CORRECTED_OPTIONB_BEIJING_UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_DIAGNOSTIC_ACCEPTANCE_20260920.md`
 
 Terminal:
 
-`PASS__RUN003_STATIONARY_MASS_NEGATIVITY_SUPPORT_FORENSIC_COMPLETE__NO_KFE_METHOD_CHANGE`
+`PASS__UNIQUE_CLOSED_CLASS_RESTRICTED_KFE_CANDIDATE_DIAGNOSTIC__OWNER_METHOD_ADOPTION_DECISION_REQUIRED`
 
-Classification A:
+Key accepted facts:
 
-`RUN003_NEGATIVITY_BREACHES_TRANSIENT_ONLY__CLOSED_CLASS_MASS_PASSES_ENTRYWISE_FLOOR__KFE_METHOD_DECISION_REQUIRED`
+- Q_CC is structurally closed and conservative;
+- restricted 400x400 GESVD gives rank/nullity `399/1` under both preregistered rank thresholds;
+- normalized closed-class mass is strictly positive;
+- embedding exact zero on all 400 transient states gives a finite, normalized, nonnegative 800-state candidate;
+- exactly one full original-Q stationarity validation passes far inside the frozen stationarity bound;
+- the restricted candidate and the persisted run003 full-space p agree on closed support up to the same ~1e-11 transient leakage scale.
 
-All 14 frozen floor breaches are transient. Closed-class breach count is zero. All 400 closed-class entries are strictly positive.
+## Owner decision required
 
-The current full-space KFE remains FAIL. No method/tolerance/vector change has been adopted.
+The current accepted KFE method has not changed.
 
-## Current active task
+The pending decision is whether to adopt this unique-closed-class support KFE authority:
 
-`tasks/CH5_MP4C_CORRECTED_OPTIONB_BEIJING_UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_DIAGNOSTIC_20260920.md`.
+1. run the already-required exact-positive topology;
+2. require exactly one closed communicating class C;
+3. extract `Q_CC`;
+4. solve `Q_CC.T p_C = 0` with one dense GESVD;
+5. require restricted rank/nullity `|C|-1 / 1`;
+6. orient once and normalize once on C;
+7. set transient mass exactly to zero by structural support;
+8. validate the embedded full-space candidate against the original Q with one `Q.T@p_full`;
+9. retain the existing finite, stationarity, normalization, source-free and nonnegativity gates.
 
-This is a method-candidate diagnostic, not an implementation/adoption task.
+Not part of the proposed method:
+- clipping;
+- tolerance relaxation;
+- projection of an already-computed full-space p;
+- row replacement/pinning;
+- source RHS;
+- iterative eigensolver;
+- alternate solver;
+- post-hoc renormalization.
 
-It binds the exact accepted Beijing Q12 and persisted unique closed-class indices, then:
+No Builder successor is active pending explicit Owner adoption or rejection.
 
-1. extracts Q_CC;
-2. performs exactly one restricted 400x400 dense GESVD;
-3. requires both preregistered threshold views to agree on rank/nullity 399/1;
-4. uses only the smallest right singular vector;
-5. applies one sign orientation and one normalization on the closed class;
-6. embeds exact zero transient mass by support construction;
-7. evaluates exactly one full original Q.T@p.
+If adopted, the next task should implement this method as the terminal KFE authority and rerun the bounded corrected initial-turn route from the accepted turn-1 initialization states.
 
-The task may compare the new candidate with the persisted run003 full-space vector but may not modify the latter.
-
-No SCC rerun, no 800x800 GESVD rerun, no HJB/D2/selector, no aggregate/K1A/C1/firm, no turn 2.
-
-If supported, STOP for explicit Owner/Reviewer method-adoption decision before any 31-province rerun.
-
-Historical run001/run002/run003 scientific consumption remains immutable.
-
-K1B, K2, GE and Results remain closed.
+Turn 2, K1B, K2, GE and Results remain closed.
