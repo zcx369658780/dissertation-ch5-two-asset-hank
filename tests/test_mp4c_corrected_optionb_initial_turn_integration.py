@@ -4,8 +4,10 @@ from pathlib import Path
 
 import numpy as np
 import pytest
+from scipy import sparse
 
 from ch5_two_asset_hank.corrected_diagnostic.nonlinear_continuation import FailClosed
+from ch5_two_asset_hank.corrected_diagnostic import optionb_initial_turn_integration as driver
 from ch5_two_asset_hank.corrected_diagnostic.optionb_initial_turn_integration import (
     EXPECTED_C1_BLOB,
     EXPECTED_INITIALIZATION_BLOB,
@@ -13,8 +15,10 @@ from ch5_two_asset_hank.corrected_diagnostic.optionb_initial_turn_integration im
     EXPECTED_SOURCE_INITIALIZATION_BLOB,
     INITIALIZATION_RELATIVE,
     _blob,
+    _checkpoint_diagnostics,
     _check_ledger,
     _new_ledger,
+    _predecessor_lineage,
     load_initial_states,
     same_s_raw_next_payoff,
 )
@@ -67,3 +71,59 @@ def test_scientific_ledger_accepts_ceiling_and_rejects_overrun() -> None:
     ledger["direct_hjb_updates"] += 1
     with pytest.raises(FailClosed):
         _check_ledger(ledger)
+
+
+def _diagnostic_fixture() -> tuple[list[dict[str, object]], dict[str, np.ndarray], sparse.csr_matrix]:
+    rows = [{
+        "derivative_branches": {"b": "forward", "a": "backward"},
+        "active_constraints": ["a_lower"],
+        "transfer_branch": "zero_kink",
+        "interior_z_receipt": None,
+        "lower_a_zero_kink_multiplier_receipt": None,
+    }]
+    arrays = {
+        name: np.array([[[float(index + 1)]]])
+        for index, name in enumerate(("utility", "c", "l", "d", "g_b", "g_a", "q_b", "q_a"))
+    }
+    return rows, arrays, sparse.csr_matrix([[-1.0, 1.0], [1.0, -1.0]])
+
+
+def test_checkpoint0_diagnostics_are_current_only_and_comparisons_are_na(monkeypatch) -> None:
+    rows, arrays, q = _diagnostic_fixture()
+    monkeypatch.setattr(driver, "_policy_diagnostics", lambda *args: pytest.fail("comparative policy helper called"))
+    monkeypatch.setattr(driver, "_operator_diagnostics", lambda *args: pytest.fail("comparative operator helper called"))
+    policy, operator = _checkpoint_diagnostics(rows, arrays, q, None, None, None)
+    assert policy["diagnostic_mode"] == "CURRENT_ONLY__NO_PREVIOUS_CHECKPOINT"
+    assert policy["identity_change_count"] is None
+    assert policy["previous_checkpoint_comparison"] is None
+    assert all(value is None for value in policy["continuous_field_max_abs_change"].values())
+    assert set(policy["selected_field_sha256"]) == set(arrays)
+    assert operator["diagnostic_mode"] == "CURRENT_ONLY__NO_PREVIOUS_CHECKPOINT"
+    assert operator["nnz"] == 4
+    assert operator["difference_nnz"] is None
+    assert operator["previous_checkpoint_comparison"] is None
+
+
+def test_checkpoint1_plus_routes_to_existing_comparative_helpers(monkeypatch) -> None:
+    rows, arrays, q = _diagnostic_fixture()
+    calls = []
+    monkeypatch.setattr(driver, "_policy_diagnostics", lambda *args: calls.append("policy") or {"mode": "comparative"})
+    monkeypatch.setattr(driver, "_operator_diagnostics", lambda *args: calls.append("operator") or {"mode": "comparative"})
+    policy, operator = _checkpoint_diagnostics(rows, arrays, q, rows, arrays, q)
+    assert calls == ["policy", "operator"]
+    assert policy == {"mode": "comparative"}
+    assert operator == {"mode": "comparative"}
+
+
+def test_partial_previous_checkpoint_state_fails_closed() -> None:
+    rows, arrays, q = _diagnostic_fixture()
+    with pytest.raises(FailClosed, match="BLOCKED__PARTIAL_PREVIOUS_CHECKPOINT_DIAGNOSTICS_STATE"):
+        _checkpoint_diagnostics(rows, arrays, q, rows, None, q)
+
+
+def test_predecessor_run001_lineage_is_preserved_read_only() -> None:
+    receipt = _predecessor_lineage(REPOSITORY)
+    assert receipt["status"] == "PASS"
+    assert receipt["run001_files_modified"] is False
+    assert receipt["historical_scientific_ledger"]["corrected_policy_maps"] == 1
+    assert receipt["historical_scientific_ledger"]["direct_hjb_updates"] == 0

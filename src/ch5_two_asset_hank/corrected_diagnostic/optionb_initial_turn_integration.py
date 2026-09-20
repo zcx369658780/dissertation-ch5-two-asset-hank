@@ -76,13 +76,17 @@ from .option_a_step import BoundOptionAInputs
 from .selector import CorrectedSelectorParameters, SelectorBudget
 
 
-TASK_ID = "CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_31_PROVINCE_HOUSEHOLD_KFE_AND_K1A_C1_ONE_TURN_INTEGRATION_20260920"
-BASELINE_SHA = "5e0eb950298351880f22b15edebc242f66e143b7"
+TASK_ID = "CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_CHECKPOINT0_DIAGNOSTIC_REPAIR_AND_REEXECUTION_20260920"
+BASELINE_SHA = "67584b84d02823b56089a7eaa10e47ccaf811e5a"
 PASS_TERMINAL = (
-    "PASS__CORRECTED_INITIAL_TURN_31_PROVINCE_HOUSEHOLD_HJB_KFE_AND_K1A_C1_"
-    "INTEGRATION__RAW_NEXT_PAYOFF_READY__TURN2_NOT_RUN"
+    "PASS__CHECKPOINT0_DIAGNOSTIC_REPAIR__CORRECTED_INITIAL_TURN_31_PROVINCE_"
+    "HOUSEHOLD_HJB_KFE_AND_K1A_C1_INTEGRATION__RAW_NEXT_PAYOFF_READY__TURN2_NOT_RUN"
 )
 OUTPUT_RELATIVE = Path(
+    "reports/ch5_mp4c_corrected_optionb_initial_turn_31_province_household_kfe_"
+    "k1a_c1_one_turn_integration_20260920_run002"
+)
+PREDECESSOR_OUTPUT_RELATIVE = Path(
     "reports/ch5_mp4c_corrected_optionb_initial_turn_31_province_household_kfe_"
     "k1a_c1_one_turn_integration_20260920_run001"
 )
@@ -94,13 +98,14 @@ DISTANCE_RELATIVE = Path(
     "docs/evidence/ch5_mp4c_k1a_distance_mapping/normalized_distance_destination_origin.csv"
 )
 TASK_RELATIVE = Path(
-    "tasks/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_31_PROVINCE_HOUSEHOLD_KFE_"
-    "AND_K1A_C1_ONE_TURN_INTEGRATION_20260920.md"
+    "tasks/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_CHECKPOINT0_DIAGNOSTIC_"
+    "REPAIR_AND_REEXECUTION_20260920.md"
 )
 EXPECTED_INITIALIZATION_BLOB = "5bb902183c8cb313d986ee5a9f8bd6b7c0624ae1"
 EXPECTED_SOURCE_INITIALIZATION_BLOB = "19ba32b0c5534f2726036ab8ba30fb204e359325"
 EXPECTED_K1A_BLOB = "ac309b4dbe9f6b3ca1d3cfc691223600835d17b6"
 EXPECTED_C1_BLOB = "ba717dfdada1b47ee44af5562d3ffa01a9de8cfe"
+EXPECTED_PREDECESSOR_MANIFEST = "F447D5DF30D302963D81EB09E68BEC72C1B89F8C1DE227936533045F9A16F315"
 MAX_UPDATES_PER_PROVINCE = 50
 MAX_MAPS_PER_PROVINCE = 51
 MAX_ROOTS_PER_PROVINCE = 20_000_000
@@ -411,6 +416,67 @@ def _compact_checkpoint(
         path.unlink()
 
 
+def _checkpoint_diagnostics(
+    rows: list[dict[str, Any]],
+    arrays: dict[str, np.ndarray],
+    q: sparse.csr_matrix,
+    previous_rows: list[dict[str, Any]] | None,
+    previous_arrays: dict[str, np.ndarray] | None,
+    previous_q: sparse.csr_matrix | None,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Route checkpoint 0 to current-only diagnostics and later checkpoints to comparisons."""
+
+    previous = (previous_rows, previous_arrays, previous_q)
+    if all(item is None for item in previous):
+        identities = [_selected_identity(row) for row in rows]
+        policy = {
+            "diagnostic_mode": "CURRENT_ONLY__NO_PREVIOUS_CHECKPOINT",
+            "identity_sha256": _canonical_sha256(identities),
+            "identity_change_count": None,
+            "identity_change_flat_f_zero_based": None,
+            "transfer_branch_counts": dict(sorted(Counter(
+                str(row["transfer_branch"]) for row in rows
+            ).items())),
+            "active_constraint_counts": dict(sorted(Counter(
+                "+".join(map(str, row.get("active_constraints", []))) or "none"
+                for row in rows
+            ).items())),
+            "interior_z_marker_counts": dict(sorted(Counter(
+                str(identity["interior_z_marker"] or "none") for identity in identities
+            ).items())),
+            "selected_field_sha256": {
+                name: _field_sha256(value) for name, value in sorted(arrays.items())
+            },
+            "continuous_field_max_abs_change": {
+                name: None for name in ("c", "l", "d", "g_b", "g_a", "q_b", "q_a", "utility")
+            },
+            "previous_checkpoint_comparison": None,
+        }
+        operator = {
+            "diagnostic_mode": "CURRENT_ONLY__NO_PREVIOUS_CHECKPOINT",
+            "identity": _sparse_identity(q),
+            "nnz": int(sparse.csr_matrix(q).nnz),
+            "sparsity_pattern_same_as_previous": None,
+            "sparsity_pattern_changed": None,
+            "difference_nnz": None,
+            "difference_max_abs_entry": None,
+            "difference_inf_norm": None,
+            "previous_checkpoint_comparison": None,
+        }
+        return policy, operator
+    if any(item is None for item in previous):
+        raise FailClosed(
+            "BLOCKED__PARTIAL_PREVIOUS_CHECKPOINT_DIAGNOSTICS_STATE",
+            {"previous_rows": previous_rows is not None,
+             "previous_arrays": previous_arrays is not None,
+             "previous_q": previous_q is not None},
+        )
+    return (
+        _policy_diagnostics(rows, previous_rows, arrays, previous_arrays),
+        _operator_diagnostics(q, previous_q),
+    )
+
+
 def _direct_update(
     directory: Path,
     value: np.ndarray,
@@ -537,8 +603,9 @@ def _solve_province(
             repository, province_root, checkpoint, values[-1], inputs, budget, local, core_hashes
         )
         _accumulate_local(ledger, before, local)
-        policy = _policy_diagnostics(rows, previous_rows, arrays, previous_arrays)
-        operator = _operator_diagnostics(q, previous_q)
+        policy, operator = _checkpoint_diagnostics(
+            rows, arrays, q, previous_rows, previous_arrays, previous_q
+        )
         b_value = float(np.linalg.norm(
             inputs.scalars["rho"] * values[-1].ravel(order="F")
             - arrays["utility"].ravel(order="F")
@@ -563,6 +630,14 @@ def _solve_province(
             "D_value_change": None,
             "primary_convergence_pass": False,
             "d2_status": d2["status"],
+            "d2_receipt": d2,
+            "selector_root_ledger": {
+                "selector_evaluations": int(local["selector_evaluations"]),
+                "scalar_root_invocations": int(local["scalar_root_invocations"]),
+                "interior_z_root_invocations": int(local["interior_z_root_invocations"]),
+                "interior_a_switching_root_invocations": int(local["interior_a_switching_root_invocations"]),
+                "joint_switching_root_invocations": int(local["joint_switching_root_invocations"]),
+            },
         }
         if checkpoint > 0:
             ledger["hjb_checkpoint_evaluations_after_update"] += 1
@@ -903,6 +978,58 @@ def _read_junit(path: Path) -> dict[str, Any]:
     return {"status": "PASS", "tests": tests, "failures": failures, "errors": errors}
 
 
+def _predecessor_lineage(repository: Path) -> dict[str, Any]:
+    root = repository / PREDECESSOR_OUTPUT_RELATIVE
+    manifest_path = root / "sealed_manifest.json"
+    ledger_path = root / "scientific_ledger.json"
+    terminal_path = root / "terminal_receipt.json"
+    readback_path = root / "independent_readback_receipt.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
+    terminal = json.loads(terminal_path.read_text(encoding="utf-8"))
+    readback = json.loads(readback_path.read_text(encoding="utf-8"))
+    expected_counts = {
+        "source_native_initializations": 1,
+        "scalar_labor_roots_attempted": 800,
+        "scalar_labor_roots_returned": 800,
+        "corrected_policy_maps": 1,
+        "selector_evaluations": 800,
+        "scalar_selector_root_invocations": 483,
+        "interior_z_root_invocations": 206,
+        "d2_q_assemblies": 1,
+        "direct_hjb_updates": 0,
+        "scc_decompositions": 0,
+        "dense_scipy_linalg_svd_gesvd": 0,
+        "corrected_aggregate_evaluations": 0,
+        "firm_evaluations": 0,
+        "scientific_retries": 0,
+        "turn2_household_calls": 0,
+    }
+    checks = {
+        "manifest_sha256": _sha256(manifest_path) == EXPECTED_PREDECESSOR_MANIFEST,
+        "manifest_entries": int(manifest["entry_count"]) == 14,
+        "manifest_bytes": int(manifest["total_bytes"]) == 109_026,
+        "independent_readback": readback.get("status") == "PASS" and not readback.get("bad_paths"),
+        "terminal": terminal.get("terminal_verdict") == "FAIL__UNEXPECTED_TASK_EXCEPTION__NO_SCIENTIFIC_RETRY",
+        "historical_counts": all(int(ledger[name]) == value for name, value in expected_counts.items()),
+    }
+    if not all(checks.values()):
+        raise FailClosed("BLOCKED__PREDECESSOR_RUN001_LINEAGE_MISMATCH", {"checks": checks})
+    return {
+        "status": "PASS",
+        "classification": "ACCEPTED_HISTORICAL_CONSUMPTION__NOT_SUCCESSOR_RUN002_COUNTS",
+        "root": PREDECESSOR_OUTPUT_RELATIVE.as_posix(),
+        "manifest_sha256": EXPECTED_PREDECESSOR_MANIFEST,
+        "manifest_entry_count": 14,
+        "manifest_total_bytes": 109_026,
+        "terminal_verdict": terminal["terminal_verdict"],
+        "historical_scientific_ledger": ledger,
+        "checks": checks,
+        "run001_files_modified": False,
+        "successor_scientific_calls": 0,
+    }
+
+
 def _finalize(
     repository: Path, output: Path, pre_hashes: dict[str, str], ledger: dict[str, Any],
     terminal: str, detail: dict[str, Any], started: float,
@@ -939,6 +1066,15 @@ def execute(repository: Path, focused_test_junit: Path) -> str:
     pre_hashes = _task_hashes(repository)
     core_hashes = _scientific_code_hashes(repository)
     try:
+        focused_tests = _read_junit(focused_test_junit)
+        predecessor = _predecessor_lineage(repository)
+        changed_paths = sorted(filter(None, _git(
+            repository, "diff", "--name-only", f"{BASELINE_SHA}...HEAD"
+        ).splitlines()))
+        expected_repair_paths = sorted((
+            "src/ch5_two_asset_hank/corrected_diagnostic/optionb_initial_turn_integration.py",
+            "tests/test_mp4c_corrected_optionb_initial_turn_integration.py",
+        ))
         blobs = {
             "initialization": _blob(repository, INITIALIZATION_RELATIVE),
             "source_initialization": _git(repository, "rev-parse", "HEAD:validators/multi_province/corrected_2018_single_turn/run.py"),
@@ -956,12 +1092,33 @@ def execute(repository: Path, focused_test_junit: Path) -> str:
             "head_is_live_main_baseline_or_descendant": _git(repository, "merge-base", "--is-ancestor", BASELINE_SHA, "HEAD") == "",
             "origin_main_baseline": _git(repository, "rev-parse", "origin/main") == BASELINE_SHA,
             "authority_blobs": blobs == expected,
-            "focused_tests": _read_junit(focused_test_junit)["status"] == "PASS",
+            "focused_tests": focused_tests["status"] == "PASS",
+            "repair_changed_paths_exact": changed_paths == expected_repair_paths,
+            "predecessor_lineage": predecessor["status"] == "PASS",
         }
         if not all(startup_checks.values()):
             raise FailClosed("BLOCKED__STARTUP_AUTHORITY_OR_ENGINEERING_GATE", {"checks": startup_checks, "blobs": blobs})
         states, state_receipt = load_initial_states(repository)
         _write_json(output / "initial_state_receipt_31province.json", state_receipt)
+        _write_json(output / "predecessor_run001_cumulative_lineage_receipt.json", predecessor)
+        _write_json(output / "focused_test_receipt.json", {
+            **focused_tests,
+            "scientific_calls": 0,
+            "checkpoint0_current_only_coverage": True,
+            "checkpoint1_plus_comparative_routing_coverage": True,
+        })
+        _write_json(output / "checkpoint0_diagnostic_repair_contract_receipt.json", {
+            "status": "PASS",
+            "allowed_changed_paths": expected_repair_paths,
+            "actual_changed_paths": changed_paths,
+            "checkpoint0_policy_diagnostics": "CURRENT_ONLY__NO_PREVIOUS_CHECKPOINT",
+            "checkpoint0_operator_diagnostics": "CURRENT_ONLY__NO_PREVIOUS_CHECKPOINT",
+            "comparison_only_fields": None,
+            "checkpoint1_plus_route": "EXISTING_COMPARATIVE_HELPERS_WITH_COMPLETE_PREVIOUS_OBJECTS",
+            "nonlinear_continuation_modified": False,
+            "scientific_equations_or_tolerances_modified": False,
+            "scientific_calls": 0,
+        })
         _write_json(output / "startup_authority_binding.json", {
             "task_id": TASK_ID, "execution_head": _git(repository, "rev-parse", "HEAD"),
             "baseline_live_main": BASELINE_SHA, "checks": startup_checks, "blobs": blobs,
@@ -969,6 +1126,19 @@ def execute(repository: Path, focused_test_junit: Path) -> str:
         })
         _write_json(output / "pre_execution_code_freeze.json", {
             "scientific_code_sha256_before": pre_hashes, "core_corrected_code_sha256_before": core_hashes,
+        })
+        _write_json(output / "zero_science_preexecution_gate_receipt.json", {
+            "status": "PASS",
+            "checks": startup_checks,
+            "focused_tests": focused_tests,
+            "initial_state_order_status": state_receipt["status"],
+            "code_freeze_complete": True,
+            "source_native_initializations": 0,
+            "selector_evaluations": 0,
+            "root_invocations": 0,
+            "d2_q_assemblies": 0,
+            "direct_hjb_updates": 0,
+            "kfe_calls": 0,
         })
         native_grid = oracle.MatlabFaithfulHJBGrid(
             np.linspace(-2, 5, 20), np.linspace(0, 10, 20), np.array([0.8, 1.3]),
