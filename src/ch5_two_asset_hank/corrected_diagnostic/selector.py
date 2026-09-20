@@ -1227,17 +1227,23 @@ def _interior_a_switching_candidate(
             )
         )
     )
-    if not math.isfinite(ratio) or ratio <= 0.0:
+    b_face = faces.get("b")
+    b_active = b_face in active
+    if not math.isfinite(ratio) or ratio == 0.0:
         return None
-    implied_q_b_interval = (
-        float(derivative_interval[0] / ratio),
-        float(derivative_interval[1] / ratio),
+    if ratio < 0.0 and b_active:
+        return None
+    implied_q_b_interval = tuple(
+        sorted(
+            (
+                float(derivative_interval[0] / ratio),
+                float(derivative_interval[1] / ratio),
+            )
+        )
     )
     if implied_q_b_interval[0] <= 0.0:
         return None
 
-    b_face = faces.get("b")
-    b_active = b_face in active
     if b_active and b_face == "lower_b":
         liquid_domain = (float(p_b), None)
         root_interval = (
