@@ -10,7 +10,7 @@ Task ID:
 
 `CH5_MP4C_CORRECTED_OPTIONB_UNIQUE_CLOSED_CLASS_KFE_IMPLEMENTATION_AND_INITIAL_TURN_RUN004_20260920`
 
-Status: `ACTIVE`
+Status: `COMPLETED_FAIL_ACCEPTED`
 
 ## Governance
 
@@ -292,3 +292,23 @@ A run004 PASS establishes one corrected initial multi-province turn under the ne
 - do not modify CURRENT files
 - do not merge main
 - do not publish successor.
+
+
+## Reviewer closure — 2026-09-20
+
+Run004 candidate `af770c1fb787098569df2a25471cdc8101eda3a3` is accepted as failed evidence.
+
+Accepted result:
+- Owner-adopted unique-closed-class KFE implementation parity PASS;
+- 31/31 corrected household HJB PASS;
+- 31/31 adopted terminal KFE PASS;
+- 31/31 stationary aggregates PASS;
+- accepted household batch identity `8B7875F3BD603038E4D415D9F9FF759D4FDDC93E2E677C13BF0B649571B2EB05`.
+
+The one integration turn stopped at a bitwise comparison between two mathematically identical same-S floating-point reduction orders. This is accepted as an engineering/numerical identity-guard defect, not a payoff-law failure.
+
+Acceptance:
+`docs/CH5_MP4C_RUN004_31PROVINCE_HOUSEHOLD_KFE_PASS_RAW_NEXT_PAYOFF_REDUCTION_ORDER_GUARD_ACCEPTANCE_20260920.md`
+
+Next active task:
+`tasks/CH5_MP4C_RUN004_CANONICAL_SAME_S_RAW_NEXT_PAYOFF_REPAIR_AND_INTEGRATION_ONLY_REPLAY_20260920.md`
