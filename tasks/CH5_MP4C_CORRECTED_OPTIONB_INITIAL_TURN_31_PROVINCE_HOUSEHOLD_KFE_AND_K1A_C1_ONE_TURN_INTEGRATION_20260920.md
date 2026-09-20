@@ -10,7 +10,7 @@ Task ID:
 
 `CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_31_PROVINCE_HOUSEHOLD_KFE_AND_K1A_C1_ONE_TURN_INTEGRATION_20260920`
 
-Status: `ACTIVE`
+Status: `COMPLETED_FAIL_ACCEPTED`
 
 ## Governance
 
@@ -403,3 +403,12 @@ Git workflow:
 - do not merge main
 - do not modify CURRENT files
 - do not publish successor.
+
+
+## Reviewer closure — 2026-09-20
+
+Run001 candidate `159786968d2bb47c12b0b7b88ed8aeaa6d0e8bdf` is accepted as failed evidence. The failure is a checkpoint-0 diagnostics-only caller defect: comparative policy/operator diagnostics were called with no previous checkpoint. No direct HJB update occurred, so no Beijing HJB/KFE scientific failure is inferred.
+
+Acceptance: `docs/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_RUN001_ENGINEERING_EXCEPTION_ACCEPTANCE_20260920.md`.
+
+Successor: `tasks/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_CHECKPOINT0_DIAGNOSTIC_REPAIR_AND_REEXECUTION_20260920.md`.
