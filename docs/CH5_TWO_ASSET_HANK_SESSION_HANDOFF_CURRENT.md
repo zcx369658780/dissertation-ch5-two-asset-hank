@@ -64,3 +64,16 @@ No turn-2 household solve is allowed.
 If this passes, the project will have its first internally consistent corrected multi-province turn under Option B.
 
 K1B, full trajectory, GE and Results remain closed.
+
+
+## Reviewer session checkpoint before conversation handoff
+
+Owner requested an immediate durable GitHub checkpoint before moving review to a fresh ChatGPT conversation.
+
+Read:
+
+`docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_20260920_1112_REVIEWER_CHECKPOINT.md`
+
+This checkpoint records the Owner Option-B payoff decision, accepted corrected-household/raw-payoff progression, the live-main timing clarification, the current initial-turn integration task, scientific budgets, and the new-session acceptance checklist.
+
+Important: fresh-read live GitHub main first. The repository had already advanced beyond the earlier visible chat state when this checkpoint was written.
