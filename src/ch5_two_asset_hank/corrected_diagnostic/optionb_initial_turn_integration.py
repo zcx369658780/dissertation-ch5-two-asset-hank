@@ -76,15 +76,15 @@ from .option_a_step import BoundOptionAInputs
 from .selector import CorrectedSelectorParameters, SelectorBudget
 
 
-TASK_ID = "CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_TERMINAL_KFE_TOPOLOGY_SERIALIZATION_REPAIR_AND_RUN003_REEXECUTION_20260920"
-BASELINE_SHA = "829cc10785b88b02700204243e49f694ec8cf54a"
+TASK_ID = "CH5_MP4C_CORRECTED_OPTIONB_UNIQUE_CLOSED_CLASS_KFE_IMPLEMENTATION_AND_INITIAL_TURN_RUN004_20260920"
+BASELINE_SHA = "3a78812434ba2783b08919b55a3fe93f4788f725"
 PASS_TERMINAL = (
-    "PASS__TERMINAL_KFE_TOPOLOGY_SERIALIZATION_REPAIR__CORRECTED_INITIAL_TURN_31_PROVINCE_"
+    "PASS__OWNER_ADOPTED_UNIQUE_CLOSED_CLASS_KFE__CORRECTED_INITIAL_TURN_31_PROVINCE_"
     "HOUSEHOLD_HJB_KFE_AND_K1A_C1_INTEGRATION__RAW_NEXT_PAYOFF_READY__TURN2_NOT_RUN"
 )
 OUTPUT_RELATIVE = Path(
-    "reports/ch5_mp4c_corrected_optionb_initial_turn_31_province_household_kfe_"
-    "k1a_c1_one_turn_integration_20260920_run003"
+    "reports/ch5_mp4c_corrected_optionb_initial_turn_unique_closed_class_kfe_"
+    "20260920_run004"
 )
 RUN001_OUTPUT_RELATIVE = Path(
     "reports/ch5_mp4c_corrected_optionb_initial_turn_31_province_household_kfe_"
@@ -102,13 +102,31 @@ DISTANCE_RELATIVE = Path(
     "docs/evidence/ch5_mp4c_k1a_distance_mapping/normalized_distance_destination_origin.csv"
 )
 TASK_RELATIVE = Path(
-    "tasks/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_TERMINAL_KFE_TOPOLOGY_"
-    "SERIALIZATION_REPAIR_AND_RUN003_REEXECUTION_20260920.md"
+    "tasks/CH5_MP4C_CORRECTED_OPTIONB_UNIQUE_CLOSED_CLASS_KFE_IMPLEMENTATION_AND_"
+    "INITIAL_TURN_RUN004_20260920.md"
 )
 EXPECTED_INITIALIZATION_BLOB = "5bb902183c8cb313d986ee5a9f8bd6b7c0624ae1"
 EXPECTED_SOURCE_INITIALIZATION_BLOB = "19ba32b0c5534f2726036ab8ba30fb204e359325"
 EXPECTED_K1A_BLOB = "ac309b4dbe9f6b3ca1d3cfc691223600835d17b6"
 EXPECTED_C1_BLOB = "ba717dfdada1b47ee44af5562d3ffa01a9de8cfe"
+BEIJING_Q12_RELATIVE = Path(
+    "reports/ch5_mp4c_corrected_optionb_initial_turn_31_province_household_kfe_"
+    "k1a_c1_one_turn_integration_20260920_run003/household/p00_北京/checkpoint_012/"
+    "q_generator.npz"
+)
+BEIJING_D2_RELATIVE = BEIJING_Q12_RELATIVE.with_name("d2_receipt.json")
+BEIJING_METHOD_CANDIDATE_RELATIVE = Path(
+    "reports/ch5_mp4c_corrected_optionb_beijing_unique_closed_class_kfe_candidate_"
+    "20260920_run001"
+)
+BEIJING_Q12_SHA256 = "E1F55D0B755CB83D4F6A3CB4FEFD6DBC8CD4F05C6D23FC5DE00302E16B74BF20"
+BEIJING_METHOD_MANIFEST_SHA256 = "278D5ECF2772FFD434130C8553EEDB2A99EE2B6E989D918D793DBCC0263CDDA0"
+RUN003_MANIFEST_SHA256 = "18D62A1E388E17D3D0A7001D22998B86389C946B7136D481FB7DE11777A3388B"
+BEIJING_SPECTRUM_SHA256 = "9981787A127FFCB774E0C6A312DF72A2D13C5385681927E2C0DBCDC9D0D082B6"
+BEIJING_P_CLOSED_SHA256 = "649481483AA0DD54081ACD9C3419B926EF94D0C3CC3637F2412D13F31F0D0C48"
+BEIJING_P_FULL_SHA256 = "5D7DA01D02C8EA711CD43AE5CD3FBF14107CE8394B97BE2E7AE1C904EDC658E0"
+BEIJING_RESIDUAL_SHA256 = "B450EB9F97A3CDB66FDD24C7FE2DD9BB3997E834738572CFC1AA9BE69FFFDC71"
+BEIJING_CLOSED_MEMBERS = tuple(range(200, 400)) + tuple(range(600, 800))
 EXPECTED_RUN001_MANIFEST = "F447D5DF30D302963D81EB09E68BEC72C1B89F8C1DE227936533045F9A16F315"
 EXPECTED_RUN002_MANIFEST = "D01A8A0CDF6808824735FEACABD7572249970DE97606A63BEA86209B5B6F531A"
 MAX_UPDATES_PER_PROVINCE = 50
@@ -134,6 +152,13 @@ def _git(repository: Path, *args: str) -> str:
 
 def _blob(repository: Path, relative: Path) -> str:
     return _git(repository, "rev-parse", f"HEAD:{relative.as_posix()}")
+
+
+def _git_blob_sha256(repository: Path, relative: Path) -> str:
+    content = subprocess.check_output(
+        ["git", "show", f"HEAD:{relative.as_posix()}"], cwd=repository
+    )
+    return hashlib.sha256(content).hexdigest().upper()
 
 
 def _task_hashes(repository: Path) -> dict[str, str]:
@@ -275,7 +300,8 @@ def _local_ledger() -> dict[str, int]:
         "direct_hjb_solves": 0,
         "ordinary_graph_scc_summaries": 0,
         "terminal_topology_gates": 0,
-        "terminal_dense_gesvd": 0,
+        "terminal_restricted_dense_gesvd": 0,
+        "terminal_full_space_dense_gesvd": 0,
         "terminal_normalized_stationary_candidates": 0,
         "terminal_q_transpose_times_p": 0,
         "scientific_retries": 0,
@@ -300,7 +326,8 @@ def _new_ledger() -> dict[str, Any]:
         "direct_hjb_updates": 0,
         "hjb_checkpoint_evaluations_after_update": 0,
         "scc_decompositions": 0,
-        "dense_scipy_linalg_svd_gesvd": 0,
+        "restricted_dense_scipy_linalg_svd_gesvd": 0,
+        "full_space_800_dense_scipy_linalg_svd_gesvd": 0,
         "normalized_stationary_candidates": 0,
         "q_transpose_times_p": 0,
         "corrected_aggregate_evaluations": 0,
@@ -338,7 +365,8 @@ def _check_ledger(ledger: Mapping[str, Any]) -> None:
         "direct_hjb_updates": 1_550,
         "hjb_checkpoint_evaluations_after_update": 1_550,
         "scc_decompositions": 31,
-        "dense_scipy_linalg_svd_gesvd": 31,
+        "restricted_dense_scipy_linalg_svd_gesvd": 31,
+        "full_space_800_dense_scipy_linalg_svd_gesvd": 0,
         "normalized_stationary_candidates": 31,
         "q_transpose_times_p": 31,
         "corrected_aggregate_evaluations": 31,
@@ -382,7 +410,8 @@ def _accumulate_local(ledger: dict[str, Any], before: Mapping[str, int], after: 
         "joint_switching_root_invocations": "joint_switching_root_invocations",
         "d2_assemblies": "d2_q_assemblies",
         "terminal_topology_gates": "scc_decompositions",
-        "terminal_dense_gesvd": "dense_scipy_linalg_svd_gesvd",
+        "terminal_restricted_dense_gesvd": "restricted_dense_scipy_linalg_svd_gesvd",
+        "terminal_full_space_dense_gesvd": "full_space_800_dense_scipy_linalg_svd_gesvd",
         "terminal_normalized_stationary_candidates": "normalized_stationary_candidates",
         "terminal_q_transpose_times_p": "q_transpose_times_p",
     }
@@ -705,7 +734,11 @@ def _solve_province(
             kfe = _terminal_kfe_with_accounting(
                 checkpoint, q, float(d2["arithmetic_tolerance"]), province_root, local, ledger
             )
-            if local["terminal_topology_gates"] != 1 or local["terminal_dense_gesvd"] != 1:
+            if (
+                local["terminal_topology_gates"] != 1
+                or local["terminal_restricted_dense_gesvd"] != 1
+                or local["terminal_full_space_dense_gesvd"] != 0
+            ):
                 raise FailClosed("FAIL__KFE_EXACTLY_ONCE_ACCOUNTING", {"province": province})
             with np.load(province_root / "terminal_kfe/stationary_mass_arrays.npz", allow_pickle=False) as mass:
                 p = np.asarray(mass["p"])
@@ -1140,6 +1173,116 @@ def _finalize(
     return terminal
 
 
+def _implementation_parity_replay(repository: Path, output: Path) -> dict[str, Any]:
+    """Replay the adopted implementation once on the already accepted Beijing Q12."""
+
+    parity_root = output / "beijing_implementation_parity"
+    parity_root.mkdir(parents=False, exist_ok=False)
+    q_path = repository / BEIJING_Q12_RELATIVE
+    d2_path = repository / BEIJING_D2_RELATIVE
+    run003_manifest_relative = BEIJING_Q12_RELATIVE.parents[3] / "sealed_manifest.json"
+    candidate_manifest_relative = BEIJING_METHOD_CANDIDATE_RELATIVE / "sealed_manifest.json"
+    binding_checks = {
+        "q12_sha256": _sha256(q_path) == BEIJING_Q12_SHA256,
+        "run003_manifest_sha256": (
+            _sha256(repository / run003_manifest_relative) == RUN003_MANIFEST_SHA256
+        ),
+        "method_candidate_manifest_sha256": (
+            _git_blob_sha256(repository, candidate_manifest_relative)
+            == BEIJING_METHOD_MANIFEST_SHA256
+        ),
+    }
+    _write_json(
+        parity_root / "authority_binding.json",
+        {
+            "status": "PASS" if all(binding_checks.values()) else "FAIL",
+            "checks": binding_checks,
+            "q12_path": BEIJING_Q12_RELATIVE.as_posix(),
+            "q12_sha256": _sha256(q_path),
+            "run003_manifest_working_tree_sealed_sha256": _sha256(
+                repository / run003_manifest_relative
+            ),
+            "method_candidate_manifest_canonical_git_blob_sha256": _git_blob_sha256(
+                repository, candidate_manifest_relative
+            ),
+        },
+    )
+    if not all(binding_checks.values()):
+        raise FailClosed("BLOCKED__BEIJING_IMPLEMENTATION_PARITY_AUTHORITY_BINDING")
+
+    parity_ledger = _local_ledger()
+    q = sparse.load_npz(q_path).tocsr()
+    d2_receipt = json.loads(d2_path.read_text(encoding="utf-8"))
+    result = _terminal_kfe(
+        12,
+        q,
+        float(d2_receipt["arithmetic_tolerance"]),
+        parity_root,
+        parity_ledger,
+    )
+    terminal_root = parity_root / "terminal_kfe"
+    topology = json.loads((terminal_root / "topology_receipt.json").read_text(encoding="utf-8"))
+    structure = json.loads((terminal_root / "q_cc_structural_receipt.json").read_text(encoding="utf-8"))
+    rank = json.loads((terminal_root / "restricted_gesvd_rank_nullity_receipt.json").read_text(encoding="utf-8"))
+    orientation = json.loads((terminal_root / "orientation_normalization_receipt.json").read_text(encoding="utf-8"))
+    with np.load(terminal_root / "stationary_mass_arrays.npz", allow_pickle=False) as archive:
+        p_closed = np.asarray(archive["p_closed"])
+        p_full = np.asarray(archive["p"])
+        residual = np.asarray(archive["residual"])
+    checks = {
+        "terminal_kfe_pass": result["status"] == "PASS",
+        "closed_members_exact": tuple(topology["closed_members"][0]) == BEIJING_CLOSED_MEMBERS,
+        "q_cc_shape_400x400": structure["q_cc_shape"] == [400, 400],
+        "q_cc_nnz_1537": structure["q_cc_nnz"] == 1537,
+        "spectrum_identity": rank["singular_values_sha256"] == BEIJING_SPECTRUM_SHA256,
+        "local_rank_nullity_399_1": (
+            rank["local_dimension_threshold_view"]["numerical_rank"] == 399
+            and rank["local_dimension_threshold_view"]["numerical_nullity"] == 1
+        ),
+        "inherited_rank_nullity_399_1": (
+            rank["inherited_full_space_dimension_threshold_view"]["numerical_rank"] == 399
+            and rank["inherited_full_space_dimension_threshold_view"]["numerical_nullity"] == 1
+        ),
+        "p_closed_identity": _field_sha256(p_closed) == BEIJING_P_CLOSED_SHA256,
+        "p_full_identity": _field_sha256(p_full) == BEIJING_P_FULL_SHA256,
+        "residual_identity": _field_sha256(residual) == BEIJING_RESIDUAL_SHA256,
+        "p_closed_strictly_positive": orientation["p_closed_strictly_positive"],
+        "transient_exact_positive_zero": (
+            orientation["transient_positive_zero_bit_pattern_count"] == 400
+        ),
+        "topology_once": parity_ledger["terminal_topology_gates"] == 1,
+        "restricted_gesvd_once": parity_ledger["terminal_restricted_dense_gesvd"] == 1,
+        "full_space_gesvd_zero": parity_ledger["terminal_full_space_dense_gesvd"] == 0,
+        "normalization_candidate_once": (
+            parity_ledger["terminal_normalized_stationary_candidates"] == 1
+        ),
+        "full_q_transpose_p_once": parity_ledger["terminal_q_transpose_times_p"] == 1,
+        "hjb_policy_d2_calls_zero": True,
+        "scientific_retries_zero": parity_ledger["scientific_retries"] == 0,
+    }
+    replay = {
+        "status": "PASS" if all(checks.values()) else "FAIL",
+        "checks": checks,
+        "separate_scientific_ledger": parity_ledger,
+        "accepted_invariants": {
+            "sigma_max": rank["sigma_max"],
+            "second_smallest": rank["second_smallest"],
+            "smallest": rank["smallest"],
+            "minimum_p_closed": orientation["minimum_p_closed"],
+            "maximum_p_closed": orientation["maximum_p_closed"],
+            "full_q_residual_inf": result["stationarity"]["residual_inf"],
+        },
+    }
+    _write_json(parity_root / "implementation_parity_receipt.json", replay)
+    _write_json(parity_root / "scientific_ledger.json", parity_ledger)
+    if replay["status"] != "PASS":
+        raise FailClosed(
+            "FAIL__BEIJING_IMPLEMENTATION_PARITY__RUN004_NOT_STARTED",
+            {"checks": checks},
+        )
+    return replay
+
+
 def execute(repository: Path, focused_test_junit: Path) -> str:
     repository = repository.resolve(strict=True)
     output = repository / OUTPUT_RELATIVE
@@ -1248,6 +1391,19 @@ def execute(repository: Path, focused_test_junit: Path) -> str:
             "d2_q_assemblies": 0,
             "direct_hjb_updates": 0,
             "kfe_calls": 0,
+        })
+        parity = _implementation_parity_replay(repository, output)
+        _write_json(output / "owner_adopted_kfe_implementation_contract_receipt.json", {
+            "status": "PASS",
+            "method": "UNIQUE_CLOSED_CLASS_SUPPORT_RESTRICTED_GESVD",
+            "topology_calls_per_reached_converged_province": 1,
+            "restricted_gesvd_calls_per_reached_converged_province": 1,
+            "full_space_800_gesvd_calls": 0,
+            "full_q_transpose_p_calls_per_reached_converged_province": 1,
+            "strict_positive_closed_support_required": True,
+            "exact_positive_zero_transient_embedding_required": True,
+            "beijing_implementation_parity": parity["status"],
+            "scientific_equations_or_hjb_tolerances_modified": False,
         })
         native_grid = oracle.MatlabFaithfulHJBGrid(
             np.linspace(-2, 5, 20), np.linspace(0, 10, 20), np.array([0.8, 1.3]),

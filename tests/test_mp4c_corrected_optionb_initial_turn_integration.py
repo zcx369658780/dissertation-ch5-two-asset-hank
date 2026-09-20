@@ -10,6 +10,8 @@ from scipy import sparse
 from ch5_two_asset_hank.corrected_diagnostic import nonlinear_continuation as continuation
 from ch5_two_asset_hank.corrected_diagnostic.nonlinear_continuation import (
     FailClosed,
+    _restricted_rank_view,
+    _terminal_kfe,
     _topology_json_receipt,
 )
 from ch5_two_asset_hank.corrected_diagnostic import optionb_initial_turn_integration as driver
@@ -189,7 +191,7 @@ def test_terminal_kfe_success_accounting_accumulates_once(monkeypatch, tmp_path)
 
     def stub(*_args):
         local["terminal_topology_gates"] += 1
-        local["terminal_dense_gesvd"] += 1
+        local["terminal_restricted_dense_gesvd"] += 1
         local["terminal_normalized_stationary_candidates"] += 1
         local["terminal_q_transpose_times_p"] += 1
         return {"status": "PASS"}
@@ -200,7 +202,8 @@ def test_terminal_kfe_success_accounting_accumulates_once(monkeypatch, tmp_path)
     )
     assert result == {"status": "PASS"}
     assert ledger["scc_decompositions"] == 1
-    assert ledger["dense_scipy_linalg_svd_gesvd"] == 1
+    assert ledger["restricted_dense_scipy_linalg_svd_gesvd"] == 1
+    assert ledger["full_space_800_dense_scipy_linalg_svd_gesvd"] == 0
     assert ledger["normalized_stationary_candidates"] == 1
     assert ledger["q_transpose_times_p"] == 1
 
@@ -219,6 +222,98 @@ def test_terminal_kfe_exception_accounting_preserves_consumed_calls(monkeypatch,
             1, sparse.eye(2, format="csr"), 0.0, tmp_path, local, ledger
         )
     assert ledger["scc_decompositions"] == 1
-    assert ledger["dense_scipy_linalg_svd_gesvd"] == 0
+    assert ledger["restricted_dense_scipy_linalg_svd_gesvd"] == 0
+    assert ledger["full_space_800_dense_scipy_linalg_svd_gesvd"] == 0
     assert ledger["normalized_stationary_candidates"] == 0
     assert ledger["q_transpose_times_p"] == 0
+
+
+def _synthetic_unique_closed_topology(closed_members=(0, 1)) -> dict[str, object]:
+    labels = np.ones(800, dtype=np.int32)
+    labels[list(closed_members)] = 0
+    return {
+        "adjacency": sparse.csr_matrix((800, 800)),
+        "labels": labels,
+        "exact_positive_edge_count": 0,
+        "component_count": 2,
+        "component_sizes": [len(closed_members), 800 - len(closed_members)],
+        "closed_labels": [0],
+        "closed_members": [list(closed_members)],
+        "closed_class_count": 1,
+        "transient_state_count": 800 - len(closed_members),
+        "condensation": {"edge_count": 0, "edges": [], "nodes": []},
+    }
+
+
+def _synthetic_q() -> sparse.csr_matrix:
+    q = sparse.lil_matrix((800, 800), dtype=float)
+    q[0, 0], q[0, 1] = -1.0, 1.0
+    q[1, 0], q[1, 1] = 1.0, -1.0
+    return q.tocsr()
+
+
+def test_restricted_rank_gate_uses_local_and_inherited_thresholds() -> None:
+    values = np.array([2.0, 1.0, 0.0])
+    local = _restricted_rank_view(values, 3, 3)
+    inherited = _restricted_rank_view(values, 800, 3)
+    assert (local["numerical_rank"], local["numerical_nullity"]) == (2, 1)
+    assert (inherited["numerical_rank"], inherited["numerical_nullity"]) == (2, 1)
+    assert inherited["tau_rank"] > local["tau_rank"]
+
+
+def test_terminal_kfe_unique_closed_support_exactly_once_and_zero_transient(
+    monkeypatch, tmp_path
+) -> None:
+    topology_calls = 0
+    svd_shapes = []
+    original_svd = continuation.linalg.svd
+
+    def topology(_q):
+        nonlocal topology_calls
+        topology_calls += 1
+        return _synthetic_unique_closed_topology()
+
+    def svd(matrix, **kwargs):
+        svd_shapes.append(matrix.shape)
+        return original_svd(matrix, **kwargs)
+
+    monkeypatch.setattr(continuation, "analyze_exact_positive_topology", topology)
+    monkeypatch.setattr(continuation.linalg, "svd", svd)
+    local = _local_ledger()
+    receipt = _terminal_kfe(1, _synthetic_q(), 1e-12, tmp_path, local)
+    assert receipt["status"] == "PASS"
+    assert topology_calls == 1
+    assert svd_shapes == [(2, 2)]
+    assert local["terminal_restricted_dense_gesvd"] == 1
+    assert local["terminal_full_space_dense_gesvd"] == 0
+    assert local["terminal_q_transpose_times_p"] == 1
+    with np.load(tmp_path / "terminal_kfe/stationary_mass_arrays.npz", allow_pickle=False) as archive:
+        p = archive["p"]
+        assert np.all(p[:2] > 0.0)
+        assert np.array_equal(p[2:].view(np.uint64), np.zeros(798, dtype=np.uint64))
+
+
+def test_terminal_kfe_multiple_closed_classes_fails_before_svd(monkeypatch, tmp_path) -> None:
+    topology = _synthetic_unique_closed_topology()
+    topology["closed_members"] = [[0], [1]]
+    topology["closed_class_count"] = 2
+    monkeypatch.setattr(continuation, "analyze_exact_positive_topology", lambda _q: topology)
+    monkeypatch.setattr(
+        continuation.linalg, "svd", lambda *_a, **_k: pytest.fail("SVD must not run")
+    )
+    with pytest.raises(FailClosed, match="TERMINAL_TOPOLOGY_OR_KFE_GATE"):
+        _terminal_kfe(1, _synthetic_q(), 1e-12, tmp_path, _local_ledger())
+
+
+def test_terminal_kfe_strict_positive_closed_support_gate(monkeypatch, tmp_path) -> None:
+    monkeypatch.setattr(
+        continuation, "analyze_exact_positive_topology", lambda _q: _synthetic_unique_closed_topology()
+    )
+
+    def nonpositive_candidate(_matrix, **_kwargs):
+        return np.eye(2), np.array([2.0, 0.0]), np.array([[0.0, 1.0], [1.0, 0.0]])
+
+    monkeypatch.setattr(continuation.linalg, "svd", nonpositive_candidate)
+    with pytest.raises(FailClosed) as failure:
+        _terminal_kfe(1, _synthetic_q(), 1e-12, tmp_path, _local_ledger())
+    assert failure.value.detail["stage"] == "restricted_candidate_or_embedding"

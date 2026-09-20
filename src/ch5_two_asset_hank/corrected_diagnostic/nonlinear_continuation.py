@@ -555,7 +555,8 @@ def _new_ledger() -> dict[str, Any]:
         "direct_hjb_solves": 0,
         "ordinary_graph_scc_summaries": 0,
         "terminal_topology_gates": 0,
-        "terminal_dense_gesvd": 0,
+        "terminal_restricted_dense_gesvd": 0,
+        "terminal_full_space_dense_gesvd": 0,
         "terminal_normalized_stationary_candidates": 0,
         "terminal_q_transpose_times_p": 0,
         "scientific_retries": 0,
@@ -573,7 +574,8 @@ def _check_ledger(ledger: dict[str, Any]) -> None:
         "interior_z_root_invocations": MAX_INTERIOR_Z_ROOT_INVOCATIONS,
         "d2_assemblies": MAX_NEW_POLICY_MAPS,
         "direct_hjb_solves": MAX_NEW_UPDATES,
-        "terminal_dense_gesvd": 1,
+        "terminal_restricted_dense_gesvd": 1,
+        "terminal_full_space_dense_gesvd": 0,
         "terminal_normalized_stationary_candidates": 1,
         "terminal_q_transpose_times_p": 1,
     }
@@ -806,6 +808,41 @@ def _seal_directory(directory: Path, schema: str) -> dict[str, Any]:
     return document
 
 
+def _stable_csr_row_sums(matrix: sparse.csr_matrix) -> np.ndarray:
+    matrix = sparse.csr_matrix(matrix)
+    return np.asarray(
+        [
+            math.fsum(
+                float(value)
+                for value in matrix.data[matrix.indptr[row] : matrix.indptr[row + 1]]
+            )
+            for row in range(matrix.shape[0])
+        ],
+        dtype=np.float64,
+    )
+
+
+def _restricted_rank_view(
+    singular_values: np.ndarray, gamma_dimension: int, restricted_size: int
+) -> dict[str, Any]:
+    values = np.asarray(singular_values, dtype=np.float64)
+    if values.shape != (restricted_size,) or not np.all(np.isfinite(values)):
+        raise ValueError("restricted singular values have invalid shape or content")
+    sigma_max = float(values[0])
+    tau_rank = gamma(gamma_dimension + 64) * max(1.0, sigma_max)
+    nullity = int(np.count_nonzero(values <= tau_rank))
+    return {
+        "dimension_in_gamma": gamma_dimension,
+        "gamma_count": gamma_dimension + 64,
+        "sigma_max": sigma_max,
+        "tau_rank": tau_rank,
+        "numerical_rank": restricted_size - nullity,
+        "numerical_nullity": nullity,
+        "second_smallest": float(values[-2]) if restricted_size > 1 else None,
+        "smallest": float(values[-1]),
+    }
+
+
 def _terminal_kfe(
     checkpoint: int,
     q: sparse.csr_matrix,
@@ -827,19 +864,90 @@ def _terminal_kfe(
                 "closed_members": topology["closed_members"],
             },
         )
-    q_one = np.asarray(q @ np.ones(N, dtype=float)).ravel()
-    if not np.all(np.isfinite(q.data)) or float(np.max(np.abs(q_one), initial=0.0)) > q_one_bound:
+    closed = np.asarray(topology["closed_members"][0], dtype=np.int64)
+    closed_mask = np.zeros(N, dtype=bool)
+    closed_mask[closed] = True
+    transient = np.flatnonzero(~closed_mask)
+    m = int(closed.size)
+    if q.shape != (N, N) or m < 2 or np.unique(closed).size != m:
         raise FailClosed(
             "FAIL__HJB_CONVERGED__TERMINAL_TOPOLOGY_OR_KFE_GATE",
-            {"checkpoint": checkpoint, "stage": "terminal_q_structure"},
+            {"checkpoint": checkpoint, "stage": "closed_class_index_structure"},
         )
-    a = q.transpose().tocsr()
-    ledger["terminal_dense_gesvd"] += 1
+    _write_json(
+        terminal / "closed_class_index_receipt.json",
+        {
+            "closed_count": m,
+            "transient_count": int(transient.size),
+            "closed_members": closed.astype(int).tolist(),
+            "closed_members_sha256_little_endian_int64": _integer_sha256(closed),
+            "transient_members_sha256_little_endian_int64": _integer_sha256(transient),
+            "second_topology_or_scc_call": False,
+        },
+    )
+
+    q = sparse.csr_matrix(q)
+    q_cc = q[closed, :][:, closed].tocsr()
+    q_ct = q[closed, :][:, transient].tocsr()
+    positive_outgoing = q_ct.data[q_ct.data > 0.0]
+    q_cc_row_sums = _stable_csr_row_sums(q_cc)
+    q_one = _stable_csr_row_sums(q)
+    offdiagonal = q_cc.copy()
+    offdiagonal.setdiag(0.0)
+    offdiagonal.eliminate_zeros()
+    structure_checks = {
+        "full_q_shape_800x800": q.shape == (N, N),
+        "full_q_finite": bool(np.all(np.isfinite(q.data))),
+        "q_cc_shape_matches_closed_class": q_cc.shape == (m, m),
+        "q_cc_finite": bool(np.all(np.isfinite(q_cc.data))),
+        "q_cc_offdiagonals_nonnegative": bool(
+            not offdiagonal.nnz or np.all(offdiagonal.data >= 0.0)
+        ),
+        "no_positive_closed_to_transient_outflow": positive_outgoing.size == 0,
+        "q_cc_row_conservation_within_d2_bound": float(
+            np.max(np.abs(q_cc_row_sums), initial=0.0)
+        ) <= q_one_bound,
+        "full_q_row_conservation_within_d2_bound": float(
+            np.max(np.abs(q_one), initial=0.0)
+        ) <= q_one_bound,
+    }
+    structure = {
+        "status": "PASS" if all(structure_checks.values()) else "FAIL",
+        "checks": structure_checks,
+        "q_cc_shape": list(q_cc.shape),
+        "q_cc_nnz": int(q_cc.nnz),
+        "q_cc_identity": _sparse_identity(q_cc),
+        "q_cc_minimum_offdiagonal": (
+            float(np.min(offdiagonal.data)) if offdiagonal.nnz else 0.0
+        ),
+        "closed_to_transient_positive_count": int(positive_outgoing.size),
+        "closed_to_transient_positive_rate_sum": math.fsum(
+            float(value) for value in positive_outgoing
+        ),
+        "q_cc_maximum_absolute_stable_row_sum": float(
+            np.max(np.abs(q_cc_row_sums), initial=0.0)
+        ),
+        "q_full_maximum_absolute_stable_row_sum": float(
+            np.max(np.abs(q_one), initial=0.0)
+        ),
+        "accepted_d2_arithmetic_bound": q_one_bound,
+    }
+    _write_json(terminal / "q_cc_structural_receipt.json", structure)
+    if structure["status"] != "PASS":
+        raise FailClosed(
+            "FAIL__HJB_CONVERGED__TERMINAL_TOPOLOGY_OR_KFE_GATE",
+            {"checkpoint": checkpoint, "stage": "restricted_operator_structure"},
+        )
+
+    ledger["terminal_restricted_dense_gesvd"] += 1
     try:
         with warnings.catch_warnings(record=True) as caught:
             warnings.simplefilter("always")
             _u, singular_values, vh = linalg.svd(
-                a.toarray(), full_matrices=True, lapack_driver="gesvd", check_finite=True
+                q_cc.transpose().toarray(),
+                full_matrices=True,
+                lapack_driver="gesvd",
+                check_finite=True,
             )
     except Exception as exc:
         raise FailClosed(
@@ -849,32 +957,100 @@ def _terminal_kfe(
     warning_rows = [
         {"category": row.category.__name__, "message": str(row.message)} for row in caught
     ]
-    rank = rank_receipt(singular_values)
-    rank.update(
-        {
-            "solver": "scipy.linalg.svd",
-            "lapack_driver": "gesvd",
-            "warnings": warning_rows,
-            "status": "PASS",
-        }
+    local_view = _restricted_rank_view(singular_values, m, m)
+    inherited_view = _restricted_rank_view(singular_values, N, m)
+    rank_checks = {
+        "no_warnings": not warning_rows,
+        "local_rank_nullity_m_minus_1_1": (
+            local_view["numerical_rank"] == m - 1
+            and local_view["numerical_nullity"] == 1
+        ),
+        "inherited_rank_nullity_m_minus_1_1": (
+            inherited_view["numerical_rank"] == m - 1
+            and inherited_view["numerical_nullity"] == 1
+        ),
+    }
+    rank = {
+        "status": "PASS" if all(rank_checks.values()) else "FAIL",
+        "checks": rank_checks,
+        "solver": "scipy.linalg.svd",
+        "lapack_driver": "gesvd",
+        "full_matrices": True,
+        "check_finite": True,
+        "restricted_dimension": m,
+        "singular_value_count": int(singular_values.size),
+        "singular_values_sha256": _field_sha256(singular_values),
+        "sigma_max": float(singular_values[0]),
+        "second_smallest": float(singular_values[-2]),
+        "smallest": float(singular_values[-1]),
+        "local_dimension_threshold_view": local_view,
+        "inherited_full_space_dimension_threshold_view": inherited_view,
+        "warnings": warning_rows,
+        "full_space_800x800_gesvd_calls": int(
+            ledger["terminal_full_space_dense_gesvd"]
+        ),
+    }
+    np.savez_compressed(
+        terminal / "restricted_singular_spectrum.npz", singular_values=singular_values
     )
-    if (
-        warning_rows
-        or rank["numerical_rank"] != 799
-        or rank["numerical_nullity"] != 1
-        or not rank["second_smallest_strictly_above_tau_rank"]
-    ):
-        rank["status"] = "FAIL"
-        _write_json(terminal / "svd_rank_nullity_receipt.json", rank)
+    _write_json(terminal / "restricted_gesvd_rank_nullity_receipt.json", rank)
+    if rank["status"] != "PASS":
         raise FailClosed(
             "FAIL__HJB_CONVERGED__TERMINAL_TOPOLOGY_OR_KFE_GATE",
-            {"checkpoint": checkpoint, "stage": "svd_rank_nullity"},
+            {"checkpoint": checkpoint, "stage": "restricted_svd_rank_nullity"},
         )
-    _write_json(terminal / "svd_rank_nullity_receipt.json", rank)
+
     ledger["terminal_normalized_stationary_candidates"] += 1
-    p, orientation = normalize_null_vector(vh[-1, :])
+    candidate = np.asarray(vh[-1, :], dtype=np.float64).copy()
+    absolute_sum = math.fsum(abs(float(value)) for value in candidate)
+    raw_sum = math.fsum(float(value) for value in candidate)
+    tau_sum = gamma(m) * max(1.0, absolute_sum)
+    if not math.isfinite(raw_sum) or abs(raw_sum) <= tau_sum:
+        raise FailClosed(
+            "FAIL__HJB_CONVERGED__TERMINAL_TOPOLOGY_OR_KFE_GATE",
+            {"checkpoint": checkpoint, "stage": "restricted_signed_sum_separation"},
+        )
+    sign_reversed = raw_sum < 0.0
+    if sign_reversed:
+        candidate = -candidate
+    oriented_sum = math.fsum(float(value) for value in candidate)
+    p_closed = candidate / oriented_sum
+    p = np.zeros(N, dtype=np.float64)
+    p[closed] = p_closed
+    transient_bits = p[transient].astype("<f8", copy=False).view("<u8")
+    orientation = {
+        "smallest_restricted_right_singular_vector_only": True,
+        "orientation_calls": 1,
+        "global_sign_reversed": sign_reversed,
+        "raw_math_fsum": raw_sum,
+        "sum_abs_v": absolute_sum,
+        "tau_sum_local_dimension": tau_sum,
+        "strict_sum_separation": abs(raw_sum) > tau_sum,
+        "oriented_math_fsum": oriented_sum,
+        "normalization_calls": 1,
+        "minimum_p_closed": float(np.min(p_closed)),
+        "maximum_p_closed": float(np.max(p_closed)),
+        "p_closed_strictly_positive": bool(np.all(p_closed > 0.0)),
+        "transient_positive_zero_bit_pattern_count": int(
+            np.count_nonzero(transient_bits == 0)
+        ),
+        "transient_count": int(transient.size),
+        "p_closed_sha256": _field_sha256(p_closed),
+        "p_full_sha256": _field_sha256(p),
+    }
+    _write_json(terminal / "orientation_normalization_receipt.json", orientation)
+    if (
+        not np.all(np.isfinite(p_closed))
+        or not np.all(p_closed > 0.0)
+        or orientation["transient_positive_zero_bit_pattern_count"] != transient.size
+    ):
+        raise FailClosed(
+            "FAIL__HJB_CONVERGED__TERMINAL_TOPOLOGY_OR_KFE_GATE",
+            {"checkpoint": checkpoint, "stage": "restricted_candidate_or_embedding"},
+        )
     g = p / OMEGA
     ledger["terminal_q_transpose_times_p"] += 1
+    a = q.transpose().tocsr()
     residual = np.asarray(a @ p).ravel()
     a_inf = float(np.max(np.asarray(abs(a).sum(axis=1)).ravel(), initial=0.0))
     p_inf = float(np.linalg.norm(p, ord=np.inf))
@@ -904,8 +1080,12 @@ def _terminal_kfe(
         "source_identity_discrepancy_within_bound": source_discrepancy <= source_bound,
         "probability_mass_normalized": abs(p_sum - 1.0) <= p_normalization_bound,
         "density_volume_normalized": abs(weighted_density_sum - 1.0) <= grouped_density_bound,
+        "closed_support_strictly_positive": bool(np.all(p_closed > 0.0)),
+        "transient_support_bitwise_positive_zero": int(np.count_nonzero(transient_bits == 0)) == transient.size,
+        "full_mass_nonnegative": bool(np.all(p >= 0.0)),
         "minimum_mass_within_allowance": float(np.min(p)) >= -tau_nonnegative,
         "total_negative_mass_within_allowance": math.fsum(negative) <= N * tau_nonnegative,
+        "full_space_800x800_gesvd_calls_zero": ledger["terminal_full_space_dense_gesvd"] == 0,
         "no_clipping": True,
         "no_retry": True,
     }
@@ -914,6 +1094,8 @@ def _terminal_kfe(
         "checkpoint": checkpoint,
         "checks": checks,
         "orientation_and_normalization": orientation,
+        "restricted_operator": structure,
+        "restricted_rank_nullity": rank,
         "stationarity": {
             "residual_inf": residual_inf,
             "tau_stationarity": tau_stationarity,
@@ -942,6 +1124,9 @@ def _terminal_kfe(
         terminal / "stationary_mass_arrays.npz",
         p=p,
         g=g,
+        p_closed=p_closed,
+        closed_members=closed,
+        transient_members=transient,
         residual=residual,
         q_times_one=q_one,
         singular_values=singular_values,
@@ -960,7 +1145,7 @@ def _terminal_kfe(
             "FAIL__HJB_CONVERGED__TERMINAL_TOPOLOGY_OR_KFE_GATE",
             {"checkpoint": checkpoint, "stage": "stationary_mass"},
         )
-    _seal_directory(terminal, "CH5_D123_BOUNDED_CONTINUATION_TERMINAL_KFE_V1")
+    _seal_directory(terminal, "CH5_OWNER_ADOPTED_UNIQUE_CLOSED_CLASS_TERMINAL_KFE_V1")
     return receipt
 
 
