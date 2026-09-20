@@ -4,48 +4,75 @@
 
 状态：
 
-`CORRECTED_INITIAL_TURN_FULLY_CLOSED__TURN2_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_ACTIVE`
+`TURN2_BEIJING_CHECKPOINT2_SELECTOR_FAIL_ACCEPTED__F0579_UPPER_B_NEGATIVE_BRANCH_ROOT_FORENSIC_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Fully accepted corrected initial turn
+## Accepted corrected initial turn
+
+The first corrected multi-province turn remains fully accepted:
+
+- 31/31 HJB PASS;
+- 31/31 Owner-adopted unique-closed-class KFE PASS;
+- stationary aggregates PASS;
+- one K1A/C1/firm integration PASS;
+- canonical raw turn-2 payoff and exact turn-2 entering state accepted.
+
+## Accepted turn-2 failure
+
+Candidate:
+
+`37e563a87bf0dc1fb90224b03e0c4df9daea9d5f`.
 
 Acceptance:
 
-`docs/CH5_MP4C_CORRECTED_INITIAL_TURN_FULL_CLOSURE_ACCEPTANCE_20260920.md`.
+`docs/CH5_MP4C_TURN2_BEIJING_CHECKPOINT2_POLICY_SELECTOR_FAILURE_ACCEPTANCE_20260920.md`.
 
-Accepted initial-turn chain:
+Turn 2 reached only Beijing.
 
-- 31/31 corrected household HJB PASS;
-- 31/31 Owner-adopted unique-closed-class KFE PASS;
-- 31/31 stationary aggregate blocks PASS;
-- one 31-province household batch PASS;
-- source-faithful labor PASS;
-- K1A `beta_distance=2`, `beta_return=0` PASS;
-- C1 residual GovInv PASS;
-- 31 firm evaluations PASS;
-- canonical same-S raw payoff PASS.
+Checkpoint 0:
 
-Accepted household batch identity:
+- policy/D2 PASS;
+- B `0.35948978452765235`;
+- direct solve backward error `2.1754586146795478e-16`.
 
-`8B7875F3BD603038E4D415D9F9FF759D4FDDC93E2E677C13BF0B649571B2EB05`.
+Checkpoint 1:
 
-Accepted turn-2 raw payoff identity:
+- policy/D2 PASS;
+- B `0.019968227378343403`;
+- D `0.5603661628256393`;
+- convergence FAIL;
+- no exact or approximate period-2/3 cycle;
+- direct solve backward error `1.4650295837509506e-16`.
 
-`D77669DB4245DDCE3D6E91231A92C4A2AD12415D165F0718D0605BD213FDB414`.
+Checkpoint 2 first failure:
 
-Accepted turn-2 entering state authority:
+- flat F-order index 579;
+- state index `(19,8,1)`;
+- physical `(b,a,z)=(5,4.2105263157894735,1.3)`;
+- selector outcome `NO_ADMISSIBLE_POLICY`;
+- D2/Q not assembled.
 
-`reports/ch5_mp4c_run004_canonical_same_s_integration_replay_20260920_run001/next_state_candidate_receipt.json`
+The current selector therefore fails closed at this turn-2 state.
 
-with 31 rows in exact province order.
+## Current scientific uncertainty
 
-## Active turn-2 task
+The failure does not yet establish that the underlying constrained household problem has no feasible policy.
 
-`tasks/CH5_MP4C_CORRECTED_OPTIONB_TURN2_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_20260920.md`.
+The active upper-b negative-transfer regime is rejected before branch-specific root evaluation because multiple illiquid derivative branches survive the current pre-root viability screen.
 
-The task uses the exact completed-turn-1 / entering-turn-2 state, solves all 31 turn-2 corrected household HJB/KFE blocks, aggregates them, executes one turn-2 K1A/C1/firm integration, constructs a canonical raw payoff for a possible turn 3, and stops.
+The next task determines whether post-root evaluation would leave:
 
-It does not establish outer convergence and does not run turn 3.
+- exactly one admissible branch;
+- no admissible branch;
+- or a genuine multiple-policy ambiguity.
 
-K1B, K2, GE and Results remain closed.
+No selector repair is adopted yet.
+
+## Active task
+
+`tasks/CH5_MP4C_TURN2_BEIJING_F0579_UPPER_B_NEGATIVE_BRANCH_ROOT_FORENSIC_20260920.md`.
+
+No HJB, D2/Q, KFE, aggregate, integration or later-province execution is authorized in this forensic.
+
+Turn 3, K1B, K2, GE and Results remain closed.
