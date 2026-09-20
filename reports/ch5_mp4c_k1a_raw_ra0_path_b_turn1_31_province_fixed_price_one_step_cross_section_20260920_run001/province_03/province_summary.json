@@ -1,0 +1,303 @@
+{
+  "B_seed": 0.020339404004510314,
+  "D_step": 0.19428455444569148,
+  "convergence_classification_performed": false,
+  "d2": {
+    "arithmetic_tolerance": 2.6905273744107635e-14,
+    "checks": {
+      "a_coordinate_within_prospective_bound": true,
+      "b_coordinate_within_prospective_bound": true,
+      "diagonal_construction_error_exact_zero": true,
+      "minimum_offdiagonal_nonnegative": true,
+      "q_one_within_prospective_bound": true,
+      "zero_outward_face_amount": true,
+      "zero_outward_face_count": true,
+      "zero_tolerance_closed_faces_feasible": true
+    },
+    "closed_face_summaries": [
+      {
+        "axis": "b",
+        "boundary_kind": "economic_lower_bound",
+        "inward_count": 21,
+        "max_outward": 0.0,
+        "outward_count": 0,
+        "side": "lower",
+        "tangent_count": 19
+      },
+      {
+        "axis": "b",
+        "boundary_kind": "artificial_upper_state_constraint",
+        "inward_count": 20,
+        "max_outward": 0.0,
+        "outward_count": 0,
+        "side": "upper",
+        "tangent_count": 20
+      },
+      {
+        "axis": "a",
+        "boundary_kind": "economic_lower_bound",
+        "inward_count": 40,
+        "max_outward": 0.0,
+        "outward_count": 0,
+        "side": "lower",
+        "tangent_count": 0
+      },
+      {
+        "axis": "a",
+        "boundary_kind": "artificial_upper_state_constraint",
+        "inward_count": 0,
+        "max_outward": 0.0,
+        "outward_count": 0,
+        "side": "upper",
+        "tangent_count": 40
+      }
+    ],
+    "coordinate_action": {
+      "a": {
+        "bound_field_sha256": "2AEB2820AAAE8CA6B8B3404DAE725A86D82F0086C3000F6B2803D936EA9F33D7",
+        "error_field_sha256": "43A390FFD9BE7FE8430E3D8F2C0DD46984B59A6056706A70DE26B0AE82157243",
+        "first_violation_flat_f": null,
+        "max_abs_error": 2.398081733190338e-14,
+        "max_bound": 2.5754340919267183e-13,
+        "passes": true,
+        "violation_count": 0
+      },
+      "b": {
+        "bound_field_sha256": "6CF70576014619A76BD4C01A63080300EF0D5D4A347C187DBCCEF7A1CC5A6386",
+        "error_field_sha256": "DBA4A7C884CA9402C00B4B3444FE75131F7D69E5B1E6D168795CE90B62FA20CA",
+        "first_violation_flat_f": null,
+        "max_abs_error": 1.4210854715202004e-14,
+        "max_bound": 6.431787556294116,
+        "passes": true,
+        "violation_count": 0
+      },
+      "fixed_pre_outcome_max_row_terms": 4,
+      "gamma_n": 8.88178419700126e-16
+    },
+    "diagonal_construction_error": 0.0,
+    "max_abs_q_one": 1.4988010832439613e-15,
+    "minimum_offdiagonal": 2.7404782515125115e-06,
+    "q_artifact": {
+      "bytes": 24198,
+      "path": "q_generator.npz",
+      "sha256": "3DC90F02A60C9D9B7CB84A9312F0061116EA1810B8CBF56CD4DCC04125CDFCB5"
+    },
+    "q_identity": {
+      "data": "80EFAF72727CF4E7F7451805D112A6C998BF2CBD2E0835D8849B2C6015128917",
+      "indices": "9EB2E5E4EE254ACC94D21D7FDED32FFD11F39784B590DC97CE5CB9A29A5731A8",
+      "indptr": "0BC0E5D9E3799DDDE48075AD0F72F3B4D780BB62B600F58CC125A1445DE0EB10"
+    },
+    "status": "PASS"
+  },
+  "direct_solve": {
+    "D_step_vec_F_inf": 0.19428455444569148,
+    "arrays_artifact": {
+      "bytes": 38034,
+      "path": "direct_update_arrays.npz",
+      "sha256": "F6C948BEA2922871F2EAC2E8184A5FBFFD9D0EFC803B91E8D7160B06FF9FB6B8"
+    },
+    "backward_error_threshold_inclusive": 1e-12,
+    "delta": 1000.0,
+    "denominator": 66.27517120312345,
+    "matrix_identity": {
+      "data": "3F51C893443E26572746E56E1128F2602BB703D303BD5695D1E7270AA39DDBD8",
+      "indices": "9EB2E5E4EE254ACC94D21D7FDED32FFD11F39784B590DC97CE5CB9A29A5731A8",
+      "indptr": "0BC0E5D9E3799DDDE48075AD0F72F3B4D780BB62B600F58CC125A1445DE0EB10"
+    },
+    "matrix_inf": 30.343645202066053,
+    "next_value_sha256": "E1EDE6D4F92EFC34509A782EB19A88CCDAF2C1F4C6763FDC38CBB69850A013CF",
+    "normwise_backward_error": 1.6081649949625781e-16,
+    "residual_inf": 1.0658141036401503e-14,
+    "residual_sha256": "075231DA4B55358B8A7C7D0A63B4BAEFE238BA50432910447F0654F3D5C1622C",
+    "rhs_inf": 0.13483916011996896,
+    "rhs_sha256": "18F190D767CB1C0941320EACB3280B735CCD775CE872AA54D3D97B7C35817073",
+    "second_update_performed": false,
+    "solution_inf": 2.179709510922573,
+    "solver": "scipy.sparse.linalg.spsolve",
+    "status": "PASS",
+    "warnings": []
+  },
+  "effective_r_a_formula": "r_a*(1-0.1*(a/10)^9)",
+  "kfe_performed": false,
+  "operator": {
+    "difference_inf_norm": 11.471027566789846,
+    "difference_max_abs_entry": 5.735513783394923,
+    "difference_nnz": 1619,
+    "identity": {
+      "data": "80EFAF72727CF4E7F7451805D112A6C998BF2CBD2E0835D8849B2C6015128917",
+      "indices": "9EB2E5E4EE254ACC94D21D7FDED32FFD11F39784B590DC97CE5CB9A29A5731A8",
+      "indptr": "0BC0E5D9E3799DDDE48075AD0F72F3B4D780BB62B600F58CC125A1445DE0EB10"
+    },
+    "nnz": 3120,
+    "sparsity_pattern_changed": true,
+    "sparsity_pattern_same_as_previous": false
+  },
+  "point_call_ledger": {
+    "interior_a_switching_root_invocations": 0,
+    "interior_z_root_invocations": 15,
+    "joint_switching_root_invocations": 0,
+    "root_invocations": 271,
+    "selector_evaluations": 800
+  },
+  "policy": {
+    "active_constraint_counts": {
+      "lower_b": 19,
+      "none": 722,
+      "upper_a": 39,
+      "upper_a+upper_b": 1,
+      "upper_b": 19
+    },
+    "arrays_artifact": {
+      "bytes": 46016,
+      "path": "selected_policy_arrays.npz",
+      "sha256": "172249AD2662238F97E69730E7721A7FE5FEE8BC1CD0FD788E680950C7987546"
+    },
+    "continuous_field_max_abs_change": {
+      "c": 0.9725058410968828,
+      "d": 3.052330634861589,
+      "g_a": 3.015474609747199,
+      "g_b": 1.3209477780763974,
+      "l": 0.01677388445844019,
+      "q_a": 0.005199883184775732,
+      "q_b": 0.0006294844439156937,
+      "utility": 0.006226138011376267
+    },
+    "identity_artifact": {
+      "bytes": 203624,
+      "path": "selected_policy_identity.json",
+      "sha256": "536834124374D7C353DC46C9A8F7B7A29DFE9B6CD07296758A444F4CA4A44C18"
+    },
+    "identity_change_count": 80,
+    "identity_change_flat_f_zero_based": [
+      240,
+      260,
+      280,
+      281,
+      300,
+      301,
+      302,
+      303,
+      320,
+      321,
+      322,
+      323,
+      324,
+      325,
+      326,
+      340,
+      341,
+      342,
+      343,
+      344,
+      345,
+      346,
+      347,
+      348,
+      349,
+      350,
+      360,
+      361,
+      362,
+      363,
+      364,
+      365,
+      366,
+      367,
+      368,
+      369,
+      370,
+      371,
+      372,
+      373,
+      374,
+      375,
+      376,
+      377,
+      378,
+      379,
+      380,
+      381,
+      382,
+      383,
+      384,
+      385,
+      386,
+      387,
+      388,
+      389,
+      390,
+      391,
+      392,
+      393,
+      394,
+      395,
+      396,
+      397,
+      398,
+      399,
+      760,
+      761,
+      762,
+      763,
+      764,
+      765,
+      766,
+      780,
+      781,
+      782,
+      783,
+      784,
+      785,
+      786
+    ],
+    "identity_sha256": "2DC7CC1CF4D3BAC667D37BBC423FAAAA598A85DDD8FCC138C9C48EBBDF68FA8D",
+    "interior_z_marker_counts": {
+      "INTERIOR_LIQUID_Z_ZERO_DRIFT_SWITCH": 1,
+      "none": 799
+    },
+    "selected_field_sha256": {
+      "c": "016D84DB729FE8A051B99B9B43309417DCF5DA618D8D717089B43365804BA531",
+      "d": "06EB7DB5D8FDA275095AEE419C5DD6BAC07784389F0D5F9B07D73A2B052D97BD",
+      "g_a": "E941D2F54009E6CCCFCCED6912575E290B2A0888AAA7EDFD0F4BE638763CBF07",
+      "g_b": "271CD3656C37D73CF27B6992C928FAF6F2AA6B17CC448CAAA34E4BBAA063D7DE",
+      "l": "9DCEE4673165456722683F2A2B1AF28D0CC484A3D7EE0D782C6E66D68DA6AED4",
+      "q_a": "1C55975891506B615390E6830FD5D678803EF0FE081B8EF2A80EE6FF9150ADA1",
+      "q_b": "6EF9C3772E5C7EF0DBEB311728E2B5ABE7A533FBD713307D6404E02A173C6F00",
+      "utility": "73F29C1807AA60A881420AE99786D65DAF32259B21FC5E516930894C0CBD6598"
+    },
+    "selector_outcome_count": 800,
+    "switching": {
+      "interior_a": {
+        "admissible_candidate_count": 0,
+        "candidate_attempt_count": 0,
+        "root_status_counts": {},
+        "selected_flat_indices_f_zero_based": [],
+        "selected_policy_count": 0
+      },
+      "joint": {
+        "admissible_candidate_count": 0,
+        "candidate_attempt_count": 0,
+        "root_status_counts": {},
+        "selected_flat_indices_f_zero_based": [],
+        "selected_policy_count": 0
+      },
+      "liquid_z": {
+        "selected_flat_indices_f_zero_based": [
+          385
+        ],
+        "selected_policy_count": 1
+      }
+    },
+    "transfer_branch_counts": {
+      "negative": 298,
+      "positive": 323,
+      "zero_kink": 179
+    }
+  },
+  "province": "山西",
+  "province_index": 3,
+  "r_a_binary64": 0.4291478483179544,
+  "r_a_decimal": "0.4291478483179544",
+  "second_update_performed": false,
+  "status": "PASS"
+}
