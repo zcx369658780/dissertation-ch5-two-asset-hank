@@ -1,6 +1,6 @@
 # Chapter 5 当前会话交接
 
-更新：2026-09-20。
+更新：2026-09-21。
 
 唯一活动仓库：
 
@@ -14,81 +14,66 @@ GitHub live main 是 repository-state authority。Owner 为最终 scientific aut
 
 当前状态：
 
-`TURN2_UPPER_B_NEGATIVE_REPAIR_ACCEPTED__BEIJING_CHECKPOINT5_F0364_SELECTOR_FAIL__NEGATIVE_RATIO_INTERIOR_A_SWITCHING_FORENSIC_ACTIVE`
+`F0364_NEGATIVE_RATIO_SWITCHING_FALSE_NEGATIVE_CONFIRMED__INTERIOR_B_REPAIR_TURN1_POLICY_PARITY_AND_TURN2_RUN003_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Latest accepted run
+## Latest accepted forensic
 
 Candidate:
 
-`55dd5b81f1749e2af9e8d2a9a2507803b514131d`
+`5a6f3870ceccb7730d5417e87d801ac0bc8e210a`
 
 Acceptance:
 
-`docs/CH5_MP4C_TURN2_RUN002_F0364_SELECTOR_FAILURE_ACCEPTANCE_20260920.md`
+`docs/CH5_MP4C_TURN2_F0364_NEGATIVE_RATIO_SWITCHING_FALSE_NEGATIVE_ACCEPTANCE_20260921.md`
 
 Terminal:
 
-`FAIL__CORRECTED_HJB_POLICY_MAP_OR_D2_GATE`.
+`PASS__TURN2_BEIJING_F0364_NEGATIVE_RATIO_INTERIOR_A_SWITCHING_FORENSIC_COMPLETE__NO_SELECTOR_CHANGE`
 
-The previously authorized active-upper-b negative branch-enumeration repair passed and is accepted.
+Classification:
 
-Fresh turn-2 run002 advanced Beijing through checkpoints 0-4, then stopped at checkpoint 5 / flat 364 before D2/Q.
+`TURN2_F0364_NEGATIVE_RATIO_INTERIOR_A_SWITCHING_GUARD_FALSE_NEGATIVE_CONFIRMED`.
 
-## Exact F0364 failure
+At F0364:
 
-Cell:
+- strict a-drift crossing occurs for p_b backward;
+- d_z=-7.8384208979658965;
+- D3 ratio R=-0.7547777451261338;
+- sign-aware mapped q_b interval is [0.004111019263931103,0.006526149020033277];
+- p_b backward is inside;
+- q_a=-0.0045978913784868415 is inside the original a-derivative interval;
+- backward-liquid switching candidate passes D3 KKT, b-direction, finite and Hamiltonian legality with no rejection;
+- p_b forward is outside the mapped interval and direction-inconsistent;
+- no explicit accepted scientific authority requires q_a>0 or R>0.
 
-`v005_f0364_b004_a018_z000`
+## Reviewer implementation decision
 
-State:
+A narrow correction is authorized for interior liquid nodes only.
 
-- b=-0.5263157894736843
-- a=9.473684210526315
-- z=0.8
+Finite negative nonzero ratio is allowed to map the closed a-derivative interval by dividing both endpoints and sorting the q_b images.
 
-Derivatives:
+Active liquid faces retain their existing negative-ratio fail-closed behavior. Ratio zero remains fail closed.
 
-- p_b_backward=0.006091715618507631
-- p_b_forward=0.008179870108012337
-- p_a_backward=-0.0031029058502000167
-- p_a_forward=-0.004925792041697845
-
-For negative transfer at p_b backward:
-
-- backward-a g_a=1.1624821053092704
-- forward-a g_a=-0.25497146700720563
-
-so the ordinary branches strictly cross zero a-drift.
-
-No interior-a switching candidate is created.
-
-Current switching code has:
-
-- d_z=-7.8384208979658965
-- D3 ratio q_a/q_b=-0.7547777451261338
-- early return when ratio<=0.
+No equation, calibration, KKT law, root law or boundary law changes.
 
 ## Current active task
 
-`tasks/CH5_MP4C_TURN2_BEIJING_F0364_NEGATIVE_RATIO_INTERIOR_A_SWITCHING_FORENSIC_20260920.md`.
+`tasks/CH5_MP4C_INTERIOR_B_NEGATIVE_RATIO_SWITCHING_REPAIR_TURN1_PARITY_AND_TURN2_RUN003_20260921.md`.
 
-The task does not modify selector.py and runs no HJB/root/D2/KFE science.
+Critical ordering:
 
-It must:
+1. implement/test the narrow interior-b correction;
+2. prove exact normal-selector F0364 parity;
+3. replay every accepted turn-1 run004 policy map under the corrected selector using persisted V;
+4. compare every selected-policy identity exactly;
+5. if any mismatch, STOP before turn 2;
+6. only if all 408 maps match, execute one fresh turn-2 run003;
+7. stop before turn 3.
 
-1. reproduce the persisted eight-candidate failure;
-2. confirm the strict p_b-backward a-drift crossing;
-3. calculate d_z and the negative D3 ratio;
-4. construct only a diagnostic sign-aware mapped q_b interval by dividing both negative a-derivative endpoints by the negative ratio and sorting the resulting positive endpoints;
-5. evaluate p_b backward and p_b forward fixed-shadow switching candidates using existing controls/KKT/direction laws;
-6. audit whether positive ratio or positive q_a is an explicit accepted scientific authority rather than merely an implementation guard;
-7. return A/B/C/D;
-8. make no selector change.
+Compatibility replay has no HJB update, D2/Q, KFE, aggregate or integration calls.
 
-No fresh turn-2 rerun is authorized until this forensic is reviewed.
-
-Historical corrected initial-turn acceptance and prior turn-2/forensic evidence remain immutable.
+Historical turn-1 remains immutable unless the parity gate finds a mismatch.
 
 Turn 3, K1B, K2, full trajectory, GE and Results remain closed.
