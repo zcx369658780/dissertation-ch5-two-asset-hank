@@ -10,7 +10,7 @@ Task ID:
 
 `CH5_MP4C_TURN2_F0579_FORENSIC_FINITE_SCREEN_PERSISTENCE_REPAIR_AND_RUN002_20260920`
 
-Status: `ACTIVE`
+Status: `COMPLETED_PASS_ACCEPTED`
 
 ## Governance
 
@@ -256,3 +256,22 @@ followed by exactly one classification A/B/C/D.
 - do not modify CURRENT files
 - do not merge main
 - do not publish successor.
+
+
+## Reviewer closure — 2026-09-20
+
+Forensic run002 candidate `5e1b898d959bea1fbbfdda84bf4d958f3b6dbbdc` is accepted.
+
+Terminal:
+`PASS__TURN2_BEIJING_F0579_UPPER_B_NEGATIVE_BRANCH_ROOT_FORENSIC_RUN002_COMPLETE__NO_SELECTOR_CHANGE`
+
+Classification:
+`TURN2_F0579_UPPER_B_NEGATIVE_PRE_ROOT_UNIQUENESS_FALSE_NEGATIVE_CONFIRMED`.
+
+Backward branch reaches a valid upper-b root but is rejected by the existing a-direction law. Forward branch reaches a valid root and passes all existing downstream checks. Exactly one distinct admissible policy remains.
+
+Acceptance:
+`docs/CH5_MP4C_TURN2_F0579_PRE_ROOT_FALSE_NEGATIVE_FORENSIC_ACCEPTANCE_20260920.md`
+
+Next active task:
+`tasks/CH5_MP4C_ACTIVE_UPPER_B_NEGATIVE_BRANCH_ENUMERATION_REPAIR_AND_TURN2_RUN002_20260920.md`
