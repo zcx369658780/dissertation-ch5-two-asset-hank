@@ -3,60 +3,60 @@
 更新：2026-09-20。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 Results eligibility=`FALSE`。
 
-## Household corrected foundation closed
+## Corrected household foundation
 
-The corrected fixed-price household route is now accepted through:
+Accepted:
 
-1. D1/D2/D3 and all adopted boundary/switching laws;
+1. corrected D1/D2/D3 household law and all adopted boundary/switching closures;
 2. checkpoint-11 HJB convergence;
-3. exact same-Q11 pin-free/source-free unique invariant mass;
+3. same-Q11 unique pin-free/source-free invariant mass;
 4. exact stationary Ct/Lt/At/Bt/AtTax aggregation;
-5. opt-in corrected multi-province household-output adapter fixture.
+5. opt-in corrected household aggregate adapter.
 
-Therefore the household numerical/interface gate is no longer the current bottleneck.
+## Payoff-return authority now frozen
 
-## Current gate: payoff-return scientific authority
+Owner adopted Option B:
 
-No Builder task is active.
+`docs/CH5_MP4C_K1A_RAW_RA0_PAYOFF_OWNER_ADOPTION_20260920.md`.
 
-The next required Owner decision is documented in:
+The new economic household payoff authority is completed-iteration raw net firm `ra0`, interpreted as a one-model-period dimensionless net return.
 
-`docs/CH5_MP4C_K1A_PAYOFF_RETURN_OWNER_DECISION_GATE_20260920.md`.
+No calendar-year mapping is claimed and no annualization, rescaling, clipping, smoothing or risk adjustment is authorized.
 
-Accepted evidence establishes:
+Same-S quantity/payoff aggregation and lagged completed-iteration timing remain frozen.
 
-- clipped source-used `ra` is a transitional numerical bridge only;
-- raw net firm `ra0` is the strongest source-consistent payoff candidate;
-- `[.02,.09]` is not an economically identified payoff interval;
-- current evidence does not identify the external calendar period or absolute economic numeraire for the rate-like return object.
+K1B attractiveness is separate: raw-ra0 cross-sectional z-score with preregistered `beta_return=0.5`.
 
-No new outer runtime, K1B runtime or payoff-law change is authorized until Owner freezes this contract.
+## Current stage
 
-## Route after Owner payoff adoption
+Active task:
 
-If Owner adopts raw `ra0` or another explicit payoff contract:
+`tasks/CH5_MP4C_K1A_RAW_RA0_CORRECTED_HOUSEHOLD_FIXED_PRICE_THREE_POINT_SAFETY_PANEL_20260920.md`.
 
-1. publish one bounded runtime-safety diagnostic using the opt-in corrected household adapter and already accepted K1/C1 accounting;
-2. preserve source-faithful labor and lagged completed-iteration timing;
-3. no K1B attractiveness feedback in the first payoff-safety task;
-4. review household convergence, D2/KFE legality, capital/C1 accounting and raw-return behavior;
-5. only after bounded acceptance may K1B `beta_return=.5` lagged raw-`ra0` z-score attractiveness reopen;
-6. K2 endogenous home-vs-foreign margin remains later.
+This is the first runtime-safety gate after Owner payoff adoption.
 
-## Existing authorities retained
+It uses accepted checkpoint-11 V11 and freezes all non-payoff inputs. Three exact Path-B portfolio raw-payoff points are tested with at most one corrected policy map, D2 assembly and direct HJB update each.
+
+No KFE, outer feedback or K1B is permitted.
+
+## Route after this safety panel
+
+If all three preregistered points pass:
+
+1. Reviewer may authorize a 31-province raw-payoff corrected-household batch using exact accepted K1A payoff provenance;
+2. then, if that batch is numerically admissible, authorize a very short corrected outer integration with source-faithful labor, K1A geography beta=2 and C1 accounting;
+3. only after bounded outer evidence may K1B `beta_return=.5` attractiveness feedback reopen;
+4. K2 endogenous home-vs-foreign margin remains later.
+
+If any point fails, stop at the exact raw-payoff household gate. Do not restore clipping or invent a transform merely to obtain convergence.
+
+## Retained authorities
 
 - K1 Scheme B and same-S quantity/payoff accounting;
 - home retained capital and national conservation;
-- K1A pure-geographic benchmark `beta_distance=2`;
+- K1A geography `beta_distance=2`;
 - C1 `GovInv=max(Ktarget-Kprivate,0)`;
-- source-faithful labor for first capital-route integration;
-- completed-iteration lagged portfolio timing;
-- K1B attractiveness preregistration `beta_return=.5` with raw-`ra0` cross-sectional z-score.
-
-The K1B attractiveness object is not the household payoff level.
-
-## Downstream
+- source-faithful labor for first integration route;
+- lagged completed-iteration timing.
 
 Production-default replacement, full outer fixed point/market clearing, GE, annual dynamics, shocks, IRFs, welfare and Results remain closed.
-
-Historical K1A trajectories remain mechanism/accounting diagnostics only.

@@ -4,53 +4,45 @@
 
 状态：
 
-`CORRECTED_HOUSEHOLD_FIXED_POINT_AND_AGGREGATE_INTERFACE_ACCEPTED__OWNER_PAYOFF_RETURN_FREEZE_REQUIRED__OUTER_RUNTIME_BLOCKED`
+`RAW_RA0_PAYOFF_OWNER_ADOPTED__FIXED_PRICE_THREE_POINT_CORRECTED_HOUSEHOLD_SAFETY_PANEL_ACTIVE__OUTER_RUNTIME_BLOCKED`
 
 Results eligibility=`FALSE`。
 
-## Accepted corrected household closure
+## Corrected household foundation
 
-Accepted checkpoint 11 provides:
+Accepted corrected household authority remains:
 
-- HJB primary convergence PASS;
-- exact same-Q11 source-free unique invariant mass PASS;
-- exact stationary aggregate/interface binding PASS.
+- checkpoint-11 HJB convergence PASS;
+- same-Q11 unique source-free stationary mass PASS;
+- Ct/Lt/At/Bt/AtTax aggregate/interface binding PASS;
+- opt-in corrected household adapter PASS.
 
-Latest aggregate-adapter candidate accepted:
+## Owner payoff-return adoption
 
-`5830285db591c448cacffd8a7b28635bbcef2f54`.
+Owner adopted Option B on 2026-09-20.
 
-Acceptance:
+Authority:
 
-`docs/CH5_MP4C_2018_CORRECTED_HOUSEHOLD_FIXED_POINT_AGGREGATE_AND_ADAPTER_BINDING_ACCEPTANCE_20260920.md`.
+`docs/CH5_MP4C_K1A_RAW_RA0_PAYOFF_OWNER_ADOPTION_20260920.md`.
 
-Accepted corrected fixed-point aggregates:
+Frozen payoff contract:
 
-- Ct `11.72504598498222`
-- Lt `0.6881256647265093`
-- At `9.210552290174773`
-- Bt `1.6622560718337767`
-- total assets `10.87280836200855`
-- AtTax `0.05117497248083413`.
+- household economic payoff = completed-iteration raw net firm `ra0`;
+- interpret as one-model-period dimensionless net return;
+- no claim that one model period equals a calendar year;
+- no annualization, rescaling, clipping, smoothing or risk adjustment;
+- same K1 portfolio matrix `S` for quantity and payoff;
+- lagged completed-iteration timing unchanged;
+- K1B raw-ra0 z-score attractiveness remains separate from payoff level.
 
-The opt-in corrected household adapter is accepted. Existing default household/one-turn/stationary route remains unchanged.
+Historical clipped `ra` remains transitional/source-faithful evidence only.
 
-## Current scientific gate
+## Active task
 
-There is no active Builder task.
+`tasks/CH5_MP4C_K1A_RAW_RA0_CORRECTED_HOUSEHOLD_FIXED_PRICE_THREE_POINT_SAFETY_PANEL_20260920.md`
 
-The controlling Owner gate is:
+This task changes only `r_a` at fixed accepted checkpoint-11 non-payoff inputs and executes at most one policy/D2/direct-HJB step for each preregistered LOW/MEDIAN/HIGH raw portfolio payoff.
 
-`docs/CH5_MP4C_K1A_PAYOFF_RETURN_OWNER_DECISION_GATE_20260920.md`.
+No KFE, aggregate re-evaluation, capital network, firm, outer loop, K1B, GE or Results work is authorized.
 
-The accepted payoff audit still finds:
-
-- clipped/used `ra` = transitional source-faithful bridge only;
-- raw `ra0` = source-consistent payoff candidate;
-- period / numeraire / final payoff interpretation unresolved.
-
-No runtime payoff-law change, K1B execution or corrected-household outer trajectory may begin until Owner explicitly adopts the payoff-return contract.
-
-K1A geography benchmark `beta_distance=2`, K1/C1 accounting, lagged timing and source-faithful labor sequencing remain accepted.
-
-Production default, market clearing, GE, annual dynamics, IRFs, welfare and Results remain closed.
+A PASS is required before any 31-province raw-payoff household batch or short corrected outer trajectory may be considered.

@@ -1,6 +1,6 @@
 # Chapter 5 多省份双边资本网络科学设计冻结稿
 
-更新：2026-09-11。状态：`SCIENTIFIC_DESIGN_FREEZE__K1_ACCOUNTING_ACCEPTED__SCORING_AND_K2_PENDING_OWNER_FREEZE`。
+更新：2026-09-20。状态：`SCIENTIFIC_DESIGN_FREEZE__K1A_GEOGRAPHY_AND_RAW_RA0_PAYOFF_AUTHORITY_ACCEPTED__K1B_RUNTIME_PENDING_SAFETY_GATE`。
 
 ## 1. 设计动机与历史背景
 
@@ -155,15 +155,16 @@ K1 API 已强制区分：
 
 原因：当前 raw `ra0`、clipped `ra`、normalized return、expected return 的经济 period / numeraire 尚未最终冻结。
 
-不得默认用 clipped `.02-.09` return 做 attractiveness，因为此前 price forensic 已证明该区间只是 `EMPIRICAL_NUMERICAL_SAFEGUARD`，且 C1旧路径下 30/31 raw `ra0` 高于 `.09`。使用 clipped return 会人为抹平省际差异。
+不得使用 clipped `.02-.09` return 作为新的经济 payoff authority；该区间已被接受为 `EMPIRICAL_NUMERICAL_SAFEGUARD`，并在 K1A evidence 中抹平了绝大多数省际收益差异。
 
-候选 return score 在科学冻结前至少比较：
-- raw lagged `ra0`；
-- relative raw return `ra0_j - mean(ra0)`；
-- standardized cross-sectional score；
-- smoothed/expected return。
+Owner 于 2026-09-20 正式采用 Option B：
+- household illiquid payoff 的经济对象冻结为 completed-iteration raw net firm `ra0`；
+- `ra0` 解释为 one-model-period dimensionless net return；当前不声明该 model period 等于一个自然年；
+- 不 annualize、不 rescale、不 clip、不 smooth、不 risk-adjust；
+- payoff 继续通过同一 `S` 聚合：`rah_i = sum_j S[j,i] * ra0_j`；
+- completed-iteration lagged timing 保持不变。
 
-不得观察 trajectory 后再选择 normalization。
+K1B attractiveness 与 payoff level 严格分离：attractiveness 仍冻结为 completed-iteration raw `ra0` 的 cross-sectional z-score，`beta_return=0.5` 仅属于 K1B destination-attractiveness authority，不是 household payoff level。
 
 ## 9. 与 financial gravity / multi-country portfolio literature 的关系
 
@@ -257,3 +258,12 @@ K1 修复不能被写成“KFE 已解决”。
 - annual/dynamic/IRF extensions。
 
 Results eligibility 继续为 `FALSE`。
+
+
+## 15. 2026-09-20 Owner payoff-return adoption supersession note
+
+Owner 已显式采用 Option B，并接受最小冻结方案。此前本文件中将 portfolio payoff return、raw-ra0 period/numeraire 或 K1B return-score normalization 列为“尚未冻结”的历史文字，在与下列新 authority 冲突时由新 authority 覆盖：
+
+`docs/CH5_MP4C_K1A_RAW_RA0_PAYOFF_OWNER_ADOPTION_20260920.md`.
+
+当前仍未授权的是新的长程 outer runtime、K1B feedback runtime 与 K2。下一步仅允许执行固定价格、三点、单步 corrected-household raw-ra0 safety panel。

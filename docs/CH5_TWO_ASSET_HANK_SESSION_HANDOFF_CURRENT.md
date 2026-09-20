@@ -14,51 +14,44 @@ GitHub live main 是 repository-state authority。Owner 为最终 scientific aut
 
 当前状态：
 
-`CORRECTED_HOUSEHOLD_FIXED_POINT_AND_AGGREGATE_INTERFACE_ACCEPTED__OWNER_PAYOFF_RETURN_FREEZE_REQUIRED__OUTER_RUNTIME_BLOCKED`
+`RAW_RA0_PAYOFF_OWNER_ADOPTED__FIXED_PRICE_THREE_POINT_CORRECTED_HOUSEHOLD_SAFETY_PANEL_ACTIVE__OUTER_RUNTIME_BLOCKED`
 
 Results eligibility=`FALSE`。
 
-## Corrected household object now accepted end-to-end
+## Accepted household closure
 
-Checkpoint 11 HJB convergence and same-Q11 source-free KFE are accepted.
+Checkpoint-11 corrected HJB, same-Q11 source-free KFE, stationary Ct/Lt/At/Bt/AtTax and opt-in corrected aggregate adapter are accepted.
 
-Stationary aggregate/interface binding is also accepted:
+## New Owner authority
 
-- Ct `11.72504598498222`
-- Lt `0.6881256647265093`
-- At `9.210552290174773`
-- Bt `1.6622560718337767`
-- total assets `10.87280836200855`
-- AtTax `0.05117497248083413`.
+Owner explicitly adopted Option B:
 
-AtTax source law is independently confirmed:
+- completed-iteration raw net firm `ra0` is the household economic payoff object;
+- it is a one-model-period dimensionless net return;
+- no calendar-year mapping is claimed;
+- no annualization/rescaling/clipping/smoothing/risk adjustment;
+- `rah_i = sum_j S[j,i]*ra0_j`;
+- lagged completed-iteration timing remains;
+- K1B z-scored raw-ra0 attractiveness is separate.
 
-`AhTax = Aht*rah - sum(aaah.*raah.*g*dah*db,'all')`.
+Authority document:
 
-The opt-in corrected adapter is accepted and default outer routing remains unchanged.
+`docs/CH5_MP4C_K1A_RAW_RA0_PAYOFF_OWNER_ADOPTION_20260920.md`.
 
-Acceptance:
+## Current active task
 
-`docs/CH5_MP4C_2018_CORRECTED_HOUSEHOLD_FIXED_POINT_AGGREGATE_AND_ADAPTER_BINDING_ACCEPTANCE_20260920.md`.
+`tasks/CH5_MP4C_K1A_RAW_RA0_CORRECTED_HOUSEHOLD_FIXED_PRICE_THREE_POINT_SAFETY_PANEL_20260920.md`
 
-## No active Builder task
+Preregistered Path-B raw portfolio payoff points:
 
-Do not publish or execute a new runtime task until Owner resolves the payoff-return gate:
+- LOW: Qinghai turn 5, `0.11048158315647279`
+- MEDIAN: Hunan turn 12, `0.26259451366691877`
+- HIGH: Beijing turn 4, `1.037811238406538`.
 
-`docs/CH5_MP4C_K1A_PAYOFF_RETURN_OWNER_DECISION_GATE_20260920.md`.
+Every non-payoff household input remains at the accepted checkpoint-11 value. V11 is the common starting value. Each reached point gets at most one 800-cell policy map, one D2 Q and one direct implicit HJB update.
 
-Controlling evidence:
+The task is a one-step safety panel, not a convergence or outer-loop run.
 
-- source-used `ra` is raw `ra0` clipped to `[.02,.09]`;
-- this clip is only an empirical numerical safeguard;
-- about 97% of accepted K1A province-turn observations are upper-clipped;
-- raw `ra0` preserves source return dispersion but its calendar period and final economic numeraire are unresolved;
-- K1B z-scored raw-`ra0` attractiveness is a separate object and must not be confused with payoff levels.
+If it passes, Reviewer may consider a 31-province raw-payoff household batch or a short corrected outer integration task. If it fails, stop on the exact raw-payoff/cell/operator object and do not rescue the failure with clipping or transformation.
 
-Reviewer recommendation is raw `ra0` as the source-consistent payoff successor, but this requires explicit Owner adoption of the period/numeraire/payoff contract.
-
-After Owner adoption, Reviewer may publish a narrowly bounded runtime-safety task before K1B or any long outer trajectory.
-
-Historical K1A trajectories remain diagnostic only and are not retroactively upgraded by the corrected household closure.
-
-Production default, GE, annual dynamics, IRFs, welfare and Results remain closed.
+Production default, K1B runtime, GE, annual dynamics, IRFs, welfare and Results remain closed.
