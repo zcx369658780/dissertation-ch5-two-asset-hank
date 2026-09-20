@@ -1,0 +1,23 @@
+{
+  "interpretation": "The active-lower-a forward zero-kink endpoint exits before controls because its endpoint kink intersection is empty. The resulting rejected object has g_b=None. The interior-Z constructor requires both endpoint g_b and arithmetic bounds, so it returns before reconstructing the root. If the Z root were reached, the existing candidate path would recompute the lower-a kink interval at q_b_override before all unchanged legality and Hamiltonian checks.",
+  "locations": {
+    "controls_after_kink_reconstruction": 817,
+    "endpoint_empty_return": 808,
+    "hamiltonian_comparison": 1677,
+    "interior_z_candidate_call": 1612,
+    "interior_z_requires_backward_g_b": 1092,
+    "lower_a_kink_reconstruction": 799
+  },
+  "omission_before_hamiltonian_comparison": true,
+  "omitted_persisted_family": {
+    "active_constraints": [
+      "lower_a"
+    ],
+    "derivative_branches": {
+      "a": "forward",
+      "b": "zero"
+    },
+    "transfer_branch": "zero_kink"
+  },
+  "production_change_made": false
+}
