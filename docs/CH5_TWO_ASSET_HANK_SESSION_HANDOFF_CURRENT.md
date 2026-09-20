@@ -14,44 +14,53 @@ GitHub live main 是 repository-state authority。Owner 为最终 scientific aut
 
 当前状态：
 
-`RAW_RA0_THREE_POINT_ONE_STEP_SAFETY_ACCEPTED__PATH_B_TURN1_31_PROVINCE_FIXED_PRICE_CROSS_SECTION_ACTIVE__OUTER_RUNTIME_BLOCKED`
+`RAW_RA0_31_PROVINCE_FIXED_PRICE_CROSS_SECTION_ACCEPTED__CORRECTED_INITIAL_TURN_31_PROVINCE_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Accepted raw payoff authority and safety evidence
+## Latest accepted result
 
-Owner Option B remains frozen:
+Candidate `d0e3cdc27f11d6d7bb0a0ec32299e0f00f90fcda` is accepted.
 
-- household payoff = completed-iteration raw net firm ra0;
-- one-model-period dimensionless net return;
-- no calendar-year claim;
-- no clipping/annualization/rescaling/smoothing/risk adjustment;
-- same-S quantity/payoff;
-- lagged completed-iteration timing;
-- K1B attractiveness separate.
+All 31 exact Path-B turn-1-generated raw portfolio payoff values pass one fixed-price corrected household policy/D2/direct-update step with zero scientific retry.
 
-Three-point fixed-price safety candidate `51111c26a5f62f42fcf8cef636ae9f56d3788527` is accepted.
+The cross-section remains a payoff-isolation safety result only.
 
-LOW/MEDIAN/HIGH all pass one policy map, D2 Q and one direct update. The accepted panel spans raw household payoff `0.11048158315647279` to `1.037811238406538`.
+Timing clarification:
 
-No HJB convergence or KFE claim is made from that panel.
+`turn=1 static_raw_S_transpose_ra0`
+
+is produced from completed turn-1 firm raw returns and is a next-household payoff object under the lagged timing contract. It must not be substituted as entering outer-turn-1 `rah`.
 
 ## Current active task
 
-`tasks/CH5_MP4C_K1A_RAW_RA0_PATH_B_TURN1_31_PROVINCE_FIXED_PRICE_ONE_STEP_CROSS_SECTION_20260920.md`.
+`tasks/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_31_PROVINCE_HOUSEHOLD_KFE_AND_K1A_C1_ONE_TURN_INTEGRATION_20260920.md`.
 
-The exact source is Path-B geographic-beta2 turn 1 from the accepted payoff CSV.
+The task starts from:
 
-The 31 raw household payoff values range from:
+`reports/mp4c_c1_residual_public_asset_25turn_20260911/initialization_receipt_31province.csv`
 
-- Jilin `0.2826739400149174`
-- median Hunan `0.4775623850053351`
-- Beijing `0.8951047990241244`.
+and each row's exact `outer_turn_1_initial_state_json`.
 
-Every province-labelled experiment uses the same accepted V11 and the same checkpoint-11 non-payoff scalars. Therefore this is a payoff cross-section, not yet a true province-specific household batch.
+For each province:
 
-Compact evidence must be zero-science recertified against the sealed three-point receipts before execution.
+- source-native V/l numerical initialization;
+- corrected HJB convergence under frozen B/D law;
+- same-value source-free terminal KFE;
+- corrected stationary aggregates.
 
-If all 31 pass, Reviewer may next bind province-specific non-payoff household inputs and decide whether a true corrected 31-province household batch is ready.
+Only if all 31 pass is one integrated turn executed with:
 
-Outer loop, K1B, GE and Results remain closed.
+- K1A beta_distance=2
+- beta_return=0
+- source-faithful labor
+- C1 residual GovInv
+- firm evaluation.
+
+The raw turn-1 firm `ra0` vector is then aggregated through the same S to create the next raw household payoff vector.
+
+No turn-2 household solve is allowed.
+
+If this passes, the project will have its first internally consistent corrected multi-province turn under Option B.
+
+K1B, full trajectory, GE and Results remain closed.
