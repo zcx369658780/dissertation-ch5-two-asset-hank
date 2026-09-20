@@ -14,49 +14,51 @@ GitHub live main 是 repository-state authority。Owner 为最终 scientific aut
 
 当前状态：
 
-`RUN004_31_PROVINCE_HOUSEHOLD_AND_ADOPTED_KFE_ACCEPTED__RAW_NEXT_PAYOFF_REDUCTION_ORDER_GUARD_FAIL__INTEGRATION_ONLY_REPLAY_ACTIVE`
+`CORRECTED_INITIAL_TURN_FULLY_CLOSED__TURN2_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Latest Reviewer decision
+## Latest accepted result
 
-Run004 candidate `af770c1fb787098569df2a25471cdc8101eda3a3` is accepted as failed evidence.
+Candidate `3dfd610d94d0ef5dbf6874e33c6839a04c45d3fd` is accepted.
 
 Acceptance:
 
-`docs/CH5_MP4C_RUN004_31PROVINCE_HOUSEHOLD_KFE_PASS_RAW_NEXT_PAYOFF_REDUCTION_ORDER_GUARD_ACCEPTANCE_20260920.md`.
+`docs/CH5_MP4C_CORRECTED_INITIAL_TURN_FULL_CLOSURE_ACCEPTANCE_20260920.md`.
 
-Accepted from run004:
+Terminal:
 
-- Owner-adopted unique-closed-class KFE implementation parity PASS;
-- 31/31 corrected household HJB PASS;
-- 31/31 terminal KFE PASS;
-- 31/31 stationary aggregates PASS;
-- household batch identity:
-  `8B7875F3BD603038E4D415D9F9FF759D4FDDC93E2E677C13BF0B649571B2EB05`.
+`PASS__RUN004_ACCEPTED_31_PROVINCE_HOUSEHOLD_KFE__CANONICAL_SAME_S_INTEGRATION_REPLAY_PASS__RAW_NEXT_PAYOFF_READY__TURN2_NOT_RUN`
 
-The run stopped only when a same-S accounting guard required bitwise equality between two different floating-point reduction orders.
+This fully closes one corrected initial multi-province turn.
 
-This is not treated as a payoff-law or S-orientation failure.
+Accepted turn-2 entering state:
+
+`reports/ch5_mp4c_run004_canonical_same_s_integration_replay_20260920_run001/next_state_candidate_receipt.json`
+
+Accepted raw payoff SHA-256:
+
+`D77669DB4245DDCE3D6E91231A92C4A2AD12415D165F0718D0605BD213FDB414`.
 
 ## Current active task
 
-`tasks/CH5_MP4C_RUN004_CANONICAL_SAME_S_RAW_NEXT_PAYOFF_REPAIR_AND_INTEGRATION_ONLY_REPLAY_20260920.md`.
+`tasks/CH5_MP4C_CORRECTED_OPTIONB_TURN2_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_20260920.md`.
 
-The successor:
+The turn-2 task:
 
-1. hash-binds the accepted run004 manifest and all 31 aggregate/terminal receipts;
-2. reconstructs the exact accepted household batch and verifies its identity;
-3. makes no HJB/KFE/aggregate calls;
-4. replays exactly one source-faithful labor + K1A beta2/beta_return0 + C1 + 31-firm + wage/monetary/fiscal integration;
-5. computes raw next payoff canonically by per-origin `math.fsum` over the exact same K1A S matrix;
-6. persists raw-ra0, S, product-term hash and canonical payoff before accounting gates;
-7. records BLAS matrix-product comparison as diagnostic only;
-8. evaluates the remaining integration accounting gates and next-state candidate;
-9. stops without turn 2.
+- binds the exact 31 persisted turn-2 entering states;
+- uses one source-native initialization per reached province;
+- solves the unchanged corrected HJB;
+- uses the Owner-adopted unique-closed-class terminal KFE;
+- aggregates only after KFE PASS;
+- builds one 31-province household batch only if all provinces PASS;
+- executes exactly one source-faithful labor / K1A beta2-beta_return0 / C1 / firm integration;
+- computes turn-3 raw payoff by canonical ordered `math.fsum` using the same turn-2 K1A S;
+- persists a turn-3 candidate state;
+- stops before any turn-3 household solve.
 
-No tolerance relaxation or payoff transformation is authorized.
+Descriptive turn-to-turn movement diagnostics are allowed but do not define or establish outer convergence.
 
-Historical run001/run002/run003/run004 evidence remains immutable.
+Historical turn-1 evidence remains immutable.
 
-Turn 2, K1B, K2, full trajectory, GE and Results remain closed.
+K1B, K2, full trajectory, GE and Results remain closed.
