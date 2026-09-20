@@ -6,7 +6,7 @@ Repository: `zcx369658780/dissertation-ch5-two-asset-hank`
 
 Task ID: `CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_NEGATIVITY_SUPPORT_FORENSIC_20260920`
 
-Status: `ACTIVE`
+Status: `COMPLETED_PASS_ACCEPTED`
 
 ## Authority
 
@@ -158,3 +158,22 @@ followed by classification A/B/C.
 ## Git
 
 Use an isolated task branch, explicit staging, ordinary non-force push, remote SHA/tree readback and clean worktree. Do not modify CURRENT files, merge main, or publish a successor.
+
+
+## Reviewer closure — 2026-09-20
+
+Forensic candidate `633e93d3ab114df95ac5d127170ced7da67a2cb1` is accepted.
+
+Terminal:
+`PASS__RUN003_STATIONARY_MASS_NEGATIVITY_SUPPORT_FORENSIC_COMPLETE__NO_KFE_METHOD_CHANGE`
+
+Classification:
+`RUN003_NEGATIVITY_BREACHES_TRANSIENT_ONLY__CLOSED_CLASS_MASS_PASSES_ENTRYWISE_FLOOR__KFE_METHOD_DECISION_REQUIRED`
+
+All 14 floor breaches are transient. Closed-class breach count is 0; all 400 closed-class entries are positive.
+
+Acceptance:
+`docs/CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_SUPPORT_FORENSIC_ACCEPTANCE_20260920.md`
+
+Next bounded diagnostic:
+`tasks/CH5_MP4C_CORRECTED_OPTIONB_BEIJING_UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_DIAGNOSTIC_20260920.md`
