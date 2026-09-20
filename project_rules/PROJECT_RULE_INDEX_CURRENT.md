@@ -17,30 +17,29 @@
 7. `docs/CH5_MP4C_K1A_RAW_RA0_PATH_B_TURN1_31_PROVINCE_FIXED_PRICE_ONE_STEP_CROSS_SECTION_ACCEPTANCE_20260920.md`
 8. `docs/CH5_MP4C_2018_KFE_D123_CHECKPOINT11_TERMINAL_SOURCE_FREE_KFE_VALIDATION_ACCEPTANCE_20260920.md`
 9. `docs/CH5_MP4C_2018_CORRECTED_HOUSEHOLD_FIXED_POINT_AGGREGATE_AND_ADAPTER_BINDING_ACCEPTANCE_20260920.md`
-10. `docs/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_RUN001_ENGINEERING_EXCEPTION_ACCEPTANCE_20260920.md`
-11. `docs/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_RUN002_TERMINAL_KFE_TOPOLOGY_SERIALIZATION_EXCEPTION_ACCEPTANCE_20260920.md`
-12. `docs/CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_NONNEGATIVITY_FAILURE_ACCEPTANCE_20260920.md`
-13. current active task.
+10. `docs/CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_NONNEGATIVITY_FAILURE_ACCEPTANCE_20260920.md`
+11. `docs/CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_SUPPORT_FORENSIC_ACCEPTANCE_20260920.md`
+12. current active task.
 
 Current status:
 
-`RUN003_BEIJING_HJB_TOPOLOGY_RANK_PASS__STATIONARY_MASS_ENTRYWISE_NONNEGATIVITY_FAIL__ZERO_SCIENCE_SUPPORT_FORENSIC_ACTIVE`.
+`RUN003_TRANSIENT_ONLY_NEGATIVITY_FORENSIC_ACCEPTED__UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_DIAGNOSTIC_ACTIVE`.
 
 Current active Builder task:
 
-`tasks/CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_NEGATIVITY_SUPPORT_FORENSIC_20260920.md`.
+`tasks/CH5_MP4C_CORRECTED_OPTIONB_BEIJING_UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_DIAGNOSTIC_20260920.md`.
 
 Results eligibility=`FALSE`.
 
 Important current facts:
 
-- run001/run002 engineering defects are closed;
-- run003 Beijing corrected HJB converges at checkpoint 12;
-- exact-positive topology has exactly one 400-state closed communicating class and 400 transient states;
-- full dense GESVD passes rank/nullity `799/1`, agreeing with the one closed class;
-- the normalized stationary candidate passes stationarity, normalization, source-free accounting and total-negative-mass bounds;
-- it fails the frozen per-entry nonnegativity floor: min p `-2.217909641958515e-12` versus allowed `-1.9184653865526386e-13`;
-- this is accepted as a real KFE scientific failure under the current contract;
-- no clipping, projection, renormalization, tolerance relaxation or alternate solver is authorized;
-- the active task is zero-science only and localizes the negative mass relative to closed versus transient support;
+- Beijing corrected HJB checkpoint 12 is accepted;
+- exact-positive topology has one unique 400-state closed communicating class and 400 transient states;
+- full-space GESVD rank/nullity is 799/1;
+- the current full-space stationary candidate fails the frozen per-entry nonnegativity floor;
+- accepted forensic classification A proves all 14 floor breaches are transient-only;
+- all 400 closed-class entries are strictly positive and have zero floor breaches;
+- current KFE status remains FAIL and no KFE method has changed;
+- the active task is a bounded method-candidate diagnostic: solve only the accepted closed-class Q block once, embed exact zero transient mass by support construction, and test the candidate against the original full Q;
+- this diagnostic cannot adopt the method or rerun the 31-province model;
 - turn 2, K1B, K2, GE and Results remain closed.
