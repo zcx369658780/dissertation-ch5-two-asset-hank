@@ -10,7 +10,7 @@ Task ID:
 
 `CH5_MP4C_RUN004_CANONICAL_SAME_S_RAW_NEXT_PAYOFF_REPAIR_AND_INTEGRATION_ONLY_REPLAY_20260920`
 
-Status: `ACTIVE`
+Status: `COMPLETED_PASS_ACCEPTED`
 
 ## Governance
 
@@ -248,3 +248,22 @@ It does not establish outer convergence, K1B, GE or Results.
 - do not modify CURRENT files
 - do not merge main
 - do not publish successor.
+
+
+## Reviewer closure — 2026-09-20
+
+Candidate `3dfd610d94d0ef5dbf6874e33c6839a04c45d3fd` is accepted.
+
+Terminal:
+`PASS__RUN004_ACCEPTED_31_PROVINCE_HOUSEHOLD_KFE__CANONICAL_SAME_S_INTEGRATION_REPLAY_PASS__RAW_NEXT_PAYOFF_READY__TURN2_NOT_RUN`
+
+This closes exactly one corrected initial multi-province turn under the Owner-adopted unique-closed-class terminal KFE authority.
+
+Accepted turn-2 entering state:
+`reports/ch5_mp4c_run004_canonical_same_s_integration_replay_20260920_run001/next_state_candidate_receipt.json`
+
+Acceptance:
+`docs/CH5_MP4C_CORRECTED_INITIAL_TURN_FULL_CLOSURE_ACCEPTANCE_20260920.md`
+
+Next active task:
+`tasks/CH5_MP4C_CORRECTED_OPTIONB_TURN2_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_20260920.md`
