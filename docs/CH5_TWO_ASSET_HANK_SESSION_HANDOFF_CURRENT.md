@@ -10,70 +10,38 @@
 
 `zcx369658780/deep-learning-hank`
 
-GitHub live main 是 repository-state authority。Owner 为最终 scientific authority；ChatGPT 为 L3 independent Reviewer/scientific-route advisor；Codex 为 bounded Builder/scientific numerical analyst。
+GitHub live main 是 repository-state authority。Owner 为最终 scientific authority；ChatGPT 为 L3 independent Reviewer/scientific-route authority；Codex 为 bounded Builder/scientific numerical analyst。
 
 当前状态：
 
-`RAW_RA0_31_PROVINCE_FIXED_PRICE_CROSS_SECTION_ACCEPTED__CORRECTED_INITIAL_TURN_31_PROVINCE_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_ACTIVE`
+`CORRECTED_INITIAL_TURN_RUN001_ENGINEERING_EXCEPTION_ACCEPTED__CHECKPOINT0_DIAGNOSTIC_REPAIR_AND_FRESH_REEXECUTION_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Latest accepted result
+## Latest Reviewer decision
 
-Candidate `d0e3cdc27f11d6d7bb0a0ec32299e0f00f90fcda` is accepted.
+Builder run001 candidate `159786968d2bb47c12b0b7b88ed8aeaa6d0e8bdf` is accepted as failed evidence and has been incorporated into main.
 
-All 31 exact Path-B turn-1-generated raw portfolio payoff values pass one fixed-price corrected household policy/D2/direct-update step with zero scientific retry.
+Acceptance:
 
-The cross-section remains a payoff-isolation safety result only.
+`docs/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_RUN001_ENGINEERING_EXCEPTION_ACCEPTANCE_20260920.md`.
 
-Timing clarification:
+The run stopped at Beijing checkpoint 0 after source-native initialization plus one complete corrected policy/D2 map. The policy map and D2/Q passed. No direct HJB update, B/D convergence check or KFE occurred.
 
-`turn=1 static_raw_S_transpose_ra0`
-
-is produced from completed turn-1 firm raw returns and is a next-household payoff object under the lagged timing contract. It must not be substituted as entering outer-turn-1 `rah`.
+The first failure was engineering-only: the new driver called comparative diagnostics with `previous_rows/previous_arrays/previous_q=None`. The accepted nonlinear-continuation implementation already establishes current-only initial-checkpoint diagnostics as the correct representational pattern. Therefore no new scientific decision is required.
 
 ## Current active task
 
-`tasks/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_31_PROVINCE_HOUSEHOLD_KFE_AND_K1A_C1_ONE_TURN_INTEGRATION_20260920.md`.
+`tasks/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_CHECKPOINT0_DIAGNOSTIC_REPAIR_AND_REEXECUTION_20260920.md`.
 
-The task starts from:
+The successor must first repair and regression-test checkpoint-0 diagnostic composition with zero science. Only after that gate passes may it perform one fresh bounded execution from the same accepted outer-turn-1 initialization states.
 
-`reports/mp4c_c1_residual_public_asset_25turn_20260911/initialization_receipt_31province.csv`
+The scientific route remains:
 
-and each row's exact `outer_turn_1_initial_state_json`.
+accepted turn-1 initial states -> 31 corrected HJB -> 31 terminal source-free KFE -> stationary aggregates -> one K1A beta2 / beta_return0 + source-faithful labor + C1 + firm turn -> `raw_ra0_turn1 @ S` -> STOP.
 
-For each province:
+Turn 2 is not authorized.
 
-- source-native V/l numerical initialization;
-- corrected HJB convergence under frozen B/D law;
-- same-value source-free terminal KFE;
-- corrected stationary aggregates.
+Run001 scientific consumption remains historical evidence and must not be erased or relabeled. The successor has a separately published one-run budget and no scientific retry.
 
-Only if all 31 pass is one integrated turn executed with:
-
-- K1A beta_distance=2
-- beta_return=0
-- source-faithful labor
-- C1 residual GovInv
-- firm evaluation.
-
-The raw turn-1 firm `ra0` vector is then aggregated through the same S to create the next raw household payoff vector.
-
-No turn-2 household solve is allowed.
-
-If this passes, the project will have its first internally consistent corrected multi-province turn under Option B.
-
-K1B, full trajectory, GE and Results remain closed.
-
-
-## Reviewer session checkpoint before conversation handoff
-
-Owner requested an immediate durable GitHub checkpoint before moving review to a fresh ChatGPT conversation.
-
-Read:
-
-`docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_20260920_1112_REVIEWER_CHECKPOINT.md`
-
-This checkpoint records the Owner Option-B payoff decision, accepted corrected-household/raw-payoff progression, the live-main timing clarification, the current initial-turn integration task, scientific budgets, and the new-session acceptance checklist.
-
-Important: fresh-read live GitHub main first. The repository had already advanced beyond the earlier visible chat state when this checkpoint was written.
+K1B, K2, full trajectory, GE and Results remain closed.
