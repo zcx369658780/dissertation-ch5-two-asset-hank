@@ -1068,6 +1068,35 @@ def _candidate(
     )
 
 
+def _active_lower_a_zero_kink_liquid_endpoint(
+    *,
+    cell: CorrectedSelectorCell,
+    parameters: CorrectedSelectorParameters,
+    p_b: float,
+    p_a: float,
+) -> tuple[float, float]:
+    """Return the raw liquid drift and existing candidate bound for Z screening.
+
+    The full endpoint candidate can be rejected before controls when its
+    lower-a multiplier/kink intersection is empty.  The adopted interior-Z law
+    still needs the raw d=0 liquid drift at that derivative endpoint; q_a does
+    not enter that drift.  The deterministic lower-a shadow is retained here
+    solely to reproduce the existing prospective candidate arithmetic bound.
+    """
+
+    lower_a_receipt = active_lower_a_zero_kink_shadow(
+        p_a=p_a,
+        q_b=p_b,
+        chi_0=parameters.chi_0,
+    )
+    q_a = lower_a_receipt.deterministic_minimum
+    c, l, cost, g_b, g_a, _ = _controls(p_b, 0.0, cell, parameters)
+    bound = _fp_bound(
+        c, l, 0.0, cost, g_b, g_a, p_b, q_a, p_b, p_a, operations=96
+    )
+    return float(g_b), float(bound)
+
+
 def _interior_z_candidate(
     cell: CorrectedSelectorCell,
     parameters: CorrectedSelectorParameters,
@@ -1088,17 +1117,36 @@ def _interior_z_candidate(
     p_forward = float(cell.derivatives.p_b_forward)
     if not all(math.isfinite(value) and value > 0.0 for value in (p_backward, p_forward)):
         return None
-    if (
-        backward.g_b is None
-        or forward.g_b is None
-        or backward.arithmetic_tolerance is None
-        or forward.arithmetic_tolerance is None
-    ):
-        return None
-    backward_drift = float(backward.g_b)
-    forward_drift = float(forward.g_b)
-    backward_bound = float(backward.arithmetic_tolerance)
-    forward_bound = float(forward.arithmetic_tolerance)
+    endpoint_rows = {
+        "backward": (backward, p_backward),
+        "forward": (forward, p_forward),
+    }
+    endpoint_screens: dict[str, tuple[float, float]] = {}
+    lower_a_zero_kink = (
+        faces.get("a") == "lower_a"
+        and "lower_a" in active
+        and regime == "zero_kink"
+    )
+    for branch, (candidate, shadow) in endpoint_rows.items():
+        if candidate.g_b is not None and candidate.arithmetic_tolerance is not None:
+            endpoint_screens[branch] = (
+                float(candidate.g_b),
+                float(candidate.arithmetic_tolerance),
+            )
+        elif lower_a_zero_kink:
+            try:
+                endpoint_screens[branch] = _active_lower_a_zero_kink_liquid_endpoint(
+                    cell=cell,
+                    parameters=parameters,
+                    p_b=shadow,
+                    p_a=p_a,
+                )
+            except (ArithmeticError, OverflowError, ValueError):
+                return None
+        else:
+            return None
+    backward_drift, backward_bound = endpoint_screens["backward"]
+    forward_drift, forward_bound = endpoint_screens["forward"]
     if not (
         backward_drift > backward_bound
         and forward_drift < -forward_bound
