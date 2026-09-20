@@ -4,53 +4,53 @@
 
 状态：
 
-`HOUSEHOLD_HJB_KFE_FIXED_POINT_CANDIDATE_ACCEPTED__CORRECTED_AGGREGATE_ADAPTER_BINDING_ACTIVE__OUTER_RUNTIME_BLOCKED`
+`CORRECTED_HOUSEHOLD_FIXED_POINT_AND_AGGREGATE_INTERFACE_ACCEPTED__OWNER_PAYOFF_RETURN_FREEZE_REQUIRED__OUTER_RUNTIME_BLOCKED`
 
 Results eligibility=`FALSE`。
 
-## Accepted conditional household fixed point
+## Accepted corrected household closure
 
-Reviewer accepted Builder candidate `e8aec1d2138b2cfa3c0896f4f5d95430478c635f`.
+Accepted checkpoint 11 provides:
+
+- HJB primary convergence PASS;
+- exact same-Q11 source-free unique invariant mass PASS;
+- exact stationary aggregate/interface binding PASS.
+
+Latest aggregate-adapter candidate accepted:
+
+`5830285db591c448cacffd8a7b28635bbcef2f54`.
 
 Acceptance:
 
-`docs/CH5_MP4C_2018_KFE_D123_CHECKPOINT11_TERMINAL_SOURCE_FREE_KFE_VALIDATION_ACCEPTANCE_20260920.md`.
+`docs/CH5_MP4C_2018_CORRECTED_HOUSEHOLD_FIXED_POINT_AGGREGATE_AND_ADAPTER_BINDING_ACCEPTANCE_20260920.md`.
 
-Checkpoint-11 HJB:
+Accepted corrected fixed-point aggregates:
 
-- B11 `5.456747553811425e-11`
-- D11 `5.4012647243695255e-08`
-- D2 PASS
-- primary convergence PASS.
+- Ct `11.72504598498222`
+- Lt `0.6881256647265093`
+- At `9.210552290174773`
+- Bt `1.6622560718337767`
+- total assets `10.87280836200855`
+- AtTax `0.05117497248083413`.
 
-Terminal same-Q11 KFE:
+The opt-in corrected household adapter is accepted. Existing default household/one-turn/stationary route remains unchanged.
 
-- exactly one closed communicating class, size 320;
-- dense GESVD rank/nullity `799/1`;
-- `||Q11.T@p||inf=1.9114484300919443e-16`;
-- normalized source-free mass PASS;
-- no pin/source/clipping/retry.
+## Current scientific gate
 
-Stationary-mass artifact:
+There is no active Builder task.
 
-`1DD70201EAC5EED0AE768362D99A76736276BFB4D5E6AF0D8DBDB4E9D6FE7D16`.
+The controlling Owner gate is:
 
-This closes the household HJB-KFE gate only for the frozen corrected price/calibration object.
+`docs/CH5_MP4C_K1A_PAYOFF_RETURN_OWNER_DECISION_GATE_20260920.md`.
 
-## Active task
+The accepted payoff audit still finds:
 
-`tasks/CH5_MP4C_2018_CORRECTED_HOUSEHOLD_FIXED_POINT_AGGREGATE_AND_ADAPTER_BINDING_20260920.md`
+- clipped/used `ra` = transitional source-faithful bridge only;
+- raw `ra0` = source-consistent payoff candidate;
+- period / numeraire / final payoff interpretation unresolved.
 
-The task is zero-solver: bind source aggregate semantics, compute one deterministic aggregate receipt from accepted checkpoint-11 p/policies, and prepare an opt-in corrected household adapter fixture. Existing production/default outer routes must remain unchanged.
+No runtime payoff-law change, K1B execution or corrected-household outer trajectory may begin until Owner explicitly adopts the payoff-return contract.
 
-## Remaining scientific gate before outer runtime
-
-The K1A payoff-return re-audit remains controlling:
-
-`K1A_PAYOFF_RETURN_REAUDIT_ACCEPTED__CLIPPED_RA_TRANSITIONAL_ONLY__RAW_RA0_SOURCE_CONSISTENT_CANDIDATE__OWNER_PERIOD_NUMERAIRE_FREEZE_REQUIRED_BEFORE_RUNTIME_CHANGE`.
-
-No new K1B or outer-loop scientific runtime may change the household payoff-return law until Owner freezes the period/numeraire/payoff contract.
-
-Historical K1A KFE observations remain diagnostic only; they are not retroactively upgraded by the new corrected household closure.
+K1A geography benchmark `beta_distance=2`, K1/C1 accounting, lagged timing and source-faithful labor sequencing remain accepted.
 
 Production default, market clearing, GE, annual dynamics, IRFs, welfare and Results remain closed.

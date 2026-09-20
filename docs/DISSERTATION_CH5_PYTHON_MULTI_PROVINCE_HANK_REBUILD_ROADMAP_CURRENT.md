@@ -3,60 +3,60 @@
 更新：2026-09-20。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。
 Results eligibility=`FALSE`。
 
-## Household corrected numerical foundation
+## Household corrected foundation closed
 
-The corrected household route is now accepted through checkpoint 11 and its same-Q11 terminal source-free KFE.
+The corrected fixed-price household route is now accepted through:
 
-Frozen corrected authority includes D1/D2/D3, boundary KKT, lower-a zero-kink, liquid-Z, one-axis interior-a switching, simultaneous two-axis switching, repaired lower-b branch representation, fixed nonlinear update law, convergence/cycle rules, and pin-free/source-free KFE semantics.
+1. D1/D2/D3 and all adopted boundary/switching laws;
+2. checkpoint-11 HJB convergence;
+3. exact same-Q11 pin-free/source-free unique invariant mass;
+4. exact stationary Ct/Lt/At/Bt/AtTax aggregation;
+5. opt-in corrected multi-province household-output adapter fixture.
 
-Checkpoint 11 passes:
+Therefore the household numerical/interface gate is no longer the current bottleneck.
 
-- `B11=5.456747553811425e-11 <= 1e-8`
-- `D11=5.4012647243695255e-08 <= 1e-7`.
+## Current gate: payoff-return scientific authority
 
-The same Q11 has exactly one closed communicating class and numerical nullity one. Its unique normalized source-free invariant mass passes the frozen stationarity and nonnegativity-with-arithmetic-allowance contract.
+No Builder task is active.
 
-Therefore the conditional household HJB-KFE fixed-point gate is closed for the frozen price/calibration object.
+The next required Owner decision is documented in:
 
-## Current stage
+`docs/CH5_MP4C_K1A_PAYOFF_RETURN_OWNER_DECISION_GATE_20260920.md`.
 
-Active task:
+Accepted evidence establishes:
 
-`tasks/CH5_MP4C_2018_CORRECTED_HOUSEHOLD_FIXED_POINT_AGGREGATE_AND_ADAPTER_BINDING_20260920.md`.
+- clipped source-used `ra` is a transitional numerical bridge only;
+- raw net firm `ra0` is the strongest source-consistent payoff candidate;
+- `[.02,.09]` is not an economically identified payoff interval;
+- current evidence does not identify the external calendar period or absolute economic numeraire for the rate-like return object.
 
-This task performs no solver/runtime science. It binds the accepted stationary mass and policy fields to exact source household aggregates and an opt-in corrected multi-province household adapter fixture.
+No new outer runtime, K1B runtime or payoff-law change is authorized until Owner freezes this contract.
 
-The existing source-faithful/default outer route remains unchanged.
+## Route after Owner payoff adoption
 
-## Immediate integration sequence
+If Owner adopts raw `ra0` or another explicit payoff contract:
 
-1. accepted checkpoint-11 aggregate/interface binding;
-2. Owner freezes payoff-return period/numeraire contract from the accepted K1A re-audit;
-3. if authorized, bounded opt-in corrected-household multi-province integration with source-faithful labor and already frozen K1A/C1 accounting;
-4. only after that evidence may K1B lagged-return attractiveness runtime reopen;
-5. K2 home-vs-foreign endogenization remains later.
+1. publish one bounded runtime-safety diagnostic using the opt-in corrected household adapter and already accepted K1/C1 accounting;
+2. preserve source-faithful labor and lagged completed-iteration timing;
+3. no K1B attractiveness feedback in the first payoff-safety task;
+4. review household convergence, D2/KFE legality, capital/C1 accounting and raw-return behavior;
+5. only after bounded acceptance may K1B `beta_return=.5` lagged raw-`ra0` z-score attractiveness reopen;
+6. K2 endogenous home-vs-foreign margin remains later.
 
-Historical K1A trajectories used the earlier diagnostic KFE route. They remain useful mechanism/accounting evidence but are not retroactively stationary-HANK acceptance.
+## Existing authorities retained
 
-## Existing capital/labor authorities retained
+- K1 Scheme B and same-S quantity/payoff accounting;
+- home retained capital and national conservation;
+- K1A pure-geographic benchmark `beta_distance=2`;
+- C1 `GovInv=max(Ktarget-Kprivate,0)`;
+- source-faithful labor for first capital-route integration;
+- completed-iteration lagged portfolio timing;
+- K1B attractiveness preregistration `beta_return=.5` with raw-`ra0` cross-sectional z-score.
 
-K1 capital accounting remains accepted:
-
-- two-asset household state;
-- post-household provincial portfolio fund;
-- home retained capital restored;
-- quantity and household return use the same destination-by-origin matrix;
-- origin/national private-capital conservation;
-- lagged completed-iteration return timing.
-
-K1A pure-geographic benchmark remains `beta_distance=2`, with source-faithful labor for the first integration route. C1 remains:
-
-`GovInv=max(Ktarget-Kprivate,0)`.
-
-The K1A payoff re-audit remains controlling for future runtime payoff changes. Clipped/used `ra` is transitional-only; raw `ra0` is a source-consistent candidate whose period/numeraire meaning still requires Owner adoption.
+The K1B attractiveness object is not the household payoff level.
 
 ## Downstream
 
-Production-default replacement, full market clearing, GE, annual calibration/dynamics, shocks, IRFs, welfare and Results remain closed.
+Production-default replacement, full outer fixed point/market clearing, GE, annual dynamics, shocks, IRFs, welfare and Results remain closed.
 
-No Results claim is authorized by the household fixed-point acceptance alone.
+Historical K1A trajectories remain mechanism/accounting diagnostics only.

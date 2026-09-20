@@ -13,27 +13,25 @@
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
 5. `docs/CH5_MP4C_2018_KFE_D123_CHECKPOINT11_TERMINAL_SOURCE_FREE_KFE_VALIDATION_ACCEPTANCE_20260920.md`
-6. `docs/DISSERTATION_CH5_PYTHON_MULTI_PROVINCE_HANK_REBUILD_ROADMAP_CURRENT.md`
+6. `docs/CH5_MP4C_2018_CORRECTED_HOUSEHOLD_FIXED_POINT_AGGREGATE_AND_ADAPTER_BINDING_ACCEPTANCE_20260920.md`
 7. `docs/CH5_MP4C_K1A_PAYOFF_RETURN_REAUDIT_ACCEPTANCE.md`
-8. current active task.
+8. `docs/CH5_MP4C_K1A_PAYOFF_RETURN_OWNER_DECISION_GATE_20260920.md`.
 
 Current status:
 
-`HOUSEHOLD_HJB_KFE_FIXED_POINT_CANDIDATE_ACCEPTED__CORRECTED_AGGREGATE_ADAPTER_BINDING_ACTIVE__OUTER_RUNTIME_BLOCKED`.
+`CORRECTED_HOUSEHOLD_FIXED_POINT_AND_AGGREGATE_INTERFACE_ACCEPTED__OWNER_PAYOFF_RETURN_FREEZE_REQUIRED__OUTER_RUNTIME_BLOCKED`.
 
-Current active Builder task:
-
-`tasks/CH5_MP4C_2018_CORRECTED_HOUSEHOLD_FIXED_POINT_AGGREGATE_AND_ADAPTER_BINDING_20260920.md`.
+Current active Builder task: none.
 
 Results eligibility=`FALSE`.
 
 Important current facts:
 
-- checkpoint-11 HJB convergence is accepted;
-- exact same-Q11 source-free invariant mass is accepted;
-- conditional household HJB-KFE fixed-point candidate is established at frozen prices/calibration;
-- terminal KFE no longer blocks the fixed-price household object;
-- historical K1A trajectories remain diagnostic because they used the earlier KFE route;
-- current task is zero-solver aggregate/interface binding only;
-- Owner payoff-return/period/numeraire freeze remains required before any new K1B or outer runtime change;
+- checkpoint-11 HJB convergence accepted;
+- same-Q11 unique source-free invariant mass accepted;
+- corrected Ct/Lt/At/Bt/AtTax aggregate interface accepted;
+- opt-in corrected household adapter accepted;
+- default outer route unchanged;
+- household numerical/interface closure is no longer the blocker;
+- Owner payoff-return period/numeraire freeze is now required before runtime payoff change, K1B or new corrected outer trajectory;
 - production default, GE and Results remain closed.

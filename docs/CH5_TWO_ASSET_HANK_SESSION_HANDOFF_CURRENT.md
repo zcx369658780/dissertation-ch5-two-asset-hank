@@ -14,55 +14,51 @@ GitHub live main 是 repository-state authority。Owner 为最终 scientific aut
 
 当前状态：
 
-`HOUSEHOLD_HJB_KFE_FIXED_POINT_CANDIDATE_ACCEPTED__CORRECTED_AGGREGATE_ADAPTER_BINDING_ACTIVE__OUTER_RUNTIME_BLOCKED`
+`CORRECTED_HOUSEHOLD_FIXED_POINT_AND_AGGREGATE_INTERFACE_ACCEPTED__OWNER_PAYOFF_RETURN_FREEZE_REQUIRED__OUTER_RUNTIME_BLOCKED`
 
 Results eligibility=`FALSE`。
 
-## Accepted corrected household closure
+## Corrected household object now accepted end-to-end
 
-Exact checkpoint 11:
+Checkpoint 11 HJB convergence and same-Q11 source-free KFE are accepted.
 
-- V11 `A097A3DDA767B979224638A51CEDC53EA635687CCDEFBE190FED0B899606921F`
-- P11 `89F79E4C1FC094DBEE8B82CFBAD677276D42839E915426CA0E5565865FBD87A3`
-- u11 `2E9A077FFA809F2DECEE385FD9E7F50C03E16750C2A074F990C0F3CBCC212648`
-- Q11 `33367258F3EADB1482D4A5CB30A64A8574830C993B0E5280C451499CBD6913AD`
-- checkpoint identity `8093BE714CA83531816B20DFEB2BAB3DCB7AF9B971AD255C3596C1CA2A9E2A3B`
-- B11 `5.456747553811425e-11`
-- D11 `5.4012647243695255e-08`
-- HJB primary PASS.
+Stationary aggregate/interface binding is also accepted:
 
-Terminal source-free KFE on the same Q11 is accepted:
+- Ct `11.72504598498222`
+- Lt `0.6881256647265093`
+- At `9.210552290174773`
+- Bt `1.6622560718337767`
+- total assets `10.87280836200855`
+- AtTax `0.05117497248083413`.
 
-- one closed class, size 320, F-order indices `240..399` and `640..799`;
-- rank/nullity `799/1`;
-- p/g finite and normalized;
-- `||Q11.T@p||inf=1.9114484300919443e-16`;
-- p artifact hash `E215FAE862DA81AD6DEB603859709EA0CF73B8F6F1897567DF942B186CD65ED7`;
-- g artifact hash `D02592257722313B81C7A1DB40B799ADED8E8BDB5100A65C469E0997DA22E1CE`;
-- no pin, source, clipping, retry or second normalization.
+AtTax source law is independently confirmed:
+
+`AhTax = Aht*rah - sum(aaah.*raah.*g*dah*db,'all')`.
+
+The opt-in corrected adapter is accepted and default outer routing remains unchanged.
 
 Acceptance:
 
-`docs/CH5_MP4C_2018_KFE_D123_CHECKPOINT11_TERMINAL_SOURCE_FREE_KFE_VALIDATION_ACCEPTANCE_20260920.md`.
+`docs/CH5_MP4C_2018_CORRECTED_HOUSEHOLD_FIXED_POINT_AGGREGATE_AND_ADAPTER_BINDING_ACCEPTANCE_20260920.md`.
 
-This is a conditional household fixed point at frozen prices/calibration, not yet a multi-province equilibrium.
+## No active Builder task
 
-## Current active task
+Do not publish or execute a new runtime task until Owner resolves the payoff-return gate:
 
-`tasks/CH5_MP4C_2018_CORRECTED_HOUSEHOLD_FIXED_POINT_AGGREGATE_AND_ADAPTER_BINDING_20260920.md`
+`docs/CH5_MP4C_K1A_PAYOFF_RETURN_OWNER_DECISION_GATE_20260920.md`.
 
-Purpose: zero-solver mapping from accepted checkpoint-11 stationary mass/policies to the exact household aggregate/interface objects required by the multi-province route.
+Controlling evidence:
 
-It must not run HJB, KFE, firm, outer-loop, steady-state, GE, annual, shock/IRF, welfare or Results science. It must not switch the production/default runtime.
+- source-used `ra` is raw `ra0` clipped to `[.02,.09]`;
+- this clip is only an empirical numerical safeguard;
+- about 97% of accepted K1A province-turn observations are upper-clipped;
+- raw `ra0` preserves source return dispersion but its calendar period and final economic numeraire are unresolved;
+- K1B z-scored raw-`ra0` attractiveness is a separate object and must not be confused with payoff levels.
 
-## Remaining Owner scientific decision
+Reviewer recommendation is raw `ra0` as the source-consistent payoff successor, but this requires explicit Owner adoption of the period/numeraire/payoff contract.
 
-The accepted K1A payoff-return re-audit still requires Owner to freeze the model-period/numeraire/payoff interpretation before any runtime payoff change or K1B execution.
+After Owner adoption, Reviewer may publish a narrowly bounded runtime-safety task before K1B or any long outer trajectory.
 
-Current clipped/used `ra` remains transitional-only and raw `ra0` remains a source-consistent candidate, not adopted final authority.
+Historical K1A trajectories remain diagnostic only and are not retroactively upgraded by the corrected household closure.
 
-Therefore the aggregate/adapter task may proceed, but outer scientific runtime remains blocked after it until that Owner decision is resolved.
-
-Historical K1A trajectories remain bounded diagnostic evidence only.
-
-Production default, market clearing, GE, annual dynamics, IRFs, welfare and Results remain closed.
+Production default, GE, annual dynamics, IRFs, welfare and Results remain closed.
