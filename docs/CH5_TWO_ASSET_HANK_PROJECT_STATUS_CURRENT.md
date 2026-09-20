@@ -4,75 +4,54 @@
 
 状态：
 
-`TURN2_BEIJING_CHECKPOINT2_SELECTOR_FAIL_ACCEPTED__F0579_UPPER_B_NEGATIVE_BRANCH_ROOT_FORENSIC_ACTIVE`
+`TURN2_F0579_FORENSIC_RUN001_SERIALIZATION_EXCEPTION_ACCEPTED__FINITE_SCREEN_PERSISTENCE_REPAIR_AND_RUN002_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Accepted corrected initial turn
+## Accepted baseline scientific state
 
-The first corrected multi-province turn remains fully accepted:
+The corrected initial turn remains fully accepted and closed.
 
-- 31/31 HJB PASS;
-- 31/31 Owner-adopted unique-closed-class KFE PASS;
-- stationary aggregates PASS;
-- one K1A/C1/firm integration PASS;
-- canonical raw turn-2 payoff and exact turn-2 entering state accepted.
+Turn 2 remains scientifically stopped at Beijing checkpoint 2, flat 579, where the current selector returned `NO_ADMISSIBLE_POLICY` before checkpoint-2 D2/Q assembly.
 
-## Accepted turn-2 failure
+No selector law has changed.
+
+## Accepted forensic run001 failure
 
 Candidate:
 
-`37e563a87bf0dc1fb90224b03e0c4df9daea9d5f`.
+`d104f7da14039eac36d76f81188c717df010848d`.
 
 Acceptance:
 
-`docs/CH5_MP4C_TURN2_BEIJING_CHECKPOINT2_POLICY_SELECTOR_FAILURE_ACCEPTANCE_20260920.md`.
+`docs/CH5_MP4C_TURN2_F0579_FORENSIC_SERIALIZATION_EXCEPTION_ACCEPTANCE_20260920.md`.
 
-Turn 2 reached only Beijing.
+Forensic run001:
 
-Checkpoint 0:
+- reproduced the persisted seven-candidate F0579 state;
+- consumed one backward active-upper-b negative branch root procedure;
+- evaluated 513 screen points;
+- then failed while serializing the task-local root-screen receipt because the raw forensic capture contained `-Infinity`;
+- did not durably persist the root result or Brent subcount;
+- did not run the forward branch;
+- did not evaluate switching or post-root Hamiltonian classification;
+- made no selector decision.
 
-- policy/D2 PASS;
-- B `0.35948978452765235`;
-- direct solve backward error `2.1754586146795478e-16`.
+The frozen selector helper itself uses finite saturation for root-screen residuals. The task-local forensic capture did not mirror that evidence representation.
 
-Checkpoint 1:
+## Active successor
 
-- policy/D2 PASS;
-- B `0.019968227378343403`;
-- D `0.5603661628256393`;
-- convergence FAIL;
-- no exact or approximate period-2/3 cycle;
-- direct solve backward error `1.4650295837509506e-16`.
+`tasks/CH5_MP4C_TURN2_F0579_FORENSIC_FINITE_SCREEN_PERSISTENCE_REPAIR_AND_RUN002_20260920.md`.
 
-Checkpoint 2 first failure:
+The successor is limited to:
 
-- flat F-order index 579;
-- state index `(19,8,1)`;
-- physical `(b,a,z)=(5,4.2105263157894735,1.3)`;
-- selector outcome `NO_ADMISSIBLE_POLICY`;
-- D2/Q not assembled.
+1. repair the forensic screen receipt to store the same finite-saturated values consumed by the frozen root screen;
+2. prove JSON-safe persistence with zero science;
+3. perform one fresh backward and one fresh forward branch root procedure;
+4. apply the existing post-root KKT/direction/boundary/Hamiltonian checks;
+5. return classification A/B/C/D;
+6. make no selector source change and no HJB rerun.
 
-The current selector therefore fails closed at this turn-2 state.
-
-## Current scientific uncertainty
-
-The failure does not yet establish that the underlying constrained household problem has no feasible policy.
-
-The active upper-b negative-transfer regime is rejected before branch-specific root evaluation because multiple illiquid derivative branches survive the current pre-root viability screen.
-
-The next task determines whether post-root evaluation would leave:
-
-- exactly one admissible branch;
-- no admissible branch;
-- or a genuine multiple-policy ambiguity.
-
-No selector repair is adopted yet.
-
-## Active task
-
-`tasks/CH5_MP4C_TURN2_BEIJING_F0579_UPPER_B_NEGATIVE_BRANCH_ROOT_FORENSIC_20260920.md`.
-
-No HJB, D2/Q, KFE, aggregate, integration or later-province execution is authorized in this forensic.
+Historical forensic run001 consumption remains immutable and separate.
 
 Turn 3, K1B, K2, GE and Results remain closed.
