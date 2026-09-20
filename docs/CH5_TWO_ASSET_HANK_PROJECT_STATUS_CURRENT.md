@@ -4,61 +4,48 @@
 
 状态：
 
-`RUN004_31_PROVINCE_HOUSEHOLD_AND_ADOPTED_KFE_ACCEPTED__RAW_NEXT_PAYOFF_REDUCTION_ORDER_GUARD_FAIL__INTEGRATION_ONLY_REPLAY_ACTIVE`
+`CORRECTED_INITIAL_TURN_FULLY_CLOSED__TURN2_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Accepted run004 household result
-
-Candidate:
-
-`af770c1fb787098569df2a25471cdc8101eda3a3`.
+## Fully accepted corrected initial turn
 
 Acceptance:
 
-`docs/CH5_MP4C_RUN004_31PROVINCE_HOUSEHOLD_KFE_PASS_RAW_NEXT_PAYOFF_REDUCTION_ORDER_GUARD_ACCEPTANCE_20260920.md`.
+`docs/CH5_MP4C_CORRECTED_INITIAL_TURN_FULL_CLOSURE_ACCEPTANCE_20260920.md`.
 
-Under the Owner-adopted unique-closed-class KFE:
+Accepted initial-turn chain:
 
-- Beijing implementation parity PASS;
-- household HJB PASS: 31/31;
-- terminal KFE PASS: 31/31;
-- stationary aggregates PASS: 31/31;
-- household batch PASS.
+- 31/31 corrected household HJB PASS;
+- 31/31 Owner-adopted unique-closed-class KFE PASS;
+- 31/31 stationary aggregate blocks PASS;
+- one 31-province household batch PASS;
+- source-faithful labor PASS;
+- K1A `beta_distance=2`, `beta_return=0` PASS;
+- C1 residual GovInv PASS;
+- 31 firm evaluations PASS;
+- canonical same-S raw payoff PASS.
 
-Accepted household-batch identity:
+Accepted household batch identity:
 
 `8B7875F3BD603038E4D415D9F9FF759D4FDDC93E2E677C13BF0B649571B2EB05`.
 
-Run004 household/KFE science is accepted and is not to be rerun for the immediate successor.
+Accepted turn-2 raw payoff identity:
 
-## Integration blocker
+`D77669DB4245DDCE3D6E91231A92C4A2AD12415D165F0718D0605BD213FDB414`.
 
-The one run004 integration turn reached labor, K1A, C1, all 31 firms, wage, monetary and fiscal operations, then stopped at:
+Accepted turn-2 entering state authority:
 
-`FAIL__RAW_NEXT_PAYOFF_SAME_S_IDENTITY`.
+`reports/ch5_mp4c_run004_canonical_same_s_integration_replay_20260920_run001/next_state_candidate_receipt.json`
 
-The failed guard required bitwise equality between:
+with 31 rows in exact province order.
 
-- BLAS `raw_ra0 @ S`; and
-- separately ordered `np.sum(raw_ra0[:,None] * S, axis=0)`.
+## Active turn-2 task
 
-The formulas are mathematically the same adopted destination-by-origin payoff aggregation but may differ in floating-point reduction order.
+`tasks/CH5_MP4C_CORRECTED_OPTIONB_TURN2_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_20260920.md`.
 
-Therefore the failure is an engineering/numerical guard defect. The integration turn itself is not yet accepted because the downstream accounting block and next-state persistence were not completed.
+The task uses the exact completed-turn-1 / entering-turn-2 state, solves all 31 turn-2 corrected household HJB/KFE blocks, aggregates them, executes one turn-2 K1A/C1/firm integration, constructs a canonical raw payoff for a possible turn 3, and stops.
 
-## Active successor
+It does not establish outer convergence and does not run turn 3.
 
-`tasks/CH5_MP4C_RUN004_CANONICAL_SAME_S_RAW_NEXT_PAYOFF_REPAIR_AND_INTEGRATION_ONLY_REPLAY_20260920.md`.
-
-The successor binds the accepted run004 household batch, performs no household HJB/KFE/aggregate science, and replays exactly one integration turn.
-
-Canonical payoff evaluation:
-
-`rah_i = math.fsum(float(raw_ra0[j]) * float(S[j,i]) for j in range(31))`
-
-with ascending destination index.
-
-Same-S acceptance is based on exact raw-ra0/S provenance and deterministic product-term construction, not bitwise equality to a different reduction implementation.
-
-Turn 2, K1B, K2, GE and Results remain closed.
+K1B, K2, GE and Results remain closed.
