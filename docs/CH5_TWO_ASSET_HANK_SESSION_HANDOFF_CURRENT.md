@@ -14,51 +14,58 @@ GitHub live main 是 repository-state authority。Owner 为最终 scientific aut
 
 当前状态：
 
-`CORRECTED_INITIAL_TURN_FULLY_CLOSED__TURN2_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_ACTIVE`
+`TURN2_BEIJING_CHECKPOINT2_SELECTOR_FAIL_ACCEPTED__F0579_UPPER_B_NEGATIVE_BRANCH_ROOT_FORENSIC_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Latest accepted result
+## Latest Reviewer decision
 
-Candidate `3dfd610d94d0ef5dbf6874e33c6839a04c45d3fd` is accepted.
+Turn-2 candidate `37e563a87bf0dc1fb90224b03e0c4df9daea9d5f` is accepted as failed evidence.
 
 Acceptance:
 
-`docs/CH5_MP4C_CORRECTED_INITIAL_TURN_FULL_CLOSURE_ACCEPTANCE_20260920.md`.
+`docs/CH5_MP4C_TURN2_BEIJING_CHECKPOINT2_POLICY_SELECTOR_FAILURE_ACCEPTANCE_20260920.md`.
 
 Terminal:
 
-`PASS__RUN004_ACCEPTED_31_PROVINCE_HOUSEHOLD_KFE__CANONICAL_SAME_S_INTEGRATION_REPLAY_PASS__RAW_NEXT_PAYOFF_READY__TURN2_NOT_RUN`
+`FAIL__CORRECTED_HJB_POLICY_MAP_OR_D2_GATE`.
 
-This fully closes one corrected initial multi-province turn.
+First failure:
 
-Accepted turn-2 entering state:
+- Beijing
+- checkpoint 2
+- flat 579
+- `(b_index,a_index,z_index)=(19,8,1)`
+- `(b,a,z)=(5,4.2105263157894735,1.3)`
+- selector outcome `NO_ADMISSIBLE_POLICY`.
 
-`reports/ch5_mp4c_run004_canonical_same_s_integration_replay_20260920_run001/next_state_candidate_receipt.json`
-
-Accepted raw payoff SHA-256:
-
-`D77669DB4245DDCE3D6E91231A92C4A2AD12415D165F0718D0605BD213FDB414`.
+No checkpoint-2 D2/Q, KFE, aggregate, integration or turn-3 call occurred.
 
 ## Current active task
 
-`tasks/CH5_MP4C_CORRECTED_OPTIONB_TURN2_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_20260920.md`.
+`tasks/CH5_MP4C_TURN2_BEIJING_F0579_UPPER_B_NEGATIVE_BRANCH_ROOT_FORENSIC_20260920.md`.
 
-The turn-2 task:
+This task does not change the selector and does not rerun HJB.
 
-- binds the exact 31 persisted turn-2 entering states;
-- uses one source-native initialization per reached province;
-- solves the unchanged corrected HJB;
-- uses the Owner-adopted unique-closed-class terminal KFE;
-- aggregates only after KFE PASS;
-- builds one 31-province household batch only if all provinces PASS;
-- executes exactly one source-faithful labor / K1A beta2-beta_return0 / C1 / firm integration;
-- computes turn-3 raw payoff by canonical ordered `math.fsum` using the same turn-2 K1A S;
-- persists a turn-3 candidate state;
-- stops before any turn-3 household solve.
+It binds the exact persisted failure cell and decomposes only the active upper-b negative-transfer case.
 
-Descriptive turn-to-turn movement diagnostics are allowed but do not define or establish outer convergence.
+The key question is whether the current pre-root rule:
 
-Historical turn-1 evidence remains immutable.
+`DERIVATIVE_BRANCH_NOT_UNIQUE_BEFORE_ROOT`
 
-K1B, K2, full trajectory, GE and Results remain closed.
+is a valid fail-closed scientific ambiguity or an overly early rejection.
+
+The forensic independently evaluates the two persisted a-derivative branches under the exact same upper-b multiplier domain and root procedure, then applies the existing post-root direction/KKT/boundary/Hamiltonian checks.
+
+Possible classifications:
+
+A. exactly one post-root admissible policy -> pre-root false negative;
+B. no post-root admissible policy -> genuine no-policy;
+C. multiple unresolved post-root policies -> Owner decision required;
+D. forensic inconsistency.
+
+No selector repair or turn-2 retry is authorized until this forensic is reviewed.
+
+Historical corrected initial-turn acceptance remains unchanged.
+
+Turn 3, K1B, K2, full trajectory, GE and Results remain closed.
