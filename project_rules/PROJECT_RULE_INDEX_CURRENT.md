@@ -12,33 +12,27 @@
 2. 本索引
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
-5. `docs/CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_NONNEGATIVITY_FAILURE_ACCEPTANCE_20260920.md`
-6. `docs/CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_SUPPORT_FORENSIC_ACCEPTANCE_20260920.md`
-7. `docs/CH5_MP4C_CORRECTED_OPTIONB_BEIJING_UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_DIAGNOSTIC_ACCEPTANCE_20260920.md`
-8. current decision state.
+5. `docs/CH5_MP4C_UNIQUE_CLOSED_CLASS_SUPPORT_KFE_OWNER_ADOPTION_20260920.md`
+6. `docs/CH5_MP4C_CORRECTED_OPTIONB_BEIJING_UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_DIAGNOSTIC_ACCEPTANCE_20260920.md`
+7. `docs/CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_SUPPORT_FORENSIC_ACCEPTANCE_20260920.md`
+8. current active task.
 
 Current status:
 
-`UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_SUPPORTED__OWNER_METHOD_ADOPTION_DECISION_REQUIRED`.
+`OWNER_ADOPTED_UNIQUE_CLOSED_CLASS_SUPPORT_KFE__IMPLEMENTATION_AND_CORRECTED_INITIAL_TURN_RUN004_ACTIVE`.
 
 Current active Builder task:
 
-`NONE__OWNER_DECISION_REQUIRED`.
+`tasks/CH5_MP4C_CORRECTED_OPTIONB_UNIQUE_CLOSED_CLASS_KFE_IMPLEMENTATION_AND_INITIAL_TURN_RUN004_20260920.md`.
 
 Results eligibility=`FALSE`.
 
 Important current facts:
 
-- Beijing corrected HJB checkpoint 12 is accepted;
-- exact-positive topology has one unique 400-state closed communicating class and 400 transient states;
-- the accepted full-space SVD KFE remains FAIL because of transient-only entrywise negativity;
-- zero-science forensic proves every frozen floor breach is transient and the closed-class portion is strictly positive;
-- the bounded method-candidate diagnostic passes:
-  - Q_CC structural closure PASS;
-  - restricted GESVD rank/nullity `399/1` under both preregistered thresholds;
-  - closed-class candidate strictly positive and normalized;
-  - transient mass embedded as exact zero;
-  - one full original-Q stationarity validation PASS;
-- no KFE method has been adopted yet;
-- no Builder successor is active until the Owner explicitly adopts or rejects the unique-closed-class support KFE method;
+- Owner explicitly adopted unique-closed-class support KFE as the new terminal KFE authority;
+- the prior full-state-space 800x800 SVD stationary-mass construction is historical evidence only and is no longer the accepted future terminal construction;
+- adopted method requires exactly one closed communicating class C, one restricted dense GESVD on Q_CC.T, rank/nullity |C|-1/1 under both preregistered rank-threshold views, one orientation, one normalization on C, exact-zero transient embedding, and one original full-Q Q.T@p validation;
+- no clipping, tolerance relaxation, row pinning, source RHS, iterative eigensolver, full-space SVD fallback, or post-hoc projection is authorized;
+- HJB, D1/D2/D3, KKT/boundary/upwind/switching, aggregates, K1A, C1 and raw-ra0 timing remain unchanged;
+- active run004 first implements and parity-validates the adopted method, then reruns exactly one corrected initial multi-province turn;
 - turn 2, K1B, K2, GE and Results remain closed.
