@@ -10,7 +10,7 @@ Task ID:
 
 `CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_TERMINAL_KFE_TOPOLOGY_SERIALIZATION_REPAIR_AND_RUN003_REEXECUTION_20260920`
 
-Status: `ACTIVE`
+Status: `COMPLETED_FAIL_ACCEPTED`
 
 ## Governance and authority
 
@@ -271,3 +271,29 @@ This PASS means exactly one corrected initial multi-province turn is internally 
 - do not modify CURRENT files
 - do not merge main
 - do not publish successor.
+
+
+## Reviewer closure — 2026-09-20
+
+Run003 candidate `e352acaa6003bf0ccec8e5ad56688a626ccf2146` is accepted as failed scientific evidence.
+
+Accepted progression:
+- run002 engineering repairs passed;
+- Beijing HJB converged at checkpoint 12;
+- topology has exactly one 400-state closed class;
+- GESVD rank/nullity is 799/1;
+- stationary candidate fails only the frozen per-entry minimum-mass allowance.
+
+Observed minimum p:
+`-2.217909641958515e-12`
+
+Frozen per-entry floor:
+`-1.9184653865526386e-13`
+
+The total-negative-mass bound passes, but the current KFE contract requires every nonnegativity check to pass. No clipping, projection, renormalization, tolerance relaxation or alternate solver is accepted.
+
+Acceptance:
+`docs/CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_NONNEGATIVITY_FAILURE_ACCEPTANCE_20260920.md`
+
+Next zero-science task:
+`tasks/CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_NEGATIVITY_SUPPORT_FORENSIC_20260920.md`
