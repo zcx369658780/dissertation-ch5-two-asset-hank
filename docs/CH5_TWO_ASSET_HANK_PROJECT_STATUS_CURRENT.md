@@ -4,45 +4,46 @@
 
 状态：
 
-`RAW_RA0_PAYOFF_OWNER_ADOPTED__FIXED_PRICE_THREE_POINT_CORRECTED_HOUSEHOLD_SAFETY_PANEL_ACTIVE__OUTER_RUNTIME_BLOCKED`
+`RAW_RA0_THREE_POINT_ONE_STEP_SAFETY_ACCEPTED__PATH_B_TURN1_31_PROVINCE_FIXED_PRICE_CROSS_SECTION_ACTIVE__OUTER_RUNTIME_BLOCKED`
 
 Results eligibility=`FALSE`。
 
-## Corrected household foundation
+## Accepted foundation
 
-Accepted corrected household authority remains:
+The corrected household route remains accepted through:
 
-- checkpoint-11 HJB convergence PASS;
-- same-Q11 unique source-free stationary mass PASS;
-- Ct/Lt/At/Bt/AtTax aggregate/interface binding PASS;
-- opt-in corrected household adapter PASS.
+- checkpoint-11 HJB convergence;
+- same-Q11 unique source-free stationary mass;
+- Ct/Lt/At/Bt/AtTax aggregate/interface binding;
+- opt-in corrected aggregate adapter;
+- Owner Option-B raw-ra0 payoff authority.
 
-## Owner payoff-return adoption
+## Accepted raw-payoff safety panel
 
-Owner adopted Option B on 2026-09-20.
+Reviewer accepted candidate:
 
-Authority:
+`51111c26a5f62f42fcf8cef636ae9f56d3788527`.
 
-`docs/CH5_MP4C_K1A_RAW_RA0_PAYOFF_OWNER_ADOPTION_20260920.md`.
+Acceptance:
 
-Frozen payoff contract:
+`docs/CH5_MP4C_K1A_RAW_RA0_CORRECTED_HOUSEHOLD_FIXED_PRICE_THREE_POINT_SAFETY_PANEL_ACCEPTANCE_20260920.md`.
 
-- household economic payoff = completed-iteration raw net firm `ra0`;
-- interpret as one-model-period dimensionless net return;
-- no claim that one model period equals a calendar year;
-- no annualization, rescaling, clipping, smoothing or risk adjustment;
-- same K1 portfolio matrix `S` for quantity and payoff;
-- lagged completed-iteration timing unchanged;
-- K1B raw-ra0 z-score attractiveness remains separate from payoff level.
+Global Path-B LOW/MEDIAN/HIGH raw household payoff points all passed:
 
-Historical clipped `ra` remains transitional/source-faithful evidence only.
+- 800/800 corrected selector cells;
+- D2/Q legality;
+- one fixed-Delta direct implicit update;
+- backward-error gate;
+- no scientific retry.
+
+This establishes one-step fixed-price safety over a broad accepted payoff range only. It is not HJB convergence or outer stability.
 
 ## Active task
 
-`tasks/CH5_MP4C_K1A_RAW_RA0_CORRECTED_HOUSEHOLD_FIXED_PRICE_THREE_POINT_SAFETY_PANEL_20260920.md`
+`tasks/CH5_MP4C_K1A_RAW_RA0_PATH_B_TURN1_31_PROVINCE_FIXED_PRICE_ONE_STEP_CROSS_SECTION_20260920.md`.
 
-This task changes only `r_a` at fixed accepted checkpoint-11 non-payoff inputs and executes at most one policy/D2/direct-HJB step for each preregistered LOW/MEDIAN/HIGH raw portfolio payoff.
+The task executes all 31 exact Path-B turn-1 raw portfolio payoff values under common checkpoint-11 non-payoff inputs.
 
-No KFE, aggregate re-evaluation, capital network, firm, outer loop, K1B, GE or Results work is authorized.
+It uses compact evidence mode recertified against sealed three-point evidence to avoid unnecessary repository bloat.
 
-A PASS is required before any 31-province raw-payoff household batch or short corrected outer trajectory may be considered.
+No KFE, aggregate evaluation, capital network, firm, province-specific non-payoff inputs, outer loop, K1B, GE or Results work is authorized.
