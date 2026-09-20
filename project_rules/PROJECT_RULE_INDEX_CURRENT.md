@@ -13,26 +13,28 @@
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
 5. `docs/CH5_MP4C_UNIQUE_CLOSED_CLASS_SUPPORT_KFE_OWNER_ADOPTION_20260920.md`
-6. `docs/CH5_MP4C_CORRECTED_OPTIONB_BEIJING_UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_DIAGNOSTIC_ACCEPTANCE_20260920.md`
-7. `docs/CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_SUPPORT_FORENSIC_ACCEPTANCE_20260920.md`
-8. current active task.
+6. `docs/CH5_MP4C_RUN004_31PROVINCE_HOUSEHOLD_KFE_PASS_RAW_NEXT_PAYOFF_REDUCTION_ORDER_GUARD_ACCEPTANCE_20260920.md`
+7. current active task.
 
 Current status:
 
-`OWNER_ADOPTED_UNIQUE_CLOSED_CLASS_SUPPORT_KFE__IMPLEMENTATION_AND_CORRECTED_INITIAL_TURN_RUN004_ACTIVE`.
+`RUN004_31_PROVINCE_HOUSEHOLD_AND_ADOPTED_KFE_ACCEPTED__RAW_NEXT_PAYOFF_REDUCTION_ORDER_GUARD_FAIL__INTEGRATION_ONLY_REPLAY_ACTIVE`.
 
 Current active Builder task:
 
-`tasks/CH5_MP4C_CORRECTED_OPTIONB_UNIQUE_CLOSED_CLASS_KFE_IMPLEMENTATION_AND_INITIAL_TURN_RUN004_20260920.md`.
+`tasks/CH5_MP4C_RUN004_CANONICAL_SAME_S_RAW_NEXT_PAYOFF_REPAIR_AND_INTEGRATION_ONLY_REPLAY_20260920.md`.
 
 Results eligibility=`FALSE`.
 
 Important current facts:
 
-- Owner explicitly adopted unique-closed-class support KFE as the new terminal KFE authority;
-- the prior full-state-space 800x800 SVD stationary-mass construction is historical evidence only and is no longer the accepted future terminal construction;
-- adopted method requires exactly one closed communicating class C, one restricted dense GESVD on Q_CC.T, rank/nullity |C|-1/1 under both preregistered rank-threshold views, one orientation, one normalization on C, exact-zero transient embedding, and one original full-Q Q.T@p validation;
-- no clipping, tolerance relaxation, row pinning, source RHS, iterative eigensolver, full-space SVD fallback, or post-hoc projection is authorized;
-- HJB, D1/D2/D3, KKT/boundary/upwind/switching, aggregates, K1A, C1 and raw-ra0 timing remain unchanged;
-- active run004 first implements and parity-validates the adopted method, then reruns exactly one corrected initial multi-province turn;
+- Owner-adopted unique-closed-class terminal KFE implementation is accepted;
+- fresh run004 passes 31/31 household HJB and 31/31 terminal KFE;
+- 31 corrected stationary aggregates and the exact household batch are accepted;
+- accepted household-batch identity is `8B7875F3BD603038E4D415D9F9FF759D4FDDC93E2E677C13BF0B649571B2EB05`;
+- run004 integration consumed one labor/K1A/C1/31-firm/wage/monetary/fiscal sequence but stopped before closure at a bitwise comparison of two mathematically identical same-S reduction orders;
+- the failure is accepted as an engineering/numerical identity-guard defect, not an economic payoff-law failure;
+- the active successor does not rerun household HJB/KFE/aggregates;
+- canonical raw-next-payoff evaluation is the adopted mathematical sum evaluated deterministically by per-origin `math.fsum` in ascending destination order;
+- BLAS `raw_ra0 @ S` may be diagnostic only and is not a bitwise acceptance gate;
 - turn 2, K1B, K2, GE and Results remain closed.
