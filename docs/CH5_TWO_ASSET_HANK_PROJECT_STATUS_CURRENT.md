@@ -4,47 +4,54 @@
 
 状态：
 
-`RAW_RA0_31_PROVINCE_FIXED_PRICE_CROSS_SECTION_ACCEPTED__CORRECTED_INITIAL_TURN_31_PROVINCE_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_ACTIVE`
+`CORRECTED_INITIAL_TURN_RUN001_ENGINEERING_EXCEPTION_ACCEPTED__CHECKPOINT0_DIAGNOSTIC_REPAIR_AND_FRESH_REEXECUTION_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Accepted corrected household foundation
+## Accepted scientific foundation
 
 Still accepted:
 
 - corrected D1/D2/D3 household law;
-- checkpoint-11 HJB convergence;
+- checkpoint-11 HJB convergence authority;
 - same-Q11 unique source-free KFE;
 - stationary Ct/Lt/At/Bt/AtTax mapping;
 - opt-in corrected aggregate adapter;
-- Owner Option-B raw-ra0 payoff law.
+- Owner Option-B raw-ra0 payoff law;
+- three-point and exact 31-payoff fixed-price one-step safety progression.
 
-## Accepted raw-payoff safety progression
+## Accepted run001 failure
 
 Accepted candidate:
 
-`d0e3cdc27f11d6d7bb0a0ec32299e0f00f90fcda`.
+`159786968d2bb47c12b0b7b88ed8aeaa6d0e8bdf`.
 
 Acceptance:
 
-`docs/CH5_MP4C_K1A_RAW_RA0_PATH_B_TURN1_31_PROVINCE_FIXED_PRICE_ONE_STEP_CROSS_SECTION_ACCEPTANCE_20260920.md`.
+`docs/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_RUN001_ENGINEERING_EXCEPTION_ACCEPTANCE_20260920.md`.
 
-All 31 exact Path-B turn-1-generated raw portfolio payoff values pass one corrected fixed-price policy/D2/direct-update step under common checkpoint-11 non-payoff inputs.
+Run001 reached only Beijing checkpoint 0:
 
-Important timing clarification: the accepted CSV turn-1 raw payoff is a completed-turn-1 / next-household payoff counterfactual, not entering turn-1 household payoff.
+- source-native initialization: PASS;
+- labor roots: 800/800;
+- corrected policy map: 800/800 admissible;
+- D2/Q: PASS;
+- direct HJB updates: 0;
+- KFE: 0;
+- aggregates/integration: 0.
 
-## Active task
+The terminal `TypeError: 'NoneType' object is not iterable` is an engineering diagnostic-composition failure caused by calling comparative policy/operator diagnostics without a previous checkpoint. No Beijing HJB/KFE scientific failure is inferred.
 
-`tasks/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_31_PROVINCE_HOUSEHOLD_KFE_AND_K1A_C1_ONE_TURN_INTEGRATION_20260920.md`.
+Run001 evidence manifest:
+`F447D5DF30D302963D81EB09E68BEC72C1B89F8C1DE227936533045F9A16F315`.
+Independent readback passed and pre/post code freeze matched.
 
-The task starts from accepted outer-turn-1 initial states, solves all 31 corrected household HJB-KFE fixed points, aggregates them, then executes exactly one K1A-beta2 / C1 / source-faithful-labor / firm turn.
+## Active successor
 
-After firms return, it constructs:
+`tasks/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_CHECKPOINT0_DIAGNOSTIC_REPAIR_AND_REEXECUTION_20260920.md`.
 
-`rah_next_raw = raw_ra0_turn1 @ S`
+The successor may only repair checkpoint-0 current-only diagnostic representation in the opt-in driver, prove the repair before science, then perform one fresh bounded reexecution of the same initial-turn scientific objective using a new run002 evidence root.
 
-for future turn 2.
+Scientific laws, parameters, solver, tolerances, KFE, K1A/C1, payoff timing and integration semantics remain unchanged.
 
-Turn 2 itself is not authorized.
-
-K1B, K2, GE and Results remain closed.
+Turn 2, K1B, K2, GE and Results remain closed.
