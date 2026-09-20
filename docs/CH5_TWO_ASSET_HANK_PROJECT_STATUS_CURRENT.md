@@ -4,57 +4,61 @@
 
 状态：
 
-`OWNER_ADOPTED_UNIQUE_CLOSED_CLASS_SUPPORT_KFE__IMPLEMENTATION_AND_CORRECTED_INITIAL_TURN_RUN004_ACTIVE`
+`RUN004_31_PROVINCE_HOUSEHOLD_AND_ADOPTED_KFE_ACCEPTED__RAW_NEXT_PAYOFF_REDUCTION_ORDER_GUARD_FAIL__INTEGRATION_ONLY_REPLAY_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Owner-adopted terminal KFE authority
+## Accepted run004 household result
 
-Authority:
+Candidate:
 
-`docs/CH5_MP4C_UNIQUE_CLOSED_CLASS_SUPPORT_KFE_OWNER_ADOPTION_20260920.md`.
+`af770c1fb787098569df2a25471cdc8101eda3a3`.
 
-The Owner has explicitly replaced the prior full-state-space stationary-mass construction with the unique-closed-class support KFE method for future corrected-household executions.
+Acceptance:
 
-For each converged Q:
+`docs/CH5_MP4C_RUN004_31PROVINCE_HOUSEHOLD_KFE_PASS_RAW_NEXT_PAYOFF_REDUCTION_ORDER_GUARD_ACCEPTANCE_20260920.md`.
 
-1. exact-positive topology, exactly one SCC decomposition;
-2. require exactly one closed communicating class C;
-3. construct Q_CC;
-4. one dense GESVD on Q_CC.T;
-5. require restricted rank/nullity `|C|-1/1` under both local-dimension and inherited-800 threshold views;
-6. one sign orientation and one normalization on C;
-7. require p_C strictly positive;
-8. embed transient mass as exact zero by structural support;
-9. one original full-Q `Q.T@p_full` validation;
-10. retain existing full-state stationarity, normalization, source-free, finite and nonnegative gates.
+Under the Owner-adopted unique-closed-class KFE:
 
-No full-space 800x800 SVD fallback is part of the adopted method.
+- Beijing implementation parity PASS;
+- household HJB PASS: 31/31;
+- terminal KFE PASS: 31/31;
+- stationary aggregates PASS: 31/31;
+- household batch PASS.
 
-## Accepted evidence basis
+Accepted household-batch identity:
 
-Beijing checkpoint-12 evidence establishes:
+`8B7875F3BD603038E4D415D9F9FF759D4FDDC93E2E677C13BF0B649571B2EB05`.
 
-- corrected HJB PASS;
-- one unique 400-state closed class plus 400 transient states;
-- full-space negativity breaches are transient-only;
-- restricted closed-class diagnostic rank/nullity `399/1`;
-- restricted p_C strictly positive;
-- exact-zero transient embedding;
-- full original-Q stationarity PASS.
+Run004 household/KFE science is accepted and is not to be rerun for the immediate successor.
 
-## Current active task
+## Integration blocker
 
-`tasks/CH5_MP4C_CORRECTED_OPTIONB_UNIQUE_CLOSED_CLASS_KFE_IMPLEMENTATION_AND_INITIAL_TURN_RUN004_20260920.md`.
+The one run004 integration turn reached labor, K1A, C1, all 31 firms, wage, monetary and fiscal operations, then stopped at:
 
-The task:
+`FAIL__RAW_NEXT_PAYOFF_SAME_S_IDENTITY`.
 
-- implements the adopted terminal KFE authority;
-- parity-validates the implementation against accepted Beijing Q12 evidence before fresh science;
-- then performs one fresh run004 from the accepted 31-province outer-turn-1 initialization states;
-- if all 31 household blocks pass, performs exactly one K1A/C1/source-faithful-labor/firm turn and constructs raw next payoff;
-- does not run turn 2.
+The failed guard required bitwise equality between:
 
-All other scientific authorities remain unchanged.
+- BLAS `raw_ra0 @ S`; and
+- separately ordered `np.sum(raw_ra0[:,None] * S, axis=0)`.
 
-K1B, K2, GE and Results remain closed.
+The formulas are mathematically the same adopted destination-by-origin payoff aggregation but may differ in floating-point reduction order.
+
+Therefore the failure is an engineering/numerical guard defect. The integration turn itself is not yet accepted because the downstream accounting block and next-state persistence were not completed.
+
+## Active successor
+
+`tasks/CH5_MP4C_RUN004_CANONICAL_SAME_S_RAW_NEXT_PAYOFF_REPAIR_AND_INTEGRATION_ONLY_REPLAY_20260920.md`.
+
+The successor binds the accepted run004 household batch, performs no household HJB/KFE/aggregate science, and replays exactly one integration turn.
+
+Canonical payoff evaluation:
+
+`rah_i = math.fsum(float(raw_ra0[j]) * float(S[j,i]) for j in range(31))`
+
+with ascending destination index.
+
+Same-S acceptance is based on exact raw-ra0/S provenance and deterministic product-term construction, not bitwise equality to a different reduction implementation.
+
+Turn 2, K1B, K2, GE and Results remain closed.
