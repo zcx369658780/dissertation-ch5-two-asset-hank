@@ -15,28 +15,27 @@
 5. `docs/CH5_MP4C_UNIQUE_CLOSED_CLASS_SUPPORT_KFE_OWNER_ADOPTION_20260920.md`
 6. `docs/CH5_MP4C_CORRECTED_INITIAL_TURN_FULL_CLOSURE_ACCEPTANCE_20260920.md`
 7. `docs/CH5_MP4C_TURN2_BEIJING_CHECKPOINT2_POLICY_SELECTOR_FAILURE_ACCEPTANCE_20260920.md`
-8. current active task.
+8. `docs/CH5_MP4C_TURN2_F0579_FORENSIC_SERIALIZATION_EXCEPTION_ACCEPTANCE_20260920.md`
+9. current active task.
 
 Current status:
 
-`TURN2_BEIJING_CHECKPOINT2_SELECTOR_FAIL_ACCEPTED__F0579_UPPER_B_NEGATIVE_BRANCH_ROOT_FORENSIC_ACTIVE`.
+`TURN2_F0579_FORENSIC_RUN001_SERIALIZATION_EXCEPTION_ACCEPTED__FINITE_SCREEN_PERSISTENCE_REPAIR_AND_RUN002_ACTIVE`.
 
 Current active Builder task:
 
-`tasks/CH5_MP4C_TURN2_BEIJING_F0579_UPPER_B_NEGATIVE_BRANCH_ROOT_FORENSIC_20260920.md`.
+`tasks/CH5_MP4C_TURN2_F0579_FORENSIC_FINITE_SCREEN_PERSISTENCE_REPAIR_AND_RUN002_20260920.md`.
 
 Results eligibility=`FALSE`.
 
 Important current facts:
 
 - corrected initial turn remains fully accepted and closed;
-- turn 2 entered from the exact accepted 31-row turn-2 state;
-- Beijing turn-2 checkpoint 0 and checkpoint 1 policy/D2/direct-solve stages passed;
-- checkpoint 1 did not converge and had no exact/approximate cycle;
-- checkpoint 2 stopped at flat 579 before D2/Q because the current selector returned `NO_ADMISSIBLE_POLICY`;
-- active upper-b zero-kink has no unique liquid root under the current domain;
-- active upper-b positive root is inadmissible;
-- active upper-b negative is rejected before root because more than one illiquid derivative branch survives the pre-root screen;
-- no selector law has been changed;
-- the active task is a one-cell branch-root forensic only, with no HJB rerun;
+- turn 2 remains blocked at Beijing checkpoint 2 / flat 579 under the current selector;
+- forensic run001 did not resolve the selector question because evidence serialization failed after one backward branch root procedure;
+- the failure is engineering-only within the task-local forensic evidence capture;
+- selector.py and cost.py were unchanged;
+- no HJB, D2/Q, KFE, aggregate, integration, or turn-3 science was rerun;
+- fresh forensic run002 is authorized with a separately bounded two-branch root budget;
+- the repair must record the same finite-saturated screen representation used by the frozen root helper and must not alter selector/root science;
 - turn 3, K1B, K2, GE and Results remain closed.
