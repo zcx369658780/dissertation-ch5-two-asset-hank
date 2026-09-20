@@ -14,58 +14,56 @@ GitHub live main 是 repository-state authority。Owner 为最终 scientific aut
 
 当前状态：
 
-`RUN003_BEIJING_HJB_TOPOLOGY_RANK_PASS__STATIONARY_MASS_ENTRYWISE_NONNEGATIVITY_FAIL__ZERO_SCIENCE_SUPPORT_FORENSIC_ACTIVE`
+`RUN003_TRANSIENT_ONLY_NEGATIVITY_FORENSIC_ACCEPTED__UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_DIAGNOSTIC_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Latest Reviewer decision
+## Latest accepted result
 
-Run003 candidate `e352acaa6003bf0ccec8e5ad56688a626ccf2146` is accepted as failed scientific evidence and incorporated into main.
+The zero-science stationary-mass support forensic is accepted.
+
+Candidate:
+
+`633e93d3ab114df95ac5d127170ced7da67a2cb1`.
 
 Acceptance:
 
-`docs/CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_NONNEGATIVITY_FAILURE_ACCEPTANCE_20260920.md`.
+`docs/CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_SUPPORT_FORENSIC_ACCEPTANCE_20260920.md`.
 
-Run003 establishes:
+Terminal:
 
-- Beijing HJB checkpoint 12 PASS;
-- exact-positive topology: one unique 400-state closed communicating class plus 400 transient states;
-- full dense GESVD rank/nullity `799/1`;
-- graph closed-class count = numerical nullity.
+`PASS__RUN003_STATIONARY_MASS_NEGATIVITY_SUPPORT_FORENSIC_COMPLETE__NO_KFE_METHOD_CHANGE`
 
-The normalized stationary candidate then fails exactly one frozen acceptance check:
+Classification A:
 
-`minimum_mass_within_allowance`.
+`RUN003_NEGATIVITY_BREACHES_TRANSIENT_ONLY__CLOSED_CLASS_MASS_PASSES_ENTRYWISE_FLOOR__KFE_METHOD_DECISION_REQUIRED`
 
-Observed:
+All 14 frozen floor breaches are transient. Closed-class breach count is zero. All 400 closed-class entries are strictly positive.
 
-- min p `-2.217909641958515e-12`;
-- allowed floor `-1.9184653865526386e-13`;
-- 278 negative entries;
-- total negative mass still passes its separate global bound;
-- stationarity, normalization and source-free accounting all pass.
-
-This is a real FAIL under the current KFE contract. No clipping/projection/renormalization/tolerance change or alternate solver has been accepted.
+The current full-space KFE remains FAIL. No method/tolerance/vector change has been adopted.
 
 ## Current active task
 
-`tasks/CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_NEGATIVITY_SUPPORT_FORENSIC_20260920.md`.
+`tasks/CH5_MP4C_CORRECTED_OPTIONB_BEIJING_UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_DIAGNOSTIC_20260920.md`.
 
-The task performs zero scientific calls. It uses only persisted run003 topology, p/g/residual and receipts to determine whether the violating entries lie:
+This is a method-candidate diagnostic, not an implementation/adoption task.
 
-- only on transient states; or
-- inside the unique closed class as well.
+It binds the exact accepted Beijing Q12 and persisted unique closed-class indices, then:
 
-It must not rerun SCC/SVD/Q.T@p/HJB/KFE, and must not modify the vector.
+1. extracts Q_CC;
+2. performs exactly one restricted 400x400 dense GESVD;
+3. requires both preregistered threshold views to agree on rank/nullity 399/1;
+4. uses only the smallest right singular vector;
+5. applies one sign orientation and one normalization on the closed class;
+6. embeds exact zero transient mass by support construction;
+7. evaluates exactly one full original Q.T@p.
 
-Expected forensic classifications:
+The task may compare the new candidate with the persisted run003 full-space vector but may not modify the latter.
 
-- transient-only breaches with closed-class entrywise floor PASS;
-- closed-class breach confirmed;
-- or provenance inconsistency.
+No SCC rerun, no 800x800 GESVD rerun, no HJB/D2/selector, no aggregate/K1A/C1/firm, no turn 2.
 
-After that evidence is available, any change to KFE support restriction, null-vector method, or nonnegativity acceptance rule will be treated as a separate substantive scientific decision.
+If supported, STOP for explicit Owner/Reviewer method-adoption decision before any 31-province rerun.
 
 Historical run001/run002/run003 scientific consumption remains immutable.
 
-Turn 2, K1B, K2, full trajectory, GE and Results remain closed.
+K1B, K2, GE and Results remain closed.
