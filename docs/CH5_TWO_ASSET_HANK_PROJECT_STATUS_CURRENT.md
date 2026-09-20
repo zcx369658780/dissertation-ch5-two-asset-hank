@@ -4,7 +4,7 @@
 
 状态：
 
-`F0364_NEGATIVE_RATIO_SWITCHING_FALSE_NEGATIVE_CONFIRMED__INTERIOR_B_REPAIR_TURN1_POLICY_PARITY_AND_TURN2_RUN003_ACTIVE`
+`F0364_NEGATIVE_RATIO_SWITCHING_FALSE_NEGATIVE_CONFIRMED__INTERIOR_B_REPAIR_TURN1_POLICY_PARITY_AND_TURN2_RUN003_ACTIVE__BUILDER_EXECUTING`
 
 Results eligibility=`FALSE`。
 
@@ -61,3 +61,14 @@ Any mismatch blocks turn 2 and requires a separately authorized turn-1 reexecuti
 Only exact parity authorizes fresh turn-2 run003.
 
 Turn 3, K1B, K2, GE and Results remain closed.
+
+
+## Session checkpoint while task executes
+
+The active Builder task is currently executing. No new scientific result, candidate SHA, turn-1 parity verdict or turn-2 run003 verdict has been accepted yet.
+
+Authoritative handoff checkpoint:
+
+`docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_20260921_INTERIOR_B_NEGATIVE_RATIO_REPAIR_TURN1_PARITY_TURN2_RUN003_EXECUTING.md`
+
+The next Reviewer must verify the mandatory 408-map turn-1 selected-policy identity parity gate before accepting any evidence that fresh turn-2 run003 legitimately proceeded.
