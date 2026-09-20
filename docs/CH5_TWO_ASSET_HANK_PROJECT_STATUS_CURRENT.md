@@ -4,54 +4,62 @@
 
 状态：
 
-`TURN2_F0579_FORENSIC_RUN001_SERIALIZATION_EXCEPTION_ACCEPTED__FINITE_SCREEN_PERSISTENCE_REPAIR_AND_RUN002_ACTIVE`
+`TURN2_F0579_PRE_ROOT_FALSE_NEGATIVE_CONFIRMED__NARROW_UPPER_B_NEGATIVE_ENUMERATION_REPAIR_AND_TURN2_RUN002_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Accepted baseline scientific state
+## Accepted corrected initial turn
 
-The corrected initial turn remains fully accepted and closed.
+The first corrected multi-province turn remains fully accepted and closed.
 
-Turn 2 remains scientifically stopped at Beijing checkpoint 2, flat 579, where the current selector returned `NO_ADMISSIBLE_POLICY` before checkpoint-2 D2/Q assembly.
+## Accepted turn-2 blocker
 
-No selector law has changed.
+Turn-2 run001 stopped at Beijing checkpoint 2 / flat 579 because the current selector rejected active upper-b negative transfer at a pre-root branch-uniqueness gate.
 
-## Accepted forensic run001 failure
+No checkpoint-2 D2/Q or later science occurred.
+
+## Accepted F0579 forensic result
 
 Candidate:
 
-`d104f7da14039eac36d76f81188c717df010848d`.
+`5e1b898d959bea1fbbfdda84bf4d958f3b6dbbdc`.
 
 Acceptance:
 
-`docs/CH5_MP4C_TURN2_F0579_FORENSIC_SERIALIZATION_EXCEPTION_ACCEPTANCE_20260920.md`.
+`docs/CH5_MP4C_TURN2_F0579_PRE_ROOT_FALSE_NEGATIVE_FORENSIC_ACCEPTANCE_20260920.md`.
 
-Forensic run001:
+Classification:
 
-- reproduced the persisted seven-candidate F0579 state;
-- consumed one backward active-upper-b negative branch root procedure;
-- evaluated 513 screen points;
-- then failed while serializing the task-local root-screen receipt because the raw forensic capture contained `-Infinity`;
-- did not durably persist the root result or Brent subcount;
-- did not run the forward branch;
-- did not evaluate switching or post-root Hamiltonian classification;
-- made no selector decision.
+`TURN2_F0579_UPPER_B_NEGATIVE_PRE_ROOT_UNIQUENESS_FALSE_NEGATIVE_CONFIRMED`.
 
-The frozen selector helper itself uses finite saturation for root-screen residuals. The task-local forensic capture did not mirror that evidence representation.
+Branch result:
 
-## Active successor
+- backward branch root converges but fails `A_DERIVATIVE_DIRECTION_INCONSISTENT`;
+- forward branch root converges and passes all existing downstream checks;
+- admissible policies = 1;
+- unique selected branch = forward;
+- switching prerequisite = false.
 
-`tasks/CH5_MP4C_TURN2_F0579_FORENSIC_FINITE_SCREEN_PERSISTENCE_REPAIR_AND_RUN002_20260920.md`.
+Therefore the underlying constrained state is not a true no-policy point under the existing downstream laws.
 
-The successor is limited to:
+## Authorized narrow repair
 
-1. repair the forensic screen receipt to store the same finite-saturated values consumed by the frozen root screen;
-2. prove JSON-safe persistence with zero science;
-3. perform one fresh backward and one fresh forward branch root procedure;
-4. apply the existing post-root KKT/direction/boundary/Hamiltonian checks;
-5. return classification A/B/C/D;
-6. make no selector source change and no HJB rerun.
+For active upper-b negative transfer only:
 
-Historical forensic run001 consumption remains immutable and separate.
+- preserve the current pre-root viability screen;
+- do not reject merely because multiple a branches survive it;
+- root each surviving branch independently using the existing upper-b domain and root method;
+- apply unchanged post-root direction/KKT/boundary checks;
+- apply unchanged policy deduplication and Hamiltonian uniqueness logic.
 
-Turn 3, K1B, K2, GE and Results remain closed.
+No equation, tolerance, calibration, KKT law, boundary law or solver changes.
+
+## Active task
+
+`tasks/CH5_MP4C_ACTIVE_UPPER_B_NEGATIVE_BRANCH_ENUMERATION_REPAIR_AND_TURN2_RUN002_20260920.md`.
+
+Before fresh turn-2 science the task must scan accepted turn-1 run004 and completed turn-2 checkpoint-0/1 receipts for the exact repaired rejection pattern. Any occurrence outside F0579 blocks execution for impact review.
+
+If preservation audit is empty, perform one fresh turn-2 run002 and stop before turn 3.
+
+K1B, K2, GE and Results remain closed.
