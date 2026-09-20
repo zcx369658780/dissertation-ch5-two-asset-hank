@@ -7,6 +7,7 @@ import json
 import math
 from pathlib import Path
 import subprocess
+import sys
 import time
 from typing import Any, Callable
 
@@ -20,6 +21,7 @@ from ch5_two_asset_hank.corrected_diagnostic.selector import (
     SelectorBudget,
     _controls,
     _direction_ok,
+    _finite_root_value,
     _fp_bound,
     _liquid_drift_for_root,
     _one_scalar_root,
@@ -28,24 +30,26 @@ from ch5_two_asset_hank.corrected_diagnostic.selector import (
 )
 
 
-TASK_ID = "CH5_MP4C_TURN2_BEIJING_F0579_UPPER_B_NEGATIVE_BRANCH_ROOT_FORENSIC_20260920"
-BASELINE_SHA = "5bc00486955100884005530bc6d7f05fd6acd5b0"
-TERMINAL = "PASS__TURN2_BEIJING_F0579_UPPER_B_NEGATIVE_BRANCH_ROOT_FORENSIC_COMPLETE__NO_SELECTOR_CHANGE"
+TASK_ID = "CH5_MP4C_TURN2_F0579_FORENSIC_FINITE_SCREEN_PERSISTENCE_REPAIR_AND_RUN002_20260920"
+BASELINE_SHA = "e3ee31db239787406827df305c9b6b695aa912e7"
+TERMINAL = "PASS__TURN2_BEIJING_F0579_UPPER_B_NEGATIVE_BRANCH_ROOT_FORENSIC_RUN002_COMPLETE__NO_SELECTOR_CHANGE"
 CLASS_A = "TURN2_F0579_UPPER_B_NEGATIVE_PRE_ROOT_UNIQUENESS_FALSE_NEGATIVE_CONFIRMED"
 CLASS_B = "TURN2_F0579_TRUE_NO_ADMISSIBLE_POLICY_CONFIRMED"
 CLASS_C = "TURN2_F0579_MULTIPLE_POST_ROOT_ADMISSIBLE_POLICIES_CONFIRMED__OWNER_DECISION_REQUIRED"
 CLASS_D = "TURN2_F0579_FORENSIC_INCONSISTENT__NO_SELECTOR_DECISION"
 
 RUN_ROOT = Path("reports/ch5_mp4c_corrected_optionb_turn2_unique_closed_class_kfe_20260920_run001")
+FORENSIC_RUN001_ROOT = Path("reports/ch5_mp4c_turn2_beijing_f0579_upper_b_negative_branch_forensic_20260920_run001")
 CELL_RELATIVE = RUN_ROOT / "household/p00_北京/checkpoint_002/cell_0579.json"
-OUTPUT_RELATIVE = Path("reports/ch5_mp4c_turn2_beijing_f0579_upper_b_negative_branch_forensic_20260920_run001")
-TASK_RELATIVE = Path("tasks/CH5_MP4C_TURN2_BEIJING_F0579_UPPER_B_NEGATIVE_BRANCH_ROOT_FORENSIC_20260920.md")
+OUTPUT_RELATIVE = Path("reports/ch5_mp4c_turn2_beijing_f0579_upper_b_negative_branch_forensic_20260920_run002")
+TASK_RELATIVE = Path("tasks/CH5_MP4C_TURN2_F0579_FORENSIC_FINITE_SCREEN_PERSISTENCE_REPAIR_AND_RUN002_20260920.md")
 SELECTOR_RELATIVE = Path("src/ch5_two_asset_hank/corrected_diagnostic/selector.py")
 COST_RELATIVE = Path("src/ch5_two_asset_hank/corrected_diagnostic/cost.py")
 TEST_RELATIVE = Path("tests/test_mp4c_turn2_f0579_upper_b_negative_branch_forensic.py")
 VALIDATOR_RELATIVE = Path("validators/multi_province/turn2_f0579_upper_b_negative_branch_forensic/run.py")
 
 MANIFEST_SHA256 = "50D2E87C94E762D3936C64E3AAD416F600118AEBB8DCE1588DB369938FA2351A"
+FORENSIC_RUN001_MANIFEST_SHA256 = "5EB92DEFF02D591A4E72FD2B19E1EF3DF6D4D2D45F13CE7B2A13311C6CD99247"
 CELL_BLOB = "799294deb8119e4581486d279bbf5704784588b2"
 CELL_SHA256 = "290630D26A63F2BEF3FFF1C9C6EE014E95ED5B3B470A7A5EC0FC8F3129178700"
 SELECTOR_BLOB = "7e13fb53138788ec71541316a9e9815b5eb7c1f4"
@@ -109,6 +113,38 @@ def verify_manifest(repository: Path) -> dict[str, Any]:
     return {"status": "PASS" if all(checks.values()) else "FAIL", "checks": checks, "bad_paths": bad}
 
 
+def verify_forensic_run001_manifest(repository: Path) -> dict[str, Any]:
+    root = repository / FORENSIC_RUN001_ROOT
+    manifest_path = root / "sealed_manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    bad = []
+    for entry in manifest["entries"]:
+        path = root / entry["path"]
+        if (
+            not path.is_file()
+            or path.stat().st_size != entry["bytes"]
+            or _sha256(path) != entry["sha256"]
+        ):
+            bad.append(entry["path"])
+    readback = json.loads(
+        (root / "independent_readback_receipt.json").read_text(encoding="utf-8")
+    )
+    checks = {
+        "manifest_sha256": _sha256(manifest_path) == FORENSIC_RUN001_MANIFEST_SHA256,
+        "entry_count_11": manifest["entry_count"] == 11,
+        "total_bytes_8405": manifest["total_bytes"] == 8_405,
+        "entries_read_back": not bad,
+        "accepted_readback_pass": (
+            readback.get("status") == "PASS" and not readback.get("bad_paths")
+        ),
+    }
+    return {
+        "status": "PASS" if all(checks.values()) else "FAIL",
+        "checks": checks,
+        "bad_paths": bad,
+    }
+
+
 def load_cell(repository: Path) -> tuple[dict[str, Any], CorrectedSelectorCell]:
     path = repository / CELL_RELATIVE
     payload = json.loads(path.read_text(encoding="utf-8"))
@@ -160,6 +196,65 @@ def reproduce_candidates(payload: dict[str, Any]) -> dict[str, Any]:
     return {"status": "PASS" if all(checks.values()) else "FAIL", "checks": checks, "candidates": rows}
 
 
+def _capture_root_evaluation(
+    q_b: float,
+    raw_value: float,
+    calls: list[tuple[float, float]],
+    observations: dict[str, int],
+) -> float:
+    """Record frozen finite-screen evidence while returning the raw callback value."""
+
+    raw = float(raw_value)
+    finite_screen_value = _finite_root_value(raw)
+    calls.append((float(q_b), finite_screen_value))
+    if not math.isfinite(raw):
+        observations["raw_nonfinite_observation_count"] += 1
+    return raw
+
+
+def finite_screen_repair_contract() -> dict[str, Any]:
+    calls: list[tuple[float, float]] = []
+    observations = {"raw_nonfinite_observation_count": 0}
+    raw_return = _capture_root_evaluation(1.0, -math.inf, calls, observations)
+    finite_value = calls[0][1]
+    ordinary_calls: list[tuple[float, float]] = []
+    ordinary_observations = {"raw_nonfinite_observation_count": 0}
+    ordinary_raw = 1.25
+    ordinary_return = _capture_root_evaluation(
+        2.0, ordinary_raw, ordinary_calls, ordinary_observations
+    )
+    payload = {
+        "synthetic_negative_infinity_screen_value": finite_value,
+        "ordinary_finite_screen_value": ordinary_calls[0][1],
+    }
+    json.dumps(payload, allow_nan=False)
+    checks = {
+        "negative_infinity_uses_frozen_saturation": (
+            finite_value == _finite_root_value(-math.inf)
+        ),
+        "negative_infinity_evidence_is_finite": math.isfinite(finite_value),
+        "raw_nonfinite_observation_count_is_one": (
+            observations["raw_nonfinite_observation_count"] == 1
+        ),
+        "scientific_callback_returns_raw_negative_infinity": (
+            math.isinf(raw_return) and raw_return < 0.0
+        ),
+        "ordinary_finite_value_unchanged": (
+            ordinary_calls[0][1] == ordinary_raw and ordinary_return == ordinary_raw
+        ),
+        "ordinary_nonfinite_count_is_zero": (
+            ordinary_observations["raw_nonfinite_observation_count"] == 0
+        ),
+        "strict_json_serialization": True,
+    }
+    return {
+        "status": "PASS" if all(checks.values()) else "FAIL",
+        "checks": checks,
+        "finite_saturation_semantics": "selector._finite_root_value",
+        "scientific_callback_semantics": "return_raw_residual_unchanged",
+    }
+
+
 def _root_with_screen(
     branch: str,
     p_a: float,
@@ -168,12 +263,12 @@ def _root_with_screen(
     budget: SelectorBudget,
 ) -> tuple[float | None, str, dict[str, Any]]:
     calls: list[tuple[float, float]] = []
+    observations = {"raw_nonfinite_observation_count": 0}
 
     def function(q_b: float) -> float:
         d = _transfer_from_regime(regime="negative", q_a=p_a, q_b=q_b, a=cell.a, parameters=PARAMETERS)
         value = _liquid_drift_for_root(q_b, d, cell, PARAMETERS)
-        calls.append((float(q_b), float(value)))
-        return value
+        return _capture_root_evaluation(q_b, value, calls, observations)
 
     root, status = _one_scalar_root(function, lower_b_face=False, p_b=p_b, budget=budget)
     screen = np.asarray(calls[:513], dtype=np.float64)
@@ -185,18 +280,20 @@ def _root_with_screen(
         "branch": branch,
         "domain": {"strict_lower": 0.0, "inclusive_upper": p_b},
         "screen_points": 513,
-        "screen_sha256": _array_sha256(screen),
+        "finite_screen_sha256": _array_sha256(screen),
+        "raw_nonfinite_observation_count": observations["raw_nonfinite_observation_count"],
         "q_endpoint": [float(screen[0, 0]), float(screen[-1, 0])],
         "residual_endpoint": [float(screen[0, 1]), float(screen[-1, 1])],
-        "minimum_residual": float(np.min(screen[:, 1])),
-        "maximum_residual": float(np.max(screen[:, 1])),
+        "finite_minimum_residual": float(np.min(screen[:, 1])),
+        "finite_maximum_residual": float(np.max(screen[:, 1])),
         "exact_grid_indices": exact,
+        "exact_grid_count": len(exact),
         "sign_change_left_indices": brackets,
-        "bracket_count": len(brackets),
+        "sign_change_bracket_count": len(brackets),
         "bracket": None if len(brackets) != 1 else [float(screen[brackets[0], 0]), float(screen[brackets[0]+1, 0])],
         "root_status": status,
         "root": root,
-        "brent_solve": int(status == "ROOT_CONVERGED"),
+        "brent_solve_count": int(status == "ROOT_CONVERGED"),
         "total_function_evaluations": len(calls),
     }
     return root, status, receipt
@@ -329,12 +426,96 @@ def classify(backward: dict[str, Any], forward: dict[str, Any]) -> tuple[str, di
     return CLASS_A, comparison
 
 
+def _source_hashes(repository: Path) -> dict[str, str]:
+    return {
+        relative.as_posix(): _sha256(repository / relative)
+        for relative in (
+            SELECTOR_RELATIVE,
+            COST_RELATIVE,
+            VALIDATOR_RELATIVE,
+            TEST_RELATIVE,
+        )
+    }
+
+
+def _command_status(repository: Path, command: list[str]) -> dict[str, Any]:
+    completed = subprocess.run(
+        command,
+        cwd=repository,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    return {
+        "command": command,
+        "returncode": completed.returncode,
+        "status": "PASS" if completed.returncode == 0 else "FAIL",
+    }
+
+
+def zero_science_gate(
+    repository: Path,
+    *,
+    turn2_manifest: dict[str, Any],
+    forensic_run001_manifest: dict[str, Any],
+    reproduction: dict[str, Any],
+    repair_contract: dict[str, Any],
+) -> dict[str, Any]:
+    focused_tests = _command_status(
+        repository,
+        [
+            sys.executable,
+            "-m",
+            "pytest",
+            "-q",
+            TEST_RELATIVE.as_posix(),
+        ],
+    )
+    py_compile = _command_status(
+        repository,
+        [
+            sys.executable,
+            "-m",
+            "py_compile",
+            VALIDATOR_RELATIVE.as_posix(),
+            TEST_RELATIVE.as_posix(),
+        ],
+    )
+    diff_check = _command_status(repository, ["git", "diff", "--check"])
+    head = _git(repository, "rev-parse", "HEAD")
+    origin_main = _git(repository, "rev-parse", "origin/main")
+    checks = {
+        "repair_contract": repair_contract["status"] == "PASS",
+        "turn2_manifest": turn2_manifest["status"] == "PASS",
+        "forensic_run001_manifest": forensic_run001_manifest["status"] == "PASS",
+        "candidate_reproduction": reproduction["status"] == "PASS",
+        "focused_tests": focused_tests["status"] == "PASS",
+        "py_compile": py_compile["status"] == "PASS",
+        "git_diff_check": diff_check["status"] == "PASS",
+        "origin_main": origin_main == BASELINE_SHA,
+        "selector_identity": _blob(repository, SELECTOR_RELATIVE) == SELECTOR_BLOB,
+        "cost_identity": _blob(repository, COST_RELATIVE) == COST_BLOB,
+        "code_freeze_head_clean": not _git(repository, "status", "--porcelain"),
+    }
+    return {
+        "status": "PASS" if all(checks.values()) else "FAIL",
+        "checks": checks,
+        "head": head,
+        "origin_main": origin_main,
+        "source_sha256": _source_hashes(repository),
+        "focused_tests": focused_tests,
+        "py_compile": py_compile,
+        "git_diff_check": diff_check,
+        "scientific_calls": 0,
+    }
+
+
 def _manifest(output: Path) -> dict[str, Any]:
     excluded = {"sealed_manifest.json", "independent_readback_receipt.json"}
     entries = []
     for path in sorted(p for p in output.rglob("*") if p.is_file() and p.name not in excluded):
         entries.append({"path": path.relative_to(output).as_posix(), "sha256": _sha256(path), "bytes": path.stat().st_size})
-    manifest = {"schema": "CH5_MP4C_TURN2_F0579_BRANCH_ROOT_FORENSIC_V1", "entries": entries, "entry_count": len(entries), "total_bytes": sum(row["bytes"] for row in entries)}
+    manifest = {"schema": "CH5_MP4C_TURN2_F0579_BRANCH_ROOT_FORENSIC_RUN002_V1", "entries": entries, "entry_count": len(entries), "total_bytes": sum(row["bytes"] for row in entries)}
     _write_json(output / "sealed_manifest.json", manifest)
     return manifest
 
@@ -350,19 +531,31 @@ def _readback(output: Path) -> dict[str, Any]:
 
 def execute(repository: Path) -> tuple[str, str]:
     repository = repository.resolve(strict=True)
-    output = repository / OUTPUT_RELATIVE
-    output.mkdir(parents=True, exist_ok=False)
     started = time.perf_counter()
     manifest = verify_manifest(repository)
+    forensic_run001_manifest = verify_forensic_run001_manifest(repository)
     payload, cell = load_cell(repository)
     reproduction = reproduce_candidates(payload)
+    repair_contract = finite_screen_repair_contract()
+    gate = zero_science_gate(
+        repository,
+        turn2_manifest=manifest,
+        forensic_run001_manifest=forensic_run001_manifest,
+        reproduction=reproduction,
+        repair_contract=repair_contract,
+    )
+    if gate["status"] != "PASS":
+        raise ForensicFailure(f"zero-science gate failed: {gate['checks']}")
+    output = repository / OUTPUT_RELATIVE
+    output.mkdir(parents=True, exist_ok=False)
     authority = {
         "status": "PASS",
         "baseline": BASELINE_SHA,
         "head": _git(repository, "rev-parse", "HEAD"),
         "origin_main": _git(repository, "rev-parse", "origin/main"),
-        "worktree_clean_before_execution": not _git(repository, "status", "--porcelain"),
-        "run001_manifest": manifest,
+        "worktree_clean_before_execution": gate["checks"]["code_freeze_head_clean"],
+        "turn2_predecessor_manifest": manifest,
+        "forensic_run001_manifest": forensic_run001_manifest,
         "cell_blob": _blob(repository, CELL_RELATIVE), "cell_sha256": _sha256(repository / CELL_RELATIVE),
         "selector_blob": _blob(repository, SELECTOR_RELATIVE), "cost_blob": _blob(repository, COST_RELATIVE),
         "parameters": PARAMETERS.__dict__,
@@ -370,7 +563,8 @@ def execute(repository: Path) -> tuple[str, str]:
     checks = {
         "origin_main": authority["origin_main"] == BASELINE_SHA,
         "clean": authority["worktree_clean_before_execution"],
-        "manifest": manifest["status"] == "PASS",
+        "turn2_manifest": manifest["status"] == "PASS",
+        "forensic_run001_manifest": forensic_run001_manifest["status"] == "PASS",
         "cell": authority["cell_blob"] == CELL_BLOB and authority["cell_sha256"] == CELL_SHA256,
         "selector": authority["selector_blob"] == SELECTOR_BLOB,
         "cost": authority["cost_blob"] == COST_BLOB,
@@ -380,6 +574,23 @@ def execute(repository: Path) -> tuple[str, str]:
     if not all(checks.values()):
         raise ForensicFailure(f"authority gate failed: {checks}")
     _write_json(output / "authority_binding.json", authority)
+    _write_json(
+        output / "run001_lineage_receipt.json",
+        {
+            "status": "PASS",
+            "manifest_sha256": FORENSIC_RUN001_MANIFEST_SHA256,
+            "manifest_readback": forensic_run001_manifest,
+            "historical_consumption": {
+                "backward_branch_root_procedures": 1,
+                "forward_branch_root_procedures": 0,
+                "brent_solves": "UNRESOLVED_0_OR_1__NO_DURABLE_RETURN_RECEIPT",
+                "scientific_retries": 0,
+            },
+            "merged_into_run002_ledger": False,
+        },
+    )
+    _write_json(output / "finite_screen_repair_contract.json", repair_contract)
+    _write_json(output / "zero_science_gate_receipt.json", gate)
     _write_json(output / "current_candidate_reproduction_receipt.json", reproduction)
 
     budget = SelectorBudget(max_selector_evaluations=0, max_root_invocations=2, max_interior_z_root_invocations=0, max_interior_a_switching_root_invocations=0, max_joint_switching_root_invocations=0)
@@ -391,9 +602,9 @@ def execute(repository: Path) -> tuple[str, str]:
         p_a = EXPECTED[f"p_a_{branch}"]
         root, status, receipt = _root_with_screen(branch, p_a, p_b, cell, budget)
         receipts[branch] = receipt
-        posts[branch] = evaluate_post_root(branch, p_a, p_b, root, status, cell)
-        brent_solves += receipt["brent_solve"]
         _write_json(output / f"{branch}_branch_root_screen_receipt.json", receipt)
+        brent_solves += receipt["brent_solve_count"]
+        posts[branch] = evaluate_post_root(branch, p_a, p_b, root, status, cell)
         _write_json(output / f"{branch}_branch_post_root_receipt.json", posts[branch])
     switching = switching_prerequisite(cell, posts["backward"], posts["forward"], p_b)
     _write_json(output / "switching_prerequisite_receipt.json", switching)
@@ -401,7 +612,10 @@ def execute(repository: Path) -> tuple[str, str]:
     _write_json(output / "branch_post_root_admissibility_receipt.json", {"status": "PASS", "branches": posts, "hamiltonian_comparison": comparison})
     _write_json(output / "classification_receipt.json", {"terminal_marker": TERMINAL, "classification": classification, "hamiltonian_comparison": comparison})
     ledger = {
-        "failure_cell_json_loads": 1,
+        "run002_driver_failure_cell_json_loads": 1,
+        "zero_science_focused_test_failure_cell_json_loads": 2,
+        "backward_branch_root_invocations": 1,
+        "forward_branch_root_invocations": 1,
         "scalar_branch_root_invocations": budget.root_invocations,
         "brent_solves": brent_solves,
         "interior_a_switching_roots": 0,
@@ -413,7 +627,30 @@ def execute(repository: Path) -> tuple[str, str]:
     if budget.root_invocations != 2 or brent_solves > 2 or switching["switching_root_invocations"] != 0:
         raise ForensicFailure(f"scientific ledger breach: {ledger}")
     _write_json(output / "scientific_ledger.json", ledger)
-    _write_json(output / "terminal_receipt.json", {"terminal_marker": TERMINAL, "classification": classification, "selector_changed": False, "hjb_rerun": False})
+    post_hashes = _source_hashes(repository)
+    code_freeze = {
+        "status": "PASS" if post_hashes == gate["source_sha256"] else "FAIL",
+        "execution_head": gate["head"],
+        "pre_execution_sha256": gate["source_sha256"],
+        "post_execution_sha256": post_hashes,
+        "matches": post_hashes == gate["source_sha256"],
+        "selector_source_modified": False,
+        "cost_source_modified": False,
+    }
+    _write_json(output / "code_freeze_receipt.json", code_freeze)
+    if code_freeze["status"] != "PASS":
+        raise ForensicFailure("post-science code freeze mismatch")
+    _write_json(output / "terminal_receipt.json", {
+        "terminal_marker": TERMINAL,
+        "classification": classification,
+        "selector_changed": False,
+        "cost_changed": False,
+        "hjb_rerun": False,
+        "d2_q": False,
+        "kfe": False,
+        "turn3": False,
+        "successor_published": False,
+    })
     _manifest(output)
     readback = _readback(output)
     if readback["status"] != "PASS":
