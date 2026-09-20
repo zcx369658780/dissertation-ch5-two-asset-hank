@@ -1,0 +1,861 @@
+{
+  "convergence_classification_performed": false,
+  "monotonicity_or_trend_inference_performed": false,
+  "order": [
+    "LOW",
+    "MEDIAN",
+    "HIGH"
+  ],
+  "points": [
+    {
+      "B_seed": 0.0012787655754729066,
+      "D_step": 0.019623779080780945,
+      "convergence_classification_performed": false,
+      "d2": {
+        "arithmetic_tolerance": 1.8696973642908742e-14,
+        "checks": {
+          "a_coordinate_within_prospective_bound": true,
+          "b_coordinate_within_prospective_bound": true,
+          "diagonal_construction_error_exact_zero": true,
+          "minimum_offdiagonal_nonnegative": true,
+          "q_one_within_prospective_bound": true,
+          "zero_outward_face_amount": true,
+          "zero_outward_face_count": true,
+          "zero_tolerance_closed_faces_feasible": true
+        },
+        "closed_face_summaries": [
+          {
+            "axis": "b",
+            "boundary_kind": "economic_lower_bound",
+            "inward_count": 20,
+            "max_outward": 0.0,
+            "outward_count": 0,
+            "side": "lower",
+            "tangent_count": 20
+          },
+          {
+            "axis": "b",
+            "boundary_kind": "artificial_upper_state_constraint",
+            "inward_count": 20,
+            "max_outward": 0.0,
+            "outward_count": 0,
+            "side": "upper",
+            "tangent_count": 20
+          },
+          {
+            "axis": "a",
+            "boundary_kind": "economic_lower_bound",
+            "inward_count": 40,
+            "max_outward": 0.0,
+            "outward_count": 0,
+            "side": "lower",
+            "tangent_count": 0
+          },
+          {
+            "axis": "a",
+            "boundary_kind": "artificial_upper_state_constraint",
+            "inward_count": 14,
+            "max_outward": 0.0,
+            "outward_count": 0,
+            "side": "upper",
+            "tangent_count": 26
+          }
+        ],
+        "coordinate_action": {
+          "a": {
+            "bound_field_sha256": "A834BAE2CD3ADF386EB3BB10743BE5C919E211620AEDAD40B08009503CB451A8",
+            "error_field_sha256": "F14F023103E793F491B0BF5B21CB39F2B118EADE9EF998A3AECECDC51C1A4BFC",
+            "first_violation_flat_f": null,
+            "max_abs_error": 2.2093438190040615e-14,
+            "max_bound": 0.9782694092430564,
+            "passes": true,
+            "violation_count": 0
+          },
+          "b": {
+            "bound_field_sha256": "3B529FF9CEE8DFF7C831B111B5FCC24A732C78D3163689E19D270CE15C54208F",
+            "error_field_sha256": "55D9F08985AC82E7D6089874FA43BC581DEED9B842814612425DA1BA6B04D592",
+            "first_violation_flat_f": null,
+            "max_abs_error": 9.769962616701378e-15,
+            "max_bound": 6.431787556294079,
+            "passes": true,
+            "violation_count": 0
+          },
+          "fixed_pre_outcome_max_row_terms": 4,
+          "gamma_n": 8.88178419700126e-16
+        },
+        "diagonal_construction_error": 0.0,
+        "max_abs_q_one": 1.7763568394002505e-15,
+        "minimum_offdiagonal": 2.7404782515125115e-06,
+        "q_artifact": {
+          "bytes": 24473,
+          "path": "q_generator.npz",
+          "sha256": "E3F2E43A722CD329D3E96A8D9784AB469F37C971899B0D585A0EE86BA0D3796B"
+        },
+        "q_identity": {
+          "data": "9AA95BD5704D8E44320AECBB3BF9338CF2CA6641F861D601071CF2002F275CE6",
+          "indices": "C13E541373B843A5C52B74A6DE026CE616482EAFE4872873E2432C355881DF63",
+          "indptr": "294B43B21EEC76F9C082B9E02B39B37E9E452170F055489C0503418C6D2865C4"
+        },
+        "status": "PASS"
+      },
+      "direct_solve": {
+        "D_step_vec_F_inf": 0.019623779080780945,
+        "arrays_artifact": {
+          "bytes": 38214,
+          "path": "direct_update_arrays.npz",
+          "sha256": "8B0FC4D3A886FD726FC7609A87A47813B132587028E727411C2149A6C2F38D7F"
+        },
+        "backward_error_threshold_inclusive": 1e-12,
+        "delta": 1000.0,
+        "denominator": 46.131251158003806,
+        "matrix_identity": {
+          "data": "6CA9647321A10DF6A2FA0D910735209766231A87D558298AA1D52E2F144E52C9",
+          "indices": "C13E541373B843A5C52B74A6DE026CE616482EAFE4872873E2432C355881DF63",
+          "indptr": "294B43B21EEC76F9C082B9E02B39B37E9E452170F055489C0503418C6D2865C4"
+        },
+        "matrix_inf": 21.10192088278993,
+        "next_value_sha256": "44994C0C0A5A12CD29793B9D0DCB8AEA4B8C6F730FA223D5AFBB207935230F7B",
+        "normwise_backward_error": 2.0486705345909371e-16,
+        "residual_inf": 9.450773497121645e-15,
+        "residual_sha256": "496FCF03F6A80D56A0E07297872C3C49210653AC1E997DA9725933DA55289FDF",
+        "rhs_inf": 0.13483916011996896,
+        "rhs_sha256": "E32F7B8239D2EFA3ED2F8752E808AEB6EBE773DBD77EFB8F5045A81950C75013",
+        "second_update_performed": false,
+        "solution_inf": 2.1797263032768304,
+        "solver": "scipy.sparse.linalg.spsolve",
+        "status": "PASS",
+        "warnings": []
+      },
+      "effective_r_a_formula": "r_a*(1-0.1*(a/10)^9)",
+      "kfe_performed": false,
+      "label": "LOW",
+      "operator": {
+        "difference_inf_norm": 0.7200498606919161,
+        "difference_max_abs_entry": 0.36002493034595817,
+        "difference_nnz": 1569,
+        "identity": {
+          "data": "9AA95BD5704D8E44320AECBB3BF9338CF2CA6641F861D601071CF2002F275CE6",
+          "indices": "C13E541373B843A5C52B74A6DE026CE616482EAFE4872873E2432C355881DF63",
+          "indptr": "294B43B21EEC76F9C082B9E02B39B37E9E452170F055489C0503418C6D2865C4"
+        },
+        "nnz": 3120,
+        "sparsity_pattern_changed": true,
+        "sparsity_pattern_same_as_previous": false
+      },
+      "order": 1,
+      "point_call_ledger": {
+        "interior_a_switching_root_invocations": 1,
+        "interior_z_root_invocations": 14,
+        "joint_switching_root_invocations": 0,
+        "root_invocations": 271,
+        "selector_evaluations": 800
+      },
+      "policy": {
+        "active_constraint_counts": {
+          "lower_b": 20,
+          "none": 735,
+          "upper_a": 25,
+          "upper_a+upper_b": 1,
+          "upper_b": 19
+        },
+        "continuous_field_max_abs_change": {
+          "c": 0.09655749927846813,
+          "d": 0.18433424840825507,
+          "g_a": 0.18433424840825507,
+          "g_b": 0.13264076381166856,
+          "l": 0.0017370369233106198,
+          "q_a": 0.0003384790719180245,
+          "q_b": 8.088860049669869e-05,
+          "utility": 0.0006636103679246025
+        },
+        "identity_change_count": 51,
+        "identity_change_flat_f_zero_based": [
+          240,
+          260,
+          280,
+          281,
+          301,
+          302,
+          303,
+          321,
+          322,
+          323,
+          324,
+          325,
+          326,
+          342,
+          343,
+          344,
+          345,
+          346,
+          347,
+          348,
+          349,
+          350,
+          367,
+          368,
+          369,
+          372,
+          373,
+          374,
+          375,
+          376,
+          377,
+          378,
+          379,
+          392,
+          393,
+          394,
+          395,
+          396,
+          397,
+          398,
+          399,
+          762,
+          763,
+          764,
+          765,
+          766,
+          782,
+          783,
+          784,
+          785,
+          786
+        ],
+        "identity_sha256": "7F263A6B42822365E8141A7BC12E095B2F496FD53D20C082430C8D0652AF8457",
+        "interior_z_marker_counts": {
+          "none": 800
+        },
+        "transfer_branch_counts": {
+          "negative": 298,
+          "positive": 323,
+          "zero_kink": 179
+        }
+      },
+      "second_update_performed": false,
+      "source": {
+        "province": "青海",
+        "province_index": 28,
+        "r_a_binary64": 0.11048158315647279,
+        "r_a_decimal": "0.11048158315647279",
+        "turn": 5
+      },
+      "status": "PASS",
+      "switching": {
+        "interior_a": {
+          "admissible_candidate_count": 14,
+          "candidate_attempt_count": 28,
+          "root_status_counts": {
+            "NOT_REQUIRED": 27,
+            "ROOT_CONVERGED": 1
+          },
+          "selected_flat_indices_f_zero_based": [
+            280,
+            321,
+            342,
+            343,
+            344,
+            345,
+            346,
+            367,
+            368,
+            369,
+            370,
+            371,
+            760,
+            761
+          ],
+          "selected_policy_count": 14
+        },
+        "joint": {
+          "admissible_candidate_count": 0,
+          "candidate_attempt_count": 0,
+          "root_status_counts": {},
+          "selected_flat_indices_f_zero_based": [],
+          "selected_policy_count": 0
+        },
+        "liquid_z": {
+          "selected_flat_indices_f_zero_based": [],
+          "selected_policy_count": 0
+        }
+      }
+    },
+    {
+      "B_seed": 0.010402976627898047,
+      "D_step": 0.13237145029256903,
+      "convergence_classification_performed": false,
+      "d2": {
+        "arithmetic_tolerance": 2.2322584376824518e-14,
+        "checks": {
+          "a_coordinate_within_prospective_bound": true,
+          "b_coordinate_within_prospective_bound": true,
+          "diagonal_construction_error_exact_zero": true,
+          "minimum_offdiagonal_nonnegative": true,
+          "q_one_within_prospective_bound": true,
+          "zero_outward_face_amount": true,
+          "zero_outward_face_count": true,
+          "zero_tolerance_closed_faces_feasible": true
+        },
+        "closed_face_summaries": [
+          {
+            "axis": "b",
+            "boundary_kind": "economic_lower_bound",
+            "inward_count": 21,
+            "max_outward": 0.0,
+            "outward_count": 0,
+            "side": "lower",
+            "tangent_count": 19
+          },
+          {
+            "axis": "b",
+            "boundary_kind": "artificial_upper_state_constraint",
+            "inward_count": 20,
+            "max_outward": 0.0,
+            "outward_count": 0,
+            "side": "upper",
+            "tangent_count": 20
+          },
+          {
+            "axis": "a",
+            "boundary_kind": "economic_lower_bound",
+            "inward_count": 40,
+            "max_outward": 0.0,
+            "outward_count": 0,
+            "side": "lower",
+            "tangent_count": 0
+          },
+          {
+            "axis": "a",
+            "boundary_kind": "artificial_upper_state_constraint",
+            "inward_count": 0,
+            "max_outward": 0.0,
+            "outward_count": 0,
+            "side": "upper",
+            "tangent_count": 40
+          }
+        ],
+        "coordinate_action": {
+          "a": {
+            "bound_field_sha256": "9200B4A989CDF6E96C85FDEA15BD21B4F9DEEC18B94A5DA52AD68C8D7FD92206",
+            "error_field_sha256": "BA03A484EFCAD502CBE5A927D8002F06AAC08FD6FEF7907C94051A5349DD8629",
+            "first_violation_flat_f": null,
+            "max_abs_error": 2.531308496145357e-14,
+            "max_bound": 2.0876184285374078e-13,
+            "passes": true,
+            "violation_count": 0
+          },
+          "b": {
+            "bound_field_sha256": "D57488BB73BADE85D04C5C0C9D7EB92E2D7A1F653B5BC61C17EE6BFE7FB7F5BC",
+            "error_field_sha256": "0A918091492117D36AFB86B35D56C8D10244C27A365A2A68F265BB4288B5F2A8",
+            "first_violation_flat_f": null,
+            "max_abs_error": 1.199040866595169e-14,
+            "max_bound": 6.431787556294096,
+            "passes": true,
+            "violation_count": 0
+          },
+          "fixed_pre_outcome_max_row_terms": 4,
+          "gamma_n": 8.88178419700126e-16
+        },
+        "diagonal_construction_error": 0.0,
+        "max_abs_q_one": 1.4988010832439613e-15,
+        "minimum_offdiagonal": 2.7404782515125115e-06,
+        "q_artifact": {
+          "bytes": 24284,
+          "path": "q_generator.npz",
+          "sha256": "CF94B223C01B973BBEA552AA33E5618196CAA5EA4E06394E8B071BE51976864F"
+        },
+        "q_identity": {
+          "data": "137FF5185EDEFEDE27A56E97F96D66E25250CE0AC954A16A78EC587E574A4C12",
+          "indices": "EE435738DFA5288BA35EA0D35C9281DB47AC0B4B9D0EC2DA53873E177A7B5CC8",
+          "indptr": "49F41A7573B4FB12F1C2B03D69F4E80B70BE7A4F02EC5D2734EED2856FCF4871"
+        },
+        "status": "PASS"
+      },
+      "direct_solve": {
+        "D_step_vec_F_inf": 0.13237145029256903,
+        "arrays_artifact": {
+          "bytes": 38104,
+          "path": "direct_update_arrays.npz",
+          "sha256": "35A60F52EEE0F171CB35A72498BB1149E3ACC647830ED7DEAA66D703C77B0E75"
+        },
+        "backward_error_threshold_inclusive": 1e-12,
+        "delta": 1000.0,
+        "denominator": 55.0287991733238,
+        "matrix_identity": {
+          "data": "42F9DB8CBFC99F46ECD3C6058E1C836E004F11B561CB0E3E8BB4D59AC184413B",
+          "indices": "EE435738DFA5288BA35EA0D35C9281DB47AC0B4B9D0EC2DA53873E177A7B5CC8",
+          "indptr": "49F41A7573B4FB12F1C2B03D69F4E80B70BE7A4F02EC5D2734EED2856FCF4871"
+        },
+        "matrix_inf": 25.18399567035332,
+        "next_value_sha256": "52DE18E9161A3DD2B21FB3373FCF35C6AAB49183481C97A1FF64B28F20BFE47F",
+        "normwise_backward_error": 1.8258654602313007e-16,
+        "residual_inf": 1.0047518372857667e-14,
+        "residual_sha256": "90C6252D17B7141EC25C50AD1ED738CC4834C6C168D24727F10315B1C2DC6741",
+        "rhs_inf": 0.13483916011996896,
+        "rhs_sha256": "71BF7F243730BC8B4B314C7CC46A74CF63A573FE7AD9C7289E247404607FA56D",
+        "second_update_performed": false,
+        "solution_inf": 2.1797160677654173,
+        "solver": "scipy.sparse.linalg.spsolve",
+        "status": "PASS",
+        "warnings": []
+      },
+      "effective_r_a_formula": "r_a*(1-0.1*(a/10)^9)",
+      "kfe_performed": false,
+      "label": "MEDIAN",
+      "operator": {
+        "difference_inf_norm": 5.8436826010488945,
+        "difference_max_abs_entry": 2.921841300524447,
+        "difference_nnz": 1615,
+        "identity": {
+          "data": "137FF5185EDEFEDE27A56E97F96D66E25250CE0AC954A16A78EC587E574A4C12",
+          "indices": "EE435738DFA5288BA35EA0D35C9281DB47AC0B4B9D0EC2DA53873E177A7B5CC8",
+          "indptr": "49F41A7573B4FB12F1C2B03D69F4E80B70BE7A4F02EC5D2734EED2856FCF4871"
+        },
+        "nnz": 3120,
+        "sparsity_pattern_changed": true,
+        "sparsity_pattern_same_as_previous": false
+      },
+      "order": 2,
+      "point_call_ledger": {
+        "interior_a_switching_root_invocations": 0,
+        "interior_z_root_invocations": 15,
+        "joint_switching_root_invocations": 0,
+        "root_invocations": 271,
+        "selector_evaluations": 800
+      },
+      "policy": {
+        "active_constraint_counts": {
+          "lower_b": 19,
+          "none": 722,
+          "upper_a": 39,
+          "upper_a+upper_b": 1,
+          "upper_b": 19
+        },
+        "continuous_field_max_abs_change": {
+          "c": 0.6637671992358971,
+          "d": 1.553350623002269,
+          "g_a": 1.534594355604841,
+          "g_b": 0.9050829439775209,
+          "l": 0.011616863502100228,
+          "q_a": 0.0021849785286873263,
+          "q_b": 0.0005791591619892962,
+          "utility": 0.004354659095152147
+        },
+        "identity_change_count": 80,
+        "identity_change_flat_f_zero_based": [
+          240,
+          260,
+          280,
+          281,
+          300,
+          301,
+          302,
+          303,
+          320,
+          321,
+          322,
+          323,
+          324,
+          325,
+          326,
+          340,
+          341,
+          342,
+          343,
+          344,
+          345,
+          346,
+          347,
+          348,
+          349,
+          350,
+          360,
+          361,
+          362,
+          363,
+          364,
+          365,
+          366,
+          367,
+          368,
+          369,
+          370,
+          371,
+          372,
+          373,
+          374,
+          375,
+          376,
+          377,
+          378,
+          379,
+          380,
+          381,
+          382,
+          383,
+          384,
+          385,
+          386,
+          387,
+          388,
+          389,
+          390,
+          391,
+          392,
+          393,
+          394,
+          395,
+          396,
+          397,
+          398,
+          399,
+          760,
+          761,
+          762,
+          763,
+          764,
+          765,
+          766,
+          780,
+          781,
+          782,
+          783,
+          784,
+          785,
+          786
+        ],
+        "identity_sha256": "AF849F45C69525E626D1C5FC19E5569D0BDD5A3E34CC3FB19E8C309387C70426",
+        "interior_z_marker_counts": {
+          "INTERIOR_LIQUID_Z_ZERO_DRIFT_SWITCH": 1,
+          "none": 799
+        },
+        "transfer_branch_counts": {
+          "negative": 298,
+          "positive": 323,
+          "zero_kink": 179
+        }
+      },
+      "second_update_performed": false,
+      "source": {
+        "province": "湖南",
+        "province_index": 17,
+        "r_a_binary64": 0.26259451366691877,
+        "r_a_decimal": "0.26259451366691877",
+        "turn": 12
+      },
+      "status": "PASS",
+      "switching": {
+        "interior_a": {
+          "admissible_candidate_count": 0,
+          "candidate_attempt_count": 0,
+          "root_status_counts": {},
+          "selected_flat_indices_f_zero_based": [],
+          "selected_policy_count": 0
+        },
+        "joint": {
+          "admissible_candidate_count": 0,
+          "candidate_attempt_count": 0,
+          "root_status_counts": {},
+          "selected_flat_indices_f_zero_based": [],
+          "selected_policy_count": 0
+        },
+        "liquid_z": {
+          "selected_flat_indices_f_zero_based": [
+            381
+          ],
+          "selected_policy_count": 1
+        }
+      }
+    },
+    {
+      "B_seed": 0.05667966349584988,
+      "D_step": 0.18050857122147956,
+      "convergence_classification_performed": false,
+      "d2": {
+        "arithmetic_tolerance": 4.517060714895383e-14,
+        "checks": {
+          "a_coordinate_within_prospective_bound": true,
+          "b_coordinate_within_prospective_bound": true,
+          "diagonal_construction_error_exact_zero": true,
+          "minimum_offdiagonal_nonnegative": true,
+          "q_one_within_prospective_bound": true,
+          "zero_outward_face_amount": true,
+          "zero_outward_face_count": true,
+          "zero_tolerance_closed_faces_feasible": true
+        },
+        "closed_face_summaries": [
+          {
+            "axis": "b",
+            "boundary_kind": "economic_lower_bound",
+            "inward_count": 20,
+            "max_outward": 0.0,
+            "outward_count": 0,
+            "side": "lower",
+            "tangent_count": 20
+          },
+          {
+            "axis": "b",
+            "boundary_kind": "artificial_upper_state_constraint",
+            "inward_count": 21,
+            "max_outward": 0.0,
+            "outward_count": 0,
+            "side": "upper",
+            "tangent_count": 19
+          },
+          {
+            "axis": "a",
+            "boundary_kind": "economic_lower_bound",
+            "inward_count": 40,
+            "max_outward": 0.0,
+            "outward_count": 0,
+            "side": "lower",
+            "tangent_count": 0
+          },
+          {
+            "axis": "a",
+            "boundary_kind": "artificial_upper_state_constraint",
+            "inward_count": 0,
+            "max_outward": 0.0,
+            "outward_count": 0,
+            "side": "upper",
+            "tangent_count": 40
+          }
+        ],
+        "coordinate_action": {
+          "a": {
+            "bound_field_sha256": "A14FC7DAD3ABFD2CD92B63204BB77A46715E1DF81829BD94DC6BEC7485619BD8",
+            "error_field_sha256": "DDFD57D33721331751CBCEB9BBFF997D8C43755AA497FDAE81300D940D7616DF",
+            "first_violation_flat_f": null,
+            "max_abs_error": 5.684341886080802e-14,
+            "max_bound": 4.3534241889155353e-13,
+            "passes": true,
+            "violation_count": 0
+          },
+          "b": {
+            "bound_field_sha256": "EAD2FB0BB6550A7717740D3F0A8A06332E758650927352321ECF513F94B22D67",
+            "error_field_sha256": "E4FE6A4040520D839E5C0F0E033EA677CC667BBDE0AFF86861F6ED7EEB98B770",
+            "first_violation_flat_f": null,
+            "max_abs_error": 2.375877272697835e-14,
+            "max_bound": 7.96388536549085,
+            "passes": true,
+            "violation_count": 0
+          },
+          "fixed_pre_outcome_max_row_terms": 4,
+          "gamma_n": 8.88178419700126e-16
+        },
+        "diagonal_construction_error": 0.0,
+        "max_abs_q_one": 4.718447854656915e-15,
+        "minimum_offdiagonal": 2.7404782515125115e-06,
+        "q_artifact": {
+          "bytes": 24078,
+          "path": "q_generator.npz",
+          "sha256": "B40339B116B3FE84363D2E04C76B4B208497468DF1A5F21759A543ADA50AA366"
+        },
+        "q_identity": {
+          "data": "DE2FD15AAA15969AB32181AC0EB13DBA8073E09ECE362298CEEEE086841044D7",
+          "indices": "FEB15112296AF656F42B2A17B6A1DAB125EC9B29A57CCBD96F150064C937A6A8",
+          "indptr": "5AD63E88C20F243F452328A7E04C1F5012312D5E69729E965C545E6692402E5E"
+        },
+        "status": "PASS"
+      },
+      "direct_solve": {
+        "D_step_vec_F_inf": 0.18050857122147956,
+        "arrays_artifact": {
+          "bytes": 37892,
+          "path": "direct_update_arrays.npz",
+          "sha256": "F176556F8A34C72B4D2A02BFAB803CFFF76CAD4B66CF568264D6311C8DFB91CD"
+        },
+        "backward_error_threshold_inclusive": 1e-12,
+        "delta": 1000.0,
+        "denominator": 114.30483504183321,
+        "matrix_identity": {
+          "data": "73CC28D330A707465240FF8768C1CF23A93FF5F5E0D9AF870B519D37CB7EA8A2",
+          "indices": "FEB15112296AF656F42B2A17B6A1DAB125EC9B29A57CCBD96F150064C937A6A8",
+          "indptr": "5AD63E88C20F243F452328A7E04C1F5012312D5E69729E965C545E6692402E5E"
+        },
+        "matrix_inf": 50.90858238103184,
+        "next_value_sha256": "1D7612818C0634A49D0F9C219C6B7DA0922EDE5DADDC43DC3C2C02BB3E49023E",
+        "normwise_backward_error": 1.9352806692350628e-16,
+        "residual_inf": 2.2121193765656244e-14,
+        "residual_sha256": "B8AF8B76F97F643ABF6302C7A7EA4949DA359914CD1625C9B57BA71E50A3E7BE",
+        "rhs_inf": 0.13860961600621738,
+        "rhs_sha256": "2CB2F598C3D31FAC0F4501F7DFA82329734BBBB0B25684C32A4ABBA9AEA1C738",
+        "second_update_performed": false,
+        "solution_inf": 2.242573257517469,
+        "solver": "scipy.sparse.linalg.spsolve",
+        "status": "PASS",
+        "warnings": []
+      },
+      "effective_r_a_formula": "r_a*(1-0.1*(a/10)^9)",
+      "kfe_performed": false,
+      "label": "HIGH",
+      "operator": {
+        "difference_inf_norm": 32.035964745755635,
+        "difference_max_abs_entry": 16.017982372877817,
+        "difference_nnz": 1616,
+        "identity": {
+          "data": "DE2FD15AAA15969AB32181AC0EB13DBA8073E09ECE362298CEEEE086841044D7",
+          "indices": "FEB15112296AF656F42B2A17B6A1DAB125EC9B29A57CCBD96F150064C937A6A8",
+          "indptr": "5AD63E88C20F243F452328A7E04C1F5012312D5E69729E965C545E6692402E5E"
+        },
+        "nnz": 3120,
+        "sparsity_pattern_changed": true,
+        "sparsity_pattern_same_as_previous": false
+      },
+      "order": 3,
+      "point_call_ledger": {
+        "interior_a_switching_root_invocations": 0,
+        "interior_z_root_invocations": 15,
+        "joint_switching_root_invocations": 0,
+        "root_invocations": 271,
+        "selector_evaluations": 800
+      },
+      "policy": {
+        "active_constraint_counts": {
+          "lower_b": 19,
+          "lower_b+upper_a": 1,
+          "none": 722,
+          "upper_a": 39,
+          "upper_b": 19
+        },
+        "continuous_field_max_abs_change": {
+          "c": 1.03356651865632,
+          "d": 8.530301145658843,
+          "g_a": 8.427300183159257,
+          "g_b": 1.359152986970351,
+          "l": 0.031239089456974956,
+          "q_a": 0.019587547700713026,
+          "q_b": 0.002745161636537038,
+          "utility": 0.01730806794857921
+        },
+        "identity_change_count": 82,
+        "identity_change_flat_f_zero_based": [
+          240,
+          260,
+          280,
+          281,
+          300,
+          301,
+          302,
+          303,
+          320,
+          321,
+          322,
+          323,
+          324,
+          325,
+          326,
+          340,
+          341,
+          342,
+          343,
+          344,
+          345,
+          346,
+          347,
+          348,
+          349,
+          350,
+          360,
+          361,
+          362,
+          363,
+          364,
+          365,
+          366,
+          367,
+          368,
+          369,
+          370,
+          371,
+          372,
+          373,
+          374,
+          375,
+          376,
+          377,
+          378,
+          379,
+          380,
+          381,
+          382,
+          383,
+          384,
+          385,
+          386,
+          387,
+          388,
+          389,
+          390,
+          391,
+          392,
+          393,
+          394,
+          395,
+          396,
+          397,
+          398,
+          399,
+          760,
+          761,
+          762,
+          763,
+          764,
+          765,
+          766,
+          780,
+          781,
+          782,
+          783,
+          784,
+          785,
+          786,
+          798,
+          799
+        ],
+        "identity_sha256": "40D5B52F3BBF995F78662682136FAE807908DDBD2E10DC791DA24D33EBF235C6",
+        "interior_z_marker_counts": {
+          "INTERIOR_LIQUID_Z_ZERO_DRIFT_SWITCH": 1,
+          "none": 799
+        },
+        "transfer_branch_counts": {
+          "negative": 298,
+          "positive": 323,
+          "zero_kink": 179
+        }
+      },
+      "second_update_performed": false,
+      "source": {
+        "province": "北京",
+        "province_index": 0,
+        "r_a_binary64": 1.037811238406538,
+        "r_a_decimal": "1.037811238406538",
+        "turn": 4
+      },
+      "status": "PASS",
+      "switching": {
+        "interior_a": {
+          "admissible_candidate_count": 0,
+          "candidate_attempt_count": 0,
+          "root_status_counts": {},
+          "selected_flat_indices_f_zero_based": [],
+          "selected_policy_count": 0
+        },
+        "joint": {
+          "admissible_candidate_count": 0,
+          "candidate_attempt_count": 0,
+          "root_status_counts": {},
+          "selected_flat_indices_f_zero_based": [],
+          "selected_policy_count": 0
+        },
+        "liquid_z": {
+          "selected_flat_indices_f_zero_based": [
+            798
+          ],
+          "selected_policy_count": 1
+        }
+      }
+    }
+  ],
+  "status": "PASS"
+}

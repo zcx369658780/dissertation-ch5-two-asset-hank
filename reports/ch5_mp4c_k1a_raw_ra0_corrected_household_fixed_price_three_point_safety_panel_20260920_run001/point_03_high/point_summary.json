@@ -1,0 +1,289 @@
+{
+  "B_seed": 0.05667966349584988,
+  "D_step": 0.18050857122147956,
+  "convergence_classification_performed": false,
+  "d2": {
+    "arithmetic_tolerance": 4.517060714895383e-14,
+    "checks": {
+      "a_coordinate_within_prospective_bound": true,
+      "b_coordinate_within_prospective_bound": true,
+      "diagonal_construction_error_exact_zero": true,
+      "minimum_offdiagonal_nonnegative": true,
+      "q_one_within_prospective_bound": true,
+      "zero_outward_face_amount": true,
+      "zero_outward_face_count": true,
+      "zero_tolerance_closed_faces_feasible": true
+    },
+    "closed_face_summaries": [
+      {
+        "axis": "b",
+        "boundary_kind": "economic_lower_bound",
+        "inward_count": 20,
+        "max_outward": 0.0,
+        "outward_count": 0,
+        "side": "lower",
+        "tangent_count": 20
+      },
+      {
+        "axis": "b",
+        "boundary_kind": "artificial_upper_state_constraint",
+        "inward_count": 21,
+        "max_outward": 0.0,
+        "outward_count": 0,
+        "side": "upper",
+        "tangent_count": 19
+      },
+      {
+        "axis": "a",
+        "boundary_kind": "economic_lower_bound",
+        "inward_count": 40,
+        "max_outward": 0.0,
+        "outward_count": 0,
+        "side": "lower",
+        "tangent_count": 0
+      },
+      {
+        "axis": "a",
+        "boundary_kind": "artificial_upper_state_constraint",
+        "inward_count": 0,
+        "max_outward": 0.0,
+        "outward_count": 0,
+        "side": "upper",
+        "tangent_count": 40
+      }
+    ],
+    "coordinate_action": {
+      "a": {
+        "bound_field_sha256": "A14FC7DAD3ABFD2CD92B63204BB77A46715E1DF81829BD94DC6BEC7485619BD8",
+        "error_field_sha256": "DDFD57D33721331751CBCEB9BBFF997D8C43755AA497FDAE81300D940D7616DF",
+        "first_violation_flat_f": null,
+        "max_abs_error": 5.684341886080802e-14,
+        "max_bound": 4.3534241889155353e-13,
+        "passes": true,
+        "violation_count": 0
+      },
+      "b": {
+        "bound_field_sha256": "EAD2FB0BB6550A7717740D3F0A8A06332E758650927352321ECF513F94B22D67",
+        "error_field_sha256": "E4FE6A4040520D839E5C0F0E033EA677CC667BBDE0AFF86861F6ED7EEB98B770",
+        "first_violation_flat_f": null,
+        "max_abs_error": 2.375877272697835e-14,
+        "max_bound": 7.96388536549085,
+        "passes": true,
+        "violation_count": 0
+      },
+      "fixed_pre_outcome_max_row_terms": 4,
+      "gamma_n": 8.88178419700126e-16
+    },
+    "diagonal_construction_error": 0.0,
+    "max_abs_q_one": 4.718447854656915e-15,
+    "minimum_offdiagonal": 2.7404782515125115e-06,
+    "q_artifact": {
+      "bytes": 24078,
+      "path": "q_generator.npz",
+      "sha256": "B40339B116B3FE84363D2E04C76B4B208497468DF1A5F21759A543ADA50AA366"
+    },
+    "q_identity": {
+      "data": "DE2FD15AAA15969AB32181AC0EB13DBA8073E09ECE362298CEEEE086841044D7",
+      "indices": "FEB15112296AF656F42B2A17B6A1DAB125EC9B29A57CCBD96F150064C937A6A8",
+      "indptr": "5AD63E88C20F243F452328A7E04C1F5012312D5E69729E965C545E6692402E5E"
+    },
+    "status": "PASS"
+  },
+  "direct_solve": {
+    "D_step_vec_F_inf": 0.18050857122147956,
+    "arrays_artifact": {
+      "bytes": 37892,
+      "path": "direct_update_arrays.npz",
+      "sha256": "F176556F8A34C72B4D2A02BFAB803CFFF76CAD4B66CF568264D6311C8DFB91CD"
+    },
+    "backward_error_threshold_inclusive": 1e-12,
+    "delta": 1000.0,
+    "denominator": 114.30483504183321,
+    "matrix_identity": {
+      "data": "73CC28D330A707465240FF8768C1CF23A93FF5F5E0D9AF870B519D37CB7EA8A2",
+      "indices": "FEB15112296AF656F42B2A17B6A1DAB125EC9B29A57CCBD96F150064C937A6A8",
+      "indptr": "5AD63E88C20F243F452328A7E04C1F5012312D5E69729E965C545E6692402E5E"
+    },
+    "matrix_inf": 50.90858238103184,
+    "next_value_sha256": "1D7612818C0634A49D0F9C219C6B7DA0922EDE5DADDC43DC3C2C02BB3E49023E",
+    "normwise_backward_error": 1.9352806692350628e-16,
+    "residual_inf": 2.2121193765656244e-14,
+    "residual_sha256": "B8AF8B76F97F643ABF6302C7A7EA4949DA359914CD1625C9B57BA71E50A3E7BE",
+    "rhs_inf": 0.13860961600621738,
+    "rhs_sha256": "2CB2F598C3D31FAC0F4501F7DFA82329734BBBB0B25684C32A4ABBA9AEA1C738",
+    "second_update_performed": false,
+    "solution_inf": 2.242573257517469,
+    "solver": "scipy.sparse.linalg.spsolve",
+    "status": "PASS",
+    "warnings": []
+  },
+  "effective_r_a_formula": "r_a*(1-0.1*(a/10)^9)",
+  "kfe_performed": false,
+  "label": "HIGH",
+  "operator": {
+    "difference_inf_norm": 32.035964745755635,
+    "difference_max_abs_entry": 16.017982372877817,
+    "difference_nnz": 1616,
+    "identity": {
+      "data": "DE2FD15AAA15969AB32181AC0EB13DBA8073E09ECE362298CEEEE086841044D7",
+      "indices": "FEB15112296AF656F42B2A17B6A1DAB125EC9B29A57CCBD96F150064C937A6A8",
+      "indptr": "5AD63E88C20F243F452328A7E04C1F5012312D5E69729E965C545E6692402E5E"
+    },
+    "nnz": 3120,
+    "sparsity_pattern_changed": true,
+    "sparsity_pattern_same_as_previous": false
+  },
+  "order": 3,
+  "point_call_ledger": {
+    "interior_a_switching_root_invocations": 0,
+    "interior_z_root_invocations": 15,
+    "joint_switching_root_invocations": 0,
+    "root_invocations": 271,
+    "selector_evaluations": 800
+  },
+  "policy": {
+    "active_constraint_counts": {
+      "lower_b": 19,
+      "lower_b+upper_a": 1,
+      "none": 722,
+      "upper_a": 39,
+      "upper_b": 19
+    },
+    "continuous_field_max_abs_change": {
+      "c": 1.03356651865632,
+      "d": 8.530301145658843,
+      "g_a": 8.427300183159257,
+      "g_b": 1.359152986970351,
+      "l": 0.031239089456974956,
+      "q_a": 0.019587547700713026,
+      "q_b": 0.002745161636537038,
+      "utility": 0.01730806794857921
+    },
+    "identity_change_count": 82,
+    "identity_change_flat_f_zero_based": [
+      240,
+      260,
+      280,
+      281,
+      300,
+      301,
+      302,
+      303,
+      320,
+      321,
+      322,
+      323,
+      324,
+      325,
+      326,
+      340,
+      341,
+      342,
+      343,
+      344,
+      345,
+      346,
+      347,
+      348,
+      349,
+      350,
+      360,
+      361,
+      362,
+      363,
+      364,
+      365,
+      366,
+      367,
+      368,
+      369,
+      370,
+      371,
+      372,
+      373,
+      374,
+      375,
+      376,
+      377,
+      378,
+      379,
+      380,
+      381,
+      382,
+      383,
+      384,
+      385,
+      386,
+      387,
+      388,
+      389,
+      390,
+      391,
+      392,
+      393,
+      394,
+      395,
+      396,
+      397,
+      398,
+      399,
+      760,
+      761,
+      762,
+      763,
+      764,
+      765,
+      766,
+      780,
+      781,
+      782,
+      783,
+      784,
+      785,
+      786,
+      798,
+      799
+    ],
+    "identity_sha256": "40D5B52F3BBF995F78662682136FAE807908DDBD2E10DC791DA24D33EBF235C6",
+    "interior_z_marker_counts": {
+      "INTERIOR_LIQUID_Z_ZERO_DRIFT_SWITCH": 1,
+      "none": 799
+    },
+    "transfer_branch_counts": {
+      "negative": 298,
+      "positive": 323,
+      "zero_kink": 179
+    }
+  },
+  "second_update_performed": false,
+  "source": {
+    "province": "北京",
+    "province_index": 0,
+    "r_a_binary64": 1.037811238406538,
+    "r_a_decimal": "1.037811238406538",
+    "turn": 4
+  },
+  "status": "PASS",
+  "switching": {
+    "interior_a": {
+      "admissible_candidate_count": 0,
+      "candidate_attempt_count": 0,
+      "root_status_counts": {},
+      "selected_flat_indices_f_zero_based": [],
+      "selected_policy_count": 0
+    },
+    "joint": {
+      "admissible_candidate_count": 0,
+      "candidate_attempt_count": 0,
+      "root_status_counts": {},
+      "selected_flat_indices_f_zero_based": [],
+      "selected_policy_count": 0
+    },
+    "liquid_z": {
+      "selected_flat_indices_f_zero_based": [
+        798
+      ],
+      "selected_policy_count": 1
+    }
+  }
+}
