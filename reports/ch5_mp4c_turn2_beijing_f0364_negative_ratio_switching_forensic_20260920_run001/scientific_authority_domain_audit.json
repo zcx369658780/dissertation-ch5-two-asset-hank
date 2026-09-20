@@ -1,0 +1,28 @@
+{
+  "absence_not_used_as_standalone_permission": true,
+  "authority_sha256": {
+    "docs/CH5_MP4C_2018_KFE_D123_INTERIOR_A_ZERO_DRIFT_SWITCHING_OWNER_ADOPTION_20260919.md": "F5C4515078BBFFE32F9924758AF2DC5DD1C344A86DEB3EB596AFF91106F2FD95",
+    "docs/CH5_MP4C_2018_KFE_D123_V2_CELL100_INTERIOR_A_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_ACCEPTANCE_20260919.md": "4602D5EEDD8F4B8AAB1A6DBEE5CFF5484BBE2E85526450F2CB903BF710CEFAB0",
+    "src/ch5_two_asset_hank/corrected_diagnostic/cost.py": "30FDA6AFA8B30E214220A70476562BE1120FCBD0101D67A3C21B7CE77CD0C1BF",
+    "src/ch5_two_asset_hank/corrected_diagnostic/selector.py": "9DF226A1CD2170CCE8F794F302115241079BBE42279C8B3E80F9A64F571DE321"
+  },
+  "designated_authority": [
+    "docs/CH5_MP4C_2018_KFE_D123_INTERIOR_A_ZERO_DRIFT_SWITCHING_OWNER_ADOPTION_20260919.md",
+    "docs/CH5_MP4C_2018_KFE_D123_V2_CELL100_INTERIOR_A_ZERO_DRIFT_SWITCHING_ZERO_SCIENCE_ADJUDICATION_ACCEPTANCE_20260919.md",
+    "src/ch5_two_asset_hank/corrected_diagnostic/selector.py",
+    "src/ch5_two_asset_hank/corrected_diagnostic/cost.py"
+  ],
+  "explicit_accepted_authority_requires_d3_ratio_positive": false,
+  "explicit_accepted_authority_requires_interior_a_switching_ratio_positive": false,
+  "explicit_accepted_authority_requires_q_a_positive": false,
+  "interpretation": "The Owner-adopted contract positively defines q_b>0, unchanged D3 KKT, and q_a membership in the closed sorted derivative interval. It states no additional q_a or ratio positivity domain law; the ratio<=0 condition is present only in the current implementation guard.",
+  "positive_contract_checks": {
+    "cost_requires_q_b_positive": true,
+    "owner_requires_q_a_in_closed_sorted_interval": true,
+    "owner_requires_q_b_positive": true,
+    "owner_requires_unchanged_d3_kkt": true,
+    "selector_has_ratio_nonpositive_guard": true
+  },
+  "ratio_positive_is_current_implementation_guard": true,
+  "status": "PASS"
+}
