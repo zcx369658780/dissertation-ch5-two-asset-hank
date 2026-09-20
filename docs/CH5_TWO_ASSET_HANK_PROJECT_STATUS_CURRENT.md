@@ -4,83 +4,53 @@
 
 状态：
 
-`LOWER_A_INTERIOR_Z_COMPOSITION_REPAIR_ACCEPTED__TURN1_POLICY_PARITY_PASS__TURN2_HEILONGJIANG_F0063_NONPOSITIVE_BACKWARD_LIQUID_SHADOW_FORENSIC_ACTIVE`
+`TURN2_HEILONGJIANG_F0063_CURRENT_FAIL_CLOSED_ACCEPTED__OWNER_SCIENTIFIC_DECISION_REQUIRED`
 
 Results eligibility=`FALSE`。
 
-## Latest accepted execution
+## Latest accepted forensic
 
 Accepted candidate:
 
-`4cbd4261be31c237a99cade68ccb35a13c9306b9`
+`f35f1f5fcb06c9431e812769af24ffc3ca0e3426`
 
 Acceptance:
 
-`docs/CH5_MP4C_LOWER_A_INTERIOR_Z_COMPOSITION_REPAIR_TURN1_PARITY_AND_TURN2_RUN004_ACCEPTANCE_20260921.md`
+`docs/CH5_MP4C_TURN2_HEILONGJIANG_F0063_NONPOSITIVE_BACKWARD_LIQUID_SHADOW_FORENSIC_ACCEPTANCE_20260921.md`
 
-Accepted:
+Accepted terminal:
 
-- lower-a/interior-Z composition repair;
-- 河北 F0005 repair under the frozen production root law;
-- F0364 regression;
-- accepted turn1 408/408 selected-policy identity parity;
-- first seven turn2 province HJB/KFE/aggregate blocks;
-- exact first-failure stop at 黑龙江 F0063.
+`BLOCKED__TURN2_HEILONGJIANG_F0063_FORENSIC__OWNER_DECISION_REQUIRED_FOR_NONPOSITIVE_ONE_SIDED_LIQUID_SHADOW_EXTENSION__NO_CODE_CHANGE`
 
-## 河北 F0005 production-root clarification
+## Scientific conclusion
 
-The independently reconstructed forensic Decimal root and the frozen production screened-Brent root are not bit-identical.
+The current selector is correct under existing authority.
 
-Production authority returns:
+At F0063:
 
-`q_b=0.012085132579009492`
-
-with raw residual `1.7763568394002505e-15`, well within the pre-existing arithmetic bound `2.901541422966794e-13`.
-
-The 2-ULP difference from the independent Decimal-rounded reference does not authorize or reflect any root-law/model-tolerance change. Production root-law output is authoritative.
-
-## Current unresolved cell
-
-Black龙江 turn2:
-
-- province index: 7
-- checkpoint: 3
-- flat: 63
-- indices: `(3,3,0)`
-- cell: `v003_f0063_b003_a003_z000`
-- `b=-0.8947368421052633`
-- `a=1.5789473684210527`
-- `z=0.8`
-- no geometric faces
-- `p_a^B=0.026049395991859955`
-- `p_a^F=0.024439409021974706`
 - `p_b^B=-0.0002428532863339202`
-- `p_b^F=0.014463823441006161`
-- outcome: `NO_ADMISSIBLE_POLICY`.
+- `p_b^F=0.014463823441006161`.
 
-Current evidence shows backward-liquid ordinary candidates fail the positive liquid-shadow domain and forward-liquid candidates remain inadmissible. No diagnosis is yet accepted.
+The corrected q_b domain requires q_b>0 and forbids a derivative floor.
 
-## Current active task
+The current generic interior-liquid Z law requires two finite positive one-sided liquid shadows. That trigger fails here.
 
-`tasks/CH5_MP4C_TURN2_HEILONGJIANG_F0063_NONPOSITIVE_BACKWARD_LIQUID_SHADOW_FORENSIC_20260921.md`
+Existing interior-a and joint switching laws do not produce a legal candidate.
 
-This task is zero-science only.
+A diagnostic-only positive-transfer / forward-a zero-liquid root exists at:
 
-It must determine whether:
+`q_b=0.01801822665826406`
 
-1. an already adopted authority implies an omitted candidate;
-2. current fail-closed is correct under existing authority; or
-3. future continuation would require Owner adoption of a new nonpositive-one-sided-liquid-shadow / bracket-extension law.
+but it lies outside the current derivative-shadow interval and above the only positive liquid derivative shadow.
 
-No production change or model rerun is authorized.
+Therefore continuation requires a substantive Owner decision.
 
-## Preserved scientific authorities
+## Owner decision gate
 
-- `q_b=c^{-gamma}>0` domain remains enforced;
-- no derivative floor is authorized;
-- generic interior-liquid Z requires two finite positive one-sided liquid shadows plus strict direction crossing;
-- root bracket widening is not authorized;
-- interior-a/joint switching laws remain unchanged;
-- terminal KFE remains Owner-adopted unique-closed-class support KFE.
+Decision brief:
 
-Turn3, K1B, K2, GE and Results remain closed.
+`docs/CH5_MP4C_TURN2_HEILONGJIANG_F0063_NONPOSITIVE_BACKWARD_LIQUID_SHADOW_OWNER_DECISION_BRIEF_20260921.md`
+
+No Builder task is active.
+
+No selector repair, derivative floor, one-sided bracket extension, 黑龙江 rerun, turn2 continuation, turn3, K1B, K2, GE or Results is authorized until Owner decision is recorded.
