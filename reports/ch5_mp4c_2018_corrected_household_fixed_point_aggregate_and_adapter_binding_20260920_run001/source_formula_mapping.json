@@ -1,0 +1,43 @@
+{
+  "At": {
+    "line": 351,
+    "source": "sum(aaah.*g*dah*db,'all')",
+    "source_name": "Aht"
+  },
+  "AtTax": {
+    "line": 365,
+    "operands": {
+      "aaah": "illiquid asset state",
+      "g*dah*db": "stationary probability mass",
+      "raah": "rah*(1-0.1*(ahmax./ah).^(-9)); used tapered illiquid return",
+      "rah": "results.rah; source uniform illiquid return"
+    },
+    "raw_or_used_return": "uniform source rah minus used state-dependent tapered raah",
+    "semantics": "aggregate illiquid-return flow gap",
+    "source": "Aht*rah - sum(aaah.*raah.*g*dah*db,'all')",
+    "units": "household model relative asset-flow units per model period"
+  },
+  "Bt": {
+    "line": 348,
+    "source": "sum(bbb.*g*dah*db,'all')"
+  },
+  "Ct": {
+    "line": 354,
+    "source": "sum(C.*g*dah*db,'all')"
+  },
+  "Lt": {
+    "line": 347,
+    "source": "sum(zzz.*l.*g*dah*db,'all')"
+  },
+  "forbidden_extra_weights_absent": [
+    "dz",
+    "trapezoid",
+    "endpoint"
+  ],
+  "grid_weight": "omega=dah*db=70/361",
+  "matlab_source": "D:\\MatlabProgram\\2023年12月2日 多省份神经网络HANK\\HANK_2ASSETS_HJB.m",
+  "matlab_source_sha256": "049136B769560040BC678F828F5D3EC5338DDCAA2090D6BED4E40732F56C3EAE",
+  "total_assets": {
+    "source": "At + Bt"
+  }
+}
