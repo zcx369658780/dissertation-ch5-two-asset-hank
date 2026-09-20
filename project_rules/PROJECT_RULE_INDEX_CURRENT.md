@@ -19,24 +19,28 @@
 9. `docs/CH5_MP4C_2018_CORRECTED_HOUSEHOLD_FIXED_POINT_AGGREGATE_AND_ADAPTER_BINDING_ACCEPTANCE_20260920.md`
 10. `docs/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_RUN001_ENGINEERING_EXCEPTION_ACCEPTANCE_20260920.md`
 11. `docs/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_RUN002_TERMINAL_KFE_TOPOLOGY_SERIALIZATION_EXCEPTION_ACCEPTANCE_20260920.md`
-12. current active task.
+12. `docs/CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_NONNEGATIVITY_FAILURE_ACCEPTANCE_20260920.md`
+13. current active task.
 
 Current status:
 
-`RUN002_BEIJING_HJB_CONVERGENCE_ACCEPTED__TERMINAL_KFE_TOPOLOGY_SERIALIZATION_EXCEPTION_ACCEPTED__SERIALIZATION_AND_LEDGER_REPAIR_RUN003_ACTIVE`.
+`RUN003_BEIJING_HJB_TOPOLOGY_RANK_PASS__STATIONARY_MASS_ENTRYWISE_NONNEGATIVITY_FAIL__ZERO_SCIENCE_SUPPORT_FORENSIC_ACTIVE`.
 
 Current active Builder task:
 
-`tasks/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_TERMINAL_KFE_TOPOLOGY_SERIALIZATION_REPAIR_AND_RUN003_REEXECUTION_20260920.md`.
+`tasks/CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_NEGATIVITY_SUPPORT_FORENSIC_20260920.md`.
 
 Results eligibility=`FALSE`.
 
 Important current facts:
 
-- run001 checkpoint-0 diagnostics defect is repaired and accepted;
-- run002 Beijing exact initial-state corrected HJB converged at checkpoint 12 with B/D inside the frozen thresholds and all 12 direct solves below the backward-error bound;
-- terminal KFE then executed one SCC decomposition but failed before topology receipt persistence because the raw topology dictionary contains a CSR adjacency and NumPy labels;
-- no closed-class count, rank/nullity, stationary mass or aggregate is accepted from run002;
-- run002 sealed global ledger SCC=0 is an exception-path undercount; accepted zero-science reconciliation establishes actual SCC=1;
-- the active successor authorizes only topology-specific JSON persistence repair, exception-path call-ledger repair, zero-science regression tests, and one fresh run003 under unchanged science;
+- run001/run002 engineering defects are closed;
+- run003 Beijing corrected HJB converges at checkpoint 12;
+- exact-positive topology has exactly one 400-state closed communicating class and 400 transient states;
+- full dense GESVD passes rank/nullity `799/1`, agreeing with the one closed class;
+- the normalized stationary candidate passes stationarity, normalization, source-free accounting and total-negative-mass bounds;
+- it fails the frozen per-entry nonnegativity floor: min p `-2.217909641958515e-12` versus allowed `-1.9184653865526386e-13`;
+- this is accepted as a real KFE scientific failure under the current contract;
+- no clipping, projection, renormalization, tolerance relaxation or alternate solver is authorized;
+- the active task is zero-science only and localizes the negative mass relative to closed versus transient support;
 - turn 2, K1B, K2, GE and Results remain closed.
