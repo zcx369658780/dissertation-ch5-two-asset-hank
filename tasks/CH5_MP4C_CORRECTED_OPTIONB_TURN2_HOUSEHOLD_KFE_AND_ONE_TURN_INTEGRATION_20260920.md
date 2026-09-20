@@ -10,7 +10,7 @@ Task ID:
 
 `CH5_MP4C_CORRECTED_OPTIONB_TURN2_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_20260920`
 
-Status: `ACTIVE`
+Status: `COMPLETED_FAIL_ACCEPTED`
 
 ## Governance
 
@@ -375,3 +375,21 @@ It does not establish outer fixed-point convergence, long-run stability, K1B, GE
 - do not modify CURRENT files
 - do not merge main
 - do not publish successor.
+
+
+## Reviewer closure — 2026-09-20
+
+Turn-2 candidate `37e563a87bf0dc1fb90224b03e0c4df9daea9d5f` is accepted as failed scientific evidence.
+
+Terminal:
+`FAIL__CORRECTED_HJB_POLICY_MAP_OR_D2_GATE`
+
+The first failure is Beijing checkpoint 2, flat F-order index 579, selector outcome `NO_ADMISSIBLE_POLICY`. Checkpoint-2 D2/Q was not assembled; no KFE, aggregate, integration, or turn-3 execution occurred.
+
+The failure is accepted under the current selector authority, but it does not yet prove that the continuous constrained problem has no feasible control because the active upper-b negative regime is rejected at a pre-root derivative-branch uniqueness gate.
+
+Acceptance:
+`docs/CH5_MP4C_TURN2_BEIJING_CHECKPOINT2_POLICY_SELECTOR_FAILURE_ACCEPTANCE_20260920.md`
+
+Next active task:
+`tasks/CH5_MP4C_TURN2_BEIJING_F0579_UPPER_B_NEGATIVE_BRANCH_ROOT_FORENSIC_20260920.md`
