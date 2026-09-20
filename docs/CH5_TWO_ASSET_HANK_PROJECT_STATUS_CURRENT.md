@@ -4,89 +4,83 @@
 
 状态：
 
-`HEBEI_F0005_COMPOSITION_FALSE_NEGATIVE_CONFIRMED__LOWER_A_INTERIOR_Z_REPAIR_TURN1_POLICY_PARITY_AND_TURN2_RUN004_ACTIVE`
+`LOWER_A_INTERIOR_Z_COMPOSITION_REPAIR_ACCEPTED__TURN1_POLICY_PARITY_PASS__TURN2_HEILONGJIANG_F0063_NONPOSITIVE_BACKWARD_LIQUID_SHADOW_FORENSIC_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Latest accepted forensic
+## Latest accepted execution
 
 Accepted candidate:
 
-`26853c49a06ba0cc3da88df2df250f2f0fd22ff8`
+`4cbd4261be31c237a99cade68ccb35a13c9306b9`
 
 Acceptance:
 
-`docs/CH5_MP4C_TURN2_HEBEI_F0005_LOWER_A_LIQUID_SWITCH_FORENSIC_ACCEPTANCE_20260921.md`
+`docs/CH5_MP4C_LOWER_A_INTERIOR_Z_COMPOSITION_REPAIR_TURN1_PARITY_AND_TURN2_RUN004_ACCEPTANCE_20260921.md`
 
-Accepted classification:
+Accepted:
 
-`IMPLEMENTATION_COMPOSITION_FALSE_NEGATIVE_UNDER_ALREADY_ADOPTED_AUTHORITY`
+- lower-a/interior-Z composition repair;
+- 河北 F0005 repair under the frozen production root law;
+- F0364 regression;
+- accepted turn1 408/408 selected-policy identity parity;
+- first seven turn2 province HJB/KFE/aggregate blocks;
+- exact first-failure stop at 黑龙江 F0063.
 
-The current 河北 checkpoint-1 flat-5 `NO_ADMISSIBLE_POLICY` is not a valid terminal under existing authority.
+## 河北 F0005 production-root clarification
 
-## Exact accepted combined candidate
+The independently reconstructed forensic Decimal root and the frozen production screened-Brent root are not bit-identical.
 
-At:
+Production authority returns:
 
-- 河北
-- checkpoint 1
-- flat 5
-- `(b,a,z)=(-0.1578947368421053,0,0.8)`
-- active lower-a
-- interior liquid b
+`q_b=0.012085132579009492`
 
-the already adopted lower-a zero-kink and interior-liquid Z laws uniquely imply:
+with raw residual `1.7763568394002505e-15`, well within the pre-existing arithmetic bound `2.901541422966794e-13`.
 
-- branches: `a=forward, b=zero`
-- transfer: zero-kink
-- `q_b=0.012085132579009488`
-- `q_a=0.01087661932110854`
-- `lambda_a=0.00028489863234105843`
-- `d=0`
-- `g_a=0`
-- `g_b=0`
-- KKT/complementarity residuals: 0
-- Hamiltonian: `-0.1280816705218543`
-- admissible: true.
+The 2-ULP difference from the independent Decimal-rounded reference does not authorize or reflect any root-law/model-tolerance change. Production root-law output is authoritative.
 
-The root is the unique positive zero of the existing liquid-drift equation inside the closed derivative interval.
+## Current unresolved cell
 
-## Implementation omission
+Black龙江 turn2:
 
-Current ordinary endpoint construction returns early when the forward endpoint lower-a kink intersection is empty. That endpoint then lacks `g_b`/arithmetic-bound data, so the interior-Z constructor returns before root reconstruction.
+- province index: 7
+- checkpoint: 3
+- flat: 63
+- indices: `(3,3,0)`
+- cell: `v003_f0063_b003_a003_z000`
+- `b=-0.8947368421052633`
+- `a=1.5789473684210527`
+- `z=0.8`
+- no geometric faces
+- `p_a^B=0.026049395991859955`
+- `p_a^F=0.024439409021974706`
+- `p_b^B=-0.0002428532863339202`
+- `p_b^F=0.014463823441006161`
+- outcome: `NO_ADMISSIBLE_POLICY`.
 
-Existing authority requires recomputing lower-a KKT at the switching shadow, so endpoint full lower-a admissibility cannot suppress this Z family.
-
-This is an implementation composition omission only. No new equation/KKT/boundary/root/tolerance/calibration choice is required.
+Current evidence shows backward-liquid ordinary candidates fail the positive liquid-shadow domain and forward-liquid candidates remain inadmissible. No diagnosis is yet accepted.
 
 ## Current active task
 
-`tasks/CH5_MP4C_LOWER_A_INTERIOR_Z_COMPOSITION_REPAIR_TURN1_PARITY_AND_TURN2_RUN004_20260921.md`
+`tasks/CH5_MP4C_TURN2_HEILONGJIANG_F0063_NONPOSITIVE_BACKWARD_LIQUID_SHADOW_FORENSIC_20260921.md`
 
-Required ordering:
+This task is zero-science only.
 
-1. implement the narrow active-lower-a + zero-kink + interior-liquid-Z composition repair;
-2. prove exact 河北 F0005 focused parity;
-3. preserve F0364 and unrelated selector behavior;
-4. replay all 408 accepted turn-1 policy maps;
-5. only 408/408 exact identity parity authorizes fresh turn-2 run004;
-6. stop at first new scientific failure or after one turn-2 integration;
-7. do not run turn 3.
+It must determine whether:
 
-## Preserved authorities
+1. an already adopted authority implies an omitted candidate;
+2. current fail-closed is correct under existing authority; or
+3. future continuation would require Owner adoption of a new nonpositive-one-sided-liquid-shadow / bracket-extension law.
 
-Terminal KFE remains:
+No production change or model rerun is authorized.
 
-`OWNER_ADOPTED__UNIQUE_CLOSED_CLASS_SUPPORT_KFE_AS_TERMINAL_KFE_AUTHORITY`
+## Preserved scientific authorities
 
-Accepted selector authorities remain:
-
-- active-upper-b negative branch enumeration repair;
-- generic interior-liquid Z switching law;
-- interior-a zero-drift switching law;
-- interior-b finite-negative-ratio interior-a switching repair;
-- lower-a zero-kink multiplier law.
-
-The active task changes only their missing lower-a/Z implementation composition.
+- `q_b=c^{-gamma}>0` domain remains enforced;
+- no derivative floor is authorized;
+- generic interior-liquid Z requires two finite positive one-sided liquid shadows plus strict direction crossing;
+- root bracket widening is not authorized;
+- interior-a/joint switching laws remain unchanged;
+- terminal KFE remains Owner-adopted unique-closed-class support KFE.
 
 Turn3, K1B, K2, GE and Results remain closed.

@@ -13,30 +13,29 @@
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
 5. `docs/CH5_MP4C_UNIQUE_CLOSED_CLASS_SUPPORT_KFE_OWNER_ADOPTION_20260920.md`
-6. `docs/CH5_MP4C_CORRECTED_INITIAL_TURN_FULL_CLOSURE_ACCEPTANCE_20260920.md`
-7. `docs/CH5_MP4C_TURN2_F0364_NEGATIVE_RATIO_SWITCHING_FALSE_NEGATIVE_ACCEPTANCE_20260921.md`
-8. `docs/CH5_MP4C_INTERIOR_B_NEGATIVE_RATIO_SWITCHING_REPAIR_TURN1_PARITY_AND_TURN2_RUN003_ACCEPTANCE_20260921.md`
-9. `docs/CH5_MP4C_TURN2_HEBEI_F0005_LOWER_A_LIQUID_SWITCH_FORENSIC_ACCEPTANCE_20260921.md`
-10. current active task.
+6. `docs/CH5_MP4C_TURN2_HEBEI_F0005_LOWER_A_LIQUID_SWITCH_FORENSIC_ACCEPTANCE_20260921.md`
+7. `docs/CH5_MP4C_LOWER_A_INTERIOR_Z_COMPOSITION_REPAIR_TURN1_PARITY_AND_TURN2_RUN004_ACCEPTANCE_20260921.md`
+8. current active task.
 
 Current status:
 
-`HEBEI_F0005_COMPOSITION_FALSE_NEGATIVE_CONFIRMED__LOWER_A_INTERIOR_Z_REPAIR_TURN1_POLICY_PARITY_AND_TURN2_RUN004_ACTIVE`.
+`LOWER_A_INTERIOR_Z_COMPOSITION_REPAIR_ACCEPTED__TURN1_POLICY_PARITY_PASS__TURN2_HEILONGJIANG_F0063_NONPOSITIVE_BACKWARD_LIQUID_SHADOW_FORENSIC_ACTIVE`.
 
 Current active Builder task:
 
-`tasks/CH5_MP4C_LOWER_A_INTERIOR_Z_COMPOSITION_REPAIR_TURN1_PARITY_AND_TURN2_RUN004_20260921.md`.
+`tasks/CH5_MP4C_TURN2_HEILONGJIANG_F0063_NONPOSITIVE_BACKWARD_LIQUID_SHADOW_FORENSIC_20260921.md`.
 
 Results eligibility=`FALSE`.
 
 Important current facts:
 
-- interior-b negative-ratio repair remains accepted;
-- turn-1 compatibility under that repair was 408/408 exact;
-- fresh turn-2 run003 reached 河北 checkpoint1 flat5 after Beijing/Tianjin PASS;
-- zero-science forensic proves current 河北 F0005 `NO_ADMISSIBLE_POLICY` is an implementation/composition false negative;
-- already adopted lower-a zero-kink and Owner-adopted interior-liquid Z laws uniquely imply one admissible combined candidate;
-- no new Owner scientific decision is required for the repair;
-- the next repair is narrow and must preserve all other selector laws;
-- 408-map accepted turn-1 policy parity is again a hard gate before fresh turn-2 run004;
+- lower-a/interior-Z composition repair is accepted;
+- the frozen production Brent result at 河北 F0005 differs by 2 ULP from the independent Decimal forensic reference; the production root law is authoritative and was not changed;
+- accepted turn1 policy identities remain 408/408 exact;
+- fresh turn2 run004 legally progressed through the first seven provinces;
+- first new failure is 黑龙江 checkpoint3 flat63;
+- this cell is interior in both assets and has `p_b^B<0<p_b^F`;
+- current generic interior-Z authority explicitly requires both one-sided liquid shadows finite and positive;
+- no derivative floor, clipping, absolute-value repair, bracket widening or new shadow law is currently authorized;
+- next task is zero-science forensic only;
 - turn3, K1B, K2, GE and Results remain closed.
