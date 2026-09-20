@@ -4,79 +4,78 @@
 
 状态：
 
-`RUN002_BEIJING_HJB_CONVERGENCE_ACCEPTED__TERMINAL_KFE_TOPOLOGY_SERIALIZATION_EXCEPTION_ACCEPTED__SERIALIZATION_AND_LEDGER_REPAIR_RUN003_ACTIVE`
+`RUN003_BEIJING_HJB_TOPOLOGY_RANK_PASS__STATIONARY_MASS_ENTRYWISE_NONNEGATIVITY_FAIL__ZERO_SCIENCE_SUPPORT_FORENSIC_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Accepted scientific foundation
+## Accepted foundation
 
 Still accepted:
 
 - corrected D1/D2/D3 household law;
 - same-checkpoint HJB convergence law `B<=1e-8 AND D<=1e-7`;
-- source-free terminal KFE contract;
-- stationary Ct/Lt/At/Bt/AtTax mapping;
-- corrected aggregate adapter;
+- source-free terminal KFE contract as the current scientific gate;
+- corrected household aggregate semantics;
 - Owner Option-B raw-ra0 payoff law;
-- three-point and exact 31-payoff fixed-price one-step safety progression.
+- K1A/C1 one-turn integration design, not yet reached.
 
-## Run001
-
-Candidate `159786968d2bb47c12b0b7b88ed8aeaa6d0e8bdf` is accepted failed evidence.
-
-Its checkpoint-0 diagnostic `NoneType` defect was repaired by run002 and is closed.
-
-## Accepted run002 evidence
+## Run003 accepted result
 
 Candidate:
 
-`2027b917390f00bdcc40757b1ab2031f3e24d201`.
+`e352acaa6003bf0ccec8e5ad56688a626ccf2146`.
 
 Acceptance:
 
-`docs/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_RUN002_TERMINAL_KFE_TOPOLOGY_SERIALIZATION_EXCEPTION_ACCEPTANCE_20260920.md`.
+`docs/CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_NONNEGATIVITY_FAILURE_ACCEPTANCE_20260920.md`.
 
 ### Beijing HJB
 
-Accepted under the exact turn-1 initial state:
+PASS at checkpoint 12:
 
-- checkpoint: 12
-- B: `1.292732587643286e-11`
-- D: `1.2743897048750341e-08`
-- policy/D2 maps: 13/13
-- HJB updates: 12
-- maximum solve backward error: `3.0832786979441453e-16`
-- final Q SHA-256: `E1F55D0B755CB83D4F6A3CB4FEFD6DBC8CD4F05C6D23FC5DE00302E16B74BF20`.
+- B `1.292732587643286e-11`;
+- D `1.2743897048750341e-08`;
+- 12 direct solves;
+- max backward error `3.0832786979441453e-16`;
+- final Q SHA-256 `E1F55D0B755CB83D4F6A3CB4FEFD6DBC8CD4F05C6D23FC5DE00302E16B74BF20`.
 
-Beijing HJB convergence is accepted.
+### Beijing topology and rank
 
-### Terminal KFE
+PASS:
 
-Exactly one SCC decomposition was actually consumed. Persistence then failed with:
+- exact-positive edges: 2316;
+- one SCC call;
+- 11 components;
+- exactly one closed class of 400 states;
+- 400 transient states;
+- GESVD rank/nullity `799/1`;
+- structural closed-class count equals numerical nullity.
 
-`TypeError: Object of type csr_matrix is not JSON serializable`.
+### Stationary-mass gate
 
-The topology result was not persisted. Therefore closed-class count, component membership, GESVD rank/nullity, stationary mass and Beijing KFE PASS/FAIL remain unclassified.
+FAIL only at frozen per-entry nonnegativity:
 
-Run002 actual SCC=1 while its sealed global ledger says SCC=0; the discrepancy is accepted as an exception-path accumulation defect and is documented by the sealed post-terminal zero-science receipt.
+- min p `-2.217909641958515e-12`;
+- per-entry floor `-1.9184653865526386e-13`;
+- negative entries: 278;
+- total negative mass `1.0087680036243705e-11`;
+- total-negative bound `1.5347723092421108e-10` PASS;
+- stationarity and normalization checks PASS.
 
-Run002 manifest:
+No aggregate or multi-province integration object was produced.
 
-`D01A8A0CDF6808824735FEACABD7572249970DE97606A63BEA86209B5B6F531A`.
+Run003 manifest:
+`18D62A1E388E17D3D0A7001D22998B86389C946B7136D481FB7DE11777A3388B`.
+Independent readback passed; code freeze matched.
 
-Independent readback passed; pre/post code freeze matched.
+## Current active task
 
-## Active successor
+`tasks/CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_NEGATIVITY_SUPPORT_FORENSIC_20260920.md`.
 
-`tasks/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_TERMINAL_KFE_TOPOLOGY_SERIALIZATION_REPAIR_AND_RUN003_REEXECUTION_20260920.md`.
+This task is zero-science only. It decomposes the already persisted normalized p and residual over the accepted closed-class and transient masks.
 
-The successor is limited to:
+It may diagnose whether the entrywise violations are transient-only or occur inside the closed class. It may not alter p, rerun SCC/SVD/KFE, project support, clip, renormalize, change tolerance, or accept KFE.
 
-1. explicit topology-specific JSON-safe receipt projection after the unchanged SCC calculation;
-2. exception-path scientific-call ledger accumulation;
-3. zero-science regression validation;
-4. one fresh run003 under all existing scientific authorities.
-
-No economic, HJB, KFE, solver, tolerance, calibration, K1A/C1 or payoff-law change is authorized.
+Any later change to KFE support handling, solver semantics or nonnegativity acceptance remains a substantive scientific decision.
 
 Turn 2, K1B, K2, GE and Results remain closed.
