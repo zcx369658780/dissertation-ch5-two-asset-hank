@@ -1,0 +1,112 @@
+{
+  "accepted_forensic_q_b_binary64": 0.012085132579009488,
+  "binary64_ulp_offset": 2.0,
+  "checks": {
+    "active": true,
+    "admissible": true,
+    "branches": true,
+    "hamiltonian": true,
+    "kink_interval": true,
+    "kkt": true,
+    "lambda_a": true,
+    "q_a": true,
+    "q_b_forensic_binary64_within_frozen_brent_bound": true,
+    "selected": true,
+    "transfer": true,
+    "zero_drifts": true
+  },
+  "frozen_screened_brent_q_b": 0.012085132579009492,
+  "root_invocations": 4,
+  "selected": {
+    "active_constraints": [
+      "lower_a"
+    ],
+    "active_equality_receipts": {
+      "lower_a": {
+        "arithmetic_bound": 2.0960674472970927e-13,
+        "canonical_drift": 0.0,
+        "face": "lower_a",
+        "marker": "ACTIVE_EQUALITY_CANONICAL_ZERO",
+        "raw_residual": 0.0
+      }
+    },
+    "admissible": true,
+    "arithmetic_tolerance": 2.0960674472970927e-13,
+    "c": 9.0964992997271,
+    "closed_face_feasible": true,
+    "complementarity_residuals": {
+      "lower_a": 0.0
+    },
+    "cost": 0.0,
+    "d": -0.0,
+    "d2_assembler_admissible": true,
+    "derivative_branches": {
+      "a": "forward",
+      "b": "zero"
+    },
+    "g_a": 0.0,
+    "g_b": 0.0,
+    "hamiltonian": -0.12808167052185432,
+    "interior_a_switching_receipt": null,
+    "interior_z_receipt": {
+      "arithmetic_bound": 2.901541422966794e-13,
+      "endpoint_bounds": {
+        "backward": 2.2207551064537676e-13,
+        "forward": 2.8369453731853243e-13
+      },
+      "endpoint_drifts": {
+        "backward": 1.7486866578989382,
+        "forward": -2.027652723229073
+      },
+      "endpoint_shadows": {
+        "backward": 0.016103423470140932,
+        "forward": 0.008913524380688508
+      },
+      "marker": "INTERIOR_LIQUID_Z_ZERO_DRIFT_SWITCH",
+      "raw_root_residual": 1.7763568394002505e-15,
+      "root_bracket": [
+        0.008913524380688508,
+        0.016103423470140932
+      ],
+      "root_method": "BRENTQ_UNIQUE_LOG_SCREENED_BRACKET",
+      "root_status": "ROOT_CONVERGED"
+    },
+    "joint_switching_receipt": null,
+    "l": 0.6910376936366838,
+    "lower_a_zero_kink_multiplier_receipt": {
+      "chosen_q_a": 0.010876619321108543,
+      "deterministic_minimum": 0.010876619321108543,
+      "intersection_nonempty": true,
+      "lambda_a": 0.0002848986323410619,
+      "marker": "ACTIVE_LOWER_A_ZERO_KINK_MULTIPLIER_INTERVAL_CANONICAL_MIN",
+      "raw_kink_interval": [
+        0.010876619321108543,
+        0.013293645836910442
+      ],
+      "raw_multiplier_interval_lower": 0.010591720688767481,
+      "upper_endpoint_arithmetic_bound": 3.5527136788005136e-15
+    },
+    "multipliers": {
+      "lower_a": 0.0002848986323410619
+    },
+    "q_a": 0.010876619321108543,
+    "q_b": 0.012085132579009492,
+    "q_b_domain_ok": true,
+    "raw_hamiltonian": -0.1280816705218543,
+    "rejection_reasons": [],
+    "root_invoked": true,
+    "root_status": "ROOT_CONVERGED",
+    "slacks": {
+      "lower_a": 0.0
+    },
+    "transfer_branch": "zero_kink",
+    "transfer_kkt_residual": 0.0,
+    "transfer_target_interval": [
+      0.010876619321108543,
+      0.013293645836910442
+    ],
+    "utility": -0.12808167052185432
+  },
+  "selector_evaluations": 1,
+  "status": "PASS"
+}
