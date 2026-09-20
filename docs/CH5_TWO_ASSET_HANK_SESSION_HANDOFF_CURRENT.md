@@ -14,56 +14,79 @@ GitHub live main 是 repository-state authority。Owner 为最终 scientific aut
 
 当前状态：
 
-`TURN2_F0579_FORENSIC_RUN001_SERIALIZATION_EXCEPTION_ACCEPTED__FINITE_SCREEN_PERSISTENCE_REPAIR_AND_RUN002_ACTIVE`
+`TURN2_F0579_PRE_ROOT_FALSE_NEGATIVE_CONFIRMED__NARROW_UPPER_B_NEGATIVE_ENUMERATION_REPAIR_AND_TURN2_RUN002_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Latest Reviewer decision
+## Latest accepted forensic
 
-Forensic run001 candidate `d104f7da14039eac36d76f81188c717df010848d` is accepted as failed evidence.
+Candidate:
+
+`5e1b898d959bea1fbbfdda84bf4d958f3b6dbbdc`
 
 Acceptance:
 
-`docs/CH5_MP4C_TURN2_F0579_FORENSIC_SERIALIZATION_EXCEPTION_ACCEPTANCE_20260920.md`.
+`docs/CH5_MP4C_TURN2_F0579_PRE_ROOT_FALSE_NEGATIVE_FORENSIC_ACCEPTANCE_20260920.md`
 
 Terminal:
 
-`FAIL__TURN2_F0579_FORENSIC_ROOT_SCREEN_SERIALIZATION__NO_SCIENTIFIC_RETRY`.
+`PASS__TURN2_BEIJING_F0579_UPPER_B_NEGATIVE_BRANCH_ROOT_FORENSIC_RUN002_COMPLETE__NO_SELECTOR_CHANGE`
 
 Classification:
 
-`TURN2_F0579_FORENSIC_INCONSISTENT__NO_SELECTOR_DECISION`.
+`TURN2_F0579_UPPER_B_NEGATIVE_PRE_ROOT_UNIQUENESS_FALSE_NEGATIVE_CONFIRMED`.
 
-The failure is not a selector/economic conclusion. The forensic validator captured a raw pre-saturation residual of `-Infinity`, while the frozen root helper itself applies finite saturation before root-screen bracket logic. Strict JSON serialization then failed.
+At F0579:
 
-One backward root procedure was consumed historically. Its returned root/Brent subcount was not durably persisted and is not inferred. Forward was not run.
+- backward a-branch:
+  root `0.004697887028753478`,
+  then rejected only by a-direction inconsistency;
+- forward a-branch:
+  root `0.00470259773014529`,
+  q_a `-0.0004814219651986697`,
+  d `-2.1102602580753396`,
+  g_a `1.6015031989929152`,
+  transfer-KKT residual `6.505213034913027e-19`,
+  Hamiltonian `-0.07995936564187259`,
+  admissible;
+- exactly one distinct admissible policy remains;
+- interior-a switching prerequisite is false.
+
+## Reviewer selector decision
+
+A narrow selector enumeration correction is authorized under the Owner's standing bounded-debugging authorization.
+
+Only active upper-b + negative transfer changes:
+
+if multiple a-derivative branches survive the existing pre-root screen, evaluate each independently through the existing liquid-boundary root and downstream checks instead of failing before root.
+
+Everything after branch enumeration is unchanged.
+
+Upper-b zero-kink and positive behavior remain unchanged. Lower-b behavior remains unchanged.
 
 ## Current active task
 
-`tasks/CH5_MP4C_TURN2_F0579_FORENSIC_FINITE_SCREEN_PERSISTENCE_REPAIR_AND_RUN002_20260920.md`.
+`tasks/CH5_MP4C_ACTIVE_UPPER_B_NEGATIVE_BRANCH_ENUMERATION_REPAIR_AND_TURN2_RUN002_20260920.md`.
 
-The successor changes only the task-local forensic validator/test.
+Critical pre-science gate:
 
-Before science it must prove:
+scan all accepted turn-1 run004 cell receipts and completed turn-2 checkpoint-0/1 receipts for:
 
-- raw nonfinite residuals are represented in evidence by the same finite-saturation semantics used by the frozen root helper;
-- strict JSON serialization succeeds;
-- finite screens are unchanged;
-- selector.py and cost.py identities are unchanged;
-- predecessor forensic and turn-2 manifests are bound;
-- code freeze passes.
+- active `upper_b`
+- transfer `negative`
+- rejection `DERIVATIVE_BRANCH_NOT_UNIQUE_BEFORE_ROOT`.
 
-Then fresh forensic run002 may consume exactly:
+If any occurrence exists outside known F0579, STOP before fresh turn-2 science and report the impact set.
 
-- backward branch root procedure = 1;
-- forward branch root procedure = 1;
-- Brent solves <=2;
-- scientific retries = 0.
+If none exist:
 
-It must complete the original A/B/C/D post-root classification without changing the selector.
+- implement/test the narrow selector repair;
+- prove F0579 selector now uniquely chooses the forensic forward branch;
+- execute one fresh turn-2 run002 from the exact accepted turn-2 entering state;
+- use the Owner-adopted unique-closed-class KFE;
+- if all provinces pass, execute one integration and construct canonical turn-3 payoff;
+- STOP before turn 3.
 
-No HJB, D2/Q, KFE, aggregate, integration, or turn-3 execution is authorized.
+Historical turn-2 run001 and both forensic runs remain immutable.
 
-Historical corrected initial-turn acceptance and turn-2 failure evidence remain unchanged.
-
-Turn 3, K1B, K2, full trajectory, GE and Results remain closed.
+K1B, K2, full trajectory, GE and Results remain closed.
