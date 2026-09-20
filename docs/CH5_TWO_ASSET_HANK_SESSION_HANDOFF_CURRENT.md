@@ -14,7 +14,7 @@ GitHub live main 是 repository-state authority。Owner 为最终 scientific aut
 
 当前状态：
 
-`F0364_NEGATIVE_RATIO_SWITCHING_FALSE_NEGATIVE_CONFIRMED__INTERIOR_B_REPAIR_TURN1_POLICY_PARITY_AND_TURN2_RUN003_ACTIVE`
+`F0364_NEGATIVE_RATIO_SWITCHING_FALSE_NEGATIVE_CONFIRMED__INTERIOR_B_REPAIR_TURN1_POLICY_PARITY_AND_TURN2_RUN003_ACTIVE__BUILDER_EXECUTING`
 
 Results eligibility=`FALSE`。
 
@@ -77,3 +77,16 @@ Compatibility replay has no HJB update, D2/Q, KFE, aggregate or integration call
 Historical turn-1 remains immutable unless the parity gate finds a mismatch.
 
 Turn 3, K1B, K2, full trajectory, GE and Results remain closed.
+
+
+## 2026-09-21 execution-in-progress checkpoint
+
+The current Builder task is still executing. No Builder completion report has been reviewed or accepted.
+
+Read this checkpoint before resuming in a new ChatGPT session:
+
+`docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_20260921_INTERIOR_B_NEGATIVE_RATIO_REPAIR_TURN1_PARITY_TURN2_RUN003_EXECUTING.md`
+
+It freezes the accepted scientific state, the two accepted selector corrections, the mandatory 408-map turn-1 parity gate, the fresh turn-2 run003 boundary, historical immutable evidence, and the exact next Reviewer checklist.
+
+Do not infer task success from the existence of this checkpoint.
