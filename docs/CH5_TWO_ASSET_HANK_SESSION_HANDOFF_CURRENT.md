@@ -14,79 +14,81 @@ GitHub live main 是 repository-state authority。Owner 为最终 scientific aut
 
 当前状态：
 
-`TURN2_F0579_PRE_ROOT_FALSE_NEGATIVE_CONFIRMED__NARROW_UPPER_B_NEGATIVE_ENUMERATION_REPAIR_AND_TURN2_RUN002_ACTIVE`
+`TURN2_UPPER_B_NEGATIVE_REPAIR_ACCEPTED__BEIJING_CHECKPOINT5_F0364_SELECTOR_FAIL__NEGATIVE_RATIO_INTERIOR_A_SWITCHING_FORENSIC_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Latest accepted forensic
+## Latest accepted run
 
 Candidate:
 
-`5e1b898d959bea1fbbfdda84bf4d958f3b6dbbdc`
+`55dd5b81f1749e2af9e8d2a9a2507803b514131d`
 
 Acceptance:
 
-`docs/CH5_MP4C_TURN2_F0579_PRE_ROOT_FALSE_NEGATIVE_FORENSIC_ACCEPTANCE_20260920.md`
+`docs/CH5_MP4C_TURN2_RUN002_F0364_SELECTOR_FAILURE_ACCEPTANCE_20260920.md`
 
 Terminal:
 
-`PASS__TURN2_BEIJING_F0579_UPPER_B_NEGATIVE_BRANCH_ROOT_FORENSIC_RUN002_COMPLETE__NO_SELECTOR_CHANGE`
+`FAIL__CORRECTED_HJB_POLICY_MAP_OR_D2_GATE`.
 
-Classification:
+The previously authorized active-upper-b negative branch-enumeration repair passed and is accepted.
 
-`TURN2_F0579_UPPER_B_NEGATIVE_PRE_ROOT_UNIQUENESS_FALSE_NEGATIVE_CONFIRMED`.
+Fresh turn-2 run002 advanced Beijing through checkpoints 0-4, then stopped at checkpoint 5 / flat 364 before D2/Q.
 
-At F0579:
+## Exact F0364 failure
 
-- backward a-branch:
-  root `0.004697887028753478`,
-  then rejected only by a-direction inconsistency;
-- forward a-branch:
-  root `0.00470259773014529`,
-  q_a `-0.0004814219651986697`,
-  d `-2.1102602580753396`,
-  g_a `1.6015031989929152`,
-  transfer-KKT residual `6.505213034913027e-19`,
-  Hamiltonian `-0.07995936564187259`,
-  admissible;
-- exactly one distinct admissible policy remains;
-- interior-a switching prerequisite is false.
+Cell:
 
-## Reviewer selector decision
+`v005_f0364_b004_a018_z000`
 
-A narrow selector enumeration correction is authorized under the Owner's standing bounded-debugging authorization.
+State:
 
-Only active upper-b + negative transfer changes:
+- b=-0.5263157894736843
+- a=9.473684210526315
+- z=0.8
 
-if multiple a-derivative branches survive the existing pre-root screen, evaluate each independently through the existing liquid-boundary root and downstream checks instead of failing before root.
+Derivatives:
 
-Everything after branch enumeration is unchanged.
+- p_b_backward=0.006091715618507631
+- p_b_forward=0.008179870108012337
+- p_a_backward=-0.0031029058502000167
+- p_a_forward=-0.004925792041697845
 
-Upper-b zero-kink and positive behavior remain unchanged. Lower-b behavior remains unchanged.
+For negative transfer at p_b backward:
+
+- backward-a g_a=1.1624821053092704
+- forward-a g_a=-0.25497146700720563
+
+so the ordinary branches strictly cross zero a-drift.
+
+No interior-a switching candidate is created.
+
+Current switching code has:
+
+- d_z=-7.8384208979658965
+- D3 ratio q_a/q_b=-0.7547777451261338
+- early return when ratio<=0.
 
 ## Current active task
 
-`tasks/CH5_MP4C_ACTIVE_UPPER_B_NEGATIVE_BRANCH_ENUMERATION_REPAIR_AND_TURN2_RUN002_20260920.md`.
+`tasks/CH5_MP4C_TURN2_BEIJING_F0364_NEGATIVE_RATIO_INTERIOR_A_SWITCHING_FORENSIC_20260920.md`.
 
-Critical pre-science gate:
+The task does not modify selector.py and runs no HJB/root/D2/KFE science.
 
-scan all accepted turn-1 run004 cell receipts and completed turn-2 checkpoint-0/1 receipts for:
+It must:
 
-- active `upper_b`
-- transfer `negative`
-- rejection `DERIVATIVE_BRANCH_NOT_UNIQUE_BEFORE_ROOT`.
+1. reproduce the persisted eight-candidate failure;
+2. confirm the strict p_b-backward a-drift crossing;
+3. calculate d_z and the negative D3 ratio;
+4. construct only a diagnostic sign-aware mapped q_b interval by dividing both negative a-derivative endpoints by the negative ratio and sorting the resulting positive endpoints;
+5. evaluate p_b backward and p_b forward fixed-shadow switching candidates using existing controls/KKT/direction laws;
+6. audit whether positive ratio or positive q_a is an explicit accepted scientific authority rather than merely an implementation guard;
+7. return A/B/C/D;
+8. make no selector change.
 
-If any occurrence exists outside known F0579, STOP before fresh turn-2 science and report the impact set.
+No fresh turn-2 rerun is authorized until this forensic is reviewed.
 
-If none exist:
+Historical corrected initial-turn acceptance and prior turn-2/forensic evidence remain immutable.
 
-- implement/test the narrow selector repair;
-- prove F0579 selector now uniquely chooses the forensic forward branch;
-- execute one fresh turn-2 run002 from the exact accepted turn-2 entering state;
-- use the Owner-adopted unique-closed-class KFE;
-- if all provinces pass, execute one integration and construct canonical turn-3 payoff;
-- STOP before turn 3.
-
-Historical turn-2 run001 and both forensic runs remain immutable.
-
-K1B, K2, full trajectory, GE and Results remain closed.
+Turn 3, K1B, K2, full trajectory, GE and Results remain closed.
