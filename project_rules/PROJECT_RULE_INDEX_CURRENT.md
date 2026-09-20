@@ -17,11 +17,12 @@
 7. `docs/CH5_MP4C_TURN2_F0579_PRE_ROOT_FALSE_NEGATIVE_FORENSIC_ACCEPTANCE_20260920.md`
 8. `docs/CH5_MP4C_TURN2_RUN002_F0364_SELECTOR_FAILURE_ACCEPTANCE_20260920.md`
 9. `docs/CH5_MP4C_TURN2_F0364_NEGATIVE_RATIO_SWITCHING_FALSE_NEGATIVE_ACCEPTANCE_20260921.md`
-10. current active task.
+10. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_20260921_INTERIOR_B_NEGATIVE_RATIO_REPAIR_TURN1_PARITY_TURN2_RUN003_EXECUTING.md`
+11. current active task.
 
 Current status:
 
-`F0364_NEGATIVE_RATIO_SWITCHING_FALSE_NEGATIVE_CONFIRMED__INTERIOR_B_REPAIR_TURN1_POLICY_PARITY_AND_TURN2_RUN003_ACTIVE`.
+`F0364_NEGATIVE_RATIO_SWITCHING_FALSE_NEGATIVE_CONFIRMED__INTERIOR_B_REPAIR_TURN1_POLICY_PARITY_AND_TURN2_RUN003_ACTIVE__BUILDER_EXECUTING`.
 
 Current active Builder task:
 
@@ -40,3 +41,10 @@ Important current facts:
 - ratio zero remains fail closed;
 - fresh turn-2 run003 is gated on exact replay parity of all 408 accepted turn-1 policy maps;
 - turn 3, K1B, K2, GE and Results remain closed.
+
+
+Session checkpoint while Builder is executing:
+
+`docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_20260921_INTERIOR_B_NEGATIVE_RATIO_REPAIR_TURN1_PARITY_TURN2_RUN003_EXECUTING.md`
+
+No Builder result is accepted yet; the checkpoint records only the accepted pre-execution scientific state and the next Reviewer verification checklist.
