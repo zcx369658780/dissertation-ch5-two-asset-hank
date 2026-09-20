@@ -10,7 +10,7 @@ Task ID:
 
 `CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_CHECKPOINT0_DIAGNOSTIC_REPAIR_AND_REEXECUTION_20260920`
 
-Status: `ACTIVE`
+Status: `COMPLETED_FAIL_ACCEPTED`
 
 ## Governance and authority
 
@@ -224,3 +224,12 @@ This PASS means exactly one corrected initial multi-province turn is internally 
 - do not modify CURRENT files
 - do not merge main
 - do not publish successor.
+
+
+## Reviewer closure — 2026-09-20
+
+Run002 candidate `2027b917390f00bdcc40757b1ab2031f3e24d201` is accepted as failed evidence. The checkpoint-0 repair passed. Beijing corrected HJB converged at checkpoint 12. Terminal KFE then consumed exactly one SCC decomposition and failed only while serializing the raw topology dictionary containing CSR/NumPy carriers; no topology/KFE scientific classification is inferred. The sealed global SCC count of 0 is reconciled to actual SCC=1 by the accepted post-terminal zero-science receipt.
+
+Acceptance: `docs/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_RUN002_TERMINAL_KFE_TOPOLOGY_SERIALIZATION_EXCEPTION_ACCEPTANCE_20260920.md`.
+
+Successor: `tasks/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_TERMINAL_KFE_TOPOLOGY_SERIALIZATION_REPAIR_AND_RUN003_REEXECUTION_20260920.md`.
