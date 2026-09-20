@@ -13,28 +13,28 @@
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
 5. `docs/CH5_MP4C_UNIQUE_CLOSED_CLASS_SUPPORT_KFE_OWNER_ADOPTION_20260920.md`
-6. `docs/CH5_MP4C_RUN004_31PROVINCE_HOUSEHOLD_KFE_PASS_RAW_NEXT_PAYOFF_REDUCTION_ORDER_GUARD_ACCEPTANCE_20260920.md`
+6. `docs/CH5_MP4C_CORRECTED_INITIAL_TURN_FULL_CLOSURE_ACCEPTANCE_20260920.md`
 7. current active task.
 
 Current status:
 
-`RUN004_31_PROVINCE_HOUSEHOLD_AND_ADOPTED_KFE_ACCEPTED__RAW_NEXT_PAYOFF_REDUCTION_ORDER_GUARD_FAIL__INTEGRATION_ONLY_REPLAY_ACTIVE`.
+`CORRECTED_INITIAL_TURN_FULLY_CLOSED__TURN2_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_ACTIVE`.
 
 Current active Builder task:
 
-`tasks/CH5_MP4C_RUN004_CANONICAL_SAME_S_RAW_NEXT_PAYOFF_REPAIR_AND_INTEGRATION_ONLY_REPLAY_20260920.md`.
+`tasks/CH5_MP4C_CORRECTED_OPTIONB_TURN2_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_20260920.md`.
 
 Results eligibility=`FALSE`.
 
 Important current facts:
 
-- Owner-adopted unique-closed-class terminal KFE implementation is accepted;
-- fresh run004 passes 31/31 household HJB and 31/31 terminal KFE;
-- 31 corrected stationary aggregates and the exact household batch are accepted;
-- accepted household-batch identity is `8B7875F3BD603038E4D415D9F9FF759D4FDDC93E2E677C13BF0B649571B2EB05`;
-- run004 integration consumed one labor/K1A/C1/31-firm/wage/monetary/fiscal sequence but stopped before closure at a bitwise comparison of two mathematically identical same-S reduction orders;
-- the failure is accepted as an engineering/numerical identity-guard defect, not an economic payoff-law failure;
-- the active successor does not rerun household HJB/KFE/aggregates;
-- canonical raw-next-payoff evaluation is the adopted mathematical sum evaluated deterministically by per-origin `math.fsum` in ascending destination order;
-- BLAS `raw_ra0 @ S` may be diagnostic only and is not a bitwise acceptance gate;
-- turn 2, K1B, K2, GE and Results remain closed.
+- Owner-adopted unique-closed-class terminal KFE is the active KFE authority;
+- corrected initial turn is now fully closed;
+- 31/31 turn-1 household HJB PASS;
+- 31/31 turn-1 terminal KFE PASS;
+- 31/31 stationary aggregates PASS;
+- one source-faithful labor / K1A beta2 / beta_return0 / C1 / firm integration PASS;
+- canonical raw turn-2 payoff is accepted with SHA-256 `D77669DB4245DDCE3D6E91231A92C4A2AD12415D165F0718D0605BD213FDB414`;
+- exact 31-row turn-2 entering state is accepted from the canonical integration replay;
+- current task executes exactly one corrected turn 2 and stops before turn 3;
+- K1B, K2, GE and Results remain closed.
