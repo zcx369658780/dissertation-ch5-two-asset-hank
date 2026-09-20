@@ -14,58 +14,56 @@ GitHub live main 是 repository-state authority。Owner 为最终 scientific aut
 
 当前状态：
 
-`TURN2_BEIJING_CHECKPOINT2_SELECTOR_FAIL_ACCEPTED__F0579_UPPER_B_NEGATIVE_BRANCH_ROOT_FORENSIC_ACTIVE`
+`TURN2_F0579_FORENSIC_RUN001_SERIALIZATION_EXCEPTION_ACCEPTED__FINITE_SCREEN_PERSISTENCE_REPAIR_AND_RUN002_ACTIVE`
 
 Results eligibility=`FALSE`。
 
 ## Latest Reviewer decision
 
-Turn-2 candidate `37e563a87bf0dc1fb90224b03e0c4df9daea9d5f` is accepted as failed evidence.
+Forensic run001 candidate `d104f7da14039eac36d76f81188c717df010848d` is accepted as failed evidence.
 
 Acceptance:
 
-`docs/CH5_MP4C_TURN2_BEIJING_CHECKPOINT2_POLICY_SELECTOR_FAILURE_ACCEPTANCE_20260920.md`.
+`docs/CH5_MP4C_TURN2_F0579_FORENSIC_SERIALIZATION_EXCEPTION_ACCEPTANCE_20260920.md`.
 
 Terminal:
 
-`FAIL__CORRECTED_HJB_POLICY_MAP_OR_D2_GATE`.
+`FAIL__TURN2_F0579_FORENSIC_ROOT_SCREEN_SERIALIZATION__NO_SCIENTIFIC_RETRY`.
 
-First failure:
+Classification:
 
-- Beijing
-- checkpoint 2
-- flat 579
-- `(b_index,a_index,z_index)=(19,8,1)`
-- `(b,a,z)=(5,4.2105263157894735,1.3)`
-- selector outcome `NO_ADMISSIBLE_POLICY`.
+`TURN2_F0579_FORENSIC_INCONSISTENT__NO_SELECTOR_DECISION`.
 
-No checkpoint-2 D2/Q, KFE, aggregate, integration or turn-3 call occurred.
+The failure is not a selector/economic conclusion. The forensic validator captured a raw pre-saturation residual of `-Infinity`, while the frozen root helper itself applies finite saturation before root-screen bracket logic. Strict JSON serialization then failed.
+
+One backward root procedure was consumed historically. Its returned root/Brent subcount was not durably persisted and is not inferred. Forward was not run.
 
 ## Current active task
 
-`tasks/CH5_MP4C_TURN2_BEIJING_F0579_UPPER_B_NEGATIVE_BRANCH_ROOT_FORENSIC_20260920.md`.
+`tasks/CH5_MP4C_TURN2_F0579_FORENSIC_FINITE_SCREEN_PERSISTENCE_REPAIR_AND_RUN002_20260920.md`.
 
-This task does not change the selector and does not rerun HJB.
+The successor changes only the task-local forensic validator/test.
 
-It binds the exact persisted failure cell and decomposes only the active upper-b negative-transfer case.
+Before science it must prove:
 
-The key question is whether the current pre-root rule:
+- raw nonfinite residuals are represented in evidence by the same finite-saturation semantics used by the frozen root helper;
+- strict JSON serialization succeeds;
+- finite screens are unchanged;
+- selector.py and cost.py identities are unchanged;
+- predecessor forensic and turn-2 manifests are bound;
+- code freeze passes.
 
-`DERIVATIVE_BRANCH_NOT_UNIQUE_BEFORE_ROOT`
+Then fresh forensic run002 may consume exactly:
 
-is a valid fail-closed scientific ambiguity or an overly early rejection.
+- backward branch root procedure = 1;
+- forward branch root procedure = 1;
+- Brent solves <=2;
+- scientific retries = 0.
 
-The forensic independently evaluates the two persisted a-derivative branches under the exact same upper-b multiplier domain and root procedure, then applies the existing post-root direction/KKT/boundary/Hamiltonian checks.
+It must complete the original A/B/C/D post-root classification without changing the selector.
 
-Possible classifications:
+No HJB, D2/Q, KFE, aggregate, integration, or turn-3 execution is authorized.
 
-A. exactly one post-root admissible policy -> pre-root false negative;
-B. no post-root admissible policy -> genuine no-policy;
-C. multiple unresolved post-root policies -> Owner decision required;
-D. forensic inconsistency.
-
-No selector repair or turn-2 retry is authorized until this forensic is reviewed.
-
-Historical corrected initial-turn acceptance remains unchanged.
+Historical corrected initial-turn acceptance and turn-2 failure evidence remain unchanged.
 
 Turn 3, K1B, K2, full trajectory, GE and Results remain closed.
