@@ -10,7 +10,7 @@ Task ID:
 
 `CH5_MP4C_CORRECTED_OPTIONB_BEIJING_UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_DIAGNOSTIC_20260920`
 
-Status: `ACTIVE`
+Status: `COMPLETED_PASS_ACCEPTED`
 
 ## Governance
 
@@ -274,3 +274,18 @@ Persist:
 - do not publish a successor.
 
 If the diagnostic is Supported, STOP for explicit Owner/Reviewer method-adoption decision. Do not rerun the 31-province model.
+
+
+## Reviewer closure — 2026-09-20
+
+Candidate `bb5f2796b0d1b8a8c56dda40afa898cc7f8da315` is accepted.
+
+Terminal:
+`PASS__UNIQUE_CLOSED_CLASS_RESTRICTED_KFE_CANDIDATE_DIAGNOSTIC__OWNER_METHOD_ADOPTION_DECISION_REQUIRED`
+
+The method candidate is numerically supported for Beijing Q12, including restricted rank/nullity `399/1`, strictly positive closed-class mass, exact-zero transient support embedding, and PASS full-original-Q stationarity.
+
+Acceptance:
+`docs/CH5_MP4C_CORRECTED_OPTIONB_BEIJING_UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_DIAGNOSTIC_ACCEPTANCE_20260920.md`
+
+No KFE method adoption is made by this closure. No successor Builder task is published pending explicit Owner decision.
