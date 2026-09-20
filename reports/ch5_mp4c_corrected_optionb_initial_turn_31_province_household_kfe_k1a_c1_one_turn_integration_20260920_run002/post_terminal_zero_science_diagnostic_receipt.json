@@ -1,0 +1,155 @@
+{
+  "accounting_reconciliation": {
+    "audited_actual_dense_gesvd": 0,
+    "audited_actual_normalized_stationary_candidates": 0,
+    "audited_actual_q_transpose_times_p": 0,
+    "audited_actual_scc_decompositions": 1,
+    "original_scientific_ledger_modified": false,
+    "persisted_global_ledger_dense_gesvd": 0,
+    "persisted_global_ledger_normalized_stationary_candidates": 0,
+    "persisted_global_ledger_q_transpose_times_p": 0,
+    "persisted_global_ledger_scc_decompositions": 0,
+    "undercount_reason": "province-local terminal topology gate is accumulated into the global ledger only after _terminal_kfe returns; JSON serialization raised first"
+  },
+  "beijing_hjb_final": {
+    "B_same_value": 1.292732587643286e-11,
+    "D_value_change_vec_f_inf": 1.2743897048750341e-08,
+    "checkpoint": 12,
+    "d2_status": "PASS",
+    "primary_convergence_pass": true,
+    "q_artifact_sha256": "E1F55D0B755CB83D4F6A3CB4FEFD6DBC8CD4F05C6D23FC5DE00302E16B74BF20",
+    "value_sha256": "48396D52F13045B4F3370CA892C9989813BBEA8F0D45A577DD8C6D6EDE5ADA93"
+  },
+  "call_path_audit": {
+    "caller_increments_local_topology_gate_before_helper": true,
+    "helper_builds_exact_positive_graph": true,
+    "helper_calls_scipy_sparse_csgraph_connected_components_once_before_return": true,
+    "helper_return_contains_csr_adjacency": true,
+    "helper_return_contains_numpy_labels": true,
+    "second_scc_or_topology_reconstruction_performed": false,
+    "serialization_attempt_occurs_after_helper_return": true,
+    "terminal_directory_created": true,
+    "terminal_directory_file_count": 0
+  },
+  "checkpoint0_current_only_verification": {
+    "B_same_value": 0.3384513972950506,
+    "d2_status": "PASS",
+    "identity_change_count": null,
+    "operator_diagnostic_mode": "CURRENT_ONLY__NO_PREVIOUS_CHECKPOINT",
+    "operator_difference_nnz": null,
+    "operator_previous_checkpoint_comparison": null,
+    "policy_diagnostic_mode": "CURRENT_ONLY__NO_PREVIOUS_CHECKPOINT",
+    "policy_previous_checkpoint_comparison": null,
+    "q_nnz": 3118,
+    "status": "PASS"
+  },
+  "direct_solves": {
+    "all_pass": true,
+    "count": 12,
+    "maximum_normwise_backward_error": 3.0832786979441453e-16,
+    "rows": [
+      {
+        "checkpoint": 0,
+        "normwise_backward_error": 2.3478105911472353e-16,
+        "solver": "scipy.sparse.linalg.spsolve",
+        "status": "PASS"
+      },
+      {
+        "checkpoint": 1,
+        "normwise_backward_error": 2.735588574713159e-16,
+        "solver": "scipy.sparse.linalg.spsolve",
+        "status": "PASS"
+      },
+      {
+        "checkpoint": 2,
+        "normwise_backward_error": 1.8216282205583351e-16,
+        "solver": "scipy.sparse.linalg.spsolve",
+        "status": "PASS"
+      },
+      {
+        "checkpoint": 3,
+        "normwise_backward_error": 2.328707253628075e-17,
+        "solver": "scipy.sparse.linalg.spsolve",
+        "status": "PASS"
+      },
+      {
+        "checkpoint": 4,
+        "normwise_backward_error": 1.816409796445249e-16,
+        "solver": "scipy.sparse.linalg.spsolve",
+        "status": "PASS"
+      },
+      {
+        "checkpoint": 5,
+        "normwise_backward_error": 3.0832786979441453e-16,
+        "solver": "scipy.sparse.linalg.spsolve",
+        "status": "PASS"
+      },
+      {
+        "checkpoint": 6,
+        "normwise_backward_error": 1.4817949678790144e-16,
+        "solver": "scipy.sparse.linalg.spsolve",
+        "status": "PASS"
+      },
+      {
+        "checkpoint": 7,
+        "normwise_backward_error": 2.2136271695440027e-16,
+        "solver": "scipy.sparse.linalg.spsolve",
+        "status": "PASS"
+      },
+      {
+        "checkpoint": 8,
+        "normwise_backward_error": 1.8422232788607914e-16,
+        "solver": "scipy.sparse.linalg.spsolve",
+        "status": "PASS"
+      },
+      {
+        "checkpoint": 9,
+        "normwise_backward_error": 1.8446741951113744e-16,
+        "solver": "scipy.sparse.linalg.spsolve",
+        "status": "PASS"
+      },
+      {
+        "checkpoint": 10,
+        "normwise_backward_error": 1.5663982591971225e-16,
+        "solver": "scipy.sparse.linalg.spsolve",
+        "status": "PASS"
+      },
+      {
+        "checkpoint": 11,
+        "normwise_backward_error": 2.466842636251806e-16,
+        "solver": "scipy.sparse.linalg.spsolve",
+        "status": "PASS"
+      }
+    ],
+    "threshold": 1e-12
+  },
+  "first_failing_object": {
+    "checkpoint": 12,
+    "exception_type": "TypeError",
+    "message": "Object of type csr_matrix is not JSON serializable",
+    "province": "北京",
+    "province_index": 0,
+    "stage": "terminal_kfe_topology_receipt_serialization"
+  },
+  "original_terminal_verdict_unchanged": "FAIL__UNEXPECTED_TASK_EXCEPTION__NO_SCIENTIFIC_RETRY",
+  "preserved_boundaries": {
+    "main_merged": false,
+    "run001_modified": false,
+    "run002_scientific_ledger_modified": false,
+    "run002_terminal_receipt_modified": false,
+    "second_outer_turns": 0,
+    "successor_published": false,
+    "turn2_household_calls": 0
+  },
+  "scientific_calls": 0,
+  "scientific_retry": 0,
+  "status": "PASS__POST_TERMINAL_ZERO_SCIENCE_DIAGNOSTIC_COMPLETE",
+  "topology_result": {
+    "classification": "UNAVAILABLE__RETURN_OBJECT_NOT_SERIALIZED__NO_SECOND_SCC_AUTHORIZED",
+    "closed_class_count": null,
+    "component_count": null,
+    "component_sizes": null,
+    "receipt_persisted": false,
+    "scc_invocation_completed": true
+  }
+}
