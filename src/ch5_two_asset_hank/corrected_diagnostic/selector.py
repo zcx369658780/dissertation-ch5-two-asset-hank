@@ -1562,7 +1562,12 @@ def select_constrained_policy(
                                 break
                 a_options = _unique_derivatives(viable_a)
                 lower_b_negative = faces["b"] == "lower_b" and regime == "negative"
-                if not lower_b_negative and len(b_options) * len(a_options) != 1:
+                upper_b_negative = faces["b"] == "upper_b" and regime == "negative"
+                if (
+                    not lower_b_negative
+                    and not upper_b_negative
+                    and len(b_options) * len(a_options) != 1
+                ):
                     candidates.append(
                         _rejected(
                             active,
