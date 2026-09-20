@@ -4,75 +4,49 @@
 
 状态：
 
-`RUN003_TRANSIENT_ONLY_NEGATIVITY_FORENSIC_ACCEPTED__UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_DIAGNOSTIC_ACTIVE`
+`UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_SUPPORTED__OWNER_METHOD_ADOPTION_DECISION_REQUIRED`
 
 Results eligibility=`FALSE`。
 
-## Accepted Beijing state
+## Accepted Beijing evidence
 
-Corrected HJB:
+Corrected HJB checkpoint 12 PASS.
 
-- checkpoint 12 PASS;
-- B `1.292732587643286e-11`;
-- D `1.2743897048750341e-08`;
-- final Q SHA-256 `E1F55D0B755CB83D4F6A3CB4FEFD6DBC8CD4F05C6D23FC5DE00302E16B74BF20`.
-
-Topology/rank:
-
+Exact-positive topology:
 - one unique closed communicating class;
-- closed states: 400;
-- transient states: 400;
-- full-space GESVD rank/nullity: `799/1`.
+- closed states 400;
+- transient states 400.
 
-## Current KFE failure
+Existing full-space 800-state KFE remains FAIL under its frozen entrywise nonnegativity gate.
 
-The accepted full-space normalized SVD candidate still FAILS the frozen entrywise nonnegativity gate:
+The accepted support forensic proves:
+- all 14 floor breaches are transient-only;
+- closed-class breach count is 0;
+- all 400 closed-class entries are strictly positive.
 
-- min p `-2.217909641958515e-12`;
-- frozen floor `-1.9184653865526386e-13`.
-
-No aggregate or integration result is accepted.
-
-## Accepted support forensic
+## Accepted method-candidate diagnostic
 
 Candidate:
-
-`633e93d3ab114df95ac5d127170ced7da67a2cb1`.
+`bb5f2796b0d1b8a8c56dda40afa898cc7f8da315`.
 
 Acceptance:
+`docs/CH5_MP4C_CORRECTED_OPTIONB_BEIJING_UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_DIAGNOSTIC_ACCEPTANCE_20260920.md`.
 
-`docs/CH5_MP4C_CORRECTED_OPTIONB_RUN003_STATIONARY_MASS_SUPPORT_FORENSIC_ACCEPTANCE_20260920.md`.
+The unique-closed-class support candidate passes:
 
-Classification:
+- Q_CC shape `400x400`, no positive closed-to-transient outflow, row conservation PASS;
+- restricted GESVD rank/nullity `399/1` under both preregistered threshold views;
+- restricted normalized mass minimum `3.4169927217543985e-07 > 0`;
+- 400 transient entries embedded as exact zero;
+- embedded full vector finite, normalized, nonnegative;
+- exactly one full original-Q `Q.T@p` validation PASS with residual infinity norm `2.325020736918329e-16`.
 
-`RUN003_NEGATIVITY_BREACHES_TRANSIENT_ONLY__CLOSED_CLASS_MASS_PASSES_ENTRYWISE_FLOOR__KFE_METHOD_DECISION_REQUIRED`.
+## Decision state
 
-Exact facts:
+No KFE method has been adopted.
 
-- floor breaches: 14;
-- closed-class breaches: 0;
-- transient breaches: 14;
-- closed entries: 400 positive / 0 negative;
-- closed signed mass: `1.0000000000100855`;
-- transient signed mass: `-1.0085295212390263e-11`;
-- transient L1 mass: `1.0090064860097144e-11`.
+The project is waiting for explicit Owner decision on whether to replace the current full-state-space stationary-mass method with the unique-closed-class support method defined in the accepted diagnostic.
 
-This supports a support-aware KFE method diagnostic but does not itself alter KFE.
-
-## Current active task
-
-`tasks/CH5_MP4C_CORRECTED_OPTIONB_BEIJING_UNIQUE_CLOSED_CLASS_KFE_METHOD_CANDIDATE_DIAGNOSTIC_20260920.md`.
-
-The task tests one unique-closed-class method candidate only:
-
-- extract Q_CC from the accepted closed-class indices;
-- one restricted dense GESVD;
-- one sign orientation and one normalization on the closed class;
-- embed exact zero mass on transient states by support construction;
-- one full original `Q.T@p` stationarity validation.
-
-No topology recomputation, full-space GESVD rerun, clipping, tolerance change, aggregate evaluation, or multi-province rerun is allowed.
-
-If the method candidate is supported, the task must STOP for an explicit Owner/Reviewer method-adoption decision.
+No Builder task is active until that decision is made.
 
 Turn 2, K1B, K2, GE and Results remain closed.
