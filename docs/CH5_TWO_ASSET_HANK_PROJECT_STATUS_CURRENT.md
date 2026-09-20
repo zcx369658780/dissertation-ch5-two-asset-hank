@@ -4,71 +4,87 @@
 
 状态：
 
-`F0364_NEGATIVE_RATIO_SWITCHING_FALSE_NEGATIVE_CONFIRMED__INTERIOR_B_REPAIR_TURN1_POLICY_PARITY_AND_TURN2_RUN003_ACTIVE__BUILDER_EXECUTING`
+`INTERIOR_B_NEGATIVE_RATIO_REPAIR_ACCEPTED__TURN1_POLICY_PARITY_PASS__TURN2_HEBEI_F0005_LOWER_A_LIQUID_SWITCH_FORENSIC_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Accepted corrected initial turn
+## Latest accepted execution
 
-The first corrected multi-province turn remains accepted under its original frozen code/evidence.
+Reviewer acceptance:
 
-Before turn 2 continues under the new interior-b negative-ratio selector correction, its selected-policy path must be replayed exactly to prove compatibility.
+`docs/CH5_MP4C_INTERIOR_B_NEGATIVE_RATIO_SWITCHING_REPAIR_TURN1_PARITY_AND_TURN2_RUN003_ACCEPTANCE_20260921.md`
 
-## Accepted selector corrections
+Accepted Builder candidate:
 
-Already accepted:
+`f178ec24b9b62814d20ec4041380e07e2d878849`
 
-1. active-upper-b negative-transfer branch enumeration repair;
-2. Owner-adopted unique-closed-class terminal KFE.
+Accepted conclusions:
 
-Newly accepted forensic finding:
+- authorized interior-b finite-negative-ratio selector repair PASS;
+- F0364 normal runtime produces the accepted switching candidate exactly;
+- accepted turn-1 policy identity replay: 408/408 exact, zero HJB/D2/KFE/aggregate work;
+- turn-2 entering-state blob and raw payoff identity exact;
+- Beijing turn-2 HJB/KFE/aggregate PASS;
+- Tianjin turn-2 HJB/KFE/aggregate PASS;
+- first new failure: 河北 checkpoint 1, flat 5, `NO_ADMISSIBLE_POLICY`;
+- stop-before-D2 at the failing map is accepted;
+- turn 3 was not run.
 
-`docs/CH5_MP4C_TURN2_F0364_NEGATIVE_RATIO_SWITCHING_FALSE_NEGATIVE_ACCEPTANCE_20260921.md`.
+## Frozen KFE authority
 
-F0364 proves that the implementation-only `ratio<=0` guard incorrectly suppresses an otherwise legal interior-a switching candidate at an interior liquid node.
+Terminal KFE remains:
 
-## Narrow new implementation authority
+`OWNER_ADOPTED__UNIQUE_CLOSED_CLASS_SUPPORT_KFE_AS_TERMINAL_KFE_AUTHORITY`
 
-For interior b only:
+Beijing and Tianjin run003 terminal KFE receipts preserve that authority, including one restricted closed-class GESVD, rank/nullity 39/1, positive closed support, exact-zero transient mass, one full-`Q` stationarity check, no full-space GESVD and no retry.
 
-- finite negative nonzero D3 ratio may be used;
-- mapped q_b endpoints are obtained by dividing both a-derivative interval endpoints by the ratio and sorting;
-- the current persisted liquid derivative shadow is used as q_b;
-- q_a=R*q_b must remain inside the original a-derivative interval;
-- all existing direction/KKT/finite/Hamiltonian checks remain unchanged.
+## Current unresolved scientific object
 
-Not changed:
+Exact object:
 
-- active liquid-face negative-ratio behavior;
-- ratio-zero behavior;
-- D3 equations;
-- boundary/KKT laws;
-- root semantics;
-- HJB/KFE rules.
+- province: 河北
+- checkpoint: 1
+- F-order flat: 5
+- index: `(5,0,0)`
+- state: `b=-0.1578947368421053, a=0, z=0.8`
+- active face: lower-`a`
+- liquid dimension: interior
+- `p_a^B=p_a^F=0.010591720688767481`
+- `p_b^B=0.016103423470140932`
+- `p_b^F=0.008913524380688508`
+- current selector outcome: `NO_ADMISSIBLE_POLICY`
 
-## Mandatory historical compatibility gate
+No diagnosis is yet accepted.
 
-Current active task:
+The key next question is whether already adopted lower-`a` zero-kink multiplier authority and generic interior-liquid `Z` switching authority uniquely imply a combined candidate at this cell, or whether the current fail-closed outcome is legitimate / requires a new Owner composition decision.
 
-`tasks/CH5_MP4C_INTERIOR_B_NEGATIVE_RATIO_SWITCHING_REPAIR_TURN1_PARITY_AND_TURN2_RUN003_20260921.md`.
+## Current active task
 
-It must replay all 408 accepted turn-1 household policy maps using persisted V and the corrected selector, with zero HJB updates and zero D2/KFE work.
+`tasks/CH5_MP4C_TURN2_HEBEI_F0005_LOWER_A_LIQUID_SWITCH_FORENSIC_20260921.md`
 
-Every replayed selected-policy identity must exactly equal the accepted persisted identity.
+This task is zero-science forensic only.
 
-Any mismatch blocks turn 2 and requires a separately authorized turn-1 reexecution.
+Forbidden in the active task:
 
-Only exact parity authorizes fresh turn-2 run003.
+- production selector/root calls;
+- HJB/D2/KFE/model rerun;
+- selector repair;
+- turn-2 continuation;
+- turn 3;
+- K1B/K2/GE/Results.
 
-Turn 3, K1B, K2, GE and Results remain closed.
+## Preserved accepted state
 
+The corrected initial turn remains accepted and immutable under its frozen evidence.
 
-## Session checkpoint while task executes
+Accepted selector authorities still include:
 
-The active Builder task is currently executing. No new scientific result, candidate SHA, turn-1 parity verdict or turn-2 run003 verdict has been accepted yet.
+1. active-upper-b negative-transfer multi-branch enumeration repair;
+2. interior-b finite-negative-ratio interior-a switching repair;
+3. Owner-adopted generic interior-liquid `Z` switching law;
+4. Owner-adopted interior-a zero-drift switching law;
+5. adopted lower-`a` zero-kink multiplier law.
 
-Authoritative handoff checkpoint:
+The active forensic may only determine how these already adopted laws apply to 河北 F0005. It may not create a new economic law.
 
-`docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_20260921_INTERIOR_B_NEGATIVE_RATIO_REPAIR_TURN1_PARITY_TURN2_RUN003_EXECUTING.md`
-
-The next Reviewer must verify the mandatory 408-map turn-1 selected-policy identity parity gate before accepting any evidence that fresh turn-2 run003 legitimately proceeded.
+Results remain closed.

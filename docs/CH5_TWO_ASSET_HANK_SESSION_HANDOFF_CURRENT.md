@@ -10,83 +10,82 @@
 
 `zcx369658780/deep-learning-hank`
 
-GitHub live main 是 repository-state authority。Owner 为最终 scientific authority；ChatGPT 为 L3 independent Reviewer/scientific-route authority；Codex 为 bounded Builder/scientific numerical analyst。
+GitHub live main is repository-state authority. Owner is final scientific authority; ChatGPT is L3 independent Reviewer/scientific-route authority; Codex is bounded Builder/scientific numerical analyst.
 
-当前状态：
+Current status:
 
-`F0364_NEGATIVE_RATIO_SWITCHING_FALSE_NEGATIVE_CONFIRMED__INTERIOR_B_REPAIR_TURN1_POLICY_PARITY_AND_TURN2_RUN003_ACTIVE__BUILDER_EXECUTING`
+`INTERIOR_B_NEGATIVE_RATIO_REPAIR_ACCEPTED__TURN1_POLICY_PARITY_PASS__TURN2_HEBEI_F0005_LOWER_A_LIQUID_SWITCH_FORENSIC_ACTIVE`
 
-Results eligibility=`FALSE`。
+Results eligibility=`FALSE`.
 
-## Latest accepted forensic
+## Latest accepted candidate
 
 Candidate:
 
-`5a6f3870ceccb7730d5417e87d801ac0bc8e210a`
+`f178ec24b9b62814d20ec4041380e07e2d878849`
 
 Acceptance:
 
-`docs/CH5_MP4C_TURN2_F0364_NEGATIVE_RATIO_SWITCHING_FALSE_NEGATIVE_ACCEPTANCE_20260921.md`
+`docs/CH5_MP4C_INTERIOR_B_NEGATIVE_RATIO_SWITCHING_REPAIR_TURN1_PARITY_AND_TURN2_RUN003_ACCEPTANCE_20260921.md`
 
-Terminal:
+Acceptance marker:
 
-`PASS__TURN2_BEIJING_F0364_NEGATIVE_RATIO_INTERIOR_A_SWITCHING_FORENSIC_COMPLETE__NO_SELECTOR_CHANGE`
+`ACCEPTED_FAIL__INTERIOR_B_NEGATIVE_RATIO_REPAIR_PASS__TURN1_408_POLICY_PARITY_PASS__TURN2_BEIJING_TIANJIN_HJB_KFE_PASS__HEBEI_F0005_NO_ADMISSIBLE_POLICY_FIRST_FAILURE_CONFIRMED`
 
-Classification:
+## What is now accepted
 
-`TURN2_F0364_NEGATIVE_RATIO_INTERIOR_A_SWITCHING_GUARD_FALSE_NEGATIVE_CONFIRMED`.
+- selector repair is narrow and valid;
+- ratio zero and active-liquid-face negative ratio remain fail closed;
+- F0364 exact normal-runtime parity PASS;
+- 408/408 accepted turn-1 selected-policy identities exactly match;
+- turn-1 replay performed zero HJB, D2/Q, KFE, aggregate and integration work;
+- fresh turn-2 run003 used the exact accepted 31-province entering state;
+- Beijing and Tianjin HJB / Owner-adopted unique-closed-class KFE / aggregates PASS;
+- 河北 checkpoint 1 flat 5 is the first new failure;
+- no rescue or further science after that failure;
+- turn 3 / K1B / K2 / GE / Results remain zero.
 
-At F0364:
+## Exact unresolved cell
 
-- strict a-drift crossing occurs for p_b backward;
-- d_z=-7.8384208979658965;
-- D3 ratio R=-0.7547777451261338;
-- sign-aware mapped q_b interval is [0.004111019263931103,0.006526149020033277];
-- p_b backward is inside;
-- q_a=-0.0045978913784868415 is inside the original a-derivative interval;
-- backward-liquid switching candidate passes D3 KKT, b-direction, finite and Hamiltonian legality with no rejection;
-- p_b forward is outside the mapped interval and direction-inconsistent;
-- no explicit accepted scientific authority requires q_a>0 or R>0.
+`reports/ch5_mp4c_interior_b_negative_ratio_repair_turn1_parity_turn2_run003_20260921/household/p02_河北/checkpoint_001/cell_0005.json`
 
-## Reviewer implementation decision
+Binding:
 
-A narrow correction is authorized for interior liquid nodes only.
+- cell `v001_f0005_b005_a000_z000`
+- `b=-0.1578947368421053`
+- `a=0`
+- `z=0.8`
+- lower-`a` active; liquid `b` interior
+- `p_a^B=p_a^F=0.010591720688767481`
+- `p_b^B=0.016103423470140932`
+- `p_b^F=0.008913524380688508`
+- selector outcome `NO_ADMISSIBLE_POLICY`
 
-Finite negative nonzero ratio is allowed to map the closed a-derivative interval by dividing both endpoints and sorting the q_b images.
-
-Active liquid faces retain their existing negative-ratio fail-closed behavior. Ratio zero remains fail closed.
-
-No equation, calibration, KKT law, root law or boundary law changes.
+Do not diagnose from chat summary alone.
 
 ## Current active task
 
-`tasks/CH5_MP4C_INTERIOR_B_NEGATIVE_RATIO_SWITCHING_REPAIR_TURN1_PARITY_AND_TURN2_RUN003_20260921.md`.
+`tasks/CH5_MP4C_TURN2_HEBEI_F0005_LOWER_A_LIQUID_SWITCH_FORENSIC_20260921.md`
 
-Critical ordering:
+The task is zero-science only. It must bind the persisted cell, lower-`a` zero-kink authority, Owner-adopted interior-liquid `Z` switching authority and current selector control flow.
 
-1. implement/test the narrow interior-b correction;
-2. prove exact normal-selector F0364 parity;
-3. replay every accepted turn-1 run004 policy map under the corrected selector using persisted V;
-4. compare every selected-policy identity exactly;
-5. if any mismatch, STOP before turn 2;
-6. only if all 408 maps match, execute one fresh turn-2 run003;
-7. stop before turn 3.
+It must classify the failure as:
 
-Compatibility replay has no HJB update, D2/Q, KFE, aggregate or integration calls.
+1. implementation/composition false negative under existing authority;
+2. legitimate fail-closed under existing authority; or
+3. unresolved authority composition requiring Owner decision.
 
-Historical turn-1 remains immutable unless the parity gate finds a mismatch.
+No source repair or model rerun is authorized.
 
-Turn 3, K1B, K2, full trajectory, GE and Results remain closed.
+## New-session resume order
 
+1. fresh-fetch live main;
+2. read AGENTS;
+3. read rule index;
+4. read project status;
+5. read this handoff;
+6. read latest acceptance;
+7. read exact active task and its required authority files;
+8. execute/review only the zero-science forensic scope.
 
-## 2026-09-21 execution-in-progress checkpoint
-
-The current Builder task is still executing. No Builder completion report has been reviewed or accepted.
-
-Read this checkpoint before resuming in a new ChatGPT session:
-
-`docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_20260921_INTERIOR_B_NEGATIVE_RATIO_REPAIR_TURN1_PARITY_TURN2_RUN003_EXECUTING.md`
-
-It freezes the accepted scientific state, the two accepted selector corrections, the mandatory 408-map turn-1 parity gate, the fresh turn-2 run003 boundary, historical immutable evidence, and the exact next Reviewer checklist.
-
-Do not infer task success from the existence of this checkpoint.
+Do not reopen turn-1 parity or rerun run003.
