@@ -4,39 +4,42 @@
 
 状态：
 
-`OWNER_AUTHORIZED_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_SCIENTIFIC_DESIGN_GATE_ACTIVE__NO_IMPLEMENTATION`
+`ONE_SIDED_LIQUID_SHADOW_EXTENSION_REJECTED__CURRENT_FAIL_CLOSED_PRESERVED__HEILONGJIANG_F0063_NEGATIVE_DERIVATIVE_EMERGENCE_FORENSIC_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Owner decision
+## Latest accepted scientific design result
 
-Owner selected Decision B:
+Accepted candidate:
 
-`OWNER_DECISION__AUTHORIZE_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_EXTENSION_DESIGN_GATE__NO_IMPLEMENTATION_YET`
+`8b10f3859a40c6c123fca5888e5d82abf8f4e5bd`
 
-Authority:
+Acceptance:
 
-`docs/CH5_MP4C_TURN2_HEILONGJIANG_F0063_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_DESIGN_GATE_OWNER_AUTHORIZATION_20260921.md`
+`docs/CH5_MP4C_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_SCIENTIFIC_DESIGN_GATE_ACCEPTANCE_20260921.md`
 
-This authorizes scientific design only.
+The one-sided / nonpositive liquid-shadow extrapolation is scientifically rejected.
 
-The existing two-positive-shadow interior-liquid Z law remains the production authority.
+No root exists for F0063 within the positive part of the local raw derivative hull. The coherent diagnostic root lies only in a D3/KKT branch-feasibility extension and lacks accepted HJB/upwind derivative-selection authority.
 
-## Current scientific anchor
+Current fail-closed remains authoritative.
 
-黑龙江 F0063 remains correctly fail-closed under current authority:
+## Current question
 
-- `p_b^B=-0.0002428532863339202`
-- `p_b^F=0.014463823441006161`
-- current `NO_ADMISSIBLE_POLICY` is accepted;
-- diagnostic positive-transfer root `q_b=0.01801822665826406` remains out-of-authority.
+The unresolved issue is now the origin of the negative liquid derivative itself.
+
+At 黑龙江 checkpoint3 F0063:
+
+`p_b^B=-0.0002428532863339202`.
+
+The next task will independently reconstruct raw derivatives from accepted persisted V arrays across the 黑龙江 initialization/checkpoints and identify the exact numerical transition at which non-monotonicity appears.
 
 ## Active task
 
-`tasks/CH5_MP4C_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_SCIENTIFIC_DESIGN_GATE_20260921.md`
+`tasks/CH5_MP4C_TURN2_HEILONGJIANG_F0063_NEGATIVE_LIQUID_DERIVATIVE_EMERGENCE_FORENSIC_20260921.md`
 
-The task must determine whether a generic one-sided/nonpositive-shadow switching law is scientifically defensible.
+This is zero-science diagnostic attribution only.
 
-It must use zero-science mathematical analysis plus persisted derivative-sign censuses and a cross-cell falsification panel.
+Independent finite differences and persisted sparse-row arithmetic are authorized. Production derivative/selector/HJB/root calls and new linear solves are forbidden.
 
-No production source change, HJB rerun, turn2 continuation or successor implementation is authorized.
+No numerical repair or model continuation is authorized.

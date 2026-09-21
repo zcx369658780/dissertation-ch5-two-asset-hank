@@ -14,47 +14,46 @@ GitHub live main is repository-state authority. Owner is final scientific author
 
 Current status:
 
-`OWNER_AUTHORIZED_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_SCIENTIFIC_DESIGN_GATE_ACTIVE__NO_IMPLEMENTATION`
+`ONE_SIDED_LIQUID_SHADOW_EXTENSION_REJECTED__CURRENT_FAIL_CLOSED_PRESERVED__HEILONGJIANG_F0063_NEGATIVE_DERIVATIVE_EMERGENCE_FORENSIC_ACTIVE`
 
 Results eligibility=`FALSE`.
 
-## Owner decision
+## Latest accepted result
 
-Owner explicitly chose Decision B:
+Candidate:
 
-`OWNER_DECISION__AUTHORIZE_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_EXTENSION_DESIGN_GATE__NO_IMPLEMENTATION_YET`
+`8b10f3859a40c6c123fca5888e5d82abf8f4e5bd`
 
-Owner wording:
+Acceptance:
 
-`同意 B，先做 one-sided nonpositive liquid-shadow scientific design gate，不授权实现。`
+`docs/CH5_MP4C_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_SCIENTIFIC_DESIGN_GATE_ACCEPTANCE_20260921.md`
 
-Formal authority:
+Scientific result:
 
-`docs/CH5_MP4C_TURN2_HEILONGJIANG_F0063_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_DESIGN_GATE_OWNER_AUTHORIZATION_20260921.md`
+- Design 2 branch-feasibility extrapolation is rejected;
+- current two-positive-shadow liquid-Z law remains active;
+- F0063 remains a correct fail-closed result;
+- no Owner adoption or selector implementation follows from the design gate.
 
-## Preserved current authority
-
-F0063 is still a correct fail-closed result under the current two-positive-shadow liquid-Z law.
-
-No new selector behavior has been adopted.
-
-Do not implement the diagnostic root.
+The 408/101 complete-map sign census could not be recovered without derivative reconstruction because accepted compact evidence retained hashes but not numeric raw derivative arrays.
 
 ## Active task
 
-`tasks/CH5_MP4C_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_SCIENTIFIC_DESIGN_GATE_20260921.md`
+`tasks/CH5_MP4C_TURN2_HEILONGJIANG_F0063_NEGATIVE_LIQUID_DERIVATIVE_EMERGENCE_FORENSIC_20260921.md`
 
-This is zero-science design only.
+This task now explicitly authorizes independent finite-difference reconstruction from the persisted 黑龙江 V arrays.
 
-Critical requirements:
+Goal:
 
-- derive the positive local derivative-hull logic;
-- distinguish derivative-selection support from D3 branch-feasibility intervals;
-- analyze viscosity/upwind meaning of extrapolation beyond the sole positive derivative;
-- census persisted sign patterns across the accepted 408 turn1 maps and 101 run004 maps;
-- test any proposed rule on a cross-cell falsification panel;
-- end with either a generic proposal requiring later Owner adoption, a scientific rejection of extension, or bounded ambiguity.
+- bind native/checkpoint0/1/2/3 value identities;
+- reconstruct p_b sign census at each iterate;
+- track F0062/F0063 neighboring V and derivative trajectory;
+- prove whether the 2->3 accepted direct solve introduces the negative slope;
+- verify using persisted direct-update matrix/rhs/next_value without calling a solver;
+- classify exact transient non-monotonicity vs earlier preexistence vs evidence inconsistency.
 
-No production source change, HJB rerun, turn2 continuation, CURRENT edit or successor publication by Builder.
+No production derivative helper, selector, root, HJB update, spsolve, D2 rebuild, KFE, integration or rerun.
 
-After Builder returns, Reviewer must independently accept the design evidence. Even a PASS generic proposal still requires a separate explicit Owner adoption before implementation.
+No implementation fix is authorized.
+
+After Builder completion, Reviewer should accept the forensic before deciding whether any HJB numerical-design gate is scientifically warranted.

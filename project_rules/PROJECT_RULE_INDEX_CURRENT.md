@@ -12,27 +12,27 @@
 2. 本索引
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
-5. `docs/CH5_MP4C_TURN2_HEILONGJIANG_F0063_NONPOSITIVE_BACKWARD_LIQUID_SHADOW_FORENSIC_ACCEPTANCE_20260921.md`
-6. `docs/CH5_MP4C_TURN2_HEILONGJIANG_F0063_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_DESIGN_GATE_OWNER_AUTHORIZATION_20260921.md`
-7. current active task.
+5. `docs/CH5_MP4C_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_SCIENTIFIC_DESIGN_GATE_ACCEPTANCE_20260921.md`
+6. current active task.
 
 Current status:
 
-`OWNER_AUTHORIZED_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_SCIENTIFIC_DESIGN_GATE_ACTIVE__NO_IMPLEMENTATION`.
+`ONE_SIDED_LIQUID_SHADOW_EXTENSION_REJECTED__CURRENT_FAIL_CLOSED_PRESERVED__HEILONGJIANG_F0063_NEGATIVE_DERIVATIVE_EMERGENCE_FORENSIC_ACTIVE`.
 
 Results eligibility=`FALSE`.
 
 Current active Builder task:
 
-`tasks/CH5_MP4C_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_SCIENTIFIC_DESIGN_GATE_20260921.md`.
+`tasks/CH5_MP4C_TURN2_HEILONGJIANG_F0063_NEGATIVE_LIQUID_DERIVATIVE_EMERGENCE_FORENSIC_20260921.md`.
 
 Important current facts:
 
-- current F0063 fail-closed remains correct production authority;
-- Owner selected Decision B;
-- Owner authorizes investigation/design only, not implementation;
-- existing two-positive-shadow interior-Z law remains active production law;
-- no derivative floor, clipping, bracket extension or selector change is authorized;
-- design gate must test genericity using persisted turn1/run004 derivative-sign evidence and a cross-cell panel;
-- HJB/turn2 reruns remain forbidden;
+- one-sided/nonpositive liquid-shadow extrapolation has been scientifically rejected;
+- no generic extension law was proposed;
+- current two-positive-shadow liquid-Z authority remains unchanged;
+- F0063 remains correct fail closed;
+- the requested 408/101 complete-map raw-sign census was unavailable because accepted compact evidence does not retain numeric raw derivative arrays;
+- this limitation does not alter the rejection of extrapolation;
+- next task explicitly authorizes independent derivative reconstruction from persisted 黑龙江 V arrays for diagnostic attribution only;
+- no selector/HJB repair or model rerun is authorized;
 - turn3, K1B, K2, GE and Results remain closed.
