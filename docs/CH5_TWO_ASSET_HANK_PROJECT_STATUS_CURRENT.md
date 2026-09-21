@@ -4,34 +4,38 @@
 
 状态：
 
-`OWNER_ADOPTED_MONOTONICITY_PRESERVING_HJB_RELAXATION__IMPLEMENTATION_AND_PERSISTED_REPLAY_ACTIVE`
+`MONOTONICITY_PRESERVING_HJB_RELAXATION_IMPLEMENTED_AND_ACCEPTED__FRESH_TURN2_RUN005_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Owner-adopted HJB update extension
+## Accepted implementation
 
-Owner adopted:
+Accepted candidate:
 
-`OWNER_ADOPTED__MONOTONICITY_PRESERVING_HJB_RELAXATION__DETERMINISTIC_HALVING_INVARIANT_DOMAIN_BACKTRACK`
+`5dbd04ad4aaf252381283501d762d633f504ba07`
 
-Authority:
+Acceptance:
 
-`docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_OWNER_ADOPTION_20260921.md`
+`docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_IMPLEMENTATION_AND_PERSISTED_REPLAY_ACCEPTANCE_20260921.md`
 
-The full implicit solve remains unique. After it passes the existing backward-error gate, the represented next state must remain inside the strict-positive raw liquid-slope domain.
+The Owner-adopted deterministic global halving invariant-domain law is now implemented in both corrected HJB update paths.
 
-Alpha search is exactly:
+Exact persisted replay:
 
-`1,1/2,1/4,...,2^-52`.
+- 0->1 alpha=1
+- 1->2 alpha=1
+- 2->3 alpha=0.5
+- relaxed 2->3 state SHA-256:
+  `987A20DE9252104ECFAB59436433F0C73EEB8C513589B8B0FA98DB64018B66BF`.
 
-The first passing represented global convex candidate is accepted; otherwise fail closed.
+No fresh HJB runtime was executed by the implementation task.
 
 ## Active task
 
-`tasks/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_IMPLEMENTATION_AND_PERSISTED_REPLAY_20260921.md`
+`tasks/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_FRESH_TURN2_RUN005_20260921.md`
 
-This task implements the adopted law and validates exact parity on already accepted persisted 黑龙江 updates.
+The task executes one fresh canonical turn2 from the exact accepted entering state.
 
-Fresh HJB solves, selector maps, D2/KFE, turn2 continuation and integration remain forbidden.
+It must stop at the first new scientific failure.
 
-After implementation acceptance, a separate fresh-runtime task may be published.
+If all 31 HJB/KFE blocks pass, it may perform exactly one integration and persist the raw turn3 candidate, but turn3 household execution remains forbidden.

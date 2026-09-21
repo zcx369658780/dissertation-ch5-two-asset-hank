@@ -13,25 +13,24 @@
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
 5. `docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_OWNER_ADOPTION_20260921.md`
-6. current active task.
+6. `docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_IMPLEMENTATION_AND_PERSISTED_REPLAY_ACCEPTANCE_20260921.md`
+7. current active task.
 
 Current status:
 
-`OWNER_ADOPTED_MONOTONICITY_PRESERVING_HJB_RELAXATION__IMPLEMENTATION_AND_PERSISTED_REPLAY_ACTIVE`.
+`MONOTONICITY_PRESERVING_HJB_RELAXATION_IMPLEMENTED_AND_ACCEPTED__FRESH_TURN2_RUN005_ACTIVE`.
 
 Results eligibility=`FALSE`.
 
 Current active Builder task:
 
-`tasks/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_IMPLEMENTATION_AND_PERSISTED_REPLAY_20260921.md`.
+`tasks/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_FRESH_TURN2_RUN005_20260921.md`.
 
 Important current facts:
 
-- Owner adopted deterministic global halving invariant-domain relaxation;
-- exact alpha schedule is 1 then 2^-k, k=1..52;
-- all represented raw b slopes must be finite and strictly >0;
-- bitwise stagnation is rejected;
-- one full solve plus arithmetic relaxation remains one HJB update;
-- existing B/D thresholds, cycle rules, 100-update ceiling, D1/D2/D3, selector and terminal KFE laws remain unchanged;
-- active task implements the law and replays accepted persisted updates only;
-- fresh HJB/turn2 execution is still forbidden.
+- Owner-adopted deterministic halving relaxation is implemented and accepted;
+- persisted replay is exact: alpha 1,1,0.5 for 黑龙江 updates 0->1,1->2,2->3;
+- no fresh runtime has yet been executed under the new law;
+- active task is one fresh canonical turn2 run from the exact accepted entering state;
+- first new scientific failure stops globally;
+- if all 31 pass, exactly one integration is allowed and turn3 remains closed.

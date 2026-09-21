@@ -14,41 +14,38 @@ GitHub live main is repository-state authority. Owner is final scientific author
 
 Current status:
 
-`OWNER_ADOPTED_MONOTONICITY_PRESERVING_HJB_RELAXATION__IMPLEMENTATION_AND_PERSISTED_REPLAY_ACTIVE`
+`MONOTONICITY_PRESERVING_HJB_RELAXATION_IMPLEMENTED_AND_ACCEPTED__FRESH_TURN2_RUN005_ACTIVE`
 
 Results eligibility=`FALSE`.
 
-## Owner adoption
+## Accepted implementation
 
-`OWNER_ADOPTED__MONOTONICITY_PRESERVING_HJB_RELAXATION__DETERMINISTIC_HALVING_INVARIANT_DOMAIN_BACKTRACK`
+Candidate:
 
-Authority:
+`5dbd04ad4aaf252381283501d762d633f504ba07`
 
-`docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_OWNER_ADOPTION_20260921.md`
+Acceptance:
 
-Exact rule:
+`docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_IMPLEMENTATION_AND_PERSISTED_REPLAY_ACCEPTANCE_20260921.md`
 
-- retain exactly one full implicit solve per HJB update;
-- require existing solve backward-error gate;
-- test full candidate alpha=1 first;
-- if needed test alpha=2^-k for k=1..52;
-- use global convex combination only;
-- require all 760 represented raw b slopes finite and >0;
-- reject bitwise stagnation;
-- fail closed on exhaustion.
+The adopted helper is production-integrated and exact persisted replay passed.
 
-No derivative floor, clipping, adaptive Delta, second solve or threshold change.
+Protected selector/D1/D2/D3/KFE authority remains unchanged.
 
 ## Active task
 
-`tasks/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_IMPLEMENTATION_AND_PERSISTED_REPLAY_20260921.md`
+`tasks/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_FRESH_TURN2_RUN005_20260921.md`
 
-The task may change only the minimal corrected HJB update source needed to implement the adopted relaxation and then call the new helper on accepted persisted V_old/Vhat pairs.
+This is the first fresh scientific runtime under the new update law.
 
-Required replay outcome is alpha 1, 1, 0.5, with the 2->3 relaxed state SHA-256:
+Use the exact canonical turn2 entering receipt and canonical 31-province order.
 
-`987A20DE9252104ECFAB59436433F0C73EEB8C513589B8B0FA98DB64018B66BF`.
+No warm start from prior run004 HJB states.
 
-No fresh HJB solve or turn2 continuation is authorized.
+Stop at the first new scientific failure.
 
-After Builder returns, Reviewer should accept implementation parity first. Only then may Reviewer publish a separate fresh-runtime continuation task under the standing authorization.
+If 黑龙江 follows the prior pre-relax trajectory through checkpoint2, runtime should show full Vhat hash `1FA952...BFE7` and accepted alpha=0.5 with relaxed state `987A20...6BF`.
+
+If all 31 provinces pass HJB/KFE, perform exactly one integration and stop before turn3.
+
+No K1B/K2/GE/Results.
