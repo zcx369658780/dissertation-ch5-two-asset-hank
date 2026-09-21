@@ -14,43 +14,48 @@ Owner is final scientific authority. ChatGPT is L3 independent Reviewer/scientif
 
 Current status:
 
-`ANHUI_F0364_FALSE_NEGATIVE_ACCEPTED__NARROW_REPAIR_PARITY_TURN4_REEXECUTION_ACTIVE`
+`K1B_TURN4_REPAIRED_ACCEPTED__TURN5_TURN6_BOUNDED_CONTINUATION_ACTIVE`
 
 Results eligibility=`FALSE`.
 
-## Accepted forensic
+## Latest accepted runtime
 
-Candidate `790350270d4ec07d61cc1765c042f2fd33b82b3c`.
+Candidate:
+
+`2155d16ab04f705b1a0da1cc3b49d78e60592c2e`
 
 Acceptance:
 
-`docs/CH5_MP4C_K1B_TURN4_ANHUI_F0364_STRADDLING_ZERO_MAPPED_INTERVAL_FALSE_NEGATIVE_ACCEPTANCE_20260921.md`
+`docs/CH5_MP4C_K1B_TURN4_REPAIRED_REEXECUTION_ACCEPTANCE_20260921.md`
 
-安徽 turn4 checkpoint4 F0364 has a negative-R strict a-drift crossing. The mapped q_b interval straddles zero, but the backward persisted liquid shadow is strictly positive, lies inside the positive-domain intersection, maps to q_a inside the original derivative interval, and passes direction/KKT/finite/D2/Hamiltonian checks.
+The 安徽 F0364 positive-domain-intersection repair is accepted, all 1,227 predecessor policy-map identities remain exact, and fresh K1B turn4 passes 31/31 HJB/KFE plus one integration.
 
-The current whole-interval positivity guard is therefore an accepted implementation false negative.
+## Turn5 entering authority
 
-## Active implementation gate
+Input candidate:
 
-`tasks/CH5_MP4C_K1B_TURN4_ANHUI_F0364_POSITIVE_DOMAIN_INTERSECTION_REPAIR_HISTORICAL_PARITY_AND_REEXECUTION_20260921.md`
+`reports/ch5_mp4c_k1b_turn4_anhui_f0364_positive_domain_intersection_repair_reexecution_20260921_run001/turn5_k1b_input_candidate.json`
 
-Only selector.py may change.
+- blob `7826691387916254ef55b149651d51f8438cab10`
+- file SHA-256 `10CDFE998FBC95F09DA682F5389F268A1569A5FEB345D61470B3E8AA415D01D1`
+- rah SHA `5CAF9166D85198E6923FFCD5A1F92D278C8A1C6CB924E8DD1B843F875E91D88E`.
 
-Before any fresh turn4 HJB science, Builder must pass:
+Turn5 frozen plan:
 
-1. exact normal-selector 安徽 F0364 parity;
-2. exact prior Beijing F0364 parity;
-3. unchanged positive-ratio, active-liquid-face and ratio-zero behavior;
-4. exact historical selected-policy identity replay:
-   - turn1 run004: 408 maps
-   - turn2 run005: 411 maps
-   - turn3: 408 maps
-   - total: 1,227 maps / 981,600 selector evaluations.
+`reports/ch5_mp4c_k1b_turn4_anhui_f0364_positive_domain_intersection_repair_reexecution_20260921_run001/turn5_k1b_frozen_share_payoff_plan.npz`
 
-Historical replay must have zero HJB direct solves, D2/Q, KFE and integration calls.
+- blob `83cee2bafb63d5f608e9d1b76480621a14077cc3`
+- file SHA-256 `57A31EAA59A9E6CCD74E1DD5C18C74496829BA181866E12300CA7EB202890A70`
+- share SHA `2BDF7B8226C8404DB9C7FFEEE3F72F7AE9CA1305905460A4E2430AABEA4D3B06`.
 
-Only if all identities match may one fresh turn4 run from the exact accepted turn4 input/share plan.
+## Current active task
 
-On any first scientific failure, stop. If 31/31 pass, execute exactly one frozen-share K1B/C1 integration, prepare turn5, and stop before turn5 household.
+`tasks/CH5_MP4C_K1B_TURN5_TURN6_BOUNDED_CONTINUATION_DIAGNOSTIC_20260921.md`
+
+Execute turn5 and, only after a complete turn5 PASS, turn6 in the same bounded task. Each turn requires 31/31 HJB/KFE before exactly one integration. Turn6 input/share must be sealed before turn6 household begins.
+
+After a complete turn6, prepare turn7 lagged K1B input/share/payoff and STOP before turn7 household.
+
+Persist trajectory diagnostics from turn3 through turn6, but do not declare convergence or use shrinking changes as a PASS condition.
 
 K2/GE/Results remain unauthorized.

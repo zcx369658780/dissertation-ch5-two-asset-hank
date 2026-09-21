@@ -39,28 +39,28 @@ It must start from the accepted turn-1 initialization state, solve the corrected
 
 ## Current stage
 
-Turn3 remains the latest complete K1B-active PASS.
+The 安徽 F0364 positive-domain-intersection selector repair is accepted and preserves all 1,227 accepted predecessor selected-policy identities.
 
-Turn4 run001 stopped at 安徽 checkpoint4 / F0364 before integration. The subsequent zero-science forensic is accepted and classifies the failure as an implementation false negative caused by the whole-mapped-q_b-interval positivity guard.
+Fresh repaired K1B turn4 is accepted with 31/31 HJB/KFE and one frozen-share K1B/C1 integration.
 
-Accepted forensic candidate:
+Accepted turn5 objects:
 
-`790350270d4ec07d61cc1765c042f2fd33b82b3c`.
-
-Accepted repair scope is narrow: interior-b/interior-a strict crossing with finite negative nonzero R may use the positive-domain intersection of the mapped q_b interval and branch-local liquid-shadow membership. Active liquid faces, ratio zero, positive-ratio behavior and all equations/tolerances remain unchanged.
+- input file SHA `10CDFE998FBC95F09DA682F5389F268A1569A5FEB345D61470B3E8AA415D01D1`
+- share SHA `2BDF7B8226C8404DB9C7FFEEE3F72F7AE9CA1305905460A4E2430AABEA4D3B06`
+- rah SHA `5CAF9166D85198E6923FFCD5A1F92D278C8A1C6CB924E8DD1B843F875E91D88E`.
 
 Active task:
 
-`tasks/CH5_MP4C_K1B_TURN4_ANHUI_F0364_POSITIVE_DOMAIN_INTERSECTION_REPAIR_HISTORICAL_PARITY_AND_REEXECUTION_20260921.md`.
+`tasks/CH5_MP4C_K1B_TURN5_TURN6_BOUNDED_CONTINUATION_DIAGNOSTIC_20260921.md`.
 
-The task first implements the narrow selector repair, then requires exact historical selected-policy identity parity over 1,227 accepted maps. Only after parity may one fresh bounded turn4 reexecution occur.
+The task executes a bounded two-turn continuation, turn5 and turn6, then prepares turn7 and stops before turn7 household.
 
 ## Route after the active task
 
-If parity fails, stop and protect accepted predecessor science.
+If both turns PASS, Reviewer will have four consecutive complete K1B-active turns (turn3-turn6) and can design a dedicated fixed-point/convergence diagnostic without changing economics.
 
-If parity passes but fresh turn4 fails, stop at the exact new first scientific failure.
+If a new failure occurs, stop at the exact first scientific object and resolve it before any longer path.
 
-If turn4 passes, inspect the second complete K1B-active turn and turn5 candidate before considering any longer outer-path diagnostic.
+No convergence claim is authorized by the current task itself.
 
 K2, production-default replacement, full outer fixed point, GE, annual dynamics, shocks, IRFs, welfare and Results remain closed.

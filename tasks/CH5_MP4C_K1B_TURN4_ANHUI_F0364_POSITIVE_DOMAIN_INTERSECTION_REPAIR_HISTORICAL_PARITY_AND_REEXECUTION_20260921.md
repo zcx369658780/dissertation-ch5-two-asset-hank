@@ -10,7 +10,7 @@ Task ID:
 
 `CH5_MP4C_K1B_TURN4_ANHUI_F0364_POSITIVE_DOMAIN_INTERSECTION_REPAIR_HISTORICAL_PARITY_AND_REEXECUTION_20260921`
 
-Status: `ACTIVE`
+Status: `COMPLETED__ACCEPTED_PASS`
 
 Results eligibility: `FALSE`
 
@@ -356,3 +356,18 @@ If all 31 turn4 provinces plus one integration pass:
 Any new scientific failure returns its exact first-failure terminal and stops.
 
 Commit + ordinary non-force push + remote SHA/tree readback + clean worktree, then STOP.
+
+
+## Reviewer closure — 2026-09-21
+
+Candidate `2155d16ab04f705b1a0da1cc3b49d78e60592c2e` is accepted.
+
+Acceptance:
+
+`docs/CH5_MP4C_K1B_TURN4_REPAIRED_REEXECUTION_ACCEPTANCE_20260921.md`.
+
+The narrow selector repair, 1,227-map historical compatibility, repaired turn4 household/KFE and exactly-one integration all pass. Turn5 input/share/payoff is accepted.
+
+Successor:
+
+`tasks/CH5_MP4C_K1B_TURN5_TURN6_BOUNDED_CONTINUATION_DIAGNOSTIC_20260921.md`.

@@ -12,24 +12,24 @@
 2. 本索引
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
-5. `docs/CH5_MP4C_K1B_TURN4_ANHUI_F0364_STRADDLING_ZERO_MAPPED_INTERVAL_FALSE_NEGATIVE_ACCEPTANCE_20260921.md`
+5. `docs/CH5_MP4C_K1B_TURN4_REPAIRED_REEXECUTION_ACCEPTANCE_20260921.md`
 6. current active task.
 
 Current status:
 
-`ANHUI_F0364_FALSE_NEGATIVE_ACCEPTED__NARROW_REPAIR_PARITY_TURN4_REEXECUTION_ACTIVE`.
+`K1B_TURN4_REPAIRED_ACCEPTED__TURN5_TURN6_BOUNDED_CONTINUATION_ACTIVE`.
 
 Results eligibility=`FALSE`.
 
 Current active Builder task:
 
-`tasks/CH5_MP4C_K1B_TURN4_ANHUI_F0364_POSITIVE_DOMAIN_INTERSECTION_REPAIR_HISTORICAL_PARITY_AND_REEXECUTION_20260921.md`.
+`tasks/CH5_MP4C_K1B_TURN5_TURN6_BOUNDED_CONTINUATION_DIAGNOSTIC_20260921.md`.
 
 Important current facts:
 
-- K1B turn3 remains the latest complete K1B-active PASS;
-- turn4 run001 failed at 安徽 checkpoint4 / F0364 before integration;
-- zero-science forensic proves the whole-mapped-interval positivity guard is a false negative;
-- exactly one backward-liquid switching candidate is admissible under existing Owner authority;
-- narrow selector repair is authorized, but fresh turn4 science is gated on exact 1,227-map historical selected-policy identity parity;
-- turn5 household, K2, GE and Results remain unauthorized.
+- narrow 安徽 F0364 selector repair is accepted;
+- historical selected-policy parity is 1227/1227;
+- K1B-active turn3 and repaired turn4 are complete PASS turns;
+- accepted turn5 input/share/payoff objects are frozen;
+- current task executes exactly turn5 and turn6, prepares turn7, and stops before turn7 household;
+- no convergence claim, K2, GE or Results is authorized.
