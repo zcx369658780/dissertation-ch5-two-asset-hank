@@ -1289,8 +1289,23 @@ def _interior_a_switching_candidate(
             )
         )
     )
-    if implied_q_b_interval[0] <= 0.0:
+    negative_ratio_interior_b = ratio < 0.0 and not b_active
+    if implied_q_b_interval[0] <= 0.0 and not negative_ratio_interior_b:
         return None
+    if negative_ratio_interior_b:
+        if (
+            not math.isfinite(p_b)
+            or p_b <= 0.0
+            or p_b < implied_q_b_interval[0]
+            or p_b > implied_q_b_interval[1]
+        ):
+            return None
+        implied_q_a = float(ratio * p_b)
+        if (
+            implied_q_a < derivative_interval[0]
+            or implied_q_a > derivative_interval[1]
+        ):
+            return None
 
     if b_active and b_face == "lower_b":
         liquid_domain = (float(p_b), None)
@@ -1313,10 +1328,17 @@ def _interior_a_switching_candidate(
     def liquid_drift(q_b: float) -> float:
         return _liquid_drift_for_root(q_b, d_z, cell, parameters)
 
-    root_endpoint_drifts = (
-        liquid_drift(root_interval[0]),
-        liquid_drift(root_interval[1]),
-    )
+    if negative_ratio_interior_b:
+        # No root is used at an interior liquid node.  Keep the complete mapped
+        # interval in the receipt while evaluating only the admitted positive
+        # branch-local shadow; a nonpositive mapped endpoint is outside q_b>0.
+        branch_drift = liquid_drift(float(p_b))
+        root_endpoint_drifts = (branch_drift, branch_drift)
+    else:
+        root_endpoint_drifts = (
+            liquid_drift(root_interval[0]),
+            liquid_drift(root_interval[1]),
+        )
     receipt = InteriorASwitchingReceipt(
         endpoint_shadows={
             "backward": float(cell.derivatives.p_a_backward),

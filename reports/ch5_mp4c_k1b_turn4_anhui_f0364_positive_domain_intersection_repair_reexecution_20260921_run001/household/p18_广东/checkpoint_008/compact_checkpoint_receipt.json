@@ -1,0 +1,229 @@
+{
+  "active_constraint_counts": {
+    "lower_b": 19,
+    "lower_b+upper_a": 1,
+    "none": 727,
+    "upper_a": 38,
+    "upper_a+upper_b": 1,
+    "upper_b": 14
+  },
+  "canonical_policy_identity": "ECA25352100044DD4F93FC3CC487E103773A15608A028C9608185A32E4915E83",
+  "checkpoint_metrics": {
+    "B_same_value": 0.00040375181658959536,
+    "D_value_change": 0.0008738268195009891,
+    "checkpoint": 8,
+    "checkpoint_identity_sha256": "D8A3305587FF43E0F44BF7AD6745B3B3DF1C5DC762F446350334B25431C9B4CA",
+    "convergence_thresholds": {
+      "B": 1e-08,
+      "D": 1e-07
+    },
+    "cycle": {
+      "approximate_norm": "||vec_F(V_j-V_(j-k))||_inf",
+      "approximate_period_2_or_3": null,
+      "exact_period": null,
+      "primary_convergence_evaluated_first": true
+    },
+    "d2_receipt": {
+      "arithmetic_tolerance": 2.738301598134356e-14,
+      "checks": {
+        "a_coordinate_within_prospective_bound": true,
+        "b_coordinate_within_prospective_bound": true,
+        "diagonal_construction_error_exact_zero": true,
+        "minimum_offdiagonal_nonnegative": true,
+        "q_one_within_prospective_bound": true,
+        "zero_outward_face_amount": true,
+        "zero_outward_face_count": true,
+        "zero_tolerance_closed_faces_feasible": true
+      },
+      "closed_face_summaries": [
+        {
+          "axis": "b",
+          "boundary_kind": "economic_lower_bound",
+          "inward_count": 20,
+          "max_outward": 0.0,
+          "outward_count": 0,
+          "side": "lower",
+          "tangent_count": 20
+        },
+        {
+          "axis": "b",
+          "boundary_kind": "artificial_upper_state_constraint",
+          "inward_count": 25,
+          "max_outward": 0.0,
+          "outward_count": 0,
+          "side": "upper",
+          "tangent_count": 15
+        },
+        {
+          "axis": "a",
+          "boundary_kind": "economic_lower_bound",
+          "inward_count": 40,
+          "max_outward": 0.0,
+          "outward_count": 0,
+          "side": "lower",
+          "tangent_count": 0
+        },
+        {
+          "axis": "a",
+          "boundary_kind": "artificial_upper_state_constraint",
+          "inward_count": 0,
+          "max_outward": 0.0,
+          "outward_count": 0,
+          "side": "upper",
+          "tangent_count": 40
+        }
+      ],
+      "coordinate_action": {
+        "a": {
+          "bound_field_sha256": "2EC1AA28DBB31F2769074976CA73A089A10453395AD55082927E0D1C9275E055",
+          "error_field_sha256": "A0F6C3EF4EDA50ADE730C4B7DF96AFA0B7A291CBD2B8C45522C419B0AAA888F6",
+          "first_violation_flat_f": null,
+          "max_abs_error": 1.9539925233402755e-14,
+          "max_bound": 1.8899222062688382e-13,
+          "passes": true,
+          "violation_count": 0
+        },
+        "b": {
+          "bound_field_sha256": "D959CCC7E1E89A496162ACD749F2EEDD0900AA758A8E71158045AD91E95686D8",
+          "error_field_sha256": "E03645B415A8B64501AFCF4CBD19FDC55BE1ED0A832F2B9EB4BD07024149CA82",
+          "first_violation_flat_f": null,
+          "max_abs_error": 1.7763568394002505e-14,
+          "max_bound": 8.279618116934756,
+          "passes": true,
+          "violation_count": 0
+        },
+        "fixed_pre_outcome_max_row_terms": 4,
+        "gamma_n": 8.88178419700126e-16
+      },
+      "diagonal_construction_error": 0.0,
+      "max_abs_q_one": 1.7763568394002505e-15,
+      "minimum_offdiagonal": 3.153108590901307e-05,
+      "q_artifact": {
+        "bytes": 24878,
+        "path": "q_generator.npz",
+        "sha256": "6F008B3DF7372C8D5412787F8510F00ADEAE100C2F6A463A93617A1FBCC9019B"
+      },
+      "q_identity": {
+        "data": "FD56BA87286257419309C50930A6F6FAB98FE2C0B6FA05FD95C5B1CC2AB66D7E",
+        "indices": "B5C8A45F497D5E5EE5253AB5E3E1CD1146807AD0C083BDAB84F4902EA90DB058",
+        "indptr": "EC7332E6022D1FCDCABCAFBC0DDC163D41D634E4CCB956504D803071EE5BAE10"
+      },
+      "status": "PASS"
+    },
+    "d2_status": "PASS",
+    "disposition": "CONTINUE_TO_NEXT_UPDATE",
+    "policy_identity_sha256": "ECA25352100044DD4F93FC3CC487E103773A15608A028C9608185A32E4915E83",
+    "primary_convergence_pass": false,
+    "province": "广东",
+    "province_index": 18,
+    "q_identity": {
+      "data": "FD56BA87286257419309C50930A6F6FAB98FE2C0B6FA05FD95C5B1CC2AB66D7E",
+      "indices": "B5C8A45F497D5E5EE5253AB5E3E1CD1146807AD0C083BDAB84F4902EA90DB058",
+      "indptr": "EC7332E6022D1FCDCABCAFBC0DDC163D41D634E4CCB956504D803071EE5BAE10"
+    },
+    "selector_root_ledger": {
+      "interior_a_switching_root_invocations": 0,
+      "interior_z_root_invocations": 793,
+      "joint_switching_root_invocations": 0,
+      "scalar_root_invocations": 3229,
+      "selector_evaluations": 7200
+    },
+    "updates_completed": 8,
+    "value_sha256": "DC6181BFEEF507FEC4A213C9C3ED9953020CDA46571166B2A514AAC7AE757D0A"
+  },
+  "operator_diagnostics": {
+    "difference_inf_norm": 5.391859687216806,
+    "difference_max_abs_entry": 2.695929843608403,
+    "difference_nnz": 2260,
+    "identity": {
+      "data": "FD56BA87286257419309C50930A6F6FAB98FE2C0B6FA05FD95C5B1CC2AB66D7E",
+      "indices": "B5C8A45F497D5E5EE5253AB5E3E1CD1146807AD0C083BDAB84F4902EA90DB058",
+      "indptr": "EC7332E6022D1FCDCABCAFBC0DDC163D41D634E4CCB956504D803071EE5BAE10"
+    },
+    "nnz": 3119,
+    "sparsity_pattern_changed": true,
+    "sparsity_pattern_same_as_previous": false
+  },
+  "policy_diagnostics": {
+    "active_constraint_counts": {
+      "lower_b": 19,
+      "lower_b+upper_a": 1,
+      "none": 727,
+      "upper_a": 38,
+      "upper_a+upper_b": 1,
+      "upper_b": 14
+    },
+    "continuous_field_max_abs_change": {
+      "c": 0.6496902080893818,
+      "d": 0.17565507150630433,
+      "g_a": 0.17565507150630433,
+      "g_b": 0.8702787607486833,
+      "l": 0.014297222134380005,
+      "q_a": 0.0005857581187933558,
+      "q_b": 0.0008754973685135723,
+      "utility": 0.006386201735830335
+    },
+    "identity_change_count": 6,
+    "identity_change_flat_f_zero_based": [
+      438,
+      439,
+      456,
+      459,
+      547,
+      548
+    ],
+    "identity_sha256": "ECA25352100044DD4F93FC3CC487E103773A15608A028C9608185A32E4915E83",
+    "interior_z_marker_counts": {
+      "INTERIOR_LIQUID_Z_ZERO_DRIFT_SWITCH": 6,
+      "none": 794
+    },
+    "transfer_branch_counts": {
+      "negative": 512,
+      "positive": 231,
+      "zero_kink": 57
+    }
+  },
+  "selected_field_sha256": {
+    "c": "48149F0E22354E61F0D16F5B9828232E32DBF24D74FDEE848477C803D9629720",
+    "d": "015DA6BF48ED3933192625210A39206B139A05FAFEAF52EBBA9B521A139879AC",
+    "g_a": "9A2A28A00769435159FE64BDBBDF52B664783F35E07D4CA17B8AB05118EECD00",
+    "g_b": "309A78421175AC80CAC44E22BE480E8E1FF1CFF4A2125ADCC3C26BD7E26DCA33",
+    "l": "C00945D2284A10103B9011DE277864CD29F2F591E395D442E721BC3D4BB3906F",
+    "q_a": "473BF657628831D01B02270DE17FF024CDC349C816732AD9802579DC7B526442",
+    "q_b": "59AFE41100B7A6A0D467AB463B1286A7CE128630D8D260F220F894C29A2F19C1",
+    "utility": "1D9122F7818BEFB872FB67736509A66A080E5646A0D9A601550142D8427217C1"
+  },
+  "selector_outcome_count": 800,
+  "switching": {
+    "interior_a": {
+      "admissible_candidate_count": 0,
+      "candidate_attempt_count": 0,
+      "root_status_counts": {},
+      "selected_flat_indices_f_zero_based": [],
+      "selected_policy_count": 0
+    },
+    "joint": {
+      "admissible_candidate_count": 0,
+      "candidate_attempt_count": 0,
+      "root_status_counts": {},
+      "selected_flat_indices_f_zero_based": [],
+      "selected_policy_count": 0
+    },
+    "liquid_z": {
+      "selected_flat_indices_f_zero_based": [
+        438,
+        457,
+        477,
+        498,
+        558,
+        578
+      ],
+      "selected_policy_count": 6
+    }
+  },
+  "transfer_branch_counts": {
+    "negative": 512,
+    "positive": 231,
+    "zero_kink": 57
+  }
+}
