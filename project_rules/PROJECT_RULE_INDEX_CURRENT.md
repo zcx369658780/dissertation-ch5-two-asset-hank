@@ -12,26 +12,25 @@
 2. 本索引
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
-5. `docs/CH5_MP4C_K1B_TURN3_LAGGED_RAW_RA0_ATTRACTIVENESS_ACTIVATION_SAFETY_GATE_ACCEPTANCE_20260921.md`
-6. `docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_FRESH_TURN2_RUN005_ACCEPTANCE_20260921.md`
-7. K1 design/scoring/raw-payoff authority
-8. current active task.
+5. `docs/CH5_MP4C_K1B_TURN3_CORRECTED_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_ACCEPTANCE_20260921.md`
+6. K1 design/scoring/raw-payoff authority
+7. current active task.
 
 Current status:
 
-`K1B_TURN3_ACTIVATION_SAFETY_ACCEPTED__K1B_TURN3_RUNTIME_ACTIVE`.
+`K1B_TURN3_ACCEPTED__K1B_TURN4_BOUNDED_CONTINUATION_ACTIVE`.
 
 Results eligibility=`FALSE`.
 
 Current active Builder task:
 
-`tasks/CH5_MP4C_K1B_TURN3_CORRECTED_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_20260921.md`.
+`tasks/CH5_MP4C_K1B_TURN4_CORRECTED_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_20260921.md`.
 
 Important current facts:
 
-- corrected turn1 + turn2 bounded prefix is accepted;
-- K1B turn3 lagged raw-ra0 attractiveness safety gate is accepted;
-- frozen turn3 K1B share SHA is `4C3AB67F1982AEB3B707D07C53BB98C5BA54C835234DFEDE45A96B09BC5E3AB6`;
-- entering turn3 K1B household payoff SHA is `CEEFE34C16BA0DFDE9FA0C5590DFBB89084475BD88A8496EC18FEEBA7CB674D2`;
-- current task authorizes exactly one K1B-active corrected turn3 household/KFE batch and, conditional on 31/31 PASS, one frozen-share K1B/C1 integration;
-- turn4 household, K2, GE and Results remain unauthorized.
+- first complete K1B-active corrected turn3 is accepted;
+- turn3 31/31 household HJB/KFE PASS;
+- exact frozen turn4 share SHA is `5E8FB74E547CBF776A70E908F1ECA7F8FD80DD1A7637100BBD159B7F0803028B`;
+- entering turn4 household payoff SHA is `7DE65A71206F52AB3D2DA98D6D01C43A8A69D8B2C423BE49A15D5D287C434BE9`;
+- current task authorizes exactly one further K1B-active turn4 and deterministic turn5 preparation;
+- turn5 household, K2, GE and Results remain unauthorized.

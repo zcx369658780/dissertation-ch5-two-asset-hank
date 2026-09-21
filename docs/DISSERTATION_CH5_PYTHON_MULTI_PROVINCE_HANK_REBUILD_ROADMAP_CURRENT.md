@@ -39,35 +39,41 @@ It must start from the accepted turn-1 initialization state, solve the corrected
 
 ## Current stage
 
-Accepted corrected prefix now contains two complete corrected K1A/C1 turns. The K1B turn3 zero-science activation safety gate is also accepted.
+The first complete K1B-active corrected turn3 is accepted.
 
-Accepted K1B turn3 objects:
+Accepted turn3 runtime candidate:
 
-- frozen destination-by-origin share-plan SHA:
-  `4C3AB67F1982AEB3B707D07C53BB98C5BA54C835234DFEDE45A96B09BC5E3AB6`;
-- entering raw household payoff SHA:
-  `CEEFE34C16BA0DFDE9FA0C5590DFBB89084475BD88A8496EC18FEEBA7CB674D2`;
-- completed-turn2 raw-ra0 attractiveness source:
-  `B3B50A6F0A3876904582DE05354C2DF76A71524FB53E41D4170109B8FCEB8951`.
+`1143cd8eb6e7722d7588107a0d69f68e8dd06df7`.
+
+Turn3 produced:
+
+- 31/31 HJB/KFE PASS;
+- one frozen-share K1B/C1 integration;
+- completed-turn3 raw ra0 SHA `1C587932F4E8471209663D2262DB1BB308857EEEA1198D7868E4721CFB031E8F`;
+- deterministic turn4 K1B input/share candidate.
+
+Accepted turn4 entering objects:
+
+- share SHA `5E8FB74E547CBF776A70E908F1ECA7F8FD80DD1A7637100BBD159B7F0803028B`;
+- rah SHA `7DE65A71206F52AB3D2DA98D6D01C43A8A69D8B2C423BE49A15D5D287C434BE9`.
 
 Active task:
 
-`tasks/CH5_MP4C_K1B_TURN3_CORRECTED_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_20260921.md`.
+`tasks/CH5_MP4C_K1B_TURN4_CORRECTED_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_20260921.md`.
 
-The task executes exactly one K1B-active corrected turn3 and stops before turn4 household execution.
+The task executes one further bounded K1B-active turn4, prepares turn5, and stops before turn5 household.
 
 ## Route after the active task
 
-If PASS:
+If turn4 PASS:
 
-1. accept the first complete K1B-active corrected turn;
-2. inspect the turn3 raw-return pressure, capital redistribution and C1 accounting without using their direction as a pass criterion;
-3. review the deterministic turn4 K1B input/share candidate;
-4. decide whether one further bounded K1B continuation is needed to assess numerical behavior before any longer outer path;
-5. K2 remains later and requires separate scientific authority.
+1. accept or reject the second consecutive K1B-active turn based on the frozen HJB/KFE/accounting/timing gates;
+2. inspect the cross-turn panel for numerical behavior without using improvement direction as a pass condition;
+3. decide whether the evidence is sufficient to design a bounded multi-turn K1B continuation/fixed-point diagnostic, or whether another isolated issue must be resolved first;
+4. K2 remains later and requires separate scientific authority.
 
-If FAIL:
+If turn4 FAIL:
 
-stop at the first exact household/KFE/integration/timing object. Do not restore clipped household payoff, change beta values, add smoothing, retune Delta/tolerance or substitute solver merely to obtain PASS.
+stop at the exact first failing scientific object. Do not change beta values, payoff law, smoothing, labor route, Delta, tolerance or solver to obtain a pass.
 
 Production-default replacement, full outer fixed point, K2, GE, annual dynamics, shocks, IRFs, welfare and Results remain closed.

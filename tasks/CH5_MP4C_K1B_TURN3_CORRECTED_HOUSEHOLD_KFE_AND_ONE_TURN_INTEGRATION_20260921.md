@@ -10,7 +10,7 @@ Task ID:
 
 `CH5_MP4C_K1B_TURN3_CORRECTED_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_20260921`
 
-Status: `ACTIVE`
+Status: `COMPLETED__ACCEPTED_PASS`
 
 Results eligibility: `FALSE`
 
@@ -282,3 +282,18 @@ Success terminal:
 A PASS authorizes Reviewer inspection of one complete K1B-active turn. It does not establish outer fixed-point convergence or authorize K2/GE/Results.
 
 Commit + ordinary non-force push, remote SHA/tree readback, clean worktree, then STOP.
+
+
+## Reviewer closure — 2026-09-21
+
+Candidate `1143cd8eb6e7722d7588107a0d69f68e8dd06df7` is accepted.
+
+Acceptance:
+
+`docs/CH5_MP4C_K1B_TURN3_CORRECTED_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_ACCEPTANCE_20260921.md`.
+
+The first complete K1B-active corrected turn passed all 31 HJB/KFE blocks and exactly one frozen-share K1B/C1 integration. The accepted next entering objects are turn4 share SHA `5E8FB74E547CBF776A70E908F1ECA7F8FD80DD1A7637100BBD159B7F0803028B` and turn4 rah SHA `7DE65A71206F52AB3D2DA98D6D01C43A8A69D8B2C423BE49A15D5D287C434BE9`.
+
+Successor:
+
+`tasks/CH5_MP4C_K1B_TURN4_CORRECTED_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_20260921.md`.
