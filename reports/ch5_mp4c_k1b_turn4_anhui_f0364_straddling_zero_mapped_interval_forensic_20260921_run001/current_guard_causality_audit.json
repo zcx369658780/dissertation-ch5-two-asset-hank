@@ -1,0 +1,27 @@
+{
+  "backward_branch_membership": true,
+  "backward_branch_q_b_strictly_positive": true,
+  "checks": {
+    "all_static_tokens_present": true,
+    "guard_order_exact": true,
+    "interior_a_prerequisite_pass": true,
+    "negative_ratio_active_liquid_face_guard_not_applicable": true,
+    "negative_regime_matches_d_z": true,
+    "ratio_finite_nonzero": true,
+    "strict_crossing_prerequisite_pass": true,
+    "whole_interval_positivity_guard_triggers": true
+  },
+  "earliest_causal_exit": "if implied_q_b_interval[0] <= 0.0: return None",
+  "interpretation": "All earlier strict-crossing, regime, finite-ratio, and interior-b gates pass. The whole-interval lower-end guard exits before branch-local q_b positivity and membership can reach the unchanged candidate checks.",
+  "static_token_positions": {
+    "actual_regime != regime or d_z == 0.0": 1129,
+    "backward_drift > backward_bound": 883,
+    "if \"a\" in faces:": 438,
+    "if implied_q_b_interval[0] <= 0.0:": 1831,
+    "if not math.isfinite(ratio) or ratio == 0.0:": 1505,
+    "if ratio < 0.0 and b_active:": 1574,
+    "root_interval = implied_q_b_interval": 2365
+  },
+  "status": "PASS",
+  "whole_interval_positivity": false
+}

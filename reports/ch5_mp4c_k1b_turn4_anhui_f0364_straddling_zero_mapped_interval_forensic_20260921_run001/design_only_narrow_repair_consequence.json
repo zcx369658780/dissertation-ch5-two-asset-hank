@@ -1,0 +1,14 @@
+{
+  "applicable": true,
+  "implementation_in_this_task": false,
+  "narrow_change": "Replace the whole-mapped-interval positivity rejection with an explicit nonempty intersection of the mapped interval and q_b>0, then require the persisted branch-local q_b to be strictly positive and a member of that intersection before constructing the existing switching candidate.",
+  "preserve": [
+    "q_b>0 without a magnitude floor",
+    "branch-local liquid derivative shadow",
+    "q_a=R*q_b membership in the original closed derivative interval",
+    "direction, transfer KKT, finite, D2, deduplication, and Hamiltonian checks",
+    "active liquid-face behavior",
+    "ratio-zero fail closed"
+  ],
+  "scope": "interior-b / interior-a / finite-negative-R / strict-crossing switching only"
+}

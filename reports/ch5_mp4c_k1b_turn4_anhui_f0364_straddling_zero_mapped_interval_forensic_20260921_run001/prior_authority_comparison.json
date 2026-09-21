@@ -1,0 +1,36 @@
+{
+  "anhui": {
+    "illiquid_interval_topology": "STRADDLES_ZERO",
+    "mapped_q_b_interval": [
+      -0.000267101992455363,
+      0.0016097854371494127
+    ],
+    "mapped_q_b_interval_topology": "STRADDLES_ZERO"
+  },
+  "beijing": {
+    "illiquid_interval_topology": "ENTIRELY_NEGATIVE",
+    "mapped_q_b_interval": [
+      0.004111019263931103,
+      0.006526149020033277
+    ],
+    "mapped_q_b_interval_topology": "ENTIRELY_POSITIVE"
+  },
+  "comparison_conclusion": "The scientific contract is identical. Anhui differs because both the original illiquid interval and its negative-R image straddle zero; this topology alone does not invalidate a positive branch-local shadow.",
+  "contract_checks": {
+    "accepted_no_q_a_positive_requirement": true,
+    "accepted_no_ratio_positive_requirement": true,
+    "accepted_q_a_closed_interval": true,
+    "accepted_q_b_positive": true,
+    "accepted_unchanged_d3_kkt": true,
+    "beijing_classification_a": true,
+    "cost_q_b_positive_domain": true
+  },
+  "shared_authority": [
+    "interior-b/interior-a strict-crossing switching",
+    "q_b must be finite and strictly positive",
+    "q_a must lie in the original closed illiquid derivative interval",
+    "unchanged D3 KKT, direction, finite, D2, and Hamiltonian rules",
+    "negative finite R is permitted; ratio zero remains fail closed"
+  ],
+  "status": "PASS"
+}
