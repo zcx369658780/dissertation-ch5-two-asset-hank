@@ -1,0 +1,42 @@
+{
+  "branch_feasibility_interval": [
+    0.014463823441006161,
+    0.022217644565431547
+  ],
+  "consumption_foc_domain": "q_b=c^(-gamma)>0",
+  "distinction": "D3/KKT feasibility constrains transfer for an assumed q_b; it does not supply a liquid derivative or viscosity super/subgradient.",
+  "extrapolated_candidate_checks": {
+    "a_forward_direction": true,
+    "positive_transfer": true,
+    "q_b_positive": true,
+    "root_residual": -3.95516952522712e-16,
+    "transfer_kkt_residual": 0.0
+  },
+  "extrapolated_root": {
+    "bracket": [
+      0.014463823441006161,
+      0.022217644565431547
+    ],
+    "c": 7.449789080458841,
+    "cost": 0.04618446400350643,
+    "d": 0.2023985483449149,
+    "endpoint_drifts": [
+      -1.5960747263712167,
+      1.3180633849592276
+    ],
+    "g_a": 0.6931065423365061,
+    "g_b": -3.95516952522712e-16,
+    "labor": 0.7191759592423539,
+    "q_a": 0.024439409021974706,
+    "q_b": 0.01801822665826406
+  },
+  "forward_shadow_gap": 0.0035544032172578986,
+  "positive_domain_intersection": "(0,0.014463823441006161]",
+  "positive_endpoint_drift": -1.5960747263712167,
+  "raw_hull": [
+    -0.0002428532863339202,
+    0.014463823441006161
+  ],
+  "strict_monotonicity_proof": "For fixed q_a on the positive-transfer branch, d'(q_b)=-a*q_a/(2*q_b^2)<0 and 1+C_d=q_a/q_b>0. Therefore g_b'(q_b)=w*l/(phi*q_b)+(1/gamma)*q_b^(-1/gamma-1)-d'(1+C_d)>0. Since g_b at the maximum positive raw derivative is -1.5960747263712167, no root exists anywhere in the positive raw-derivative hull.",
+  "zero_in_positive_hull": false
+}
