@@ -10,7 +10,7 @@ Task ID:
 
 `CH5_MP4C_K1B_TURN3_LAGGED_RAW_RA0_ATTRACTIVENESS_ACTIVATION_SAFETY_GATE_20260921`
 
-Status: `ACTIVE`
+Status: `COMPLETED__ACCEPTED_PASS`
 
 Results eligibility: `FALSE`
 
@@ -314,3 +314,18 @@ Persist:
 - report.
 
 Commit + ordinary non-force push, then STOP.
+
+
+## Reviewer closure — 2026-09-21
+
+Candidate `1c2157c1ee381f1bbc21bcebaa0233784e41a5c5` is accepted.
+
+Acceptance:
+
+`docs/CH5_MP4C_K1B_TURN3_LAGGED_RAW_RA0_ATTRACTIVENESS_ACTIVATION_SAFETY_GATE_ACCEPTANCE_20260921.md`.
+
+The zero-science K1B turn3 share/payoff activation contract passed. The exact frozen turn3 share plan is `4C3AB67F1982AEB3B707D07C53BB98C5BA54C835234DFEDE45A96B09BC5E3AB6`; the exact turn3 household payoff is `CEEFE34C16BA0DFDE9FA0C5590DFBB89084475BD88A8496EC18FEEBA7CB674D2`.
+
+Successor:
+
+`tasks/CH5_MP4C_K1B_TURN3_CORRECTED_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_20260921.md`.

@@ -39,34 +39,35 @@ It must start from the accepted turn-1 initialization state, solve the corrected
 
 ## Current stage
 
+Accepted corrected prefix now contains two complete corrected K1A/C1 turns. The K1B turn3 zero-science activation safety gate is also accepted.
+
+Accepted K1B turn3 objects:
+
+- frozen destination-by-origin share-plan SHA:
+  `4C3AB67F1982AEB3B707D07C53BB98C5BA54C835234DFEDE45A96B09BC5E3AB6`;
+- entering raw household payoff SHA:
+  `CEEFE34C16BA0DFDE9FA0C5590DFBB89084475BD88A8496EC18FEEBA7CB674D2`;
+- completed-turn2 raw-ra0 attractiveness source:
+  `B3B50A6F0A3876904582DE05354C2DF76A71524FB53E41D4170109B8FCEB8951`.
+
 Active task:
 
-`tasks/CH5_MP4C_CORRECTED_OPTIONB_INITIAL_TURN_31_PROVINCE_HOUSEHOLD_KFE_AND_K1A_C1_ONE_TURN_INTEGRATION_20260920.md`.
+`tasks/CH5_MP4C_K1B_TURN3_CORRECTED_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_20260921.md`.
 
-The task attempts:
+The task executes exactly one K1B-active corrected turn3 and stops before turn4 household execution.
 
-1. exact 31-province accepted initial-state binding;
-2. source-native numerical initial arrays;
-3. corrected HJB convergence for every province;
-4. terminal source-free KFE for every province;
-5. corrected household aggregates;
-6. one K1A beta2 / C1 / source-faithful-labor / firm turn;
-7. exact raw next-household payoff construction.
-
-No second turn is allowed.
-
-## Route after this task
+## Route after the active task
 
 If PASS:
 
-1. accept the first internally consistent corrected multi-province turn;
-2. inspect the resulting exact turn-2 state and raw payoff vector;
-3. authorize a separately bounded turn-2 corrected household/integration continuation;
-4. only after a bounded multi-turn corrected prefix may K1B `beta_return=.5` attractiveness feedback reopen;
-5. K2 remains later.
+1. accept the first complete K1B-active corrected turn;
+2. inspect the turn3 raw-return pressure, capital redistribution and C1 accounting without using their direction as a pass criterion;
+3. review the deterministic turn4 K1B input/share candidate;
+4. decide whether one further bounded K1B continuation is needed to assess numerical behavior before any longer outer path;
+5. K2 remains later and requires separate scientific authority.
 
 If FAIL:
 
-stop at the exact province/HJB/KFE/integration object. Do not restore clipping, retune Delta or modify the corrected household law merely to obtain a pass.
+stop at the first exact household/KFE/integration/timing object. Do not restore clipped household payoff, change beta values, add smoothing, retune Delta/tolerance or substitute solver merely to obtain PASS.
 
-Production-default replacement, full outer fixed point, GE, annual dynamics, shocks, IRFs, welfare and Results remain closed.
+Production-default replacement, full outer fixed point, K2, GE, annual dynamics, shocks, IRFs, welfare and Results remain closed.
