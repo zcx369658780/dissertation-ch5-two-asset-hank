@@ -14,46 +14,41 @@ GitHub live main is repository-state authority. Owner is final scientific author
 
 Current status:
 
-`ONE_SIDED_LIQUID_SHADOW_EXTENSION_REJECTED__CURRENT_FAIL_CLOSED_PRESERVED__HEILONGJIANG_F0063_NEGATIVE_DERIVATIVE_EMERGENCE_FORENSIC_ACTIVE`
+`F0063_NEGATIVE_SLOPE_EXACT_DIRECT_SOLVE_TRANSIENT_ACCEPTED__MONOTONICITY_PRESERVING_HJB_RELAXATION_DESIGN_GATE_ACTIVE`
 
 Results eligibility=`FALSE`.
 
-## Latest accepted result
+## Latest accepted forensic
 
 Candidate:
 
-`8b10f3859a40c6c123fca5888e5d82abf8f4e5bd`
+`892b3ca9a40bb97b2390dedcab5d7bcd99ca0c21`
 
 Acceptance:
 
-`docs/CH5_MP4C_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_SCIENTIFIC_DESIGN_GATE_ACCEPTANCE_20260921.md`
+`docs/CH5_MP4C_TURN2_HEILONGJIANG_F0063_NEGATIVE_DERIVATIVE_EMERGENCE_FORENSIC_ACCEPTANCE_20260921.md`
 
-Scientific result:
+Accepted facts:
 
-- Design 2 branch-feasibility extrapolation is rejected;
-- current two-positive-shadow liquid-Z law remains active;
-- F0063 remains a correct fail-closed result;
-- no Owner adoption or selector implementation follows from the design gate.
-
-The 408/101 complete-map sign census could not be recovered without derivative reconstruction because accepted compact evidence retained hashes but not numeric raw derivative arrays.
+- native/checkpoint0, checkpoint1 and checkpoint2 have 720/720 interior liquid cells with (+,+) raw derivatives;
+- checkpoint3 has exactly two negative b edges, represented as two (<=0,+) and two (+,<=0) interior cells;
+- the F0062/F0063 shared slope changes from `0.018363586699392222` to `-0.0002428532863339202` in update 2→3;
+- the checkpoint2 direct-solve next_value is bitwise the checkpoint3 state;
+- CSR residual identity and local rows prove the accepted direct solve itself creates the inversion;
+- no artifact or selector repair remains to diagnose.
 
 ## Active task
 
-`tasks/CH5_MP4C_TURN2_HEILONGJIANG_F0063_NEGATIVE_LIQUID_DERIVATIVE_EMERGENCE_FORENSIC_20260921.md`
+`tasks/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_SCIENTIFIC_DESIGN_GATE_20260921.md`
 
-This task now explicitly authorizes independent finite-difference reconstruction from the persisted 黑龙江 V arrays.
+This task evaluates a prospective global convex relaxation/backtracking law only.
 
-Goal:
+It may use persisted V and direct-solve candidate arrays for arithmetic replay, but may not run selector, HJB, D2/KFE or a new linear solve.
 
-- bind native/checkpoint0/1/2/3 value identities;
-- reconstruct p_b sign census at each iterate;
-- track F0062/F0063 neighboring V and derivative trajectory;
-- prove whether the 2->3 accepted direct solve introduces the negative slope;
-- verify using persisted direct-update matrix/rhs/next_value without calling a solver;
-- classify exact transient non-monotonicity vs earlier preexistence vs evidence inconsistency.
+Key scientific question:
 
-No production derivative helper, selector, root, HJB update, spsolve, D2 rebuild, KFE, integration or rerun.
+Can a relaxation law preserve the economically required positive liquid marginal-value domain as an invariant set while leaving the HJB fixed point unchanged?
 
-No implementation fix is authorized.
+If an adoption-ready law results, it still requires separate Owner adoption because the current Owner convergence law explicitly forbids damping/relaxation.
 
-After Builder completion, Reviewer should accept the forensic before deciding whether any HJB numerical-design gate is scientifically warranted.
+No implementation is authorized by the design task.
