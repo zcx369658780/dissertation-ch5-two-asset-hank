@@ -12,25 +12,26 @@
 2. 本索引
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
-5. `docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_OWNER_ADOPTION_20260921.md`
-6. `docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_IMPLEMENTATION_AND_PERSISTED_REPLAY_ACCEPTANCE_20260921.md`
+5. `docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_FRESH_TURN2_RUN005_ACCEPTANCE_20260921.md`
+6. K1 scoring/payoff authority
 7. current active task.
 
 Current status:
 
-`MONOTONICITY_PRESERVING_HJB_RELAXATION_IMPLEMENTED_AND_ACCEPTED__FRESH_TURN2_RUN005_ACTIVE`.
+`CORRECTED_TURN2_RUN005_ACCEPTED__K1B_TURN3_LAGGED_RAW_RA0_ACTIVATION_SAFETY_GATE_ACTIVE`.
 
 Results eligibility=`FALSE`.
 
 Current active Builder task:
 
-`tasks/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_FRESH_TURN2_RUN005_20260921.md`.
+`tasks/CH5_MP4C_K1B_TURN3_LAGGED_RAW_RA0_ATTRACTIVENESS_ACTIVATION_SAFETY_GATE_20260921.md`.
 
 Important current facts:
 
-- Owner-adopted deterministic halving relaxation is implemented and accepted;
-- persisted replay is exact: alpha 1,1,0.5 for 黑龙江 updates 0->1,1->2,2->3;
-- no fresh runtime has yet been executed under the new law;
-- active task is one fresh canonical turn2 run from the exact accepted entering state;
-- first new scientific failure stops globally;
-- if all 31 pass, exactly one integration is allowed and turn3 remains closed.
+- 31/31 turn2 household HJB/KFE passed under adopted relaxation;
+- exactly one K1A/C1 integration passed;
+- raw turn3 K1A payoff is persisted but turn3 household was not run;
+- the bounded corrected multi-turn prefix prerequisite for reopening K1B is satisfied;
+- K1B beta_distance=2, beta_return=.5, completed-lag raw-ra0 z-score, fixed theta and no smoothing are preregistered;
+- active task is zero-science K1B turn3 share/payoff activation safety only;
+- no turn3 HJB or K1B scientific runtime is yet authorized.

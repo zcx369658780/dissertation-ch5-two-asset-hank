@@ -4,38 +4,43 @@
 
 状态：
 
-`MONOTONICITY_PRESERVING_HJB_RELAXATION_IMPLEMENTED_AND_ACCEPTED__FRESH_TURN2_RUN005_ACTIVE`
+`CORRECTED_TURN2_RUN005_ACCEPTED__K1B_TURN3_LAGGED_RAW_RA0_ACTIVATION_SAFETY_GATE_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Accepted implementation
+## Latest accepted runtime
 
 Accepted candidate:
 
-`5dbd04ad4aaf252381283501d762d633f504ba07`
+`45e2e1f0f50c8e681d13e4e22fba4b50a90c8aad`
 
 Acceptance:
 
-`docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_IMPLEMENTATION_AND_PERSISTED_REPLAY_ACCEPTANCE_20260921.md`
+`docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_FRESH_TURN2_RUN005_ACCEPTANCE_20260921.md`
 
-The Owner-adopted deterministic global halving invariant-domain law is now implemented in both corrected HJB update paths.
+Turn2 result:
 
-Exact persisted replay:
+- 31/31 household HJB/KFE PASS;
+- 380 direct HJB updates;
+- 6 one-halving relaxation events;
+- 31/31 terminal unique-closed-class KFE PASS;
+- exactly one K1A/C1 integration PASS;
+- national private-capital residual 0;
+- raw turn3 payoff candidate persisted;
+- turn3 household not run.
 
-- 0->1 alpha=1
-- 1->2 alpha=1
-- 2->3 alpha=0.5
-- relaxed 2->3 state SHA-256:
-  `987A20DE9252104ECFAB59436433F0C73EEB8C513589B8B0FA98DB64018B66BF`.
+## Route transition
 
-No fresh HJB runtime was executed by the implementation task.
+The corrected turn1+turn2 prefix satisfies the roadmap prerequisite for reopening K1B.
+
+K1B remains gated before household runtime.
 
 ## Active task
 
-`tasks/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_FRESH_TURN2_RUN005_20260921.md`
+`tasks/CH5_MP4C_K1B_TURN3_LAGGED_RAW_RA0_ATTRACTIVENESS_ACTIVATION_SAFETY_GATE_20260921.md`
 
-The task executes one fresh canonical turn2 from the exact accepted entering state.
+The task is zero-science.
 
-It must stop at the first new scientific failure.
+It will construct the exact turn3 K1B lagged-return foreign-share plan and household raw-payoff candidate from completed-turn2 raw ra0, with beta_distance=2, beta_return=.5, fixed theta and no smoothing.
 
-If all 31 HJB/KFE blocks pass, it may perform exactly one integration and persist the raw turn3 candidate, but turn3 household execution remains forbidden.
+No HJB/KFE, firm or integration runtime is authorized.
