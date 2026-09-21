@@ -14,50 +14,47 @@ GitHub live main is repository-state authority. Owner is final scientific author
 
 Current status:
 
-`TURN2_HEILONGJIANG_F0063_CURRENT_FAIL_CLOSED_ACCEPTED__OWNER_SCIENTIFIC_DECISION_REQUIRED`
+`OWNER_AUTHORIZED_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_SCIENTIFIC_DESIGN_GATE_ACTIVE__NO_IMPLEMENTATION`
 
 Results eligibility=`FALSE`.
 
-## Latest accepted forensic
+## Owner decision
 
-Candidate:
+Owner explicitly chose Decision B:
 
-`f35f1f5fcb06c9431e812769af24ffc3ca0e3426`
+`OWNER_DECISION__AUTHORIZE_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_EXTENSION_DESIGN_GATE__NO_IMPLEMENTATION_YET`
 
-Acceptance:
+Owner wording:
 
-`docs/CH5_MP4C_TURN2_HEILONGJIANG_F0063_NONPOSITIVE_BACKWARD_LIQUID_SHADOW_FORENSIC_ACCEPTANCE_20260921.md`
+`同意 B，先做 one-sided nonpositive liquid-shadow scientific design gate，不授权实现。`
 
-The forensic establishes:
+Formal authority:
 
-- current F0063 fail-closed is correct under existing authority;
-- there is no implementation false negative;
-- backward liquid derivative/shadow is finite negative while forward is positive;
-- current liquid-Z law requires both one-sided liquid shadows positive;
-- existing interior-a and joint switching laws do not rescue the cell;
-- a coherent diagnostic positive-transfer zero-liquid root exists at `q_b=0.01801822665826406`, but only outside the current derivative-shadow bracket;
-- adopting that root requires a new Owner scientific rule.
+`docs/CH5_MP4C_TURN2_HEILONGJIANG_F0063_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_DESIGN_GATE_OWNER_AUTHORIZATION_20260921.md`
 
-## Owner decision required
+## Preserved current authority
 
-Read:
+F0063 is still a correct fail-closed result under the current two-positive-shadow liquid-Z law.
 
-`docs/CH5_MP4C_TURN2_HEILONGJIANG_F0063_NONPOSITIVE_BACKWARD_LIQUID_SHADOW_OWNER_DECISION_BRIEF_20260921.md`
+No new selector behavior has been adopted.
 
-No Builder task is active.
+Do not implement the diagnostic root.
 
-The three routes are:
+## Active task
 
-A. preserve current two-positive-shadow Z law and keep F0063 fail closed;
+`tasks/CH5_MP4C_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_SCIENTIFIC_DESIGN_GATE_20260921.md`
 
-B. authorize a separate scientific design gate for a generic one-sided/nonpositive-shadow Z extension, with no implementation yet;
+This is zero-science design only.
 
-C. reopen derivative-floor authority as a broader redesign.
+Critical requirements:
 
-Reviewer recommendation in the brief is not an Owner decision.
+- derive the positive local derivative-hull logic;
+- distinguish derivative-selection support from D3 branch-feasibility intervals;
+- analyze viscosity/upwind meaning of extrapolation beyond the sole positive derivative;
+- census persisted sign patterns across the accepted 408 turn1 maps and 101 run004 maps;
+- test any proposed rule on a cross-cell falsification panel;
+- end with either a generic proposal requiring later Owner adoption, a scientific rejection of extension, or bounded ambiguity.
 
-## Resume rule
+No production source change, HJB rerun, turn2 continuation, CURRENT edit or successor publication by Builder.
 
-Do not send Codex a new implementation/reexecution task until Owner records a decision.
-
-After Owner decision, Reviewer should update the authority docs and publish exactly one bounded successor task consistent with that decision.
+After Builder returns, Reviewer must independently accept the design evidence. Even a PASS generic proposal still requires a separate explicit Owner adoption before implementation.

@@ -4,9 +4,25 @@ Date: 2026-09-21
 
 Status:
 
-`OWNER_SCIENTIFIC_DECISION_REQUIRED`
+`OWNER_DECISION_B_RECORDED__SCIENTIFIC_DESIGN_GATE_AUTHORIZED__NO_IMPLEMENTATION`
 
 This document is a decision brief, not an adopted scientific authority.
+
+## Owner decision recorded — Decision B
+
+Owner decision on 2026-09-21:
+
+`OWNER_DECISION__AUTHORIZE_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_EXTENSION_DESIGN_GATE__NO_IMPLEMENTATION_YET`
+
+Owner instruction:
+
+`同意 B，先做 one-sided nonpositive liquid-shadow scientific design gate，不授权实现。`
+
+This authorizes investigation and design only. It does not adopt a new liquid-Z law and does not authorize selector implementation or turn-2 rerun.
+
+Formal authority:
+
+`docs/CH5_MP4C_TURN2_HEILONGJIANG_F0063_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_DESIGN_GATE_OWNER_AUTHORIZATION_20260921.md`
 
 ## Frozen facts
 

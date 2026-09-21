@@ -12,29 +12,27 @@
 2. 本索引
 3. `docs/CH5_TWO_ASSET_HANK_PROJECT_STATUS_CURRENT.md`
 4. `docs/CH5_TWO_ASSET_HANK_SESSION_HANDOFF_CURRENT.md`
-5. `docs/CH5_MP4C_LOWER_A_INTERIOR_Z_COMPOSITION_REPAIR_TURN1_PARITY_AND_TURN2_RUN004_ACCEPTANCE_20260921.md`
-6. `docs/CH5_MP4C_TURN2_HEILONGJIANG_F0063_NONPOSITIVE_BACKWARD_LIQUID_SHADOW_FORENSIC_ACCEPTANCE_20260921.md`
-7. `docs/CH5_MP4C_TURN2_HEILONGJIANG_F0063_NONPOSITIVE_BACKWARD_LIQUID_SHADOW_OWNER_DECISION_BRIEF_20260921.md`.
+5. `docs/CH5_MP4C_TURN2_HEILONGJIANG_F0063_NONPOSITIVE_BACKWARD_LIQUID_SHADOW_FORENSIC_ACCEPTANCE_20260921.md`
+6. `docs/CH5_MP4C_TURN2_HEILONGJIANG_F0063_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_DESIGN_GATE_OWNER_AUTHORIZATION_20260921.md`
+7. current active task.
 
 Current status:
 
-`TURN2_HEILONGJIANG_F0063_CURRENT_FAIL_CLOSED_ACCEPTED__OWNER_SCIENTIFIC_DECISION_REQUIRED`.
+`OWNER_AUTHORIZED_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_SCIENTIFIC_DESIGN_GATE_ACTIVE__NO_IMPLEMENTATION`.
 
 Results eligibility=`FALSE`.
 
 Current active Builder task:
 
-`NONE__OWNER_DECISION_GATE`.
+`tasks/CH5_MP4C_ONE_SIDED_NONPOSITIVE_LIQUID_SHADOW_SCIENTIFIC_DESIGN_GATE_20260921.md`.
 
 Important current facts:
 
-- lower-a/interior-Z composition repair remains accepted;
-- turn1 selected-policy compatibility remains 408/408 exact;
-- fresh turn2 run004 completed the first seven province HJB/KFE blocks;
-- 黑龙江 checkpoint3 flat63 is the first unresolved object;
-- current `NO_ADMISSIBLE_POLICY` is correct under existing authority;
-- `p_b^B<0<p_b^F`, so the current two-positive-shadow liquid-Z trigger fails;
-- a coherent diagnostic positive-transfer zero-liquid root exists only outside the current derivative-shadow bracket;
-- using that root requires a new Owner scientific law;
-- no production repair or rerun is authorized;
-- no Builder task is active until Owner decision.
+- current F0063 fail-closed remains correct production authority;
+- Owner selected Decision B;
+- Owner authorizes investigation/design only, not implementation;
+- existing two-positive-shadow interior-Z law remains active production law;
+- no derivative floor, clipping, bracket extension or selector change is authorized;
+- design gate must test genericity using persisted turn1/run004 derivative-sign evidence and a cross-cell panel;
+- HJB/turn2 reruns remain forbidden;
+- turn3, K1B, K2, GE and Results remain closed.
