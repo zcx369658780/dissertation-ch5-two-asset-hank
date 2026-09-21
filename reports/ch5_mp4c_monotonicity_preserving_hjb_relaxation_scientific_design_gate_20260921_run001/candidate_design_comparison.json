@@ -1,0 +1,29 @@
+{
+  "designs": [
+    {
+      "assessment": "Current authority; exits the positive-slope domain at update 2->3.",
+      "design": 0,
+      "rule": "alpha=1"
+    },
+    {
+      "assessment": "Proposed generic law: deterministic, global, no clipping, finite, fail closed. Halving is a conventional contraction factor rather than a unique scientific constant.",
+      "design": 1,
+      "rule": "first passing alpha in 1,1/2,...,2^-52"
+    },
+    {
+      "assessment": "Maximizes the real-arithmetic step but the strict endpoint is forbidden and one predecessor fails after represented convex combination; near-zero slopes also create q_b-domain conditioning risk. Retained as diagnostic comparator.",
+      "design": 2,
+      "rule": "critical alpha from all edge inequalities"
+    },
+    {
+      "assessment": "Locally alters values or derivatives and therefore the iterate/equations; comparator only.",
+      "design": 3,
+      "rule": "projection/clipping"
+    },
+    {
+      "assessment": "Changes the numerical map and requires another solve; comparator only.",
+      "design": 4,
+      "rule": "adaptive Delta and new solve"
+    }
+  ]
+}

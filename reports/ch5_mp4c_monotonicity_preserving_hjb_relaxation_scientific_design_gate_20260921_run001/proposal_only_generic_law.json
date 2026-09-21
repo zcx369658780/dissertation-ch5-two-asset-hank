@@ -1,0 +1,10 @@
+{
+  "evidence_contract": "Persist full-candidate hash, each attempted alpha and minimum/count census, accepted relaxed-state hash, value-change norm, and unchanged solve receipt.",
+  "failure_terminal": "FAIL__MONOTONICITY_PRESERVING_HJB_RELAXATION_EXHAUSTED",
+  "future_plan": "Only after Owner adoption: implement narrowly, test exact persisted replay, independently review, then authorize any fresh HJB/turn2 execution in a separate task.",
+  "no_floor": "No positive slope magnitude threshold is imposed; comparison is strictly >0. Bitwise no-progress is rejected separately as a representation failure.",
+  "selection": "If alpha=1 passes, accept it. Otherwise test alpha=2^-k in increasing k=1..52 using exactly (1-alpha)*V_old+alpha*Vhat; accept the first candidate whose 760 raw b slopes are finite and >0 and whose represented state differs from V_old.",
+  "status": "PROPOSAL_ONLY__OWNER_ADOPTION_REQUIRED",
+  "trigger": "After the single full implicit solve passes the existing <=1e-12 backward-error gate, test all 760 raw b edges of Vhat using the repository grid and strict >0 comparison.",
+  "why_52": "The finite ceiling is tied prospectively to binary64 significand resolution; it is an operation/fail-closed bound, not an economic derivative floor."
+}
