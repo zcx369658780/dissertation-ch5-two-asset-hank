@@ -14,41 +14,42 @@ GitHub live main is repository-state authority. Owner is final scientific author
 
 Current status:
 
-`F0063_NEGATIVE_SLOPE_EXACT_DIRECT_SOLVE_TRANSIENT_ACCEPTED__MONOTONICITY_PRESERVING_HJB_RELAXATION_DESIGN_GATE_ACTIVE`
+`MONOTONICITY_PRESERVING_HJB_RELAXATION_PROPOSAL_ACCEPTED__OWNER_SCIENTIFIC_DECISION_REQUIRED`
 
 Results eligibility=`FALSE`.
 
-## Latest accepted forensic
+## Latest accepted candidate
 
-Candidate:
-
-`892b3ca9a40bb97b2390dedcab5d7bcd99ca0c21`
+`9ad1c844b331ae4b131b57aeb70ade127b82000e`
 
 Acceptance:
 
-`docs/CH5_MP4C_TURN2_HEILONGJIANG_F0063_NEGATIVE_DERIVATIVE_EMERGENCE_FORENSIC_ACCEPTANCE_20260921.md`
+`docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_SCIENTIFIC_DESIGN_GATE_ACCEPTANCE_20260921.md`
 
-Accepted facts:
+The design is accepted as adoption-ready but is not yet authority.
 
-- native/checkpoint0, checkpoint1 and checkpoint2 have 720/720 interior liquid cells with (+,+) raw derivatives;
-- checkpoint3 has exactly two negative b edges, represented as two (<=0,+) and two (+,<=0) interior cells;
-- the F0062/F0063 shared slope changes from `0.018363586699392222` to `-0.0002428532863339202` in update 2→3;
-- the checkpoint2 direct-solve next_value is bitwise the checkpoint3 state;
-- CSR residual identity and local rows prove the accepted direct solve itself creates the inversion;
-- no artifact or selector repair remains to diagnose.
+## Proposed law
 
-## Active task
+After the existing full solve passes its backward-error gate:
 
-`tasks/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_SCIENTIFIC_DESIGN_GATE_20260921.md`
+- test alpha=1;
+- if any raw b slope is nonfinite or <=0, test alpha=1/2,1/4,...,2^-52;
+- construct one global convex combination for each alpha;
+- accept the first represented state with all 760 raw b slopes finite and >0 and not bitwise identical to V_old;
+- otherwise fail closed.
 
-This task evaluates a prospective global convex relaxation/backtracking law only.
+Existing convergence thresholds and fixed-point target remain unchanged.
 
-It may use persisted V and direct-solve candidate arrays for arithmetic replay, but may not run selector, HJB, D2/KFE or a new linear solve.
+Persisted 黑龙江 replay chooses alpha=1, 1, 0.5 for the first three updates.
 
-Key scientific question:
+## Owner decision required
 
-Can a relaxation law preserve the economically required positive liquid marginal-value domain as an invariant set while leaving the HJB fixed point unchanged?
+Read:
 
-If an adoption-ready law results, it still requires separate Owner adoption because the current Owner convergence law explicitly forbids damping/relaxation.
+`docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_OWNER_DECISION_BRIEF_20260921.md`
 
-No implementation is authorized by the design task.
+Reviewer recommendation: adopt the proposal.
+
+No Builder task is active until Owner decides.
+
+If Owner adopts, Reviewer should publish one bounded implementation + exact persisted replay task first. Fresh HJB/turn2 continuation should remain a later gated step after implementation acceptance.

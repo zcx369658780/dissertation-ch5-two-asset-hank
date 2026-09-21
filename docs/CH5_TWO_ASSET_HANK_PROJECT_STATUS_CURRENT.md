@@ -4,38 +4,38 @@
 
 状态：
 
-`F0063_NEGATIVE_SLOPE_EXACT_DIRECT_SOLVE_TRANSIENT_ACCEPTED__MONOTONICITY_PRESERVING_HJB_RELAXATION_DESIGN_GATE_ACTIVE`
+`MONOTONICITY_PRESERVING_HJB_RELAXATION_PROPOSAL_ACCEPTED__OWNER_SCIENTIFIC_DECISION_REQUIRED`
 
 Results eligibility=`FALSE`。
 
-## Latest accepted forensic
+## Latest accepted design
 
 Accepted candidate:
 
-`892b3ca9a40bb97b2390dedcab5d7bcd99ca0c21`
+`9ad1c844b331ae4b131b57aeb70ade127b82000e`
 
 Acceptance:
 
-`docs/CH5_MP4C_TURN2_HEILONGJIANG_F0063_NEGATIVE_DERIVATIVE_EMERGENCE_FORENSIC_ACCEPTANCE_20260921.md`
+`docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_SCIENTIFIC_DESIGN_GATE_ACCEPTANCE_20260921.md`
 
-The accepted checkpoint2→3 implicit direct solve exactly creates the first negative liquid finite-difference slopes.
+Accepted proposal:
 
-This is not a serialization, finite-difference or linear-solve-accuracy defect.
+- one full implicit solve remains mandatory;
+- if its represented V candidate has all 760 raw b slopes finite and strictly positive, accept alpha=1;
+- otherwise test global convex relaxation alpha=1/2,1/4,...,2^-52;
+- accept the first represented candidate with all raw b slopes >0 and no bitwise stagnation;
+- otherwise fail closed.
 
-## Scientific implication
+Persisted replay leaves updates 0->1 and 1->2 unchanged and accepts alpha=0.5 for 2->3.
 
-The upstream numerical iteration law is now the unresolved object.
+## Owner decision gate
 
-The current Owner-adopted law freezes full implicit updates at Delta=1000 and explicitly forbids damping, relaxation, adaptive Delta and line search.
+Decision brief:
 
-Any monotonicity-preserving update safeguard therefore requires a new scientific/numerical design and later Owner adoption before implementation.
+`docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_OWNER_DECISION_BRIEF_20260921.md`
 
-## Active task
+No Builder task is active.
 
-`tasks/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_SCIENTIFIC_DESIGN_GATE_20260921.md`
+The current Owner-adopted full-update / no-relaxation law remains authoritative until Owner explicitly adopts or rejects the proposal.
 
-This is zero-science design only.
-
-It will test whether a global convex relaxation of the existing solved candidate can preserve strict positive raw liquid slopes while keeping the same fixed-point equations.
-
-No production change, new linear solve or turn2 rerun is authorized.
+No implementation, fresh HJB continuation, turn2 replay, turn3, K1B, K2, GE or Results is authorized.
