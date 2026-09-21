@@ -14,60 +14,51 @@ GitHub live main is repository-state authority. Owner is final scientific author
 
 Current status:
 
-`K1B_TURN3_ACCEPTED__K1B_TURN4_BOUNDED_CONTINUATION_ACTIVE`
+`K1B_TURN4_FIRST_FAILURE_ACCEPTED__ANHUI_F0364_FORENSIC_ACTIVE`
 
 Results eligibility=`FALSE`.
 
-## Latest accepted K1B runtime
+## Last complete K1B-active turn
 
-Candidate:
+Turn3 candidate:
 
 `1143cd8eb6e7722d7588107a0d69f68e8dd06df7`
 
+Turn3 remains accepted with 31/31 HJB/KFE and one K1B/C1 integration.
+
+## Turn4 failed evidence
+
+Candidate:
+
+`cc8f1ba22aa2b010325dce6e6c282802f5157c10`
+
 Acceptance:
 
-`docs/CH5_MP4C_K1B_TURN3_CORRECTED_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_ACCEPTANCE_20260921.md`
+`docs/CH5_MP4C_K1B_TURN4_ANHUI_F0364_FIRST_FAILURE_ACCEPTANCE_20260921.md`
 
-Turn3 accepted facts:
+Turn4 stopped correctly at the first failure:
 
-- 31/31 corrected HJB/KFE PASS;
-- 377 direct updates;
-- six alpha=.5 relaxation events, no exhaustion;
-- unique-closed-class KFE 31/31 PASS;
-- frozen turn3 S_K1B reused exactly;
-- origin/destination private capital `140310000 / 140310000`;
-- national residual `0.0`;
-- C1 GovInv total `2341682906.900551`;
-- completed-turn3 raw ra0 SHA `1C587932F4E8471209663D2262DB1BB308857EEEA1198D7868E4721CFB031E8F`;
-- no same-turn feedback;
-- no K2/GE/Results.
+- 安徽
+- checkpoint 4
+- flat 364
+- `v004_f0364_b004_a018_z000`
+- SHA `F1170662F50FEB38BB6D26B233725B672B12397EA891C15CBBDC559DBA6DCB65`
+- `NO_ADMISSIBLE_POLICY`.
 
-## Turn4 entering authority
+Only 11 provinces completed HJB/KFE. Integration and turn5 preparation never ran.
 
-Input:
-
-`reports/ch5_mp4c_k1b_turn3_corrected_household_kfe_and_one_turn_integration_20260921_run001/turn4_k1b_input_candidate.json`
-
-- Git blob `ee779174c614980a0e6182d710ea5aaec8afb6f5`
-- file SHA-256 `35CA47135CF3B17ADACDD6C39FBA30CC0E55AE1C103C5F42064D6722AF28310C`
-- rah SHA `7DE65A71206F52AB3D2DA98D6D01C43A8A69D8B2C423BE49A15D5D287C434BE9`.
-
-Frozen turn4 share plan:
-
-`reports/ch5_mp4c_k1b_turn3_corrected_household_kfe_and_one_turn_integration_20260921_run001/turn4_k1b_frozen_share_payoff_plan.npz`
-
-- Git blob `a37647bb68ed1bec6259071d7035f8de07591c9f`
-- file SHA-256 `41B7DDA4DE2C33C6EADFAB3F324C3592D119B0E91DC7AE8E23968653A881522A`
-- S_K1B SHA `5E8FB74E547CBF776A70E908F1ECA7F8FD80DD1A7637100BBD159B7F0803028B`.
+The backward-liquid negative-transfer ordinary pair has strict a-drift crossing, while the mapped-domain behavior has not yet been independently classified.
 
 ## Current active task
 
-`tasks/CH5_MP4C_K1B_TURN4_CORRECTED_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_20260921.md`
+`tasks/CH5_MP4C_K1B_TURN4_ANHUI_F0364_STRADDLING_ZERO_MAPPED_INTERVAL_FORENSIC_20260921.md`
 
-Execute exactly one K1B-active turn4 using the same frozen science and numerical laws. Only after 31/31 HJB/KFE PASS may one integration run. Then construct turn5 lagged K1B score/share/payoff candidate and STOP before turn5 household.
+The task is a zero-science scalar forensic. It binds the exact 安徽 failure cell, prior Beijing F0364 authority, and current selector/cost source.
 
-The task includes a cross-turn diagnostic panel but no direction or convergence improvement is an acceptance criterion.
+Its key question is whether the current whole-mapped-q_b-interval positivity guard rejects an otherwise admissible positive branch-local liquid shadow when the mapped interval straddles zero.
 
-On return, Reviewer should inspect: ancestry/scope; 31 HJB/KFE terminals; relaxation ledger; exact frozen turn4 S reuse; C1; raw-ra0 timing; turn3-vs-turn4 diagnostics; deterministic turn5 candidate; manifest/readback.
+No selector modification or turn4 rerun is authorized until this forensic is accepted.
 
-K2, full outer fixed point and Results remain unauthorized.
+On Builder return, Reviewer should inspect exact arithmetic, mapped interval topology, branch-local q_b/q_a membership, downstream direction/KKT/D2 admissibility, guard causality, prior-authority comparison, manifest/readback and zero-call ledger.
+
+K2/GE/Results remain closed.

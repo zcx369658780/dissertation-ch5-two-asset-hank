@@ -10,7 +10,7 @@ Task ID:
 
 `CH5_MP4C_K1B_TURN4_CORRECTED_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_20260921`
 
-Status: `ACTIVE`
+Status: `COMPLETED_FAIL_ACCEPTED`
 
 Results eligibility: `FALSE`
 
@@ -293,3 +293,20 @@ Success:
 On any provenance/HJB/KFE/conservation/C1/firm/timing/source-freeze failure, fail closed at the first failing scientific object. No rescue/tuning.
 
 Commit + ordinary non-force push + remote SHA/tree readback + clean worktree, then STOP.
+
+
+## Reviewer closure — 2026-09-21
+
+Candidate `cc8f1ba22aa2b010325dce6e6c282802f5157c10` is accepted as first-failure evidence.
+
+Acceptance:
+
+`docs/CH5_MP4C_K1B_TURN4_ANHUI_F0364_FIRST_FAILURE_ACCEPTANCE_20260921.md`.
+
+The accepted failure is 安徽 checkpoint4 / F0364 `NO_ADMISSIBLE_POLICY`. No turn4 integration or turn5 preparation occurred.
+
+Successor:
+
+`tasks/CH5_MP4C_K1B_TURN4_ANHUI_F0364_STRADDLING_ZERO_MAPPED_INTERVAL_FORENSIC_20260921.md`.
+
+The successor is zero-science forensic only; no selector repair or rerun is authorized by this closure.

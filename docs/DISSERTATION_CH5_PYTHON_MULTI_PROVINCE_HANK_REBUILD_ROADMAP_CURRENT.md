@@ -39,41 +39,34 @@ It must start from the accepted turn-1 initialization state, solve the corrected
 
 ## Current stage
 
-The first complete K1B-active corrected turn3 is accepted.
+The first complete K1B-active turn3 remains accepted.
 
-Accepted turn3 runtime candidate:
+A second bounded K1B-active turn4 was attempted and stopped at the first scientific failure before integration.
 
-`1143cd8eb6e7722d7588107a0d69f68e8dd06df7`.
+Accepted failed evidence:
 
-Turn3 produced:
-
-- 31/31 HJB/KFE PASS;
-- one frozen-share K1B/C1 integration;
-- completed-turn3 raw ra0 SHA `1C587932F4E8471209663D2262DB1BB308857EEEA1198D7868E4721CFB031E8F`;
-- deterministic turn4 K1B input/share candidate.
-
-Accepted turn4 entering objects:
-
-- share SHA `5E8FB74E547CBF776A70E908F1ECA7F8FD80DD1A7637100BBD159B7F0803028B`;
-- rah SHA `7DE65A71206F52AB3D2DA98D6D01C43A8A69D8B2C423BE49A15D5D287C434BE9`.
+- candidate `cc8f1ba22aa2b010325dce6e6c282802f5157c10`
+- 安徽 checkpoint4 / F0364
+- outcome `NO_ADMISSIBLE_POLICY`
+- 11/31 provinces completed HJB/KFE
+- no turn4 integration
+- no turn5 candidate
+- no production-source change or scientific retry.
 
 Active task:
 
-`tasks/CH5_MP4C_K1B_TURN4_CORRECTED_HOUSEHOLD_KFE_AND_ONE_TURN_INTEGRATION_20260921.md`.
+`tasks/CH5_MP4C_K1B_TURN4_ANHUI_F0364_STRADDLING_ZERO_MAPPED_INTERVAL_FORENSIC_20260921.md`.
 
-The task executes one further bounded K1B-active turn4, prepares turn5, and stops before turn5 household.
+The task is zero-science and classifies the 安徽 F0364 mapped-q_b interval/domain issue under the already accepted negative-ratio interior-a switching authority.
 
 ## Route after the active task
 
-If turn4 PASS:
+If the forensic confirms a guard false negative, Reviewer may authorize a narrow interior-b selector implementation correction plus exact historical compatibility and bounded failure-cell/turn4 replay.
 
-1. accept or reject the second consecutive K1B-active turn based on the frozen HJB/KFE/accounting/timing gates;
-2. inspect the cross-turn panel for numerical behavior without using improvement direction as a pass condition;
-3. decide whether the evidence is sufficient to design a bounded multi-turn K1B continuation/fixed-point diagnostic, or whether another isolated issue must be resolved first;
-4. K2 remains later and requires separate scientific authority.
+If the forensic confirms scientific infeasibility, turn4 remains blocked and the route returns to scientific design rather than numerical rescue.
 
-If turn4 FAIL:
+If Owner authority is genuinely ambiguous, stop for Owner decision.
 
-stop at the exact first failing scientific object. Do not change beta values, payoff law, smoothing, labor route, Delta, tolerance or solver to obtain a pass.
+No beta/payoff/smoothing/labor/Delta/tolerance/solver change is allowed merely to obtain convergence.
 
-Production-default replacement, full outer fixed point, K2, GE, annual dynamics, shocks, IRFs, welfare and Results remain closed.
+K2, production-default replacement, full outer fixed point, GE, annual dynamics, shocks, IRFs, welfare and Results remain closed.
