@@ -70,6 +70,7 @@ from .nonlinear_continuation import (
     detect_approximate_cycle,
     detect_exact_cycle,
     normwise_backward_error,
+    monotonicity_preserving_relaxation,
     primary_converged,
 )
 from .option_a_step import BoundOptionAInputs
@@ -575,6 +576,7 @@ def _direct_update(
     utility: np.ndarray,
     q: sparse.csr_matrix,
     rho: float,
+    b_nodes: np.ndarray,
     ledger: dict[str, Any],
 ) -> tuple[np.ndarray, dict[str, Any]]:
     matrix = (rho + 1.0 / DELTA) * sparse.eye(N, format="csr") - q
@@ -598,7 +600,7 @@ def _direct_update(
         )
     backward = normwise_backward_error(matrix, solved, rhs)
     residual = backward.pop("residual")
-    next_value = solved.reshape(SHAPE, order="F")
+    full_next_value = solved.reshape(SHAPE, order="F")
     passed = bool(
         np.isfinite(backward["normwise_backward_error"])
         and backward["normwise_backward_error"] <= BACKWARD_ERROR_TOLERANCE
@@ -609,7 +611,7 @@ def _direct_update(
         matrix_indices=matrix.indices,
         matrix_indptr=matrix.indptr,
         rhs=rhs,
-        next_value=next_value,
+        next_value=full_next_value,
         residual=residual,
     )
     receipt = {
@@ -620,13 +622,17 @@ def _direct_update(
         **backward,
         "backward_error_threshold_inclusive": BACKWARD_ERROR_TOLERANCE,
         "rhs_sha256": _field_sha256(rhs),
-        "next_value_sha256": _field_sha256(next_value),
+        "next_value_sha256": _field_sha256(full_next_value),
         "residual_sha256": _field_sha256(residual),
     }
     _write_json(directory / "direct_solve_receipt.json", receipt)
     if not passed:
         raise FailClosed("FAIL__DIRECT_HJB_BACKWARD_ERROR", receipt)
-    return next_value, receipt
+    accepted_next_value, relaxation_receipt = monotonicity_preserving_relaxation(
+        value, full_next_value, b_nodes
+    )
+    _write_json(directory / "relaxation_receipt.json", relaxation_receipt)
+    return accepted_next_value, receipt
 
 
 def _solve_province(
@@ -830,7 +836,13 @@ def _solve_province(
                 {"province_index": index, "province": province, "checkpoint": checkpoint, "metrics": metrics},
             )
         next_value, solve = _direct_update(
-            directory, values[-1], arrays["utility"], q, inputs.scalars["rho"], ledger
+            directory,
+            values[-1],
+            arrays["utility"],
+            q,
+            inputs.scalars["rho"],
+            grid.b,
+            ledger,
         )
         _write_json(directory / "direct_solve_receipt.json", {
             **solve, "checkpoint_from": checkpoint, "checkpoint_to": checkpoint + 1

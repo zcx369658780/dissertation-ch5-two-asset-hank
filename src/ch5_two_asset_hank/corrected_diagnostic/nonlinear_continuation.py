@@ -90,6 +90,116 @@ class FailClosed(RuntimeError):
         self.detail = detail or {}
 
 
+MONOTONICITY_RELAXATION_MAX_HALVINGS = 52
+MONOTONICITY_RELAXATION_EXHAUSTED = (
+    "FAIL__MONOTONICITY_PRESERVING_HJB_RELAXATION_EXHAUSTED"
+)
+
+
+def _raw_b_edge_census(value: np.ndarray, b_nodes: np.ndarray) -> dict[str, Any]:
+    slopes = (value[1:] - value[:-1]) / np.diff(b_nodes)[:, None, None]
+    finite = np.isfinite(slopes)
+    finite_values = slopes[finite]
+    return {
+        "edge_count": int(slopes.size),
+        "finite_edges": int(np.sum(finite)),
+        "positive_edges": int(np.sum(finite & (slopes > 0.0))),
+        "zero_edges": int(np.sum(finite & (slopes == 0.0))),
+        "negative_edges": int(np.sum(finite & (slopes < 0.0))),
+        "nonfinite_edges": int(np.sum(~finite)),
+        "minimum_raw_b_slope": (
+            None if finite_values.size == 0 else float(np.min(finite_values))
+        ),
+        "strict_positive_pass": bool(np.all(finite) and np.all(slopes > 0.0)),
+    }
+
+
+def _field_bitwise_identical(left: np.ndarray, right: np.ndarray) -> bool:
+    left_bytes = np.asarray(left, dtype="<f8").tobytes(order="F")
+    right_bytes = np.asarray(right, dtype="<f8").tobytes(order="F")
+    return left_bytes == right_bytes
+
+
+def monotonicity_preserving_relaxation(
+    value_old: np.ndarray,
+    full_candidate: np.ndarray,
+    b_nodes: np.ndarray,
+) -> tuple[np.ndarray, dict[str, Any]]:
+    """Apply the Owner-adopted global deterministic-halving relaxation law."""
+
+    old = np.asarray(value_old)
+    full = np.asarray(full_candidate)
+    nodes = np.asarray(b_nodes)
+    invalid = {
+        "value_old_shape": list(old.shape),
+        "full_candidate_shape": list(full.shape),
+        "b_nodes_shape": list(nodes.shape),
+        "value_old_finite": bool(np.all(np.isfinite(old))),
+        "full_candidate_finite": bool(np.all(np.isfinite(full))),
+        "b_nodes_finite": bool(np.all(np.isfinite(nodes))),
+        "b_nodes_strictly_increasing": bool(
+            nodes.shape == (SHAPE[0],)
+            and np.all(np.isfinite(nodes))
+            and np.all(np.diff(nodes) > 0.0)
+        ),
+    }
+    if (
+        old.shape != SHAPE
+        or full.shape != SHAPE
+        or nodes.shape != (SHAPE[0],)
+        or not invalid["value_old_finite"]
+        or not invalid["full_candidate_finite"]
+        or not invalid["b_nodes_strictly_increasing"]
+    ):
+        raise FailClosed(
+            "FAIL__MONOTONICITY_PRESERVING_HJB_RELAXATION_INPUT_INVALID",
+            invalid,
+        )
+
+    attempts: list[dict[str, Any]] = []
+    for halvings in range(MONOTONICITY_RELAXATION_MAX_HALVINGS + 1):
+        alpha = 2.0 ** (-halvings)
+        candidate = full if halvings == 0 else (1.0 - alpha) * old + alpha * full
+        census = _raw_b_edge_census(candidate, nodes)
+        stagnated = _field_bitwise_identical(candidate, old)
+        attempt = {
+            "alpha": alpha,
+            "halvings": halvings,
+            "candidate_sha256": _field_sha256(candidate),
+            "bitwise_identical_to_value_old": stagnated,
+            **census,
+        }
+        attempts.append(attempt)
+        if census["strict_positive_pass"] and not stagnated:
+            receipt = {
+                "status": "PASS",
+                "law": "OWNER_ADOPTED_DETERMINISTIC_HALVING_INVARIANT_DOMAIN_BACKTRACK",
+                "formula": "(1-alpha)*V_old+alpha*Vhat",
+                "maximum_halvings": MONOTONICITY_RELAXATION_MAX_HALVINGS,
+                "value_old_sha256": _field_sha256(old),
+                "full_candidate_sha256": _field_sha256(full),
+                "full_candidate_census": attempts[0],
+                "attempts": attempts,
+                "accepted_alpha": alpha,
+                "accepted_halvings": halvings,
+                "accepted_next_value_sha256": _field_sha256(candidate),
+                "accepted_value_change_inf": float(np.max(np.abs(candidate - old))),
+            }
+            return candidate, receipt
+
+    raise FailClosed(
+        MONOTONICITY_RELAXATION_EXHAUSTED,
+        {
+            "status": "FAIL",
+            "law": "OWNER_ADOPTED_DETERMINISTIC_HALVING_INVARIANT_DOMAIN_BACKTRACK",
+            "maximum_halvings": MONOTONICITY_RELAXATION_MAX_HALVINGS,
+            "value_old_sha256": _field_sha256(old),
+            "full_candidate_sha256": _field_sha256(full),
+            "attempts": attempts,
+        },
+    )
+
+
 def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest().upper()
 
@@ -1530,8 +1640,13 @@ def execute(repository: Path, seed_path: Path, binding_path: Path) -> str:
                     "FAIL__CORRECTED_HJB_LINEAR_SOLVE_ACCURACY_GATE",
                     {"final_checkpoint": checkpoint, "direct_solve": solve_receipt, "terminal_metrics": metrics},
                 )
+            accepted_next_value, relaxation_receipt = monotonicity_preserving_relaxation(
+                current_value, next_value, inputs.grid.b
+            )
+            _write_json(directory / "relaxation_receipt.json", relaxation_receipt)
             metrics["disposition"] = "CONTINUE_TO_NEXT_CHECKPOINT"
             metrics["direct_solve"] = solve_receipt
+            metrics["relaxation"] = relaxation_receipt
             _write_json(directory / "checkpoint_manifest.json", metrics)
             _seal_directory(directory, "CH5_D123_BOUNDED_CONTINUATION_CHECKPOINT_V1")
             if _scientific_code_hashes(repository) != pre_hashes:
@@ -1542,7 +1657,7 @@ def execute(repository: Path, seed_path: Path, binding_path: Path) -> str:
             previous_rows = current_rows
             previous_arrays = current_arrays
             previous_q = current_q
-            current_value = next_value
+            current_value = accepted_next_value
             values.append(current_value)
             checkpoint += 1
     except FailClosed as failure:
