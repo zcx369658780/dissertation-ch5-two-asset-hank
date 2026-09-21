@@ -4,9 +4,26 @@ Date: 2026-09-21
 
 Status:
 
-`OWNER_SCIENTIFIC_DECISION_REQUIRED`
+`OWNER_DECISION_A_RECORDED__RELAXATION_LAW_ADOPTED`
 
 This is a decision brief, not an adopted numerical law.
+
+## Owner decision recorded — Decision A
+
+Owner decision on 2026-09-21:
+
+`OWNER_ADOPTED__MONOTONICITY_PRESERVING_HJB_RELAXATION__DETERMINISTIC_HALVING_INVARIANT_DOMAIN_BACKTRACK`
+
+Owner wording:
+
+`同意采用 monotonicity-preserving deterministic halving relaxation law。`
+
+Formal authority:
+
+`docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_OWNER_ADOPTION_20260921.md`
+
+This adoption authorizes the exact global deterministic halving invariant-domain law. It does not itself authorize fresh HJB or turn-2 execution.
+
 
 ## Why a decision is required
 

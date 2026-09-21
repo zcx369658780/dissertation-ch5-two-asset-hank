@@ -4,38 +4,34 @@
 
 状态：
 
-`MONOTONICITY_PRESERVING_HJB_RELAXATION_PROPOSAL_ACCEPTED__OWNER_SCIENTIFIC_DECISION_REQUIRED`
+`OWNER_ADOPTED_MONOTONICITY_PRESERVING_HJB_RELAXATION__IMPLEMENTATION_AND_PERSISTED_REPLAY_ACTIVE`
 
 Results eligibility=`FALSE`。
 
-## Latest accepted design
+## Owner-adopted HJB update extension
 
-Accepted candidate:
+Owner adopted:
 
-`9ad1c844b331ae4b131b57aeb70ade127b82000e`
+`OWNER_ADOPTED__MONOTONICITY_PRESERVING_HJB_RELAXATION__DETERMINISTIC_HALVING_INVARIANT_DOMAIN_BACKTRACK`
 
-Acceptance:
+Authority:
 
-`docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_SCIENTIFIC_DESIGN_GATE_ACCEPTANCE_20260921.md`
+`docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_OWNER_ADOPTION_20260921.md`
 
-Accepted proposal:
+The full implicit solve remains unique. After it passes the existing backward-error gate, the represented next state must remain inside the strict-positive raw liquid-slope domain.
 
-- one full implicit solve remains mandatory;
-- if its represented V candidate has all 760 raw b slopes finite and strictly positive, accept alpha=1;
-- otherwise test global convex relaxation alpha=1/2,1/4,...,2^-52;
-- accept the first represented candidate with all raw b slopes >0 and no bitwise stagnation;
-- otherwise fail closed.
+Alpha search is exactly:
 
-Persisted replay leaves updates 0->1 and 1->2 unchanged and accepts alpha=0.5 for 2->3.
+`1,1/2,1/4,...,2^-52`.
 
-## Owner decision gate
+The first passing represented global convex candidate is accepted; otherwise fail closed.
 
-Decision brief:
+## Active task
 
-`docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_OWNER_DECISION_BRIEF_20260921.md`
+`tasks/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_IMPLEMENTATION_AND_PERSISTED_REPLAY_20260921.md`
 
-No Builder task is active.
+This task implements the adopted law and validates exact parity on already accepted persisted 黑龙江 updates.
 
-The current Owner-adopted full-update / no-relaxation law remains authoritative until Owner explicitly adopts or rejects the proposal.
+Fresh HJB solves, selector maps, D2/KFE, turn2 continuation and integration remain forbidden.
 
-No implementation, fresh HJB continuation, turn2 replay, turn3, K1B, K2, GE or Results is authorized.
+After implementation acceptance, a separate fresh-runtime task may be published.

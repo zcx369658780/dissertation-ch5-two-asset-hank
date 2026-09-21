@@ -14,42 +14,41 @@ GitHub live main is repository-state authority. Owner is final scientific author
 
 Current status:
 
-`MONOTONICITY_PRESERVING_HJB_RELAXATION_PROPOSAL_ACCEPTED__OWNER_SCIENTIFIC_DECISION_REQUIRED`
+`OWNER_ADOPTED_MONOTONICITY_PRESERVING_HJB_RELAXATION__IMPLEMENTATION_AND_PERSISTED_REPLAY_ACTIVE`
 
 Results eligibility=`FALSE`.
 
-## Latest accepted candidate
+## Owner adoption
 
-`9ad1c844b331ae4b131b57aeb70ade127b82000e`
+`OWNER_ADOPTED__MONOTONICITY_PRESERVING_HJB_RELAXATION__DETERMINISTIC_HALVING_INVARIANT_DOMAIN_BACKTRACK`
 
-Acceptance:
+Authority:
 
-`docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_SCIENTIFIC_DESIGN_GATE_ACCEPTANCE_20260921.md`
+`docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_OWNER_ADOPTION_20260921.md`
 
-The design is accepted as adoption-ready but is not yet authority.
+Exact rule:
 
-## Proposed law
+- retain exactly one full implicit solve per HJB update;
+- require existing solve backward-error gate;
+- test full candidate alpha=1 first;
+- if needed test alpha=2^-k for k=1..52;
+- use global convex combination only;
+- require all 760 represented raw b slopes finite and >0;
+- reject bitwise stagnation;
+- fail closed on exhaustion.
 
-After the existing full solve passes its backward-error gate:
+No derivative floor, clipping, adaptive Delta, second solve or threshold change.
 
-- test alpha=1;
-- if any raw b slope is nonfinite or <=0, test alpha=1/2,1/4,...,2^-52;
-- construct one global convex combination for each alpha;
-- accept the first represented state with all 760 raw b slopes finite and >0 and not bitwise identical to V_old;
-- otherwise fail closed.
+## Active task
 
-Existing convergence thresholds and fixed-point target remain unchanged.
+`tasks/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_IMPLEMENTATION_AND_PERSISTED_REPLAY_20260921.md`
 
-Persisted 黑龙江 replay chooses alpha=1, 1, 0.5 for the first three updates.
+The task may change only the minimal corrected HJB update source needed to implement the adopted relaxation and then call the new helper on accepted persisted V_old/Vhat pairs.
 
-## Owner decision required
+Required replay outcome is alpha 1, 1, 0.5, with the 2->3 relaxed state SHA-256:
 
-Read:
+`987A20DE9252104ECFAB59436433F0C73EEB8C513589B8B0FA98DB64018B66BF`.
 
-`docs/CH5_MP4C_MONOTONICITY_PRESERVING_HJB_RELAXATION_OWNER_DECISION_BRIEF_20260921.md`
+No fresh HJB solve or turn2 continuation is authorized.
 
-Reviewer recommendation: adopt the proposal.
-
-No Builder task is active until Owner decides.
-
-If Owner adopts, Reviewer should publish one bounded implementation + exact persisted replay task first. Fresh HJB/turn2 continuation should remain a later gated step after implementation acceptance.
+After Builder returns, Reviewer should accept implementation parity first. Only then may Reviewer publish a separate fresh-runtime continuation task under the standing authorization.
