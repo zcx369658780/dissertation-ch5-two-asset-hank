@@ -10,7 +10,7 @@ Task ID:
 
 `CH5_MP4C_K1B_TURN4_ANHUI_F0364_STRADDLING_ZERO_MAPPED_INTERVAL_FORENSIC_20260921`
 
-Status: `ACTIVE`
+Status: `COMPLETED__ACCEPTED_PASS`
 
 Results eligibility: `FALSE`
 
@@ -242,3 +242,18 @@ If C:
 `BLOCKED__K1B_TURN4_ANHUI_F0364_STRADDLING_ZERO_MAPPED_INTERVAL_FORENSIC__OWNER_DECISION_REQUIRED`.
 
 Commit + ordinary non-force push + remote SHA/tree readback + clean worktree, then STOP.
+
+
+## Reviewer closure — 2026-09-21
+
+Candidate `790350270d4ec07d61cc1765c042f2fd33b82b3c` is accepted.
+
+Acceptance:
+
+`docs/CH5_MP4C_K1B_TURN4_ANHUI_F0364_STRADDLING_ZERO_MAPPED_INTERVAL_FALSE_NEGATIVE_ACCEPTANCE_20260921.md`.
+
+Classification A is accepted: the whole-mapped-interval positivity guard is a false negative for the exact 安徽 turn4 F0364 cell. A narrow selector correction is authorized, gated by focused parity and exact 1,227-map historical selected-policy identity compatibility.
+
+Successor:
+
+`tasks/CH5_MP4C_K1B_TURN4_ANHUI_F0364_POSITIVE_DOMAIN_INTERSECTION_REPAIR_HISTORICAL_PARITY_AND_REEXECUTION_20260921.md`.

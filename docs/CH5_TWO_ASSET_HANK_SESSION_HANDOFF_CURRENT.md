@@ -10,55 +10,47 @@
 
 `zcx369658780/deep-learning-hank`
 
-GitHub live main is repository-state authority. Owner is final scientific authority; ChatGPT is L3 independent Reviewer/scientific-route authority; Codex is bounded Builder/scientific numerical analyst.
+Owner is final scientific authority. ChatGPT is L3 independent Reviewer/scientific-route authority. Codex is bounded Builder/scientific numerical analyst. GitHub live main is repository-state authority.
 
 Current status:
 
-`K1B_TURN4_FIRST_FAILURE_ACCEPTED__ANHUI_F0364_FORENSIC_ACTIVE`
+`ANHUI_F0364_FALSE_NEGATIVE_ACCEPTED__NARROW_REPAIR_PARITY_TURN4_REEXECUTION_ACTIVE`
 
 Results eligibility=`FALSE`.
 
-## Last complete K1B-active turn
+## Accepted forensic
 
-Turn3 candidate:
-
-`1143cd8eb6e7722d7588107a0d69f68e8dd06df7`
-
-Turn3 remains accepted with 31/31 HJB/KFE and one K1B/C1 integration.
-
-## Turn4 failed evidence
-
-Candidate:
-
-`cc8f1ba22aa2b010325dce6e6c282802f5157c10`
+Candidate `790350270d4ec07d61cc1765c042f2fd33b82b3c`.
 
 Acceptance:
 
-`docs/CH5_MP4C_K1B_TURN4_ANHUI_F0364_FIRST_FAILURE_ACCEPTANCE_20260921.md`
+`docs/CH5_MP4C_K1B_TURN4_ANHUI_F0364_STRADDLING_ZERO_MAPPED_INTERVAL_FALSE_NEGATIVE_ACCEPTANCE_20260921.md`
 
-Turn4 stopped correctly at the first failure:
+安徽 turn4 checkpoint4 F0364 has a negative-R strict a-drift crossing. The mapped q_b interval straddles zero, but the backward persisted liquid shadow is strictly positive, lies inside the positive-domain intersection, maps to q_a inside the original derivative interval, and passes direction/KKT/finite/D2/Hamiltonian checks.
 
-- 安徽
-- checkpoint 4
-- flat 364
-- `v004_f0364_b004_a018_z000`
-- SHA `F1170662F50FEB38BB6D26B233725B672B12397EA891C15CBBDC559DBA6DCB65`
-- `NO_ADMISSIBLE_POLICY`.
+The current whole-interval positivity guard is therefore an accepted implementation false negative.
 
-Only 11 provinces completed HJB/KFE. Integration and turn5 preparation never ran.
+## Active implementation gate
 
-The backward-liquid negative-transfer ordinary pair has strict a-drift crossing, while the mapped-domain behavior has not yet been independently classified.
+`tasks/CH5_MP4C_K1B_TURN4_ANHUI_F0364_POSITIVE_DOMAIN_INTERSECTION_REPAIR_HISTORICAL_PARITY_AND_REEXECUTION_20260921.md`
 
-## Current active task
+Only selector.py may change.
 
-`tasks/CH5_MP4C_K1B_TURN4_ANHUI_F0364_STRADDLING_ZERO_MAPPED_INTERVAL_FORENSIC_20260921.md`
+Before any fresh turn4 HJB science, Builder must pass:
 
-The task is a zero-science scalar forensic. It binds the exact 安徽 failure cell, prior Beijing F0364 authority, and current selector/cost source.
+1. exact normal-selector 安徽 F0364 parity;
+2. exact prior Beijing F0364 parity;
+3. unchanged positive-ratio, active-liquid-face and ratio-zero behavior;
+4. exact historical selected-policy identity replay:
+   - turn1 run004: 408 maps
+   - turn2 run005: 411 maps
+   - turn3: 408 maps
+   - total: 1,227 maps / 981,600 selector evaluations.
 
-Its key question is whether the current whole-mapped-q_b-interval positivity guard rejects an otherwise admissible positive branch-local liquid shadow when the mapped interval straddles zero.
+Historical replay must have zero HJB direct solves, D2/Q, KFE and integration calls.
 
-No selector modification or turn4 rerun is authorized until this forensic is accepted.
+Only if all identities match may one fresh turn4 run from the exact accepted turn4 input/share plan.
 
-On Builder return, Reviewer should inspect exact arithmetic, mapped interval topology, branch-local q_b/q_a membership, downstream direction/KKT/D2 admissibility, guard causality, prior-authority comparison, manifest/readback and zero-call ledger.
+On any first scientific failure, stop. If 31/31 pass, execute exactly one frozen-share K1B/C1 integration, prepare turn5, and stop before turn5 household.
 
-K2/GE/Results remain closed.
+K2/GE/Results remain unauthorized.

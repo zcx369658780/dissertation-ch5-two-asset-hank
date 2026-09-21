@@ -39,34 +39,28 @@ It must start from the accepted turn-1 initialization state, solve the corrected
 
 ## Current stage
 
-The first complete K1B-active turn3 remains accepted.
+Turn3 remains the latest complete K1B-active PASS.
 
-A second bounded K1B-active turn4 was attempted and stopped at the first scientific failure before integration.
+Turn4 run001 stopped at 安徽 checkpoint4 / F0364 before integration. The subsequent zero-science forensic is accepted and classifies the failure as an implementation false negative caused by the whole-mapped-q_b-interval positivity guard.
 
-Accepted failed evidence:
+Accepted forensic candidate:
 
-- candidate `cc8f1ba22aa2b010325dce6e6c282802f5157c10`
-- 安徽 checkpoint4 / F0364
-- outcome `NO_ADMISSIBLE_POLICY`
-- 11/31 provinces completed HJB/KFE
-- no turn4 integration
-- no turn5 candidate
-- no production-source change or scientific retry.
+`790350270d4ec07d61cc1765c042f2fd33b82b3c`.
+
+Accepted repair scope is narrow: interior-b/interior-a strict crossing with finite negative nonzero R may use the positive-domain intersection of the mapped q_b interval and branch-local liquid-shadow membership. Active liquid faces, ratio zero, positive-ratio behavior and all equations/tolerances remain unchanged.
 
 Active task:
 
-`tasks/CH5_MP4C_K1B_TURN4_ANHUI_F0364_STRADDLING_ZERO_MAPPED_INTERVAL_FORENSIC_20260921.md`.
+`tasks/CH5_MP4C_K1B_TURN4_ANHUI_F0364_POSITIVE_DOMAIN_INTERSECTION_REPAIR_HISTORICAL_PARITY_AND_REEXECUTION_20260921.md`.
 
-The task is zero-science and classifies the 安徽 F0364 mapped-q_b interval/domain issue under the already accepted negative-ratio interior-a switching authority.
+The task first implements the narrow selector repair, then requires exact historical selected-policy identity parity over 1,227 accepted maps. Only after parity may one fresh bounded turn4 reexecution occur.
 
 ## Route after the active task
 
-If the forensic confirms a guard false negative, Reviewer may authorize a narrow interior-b selector implementation correction plus exact historical compatibility and bounded failure-cell/turn4 replay.
+If parity fails, stop and protect accepted predecessor science.
 
-If the forensic confirms scientific infeasibility, turn4 remains blocked and the route returns to scientific design rather than numerical rescue.
+If parity passes but fresh turn4 fails, stop at the exact new first scientific failure.
 
-If Owner authority is genuinely ambiguous, stop for Owner decision.
-
-No beta/payoff/smoothing/labor/Delta/tolerance/solver change is allowed merely to obtain convergence.
+If turn4 passes, inspect the second complete K1B-active turn and turn5 candidate before considering any longer outer-path diagnostic.
 
 K2, production-default replacement, full outer fixed point, GE, annual dynamics, shocks, IRFs, welfare and Results remain closed.
