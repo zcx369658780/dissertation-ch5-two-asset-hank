@@ -1,0 +1,87 @@
+{
+  "arithmetic_tolerance": 5.0886690319560107e-14,
+  "checks": {
+    "a_coordinate_within_prospective_bound": true,
+    "b_coordinate_within_prospective_bound": true,
+    "diagonal_construction_error_exact_zero": true,
+    "minimum_offdiagonal_nonnegative": true,
+    "q_one_within_prospective_bound": true,
+    "zero_outward_face_amount": true,
+    "zero_outward_face_count": true,
+    "zero_tolerance_closed_faces_feasible": true
+  },
+  "closed_face_summaries": [
+    {
+      "axis": "b",
+      "boundary_kind": "economic_lower_bound",
+      "inward_count": 40,
+      "max_outward": 0.0,
+      "outward_count": 0,
+      "side": "lower",
+      "tangent_count": 0
+    },
+    {
+      "axis": "b",
+      "boundary_kind": "artificial_upper_state_constraint",
+      "inward_count": 40,
+      "max_outward": 0.0,
+      "outward_count": 0,
+      "side": "upper",
+      "tangent_count": 0
+    },
+    {
+      "axis": "a",
+      "boundary_kind": "economic_lower_bound",
+      "inward_count": 0,
+      "max_outward": 0.0,
+      "outward_count": 0,
+      "side": "lower",
+      "tangent_count": 40
+    },
+    {
+      "axis": "a",
+      "boundary_kind": "artificial_upper_state_constraint",
+      "inward_count": 11,
+      "max_outward": 0.0,
+      "outward_count": 0,
+      "side": "upper",
+      "tangent_count": 29
+    }
+  ],
+  "coordinate_action": {
+    "a": {
+      "bound_field_sha256": "7125FA1D3D55AB10B305C5F04A0F6DA0FF738EC140C056BF9E168818C77FCBF1",
+      "error_field_sha256": "50F0D3BB1FEB64DD87DE7842BE83EC038CE6459F37B4409F11692F82D22E6215",
+      "first_violation_flat_f": null,
+      "max_abs_error": 4.6629367034256575e-14,
+      "max_bound": 0.025269025183479944,
+      "passes": true,
+      "violation_count": 0
+    },
+    "b": {
+      "bound_field_sha256": "39C32B6CEDCE32B244B6D566D21DD47A47A297560BD62BF36C742D9489447793",
+      "error_field_sha256": "1B5B99475B696975C336F8A354267D3BC20952947683F233C369F5F87C323443",
+      "first_violation_flat_f": null,
+      "max_abs_error": 2.4868995751603507e-14,
+      "max_bound": 20.86245118766283,
+      "passes": true,
+      "violation_count": 0
+    },
+    "fixed_pre_outcome_max_row_terms": 4,
+    "gamma_n": 8.88178419700126e-16
+  },
+  "diagonal_construction_error": 0.0,
+  "max_abs_q_one": 3.552713678800501e-15,
+  "minimum_offdiagonal": 0.0006393151743175442,
+  "q_artifact": {
+    "bytes": 23826,
+    "path": "q_generator.npz",
+    "sha256": "949FEDEFD72E3CDF02355F059DF5627B1F23C76C42A63CCF3A0EA3DD152EB0D6"
+  },
+  "q_identity": {
+    "data": "805AD187EDC69E64C42C7EA1DB5E416D6457BBE64DEB89151DD41B5C3F8D0385",
+    "indices": "656166D07DC6E7F84E4175AFFEE0FE611D93B6FE33E78C399A33C5B0AE528D5C",
+    "indptr": "DC3682EC22D37E9186E907849CF2A8A0BD4B82FD6DF061CEB8CF59080275C77F"
+  },
+  "status": "PASS"
+}
