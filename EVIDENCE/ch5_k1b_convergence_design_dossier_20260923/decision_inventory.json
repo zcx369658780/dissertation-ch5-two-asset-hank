@@ -1,0 +1,989 @@
+{
+  "schema": "CH5_K1B_CONVERGENCE_DESIGN_EVIDENCE_DOSSIER_V1",
+  "task_id": "CH5_K1B_CONVERGENCE_DESIGN_EVIDENCE_DOSSIER_20260923",
+  "status": "EVIDENCE_ONLY_AWAITING_WORK_REVIEW",
+  "dispatch_head": "e23d952a68c0947778ac43ab663b11e5282e7376",
+  "production_src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
+  "results_eligible": false,
+  "scientific_calls_this_task": 0,
+  "turn7_household_calls_this_task": 0,
+  "sources": [
+    {
+      "path": "reports/ch5_mp4c_k1b_turn5_turn6_bounded_continuation_20260921_run001/turn3_through_turn6_trajectory_diagnostic.json",
+      "sha256": "8EC84E5D179B0032D214C6FCF389524ACEF50DEF62EECBEEDF4829D625B4C26B",
+      "fields": [
+        "classification",
+        "fixed_point_tolerance",
+        "convergence_claim",
+        "transitions",
+        "successive_change_norm_ratios"
+      ]
+    },
+    {
+      "path": "docs/CH5_MP4C_K1B_TURN5_TURN6_INDEPENDENT_REVIEW_ACCEPTANCE_20260923.md",
+      "role": "independent trajectory-only verdict"
+    },
+    {
+      "path": "docs/CH5_MP4C_K1B_TURN5_TURN6_BOUNDED_CONTINUATION_DIAGNOSTIC_REPORT.md",
+      "role": "bounded execution and diagnostic definitions"
+    },
+    {
+      "path": "src/ch5_two_asset_hank/multi_province/capital_network.py",
+      "lines": [
+        "16-20",
+        "133-155",
+        "289-312"
+      ],
+      "role": "share orientation, lagged timing and rah mapping"
+    },
+    {
+      "path": "src/ch5_two_asset_hank/multi_province/firm.py",
+      "lines": [
+        "20-40",
+        "103-125"
+      ],
+      "role": "raw ra0 payoff"
+    },
+    {
+      "path": "src/ch5_two_asset_hank/multi_province/corrected_household_adapter.py",
+      "lines": [
+        "153-205"
+      ],
+      "role": "household aggregates"
+    }
+  ],
+  "checkpoint_contract": {
+    "complete_turn_output": "raw_ra0_n and integrated aggregate state after 31 province household gate and one integration",
+    "next_turn_input": "S_n_plus_1 and rah_n_plus_1 from completed raw_ra0_n",
+    "matrix_orientation": "destination_by_origin",
+    "province_count": 31,
+    "share_shape": [
+      31,
+      31
+    ],
+    "share_column_sum": 1,
+    "raw_ra0": "one model period net productive capital return",
+    "zscore": "population standard deviation ddof=0 for foreign attractiveness only",
+    "turn7_household_status": "NOT_RUN"
+  },
+  "object_inventory": [
+    {
+      "category": "model_state",
+      "names": [
+        "Ct",
+        "At",
+        "Bt",
+        "AtTax",
+        "Lt_supply",
+        "Kt",
+        "Kt_supply",
+        "GovInv",
+        "Yt",
+        "w"
+      ],
+      "shape": [
+        31
+      ],
+      "checkpoint": "completed turn",
+      "provenance": "reports/ch5_mp4c_k1b_turn5_turn6_bounded_continuation_20260921_run001/turn3_through_turn6_trajectory_diagnostic.json#/transitions/*/aggregate_state_changes",
+      "exact_units": "UNRESOLVED"
+    },
+    {
+      "category": "household_labor",
+      "names": [
+        "Lt"
+      ],
+      "shape": [
+        31
+      ],
+      "checkpoint": "post household pre firm",
+      "provenance": "src/ch5_two_asset_hank/multi_province/corrected_household_adapter.py:174-176",
+      "adjacent_transition_metric": "UNAVAILABLE_IN_TRAJECTORY_JSON"
+    },
+    {
+      "category": "payoff",
+      "names": [
+        "raw_ra0"
+      ],
+      "shape": [
+        31
+      ],
+      "checkpoint": "completed turn n",
+      "provenance": "reports/ch5_mp4c_k1b_turn5_turn6_bounded_continuation_20260921_run001/turn3_through_turn6_trajectory_diagnostic.json#/transitions/*/raw_ra0",
+      "normalization": "raw level"
+    },
+    {
+      "category": "next_turn_policy",
+      "names": [
+        "portfolio_shares"
+      ],
+      "shape": [
+        31,
+        31
+      ],
+      "checkpoint": "prepared after completed turn n for turn n+1",
+      "provenance": "reports/ch5_mp4c_k1b_turn5_turn6_bounded_continuation_20260921_run001/turn3_through_turn6_trajectory_diagnostic.json#/transitions/*/portfolio_shares",
+      "normalization": "origin columns sum to one"
+    },
+    {
+      "category": "next_turn_payoff",
+      "names": [
+        "rah"
+      ],
+      "shape": [
+        31
+      ],
+      "checkpoint": "prepared after completed turn n for turn n+1",
+      "provenance": "reports/ch5_mp4c_k1b_turn5_turn6_bounded_continuation_20260921_run001/turn3_through_turn6_trajectory_diagnostic.json#/transitions/*/rah"
+    },
+    {
+      "category": "household_grid_state",
+      "names": [
+        "HJB_value",
+        "policy",
+        "KFE_probability"
+      ],
+      "shape_per_province": [
+        20,
+        20,
+        2
+      ],
+      "checkpoint": "terminal household",
+      "adjacent_transition_metric": "UNAVAILABLE_IN_TRAJECTORY_JSON"
+    }
+  ],
+  "measure_definitions": {
+    "maximum_absolute_change": "max(abs(new-old))",
+    "euclidean_norm": "L2(new-old) for vector",
+    "frobenius_norm": "Frobenius(new-old) for matrix",
+    "mean_signed_change": "mean(new-old)",
+    "successive_change_norm_ratio": "later change norm divided by preceding change norm; DESCRIPTIVE_ONLY"
+  },
+  "descriptive_evidence": {
+    "classification": "DESCRIPTIVE_ONLY__NO_CONTRACTION_OR_CONVERGENCE_ACCEPTANCE_CONDITION",
+    "acceptance_condition": "NONE__BOUNDED_TRAJECTORY_DIAGNOSTIC_ONLY",
+    "fixed_point_tolerance": null,
+    "convergence_claim": false,
+    "transitions": [
+      {
+        "aggregate_state_changes": {
+          "At": {
+            "bitwise_changed_count": 1,
+            "change_sha256": "E2376CD6EAE23480802DBEE5AB8166244270177B018B7CB401C20CBC0F9E7B00",
+            "euclidean_norm": 1.7763568394002505E-15,
+            "maximum_absolute_change": 1.7763568394002505E-15,
+            "mean_signed_change": 5.730183352904034E-17,
+            "new_sha256": "3548BFD94EA336BF925FF962FFA6D7BA4C1AB2B08E1A375AD6ADF7FB3B7379C7",
+            "old_sha256": "40F9592530533ECDB70541745A98F894844BA6787B7F055C77E82F5A3698629C"
+          },
+          "AtTax": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "4012FECF64A35901315443F0C2873D4F24FE92F26F6E8F00F03ED92EA6BCD1E9",
+            "euclidean_norm": 0.02992055378253307,
+            "maximum_absolute_change": 0.01866788224040028,
+            "mean_signed_change": 0.003735301529261847,
+            "new_sha256": "947CB537EEE5C3C0F43B69830DE5208114A3A8D9B2A61A053384F57466A5C055",
+            "old_sha256": "BB2F4CAAF390B514013942AE1B682CBC678A9655C4B8208AC31FE1D73F15F52C"
+          },
+          "Bt": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "E614B9191D581BC0C78BE4942FF1E7BBCED17F13DBB5D95758C8A752918F53E5",
+            "euclidean_norm": 0.0061282228223478626,
+            "maximum_absolute_change": 0.0047452447039710854,
+            "mean_signed_change": 0.00033921375180004105,
+            "new_sha256": "F912DFA9D63908ECF8B5C57D02156EED7EC62FDA8DAF7B8B6245984B68E48699",
+            "old_sha256": "7B684DE89458BA5FC73835F92E3B0DE217183ED9CDB0F7E0EB6E86C07D6DDBC5"
+          },
+          "Ct": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "8CF3C5B566127E4EFE94FD254A0C633C96C5AB86B3E0D4AD3658BBFCB3557BA2",
+            "euclidean_norm": 0.1442839064923473,
+            "maximum_absolute_change": 0.1138406777050669,
+            "mean_signed_change": -0.009276910179461962,
+            "new_sha256": "C921325842C430168284446DCDF4475E422D00DDDB80836DBE8E1E55D07CCAE5",
+            "old_sha256": "3E4F068BF5F0AC8AD19D398F1AB22B845E9F32614E01521F3FBFF67D35729997"
+          },
+          "GovInv": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "243678F07431616DC0F5E79A4877A5763C8BCD191D2A93F55E421EE84A87476F",
+            "euclidean_norm": 18081.386387878265,
+            "maximum_absolute_change": 15610.30866189301,
+            "mean_signed_change": 3.00426636972735E-11,
+            "new_sha256": "0B0C7DE2D6F5F7AAC46E79811CAE216DF67E82CD3093EB7E7CC5EA2B2A4F4778",
+            "old_sha256": "D486EC94F53B262C4E099E66EB77A44E7BEBE84C6C984A6A8B8DB4BEEAE1DC1D"
+          },
+          "Kt": {
+            "bitwise_changed_count": 3,
+            "change_sha256": "08BCCFD3A3FDA8ED973EFC5A85C0AF55129C10A2C204821A0E34C7DFBB51937A",
+            "euclidean_norm": 2.2351741790771484E-08,
+            "maximum_absolute_change": 1.4901161193847656E-08,
+            "mean_signed_change": -1.20170654789094E-09,
+            "new_sha256": "6C4FB04D5DDB77F4688AA2A4057005F48AA30E75B4200FF70FC45261FFCAF300",
+            "old_sha256": "97E7AD2CA4253813454AB8A6F61E4D9637BA9FE6B5B24AA75883AAC4963F036D"
+          },
+          "Kt_supply": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "35BC58B84CE149FB6314DA75D03E7D4F41A05FFA8EBEFA429740D81AEF32F9A2",
+            "euclidean_norm": 18081.38638788092,
+            "maximum_absolute_change": 15610.30866189627,
+            "mean_signed_change": 2.5160730846466555E-10,
+            "new_sha256": "5BAFBE5044997428BF58012EA30E8A054935D648BC56041B15D208BD16841191",
+            "old_sha256": "FB2F7152BCF4E156A6B6AB1EC92B95546888FB7631542584C117D76CEFE9B3C3"
+          },
+          "Lt_supply": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "03ABC32A9D4AAD7F25DFEEA6AA0EF69C3FEF746BFB2AE3A6EE42479702DAC7F1",
+            "euclidean_norm": 13141.227742467063,
+            "maximum_absolute_change": 9783.268975560553,
+            "mean_signed_change": 907.0597568927033,
+            "new_sha256": "B7FF5FDE7007D492A16C233410B0DB9861EAC5316BB1A15FAE7DFF268F0F1B25",
+            "old_sha256": "8C1033C20DFE9386A1AFBB53A85ECF0B326D3B1CE4DF859ABF94F2118BD54408"
+          },
+          "Yt": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "123DC3E2013E3A65460247EB93F8129634E690F71C83E6BC13A5C9275848A60B",
+            "euclidean_norm": 19693.958518981177,
+            "maximum_absolute_change": 7291.362691709772,
+            "mean_signed_change": 2466.9390761619434,
+            "new_sha256": "A00A7015EF4BA94BF4E12DF649E1C31B71C1068BE1539B5007748FA6D801D89B",
+            "old_sha256": "666CA8FC67E338B8797391B1A9FCD153A324FDBC83AE68D31D1425ED80B2E614"
+          },
+          "w": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "EDC07EC1D0AC7AF22AA2626EA35F7CD170C7615C70E92AE617BB5EFBE2A58851",
+            "euclidean_norm": 0.00676428978110338,
+            "maximum_absolute_change": 0.0032242627028686854,
+            "mean_signed_change": 0.0008974164134584148,
+            "new_sha256": "BB8A0139E030F2FEAED43D7C6D07CFD5A21371B2724FAE4F27BB1F1EB8CB92F4",
+            "old_sha256": "533A195512D84C6FC91C882063296F612840EBD7A0ABE386EF01E7E42584E1E0"
+          }
+        },
+        "c1": {
+          "change": 0.0,
+          "new_GovInv_total": 2341682906.900551,
+          "old_GovInv_total": 2341682906.900551
+        },
+        "capital_conservation": {
+          "new_residual": 2.980232238769531E-08,
+          "old_residual": 0.0
+        },
+        "classification": "DESCRIPTIVE_ONLY__NO_CONTRACTION_OR_CONVERGENCE_ACCEPTANCE_CONDITION",
+        "household": {
+          "checkpoint_change_by_province": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            -2,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "new_direct_update_count": 378,
+          "new_terminal_checkpoints": [
+            12,
+            12,
+            13,
+            12,
+            13,
+            13,
+            13,
+            13,
+            11,
+            12,
+            12,
+            12,
+            12,
+            12,
+            13,
+            13,
+            12,
+            12,
+            12,
+            13,
+            12,
+            12,
+            12,
+            12,
+            12,
+            11,
+            12,
+            12,
+            13,
+            12,
+            11
+          ],
+          "old_direct_update_count": 377,
+          "old_terminal_checkpoints": [
+            12,
+            12,
+            13,
+            12,
+            13,
+            12,
+            13,
+            13,
+            11,
+            12,
+            12,
+            12,
+            12,
+            12,
+            13,
+            15,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            11,
+            12,
+            12,
+            12,
+            12,
+            11
+          ]
+        },
+        "portfolio_shares": {
+          "bitwise_changed_count": 900,
+          "change_sha256": "94C48FE47D6BE54FA2F6BF89C054EF6C7FE4153AC62465DD07DEC291BF3B53B5",
+          "frobenius_norm": 0.0002936100333500836,
+          "maximum_absolute_change": 0.00017089672979736514,
+          "mean_signed_change": 5.3113637254468405E-20,
+          "new_sha256": "2BDF7B8226C8404DB9C7FFEEE3F72F7AE9CA1305905460A4E2430AABEA4D3B06",
+          "old_sha256": "5E8FB74E547CBF776A70E908F1ECA7F8FD80DD1A7637100BBD159B7F0803028B"
+        },
+        "rah": {
+          "bitwise_changed_count": 31,
+          "change_sha256": "120D43A6F1C296C73C8017EC9CD9EBE1CEE33025B1A029DB8C34071168A0B4E7",
+          "euclidean_norm": 0.0051617819986116914,
+          "maximum_absolute_change": 0.0035652015398268677,
+          "mean_signed_change": 0.0005639473925679926,
+          "new_sha256": "5CAF9166D85198E6923FFCD5A1F92D278C8A1C6CB924E8DD1B843F875E91D88E",
+          "old_sha256": "7DE65A71206F52AB3D2DA98D6D01C43A8A69D8B2C423BE49A15D5D287C434BE9"
+        },
+        "raw_ra0": {
+          "bitwise_changed_count": 31,
+          "change_sha256": "72DA9948A17795CAE1903E455E6F27FF7478CC5F3B5DDF671C7273572D21F469",
+          "euclidean_norm": 0.005510286646555688,
+          "maximum_absolute_change": 0.004025704005734321,
+          "mean_signed_change": 0.0005020445917943939,
+          "new_sha256": "0312EBE6C2764DB3A834F1233712186ED1B6CE0C3E8BC01E58EFF6A0E8DCD267",
+          "old_sha256": "1C587932F4E8471209663D2262DB1BB308857EEEA1198D7868E4721CFB031E8F"
+        },
+        "status": "PASS",
+        "transition": "turn3_to_turn4",
+        "zscore_inputs": {
+          "mean_change": 0.0005020445917943706,
+          "new_mean": 0.5190899802806576,
+          "new_population_standard_deviation": 0.1915047411123845,
+          "old_mean": 0.5185879356888632,
+          "old_population_standard_deviation": 0.1907497808664968,
+          "population_standard_deviation_change": 0.0007549602458876981
+        }
+      },
+      {
+        "aggregate_state_changes": {
+          "At": {
+            "bitwise_changed_count": 0,
+            "change_sha256": "B3AB6982980FDDF460A2F47ADB428475CE9AFA89092FD034499D017A35993F05",
+            "euclidean_norm": 0.0,
+            "maximum_absolute_change": 0.0,
+            "mean_signed_change": 0.0,
+            "new_sha256": "3548BFD94EA336BF925FF962FFA6D7BA4C1AB2B08E1A375AD6ADF7FB3B7379C7",
+            "old_sha256": "3548BFD94EA336BF925FF962FFA6D7BA4C1AB2B08E1A375AD6ADF7FB3B7379C7"
+          },
+          "AtTax": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "3682A1E48B0561F84A382A1513388258AF727B52874A70C19BF3BC5E667C646E",
+            "euclidean_norm": 0.005161781998612072,
+            "maximum_absolute_change": 0.003565201539827534,
+            "mean_signed_change": 0.0005639473925679729,
+            "new_sha256": "3B46DCF5D88FD733034F28006D7BF8BE332116DA9FC291753F51C6324A9FF4D1",
+            "old_sha256": "947CB537EEE5C3C0F43B69830DE5208114A3A8D9B2A61A053384F57466A5C055"
+          },
+          "Bt": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "68FCB54836998320797BE1FAEAAE8C589E249A3CDC72C7A9C423EED0A8BB343F",
+            "euclidean_norm": 0.001176075150178297,
+            "maximum_absolute_change": 0.000936752938317742,
+            "mean_signed_change": 7.613667190134544E-05,
+            "new_sha256": "CFF8B8FC2AA7AD50FE94BA0C799328A2CEC9B7403927AFF168A5FDA4518D3D20",
+            "old_sha256": "F912DFA9D63908ECF8B5C57D02156EED7EC62FDA8DAF7B8B6245984B68E48699"
+          },
+          "Ct": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "1C85EC57092B6A8874194717758E7ACCE864D9AD3C1DBBE5C68113D9FC99ADE6",
+            "euclidean_norm": 0.025514495381814,
+            "maximum_absolute_change": 0.020670671545376607,
+            "mean_signed_change": -0.0009432622687122552,
+            "new_sha256": "F03DD8AAC7E7CDF53CEF26C4025603C7F33B80541E444D2675B20B328AFEBB24",
+            "old_sha256": "C921325842C430168284446DCDF4475E422D00DDDB80836DBE8E1E55D07CCAE5"
+          },
+          "GovInv": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "A3BAF2B96B342374A9D07F0CFB75618F5955FDB0DD783BD9D942D40244B2C590",
+            "euclidean_norm": 4147.748227835784,
+            "maximum_absolute_change": 3676.7657091468573,
+            "mean_signed_change": 4.20597291761829E-10,
+            "new_sha256": "0F3C7F7B27B81FA61B67D32BC0246606F093566F2DC16F334BCF0F388DF79766",
+            "old_sha256": "0B0C7DE2D6F5F7AAC46E79811CAE216DF67E82CD3093EB7E7CC5EA2B2A4F4778"
+          },
+          "Kt": {
+            "bitwise_changed_count": 5,
+            "change_sha256": "333AD89EBC7FC225D21A0878B6DD4423065ECF2A4E0F3CD548DB14298A7CF8F0",
+            "euclidean_norm": 3.7990655851310376E-08,
+            "maximum_absolute_change": 2.980232238769531E-08,
+            "mean_signed_change": 4.80682619156376E-10,
+            "new_sha256": "B04178FDE02D9D61570351AF44048CACC699795D21F5AFDF2CBC954FC766DD40",
+            "old_sha256": "6C4FB04D5DDB77F4688AA2A4057005F48AA30E75B4200FF70FC45261FFCAF300"
+          },
+          "Kt_supply": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "71ABC60A3CA8F830B2D6478F1FA4F6A3F57A354500ECE3628D26D18CACB2CA93",
+            "euclidean_norm": 4147.748227834448,
+            "maximum_absolute_change": 3676.7657091449946,
+            "mean_signed_change": -1.0890465590261643E-10,
+            "new_sha256": "D7CFD555EA792DDEEE5E4C29F67E3A03B58D2071E86BAF7C7614ACD709B339C8",
+            "old_sha256": "5BAFBE5044997428BF58012EA30E8A054935D648BC56041B15D208BD16841191"
+          },
+          "Lt_supply": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "583E520AB9A1964840F82764523469A6F83EDDBB523B65A290F789BC8FCB0071",
+            "euclidean_norm": 1951.7114637921302,
+            "maximum_absolute_change": 1917.2525483863428,
+            "mean_signed_change": 113.16091644860083,
+            "new_sha256": "2B3F271FB783B64685B619EF50A4D66E8AAD03B0125384A84A859D906216C615",
+            "old_sha256": "B7FF5FDE7007D492A16C233410B0DB9861EAC5316BB1A15FAE7DFF268F0F1B25"
+          },
+          "Yt": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "A177F6FEE89E80C8919F15ADE4869148FD81AB8665145C0913547B73F74CD62A",
+            "euclidean_norm": 2031.9690877912517,
+            "maximum_absolute_change": 1784.9201442934573,
+            "mean_signed_change": 199.7325952709502,
+            "new_sha256": "1AC75A9151761338C981A86C2A9C501FDCC9E040906D7A27597761B4B0C97046",
+            "old_sha256": "A00A7015EF4BA94BF4E12DF649E1C31B71C1068BE1539B5007748FA6D801D89B"
+          },
+          "w": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "ACCE290093EC5F974414E6E34558B024EF466186914777992B822D18A7909AE4",
+            "euclidean_norm": 0.0004629801205082777,
+            "maximum_absolute_change": 0.0002995893819228712,
+            "mean_signed_change": -3.334459959244525E-05,
+            "new_sha256": "49E942E8867AB8000BC5FC1F7768827040D264EAF74160E4A10A70655EA46B8E",
+            "old_sha256": "BB8A0139E030F2FEAED43D7C6D07CFD5A21371B2724FAE4F27BB1F1EB8CB92F4"
+          }
+        },
+        "c1": {
+          "change": 4.76837158203125E-07,
+          "new_GovInv_total": 2341682906.9005513,
+          "old_GovInv_total": 2341682906.900551
+        },
+        "capital_conservation": {
+          "new_residual": 0.0,
+          "old_residual": 2.980232238769531E-08
+        },
+        "classification": "DESCRIPTIVE_ONLY__NO_CONTRACTION_OR_CONVERGENCE_ACCEPTANCE_CONDITION",
+        "household": {
+          "checkpoint_change_by_province": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "new_direct_update_count": 378,
+          "new_terminal_checkpoints": [
+            12,
+            12,
+            13,
+            12,
+            13,
+            13,
+            13,
+            13,
+            11,
+            12,
+            12,
+            12,
+            12,
+            12,
+            13,
+            13,
+            12,
+            12,
+            12,
+            13,
+            12,
+            12,
+            12,
+            12,
+            12,
+            11,
+            12,
+            12,
+            13,
+            12,
+            11
+          ],
+          "old_direct_update_count": 378,
+          "old_terminal_checkpoints": [
+            12,
+            12,
+            13,
+            12,
+            13,
+            13,
+            13,
+            13,
+            11,
+            12,
+            12,
+            12,
+            12,
+            12,
+            13,
+            13,
+            12,
+            12,
+            12,
+            13,
+            12,
+            12,
+            12,
+            12,
+            12,
+            11,
+            12,
+            12,
+            13,
+            12,
+            11
+          ]
+        },
+        "portfolio_shares": {
+          "bitwise_changed_count": 900,
+          "change_sha256": "E83D9BDDCA4683A0D413C9A334FA2F85F85ED2756EACCA19725145776EF625ED",
+          "frobenius_norm": 6.541207640255853E-05,
+          "maximum_absolute_change": 3.8570139761918976E-05,
+          "mean_signed_change": -9.360903967762301E-20,
+          "new_sha256": "D11CD1AD944FD04FE144DEB84BDFD2DCC93CC1B7D397B7052025C2A7D1B02435",
+          "old_sha256": "2BDF7B8226C8404DB9C7FFEEE3F72F7AE9CA1305905460A4E2430AABEA4D3B06"
+        },
+        "rah": {
+          "bitwise_changed_count": 31,
+          "change_sha256": "19ACA7467DA27B23B1F00D8E9FD08E3F3A5167E39A94660E3DEA50677EC9366A",
+          "euclidean_norm": 0.0009075749448952141,
+          "maximum_absolute_change": 0.0006755443013624074,
+          "mean_signed_change": 8.898603101036869E-05,
+          "new_sha256": "6E3EEFD0EA6920C6BCFCF70D2E06589B6388FB98C2A2A67504493F9B2A212313",
+          "old_sha256": "5CAF9166D85198E6923FFCD5A1F92D278C8A1C6CB924E8DD1B843F875E91D88E"
+        },
+        "raw_ra0": {
+          "bitwise_changed_count": 31,
+          "change_sha256": "117568776FF84F129BF67A15D8D49C49B7D2423BFB6D93C58AF317FCFBB1B240",
+          "euclidean_norm": 0.000982914495908585,
+          "maximum_absolute_change": 0.0007664942733158764,
+          "mean_signed_change": 7.703659022773214E-05,
+          "new_sha256": "D4046E8A6C95B222506C585822EA0F907DE7DFDA5CECA317393CCA4E7D297E8B",
+          "old_sha256": "0312EBE6C2764DB3A834F1233712186ED1B6CE0C3E8BC01E58EFF6A0E8DCD267"
+        },
+        "status": "PASS",
+        "transition": "turn4_to_turn5",
+        "zscore_inputs": {
+          "mean_change": 7.703659022773035E-05,
+          "new_mean": 0.5191670168708853,
+          "new_population_standard_deviation": 0.19163925522950678,
+          "old_mean": 0.5190899802806576,
+          "old_population_standard_deviation": 0.1915047411123845,
+          "population_standard_deviation_change": 0.00013451411712228634
+        }
+      },
+      {
+        "aggregate_state_changes": {
+          "At": {
+            "bitwise_changed_count": 0,
+            "change_sha256": "B3AB6982980FDDF460A2F47ADB428475CE9AFA89092FD034499D017A35993F05",
+            "euclidean_norm": 0.0,
+            "maximum_absolute_change": 0.0,
+            "mean_signed_change": 0.0,
+            "new_sha256": "3548BFD94EA336BF925FF962FFA6D7BA4C1AB2B08E1A375AD6ADF7FB3B7379C7",
+            "old_sha256": "3548BFD94EA336BF925FF962FFA6D7BA4C1AB2B08E1A375AD6ADF7FB3B7379C7"
+          },
+          "AtTax": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "9675F84AACDFADE7B425A3DCD8671711DF2B1DFF536133ADCD47DFB562AA12E3",
+            "euclidean_norm": 0.0009075749448960562,
+            "maximum_absolute_change": 0.0006755443013624074,
+            "mean_signed_change": 8.89860310105209E-05,
+            "new_sha256": "FDE27FAFF041D361E67D8AC80FFD79C46383B29BC8F6637C90B7C0109FFB756B",
+            "old_sha256": "3B46DCF5D88FD733034F28006D7BF8BE332116DA9FC291753F51C6324A9FF4D1"
+          },
+          "Bt": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "169819D23AE9F769CF130E30929D02977F3C5114417CFEA20CE3FC2FFFA31436",
+            "euclidean_norm": 0.00021348417805510503,
+            "maximum_absolute_change": 0.00017708517212966512,
+            "mean_signed_change": 1.0908108063070475E-05,
+            "new_sha256": "C584ADFDDBDEF5314305DF2FD170A11CFD758346B445606565E98B14A5B08B45",
+            "old_sha256": "CFF8B8FC2AA7AD50FE94BA0C799328A2CEC9B7403927AFF168A5FDA4518D3D20"
+          },
+          "Ct": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "426D6309742F1BF2C25734BF3666F5C398CD75857DC4487525F55F27CDF62AAE",
+            "euclidean_norm": 0.004906710956287675,
+            "maximum_absolute_change": 0.004077179613416249,
+            "mean_signed_change": -0.0002712555345231218,
+            "new_sha256": "54ABEFF9D5A0A3E6972EB4009E02E9701DDA06EEC8DBF400E395F4C9583BA234",
+            "old_sha256": "F03DD8AAC7E7CDF53CEF26C4025603C7F33B80541E444D2675B20B328AFEBB24"
+          },
+          "GovInv": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "35AEDE8F4F5537F87BCC7B1C03681161BB134EF9E492F4281EE27E181A0727BE",
+            "euclidean_norm": 920.8629000080241,
+            "maximum_absolute_change": 830.6433400958776,
+            "mean_signed_change": -9.01279910918205E-11,
+            "new_sha256": "B38AF767A88C0A7A8AC238022F5DD9B0E467DBB82D5A8D04A0C3B8235F79C37F",
+            "old_sha256": "0F3C7F7B27B81FA61B67D32BC0246606F093566F2DC16F334BCF0F388DF79766"
+          },
+          "Kt": {
+            "bitwise_changed_count": 3,
+            "change_sha256": "41B22C3A030734C09A3BE27A76A09479C8610C66731C53C3D9B624F74787B678",
+            "euclidean_norm": 3.414284955677271E-08,
+            "maximum_absolute_change": 2.980232238769531E-08,
+            "mean_signed_change": 1.20170654789094E-09,
+            "new_sha256": "BD9289C29DA7F4664BD1B09E516F99463888800E4FF3C0DEE5A83B8A54FC4EBA",
+            "old_sha256": "B04178FDE02D9D61570351AF44048CACC699795D21F5AFDF2CBC954FC766DD40"
+          },
+          "Kt_supply": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "C984015E35500E571A3EC00E4E2AF9D7215EED120433C06827D39CA18567ED58",
+            "euclidean_norm": 920.8629000023545,
+            "maximum_absolute_change": 830.6433400935493,
+            "mean_signed_change": 1.4270265256204913E-10,
+            "new_sha256": "FCC0865684F8BA89C931C37B78A283734BFF323029DD24AC491BFA5F0A1C4156",
+            "old_sha256": "D7CFD555EA792DDEEE5E4C29F67E3A03B58D2071E86BAF7C7614ACD709B339C8"
+          },
+          "Lt_supply": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "77F5E45D688A43BAACA5A6E3E40754877C94F93786DE3496528D6DC1190271BA",
+            "euclidean_norm": 340.97094356547655,
+            "maximum_absolute_change": 263.9059808589518,
+            "mean_signed_change": 26.6608903000672,
+            "new_sha256": "133672E28EB9F20629BE0D094E1E42100155681EBC47FBAEBD9589DFFA184153",
+            "old_sha256": "2B3F271FB783B64685B619EF50A4D66E8AAD03B0125384A84A859D906216C615"
+          },
+          "Yt": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "FD7BA9C5B9307441B988AD4D3FBA24C9BB9CB44A45BE4D2B01FAF27CB16484B9",
+            "euclidean_norm": 537.1895880035471,
+            "maximum_absolute_change": 202.4450707733631,
+            "mean_signed_change": 70.253999025621,
+            "new_sha256": "EEF53C943A041E676EE2760B312CC8FDF31F32E2A527EAACC88949AFC2CC7722",
+            "old_sha256": "1AC75A9151761338C981A86C2A9C501FDCC9E040906D7A27597761B4B0C97046"
+          },
+          "w": {
+            "bitwise_changed_count": 31,
+            "change_sha256": "9B2F554E6AC05D54142E7EC29F2E63B308533D9581E18437E31C06BDBD58CE86",
+            "euclidean_norm": 0.00011366243664226454,
+            "maximum_absolute_change": 5.559990870906972E-05,
+            "mean_signed_change": 1.5549179183911442E-05,
+            "new_sha256": "DEB9696FE143F2DDF8F6FFCB54B007FE6EEF47DB81D1067023312FD40BDEDD31",
+            "old_sha256": "49E942E8867AB8000BC5FC1F7768827040D264EAF74160E4A10A70655EA46B8E"
+          }
+        },
+        "c1": {
+          "change": -4.76837158203125E-07,
+          "new_GovInv_total": 2341682906.900551,
+          "old_GovInv_total": 2341682906.9005513
+        },
+        "capital_conservation": {
+          "new_residual": 2.980232238769531E-08,
+          "old_residual": 0.0
+        },
+        "classification": "DESCRIPTIVE_ONLY__NO_CONTRACTION_OR_CONVERGENCE_ACCEPTANCE_CONDITION",
+        "household": {
+          "checkpoint_change_by_province": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "new_direct_update_count": 378,
+          "new_terminal_checkpoints": [
+            12,
+            12,
+            13,
+            12,
+            13,
+            13,
+            13,
+            13,
+            11,
+            12,
+            12,
+            12,
+            12,
+            12,
+            13,
+            13,
+            12,
+            12,
+            12,
+            13,
+            12,
+            12,
+            12,
+            12,
+            12,
+            11,
+            12,
+            12,
+            13,
+            12,
+            11
+          ],
+          "old_direct_update_count": 378,
+          "old_terminal_checkpoints": [
+            12,
+            12,
+            13,
+            12,
+            13,
+            13,
+            13,
+            13,
+            11,
+            12,
+            12,
+            12,
+            12,
+            12,
+            13,
+            13,
+            12,
+            12,
+            12,
+            13,
+            12,
+            12,
+            12,
+            12,
+            12,
+            11,
+            12,
+            12,
+            13,
+            12,
+            11
+          ]
+        },
+        "portfolio_shares": {
+          "bitwise_changed_count": 900,
+          "change_sha256": "19E6925EF1364592A1CBA116233B38AD6E9456A247A32100E61D2E2A77B109FF",
+          "frobenius_norm": 1.3640143450284201E-05,
+          "maximum_absolute_change": 8.122347528477514E-06,
+          "mean_signed_change": -8.929719245809331E-20,
+          "new_sha256": "8799C525E7BB5A4943D6028C376FF595BA111C4E5EDF5A7C03049A9494DBC99A",
+          "old_sha256": "D11CD1AD944FD04FE144DEB84BDFD2DCC93CC1B7D397B7052025C2A7D1B02435"
+        },
+        "rah": {
+          "bitwise_changed_count": 31,
+          "change_sha256": "E8C0C78CEE066B6729B672A64025F3EDE6181C05B596714EECDD84879BC6A93F",
+          "euclidean_norm": 0.00016676957901415662,
+          "maximum_absolute_change": 0.0001290310060115818,
+          "mean_signed_change": 1.500668162570053E-05,
+          "new_sha256": "2B0A8B967CB7334DD38DB33951EE1E70B4404980C1DE9C763B41238233FFA11D",
+          "old_sha256": "6E3EEFD0EA6920C6BCFCF70D2E06589B6388FB98C2A2A67504493F9B2A212313"
+        },
+        "raw_ra0": {
+          "bitwise_changed_count": 31,
+          "change_sha256": "FE821189183CC8B243440054CCC6BA18AD0C26816E89A27564BCB8E6FC29AFB0",
+          "euclidean_norm": 0.00018198170434988712,
+          "maximum_absolute_change": 0.00014688108470894967,
+          "mean_signed_change": 1.274794534482147E-05,
+          "new_sha256": "1A469B1557617F2E517B41A440A4A190F763B6503BB23959378406B3ACDF01B5",
+          "old_sha256": "D4046E8A6C95B222506C585822EA0F907DE7DFDA5CECA317393CCA4E7D297E8B"
+        },
+        "status": "PASS",
+        "transition": "turn5_to_turn6",
+        "zscore_inputs": {
+          "mean_change": 1.2747945344782075E-05,
+          "new_mean": 0.5191797648162301,
+          "new_population_standard_deviation": 0.19166394507681306,
+          "old_mean": 0.5191670168708853,
+          "old_population_standard_deviation": 0.19163925522950678,
+          "population_standard_deviation_change": 2.4689847306275103E-05
+        }
+      }
+    ],
+    "successive_change_norm_ratios": [
+      {
+        "classification": "DESCRIPTIVE_ONLY__NO_CONTRACTION_OR_CONVERGENCE_ACCEPTANCE_CONDITION",
+        "denominator_transition": "turn3_to_turn4",
+        "numerator_transition": "turn4_to_turn5",
+        "ratios": {
+          "AtTax_euclidean": 0.17251625876073864,
+          "At_euclidean": 0.0,
+          "Bt_euclidean": 0.1919112904787812,
+          "Ct_euclidean": 0.1768353519258731,
+          "GovInv_euclidean": 0.2293932632630664,
+          "Kt_euclidean": 1.6996731711975948,
+          "Kt_supply_euclidean": 0.2293932632629588,
+          "Lt_supply_euclidean": 0.14851819799796928,
+          "Yt_euclidean": 0.10317728078043963,
+          "portfolio_share_frobenius": 0.2227855623876619,
+          "rah_euclidean": 0.17582589600632392,
+          "raw_ra0_euclidean": 0.17837810606876045,
+          "w_euclidean": 0.068444749632349
+        }
+      },
+      {
+        "classification": "DESCRIPTIVE_ONLY__NO_CONTRACTION_OR_CONVERGENCE_ACCEPTANCE_CONDITION",
+        "denominator_transition": "turn4_to_turn5",
+        "numerator_transition": "turn5_to_turn6",
+        "ratios": {
+          "AtTax_euclidean": 0.1758258960064741,
+          "At_euclidean": null,
+          "Bt_euclidean": 0.1815225651377296,
+          "Ct_euclidean": 0.19231071917593315,
+          "GovInv_euclidean": 0.22201513916106544,
+          "Kt_euclidean": 0.8987170342729172,
+          "Kt_supply_euclidean": 0.22201513915977006,
+          "Lt_supply_euclidean": 0.17470356140808738,
+          "Yt_euclidean": 0.2643689764923893,
+          "portfolio_share_frobenius": 0.2085263792321792,
+          "rah_euclidean": 0.1837529561081166,
+          "raw_ra0_euclidean": 0.18514500000497722,
+          "w_euclidean": 0.24550176477875868
+        }
+      }
+    ]
+  },
+  "owner_decisions": [
+    {
+      "item": "compared_economic_object",
+      "status": "UNRESOLVED_OWNER_DECISION",
+      "adopted_default": null
+    },
+    {
+      "item": "norm_and_scaling",
+      "status": "UNRESOLVED_OWNER_DECISION",
+      "adopted_default": null
+    },
+    {
+      "item": "outer_tolerance",
+      "status": "UNRESOLVED_OWNER_DECISION",
+      "adopted_default": null
+    },
+    {
+      "item": "checkpoint_timing",
+      "status": "UNRESOLVED_OWNER_DECISION",
+      "adopted_default": null
+    },
+    {
+      "item": "stopping_rule",
+      "status": "UNRESOLVED_OWNER_DECISION",
+      "adopted_default": null
+    },
+    {
+      "item": "maximum_turns_and_call_budget",
+      "status": "UNRESOLVED_OWNER_DECISION",
+      "adopted_default": null
+    },
+    {
+      "item": "failure_behavior",
+      "status": "UNRESOLVED_OWNER_DECISION",
+      "adopted_default": null
+    }
+  ],
+  "forbidden_inference": [
+    "contraction",
+    "fixed_point",
+    "steady_state",
+    "equilibrium",
+    "Results_eligibility",
+    "turn7_execution_authority"
+  ]
+}
