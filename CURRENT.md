@@ -25,9 +25,9 @@ Updated: 2026-09-23 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_FULL_OUTER_STATE_MAP_ZERO_SCIENCE_DESIGN_DISPATCHED__SCIENTIFIC_EXECUTION_CLOSED`
+`CH5_FULL_OUTER_STATE_MAP_ZERO_SCIENCE_DESIGN_ACCEPTED__OWNER_CONVERGENCE_LAW_PENDING`
 
-The Owner selected the complete outer state route and authorized a zero-science design candidate. `TASK_CURRENT.md` now directs Codex to map all actual cross-turn dependencies and propose a diagnostic contract for independent Work review and later Owner adoption. This is design preparation only; no convergence law or scientific execution budget is adopted. The accepted evidence dossier remains the input, not a fixed-point verdict.
+The Owner selected the complete outer state route. Codex delivered the zero-science design candidate at `986eb157638c6f7e26c2042ab2af36e28b9ad1ad`; Work independently accepted its design quality in `docs/CH5_FULL_OUTER_STATE_MAP_ZERO_SCIENCE_DESIGN_INDEPENDENT_REVIEW_20260923.md`. `TASK_CURRENT.md` is now a fail-closed waiting task. No convergence law or scientific execution budget has been adopted. The accepted design and prior evidence dossier are decision aids, not fixed-point verdicts.
 
 The sealed turn7 bundle is not execution authority. The next scientific route is to define the compared economic object, norm, tolerance, stopping rule, maximum turns, and failure behavior, then authorize a bounded diagnostic separately.
 
@@ -39,6 +39,10 @@ The sealed turn7 bundle is not execution authority. The next scientific route is
 - Equation, calibration, solver, grid, timing, payoff, or accepted selector/KFE-law changes without high-risk authorization and independent review
 
 ## Current evidence
+
+- Complete outer state design: `docs/CH5_FULL_OUTER_STATE_MAP_ZERO_SCIENCE_DESIGN_20260923.md`
+- Design receipt: `EVIDENCE/ch5_full_outer_state_map_design_20260923/design_receipt.json`
+- Independent design review: `docs/CH5_FULL_OUTER_STATE_MAP_ZERO_SCIENCE_DESIGN_INDEPENDENT_REVIEW_20260923.md`
 
 - Report: `docs/CH5_MP4C_K1B_TURN5_TURN6_BOUNDED_CONTINUATION_DIAGNOSTIC_REPORT.md`
 - Independent review: `docs/CH5_MP4C_K1B_TURN5_TURN6_INDEPENDENT_REVIEW_ACCEPTANCE_20260923.md`
