@@ -24,9 +24,9 @@ Updated: 2026-09-23 (Asia/Shanghai)
 
 ## Current gate
 
-`TURN5_TURN6_BOUNDED_CONTINUATION_ACCEPTED__CONVERGENCE_DESIGN_PENDING`
+`CH5_K1B_CONVERGENCE_DESIGN_EVIDENCE_DOSSIER_20260923__ACTIVE__ZERO_SCIENCE`
 
-The project-scoped Codex workflow verification has been accepted and closed. There is no active scientific Builder task. `TASK_CURRENT.md` is a fail-closed waiting task. A dedicated fixed-point/convergence diagnostic design still requires explicit scientific authority before any further household call.
+The project-scoped Codex workflow verification has been accepted and closed. `TASK_CURRENT.md` now authorizes a zero-science evidence dossier for convergence-design decisions. There is no active scientific execution task. A dedicated fixed-point/convergence diagnostic design still requires explicit scientific authority before any further household call.
 
 The sealed turn7 bundle is not execution authority. The next scientific route is to define the compared economic object, norm, tolerance, stopping rule, maximum turns, and failure behavior, then authorize a bounded diagnostic separately.
 
