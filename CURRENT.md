@@ -8,7 +8,7 @@ Updated: 2026-09-23 (Asia/Shanghai)
 - Active local worktree: `D:\ProjectTemp\c5k1bturn56`
 - Local branch: `codex/ch5-mp4c-k1b-turn5-turn6-bounded-continuation-20260922`
 - Last independently accepted bounded scientific candidate: `392f07b2d803d5a0d8a2c5c270858cfdbef1db80` (turn5-turn6 trajectory diagnostic)
-- The workflow migration state is the local commit containing this file.
+- The local workflow migration is commit `09187ec28c71442f393eb4ecac0993c76000dbed`, independently accepted in `docs/CH5_LOCAL_WORK_WORKFLOW_MIGRATION_INDEPENDENT_REVIEW_20260923.md`.
 - Local repository state is authoritative. GitHub is optional backup.
 
 ## Accepted scientific and implementation state
