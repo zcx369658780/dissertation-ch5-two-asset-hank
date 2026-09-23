@@ -25,9 +25,9 @@ Updated: 2026-09-23 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_K1B_CONVERGENCE_DESIGN_EVIDENCE_ACCEPTED__OWNER_SCIENTIFIC_DECISION_PENDING`
+`CH5_FULL_OUTER_STATE_MAP_ZERO_SCIENCE_DESIGN_DISPATCHED__SCIENTIFIC_EXECUTION_CLOSED`
 
-The project-scoped Codex workflow verification and zero-science convergence-design evidence dossier are accepted and closed. `TASK_CURRENT.md` is a fail-closed waiting task. There is no active scientific execution task. A dedicated fixed-point/convergence diagnostic design still requires explicit Owner scientific authority before any further household call.
+The Owner selected the complete outer state route and authorized a zero-science design candidate. `TASK_CURRENT.md` now directs Codex to map all actual cross-turn dependencies and propose a diagnostic contract for independent Work review and later Owner adoption. This is design preparation only; no convergence law or scientific execution budget is adopted. The accepted evidence dossier remains the input, not a fixed-point verdict.
 
 The sealed turn7 bundle is not execution authority. The next scientific route is to define the compared economic object, norm, tolerance, stopping rule, maximum turns, and failure behavior, then authorize a bounded diagnostic separately.
 
