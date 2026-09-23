@@ -23,9 +23,9 @@ Updated: 2026-09-23 (Asia/Shanghai)
 
 ## Current gate
 
-`TURN5_TURN6_BOUNDED_CONTINUATION_ACCEPTED__CONVERGENCE_DESIGN_PENDING`
+`CH5_CODEX_LOCAL_WORKFLOW_BINDING_AND_FRESH_TASK_VERIFICATION_20260923__ACTIVE`
 
-There is no active scientific Builder task. `TASK_CURRENT.md` is a fail-closed waiting task. A dedicated fixed-point/convergence diagnostic design must receive explicit scientific authority before any further household call.
+`TASK_CURRENT.md` now authorizes a project-scoped, zero-science Codex workflow verification task. The independently accepted turn5-turn6 scientific state remains unchanged. No scientific Builder task is active; a dedicated fixed-point/convergence diagnostic design still requires explicit scientific authority before any further household call.
 
 The sealed turn7 bundle is not execution authority. The next scientific route is to define the compared economic object, norm, tolerance, stopping rule, maximum turns, and failure behavior, then authorize a bounded diagnostic separately.
 
