@@ -1,14 +1,14 @@
 # Current Builder Task
 
-Status: `AWAITING_WORK_REVIEW`
+Status: `AWAITING_CONVERGENCE_DESIGN_AUTHORITY`
 
 ## Objective
 
-Preserve the post-turn6 Builder candidate. Do not execute scientific work until GPT Work independently reviews candidate `392f07b2d803d5a0d8a2c5c270858cfdbef1db80`, records ACCEPT/REJECT, and replaces this file with one explicit bounded task when appropriate.
+Preserve the independently accepted turn5-turn6 bounded trajectory and sealed turn7 input. Do not execute scientific work until a dedicated fixed-point/convergence diagnostic design is authorized and this file is replaced with one explicit bounded task.
 
 ## Allowed scope
 
-- Read `CURRENT.md`, `SCIENTIFIC_DECISIONS.md`, `REVIEW_GATE.md`, and directly relevant evidence.
+- Read `CURRENT.md`, `SCIENTIFIC_DECISIONS.md`, `REVIEW_GATE.md`, the independent review decision, and directly relevant evidence.
 - Report inconsistencies or missing authority.
 - Make no source, model, or evidence changes under this waiting task.
 
@@ -17,10 +17,11 @@ Preserve the post-turn6 Builder candidate. Do not execute scientific work until 
 - Current state: `CURRENT.md`
 - Accepted science: `SCIENTIFIC_DECISIONS.md`
 - Review routing: `REVIEW_GATE.md`
+- Independent review: `docs/CH5_MP4C_K1B_TURN5_TURN6_INDEPENDENT_REVIEW_ACCEPTANCE_20260923.md`
 
 ## Required check
 
-Confirm that no newer local review decision or task has replaced this waiting file.
+Confirm that no newer local task has replaced this waiting file.
 
 ## Evidence to persist
 
@@ -28,7 +29,7 @@ None.
 
 ## Stop conditions
 
-Stop immediately because independent Work review is pending and no scientific Builder objective or call budget is active.
+Stop immediately because convergence-design authority and a scientific Builder call budget are absent.
 
 ## Forbidden work
 
@@ -36,4 +37,4 @@ Turn7 household, later turns, HJB/KFE, integration, K1B sensitivity, K2, GE, ann
 
 ## Expected terminal
 
-`STOP__TURN5_TURN6_BUILDER_CANDIDATE_PENDING_INDEPENDENT_WORK_REVIEW`
+`STOP__TURN5_TURN6_ACCEPTED__CONVERGENCE_DESIGN_AUTHORITY_PENDING`
