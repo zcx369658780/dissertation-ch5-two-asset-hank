@@ -25,11 +25,11 @@ Updated: 2026-09-23 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_FULL_OUTER_NINE_COMPONENT_1E6_STATIC_DIAGNOSTIC_ACCEPTED__OWNER_SCIENTIFIC_DECISION_PENDING`
+`CH5_OUTER_STOP_FAILURE_BUDGET_CONTRACT_PROPOSAL_DISPATCHED__ZERO_SCIENCE_ONLY`
 
 The Owner selected the complete outer state route. Codex delivered the zero-science design candidate at `986eb157638c6f7e26c2042ab2af36e28b9ad1ad`; Work independently accepted its design quality in `docs/CH5_FULL_OUTER_STATE_MAP_ZERO_SCIENCE_DESIGN_INDEPENDENT_REVIEW_20260923.md`. Codex then delivered the unit/scale/precision evidence at `f93407460e79f93c3781f258b856e55bb1ee3a15`, independently accepted in `docs/CH5_FULL_OUTER_STATE_UNIT_SCALE_PRECISION_EVIDENCE_INDEPENDENT_REVIEW_20260923.md`. The Owner agreed to `1e-6` as diagnostic precision, with `10^-12` class precision only an eventual aspiration. Codex delivered the sealed nine-component static readout at `2d5d9a235803882b65571aab57233018d4c1fc0b`; Work independently accepted its zero-science evidence quality in `docs/CH5_FULL_OUTER_NINE_COMPONENT_1E6_STATIC_DIAGNOSTIC_INDEPENDENT_REVIEW_20260923.md`. In both C4→C5 and C5→C6, only `Kt_prev` was strictly below `1e-6`. No convergence law or scientific execution budget has been adopted. These accepted materials are decision aids, not fixed-point verdicts.
 
-The sealed turn7 bundle is not execution authority. The next scientific route is to define the compared economic object, norm, tolerance, stopping rule, maximum turns, and failure behavior, then authorize a bounded diagnostic separately.
+The Owner authorized continuing to a zero-science proposal for the complete stopping, failure and per-category budget contract. `TASK_CURRENT.md` now asks Codex to prepare that proposal for independent Work review and later Owner adoption; it grants no scientific execution. The sealed turn7 bundle is not execution authority. A subsequent bounded diagnostic requires a separate task after the scientific choices are adopted.
 
 ## Explicitly closed
 
