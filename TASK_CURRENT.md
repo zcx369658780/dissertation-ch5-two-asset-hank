@@ -1,45 +1,41 @@
-# Current Builder Task — K1B convergence-design evidence dossier
+# Current Builder Task
 
-Task ID: `CH5_K1B_CONVERGENCE_DESIGN_EVIDENCE_DOSSIER_20260923`
-Status: `ACTIVE`
-Risk: scientific-route preparation only. Scientific/model calls: `0`. Results eligibility: `FALSE`.
+Status: `AWAITING_OWNER_CONVERGENCE_DESIGN_DECISION`
 
 ## Objective
 
-Prepare a source-grounded decision dossier for Work and Owner to design a future fixed-point/convergence diagnostic. Identify what the accepted turn3–turn6 evidence actually measures, which state or aggregate objects could be compared across turns, and which scientific choices remain open. Do not select or implement a convergence law. Do not run turn7 household.
+Preserve the independently accepted turn5-turn6 bounded trajectory, sealed turn7 input, and accepted zero-science convergence-design evidence dossier. Do not execute scientific work until the Owner adopts a dedicated fixed-point/convergence diagnostic design and Work replaces this file with one explicit bounded task.
 
-The dossier is advice and provenance, not scientific adoption or execution authority. Stop before a substantive choice about object, norm, tolerance, stopping rule, maximum turns, or failure behavior.
+## Allowed scope
 
-## Start and inputs
+- Read `CURRENT.md`, `SCIENTIFIC_DECISIONS.md`, `REVIEW_GATE.md`, the independent review decision, and directly relevant evidence.
+- Report inconsistencies or missing authority.
+- Make no source, model, or evidence changes under this waiting task.
 
-- Worktree: `D:\ProjectTemp\c5k1bturn56`. Verify Git root, local HEAD, and worktree status before work. Dispatch baseline is the parent of this task's dispatch commit; report the actual dispatch HEAD observed at startup.
-- Read in order: `AGENTS.md`, `CURRENT.md`, `SCIENTIFIC_DECISIONS.md`, `TASK_CURRENT.md`, `REVIEW_GATE.md`.
-- Then read only the directly relevant accepted sources: `docs/CH5_MP4C_K1B_TURN5_TURN6_INDEPENDENT_REVIEW_ACCEPTANCE_20260923.md`, `docs/CH5_MP4C_K1B_TURN5_TURN6_BOUNDED_CONTINUATION_DIAGNOSTIC_REPORT.md`, and the named trajectory diagnostic and manifests under `reports/ch5_mp4c_k1b_turn5_turn6_bounded_continuation_20260921_run001/`.
-- Read production source only to identify existing output/state definitions and timing; do not execute or modify it. Cite exact file/line or sealed evidence path for every factual contract.
+## Inputs
 
-## Allowed work
+- Current state: `CURRENT.md`
+- Accepted science: `SCIENTIFIC_DECISIONS.md`
+- Review routing: `REVIEW_GATE.md`
+- Independent review: `docs/CH5_MP4C_K1B_TURN5_TURN6_INDEPENDENT_REVIEW_ACCEPTANCE_20260923.md`
+- Design evidence review: `docs/CH5_K1B_CONVERGENCE_DESIGN_EVIDENCE_DOSSIER_INDEPENDENT_REVIEW_20260923.md`
 
-1. Inventory the compared variables available at complete-turn checkpoints, their dimension, unit/normalization, timing, and provenance. Separate model state, policy/share, payoff, and reported aggregate quantities; mark any undefined or unavailable object `UNRESOLVED`.
-2. Reproduce from sealed reports/JSON only the existing descriptive turn3→4, turn4→5, and turn5→6 change measures and their definitions. Do not extrapolate a contraction rate, estimate a fixed point, or infer convergence from shrinking changes.
-3. Present a concise Owner decision matrix for the compared economic object, norm/scaling, tolerance, checkpoint timing, stopping rule, maximum turns/call budget, and failure behavior. For each, state what evidence supports, what remains a scientific choice, and consequences for a future bounded diagnostic. Recommendations may be labeled as proposals, never adopted defaults.
-4. Write one human-readable dossier and one machine-readable source/decision inventory. Validate citations, identities and zero-call ledger with static checks. Commit only the two allowed output paths locally with explicit staging. If the app sandbox cannot write this worktree or its Git metadata, preserve the first error and stop; do not switch to another repository.
+## Required check
 
-## Allowed write paths
+Confirm that no newer local task has replaced this waiting file.
 
-- `docs/CH5_K1B_CONVERGENCE_DESIGN_EVIDENCE_DOSSIER_20260923.md`
-- `EVIDENCE/ch5_k1b_convergence_design_dossier_20260923/decision_inventory.json`
+## Evidence to persist
 
-`CURRENT.md` and `TASK_CURRENT.md` are Work-owned and must not be edited by Builder.
+None.
 
-## Hard boundaries
+## Stop conditions
 
-- HJB/KFE, selector, root, D2/Q, integration, firm, K1B, K2, MATLAB, GE, annual, shocks, IRF, welfare, and Results calls: `0`. No turn7 household, no recalibration, no threshold tuning, no rerun, no new numerical trajectory.
-- Do not edit `src/`, `reports/`, `tests/`, `validators/`, accepted evidence, `SCIENTIFIC_DECISIONS.md`, or `REVIEW_GATE.md`. Preserve production `src` tree `00682b2e1a7ba23665f6e16f6acf48ad35874883`.
-- No GitHub fetch/push/remote readback, branch/issue/PR, global Codex setting, or unrelated project access. Do not enter `deep-learning-hank`.
-- No adoption of a fixed-point/convergence law, steady-state or equilibrium claim, successor scientific task, or Results permission. First unsupported fact remains `UNRESOLVED`; do not fill gaps from memory.
+Stop immediately because Owner convergence-design authority and a scientific Builder call budget are absent.
 
-## Terminal and review
+## Forbidden work
 
-Report observed HEAD, changed paths, source tree, static checks, first blocker if any, final local commit if made, and zero scientific-call ledger. Return `PASS__CH5_K1B_CONVERGENCE_DESIGN_DOSSIER__ZERO_SCIENCE__AWAITING_WORK_REVIEW` only when both outputs are committed and checked. Otherwise return `BLOCKED__CH5_K1B_CONVERGENCE_DESIGN_DOSSIER__FIRST_FAILURE_RECORDED`.
+Turn7 household, later turns, HJB/KFE, integration, K1B sensitivity, K2, GE, annualization, shocks, IRFs, welfare, Results, scientific source changes, tuning, and successor creation.
 
-Work independently reviews the dossier. Owner decides any substantive convergence law before Work can issue a bounded turn7 or later scientific task.
+## Expected terminal
+
+`STOP__DESIGN_EVIDENCE_ACCEPTED__OWNER_CONVERGENCE_DESIGN_DECISION_PENDING`
