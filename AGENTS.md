@@ -27,6 +27,7 @@ Use historical reports only for a specific provenance question. Do not recursive
 - GPT Work is Project Lead, L3 independent Reviewer, scientific-route advisor, and Orchestrator.
 - Codex is bounded Builder and executor. Codex implements `TASK_CURRENT.md`, runs authorized checks or science, persists evidence, and reports the first failure.
 - Codex does not self-accept high scientific risk changes or create a scientific successor without Work/Owner authority.
+- After reviewing a completed task, Work records ACCEPT/REJECT and issues the next bounded `TASK_CURRENT.md` automatically when no substantive Owner decision is needed. A rejection may lead only to a scoped repair or design task under existing authority; it does not reset consumed calls or authorize a new scientific law.
 
 ## Execution contract
 
@@ -42,8 +43,14 @@ Use historical reports only for a specific provenance question. Do not recursive
 - Inspect local HEAD and worktree status before edits. Preserve unrelated user files; use an isolated worktree when needed.
 - Stage explicit paths. Do not use `git add .`, `git add -A`, destructive cleanup, reset, stash, or force push for convenience.
 - A clean local commit plus local evidence is sufficient for day-to-day completion. Push only when a task or the Owner requests backup/publication.
+- At scientific milestones and before high-risk source changes, make a verified local backup at the Owner-designated destination. A Git bundle covers committed history; separately include necessary untracked or ignored evidence with a manifest. A backup is not scientific acceptance.
 - Store concise machine-readable evidence under the task's authorized location. Follow `EVIDENCE/README.md`.
 - Historical Git data and reports remain archive/evidence; workflow migration does not rewrite accepted scientific history.
+
+## Recovery and handoff
+
+- If a project document cannot be recovered from GitHub, Work may assign Codex a bounded local recovery task without requesting fresh permission. Recover only from identifiable project-local or Owner-provided sources, preserve provenance, and mark unavailable content unresolved rather than reconstructing it from memory. Recovery does not authorize model changes or scientific calls.
+- Work chooses a handoff point while the current conversation still has enough context. At handoff, send the Owner only a copyable handoff prompt; do not issue an additional task sheet in the same handoff. After the new conversation starts, verify the local state and automatically issue the next task sheet if no Owner decision is pending.
 
 ## Reporting
 

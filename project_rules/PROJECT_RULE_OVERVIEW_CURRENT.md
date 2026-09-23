@@ -10,7 +10,9 @@ Updated: 2026-09-23. Workflow authority: `LOCAL_WORK_WORKFLOW_V1`.
 
 ## Current workflow
 
-`Work reads CURRENT -> Work writes TASK_CURRENT -> Codex executes bounded scope -> Codex persists local evidence -> Work reviews -> Work records acceptance or next task`
+`Work reads CURRENT -> Work writes TASK_CURRENT -> Codex executes bounded scope -> Codex persists local evidence -> Work reviews -> Work records acceptance and automatically issues the next bounded task when no Owner decision is needed`
+
+At a Work-selected handoff, only the handoff prompt is sent. The next conversation verifies local state before issuing the eligible task.
 
 Low-risk work may close after Codex self-check. Medium-risk work receives Work review. High scientific risk requires prior Work/Owner authorization and independent Work review; substantive decisions require Owner adoption.
 

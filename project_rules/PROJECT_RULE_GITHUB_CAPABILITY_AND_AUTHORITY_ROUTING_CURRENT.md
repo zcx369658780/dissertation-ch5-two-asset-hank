@@ -18,3 +18,7 @@ GitHub is an optional remote backup and milestone-publication channel. It is not
 - GitHub write access never grants scientific authority.
 - Historical branch, issue, pull request, or remote CURRENT content cannot override newer accepted local state.
 - No workflow may require GitHub merely to prove that local evidence exists.
+
+## Project-document recovery while GitHub is unavailable
+
+When a named project document cannot be restored through GitHub, Work may give Codex a bounded local recovery task under the Owner's standing authorization. Check the exact local Git history, existing project evidence, and Owner-provided copies before reporting the document unavailable. Record the recovered file's source commit/path or source artifact and hash. Preserve unrelated files and do not search or use the separate forbidden project. If no identifiable source exists, report `UNRESOLVED` and request the missing source; do not invent scientific or governance text. Recovery itself authorizes no scientific execution.

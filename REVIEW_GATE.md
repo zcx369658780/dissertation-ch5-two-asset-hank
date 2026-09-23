@@ -44,3 +44,5 @@ The Builder terminal establishes only execution evidence. It does not by itself 
 - If a defect is representational or mechanical and the intended accepted behavior is already exact, handle it at the task's stated risk level.
 - Never tune parameters, tolerances, grids, solver families, damping schedules, or retry counts merely to recover PASS.
 - Review existing immutable evidence when sufficient; do not rerun expensive science only to reproduce already sealed evidence.
+- After an ACCEPT or REJECT, Work updates the local decision/state and, when the next bounded action is determined without an Owner decision, issues the next `TASK_CURRENT.md` automatically. A consumed budget, first-failure stop, or substantive scientific choice remains a gate.
+- A handoff is a timing exception to immediate task issuance: the handoff response contains only the prompt. The new conversation first verifies local state, then issues the next eligible task without asking for redundant permission.
