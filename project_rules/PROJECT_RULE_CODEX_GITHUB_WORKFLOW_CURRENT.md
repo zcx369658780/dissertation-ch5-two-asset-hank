@@ -1,28 +1,29 @@
-# GitHub Task 与 Codex 完整任务工作流
-更新：2026-09-07；修订：`CH5_ASTRA_WORKFLOW_2026_09_07`。
+# Local Task and Codex Workflow
 
-## 一个任务对应一个完整问题
-标准流程：发布并核验 task → Builder 完成任务内各阶段 → 提交一份结果报告 → Reviewer 审阅相关证据。
-复制目录、wrapper 修复、静态检查、序列化、manifest、readback、报告补全通常是内部步骤，不是独立任务。
+Updated: 2026-09-23. This replaces GitHub-heavy daily workflow requirements.
 
-## Task 最小契约
-写明：目标和非目标；基线与必须保持的源/输入身份；允许文件或目录；允许动作；相关检查与成功条件；科学调用和重试预算；时间/资源上限（需要时）；输出位置；停止条件；commit/push 政策。
-可以预授权有条件的后续步骤，但不得把未知科学选择默认为已解决。
+## One bounded task
 
-## 任务内修复与验证
-在允许路径内，修复不改变科学对象的导入、路径、序列化、诊断形状或报告问题，并完成相关验证。
-修复源于已批准接口变更的失效测试可以由任务明确覆盖；不得删除科学断言或放宽容差来过测。
-普通静态检查、合成 plumbing 测试、已保存数组比较不消耗模型预算。实际调用 HJB/求解器必须计数，不以“测试”标签免计。
-新任务主要用于超出已有科学范围、生产源改动范围、实验预算或实质决策边界；不因任务内部出现一个新工程子问题自动新建。
+`TASK_CURRENT.md` is the only default Builder task. It states objective, allowed scope, inputs, checks, evidence, stop conditions, forbidden work, and expected terminal. A bounded task does not expand into a roadmap.
 
-## 启动与 Git
-开始时 fetch，检查仓库、remote、HEAD、工作区和 active task。任务须在 live main，未被完成/撤销/取代；报告中记录真正使用的 commit。
-main 有无关提交可继续：核验 task 内容、相关源码/输入和前提未变。不再要求每次启动时 main 恰好是发布前基线的直接子提交。
-不相关 dirty state 可通过独立 worktree 隔离。保留用户文件，不混入提交，不擅自 reset/clean/stash。
-显式 stage 路径；禁止 git add . / -A。一次原子提交可包含同一主题的多份规则、状态与任务文档。非 force push；冲突时重新读取相关变化。
-已授权 publication 的失败/部分完成报告也可提交，但必须如实标注，不能把报告发布成功等同科学成功。
+## Start and execute
 
-## 验收与停止
-核验相关 diff、产物及检查记录一次；已核验且字节/输入未变的历史证据可引用。只补足影响当前判断的证据。
-暂停科学步骤不要求放弃仍可完成的证据保存、报告和无关已授权步骤。
-历史任务不可追溯扩权。已完成任务不可因新会话或新规则重新执行。新任务引用本规则明确自己的预算。
+1. Read `CURRENT.md`, `SCIENTIFIC_DECISIONS.md`, `TASK_CURRENT.md`, and `REVIEW_GATE.md`.
+2. Check local HEAD and worktree status.
+3. Read only directly relevant source/evidence.
+4. Execute the authorized scope and preserve the first scientific failure.
+5. Persist focused evidence and update local current state when the task permits.
+
+Routine imports, paths, serialization, manifest, readback, and report defects may be repaired inside a task when they preserve the accepted scientific object and allowed paths. Actual scientific calls always count.
+
+## Local Git
+
+- Local working tree, local commit, and local evidence are repository-state authority.
+- Use explicit staging and an atomic local commit when useful.
+- GitHub fetch, issue, branch, push, pull request, and remote readback are optional backup/publication actions, not daily completion or scientific acceptance gates.
+- Never equate a commit or publication with scientific acceptance.
+- Preserve unrelated dirty files; do not reset, clean, stash, force push, or overwrite user work for convenience.
+
+## Review
+
+Use `REVIEW_GATE.md`. Reuse sealed evidence when it answers the review question. A completed task cannot be rerun or expanded by historical authority alone.

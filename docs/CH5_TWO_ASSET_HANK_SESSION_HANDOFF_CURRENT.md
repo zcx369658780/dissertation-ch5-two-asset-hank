@@ -1,3 +1,7 @@
+# Compatibility notice
+
+This 2026-09-21 handoff is retained as historical evidence. New sessions use repository-root `CURRENT.md`, `SCIENTIFIC_DECISIONS.md`, `TASK_CURRENT.md`, and `REVIEW_GATE.md`. GitHub is no longer repository-state or task-queue authority.
+
 # Chapter 5 当前会话交接
 
 更新：2026-09-21。
@@ -10,7 +14,7 @@
 
 `zcx369658780/deep-learning-hank`
 
-Owner is final scientific authority. ChatGPT is L3 independent Reviewer/scientific-route authority. Codex is bounded Builder/scientific numerical analyst. GitHub live main is repository-state authority.
+Owner is final scientific authority. ChatGPT was the L3 independent Reviewer/scientific-route authority and Codex the bounded Builder/scientific numerical analyst. Under the 2026-09-23 migration, repository-root local authority files supersede this snapshot; GitHub is optional backup.
 
 Current status:
 

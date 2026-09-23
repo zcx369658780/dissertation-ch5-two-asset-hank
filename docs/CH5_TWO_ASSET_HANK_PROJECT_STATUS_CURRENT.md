@@ -1,3 +1,7 @@
+# Compatibility notice
+
+This 2026-09-21 status snapshot is retained as historical evidence. The current local authority is repository-root `CURRENT.md`; accepted scientific decisions are indexed in `SCIENTIFIC_DECISIONS.md`. Do not use the active-task statement below to execute new science.
+
 # Chapter 5 两资产 HANK 当前状态
 
 更新：2026-09-21。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`.

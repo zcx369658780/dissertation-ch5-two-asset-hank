@@ -1,17 +1,19 @@
-# 科研工作流总定位
-更新：2026-09-07；修订：`CH5_ASTRA_WORKFLOW_2026_09_07`。
+# Chapter 5 Research Workflow Overview
 
-Codex+Zotero+Obsidian科研服务于文献、数据、模型与论文工作。本次修订在 Chapter 5 两资产仓库生效，不自动修改其他项目的规则或科学路线。
+Updated: 2026-09-23. Workflow authority: `LOCAL_WORK_WORKFLOW_V1`.
 
-## 角色
-- Owner：研究问题、经济含义、冲突来源、校准及论文结论的最终科学 authority。
-- Reviewer：路线规划、比较契约、任务发布、实现决策和独立验收。没有实质 Owner 决策时直接推进已经授权的工作。
-- Builder：完成 live GitHub task 授权的完整工作单元，处理范围内的工程问题，保留可复核证据。
+## Roles
 
-## 工作原则
-正确性、可复现性和推进效率共同决定工作方式。审核应回答具体科学问题；不为形式完整新增任务。
-一个 task 可同时授权设计、实现、相关验证、有限运行、证据整理及发布。各阶段的前提仍需满足，但不要求每一阶段重新交接。
+- Owner: final authority for economics, calibration, mathematical contracts, and dissertation conclusions.
+- GPT Work: Project Lead, L3 independent Reviewer, scientific-route advisor, and Orchestrator.
+- Codex: bounded Builder/executor operating only from `TASK_CURRENT.md`.
 
-默认可读取相关材料、审阅和提出方案。科学代码改动、科学调用及正式文件写入按任务范围执行；不能把“继续”解释为无限实验授权。用户已经明确授权的事项无需反复确认。
+## Current workflow
 
-本次规则替代此前 Chapter 5 的强制逐小 gate、任意失败即停及每次 retry 必须新 task 的流程。历史科学事实、已消费预算、保护源和 Results 要求不因修订改变。
+`Work reads CURRENT -> Work writes TASK_CURRENT -> Codex executes bounded scope -> Codex persists local evidence -> Work reviews -> Work records acceptance or next task`
+
+Low-risk work may close after Codex self-check. Medium-risk work receives Work review. High scientific risk requires prior Work/Owner authorization and independent Work review; substantive decisions require Owner adoption.
+
+Correctness, reproducibility, first-failure discipline, bounded scope, and evidence determine the workflow. GitHub status and repeated governance artifacts do not.
+
+Historical rules, reports, and Git records remain archive/evidence. This workflow change does not alter an accepted scientific decision or reset a consumed scientific budget.

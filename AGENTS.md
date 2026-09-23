@@ -1,36 +1,50 @@
-# Chapter 5 Two-Asset HANK — Working Agreement
+# Chapter 5 Two-Asset HANK — Local Working Agreement
 
-Updated: 2026-09-09. Owner-approved workflow revision: `CH5_ASTRA_WORKFLOW_2026_09_07`.
+Updated: 2026-09-23. Workflow authority: `LOCAL_WORK_WORKFLOW_V1`.
 
-## Identity and authority
-- Active repository: `zcx369658780/dissertation-ch5-two-asset-hank`.
-- This is the sole active Chapter 5 model codebase. The one-asset R5 repository is historical evidence; `deep-learning-hank` is a separate project.
-- Live GitHub main is repository-state authority. Scientific execution requires an active task published there.
-- Read `project_rules/PROJECT_RULE_INDEX_CURRENT.md`, the exact task, and its relevant current sources. Do not restart historical gates from old handoffs.
-- Owner decides genuine economic/scientific choices and retains final scientific authority. Reviewer defines tasks and accepts evidence; Builder completes authorized work.
+## Project boundary
 
-## Executor routing
-Owner's standing preference: Codex Builder defaults to `gpt-5.6-sol` with `medium` reasoning; overall planning/scientific review remains with ChatGPT Reviewer. A future exact task may specify a justified model/effort exception and its applicable stage. Do not assume a preferred label verifies the actual runtime model. Do not autonomously edit global/provider configuration. Model or session changes never reset scientific-call budgets or relax evidence standards.
+- The only active project is this local `dissertation-ch5-two-asset-hank` repository.
+- Never enter, read, search, cite, use, or modify `deep-learning-hank`.
+- The current local working tree, local commits, and local evidence are repository-state authority.
+- GitHub is optional backup and milestone publication. Fetch, push, remote readback, issues, branches, and pull requests are not routine scientific gates.
 
-## Execution style
-The Astra migration describes a working style, not a claim about the executor's installed model. Do not change model/provider settings.
-- Complete one logical work unit per task. Planning, bounded implementation, relevant checks, authorized execution, evidence closure and reporting can be phases of the same task.
-- Continue through routine issues anticipated by the task: imports, paths, serialization, diagnostic shapes, manifests and report omissions. Repair them within allowed paths and budget.
-- Ask only for a missing decision that materially changes economic meaning, authority, external effects or experiment scope. Naming and representation choices that preserve the scientific object belong to the reviewer/Builder.
-- Reuse accepted unchanged evidence. Test changed behavior and affected scientific invariants; stop optional testing when the remaining risk is resolved.
-- A failed ordinary check is not automatically a new gate. Preserve the failure, diagnose, repair within scope, and perform the relevant check again.
-- Stop before changing equations, KKT/boundary laws, calibration, solver semantics, tolerances or experiment scope unless the current task explicitly authorizes that change. Never tune these merely to obtain PASS.
-- Model invocations, including failed invocations, count in the task ledger. A new conversation does not reset budgets. Never claim zero model calls just because no output was returned.
-- Protect original MATLAB and accepted evidence. Development scripts and draft reports may be revised within the task workspace.
+## Startup order
 
-## Git and local work
-- Fetch before starting; record the actual baseline. Verify the task remains active and its input/source identities remain valid.
-- Unrelated main changes are not an automatic blocker; assess the relevant diff. Material authority/input changes require reassessment.
-- Preserve unrelated dirty files. Use an isolated worktree when possible; no reset, clean, stash, force-push or overwrite of user work for convenience.
-- Stage explicit allowed paths. Verify the final changed-file list and one publication readback. Do not create a gate for each Git plumbing operation.
-- Local documentation sync was accepted at branch commit `d2f3e6e7cc21fffe8807f577ec2262bb77afdc07`; do not repeat it. Read the current active task in the rule index.
-- Owner standing authorization (2026-09-07): after evidence-based acceptance, Reviewer may publish the next bounded task without routine reconfirmation when no substantive scientific decision remains. Use proportionate checks and task-budgeted retries. This agreement itself does not authorize model calls.
+Read only what the current task needs, in this order:
+
+1. `CURRENT.md`
+2. `SCIENTIFIC_DECISIONS.md`
+3. `TASK_CURRENT.md`
+4. `REVIEW_GATE.md`
+5. source and evidence directly named by `TASK_CURRENT.md`
+
+Use historical reports only for a specific provenance question. Do not recursively reread the task archive, reports, or rule archive.
+
+## Roles
+
+- Owner is final scientific authority.
+- GPT Work is Project Lead, L3 independent Reviewer, scientific-route advisor, and Orchestrator.
+- Codex is bounded Builder and executor. Codex implements `TASK_CURRENT.md`, runs authorized checks or science, persists evidence, and reports the first failure.
+- Codex does not self-accept high scientific risk changes or create a scientific successor without Work/Owner authority.
+
+## Execution contract
+
+- `TASK_CURRENT.md` is Codex's only default execution entry.
+- Honor exact allowed paths, call budgets, stop conditions, and forbidden work.
+- Preserve first-failure discipline. Bounded debugging is allowed only inside the task's stated scope and budgets.
+- Do not change equations, KKT or boundary economics, calibration, timing, payoff law, solver semantics, grids, or tolerances unless the task explicitly authorizes it.
+- A completed or waiting `TASK_CURRENT.md` authorizes no scientific execution.
+- Model calls, including failed calls, count. A new conversation does not reset budgets.
+
+## Local Git and evidence
+
+- Inspect local HEAD and worktree status before edits. Preserve unrelated user files; use an isolated worktree when needed.
+- Stage explicit paths. Do not use `git add .`, `git add -A`, destructive cleanup, reset, stash, or force push for convenience.
+- A clean local commit plus local evidence is sufficient for day-to-day completion. Push only when a task or the Owner requests backup/publication.
+- Store concise machine-readable evidence under the task's authorized location. Follow `EVIDENCE/README.md`.
+- Historical Git data and reports remain archive/evidence; workflow migration does not rewrite accepted scientific history.
 
 ## Reporting
-Report outcome first: completed scope, evidence, changed paths, commit/publication status, real limitations, and next useful action. Use plain language; avoid repeating forbidden-operation lists and long terminal strings when a short status plus evidence is sufficient.
-Scientific pass, implementation fidelity, numerical validity, and paper Results eligibility are distinct claims.
+
+Report outcome, evidence, changed paths, checks, local commit, limitations, and the next gate. Keep scientific PASS, implementation fidelity, numerical validity, Reviewer acceptance, and Results eligibility distinct.
