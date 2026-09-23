@@ -1,10 +1,10 @@
 {
   "schema": "CH5_TURN6_SAME_FROZEN_INPUT_REPEAT_RUNNER_PREPARATION_V1",
   "task_id": "CH5_TURN6_SAME_FROZEN_INPUT_REPEAT_RUNNER_ZERO_SCIENCE_20260923",
-  "status": "ZERO_SCIENCE_RUNNER_CANDIDATE_PRECOMMIT",
+  "status": "ZERO_SCIENCE_RUNNER_REPAIR_PRECOMMIT",
   "dispatch_head": "b0bd3eb981a0c8848666d4ebae86d045875dddd1",
   "start_head": "b0bd3eb981a0c8848666d4ebae86d045875dddd1",
-  "precommit_head": "071839ec14b280550621fbf43852a184e6154d7f",
+  "precommit_head": "0713726f5044fe375e49e9daca794a30205a0549",
   "dispatch_parent": "1376297341548d569351b566e1507bdc37b6ef33",
   "src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
   "source_and_reference_files": [
@@ -15,8 +15,8 @@
     },
     {
       "path": "CURRENT.md",
-      "bytes": 6447,
-      "sha256": "95EB49F3CE32FD21B2DB7871CB3EA7DD49EE69FA4772D0FEFFB89364FDCCF931"
+      "bytes": 7014,
+      "sha256": "E15E2FDD2D56F3D303E43A7998CF2C07EDF7768CBFC582FED18E0A82859BF28F"
     },
     {
       "path": "SCIENTIFIC_DECISIONS.md",
@@ -25,8 +25,8 @@
     },
     {
       "path": "TASK_CURRENT.md",
-      "bytes": 8305,
-      "sha256": "C67745FB3FEBDEC3AC7EE66048A4A30C39DBE8278A23D092046F4F8152CD16E6"
+      "bytes": 5824,
+      "sha256": "A4932CB10991CD86B56AF8855A5C3ADA5D6A9E35187496ECFB2D8EC7E1BEE7F5"
     },
     {
       "path": "REVIEW_GATE.md",
@@ -170,13 +170,13 @@
     },
     {
       "path": "validators/multi_province/k1b_turn6_same_frozen_input_repeat/run.py",
-      "bytes": 28903,
-      "sha256": "23CC0ABA68165594004E054802E2EE7B36948B3EB500D28A18AB83F17112AE82"
+      "bytes": 36420,
+      "sha256": "F0FF59BA8A088B8D74BEB396FBDE7D336D5DB28AC796A6E6BECEBC6FC048F405"
     },
     {
       "path": "tests/test_mp4c_k1b_turn6_same_frozen_input_repeat_preflight.py",
-      "bytes": 4654,
-      "sha256": "1F176FF0C3F53A4D221286266103C4439D28AE25BA0B400F0D4E3A36045931AA"
+      "bytes": 8372,
+      "sha256": "C0DE8DF566E24930EBA6B6759FB77569ECDF4C54902E0C3FC15C9F0838ADFC85"
     }
   ],
   "preflight": {
@@ -360,7 +360,7 @@
   },
   "focused_tests": {
     "command": "python -m pytest -q -p no:cacheprovider tests/test_mp4c_k1b_turn6_same_frozen_input_repeat_preflight.py",
-    "passed": 7,
+    "passed": 13,
     "failed": 0,
     "model_calls": 0
   },
@@ -377,7 +377,7 @@
     "docs/CH5_TURN6_SAME_FROZEN_INPUT_REPEAT_RUNNER_PREPARATION_20260923.md",
     "EVIDENCE/ch5_turn6_same_frozen_input_repeat_runner_preparation_20260923/preparation_receipt.json"
   ],
-  "report_sha256": "73B1CA70C4B453A44D52647397F0EF7E514D4BD520B58A9248BA366C59AF9DCF",
+  "report_sha256": "26AA92EF5963E6A862083A2034DF039A182CD12E9E753C1EA2EFD7847CEBCFC2",
   "literal_call_ledger": {
     "household": 0,
     "HJB": 0,
@@ -392,5 +392,16 @@
   },
   "execution_authorized": false,
   "scientific_adoption": false,
-  "results_eligibility": false
+  "results_eligibility": false,
+  "repair_task_id": "CH5_TURN6_SAME_FROZEN_INPUT_REPEAT_RUNNER_REPAIR_20260924",
+  "repair_dispatch_head": "0713726f5044fe375e49e9daca794a30205a0549",
+  "repair_readback": {
+    "sealed_reference_intermediates": 70,
+    "kfe_provinces": 31,
+    "sealed_old_vs_old_exact": 70,
+    "git_diff_check": "PASS",
+    "changed_paths_exact_allowlist": true,
+    "planned_output_root_absent": true,
+    "source_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883"
+  }
 }
