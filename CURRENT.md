@@ -9,6 +9,7 @@ Updated: 2026-09-23 (Asia/Shanghai)
 - Local branch: `codex/ch5-mp4c-k1b-turn5-turn6-bounded-continuation-20260922`
 - Last independently accepted bounded scientific candidate: `392f07b2d803d5a0d8a2c5c270858cfdbef1db80` (turn5-turn6 trajectory diagnostic)
 - The local workflow migration is commit `09187ec28c71442f393eb4ecac0993c76000dbed`, independently accepted in `docs/CH5_LOCAL_WORK_WORKFLOW_MIGRATION_INDEPENDENT_REVIEW_20260923.md`.
+- Project-scoped Codex workflow binding is independently accepted in `docs/CH5_CODEX_LOCAL_WORKFLOW_BINDING_INDEPENDENT_REVIEW_20260923.md`; the Builder's static verification evidence is committed at `97be612f06c2378d15bb8ebf90109586043d8ad8`.
 - Local repository state is authoritative. GitHub is optional backup.
 - Temporary local backup destination: `C:\Users\zcxve\Documents\Chapter5LocalBackups` (Owner selected `C:` pending an independent backup location).
 
@@ -23,9 +24,9 @@ Updated: 2026-09-23 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_CODEX_LOCAL_WORKFLOW_BINDING_AND_FRESH_TASK_VERIFICATION_20260923__ACTIVE`
+`TURN5_TURN6_BOUNDED_CONTINUATION_ACCEPTED__CONVERGENCE_DESIGN_PENDING`
 
-`TASK_CURRENT.md` now authorizes a project-scoped, zero-science Codex workflow verification task. The independently accepted turn5-turn6 scientific state remains unchanged. No scientific Builder task is active; a dedicated fixed-point/convergence diagnostic design still requires explicit scientific authority before any further household call.
+The project-scoped Codex workflow verification has been accepted and closed. There is no active scientific Builder task. `TASK_CURRENT.md` is a fail-closed waiting task. A dedicated fixed-point/convergence diagnostic design still requires explicit scientific authority before any further household call.
 
 The sealed turn7 bundle is not execution authority. The next scientific route is to define the compared economic object, norm, tolerance, stopping rule, maximum turns, and failure behavior, then authorize a bounded diagnostic separately.
 
