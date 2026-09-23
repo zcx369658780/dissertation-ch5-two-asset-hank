@@ -25,9 +25,9 @@ Updated: 2026-09-23 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_FULL_OUTER_STATE_MAP_ZERO_SCIENCE_DESIGN_ACCEPTED__OWNER_CONVERGENCE_LAW_PENDING`
+`CH5_FULL_OUTER_STATE_UNIT_SCALE_PRECISION_EVIDENCE_DISPATCHED__SCIENTIFIC_EXECUTION_CLOSED`
 
-The Owner selected the complete outer state route. Codex delivered the zero-science design candidate at `986eb157638c6f7e26c2042ab2af36e28b9ad1ad`; Work independently accepted its design quality in `docs/CH5_FULL_OUTER_STATE_MAP_ZERO_SCIENCE_DESIGN_INDEPENDENT_REVIEW_20260923.md`. `TASK_CURRENT.md` is now a fail-closed waiting task. No convergence law or scientific execution budget has been adopted. The accepted design and prior evidence dossier are decision aids, not fixed-point verdicts.
+The Owner selected the complete outer state route. Codex delivered the zero-science design candidate at `986eb157638c6f7e26c2042ab2af36e28b9ad1ad`; Work independently accepted its design quality in `docs/CH5_FULL_OUTER_STATE_MAP_ZERO_SCIENCE_DESIGN_INDEPENDENT_REVIEW_20260923.md`. The Owner authorized further zero-science evidence collection, so `TASK_CURRENT.md` now requests source-bound unit, scale, and numerical-precision evidence for Owner decision. No convergence law or scientific execution budget has been adopted. The accepted design and prior evidence dossier are decision aids, not fixed-point verdicts.
 
 The sealed turn7 bundle is not execution authority. The next scientific route is to define the compared economic object, norm, tolerance, stopping rule, maximum turns, and failure behavior, then authorize a bounded diagnostic separately.
 
