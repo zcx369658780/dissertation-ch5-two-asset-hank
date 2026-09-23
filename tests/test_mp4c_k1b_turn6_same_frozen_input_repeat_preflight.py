@@ -80,3 +80,16 @@ def test_failed_attempt_ledger_reconciliation_is_not_zeroed():
     assert guard.attempted["corrected_policy_maps"] == 1
     assert guard.attempted["selector_evaluations"] == 17
     assert guard.attempted["scalar_selector_root_invocations"] == 8
+
+
+def test_early_failed_map_entry_survives_source_reconciliation():
+    guard = runner.BudgetGuard()
+    guard.enter("corrected_policy_maps", 0)
+    keys = ("source_native_initializations", "scalar_labor_roots_attempted",
+            "scalar_labor_roots_returned", "corrected_policy_maps", "selector_evaluations",
+            "scalar_selector_root_invocations", "d2_q_assemblies", "direct_hjb_updates",
+            "hjb_checkpoint_evaluations_after_update", "scc_decompositions",
+            "restricted_dense_scipy_linalg_svd_gesvd", "normalized_stationary_candidates",
+            "q_transpose_times_p", "corrected_aggregate_evaluations")
+    guard.reconcile({k: 0 for k in keys})
+    assert guard.attempted["corrected_policy_maps"] == 1

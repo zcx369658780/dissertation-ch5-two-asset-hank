@@ -196,7 +196,9 @@ class BudgetGuard:
         for key in keys:
             n=int(ledger[key])
             if n>self.ceilings[key]:raise RepeatBlocked("BLOCKED__CONSUMED_CALL_BUDGET",{"category":key,"actual":n})
-            self.attempted[key]=n
+            # A guarded attempt can fail before the source records its local
+            # count; never erase that already consumed entry on reconciliation.
+            self.attempted[key]=max(self.attempted[key],n)
 
 def _arrays(bundle:Mapping[str,Any],turn:int)->dict[str,np.ndarray]:
     rows=bundle["rows"]
