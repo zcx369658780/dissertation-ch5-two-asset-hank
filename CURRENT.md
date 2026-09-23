@@ -25,9 +25,9 @@ Updated: 2026-09-23 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_FULL_OUTER_NINE_COMPONENT_1E6_STATIC_DIAGNOSTIC_DISPATCHED__SCIENTIFIC_EXECUTION_CLOSED`
+`CH5_FULL_OUTER_NINE_COMPONENT_1E6_STATIC_DIAGNOSTIC_ACCEPTED__OWNER_SCIENTIFIC_DECISION_PENDING`
 
-The Owner selected the complete outer state route. Codex delivered the zero-science design candidate at `986eb157638c6f7e26c2042ab2af36e28b9ad1ad`; Work independently accepted its design quality in `docs/CH5_FULL_OUTER_STATE_MAP_ZERO_SCIENCE_DESIGN_INDEPENDENT_REVIEW_20260923.md`. Codex then delivered the unit/scale/precision evidence at `f93407460e79f93c3781f258b856e55bb1ee3a15`, independently accepted in `docs/CH5_FULL_OUTER_STATE_UNIT_SCALE_PRECISION_EVIDENCE_INDEPENDENT_REVIEW_20260923.md`. The Owner agreed to `1e-6` as a diagnostic precision (the previously recommended `10^-6`), with `10^-12` class precision only an eventual aspiration. `TASK_CURRENT.md` now requests a zero-science static readout on sealed nine-component checkpoints. No convergence law or scientific execution budget has been adopted. The accepted materials are decision aids, not fixed-point verdicts.
+The Owner selected the complete outer state route. Codex delivered the zero-science design candidate at `986eb157638c6f7e26c2042ab2af36e28b9ad1ad`; Work independently accepted its design quality in `docs/CH5_FULL_OUTER_STATE_MAP_ZERO_SCIENCE_DESIGN_INDEPENDENT_REVIEW_20260923.md`. Codex then delivered the unit/scale/precision evidence at `f93407460e79f93c3781f258b856e55bb1ee3a15`, independently accepted in `docs/CH5_FULL_OUTER_STATE_UNIT_SCALE_PRECISION_EVIDENCE_INDEPENDENT_REVIEW_20260923.md`. The Owner agreed to `1e-6` as diagnostic precision, with `10^-12` class precision only an eventual aspiration. Codex delivered the sealed nine-component static readout at `2d5d9a235803882b65571aab57233018d4c1fc0b`; Work independently accepted its zero-science evidence quality in `docs/CH5_FULL_OUTER_NINE_COMPONENT_1E6_STATIC_DIAGNOSTIC_INDEPENDENT_REVIEW_20260923.md`. In both C4→C5 and C5→C6, only `Kt_prev` was strictly below `1e-6`. No convergence law or scientific execution budget has been adopted. These accepted materials are decision aids, not fixed-point verdicts.
 
 The sealed turn7 bundle is not execution authority. The next scientific route is to define the compared economic object, norm, tolerance, stopping rule, maximum turns, and failure behavior, then authorize a bounded diagnostic separately.
 
@@ -46,6 +46,9 @@ The sealed turn7 bundle is not execution authority. The next scientific route is
 - Unit/scale/precision evidence: `docs/CH5_FULL_OUTER_STATE_UNIT_SCALE_PRECISION_EVIDENCE_20260923.md`
 - Unit evidence receipt: `EVIDENCE/ch5_full_outer_state_unit_scale_precision_20260923/evidence_receipt.json`
 - Independent unit evidence review: `docs/CH5_FULL_OUTER_STATE_UNIT_SCALE_PRECISION_EVIDENCE_INDEPENDENT_REVIEW_20260923.md`
+- Nine-component static diagnostic: `docs/CH5_FULL_OUTER_NINE_COMPONENT_1E6_STATIC_DIAGNOSTIC_20260923.md`
+- Static receipt: `EVIDENCE/ch5_full_outer_nine_component_1e6_static_diagnostic_20260923/diagnostic_receipt.json`
+- Independent static review: `docs/CH5_FULL_OUTER_NINE_COMPONENT_1E6_STATIC_DIAGNOSTIC_INDEPENDENT_REVIEW_20260923.md`
 
 - Report: `docs/CH5_MP4C_K1B_TURN5_TURN6_BOUNDED_CONTINUATION_DIAGNOSTIC_REPORT.md`
 - Independent review: `docs/CH5_MP4C_K1B_TURN5_TURN6_INDEPENDENT_REVIEW_ACCEPTANCE_20260923.md`
