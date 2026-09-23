@@ -14,7 +14,7 @@ Task ID：`CH5_K1B_CONVERGENCE_DESIGN_EVIDENCE_DOSSIER_20260923`。起始工作�
 
 | 类别与对象 | 维度、量纲/归一化 | 检查点与来源 | 设计限制 |
 |---|---|---|---|
-| 模型外层状态 `Ct, At, Bt, AtTax` | 各 31 省；家庭人均/源聚合量，精确经济单位 `UNRESOLVED`；聚合用概率质量，不额外归一化 | 完成回合后的家庭输出；轨迹 JSON `aggregate_state_changes`；`src/ch5_two_asset_hank/multi_province/corrected_household_adapter.py:153-205`、`province_contracts.py:80-101` | `At` 三次变化接近或等于零，单独监测它可能漏掉其他变化。 |
+| 完成回合的家庭聚合序列/可比较对象 `Ct, At, Bt, AtTax` | 各 31 省；家庭人均/源聚合量，精确经济单位 `UNRESOLVED`；聚合用概率质量，不额外归一化 | 完成回合后的家庭输出；轨迹 JSON `aggregate_state_changes`；`src/ch5_two_asset_hank/multi_province/corrected_household_adapter.py:153-205`、`province_contracts.py:80-101` | `At` 三次变化接近或等于零，单独监测它可能漏掉其他变化；被采纳的外层 state/map 定义为 `UNRESOLVED`。 |
 | 家庭 `Lt` 与目的地 `Lt_supply` | 各 31 省；前者 `sum(z*l*p)`，后者是重建的企业劳动供给；共同量纲/比例 `UNRESOLVED` | `Lt_supply` 有轨迹变化，家庭 `Lt` 未列入轨迹 JSON 的相邻变化；`corrected_household_adapter.py:174-176`、`province_contracts.py:80-89`、`c1_residual_public_asset.py:61-72,90-94` | 两者不能混称或直接替换。 |
 | 资本与公共资产 `Kt, Kt_supply, GovInv` | 各 31 省；资本/公共资产使用同一声明单位 MU；`Kt` 与 `Kt_supply` 定义不同 | 完成回合集成；轨迹 JSON `aggregate_state_changes`；`c1_residual_public_asset.py:73-93`、`firm.py:24-26`；`SCIENTIFIC_DECISIONS.md` 的 C1 行 | 总资本守恒残差与 `GovInv` 总量是校验/会计量，不能单凭近零变化宣告固定点。 |
 | 产出与工资 `Yt, w` | 各 31 省；精确单位 `UNRESOLVED` | 完成回合状态；轨迹 JSON `aggregate_state_changes`；`firm.py:20-30`、turn5–turn6 报告的轨迹表 | 不同尺度需由 Owner 决定如何合并。 |
