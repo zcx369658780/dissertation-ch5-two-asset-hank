@@ -4,6 +4,7 @@ import inspect
 import io
 import json
 import sys
+from types import SimpleNamespace
 from contextlib import redirect_stdout
 from pathlib import Path
 
@@ -99,13 +100,27 @@ def test_early_failed_map_entry_survives_source_reconciliation():
 
 
 def test_future_task_binding_is_explicit_and_future_gate_stays_closed():
-    source = RUNNER.read_text(encoding="utf-8")
-    assert "base.TASK_RELATIVE=FUTURE_TASK_RELATIVE" in source
-    assert "base.TASK_RELATIVE=original_task" in source
+    source = inspect.getsource(runner._execute_after_gate)
+    assert "bind_future_task(base)" in source
+    assert "restore_task_binding(base,original_task)" in source
     assert "FUTURE_TASK_RELATIVE" in inspect.getsource(runner.source_snapshot)
+    for failed in (False,True):
+        base=SimpleNamespace(TASK_RELATIVE=Path("old-task.md"))
+        previous=runner.bind_future_task(base)
+        try:
+            assert base.TASK_RELATIVE==runner.FUTURE_TASK_RELATIVE
+            if failed:raise ValueError("stub failure")
+        except ValueError:
+            assert failed
+        finally:
+            runner.restore_task_binding(base,previous)
+        assert base.TASK_RELATIVE==Path("old-task.md")
+    output=runner.REPOSITORY/runner.OUTPUT
+    assert not output.exists()
     with pytest.raises(runner.RepeatBlocked) as err:
         runner.future_gate(runner.REPOSITORY, "future-test")
     assert err.value.terminal == "BLOCKED__FRESH_EXECUTION_TASK_GATE"
+    assert not output.exists()
 
 
 def test_integration_entry_trace_blocks_second_stubbed_firm_before_call():
@@ -169,3 +184,112 @@ def test_carrier_finite_inputs_with_overflowed_ratio_are_unavailable():
     with np.errstate(over="ignore"):
         result=runner.compare_carrier(old,new)
     assert result["components"]["w"]["reason"]=="nonfinite_difference"
+
+
+def test_all_integration_entry_categories_and_raw_guard_order():
+    old=(runner.REPOSITORY/"validators/multi_province/k1b_turn5_turn6_bounded_continuation/run.py").read_text(encoding="utf-8")
+    categories=("source_faithful_labor_reconstructions","frozen_k1b_quantity_allocations",
+                "k1b_feedback_calls","c1_residual_govinv_constructions","firm_evaluations",
+                "composite_wage_batches","monetary_assignments","fiscal_diagnostic_batches",
+                "completed_raw_ra0_vectors","deterministic_next_k1b_preparations")
+    for category in categories:
+        assert old.count(f'ledger["{category}"] += 1')==1
+    assert old.index('raw = np.asarray([firm.ra0 for firm in firms], dtype=np.float64)') < old.index('ledger["completed_raw_ra0_vectors"] += 1')
+    markers=inspect.getsource(runner.integration_entry_lines)
+    for category in categories:
+        assert category in markers
+    assert 'raw = np.asarray([firm.ra0 for firm in firms], dtype=np.float64)' in markers
+
+
+def test_stubbed_trace_counts_each_integration_entry_and_all_firms():
+    def inert_integration(ledger):
+        ledger["source_faithful_labor_reconstructions"]+=1
+        ledger["frozen_k1b_quantity_allocations"]+=1
+        ledger["k1b_feedback_calls"]+=1
+        ledger["c1_residual_govinv_constructions"]+=1
+        for _ in range(31):
+            ledger["firm_evaluations"]+=1
+        ledger["composite_wage_batches"]+=1
+        ledger["monetary_assignments"]+=1
+        ledger["fiscal_diagnostic_batches"]+=1
+        ledger["completed_raw_ra0_vectors"]+=1
+        ledger["deterministic_next_k1b_preparations"]+=1
+    categories={"source_faithful_labor_reconstructions","frozen_k1b_quantity_allocations",
+                "k1b_feedback_calls","c1_residual_govinv_constructions","firm_evaluations",
+                "composite_wage_batches","monetary_assignments","fiscal_diagnostic_batches",
+                "completed_raw_ra0_vectors","deterministic_next_k1b_preparations"}
+    source,first=inspect.getsourcelines(inert_integration)
+    entry={}
+    for i,line in enumerate(source):
+        for category in categories:
+            if f'ledger["{category}"]+=' in line:
+                entry[first+i]=(category,)
+    assert len(entry)==len(categories)
+    guard=runner.BudgetGuard({k:(31 if k=="firm_evaluations" else 1) for k in categories})
+    ledger={k:0 for k in categories}
+    previous=sys.gettrace()
+    sys.settrace(runner.make_entry_trace(inert_integration.__code__,entry,guard))
+    try:
+        inert_integration(ledger)
+    finally:
+        sys.settrace(previous)
+    assert guard.attempted==ledger
+    guard.reconcile_all(ledger)
+    assert guard.attempted["firm_evaluations"]==31
+
+
+def test_reconcile_all_preserves_failed_entry_and_rejects_over_budget():
+    guard=runner.BudgetGuard({"firm_evaluations":1,"completed_raw_ra0_vectors":1})
+    guard.enter("firm_evaluations")
+    guard.reconcile_all({"firm_evaluations":0,"completed_raw_ra0_vectors":0})
+    assert guard.attempted["firm_evaluations"]==1
+    with pytest.raises(runner.RepeatBlocked) as err:
+        guard.reconcile_all({"firm_evaluations":2})
+    assert err.value.terminal=="BLOCKED__CONSUMED_CALL_BUDGET"
+    assert guard.attempted["firm_evaluations"]==1
+
+
+def test_json_structure_orientation_and_province_identity_are_required(tmp_path):
+    old=runner.REPOSITORY/runner.OLD_ROOT/"turn6/source_faithful_labor_receipt.json"
+    doc=json.loads(old.read_text(encoding="utf-8"))
+    new=tmp_path/old.name
+    doc["orientation"]="origin_by_destination"
+    new.write_text(json.dumps(doc),encoding="utf-8")
+    result=runner.compare_receipt(old,new)
+    assert result["status"]=="UNAVAILABLE" and result["field"]=="orientation"
+    old=runner.REPOSITORY/runner.OLD_ROOT/"turn6/household_batch_receipt.json"
+    doc=json.loads(old.read_text(encoding="utf-8"))
+    new=tmp_path/old.name
+    doc["rows"][0]["province"]="wrong"
+    new.write_text(json.dumps(doc),encoding="utf-8")
+    assert runner.compare_receipt(old,new)["reason"]=="province_order"
+
+
+def test_full_sealed_comparison_strictly_serializes_and_overflow_is_unavailable():
+    hashes=runner.reference_intermediate_hashes(runner.REPOSITORY)
+    compared=runner.compare_intermediates(runner.REPOSITORY,runner.REPOSITORY/runner.OLD_ROOT,hashes)
+    assert len(compared)==70 and all(v["status"]=="EXACT_BITWISE_MATCH" for v in compared.values())
+    json.dumps(compared,allow_nan=False)
+    with np.errstate(over="ignore"):
+        result=runner.compare_array(np.array([1e308]),np.array([-1e308]))
+    assert result["reason"]=="nonfinite_difference"
+    json.dumps(result,allow_nan=False)
+
+
+def test_stubbed_post_gate_failure_captures_zero_and_restores_state(tmp_path):
+    before_path=list(sys.path)
+    before_trace=sys.gettrace()
+    def inert_failure(runtime):
+        sys.path.insert(0,"stub-path")
+        (tmp_path/runner.OUTPUT).mkdir(parents=True)
+        (tmp_path/runner.OUTPUT/"preflight.json").write_text("partial",encoding="utf-8")
+        raise runner.RepeatBlocked("BLOCKED__STUB_PREFLIGHT_WRITE")
+    with pytest.raises(runner.RepeatBlocked):
+        runner.run_after_valid_gate(tmp_path,"stub-id",inert_failure)
+    receipt=json.loads((tmp_path/runner.OUTPUT/"first_failure.json").read_text(encoding="utf-8"))
+    assert receipt["terminal"]=="BLOCKED__STUB_PREFLIGHT_WRITE"
+    assert all(v==0 for v in receipt["literal_scientific_call_ledger"].values())
+    assert sys.path==before_path and sys.gettrace() is before_trace
+    with pytest.raises(runner.RepeatBlocked) as err:
+        runner.run_after_valid_gate(tmp_path,"stub-id",lambda runtime:"unexpected")
+    assert err.value.terminal=="BLOCKED__FUTURE_EVIDENCE_PATH_EXISTS"

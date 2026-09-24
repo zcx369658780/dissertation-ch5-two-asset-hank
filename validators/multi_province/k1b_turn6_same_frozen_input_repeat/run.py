@@ -83,10 +83,10 @@ def save_json(path: Path, value: Any) -> None:
     path.write_text(json.dumps(value,ensure_ascii=True,allow_nan=False,indent=2)+"\n",encoding="utf-8")
 
 def save_json_new(path: Path, value: Any) -> None:
+    payload=json.dumps(value,ensure_ascii=True,allow_nan=False,indent=2)+"\n"
     path.parent.mkdir(parents=True,exist_ok=True)
     with path.open("x",encoding="utf-8") as stream:
-        json.dump(value,stream,ensure_ascii=True,allow_nan=False,indent=2)
-        stream.write("\n")
+        stream.write(payload)
 
 def record_pre_call_failure(output:Path,exc:BaseException,execution_id:str)->None:
     output.mkdir(parents=True,exist_ok=False)
@@ -106,7 +106,7 @@ def integration_entry_lines(function:Any)->dict[int,tuple[str,...]]:
         'ledger["composite_wage_batches"] += 1':("composite_wage_batches",),
         'ledger["monetary_assignments"] += 1':("monetary_assignments",),
         'ledger["fiscal_diagnostic_batches"] += 1':("fiscal_diagnostic_batches",),
-        'ledger["completed_raw_ra0_vectors"] += 1':("completed_raw_ra0_vectors",),
+        'raw = np.asarray([firm.ra0 for firm in firms], dtype=np.float64)':("completed_raw_ra0_vectors",),
         'ledger["deterministic_next_k1b_preparations"] += 1':("deterministic_next_k1b_preparations",),
     }
     lines=inspect.getsourcelines(function)
@@ -124,6 +124,14 @@ def make_entry_trace(code:Any,lines:Mapping[int,tuple[str,...]],guard:Any):
                 guard.enter(category)
         return trace
     return trace
+
+def bind_future_task(base:Any)->Path:
+    previous=base.TASK_RELATIVE
+    base.TASK_RELATIVE=FUTURE_TASK_RELATIVE
+    return previous
+
+def restore_task_binding(base:Any,previous:Path)->None:
+    base.TASK_RELATIVE=previous
 
 
 def canonical_order(repo: Path) -> tuple[str,...]:
@@ -232,6 +240,13 @@ class BudgetGuard:
             # A guarded attempt can fail before the source records its local
             # count; never erase that already consumed entry on reconciliation.
             self.attempted[key]=max(self.attempted[key],n)
+    def reconcile_all(self,ledger:Mapping[str,Any])->None:
+        for key,ceiling in self.ceilings.items():
+            if key not in ledger:continue
+            n=int(ledger[key])
+            if n<0 or n>ceiling:
+                raise RepeatBlocked("BLOCKED__CONSUMED_CALL_BUDGET",{"category":key,"actual":n})
+            self.attempted[key]=max(self.attempted[key],n)
 
 def _arrays(bundle:Mapping[str,Any],turn:int)->dict[str,np.ndarray]:
     rows=bundle["rows"]
@@ -283,12 +298,48 @@ def _numeric(value:Any,prefix:str="")->dict[str,float]:
         return out
     return {prefix:float(value)} if isinstance(value,(int,float)) and not isinstance(value,bool) else {}
 
+def structural_conflict(old:Any,new:Any,path:str="")->str|None:
+    if isinstance(old,dict) and isinstance(new,dict):
+        if old.keys()!=new.keys():return path or "fields"
+        for key in old:
+            conflict=structural_conflict(old[key],new[key],f"{path}.{key}" if path else key)
+            if conflict:return conflict
+        return None
+    if isinstance(old,list) and isinstance(new,list):
+        if len(old)!=len(new):return path or "length"
+        for i,(a,b) in enumerate(zip(old,new)):
+            conflict=structural_conflict(a,b,f"{path}[{i}]")
+            if conflict:return conflict
+        return None
+    if isinstance(old,bool) or isinstance(new,bool):
+        return None if type(old) is type(new) and old==new else path
+    if isinstance(old,(int,float)) and isinstance(new,(int,float)):
+        return None
+    if isinstance(old,str) and isinstance(new,str):
+        if "sha" in path.lower() and len(old)==len(new)==64:
+            return None if all(c in "0123456789abcdefABCDEF" for c in old+new) else path
+        return None if old==new else path
+    return None if old is None and new is None else path
+
+def province_rows_valid(doc:Mapping[str,Any],path:Path)->bool:
+    if path.name not in ("household_batch_receipt.json","turn6_firm_raw_used_return_receipt.json"):
+        return True
+    rows=doc.get("rows")
+    order=canonical_order(REPOSITORY)
+    return isinstance(rows,list) and len(rows)==31 and all(
+        isinstance(row,dict) and row.get("province_index")==i and row.get("province")==name
+        for i,(row,name) in enumerate(zip(rows,order)))
+
 def compare_receipt(old:Path,new:Path)->dict[str,Any]:
     if not old.is_file() or not new.is_file():return {"status":"UNAVAILABLE","reason":"missing"}
     old_doc=json.loads(old.read_text(encoding="utf-8"))
     new_doc=json.loads(new.read_text(encoding="utf-8"))
     if old_doc.get("status")!="PASS" or new_doc.get("status")!="PASS":
         return {"status":"UNAVAILABLE","reason":"receipt_status"}
+    if not province_rows_valid(old_doc,old) or not province_rows_valid(new_doc,new):
+        return {"status":"UNAVAILABLE","reason":"province_order"}
+    conflict=structural_conflict(old_doc,new_doc)
+    if conflict:return {"status":"UNAVAILABLE","reason":"structural_conflict","field":conflict}
     a=_numeric(old_doc)
     b=_numeric(new_doc)
     if a.keys()!=b.keys():return {"status":"UNAVAILABLE","reason":"numeric_keys","old":len(a),"new":len(b)}
@@ -296,11 +347,14 @@ def compare_receipt(old:Path,new:Path)->dict[str,Any]:
     if any(not np.isfinite(v) for v in (*a.values(),*b.values())):
         return {"status":"UNAVAILABLE","reason":"nonfinite"}
     bad=[k for k in a if np.float64(a[k]).view(np.uint64)!=np.float64(b[k]).view(np.uint64)]
-    k=max(a,key=lambda v:abs(a[v]-b[v])) if a else None
+    differences={key:abs(a[key]-b[key]) for key in a}
+    if any(not np.isfinite(v) for v in differences.values()):
+        return {"status":"UNAVAILABLE","reason":"nonfinite_difference"}
+    k=max(differences,key=differences.get)
     return {"status":"EXACT_BITWISE_MATCH" if not bad else "LEGAL_DIFFERENCE_OBSERVED",
-            "scope":"numeric_json_fields_only",
+            "scope":"numeric_json_fields_only; structure_and_identity_checked; hashed_arrays_not_compared",
             "numeric_fields":len(a),"bitwise_mismatches":len(bad),"max_field":k,
-            "max_absolute_difference":abs(a[k]-b[k]) if k else 0.0}
+            "max_absolute_difference":differences[k]}
 
 def reference_intermediate_paths(repo:Path)->tuple[str,...]:
     names=["turn6/household_batch_receipt.json","turn6/source_faithful_labor_receipt.json",
@@ -348,10 +402,12 @@ def compare_array(x:np.ndarray,y:np.ndarray)->dict[str,Any]:
     if not np.all(np.isfinite(x)) or not np.all(np.isfinite(y)):
         return {"status":"UNAVAILABLE","reason":"nonfinite"}
     delta=np.abs(y.astype(np.float64)-x.astype(np.float64))
+    if not np.all(np.isfinite(delta)):
+        return {"status":"UNAVAILABLE","reason":"nonfinite_difference"}
     return {"status":"EXACT_BITWISE_MATCH" if np.array_equal(x.view(np.uint64),y.view(np.uint64)) else "LEGAL_DIFFERENCE_OBSERVED",
             "shape":list(x.shape),"dtype":str(x.dtype),"bitwise_mismatches":int(np.count_nonzero(x.view(np.uint64)!=y.view(np.uint64))),
             "max_absolute_difference":float(np.max(delta)) if delta.size else 0.0,
-            "max_index":list(np.unravel_index(int(np.argmax(delta)),delta.shape)) if delta.size else []}
+            "max_index":[int(i) for i in np.unravel_index(int(np.argmax(delta)),delta.shape)] if delta.size else []}
 
 def compare_intermediates(repo:Path,output:Path,references:Mapping[str,str])->dict[str,Any]:
     if reference_intermediate_hashes(repo)!=dict(references):
@@ -391,27 +447,20 @@ def future_gate(repo:Path,execution_id:str|None)->None:
         raise RepeatBlocked("BLOCKED__EXECUTION_RUNNER_IDENTITY")
 
 
-def execute_once(repo:Path,execution_id:str|None)->str:
-    """Future-only; never call from the zero-science preparation task."""
-    repo=repo.resolve()
-    future_gate(repo,execution_id)
+def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
     output=repo/OUTPUT
-    if output.exists():
-        raise RepeatBlocked("BLOCKED__FUTURE_EVIDENCE_PATH_EXISTS")
-    try:
-        pre=preflight(repo)
-        before=source_snapshot(repo)
-        references=reference_intermediate_hashes(repo)
-        entering=load_bundle(repo,6)
-    except BaseException as exc:
-        record_pre_call_failure(output,exc,execution_id)
-        raise
+    pre=preflight(repo)
+    before=source_snapshot(repo)
+    references=reference_intermediate_hashes(repo)
+    entering=load_bundle(repo,6)
     guard=BudgetGuard()
+    runtime["guard"]=guard
     output.mkdir(parents=True,exist_ok=False)
     save_json(output/"preflight.json",pre)
     ledger:dict[str,Any]={}
     state={"province":None,"ledger_unresolved":False,"original_terminal":None,
            "terminal":"CALL_LEDGER_UNRESOLVED"}
+    runtime["state"]=state
     # No model import occurs until the future task gate and exact static binding pass.
     sys.path.insert(0,str(repo));sys.path.insert(0,str(repo/"src"))
     from ch5_two_asset_hank.corrected_diagnostic import optionb_turn2_household_integration as base
@@ -422,6 +471,7 @@ def execute_once(repo:Path,execution_id:str|None)->str:
     original_entering=base.ENTERING_STATE_RELATIVE
     original_task=base.TASK_RELATIVE
     ledger=old.new_ledger(6)
+    runtime["ledger"]=ledger
     ledger.update(terminal_kfe_attempts=0,full_integrations=0,
                   relaxation_helper_invocations=0,alpha_candidates=0)
     def map_hook(*args:Any,**kwargs:Any):
@@ -481,13 +531,13 @@ def execute_once(repo:Path,execution_id:str|None)->str:
         guard.attempted["alpha_candidates"]+=len(attempts)
         ledger["alpha_candidates"]+=len(attempts)
         return accepted,receipt
-    base._map_checkpoint=map_hook
-    base._direct_update=direct_hook
-    base._terminal_kfe_with_accounting=kfe_hook
-    base.monotonicity_preserving_relaxation=relaxation_hook
-    base.ENTERING_STATE_RELATIVE=OLD_ROOT/"turn6_k1b_input_candidate.json"
-    base.TASK_RELATIVE=FUTURE_TASK_RELATIVE
     try:
+        base._map_checkpoint=map_hook
+        base._direct_update=direct_hook
+        base._terminal_kfe_with_accounting=kfe_hook
+        base.monotonicity_preserving_relaxation=relaxation_hook
+        base.ENTERING_STATE_RELATIVE=OLD_ROOT/"turn6_k1b_input_candidate.json"
+        bind_future_task(base)
         task_hashes=base._task_hashes(repo)
         core_hashes=base._scientific_code_hashes(repo)
         native_grid=base.oracle.MatlabFaithfulHJBGrid(np.linspace(-2,5,20),np.linspace(0,10,20),
@@ -512,6 +562,7 @@ def execute_once(repo:Path,execution_id:str|None)->str:
                 "normalized_stationary_candidates":1,"q_transpose_times_p":1,
                 "corrected_aggregate_evaluations":1},i)
             try:
+                runtime["scientific_started"]=True
                 result=base._solve_province(repo,output/"turn6",i,province,
                     entering["states"][i],grid,native_grid,params,
                     task_hashes,core_hashes,ledger)
@@ -544,10 +595,10 @@ def execute_once(repo:Path,execution_id:str|None)->str:
         integration_lines=integration_entry_lines(old.integrate_turn)
         integration_trace=make_entry_trace(old.integrate_turn.__code__,integration_lines,guard)
         prior_trace=sys.gettrace()
-        old.safety.ordered_payoff = payoff_hook
-        sys.settrace(integration_trace)
         integration_failure=None
         try:
+            old.safety.ordered_payoff = payoff_hook
+            sys.settrace(integration_trace)
             integration=old.integrate_turn(repo,output,output/"turn6",6,entering["states"],
                 old._batch(results),entering["S"],entering["hashes"]["S"],ledger,rows)
         except BaseException as exc:
@@ -557,18 +608,13 @@ def execute_once(repo:Path,execution_id:str|None)->str:
         finally:
             sys.settrace(prior_trace)
             old.safety.ordered_payoff = original_payoff
-            violation=None
-            for key in CEILINGS:
-                if key in ledger and key not in ("raw_next_payoff_same_s_constructions",):
-                    n=int(ledger[key])
-                    if n>guard.ceilings[key]:
-                        violation={"category":key,"actual":n}
-                    guard.attempted[key]=max(guard.attempted[key],n)
-            if violation is not None:
+            try:
+                guard.reconcile_all(ledger)
+            except BaseException:
                 if integration_failure is not None:
                     state["ledger_unresolved"]=True
                 else:
-                    raise RepeatBlocked("BLOCKED__CONSUMED_CALL_BUDGET",violation)
+                    raise
         save_json(output/"turn6_scientific_ledger.json",ledger)
         old.seal_generated_bundle(output,integration,7)
         replay=load_bundle(repo,7,OUTPUT)
@@ -594,11 +640,52 @@ def execute_once(repo:Path,execution_id:str|None)->str:
         (base._map_checkpoint,base._direct_update,base._terminal_kfe_with_accounting,
          base.monotonicity_preserving_relaxation)=originals
         base.ENTERING_STATE_RELATIVE=original_entering
-        base.TASK_RELATIVE=original_task
+        restore_task_binding(base,original_task)
         save_json(output/"terminal_receipt.json",{"terminal":state["terminal"],
             "original_terminal":state["original_terminal"],"source_ledger":ledger,
             "guard_attempted":guard.attempted,"guard_denied":guard.denied,
             "call_ledger_resolved":not state["ledger_unresolved"],"turn7_household_calls":0})
+
+def run_after_valid_gate(repo:Path,execution_id:str,action:Any)->str:
+    """Protect a future authorized action; tests pass only inert stubs."""
+    output=repo/OUTPUT
+    if output.exists():
+        raise RepeatBlocked("BLOCKED__FUTURE_EVIDENCE_PATH_EXISTS")
+    prior_path=list(sys.path)
+    prior_trace=sys.gettrace()
+    prior_modules=set(sys.modules)
+    runtime:dict[str,Any]={"guard":None,"ledger":None,"state":None,"scientific_started":False}
+    try:
+        return action(runtime)
+    except BaseException as exc:
+        state=runtime["state"] or {}
+        original=state.get("original_terminal") or getattr(exc,"terminal",type(exc).__name__)
+        guard=runtime["guard"]
+        if not output.exists():
+            output.mkdir(parents=True,exist_ok=False)
+        if not (output/"first_failure.json").exists():
+            attempted=({k:0 for k in CEILINGS} if not runtime["scientific_started"] else
+                       (dict(guard.attempted) if guard is not None else None))
+            unresolved=bool(state.get("ledger_unresolved")) or attempted is None
+            save_json_new(output/"first_failure.json",{"terminal":"CALL_LEDGER_UNRESOLVED" if unresolved else original,
+                "original_terminal":original,"execution_id":execution_id,
+                "literal_scientific_call_ledger":attempted,
+                "source_ledger":runtime["ledger"] if runtime["scientific_started"] else None,
+                "call_ledger_resolved":not unresolved})
+        raise
+    finally:
+        sys.path[:]=prior_path
+        sys.settrace(prior_trace)
+        for name in set(sys.modules)-prior_modules:
+            if name=="ch5_two_asset_hank" or name.startswith("ch5_two_asset_hank.") or name in ("validators","validators.multi_province") or name.startswith("validators.multi_province."):
+                sys.modules.pop(name,None)
+
+def execute_once(repo:Path,execution_id:str|None)->str:
+    """Future-only; never call from the zero-science preparation task."""
+    repo=repo.resolve()
+    future_gate(repo,execution_id)
+    return run_after_valid_gate(repo,execution_id,
+        lambda runtime:_execute_after_gate(repo,execution_id,runtime))
 
 
 def main(argv:list[str]|None=None)->int:
