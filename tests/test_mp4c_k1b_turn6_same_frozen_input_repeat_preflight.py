@@ -343,3 +343,67 @@ def test_owned_root_failure_retains_stubbed_attempted_call(tmp_path):
     assert receipt["original_terminal"]=="FAIL__STUB_AFTER_ENTRY"
     assert receipt["literal_scientific_call_ledger"]["firm_evaluations"]==1
     assert receipt["source_ledger"]["firm_evaluations"]==0
+
+
+@pytest.mark.parametrize("receipt_name",("preflight.json","terminal_receipt.json"))
+def test_claimed_root_replacement_blocks_ordinary_receipt(tmp_path,receipt_name):
+    output=tmp_path/"future_output"
+    runtime={"output_identity":None}
+    runner.claim_output_root(output,runtime)
+    output.rename(tmp_path/"original_claimed_root")
+    output.mkdir()
+    (output/"foreign.txt").write_text("preserve",encoding="utf-8")
+    with pytest.raises(runner.RepeatBlocked) as err:
+        runner.write_output_json(output,runtime,output/receipt_name,{"status":"PASS"})
+    assert err.value.terminal=="BLOCKED__FUTURE_EVIDENCE_ROOT_NOT_OWNED"
+    assert not (output/receipt_name).exists()
+    assert (output/"foreign.txt").read_text(encoding="utf-8")=="preserve"
+
+
+def test_missing_claimed_root_is_not_recreated_by_child_write(tmp_path):
+    output=tmp_path/"future_output"
+    runtime={"output_identity":None}
+    runner.claim_output_root(output,runtime)
+    output.rename(tmp_path/"moved_claimed_root")
+    with pytest.raises(runner.RepeatBlocked) as err:
+        runner.write_output_json(output,runtime,output/"turn6"/"receipt.json",{"status":"PASS"})
+    assert err.value.terminal=="BLOCKED__FUTURE_EVIDENCE_ROOT_NOT_OWNED"
+    assert not output.exists()
+
+
+def test_owned_receipt_writes_are_exclusive_and_npz_readable(tmp_path):
+    output=tmp_path/"future_output"
+    runtime={"output_identity":None}
+    runner.claim_output_root(output,runtime)
+    for name in ("preflight.json","turn6/household_batch_receipt.json","terminal_receipt.json",
+                 "first_failure.json"):
+        runner.write_output_json(output,runtime,output/name,{"status":"PASS","name":name})
+        assert json.loads((output/name).read_text(encoding="utf-8"))["name"]==name
+    with pytest.raises(runner.RepeatBlocked) as err:
+        runner.write_output_json(output,runtime,output/"terminal_receipt.json",{"status":"SECOND"})
+    assert err.value.terminal=="BLOCKED__OUTPUT_RECEIPT_EXISTS"
+    assert json.loads((output/"terminal_receipt.json").read_text(encoding="utf-8"))["status"]=="PASS"
+    array_path=output/"turn6"/"arrays.npz"
+    runner.write_output_npz(output,runtime,array_path,np.savez_compressed,values=np.array([1.0,2.0]))
+    with np.load(array_path,allow_pickle=False) as arrays:
+        assert arrays["values"].tolist()==[1.0,2.0]
+    with pytest.raises(runner.RepeatBlocked) as duplicate:
+        runner.write_output_npz(output,runtime,array_path,np.savez_compressed,values=np.array([3.0]))
+    assert duplicate.value.terminal=="BLOCKED__OUTPUT_ARTIFACT_EXISTS"
+
+
+def test_frozen_direct_solve_two_stage_receipts_get_distinct_exclusive_names(tmp_path):
+    output=tmp_path/"future_output"
+    runtime={"output_identity":None}
+    runner.claim_output_root(output,runtime)
+    original=output/"turn6"/"checkpoint_000"/"direct_solve_receipt.json"
+    first={"status":"PASS","normwise_backward_error":1e-12}
+    second={**first,"checkpoint_from":0,"checkpoint_to":1}
+    early=runner.source_receipt_target(original,first)
+    final=runner.source_receipt_target(original,second)
+    assert early.name=="direct_solve_pre_relaxation_receipt.json"
+    assert final==original
+    runner.write_output_json(output,runtime,early,first)
+    runner.write_output_json(output,runtime,final,second)
+    assert json.loads(early.read_text(encoding="utf-8"))==first
+    assert json.loads(final.read_text(encoding="utf-8"))==second

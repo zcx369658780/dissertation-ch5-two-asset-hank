@@ -1,10 +1,10 @@
 {
   "schema": "CH5_TURN6_SAME_FROZEN_INPUT_REPEAT_RUNNER_PREPARATION_V1",
   "task_id": "CH5_TURN6_SAME_FROZEN_INPUT_REPEAT_RUNNER_ZERO_SCIENCE_20260923",
-  "status": "ZERO_SCIENCE_RUNNER_REPAIR3_PRECOMMIT",
+  "status": "ZERO_SCIENCE_RUNNER_REPAIR4_PRECOMMIT",
   "dispatch_head": "b0bd3eb981a0c8848666d4ebae86d045875dddd1",
   "start_head": "b0bd3eb981a0c8848666d4ebae86d045875dddd1",
-  "precommit_head": "20b1e0f95a3573425701859610bdaf871e5bb0a8",
+  "precommit_head": "81e0c1052bf47454c747aa1bf93b43e259626e3c",
   "dispatch_parent": "1376297341548d569351b566e1507bdc37b6ef33",
   "src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
   "source_and_reference_files": [
@@ -15,8 +15,8 @@
     },
     {
       "path": "CURRENT.md",
-      "bytes": 7461,
-      "sha256": "D1F438A1C4ECFDF6979DC643972A943C5AC06735CCEFC2E370E7B45E4D639B87"
+      "bytes": 7511,
+      "sha256": "0FAC58D8184899EFBD37D708DEDFA375A4A33C0D0C016410708B03B6460CA841"
     },
     {
       "path": "SCIENTIFIC_DECISIONS.md",
@@ -25,8 +25,8 @@
     },
     {
       "path": "TASK_CURRENT.md",
-      "bytes": 4403,
-      "sha256": "3474F38ED4D90CB590D96DAF27548705D8550EFE73C872D820405514F0E45365"
+      "bytes": 3773,
+      "sha256": "4CD03209D719A8EAAA183302CA3ECDC775D07EF61D78AA37161D3FC663F278F3"
     },
     {
       "path": "REVIEW_GATE.md",
@@ -170,13 +170,13 @@
     },
     {
       "path": "validators/multi_province/k1b_turn6_same_frozen_input_repeat/run.py",
-      "bytes": 42216,
-      "sha256": "F444F3F707A5584C5E75C27040F6FEEC6BB33CAB2E44A4CD11A6699FAAF6DFE8"
+      "bytes": 44944,
+      "sha256": "8D900AD59BC88FCA74EF832FAF5A1562207D2D54A8E8DCC7725CCCB46762CB0F"
     },
     {
       "path": "tests/test_mp4c_k1b_turn6_same_frozen_input_repeat_preflight.py",
-      "bytes": 17312,
-      "sha256": "98340FFEBC031CA476F55DD28C50124D326E7B46F9E8BA6F607FDECE197C79FA"
+      "bytes": 20722,
+      "sha256": "4168F745B3C1A4083ACCB10783819DDB34A88A5BD858822198B29D9424F251E9"
     }
   ],
   "preflight": {
@@ -360,7 +360,7 @@
   },
   "focused_tests": {
     "command": "python -m pytest -q -p no:cacheprovider tests/test_mp4c_k1b_turn6_same_frozen_input_repeat_preflight.py",
-    "passed": 22,
+    "passed": 27,
     "failed": 0,
     "model_calls": 0
   },
@@ -377,7 +377,7 @@
     "docs/CH5_TURN6_SAME_FROZEN_INPUT_REPEAT_RUNNER_PREPARATION_20260923.md",
     "EVIDENCE/ch5_turn6_same_frozen_input_repeat_runner_preparation_20260923/preparation_receipt.json"
   ],
-  "report_sha256": "85D097D85E42626656204C3182CAEE97FC3BEFB686C149D1AF6FAC282ABEE7D7",
+  "report_sha256": "7A6C9DAD4BBAEDC8F1A4A49170E8CB432771A90675A424F5FEB368FBA4AD1745",
   "literal_call_ledger": {
     "household": 0,
     "HJB": 0,
@@ -426,6 +426,21 @@
     "changed_labor_digest_not_exact": true,
     "int64_2pow53_plus_one_difference": 1,
     "foreign_output_root_write_free": true,
+    "git_diff_check": "PASS",
+    "changed_paths_exact_allowlist": true,
+    "planned_output_root_absent": true,
+    "source_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883"
+  },
+  "repair4_task_id": "CH5_TURN6_SAME_FROZEN_INPUT_REPEAT_RUNNER_REPAIR4_20260924",
+  "repair4_dispatch_head": "81e0c1052bf47454c747aa1bf93b43e259626e3c",
+  "repair4_readback": {
+    "root_bound_json_receipts": true,
+    "exclusive_npz_artifacts": true,
+    "replaced_root_preflight_and_terminal_write_blocked": true,
+    "missing_root_not_recreated": true,
+    "duplicate_receipt_blocked": true,
+    "sealed_reference_intermediates": 70,
+    "strict_json_serialization": true,
     "git_diff_check": "PASS",
     "changed_paths_exact_allowlist": true,
     "planned_output_root_absent": true,

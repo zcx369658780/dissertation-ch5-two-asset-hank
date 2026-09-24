@@ -78,19 +78,53 @@ def git(repo: Path, *args: str) -> str:
     return subprocess.check_output(["git",*args],cwd=repo,text=True).strip()
 
 
-def save_json(path: Path, value: Any) -> None:
-    path.parent.mkdir(parents=True,exist_ok=True)
-    path.write_text(json.dumps(value,ensure_ascii=True,allow_nan=False,indent=2)+"\n",encoding="utf-8")
+def output_target(output:Path,runtime:Mapping[str,Any],path:Path)->Path:
+    output=output.absolute()
+    path=Path(path).absolute()
+    try:relative=path.relative_to(output)
+    except ValueError as exc:
+        raise RepeatBlocked("BLOCKED__OUTPUT_PATH_OUTSIDE_OWNED_ROOT",str(path)) from exc
+    if not relative.parts or not owns_output_root(output,runtime):
+        raise RepeatBlocked("BLOCKED__FUTURE_EVIDENCE_ROOT_NOT_OWNED",str(path))
+    parent=output
+    for part in relative.parts[:-1]:
+        parent=parent/part
+        if not owns_output_root(output,runtime):
+            raise RepeatBlocked("BLOCKED__FUTURE_EVIDENCE_ROOT_NOT_OWNED",str(path))
+        if parent.is_symlink():raise RepeatBlocked("BLOCKED__OUTPUT_PARENT_SYMLINK",str(parent))
+        parent.mkdir(exist_ok=True)  # parents=False cannot recreate a missing root.
+    if not owns_output_root(output,runtime):
+        raise RepeatBlocked("BLOCKED__FUTURE_EVIDENCE_ROOT_NOT_OWNED",str(path))
+    return path
 
-def save_json_new(path: Path, value: Any) -> None:
+def write_output_json(output:Path,runtime:Mapping[str,Any],path:Path,value:Any)->None:
     payload=json.dumps(value,ensure_ascii=True,allow_nan=False,indent=2)+"\n"
-    path.parent.mkdir(parents=True,exist_ok=True)
-    with path.open("x",encoding="utf-8") as stream:
-        stream.write(payload)
+    target=output_target(output,runtime,path)
+    try:
+        with target.open("x",encoding="utf-8") as stream:stream.write(payload)
+    except FileExistsError as exc:
+        raise RepeatBlocked("BLOCKED__OUTPUT_RECEIPT_EXISTS",str(target)) from exc
+
+def write_output_npz(output:Path,runtime:Mapping[str,Any],path:Path,
+                     original_writer:Any,*args:Any,**kwargs:Any)->None:
+    target=output_target(output,runtime,path)
+    try:
+        with target.open("xb") as stream:original_writer(stream,*args,**kwargs)
+    except FileExistsError as exc:
+        raise RepeatBlocked("BLOCKED__OUTPUT_ARTIFACT_EXISTS",str(target)) from exc
+
+def source_receipt_target(path:Path,value:Any)->Path:
+    # The frozen source writes a pre-relaxation solve receipt and later adds
+    # checkpoint identifiers at the same name. Preserve both exclusively.
+    if (path.name=="direct_solve_receipt.json" and isinstance(value,Mapping)
+            and "checkpoint_from" not in value):
+        return path.with_name("direct_solve_pre_relaxation_receipt.json")
+    return path
 
 def record_pre_call_failure(output:Path,exc:BaseException,execution_id:str)->None:
-    output.mkdir(parents=True,exist_ok=False)
-    save_json_new(output/"first_failure.json",{
+    runtime:dict[str,Any]={"output_identity":None}
+    claim_output_root(output,runtime)
+    write_output_json(output,runtime,output/"first_failure.json",{
         "terminal":getattr(exc,"terminal",type(exc).__name__),
         "literal_scientific_call_ledger":{k:0 for k in CEILINGS},
         "execution_id":execution_id})
@@ -475,7 +509,7 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
     guard=BudgetGuard()
     runtime["guard"]=guard
     claim_output_root(output,runtime)
-    save_json(output/"preflight.json",pre)
+    write_output_json(output,runtime,output/"preflight.json",pre)
     ledger:dict[str,Any]={}
     state={"province":None,"ledger_unresolved":False,"original_terminal":None,
            "terminal":"CALL_LEDGER_UNRESOLVED"}
@@ -483,12 +517,16 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
     # No model import occurs until the future task gate and exact static binding pass.
     sys.path.insert(0,str(repo));sys.path.insert(0,str(repo/"src"))
     from ch5_two_asset_hank.corrected_diagnostic import optionb_turn2_household_integration as base
+    from ch5_two_asset_hank.corrected_diagnostic import nonlinear_continuation as nonlinear
     from ch5_two_asset_hank.corrected_diagnostic.contracts import CorrectedDiagnosticGrid
     from validators.multi_province.k1b_turn5_turn6_bounded_continuation import run as old
     originals=(base._map_checkpoint,base._direct_update,
                base._terminal_kfe_with_accounting,base.monotonicity_preserving_relaxation)
     original_entering=base.ENTERING_STATE_RELATIVE
     original_task=base.TASK_RELATIVE
+    original_base_writer=base._write_json
+    original_nonlinear_writer=nonlinear._write_json
+    original_npz_writer=np.savez_compressed
     ledger=old.new_ledger(6)
     runtime["ledger"]=ledger
     ledger.update(terminal_kfe_attempts=0,full_integrations=0,
@@ -550,7 +588,14 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
         guard.attempted["alpha_candidates"]+=len(attempts)
         ledger["alpha_candidates"]+=len(attempts)
         return accepted,receipt
+    def bound_json(path:Path,value:Any)->None:
+        write_output_json(output,runtime,source_receipt_target(Path(path),value),value)
+    def bound_npz(path:Path,*args:Any,**kwargs:Any)->None:
+        write_output_npz(output,runtime,Path(path),original_npz_writer,*args,**kwargs)
     try:
+        base._write_json=bound_json
+        nonlinear._write_json=bound_json
+        np.savez_compressed=bound_npz
         base._map_checkpoint=map_hook
         base._direct_update=direct_hook
         base._terminal_kfe_with_accounting=kfe_hook
@@ -603,7 +648,7 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
         rows=[{"province_index":i,"province":row["province"],"checkpoint":row["checkpoint"],
                "B":row["B"],"D":row["D"],"backward_error_max":row["backward_error_max"]}
               for i,row in enumerate(results)]
-        save_json(output/"turn6/household_batch_receipt.json",
+        write_output_json(output,runtime,output/"turn6/household_batch_receipt.json",
                   {"status":"PASS","province_count":31,"rows":rows})
         guard.enter("full_integrations")
         ledger["full_integrations"]+=1
@@ -634,7 +679,7 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
                     state["ledger_unresolved"]=True
                 else:
                     raise
-        save_json(output/"turn6_scientific_ledger.json",ledger)
+        write_output_json(output,runtime,output/"turn6_scientific_ledger.json",ledger)
         old.seal_generated_bundle(output,integration,7)
         replay=load_bundle(repo,7,OUTPUT)
         reference=load_bundle(repo,7)
@@ -643,7 +688,7 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
                     "repeatability_threshold":None}
         if source_snapshot(repo)!=before or reference_intermediate_hashes(repo)!=references:
             raise RepeatBlocked("BLOCKED__POST_EXECUTION_SOURCE_OR_INPUT_HASH_CHANGED")
-        save_json(output/"comparison_receipt.json",comparison)
+        write_output_json(output,runtime,output/"comparison_receipt.json",comparison)
         unavailable=[name for name,row in comparison["intermediates"].items() if row["status"]=="UNAVAILABLE"]
         if comparison["carrier"]["classification"]=="UNAVAILABLE" or unavailable:
             raise RepeatBlocked("FAIL__COMPARISON_UNAVAILABLE",{"intermediates":unavailable,
@@ -660,7 +705,10 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
          base.monotonicity_preserving_relaxation)=originals
         base.ENTERING_STATE_RELATIVE=original_entering
         restore_task_binding(base,original_task)
-        save_json(output/"terminal_receipt.json",{"terminal":state["terminal"],
+        base._write_json=original_base_writer
+        nonlinear._write_json=original_nonlinear_writer
+        np.savez_compressed=original_npz_writer
+        write_output_json(output,runtime,output/"terminal_receipt.json",{"terminal":state["terminal"],
             "original_terminal":state["original_terminal"],"source_ledger":ledger,
             "guard_attempted":guard.attempted,"guard_denied":guard.denied,
             "call_ledger_resolved":not state["ledger_unresolved"],"turn7_household_calls":0})
@@ -693,7 +741,7 @@ def run_after_valid_gate(repo:Path,execution_id:str,action:Any)->str:
             attempted=({k:0 for k in CEILINGS} if not runtime["scientific_started"] else
                        (dict(guard.attempted) if guard is not None else None))
             unresolved=bool(state.get("ledger_unresolved")) or attempted is None
-            save_json_new(output/"first_failure.json",{"terminal":"CALL_LEDGER_UNRESOLVED" if unresolved else original,
+            write_output_json(output,runtime,output/"first_failure.json",{"terminal":"CALL_LEDGER_UNRESOLVED" if unresolved else original,
                 "original_terminal":original,"execution_id":execution_id,
                 "literal_scientific_call_ledger":attempted,
                 "source_ledger":runtime["ledger"] if runtime["scientific_started"] else None,
