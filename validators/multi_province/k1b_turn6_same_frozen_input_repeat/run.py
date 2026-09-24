@@ -95,6 +95,18 @@ def record_pre_call_failure(output:Path,exc:BaseException,execution_id:str)->Non
         "literal_scientific_call_ledger":{k:0 for k in CEILINGS},
         "execution_id":execution_id})
 
+def claim_output_root(output:Path,runtime:dict[str,Any])->None:
+    output.mkdir(parents=True,exist_ok=False)
+    identity=output.stat()
+    runtime["output_identity"]=(identity.st_dev,identity.st_ino)
+
+def owns_output_root(output:Path,runtime:Mapping[str,Any])->bool:
+    expected=runtime.get("output_identity")
+    if expected is None:return False
+    try:identity=output.stat()
+    except FileNotFoundError:return False
+    return (identity.st_dev,identity.st_ino)==expected
+
 def integration_entry_lines(function:Any)->dict[int,tuple[str,...]]:
     """Bind each entry guard to the frozen old integration function source."""
     markers={
@@ -317,7 +329,7 @@ def structural_conflict(old:Any,new:Any,path:str="")->str|None:
         return None
     if isinstance(old,str) and isinstance(new,str):
         if "sha" in path.lower() and len(old)==len(new)==64:
-            return None if all(c in "0123456789abcdefABCDEF" for c in old+new) else path
+            return None if old==new and all(c in "0123456789abcdefABCDEF" for c in old+new) else path
         return None if old==new else path
     return None if old is None and new is None else path
 
@@ -401,13 +413,20 @@ def compare_array(x:np.ndarray,y:np.ndarray)->dict[str,Any]:
         return {"status":"UNAVAILABLE","reason":"shape_or_dtype","old_shape":list(x.shape),"new_shape":list(y.shape)}
     if not np.all(np.isfinite(x)) or not np.all(np.isfinite(y)):
         return {"status":"UNAVAILABLE","reason":"nonfinite"}
-    delta=np.abs(y.astype(np.float64)-x.astype(np.float64))
-    if not np.all(np.isfinite(delta)):
-        return {"status":"UNAVAILABLE","reason":"nonfinite_difference"}
+    if x.dtype==np.dtype("int64"):
+        differences=[abs(int(a)-int(b)) for a,b in zip(x.flat,y.flat)]
+        flat_index=max(range(len(differences)),key=differences.__getitem__) if differences else None
+        largest=differences[flat_index] if flat_index is not None else 0
+    else:
+        delta=np.abs(y-x)
+        if not np.all(np.isfinite(delta)):
+            return {"status":"UNAVAILABLE","reason":"nonfinite_difference"}
+        flat_index=int(np.argmax(delta)) if delta.size else None
+        largest=float(delta.flat[flat_index]) if flat_index is not None else 0.0
     return {"status":"EXACT_BITWISE_MATCH" if np.array_equal(x.view(np.uint64),y.view(np.uint64)) else "LEGAL_DIFFERENCE_OBSERVED",
             "shape":list(x.shape),"dtype":str(x.dtype),"bitwise_mismatches":int(np.count_nonzero(x.view(np.uint64)!=y.view(np.uint64))),
-            "max_absolute_difference":float(np.max(delta)) if delta.size else 0.0,
-            "max_index":[int(i) for i in np.unravel_index(int(np.argmax(delta)),delta.shape)] if delta.size else []}
+            "max_absolute_difference":largest,
+            "max_index":[int(i) for i in np.unravel_index(flat_index,x.shape)] if flat_index is not None else []}
 
 def compare_intermediates(repo:Path,output:Path,references:Mapping[str,str])->dict[str,Any]:
     if reference_intermediate_hashes(repo)!=dict(references):
@@ -455,7 +474,7 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
     entering=load_bundle(repo,6)
     guard=BudgetGuard()
     runtime["guard"]=guard
-    output.mkdir(parents=True,exist_ok=False)
+    claim_output_root(output,runtime)
     save_json(output/"preflight.json",pre)
     ledger:dict[str,Any]={}
     state={"province":None,"ledger_unresolved":False,"original_terminal":None,
@@ -654,15 +673,22 @@ def run_after_valid_gate(repo:Path,execution_id:str,action:Any)->str:
     prior_path=list(sys.path)
     prior_trace=sys.gettrace()
     prior_modules=set(sys.modules)
-    runtime:dict[str,Any]={"guard":None,"ledger":None,"state":None,"scientific_started":False}
+    runtime:dict[str,Any]={"guard":None,"ledger":None,"state":None,"scientific_started":False,
+                           "output_identity":None}
     try:
         return action(runtime)
     except BaseException as exc:
         state=runtime["state"] or {}
         original=state.get("original_terminal") or getattr(exc,"terminal",type(exc).__name__)
         guard=runtime["guard"]
-        if not output.exists():
-            output.mkdir(parents=True,exist_ok=False)
+        if runtime["output_identity"] is None:
+            try:claim_output_root(output,runtime)
+            except FileExistsError as ownership_error:
+                raise RepeatBlocked("BLOCKED__FUTURE_EVIDENCE_ROOT_NOT_OWNED",
+                    {"original_terminal":original}) from ownership_error
+        if not owns_output_root(output,runtime):
+            raise RepeatBlocked("BLOCKED__FUTURE_EVIDENCE_ROOT_NOT_OWNED",
+                {"original_terminal":original}) from exc
         if not (output/"first_failure.json").exists():
             attempted=({k:0 for k in CEILINGS} if not runtime["scientific_started"] else
                        (dict(guard.attempted) if guard is not None else None))

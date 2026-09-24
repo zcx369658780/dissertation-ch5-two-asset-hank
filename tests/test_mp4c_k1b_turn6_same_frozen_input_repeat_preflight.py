@@ -162,6 +162,11 @@ def test_array_comparison_reports_shape_nonfinite_and_integer_membership():
     a=np.array([1,2],dtype=np.int64)
     b=np.array([1,3],dtype=np.int64)
     assert runner.compare_array(a,b)["bitwise_mismatches"] == 1
+    boundary=np.array([2**53],dtype=np.int64)
+    changed=np.array([2**53+1],dtype=np.int64)
+    assert runner.compare_array(boundary,changed)["max_absolute_difference"]==1
+    assert runner.compare_array(boundary,boundary.copy())["max_absolute_difference"]==0
+    json.dumps(runner.compare_array(boundary,changed),allow_nan=False)
 
 
 def test_post_gate_pre_call_failure_receipt_is_exclusive_and_zero(tmp_path):
@@ -257,6 +262,12 @@ def test_json_structure_orientation_and_province_identity_are_required(tmp_path)
     new.write_text(json.dumps(doc),encoding="utf-8")
     result=runner.compare_receipt(old,new)
     assert result["status"]=="UNAVAILABLE" and result["field"]=="orientation"
+    doc=json.loads(old.read_text(encoding="utf-8"))
+    doc["lt_matrix_sha256"]="0"*64 if doc["lt_matrix_sha256"]!="0"*64 else "1"*64
+    new.write_text(json.dumps(doc),encoding="utf-8")
+    result=runner.compare_receipt(old,new)
+    assert result["status"]!="EXACT_BITWISE_MATCH"
+    assert result["field"]=="lt_matrix_sha256"
     old=runner.REPOSITORY/runner.OLD_ROOT/"turn6/household_batch_receipt.json"
     doc=json.loads(old.read_text(encoding="utf-8"))
     new=tmp_path/old.name
@@ -281,7 +292,7 @@ def test_stubbed_post_gate_failure_captures_zero_and_restores_state(tmp_path):
     before_trace=sys.gettrace()
     def inert_failure(runtime):
         sys.path.insert(0,"stub-path")
-        (tmp_path/runner.OUTPUT).mkdir(parents=True)
+        runner.claim_output_root(tmp_path/runner.OUTPUT,runtime)
         (tmp_path/runner.OUTPUT/"preflight.json").write_text("partial",encoding="utf-8")
         raise runner.RepeatBlocked("BLOCKED__STUB_PREFLIGHT_WRITE")
     with pytest.raises(runner.RepeatBlocked):
@@ -293,3 +304,42 @@ def test_stubbed_post_gate_failure_captures_zero_and_restores_state(tmp_path):
     with pytest.raises(runner.RepeatBlocked) as err:
         runner.run_after_valid_gate(tmp_path,"stub-id",lambda runtime:"unexpected")
     assert err.value.terminal=="BLOCKED__FUTURE_EVIDENCE_PATH_EXISTS"
+
+
+def test_pre_call_identity_failure_claims_new_root_exclusively(tmp_path):
+    with pytest.raises(runner.RepeatBlocked):
+        runner.run_after_valid_gate(tmp_path,"stub-id",
+            lambda runtime: (_ for _ in ()).throw(runner.RepeatBlocked("BLOCKED__STUB_HASH")))
+    receipt=json.loads((tmp_path/runner.OUTPUT/"first_failure.json").read_text(encoding="utf-8"))
+    assert receipt["terminal"]=="BLOCKED__STUB_HASH"
+    assert all(v==0 for v in receipt["literal_scientific_call_ledger"].values())
+
+
+def test_foreign_root_race_does_not_write_failure_receipt(tmp_path):
+    output=tmp_path/runner.OUTPUT
+    def foreign_wins(runtime):
+        output.mkdir(parents=True,exist_ok=False)
+        (output/"foreign.txt").write_text("keep",encoding="utf-8")
+        raise FileExistsError("stubbed competing creator")
+    with pytest.raises(runner.RepeatBlocked) as err:
+        runner.run_after_valid_gate(tmp_path,"stub-id",foreign_wins)
+    assert err.value.terminal=="BLOCKED__FUTURE_EVIDENCE_ROOT_NOT_OWNED"
+    assert (output/"foreign.txt").read_text(encoding="utf-8")=="keep"
+    assert not (output/"first_failure.json").exists()
+
+
+def test_owned_root_failure_retains_stubbed_attempted_call(tmp_path):
+    def inert_attempt(runtime):
+        runner.claim_output_root(tmp_path/runner.OUTPUT,runtime)
+        guard=runner.BudgetGuard()
+        guard.enter("firm_evaluations")
+        runtime["guard"]=guard
+        runtime["ledger"]={"firm_evaluations":0}
+        runtime["scientific_started"]=True
+        raise runner.RepeatBlocked("FAIL__STUB_AFTER_ENTRY")
+    with pytest.raises(runner.RepeatBlocked):
+        runner.run_after_valid_gate(tmp_path,"stub-id",inert_attempt)
+    receipt=json.loads((tmp_path/runner.OUTPUT/"first_failure.json").read_text(encoding="utf-8"))
+    assert receipt["original_terminal"]=="FAIL__STUB_AFTER_ENTRY"
+    assert receipt["literal_scientific_call_ledger"]["firm_evaluations"]==1
+    assert receipt["source_ledger"]["firm_evaluations"]==0
