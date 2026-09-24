@@ -2,7 +2,9 @@
 
 Task ID: `CH5_TURN6_SAME_FROZEN_INPUT_REPEAT_RUNNER_REPAIR4_20260924`
 
-Status: `ACTIVE__ZERO_SCIENCE_SCOPED_REPAIR_ONLY`
+Status: `CLOSED__INDEPENDENT_WORK_REJECT__HANDOFF_PENDING__NO_SCIENCE`
+
+This task was executed by Codex at candidate `ea19d0ad8131f46e3275a0d7ecc28cd596cfbf18` and independently REJECTED in `docs/CH5_TURN6_SAME_FROZEN_INPUT_REPEAT_RUNNER_REPAIR4_INDEPENDENT_REVIEW_20260924.md`. Its instructions below are historical; they authorize no further edits or calls. Under the Owner's handoff rule, the next GPT Work conversation must verify local state and issue a new bounded task sheet before any Codex continuation.
 
 ## Authority and startup
 
