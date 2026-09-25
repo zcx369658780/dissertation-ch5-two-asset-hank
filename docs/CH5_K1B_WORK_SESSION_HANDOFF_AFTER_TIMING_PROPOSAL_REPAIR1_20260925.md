@@ -1,6 +1,6 @@
 # GPT Work handoff — C8 separate timing budget proposal Repair1 pending review
 
-Date: 2026-09-25 (Asia/Shanghai). This Work conversation has reached the project conversation-length handoff rule in `AGENTS.md`. Owner manually opens the next GPT Work conversation. This document preserves progress and the pending independent gate; it is not an ACCEPT of Repair1.
+Correction, 2026-09-25: **Premature handoff withdrawn.** The Owner confirmed this Work conversation had only about eight dialogue records and was not long enough to threaten reliable continuation. Tool calls and prior handoff material were incorrectly treated as this conversation's dialogue length. The same GPT Work conversation remains active and performs the pending Repair1 review. The historical state below explains the mistaken handoff commit only; it is not an instruction to open a new conversation.
 
 ## Local authority and protected state
 
@@ -17,8 +17,8 @@ Date: 2026-09-25 (Asia/Shanghai). This Work conversation has reached the project
 - Codex proposed a 39-category, five explicit per-province guard, one-attempt, zero-retry separate measurement budget at `7b145046aedaad32451b8ce5e336d65118fa6306`. GPT Work rejected it only for a namespace conflict at review commit `8890ded1cbfc6712b3f4bbacc619dab67c466a31`: the proposal named `C8_SAME_FROZEN_TIMING_MEASUREMENT_RUN001`, while the accepted wrapper requires the contract/journal literal `SEPARATE_C8_TIMING_ONLY`.
 - Codex then committed the two-path zero-science Repair1 candidate `0a669329fe9e91078e14d01bdb28bcee97f351b8`, claiming the proposal and receipt now use `SEPARATE_C8_TIMING_ONLY`, preserve all budget numbers/source identities and zero-call ledger, with JSON/hash/diff checks passed. **GPT Work has not independently reviewed this Repair1.**
 
-## First gate in next Work conversation
+## Former pending gate, resolved in this Work conversation
 
-Read `CURRENT.md`, `SCIENTIFIC_DECISIONS.md`, `TASK_CURRENT.md`, `REVIEW_GATE.md`, `AGENTS.md`, this handoff, the rejection review, and the exact two-path Repair1 diff. Independently verify committed candidate/parent/tree/blobs, source and protected hashes, no tracked dirt or measurement output, budget namespace versus wrapper, unchanged 39 ceilings/five per-province guards/historical actuals, receipt/report hash and zero call ledger. Record one independent ACCEPT/REJECT verdict in a local committed review and close or repair `TASK_CURRENT.md` accordingly. No unnecessary test or science call.
+GPT Work completed the independent two-path Repair1 review in this same conversation. The verdict is `ACCEPT__C8_SEPARATE_TIMING_BUDGET_PROPOSAL_REPAIR1__DESIGN_ONLY`, recorded in `docs/CH5_K1B_C8_SEPARATE_TIMING_BUDGET_PROPOSAL_REPAIR1_INDEPENDENT_REVIEW_20260925.md`. `TASK_CURRENT.md` is closed. The earlier instruction to open a new Work conversation is withdrawn.
 
 If accepted, prepare a concrete Owner decision on the separate budget, finite process wall-clock seconds and cooperative overrun semantics. Do not infer a duration bound, adopt an Owner decision, or issue one-shot measurement execution without explicit Owner authorization. C9/C10 prelaunch remains `BLOCKED__DURATION_BOUND_UNAVAILABLE`; C9 has not run. K2, GE, annual mapping, shocks, IRFs, welfare and Results remain closed. Results eligibility: `FALSE`.
