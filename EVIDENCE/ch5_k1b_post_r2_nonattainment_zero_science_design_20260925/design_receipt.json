@@ -1,0 +1,79 @@
+{
+  "schema": "CH5_K1B_POST_R2_NONATTAINMENT_ZERO_SCIENCE_DESIGN_V1",
+  "task_id": "CH5_K1B_POST_R2_NONATTAINMENT_ZERO_SCIENCE_DESIGN_20260925",
+  "status": "K1B_POST_R2_NONATTAINMENT_ZERO_SCIENCE_DESIGN_CANDIDATE_READY__WORK_REVIEW_PENDING",
+  "accepted_baseline_head": "07e27c208385473af624b9f307859f2809f2ae75",
+  "start_head": "b85c99157f339f0a477964185258e3ac73bef50c",
+  "start_head_is_committed_descendant": true,
+  "src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
+  "tracked_changes_before_task": [],
+  "preserved_untracked_output_manifests": {
+    "reports/ch5_turn6_same_frozen_input_repeat_20260923_run001/execution_artifact_manifest.json": "7890720D502AC1C04D672978C6F662DD51F9D2BA27F321701877ABE9214CDE61",
+    "reports/ch5_k1b_turn7_outer_r2_20260925_run001/execution_artifact_manifest.json": "413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91",
+    "reports/ch5_k1b_turn8_outer_r2_20260925_run001/execution_artifact_manifest.json": "5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301"
+  },
+  "source_sha256": {
+    "docs/CH5_FULL_OUTER_NINE_COMPONENT_1E6_STATIC_DIAGNOSTIC_20260923.md": "B2949440543214421CFDBD305D1896698D236FA655452E136D990B6277D1DEE8",
+    "EVIDENCE/ch5_full_outer_nine_component_1e6_static_diagnostic_20260923/diagnostic_receipt.json": "7F431D581284F9327AE0CF393F9990B6AF522888029DA511B027B594600B016F",
+    "reports/ch5_k1b_turn7_outer_r2_20260925_run001/comparison_receipt.json": "6DE97F35A8D599183F19F920A95B61CC01CE21B3E6E1AFAB19935FC44623835E",
+    "reports/ch5_k1b_turn8_outer_r2_20260925_run001/comparison_receipt.json": "7F70FB73EAAE0D2BA4C2F60AC5FE071AA963D42EA77A64950D4F94562CB364FC",
+    "docs/CH5_TURN6_SAME_FROZEN_INPUT_REPEAT_EXECUTION_INDEPENDENT_REVIEW_20260925.md": "BB3C87F111081C2A63941CF24C86B4A354C2D4E2674CC5BDE24CA955C40472CB",
+    "docs/CH5_FULL_OUTER_STATE_STOP_FAILURE_BUDGET_OWNER_ADOPTION_20260925.md": "57F4BED608F00AD8040CC9A2576BB3357A4470CE7FFEADC8E9BDB7EB44C86A5F",
+    "docs/CH5_OUTER_STOP_FAILURE_BUDGET_CONTRACT_PROPOSAL_20260923.md": "5D3BFE7B914DE3F6BE3B99E75E80680B18A4054FB186EBB715D865F4008DEAC6"
+  },
+  "formula_identity": {
+    "Yt_Lt_wjt_w": "max_i abs(new_i/old_i - 1)",
+    "Kt_prev": "max_i abs(new_i-old_i)/Kt0_i",
+    "rk_raw_ra0_rah": "max_i abs(new_i-old_i)",
+    "S": "max_(destination,origin) abs(new-old)",
+    "strict_level": 1e-6,
+    "comparison": "<"
+  },
+  "observed_transition_below_counts": {
+    "C4_to_C5_static": 1,
+    "C5_to_C6_static": 1,
+    "C6_to_C7_legal_R2_first": 2,
+    "C7_to_C8_legal_R2_second": 5
+  },
+  "accepted_terminal": "VALID__LEVEL_NOT_MET_AT_BUDGET",
+  "new_specific_call_budget": "UNRESOLVED",
+  "changed_paths": [
+    {
+      "path": "docs/CH5_K1B_POST_R2_NONATTAINMENT_ZERO_SCIENCE_DESIGN_20260925.md",
+      "sha256": "7F7380F584F100350488211D2C9AA19C67A2C39576CE4BCACB8A0D7B8829F447"
+    },
+    {
+      "path": "EVIDENCE/ch5_k1b_post_r2_nonattainment_zero_science_design_20260925/design_receipt.json",
+      "sha256": null,
+      "sha256_note": "Self-referential hash cannot be embedded in its own bytes; report verified receipt SHA-256 outside this file."
+    }
+  ],
+  "task_scoped_call_ledger": {
+    "model": 0,
+    "scientific_runner": 0,
+    "household": 0,
+    "HJB": 0,
+    "KFE": 0,
+    "integration": 0,
+    "firm": 0,
+    "K1B_network": 0,
+    "GE": 0,
+    "MATLAB": 0,
+    "failed_attempts": 0,
+    "retries": 0
+  },
+  "static_checks": {
+    "baseline_ancestor": "PASS",
+    "src_tree_exact": "PASS",
+    "tracked_changes_before_task": "NONE",
+    "three_preserved_manifest_sha256": "PASS",
+    "seven_source_sha256": "PASS",
+    "four_transition_values_read_from_receipts": "PASS",
+    "only_two_allowed_paths_changed": "PASS",
+    "json_parse": "PASS",
+    "git_diff_check": "PASS"
+  },
+  "first_blocker": null,
+  "results_eligibility": false,
+  "next_gate": "Independent GPT Work ACCEPT/REJECT; substantive route returns to Owner"
+}
