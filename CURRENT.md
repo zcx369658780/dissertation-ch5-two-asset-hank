@@ -25,7 +25,7 @@ Updated: 2026-09-25 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_K1B_POST_R2_TIMING_BUDGET_ZERO_SCIENCE_EVIDENCE_DISPATCHED__WORK_REVIEW_REQUIRED`
+`CH5_K1B_POST_R2_TIMING_AUDIT_ACCEPTED__OWNER_RESOURCE_CAP_DECISION_REQUIRED__NO_SCIENCE`
 
 The Owner selected the complete outer state route. Codex delivered the zero-science design candidate at `986eb157638c6f7e26c2042ab2af36e28b9ad1ad`; Work independently accepted its design quality in `docs/CH5_FULL_OUTER_STATE_MAP_ZERO_SCIENCE_DESIGN_INDEPENDENT_REVIEW_20260923.md`. Codex then delivered the unit/scale/precision evidence at `f93407460e79f93c3781f258b856e55bb1ee3a15`, independently accepted in `docs/CH5_FULL_OUTER_STATE_UNIT_SCALE_PRECISION_EVIDENCE_INDEPENDENT_REVIEW_20260923.md`. The Owner agreed to `1e-6` as diagnostic precision, with `10^-12` class precision only an eventual aspiration. Codex delivered the sealed nine-component static readout at `2d5d9a235803882b65571aab57233018d4c1fc0b`; Work independently accepted its zero-science evidence quality in `docs/CH5_FULL_OUTER_NINE_COMPONENT_1E6_STATIC_DIAGNOSTIC_INDEPENDENT_REVIEW_20260923.md`. In both C4→C5 and C5→C6, only `Kt_prev` was strictly below `1e-6`. At the time of those static readouts, no stopping law or execution budget had been adopted. They remain decision evidence, not fixed-point verdicts; the later Owner adoption below governs only future bounded comparisons.
 
@@ -34,6 +34,8 @@ The Owner authorized continuing to a zero-science proposal for the complete stop
 The route-B zero-science specification was delivered at `32b72f91b2edfb68bb8970bb2acc194070fa3131` and independently **ACCEPTED as decision evidence** in `docs/CH5_K1B_POST_R2_ROLLING_BATCH_ZERO_SCIENCE_SPEC_INDEPENDENT_REVIEW_20260925.md`. It proposes a prospective C8-start, two-consecutive-new-comparison rule and a minimal `N=2` short window; neither is Owner-adopted. Measured runtime and a hard wall/compute cap remain `UNRESOLVED`. The Owner decision packet is `docs/CH5_K1B_POST_R2_ROLLING_BATCH_OWNER_DECISION_PACKET_20260925.md`; `TASK_CURRENT.md` is closed. No turn9, batch runner, or scientific call is authorized.
 
 The Owner principally agreed to the prospective C8-start two-new-pass rule and the at-most-C9/C10 short-window design basis in `docs/CH5_K1B_POST_R2_PROSPECTIVE_ROLLING_RULE_OWNER_IN_PRINCIPLE_ADOPTION_20260925.md`, and authorized **only** a zero-science timing/budget evidence task. Work dispatched that task in `TASK_CURRENT.md`. The new call/time budget remains unresolved; no turn9 model call or batch runner execution is authorized.
+
+The zero-science timing audit at `17b61e8bed914bcf2b9cec50671968721c4617ad` was independently **ACCEPTED** in `docs/CH5_K1B_POST_R2_TIMING_BUDGET_ZERO_SCIENCE_EVIDENCE_INDEPENDENT_REVIEW_20260925.md`. Sealed evidence provides no process-bound science elapsed time; `MEASURED_SCIENCE_RUNTIME_UNAVAILABLE`. The Owner resource choice is described in `docs/CH5_K1B_POST_R2_TIME_CAP_OWNER_DECISION_PACKET_20260925.md`. `TASK_CURRENT.md` is closed pending that choice; no new call/time budget or model execution is authorized.
 
 ## Explicitly closed
 
@@ -83,6 +85,10 @@ The Owner principally agreed to the prospective C8-start two-new-pass rule and t
 - Independent route-B design review: `docs/CH5_K1B_POST_R2_ROLLING_BATCH_ZERO_SCIENCE_SPEC_INDEPENDENT_REVIEW_20260925.md`
 - Owner rolling/batch decision packet: `docs/CH5_K1B_POST_R2_ROLLING_BATCH_OWNER_DECISION_PACKET_20260925.md`
 - Owner in-principle prospective-rule adoption: `docs/CH5_K1B_POST_R2_PROSPECTIVE_ROLLING_RULE_OWNER_IN_PRINCIPLE_ADOPTION_20260925.md`
+- Zero-science timing audit: `docs/CH5_K1B_POST_R2_TIMING_BUDGET_ZERO_SCIENCE_EVIDENCE_20260925.md`
+- Timing audit receipt: `EVIDENCE/ch5_k1b_post_r2_timing_budget_zero_science_evidence_20260925/timing_receipt.json`
+- Independent timing audit review: `docs/CH5_K1B_POST_R2_TIMING_BUDGET_ZERO_SCIENCE_EVIDENCE_INDEPENDENT_REVIEW_20260925.md`
+- Owner resource-cap decision packet: `docs/CH5_K1B_POST_R2_TIME_CAP_OWNER_DECISION_PACKET_20260925.md`
 - Turn8 output manifest: `reports/ch5_k1b_turn8_outer_r2_20260925_run001/execution_artifact_manifest.json` (preserved untracked; SHA-256 `5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301`)
 - Turn7 output manifest: `reports/ch5_k1b_turn7_outer_r2_20260925_run001/execution_artifact_manifest.json` (preserved untracked; SHA-256 `413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91`)
 
