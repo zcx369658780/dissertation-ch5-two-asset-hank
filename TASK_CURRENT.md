@@ -2,7 +2,9 @@
 
 Task ID: `CH5_TURN6_SAME_FROZEN_INPUT_REPEAT_RUNNER_REPAIR5_20260925`
 
-Status: `ACTIVE__BOUNDED_RUNNER_REPAIR__ZERO_SCIENCE__WORK_REVIEW_REQUIRED`
+Status: `CLOSED__INDEPENDENT_WORK_ACCEPT__ZERO_SCIENCE__NO_REPLAY_AUTHORITY`
+
+Builder candidate `81866d8f23cbb36e16281c41add27539c6ce7c6f` was independently ACCEPTED in `docs/CH5_TURN6_SAME_FROZEN_INPUT_REPEAT_RUNNER_REPAIR5_INDEPENDENT_REVIEW_20260925.md`. All instructions below are historical and authorize no further edits or scientific calls. A separate one-shot repeat task with explicit budget is required before execution.
 
 ## Authority and baseline
 
