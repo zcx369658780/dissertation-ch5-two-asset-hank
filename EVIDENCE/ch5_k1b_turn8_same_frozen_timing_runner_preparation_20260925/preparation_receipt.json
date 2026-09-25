@@ -1,0 +1,86 @@
+{
+  "schema": "CH5_K1B_TURN8_SAME_FROZEN_TIMING_RUNNER_PREPARATION_V1",
+  "task_id": "CH5_K1B_TURN8_SAME_FROZEN_TIMING_RUNNER_ZERO_SCIENCE_PREPARATION_20260925",
+  "status": "CANDIDATE_WITH_STATIC_TEST_FAILURE__WORK_INDEPENDENT_REVIEW_PENDING",
+  "dispatch_parent_head": "bba8d44d01c4ab9768593fa95e7917bc50f05874",
+  "required_ancestor": "d1ab05a7880516d6ac3c20d5a22c84502c64f8a8",
+  "frozen_src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
+  "entry_checks": {
+    "head_committed_descendant": true,
+    "tracked_clean": true,
+    "exactly_three_protected_untracked_roots": true,
+    "protected_manifest_hashes_match_handoff": true,
+    "candidate_measurement_root_absent": true
+  },
+  "input_sha256": {
+    "AGENTS.md": "F5C16EAC284961C385D609C776671FE1D26FFAF9F104E1886C13DDC4AB8D638C",
+    "CURRENT.md": "380423C0DC0F7519DA70F03CC3EE5D0829520B4450FFD842C0503C7502BC2ADE",
+    "SCIENTIFIC_DECISIONS.md": "681993FDBE21444E5AF3E53E09742E5F4FE4B45CCCA01F2963FCE55AC334C787",
+    "TASK_CURRENT.md": "04DFA39F741B17CBBC69D794D2D7F9C4C66E10EF01793D7975B3F4EB755FB037",
+    "REVIEW_GATE.md": "82E8AE771BCDA75D540EFC53FB38EB3F597B8A4A92B61ADD45F7465DFED785E2",
+    "docs/CH5_K1B_CODEX_SESSION_HANDOFF_20260925.md": "A7578CB5AB41EB879F7AC41943C303EA00BAEEFFA134C3234B75313D398E4027",
+    "docs/CH5_K1B_SEPARATE_C8_FROZEN_INPUT_TIMING_ROUTE_OWNER_SELECTION_20260925.md": "43949E29A1185ECF190CCA6FC378F59E48E5A39E53494BD6AD57F599E93DB96D",
+    "docs/CH5_K1B_PROCESS_BOUND_TIMING_ACQUISITION_ZERO_SCIENCE_DESIGN_20260925.md": "F67366FF94C207674021EA12020C3C722591E2B91497974B1192501697606535",
+    "docs/CH5_K1B_PROCESS_BOUND_TIMING_ACQUISITION_ZERO_SCIENCE_DESIGN_INDEPENDENT_REVIEW_20260925.md": "8E56D8B46FDD808301AD329A0BD6EC343257566DC7FF3D55FE8593E5EB595024",
+    "docs/CH5_K1B_PROCESS_BOUND_TIMING_EVIDENCE_OWNER_DECISION_20260925.md": "3CF3B1FA5B3E19755064732DDF05412F8F2F6E207B9210BD1CBC6DFD28B1AC1D",
+    "docs/CH5_K1B_C9_C10_CALL_CEILINGS_OWNER_ADOPTION_20260925.md": "4C2B540DF5906825253D79EA6A0603A91BDA09F4E2DC72967C9DC87858F33C40",
+    "docs/CH5_K1B_TURN8_OUTER_R2_RUNNER_INDEPENDENT_REVIEW_20260925.md": "48F59670FFCFEB7C23444734AE33A3F229D18FF825AD6A097BE20C44EF3A73B8",
+    "validators/multi_province/k1b_turn8_outer_r2/run.py": "10920535BD50E688D1794B7E69C34F8A5C3C56456CAF6E8DF52FA8D9DFE31831",
+    "tests/test_mp4c_k1b_turn8_outer_r2_preflight.py": "A97D0D8714F6C8B4E9EAECD74271E034A3762234C3F1B7F4C7B2DCB3DAC8EA69",
+    "reports/ch5_k1b_turn7_outer_r2_20260925_run001/turn8_entering_bundle_manifest.json": "20861D4ADDBDF1099854EB86B00D24A097C627838B3F6EF5AFAEDABFFD647E5E",
+    "reports/ch5_k1b_turn7_outer_r2_20260925_run001/turn8_entering_bundle_readback.json": "5EB75667132473C2F283666B0F3B73BB18FDF00A83C09382827E4C44958246FA"
+  },
+  "protected_manifest_sha256": {
+    "reports/ch5_turn6_same_frozen_input_repeat_20260923_run001/execution_artifact_manifest.json": "7890720D502AC1C04D672978C6F662DD51F9D2BA27F321701877ABE9214CDE61",
+    "reports/ch5_k1b_turn7_outer_r2_20260925_run001/execution_artifact_manifest.json": "413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91",
+    "reports/ch5_k1b_turn8_outer_r2_20260925_run001/execution_artifact_manifest.json": "5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301"
+  },
+  "artifacts": {
+    "validators/multi_province/k1b_turn8_same_frozen_timing_measurement/run.py": "29FDB9D7E4CF4AAB7BEBA1029AF8D8EDE2EE5D3923F2FFF9062C6AAD46AD474B",
+    "tests/test_mp4c_k1b_turn8_same_frozen_timing_measurement_preflight.py": "34C425D7BAB14C626E6C34F83070851E1795B1F67D8726E5999CD7AB9416393C",
+    "docs/CH5_K1B_TURN8_SAME_FROZEN_TIMING_RUNNER_PREPARATION_20260925.md": "A240CB2BEE54932CA8F40DF0381C720EF23C9B4DD11116E4AB26502FC3C93F1C"
+  },
+  "measurement_root": "reports/ch5_k1b_turn8_same_frozen_timing_measurement_run001/",
+  "measurement_root_created": false,
+  "code_graph": "NOT_INDEXED_FOR_THIS_WORKTREE__EXACT_PATH_SOURCE_READS_USED",
+  "static_test": {
+    "command": "python -B -m pytest -q -p no:cacheprovider tests/test_mp4c_k1b_turn8_same_frozen_timing_measurement_preflight.py",
+    "maximum_runs": 2,
+    "runs_used": 2,
+    "first_run": {
+      "passed": 11,
+      "failed": 1,
+      "first_defect": "INERT_TEST_STUB_EAGER_DEFAULT_READ__FILE_NOT_FOUND",
+      "science_reached": false
+    },
+    "second_run": {
+      "passed": 11,
+      "failed": 1,
+      "first_defect": "TEST_EXPECTED_FRESH_TASK_GATE_BUT_PRECOMMIT_RUNNER_IDENTITY_GATE_RETURNED_BLOCKED__MEASUREMENT_AUTHORITY_DIRTY_OR_MISSING",
+      "science_reached": false
+    },
+    "overall": "FAIL__NO_STATIC_PASS__NO_MORE_TEST_RUNS_AUTHORIZED"
+  },
+  "labels": {
+    "measurement_budget": "PROPOSED_NOT_ADOPTED",
+    "c9_c10_budget": "OWNER_ADOPTED__SEPARATE_NAMESPACE__NOT_EXECUTION_PERMISSION",
+    "complete_timing_sample": "OBSERVED_SAMPLE_ONLY__NO_C9_C10_UPPER_BOUND",
+    "duration_prelaunch": "BLOCKED__DURATION_BOUND_UNAVAILABLE",
+    "results_eligibility": false
+  },
+  "literal_task_scoped_call_ledger": {
+    "model": 0,
+    "scientific_runner": 0,
+    "timing_measurement": 0,
+    "household": 0,
+    "HJB": 0,
+    "KFE": 0,
+    "integration": 0,
+    "firm": 0,
+    "K1B_allocation": 0,
+    "failed_attempts": 0,
+    "retries": 0
+  },
+  "first_unresolved_gate": "Second named static test failed at precommit measurement-runner identity gate; GPT Work independent ACCEPT/REJECT before any repair or science",
+  "next_gate": "GPT Work independent ACCEPT/REJECT; separate Owner measurement budget/resource/ID adoption and future one-shot science authorization only after static preparation acceptance"
+}
