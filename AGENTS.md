@@ -1,6 +1,6 @@
 # Chapter 5 Two-Asset HANK — Local Working Agreement
 
-Updated: 2026-09-23. Workflow authority: `LOCAL_WORK_WORKFLOW_V1`.
+Updated: 2026-09-25. Workflow authority: `LOCAL_WORK_WORKFLOW_V1`.
 
 ## Project boundary
 
@@ -51,6 +51,8 @@ Use historical reports only for a specific provenance question. Do not recursive
 
 - If a project document cannot be recovered from GitHub, Work may assign Codex a bounded local recovery task without requesting fresh permission. Recover only from identifiable project-local or Owner-provided sources, preserve provenance, and mark unavailable content unresolved rather than reconstructing it from memory. Recovery does not authorize model changes or scientific calls.
 - Work chooses a handoff point while the current conversation still has enough context. At handoff, send the Owner only a copyable handoff prompt; do not issue an additional task sheet in the same handoff. After the new conversation starts, verify the local state and automatically issue the next task sheet if no Owner decision is pending.
+- GPT Work must stop its current objective and hand off when this Work conversation exceeds 30 dialogue records or becomes long enough that reliable continuation is at risk. Before giving the Owner a copyable prompt for manual handoff to the next GPT Work conversation, Work must first save the current task progress, key decisions, evidence identities, consumed budgets, and pending gates in a local project document. A handoff does not authorize new science or reset any call budget; any in-flight scientific operation still follows its authorized stop and accounting rules.
+- For Codex execution, Work uses the latest Owner-designated project Codex conversation. If that conversation exceeds 30 dialogue records, becomes too long for reliable continuation, or encounters an error that requires a new conversation, Work must guide its handoff promptly, preserving the task and call ledger in project documentation. Otherwise continue in the latest handed-off Codex conversation; do not create another conversation merely for a new task. The current designated conversation is “整理第五章 K1B 收敛设计证据” (`01a0cce5-241d-7ab3-b87c-e0a41628572e`); no other Codex conversation may write this worktree without a new Owner designation.
 
 ## Reporting
 
