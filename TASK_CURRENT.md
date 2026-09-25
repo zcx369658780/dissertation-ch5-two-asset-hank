@@ -1,7 +1,9 @@
 # Current Builder Task
 
 Task ID: `CH5_TURN6_SAME_FROZEN_INPUT_REPEAT_EXECUTION_20260923`
-Status: `ACTIVE__ONE_SHOT_SAME_FROZEN_INPUT_REPEAT`
+Status: `CLOSED__ONE_SHOT_CONSUMED__INDEPENDENT_WORK_ACCEPT__NO_SUCCESSOR_SCIENCE`
+
+This one-shot execution completed at terminal `PASS__TURN6_SAME_FROZEN_INPUT_REPEAT__ONE_PAIR_ONLY` and was independently ACCEPTED in `docs/CH5_TURN6_SAME_FROZEN_INPUT_REPEAT_EXECUTION_INDEPENDENT_REVIEW_20260925.md`. The call budget is consumed. Instructions below are historical and authorize no rerun, retry, output rewrite, turn7 household, or successor scientific call.
 Execution authorization ID: `K1B_C5_C6P_20260925_ONCE`
 Authorized output root: `reports/ch5_turn6_same_frozen_input_repeat_20260923_run001`
 
