@@ -1,0 +1,73 @@
+{
+  "schema": "CH5_K1B_TURN8_SAME_FROZEN_TIMING_RUNNER_POSTCOMMIT_STATIC_VERIFICATION_V1",
+  "task_id": "CH5_K1B_TURN8_SAME_FROZEN_TIMING_RUNNER_POSTCOMMIT_STATIC_VERIFICATION_20260925",
+  "status": "STATIC_VERIFICATION_PASS__WORK_INDEPENDENT_REVIEW_PENDING",
+  "dispatch_head": "db25734d55a9aa6cf15035c5554949f8a3a50134",
+  "dispatch_parent": "45ba72ea611af9a72fb23f33b4f3cf8b5b13b2cf",
+  "dispatch_tree": "1d5c2650f4478b7127bca5865e779b2254404c2f",
+  "candidate_commit": "45ba72ea611af9a72fb23f33b4f3cf8b5b13b2cf",
+  "frozen_src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
+  "unchanged_candidate_blobs": {
+    "validators/multi_province/k1b_turn8_same_frozen_timing_measurement/run.py": "2af59b24296579a67a3e16fcb5c53d65ed67ba64",
+    "tests/test_mp4c_k1b_turn8_same_frozen_timing_measurement_preflight.py": "0c8fcb553b65f7076b293c6bc470f0018737e157"
+  },
+  "source_sha256": {
+    "TASK_CURRENT.md": "4966B4E15F1A1126E87C4A8B0DACE61A08ED653941A9BFFA38C7AC2CF8E2C40A",
+    "docs/CH5_K1B_TURN8_SAME_FROZEN_TIMING_RUNNER_PREPARATION_INDEPENDENT_REVIEW_20260925.md": "7CFEEB25FABD957976441FFE8DE50C126EE29BE6F76276CA3AAC6E158CA3CAA0",
+    "docs/CH5_K1B_CODEX_SESSION_HANDOFF_20260925.md": "A7578CB5AB41EB879F7AC41943C303EA00BAEEFFA134C3234B75313D398E4027",
+    "validators/multi_province/k1b_turn8_same_frozen_timing_measurement/run.py": "29FDB9D7E4CF4AAB7BEBA1029AF8D8EDE2EE5D3923F2FFF9062C6AAD46AD474B",
+    "tests/test_mp4c_k1b_turn8_same_frozen_timing_measurement_preflight.py": "34C425D7BAB14C626E6C34F83070851E1795B1F67D8726E5999CD7AB9416393C"
+  },
+  "protected_manifest_sha256": {
+    "reports/ch5_turn6_same_frozen_input_repeat_20260923_run001/execution_artifact_manifest.json": "7890720D502AC1C04D672978C6F662DD51F9D2BA27F321701877ABE9214CDE61",
+    "reports/ch5_k1b_turn7_outer_r2_20260925_run001/execution_artifact_manifest.json": "413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91",
+    "reports/ch5_k1b_turn8_outer_r2_20260925_run001/execution_artifact_manifest.json": "5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301"
+  },
+  "entry_checks": {
+    "head_committed_descendant": true,
+    "runner_test_blobs_unchanged": true,
+    "tracked_clean": true,
+    "exactly_three_protected_untracked_roots": true,
+    "protected_manifest_hashes_match": true,
+    "candidate_measurement_root_absent": true
+  },
+  "test": {
+    "command": "python -B -m pytest -q -p no:cacheprovider tests/test_mp4c_k1b_turn8_same_frozen_timing_measurement_preflight.py",
+    "runs_authorized": 1,
+    "runs_used": 1,
+    "exit_code": 0,
+    "passed": 12,
+    "failed": 0,
+    "skipped": 0,
+    "exact_summary": "12 passed in 6.86s",
+    "first_failure": null,
+    "classification": "STATIC_VERIFICATION_PASS_ONLY"
+  },
+  "post_test_checks": {
+    "runner_test_sha256_unchanged": true,
+    "protected_manifest_hashes_unchanged": true,
+    "candidate_measurement_root_absent": true,
+    "tracked_clean": true
+  },
+  "report": {
+    "path": "docs/CH5_K1B_TURN8_SAME_FROZEN_TIMING_RUNNER_POSTCOMMIT_STATIC_VERIFICATION_20260925.md",
+    "sha256": "AD7427C5F4D8984226629446821A000A32FCC7BD5DA2D1A1B8AEBCDFC954CB60"
+  },
+  "literal_task_scoped_call_ledger": {
+    "model": 0,
+    "scientific_runner": 0,
+    "timing_measurement": 0,
+    "household": 0,
+    "HJB": 0,
+    "KFE": 0,
+    "integration": 0,
+    "firm": 0,
+    "K1B_allocation": 0,
+    "failed_attempts": 0,
+    "retries": 0
+  },
+  "independent_prior_verdict": "REJECT__ORIGINAL_TWO_RUN_STATIC_TEST_BUDGET_NO_PASS",
+  "duration_prelaunch": "BLOCKED__DURATION_BOUND_UNAVAILABLE",
+  "results_eligibility": false,
+  "next_gate": "GPT Work independent ACCEPT/REJECT of this postcommit static evidence; no science authorization"
+}
