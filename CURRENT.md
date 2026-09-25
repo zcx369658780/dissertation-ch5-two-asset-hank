@@ -25,7 +25,7 @@ Updated: 2026-09-25 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_K1B_TIMING_RUNNER_CANDIDATE_REJECTED__POSTCOMMIT_STATIC_VERIFICATION_ISSUED__NO_SCIENCE`
+`CH5_K1B_TIMING_RUNNER_STATIC_PASS__INDEPENDENT_CODE_REVIEW_REJECT__REPAIR1_ZERO_SCIENCE__NO_SCIENCE`
 
 The Owner selected the complete outer state route. Codex delivered the zero-science design candidate at `986eb157638c6f7e26c2042ab2af36e28b9ad1ad`; Work independently accepted its design quality in `docs/CH5_FULL_OUTER_STATE_MAP_ZERO_SCIENCE_DESIGN_INDEPENDENT_REVIEW_20260923.md`. Codex then delivered the unit/scale/precision evidence at `f93407460e79f93c3781f258b856e55bb1ee3a15`, independently accepted in `docs/CH5_FULL_OUTER_STATE_UNIT_SCALE_PRECISION_EVIDENCE_INDEPENDENT_REVIEW_20260923.md`. The Owner agreed to `1e-6` as diagnostic precision, with `10^-12` class precision only an eventual aspiration. Codex delivered the sealed nine-component static readout at `2d5d9a235803882b65571aab57233018d4c1fc0b`; Work independently accepted its zero-science evidence quality in `docs/CH5_FULL_OUTER_NINE_COMPONENT_1E6_STATIC_DIAGNOSTIC_INDEPENDENT_REVIEW_20260923.md`. In both C4→C5 and C5→C6, only `Kt_prev` was strictly below `1e-6`. At the time of those static readouts, no stopping law or execution budget had been adopted. They remain decision evidence, not fixed-point verdicts; the later Owner adoption below governs only future bounded comparisons.
 
@@ -54,6 +54,8 @@ The zero-science process-bound timing acquisition design at `e320b044b759d62b428
 The Owner selected the **separate single C8 same-frozen-input timing route** in `docs/CH5_K1B_SEPARATE_C8_FROZEN_INPUT_TIMING_ROUTE_OWNER_SELECTION_20260925.md`. GPT Work issued a zero-science instrumentation preparation task to the existing successor Codex conversation. The measurement-specific budget, process resource cap, and one-shot science authorization are still pending. The C9/C10 duration prelaunch block remains, and one measured sample will not automatically remove it.
 
 The zero-science runner candidate `45ba72ea611af9a72fb23f33b4f3cf8b5b13b2cf` was independently **REJECTED for runner acceptance** in `docs/CH5_K1B_TURN8_SAME_FROZEN_TIMING_RUNNER_PREPARATION_INDEPENDENT_REVIEW_20260925.md` because the named static test had no PASS in two authorized invocations. No model call or measurement output root occurred. GPT Work issued a new one-run, no-code-edit post-commit static verification task to determine whether the second failure was solely the pre-commit runner identity gate. This does not grant a measurement call.
+
+The post-commit one-run static verification at `861789ed1dadedc40448443744309c43df63eba3` was independently **ACCEPTED as static evidence**: `12 passed`. The runner remains **REJECTED for execution** after code review found that its future gate does not pin the new wrapper to an independent Work review hash and that it replaces the accepted C8 numerical terminal with a measurement label. See `docs/CH5_K1B_TURN8_SAME_FROZEN_TIMING_RUNNER_POSTCOMMIT_STATIC_VERIFICATION_INDEPENDENT_REVIEW_20260925.md`. GPT Work issued a bounded zero-science repair; no measurement budget or scientific call is authorized.
 
 ## Explicitly closed
 
@@ -119,6 +121,7 @@ The zero-science runner candidate `45ba72ea611af9a72fb23f33b4f3cf8b5b13b2cf` was
 - Process-bound timing acquisition design and independent review: `docs/CH5_K1B_PROCESS_BOUND_TIMING_ACQUISITION_ZERO_SCIENCE_DESIGN_20260925.md`; `docs/CH5_K1B_PROCESS_BOUND_TIMING_ACQUISITION_ZERO_SCIENCE_DESIGN_INDEPENDENT_REVIEW_20260925.md`
 - Owner separate C8-input timing route selection: `docs/CH5_K1B_SEPARATE_C8_FROZEN_INPUT_TIMING_ROUTE_OWNER_SELECTION_20260925.md`
 - Independent timing runner preparation review: `docs/CH5_K1B_TURN8_SAME_FROZEN_TIMING_RUNNER_PREPARATION_INDEPENDENT_REVIEW_20260925.md`
+- Independent post-commit static verification and runner disposition: `docs/CH5_K1B_TURN8_SAME_FROZEN_TIMING_RUNNER_POSTCOMMIT_STATIC_VERIFICATION_INDEPENDENT_REVIEW_20260925.md`
 - GPT Work session handoff: `docs/CH5_K1B_SESSION_HANDOFF_20260925.md`
 - Turn8 output manifest: `reports/ch5_k1b_turn8_outer_r2_20260925_run001/execution_artifact_manifest.json` (preserved untracked; SHA-256 `5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301`)
 - Turn7 output manifest: `reports/ch5_k1b_turn7_outer_r2_20260925_run001/execution_artifact_manifest.json` (preserved untracked; SHA-256 `413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91`)
