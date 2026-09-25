@@ -2,7 +2,9 @@
 
 Task ID: `CH5_OUTER_STOP_REPEATABILITY_OWNER_DECISION_PACKET_20260925`
 
-Status: `ACTIVE__ZERO_SCIENCE_DECISION_PACKET__OWNER_ADOPTION_PENDING`
+Status: `CLOSED__INDEPENDENT_WORK_ACCEPT__OWNER_DECISION_PENDING__NO_SCIENCE`
+
+Builder candidate `9659a3ab1ecdea29f8e4f5ea5b676e2b487ca923` was independently ACCEPTED for decision-material quality in `docs/CH5_OUTER_STOP_REPEATABILITY_OWNER_DECISION_PACKET_INDEPENDENT_REVIEW_20260925.md`. The instructions below are historical and authorize no further edits or scientific calls. Owner adoption of the substantive stopping/failure/budget contract is pending.
 
 ## Authority and startup
 
