@@ -25,7 +25,7 @@ Updated: 2026-09-25 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_K1B_C9_C10_TIME_BUDGET_PROPOSAL_ACCEPTED__OWNER_DURATION_AND_NEW_BUDGET_DECISION_REQUIRED__NO_SCIENCE`
+`CH5_K1B_DURATION_PRELAUNCH_BLOCK_RETAINED__OWNER_NEW_BUDGET_DECISION_REQUIRED__NO_SCIENCE`
 
 The Owner selected the complete outer state route. Codex delivered the zero-science design candidate at `986eb157638c6f7e26c2042ab2af36e28b9ad1ad`; Work independently accepted its design quality in `docs/CH5_FULL_OUTER_STATE_MAP_ZERO_SCIENCE_DESIGN_INDEPENDENT_REVIEW_20260923.md`. Codex then delivered the unit/scale/precision evidence at `f93407460e79f93c3781f258b856e55bb1ee3a15`, independently accepted in `docs/CH5_FULL_OUTER_STATE_UNIT_SCALE_PRECISION_EVIDENCE_INDEPENDENT_REVIEW_20260923.md`. The Owner agreed to `1e-6` as diagnostic precision, with `10^-12` class precision only an eventual aspiration. Codex delivered the sealed nine-component static readout at `2d5d9a235803882b65571aab57233018d4c1fc0b`; Work independently accepted its zero-science evidence quality in `docs/CH5_FULL_OUTER_NINE_COMPONENT_1E6_STATIC_DIAGNOSTIC_INDEPENDENT_REVIEW_20260923.md`. In both C4→C5 and C5→C6, only `Kt_prev` was strictly below `1e-6`. At the time of those static readouts, no stopping law or execution budget had been adopted. They remain decision evidence, not fixed-point verdicts; the later Owner adoption below governs only future bounded comparisons.
 
@@ -44,6 +44,8 @@ The zero-science checkpoint/resume design at `7db7ab81004de2a4270f169c6d243487a5
 The Owner subsequently adopted **complete outer-turn checkpoints** and a **cooperative** local-midnight pause in `docs/CH5_K1B_COMPLETE_OUTER_TURN_COOPERATIVE_PAUSE_OWNER_ADOPTION_20260925.md`. An in-flight operation is not forcibly stopped at 00:00; the Owner may manually interrupt it, in which case attempted-call accounting and the first-failure gate remain binding. No partial-operation resume is accepted. Measured science runtime, a launch-duration upper bound, and a new C9/C10 attempted-call budget remain unavailable or unadopted. GPT Work handed the long Codex conversation to “第五章 K1B 跨天继续接续” (`01a0d867-be22-7d93-b2fb-0ddff659b686`), documented in `docs/CH5_K1B_CODEX_SESSION_HANDOFF_20260925.md`. The next `TASK_CURRENT.md` is a zero-science time/budget contract proposal only; no runner or model execution is authorized.
 
 The zero-science C9/C10 time and call-budget proposal at `fb831050519386691edd3fcebf47efd1bbede97d` was independently **ACCEPTED as decision evidence** in `docs/CH5_K1B_C9_C10_COMPLETE_TURN_TIME_BUDGET_ZERO_SCIENCE_PROPOSAL_INDEPENDENT_REVIEW_20260925.md`. Its copied algebraic ceilings remain `PROPOSED_NOT_ADOPTED`; process-bound duration remains `MEASURED_SCIENCE_RUNTIME_UNAVAILABLE`. `TASK_CURRENT.md` is closed pending Owner duration/launch-risk and new finite attempted-call/resource decisions. No runner implementation or scientific call is authorized.
+
+The Owner then chose to **retain the prelaunch block until process-bound science timing evidence exists**, recorded in `docs/CH5_K1B_PROCESS_BOUND_TIMING_EVIDENCE_OWNER_DECISION_20260925.md`. No measurement science attempt is authorized by that choice. The new C9/C10 attempted-call ceilings remain proposed and await the Owner's separate decision; `TASK_CURRENT.md` remains closed.
 
 ## Explicitly closed
 
@@ -104,6 +106,7 @@ The zero-science C9/C10 time and call-budget proposal at `fb831050519386691edd3f
 - Owner complete-turn/cooperative-pause adoption: `docs/CH5_K1B_COMPLETE_OUTER_TURN_COOPERATIVE_PAUSE_OWNER_ADOPTION_20260925.md`
 - Codex session handoff: `docs/CH5_K1B_CODEX_SESSION_HANDOFF_20260925.md`
 - C9/C10 time/budget proposal and independent review: `docs/CH5_K1B_C9_C10_COMPLETE_TURN_TIME_BUDGET_ZERO_SCIENCE_PROPOSAL_20260925.md`; `docs/CH5_K1B_C9_C10_COMPLETE_TURN_TIME_BUDGET_ZERO_SCIENCE_PROPOSAL_INDEPENDENT_REVIEW_20260925.md`
+- Owner process-bound timing decision: `docs/CH5_K1B_PROCESS_BOUND_TIMING_EVIDENCE_OWNER_DECISION_20260925.md`
 - GPT Work session handoff: `docs/CH5_K1B_SESSION_HANDOFF_20260925.md`
 - Turn8 output manifest: `reports/ch5_k1b_turn8_outer_r2_20260925_run001/execution_artifact_manifest.json` (preserved untracked; SHA-256 `5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301`)
 - Turn7 output manifest: `reports/ch5_k1b_turn7_outer_r2_20260925_run001/execution_artifact_manifest.json` (preserved untracked; SHA-256 `413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91`)

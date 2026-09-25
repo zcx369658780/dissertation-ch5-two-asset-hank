@@ -2,9 +2,11 @@
 
 Task ID: `CH5_K1B_C9_C10_COMPLETE_TURN_TIME_BUDGET_ZERO_SCIENCE_PROPOSAL_20260925`
 
-Status: `CLOSED__PROPOSAL_INDEPENDENTLY_ACCEPTED__OWNER_DURATION_AND_NEW_BUDGET_DECISION_REQUIRED__NO_SCIENCE`
+Status: `CLOSED__PROPOSAL_INDEPENDENTLY_ACCEPTED__DURATION_PRELAUNCH_BLOCK_RETAINED__OWNER_NEW_BUDGET_DECISION_REQUIRED__NO_SCIENCE`
 
 GPT Work independently **ACCEPTED** Builder candidate `fb831050519386691edd3fcebf47efd1bbede97d` as zero-science decision evidence in `docs/CH5_K1B_C9_C10_COMPLETE_TURN_TIME_BUDGET_ZERO_SCIENCE_PROPOSAL_INDEPENDENT_REVIEW_20260925.md`. The two-path Builder task is complete. Its proposed C9/C10 ceilings are not Owner-adopted. Do not execute the instructions below again; they are the closed task record. Scientific/model calls, failed attempts and retries for this task were `0`. No runner or turn9 is authorized; `Results eligibility = FALSE`.
+
+The Owner subsequently chose to retain the duration prelaunch block until process-bound timing evidence exists, recorded in `docs/CH5_K1B_PROCESS_BOUND_TIMING_EVIDENCE_OWNER_DECISION_20260925.md`. This does not authorize a measurement attempt. The new finite call/resource budget still awaits a separate Owner decision.
 
 GPT Work issues this task to the sole successor Codex conversation “第五章 K1B 跨天继续接续” (`01a0d867-be22-7d93-b2fb-0ddff659b686`) after the Owner adopted complete outer-turn checkpoints and cooperative local-midnight pause. The prior Codex conversation `01a0cce5-241d-7ab3-b87c-e0a41628572e` must not write this worktree. The only worktree is `D:\ProjectTemp\c5k1bturn56`; never access `deep-learning-hank`.
 
