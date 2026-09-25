@@ -19,5 +19,5 @@ Date: 2026-09-25 (Asia/Shanghai). GPT Work prepared this handoff because the des
 ## Conversation ownership
 
 - Previous sole designated Codex conversation: “整理第五章 K1B 收敛设计证据”, thread `01a0cce5-241d-7ab3-b87c-e0a41628572e`; its last task is complete. It must receive no further writing task in this worktree after handoff.
-- GPT Work directs the successor conversation. Until Work records the successor ID and sends a new bounded `TASK_CURRENT.md`, the successor performs read-only orientation only. Never permit the old and new conversations to write this worktree concurrently.
+- Successor conversation: “第五章 K1B 跨天继续接续”, thread `01a0d867-be22-7d93-b2fb-0ddff659b686`. GPT Work directs it. Until Work issues a new bounded `TASK_CURRENT.md`, the successor performs read-only orientation only. Never permit the old and new conversations to write this worktree concurrently.
 - The next task must first reflect the Owner's checkpoint and midnight choices. A runner implementation remains zero-science and requires a scoped task and independent review; scientific execution requires a later, separately budgeted one-shot authorization.
