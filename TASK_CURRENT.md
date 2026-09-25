@@ -2,7 +2,9 @@
 
 Task ID: `CH5_K1B_PROCESS_BOUND_TIMING_ACQUISITION_ZERO_SCIENCE_DESIGN_20260925`
 
-Status: `ISSUED__ZERO_SCIENCE_DESIGN_ONLY__WORK_REVIEW_PENDING`
+Status: `CLOSED__DESIGN_INDEPENDENTLY_ACCEPTED__OWNER_MEASUREMENT_ROUTE_REQUIRED__NO_SCIENCE`
+
+GPT Work independently **ACCEPTED** Builder candidate `e320b044b759d62b4288be2a6729c94920b9bc50` as zero-science decision evidence in `docs/CH5_K1B_PROCESS_BOUND_TIMING_ACQUISITION_ZERO_SCIENCE_DESIGN_INDEPENDENT_REVIEW_20260925.md`. This two-path Builder task is complete. Do not execute the instructions below again; they are the closed task record. Task-scoped scientific/model calls, failed attempts and retries were `0`. The proposed separate measurement budget is not Owner-adopted; no timer, runner, measurement call or C9/C10 call is authorized. `Results eligibility = FALSE`.
 
 GPT Work issues this task to the sole successor Codex conversation “第五章 K1B 跨天继续接续” (`01a0d867-be22-7d93-b2fb-0ddff659b686`). Worktree: `D:\ProjectTemp\c5k1bturn56` only. Never access `deep-learning-hank` or send a writing task to the previous Codex conversation.
 

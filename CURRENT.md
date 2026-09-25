@@ -25,7 +25,7 @@ Updated: 2026-09-25 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_K1B_C9_C10_CALL_CEILINGS_ADOPTED__PROCESS_TIMING_ACQUISITION_DESIGN_ZERO_SCIENCE__NO_SCIENCE`
+`CH5_K1B_TIMING_ACQUISITION_DESIGN_ACCEPTED__OWNER_MEASUREMENT_ROUTE_REQUIRED__NO_SCIENCE`
 
 The Owner selected the complete outer state route. Codex delivered the zero-science design candidate at `986eb157638c6f7e26c2042ab2af36e28b9ad1ad`; Work independently accepted its design quality in `docs/CH5_FULL_OUTER_STATE_MAP_ZERO_SCIENCE_DESIGN_INDEPENDENT_REVIEW_20260923.md`. Codex then delivered the unit/scale/precision evidence at `f93407460e79f93c3781f258b856e55bb1ee3a15`, independently accepted in `docs/CH5_FULL_OUTER_STATE_UNIT_SCALE_PRECISION_EVIDENCE_INDEPENDENT_REVIEW_20260923.md`. The Owner agreed to `1e-6` as diagnostic precision, with `10^-12` class precision only an eventual aspiration. Codex delivered the sealed nine-component static readout at `2d5d9a235803882b65571aab57233018d4c1fc0b`; Work independently accepted its zero-science evidence quality in `docs/CH5_FULL_OUTER_NINE_COMPONENT_1E6_STATIC_DIAGNOSTIC_INDEPENDENT_REVIEW_20260923.md`. In both C4→C5 and C5→C6, only `Kt_prev` was strictly below `1e-6`. At the time of those static readouts, no stopping law or execution budget had been adopted. They remain decision evidence, not fixed-point verdicts; the later Owner adoption below governs only future bounded comparisons.
 
@@ -48,6 +48,8 @@ The zero-science C9/C10 time and call-budget proposal at `fb831050519386691edd3f
 The Owner then chose to **retain the prelaunch block until process-bound science timing evidence exists**, recorded in `docs/CH5_K1B_PROCESS_BOUND_TIMING_EVIDENCE_OWNER_DECISION_20260925.md`. No measurement science attempt is authorized by that choice. At that point the new C9/C10 attempted-call ceilings remained proposed and `TASK_CURRENT.md` was closed.
 
 The Owner subsequently adopted the independently accepted proposal's complete finite C9/C10 attempted-call ceiling table in `docs/CH5_K1B_C9_C10_CALL_CEILINGS_OWNER_ADOPTION_20260925.md`. This does not spend or authorize those calls. The duration prelaunch block remains; no separate measurement attempt, runner implementation or C9/C10 execution is authorized. GPT Work has issued a zero-science task to design how process-bound timing evidence could be acquired and whether it could support a defensible launch bound.
+
+The zero-science process-bound timing acquisition design at `e320b044b759d62b4288be2a6729c94920b9bc50` was independently **ACCEPTED as decision evidence** in `docs/CH5_K1B_PROCESS_BOUND_TIMING_ACQUISITION_ZERO_SCIENCE_DESIGN_INDEPENDENT_REVIEW_20260925.md`. A separately budgeted C8-type same-frozen-input measurement could give one observation but not automatically a trustworthy C9/C10 upper bound; instrumenting C9 itself would conflict with the retained prelaunch block absent a new explicit Owner exception. `TASK_CURRENT.md` is closed pending Owner measurement-route, separate budget and resource decisions. No science is authorized.
 
 ## Explicitly closed
 
@@ -110,6 +112,7 @@ The Owner subsequently adopted the independently accepted proposal's complete fi
 - C9/C10 time/budget proposal and independent review: `docs/CH5_K1B_C9_C10_COMPLETE_TURN_TIME_BUDGET_ZERO_SCIENCE_PROPOSAL_20260925.md`; `docs/CH5_K1B_C9_C10_COMPLETE_TURN_TIME_BUDGET_ZERO_SCIENCE_PROPOSAL_INDEPENDENT_REVIEW_20260925.md`
 - Owner process-bound timing decision: `docs/CH5_K1B_PROCESS_BOUND_TIMING_EVIDENCE_OWNER_DECISION_20260925.md`
 - Owner C9/C10 attempted-call ceiling adoption: `docs/CH5_K1B_C9_C10_CALL_CEILINGS_OWNER_ADOPTION_20260925.md`
+- Process-bound timing acquisition design and independent review: `docs/CH5_K1B_PROCESS_BOUND_TIMING_ACQUISITION_ZERO_SCIENCE_DESIGN_20260925.md`; `docs/CH5_K1B_PROCESS_BOUND_TIMING_ACQUISITION_ZERO_SCIENCE_DESIGN_INDEPENDENT_REVIEW_20260925.md`
 - GPT Work session handoff: `docs/CH5_K1B_SESSION_HANDOFF_20260925.md`
 - Turn8 output manifest: `reports/ch5_k1b_turn8_outer_r2_20260925_run001/execution_artifact_manifest.json` (preserved untracked; SHA-256 `5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301`)
 - Turn7 output manifest: `reports/ch5_k1b_turn7_outer_r2_20260925_run001/execution_artifact_manifest.json` (preserved untracked; SHA-256 `413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91`)
