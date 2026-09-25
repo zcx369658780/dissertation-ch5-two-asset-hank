@@ -97,6 +97,7 @@ The zero-science checkpoint/resume design at `7db7ab81004de2a4270f169c6d243487a5
 - Checkpoint/resume zero-science design: `docs/CH5_K1B_DAY_BOUNDARY_CHECKPOINT_RESUME_ZERO_SCIENCE_DESIGN_20260925.md`
 - Checkpoint/resume design receipt: `EVIDENCE/ch5_k1b_day_boundary_checkpoint_resume_zero_science_design_20260925/design_receipt.json`
 - Independent checkpoint/resume design review: `docs/CH5_K1B_DAY_BOUNDARY_CHECKPOINT_RESUME_ZERO_SCIENCE_DESIGN_INDEPENDENT_REVIEW_20260925.md`
+- GPT Work session handoff: `docs/CH5_K1B_SESSION_HANDOFF_20260925.md`
 - Turn8 output manifest: `reports/ch5_k1b_turn8_outer_r2_20260925_run001/execution_artifact_manifest.json` (preserved untracked; SHA-256 `5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301`)
 - Turn7 output manifest: `reports/ch5_k1b_turn7_outer_r2_20260925_run001/execution_artifact_manifest.json` (preserved untracked; SHA-256 `413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91`)
 
