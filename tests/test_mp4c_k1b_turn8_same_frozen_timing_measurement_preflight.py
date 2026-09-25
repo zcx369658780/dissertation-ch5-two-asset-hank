@@ -35,6 +35,15 @@ def test_default_cli_static_and_measurement_root_absent(monkeypatch):
 
 def test_current_task_and_wrong_execution_id_refuse_before_output(monkeypatch):
     c8 = runner.accepted_runner(runner.REPOSITORY)
+    # The wrapper is being edited in this repair task: isolate the expected
+    # pre-commit identity refusal before asserting the later task gate.
+    with pytest.raises(runner.TimingBlocked) as err:
+        runner.future_gate(runner.REPOSITORY, "inert-id", c8)
+    assert err.value.terminal == "BLOCKED__MEASUREMENT_AUTHORITY_DIRTY_OR_MISSING"
+    real_committed = runner.committed_file
+    monkeypatch.setattr(runner, "committed_file",
+                        lambda repo, path: ("INERT_COMMITTED_WRAPPER" if path == runner.MEASUREMENT_RUNNER
+                                            else real_committed(repo, path)))
     with pytest.raises(runner.TimingBlocked) as err:
         runner.future_gate(runner.REPOSITORY, "inert-id", c8)
     assert err.value.terminal == "BLOCKED__FRESH_MEASUREMENT_TASK_GATE"
@@ -68,14 +77,20 @@ def test_budget_category_value_and_namespace_are_separate(monkeypatch, tmp_path)
     required = (f"Task ID: `{runner.TASK_ID}`\nStatus: `{runner.TASK_STATUS}`\n"
                 f"Execution authorization ID: `{execution_id}`\n"
                 f"Authorized output root: `{runner.OUTPUT.as_posix()}`\n"
-                "Owner adoption SHA-256: `ADOPTION`\nMeasurement contract SHA-256: `CONTRACT`\n")
+                "Owner adoption SHA-256: `ADOPTION`\nMeasurement contract SHA-256: `CONTRACT`\n"
+                "Independent review SHA-256: `REVIEW`\nWrapper SHA-256: `RUNNER`\n")
     adoption = ("OWNER_ADOPTED__SEPARATE_SINGLE_C8_TIMING_BUDGET\n"
                 f"Execution authorization ID: `{execution_id}`\n"
                 f"Authorized output root: `{runner.OUTPUT.as_posix()}`\n"
-                "Measurement contract SHA-256: `CONTRACT`")
+                "Measurement contract SHA-256: `CONTRACT`\n"
+                "Independent review SHA-256: `REVIEW`\nWrapper SHA-256: `RUNNER`")
+    review = ("Reviewer: GPT Work\nVerdict: ACCEPT__C8_SAME_FROZEN_TIMING_WRAPPER\n"
+              f"Wrapper path: `{runner.MEASUREMENT_RUNNER.as_posix()}`\n"
+              "Wrapper SHA-256: `RUNNER`")
     contract = {"schema": "CH5_K1B_SEPARATE_SINGLE_C8_TIMING_CONTRACT_V1",
                 "execution_id": execution_id, "output_root": runner.OUTPUT.as_posix(),
                 "attempts": 1, "budget_namespace": "C9_C10",  # deliberately wrong
+                "wrapper_sha256": "RUNNER", "independent_review_sha256": "REVIEW",
                 "resource_policy": "COOPERATIVE_PROCESS_WALL_CAP",
                 "resource_wall_seconds": 1,
                 "per_category_attempt_ceiling": {"direct_hjb_updates": 50},
@@ -83,6 +98,7 @@ def test_budget_category_value_and_namespace_are_separate(monkeypatch, tmp_path)
     texts = {str(tmp_path / "TASK_CURRENT.md"): required,
              str(tmp_path / runner.TASK_COPY): required,
              str(tmp_path / runner.OWNER_ADOPTION): adoption,
+             str(tmp_path / runner.INDEPENDENT_REVIEW): review,
              str(tmp_path / runner.CONTRACT): json.dumps(contract)}
     original_read = Path.read_text
     def read_text(path, *args, **kwargs):
@@ -93,8 +109,31 @@ def test_budget_category_value_and_namespace_are_separate(monkeypatch, tmp_path)
                         lambda repo, rel: {runner.MEASUREMENT_RUNNER: "RUNNER",
                                            Path("TASK_CURRENT.md"): "TASK",
                                            runner.TASK_COPY: "TASK",
+                                           runner.INDEPENDENT_REVIEW: "REVIEW",
                                            runner.OWNER_ADOPTION: "ADOPTION",
                                            runner.CONTRACT: "CONTRACT"}[rel])
+    texts[str(tmp_path / runner.INDEPENDENT_REVIEW)] = review.replace("Wrapper SHA-256: `RUNNER`", "Wrapper SHA-256: `STALE`")
+    with pytest.raises(runner.TimingBlocked) as err:
+        runner.future_gate(tmp_path, execution_id, c8)
+    assert err.value.terminal == "BLOCKED__INDEPENDENT_WRAPPER_REVIEW_IDENTITY"
+    texts[str(tmp_path / runner.INDEPENDENT_REVIEW)] = review
+    texts[str(tmp_path / "TASK_CURRENT.md")] = required.replace("Wrapper SHA-256: `RUNNER`", "Wrapper SHA-256: `STALE`")
+    with pytest.raises(runner.TimingBlocked) as err:
+        runner.future_gate(tmp_path, execution_id, c8)
+    assert err.value.terminal == "BLOCKED__MEASUREMENT_CONTRACT_BINDING"
+    texts[str(tmp_path / "TASK_CURRENT.md")] = required
+    texts[str(tmp_path / runner.OWNER_ADOPTION)] = adoption.replace("Wrapper SHA-256: `RUNNER`", "Wrapper SHA-256: `STALE`")
+    with pytest.raises(runner.TimingBlocked) as err:
+        runner.future_gate(tmp_path, execution_id, c8)
+    assert err.value.terminal == "BLOCKED__OWNER_MEASUREMENT_ADOPTION"
+    texts[str(tmp_path / runner.OWNER_ADOPTION)] = adoption
+    contract["wrapper_sha256"] = "STALE"
+    texts[str(tmp_path / runner.CONTRACT)] = json.dumps(contract)
+    with pytest.raises(runner.TimingBlocked) as err:
+        runner.future_gate(tmp_path, execution_id, c8)
+    assert err.value.terminal == "BLOCKED__MEASUREMENT_CONTRACT_IDENTITY"
+    contract["wrapper_sha256"] = "RUNNER"
+    texts[str(tmp_path / runner.CONTRACT)] = json.dumps(contract)
     with pytest.raises(runner.TimingBlocked) as err:
         runner.future_gate(tmp_path, execution_id, c8)
     assert err.value.terminal == "BLOCKED__MEASUREMENT_CONTRACT_IDENTITY"
@@ -103,6 +142,42 @@ def test_budget_category_value_and_namespace_are_separate(monkeypatch, tmp_path)
     gate = runner.future_gate(tmp_path, execution_id, c8)
     assert gate["ceilings"] == {"direct_hjb_updates": 50}
     assert gate["per_province"] == {"direct_hjb_updates": 50}
+    assert gate["wrapper_sha256"] == "RUNNER"
+    assert gate["independent_review_sha256"] == "REVIEW"
+
+
+def test_missing_independent_review_refuses_before_budget(monkeypatch, tmp_path):
+    c8 = SimpleNamespace()
+    monkeypatch.setattr(runner, "committed_file",
+                        lambda repo, rel: (_ for _ in ()).throw(
+                            runner.TimingBlocked("BLOCKED__MEASUREMENT_AUTHORITY_DIRTY_OR_MISSING"))
+                        if rel == runner.INDEPENDENT_REVIEW else "SAME")
+    fields = (f"Task ID: `{runner.TASK_ID}`\nStatus: `{runner.TASK_STATUS}`\n"
+              "Execution authorization ID: `inert`\n"
+              f"Authorized output root: `{runner.OUTPUT.as_posix()}`")
+    monkeypatch.setattr(Path, "read_text", lambda *_args, **_kwargs: fields)
+    with pytest.raises(runner.TimingBlocked) as err:
+        runner.future_gate(tmp_path, "inert", c8)
+    assert err.value.terminal == "BLOCKED__MEASUREMENT_AUTHORITY_DIRTY_OR_MISSING"
+
+
+def test_inert_original_numerical_terminal_is_not_overridden():
+    original = lambda prior, carrier: "VALID__LEVEL_NOT_MET_AT_BUDGET"
+    c8 = SimpleNamespace(OUTPUT=Path("protected"), FUTURE_TASK_RELATIVE=Path("original-task"),
+                         PER_PROVINCE={}, BudgetGuard=object, turn8_terminal=original)
+    terminal = "VALID__LEVEL_NOT_MET_AT_BUDGET"
+    def inert_delegate(repo, execution_id, runtime):
+        assert c8.turn8_terminal is original
+        runtime["guard"] = SimpleNamespace(attempted={"direct_hjb_updates": 0})
+        runtime["ledger"] = {"direct_hjb_updates": 0}
+        return terminal
+    c8._execute_after_gate = inert_delegate
+    runtime, record = {}, {}
+    result = runner._instrumented_action(c8, Path("unused"),
+        {"execution_id": "inert", "wall_seconds": 1, "ceilings": {}, "per_province": {}},
+        {"monotonic_ns": runner.time.monotonic_ns()}, record, runtime)
+    assert result == record["source_terminal"] == terminal
+    assert c8.turn8_terminal is original
 
 
 def test_preexisting_or_replaced_root_refused_without_science(monkeypatch, tmp_path):

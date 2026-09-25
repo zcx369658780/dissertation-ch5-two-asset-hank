@@ -35,6 +35,7 @@ TASK_STATUS = "ACTIVE__ONE_SHOT_SEPARATE_C8_TIMING_MEASUREMENT"
 TASK_COPY = Path("tasks/CH5_K1B_TURN8_SAME_FROZEN_TIMING_MEASUREMENT_EXECUTION.md")
 OWNER_ADOPTION = Path("docs/CH5_K1B_TURN8_SAME_FROZEN_TIMING_MEASUREMENT_OWNER_ADOPTION.md")
 CONTRACT = Path("tasks/CH5_K1B_TURN8_SAME_FROZEN_TIMING_MEASUREMENT_CONTRACT.json")
+INDEPENDENT_REVIEW = Path("docs/CH5_K1B_TURN8_SAME_FROZEN_TIMING_RUNNER_REPAIR1_INDEPENDENT_REVIEW_20260925.md")
 PREPARATION_TASK_ID = "CH5_K1B_TURN8_SAME_FROZEN_TIMING_RUNNER_ZERO_SCIENCE_PREPARATION_20260925"
 
 
@@ -147,7 +148,7 @@ def future_gate(repo: Path, execution_id: str | None, c8: Any) -> dict[str, Any]
     """Every authority and identity check precedes output creation and science."""
     if not execution_id or re.fullmatch(r"[A-Za-z0-9_-]{1,80}", execution_id) is None:
         raise TimingBlocked("EXECUTION_AUTHORIZATION_REQUIRED")
-    committed_file(repo, MEASUREMENT_RUNNER)
+    wrapper_sha = committed_file(repo, MEASUREMENT_RUNNER)
     current = committed_file(repo, Path("TASK_CURRENT.md"))
     task = (repo / "TASK_CURRENT.md").read_text(encoding="utf-8")
     required = (f"Task ID: `{TASK_ID}`", f"Status: `{TASK_STATUS}`",
@@ -158,14 +159,26 @@ def future_gate(repo: Path, execution_id: str | None, c8: Any) -> dict[str, Any]
     if committed_file(repo, TASK_COPY) != current or not all(
             field in (repo / TASK_COPY).read_text(encoding="utf-8") for field in required):
         raise TimingBlocked("BLOCKED__MEASUREMENT_TASK_COPY")
+    review_sha = committed_file(repo, INDEPENDENT_REVIEW)
+    review = (repo / INDEPENDENT_REVIEW).read_text(encoding="utf-8")
+    if ("Verdict: ACCEPT__C8_SAME_FROZEN_TIMING_WRAPPER" not in review or
+            f"Wrapper path: `{MEASUREMENT_RUNNER.as_posix()}`" not in review or
+            f"Wrapper SHA-256: `{wrapper_sha}`" not in review or
+            "Reviewer: GPT Work" not in review):
+        raise TimingBlocked("BLOCKED__INDEPENDENT_WRAPPER_REVIEW_IDENTITY")
     adoption_sha = committed_file(repo, OWNER_ADOPTION)
     contract_sha = committed_file(repo, CONTRACT)
-    if f"Owner adoption SHA-256: `{adoption_sha}`" not in task or f"Measurement contract SHA-256: `{contract_sha}`" not in task:
+    if (f"Owner adoption SHA-256: `{adoption_sha}`" not in task or
+            f"Measurement contract SHA-256: `{contract_sha}`" not in task or
+            f"Independent review SHA-256: `{review_sha}`" not in task or
+            f"Wrapper SHA-256: `{wrapper_sha}`" not in task):
         raise TimingBlocked("BLOCKED__MEASUREMENT_CONTRACT_BINDING")
     adoption = (repo / OWNER_ADOPTION).read_text(encoding="utf-8")
     if (f"Execution authorization ID: `{execution_id}`" not in adoption or
             f"Authorized output root: `{OUTPUT.as_posix()}`" not in adoption or
             f"Measurement contract SHA-256: `{contract_sha}`" not in adoption or
+            f"Independent review SHA-256: `{review_sha}`" not in adoption or
+            f"Wrapper SHA-256: `{wrapper_sha}`" not in adoption or
             "OWNER_ADOPTED__SEPARATE_SINGLE_C8_TIMING_BUDGET" not in adoption):
         raise TimingBlocked("BLOCKED__OWNER_MEASUREMENT_ADOPTION")
     contract = json.loads((repo / CONTRACT).read_text(encoding="utf-8"))
@@ -174,6 +187,8 @@ def future_gate(repo: Path, execution_id: str | None, c8: Any) -> dict[str, Any]
             contract.get("output_root") != OUTPUT.as_posix() or
             contract.get("attempts") != 1 or
             contract.get("budget_namespace") != "SEPARATE_C8_TIMING_ONLY" or
+            contract.get("wrapper_sha256") != wrapper_sha or
+            contract.get("independent_review_sha256") != review_sha or
             contract.get("resource_policy") != "COOPERATIVE_PROCESS_WALL_CAP"):
         raise TimingBlocked("BLOCKED__MEASUREMENT_CONTRACT_IDENTITY")
     cap = contract.get("resource_wall_seconds")
@@ -184,7 +199,8 @@ def future_gate(repo: Path, execution_id: str | None, c8: Any) -> dict[str, Any]
     if not os.path.lexists(repo / OUTPUT) and c8.path_components_safe(repo / OUTPUT):
         return {"execution_id": execution_id, "ceilings": ceilings,
                 "per_province": per_province, "wall_seconds": float(cap),
-                "contract_sha256": contract_sha, "owner_adoption_sha256": adoption_sha}
+                "contract_sha256": contract_sha, "owner_adoption_sha256": adoption_sha,
+                "independent_review_sha256": review_sha, "wrapper_sha256": wrapper_sha}
     raise TimingBlocked("BLOCKED__MEASUREMENT_OUTPUT_EXISTS_OR_UNSAFE")
 
 
@@ -214,7 +230,7 @@ def _instrumented_action(c8: Any, repo: Path, gate: Mapping[str, Any], start: Ma
                          record: dict[str, Any], runtime: dict[str, Any]) -> str:
     output = repo / OUTPUT
     base_guard = c8.BudgetGuard
-    original_output, original_task, original_terminal = c8.OUTPUT, c8.FUTURE_TASK_RELATIVE, c8.turn8_terminal
+    original_output, original_task = c8.OUTPUT, c8.FUTURE_TASK_RELATIVE
     original_province, original_guard = c8.PER_PROVINCE, c8.BudgetGuard
     deadline = int(start["monotonic_ns"] + gate["wall_seconds"] * 1e9)
     intervals: list[dict[str, Any]] = []
@@ -293,7 +309,6 @@ def _instrumented_action(c8: Any, repo: Path, gate: Mapping[str, Any], start: Ma
         c8.FUTURE_TASK_RELATIVE = TASK_COPY
         c8.PER_PROVINCE = gate["per_province"]
         c8.BudgetGuard = MeasuredGuard
-        c8.turn8_terminal = lambda prior, carrier: "MEASUREMENT_COMPLETE__OBSERVED_SAMPLE_ONLY"
         result = c8._execute_after_gate(repo, gate["execution_id"], runtime)
         record["intervals"] = intervals
         record["source_terminal"] = result
@@ -303,7 +318,6 @@ def _instrumented_action(c8: Any, repo: Path, gate: Mapping[str, Any], start: Ma
     finally:
         c8.OUTPUT, c8.FUTURE_TASK_RELATIVE = original_output, original_task
         c8.PER_PROVINCE, c8.BudgetGuard = original_province, original_guard
-        c8.turn8_terminal = original_terminal
 
 
 def run_timed_action(repo: Path, gate: Mapping[str, Any], c8: Any,

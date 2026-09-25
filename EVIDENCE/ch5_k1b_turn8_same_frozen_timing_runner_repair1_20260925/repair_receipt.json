@@ -1,0 +1,73 @@
+{
+  "schema": "CH5_K1B_TURN8_SAME_FROZEN_TIMING_RUNNER_REPAIR1_V1",
+  "task_id": "CH5_K1B_TURN8_SAME_FROZEN_TIMING_RUNNER_REPAIR1_ZERO_SCIENCE_20260925",
+  "status": "REPAIR1_CANDIDATE_READY__WORK_INDEPENDENT_REVIEW_PENDING",
+  "dispatch_parent_head": "076f5202e1c49d849a5c0da6bab93b4e6235891a",
+  "required_ancestor": "861789ed1dadedc40448443744309c43df63eba3",
+  "frozen_src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
+  "source_sha256": {
+    "AGENTS.md": "F5C16EAC284961C385D609C776671FE1D26FFAF9F104E1886C13DDC4AB8D638C",
+    "CURRENT.md": "30059DEB1BFA44F37AF154358822508E01C5378718CCA88A07D1981D24707190",
+    "SCIENTIFIC_DECISIONS.md": "681993FDBE21444E5AF3E53E09742E5F4FE4B45CCCA01F2963FCE55AC334C787",
+    "TASK_CURRENT.md": "323374842D567DF64DA83D751719CBAF8584805174F0E0A51A82169D6435A6C3",
+    "REVIEW_GATE.md": "82E8AE771BCDA75D540EFC53FB38EB3F597B8A4A92B61ADD45F7465DFED785E2",
+    "docs/CH5_K1B_CODEX_SESSION_HANDOFF_20260925.md": "A7578CB5AB41EB879F7AC41943C303EA00BAEEFFA134C3234B75313D398E4027",
+    "docs/CH5_K1B_TURN8_SAME_FROZEN_TIMING_RUNNER_POSTCOMMIT_STATIC_VERIFICATION_INDEPENDENT_REVIEW_20260925.md": "4460DFB08951E71626824771B980B50FCC281038A37D553AD6BC57623D753912",
+    "docs/CH5_K1B_SEPARATE_C8_FROZEN_INPUT_TIMING_ROUTE_OWNER_SELECTION_20260925.md": "43949E29A1185ECF190CCA6FC378F59E48E5A39E53494BD6AD57F599E93DB96D",
+    "validators/multi_province/k1b_turn8_outer_r2/run.py": "10920535BD50E688D1794B7E69C34F8A5C3C56456CAF6E8DF52FA8D9DFE31831",
+    "tests/test_mp4c_k1b_turn8_outer_r2_preflight.py": "A97D0D8714F6C8B4E9EAECD74271E034A3762234C3F1B7F4C7B2DCB3DAC8EA69",
+    "reports/ch5_k1b_turn7_outer_r2_20260925_run001/turn8_entering_bundle_manifest.json": "20861D4ADDBDF1099854EB86B00D24A097C627838B3F6EF5AFAEDABFFD647E5E",
+    "reports/ch5_k1b_turn7_outer_r2_20260925_run001/turn8_entering_bundle_readback.json": "5EB75667132473C2F283666B0F3B73BB18FDF00A83C09382827E4C44958246FA"
+  },
+  "protected_manifest_sha256": {
+    "reports/ch5_turn6_same_frozen_input_repeat_20260923_run001/execution_artifact_manifest.json": "7890720D502AC1C04D672978C6F662DD51F9D2BA27F321701877ABE9214CDE61",
+    "reports/ch5_k1b_turn7_outer_r2_20260925_run001/execution_artifact_manifest.json": "413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91",
+    "reports/ch5_k1b_turn8_outer_r2_20260925_run001/execution_artifact_manifest.json": "5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301"
+  },
+  "candidate_artifact_sha256": {
+    "validators/multi_province/k1b_turn8_same_frozen_timing_measurement/run.py": "8DFA49C1121EF41FA750844F4F5017779C3E381CFA2E7CBE19C7834D1F0EAB4A",
+    "tests/test_mp4c_k1b_turn8_same_frozen_timing_measurement_preflight.py": "27AEFE8737BC97AD1316CCD046ED11072DEB42ABF0EF48207C434CD3FFF341FD",
+    "docs/CH5_K1B_TURN8_SAME_FROZEN_TIMING_RUNNER_REPAIR1_20260925.md": "8734046465CA86F02AF8C7A9B320F30901E87B5B2B01076FECFC53FC3C8DA320"
+  },
+  "precise_repairs": [
+    "Committed wrapper SHA-256 must match separate committed GPT Work ACCEPT review and future task Owner adoption contract",
+    "Accepted C8 numeric terminal remains unchanged; observed-sample classification is timing-only"
+  ],
+  "future_review_path": "docs/CH5_K1B_TURN8_SAME_FROZEN_TIMING_RUNNER_REPAIR1_INDEPENDENT_REVIEW_20260925.md",
+  "future_review_currently_absent": true,
+  "static_test": {
+    "command": "python -B -m pytest -q -p no:cacheprovider tests/test_mp4c_k1b_turn8_same_frozen_timing_measurement_preflight.py",
+    "runs_allowed": 2,
+    "runs_used": 1,
+    "exit_code": 0,
+    "passed": 14,
+    "failed": 0,
+    "skipped": 0,
+    "summary": "14 passed in 6.63s",
+    "classification": "STATIC_ONLY"
+  },
+  "entry_checks": {
+    "head_committed_descendant": true,
+    "src_tree_exact": true,
+    "tracked_clean": true,
+    "protected_manifest_hashes_match": true,
+    "exactly_three_protected_untracked_roots": true,
+    "measurement_root_absent": true
+  },
+  "literal_task_scoped_call_ledger": {
+    "model": 0,
+    "scientific_runner": 0,
+    "timing_measurement": 0,
+    "household": 0,
+    "HJB": 0,
+    "KFE": 0,
+    "integration": 0,
+    "firm": 0,
+    "K1B_allocation": 0,
+    "failed_attempts": 0,
+    "retries": 0
+  },
+  "duration_prelaunch": "BLOCKED__DURATION_BOUND_UNAVAILABLE",
+  "results_eligibility": false,
+  "next_gate": "GPT Work independent ACCEPT/REJECT of Repair1; no measurement science authorization"
+}
