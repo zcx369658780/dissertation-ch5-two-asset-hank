@@ -10,7 +10,7 @@ Owner 选择路线 A：使用受保护 C7 输出中已封存、读回的 enterin
 
 ## 单次独立 attempted-call 预算候选
 
-新测量采用独立 C8_SAME_FROZEN_TIMING_MEASUREMENT_RUN001 账本命名空间。下列 39 类总上限取已接受 C8 runner 的 CEILINGS，历史实际取封存 C8 账本；五类逐省 guard 取 runner 的 PER_PROVINCE。**仅五类有显式逐省 guard**；其余行的破折号表示本次总额，没有独立逐省 guard。零上限同样有效。本预算既不并入已耗尽 C6→C8 预算，也不挪用 C9/C10 已采纳额度。完整尝试总数最多 1，重试 0；逐次尝试先计数，失败照计；触顶、首个缺陷或不明账本即停，不拆分、多次尝试、续跑或补跑。
+新测量采用独立 SEPARATE_C8_TIMING_ONLY 账本命名空间。下列 39 类总上限取已接受 C8 runner 的 CEILINGS，历史实际取封存 C8 账本；五类逐省 guard 取 runner 的 PER_PROVINCE。**仅五类有显式逐省 guard**；其余行的破折号表示本次总额，没有独立逐省 guard。零上限同样有效。本预算既不并入已耗尽 C6→C8 预算，也不挪用 C9/C10 已采纳额度。完整尝试总数最多 1，重试 0；逐次尝试先计数，失败照计；触顶、首个缺陷或不明账本即停，不拆分、多次尝试、续跑或补跑。
 
 | C8 attempted-call 类别 | 独立测量候选总上限 | C8 封存实际 | 显式逐省 guard |
 |---|---:|---:|---:|
