@@ -12,6 +12,7 @@ import json
 import os
 import platform
 import re
+import stat
 import subprocess
 import sys
 import inspect
@@ -91,7 +92,8 @@ def output_target(output:Path,runtime:Mapping[str,Any],path:Path)->Path:
         parent=parent/part
         if not owns_output_root(output,runtime):
             raise RepeatBlocked("BLOCKED__FUTURE_EVIDENCE_ROOT_NOT_OWNED",str(path))
-        if parent.is_symlink():raise RepeatBlocked("BLOCKED__OUTPUT_PARENT_SYMLINK",str(parent))
+        if not path_components_safe(parent):
+            raise RepeatBlocked("BLOCKED__OUTPUT_PARENT_REPARSE_POINT",str(parent))
         parent.mkdir(exist_ok=True)  # parents=False cannot recreate a missing root.
     if not owns_output_root(output,runtime):
         raise RepeatBlocked("BLOCKED__FUTURE_EVIDENCE_ROOT_NOT_OWNED",str(path))
@@ -130,16 +132,61 @@ def record_pre_call_failure(output:Path,exc:BaseException,execution_id:str)->Non
         "execution_id":execution_id})
 
 def claim_output_root(output:Path,runtime:dict[str,Any])->None:
+    if not path_components_safe(output.parent):
+        raise RepeatBlocked("BLOCKED__OUTPUT_PARENT_REPARSE_POINT",str(output.parent))
     output.mkdir(parents=True,exist_ok=False)
-    identity=output.stat()
+    if not path_components_safe(output):
+        raise RepeatBlocked("BLOCKED__FUTURE_EVIDENCE_ROOT_NOT_OWNED",str(output))
+    identity=output.lstat()
+    if not identity.st_ino:
+        raise RepeatBlocked("BLOCKED__OUTPUT_IDENTITY_UNAVAILABLE",str(output))
     runtime["output_identity"]=(identity.st_dev,identity.st_ino)
+
+def path_components_safe(path:Path)->bool:
+    """Reject symlink/reparse path components; a missing final child is allowed."""
+    path=path.absolute()
+    for component in reversed((path,*path.parents)):
+        try:identity=component.lstat()
+        except FileNotFoundError:return True
+        except OSError:return False
+        if stat.S_ISLNK(identity.st_mode):return False
+        if os.name=="nt":
+            attributes=getattr(identity,"st_file_attributes",None)
+            if attributes is None or attributes & stat.FILE_ATTRIBUTE_REPARSE_POINT:return False
+    return True
 
 def owns_output_root(output:Path,runtime:Mapping[str,Any])->bool:
     expected=runtime.get("output_identity")
     if expected is None:return False
-    try:identity=output.stat()
-    except FileNotFoundError:return False
-    return (identity.st_dev,identity.st_ino)==expected
+    if not path_components_safe(output):return False
+    try:identity=output.lstat()
+    except OSError:return False
+    return bool(identity.st_ino) and stat.S_ISDIR(identity.st_mode) and (identity.st_dev,identity.st_ino)==expected
+
+def guard_output_mutation(output:Path,runtime:Mapping[str,Any],path:Path)->None:
+    """Check ownership and every existing output component before a path mutation."""
+    output=output.absolute()
+    path=Path(path).absolute()
+    try:relative=path.relative_to(output)
+    except ValueError as exc:
+        raise RepeatBlocked("BLOCKED__OUTPUT_PATH_OUTSIDE_OWNED_ROOT",str(path)) from exc
+    if not relative.parts or not owns_output_root(output,runtime):
+        raise RepeatBlocked("BLOCKED__FUTURE_EVIDENCE_ROOT_NOT_OWNED",str(path))
+    if not path_components_safe(path):
+        raise RepeatBlocked("BLOCKED__OUTPUT_COMPONENT_REPARSE_POINT",str(path))
+
+def install_output_mutation_guards(output:Path,runtime:Mapping[str,Any])->tuple[Any,Any]:
+    """Intercept Path mutations in reused source for the duration of one run."""
+    original_mkdir,original_unlink=Path.mkdir,Path.unlink
+    def guarded_mkdir(path:Path,*args:Any,**kwargs:Any)->None:
+        guard_output_mutation(output,runtime,path)
+        original_mkdir(path,*args,**kwargs)
+    def guarded_unlink(path:Path,*args:Any,**kwargs:Any)->None:
+        guard_output_mutation(output,runtime,path)
+        original_unlink(path,*args,**kwargs)
+    Path.mkdir=guarded_mkdir
+    Path.unlink=guarded_unlink
+    return original_mkdir,original_unlink
 
 def integration_entry_lines(function:Any)->dict[int,tuple[str,...]]:
     """Bind each entry guard to the frozen old integration function source."""
@@ -527,6 +574,7 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
     original_base_writer=base._write_json
     original_nonlinear_writer=nonlinear._write_json
     original_npz_writer=np.savez_compressed
+    original_mkdir,original_unlink=Path.mkdir,Path.unlink
     ledger=old.new_ledger(6)
     runtime["ledger"]=ledger
     ledger.update(terminal_kfe_attempts=0,full_integrations=0,
@@ -593,6 +641,7 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
     def bound_npz(path:Path,*args:Any,**kwargs:Any)->None:
         write_output_npz(output,runtime,Path(path),original_npz_writer,*args,**kwargs)
     try:
+        install_output_mutation_guards(output,runtime)
         base._write_json=bound_json
         nonlinear._write_json=bound_json
         np.savez_compressed=bound_npz
@@ -626,6 +675,7 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
                 "normalized_stationary_candidates":1,"q_transpose_times_p":1,
                 "corrected_aggregate_evaluations":1},i)
             try:
+                guard_output_mutation(output,runtime,output/"turn6")
                 runtime["scientific_started"]=True
                 result=base._solve_province(repo,output/"turn6",i,province,
                     entering["states"][i],grid,native_grid,params,
@@ -643,6 +693,7 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
             "fiscal_diagnostic_batches":1,"completed_raw_ra0_vectors":1,
             "deterministic_next_k1b_preparations":1,"raw_next_payoff_same_s_constructions":1}
         guard.reserve(integration_envelope)
+        guard_output_mutation(output,runtime,output/"turn6")
         guard.enter("household_batch_constructions")
         ledger["household_batch_constructions"]+=1
         rows=[{"province_index":i,"province":row["province"],"checkpoint":row["checkpoint"],
@@ -701,6 +752,7 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
         state["terminal"]="CALL_LEDGER_UNRESOLVED" if state["ledger_unresolved"] else state["original_terminal"]
         raise
     finally:
+        Path.mkdir,Path.unlink=original_mkdir,original_unlink
         (base._map_checkpoint,base._direct_update,base._terminal_kfe_with_accounting,
          base.monotonicity_preserving_relaxation)=originals
         base.ENTERING_STATE_RELATIVE=original_entering
@@ -712,6 +764,19 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
             "original_terminal":state["original_terminal"],"source_ledger":ledger,
             "guard_attempted":guard.attempted,"guard_denied":guard.denied,
             "call_ledger_resolved":not state["ledger_unresolved"],"turn7_household_calls":0})
+
+def failure_detail(runtime:Mapping[str,Any],original:str,execution_id:str)->dict[str,Any]:
+    state=runtime["state"] or {}
+    guard=runtime["guard"]
+    started=bool(runtime["scientific_started"])
+    attempted=({k:0 for k in CEILINGS} if not started else
+               (dict(guard.attempted) if guard is not None else None))
+    source=(dict(runtime["ledger"]) if started and runtime["ledger"] is not None else None)
+    unresolved=bool(state.get("ledger_unresolved")) or (started and (attempted is None or source is None))
+    return {"terminal":"CALL_LEDGER_UNRESOLVED" if unresolved else original,
+            "original_terminal":original,"execution_id":execution_id,
+            "literal_scientific_call_ledger":attempted,"source_ledger":source,
+            "call_ledger_resolved":not unresolved}
 
 def run_after_valid_gate(repo:Path,execution_id:str,action:Any)->str:
     """Protect a future authorized action; tests pass only inert stubs."""
@@ -728,24 +793,17 @@ def run_after_valid_gate(repo:Path,execution_id:str,action:Any)->str:
     except BaseException as exc:
         state=runtime["state"] or {}
         original=state.get("original_terminal") or getattr(exc,"terminal",type(exc).__name__)
-        guard=runtime["guard"]
+        detail=failure_detail(runtime,original,execution_id)
         if runtime["output_identity"] is None:
             try:claim_output_root(output,runtime)
-            except FileExistsError as ownership_error:
+            except (OSError,RepeatBlocked) as ownership_error:
                 raise RepeatBlocked("BLOCKED__FUTURE_EVIDENCE_ROOT_NOT_OWNED",
-                    {"original_terminal":original}) from ownership_error
+                    detail) from ownership_error
         if not owns_output_root(output,runtime):
             raise RepeatBlocked("BLOCKED__FUTURE_EVIDENCE_ROOT_NOT_OWNED",
-                {"original_terminal":original}) from exc
+                detail) from exc
         if not (output/"first_failure.json").exists():
-            attempted=({k:0 for k in CEILINGS} if not runtime["scientific_started"] else
-                       (dict(guard.attempted) if guard is not None else None))
-            unresolved=bool(state.get("ledger_unresolved")) or attempted is None
-            write_output_json(output,runtime,output/"first_failure.json",{"terminal":"CALL_LEDGER_UNRESOLVED" if unresolved else original,
-                "original_terminal":original,"execution_id":execution_id,
-                "literal_scientific_call_ledger":attempted,
-                "source_ledger":runtime["ledger"] if runtime["scientific_started"] else None,
-                "call_ledger_resolved":not unresolved})
+            write_output_json(output,runtime,output/"first_failure.json",detail)
         raise
     finally:
         sys.path[:]=prior_path

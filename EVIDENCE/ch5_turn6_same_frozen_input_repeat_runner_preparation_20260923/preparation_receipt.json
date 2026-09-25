@@ -4,7 +4,7 @@
   "status": "ZERO_SCIENCE_RUNNER_REPAIR4_PRECOMMIT",
   "dispatch_head": "b0bd3eb981a0c8848666d4ebae86d045875dddd1",
   "start_head": "b0bd3eb981a0c8848666d4ebae86d045875dddd1",
-  "precommit_head": "81e0c1052bf47454c747aa1bf93b43e259626e3c",
+  "precommit_head": "f8f730cef0e43329c72974e2d9eafecf664a7c21",
   "dispatch_parent": "1376297341548d569351b566e1507bdc37b6ef33",
   "src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
   "source_and_reference_files": [
@@ -15,8 +15,8 @@
     },
     {
       "path": "CURRENT.md",
-      "bytes": 7511,
-      "sha256": "0FAC58D8184899EFBD37D708DEDFA375A4A33C0D0C016410708B03B6460CA841"
+      "bytes": 7945,
+      "sha256": "C86D38E82BCC1E770F7813895E0B06F9332D832E577B94EE01951338998B2CAE"
     },
     {
       "path": "SCIENTIFIC_DECISIONS.md",
@@ -25,8 +25,8 @@
     },
     {
       "path": "TASK_CURRENT.md",
-      "bytes": 3773,
-      "sha256": "4CD03209D719A8EAAA183302CA3ECDC775D07EF61D78AA37161D3FC663F278F3"
+      "bytes": 5605,
+      "sha256": "457AD9BDF0976E245B77C4AAC45B7C5CBF98B5F2B8BDC3AA5524DB113E4AFC7F"
     },
     {
       "path": "REVIEW_GATE.md",
@@ -170,13 +170,13 @@
     },
     {
       "path": "validators/multi_province/k1b_turn6_same_frozen_input_repeat/run.py",
-      "bytes": 44944,
-      "sha256": "8D900AD59BC88FCA74EF832FAF5A1562207D2D54A8E8DCC7725CCCB46762CB0F"
+      "bytes": 47866,
+      "sha256": "E362B921D4984669C3257A671684F55809702531522D253C26D80886786880B2"
     },
     {
       "path": "tests/test_mp4c_k1b_turn6_same_frozen_input_repeat_preflight.py",
-      "bytes": 20722,
-      "sha256": "4168F745B3C1A4083ACCB10783819DDB34A88A5BD858822198B29D9424F251E9"
+      "bytes": 25144,
+      "sha256": "0C9B704BF787767E9940C0E51305AFCA499D21995F890CE1A6D7FC2504490FB1"
     }
   ],
   "preflight": {
@@ -360,9 +360,10 @@
   },
   "focused_tests": {
     "command": "python -m pytest -q -p no:cacheprovider tests/test_mp4c_k1b_turn6_same_frozen_input_repeat_preflight.py",
-    "passed": 27,
+    "passed": 38,
     "failed": 0,
-    "model_calls": 0
+    "model_calls": 0,
+    "skipped": 1
   },
   "first_failure": null,
   "output_paths": [
@@ -377,7 +378,7 @@
     "docs/CH5_TURN6_SAME_FROZEN_INPUT_REPEAT_RUNNER_PREPARATION_20260923.md",
     "EVIDENCE/ch5_turn6_same_frozen_input_repeat_runner_preparation_20260923/preparation_receipt.json"
   ],
-  "report_sha256": "7A6C9DAD4BBAEDC8F1A4A49170E8CB432771A90675A424F5FEB368FBA4AD1745",
+  "report_sha256": "C62CD876F20DFD88C01838301D64BAB821EDF38791A4292CD9595C0505C86F48",
   "literal_call_ledger": {
     "household": 0,
     "HJB": 0,
@@ -445,5 +446,26 @@
     "changed_paths_exact_allowlist": true,
     "planned_output_root_absent": true,
     "source_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883"
+  },
+  "repair5_task_id": "CH5_TURN6_SAME_FROZEN_INPUT_REPEAT_RUNNER_REPAIR5_20260925",
+  "repair5_dispatch_head": "f8f730cef0e43329c72974e2d9eafecf664a7c21",
+  "repair5_readback": {
+    "mutation_guards": [
+      "province_mkdir",
+      "checkpoint_mkdir",
+      "terminal_mkdir",
+      "integration_turn_mkdir",
+      "compact_checkpoint_unlink"
+    ],
+    "root_and_components_lstat_reparse_checked": true,
+    "lost_root_exception_retains_original_and_available_ledgers": true,
+    "focused_tests_passed": 38,
+    "focused_tests_skipped_symlink_capability": 1,
+    "static_preflight": "PASS",
+    "git_diff_check": "PASS",
+    "changed_paths_exact_allowlist": true,
+    "planned_output_root_absent": true,
+    "source_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
+    "os_rename_between_check_and_mutation_atomicity_guaranteed": false
   }
 }

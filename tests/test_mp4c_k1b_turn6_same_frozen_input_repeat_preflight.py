@@ -3,6 +3,8 @@ import importlib.util
 import inspect
 import io
 import json
+import os
+import stat
 import sys
 from types import SimpleNamespace
 from contextlib import redirect_stdout
@@ -407,3 +409,91 @@ def test_frozen_direct_solve_two_stage_receipts_get_distinct_exclusive_names(tmp
     runner.write_output_json(output,runtime,final,second)
     assert json.loads(early.read_text(encoding="utf-8"))==first
     assert json.loads(final.read_text(encoding="utf-8"))==second
+
+
+@pytest.mark.parametrize("operation",("province_mkdir","checkpoint_mkdir","terminal_mkdir","compact_unlink"))
+@pytest.mark.parametrize("replacement",("missing","foreign"))
+def test_reused_source_mutation_fails_before_lost_root_is_touched(tmp_path,operation,replacement):
+    output=tmp_path/"future_output"
+    runtime={"output_identity":None}
+    runner.claim_output_root(output,runtime)
+    province=output/"turn6"/"household"/"p00_stub"
+    checkpoint=province/"checkpoint_000"
+    terminal=province/"terminal_kfe"
+    if operation!="province_mkdir":
+        checkpoint.mkdir(parents=True)
+        (checkpoint/"cell_000.json").write_text("preserve",encoding="utf-8")
+    moved=tmp_path/"moved_original"
+    output.rename(moved)
+    if replacement=="foreign":
+        output.mkdir()
+        (output/"foreign.txt").write_text("preserve",encoding="utf-8")
+    target={"province_mkdir":province,"checkpoint_mkdir":checkpoint,
+            "terminal_mkdir":terminal,"compact_unlink":checkpoint/"cell_000.json"}[operation]
+    original_mkdir,original_unlink=runner.install_output_mutation_guards(output,runtime)
+    try:
+        with pytest.raises(runner.RepeatBlocked) as err:
+            if operation=="compact_unlink":target.unlink()
+            else:target.mkdir(parents=operation=="province_mkdir",exist_ok=False)
+        assert err.value.terminal=="BLOCKED__FUTURE_EVIDENCE_ROOT_NOT_OWNED"
+    finally:
+        Path.mkdir,Path.unlink=original_mkdir,original_unlink
+    if replacement=="missing":assert not output.exists()
+    else:assert (output/"foreign.txt").read_text(encoding="utf-8")=="preserve"
+    if operation=="compact_unlink":
+        assert (moved/"turn6"/"household"/"p00_stub"/"checkpoint_000"/"cell_000.json").exists()
+
+
+def test_symlink_back_to_claimed_inode_is_rejected(tmp_path):
+    output=tmp_path/"future_output"
+    runtime={"output_identity":None}
+    runner.claim_output_root(output,runtime)
+    moved=tmp_path/"moved_original"
+    output.rename(moved)
+    try:output.symlink_to(moved,target_is_directory=True)
+    except (OSError,NotImplementedError) as exc:pytest.skip(f"directory symlink unavailable: {exc}")
+    assert not runner.owns_output_root(output,runtime)
+    with pytest.raises(runner.RepeatBlocked):
+        runner.guard_output_mutation(output,runtime,output/"turn6"/"household")
+    assert not (moved/"turn6").exists()
+
+
+def test_reparse_flag_with_original_inode_is_rejected(tmp_path,monkeypatch):
+    if os.name!="nt":pytest.skip("Windows reparse attributes unavailable")
+    output=tmp_path/"future_output"
+    runtime={"output_identity":None}
+    runner.claim_output_root(output,runtime)
+    original_lstat=Path.lstat
+    def marked_lstat(path,*args,**kwargs):
+        identity=original_lstat(path,*args,**kwargs)
+        if path==output:
+            return SimpleNamespace(st_mode=stat.S_IFDIR,st_dev=identity.st_dev,
+                st_ino=identity.st_ino,
+                st_file_attributes=identity.st_file_attributes | stat.FILE_ATTRIBUTE_REPARSE_POINT)
+        return identity
+    monkeypatch.setattr(Path,"lstat",marked_lstat)
+    assert not runner.owns_output_root(output,runtime)
+
+
+@pytest.mark.parametrize("resolved",(True,False))
+def test_lost_root_exception_retains_first_terminal_and_call_ledgers(tmp_path,resolved):
+    output=tmp_path/runner.OUTPUT
+    def inert_failure(runtime):
+        runner.claim_output_root(output,runtime)
+        guard=runner.BudgetGuard()
+        guard.enter("firm_evaluations")
+        runtime.update(guard=guard,ledger={"firm_evaluations":1},scientific_started=True,
+                       state={"original_terminal":"FAIL__EARLIEST_STUB",
+                              "ledger_unresolved":not resolved})
+        output.rename(tmp_path/"moved_original")
+        raise runner.RepeatBlocked("BLOCKED__LATER_STUB")
+    with pytest.raises(runner.RepeatBlocked) as err:
+        runner.run_after_valid_gate(tmp_path,"stub-id",inert_failure)
+    assert err.value.terminal=="BLOCKED__FUTURE_EVIDENCE_ROOT_NOT_OWNED"
+    detail=err.value.detail
+    assert detail["original_terminal"]=="FAIL__EARLIEST_STUB"
+    assert detail["literal_scientific_call_ledger"]["firm_evaluations"]==1
+    assert detail["source_ledger"]["firm_evaluations"]==1
+    assert detail["call_ledger_resolved"] is resolved
+    assert detail["terminal"]==("FAIL__EARLIEST_STUB" if resolved else "CALL_LEDGER_UNRESOLVED")
+    assert not output.exists()
