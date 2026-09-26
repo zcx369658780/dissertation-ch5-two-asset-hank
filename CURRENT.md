@@ -25,7 +25,7 @@ Updated: 2026-09-26 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_K1B_C9_NEW_BUDGET_GOVERNANCE_ADOPTED__ZERO_SCIENCE_IDENTITY_PREPARATION_ONLY`
+`CH5_K1B_C9_NEW_ATTEMPT_STATIC_RUNNER_REJECTED__SCOPED_REPAIR_PENDING__NO_SCIENCE`
 
 The C9 preparation and Repair1/Repair2 candidates were independently **REJECTED** for static entry and ledger defects. Repair3 candidate `fb37a8f62d6ca71c7fbf7f3516e9de21473c7ed3` was independently **ACCEPTED for zero-science static entry repair only**. Its inactive delegate-hash rebind candidate `3ecee32cdc4a3e88043a85709a6db7c85f6ec5c8` is independently **ACCEPTED** in `docs/CH5_K1B_C9_INACTIVE_CONTRACT_DELEGATE_REBIND_INDEPENDENT_REVIEW_20260926.md`. `TASK_CURRENT.md` is closed pending Owner's C9-only resource-wall number and subsequent separate active-contract/science authorization. The contract remains non-executable; C9 has not run.
 
@@ -66,6 +66,8 @@ The Owner selected **A: formulate a zero-science new-budget and old-failure acco
 The Owner then **adopted all four governance terms** in `docs/CH5_K1B_C9_NEW_BUDGET_FAILED_LEDGER_POLICY_OWNER_ADOPTION_20260926.md`: a separate exact new C9/C10 ceiling namespace, full old-C9-turn administrative charge with actual calls still `CALL_LEDGER_UNRESOLVED`, the corresponding increased project-lifetime governance map, and a new-C9-only 36,000-second cooperative resource wall. This permits a bounded zero-science identity-chain preparation task only. It does not activate the new attempt, authorize C9/C10 science or retry, or change Results eligibility `FALSE`.
 
 `TASK_CURRENT.md` now assigns the existing project Codex conversation a first **zero-science static runner candidate** for the new identity, using only five new code/test/evidence paths. The new live contract, execution adoption, task and output root must remain absent; the candidate must stop for independent GPT Work review. No scientific execution is authorized.
+
+The first new static runner candidate remained uncommitted and is independently **REJECTED** in `docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_STATIC_RUNNER_REJECTED_REVIEW_20260926.md`. Two inert tests invoked wrapper `--execute` despite the task prohibition; they were blocked before model/science and output creation, but the task boundary was crossed. Independent review also found missing protection checks for several old output roots and a Windows reparse-point gap. Five untracked candidate files are preserved as rejected evidence. A new, scoped zero-science repair task is required before any candidate acceptance; the old actual ledger remains `CALL_LEDGER_UNRESOLVED`, C9/C10 execution stays closed, and Results eligibility is `FALSE`.
 
 On 2026-09-26 the Owner selected preparation of a C9-only timed-risk exception after the accepted transfer assessment. The exact selection and its limits are in `docs/CH5_K1B_C9_SINGLE_TURN_TIMED_RISK_EXCEPTION_OWNER_SELECTION_20260926.md`. `TASK_CURRENT.md` now assigns only an inactive, zero-science C9 runner/contract/static-test preparation to the existing Codex conversation. No C9-specific resource-wall seconds or one-shot execution authorization has been adopted. The ordinary duration gate remains blocked; C9 has not run and Results eligibility is `FALSE`.
 
