@@ -1,0 +1,12 @@
+# Independent GPT Work review - C9 inert full-file test failure
+
+Reviewer: GPT Work
+Verdict: **REJECT__FULL_INERT_TEST_FAILED__NO_CANDIDATE__NO_SCIENCE**
+
+The Builder started from Work task-issuance commit `a2b36768` and changed only `tests/test_mp4c_k1b_turn9_post_failure_new_attempt_preflight.py` to replace the stale `execute_once` AST demand for direct `.is_file()` with ordered `authority_file_present` calls. The changed file remains uncommitted and is preserved; its raw SHA-256 at review is `23D4CF2BC92A50E022BE3B1EAFC6958E7815B452C8B3A7F3C1FCF90A50E5EFC9`. No candidate commit, report update, or receipt update was delivered.
+
+The task's single permitted full-file inert run, `python -m pytest -q tests/test_mp4c_k1b_turn9_post_failure_new_attempt_preflight.py`, returned exit 1: `1 failed, 45 passed in 3.11s`. The sole failure is `test_repair3_preflight_has_distinct_fail_closed_inactive_and_active_branches` at test line 259. It demands the text `lexists` directly in the `static_preflight` inactive branch. The current branch instead calls `authority_file_absent` on all four future authority paths; that helper checks components before `os.path.lexists` (wrapper lines 156-158). The assertion is stale after the path-safety repair. The Builder stopped at first failure, without retry, further edit, commit, runner execution, or science. The previous candidate `145e5692bd1e62f7d6dbca9d520d11e4842350d6` remains independently REJECTED; this failed task does not create a new candidate or ACCEPT it.
+
+A new, separate zero-science task may preserve the existing test diff, replace only that second stale AST assertion, then run one fresh inert full-file check and update dependent evidence. The prior task's one-run budget is consumed and is not retroactively enlarged. Runner source, protected outputs, and authority files remain out of scope. The original candidate, Repair1, Repair2 and subsequent whole-runner repairs retain their REJECT history; the limited final-entry static-order ACCEPT stays limited. The original two prohibited `--execute` probes remain recorded as violations.
+
+Five protected output manifest hashes still matched the handoff before this run, and the new C9 root plus live contract, Owner execution adoption/task and runner-recognized ACCEPT review remained absent. Old `C9_TIMED_RISK_RUN001` is consumed; the actual ledger remains `CALL_LEDGER_UNRESOLVED`. The full-old-turn charge is governance accounting only. Results eligibility remains `FALSE`; no new C9/C10 science, retry, or partial resume is authorized.
