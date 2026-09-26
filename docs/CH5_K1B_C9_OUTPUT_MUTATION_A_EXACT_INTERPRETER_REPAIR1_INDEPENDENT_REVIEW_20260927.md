@@ -1,0 +1,12 @@
+# C9 safety-A exact interpreter capability Repair1: independent GPT Work review
+
+Verdict: `ACCEPT__EXACT_INTERPRETER_STDLIB_CAPABILITY_EVIDENCE_ONLY__NATIVE_CONTAINMENT_UNRESOLVED`.
+Date: 2026-09-27 (Asia/Shanghai).
+
+Candidate `f597fa3fb44f652773f60de862ab9cc14d9f264e`; parent `f59452b627805101a2dd4e46e16084ede16ef51d`; tree `b3a1e59646614ff97c8af4f61308951926e3daa8`; `HEAD:src=00682b2e1a7ba23665f6e16f6acf48ad35874883`. Exactly two allowed files were added: report raw SHA-256 `2CC2C419D0FA1C22306201FF06E2DBA8946668C849D509F5DC7A62422389D812` and receipt `AD6622093011EF0198CC6EC6FA2CC561573777392016391F150A38209B437AE3`. Tracked/index are clean; six protected untracked roots and seven named manifest/readback hashes remain matched.
+
+The single read-only probe invoked the exact historical C9 interpreter `C:\Users\zcxve\AppData\Local\Programs\Python\Python311\python.exe`; that process reported the identical `sys.executable`, Python 3.11.9/64-bit and exit code 0. Its `os.mkdir`, `os.unlink`, `os.rmdir`, `os.open`, `os.stat` and `os.lstat` are not in `os.supports_dir_fd`. This establishes only the probed exact interpreter's stdlib capability snapshot. The earlier PATH-resolved probe remains independently `REJECT__TARGET_INTERPRETER_IDENTITY_UNBOUND__NO_SCIENCE`, not retroactively accepted. The stderr split is unavailable from the combined tool output; the literal command, combined output and exit codes are preserved.
+
+The report properly leaves native Windows handle-relative create/delete, ancestor reparse containment, sharing/rename behavior, FileId lifetime, cleanup, cross-volume behavior and runner integration `UNRESOLVED__FAIL_CLOSED`. No temporary mutation, test, preflight, `--execute`, wrapper, model or scientific call occurred. This ACCEPT does not approve an isolation experiment or runner execution. Candidate/tree and receipt self-hash were necessarily supplied after commit and independently recomputed here rather than self-referenced inside the candidate.
+
+Owner objective A remains in force. Both C9 attempts are consumed; both actual ledgers remain `CALL_LEDGER_UNRESOLVED`; C10, retries, partial resume and Results stay closed with Results eligibility `FALSE`. The next eligible zero-science gate is an exact official/native Windows API contract assessment before any separately bounded inert isolation experiment. A later scientific attempt still requires a new named budget, fresh root, explicit one-shot Owner authorization and independently reviewed R/C/O/T.
