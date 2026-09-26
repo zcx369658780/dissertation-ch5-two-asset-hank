@@ -25,7 +25,7 @@ Updated: 2026-09-26 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_K1B_C9_ONE_SHOT_AUTHORITY_CHAIN_ACCEPTED__DISPATCH_READY__NO_SCIENCE_YET`
+`CH5_K1B_C9_ONE_SHOT_CONSUMED__CALL_LEDGER_UNRESOLVED__NO_RETRY`
 
 The C9 preparation and Repair1/Repair2 candidates were independently **REJECTED** for static entry and ledger defects. Repair3 candidate `fb37a8f62d6ca71c7fbf7f3516e9de21473c7ed3` was independently **ACCEPTED for zero-science static entry repair only**. Its inactive delegate-hash rebind candidate `3ecee32cdc4a3e88043a85709a6db7c85f6ec5c8` is independently **ACCEPTED** in `docs/CH5_K1B_C9_INACTIVE_CONTRACT_DELEGATE_REBIND_INDEPENDENT_REVIEW_20260926.md`. `TASK_CURRENT.md` is closed pending Owner's C9-only resource-wall number and subsequent separate active-contract/science authorization. The contract remains non-executable; C9 has not run.
 
@@ -42,6 +42,8 @@ The live contract activation candidate `9418cc085bb42881f8151164cea6215bbb5f0dfd
 The non-authoritative C9 decision packet and task draft at Builder commit `b769426b538cc7a0cd086458d19b5f0dcfcf820d` are independently **ACCEPTED as zero-science draft evidence only** in `docs/CH5_K1B_C9_ONE_SHOT_EXECUTION_PACKET_DRAFT_INDEPENDENT_REVIEW_20260926.md`. `TASK_CURRENT.md` is closed pending the separate explicit Owner decision “现在运行 C9 一次”. C9 and C10 attempts remain zero; no runner-recognized execution adoption or task exists, and Results eligibility remains `FALSE`.
 
 The Owner then explicitly authorized **“现在运行 C9 一次”**. The runner-recognized adoption and byte-identical one-shot task are committed at `fc74185831ad19cd462188226befd3ede0c3f35f` and `3fa95dc3df7a7ad2bcfa39b58f72da6020997a92`. GPT Work independently **ACCEPTED the final committed authority chain for dispatch only** in `docs/CH5_K1B_C9_ONE_SHOT_EXECUTION_FINAL_AUTHORITY_CHAIN_INDEPENDENT_REVIEW_20260926.md`. `TASK_CURRENT.md` is now the active one-shot C9 task. Before dispatch C9/C10 calls and retries remain zero; C10 has no authority and Results eligibility is `FALSE`.
+
+The authorized C9 wrapper was invoked exactly once and failed during province 0 ledger reconciliation with a wrapper/delegate `reconcile` argument mismatch. The wrapper terminal is `CALL_LEDGER_UNRESOLVED`; no complete outer turn or safe pause exists. GPT Work independently **REJECTED complete C9 execution** and accepted the sealed partial files only as factual failure evidence in `docs/CH5_K1B_C9_ONE_SHOT_EXECUTION_INDEPENDENT_REVIEW_20260926.md`. The one-shot C9 attempt is consumed, C10 and retries remain closed, and `TASK_CURRENT.md` is closed pending a new Owner decision. Results eligibility is `FALSE`.
 
 On 2026-09-26 the Owner selected preparation of a C9-only timed-risk exception after the accepted transfer assessment. The exact selection and its limits are in `docs/CH5_K1B_C9_SINGLE_TURN_TIMED_RISK_EXCEPTION_OWNER_SELECTION_20260926.md`. `TASK_CURRENT.md` now assigns only an inactive, zero-science C9 runner/contract/static-test preparation to the existing Codex conversation. No C9-specific resource-wall seconds or one-shot execution authorization has been adopted. The ordinary duration gate remains blocked; C9 has not run and Results eligibility is `FALSE`.
 
