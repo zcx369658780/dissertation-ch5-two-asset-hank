@@ -25,7 +25,7 @@ Updated: 2026-09-26 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_K1B_C9_POST_FAILURE_OWNER_NEW_ATTEMPT_DESIGN_DECISION_PENDING__NO_SCIENCE`
+`CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_ZERO_SCIENCE_DESIGN_ACTIVE`
 
 The C9 preparation and Repair1/Repair2 candidates were independently **REJECTED** for static entry and ledger defects. Repair3 candidate `fb37a8f62d6ca71c7fbf7f3516e9de21473c7ed3` was independently **ACCEPTED for zero-science static entry repair only**. Its inactive delegate-hash rebind candidate `3ecee32cdc4a3e88043a85709a6db7c85f6ec5c8` is independently **ACCEPTED** in `docs/CH5_K1B_C9_INACTIVE_CONTRACT_DELEGATE_REBIND_INDEPENDENT_REVIEW_20260926.md`. `TASK_CURRENT.md` is closed pending Owner's C9-only resource-wall number and subsequent separate active-contract/science authorization. The contract remains non-executable; C9 has not run.
 
@@ -56,6 +56,8 @@ The narrow repair candidate `d6d3d2970cf35f6c8d512e4154a27cf5fbc3d013` is indepe
 GPT Work then updated the runner-recognized static review at `docs/CH5_K1B_TURN9_TIMED_RISK_EXCEPTION_RUNNER_INDEPENDENT_REVIEW.md` to bind the repaired wrapper raw SHA-256 `59A63E933BF13A4FC39EC583227B2E9724B5E06B510A1896CB1307DBCC8F1D06`. The live contract still binds old wrapper/review hashes, and `TASK_CURRENT.md` is closed pending an exact zero-science contract proposal. No new C9/C10 science or retry is authorized; Results eligibility remains `FALSE`.
 
 Work identified that a hash-only contract proposal would still target consumed `C9_TIMED_RISK_RUN001` and its occupied output root, while the failed province has an unresolved call ledger. The next Owner gate is therefore the **zero-science new-attempt design and budget-disposition route** in `docs/CH5_K1B_C9_POST_FAILURE_OWNER_DECISION_PACKET_20260926.md`, before any contract rebind or new scientific budget. No new C9/C10 call is authorized; Results eligibility remains `FALSE`.
+
+The Owner selected that **design-only** route in `docs/CH5_K1B_C9_POST_FAILURE_ZERO_SCIENCE_DESIGN_OWNER_SELECTION_20260926.md`. `TASK_CURRENT.md` now assigns the existing Codex conversation a read-only proposal covering fresh identity/output-root design, conservative treatment of the unresolved prior ledger, budget options and future review gates. No new C9/C10 science or retry is authorized; Results eligibility remains `FALSE`.
 
 On 2026-09-26 the Owner selected preparation of a C9-only timed-risk exception after the accepted transfer assessment. The exact selection and its limits are in `docs/CH5_K1B_C9_SINGLE_TURN_TIMED_RISK_EXCEPTION_OWNER_SELECTION_20260926.md`. `TASK_CURRENT.md` now assigns only an inactive, zero-science C9 runner/contract/static-test preparation to the existing Codex conversation. No C9-specific resource-wall seconds or one-shot execution authorization has been adopted. The ordinary duration gate remains blocked; C9 has not run and Results eligibility is `FALSE`.
 
