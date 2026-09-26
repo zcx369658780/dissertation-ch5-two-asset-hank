@@ -1,0 +1,48 @@
+{
+  "task_id": "CH5_K1B_C9_TIMED_WRAPPER_RECONCILE_ZERO_SCIENCE_REPAIR_20260926",
+  "status": "CANDIDATE_PENDING_INDEPENDENT_GPT_WORK_ACCEPT_REJECT",
+  "results_eligible": false,
+  "consumed_C9_attempt": "C9_TIMED_RISK_RUN001",
+  "allowed_changed_paths": [
+    "validators/multi_province/k1b_turn9_timed_risk_exception/run.py",
+    "tests/test_mp4c_k1b_turn9_timed_risk_exception_preflight.py",
+    "docs/CH5_K1B_C9_TIMED_WRAPPER_RECONCILE_ZERO_SCIENCE_REPAIR_20260926.md",
+    "EVIDENCE/ch5_k1b_c9_timed_wrapper_reconcile_zero_science_repair_20260926/repair_receipt.json"
+  ],
+  "this_task_counts": {
+    "model_calls": 0,
+    "scientific_calls": 0,
+    "production_wrapper_invocations": 0,
+    "C9_new_attempts": 0,
+    "C10_attempts": 0,
+    "retries": 0,
+    "protected_output_writes": 0,
+    "inert_fake_wrapper_test_invocations": 2
+  },
+  "raw_sha256": {
+    "TASK_CURRENT.md": "4921023B7B31712241ADC7E8FBC7690E8CD4D36B3E2E74681FA7ACE40D1211C9",
+    "independent_diagnosis_review": "49E0DE5963D6354FF14AC954D3F4BBD9807ED77394D01FC371784298F61D8C01",
+    "delegate_unchanged": "A4B4985DAE8C15E5F21125A0A82FCE39D1B08D975929250186D941D691C4E7BB",
+    "wrapper_before": "0E43522B64F7BD34C46C92A967F41FBDD373C3DD15DCC188821CB0EDB3AB368B",
+    "wrapper_after": "59A63E933BF13A4FC39EC583227B2E9724B5E06B510A1896CB1307DBCC8F1D06",
+    "wrapper_test_after": "A84724C4576621D6F0ABB1219F49724165AA2CDDB2269A4BF889F71623C548F0",
+    "live_contract_unchanged": "65992776BFBED510F5C59DBC14B8CBE0B65DCCBAD08C5E0559491303D5A5B466",
+    "C9_timing_failure_unchanged": "21D7579449AD0DCDE532B9D7695E83FF188AD3E09D9D02A798D574000DEED2E0"
+  },
+  "test_runs": [
+    {
+      "selection": "tests/test_mp4c_k1b_turn9_timed_risk_exception_preflight.py::test_measured_guard_reconcile_accepts_province_and_preserves_denial",
+      "outcome": "FAILED_BEFORE_FAKE_ACTION__EXISTING_PROTECTED_C9_OUTPUT_ROOT"
+    },
+    {
+      "selection": "tests/test_mp4c_k1b_turn9_timed_risk_exception_preflight.py -k measured_guard_reconcile_accepts_province_and_preserves_denial",
+      "outcome": "PASS__1_PASSED__13_DESELECTED__NO_OUTPUT_ROOT_CREATED"
+    }
+  ],
+  "live_contract_binding": {
+    "wrapper_sha256": "0E43522B64F7BD34C46C92A967F41FBDD373C3DD15DCC188821CB0EDB3AB368B",
+    "candidate_matches_old_binding": false,
+    "rebind_performed": false
+  },
+  "next_gate": "INDEPENDENT_GPT_WORK_REPAIR_ACCEPT_REJECT__NO_SCIENCE"
+}

@@ -395,8 +395,8 @@ def run_timed_action(repo: Path, gate: Mapping[str, Any], *,
                     super().enter(key, province)
                     self.journal("attempted_before_source_call", {"category": key, "province": province})
 
-            def reconcile(self, ledger: Mapping[str, Any]) -> None:
-                super().reconcile(ledger)
+            def reconcile(self, ledger: Mapping[str, Any], province: int | None = None) -> None:
+                super().reconcile(ledger, province)
                 self.journal("source_reconciled")
                 for province, opened in list(self.open_province.items()):
                     closed = clock_sample()

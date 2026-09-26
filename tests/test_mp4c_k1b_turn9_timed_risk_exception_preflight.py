@@ -194,6 +194,45 @@ def test_attempt_journal_alias_and_cumulative_guard_use_one_event(monkeypatch):
     assert any(row.get("detail", {}).get("alias") for row in journal if isinstance(row.get("detail"), dict))
 
 
+def test_measured_guard_reconcile_accepts_province_and_preserves_denial(monkeypatch, tmp_path):
+    journal = []
+    checked = []
+    def action(fake, runtime):
+        guard = runtime["c9_timed_guard"]
+        runtime["guard"] = guard
+        ledger = dict.fromkeys(fake.CEILINGS, 0)
+        runtime["ledger"] = ledger
+        limit = fake.PER_PROVINCE["selector_evaluations"]
+        guard.begin_province(0, ledger, {"selector_evaluations": limit})
+        guard.reserve({"selector_evaluations": 1}, 0)
+        ledger["selector_evaluations"] = 1
+        guard.reconcile(ledger, 0)
+        assert guard.attempted["selector_evaluations"] == 1
+        assert guard.per_province[0]["selector_evaluations"] == 1
+        assert guard.open_province == {}
+        ledger["selector_evaluations"] = limit + 1
+        with pytest.raises(fake.RepeatBlocked, match="BLOCKED__PROVINCE_BUDGET"):
+            guard.reconcile(ledger, 0)
+        checked.append(True)
+        return "VALID__C9_NINE_COMPONENT_LEVEL_NOT_MET"
+    fake, real = _fake_delegate(monkeypatch, journal, action)
+    fake.CEILINGS = real.CEILINGS
+    fake.RepeatBlocked = real.RepeatBlocked
+    gate = {"ceilings": real.CEILINGS, "cumulative": real.TWO_TURN_CEILINGS,
+            "per_province": real.PER_PROVINCE, "wall_seconds": 3600,
+            "execution_id": "INERT", "contract_sha256": "INERT"}
+    monkeypatch.setattr(wrapper, "load_delegate", lambda repo: fake)
+    monkeypatch.setattr(wrapper, "future_gate", lambda repo, execution_id, c9: gate)
+    monkeypatch.setattr(wrapper, "seal_science_outputs",
+                        lambda *args: (_ for _ in ()).throw(RuntimeError("INERT_AFTER_ACTION")))
+    with pytest.raises(wrapper.TimingBlocked, match="RuntimeError"):
+        wrapper.run_timed_action(tmp_path, gate)
+    assert checked == [True]
+    assert [row["event"] for row in journal].count("province_actual_counts_reconciled") == 1
+    assert [row["event"] for row in journal].count("source_reconciled") == 1
+    assert not (tmp_path / wrapper.OUTPUT).exists()
+
+
 def test_expired_resource_wall_denies_next_entry_without_call(monkeypatch):
     journal = []
     def action(fake, runtime):
