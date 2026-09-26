@@ -25,9 +25,9 @@ Updated: 2026-09-26 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_K1B_C9_TIMED_RISK_EXCEPTION_STATIC_REPAIR3_ACTIVE__NO_SCIENCE`
+`CH5_K1B_C9_INACTIVE_CONTRACT_DELEGATE_REBIND_ACTIVE__NO_SCIENCE`
 
-The C9 preparation candidate `dd216ac122ba7770ab0f68ba9f4fda17862aebce` and Repair1 candidate `444117591f89394c1e768ba8f5943ecb527a3b5e` were independently **REJECTED**. Repair2 candidate `da24ec7211c26ee501c2067e2652e5d3a1e82ccf` passed 11 inert tests, but was independently **REJECTED** in `docs/CH5_K1B_C9_TIMED_RISK_EXCEPTION_STATIC_REPAIR2_INDEPENDENT_REVIEW_20260926.md`: delegate import precedes committed identity, one wrapper call loads two delegate objects, and a direct delegate route can bypass the timed wrapper. `TASK_CURRENT.md` assigns a scoped zero-science Repair3 to the same Codex conversation. The inactive contract remains non-executable; C9 has not run.
+The C9 preparation and Repair1/Repair2 candidates were independently **REJECTED** for static entry and ledger defects. Repair3 candidate `fb37a8f62d6ca71c7fbf7f3516e9de21473c7ed3` was independently **ACCEPTED for zero-science static entry repair only** in `docs/CH5_K1B_C9_TIMED_RISK_EXCEPTION_STATIC_REPAIR3_INDEPENDENT_REVIEW_20260926.md`; it passed 22 inert tests and made no science calls. `TASK_CURRENT.md` assigns only inactive contract delegate-hash rebind to the same Codex conversation. The contract remains non-executable; C9 has not run.
 
 On 2026-09-26 the Owner selected preparation of a C9-only timed-risk exception after the accepted transfer assessment. The exact selection and its limits are in `docs/CH5_K1B_C9_SINGLE_TURN_TIMED_RISK_EXCEPTION_OWNER_SELECTION_20260926.md`. `TASK_CURRENT.md` now assigns only an inactive, zero-science C9 runner/contract/static-test preparation to the existing Codex conversation. No C9-specific resource-wall seconds or one-shot execution authorization has been adopted. The ordinary duration gate remains blocked; C9 has not run and Results eligibility is `FALSE`.
 
