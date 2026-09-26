@@ -25,7 +25,7 @@ Updated: 2026-09-26 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_K1B_C9_TIMED_WRAPPER_RECONCILE_ZERO_SCIENCE_REPAIR_ACTIVE__NO_RETRY`
+`CH5_K1B_C9_REPAIR_ACCEPTED__CONTRACT_AND_RUNNER_IDENTITY_STALE__NO_SCIENCE`
 
 The C9 preparation and Repair1/Repair2 candidates were independently **REJECTED** for static entry and ledger defects. Repair3 candidate `fb37a8f62d6ca71c7fbf7f3516e9de21473c7ed3` was independently **ACCEPTED for zero-science static entry repair only**. Its inactive delegate-hash rebind candidate `3ecee32cdc4a3e88043a85709a6db7c85f6ec5c8` is independently **ACCEPTED** in `docs/CH5_K1B_C9_INACTIVE_CONTRACT_DELEGATE_REBIND_INDEPENDENT_REVIEW_20260926.md`. `TASK_CURRENT.md` is closed pending Owner's C9-only resource-wall number and subsequent separate active-contract/science authorization. The contract remains non-executable; C9 has not run.
 
@@ -50,6 +50,8 @@ Work next issued a **zero-science diagnosis only** in `TASK_CURRENT.md` to docum
 The diagnosis candidate `02a27e66e50feff09bae5e3ddb45cf39523ee7c1` is independently **ACCEPTED as zero-science root-cause evidence only** in `docs/CH5_K1B_C9_RECONCILE_FAILURE_ZERO_SCIENCE_DIAGNOSIS_INDEPENDENT_REVIEW_20260926.md`. The observed defect is the timed wrapper's one-argument `MeasuredGuard.reconcile` overriding the delegate's two-argument provincial form. A separate zero-science engineering repair candidate may now be tasked, but no C9/C10 model call or retry is authorized. Results eligibility remains `FALSE`.
 
 `TASK_CURRENT.md` now assigns the existing Codex conversation a narrow **zero-science wrapper/interface repair candidate** plus inert regression test. The current live contract will remain bound to the old wrapper hash and cannot authorize execution after a code edit. No new C9/C10 science budget exists; Results eligibility remains `FALSE`.
+
+The narrow repair candidate `d6d3d2970cf35f6c8d512e4154a27cf5fbc3d013` is independently **ACCEPTED for zero-science interface repair only** in `docs/CH5_K1B_C9_TIMED_WRAPPER_RECONCILE_ZERO_SCIENCE_REPAIR_INDEPENDENT_REVIEW_20260926.md`. The wrapper now forwards the delegate's optional province argument; the focused inert regression passed. The live contract and prior runner review still bind the old wrapper hash, so execution remains blocked. The consumed C9 attempt cannot be retried; any new science requires fresh Owner authority. Results eligibility remains `FALSE`.
 
 On 2026-09-26 the Owner selected preparation of a C9-only timed-risk exception after the accepted transfer assessment. The exact selection and its limits are in `docs/CH5_K1B_C9_SINGLE_TURN_TIMED_RISK_EXCEPTION_OWNER_SELECTION_20260926.md`. `TASK_CURRENT.md` now assigns only an inactive, zero-science C9 runner/contract/static-test preparation to the existing Codex conversation. No C9-specific resource-wall seconds or one-shot execution authorization has been adopted. The ordinary duration gate remains blocked; C9 has not run and Results eligibility is `FALSE`.
 
