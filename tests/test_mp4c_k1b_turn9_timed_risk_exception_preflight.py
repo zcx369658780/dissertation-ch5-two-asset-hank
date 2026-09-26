@@ -27,9 +27,9 @@ def _allow_uncommitted_candidate_in_inert_test(monkeypatch):
 def test_default_cli_is_inert_and_inactive_execute_denies_before_delegate(monkeypatch):
     _allow_uncommitted_candidate_in_inert_test(monkeypatch)
     result = wrapper.static_preflight(ROOT)
-    assert result["status"] == "BLOCKED__INACTIVE_CONTRACT__DELEGATE_REBIND_REQUIRED"
-    assert result["checks"]["delegate_hash"] is False  # Frozen inactive contract is read-only in Repair1.
-    assert all(value for key, value in result["checks"].items() if key != "delegate_hash")
+    assert result["status"] == "BLOCKED__INACTIVE_CONTRACT"
+    assert result["checks"]["delegate_hash"] is True
+    assert all(result["checks"].values())
     assert all(result["delegated_checks"].values())
     assert result["scientific_calls"] == result["c9_attempts"] == result["c10_attempts"] == 0
     monkeypatch.setattr(wrapper, "load_delegate", lambda _: pytest.fail("delegate entered"))

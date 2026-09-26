@@ -1,0 +1,60 @@
+{
+  "schema": "CH5_K1B_C9_INACTIVE_CONTRACT_DELEGATE_REBIND_RECEIPT_V1",
+  "task_id": "CH5_K1B_C9_INACTIVE_CONTRACT_DELEGATE_REBIND_20260926",
+  "status": "BUILDER_INACTIVE_REBIND_CANDIDATE__AWAITING_INDEPENDENT_GPT_WORK_ACCEPT_REJECT",
+  "entry_head": "1216720fff2de9d26601823a418bf6c6bae0d7b9",
+  "accepted_repair3_candidate": "fb37a8f62d6ca71c7fbf7f3516e9de21473c7ed3",
+  "src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
+  "contract_key_diff": ["delegate_sha256"],
+  "old_delegate_sha256": "54D8E39684CD659B4208D120551A47D03FE28E59EB23C2C5DCFD8766A6FFADF3",
+  "new_delegate_sha256": "A4B4985DAE8C15E5F21125A0A82FCE39D1B08D975929250186D941D691C4E7BB",
+  "changed_path_sha256": {
+    "tasks/CH5_K1B_TURN9_TIMED_RISK_EXCEPTION_INACTIVE_CONTRACT.json": "6EB9A9F5594D4E1385B864DC0527047B81490772890D09B7B51806855BD840A3",
+    "tests/test_mp4c_k1b_turn9_timed_risk_exception_preflight.py": "9F3998DC0B7C020171B67FBDECCB4E1155F7F9221C19EF00F8896AE28B838C93",
+    "docs/CH5_K1B_C9_INACTIVE_CONTRACT_DELEGATE_REBIND_20260926.md": "DDFE31797B8D91E8B1C05ACDA507DC7FE779BA16D3943A7B46278B53A445FACF"
+  },
+  "protected_manifest_sha256": [
+    "7890720D502AC1C04D672978C6F662DD51F9D2BA27F321701877ABE9214CDE61",
+    "413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91",
+    "5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301",
+    "5DD433E8DD0D8A3C6DB59C3FE370C4EF8770BBCCCA3F8D79211D93938CFA654D"
+  ],
+  "static_preflight": {
+    "status": "BLOCKED__INACTIVE_CONTRACT",
+    "delegate_hash_match": true,
+    "all_wrapper_checks": true,
+    "all_delegated_checks": true,
+    "scientific_calls": 0,
+    "c9_attempts": 0,
+    "c10_attempts": 0,
+    "exit_code": 0
+  },
+  "blocked_execution": {
+    "wrapper_terminal": "BLOCKED__INACTIVE_CONTRACT",
+    "wrapper_exit_code": 1,
+    "delegate_terminal": "BLOCKED__C9_WRAPPER_REQUIRED",
+    "delegate_exit_code": 1
+  },
+  "focused_inert_tests": "22 passed",
+  "literal_call_ledger": {
+    "model_calls": 0,
+    "scientific_calls": 0,
+    "c9_attempts": 0,
+    "c10_attempts": 0,
+    "retries": 0
+  },
+  "contract_state": {
+    "active": false,
+    "attempts": 0,
+    "retries": 0,
+    "execution_id": null,
+    "resource_wall_seconds": null,
+    "wrapper_sha256": null,
+    "independent_review_sha256": null
+  },
+  "c9_timed_output_exists": false,
+  "c9_outer_output_exists": false,
+  "duration_bound_status": "BLOCKED__DURATION_BOUND_UNAVAILABLE",
+  "results_eligibility": false,
+  "next_gate": "GPT_WORK_INDEPENDENT_ACCEPT_REJECT"
+}
