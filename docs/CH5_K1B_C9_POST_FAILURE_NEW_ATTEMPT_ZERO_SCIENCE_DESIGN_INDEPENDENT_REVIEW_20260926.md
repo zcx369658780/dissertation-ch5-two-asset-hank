@@ -1,0 +1,14 @@
+# Independent GPT Work review — C9 post-failure new-attempt design
+
+Reviewer: GPT Work
+Verdict: **ACCEPT__ZERO_SCIENCE_NEW_ATTEMPT_DESIGN_ONLY__NEW_BUDGET_OWNER_DECISION_REQUIRED**
+
+Candidate `2c5117f838b2f4a3489043f6411a9f3370d14c7b` (parent `3cd6091cc5cbf5bf81000aad93efbc8d65ec41c5`) adds exactly the two task-authorized proposal/receipt paths. Their raw SHA-256 values are `BE4307BD5B96DCBD12A41FE88897A7EF09D6B9F6F51E7D240EBC43AA8B26D49E` and `0D5E200E1948B4ADAD86D95849FE8000F976040BAED2EC9BAB0F951E90843652`. `git diff HEAD^ HEAD --check` passed; tracked files were clean at review; `HEAD:src=00682b2e1a7ba23665f6e16f6acf48ad35874883`. The receipt records zero model, science, wrapper, new-C9, C10, retry and protected-output-write calls for this design task.
+
+The proposal correctly separates three evidence layers: guard-confirmed attempts, source-observed counts, and reserved province exposure. It does not add the layers together or infer available balance from guard zeros. The old contract allows `turn9_household_calls=1` per C9 turn and one terminal KFE attempt per province; the failed C9 evidence confirms household `1` and province-0 KFE `1`, while the final ledger is `CALL_LEDGER_UNRESOLVED`. The partial 298-entry readback preserves files, not a complete C9 or safe pause. Under the adopted old ceilings there is no defensible direct launch of a new complete C9.
+
+The proposed `C9_POST_FAILURE_NEW_ATTEMPT_001` and `reports/ch5_k1b_turn9_post_failure_new_attempt_001` are **names only**; the root is absent. The design accurately notes that the old runner and delegate bind old task, contract, ID and output-root identities. A hash-only live-contract edit cannot reuse `RUN001` or its occupied output. The proposed budget dispositions remain alternatives for Owner choice; none is adopted. The existing C8 entering-C9 bundle is only a candidate future input subject to fresh identity review. Only a later complete sealed/read-back legal C9 comparison could enter the prospective two-pass count; the failed partial C9 cannot.
+
+The five protected output roots retain their C6-prime/C7/C8/C8-timing/C9-partial manifest SHA-256 values `7890720D502AC1C04D672978C6F662DD51F9D2BA27F321701877ABE9214CDE61`, `413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91`, `5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301`, `5DD433E8DD0D8A3C6DB59C3FE370C4EF8770BBCCCA3F8D79211D93938CFA654D`, and `80BD0D42CB73B4E39B811E759505480542D5A73227014F30B732C34A8AC1FDC3`.
+
+This ACCEPT covers **decision-evidence quality only**. The next substantive Owner choice is whether to formulate a separate new C9 budget and explicit old-failure accounting policy, or stop at the current failed terminal. It does not authorize runner/contract rebind, a new one-shot task, C9/C10 calls, convergence or Results. Results eligibility remains `FALSE`.
