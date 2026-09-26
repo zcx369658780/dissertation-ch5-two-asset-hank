@@ -1,0 +1,12 @@
+# Independent GPT Work review — C9 reconcile failure diagnosis
+
+Reviewer: GPT Work
+Verdict: **ACCEPT__ZERO_SCIENCE_DIAGNOSIS_ONLY__NO_RETRY_AUTHORITY**
+
+Candidate `02a27e66e50feff09bae5e3ddb45cf39523ee7c1` (parent `9aeaf7427934afbb7e6b33d1787731b0976c1144`) adds exactly the two task-authorized diagnosis paths. `git diff HEAD^ HEAD --check` passed; tracked files are clean and `HEAD:src=00682b2e1a7ba23665f6e16f6acf48ad35874883`. The report and receipt raw SHA-256 values are `A6656707BA091169F85A68438D59C155D7DFF7A296C48FCE66C0BBE610B4046D` and `B023288A7AFC6441B8807491DBC5433CF06148A50FF8C9B76B2FCF410EBA7794`. The receipt records zero model/scientific/wrapper/new-C9/C10/retry calls for this diagnosis.
+
+Source inspection confirms the exact mismatch: delegate `BudgetGuard.reconcile(self, ledger, province=None)` is called as `guard.reconcile(ledger,i)` on the observed province-return path, while the timed wrapper's `MeasuredGuard.reconcile(self, ledger)` cannot accept `i`. The report correctly identifies related exception/interruption paths and distinguishes them from the observed first failure. It separately states that the delegate and wrapper's other checked override call forms match. The inert test gap and proposed signature-forwarding repair are supported as **engineering proposals**, not as accepted runnable code.
+
+The diagnosis correctly keeps `first_failure.json` and `terminal_receipt.json` local `call_ledger_resolved=true` fields distinct from the later wrapper `CALL_LEDGER_UNRESOLVED` terminal: province 0 was still in flight and guard/source reconciliation did not complete. The 298-entry partial readback preserves present files only. One C9 attempt is consumed; no complete outer turn, safe pause, C10 call, retry, or numerical comparison exists. The five protected untracked roots remain in place, with C9 partial manifest SHA-256 `80BD0D42CB73B4E39B811E759505480542D5A73227014F30B732C34A8AC1FDC3` and four prior manifest hashes unchanged.
+
+This ACCEPT authorizes only use of the diagnosis as a basis for a **separately scoped zero-science engineering repair candidate**. Any changed wrapper will have a new raw hash and cannot run under the existing exact active-contract binding. The repaired runner and updated authority chain require independent review; any further C9 scientific attempt requires a new Owner decision and budget. Results eligibility remains `FALSE`.
