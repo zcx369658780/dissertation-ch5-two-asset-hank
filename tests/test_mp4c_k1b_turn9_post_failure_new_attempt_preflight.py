@@ -190,6 +190,50 @@ def test_future_execute_source_order_denies_missing_authority_before_loading():
     assert (ROOT / "tasks/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_CONTRACT.json").exists() is False
 
 
+def _call_name(node):
+    if isinstance(node.func, ast.Name):
+        return node.func.id
+    if isinstance(node.func, ast.Attribute):
+        return node.func.attr
+    return None
+
+
+def _assert_final_entry_guards_precede(function, downstream):
+    checks = [node for node in function.body if isinstance(node, ast.If)]
+    assert len(checks) >= 2
+    sealed, output = checks[:2]
+    sealed_calls = {_call_name(node) for node in ast.walk(sealed.test)
+                    if isinstance(node, ast.Call)}
+    output_calls = {_call_name(node) for node in ast.walk(output.test)
+                    if isinstance(node, ast.Call)}
+    assert {"sealed_evidence_checks", "protected_manifest_checks"} <= sealed_calls
+    assert {"lexists", "path_components_safe"} <= output_calls
+    calls = [node for node in ast.walk(function) if isinstance(node, ast.Call)]
+    for name in downstream:
+        lines = [node.lineno for node in calls if _call_name(node) == name]
+        assert lines, f"{function.name}: missing {name}"
+        assert output.lineno < min(lines), f"{function.name}: {name} precedes output gate"
+    assert sealed.lineno < output.lineno
+    for name in ("claim_output_root", "mkdir", "makedirs"):
+        assert all(output.lineno < node.lineno for node in calls if _call_name(node) == name)
+
+
+def test_final_committed_load_delegate_guards_precede_contract_and_exec():
+    tree = ast.parse(WRAPPER.read_bytes(), filename=str(WRAPPER))
+    function = next(node for node in tree.body if isinstance(node, ast.FunctionDef)
+                    and node.name == "load_delegate")
+    _assert_final_entry_guards_precede(
+        function, {"committed_file", "spec_from_file_location", "exec"})
+
+
+def test_final_committed_run_timed_action_guards_precede_dispatch_and_clock():
+    tree = ast.parse(WRAPPER.read_bytes(), filename=str(WRAPPER))
+    function = next(node for node in tree.body if isinstance(node, ast.FunctionDef)
+                    and node.name == "run_timed_action")
+    _assert_final_entry_guards_precede(
+        function, {"load_delegate", "future_gate", "clock_sample"})
+
+
 def _read_only_gates_block(module, delegate):
     if module is delegate:
         with pytest.raises(delegate.RepeatBlocked):
