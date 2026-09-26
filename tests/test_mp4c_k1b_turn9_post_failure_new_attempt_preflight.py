@@ -142,11 +142,6 @@ def test_all_five_protected_manifests_have_exact_read_only_identity(modules, mon
                             "0" * 64 if path == ROOT / target else original(path))
         assert module.protected_manifest_checks(ROOT)[target.as_posix()] is False
         monkeypatch.setattr(module, "sha", original_sha)
-        original_is_file = Path.is_file
-        monkeypatch.setattr(Path, "is_file", lambda path, target=target, original=original_is_file:
-                            False if path == ROOT / target else original(path))
-        assert module.protected_manifest_checks(ROOT)[target.as_posix()] is False
-        monkeypatch.setattr(Path, "is_file", original_is_file)
 
 
 def test_reparse_component_and_missing_manifest_fail_closed(modules, monkeypatch):
@@ -193,3 +188,82 @@ def test_future_execute_source_order_denies_missing_authority_before_loading():
                or node.func.id not in {"load_delegate", "claim_output_root"}
                for node in ast.walk(execute))
     assert (ROOT / "tasks/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_CONTRACT.json").exists() is False
+
+
+def _read_only_gates_block(module, delegate):
+    if module is delegate:
+        with pytest.raises(delegate.RepeatBlocked):
+            delegate.preflight(ROOT)
+        with pytest.raises(delegate.RepeatBlocked):
+            delegate.future_gate(ROOT, delegate.NEW_EXECUTION_ID)
+    else:
+        with pytest.raises(module.TimingBlocked):
+            module.static_preflight(ROOT)
+        with pytest.raises(module.TimingBlocked):
+            module.future_gate(ROOT, module.NEW_EXECUTION_ID, delegate)
+
+
+def _mock_lstat_component(monkeypatch, component, missing=False):
+    original = Path.lstat
+    def substitute(path):
+        if path == component:
+            if missing:
+                raise FileNotFoundError(str(path))
+            identity = original(path)
+            class ReparseStat:
+                st_mode = identity.st_mode
+                st_file_attributes = getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0x400)
+            return ReparseStat()
+        return original(path)
+    monkeypatch.setattr(Path, "lstat", substitute)
+
+
+@pytest.mark.parametrize("index", range(5))
+@pytest.mark.parametrize("fault", ["hash", "missing", "reparse"])
+def test_every_protected_manifest_fault_blocks_both_runners(modules, monkeypatch, index, fault):
+    wrapper, delegate = modules
+    target = ROOT / list(wrapper.PROTECTED_MANIFESTS)[index]
+    if fault == "hash":
+        for module in modules:
+            original = module.sha
+            monkeypatch.setattr(module, "sha", lambda path, original=original:
+                                "0" * 64 if path == target else original(path))
+    else:
+        _mock_lstat_component(monkeypatch, target if fault == "missing" else target.parent,
+                              missing=fault == "missing")
+    for module in modules:
+        assert module.protected_manifest_checks(ROOT)[target.relative_to(ROOT).as_posix()] is False
+        _read_only_gates_block(module, delegate)
+    assert not (ROOT / wrapper.OUTPUT).exists()
+
+
+@pytest.mark.parametrize("relative", [
+    "reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn9_k1b_input_candidate.json",
+    "reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn9_k1b_frozen_share_payoff_plan.npz",
+    "reports/ch5_k1b_turn9_timed_risk_exception_run001/timing_failure.json",
+])
+@pytest.mark.parametrize("component_kind", ["leaf", "parent"])
+def test_sealed_leaf_or_parent_reparse_denied_before_content_read(
+        modules, monkeypatch, relative, component_kind):
+    wrapper, delegate = modules
+    target = ROOT / relative
+    component = target if component_kind == "leaf" else target.parent
+    _mock_lstat_component(monkeypatch, component)
+    for module in modules:
+        original = module.sha
+        monkeypatch.setattr(module, "sha", lambda path, original=original:
+                            (_ for _ in ()).throw(AssertionError("unsafe leaf was read"))
+                            if path == target else original(path))
+    for module in modules:
+        assert module.sealed_evidence_checks(ROOT)[relative] is False
+        _read_only_gates_block(module, delegate)
+    assert not (ROOT / wrapper.OUTPUT).exists()
+
+
+def test_new_output_parent_reparse_denied_without_root_creation(modules, monkeypatch):
+    wrapper, delegate = modules
+    _mock_lstat_component(monkeypatch, (ROOT / wrapper.OUTPUT).parent)
+    for module in modules:
+        assert not module.path_components_safe(ROOT / module.OUTPUT)
+        _read_only_gates_block(module, delegate)
+    assert not (ROOT / wrapper.OUTPUT).exists()

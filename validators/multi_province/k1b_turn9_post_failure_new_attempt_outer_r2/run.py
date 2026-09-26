@@ -80,6 +80,17 @@ SEALED = {
     "turn9_k1b_input_candidate.json": "FBB18A5B8B4FD94F337510DBB4E62F94188C27863EED1F79FE2E1A71B5BC39AB",
     "turn9_k1b_frozen_share_payoff_plan.npz": "E7E6AF79864F67A28386ECF8BEB3B71C6080E9A6C6E64F4CBA8125E1C19D34DD",
 }
+SEALED_EVIDENCE = {
+    OLD_ROOT/"execution_artifact_manifest.json": MANIFEST_SHA,
+    OLD_ROOT/"turn9_entering_bundle_manifest.json": ENTERING_MANIFEST_SHA,
+    OLD_ROOT/"turn9_entering_bundle_readback.json": "E428D105600D091979B526ADD6BF61E0FC294050B9FAB97FE8B87A29A1012F85",
+    OLD_ROOT/"turn9_k1b_input_candidate.json": SEALED["turn9_k1b_input_candidate.json"],
+    OLD_ROOT/"turn9_k1b_frozen_share_payoff_plan.npz": SEALED["turn9_k1b_frozen_share_payoff_plan.npz"],
+    OLD_ROOT/"comparison_receipt.json": PRIOR_COMPARISON_SHA,
+    OLD_ROOT/"terminal_receipt.json": PRIOR_TERMINAL_SHA,
+    OLD_FAILED_OUTPUT/"partial_artifact_manifest.json": PROTECTED_MANIFESTS[OLD_FAILED_OUTPUT/"partial_artifact_manifest.json"],
+    OLD_FAILED_OUTPUT/"timing_failure.json": OLD_FAILURE_SHA,
+}
 CEILINGS = {
     "source_native_initializations":31,"scalar_labor_roots_attempted":24800,"scalar_labor_roots_returned":24800,
     "corrected_policy_maps":1581,"d2_q_assemblies":1581,"selector_evaluations":1264800,
@@ -199,11 +210,39 @@ def path_components_safe(path:Path)->bool:
         if os.name=="nt" and attributes is None:return False
     return True
 
+def safe_regular_file(path:Path)->bool:
+    if not path_components_safe(path):return False
+    try:return stat.S_ISREG(path.lstat().st_mode)
+    except OSError:return False
+
+def sealed_evidence_checks(repo:Path)->dict[str,bool]:
+    checks={}
+    for relative,expected in SEALED_EVIDENCE.items():
+        path=repo/relative
+        try:checks[relative.as_posix()]=safe_regular_file(path) and sha(path)==expected
+        except OSError:checks[relative.as_posix()]=False
+    return checks
+
+def safe_tree_paths(root:Path)->list[Path]:
+    """Inspect each child before recursion; never traverse a reparse directory."""
+    if not path_components_safe(root):raise RepeatBlocked("BLOCKED__SEALED_TREE_REPARSE")
+    pending=[root]
+    paths=[]
+    while pending:
+        directory=pending.pop()
+        for path in directory.iterdir():
+            if not path_components_safe(path):raise RepeatBlocked("BLOCKED__SEALED_TREE_REPARSE")
+            identity=path.lstat()
+            if stat.S_ISDIR(identity.st_mode):pending.append(path)
+            elif not stat.S_ISREG(identity.st_mode):raise RepeatBlocked("BLOCKED__SEALED_TREE_NONREGULAR")
+            paths.append(path)
+    return paths
+
 def protected_manifest_checks(repo:Path)->dict[str,bool]:
     checks={}
     for relative,expected in PROTECTED_MANIFESTS.items():
         path=repo/relative
-        try:checks[relative.as_posix()]=path_components_safe(path) and path.is_file() and sha(path)==expected
+        try:checks[relative.as_posix()]=safe_regular_file(path) and sha(path)==expected
         except OSError:checks[relative.as_posix()]=False
     return checks
 
@@ -289,6 +328,8 @@ def canonical_order(repo: Path) -> tuple[str,...]:
 
 
 def load_bundle(repo: Path, turn: int, root: Path = OLD_ROOT) -> dict[str,Any]:
+    if root==OLD_ROOT and not all(sealed_evidence_checks(repo).values()):
+        raise RepeatBlocked("BLOCKED__SEALED_EVIDENCE_PATH")
     jp=repo/root/f"turn{turn}_k1b_input_candidate.json"
     pp=repo/root/f"turn{turn}_k1b_frozen_share_payoff_plan.npz"
     if root==OLD_ROOT and (sha(jp)!=SEALED[jp.name] or sha(pp)!=SEALED[pp.name]):
@@ -327,6 +368,8 @@ def load_bundle(repo: Path, turn: int, root: Path = OLD_ROOT) -> dict[str,Any]:
 
 
 def prior_output_binding(repo:Path)->dict[str,Any]:
+    if not all(sealed_evidence_checks(repo).values()):
+        raise RepeatBlocked("BLOCKED__SEALED_EVIDENCE_PATH")
     """Bind the complete accepted C8 output and sealed entering-C9 bundle."""
     root=repo/OLD_ROOT
     if not path_components_safe(root):
@@ -345,12 +388,13 @@ def prior_output_binding(repo:Path)->dict[str,Any]:
     manifest=json.loads(manifest_path.read_text(encoding="utf-8"))
     entries=manifest.get("entries",[])
     names=[row.get("path") for row in entries]
-    actual=sorted(p.relative_to(root).as_posix() for p in root.rglob("*") if p.is_file()
+    tree_paths=safe_tree_paths(root)
+    actual=sorted(p.relative_to(root).as_posix() for p in tree_paths if p.is_file()
                   and p!=manifest_path)
     checks["full_manifest_complete"]=(len(entries)==manifest.get("entry_count")
         and len(names)==len(set(names)) and sorted(names)==actual
         and path_components_safe(root)
-        and all(path_components_safe(p) for p in root.rglob("*"))
+        and all(path_components_safe(p) for p in tree_paths)
         and sum(row.get("bytes",-1) for row in entries)==manifest.get("total_bytes")
         and all((root/name).is_file() and path_components_safe(root/name)
                 and (root/name).stat().st_size==row["bytes"] and sha(root/name)==row["sha256"]
@@ -411,6 +455,8 @@ def budget_binding(repo:Path)->dict[str,Any]:
 
 def preflight(repo: Path = REPOSITORY) -> dict[str,Any]:
     repo=repo.resolve()
+    sealed=sealed_evidence_checks(repo)
+    if not all(sealed.values()):raise RepeatBlocked("BLOCKED__SEALED_EVIDENCE_PATH",sealed)
     protected=protected_manifest_checks(repo)
     if not all(protected.values()):raise RepeatBlocked("BLOCKED__PROTECTED_MANIFEST_IDENTITY",protected)
     budget=budget_binding(repo)
@@ -589,6 +635,8 @@ def turn9_terminal(carrier:Mapping[str,Any])->str:
 
 
 def source_snapshot(repo:Path)->dict[str,str]:
+    if not all(sealed_evidence_checks(repo).values()):
+        raise RepeatBlocked("BLOCKED__SEALED_EVIDENCE_PATH")
     tracked_src=[Path(name) for name in git(repo,"ls-files","src/ch5_two_asset_hank").splitlines()]
     paths=[*(OLD_ROOT/name for name in SEALED),DISTANCE,Path("TASK_CURRENT.md"),FUTURE_TASK_RELATIVE,
         Path("validators/multi_province/k1b_turn5_turn6_bounded_continuation/run.py"),
@@ -610,6 +658,8 @@ def source_snapshot(repo:Path)->dict[str,str]:
     return {p.as_posix():sha(repo/p) for p in paths}
 
 def future_gate(repo:Path,execution_id:str|None)->None:
+    if not all(sealed_evidence_checks(repo).values()):
+        raise RepeatBlocked("BLOCKED__SEALED_EVIDENCE_PATH")
     if not all(protected_manifest_checks(repo).values()):
         raise RepeatBlocked("BLOCKED__PROTECTED_MANIFEST_IDENTITY")
     if os.path.lexists(repo/OUTPUT) or not path_components_safe(repo/OUTPUT):
@@ -650,6 +700,8 @@ def future_gate(repo:Path,execution_id:str|None)->None:
 
 def assert_active_authority(repo:Path,execution_id:str)->dict[str,Any]:
     """Recheck the committed one-shot authority on every delegate route."""
+    if not all(sealed_evidence_checks(repo).values()):
+        raise RepeatBlocked("BLOCKED__SEALED_EVIDENCE_PATH")
     if not all(protected_manifest_checks(repo).values()):
         raise RepeatBlocked("BLOCKED__PROTECTED_MANIFEST_IDENTITY")
     if os.path.lexists(repo/OUTPUT) or not path_components_safe(repo/OUTPUT):

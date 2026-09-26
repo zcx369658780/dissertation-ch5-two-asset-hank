@@ -25,3 +25,13 @@
 本次 Repair1 仅原地修补同五条路径。两份 runner 的静态前检和未来身份门均核验 C6-prime、C7、C8、C8-timing、C9-partial 五份精确 manifest；所有受保护路径组件使用 `lstat` 拒绝符号链接及 Windows reparse/junction，缺失或替换 manifest 均 fail closed。wrapper 的新根路径检查也改用相同规则；未来 `execute_once` 的缺失合同拒绝位于 delegate 加载及任何输出根领取之前。新增只读测试仅直接调用静态门/未来门并检查 AST，模拟缺失、替换与 reparse，不调用 `--execute`、`execute_once`、`run_timed_action` 或科学入口。
 
 Repair1 定向命令 `python -m pytest -q tests/test_mp4c_k1b_turn9_post_failure_new_attempt_preflight.py`：`10 passed in 0.67s`，本次只运行一次。新 wrapper/delegate/test 原始 SHA-256 分别为 `D4F2A1BACA2838217950CC7468A5B27509B558A3BD3A6865A9ECB7B0E9E9CB01`、`44080FE05EEAD299F34DBD1FAB33EDCB3A0E77B04459402169F5ADD24EEBC84A`、`4D1FB993E00C04582865B74A9FFFF0EEDD7DEDAA58D5BEE3E47DD286D4B8DBE6`。本次执行标志探测、模型调用、科学调用、新 C9/C10 尝试、重试和部分续跑均为零；受保护输出写入为零，新根仍不存在。五个保护清单原始哈希复核通过。该记录只提交新的静态候选，仍待 GPT Work 独立 ACCEPT/REJECT；Results eligibility 为 `FALSE`。
+
+## Repair2 独立候选（2026-09-26）
+
+Repair1 提交 `0e71c8edfed120c5f117f2e16815748b280fa3a5` 经 GPT Work 独立判为 `REJECT__SEALED_INPUT_PATH_GAP_AND_EVIDENCE_AMBIGUITY__NO_SCIENCE`。Repair1 五份文件原始 SHA-256（wrapper、delegate、test、报告、收据）依次为 `D4F2A1BACA2838217950CC7468A5B27509B558A3BD3A6865A9ECB7B0E9E9CB01`、`44080FE05EEAD299F34DBD1FAB33EDCB3A0E77B04459402169F5ADD24EEBC84A`、`4D1FB993E00C04582865B74A9FFFF0EEDD7DEDAA58D5BEE3E47DD286D4B8DBE6`、`EB75C82E84A0BCDCEA0B46501BE53B5442AA890C4B98B13E9BB789ABB0150B1F`、`47540885CF338CC315DE4CC0519E81D8A03D6A1D8971778C49BC6487BDBC5901`。前文原候选的两次违规执行标志探测、三次 `7 passed` 均属原拒绝任务；Repair1 只有一次 `10 passed` 的只读测试。本段记录仅属 Repair2，不改变两个 REJECT 结论。
+
+Repair2 在两份 runner 中为 C8 execution/entering manifest、readback、JSON、NPZ、comparison、terminal，以及 C9 partial manifest 和 `timing_failure.json` 增加完整路径 `lstat` 检查、普通文件判断及原始哈希核验。C8 目录扫描改为逐层检查后再递归，拒绝 reparse/junction 子目录。wrapper 的静态门、未来门和 delegate 加载前入口均先核验封存路径；delegate 的静态门、未来门、直接封存读取和源快照也先核验。五个受保护清单核验仍保留。未修改封存输入或经济、求解器代码。
+
+只运行授权的惰性测试文件：首次 `31 passed, 1 failed`，失败是旧测试仍模拟 `Path.is_file()`，与新的 `lstat` 判断不一致；仅修正该测试后，允许的一次定向重跑为 `32 passed in 2.53s`。参数化测试覆盖五个 manifest 各自的哈希替换、缺失叶文件和 reparse 父组件；另覆盖 C8 JSON/NPZ、C9 timing failure 叶及父组件和新根父组件的只读模拟，检查静态/未来门拒绝且新根未创建。重跑后，源码检查发现直接加载 delegate 前仍需同一封存路径门，已补入 wrapper；按一次重跑预算未第三次运行测试，因此最终 wrapper 这两处新增前置门只有静态源码检查，未获最终版本的完整测试验证。未来真实执行、竞态和 Windows junction 行为仍须独立审查。
+
+Repair2 本身的执行标志探测、模型/科学调用、新 C9/C10 尝试、重试、部分续跑和保护输出写入均为零；旧 `RUN001` 实际账本继续为 `CALL_LEDGER_UNRESOLVED`，完整旧 turn 扣账仅是治理额度。当前 wrapper/delegate/test 原始 SHA-256 分别为 `B7C276FF55EAB99B5894051B10753B62C040636FCC0271C2B2EA9B2BD678EB86`、`B890F16C515249F91BFD71DAE9797FB00A5E8AE7631F688E6DCAF79CB60BD794`、`38C1B5C51DAA345847F1E9E06F431892D6F0C43D5DC2BED6CF3642AAFEF552FC`。新输出根和 live 合同/执行采纳/任务仍不存在。结果资格 `FALSE`；提交后仅待 GPT Work 独立 ACCEPT/REJECT。

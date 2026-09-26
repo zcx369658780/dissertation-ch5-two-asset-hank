@@ -1,7 +1,9 @@
 {
-  "task_id": "CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_STATIC_RUNNER_REPAIR1_20260926",
+  "task_id": "CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_STATIC_RUNNER_REPAIR2_20260926",
   "status": "STATIC_CANDIDATE_ONLY__PENDING_INDEPENDENT_GPT_WORK_ACCEPT_REJECT",
   "original_candidate_verdict": "REJECT__TASK_BOUNDARY_VIOLATION_AND_STATIC_GAPS__NO_SCIENCE",
+  "repair1_candidate_verdict": "REJECT__SEALED_INPUT_PATH_GAP_AND_EVIDENCE_AMBIGUITY__NO_SCIENCE",
+  "repair1_candidate_commit": "0e71c8edfed120c5f117f2e16815748b280fa3a5",
   "original_rejected_raw_sha256": {
     "new_wrapper_candidate": "3A3EAF65B2BFDD073E1700F072016CC0FD877991BB8B07C2400EA7AC2AE60771",
     "new_delegate_candidate": "FFFA102D4C5AEF78CCAA717F5EBAC46E6B3441B55A4668E9252CF0576258870E",
@@ -14,6 +16,18 @@
     "both_blocked_before_model_science_and_output_creation": true,
     "reclassified_as_compliant": false
   },
+  "original_rejected_task_test_runs": [
+    "7 passed; first forbidden execute-flag probe blocked",
+    "7 passed; second forbidden execute-flag probe blocked",
+    "7 passed; final read-only version"
+  ],
+  "repair1_rejected_raw_sha256": {
+    "new_wrapper_candidate": "D4F2A1BACA2838217950CC7468A5B27509B558A3BD3A6865A9ECB7B0E9E9CB01",
+    "new_delegate_candidate": "44080FE05EEAD299F34DBD1FAB33EDCB3A0E77B04459402169F5ADD24EEBC84A",
+    "new_inert_test": "4D1FB993E00C04582865B74A9FFFF0EEDD7DEDAA58D5BEE3E47DD286D4B8DBE6",
+    "candidate_report": "EB75C82E84A0BCDCEA0B46501BE53B5442AA890C4B98B13E9BB789ABB0150B1F",
+    "static_receipt": "47540885CF338CC315DE4CC0519E81D8A03D6A1D8971778C49BC6487BDBC5901"
+  },
   "repair1_counts": {
     "execute_flag_probes": 0,
     "model_calls": 0,
@@ -25,6 +39,21 @@
     "protected_output_writes": 0
   },
   "repair1_test_result": "10 passed in 0.67s; one targeted read-only run",
+  "repair2_counts": {
+    "execute_flag_probes": 0,
+    "model_calls": 0,
+    "scientific_calls": 0,
+    "new_C9_attempts": 0,
+    "C10_attempts": 0,
+    "retries": 0,
+    "partial_resumes": 0,
+    "protected_output_writes": 0
+  },
+  "repair2_test_runs": [
+    "31 passed, 1 failed; outdated Path.is_file mock",
+    "32 passed in 2.53s; one allowed targeted rerun"
+  ],
+  "repair2_final_wrapper_guard_note": "Additional load_delegate and run_timed_action pre-import guards added after the allowed rerun; statically inspected, not retested",
   "results_eligibility": false,
   "old_execution_id": "C9_TIMED_RISK_RUN001",
   "old_actual_ledger": "CALL_LEDGER_UNRESOLVED",
@@ -37,40 +66,24 @@
   "new_live_contract_created": false,
   "new_execution_adoption_created": false,
   "new_execution_task_created": false,
-  "allowed_new_paths": [
+  "allowed_modified_paths": [
     "validators/multi_province/k1b_turn9_post_failure_new_attempt_timed/run.py",
     "validators/multi_province/k1b_turn9_post_failure_new_attempt_outer_r2/run.py",
     "tests/test_mp4c_k1b_turn9_post_failure_new_attempt_preflight.py",
     "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_STATIC_RUNNER_CANDIDATE_20260926.md",
     "EVIDENCE/ch5_k1b_c9_post_failure_new_attempt_static_runner_20260926/static_receipt.json"
   ],
-  "this_task_counts": {
-    "model_calls": 0,
-    "scientific_calls": 0,
-    "live_wrapper_executions": 0,
-    "new_C9_attempts": 0,
-    "C10_attempts": 0,
-    "retries": 0,
-    "partial_resumes": 0,
-    "protected_output_writes": 0,
-    "inert_wrapper_main_execute_flag_denials_in_initial_tests": 2
-  },
   "test_selection": "python -m pytest -q tests/test_mp4c_k1b_turn9_post_failure_new_attempt_preflight.py",
-  "test_runs": [
-    "7 passed, 0 failed; initial inert execute-flag denial probe excluded from zero-execution compliance evidence",
-    "7 passed, 0 failed; initial inert execute-flag denial probe excluded from zero-execution compliance evidence",
-    "7 passed, 0 failed; final read-only authority-gate test, no execute flag"
-  ],
   "raw_sha256": {
-    "TASK_CURRENT.md": "4081850E29547580963D63DCB47A24527B64B2A9BC084540B608A2B82905A147",
+    "TASK_CURRENT.md": "04E556BFA8B24D04274326CE034566006AA7ACF02A9336864F113DCA3A2C7358",
     "owner_budget_adoption": "C1D88891C08D7526996F72DE6F77AA6D0FA2C593BAD91017877C8B8A0A51573D",
     "adopted_proposal_json": "66C2C028B07E2CB41FFBB05B643C6EF644291A0FC94C8DAF2FE888518D240460",
     "old_wrapper_reference": "59A63E933BF13A4FC39EC583227B2E9724B5E06B510A1896CB1307DBCC8F1D06",
     "old_delegate_reference": "A4B4985DAE8C15E5F21125A0A82FCE39D1B08D975929250186D941D691C4E7BB",
-    "new_wrapper_candidate": "D4F2A1BACA2838217950CC7468A5B27509B558A3BD3A6865A9ECB7B0E9E9CB01",
-    "new_delegate_candidate": "44080FE05EEAD299F34DBD1FAB33EDCB3A0E77B04459402169F5ADD24EEBC84A",
-    "new_inert_test": "4D1FB993E00C04582865B74A9FFFF0EEDD7DEDAA58D5BEE3E47DD286D4B8DBE6",
-    "candidate_report": "EB75C82E84A0BCDCEA0B46501BE53B5442AA890C4B98B13E9BB789ABB0150B1F"
+    "new_wrapper_candidate": "B7C276FF55EAB99B5894051B10753B62C040636FCC0271C2B2EA9B2BD678EB86",
+    "new_delegate_candidate": "B890F16C515249F91BFD71DAE9797FB00A5E8AE7631F688E6DCAF79CB60BD794",
+    "new_inert_test": "38C1B5C51DAA345847F1E9E06F431892D6F0C43D5DC2BED6CF3642AAFEF552FC",
+    "candidate_report": "195D2CBFB43D6B1864552F97213BD06B466CCBF427F18B6065D64D45D792A491"
   },
   "canonical_adopted_map_sha256": {
     "category": "F76B958C8D57CEAD22B61A497FCCFBF45143E1DC2AA07CCC656EBA6252464C20",

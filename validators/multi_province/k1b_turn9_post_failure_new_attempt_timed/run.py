@@ -99,13 +99,46 @@ def path_components_safe(path: Path) -> bool:
     return True
 
 
+def safe_regular_file(path: Path) -> bool:
+    if not path_components_safe(path):
+        return False
+    try:
+        return stat.S_ISREG(path.lstat().st_mode)
+    except OSError:
+        return False
+
+
+SEALED_EVIDENCE = {
+    C8_ROOT / "execution_artifact_manifest.json": C8_MANIFEST_SHA,
+    C8_ROOT / "turn9_entering_bundle_manifest.json": C8_ENTERING_SHA,
+    C8_ROOT / "turn9_entering_bundle_readback.json": C8_READBACK_SHA,
+    C8_ROOT / "turn9_k1b_input_candidate.json": C8_JSON_SHA,
+    C8_ROOT / "turn9_k1b_frozen_share_payoff_plan.npz": C8_NPZ_SHA,
+    C8_ROOT / "comparison_receipt.json": "7F70FB73EAAE0D2BA4C2F60AC5FE071AA963D42EA77A64950D4F94562CB364FC",
+    C8_ROOT / "terminal_receipt.json": "01BBF375DA61B387F697A581A9137C57FC87A3DC7CBC937838933A25F7297A7D",
+    OLD_OUTPUT / "partial_artifact_manifest.json": PROTECTED_MANIFESTS[OLD_OUTPUT / "partial_artifact_manifest.json"],
+    OLD_OUTPUT / "timing_failure.json": OLD_FAILURE_SHA,
+}
+
+
+def sealed_evidence_checks(repo: Path) -> dict[str, bool]:
+    checks = {}
+    for relative, expected in SEALED_EVIDENCE.items():
+        path = repo / relative
+        try:
+            checks[relative.as_posix()] = safe_regular_file(path) and sha(path) == expected
+        except OSError:
+            checks[relative.as_posix()] = False
+    return checks
+
+
 def protected_manifest_checks(repo: Path) -> dict[str, bool]:
     checks = {}
     for relative, expected in PROTECTED_MANIFESTS.items():
         path = repo / relative
         try:
             checks[relative.as_posix()] = (
-                path_components_safe(path) and path.is_file() and sha(path) == expected)
+                safe_regular_file(path) and sha(path) == expected)
         except OSError:
             checks[relative.as_posix()] = False
     return checks
@@ -132,6 +165,10 @@ def committed_file(repo: Path, relative: Path) -> str:
 
 
 def load_delegate(repo: Path, enforce_contract_hash: bool = True):
+    if not all(sealed_evidence_checks(repo).values()) or not all(protected_manifest_checks(repo).values()):
+        raise TimingBlocked("BLOCKED__NEW_C9_SEALED_EVIDENCE_PATH")
+    if os.path.lexists(repo / OUTPUT) or not path_components_safe(repo / OUTPUT):
+        raise TimingBlocked("BLOCKED__NEW_C9_OUTPUT_EXISTS_OR_UNSAFE")
     contract_sha = committed_file(repo, CONTRACT)
     delegate_sha = committed_file(repo, DELEGATE)
     contract = json.loads((repo / CONTRACT).read_text(encoding="utf-8"))
@@ -197,6 +234,9 @@ def _adopted_budget(repo: Path) -> dict[str, Any]:
 def static_preflight(repo: Path = REPOSITORY, require_inactive: bool = True) -> dict[str, Any]:
     """Validate candidate identities without importing delegate or model science."""
     repo = repo.resolve()
+    sealed = sealed_evidence_checks(repo)
+    if not all(sealed.values()):
+        raise TimingBlocked("BLOCKED__NEW_C9_SEALED_EVIDENCE_PATH", sealed)
     budget = _adopted_budget(repo)
     checks = {
         "repository": git(repo, "rev-parse", "--show-toplevel").replace("\\", "/").casefold()
@@ -287,6 +327,8 @@ def _exact_int_map(value: Any, expected: Mapping[str, int]) -> bool:
 
 def future_gate(repo: Path, execution_id: str | None, c9: Any) -> dict[str, Any]:
     """Require a wholly new, committed authority chain before output or science."""
+    if not all(sealed_evidence_checks(repo).values()):
+        raise TimingBlocked("BLOCKED__NEW_C9_SEALED_EVIDENCE_PATH")
     if not all(protected_manifest_checks(repo).values()):
         raise TimingBlocked("BLOCKED__NEW_C9_PROTECTED_MANIFEST_IDENTITY")
     if os.path.lexists(repo / OUTPUT) or not path_components_safe(repo / OUTPUT):
@@ -446,6 +488,10 @@ def run_timed_action(repo: Path, gate: Mapping[str, Any], *,
                      clock: Any = time, utc_now: Any = None) -> dict[str, Any]:
     """Revalidate authority even for direct callers; action is fixed in production."""
     repo = repo.resolve()
+    if not all(sealed_evidence_checks(repo).values()) or not all(protected_manifest_checks(repo).values()):
+        raise TimingBlocked("BLOCKED__NEW_C9_SEALED_EVIDENCE_PATH")
+    if os.path.lexists(repo / OUTPUT) or not path_components_safe(repo / OUTPUT):
+        raise TimingBlocked("BLOCKED__NEW_C9_OUTPUT_EXISTS_OR_UNSAFE")
     c9 = load_delegate(repo)
     gate = future_gate(repo, gate.get("execution_id"), c9)
     output = repo / OUTPUT
