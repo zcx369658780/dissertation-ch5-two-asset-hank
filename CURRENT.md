@@ -25,7 +25,7 @@ Updated: 2026-09-26 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_K1B_C9_NEW_ATTEMPT_FINAL_ENTRY_STATIC_ORDER_ACCEPTED__NO_SCIENCE`
+`CH5_K1B_C9_NEW_ATTEMPT_WHOLE_RUNNER_IDENTITY_REJECTED__NO_SCIENCE`
 
 The C9 preparation and Repair1/Repair2 candidates were independently **REJECTED** for static entry and ledger defects. Repair3 candidate `fb37a8f62d6ca71c7fbf7f3516e9de21473c7ed3` was independently **ACCEPTED for zero-science static entry repair only**. Its inactive delegate-hash rebind candidate `3ecee32cdc4a3e88043a85709a6db7c85f6ec5c8` is independently **ACCEPTED** in `docs/CH5_K1B_C9_INACTIVE_CONTRACT_DELEGATE_REBIND_INDEPENDENT_REVIEW_20260926.md`. `TASK_CURRENT.md` is closed pending Owner's C9-only resource-wall number and subsequent separate active-contract/science authorization. The contract remains non-executable; C9 has not run.
 
@@ -82,6 +82,8 @@ The Codex handoff is now documented in `docs/CH5_K1B_C9_POST_FAILURE_STATIC_RUNN
 After fresh handoff identity, protected-hash and absent-authority checks, GPT Work issued `TASK_CURRENT.md` to that successor for inert static verification of the final Repair2 `load_delegate` and `run_timed_action` gates and complete candidate identity reporting. Repair2 remains REJECTED; this task authorizes no runner edit or science. A new candidate requires independent GPT Work ACCEPT/REJECT. Results eligibility remains `FALSE`.
 
 The successor candidate `8f0b19ed3263b2b57babcff9b1b5b8673a31db2c` is independently **ACCEPTED for final Repair2 entry-gate static source order only** in `docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_FINAL_ENTRY_STATIC_VERIFICATION_INDEPENDENT_REVIEW_20260926.md`. The two inert focused tests passed once; the two runners and `src` were unchanged. Original, Repair1 and Repair2 historical REJECT verdicts and the original two prohibited `--execute` probes remain recorded. `TASK_CURRENT.md` is closed. The old actual ledger is still `CALL_LEDGER_UNRESOLVED`; new C9 science, C10, retry, partial resume and Results remain closed, with Results eligibility `FALSE`.
+
+A subsequent whole-runner identity review **REJECTED** that candidate for an inactive/active preflight defect and pre-import authority gap in `docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_WHOLE_RUNNER_IDENTITY_INDEPENDENT_REVIEW_20260926.md`. The limited final-entry order ACCEPT remains valid for its stated scope only. GPT Work has issued a separate zero-science repair task; no runner-recognized ACCEPT review, live contract, execution adoption/task or new C9 output root exists. Results eligibility remains `FALSE`.
 
 On 2026-09-26 the Owner selected preparation of a C9-only timed-risk exception after the accepted transfer assessment. The exact selection and its limits are in `docs/CH5_K1B_C9_SINGLE_TURN_TIMED_RISK_EXCEPTION_OWNER_SELECTION_20260926.md`. `TASK_CURRENT.md` now assigns only an inactive, zero-science C9 runner/contract/static-test preparation to the existing Codex conversation. No C9-specific resource-wall seconds or one-shot execution authorization has been adopted. The ordinary duration gate remains blocked; C9 has not run and Results eligibility is `FALSE`.
 

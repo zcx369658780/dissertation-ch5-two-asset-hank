@@ -1,33 +1,32 @@
-# Current Builder Task — closed after independent static review
+# Current Builder Task — C9 new runner pre-import identity repair
 
-Task ID: `CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_FINAL_ENTRY_STATIC_VERIFICATION_20260926`
-Status: `CLOSED__FINAL_ENTRY_STATIC_ORDER_ACCEPTED__NO_SCIENCE`
-The task below is historical scope only. Candidate `8f0b19ed3263b2b57babcff9b1b5b8673a31db2c` received independent static-only ACCEPT in `docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_FINAL_ENTRY_STATIC_VERIFICATION_INDEPENDENT_REVIEW_20260926.md`. This closed sheet authorizes no further Codex write, test or execution.
+Task ID: `CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_PREIMPORT_IDENTITY_REPAIR_20260926`
+Status: `ACTIVE__ZERO_SCIENCE_RUNNER_REPAIR_ONLY`
 Assignee: Codex project `Zotero-Analytical-Workflow`, conversation `第五章 K1B 静态 runner 审查后接续` (`01a0dcd7-2acc-7571-b292-5807a0be0b1d`) only.
 Worktree: `D:\ProjectTemp\c5k1bturn56` only. Never access `deep-learning-hank` or Zotero repository files.
 
-## Authority and fixed baseline
+## Authority and baseline
 
-Owner adopted the additional C9 budget and old-failure governance charge for zero-science preparation only. No scientific execution is authorized. The handoff commit is `d55e12d4af0e187efb68af727e16b78afec70942`; the Work task-issuance commit must be its direct child, with `HEAD:src=00682b2e1a7ba23665f6e16f6acf48ad35874883`. Repair2 candidate `e860a54ac3fed1d104009a068722b1045bd87b5f` remains independently REJECTED because its final `load_delegate` and `run_timed_action` gates were changed after the last test. Preserve that verdict, the original candidate and Repair1 REJECT verdicts, and the original two prohibited `--execute` test probes as violations. Old `C9_TIMED_RISK_RUN001` is consumed; actual calls are `CALL_LEDGER_UNRESOLVED`, while the full-old-turn charge is governance accounting only. Results eligibility is `FALSE`.
+The Owner's adopted additional C9 budget, full-old-turn governance charge and 36,000-second cooperative wall authorize zero-science identity-chain preparation only. The latest whole-runner identity review is `REJECT__ACTIVE_PREFLIGHT_AND_PREIMPORT_AUTHORITY_GAPS__NO_SCIENCE` at `docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_WHOLE_RUNNER_IDENTITY_INDEPENDENT_REVIEW_20260926.md`. The earlier `ACCEPT__FINAL_ENTRY_STATIC_ORDER_ONLY__NO_SCIENCE` remains limited to its final-byte order check. Original candidate, Repair1 and Repair2 REJECT verdicts and the original two prohibited `--execute` probes remain visible. Old `C9_TIMED_RISK_RUN001` is consumed; actual calls are `CALL_LEDGER_UNRESOLVED`, and the full-old-turn charge is governance accounting only. Results eligibility is `FALSE`.
 
-Before writing, verify the task-issuance HEAD and its parent, source tree, tracked cleanliness, exactly five protected untracked output roots and their five manifest SHA-256 values against `docs/CH5_K1B_WORK_SESSION_HANDOFF_AFTER_C9_STATIC_REPAIR2_20260926.md`. Verify the proposed new C9 output root and its live contract, execution adoption and task are absent. Stop and report any mismatch without repair.
+Before writing, verify the Work task-issuance HEAD is a direct child of review HEAD `5ecabfb06be9bd5cc54392ed5ea8eb102739629f`, `HEAD:src=00682b2e1a7ba23665f6e16f6acf48ad35874883`, tracked files are clean, and only the five protected untracked output roots remain with manifest SHA-256 matching the handoff. Verify the new C9 output root, live contract, execution adoption/task and runner-recognized ACCEPT review remain absent. Stop on mismatch.
 
-## Allowed work
+## Allowed paths and behavior
 
-Write only these three existing paths:
+Modify only these five existing paths:
 
+- `validators/multi_province/k1b_turn9_post_failure_new_attempt_timed/run.py`
+- `validators/multi_province/k1b_turn9_post_failure_new_attempt_outer_r2/run.py`
 - `tests/test_mp4c_k1b_turn9_post_failure_new_attempt_preflight.py`
 - `docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_STATIC_RUNNER_CANDIDATE_20260926.md`
 - `EVIDENCE/ch5_k1b_c9_post_failure_new_attempt_static_runner_20260926/static_receipt.json`
 
-Add focused AST/source-order tests that read the final committed wrapper bytes without calling runner functions. Verify that `load_delegate` performs sealed-evidence, protected-manifest and new-output-path gates before committed contract/delegate checks and module import/`exec`; verify that `run_timed_action` performs those gates before `load_delegate`, `future_gate`, output claim or clock sampling. Inspect the tests for prohibited calls, then run only the focused inert test selection once. If a test fails, record the observed failure and stop; do not edit either runner or repeat the test under this task. No broader suite or science call is authorized.
+Repair exactly the two independently identified defects. First, make `static_preflight(require_inactive=True/False)` a real fail-closed state distinction: inactive preparation still requires absent future authority and returns a non-executable status; active preflight must not reject a valid chain merely because the future files exist, and must never pass missing, uncommitted or mismatched authority. Second, verify the complete committed contract, task, independent GPT Work runner review and Owner one-shot adoption identities before either the delegate module is executed by the wrapper or the wrapper module is executed by the delegate's direct authority helper. Keep the sealed-evidence, protected-manifest and output-path guards ahead of any import; retain the full post-import budget and source checks before science. The direct delegate CLI must remain blocked. Do not change equations, solver behavior, C8 inputs, budget maps, resource-wall semantics, call accounting or output ownership.
 
-Update the report and receipt with the focused test command/result, zero-science ledger, unchanged protected hashes, absent authority/output paths, and distinct historical original/Repair1/Repair2 outcomes. Retain the original two-probe violation and all three independent REJECT verdicts. Do not claim that static checks prove future runtime behavior, a resolved old ledger, C9 completion or Results eligibility.
+Add focused inert tests for both state branches and pre-import order/fail-closed behavior. Tests may parse source and call only pure, non-importing preflight/identity helpers with mocks or temporary fixtures; they must not invoke `--execute`, `execute_once`, `run_timed_action`, `load_delegate`, `assert_active_authority`, module `exec`, model imports or scientific entrypoints. Do not create a new C9 output root or any live authority file in this worktree. The test budget is at most two focused runs of this test file; record each exact command/result. If the second run fails, or any code changes after it, stop without a third run. No full suite or scientific test is authorized.
 
-Make one local candidate commit staging only the three allowed paths. In the final delivery to GPT Work, provide candidate commit, parent and tree IDs, `HEAD:src`, and post-commit raw SHA-256 of the five original candidate paths (wrapper, delegate, test, report, receipt), including the receipt's own raw hash. Do not put a self-referential receipt hash inside that receipt. Recheck tracked cleanliness, the five protected manifest hashes and absence of the new root/live files after the commit.
+Update the candidate report and receipt with distinct current/historical test counters, original two-probe violation, all earlier independent verdicts, old unresolved actual ledger, zero science/attempts/retries/partial resumes, protected manifest identities and absent new output/live files. Do not claim runtime or scientific acceptance. Make one local candidate commit staging only the five allowed paths; deliver commit, parent, tree, `HEAD:src`, and post-commit raw SHA-256 of all five paths (including the receipt itself) to GPT Work. Recheck tracked cleanliness, protected hashes and absent live/new-root paths. No push or successor.
 
-## Hard stops
+## Hard stop
 
-Do not call wrapper `--execute`, `execute_once`, `run_timed_action`, `load_delegate`, any model/scientific entrypoint, C9/C10, retry or partial resume. Do not create the new output root, live contract, execution adoption, execution task or independent-review file. Do not edit `src`, either runner, budgets, Owner decisions, protected outputs or unrelated files. Do not push or create a successor. A test failure, identity mismatch, unexpected write, or missing evidence is terminal for this task and must be reported without workaround.
-
-The candidate remains pending a fresh independent GPT Work ACCEPT/REJECT. No new C9 execution may proceed without a later explicit Owner one-shot authorization and final dispatch review.
+No `--execute`, model/scientific call, C9/C10 attempt, retry or partial resume. Do not create contract, Owner execution adoption, execution task, runner-recognized ACCEPT review or output root. A first unauthorized action, identity mismatch, protected-output change, or evidence gap ends this task. The candidate must stop for fresh independent GPT Work ACCEPT/REJECT. A new C9 scientific attempt requires separate explicit Owner one-shot authorization and final dispatch review.
