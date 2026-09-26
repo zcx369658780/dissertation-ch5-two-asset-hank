@@ -1,0 +1,136 @@
+{
+  "schema": "CH5_K1B_C9_OUTPUT_MUTATION_ATOMICITY_ZERO_SCIENCE_DESIGN_RECEIPT_V1",
+  "status": "LOCAL_ZERO_SCIENCE_DESIGN_CANDIDATE_PENDING_INDEPENDENT_GPT_WORK_ACCEPT_REJECT",
+  "issuing_baseline_parent": "fc84ba099ef96360042e08632e3c4ef31710986f",
+  "issuing_src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
+  "new_paths_only": [
+    "docs/CH5_K1B_C9_OUTPUT_MUTATION_ATOMICITY_ZERO_SCIENCE_DESIGN_20260927.md",
+    "EVIDENCE/ch5_k1b_c9_output_mutation_atomicity_zero_science_design_20260927/design_receipt.json"
+  ],
+  "raw_sha256_bindings": {
+    "frozen_delegate": {
+      "path": "validators/multi_province/k1b_turn9_post_failure_new_attempt_outer_r2/run.py",
+      "sha256": "AA081078AC9B2997E3DFAA6BA5AF725F5C53013EA7F194780E5BE35A0C911BF2"
+    },
+    "frozen_inert_test": {
+      "path": "tests/test_mp4c_k1b_turn9_post_failure_new_attempt_preflight.py",
+      "sha256": "F31F86D9975171441AF4CB7ADD5E6B072163DB27051D9EE5BD9F320087DBE161"
+    },
+    "repair1_independent_review": {
+      "path": "docs/CH5_K1B_C9_POST_FAILURE_OUTPUT_GUARD_REPAIR1_INDEPENDENT_REVIEW_20260927.md",
+      "sha256": "D52FD4A47FB6DA9AA7FE301BE6B2F31C09AD84BA574F96B74A3599B698FD022C"
+    },
+    "rejected_repair_review": {
+      "path": "docs/CH5_K1B_C9_POST_FAILURE_OUTPUT_GUARD_REPAIR_INDEPENDENT_REVIEW_20260927.md",
+      "sha256": "64F0BA1E63954312D3A96273FB5F4787907AE14C9E3EEB3EA1FB0D2842B3880A"
+    },
+    "accepted_diagnosis_review": {
+      "path": "docs/CH5_K1B_C9_POST_FAILURE_OUTPUT_GUARD_DIAGNOSIS_INDEPENDENT_REVIEW_20260927.md",
+      "sha256": "4E6745BF3A9F50F1A13EE898C729FC96CC82CDFDEC355EF230F15AABAFF5ECC7"
+    },
+    "repair1_receipt": {
+      "path": "EVIDENCE/ch5_k1b_c9_post_failure_output_guard_zero_science_repair1_20260927/repair1_receipt.json",
+      "sha256": "C38C089B1674F5305F201A173C5BEE0E5C50AF38DF7931B167BB90FF299C01DA"
+    },
+    "task": {
+      "path": "TASK_CURRENT.md",
+      "sha256": "C81FAFE0D6A255E239A385D4D1596B54F123D049D5B58B4645CB8C73BF037711"
+    },
+    "design_report": {
+      "path": "docs/CH5_K1B_C9_OUTPUT_MUTATION_ATOMICITY_ZERO_SCIENCE_DESIGN_20260927.md",
+      "sha256": "46AA2C303BC7CB0F10A7C916BFCABA9F85B4EE79A91B7DE47E9B97A0900B3634"
+    }
+  },
+  "accepted_scope": "ACCEPT__BOUNDED_ZERO_SCIENCE_MKDIR_GUARD_AND_CHECK_WINDOW_EVIDENCE_ONLY",
+  "unresolved_windows": [
+    "post_final_check_to_mutation_toctou",
+    "dir_fd_or_native_handle_relative_semantics",
+    "no_reparse_relative_create_delete",
+    "file_identity_lifetime_and_share_modes"
+  ],
+  "threat_models": [
+    "trusted_single_process_no_concurrent_path_mutation",
+    "cooperative_concurrent_writer",
+    "hostile_path_replacement"
+  ],
+  "engineering_options_for_decision_not_adopted": [
+    "verified_handle_relative_mutation",
+    "unsupported_platform_fail_closed",
+    "explicitly_narrower_threat_model_with_owner_residual_risk_decision"
+  ],
+  "future_inert_evidence": [
+    "last_possible_point_replacement_for_mkdir_and_unlink",
+    "existing_parent_symlink_and_windows_reparse",
+    "non_FileNotFoundError_lstat_failure",
+    "platform_capability_and_cleanup",
+    "CALL_LEDGER_UNRESOLVED_terminal_preservation"
+  ],
+  "non_mkdir_guard_diagnostics": "SEPARATE_SCOPE_DECISION",
+  "protected_manifest_raw_sha256": {
+    "C6_prime": {
+      "path": "reports/ch5_turn6_same_frozen_input_repeat_20260923_run001/execution_artifact_manifest.json",
+      "raw_sha256": "7890720D502AC1C04D672978C6F662DD51F9D2BA27F321701877ABE9214CDE61"
+    },
+    "C7": {
+      "path": "reports/ch5_k1b_turn7_outer_r2_20260925_run001/execution_artifact_manifest.json",
+      "raw_sha256": "413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91"
+    },
+    "C8": {
+      "path": "reports/ch5_k1b_turn8_outer_r2_20260925_run001/execution_artifact_manifest.json",
+      "raw_sha256": "5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301"
+    },
+    "C8_timing": {
+      "path": "reports/ch5_k1b_turn8_same_frozen_timing_measurement_run001/science_artifact_manifest.json",
+      "raw_sha256": "5DD433E8DD0D8A3C6DB59C3FE370C4EF8770BBCCCA3F8D79211D93938CFA654D"
+    },
+    "old_C9_partial": {
+      "path": "reports/ch5_k1b_turn9_timed_risk_exception_run001/partial_artifact_manifest.json",
+      "raw_sha256": "80BD0D42CB73B4E39B811E759505480542D5A73227014F30B732C34A8AC1FDC3"
+    },
+    "new_C9_partial": {
+      "path": "reports/ch5_k1b_turn9_post_failure_new_attempt_001/partial_artifact_manifest.json",
+      "raw_sha256": "3B10AB56BC2CE3D8FF9B4FB6442E012CB39686AF389624D17566CC8D68F57D20"
+    },
+    "new_C9_readback": {
+      "path": "reports/ch5_k1b_turn9_post_failure_new_attempt_001/partial_artifact_readback.json",
+      "raw_sha256": "8191C24E8A472EE702C71A72DB4F4CCC9A0733D432226DFDB6EF0B4045792BAC"
+    }
+  },
+  "protected_hash_readback_matches": "7/7",
+  "protected_untracked_output_roots": 6,
+  "current_tests": 0,
+  "current_preflight_calls": 0,
+  "current_execute_calls": 0,
+  "current_wrapper_launches": 0,
+  "current_model_calls": 0,
+  "current_scientific_calls": 0,
+  "historical_prohibited_execute_probes": 2,
+  "historical_probes_reclassified_as_compliant": false,
+  "historical_reject_verdicts": [
+    "REJECT__TASK_BOUNDARY_VIOLATION_AND_STATIC_GAPS__NO_SCIENCE",
+    "REJECT__SEALED_INPUT_PATH_GAP_AND_EVIDENCE_AMBIGUITY__NO_SCIENCE",
+    "REJECT__FINAL_ENTRY_GUARDS_UNTESTED__NO_SCIENCE",
+    "REJECT__ACTIVE_PREFLIGHT_AND_PREIMPORT_AUTHORITY_GAPS__NO_SCIENCE",
+    "REJECT__PREIMPORT_AUTHORITY_PATH_AND_BEHAVIOR_EVIDENCE_GAPS__NO_SCIENCE",
+    "REJECT__AUTHORITY_METADATA_FOLLOWS_UNSAFE_PATH__NO_SCIENCE",
+    "REJECT__STALE_INERT_SOURCE_ORDER_ASSERTION__NO_SCIENCE",
+    "REJECT__FULL_INERT_TEST_FAILED__NO_CANDIDATE__NO_SCIENCE",
+    "REJECT__LEDGER_COMPLETENESS_AND_SEAL_READBACK_PATH_GAPS__NO_SCIENCE",
+    "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_RUNNER_FIELD_BINDINGS__NO_SCIENCE",
+    "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_SCHEMA_AND_ACTIVE_BINDINGS__NO_SCIENCE",
+    "REJECT__IDENTITY_CHAIN_OWNER_ORDER_AND_TASK_ABSENCE_AMBIGUITY__NO_SCIENCE",
+    "REJECT__IDENTITY_CHAIN_COMMITTED_FILE_GATE_OMITTED__NO_SCIENCE",
+    "REJECT__COMPLETE_C9_NOT_DELIVERED__CALL_LEDGER_UNRESOLVED",
+    "REJECT__COMPLETE_NEW_C9_EXECUTION__OUTPUT_GUARD_BLOCK_AND_CALL_LEDGER_UNRESOLVED",
+    "REJECT__ROOT_REPLACEMENT_WINDOW_TEST_GAP_AND_OVERBROAD_CLAIM__NO_SCIENCE"
+  ],
+  "old_C9_attempt_consumed": true,
+  "new_C9_attempt_consumed": true,
+  "old_actual_call_ledger": "CALL_LEDGER_UNRESOLVED",
+  "new_actual_call_ledger": "CALL_LEDGER_UNRESOLVED",
+  "C10_closed": true,
+  "retry_closed": true,
+  "partial_resume_closed": true,
+  "results_eligibility": false,
+  "next_gate": "INDEPENDENT_GPT_WORK_ACCEPT_REJECT__THEN_WORK_OWNER_THREAT_OR_PLATFORM_DECISION__NO_SCIENCE"
+}
