@@ -28,6 +28,8 @@ FUTURE_TASK_ID = "CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_EXECUTION"
 FUTURE_STATUS = "ACTIVE__ONE_SHOT_NEW_C9_POST_FAILURE"
 FUTURE_TASK_RELATIVE = Path("tasks/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_EXECUTION.md")
 TIMED_CONTRACT = Path("tasks/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_CONTRACT.json")
+RUNNER_REVIEW = Path("docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_RUNNER_INDEPENDENT_REVIEW.md")
+EXECUTION_ADOPTION = Path("docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_EXECUTION_OWNER_ADOPTION.md")
 NEW_EXECUTION_ID = "C9_POST_FAILURE_NEW_ATTEMPT_001"
 NEW_BUDGET_NAMESPACE = "C8_START_C9_POST_FAILURE_NEW_ATTEMPT_001_C10_PROSPECTIVE"
 BUDGET_PROPOSAL = Path("EVIDENCE/ch5_k1b_c9_new_budget_failed_ledger_policy_zero_science_proposal_20260926/proposed_budget.json")
@@ -55,6 +57,7 @@ PROTECTED_MANIFESTS = {
         "80BD0D42CB73B4E39B811E759505480542D5A73227014F30B732C34A8AC1FDC3",
 }
 TIMED_WRAPPER_RELATIVE = Path("validators/multi_province/k1b_turn9_post_failure_new_attempt_timed/run.py")
+DELEGATE_RELATIVE = Path("validators/multi_province/k1b_turn9_post_failure_new_attempt_outer_r2/run.py")
 _active_timed_runtime_ids: set[int] = set()
 DISTANCE = Path("docs/evidence/ch5_mp4c_k1a_distance_mapping/normalized_distance_destination_origin.csv")
 SRC_TREE = "00682b2e1a7ba23665f6e16f6acf48ad35874883"
@@ -698,8 +701,27 @@ def future_gate(repo:Path,execution_id:str|None)->None:
     if sha(repo/rel)!=hashlib.sha256(blob).hexdigest().upper():
         raise RepeatBlocked("BLOCKED__EXECUTION_RUNNER_IDENTITY")
 
-def assert_active_authority(repo:Path,execution_id:str)->dict[str,Any]:
-    """Recheck the committed one-shot authority on every delegate route."""
+def _committed_authority_sha(repo:Path,relative:Path)->str:
+    path=repo/relative
+    if not path.is_file() or not path_components_safe(path) or git(repo,"status","--porcelain=v1","--",relative.as_posix()):
+        raise RepeatBlocked("BLOCKED__NEW_C9_AUTHORITY_DIRTY_OR_MISSING",relative.as_posix())
+    try:
+        head=git(repo,"rev-parse",f"HEAD:{relative.as_posix()}")
+        actual=git(repo,"hash-object",f"--path={relative.as_posix()}",relative.as_posix())
+    except subprocess.CalledProcessError as exc:
+        raise RepeatBlocked("BLOCKED__NEW_C9_AUTHORITY_NOT_COMMITTED",relative.as_posix()) from exc
+    if actual!=head:
+        raise RepeatBlocked("BLOCKED__NEW_C9_AUTHORITY_NOT_COMMITTED",relative.as_posix())
+    return sha(path)
+
+
+def _exact_authority_map(value:Any,expected:Mapping[str,int])->bool:
+    return (isinstance(value,dict) and set(value)==set(expected) and
+            all(type(value[key]) is int and value[key]==expected[key] for key in expected))
+
+
+def preimport_wrapper_authority_gate(repo:Path,execution_id:str)->dict[str,str]:
+    """Verify all committed C9 identities before executing the wrapper module."""
     if not all(sealed_evidence_checks(repo).values()):
         raise RepeatBlocked("BLOCKED__SEALED_EVIDENCE_PATH")
     if not all(protected_manifest_checks(repo).values()):
@@ -708,9 +730,83 @@ def assert_active_authority(repo:Path,execution_id:str)->dict[str,Any]:
         raise RepeatBlocked("BLOCKED__FUTURE_EVIDENCE_PATH_EXISTS_OR_UNSAFE")
     if execution_id!=NEW_EXECUTION_ID or not (repo/TIMED_CONTRACT).is_file():
         raise RepeatBlocked("BLOCKED__NEW_LIVE_AUTHORITY_ABSENT")
+    budget_binding(repo)
+    if git(repo,"rev-parse","HEAD:src")!=SRC_TREE:
+        raise RepeatBlocked("BLOCKED__NEW_C9_SOURCE_TREE_IDENTITY")
+    contract_sha=_committed_authority_sha(repo,TIMED_CONTRACT)
+    wrapper_sha=_committed_authority_sha(repo,TIMED_WRAPPER_RELATIVE)
+    delegate_sha=_committed_authority_sha(repo,DELEGATE_RELATIVE)
+    task_sha=_committed_authority_sha(repo,Path("TASK_CURRENT.md"))
+    if _committed_authority_sha(repo,FUTURE_TASK_RELATIVE)!=task_sha:
+        raise RepeatBlocked("BLOCKED__NEW_C9_TASK_COPY")
+    review_sha=_committed_authority_sha(repo,RUNNER_REVIEW)
+    adoption_sha=_committed_authority_sha(repo,EXECUTION_ADOPTION)
     contract=json.loads((repo/TIMED_CONTRACT).read_text(encoding="utf-8"))
-    if contract.get("active") is not True or contract.get("resource_wall_seconds") is None:
-        raise RepeatBlocked("BLOCKED__INACTIVE_CONTRACT")
+    if (contract.get("schema")!="CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_CONTRACT_V1" or
+        contract.get("active") is not True or
+        contract.get("execution_id")!=NEW_EXECUTION_ID or
+        contract.get("output_root")!=OUTPUT.as_posix() or
+        contract.get("budget_namespace")!=NEW_BUDGET_NAMESPACE or
+        contract.get("old_execution_id")!="C9_TIMED_RISK_RUN001" or
+        contract.get("old_actual_ledger")!="CALL_LEDGER_UNRESOLVED" or
+        contract.get("old_namespace_frozen") is not True or
+        contract.get("old_c10_closed") is not True or
+        not _exact_authority_map(contract.get("old_governance_charge_per_category"),OLD_GOVERNANCE_CHARGE) or
+        not _exact_authority_map(contract.get("project_lifetime_governance_ceiling"),PROJECT_LIFETIME_GOVERNANCE) or
+        not _exact_authority_map(contract.get("per_category_attempt_ceiling"),CEILINGS) or
+        not _exact_authority_map(contract.get("per_province_attempt_ceiling"),PER_PROVINCE) or
+        not _exact_authority_map(contract.get("c9_c10_cumulative_ceiling"),TWO_TURN_CEILINGS) or
+        contract.get("budget_proposal_sha256")!=BUDGET_PROPOSAL_SHA or
+        contract.get("budget_owner_adoption_sha256")!=BUDGET_ADOPTION_SHA or
+        contract.get("wrapper_sha256")!=wrapper_sha or
+        contract.get("delegate_sha256")!=delegate_sha or
+        contract.get("src_tree")!=SRC_TREE or
+        type(contract.get("attempts")) is not int or contract.get("attempts")!=1 or
+        type(contract.get("retries")) is not int or contract.get("retries")!=0 or
+        type(contract.get("resource_wall_seconds")) is not int or
+        contract.get("resource_wall_seconds")!=36000 or
+        contract.get("resource_policy")!="COOPERATIVE_PROCESS_WALL_CAP" or
+        contract.get("automatic_c10_authorization") is not False or
+        contract.get("results_eligibility") is not False or
+        contract.get("sealed_input_sha256")!={
+            "manifest":ENTERING_MANIFEST_SHA,
+            "readback":SEALED_EVIDENCE[OLD_ROOT/"turn9_entering_bundle_readback.json"],
+            "json":SEALED["turn9_k1b_input_candidate.json"],
+            "npz":SEALED["turn9_k1b_frozen_share_payoff_plan.npz"]} or
+        contract.get("independent_review_sha256")!=review_sha):
+        raise RepeatBlocked("BLOCKED__NEW_C9_CONTRACT_IDENTITY")
+    task=(repo/"TASK_CURRENT.md").read_text(encoding="utf-8")
+    required=(f"Task ID: `{FUTURE_TASK_ID}`",f"Status: `{FUTURE_STATUS}`",
+              f"Execution authorization ID: `{NEW_EXECUTION_ID}`",
+              f"Authorized output root: `{OUTPUT.as_posix()}`",
+              f"Owner adoption SHA-256: `{adoption_sha}`",
+              f"C9 contract SHA-256: `{contract_sha}`",
+              f"Wrapper SHA-256: `{wrapper_sha}`",
+              f"Delegate SHA-256: `{delegate_sha}`",
+              f"Independent review SHA-256: `{review_sha}`")
+    if not all(item in task for item in required):
+        raise RepeatBlocked("BLOCKED__NEW_C9_TASK_IDENTITY")
+    review=(repo/RUNNER_REVIEW).read_text(encoding="utf-8")
+    if ("Reviewer: GPT Work" not in review or
+        "Verdict: ACCEPT__C9_POST_FAILURE_NEW_ATTEMPT_RUNNER" not in review or
+        f"Wrapper SHA-256: `{wrapper_sha}`" not in review or
+        f"Delegate SHA-256: `{delegate_sha}`" not in review):
+        raise RepeatBlocked("BLOCKED__NEW_C9_INDEPENDENT_REVIEW_IDENTITY")
+    adoption=(repo/EXECUTION_ADOPTION).read_text(encoding="utf-8")
+    if ("OWNER_ADOPTED__SINGLE_NEW_C9_POST_FAILURE" not in adoption or
+        f"Execution authorization ID: `{NEW_EXECUTION_ID}`" not in adoption or
+        f"Authorized output root: `{OUTPUT.as_posix()}`" not in adoption or
+        f"C9 contract SHA-256: `{contract_sha}`" not in adoption or
+        f"Independent review SHA-256: `{review_sha}`" not in adoption):
+        raise RepeatBlocked("BLOCKED__NEW_C9_OWNER_EXECUTION_ADOPTION")
+    return {"contract_sha256":contract_sha,"wrapper_sha256":wrapper_sha,
+            "delegate_sha256":delegate_sha,"review_sha256":review_sha,
+            "adoption_sha256":adoption_sha}
+
+
+def assert_active_authority(repo:Path,execution_id:str)->dict[str,Any]:
+    """Recheck committed identities before importing the wrapper module."""
+    preimport_wrapper_authority_gate(repo,execution_id)
     wrapper=repo/TIMED_WRAPPER_RELATIVE
     relative=TIMED_WRAPPER_RELATIVE.as_posix()
     if (git(repo,"status","--porcelain=v1","--",relative) or

@@ -169,6 +169,7 @@ def load_delegate(repo: Path, enforce_contract_hash: bool = True):
         raise TimingBlocked("BLOCKED__NEW_C9_SEALED_EVIDENCE_PATH")
     if os.path.lexists(repo / OUTPUT) or not path_components_safe(repo / OUTPUT):
         raise TimingBlocked("BLOCKED__NEW_C9_OUTPUT_EXISTS_OR_UNSAFE")
+    preimport_authority_gate(repo, NEW_EXECUTION_ID)
     contract_sha = committed_file(repo, CONTRACT)
     delegate_sha = committed_file(repo, DELEGATE)
     contract = json.loads((repo / CONTRACT).read_text(encoding="utf-8"))
@@ -234,6 +235,8 @@ def _adopted_budget(repo: Path) -> dict[str, Any]:
 def static_preflight(repo: Path = REPOSITORY, require_inactive: bool = True) -> dict[str, Any]:
     """Validate candidate identities without importing delegate or model science."""
     repo = repo.resolve()
+    if type(require_inactive) is not bool:
+        raise TimingBlocked("BLOCKED__NEW_C9_PREFLIGHT_STATE")
     sealed = sealed_evidence_checks(repo)
     if not all(sealed.values()):
         raise TimingBlocked("BLOCKED__NEW_C9_SEALED_EVIDENCE_PATH", sealed)
@@ -258,18 +261,25 @@ def static_preflight(repo: Path = REPOSITORY, require_inactive: bool = True) -> 
         "frozen_c8_json": sha(repo / C8_ROOT / "turn9_k1b_input_candidate.json") == C8_JSON_SHA,
         "frozen_c8_npz": sha(repo / C8_ROOT / "turn9_k1b_frozen_share_payoff_plan.npz") == C8_NPZ_SHA,
         "new_runner_pair_present": (repo / TIMED_RUNNER).is_file() and (repo / DELEGATE).is_file(),
-        "future_live_contract_absent": not os.path.lexists(repo / CONTRACT),
-        "future_execution_adoption_absent": not os.path.lexists(repo / OWNER_ADOPTION),
-        "future_execution_task_absent": not os.path.lexists(repo / TASK_COPY),
-        "future_independent_review_absent": not os.path.lexists(repo / INDEPENDENT_REVIEW),
     }
+    if require_inactive:
+        checks.update({
+            "future_live_contract_absent": not os.path.lexists(repo / CONTRACT),
+            "future_execution_adoption_absent": not os.path.lexists(repo / OWNER_ADOPTION),
+            "future_execution_task_absent": not os.path.lexists(repo / TASK_COPY),
+            "future_independent_review_absent": not os.path.lexists(repo / INDEPENDENT_REVIEW),
+        })
+    else:
+        preimport_authority_gate(repo, NEW_EXECUTION_ID)
+        checks["active_authority_committed_and_bound"] = True
     checks.update({f"protected_manifest:{name}": valid
                    for name, valid in protected_manifest_checks(repo).items()})
     if not all(checks.values()):
         raise TimingBlocked("BLOCKED__NEW_C9_STATIC_IDENTITY", checks)
     compile((repo / DELEGATE).read_bytes(), str(repo / DELEGATE), "exec")
     return {
-        "status": "BLOCKED__NEW_LIVE_AUTHORITY_ABSENT__PREPARATION_ONLY",
+        "status": ("BLOCKED__NEW_LIVE_AUTHORITY_ABSENT__PREPARATION_ONLY"
+                   if require_inactive else "ACTIVE_AUTHORITY_STATIC_PREFLIGHT_ONLY__NO_SCIENCE"),
         "checks": checks, "new_execution_id": NEW_EXECUTION_ID,
         "new_budget_namespace": NEW_BUDGET_NAMESPACE,
         "old_actual_ledger": "CALL_LEDGER_UNRESOLVED",
@@ -325,8 +335,8 @@ def _exact_int_map(value: Any, expected: Mapping[str, int]) -> bool:
                 for key in expected))
 
 
-def future_gate(repo: Path, execution_id: str | None, c9: Any) -> dict[str, Any]:
-    """Require a wholly new, committed authority chain before output or science."""
+def preimport_authority_gate(repo: Path, execution_id: str | None) -> dict[str, Any]:
+    """Validate the complete committed authority chain without importing modules."""
     if not all(sealed_evidence_checks(repo).values()):
         raise TimingBlocked("BLOCKED__NEW_C9_SEALED_EVIDENCE_PATH")
     if not all(protected_manifest_checks(repo).values()):
@@ -378,9 +388,6 @@ def future_gate(repo: Path, execution_id: str | None, c9: Any) -> dict[str, Any]
                 "manifest": C8_ENTERING_SHA, "readback": C8_READBACK_SHA,
                 "json": C8_JSON_SHA, "npz": C8_NPZ_SHA}):
         raise TimingBlocked("BLOCKED__NEW_C9_CONTRACT_IDENTITY")
-    if (c9.CEILINGS != category or c9.PER_PROVINCE != province
-            or c9.TWO_TURN_CEILINGS != cumulative):
-        raise TimingBlocked("BLOCKED__NEW_C9_DELEGATE_BUDGET_IDENTITY")
     if (sha(repo / C8_ROOT / "execution_artifact_manifest.json") != C8_MANIFEST_SHA
             or sha(repo / C8_ROOT / "turn9_entering_bundle_manifest.json") != C8_ENTERING_SHA
             or sha(repo / C8_ROOT / "turn9_entering_bundle_readback.json") != C8_READBACK_SHA
@@ -388,7 +395,7 @@ def future_gate(repo: Path, execution_id: str | None, c9: Any) -> dict[str, Any]
             or sha(repo / C8_ROOT / "turn9_k1b_frozen_share_payoff_plan.npz") != C8_NPZ_SHA
             or sha(repo / OLD_OUTPUT / "timing_failure.json") != OLD_FAILURE_SHA):
         raise TimingBlocked("BLOCKED__NEW_C9_FROZEN_EVIDENCE_IDENTITY")
-    if os.path.lexists(repo / OUTPUT) or not path_components_safe(repo / OUTPUT) or not c9.path_components_safe(repo / OUTPUT):
+    if os.path.lexists(repo / OUTPUT) or not path_components_safe(repo / OUTPUT):
         raise TimingBlocked("BLOCKED__NEW_C9_OUTPUT_EXISTS_OR_UNSAFE")
     current_sha = committed_file(repo, Path("TASK_CURRENT.md"))
     if committed_file(repo, TASK_COPY) != current_sha:
@@ -430,6 +437,18 @@ def future_gate(repo: Path, execution_id: str | None, c9: Any) -> dict[str, Any]
         "independent_review_sha256": review_sha, "wrapper_sha256": wrapper_sha,
         "old_actual_ledger": "CALL_LEDGER_UNRESOLVED",
     }
+
+
+def future_gate(repo: Path, execution_id: str | None, c9: Any) -> dict[str, Any]:
+    """Recheck pre-import identities and delegate-specific guards before science."""
+    authority = preimport_authority_gate(repo, execution_id)
+    if (c9.CEILINGS != authority["ceilings"] or
+            c9.PER_PROVINCE != authority["per_province"] or
+            c9.TWO_TURN_CEILINGS != authority["cumulative"]):
+        raise TimingBlocked("BLOCKED__NEW_C9_DELEGATE_BUDGET_IDENTITY")
+    if os.path.lexists(repo / OUTPUT) or not c9.path_components_safe(repo / OUTPUT):
+        raise TimingBlocked("BLOCKED__NEW_C9_OUTPUT_EXISTS_OR_UNSAFE")
+    return authority
 
 def seal_science_outputs(c9: Any, output: Path, runtime: Mapping[str, Any]) -> dict[str, Any]:
     """Seal and independently read back science outputs before the elapsed end."""

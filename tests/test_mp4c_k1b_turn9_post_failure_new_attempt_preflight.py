@@ -234,6 +234,83 @@ def test_final_committed_run_timed_action_guards_precede_dispatch_and_clock():
         function, {"load_delegate", "future_gate", "clock_sample"})
 
 
+def _source_function(path, name):
+    tree = ast.parse(path.read_bytes(), filename=str(path))
+    return next(node for node in tree.body if isinstance(node, ast.FunctionDef)
+                and node.name == name)
+
+
+def _named_calls(function, name):
+    return [node for node in ast.walk(function) if isinstance(node, ast.Call)
+            and _call_name(node) == name]
+
+
+def test_repair3_preflight_has_distinct_fail_closed_inactive_and_active_branches():
+    function = _source_function(WRAPPER, "static_preflight")
+    branch = next(node for node in ast.walk(function) if isinstance(node, ast.If)
+                  and isinstance(node.test, ast.Name) and node.test.id == "require_inactive")
+    inactive_source = "\n".join(ast.unparse(node) for node in branch.body)
+    active_source = "\n".join(ast.unparse(node) for node in branch.orelse)
+    for name in ("CONTRACT", "OWNER_ADOPTION", "TASK_COPY", "INDEPENDENT_REVIEW"):
+        assert name in inactive_source
+    assert "lexists" in inactive_source
+    assert "preimport_authority_gate" in active_source
+    assert "NEW_EXECUTION_ID" in active_source
+    assert "preimport_authority_gate" not in inactive_source
+    assert any(_call_name(node) == "preimport_authority_gate"
+               for statement in branch.orelse for node in ast.walk(statement)
+               if isinstance(node, ast.Call))
+    assert "ACTIVE_AUTHORITY_STATIC_PREFLIGHT_ONLY__NO_SCIENCE" in ast.unparse(function)
+
+
+def test_repair3_wrapper_checks_all_authorities_before_delegate_exec():
+    loader = _source_function(WRAPPER, "load_delegate")
+    _assert_final_entry_guards_precede(loader, {"preimport_authority_gate", "exec"})
+    assert max(node.lineno for node in _named_calls(loader, "preimport_authority_gate")) < min(
+        node.lineno for node in _named_calls(loader, "exec"))
+    gate = _source_function(WRAPPER, "preimport_authority_gate")
+    source = ast.unparse(gate)
+    for name in ("CONTRACT", "TASK_COPY", "INDEPENDENT_REVIEW", "OWNER_ADOPTION",
+                 "TIMED_RUNNER", "DELEGATE", "TASK_CURRENT.md"):
+        assert name in source
+    assert len(_named_calls(gate, "committed_file")) >= 7
+    first_authority = min(node.lineno for node in _named_calls(gate, "committed_file"))
+    for name in ("sealed_evidence_checks", "protected_manifest_checks",
+                 "lexists", "path_components_safe"):
+        assert min(node.lineno for node in _named_calls(gate, name)) < first_authority
+    assert "NEW_C9_CONTRACT_IDENTITY" in source
+    assert "NEW_C9_TASK_IDENTITY" in source
+    assert "NEW_C9_INDEPENDENT_REVIEW_IDENTITY" in source
+    assert "NEW_C9_OWNER_EXECUTION_ADOPTION" in source
+    assert "exec(" not in source and "exec_module" not in source
+
+
+def test_repair3_delegate_checks_all_authorities_before_wrapper_exec():
+    direct = _source_function(DELEGATE, "assert_active_authority")
+    preflight = _named_calls(direct, "preimport_wrapper_authority_gate")
+    imports = _named_calls(direct, "exec_module")
+    assert len(preflight) == len(imports) == 1
+    assert preflight[0].lineno < imports[0].lineno
+    gate = _source_function(DELEGATE, "preimport_wrapper_authority_gate")
+    source = ast.unparse(gate)
+    for name in ("TIMED_CONTRACT", "FUTURE_TASK_RELATIVE", "RUNNER_REVIEW",
+                 "EXECUTION_ADOPTION", "TIMED_WRAPPER_RELATIVE", "DELEGATE_RELATIVE",
+                 "TASK_CURRENT.md"):
+        assert name in source
+    assert len(_named_calls(gate, "_committed_authority_sha")) >= 7
+    first_authority = min(node.lineno for node in _named_calls(gate, "_committed_authority_sha"))
+    for name in ("sealed_evidence_checks", "protected_manifest_checks",
+                 "lexists", "path_components_safe"):
+        assert min(node.lineno for node in _named_calls(gate, name)) < first_authority
+    committed = ast.unparse(_source_function(DELEGATE, "_committed_authority_sha"))
+    assert "status" in committed and "rev-parse" in committed and "hash-object" in committed
+    assert "NEW_C9_CONTRACT_IDENTITY" in source
+    assert "NEW_C9_TASK_IDENTITY" in source
+    assert "NEW_C9_INDEPENDENT_REVIEW_IDENTITY" in source
+    assert "NEW_C9_OWNER_EXECUTION_ADOPTION" in source
+    assert "exec_module" not in source and "spec_from_file_location" not in source
+
+
 def _read_only_gates_block(module, delegate):
     if module is delegate:
         with pytest.raises(delegate.RepeatBlocked):
