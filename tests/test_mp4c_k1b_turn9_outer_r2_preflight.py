@@ -17,7 +17,7 @@ spec.loader.exec_module(c9)
 def test_inactive_delegate_has_no_direct_science_entry():
     with pytest.raises(c9.RepeatBlocked, match="BLOCKED__C9_WRAPPER_REQUIRED"):
         c9.execute_once(ROOT, "INERT")
-    with pytest.raises(c9.RepeatBlocked, match="BLOCKED__C9_WRAPPER_ACTIVE_GATE_REQUIRED"):
+    with pytest.raises(c9.RepeatBlocked, match="BLOCKED__INACTIVE_CONTRACT"):
         c9._execute_after_gate(ROOT, "INERT", {})
     with pytest.raises(c9.RepeatBlocked, match="BLOCKED__INACTIVE_CONTRACT"):
         c9.run_after_valid_gate(ROOT, "INERT", lambda runtime: pytest.fail("action entered"))
@@ -60,6 +60,48 @@ def test_per_turn_province_and_cumulative_denial():
         if ceiling == 0:
             with pytest.raises(c9.RepeatBlocked):
                 c9.BudgetGuard().enter(key)
+
+
+@pytest.mark.parametrize("category,limit", [
+    ("selector_evaluations", 40800),
+    ("scalar_selector_root_invocations", 20000000),
+])
+def test_actual_province_counts_reconcile_without_double_count(category, limit):
+    ledger = dict.fromkeys(c9.CEILINGS, 0)
+    guard = c9.BudgetGuard()
+    guard.begin_province(0, ledger, {category: limit})
+    ledger[category] = limit
+    guard.reconcile(ledger, 0)
+    guard.reconcile(ledger, 0)  # Repeated map readout is cumulative, not a second attempt.
+    assert guard.per_province[0][category] == limit
+    assert guard.attempted[category] == limit
+    assert guard.prior[category] + guard.attempted[category] <= guard.combined[category]
+    with pytest.raises(c9.RepeatBlocked, match="BLOCKED__PROVINCE_BUDGET"):
+        guard.reserve({category: 1}, 0)
+    ledger[category] = limit + 1  # One province fails while global total stays below its cap.
+    assert ledger[category] < c9.CEILINGS[category]
+    with pytest.raises(c9.RepeatBlocked, match="BLOCKED__PROVINCE_BUDGET"):
+        guard.reconcile(ledger, 0)
+
+
+def test_interrupted_province_preserves_first_failure_and_reserved_exposure():
+    ledger = dict.fromkeys(c9.CEILINGS, 0)
+    guard = c9.BudgetGuard()
+    envelope = {"source_native_initializations": 1, "scalar_labor_roots_attempted": 800}
+    guard.begin_province(0, ledger, envelope)
+    guard.reserve(envelope, 0)
+    ledger["source_native_initializations"] = 1
+    ledger["scalar_labor_roots_attempted"] = 17
+    runtime = {"state": {"original_terminal": "FAIL__FIRST", "ledger_unresolved": False},
+               "guard": guard, "ledger": ledger, "inflight_province": 0,
+               "inflight_reserved_envelope": envelope, "scientific_started": True}
+    c9.mark_interrupted_province(runtime, RuntimeError("later interrupt"))
+    detail = c9.failure_detail(runtime, "FAIL__FIRST", "INERT")
+    assert detail["terminal"] == "CALL_LEDGER_UNRESOLVED"
+    assert detail["original_terminal"] == "FAIL__FIRST"
+    assert detail["confirmed_attempted_at_interruption"]["scalar_labor_roots_attempted"] == 17
+    assert detail["reserved_exposure_at_interruption"]["scalar_labor_roots_attempted"] == 800
+    assert detail["retry_allowed"] is False
 
 
 def _bundle(turn, delta=0.0):

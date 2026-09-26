@@ -1,0 +1,70 @@
+{
+  "schema": "CH5_K1B_C9_TIMED_RISK_EXCEPTION_STATIC_REPAIR1_RECEIPT_V1",
+  "task_id": "CH5_K1B_C9_TIMED_EXCEPTION_STATIC_REPAIR1_20260926",
+  "classification": "BUILDER_REPAIR1_CANDIDATE__AWAITING_INDEPENDENT_GPT_WORK_ACCEPT_REJECT",
+  "entry_head": "62636398b764487221f21f74b9c9882b825e47ba",
+  "src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
+  "task_current_sha256": "0E4F6376D32470C9A25E4D4BC276BE8AC7F280D6B142469C003AAE9FDF666F6B",
+  "task_archive_sha256": "0E4F6376D32470C9A25E4D4BC276BE8AC7F280D6B142469C003AAE9FDF666F6B",
+  "independent_reject_sha256": "D9E1E0D90C8AD61B19EB593AAF5C6C1734E8310BF788E00B13F210345B8D9752",
+  "allowed_paths": [
+    "validators/multi_province/k1b_turn9_outer_r2/run.py",
+    "validators/multi_province/k1b_turn9_timed_risk_exception/run.py",
+    "tests/test_mp4c_k1b_turn9_outer_r2_preflight.py",
+    "tests/test_mp4c_k1b_turn9_timed_risk_exception_preflight.py",
+    "docs/CH5_K1B_C9_TIMED_RISK_EXCEPTION_STATIC_REPAIR1_20260926.md",
+    "EVIDENCE/ch5_k1b_c9_timed_risk_exception_static_repair1_20260926/repair_receipt.json"
+  ],
+  "source_sha256": {
+    "validators/multi_province/k1b_turn9_outer_r2/run.py": "D88616CFBA2F07398A6375A1C055D9B7A3ACADD74987DD0C72677F1369E4F70A",
+    "validators/multi_province/k1b_turn9_timed_risk_exception/run.py": "BCB5750BE3B50DD9B91AA4FD0C88B6B1444CE390B8BED564FE9BD75A2EE78F69",
+    "tests/test_mp4c_k1b_turn9_outer_r2_preflight.py": "03EFFD693BB169A5165B615FCA9F0A25B5BF6974027CAFF3D6D10EB1F9CCCC25",
+    "tests/test_mp4c_k1b_turn9_timed_risk_exception_preflight.py": "1DAEDA3077F712FCE3D07F0E4DD435B4CB8F2B55E882B86F3C37C557D5EED7D9",
+    "docs/CH5_K1B_C9_TIMED_RISK_EXCEPTION_STATIC_REPAIR1_20260926.md": "EC559C6E62687ACA234A43F55C2273138B2B66179CE1EEC34DAA8D1B577A6C47"
+  },
+  "protected_manifest_sha256": {
+    "c6_prime": "7890720D502AC1C04D672978C6F662DD51F9D2BA27F321701877ABE9214CDE61",
+    "c7": "413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91",
+    "c8": "5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301",
+    "c8_timing": "5DD433E8DD0D8A3C6DB59C3FE370C4EF8770BBCCCA3F8D79211D93938CFA654D"
+  },
+  "contract": {
+    "sha256": "DED122DDE12E86D579B80C1FC4E268D3953A6A79009E713F3A05FE1FA272B91A",
+    "active": false,
+    "attempts": 0,
+    "execution_id": null,
+    "resource_wall_seconds": null,
+    "old_delegate_sha256": "54D8E39684CD659B4208D120551A47D03FE28E59EB23C2C5DCFD8766A6FFADF3",
+    "repair_delegate_sha256": "D88616CFBA2F07398A6375A1C055D9B7A3ACADD74987DD0C72677F1369E4F70A",
+    "rebind_required": true
+  },
+  "candidate_output_root": "reports/ch5_k1b_turn9_timed_risk_exception_run001",
+  "candidate_output_root_exists": false,
+  "verification": {
+    "pytest_command": "PYTHONDONTWRITEBYTECODE=1 python -m pytest -q -p no:cacheprovider tests/test_mp4c_k1b_turn9_outer_r2_preflight.py tests/test_mp4c_k1b_turn9_timed_risk_exception_preflight.py",
+    "pytest_final": "18 passed",
+    "default_cli": "BLOCKED__INACTIVE_CONTRACT__DELEGATE_REBIND_REQUIRED; exit 0; scientific_calls 0",
+    "inactive_execute_cli": "BLOCKED__INACTIVE_CONTRACT; exit 1; scientific_calls 0",
+    "git_diff_check": "PASS__EXACT_SIX_ALLOWED_PATHS"
+  },
+  "failure_semantics": {
+    "partial_manifest": "partial_artifact_manifest.json",
+    "partial_readback": "partial_artifact_readback.json",
+    "original_terminal_preserved": true,
+    "reserved_envelope_is_not_confirmed_attempts": true,
+    "uncertain_ledger_or_readback": "CALL_LEDGER_UNRESOLVED",
+    "retry_allowed": false,
+    "partial_safe_pause": false
+  },
+  "literal_call_ledger": {
+    "model_calls": 0,
+    "scientific_calls": 0,
+    "c9_attempts": 0,
+    "c10_attempts": 0,
+    "failed_scientific_attempts": 0,
+    "retries": 0
+  },
+  "normal_duration_gate": "BLOCKED__DURATION_BOUND_UNAVAILABLE",
+  "results_eligibility": false,
+  "next_gate": "INDEPENDENT_GPT_WORK_ACCEPT_REJECT"
+}

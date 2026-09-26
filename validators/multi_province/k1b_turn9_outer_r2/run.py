@@ -16,6 +16,8 @@ import stat
 import subprocess
 import sys
 import inspect
+import importlib.util
+from types import SimpleNamespace
 from pathlib import Path
 from typing import Any, Mapping
 
@@ -386,6 +388,28 @@ class BudgetGuard:
         self.ceilings=dict(ceilings);self.combined=dict(combined)
         self.prior={k:int((prior or {}).get(k,0)) for k in ceilings}
         self.attempted={k:0 for k in ceilings};self.per_province={};self.denied=[]
+        self.province_baseline={}
+        self.reserved_exposure={}
+    def begin_province(self,province:int,ledger:Mapping[str,Any],envelope:Mapping[str,int])->None:
+        if province in self.province_baseline or not 0<=province<31:
+            raise RepeatBlocked("BLOCKED__PROVINCE_ENTRY_STATE",province)
+        self.province_baseline[province]={key:int(ledger.get(key,0)) for key in PER_PROVINCE}
+        self.reserved_exposure[province]=dict(envelope)
+    def reconcile_province(self,province:int,ledger:Mapping[str,Any])->None:
+        if province not in self.province_baseline:
+            raise RepeatBlocked("CALL_LEDGER_UNRESOLVED",{"province":province,"reason":"missing_baseline"})
+        row=self.per_province.setdefault(province,{})
+        baseline=self.province_baseline[province]
+        for key,limit in PER_PROVINCE.items():
+            actual=int(ledger[key])-baseline[key]
+            if actual<0:
+                raise RepeatBlocked("CALL_LEDGER_UNRESOLVED",{"province":province,"category":key})
+            # Repeated map returns report cumulative source totals. Never add
+            # the same source counts twice or erase a pre-entry attempt.
+            row[key]=max(row.get(key,0),actual)
+            if row[key]>limit:
+                self.denied.append({"category":key,"actual":row[key],"province":province})
+                raise RepeatBlocked("BLOCKED__PROVINCE_BUDGET",self.denied[-1])
     def reserve(self,amounts:Mapping[str,int],province:int|None=None)->None:
         for key,n in amounts.items():
             if (key not in self.ceilings or not isinstance(n,int) or n<0 or
@@ -402,7 +426,7 @@ class BudgetGuard:
         if province is not None:
             row=self.per_province.setdefault(province,{})
             row[key]=row.get(key,0)+1
-    def reconcile(self,ledger:Mapping[str,Any])->None:
+    def reconcile(self,ledger:Mapping[str,Any],province:int|None=None)->None:
         keys=("source_native_initializations","scalar_labor_roots_attempted","scalar_labor_roots_returned",
               "corrected_policy_maps","selector_evaluations","scalar_selector_root_invocations",
               "d2_q_assemblies","direct_hjb_updates","hjb_checkpoint_evaluations_after_update",
@@ -415,6 +439,8 @@ class BudgetGuard:
             # A guarded attempt can fail before the source records its local
             # count; never erase that already consumed entry on reconciliation.
             self.attempted[key]=max(self.attempted[key],n)
+        if province is not None:
+            self.reconcile_province(province,ledger)
     def reconcile_all(self,ledger:Mapping[str,Any])->None:
         for key,ceiling in self.ceilings.items():
             if key not in ledger:continue
@@ -543,11 +569,26 @@ def future_gate(repo:Path,execution_id:str|None)->None:
     if sha(repo/rel)!=hashlib.sha256(blob).hexdigest().upper():
         raise RepeatBlocked("BLOCKED__EXECUTION_RUNNER_IDENTITY")
 
+def assert_active_authority(repo:Path,execution_id:str)->dict[str,Any]:
+    """Recheck the committed one-shot authority on every delegate route."""
+    contract=json.loads((repo/TIMED_CONTRACT).read_text(encoding="utf-8"))
+    if contract.get("active") is not True or contract.get("resource_wall_seconds") is None:
+        raise RepeatBlocked("BLOCKED__INACTIVE_CONTRACT")
+    wrapper=repo/"validators/multi_province/k1b_turn9_timed_risk_exception/run.py"
+    spec=importlib.util.spec_from_file_location("c9_authority_recheck",wrapper)
+    if spec is None or spec.loader is None:
+        raise RepeatBlocked("BLOCKED__C9_WRAPPER_AUTHORITY_LOAD")
+    module=importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    delegate=SimpleNamespace(CEILINGS=CEILINGS,PER_PROVINCE=PER_PROVINCE,
+                             TWO_TURN_CEILINGS=TWO_TURN_CEILINGS,
+                             path_components_safe=path_components_safe)
+    return module.future_gate(repo,execution_id,delegate)
+
 
 def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
-    contract=json.loads((repo/TIMED_CONTRACT).read_text(encoding="utf-8"))
-    if (contract.get("active") is not True or
-        runtime.get("c9_wrapper_contract_sha256")!=sha(repo/TIMED_CONTRACT) or
+    authority=assert_active_authority(repo,execution_id)
+    if (runtime.get("c9_wrapper_contract_sha256")!=authority["contract_sha256"] or
         runtime.get("c9_wrapper_execution_id")!=execution_id):
         raise RepeatBlocked("BLOCKED__C9_WRAPPER_ACTIVE_GATE_REQUIRED")
     output=repo/OUTPUT
@@ -586,7 +627,8 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
         local=args[6];budget=args[5];prior=dict(local);province=state["province"]
         guard.enter("corrected_policy_maps",province)
         guard.reserve({"selector_evaluations":800},province)
-        try:return originals[0](*args,**kwargs)
+        try:
+            result=originals[0](*args,**kwargs)
         except BaseException as original_failure:
             # Production merges local counts only after normal map return. The
             # selector budget object is the exact consumed counter on failure.
@@ -597,13 +639,18 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
                          joint_switching_root_invocations=int(budget.joint_switching_root_invocations))
             try:
                 base._accumulate_local(ledger,prior,local)
-                guard.reconcile(ledger)
+                guard.reconcile(ledger,province)
             except BaseException as exc:
                 state["ledger_unresolved"]=True
                 state["original_terminal"]=getattr(original_failure,"terminal",type(original_failure).__name__)
                 raise RepeatBlocked("CALL_LEDGER_UNRESOLVED",{"stage":"map","cause":str(exc),
                     "original_terminal":state["original_terminal"]}) from exc
             raise
+        projected=dict(ledger)
+        projected["selector_evaluations"]+=int(local["selector_evaluations"])-int(prior["selector_evaluations"])
+        projected["scalar_selector_root_invocations"]+=int(local["scalar_root_invocations"])-int(prior["scalar_root_invocations"])
+        guard.reconcile_province(province,projected)
+        return result
     def direct_hook(*args:Any,**kwargs:Any):
         guard.reserve({"direct_hjb_updates":1,"relaxation_helper_invocations":1,"alpha_candidates":53},state["province"])
         guard.enter("direct_hjb_updates",state["province"])
@@ -669,7 +716,7 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
             # frozen source's province-local selector/root ceilings constrain
             # every nested invocation. Actual counts are reconciled on return
             # and on the first exceptional exit.
-            guard.reserve({"source_native_initializations":1,"scalar_labor_roots_attempted":800,
+            envelope={"source_native_initializations":1,"scalar_labor_roots_attempted":800,
                 "scalar_labor_roots_returned":800,"corrected_policy_maps":51,
                 "d2_q_assemblies":51,"selector_evaluations":40800,
                 "scalar_selector_root_invocations":20000000,"direct_hjb_updates":50,
@@ -678,23 +725,32 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
                 "terminal_kfe_attempts":1,"scc_decompositions":1,
                 "restricted_dense_scipy_linalg_svd_gesvd":1,
                 "normalized_stationary_candidates":1,"q_transpose_times_p":1,
-                "corrected_aggregate_evaluations":1},i)
+                "corrected_aggregate_evaluations":1}
+            guard.begin_province(i,ledger,envelope)
+            guard.reserve(envelope,i)
+            runtime["inflight_province"]=i
+            runtime["inflight_reserved_envelope"]=dict(envelope)
+            runtime["province_science_entered"]=False
             try:
                 guard_output_mutation(output,runtime,output/"turn9")
                 runtime["scientific_started"]=True
+                runtime["province_science_entered"]=True
                 result=base._solve_province(repo,output/"turn9",i,province,
                     entering["states"][i],grid,native_grid,params,
                     task_hashes,core_hashes,ledger)
             except BaseException as solve_failure:
-                state["original_terminal"]=getattr(solve_failure,"terminal",type(solve_failure).__name__)
-                try:guard.reconcile(ledger)
-                except BaseException:
-                    state["ledger_unresolved"]=True
+                if runtime["province_science_entered"]:
+                    mark_interrupted_province(runtime,solve_failure)
+                else:
+                    state["original_terminal"]=getattr(solve_failure,"terminal",type(solve_failure).__name__)
                 raise
             else:
                 # Direct/root/KFE counts mutate the shared ledger on attempts;
                 # exceptional map exits were recovered by map_hook.
-                guard.reconcile(ledger)
+                guard.reconcile(ledger,i)
+                runtime["inflight_province"]=None
+                runtime["inflight_reserved_envelope"]=None
+                runtime["province_science_entered"]=False
             results.append(result)
         if len(results)!=31:raise RepeatBlocked("FAIL__HOUSEHOLD_BATCH_INCOMPLETE")
         integration_envelope={"household_batch_constructions":1,"full_integrations":1,
@@ -774,6 +830,8 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
             write_output_json(output,runtime,output/"terminal_receipt.json",{"terminal":state["terminal"],
                 "original_terminal":state["original_terminal"],"source_ledger":ledger,
                 "guard_attempted":guard.attempted,"guard_denied":guard.denied,
+                "per_province_attempted":guard.per_province,
+                "reserved_exposure":runtime.get("inflight_reserved_envelope"),
                 "call_ledger_resolved":not state["ledger_unresolved"],
                 "turn7_household_calls":ledger["turn7_household_calls"],
                 "turn8_household_calls":ledger["turn8_household_calls"],
@@ -783,6 +841,31 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
                 "combined_attempted":{k:guard.prior[k]+guard.attempted[k] for k in guard.attempted}})
         except BaseException:
             if not pending_failure:raise
+
+def mark_interrupted_province(runtime:dict[str,Any],failure:BaseException)->None:
+    """Keep confirmed counts and exposure separate after an in-flight failure."""
+    state=runtime["state"]
+    guard=runtime["guard"]
+    province=runtime.get("inflight_province")
+    original=state.get("original_terminal") or getattr(failure,"terminal",type(failure).__name__)
+    state["original_terminal"]=original
+    state["ledger_unresolved"]=True
+    try:
+        guard.reconcile(runtime["ledger"],province)
+    except BaseException as reconcile_failure:
+        runtime["reconciliation_failure"]=getattr(reconcile_failure,"terminal",type(reconcile_failure).__name__)
+    runtime["confirmed_attempted_at_interruption"]=dict(guard.attempted)
+    runtime["per_province_at_interruption"]={key:dict(value) for key,value in guard.per_province.items()}
+    runtime["reserved_exposure_at_interruption"]=dict(runtime.get("inflight_reserved_envelope") or {})
+    if hasattr(guard,"journal"):
+        try:
+            guard.journal("province_interrupted_unresolved",{
+                "province":province,"original_terminal":original,
+                "reserved_exposure":runtime["reserved_exposure_at_interruption"],
+                "confirmed_attempted":runtime["confirmed_attempted_at_interruption"],
+                "retry_allowed":False})
+        except BaseException:
+            state["ledger_unresolved"]=True
 
 def failure_detail(runtime:Mapping[str,Any],original:str,execution_id:str)->dict[str,Any]:
     state=runtime["state"] or {}
@@ -795,6 +878,12 @@ def failure_detail(runtime:Mapping[str,Any],original:str,execution_id:str)->dict
     return {"terminal":"CALL_LEDGER_UNRESOLVED" if unresolved else original,
             "original_terminal":original,"execution_id":execution_id,
             "literal_scientific_call_ledger":attempted,"source_ledger":source,
+            "confirmed_attempted_at_interruption":runtime.get("confirmed_attempted_at_interruption"),
+            "per_province_attempted":({key:dict(value) for key,value in guard.per_province.items()}
+                                       if guard is not None else None),
+            "reserved_exposure_at_interruption":runtime.get("reserved_exposure_at_interruption"),
+            "inflight_province":runtime.get("inflight_province"),
+            "retry_allowed":False,
             "prior_C8_start_attempted":dict(guard.prior) if guard is not None else None,
             "combined_attempted":({k:guard.prior[k]+guard.attempted[k]
                                    for k in guard.attempted} if guard is not None else None),
@@ -802,9 +891,7 @@ def failure_detail(runtime:Mapping[str,Any],original:str,execution_id:str)->dict
 
 def run_after_valid_gate(repo:Path,execution_id:str,action:Any)->str:
     """Protect a future authorized action; tests pass only inert stubs."""
-    contract=json.loads((repo/TIMED_CONTRACT).read_text(encoding="utf-8"))
-    if contract.get("active") is not True or contract.get("resource_wall_seconds") is None:
-        raise RepeatBlocked("BLOCKED__INACTIVE_CONTRACT")
+    assert_active_authority(repo,execution_id)
     output=repo/OUTPUT
     if os.path.lexists(output) or not path_components_safe(output):
         raise RepeatBlocked("BLOCKED__FUTURE_EVIDENCE_PATH_EXISTS_OR_UNSAFE")

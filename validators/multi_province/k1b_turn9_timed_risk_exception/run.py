@@ -69,10 +69,10 @@ def committed_file(repo: Path, relative: Path) -> str:
     return digest
 
 
-def load_delegate(repo: Path):
+def load_delegate(repo: Path, enforce_contract_hash: bool = True):
     contract = json.loads((repo / CONTRACT).read_text(encoding="utf-8"))
     expected = contract.get("delegate_sha256")
-    if not isinstance(expected, str) or sha(repo / DELEGATE) != expected:
+    if not isinstance(expected, str) or (enforce_contract_hash and sha(repo / DELEGATE) != expected):
         raise TimingBlocked("BLOCKED__C9_DELEGATE_IDENTITY")
     spec = importlib.util.spec_from_file_location("c9_timed_risk_delegate", repo / DELEGATE)
     if spec is None or spec.loader is None:
@@ -117,9 +117,11 @@ def static_preflight(repo: Path = REPOSITORY, require_inactive: bool = True) -> 
             repo / "docs/CH5_K1B_C9_C10_CALL_CEILINGS_OWNER_ADOPTION_20260925.md"),
         "c8_manifest_contract": contract.get("c8_execution_manifest_sha256") == C8_MANIFEST_SHA,
     }
-    if not all(checks.values()):
+    required_checks = {key: value for key, value in checks.items()
+                       if key != "delegate_hash" or not require_inactive}
+    if not all(required_checks.values()):
         raise TimingBlocked("BLOCKED__C9_STATIC_IDENTITY", checks)
-    c9 = load_delegate(repo)
+    c9 = load_delegate(repo, enforce_contract_hash=not require_inactive)
     delegated = c9.preflight(repo)
     if (not all(delegated["checks"].values()) or
             delegated["C8_entering"]["json"] != c9.SEALED["turn9_k1b_input_candidate.json"] or
@@ -127,7 +129,10 @@ def static_preflight(repo: Path = REPOSITORY, require_inactive: bool = True) -> 
             contract.get("per_province_attempt_ceiling") != c9.PER_PROVINCE or
             contract.get("c9_c10_cumulative_ceiling") != c9.TWO_TURN_CEILINGS):
         raise TimingBlocked("BLOCKED__C9_BUDGET_OR_INPUT_BINDING")
-    return {"status": "BLOCKED__INACTIVE_CONTRACT" if require_inactive else "PASS__ACTIVE_PREFLIGHT_ONLY", "checks": checks,
+    status = ("BLOCKED__INACTIVE_CONTRACT__DELEGATE_REBIND_REQUIRED"
+              if require_inactive and not checks["delegate_hash"] else
+              "BLOCKED__INACTIVE_CONTRACT" if require_inactive else "PASS__ACTIVE_PREFLIGHT_ONLY")
+    return {"status": status, "checks": checks,
             "delegated_checks": delegated["checks"], "src_tree": SRC_TREE,
             "c8_entering": delegated["C8_entering"],
             "output_candidate": str(repo / OUTPUT), "scientific_calls": 0,
@@ -259,9 +264,39 @@ def seal_science_outputs(c9: Any, output: Path, runtime: Mapping[str, Any]) -> d
                          {"status": "PASS", "manifest_sha256": digest, "bad_paths": []})
     return {"manifest_sha256": digest, "entry_count": len(entries)}
 
+def seal_partial_outputs(c9: Any, output: Path, runtime: Mapping[str, Any]) -> dict[str, Any]:
+    """Seal only files already present; never classify a failed turn as complete."""
+    if not c9.owns_output_root(output, runtime):
+        raise TimingBlocked("CALL_LEDGER_UNRESOLVED", "partial root ownership lost")
+    excluded = {"partial_artifact_manifest.json", "partial_artifact_readback.json",
+                "timing_failure.json"}
+    paths = list(output.rglob("*"))
+    if not all(c9.path_components_safe(path) for path in paths):
+        raise TimingBlocked("CALL_LEDGER_UNRESOLVED", "partial path unsafe")
+    files = sorted(path for path in paths if path.is_file() and path.name not in excluded)
+    entries = [{"path": path.relative_to(output).as_posix(), "bytes": path.stat().st_size,
+                "sha256": sha(path)} for path in files]
+    manifest = {"schema": "CH5_K1B_C9_PARTIAL_ARTIFACT_MANIFEST_V1",
+                "complete_outer_turn": False, "safe_pause": False,
+                "entry_count": len(entries), "entries": entries}
+    manifest_path = output / "partial_artifact_manifest.json"
+    c9.write_output_json(output, runtime, manifest_path, manifest)
+    bad = [row["path"] for row in entries if not (output / row["path"]).is_file()
+           or (output / row["path"]).stat().st_size != row["bytes"]
+           or sha(output / row["path"]) != row["sha256"]]
+    if not c9.owns_output_root(output, runtime):
+        bad.append("OUTPUT_ROOT_REPLACED")
+    readback = {"status": "PASS" if not bad else "FAIL", "manifest_sha256": sha(manifest_path),
+                "bad_paths": bad, "complete_outer_turn": False, "safe_pause": False}
+    c9.write_output_json(output, runtime, output / "partial_artifact_readback.json", readback)
+    return {"status": readback["status"], "manifest_sha256": readback["manifest_sha256"],
+            "readback_sha256": sha(output / "partial_artifact_readback.json"),
+            "entry_count": len(entries), "bad_paths": bad}
+
 
 def _instrumented_action(c9: Any, repo: Path, gate: Mapping[str, Any], start: Mapping[str, Any],
                          record: dict[str, Any], runtime: dict[str, Any]) -> str:
+    gate = future_gate(repo, gate.get("execution_id"), c9)
     output = repo / OUTPUT
     base_guard = c9.BudgetGuard
     original_output, original_task = c9.OUTPUT, c9.FUTURE_TASK_RELATIVE
@@ -276,6 +311,18 @@ def _instrumented_action(c9: Any, repo: Path, gate: Mapping[str, Any], start: Ma
             self.open_province: dict[int, dict[str, Any]] = {}
             self.integration_start: dict[str, Any] | None = None
             self.household_start: dict[str, Any] | None = None
+
+        def begin_province(self, province: int, ledger: Mapping[str, Any],
+                           envelope: Mapping[str, int]) -> None:
+            super().begin_province(province, ledger, envelope)
+            self.journal("province_baseline_and_reserved_exposure", {
+                "province": province, "baseline": self.province_baseline[province],
+                "reserved_exposure": dict(envelope), "confirmed_attempted": dict(self.attempted)})
+
+        def reconcile_province(self, province: int, ledger: Mapping[str, Any]) -> None:
+            super().reconcile_province(province, ledger)
+            self.journal("province_actual_counts_reconciled", {
+                "province": province, "actual": dict(self.per_province[province])})
 
         def journal(self, event: str, detail: Any = None) -> None:
             nonlocal sequence
@@ -367,8 +414,10 @@ def _instrumented_action(c9: Any, repo: Path, gate: Mapping[str, Any], start: Ma
 
 
 def run_timed_action(repo: Path, gate: Mapping[str, Any], c9: Any,
-                     action: Any = None, clock: Any = time, utc_now: Any = None) -> dict[str, Any]:
-    """Production uses the accepted delegate; tests pass inert actions only."""
+                     clock: Any = time, utc_now: Any = None) -> dict[str, Any]:
+    """Revalidate authority even for direct callers; action is fixed in production."""
+    repo = repo.resolve()
+    gate = future_gate(repo, gate.get("execution_id"), c9)
     output = repo / OUTPUT
     if os.path.lexists(output) or not c9.path_components_safe(output):
         raise TimingBlocked("BLOCKED__C9_OUTPUT_EXISTS_OR_UNSAFE")
@@ -377,7 +426,7 @@ def run_timed_action(repo: Path, gate: Mapping[str, Any], c9: Any,
     runtime_box: dict[str, Any] = {}
     def invoke(runtime: dict[str, Any]) -> str:
         runtime_box["runtime"] = runtime
-        return (action or _instrumented_action)(c9, repo, gate, start, record, runtime)
+        return _instrumented_action(c9, repo, gate, start, record, runtime)
     original_output = c9.OUTPUT
     try:
         c9.OUTPUT = OUTPUT
@@ -426,12 +475,12 @@ def run_timed_action(repo: Path, gate: Mapping[str, Any], c9: Any,
                  "normal_duration_gate": "BLOCKED__DURATION_BOUND_UNAVAILABLE",
                  "C10_started": False, "C10_authorized": False,
                  "results_eligibility": False}
-        c9.write_output_json(output, runtime, output / "pause_receipt.json", pause)
         end = clock_sample(clock, utc_now)
         elapsed = elapsed_clock(start, end)
         seal_interval = {"stage": "seal_and_readback", "start": seal_start,
                          "end": end, "elapsed_ns": elapsed_clock(seal_start, end)}
-        receipt = {"terminal": "SAFE_PAUSE_AFTER_SEALED_C9", "original_numerical_terminal": result,
+        receipt = {"terminal": result, "safe_pause_pending": True,
+                   "original_numerical_terminal": result,
                    "classification": "SINGLE_C9_TIMED_RISK_EXCEPTION_OBSERVED_ONLY",
                    "execution_id": gate["execution_id"], "start": start, "science_end": end_science,
                    "complete_seal_end": end, "elapsed_ns": elapsed,
@@ -442,30 +491,54 @@ def run_timed_action(repo: Path, gate: Mapping[str, Any], c9: Any,
                    "argv": list(sys.argv), "output_root": str(output),
                    "owner_adoption_sha256": gate["owner_adoption_sha256"],
                    "c9_contract_sha256": gate["contract_sha256"],
-                   "pause_receipt_sha256": c9.sha(output / "pause_receipt.json"),
                    "c9_c10_upper_duration_bound": None, "results_eligibility": False}
         c9.write_output_json(output, runtime, output / "timing_receipt.json", receipt)
-        return receipt
+        pause["timing_receipt_sha256"] = c9.sha(output / "timing_receipt.json")
+        pause["pause_clock"] = clock_sample(clock, utc_now)
+        # Final write: no later fallible operation may precede the safe-pause verdict.
+        c9.write_output_json(output, runtime, output / "pause_receipt.json", pause)
+        return {**receipt, "terminal": "SAFE_PAUSE_AFTER_SEALED_C9",
+                "safe_pause_pending": False}
     except BaseException as exc:
-        original = getattr(exc, "terminal", type(exc).__name__)
         runtime = runtime_box.get("runtime", {})
+        state = runtime.get("state") or {}
+        original = state.get("original_terminal") or getattr(exc, "terminal", type(exc).__name__)
         guard = runtime.get("guard")
         ambiguous = (guard is None or bool(getattr(guard, "open_province", {})) or
                      getattr(guard, "integration_start", None) is not None or
-                     bool((runtime.get("state") or {}).get("ledger_unresolved")))
+                     bool(state.get("ledger_unresolved")))
         terminal = "CALL_LEDGER_UNRESOLVED" if ambiguous else original
-        if runtime.get("output_identity") is not None and c9.owns_output_root(output, runtime):
+        partial = None
+        owned = runtime.get("output_identity") is not None and c9.owns_output_root(output, runtime)
+        if owned:
+            try:
+                partial = seal_partial_outputs(c9, output, runtime)
+                if partial["status"] != "PASS":
+                    terminal = "CALL_LEDGER_UNRESOLVED"
+            except BaseException as seal_failure:
+                terminal = "CALL_LEDGER_UNRESOLVED"
+                partial = {"status": "UNRESOLVED", "cause":
+                           getattr(seal_failure, "terminal", type(seal_failure).__name__)}
             try:
                 c9.write_output_json(output, runtime, output / "timing_failure.json",
                                      {"terminal": terminal, "original_terminal": original,
                                       "execution_id": gate["execution_id"], "start": start,
                                       "end": clock_sample(clock, utc_now),
-                                      "attempted": dict(guard.attempted) if guard else None,
+                                      "confirmed_attempted": dict(guard.attempted) if guard else None,
+                                      "per_province_attempted": guard.per_province if guard else None,
+                                      "reserved_exposure": runtime.get("reserved_exposure_at_interruption"),
+                                      "inflight_province": runtime.get("inflight_province"),
                                       "source_ledger": runtime.get("ledger"),
+                                      "partial_artifacts": partial,
+                                      "complete_outer_turn": False, "safe_pause": False,
                                       "retry_allowed": False})
             except BaseException:
                 terminal = "CALL_LEDGER_UNRESOLVED"
-        raise TimingBlocked(terminal, {"original_terminal": original}) from exc
+        elif runtime.get("output_identity") is not None:
+            terminal = "CALL_LEDGER_UNRESOLVED"
+        raise TimingBlocked(terminal, {"original_terminal": original,
+                                      "partial_artifacts": partial,
+                                      "retry_allowed": False}) from exc
     finally:
         c9.OUTPUT = original_output
 
