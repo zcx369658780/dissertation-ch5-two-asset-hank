@@ -24,11 +24,13 @@
   "current_execute_probes": 0,
   "dependency_matrix": [
     {
+      "committed_file_gate_required": true,
       "effect": "review SHA may later bind C; this preparation is not R",
       "future_path": "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_RUNNER_INDEPENDENT_REVIEW.md",
       "node": "R",
       "prerequisites": [
-        "separate independent GPT Work runner review"
+        "separate independent GPT Work runner review",
+        "committed_file on this exact future path: safe components, regular file, clean path-specific Git status, filtered worktree blob equals HEAD:path"
       ],
       "raw_sha256": "PENDING/ABSENT",
       "required_identity_tokens": [
@@ -40,6 +42,7 @@
       "status": "PENDING/ABSENT"
     },
     {
+      "committed_file_gate_required": true,
       "effect": "future live contract SHA may later bind O and T; this preparation is not C",
       "future_path": "tasks/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_CONTRACT.json",
       "node": "C",
@@ -49,7 +52,8 @@
       "prerequisites": [
         "R committed SHA",
         "prospective C content",
-        "distinct pre-C exact-live-content review and Owner content adoption; no established path/hash and no committed C SHA dependency"
+        "distinct pre-C exact-live-content review and Owner content adoption; no established path/hash and no committed C SHA dependency",
+        "committed_file on this exact future path: safe components, regular file, clean path-specific Git status, filtered worktree blob equals HEAD:path"
       ],
       "raw_sha256": "PENDING/ABSENT",
       "required_identity_tokens": [
@@ -62,13 +66,15 @@
       "status": "PENDING/ABSENT"
     },
     {
+      "committed_file_gate_required": true,
       "effect": "Owner execution adoption SHA may later bind T; this preparation is not O",
       "future_path": "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_EXECUTION_OWNER_ADOPTION.md",
       "node": "O",
       "prerequisites": [
         "C committed SHA",
         "R committed SHA",
-        "separate explicit Owner one-shot C9 execution decision before O"
+        "separate explicit Owner one-shot C9 execution decision before O",
+        "committed_file on this exact future path: safe components, regular file, clean path-specific Git status, filtered worktree blob equals HEAD:path"
       ],
       "raw_sha256": "PENDING/ABSENT",
       "required_identity_tokens": [
@@ -81,6 +87,7 @@
       "status": "PENDING/ABSENT"
     },
     {
+      "committed_file_gate_required_for_both_files": true,
       "current_task_kind": "ZERO_SCIENCE_NONAUTHORITY_REPAIR",
       "current_task_present": true,
       "effect": "future execution task-copy and future TASK_CURRENT.md execution content may be checked by runner; current TASK_CURRENT.md exists as zero-science task and is not execution T",
@@ -91,9 +98,12 @@
       "node": "T",
       "prerequisites": [
         "R, C and O committed SHAs",
-        "byte-identical TASK_CURRENT.md and task-copy contents"
+        "future execution-version TASK_CURRENT.md separately passes committed_file",
+        "future execution task-copy separately passes committed_file",
+        "raw SHA-256 of both files equal after both committed_file checks"
       ],
       "raw_sha256": "PENDING/ABSENT",
+      "raw_sha256_equality_required_after_both_checks": true,
       "required_identity_tokens": [
         "Task ID: `CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_EXECUTION`",
         "Status: `ACTIVE__ONE_SHOT_NEW_C9_POST_FAILURE`",
@@ -110,6 +120,7 @@
   ],
   "dependency_order": [
     {
+      "R_committed_file_gate_required": true,
       "gate": "R_COMMITTED_SHA",
       "status": "PENDING/ABSENT",
       "step": 1
@@ -122,6 +133,7 @@
       "step": 2
     },
     {
+      "C_committed_file_gate_required": true,
       "gate": "C_COMMITTED_SHA",
       "status": "PENDING/ABSENT",
       "step": 3
@@ -133,15 +145,18 @@
       "step": 4
     },
     {
+      "O_committed_file_gate_required": true,
       "gate": "O_BINDING_C_AND_R",
       "status": "PENDING/ABSENT",
       "step": 5
     },
     {
+      "both_T_files_separately_pass_committed_file": true,
       "current_TASK_CURRENT_md_present_zero_science": true,
       "gate": "BYTE_IDENTICAL_FUTURE_EXECUTION_CURRENT_AND_TASK_COPY_T",
       "status": "PENDING/ABSENT",
-      "step": 6
+      "step": 6,
+      "then_raw_sha256_values_equal": true
     },
     {
       "gate": "FINAL_INDEPENDENT_DISPATCH_REVIEW",
@@ -164,7 +179,8 @@
     "REJECT__LEDGER_COMPLETENESS_AND_SEAL_READBACK_PATH_GAPS__NO_SCIENCE",
     "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_RUNNER_FIELD_BINDINGS__NO_SCIENCE",
     "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_SCHEMA_AND_ACTIVE_BINDINGS__NO_SCIENCE",
-    "REJECT__IDENTITY_CHAIN_OWNER_ORDER_AND_TASK_ABSENCE_AMBIGUITY__NO_SCIENCE"
+    "REJECT__IDENTITY_CHAIN_OWNER_ORDER_AND_TASK_ABSENCE_AMBIGUITY__NO_SCIENCE",
+    "REJECT__IDENTITY_CHAIN_COMMITTED_FILE_GATE_OMITTED__NO_SCIENCE"
   ],
   "known_runner_bindings": {
     "budget_namespace": "C8_START_C9_POST_FAILURE_NEW_ATTEMPT_001_C10_PROSPECTIVE",
@@ -228,6 +244,16 @@
     "src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
     "task_issuance_commit": "418175e6f413261967e45cf15b6e0ec75d577299"
   },
+  "repair2_baseline": {
+    "previous_raw_sha256": {
+      "matrix": "FA6CB999D81E8C34CE4D5A1AFAC619EB746E24E3F0ED5B1FD385CE1F0E7AC636",
+      "receipt": "8D2696A9A8A03C773FDC079A5809F425E719D55D77B68EFBDE3763570C4BE05E",
+      "report": "90B7277FBD9FFC0720CC1101AD02CC14E2A5D047586567F474421D0DCD60372C"
+    },
+    "rejected_repair1_candidate": "4811fcc4a6e19af8f19295ee2993d3378e87b864",
+    "src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
+    "task_issuance_commit": "b3448e4800e98e6b1e7c89850192f012a51b9f60"
+  },
   "results_eligibility": false,
   "retries": 0,
   "schema": "CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_IDENTITY_CHAIN_NON_AUTHORITY_V1",
@@ -250,14 +276,34 @@
     },
     "technical_chain_alone_authorizes_dispatch": false
   },
+  "shared_committed_file_gate": {
+    "conditions_in_order": [
+      "all path components safe before follows-link metadata",
+      "regular file",
+      "path-specific git status --porcelain=v1 -- <path> empty",
+      "filtered worktree git hash-object --path=<path> <path> equals HEAD:<path>"
+    ],
+    "current_zero_science_TASK_CURRENT_md_satisfies_future_execution_gate": false,
+    "future_authority_files_currently_absent": true,
+    "raw_sha256_after_success": "sha256 of file bytes; does not replace filtered blob equality",
+    "required_for_each_future_file": [
+      "R",
+      "C",
+      "O",
+      "future execution TASK_CURRENT.md",
+      "future execution task-copy"
+    ],
+    "source_helper": "validators/multi_province/k1b_turn9_post_failure_new_attempt_timed/run.py:161-175"
+  },
   "source_raw_sha256": {
     "EVIDENCE/ch5_k1b_c9_new_budget_failed_ledger_policy_zero_science_proposal_20260926/proposed_budget.json": "66C2C028B07E2CB41FFBB05B643C6EF644291A0FC94C8DAF2FE888518D240460",
     "EVIDENCE/ch5_k1b_c9_post_failure_new_attempt_active_contract_proposal_zero_science_20260926/proposal_receipt.json": "5A055DB9FB0AF0046F2538F0D740936EA52A901E6BD7035737067842589AFA64",
-    "TASK_CURRENT.md": "E29CE53951F990E1C656862E8348FD9BD75ABDC70AB855299021A8999149B560",
+    "TASK_CURRENT.md": "1DC3DF0888B0A087E5A0733E0F2C15C4CA10845CD923E281046D73847E0C08A7",
     "docs/CH5_K1B_C9_NEW_BUDGET_FAILED_LEDGER_POLICY_OWNER_ADOPTION_20260926.md": "C1D88891C08D7526996F72DE6F77AA6D0FA2C593BAD91017877C8B8A0A51573D",
     "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_ACTIVE_CONTRACT_PROPOSAL_REPAIR2_INDEPENDENT_REVIEW_20260926.md": "7ECB074BEFF6BB1C07FB2309F5C7F3174D464CE7B10630561D3A660DCC6929BE",
     "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_FINAL_STATIC_PREPARATION_INDEPENDENT_REVIEW_20260926.md": "17A6EBFB415A38D225268FFAD501D9FF623CA1C5CF0B4919BB9BC7CB71B34826",
     "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_IDENTITY_CHAIN_PREPARATION_INDEPENDENT_REVIEW_20260926.md": "96F2CB9DC48D8F397A0009CE50432AF8FCBC489EDDCFC3D60B02DB487AF67BD8",
+    "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_IDENTITY_CHAIN_REPAIR1_INDEPENDENT_REVIEW_20260926.md": "CBD50C1CF1973A7E0A1C8D1271CBCD33C455C3DCDA6D7AA86B9A7230A5680D29",
     "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_PROPOSAL_OWNER_SELECTION_A_20260926.md": "A52AEF73F3D8DEC60067A3E2668C80B4DFBAB59F23482C134F98F85494CE5B6B",
     "tasks/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_ACTIVE_CONTRACT_PROPOSAL_20260926.json": "78AAF07333DCF1BA5A5717BF8DB252A616FEABDF2B7C04A8EC32D653241EA52E",
     "validators/multi_province/k1b_turn9_post_failure_new_attempt_outer_r2/run.py": "AD592FCEEB6563D56BFEA6A9F35029B83712A6ACCED80A1BAF8F53C144F99D56",

@@ -1,5 +1,7 @@
 # C9 新尝试身份链依赖矩阵（零科学、非权威）
 
+前两轮候选记录保留为历史；末尾 Repair2 节是本轮有效补充。
+
 原候选记录保留为历史；其身份链措辞已被独立 REJECT。末尾 Repair1 节给出本轮有效澄清。
 
 **状态：待 GPT Work 独立 ACCEPT/REJECT；不创建 R/C/O/T，也不授权运行。**
@@ -59,3 +61,19 @@ python -c "import hashlib,json,pathlib; r=pathlib.Path.cwd(); m=json.loads((r/'t
 ```
 
 唯一一次校验实际输出 `PASS: acyclic Owner gates, current task present, future authority absent`，退出码 `0`，未重跑。候选提交后仅待 GPT Work 独立 ACCEPT/REJECT。
+
+## Repair2：未来文件的 committed_file 门（2026-09-26）
+
+起点提交 `b3448e4800e98e6b1e7c89850192f012a51b9f60` 是 Repair1 被拒候选 `4811fcc4a6e19af8f19295ee2993d3378e87b864` 的直接子提交，`HEAD:src=00682b2e1a7ba23665f6e16f6acf48ad35874883`。前一矩阵/报告/收据原始 SHA-256 分别为 `FA6CB999D81E8C34CE4D5A1AFAC619EB746E24E3F0ED5B1FD385CE1F0E7AC636`、`90B7277FBD9FFC0720CC1101AD02CC14E2A5D047586567F474421D0DCD60372C`、`8D2696A9A8A03C773FDC079A5809F425E719D55D77B68EFBDE3763570C4BE05E`。直接前置裁决 `REJECT__IDENTITY_CHAIN_COMMITTED_FILE_GATE_OMITTED__NO_SCIENCE` 与全部此前 REJECT 并存。当前矩阵 SHA-256 `62DE1677853CD440DDBCA98C7864DB1639A468E3348A74CF33C2548336EA607C`。
+
+timed runner 的 `committed_file` 对未来 **R、C、O、执行版 `TASK_CURRENT.md`、执行 task-copy** 各自单独要求：路径各组件安全；叶是普通文件；该路径的 `git status --porcelain=v1 -- <path>` 为空；`git hash-object --path=<path> <path>` 的过滤后工作树 blob 等于 `HEAD:<path>`。成功后才取文件原始 SHA-256；过滤后 blob 相等不能替代原始 SHA 比较。T 的两份未来文件必须**分别**通过上述门，然后两份原始 SHA-256 相等。当前存在的 `TASK_CURRENT.md` 仍是零科学任务，不能视为已满足未来执行版要求。
+
+Repair1 的无环次序与两类 Owner 采纳不变：pre-C 内容审查/采纳不依赖 C 提交 SHA；Owner 明确的一次性执行决定先于 O；O/T 后仍须最终独立 dispatch 审查。五份受保护输出清单和既有来源身份未变；R/C/O/未来执行 task-copy 与新 C9 根仍缺席，当前 `TASK_CURRENT.md` 存在。顶层 `active=false`、`execution_authorized=false`，未来 SHA 仍为 `PENDING/ABSENT`。原两次禁止的 `--execute` 探测仍是历史违规；本轮探测、模型/科学调用、新 C9/C10 尝试、重试、部分续跑、受保护写入均为零。旧实际账本 `CALL_LEDGER_UNRESOLVED`，完整旧 turn 仅为治理扣账，Results eligibility `FALSE`。
+
+本轮来源：`TASK_CURRENT.md` SHA-256 `1DC3DF0888B0A087E5A0733E0F2C15C4CA10845CD923E281046D73847E0C08A7`；独立审查 SHA-256 `CBD50C1CF1973A7E0A1C8D1271CBCD33C455C3DCDA6D7AA86B9A7230A5680D29`。唯一获准的无模型只读结构校验命令：
+
+```text
+python -c "import hashlib,json,pathlib; r=pathlib.Path.cwd(); m=json.loads((r/'tasks/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_IDENTITY_CHAIN_PREPARATION_20260926.json').read_text(encoding='utf-8')); e=json.loads((r/'EVIDENCE/ch5_k1b_c9_post_failure_new_attempt_identity_chain_preparation_zero_science_20260926/preparation_receipt.json').read_text(encoding='utf-8')); g=m['shared_committed_file_gate']; n=m['dependency_matrix']; d=m['dependency_order']; assert m['active'] is False and m['execution_authorized'] is False and [x['node'] for x in n]==['R','C','O','T']; assert g['required_for_each_future_file']==['R','C','O','future execution TASK_CURRENT.md','future execution task-copy'] and len(g['conditions_in_order'])==4 and 'HEAD:<path>' in g['conditions_in_order'][3]; assert all(x['committed_file_gate_required'] is True for x in n[:3]); assert n[3]['committed_file_gate_required_for_both_files'] is True and n[3]['raw_sha256_equality_required_after_both_checks'] is True and d[5]['both_T_files_separately_pass_committed_file'] is True and d[5]['then_raw_sha256_values_equal'] is True; assert d[1]['depends_on_committed_C_sha'] is False and d[3]['must_precede']=='O'; assert m['absence_statement']['current_TASK_CURRENT_md_present'] is True and (r/'TASK_CURRENT.md').exists() and 'TASK_CURRENT.md' not in m['absent_live_and_new_root_paths'] and all(not (r/x).exists() for x in m['absent_live_and_new_root_paths']); assert m['accepted_proposal']['raw_sha256']==hashlib.sha256((r/m['accepted_proposal']['path']).read_bytes()).hexdigest().upper(); assert all(v['raw_sha256']==hashlib.sha256((r/v['path']).read_bytes()).hexdigest().upper() for v in m['protected_manifest_sha256'].values()); assert e['matrix_raw_sha256']==hashlib.sha256((r/e['matrix_path']).read_bytes()).hexdigest().upper(); print('PASS: committed-file gates for R/C/O and both T files; nonauthority boundaries intact')"
+```
+
+唯一一次校验实际输出 `PASS: committed-file gates for R/C/O and both T files; nonauthority boundaries intact`，退出码 `0`，未重跑。候选提交后仅待 GPT Work 独立 ACCEPT/REJECT。
