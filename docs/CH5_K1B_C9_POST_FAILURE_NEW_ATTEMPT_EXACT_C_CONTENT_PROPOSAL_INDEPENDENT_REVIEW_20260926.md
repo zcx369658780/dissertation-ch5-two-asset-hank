@@ -1,0 +1,16 @@
+# Independent review - exact C content proposal, zero science
+
+Verdict: `ACCEPT__NONAUTHORITY_EXACT_C_CONTENT_PROPOSAL_ONLY__NO_SCIENCE`
+
+Scope: Builder candidate `8bfec3bedb9df534420ff5b5a910d6ad9f19a3cb`, parent `d9c016bb0a55ab47a9490c2f00bc4b775131ccbb`, tree `4c6da4206b3578333d972b2e147d5c78a6a2dc6a`, `HEAD:src=00682b2e1a7ba23665f6e16f6acf48ad35874883`. This review accepts only four non-authoritative proposal/evidence files, not live C or a scientific attempt.
+
+## Readback
+
+- The commit changes exactly the four paths authorized by `TASK_CURRENT.md`. Their working raw SHA-256 values match the Builder's final report: envelope `D1273D5B3441F333F428D0795A8BB78EEC9669DD802F5F5517F672D9D06D98FC`, prospective bytes `7394216B2B43C8828F1778252F36AC75A259860B2C519758EE9C424CDD42C21F`, report `18C4E1520D73FF0AC212851A985A86085EFECB1F0C74B7B10D21DD523551E692`, receipt `C1232DF44DAE8E5F7B42A20949B2A3C33B46EBA0D0A5ED988C488F1C593003BB`.
+- Independent structured readback found exactly 27 prospective fields. Compared with the accepted proposal's `prospective_live_contract_fields`, the only value change is `independent_review_sha256` to committed R raw SHA-256 `9C62625C648B9C33F4DFFF2CA8539C611EB96411E95D2858832C12A1527AF67E`; deterministic UTF-8 sorted/indented JSON plus one LF matches the committed bytes. The first Reviewer one-liner incorrectly compared against a literal escaped newline and returned `CANONICAL_BYTES False`; inspection of the file tail and a corrected byte comparison returned `True` with both lengths `7807`. This was a Reviewer command construction error, not a candidate defect; no file was changed.
+- Outer envelope has its distinct non-authority schema, `active=false` and `execution_authorized=false`. Prospective bytes with `active=true` exist only under inert `EVIDENCE/`, not the runner's live C path. Source and protected hashes in the receipt match the frozen evidence readback. The five protected untracked output roots remain; actual live C, O, future execution task-copy and the new C9 output root are absent.
+- The receipt preserves all prior REJECT verdicts and the original two prohibited `--execute` probes as historical violations. Its single permitted validation is recorded as PASS with exit code 0; the current task made zero runner, `--execute`, model and scientific calls. The receipt's `TASK_CURRENT.md` hash is the candidate-HEAD task byte hash `6CBC1ED64A9F598A693D6184F33FFBC6C368F589AC67AB3CB095288F5E4547C9`, verified from that commit; subsequent Work task closure changes the working-file hash without changing the candidate evidence.
+
+## Boundary
+
+This ACCEPT establishes an exact-byte **proposal** only. It neither adopts those bytes as live C nor creates O/T or authorizes dispatch. Old `C9_TIMED_RISK_RUN001` remains consumed; actual calls remain `CALL_LEDGER_UNRESOLVED`, and full-old-turn charge is governance accounting only. C10, retry and partial resume remain closed; Results eligibility is `FALSE`. The next gate is Owner's separate decision on the exact prospective byte hash. Even an Owner C-byte adoption would still not authorize a new C9 scientific execution without later explicit one-shot authorization and final independent dispatch review.
