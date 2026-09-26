@@ -1,0 +1,9 @@
+# GPT Work session continuation after premature handoff
+
+Date: 2026-09-27 (Asia/Shanghai). The previous handoff document at `docs/CH5_K1B_WORK_SESSION_HANDOFF_AFTER_EXACT_INTERPRETER_CAPABILITY_20260927.md` is preserved as historical state, not deleted or rewritten.
+
+The Owner observed that the current GPT Work conversation had only 11 completed dialogue turns and explicitly asked to check and continue. App thread history confirms 11 completed turns plus the active turn, below the repository's 30-turn handoff threshold. The prior assertion that this Work conversation had become too long was premature. No independent reliability blocker is now established. This document supersedes only the prior instruction to require a **new Work conversation** before the next task; all scientific, evidence and safety gates in the handoff remain binding.
+
+Fresh local checks found `HEAD=93bbd41584579095beec1bf7e3073571ca7215f0`, frozen `HEAD:src=00682b2e1a7ba23665f6e16f6acf48ad35874883`, clean tracked/index, six protected untracked output roots, and all seven named manifest/readback hashes unchanged. Owner objective A remains in force. The exact-interpreter capability ACCEPT remains limited to standard-library support; native Windows containment is `UNRESOLVED__FAIL_CLOSED`.
+
+The designated Codex conversation `01a0dcd7-2acc-7571-b292-5807a0be0b1d` currently has 29 turns. It may receive one narrow zero-science official/API contract task under a newly issued `TASK_CURRENT.md`; after that turn reaches 30, Work must arrange its prompt/document handoff before another writing task. The old and new C9 attempts remain consumed, both actual ledgers `CALL_LEDGER_UNRESOLVED`, and Results eligibility `FALSE`. This correction authorizes no runner edit, isolation mutation, preflight, `--execute`, model or scientific entry.
