@@ -37,7 +37,8 @@
     "REJECT__STALE_INERT_SOURCE_ORDER_ASSERTION__NO_SCIENCE",
     "REJECT__FULL_INERT_TEST_FAILED__NO_CANDIDATE__NO_SCIENCE",
     "REJECT__LEDGER_COMPLETENESS_AND_SEAL_READBACK_PATH_GAPS__NO_SCIENCE",
-    "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_RUNNER_FIELD_BINDINGS__NO_SCIENCE"
+    "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_RUNNER_FIELD_BINDINGS__NO_SCIENCE",
+    "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_SCHEMA_AND_ACTIVE_BINDINGS__NO_SCIENCE"
   ],
   "limited_accept_verdicts": [
     "ACCEPT__FINAL_ENTRY_STATIC_ORDER_ONLY__NO_SCIENCE",
@@ -51,7 +52,7 @@
   "old_full_turn_charge_kind": "GOVERNANCE_ONLY__NOT_ACTUAL_CALLS",
   "partial_resumes": 0,
   "proposal_path": "tasks/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_ACTIVE_CONTRACT_PROPOSAL_20260926.json",
-  "proposal_raw_sha256": "18BFB7B274936BFB06806BD3F27871D277815DC644CD80A29791F52FD36D039B",
+  "proposal_raw_sha256": "78AAF07333DCF1BA5A5717BF8DB252A616FEABDF2B7C04A8EC32D653241EA52E",
   "protected_manifest_sha256": {
     "C6_prime": "7890720D502AC1C04D672978C6F662DD51F9D2BA27F321701877ABE9214CDE61",
     "C7": "413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91",
@@ -134,14 +135,67 @@
     "top_level_active": false,
     "top_level_execution_authorized": false
   },
+  "repair2": {
+    "C10_attempts": 0,
+    "absent_live_and_new_root_paths": [
+      "reports/ch5_k1b_turn9_post_failure_new_attempt_001",
+      "tasks/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_CONTRACT.json",
+      "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_RUNNER_INDEPENDENT_REVIEW.md",
+      "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_EXECUTION_OWNER_ADOPTION.md",
+      "tasks/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_EXECUTION.md"
+    ],
+    "baseline_commit": "f2eeb8aae6cdc5f4915b238170df04d2b6dd5d43",
+    "baseline_src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
+    "current_execute_probes": 0,
+    "future_authority": {
+      "byte_identical_one_shot_execution_task": "PENDING/ABSENT",
+      "exact_live_contract_owner_adoption": "PENDING/ABSENT",
+      "final_independent_dispatch_review": "PENDING/ABSENT",
+      "owner_one_shot_execution_adoption": "PENDING/ABSENT",
+      "runner_recognized_review_sha256": "PENDING/ABSENT"
+    },
+    "historical_probes_reclassified_as_compliant": false,
+    "historical_prohibited_execute_probes": 2,
+    "model_calls": 0,
+    "nested_future_active": true,
+    "nested_future_schema": "CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_CONTRACT_V1",
+    "new_C9_attempts": 0,
+    "old_actual_ledger": "CALL_LEDGER_UNRESOLVED",
+    "old_full_turn_charge_kind": "GOVERNANCE_ONLY__NOT_ACTUAL_CALLS",
+    "partial_resumes": 0,
+    "preceding_reject": "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_SCHEMA_AND_ACTIVE_BINDINGS__NO_SCIENCE",
+    "proposal_raw_sha256": "78AAF07333DCF1BA5A5717BF8DB252A616FEABDF2B7C04A8EC32D653241EA52E",
+    "prospective_field_count": 27,
+    "protected_manifest_sha256": {
+      "C6_prime": "7890720D502AC1C04D672978C6F662DD51F9D2BA27F321701877ABE9214CDE61",
+      "C7": "413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91",
+      "C8": "5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301",
+      "C8_timing": "5DD433E8DD0D8A3C6DB59C3FE370C4EF8770BBCCCA3F8D79211D93938CFA654D",
+      "C9_partial": "80BD0D42CB73B4E39B811E759505480542D5A73227014F30B732C34A8AC1FDC3"
+    },
+    "protected_output_writes": 0,
+    "rejected_repair1_candidate": "81fcf96f6b35383e3f1b9e166069e8357b0b2621",
+    "rejected_repair1_raw_sha256": {
+      "proposal": "18BFB7B274936BFB06806BD3F27871D277815DC644CD80A29791F52FD36D039B",
+      "receipt": "B75A3A515513542192E67EE9A7C467F1688BF3C8B87A5E483CAAA9983E82A8CA",
+      "report": "EA9918C8C1F51584DF5A6A9CB6A42F02409FEE5698DE5B08B6245905CB4186F6"
+    },
+    "report_raw_sha256": "8BA833FA6B81C809D2AC5869609B96501DE130C8B6352CCC78F627D3377C3B95",
+    "results_eligibility": false,
+    "retries": 0,
+    "scientific_calls": 0,
+    "top_level_active": false,
+    "top_level_execution_authorized": false,
+    "top_level_schema": "CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_NON_AUTHORITY_CONTRACT_PROPOSAL_V1"
+  },
   "report_path": "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_ACTIVE_CONTRACT_PROPOSAL_ZERO_SCIENCE_20260926.md",
-  "report_raw_sha256": "EA9918C8C1F51584DF5A6A9CB6A42F02409FEE5698DE5B08B6245905CB4186F6",
+  "report_raw_sha256": "8BA833FA6B81C809D2AC5869609B96501DE130C8B6352CCC78F627D3377C3B95",
   "results_eligibility": false,
   "retries": 0,
   "scientific_calls": 0,
   "source_raw_sha256": {
     "EVIDENCE/ch5_k1b_c9_new_budget_failed_ledger_policy_zero_science_proposal_20260926/proposed_budget.json": "66C2C028B07E2CB41FFBB05B643C6EF644291A0FC94C8DAF2FE888518D240460",
-    "TASK_CURRENT.md": "259564C9EC264920AB58C081276404FD057986029030599FDD6BD4025C84FAA6",
+    "TASK_CURRENT.md": "0F872A3D9A30AC592DC094D0E9AB34612CDC360A31C5F2744C665AD5115ACE9B",
     "docs/CH5_K1B_C9_NEW_BUDGET_FAILED_LEDGER_POLICY_OWNER_ADOPTION_20260926.md": "C1D88891C08D7526996F72DE6F77AA6D0FA2C593BAD91017877C8B8A0A51573D",
     "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_FINAL_STATIC_PREPARATION_INDEPENDENT_REVIEW_20260926.md": "17A6EBFB415A38D225268FFAD501D9FF623CA1C5CF0B4919BB9BC7CB71B34826",
     "reports/ch5_k1b_turn8_outer_r2_20260925_run001/execution_artifact_manifest.json": "5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301",
@@ -160,11 +214,11 @@
     "old_governance_charge": 39,
     "province": 5
   },
-  "task_id": "CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_CONTRACT_PROPOSAL_REPAIR1_ZERO_SCIENCE_20260926",
-  "validation_actual_result": "PASS: non-authority proposal matches prospective runner fields and live paths remain absent",
-  "validation_command": "python -c \"import hashlib,json,pathlib; r=pathlib.Path.cwd(); p=json.loads((r/'tasks/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_ACTIVE_CONTRACT_PROPOSAL_20260926.json').read_text(encoding='utf-8')); e=json.loads((r/'EVIDENCE/ch5_k1b_c9_post_failure_new_attempt_active_contract_proposal_zero_science_20260926/proposal_receipt.json').read_text(encoding='utf-8')); b=json.loads((r/p['budget_source_path']).read_text(encoding='utf-8')); f=p['prospective_live_contract_fields']; assert p['schema']!='CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_CONTRACT_V1' and p['active'] is False and p['execution_authorized'] is False; assert f['execution_id']=='C9_POST_FAILURE_NEW_ATTEMPT_001' and f['old_execution_id']=='C9_TIMED_RISK_RUN001' and f['execution_id']!=f['old_execution_id']; assert f['output_root']=='reports/ch5_k1b_turn9_post_failure_new_attempt_001' and f['attempts']==1 and f['retries']==0 and f['resource_policy']=='COOPERATIVE_PROCESS_WALL_CAP' and f['resource_wall_seconds']==36000; assert f['budget_proposal_sha256']==p['budget_source_raw_sha256'] and f['budget_owner_adoption_sha256']==p['budget_owner_adoption_raw_sha256'] and f['wrapper_sha256']==p['wrapper_raw_sha256'] and f['delegate_sha256']==p['delegate_raw_sha256'] and f['src_tree']==p['src_tree']; assert f['sealed_input_sha256']=={'manifest':p['sealed_c8_input_raw_sha256']['entering_manifest'],'readback':p['sealed_c8_input_raw_sha256']['entering_readback'],'json':p['sealed_c8_input_raw_sha256']['json'],'npz':p['sealed_c8_input_raw_sha256']['npz']}; assert all(f[k]==b[v] for k,v in (('per_category_attempt_ceiling','proposed_c9_per_category_attempt_ceiling'),('per_province_attempt_ceiling','proposed_c9_per_province_attempt_ceiling'),('c9_c10_cumulative_ceiling','proposed_c9_plus_future_c10_cumulative_ceiling'),('project_lifetime_governance_ceiling','full_old_turn_charge_project_lifetime_governance_ceiling_if_new_grant_adopted_not_calls'))); assert f['old_governance_charge_per_category']=={k:v['full_old_turn_governance_charge_not_calls'] for k,v in b['old_failure_category_matrix'].items()}; assert f['independent_review_sha256']=='PENDING/ABSENT' and all(x=='PENDING/ABSENT' for x in p['future_authority'].values()); assert f['automatic_c10_authorization'] is False and f['results_eligibility'] is False; assert all(not (r/x).exists() for x in e['absent_live_and_new_root_paths']); assert e['proposal_raw_sha256']==hashlib.sha256((r/e['proposal_path']).read_bytes()).hexdigest().upper(); print('PASS: non-authority proposal matches prospective runner fields and live paths remain absent')\"",
+  "task_id": "CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_CONTRACT_PROPOSAL_REPAIR2_ZERO_SCIENCE_20260926",
+  "validation_actual_result": "PASS: nested future schema and active binding complete; proposal inactive and live paths absent",
+  "validation_command": "python -c \"import hashlib,json,pathlib; r=pathlib.Path.cwd(); p=json.loads((r/'tasks/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_ACTIVE_CONTRACT_PROPOSAL_20260926.json').read_text(encoding='utf-8')); e=json.loads((r/'EVIDENCE/ch5_k1b_c9_post_failure_new_attempt_active_contract_proposal_zero_science_20260926/proposal_receipt.json').read_text(encoding='utf-8')); b=json.loads((r/p['budget_source_path']).read_text(encoding='utf-8')); f=p['prospective_live_contract_fields']; assert p['schema']!='CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_CONTRACT_V1' and p['active'] is False and p['execution_authorized'] is False; assert f['schema']=='CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_CONTRACT_V1' and f['active'] is True and len(f)==27; assert f['execution_id']=='C9_POST_FAILURE_NEW_ATTEMPT_001' and f['old_execution_id']=='C9_TIMED_RISK_RUN001' and f['execution_id']!=f['old_execution_id']; assert f['output_root']=='reports/ch5_k1b_turn9_post_failure_new_attempt_001' and f['attempts']==1 and f['retries']==0 and f['resource_policy']=='COOPERATIVE_PROCESS_WALL_CAP' and f['resource_wall_seconds']==36000; assert f['budget_proposal_sha256']==p['budget_source_raw_sha256'] and f['budget_owner_adoption_sha256']==p['budget_owner_adoption_raw_sha256'] and f['wrapper_sha256']==p['wrapper_raw_sha256'] and f['delegate_sha256']==p['delegate_raw_sha256'] and f['src_tree']==p['src_tree']; assert f['sealed_input_sha256']=={'manifest':p['sealed_c8_input_raw_sha256']['entering_manifest'],'readback':p['sealed_c8_input_raw_sha256']['entering_readback'],'json':p['sealed_c8_input_raw_sha256']['json'],'npz':p['sealed_c8_input_raw_sha256']['npz']}; assert all(f[k]==b[v] for k,v in (('per_category_attempt_ceiling','proposed_c9_per_category_attempt_ceiling'),('per_province_attempt_ceiling','proposed_c9_per_province_attempt_ceiling'),('c9_c10_cumulative_ceiling','proposed_c9_plus_future_c10_cumulative_ceiling'),('project_lifetime_governance_ceiling','full_old_turn_charge_project_lifetime_governance_ceiling_if_new_grant_adopted_not_calls'))); assert f['old_governance_charge_per_category']=={k:v['full_old_turn_governance_charge_not_calls'] for k,v in b['old_failure_category_matrix'].items()}; assert f['independent_review_sha256']=='PENDING/ABSENT' and all(x=='PENDING/ABSENT' for x in p['future_authority'].values()); assert f['automatic_c10_authorization'] is False and f['results_eligibility'] is False; assert all(not (r/x).exists() for x in e['absent_live_and_new_root_paths']); assert e['proposal_raw_sha256']==hashlib.sha256((r/e['proposal_path']).read_bytes()).hexdigest().upper(); print('PASS: nested future schema and active binding complete; proposal inactive and live paths absent')\"",
   "validation_exit_code": 0,
-  "validation_expected_result": "PASS: non-authority proposal matches prospective runner fields and live paths remain absent",
+  "validation_expected_result": "PASS: nested future schema and active binding complete; proposal inactive and live paths absent",
   "validation_runs_authorized": 1,
   "validation_runs_recorded": 1,
   "validation_status": "PASS"
