@@ -1,7 +1,8 @@
-# Current Builder Task — C9 Repair2 final-entry static verification
+# Current Builder Task — closed after independent static review
 
 Task ID: `CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_FINAL_ENTRY_STATIC_VERIFICATION_20260926`
-Status: `ACTIVE__ZERO_SCIENCE_STATIC_VERIFICATION_ONLY`
+Status: `CLOSED__FINAL_ENTRY_STATIC_ORDER_ACCEPTED__NO_SCIENCE`
+The task below is historical scope only. Candidate `8f0b19ed3263b2b57babcff9b1b5b8673a31db2c` received independent static-only ACCEPT in `docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_FINAL_ENTRY_STATIC_VERIFICATION_INDEPENDENT_REVIEW_20260926.md`. This closed sheet authorizes no further Codex write, test or execution.
 Assignee: Codex project `Zotero-Analytical-Workflow`, conversation `第五章 K1B 静态 runner 审查后接续` (`01a0dcd7-2acc-7571-b292-5807a0be0b1d`) only.
 Worktree: `D:\ProjectTemp\c5k1bturn56` only. Never access `deep-learning-hank` or Zotero repository files.
 
