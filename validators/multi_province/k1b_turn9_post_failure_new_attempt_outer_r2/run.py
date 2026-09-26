@@ -263,6 +263,21 @@ def owns_output_root(output:Path,runtime:Mapping[str,Any])->bool:
     except OSError:return False
     return bool(identity.st_ino) and stat.S_ISDIR(identity.st_mode) and (identity.st_dev,identity.st_ino)==expected
 
+def record_output_guard_failure(output:Path,runtime:Mapping[str,Any],path:Path,
+                                reason:str)->None:
+    """Keep output-guard diagnostics bounded and relative to the owned root."""
+    if not isinstance(runtime,dict):return
+    try:
+        relative=path.relative_to(output)
+        label=(relative.as_posix() if relative.parts and ".." not in relative.parts
+               else "<redacted>")
+    except ValueError:label="<outside-owned-root>"
+    allowed="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789._-/"
+    if (label not in ("<redacted>","<outside-owned-root>") and
+            (len(label)>160 or not all(ch in allowed for ch in label))):
+        label="<redacted>"
+    runtime["output_guard_failure"]={"relative_path":label,"reason":reason}
+
 def guard_output_mutation(output:Path,runtime:Mapping[str,Any],path:Path)->None:
     """Check ownership and every existing output component before a path mutation."""
     output=output.absolute()
@@ -274,6 +289,47 @@ def guard_output_mutation(output:Path,runtime:Mapping[str,Any],path:Path)->None:
         raise RepeatBlocked("BLOCKED__FUTURE_EVIDENCE_ROOT_NOT_OWNED",str(path))
     if not path_components_safe(path):
         raise RepeatBlocked("BLOCKED__OUTPUT_COMPONENT_REPARSE_POINT",str(path))
+
+def guard_output_mkdir(output:Path,runtime:Mapping[str,Any],path:Path,parents:bool)->None:
+    """Allow missing mkdir suffixes, but inspect every existing owned component."""
+    output=output.absolute()
+    path=Path(path).absolute()
+    try:
+        relative=path.relative_to(output)
+    except ValueError:
+        relative=None
+    def blocked(terminal:str,reason:str)->None:
+        record_output_guard_failure(output,runtime,path,reason)
+        raise RepeatBlocked(terminal)
+    if relative is None:
+        blocked("BLOCKED__OUTPUT_PATH_OUTSIDE_OWNED_ROOT","outside_owned_root")
+    if not relative.parts or ".." in relative.parts or not owns_output_root(output,runtime):
+        blocked("BLOCKED__FUTURE_EVIDENCE_ROOT_NOT_OWNED","root_not_owned")
+    component=output
+    for index,part in enumerate(relative.parts):
+        component=component/part
+        try:
+            identity=component.lstat()
+        except FileNotFoundError:
+            if not parents and index<len(relative.parts)-1:
+                # The original mkdir must report its ordinary missing-parent
+                # error; this guard must neither create nor mislabel it.
+                if not owns_output_root(output,runtime):
+                    blocked("BLOCKED__FUTURE_EVIDENCE_ROOT_NOT_OWNED","root_not_owned")
+                return
+            # parents=True may create a missing suffix; a missing final leaf
+            # has the ordinary Path.mkdir behavior with either parents value.
+            break
+        except OSError:
+            blocked("BLOCKED__OUTPUT_COMPONENT_REPARSE_POINT","lstat_error")
+        attributes=getattr(identity,"st_file_attributes",None)
+        if (stat.S_ISLNK(identity.st_mode) or
+                (attributes is not None and
+                 attributes & getattr(stat,"FILE_ATTRIBUTE_REPARSE_POINT",0)) or
+                (os.name=="nt" and attributes is None)):
+            blocked("BLOCKED__OUTPUT_COMPONENT_REPARSE_POINT","reparse_component")
+    if not owns_output_root(output,runtime):
+        blocked("BLOCKED__FUTURE_EVIDENCE_ROOT_NOT_OWNED","root_not_owned")
 
 
 def seal_generated_bundle_guarded(output:Path,runtime:Mapping[str,Any],
@@ -297,7 +353,8 @@ def install_output_mutation_guards(output:Path,runtime:Mapping[str,Any])->tuple[
     """Intercept Path mutations in reused source for the duration of one run."""
     original_mkdir,original_unlink=Path.mkdir,Path.unlink
     def guarded_mkdir(path:Path,*args:Any,**kwargs:Any)->None:
-        guard_output_mutation(output,runtime,path)
+        parents=kwargs.get("parents",args[1] if len(args)>1 else False)
+        guard_output_mkdir(output,runtime,path,bool(parents))
         original_mkdir(path,*args,**kwargs)
     def guarded_unlink(path:Path,*args:Any,**kwargs:Any)->None:
         guard_output_mutation(output,runtime,path)
@@ -1165,6 +1222,7 @@ def failure_detail(runtime:Mapping[str,Any],original:str,execution_id:str)->dict
     unresolved=bool(state.get("ledger_unresolved")) or (started and (attempted is None or source is None))
     return {"terminal":"CALL_LEDGER_UNRESOLVED" if unresolved else original,
             "original_terminal":original,"execution_id":execution_id,
+            "output_guard_failure":runtime.get("output_guard_failure"),
             "literal_scientific_call_ledger":attempted,"source_ledger":source,
             "confirmed_attempted_at_interruption":runtime.get("confirmed_attempted_at_interruption"),
             "per_province_attempted":({key:dict(value) for key,value in guard.per_province.items()}

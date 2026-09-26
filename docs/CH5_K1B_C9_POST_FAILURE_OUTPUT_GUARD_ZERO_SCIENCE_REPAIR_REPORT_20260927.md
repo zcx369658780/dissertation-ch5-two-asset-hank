@@ -1,0 +1,54 @@
+# C9 失败后 output-guard 零科学修复候选
+
+状态：仅供 GPT Work 独立 ACCEPT/REJECT 的工程候选；不授权运行、重试或续跑。签发 parent `98a75859d495c35c6d26643bf45f0f6fbb14b651`，签发 `HEAD:src=00682b2e1a7ba23665f6e16f6acf48ad35874883`。
+
+## 改动与边界
+
+`Path.mkdir` 的专用守卫现在在已绑定的 owned output root 下逐个检查现存组件，并允许 `parents=True` 创建安全的缺失后缀。现存 symlink/reparse、非 `FileNotFoundError` 的 `lstat` 失败、输出根身份更换均阻断；`parents=False` 缺失中间父目录交给原始 `Path.mkdir` 报错。原有非 `mkdir` 变更守卫及 `unlink` 准入不变。失败详情仅记录有界、脱敏的相对路径与四种受控原因，不覆盖原始终态，也不把 `CALL_LEDGER_UNRESOLVED` 改判为已解决。冻结科学源、模型、预算、时序、合同和受保护输出均未改动。
+
+## 前置备份与核验
+
+源码修改前，已在 `C:\Users\zcxve\Documents\Chapter5LocalBackups\c9-output-guard-repair-20260927-98a75859d495` 保存并验证提交历史 bundle 和新 C9 失败根的 14 个普通文件；每份副本与原件按字节数和 SHA-256 核对，原根未改动。`committed_history.bundle` 包含签发 HEAD，`git bundle verify` 退出码 0，原始 SHA-256 为 `07CAFD0BC6A4946C29F25C2A49F81A59DCABEA0737745CC1A01784B099025D6E`；`backup_manifest.json` 原始 SHA-256 为 `3CCD743A399370F4899562530D1E31A020D7C1C7C12B76518871454A811E34B0`。
+
+## 惰性验证
+
+唯一聚焦测试调用：`python -m pytest -q tests/test_mp4c_k1b_turn9_post_failure_new_attempt_preflight.py -k "output_guard_mkdir or output_guard_failure_detail"`；退出码 0，`7 passed, 1 skipped, 62 deselected`。跳过的是本机不能创建真实目录符号链接的用例；模拟 reparse、`lstat` 错误、根更换、`parents=False`、安全缺失后缀和有界失败详情均通过。只读代码复审无阻断问题，`git diff --check` 无空白错误。聚焦测试预算使用 `1/2`；preflight、`--execute`、wrapper、模型及科学调用均为 0。
+
+## 原始身份与保护
+
+改后 delegate 原始 SHA-256：`AA081078AC9B2997E3DFAA6BA5AF725F5C53013EA7F194780E5BE35A0C911BF2`；惰性测试原始 SHA-256：`ADF8D214CB9C26919E33293BC4797D24DCFE578D0D16157067249A57E437D9E9`。报告与收据的原始哈希见收据及最终候选交接。
+
+六个未跟踪、受保护输出根的清单原始 SHA-256 经再次只读核对，均与已接受诊断收据一致：
+
+| 根 | 清单 SHA-256 |
+| --- | --- |
+| C6 prime | `7890720D502AC1C04D672978C6F662DD51F9D2BA27F321701877ABE9214CDE61` |
+| C7 | `413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91` |
+| C8 | `5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301` |
+| C8 timing | `5DD433E8DD0D8A3C6DB59C3FE370C4EF8770BBCCCA3F8D79211D93938CFA654D` |
+| old C9 partial | `80BD0D42CB73B4E39B811E759505480542D5A73227014F30B732C34A8AC1FDC3` |
+| new C9 partial | `3B10AB56BC2CE3D8FF9B4FB6442E012CB39686AF389624D17566CC8D68F57D20` |
+
+新 C9 `partial_artifact_readback.json` 原始 SHA-256 仍为 `8191C24E8A472EE702C71A72DB4F4CCC9A0733D432226DFDB6EF0B4045792BAC`。完整路径和哈希映射见同目录收据。
+
+## 历史裁决与下一门
+
+原先两次被禁止的 `--execute` 探测仍按**任务违规**保留，不计作本轮合规测试。以下既有 REJECT 均不因本修复而改判：
+
+- `REJECT__TASK_BOUNDARY_VIOLATION_AND_STATIC_GAPS__NO_SCIENCE`
+- `REJECT__SEALED_INPUT_PATH_GAP_AND_EVIDENCE_AMBIGUITY__NO_SCIENCE`
+- `REJECT__FINAL_ENTRY_GUARDS_UNTESTED__NO_SCIENCE`
+- `REJECT__ACTIVE_PREFLIGHT_AND_PREIMPORT_AUTHORITY_GAPS__NO_SCIENCE`
+- `REJECT__PREIMPORT_AUTHORITY_PATH_AND_BEHAVIOR_EVIDENCE_GAPS__NO_SCIENCE`
+- `REJECT__AUTHORITY_METADATA_FOLLOWS_UNSAFE_PATH__NO_SCIENCE`
+- `REJECT__STALE_INERT_SOURCE_ORDER_ASSERTION__NO_SCIENCE`
+- `REJECT__FULL_INERT_TEST_FAILED__NO_CANDIDATE__NO_SCIENCE`
+- `REJECT__LEDGER_COMPLETENESS_AND_SEAL_READBACK_PATH_GAPS__NO_SCIENCE`
+- `REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_RUNNER_FIELD_BINDINGS__NO_SCIENCE`
+- `REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_SCHEMA_AND_ACTIVE_BINDINGS__NO_SCIENCE`
+- `REJECT__IDENTITY_CHAIN_OWNER_ORDER_AND_TASK_ABSENCE_AMBIGUITY__NO_SCIENCE`
+- `REJECT__IDENTITY_CHAIN_COMMITTED_FILE_GATE_OMITTED__NO_SCIENCE`
+- `REJECT__COMPLETE_C9_NOT_DELIVERED__CALL_LEDGER_UNRESOLVED`
+- `REJECT__COMPLETE_NEW_C9_EXECUTION__OUTPUT_GUARD_BLOCK_AND_CALL_LEDGER_UNRESOLVED`
+
+旧、新 C9 尝试均已消耗；两份实际调用账本仍是 `CALL_LEDGER_UNRESOLVED`。C10、重试、部分续跑及 Results 均关闭，Results eligibility `FALSE`。下一门仅为 GPT Work 对本地候选独立 ACCEPT/REJECT；任何未来科学尝试需单独 Owner 决定及新 R/C/O/T 链。

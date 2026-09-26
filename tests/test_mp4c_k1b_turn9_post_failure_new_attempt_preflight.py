@@ -698,3 +698,177 @@ def test_repair6_safe_generated_leaves_reach_only_mock_sealer(modules, tmp_path)
         output, runtime, integration, 10, lambda *args: calls.append(args) or "mocked")
     assert result == "mocked"
     assert calls == [(output, integration, 10)]
+
+
+def _owned_output(tmp_path):
+    output = tmp_path / "owned"
+    output.mkdir()
+    identity = output.lstat()
+    return output, {"output_identity": (identity.st_dev, identity.st_ino)}
+
+
+def _assert_output_guard_reason(runtime, expected):
+    allowed = {"root_not_owned", "outside_owned_root", "reparse_component", "lstat_error"}
+    reason = runtime["output_guard_failure"]["reason"]
+    assert reason in allowed
+    assert reason == expected
+
+
+def test_output_guard_mkdir_parents_allows_safe_missing_suffix(repair5_modules, tmp_path):
+    _, delegate = repair5_modules
+    output, runtime = _owned_output(tmp_path)
+    nested = output / "turn9" / "partial" / "evidence"
+    original_mkdir, original_unlink = delegate.install_output_mutation_guards(output, runtime)
+    try:
+        nested.mkdir(parents=True)
+    finally:
+        Path.mkdir, Path.unlink = original_mkdir, original_unlink
+    assert nested.is_dir()
+    assert delegate.owns_output_root(output, runtime)
+
+
+def test_output_guard_mkdir_without_parents_preserves_missing_parent_error(
+        repair5_modules, tmp_path):
+    _, delegate = repair5_modules
+    output, runtime = _owned_output(tmp_path)
+    nested = output / "missing" / "leaf"
+    original_mkdir, original_unlink = delegate.install_output_mutation_guards(output, runtime)
+    try:
+        with pytest.raises(FileNotFoundError):
+            nested.mkdir(parents=False)
+    finally:
+        Path.mkdir, Path.unlink = original_mkdir, original_unlink
+    assert not (output / "missing").exists()
+
+
+def test_output_guard_mkdir_without_parents_creates_missing_final_leaf(
+        repair5_modules, tmp_path):
+    _, delegate = repair5_modules
+    output, runtime = _owned_output(tmp_path)
+    leaf = output / "leaf"
+    original_mkdir, original_unlink = delegate.install_output_mutation_guards(output, runtime)
+    try:
+        leaf.mkdir(parents=False)
+    finally:
+        Path.mkdir, Path.unlink = original_mkdir, original_unlink
+    assert leaf.is_dir()
+
+
+def test_output_guard_mkdir_rejects_real_symlink_parent(repair5_modules, tmp_path):
+    _, delegate = repair5_modules
+    output, runtime = _owned_output(tmp_path)
+    destination = tmp_path / "destination"
+    destination.mkdir()
+    linked = output / "linked"
+    try:
+        linked.symlink_to(destination, target_is_directory=True)
+    except (OSError, NotImplementedError) as exc:
+        pytest.skip(f"directory symlink unavailable: {exc}")
+    with pytest.raises(delegate.RepeatBlocked, match="OUTPUT_COMPONENT"):
+        delegate.guard_output_mkdir(output, runtime, linked / "new" / "leaf", parents=True)
+    _assert_output_guard_reason(runtime, "reparse_component")
+    assert not (destination / "new").exists()
+
+
+def test_output_guard_mkdir_rejects_reparse_parent(repair5_modules, tmp_path, monkeypatch):
+    _, delegate = repair5_modules
+    output, runtime = _owned_output(tmp_path)
+    parent = output / "existing"
+    parent.mkdir()
+    original_lstat = Path.lstat
+
+    def reparse_lstat(path):
+        identity = original_lstat(path)
+        if path == parent:
+            return SimpleNamespace(st_mode=identity.st_mode, st_dev=identity.st_dev,
+                                   st_ino=identity.st_ino,
+                                   st_file_attributes=getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0x400))
+        return identity
+
+    monkeypatch.setattr(Path, "lstat", reparse_lstat)
+    with pytest.raises(delegate.RepeatBlocked, match="OUTPUT_COMPONENT"):
+        delegate.guard_output_mkdir(output, runtime, parent / "new" / "leaf", parents=True)
+    assert not (parent / "new").exists()
+    assert runtime["output_guard_failure"] == {
+        "relative_path": "existing/new/leaf", "reason": "reparse_component"}
+    _assert_output_guard_reason(runtime, "reparse_component")
+
+
+def test_output_guard_mkdir_rejects_non_missing_lstat_error(
+        repair5_modules, tmp_path, monkeypatch):
+    _, delegate = repair5_modules
+    output, runtime = _owned_output(tmp_path)
+    parent = output / "existing"
+    parent.mkdir()
+    original_lstat = Path.lstat
+
+    def denied_lstat(path):
+        if path == parent:
+            raise PermissionError("inert lstat denial")
+        return original_lstat(path)
+
+    monkeypatch.setattr(Path, "lstat", denied_lstat)
+    with pytest.raises(delegate.RepeatBlocked, match="OUTPUT_COMPONENT"):
+        delegate.guard_output_mkdir(output, runtime, parent / "new" / "leaf", parents=True)
+    assert not (parent / "new").exists()
+    assert runtime["output_guard_failure"] == {
+        "relative_path": "existing/new/leaf", "reason": "lstat_error"}
+    _assert_output_guard_reason(runtime, "lstat_error")
+
+
+def test_output_guard_mkdir_rejects_replaced_owned_root(repair5_modules, tmp_path):
+    _, delegate = repair5_modules
+    output, runtime = _owned_output(tmp_path)
+    output.rename(tmp_path / "former_owned")
+    output.mkdir()
+    with pytest.raises(delegate.RepeatBlocked, match="FUTURE_EVIDENCE_ROOT_NOT_OWNED"):
+        delegate.guard_output_mkdir(output, runtime, output / "turn9" / "leaf", parents=True)
+    assert not (output / "turn9").exists()
+    assert runtime["output_guard_failure"] == {
+        "relative_path": "turn9/leaf", "reason": "root_not_owned"}
+    _assert_output_guard_reason(runtime, "root_not_owned")
+
+
+def test_output_guard_failure_detail_is_bounded_and_keeps_unresolved_ledger(
+        repair5_modules, tmp_path):
+    _, delegate = repair5_modules
+    output, runtime = _owned_output(tmp_path)
+    outside = tmp_path / "outside" / "leaf"
+    with pytest.raises(delegate.RepeatBlocked, match="OUTPUT_PATH_OUTSIDE_OWNED_ROOT"):
+        delegate.guard_output_mkdir(output, runtime, outside, parents=True)
+    assert runtime["output_guard_failure"] == {
+        "relative_path": "<outside-owned-root>", "reason": "outside_owned_root"}
+    _assert_output_guard_reason(runtime, "outside_owned_root")
+
+    traversal_runtime = {"output_identity": runtime["output_identity"]}
+    with pytest.raises(delegate.RepeatBlocked):
+        delegate.guard_output_mkdir(output, traversal_runtime,
+                                    output / ".." / "outside", parents=True)
+    assert traversal_runtime["output_guard_failure"]["relative_path"] == "<redacted>"
+    _assert_output_guard_reason(traversal_runtime, "root_not_owned")
+
+    runtime = {"output_identity": runtime["output_identity"]}
+    unsafe = output / ("a" * 161)
+    original_lstat = Path.lstat
+
+    def unsafe_lstat(path):
+        if path == unsafe:
+            return SimpleNamespace(st_mode=stat.S_IFLNK | 0o777,
+                                   st_file_attributes=0)
+        return original_lstat(path)
+
+    with pytest.MonkeyPatch.context() as context:
+        context.setattr(Path, "lstat", unsafe_lstat)
+        with pytest.raises(delegate.RepeatBlocked, match="OUTPUT_COMPONENT"):
+            delegate.guard_output_mkdir(output, runtime, unsafe, parents=True)
+    diagnostic = runtime["output_guard_failure"]
+    assert diagnostic["relative_path"] == "<redacted>"
+    assert len(diagnostic["relative_path"]) <= 160
+    _assert_output_guard_reason(runtime, "reparse_component")
+    runtime.update(state={"ledger_unresolved": True}, guard=None,
+                   scientific_started=True, ledger=None)
+    detail = delegate.failure_detail(runtime, "BLOCKED__OUTPUT_COMPONENT_REPARSE_POINT",
+                                     delegate.NEW_EXECUTION_ID)
+    assert detail["terminal"] == "CALL_LEDGER_UNRESOLVED"
+    assert detail["original_terminal"] == "BLOCKED__OUTPUT_COMPONENT_REPARSE_POINT"
+    assert detail["output_guard_failure"] == diagnostic
