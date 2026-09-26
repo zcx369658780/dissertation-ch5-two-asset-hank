@@ -1,0 +1,226 @@
+{
+  "schema": "CH5_K1B_C9_OUTPUT_MUTATION_A_NATIVE_API_CONTRACT_ZERO_SCIENCE_RECEIPT_V1",
+  "status": "LOCAL_OFFICIAL_DOCUMENTATION_CANDIDATE_PENDING_INDEPENDENT_GPT_WORK_ACCEPT_REJECT__NO_SCIENCE",
+  "issuing_parent": "9ba9cd330790250902bb0eae061148ce31faa819",
+  "issuing_src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
+  "owner_objective": "A__CONCURRENT_AND_HOSTILE_PATH_REPLACEMENT_CONTAINMENT_RETAINED",
+  "source_retrieval_date": "2026-09-27 Asia/Shanghai",
+  "official_http_200_pages": 11,
+  "official_http_404_pages": 2,
+  "additional_directly_relevant_pages_including_404": 6,
+  "source_ledger": [
+    {
+      "url": "https://docs.python.org/3.11/library/os.html#os.supports_dir_fd",
+      "status": 200,
+      "excerpt": "Different platforms provide different features",
+      "scope": "conditional dir_fd, not host support"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilew",
+      "status": 200,
+      "excerpt": "You must set this flag to obtain a handle to a directory",
+      "scope": "directory handle, not ancestor containment"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createdirectoryw",
+      "status": 200,
+      "excerpt": "The path of the directory to be created",
+      "scope": "path-based directory create, not handle-relative"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-deletefilew",
+      "status": 200,
+      "excerpt": "marks a file for deletion on close",
+      "scope": "path-based delete, not safe relative unlink"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfileinformationbyhandle",
+      "status": 200,
+      "excerpt": "handle to the file for which to change information",
+      "scope": "opened target handle, not safe acquisition"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getfileinformationbyhandleex",
+      "status": 200,
+      "excerpt": "FileIdInfo (0x12)",
+      "scope": "handle identity query, not mutation binding"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/ns-winbase-file_id_info",
+      "status": 200,
+      "excerpt": "To determine whether two open handles represent the same file",
+      "scope": "compare open handles, not lifetime or containment"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/ntdef/ns-ntdef-_object_attributes",
+      "status": 200,
+      "excerpt": "If any reparses are encountered the attempt will fail and return an STATUS_REPARSE_POINT_ENCOUNTERED result.",
+      "scope": "name parsing flag, not complete user-mode chain"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatefile",
+      "status": 200,
+      "excerpt": "As pathname relative to the directory file represented by the handle in the RootDirectory member",
+      "scope": "relative create primitive, not complete recursive contract"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/using-nt-and-zw-versions-of-the-native-system-services-routines",
+      "status": 200,
+      "excerpt": "User-mode applications can access these routines by using system calls",
+      "scope": "access possibility, not complete stable application ABI"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/wdm/nf-wdm-zwsetinformationfile",
+      "status": 200,
+      "excerpt": "The caller must have opened the file with the DELETE flag set in the DesiredAccess parameter.",
+      "scope": "opened handle delete primitive, not safe acquisition"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfileinformationbyhandleex",
+      "status": 404,
+      "excerpt": "UNAVAILABLE",
+      "scope": "wrong URL gives no evidence"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreatefile",
+      "status": 404,
+      "excerpt": "UNAVAILABLE",
+      "scope": "wrong URL gives no evidence"
+    }
+  ],
+  "raw_sha256_bindings": {
+    "frozen_delegate": {
+      "sha256": "AA081078AC9B2997E3DFAA6BA5AF725F5C53013EA7F194780E5BE35A0C911BF2",
+      "path": "validators/multi_province/k1b_turn9_post_failure_new_attempt_outer_r2/run.py"
+    },
+    "owner_a_adoption": {
+      "sha256": "A41DA4B962BE577E5B9250DE43872199A65005DFDD0DA1EBF31A4892C92B84F4",
+      "path": "docs/CH5_K1B_C9_OUTPUT_MUTATION_SAFETY_OBJECTIVE_A_OWNER_ADOPTION_20260927.md"
+    },
+    "accepted_atomicity_design": {
+      "sha256": "46AA2C303BC7CB0F10A7C916BFCABA9F85B4EE79A91B7DE47E9B97A0900B3634",
+      "path": "docs/CH5_K1B_C9_OUTPUT_MUTATION_ATOMICITY_ZERO_SCIENCE_DESIGN_20260927.md"
+    },
+    "exact_interpreter_review": {
+      "sha256": "CD8147BE809A2C2EFAFA64116DC1FC0842BF608BFD93A013220183E3A8CEF95B",
+      "path": "docs/CH5_K1B_C9_OUTPUT_MUTATION_A_EXACT_INTERPRETER_REPAIR1_INDEPENDENT_REVIEW_20260927.md"
+    },
+    "exact_interpreter_receipt": {
+      "sha256": "AD6622093011EF0198CC6EC6FA2CC561573777392016391F150A38209B437AE3",
+      "path": "EVIDENCE/ch5_k1b_c9_output_mutation_a_exact_interpreter_capability_repair1_20260927/identity_receipt.json"
+    },
+    "task": {
+      "sha256": "90009F2480BA04D689FCEA04D35F7127BA13E263DC7933DC5E1FF5A5C99781E4",
+      "path": "TASK_CURRENT.md"
+    },
+    "contract_report": {
+      "sha256": "52F4FF62D7B4A09E9A2DE9F1A2D9F8FD3E73274DAFD1E9309A26CCEF38B1049C",
+      "path": "docs/CH5_K1B_C9_OUTPUT_MUTATION_A_NATIVE_API_CONTRACT_ZERO_SCIENCE_REPORT_20260927.md"
+    }
+  },
+  "operation_contract": {
+    "root_claim": "UNRESOLVED__FAIL_CLOSED",
+    "recursive_mkdir_each_parent": "UNRESOLVED__FAIL_CLOSED",
+    "exclusive_json_npz_create": "UNRESOLVED__FAIL_CLOSED",
+    "unlink": "UNRESOLVED__FAIL_CLOSED"
+  },
+  "missing_guarantees": [
+    "supported_complete_user_mode_binding",
+    "trusted_root_handle_acquisition",
+    "ancestor_and_final_reparse",
+    "share_rename_delete_during_open_handles",
+    "identity_lifetime",
+    "error_and_cleanup",
+    "cross_volume_limits",
+    "runner_integration"
+  ],
+  "inert_isolation_experiment_ready": false,
+  "protected_manifest_raw_sha256": {
+    "C6_prime": {
+      "path": "reports/ch5_turn6_same_frozen_input_repeat_20260923_run001/execution_artifact_manifest.json",
+      "raw_sha256": "7890720D502AC1C04D672978C6F662DD51F9D2BA27F321701877ABE9214CDE61"
+    },
+    "C7": {
+      "path": "reports/ch5_k1b_turn7_outer_r2_20260925_run001/execution_artifact_manifest.json",
+      "raw_sha256": "413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91"
+    },
+    "C8": {
+      "path": "reports/ch5_k1b_turn8_outer_r2_20260925_run001/execution_artifact_manifest.json",
+      "raw_sha256": "5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301"
+    },
+    "C8_timing": {
+      "path": "reports/ch5_k1b_turn8_same_frozen_timing_measurement_run001/science_artifact_manifest.json",
+      "raw_sha256": "5DD433E8DD0D8A3C6DB59C3FE370C4EF8770BBCCCA3F8D79211D93938CFA654D"
+    },
+    "old_C9_partial": {
+      "path": "reports/ch5_k1b_turn9_timed_risk_exception_run001/partial_artifact_manifest.json",
+      "raw_sha256": "80BD0D42CB73B4E39B811E759505480542D5A73227014F30B732C34A8AC1FDC3"
+    },
+    "new_C9_partial": {
+      "path": "reports/ch5_k1b_turn9_post_failure_new_attempt_001/partial_artifact_manifest.json",
+      "raw_sha256": "3B10AB56BC2CE3D8FF9B4FB6442E012CB39686AF389624D17566CC8D68F57D20"
+    },
+    "new_C9_readback": {
+      "path": "reports/ch5_k1b_turn9_post_failure_new_attempt_001/partial_artifact_readback.json",
+      "raw_sha256": "8191C24E8A472EE702C71A72DB4F4CCC9A0733D432226DFDB6EF0B4045792BAC"
+    }
+  },
+  "protected_untracked_output_roots": 6,
+  "protected_hash_readback_matches": "7/7",
+  "current_host_probes": 0,
+  "current_native_api_invocations": 0,
+  "current_tests": 0,
+  "current_temporary_directory_mutations": 0,
+  "current_preflight_calls": 0,
+  "current_execute_calls": 0,
+  "current_wrapper_launches": 0,
+  "current_model_calls": 0,
+  "current_scientific_calls": 0,
+  "historical_prohibited_execute_probes": 2,
+  "historical_probes_reclassified_as_compliant": false,
+  "historical_reject_verdicts": [
+    "REJECT__TASK_BOUNDARY_VIOLATION_AND_STATIC_GAPS__NO_SCIENCE",
+    "REJECT__SEALED_INPUT_PATH_GAP_AND_EVIDENCE_AMBIGUITY__NO_SCIENCE",
+    "REJECT__FINAL_ENTRY_GUARDS_UNTESTED__NO_SCIENCE",
+    "REJECT__ACTIVE_PREFLIGHT_AND_PREIMPORT_AUTHORITY_GAPS__NO_SCIENCE",
+    "REJECT__PREIMPORT_AUTHORITY_PATH_AND_BEHAVIOR_EVIDENCE_GAPS__NO_SCIENCE",
+    "REJECT__AUTHORITY_METADATA_FOLLOWS_UNSAFE_PATH__NO_SCIENCE",
+    "REJECT__STALE_INERT_SOURCE_ORDER_ASSERTION__NO_SCIENCE",
+    "REJECT__FULL_INERT_TEST_FAILED__NO_CANDIDATE__NO_SCIENCE",
+    "REJECT__LEDGER_COMPLETENESS_AND_SEAL_READBACK_PATH_GAPS__NO_SCIENCE",
+    "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_RUNNER_FIELD_BINDINGS__NO_SCIENCE",
+    "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_SCHEMA_AND_ACTIVE_BINDINGS__NO_SCIENCE",
+    "REJECT__IDENTITY_CHAIN_OWNER_ORDER_AND_TASK_ABSENCE_AMBIGUITY__NO_SCIENCE",
+    "REJECT__IDENTITY_CHAIN_COMMITTED_FILE_GATE_OMITTED__NO_SCIENCE",
+    "REJECT__COMPLETE_C9_NOT_DELIVERED__CALL_LEDGER_UNRESOLVED",
+    "REJECT__COMPLETE_NEW_C9_EXECUTION__OUTPUT_GUARD_BLOCK_AND_CALL_LEDGER_UNRESOLVED",
+    "REJECT__ROOT_REPLACEMENT_WINDOW_TEST_GAP_AND_OVERBROAD_CLAIM__NO_SCIENCE",
+    "REJECT__TARGET_INTERPRETER_IDENTITY_UNBOUND__NO_SCIENCE"
+  ],
+  "limited_accept_scopes": [
+    "ACCEPT__BOUNDED_ZERO_SCIENCE_MKDIR_GUARD_AND_CHECK_WINDOW_EVIDENCE_ONLY",
+    "ACCEPT__ZERO_SCIENCE_DESIGN_EVIDENCE_ONLY__SAFETY_DECISION_PENDING",
+    "ACCEPT__EXACT_INTERPRETER_STDLIB_CAPABILITY_EVIDENCE_ONLY__NATIVE_CONTAINMENT_UNRESOLVED"
+  ],
+  "old_C9_attempt_consumed": true,
+  "new_C9_attempt_consumed": true,
+  "old_actual_call_ledger": "CALL_LEDGER_UNRESOLVED",
+  "new_actual_call_ledger": "CALL_LEDGER_UNRESOLVED",
+  "C10_closed": true,
+  "retry_closed": true,
+  "partial_resume_closed": true,
+  "results_eligibility": false,
+  "next_gate": "INDEPENDENT_GPT_WORK_ACCEPT_REJECT__NO_ISOLATION_OR_SCIENCE",
+  "codex_conversation_handoff_after_this_task": true,
+  "official_unique_document_resources_without_fragments": 13,
+  "python_fragment_normalization": {
+    "resource": "https://docs.python.org/3.11/library/os.html",
+    "anchors": [
+      "os.supports_dir_fd",
+      "os.mkdir",
+      "os.open",
+      "os.unlink"
+    ],
+    "counted_resources": 1
+  }
+}
