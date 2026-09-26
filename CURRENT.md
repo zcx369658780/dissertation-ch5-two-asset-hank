@@ -25,7 +25,7 @@ Updated: 2026-09-25 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_K1B_C8_TIMING_BUDGET_AND_12H_RESOURCE_WALL_ADOPTED__STATIC_CONTRACT_PREPARATION__NO_SCIENCE`
+`CH5_K1B_C8_TIMING_STATIC_CONTRACT_INDEPENDENT_ACCEPT__ONE_SHOT_EXECUTION_AUTHORIZATION_PENDING__NO_SCIENCE`
 
 The Owner selected the complete outer state route. Codex delivered the zero-science design candidate at `986eb157638c6f7e26c2042ab2af36e28b9ad1ad`; Work independently accepted its design quality in `docs/CH5_FULL_OUTER_STATE_MAP_ZERO_SCIENCE_DESIGN_INDEPENDENT_REVIEW_20260923.md`. Codex then delivered the unit/scale/precision evidence at `f93407460e79f93c3781f258b856e55bb1ee3a15`, independently accepted in `docs/CH5_FULL_OUTER_STATE_UNIT_SCALE_PRECISION_EVIDENCE_INDEPENDENT_REVIEW_20260923.md`. The Owner agreed to `1e-6` as diagnostic precision, with `10^-12` class precision only an eventual aspiration. Codex delivered the sealed nine-component static readout at `2d5d9a235803882b65571aab57233018d4c1fc0b`; Work independently accepted its zero-science evidence quality in `docs/CH5_FULL_OUTER_NINE_COMPONENT_1E6_STATIC_DIAGNOSTIC_INDEPENDENT_REVIEW_20260923.md`. In both C4→C5 and C5→C6, only `Kt_prev` was strictly below `1e-6`. At the time of those static readouts, no stopping law or execution budget had been adopted. They remain decision evidence, not fixed-point verdicts; the later Owner adoption below governs only future bounded comparisons.
 
