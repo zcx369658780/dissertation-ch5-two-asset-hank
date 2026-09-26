@@ -1,0 +1,14 @@
+# Independent GPT Work review — C9 one-shot execution packet draft
+
+Reviewer: GPT Work
+Verdict: **ACCEPT__DRAFT_PACKET_ONLY__OWNER_EXECUTION_DECISION_PENDING**
+
+Candidate `b769426b538cc7a0cd086458d19b5f0dcfcf820d` (parent `33f2fbdb88418a7e52a7161878b2bbe29cc569d4`, tree `f485c09e`) adds exactly the permitted decision packet, task draft, and receipt. `HEAD:src=00682b2e1a7ba23665f6e16f6acf48ad35874883`; tracked files were clean before this review; `git diff HEAD^ HEAD --check` passed. The packet and draft raw SHA-256 values are `C22E941413A21B3169C16CFF2D64BF4A49E1C4229A234AB9C73FAF4D5F04B11B` and `84135982CEEB460EBFC6F988BBAD79D3ABED3AEBCFC1DF19E80C1E15A87E7ABC`.
+
+The draft correctly separates the adopted live C9 contract from the still-pending Owner decision **“现在运行 C9 一次”**. It binds the live contract `65992776BFBED510F5C59DBC14B8CBE0B65DCCBAD08C5E0559491303D5A5B466`, execution ID `C9_TIMED_RISK_RUN001`, output root, reviewed wrapper/delegate identities, C8 entering-C9 input identities, 39 category/five province/cumulative ceilings, one maximum attempt, zero retries, and the C9-only 36,000-second cooperative wall. Budget-object canonical hashes in the receipt match the live contract. The wall is not a completion-time bound; an in-flight call may overrun, and manual interruption can leave `CALL_LEDGER_UNRESOLVED` without retry authority.
+
+The four protected untracked output roots remain the only untracked roots. Their manifest SHA-256 values, in C6-prime/C7/C8/C8-timing order, remain `7890720D502AC1C04D672978C6F662DD51F9D2BA27F321701877ABE9214CDE61`, `413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91`, `5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301`, and `5DD433E8DD0D8A3C6DB59C3FE370C4EF8770BBCCCA3F8D79211D93938CFA654D`. Runner-recognized execution adoption and one-shot task paths, and both C9 output roots, are absent. The receipt records model/scientific/C9/C10/retry counts of zero. Results eligibility remains `FALSE`.
+
+**Future authority-chain requirement:** after a separate explicit Owner run decision, the runner-recognized execution adoption file must contain the exact backtick-delimited `Execution authorization ID`, `Authorized output root`, `C9 contract SHA-256`, and `Independent review SHA-256` fields plus `OWNER_ADOPTED__SINGLE_C9_TIMED_RISK_EXCEPTION`. The future committed task must bind that adoption file's actual raw SHA-256 and match `TASK_CURRENT.md` byte for byte. The current draft does not spell out the adoption-file template; that is not a defect in this draft-only task, but it is a mandatory final gate. A fresh independent review must verify the completed committed identity chain before any dispatch.
+
+This ACCEPT covers the **non-authoritative draft packet only**. It does not create the Owner execution adoption, open the task gate, authorize C9 or C10, or accept convergence or Results.

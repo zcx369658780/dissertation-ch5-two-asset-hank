@@ -25,7 +25,7 @@ Updated: 2026-09-26 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_K1B_C9_ONE_SHOT_EXECUTION_PACKET_DRAFT_ZERO_SCIENCE_ACTIVE`
+`CH5_K1B_C9_DRAFT_PACKET_ACCEPTED__OWNER_ONE_SHOT_EXECUTION_DECISION_PENDING__NO_SCIENCE`
 
 The C9 preparation and Repair1/Repair2 candidates were independently **REJECTED** for static entry and ledger defects. Repair3 candidate `fb37a8f62d6ca71c7fbf7f3516e9de21473c7ed3` was independently **ACCEPTED for zero-science static entry repair only**. Its inactive delegate-hash rebind candidate `3ecee32cdc4a3e88043a85709a6db7c85f6ec5c8` is independently **ACCEPTED** in `docs/CH5_K1B_C9_INACTIVE_CONTRACT_DELEGATE_REBIND_INDEPENDENT_REVIEW_20260926.md`. `TASK_CURRENT.md` is closed pending Owner's C9-only resource-wall number and subsequent separate active-contract/science authorization. The contract remains non-executable; C9 has not run.
 
@@ -38,6 +38,8 @@ The separate proposal candidate `79df999b62023a883795c273227ca4e8f077dd69` is in
 The Owner adopted that exact proposal as prospective live content in `docs/CH5_K1B_C9_EXACT_ACTIVE_CONTRACT_OWNER_ADOPTION_20260926.md`, expressly for zero-science final-chain preparation. `TASK_CURRENT.md` now assigns the existing Codex conversation to copy those bytes into the live contract and verify active static preflight plus a blocked execution-task gate. The separate Owner execution adoption, one-shot task and C9 run remain unauthorized.
 
 The live contract activation candidate `9418cc085bb42881f8151164cea6215bbb5f0dfd` is independently **ACCEPTED for exact identity and blocked execution task gate only** in `docs/CH5_K1B_C9_LIVE_CONTRACT_ACTIVATION_INDEPENDENT_REVIEW_20260926.md`. The live bytes match the adopted proposal, but the execution Owner adoption and one-shot task are absent. `TASK_CURRENT.md` now authorizes only a draft Owner decision packet and draft task at non-authority paths, so the Owner can review the final launch risk before separately authorizing one C9 attempt.
+
+The non-authoritative C9 decision packet and task draft at Builder commit `b769426b538cc7a0cd086458d19b5f0dcfcf820d` are independently **ACCEPTED as zero-science draft evidence only** in `docs/CH5_K1B_C9_ONE_SHOT_EXECUTION_PACKET_DRAFT_INDEPENDENT_REVIEW_20260926.md`. `TASK_CURRENT.md` is closed pending the separate explicit Owner decision “现在运行 C9 一次”. C9 and C10 attempts remain zero; no runner-recognized execution adoption or task exists, and Results eligibility remains `FALSE`.
 
 On 2026-09-26 the Owner selected preparation of a C9-only timed-risk exception after the accepted transfer assessment. The exact selection and its limits are in `docs/CH5_K1B_C9_SINGLE_TURN_TIMED_RISK_EXCEPTION_OWNER_SELECTION_20260926.md`. `TASK_CURRENT.md` now assigns only an inactive, zero-science C9 runner/contract/static-test preparation to the existing Codex conversation. No C9-specific resource-wall seconds or one-shot execution authorization has been adopted. The ordinary duration gate remains blocked; C9 has not run and Results eligibility is `FALSE`.
 
