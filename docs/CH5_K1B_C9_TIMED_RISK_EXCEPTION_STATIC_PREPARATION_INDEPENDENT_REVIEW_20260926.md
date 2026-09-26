@@ -1,6 +1,6 @@
 # Independent GPT Work review — C9 timed-risk static preparation
 
-Reviewer: GPT Work  
+Reviewer: GPT Work
 Verdict: **REJECT__ACTIVE_GATE_AND_LEDGER_DEFECTS__ZERO_SCIENCE_REPAIR_ONLY**
 
 Builder candidate `dd216ac122ba7770ab0f68ba9f4fda17862aebce`, parent `f4369ff3eb5bf5c8aef02c0bcce89401d3086c26`, tree `b17c9de2f27f79f89213696395a9bc677b171853`. Exactly seven task-allowed paths changed; `git diff --check` passed. The contract remains inactive (`active=false`, `execution_id=null`, `attempts=0`, `resource_wall_seconds=null`); both CLI modes reject before C9 output creation. The two inert test files passed 11 tests. `HEAD:src=00682b2e1a7ba23665f6e16f6acf48ad35874883`; the four protected C6-prime/C7/C8/C8-timing roots remain untracked and their manifests retain SHA-256 `7890720D502AC1C04D672978C6F662DD51F9D2BA27F321701877ABE9214CDE61`, `413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91`, `5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301`, `5DD433E8DD0D8A3C6DB59C3FE370C4EF8770BBCCCA3F8D79211D93938CFA654D`. No C9 output root, model/scientific call or retry was reported.
