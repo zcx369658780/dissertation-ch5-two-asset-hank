@@ -1,0 +1,301 @@
+{
+  "C10_closed": true,
+  "baseline_commit": "b278da2b6324d3ddae2364fb87826a71cdc9462b",
+  "baseline_parent": "ad54c132fef03ab3fd195f36318df3443985c7df",
+  "baseline_src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
+  "control_flow": {
+    "conclusion": "MISSING_INTERMEDIATE_PARENT_IS_SUFFICIENT_STATIC_EXPLANATION__ACTUAL_REPARSE_NOT_PROVEN",
+    "delegate_precheck": "guarded_mkdir calls guard_output_mutation before original_mkdir at delegate lines 296-301",
+    "failure_detail_not_persisted": [
+      "rejected mkdir path as captured at failure",
+      "first failing path component",
+      "lstat exception or stat attributes of that component"
+    ],
+    "missing_parent_behavior": "path_components_safe returns False when a missing component is not the final requested path at lines 209-220",
+    "source_request": "province_root.mkdir(parents=True, exist_ok=False) at frozen source lines 651-652",
+    "terminal_collapse": "guard_output_mutation raises BLOCKED__OUTPUT_COMPONENT_REPARSE_POINT for any False at lines 275-276"
+  },
+  "current_execute_calls": 0,
+  "current_model_calls": 0,
+  "current_preflight_calls": 0,
+  "current_scientific_calls": 0,
+  "current_tests": 0,
+  "failure": {
+    "complete_outer_turn": false,
+    "end": {
+      "asia_shanghai": "2026-09-26T21:49:47.435688+08:00",
+      "monotonic_ns": 54020218000000,
+      "timezone": "Asia/Shanghai",
+      "utc": "2026-09-26T13:49:47.435688+00:00"
+    },
+    "execution_id": "C9_POST_FAILURE_NEW_ATTEMPT_001",
+    "inflight_province": 0,
+    "original_terminal": "BLOCKED__OUTPUT_COMPONENT_REPARSE_POINT",
+    "partial_manifest_entry_count": 11,
+    "partial_readback_status": "PASS",
+    "retry_allowed": false,
+    "safe_pause": false,
+    "start": {
+      "asia_shanghai": "2026-09-26T21:49:11.645955+08:00",
+      "monotonic_ns": 53984421000000,
+      "timezone": "Asia/Shanghai",
+      "utc": "2026-09-26T13:49:11.645955+00:00"
+    },
+    "terminal": "CALL_LEDGER_UNRESOLVED"
+  },
+  "future_inert_regression_cases": [
+    {
+      "case": "missing intermediate ancestors under an unchanged owned root, parents=True",
+      "expected": "allow only a safe missing suffix, then preserve root ownership and component checks at each creation; no false reparse classification"
+    },
+    {
+      "case": "true symlink or Windows reparse in an existing parent or leaf",
+      "expected": "block before following or mutating the unsafe component"
+    },
+    {
+      "case": "lstat OSError other than missing",
+      "expected": "fail closed and preserve distinct diagnostic detail"
+    },
+    {
+      "case": "owned output root replaced between checks",
+      "expected": "fail closed on identity mismatch and perform no out-of-root mutation"
+    },
+    {
+      "case": "parents=False with missing parent",
+      "expected": "do not synthesize parents; preserve ordinary missing-parent failure without a false reparse claim"
+    }
+  ],
+  "historical_probes_reclassified_as_compliant": false,
+  "historical_prohibited_execute_probes": 2,
+  "historical_reject_verdicts": [
+    "REJECT__TASK_BOUNDARY_VIOLATION_AND_STATIC_GAPS__NO_SCIENCE",
+    "REJECT__SEALED_INPUT_PATH_GAP_AND_EVIDENCE_AMBIGUITY__NO_SCIENCE",
+    "REJECT__FINAL_ENTRY_GUARDS_UNTESTED__NO_SCIENCE",
+    "REJECT__ACTIVE_PREFLIGHT_AND_PREIMPORT_AUTHORITY_GAPS__NO_SCIENCE",
+    "REJECT__PREIMPORT_AUTHORITY_PATH_AND_BEHAVIOR_EVIDENCE_GAPS__NO_SCIENCE",
+    "REJECT__AUTHORITY_METADATA_FOLLOWS_UNSAFE_PATH__NO_SCIENCE",
+    "REJECT__STALE_INERT_SOURCE_ORDER_ASSERTION__NO_SCIENCE",
+    "REJECT__FULL_INERT_TEST_FAILED__NO_CANDIDATE__NO_SCIENCE",
+    "REJECT__LEDGER_COMPLETENESS_AND_SEAL_READBACK_PATH_GAPS__NO_SCIENCE",
+    "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_RUNNER_FIELD_BINDINGS__NO_SCIENCE",
+    "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_SCHEMA_AND_ACTIVE_BINDINGS__NO_SCIENCE",
+    "REJECT__IDENTITY_CHAIN_OWNER_ORDER_AND_TASK_ABSENCE_AMBIGUITY__NO_SCIENCE",
+    "REJECT__IDENTITY_CHAIN_COMMITTED_FILE_GATE_OMITTED__NO_SCIENCE",
+    "REJECT__COMPLETE_C9_NOT_DELIVERED__CALL_LEDGER_UNRESOLVED",
+    "REJECT__COMPLETE_NEW_C9_EXECUTION__OUTPUT_GUARD_BLOCK_AND_CALL_LEDGER_UNRESOLVED"
+  ],
+  "ledger_layers": {
+    "confirmed_attempted": {
+      "alpha_candidates": 0,
+      "c1_residual_govinv_constructions": 0,
+      "completed_raw_ra0_vectors": 0,
+      "composite_wage_batches": 0,
+      "corrected_aggregate_evaluations": 0,
+      "corrected_policy_maps": 0,
+      "d2_q_assemblies": 0,
+      "deterministic_next_k1b_preparations": 0,
+      "direct_hjb_updates": 0,
+      "firm_evaluations": 0,
+      "fiscal_diagnostic_batches": 0,
+      "frozen_k1b_quantity_allocations": 0,
+      "full_integrations": 0,
+      "full_space_800_dense_scipy_linalg_svd_gesvd": 0,
+      "ge_annual_shock_irf_welfare_results_calls": 0,
+      "hjb_checkpoint_evaluations_after_update": 0,
+      "household_batch_constructions": 0,
+      "k1b_feedback_calls": 0,
+      "k2_calls": 0,
+      "matlab_scientific_calls": 0,
+      "monetary_assignments": 0,
+      "normalized_stationary_candidates": 0,
+      "q_transpose_times_p": 0,
+      "raw_next_payoff_same_s_constructions": 0,
+      "relaxation_helper_invocations": 0,
+      "restricted_dense_scipy_linalg_svd_gesvd": 0,
+      "scalar_labor_roots_attempted": 0,
+      "scalar_labor_roots_returned": 0,
+      "scalar_selector_root_invocations": 0,
+      "scc_decompositions": 0,
+      "scientific_retries": 0,
+      "selector_evaluations": 0,
+      "solver_substitutions": 0,
+      "source_faithful_labor_reconstructions": 0,
+      "source_native_initializations": 0,
+      "terminal_kfe_attempts": 0,
+      "turn10_household_calls": 0,
+      "turn8_household_calls": 0,
+      "turn9_household_calls": 1
+    },
+    "new_actual_detailed_calls": "UNKNOWN__CALL_LEDGER_UNRESOLVED",
+    "old_actual_calls": "UNKNOWN__CALL_LEDGER_UNRESOLVED",
+    "old_full_turn_charge": "GOVERNANCE_ONLY__NOT_ACTUAL_CALLS",
+    "per_province_attempted": {
+      "0": {
+        "corrected_policy_maps": 0,
+        "direct_hjb_updates": 0,
+        "scalar_selector_root_invocations": 0,
+        "selector_evaluations": 0,
+        "terminal_kfe_attempts": 0
+      }
+    },
+    "reserved_exposure_not_actual": {
+      "alpha_candidates": 2650,
+      "corrected_aggregate_evaluations": 1,
+      "corrected_policy_maps": 51,
+      "d2_q_assemblies": 51,
+      "direct_hjb_updates": 50,
+      "hjb_checkpoint_evaluations_after_update": 50,
+      "normalized_stationary_candidates": 1,
+      "q_transpose_times_p": 1,
+      "relaxation_helper_invocations": 50,
+      "restricted_dense_scipy_linalg_svd_gesvd": 1,
+      "scalar_labor_roots_attempted": 800,
+      "scalar_labor_roots_returned": 800,
+      "scalar_selector_root_invocations": 20000000,
+      "scc_decompositions": 1,
+      "selector_evaluations": 40800,
+      "source_native_initializations": 1,
+      "terminal_kfe_attempts": 1
+    },
+    "source_ledger": {
+      "adaptive_controller_calls": 0,
+      "alpha_candidates": 0,
+      "authorized_k1b_household_batches": 0,
+      "c1_residual_govinv_constructions": 0,
+      "completed_raw_ra0_vectors": 0,
+      "composite_wage_batches": 0,
+      "corrected_aggregate_evaluations": 0,
+      "corrected_policy_maps": 0,
+      "d2_q_assemblies": 0,
+      "damping_relaxation_adaptive_delta_clipping_artificial_diffusion_continuation_calls": 0,
+      "deterministic_next_k1b_preparations": 0,
+      "direct_hjb_updates": 0,
+      "firm_evaluations": 0,
+      "fiscal_diagnostic_batches": 0,
+      "frozen_k1b_quantity_allocations": 0,
+      "full_integrations": 0,
+      "full_space_800_dense_scipy_linalg_svd_gesvd": 0,
+      "ge_annual_shock_irf_welfare_results_calls": 0,
+      "hjb_checkpoint_evaluations_after_update": 0,
+      "household_batch_constructions": 0,
+      "interior_a_switching_root_invocations": 0,
+      "interior_z_root_invocations": 0,
+      "joint_switching_root_invocations": 0,
+      "k1a_capital_network_allocations": 0,
+      "k1b_feedback_calls": 0,
+      "k2_calls": 0,
+      "matlab_scientific_calls": 0,
+      "monetary_assignments": 0,
+      "normalized_stationary_candidates": 0,
+      "payoff_clipping_annualization_rescaling_smoothing_risk_adjustment_zscore_calls": 0,
+      "q_transpose_times_p": 0,
+      "raw_next_payoff_same_s_constructions": 0,
+      "relaxation_helper_invocations": 0,
+      "restricted_dense_scipy_linalg_svd_gesvd": 0,
+      "scalar_labor_roots_attempted": 0,
+      "scalar_labor_roots_returned": 0,
+      "scalar_selector_root_invocations": 0,
+      "scc_decompositions": 0,
+      "scientific_retries": 0,
+      "selector_evaluations": 0,
+      "solver_substitutions": 0,
+      "source_faithful_labor_reconstructions": 0,
+      "source_native_initializations": 0,
+      "terminal_kfe_attempts": 0,
+      "third_outer_turns": 0,
+      "turn": 9,
+      "turn10_household_calls": 0,
+      "turn3_household_calls": 0,
+      "turn5_household_calls": 0,
+      "turn6_household_calls": 0,
+      "turn7_household_calls": 0,
+      "turn8_household_calls": 0,
+      "turn9_household_calls": 1
+    }
+  },
+  "new_C9_attempt_consumed": true,
+  "next_gate": "INDEPENDENT_GPT_WORK_ACCEPT_REJECT__NO_REPAIR_OR_SCIENCE",
+  "partial_resume_closed": true,
+  "protected_manifest_raw_sha256": {
+    "C6_prime": {
+      "path": "reports/ch5_turn6_same_frozen_input_repeat_20260923_run001/execution_artifact_manifest.json",
+      "raw_sha256": "7890720D502AC1C04D672978C6F662DD51F9D2BA27F321701877ABE9214CDE61"
+    },
+    "C7": {
+      "path": "reports/ch5_k1b_turn7_outer_r2_20260925_run001/execution_artifact_manifest.json",
+      "raw_sha256": "413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91"
+    },
+    "C8": {
+      "path": "reports/ch5_k1b_turn8_outer_r2_20260925_run001/execution_artifact_manifest.json",
+      "raw_sha256": "5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301"
+    },
+    "C8_timing": {
+      "path": "reports/ch5_k1b_turn8_same_frozen_timing_measurement_run001/science_artifact_manifest.json",
+      "raw_sha256": "5DD433E8DD0D8A3C6DB59C3FE370C4EF8770BBCCCA3F8D79211D93938CFA654D"
+    },
+    "new_C9_partial": {
+      "path": "reports/ch5_k1b_turn9_post_failure_new_attempt_001/partial_artifact_manifest.json",
+      "raw_sha256": "3B10AB56BC2CE3D8FF9B4FB6442E012CB39686AF389624D17566CC8D68F57D20"
+    },
+    "new_C9_readback": {
+      "path": "reports/ch5_k1b_turn9_post_failure_new_attempt_001/partial_artifact_readback.json",
+      "raw_sha256": "8191C24E8A472EE702C71A72DB4F4CCC9A0733D432226DFDB6EF0B4045792BAC"
+    },
+    "old_C9_partial": {
+      "path": "reports/ch5_k1b_turn9_timed_risk_exception_run001/partial_artifact_manifest.json",
+      "raw_sha256": "80BD0D42CB73B4E39B811E759505480542D5A73227014F30B732C34A8AC1FDC3"
+    }
+  },
+  "report_path": "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_OUTPUT_GUARD_ZERO_SCIENCE_DIAGNOSIS_20260927.md",
+  "report_raw_sha256": "03B357AB09283FE672FD45901C4A651D94ABAF5646FB44FAB6611A9EDBA99579",
+  "results_eligibility": false,
+  "retries_closed": true,
+  "schema": "CH5_K1B_C9_POST_FAILURE_OUTPUT_GUARD_ZERO_SCIENCE_DIAGNOSIS_RECEIPT_V1",
+  "source_and_output_raw_sha256": {
+    "delegate": {
+      "path": "validators/multi_province/k1b_turn9_post_failure_new_attempt_outer_r2/run.py",
+      "raw_sha256": "AD592FCEEB6563D56BFEA6A9F35029B83712A6ACCED80A1BAF8F53C144F99D56"
+    },
+    "execution_review": {
+      "path": "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_EXECUTION_INDEPENDENT_REVIEW_20260927.md",
+      "raw_sha256": "323123872BDE5EE35489620C247813D43232B242DC6F520B2760A1F291303183"
+    },
+    "frozen_source": {
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+      "raw_sha256": "E2D5EDBBF73ABF60DBA183FB04A5D364D3D83FFCD262254F58EAD53EC2F36D07"
+    },
+    "inert_test": {
+      "path": "tests/test_mp4c_k1b_turn9_post_failure_new_attempt_preflight.py",
+      "raw_sha256": "F22BCE672DE5D1E62C3BBC7353D822059290F5AEE074147BD6B5F352DB72F3F1"
+    },
+    "new_first_failure": {
+      "path": "reports/ch5_k1b_turn9_post_failure_new_attempt_001/first_failure.json",
+      "raw_sha256": "49AA81E126BE4BDF55289A416EACAA8CEC0B80EEB18D2F40A80009BEFC68DD11"
+    },
+    "new_partial_manifest": {
+      "path": "reports/ch5_k1b_turn9_post_failure_new_attempt_001/partial_artifact_manifest.json",
+      "raw_sha256": "3B10AB56BC2CE3D8FF9B4FB6442E012CB39686AF389624D17566CC8D68F57D20"
+    },
+    "new_partial_readback": {
+      "path": "reports/ch5_k1b_turn9_post_failure_new_attempt_001/partial_artifact_readback.json",
+      "raw_sha256": "8191C24E8A472EE702C71A72DB4F4CCC9A0733D432226DFDB6EF0B4045792BAC"
+    },
+    "new_terminal_receipt": {
+      "path": "reports/ch5_k1b_turn9_post_failure_new_attempt_001/terminal_receipt.json",
+      "raw_sha256": "0AAF0BF700B381D97A397ED8090A99CAD648089D654CD76D02D7F5FDEE5E7D82"
+    },
+    "new_timing_failure": {
+      "path": "reports/ch5_k1b_turn9_post_failure_new_attempt_001/timing_failure.json",
+      "raw_sha256": "B74E538FEF4C0216794DB1FDF3C94FFA2FDD8C75081DA38413B495949321FBB9"
+    },
+    "old_execution_review": {
+      "path": "docs/CH5_K1B_C9_ONE_SHOT_EXECUTION_INDEPENDENT_REVIEW_20260926.md",
+      "raw_sha256": "F161A12203ABE6A392A510309F647A38C8AB46BFA1F3A72F1ED93AE6BDAD68A7"
+    },
+    "task": {
+      "path": "TASK_CURRENT.md",
+      "raw_sha256": "02F78C98DF420F504AF1DD95B6BA08980E12C05A9FDDDF4E73BAADB129CB9BEB"
+    }
+  },
+  "status": "NON_AUTHORITY_DIAGNOSIS_ONLY__PENDING_INDEPENDENT_GPT_WORK_ACCEPT_REJECT__NO_SCIENCE"
+}
