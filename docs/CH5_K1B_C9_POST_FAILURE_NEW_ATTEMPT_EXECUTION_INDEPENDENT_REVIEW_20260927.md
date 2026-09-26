@@ -1,0 +1,19 @@
+# Independent review - consumed new C9 post-failure attempt
+
+Reviewer: GPT Work
+Verdict: `REJECT__COMPLETE_NEW_C9_EXECUTION__OUTPUT_GUARD_BLOCK_AND_CALL_LEDGER_UNRESOLVED`
+Factual partial-evidence classification: `PARTIAL_READBACK_PASS__NO_COMPLETE_TURN_OR_RESULTS`
+
+The Owner-authorized `C9_POST_FAILURE_NEW_ATTEMPT_001` wrapper was invoked exactly once after one zero-science active static preflight passed. The fixed `--execute` command exited 1. Its original terminal was `BLOCKED__OUTPUT_COMPONENT_REPARSE_POINT`; its final terminal was `CALL_LEDGER_UNRESOLVED`. The start/end Asia/Shanghai clock entries in `timing_failure.json` are `2026-09-26T21:49:11.645955+08:00` and `2026-09-26T21:49:47.435688+08:00`. The attempt is consumed; no retry, second invocation, partial resume or C10 is authorized.
+
+## Evidence readback
+
+The protected new output root is `reports/ch5_k1b_turn9_post_failure_new_attempt_001`. `partial_artifact_manifest.json` contains 11 entries, raw SHA-256 `3B10AB56BC2CE3D8FF9B4FB6442E012CB39686AF389624D17566CC8D68F57D20`; every listed path, byte count and raw SHA-256 matched a read-only independent check. `partial_artifact_readback.json` reports `PASS`, raw SHA-256 `8191C24E8A472EE702C71A72DB4F4CCC9A0733D432226DFDB6EF0B4045792BAC`, but explicitly has `complete_outer_turn=false` and `safe_pause=false`. The new root has no complete science manifest, sealed outer-turn result or integration receipt.
+
+The immutable failure files' raw SHA-256 values are: `first_failure.json` `49AA81E126BE4BDF55289A416EACAA8CEC0B80EEB18D2F40A80009BEFC68DD11`; `timing_failure.json` `B74E538FEF4C0216794DB1FDF3C94FFA2FDD8C75081DA38413B495949321FBB9`; `terminal_receipt.json` `0AAF0BF700B381D97A397ED8090A99CAD648089D654CD76D02D7F5FDEE5E7D82`. They record `inflight_province=0`, `retry_allowed=false`, one confirmed `turn9_household_calls` attempt, no completed province and no integration. The detailed `confirmed_attempted_at_interruption` and per-province counters are zero, while a separate full-envelope `reserved_exposure_at_interruption` remains. These layers must not be combined or treated as measured actual calls; the literal actual ledger remains `CALL_LEDGER_UNRESOLVED`. The retired old `C9_TIMED_RISK_RUN001` actual ledger is also unresolved. The old full-turn charge remains governance accounting only.
+
+## Source-level cause and limit
+
+The committed delegate's `guarded_mkdir` calls `guard_output_mutation` before `Path.mkdir` (`validators/multi_province/k1b_turn9_post_failure_new_attempt_outer_r2/run.py:296`). The guard's `path_components_safe` accepts a missing final child but rejects a missing intermediate parent (`run.py:209-220`, `:266-276`). The frozen first-province path is `turn9/household/p00_*`, created with `parents=True` in `src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py:651-653`; at this point the new output root has no `turn9` parent. This static control flow is sufficient to explain the original block before that `mkdir` executes. The terminal name does **not** prove a real symlink or Windows reparse point existed; the failure evidence did not preserve the rejected relative path or its `lstat` attributes. Do not infer an actual per-category scientific call ledger from this explanation.
+
+At review, `HEAD=377f37167ae5344c4265e0afa56859651313c400`, `HEAD:src=00682b2e1a7ba23665f6e16f6acf48ad35874883`, tracked worktree and index were clean. The five pre-existing protected untracked roots retained their accepted manifest hashes; the new root is a sixth protected untracked root and must not be edited, deleted or reused. No scientific completion, numerical convergence, GE or Results inference is accepted. Results eligibility remains `FALSE`. A later engineering repair and any further C9 attempt require separate bounded governance; this failure does not replenish the one-shot budget.
