@@ -25,7 +25,7 @@ Updated: 2026-09-26 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_K1B_C9_NEW_ATTEMPT_DESIGN_ACCEPTED__OWNER_BUDGET_DECISION_PENDING__NO_SCIENCE`
+`CH5_K1B_C9_NEW_BUDGET_FAILED_LEDGER_ZERO_SCIENCE_PROPOSAL_ACTIVE`
 
 The C9 preparation and Repair1/Repair2 candidates were independently **REJECTED** for static entry and ledger defects. Repair3 candidate `fb37a8f62d6ca71c7fbf7f3516e9de21473c7ed3` was independently **ACCEPTED for zero-science static entry repair only**. Its inactive delegate-hash rebind candidate `3ecee32cdc4a3e88043a85709a6db7c85f6ec5c8` is independently **ACCEPTED** in `docs/CH5_K1B_C9_INACTIVE_CONTRACT_DELEGATE_REBIND_INDEPENDENT_REVIEW_20260926.md`. `TASK_CURRENT.md` is closed pending Owner's C9-only resource-wall number and subsequent separate active-contract/science authorization. The contract remains non-executable; C9 has not run.
 
@@ -60,6 +60,8 @@ Work identified that a hash-only contract proposal would still target consumed `
 The Owner selected that **design-only** route in `docs/CH5_K1B_C9_POST_FAILURE_ZERO_SCIENCE_DESIGN_OWNER_SELECTION_20260926.md`. `TASK_CURRENT.md` now assigns the existing Codex conversation a read-only proposal covering fresh identity/output-root design, conservative treatment of the unresolved prior ledger, budget options and future review gates. No new C9/C10 science or retry is authorized; Results eligibility remains `FALSE`.
 
 The design candidate `2c5117f838b2f4a3489043f6411a9f3370d14c7b` is independently **ACCEPTED as zero-science decision evidence only** in `docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_ZERO_SCIENCE_DESIGN_INDEPENDENT_REVIEW_20260926.md`. Under existing C9 ceilings and the unresolved failed ledger, no direct new C9 launch is defensible. `TASK_CURRENT.md` is closed pending an Owner decision on whether to formulate a **separate new budget and explicit old-failure accounting policy**, as presented in `docs/CH5_K1B_C9_NEW_BUDGET_AND_FAILED_LEDGER_OWNER_DECISION_PACKET_20260926.md`. No new C9/C10 science, runner/contract rebind, or Results claim is authorized; Results eligibility remains `FALSE`.
+
+The Owner selected **A: formulate a zero-science new-budget and old-failure accounting proposal** in `docs/CH5_K1B_C9_NEW_BUDGET_POLICY_PROPOSAL_OWNER_SELECTION_20260926.md`. `TASK_CURRENT.md` now assigns the existing Codex conversation only that proposal and machine-readable suggested ceilings; no values are adopted and no runner, contract or scientific call is authorized. Results eligibility remains `FALSE`.
 
 On 2026-09-26 the Owner selected preparation of a C9-only timed-risk exception after the accepted transfer assessment. The exact selection and its limits are in `docs/CH5_K1B_C9_SINGLE_TURN_TIMED_RISK_EXCEPTION_OWNER_SELECTION_20260926.md`. `TASK_CURRENT.md` now assigns only an inactive, zero-science C9 runner/contract/static-test preparation to the existing Codex conversation. No C9-specific resource-wall seconds or one-shot execution authorization has been adopted. The ordinary duration gate remains blocked; C9 has not run and Results eligibility is `FALSE`.
 
