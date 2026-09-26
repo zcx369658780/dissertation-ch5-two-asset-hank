@@ -34,6 +34,8 @@ PRIOR_COMPARISON_SHA = "7F70FB73EAAE0D2BA4C2F60AC5FE071AA963D42EA77A64950D4F9456
 PRIOR_TERMINAL_SHA = "01BBF375DA61B387F697A581A9137C57FC87A3DC7CBC937838933A25F7297A7D"
 OLD_ROOT = Path("reports/ch5_k1b_turn8_outer_r2_20260925_run001")
 OUTPUT = Path("reports/ch5_k1b_turn9_timed_risk_exception_run001")
+TIMED_WRAPPER_RELATIVE = Path("validators/multi_province/k1b_turn9_timed_risk_exception/run.py")
+_active_timed_runtime_ids: set[int] = set()
 DISTANCE = Path("docs/evidence/ch5_mp4c_k1a_distance_mapping/normalized_distance_destination_origin.csv")
 SRC_TREE = "00682b2e1a7ba23665f6e16f6acf48ad35874883"
 OLD_RUNNER_SHA = "92018027502FFA5281F9BFAC91EE70D2BED17876B65100B3321819B2C0C59DB6"
@@ -449,6 +451,8 @@ class BudgetGuard:
                 raise RepeatBlocked("BLOCKED__CONSUMED_CALL_BUDGET",{"category":key,"actual":n})
             self.attempted[key]=max(self.attempted[key],n)
 
+BASE_BUDGET_GUARD=BudgetGuard
+
 def _arrays(bundle:Mapping[str,Any],turn:int)->dict[str,np.ndarray]:
     rows=bundle["rows"]
     out={k:np.asarray([r["state"][k] for r in rows],dtype=np.float64)
@@ -574,7 +578,12 @@ def assert_active_authority(repo:Path,execution_id:str)->dict[str,Any]:
     contract=json.loads((repo/TIMED_CONTRACT).read_text(encoding="utf-8"))
     if contract.get("active") is not True or contract.get("resource_wall_seconds") is None:
         raise RepeatBlocked("BLOCKED__INACTIVE_CONTRACT")
-    wrapper=repo/"validators/multi_province/k1b_turn9_timed_risk_exception/run.py"
+    wrapper=repo/TIMED_WRAPPER_RELATIVE
+    relative=TIMED_WRAPPER_RELATIVE.as_posix()
+    if (git(repo,"status","--porcelain=v1","--",relative) or
+        git(repo,"hash-object",f"--path={relative}",relative)!=
+            git(repo,"rev-parse",f"HEAD:{relative}")):
+        raise RepeatBlocked("BLOCKED__C9_WRAPPER_AUTHORITY_NOT_COMMITTED")
     spec=importlib.util.spec_from_file_location("c9_authority_recheck",wrapper)
     if spec is None or spec.loader is None:
         raise RepeatBlocked("BLOCKED__C9_WRAPPER_AUTHORITY_LOAD")
@@ -591,12 +600,23 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
     if (runtime.get("c9_wrapper_contract_sha256")!=authority["contract_sha256"] or
         runtime.get("c9_wrapper_execution_id")!=execution_id):
         raise RepeatBlocked("BLOCKED__C9_WRAPPER_ACTIVE_GATE_REQUIRED")
+    if id(runtime) not in _active_timed_runtime_ids:
+        raise RepeatBlocked("BLOCKED__C9_TIMED_WRAPPER_RUNTIME_REQUIRED")
+    measured=runtime.get("c9_timed_guard")
+    resource_check=getattr(type(measured),"resource_check",None)
+    wrapper_path=repo/"validators/multi_province/k1b_turn9_timed_risk_exception/run.py"
+    if (BudgetGuard is BASE_BUDGET_GUARD or type(measured) is not BudgetGuard or
+        not issubclass(BudgetGuard,BASE_BUDGET_GUARD) or
+        getattr(getattr(resource_check,"__code__",None),"co_filename",None)!=str(wrapper_path) or
+        getattr(getattr(resource_check,"__code__",None),"co_qualname",None)!=
+            "run_timed_action.<locals>.instrumented_action.<locals>.MeasuredGuard.resource_check"):
+        raise RepeatBlocked("BLOCKED__C9_TIMED_WRAPPER_GUARD_REQUIRED")
     output=repo/OUTPUT
     pre=preflight(repo)
     prior=prior_output_binding(repo)
     before=source_snapshot(repo)
     entering=load_bundle(repo,9)
-    guard=BudgetGuard(prior=prior["prior_attempted"])
+    guard=measured
     runtime["guard"]=guard
     claim_output_root(output,runtime)
     write_output_json(output,runtime,output/"preflight.json",pre)
@@ -892,6 +912,10 @@ def failure_detail(runtime:Mapping[str,Any],original:str,execution_id:str)->dict
 def run_after_valid_gate(repo:Path,execution_id:str,action:Any)->str:
     """Protect a future authorized action; tests pass only inert stubs."""
     assert_active_authority(repo,execution_id)
+    code=getattr(action,"__code__",None)
+    if (getattr(code,"co_filename",None)!=str(repo/TIMED_WRAPPER_RELATIVE) or
+        getattr(code,"co_qualname",None)!="run_timed_action.<locals>.invoke"):
+        raise RepeatBlocked("BLOCKED__C9_TIMED_WRAPPER_ACTION_REQUIRED")
     output=repo/OUTPUT
     if os.path.lexists(output) or not path_components_safe(output):
         raise RepeatBlocked("BLOCKED__FUTURE_EVIDENCE_PATH_EXISTS_OR_UNSAFE")
@@ -900,6 +924,7 @@ def run_after_valid_gate(repo:Path,execution_id:str,action:Any)->str:
     prior_modules=set(sys.modules)
     runtime:dict[str,Any]={"guard":None,"ledger":None,"state":None,"scientific_started":False,
                            "output_identity":None}
+    _active_timed_runtime_ids.add(id(runtime))
     try:
         return action(runtime)
     except BaseException as exc:
@@ -920,6 +945,7 @@ def run_after_valid_gate(repo:Path,execution_id:str,action:Any)->str:
             write_output_json(output,runtime,output/"first_failure.json",detail)
         raise
     finally:
+        _active_timed_runtime_ids.discard(id(runtime))
         sys.path[:]=prior_path
         sys.settrace(prior_trace)
         for name in set(sys.modules)-prior_modules:

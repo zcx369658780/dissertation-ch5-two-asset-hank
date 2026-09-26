@@ -54,31 +54,37 @@ def git(repo: Path, *args: str) -> str:
 
 
 def committed_file(repo: Path, relative: Path) -> str:
-    """Return the worktree digest only when it matches the committed blob."""
+    """Return the raw digest when Git's filtered worktree equals HEAD."""
     path = repo / relative
     if not path.is_file() or git(repo, "status", "--porcelain=v1", "--", relative.as_posix()):
         raise TimingBlocked("BLOCKED__MEASUREMENT_AUTHORITY_DIRTY_OR_MISSING", relative.as_posix())
     try:
-        blob = subprocess.check_output(["git", "show", f"HEAD:{relative.as_posix()}"], cwd=repo,
-                                       stderr=subprocess.DEVNULL)
+        head_blob = git(repo, "rev-parse", f"HEAD:{relative.as_posix()}")
+        worktree_blob = git(repo, "hash-object", f"--path={relative.as_posix()}",
+                            relative.as_posix())
     except subprocess.CalledProcessError as exc:
         raise TimingBlocked("BLOCKED__MEASUREMENT_AUTHORITY_NOT_COMMITTED", relative.as_posix()) from exc
-    digest = sha(path)
-    if digest != hashlib.sha256(blob).hexdigest().upper():
+    if worktree_blob != head_blob:
         raise TimingBlocked("BLOCKED__MEASUREMENT_AUTHORITY_NOT_COMMITTED", relative.as_posix())
-    return digest
+    return sha(path)
 
 
 def load_delegate(repo: Path, enforce_contract_hash: bool = True):
+    contract_sha = committed_file(repo, CONTRACT)
+    delegate_sha = committed_file(repo, DELEGATE)
     contract = json.loads((repo / CONTRACT).read_text(encoding="utf-8"))
     expected = contract.get("delegate_sha256")
-    if not isinstance(expected, str) or (enforce_contract_hash and sha(repo / DELEGATE) != expected):
+    if (sha(repo / CONTRACT) != contract_sha or not isinstance(expected, str) or
+            (enforce_contract_hash and delegate_sha != expected)):
+        raise TimingBlocked("BLOCKED__C9_DELEGATE_IDENTITY")
+    source = (repo / DELEGATE).read_bytes()
+    if hashlib.sha256(source).hexdigest().upper() != delegate_sha:
         raise TimingBlocked("BLOCKED__C9_DELEGATE_IDENTITY")
     spec = importlib.util.spec_from_file_location("c9_timed_risk_delegate", repo / DELEGATE)
     if spec is None or spec.loader is None:
         raise TimingBlocked("BLOCKED__C9_DELEGATE_LOAD")
     module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
+    exec(compile(source, str(repo / DELEGATE), "exec"), module.__dict__)
     return module
 
 
@@ -294,127 +300,6 @@ def seal_partial_outputs(c9: Any, output: Path, runtime: Mapping[str, Any]) -> d
             "entry_count": len(entries), "bad_paths": bad}
 
 
-def _instrumented_action(repo: Path, gate: Mapping[str, Any], start: Mapping[str, Any],
-                         record: dict[str, Any], runtime: dict[str, Any]) -> str:
-    repo = repo.resolve()
-    c9 = load_delegate(repo)
-    gate = future_gate(repo, gate.get("execution_id"), c9)
-    output = repo / OUTPUT
-    base_guard = c9.BudgetGuard
-    original_output, original_task = c9.OUTPUT, c9.FUTURE_TASK_RELATIVE
-    original_province, original_guard = c9.PER_PROVINCE, c9.BudgetGuard
-    deadline = int(start["monotonic_ns"] + gate["wall_seconds"] * 1e9)
-    intervals: list[dict[str, Any]] = []
-    sequence = 0
-
-    class MeasuredGuard(base_guard):
-        def __init__(self, *args: Any, **kwargs: Any):
-            super().__init__(ceilings=gate["ceilings"], prior={}, combined=gate["cumulative"])
-            self.open_province: dict[int, dict[str, Any]] = {}
-            self.integration_start: dict[str, Any] | None = None
-            self.household_start: dict[str, Any] | None = None
-
-        def begin_province(self, province: int, ledger: Mapping[str, Any],
-                           envelope: Mapping[str, int]) -> None:
-            super().begin_province(province, ledger, envelope)
-            self.journal("province_baseline_and_reserved_exposure", {
-                "province": province, "baseline": self.province_baseline[province],
-                "reserved_exposure": dict(envelope), "confirmed_attempted": dict(self.attempted)})
-
-        def reconcile_province(self, province: int, ledger: Mapping[str, Any]) -> None:
-            super().reconcile_province(province, ledger)
-            self.journal("province_actual_counts_reconciled", {
-                "province": province, "actual": dict(self.per_province[province])})
-
-        def journal(self, event: str, detail: Any = None) -> None:
-            nonlocal sequence
-            sequence += 1
-            try:
-                c9.write_output_json(output, runtime, output / f"attempt_journal_{sequence:07d}.json",
-                                     {"event": event, "detail": detail, "execution_id": gate["execution_id"],
-                                      "monotonic_ns": time.monotonic_ns(), "attempted": dict(self.attempted),
-                                      "per_province": self.per_province,
-                                      "budget_namespace": "C8_START_C9_C10_WINDOW"})
-            except BaseException:
-                if runtime.get("state") is not None:
-                    runtime["state"]["ledger_unresolved"] = True
-                raise
-
-        def resource_check(self) -> None:
-            if time.monotonic_ns() >= deadline:
-                self.journal("cooperative_resource_cap_reached")
-                raise TimingBlocked("BLOCKED__MEASUREMENT_RESOURCE_CAP_REACHED")
-
-        def reserve(self, amounts: Mapping[str, int], province: int | None = None) -> None:
-            self.resource_check()
-            super().reserve(amounts, province)
-            self.journal("reserve_before_entry", {"amounts": dict(amounts), "province": province})
-            if "full_integrations" in amounts and self.integration_start is None:
-                self.integration_start = clock_sample()
-                self.journal("integration_start", self.integration_start)
-            if province is not None and province not in self.open_province:
-                stamp = clock_sample()
-                if self.household_start is None:
-                    self.household_start = stamp
-                self.open_province[province] = stamp
-                self.journal("province_start", {"province": province, "clock": stamp})
-            if "full_integrations" in amounts and self.household_start is not None:
-                closed = clock_sample()
-                intervals.append({"stage": "household", "start": self.household_start,
-                                  "end": closed, "elapsed_ns": elapsed_clock(self.household_start, closed)})
-                self.household_start = None
-
-        def enter(self, key: str, province: int | None = None) -> None:
-            if key == "frozen_k1b_quantity_allocations":
-                # The source's feedback counter names the same frozen allocation event.
-                self.reserve({"frozen_k1b_quantity_allocations": 1,
-                              "k1b_feedback_calls": 1}, province)
-                self.attempted["frozen_k1b_quantity_allocations"] += 1
-                self.attempted["k1b_feedback_calls"] += 1
-                self.journal("attempted_before_source_call", {"alias": [
-                    "frozen_k1b_quantity_allocations", "k1b_feedback_calls"],
-                    "province": province})
-            else:
-                super().enter(key, province)
-                self.journal("attempted_before_source_call", {"category": key, "province": province})
-
-        def reconcile(self, ledger: Mapping[str, Any]) -> None:
-            super().reconcile(ledger)
-            self.journal("source_reconciled")
-            for province, opened in list(self.open_province.items()):
-                closed = clock_sample()
-                intervals.append({"stage": "province", "province": province,
-                                  "start": opened, "end": closed,
-                                  "elapsed_ns": elapsed_clock(opened, closed)})
-                del self.open_province[province]
-
-        def reconcile_all(self, ledger: Mapping[str, Any]) -> None:
-            super().reconcile_all(ledger)
-            self.journal("integration_source_reconciled")
-            if self.integration_start is not None:
-                closed = clock_sample()
-                intervals.append({"stage": "integration", "start": self.integration_start,
-                                  "end": closed, "elapsed_ns": elapsed_clock(self.integration_start, closed)})
-                self.integration_start = None
-
-    try:
-        c9.OUTPUT = OUTPUT
-        c9.FUTURE_TASK_RELATIVE = TASK_COPY
-        c9.PER_PROVINCE = gate["per_province"]
-        c9.BudgetGuard = MeasuredGuard
-        runtime["c9_wrapper_contract_sha256"] = gate["contract_sha256"]
-        runtime["c9_wrapper_execution_id"] = gate["execution_id"]
-        result = c9._execute_after_gate(repo, gate["execution_id"], runtime)
-        record["intervals"] = intervals
-        record["source_terminal"] = result
-        record["attempted"] = dict(runtime["guard"].attempted)
-        record["source_ledger"] = dict(runtime["ledger"])
-        return result
-    finally:
-        c9.OUTPUT, c9.FUTURE_TASK_RELATIVE = original_output, original_task
-        c9.PER_PROVINCE, c9.BudgetGuard = original_province, original_guard
-
-
 def run_timed_action(repo: Path, gate: Mapping[str, Any], *,
                      clock: Any = time, utc_now: Any = None) -> dict[str, Any]:
     """Revalidate authority even for direct callers; action is fixed in production."""
@@ -427,9 +312,129 @@ def run_timed_action(repo: Path, gate: Mapping[str, Any], *,
     start = clock_sample(clock, utc_now)
     record: dict[str, Any] = {}
     runtime_box: dict[str, Any] = {}
+    def instrumented_action(start: Mapping[str, Any], record: dict[str, Any],
+                            runtime: dict[str, Any]) -> str:
+        nonlocal gate
+        gate = future_gate(repo, gate.get("execution_id"), c9)
+        output = repo / OUTPUT
+        base_guard = c9.BudgetGuard
+        original_output, original_task = c9.OUTPUT, c9.FUTURE_TASK_RELATIVE
+        original_province, original_guard = c9.PER_PROVINCE, c9.BudgetGuard
+        deadline = int(start["monotonic_ns"] + gate["wall_seconds"] * 1e9)
+        intervals: list[dict[str, Any]] = []
+        sequence = 0
+
+        class MeasuredGuard(base_guard):
+            def __init__(self, *args: Any, **kwargs: Any):
+                super().__init__(ceilings=gate["ceilings"], prior={}, combined=gate["cumulative"])
+                self.open_province: dict[int, dict[str, Any]] = {}
+                self.integration_start: dict[str, Any] | None = None
+                self.household_start: dict[str, Any] | None = None
+
+            def begin_province(self, province: int, ledger: Mapping[str, Any],
+                               envelope: Mapping[str, int]) -> None:
+                super().begin_province(province, ledger, envelope)
+                self.journal("province_baseline_and_reserved_exposure", {
+                    "province": province, "baseline": self.province_baseline[province],
+                    "reserved_exposure": dict(envelope), "confirmed_attempted": dict(self.attempted)})
+
+            def reconcile_province(self, province: int, ledger: Mapping[str, Any]) -> None:
+                super().reconcile_province(province, ledger)
+                self.journal("province_actual_counts_reconciled", {
+                    "province": province, "actual": dict(self.per_province[province])})
+
+            def journal(self, event: str, detail: Any = None) -> None:
+                nonlocal sequence
+                sequence += 1
+                try:
+                    c9.write_output_json(output, runtime, output / f"attempt_journal_{sequence:07d}.json",
+                                         {"event": event, "detail": detail, "execution_id": gate["execution_id"],
+                                          "monotonic_ns": time.monotonic_ns(), "attempted": dict(self.attempted),
+                                          "per_province": self.per_province,
+                                          "budget_namespace": "C8_START_C9_C10_WINDOW"})
+                except BaseException:
+                    if runtime.get("state") is not None:
+                        runtime["state"]["ledger_unresolved"] = True
+                    raise
+
+            def resource_check(self) -> None:
+                if time.monotonic_ns() >= deadline:
+                    self.journal("cooperative_resource_cap_reached")
+                    raise TimingBlocked("BLOCKED__MEASUREMENT_RESOURCE_CAP_REACHED")
+
+            def reserve(self, amounts: Mapping[str, int], province: int | None = None) -> None:
+                self.resource_check()
+                super().reserve(amounts, province)
+                self.journal("reserve_before_entry", {"amounts": dict(amounts), "province": province})
+                if "full_integrations" in amounts and self.integration_start is None:
+                    self.integration_start = clock_sample()
+                    self.journal("integration_start", self.integration_start)
+                if province is not None and province not in self.open_province:
+                    stamp = clock_sample()
+                    if self.household_start is None:
+                        self.household_start = stamp
+                    self.open_province[province] = stamp
+                    self.journal("province_start", {"province": province, "clock": stamp})
+                if "full_integrations" in amounts and self.household_start is not None:
+                    closed = clock_sample()
+                    intervals.append({"stage": "household", "start": self.household_start,
+                                      "end": closed, "elapsed_ns": elapsed_clock(self.household_start, closed)})
+                    self.household_start = None
+
+            def enter(self, key: str, province: int | None = None) -> None:
+                if key == "frozen_k1b_quantity_allocations":
+                    # The source's feedback counter names the same frozen allocation event.
+                    self.reserve({"frozen_k1b_quantity_allocations": 1,
+                                  "k1b_feedback_calls": 1}, province)
+                    self.attempted["frozen_k1b_quantity_allocations"] += 1
+                    self.attempted["k1b_feedback_calls"] += 1
+                    self.journal("attempted_before_source_call", {"alias": [
+                        "frozen_k1b_quantity_allocations", "k1b_feedback_calls"],
+                        "province": province})
+                else:
+                    super().enter(key, province)
+                    self.journal("attempted_before_source_call", {"category": key, "province": province})
+
+            def reconcile(self, ledger: Mapping[str, Any]) -> None:
+                super().reconcile(ledger)
+                self.journal("source_reconciled")
+                for province, opened in list(self.open_province.items()):
+                    closed = clock_sample()
+                    intervals.append({"stage": "province", "province": province,
+                                      "start": opened, "end": closed,
+                                      "elapsed_ns": elapsed_clock(opened, closed)})
+                    del self.open_province[province]
+
+            def reconcile_all(self, ledger: Mapping[str, Any]) -> None:
+                super().reconcile_all(ledger)
+                self.journal("integration_source_reconciled")
+                if self.integration_start is not None:
+                    closed = clock_sample()
+                    intervals.append({"stage": "integration", "start": self.integration_start,
+                                      "end": closed, "elapsed_ns": elapsed_clock(self.integration_start, closed)})
+                    self.integration_start = None
+
+        try:
+            c9.OUTPUT = OUTPUT
+            c9.FUTURE_TASK_RELATIVE = TASK_COPY
+            c9.PER_PROVINCE = gate["per_province"]
+            c9.BudgetGuard = MeasuredGuard
+            runtime["c9_wrapper_contract_sha256"] = gate["contract_sha256"]
+            runtime["c9_wrapper_execution_id"] = gate["execution_id"]
+            runtime["c9_timed_guard"] = MeasuredGuard()
+            result = c9._execute_after_gate(repo, gate["execution_id"], runtime)
+            record["intervals"] = intervals
+            record["source_terminal"] = result
+            record["attempted"] = dict(runtime["guard"].attempted)
+            record["source_ledger"] = dict(runtime["ledger"])
+            return result
+        finally:
+            c9.OUTPUT, c9.FUTURE_TASK_RELATIVE = original_output, original_task
+            c9.PER_PROVINCE, c9.BudgetGuard = original_province, original_guard
+
     def invoke(runtime: dict[str, Any]) -> str:
         runtime_box["runtime"] = runtime
-        return _instrumented_action(repo, gate, start, record, runtime)
+        return instrumented_action(start, record, runtime)
     original_output = c9.OUTPUT
     try:
         c9.OUTPUT = OUTPUT
@@ -552,10 +557,8 @@ def execute_once(repo: Path = REPOSITORY, execution_id: str | None = None) -> di
     contract = json.loads((repo / CONTRACT).read_text(encoding="utf-8"))
     if contract.get("active") is not True or contract.get("resource_wall_seconds") is None:
         raise TimingBlocked("BLOCKED__INACTIVE_CONTRACT")
-    c9 = load_delegate(repo)
-    gate = future_gate(repo, execution_id, c9)
     static_preflight(repo, require_inactive=False)
-    return run_timed_action(repo, gate)
+    return run_timed_action(repo, {"execution_id": execution_id})
 
 
 def main(argv: list[str] | None = None) -> int:

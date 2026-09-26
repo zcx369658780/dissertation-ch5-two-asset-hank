@@ -24,6 +24,22 @@ def test_inactive_delegate_has_no_direct_science_entry():
     assert not (ROOT / c9.OUTPUT).exists()
 
 
+def test_active_looking_direct_delegate_runtime_denied_before_output(monkeypatch):
+    monkeypatch.setattr(c9, "assert_active_authority",
+                        lambda repo, execution_id: {"contract_sha256": "INERT_ACTIVE"})
+    monkeypatch.setattr(c9, "claim_output_root",
+                        lambda *args: pytest.fail("output root claimed"))
+    runtime_values = {"c9_wrapper_contract_sha256": "INERT_ACTIVE",
+                      "c9_wrapper_execution_id": "INERT"}
+    with pytest.raises(c9.RepeatBlocked, match="BLOCKED__C9_TIMED_WRAPPER_RUNTIME_REQUIRED"):
+        c9._execute_after_gate(ROOT, "INERT", dict(runtime_values))
+    with pytest.raises(c9.RepeatBlocked, match="BLOCKED__C9_TIMED_WRAPPER_ACTION_REQUIRED"):
+        c9.run_after_valid_gate(ROOT, "INERT",
+                                lambda runtime: c9._execute_after_gate(
+                                    ROOT, "INERT", {**runtime, **runtime_values}))
+    assert not (ROOT / c9.OUTPUT).exists()
+
+
 def test_sealed_c8_identity_and_39_category_budget():
     report = c9.preflight(ROOT)
     assert report["status"] == "PASS__STATIC_PREFLIGHT_ONLY"
