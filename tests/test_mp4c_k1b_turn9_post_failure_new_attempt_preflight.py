@@ -181,11 +181,12 @@ def test_future_execute_source_order_denies_missing_authority_before_loading():
     tree = ast.parse(WRAPPER.read_text(encoding="utf-8"))
     functions = {node.name: node for node in tree.body if isinstance(node, ast.FunctionDef)}
     execute = functions["execute_once"]
-    contract_check = next(node for node in ast.walk(execute) if isinstance(node, ast.Attribute)
-                          and node.attr == "is_file")
+    authority_checks = [node for node in ast.walk(execute) if isinstance(node, ast.Call)
+                        and isinstance(node.func, ast.Name)
+                        and node.func.id == "authority_file_present"]
     dispatch = next(node for node in ast.walk(execute) if isinstance(node, ast.Call)
                     and isinstance(node.func, ast.Name) and node.func.id == "run_timed_action")
-    assert contract_check.lineno < dispatch.lineno
+    assert authority_checks and max(node.lineno for node in authority_checks) < dispatch.lineno
     assert all(not isinstance(node, ast.Call) or not isinstance(node.func, ast.Name)
                or node.func.id not in {"load_delegate", "claim_output_root"}
                for node in ast.walk(execute))
@@ -255,7 +256,7 @@ def test_repair3_preflight_has_distinct_fail_closed_inactive_and_active_branches
     active_source = "\n".join(ast.unparse(node) for node in branch.orelse)
     for name in ("CONTRACT", "OWNER_ADOPTION", "TASK_COPY", "INDEPENDENT_REVIEW"):
         assert name in inactive_source
-    assert "lexists" in inactive_source
+    assert inactive_source.count("authority_file_absent") == 4
     assert "preimport_authority_gate" in active_source
     assert "NEW_EXECUTION_ID" in active_source
     assert "preimport_authority_gate" not in inactive_source
