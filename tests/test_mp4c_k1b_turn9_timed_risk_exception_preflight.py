@@ -61,11 +61,38 @@ def test_caller_constructed_active_looking_gate_cannot_enter(monkeypatch):
                            run_after_valid_gate=lambda *args: entered.append("science"))
     forged = {"execution_id": "FORGED", "wall_seconds": 3600,
               "contract_sha256": "FORGED", "ceilings": {}, "cumulative": {}}
-    with pytest.raises(wrapper.TimingBlocked, match="BLOCKED__INACTIVE_CONTRACT"):
+    monkeypatch.setattr(wrapper, "future_gate", lambda *args: forged)
+    with pytest.raises(TypeError):
         wrapper.run_timed_action(ROOT, forged, fake)
-    with pytest.raises(wrapper.TimingBlocked, match="BLOCKED__INACTIVE_CONTRACT"):
+    with pytest.raises(TypeError):
         wrapper._instrumented_action(fake, ROOT, forged, {"monotonic_ns": 0}, {}, {})
     assert entered == []
+    assert not (ROOT / wrapper.OUTPUT).exists()
+
+
+def test_production_entries_load_delegate_before_any_action(monkeypatch):
+    forged = {"execution_id": "INERT", "wall_seconds": 3600}
+    entered = []
+    def deny_identity(repo):
+        entered.append("load_fixed_delegate")
+        raise wrapper.TimingBlocked("BLOCKED__C9_DELEGATE_IDENTITY")
+    monkeypatch.setattr(wrapper, "load_delegate", deny_identity)
+    monkeypatch.setattr(wrapper, "future_gate", lambda *args: forged)
+    with pytest.raises(wrapper.TimingBlocked, match="BLOCKED__C9_DELEGATE_IDENTITY"):
+        wrapper.run_timed_action(ROOT, forged)
+    with pytest.raises(wrapper.TimingBlocked, match="BLOCKED__C9_DELEGATE_IDENTITY"):
+        wrapper._instrumented_action(ROOT, forged, {"monotonic_ns": 0}, {}, {})
+    assert entered == ["load_fixed_delegate", "load_fixed_delegate"]
+    bound = object()
+    monkeypatch.setattr(wrapper, "load_delegate", lambda repo: bound)
+    def check_bound(repo, execution_id, c9):
+        assert c9 is bound
+        raise wrapper.TimingBlocked("BLOCKED__INERT_AFTER_BOUND_IDENTITY")
+    monkeypatch.setattr(wrapper, "future_gate", check_bound)
+    with pytest.raises(wrapper.TimingBlocked, match="BLOCKED__INERT_AFTER_BOUND_IDENTITY"):
+        wrapper.run_timed_action(ROOT, forged)
+    with pytest.raises(wrapper.TimingBlocked, match="BLOCKED__INERT_AFTER_BOUND_IDENTITY"):
+        wrapper._instrumented_action(ROOT, forged, {"monotonic_ns": 0}, {}, {})
     assert not (ROOT / wrapper.OUTPUT).exists()
 
 
@@ -106,9 +133,10 @@ def test_attempt_journal_alias_and_cumulative_guard_use_one_event(monkeypatch):
     gate = {"ceilings": real.CEILINGS, "cumulative": real.TWO_TURN_CEILINGS,
             "per_province": real.PER_PROVINCE, "wall_seconds": 3600,
             "execution_id": "INERT", "contract_sha256": "INERT"}
+    monkeypatch.setattr(wrapper, "load_delegate", lambda repo: fake)
     monkeypatch.setattr(wrapper, "future_gate", lambda repo, execution_id, c9: gate)
     runtime, record = {}, {}
-    result = wrapper._instrumented_action(fake, ROOT, gate,
+    result = wrapper._instrumented_action(ROOT, gate,
                                            {"monotonic_ns": wrapper.time.monotonic_ns()},
                                            record, runtime)
     assert result == "VALID__C9_NINE_COMPONENT_LEVEL_NOT_MET"
@@ -130,9 +158,10 @@ def test_expired_resource_wall_denies_next_entry_without_call(monkeypatch):
     gate = {"ceilings": real.CEILINGS, "cumulative": real.TWO_TURN_CEILINGS,
             "per_province": real.PER_PROVINCE, "wall_seconds": 1,
             "execution_id": "INERT", "contract_sha256": "INERT"}
+    monkeypatch.setattr(wrapper, "load_delegate", lambda repo: fake)
     monkeypatch.setattr(wrapper, "future_gate", lambda repo, execution_id, c9: gate)
     with pytest.raises(wrapper.TimingBlocked, match="BLOCKED__MEASUREMENT_RESOURCE_CAP_REACHED"):
-        wrapper._instrumented_action(fake, ROOT, gate, {"monotonic_ns": 0}, {}, {})
+        wrapper._instrumented_action(ROOT, gate, {"monotonic_ns": 0}, {}, {})
     assert any(row.get("event") == "cooperative_resource_cap_reached" for row in journal)
     assert not any(row.get("event") == "attempted_before_source_call" for row in journal)
 
@@ -159,7 +188,7 @@ def test_safe_pause_is_emitted_only_after_complete_seal(monkeypatch):
     monkeypatch.setattr(wrapper, "seal_science_outputs",
                         lambda c9, output, runtime: (events.append(("seal", None)) or
                                                      {"manifest_sha256": "MANIFEST", "entry_count": 1}))
-    def inert_action(c9, repo, gate, start, record, runtime):
+    def inert_action(repo, gate, start, record, runtime):
         record["attempted"] = {"turn9_household_calls": 1, "turn10_household_calls": 0}
         record["source_ledger"] = {"turn9_household_calls": 1}
         return "VALID__C9_NINE_COMPONENT_LEVEL_NOT_MET"
@@ -169,8 +198,9 @@ def test_safe_pause_is_emitted_only_after_complete_seal(monkeypatch):
                                        "cumulative": real.TWO_TURN_CEILINGS,
                                        "per_province": real.PER_PROVINCE,
                                        "wall_seconds": 3600}
+    monkeypatch.setattr(wrapper, "load_delegate", lambda repo: fake)
     monkeypatch.setattr(wrapper, "future_gate", lambda repo, execution_id, c9: gate)
-    result = wrapper.run_timed_action(ROOT, gate, fake)
+    result = wrapper.run_timed_action(ROOT, gate)
     assert [name for name, _ in events] == ["seal", "timing_receipt.json", "pause_receipt.json"]
     assert result["terminal"] == "SAFE_PAUSE_AFTER_SEALED_C9"
     assert events[1][1]["safe_pause_pending"] is True
@@ -238,6 +268,7 @@ def test_failure_after_entry_seals_partial_root_without_safe_pause(monkeypatch):
                            write_output_json=lambda output, runtime, path, value:
                                events.append((path.name, value)))
     gate = {"execution_id": "INERT"}
+    monkeypatch.setattr(wrapper, "load_delegate", lambda repo: fake)
     monkeypatch.setattr(wrapper, "future_gate", lambda repo, execution_id, c9: gate)
     monkeypatch.setattr(wrapper, "seal_partial_outputs",
                         lambda c9, output, runtime: (events.append(("partial_seal", None)) or
@@ -246,7 +277,7 @@ def test_failure_after_entry_seals_partial_root_without_safe_pause(monkeypatch):
     monkeypatch.setattr(wrapper, "_instrumented_action",
                         lambda *args: (_ for _ in ()).throw(FirstFailure()))
     with pytest.raises(wrapper.TimingBlocked, match="CALL_LEDGER_UNRESOLVED") as caught:
-        wrapper.run_timed_action(ROOT, gate, fake)
+        wrapper.run_timed_action(ROOT, gate)
     assert [name for name, _ in events] == ["partial_seal", "timing_failure.json"]
     failure = events[1][1]
     assert failure["original_terminal"] == "FAIL__FIRST"
@@ -272,13 +303,14 @@ def test_failed_partial_readback_forces_unresolved_terminal(monkeypatch):
                            write_output_json=lambda output, runtime, path, value:
                                events.append((path.name, value)))
     gate = {"execution_id": "INERT"}
+    monkeypatch.setattr(wrapper, "load_delegate", lambda repo: fake)
     monkeypatch.setattr(wrapper, "future_gate", lambda repo, execution_id, c9: gate)
     monkeypatch.setattr(wrapper, "seal_partial_outputs",
                         lambda c9, output, runtime: {"status": "FAIL", "bad_paths": ["x"]})
     monkeypatch.setattr(wrapper, "_instrumented_action",
                         lambda *args: (_ for _ in ()).throw(RuntimeError("later")))
     with pytest.raises(wrapper.TimingBlocked, match="CALL_LEDGER_UNRESOLVED"):
-        wrapper.run_timed_action(ROOT, gate, fake)
+        wrapper.run_timed_action(ROOT, gate)
     assert events[0][0] == "timing_failure.json"
     assert events[0][1]["original_terminal"] == "FAIL__SOURCE"
     assert events[0][1]["terminal"] == "CALL_LEDGER_UNRESOLVED"

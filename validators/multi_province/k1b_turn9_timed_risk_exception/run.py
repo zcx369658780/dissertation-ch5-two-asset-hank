@@ -294,8 +294,10 @@ def seal_partial_outputs(c9: Any, output: Path, runtime: Mapping[str, Any]) -> d
             "entry_count": len(entries), "bad_paths": bad}
 
 
-def _instrumented_action(c9: Any, repo: Path, gate: Mapping[str, Any], start: Mapping[str, Any],
+def _instrumented_action(repo: Path, gate: Mapping[str, Any], start: Mapping[str, Any],
                          record: dict[str, Any], runtime: dict[str, Any]) -> str:
+    repo = repo.resolve()
+    c9 = load_delegate(repo)
     gate = future_gate(repo, gate.get("execution_id"), c9)
     output = repo / OUTPUT
     base_guard = c9.BudgetGuard
@@ -413,10 +415,11 @@ def _instrumented_action(c9: Any, repo: Path, gate: Mapping[str, Any], start: Ma
         c9.PER_PROVINCE, c9.BudgetGuard = original_province, original_guard
 
 
-def run_timed_action(repo: Path, gate: Mapping[str, Any], c9: Any,
+def run_timed_action(repo: Path, gate: Mapping[str, Any], *,
                      clock: Any = time, utc_now: Any = None) -> dict[str, Any]:
     """Revalidate authority even for direct callers; action is fixed in production."""
     repo = repo.resolve()
+    c9 = load_delegate(repo)
     gate = future_gate(repo, gate.get("execution_id"), c9)
     output = repo / OUTPUT
     if os.path.lexists(output) or not c9.path_components_safe(output):
@@ -426,7 +429,7 @@ def run_timed_action(repo: Path, gate: Mapping[str, Any], c9: Any,
     runtime_box: dict[str, Any] = {}
     def invoke(runtime: dict[str, Any]) -> str:
         runtime_box["runtime"] = runtime
-        return _instrumented_action(c9, repo, gate, start, record, runtime)
+        return _instrumented_action(repo, gate, start, record, runtime)
     original_output = c9.OUTPUT
     try:
         c9.OUTPUT = OUTPUT
@@ -552,7 +555,7 @@ def execute_once(repo: Path = REPOSITORY, execution_id: str | None = None) -> di
     c9 = load_delegate(repo)
     gate = future_gate(repo, execution_id, c9)
     static_preflight(repo, require_inactive=False)
-    return run_timed_action(repo, gate, c9)
+    return run_timed_action(repo, gate)
 
 
 def main(argv: list[str] | None = None) -> int:
