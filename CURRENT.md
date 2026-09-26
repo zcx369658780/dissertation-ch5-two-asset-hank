@@ -25,11 +25,13 @@ Updated: 2026-09-26 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_K1B_C9_OWNER_RESOURCE_AND_EXECUTION_DECISION_PENDING__NO_SCIENCE`
+`CH5_K1B_C9_ACTIVE_CONTRACT_PROPOSAL_ZERO_SCIENCE_ACTIVE`
 
 The C9 preparation and Repair1/Repair2 candidates were independently **REJECTED** for static entry and ledger defects. Repair3 candidate `fb37a8f62d6ca71c7fbf7f3516e9de21473c7ed3` was independently **ACCEPTED for zero-science static entry repair only**. Its inactive delegate-hash rebind candidate `3ecee32cdc4a3e88043a85709a6db7c85f6ec5c8` is independently **ACCEPTED** in `docs/CH5_K1B_C9_INACTIVE_CONTRACT_DELEGATE_REBIND_INDEPENDENT_REVIEW_20260926.md`. `TASK_CURRENT.md` is closed pending Owner's C9-only resource-wall number and subsequent separate active-contract/science authorization. The contract remains non-executable; C9 has not run.
 
-The Owner then adopted a **C9-only 36,000-second cooperative process resource wall** in `docs/CH5_K1B_C9_TEN_HOUR_COOPERATIVE_RESOURCE_WALL_OWNER_ADOPTION_20260926.md`. It blocks only the next science entry after expiry and does not bound an in-flight call. This authorizes zero-science active-contract preparation; exact active-contract adoption and one-shot C9 execution remain separate gates. The present contract and task are still inactive/closed.
+The Owner then adopted a **C9-only 36,000-second cooperative process resource wall** in `docs/CH5_K1B_C9_TEN_HOUR_COOPERATIVE_RESOURCE_WALL_OWNER_ADOPTION_20260926.md`. It blocks only the next science entry after expiry and does not bound an in-flight call. This authorizes zero-science active-contract preparation; exact active-contract adoption and one-shot C9 execution remain separate gates. The live contract remains inactive.
+
+GPT Work independently accepted the final wrapper/delegate as a **static runner only** in `docs/CH5_K1B_TURN9_TIMED_RISK_EXCEPTION_RUNNER_INDEPENDENT_REVIEW.md`, binding their raw SHA-256 values and the adopted wall semantics. `TASK_CURRENT.md` now authorizes the existing Codex conversation to create only a separate active-contract **proposal**; the live contract remains inactive, and no C9 scientific call is authorized.
 
 On 2026-09-26 the Owner selected preparation of a C9-only timed-risk exception after the accepted transfer assessment. The exact selection and its limits are in `docs/CH5_K1B_C9_SINGLE_TURN_TIMED_RISK_EXCEPTION_OWNER_SELECTION_20260926.md`. `TASK_CURRENT.md` now assigns only an inactive, zero-science C9 runner/contract/static-test preparation to the existing Codex conversation. No C9-specific resource-wall seconds or one-shot execution authorization has been adopted. The ordinary duration gate remains blocked; C9 has not run and Results eligibility is `FALSE`.
 
