@@ -1,5 +1,7 @@
 # C9 新尝试合同非权威提案（零科学）
 
+以下原候选记录保留为历史；其提案已被独立 REJECT，末尾 Repair1 节记录本轮有效候选。
+
 **状态：仅供 GPT Work 独立 ACCEPT/REJECT 的提案；不可执行。** 本报告、提案 JSON 和收据不建立 live 合同、runner-recognized ACCEPT、Owner 一次性执行采纳或任务。
 
 起点 HEAD `4f2ce2373e3ff58fb19870e9f7724c3298694daf`，父提交 `c175292de6ea07991b1ea22b00ce738bcd7c11b3`，`HEAD:src=00682b2e1a7ba23665f6e16f6acf48ad35874883`。起点跟踪文件与暂存区干净，仅五个受保护未跟踪输出根；五份清单 SHA-256（C6-prime、C7、C8、C8-timing、C9-partial）依次为 `7890720D502AC1C04D672978C6F662DD51F9D2BA27F321701877ABE9214CDE61`、`413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91`、`5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301`、`5DD433E8DD0D8A3C6DB59C3FE370C4EF8770BBCCCA3F8D79211D93938CFA654D`、`80BD0D42CB73B4E39B811E759505480542D5A73227014F30B732C34A8AC1FDC3`。
@@ -42,3 +44,19 @@ python -c "import hashlib,json,pathlib; r=pathlib.Path.cwd(); p=json.loads((r/'t
 ```
 
 唯一一次验证实际结果：`PASS: proposal-only schema, four maps, source binding, and absent live/new-root paths`，退出码 `0`。验证通过只证明提案结构与已采纳来源一致，不构成合同、runner 或科学 ACCEPT。下一门：GPT Work 独立 ACCEPT/REJECT。
+
+## Repair1：未来 runner 字段绑定修复（2026-09-26）
+
+起点任务提交 `05d067be61409e7cdee9baa8da1b0b0b22ca5b5c` 是被拒候选 `c91c3030efb3d303fa50c7bb1aba66bc075d9d3a` 的直接子提交；`HEAD:src=00682b2e1a7ba23665f6e16f6acf48ad35874883`。前一候选提案/报告/收据原始 SHA-256 分别为 `0D9417478008190D517ABE3FA61A8AA4FCA1F2CBB6AC18C6788B6D91F6D83950`、`E5A8DED802CCB1A4014460DF671163ADB769A60D24066D4A03E802ADD99CB342`、`267715BFD86C0384411F5CDC82CB624CA698C2666A8999AA7AABE7B4C74F057E`。独立裁决 `REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_RUNNER_FIELD_BINDINGS__NO_SCIENCE`，与先前九项 REJECT 并存。
+
+本轮提案仍用独立 schema、顶层 `active=false` 和 `execution_authorized=false`；新原始 SHA-256 为 `18BFB7B274936BFB06806BD3F27871D277815DC644CD80A29791F52FD36D039B`。新增 `prospective_live_contract_fields` 只列未来 runner 字段已知映射，字段本身不构成 live 合同。它把新 `execution_id` 与仅作旧尝试来源的 `old_execution_id=C9_TIMED_RISK_RUN001` 分开，使用 `output_root`、`attempts=1`、`retries=0`、字面 `resource_policy=COOPERATIVE_PROCESS_WALL_CAP`、`resource_wall_seconds=36000`，并绑定预算/Owner 文件、wrapper/delegate 原始哈希和不变 `src_tree`。`sealed_input_sha256` 精确为 `manifest/readback/json/npz` 四键；四张预算上限图和旧治理扣账图直接复制已采纳 JSON。
+
+已知字段映射不能最终确定 live 合同字节。`independent_review_sha256` 与 runner-recognized review、精确 live 采纳、Owner 一次性执行采纳、逐字节任务及最终 dispatch 审查仍为 `PENDING/ABSENT`。没有新 C9 根或 live 权威链。旧实际账本仍为 `CALL_LEDGER_UNRESOLVED`，完整旧 turn 扣账只属治理记账；C10、Results 和新科学执行均关闭。原两次禁止的 `--execute` 探测仍是违规历史，本轮探测、模型/科学调用、新 C9/C10 尝试、重试、部分续跑及受保护输出写入均为零。
+
+本轮唯一获准的无模型、只读提案检查命令（文件定稿后运行）：
+
+```text
+python -c "import hashlib,json,pathlib; r=pathlib.Path.cwd(); p=json.loads((r/'tasks/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_ACTIVE_CONTRACT_PROPOSAL_20260926.json').read_text(encoding='utf-8')); e=json.loads((r/'EVIDENCE/ch5_k1b_c9_post_failure_new_attempt_active_contract_proposal_zero_science_20260926/proposal_receipt.json').read_text(encoding='utf-8')); b=json.loads((r/p['budget_source_path']).read_text(encoding='utf-8')); f=p['prospective_live_contract_fields']; assert p['schema']!='CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_CONTRACT_V1' and p['active'] is False and p['execution_authorized'] is False; assert f['execution_id']=='C9_POST_FAILURE_NEW_ATTEMPT_001' and f['old_execution_id']=='C9_TIMED_RISK_RUN001' and f['execution_id']!=f['old_execution_id']; assert f['output_root']=='reports/ch5_k1b_turn9_post_failure_new_attempt_001' and f['attempts']==1 and f['retries']==0 and f['resource_policy']=='COOPERATIVE_PROCESS_WALL_CAP' and f['resource_wall_seconds']==36000; assert f['budget_proposal_sha256']==p['budget_source_raw_sha256'] and f['budget_owner_adoption_sha256']==p['budget_owner_adoption_raw_sha256'] and f['wrapper_sha256']==p['wrapper_raw_sha256'] and f['delegate_sha256']==p['delegate_raw_sha256'] and f['src_tree']==p['src_tree']; assert f['sealed_input_sha256']=={'manifest':p['sealed_c8_input_raw_sha256']['entering_manifest'],'readback':p['sealed_c8_input_raw_sha256']['entering_readback'],'json':p['sealed_c8_input_raw_sha256']['json'],'npz':p['sealed_c8_input_raw_sha256']['npz']}; assert all(f[k]==b[v] for k,v in (('per_category_attempt_ceiling','proposed_c9_per_category_attempt_ceiling'),('per_province_attempt_ceiling','proposed_c9_per_province_attempt_ceiling'),('c9_c10_cumulative_ceiling','proposed_c9_plus_future_c10_cumulative_ceiling'),('project_lifetime_governance_ceiling','full_old_turn_charge_project_lifetime_governance_ceiling_if_new_grant_adopted_not_calls'))); assert f['old_governance_charge_per_category']=={k:v['full_old_turn_governance_charge_not_calls'] for k,v in b['old_failure_category_matrix'].items()}; assert f['independent_review_sha256']=='PENDING/ABSENT' and all(x=='PENDING/ABSENT' for x in p['future_authority'].values()); assert f['automatic_c10_authorization'] is False and f['results_eligibility'] is False; assert all(not (r/x).exists() for x in e['absent_live_and_new_root_paths']); assert e['proposal_raw_sha256']==hashlib.sha256((r/e['proposal_path']).read_bytes()).hexdigest().upper(); print('PASS: non-authority proposal matches prospective runner fields and live paths remain absent')"
+```
+
+唯一一次检查实际输出为 `PASS: non-authority proposal matches prospective runner fields and live paths remain absent`，退出码 `0`；未重跑。本轮只证明提案字段对应，不构成 runner、合同或科学 ACCEPT；提交后等待 GPT Work 独立 ACCEPT/REJECT。
