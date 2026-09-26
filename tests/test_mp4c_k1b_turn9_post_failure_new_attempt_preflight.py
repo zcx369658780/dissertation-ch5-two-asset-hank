@@ -829,6 +829,38 @@ def test_output_guard_mkdir_rejects_replaced_owned_root(repair5_modules, tmp_pat
     _assert_output_guard_reason(runtime, "root_not_owned")
 
 
+def test_output_guard_mkdir_rechecks_root_before_original_mkdir(
+        repair5_modules, tmp_path, monkeypatch):
+    _, delegate = repair5_modules
+    output, runtime = _owned_output(tmp_path)
+    target = output / "turn9" / "leaf"
+    former = tmp_path / "former_owned"
+    original_owns = delegate.owns_output_root
+    original_mkdir, original_unlink = delegate.install_output_mutation_guards(output, runtime)
+    checks = 0
+
+    def replace_after_first_check(path, current_runtime):
+        nonlocal checks
+        checks += 1
+        if checks == 2:
+            output.rename(former)
+            original_mkdir(output)
+        return original_owns(path, current_runtime)
+
+    monkeypatch.setattr(delegate, "owns_output_root", replace_after_first_check)
+    try:
+        with pytest.raises(delegate.RepeatBlocked, match="FUTURE_EVIDENCE_ROOT_NOT_OWNED"):
+            target.mkdir(parents=True)
+    finally:
+        Path.mkdir, Path.unlink = original_mkdir, original_unlink
+    assert checks == 2
+    assert former.is_dir() and output.is_dir()
+    assert not (output / "turn9").exists()
+    assert runtime["output_guard_failure"] == {
+        "relative_path": "turn9/leaf", "reason": "root_not_owned"}
+    _assert_output_guard_reason(runtime, "root_not_owned")
+
+
 def test_output_guard_failure_detail_is_bounded_and_keeps_unresolved_ledger(
         repair5_modules, tmp_path):
     _, delegate = repair5_modules

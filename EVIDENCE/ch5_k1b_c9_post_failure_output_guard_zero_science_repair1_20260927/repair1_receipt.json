@@ -1,0 +1,91 @@
+{
+  "schema": "CH5_K1B_C9_POST_FAILURE_OUTPUT_GUARD_ZERO_SCIENCE_REPAIR1_RECEIPT_V1",
+  "status": "LOCAL_CANDIDATE_PENDING_INDEPENDENT_GPT_WORK_ACCEPT_REJECT__NO_SCIENCE",
+  "issuing_parent": "d52d96003090a1b0cd54d560dc206171e7f6e0de",
+  "issuing_src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
+  "frozen_delegate_raw_sha256": "AA081078AC9B2997E3DFAA6BA5AF725F5C53013EA7F194780E5BE35A0C911BF2",
+  "changed_file_raw_sha256": {
+    "tests/test_mp4c_k1b_turn9_post_failure_new_attempt_preflight.py": "F31F86D9975171441AF4CB7ADD5E6B072163DB27051D9EE5BD9F320087DBE161",
+    "docs/CH5_K1B_C9_POST_FAILURE_OUTPUT_GUARD_ZERO_SCIENCE_REPAIR1_REPORT_20260927.md": "F444E93C0D4CBBCF09305BF3BC581F3A5D6A8D9A9CFD80CD9E517F23CC44304A"
+  },
+  "focused_test": {
+    "command": "python -m pytest -q tests/test_mp4c_k1b_turn9_post_failure_new_attempt_preflight.py::test_output_guard_mkdir_rechecks_root_before_original_mkdir",
+    "invocations": 1,
+    "maximum_invocations": 1,
+    "exit_code": 0,
+    "passed": 1,
+    "skipped": 0,
+    "historical_prior_candidate_result": "7 passed, 1 skipped, 62 deselected",
+    "historical_real_symlink_skip_not_reclassified": true,
+    "preflight_calls": 0,
+    "execute_calls": 0,
+    "wrapper_launches": 0,
+    "model_calls": 0,
+    "scientific_calls": 0
+  },
+  "tested_replacement_window": "after first successful owns_output_root and before final owns_output_root",
+  "tested_result": "BLOCKED_BEFORE_ORIGINAL_MKDIR_MUTATED_REPLACEMENT_ROOT__ROOT_NOT_OWNED",
+  "post_final_check_toctou": "UNRESOLVED__NOT_ATOMIC",
+  "non_mkdir_guard_diagnostics": "OUT_OF_SCOPE",
+  "protected_manifest_raw_sha256": {
+    "C6_prime": {
+      "path": "reports/ch5_turn6_same_frozen_input_repeat_20260923_run001/execution_artifact_manifest.json",
+      "raw_sha256": "7890720D502AC1C04D672978C6F662DD51F9D2BA27F321701877ABE9214CDE61"
+    },
+    "C7": {
+      "path": "reports/ch5_k1b_turn7_outer_r2_20260925_run001/execution_artifact_manifest.json",
+      "raw_sha256": "413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91"
+    },
+    "C8": {
+      "path": "reports/ch5_k1b_turn8_outer_r2_20260925_run001/execution_artifact_manifest.json",
+      "raw_sha256": "5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301"
+    },
+    "C8_timing": {
+      "path": "reports/ch5_k1b_turn8_same_frozen_timing_measurement_run001/science_artifact_manifest.json",
+      "raw_sha256": "5DD433E8DD0D8A3C6DB59C3FE370C4EF8770BBCCCA3F8D79211D93938CFA654D"
+    },
+    "old_C9_partial": {
+      "path": "reports/ch5_k1b_turn9_timed_risk_exception_run001/partial_artifact_manifest.json",
+      "raw_sha256": "80BD0D42CB73B4E39B811E759505480542D5A73227014F30B732C34A8AC1FDC3"
+    },
+    "new_C9_partial": {
+      "path": "reports/ch5_k1b_turn9_post_failure_new_attempt_001/partial_artifact_manifest.json",
+      "raw_sha256": "3B10AB56BC2CE3D8FF9B4FB6442E012CB39686AF389624D17566CC8D68F57D20"
+    },
+    "new_C9_readback": {
+      "path": "reports/ch5_k1b_turn9_post_failure_new_attempt_001/partial_artifact_readback.json",
+      "raw_sha256": "8191C24E8A472EE702C71A72DB4F4CCC9A0733D432226DFDB6EF0B4045792BAC"
+    }
+  },
+  "protected_hashes_verified": "7/7",
+  "protected_untracked_output_roots": 6,
+  "historical_prohibited_execute_probes": 2,
+  "historical_probes_reclassified_as_compliant": false,
+  "historical_reject_verdicts": [
+    "REJECT__TASK_BOUNDARY_VIOLATION_AND_STATIC_GAPS__NO_SCIENCE",
+    "REJECT__SEALED_INPUT_PATH_GAP_AND_EVIDENCE_AMBIGUITY__NO_SCIENCE",
+    "REJECT__FINAL_ENTRY_GUARDS_UNTESTED__NO_SCIENCE",
+    "REJECT__ACTIVE_PREFLIGHT_AND_PREIMPORT_AUTHORITY_GAPS__NO_SCIENCE",
+    "REJECT__PREIMPORT_AUTHORITY_PATH_AND_BEHAVIOR_EVIDENCE_GAPS__NO_SCIENCE",
+    "REJECT__AUTHORITY_METADATA_FOLLOWS_UNSAFE_PATH__NO_SCIENCE",
+    "REJECT__STALE_INERT_SOURCE_ORDER_ASSERTION__NO_SCIENCE",
+    "REJECT__FULL_INERT_TEST_FAILED__NO_CANDIDATE__NO_SCIENCE",
+    "REJECT__LEDGER_COMPLETENESS_AND_SEAL_READBACK_PATH_GAPS__NO_SCIENCE",
+    "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_RUNNER_FIELD_BINDINGS__NO_SCIENCE",
+    "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_SCHEMA_AND_ACTIVE_BINDINGS__NO_SCIENCE",
+    "REJECT__IDENTITY_CHAIN_OWNER_ORDER_AND_TASK_ABSENCE_AMBIGUITY__NO_SCIENCE",
+    "REJECT__IDENTITY_CHAIN_COMMITTED_FILE_GATE_OMITTED__NO_SCIENCE",
+    "REJECT__COMPLETE_C9_NOT_DELIVERED__CALL_LEDGER_UNRESOLVED",
+    "REJECT__COMPLETE_NEW_C9_EXECUTION__OUTPUT_GUARD_BLOCK_AND_CALL_LEDGER_UNRESOLVED",
+    "REJECT__ROOT_REPLACEMENT_WINDOW_TEST_GAP_AND_OVERBROAD_CLAIM__NO_SCIENCE"
+  ],
+  "old_C9_attempt_consumed": true,
+  "new_C9_attempt_consumed": true,
+  "old_actual_call_ledger": "CALL_LEDGER_UNRESOLVED",
+  "new_actual_call_ledger": "CALL_LEDGER_UNRESOLVED",
+  "C10_closed": true,
+  "retry_closed": true,
+  "partial_resume_closed": true,
+  "results_eligibility": false,
+  "next_gate": "INDEPENDENT_GPT_WORK_ACCEPT_REJECT__NO_SCIENCE"
+}
