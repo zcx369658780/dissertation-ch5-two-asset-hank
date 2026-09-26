@@ -1,5 +1,10 @@
 {
   "C10_attempts": 0,
+  "absence_statement": {
+    "absent_paths_are_only_R_C_O_future_task_copy_and_new_output_root": true,
+    "current_TASK_CURRENT_md_is_future_execution_T": false,
+    "current_TASK_CURRENT_md_present": true
+  },
   "absent_live_and_new_root_paths": [
     "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_RUNNER_INDEPENDENT_REVIEW.md",
     "tasks/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_CONTRACT.json",
@@ -28,6 +33,47 @@
     "O",
     "T"
   ],
+  "dependency_order": [
+    {
+      "gate": "R_COMMITTED_SHA",
+      "status": "PENDING/ABSENT",
+      "step": 1
+    },
+    {
+      "depends_on_committed_C_sha": false,
+      "established_path_or_sha": false,
+      "gate": "PROSPECTIVE_C_CONTENT_AND_DISTINCT_PRE_C_REVIEW_OWNER_CONTENT_ADOPTION",
+      "status": "PENDING/ABSENT",
+      "step": 2
+    },
+    {
+      "gate": "C_COMMITTED_SHA",
+      "status": "PENDING/ABSENT",
+      "step": 3
+    },
+    {
+      "gate": "EXPLICIT_OWNER_ONE_SHOT_C9_EXECUTION_DECISION",
+      "must_precede": "O",
+      "status": "PENDING/ABSENT",
+      "step": 4
+    },
+    {
+      "gate": "O_BINDING_C_AND_R",
+      "status": "PENDING/ABSENT",
+      "step": 5
+    },
+    {
+      "current_TASK_CURRENT_md_present_zero_science": true,
+      "gate": "BYTE_IDENTICAL_FUTURE_EXECUTION_CURRENT_AND_TASK_COPY_T",
+      "status": "PENDING/ABSENT",
+      "step": 6
+    },
+    {
+      "gate": "FINAL_INDEPENDENT_DISPATCH_REVIEW",
+      "status": "PENDING/ABSENT",
+      "step": 7
+    }
+  ],
   "future_hashes": "PENDING/ABSENT",
   "historical_probes_reclassified_as_compliant": false,
   "historical_prohibited_execute_probes": 2,
@@ -42,7 +88,8 @@
     "REJECT__FULL_INERT_TEST_FAILED__NO_CANDIDATE__NO_SCIENCE",
     "REJECT__LEDGER_COMPLETENESS_AND_SEAL_READBACK_PATH_GAPS__NO_SCIENCE",
     "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_RUNNER_FIELD_BINDINGS__NO_SCIENCE",
-    "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_SCHEMA_AND_ACTIVE_BINDINGS__NO_SCIENCE"
+    "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_SCHEMA_AND_ACTIVE_BINDINGS__NO_SCIENCE",
+    "REJECT__IDENTITY_CHAIN_OWNER_ORDER_AND_TASK_ABSENCE_AMBIGUITY__NO_SCIENCE"
   ],
   "limited_accept_verdicts": [
     "ACCEPT__FINAL_ENTRY_STATIC_ORDER_ONLY__NO_SCIENCE",
@@ -51,7 +98,7 @@
     "ACCEPT__NONAUTHORITY_PROPOSAL_FIELD_MAPPING_ONLY__NO_SCIENCE"
   ],
   "matrix_path": "tasks/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_IDENTITY_CHAIN_PREPARATION_20260926.json",
-  "matrix_raw_sha256": "FE602C2E89CA2484A928E790A3491FA3550F5440B2CFADD94EE40BB4D5DF8FBB",
+  "matrix_raw_sha256": "FA6CB999D81E8C34CE4D5A1AFAC619EB746E24E3F0ED5B1FD385CE1F0E7AC636",
   "model_calls": 0,
   "new_C9_attempts": 0,
   "next_gate": "INDEPENDENT_GPT_WORK_ACCEPT_REJECT__NO_SCIENCE",
@@ -82,29 +129,58 @@
     }
   },
   "protected_output_writes": 0,
+  "repair1_baseline": {
+    "previous_raw_sha256": {
+      "matrix": "FE602C2E89CA2484A928E790A3491FA3550F5440B2CFADD94EE40BB4D5DF8FBB",
+      "receipt": "CB1D92D485255FF6C90D770B3D7F26E7C4FDF7D3BF934B492D3ABAA21D82A97C",
+      "report": "D58C2C7A46BA23A24D5E32077921407A473A0E0D747051B43EB66DD0EDCD4902"
+    },
+    "rejected_candidate": "752a8fecf75608e943057a3890dd76621fbce309",
+    "src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
+    "task_issuance_commit": "418175e6f413261967e45cf15b6e0ec75d577299"
+  },
   "report_path": "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_IDENTITY_CHAIN_PREPARATION_ZERO_SCIENCE_20260926.md",
-  "report_raw_sha256": "D58C2C7A46BA23A24D5E32077921407A473A0E0D747051B43EB66DD0EDCD4902",
+  "report_raw_sha256": "90B7277FBD9FFC0720CC1101AD02CC14E2A5D047586567F474421D0DCD60372C",
   "results_eligibility": false,
   "retries": 0,
   "scientific_calls": 0,
+  "separate_gates": {
+    "explicit_owner_one_shot_scientific_decision": {
+      "must_precede": "O",
+      "status": "PENDING/ABSENT"
+    },
+    "final_independent_dispatch_review": "PENDING/ABSENT",
+    "post_C_owner_execution_adoption_O": {
+      "future_path": "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_EXECUTION_OWNER_ADOPTION.md",
+      "requires_committed_C_and_R_sha": true,
+      "status": "PENDING/ABSENT"
+    },
+    "pre_C_exact_live_content_review_and_owner_adoption": {
+      "depends_on_committed_C_sha": false,
+      "established_path_or_sha": false,
+      "status": "PENDING/ABSENT"
+    },
+    "technical_chain_alone_authorizes_dispatch": false
+  },
   "source_raw_sha256": {
     "EVIDENCE/ch5_k1b_c9_new_budget_failed_ledger_policy_zero_science_proposal_20260926/proposed_budget.json": "66C2C028B07E2CB41FFBB05B643C6EF644291A0FC94C8DAF2FE888518D240460",
     "EVIDENCE/ch5_k1b_c9_post_failure_new_attempt_active_contract_proposal_zero_science_20260926/proposal_receipt.json": "5A055DB9FB0AF0046F2538F0D740936EA52A901E6BD7035737067842589AFA64",
-    "TASK_CURRENT.md": "56E9DE7C53A033E72259721252254FC301F8DDFCDB1B54974C640DCA2F4C1ED6",
+    "TASK_CURRENT.md": "E29CE53951F990E1C656862E8348FD9BD75ABDC70AB855299021A8999149B560",
     "docs/CH5_K1B_C9_NEW_BUDGET_FAILED_LEDGER_POLICY_OWNER_ADOPTION_20260926.md": "C1D88891C08D7526996F72DE6F77AA6D0FA2C593BAD91017877C8B8A0A51573D",
     "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_ACTIVE_CONTRACT_PROPOSAL_REPAIR2_INDEPENDENT_REVIEW_20260926.md": "7ECB074BEFF6BB1C07FB2309F5C7F3174D464CE7B10630561D3A660DCC6929BE",
     "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_FINAL_STATIC_PREPARATION_INDEPENDENT_REVIEW_20260926.md": "17A6EBFB415A38D225268FFAD501D9FF623CA1C5CF0B4919BB9BC7CB71B34826",
+    "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_IDENTITY_CHAIN_PREPARATION_INDEPENDENT_REVIEW_20260926.md": "96F2CB9DC48D8F397A0009CE50432AF8FCBC489EDDCFC3D60B02DB487AF67BD8",
     "docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_PROPOSAL_OWNER_SELECTION_A_20260926.md": "A52AEF73F3D8DEC60067A3E2668C80B4DFBAB59F23482C134F98F85494CE5B6B",
     "tasks/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_ACTIVE_CONTRACT_PROPOSAL_20260926.json": "78AAF07333DCF1BA5A5717BF8DB252A616FEABDF2B7C04A8EC32D653241EA52E",
     "validators/multi_province/k1b_turn9_post_failure_new_attempt_outer_r2/run.py": "AD592FCEEB6563D56BFEA6A9F35029B83712A6ACCED80A1BAF8F53C144F99D56",
     "validators/multi_province/k1b_turn9_post_failure_new_attempt_timed/run.py": "B1B2F54649B175F4E56C73135DECEED85C1AC966FE49A76431CF4B12B06633FD"
   },
   "status": "PREPARATION_ONLY__PENDING_INDEPENDENT_GPT_WORK_ACCEPT_REJECT__NO_SCIENCE",
-  "task_id": "CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_IDENTITY_CHAIN_PREPARATION_ZERO_SCIENCE_20260926",
-  "validation_actual_result": "PASS: non-authority R-C-O-T dependencies, accepted proposal and absent live paths",
-  "validation_command": "python -c \"import hashlib,json,pathlib; r=pathlib.Path.cwd(); m=json.loads((r/'tasks/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_IDENTITY_CHAIN_PREPARATION_20260926.json').read_text(encoding='utf-8')); e=json.loads((r/'EVIDENCE/ch5_k1b_c9_post_failure_new_attempt_identity_chain_preparation_zero_science_20260926/preparation_receipt.json').read_text(encoding='utf-8')); p=json.loads((r/m['accepted_proposal']['path']).read_text(encoding='utf-8')); assert m['schema'].endswith('NON_AUTHORITY_V1') and m['active'] is False and m['execution_authorized'] is False; assert m['accepted_proposal']['raw_sha256']==hashlib.sha256((r/m['accepted_proposal']['path']).read_bytes()).hexdigest().upper() and len(p['prospective_live_contract_fields'])==27; assert [x['node'] for x in m['dependency_matrix']]==['R','C','O','T'] and all(x['status']=='PENDING/ABSENT' for x in m['dependency_matrix']); assert all(not (r/x).exists() for x in m['absent_live_and_new_root_paths']); assert all(m['protected_manifest_sha256'][k]['raw_sha256']==hashlib.sha256((r/v['path']).read_bytes()).hexdigest().upper() for k,v in m['protected_manifest_sha256'].items()); assert e['matrix_raw_sha256']==hashlib.sha256((r/e['matrix_path']).read_bytes()).hexdigest().upper(); print('PASS: non-authority R-C-O-T dependencies, accepted proposal and absent live paths')\"",
+  "task_id": "CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_IDENTITY_CHAIN_PREPARATION_REPAIR1_ZERO_SCIENCE_20260926",
+  "validation_actual_result": "PASS: acyclic Owner gates, current task present, future authority absent",
+  "validation_command": "python -c \"import hashlib,json,pathlib; r=pathlib.Path.cwd(); m=json.loads((r/'tasks/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_IDENTITY_CHAIN_PREPARATION_20260926.json').read_text(encoding='utf-8')); e=json.loads((r/'EVIDENCE/ch5_k1b_c9_post_failure_new_attempt_identity_chain_preparation_zero_science_20260926/preparation_receipt.json').read_text(encoding='utf-8')); p=json.loads((r/m['accepted_proposal']['path']).read_text(encoding='utf-8')); d=m['dependency_order']; assert m['active'] is False and m['execution_authorized'] is False and len(p['prospective_live_contract_fields'])==27; assert m['accepted_proposal']['raw_sha256']==hashlib.sha256((r/m['accepted_proposal']['path']).read_bytes()).hexdigest().upper(); assert [x['step'] for x in d]==list(range(1,8)) and [x['gate'] for x in d]==['R_COMMITTED_SHA','PROSPECTIVE_C_CONTENT_AND_DISTINCT_PRE_C_REVIEW_OWNER_CONTENT_ADOPTION','C_COMMITTED_SHA','EXPLICIT_OWNER_ONE_SHOT_C9_EXECUTION_DECISION','O_BINDING_C_AND_R','BYTE_IDENTICAL_FUTURE_EXECUTION_CURRENT_AND_TASK_COPY_T','FINAL_INDEPENDENT_DISPATCH_REVIEW']; assert d[1]['depends_on_committed_C_sha'] is False and d[1]['established_path_or_sha'] is False and d[3]['must_precede']=='O'; assert m['separate_gates']['pre_C_exact_live_content_review_and_owner_adoption']['depends_on_committed_C_sha'] is False and m['separate_gates']['post_C_owner_execution_adoption_O']['requires_committed_C_and_R_sha'] is True; assert m['absence_statement']['current_TASK_CURRENT_md_present'] is True and m['absence_statement']['current_TASK_CURRENT_md_is_future_execution_T'] is False and (r/'TASK_CURRENT.md').exists() and 'TASK_CURRENT.md' not in m['absent_live_and_new_root_paths']; assert all(not (r/x).exists() for x in m['absent_live_and_new_root_paths']); assert all(v['raw_sha256']==hashlib.sha256((r/v['path']).read_bytes()).hexdigest().upper() for v in m['protected_manifest_sha256'].values()); assert e['matrix_raw_sha256']==hashlib.sha256((r/e['matrix_path']).read_bytes()).hexdigest().upper(); print('PASS: acyclic Owner gates, current task present, future authority absent')\"",
   "validation_exit_code": 0,
-  "validation_expected_result": "PASS: non-authority R-C-O-T dependencies, accepted proposal and absent live paths",
+  "validation_expected_result": "PASS: acyclic Owner gates, current task present, future authority absent",
   "validation_runs_authorized": 1,
   "validation_runs_recorded": 1,
   "validation_status": "PASS"
