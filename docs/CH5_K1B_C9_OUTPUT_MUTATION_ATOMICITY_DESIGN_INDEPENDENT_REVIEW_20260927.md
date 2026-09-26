@@ -1,0 +1,12 @@
+# C9 output mutation atomicity design: independent GPT Work review
+
+Verdict: `ACCEPT__ZERO_SCIENCE_DESIGN_EVIDENCE_ONLY__SAFETY_DECISION_PENDING`.
+Date: 2026-09-27 (Asia/Shanghai).
+
+Candidate `9fa64b0ee7b5cb658f459e34911bb55367f7b090`; parent `fc84ba099ef96360042e08632e3c4ef31710986f`; tree `08172863db9250f6ce62d45cca0495f35f0ca2ae`; `HEAD:src=00682b2e1a7ba23665f6e16f6acf48ad35874883`. Exactly two authorized files were added: design report raw SHA-256 `46AA2C303BC7CB0F10A7C916BFCABA9F85B4EE79A91B7DE47E9B97A0900B3634` and receipt raw SHA-256 `BEE4A4588F2A773941CD9FE0B3C639C09A329E4BA25226331B65B5826002304E`. No runner, test, frozen source, authority or protected output was changed. Tracked/index are clean; the six protected untracked roots and seven named manifest/readback hashes remain matched.
+
+The report correctly identifies that final checks and later path-based `mkdir`, `unlink`, exclusive JSON/NPZ creation, and initial root claim are not one atomic operation. It separates trusted single-process, cooperative concurrency and hostile replacement assumptions. Repeated `lstat`/identity checks are not presented as atomicity. Windows handle-relative mutation, `dir_fd` support, reparse handling, file-ID lifetime and cleanup are explicitly unproven on the target platform. The suggested future tests are inert and do not imply a C9 retry. The design also keeps check-after-read drift and non-`mkdir` diagnostics as separate adjacent scopes.
+
+The report/receipt do not embed their own final commit/tree or receipt hash, avoiding self-reference; the final handoff supplied those identities, and they were independently recomputed above. No test, preflight, `--execute`, wrapper, model or scientific entry was used. The original two prohibited `--execute` probes and all earlier REJECT verdicts retain their scopes; the bounded Repair1 ACCEPT is not whole-runner acceptance.
+
+This ACCEPT is **decision evidence only**. It does not select a threat model, approve a Windows implementation, rebind a live contract, authorize execution, resolve either `CALL_LEDGER_UNRESOLVED` actual ledger, or restore either consumed C9 attempt. C10, retry, partial resume and Results remain closed; Results eligibility `FALSE`. The next gate is an explicit Owner choice on the safety objective and residual-risk policy in `docs/CH5_K1B_C9_OUTPUT_MUTATION_SAFETY_OBJECTIVE_OWNER_DECISION_PACKET_20260927.md`. Any future science separately requires explicit one-shot Owner authority and a new independently reviewed R/C/O/T chain.
