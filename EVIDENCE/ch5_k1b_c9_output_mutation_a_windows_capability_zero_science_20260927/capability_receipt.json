@@ -1,0 +1,223 @@
+{
+  "schema": "CH5_K1B_C9_OUTPUT_MUTATION_A_WINDOWS_CAPABILITY_ZERO_SCIENCE_RECEIPT_V1",
+  "status": "LOCAL_READ_ONLY_CAPABILITY_CANDIDATE_PENDING_INDEPENDENT_GPT_WORK_ACCEPT_REJECT__NO_SCIENCE",
+  "issuing_parent": "bf20d06f20f890eb4fff5f720fbdd666e8e176f9",
+  "issuing_src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
+  "owner_objective": "A__CONCURRENT_AND_HOSTILE_PATH_REPLACEMENT_CONTAINMENT_RETAINED",
+  "raw_sha256_bindings": {
+    "frozen_delegate": {
+      "path": "validators/multi_province/k1b_turn9_post_failure_new_attempt_outer_r2/run.py",
+      "sha256": "AA081078AC9B2997E3DFAA6BA5AF725F5C53013EA7F194780E5BE35A0C911BF2"
+    },
+    "frozen_inert_test": {
+      "path": "tests/test_mp4c_k1b_turn9_post_failure_new_attempt_preflight.py",
+      "sha256": "F31F86D9975171441AF4CB7ADD5E6B072163DB27051D9EE5BD9F320087DBE161"
+    },
+    "owner_a_adoption": {
+      "path": "docs/CH5_K1B_C9_OUTPUT_MUTATION_SAFETY_OBJECTIVE_A_OWNER_ADOPTION_20260927.md",
+      "sha256": "A41DA4B962BE577E5B9250DE43872199A65005DFDD0DA1EBF31A4892C92B84F4"
+    },
+    "accepted_design": {
+      "path": "docs/CH5_K1B_C9_OUTPUT_MUTATION_ATOMICITY_ZERO_SCIENCE_DESIGN_20260927.md",
+      "sha256": "46AA2C303BC7CB0F10A7C916BFCABA9F85B4EE79A91B7DE47E9B97A0900B3634"
+    },
+    "accepted_design_review": {
+      "path": "docs/CH5_K1B_C9_OUTPUT_MUTATION_ATOMICITY_DESIGN_INDEPENDENT_REVIEW_20260927.md",
+      "sha256": "AAFBD55FBE2E8C899FBD21F4EB917A0A6F427AE4DF16A9B611CF0B9623B4CD0B"
+    },
+    "prior_design_receipt": {
+      "path": "EVIDENCE/ch5_k1b_c9_output_mutation_atomicity_zero_science_design_20260927/design_receipt.json",
+      "sha256": "BEE4A4588F2A773941CD9FE0B3C639C09A329E4BA25226331B65B5826002304E"
+    },
+    "task": {
+      "path": "TASK_CURRENT.md",
+      "sha256": "91E2E08AE8B38B45E3D7ED55E6DE6896FE68917B7779AB989CD29B1D10687E44"
+    },
+    "capability_report": {
+      "path": "docs/CH5_K1B_C9_OUTPUT_MUTATION_A_WINDOWS_CAPABILITY_ZERO_SCIENCE_REPORT_20260927.md",
+      "sha256": "CEFC809980C5005C9D5BFC62AAF73D3A26587D0F0F9405C295E676CA39322131"
+    }
+  },
+  "host_probe": {
+    "read_only_invocations": 1,
+    "maximum_invocations": 1,
+    "method": "Python 3.11 stdlib OS metadata and PowerShell Get-Volume D metadata in one read-only shell invocation",
+    "os_name": "nt",
+    "platform_system": "Windows",
+    "windows_version": {
+      "major": 10,
+      "minor": 0,
+      "build": 26200,
+      "platform": 2
+    },
+    "windows_display": [
+      "10",
+      "10.0.26200",
+      "SP0",
+      "Multiprocessor Free"
+    ],
+    "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "python_arch_bits": 64,
+    "platform_machine": "",
+    "target_volume": {
+      "drive_letter": "D",
+      "filesystem": "NTFS",
+      "drive_type": "Fixed"
+    },
+    "supports_dir_fd": {
+      "lstat": false,
+      "mkdir": false,
+      "open": false,
+      "rmdir": false,
+      "stat": false,
+      "unlink": false
+    },
+    "supports_follow_symlinks": {
+      "lstat": false,
+      "mkdir": false,
+      "open": false,
+      "rmdir": false,
+      "stat": true,
+      "unlink": false
+    },
+    "supports_fd": {
+      "lstat": false,
+      "mkdir": false,
+      "open": false,
+      "rmdir": false,
+      "stat": true,
+      "unlink": false
+    },
+    "native_win32_mutation_api_invocations": 0,
+    "ctypes_filesystem_mutation_api_invocations": 0,
+    "raw_command": "@'\nimport json, os, platform, struct, sys\nnames = ('mkdir', 'unlink', 'rmdir', 'open', 'stat', 'lstat')\ndef members(cap):\n    return {name: getattr(os, name) in cap for name in names if hasattr(os, name)}\nw = sys.getwindowsversion() if hasattr(sys, 'getwindowsversion') else None\nprint(json.dumps({\n  'os_name': os.name,\n  'platform_system': platform.system(),\n  'windows_version': {'major': w.major, 'minor': w.minor, 'build': w.build, 'platform': w.platform} if w else None,\n  'windows_display': platform.win32_ver(),\n  'python_version': sys.version,\n  'python_arch_bits': struct.calcsize('P') * 8,\n  'python_machine': platform.machine(),\n  'supports_dir_fd': members(os.supports_dir_fd),\n  'supports_follow_symlinks': members(os.supports_follow_symlinks),\n  'supports_fd': members(os.supports_fd),\n}, sort_keys=True))\n'@ | python -; try {Get-Volume -DriveLetter D -ErrorAction Stop | Select-Object DriveLetter,FileSystem,DriveType | ConvertTo-Json -Compress} catch { '{\"volume_status\":\"UNAVAILABLE\",\"reason\":\"Get-Volume metadata query failed\"}' }",
+    "combined_output_exact": "{\"os_name\": \"nt\", \"platform_system\": \"Windows\", \"python_arch_bits\": 64, \"python_machine\": \"\", \"python_version\": \"3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]\", \"supports_dir_fd\": {\"lstat\": false, \"mkdir\": false, \"open\": false, \"rmdir\": false, \"stat\": false, \"unlink\": false}, \"supports_fd\": {\"lstat\": false, \"mkdir\": false, \"open\": false, \"rmdir\": false, \"stat\": true, \"unlink\": false}, \"supports_follow_symlinks\": {\"lstat\": false, \"mkdir\": false, \"open\": false, \"rmdir\": false, \"stat\": true, \"unlink\": false}, \"windows_display\": [\"10\", \"10.0.26200\", \"SP0\", \"Multiprocessor Free\"], \"windows_version\": {\"build\": 26200, \"major\": 10, \"minor\": 0, \"platform\": 2}}\n{\"DriveLetter\":\"D\",\"FileSystem\":\"NTFS\",\"DriveType\":\"Fixed\"}",
+    "shell_exit_code": "UNAVAILABLE__NOT_RETAINED_IN_MODEL_VISIBLE_RESULT",
+    "stdout_stderr_separation": "UNAVAILABLE__TOOL_RETURNED_COMBINED_OUTPUT"
+  },
+  "official_documentation": {
+    "python_3_11": [
+      "https://docs.python.org/3.11/library/os.html#os.supports_dir_fd",
+      "https://docs.python.org/3.11/library/os.html#os.supports_follow_symlinks",
+      "https://docs.python.org/3.11/library/os.html#os.mkdir",
+      "https://docs.python.org/3.11/library/os.html#os.unlink",
+      "https://docs.python.org/3.11/library/os.html#os.open"
+    ],
+    "microsoft": [
+      "https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createdirectoryw",
+      "https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilew",
+      "https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-deletefilew",
+      "https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfileinformationbyhandle",
+      "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getfileinformationbyhandleex",
+      "https://learn.microsoft.com/en-us/windows/win32/api/winbase/ns-winbase-file_id_info",
+      "https://learn.microsoft.com/en-us/windows/win32/api/winbase/ns-winbase-file_attribute_tag_info",
+      "https://learn.microsoft.com/en-us/windows/win32/fileio/reparse-points"
+    ]
+  },
+  "operation_feasibility": {
+    "root_claim": {
+      "stdlib_dir_fd_available": false,
+      "native_contract_complete": "UNRESOLVED",
+      "isolation_specified": true
+    },
+    "recursive_mkdir": {
+      "stdlib_dir_fd_available": false,
+      "native_contract_complete": "UNRESOLVED",
+      "isolation_specified": true
+    },
+    "unlink": {
+      "stdlib_dir_fd_available": false,
+      "native_contract_complete": "UNRESOLVED",
+      "isolation_specified": true
+    },
+    "exclusive_json_npz_create": {
+      "stdlib_dir_fd_available": false,
+      "native_contract_complete": "UNRESOLVED",
+      "isolation_specified": true
+    }
+  },
+  "semantic_gaps": [
+    "ancestor_reparse_and_junction",
+    "share_modes_and_concurrent_rename",
+    "file_id_lifetime",
+    "handle_cleanup",
+    "cross_volume_behavior",
+    "runner_integration"
+  ],
+  "full_handle_anchored_containment": "UNRESOLVED__FAIL_CLOSED",
+  "weaker_threat_model_b_selected": false,
+  "future_disposable_isolation_study_executed": false,
+  "protected_manifest_raw_sha256": {
+    "C6_prime": {
+      "path": "reports/ch5_turn6_same_frozen_input_repeat_20260923_run001/execution_artifact_manifest.json",
+      "raw_sha256": "7890720D502AC1C04D672978C6F662DD51F9D2BA27F321701877ABE9214CDE61"
+    },
+    "C7": {
+      "path": "reports/ch5_k1b_turn7_outer_r2_20260925_run001/execution_artifact_manifest.json",
+      "raw_sha256": "413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91"
+    },
+    "C8": {
+      "path": "reports/ch5_k1b_turn8_outer_r2_20260925_run001/execution_artifact_manifest.json",
+      "raw_sha256": "5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301"
+    },
+    "C8_timing": {
+      "path": "reports/ch5_k1b_turn8_same_frozen_timing_measurement_run001/science_artifact_manifest.json",
+      "raw_sha256": "5DD433E8DD0D8A3C6DB59C3FE370C4EF8770BBCCCA3F8D79211D93938CFA654D"
+    },
+    "old_C9_partial": {
+      "path": "reports/ch5_k1b_turn9_timed_risk_exception_run001/partial_artifact_manifest.json",
+      "raw_sha256": "80BD0D42CB73B4E39B811E759505480542D5A73227014F30B732C34A8AC1FDC3"
+    },
+    "new_C9_partial": {
+      "path": "reports/ch5_k1b_turn9_post_failure_new_attempt_001/partial_artifact_manifest.json",
+      "raw_sha256": "3B10AB56BC2CE3D8FF9B4FB6442E012CB39686AF389624D17566CC8D68F57D20"
+    },
+    "new_C9_readback": {
+      "path": "reports/ch5_k1b_turn9_post_failure_new_attempt_001/partial_artifact_readback.json",
+      "raw_sha256": "8191C24E8A472EE702C71A72DB4F4CCC9A0733D432226DFDB6EF0B4045792BAC"
+    }
+  },
+  "protected_hash_readback_matches": "7/7",
+  "protected_untracked_output_roots": 6,
+  "current_tests": 0,
+  "current_temporary_directory_mutations": 0,
+  "current_backups_created": 0,
+  "current_preflight_calls": 0,
+  "current_execute_calls": 0,
+  "current_wrapper_launches": 0,
+  "current_model_calls": 0,
+  "current_scientific_calls": 0,
+  "historical_prohibited_execute_probes": 2,
+  "historical_probes_reclassified_as_compliant": false,
+  "historical_reject_verdicts": [
+    "REJECT__TASK_BOUNDARY_VIOLATION_AND_STATIC_GAPS__NO_SCIENCE",
+    "REJECT__SEALED_INPUT_PATH_GAP_AND_EVIDENCE_AMBIGUITY__NO_SCIENCE",
+    "REJECT__FINAL_ENTRY_GUARDS_UNTESTED__NO_SCIENCE",
+    "REJECT__ACTIVE_PREFLIGHT_AND_PREIMPORT_AUTHORITY_GAPS__NO_SCIENCE",
+    "REJECT__PREIMPORT_AUTHORITY_PATH_AND_BEHAVIOR_EVIDENCE_GAPS__NO_SCIENCE",
+    "REJECT__AUTHORITY_METADATA_FOLLOWS_UNSAFE_PATH__NO_SCIENCE",
+    "REJECT__STALE_INERT_SOURCE_ORDER_ASSERTION__NO_SCIENCE",
+    "REJECT__FULL_INERT_TEST_FAILED__NO_CANDIDATE__NO_SCIENCE",
+    "REJECT__LEDGER_COMPLETENESS_AND_SEAL_READBACK_PATH_GAPS__NO_SCIENCE",
+    "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_RUNNER_FIELD_BINDINGS__NO_SCIENCE",
+    "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_SCHEMA_AND_ACTIVE_BINDINGS__NO_SCIENCE",
+    "REJECT__IDENTITY_CHAIN_OWNER_ORDER_AND_TASK_ABSENCE_AMBIGUITY__NO_SCIENCE",
+    "REJECT__IDENTITY_CHAIN_COMMITTED_FILE_GATE_OMITTED__NO_SCIENCE",
+    "REJECT__COMPLETE_C9_NOT_DELIVERED__CALL_LEDGER_UNRESOLVED",
+    "REJECT__COMPLETE_NEW_C9_EXECUTION__OUTPUT_GUARD_BLOCK_AND_CALL_LEDGER_UNRESOLVED",
+    "REJECT__ROOT_REPLACEMENT_WINDOW_TEST_GAP_AND_OVERBROAD_CLAIM__NO_SCIENCE"
+  ],
+  "limited_accept_scopes": [
+    "ACCEPT__BOUNDED_ZERO_SCIENCE_MKDIR_GUARD_AND_CHECK_WINDOW_EVIDENCE_ONLY",
+    "ACCEPT__ZERO_SCIENCE_DESIGN_EVIDENCE_ONLY__SAFETY_DECISION_PENDING"
+  ],
+  "old_C9_attempt_consumed": true,
+  "new_C9_attempt_consumed": true,
+  "old_actual_call_ledger": "CALL_LEDGER_UNRESOLVED",
+  "new_actual_call_ledger": "CALL_LEDGER_UNRESOLVED",
+  "C10_closed": true,
+  "retry_closed": true,
+  "partial_resume_closed": true,
+  "results_eligibility": false,
+  "next_gate": "INDEPENDENT_GPT_WORK_ACCEPT_REJECT__NO_ISOLATION_OR_SCIENCE"
+}
