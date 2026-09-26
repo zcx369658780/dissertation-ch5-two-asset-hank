@@ -1,11 +1,13 @@
 """Inert checks for the post-failure C9 candidate; no model entrypoint is called."""
 
 import ast
+import importlib
 import importlib.util
 import json
 import stat
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
@@ -309,6 +311,98 @@ def test_repair3_delegate_checks_all_authorities_before_wrapper_exec():
     assert "NEW_C9_INDEPENDENT_REVIEW_IDENTITY" in source
     assert "NEW_C9_OWNER_EXECUTION_ADOPTION" in source
     assert "exec_module" not in source and "spec_from_file_location" not in source
+
+
+@pytest.fixture
+def repair4_wrapper_only():
+    before = {name for name in sys.modules if name.startswith("ch5_two_asset_hank")}
+    wrapper = importlib.import_module(
+        "validators.multi_province.k1b_turn9_post_failure_new_attempt_timed.run")
+    after = {name for name in sys.modules if name.startswith("ch5_two_asset_hank")}
+    assert after == before
+    return wrapper
+
+
+def test_repair4_committed_authority_file_fails_closed(repair4_wrapper_only, tmp_path, monkeypatch):
+    wrapper = repair4_wrapper_only
+    relative = Path("authority/contract.json")
+    target = tmp_path / relative
+    with pytest.raises(wrapper.TimingBlocked, match="DIRTY_OR_MISSING"):
+        wrapper.committed_file(tmp_path, relative)
+    target.parent.mkdir()
+    target.write_text("inert authority fixture", encoding="utf-8")
+
+    def git_reply(repo, *args):
+        if args[0] == "status":
+            return " M authority/contract.json"
+        raise AssertionError("dirty authority must stop before Git blob lookup")
+
+    monkeypatch.setattr(wrapper, "git", git_reply)
+    with pytest.raises(wrapper.TimingBlocked, match="DIRTY_OR_MISSING"):
+        wrapper.committed_file(tmp_path, relative)
+
+    def mismatched_git(repo, *args):
+        return "" if args[0] == "status" else ("a" * 40 if args[0] == "rev-parse" else "b" * 40)
+
+    monkeypatch.setattr(wrapper, "git", mismatched_git)
+    with pytest.raises(wrapper.TimingBlocked, match="NOT_COMMITTED"):
+        wrapper.committed_file(tmp_path, relative)
+
+    original_lstat = Path.lstat
+    for unsafe in (target, target.parent):
+        def reparse_lstat(path, unsafe=unsafe):
+            original = original_lstat(path)
+            if path == unsafe:
+                return SimpleNamespace(st_mode=original.st_mode,
+                                       st_file_attributes=getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0x400))
+            return original
+
+        with monkeypatch.context() as context:
+            context.setattr(Path, "lstat", reparse_lstat)
+            context.setattr(wrapper, "git", lambda *args: (_ for _ in ()).throw(
+                AssertionError("unsafe authority must stop before Git lookup")))
+            with pytest.raises(wrapper.TimingBlocked, match="DIRTY_OR_MISSING"):
+                wrapper.committed_file(tmp_path, relative)
+
+
+def test_repair4_active_preflight_rejects_missing_and_mocked_identity_failures(
+        repair4_wrapper_only, monkeypatch):
+    wrapper = repair4_wrapper_only
+    with pytest.raises(wrapper.TimingBlocked, match="NEW_LIVE_CONTRACT_ABSENT"):
+        wrapper.static_preflight(ROOT, require_inactive=False)
+    for terminal in ("DIRTY_OR_MISSING", "NOT_COMMITTED", "NEW_C9_CONTRACT_IDENTITY",
+                     "NEW_C9_INDEPENDENT_REVIEW_IDENTITY"):
+        with monkeypatch.context() as context:
+            def reject(repo, execution_id, terminal=terminal):
+                raise wrapper.TimingBlocked(terminal)
+            context.setattr(wrapper, "preimport_authority_gate", reject)
+            with pytest.raises(wrapper.TimingBlocked, match=terminal):
+                wrapper.static_preflight(ROOT, require_inactive=False)
+
+
+def test_repair4_inactive_stays_blocked_and_active_accepts_only_mocked_valid_chain(
+        repair4_wrapper_only, monkeypatch):
+    wrapper = repair4_wrapper_only
+    inactive = wrapper.static_preflight(ROOT, require_inactive=True)
+    assert inactive["status"] == "BLOCKED__NEW_LIVE_AUTHORITY_ABSENT__PREPARATION_ONLY"
+    assert inactive["scientific_calls"] == inactive["c9_attempts"] == 0
+    future = {ROOT / path for path in (wrapper.CONTRACT, wrapper.TASK_COPY,
+                                      wrapper.OWNER_ADOPTION, wrapper.INDEPENDENT_REVIEW)}
+    original_lexists = wrapper.os.path.lexists
+
+    def simulated_lexists(path):
+        return True if Path(path) in future else original_lexists(path)
+
+    with monkeypatch.context() as context:
+        context.setattr(wrapper.os.path, "lexists", simulated_lexists)
+        with pytest.raises(wrapper.TimingBlocked, match="NEW_C9_STATIC_IDENTITY"):
+            wrapper.static_preflight(ROOT, require_inactive=True)
+        context.setattr(wrapper, "preimport_authority_gate", lambda repo, execution_id: {
+            "execution_id": execution_id})
+        active = wrapper.static_preflight(ROOT, require_inactive=False)
+    assert active["status"] == "ACTIVE_AUTHORITY_STATIC_PREFLIGHT_ONLY__NO_SCIENCE"
+    assert active["checks"]["active_authority_committed_and_bound"] is True
+    assert active["scientific_calls"] == active["c9_attempts"] == 0
 
 
 def _read_only_gates_block(module, delegate):

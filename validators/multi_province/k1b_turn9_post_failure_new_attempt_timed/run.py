@@ -151,7 +151,8 @@ def git(repo: Path, *args: str) -> str:
 def committed_file(repo: Path, relative: Path) -> str:
     """Return the raw digest when Git's filtered worktree equals HEAD."""
     path = repo / relative
-    if not path.is_file() or git(repo, "status", "--porcelain=v1", "--", relative.as_posix()):
+    if (not path.is_file() or not path_components_safe(path) or
+            git(repo, "status", "--porcelain=v1", "--", relative.as_posix())):
         raise TimingBlocked("BLOCKED__MEASUREMENT_AUTHORITY_DIRTY_OR_MISSING", relative.as_posix())
     try:
         head_blob = git(repo, "rev-parse", f"HEAD:{relative.as_posix()}")
