@@ -25,9 +25,9 @@ Updated: 2026-09-26 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_K1B_C9_TIMED_RISK_EXCEPTION_STATIC_REPAIR1_ACTIVE__NO_SCIENCE`
+`CH5_K1B_C9_TIMED_RISK_EXCEPTION_STATIC_REPAIR2_ACTIVE__NO_SCIENCE`
 
-The C9 inert preparation candidate `dd216ac122ba7770ab0f68ba9f4fda17862aebce` was independently **REJECTED** in `docs/CH5_K1B_C9_TIMED_RISK_EXCEPTION_STATIC_PREPARATION_INDEPENDENT_REVIEW_20260926.md`: an active direct-call path bypassed full authority checks, two province counters were not accumulated/enforced, and failed/in-flight evidence needed stronger sealing and unresolved-ledger handling. `TASK_CURRENT.md` now assigns only a scoped zero-science Repair1 to the same Codex conversation. The candidate's inactive contract remains non-executable; C9 has not run.
+The C9 inert preparation candidate `dd216ac122ba7770ab0f68ba9f4fda17862aebce` was independently **REJECTED** in `docs/CH5_K1B_C9_TIMED_RISK_EXCEPTION_STATIC_PREPARATION_INDEPENDENT_REVIEW_20260926.md`. Its Repair1 candidate `444117591f89394c1e768ba8f5943ecb527a3b5e` passed 18 inert tests but was independently **REJECTED** in `docs/CH5_K1B_C9_TIMED_RISK_EXCEPTION_STATIC_REPAIR1_INDEPENDENT_REVIEW_20260926.md` because a caller-supplied delegate object remains unbound to the checked file. `TASK_CURRENT.md` now assigns only a scoped zero-science Repair2 to the same Codex conversation. The inactive contract remains non-executable; C9 has not run.
 
 On 2026-09-26 the Owner selected preparation of a C9-only timed-risk exception after the accepted transfer assessment. The exact selection and its limits are in `docs/CH5_K1B_C9_SINGLE_TURN_TIMED_RISK_EXCEPTION_OWNER_SELECTION_20260926.md`. `TASK_CURRENT.md` now assigns only an inactive, zero-science C9 runner/contract/static-test preparation to the existing Codex conversation. No C9-specific resource-wall seconds or one-shot execution authorization has been adopted. The ordinary duration gate remains blocked; C9 has not run and Results eligibility is `FALSE`.
 
