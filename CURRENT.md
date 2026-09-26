@@ -25,7 +25,7 @@ Updated: 2026-09-26 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_K1B_C9_NEW_ATTEMPT_AUTHORITY_PATH_ORDER_REJECTED__NO_SCIENCE`
+`CH5_K1B_C9_NEW_ATTEMPT_STALE_SOURCE_ORDER_TEST_REJECTED__NO_SCIENCE`
 
 The C9 preparation and Repair1/Repair2 candidates were independently **REJECTED** for static entry and ledger defects. Repair3 candidate `fb37a8f62d6ca71c7fbf7f3516e9de21473c7ed3` was independently **ACCEPTED for zero-science static entry repair only**. Its inactive delegate-hash rebind candidate `3ecee32cdc4a3e88043a85709a6db7c85f6ec5c8` is independently **ACCEPTED** in `docs/CH5_K1B_C9_INACTIVE_CONTRACT_DELEGATE_REBIND_INDEPENDENT_REVIEW_20260926.md`. `TASK_CURRENT.md` is closed pending Owner's C9-only resource-wall number and subsequent separate active-contract/science authorization. The contract remains non-executable; C9 has not run.
 
@@ -88,6 +88,8 @@ A subsequent whole-runner identity review **REJECTED** that candidate for an ina
 The pre-import repair candidate `0ba90c029429be2cb6a3c0a47ea790066f74aee6` is independently **REJECTED** in `docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_PREIMPORT_IDENTITY_REPAIR_INDEPENDENT_REVIEW_20260926.md`. It improves branch separation and import order, but the wrapper's committed-authority helper lacks reparse-component rejection and the new tests do not exercise fail-closed behavior. GPT Work has issued a narrower zero-science repair task. No live identity chain or scientific execution is authorized; Results eligibility remains `FALSE`.
 
 The subsequent authority-path candidate `b0f7b0d0723f4c3a0104f60c8267de7e4b4b8329` is independently **REJECTED** in `docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_AUTHORITY_PATH_ORDER_INDEPENDENT_REVIEW_20260926.md`. Its inert behavioral tests pass, but authority helpers in both runners still call follows-link `is_file` before rejecting unsafe symlink/reparse components. GPT Work has issued a bounded zero-science ordering repair. No live chain or science is authorized; Results eligibility remains `FALSE`.
+
+The successor's authority-path candidate `145e5692bd1e62f7d6dbca9d520d11e4842350d6` is independently **REJECTED** in `docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_STALE_SOURCE_ORDER_TEST_INDEPENDENT_REVIEW_20260926.md`: the only `-k repair5` run passed six selected tests but omitted a stale AST source-order assertion that deterministically fails after the safer helper substitution. GPT Work issued a test/evidence-only zero-science repair task to the same Codex conversation. Both runners and protected outputs remain frozen; no live authority chain, C9/C10 science, retry, partial resume, or Results claim is authorized. The old actual call ledger remains `CALL_LEDGER_UNRESOLVED`; Results eligibility is `FALSE`.
 
 On 2026-09-26 the Owner selected preparation of a C9-only timed-risk exception after the accepted transfer assessment. The exact selection and its limits are in `docs/CH5_K1B_C9_SINGLE_TURN_TIMED_RISK_EXCEPTION_OWNER_SELECTION_20260926.md`. `TASK_CURRENT.md` now assigns only an inactive, zero-science C9 runner/contract/static-test preparation to the existing Codex conversation. No C9-specific resource-wall seconds or one-shot execution authorization has been adopted. The ordinary duration gate remains blocked; C9 has not run and Results eligibility is `FALSE`.
 
