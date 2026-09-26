@@ -405,6 +405,116 @@ def test_repair4_inactive_stays_blocked_and_active_accepts_only_mocked_valid_cha
     assert active["scientific_calls"] == active["c9_attempts"] == 0
 
 
+@pytest.fixture
+def repair5_modules():
+    before = {name for name in sys.modules if name.startswith("ch5_two_asset_hank")}
+    wrapper = importlib.import_module(
+        "validators.multi_province.k1b_turn9_post_failure_new_attempt_timed.run")
+    delegate = importlib.import_module(
+        "validators.multi_province.k1b_turn9_post_failure_new_attempt_outer_r2.run")
+    after = {name for name in sys.modules if name.startswith("ch5_two_asset_hank")}
+    assert after == before
+    return wrapper, delegate
+
+
+@pytest.mark.parametrize("kind,component", [
+    ("symlink", "leaf"), ("symlink", "parent"),
+    ("reparse", "leaf"), ("reparse", "parent"),
+])
+def test_repair5_unsafe_authority_stops_before_follows_link_metadata(
+        repair5_modules, tmp_path, monkeypatch, kind, component):
+    relative = Path("authority/contract.json")
+    target = tmp_path / relative
+    target.parent.mkdir()
+    target.write_text("inert authority fixture", encoding="utf-8")
+    unsafe = target if component == "leaf" else target.parent
+    original_lstat = Path.lstat
+    original_is_file = Path.is_file
+
+    def unsafe_lstat(path):
+        if path != unsafe:
+            return original_lstat(path)
+        original = original_lstat(path)
+        if kind == "symlink":
+            return SimpleNamespace(st_mode=stat.S_IFLNK | 0o777, st_file_attributes=0)
+        return SimpleNamespace(st_mode=original.st_mode,
+                               st_file_attributes=getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0x400))
+
+    def forbidden_is_file(path):
+        if path == target:
+            raise AssertionError("follows-link is_file reached unsafe authority")
+        return original_is_file(path)
+
+    monkeypatch.setattr(Path, "lstat", unsafe_lstat)
+    monkeypatch.setattr(Path, "is_file", forbidden_is_file)
+    for module in repair5_modules:
+        monkeypatch.setattr(module, "git", lambda *args: (_ for _ in ()).throw(
+            AssertionError("Git reached unsafe authority")))
+        assert module.authority_file_present(tmp_path, relative) is False
+        committed = (module.committed_file if module is repair5_modules[0]
+                     else module._committed_authority_sha)
+        with pytest.raises(module.TimingBlocked if module is repair5_modules[0]
+                           else module.RepeatBlocked):
+            committed(tmp_path, relative)
+
+
+def test_repair5_missing_dirty_and_blob_mismatch_fail_in_both_helpers(
+        repair5_modules, tmp_path, monkeypatch):
+    relative = Path("authority/contract.json")
+    target = tmp_path / relative
+    for module in repair5_modules:
+        committed = (module.committed_file if module is repair5_modules[0]
+                     else module._committed_authority_sha)
+        blocked = module.TimingBlocked if module is repair5_modules[0] else module.RepeatBlocked
+        with pytest.raises(blocked):
+            committed(tmp_path, relative)
+    target.parent.mkdir()
+    target.write_text("inert authority fixture", encoding="utf-8")
+    for module in repair5_modules:
+        committed = (module.committed_file if module is repair5_modules[0]
+                     else module._committed_authority_sha)
+        blocked = module.TimingBlocked if module is repair5_modules[0] else module.RepeatBlocked
+        with monkeypatch.context() as context:
+            context.setattr(module, "git", lambda repo, *args: " M authority/contract.json"
+                            if args[0] == "status" else "a" * 40)
+            with pytest.raises(blocked):
+                committed(tmp_path, relative)
+        with monkeypatch.context() as context:
+            context.setattr(module, "git", lambda repo, *args: "" if args[0] == "status"
+                            else ("a" * 40 if args[0] == "rev-parse" else "b" * 40))
+            with pytest.raises(blocked):
+                committed(tmp_path, relative)
+
+
+def test_repair5_active_and_preimport_paths_reject_unsafe_contract_before_metadata(
+        repair5_modules, monkeypatch):
+    wrapper, delegate = repair5_modules
+    contract = ROOT / wrapper.CONTRACT
+    original_lstat = Path.lstat
+    original_is_file = Path.is_file
+
+    def symlink_contract_lstat(path):
+        if path == contract:
+            return SimpleNamespace(st_mode=stat.S_IFLNK | 0o777, st_file_attributes=0)
+        return original_lstat(path)
+
+    def forbidden_is_file(path):
+        if path == contract:
+            raise AssertionError("follows-link is_file reached unsafe live contract")
+        return original_is_file(path)
+
+    monkeypatch.setattr(Path, "lstat", symlink_contract_lstat)
+    monkeypatch.setattr(Path, "is_file", forbidden_is_file)
+    with pytest.raises(wrapper.TimingBlocked):
+        wrapper.static_preflight(ROOT, require_inactive=False)
+    with pytest.raises(wrapper.TimingBlocked):
+        wrapper.preimport_authority_gate(ROOT, wrapper.NEW_EXECUTION_ID)
+    with pytest.raises(delegate.RepeatBlocked):
+        delegate.preimport_wrapper_authority_gate(ROOT, delegate.NEW_EXECUTION_ID)
+    with pytest.raises(wrapper.TimingBlocked):
+        wrapper.static_preflight(ROOT, require_inactive=True)
+
+
 def _read_only_gates_block(module, delegate):
     if module is delegate:
         with pytest.raises(delegate.RepeatBlocked):

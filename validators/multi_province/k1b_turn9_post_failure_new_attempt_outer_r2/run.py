@@ -137,6 +137,11 @@ def git(repo: Path, *args: str) -> str:
     return subprocess.check_output(["git",*args],cwd=repo,text=True).strip()
 
 
+def authority_file_present(repo:Path,relative:Path)->bool:
+    path=repo/relative
+    return path_components_safe(path) and path.is_file()
+
+
 def output_target(output:Path,runtime:Mapping[str,Any],path:Path)->Path:
     output=output.absolute()
     path=Path(path).absolute()
@@ -436,6 +441,8 @@ def environment_snapshot() -> dict[str,Any]:
 
 def budget_binding(repo:Path)->dict[str,Any]:
     """Read adopted maps without treating the historical proposal as self-adopted."""
+    if not safe_regular_file(repo/BUDGET_PROPOSAL) or not safe_regular_file(repo/BUDGET_ADOPTION):
+        raise RepeatBlocked("BLOCKED__NEW_C9_BUDGET_AUTHORITY_PATH")
     if sha(repo/BUDGET_PROPOSAL)!=BUDGET_PROPOSAL_SHA or sha(repo/BUDGET_ADOPTION)!=BUDGET_ADOPTION_SHA:
         raise RepeatBlocked("BLOCKED__NEW_C9_BUDGET_SOURCE_IDENTITY")
     proposal=json.loads((repo/BUDGET_PROPOSAL).read_text(encoding="utf-8"))
@@ -669,10 +676,12 @@ def future_gate(repo:Path,execution_id:str|None)->None:
         raise RepeatBlocked("BLOCKED__FUTURE_EVIDENCE_PATH_EXISTS_OR_UNSAFE")
     if execution_id!=NEW_EXECUTION_ID:
         raise RepeatBlocked("BLOCKED__NEW_C9_EXECUTION_ID")
-    if not (repo/TIMED_CONTRACT).is_file():
+    if not authority_file_present(repo,TIMED_CONTRACT):
         raise RepeatBlocked("BLOCKED__NEW_LIVE_CONTRACT_ABSENT")
     if re.fullmatch(r"[A-Za-z0-9_-]{1,80}",execution_id) is None:
         raise RepeatBlocked("BLOCKED__EXECUTION_ID_FORMAT")
+    if not authority_file_present(repo,Path("TASK_CURRENT.md")):
+        raise RepeatBlocked("BLOCKED__FRESH_EXECUTION_TASK_GATE",FUTURE_TASK_ID)
     task=(repo/"TASK_CURRENT.md").read_text(encoding="utf-8")
     required=(f"Task ID: `{FUTURE_TASK_ID}`",f"Status: `{FUTURE_STATUS}`",
               f"Execution authorization ID: `{execution_id}`",
@@ -680,13 +689,15 @@ def future_gate(repo:Path,execution_id:str|None)->None:
     if not all(x in task for x in required):
         raise RepeatBlocked("BLOCKED__FRESH_EXECUTION_TASK_GATE",FUTURE_TASK_ID)
     future=repo/FUTURE_TASK_RELATIVE
-    if not future.is_file() or not all(x in future.read_text(encoding="utf-8") for x in required):
+    if not authority_file_present(repo,FUTURE_TASK_RELATIVE) or not all(x in future.read_text(encoding="utf-8") for x in required):
         raise RepeatBlocked("BLOCKED__FUTURE_TASK_SOURCE_BINDING")
     if sha(future)!=sha(repo/"TASK_CURRENT.md"):
         raise RepeatBlocked("BLOCKED__FUTURE_TASK_CURRENT_HASH_MISMATCH")
     if git(repo,"status","--porcelain=v1","--","TASK_CURRENT.md",str(FUTURE_TASK_RELATIVE)):
         raise RepeatBlocked("BLOCKED__EXECUTION_TASK_DIRTY")
     for task_path in (Path("TASK_CURRENT.md"),FUTURE_TASK_RELATIVE):
+        if not authority_file_present(repo,task_path):
+            raise RepeatBlocked("BLOCKED__EXECUTION_TASK_NOT_COMMITTED",task_path.as_posix())
         try:
             blob=subprocess.check_output(["git","show",f"HEAD:{task_path.as_posix()}"],cwd=repo,
                                          stderr=subprocess.DEVNULL)
@@ -695,6 +706,8 @@ def future_gate(repo:Path,execution_id:str|None)->None:
         if sha(repo/task_path)!=hashlib.sha256(blob).hexdigest().upper():
             raise RepeatBlocked("BLOCKED__EXECUTION_TASK_NOT_COMMITTED",task_path.as_posix())
     rel=Path(__file__).relative_to(repo).as_posix()
+    if not authority_file_present(repo,Path(rel)):
+        raise RepeatBlocked("BLOCKED__EXECUTION_RUNNER_IDENTITY")
     if git(repo,"status","--porcelain=v1","--",rel,"src",str(DISTANCE)):
         raise RepeatBlocked("BLOCKED__EXECUTION_SOURCE_DIRTY")
     blob=subprocess.check_output(["git","show",f"HEAD:{rel}"],cwd=repo)
@@ -703,7 +716,7 @@ def future_gate(repo:Path,execution_id:str|None)->None:
 
 def _committed_authority_sha(repo:Path,relative:Path)->str:
     path=repo/relative
-    if not path.is_file() or not path_components_safe(path) or git(repo,"status","--porcelain=v1","--",relative.as_posix()):
+    if not path_components_safe(path) or not path.is_file() or git(repo,"status","--porcelain=v1","--",relative.as_posix()):
         raise RepeatBlocked("BLOCKED__NEW_C9_AUTHORITY_DIRTY_OR_MISSING",relative.as_posix())
     try:
         head=git(repo,"rev-parse",f"HEAD:{relative.as_posix()}")
@@ -728,7 +741,7 @@ def preimport_wrapper_authority_gate(repo:Path,execution_id:str)->dict[str,str]:
         raise RepeatBlocked("BLOCKED__PROTECTED_MANIFEST_IDENTITY")
     if os.path.lexists(repo/OUTPUT) or not path_components_safe(repo/OUTPUT):
         raise RepeatBlocked("BLOCKED__FUTURE_EVIDENCE_PATH_EXISTS_OR_UNSAFE")
-    if execution_id!=NEW_EXECUTION_ID or not (repo/TIMED_CONTRACT).is_file():
+    if execution_id!=NEW_EXECUTION_ID or not authority_file_present(repo,TIMED_CONTRACT):
         raise RepeatBlocked("BLOCKED__NEW_LIVE_AUTHORITY_ABSENT")
     budget_binding(repo)
     if git(repo,"rev-parse","HEAD:src")!=SRC_TREE:

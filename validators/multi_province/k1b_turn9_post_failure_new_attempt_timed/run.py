@@ -148,10 +148,20 @@ def git(repo: Path, *args: str) -> str:
     return subprocess.check_output(["git", *args], cwd=repo, text=True).strip()
 
 
+def authority_file_present(repo: Path, relative: Path) -> bool:
+    path = repo / relative
+    return path_components_safe(path) and path.is_file()
+
+
+def authority_file_absent(repo: Path, relative: Path) -> bool:
+    path = repo / relative
+    return path_components_safe(path) and not os.path.lexists(path)
+
+
 def committed_file(repo: Path, relative: Path) -> str:
     """Return the raw digest when Git's filtered worktree equals HEAD."""
     path = repo / relative
-    if (not path.is_file() or not path_components_safe(path) or
+    if (not path_components_safe(path) or not path.is_file() or
             git(repo, "status", "--porcelain=v1", "--", relative.as_posix())):
         raise TimingBlocked("BLOCKED__MEASUREMENT_AUTHORITY_DIRTY_OR_MISSING", relative.as_posix())
     try:
@@ -196,6 +206,8 @@ def _canonical_map_sha(value: Mapping[str, int]) -> str:
 
 
 def _adopted_budget(repo: Path) -> dict[str, Any]:
+    if not safe_regular_file(repo / BUDGET_PROPOSAL) or not safe_regular_file(repo / BUDGET_ADOPTION):
+        raise TimingBlocked("BLOCKED__NEW_C9_BUDGET_AUTHORITY_PATH")
     if sha(repo / BUDGET_PROPOSAL) != BUDGET_PROPOSAL_SHA:
         raise TimingBlocked("BLOCKED__NEW_C9_BUDGET_PROPOSAL_IDENTITY")
     if sha(repo / BUDGET_ADOPTION) != BUDGET_ADOPTION_SHA:
@@ -261,14 +273,15 @@ def static_preflight(repo: Path = REPOSITORY, require_inactive: bool = True) -> 
         "frozen_c8_readback": sha(repo / C8_ROOT / "turn9_entering_bundle_readback.json") == C8_READBACK_SHA,
         "frozen_c8_json": sha(repo / C8_ROOT / "turn9_k1b_input_candidate.json") == C8_JSON_SHA,
         "frozen_c8_npz": sha(repo / C8_ROOT / "turn9_k1b_frozen_share_payoff_plan.npz") == C8_NPZ_SHA,
-        "new_runner_pair_present": (repo / TIMED_RUNNER).is_file() and (repo / DELEGATE).is_file(),
+        "new_runner_pair_present": authority_file_present(repo, TIMED_RUNNER)
+            and authority_file_present(repo, DELEGATE),
     }
     if require_inactive:
         checks.update({
-            "future_live_contract_absent": not os.path.lexists(repo / CONTRACT),
-            "future_execution_adoption_absent": not os.path.lexists(repo / OWNER_ADOPTION),
-            "future_execution_task_absent": not os.path.lexists(repo / TASK_COPY),
-            "future_independent_review_absent": not os.path.lexists(repo / INDEPENDENT_REVIEW),
+            "future_live_contract_absent": authority_file_absent(repo, CONTRACT),
+            "future_execution_adoption_absent": authority_file_absent(repo, OWNER_ADOPTION),
+            "future_execution_task_absent": authority_file_absent(repo, TASK_COPY),
+            "future_independent_review_absent": authority_file_absent(repo, INDEPENDENT_REVIEW),
         })
     else:
         preimport_authority_gate(repo, NEW_EXECUTION_ID)
@@ -346,7 +359,7 @@ def preimport_authority_gate(repo: Path, execution_id: str | None) -> dict[str, 
         raise TimingBlocked("BLOCKED__NEW_C9_OUTPUT_EXISTS_OR_UNSAFE")
     if execution_id != NEW_EXECUTION_ID:
         raise TimingBlocked("BLOCKED__NEW_C9_EXECUTION_ID")
-    if not (repo / CONTRACT).is_file():
+    if not authority_file_present(repo, CONTRACT):
         raise TimingBlocked("BLOCKED__NEW_LIVE_CONTRACT_ABSENT")
     budget = _adopted_budget(repo)
     contract_sha = committed_file(repo, CONTRACT)
@@ -777,9 +790,10 @@ def execute_once(repo: Path = REPOSITORY, execution_id: str | None = None) -> di
     repo = repo.resolve()
     if execution_id != NEW_EXECUTION_ID:
         raise TimingBlocked("BLOCKED__NEW_C9_EXECUTION_ID")
-    if not (repo / CONTRACT).is_file():
+    if not authority_file_present(repo, CONTRACT):
         raise TimingBlocked("BLOCKED__NEW_LIVE_CONTRACT_ABSENT")
-    if not (repo / OWNER_ADOPTION).is_file() or not (repo / TASK_COPY).is_file() or not (repo / INDEPENDENT_REVIEW).is_file():
+    if not all(authority_file_present(repo, path) for path in
+               (OWNER_ADOPTION, TASK_COPY, INDEPENDENT_REVIEW)):
         raise TimingBlocked("BLOCKED__NEW_EXECUTION_AUTHORITY_ABSENT")
     return run_timed_action(repo, {"execution_id": execution_id})
 
