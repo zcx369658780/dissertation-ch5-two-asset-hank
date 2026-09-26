@@ -25,7 +25,7 @@ Updated: 2026-09-26 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_K1B_C9_NEW_ATTEMPT_STATIC_RUNNER_REPAIR2_REJECTED__CODEX_HANDOFF_COMPLETE__NO_SCIENCE`
+`CH5_K1B_C9_NEW_ATTEMPT_FINAL_ENTRY_STATIC_VERIFICATION_ASSIGNED__NO_SCIENCE`
 
 The C9 preparation and Repair1/Repair2 candidates were independently **REJECTED** for static entry and ledger defects. Repair3 candidate `fb37a8f62d6ca71c7fbf7f3516e9de21473c7ed3` was independently **ACCEPTED for zero-science static entry repair only**. Its inactive delegate-hash rebind candidate `3ecee32cdc4a3e88043a85709a6db7c85f6ec5c8` is independently **ACCEPTED** in `docs/CH5_K1B_C9_INACTIVE_CONTRACT_DELEGATE_REBIND_INDEPENDENT_REVIEW_20260926.md`. `TASK_CURRENT.md` is closed pending Owner's C9-only resource-wall number and subsequent separate active-contract/science authorization. The contract remains non-executable; C9 has not run.
 
@@ -77,7 +77,9 @@ Repair1 candidate `0e71c8edfed120c5f117f2e16815748b280fa3a5` is independently **
 
 Repair2 candidate `e860a54ac3fed1d104009a068722b1045bd87b5f` is independently **REJECTED** in `docs/CH5_K1B_C9_POST_FAILURE_NEW_ATTEMPT_STATIC_RUNNER_REPAIR2_INDEPENDENT_REVIEW_20260926.md`. The 32-pass targeted test predates two final wrapper entry-gate edits; those committed bytes lack focused verification, and the candidate identity report is incomplete. The existing Codex conversation has reached 30 turns, so the next writing task must follow a documented conversation handoff. No new task or science is authorized while `TASK_CURRENT.md` is closed; Results eligibility remains `FALSE`.
 
-The Codex handoff is now documented in `docs/CH5_K1B_C9_POST_FAILURE_STATIC_RUNNER_CODEX_HANDOFF_20260926.md`. Successor “第五章 K1B 静态 runner 审查后接续” (`01a0dcd7-2acc-7571-b292-5807a0be0b1d`) was created in the required Codex project and completed a read-only local entry check. `TASK_CURRENT.md` remains closed; the next GPT Work conversation may issue only a narrow zero-science final-gate verification task after fresh identity checks. The old Codex conversation must not write this tree again. Results eligibility remains `FALSE`.
+The Codex handoff is now documented in `docs/CH5_K1B_C9_POST_FAILURE_STATIC_RUNNER_CODEX_HANDOFF_20260926.md`. Successor “第五章 K1B 静态 runner 审查后接续” (`01a0dcd7-2acc-7571-b292-5807a0be0b1d`) was created in the required Codex project and completed a read-only local entry check. At handoff, `TASK_CURRENT.md` was closed pending a narrow zero-science final-gate verification task after fresh identity checks. The old Codex conversation must not write this tree again. Results eligibility remains `FALSE`.
+
+After fresh handoff identity, protected-hash and absent-authority checks, GPT Work issued `TASK_CURRENT.md` to that successor for inert static verification of the final Repair2 `load_delegate` and `run_timed_action` gates and complete candidate identity reporting. Repair2 remains REJECTED; this task authorizes no runner edit or science. A new candidate requires independent GPT Work ACCEPT/REJECT. Results eligibility remains `FALSE`.
 
 On 2026-09-26 the Owner selected preparation of a C9-only timed-risk exception after the accepted transfer assessment. The exact selection and its limits are in `docs/CH5_K1B_C9_SINGLE_TURN_TIMED_RISK_EXCEPTION_OWNER_SELECTION_20260926.md`. `TASK_CURRENT.md` now assigns only an inactive, zero-science C9 runner/contract/static-test preparation to the existing Codex conversation. No C9-specific resource-wall seconds or one-shot execution authorization has been adopted. The ordinary duration gate remains blocked; C9 has not run and Results eligibility is `FALSE`.
 
