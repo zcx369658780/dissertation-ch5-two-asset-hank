@@ -17,6 +17,7 @@ import subprocess
 import sys
 import inspect
 import importlib.util
+from numbers import Integral
 from types import SimpleNamespace
 from pathlib import Path
 from typing import Any, Mapping
@@ -274,6 +275,24 @@ def guard_output_mutation(output:Path,runtime:Mapping[str,Any],path:Path)->None:
     if not path_components_safe(path):
         raise RepeatBlocked("BLOCKED__OUTPUT_COMPONENT_REPARSE_POINT",str(path))
 
+
+def seal_generated_bundle_guarded(output:Path,runtime:Mapping[str,Any],
+                                  integration:Mapping[str,Any],turn:int,sealer:Any)->Any:
+    """Check generated leaves before the frozen sealer reads their contents."""
+    try:
+        paths=(Path(integration["candidate_path"]),Path(integration["plan_path"]),
+               output/f"turn{turn}_k1b_zscore_share_payoff_receipt.json",
+               output/f"turn{turn-1}/turn{turn-1}_firm_raw_used_return_receipt.json")
+    except (KeyError,TypeError,ValueError) as exc:
+        raise RepeatBlocked("BLOCKED__GENERATED_BUNDLE_PATH_UNRESOLVED") from exc
+    for path in paths:
+        if ".." in path.parts:
+            raise RepeatBlocked("BLOCKED__OUTPUT_PATH_OUTSIDE_OWNED_ROOT",str(path))
+        guard_output_mutation(output,runtime,path)
+        if not safe_regular_file(path):
+            raise RepeatBlocked("BLOCKED__GENERATED_BUNDLE_LEAF_UNSAFE_OR_MISSING",str(path))
+    return sealer(output,integration,turn)
+
 def install_output_mutation_guards(output:Path,runtime:Mapping[str,Any])->tuple[Any,Any]:
     """Intercept Path mutations in reused source for the duration of one run."""
     original_mkdir,original_unlink=Path.mkdir,Path.unlink
@@ -513,15 +532,21 @@ class BudgetGuard:
     def begin_province(self,province:int,ledger:Mapping[str,Any],envelope:Mapping[str,int])->None:
         if province in self.province_baseline or not 0<=province<31:
             raise RepeatBlocked("BLOCKED__PROVINCE_ENTRY_STATE",province)
-        self.province_baseline[province]={key:int(ledger.get(key,0)) for key in PER_PROVINCE}
+        self.province_baseline[province]={key:self._ledger_count(ledger,key) for key in PER_PROVINCE}
         self.reserved_exposure[province]=dict(envelope)
+    @staticmethod
+    def _ledger_count(ledger:Mapping[str,Any],key:str)->int:
+        value=ledger.get(key) if isinstance(ledger,Mapping) else None
+        if isinstance(value,bool) or not isinstance(value,Integral) or value<0:
+            raise RepeatBlocked("CALL_LEDGER_UNRESOLVED",{"category":key,"reason":"missing_or_malformed"})
+        return int(value)
     def reconcile_province(self,province:int,ledger:Mapping[str,Any])->None:
         if province not in self.province_baseline:
             raise RepeatBlocked("CALL_LEDGER_UNRESOLVED",{"province":province,"reason":"missing_baseline"})
         row=self.per_province.setdefault(province,{})
         baseline=self.province_baseline[province]
         for key,limit in PER_PROVINCE.items():
-            actual=int(ledger[key])-baseline[key]
+            actual=self._ledger_count(ledger,key)-baseline[key]
             if actual<0:
                 raise RepeatBlocked("CALL_LEDGER_UNRESOLVED",{"province":province,"category":key})
             # Repeated map returns report cumulative source totals. Never add
@@ -555,7 +580,7 @@ class BudgetGuard:
               "scc_decompositions","restricted_dense_scipy_linalg_svd_gesvd",
               "normalized_stationary_candidates","q_transpose_times_p","corrected_aggregate_evaluations")
         for key in keys:
-            n=int(ledger[key])
+            n=self._ledger_count(ledger,key)
             if (n>self.ceilings[key] or self.prior[key]+n>self.combined[key] or
                 self.old_governance[key]+self.prior[key]+n>self.lifetime_governance[key]):
                 raise RepeatBlocked("BLOCKED__CONSUMED_CALL_BUDGET",{"category":key,"actual":n})
@@ -566,8 +591,7 @@ class BudgetGuard:
             self.reconcile_province(province,ledger)
     def reconcile_all(self,ledger:Mapping[str,Any])->None:
         for key,ceiling in self.ceilings.items():
-            if key not in ledger:continue
-            n=int(ledger[key])
+            n=self._ledger_count(ledger,key)
             if (n<0 or n>ceiling or self.prior[key]+n>self.combined[key] or
                 self.old_governance[key]+self.prior[key]+n>self.lifetime_governance[key]):
                 raise RepeatBlocked("BLOCKED__CONSUMED_CALL_BUDGET",{"category":key,"actual":n})
@@ -1060,7 +1084,7 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
                 else:
                     raise
         write_output_json(output,runtime,output/"turn9_scientific_ledger.json",ledger)
-        old.seal_generated_bundle(output,integration,10)
+        seal_generated_bundle_guarded(output,runtime,integration,10,old.seal_generated_bundle)
         replay=load_bundle(repo,10,OUTPUT)
         reference=load_bundle(repo,9)
         comparison={"prior_C7_to_C8":prior["prior_carrier"],
@@ -1074,6 +1098,8 @@ def _execute_after_gate(repo:Path,execution_id:str,runtime:dict[str,Any])->str:
         state["terminal"]=turn9_terminal(comparison["current_C8_to_C9"])
         return state["terminal"]
     except BaseException as exc:
+        if getattr(exc,"terminal",None)=="CALL_LEDGER_UNRESOLVED":
+            state["ledger_unresolved"]=True
         if state["original_terminal"] is None:
             state["original_terminal"]=getattr(exc,"terminal",type(exc).__name__)
         state["terminal"]="CALL_LEDGER_UNRESOLVED" if state["ledger_unresolved"] else state["original_terminal"]

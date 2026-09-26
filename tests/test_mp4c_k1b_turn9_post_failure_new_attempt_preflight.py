@@ -593,3 +593,108 @@ def test_new_output_parent_reparse_denied_without_root_creation(modules, monkeyp
         assert not module.path_components_safe(ROOT / module.OUTPUT)
         _read_only_gates_block(module, delegate)
     assert not (ROOT / wrapper.OUTPUT).exists()
+
+
+@pytest.mark.parametrize("fault", ["missing", "string", "none", "float", "bool", "negative"])
+def test_repair6_ledger_categories_fail_unresolved_without_erasing_attempts(modules, fault):
+    _, delegate = modules
+    guard = delegate.BudgetGuard()
+    guard.enter("source_native_initializations")
+    ledger = dict.fromkeys(delegate.CEILINGS, 0)
+    if fault == "missing":
+        del ledger["source_native_initializations"]
+    else:
+        ledger["source_native_initializations"] = {
+            "string": "0", "none": None, "float": 0.0, "bool": False, "negative": -1}[fault]
+    for method in (guard.reconcile, guard.reconcile_all):
+        with pytest.raises(delegate.RepeatBlocked, match="CALL_LEDGER_UNRESOLVED"):
+            method(ledger)
+        assert guard.attempted["source_native_initializations"] == 1
+
+
+def test_repair6_provincial_ledger_and_legal_budget_classification(modules):
+    _, delegate = modules
+    guard = delegate.BudgetGuard()
+    ledger = dict.fromkeys(delegate.CEILINGS, 0)
+    guard.reconcile_all(ledger)
+    guard.begin_province(0, ledger, {})
+    guard.reconcile(ledger, 0)
+    assert guard.attempted["source_native_initializations"] == 0
+    for malformed in (None, "0"):
+        bad = dict(ledger, terminal_kfe_attempts=malformed)
+        with pytest.raises(delegate.RepeatBlocked, match="CALL_LEDGER_UNRESOLVED"):
+            guard.reconcile_province(0, bad)
+    absent = dict(ledger)
+    del absent["terminal_kfe_attempts"]
+    with pytest.raises(delegate.RepeatBlocked, match="CALL_LEDGER_UNRESOLVED"):
+        guard.reconcile_province(0, absent)
+    with pytest.raises(delegate.RepeatBlocked, match="CALL_LEDGER_UNRESOLVED"):
+        guard.begin_province(1, absent, {})
+    too_many = dict(ledger, source_native_initializations=delegate.CEILINGS["source_native_initializations"] + 1)
+    with pytest.raises(delegate.RepeatBlocked, match="BLOCKED__CONSUMED_CALL_BUDGET"):
+        guard.reconcile_all(too_many)
+
+
+@pytest.mark.parametrize("fault", ["missing", "directory", "symlink_leaf", "symlink_parent",
+                                  "reparse_leaf", "reparse_parent", "outside", "traversal"])
+def test_repair6_generated_leaves_block_before_old_sealer(modules, tmp_path, monkeypatch, fault):
+    _, delegate = modules
+    output = tmp_path / "owned"
+    output.mkdir()
+    identity = output.lstat()
+    runtime = {"output_identity": (identity.st_dev, identity.st_ino)}
+    candidate = output / "candidate.json"
+    plan = output / "plan.npz"
+    receipt = output / "turn10_k1b_zscore_share_payoff_receipt.json"
+    firm = output / "turn9" / "turn9_firm_raw_used_return_receipt.json"
+    firm.parent.mkdir()
+    for path in (candidate, plan, receipt, firm):
+        path.write_text("inert", encoding="utf-8")
+    integration = {"candidate_path": candidate, "plan_path": plan}
+    target = candidate
+    if fault == "missing":
+        candidate.unlink()
+    elif fault == "directory":
+        candidate.unlink()
+        candidate.mkdir()
+    elif fault == "outside":
+        integration["candidate_path"] = tmp_path / "outside.json"
+    elif fault == "traversal":
+        integration["candidate_path"] = output / ".." / "outside.json"
+    else:
+        target = firm if fault.endswith("leaf") else firm.parent
+        original_lstat = Path.lstat
+        def unsafe_lstat(path):
+            if path == target:
+                mode = stat.S_IFLNK if fault.startswith("symlink") else original_lstat(path).st_mode
+                attributes = (getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0x400)
+                              if fault.startswith("reparse") else 0)
+                return SimpleNamespace(st_mode=mode, st_file_attributes=attributes)
+            return original_lstat(path)
+        monkeypatch.setattr(Path, "lstat", unsafe_lstat)
+    called = []
+    with pytest.raises(delegate.RepeatBlocked):
+        delegate.seal_generated_bundle_guarded(
+            output, runtime, integration, 10, lambda *args: called.append(args))
+    assert called == []
+
+
+def test_repair6_safe_generated_leaves_reach_only_mock_sealer(modules, tmp_path):
+    _, delegate = modules
+    output = tmp_path / "owned"
+    output.mkdir()
+    identity = output.lstat()
+    runtime = {"output_identity": (identity.st_dev, identity.st_ino)}
+    candidate = output / "candidate.json"
+    plan = output / "plan.npz"
+    receipt = output / "turn10_k1b_zscore_share_payoff_receipt.json"
+    firm = output / "turn9" / "turn9_firm_raw_used_return_receipt.json"
+    firm.parent.mkdir()
+    for path in (candidate, plan, receipt, firm):
+        path.write_text("inert", encoding="utf-8")
+    calls = []
+    integration = {"candidate_path": candidate, "plan_path": plan}
+    result = delegate.seal_generated_bundle_guarded(
+        output, runtime, integration, 10, lambda *args: calls.append(args) or "mocked")
+    assert result == "mocked"
+    assert calls == [(output, integration, 10)]
