@@ -24,17 +24,16 @@ def _allow_uncommitted_candidate_in_inert_test(monkeypatch):
                         if relative == wrapper.DELEGATE else original(repo, relative))
 
 
-def test_default_cli_is_inert_and_inactive_execute_denies_before_delegate(monkeypatch):
-    _allow_uncommitted_candidate_in_inert_test(monkeypatch)
-    result = wrapper.static_preflight(ROOT)
-    assert result["status"] == "BLOCKED__INACTIVE_CONTRACT"
+def test_active_static_preflight_and_fresh_task_gate():
+    result = wrapper.static_preflight(ROOT, require_inactive=False)
+    assert result["status"] == "PASS__ACTIVE_PREFLIGHT_ONLY"
     assert result["checks"]["delegate_hash"] is True
     assert all(result["checks"].values())
     assert all(result["delegated_checks"].values())
     assert result["scientific_calls"] == result["c9_attempts"] == result["c10_attempts"] == 0
-    monkeypatch.setattr(wrapper, "load_delegate", lambda _: pytest.fail("delegate entered"))
-    with pytest.raises(wrapper.TimingBlocked, match="BLOCKED__INACTIVE_CONTRACT"):
-        wrapper.execute_once(ROOT, "INERT")
+    c9 = wrapper.load_delegate(ROOT)
+    with pytest.raises(wrapper.TimingBlocked, match="BLOCKED__FRESH_C9_TASK_GATE"):
+        wrapper.future_gate(ROOT, "C9_TIMED_RISK_RUN001", c9)
     assert not (ROOT / wrapper.OUTPUT).exists()
 
 
@@ -44,23 +43,23 @@ def test_contract_and_sealed_identity_mismatch_fail_closed(monkeypatch):
         text = original(path, *args, **kwargs)
         if path == CONTRACT:
             doc = json.loads(text)
-            doc["resource_wall_seconds"] = 1
+            doc["resource_wall_seconds"] = None
             return json.dumps(doc)
         return text
     monkeypatch.setattr(Path, "read_text", bad_contract)
     with pytest.raises(wrapper.TimingBlocked, match="BLOCKED__C9_STATIC_IDENTITY"):
-        wrapper.static_preflight(ROOT)
+        wrapper.static_preflight(ROOT, require_inactive=False)
     monkeypatch.setattr(Path, "read_text", original)
     real_sha = wrapper.sha
     monkeypatch.setattr(wrapper, "sha", lambda p: "BAD" if p.name == "turn9_entering_bundle_manifest.json" else real_sha(p))
     with pytest.raises(wrapper.TimingBlocked, match="BLOCKED__C9_STATIC_IDENTITY"):
-        wrapper.static_preflight(ROOT)
+        wrapper.static_preflight(ROOT, require_inactive=False)
     monkeypatch.setattr(wrapper, "sha", real_sha)
     real_lexists = wrapper.os.path.lexists
     monkeypatch.setattr(wrapper.os.path, "lexists",
                         lambda path: True if Path(path) == ROOT / wrapper.OUTPUT else real_lexists(path))
     with pytest.raises(wrapper.TimingBlocked, match="BLOCKED__C9_STATIC_IDENTITY"):
-        wrapper.static_preflight(ROOT)
+        wrapper.static_preflight(ROOT, require_inactive=False)
 
 
 def test_caller_constructed_active_looking_gate_cannot_enter(monkeypatch):

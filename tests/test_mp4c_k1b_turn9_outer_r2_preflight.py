@@ -1,5 +1,6 @@
 """Inert C9 delegate checks; no household or output is entered."""
 import importlib.util
+import inspect
 import json
 from pathlib import Path
 
@@ -14,13 +15,13 @@ c9 = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(c9)
 
 
-def test_inactive_delegate_has_no_direct_science_entry():
-    with pytest.raises(c9.RepeatBlocked, match="BLOCKED__C9_WRAPPER_REQUIRED"):
-        c9.execute_once(ROOT, "INERT")
-    with pytest.raises(c9.RepeatBlocked, match="BLOCKED__INACTIVE_CONTRACT"):
-        c9._execute_after_gate(ROOT, "INERT", {})
-    with pytest.raises(c9.RepeatBlocked, match="BLOCKED__INACTIVE_CONTRACT"):
-        c9.run_after_valid_gate(ROOT, "INERT", lambda runtime: pytest.fail("action entered"))
+def test_active_contract_still_lacks_fresh_execution_task():
+    with pytest.raises(c9.RepeatBlocked, match="BLOCKED__FRESH_EXECUTION_TASK_GATE"):
+        c9.future_gate(ROOT, "C9_TIMED_RISK_RUN001")
+    with pytest.raises(RuntimeError, match="BLOCKED__FRESH_C9_TASK_GATE"):
+        c9.assert_active_authority(ROOT, "C9_TIMED_RISK_RUN001")
+    assert "BLOCKED__C9_WRAPPER_REQUIRED" in inspect.getsource(c9.execute_once)
+    assert not (ROOT / c9.FUTURE_TASK_RELATIVE).exists()
     assert not (ROOT / c9.OUTPUT).exists()
 
 
