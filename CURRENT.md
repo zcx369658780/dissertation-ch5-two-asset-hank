@@ -1,6 +1,6 @@
 # Chapter 5 Two-Asset Multi-Province HANK — Current State
 
-Updated: 2026-09-26 (Asia/Shanghai)
+Updated: 2026-09-27 (Asia/Shanghai)
 
 ## Project identity
 
@@ -12,7 +12,7 @@ Updated: 2026-09-26 (Asia/Shanghai)
 - Project-scoped Codex workflow binding is independently accepted in `docs/CH5_CODEX_LOCAL_WORKFLOW_BINDING_INDEPENDENT_REVIEW_20260923.md`; the Builder's static verification evidence is committed at `97be612f06c2378d15bb8ebf90109586043d8ad8`.
 - The zero-science K1B convergence-design evidence dossier is independently accepted in `docs/CH5_K1B_CONVERGENCE_DESIGN_EVIDENCE_DOSSIER_INDEPENDENT_REVIEW_20260923.md`; the final Builder candidate is `231a31a74c9d4831ec4d3a727eb06d054c45ab34`. It is advice, not an adopted convergence law.
 - Local repository state is authoritative. GitHub is optional backup.
-- Temporary local backup destination: `C:\Users\zcxve\Documents\Chapter5LocalBackups` (Owner selected `C:` pending an independent backup location).
+- Owner-designated local backup destination: `D:\Zotero-Analytical-Workflow\Chapter5LocalBackups` (2026-09-27). The previous `C:\Users\zcxve\Documents\Chapter5LocalBackups` copy remains as an unmodified redundant copy; this location change does not alter scientific authority or call budgets.
 
 ## Accepted scientific and implementation state
 
