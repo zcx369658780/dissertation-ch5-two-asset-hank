@@ -25,9 +25,9 @@ Updated: 2026-09-27 (Asia/Shanghai)
 
 ## Current gate
 
-`CH5_K1B_OUTPUT_MUTATION_A_PLATFORM_FEASIBILITY_ONLY__NO_SCIENCE`
+`CH5_K1B_OUTPUT_MUTATION_A2_SPECIFICATION_ONLY__NO_PROBE_NO_SCIENCE`
 
-As of 2026-09-27, both C9 attempts are consumed without a complete outer turn, both actual ledgers remain `CALL_LEDGER_UNRESOLVED`, and `TASK_CURRENT.md` is closed for the Owner's A1/A2/A3 route decision. The paragraphs below record successive historical gates; their former "now" or "has not run" statements describe their own dates, not the present gate.
+As of 2026-09-27, the Owner selected A2 for a zero-science security-boundary specification only in `docs/CH5_K1B_C9_OUTPUT_MUTATION_A2_SPECIFICATION_ONLY_OWNER_SELECTION_20260927.md`. `TASK_CURRENT.md` now permits only that bounded documentation candidate, subject to independent GPT Work review. No threat-model narrowing, isolation implementation or experiment, runner, new C9 attempt or Results claim is authorized. Both C9 attempts are consumed without a complete outer turn and both actual ledgers remain `CALL_LEDGER_UNRESOLVED`. The paragraphs below record successive historical gates; their former "now" or "has not run" statements describe their own dates, not the present gate.
 
 The C9 preparation and Repair1/Repair2 candidates were independently **REJECTED** for static entry and ledger defects. Repair3 candidate `fb37a8f62d6ca71c7fbf7f3516e9de21473c7ed3` was independently **ACCEPTED for zero-science static entry repair only**. Its inactive delegate-hash rebind candidate `3ecee32cdc4a3e88043a85709a6db7c85f6ec5c8` is independently **ACCEPTED** in `docs/CH5_K1B_C9_INACTIVE_CONTRACT_DELEGATE_REBIND_INDEPENDENT_REVIEW_20260926.md`. At that historical gate, `TASK_CURRENT.md` was closed pending Owner's C9-only resource-wall number and subsequent separate active-contract/science authorization. The contract was non-executable and C9 had not yet run.
 
