@@ -19,7 +19,7 @@
 | `ObjectAttributes.Attributes` | “This value can be zero or OBJ_CASE_INSENSITIVE, which indicates that name-lookup code should ignore the case of the ObjectName member rather than performing an exact-match search.” | 此用户态页面没有给出 `OBJ_DONT_REPARSE` 用法；旧 Native 结构页面的标志说明不可无条件移植。 |
 | 用户态链接 | Requirements 列 `Header | winternl.h`、`Library | ntdll.lib`、`DLL | ntdll.dll`；Remarks：“You can also use the LoadLibrary and GetProcAddress functions to dynamically link to NtDll.dll.” | 证明所列接口入口及链接方式；不证明项目已有受支持绑定或四操作安全链。 |
 
-`FILE_OPEN_REPARSE_POINT` 的原文已列于上表首行资源；它说的是 “for the file”，不能推成所有祖先组件均被拒绝。
+Microsoft 用户态 `NtCreateFile` 页面关于 `FILE_OPEN_REPARSE_POINT` 的原文是：“Open a file with a reparse point and bypass normal reparse point processing for the file.” 这只说明打开目标文件时的局部处理（“for the file”）；不能推出所有祖先组件均被拒绝，也不能闭合四操作 containment 合同。
 
 页面在文件位置语境写道：“Calls to NtSetInformationFile with the FileInformationClass parameter set to FilePositionInformation must specify an offset that is an integral of the sector size.” 它没有给出指定叶删除的用户态链接或 disposition 合同。本轮未猜测 URL。与已接受的 13 个去 fragment 唯一资源逐项比较，新增资源仅上述 **1 个**，HTTP 200 为 1、404 为 0；旧 13 个的 11×200、2×404 保留原状态，不重复计入新资源。该页面的 HTTP HEAD 存在性先前仅为线索，本轮 GET 正文才用于以上有限事实。
 
