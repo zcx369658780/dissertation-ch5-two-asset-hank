@@ -8,6 +8,8 @@ At 30 completed dialogue records, unreliable continuation context, or a conversa
 
 GPT Work then creates or selects a successor in app project `Zotero-Analytical-Workflow` (`local-0758adfaed355d5be608096cdf92a3a2`) without asking the Owner to designate each conversation. The successor first performs read-only intake in the sole worktree `D:\ProjectTemp\c5k1bturn56`, following `AGENTS.md` startup order, and stops on any identity or protection mismatch. Before a writing task, Work independently reads back project membership and successor identity; creation-target intent alone is not that readback. If membership cannot be confirmed, leave the task closed and report the blocker. App-project membership conveys context only: never access `deep-learning-hank` or use files from the Zotero repository for this Chapter 5 task.
 
+An Owner-provided Codex UI screenshot showing the matching thread title within the named project, together with the Owner's explicit confirmation, may serve as that independent membership readback when app thread metadata omits `projectId`. Preserve the raw screenshot and hash; state separately that tool metadata did not return project membership. Neither a matching cwd nor a creation request alone is sufficient.
+
 ## Task and authority boundary
 
 After successful intake, Work may automatically issue and dispatch the next exact bounded `TASK_CURRENT.md` only if the prior verdict has been independently recorded, all entry checks pass and no substantive Owner decision or protected authorization is pending. A new task must name allowed paths, budget, stop conditions and independent review gate. The old conversation receives no further writing task.
