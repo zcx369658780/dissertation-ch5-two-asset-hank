@@ -1,0 +1,143 @@
+{
+  "schema": "CH5_K1B_C9_OUTPUT_MUTATION_A1_USERMODE_NTCREATEFILE_CONTRACT_ZERO_SCIENCE_RECEIPT_V1",
+  "status": "LOCAL_OFFICIAL_DOCUMENTATION_CANDIDATE_PENDING_INDEPENDENT_GPT_WORK_ACCEPT_REJECT__NO_SCIENCE",
+  "issuing_parent": "265f3c6c074e5924699f0effe1e0a4969a8ea1a3",
+  "issuing_src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
+  "owner_objective": "A__CONCURRENT_AND_HOSTILE_PATH_REPLACEMENT_CONTAINMENT_RETAINED",
+  "old_accepted_ledger": {
+    "candidate": "ab554c7957fe182a7d4d4bdf00c69f7d66111579",
+    "unique_resources_without_fragments": 13,
+    "http_200": 11,
+    "http_404": 2,
+    "verdict": "ACCEPT__ZERO_SCIENCE_OFFICIAL_CONTRACT_GAP_EVIDENCE_ONLY__FAIL_CLOSED"
+  },
+  "new_official_resources": [
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/winternl/nf-winternl-ntcreatefile",
+      "http_status": 200,
+      "http_date_utc": "Sun, 27 Sep 2026 01:46:12 GMT",
+      "last_modified_utc": "Wed, 05 Aug 2026 07:36:44 GMT",
+      "retrieval": "GET",
+      "excerpts": [
+        "This function is the user-mode equivalent to the ZwCreateFile function documented in the Windows Driver Kit (WDK).",
+        "If this value is non-NULL, the ObjectName member specifies a file name relative to this directory.",
+        "If the file already exists, fail the request and do not create or open the given file. If it does not, create the given file.",
+        "With this flag, the CreateDisposition parameter must be set to FILE_CREATE, FILE_OPEN, or FILE_OPEN_IF.",
+        "Open a file with a reparse point and bypass normal reparse point processing for the file.",
+        "For a shared file to be successfully opened, the requested DesiredAccess parameter to the file must be compatible with both the DesiredAccess and ShareAccess specifications of all preceding opens that have not yet been released with NtClose.",
+        "This value can be zero or OBJ_CASE_INSENSITIVE, which indicates that name-lookup code should ignore the case of the ObjectName member rather than performing an exact-match search.",
+        "You can also use the LoadLibrary and GetProcAddress functions to dynamically link to NtDll.dll.",
+        "Calls to NtSetInformationFile with the FileInformationClass parameter set to FilePositionInformation must specify an offset that is an integral of the sector size."
+      ],
+      "proves": [
+        "Documented user-mode NtCreateFile entry and winternl.h/ntdll.lib/ntdll.dll requirements",
+        "RootDirectory/ObjectName relative-name semantics",
+        "Local FILE_CREATE and FILE_OPEN_REPARSE_POINT semantics"
+      ],
+      "does_not_prove": [
+        "Trusted initial root handle acquisition",
+        "Ancestor-and-final no-reparse containment",
+        "Whole-chain concurrent rename/delete identity and lifetime",
+        "Safe user-mode unlink of specified leaf",
+        "Failure cleanup, cross-volume limits, or runner integration"
+      ]
+    }
+  ],
+  "new_unique_official_resources_without_fragments": 1,
+  "new_http_200": 1,
+  "new_http_404": 0,
+  "maximum_new_resources": 6,
+  "failed_url_retries": 0,
+  "operation_contract": {
+    "root_claim": "UNRESOLVED__FAIL_CLOSED",
+    "recursive_mkdir_each_parent": "UNRESOLVED__FAIL_CLOSED",
+    "exclusive_json_npz_create": "UNRESOLVED__FAIL_CLOSED",
+    "unlink": "UNRESOLVED__FAIL_CLOSED",
+    "overall": "UNRESOLVED__FAIL_CLOSED"
+  },
+  "executable_isolation_experiment_ready": false,
+  "report": {
+    "path": "docs/CH5_K1B_C9_OUTPUT_MUTATION_A1_USERMODE_NTCREATEFILE_CONTRACT_ZERO_SCIENCE_REPORT_20260927.md",
+    "raw_sha256": "EEE67F83D81099DDC382BAC14479BD762619C8B07A0567FAD01BE537E1B77EA3"
+  },
+  "protected_manifest_raw_sha256": {
+    "C6_prime": {
+      "path": "reports/ch5_turn6_same_frozen_input_repeat_20260923_run001/execution_artifact_manifest.json",
+      "raw_sha256": "7890720D502AC1C04D672978C6F662DD51F9D2BA27F321701877ABE9214CDE61"
+    },
+    "C7": {
+      "path": "reports/ch5_k1b_turn7_outer_r2_20260925_run001/execution_artifact_manifest.json",
+      "raw_sha256": "413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91"
+    },
+    "C8": {
+      "path": "reports/ch5_k1b_turn8_outer_r2_20260925_run001/execution_artifact_manifest.json",
+      "raw_sha256": "5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301"
+    },
+    "C8_timing": {
+      "path": "reports/ch5_k1b_turn8_same_frozen_timing_measurement_run001/science_artifact_manifest.json",
+      "raw_sha256": "5DD433E8DD0D8A3C6DB59C3FE370C4EF8770BBCCCA3F8D79211D93938CFA654D"
+    },
+    "old_C9_partial": {
+      "path": "reports/ch5_k1b_turn9_timed_risk_exception_run001/partial_artifact_manifest.json",
+      "raw_sha256": "80BD0D42CB73B4E39B811E759505480542D5A73227014F30B732C34A8AC1FDC3"
+    },
+    "new_C9_partial": {
+      "path": "reports/ch5_k1b_turn9_post_failure_new_attempt_001/partial_artifact_manifest.json",
+      "raw_sha256": "3B10AB56BC2CE3D8FF9B4FB6442E012CB39686AF389624D17566CC8D68F57D20"
+    },
+    "new_C9_readback": {
+      "path": "reports/ch5_k1b_turn9_post_failure_new_attempt_001/partial_artifact_readback.json",
+      "raw_sha256": "8191C24E8A472EE702C71A72DB4F4CCC9A0733D432226DFDB6EF0B4045792BAC"
+    }
+  },
+  "protected_untracked_output_roots": 6,
+  "protected_hash_readback_matches": "7/7",
+  "historical_prohibited_execute_probes": 2,
+  "historical_probes_reclassified_as_compliant": false,
+  "historical_reject_verdicts": [
+    "REJECT__TASK_BOUNDARY_VIOLATION_AND_STATIC_GAPS__NO_SCIENCE",
+    "REJECT__SEALED_INPUT_PATH_GAP_AND_EVIDENCE_AMBIGUITY__NO_SCIENCE",
+    "REJECT__FINAL_ENTRY_GUARDS_UNTESTED__NO_SCIENCE",
+    "REJECT__ACTIVE_PREFLIGHT_AND_PREIMPORT_AUTHORITY_GAPS__NO_SCIENCE",
+    "REJECT__PREIMPORT_AUTHORITY_PATH_AND_BEHAVIOR_EVIDENCE_GAPS__NO_SCIENCE",
+    "REJECT__AUTHORITY_METADATA_FOLLOWS_UNSAFE_PATH__NO_SCIENCE",
+    "REJECT__STALE_INERT_SOURCE_ORDER_ASSERTION__NO_SCIENCE",
+    "REJECT__FULL_INERT_TEST_FAILED__NO_CANDIDATE__NO_SCIENCE",
+    "REJECT__LEDGER_COMPLETENESS_AND_SEAL_READBACK_PATH_GAPS__NO_SCIENCE",
+    "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_RUNNER_FIELD_BINDINGS__NO_SCIENCE",
+    "REJECT__NONAUTHORITY_PROPOSAL_MISSING_PROSPECTIVE_SCHEMA_AND_ACTIVE_BINDINGS__NO_SCIENCE",
+    "REJECT__IDENTITY_CHAIN_OWNER_ORDER_AND_TASK_ABSENCE_AMBIGUITY__NO_SCIENCE",
+    "REJECT__IDENTITY_CHAIN_COMMITTED_FILE_GATE_OMITTED__NO_SCIENCE",
+    "REJECT__COMPLETE_C9_NOT_DELIVERED__CALL_LEDGER_UNRESOLVED",
+    "REJECT__COMPLETE_NEW_C9_EXECUTION__OUTPUT_GUARD_BLOCK_AND_CALL_LEDGER_UNRESOLVED",
+    "REJECT__ROOT_REPLACEMENT_WINDOW_TEST_GAP_AND_OVERBROAD_CLAIM__NO_SCIENCE",
+    "REJECT__TARGET_INTERPRETER_IDENTITY_UNBOUND__NO_SCIENCE"
+  ],
+  "limited_accept_scopes": [
+    "ACCEPT__BOUNDED_ZERO_SCIENCE_MKDIR_GUARD_AND_CHECK_WINDOW_EVIDENCE_ONLY",
+    "ACCEPT__ZERO_SCIENCE_DESIGN_EVIDENCE_ONLY__SAFETY_DECISION_PENDING",
+    "ACCEPT__EXACT_INTERPRETER_STDLIB_CAPABILITY_EVIDENCE_ONLY__NATIVE_CONTAINMENT_UNRESOLVED",
+    "ACCEPT__ZERO_SCIENCE_OFFICIAL_CONTRACT_GAP_EVIDENCE_ONLY__FAIL_CLOSED"
+  ],
+  "old_C9_attempt_consumed": true,
+  "new_C9_attempt_consumed": true,
+  "old_actual_call_ledger": "CALL_LEDGER_UNRESOLVED",
+  "new_actual_call_ledger": "CALL_LEDGER_UNRESOLVED",
+  "C10_closed": true,
+  "retry_closed": true,
+  "partial_resume_closed": true,
+  "results_eligibility": false,
+  "current_host_probes": 0,
+  "current_native_api_invocations": 0,
+  "current_ctypes_invocations": 0,
+  "current_tests": 0,
+  "current_temporary_directory_mutations": 0,
+  "current_acl_mutations": 0,
+  "current_preflight_calls": 0,
+  "current_execute_calls": 0,
+  "current_wrapper_launches": 0,
+  "current_model_calls": 0,
+  "current_scientific_calls": 0,
+  "new_reports_roots": 0,
+  "next_gate": "INDEPENDENT_GPT_WORK_ACCEPT_REJECT__NO_ISOLATION_OR_SCIENCE"
+}
