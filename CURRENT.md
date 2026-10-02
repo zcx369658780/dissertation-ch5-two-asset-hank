@@ -1,3 +1,15 @@
+# 2026-10-02 当前活动 — 固定 C8 输入与安全决策包
+
+本任务ACCEPT_DOCUMENTARY_DECISION_PACKAGE_ONLY；BACKUP_CHECKPOINT_STOP；活动执行NONE，后继未派。基线2973697e16764f4151c849b4fd81f179300e45b1，src不改。治理/路线终裁ACCEPT仍成立；下方“活动NONE/下一路线未派”为本新任务前历史。
+本轮仅整合option1固定C8输入合同和完整Objective A安全可行性；计划docs/CH5_DOT_FIXED_C8_DECISION_PACKAGE_PLAN_20261002.md，合同docs/CH5_DOT_FIXED_C8_INPUT_SAFETY_CONTRACT_20261002.md，结果docs/CH5_DOT_FIXED_C8_DECISION_PACKAGE_RESULT_20261002.md。
+Owner委托DOT决定既定方向内简单测试/数值授权，方向/保护目标决定与备份节点即停；本任务仍明确不运行测试/科学/Python/native/SDK/HTTP，不续用耗尽预算。
+旧C9 PAUSED/CALL_LEDGER_UNRESOLVED/完整Objective A/16 UNRESOLVED/window UNACCEPTED/model_activation=False/Results FALSE及旧账本保留，live科学/data/consumer预算0。
+合同已集中输入/31静态轴声明/16保护格及D1/D2小验证与Owner门；实际共同绑定及完整A可检验方案仍未建立，科学仍不运行。独立审查唯一Required准确更正后由父DOT终裁文档接受；现停在备份节点。仅六份文档一笔本地提交获授权，不push/清理/实际备份，不建后继科学任务。review见docs/CH5_DOT_FIXED_C8_DECISION_PACKAGE_REVIEW_20261002.md。
+
+以下治理终裁与旧状态为历史，科学事实/裁决不改。
+
+---
+
 # 现行简页 — 2026-10-02 DOT 接续
 
 本页为当前状态入口；下方原文按语义/行尾归一口径保留为带日期历史快照，不统一声称字节完全未变。父DOT已终裁治理文档ACCEPT/CLOSED，非科学ACCEPT；活动任务NONE。Owner原件与科学裁决优先于摘要，下一文档路线仅建议未派。

@@ -1,0 +1,19 @@
+# 固定 C8 决策包独立审查与父终裁记录
+
+2026-10-02；ACCEPT_DOCUMENTARY_DECISION_PACKAGE_ONLY；BACKUP_CHECKPOINT_STOP；ACTIVE_EXECUTION: NONE；后继未派。
+父DOT会话01a0fa1a-f62d-7091-a4a6-e5f60446b0f6提供独立审查会话01a0fab7-f599-730e-b1dc-33391fade0ee结论：唯一Required为合同第5节middle bridge“17 state字段”应为“18 state字段”，middle_stage.py第19–21行准确列表18项；其余未见实质缺陷。父已读合同全文与审查证据。本执行者依据该明确裁决机械记录，未冒充自行完成独立审查。
+准确修正：六账本/17 state字段/六params → 六账本/18 state字段/六params。另补两份已知历史环境文档引用，不读取环境或启动探针。文本回读确认后父条件终裁生效；非新科学判断，不重复完整审查。行政纠错consumed2/max2/rem0。
+完整Objective A、16 UNRESOLVED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、price_verified False/release UNKNOWN/baseyear None、model_activation False、Results FALSE及所有旧预算原样；本轮runtime0。
+
+## 纠正前被审候选身份
+基线HEAD 2973697e16764f4151c849b4fd81f179300e45b1；src tree f9fa75055d301deae0e4f6f08496d362052a1d3a。以下SHA256于本次文字纠正前读取本任务五份行政文档；不涉及科学文件哈希，不对本记录作自指hash。
+CURRENT.md SHA256=CE35EC325F56F53387ACD0EB1E637953A73CBF2595F7041C24A31AB903D9FEF6
+TASK_CURRENT.md SHA256=CF582253BC93F89A3600C2BDE32CDEAD9E570F7F3648AD57F42393E9158A0A8F
+docs/CH5_DOT_FIXED_C8_DECISION_PACKAGE_PLAN_20261002.md SHA256=A0E13A07E02CEC84739AD5CB6EA05C4C20DC84D252071D659A5904D14D803C03
+docs/CH5_DOT_FIXED_C8_INPUT_SAFETY_CONTRACT_20261002.md SHA256=AA7BB6574B94FFE69DE02F8256C7B20270D44F6A551EE2399367C43E96CB5C94
+docs/CH5_DOT_FIXED_C8_DECISION_PACKAGE_RESULT_20261002.md SHA256=D442E7B5380E36847A76052C84FB5B5389E22E045364CD8E6BCD0A9481C603FF
+
+## 纠正后与提交边界
+纠正后身份由这六个明确路径的单一本地commit封存；commit值在最终交付报告提供，避免把包含自身的commit或hash回填本记录。范围：CURRENT.md、TASK_CURRENT.md、docs/CH5_DOT_FIXED_C8_DECISION_PACKAGE_PLAN_20261002.md、docs/CH5_DOT_FIXED_C8_INPUT_SAFETY_CONTRACT_20261002.md、docs/CH5_DOT_FIXED_C8_DECISION_PACKAGE_RESULT_20261002.md、本review。
+父明确授权上述六路径一笔本地提交。核对diff/check、src未改、2999 node_modules原位、stage仅六路径和无未授权hook；不得push/PR/clean/reset/stash/实际备份或跨仓访问。
+接受后即备份节点停止；D1/D2/T1/P1均未派、不运行。文档备份候选仅此六路径，排除node_modules、data_local/私人输入、环境/cache/凭据、未授权科学输入；整个仓库备份如涉及额外内容须父另定范围。

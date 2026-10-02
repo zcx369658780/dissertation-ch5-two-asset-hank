@@ -1,3 +1,27 @@
+# TASK_CURRENT — 固定 C8 输入合同与安全可行性决策包
+
+CLOSED__ACCEPT_DOCUMENTARY_DECISION_PACKAGE_ONLY__BACKUP_CHECKPOINT_STOP
+ACTIVE_EXECUTION: NONE
+父DOT闭环授权（2026-10-02）：独立审查01a0fab7-f599-730e-b1dc-33391fade0ee唯一Required为middle bridge 17→18 state字段，准确修正回读后终裁ACCEPT_DOCUMENTARY_DECISION_PACKAGE_ONLY；可补两份准确历史环境文档引用，不探测环境。原五路径+review共六路径仅一笔本地提交；此前候选阶段禁止commit/五路径范围保留为历史。本任务BACKUP_CHECKPOINT_STOP，ACTIVE_EXECUTION: NONE，后继未派；不继续D1/D2/T1/P1。完整Objective A/16 UNRESOLVED/window UNACCEPTED/C9 PAUSED/CALL_LEDGER_UNRESOLVED/model_activation=False/Results FALSE及旧预算不变，runtime0。
+2026-10-02；单一验收问题：既定option1下，现有输入与完整Objective A是否已有可执行验证路线，下一具体小验证与真正Owner方向门分别是什么。执行会话01a0fa7d-9573-7496-a6eb-a633c70fd0fd，父DOT01a0fa1a-f62d-7091-a4a6-e5f60446b0f6；单一写入者，无旧Builder/会话操作。
+
+Owner原话：“好的，请开始同时推进这两个项目。如果遇到Owner决策（特指涉及到方向性的，一些简单的如测试数值授权的话你直接替我授权即可）就停下来。当你认为达到一个可以备份的进度时也请停下来，Github端已经很久没更新了，我们可以在这种备份节点整理下仓库避免太Dirty。”
+父DOT本任务限定为现有行政证据整合与必要准确源码接口文本核对。上述小测试委托不自动开启本任务运行，不能复活旧预算/STOP；方向、保护目标、模型法则变更仍Owner门。
+
+- 树D:\ProjectTemp\c5k1bturn56；任务基线2973697e16764f4151c849b4fd81f179300e45b1；src=f9fa75055d301deae0e4f6f08496d362052a1d3a；原分支不改。tracked clean，2999 node_modules仅路径计数、不读内容/清理。
+- READ：当前治理顶部；准确Owner option1与价格原件、baseline packet、TASK46–48/TASK49–53行政handoff及其直接引用的行政合同；仅上述问题准确引用的本仓源码文本。只按明确问题/引用读，不递归档案或科学产物。科学证据仅使用已存在行政文档中历史身份与接受范围，不重核科学输入hash。
+- WRITE仅CURRENT.md、TASK_CURRENT.md新增本任务顶部及docs/CH5_DOT_FIXED_C8_DECISION_PACKAGE_PLAN_20261002.md、docs/CH5_DOT_FIXED_C8_INPUT_SAFETY_CONTRACT_20261002.md、docs/CH5_DOT_FIXED_C8_DECISION_PACKAGE_RESULT_20261002.md。原记录保留为历史。
+- 禁止deep-learning-hank/另一当地仓库/科学数组/私人data_local/备份正文/保护根访问；禁止模型/tests/import/Python/native/SDK/registry/HTTP/实验/安装/部署/commit/push/PR/清理/科学输出根/C9恢复。源码仅读文本，不执行、不索引外部图。
+- 本任务预先限定最多2次同范围行政格式/准确路径纠错；每次说明原因/对象/消耗，无科学/保护动作追加。未知点标UNKNOWN和精确下一验证建议，不无限文献挖掘。任何科学/保护预算冲突或新方向先停。预算：行政纠错2/2（账本准确性修正及独立Required 17→18文字修正；rem0），科学/测试/import/probe/native/SDK/HTTP/受保护hash/数据正文读取均0。
+- 交付一个决策包：完整输入清单/共同轴序证据/类型与source-loader/双消费者同对象/单位2018-2017/price方法论/依赖/lifetime及缺口；完整Objective A四候选边界×四操作矩阵，分类文献可答/需未来有限验证/Owner方向门。缺完整可检验方案须明确结论。
+- 完成候选待独立审查，不自受、不建科学执行任务、不扩论文写作。经验收可成为备份节点，停并列准确备份范围/本地排除，不自行备份/清理/推送。
+- 所有旧STOP/账本原样：SDK1/rem0/retry0、query2/rem0、HTTP3/2/1/2/2/1各rem0、protected-byte7/rem0、actualdata/fixture/archiveadmin/V1/V2各1/rem0、其他原精确账本不变。
+- C9 PAUSED；CALL_LEDGER_UNRESOLVED；完整Objective A；16 UNRESOLVED；window UNACCEPTED；current_price_methodologically_attributed/direct_price_verified=False/price_verified=False/release UNKNOWN/baseyear None；model_activation=False；Results FALSE；live科学/data/consumer预算0。
+
+下方已关闭治理任务与更旧TASK54原样保留为历史，不再是活动任务。
+
+---
+
 # TASK_CURRENT — DOT 治理与路线时效修订
 
 CLOSED__DOT_GOVERNANCE_ROUTE_DOCUMENTARY_ACCEPTED
