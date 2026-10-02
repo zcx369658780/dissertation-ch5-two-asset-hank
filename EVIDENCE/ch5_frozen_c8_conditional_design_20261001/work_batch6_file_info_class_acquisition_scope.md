@@ -1,0 +1,6 @@
+# Work batch6 文件信息类文献适用性核对
+2026-10-01。目标Windows11client已指定；FILE_ID_INFO结构页minimumclient None supported原样保留。仅补精确enum官方文献，不运行任何API。
+新独立administrativeHTTP预算1attempt/retry0/失败计耗/首失败STOP；旧HTTP3/2/1/2/2rem0与query2rem0不重置。
+Literal来源 official_file_id_info_batch5_20261001.html SHA495740A144FFB540A4B8008A56CB6BCAA9DE70682F68A85FE2CA6716B3D550BE L846 href /en-us/windows/desktop/api/minwinbase/ne-minwinbase-file_info_by_handle_class；固定URL https://learn.microsoft.com/en-us/windows/desktop/api/minwinbase/ne-minwinbase-file_info_by_handle_class 。同hostofficial规范redirectmax5/timeout30s允许；HTTP200/text-html/捕获responseRequestURI要求同learn.microsoft.com，其他情况stop无fallback。
+WriteONLY2NEWsameexistingdir official_file_info_by_handle_class_batch6_20261001.html 与 official_batch6_file_info_class_acquisition_receipt.json，先核源pin/输出不存在。UTF8rawtext/SHA/requested/captured/status/type/time/attempt/minimalfailurecode。无HTMLrender/script/examples/SDKinventory/refsfollow。
+目标与六根Owner文字确认不授权根访问/存在/hash/目录身份/ACLquery。所有root/data/model/science/native/test/experiment/systemquery预算0；本HTTP文献不证明client适用性或修正结构页。原TASK29/33 STOP保留；C9/ObjectiveA/16/window/ledger/priceFalse/modelFalse/ResultsFALSE不变。

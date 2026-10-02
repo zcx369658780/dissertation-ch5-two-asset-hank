@@ -1,0 +1,17 @@
+# TASK31 Work 独立验收
+2026-10-01
+裁决：ACCEPT__EXACT_TWO_PASSIVE_METADATA_READBACK_ONLY。
+Owner 原话“请继续，我批准”，承接已审 v2 精确提案 SHA45FAE2A4E9A9AB113036A651EE4C48211DAC052B9BBF7BAC7612E4E4E9A85AA1；仅两项被动行政读取。
+任务原件 task31_issued_archive.md SHA860359CA1C19C85DD36D70733411CCFBBD6B09FA6297C7E710CBCBBFC8D5B1AD。
+结果 passive_platform_metadata_readback.json SHAA7DAEBE493FE3327A09B527974ACEA574579D909F60F2EF096BF5BAE13A240F1。
+回执 passive_platform_metadata_read_receipt.json SHA8CAB6EA73BEE1C40F4039EDDCAFF1FD01FAF21FF55AA9112EB5F79741C67E015。
+结果：Microsoft Windows 11 专业版；Version10.0.26200；BuildNumber26200；OSArchitecture64位；D:DriveFormat NTFS。
+Work 已读最新turn01a0f6c6-dc59-7761-99db-a398f73b05c2完整行政执行轨迹：只有一个顺序查询命令，-Property及Select-Object均限四字段，D:格式查询随后成功；各attempt1/exit0/无重试/无替代。两JSON新增；回执仅后续行政状态与助手意见补录，无额外查询。
+Builder两名分离只读助手已完成前后文本核对；后置助手在回执状态补录前审查，未核执行轨迹的限制已明确。Work另有resume_budget_review核最终两文件及计账/边界，无实质问题。resume_input_plan只作CloseHandle最低OS文献窄对应意见，非API或保护验收。
+Work fresh核对7输入pins及HEAD/src一致；HEAD75cee92b1ad9e5cb6fc069bca892213838ffdddc；HEAD:src00682b2e1a7ba23665f6e16f6acf48ad35874883。未改source/tests/Git/旧证据；dirty/untracked保留。
+新增被动行政预算consumed2/rem0，已终结；不借新任务或会话复活。HTTP旧三批3/2/1各rem0；actualdata/fixture/archiveadmin/V1/V2各consumed1/rem0，不重置。
+只确认当前本地主机元数据；intended_target_relationship=UNKNOWN_NOT_OWNER_DESIGNATED；SDK/API UNKNOWN；CIM provider内部读取范围未证明。报告OS release高于CloseHandle页面最低客户端版本，仅最低OS文献元数据对应，不证明build26200特定语义、SDK/API、64位调用、NTFS操作语义、readiness或protection。
+所有研究runtime/import/AST/compile/test/native/DLL/isolation/experiment/model/science/consumer/真实数据/保护根及新HTTP调用0。历史C8科学保留；当前条件链科学0。
+TASK29原STOP保留；C9PAUSED；ObjectiveA完整保留；16UNRESOLVED；windowUNACCEPTED；六根具体授权缺失；CALL_LEDGER_UNRESOLVED；price_verified=False/releaseUNKNOWN/baseyearNone/model_activationFalse/ResultsFALSE。
+当前Builder dialogue4/idle，未到30记录，不交接。
+下一Owner决定（只需目标指定，不新增执行）：是否把此次读回的当前本地主机和D:NTFS指定为未执行隔离研究的拟定平台？若是，后续只在既有准备权限内整理SDK/API候选文献与缺口；不自动采用机制、不执行/import/测试/native/实验、不新增预算。不要求Owner猜选技术候选。若不是，Owner手动提供预期平台，无再次探测。

@@ -1,0 +1,122 @@
+{
+  "schema": "CH5_TASK41_EXISTING_DOCUMENT_ADMINISTRATIVE_REVIEW_RECEIPT",
+  "date": "2026-10-01",
+  "builder": "01a0f67a-6f00-79a3-9b6e-24a75d875068",
+  "dialogue": 9,
+  "status": "STOP__FIRST_HELPER_COMMAND_START_FAILURE",
+  "task_sha256": "EA5C9F5A09E4982D7E650318F70ACAD452213A72094ED8F494A57A26DF2B4E1A",
+  "sole_authorized_cwd": "D:\\ProjectTemp\\c5k1bturn56",
+  "inputs_pre": [
+    {
+      "sha256": "EA5C9F5A09E4982D7E650318F70ACAD452213A72094ED8F494A57A26DF2B4E1A",
+      "path": "D:\\ProjectTemp\\c5k1bturn56\\TASK_CURRENT.md"
+    },
+    {
+      "sha256": "5F8AB177CF19E38D26AB1CC8278DE52490F54A5DE71170258E2B2915E082569B",
+      "path": "D:\\ProjectTemp\\c5k1bturn56\\EVIDENCE\\ch5_frozen_c8_conditional_design_20261001\\task40_remaining_proof_obligations.md"
+    },
+    {
+      "sha256": "1F981FC840476E67813F8D2A1200BC270A3973D1A86D5A6FEFE73581BECC5493",
+      "path": "D:\\ProjectTemp\\c5k1bturn56\\EVIDENCE\\ch5_frozen_c8_conditional_design_20261001\\work_task40_premature_read_stop_receipt.json"
+    },
+    {
+      "sha256": "902CC715BB03FFF91D801AB5AFC09EF9195576B984EC941EFBCF4E3C38840498",
+      "path": "D:\\ProjectTemp\\c5k1bturn56\\EVIDENCE\\ch5_frozen_c8_conditional_design_20261001\\protected_manifest_sha256_readback_20261001.json"
+    },
+    {
+      "sha256": "7D85D1EA4DBFA9004CAAEF87393820C1EEC22D0077C659A78D6FE88F6BF6AEB4",
+      "path": "D:\\ProjectTemp\\c5k1bturn56\\EVIDENCE\\ch5_frozen_c8_conditional_design_20261001\\protected_manifest_sha256_read_receipt_20261001.json"
+    }
+  ],
+  "inputs_post": "NOT_CHECKED_AFTER_TERMINAL_FAILURE",
+  "task40_existing_markdown_candidate_sha256": "5F8AB177CF19E38D26AB1CC8278DE52490F54A5DE71170258E2B2915E082569B",
+  "outputs_absent_before_helper_dispatch": true,
+  "writes": [
+    "task41_existing_document_review_receipt.json"
+  ],
+  "review_md": "NOT_CREATED_REVIEW_INCOMPLETE",
+  "final_output_sha256": "NOT_COLLECTED_AFTER_TERMINAL_FAILURE",
+  "first_failure": {
+    "actor": "/root/task37_manifest_map",
+    "category": "COMMAND_LAUNCH_INVALID_WORKING_DIRECTORY",
+    "OS_error": 267,
+    "actual_helper_workdir": "D:\\ProjectTemp\\c5b1bturn56",
+    "dispatch_workdir": "D:\\ProjectTemp\\c5k1bturn56",
+    "cause": "Helper deviated from literal correct cwd in main dispatch. Command failed before any hash/read.",
+    "retry": 0,
+    "substitution": false
+  },
+  "helpers": [
+    {
+      "agent": "/root/task37_manifest_map",
+      "role": "source_accounting",
+      "result": "STOP__INVALID_CWD_NO_READS",
+      "reads": 0,
+      "hashes": 0
+    },
+    {
+      "agent": "/root/task37_permission_review",
+      "role": "independent_existing_document_boundary_review",
+      "result": "INTERRUPTED_BY_MAIN_AFTER_FIRST_COMMAND_FAILURE",
+      "read_completion": "NOT_ESTABLISHED_NO_COMPLETED_REPORT_AT_STOP"
+    }
+  ],
+  "helpers_total": 2,
+  "max_active_helpers": 2,
+  "original_TASK40_failures": [
+    {
+      "actor": "main Work",
+      "category": "PREMATURE_MISSING_RECEIPT_LOCATOR_READ",
+      "exit_code": 1,
+      "source": "work_task40_premature_read_stop_receipt.json"
+    },
+    {
+      "actor": "independent_helper",
+      "category": "INCORRECT_EVIDENCE_DIRECTORY_TASK_CURRENT_LOCATOR",
+      "numeric_exit": "NOT_CAPTURED",
+      "retry": 0
+    }
+  ],
+  "TASK40_status": "STOP_NO_OVERALL_ACCEPTANCE_UNCHANGED",
+  "original_missing_TASK40_receipt": "NOT_READ_NOT_CHECKED_NOT_CREATED",
+  "TASK40_body": "PRESERVED_UNMODIFIED",
+  "main_actual_stage": [
+    "TASK_CURRENT hash/text",
+    "Five exact allowed input hashes captured; readback/receipt two expected pins matched",
+    "Two ownoutput absence checks",
+    "Read existing TASK40 markdown and Work failure receipt",
+    "Dispatch two bounded readonly helpers using correct full absolute TASK_CURRENT locator",
+    "First helper cwd deviation startup failure; no retry; interrupt other helper",
+    "Only authorized minimal terminal receipt persisted"
+  ],
+  "source_read_trace_limits": "TASK39 document bodies available from earlier read; no new target-byte reads or source discovery. No administrative acceptance established by incomplete helpers.",
+  "calls": {
+    "reports_access": 0,
+    "protected_byte_reads": 0,
+    "protected_body_reads": 0,
+    "protected_exists_or_enumeration": 0,
+    "ACL_identity": 0,
+    "Git": 0,
+    "HTTP": 0,
+    "systemqueries": 0,
+    "researchruntime": 0,
+    "import": 0,
+    "AST": 0,
+    "compile": 0,
+    "test": 0,
+    "native": 0,
+    "DLL": 0,
+    "probe": 0,
+    "experiment": 0,
+    "model": 0,
+    "science": 0,
+    "actualdata": 0,
+    "consumer": 0
+  },
+  "old_budgets": "TASK39protectedbytes7/rem0/retry0;passivequery2/rem0;HTTP3/2/1/2/2/1rem0;actualdatafixturearchiveadminV1V2each1rem0;NO_RESET",
+  "retained": "C9PAUSED/fullObjectiveA/16UNRESOLVED/windowUNACCEPTED/CALL_LEDGER_UNRESOLVED/priceFalse/releaseUNKNOWN/baseyearNone/modelFalse/ResultsFALSE;historicalC8sciencepreserved/currentconditional0",
+  "self_accept": false,
+  "successor_issued": false,
+  "Owner_question": false,
+  "next_gate": "STOP Work terminal review; no automatic retry or task completion inferred"
+}

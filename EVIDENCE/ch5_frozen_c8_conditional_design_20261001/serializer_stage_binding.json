@@ -1,0 +1,259 @@
+{
+  "schema": "CH5_C8_SERIALIZER_STAGE_BINDING_RECORD16_V1",
+  "classification": "STATIC_DESIGN_FACTS_ONLY__SEALED_RUNTIME_BINDING_INCOMPLETE",
+  "task_sha256": "C0B7DB4478FECCD32909BA629A5793965D85381177C289B20BE77DB22301F194",
+  "sole_tree": "D:\\ProjectTemp\\c5k1bturn56",
+  "source_pins": [
+    {
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+      "sha256": "E2D5EDBBF73ABF60DBA183FB04A5D364D3D83FFCD262254F58EAD53EC2F36D07"
+    },
+    {
+      "path": "validators/multi_province/k1b_turn8_outer_r2/run.py",
+      "sha256": "10920535BD50E688D1794B7E69C34F8A5C3C56456CAF6E8DF52FA8D9DFE31831"
+    }
+  ],
+  "serializer_result_chain": [
+    {
+      "lines": "781-813",
+      "stage": "AFTER_TERMINAL_KFE_BRANCH",
+      "assignment": "aggregates = evaluate_corrected_household_aggregates(CorrectedHouseholdAggregateInputs(...))",
+      "proof": "STATIC_TEXT_ONLY__NO_CALL",
+      "explicit_units_calendar": "UNKNOWN"
+    },
+    {
+      "lines": "809-812",
+      "assignment": "aggregate_receipt = {name: asdict(getattr(aggregates, name)) for name in ('Ct', 'Lt', 'At', 'Bt', 'total_assets', 'AtTax')}",
+      "proof": "STATIC_SERIALIZER_KEY_RELATION",
+      "aggregate_type_definition": "NOT_FOLLOWED"
+    },
+    {
+      "lines": "813",
+      "literal_filename": "stationary_aggregate_receipt.json",
+      "forwarding": "same aggregate_receipt written",
+      "proof": "STATIC_WRITER_FILENAME_AND_CARRIER"
+    },
+    {
+      "lines": "814-829;854",
+      "assignment": "final['aggregates'] = aggregate_receipt; return final",
+      "proof": "STATIC_RESULT_DICTIONARY_RELATION"
+    },
+    {
+      "lines": "1491-1495",
+      "forwarding": "_solve_province in PROVINCE_ORDER; results collected",
+      "proof": "STATIC_HISTORICAL_CALL"
+    },
+    {
+      "lines": "1500-1511",
+      "constructor": "PreFrozenHouseholdOutputBatch",
+      "proof": "STATIC_RESULT_DICTIONARY_TO_BATCH",
+      "mapping": [
+        {
+          "line": 1501,
+          "source": "row['aggregates']['Ct']['mass_form']",
+          "target": "ct"
+        },
+        {
+          "line": 1502,
+          "source": "row['aggregates']['Lt']['mass_form']",
+          "target": "household_lt"
+        },
+        {
+          "line": 1503,
+          "source": "row['aggregates']['At']['mass_form']",
+          "target": "at"
+        },
+        {
+          "line": 1504,
+          "source": "row['aggregates']['Bt']['mass_form']",
+          "target": "bt"
+        },
+        {
+          "line": 1505,
+          "source": "row['aggregates']['AtTax']['mass_form']",
+          "target": "at_tax"
+        }
+      ]
+    },
+    {
+      "lines": "1513-1515",
+      "forwarding": "batch ct/household_lt/at/bt/at_tax to keys ct/lt/at/bt/at_tax",
+      "proof": "STATIC_FORWARDING_ONLY__NO_ARRAY_OR_VECTOR_INSTANTIATION"
+    }
+  ],
+  "c8_runner_chain": [
+    {
+      "path": "validators/multi_province/k1b_turn8_outer_r2/run.py",
+      "lines": "1-3;834-844;826-831",
+      "fact": "Static preflight/future one-shot C7-to-C8 runner; default preflight; execution branch calls execute_once and future_gate",
+      "proof": "STATIC_BRANCH_DEFINITION_ONLY"
+    },
+    {
+      "lines": "253-288",
+      "fact": "load_bundle reconstructs states and copies arrays from serialized JSON/NPZ, with identity/order/hash checks defined",
+      "proof": "STATIC_TEXT_ONLY__NO_OBJECT_READ_OR_RECONSTRUCTION",
+      "cross_process_sealed_object_identity": "NOT_ESTABLISHED"
+    },
+    {
+      "lines": "358-382;542-574",
+      "fact": "preflight/prior binding/load_bundle before model-module imports in execution branch",
+      "proof": "STATIC_GATES_DEFINED__NOT_RUN"
+    },
+    {
+      "lines": "558-561",
+      "base_module": "ch5_two_asset_hank.corrected_diagnostic.optionb_turn2_household_integration",
+      "old_module": "validators.multi_province.k1b_turn5_turn6_bounded_continuation.run",
+      "proof": "STATIC_IMPORT_BINDINGS__NOT_IMPORT_EXECUTION"
+    },
+    {
+      "lines": "652;675-677",
+      "fact": "base.oracle.EconomicParams positional construction; params forwarded to base._solve_province",
+      "named_parameter_field_binding": "UNKNOWN__POSITIONAL_CONSTRUCTOR_DEFINITION_NOT_FOLLOWED",
+      "values": "NOT_EXTRACTED"
+    },
+    {
+      "lines": "653-688",
+      "fact": "base._solve_province return appended to results",
+      "proof": "STATIC_CALL_RESULT_FORWARDING"
+    },
+    {
+      "lines": "711-719",
+      "fact": "old._batch(results) passed to old.integrate_turn",
+      "proof": "STATIC_FORWARDING",
+      "old_batch_internal_selector_and_object_relation": "UNKNOWN__NOT_PROVED_BY_THIS_RUNNER"
+    },
+    {
+      "lines": "703-735",
+      "fact": "Future output/ledger/seal calls defined",
+      "proof": "STATIC_BEHAVIOR_ONLY__NO_CURRENT_EXECUTION"
+    },
+    {
+      "lines": "645-647",
+      "assignment": "base.ENTERING_STATE_RELATIVE = OLD_ROOT / 'turn8_k1b_input_candidate.json'; bind_future_task(base)",
+      "old_root_literal": "UNKNOWN__NUMERIC_LOCATOR_PORTIONS_REDACTED",
+      "proof": "STATIC_PATH_BINDING_ONLY"
+    }
+  ],
+  "distance_reference": {
+    "path": "validators/multi_province/k1b_turn8_outer_r2/run.py",
+    "line": 34,
+    "symbol": "DISTANCE",
+    "literal_locator": "docs/evidence/ch5_mp4c_k1a_distance_mapping/normalized_distance_destination_origin.csv",
+    "target_read": false,
+    "preflight_check_lines": "358-371;375-382",
+    "explicit_forwarding_into_old_integrate_turn": "NOT_SEEN",
+    "actual_original_c8_distance_matrix_binding": "UNKNOWN"
+  },
+  "absent_runner_tokens": [
+    "stationary_aggregate_receipt",
+    "aggregates",
+    "mass_form",
+    "density_form",
+    "PreFrozenHouseholdOutputBatch"
+  ],
+  "proof_levels": {
+    "current_pinned_text": "ESTABLISHED_BY_HASH_BEFORE_BODY",
+    "serializer_to_result_dictionary": "ESTABLISHED_STATIC_TEXT",
+    "same_source_result_dictionary_to_batch": "ESTABLISHED_STATIC_TEXT",
+    "runner_solve_result_to_old_batch_to_integration": "ESTABLISHED_STATIC_TEXT",
+    "optionb_batch_constructor_equals_runner_old_batch": "UNKNOWN__DO_NOT_STITCH",
+    "sealed_exact31_receipts_equal_original_c8_result_objects": "UNKNOWN",
+    "sealed_original_c8_loaded_source_and_import_binding": "UNKNOWN",
+    "sealed_actual_call_and_stage_identity": "UNKNOWN",
+    "consumer_units": "UNKNOWN",
+    "explicit_calendar": "UNKNOWN",
+    "full_typed_input_and_readiness": "NOT_ESTABLISHED",
+    "archive_member_shape_axis_dtype": "NOT_ESTABLISHED_THIS_TASK"
+  },
+  "exact_next_binding_requests": [
+    {
+      "need": "Work-pinned original-C8 loaded-source/import and call-stage evidence",
+      "locator": "UNKNOWN__WORK_MUST_SUPPLY_EXACT_LITERAL_PATH_AND_HASH",
+      "fields": "source version/module bindings and actual invocation stage; no static-to-runtime inference"
+    },
+    {
+      "need": "Work-pinned serializer/result identity relation for already allowlisted31 sealed receipts",
+      "locator": "ONLY_EXISTING_RECORD15_EXACT31_PATHS_ARE_KNOWN; ADDITIONAL_EVIDENCE_LOCATOR_UNKNOWN",
+      "fields": "original writer source/stage and sealed correspondence without amount extraction"
+    },
+    {
+      "need": "Exact old._batch definition and selector/source authority",
+      "locator": "STATIC_MODULE_NAME validators.multi_province.k1b_turn5_turn6_bounded_continuation.run; Work must provide an exact allowed definition locator/hash; no module-to-file path synthesized",
+      "fields": "result dictionary to batch forwarding, separate from optionb constructor"
+    },
+    {
+      "need": "Original-C8 economic parameter field/source authority",
+      "locator": "UNKNOWN",
+      "fields": "ga/phi_l/alphal/epsilon/theta/delta positional field binding and original source provenance"
+    },
+    {
+      "need": "Original-C8 distance consumer and source authority",
+      "locator": "docs/evidence/ch5_mp4c_k1a_distance_mapping/normalized_distance_destination_origin.csv IS_REFERENCE_ONLY_NOT_READ_GRANT",
+      "fields": "actual original-C8 consumer carrier/axes/stage; content untouched"
+    },
+    {
+      "need": "Explicit original consumer unit/calendar/province authority",
+      "locator": "UNKNOWN",
+      "fields": "no inference from filenames/module names"
+    }
+  ],
+  "inherited": {
+    "fixed_design": "ORIGINAL_C8_HOUSEHOLD_OUTPUTS__COMPLETED_C7_ENTERING_C8_STATES__ENTERING_C8_SHARES__OLD_POPULATION_PARAMS_DISTANCE",
+    "scientific_law": "NO_NEW_CALIBRATION_SHARE_LAW_OR_SCIENTIFIC_CHOICE",
+    "actual_data": {
+      "consumed": 1,
+      "remaining": 0
+    },
+    "invented31_fixture_process": {
+      "consumed": 1,
+      "remaining": 0
+    },
+    "historical_c8_science": "RETAINED",
+    "historical_c9_attempts": "CONSUMED",
+    "historical_call_ledger": "CALL_LEDGER_UNRESOLVED",
+    "c9": "PAUSED",
+    "objective_a": "RETAINED",
+    "final_check_to_mutation_window": "UNACCEPTED",
+    "attacker_principal_privilege_path_replacement_capabilities": "FULLY_RETAINED",
+    "price_verified": false,
+    "release": "UNKNOWN",
+    "baseyear": null,
+    "model_activation": false,
+    "Results": false,
+    "child_seals": "EXITED_NOT_LIVE__NO_RECONSTRUCTION",
+    "all_new_runtime_budgets_and_calls": 0
+  },
+  "numeric_amounts_or_vectors_present": false,
+  "all_current_runtime_calls": 0,
+  "other_literal_references": [
+    {
+      "symbol": "REPEAT_RUNNER",
+      "line": 38,
+      "literal_locator": "validators/multi_province/k1b_turn6_same_frozen_input_repeat/run.py",
+      "status": "UNVERIFIED_REFERENCE_ONLY__NOT_READ"
+    },
+    {
+      "symbol": "TURN7_RUNNER",
+      "line": 40,
+      "literal_locator": "validators/multi_province/k1b_turn7_outer_r2/run.py",
+      "status": "UNVERIFIED_REFERENCE_ONLY__NOT_READ"
+    },
+    {
+      "symbol": "HELPER_SHA",
+      "lines": "47-50",
+      "turn3_turn4_paths": "HISTORICAL_REFERENCES_ALREADY_REGISTERED_RECORD15; NO_RECORD16_BODY_READ",
+      "third_helper_literal": "UNKNOWN__NUMERIC_LOCATOR_PORTIONS_REDACTED"
+    },
+    {
+      "symbols": [
+        "OLD_ROOT",
+        "OUTPUT",
+        "future-task",
+        "adoption/proposal"
+      ],
+      "literal_locators": "UNKNOWN__NUMERIC_LOCATOR_PORTIONS_REDACTED",
+      "no_reconstruction_from_memory": true
+    }
+  ]
+}
+

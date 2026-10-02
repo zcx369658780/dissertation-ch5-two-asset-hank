@@ -1,0 +1,21 @@
+# TASK_CURRENT
+ISSUED__TASK31_OWNER_APPROVED_TWO_PASSIVE_METADATA_READS
+2026-10-01. Owner direct reply to exact reviewed proposal: “请继续，我批准”. Grants only proposed two passive metadata reads. Target-host designation NOT inferred.
+Builder: verified successor 01a0f67a-6f00-79a3-9b6e-24a75d875068 local / nextdialogue4; no handoff required. Sole tree D:\ProjectTemp\c5k1bturn56; forbidden deep-learning-hank, Zotero repo files, other trees; preserve sources/tests/dirty/untracked/Git/old evidence.
+Read startup administrative text/hash AGENTS/CURRENT/SCIENTIFIC_DECISIONS/TASK_CURRENT/REVIEW_GATE. Read hash-first exact proposal and TASK30 receipt in EVIDENCE/ch5_frozen_c8_conditional_design_20261001:
+work_owner_passive_platform_information_scope_v2.md SHA45FAE2A4E9A9AB113036A651EE4C48211DAC052B9BBF7BAC7612E4E4E9A85AA1
+work_task30_scope_review_receipt.json SHA7F789A3B597C5F3A5627E7DFD527CBBF2B5810D3AACF3B15F06E6534C95BA8E2
+HEAD75cee92b1ad9e5cb6fc069bca892213838ffdddc/HEADsrc00682b2e1a7ba23665f6e16f6acf48ad35874883; fresh verify before writes. Any pin/locator/command failure STOP, no retry/substitution.
+WRITE ONLY 2 NEW files directly in same existing evidence directory; confirm absent before queries:
+passive_platform_metadata_readback.json
+passive_platform_metadata_read_receipt.json
+No scripts/additional outputs/directories. No old-file mutation including TASK_CURRENT. Main Builder sole writer; helpers readonly. Mandatory two disjoint helpers/max2active: first reviews exact proposed fields/budgets text only before queries; second reviews persisted whitelist/result/receipt after queries text only. No helper query/Git/network/write/scope expansion. You are not alone; preserve others.
+EXECUTE SEQUENTIALLY, exactly each at most once, with terminating errors (ErrorActionPreference Stop). Budget2/attemptsmax2/retry0; failed attempt consumes budget; first failure STOP and do not invoke second. Catch errors record only error category/code, never full error/CIM object. No fallback or replacement. Exact query1:
+Get-CimInstance -ClassName Win32_OperatingSystem -Property Caption,Version,BuildNumber,OSArchitecture | Select-Object Caption, Version, BuildNumber, OSArchitecture
+Exact query2:
+[IO.DriveInfo]::new('D').DriveFormat
+No remote machine/session, other property, drives enumeration, path enumeration/content/directory access, SDK inventory/username/serial/credentials/network/globalsettings/privileges. CIM -Property limits request and recorded fields; provider internal reads not proved.
+Readback record only the four OS values and D DriveFormat plus administrative status/identity. No hostnames/serial/user. Query result belongs to current local host; intended target relationship UNKNOWN_NOT_OWNER_DESIGNATED; SDK/API UNKNOWN; no adoption or readiness/protection PASS. If first failure record null/notchecked subsequent values, persist minimal terminal evidence only and STOP. Unused allowance retires with task, no successor query authority.
+Receipt: direct Owner wording/proposal SHA/taskSHA, per-query attempts/success/failure/minerror/unused-retired accounting, exact output hashes, two readonly helpers, administrative read/check trace, HEAD/src prepost, inputpins prepost only if permitted no terminal failure, no science or protection claims. Do not read unrelated files for inventory. TASK29 original STOP preserved; no retry.
+Native/runtime research/import/AST/compile/test/DLL/isolation/experiment/model/science/consumer/realdata/protectedroot all budgets0. Only THIS passive administrative OS+CIM/DriveInfo exception2; no new HTTP. Existing HTTP3+2+1 consumed/rem0; oldactualdata/fixture/archiveadmin/V1/V2 eachconsumed1/rem0 no reset. C9PAUSED/fullObjectiveA/16UNRESOLVED/windowUNACCEPTED/sixrootmissing/CALL_LEDGER_UNRESOLVED/priceFalse/releaseUNKNOWN/baseyearNone/modelFalse/ResultsFALSE remain. HistoricalC8 science preserved/currentconditional0.
+Finish STOP for independent Work acceptance. Do not selfaccept/issue successor/ask Owner/adopt API. Be concise, no redundant historic rereads.

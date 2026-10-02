@@ -1,0 +1,60 @@
+{
+  "task": "TASK42",
+  "date": "2026-10-01",
+  "verdict": "ACCEPT__DOCUMENTARY_PROOF_OBLIGATIONS_WITH_EXPLICIT_COMPLETION_CLAIM_EXCLUSION",
+  "candidate_sha256": "5F8AB177CF19E38D26AB1CC8278DE52490F54A5DE71170258E2B2915E082569B",
+  "excluded_claim": "TASK40 last paragraph: 仅新增本文与回执; original receipt was not created",
+  "task40_status": "STOP_NO_OVERALL_ACCEPTANCE",
+  "task41_status": "STOP_NO_OVERALL_ACCEPTANCE",
+  "failures_preserved": [
+    {
+      "task": "TASK40",
+      "actor": "main Work",
+      "category": "PREMATURE_MISSING_RECEIPT",
+      "exit": 1
+    },
+    {
+      "task": "TASK40",
+      "actor": "helper",
+      "category": "INCORRECT_TASK_CURRENT_LOCATOR",
+      "exit": "NOT_CAPTURED"
+    },
+    {
+      "task": "TASK41",
+      "actor": "helper",
+      "category": "INVALID_CWD_COMMAND_NOT_STARTED",
+      "os_error": 267,
+      "retry": 0
+    }
+  ],
+  "helpers": [
+    {
+      "agent": "resume_effect_plan",
+      "scope": "facts_and_completion",
+      "result": "one_unsupported_completion_claim; remaining checked facts consistent"
+    },
+    {
+      "agent": "resume_budget_review",
+      "scope": "proof_and_permission",
+      "result": "no material boundary defect"
+    }
+  ],
+  "old_evidence_modified": false,
+  "new_calls": {
+    "protected_byte_read": 0,
+    "science": 0,
+    "model": 0,
+    "test": 0,
+    "native": 0,
+    "http": 0,
+    "system_query": 0
+  },
+  "protected_byte_budget": {
+    "consumed": 7,
+    "remaining": 0,
+    "retry": 0
+  },
+  "state": "C9PAUSED/fullObjectiveA/16UNRESOLVED/windowUNACCEPTED/CALL_LEDGER_UNRESOLVED/priceFalse/releaseUNKNOWN/baseyearNone/modelFalse/ResultsFALSE",
+  "historical_C8": "PRESERVED",
+  "next_gate": "existing pinned documentary source locator and applicability audit only; no fresh HTTP/query/native budget"
+}

@@ -1,0 +1,18 @@
+# Inactive archive input carrier engineering
+
+Work TASK23; Builder dialogue24; 2026-10-01. Status: BUILDER_COMPLETE__STOP_WORK_INDEPENDENT_REVIEW. This is engineering evidence, not independent acceptance or runtime authorization.
+
+Created only the six task-declared new files under the existing evidence directory. The carrier/parser uses stdlib and caller-supplied in-memory receipt bytes and literal binding order. It checks all 31 identities, sizes and hashes before parsing only Ct/Lt/At/AtTax mass_form fields. as_fields exposes ct/lt/at/at_tax; no bt or full original constructor is claimed. Expected SHA-256 strings must be 64 lowercase hexadecimal characters. Other keys do not become consumer fields.
+
+Strict JSON rejects duplicate keys, nonstandard/nonfinite numbers, absent or nonnumeric selectors, overflow and nonzero float underflow. Parsed builtin int values remain exact; Python integer representability limits produce a static rejection. Parsed builtin float values retain normal binary-float representation without additional rounding/conversion. The frozen slotted carrier owns tuples and immutable bytes; returned mappings are fresh. This is defensive engineering, not Objective A containment.
+
+Three separate helpers implemented carrier, implemented tests, and independently reviewed the new code/contract. Static review found a writable instance dictionary, unsafe unittest traceback output and float underflow acceptance. All were corrected before the only test and independently rechecked. The reviewer reported no remaining material defect. The initial review hash display was truncated; full in-memory comparisons subsequently matched, with no locator/hash mismatch. No Python test was invoked during these corrections or reviews.
+
+Sole ARCHIVE_DERIVED_INVENTED31_TEST_V1 invocation: Python 3.11 executable, -B -E -S, exact test script entry using SafeResult; PYTHONDONTWRITEBYTECODE=1. 11 tests passed, exit 0. Attempts 1/max1; remaining0; post-invocation repairs0/retests0. Tests exercised wholly invented receipts, pin/order/count/type/strict JSON errors, value preservation, ownership, alias mappings, provenance limits and absence of scientific module imports. The safe test result suppresses raw FAIL/ERROR traceback and payload output. Stdout is empty; stderr contains the unittest summary. Administrative captures remain within Objective A.
+
+Tested carrier SHA256: 82926B2799985D77F084988AD64EC579C4C2A12D4CDC9F1D9F107D1A8741D0B3
+Tested test SHA256: C455C448C8B1E583D995EE4A5BA523DB0897085F7BB15E5048D4EB72DD3CC854
+
+Pre checks77 include fixed72, four exact document/backup/registry pins and task. Pre-test/post-test checks83 additionally cover four startup identities and both new code files; all matched. Backup remained hash-only; no decoding. HEAD 75cee92b1ad9e5cb6fc069bca892213838ffdddc and HEAD:src 00682b2e1a7ba23665f6e16f6acf48ad35874883 matched; dirty/untracked status stayed unchanged at Git's reported granularity. No Git/source/model-test changes.
+
+ARCHIVE_DERIVED_NEW_OBJECT is a new representation/classification only. Real archive provenance, actual loaded source/call stage/runtime identity, units/calendar/canonical names, original seal/lifetime, complete constructor and live consumer binding remain UNKNOWN or unrestored. No actual receipt capture, NPZ/source/master inspection, observed preparation, model or real consumer invocation occurred. Old actualdata1/fixture1/archiveadmin1 remain consumed/rem0; historical C8 science and CALL_LEDGER_UNRESOLVED remain preserved. Record18/21 REJECT and TASK22 STOP retained. C9 PAUSED; Objective A RETAINED; 16 UNRESOLVED; window UNACCEPTED; A3 no implementation; priceFalse/releaseUNKNOWN/baseyearNone/modelFalse/ResultsFALSE. No self-acceptance or successor.

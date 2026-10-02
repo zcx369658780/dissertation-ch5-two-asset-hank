@@ -1,0 +1,9 @@
+# Bounded helper advisories
+
+Three concrete helpers participated; no helper ran code, tests, imports, Git mutations or real-data readback. Main Builder alone launched and accounted for the sole test process. Helpers do not own acceptance.
+
+- /root/observed_seal_impl (GPT-6.1 Sol / medium): disjoint ownership annual_observed_labor_context.py. Implemented exact authenticated-snapshot owner seal, pure ordered fixture/shared conversion and dormant conversion; public production preparation stays blocked. Retained unchanged helper formula/PINS and original synthetic constructor call site. Pretest follow-ups added axis[position] guard and complete immutable information/population/price/year/release metadata.
+- /root/array_seam_impl (GPT-6.1 Sol / medium): disjoint ownership annual_labor_array_adapter.py and inert integration.py. Implemented literal triple mapping and owner/context/master/bytes seal, immutable byte-backed float64 array, explicit carrier path, two-boundary same-master delivery and old tuple compatibility. Pretest follow-up added strict input dimensions and finite scalar refusal without importing scientific modules.
+- /root/array_static_review (GPT-6.1 Sol / high): read-only independent review of task/spec/four files. Identified reversed records were not rejected; main retained test and implementation was corrected before execution. Suggested wrong dimensions, params, firm length and direct master metadata tests, all included before launch. Final response FINAL_STATIC_READY: additions match API, gaps covered, no definite failure point. No ACCEPT verdict given.
+
+Work's separate pretest comments required full immutable provenance and exact ct1D/distance2D guards. These were completed prior to the only test invocation. No post-test source repair occurred. The source hashes reviewed/tested are in builder_execution_ledger.json. Formal Work independent review remains pending.

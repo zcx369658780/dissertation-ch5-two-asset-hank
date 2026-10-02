@@ -1,0 +1,7 @@
+# Documentary batch3 — referenced replacement contract candidate
+
+TASK28 may not follow references. Main Work separately authorizes one inert official-document retrieval to inspect the replacement named in the already fetched NtClose deprecation clause. No API adoption/implementation/runtime follows.
+
+One exact candidate https://learn.microsoft.com/en-us/windows/win32/api/handleapi/nf-handleapi-closehandle; maximum1 HTTP request/timeout20s/MaximumRedirection0/no retry/no fallback. Any locator/status/origin failureSTOP. Exact new files directly under D:\ProjectTemp\c5k1bturn56\EVIDENCE\ch5_frozen_c8_conditional_design_20261001\: official_closehandle_20261001.html and official_closehandle_acquisition_receipt.json, confirm absent. Record inert UTF8body/status/type/requestedURL/responseRequestURI if captured/UTC/SHA. No render/examples execution/ref following.
+
+Documentary batches1consumed3/rem0 and2consumed2/rem0 remain separate and unchanged; batch1returnedURL NOT_CAPTURED unchanged. This distinct page batch3max1 is not a retry or runtime budget reset. All runtime/native/import/AST/compile/test/probe/hostversion/experiment/model/science/consumer/data/protectedroot budgets0. Sole tree/source/tests/Git/old evidence protected. FullObjectiveA/all16UNRESOLVED/windowUNACCEPTED/C9PAUSED/CALL_LEDGER_UNRESOLVED/priceFalse/modelFalse/ResultsFALSE retained; targetplatform/build/FS/SDK UNKNOWN. Future use limited to a fresh documentary task and independent review.

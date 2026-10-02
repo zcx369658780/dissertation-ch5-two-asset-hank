@@ -1,0 +1,117 @@
+{
+  "province_index": 24,
+  "province": "\u4e91\u5357",
+  "checkpoint": 12,
+  "updates_completed": 12,
+  "value_sha256": "86D5E4B867CBDD659B7D1F15A3422E3EA7753A0D894ECAB36239183B09E8B6D1",
+  "policy_identity_sha256": "4599AA5D99D7E045D9DB2DD0297D7F3D537CCF6472A4F4AD0FC855B7ED0362B2",
+  "q_identity": {
+    "data": "4DD07C059A067848F82E459DFE43340FE1F19F69D8E8EE580A7C6B3CAAB08B9D",
+    "indices": "337087D63933CAAE5EB46416DD9F045AABD971654EA5D8BAFEC606FD43B45A8A",
+    "indptr": "7B1DDD327D77C9F2F0BCC95739D9C08BDABCD9BD74A6FFB5FA3EFB5A206BB54D"
+  },
+  "checkpoint_identity_sha256": "A3F61229F3EDEE908D08C149ECA12377D241FAB6E601FECCB580E0A7589E104D",
+  "B_same_value": 9.858225347159078e-13,
+  "D_value_change": 9.871179429410404e-10,
+  "primary_convergence_pass": true,
+  "d2_status": "PASS",
+  "d2_receipt": {
+    "status": "PASS",
+    "checks": {
+      "minimum_offdiagonal_nonnegative": true,
+      "diagonal_construction_error_exact_zero": true,
+      "q_one_within_prospective_bound": true,
+      "b_coordinate_within_prospective_bound": true,
+      "a_coordinate_within_prospective_bound": true,
+      "zero_tolerance_closed_faces_feasible": true,
+      "zero_outward_face_count": true,
+      "zero_outward_face_amount": true
+    },
+    "minimum_offdiagonal": 2.8328932375887577e-05,
+    "diagonal_construction_error": 0.0,
+    "max_abs_q_one": 1.4988010832439613e-15,
+    "arithmetic_tolerance": 2.6663106534000116e-14,
+    "coordinate_action": {
+      "fixed_pre_outcome_max_row_terms": 4,
+      "gamma_n": 8.88178419700126e-16,
+      "b": {
+        "max_abs_error": 1.4210854715202004e-14,
+        "max_bound": 8.040382220116662,
+        "violation_count": 0,
+        "first_violation_flat_f": null,
+        "passes": true,
+        "error_field_sha256": "68771759E92A72DF57DFEF3C2A9F3D055C354A8929FC5A831DBDDDEAD2868D6B",
+        "bound_field_sha256": "35C7169B1A9FDF45DA7757D4DA54249D575470450056E1F9826655C9DF5363FF"
+      },
+      "a": {
+        "max_abs_error": 1.9984014443252818e-14,
+        "max_bound": 1.830652796821191e-13,
+        "violation_count": 0,
+        "first_violation_flat_f": null,
+        "passes": true,
+        "error_field_sha256": "B6D6C84DB57FDD1D095EC32EA9A1B0FC5EA86C363EB1738589A1D81A2BC58B4A",
+        "bound_field_sha256": "A85ED3C89736E98B01F3C36084AC7463FA94EC814628E693BE7C42965CE31F4C"
+      }
+    },
+    "closed_face_summaries": [
+      {
+        "axis": "b",
+        "side": "lower",
+        "boundary_kind": "economic_lower_bound",
+        "inward_count": 20,
+        "tangent_count": 20,
+        "outward_count": 0,
+        "max_outward": 0.0
+      },
+      {
+        "axis": "b",
+        "side": "upper",
+        "boundary_kind": "artificial_upper_state_constraint",
+        "inward_count": 28,
+        "tangent_count": 12,
+        "outward_count": 0,
+        "max_outward": 0.0
+      },
+      {
+        "axis": "a",
+        "side": "lower",
+        "boundary_kind": "economic_lower_bound",
+        "inward_count": 40,
+        "tangent_count": 0,
+        "outward_count": 0,
+        "max_outward": 0.0
+      },
+      {
+        "axis": "a",
+        "side": "upper",
+        "boundary_kind": "artificial_upper_state_constraint",
+        "inward_count": 0,
+        "tangent_count": 40,
+        "outward_count": 0,
+        "max_outward": 0.0
+      }
+    ],
+    "q_identity": {
+      "data": "4DD07C059A067848F82E459DFE43340FE1F19F69D8E8EE580A7C6B3CAAB08B9D",
+      "indices": "337087D63933CAAE5EB46416DD9F045AABD971654EA5D8BAFEC606FD43B45A8A",
+      "indptr": "7B1DDD327D77C9F2F0BCC95739D9C08BDABCD9BD74A6FFB5FA3EFB5A206BB54D"
+    },
+    "q_artifact": {
+      "path": "q_generator.npz",
+      "bytes": 24784,
+      "sha256": "E75589DC20B5BA314303BCBDFCE7148768D7F7A662382583F4A12C8DFF4ADB19"
+    }
+  },
+  "selector_root_ledger": {
+    "selector_evaluations": 10400,
+    "scalar_root_invocations": 4473,
+    "interior_z_root_invocations": 1007,
+    "interior_a_switching_root_invocations": 0,
+    "joint_switching_root_invocations": 0
+  },
+  "convergence_thresholds": {
+    "B": 1e-08,
+    "D": 1e-07
+  },
+  "disposition": "HJB_CONVERGED__NO_FURTHER_UPDATE"
+}

@@ -1,0 +1,7 @@
+# Current Task
+Status: CLOSED__WORK_ACCEPTED_K1B_MIDDLE_SPEC__WORK_LONG_CONTEXT_HANDOFF.
+Date: 2026-09-30 Asia/Shanghai.
+Work verdict ACCEPT__REPAIRED_K1B_MIDDLE_STAGE_CALLSITE_SPECIFICATION_ONLY in EVIDENCE/ch5_annual_k1b_middle_stage_spec_20260930/{independent_work_review.md,work_postchange_readback.json}. Original ledger timing docREJECT preserved. Previous array engineering independentlyACCEPTONLY, sole30PASS/exit0 process includingold16 consumed, zero remaining. All prior3tests/helper24PASS consumed.
+No active Builder task or execution authority. Designated Builder01a0e046-973a-7bb1-b071-0305ebe541cf completed27turns, below30; same app project local-0758adfaed355d5be608096cdf92a3a2. Work chooses long-context handoff perAGENTS, not30record claim. NextWork: read five state files then currentroot work_handoff.md/closure_receipt.json; verify identities; automatically issue exact leaf-contract readonly task, then bounded reviewed engineering if permitted. No new task sheet in this handoff.
+Only D:\ProjectTemp\c5k1bturn56, no deep-learning-hank/Zotero repository access. Preserve dirty/untracked, HEAD75cee92b1ad9e5cb6fc069bca892213838ffdddc/HEAD:src00682b2e1a7ba23665f6e16f6acf48ad35874883. No tests/science/model/actualdata/auth-success/matrix/consumer/import/probe/download/Git mutation authorized.
+C9PAUSED; bothattempts consumed; ObjectiveA RETAINED; historicalCALL_LEDGER_UNRESOLVED; price_verifiedFalse/current_price_methodologically_attributed/releaseUNKNOWN; model_activationFalse; ResultseligibilityFALSE. No settled Owner question or budgetreset.

@@ -1,0 +1,7 @@
+# Current Task
+Status: PAUSED__OWNER_CHATGPT_RESTART__NO_EXECUTION.
+2026-09-30 Asia/Shanghai. Owner explicitly requested pause. Saved progress/identities/budgets: EVIDENCE/ch5_observed_annual_data_only_entry_engineering_20260930/owner_pause_record.json.
+Prior issued task preserved as issued_task.md, SHA F750B9FB280DEA6A8A7629B3D623ED2B2047ED2B7FE65A10859FCBD92E7422BD. Current3candidate files are untested drafts, NOTACCEPTED. Pending source-byte/cache/UNKNOWN ledger static corrections need review, no presumption completed.
+Builder01a0f23a-6b7f-7352-babd-52f47e651e7b confirmed pause and is stopping helpers. New synthetic budget1: launched0/remaining1. New realdata budget1: launched0/remaining1. All old consumed budgets unchanged; no reset. No actualscience/model/matrix/auth/conversion launch. Existing backups/evidence/dirty/untracked preserved, no Git mutations.
+Only D:\ProjectTemp\c5k1bturn56; forbidden deep-learning-hank/Zoterorepository files. C9PAUSED,ObjectiveARETAINED,CALL_LEDGER_UNRESOLVED,oldattemptsCONSUMED,price_verifiedFalse,model_activationFalse,ResultsFALSE.
+No source/test/runtime/task successor until Owner explicitly resumes. Resume with readonly pause/currenttask/hash/projectmembership check; then close static issues and newtaskauthority, sole unspentsyntheticprocess and independentACCEPT before realdata. Restart never resets budgets.

@@ -1,0 +1,140 @@
+{
+  "status": "PASS",
+  "checkpoint": 12,
+  "checks": {
+    "arrays_finite": true,
+    "stationarity_inf_within_bound": true,
+    "normwise_backward_ratio_within_gamma_864": true,
+    "residual_sum_within_global_source_bound": true,
+    "q_one_dot_p_within_global_source_bound": true,
+    "source_identity_discrepancy_within_bound": true,
+    "probability_mass_normalized": true,
+    "density_volume_normalized": true,
+    "closed_support_strictly_positive": true,
+    "transient_support_bitwise_positive_zero": true,
+    "full_mass_nonnegative": true,
+    "minimum_mass_within_allowance": true,
+    "total_negative_mass_within_allowance": true,
+    "full_space_800x800_gesvd_calls_zero": true,
+    "no_clipping": true,
+    "no_retry": true
+  },
+  "orientation_and_normalization": {
+    "smallest_restricted_right_singular_vector_only": true,
+    "orientation_calls": 1,
+    "global_sign_reversed": true,
+    "raw_math_fsum": -3.704248669732854,
+    "sum_abs_v": 3.704248669732854,
+    "tau_sum_local_dimension": 3.2900337296596466e-14,
+    "strict_sum_separation": true,
+    "oriented_math_fsum": 3.704248669732854,
+    "normalization_calls": 1,
+    "minimum_p_closed": 0.00497461477949171,
+    "maximum_p_closed": 0.19826318773059515,
+    "p_closed_strictly_positive": true,
+    "transient_positive_zero_bit_pattern_count": 760,
+    "transient_count": 760,
+    "p_closed_sha256": "A4C60E2890C736410AF5513AD09082DF17EA9D9DE78C6878A66AEC39A6DF564F",
+    "p_full_sha256": "772794F1C5AC9E3BF3D9540BC5AABBA3281606D20E0B1D1FB67E2A42EF542FE9"
+  },
+  "restricted_operator": {
+    "status": "PASS",
+    "checks": {
+      "full_q_shape_800x800": true,
+      "full_q_finite": true,
+      "q_cc_shape_matches_closed_class": true,
+      "q_cc_finite": true,
+      "q_cc_offdiagonals_nonnegative": true,
+      "no_positive_closed_to_transient_outflow": true,
+      "q_cc_row_conservation_within_d2_bound": true,
+      "full_q_row_conservation_within_d2_bound": true
+    },
+    "q_cc_shape": [
+      40,
+      40
+    ],
+    "q_cc_nnz": 118,
+    "q_cc_identity": {
+      "data": "742CB0F63A2533C6F3806B86E49101858FEFF4882564D926E86432A0D4E5D575",
+      "indices": "924A0E5F61DB02EADFF83F9A04D971ABF48ECFD4E4FC614BB8AD80323AAEFE6A",
+      "indptr": "448DCEC2AF9285392AD4B5AEF3B65629C3FE00E096A33348D271D43456BD3436"
+    },
+    "q_cc_minimum_offdiagonal": 0.3333333333333333,
+    "closed_to_transient_positive_count": 0,
+    "closed_to_transient_positive_rate_sum": 0.0,
+    "q_cc_maximum_absolute_stable_row_sum": 6.106226635438361e-16,
+    "q_full_maximum_absolute_stable_row_sum": 1.4988010832439613e-15,
+    "accepted_d2_arithmetic_bound": 2.7727779629379207e-14
+  },
+  "restricted_rank_nullity": {
+    "status": "PASS",
+    "checks": {
+      "no_warnings": true,
+      "local_rank_nullity_m_minus_1_1": true,
+      "inherited_rank_nullity_m_minus_1_1": true
+    },
+    "solver": "scipy.linalg.svd",
+    "lapack_driver": "gesvd",
+    "full_matrices": true,
+    "check_finite": true,
+    "restricted_dimension": 40,
+    "singular_value_count": 40,
+    "singular_values_sha256": "3519FAC46A183C4A2D827C4FD663E1D85630A8C228E41391525A555928A7AFEE",
+    "sigma_max": 16.7831550884395,
+    "second_smallest": 0.16299439093099058,
+    "smallest": 3.6002087637195732e-16,
+    "local_dimension_threshold_view": {
+      "dimension_in_gamma": 40,
+      "gamma_count": 104,
+      "sigma_max": 16.7831550884395,
+      "tau_rank": 3.8756734026484904e-13,
+      "numerical_rank": 39,
+      "numerical_nullity": 1,
+      "second_smallest": 0.16299439093099058,
+      "smallest": 3.6002087637195732e-16
+    },
+    "inherited_full_space_dimension_threshold_view": {
+      "dimension_in_gamma": 800,
+      "gamma_count": 864,
+      "sigma_max": 16.7831550884395,
+      "tau_rank": 3.219790211431597e-12,
+      "numerical_rank": 39,
+      "numerical_nullity": 1,
+      "second_smallest": 0.16299439093099058,
+      "smallest": 3.6002087637195732e-16
+    },
+    "warnings": [],
+    "full_space_800x800_gesvd_calls": 0
+  },
+  "stationarity": {
+    "residual_inf": 2.3505503099485736e-16,
+    "tau_stationarity": 1.1662002240954357e-12,
+    "normwise_backward_ratio": 3.8667883231498035e-17,
+    "gamma_864": 1.9184653865526386e-13,
+    "math_fsum_residual": 2.3635607360183997e-17,
+    "dot_q_one_p": 1.8752143489286693e-17,
+    "source_identity_discrepancy": 4.883463870897304e-18,
+    "source_bound": 9.329601792763487e-10
+  },
+  "normalization": {
+    "math_fsum_p": 1.0,
+    "omega_times_math_fsum_g": 1.0,
+    "probability_mass_bound": 1.776356839400566e-13,
+    "grouped_density_bound": 1.7807977314990681e-13
+  },
+  "nonnegativity": {
+    "minimum_p": 0.0,
+    "negative_entry_count": 0,
+    "total_negative_mass": 0.0,
+    "tau_nonnegative": 1.9184653865526386e-13,
+    "total_negative_mass_bound": 1.5347723092421108e-10
+  },
+  "arrays_artifact": {
+    "path": "stationary_mass_arrays.npz",
+    "bytes": 5253,
+    "sha256": "A484AFB93096A737053D93118B629D08DB8BA7866BA12D4AAFCC3AD35E3D331E",
+    "p_sha256": "772794F1C5AC9E3BF3D9540BC5AABBA3281606D20E0B1D1FB67E2A42EF542FE9",
+    "g_sha256": "CC9198DBF0BDDAF2C87EEB818C494B25EE771AB2C94C6A2B968A53988C67D38C",
+    "residual_sha256": "5C2626CCD107A26E2B35DF7C505B0474A339BE6AEFC5C71E279543B2E8F67280"
+  }
+}

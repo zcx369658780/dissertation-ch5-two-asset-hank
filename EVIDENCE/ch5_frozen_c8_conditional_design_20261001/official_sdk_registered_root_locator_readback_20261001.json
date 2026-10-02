@@ -1,0 +1,46 @@
+{
+  "task": "TASK46",
+  "date": "2026-10-01",
+  "status": "STOP_QUERY_EXCEPTION",
+  "owner_proposal_sha256": "53122FA7E6049DB107DC053449ED5A8FD15D3BBC4A6FCED1B96D407FCABA931B",
+  "command": "Get-ItemPropertyValue -LiteralPath 'Registry::HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows Kits\\Installed Roots' -Name KitsRoot10",
+  "attempts": 1,
+  "budget": {
+    "authorized": 1,
+    "consumed": 1,
+    "remaining": 0,
+    "retries": 0,
+    "unused_retired": 0
+  },
+  "value": null,
+  "value_type": "UNKNOWN",
+  "error_category": "ObjectNotFound",
+  "hresult": -2146233087,
+  "wrapper_process_exit": 0,
+  "cmdlet_status": "EXCEPTION; wrapper exit0 does not imply query success",
+  "provider_internal_reads": "NOT_COUNTED_NOT_VERIFIED",
+  "registered_sdk_locator": "UNKNOWN",
+  "SDK_installation": "NOT_ESTABLISHED; ObjectNotFound does not establish absence of SDK",
+  "follow_returned_path": false,
+  "SDK_file_checks_or_reads": 0,
+  "other_registry_queries": 0,
+  "pre_helpers": [
+    "resume_effect_plan: precise scope consistent",
+    "resume_budget_review: budget/delegation consistent"
+  ],
+  "post_review": "resume_input_plan: receipt consistent; one exception/consumed1/rem0/retry0, wrapper0 not success; SDK installation unestablished; no registry or path access in review",
+  "work_verdict": "ACCEPT__FAILURE_ACCOUNTING_ONLY; TASK46_STOP_NO_RETRY",
+  "old_budgets": "oldquery2/rem0;HTTP3,2,1,2,2,1rem0;protectedbyte7/rem0;actualdatafixturearchiveadminV1V2each1/rem0;NO_RESET",
+  "new_calls": {
+    "administrative_registry_query_attempts": 1,
+    "HTTP": 0,
+    "protected_byte_reads": 0,
+    "native_api_calls": 0,
+    "test": 0,
+    "science": 0,
+    "model": 0,
+    "research_runtime": 0
+  },
+  "preserved": "C9PAUSED/fullObjectiveA/16UNRESOLVED/windowUNACCEPTED/CALL_LEDGER_UNRESOLVED/priceFalse/releaseUNKNOWN/baseyearNone/modelFalse/ResultsFALSE; historicalC8sciencepreserved",
+  "next_gate": "receipt review only; no retry/alternative registry view or SDK path check"
+}

@@ -1,0 +1,139 @@
+"""Inactive observed-GDP wedge candidate; no data loading or model integration."""
+
+from dataclasses import dataclass
+from fractions import Fraction
+import math
+import re
+
+
+@dataclass(frozen=True)
+class GDPRecord:
+    province_index: int
+    observation_year: int
+    gdp_raw_100m_yuan: float
+    population_raw_10k_persons: float
+
+
+@dataclass(frozen=True)
+class ProvenanceBinding:
+    input_kind: str
+    source_identifier: str
+    source_sha256: str
+    population_basis: str
+    price_basis: str
+    price_verified: bool
+    price_base_year: int | None = None
+
+
+@dataclass(frozen=True)
+class AnnualLaborWedge:
+    target_year: int
+    observation_year: int
+    province_order: tuple[int, ...]
+    per_capita_gdp: tuple[float, ...]
+    coefficients: tuple[tuple[float, ...], ...]
+    amplitude: float
+    binding: ProvenanceBinding
+
+
+def _integer(value, lower, upper=None):
+    if type(value) is not int or value < lower or (upper is not None and value > upper):
+        raise ValueError("invalid integer identifier or year")
+    return value
+
+
+def _positive_float(value):
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise ValueError("numeric input must be an int or float, excluding bool")
+    try:
+        result = float(value)
+    except (OverflowError, ValueError) as exc:
+        raise ValueError("unrepresentable numeric input") from exc
+    if not math.isfinite(result) or result <= 0:
+        raise ValueError("numeric input must be finite and positive")
+    return result
+
+
+def _binding_snapshot(binding):
+    if type(binding) is not ProvenanceBinding:
+        raise ValueError("explicit provenance binding required")
+    for value in (binding.input_kind, binding.population_basis, binding.price_basis):
+        if type(value) is not str:
+            raise ValueError("provenance enum fields must be built-in strings")
+    if type(binding.source_identifier) is not str or not binding.source_identifier.strip():
+        raise ValueError("source identifier required")
+    if type(binding.source_sha256) is not str or re.fullmatch(r"[0-9a-fA-F]{64}", binding.source_sha256) is None:
+        raise ValueError("valid SHA-256 required")
+    if type(binding.price_verified) is not bool or binding.population_basis != "year_end_resident":
+        raise ValueError("invalid verification flag or population basis")
+    if binding.input_kind == "synthetic":
+        if binding.price_basis != "synthetic_fixture" or binding.price_verified or binding.price_base_year is not None:
+            raise ValueError("synthetic provenance must remain a fixture")
+    elif binding.input_kind == "observed":
+        if not binding.price_verified:
+            raise ValueError("observed price provenance unverified")
+        if binding.price_basis == "current_price":
+            if binding.price_base_year is not None:
+                raise ValueError("current prices have no base year")
+        elif binding.price_basis == "constant_price":
+            _integer(binding.price_base_year, 1, 9999)
+        else:
+            raise ValueError("unknown observed price basis")
+    else:
+        raise ValueError("unknown input kind")
+    return ProvenanceBinding(**{name: getattr(binding, name) for name in binding.__dataclass_fields__})
+
+
+def build_annual_labor_wedge(records, target_year, *, province_order, binding, amplitude=0.3):
+    """Return immutable destination-row/origin-column coefficients for year t-1."""
+    _integer(target_year, 2, 9999)
+    amplitude = _positive_float(amplitude)
+    if amplitude >= 1:
+        raise ValueError("amplitude must be strictly between zero and one")
+    binding = _binding_snapshot(binding)
+    try:
+        order, records = tuple(province_order), tuple(records)
+    except TypeError as exc:
+        raise ValueError("explicit record and province containers required") from exc
+    if not order:
+        raise ValueError("province order must be nonempty")
+    for province in order:
+        _integer(province, 1)
+    if len(set(order)) != len(order):
+        raise ValueError("duplicate province axis")
+    values = {}
+    for record in records:
+        if type(record) is not GDPRecord:
+            raise ValueError("explicit GDP record required")
+        province = _integer(record.province_index, 1)
+        _integer(record.observation_year, 1, 9999)
+        if record.observation_year != target_year - 1:
+            raise ValueError("observation must be exactly one calendar year lagged")
+        if province not in order or province in values:
+            raise ValueError("extra or duplicate province record")
+        gdp = _positive_float(record.gdp_raw_100m_yuan)
+        population = _positive_float(record.population_raw_10k_persons)
+        try:
+            q = float(10000 * Fraction(gdp) / Fraction(population))
+        except OverflowError as exc:
+            raise ValueError("per-capita GDP overflow") from exc
+        values[province] = _positive_float(q)
+    if set(values) != set(order):
+        raise ValueError("missing province record")
+    q = tuple(values[province] for province in order)
+    rows = []
+    for destination in q:
+        row = []
+        for origin in q:
+            ratio = min(origin, destination) / max(origin, destination)
+            difference = (1 - ratio) / (1 + ratio)
+            if origin < destination:
+                difference = -difference
+            coefficient = 1 + amplitude * difference
+            if not math.isfinite(coefficient) or not 1 - amplitude < coefficient < 1 + amplitude:
+                raise ValueError("coefficient is nonfinite or reaches an interval endpoint")
+            if (origin < destination and not coefficient < 1) or (origin > destination and not coefficient > 1):
+                raise ValueError("coefficient rounding collapses the strict income direction")
+            row.append(coefficient)
+        rows.append(tuple(row))
+    return AnnualLaborWedge(target_year, target_year - 1, order, q, tuple(rows), amplitude, binding)

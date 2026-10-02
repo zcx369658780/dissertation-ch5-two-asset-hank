@@ -1,0 +1,19 @@
+# Builder document-only report
+
+2026-10-01 Asia/Shanghai；本会话completed8（既有completed6+关机确认7，本条8；未全历史重数或换会话）。DOCUMENT_ONLY_CANDIDATE_PENDING_INDEPENDENT_WORK_REVIEW。
+
+唯一树D:\ProjectTemp\c5k1bturn56；任务SHA26B5BB2D1E99BB21E5E591F1CA5F364E907313D5610907FF1527903C3AC475A1。新增4文件：consumer_readiness.md、next_boundary_packet.md、builder_report.md、builder_receipt.json；原4目标均未占用，既有evidence目录未新增科学root。Work CURRENT/TASK、source/tests/raw/calibration/manuscript及旧证据未编辑；无Git mutation/commit。
+
+readiness区分已接受carrier/array/common-spy/middle工程、实际data-only证据与新observed路线原消费者NOT_EXECUTED；明确退出child的CSV不保留seal/身份。接口表只引用指定文档，未建立public schema、内部原式、input provenance如实UNKNOWN。31全/短mapping及详细hash放receipt，正文精确引用。
+
+下一门仅建议Work另行签发精确源契约文档：原API/公式/import/input边界先闭合，再考虑inactive桥接工程；新in-process准备与consumer尝试分账、ceilings均提案、Owner科学/保护决定靠后且具体，不自签发或激活。
+
+两助手均只读：saved_evidence提取accepted interface/axis/fields/order及UNKNOWN；governance核预算/退出对象生命周期/ObjectiveA及行政证据。两者未执行数值/Python/import/AST/tests/Git/probes、不写文件、不自ACCEPT。主代理独占4文档和交付。
+
+初稿将capital tolerance/hash误列UNKNOWN；Work指定source_contracts的CONSERVATION_TOLERANCE=1e-12，并新增只读allowlist work_field_hash_binding.md。已核精确补充并修正为已建立F-order/little-endian float64/uppercaseSHA/no shape tag；不再重复建议leaf读取。其余UNKNOWN不补猜。历史scope NONCOMPLIANT与排除内容保留。本轮补充授权、源文件身份与全部文档hash存receipt。
+
+行政postcheck fixed68/68、candidate3/3及HEAD/src匹配；仅SHA，未读source/numeric内容。HEAD75cee92b1ad9e5cb6fc069bca892213838ffdddc，HEAD:src00682b2e1a7ba23665f6e16f6acf48ad35874883；详细身份放receipt。原context前缀由已接受旧receipt与整文件hash覆盖，未重读源码。
+
+本轮数值/科学/模型/消费者/test/import/AST/probes/auth/conversion/helper/matrix/CSVnumericparser/reconstruction次数均0，预算均0；shell文档读与行政hash仅在允许范围。原actual1已消费remaining0，旧engineering remaining0，不重置预算。
+
+C9PAUSED、ObjectiveARETAINED/windowUNACCEPTED、oldattemptsCONSUMED/historicalCALL_LEDGER_UNRESOLVED、current_price_methodologically_attributed/price_verifiedFalse/releaseUNKNOWN/baseyearNone、model_activationFalse/ResultsFALSE、历史NONCOMPLIANT保留。原production blocks未改；无科学后继、矩阵数据复制或科学writer。交付4文档后停待Work独立ACCEPT/REJECT。

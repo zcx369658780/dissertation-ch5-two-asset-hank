@@ -1,0 +1,20 @@
+# V2 inactive archive carrier construction integrity
+
+Work TASK24 / Builder dialogue25, 2026-10-01. BUILDER_COMPLETE__STOP_WORK_INDEPENDENT_REVIEW; no self-acceptance.
+
+V1 remains REJECTED for the full public interface, with limited parser-factory/invented11-test evidence accepted. Its six artifacts and spent V1 test budget were not modified or reused. This task created only the six declared V2 code/evidence files under the existing evidence directory.
+
+Both supported V2 entry points now receive only raw_entries, expected_binding and declared provenance. ArchiveInputCarrier derives all four fields through one pure validation/extraction routine; parse_archive_inputs delegates to that constructor. Caller-supplied ct/household_lt/at/at_tax overrides are unsupported. Normal repeat initialization rejects before state changes. Frozen slots, owned tuples/bytes and fresh output mappings provide ordinary defensive ownership; arbitrary same-privilege object-level bypass resistance is not claimed.
+
+Exactly31 unique literal identities, original supplied order, sizes and SHA bindings are checked for every receipt before JSON parsing. Upper/lower/mixed hexadecimal digest characters canonicalize to lowercase only; paths, sizes, order, bytes and values are not rebound. Strict JSON/type/nonfinite/duplicate/missing/overflow/nonzero-underflow checks remain. Parsed builtin int precision and float representation, including signed zero, are retained. as_fields exposes only ct/lt/at/at_tax; no extra keys, bt or full original constructor is fabricated.
+
+Three separate helpers authored V2 carrier, authored V2 tests and independently read/reviewed the new code plus pinned contract/review. No remaining material defect was reported before the sole invocation. Reviewer display truncation was completed by a bounded same-pin text read; no locator/hash mismatch occurred. No agent launched a test or scientific process.
+
+New budget ARCHIVE_CARRIER_CONSTRUCTION_INTEGRITY_INVENTED_V2: one Python 3.11 process, -B -E -S, exact V2 script entry with SafeResult, PYTHONDONTWRITEBYTECODE=1. Result:16 unittest methods PASS, exit0, attempts1/max1, remaining0, post-invocation repairs0/retests0. Invented31 tests retain prior essential behaviours and cover both entry points, field-override rejection, signed-zero/type/int preservation, digest encoding and repeat initialization. FAIL/ERROR output uses static content; stdout is empty and stderr contains the unittest summary. Administrative capture stays within Objective A.
+
+Tested carrier SHA256 CB2BE22D6D87314FB7A406CA6787198987E6E196C298305C11993C61DAF12C27
+Tested test SHA256 B5A5B00D20CFC653E003365F835D5FD1E2C288A8723E71C036B644E3A8B341A1
+
+79 input/task/fixed72 checks and four startup hashes matched before work. Pre-test/post-test85 checks also included both V2 code files; all matched. V1 code/test hashes were freshly checked; other four V1 pins are recorded by the pinned Work review without reopening their artifacts. Targeted backup was hash-only, not decoded. HEAD75cee92b1ad9e5cb6fc069bca892213838ffdddc / HEAD:src00682b2e1a7ba23665f6e16f6acf48ad35874883 matched; Git status stayed equal at its reported granularity. No original model source/test/Git edits.
+
+ARCHIVE_DERIVED_NEW_OBJECT is caller-classified new representation only. Real archive origin, historical loaded-source/call-stage/runtime identity, units/calendar/canonical names, original live seal/lifetime, observed master, protection and final-chain readiness remain UNKNOWN or unrestored. No actual data, NPZ, original scientific source body, model/consumer/observed preparation or protection experiment ran. Actualdata/oldfixture/archiveadmin/V1 each remain consumed1/rem0; historical C8 science and CALL_LEDGER_UNRESOLVED preserved. Record18/21 REJECT, TASK22 STOP and TASK23 full-interface REJECT retained. C9PAUSED/ObjectiveARETAINED/16UNRESOLVED/windowUNACCEPTED/A3noimplementation/priceFalse/releaseUNKNOWN/baseyearNone/modelFalse/ResultsFALSE. No scientific root/writer or successor authority follows.

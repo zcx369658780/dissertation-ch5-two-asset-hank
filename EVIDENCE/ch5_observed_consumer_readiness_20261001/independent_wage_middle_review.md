@@ -1,0 +1,7 @@
+# Independent Work wage/middle review
+2026-10-01 Asia/Shanghai.
+Verdict: ACCEPT__WAGE_MIDDLE_STATIC_CONTRACT_FACTS_ONLY.
+
+Work read supplement and receipt/ranges, independently rehashed68fixed+3candidate identities, document/task/receipt and HEAD/src; all match. Receipt SHA D93D9BD7B973635FD96F778AA7D8AB78F556F8686919B1E31A1773F4355749D0. Static facts establish original wage destination tau vs original labor origin tau without changing either rule, existing synthetic middle dimension n and validation/run/attempt ordering. Neither source was executed. Transitive import safety and real canonical31 compatibility remain UNKNOWN/NOT_EXECUTED.
+
+Independent gate_review identified the future suggestion to test original wage formula as conflicting with the narrow harness-only next scope. That future suggestion is EXCLUDED from acceptance and superseded by Work choice: new31-size invented fixture may test only exact argument/master forwarding, sequence, accounting and fail-closed suppression; no original consumers installed or called, no mirror wage/labor formula. This is proposal disposition, not a change to accepted original economic formulas. Existing synthetic seam is sufficient; no extra productionbridge authorized. All new calls0, prior actual/engineering remaining0, observed production blocks unchanged. Original model/price/ledger/ObjectiveA/C9/Results protections remain unchanged. Next eligible task creates one targeted synthetic test file and a separately bounded single new engineering process; no reuse of consumed budgets.

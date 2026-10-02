@@ -1,0 +1,6 @@
+# Independent Work record18 review
+2026-10-01. REJECT__TASK18_SOURCE_OUTPUT_SCOPE_COMPLIANCE. Preserve both artifacts and first deviation; no source repair, reread or retry.
+Receipt2DADF8B69E89C8C7DF9797EEC69913787BD5A336942E3EF63FB43E178281F494 matches. Candidate reports prohibited scalar-expression output and extra definition-range lines; NONCOMPLIANT/excluded, not new contract evidence. No model/science/runtime or source/test/Git mutation evidenced.
+MD says wedge does not equal raw score despite numerical relations not evaluated. Do not carry a numerical inequality. Distinct source roles and original transform remain; numeric equality/inequality NOT_EVALUATED.
+Root independent compliant helpers separately established constant expression kinds and migration-wedge transform roles without scalar values. Curated safe subset and accepted records14-17 in work_compliant_design_facts.json SHA1369F4E9CCA74475C35AFBB239DE31665264E77DD866BB3AE663475836044BD1; sole new fact input for docs consolidation, no rehabilitation of rejected task or runtime grant.
+Allcurrentcalls/budgets0; prioractual1/fixture1consumed/rem0; historicalC8 retained; C9PAUSED/ObjectiveARETAINED/windowUNACCEPTED/16unresolved/oldCALL_LEDGER_UNRESOLVED/priceFalse/modelFalse/ResultsFALSE. Next DOCS_ONLY, source-body/data/import/tests/protection work closed.

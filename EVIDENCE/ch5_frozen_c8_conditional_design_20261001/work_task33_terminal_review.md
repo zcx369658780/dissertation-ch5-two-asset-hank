@@ -1,0 +1,5 @@
+# TASK33 Work 终局
+STOP__FIRST_HELPER_COMMAND_START_FAILURE。原回执SHA AE3418E3935986167B60F405C1B9B38EB81A3C2CC07B070DF6ABAF1722D4E18E；原任务task33_issued_archive.md SHACF4706CB31A1AA5C2903E6C6F553686B69E460C75DF3B60FEF0EA31D8A598370。
+助手cwd误拼ch5k1bturn56，命令未启动，未读取/核hash。另一助手被中断；无完成报告。Builder输入/HEADsrc postchecks仍NOT_CHECKED_AFTER_TERMINAL_FAILURE，不能改成成功。
+仅原终态回执存在，两正文不存在，主Work已fresh核实存在状态/回执SHA。TASK33不整体ACCEPT，不重试原助手/旧获取，科学预算未重置。
+按AGENTS允许rejection后限定repair/design权限，主Work独立签发TASK34文档修正，主Work直接读取两页，两个只读助手独立复核新文档；不转移为旧任务成功，不覆盖失败证据。

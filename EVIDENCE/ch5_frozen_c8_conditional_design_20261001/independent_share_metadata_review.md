@@ -1,0 +1,21 @@
+# 固定 C8 冻结份额归档元数据独立验收（record20）
+
+Date: 2026-10-01 (Asia/Shanghai)
+Verdict: ACCEPT__FIXED_C8_SHARE_ARCHIVE_DECLARED_METADATA_ONLY
+
+仅接受指定归档的ZIP/NPY声明元数据事实与此次有界行政检查，不接受S数值/字段哈希/业务轴/单位/年份/完整省名绑定、运行兼容性、对象寿命或Objective A保护闭合。
+
+最终share_archive_metadata.json SHA256=121AF0FC09B4A53F920445462DCD32B1241A17749A3A107F0B7D3B27875C22F4；builder_share_metadata_receipt.json SHA256=D5802F581147FE0F8CC8ADDBEF49E413B8E04830FF623CB9F5C1822A691F8280。Work核对最终两产物、task pin、固定72身份及HEAD/src，全部匹配。HEAD=75cee92b1ad9e5cb6fc069bca892213838ffdddc；HEAD:src=00682b2e1a7ba23665f6e16f6acf48ad35874883。原dirty/untracked保留，源码/测试/Git未变。
+
+Work读取record20工具轨迹，核对唯一归档检查命令exec-fe39465d-2282-4f79-bcdd-6ef615931993：同一只读FileStream prehash→ZipArchive限定header读取→posthash，两个hash匹配E6B5D428C1070C6F9F6D9C450F7CDB0D4C2C54F0658074C9C75E60E8FDB743DB；exit0。限制成员数、header/累计读取字节及维数，受限literal解析无eval/pickle/NumPy/payload读取，失败路径不重试。未重新打开或解析原归档；本次Work只做文档/轨迹与字节hash检查。
+
+5成员：raw_ra0_turn7.npy、zscore_by_destination.npy、rah_turn8_by_origin.npy声明shape[31]；foreign_conditional_shares_destination_origin.npy及portfolio_shares_destination_origin.npy声明shape[31,31]。均NPY1.0、descr=<f8、fortran_order=false、header118bytes；应用层prefix/header共640bytes。ZIP内部解压缓冲按任务明确允许；未消费/解释/序列化array payload。声明C-order存储不改变原S field-hash的F-order合同，未重算该字段hash。
+
+独立只读助手fixture31_review与gate_review分别审最终元数据证明级别和预算/保护/暂停收据，均无具体缺陷。主Work保留最终裁决权。
+
+唯一行政检查launched1/consumed1/remaining0，repair0/retry0；模型/科学/observed准备/consumer/import/test/protection实施调用0。历史actual1/fixture1均consumed1/rem0；历史C8科学保留，旧C9已消耗/CALL_LEDGER_UNRESOLVED。Record18 REJECT及先前偏离保留排除，未恢复合规性。C9PAUSED、ObjectiveARETAINED、16UNRESOLVED、windowUNACCEPTED、A3无实施、priceFalse/releaseUNKNOWN/baseyearNone/modelFalse/ResultsFALSE不变。
+
+行政注记：Work在Builder终结前尝试读取两产物，当时metadata已发布而receipt尚未发布；该次未作验收、未访问替代路径或重跑归档。收到completed/最终receipt pin后才核对并作本裁决。此注记不改Builder任务终态或预算。
+
+Owner明确要求本次验收后暂停以更新/重启桌面版。关闭当前任务为PAUSED__OWNER_DESKTOP_UPDATE_AFTER_METADATA_ACCEPTANCE；不派新任务、不交接、不运行科学、不重置预算。重启后须Owner明确恢复，沿用option1授权并核对当前凭据，下一门为真实输入重载/units/calendar/canonical绑定及完整callee/import/output保护合同；本次未签发该后继。
+

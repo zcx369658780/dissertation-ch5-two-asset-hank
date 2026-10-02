@@ -1,0 +1,22 @@
+# TASK_CURRENT
+ISSUED__TASK32_TARGET_BOUND_API_CANDIDATE_DOCUMENTARY_COMPARISON
+2026-10-01. Builder verified01a0f67a-6f00-79a3-9b6e-24a75d875068 local / nextdialogue5; no handoff. Sole D:\ProjectTemp\c5k1bturn56. No Zotero repo files/deep-learning-hank/other trees. Preserve dirty/untracked/src/tests/Git/old evidence.
+Owner指定本机Windows11专业版/10.0.26200/build26200/64位+D:NTFS为未执行研究拟定平台，原话“我确认，请继续”。仅文献候选准备；不选择/采用机制，不运行，不新增查询预算。
+Read hash-first same EVIDENCE/ch5_frozen_c8_conditional_design_20261001:
+owner_target_platform_designation_20261001.md SHAB5467EF5BB4649BD8860F0E7E6109E8AB0157A4C56916D0E62E7DCDBBC17DEEA
+passive_platform_metadata_readback.json SHAA7DAEBE493FE3327A09B527974ACEA574579D909F60F2EF096BF5BAE13A240F1
+platform_contract_evidence_requirements.md SHA0FDFAF8D43EE15A910AF4A625272C82873B1BA16FA1582BC62D7B79813ADD09B
+official_platform_contract_text_extract.md SHA307B15D9E4AD07525721912EA3A3F9B00C1018631BDCFCF9BD1B53AE4EC22B10
+official_handle_lifetime_text_supplement.md SHA42F98C29AFA86DD111C0FFE0639244ED309C5887FDC3AA3FC0D1729745335C3A
+official_closehandle_20261001.html SHAB12348AC1EC853B469CE5626A4EFF89825A3E3723C71071105DFE1F3F817F8BF
+official_setfileinformationbyhandle_20261001.html SHAC4F3F396563F5D4ECDA8BB7611402BC6D32F6515250CAD1A6119F4313FED4885
+official_ntcreatefile_20261001.html SHA46F7E2CCAE640E46BCFA3C995C862C802B35C5D641438C689B4365FE701D8440
+Administrative startup AGENTS/CURRENT/SCIENTIFIC_DECISIONS/TASK/REVIEW_GATE text/hash allowed; fresh HEAD/src match75cee92b1ad9e5cb6fc069bca892213838ffdddc/00682b2e1a7ba23665f6e16f6acf48ad35874883. Any locator/pin/commandfailureSTOP no retry/substitute. References not followed.
+WRITE ONLY3NEW exact paths same evidence dir, confirm absent:
+target_platform_api_candidate_comparison.md
+target_platform_document_locator_annex.md
+target_platform_candidate_receipt.json
+First <=1000words table: NtCreateFile+OBJECT_ATTRIBUTES native usermode relative-name candidate vs documented Win32 SetFileInformationByHandle+FILE_DISPOSITION_INFO/CloseHandle fragments; do not invent full Win32 creation chain, relative-root promise, SDKversion/installation, ownership/atomicity/NTFS guarantees. NtClose deprecated not preferred. Distinguish API-name/document version/SDKversion; target now designated does not retroactively edit old UNKNOWN docs. Candidate recommendation is ADVISORY_ONLY and evidence-readiness classification, not adoption. Fiveinterface mappings to existing4operation keys+anchor prerequisite, gaps; all16/window/sixroot remain. Do not compare imaginary capabilities. CloseHandle source metadata/clauses quote narrowly from raw pinned HTML; TASK29draft/receipt not modified or retroactively ACCEPT. Existing batch1 returnedURL gap remains fullprovenance NOT_PASS.
+Second <=500words: no more than3 PRIORITIZED prospective official source locators to close concrete gaps. Extract exact href+1basedHTMLline+sourceSHA from only allowed HTML, preferably CreateFile creation/handle lifetime, identity-query semantics, and SetFileInformation informationclass/structure support when literal link exists. Do not invent URL or follow any link. Preserve raw href and, if relative, lexical absolute resolution against known source requestedURL, label DERIVED_LOCATOR_NOT_FETCHED. If no exact locator, record NOT_LOCATED, do not search newfiles/web. Do not claim these sources will prove wholeObjectiveA. No newHTTP now; no runtime plan/targetpaths/protectedroot recipes.
+Receipt inputs pre/post/newfilehashes/readtrace/2helpers/firstfailure/HEADsrc, Owner designation source, zeroqueries/HTTP/researchcalls, currentbudgetconsumed2/rem0/prior consumed budgets unchanged. MainBuildersolewriter3files; two disjoint readonly helpers max2active: candidate evidence mapper for allowed excerpts/readback+binding; exactlocator extractor for3HTML only; after drafting main checks consistency; Work retains independent acceptance. No helper write/network/query/Git/scope/successor; you are not alone preserve others.
+CIM/DriveInfo/systemqueries budget0, old2 consumed/rem0. HTTP3+2+1 rem0. oldactualdata/fixture/archiveadmin/V1/V2eachconsumed1/rem0. Native/researchruntime/import/AST/compile/test/DLL/experiment/model/science/consumer/realdata/protectedroot budget0. C9PAUSED/ObjectiveAfull/16UNRESOLVED/windowUNACCEPTED/sixrootmissing/CALL_LEDGER_UNRESOLVED/priceFalse/releaseUNKNOWN/baseyearNone/modelFalse/ResultsFALSE. HistoricalC8science retained/currentconditional0. FinishSTOPWorkreview; do notaskOwner/selfaccept/issue successor/execute examples.

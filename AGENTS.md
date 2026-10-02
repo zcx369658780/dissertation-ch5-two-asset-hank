@@ -29,6 +29,15 @@ Use historical reports only for a specific provenance question. Do not recursive
 - Codex does not self-accept high scientific risk changes or create a scientific successor without Work/Owner authority.
 - After reviewing a completed task, Work records ACCEPT/REJECT and issues the next bounded `TASK_CURRENT.md` automatically when no substantive Owner decision is needed. A rejection may lead only to a scoped repair or design task under existing authority; it does not reset consumed calls or authorize a new scientific law.
 
+## 模型分工
+
+- 默认主代理及有限实现：GPT-6.1 Sol / medium。
+- 代码定位、文档读取、常规文档写作：GPT-6 Luna / medium。
+- 代码审查：GPT-6.1 Sol / high。
+- 复杂规划：GPT-6 Astra / high；复杂科研推理或高风险审查按需明确选择 Astra。
+
+这些条款仅规定已获授权代理的模型选择，不新增自动委派要求，也不改变项目原有子代理数量、权限、独立审查门、预算、停止条件或科研/生产保护规则。
+
 ## Execution contract
 
 - `TASK_CURRENT.md` is Codex's only default execution entry.

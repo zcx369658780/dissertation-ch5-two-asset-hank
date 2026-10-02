@@ -1,0 +1,3385 @@
+{
+  "record": 21,
+  "task_status": "ISSUED__FIXED_C8_REAL_CONSUMER_STATIC_EFFECT_CONTRACTS_ONLY",
+  "task_sha256": "67C6D8D1B19E825B7582907E74CE5FB008C0B64F31C6E1D81BC65DBE9CC246C7",
+  "root": "D:\\ProjectTemp\\c5k1bturn56",
+  "method": "Complete-file in-memory text review with bounded lexical projections; no AST/import/eval/compile/source execution/dependency chasing",
+  "rows": [
+    {
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/annual_observed_labor_context.py",
+      "sha256": "0AA27B67030115DEC06F9F7A5F78F0113380ABC857D3F08189982EB90E3D8AFE",
+      "direct_text_review": "COMPLETE_FILE_TEXT_ONLY",
+      "transitive_effect_closure": "UNKNOWN",
+      "runtime_verification": "NOT_AUTHORIZED",
+      "imports": [
+        {
+          "module": "dataclasses",
+          "symbols": [
+            "dataclass",
+            "field"
+          ],
+          "line": 2,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "math",
+          "symbols": [],
+          "line": 3,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "hashlib",
+          "symbols": [],
+          "line": 4,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "importlib.util",
+          "symbols": [],
+          "line": 5,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "json",
+          "symbols": [],
+          "line": 6,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "pathlib",
+          "symbols": [
+            "Path"
+          ],
+          "line": 7,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "sys",
+          "symbols": [],
+          "line": 8,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "types",
+          "symbols": [
+            "MappingProxyType"
+          ],
+          "line": 9,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "types",
+          "symbols": [
+            "ModuleType"
+          ],
+          "line": 412,
+          "trigger_kind": "CALLABLE_INVOCATION"
+        }
+      ],
+      "interfaces": [
+        {
+          "symbol": "_digest",
+          "line": 34,
+          "parameters": [
+            "raw"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_json",
+          "line": 40,
+          "parameters": [
+            "raw"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "unique",
+          "line": 41,
+          "parameters": [
+            "pairs"
+          ],
+          "trigger_kind": "NESTED_CALLBACK_INVOCATION"
+        },
+        {
+          "symbol": "_helper",
+          "line": 51,
+          "parameters": [],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_axis",
+          "line": 66,
+          "parameters": [
+            "axis"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "AnnualContext.__post_init__",
+          "line": 99,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "AnnualContext.validate",
+          "line": 103,
+          "parameters": [
+            "self",
+            "target_year",
+            "province_axis",
+            "source_sha256",
+            "input_kind",
+            "price_basis",
+            "price_verified"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "prepare_synthetic_context",
+          "line": 160,
+          "parameters": [
+            "raw_fixture",
+            "expected_fixture_sha256",
+            "province_axis",
+            "target_year"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_records_to_gdp_records",
+          "line": 199,
+          "parameters": [
+            "raw_records",
+            "province_axis",
+            "observation_year"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_observed_snapshot_metadata",
+          "line": 258,
+          "parameters": [
+            "snapshot"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_validate_observed_snapshot",
+          "line": 265,
+          "parameters": [
+            "snapshot"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "authenticate_observed_binding",
+          "line": 288,
+          "parameters": [
+            "raw_sources",
+            "province_axis"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_prepare_authenticated_observed_context",
+          "line": 376,
+          "parameters": [
+            "snapshot"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "prepare_observed_context",
+          "line": 403,
+          "parameters": [
+            "raw_sources",
+            "_"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_preload_data_only_helper",
+          "line": 408,
+          "parameters": [
+            "raw_helper"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "prepare_observed_data_only_context",
+          "line": 429,
+          "parameters": [
+            "raw_sources",
+            "data_only",
+            "progress"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        }
+      ],
+      "constructors": [
+        {
+          "symbol": "_PreparationSeal",
+          "line": 78,
+          "parameters": [
+            "wedge",
+            "metadata"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        },
+        {
+          "symbol": "AnnualContext",
+          "line": 84,
+          "parameters": [
+            "target_year",
+            "observation_year",
+            "province_axis",
+            "source_sha256",
+            "input_kind",
+            "price_basis",
+            "price_verified",
+            "provenance",
+            "wedge",
+            "phi_destination_origin",
+            "model_activation",
+            "_preparation_token",
+            "_seal"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        },
+        {
+          "symbol": "_ObservedAuthenticationSeal",
+          "line": 237,
+          "parameters": [
+            "owner",
+            "metadata"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        },
+        {
+          "symbol": "AuthenticatedObservedSnapshot",
+          "line": 243,
+          "parameters": [
+            "province_axis",
+            "raw_records",
+            "provenance",
+            "target_year",
+            "observation_year",
+            "information_set",
+            "population_basis",
+            "price_basis",
+            "price_verified",
+            "official_release_date",
+            "model_activation",
+            "_authentication_seal"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        }
+      ],
+      "module_initialization": [
+        {
+          "symbols": [
+            "PINS",
+            "PROVINCE_NAMES",
+            "CANONICAL_AXIS",
+            "_OBSERVED_MANIFEST_IDENTIFIER",
+            "_PREPARED"
+          ],
+          "lines": [
+            11,
+            20,
+            25,
+            26,
+            27
+          ],
+          "category": "MODULE_BINDING_AND_MEMORY_STATE",
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "symbol": "dataclass",
+          "category": "DECORATOR_EXECUTION",
+          "trigger_kind": "CLASS_DEFINITION",
+          "callee_effects": "UNKNOWN"
+        }
+      ],
+      "direct_effects": [
+        {
+          "symbol": "_helper",
+          "operation": "read_bytes",
+          "lines": [
+            53
+          ],
+          "category": "FILE_READ",
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_helper",
+          "operation": "cache",
+          "lines": [
+            58
+          ],
+          "category": "CACHE",
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_helper",
+          "operation": "exec_module",
+          "lines": [
+            62
+          ],
+          "category": "DYNAMIC_MODULE_INITIALIZATION",
+          "trigger_kind": "CALLABLE_INVOCATION",
+          "dependency": "importlib.util",
+          "closure": "UNKNOWN"
+        },
+        {
+          "symbol": "_preload_data_only_helper",
+          "operation": "cache",
+          "lines": [
+            409
+          ],
+          "category": "CACHE",
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "prepare_observed_data_only_context",
+          "operation": "progress/callback",
+          "lines": [
+            432,
+            438,
+            439,
+            450,
+            451,
+            452,
+            454,
+            455,
+            457,
+            458,
+            460,
+            461,
+            462
+          ],
+          "category": "CALLBACK_DISPATCH",
+          "trigger_kind": "CALLBACK_PRESENT",
+          "closure": "UNKNOWN"
+        },
+        {
+          "symbol": "_helper",
+          "operation": "sys.modules",
+          "lines": [
+            57,
+            58
+          ],
+          "category": "CACHE",
+          "trigger_kind": "CALLABLE_CACHE_REFERENCE_LOOKUP"
+        },
+        {
+          "symbol": "_helper",
+          "operation": "sys.modules",
+          "lines": [
+            61
+          ],
+          "category": "CACHE_MUTATION",
+          "trigger_kind": "DYNAMIC_LOAD_REGISTRATION"
+        },
+        {
+          "symbol": "AnnualContext.validate",
+          "operation": "sys.modules",
+          "lines": [
+            114
+          ],
+          "category": "CACHE",
+          "trigger_kind": "VALIDATION"
+        },
+        {
+          "symbol": "_preload_data_only_helper",
+          "operation": "sys.modules",
+          "lines": [
+            419
+          ],
+          "category": "CACHE_MUTATION",
+          "trigger_kind": "PRELOAD_REGISTRATION"
+        },
+        {
+          "symbol": "_preload_data_only_helper",
+          "operation": "sys.modules",
+          "lines": [
+            423,
+            424
+          ],
+          "category": "CACHE",
+          "trigger_kind": "PRELOAD_REFERENCE_LOOKUP"
+        },
+        {
+          "symbols": [
+            "_helper",
+            "_preload_data_only_helper"
+          ],
+          "operations": [
+            "Path",
+            "Path.with_name"
+          ],
+          "lines": [
+            52,
+            414
+          ],
+          "category": "PATH_CONSTRUCTION",
+          "trigger_kind": "CALLABLE_INVOCATION",
+          "referent": "NOT_FOLLOWED"
+        },
+        {
+          "symbol": "_PREPARED",
+          "lines": [
+            27,
+            100,
+            107,
+            191,
+            395
+          ],
+          "category": "MEMORY_REGISTRY_REFERENCE_ASSIGNMENT",
+          "trigger_kind": "MODULE_INITIALIZATION_CONSTRUCTOR_VALIDATION_PREPARATION"
+        }
+      ],
+      "exceptions": [
+        {
+          "symbol": "ValueError",
+          "lines": [
+            36,
+            45,
+            54,
+            68,
+            71,
+            73,
+            101,
+            106,
+            108,
+            113,
+            116,
+            122,
+            125,
+            128,
+            132,
+            134,
+            136,
+            138,
+            140,
+            142,
+            144,
+            146,
+            148,
+            153,
+            157,
+            163,
+            167,
+            169,
+            171,
+            173,
+            178,
+            181,
+            207,
+            209,
+            216,
+            219,
+            221,
+            223,
+            225,
+            228,
+            268,
+            272,
+            274,
+            282,
+            284,
+            295,
+            298,
+            300,
+            305,
+            307,
+            309,
+            311,
+            313,
+            315,
+            322,
+            325,
+            328,
+            332,
+            335,
+            340,
+            344,
+            349,
+            353,
+            355,
+            411,
+            439,
+            451
+          ],
+          "trigger_kind": "VALIDATION_FAILURE"
+        },
+        {
+          "symbol": "ProductionBlocked",
+          "lines": [
+            405,
+            437
+          ],
+          "trigger_kind": "BLOCKED_ENTRY"
+        }
+      ],
+      "dependency_boundaries": [
+        {
+          "symbol": "_helper",
+          "dependencies": [
+            "importlib.util",
+            "sys.modules",
+            "cache"
+          ],
+          "loader_target": "UNKNOWN",
+          "loader_identity_and_lifetime": "UNKNOWN"
+        },
+        {
+          "symbol": "prepare_observed_data_only_context",
+          "dependencies": [
+            "progress",
+            "callback",
+            "data_only"
+          ],
+          "implementation": "UNKNOWN"
+        }
+      ],
+      "category_coverage": {
+        "present": [
+          "FILE_READ",
+          "CACHE"
+        ],
+        "other_named_operations": "NO_NAMED_OPERATION_IDENTIFIED_IN_DIRECT_TEXT",
+        "indirect": "UNKNOWN"
+      },
+      "import_closure": {
+        "status": "UNKNOWN",
+        "dependencies": [
+          {
+            "module": "dataclasses",
+            "symbols": [
+              "dataclass",
+              "field"
+            ],
+            "alias": null
+          },
+          {
+            "module": "math",
+            "symbols": [],
+            "alias": null
+          },
+          {
+            "module": "hashlib",
+            "symbols": [],
+            "alias": null
+          },
+          {
+            "module": "importlib.util",
+            "symbols": [],
+            "alias": null
+          },
+          {
+            "module": "json",
+            "symbols": [],
+            "alias": null
+          },
+          {
+            "module": "pathlib",
+            "symbols": [
+              "Path"
+            ],
+            "alias": null
+          },
+          {
+            "module": "sys",
+            "symbols": [],
+            "alias": null
+          },
+          {
+            "module": "types",
+            "symbols": [
+              "MappingProxyType"
+            ],
+            "alias": null
+          },
+          {
+            "module": "types",
+            "symbols": [
+              "ModuleType"
+            ],
+            "alias": null
+          }
+        ],
+        "reason": "Imported implementations, runtime bindings and module initialization closure were not followed"
+      }
+    },
+    {
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/annual_labor_array_adapter.py",
+      "sha256": "137BFB6C3F0B3D7F4672A78ECCB006A776CB1A40B258CB30A3B18437D4BFCF41",
+      "direct_text_review": "COMPLETE_FILE_TEXT_ONLY",
+      "transitive_effect_closure": "UNKNOWN",
+      "runtime_verification": "NOT_AUTHORIZED",
+      "imports": [
+        {
+          "module": "dataclasses",
+          "symbols": [
+            "dataclass",
+            "field"
+          ],
+          "line": 2
+        },
+        {
+          "module": "pathlib",
+          "symbols": [
+            "Path"
+          ],
+          "line": 3
+        },
+        {
+          "module": "sys",
+          "symbols": [],
+          "line": 4
+        },
+        {
+          "module": "numpy",
+          "alias": "np",
+          "symbols": [],
+          "line": 6
+        }
+      ],
+      "interfaces": [
+        {
+          "symbol": "_validate_context",
+          "line": 25,
+          "parameters": [
+            "context",
+            "metadata"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_mapping",
+          "line": 34,
+          "parameters": [
+            "province_mapping",
+            "province_axis",
+            "input_kind"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "AnnualArrayCarrier.__post_init__",
+          "line": 77,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "AnnualArrayCarrier.validate",
+          "line": 81,
+          "parameters": [
+            "self",
+            "annual_context",
+            "target_year",
+            "province_axis",
+            "source_sha256",
+            "input_kind",
+            "price_basis",
+            "price_verified",
+            "province_mapping"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "prepare_annual_array",
+          "line": 126,
+          "parameters": [
+            "context",
+            "target_year",
+            "province_axis",
+            "source_sha256",
+            "input_kind",
+            "price_basis",
+            "price_verified",
+            "province_mapping"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        }
+      ],
+      "constructors": [
+        {
+          "symbol": "_ArraySeal",
+          "line": 56,
+          "parameters": [
+            "carrier",
+            "annual_context",
+            "context_seal",
+            "coefficients",
+            "metadata",
+            "province_mapping",
+            "master",
+            "backing_bytes"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        },
+        {
+          "symbol": "AnnualArrayCarrier",
+          "line": 68,
+          "parameters": [
+            "annual_context",
+            "province_mapping",
+            "province_order",
+            "phi_destination_origin",
+            "backing_bytes",
+            "_preparation_token",
+            "_seal"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        }
+      ],
+      "module_initialization": [
+        {
+          "symbols": [
+            "CANONICAL_PROVINCE_MAPPING",
+            "_PREPARED_ARRAY"
+          ],
+          "lines": [
+            9,
+            22
+          ],
+          "category": "MODULE_BINDING_AND_MEMORY_STATE",
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "symbol": "dataclass",
+          "category": "DECORATOR_EXECUTION",
+          "trigger_kind": "CLASS_DEFINITION",
+          "callee_effects": "UNKNOWN"
+        }
+      ],
+      "direct_effects": [
+        {
+          "symbol": "_validate_context",
+          "operation": "sys.modules",
+          "lines": [
+            26
+          ],
+          "category": "CACHE",
+          "trigger_kind": "VALIDATION"
+        },
+        {
+          "symbol": "_validate_context",
+          "operations": [
+            "Path",
+            "Path.resolve",
+            "Path.with_name"
+          ],
+          "lines": [
+            27,
+            29
+          ],
+          "category": "PATH_RESOLUTION",
+          "trigger_kind": "IDENTITY_VALIDATION",
+          "referent": "NOT_FOLLOWED"
+        },
+        {
+          "symbol": "_PREPARED_ARRAY",
+          "lines": [
+            22,
+            78,
+            83,
+            141
+          ],
+          "category": "MEMORY_REGISTRY_REFERENCE_ASSIGNMENT",
+          "trigger_kind": "MODULE_INITIALIZATION_CONSTRUCTOR_VALIDATION_PREPARATION"
+        }
+      ],
+      "exceptions": [
+        {
+          "symbol": "ValueError",
+          "lines": [
+            30,
+            36,
+            40,
+            43,
+            45,
+            47,
+            51,
+            79,
+            84,
+            98,
+            104,
+            111,
+            116,
+            119,
+            123
+          ],
+          "trigger_kind": "VALIDATION_FAILURE"
+        }
+      ],
+      "dependency_boundaries": [
+        {
+          "symbols": [
+            "context",
+            "annual_context",
+            "np",
+            "Path"
+          ],
+          "category": "INPUT_OBJECT_AND_IMPORTED_IMPLEMENTATIONS",
+          "closure": "UNKNOWN"
+        }
+      ],
+      "category_coverage": {
+        "present": [
+          "CACHE"
+        ],
+        "other_named_operations": "NO_NAMED_OPERATION_IDENTIFIED_IN_DIRECT_TEXT",
+        "indirect": "UNKNOWN"
+      },
+      "import_closure": {
+        "status": "UNKNOWN",
+        "dependencies": [
+          {
+            "module": "dataclasses",
+            "symbols": [
+              "dataclass",
+              "field"
+            ],
+            "alias": null
+          },
+          {
+            "module": "pathlib",
+            "symbols": [
+              "Path"
+            ],
+            "alias": null
+          },
+          {
+            "module": "sys",
+            "symbols": [],
+            "alias": null
+          },
+          {
+            "module": "numpy",
+            "symbols": [],
+            "alias": "np"
+          }
+        ],
+        "reason": "Imported implementations, runtime bindings and module initialization closure were not followed"
+      }
+    },
+    {
+      "path": "validators/multi_province/annual_observed_labor_diagnostic/integration.py",
+      "sha256": "BB594FA2A34340B330638459D1CF58524D405DEA2FB059194D43C3C79E48345A",
+      "direct_text_review": "COMPLETE_FILE_TEXT_ONLY",
+      "transitive_effect_closure": "UNKNOWN",
+      "runtime_verification": "NOT_AUTHORIZED",
+      "imports": [
+        {
+          "module": "dataclasses",
+          "symbols": [
+            "dataclass"
+          ],
+          "line": 2,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "types",
+          "symbols": [
+            "MappingProxyType"
+          ],
+          "line": 3,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "pathlib",
+          "symbols": [
+            "Path"
+          ],
+          "line": 4,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "numbers",
+          "symbols": [
+            "Real"
+          ],
+          "line": 5,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "math",
+          "symbols": [],
+          "line": 6,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "sys",
+          "symbols": [],
+          "line": 7,
+          "trigger_kind": "MODULE_IMPORT"
+        }
+      ],
+      "interfaces": [
+        {
+          "symbol": "_finite_scalar",
+          "line": 28,
+          "parameters": [
+            "value"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_validate_input_axes",
+          "line": 32,
+          "parameters": [
+            "consumption",
+            "distance",
+            "n"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "integrate_turn",
+          "line": 47,
+          "parameters": [
+            "repository",
+            "task_root",
+            "turn_root",
+            "turn",
+            "states",
+            "batch",
+            "frozen_shares",
+            "expected_share_sha",
+            "ledger",
+            "annual_context",
+            "target_year",
+            "province_axis",
+            "source_sha256",
+            "input_kind",
+            "price_basis",
+            "price_verified",
+            "params",
+            "migration_wedge_destination_origin",
+            "spies",
+            "prepared_array",
+            "province_mapping",
+            "prepared_middle_stage"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        }
+      ],
+      "constructors": [
+        {
+          "symbol": "OneTurnInputs",
+          "line": 11,
+          "parameters": [
+            "province_order",
+            "old_provinces",
+            "params",
+            "phi_destination_origin",
+            "migration_wedge_destination_origin",
+            "household_outputs"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        },
+        {
+          "symbol": "SyntheticSpies",
+          "line": 21,
+          "parameters": [
+            "migration_inputs_factory",
+            "reconstruct_migration_labor",
+            "firm_stage",
+            "composite_household_wages"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        }
+      ],
+      "direct_effects": [
+        {
+          "symbol": "_validate_input_axes",
+          "lines": [
+            34
+          ],
+          "category": "DYNAMIC_DISPATCH",
+          "trigger_kind": "CALLABLE_INVOCATION",
+          "closure": "UNKNOWN"
+        },
+        {
+          "symbol": "integrate_turn",
+          "lines": [
+            62,
+            79,
+            80,
+            110,
+            111
+          ],
+          "category": "DYNAMIC_DISPATCH",
+          "trigger_kind": "CALLABLE_INVOCATION",
+          "closure": "UNKNOWN"
+        },
+        {
+          "symbol": "integrate_turn",
+          "lines": [
+            77,
+            78,
+            79,
+            80,
+            81,
+            82
+          ],
+          "category": "ADAPTER_BOUNDARY",
+          "trigger_kind": "PREPARED_ARRAY_BRANCH",
+          "closure": "UNKNOWN"
+        },
+        {
+          "symbol": "integrate_turn",
+          "operation": "sys.modules.get",
+          "lines": [
+            60,
+            77,
+            107
+          ],
+          "category": "CACHE",
+          "trigger_kind": "PREPARED_ARRAY_BRANCH",
+          "closure": "UNKNOWN"
+        },
+        {
+          "symbol": "integrate_turn",
+          "operations": [
+            "Path.resolve"
+          ],
+          "lines": [
+            61,
+            62,
+            80,
+            108,
+            111
+          ],
+          "category": "PATH_RESOLUTION",
+          "trigger_kind": "IDENTITY_VALIDATION",
+          "closure": "UNKNOWN"
+        }
+      ],
+      "module_initialization": [
+        {
+          "symbol": "dataclass",
+          "category": "DECORATOR_EXECUTION",
+          "trigger_kind": "CLASS_DEFINITION",
+          "callee_effects": "UNKNOWN"
+        },
+        {
+          "category": "FUNCTION_DEFINITION",
+          "trigger_kind": "MODULE_IMPORT",
+          "body_trigger": "CALLABLE_INVOCATION_ONLY"
+        }
+      ],
+      "category_coverage": {
+        "present": [
+          "CACHE"
+        ],
+        "other_named_operations": "NO_NAMED_OPERATION_IDENTIFIED_IN_DIRECT_TEXT",
+        "indirect": "UNKNOWN"
+      },
+      "exceptions": [
+        {
+          "symbol": "ValueError",
+          "lines": [
+            35,
+            42,
+            44,
+            63,
+            68,
+            70,
+            75,
+            81,
+            90,
+            92,
+            95,
+            98,
+            100,
+            112,
+            133
+          ],
+          "trigger_kind": "VALIDATION_FAILURE"
+        }
+      ],
+      "dependency_boundaries": [
+        {
+          "symbols": [
+            "getattr",
+            "type",
+            "Path.resolve",
+            "expected.with_name",
+            "sys.modules.get"
+          ],
+          "lines": [
+            34,
+            62,
+            77,
+            78,
+            79,
+            80,
+            110,
+            111
+          ],
+          "implementation": "UNKNOWN"
+        },
+        {
+          "symbol": "adapter.AnnualArrayCarrier.validate",
+          "line": 82,
+          "module_identifier": "annual_labor_array_adapter.py",
+          "trigger_kind": "ADAPTER_VALIDATION",
+          "implementation": "EXACT_SOURCE_TEXT_REVIEWED_RUNTIME_UNKNOWN"
+        }
+      ],
+      "import_closure": {
+        "status": "UNKNOWN",
+        "dependencies": [
+          {
+            "module": "dataclasses",
+            "symbols": [
+              "dataclass"
+            ],
+            "alias": null
+          },
+          {
+            "module": "types",
+            "symbols": [
+              "MappingProxyType"
+            ],
+            "alias": null
+          },
+          {
+            "module": "pathlib",
+            "symbols": [
+              "Path"
+            ],
+            "alias": null
+          },
+          {
+            "module": "numbers",
+            "symbols": [
+              "Real"
+            ],
+            "alias": null
+          },
+          {
+            "module": "math",
+            "symbols": [],
+            "alias": null
+          },
+          {
+            "module": "sys",
+            "symbols": [],
+            "alias": null
+          }
+        ],
+        "reason": "Imported implementations, runtime bindings and module initialization closure were not followed"
+      }
+    },
+    {
+      "path": "validators/multi_province/annual_observed_labor_diagnostic/middle_stage.py",
+      "sha256": "82665113213CBC93286468A87069C8E014B64A12415A2B947FFA7EFDF3579F81",
+      "direct_text_review": "COMPLETE_FILE_TEXT_ONLY",
+      "transitive_effect_closure": "UNKNOWN",
+      "runtime_verification": "NOT_AUTHORIZED",
+      "imports": [
+        {
+          "module": "dataclasses",
+          "symbols": [
+            "dataclass",
+            "field"
+          ],
+          "line": 2,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "hashlib",
+          "symbols": [],
+          "line": 3,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "math",
+          "symbols": [],
+          "line": 4,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "numbers",
+          "symbols": [
+            "Real"
+          ],
+          "line": 5,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "pathlib",
+          "symbols": [
+            "Path"
+          ],
+          "line": 6,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "re",
+          "symbols": [],
+          "line": 7,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "sys",
+          "symbols": [],
+          "line": 8,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "numpy",
+          "symbols": [],
+          "line": 10,
+          "alias": "np",
+          "trigger_kind": "MODULE_IMPORT"
+        }
+      ],
+      "interfaces": [
+        {
+          "symbol": "_scalar",
+          "line": 26,
+          "parameters": [
+            "value"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_vector",
+          "line": 36,
+          "parameters": [
+            "values",
+            "n"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_shares",
+          "line": 47,
+          "parameters": [
+            "values",
+            "n"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_field_sha256",
+          "line": 61,
+          "parameters": [
+            "values"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_ledger",
+          "line": 66,
+          "parameters": [
+            "ledger"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "PreparedMiddleStage.__post_init__",
+          "line": 151,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "PreparedMiddleStage._validate",
+          "line": 155,
+          "parameters": [
+            "self",
+            "annual_context",
+            "prepared_array",
+            "province_mapping",
+            "ledger"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "PreparedMiddleStage.validate_pre_spy",
+          "line": 174,
+          "parameters": [
+            "self",
+            "inputs",
+            "frozen_shares",
+            "annual_context",
+            "prepared_array",
+            "province_mapping",
+            "ledger"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "PreparedMiddleStage.run",
+          "line": 184,
+          "parameters": [
+            "self",
+            "inputs",
+            "migration",
+            "frozen_shares",
+            "expected_share_sha"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_validate_carrier",
+          "line": 271,
+          "parameters": [
+            "context",
+            "carrier",
+            "mapping"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_validate_inputs",
+          "line": 289,
+          "parameters": [
+            "inputs",
+            "carrier",
+            "mapping"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "prepare_middle_stage",
+          "line": 334,
+          "parameters": [
+            "annual_context",
+            "prepared_array",
+            "province_mapping",
+            "ledger",
+            "dependencies"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        }
+      ],
+      "constructors": [
+        {
+          "symbol": "FixtureDependencies",
+          "line": 76,
+          "parameters": [
+            "c1_residual",
+            "evaluate_firm",
+            "fixture_label"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        },
+        {
+          "symbol": "CapitalResult",
+          "line": 83,
+          "parameters": [
+            "wealth",
+            "flows",
+            "private",
+            "domestic",
+            "capital_residual",
+            "no_same_turn_share_recomputation"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        },
+        {
+          "symbol": "C1Result",
+          "line": 93,
+          "parameters": [
+            "province_order",
+            "GovInv_residual_MU",
+            "firm_K_accounting_MU",
+            "capital_unit"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        },
+        {
+          "symbol": "FirmResult",
+          "line": 101,
+          "parameters": [
+            "Kt",
+            "Lt",
+            "Yt",
+            "mt",
+            "KNratio",
+            "wt0",
+            "wjt",
+            "rk",
+            "Thetat",
+            "It",
+            "PIt",
+            "Corptax",
+            "ra0",
+            "ra",
+            "Govinc"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        },
+        {
+          "symbol": "MiddleStageResult",
+          "line": 120,
+          "parameters": [
+            "firms",
+            "capital",
+            "c1",
+            "model_activation",
+            "full_outer_runtime_integrated"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        },
+        {
+          "symbol": "_MiddleSeal",
+          "line": 129,
+          "parameters": [
+            "owner",
+            "annual_context",
+            "prepared_array",
+            "array_seal",
+            "province_mapping",
+            "ledger",
+            "ledger_label",
+            "dependencies",
+            "callbacks"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        },
+        {
+          "symbol": "PreparedMiddleStage",
+          "line": 142,
+          "parameters": [
+            "annual_context",
+            "prepared_array",
+            "province_mapping",
+            "ledger",
+            "dependencies",
+            "_preparation_token",
+            "_seal"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        }
+      ],
+      "direct_effects": [
+        {
+          "symbol": "PreparedMiddleStage.run",
+          "lines": [
+            221
+          ],
+          "category": "CALLBACK_DISPATCH",
+          "trigger_kind": "DEPENDENCY_CALLBACK_INVOCATION",
+          "closure": "UNKNOWN"
+        },
+        {
+          "symbol": "PreparedMiddleStage.run",
+          "operation": "as_source_dict",
+          "lines": [
+            258,
+            259
+          ],
+          "category": "METHOD_DISPATCH_AND_RESULT_CONVERSION",
+          "trigger_kind": "RESULT_ADAPTER_BRANCH",
+          "closure": "UNKNOWN"
+        },
+        {
+          "symbols": [
+            "_vector",
+            "_shares",
+            "PreparedMiddleStage.run",
+            "_validate_carrier",
+            "_validate_inputs"
+          ],
+          "lines": [
+            37,
+            48,
+            255,
+            274,
+            275,
+            292,
+            293,
+            322
+          ],
+          "category": "DYNAMIC_DISPATCH",
+          "trigger_kind": "CALLABLE_INVOCATION",
+          "closure": "UNKNOWN"
+        },
+        {
+          "symbol": "_validate_carrier",
+          "lines": [
+            273
+          ],
+          "category": "ADAPTER_BOUNDARY",
+          "trigger_kind": "VALIDATION",
+          "closure": "UNKNOWN"
+        },
+        {
+          "symbol": "PreparedMiddleStage._validate",
+          "lines": [
+            165,
+            166,
+            167
+          ],
+          "category": "CALLBACK_IDENTITY_VALIDATION",
+          "trigger_kind": "VALIDATION",
+          "closure": "UNKNOWN"
+        },
+        {
+          "symbol": "prepare_middle_stage",
+          "lines": [
+            338,
+            339
+          ],
+          "category": "CALLBACK_BOUNDARY",
+          "trigger_kind": "PREPARATION",
+          "closure": "UNKNOWN"
+        },
+        {
+          "symbols": [
+            "_validate_carrier",
+            "_validate_inputs"
+          ],
+          "operation": "Path.resolve",
+          "lines": [
+            273,
+            275,
+            291,
+            293
+          ],
+          "category": "PATH_RESOLUTION",
+          "trigger_kind": "IDENTITY_VALIDATION",
+          "closure": "UNKNOWN"
+        },
+        {
+          "symbols": [
+            "_validate_carrier",
+            "_validate_inputs"
+          ],
+          "operation": "sys.modules",
+          "lines": [
+            272,
+            290
+          ],
+          "category": "CACHE",
+          "trigger_kind": "VALIDATION",
+          "closure": "UNKNOWN"
+        }
+      ],
+      "module_initialization": [
+        {
+          "symbol": "dataclass",
+          "category": "DECORATOR_EXECUTION",
+          "trigger_kind": "CLASS_DEFINITION",
+          "callee_effects": "UNKNOWN"
+        },
+        {
+          "category": "FUNCTION_DEFINITION",
+          "trigger_kind": "MODULE_IMPORT",
+          "body_trigger": "CALLABLE_INVOCATION_ONLY"
+        },
+        {
+          "symbols": [
+            "CONSERVATION_TOLERANCE",
+            "LEDGER_KEYS",
+            "FIRM_FIELDS",
+            "STATE_FIELDS",
+            "PARAM_FIELDS",
+            "_PREPARED"
+          ],
+          "lines": [
+            13,
+            14,
+            17,
+            19,
+            22,
+            23
+          ],
+          "category": "MODULE_BINDING_AND_MEMORY_STATE",
+          "trigger_kind": "MODULE_IMPORT"
+        }
+      ],
+      "category_coverage": {
+        "present": [
+          "CACHE"
+        ],
+        "other_named_operations": "NO_NAMED_OPERATION_IDENTIFIED_IN_DIRECT_TEXT",
+        "indirect": "UNKNOWN"
+      },
+      "exceptions": [
+        {
+          "symbol": "ValueError",
+          "lines": [
+            32,
+            38,
+            41,
+            44,
+            49,
+            52,
+            57,
+            69,
+            71,
+            153,
+            168,
+            171,
+            182,
+            192,
+            194,
+            206,
+            209,
+            212,
+            215,
+            217,
+            219,
+            230,
+            233,
+            237,
+            242,
+            244,
+            257,
+            264,
+            276,
+            279,
+            286,
+            294,
+            297,
+            299,
+            304,
+            306,
+            310,
+            312,
+            314,
+            318,
+            324,
+            326,
+            328,
+            330,
+            340
+          ],
+          "trigger_kind": "VALIDATION_OR_CALLBACK_RESULT_FAILURE"
+        },
+        {
+          "symbol": "TypeError",
+          "lines": [
+            43,
+            56
+          ],
+          "trigger_kind": "CAUGHT_INPUT_FAILURE"
+        },
+        {
+          "symbol": "AttributeError",
+          "lines": [
+            191,
+            256,
+            285,
+            323
+          ],
+          "trigger_kind": "CAUGHT_ATTRIBUTE_FAILURE"
+        }
+      ],
+      "dependency_boundaries": [
+        {
+          "symbols": [
+            "callbacks",
+            "dependencies.c1_residual",
+            "dependencies.evaluate_firm"
+          ],
+          "lines": [
+            138,
+            165,
+            166,
+            167,
+            221,
+            338,
+            339
+          ],
+          "implementation": "UNKNOWN"
+        },
+        {
+          "symbol": "raw.as_source_dict",
+          "lines": [
+            258,
+            259
+          ],
+          "implementation": "DYNAMIC_TARGET_UNKNOWN"
+        },
+        {
+          "symbols": [
+            "hasattr",
+            "getattr",
+            "type",
+            "Path.resolve",
+            "_vector",
+            "_scalar"
+          ],
+          "lines": [
+            255,
+            258,
+            274,
+            275,
+            292,
+            293,
+            322
+          ],
+          "implementation": "IMPORTED_OR_DYNAMIC_TARGET_UNKNOWN"
+        }
+      ],
+      "import_closure": {
+        "status": "UNKNOWN",
+        "dependencies": [
+          {
+            "module": "dataclasses",
+            "symbols": [
+              "dataclass",
+              "field"
+            ],
+            "alias": null
+          },
+          {
+            "module": "hashlib",
+            "symbols": [],
+            "alias": null
+          },
+          {
+            "module": "math",
+            "symbols": [],
+            "alias": null
+          },
+          {
+            "module": "numbers",
+            "symbols": [
+              "Real"
+            ],
+            "alias": null
+          },
+          {
+            "module": "pathlib",
+            "symbols": [
+              "Path"
+            ],
+            "alias": null
+          },
+          {
+            "module": "re",
+            "symbols": [],
+            "alias": null
+          },
+          {
+            "module": "sys",
+            "symbols": [],
+            "alias": null
+          },
+          {
+            "module": "numpy",
+            "symbols": [],
+            "alias": "np"
+          }
+        ],
+        "reason": "Imported implementations, runtime bindings and module initialization closure were not followed"
+      }
+    },
+    {
+      "path": "src/ch5_two_asset_hank/multi_province/migration_labor.py",
+      "sha256": "A8961E66518265C4A97770A421C10C60740E7205E247CEB7FF4B3DD3BEC83730",
+      "direct_text_review": "COMPLETE_FILE_TEXT_ONLY",
+      "transitive_effect_closure": "UNKNOWN",
+      "runtime_verification": "NOT_AUTHORIZED",
+      "imports": [
+        {
+          "module": "__future__",
+          "symbols": [
+            "annotations"
+          ],
+          "line": 7,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "dataclasses",
+          "symbols": [
+            "dataclass"
+          ],
+          "line": 9,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "numpy",
+          "symbols": [],
+          "line": 11,
+          "alias": "np",
+          "trigger_kind": "MODULE_IMPORT"
+        }
+      ],
+      "interfaces": [
+        {
+          "symbol": "_readonly_vector",
+          "line": 14,
+          "parameters": [
+            "name",
+            "value",
+            "n"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_readonly_matrix",
+          "line": 25,
+          "parameters": [
+            "name",
+            "value",
+            "n"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "MigrationLaborInputs.__post_init__",
+          "line": 48,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "MigrationLaborResult.__post_init__",
+          "line": 83,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "reconstruct_migration_labor",
+          "line": 98,
+          "parameters": [
+            "inputs"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "OriginPreservingNormalizedMigrationLaborInputs.__post_init__",
+          "line": 159,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "OriginPreservingNormalizedMigrationLaborResult.__post_init__",
+          "line": 213,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "q",
+          "line": 270,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "s",
+          "line": 275,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "origin_mass",
+          "line": 280,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "M",
+          "line": 285,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "destination_labor",
+          "line": 290,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "share_column_sums",
+          "line": 295,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "flow_column_sums",
+          "line": 299,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "net_labor_flow",
+          "line": 303,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "national_residual",
+          "line": 307,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "reconstruct_origin_preserving_normalized_migration_labor",
+          "line": 311,
+          "parameters": [
+            "inputs"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        }
+      ],
+      "direct_effects": [],
+      "category_coverage": {
+        "present": [],
+        "other_named_operations": "NO_NAMED_OPERATION_IDENTIFIED_IN_DIRECT_TEXT",
+        "indirect": "UNKNOWN"
+      },
+      "module_initialization": [
+        {
+          "category": "FUNCTION_DEFINITION",
+          "trigger_kind": "MODULE_IMPORT",
+          "body_trigger": "CALLABLE_INVOCATION_ONLY"
+        },
+        {
+          "symbol": "dataclass",
+          "category": "DECORATOR_EXECUTION",
+          "trigger_kind": "CLASS_DEFINITION",
+          "callee_effects": "UNKNOWN",
+          "lines": [
+            35,
+            76,
+            139,
+            197
+          ]
+        },
+        {
+          "symbols": [
+            "_NORMALIZED_ORIENTATION",
+            "_NORMALIZED_SCHEMA",
+            "_NORMALIZED_TOLERANCE"
+          ],
+          "lines": [
+            134,
+            135,
+            136
+          ],
+          "category": "MODULE_BINDING",
+          "trigger_kind": "MODULE_IMPORT"
+        }
+      ],
+      "dependency_boundaries": [
+        {
+          "module": "dataclasses",
+          "symbols": [
+            "dataclass"
+          ],
+          "alias": null,
+          "trigger_kind": "IMPORT_AND_CALLABLE_INVOCATION",
+          "implementation": "UNKNOWN"
+        },
+        {
+          "module": "numpy",
+          "symbols": [],
+          "alias": "np",
+          "trigger_kind": "IMPORT_AND_CALLABLE_INVOCATION",
+          "implementation": "UNKNOWN"
+        }
+      ],
+      "constructors": [
+        {
+          "symbol": "MigrationLaborInputs",
+          "line": 36,
+          "parameters": [
+            "consumption_by_origin",
+            "population_by_origin",
+            "old_firm_wage_by_destination",
+            "tax_by_origin",
+            "phi_destination_origin",
+            "migration_wedge_destination_origin",
+            "gamma_c",
+            "phi_l"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        },
+        {
+          "symbol": "MigrationLaborResult",
+          "line": 77,
+          "parameters": [
+            "lt_mat",
+            "lt_supply"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        },
+        {
+          "symbol": "OriginPreservingNormalizedMigrationLaborInputs",
+          "line": 140,
+          "parameters": [
+            "consumption_by_origin",
+            "household_labor_per_capita_by_origin",
+            "population_by_origin",
+            "old_firm_wage_by_destination",
+            "tax_by_origin",
+            "phi_destination_origin",
+            "migration_wedge_destination_origin",
+            "gamma_c",
+            "phi_l"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        },
+        {
+          "symbol": "OriginPreservingNormalizedMigrationLaborResult",
+          "line": 198,
+          "parameters": [
+            "raw_attractiveness_destination_origin",
+            "normalized_shares_destination_origin",
+            "origin_labor_mass_by_origin",
+            "bilateral_labor_flow_destination_origin",
+            "destination_firm_labor_by_destination",
+            "share_column_sums_by_origin",
+            "flow_column_sums_by_origin",
+            "net_labor_flow_by_province",
+            "national_conservation_residual",
+            "orientation",
+            "schema"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        }
+      ],
+      "exceptions": [
+        {
+          "symbol": "ValueError",
+          "lines": [
+            18,
+            20,
+            28,
+            30,
+            61,
+            63,
+            65,
+            87,
+            89,
+            91,
+            118,
+            128,
+            177,
+            179,
+            181,
+            183,
+            185,
+            223,
+            232,
+            235,
+            237,
+            239,
+            241,
+            243,
+            245,
+            247,
+            249,
+            251,
+            254,
+            256,
+            338,
+            344,
+            348,
+            354,
+            357,
+            364,
+            367
+          ],
+          "trigger_kind": "VALIDATION_FAILURE",
+          "propagated_dependency_exceptions": "UNKNOWN"
+        }
+      ],
+      "call_site_names": {
+        "symbols": [
+          "_readonly_matrix",
+          "_readonly_vector",
+          "dataclass",
+          "float",
+          "all",
+          "any",
+          "range",
+          "np.all",
+          "np.allclose",
+          "np.any",
+          "np.array",
+          "np.array_equal",
+          "np.empty",
+          "np.isclose",
+          "np.isfinite",
+          "np.sum",
+          "object.__setattr__",
+          "MigrationLaborResult",
+          "OriginPreservingNormalizedMigrationLaborResult"
+        ],
+        "category": "LEXICAL_CALL_SITE_POINTERS",
+        "definition_vs_return_call": "RETURN_CALLS_NOT_CLASSIFIED_AS_DEFINITIONS",
+        "uninspected_implementations": "UNKNOWN"
+      },
+      "import_closure": {
+        "status": "UNKNOWN",
+        "dependencies": [
+          {
+            "module": "__future__",
+            "symbols": [
+              "annotations"
+            ],
+            "alias": null
+          },
+          {
+            "module": "dataclasses",
+            "symbols": [
+              "dataclass"
+            ],
+            "alias": null
+          },
+          {
+            "module": "numpy",
+            "symbols": [],
+            "alias": "np"
+          }
+        ],
+        "reason": "Imported implementations, runtime bindings and module initialization closure were not followed"
+      }
+    },
+    {
+      "path": "src/ch5_two_asset_hank/multi_province/capital_network.py",
+      "sha256": "FB193687A07770FF6F10301AB453734753E4BFFE9E00D9D58D444CF4C206FEC5",
+      "direct_text_review": "COMPLETE_FILE_TEXT_ONLY",
+      "transitive_effect_closure": "UNKNOWN",
+      "runtime_verification": "NOT_AUTHORIZED",
+      "imports": [
+        {
+          "module": "__future__",
+          "symbols": [
+            "annotations"
+          ],
+          "line": 8,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "dataclasses",
+          "symbols": [
+            "dataclass"
+          ],
+          "line": 10,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "math",
+          "symbols": [
+            "isfinite"
+          ],
+          "line": 11,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "numpy",
+          "symbols": [],
+          "line": 13,
+          "alias": "np",
+          "trigger_kind": "MODULE_IMPORT"
+        }
+      ],
+      "interfaces": [
+        {
+          "symbol": "_province_order",
+          "line": 24,
+          "parameters": [
+            "value"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_readonly_vector",
+          "line": 35,
+          "parameters": [
+            "name",
+            "value",
+            "n"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_readonly_matrix",
+          "line": 45,
+          "parameters": [
+            "name",
+            "value",
+            "n"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "_lagged_provenance",
+          "line": 55,
+          "parameters": [
+            "value"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "ForeignConditionalShareInputs.__post_init__",
+          "line": 77,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "ForeignConditionalShareResult.__post_init__",
+          "line": 108,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "foreign_conditional_shares",
+          "line": 133,
+          "parameters": [
+            "inputs"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "BilateralCapitalNetworkInputs.__post_init__",
+          "line": 182,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "BilateralCapitalNetworkResult.__post_init__",
+          "line": 241,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "build_bilateral_capital_network",
+          "line": 275,
+          "parameters": [
+            "inputs"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        }
+      ],
+      "direct_effects": [
+        {
+          "symbol": "BilateralCapitalNetworkResult.__post_init__",
+          "lines": [
+            260,
+            262
+          ],
+          "category": "DYNAMIC_DISPATCH",
+          "trigger_kind": "CONSTRUCTOR_POST_INIT",
+          "closure": "UNKNOWN",
+          "operations": [
+            "object.__setattr__",
+            "_readonly_matrix",
+            "_readonly_vector",
+            "getattr"
+          ]
+        }
+      ],
+      "category_coverage": {
+        "present": [],
+        "other_named_operations": "NO_NAMED_OPERATION_IDENTIFIED_IN_DIRECT_TEXT",
+        "indirect": "UNKNOWN"
+      },
+      "module_initialization": [
+        {
+          "category": "FUNCTION_DEFINITION",
+          "trigger_kind": "MODULE_IMPORT",
+          "body_trigger": "CALLABLE_INVOCATION_ONLY"
+        },
+        {
+          "symbol": "dataclass",
+          "category": "DECORATOR_EXECUTION",
+          "trigger_kind": "CLASS_DEFINITION",
+          "callee_effects": "UNKNOWN",
+          "lines": [
+            66,
+            98,
+            167,
+            221
+          ]
+        },
+        {
+          "symbols": [
+            "SCHEMA_VERSION",
+            "ORIENTATION",
+            "LAGGED_TIMING_CONTRACT",
+            "CONSERVATION_TOLERANCE"
+          ],
+          "lines": [
+            16,
+            17,
+            18,
+            21
+          ],
+          "category": "MODULE_BINDING",
+          "trigger_kind": "MODULE_IMPORT"
+        }
+      ],
+      "dependency_boundaries": [
+        {
+          "module": "dataclasses",
+          "symbols": [
+            "dataclass"
+          ],
+          "alias": null,
+          "trigger_kind": "IMPORT_AND_CALLABLE_INVOCATION",
+          "implementation": "UNKNOWN"
+        },
+        {
+          "module": "math",
+          "symbols": [
+            "isfinite"
+          ],
+          "alias": null,
+          "trigger_kind": "IMPORT_AND_CALLABLE_INVOCATION",
+          "implementation": "UNKNOWN"
+        },
+        {
+          "module": "numpy",
+          "symbols": [],
+          "alias": "np",
+          "trigger_kind": "IMPORT_AND_CALLABLE_INVOCATION",
+          "implementation": "UNKNOWN"
+        }
+      ],
+      "constructors": [
+        {
+          "symbol": "ForeignConditionalShareInputs",
+          "line": 67,
+          "parameters": [
+            "province_order",
+            "distance_score_destination_origin",
+            "lagged_return_score_by_destination",
+            "beta_distance",
+            "beta_return",
+            "lagged_return_provenance"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        },
+        {
+          "symbol": "ForeignConditionalShareResult",
+          "line": 99,
+          "parameters": [
+            "province_order",
+            "foreign_conditional_shares_destination_origin",
+            "foreign_column_sums",
+            "orientation",
+            "schema_version",
+            "lagged_timing_contract",
+            "lagged_return_provenance"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        },
+        {
+          "symbol": "BilateralCapitalNetworkInputs",
+          "line": 168,
+          "parameters": [
+            "province_order",
+            "illiquid_assets_per_capita_by_origin",
+            "population_by_origin",
+            "total_foreign_share_theta_by_origin",
+            "distance_score_destination_origin",
+            "lagged_return_score_by_destination",
+            "portfolio_return_by_destination",
+            "beta_distance",
+            "beta_return",
+            "lagged_return_provenance"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        },
+        {
+          "symbol": "BilateralCapitalNetworkResult",
+          "line": 222,
+          "parameters": [
+            "province_order",
+            "foreign_conditional_shares_destination_origin",
+            "portfolio_shares_destination_origin",
+            "origin_private_wealth",
+            "bilateral_private_capital_destination_origin",
+            "destination_private_productive_capital",
+            "domestic_retained_capital_by_origin",
+            "foreign_outflow_by_origin",
+            "foreign_inflow_by_destination",
+            "household_portfolio_return_by_origin",
+            "share_column_sums",
+            "capital_column_sums",
+            "national_private_capital_conservation_residual",
+            "orientation",
+            "schema_version",
+            "lagged_timing_contract",
+            "lagged_return_provenance"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        }
+      ],
+      "exceptions": [
+        {
+          "symbol": "ValueError",
+          "lines": [
+            31,
+            38,
+            40,
+            48,
+            50,
+            60,
+            62,
+            89,
+            118,
+            120,
+            122,
+            126,
+            145,
+            154,
+            202,
+            204,
+            208,
+            265,
+            267,
+            269,
+            300,
+            304,
+            313
+          ],
+          "trigger_kind": "VALIDATION_FAILURE",
+          "propagated_dependency_exceptions": "UNKNOWN"
+        },
+        {
+          "symbol": "RuntimeError",
+          "lines": [
+            295,
+            318,
+            320,
+            324,
+            326
+          ],
+          "trigger_kind": "INVARIANT_FAILURE"
+        }
+      ],
+      "call_site_names": {
+        "symbols": [
+          "_lagged_provenance",
+          "_province_order",
+          "_readonly_matrix",
+          "_readonly_vector",
+          "dataclass",
+          "ForeignConditionalShareInputs",
+          "ForeignConditionalShareResult",
+          "BilateralCapitalNetworkResult",
+          "foreign_conditional_shares",
+          "getattr",
+          "isfinite",
+          "isinstance",
+          "np.all",
+          "np.allclose",
+          "np.any",
+          "np.arange",
+          "np.array",
+          "np.diag",
+          "np.errstate",
+          "np.exp",
+          "np.isfinite",
+          "np.max",
+          "np.sum",
+          "np.zeros",
+          "object.__setattr__",
+          "provenance.upper",
+          "upper.replace",
+          "strip"
+        ],
+        "category": "LEXICAL_CALL_SITE_POINTERS",
+        "definition_vs_return_call": "RETURN_CALLS_NOT_CLASSIFIED_AS_DEFINITIONS",
+        "uninspected_implementations": "UNKNOWN"
+      },
+      "import_closure": {
+        "status": "UNKNOWN",
+        "dependencies": [
+          {
+            "module": "__future__",
+            "symbols": [
+              "annotations"
+            ],
+            "alias": null
+          },
+          {
+            "module": "dataclasses",
+            "symbols": [
+              "dataclass"
+            ],
+            "alias": null
+          },
+          {
+            "module": "math",
+            "symbols": [
+              "isfinite"
+            ],
+            "alias": null
+          },
+          {
+            "module": "numpy",
+            "symbols": [],
+            "alias": "np"
+          }
+        ],
+        "reason": "Imported implementations, runtime bindings and module initialization closure were not followed"
+      }
+    },
+    {
+      "path": "src/ch5_two_asset_hank/multi_province/government_assets.py",
+      "sha256": "D64AB4DBCFB5D682ED2553A4EAD76930A756EBF11E606B6CBD4B94CB5986B705",
+      "direct_text_review": "COMPLETE_FILE_TEXT_ONLY",
+      "transitive_effect_closure": "UNKNOWN",
+      "runtime_verification": "NOT_AUTHORIZED",
+      "imports": [
+        {
+          "module": "__future__",
+          "symbols": [
+            "annotations"
+          ],
+          "line": 8,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "dataclasses",
+          "symbols": [
+            "dataclass"
+          ],
+          "line": 10,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "math",
+          "symbols": [
+            "isfinite"
+          ],
+          "line": 11,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "typing",
+          "symbols": [
+            "Sequence"
+          ],
+          "line": 12,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "numpy",
+          "symbols": [],
+          "line": 14,
+          "alias": "np",
+          "trigger_kind": "MODULE_IMPORT"
+        }
+      ],
+      "interfaces": [
+        {
+          "symbol": "_validated_scalar",
+          "line": 61,
+          "parameters": [
+            "value",
+            "name",
+            "positive"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "residual_government_asset_level",
+          "line": 77,
+          "parameters": [
+            "Ktarget_MU",
+            "Kprivate_current_MU"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "residual_government_asset_levels",
+          "line": 115,
+          "parameters": [
+            "Ktarget_MU",
+            "Kprivate_current_MU",
+            "province_order"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "readonly",
+          "line": 137,
+          "parameters": [
+            "values",
+            "dtype"
+          ],
+          "trigger_kind": "NESTED_CALLABLE_INVOCATION"
+        }
+      ],
+      "direct_effects": [],
+      "category_coverage": {
+        "present": [],
+        "other_named_operations": "NO_NAMED_OPERATION_IDENTIFIED_IN_DIRECT_TEXT",
+        "indirect": "UNKNOWN"
+      },
+      "module_initialization": [
+        {
+          "category": "FUNCTION_DEFINITION",
+          "trigger_kind": "MODULE_IMPORT",
+          "body_trigger": "CALLABLE_INVOCATION_ONLY"
+        },
+        {
+          "symbol": "dataclass",
+          "category": "DECORATOR_EXECUTION",
+          "trigger_kind": "CLASS_DEFINITION",
+          "callee_effects": "UNKNOWN",
+          "lines": [
+            26,
+            43
+          ]
+        },
+        {
+          "symbols": [
+            "CAPITAL_UNIT",
+            "RESIDUAL_PUBLIC_ASSET_POSITIVE",
+            "RESIDUAL_PUBLIC_ASSET_ZERO_PRIVATE_AT_OR_ABOVE_TARGET"
+          ],
+          "lines": [
+            19,
+            20,
+            21
+          ],
+          "category": "MODULE_BINDING",
+          "trigger_kind": "MODULE_IMPORT"
+        }
+      ],
+      "dependency_boundaries": [
+        {
+          "module": "dataclasses",
+          "symbols": [
+            "dataclass"
+          ],
+          "alias": null,
+          "trigger_kind": "IMPORT_AND_CALLABLE_INVOCATION",
+          "implementation": "UNKNOWN"
+        },
+        {
+          "module": "math",
+          "symbols": [
+            "isfinite"
+          ],
+          "alias": null,
+          "trigger_kind": "IMPORT_AND_CALLABLE_INVOCATION",
+          "implementation": "UNKNOWN"
+        },
+        {
+          "module": "typing",
+          "symbols": [
+            "Sequence"
+          ],
+          "alias": null,
+          "trigger_kind": "IMPORT_AND_CALLABLE_INVOCATION",
+          "implementation": "UNKNOWN"
+        },
+        {
+          "module": "numpy",
+          "symbols": [],
+          "alias": "np",
+          "trigger_kind": "IMPORT_AND_CALLABLE_INVOCATION",
+          "implementation": "UNKNOWN"
+        }
+      ],
+      "constructors": [
+        {
+          "symbol": "ResidualGovernmentAssetLevel",
+          "line": 27,
+          "parameters": [
+            "Ktarget_MU",
+            "Kprivate_current_MU",
+            "GovInv_residual_MU",
+            "firm_K_accounting_MU",
+            "firm_K_over_target",
+            "private_at_or_above_target",
+            "residual_floor_binding",
+            "capital_gap_before_MU",
+            "capital_gap_after_MU",
+            "status",
+            "capital_unit"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        },
+        {
+          "symbol": "ResidualGovernmentAssetBatch",
+          "line": 44,
+          "parameters": [
+            "province_order",
+            "Ktarget_MU",
+            "Kprivate_current_MU",
+            "GovInv_residual_MU",
+            "firm_K_accounting_MU",
+            "firm_K_over_target",
+            "private_at_or_above_target",
+            "residual_floor_binding",
+            "capital_gap_before_MU",
+            "capital_gap_after_MU",
+            "status",
+            "capital_unit"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        }
+      ],
+      "exceptions": [
+        {
+          "symbol": "ValueError",
+          "lines": [
+            63,
+            67,
+            69,
+            71,
+            73,
+            125,
+            129
+          ],
+          "trigger_kind": "VALIDATION_FAILURE",
+          "propagated_dependency_exceptions": "UNKNOWN"
+        },
+        {
+          "symbols": [
+            "TypeError",
+            "ValueError"
+          ],
+          "lines": [
+            66
+          ],
+          "trigger_kind": "CAUGHT_INPUT_FAILURE"
+        }
+      ],
+      "call_site_names": {
+        "symbols": [
+          "_validated_scalar",
+          "dataclass",
+          "float",
+          "isfinite",
+          "isinstance",
+          "np.array",
+          "np.asarray",
+          "readonly",
+          "residual_government_asset_level",
+          "ResidualGovernmentAssetBatch",
+          "ResidualGovernmentAssetLevel",
+          "tuple"
+        ],
+        "category": "LEXICAL_CALL_SITE_POINTERS",
+        "definition_vs_return_call": "RETURN_CALLS_NOT_CLASSIFIED_AS_DEFINITIONS",
+        "uninspected_implementations": "UNKNOWN"
+      },
+      "import_closure": {
+        "status": "UNKNOWN",
+        "dependencies": [
+          {
+            "module": "__future__",
+            "symbols": [
+              "annotations"
+            ],
+            "alias": null
+          },
+          {
+            "module": "dataclasses",
+            "symbols": [
+              "dataclass"
+            ],
+            "alias": null
+          },
+          {
+            "module": "math",
+            "symbols": [
+              "isfinite"
+            ],
+            "alias": null
+          },
+          {
+            "module": "typing",
+            "symbols": [
+              "Sequence"
+            ],
+            "alias": null
+          },
+          {
+            "module": "numpy",
+            "symbols": [],
+            "alias": "np"
+          }
+        ],
+        "reason": "Imported implementations, runtime bindings and module initialization closure were not followed"
+      }
+    },
+    {
+      "path": "src/ch5_two_asset_hank/multi_province/firm.py",
+      "sha256": "D4C3DADA5577F25E0159831DCC9DE3883EA656E80AA3E1C407E6BB0AF0D4CA0D",
+      "direct_text_review": "COMPLETE_FILE_TEXT_ONLY",
+      "transitive_effect_closure": "UNKNOWN",
+      "runtime_verification": "NOT_AUTHORIZED",
+      "imports": [
+        {
+          "module": "__future__",
+          "symbols": [
+            "annotations"
+          ],
+          "line": 3,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "dataclasses",
+          "symbols": [
+            "asdict",
+            "dataclass"
+          ],
+          "line": 5,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "math",
+          "symbols": [
+            "isfinite"
+          ],
+          "line": 6,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "typing",
+          "symbols": [
+            "Mapping"
+          ],
+          "line": 7,
+          "trigger_kind": "MODULE_IMPORT"
+        }
+      ],
+      "interfaces": [
+        {
+          "symbol": "_finite",
+          "line": 10,
+          "parameters": [
+            "mapping",
+            "name"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "FirmResult.as_source_dict",
+          "line": 40,
+          "parameters": [
+            "self"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        },
+        {
+          "symbol": "evaluate_firm",
+          "line": 44,
+          "parameters": [
+            "province",
+            "kt_supply",
+            "lt_supply",
+            "params"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        }
+      ],
+      "direct_effects": [
+        {
+          "symbol": "FirmResult.as_source_dict",
+          "operation": "asdict",
+          "lines": [
+            40,
+            41
+          ],
+          "category": "RESULT_CONVERSION_AND_TRANSITIVE_COPY",
+          "trigger_kind": "METHOD_INVOCATION",
+          "closure": "UNKNOWN"
+        }
+      ],
+      "category_coverage": {
+        "present": [],
+        "other_named_operations": "NO_NAMED_OPERATION_IDENTIFIED_IN_DIRECT_TEXT",
+        "indirect": "UNKNOWN"
+      },
+      "module_initialization": [
+        {
+          "category": "FUNCTION_DEFINITION",
+          "trigger_kind": "MODULE_IMPORT",
+          "body_trigger": "CALLABLE_INVOCATION_ONLY"
+        },
+        {
+          "symbol": "dataclass",
+          "category": "DECORATOR_EXECUTION",
+          "trigger_kind": "CLASS_DEFINITION",
+          "callee_effects": "UNKNOWN",
+          "lines": [
+            20
+          ]
+        }
+      ],
+      "dependency_boundaries": [
+        {
+          "module": "dataclasses",
+          "symbols": [
+            "asdict",
+            "dataclass"
+          ],
+          "alias": null,
+          "trigger_kind": "IMPORT_AND_CALLABLE_INVOCATION",
+          "implementation": "UNKNOWN"
+        },
+        {
+          "module": "math",
+          "symbols": [
+            "isfinite"
+          ],
+          "alias": null,
+          "trigger_kind": "IMPORT_AND_CALLABLE_INVOCATION",
+          "implementation": "UNKNOWN"
+        },
+        {
+          "module": "typing",
+          "symbols": [
+            "Mapping"
+          ],
+          "alias": null,
+          "trigger_kind": "IMPORT_AND_CALLABLE_INVOCATION",
+          "implementation": "UNKNOWN"
+        }
+      ],
+      "constructors": [
+        {
+          "symbol": "FirmResult",
+          "line": 21,
+          "parameters": [
+            "Kt",
+            "Lt",
+            "Yt",
+            "mt",
+            "KNratio",
+            "wt0",
+            "wjt",
+            "rk",
+            "Thetat",
+            "It",
+            "PIt",
+            "Corptax",
+            "ra0",
+            "ra",
+            "Govinc"
+          ],
+          "trigger_kind": "DATACLASS_CONSTRUCTOR_AND_POST_INIT",
+          "generated_implementation": "UNKNOWN"
+        }
+      ],
+      "exceptions": [
+        {
+          "symbol": "ValueError",
+          "lines": [
+            14,
+            16,
+            59,
+            63,
+            68,
+            73,
+            117,
+            142
+          ],
+          "trigger_kind": "VALIDATION_FAILURE",
+          "propagated_dependency_exceptions": "UNKNOWN"
+        },
+        {
+          "symbol": "KeyError",
+          "lines": [
+            13
+          ],
+          "trigger_kind": "CAUGHT_MAPPING_FAILURE"
+        }
+      ],
+      "call_site_names": {
+        "symbols": [
+          "_finite",
+          "asdict",
+          "dataclass",
+          "FirmResult",
+          "float",
+          "isfinite",
+          "values"
+        ],
+        "category": "LEXICAL_CALL_SITE_POINTERS",
+        "definition_vs_return_call": "RETURN_CALLS_NOT_CLASSIFIED_AS_DEFINITIONS",
+        "uninspected_implementations": "UNKNOWN"
+      },
+      "import_closure": {
+        "status": "UNKNOWN",
+        "dependencies": [
+          {
+            "module": "__future__",
+            "symbols": [
+              "annotations"
+            ],
+            "alias": null
+          },
+          {
+            "module": "dataclasses",
+            "symbols": [
+              "asdict",
+              "dataclass"
+            ],
+            "alias": null
+          },
+          {
+            "module": "math",
+            "symbols": [
+              "isfinite"
+            ],
+            "alias": null
+          },
+          {
+            "module": "typing",
+            "symbols": [
+              "Mapping"
+            ],
+            "alias": null
+          }
+        ],
+        "reason": "Imported implementations, runtime bindings and module initialization closure were not followed"
+      }
+    },
+    {
+      "path": "src/ch5_two_asset_hank/multi_province/wage.py",
+      "sha256": "6DC1BFCD5526AFC4ED876F4923F7FEFB39A68F66427C490F741A2475D2FFE433",
+      "direct_text_review": "COMPLETE_FILE_TEXT_ONLY",
+      "transitive_effect_closure": "UNKNOWN",
+      "runtime_verification": "NOT_AUTHORIZED",
+      "imports": [
+        {
+          "module": "__future__",
+          "symbols": [
+            "annotations"
+          ],
+          "line": 3,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "math",
+          "symbols": [
+            "isfinite"
+          ],
+          "line": 5,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "typing",
+          "symbols": [
+            "Mapping",
+            "Sequence"
+          ],
+          "line": 6,
+          "trigger_kind": "MODULE_IMPORT"
+        },
+        {
+          "module": "numpy",
+          "symbols": [],
+          "line": 8,
+          "alias": "np",
+          "trigger_kind": "MODULE_IMPORT"
+        }
+      ],
+      "interfaces": [
+        {
+          "symbol": "composite_household_wages",
+          "line": 11,
+          "parameters": [
+            "provinces",
+            "firm_wages",
+            "phi_mat",
+            "sigmau_mat",
+            "phi_l",
+            "alphal"
+          ],
+          "trigger_kind": "CALLABLE_INVOCATION"
+        }
+      ],
+      "direct_effects": [],
+      "category_coverage": {
+        "present": [],
+        "other_named_operations": "NO_NAMED_OPERATION_IDENTIFIED_IN_DIRECT_TEXT",
+        "indirect": "UNKNOWN"
+      },
+      "module_initialization": [
+        {
+          "category": "FUNCTION_DEFINITION",
+          "trigger_kind": "MODULE_IMPORT",
+          "body_trigger": "CALLABLE_INVOCATION_ONLY"
+        }
+      ],
+      "dependency_boundaries": [
+        {
+          "module": "math",
+          "symbols": [
+            "isfinite"
+          ],
+          "alias": null,
+          "trigger_kind": "IMPORT_AND_CALLABLE_INVOCATION",
+          "implementation": "UNKNOWN"
+        },
+        {
+          "module": "typing",
+          "symbols": [
+            "Mapping",
+            "Sequence"
+          ],
+          "alias": null,
+          "trigger_kind": "IMPORT_AND_CALLABLE_INVOCATION",
+          "implementation": "UNKNOWN"
+        },
+        {
+          "module": "numpy",
+          "symbols": [],
+          "alias": "np",
+          "trigger_kind": "IMPORT_AND_CALLABLE_INVOCATION",
+          "implementation": "UNKNOWN"
+        }
+      ],
+      "constructors": [],
+      "exceptions": [
+        {
+          "symbol": "ValueError",
+          "lines": [
+            28,
+            33,
+            35,
+            37,
+            41,
+            47,
+            49,
+            65,
+            68,
+            71,
+            74
+          ],
+          "trigger_kind": "VALIDATION_FAILURE",
+          "propagated_dependency_exceptions": "UNKNOWN"
+        },
+        {
+          "symbol": "KeyError",
+          "lines": [
+            46
+          ],
+          "trigger_kind": "CAUGHT_MAPPING_FAILURE"
+        }
+      ],
+      "call_site_names": {
+        "symbols": [
+          "float",
+          "isfinite",
+          "np.any",
+          "np.asarray",
+          "np.isfinite",
+          "taxes.append",
+          "output.append"
+        ],
+        "category": "LEXICAL_CALL_SITE_POINTERS",
+        "definition_vs_return_call": "RETURN_CALLS_NOT_CLASSIFIED_AS_DEFINITIONS",
+        "uninspected_implementations": "UNKNOWN"
+      },
+      "import_closure": {
+        "status": "UNKNOWN",
+        "dependencies": [
+          {
+            "module": "__future__",
+            "symbols": [
+              "annotations"
+            ],
+            "alias": null
+          },
+          {
+            "module": "math",
+            "symbols": [
+              "isfinite"
+            ],
+            "alias": null
+          },
+          {
+            "module": "typing",
+            "symbols": [
+              "Mapping",
+              "Sequence"
+            ],
+            "alias": null
+          },
+          {
+            "module": "numpy",
+            "symbols": [],
+            "alias": "np"
+          }
+        ],
+        "reason": "Imported implementations, runtime bindings and module initialization closure were not followed"
+      }
+    }
+  ],
+  "whole_chain_effect_guarantee": "UNKNOWN",
+  "prospective_contract": {
+    "name": "PURE_MEMORY_NO_SCIENTIFIC_FILE_MUTATION",
+    "status": "PROPOSAL_ONLY",
+    "owner_boundary_adoption": "NOT_ESTABLISHED",
+    "protection_pass": "NOT_ESTABLISHED",
+    "inputs": "Fixed archival inputs and a new legal same annual master at both labor and wage boundaries; bindings remain unproved",
+    "prohibited_scientific_effect_categories": [
+      "SCIENTIFIC_ROOT_CLAIM",
+      "DIRECTORY_CREATE",
+      "JSON_WRITE",
+      "NPZ_WRITE",
+      "FILE_DELETE_UNLINK"
+    ],
+    "included_objective_a_surfaces": [
+      "STDOUT",
+      "STDERR",
+      "WORK_ADMINISTRATIVE_CAPTURE",
+      "IMPORT_INITIALIZATION",
+      "LOADER",
+      "CACHE",
+      "CALLBACK",
+      "CONSTRUCTOR",
+      "RESULT_CONVERSION",
+      "EXCEPTION_CLEANUP"
+    ],
+    "threat_boundary": "Objective A retained: attacker, principal, privilege and path replacement remain in scope; read-only access and stdout are not exemptions",
+    "current_status": "C9_PAUSED;16_UNRESOLVED;window_UNACCEPTED;A3_NO_IMPLEMENTATION"
+  },
+  "needed_proof": [
+    {
+      "category": "DEPENDENCY",
+      "symbols": [
+        "dataclasses.dataclass",
+        "dataclasses.asdict",
+        "numpy",
+        "pathlib.Path",
+        "importlib.util",
+        "types.ModuleType"
+      ],
+      "gap": "Exact allowed dependency identities and direct/transitive initialization/call/exception effects; no new locator or pin inferred"
+    },
+    {
+      "category": "LOADER_CACHE",
+      "symbols": [
+        "_helper",
+        "_preload_data_only_helper",
+        "sys.modules",
+        "cache",
+        "Path.resolve"
+      ],
+      "gap": "Exact loader target/binding, cache ownership, replacement authority, preload path and callable identity/lifetime; no referent inspected"
+    },
+    {
+      "category": "INPUT_BINDING",
+      "symbols": [
+        "annual_context",
+        "prepared_array",
+        "province_mapping",
+        "frozen_shares",
+        "expected_share_sha",
+        "ledger"
+      ],
+      "gap": "Legal fixed archival input binding and new same annual master at labor/wage boundaries; no data or array inspection performed"
+    },
+    {
+      "category": "DYNAMIC_CONSUMER",
+      "symbols": [
+        "integrate_turn",
+        "SyntheticSpies",
+        "PreparedMiddleStage.run",
+        "FixtureDependencies.c1_residual",
+        "FixtureDependencies.evaluate_firm",
+        "raw.as_source_dict",
+        "progress"
+      ],
+      "gap": "Exact invoked implementations, parameter object method behavior, exception/cleanup effects and both real consumer boundaries"
+    },
+    {
+      "category": "LIFETIME_OBJECTIVE_A",
+      "symbols": [
+        "annual_observed_labor_context._PREPARED",
+        "annual_labor_array_adapter._PREPARED_ARRAY",
+        "middle_stage._PREPARED",
+        "_seal",
+        "callbacks"
+      ],
+      "gap": "Ownership, replacement privileges, reference lifetime, seal/registry mutation and stdout/Work capture under full Objective A; no implementation or protection probe authorized"
+    }
+  ],
+  "gate": "STOP_FOR_WORK_INDEPENDENT_REVIEW; no self-acceptance, successor or runtime authorization",
+  "effect_categories_reviewed": [
+    "FILE_READ",
+    "FILE_WRITE",
+    "FILE_DELETE",
+    "DIRECTORY_CREATE",
+    "PROCESS",
+    "ENVIRONMENT",
+    "CACHE",
+    "STDOUT",
+    "STDERR",
+    "EXIT_HOOK"
+  ],
+  "evidence_limit": "Names and line references only. No named operation identified is a bounded lexical finding, not absence proof. Constructor/default/decorator initialization, imported implementations, input-object methods, callbacks, result conversion, exception and cleanup closure remain UNKNOWN."
+}

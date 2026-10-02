@@ -1,0 +1,41 @@
+# 年度共同接入：工程验收与真实数据门
+2026-09-30 Asia/Shanghai。Work准备的Owner可审阅条款；不授予执行权限。
+
+已完成并独立接受的工程：不可变年度master、sealed annual array、两边传递同一master、停用的labor→冻结资本→C1→firm→wage桥。最近唯一测试43PASS/exit0（旧30在同一进程），55固定身份及3测试候选哈希匹配。只验证invented fixtures；未证明原canonical31科学API运行兼容、完整outer或Results。公式、单位、轴向、容差、价格决定均未改变。
+权威证据：
+- EVIDENCE/ch5_annual_k1b_middle_stage_engineering_20260930/independent_work_review.md
+- EVIDENCE/ch5_observed_annual_array_seam_engineering_20260930/independent_work_review.md
+- EVIDENCE/ch5_annual_k1b_middle_stage_spec_20260930/specification.md 与 independent_work_review.md
+
+尚未执行的门分别是：七份实际raw pins/locator全部摘要核验后的认证成功；已认证record转换为GDPRecord/ProvenanceBinding并调用已接受helper生成真实年度context/矩阵；原labor、C1、firm、composite wage的真实消费者兼容；完整outer的monetary/fiscal/return/nextshare。后两项不能由本次工程ACCEPT自动启动，前两项也不是已有成功事实。不得把旧31省数据来源读回等同于新sealed认证/转换/矩阵生成成功。
+
+当前权限下工程已达到停用交付门。Owner采用记录明确保留 actual provincial wedge construction 未授权，用户要求不得运行模型，所以本Work不会通过改称data-only执行真实矩阵。下一步若要转入实值验证，需要Owner明确改变此数据边界；如果保持现有要求，以上门继续关闭，现成工程保留。
+
+建议的最小新增授权仅针对data-only，不包括模型/消费者：先由单独文档任务从既有证据列出准确七raw locators、expected SHA、年度/省序/metadata与所有受保护身份，不猜路径，不读数值；独立Work审查后，再提出一个首失败即停、零修复/重试的一次性实值任务。核验所有raw摘要先于解析和转换，禁止pin override、伪造seal或duck bypass；保留target2018/observation2017、retrospective_revised/year_end_resident及GDP人口原单位，官方方法归属与price_verifiedFalse/releaseUNKNOWN原样绑定。唯一年度master要同源同身份；输出哪些真实data-only artifacts及exact output root/write方式必须预先列出并经过保护审查，不能此刻创建输出根。完成后只能供独立Work数据工程审查，不自动调用消费者或推进C9。
+
+此处没有新的调用数、路径猜测、数值、运行命令或预算grant；以上一次性结构是建议，实际任务预算须单独命名。原测试remaining0全部沿用。原C1/firm等真实调用需另行exact source/dependency/entry/output/call/failure契约和独立审查；Objective A并发/恶意路径替换保护及final-check-to-mutation窗口仍未接受，不得以泛化年度工程授权绕过。
+
+保持：C9PAUSED、ObjectiveARETAINED、两次历史attemptsCONSUMED、实际CALL_LEDGER_UNRESOLVED、model_activationFalse、ResultsFALSE；本轮实际science/model/calibration/认证成功/实值转换/真实矩阵/生产调用均零。历史leaf读范围NONCOMPLIANT保留并排除额外事实。不会重问已决价格或更改经济公式/预算。
+
+Builder生命周期：前任completed30已停止写入；继任01a0f23a-6b7f-7352-babd-52f47e651e7b completed2（第1条只读intakePASS；第2条chat-only建议，限制见builder_chat_advice_record.md）。create_thread明确指定Zotero-Analytical-Workflow项目；独立app成员列表尚未返回继任，项目归属readback UNKNOWN，因此继任只允许chat-only建议，本Work保存文档。任何Builder文件写任务须在归属查证后才可下达。
+
+Owner待决事项仅为：继续保留实值门关闭，或明确允许首次实际认证/年度转换/31x31真实矩阵生成这一新增数据边界（模型与科学消费者继续关闭）。不要求价格再决定，不要求C9恢复，不要求重置预算。
+## 可供Owner决定的具体新增边界（PROPOSED_NOT_ADOPTED）
+若Owner允许首次真实数据验证，建议另行授权最多一个data-only进程：一次七对象实际认证、一次2017→target2018年度helper构建、一次31x31系数矩阵生成；首失败保留attempt与原始输出即停，零修复/重试。该进程的科学/model/原消费者调用数仍为0。现有公共入口仍ProductionBlocked；不得临时绕过seal/private入口或猴补pins。需先有单独的inactive data-only入口工程任务、固定候选哈希和独立Work审查，Owner允许数据边界也不等于工程候选自动可运行。
+提议未来专用data-only证据根：EVIDENCE/ch5_observed_annual_data_only_trial_20260930（本次不创建）。仅拟输出snapshot_metadata.json、annual_phi.csv、annual_context_manifest.json、execution_ledger.json、stdout.txt、stderr.txt；metadata要完整保存七pins、capture时间与原定义/限制，manifest绑定矩阵hash及31省固定mapping与同一master。输出路径必须在新任务中精确绑定、验证未占用且符合适用保护条款；Objective A要求不得被此文档豁免。任何实际consumer输出或science root仍禁止。
+
+七对象预期身份从已接受array规格及保存prechange清单/方法归属manifest提取，仅读元数据，没有读实际金额、parse实际audit或执行认证。下面是后续task的具体locator基础；不是认证成功或本次raw bytes匹配声明：
+| key | 相对唯一工作树路径 | expected SHA256 |
+|---|---|---|
+| manifest | EVIDENCE/ch5_methodological_price_binding_20260930/source_binding_manifest.json | 4F28039F5192172E1A7524018DD6679BED1E5A1F4C837B8251B9596473C8C566 |
+| attribution | EVIDENCE/ch5_methodological_price_binding_20260930/attribution_record.json | E94C976FBD93262D98E776777E295EC9DDBA92B26E1D48A7E0D2496CC6C0E91B |
+| audit | EVIDENCE/ch5_revised_data_table_20260930/data_audit.json | 1D3DE27EBAE90EBE8D2F3CB42880BD2FBDB68CFA22BEBBE866479180380BC936 |
+| gdp | EVIDENCE/ch5_revised_data_table_20260930/nbs_gdp_display.json | 5129836B3781ECAE9FA21D7082193A22ACF5B1A40389605ABB0ACC30AD1127CB |
+| population | EVIDENCE/ch5_revised_data_table_20260930/nbs_population_display.json | F837137765DDE99B56578E8404621218A4CA716FEF40BF8F16E75B8F8C79F0C3 |
+| adapter | EVIDENCE/ch5_inactive_gdp_data_adapter_20260930/adapter.py | 0BEB77FA60C95227E79EFC32C497C2F28D9C2DEBADC09987A3512A96384A226D |
+| helper | src/ch5_two_asset_hank/corrected_diagnostic/lagged_observed_gdp_wedge.py | 7B9A490F382E3007820E70C68D2EFB5992DE25BC8455EDE8B265CA33F384AF56 |
+
+因此真正Owner决策是是否允许“首次实际认证/年度转换/31x31真实矩阵生成”这一新增数据边界；不是是否允许继续编写安全文档。Owner未明确改变要求前，上述全部仍0，保持停用。已决价格与C9均不纳入该选择。
+Locator证据具体分工：manifest/attribution/audit/gdp/population的路径由 EVIDENCE/ch5_methodological_price_binding_20260930/source_binding_manifest.json 的 sources[].path 与 attribution_path 提供（manifest本身的精确路径为该证据对象）；adapter/helper路径由 EVIDENCE/ch5_observed_annual_array_seam_engineering_20260930/prechange_identities.json 的相应条目提供；七expected SHA取已接受 EVIDENCE/ch5_observed_annual_array_seam_spec_20260930/specification.md 的Fixed raw SHA-256 pins表。这里只核对元数据指向，不声称实际raw文件存在/可读/摘要匹配或认证成功。
+第2条只读PowerShell读取TASK违反Work消息“任何process禁止”的字面要求，scope NONCOMPLIANT已记录于builder_chat_advice_record.md。其新点名文档未读，不作为完整source核验；Work另行核对自己的文档依据。science/test/Python/realnumeric/writes均0，预算不改写。
+保护权限的精确出处：EVIDENCE/ch5_methodological_price_binding_20260930/owner_adoption.md 原文为“Scientific execution, actual provincial wedge construction, model activation, convergence/Results claims and C9 reopening remain unauthorized.” 本轮用户自动续行授权指向年度与共同工资接入工程，并要求不得运行模型/重置预算；该工程已完成。这里请求Owner新增实际数据边界，不把此前“均为零”的状态描述单独扩大成永久禁令，也不把工程自动续行当作真实数值预算。

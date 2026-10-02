@@ -1,0 +1,117 @@
+{
+  "schema": "CH5_LAGGED_GDP_HELPER_BUILDER_V1",
+  "status": "CANDIDATE_PENDING_INDEPENDENT_ENGINEERING_REVIEW",
+  "date": "2026-09-30",
+  "parent_head": "75cee92b1ad9e5cb6fc069bca892213838ffdddc",
+  "parent_src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
+  "builder_changed_paths": [
+    "src/ch5_two_asset_hank/corrected_diagnostic/lagged_observed_gdp_wedge.py",
+    "tests/test_ch5_lagged_observed_gdp_wedge.py",
+    "EVIDENCE/ch5_lagged_observed_gdp_wedge_helper_20260930/builder_report.md",
+    "EVIDENCE/ch5_lagged_observed_gdp_wedge_helper_20260930/builder_receipt.json"
+  ],
+  "candidate_raw_sha256": {
+    "src/ch5_two_asset_hank/corrected_diagnostic/lagged_observed_gdp_wedge.py": "4EFECAB1B554748F4119D245005D3106B195174124E9057DEA28E4A34E7D864A",
+    "tests/test_ch5_lagged_observed_gdp_wedge.py": "0687F3E8B53CB133CBD9BD86A301BE2BBA9A329A3E86EAC8AD33EA67B834C0BC",
+    "EVIDENCE/ch5_lagged_observed_gdp_wedge_helper_20260930/builder_report.md": "F5036068F3842ACCC314A382C4952BDDC06A0E1BB96170E5CCB9CE54366B9F88"
+  },
+  "receipt_self_hash": "NOT_EMBEDDED_TO_AVOID_SELF_REFERENCE",
+  "pinned_file_sha256": {
+    "reports/ch5_k1b_turn9_post_failure_new_attempt_001/partial_artifact_readback.json": "8191C24E8A472EE702C71A72DB4F4CCC9A0733D432226DFDB6EF0B4045792BAC",
+    "EVIDENCE/ch5_lagged_observed_gdp_wedge_helper_20260930/prior_task_current.md": "151A5590EC7A9F28A29E9BD0CC19EC88F26DCD31875F81E3E94019034C2A9F45",
+    "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py": "E2D5EDBBF73ABF60DBA183FB04A5D364D3D83FFCD262254F58EAD53EC2F36D07",
+    "reports/ch5_k1b_turn7_outer_r2_20260925_run001/execution_artifact_manifest.json": "413A0279C244820A28B043452C6BEA45EB2C0B5CF8E7CDF460DBBEC45DD61D91",
+    "reports/ch5_k1b_turn8_same_frozen_timing_measurement_run001/science_artifact_manifest.json": "5DD433E8DD0D8A3C6DB59C3FE370C4EF8770BBCCCA3F8D79211D93938CFA654D",
+    "docs/CH5_LAGGED_OBSERVED_GDP_WEDGE_HELPER_SPEC_20260930.md": "96185C318F767AB740B2CF24352118B6B824102B8EB0A1E16EE2AD5EFAA5F03B",
+    "AGENTS.md": "D557EE92DEBFADBBF78DD549429E393C364F3C155CF9C508139E0850AC5B7BFA",
+    "reports/ch5_k1b_turn9_timed_risk_exception_run001/partial_artifact_manifest.json": "80BD0D42CB73B4E39B811E759505480542D5A73227014F30B732C34A8AC1FDC3",
+    "EVIDENCE/ch5_lagged_observed_gdp_wedge_helper_20260930/preparation_receipt.json": "131B2AC410F124E539124FC22CF54CDD918420E92F20C1AB03410144D6859481",
+    "reports/ch5_k1b_turn9_post_failure_new_attempt_001/partial_artifact_manifest.json": "3B10AB56BC2CE3D8FF9B4FB6442E012CB39686AF389624D17566CC8D68F57D20",
+    "reports/ch5_k1b_turn8_outer_r2_20260925_run001/execution_artifact_manifest.json": "5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301",
+    "TASK_CURRENT.md": "2BBB59275F17D0E1A058A97E640362F6363BB44CE41B87413D2A610FF6DFFDA3",
+    "reports/ch5_turn6_same_frozen_input_repeat_20260923_run001/execution_artifact_manifest.json": "7890720D502AC1C04D672978C6F662DD51F9D2BA27F321701877ABE9214CDE61"
+  },
+  "pinned_hash_entry_matches": 13,
+  "pinned_hash_posttest_matches": 13,
+  "protected_roots": [
+    "reports/ch5_k1b_turn7_outer_r2_20260925_run001/",
+    "reports/ch5_k1b_turn8_outer_r2_20260925_run001/",
+    "reports/ch5_k1b_turn8_same_frozen_timing_measurement_run001/",
+    "reports/ch5_k1b_turn9_post_failure_new_attempt_001/",
+    "reports/ch5_k1b_turn9_timed_risk_exception_run001/",
+    "reports/ch5_turn6_same_frozen_input_repeat_20260923_run001/"
+  ],
+  "test_invocations": [
+    {
+      "failed": 0,
+      "elapsed_reported_seconds": 0.004,
+      "unittest_methods": 12,
+      "invocation": 1,
+      "command": "python -B tests/test_ch5_lagged_observed_gdp_wedge.py",
+      "passed": 12,
+      "exit_code": 0
+    },
+    {
+      "invocation": 2,
+      "command": "python -B tests/test_ch5_lagged_observed_gdp_wedge.py",
+      "exit_code": 0,
+      "unittest_methods": 14,
+      "passed": 14,
+      "failed": 0,
+      "elapsed_reported_seconds": 0.004,
+      "concrete_fixes": [
+        "Exact built-in str for all three enum fields before comparisons",
+        "Reject strict income direction rounding collapse"
+      ]
+    }
+  ],
+  "test_retries": 1,
+  "helper_imports": [
+    "dataclasses",
+    "fractions",
+    "math",
+    "re"
+  ],
+  "model_package_imported": false,
+  "actual_panel_reads": 0,
+  "real_provincial_matrices": 0,
+  "scientific_calls": 0,
+  "scientific_counter_basis": "Exact command and direct-loaded helper import surface; no historic ledger recovery",
+  "science_categories": {
+    "HANK": 0,
+    "capital_allocation": 0,
+    "steady_state": 0,
+    "outer_turns": 0,
+    "welfare": 0,
+    "GE": 0,
+    "annual_simulation": 0,
+    "HJB_KFE": 0,
+    "calibration": 0,
+    "replay": 0,
+    "Results": 0,
+    "firms": 0
+  },
+  "preflight": 0,
+  "execute": 0,
+  "wrapper": 0,
+  "new_scientific_output_roots": 0,
+  "old_c9_attempts_consumed": 2,
+  "old_c9_actual_call_ledgers": "CALL_LEDGER_UNRESOLVED",
+  "real_data_price_basis": "UNVERIFIED",
+  "results_eligibility": false,
+  "next_gate": "INDEPENDENT_WORK_ENGINEERING_REVIEW",
+  "self_acceptance": false,
+  "commit_push": false,
+  "initial_candidate_raw_sha256": {
+    "src/ch5_two_asset_hank/corrected_diagnostic/lagged_observed_gdp_wedge.py": "D09C8E28307407D3AD31292E1E10C25224177DED067ECCE9380C0C3AFF78E83C",
+    "tests/test_ch5_lagged_observed_gdp_wedge.py": "A185A201A3185FA9FE02049F275B89D0C1FBC1B51442485AB650D0857E108F81",
+    "EVIDENCE/ch5_lagged_observed_gdp_wedge_helper_20260930/builder_report.md": "60ADB06B7E988D10ACC5D55E505DF38E4A701B8701CA8529A9C20BC9BE54681A"
+  },
+  "repair1": {
+    "entry_pinned_matches": 13,
+    "historical_initial_review": "ACCEPTANCE_WITHHELD_TWO_REQUIRED_FIXES",
+    "posttest_pinned_matches": 13,
+    "reviewer_acceptance": "PENDING",
+    "remaining_test_invocations_after_concrete_fix": 1
+  }
+}

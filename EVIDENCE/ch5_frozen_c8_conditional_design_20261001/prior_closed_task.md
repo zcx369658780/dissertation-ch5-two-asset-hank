@@ -1,0 +1,5 @@
+# Current Task
+Status: CLOSED__WAITING_OWNER_SCIENTIFIC_BASELINE_SELECTION.
+2026-10-01 Asia/Shanghai. Invented31 engineering independentlyACCEPTED/12PASS/exit0, soleprocessconsumed1/rem0. Data-only actual1 also consumed/rem0. In the current observed integration chain, new model/originalconsumer/science calls remain0; historicalC8scientificexecution preserved. No execution/write task granted by this document.
+Owner packet EVIDENCE/ch5_annual_common_consumer_31_fixture_20261001/owner_scientific_baseline_packet.md proposes fixed originalC8 middle-stage conditional diagnostic scientific baseline. This is a purpose/input-stage decision only, not execution permission. Owner selection pending; routine engineering/document continuation after an adopted baseline does not reset any budget.
+C9PAUSED/ObjectiveARETAINED/windowUNACCEPTED/historicalCALL_LEDGER_UNRESOLVED/price_verifiedFalse/releaseUNKNOWN/model_activationFalse/ResultsFALSE. Source unchanged. Buildercompleted11/idle. No new task/consumer/model call until appropriate scoped authority; packet explicitly preserves independent protection/final-chain review and new explicit runtime grant.

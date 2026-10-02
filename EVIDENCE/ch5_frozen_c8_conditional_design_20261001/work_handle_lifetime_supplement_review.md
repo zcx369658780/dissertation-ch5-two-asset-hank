@@ -1,0 +1,11 @@
+# TASK28 Work review
+
+ACCEPT__PINNED_HANDLE_LIFETIME_DOCUMENTARY_SUPPLEMENT_ONLY.
+
+Supplement42F98C29AFA86DD111C0FFE0639244ED309C5887FDC3AA3FC0D1729745335C3A; receiptD82E90875B1A2F3F64235846CACD2F0EB95D61C7865B0F0EF6B17B915518F52B; task2EA32C8C8C59935FD63C072251E40F4C0AA6E06112BAC49D9E46ECCD7B4D99A3. Work main read complete supplement and receipt. Independent resume_input_plan verified S01-S04/source table/metadata; resume_effect_plan verified C01-C04/metadata/interpretation limits. No substantive findings. NtClose deprecation and same-page import-library inconsistency preserved without API adoption; CloseHandle remains NOT_READ in TASK28 only.
+
+Main reviewed completed turn01a0f69b-af9d-7cf0-ada8-e7008711aaf8: seven administrative text/hash/Git commands, sole-tree cwd/exit0, two authorized new files, two reused disjoint readonly helper roles completed. No network/runtime/native/probe/test/science invocation observed. Fresh13 input/startup pins+2outputs matched, HEAD/src unchanged; prior dirty/untracked content retained. Builder had no expected taskSHA in dispatch, but exact task title/path was issued by Work and its observed/prepostSHA matched Work's new taskSHA; no source ambiguity was found. This is not a new execution grant.
+
+Acceptance limited to local documentary text and faithful interpretation. Exacthost/build/FS/SDK/API applicability UNKNOWN; fullObjectiveA/16UNRESOLVED/windowUNACCEPTED/sixrootauthoritygap/STOP__UNRESOLVED retained. C9PAUSED/CALL_LEDGER_UNRESOLVED/priceFalse/releaseUNKNOWN/baseyearNone/modelFalse/ResultsFALSE. HistoricalC8science retained/currentconditionalcalls0. Oldactualdata/fixture/archiveadmin/V1/V2consumed1/rem0. HTTPbatch1=3/rem0, batch2=2/rem0; Main separately retrieved one distinct CloseHandle page in batch3=1/rem0, not read or used by TASK28, no oldbudget reset. All runtime/scientific/native/probe/experiment budgets0.
+
+Next bounded documentary gate may review pinned CloseHandle text and prepare an Owner-readable target-platform applicability decision packet. Any actual metadata query is a new precise Owner decision, because implementation-stage platform probe remains forbidden; document preparation does not authorize it. No model, non-refusal implementation or experiment is issued. Builder2completed/idle wellbelow30; continue same verified successor.

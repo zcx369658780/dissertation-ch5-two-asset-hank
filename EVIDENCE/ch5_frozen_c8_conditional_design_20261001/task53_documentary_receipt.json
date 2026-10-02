@@ -1,0 +1,164 @@
+{
+  "task": "TASK53",
+  "authority": "ISSUED__TASK53_UNPERFORMED_FIELD_REMARKS_TEXT_EXTRACTION",
+  "date": "2026-10-01",
+  "builder_thread": "01a0f67a-6f00-79a3-9b6e-24a75d875068",
+  "dialogue": 15,
+  "authorized_tree": "D:\\ProjectTemp\\c5k1bturn56",
+  "stage": "FIELD_TEXT_AND_LIMITS_DOCUMENTED__OUTPUTS_WRITTEN__WORK_REVIEW_PENDING",
+  "first_failure": null,
+  "acceptance": "NOT_SELF_ACCEPTED",
+  "terminal_gate": "STOP__WAIT_WORK_INDEPENDENT_REVIEW",
+  "allowed_inputs": [
+    "D:\\ProjectTemp\\c5k1bturn56\\TASK_CURRENT.md",
+    "D:\\ProjectTemp\\c5k1bturn56\\EVIDENCE\\ch5_frozen_c8_conditional_design_20261001\\official_file_id_info_batch5_20261001.html",
+    "D:\\ProjectTemp\\c5k1bturn56\\EVIDENCE\\ch5_frozen_c8_conditional_design_20261001\\work_task52_failure_review_receipt.json"
+  ],
+  "reviewer_additional_input": "D:\\ProjectTemp\\c5k1bturn56\\EVIDENCE\\ch5_frozen_c8_conditional_design_20261001\\task53_file_identity_fields_and_limits.md (new draft explicitly authorized)",
+  "output_absence_confirmed_before_write": true,
+  "outputs": [
+    {
+      "Path": "D:\\ProjectTemp\\c5k1bturn56\\EVIDENCE\\ch5_frozen_c8_conditional_design_20261001\\task53_file_identity_fields_and_limits.md",
+      "Hash": "F1F92D15A9768683C1127BC8CDBC6FA2E0D9F452A3216FE3B4026462958E818B",
+      "hash_attempts": 1,
+      "markdown_lines": 56,
+      "seal": "HASHED_ONCE__NO_READ_OR_REHASH_AFTER_SEAL"
+    },
+    {
+      "Path": "D:\\ProjectTemp\\c5k1bturn56\\EVIDENCE\\ch5_frozen_c8_conditional_design_20261001\\task53_documentary_receipt.json",
+      "Hash": null,
+      "seal": "ONE_FINAL_HASH_TO_BE_REPORTED_EXTERNALLY",
+      "note": "Self SHA256 cannot be embedded in its own final bytes."
+    }
+  ],
+  "identity": {
+    "verification": "INHERITED_NOT_FRESH_VERIFIED",
+    "title": "FILE_ID_INFO (winbase.h) - Win32 apps | Microsoft Learn",
+    "title_line": 13,
+    "canonical": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/ns-winbase-file_id_info",
+    "canonical_line": 19,
+    "source": "TASK52 persisted trace as reported in allowed Work failure receipt",
+    "historical_sha256": "495740A144FFB540A4B8008A56CB6BCAA9DE70682F68A85FE2CA6716B3D550BE",
+    "historical_sha_source": "TASK53 authority reports historical identity",
+    "input_hash_attempts": 0,
+    "current_byte_pin_established": false,
+    "network_acquisition_provenance_verified": false
+  },
+  "main_trace": [
+    "TASK_CURRENT standalone first20 lines, exit0, no truncation",
+    "Allowed TASK52 failure receipt standalone first100 lines, exit0, no truncation",
+    "Only two new outputs checked absent, exit0",
+    "Wrote 56-line new markdown",
+    "Reviewed extractor's already captured raw HTML lines804-820 without additional source reads",
+    "Markdown single SHA256 returned structured Path/Hash, validated uppercase64hex"
+  ],
+  "helpers": [
+    {
+      "agent": "/root/task37_enum_struct",
+      "model": "gpt-6-luna",
+      "reasoning": "medium",
+      "role": "READ_ONLY_SOURCE_EXTRACTOR",
+      "complete": true,
+      "trace": [
+        "TASK_CURRENT standalone first20 lines, max_output_tokens5000",
+        "Exact rg terms VolumeSerialNumber|FileId|uniquely|identify|Remarks|Syntax|Members on sole allowed HTML:9 matching lines",
+        "One25-line source slice804-828, max_output_tokens5000",
+        "Raw804-820 lines supplied from already captured output; no reread"
+      ],
+      "all_commands_successful": true,
+      "truncation": false,
+      "source_slice_count": 1,
+      "source_slice_allowance": 2,
+      "title_canonical_reread": false,
+      "hashes": 0,
+      "writes": 0,
+      "advisory_only": true
+    },
+    {
+      "agent": "/root/task37_permission_review",
+      "model": "gpt-6-luna",
+      "reasoning": "medium",
+      "role": "READ_ONLY_DOCUMENT_BOUNDARY_REVIEWER",
+      "complete": true,
+      "trace": [
+        "TASK_CURRENT standalone first20 lines",
+        "TASK52 failure receipt separately bounded",
+        "Explicitly authorized new56-line markdown draft before sealing"
+      ],
+      "html_read": false,
+      "hashes": 0,
+      "writes": 0,
+      "findings": "No substantive defect; inherited identity/not fresh pin, facts/inference/scoped silence, no temporal/path/mutation protection,16 unresolved and oldstates preserved.",
+      "advisory_only": true,
+      "acceptance": false
+    }
+  ],
+  "source_facts": {
+    "intro_lines": "804-807",
+    "syntax_lines": "808-813",
+    "volume_serial_lines": "815-816",
+    "file_identifier_comparison_lines": "817-820",
+    "identity_domain": "128-bit file identifier plus volume serial number uniquely identify a file on a single computer",
+    "cross_handle_rule": "Compare both values for each of two open handles to determine whether they represent the same file",
+    "remarks_search": "No Remarks match in exact permitted token search; line821 begins Requirements",
+    "silence_scope": "Only extracted identity passage; no global absence claim",
+    "check_to_mutation_guarantee": "NOT_ESTABLISHED",
+    "temporal_stability": "NOT_ESTABLISHED_BY_EXCERPT",
+    "parent_chain_authority_lifetime_completion_failure_partial_state": "NOT_ESTABLISHED_BY_EXCERPT"
+  },
+  "counts": {
+    "input_hash": 0,
+    "http": 0,
+    "sdk_registry_query": 0,
+    "native": 0,
+    "model_science": 0,
+    "research_runtime": 0,
+    "test": 0,
+    "import_AST_compile_probe": 0,
+    "consumer_data": 0,
+    "git": 0,
+    "archive_reads": 0,
+    "old_source_identity_rereads": 0,
+    "other_tree_reads": 0
+  },
+  "output_hash_budget_at_write": {
+    "authorized": 2,
+    "consumed": 1,
+    "remaining": 1,
+    "next": "RECEIPT_SINGLE_HASH",
+    "retry": 0,
+    "failure_rule": "FIRST_ERROR_TRUNCATION_MISMATCH_STOP_NO_REPAIR_NO_RETRY"
+  },
+  "preserved": {
+    "task52": "STOP__ORIGINAL_TOOL_DISPLAY_TRUNCATION; persisted record recovery does not reverse STOP; unused2 retired",
+    "task49": "STOP__FOUR_INPUT_HASHES4_REM0__OUTPUTS2_RETIRED",
+    "task47": "STOP__INVALID_SEAL_AND_COMPLETION_EXCLUDED",
+    "task48": "LIMITED_ADVICE_ONLY",
+    "sdk": "1/rem0",
+    "oldquery": "2/rem0",
+    "http_batches": "3,2,1,2,2,1 each rem0",
+    "protectedbyte": "7/rem0",
+    "actualdata_fixture_archiveadmin_V1_V2": "each1/rem0",
+    "C9": "PAUSED",
+    "fullObjective": "A",
+    "unresolved": 16,
+    "window": "UNACCEPTED",
+    "CALL_LEDGER": "UNRESOLVED",
+    "price": false,
+    "release": "UNKNOWN",
+    "baseyear": null,
+    "model": false,
+    "Results": false,
+    "originalC8": "RETAINED",
+    "target_SDK_API_native_support": "UNKNOWN",
+    "applicability_discrepancy": "NOT_RECONCILED"
+  },
+  "scope_limits": {
+    "previous_artifacts_modified": false,
+    "protection_PASS": false,
+    "execution_authorized": false,
+    "further_proposal": false,
+    "owner_gate": "Directional/scientific/experiment decisions Owner only",
+    "work_review": "AFTER_BUILDER_FINAL_ONLY"
+  }
+}

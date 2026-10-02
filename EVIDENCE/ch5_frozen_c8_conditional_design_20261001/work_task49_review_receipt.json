@@ -1,0 +1,51 @@
+{
+  "task": "TASK49",
+  "date": "2026-10-01",
+  "verdict": "STOP__BUILDER_MODEL_CAPACITY_NO_RETRY",
+  "acceptance": "FAILURE_ACCOUNTING_ONLY_NOT_DOCUMENTARY_COMPLETION",
+  "builder": "01a0f67a-6f00-79a3-9b6e-24a75d875068",
+  "builder_turn": "01a0f7d1-cdbd-7f63-83e1-7eb8ee3daa1c",
+  "dialogue": 12,
+  "thread_status": "systemError",
+  "turn_status": "failed",
+  "first_observed_failure": "Selected model is at capacity. Please try a different model.",
+  "evidence_source": "read_thread latest full item list and wait_threads cursor a28b057c-2af1-46a2-be3d-f568fb511719:85",
+  "command_exits": [
+    0,
+    0
+  ],
+  "input_hashes_matched": [
+    "2843FD68F767D1197F1654CDAE745D7C196381ECF8BC0D76038DA56E04F5E50F",
+    "590E3CDF3A0503E6889BBF111BE813663A7007314E0B13CE778621DD7BF8BB2E",
+    "65092714C6E4304B370A0C658DC6B0A9BF1896E0831CBB79EA9228E18BF58BF7",
+    "53122FA7E6049DB107DC053449ED5A8FD15D3BBC4A6FCED1B96D407FCABA931B"
+  ],
+  "administrative_input_hash_budget": {
+    "remaining": 0,
+    "retry": 0,
+    "consumed": 4,
+    "authorized": 4
+  },
+  "builder_output_hash_budget": {
+    "remaining": 0,
+    "unused_retired": 2,
+    "consumed": 0,
+    "authorized": 2
+  },
+  "output_state": "Two outputs absent at Builder preflight; no fileChange/final/helper event in returned full failed-turn item list; current output existence NOT_CHECKED",
+  "outputs_read_by_Work": 0,
+  "helpers_builder_observed": 0,
+  "completion_or_seal": "NOT_ESTABLISHED",
+  "trace_display_limit": "read_thread first command output truncated by 4500-char display limit; actual command truncation NOT_ESTABLISHED. Hash command output API truncated=false.",
+  "work_review_helpers": [
+    "task49_failure_accounting: extracted API facts only, no tools or duplicate hashes",
+    "task49_boundary_review: scope/budget exclusion review only"
+  ],
+  "no_retry_or_model_switch": true,
+  "new_HTTP_registry_protected_science_model_researchruntime_native_test_calls": 0,
+  "old_budgets": "SDK1rem0/query2rem0/HTTP3,2,1,2,2,1rem0/protectedbyte7rem0/actualdatafixturearchiveadminV1V2each1rem0; NO_RESET",
+  "preserved": "TASK47STOP/invalidreceipt unchanged/TASK48reportadviceonly+sealcompletionexcluded/C9PAUSED/fullObjectiveA/16UNRESOLVED/windowUNACCEPTED/CALL_LEDGER_UNRESOLVED/priceFalse/releaseUNKNOWN/baseyearNone/modelFalse/ResultsFALSE/originalC8",
+  "local_HEAD": "75cee92b1ad9e5cb6fc069bca892213838ffdddc",
+  "src_tree": "00682b2e1a7ba23665f6e16f6acf48ad35874883",
+  "next_gate": "TASK49 closed STOP. Existing Builder preserved; no automatic retry/replacement. Any subsequent distinct administrative recovery needs a new concrete task preserving four consumed hashes and first failure. No science or experiment authority."
+}

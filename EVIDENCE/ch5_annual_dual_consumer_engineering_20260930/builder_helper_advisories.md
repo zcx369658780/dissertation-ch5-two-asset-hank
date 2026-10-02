@@ -1,0 +1,9 @@
+# Read-only helper advisories (not independent Work acceptance)
+
+2026-09-30. Three separate helpers were used; none wrote files, ran tests/imports, read actual numeric data or accessed other repositories.
+
+- annual_mapping (GPT-6 Luna/medium): mapped actual old integrate_turn signature, _one_turn_inputs old Yt/Lt direction, labor input keys N/wjt/tau/ct and ga/phi_l, and composite wage stage after firms with phi_l/alphal. Main implements only new independent seam.
+- annual_pins (GPT-6 Luna/medium): extracted exact saved-byte pins, target2018/observed2017, methodological prices with False direct verification, capture/axis/provenance requirements and blocked production. Canonical prechange/backup files are under this task evidence root, as task states; an initial shorthand root-location caveat is not an actual identity failure.
+- annual_review (GPT-6.1 Sol/high): initial advisory CHANGES_REQUIRED for fake/no-op context and mutable wedge, insufficient changed-states/consumer-key evidence; later identified missing wedge observation/binding/nested provenance checks. Main fixed these before or in Repair1. Final prior seal review advisory passed with explicit inactive/outer-runtime limits.
+
+Work then identified public replace changing wedge/phi while keeping a common token. Main added per-context immutable seal and used Repair2. Final read-only reviewer confirmed init=False seal only populated at preparation, binds original wedge identity/allmetadata/provenance, ordinary replace loses seal and rejects before spies, with no annual global cache. Final advisory passed with limits: only synthetic seam, no observed numerical preparation or full runtime activation; no production authentication success path exercised. Reviewer did not rerun tests; 16PASS/exit0 is the main Builder's recorded Repair2 execution. Initial failure and all3invocations remain in builder_execution_ledger.json and separate outputs. Work retains sole independent ACCEPT/REJECT.

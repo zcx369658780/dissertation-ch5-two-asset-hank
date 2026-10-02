@@ -1,0 +1,5 @@
+# Independent Work serializer and protection review
+2026-10-01. ACCEPT__SERIALIZER_STATIC_STAGE_AND_A2_CLASSIFICATION_FACTS_ONLY.
+Receipt F67B765B6351B4BFD31E46E811CAC7D070102D427D31DB100BD3928A0B886B7F and three outputs freshly hash match; fixed72 identities match under only prior SD exception. Independent source reviews confirm optionb serialization/result relation and C8 direct producer forwarding. Independent A2 review confirms16 unresolved classes, full threat scope and no mechanism adoption. Current task16 has no new locator/hash deviation. Prior deviations and consumed budgets remain preserved.
+Not accepted: live/sealed C8 batch reconstruction, complete typed metadata, original params/distance forwarding, verified protection/import closure, runtime readiness or Results. old._batch delegated selector remains a precise source leaf gap.
+Current model/data/science/consumer/import/tests calls and budgets0; C9PAUSED, ObjectiveARETAINED/windowUNACCEPTED, oldCALL_LEDGER_UNRESOLVED, priceFalse/modelFalse/ResultsFALSE. Next bounded design leaf reads only pinned old._batch/helper forwarding and old runner hash in original preflight, no data vectors or runtime.

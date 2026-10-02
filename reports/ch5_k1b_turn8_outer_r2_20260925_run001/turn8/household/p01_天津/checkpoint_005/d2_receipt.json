@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "checks": {
+    "minimum_offdiagonal_nonnegative": true,
+    "diagonal_construction_error_exact_zero": true,
+    "q_one_within_prospective_bound": true,
+    "b_coordinate_within_prospective_bound": true,
+    "a_coordinate_within_prospective_bound": true,
+    "zero_tolerance_closed_faces_feasible": true,
+    "zero_outward_face_count": true,
+    "zero_outward_face_amount": true
+  },
+  "minimum_offdiagonal": 3.066237137223331e-05,
+  "diagonal_construction_error": 0.0,
+  "max_abs_q_one": 2.0539125955565396e-15,
+  "arithmetic_tolerance": 5.2408300460219405e-14,
+  "coordinate_action": {
+    "fixed_pre_outcome_max_row_terms": 4,
+    "gamma_n": 8.88178419700126e-16,
+    "b": {
+      "max_abs_error": 1.7763568394002505e-14,
+      "max_bound": 17.699734512003975,
+      "violation_count": 0,
+      "first_violation_flat_f": null,
+      "passes": true,
+      "error_field_sha256": "12833D64A0D355BAE7A540DB5A2A61F379A91659C4B9C76D0334DE7FC9CB4D7E",
+      "bound_field_sha256": "3C23003BDEE51EF1F42D6C94EB9389C150B73BADB587BDC906B865260E6BFD49"
+    },
+    "a": {
+      "max_abs_error": 4.3076653355456074e-14,
+      "max_bound": 4.990991020166255e-13,
+      "violation_count": 0,
+      "first_violation_flat_f": null,
+      "passes": true,
+      "error_field_sha256": "DEEFEE75FDB1963BB50EDF4D9D287B1C03A48124F6F00419C2B7CE3A14AC55DC",
+      "bound_field_sha256": "EC9B0F9B619A5F1B20D04942F4508C009C4B088C30A453D2E3F87EB071C769D3"
+    }
+  },
+  "closed_face_summaries": [
+    {
+      "axis": "b",
+      "side": "lower",
+      "boundary_kind": "economic_lower_bound",
+      "inward_count": 20,
+      "tangent_count": 20,
+      "outward_count": 0,
+      "max_outward": 0.0
+    },
+    {
+      "axis": "b",
+      "side": "upper",
+      "boundary_kind": "artificial_upper_state_constraint",
+      "inward_count": 20,
+      "tangent_count": 20,
+      "outward_count": 0,
+      "max_outward": 0.0
+    },
+    {
+      "axis": "a",
+      "side": "lower",
+      "boundary_kind": "economic_lower_bound",
+      "inward_count": 40,
+      "tangent_count": 0,
+      "outward_count": 0,
+      "max_outward": 0.0
+    },
+    {
+      "axis": "a",
+      "side": "upper",
+      "boundary_kind": "artificial_upper_state_constraint",
+      "inward_count": 0,
+      "tangent_count": 40,
+      "outward_count": 0,
+      "max_outward": 0.0
+    }
+  ],
+  "q_identity": {
+    "data": "04928D76F212E06DC6EB488B9AF41D5A9D2062471CA79A4D3BE2454C2768625E",
+    "indices": "8E2684C55B45827696D02E26F011330586F03AE667FEDD91273C779E36951052",
+    "indptr": "1232A07497D60BBD66AC775B80C616D16E3DE0F5036BFB792817D8B3D5AED9A9"
+  },
+  "q_artifact": {
+    "path": "q_generator.npz",
+    "bytes": 24871,
+    "sha256": "BDCEF54B2820B27B805B49371D1CC3E593E09C9508243FBF886AFC1FA718E492"
+  }
+}

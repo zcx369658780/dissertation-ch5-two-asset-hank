@@ -1,0 +1,22 @@
+# Current Task
+Status: ISSUED__ANNUAL_K1B_MIDDLE_STAGE_SPECIFICATION__ZERO_EXECUTION.
+Date: 2026-09-30 Asia/Shanghai.
+
+Authority: Owner standing automatic local dispatch/review; Work ACCEPT__SEALED_ANNUAL_ARRAY_AND_INERT_DUAL_CONSUMER_ENGINEERING_ONLY in EVIDENCE/ch5_observed_annual_array_seam_engineering_20260930/{independent_work_review.md,work_postchange_readback.json}. Prior unique process30PASS/exit0; old16 inside same process, zero repairs/repeats, remaining0. Prior3 calls consumed.
+Only repository D:\ProjectTemp\c5k1bturn56; never access deep-learning-hank or Zotero repository files. Builder01a0e046-973a-7bb1-b071-0305ebe541cf app project local-0758adfaed355d5be608096cdf92a3a2 verified. Implementation turn25 completed; no full-history recount. At30completed turns/unreliable context/error follow bounded handoff. HEAD75cee92b1ad9e5cb6fc069bca892213838ffdddc, HEAD:src00682b2e1a7ba23665f6e16f6acf48ad35874883. Preserve dirty/untracked state; no Git mutation.
+
+DOCUMENT ONLY. At least2 disjoint read-only helpers: middle-stage source mapping and annual consumer contract review. Builder owns documents; Work independently ACCEPT/REJECT. Helpers have no execution/Git/scope authority.
+Write exactly two NEW files:
+EVIDENCE/ch5_annual_k1b_middle_stage_spec_20260930/specification.md
+EVIDENCE/ch5_annual_k1b_middle_stage_spec_20260930/specification_receipt.json
+Preserve prechange_identities.json/prior_task_current.md; Work alone updates CURRENT/TASK/verdict.
+
+First read CURRENT/SCIENTIFIC_DECISIONS/TASK/REVIEW_GATE and accepted review/readback above, EVIDENCE/ch5_observed_annual_array_seam_spec_20260930/specification.md, then only source files listed in new prechange_identities.json. Static imports may identify direct local capital/C1/firm/share contracts: if another file essential, report literal import path UNREAD_NOT_AUTHORIZED; do not search/infer/read additional source or import any code. No audit/display/panel/raw numeric readback. Named protected-byte hashing permits identity verification only.
+
+Specify smallest next zero-science engineering slice preserving historical run.py::integrate_turn capital/C1/firm middle stage while explicit annual master phi goes to BOTH labor/composite wage boundaries. From exact source identify signatures, state keys, params, destination/origin axes, frozen shares/hash/accounting invariants, historical stage order/return shape. Separate established static facts from unread/deferred contracts. Preserve original model short names and literal31mapping; preserve accepted original constructors/internal copies while delivering SAME immutable annual master at boundaries. Remove old Yt/Lt phi rebuilding in proposed path; do not duplicate formula/transpose/claim numeric equivalence.
+
+Propose exact future source/test allowlist and synthetic checks, without execution now. Prefer narrow dependency-injected bridge preserving source stage contracts and explicit prepared carrier, never scientific consumer calls in fixture tests, visibly production blocked. Existing opaque firm spy does not establish capital/C1/firm implementation acceptance. List what can be fixture-tested versus original untouched APIs and Owner protected authority. No new economics, calibration, unit/population divide-by3, solver/share rule/tolerance/runtime fallback.
+Also list future entry/output/call contracts and authority gates for actual observed auth/conversion/consumers; do not implement or allow caller Boolean permission. If source insufficient, deliver literal missing-file list and minimal next read-only task proposal, not invented behavior. Proposal is not authorization.
+
+All test/helper/formula/science/model/calibration/production/real numeric/auth-success/actual observed matrix budgets ZERO. No executable imports/py_compile/wrappers/preflight/probes/download/host/API/source edits/new scientific roots/Git mutation/publication. Do not run prior30/16/24tests. Static source/identity reads allowed. Deliver concise specification/receipt, doc hashes, unchanged identities, current task zeros without rewriting historical ledger. Stop for independent Work review.
+C9PAUSED; both attempts consumed; ObjectiveA RETAINED; oldactualledgers CALL_LEDGER_UNRESOLVED; price_verifiedFalse, current_price_methodologically_attributed, releaseUNKNOWN; model_activationFalse; Results eligibilityFALSE. No settled Owner decision reopened, scientific successor or budget reset.

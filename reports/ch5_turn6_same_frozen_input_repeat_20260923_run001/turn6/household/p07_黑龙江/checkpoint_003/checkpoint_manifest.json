@@ -1,0 +1,123 @@
+{
+  "province_index": 7,
+  "province": "\u9ed1\u9f99\u6c5f",
+  "checkpoint": 3,
+  "updates_completed": 3,
+  "value_sha256": "4225D7B8985E89B33E18AEBF259EDCACE04D49A327E0335C29BAC41A0228E437",
+  "policy_identity_sha256": "0B88774EEF90241A56875CFF840C3AFDB50F93DB780B93FCC0FAD10F2D375AD6",
+  "q_identity": {
+    "data": "BB71D2D22BACFBE039F8FC62B8400B5560C6D39F4888653601D891924A902821",
+    "indices": "C6997D46345EB81F69A0D7394E7CBB7E532D4314B333AF31AB562A72A2764430",
+    "indptr": "8330A0F40AC91012F329E93ADBF039CA3E280B9C37A6EFF7D2550A3DF9A779BC"
+  },
+  "checkpoint_identity_sha256": "918517BC3E507DC3581D569FABA45252C9E67E373993CE2BE797000CBDFE7BD3",
+  "B_same_value": 0.6353549750831387,
+  "D_value_change": 0.031057079547562427,
+  "primary_convergence_pass": false,
+  "d2_status": "PASS",
+  "d2_receipt": {
+    "status": "PASS",
+    "checks": {
+      "minimum_offdiagonal_nonnegative": true,
+      "diagonal_construction_error_exact_zero": true,
+      "q_one_within_prospective_bound": true,
+      "b_coordinate_within_prospective_bound": true,
+      "a_coordinate_within_prospective_bound": true,
+      "zero_tolerance_closed_faces_feasible": true,
+      "zero_outward_face_count": true,
+      "zero_outward_face_amount": true
+    },
+    "minimum_offdiagonal": 1.4789606621761809e-05,
+    "diagonal_construction_error": 0.0,
+    "max_abs_q_one": 3.2213121059498917e-13,
+    "arithmetic_tolerance": 6.003461287412236e-12,
+    "coordinate_action": {
+      "fixed_pre_outcome_max_row_terms": 4,
+      "gamma_n": 8.88178419700126e-16,
+      "b": {
+        "max_abs_error": 9.094947017729282e-13,
+        "max_bound": 2430.2486948150927,
+        "violation_count": 0,
+        "first_violation_flat_f": null,
+        "passes": true,
+        "error_field_sha256": "9CEE5D81336DF03432A1DCEDB0FBFE8F3A295A374BB233844C61D595AD9327CF",
+        "bound_field_sha256": "BD863B8AF1A4363778E02BCF848C587B276C6B49DFBD6FC3B0882D6EDC859057"
+      },
+      "a": {
+        "max_abs_error": 4.405364961712621e-13,
+        "max_bound": 0.42562661206743413,
+        "violation_count": 0,
+        "first_violation_flat_f": null,
+        "passes": true,
+        "error_field_sha256": "D0A712479DB5176F8C814F295D82C41DCC35DAE81BF605A5846A69899EAF337E",
+        "bound_field_sha256": "EA1FB1FEE529A089F2014C68B5508DFBDCB1E5E277F86E28CFB7602D05274E51"
+      }
+    },
+    "closed_face_summaries": [
+      {
+        "axis": "b",
+        "side": "lower",
+        "boundary_kind": "economic_lower_bound",
+        "inward_count": 20,
+        "tangent_count": 20,
+        "outward_count": 0,
+        "max_outward": 0.0
+      },
+      {
+        "axis": "b",
+        "side": "upper",
+        "boundary_kind": "artificial_upper_state_constraint",
+        "inward_count": 22,
+        "tangent_count": 18,
+        "outward_count": 0,
+        "max_outward": 0.0
+      },
+      {
+        "axis": "a",
+        "side": "lower",
+        "boundary_kind": "economic_lower_bound",
+        "inward_count": 40,
+        "tangent_count": 0,
+        "outward_count": 0,
+        "max_outward": 0.0
+      },
+      {
+        "axis": "a",
+        "side": "upper",
+        "boundary_kind": "artificial_upper_state_constraint",
+        "inward_count": 1,
+        "tangent_count": 39,
+        "outward_count": 0,
+        "max_outward": 0.0
+      }
+    ],
+    "q_identity": {
+      "data": "BB71D2D22BACFBE039F8FC62B8400B5560C6D39F4888653601D891924A902821",
+      "indices": "C6997D46345EB81F69A0D7394E7CBB7E532D4314B333AF31AB562A72A2764430",
+      "indptr": "8330A0F40AC91012F329E93ADBF039CA3E280B9C37A6EFF7D2550A3DF9A779BC"
+    },
+    "q_artifact": {
+      "path": "q_generator.npz",
+      "bytes": 24767,
+      "sha256": "E0AE0A7E172E1C1D0DEE63D5797D0094FC98B24F8ECFA5426383417B422C5572"
+    }
+  },
+  "selector_root_ledger": {
+    "selector_evaluations": 3200,
+    "scalar_root_invocations": 1699,
+    "interior_z_root_invocations": 619,
+    "interior_a_switching_root_invocations": 0,
+    "joint_switching_root_invocations": 0
+  },
+  "convergence_thresholds": {
+    "B": 1e-08,
+    "D": 1e-07
+  },
+  "cycle": {
+    "primary_convergence_evaluated_first": true,
+    "exact_period": null,
+    "approximate_period_2_or_3": null,
+    "approximate_norm": "||vec_F(V_j-V_(j-k))||_inf"
+  },
+  "disposition": "CONTINUE_TO_NEXT_UPDATE"
+}
