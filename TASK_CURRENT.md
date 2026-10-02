@@ -1,3 +1,14 @@
+# TASK_CURRENT — 紧凑项目授权措辞修订（仅文档）
+
+CLOSED__ACCEPT_SOURCE_DOCUMENTARY_CLARIFICATION_ONLY；ACTIVE_EXECUTION: NONE。
+Owner明确“授权你把第五章改写项目的授权改正常”；父DOT发单基线0819e8e83e850e79a8f984a7f772641510976b8e。单一问题：准确表达既有日常委托和未来有限任务完整闭环，消除把审查前暂缓误当永久禁止的冲突，保留科学/保护/预算/平台门。
+读仅五入口当前前缀及当前Git状态；写仅AGENTS.md、CURRENT.md、TASK_CURRENT.md、REVIEW_GATE.md必要当前前缀，以及docs/CH5_DOT_PROJECT_AUTHORIZATION_MATRIX_20261002.md一份矩阵。SCIENTIFIC_DECISIONS及所有旧原文/预算/回执保留；不全历史替换、不建多层治理文件。
+此任务不包含测试/实际32存档读取/科学/SDK设备/权限实验/OS或sandbox配置/审批改动/换线程规避或push。本地commit仅限下方明确5文档封存。32请求2拒绝/process0/正文0/32和唯一重试耗尽不因文档变更恢复；若平台不认委托，只如实记录具体阻塞。新科学方向/参数口径或保护边界仍Owner决定、HIGH独立门；独立PASS无Required后父DOT已终裁SOURCE文档接受，不自受科学。
+下方已关闭工程及读取任务原文保留为历史，不授予执行。
+
+父DOT本轮仅授权这5文档一次本地封存，完成即停；不push、不跑测试或再试32读取。项目侧措辞修正完成，平台拒绝未解除；准确终裁见矩阵末。
+
+---
 # TASK_CURRENT — 新stub桥接单次测试结果父终裁关闭
 
 CLOSED__STUB_BRIDGE_ENGINEERING_ACCEPTED；BACKUP_CHECKPOINT_STOP；ARCHIVE_READ_AUTO_REVIEW_STOP；ACTIVE_EXECUTION: NONE。

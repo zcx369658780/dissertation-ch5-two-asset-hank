@@ -1,3 +1,12 @@
+# 2026-10-02 当前入口 — 项目授权措辞澄清SOURCE文档接受
+
+CLOSED__ACCEPT_SOURCE_DOCUMENTARY_CLARIFICATION_ONLY；ACTIVE_EXECUTION: NONE。
+基线0819e8e83e850e79a8f984a7f772641510976b8e；仅AGENTS/CURRENT/TASK_CURRENT/REVIEW_GATE必要前缀及docs/CH5_DOT_PROJECT_AUTHORIZATION_MATRIX_20261002.md共5文档。澄清Owner既有日常委托、未来整闭环条件放行与永久/任务禁止区别，不授予本轮运行或读取，不覆盖平台审批。
+32存档请求2拒绝/process0/正文0/32及唯一审批重试耗尽原样；9tests/4stub tests预算不恢复。Owner科学/保护实质门、普通进程路径替换目标及具体权限/祖先控制缺口、C9 PAUSED/ledger UNRESOLVED/16 UNRESOLVED/window UNACCEPTED/Results FALSE保持。本轮无测试、存档读、OS/配置改动或commit/push。独立PASS无Required，父DOT已终裁SOURCE文档接受；下方当前结果及历史保留。
+
+父DOT本轮仅授权这5文档一次本地封存，完成即停；不push、不跑测试或再试32读取。项目侧措辞修正完成，平台拒绝未解除；准确终裁见矩阵末。
+
+---
 # 2026-10-02 当前入口 — 4项stub桥接测试PASS、父终裁关闭
 
 CLOSED__STUB_BRIDGE_ENGINEERING_ACCEPTED；BACKUP_CHECKPOINT_STOP；ARCHIVE_READ_AUTO_REVIEW_STOP；ACTIVE_EXECUTION: NONE。

@@ -1,3 +1,12 @@
+# 2026-10-02 项目授权措辞澄清SOURCE文档接受
+
+CLOSED__ACCEPT_SOURCE_DOCUMENTARY_CLARIFICATION_ONLY。Owner既有日常委托/未来任务矩阵见docs/CH5_DOT_PROJECT_AUTHORIZATION_MATRIX_20261002.md；本次仅5文档SOURCE接受，不改变科学或保护权威；父DOT依据独立PASS无Required终裁。
+核对点：有限工程闭环可在初始任务完整批准并由DOT按review PASS/准确身份/预算/平台许可条件放行；审查前暂缓不等于永久禁止，但仅准备/无预算/明确禁止不能仅凭review解锁。普通源码/工程证据读不自动等于科学运行；真实产物新读仍须精确文件/字段/用途及次数字节边界；旧STOP/耗尽预算和平台审批不能由文档恢复或覆盖。
+Owner科学方向、实质参数/口径、保护目标及实际权限变化和HIGH独立审查仍有效。32存档请求2拒绝/process0/正文0/32与唯一重试耗尽原样，不重试或规避；普通进程路径替换及祖先控制缺口、C9/ledger/16义务/Results FALSE保持。下方原审查门和历史逐字保留。
+
+父DOT本轮仅授权这5文档一次本地封存，完成即停；不push、不跑测试或再试32读取。项目侧措辞修正完成，平台拒绝未解除；准确终裁见矩阵末。
+
+---
 # 2026-10-02 DOT 审查与任务交付
 
 本次治理文档经独立原review/delta PASS及父DOT终裁ACCEPT/CLOSED，非科学ACCEPT；本节覆盖旧角色/路由/交接表述，原科学裁决与风险门保留，保护改变不得降级。
