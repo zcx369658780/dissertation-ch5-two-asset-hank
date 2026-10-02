@@ -1,3 +1,45 @@
+# 现行简页 — 2026-10-02 DOT 接续
+
+本页为当前状态入口；下方原文按语义/行尾归一口径保留为带日期历史快照，不统一声称字节完全未变。父DOT已终裁治理文档ACCEPT/CLOSED，非科学ACCEPT；活动任务NONE。Owner原件与科学裁决优先于摘要，下一文档路线仅建议未派。
+
+## 身份与发布时态
+
+唯一模型树D:\ProjectTemp\c5k1bturn56；origin git@github.com:zcx369658780/dissertation-ch5-two-asset-hank.git；保留分支codex/ch5-mp4c-k1b-turn5-turn6-bounded-continuation-20260922。
+2026-10-02固定接收基线HEAD为1d5eccb78a08ee8155e4d4f2df9ec8bc64a0d581，接收时HEAD:src=f9fa75055d301deae0e4f6f08496d362052a1d3a；这是日期固定基线，不是闭环提交后的实时HEAD。实时HEAD以本地Git为准，闭环不改src。旧00682b2e1a7ba23665f6e16f6acf48ad35874883是同步前src；新增保存候选源码不因此获科学接受。
+TASK54已发布到migration/dot-progress-20261002，main未合并；发布/远端回读来自固定迁移报告，本轮只核本地、未重新远端回读。下方pending/NOT_COMMITTED_NOT_PUSHED为发布前快照，不授权重发。
+知识库源包76b2e3c62f6f9503ef5f659c25d64504dc6afcf0属于同一研究项目来源仓；本轮只写模型仓。2999 node_modules排除、原位保留。
+
+## 当前门
+
+- corrected household、限定K1B/C1合同与turn5–8 bounded证据按原接受范围保留。C6→C7为2/9、C7→C8为5/9低于strict <1e-6，R2未满足；无fixed point/稳态/GE/Results接受。
+- 两次C9尝试消耗、无完整新outer turn；实际CALL_LEDGER_UNRESOLVED，不按治理扣账推算真实调用数。C9 PAUSED。
+- 固定原C8家庭输出、进入C8省份状态和S的option1已从最初DESIGN_ONLY推进必要受界准备/审查。live科学/data/consumer预算0；输入、依赖、lifetime、保护、独立最终链与精确预算任务仍是运行门。不是完整C8重跑或新工资下自洽家庭均衡；不重算家庭/份额或用partial C9。
+- 已采纳price_basis=current_price_methodologically_attributed；direct_price_verified=False、现有price_verified=False、release UNKNOWN、baseyear None。方法论选择不再重复问Owner；不冒称直接价格标记或2018实时可得性成立。
+- 完整Output Mutation Objective A；16项全部UNRESOLVED；final-check-to-mutation window UNACCEPTED；model_activation=False；Results eligibility=FALSE。并发/恶意路径替换威胁模型不弱化。
+- SDK consumed1/rem0/retry0；旧query2/rem0；HTTP批次3/2/1/2/2/1各rem0；protected-byte7/rem0；actualdata/fixture/archiveadmin/V1/V2各consumed1/rem0；其他精确账本按原件保留。TASK47 invalid seal、TASK49 capacity STOP、TASK52 truncation STOP与旧REJECT不追认；TASK53仅字段文字/文档限制有限ACCEPT。
+
+## 近期有限文档路线
+
+| 分支 | 可验收文档问题 | 资格边界 |
+|---|---|---|
+| A 固定C8输入合同 | 既有行政材料中的家庭汇总/省份状态/S、typed input、source-loader、双消费者同对象、31省完整共同轴序、单位与target2018/observation2017、依赖固定、lifetime的已知/缺口/来源表 | 不读科学数组/私人输入/保护根，不重做耗尽检查；不声称真实输入兼容或准备PASS |
+| B 完整Objective A可行性 | 从既有材料区分文献能答、需未来受界实验、Owner风险决定，列完整安全路线成立/不成立的证据条件 | 不无限新增API字段；身份唯一性不等于mutation绑定；实验/SDK/native/边界改变无授权 |
+| C 论文方法与资格 | 已采纳合同、来源、bounded诊断与限制；核心文献claim的E3原文页码门 | 不写已收敛/稳态/GE或政策Results，数据资格不绕过模型门 |
+
+A/B不互相冒充完成，各需精确有限TASK；C可用已接受事实准备。K1B恢复、K2、GE、年度动态、冲击/IRF、福利、Results各自门控，不由本页安排运行。本次治理已终裁ACCEPT/CLOSED；下一文档路线仍建议未派，活动任务NONE，完成闭环即停，不签发后继。
+
+## 精确来源与入口
+
+- TASK_CURRENT.md、REVIEW_GATE.md、SCIENTIFIC_DECISIONS.md顶部及准确原件；本次plan/result在docs/CH5_DOT_GOVERNANCE_ROUTE_PLAN_20261002.md、docs/CH5_DOT_GOVERNANCE_ROUTE_RESULT_20261002.md。
+- 固定报告：https://github.com/zcx369658780/Zotero-Analytical-Workflow-Skills-Public/blob/5f674c7fef260f1ca89f1fa5b11f82c2bf7f56c2/project-sources/chapter5/migration/CH5_DOT_MIGRATION_REPORT_20261002.md；本地docs/CH5_DOT_MIGRATION_SYNC_20261002.md为发布前说明。
+- EVIDENCE/ch5_frozen_c8_conditional_design_20261001/owner_design_adoption.md、owner_conditional_execution_scope.md、work_task49_53_handoff_20261001.md。
+- EVIDENCE/ch5_methodological_price_binding_20260930/owner_adoption.md；EVIDENCE/ch5_annual_common_consumer_31_fixture_20261001/owner_scientific_baseline_packet.md。
+- docs/CH5_TWO_ASSET_HANK_ROADMAP_CURRENT.md与docs/DISSERTATION_CH5_PYTHON_MULTI_PROVINCE_HANK_REBUILD_ROADMAP_CURRENT.md顶部纠正9/11未冻结参数和9/20turn5/6；科学索引顶部说明历史timing/C9 pending被覆盖。
+
+闭环审查记录：docs/CH5_DOT_GOVERNANCE_ROUTE_REVIEW_20261002.md。仅本地commit获授权，不push；全部科学runtime预算与保护门不变。以下是历史正文，遇时效冲突按本页和准确原件联读，不作执行入口。
+
+---
+
 # Chapter 5 Two-Asset Multi-Province HANK — Current State
 
 ## 2026-10-02 DOT migration progress backup

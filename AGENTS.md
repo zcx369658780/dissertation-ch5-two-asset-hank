@@ -1,3 +1,23 @@
+# 2026-10-02 DOT 治理接续规则
+
+Owner 已授权治理迁移；父DOT结合独立原review/delta PASS已终裁治理文档ACCEPT/CLOSED，非科学ACCEPT。标识：LOCAL_WORK_WORKFLOW_V1 + DOT_DOCUMENTARY_CONTINUATION_20261002。本节覆盖下方旧角色、会话路由与交接要求；其余边界、科学采纳和历史裁决保留。
+
+- 同一研究项目包含知识库 zcx369658780/Zotero-Analytical-Workflow-Skills-Public 和模型 zcx369658780/dissertation-ch5-two-asset-hank 两仓。本地执行只允许模型仓 D:\ProjectTemp\c5k1bturn56；项目关联不授权访问/写入另一当地仓库。禁止进入、读取、搜索、引用或修改 deep-learning-hank。
+- DOT 承接 Work 的规划、发单、状态管理、科学路线建议、最终审查组织与记录。Owner 是最终科学权威。Builder 受界执行、不自受；HIGH 必须有真正独立科学审查，DOT 综合记录不能替代它。
+- 本次执行会话01a0fa7d-9573-7496-a6eb-a633c70fd0fd，父DOT会话01a0fa1a-f62d-7091-a4a6-e5f60446b0f6。旧Builder不再自动路由，不访问/操作旧会话。
+- DOT本地执行资格为准确仓库、绝对路径、分支/HEAD、任务允许路径、证据身份及读写角色隔离。旧Codex app项目成员资格只适用于旧方式；本轮不要求沿用、不声称当前线程属于旧app项目。未来明确采用app执行须另核实际资格，cwd不能证明成员资格。
+- 启动读AGENTS后CURRENT顶部现行页、SCIENTIFIC_DECISIONS顶部时效与必要合同、TASK_CURRENT、REVIEW_GATE，再读任务精确引用。长历史按具体问题读；不递归档案。
+- LOW日常文档/索引范围内自检；MEDIUM已采纳合同下工程聚焦轻审；HIGH科学及保护目标/边界改变必须独立科学审查与必要Owner采纳。保护变更不得降为LOW。本次治理已完成独立原review/delta确认并获父DOT终裁；审查记录见docs/CH5_DOT_GOVERNANCE_ROUTE_REVIEW_20261002.md。
+- 单任务交付一个可验收问题，包括范围内必要修正、验证与记录。仅未来任务可在执行前给明确有限行政纠错预算（数字/对象/终止条件）；与模型、受保护读取、SDK/native、数据/实验严格分账。未明确给出预算不得自行增额；旧STOP、失败调用、耗尽预算不得重开或换方式重试。
+- 不暗改方程、KKT、边界、校准、时序、payoff、求解语义、网格或容差。完成/等待任务不授权科学successor；新对话不重置预算。
+- 执行会话约30次实际用户助手对话或上下文不可靠时，DOT主动保全进度、裁决、证据身份、保护边界、已耗预算、未知账本与下一门，做继任只读交接。内部工具调用不算轮数，不要求Owner搬主聊天。继任先核本地状态/任务隔离；交接本身不授予、新增、重置或恢复科学预算。若原任务明确允许接续且预算未耗尽，继任完成只读核对后仅可沿用该任务原有剩余额度与停点；已关闭、耗尽、账本不明或需Owner决定的任务不得接续。新科学任务仍须相应具体授权。交接不接受候选或解除门控。
+- 候选阶段曾禁止commit；父DOT本次闭环明确授权仅11份文档的单一本地commit，禁止push/PR；日常Git仍按具体任务。2999 node_modules排除路径原位保留、不清理、不读内容。
+- 完整Objective A、16 UNRESOLVED、window UNACCEPTED、CALL_LEDGER_UNRESOLVED、C9 PAUSED、model_activation=False、Results FALSE保留。计划/结果见docs/CH5_DOT_GOVERNANCE_ROUTE_PLAN_20261002.md与docs/CH5_DOT_GOVERNANCE_ROUTE_RESULT_20261002.md。
+
+以下旧Work/app会话条款作历史保留，不再据其自动路由本轮执行。其余原规则继续生效。
+
+---
+
 # Chapter 5 Two-Asset HANK — Local Working Agreement
 
 Updated: 2026-09-25. Workflow authority: `LOCAL_WORK_WORKFLOW_V1`.

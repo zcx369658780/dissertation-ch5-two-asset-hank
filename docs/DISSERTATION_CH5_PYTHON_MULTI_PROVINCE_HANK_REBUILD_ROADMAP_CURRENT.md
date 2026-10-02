@@ -1,3 +1,20 @@
+# 2026-10-02 路线时效与当前门
+
+治理文档已获父DOT终裁ACCEPT/CLOSED，非科学ACCEPT；活动任务NONE，下一文档路线建议未派；下方9/20原文保留，旧Active task不授权重跑turn5/6。实时状态取CURRENT顶部，执行仅TASK_CURRENT。
+
+- turn5/6完成并在限定范围接受；turn7/8 bounded接受、R2未满足（2/9与5/9低于strict <1e-6）。两次C9消耗、无完整turn、实际CALL_LEDGER_UNRESOLVED，C9 PAUSED。内层通过不等于fixed point/稳态/GE。
+- K1冻结参数/payoff/timing按SCIENTIFIC_DECISIONS原件；旧未冻结和timing/C9 pending由后续覆盖。
+- 固定原C8家庭/省份状态/S的option1已从最初DESIGN_ONLY推进必要受界准备审查；live科学/data/consumer预算0。仅年度劳动/复合工资系数源条件比较，不是新家庭工资下完整一致均衡，不重算家庭/份额或用partial C9。
+- 已采纳current_price_methodologically_attributed；direct_price_verified=False、price_verified=False、release UNKNOWN、baseyear None。target2018/observation2017为修订历史量回溯诊断，不称当年实时信息集。
+
+近期A/B/C：A固定C8 typed input/source-loader、双消费者同对象、31共同轴序、单位/日历、依赖与lifetime；B完整Objective A可行性，文献/未来实验/Owner风险决定分类，不无限字段摘录；C已采纳方法与资格，核心claim保留E3原文页码门。精确范围须后续有限TASK，不冒称输入/保护/运行PASS。
+
+完整Objective A、16 UNRESOLVED、window UNACCEPTED、model_activation=False、Results FALSE与耗尽账本保留。K1B恢复/K2/GE/年度动态/冲击/IRF/福利/Results分别门控。DOT治理/交接见AGENTS、REVIEW_GATE顶部；本轮无科学successor。
+
+以下9/20原文为历史，不作最新阶段或执行许可。
+
+---
+
 # Chapter 5 Python 多省份两资产 HANK 路线
 
 更新：2026-09-20。唯一活动仓库：`zcx369658780/dissertation-ch5-two-asset-hank`。

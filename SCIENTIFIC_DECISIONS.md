@@ -1,3 +1,18 @@
+# 2026-10-02 科学合同索引时效
+
+仅整理后续已存在的采纳与状态；父DOT终裁治理文档ACCEPT/CLOSED，非科学ACCEPT，不新增科学法则。下方表格逐字保留，其pending、未调用、DESIGN ONLY按日期联读后续原件/CURRENT顶部，不能用旧状态续用预算。
+
+- 固定C8行记录最初DESIGN_ONLY；后续EVIDENCE/ch5_frozen_c8_conditional_design_20261001/owner_conditional_execution_scope.md推进option1必要受界准备/审查。live科学/data/consumer预算0；typed input/source/dependencies/lifetime/完整Objective A/独立最终链未闭合。不授权全C8重跑、家庭/份额重算、C9/C10。
+- EVIDENCE/ch5_methodological_price_binding_20260930/owner_adoption.md已采纳current_price_methodologically_attributed；direct_price_verified=False、price_verified=False、release UNKNOWN、baseyear None保留。方法论与直接价格验证不同，不重复Owner方法论选择。
+- timing/C9行是逐步采纳快照；历史C8测量3,382.203秒已接受且预算耗尽，不是C9/C10上界。后续两次C9尝试均消耗、无完整turn、实际CALL_LEDGER_UNRESOLVED，当前C9 PAUSED。旧before any turn9/no C9 call/pending不代表未发生尝试或可用预算。
+- turn8 bounded ACCEPT与R2未满足并存（2/9与5/9低于strict <1e-6）；无fixed point/稳态/GE/Results接受。K1参数/payoff/timing已冻结，旧9/11未冻结和9/20active turn5/6已覆盖。
+- 完整Objective A、16 UNRESOLVED、window UNACCEPTED、CALL_LEDGER_UNRESOLVED、C9 PAUSED、model_activation=False、Results FALSE与旧账本保留；K1B恢复/K2/GE/年度动态/Results各自门控。
+- 当前角色/资格见AGENTS与REVIEW_GATE顶部，真正独立高风险审查和Owner最终权威保留。来源与下一门见CURRENT顶部、本次plan/result。
+
+以下原合同索引保留；只更新其时效解读，不改合同与历史采纳/拒绝。
+
+---
+
 # Chapter 5 Accepted Scientific Decisions
 
 Updated: 2026-10-01. This file indexes accepted authority; it does not create new science. Historical documents remain the detailed record.

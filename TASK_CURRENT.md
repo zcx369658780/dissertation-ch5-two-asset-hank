@@ -1,3 +1,25 @@
+# TASK_CURRENT — DOT 治理与路线时效修订
+
+CLOSED__DOT_GOVERNANCE_ROUTE_DOCUMENTARY_ACCEPTED
+ACTIVE_TASK: NONE
+父DOT依据独立原review/delta PASS终裁本次治理/路线文档ACCEPT；非科学ACCEPT。下一文档路线建议未派，闭环完成即停。
+2026-10-02。单一验收问题：现行入口能否准确表达DOT职责、独立审查与交接资格、历史状态覆盖和近期文档路线，而不改变任何科学/保护/预算门。
+
+Owner原文：“很好我同意，你的规划比之前更专业。请进行治理，如果需要给codex下达任务单/prompt，或者对太长的codex会话进行交接（这边经验是30次对话左右），我也授权你直接进行。”
+准确范围来自父DOT本轮有界委派，不是旧TASK54续跑。
+
+- 模型树D:\ProjectTemp\c5k1bturn56；基线1d5eccb78a08ee8155e4d4f2df9ec8bc64a0d581；原分支保留。执行会话01a0fa7d-9573-7496-a6eb-a633c70fd0fd；旧Builder不操作、不路由；不声称旧app成员资格。
+- WRITE仅AGENTS.md、CURRENT.md、SCIENTIFIC_DECISIONS.md、TASK_CURRENT.md、REVIEW_GATE.md、docs/CH5_TWO_ASSET_HANK_ROADMAP_CURRENT.md、docs/DISSERTATION_CH5_PYTHON_MULTI_PROVINCE_HANK_REBUILD_ROADMAP_CURRENT.md、docs/CH5_REVISED_GDP_BINDING_AND_ADOPTION_PLAN_20260930.md顶部时效，以及docs/CH5_DOT_GOVERNANCE_ROUTE_PLAN_20261002.md、docs/CH5_DOT_GOVERNANCE_ROUTE_RESULT_20261002.md；本次机械闭环另允许docs/CH5_DOT_GOVERNANCE_ROUTE_REVIEW_20261002.md。
+- READ仅上述治理/入口、精确引用的必要Owner行政原件、Git当前元数据。验证仅文档差异、链接、范围、状态与本次文档身份。Owner原件/历史账本不写，原正文无损保留。外部修改或科学状态冲突先停相关写入。
+- 禁止deep-learning-hank/其他当地仓库/node_modules正文/科学数组/私人输入/保护根/模型/tests/import/Python/native/SDK搜索或重试/实验/安装/部署/PR/push/科学输出根/C9恢复；2999排除路径不清理。
+- 本次治理已获父DOT终裁，审查见docs/CH5_DOT_GOVERNANCE_ROUTE_REVIEW_20261002.md；Builder仅机械记录、不自受。候选阶段commit禁令由本次明确授权覆盖：只显式stage本任务原10文件+review共11文件，单一本地commit，不push，不触发构建/自定义hook，完成即停、不派后继。仅未来任务可预先给明确有限行政纠错预算，本任务不追溯增旧额度。
+- SDK1/rem0/retry0、query2/rem0、HTTP3/2/1/2/2/1各rem0、protected-byte7/rem0、actualdata/fixture/archiveadmin/V1/V2各1/rem0及其余旧精确账本不变。
+- 完整Objective A/16 UNRESOLVED/window UNACCEPTED/CALL_LEDGER_UNRESOLVED/C9 PAUSED/model_activation=False/Results FALSE；price_basis方法论已采纳，direct_price_verified=False/price_verified=False/release UNKNOWN/baseyear None；option1有条件准备审查、live科学/data/consumer预算0。
+
+以下TASK54原文为发布前历史；已发布事实见CURRENT顶部，不据其commit/push/pending/旧助手要求重新执行。
+
+---
+
 # TASK_CURRENT
 CLOSED__TASK54_DOCUMENTARY_SYNC_PREPARATION_COMPLETED__GIT_PUBLICATION_PENDING_READBACK
 Snapshot preparation only, not scientific acceptance. Original TASK54 issuance details retained below; main completes the already authorized commit/push/readback then reports actual terminal facts externally. No scientific successor is authorized.

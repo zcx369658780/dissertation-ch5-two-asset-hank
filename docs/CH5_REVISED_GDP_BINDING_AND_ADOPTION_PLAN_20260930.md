@@ -1,3 +1,15 @@
+# 2026-10-02 时效说明
+
+本次治理文档已获父DOT终裁ACCEPT/CLOSED，非科学ACCEPT；活动任务NONE，下一文档路线建议未派；下方9/30原文保留。“价格/target_year待采纳”“不构造实际矩阵”为当时快照，不覆盖后续有限数据/工程证据，不续用预算。
+
+EVIDENCE/ch5_methodological_price_binding_20260930/owner_adoption.md已采纳price_basis=current_price_methodologically_attributed；direct_price_verified=False、price_verified=False、release UNKNOWN、baseyear None。方法论选择不再问Owner；target2018/observation2017、修订历史量回溯信息集和年末人口代理沿已采纳范围，直接价格缺证/非实时可得限制保留。
+
+EVIDENCE/ch5_frozen_c8_conditional_design_20261001/owner_conditional_execution_scope.md已推进固定C8 option1必要受界准备/审查。保留原家庭输出、省份状态/人口/参数/距离和S，仅年度劳动/复合工资系数源条件替换，不是完整一致新均衡。live科学/data/consumer预算0；typed input/source-loader/31轴/单位/依赖/lifetime/保护/独立最终链未闭合，不复跑actualdata或fixture。
+
+当前A/B/C路线见CURRENT顶部，执行仅TASK_CURRENT。完整Objective A/16 UNRESOLVED/window UNACCEPTED/CALL_LEDGER_UNRESOLVED/C9 PAUSED/model_activation=False/Results FALSE与旧账本不变。下方pending按后续原件联读，原公式和采纳/拒绝不改。
+
+---
+
 # 修订GDP绑定与程序接入准备
 
 日期：2026-09-30。状态：DOCUMENT_PROPOSAL_ONLY__NO_MODEL_ACTIVATION。本轮只核查官方来源、固定候选数据身份及准备接入方案。
