@@ -1,3 +1,18 @@
+# 2026-10-02 当前入口 — 4项stub桥接测试PASS、父终裁关闭
+
+CLOSED__STUB_BRIDGE_ENGINEERING_ACCEPTED；BACKUP_CHECKPOINT_STOP；ARCHIVE_READ_AUTO_REVIEW_STOP；ACTIVE_EXECUTION: NONE。
+独立源码review PASS后新一次Python311 -I -S -B已获正式审批并执行：4tests/0.017s/exit0、process1/retry0/budget0。完整原tool返回见EVIDENCE/ch5_dot_c8_prepared_bridge_synthetic_execution_20261002.json；精确命令/源hash/限定claim见既有handoff顶部。stdout/stderr未单独捕获，原合并output保留。
+仅stub衔接语义，不证明NumPy/middle数值、全部参数、production动态拒绝或真实C8/Objective A。32文件存档审批仍STOP、正文0/32、唯一审批重试耗尽；字段/manifest对应UNKNOWN。C9/16义务/window/ledger/Results FALSE及普通进程权限/祖先控制缺口保持。父DOT接受独立PASS终裁关闭，仅授权本轮5路径一次本地commit后停止；不push、重跑、续读或发后继。helper8次仅计划，全部接线/生产动态/真实数值不在验收内；下方历史保留。
+
+---
+# 2026-10-02 当前入口 — stub桥接候选待审、存档新读取审批STOP
+
+PREPARED_STUB_BRIDGE__ARCHIVE_READ_AUTO_REVIEW_STOP；ACTIVE_EXECUTION: NONE。
+检查点8fddb44f已备份指定migration分支、SSH SHA/tree回读一致。新的tests/test_fixed_c8_prepared_bridge_synthetic.py源码准备完成、未运行，只验证真实prepare/validate/integration的stub衔接语义；NumPy和middle数值body均替身，不证明数值正确。
+新31terminal+manifest一次正文核对预算在既有handoff先固定32路径及1419264字节总上限；同命令正式审批两次均拒绝、process0、正文0/32；唯一审批重试1/1耗尽，不再请求、不绕行或自动接续。实际aggregate字段/manifest匹配UNKNOWN；准确拒绝与闭包/hash/运行计划见docs/CH5_DOT_C8_EXTERNAL_AXIS_OWNER_SCOPE_HANDOFF_20261002.md顶部。下一门是stub独立review；读取分支先通过正式审批门。
+原9tests预算耗尽；普通进程权限/祖先控制仍缺、Objective A/16 UNRESOLVED/window UNACCEPTED/C9 PAUSED/CALL_LEDGER_UNRESOLVED/Results FALSE保持。无commit/push/科学后继。下方原检查点入口为历史。
+
+---
 # 2026-10-02 当前入口 — C8外部轴synthetic工程PASS、本地检查点
 
 CLOSED__C8_EXTERNAL_AXIS_SYNTHETIC_ENGINEERING_PASS；BACKUP_CHECKPOINT_STOP；ACTIVE_EXECUTION: NONE。

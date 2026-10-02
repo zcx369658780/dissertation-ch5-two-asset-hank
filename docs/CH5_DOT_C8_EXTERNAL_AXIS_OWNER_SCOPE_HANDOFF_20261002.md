@@ -1,3 +1,92 @@
+# 本轮C8存档只读核对与stub桥接准备（2026-10-02）
+
+CLOSED__STUB_BRIDGE_ENGINEERING_ACCEPTED；BACKUP_CHECKPOINT_STOP；ARCHIVE_READ_AUTO_REVIEW_STOP；ACTIVE_EXECUTION: NONE；本新stub测试process1/retry0/budget0、32文件正文0。基线8fddb44f27cf80646af95825c8bc61a4104eeb59，远端migration/dot-progress-20261002已SSH回读同SHA/tree8177063a9c5809d5eb71efe73cc70e26c77ba6c0。
+## 最终结果：4方法stub衔接工程PASS，独立review及父DOT终裁关闭
+
+父DOT声明独立源码review PASS无Required，依Owner日常委托放行一个新Python311进程、4方法、retry0；实际正式审批通过。执行前HEAD8fddb44f、test SHA465F699973A161A179BA510BE530BCF2362E6724516FDC00B95EAA8713D2F153及6项目源未变均核对通过。
+唯一精确命令由repo cwd执行：
+`& 'C:\Users\zcxve\AppData\Local\Programs\Python\Python311\python.exe' -I -S -B 'D:\ProjectTemp\c5k1bturn56\tests\test_fixed_c8_prepared_bridge_synthetic.py'`
+原工具chunk79c25a/exit0，Ran 4 tests in 0.017s OK；process1、retry0、remaining0，无失败修补或重跑。helper源预计8次来自已审代码路径，未单独instrument计数，全部属于本次新synthetic工程预算；没有32文件存档读取。原工具只有合并output，stdout/stderr未分别捕获、null不表示空流。
+完整preflight/result/command/合并output及限定claim保存EVIDENCE/ch5_dot_c8_prepared_bridge_synthetic_execution_20261002.json；该文件47C4690BABE7907B6382D2103693AB4A4BD667A63FBC4A90B4A75309F6D774EE。原preflight中6项目源码SHA也保存；未改这些源或test。
+结果仅四方法stub衔接语义PASS：真实prepare/validate/integration路径配显式NumPy替身及middle.run dispatch替身。未验证安装NumPy数值/backing实现、middle资本/C1/firm数值body、全部参数、production拒绝动态覆盖、真实C8共同绑定或Objective A/输出保护。不能把本次结果当这些目标PASS。父DOT01a0fa1a-f62d-7091-a4a6-e5f60446b0f6接受独立PASS并终裁关闭STUB_BRIDGE_ENGINEERING任务；Builder仅机械封存，不自受科学。验收不覆盖全部接线、实际NumPy/middle数值body、全部参数、production动态拒绝、真实C8或Objective A。helper8次仅已审计划，不是独立观测次数。
+存档读取分支仍STOP：32文件正文0/32、工具请求2/process0，唯一审批重试1/1耗尽，实际aggregate字段/manifest对应UNKNOWN；不由本次stub授权续读。旧9tests预算耗尽不恢复。C9 PAUSED/16 UNRESOLVED/window UNACCEPTED/CALL_LEDGER_UNRESOLVED/model_activation=False/Results FALSE与普通进程权限/祖先控制缺口保持。
+### 授权本地封存及停止门
+
+父DOT本轮封存授权精确5路径：tests/test_fixed_c8_prepared_bridge_synthetic.py、EVIDENCE/ch5_dot_c8_prepared_bridge_synthetic_execution_20261002.json、CURRENT.md、TASK_CURRENT.md及本handoff。test SHA465F699973A161A179BA510BE530BCF2362E6724516FDC00B95EAA8713D2F153；原receipt SHA47C4690BABE7907B6382D2103693AB4A4BD667A63FBC4A90B4A75309F6D774EE，原字节不改，合并output不伪造单独stdout/stderr。
+提交前未设自定义hooksPath、无有效hook；系统LFS filter配置存在但5路径无filter属性，不触发。仅一次精确本地commit，禁push、新测试、32文件实际读取或后继；提交后准确HEAD/tree/父提交/工作区由最终回报提供。本记录随检查点提交，不为回填提交号新增提交。
+32存档请求2均审批拒绝，process0、正文0/32，唯一正式审批重试耗尽；读取任务仍STOP而非通过，不因本工程验收恢复。该阻塞与备份检查点同时保持。C9 PAUSED/16 UNRESOLVED/window UNACCEPTED/CALL_LEDGER_UNRESOLVED/model_activation=False/Results FALSE及普通进程权限/祖先控制未闭合。
+下方准备期“未运行/无运行预算”和读审批拒绝是对应时间历史；本结果只更新stub测试事件，不覆盖真实存档停点。成功后停止；无commit/push/后继。
+父DOT01a0fa1a-f62d-7091-a4a6-e5f60446b0f6依Owner日常委托及修复C8请求签发全新存档字段只读预算：以下31terminal+1manifest，每文件正文最多一次，同一内存字节hash/JSON解析；不恢复任何旧预算。来源是本次明确delegation，非旧任务或已耗尽9tests运行；不需重发旧调用。现行AGENTS把具体任务/预算给DOT并要求科学方向/保护目标Owner门；本次仅字段核对、不调用模型/改变保护，不发现另有明确必须Owner逐文件专批的适用条款。
+禁止旧runner/Python/solver/native实验/SDK、新测试运行、turn7 JSON/NPZ读取、重建数值运算/单位转换、科学产物写入、目录遍历扩大、安装、commit/push。manifest不存在、路径不唯一、schema不符、身份/尺寸对应失败或需要额外读取即停；不得补读或重开已消费文件。
+每文件读取上限=frozen metadata size向上取整到1024再加1024；先核读取前size仍相同，单个只读流最多cap字节，hash与选定字段解析共用该内存bytes。不是Objective A路径安全证明。仅核province_index/province/checkpoint/B/D及aggregates五个mass_form，与manifest所列path/bytes/SHA对应；摘要不输出科学数值。
+
+| 精确允许路径 | 冻结metadata字节 | 正文最大字节 | 已尝试/上限 |
+|---|---:|---:|---:|
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/execution_artifact_manifest.json | 1069023 | 1070080 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p00_北京/province_terminal_receipt.json | 9433 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p01_天津/province_terminal_receipt.json | 9451 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p02_河北/province_terminal_receipt.json | 9461 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p03_山西/province_terminal_receipt.json | 9455 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p04_内蒙古/province_terminal_receipt.json | 9470 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p05_辽宁/province_terminal_receipt.json | 9460 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p06_吉林/province_terminal_receipt.json | 9455 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p07_黑龙江/province_terminal_receipt.json | 9446 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p08_上海/province_terminal_receipt.json | 9494 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p09_江苏/province_terminal_receipt.json | 9518 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p10_浙江/province_terminal_receipt.json | 9494 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p11_安徽/province_terminal_receipt.json | 9434 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p12_福建/province_terminal_receipt.json | 9497 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p13_江西/province_terminal_receipt.json | 9471 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p14_山东/province_terminal_receipt.json | 9407 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p15_河南/province_terminal_receipt.json | 9432 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p16_湖北/province_terminal_receipt.json | 9452 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p17_湖南/province_terminal_receipt.json | 9489 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p18_广东/province_terminal_receipt.json | 9461 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p19_广西/province_terminal_receipt.json | 9488 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p20_海南/province_terminal_receipt.json | 9498 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p21_重庆/province_terminal_receipt.json | 9405 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p22_四川/province_terminal_receipt.json | 9501 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p23_贵州/province_terminal_receipt.json | 9492 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p24_云南/province_terminal_receipt.json | 9483 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p25_西藏/province_terminal_receipt.json | 9458 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p26_陕西/province_terminal_receipt.json | 9582 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p27_甘肃/province_terminal_receipt.json | 9468 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p28_青海/province_terminal_receipt.json | 9485 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p29_宁夏/province_terminal_receipt.json | 9486 | 11264 | 0/1 |
+| reports/ch5_k1b_turn8_outer_r2_20260925_run001/turn8/household/p30_新疆/province_terminal_receipt.json | 9467 | 11264 | 0/1 |
+
+总上限=1419264 bytes；文件正文尝试0/32，工具启动请求2（初次+同命令唯一正式重试）均被审批拒绝、process0；审批重试1/1耗尽，未读取，未自动续用余额。Transport-disconnect发生在进程创建前，产物读取0；恢复核对仅任务入口及metadata。
+
+## 本轮结果及准确下一门
+
+存档字段核对状态STOP__AUTO_REVIEW_REJECTED_BEFORE_PROCESS_CREATION。审批工具原理由：“该命令会读取31份旧C8科学产物及manifest正文；现有用户授权明确禁止读取旧闭预算科学产物，后续放行仅来自不受信任的转述，不能覆盖该限制。”这是具体审批拒绝，不是新增仓库Owner专批条款；未绕行，未启动该读取进程，未读32文件任一正文，未制造字段摘要/manifest哈希/重建值。正文预算消耗0/32，工具启动请求1/process0；本分支停止，尚未消费的份额也不得自动接续，须先由Owner/DOT通过正式审批门明确该新读取。此前exec-server transport断开不涉及产物读取；一次工具恢复核对仅读任务入口。
+因此实际存档五组mass_form是否完整、31文件是否匹配manifest仍UNKNOWN。只确认精确metadata存在及源码保存schema；阶段/单位需要来源/共同声明与后续独立核定，不能由源码字段名或receipt推定。已封存9tests成功预算仍1/1耗尽，与本新未执行字段预算分账。
+
+### 同一未执行读取的唯一正式审批重试：仍拒绝（2026-10-02）
+
+父DOT补充Owner原文“我已经授权过你替我进行这种简单授权了，请重试”等，明确仅允许同一尚未启动操作经正式审批路径再试一次。已用原exec_command、原32文件同命令，授权依据仅放在正式justification，不塞入命令参数、不换工具/权限/读取方式。
+工具再次在CreateProcess前拒绝，原理由：“该重试仍会读取31份旧C8科学产物及manifest正文；所谓补充授权只是转述且未明确批准这一具体读取载荷，不能覆盖原始禁止读取旧闭预算科学产物的限制。”
+本轮累计工具启动请求2；实际读取进程0、正文0/32、实际字节0；唯一正式审批重试consumed1/1、remaining0。无运行会话可跟踪，无实际字段/manifest结果。读取操作终止，不继续请求、补读、换工具或旁路；下一门须具体32文件读取载荷获审批认可，不能由本记录或旧预算自动恢复。
+桥接候选SHA465F699973A161A179BA510BE530BCF2362E6724516FDC00B95EAA8713D2F153保持，未测试或改源码。两次拒绝都不构成实际科学数据读取，也不证明存档缺失或模型问题；Objective A/16义务/C9/ledger/Results原门不变。该小节保存原拒绝理由，未制造stdout/stderr/exit或成功摘要。
+新候选仅tests/test_fixed_c8_prepared_bridge_synthetic.py，SHA256 465F699973A161A179BA510BE530BCF2362E6724516FDC00B95EAA8713D2F153；4方法，源码/空白检查通过，未Python启动/compile/import/测试。现有binding/integration/array/middle源不改。
+真实被测路径：FixedC8InputBinding.validate→prepare_annual_array/AnnualArrayCarrier.validate→prepare_middle_stage/PreparedMiddleStage.validate_pre_spy→integration.integrate_turn。NumPy是测试进程内ModuleType显式替身：仅模拟shape/flags/bytes编码，不载入安装NumPy，也不证明实际ndarray、dtype、immutable backing或字节实现。PreparedMiddleStage.run类方法临时替换为dispatch stub并addCleanup恢复；stub再调用真实validate_pre_spy并返回虚构firm工资，capital/c1=None，真实资本/C1/firm数值body不测试。真实firm/C1依赖及observed入口均用拒绝函数封住，无真实consumer。
+正向检查年度浅copy保留原状态对象、short-name order、同一phi master/batch与middleware dispatch；只有integration的migration/composite计数各+1，其余middle计数0明确代表数值body未测试。拒绝检查mapping/缺array/不同ledger对象/share SHA/外部轴错序，直接断言实际ledger不变及spy为空。该候选如未来PASS，也只能叫stub衔接语义PASS，不能叫NumPy/中间数值正确或Objective A证据。
+
+准确项目导入闭包6文件（另加test入口），均按spec_from_file_location加载，不导入包__init__：
+- validators/multi_province/annual_observed_labor_diagnostic/fixed_c8_input_binding.py
+- 同目录integration.py与middle_stage.py
+- src/ch5_two_asset_hank/corrected_diagnostic/annual_observed_labor_context.py
+- 同目录annual_labor_array_adapter.py
+- 同目录lagged_observed_gdp_wedge.py：由context synthetic构造加载，4个setUp各两次_helper源hash/read，计划8次，新工程范围，实际0，不复用旧读取预算。
+直接stdlib并集：dataclasses、types、pathlib、numbers、math、sys、hashlib、importlib.util、json、unittest、fractions、re、struct；numpy import在两个真实模块解析到显式stub，无安装NumPy/SciPy代码，无模型/旧runner/真实consumer/网络。
+一次待独立review后另明确授权的拟命令：
+`& 'C:\Users\zcxve\AppData\Local\Programs\Python\Python311\python.exe' -I -S -B 'D:\ProjectTemp\c5k1bturn56\tests\test_fixed_c8_prepared_bridge_synthetic.py'`
+本轮无运行预算，无默认retry；首次运行失败停，不自动修正/再跑。读取任务与stub运行计划独立分账；未以stub替代真实存档核对或真实NumPy验证。
+
+下一门：父DOT独立审查该stub候选及闭包后再给新单次工程运行授权；存档分支需先解决正式审批拒绝，当前不能接受实际字段完整性。未commit/push、真实数组/turn7文件读取或模型重求解。普通进程权限/祖先目录控制及完整Objective A/16 UNRESOLVED/window UNACCEPTED/C9 PAUSED/CALL_LEDGER_UNRESOLVED/model_activation=False/Results FALSE保留。
+
+---
+
 # C8外部轴：最终工程结果、独立审查与本地封存（2026-10-02）
 
 CLOSED__C8_EXTERNAL_AXIS_SYNTHETIC_ENGINEERING_PASS；BACKUP_CHECKPOINT_STOP。父DOT终裁限定工程PASS；本记录随授权九路径本地检查点封存，提交后准确HEAD/tree由最终回报提供，不push、不发后继。

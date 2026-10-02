@@ -1,3 +1,20 @@
+# TASK_CURRENT — 新stub桥接单次测试结果父终裁关闭
+
+CLOSED__STUB_BRIDGE_ENGINEERING_ACCEPTED；BACKUP_CHECKPOINT_STOP；ARCHIVE_READ_AUTO_REVIEW_STOP；ACTIVE_EXECUTION: NONE。
+父DOT独立源码review PASS无Required后授予一次新Python311进程4方法retry0；正式审批通过，实际4tests exit0/0.017s，process1/retry0/remaining0。原返回、精确命令、源SHA及合并输出已保存EVIDENCE/ch5_dot_c8_prepared_bridge_synthetic_execution_20261002.json并记既有handoff顶部；不自受，不再运行。
+PASS限显式NumPy/middle.run替身配真实prepare/validate/integration衔接；不覆盖实际NumPy或middle数值、全部参数、production动态拒绝、真实C8/Objective A。存档32文件读仍审批STOP、正文0/32、唯一重试耗尽。C9PAUSED/16 UNRESOLVED/window UNACCEPTED/ledger UNRESOLVED/Results FALSE保留。
+父DOT接受独立PASS关闭任务，仅授权test/原receipt/本handoff/CURRENT/TASK共5路径一次本地commit；原receipt不改。提交后停在备份和32存档读取审批阻塞，不push/重跑/真实读取/科学后继。helper8次仅计划，全部接线/生产动态/实际NumPy/middle数值不在验收内。下方原准备/读取任务和旧检查点原文保留为历史。
+
+---
+# TASK_CURRENT — C8 stub桥接准备与存档字段新预算停点
+
+PREPARED_STUB_BRIDGE__ARCHIVE_READ_AUTO_REVIEW_STOP；ACTIVE_EXECUTION: NONE。
+父DOT新有界发单：stub binding→prepared_array→prepared_middle_stage源码+闭包先审，不运行；另签32精确存档文件各一次正文读取新预算。精确路径/冻结metadata/每文件cap/来源/停点均已先保存在既有docs/CH5_DOT_C8_EXTERNAL_AXIS_OWNER_SCOPE_HANDOFF_20261002.md顶部。
+stub源码候选tests/test_fixed_c8_prepared_bridge_synthetic.py已准备4方法/未运行，NumPy及middle.run数值替身不能证明真实数值。存档读工具启动请求2（初次+同命令唯一正式审批重试）均被auto-review拒绝、process0、正文消耗0/32；审批重试1/1耗尽、操作终止；不换方式、不制造字段结论、不自动接续。父DOT先审stub；正式审批门未解前不得启动存档读取。
+允许写仅该新测试及既有handoff/CURRENT/TASK必要入口；现有源、原回执和科学产物字节不改。无测试/模型/旧runner/native实验/turn7读取/安装/commit/push/后继或旧预算重开。科学方向/参数/单位变更或重求解先停。Objective A/16义务/C9/ledger/Results FALSE及Owner保护范围原状。
+下方已接受9tests及本地检查点任务原文保留为历史，不授权复跑。
+
+---
 # TASK_CURRENT — C8外部轴synthetic工程终裁及本地封存
 
 CLOSED__C8_EXTERNAL_AXIS_SYNTHETIC_ENGINEERING_PASS；BACKUP_CHECKPOINT_STOP；ACTIVE_EXECUTION: NONE。
