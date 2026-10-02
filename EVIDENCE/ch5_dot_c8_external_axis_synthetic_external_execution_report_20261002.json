@@ -1,0 +1,40 @@
+{
+  "schema": "CH5_C8_EXTERNAL_EXECUTION_REPORT_V1",
+  "record_kind": "source_attributed_cross_session_report_not_original_tool_receipt",
+  "recorded_at_utc": "2026-10-02T10:50:28.104Z",
+  "reporting_source_thread_id": "01a0fa1a-f62d-7091-a4a6-e5f60446b0f6",
+  "reported_execution_thread_id": "01a0f67a-6f00-79a3-9b6e-24a75d875068",
+  "source_text_verbatim": "刚收到另一个Codex会话01a0f67a-6f00-79a3-9b6e-24a75d875068的结果汇报：Owner在该会话直接授权已审精确Python311 -I -S -B test脚本，该唯一进程exit0，unittest Ran 9 tests in 0.032s OK，retry0；执行前HEAD6ed8b537和三SHA全匹配，无源码修改/commit/push。本次新进程预算1/1已耗尽，绝不能重跑。旧本会话审批拒绝request1/process0历史保留，两次事件不同。父工具无法直接读取该本地会话（thread not found）。请只读核本轮工作区中是否已新增该次成功原始回执/输出（仅本轮明确EVIDENCE/handoff相关路径，不读Codex sessions），回报可核原产物与身份。如果没有，明确仅收到跨会话结果转述，不制造原始工具回执，也不覆盖旧拒绝记录。可以原样保存这次转述为来源标明的external_execution_report，等原执行方补原记录后再封存验收。现在仅核查与来源记录，不commit/push/运行。",
+  "reported_result": {
+    "owner_direct_authorization": "reported_only",
+    "python_process_count": 1,
+    "exit_code": 0,
+    "unittest_summary": "Ran 9 tests in 0.032s\nOK",
+    "retry_count": 0,
+    "reported_no_source_edits_commit_push": true
+  },
+  "original_tool_receipt_available": false,
+  "original_stdout": null,
+  "original_stderr": null,
+  "original_exact_command_available": false,
+  "original_session_id": null,
+  "verification_status": "NO_NEW_SUCCESS_RECEIPT_FOUND_IN_SCOPED_LOCAL_PATHS__WAIT_ORIGINAL_EXECUTOR_RECORD",
+  "checked_scope": {
+    "existing_receipt": "EVIDENCE/ch5_dot_c8_external_axis_synthetic_execution_20261002.json",
+    "handoff": "docs/CH5_DOT_C8_EXTERNAL_AXIS_OWNER_SCOPE_HANDOFF_20261002.md",
+    "evidence_root_file_filter": "*c8*synthetic*20261002*",
+    "evidence_root_directory_filter": "*c8*synthetic*",
+    "recursive_scan": false,
+    "codex_sessions_access": false
+  },
+  "verified_local_identity": {
+    "head": "6ed8b53728d9791c7e2b31f486e61dcb723602af",
+    "binding_sha256": "D846E0EC2DF047E6E15C0682B18967B5E1DD8D7AAF6BF986CAA2F9632A1D9538",
+    "integration_sha256": "56494072026A140C97EAC30EAD7A2E46BF0C2C6AEF8F5B65BCFDB14D883E60A7",
+    "test_sha256": "5C36FDE926AD87749E07232AB0119B069138BA45526DE0F75A5450D778463FD1"
+  },
+  "prior_rejection_event": "Kept unchanged: this thread request1/process0/retry0, not the reported external process event.",
+  "execution_budget_gate": "Parent explicitly states new process budget consumed1/1 remaining0: no launch/retry permitted irrespective of original receipt availability.",
+  "new_execution_requests_this_check": 0,
+  "acceptance": "No runtime or scientific acceptance; await original executor's record and parent review."
+}

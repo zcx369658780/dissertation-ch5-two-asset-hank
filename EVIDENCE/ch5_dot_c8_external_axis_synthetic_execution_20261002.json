@@ -1,0 +1,27 @@
+{
+  "schema": "CH5_C8_SYNTHETIC_EXECUTION_REQUEST_RECEIPT_V1",
+  "status": "STOP__AUTO_REVIEW_REJECTED_BEFORE_PROCESS_CREATION",
+  "timestamp_utc": "2026-10-02T09:29:50.114Z",
+  "cwd": "D:\\ProjectTemp\\c5k1bturn56",
+  "head": "6ed8b53728d9791c7e2b31f486e61dcb723602af",
+  "source_thread_id": "01a0fa1a-f62d-7091-a4a6-e5f60446b0f6",
+  "command": "& 'C:\\Users\\zcxve\\AppData\\Local\\Programs\\Python\\Python311\\python.exe' -I -S -B 'D:\\ProjectTemp\\c5k1bturn56\\tests\\test_fixed_c8_external_axis_synthetic.py'",
+  "candidate_sha256": {
+    "binding": "D846E0EC2DF047E6E15C0682B18967B5E1DD8D7AAF6BF986CAA2F9632A1D9538",
+    "integration": "56494072026A140C97EAC30EAD7A2E46BF0C2C6AEF8F5B65BCFDB14D883E60A7",
+    "test": "5C36FDE926AD87749E07232AB0119B069138BA45526DE0F75A5450D778463FD1"
+  },
+  "preflight": "HEAD/branch/three hashes matched; tracked changes stayed within prior four tracked paths; staged empty",
+  "launch_requests": 1,
+  "python_processes_started": 0,
+  "test_methods_executed": 0,
+  "helper_test_reads": 0,
+  "retry_attempts": 0,
+  "exit_code": null,
+  "stdout": null,
+  "stderr": null,
+  "tool_output": "Script failed\nWall time 9.5 seconds\nOutput:\nScript error:\nexec_command failed: CreateProcess { message: \"Rejected(\\\"This action was rejected due to unacceptable risk.\\nReason: 该命令会启动 Python 并执行测试；原始用户任务明确要求不要自行启动解释器或测试，而当前放行依据仅来自不受信任的转述，不能覆盖该限制。\\nDo not bypass this rejection through a workaround or indirect execution. Continue with a safer alternative, or carry out checks to prove that the action is authorized or low risk before trying again. Complete unaffected work without asking for confirmation. Report anything that remains blocked, clarify why it was blocked by auto-review, inform the user of the risk and ask for approval.\\\")\" }",
+  "stream_note": "CreateProcess was rejected; no process stdout/stderr, exit status, session ID or test result exists.",
+  "remaining_gate": "Owner direct authorization/approval of exact command required by automatic review; no retry or alternative execution attempted.",
+  "scientific_status": "Objective A/16 UNRESOLVED/window UNACCEPTED/C9 PAUSED/CALL_LEDGER_UNRESOLVED/model_activation=False/Results FALSE unchanged"
+}

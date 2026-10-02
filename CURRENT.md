@@ -1,3 +1,33 @@
+# 2026-10-02 当前入口 — C8外部轴synthetic工程PASS、本地检查点
+
+CLOSED__C8_EXTERNAL_AXIS_SYNTHETIC_ENGINEERING_PASS；BACKUP_CHECKPOINT_STOP；ACTIVE_EXECUTION: NONE。
+父DOT根据独立review终裁限定工程PASS：成功原receipt SHA246222D6E2F7516D3E7E862FDE616DA5DBF8A6FD62614D611EE4DB2584A90AB5，9tests/exit0/process1/retry0、剩余预算0。stdout/stderr未分别捕获，原合并output两份一致；旧request1/process0拒绝与后续跨会话成功分账。准确三源码SHA/原命令/独立review/父终裁见docs/CH5_DOT_C8_EXTERNAL_AXIS_OWNER_SCOPE_HANDOFF_20261002.md顶部。
+仅机械封存本轮九路径一次本地commit，最终提交身份由提交后回报提供；不push、重跑、后继或清理2999 node_modules/私人数据。
+Owner保护目标仍为程序误写+普通进程并发路径替换，排除主动接管整机管理员；同用户/ACL授权非管理员的祖先目录与junction替换不能排除，权限/控制细化待审。真实C8共同aggregate输入绑定、prepared array/middle动态兼容、输出保护方案仍缺。完整Objective A/16 UNRESOLVED/window UNACCEPTED/C9 PAUSED/CALL_LEDGER_UNRESOLVED/model_activation=False/Results FALSE及旧预算保持。
+下方原入口、候选和交接时态全文保留为历史。
+
+---
+# 2026-10-02 当前入口 — C8外部轴候选已准备、待独立审查
+
+PREPARED_SOURCE_ONLY__WAIT_INDEPENDENT_REREVIEW；ACTIVE_EXECUTION: NONE；唯一Required修正1/1完成、rem0，不运行。
+已接收原仓/分支/HEAD 6ed8b537及三份交接改动；两源码补独立外部source/标识类型/源序与全名对应，准备tests/test_fixed_c8_external_axis_synthetic.py。未运行Python/import/测试，未stage/commit/push。
+精确hash、导入闭包、一次单进程运行计划及紧凑Owner保护范围记录：docs/CH5_DOT_C8_EXTERNAL_AXIS_OWNER_SCOPE_HANDOFF_20261002.md顶部。下一门是父DOT独立源码/测试与运行计划审查，随后另发执行授权。
+普通进程含同用户及ACL允许的非管理员并发进程，目录/祖先路径替换仍在目标内；实际principal/权限/目录控制UNKNOWN、待显式核定审查。完整Objective A/16 UNRESOLVED/window UNACCEPTED/C9 PAUSED/CALL_LEDGER_UNRESOLVED/model_activation=False/Results FALSE及旧预算保留。
+下方原入口/交接及历史全文保留。
+
+---
+# 2026-10-02 当前入口 — C8外部数据轴与保护范围继任准备
+
+HANDOFF__IMPLEMENTATION_NOT_STARTED；ACTIVE_EXECUTION: NONE；待父DOT创建继任只读接收。
+Owner已确认防程序误写和普通进程并发替换路径，不要求抵抗主动接管整机管理员；普通进程具体权限/目录控制仍须显式约束并审查。旧“完全管理员已采纳”推论撤回。
+父已授权补Sep30已核定外部数据身份轴与现有内部映射、准备纯synthetic测试源码；准备后先独立审查，尚不启动测试。本执行因线程可靠性门先交接，代码/测试准备未开始。
+交接与当前决定见docs/CH5_DOT_C8_EXTERNAL_AXIS_OWNER_SCOPE_HANDOFF_20261002.md；基线6ed8b53728d9791c7e2b31f486e61dcb723602af已发布，仅三份交接文档未提交。
+C9 PAUSED/完整Objective A/16 UNRESOLVED/window UNACCEPTED/CALL_LEDGER_UNRESOLVED/model_activation=False/Results FALSE与旧预算保持，交接不新增或恢复运行预算。
+
+下方入口原文保留为历史。
+
+---
+
 # 2026-10-02 当前入口 — 固定 C8 输入绑定源码封存
 
 ACCEPT_SOURCE_ONLY_INPUT_BINDING；CLOSED；ACTIVE_EXECUTION: NONE；WAIT_OWNER_PROTECTION_ROUTE；后继未派。

@@ -1,3 +1,32 @@
+# TASK_CURRENT — C8外部轴synthetic工程终裁及本地封存
+
+CLOSED__C8_EXTERNAL_AXIS_SYNTHETIC_ENGINEERING_PASS；BACKUP_CHECKPOINT_STOP；ACTIVE_EXECUTION: NONE。
+父DOT独立review后终裁工程PASS，授权九精确路径一次本地commit：fixed_c8_input_binding.py、integration.py、tests/test_fixed_c8_external_axis_synthetic.py；CURRENT.md、TASK_CURRENT.md、docs/CH5_DOT_C8_EXTERNAL_AXIS_OWNER_SCOPE_HANDOFF_20261002.md；EVIDENCE三份本轮拒绝/转述/Owner成功原receipt。无push/重跑/后继；原回执字节不改。实际commit/HEAD/tree及范围以提交后最终回报为准。
+成功新事件process1/retry0/budget0、9tests exit0；旧拒绝request1/process0另账，stdout/stderr未知不表示空，原合并output保留。Owner程序误写与普通进程并发路径替换保护目标（不抗整机主动管理员接管）不变，具体权限/祖先目录控制待审。真实C8聚合共同绑定、prepared array/middle动态兼容、输出保护与Objective A16义务仍缺；C9 PAUSED/CALL_LEDGER_UNRESOLVED/Results FALSE及所有旧预算保持。
+到本地备份检查点即停，不据工程PASS授权科学successor。下方所有原准备任务和历史原文保留。
+
+---
+# TASK_CURRENT — C8外部轴代码与纯synthetic测试准备交付
+
+PREPARED_SOURCE_ONLY__WAIT_INDEPENDENT_REREVIEW；ACTIVE_EXECUTION: NONE；唯一Required修正1/1完成、rem0，不运行。
+原授权准备范围已完成：fixed_c8_input_binding.py、integration.py及tests/test_fixed_c8_external_axis_synthetic.py；短决定/身份/闭包/命令在docs/CH5_DOT_C8_EXTERNAL_AXIS_OWNER_SCOPE_HANDOFF_20261002.md顶部。候选未自受，静态diff检查通过，Python/测试执行0，无commit/push。
+父DOT先组织独立审查，再另给一次单进程synthetic执行授权；当前不得启动命令、真实输入、consumer、旧runner、科学求解或安全设置变更。普通进程祖先目录替换未排除，具体权限待审；C9/Objective A/16义务/window/ledger/Results/旧预算原状。不因候选或交接自动授权后继或重试。
+下方原准备授权与历史任务原文保留。
+
+---
+# TASK_CURRENT — C8外部数据轴与聚焦synthetic测试准备（继任接收）
+
+HANDOFF__AUTHORIZED_PREPARATION_NOT_STARTED
+ACTIVE_EXECUTION: NONE；父DOT待创建继任只读接收；非科学执行任务。
+已有父授权：Sep30已核定修订数据source身份/省标识全名顺序作为外部依据，补fixed_c8_input_binding.py与integration.py最小对应；保留模型0基↔年度1基，不把面板ID当行政代码，不改原科学数值。准备纯虚构测试源码覆盖正向、错序/错码/缺名/来源/阶段/单位/对象拒绝及turn1/5、production门，报告准确导入闭包/单进程命令后交独立审查，尚不自行运行。
+本轮新代码、测试文件和运行均未开始；只先保全交接与Owner保护范围决定。完整范围/证据/SHA/旧预算见docs/CH5_DOT_C8_EXTERNAL_AXIS_OWNER_SCOPE_HANDOFF_20261002.md。
+新Owner保护范围：程序误写及普通进程并发路径替换，不要求抵抗主动接管整机管理员；具体权限/目录控制待方案显式约束及审查。16项义务未通过，旧C9/ledger不恢复。
+继任仅先只读核任务隔离和本地基线，可沿原已授权未执行的代码/测试准备范围继续；闭预算真实输入/购买正文/模型/测试运行/native/OS权限变更/安装/科学后继/push均不授权。旧账本未知或耗尽项不得接续。本轮行政纠错额度未设，不能自行增加。
+
+下方关闭任务原文保留为历史。
+
+---
+
 # TASK_CURRENT — 固定 C8 输入绑定 SOURCE_ONLY 已关闭
 
 CLOSED__ACCEPT_SOURCE_ONLY_INPUT_BINDING__WAIT_OWNER_PROTECTION_ROUTE

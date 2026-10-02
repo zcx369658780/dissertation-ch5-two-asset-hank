@@ -50,7 +50,7 @@ def integrate_turn(repository, task_root, turn_root, turn, states, batch,
                    input_kind, price_basis, price_verified, params,
                    migration_wedge_destination_origin, spies,
                    prepared_array=None, province_mapping=None,
-                   prepared_middle_stage=None, fixed_c8_binding=None):
+                   prepared_middle_stage=None, fixed_c8_binding=None, fixed_c8_external_source=None):
     """Mirror historical arguments, add explicit annual carrier; spies only.
 
     The default firm_stage remains an opaque synthetic test boundary. An explicit
@@ -90,7 +90,8 @@ def integrate_turn(repository, task_root, turn_root, turn, states, batch,
         raise ValueError('explicit states on annual axis required')
     if any(not {'N', 'wjt', 'tau'} <= set(r) for r in states):
         raise ValueError('source-faithful labor input keys missing')
-    use_c8_binding = turn == 8 or fixed_c8_binding is not None
+    use_c8_binding = (turn == 8 or fixed_c8_binding is not None
+                      or fixed_c8_external_source is not None)
     if not use_c8_binding:
         if any(type(r.get('province_index')) is not int or type(r.get('source_province_name')) is not str
                for r in states) or tuple((r.get('province_index'), r.get('source_province_name')) for r in states) != province_axis:
@@ -113,7 +114,10 @@ def integrate_turn(repository, task_root, turn_root, turn, states, batch,
         input_states = binding_module.FixedC8InputBinding.validate(fixed_c8_binding,
             states=states, frozen_shares=frozen_shares, batch=batch, turn=turn,
             province_axis=province_axis, province_mapping=province_mapping,
-            input_kind=annual_context.input_kind)
+            input_kind=annual_context.input_kind,
+            external_source=fixed_c8_external_source,
+            source_identifier=annual_context.wedge.binding.source_identifier,
+            source_sha256=annual_context.source_sha256)
     _validate_input_axes(batch.ct, migration_wedge_destination_origin, n)
     inputs = OneTurnInputs(province_order,
         tuple(MappingProxyType(dict(r)) for r in input_states), MappingProxyType(dict(params)),
