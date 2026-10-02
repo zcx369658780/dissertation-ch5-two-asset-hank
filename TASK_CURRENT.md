@@ -1,3 +1,16 @@
+# TASK_CURRENT — 固定 C8 输入绑定 SOURCE_ONLY 已关闭
+
+CLOSED__ACCEPT_SOURCE_ONLY_INPUT_BINDING__WAIT_OWNER_PROTECTION_ROUTE
+ACTIVE_EXECUTION: NONE；后继未派。
+父DOT 01a0fa1a-f62d-7091-a4a6-e5f60446b0f6依据独立复核PASS接受两源码候选：fixed_c8_input_binding.py SHA256 23C21B13D82C6041337CC70E0A7EC11595FD338F80076D2995FECD20EA396636；integration.py SHA256 347FDD66FAEBCEB4A2AA748DE476332BF6F5815CCB0E6543DCD811D60990713A，均位于validators/multi_province/annual_observed_labor_diagnostic/。
+唯一Required显式0基模型↔1基年度映射已修正并复核PASS，修正额度1/1耗尽。接受非执行源码，不是运行/数值/Objective A接受；原引用可变、声明边界见docs/CH5_DOT_FIXED_C8_INPUT_BINDING_SOURCE_ONLY_RESULT_20261002.md。
+机械封存授权仅这两源码、上述记录、CURRENT.md、TASK_CURRENT.md共五路径一次本地提交；保留历史，不push、不运行、不建测试文件、不发后继。
+Owner保护技术路线待答；完整Objective A/16 UNRESOLVED/window UNACCEPTED/C9 PAUSED/CALL_LEDGER_UNRESOLVED/model_activation=False/Results FALSE及所有旧预算保持，runtime0。封存后停止。
+
+下方已关闭决策包任务与更旧任务原文保留为历史。
+
+---
+
 # TASK_CURRENT — 固定 C8 输入合同与安全可行性决策包
 
 CLOSED__ACCEPT_DOCUMENTARY_DECISION_PACKAGE_ONLY__BACKUP_CHECKPOINT_STOP

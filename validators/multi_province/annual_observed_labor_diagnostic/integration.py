@@ -50,7 +50,7 @@ def integrate_turn(repository, task_root, turn_root, turn, states, batch,
                    input_kind, price_basis, price_verified, params,
                    migration_wedge_destination_origin, spies,
                    prepared_array=None, province_mapping=None,
-                   prepared_middle_stage=None):
+                   prepared_middle_stage=None, fixed_c8_binding=None):
     """Mirror historical arguments, add explicit annual carrier; spies only.
 
     The default firm_stage remains an opaque synthetic test boundary. An explicit
@@ -90,17 +90,33 @@ def integrate_turn(repository, task_root, turn_root, turn, states, batch,
         raise ValueError('explicit states on annual axis required')
     if any(not {'N', 'wjt', 'tau'} <= set(r) for r in states):
         raise ValueError('source-faithful labor input keys missing')
-    if any(type(r.get('province_index')) is not int or type(r.get('source_province_name')) is not str
-           for r in states) or tuple((r.get('province_index'), r.get('source_province_name')) for r in states) != province_axis:
-        raise ValueError('each state must match exact annual index/source-name order')
+    use_c8_binding = turn == 8 or fixed_c8_binding is not None
+    if not use_c8_binding:
+        if any(type(r.get('province_index')) is not int or type(r.get('source_province_name')) is not str
+               for r in states) or tuple((r.get('province_index'), r.get('source_province_name')) for r in states) != province_axis:
+            raise ValueError('each state must match exact annual index/source-name order')
     if prepared_array is not None and any(type(r.get('name')) is not str
             or r['name'] != province_mapping[i][2] for i, r in enumerate(states)):
         raise ValueError('existing state model short-name must match exact mapping')
     if not {'ga', 'phi_l', 'alphal'} <= set(params):
         raise ValueError('unchanged source parameters required')
+    # C8 requires explicit declarations; other historical synthetic turns retain
+    # their existing interface. The caller explicitly loads the binding module.
+    input_states = states
+    if use_c8_binding:
+        binding_module = sys.modules.get(type(fixed_c8_binding).__module__)
+        binding_path = Path(__file__).with_name('fixed_c8_input_binding.py').resolve()
+        if (binding_module is None
+                or getattr(binding_module, 'FixedC8InputBinding', None) is not type(fixed_c8_binding)
+                or Path(getattr(binding_module, '__file__', '')).resolve() != binding_path):
+            raise ValueError('explicitly loaded synthetic fixed C8 binding required')
+        input_states = binding_module.FixedC8InputBinding.validate(fixed_c8_binding,
+            states=states, frozen_shares=frozen_shares, batch=batch, turn=turn,
+            province_axis=province_axis, province_mapping=province_mapping,
+            input_kind=annual_context.input_kind)
     _validate_input_axes(batch.ct, migration_wedge_destination_origin, n)
     inputs = OneTurnInputs(province_order,
-        tuple(MappingProxyType(dict(r)) for r in states), MappingProxyType(dict(params)),
+        tuple(MappingProxyType(dict(r)) for r in input_states), MappingProxyType(dict(params)),
         phi, migration_wedge_destination_origin, batch)
     middle_module = None
     if prepared_middle_stage is not None:

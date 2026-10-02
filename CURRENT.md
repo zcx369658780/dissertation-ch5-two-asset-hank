@@ -1,3 +1,14 @@
+# 2026-10-02 当前入口 — 固定 C8 输入绑定源码封存
+
+ACCEPT_SOURCE_ONLY_INPUT_BINDING；CLOSED；ACTIVE_EXECUTION: NONE；WAIT_OWNER_PROTECTION_ROUTE；后继未派。
+父DOT依据独立复核PASS接受两份准确SHA的非执行候选；结果/审查记录：docs/CH5_DOT_FIXED_C8_INPUT_BINDING_SOURCE_ONLY_RESULT_20261002.md。模型0基简称与年度1基全名经显式映射；原对象/标签保留，年度适配视图另建。
+仅源码接受，未测试、未运行，不证明真实输入/单位有效性或完整Objective A。原状态引用仍可变，声明和局部结构约束不能充作保护证据。
+C9 PAUSED、完整Objective A、16 UNRESOLVED、window UNACCEPTED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE及旧预算保持。Owner保护技术路线待答；本地五路径封存后停止，不push、不发后继。
+
+下方决策包与更早入口原文保留为历史。
+
+---
+
 # 2026-10-02 当前活动 — 固定 C8 输入与安全决策包
 
 本任务ACCEPT_DOCUMENTARY_DECISION_PACKAGE_ONLY；BACKUP_CHECKPOINT_STOP；活动执行NONE，后继未派。基线2973697e16764f4151c849b4fd81f179300e45b1，src不改。治理/路线终裁ACCEPT仍成立；下方“活动NONE/下一路线未派”为本新任务前历史。
