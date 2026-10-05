@@ -1,3 +1,21 @@
+# 2026-10-05 阶段集中验收现行规则；PAUSED
+
+Owner已采纳新签阶段的连续工程闭环与集中验收。下方旧逐步骤审查、Required固定一次或首败即停不自动套用于新普通工程阶段；历史任务约束和既有独立门保持不变。
+
+- Builder负责实现及自测，不能自我接受。Work负责独立核验、修复要求和最终ACCEPT/REJECT；Work在同阶段正常执行中不修改Builder同批文件。
+- 交付至少包含最终diff、完成标准对照、测试命令/环境/结果、原始证据位置、保留的失败与修复记录、未完成项和风险。验收依据可观察结果，不依文档数量或单一PASS。
+- Work集中阅读交付及必要相关证据，独立执行阶段明确允许的核验；科学/真实数据/平台及受保护证据读取、运行仍需其精确新门，不能借验收补读已闭证据。
+- 发现实质缺陷汇总一批修复要求；修复在明确预算内自主完成，之后复核修复和必要回归。不限制Work隐瞒后发现的问题；预算不够或实质范围变化须停点决定。
+- 普通工程修复、回归及交付可在同一新签阶段闭环，不为每个步骤新建治理任务链。HIGH科学/保护事项仍需真正独立审查及必要Owner决定；审查不可用不是源码REJECT，更不能自受或降低审查门。
+- 区分DOCUMENT_ONLY、SOURCE_ONLY、synthetic工程证据、真实来源身份、平台方法/保护、科学有效性和Results资格；集中ACCEPT仅涵盖签发阶段的完成标准。
+- 本次只是流程文档修订，不重验最新已闭Objective A文档或历史launcher/metadata；实现阶段NOT_ISSUED、全部科学NOT_RUN。
+
+完整Objective A、16 UNRESOLVED、window UNACCEPTED、CALL_LEDGER_UNRESOLVED、C9 PAUSED、model_activation=False、Results FALSE保持。五False：source_authenticated、original_live_identity_restored、scientific_validity_established、model_activation、execution_admitted均为False。
+正式模型/consumer、科学实验与定义变更、C8重跑/C9/C10、真实carrier认证、科学JSON-NPZ解析解压、保护变化、发布、敏感外传、重要资产删除均未授权。禁止deep-learning-hank、另一当地Zotero仓、Project sources写入、跨树索引及dirty/node_modules清理。
+全部历史STOP/CLOSED及耗尽预算原样保留，不重读已闭证据，不重试、换审者/模型或改名重派；新流程不恢复旧额度。JSON31行仅partial，ZIP拒绝实际原因UNKNOWN，独立回执UNKNOWN/NOT_VERIFIED；launcher NOT_ACCEPTED/全部NOT_RUN。
+
+---
+
 # 2026-10-02 项目授权措辞澄清SOURCE文档接受
 
 CLOSED__ACCEPT_SOURCE_DOCUMENTARY_CLARIFICATION_ONLY。Owner既有日常委托/未来任务矩阵见docs/CH5_DOT_PROJECT_AUTHORIZATION_MATRIX_20261002.md；本次仅5文档SOURCE接受，不改变科学或保护权威；父DOT依据独立PASS无Required终裁。

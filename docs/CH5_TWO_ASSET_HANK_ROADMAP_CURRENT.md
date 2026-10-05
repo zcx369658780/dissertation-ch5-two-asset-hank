@@ -1,3 +1,10 @@
+# 2026-10-05 工作流入口更新（不改科学路线）
+
+Owner已采纳阶段目标委托—Codex连续执行—Work集中验收；规则见AGENTS、REVIEW_GATE顶部，实时状态见CURRENT、执行入口仅TASK_CURRENT。现有work为PAUSED/5分钟；本次文档修订不签发实现或科学阶段。
+A的输入/共享对象/31轴/单位/日历/依赖/lifetime可作为工程阶段候选；完整Objective A与16 UNRESOLVED不缩窄，B可行性和C来源资格不被工程PASS替代。五False、window UNACCEPTED、CALL_LEDGER_UNRESOLVED、C9 PAUSED、Results FALSE以及所有历史闭预算保留。下方旧日期、DOT路由、活动任务措辞仅作历史。
+
+---
+
 # 2026-10-02 路线现行入口
 
 实时状态权威是根目录CURRENT顶部，执行仅TASK_CURRENT；科学合同见SCIENTIFIC_DECISIONS顶部与原件。本次治理文档已获父DOT终裁ACCEPT/CLOSED，非科学ACCEPT；活动任务NONE，下一文档路线建议未派。

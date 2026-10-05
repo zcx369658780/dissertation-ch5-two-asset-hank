@@ -1,3 +1,29 @@
+# 2026-10-05 当前任务：工作流文档修订；实现阶段NOT_ISSUED
+
+## 本轮直接授权
+
+Owner已同意阶段委托流程，要求执行必要本地/GitHub文档修订；可提供项目源文档替换文件。主负责人完成文档落地及定向GitHub备份，不委派Builder实施、不创建或更换会话。
+
+允许变更：AGENTS.md、CURRENT.md、TASK_CURRENT.md、REVIEW_GATE.md和两份ROADMAP_CURRENT顶部；新增docs/project-source-replacements/CH5_PROJECT_GOVERNANCE_CURRENT.md供Owner替换项目源。原文原字节保留，Project sources保持只读。科学/证据/源码/测试运行额度0。文档一致性与字节保全核验、本批Git备份在本轮授权内；不纳入历史预算。
+
+Git范围：仅提交本批新增段落和替换文档到单独本地备份ref及同名GitHub备份分支；不混入既有dirty/untracked、不切换实际工作树、不改其HEAD/索引、不merge/release/发布。若远端同名分支已存在且内容不符，不覆盖。
+
+## 下一实现阶段的委托要求（尚未ISSUED）
+
+- 阶段候选：A的typed input/source-loader、冻结对象共享、31轴/单位/日历/依赖/lifetime工程闭环。此为候选目标，不声称其源资格已齐全，不改完整Objective A或16义务。
+- Work签发前须列出开放上下文及精确允许模块、可观察接口/测试完成标准、自主修改范围、时间与资源总上限、必要修复/重测上限、决定停点、持续无进展阈值、证据目录、本地提交权限和独立验收方式。数字预算未签时不得运行。
+- 可用纯合成输入的工程检查必须在新阶段明确授权；不得把synthetic PASS写成真实carrier、正式consumer、平台保护或科学接受。
+- Owner decision packet单文件读取仍PROPOSED_NOT_AUTHORIZED/未读取；没有明确新授权不读、不沿引用、不通过搜索档案替代。
+- 完成标准不齐或涉及未授权输入时，Work先说明缺口，不能改名续旧STOP或把“准备”当成执行。
+
+现有work保持PAUSED/5分钟/指定交接Work；本轮文档完成不触发自动恢复或首阶段派发。
+
+完整Objective A、16 UNRESOLVED、window UNACCEPTED、CALL_LEDGER_UNRESOLVED、C9 PAUSED、model_activation=False、Results FALSE保持。五False：source_authenticated、original_live_identity_restored、scientific_validity_established、model_activation、execution_admitted均为False。
+正式模型/consumer、科学实验与定义变更、C8重跑/C9/C10、真实carrier认证、科学JSON-NPZ解析解压、保护变化、发布、敏感外传、重要资产删除均未授权。禁止deep-learning-hank、另一当地Zotero仓、Project sources写入、跨树索引及dirty/node_modules清理。
+全部历史STOP/CLOSED及耗尽预算原样保留，不重读已闭证据，不重试、换审者/模型或改名重派；新流程不恢复旧额度。JSON31行仅partial，ZIP拒绝实际原因UNKNOWN，独立回执UNKNOWN/NOT_VERIFIED；launcher NOT_ACCEPTED/全部NOT_RUN。
+
+---
+
 # 2026-10-02 父DOT验收与本地封存
 
 CLOSED__ARCHIVE_AGGREGATE_ADAPTER_SYNTHETIC_ENGINEERING_PASS。BACKUP_CHECKPOINT_STOP__REAL_ARCHIVE_READ_BLOCKED。ACTIVE_EXECUTION: NONE。
