@@ -74,6 +74,14 @@ def _validated_scalar(value: object, name: str, *, positive: bool) -> float:
     return number
 
 
+def _validated_capital_vector(values: object, name: str) -> np.ndarray:
+    # Preserve original bool elements before any floating-point coercion.
+    raw = np.asarray(values, dtype=object)
+    if any(isinstance(value, (bool, np.bool_)) for value in raw.flat):
+        raise ValueError(f"{name} must contain real capital levels, not booleans")
+    return np.asarray(raw, dtype=float)
+
+
 def residual_government_asset_level(
     *, Ktarget_MU: object, Kprivate_current_MU: object
 ) -> ResidualGovernmentAssetLevel:
@@ -98,16 +106,21 @@ def residual_government_asset_level(
         government = gap_before
         firm_capital = target
         status = RESIDUAL_PUBLIC_ASSET_POSITIVE
+    ratio = firm_capital / target
+    gap_after = target - firm_capital
+    if not all(isfinite(value) for value in
+               (government, firm_capital, ratio, gap_before, gap_after)):
+        raise ValueError("residual government asset arithmetic produced a non-finite output")
     return ResidualGovernmentAssetLevel(
         Ktarget_MU=target,
         Kprivate_current_MU=private,
         GovInv_residual_MU=government,
         firm_K_accounting_MU=firm_capital,
-        firm_K_over_target=firm_capital / target,
+        firm_K_over_target=ratio,
         private_at_or_above_target=at_or_above,
         residual_floor_binding=at_or_above,
         capital_gap_before_MU=gap_before,
-        capital_gap_after_MU=target - firm_capital,
+        capital_gap_after_MU=gap_after,
         status=status,
     )
 
@@ -123,8 +136,8 @@ def residual_government_asset_levels(
     order = tuple(province_order)
     if order != PROVINCE_ORDER:
         raise ValueError("province_order must match the exact source province order")
-    target = np.asarray(Ktarget_MU, dtype=float)
-    private = np.asarray(Kprivate_current_MU, dtype=float)
+    target = _validated_capital_vector(Ktarget_MU, "Ktarget_MU")
+    private = _validated_capital_vector(Kprivate_current_MU, "Kprivate_current_MU")
     if target.shape != (31,) or private.shape != target.shape:
         raise ValueError("capital vectors must both have shape (31,)")
     results = tuple(
