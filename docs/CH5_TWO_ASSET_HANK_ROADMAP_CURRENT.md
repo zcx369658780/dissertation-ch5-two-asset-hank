@@ -1,3 +1,7 @@
+# 路线图迁移状态
+2026-10-12：新工作方式见 CH5_ASTRA_WORKFLOW_CURRENT.md，迁移后首版尚未制定，等待Owner第三阶段。下方路线与冻结版本/历史状态原样保留；旧微审批、自动续签和旧下一门不再启动。未来路线不得追改已冻结版本。
+
+---
 # 2026-10-02 路线现行入口
 
 实时状态权威是根目录CURRENT顶部，执行仅TASK_CURRENT；科学合同见SCIENTIFIC_DECISIONS顶部与原件。本次治理文档已获父DOT终裁ACCEPT/CLOSED，非科学ACCEPT；活动任务NONE，下一文档路线建议未派。

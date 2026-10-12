@@ -1,3 +1,10 @@
+# 当前验收方式：网页Astra按冻结版本集中独立验收
+2026-10-12。见 docs/CH5_ASTRA_WORKFLOW_CURRENT.md。Codex自主实现与验证，集中交候选；Astra检查原标准、批量反馈原目标缺陷并作偏差复盘。自测不等最终接受，开发接受不等生产发布。
+当前迁移文档发布读回不是新版本/科学/生产验收；首版未制定。旧Work不再逐门签发后继，旧审查循环/路由仅历史；必要科学/保护约束、旧拒绝和闭预算保留。
+
+---
+# 以下为迁移前验收记录原文（历史）
+
 # 2026-10-02 项目授权措辞澄清SOURCE文档接受
 
 CLOSED__ACCEPT_SOURCE_DOCUMENTARY_CLARIFICATION_ONLY。Owner既有日常委托/未来任务矩阵见docs/CH5_DOT_PROJECT_AUTHORIZATION_MATRIX_20261002.md；本次仅5文档SOURCE接受，不改变科学或保护权威；父DOT依据独立PASS无Required终裁。

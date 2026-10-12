@@ -1,3 +1,11 @@
+# 当前任务：迁移文档交付；VERSION_NOT_STARTED
+2026-10-12。第二阶段仅恢复真实状态、更新工作方式、发布适合外发知识及手动交接；不开发、不科学运行、不恢复暂停任务。
+后续正式版本尚未制定，等待Owner第三阶段。版本计划入口 docs/CH5_VERSION_REGISTER_CURRENT.md；以固定冻结计划为执行授权，当前没有该计划。
+新工作方式 docs/CH5_ASTRA_WORKFLOW_CURRENT.md 已替代Work微审批和自动派单。旧任务以下全部历史，不是执行入口；本文件不授权旧A6修复或后继。
+
+---
+# 以下为迁移前任务原文（历史）
+
 # 2026-10-02 父DOT验收与本地封存
 
 CLOSED__ARCHIVE_AGGREGATE_ADAPTER_SYNTHETIC_ENGINEERING_PASS。BACKUP_CHECKPOINT_STOP__REAL_ARCHIVE_READ_BLOCKED。ACTIVE_EXECUTION: NONE。
