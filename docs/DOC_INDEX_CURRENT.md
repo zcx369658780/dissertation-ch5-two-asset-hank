@@ -5,6 +5,7 @@
 |---|---|---|
 | 当前工作方式与角色 | [当前工作流](CH5_ASTRA_WORKFLOW_CURRENT.md)、[本地启动规则](../AGENTS.md) | 当前流程；旧Work规则仅历史 |
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
+| Codex第二阶段实时交接 | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner手工接收；完成后WAIT_OWNER_PHASE3；不启动新版本 |
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 决定、原证据上限及本地工具限制 |
 | 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | 首版尚未制定；历史计划原状态保留 |
 | 当前/历史计划、结果、验收、复盘 | 版本登记中的具体入口 | 原版以固定提交为准，缺项待创建 |

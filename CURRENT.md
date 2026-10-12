@@ -1,5 +1,5 @@
 # 第五章当前状态：迁移交接完成后等待Owner第三阶段
-2026-10-12。现行职责与执行方式见 docs/CH5_ASTRA_WORKFLOW_CURRENT.md；动态正文入口 docs/DOC_INDEX_CURRENT.md，详细真实状态、远端与本地差异见 docs/CH5_ASTRA_MIGRATION_HANDOFF_20261012.md。
+2026-10-12。现行职责与执行方式见 docs/CH5_ASTRA_WORKFLOW_CURRENT.md；动态正文入口 docs/DOC_INDEX_CURRENT.md，迁移历史原证见 docs/CH5_ASTRA_MIGRATION_HANDOFF_20261012.md；本次Codex实时封存及手工接收入口见 docs/CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md，启动Prompt见 docs/CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md。WAIT_OWNER_PHASE3；新会话尚未实际接收。
 最新接受为scripts/tools metadata门ACCEPT/CLOSED；末binding门DELIVERY_INCOMPLETE / NOT_ACCEPTED / CLOSED（原turn308677/600000ms未超预算）。完整劳动桥/经济单位/科学运行未接受。
 没有新版本计划或开发任务，本轮仅文档迁移；旧Work退为历史，不再实时管理，网页Astra先只读接收。第三阶段由Owner手动启动。
 下方旧A6和旧ISSUED/ACTIVE及“明日下一门”均历史，不恢复、不补交、不派后继；科学定义、保护、旧失败与CLOSED预算保持。
