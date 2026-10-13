@@ -7,8 +7,8 @@
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
 | Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 决定、原证据上限及本地工具限制 |
-| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.1 版前协商进行中，未冻结、无实施授权；历史计划原状态保留 |
-| V0.0.1 候选计划 | [版本计划草案](../versions/0.0.1/plan.md) | 只读提交执行方案，等 Astra 审议；不得开始工程实现 |
+| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.1 已冻结并发布 Astra 实施许可；历史路线不自动启动 |
+| V0.0.1 正式冻结与授权 | [固定冻结计划](../versions/0.0.1/plan.md)、[实施授权](../versions/0.0.1/authorization.md) | 冻结提交 6c9a13bd...；批准合成工程候选，Codex 自主实施后集中验收；不授权真实科学模型 |
 | 当前/历史计划、结果、验收、复盘 | 版本登记中的具体入口 | 原版以固定提交为准，缺项待创建 |
 | 历史Sources与本地私有资料 | [知识摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md)、[手工交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 私有日志/数据不上传；按需人工提供脱敏片段 |
 | 来源/引用资格 | [原知识库正文](knowledge/project-sources/DISSERTATION_KNOWLEDGE_BASE_CURRENT.md) | 历史正文中稳定E0–E3/D0–D4资格保留 |
@@ -17,7 +17,7 @@
 | 历史归档覆盖与测试 | [归档安全摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 历史检索结果及Owner补充新会话测试分开 |
 | 上传用稳定索引 | [PROJECT_SOURCE_INDEX_CH5](PROJECT_SOURCE_INDEX_CH5.md) | 只在仓库/发布分支/入口改变时通常重传 |
 
-2026-10-13 Owner 已启动第三阶段的版前协商，仅发布 V0.0.1 草案；Codex 必须先交执行方案草稿，Astra 批准并固定正式冻结 SHA 前不得实施。
+2026-10-13 Owner 已启动第三阶段；Codex 执行方案已获 Astra 审议，V0.0.1 正式冻结于 6c9a13bdf6a54913d8f16b5ec23fdda2a68f28e8，实施授权见 authorization。当前只表明 Codex 可以开始授权的合成工程，尚无实际工程运行/候选/验收证据；冻结计划不可追改。
 
 先读工作流、CURRENT、迁移交接与知识摘要，再按具体版本读取冻结计划和真实候选。普通状态使用当前分支路径；正式计划、代码/证据在版本登记保存固定提交。路径带CURRENT不自动证明内容时效，表中的“历史”标记优先。
 访问失败/未发布/LOCAL_ONLY要明确缺口，使用Owner提供的对应文件或提交快照，不声称已读。本目录不赋予自动同步或额外权限。
