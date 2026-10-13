@@ -1,12 +1,14 @@
-# 第五章当前状态：V0.0.1 正式冻结，Astra 已批准工程实施
+# 第五章当前状态：V0.0.1 合成工程有限接受并关闭
 
-2026-10-13：Owner 启动第三阶段；Codex 提交 V0.0.1 执行方案草稿，经网页 Astra 审议后正式冻结 `versions/0.0.1/plan.md`，**固定计划提交** `6c9a13bdf6a54913d8f16b5ec23fdda2a68f28e8`，**独立许可** `versions/0.0.1/authorization.md`，状态 `FROZEN__ASTRA_APPROVED_EXECUTION__WAIT_CODEX_IMPLEMENTATION`。实施仅限合成家户劳动工程桥接、允许新建的2个源码/测试文件及专属证据/脱敏 execution 报告。此状态仅代表有许可，尚未收到任何实施、测试、候选或 PASS 的事实证据。
+2026-10-13：`CLOSED__ACCEPT__SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS`。网页 Astra 已用 GitHub 工具独立核准候选 `3260ec393dd4d53d6aab6c34d7c0442f09aa79f4`、tree `39e7a91ca473ba770bd65518607c3f78f4b9fe24`，相对代码基线 `a1db8c114dec0ab69d69a5576e153a7f868cba0e` 仅新增源模块、测试及公开执行报告3文件，审查真实代码/测试/证据正文。Codex 报告精确 candidate_view `42/42`、累计4次 focused pytest、最终 EVIDENCE≈1.87MiB、墙钟采样≈21分钟；网页未直接取得本地完整 stdout/JUnit 或独立执行，故限制为受界合成工程接受。
 
-Code baseline `a1db8c114dec0ab69d69a5576e153a7f868cba0e` 为本地交接报送的既有代码提交，未包含 dirty/untracked 资料；Codex 开始前须核验本地工作树。冻结计划与科学合同不可事后追改，旧工作流仅历史；Codex 在本次限定工程版本内自主实现与 focused 测试，完成后集中交付 Astra 独立验收，不做实时监督。
+正式冻结计划（不可修改）`versions/0.0.1/plan.md`，固定提交 `6c9a13bdf6a54913d8f16b5ec23fdda2a68f28e8`；授权 `versions/0.0.1/authorization.md`；最终 `versions/0.0.1/acceptance.md`；偏差 `versions/0.0.1/retrospective.md`。候选独立分支未合并 main，旧本地 checkout 的 HEAD/index/dirty/untracked/ignored 保全以 Codex 回执为据，本轮网页没有查看私有磁盘。首次临时 index 超10MiB 证据限额 STOP 和 Owner 报告的有限运维修正、测试纠错、UTC账务均已公开记载为偏差，未追改冻结标准。
 
-真实31省、HJB/KFE、C8/C9/C10、GE、Results 与受保护数据调用仍不授权；`C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、Objective A16 `FAIL_CLOSED`、`model_activation=False`、`Results FALSE` 及经济劳动单位未知保持。人口/人均方向保持、户均封存，不 `N=P/3`。
+仅证明 synthetic aggregate→frozen→batch→callback→one-turn→firm 双劳动入参工程链：`household Lt→Lt_prev`，`migration.lt_supply→firm 当前 Lt`，二者不要求相等。原真实 solver 来源、生产 consumer、经济劳动单位/人口分母/价格/时点、31省数值、K1B收敛/GE/Results 与生产安全仍 UNKNOWN 或 FALSE。受保护科学/数据/执行不解封：`C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、Objective A16 `UNRESOLVED/FAIL_CLOSED`、`model_activation=False`、`Results FALSE`、生产未接受、旧预算 CLOSED，人口/人均方向保持且不 `N=P/3`。
 
-动态目录 `docs/DOC_INDEX_CURRENT.md`，版本登记 `docs/CH5_VERSION_REGISTER_CURRENT.md`，授权正文 `versions/0.0.1/authorization.md`。
+**下个版本：`NOT_STARTED`，无工程任务 ISSUED。** Codex 停止 V0.0.1；Owner 后续手动启动下一轮版前协商，Astra 不自动派单、轮询或唤起 Work。
+
+当前导航：`docs/DOC_INDEX_CURRENT.md`；登记：`docs/CH5_VERSION_REGISTER_CURRENT.md`。
 
 ---
 # 以下为 2026-10-12 第二阶段迁移旧状态（历史）
