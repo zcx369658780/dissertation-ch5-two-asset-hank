@@ -1,3 +1,14 @@
+# 第五章当前状态：V0.0.5 已启动可信根版前规划 / 无实施许可
+
+2026-10-13 Owner 明确启动 V0.0.5，聚焦 V0.0.4 首次创建前无法证明可信独立 fixture root 及所有可变祖先与真实资产隔离的问题。Astra 发布 `versions/0.0.5/plan.md` **DRAFT**，状态 `DRAFT__WAIT_CODEX_TRUSTED_ROOT_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`。Codex 下一步仅可有界审阅已有 GitHub 代码/Windows 官方平台材料与允许的 Git 元数据，提出首选/备选可信 root 方案、证明义务、Owner 环境选择及 bootstrap-only 后继门。不得创建/探测独立卷/fixture，也不得检测受保护模型及任何真实祖先/数据资产。
+
+V0.0.4 `CLOSED__BLOCKED__G0_FIXTURE_ISOLATION_UNPROVEN__NO_EXPERIMENT__WITH_OBSERVATIONS`，无实验、无代码候选；其 D3-fixture/D4-fixture 许可不延续。建议未来基线为 V0.0.3 accepted `cf74384f151427f0b7071ac0461cede6ad6cdf11` / tree `372c693ca3dccea716ae8caef382f513e5a2316e`，但 `NEXT_BASELINE_ADOPTION=UNDECIDED`，main、旧 HEAD/index/dirty 不变。D1 初始北京三历史元数据作为拟核验对象、D2 完整 A16/window 不降级继续采纳；D3-real/D4-real 没有许可，真实北京 asset stat/open/read/hash/ACL/reparse/probe 均禁止。
+
+旧 Objective A16 `UNRESOLVED/FAIL_CLOSED`、window `UNACCEPTED`、`C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、`model_activation=False`、`Results FALSE`、全部 CLOSED 数据/科学预算和人口/人均与不 `N=P/3` 不变；劳动力经济量纲、人口分母、年份价格日历及真实来源联合身份仍 UNKNOWN。V0.0.1–V0.0.3 各自有限 ACCEPT/CLOSED，V0.0.6 NOT_STARTED；工作流 V1.2 不升级。
+
+---
+# 以下为 V0.0.4 G0 安全阻塞关闭时的历史全文
+
 # 第五章当前状态：V0.0.4 G0 隔离阻塞关闭
 
 2026-10-13：`CLOSED__BLOCKED__G0_FIXTURE_ISOLATION_UNPROVEN__NO_EXPERIMENT__WITH_OBSERVATIONS`。Codex 报告未能在首次创建之前建立可信独立 fixture 创建锚，按冻结 G0 停止。人工 fixture、12场景、实验进程、模型/真实资产操作与 V0.0.4 候选全部未发生；API 导出存在不代表 Windows 保护行为通过。Astra 仅接受**安全停点**；本地执行记录与 HEAD/index/dirty 保全来自 Codex 报告，网页未接触本机原资产/收据。

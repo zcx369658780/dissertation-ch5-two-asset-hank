@@ -7,7 +7,8 @@
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
 | Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 决定、原证据上限及本地工具限制 |
-| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.4 CLOSED / BLOCKED / G0隔离未证实；V0.0.5 未启动 |
+| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.4 CLOSED/BLOCKED；V0.0.5 已启动版前 DRAFT，未授权创建或探测根 |
+| V0.0.5 可信根版前草案 | [可信独立实验根获取与隔离证明](../versions/0.0.5/plan.md) | Codex 仅 SOURCE_ONLY 提交可落地方案；旧 G0/科学许可不恢复，NEXT_BASELINE_ADOPTION=UNDECIDED |
 | V0.0.4 阻塞验收与复盘 | [最终验收](../versions/0.0.4/acceptance.md)、[复盘](../versions/0.0.4/retrospective.md)、[冻结计划](../versions/0.0.4/plan.md)、[授权](../versions/0.0.4/authorization.md) | 安全停止、0实验/0候选，真实保护读取仍禁止 |
 | V0.0.3 冻结与验收结果 | [冻结计划](../versions/0.0.3/plan.md)、[独立授权](../versions/0.0.3/authorization.md)、[最终验收](../versions/0.0.3/acceptance.md)、[复盘](../versions/0.0.3/retrospective.md) | freeze 768a3181fcbc…不变，candidate cf74384f1514…，真实读取仍 REQUEST_ONLY |
 | V0.0.2 冻结与最终结论 | [冻结计划](../versions/0.0.2/plan.md)、[授权](../versions/0.0.2/authorization.md)、[验收](../versions/0.0.2/acceptance.md)、[复盘](../versions/0.0.2/retrospective.md) | freeze SHA 4b11c46823e7… 未追改；candidate 8f5457947492…；真实来源认证未获得 |
@@ -19,6 +20,8 @@
 | 近期交接证据 | [进度快照](knowledge/published/CH5_WORK_PROGRESS_FLOW_MANUAL_HANDOFF_20261011_140603Z.md)、[验收账快照](knowledge/published/CH5_WORK_ACCEPTANCE_LEDGER_MANUAL_HANDOFF_20261011_140603Z.md)、[劳动决定](knowledge/published/CH5_LABOR_UNIT_HISTORY_AND_EVIDENCE_20261010_145723Z.md) | 脱敏发布副本，旧流程已替代，报告接受不冒称本轮重测 |
 | 历史归档覆盖与测试 | [归档安全摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 历史检索结果及Owner补充新会话测试分开 |
 | 上传用稳定索引 | [PROJECT_SOURCE_INDEX_CH5](PROJECT_SOURCE_INDEX_CH5.md) | 只在仓库/发布分支/入口改变时通常重传 |
+
+2026-10-13 Owner 已启动 V0.0.5 版前规划，仅调查可信独立根的获取和隔离证明；旧 G0 实验额度没有恢复，无创建/测试/真实读取许可。
 
 2026-10-13 Owner 已启动 V0.0.4 版前规划。V1.2 已覆盖 fail-fast，当前不升级工作流文档；新版本仅 DRAFT 和 Codex 只读方案，没有北京历史文件读取许可、科学测试或实现授权。
 

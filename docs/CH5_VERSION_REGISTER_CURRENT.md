@@ -1,5 +1,12 @@
 # 第五章路线图与版本登记
 
+## 2026-10-13 当前：V0.0.5 已由 Owner 启动版前规划，专注可信独立实验根
+
+**状态 `DRAFT__WAIT_CODEX_TRUSTED_ROOT_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`。** Owner 明确要求开启 V0.0.5，解决上版 G0 **可信首次创建锚与可变祖先隔离证明**，而非重复12场景、继续旧 V0.0.4 fixture 执行或自动读取 run004。Astra 发布 [V0.0.5 版前草案](../versions/0.0.5/plan.md)，当前仅 Codex 在已有允许的 SOURCE_ONLY/非破坏性 Git 身份范围内提交**可信根来源路线、证明义务、Owner 最小独立环境选择与后续 bootstrap-only 验收门**；无实施/测试/根探测/隔离环境创建许可。
+
+V0.0.4 `CLOSED__BLOCKED__G0_FIXTURE_ISOLATION_UNPROVEN__NO_EXPERIMENT__WITH_OBSERVATIONS` 且**无代码候选**，旧 D3-fixture/D4-fixture 不延续。候选基线建议追溯 V0.0.3 accepted `cf74384f151427f0b7071ac0461cede6ad6cdf11`、tree `372c693ca3dccea716ae8caef382f513e5a2316e`，但 `NEXT_BASELINE_ADOPTION=UNDECIDED`。D1 北京三文件仅拟核验对象、D2 完整 A16/window 威胁模型继续采纳；D3-real/D4-real 仍未获准，A16/C9/Results 保护不变。V0.0.6 NOT_STARTED。
+
+
 ## 2026-10-13 当前：V0.0.4 按 G0 安全阻塞关闭
 
 **`CLOSED__BLOCKED__G0_FIXTURE_ISOLATION_UNPROVEN__NO_EXPERIMENT__WITH_OBSERVATIONS`**。Codex 报告首次可信创建锚与 fixture 隔离未证明，依冻结 G0 在创建前停下；12场景全部未运行，两项 oracle 未验证，无新代码候选。Astra 接受安全停点，**不接受工程/安全保护 PASS**；本地零操作和原工作树保全仅由 Codex 报告。
