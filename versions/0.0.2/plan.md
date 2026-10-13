@@ -1,76 +1,65 @@
-# V0.0.2 版本计划草案：家户求解输出来源契约与输入准入边界
+# V0.0.2 正式冻结版本计划：家户来源契约与合成输入准入
 
-**日期**：2026-10-13（Asia/Shanghai）
+**版本：** `0.0.2`　**Owner启动：** 2026-10-13　**状态：** `FROZEN__AWAIT_SEPARATE_ASTRA_AUTHORIZATION`
 
-**状态**：`DRAFT__WAIT_CODEX_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`。
+**不可追改原则：** 这是 V0.0.2 唯一现行冻结合同。原 `DRAFT` 只保留在此前 Git commit `5cfe41fd0a66877565accca3c8e7dc9a71fa35ee` 的历史文件，不能作为实施许可或与本文件混用。**本冻结提交即计划 freeze SHA**，由后续版本登记/授权文档记录其完整 commit，不将自身 SHA 写回本文件。实施还必须有独立 `ASTRA_APPROVED_EXECUTION` 授权。验收按本版原冻结目标，不为获取 PASS 更改合同。
 
-**版本性质**：Owner 已在 V0.0.1 正式关闭并同步 V1.1 后，明确要求开始规划下一版本。此文件仅为 Astra 版前目标草案，供 Codex **只读核查并提交执行方案**。**没有冻结计划，没有实施授权，没有任何新测试或科学运行许可。**
+## 一、立版依据与科学目的
 
-## 1. 版本位置与严格代码基线
+Owner 已要求在 V0.0.1 `CLOSED__ACCEPT__SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS` 及 CH5_WORKFLOW_V1.1 本地同步完成后继续研究。Codex 经有界只读检查交付 `V0.0.2_EXECUTION_PROPOSAL_DRAFT`，Astra 已审议其字段来源、经济限制、五文件方案和分层资源建议。
 
-- 研究项目：第五章多省份两资产 HANK Python successor；唯一模型工作树此前由 Codex 报告为 `D:\ProjectTemp\c5k1bturn56`，执行前须自行重新核对。
-- 当前工作流：[V1.1](../../docs/CH5_ASTRA_WORKFLOW_CURRENT.md)，当前状态：[CURRENT](../../CURRENT.md)，科学接受合同：[SCIENTIFIC_DECISIONS](../../SCIENTIFIC_DECISIONS.md) 及需要的原采纳文件。
-- V0.0.1 `CLOSED__ACCEPT__SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS`，冻结提交 `6c9a13bdf6a54913d8f16b5ec23fdda2a68f28e8`，接受的代码候选提交 `3260ec393dd4d53d6aab6c34d7c0442f09aa79f4`、tree `39e7a91ca473ba770bd65518607c3f78f4b9fe24`，位于 `codex/ch5-v0.0.1-synthetic-household-bridge`。其接受不包括真实上游来源或经济单位认证。
-- 更早模型代码截点 `a1db8c114dec0ab69d69a5576e153a7f868cba0e`，原本地分支 `codex/ch5-mp4c-k1b-turn5-turn6-bounded-continuation-20260922`；本地此前报告有未提交代码与大量 untracked/ignored 资产。
-- 当前 GitHub 对比显示 `main` 并未包含 V0.0.1 候选；禁止默认从 `main` 开始或把已接受等同于已集成。
-- **`NEXT_BASELINE_ADOPTION=UNDECIDED`**：Astra 倾向在不冲突且有复用必要时以 V0.0.1 的固定候选为 0.0.2 的候选代码起点，但该建议**不是采纳或合并命令**。由 Codex 在草稿中对比分支、未提交成果、路径/依赖和最小变更方案，再由 Astra 在正式冻结时明确 `ADOPTED_FROM_EXACT_SHA` 或 `NOT_ADOPTED`。不得 reset、merge、rebase、clean 或覆盖原 worktree。
+本版要从 V0.0.1 合成下游 aggregate→frozen→batch 工程闭环向上迈一步，明确定义家户政策/质量/收益数据能否被准入 corrected aggregate 的**类型、来源声明与内在一致性**。**这不是**真实 solver、真实来源身份、产物 seal、31 省生产 callback、科学运行、GE、Results 或生产启用资格认证。
 
-## 2. 本版科学问题与已有源码事实
+## 二、固定代码基线与未合并事实
 
-V0.0.1 已受界验证：明确标记的虚构省份政策/质量 → `CorrectedHouseholdAggregateInputs` → `evaluate_corrected_household_aggregates` → `FrozenHouseholdOutputs` → batch → 合成 callback → 一次 source-faithful one-turn → firm 的工程路径。它不是实际生产接线。
+- **`NEXT_BASELINE_ADOPTION=ADOPTED_FROM_EXACT_SHA`**；V0.0.2 **仅新候选构造**的代码基线为 V0.0.1 accepted candidate commit `3260ec393dd4d53d6aab6c34d7c0442f09aa79f4`，tree `39e7a91ca473ba770bd65518607c3f78f4b9fe24`，源自上一代码截点 `a1db8c114dec0ab69d69a5576e153a7f868cba0e`。
+- 唯一有效项目仓库 `zcx369658780/dissertation-ch5-two-asset-hank`。Codex 已报告模型工作树 `D:\ProjectTemp\c5k1bturn56`、当前原分支 `codex/ch5-mp4c-k1b-turn5-turn6-bounded-continuation-20260922`，该本地 HEAD 仍是原截点；这些仅为其只读实测，开工前重新核验。
+- 此采纳**不允许**在原工作树执行 merge/rebase/reset/checkout/clean/stash，也不证明 `main` 已包含 V0.0.1。文档分支 `migration/astra-workflow-20261012` 与代码基线分离。候选须从上述固定代码树**独立精确路径**构造。
+- 2026-10-13 Codex 草案报告 staged0、tracked dirty8、untracked5405、ignored4553；真实本地数量可能随时间变化。既存 `AGENTS/CURRENT/TASK_CURRENT/REVIEW_GATE`、两份路线图及两个 dirty 源码 `government_assets.py`、`annual_observed_labor_diagnostic/middle_stage.py` 均不得修改/覆盖/清理。项目聊天 cwd、工作树与 Git common-dir 不等同，不能动用 Zotero / EliteSync / DeepLearning-HANK 的代码或远端。跨项目误发所涉其他仓库的 FETCH_HEAD、远端跟踪引用问题**不属于本版**，不以本许可修复或审查它们。
 
-本次审查到的 **静态源码** 显示：
-- `exports/matlab_faithful_two_asset_ha.py` 的 `HouseholdSteadyStateResult` 暴露 `hjb`、`kfe`、`aggregates`，其 `solve_household_steady_state` 会调用真实 HJB/KFE；**本版不能调用**。该 API 对应的 MATLAB-faithful 路线不可自动视为已采纳 corrected checkpoint 的同一结果源。
-- `src/ch5_two_asset_hank/multi_province/corrected_household_adapter.py` 明确要求 `consumption`、`labor`、`b_grid/a_grid/z_grid`、`effective_r_a`、`probability_mass`、`density`、`omega` 和 `source_r_a`；`AtTax` 由既有公式计算，不能假定是全部 HA solver 直接输出的字段。
-- `src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py` 和 `scripts/ch5_mp4c_2018_corrected_household_aggregate_binding.py` 含受保护真实 checkpoint/receipt 的既有聚合装配例子。它们可作为**有界只读源码来源**，不能因存在源码而重新读取 protected NPZ/JSON、执行旧脚本或复活 `NOT_ACCEPTED/CLOSED` 任务。
-- 量纲/人口分母、数据年份/价格、真实结果身份、HJB/KFE 到 corrected 数组的完整 producer→consumer 链仍 `UNKNOWN`。人口/人均决策保持，户均封存，不 `N=P/3`。
+## 三、冻结工作目标
 
-所以本版的目标是定义上游边界的**可审查、可拒绝的输入条件**，而不是宣称已找到、认证或执行了真实 source。
+**G1：有证据级别的逐字段来源 crosswalk。** 静态、有界读取家户真实/旧 MATLAB-faithful / corrected producer 的当前源码：`consumption`、`labor`、`b/a/z grid`、`effective_r_a`、`source_r_a`、`probability_mass`、`density`、`omega`、`Ct/Lt/At/Bt/AtTax`、`converged/statistic`、下游 batch/callback 等，逐字段列源码路径/符号、对象/形状/F-order/轴序、省份/期次/checkpoint/联合来源条件、seal/manifest 缺口、经济与数据年份/价格状态、证据资格。源文件“存在”或字段“名称相似”不能替代真实来源认证。区别 `SOURCE_ONLY`、`HISTORICAL_ACCEPTED`、`SYNTHETIC_ENGINEERING`、`LOCAL_ONLY`、`UNKNOWN/BLOCKED`。
 
-## 3. 候选版本目标（Codex 需实地核实可行性）
+**G2：独立 opt-in typed metadata + 默认拒绝边界。** 复用 V0.0.1 `SyntheticHouseholdRecord` 和已有 corrected aggregate validation，新增一个不接文件/网络/生产环境的来源元数据与**模拟一致性**验证模块。建议符号 `HouseholdSourceMetadata`、`assess_source_contract`、`admit_synthetic_household_record`；可在不改变职责的前提下细化内部辅助函数。必须联合声明并核对同 synthetic province、source_id、requested iteration/stage、simulated checkpoint/grid、字段引用与声明轴序 `(b,a,z)`、F-order、明确的 `source_r_a` 对 `effective_r_a` 角色区分及 `p≈omega*g`。simulated field digest/manifest 仅证明被测内存 payload 与元数据匹配；不得以 hash、字段字符串、自报 seal 或 `REAL_AUTHENTICATED=True` 认证真实对象。**只有明确 SYNTHETIC/NOT_REAL_SOURCE 可以被本版转换为现有合成记录并进入聚合/batch。** 其他 `SOURCE_ONLY`、`HISTORICAL_ACCEPTED`、`UNKNOWN`、`REAL` 等至多用于来源表或报告中的分类，计算准入一律 fail closed，不应存在隐含切换分支。原始输入应复制/冻结，不悄悄补字段、自动重排、密度再归一化或更改 returns。
 
-**G1 · 实际字段来源与权威交叉表**：对可能被采用的 HA result、corrected policy、mass/密度、effective return、frozen 与后续消费者做有界源码交叉，逐字段写明源符号/路径/形状/轴序、必须联合的 checkpoint 与省份标识、所需来源 seal/manifest、年份/期次、数值/经济解释及当期证据资格。清楚区分 `SOURCE_ONLY`、`HISTORICAL_ACCEPTED`、`SYNTHETIC`、`LOCAL_ONLY/UNKNOWN`。对无法认证的输入标 `UNRESOLVED`，不能以字符串/文件名或旧回执存在推导其真实性。
+**G3：同次合成准入→原聚合→batch 的受界测试。** 虚构2省、原合成 `20×20×2` F-order 网格，非对称 policy、少数非零但非均匀且单位总量的 `p`、`g=p/omega`，非科学统计标签。集成测试必须**真正调用**新准入对象、现有 corrected aggregate/frozen、V0.0.1 的 `build_synthetic_household_batch`，并由独立标量 oracle 验证 `Ct`、z 加权 `Lt`、`At/Bt/AtTax`，同时检验资格未提升与快照不别名。可依逻辑需要选择 2–3 省，规模不等于真实31省。重要拒绝场景：缺 simulated seal/字段、simulated digest 不一致、错误 provenance、cross-province/source/stage/checkpoint/grid 混配、重复/缺省份、虚假 REAL 标签/布尔认证、轴序/F-order 索引不符、错 `omega`、p/g 不一致、负/非单位/非有限质量、`source_r_a` 与 `effective_r_a` 角色混淆。合成转置与同被改写的 manifest 不能保证由 hash 检出，必须如实用非对称 oracle 与记录的声明边界表述。**本版不运行 one-turn/firm/K1B runner、real HJB/KFE**，下游只作源码 crosswalk；不更改 V0.0.1 的双劳动路径经济语义。
 
-**G2 · 受限 typed boundary 提案**：优先复用 corrected adapter 现有字段及 validation，设计一个**独立 opt-in 的外部输入身份与契约检查对象**（最终文件和 API 由 Codex 提案）。明确提供者类别、假想/历史/未验证身份、同省份/同阶段/同来源的引用完整性、(b,a,z) F-order / p–g–omega 映射、uniform vs effective illiquid return、输出资格。来源不明必须 fail closed，不能把 `SYNTHETIC` 自动改称真实。若此处需要查看受保护资料才能确定关键字段，则此版本可将对应字段保持 `REQUIRES_OWNER_AUTHORIZATION`，而非造一个“REAL_AUTHENTICATED”布尔字段绕过验证。
+**G4：精确的下阶段风险/来源阻塞清单。** 区分 source-loader 所需真实 typed 输入、checkpoint/province/period/asset identity 合同、来源认证和数据保护缺口、所需 Owner 科学决定与精确未来数据读取请求建议（提案而非授权）；生成小型脱敏 candidate summary，区分 GitHub 独立可读、Codex 本地回执和 UNKNOWN。
 
-**G3 · 只读源码 + 合成负向验证方案**：若 G2 可在不碰现有科学源码的前提下完成，拟允许新增有限、纯内存/明示模拟记录的单元/集成测试，证明声明一致时的结构传递、来源冲突/省份轴混乱/错期/缺字段/错 omega/错误 provenance 的明确拒绝。严禁真实 HJB/KFE、C8/C9/C10、31省实际 producer/consumer 或 protected source loader。不能把只读源码检查的 `PASS` 写成真实运行时 `PASS`。
+## 四、允许文件范围（新增五项，不能修改既有源码）
 
-**G4 · 留下进入下一门的精确问题清单**：交付一份 future source-loader/真实来源认证需要的 typed 输入、需要 Owner 科学或数据选择的最小事项、保护资产读取许可清单（**仅建议，未批准**）、允许验证与禁止验证的清晰区分，以及最小脱敏验收摘要。不得自行安排下一步真实数据调用或自动开始 V0.0.3。
+只允许在代码候选中**新增**以下五个公开路径，若任何路径已存在/冲突，停止并报告：
+1. `src/ch5_two_asset_hank/multi_province/household_source_contract.py` — typed 元数据、模拟一致性校验/拒绝/准入，不做 loader、solver 或默认接线；
+2. `tests/test_v002_household_source_contract.py` — 真正单次准入至原 batch 的合成集成测试、独立 oracle、拒绝和模块隔离；
+3. `versions/0.0.2/source_crosswalk.md` — 源码身份、字段表及未知/封闭资格；
+4. `versions/0.0.2/execution.md` — 本版真实执行、失败修复、保护/资源/剩余问题；
+5. `versions/0.0.2/acceptance_summary.json` — 小型脱敏测试/资源/哈希/未认证状态记录；不得自行宣告 Astra ACCEPT。
 
-## 4. 版前拟定的验收原则（当前不构成冻结标准）
+可在**本版专属无冲突的 LOCAL_ONLY 证据根**生成操作性 Git index、candidate_view、模拟 fixture、私有原始 stdout/stderr/JUnit、只读原代码路径/哈希/保护账和导出临时工具，所有新建临时材料遵守下面各类空间预算，禁止推送原始私有日志/受保护数据。无旧文件可被强制覆盖。Astra 负责后续独立的 `versions/0.0.2/acceptance.md` 与 `retrospective.md`，本版 Codex 不编辑它们、也不修改本 `plan.md`。
 
-A. 一份可逐字段审查的 producer→corrected aggregate/frozen→下游 consumers 来源表；每项带真实源码位置/版本身份/证据级别，不能使用历史合成桥掩盖真实来源缺口。
+禁止修改已有 `__init__`、`corrected_household_adapter.py`、`household_adapter.py`、`synthetic_household_bridge.py`、`one_turn.py`、`firm.py`、HJB/KFE、原科学合同/validators/真实生产 controller/default 环境。**如发现实现必须触碰禁止项，停止并报告，不通过扩编文件范围或改冻结标准绕过。**
 
-B. 如批准实施 typed boundary，结构约束应 fail closed，拒绝错 source、错 axis/F-order 声明、跨省混配、跨阶段、缺 seal 与假冒认证。**不过无法仅凭字段名、摘要 hash、标签或 synthetic 数据证明外部真实来源可信**；认证不足必须明确表述。
+## 五、工程预算与分层存储（独立于全部旧 CLOSED/科学预算）
 
-C. 如实施合成 focused 测试，使用精确 candidate Git tree 的限定视图/模块来源回读，做独立 oracle 和必要错误拒绝。保证既有 HJB/KFE、K1B、C1、劳动路径 `Lt_prev` vs `lt_supply`、收益/时序与科学 guards 不变。不重开旧额外科学测试预算。
+- 单版实施至候选集中交付总墙钟 `<= 3h`（含失败/修复）；普通 focused pytest 子进程 **累计最多12次**，每次 `<=120s`（无论通过与否均计），单进程目标 RSS `<=1GiB`，无法守住时停并报告。不要把这组数字作为所有以后版本的永久模板。
+- 真实 HJB/KFE、K1B、C8/C9/C10、31省实际数据/consumer、GE、IRF/Results、真实 source-loader、受保护 JSON/NPZ/CSV/MAT、部署、修改本机/全局环境的调用或权限 **均为0**，不因本版工程预算解锁任何旧账。
+- **本版新增存储总额** `<=168.25MiB`，下列类别预算按新建对象分别核算，**不重复计数、不得自行豁免**：① Git 操作性 index/new objects/临时构造材料 `<=128MiB`（必须明确隔离、不覆盖原 index）；② 从候选树导出的 `candidate_view`、所需代码闭包及合成 fixture `<=32MiB`；③本版原始 stdout/stderr/JUnit、进程/资源/失败/保护回执 `<=8MiB`；④公开发布的 crosswalk/execution/summary 合计 `<=256KiB`。既有 Git objects、既有受保护数据和历史 EVIDENCE 不是新建，但绝不自动清理。导出/创建临时 index 前预估大小。额外临时对象必须归入上述一类，不能以未知分类绕过总额。
+- 运行须固定已核解释器和依赖版本、环境局部禁第三方 pytest 插件自动加载并验证 `__file__` 全部源于**精确候选 tree** 的隔离导出，不从 original dirty 工作区混入。Codex 可选择一致的隔离启动方法：注意 `python -I` 忽略 `PYTHONPATH`；仅在候选视图可正确导入且实际 readback 通过时使用，或采用受限 child `PYTHONPATH` + 模块来源断言，不更改全局环境。普通工程调试在原预算内自主完成，保留每次失败和重新验证身份，不逐阶段索批。
+- 超过明确硬预算、文件冲突/需要改科学方程/真实数据/权限/禁止路径、候选隔离不可证或持续阻塞时 `STOP + 保存现场/回报`。不得借 Owner 曾经许可 V0.0.1 的轻微 Git index 修正自动放行新的越界修订；必须有与本版对象和范围对应的 Owner 单独授权。
 
-D. 交付完整但精简的脱敏证据摘要：代码 baseline/candidate/tree、实际新增/修改路径、运行级别、精确或脱敏命令/退出码/耗时/进程次数、失败/纠正、SHA/原回执本地界限、经济/来源 UNKNOWN，区别 GitHub 独立已核、Codex 本地报告与未验证事项。
+## 六、冻结验收标准与交付身份
 
-E. 本版仍只可能接受 `SOURCE_CONTRACT/SYNTHETIC_ENGINEERING` 有界成果，不可能据此给予 `REAL_RUNTIME`、`SCIENTIFIC_VALIDITY`、`GE`、`RESULTS`、生产或安全放行。若经核查工程变更需更改已采纳科学法则或受保护数据访问，则提出 `BLOCKED` 与替代路线，Astra 不要求造假完成 G2。
+A. **G1 SOURCE crosswalk** 对每个关键输入有准确已读源码/固定代码身份，明确 route 对照及真实来源 UNKNOWN。来源标签/哈希≠真实性。
+B. **G2 模拟准入边界** 禁止任何非合成输入进入聚合；字段/province/stage/checkpoint/grid/returns 一致性检查与主要错误拒绝有实际合成测试，禁止 synthetic 变 REAL、伪造签名晋级。
+C. **G3 有限工程 test** 用准确 candidate tree 导出的受限模块运行测试，含真实 corrected aggregate/frozen/V0.0.1 batch 调用，独立 oracle/输入快照和标签资格验证；不把绕过源码的 stub 称为实际计算通过。
+D. **G4 证据/资源/保护**：公开五文件范围、版本号+代码 baseline/最终候选 commit/tree、父节点和变更路径、完整测试次数与结果、准确或脱敏命令、依赖/模块来源、UTC+单调时间/进程退出/峰值（仅能测到的字段）、失败历史/修复、原本地回执哈希/界限；保护原 HEAD/index/dirty/untracked/ignored 并报告只读验证限制。所有报告明确区分 `INDEPENDENTLY_VERIFIED_GITHUB_CODE`、`CODEX_REPORTED_WITH_LOCAL_RECEIPTS`、`UNKNOWN`。
+E. **科学防冒认**：本版最高能授予 `SOURCE_CONTRACT_AND_SYNTHETIC_ENGINEERING` 资格；真实 solver/源身份证书/经济单位/价格和日历/实际生产 callback/31省、稳态/GE/Results/生产发布均不通过。原 `C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、Objective A16 `FAIL_CLOSED`、`model_activation=False`、`Results FALSE` 不解除，人口/人均保持且不 `N=P/3`。
+F. **候选发表**：从 `3260ec393dd4d53d6aab6c34d7c0442f09aa79f4` 单父提交精确构造候选 `codex/ch5-v0.0.2-household-source-contract`；先核远端无同名分支/避免非快进，使用独立临时 Git index 仅入树五个新增允许路径（本地工作树原 branch/HEAD/index 保留），在最终 candidate tree 上 focused 验证后一次 normal non-force push 和远端 SHA/tree readback；不 merge `main` 或文档 branch，不上传本地 EVIDENCE。Codex 集中交付后停 `WAIT_ASTRA_FINAL_ACCEPTANCE`，由 Astra 按原计划独立验收和版本复盘。
+G. **异常/部分接受**：受保护来源不能认证是本版本正常的明确 UNKNOWN，不算真实源成功；但本版列明的核心结构/拒绝/测试若未通过，不能据“BLOCKED”自动宣称 G2/G3 PASS。Codex 完成可核部分后报告 `PARTIAL/BLOCKED`，Astra 独立决定终态，不能事后放宽本版标准。
 
-## 5. 明确禁区与现有停点
+## 七、版本界面
 
-- 现阶段**仅 Codex 版前只读调查**，不能修改文件、运行测试、创建/推送候选、启动旧任务或碰真实科学数据。
-- 未来若批准实施，须先冻结 G1–G4 的实际 scope、允许文件路径、资源预算和证据门，明确哪类“测试/诊断/科学调用”为 0；`main` 合并与旧本地代码切换不是本草案隐含权限。
-- `C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、Objective A16 `UNRESOLVED/FAIL_CLOSED`、`model_activation=False`、`Results FALSE` 及旧 CLOSED 预算不变。不得读取/写入真实31省回执和旧保护 JSON/NPZ/CSV/MAT，不能通过更换路径/测试名绕行。
-- 不能改 HJB/KFE 数值法则、KKT/边界、参数/网格/容差、`S` 矩阵、payoff/raw-ra0/lagged timing、C1、经济劳动单位/人口分母，不能把旧 MATLAB 顺序静态演算作为已证的动态政策结果。
-- 不改两个历史 dirty 源码、历史工作树其他成果、global 配置、Zotero 独立仓库、DeepLearning-HANK 或 EliteSync。用户手动决定科学/权限实质取舍。
+本冻结只决定 `0.0.2` 的拟实施科学/工程边界及未来候选身份，不授权 V0.0.3 或任何后续版本。V0.0.1 继续 `CLOSED/ACCEPT_WITH_OBSERVATIONS`。旧 MATLAB-faithful scalar aggregates、corrected policy/mass、合成 wrapper 属不同证据对象；不重新运行旧 binding task、真实 consumer 或旧自动化。
 
-## 6. 当前唯一授权的 Codex 交付：执行方案草稿
-
-Codex 只读实际核验以下项目并回报 `V0.0.2_EXECUTION_PROPOSAL_DRAFT`：
-1. 当前线程/host/projectId、真正模型 top-level/remote/branch/HEAD、staged/dirty/untracked 保全与当前发布分支 SHA；读取 V1.1 规则和**本完整草案**，对比 V0.0.1 已接受代码与原工作树，以源码证据提出 `NEXT_BASELINE_ADOPTION` 推荐。
-2. 有界逐字段来源图：real/accepted/corrected 结果路线的实际差异、需要静态 crosswalk 的现存源码位置、可能可复用组件。对缺失真实来源的准确 `UNKNOWN` 清单，不索取或读取旧 protected archive。
-3. 最小 typed boundary/metadata/checker 的建议职责、精确新增文件/测试路径、positive/negative 的模拟场景、明确不可认证的类型；若不应编码则建议 DOCUMENT_ONLY 的替代。
-4. 符合 V1.1 的分层资源预算提议（普通工程/测试、科学调用 0、Git operational index、candidate_view、local receipts、公开脱敏证据），不机械沿用 V0.0.1 的4小时/8次/10MiB。
-5. 版本冻结后交付的 candidate/tree、脱敏 receipt/hash 与 Git 不破坏路径方案；必须停的科学/数据/权限问题与需要 Owner 决定的事项。
-
-Codex 回复完整草稿后 `WAIT_ASTRA_PLAN_REVIEW / STOP`。**Astra 未发布固定冻结计划 SHA 与独立 `ASTRA_APPROVED_EXECUTION` 前，不得实施。** 草案不是科学规则采纳、真实 source 认证、测试授权或新工程 candidate。
-
-## 7. 当前状态
-
-- V0.0.1：`CLOSED__ACCEPT__SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS`，无需要补交/重跑/返工的本版义务。
-- V0.0.2：`DRAFT__WAIT_CODEX_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`，未冻结。
-- `NEXT_BASELINE_ADOPTION=UNDECIDED`，Codex 推荐后由 Astra 冻结正式决定。
-- V0.0.3 及后续：NOT_STARTED。
+**从 DRAFT 转 FROZEN 的提交身份以发布回执登记；正式实施必须有独立授权链接。**
