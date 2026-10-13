@@ -5,7 +5,7 @@
 |---|---|---|
 | 当前工作方式与角色 | [当前工作流](CH5_ASTRA_WORKFLOW_CURRENT.md)、[本地启动规则](../AGENTS.md) | 当前流程；旧Work规则仅历史 |
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
-| Codex第二阶段实时交接 | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner手工接收；完成后WAIT_OWNER_PHASE3；不启动新版本 |
+| Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 决定、原证据上限及本地工具限制 |
 | 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.1 版前协商进行中，未冻结、无实施授权；历史计划原状态保留 |
 | V0.0.1 候选计划 | [版本计划草案](../versions/0.0.1/plan.md) | 只读提交执行方案，等 Astra 审议；不得开始工程实现 |
