@@ -1,6 +1,17 @@
 # 第五章路线图与版本登记
 
-## 2026-10-13 现行：V0.0.1 已冻结，实施授权已发布
+## 2026-10-13 现行：V0.0.1 最终接受并关闭
+
+- **状态：`CLOSED__ACCEPT__SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS`**。Astra 已独立核对 Github 固定候选身份、三文件增量、源码/测试与执行报告，接受合成工程范围，保留本地原始回执未直接复核的局限。
+- 正式冻结计划（绝不追改）：[V0.0.1 plan](../versions/0.0.1/plan.md)，冻结提交 `6c9a13bdf6a54913d8f16b5ec23fdda2a68f28e8`，blob `065cfaf699db99f36d0fb05f037986ba22479298`。
+- 独立实施授权：[authorization](../versions/0.0.1/authorization.md)，提交 `837b99dff12f1b263fd7f4b80c43e19cf4efaa48`。
+- Codex 代码候选：[3260ec393dd4d53d6aab6c34d7c0442f09aa79f4](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/commit/3260ec393dd4d53d6aab6c34d7c0442f09aa79f4)，tree `39e7a91ca473ba770bd65518607c3f78f4b9fe24`，分支 `codex/ch5-v0.0.1-synthetic-household-bridge`，与原代码基线 `a1db8c114dec0ab69d69a5576e153a7f868cba0e` 直接相邻；仅新增合成源码、测试与脱敏 execution。
+- Astra 最终结果：[独立验收](../versions/0.0.1/acceptance.md)；[偏差复盘](../versions/0.0.1/retrospective.md)；[执行报告](../versions/0.0.1/execution.md) **仅存在于独立候选分支**，此处应读固定候选链接：https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/3260ec393dd4d53d6aab6c34d7c0442f09aa79f4/versions/0.0.1/execution.md 。勿将相对路径误认文档分支中已拥有该文件。
+- Codex 报告 candidate_view 42/42 通过、4/8 focused 进程、最终新 EVIDENCE≈1.87MiB、墙钟≈21分钟；网页独立核查源码/42例静态设计及 Git SHA，但未直接复跑 Windows 私有 raw receipts。初始临时 Git index 超10MiB证据配额真实失败，后获 Owner 受限运维修正后恢复，未追改冻结科学/工程标准；记录于验收/复盘。
+- 本版**不支持** HJB/KFE/31省来源真实性、经济劳动单位、真实生产 callback、K1B/GE/收敛、Results、发布。旧 `C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、Objective A16 `FAIL_CLOSED`、`model_activation=False`、`Results FALSE`、旧预算和人口/人均决定保持；生产未接受。
+- **下一版 NOT_STARTED、没有 ISSUED、没有自动派单。** 后续路线由 Owner 新指令另行启动版前协商。候选 branch 不自动 merge main。当前本地脏工作区及未跟踪资产不由本网页验收追认其字节完整性。
+
+## 2026-10-13 V0.0.1 立版与实施记录（历史）
 
 - **版本 `0.0.1`：`FROZEN__ASTRA_APPROVED_EXECUTION__WAIT_CODEX_IMPLEMENTATION`。** Owner 启动第三阶段；Codex 已提交 `V0.0.1_EXECUTION_PROPOSAL_DRAFT`，Astra 审议后批准其纯合成工程方案。
 - **不可修改的正式冻结计划**：[V0.0.1 plan](../versions/0.0.1/plan.md)；冻结提交 `6c9a13bdf6a54913d8f16b5ec23fdda2a68f28e8`，plan blob `065cfaf699db99f36d0fb05f037986ba22479298`。
