@@ -1,3 +1,16 @@
+# 第五章当前状态：V0.0.2 来源契约/合成工程限定接受并关闭
+
+2026-10-13，`CLOSED__ACCEPT__SOURCE_CONTRACT_AND_SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS`。冻结计划 `4b11c46823e7cdabc12de8b8036cc5efc2380c52` / blob `43171bc6b841695845e7576d7feaa3135b88c588` 不可追改，授权 `3ed139aee7563a7033fa02fb933c3b49f24bd6b1`。候选 commit `8f5457947492eef552f4261f8630c6c886af9fa5`，tree `af2a6a3d85f7525d480ad7da1916eaa25bf349b1`，parent `3260ec393dd4d53d6aab6c34d7c0442f09aa79f4`；GitHub 独立核对仅新增五份许可文件，代码分支 `codex/ch5-v0.0.2-household-source-contract` 与 candidate 一致，未合并 main。
+
+V0.0.2 完成字段来源 crosswalk、显式 synthetic-only typed metadata/digest/seal 结构准入与真实 corrected aggregate→frozen→V0.0.1 batch 工程测试；模拟哈希/manifest 不代表真实源认证。Codex 报告最终 candidate_view 62/62 passed（6/12进程），资源与本地原资产保全由其 LOCAL_ONLY 回执支持，网页审阅了 GitHub 源/测试/报告但**未直接运行 pytest 或读取 Windows 原始回执**。public summary 的 pre-final 时态、早期 RSS 未测量、编码/CRLF/失败后误继续的第5次中间树均在 `versions/0.0.2/acceptance.md` 与 `retrospective.md` 保留，不冒充零偏差。
+
+V0.0.1 仍 `CLOSED__ACCEPT__SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS`；本版不授权真实 source-loader、HJB/KFE/K1B/C8/C9/C10、31省数据、GE、科学运行/Results/生产。人口/人均不变，不 `N=P/3`，真实经济劳动/人口分母、年份/价格/日历映射及联合资产来源认证继续 UNKNOWN。原 `C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、A16 `UNRESOLVED/FAIL_CLOSED`、`model_activation=False`、`Results FALSE`、旧资源/科学保护不变。
+
+**V0.0.3：NOT_STARTED，无 ISSUED，没有自动启动或选择代码基线。** 现行治理索引 `docs/DOC_INDEX_CURRENT.md`，V1.1 工作流 `docs/CH5_ASTRA_WORKFLOW_CURRENT.md`，版本登记 `docs/CH5_VERSION_REGISTER_CURRENT.md`；候选仍在独立分支，本地原 checkout 不清理、不切换。
+
+---
+# 以下为 V0.0.2 冻结与实施授权时的状态（历史，原文完整保留）
+
 # 第五章当前状态：V0.0.2 已冻结并授权受界合成工程
 
 2026-10-13：`FROZEN__ASTRA_APPROVED_EXECUTION__WAIT_CODEX_IMPLEMENTATION`。Owner 已启动 V0.0.2；Codex 只读执行方案由网页 Astra 审议通过，**正式冻结计划** `versions/0.0.2/plan.md`，固定提交 `4b11c46823e7cdabc12de8b8036cc5efc2380c52`，blob `43171bc6b841695845e7576d7feaa3135b88c588`；**独立实施授权** `versions/0.0.2/authorization.md`，提交 `3ed139aee7563a7033fa02fb933c3b49f24bd6b1`。

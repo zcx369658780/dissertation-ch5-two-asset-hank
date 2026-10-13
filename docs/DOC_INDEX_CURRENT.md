@@ -7,8 +7,8 @@
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
 | Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 决定、原证据上限及本地工具限制 |
-| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.1 CLOSED；V0.0.2 已 FROZEN 并获独立合成工程许可，尚无实施结果 |
-| V0.0.2 冻结合同与授权 | [固定冻结计划](../versions/0.0.2/plan.md)、[独立实施授权](../versions/0.0.2/authorization.md) | 冻结 SHA 4b11c46823e7…；代码基线 3260ec393dd4…；仅 SYNTHETIC，Codex 自主实施后集中验收 |
+| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.2 限定 SOURCE_CONTRACT_AND_SYNTHETIC_ENGINEERING 接受并关闭；下一版未启动 |
+| V0.0.2 冻结与最终结论 | [冻结计划](../versions/0.0.2/plan.md)、[授权](../versions/0.0.2/authorization.md)、[验收](../versions/0.0.2/acceptance.md)、[复盘](../versions/0.0.2/retrospective.md) | freeze SHA 4b11c46823e7… 未追改；candidate 8f5457947492…；真实来源认证未获得 |
 | V0.0.1 已冻结计划与结论 | [固定冻结计划](../versions/0.0.1/plan.md)、[实施授权](../versions/0.0.1/authorization.md)、[最终验收](../versions/0.0.1/acceptance.md)、[版本复盘](../versions/0.0.1/retrospective.md) | 冻结提交 6c9a13bd...不变；候选 3260ec39...；仅合成工程 ACCEPT_WITH_OBSERVATIONS |
 | 当前/历史计划、结果、验收、复盘 | 版本登记中的具体入口 | 冻结版固定 SHA；代码候选与文档分支可能分离，须按真实提交读取 |
 | 历史Sources与本地私有资料 | [知识摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md)、[手工交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 私有日志/数据不上传；按需人工提供脱敏片段 |
@@ -18,7 +18,7 @@
 | 历史归档覆盖与测试 | [归档安全摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 历史检索结果及Owner补充新会话测试分开 |
 | 上传用稳定索引 | [PROJECT_SOURCE_INDEX_CH5](PROJECT_SOURCE_INDEX_CH5.md) | 只在仓库/发布分支/入口改变时通常重传 |
 
-2026-10-13 V0.0.2 由 Owner 启动，经 Codex 执行草稿和 Astra 审议，已冻结于 4b11c46823e7cdabc12de8b8036cc5efc2380c52 并由 3ed139aee7563a7033fa02fb933c3b49f24bd6b1 独立授权合成工程实施；不等于真实科学或生产许可，尚未收到候选和测试证据。
+2026-10-13 V0.0.2 已经由 Astra 最终受限验收：CLOSED__ACCEPT__SOURCE_CONTRACT_AND_SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS；候选 SHA 8f5457947492eef552f4261f8630c6c886af9fa5，仍不证明真实来源、科学或 Results；后续版本尚未启动。
 
 2026-10-13 工作流 V1.1 已获 Owner 批准，仅更新现行导航/规则，不改冻结版本或开启 V0.0.2；参见上方 V1.1 规则与版本登记。
 

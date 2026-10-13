@@ -1,6 +1,16 @@
 # 第五章路线图与版本登记
 
-## 2026-10-13 当前：V0.0.2 已冻结且授权实施
+## 2026-10-13 当前：V0.0.2 最终有限接受并关闭
+
+**终态 `CLOSED__ACCEPT__SOURCE_CONTRACT_AND_SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS`。** Astra 依据不可追改冻结计划 `4b11c46823e7cdabc12de8b8036cc5efc2380c52` / blob `43171bc6b841695845e7576d7feaa3135b88c588` 与实施授权 `3ed139aee7563a7033fa02fb933c3b49f24bd6b1` 对 Codex 候选作了 GitHub 独立静态审查。候选 commit `8f5457947492eef552f4261f8630c6c886af9fa5`、tree `af2a6a3d85f7525d480ad7da1916eaa25bf349b1`、唯一 parent `3260ec393dd4d53d6aab6c34d7c0442f09aa79f4`，分支 `codex/ch5-v0.0.2-household-source-contract`，只新增五个已授权源码/测试/证据路径；候选不合并 main。
+
+- 正式冻结：[V0.0.2 计划](../versions/0.0.2/plan.md)；[独立授权](../versions/0.0.2/authorization.md)；[Astra 验收](../versions/0.0.2/acceptance.md)；[版本复盘](../versions/0.0.2/retrospective.md)。执行文件仅存在候选代码提交： [crosswalk](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/8f5457947492eef552f4261f8630c6c886af9fa5/versions/0.0.2/source_crosswalk.md) / [execution](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/8f5457947492eef552f4261f8630c6c886af9fa5/versions/0.0.2/execution.md) / [public JSON summary](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/8f5457947492eef552f4261f8630c6c886af9fa5/versions/0.0.2/acceptance_summary.json)。
+- Codex 集中报告精确树测试 `62 passed, exit0`、总 focused 进程 `6/12`、含保守起始计费时间 `2810.44/10800s`、本版存储 `26,887,236/176,422,912B`；这些运行/原 checkout 完整保全为 `CODEX_REPORTED_WITH_LOCAL_RECEIPTS`，网页独立只核 GitHub 代码、测试和公开报告，不冒称亲自重跑/读取本机原始 JUnit。
+- 公开摘要在最终准确树测试前封存，未内含最终测试/提交身份；第六次运行及两项最终私有 receipt SHA 由 Codex/Owner 额外交付。run01/02 RSS UNKNOWN、CRLF/GBK/UTF-8 与第5次中间树误续测等真实偏差见验收和复盘。
+- 本版只是内部 simulated digest/seal 与合成 typed contract，通过不证明外部 REAL 源身份、protected asset 联合真实性、真正家户运行或经济单位；`C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、Objective A16 `FAIL_CLOSED`、`model_activation=False`、`Results FALSE`、旧 CLOSED 预算、人口/人均与不 `N=P/3` 均保持。
+- `NEXT_BASELINE_ADOPTION` 对 **V0.0.2** 已固定从 `3260ec393dd4d53d6aab6c34d7c0442f09aa79f4` 采用；**V0.0.3** 尚未启动且尚未选定代码基线。接受候选不等于已合并 main 或未来一定采用该候选；Owner 以后明确启动新版本后才另行决定。
+
+## 2026-10-13 V0.0.2 冻结及授权状态（历史，非现行）
 
 - **状态**：`FROZEN__ASTRA_APPROVED_EXECUTION__WAIT_CODEX_IMPLEMENTATION`。Owner 已启动 V0.0.2 版前规划，Codex 提交完整 `V0.0.2_EXECUTION_PROPOSAL_DRAFT`，Astra 审议后选择窄合成 source-boundary，完成冻结和独立实施授权。此状态仅说明可以启动受限工程，**尚无实施、测试或候选的通过证据**。
 - **正式不可追改计划**：[V0.0.2 plan](../versions/0.0.2/plan.md)，固定 freeze SHA `4b11c46823e7cdabc12de8b8036cc5efc2380c52`，plan blob `43171bc6b841695845e7576d7feaa3135b88c588`。版前草稿存于历史固定提交 `5cfe41fd0a66877565accca3c8e7dc9a71fa35ee`，不是现行执行合同。
