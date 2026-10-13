@@ -1,6 +1,16 @@
 # 第五章路线图与版本登记
 
-## 2026-10-13 当前：V0.0.2 版前规划（DRAFT / NOT FROZEN）
+## 2026-10-13 当前：V0.0.2 已冻结且授权实施
+
+- **状态**：`FROZEN__ASTRA_APPROVED_EXECUTION__WAIT_CODEX_IMPLEMENTATION`。Owner 已启动 V0.0.2 版前规划，Codex 提交完整 `V0.0.2_EXECUTION_PROPOSAL_DRAFT`，Astra 审议后选择窄合成 source-boundary，完成冻结和独立实施授权。此状态仅说明可以启动受限工程，**尚无实施、测试或候选的通过证据**。
+- **正式不可追改计划**：[V0.0.2 plan](../versions/0.0.2/plan.md)，固定 freeze SHA `4b11c46823e7cdabc12de8b8036cc5efc2380c52`，plan blob `43171bc6b841695845e7576d7feaa3135b88c588`。版前草稿存于历史固定提交 `5cfe41fd0a66877565accca3c8e7dc9a71fa35ee`，不是现行执行合同。
+- **独立实施许可**：[V0.0.2 authorization](../versions/0.0.2/authorization.md)，固定提交 `3ed139aee7563a7033fa02fb933c3b49f24bd6b1`；裁决 `ASTRA_APPROVED_EXECUTION__CH5_V0.0.2__SYNTHETIC_SOURCE_CONTRACT_ONLY`。
+- **代码基线** `NEXT_BASELINE_ADOPTION=ADOPTED_FROM_EXACT_SHA`：前一版合成工程已接受的 commit `3260ec393dd4d53d6aab6c34d7c0442f09aa79f4`，tree `39e7a91ca473ba770bd65518607c3f78f4b9fe24`。仅作为本版本精确新候选树起点，**不合并 main、不移动原本地分支/HEAD/index**；远端目前不得假称 main 已包含。
+- **文件/分层预算**：仅新增来源 metadata 工程模块与 focused 测试，以及 `versions/0.0.2/source_crosswalk.md`、`execution.md`、`acceptance_summary.json`；候选分支 `codex/ch5-v0.0.2-household-source-contract`。工程上限3小时、最多12次 focused pytest/次<=120秒、目标单进程1GiB。新增存储128MiB Git 操作 +32MiB isolated candidate_view/fixture +8MiB LOCAL_ONLY回执 +256KiB公开脱敏报告，合计<=168.25MiB。**真实科学/受保护数据/旧任务预算 0**。
+- **科学资格上限**：仅 `SOURCE_CONTRACT_AND_SYNTHETIC_ENGINEERING`；真实 producer、真实数据/31省、HJB/KFE、C8/C9/C10、GE、Results、生产均非本版目标且不授权。只有明示 `SYNTHETIC/NOT_REAL_SOURCE` 准入，模拟 seal/hash 不能证明真实性。人口/人均保留、户均封存、不 `N=P/3`。旧 `C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、Objective A16 `FAIL_CLOSED`、`model_activation=False`、`Results FALSE` 与 CLOSED 预算不变。
+- **候选执行与终态**：Codex 版本内无实时监督自主管理合成工程，在冻结标准内修复与集中交付；仅正常 non-force push 受限候选一次并准确 readback。执行报告/最终候选 SHA/tree、Astra acceptance/retrospective 均 **NOT_YET_AVAILABLE**；收到候选后独立审议，不预先接受、不自动启 V0.0.3。
+
+## 2026-10-13 V0.0.2 版前 DRAFT 记录（历史，不能用作执行授权）
 
 Owner 已确认 V0.0.1 的收尾完成，并于本轮**手动要求开始下一版本规划**。Astra 草案：[V0.0.2 来源契约与输入准入计划](../versions/0.0.2/plan.md)。当前 `DRAFT__WAIT_CODEX_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`；Codex 仅可对已授权源码做有限只读核查并交一份执行方案草稿。版本尚未冻结、未颁布独立实施许可、没有新模型运行或新测试授权。
 

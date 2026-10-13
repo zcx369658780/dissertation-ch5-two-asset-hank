@@ -1,3 +1,16 @@
+# 第五章当前状态：V0.0.2 已冻结并授权受界合成工程
+
+2026-10-13：`FROZEN__ASTRA_APPROVED_EXECUTION__WAIT_CODEX_IMPLEMENTATION`。Owner 已启动 V0.0.2；Codex 只读执行方案由网页 Astra 审议通过，**正式冻结计划** `versions/0.0.2/plan.md`，固定提交 `4b11c46823e7cdabc12de8b8036cc5efc2380c52`，blob `43171bc6b841695845e7576d7feaa3135b88c588`；**独立实施授权** `versions/0.0.2/authorization.md`，提交 `3ed139aee7563a7033fa02fb933c3b49f24bd6b1`。
+
+**代码基线正式采纳**：`NEXT_BASELINE_ADOPTION=ADOPTED_FROM_EXACT_SHA`，V0.0.1 已接受合成工程候选 `3260ec393dd4d53d6aab6c34d7c0442f09aa79f4`，tree `39e7a91ca473ba770bd65518607c3f78f4b9fe24`。仅供从固定 tree 构造 V0.0.2 新候选，**不代表 main merge 或模型旧 checkout 的 branch/HEAD/index 已更改**。已报告原本地 dirty8、untracked5405、ignored4553 是有日期的 Codex 状态，不由网页独立盘验；现有成果不得清理/覆盖。
+
+本版只允许五份新增文件组成的 typed simulated-source contract、crosswalk 与合成 focused 验证，未来候选分支 `codex/ch5-v0.0.2-household-source-contract`；不得启动真实 HJB/KFE/历史受保护来源/31省 consumer/K1B/C8/C9/C10/GE/Results 或修改经济法则。资源预算与精确停止条件只读取固定计划/授权；Codex 在版本内自主实现、普通诊断与调试，完成后集中提交 Astra 独立验收。**此状态只代表许可已发布，尚无候选或实测通过证据**。
+
+V0.0.1 保持 `CLOSED__ACCEPT__SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS`；`C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、Objective A16 `FAIL_CLOSED`、`model_activation=False`、`Results FALSE`、人口/人均和不 `N=P/3` 继续有效。真实来源、劳动单位、人口分母、经济价格/日历、source-loader/生产接口均 UNKNOWN。V0.0.3 NOT_STARTED。工作流 V1.1 见 `docs/CH5_ASTRA_WORKFLOW_CURRENT.md`，导航 `docs/DOC_INDEX_CURRENT.md`。
+
+---
+# 以下为 V0.0.2 版前 DRAFT 状态（历史，原文保留）
+
 # 第五章当前状态：V0.0.2 版前规划 / 未冻结
 
 2026-10-13 Owner 已核定 V0.0.1 的收尾和 V1.1 本地规则同步，明确要求**规划下一版本**。Astra 发布 `versions/0.0.2/plan.md` 作为草案，状态 `DRAFT__WAIT_CODEX_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`。Codex 仅开展最少必要只读源码与 Git 环境核对并回报执行方案；Astra 集中审议，后续另行固定冻结提交/独立授权。**当前不写代码、不运行测试、不读取受保护真实数据，不启动科学模型。**
