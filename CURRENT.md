@@ -1,3 +1,12 @@
+# 第五章当前状态：V0.0.5 备份空目录附属门已冻结并授权
+
+2026-10-14 Owner 明确批准唯一 `C:\CH5_Research_Backup`，**只建立空目录，不复制文件或其它资料**。Astra 将其列为 V0.0.5 的**有限附属门**，而非取代原可信实验根科学目标：冻结 `13dc04ca85b5a17692871862f5bf25e25a7799fa`，plan blob `d96af89ce774e39242bd68af11888afee7eb1b3d`；独立授权 `463da12feda60a8efad8e42be0d35068f7a586f2`。现行状态 `SCOPED_BACKUP_GATE_FROZEN__ASTRA_APPROVED_EMPTY_DIRECTORY_ONLY__WAIT_CODEX_REPORT`。只准 C根/准确目标有限预检、最多一次普通非Force单目录创建与新目录的非递归空状态核查；冲突/权限/异常STOP，不清理既有项、不重试、不创建任何其它文件/目录、绝不复制真实科研材料。**尚未接到 Codex 执行结果，不声称文件夹已经存在。**
+
+原 `versions/0.0.5/plan.md` 核心研究“可信独立可弃用 fixture 首次创建锚与祖先隔离”仍然 DRAFT/NOT_FROZEN，`NEXT_BASELINE_ADOPTION=UNDECIDED`；C系统盘及保全备份目录不能作为破坏性测试根。V0.0.4 CLOSED/BLOCKED 不复活；真实北京资料及模型保护路径 stat/exists/read/ACL/操作全禁止，D1历史北京拟核验对象、D2完整A16/window保护不变，D3-real/D4-real未授予。C9 PAUSED、A16 UNRESOLVED/FAIL_CLOSED、window UNACCEPTED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、旧CLOSED科学/数据预算、人口/人均及不 N=P/3都不变；V0.0.6 NOT_STARTED，V1.2工作流未修改。
+
+---
+# 以下为备份空目录子门冻结授权之前的历史状态
+
 # 第五章当前状态：V0.0.5 C/D OS 拓扑回报审议完成，等待下一范围决定
 
 2026-10-14，`DRAFT__STORAGE_TOPOLOGY_REVIEWED__BACKUP_AND_FIXTURE_SEPARATE__NOT_FROZEN`。Codex按 `versions/0.0.5/owner_cd_topology_read_scope.md` 报告六次 OS Storage 只读查询、唯一返回/exit0、0错误/0重试：`C_D_OS_DISK_OBJECTS_DISTINCT=true`，C与D均NTFS/NVMe，C IsSystem=true/IsBoot=true，D两值false。Astra仅据脱敏 Codex 汇报作有限接受，网页没有亲自运行Windows查询或读取原回执。审议见 `versions/0.0.5/storage_topology_review.md`。

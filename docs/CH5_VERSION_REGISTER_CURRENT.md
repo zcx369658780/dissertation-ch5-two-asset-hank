@@ -1,6 +1,12 @@
 # 第五章路线图与版本登记
 
-## 2026-10-14 当前：V0.0.5 C/D OS 映射已按限定权限回报并审议
+## 2026-10-14 当前：V0.0.5 仅空备份目录子门已冻结、单独授权
+
+`SCOPED_BACKUP_GATE_FROZEN__ASTRA_APPROVED_EMPTY_DIRECTORY_ONLY__WAIT_CODEX_REPORT`。Owner 确认唯一目标 **`C:\CH5_Research_Backup`**，仅首次创建一个空目录，**不复制文件、不备份模型、不运行任何 fixture**。固定子门 [backup_directory_gate](../versions/0.0.5/backup_directory_gate.md) SHA `13dc04ca85b5a17692871862f5bf25e25a7799fa`，blob `d96af89ce774e39242bd68af11888afee7eb1b3d`；独立 [Astra 限定授权](../versions/0.0.5/backup_directory_authorization.md) SHA `463da12feda60a8efad8e42be0d35068f7a586f2`。仅允许 C卷根及准确目标的限定预检、一尝试 `New-Item`、新目录属性和非递归空状态读回；已存在/冲突/异常立即停止，不覆盖、不删除、不重试、不换目标，任何其它路径/资产操作均0。
+
+**重要：本次仅冻结 V0.0.5 的“建立保全型备份空目录”附属操作门，原可信可弃用攻击实验根研究的 `versions/0.0.5/plan.md` 仍 DRAFT，V0.0.5 **整体未冻结、核心 G0 未解**。C系统盘和新备份目录不可当作可弃用实验卷；D1/D2及原 A16/window/C9/Results 科学保护继续。Codex 交付前目录是否创建 UNKNOWN；网页未直接操作 Windows。NEXT_BASELINE_ADOPTION=UNDECIDED；V0.0.6 NOT_STARTED。
+
+## 2026-10-14 C/D OS拓扑审议完成、备份空目录尚未获准时历史状态
 
 `DRAFT__STORAGE_TOPOLOGY_REVIEWED__BACKUP_AND_FIXTURE_SEPARATE__NOT_FROZEN`。Codex 报告 C/D 各自 Get-Partition、Get-Disk、Get-Volume 六次均退出0、无错误或重试，`C_D_OS_DISK_OBJECTS_DISTINCT=true`；C/D 均为 NVMe/NTFS，C `IsSystem/IsBoot=true`，D 两项=false。**该结果为 Codex 本地脱敏回报，非 Astra 独立 Windows 运行证据**。其 OS 磁盘对象判断支持但不能完全认证 Owner“两独立 SSD”的陈述；更不构成可信可弃用根。详见 [Astra C/D 限定回读审议](../versions/0.0.5/storage_topology_review.md)。
 
