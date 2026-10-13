@@ -1,3 +1,14 @@
+# 第五章当前状态：V0.0.4 等待 Owner 决策 / NO_READ
+
+2026-10-13：`REVIEWED__OWNER_DECISION_REQUIRED__PROTECTION_BLOCKED__NO_READ__NOT_FROZEN`。Codex 已交有界只读 `V0.0.4_EXECUTION_PROPOSAL_DRAFT`，Astra 依据公开 GitHub 历史科学接受和 V0.0.3 来源合同审议，详见 `versions/0.0.4/review.md`。本阶段 **D1 是否选历史 run004 北京三元数据、D2 是否完整维持 A16/window 威胁范围、D3 精确受保护访问/探测工具/身份/寿命与额度、D4 原始数据生命周期和对外摘要** 尚未获 Owner 决定。没有 V0.0.4 freeze commit 或独立实施许可；北京三文件的 stat/exists/open/read/hash/ACL探测与科学/pytest调用权限均0。
+
+V0.0.3 候选 `cf74384f151427f0b7071ac0461cede6ad6cdf11` / tree `372c693ca3dccea716ae8caef382f513e5a2316e` 仅为未来基线建议，`NEXT_BASELINE_ADOPTION=UNDECIDED`，原 checkout/main/index/dirty 不变。历史 manifest `CF70E7D6A62A35F461D1A75B28F8F502B2CBDD2D94ED5D9DDFA099D821CC5EC6` 与北京两份 receipts 仍 `REQUEST_ONLY/NOT_AUTHORIZED`；候选读取3次/2.125MiB/重试0不属于本版预算。不得恢复旧全量 verifier、旧受保护读取与科学任务。
+
+V0.0.1–V0.0.3 继续各自受界 CLOSED/ACCEPT；V1.2 不升级，fail-fast 执行落实属于未来冻结的具体实施条件。Objective A16 `UNRESOLVED/FAIL_CLOSED`、window `UNACCEPTED`、C9 `PAUSED`、`CALL_LEDGER_UNRESOLVED`、`model_activation=False`、`Results FALSE`、人口/人均和不 `N=P/3`、旧 CLOSED 预算及真实劳动单位/价格年份/日历 UNKNOWN 全不变。V0.0.5 NOT_STARTED。
+
+---
+# 以下为 V0.0.4 版前方案提交前状态（历史，完整保留）
+
 # 第五章当前状态：V0.0.4 版前 DRAFT（等待 Codex）
 
 2026-10-13 Owner 已明确启动 V0.0.4 规划；V1.2 工作流正文已经覆盖 fail-fast、UTF-8/LF 和准确树回执，不在本阶段重复修改。Astra 发布 `versions/0.0.4/plan.md` 草案，当前 `DRAFT__WAIT_CODEX_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`。研究重点为 V0.0.3 联合来源合同下 run004 初始北京三文件元数据门的可信锚、Objective A16/window/权限保护与 Owner 具体取舍。**本次只允许 Codex 有界只读公开源码/历史科学文档和 Git 元数据，不能 stat/open/read 受保护资产，不写实现或运行测试/模型/旧任务。**

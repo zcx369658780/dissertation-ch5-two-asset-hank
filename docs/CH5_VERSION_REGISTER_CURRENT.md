@@ -1,6 +1,12 @@
 # 第五章路线图与版本登记
 
-## 2026-10-13 当前：V0.0.4 已由 Owner 启动版前协商（未冻结）
+## 2026-10-13 当前：V0.0.4 版前方案已审议 / 等待 Owner 决策
+
+**`REVIEWED__OWNER_DECISION_REQUIRED__PROTECTION_BLOCKED__NO_READ__NOT_FROZEN`。** Astra 已将 [V0.0.4 Owner 待决及保护审议](../versions/0.0.4/review.md)归档。Codex `V0.0.4_EXECUTION_PROPOSAL_DRAFT` 推荐历史 run004 初始北京三文件，但现有 A16/window 威胁下的 principal/SID、祖先重解析与句柄生命周期证明及明确访问许可未闭合。**D1选择研究对象、D2保护范围、D3精确访问/保护探测、D4原数据生命周期与对外摘要均待 Owner 决定**；当前不存在 V0.0.4 冻结计划或 `ASTRA_APPROVED_EXECUTION`，且真实数据 stat/open/read/hash、pytest/科学运行的本版许可全部0。
+
+建议基线 `cf74384f151427f0b7071ac0461cede6ad6cdf11` 仍 `NEXT_BASELINE_ADOPTION=UNDECIDED`。未来拟议北京三文件3次/2.125MiB/零重试仅 `REQUEST_ONLY`；`C9 PAUSED`、A16 `FAIL_CLOSED`、window `UNACCEPTED`、`CALL_LEDGER_UNRESOLVED`、Results FALSE 不变。V0.0.5 NOT_STARTED。
+
+## 2026-10-13 V0.0.4 DRAFT 等待 Codex 的历史状态
 
 **`DRAFT__WAIT_CODEX_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`**。Owner 已同意启动 V0.0.4，Astra 经 V1.2/前版复盘核查判定：现行规则已包含依赖失败即停，**暂不升级工作流版本**；执行落实问题由下一版方案要求具体 fail-fast 手段。当前仅允许 Codex 有界只读源码/公开科学合同/Git 元数据审查并提交 [V0.0.4 北京历史元数据门草案](../versions/0.0.4/plan.md)所要求的执行方案。
 
