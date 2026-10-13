@@ -1,6 +1,12 @@
 # 第五章路线图与版本登记
 
-## 2026-10-14 当前：V0.0.5 仅空备份目录子门已冻结、单独授权
+## 2026-10-14 当前：V0.0.5 空备份目录附属门有限验收通过，主可信根仍待决
+
+**`ACCEPT__SCOPED_EMPTY_BACKUP_DIRECTORY_CREATION__CODEX_REPORTED_ONLY`**。Codex 回报唯一 `C:\CH5_Research_Backup` 已创建：一次 `New-Item`、零重试/无Force，C根/目标/新目录/新目录非递归空检查各1次，普通非reparse目录且当时为空，退出0、错误无、约0.123秒。Astra 已对照冻结与独立授权文档审议；**这些 Windows 操作与零越权计数仅属 Codex 本地脱敏报告，网页不能独立盘核**。详见 [V0.0.5 空目录附属门验收](../versions/0.0.5/backup_directory_acceptance.md)。
+
+本附属门现 `CLOSED__LIMITED_ACCEPT__EMPTY_BACKUP_DIRECTORY_REPORTED_CREATED`，该次 `C:\` 根/目标查询及单次 mkdir 授权均已消费；没有实际数据备份和恢复演练，不能自行开始复制。**V0.0.5 可信可弃用实验根主计划仍 DRAFT/NOT_FROZEN，G0 信任锚尚未证明**；C系统盘/备份目录是不可弃用保全用途，不得做 fixture 破坏性实验。D1/D2、A16 FAIL_CLOSED、C9 PAUSED、Results FALSE及旧资源门保持；`NEXT_BASELINE_ADOPTION=UNDECIDED`，V0.0.6 NOT_STARTED。
+
+## 2026-10-14 子门仅冻结授权、尚未收到创建回报时历史状态
 
 `SCOPED_BACKUP_GATE_FROZEN__ASTRA_APPROVED_EMPTY_DIRECTORY_ONLY__WAIT_CODEX_REPORT`。Owner 确认唯一目标 **`C:\CH5_Research_Backup`**，仅首次创建一个空目录，**不复制文件、不备份模型、不运行任何 fixture**。固定子门 [backup_directory_gate](../versions/0.0.5/backup_directory_gate.md) SHA `13dc04ca85b5a17692871862f5bf25e25a7799fa`，blob `d96af89ce774e39242bd68af11888afee7eb1b3d`；独立 [Astra 限定授权](../versions/0.0.5/backup_directory_authorization.md) SHA `463da12feda60a8efad8e42be0d35068f7a586f2`。仅允许 C卷根及准确目标的限定预检、一尝试 `New-Item`、新目录属性和非递归空状态读回；已存在/冲突/异常立即停止，不覆盖、不删除、不重试、不换目标，任何其它路径/资产操作均0。
 

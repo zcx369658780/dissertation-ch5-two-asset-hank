@@ -1,8 +1,11 @@
-# 第五章当前状态：V0.0.5 备份空目录附属门已冻结并授权
+# 第五章当前状态：V0.0.5 空备份目录子门有限接受，可信根仍未解
 
-2026-10-14 Owner 明确批准唯一 `C:\CH5_Research_Backup`，**只建立空目录，不复制文件或其它资料**。Astra 将其列为 V0.0.5 的**有限附属门**，而非取代原可信实验根科学目标：冻结 `13dc04ca85b5a17692871862f5bf25e25a7799fa`，plan blob `d96af89ce774e39242bd68af11888afee7eb1b3d`；独立授权 `463da12feda60a8efad8e42be0d35068f7a586f2`。现行状态 `SCOPED_BACKUP_GATE_FROZEN__ASTRA_APPROVED_EMPTY_DIRECTORY_ONLY__WAIT_CODEX_REPORT`。只准 C根/准确目标有限预检、最多一次普通非Force单目录创建与新目录的非递归空状态核查；冲突/权限/异常STOP，不清理既有项、不重试、不创建任何其它文件/目录、绝不复制真实科研材料。**尚未接到 Codex 执行结果，不声称文件夹已经存在。**
+2026-10-14：`ACCEPT__SCOPED_EMPTY_BACKUP_DIRECTORY_CREATION__CODEX_REPORTED_ONLY`。Codex 报告 `C:\CH5_Research_Backup` 已按唯一目标创建（一次尝试、零重试、无Force），四项限定检查各1次；非reparse普通目录、当时空，exit0、无错误、约0.123s。Astra 核 GitHub 冻结 `13dc04ca85b5a17692871862f5bf25e25a7799fa` / blob `d96af89ce774e39242bd68af11888afee7eb1b3d` 与授权 `463da12feda60a8efad8e42be0d35068f7a586f2`，仅限 `CODEX_REPORTED_WITH_LOCAL_REPORT`；网页未亲自访问 C盘。正式归档见 `versions/0.0.5/backup_directory_acceptance.md`。
 
-原 `versions/0.0.5/plan.md` 核心研究“可信独立可弃用 fixture 首次创建锚与祖先隔离”仍然 DRAFT/NOT_FROZEN，`NEXT_BASELINE_ADOPTION=UNDECIDED`；C系统盘及保全备份目录不能作为破坏性测试根。V0.0.4 CLOSED/BLOCKED 不复活；真实北京资料及模型保护路径 stat/exists/read/ACL/操作全禁止，D1历史北京拟核验对象、D2完整A16/window保护不变，D3-real/D4-real未授予。C9 PAUSED、A16 UNRESOLVED/FAIL_CLOSED、window UNACCEPTED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、旧CLOSED科学/数据预算、人口/人均及不 N=P/3都不变；V0.0.6 NOT_STARTED，V1.2工作流未修改。
+**C盘备份目录子门已经 `CLOSED__LIMITED_ACCEPT__EMPTY_BACKUP_DIRECTORY_REPORTED_CREATED`，操作许可已消费**：不得再自动查询/创建或复制资料，实际科研备份未执行。C系统盘和备份目录不可弃用、禁止用于破坏性 fixture 实验。原 V0.0.5 可信根主研究仍 `DRAFT__OWNER_SUPPLIED_ANCHOR_REQUIRED__NOT_FROZEN`，`NEXT_BASELINE_ADOPTION=UNDECIDED`，仍未有独立可信卷或隔离环境的实际来源证据；不自动启动新工程实验。V0.0.4 已 CLOSED/BLOCKED，旧实验额度不恢复。
+
+D1 北京初始三元数据仅拟核验，D2完整A16/window威胁保持，D3-real/D4-real 未授权。A16 UNRESOLVED/FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、所有旧CLOSED预算、人口/人均及不 N=P/3 不变；V0.0.6 NOT_STARTED，V1.2工作流不变。没有本机原始回执独立检查。
+
 
 ---
 # 以下为备份空目录子门冻结授权之前的历史状态
