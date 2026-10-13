@@ -1,3 +1,14 @@
+# 第五章当前状态：V0.0.5 C/D OS 拓扑回报审议完成，等待下一范围决定
+
+2026-10-14，`DRAFT__STORAGE_TOPOLOGY_REVIEWED__BACKUP_AND_FIXTURE_SEPARATE__NOT_FROZEN`。Codex按 `versions/0.0.5/owner_cd_topology_read_scope.md` 报告六次 OS Storage 只读查询、唯一返回/exit0、0错误/0重试：`C_D_OS_DISK_OBJECTS_DISTINCT=true`，C与D均NTFS/NVMe，C IsSystem=true/IsBoot=true，D两值false。Astra仅据脱敏 Codex 汇报作有限接受，网页没有亲自运行Windows查询或读取原回执。审议见 `versions/0.0.5/storage_topology_review.md`。
+
+**C盘是系统/启动卷，不能作为可弃用攻击实验卷。** Owner此前允许考虑在C盘建立备份区域，仅是备份保全许可意向；当前建议确切目录候选 `C:\CH5_Research_Backup`（未探测存在性、安全或实际创建），需 Owner另行确认路径与单目录创建范围，并单独冻结首次有限写入；不得自动复制/备份科学数据。可信实验根尚无独立供应锚；若无其他现成专用可弃用卷，应另讨论隔离环境供应（路线B），不能通过备份目录伪装G0通过。
+
+V0.0.5依然未冻结、`NEXT_BASELINE_ADOPTION=UNDECIDED`，无新增代码候选/实验/真资产许可。V0.0.4 `CLOSED__BLOCKED__G0_FIXTURE_ISOLATION_UNPROVEN__NO_EXPERIMENT__WITH_OBSERVATIONS`，旧D3-fixture/D4-fixture许可已封存。D1 run004 北京拟核验和D2完整威胁模型持续采纳，D3-real/D4-real未授权；A16 UNRESOLVED/FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、旧CLOSED预算与人口/人均、不 N=P/3不变。V0.0.6 NOT_STARTED，工作流 V1.2未升级。
+
+---
+# 以下为 C/D 查询完成前的历史记录
+
 # 第五章当前状态：Owner 授权 C/D OS 存储拓扑只读检查
 
 Owner 2026-10-13 确认 C、D 分属两个物理 SSD（Owner 提供事实），并允许 Codex 执行**至多6次限定的 Windows Storage 只读查询**：C/D 各一次 Get-Partition、各自 DiskNumber 对应 Get-Disk、各一次 Get-Volume。边界及允许输出见 `versions/0.0.5/owner_cd_topology_read_scope.md`。状态：`DRAFT__OWNER_APPROVED_C_D_READ_ONLY_TOPOLOGY__WAIT_CODEX_READBACK`。不得探测原模型、真实 run004 和保护祖先；不得创建 C盘备份区、独立实验根或启动旧12个场景。

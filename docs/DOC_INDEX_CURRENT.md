@@ -7,8 +7,8 @@
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
 | Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 决定、原证据上限及本地工具限制 |
-| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.5 C/D只读映射已许可、待Codex回报；可信实验根尚未证明 |
-| V0.0.5 C/D只读映射许可 | [Owner限定查询范围](../versions/0.0.5/owner_cd_topology_read_scope.md)、[C盘备份候选](../versions/0.0.5/owner_c_backup_candidate.md) | Owner称两块物理SSD；最多6次OS存储映射只读查询，禁止实验和目录创建 |
+| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | C/D 映射已审议；C为系统盘备份候选，可信fixture根仍未证；V0.0.5未冻结 |
+| V0.0.5 C/D拓扑验收及备份/实验隔离 | [Astra 拓扑审议](../versions/0.0.5/storage_topology_review.md)、[限定原授权](../versions/0.0.5/owner_cd_topology_read_scope.md)、[C盘提议](../versions/0.0.5/owner_c_backup_candidate.md) | OS报告两个不同磁盘对象；C为system/boot NTFS NVMe，备份目录未创建且不能作攻击根 |
 | V0.0.4 阻塞验收与复盘 | [最终验收](../versions/0.0.4/acceptance.md)、[复盘](../versions/0.0.4/retrospective.md)、[冻结计划](../versions/0.0.4/plan.md)、[授权](../versions/0.0.4/authorization.md) | 安全停止、0实验/0候选，真实保护读取仍禁止 |
 | V0.0.3 冻结与验收结果 | [冻结计划](../versions/0.0.3/plan.md)、[独立授权](../versions/0.0.3/authorization.md)、[最终验收](../versions/0.0.3/acceptance.md)、[复盘](../versions/0.0.3/retrospective.md) | freeze 768a3181fcbc…不变，candidate cf74384f1514…，真实读取仍 REQUEST_ONLY |
 | V0.0.2 冻结与最终结论 | [冻结计划](../versions/0.0.2/plan.md)、[授权](../versions/0.0.2/authorization.md)、[验收](../versions/0.0.2/acceptance.md)、[复盘](../versions/0.0.2/retrospective.md) | freeze SHA 4b11c46823e7… 未追改；candidate 8f5457947492…；真实来源认证未获得 |

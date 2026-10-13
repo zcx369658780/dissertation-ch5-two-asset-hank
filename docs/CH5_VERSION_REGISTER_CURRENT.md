@@ -1,6 +1,12 @@
 # 第五章路线图与版本登记
 
-## 2026-10-13 当前：Owner 已批准 C/D 存储映射只读检查
+## 2026-10-14 当前：V0.0.5 C/D OS 映射已按限定权限回报并审议
+
+`DRAFT__STORAGE_TOPOLOGY_REVIEWED__BACKUP_AND_FIXTURE_SEPARATE__NOT_FROZEN`。Codex 报告 C/D 各自 Get-Partition、Get-Disk、Get-Volume 六次均退出0、无错误或重试，`C_D_OS_DISK_OBJECTS_DISTINCT=true`；C/D 均为 NVMe/NTFS，C `IsSystem/IsBoot=true`，D 两项=false。**该结果为 Codex 本地脱敏回报，非 Astra 独立 Windows 运行证据**。其 OS 磁盘对象判断支持但不能完全认证 Owner“两独立 SSD”的陈述；更不构成可信可弃用根。详见 [Astra C/D 限定回读审议](../versions/0.0.5/storage_topology_review.md)。
+
+**C盘为系统/启动卷，仅可考虑保全型备份区，不能将 C:/公共祖先/备份区视为可弃用攻击根。** 推荐精确候选备份目录 `C:\CH5_Research_Backup`，尚未 Owner 确认其路径及首次创建范围，不可自行探测或写入；备份内容复制另批。独立 fixture 根仍为 `OWNER_SUPPLIED_ANCHOR_REQUIRED`，可选可信供应的隔离环境（路线 B）但不自动配置。V0.0.5 未冻结，无实现/创建/真实数据访问许可，`NEXT_BASELINE_ADOPTION=UNDECIDED`。D1/D2保持，A16 FAIL_CLOSED、C9 PAUSED、Results FALSE、旧预算均不变，V0.0.6 NOT_STARTED。
+
+## 2026-10-13 C/D 存储映射只读许可、未回报时状态（历史）
 
 `DRAFT__OWNER_APPROVED_C_D_READ_ONLY_TOPOLOGY__WAIT_CODEX_READBACK`。Owner 声明 C/D 位于两块不同物理 SSD（`OWNER_ASSERTED`），明确许可 Windows 内置 Storage 模块至多6次**限定 C/D 的只读磁盘/分区/卷映射**。固定边界：[Owner C/D 查询许可](../versions/0.0.5/owner_cd_topology_read_scope.md)。未核验前不得将盘符或磁盘对象等同独立可弃用实验卷；**C备份区仅用于保全，不能作攻击目标**。无真实数据/目录 ACL 探测、C盘目录首次创建、备份复制或 fixture 调用许可；V0.0.5 不冻结实施。`NEXT_BASELINE_ADOPTION=UNDECIDED`，A16/C9/Results 限制不变。
 
