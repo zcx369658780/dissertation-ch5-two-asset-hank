@@ -7,7 +7,8 @@
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
 | Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 决定、原证据上限及本地工具限制 |
-| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.5 空备份目录子门已有限验收关闭，主可信实验根仍DRAFT/未证 |
+| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | Owner要求先备份再续 V0.0.5；备份 source 尚需界定；项目内敌对实验根仍不安全 |
+| V0.0.5 备份先行及实验选址评估 | [Owner新决定](../versions/0.0.5/owner_backup_then_fixture_decision.md)、[备份来源预检草案](../versions/0.0.5/backup_scope_preflight.md) | 备份须先界定可读来源；项目内子树不能自动承受完整敌对A16实验 |
 | V0.0.5 空备份目录附属门验收 | [有限验收](../versions/0.0.5/backup_directory_acceptance.md)、[冻结计划](../versions/0.0.5/backup_directory_gate.md)、[独立授权](../versions/0.0.5/backup_directory_authorization.md) | Codex回报仅空目录已创建；本子门CLOSED/有限接受；无备份复制；主可信根仍 DRAFT |
 | V0.0.4 阻塞验收与复盘 | [最终验收](../versions/0.0.4/acceptance.md)、[复盘](../versions/0.0.4/retrospective.md)、[冻结计划](../versions/0.0.4/plan.md)、[授权](../versions/0.0.4/authorization.md) | 安全停止、0实验/0候选，真实保护读取仍禁止 |
 | V0.0.3 冻结与验收结果 | [冻结计划](../versions/0.0.3/plan.md)、[独立授权](../versions/0.0.3/authorization.md)、[最终验收](../versions/0.0.3/acceptance.md)、[复盘](../versions/0.0.3/retrospective.md) | freeze 768a3181fcbc…不变，candidate cf74384f1514…，真实读取仍 REQUEST_ONLY |

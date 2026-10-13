@@ -1,3 +1,14 @@
+# 第五章当前状态：Owner 要求先备份，再继续 V0.0.5 可信实验根
+
+2026-10-14 `WAIT_CODEX_BACKUP_SCOPE_PROPOSAL__NO_COPY_AUTHORIZED__V005_MAIN_G0_UNPROVEN`。Owner要求用 `C:\CH5_Research_Backup` 先实际备份，完成后直接继续 V0.0.5 主研究，并推荐“当前项目目录”内新建一个可弃用实验子目录。Astra 已录于 `versions/0.0.5/owner_backup_then_fixture_decision.md`；另发布 `backup_scope_preflight.md` 只读来源分层草案。由于待备份的**具体对象集合**尚未确定，不能把保护关闭的真实 run004、数千 untracked/ignored 与 dirty 原字节通过笼统“备份”自动放开。故尚未实际复制任何文件；网页也无法直接访问 Windows C/D。Codex下一步给出公开 Git 安全基线、待Owner范围和容量/校验有界方案。
+
+原 C备份空目录子门 `CLOSED__LIMITED_ACCEPT__EMPTY_BACKUP_DIRECTORY_REPORTED_CREATED`，没有复制数据。V0.0.5 核心 `versions/0.0.5/plan.md` 仍 DRAFT、独立可信攻击实验根 G0 UNPROVEN。当前已知模型树 `D:\ProjectTemp\c5k1bturn56` 包含原 HEAD/index、dirty和大量产物；即使在其中新建子目录，完整D2敌对祖先替换/删除仍可威胁真实模型，不批准项目内的破坏性 fixture。仅保留为未来普通无敌对命名空间 synthetic 测试候选，需另门。
+
+`NEXT_BASELINE_ADOPTION=UNDECIDED`，V0.0.4 CLOSED/BLOCKED、D1北京三历史文件仅拟核验、D2完整A16/window保护不放松、D3-real/D4-real NOT_AUTHORIZED。C9 PAUSED、CALL_LEDGER_UNRESOLVED、A16 UNRESOLVED/FAIL_CLOSED、window UNACCEPTED、model_activation=False、Results FALSE，旧CLOSED科学/数据预算、人口/人均和不N=P/3不变；V0.0.6 NOT_STARTED，工作流V1.2不变。
+
+---
+# 以下为Owner要求备份之前的历史状态
+
 # 第五章当前状态：V0.0.5 空备份目录子门有限接受，可信根仍未解
 
 2026-10-14：`ACCEPT__SCOPED_EMPTY_BACKUP_DIRECTORY_CREATION__CODEX_REPORTED_ONLY`。Codex 报告 `C:\CH5_Research_Backup` 已按唯一目标创建（一次尝试、零重试、无Force），四项限定检查各1次；非reparse普通目录、当时空，exit0、无错误、约0.123s。Astra 核 GitHub 冻结 `13dc04ca85b5a17692871862f5bf25e25a7799fa` / blob `d96af89ce774e39242bd68af11888afee7eb1b3d` 与授权 `463da12feda60a8efad8e42be0d35068f7a586f2`，仅限 `CODEX_REPORTED_WITH_LOCAL_REPORT`；网页未亲自访问 C盘。正式归档见 `versions/0.0.5/backup_directory_acceptance.md`。

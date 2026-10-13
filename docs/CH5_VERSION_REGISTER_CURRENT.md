@@ -1,6 +1,12 @@
 # 第五章路线图与版本登记
 
-## 2026-10-14 当前：V0.0.5 空备份目录附属门有限验收通过，主可信根仍待决
+## 2026-10-14 当前：Owner 要求先备份，再继续 V0.0.5 可信实验根主任务
+
+`WAIT_CODEX_BACKUP_SCOPE_PROPOSAL__NO_COPY_AUTHORIZED__V005_MAIN_G0_UNPROVEN`。Owner 明确要求备份到已空建 `C:\CH5_Research_Backup`，完成后直接续接 V0.0.5 可信实验根；并**建议**在当前项目目录新建可弃用测试子目录。当前项目树 `D:\ProjectTemp\c5k1bturn56` 包含 dirty8/数千 untracked/ignored/历史证据，**不能因新子目录而满足完整 D2 对共享祖先与敌对替换的威胁门**，项目内只能作未来普通非敌对 synthetic 测试候选，禁止 destructive fixture。Owner 新指示和风险界限见 [决策记录](../versions/0.0.5/owner_backup_then_fixture_decision.md)。
+
+因备份原文件范围尚未指定，特别是 sealed run004 与本地 dirty/untracked/ignored 的历史访问门**仍关闭**，Astra 未授权全树递归复制。仅允许 Codex 提交[有界来源范围/备份方案 DRAFT](../versions/0.0.5/backup_scope_preflight.md)：优先既有**公开 Git 对象**安全基线、明确本地未备份差异及需独立 Owner 权限的范围。先定 source/bytes/校验/目的规则再单独冻结与执行；网页不可直接操作本地 C/D。此前空目录子门已有限接受，真实文件复制尚未启动。D1/D2保护、A16 FAIL_CLOSED、C9 PAUSED、Results FALSE原样，V0.0.5 主 plan 仍 DRAFT，V0.0.6 NOT_STARTED。
+
+## 2026-10-14 空备份目录创建验收完成、Owner 尚未要求备份时历史状态
 
 **`ACCEPT__SCOPED_EMPTY_BACKUP_DIRECTORY_CREATION__CODEX_REPORTED_ONLY`**。Codex 回报唯一 `C:\CH5_Research_Backup` 已创建：一次 `New-Item`、零重试/无Force，C根/目标/新目录/新目录非递归空检查各1次，普通非reparse目录且当时为空，退出0、错误无、约0.123秒。Astra 已对照冻结与独立授权文档审议；**这些 Windows 操作与零越权计数仅属 Codex 本地脱敏报告，网页不能独立盘核**。详见 [V0.0.5 空目录附属门验收](../versions/0.0.5/backup_directory_acceptance.md)。
 
