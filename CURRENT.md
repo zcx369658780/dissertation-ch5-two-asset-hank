@@ -1,3 +1,16 @@
+# 第五章当前状态：V0.0.4 句柄技术设计审议完成 / fixture 需 Owner 决定
+
+2026-10-13，`FEASIBILITY_DESIGN_REVIEWED__FIXTURE_GATE_REQUIRES_OWNER_D3_D4__PROTECTION_BLOCKED__NO_READ__NOT_FROZEN`。Owner D1（run004 初始北京三元数据拟核验对象）和 D2（完整 A16/window 威胁范围保持）已经固定采纳。Codex 的 Windows 原生句柄相对打开、可信根、OBJ_DONT_REPARSE 和全寿命窗口设计经 Astra 结合 Microsoft 官方文档审议为 **`POTENTIALLY_FEASIBLE/NOT_PROVEN`**。详见 `versions/0.0.4/a16_window_feasibility_review.md`。
+
+关键区别：该方案目前研究的是一次**历史元数据只读窗口**的安全保护；旧 Objective A 的 root claim / recursive mkdir / JSON-NPZ creation / unlink 四种**输出 mutation 操作**仍各自 `UNRESOLVED/FAIL_CLOSED`，即使未来 fixture 成功也不能宣布旧 A16 全部通过。无本机测试、无真实读回/保护验证。Astra 建议只在 Owner **另行批准实验级 D3-fixture/D4-fixture**后考虑独立可弃用根下有限合成 Windows 句柄保护试验；实验涉及的全部可变祖先必须与真实第五章模型和其不可弃用公共祖先隔离，不能在 `D:\ProjectTemp` 公共祖先执行攻击。至今**未批准创建或运行 fixture，亦未批准原北京三文件任何 stat/ACL/exists/open/read/hash/probe**。
+
+D3-real（工具/principal/保护探测/真实读取次数和字节）与 D4-real（受保护原始数据生命周期及脱敏）未授权，历史3次/2.125MiB/零重试仅为未来 REQUEST_ONLY。V0.0.4 未冻结计划和实施授权；`NEXT_BASELINE_ADOPTION=UNDECIDED`，建议的 V0.0.3 单父候选 `cf74384f151427f0b7071ac0461cede6ad6cdf11` 不自动合并/切换。原模型 checkout/HEAD/index/dirty、main 不动。
+
+V0.0.1–V0.0.3 各自受界 CLOSED/ACCEPT；`C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、A16 `UNRESOLVED/FAIL_CLOSED`、window `UNACCEPTED`、`model_activation=False`、`Results FALSE` 和旧 CLOSED 数据/科学预算不变。人口/人均方向、不 `N=P/3`、真实来源联合身份与劳动单位、人口分母、年份/价格/日历 UNKNOWN 仍不变。V0.0.5 NOT_STARTED，工作流 V1.2 无需升级。
+
+---
+# 以下为 fixture 安全可行性审议前的当前状态（历史原文完整保留）
+
 # 第五章当前状态：V0.0.4 D1/D2 已采纳；D3/D4 待决、NO_READ
 
 2026-10-13 Owner 明确确认：**D1** 选择历史 run004 初始北京三份元数据作为 V0.0.4 **拟核验对象**；**D2** 完整维持 Objective A16/window 威胁模型，不放宽同用户普通进程、祖先/junction/reparse替换、父目录 DELETE_CHILD 与访问句柄全寿命要求。权威增量记于 `versions/0.0.4/owner_d1_d2_adoption.md`；此前 `review.md` 的“全部待决”仅为旧状态。现行 `OWNER_D1_D2_ADOPTED__D3_D4_PENDING__PROTECTION_BLOCKED__NO_READ__V0.0.4_NOT_FROZEN`。

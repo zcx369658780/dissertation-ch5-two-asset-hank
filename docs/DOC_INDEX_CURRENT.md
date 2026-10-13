@@ -7,8 +7,8 @@
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
 | Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 决定、原证据上限及本地工具限制 |
-| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.4 D1/D2已采纳；D3/D4待决；PROTECTION_BLOCKED / NO_READ |
-| V0.0.4 Owner 已决定 D1/D2 | [Owner 采纳记录](../versions/0.0.4/owner_d1_d2_adoption.md)、[原版前审议](../versions/0.0.4/review.md)、[草案](../versions/0.0.4/plan.md) | 北京三文件仅拟核验；完整A16/window威胁不放松；D3/D4待决、NO_READ、未冻结 |
+| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.4 句柄设计已审议；fixture D3/D4 待 Owner；NOT_FROZEN / NO_READ |
+| V0.0.4 Windows 保护可行性 | [Astra 技术审议](../versions/0.0.4/a16_window_feasibility_review.md)、[D1/D2 采纳](../versions/0.0.4/owner_d1_d2_adoption.md)、[原草案](../versions/0.0.4/plan.md) | 句柄链 POTENTIALLY_FEASIBLE/NOT_PROVEN；仅候选 fixture 需 Owner 另批；真实资产 NO_READ |
 | V0.0.3 冻结与验收结果 | [冻结计划](../versions/0.0.3/plan.md)、[独立授权](../versions/0.0.3/authorization.md)、[最终验收](../versions/0.0.3/acceptance.md)、[复盘](../versions/0.0.3/retrospective.md) | freeze 768a3181fcbc…不变，candidate cf74384f1514…，真实读取仍 REQUEST_ONLY |
 | V0.0.2 冻结与最终结论 | [冻结计划](../versions/0.0.2/plan.md)、[授权](../versions/0.0.2/authorization.md)、[验收](../versions/0.0.2/acceptance.md)、[复盘](../versions/0.0.2/retrospective.md) | freeze SHA 4b11c46823e7… 未追改；candidate 8f5457947492…；真实来源认证未获得 |
 | V0.0.1 已冻结计划与结论 | [固定冻结计划](../versions/0.0.1/plan.md)、[实施授权](../versions/0.0.1/authorization.md)、[最终验收](../versions/0.0.1/acceptance.md)、[版本复盘](../versions/0.0.1/retrospective.md) | 冻结提交 6c9a13bd...不变；候选 3260ec39...；仅合成工程 ACCEPT_WITH_OBSERVATIONS |

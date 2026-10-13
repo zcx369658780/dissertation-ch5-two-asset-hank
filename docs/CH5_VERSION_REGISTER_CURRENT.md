@@ -1,6 +1,12 @@
 # 第五章路线图与版本登记
 
-## 2026-10-13 当前：V0.0.4 Owner 已采纳 D1/D2；D3/D4 与保护门仍未闭合
+## 2026-10-13 当前：V0.0.4 句柄安全静态设计已审议，等待 fixture D3/D4 决定
+
+**`FEASIBILITY_DESIGN_REVIEWED__FIXTURE_GATE_REQUIRES_OWNER_D3_D4__PROTECTION_BLOCKED__NO_READ__NOT_FROZEN`。** Owner D1=选择历史 run004 初始北京三元数据及 D2=保持全部 Objective A16/window 威胁范围仍 ADOPTED。Astra 依据 Microsoft 官方 Windows API 文档及[原 A16/窗口合同](../docs/CH5_K1B_C9_OUTPUT_MUTATION_SAFETY_OBJECTIVE_A_OWNER_ADOPTION_20260927.md)核对 Codex `V0.0.4_A16_WINDOW_PROTECTION_FEASIBILITY_DESIGN`，接受**可信根 + 句柄相对打开 + 全链持有**作为 `POTENTIALLY_FEASIBLE/NOT_PROVEN` 的候选。正式[独立可行性审议](../versions/0.0.4/a16_window_feasibility_review.md)记录了旧 Objective A **四种 output mutation** 与新历史元数据**只读窗口**的证据资格不同、不可相互关闭。
+
+**当前仍没有实验 D3/D4 许可、V0.0.4 freeze SHA 或实施授权；真实北京文件 stat/open/read/hash/ACL/probe 与人工 fixture 实验调用均0**。未来若想验证，仅先由 Owner 批准独立、零真实资产、隔离的 fixture D3/D4，再冻结和独立授权；如果环境/祖先隔离不满足则 BLOCKED。D3/D4-real 仍待决，A16 `FAIL_CLOSED`、window `UNACCEPTED`、C9 `PAUSED`、CALL_LEDGER 与 Results FALSE 不变。`NEXT_BASELINE_ADOPTION=UNDECIDED`，V0.0.5 NOT_STARTED。
+
+## 2026-10-13 V0.0.4 D1/D2 采纳后、句柄设计审议前状态（历史）
 
 **`OWNER_D1_D2_ADOPTED__D3_D4_PENDING__PROTECTION_BLOCKED__NO_READ__V0.0.4_NOT_FROZEN`。** Owner 明确选择**历史 run004 初始北京三份元数据**作为拟核验对象（D1），并明确**不缩减完整 Objective A16/window 威胁模型**（D2）；对应正式[Owner D1/D2 采纳记录](../versions/0.0.4/owner_d1_d2_adoption.md)。旧 [Astra 版前审议](../versions/0.0.4/review.md)所写的 D1/D2 待决属于此前快照，现以本条为准。**D3 精确工具/principal/安全证明与保护探测/访问额度、D4 原字节/回执生命周期和公开规则仍待决**。V0.0.4 **没有冻结实施计划或独立执行授权**；不得对历史三目标进行 stat、ACL/reparse/祖先探测、open/read/hash/parse，不得编写读取器、运行测试、模型/科学任务。
 
