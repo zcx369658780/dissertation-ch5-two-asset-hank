@@ -1,0 +1,188 @@
+{
+  "version": "0.0.2",
+  "status": "CODEX_CANDIDATE_PREPARED__WAIT_FINAL_TREE_VALIDATION_AND_ASTRA_ACCEPTANCE",
+  "freeze_sha": "4b11c46823e7cdabc12de8b8036cc5efc2380c52",
+  "freeze_blob": "43171bc6b841695845e7576d7feaa3135b88c588",
+  "authorization_sha": "3ed139aee7563a7033fa02fb933c3b49f24bd6b1",
+  "baseline_commit": "3260ec393dd4d53d6aab6c34d7c0442f09aa79f4",
+  "baseline_tree": "39e7a91ca473ba770bd65518607c3f78f4b9fe24",
+  "candidate_branch": "codex/ch5-v0.0.2-household-source-contract",
+  "candidate_identity": {
+    "commit": "RESOLVE_FROM_ENCLOSING_GIT_COMMIT",
+    "tree": "RESOLVE_FROM_ENCLOSING_GIT_COMMIT_TREE",
+    "reason": "A tracked file cannot contain its own final commit/tree hash. Exact identity and final-tree run receipt are supplied in the external Codex delivery and LOCAL_ONLY delivery.json; do not confuse intermediate test trees with final tree."
+  },
+  "allowed_added_paths": [
+    "src/ch5_two_asset_hank/multi_province/household_source_contract.py",
+    "tests/test_v002_household_source_contract.py",
+    "versions/0.0.2/source_crosswalk.md",
+    "versions/0.0.2/execution.md",
+    "versions/0.0.2/acceptance_summary.json"
+  ],
+  "source_and_crosswalk_sha256": {
+    "src/ch5_two_asset_hank/multi_province/household_source_contract.py": "081b75a5c6dba87de02a4f870ba6eb5ee307ace0d69d71f15d7922a42792dacb",
+    "tests/test_v002_household_source_contract.py": "ed75924cc44d76bf2a691625a988f67e32688164cad6f95247749b5880c81cdb",
+    "versions/0.0.2/source_crosswalk.md": "7333e3c7d72b4a60329711fc49432a93eebb66dab27b834be15980330eaef6fa"
+  },
+  "pre_final_processes": [
+    {
+      "number": 1,
+      "tree": "391fade9a59b6f928cfd2c75796037f12c7e84fa",
+      "start_utc": "2026-10-13T03:58:40.690924+00:00",
+      "end_utc": "2026-10-13T03:58:42.056954+00:00",
+      "elapsed_seconds": 1.375,
+      "exit_code": 2,
+      "sampled_peak_rss_bytes": null,
+      "stdout_sha256": "f763f4eb4f31964789477142d7c06ff606c9295ebde6e478cd7c0bf4f897d739",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "number": 2,
+      "tree": "fb23477acf680ccd96efd4155cb901ceaa2d7ee9",
+      "start_utc": "2026-10-13T04:00:10.161692+00:00",
+      "end_utc": "2026-10-13T04:00:10.822283+00:00",
+      "elapsed_seconds": 0.6559999999590218,
+      "exit_code": 0,
+      "sampled_peak_rss_bytes": null,
+      "stdout_sha256": "442e4b7d6f2aa73c4598aa8714e85342c7635f3dbf026153a40b4645cc02f157",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "number": 3,
+      "tree": "93f51adb9996645bae07ed711b3931300b437c21",
+      "start_utc": "2026-10-13T04:01:03.830838+00:00",
+      "end_utc": "2026-10-13T04:01:04.442561+00:00",
+      "elapsed_seconds": 0.625,
+      "exit_code": 0,
+      "sampled_peak_rss_bytes": 42639360,
+      "stdout_sha256": "3ba4ecff54635e1c6cfbb90b7dd815adbc33469000bac2e50bae6b160da2dbcf",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "number": 4,
+      "tree": "e3a4cafb28daf53e3bb12337cd3abc30891d15e0",
+      "start_utc": "2026-10-13T04:07:19.790465+00:00",
+      "end_utc": "2026-10-13T04:07:20.755974+00:00",
+      "elapsed_seconds": 0.9679999999934807,
+      "exit_code": 0,
+      "sampled_peak_rss_bytes": 43687936,
+      "stdout_sha256": "1136c009e7d1fa01c188a09aecd7d2fb0e1d72d9b54a2819193e6786aead7bb6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "number": 5,
+      "tree": "4c5a28dcdba6dcfce78e8cdb9a011f719c5d7a11",
+      "start_utc": "2026-10-13T04:09:16.784465+00:00",
+      "end_utc": "2026-10-13T04:09:17.597584+00:00",
+      "elapsed_seconds": 0.8120000000344589,
+      "exit_code": 0,
+      "sampled_peak_rss_bytes": 42938368,
+      "stdout_sha256": "25aeed3d155713bc624fe99fcf454d320958d9218152ad92547545926b3a640c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "pytest_budget": 12,
+  "pre_final_process_count": 5,
+  "last_pre_final_result": "62 passed; exit 0",
+  "final_tree_validation": "REQUIRED_BEFORE_PUSH; external final delivery records exact tree/result/receipt digest",
+  "runtime": {
+    "python": "3.11.9",
+    "numpy": "2.4.6",
+    "pytest": "8.2.1",
+    "platform": "Windows AMD64",
+    "command": "<Python311>/python.exe -I -B <LOCAL_ONLY>/ops/launch.py <LOCAL_ONLY>/view-<exact-tree>",
+    "pytest_arguments": [
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "<exact-view>/tests/test_v002_household_source_contract.py"
+    ],
+    "child_environment": {
+      "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1"
+    },
+    "isolation": "candidate package namespace paths; unchanged implementations exported by blob; __init__ export code intentionally not executed; all loaded model implementation __file__ values read back inside exact candidate view"
+  },
+  "storage_bytes_before_final_reports_and_run": {
+    "operational": 14983259,
+    "views": 3295759,
+    "receipts": 2057133,
+    "public": 11472
+  },
+  "storage_limits_bytes": {
+    "operational": 134217728,
+    "views": 33554432,
+    "receipts": 8388608,
+    "public": 262144,
+    "total": 176422912
+  },
+  "time": {
+    "persisted_intake_utc": "2026-10-13T03:56:50.822010+00:00",
+    "exact_first_authority_read_utc": "UNKNOWN",
+    "pre_intake_allowance_seconds": 1800,
+    "conservative_wall_bound_seconds_at_report": 2373.044235944748,
+    "wall_limit_seconds": 10800
+  },
+  "failures_and_corrections": [
+    {
+      "process": 1,
+      "kind": "intentional test-first RED",
+      "detail": "new module absent; collection ImportError; exit 2 retained"
+    },
+    {
+      "processes": [
+        1,
+        2
+      ],
+      "kind": "RSS telemetry unavailable",
+      "detail": "psutil not installed; no install attempted; peak UNKNOWN, no retrospective measurement invented"
+    },
+    {
+      "process": 3,
+      "kind": "telemetry correction and additional tests",
+      "detail": "standard-library Windows GetProcessMemoryInfo; peak 42639360 bytes; 62 tests passed"
+    },
+    {
+      "kind": "pre-publication Git whitespace check failed",
+      "detail": "generated execution/summary used Windows CRLF, raw no-filter Git blobs triggered trailing-whitespace exit 2. No commit/ref/push occurred. Only two new report files normalized to LF; prior bytes and check output retained."
+    },
+    {
+      "kind": "diagnostic display encoding",
+      "detail": "GBK stdout could not print a Unicode minus; original diagnostic stdout/stderr had already been saved. Read from saved UTF-8 output to diagnose; no scientific/test retry."
+    },
+    {
+      "kind": "partial UTF-8 report repair and command sequencing error",
+      "detail": "Repair helper read execution.md using default GBK and failed after writing summary. PowerShell wrapper incorrectly continued dependent pytest process 5. Its 62 PASS belongs to partial report tree, not final delivery. Original report bytes retained; correction resumed with explicit UTF-8 and sequential success checks; all 5 processes charged."
+    }
+  ],
+  "protection": {
+    "original_head": "a1db8c114dec0ab69d69a5576e153a7f868cba0e",
+    "original_index_sha256": "28058a7e2d9ab773c5813205c75999e6c221533aeae0b9bb094b9a83451bf7cc",
+    "staged_original": 0,
+    "dirty_count": 8,
+    "untracked_existing_count": 5405,
+    "ignored_existing_count": 4553,
+    "verification": "index and all eight dirty byte hashes plus existing untracked/ignored path lists compared; new five files and own evidence root excluded only from new-path comparison",
+    "limitation": "existing untracked/ignored contents were not exhaustively read or hashed; permissions/ancestral controls not authenticated"
+  },
+  "local_only_receipt_manifest_sha256": "1e69be707942485a53e033d713ac2bacb36479bb20f486b958781c41c72b30e0",
+  "raw_receipt_access": "LOCAL_ONLY; original stdout/stderr/protection inventories not uploaded",
+  "evidence_levels": {
+    "INDEPENDENTLY_VERIFIED_GITHUB_CODE": "PENDING_ASTRA; no claim of independent review of this candidate",
+    "CODEX_REPORTED_WITH_LOCAL_RECEIPTS": "synthetic local tests, module isolation, Git and protection checks",
+    "UNKNOWN": [
+      "real producer authentication",
+      "real source seals",
+      "economic labor/population/year/price/calendar bridge",
+      "production callback",
+      "real scientific convergence"
+    ]
+  },
+  "prohibited_runtime_calls": 0,
+  "real_data_reads": 0,
+  "science_model_runs": 0,
+  "final_acceptance": "NOT_DECLARED_BY_CODEX",
+  "last_measured_pre_final_peak_rss_bytes": 42938368
+}
