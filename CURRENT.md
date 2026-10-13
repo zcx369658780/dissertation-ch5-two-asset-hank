@@ -1,3 +1,14 @@
+# 第五章当前状态：V0.0.5 方案已审议，等待 Owner 可信根资源
+
+2026-10-13 `REVIEWED__ACCEPT_EXECUTION_PROPOSAL__OWNER_SUPPLIED_ANCHOR_REQUIRED__NO_IMPLEMENTATION_AUTHORIZED`。Codex已提交 V0.0.5 有界只读草案；Astra审议选定优先 **A：Owner/可信平台已经存在并可独立证明用途和身份的专用可弃用卷**，其后才可评估 **C：已验证根句柄下受限首次创建**；若无A则讨论 **B：经另行供应/许可的独立Windows环境**。详见 `versions/0.0.5/review.md`。现在没有获得任何具体外部资源锚，不能用盘符/GUID/新目录名自证可信；**V0.0.5 仍 DRAFT/NOT_FROZEN，不签发实施授权，不对根、卷、ACL或真实资产探测，也不创建目录/VM/fixture**。
+
+V0.0.4 `CLOSED__BLOCKED__G0_FIXTURE_ISOLATION_UNPROVEN__NO_EXPERIMENT__WITH_OBSERVATIONS`，旧D3-fixture/D4-fixture和实验预算关闭。V0.0.3 accepted candidate `cf74384f151427f0b7071ac0461cede6ad6cdf11` 仅建议未来代码基线，`NEXT_BASELINE_ADOPTION=UNDECIDED`，旧 checkout/main/index/dirty 保护不变。Owner D1历史run004初始北京三元数据拟核验、D2完整A16/window威胁保留，但D3-real/D4-real无授权；真实stat/open/read/hash/ACL/reparse/probe禁止。
+
+C9 PAUSED、CALL_LEDGER_UNRESOLVED、Objective A16 UNRESOLVED/FAIL_CLOSED、window UNACCEPTED、model_activation=False、Results FALSE，人口/人均及不 N=P/3、旧 CLOSED 数据/科学预算均保持。V0.0.1–V0.0.3 仍受限ACCEPT/CLOSED；V0.0.6 NOT_STARTED，工作流V1.2不变。
+
+---
+# 以下为 V0.0.5 版前提案提交前状态（历史全文保留）
+
 # 第五章当前状态：V0.0.5 已启动可信根版前规划 / 无实施许可
 
 2026-10-13 Owner 明确启动 V0.0.5，聚焦 V0.0.4 首次创建前无法证明可信独立 fixture root 及所有可变祖先与真实资产隔离的问题。Astra 发布 `versions/0.0.5/plan.md` **DRAFT**，状态 `DRAFT__WAIT_CODEX_TRUSTED_ROOT_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`。Codex 下一步仅可有界审阅已有 GitHub 代码/Windows 官方平台材料与允许的 Git 元数据，提出首选/备选可信 root 方案、证明义务、Owner 环境选择及 bootstrap-only 后继门。不得创建/探测独立卷/fixture，也不得检测受保护模型及任何真实祖先/数据资产。

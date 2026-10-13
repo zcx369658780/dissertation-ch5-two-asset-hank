@@ -1,6 +1,12 @@
 # 第五章路线图与版本登记
 
-## 2026-10-13 当前：V0.0.5 已由 Owner 启动版前规划，专注可信独立实验根
+## 2026-10-13 当前：V0.0.5 可信根路线审议完成，等待 Owner 提供独立资源
+
+**`REVIEWED__ACCEPT_EXECUTION_PROPOSAL__OWNER_SUPPLIED_ANCHOR_REQUIRED__NO_IMPLEMENTATION_AUTHORIZED`**。Astra 已审议 Codex `V0.0.5_TRUSTED_ROOT_EXECUTION_PROPOSAL_DRAFT`，将 **A（Owner/平台已有可弃用专用卷）+ C（根句柄受限相对创建）** 定为首选，**B（由可信供应方提供独立环境）** 定为备选。其核心前置是能够独立证明首次根身份与全部可变祖先的真实资产隔离，不能靠卷 GUID/目录名/创建后身份自证。完整[版前审议与 Owner 资源待决](../versions/0.0.5/review.md)。
+
+**当前没有 Owner 提供的真实独立资源/供应锚，也没有 V0.0.5 正式冻结/独立实施许可。** 不允许磁盘/根/ACL探测、卷/VM创建、fixture或旧12场景、真实 run004 读取；Codex 无须继续重复只读调查。V0.0.4 `CLOSED/BLOCKED`，旧预算与授权不恢复。D1/D2保持，D3-real/D4-real未批准；`NEXT_BASELINE_ADOPTION=UNDECIDED`，A16 FAIL_CLOSED、C9 PAUSED、Results FALSE不变。V0.0.6 NOT_STARTED。
+
+## 2026-10-13 V0.0.5 版前 DRAFT 等待 Codex（历史）
 
 **状态 `DRAFT__WAIT_CODEX_TRUSTED_ROOT_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`。** Owner 明确要求开启 V0.0.5，解决上版 G0 **可信首次创建锚与可变祖先隔离证明**，而非重复12场景、继续旧 V0.0.4 fixture 执行或自动读取 run004。Astra 发布 [V0.0.5 版前草案](../versions/0.0.5/plan.md)，当前仅 Codex 在已有允许的 SOURCE_ONLY/非破坏性 Git 身份范围内提交**可信根来源路线、证明义务、Owner 最小独立环境选择与后续 bootstrap-only 验收门**；无实施/测试/根探测/隔离环境创建许可。
 
