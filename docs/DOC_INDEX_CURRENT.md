@@ -7,8 +7,8 @@
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
 | Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 决定、原证据上限及本地工具限制 |
-| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.2 CLOSED；V0.0.3 已由 Owner 启动版前协商、未冻结和未授权实施 |
-| V0.0.3 计划草案 | [Corrected 来源身份与安全读取决策准备](../versions/0.0.3/plan.md) | 只读提交 Codex 执行方案；NEXT_BASELINE_ADOPTION=UNDECIDED；真实数据/科学预算0 |
+| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.2 CLOSED；V0.0.3 已冻结 DOCUMENT_ONLY 且有独立实施许可，尚无执行结果 |
+| V0.0.3 冻结计划与授权 | [不可变冻结计划](../versions/0.0.3/plan.md)、[Astra 独立授权](../versions/0.0.3/authorization.md) | 冻结 768a3181fcbc…；源码基线 V0.0.2 8f5457947492…；仅文档，protected/科学0 |
 | V0.0.2 冻结与最终结论 | [冻结计划](../versions/0.0.2/plan.md)、[授权](../versions/0.0.2/authorization.md)、[验收](../versions/0.0.2/acceptance.md)、[复盘](../versions/0.0.2/retrospective.md) | freeze SHA 4b11c46823e7… 未追改；candidate 8f5457947492…；真实来源认证未获得 |
 | V0.0.1 已冻结计划与结论 | [固定冻结计划](../versions/0.0.1/plan.md)、[实施授权](../versions/0.0.1/authorization.md)、[最终验收](../versions/0.0.1/acceptance.md)、[版本复盘](../versions/0.0.1/retrospective.md) | 冻结提交 6c9a13bd...不变；候选 3260ec39...；仅合成工程 ACCEPT_WITH_OBSERVATIONS |
 | 当前/历史计划、结果、验收、复盘 | 版本登记中的具体入口 | 冻结版固定 SHA；代码候选与文档分支可能分离，须按真实提交读取 |
@@ -19,7 +19,7 @@
 | 历史归档覆盖与测试 | [归档安全摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 历史检索结果及Owner补充新会话测试分开 |
 | 上传用稳定索引 | [PROJECT_SOURCE_INDEX_CH5](PROJECT_SOURCE_INDEX_CH5.md) | 只在仓库/发布分支/入口改变时通常重传 |
 
-2026-10-13 Owner 已启动 V0.0.3 版前规划，当前 DRAFT，只等 Codex 只读方案；无受保护数据/科学运行或代码实施授权。
+2026-10-13 V0.0.3 经 Codex 执行草稿与 Astra 审议已冻结于 768a3181fcbc9d367ccce08b1d69458353a48229，独立文档许可于 2ec13ea41e7bb86eacb19f4601d243a1298bd4bd 发布；Codex 可以自主实施三文件 DOCUMENT_ONLY 后集中交付。实际 protected/科学0，当前未有新候选或验收。
 
 2026-10-13 Owner 已同意 V0.0.2 复盘后的轻量 V1.2 工作流修订：只增补工程失败依赖检查、编码/换行、最终候选树回执与资源 UNKNOWN 分账；未立 V0.0.3、未修改模型科学合同与冻结原证。现行规则见本表首行。
 

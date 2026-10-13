@@ -1,3 +1,14 @@
+# 第五章当前状态：V0.0.3 DOCUMENT_ONLY 冻结并获独立实施许可
+
+2026-10-13：`FROZEN__ASTRA_APPROVED_EXECUTION__WAIT_CODEX_IMPLEMENTATION`。Owner 已启动 V0.0.3，经 Codex 版前提案与 Astra 来源核查，正式冻结 `versions/0.0.3/plan.md` 于提交 `768a3181fcbc9d367ccce08b1d69458353a48229`、plan blob `1bf80332586a4e3beeeb355d90b5ec049c7e503c`，独立授权 `versions/0.0.3/authorization.md` 于 `2ec13ea41e7bb86eacb19f4601d243a1298bd4bd`。仅批准三份版本文档的 SOURCE-CONTRACT/Owner 读取申请及未来门设计，**没有实际科学/受保护读取权限**。此状态只代表许可就绪，尚无本版交付、测试或已通过证据。
+
+候选 `NEXT_BASELINE_ADOPTION=ADOPTED_FROM_EXACT_SHA` 为 V0.0.2 固定 accepted commit `8f5457947492eef552f4261f8630c6c886af9fa5`、tree `af2a6a3d85f7525d480ad7da1916eaa25bf349b1`，拟新分支 `codex/ch5-v0.0.3-corrected-producer-contract`。仅用它作独立三文档单父候选树起点，不 merge main/治理分支，不改模型旧 checkout HEAD/index/8 dirty 或原 untracked/ignored。历史 run004 在特定范围内 31/31 corrected household/KFE/aggregate 接受**不等于当前磁盘来源认证**；北京未来的三文件元数据申请只是 `REQUEST_ONLY`，3次/2.125MiB 建议**非本版预算**。
+
+本版 DOCUMENT_ONLY 墙钟<=90分钟；pytest/新模型/真实数据/已 CLOSED 科学旧任务调用均0；操作性32MiB、限定三文档视图1MiB、私有回执2MiB、公开文档128KiB、新建总35.125MiB。Codex 完成集中候选与脱敏证据后 `WAIT_ASTRA_FINAL_ACCEPTANCE`，不自动 V0.0.4。V0.0.1/V0.0.2 原限定 ACCEPT/CLOSED；`C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、A16 `FAIL_CLOSED`、`window UNACCEPTED`、`model_activation=False`、`Results FALSE`、旧预算、人口/人均与不 `N=P/3` 均保持。真实 source/年份价格/劳动单位 UNKNOWN；工作流 V1.2 仍有效。
+
+---
+# 以下为 V0.0.3 版前规划时原状态（历史全文保留）
+
 # 第五章当前状态：V0.0.3 版前规划（未冻结）
 
 2026-10-13 Owner 已明确启动 V0.0.3；Astra 已发布 `versions/0.0.3/plan.md` DRAFT，状态 `DRAFT__WAIT_CODEX_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`。目标为 corrected household 真实 producer 的 policy、same-Q mass、checkpoint、省份/时点、收益联合来源契约和 Owner 最小读取申请提案；**当前只有 Codex 只读核查/执行方案权限**，不准读取 protected 文件、写代码、运行测试/科学模型或生成候选。

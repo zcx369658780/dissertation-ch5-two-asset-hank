@@ -1,6 +1,18 @@
 # 第五章路线图与版本登记
 
-## 2026-10-13 当前：V0.0.3 由 Owner 启动版前规划，等待 Codex（未冻结）
+## 2026-10-13 当前：V0.0.3 DOCUMENT_ONLY 已冻结并获 Astra 实施授权
+
+**现行状态 `FROZEN__ASTRA_APPROVED_EXECUTION__WAIT_CODEX_IMPLEMENTATION`。** Owner 已启动第三个版本；Codex 提交并停止于 `V0.0.3_EXECUTION_PROPOSAL_DRAFT`，Astra 核实 corrected producer/run004 历史接受及当前 GitHub 源码后采纳 `DOCUMENT_ONLY` 三文件方案、无科学/真实数据许可的决策包。该状态**只代表文档实施有权限，尚无 Codex 写入、通过测试或候选结果可接受**。
+
+- 正式冻结计划：[V0.0.3 plan](../versions/0.0.3/plan.md)；**固定 freeze SHA `768a3181fcbc9d367ccce08b1d69458353a48229`**，plan blob `1bf80332586a4e3beeeb355d90b5ec049c7e503c`。旧 DRAFT `7c00b7d301550d712cecc5bc8ccdf00f69056818` 仅 Git 历史。
+- Astra 独立实施授权：[V0.0.3 authorization](../versions/0.0.3/authorization.md)；固定提交 `2ec13ea41e7bb86eacb19f4601d243a1298bd4bd`；裁决 `ASTRA_APPROVED_EXECUTION__CH5_V0.0.3__DOCUMENT_ONLY`。
+- 本版固定 `NEXT_BASELINE_ADOPTION=ADOPTED_FROM_EXACT_SHA`：单父候选起点 **V0.0.2 accepted commit `8f5457947492eef552f4261f8630c6c886af9fa5`**，tree `af2a6a3d85f7525d480ad7da1916eaa25bf349b1`；独立候选分支 `codex/ch5-v0.0.3-corrected-producer-contract`。这不等于合并 main、修改本地原 checkout/dirty 或真实来源晋级。
+- 仅新增三个文档：`versions/0.0.3/producer_source_contract.md`、`owner_read_request.md`、`execution.md`；Astra 负责后续最终验收与复盘。无代码、validators、test、真实 source-loader 或默认生产修改。
+- **本版硬预算**：总墙钟<=90分钟；pytest/HJB/KFE/31省消费者/C8/C9/C10/旧任务/真实 protected 文件读取 **均0**。新增存储：Git操作32MiB、三文档 candidate_view 1MiB、LOCAL_ONLY回执2MiB、公开文档128KiB、总35.125MiB；失败后 fail-fast、UTF-8/LF、精确候选树/单父远端回读。
+- **run004 北京未来拟议读取包只是 Owner 待决 `REQUEST_ONLY`**：三个特定文件、候选3次/2.125MiB/零重试是未来申请条件，**不是 V0.0.3 的实际读取许可或当前盘存在/哈希验证**。历史 run004 31/31 HJB/KFE/aggregate 接受只在原实验范围成立。
+- V0.0.1 与 V0.0.2 继续原限定 ACCEPT/CLOSED；`C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、Objective A16 `FAIL_CLOSED`、`window UNACCEPTED`、`model_activation=False`、`Results FALSE`、全部旧 CLOSED 科学/数据预算和人口/人均不 `N=P/3` 不变。V0.0.4 NOT_STARTED。真实认证、劳动人口经济量纲、外部年份价格仍 UNKNOWN。
+
+## 2026-10-13 V0.0.3 版前 DRAFT 状态（历史，未授权实施）
 
 `DRAFT__WAIT_CODEX_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`。Owner 已明确启动 V0.0.3；Astra 已发布 [V0.0.3 corrected producer 联合身份与安全读取草案](../versions/0.0.3/plan.md)。Codex **仅只读**编制执行方案；暂无冻结计划、独立实施许可、模型/tests 或真实 protected 文件读取权。V0.0.1 与 V0.0.2 均按原限定资格 ACCEPT/CLOSED；V0.0.2 固定候选 `8f5457947492eef552f4261f8630c6c886af9fa5` 仅为建议下一版代码/文档来源基线，`NEXT_BASELINE_ADOPTION=UNDECIDED`，原工作树与 main 不作自动合并。
 
