@@ -1,4 +1,10 @@
 # 第五章路线图与版本登记
+
+## 2026-10-13 现行：第三阶段 V0.0.1 版前协商（未冻结）
+
+Owner 已明确手动启动第三阶段并暂定首版为 V0.0.1。Astra 已发布 [V0.0.1 候选计划](../versions/0.0.1/plan.md)，状态为 `DRAFT__WAIT_CODEX_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`。当前仅请求 Codex 只读提交执行方案草稿，Astra 审议后才能正式冻结计划、登记冻结 SHA 及决定 `ASTRA_APPROVED_EXECUTION`。草案发布不是旧预算重置、科学运行许可或工程执行开始。现阶段无冻结版本，无开发 ISSUED；冻结版 plan/候选/acceptance/retrospective 仍待产生。科学保护、数据门与关闭旧任务不变。
+
+## 2026-10-12 第二阶段迁移记录（历史截点）
 迁移后首版：**尚未制定，等待第三阶段**。Owner手动启动；本轮没有新版本号、批准、执行或通过记录。
 
 ## 路线图入口
