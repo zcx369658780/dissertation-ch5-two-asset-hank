@@ -1,5 +1,16 @@
 # 第五章路线图与版本登记
 
+## V1.1 后续版本登记约定（2026-10-13，规范性说明）
+
+本规则在 V0.0.1 `CLOSED__ACCEPT__SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS` 后生效，**不重写该版的冻结计划、验收、复盘或历史版本登记**；新版本未启动。与旧记录中“待创建”的时态冲突时，优先按上方最近状态判读。
+
+每个新版本由 Owner 明确启动；至少登记：版本 ID/状态及 Owner 启动出处、Astra 草案与 Codex 执行方案、**正式冻结计划的不可变 SHA/blob**、授权 SHA/边界、模型代码基线 commit/tree、真实模型 worktree/remote、候选 commit/tree 与分支、允许的变更路径、明确独立的工程/科学/数据/操作性存储/脱敏证据预算、测试与证据资格、执行报告和原始本地回执身份、Astra 独立验收、复盘及终态。没有必要的资源上限可写 NOT_APPLICABLE，不为形式主义机械复制旧预算。
+
+**增加独立字段 `NEXT_BASELINE_ADOPTION`**：`UNDECIDED` / `ADOPTED_FROM_EXACT_SHA` / `NOT_ADOPTED`，含依据和固定 commit；候选接受不自动意味着进入 `main` 或下一版代码基线。可分开登记 `MERGED_TO_MAIN` 的实际 Git 证明，缺失则 `NOT_MERGED/UNKNOWN`。文档分支与代码分支分离时，执行报告必须链接其**真实存在的固定候选 commit**，不能使用指向文档分支而不存在文件的相对路径。
+
+集中交付至少含实际代码与 Git 可核身份、简短脱敏测试/资源/保护摘要及私有原始回执的哈希和访问界限；Astra 在验收中显式区分 `INDEPENDENTLY_VERIFIED_GITHUB_CODE`、`CODEX_REPORTED_WITH_LOCAL_RECEIPTS`、`UNKNOWN`。失败、Owner 限定例外及预算使用如实累积记录，冻结计划不事后重写。详见 [V1.1工作流](CH5_ASTRA_WORKFLOW_CURRENT.md)。
+
+
 ## 2026-10-13 现行：V0.0.1 最终接受并关闭
 
 - **状态：`CLOSED__ACCEPT__SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS`**。Astra 已独立核对 Github 固定候选身份、三文件增量、源码/测试与执行报告，接受合成工程范围，保留本地原始回执未直接复核的局限。
