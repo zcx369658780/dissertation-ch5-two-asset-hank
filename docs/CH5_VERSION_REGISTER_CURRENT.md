@@ -1,5 +1,12 @@
 # 第五章路线图与版本登记
 
+## 2026-10-13 当前：V0.0.3 由 Owner 启动版前规划，等待 Codex（未冻结）
+
+`DRAFT__WAIT_CODEX_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`。Owner 已明确启动 V0.0.3；Astra 已发布 [V0.0.3 corrected producer 联合身份与安全读取草案](../versions/0.0.3/plan.md)。Codex **仅只读**编制执行方案；暂无冻结计划、独立实施许可、模型/tests 或真实 protected 文件读取权。V0.0.1 与 V0.0.2 均按原限定资格 ACCEPT/CLOSED；V0.0.2 固定候选 `8f5457947492eef552f4261f8630c6c886af9fa5` 仅为建议下一版代码/文档来源基线，`NEXT_BASELINE_ADOPTION=UNDECIDED`，原工作树与 main 不作自动合并。
+
+本版针对真实 corrected producer 的 policy/mass/Q/checkpoint/收益/省份联合身份合同与 Owner 最小受保护读取申请包，**不再叠加模拟 seal**。旧 `C9 PAUSED`、A16 `FAIL_CLOSED`、`CALL_LEDGER_UNRESOLVED`、`Results FALSE`、人口/人均决策及所有旧数据/科学 0 新许可均保持。V0.0.4 NOT_STARTED。
+
+
 ## V1.2 后续交付与证据登记补充（2026-10-13，规范性说明）
 
 本节为 V0.0.2 复盘后的**长期治理规则**，补充 V1.1 登记要求，不改变 V0.0.1 / V0.0.2 冻结计划、实施授权、已有执行报告、验收和复盘原件。**V0.0.3 是否启动仍以最近状态与 Owner 指令为准**，本段不构成派单。

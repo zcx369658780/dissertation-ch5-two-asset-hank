@@ -1,3 +1,14 @@
+# 第五章当前状态：V0.0.3 版前规划（未冻结）
+
+2026-10-13 Owner 已明确启动 V0.0.3；Astra 已发布 `versions/0.0.3/plan.md` DRAFT，状态 `DRAFT__WAIT_CODEX_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`。目标为 corrected household 真实 producer 的 policy、same-Q mass、checkpoint、省份/时点、收益联合来源契约和 Owner 最小读取申请提案；**当前只有 Codex 只读核查/执行方案权限**，不准读取 protected 文件、写代码、运行测试/科学模型或生成候选。
+
+V0.0.1、V0.0.2 保持已归档受界 ACCEPT/CLOSED。V0.0.2 固定 candidate `8f5457947492eef552f4261f8630c6c886af9fa5` / tree `af2a6a3d85f7525d480ad7da1916eaa25bf349b1` 仅是版前推荐，不自动并入 main 或修改本地原分支/HEAD/index。V0.0.3 的 `NEXT_BASELINE_ADOPTION=UNDECIDED`；实际 local dirty/untracked/ignored 需 Codex 本轮再次报告，网页不能独立盘验。
+
+已有 corrected fixed checkpoint 历史接受≠当前盘上真实来源认证。旧 `C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、A16 `UNRESOLVED/FAIL_CLOSED`、`window UNACCEPTED`、`model_activation=False`、`Results FALSE`、科学数据 CLOSED 预算与人口/人均不 `N=P/3` 均保持，经济单位/真实来源/外部年份价格仍 UNKNOWN。V0.0.4 NOT_STARTED。工作流 V1.2 见 `docs/CH5_ASTRA_WORKFLOW_CURRENT.md`，目录 `docs/DOC_INDEX_CURRENT.md`。
+
+---
+# 以下为 V0.0.2 关闭时状态（历史全文原样保留）
+
 # 第五章当前状态：V0.0.2 来源契约/合成工程限定接受并关闭
 
 2026-10-13，`CLOSED__ACCEPT__SOURCE_CONTRACT_AND_SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS`。冻结计划 `4b11c46823e7cdabc12de8b8036cc5efc2380c52` / blob `43171bc6b841695845e7576d7feaa3135b88c588` 不可追改，授权 `3ed139aee7563a7033fa02fb933c3b49f24bd6b1`。候选 commit `8f5457947492eef552f4261f8630c6c886af9fa5`，tree `af2a6a3d85f7525d480ad7da1916eaa25bf349b1`，parent `3260ec393dd4d53d6aab6c34d7c0442f09aa79f4`；GitHub 独立核对仅新增五份许可文件，代码分支 `codex/ch5-v0.0.2-household-source-contract` 与 candidate 一致，未合并 main。
