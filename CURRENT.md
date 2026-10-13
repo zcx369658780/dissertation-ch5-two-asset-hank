@@ -1,3 +1,10 @@
+# 第五章当前状态：第三阶段 V0.0.1 版前协商，尚未冻结
+2026-10-13 Owner 已正式启动第三阶段的版本规划，暂定 V0.0.1。Astra 已将 `versions/0.0.1/plan.md` 作为候选计划发布至文档分支；当前 `DRAFT__WAIT_CODEX_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`。Codex 仅可有界只读调查并向 Owner/网页 Astra 提交执行方案草稿。Astra 审议、固定冻结计划 SHA 与明确批准前不得写代码、执行测试或科学模型。GitHub 文档发布不改变本地 HEAD、dirty 和科学许可。C9、A16、Results、劳动桥未知及关闭旧账本保持。
+现行工作流：docs/CH5_ASTRA_WORKFLOW_CURRENT.md；动态目录：docs/DOC_INDEX_CURRENT.md；版本登记：docs/CH5_VERSION_REGISTER_CURRENT.md。新 Codex 只读接收已由 Owner 回报，`app projectId=null` 与 QMD/Basic Memory 对新会话的可用性仍未知，不冒充环境通过。
+
+---
+# 以下为 2026-10-12 第二阶段迁移旧状态（历史）
+
 # 第五章当前状态：迁移交接完成后等待Owner第三阶段
 2026-10-12。现行职责与执行方式见 docs/CH5_ASTRA_WORKFLOW_CURRENT.md；动态正文入口 docs/DOC_INDEX_CURRENT.md，迁移历史原证见 docs/CH5_ASTRA_MIGRATION_HANDOFF_20261012.md；本次Codex实时封存及手工接收入口见 docs/CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md，启动Prompt见 docs/CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md。WAIT_OWNER_PHASE3；新会话尚未实际接收。
 最新接受为scripts/tools metadata门ACCEPT/CLOSED；末binding门DELIVERY_INCOMPLETE / NOT_ACCEPTED / CLOSED（原turn308677/600000ms未超预算）。完整劳动桥/经济单位/科学运行未接受。
