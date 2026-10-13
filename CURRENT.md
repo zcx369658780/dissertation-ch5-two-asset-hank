@@ -1,3 +1,14 @@
+# 第五章当前状态：V0.0.4 G0 隔离阻塞关闭
+
+2026-10-13：`CLOSED__BLOCKED__G0_FIXTURE_ISOLATION_UNPROVEN__NO_EXPERIMENT__WITH_OBSERVATIONS`。Codex 报告未能在首次创建之前建立可信独立 fixture 创建锚，按冻结 G0 停止。人工 fixture、12场景、实验进程、模型/真实资产操作与 V0.0.4 候选全部未发生；API 导出存在不代表 Windows 保护行为通过。Astra 仅接受**安全停点**；本地执行记录与 HEAD/index/dirty 保全来自 Codex 报告，网页未接触本机原资产/收据。
+
+冻结 `1b825948e69fcdfd30c1826be023d6963d2e9b25` 和独立授权 `7955fbbd1a5bc770124d3819a15f70638a4972a2` 保持原件。正式验收与复盘：`versions/0.0.4/acceptance.md`、`retrospective.md`。PowerShell 一次失败后仍继续只读检查的 V1.2 偏差保留。本版授权不延期、不得据此自动重试。
+
+D1 历史 run004 北京元数据拟核验对象及 D2 完整 A16/window 威胁范围仍采纳；D3-real/D4-real 未授权；真实资产读取/探测仍禁止。A16 UNRESOLVED/FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、旧科学预算、人口/人均及不 N=P/3 继续。V0.0.5 NOT_STARTED；工作流 V1.2 不变。
+
+---
+# 以下为 V0.0.4 获实施授权但未触发 G0 时的历史状态
+
 # 第五章当前状态：V0.0.4 隔离 fixture 试验已冻结并获独立许可
 
 2026-10-13 `FROZEN__ASTRA_APPROVED_EXECUTION__WAIT_CODEX_ISOLATED_FIXTURE`。Owner 已批准实验级 D3-fixture/D4-fixture 受限实施，仅支持人工合成 Windows 句柄链/祖先替换防护的独立 fixture 试验。正式 freeze `1b825948e69fcdfd30c1826be023d6963d2e9b25`、plan blob `d5b6bbfd6b3b7146d2b9ab4a458ab75d666e1a91`；独立 authorization `7955fbbd1a5bc770124d3819a15f70638a4972a2`。D1 历史 run004 初始北京三文件选择与 D2 完整 A16/window 威胁模型均保持；**D3-real/D4-real 未批准，任何真实被保护文件/祖先的 stat/exists/ACL/reparse/open/read/hash/parse 0 权限**。

@@ -1,6 +1,14 @@
 # 第五章路线图与版本登记
 
-## 2026-10-13 当前：V0.0.4 synthetic fixture 试验已正式冻结并获独立实施许可
+## 2026-10-13 当前：V0.0.4 按 G0 安全阻塞关闭
+
+**`CLOSED__BLOCKED__G0_FIXTURE_ISOLATION_UNPROVEN__NO_EXPERIMENT__WITH_OBSERVATIONS`**。Codex 报告首次可信创建锚与 fixture 隔离未证明，依冻结 G0 在创建前停下；12场景全部未运行，两项 oracle 未验证，无新代码候选。Astra 接受安全停点，**不接受工程/安全保护 PASS**；本地零操作和原工作树保全仅由 Codex 报告。
+
+[正式验收](../versions/0.0.4/acceptance.md)与[版本复盘](../versions/0.0.4/retrospective.md)已归档。冻结计划 `1b825948e69fcdfd30c1826be023d6963d2e9b25`、blob `d5b6bbfd6b3b7146d2b9ab4a458ab75d666e1a91` 与独立授权 `7955fbbd1a5bc770124d3819a15f70638a4972a2` 不追改。流程偏差：PowerShell 首次 Git tree 表达式失败后仍继续只读检查，违反 V1.2，原样记录。
+
+D1/D2 继续已采纳；D3-real/D4-real 未批准，真实资产 NO_READ；A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、Results FALSE 保持。V0.0.5 NOT_STARTED。
+
+## 2026-10-13 V0.0.4 冻结获授权时状态（历史）
 
 **`FROZEN__ASTRA_APPROVED_EXECUTION__WAIT_CODEX_ISOLATED_FIXTURE`**。Owner D1（历史 run004 北京三元数据拟核验对象）及 D2（完整 Objective A16/window）已采纳；进一步明确批准**实验级 D3-fixture/D4-fixture**，即**仅可弃用人工 fixture 的 Windows 句柄保护试验**及其 LOCAL_ONLY/脱敏证据边界。与真实文件相关的 D3-real/D4-real **没有批准，仍 NO_READ**。
 
