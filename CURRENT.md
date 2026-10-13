@@ -1,3 +1,14 @@
+# 第五章当前状态：V0.0.4 版前 DRAFT（等待 Codex）
+
+2026-10-13 Owner 已明确启动 V0.0.4 规划；V1.2 工作流正文已经覆盖 fail-fast、UTF-8/LF 和准确树回执，不在本阶段重复修改。Astra 发布 `versions/0.0.4/plan.md` 草案，当前 `DRAFT__WAIT_CODEX_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`。研究重点为 V0.0.3 联合来源合同下 run004 初始北京三文件元数据门的可信锚、Objective A16/window/权限保护与 Owner 具体取舍。**本次只允许 Codex 有界只读公开源码/历史科学文档和 Git 元数据，不能 stat/open/read 受保护资产，不写实现或运行测试/模型/旧任务。**
+
+V0.0.3 仍 `CLOSED__ACCEPT__DOCUMENTARY_SOURCE_CONTRACT_ONLY__WITH_OBSERVATIONS`，其候选 `cf74384f151427f0b7071ac0461cede6ad6cdf11` / tree `372c693ca3dccea716ae8caef382f513e5a2316e` 是推荐而非已采纳的 V0.0.4 基线，`NEXT_BASELINE_ADOPTION=UNDECIDED`，main/本地旧 HEAD/index/dirty 不动。历史 run004 北京 `sealed_manifest.json`、`province_terminal_receipt.json` 和 `native_initialization_receipt.json` **仅 REQUEST_ONLY/NOT_AUTHORIZED**，拟议3次/2.125MiB/零重试不能因 Owner 启动版本而自动支用；真实现时文件存在性/可信认证仍 UNKNOWN。
+
+V0.0.1/V0.0.2 维持原有限 ACCEPT/CLOSED。旧 `C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、Objective A16 `UNRESOLVED/FAIL_CLOSED`、`window UNACCEPTED`、`model_activation=False`、`Results FALSE`、旧 CLOSED 预算、人口/人均和不 `N=P/3` 均不变。劳动经济单位、人口分母、外部年份/价格日历及真实多省模型来源未认证。V0.0.5 NOT_STARTED。当前工作流 `docs/CH5_ASTRA_WORKFLOW_CURRENT.md` (V1.2)，目录 `docs/DOC_INDEX_CURRENT.md`。
+
+---
+# 以下为 V0.0.3 关闭状态（历史，原文完整保留）
+
 # 第五章当前状态：V0.0.3 DOCUMENT_ONLY 验收关闭
 
 2026-10-13 `CLOSED__ACCEPT__DOCUMENTARY_SOURCE_CONTRACT_ONLY__WITH_OBSERVATIONS`。Astra 按冻结 `768a3181fcbc9d367ccce08b1d69458353a48229`（plan blob `1bf80332586a4e3beeeb355d90b5ec049c7e503c`）、独立授权 `2ec13ea41e7bb86eacb19f4601d243a1298bd4bd` 独立审查 GitHub 候选 `cf74384f151427f0b7071ac0461cede6ad6cdf11`，tree `372c693ca3dccea716ae8caef382f513e5a2316e`，单父 `8f5457947492eef552f4261f8630c6c886af9fa5`。仅三份获批 `versions/0.0.3/` 文档新增，固定引用14/14公开 GitHub blob 匹配；候选不 merge main，不修改原本地 checkout。此 PASS 仅意味着 corrected producer 路线、联合证据信任链、下一门拒绝合同和 Owner 读取请求的文档设计可接受，**不说明当下真实来源认证或数据读取已通过**。

@@ -1,5 +1,12 @@
 # 第五章路线图与版本登记
 
+## 2026-10-13 当前：V0.0.4 已由 Owner 启动版前协商（未冻结）
+
+**`DRAFT__WAIT_CODEX_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`**。Owner 已同意启动 V0.0.4，Astra 经 V1.2/前版复盘核查判定：现行规则已包含依赖失败即停，**暂不升级工作流版本**；执行落实问题由下一版方案要求具体 fail-fast 手段。当前仅允许 Codex 有界只读源码/公开科学合同/Git 元数据审查并提交 [V0.0.4 北京历史元数据门草案](../versions/0.0.4/plan.md)所要求的执行方案。
+
+本版目标是把 V0.0.3 的 corrected producer/source 联合合同推进到**可由 Owner 明确选择或拒绝的 run004 北京单省元数据限定读取门**，并判断 A16/window/权限硬门是否可闭合。V0.0.3 候选 `cf74384f151427f0b7071ac0461cede6ad6cdf11`，tree `372c693ca3dccea716ae8caef382f513e5a2316e` 只是新版本推荐基线，`NEXT_BASELINE_ADOPTION=UNDECIDED`。**用户启动 V0.0.4 并非已批准北京3文件读取，候选3次/2.125MiB/零重试仍 REQUEST_ONLY，实际读取0次。** V0.0.1–V0.0.3 已关闭且证据资格不升级；C9、A16/window、CALL_LEDGER、Results、科学预算和人口/人均原则均不变。V0.0.5 NOT_STARTED。
+
+
 ## 2026-10-13 当前：V0.0.3 文档来源合同有限接受并关闭
 
 **终态：`CLOSED__ACCEPT__DOCUMENTARY_SOURCE_CONTRACT_ONLY__WITH_OBSERVATIONS`。** Astra 独立核验固定单父候选 `cf74384f151427f0b7071ac0461cede6ad6cdf11`，tree `372c693ca3dccea716ae8caef382f513e5a2316e`，父 `8f5457947492eef552f4261f8630c6c886af9fa5`，仅三份 `versions/0.0.3/` 新增文档，14/14个固定 GitHub path/blob 引用匹配，并按原冻结标准接受 G1–G4 `DOCUMENTARY_SOURCE_CONTRACT` 范围。文档候选不合并 main；未进行真实数据读取、科学模型或生产接线；网页未亲自重跑 LOCAL_ONLY 文档工具。

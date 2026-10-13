@@ -7,7 +7,8 @@
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
 | Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 决定、原证据上限及本地工具限制 |
-| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.3 有限 DOCUMENTARY_SOURCE_CONTRACT 已验收关闭；V0.0.4 未启动 |
+| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.3 已关闭；V0.0.4 已启动版前 DRAFT，不含受保护读取许可 |
+| V0.0.4 版前草案 | [run004 北京元数据门与 Owner 决策](../versions/0.0.4/plan.md) | Codex 仅提交只读执行方案；A16/window/权限需单独选择，NEXT_BASELINE_ADOPTION=UNDECIDED |
 | V0.0.3 冻结与验收结果 | [冻结计划](../versions/0.0.3/plan.md)、[独立授权](../versions/0.0.3/authorization.md)、[最终验收](../versions/0.0.3/acceptance.md)、[复盘](../versions/0.0.3/retrospective.md) | freeze 768a3181fcbc…不变，candidate cf74384f1514…，真实读取仍 REQUEST_ONLY |
 | V0.0.2 冻结与最终结论 | [冻结计划](../versions/0.0.2/plan.md)、[授权](../versions/0.0.2/authorization.md)、[验收](../versions/0.0.2/acceptance.md)、[复盘](../versions/0.0.2/retrospective.md) | freeze SHA 4b11c46823e7… 未追改；candidate 8f5457947492…；真实来源认证未获得 |
 | V0.0.1 已冻结计划与结论 | [固定冻结计划](../versions/0.0.1/plan.md)、[实施授权](../versions/0.0.1/authorization.md)、[最终验收](../versions/0.0.1/acceptance.md)、[版本复盘](../versions/0.0.1/retrospective.md) | 冻结提交 6c9a13bd...不变；候选 3260ec39...；仅合成工程 ACCEPT_WITH_OBSERVATIONS |
@@ -18,6 +19,8 @@
 | 近期交接证据 | [进度快照](knowledge/published/CH5_WORK_PROGRESS_FLOW_MANUAL_HANDOFF_20261011_140603Z.md)、[验收账快照](knowledge/published/CH5_WORK_ACCEPTANCE_LEDGER_MANUAL_HANDOFF_20261011_140603Z.md)、[劳动决定](knowledge/published/CH5_LABOR_UNIT_HISTORY_AND_EVIDENCE_20261010_145723Z.md) | 脱敏发布副本，旧流程已替代，报告接受不冒称本轮重测 |
 | 历史归档覆盖与测试 | [归档安全摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 历史检索结果及Owner补充新会话测试分开 |
 | 上传用稳定索引 | [PROJECT_SOURCE_INDEX_CH5](PROJECT_SOURCE_INDEX_CH5.md) | 只在仓库/发布分支/入口改变时通常重传 |
+
+2026-10-13 Owner 已启动 V0.0.4 版前规划。V1.2 已覆盖 fail-fast，当前不升级工作流文档；新版本仅 DRAFT 和 Codex 只读方案，没有北京历史文件读取许可、科学测试或实现授权。
 
 2026-10-13 V0.0.3 已经 Astra 有限验收关闭：`CLOSED__ACCEPT__DOCUMENTARY_SOURCE_CONTRACT_ONLY__WITH_OBSERVATIONS`；GitHub 候选 `cf74384f151427f0b7071ac0461cede6ad6cdf11`、三文档及14/14固定来源匹配，真实北京读取申请仍仅 REQUEST_ONLY。Codex 本地资源/错误回执证据等级单列，V0.0.4 尚未启动。
 
