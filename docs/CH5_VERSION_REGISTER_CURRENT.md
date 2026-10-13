@@ -1,6 +1,10 @@
 # 第五章路线图与版本登记
 
-## 2026-10-13 当前：Owner 提议 C 盘备份区，可信实验根尚未证明
+## 2026-10-13 当前：Owner 已批准 C/D 存储映射只读检查
+
+`DRAFT__OWNER_APPROVED_C_D_READ_ONLY_TOPOLOGY__WAIT_CODEX_READBACK`。Owner 声明 C/D 位于两块不同物理 SSD（`OWNER_ASSERTED`），明确许可 Windows 内置 Storage 模块至多6次**限定 C/D 的只读磁盘/分区/卷映射**。固定边界：[Owner C/D 查询许可](../versions/0.0.5/owner_cd_topology_read_scope.md)。未核验前不得将盘符或磁盘对象等同独立可弃用实验卷；**C备份区仅用于保全，不能作攻击目标**。无真实数据/目录 ACL 探测、C盘目录首次创建、备份复制或 fixture 调用许可；V0.0.5 不冻结实施。`NEXT_BASELINE_ADOPTION=UNDECIDED`，A16/C9/Results 限制不变。
+
+## 2026-10-13 C盘备份提议、OS拓扑许可发布前的历史状态
 
 **`DRAFT__OWNER_C_BACKUP_NOMINATED__TRUSTED_FIXTURE_ROOT_UNPROVEN__NO_IMPLEMENTATION_AUTHORIZED`**。Owner 表示电脑具有 C/D 两个盘符并允许考虑 C 盘建立**备份区域**，偏好路线 A。已记入 [Owner C盘候选与分区/实验隔离边界](../versions/0.0.5/owner_c_backup_candidate.md)。C/D 盘符不证明物理盘分离；C 若包含 Windows/个人数据则不可把整个卷当作可弃用实验根。**备份区必须保全，绝不能用于攻击 fixture**；实际 C 目录不存在性、安全/卷身份、路径/ACL/重解析未核，不从这项批准推导创建或探测许可。
 

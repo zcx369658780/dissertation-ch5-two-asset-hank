@@ -1,3 +1,12 @@
+# 第五章当前状态：Owner 授权 C/D OS 存储拓扑只读检查
+
+Owner 2026-10-13 确认 C、D 分属两个物理 SSD（Owner 提供事实），并允许 Codex 执行**至多6次限定的 Windows Storage 只读查询**：C/D 各一次 Get-Partition、各自 DiskNumber 对应 Get-Disk、各一次 Get-Volume。边界及允许输出见 `versions/0.0.5/owner_cd_topology_read_scope.md`。状态：`DRAFT__OWNER_APPROVED_C_D_READ_ONLY_TOPOLOGY__WAIT_CODEX_READBACK`。不得探测原模型、真实 run004 和保护祖先；不得创建 C盘备份区、独立实验根或启动旧12个场景。
+
+Owner 拟将 C盘用于**备份保全**，绝不视 C系统盘/备份区为可弃用攻击卷。C/D不同物理 SSD 也不能建立现有独立可弃用根信任锚；该锚待证。V0.0.5 目前未冻结实施，`NEXT_BASELINE_ADOPTION=UNDECIDED`。V0.0.4 CLOSED/BLOCKED，D1 北京历史三文件拟核验及 D2 完整威胁保留，D3-real/D4-real未许可。A16 UNRESOLVED/FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、旧科学/数据 CLOSED 预算、人口/人均、不 N=P/3 均不变，V0.0.6 NOT_STARTED。
+
+---
+# 以下为C/D只读权限确认前的历史正文
+
 # 第五章当前状态：Owner 提议 C盘备份区；V0.0.5 可信实验根未证
 
 2026-10-13，Owner 已确认电脑有 C/D 盘符，并允许考虑 C盘建立**备份区域**。该区域用于保全，不属于可弃用 fixture；盘符不能证明独立物理磁盘、专用卷或安全祖先/可信根。Owner 新提议正式记于 `versions/0.0.5/owner_c_backup_candidate.md`。当前 `DRAFT__OWNER_C_BACKUP_NOMINATED__TRUSTED_FIXTURE_ROOT_UNPROVEN__NO_IMPLEMENTATION_AUTHORIZED`。**无实际卷/路径探测、目录创建、备份复制或实验权限**；须先给出范围明确的只读拓扑核验和备份首次创建方案，经 Astra 冻结与另行许可才可交 Codex 执行。不能将 C盘系统卷/备份区作为允许破坏的实验祖先；若无专用可弃用卷，B 环境供应另行 Owner 选择。
