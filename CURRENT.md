@@ -1,3 +1,12 @@
+# 第五章当前状态：Owner 提议 C盘备份区；V0.0.5 可信实验根未证
+
+2026-10-13，Owner 已确认电脑有 C/D 盘符，并允许考虑 C盘建立**备份区域**。该区域用于保全，不属于可弃用 fixture；盘符不能证明独立物理磁盘、专用卷或安全祖先/可信根。Owner 新提议正式记于 `versions/0.0.5/owner_c_backup_candidate.md`。当前 `DRAFT__OWNER_C_BACKUP_NOMINATED__TRUSTED_FIXTURE_ROOT_UNPROVEN__NO_IMPLEMENTATION_AUTHORIZED`。**无实际卷/路径探测、目录创建、备份复制或实验权限**；须先给出范围明确的只读拓扑核验和备份首次创建方案，经 Astra 冻结与另行许可才可交 Codex 执行。不能将 C盘系统卷/备份区作为允许破坏的实验祖先；若无专用可弃用卷，B 环境供应另行 Owner 选择。
+
+V0.0.4 `CLOSED__BLOCKED__G0_FIXTURE_ISOLATION_UNPROVEN__NO_EXPERIMENT__WITH_OBSERVATIONS`，旧合成 fixture 调用预算不重开。V0.0.5 下一版基线仍 `NEXT_BASELINE_ADOPTION=UNDECIDED`，原模型 HEAD/index/dirty/main 不动。D1初始北京三元数据仍仅拟核验，D2完整A16/window不缩减；D3-real/D4-real未授权。真实受保护路径 stat/open/read/hash/ACL/probe 0，A16 UNRESOLVED/FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、旧科学数据预算、人口/人均及不 N=P/3 全不变。V0.0.6 NOT_STARTED，V1.2工作流不升级。
+
+---
+# 以下为 Owner 提供 C盘提议前现行状态（历史全文）
+
 # 第五章当前状态：V0.0.5 方案已审议，等待 Owner 可信根资源
 
 2026-10-13 `REVIEWED__ACCEPT_EXECUTION_PROPOSAL__OWNER_SUPPLIED_ANCHOR_REQUIRED__NO_IMPLEMENTATION_AUTHORIZED`。Codex已提交 V0.0.5 有界只读草案；Astra审议选定优先 **A：Owner/可信平台已经存在并可独立证明用途和身份的专用可弃用卷**，其后才可评估 **C：已验证根句柄下受限首次创建**；若无A则讨论 **B：经另行供应/许可的独立Windows环境**。详见 `versions/0.0.5/review.md`。现在没有获得任何具体外部资源锚，不能用盘符/GUID/新目录名自证可信；**V0.0.5 仍 DRAFT/NOT_FROZEN，不签发实施授权，不对根、卷、ACL或真实资产探测，也不创建目录/VM/fixture**。

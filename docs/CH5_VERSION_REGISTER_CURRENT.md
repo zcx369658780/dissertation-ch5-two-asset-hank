@@ -1,6 +1,12 @@
 # 第五章路线图与版本登记
 
-## 2026-10-13 当前：V0.0.5 可信根路线审议完成，等待 Owner 提供独立资源
+## 2026-10-13 当前：Owner 提议 C 盘备份区，可信实验根尚未证明
+
+**`DRAFT__OWNER_C_BACKUP_NOMINATED__TRUSTED_FIXTURE_ROOT_UNPROVEN__NO_IMPLEMENTATION_AUTHORIZED`**。Owner 表示电脑具有 C/D 两个盘符并允许考虑 C 盘建立**备份区域**，偏好路线 A。已记入 [Owner C盘候选与分区/实验隔离边界](../versions/0.0.5/owner_c_backup_candidate.md)。C/D 盘符不证明物理盘分离；C 若包含 Windows/个人数据则不可把整个卷当作可弃用实验根。**备份区必须保全，绝不能用于攻击 fixture**；实际 C 目录不存在性、安全/卷身份、路径/ACL/重解析未核，不从这项批准推导创建或探测许可。
+
+下一步只准备具体有限的 C 存储拓扑核验与备份区安全建立方案，必要查询/首次创建须另行在 V1.2 冻结并独立授权；旧 run004、模型祖先、V0.0.4 实验均不开。V0.0.5 仍无代码候选，`NEXT_BASELINE_ADOPTION=UNDECIDED`。D1/D2科学保护保持，D3-real/D4-real 未授权，A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、Results FALSE、旧预算不变。V0.0.6 NOT_STARTED。
+
+## 2026-10-13 V0.0.5 仅等待外部可信根时状态（历史）
 
 **`REVIEWED__ACCEPT_EXECUTION_PROPOSAL__OWNER_SUPPLIED_ANCHOR_REQUIRED__NO_IMPLEMENTATION_AUTHORIZED`**。Astra 已审议 Codex `V0.0.5_TRUSTED_ROOT_EXECUTION_PROPOSAL_DRAFT`，将 **A（Owner/平台已有可弃用专用卷）+ C（根句柄受限相对创建）** 定为首选，**B（由可信供应方提供独立环境）** 定为备选。其核心前置是能够独立证明首次根身份与全部可变祖先的真实资产隔离，不能靠卷 GUID/目录名/创建后身份自证。完整[版前审议与 Owner 资源待决](../versions/0.0.5/review.md)。
 
