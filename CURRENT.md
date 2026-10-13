@@ -1,3 +1,14 @@
+# 第五章当前状态：V0.0.4 隔离 fixture 试验已冻结并获独立许可
+
+2026-10-13 `FROZEN__ASTRA_APPROVED_EXECUTION__WAIT_CODEX_ISOLATED_FIXTURE`。Owner 已批准实验级 D3-fixture/D4-fixture 受限实施，仅支持人工合成 Windows 句柄链/祖先替换防护的独立 fixture 试验。正式 freeze `1b825948e69fcdfd30c1826be023d6963d2e9b25`、plan blob `d5b6bbfd6b3b7146d2b9ab4a458ab75d666e1a91`；独立 authorization `7955fbbd1a5bc770124d3819a15f70638a4972a2`。D1 历史 run004 初始北京三文件选择与 D2 完整 A16/window 威胁模型均保持；**D3-real/D4-real 未批准，任何真实被保护文件/祖先的 stat/exists/ACL/reparse/open/read/hash/parse 0 权限**。
+
+仅固定代码候选 `NEXT_BASELINE_ADOPTION=ADOPTED_FROM_EXACT_SHA`：`cf74384f151427f0b7071ac0461cede6ad6cdf11`（tree `372c693ca3dccea716ae8caef382f513e5a2316e`），独立分支 `codex/ch5-v0.0.4-isolated-handle-fixture`，严格只新增 `tools/ch5_v004_isolated_handle_fixture.py`、`tests/test_ch5_v004_isolated_handle_fixture.py`、`versions/0.0.4/execution.md`，不合并 main、不变动模型原 HEAD/index/dirty。执行前 G0 验证所有可攻击/替换祖先位于独立可弃用 fixture subtree，不能攻击共享的 `D:\ProjectTemp` /磁盘根；无隔离立即 BLOCKED/NO_EXPERIMENT。最多12固定场景、每个最多1次/60秒，实验<=30分钟、并发<=4，合成新建存储总<=32.125MiB。fixture 日志原证 LOCAL_ONLY 保留至 Astra 验收、不自动清理；实验成功亦不认证真实科学/经济或完整 A16/C9 output mutation。
+
+V0.0.1–V0.0.3 各自限定 ACCEPT/CLOSED；V0.0.4 只有冻结与授权，**尚无实际实验 PASS 或候选交付**，Codex 交付后 Astra 再独立验收。原 Objective A16 `UNRESOLVED/FAIL_CLOSED`、window `UNACCEPTED`、`C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、`model_activation=False`、`Results FALSE`、旧 CLOSED 数据/科学预算、人口/人均与不 `N=P/3` 均不变。V0.0.5 NOT_STARTED，工作流 V1.2 继续生效。
+
+---
+# 以下为 V0.0.4 fixture 获批前的历史状态（保留原文）
+
 # 第五章当前状态：V0.0.4 句柄技术设计审议完成 / fixture 需 Owner 决定
 
 2026-10-13，`FEASIBILITY_DESIGN_REVIEWED__FIXTURE_GATE_REQUIRES_OWNER_D3_D4__PROTECTION_BLOCKED__NO_READ__NOT_FROZEN`。Owner D1（run004 初始北京三元数据拟核验对象）和 D2（完整 A16/window 威胁范围保持）已经固定采纳。Codex 的 Windows 原生句柄相对打开、可信根、OBJ_DONT_REPARSE 和全寿命窗口设计经 Astra 结合 Microsoft 官方文档审议为 **`POTENTIALLY_FEASIBLE/NOT_PROVEN`**。详见 `versions/0.0.4/a16_window_feasibility_review.md`。

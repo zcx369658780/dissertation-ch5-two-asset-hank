@@ -1,6 +1,18 @@
 # 第五章路线图与版本登记
 
-## 2026-10-13 当前：V0.0.4 句柄安全静态设计已审议，等待 fixture D3/D4 决定
+## 2026-10-13 当前：V0.0.4 synthetic fixture 试验已正式冻结并获独立实施许可
+
+**`FROZEN__ASTRA_APPROVED_EXECUTION__WAIT_CODEX_ISOLATED_FIXTURE`**。Owner D1（历史 run004 北京三元数据拟核验对象）及 D2（完整 Objective A16/window）已采纳；进一步明确批准**实验级 D3-fixture/D4-fixture**，即**仅可弃用人工 fixture 的 Windows 句柄保护试验**及其 LOCAL_ONLY/脱敏证据边界。与真实文件相关的 D3-real/D4-real **没有批准，仍 NO_READ**。
+
+- **不可追改正式冻结计划**：[V0.0.4 plan](../versions/0.0.4/plan.md)，freeze commit **`1b825948e69fcdfd30c1826be023d6963d2e9b25`**、plan blob **`d5b6bbfd6b3b7146d2b9ab4a458ab75d666e1a91`**；原 DRAFT `f5abef37cf7aa5b22c0b918782cc9a28daf60e5a` 在 Git 历史保留。
+- **独立执行授权**：[V0.0.4 authorization](../versions/0.0.4/authorization.md)，固定 SHA **`7955fbbd1a5bc770124d3819a15f70638a4972a2`**，裁决 `ASTRA_APPROVED_EXECUTION__CH5_V0.0.4__ISOLATED_SYNTHETIC_FIXTURE_ONLY`。
+- **候选代码基线** `NEXT_BASELINE_ADOPTION=ADOPTED_FROM_EXACT_SHA`（仅 V0.0.4）：V0.0.3 accepted doc/code candidate `cf74384f151427f0b7071ac0461cede6ad6cdf11`，tree `372c693ca3dccea716ae8caef382f513e5a2316e`；候选分支 `codex/ch5-v0.0.4-isolated-handle-fixture`，仅三份新增代码/测试/报告，**不合并 main/治理分支、不动原工作树 HEAD/index/dirty**。
+- 实施前**G0 硬门**：全新的可弃用 fixture、所有可能攻击/改名/替换的祖先必须与真实第五章模型及任何不可弃用共享父目录隔离；**不得对 `D:\ProjectTemp` 公共祖先施加实验攻击**。隔离或合法 API/身份能力不足立即 `BLOCKED__NO_EXPERIMENT`，不能先创建/扫描保护路径/提权/安装工具再争取 PASS。
+- **冻结预算**：最多12个场景、每场景60秒/1次启动、每场景最多3个攻击动作/5同步屏障、零自动重试，总实验窗口<=30分钟，最多4同时实验进程。新建 fixture<=4MiB、LOCAL_ONLY原回执<=4MiB、Git index/objects/工具/构建/限定 candidate_view合计<=24MiB、三份公开新文件<=128KiB，总新建<=32.125MiB。严格无真实数据/科学模型/旧 C9 output mutation 执行。
+- **D4-fixture** 原始实验日志、安全主体/机器路径/ACL/token 细节保持 LOCAL_ONLY，保留至独立验收，**不自动清理或声称内存物理彻底擦除**；之后存废仍待 Owner 决定。公开仅脱敏场景、API返回分类/次数/覆盖缺口。
+- **资格不升级**：最多获得 `ENVIRONMENT_AND_SCENARIO_BOUNDED_FIXTURE_PROTECTION_EVIDENCE`，不证明真正 run004 北京三文件安全可读、原 A16/C9 输出 mutation 四路径全安全或真实科学/Results。V0.0.1–V0.0.3 限定 ACCEPT/CLOSED 不变；`A16 UNRESOLVED/FAIL_CLOSED`、`window UNACCEPTED`、`C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、`model_activation=False`、`Results FALSE`、旧预算、人口/人均及不 `N=P/3` 全保持。V0.0.5 NOT_STARTED。
+
+## 2026-10-13 V0.0.4 句柄设计接受、实验未授权时状态（历史）
 
 **`FEASIBILITY_DESIGN_REVIEWED__FIXTURE_GATE_REQUIRES_OWNER_D3_D4__PROTECTION_BLOCKED__NO_READ__NOT_FROZEN`。** Owner D1=选择历史 run004 初始北京三元数据及 D2=保持全部 Objective A16/window 威胁范围仍 ADOPTED。Astra 依据 Microsoft 官方 Windows API 文档及[原 A16/窗口合同](CH5_K1B_C9_OUTPUT_MUTATION_SAFETY_OBJECTIVE_A_OWNER_ADOPTION_20260927.md)核对 Codex `V0.0.4_A16_WINDOW_PROTECTION_FEASIBILITY_DESIGN`，接受**可信根 + 句柄相对打开 + 全链持有**作为 `POTENTIALLY_FEASIBLE/NOT_PROVEN` 的候选。正式[独立可行性审议](../versions/0.0.4/a16_window_feasibility_review.md)记录了旧 Objective A **四种 output mutation** 与新历史元数据**只读窗口**的证据资格不同、不可相互关闭。
 
