@@ -1,3 +1,14 @@
+# 第五章当前状态：V0.0.2 版前规划 / 未冻结
+
+2026-10-13 Owner 已核定 V0.0.1 的收尾和 V1.1 本地规则同步，明确要求**规划下一版本**。Astra 发布 `versions/0.0.2/plan.md` 作为草案，状态 `DRAFT__WAIT_CODEX_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`。Codex 仅开展最少必要只读源码与 Git 环境核对并回报执行方案；Astra 集中审议，后续另行固定冻结提交/独立授权。**当前不写代码、不运行测试、不读取受保护真实数据，不启动科学模型。**
+
+V0.0.1 已 `CLOSED__ACCEPT__SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS`，冻结计划保持原 SHA，候选 `3260ec393dd4d53d6aab6c34d7c0442f09aa79f4` 独立分支保留未合并 main，代码基线选择 `NEXT_BASELINE_ADOPTION=UNDECIDED`。本地原代码 HEAD、dirty/untracked/ignored 按 Codex 最近回执保全，网页不假定已能看到其真实内容。V0.0.2 聚焦 solver 输出→corrected aggregate 的**来源/字段准入静态契约**；真实来源认证、数据年份价格、经济单位、生产绑定仍未通过。
+
+`C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、Objective A16 `FAIL_CLOSED`、`model_activation=False`、`Results FALSE`、全部旧 CLOSED 科学预算及人口/人均、不 `N=P/3` 不变。V0.0.3 未启动。现行入口 `docs/DOC_INDEX_CURRENT.md`，规则 `docs/CH5_ASTRA_WORKFLOW_CURRENT.md`（V1.1），版本登记 `docs/CH5_VERSION_REGISTER_CURRENT.md`。
+
+---
+# 以下为 V0.0.1 关闭时的状态（历史，原文保留）
+
 # 第五章当前状态：V0.0.1 合成工程有限接受并关闭
 
 2026-10-13：`CLOSED__ACCEPT__SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS`。网页 Astra 已用 GitHub 工具独立核准候选 `3260ec393dd4d53d6aab6c34d7c0442f09aa79f4`、tree `39e7a91ca473ba770bd65518607c3f78f4b9fe24`，相对代码基线 `a1db8c114dec0ab69d69a5576e153a7f868cba0e` 仅新增源模块、测试及公开执行报告3文件，审查真实代码/测试/证据正文。Codex 报告精确 candidate_view `42/42`、累计4次 focused pytest、最终 EVIDENCE≈1.87MiB、墙钟采样≈21分钟；网页未直接取得本地完整 stdout/JUnit 或独立执行，故限制为受界合成工程接受。

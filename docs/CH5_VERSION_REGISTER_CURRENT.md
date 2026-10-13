@@ -1,5 +1,12 @@
 # 第五章路线图与版本登记
 
+## 2026-10-13 当前：V0.0.2 版前规划（DRAFT / NOT FROZEN）
+
+Owner 已确认 V0.0.1 的收尾完成，并于本轮**手动要求开始下一版本规划**。Astra 草案：[V0.0.2 来源契约与输入准入计划](../versions/0.0.2/plan.md)。当前 `DRAFT__WAIT_CODEX_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`；Codex 仅可对已授权源码做有限只读核查并交一份执行方案草稿。版本尚未冻结、未颁布独立实施许可、没有新模型运行或新测试授权。
+
+V0.0.1 `CLOSED__ACCEPT__SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS`；其 accepted candidate SHA `3260ec393dd4d53d6aab6c34d7c0442f09aa79f4` 与原代码基线、`main` 均须分开记录。`NEXT_BASELINE_ADOPTION=UNDECIDED`，候选默认不合并、不切换、不等于正式下一版代码基线。Owner 未采纳新的真实科学/数据执行许可，C9/Results/A16/ledger/未知经济单位照旧。
+
+
 ## V1.1 后续版本登记约定（2026-10-13，规范性说明）
 
 本规则在 V0.0.1 `CLOSED__ACCEPT__SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS` 后生效，**不重写该版的冻结计划、验收、复盘或历史版本登记**；新版本未启动。与旧记录中“待创建”的时态冲突时，优先按上方最近状态判读。

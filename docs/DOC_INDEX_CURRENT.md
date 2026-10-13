@@ -7,7 +7,8 @@
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
 | Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 决定、原证据上限及本地工具限制 |
-| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.1 合成工程有限接受并关闭；V1.1 后续版本字段已登记；下一版尚未启动 |
+| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.1 已关闭；V0.0.2 已启动版前规划、未冻结、无实施许可 |
+| V0.0.2 版前草案 | [来源契约与输入准入计划](../versions/0.0.2/plan.md) | 仅要求 Codex 只读提出执行方案；NEXT_BASELINE_ADOPTION=UNDECIDED |
 | V0.0.1 已冻结计划与结论 | [固定冻结计划](../versions/0.0.1/plan.md)、[实施授权](../versions/0.0.1/authorization.md)、[最终验收](../versions/0.0.1/acceptance.md)、[版本复盘](../versions/0.0.1/retrospective.md) | 冻结提交 6c9a13bd...不变；候选 3260ec39...；仅合成工程 ACCEPT_WITH_OBSERVATIONS |
 | 当前/历史计划、结果、验收、复盘 | 版本登记中的具体入口 | 冻结版固定 SHA；代码候选与文档分支可能分离，须按真实提交读取 |
 | 历史Sources与本地私有资料 | [知识摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md)、[手工交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 私有日志/数据不上传；按需人工提供脱敏片段 |
@@ -16,6 +17,8 @@
 | 近期交接证据 | [进度快照](knowledge/published/CH5_WORK_PROGRESS_FLOW_MANUAL_HANDOFF_20261011_140603Z.md)、[验收账快照](knowledge/published/CH5_WORK_ACCEPTANCE_LEDGER_MANUAL_HANDOFF_20261011_140603Z.md)、[劳动决定](knowledge/published/CH5_LABOR_UNIT_HISTORY_AND_EVIDENCE_20261010_145723Z.md) | 脱敏发布副本，旧流程已替代，报告接受不冒称本轮重测 |
 | 历史归档覆盖与测试 | [归档安全摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 历史检索结果及Owner补充新会话测试分开 |
 | 上传用稳定索引 | [PROJECT_SOURCE_INDEX_CH5](PROJECT_SOURCE_INDEX_CH5.md) | 只在仓库/发布分支/入口改变时通常重传 |
+
+2026-10-13 Owner 已手动启动 V0.0.2 的版前规划，仅发布 DRAFT，等待 Codex 执行方案；本阶段无新工程/科学运行授权。
 
 2026-10-13 工作流 V1.1 已获 Owner 批准，仅更新现行导航/规则，不改冻结版本或开启 V0.0.2；参见上方 V1.1 规则与版本登记。
 
