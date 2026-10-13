@@ -1,3 +1,14 @@
+# 第五章当前状态：V0.0.4 D1/D2 已采纳；D3/D4 待决、NO_READ
+
+2026-10-13 Owner 明确确认：**D1** 选择历史 run004 初始北京三份元数据作为 V0.0.4 **拟核验对象**；**D2** 完整维持 Objective A16/window 威胁模型，不放宽同用户普通进程、祖先/junction/reparse替换、父目录 DELETE_CHILD 与访问句柄全寿命要求。权威增量记于 `versions/0.0.4/owner_d1_d2_adoption.md`；此前 `review.md` 的“全部待决”仅为旧状态。现行 `OWNER_D1_D2_ADOPTED__D3_D4_PENDING__PROTECTION_BLOCKED__NO_READ__V0.0.4_NOT_FROZEN`。
+
+**D3** 执行 principal/SID/token、Windows 工具、抗竞态保护证明、stat/ACL/reparse probe 和文件读取精确额度；**D4** 原字节/原始回执留存或销毁、访问人和对外摘要，都未由 Owner 批准。**V0.0.4 无冻结实施计划和独立授权**。仅可要求 Codex 有界阅读公开源码/Windows 平台技术资料并报告保护机制的可行性设计，**不接触任何受保护目标、路径元数据或祖先探测、不写执行器或运行测试**。北京三文件3次/2.125MiB/零重试仍是未获实际读取批准的申请上限。保护不可证时保持 `PROTECTION_BLOCKED/NO_READ`，不能降级 D2 或绕过权限。
+
+前版 V0.0.3 候选 `cf74384f151427f0b7071ac0461cede6ad6cdf11`、tree `372c693ca3dccea716ae8caef382f513e5a2316e` 仅为推荐，`NEXT_BASELINE_ADOPTION=UNDECIDED`；main、原模型工作树/HEAD/index/dirty 不动。V0.0.1–V0.0.3 仍受限 CLOSED/ACCEPT；`C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、A16 `UNRESOLVED/FAIL_CLOSED`、window `UNACCEPTED`、`model_activation=False`、`Results FALSE` 及旧 science/data CLOSED 预算不变；人口/人均和不 `N=P/3` 不变。V0.0.5 NOT_STARTED，工作流 V1.2 继续生效。
+
+---
+# 以下为 Owner D1/D2 确认之前的状态（历史原文保留）
+
 # 第五章当前状态：V0.0.4 等待 Owner 决策 / NO_READ
 
 2026-10-13：`REVIEWED__OWNER_DECISION_REQUIRED__PROTECTION_BLOCKED__NO_READ__NOT_FROZEN`。Codex 已交有界只读 `V0.0.4_EXECUTION_PROPOSAL_DRAFT`，Astra 依据公开 GitHub 历史科学接受和 V0.0.3 来源合同审议，详见 `versions/0.0.4/review.md`。本阶段 **D1 是否选历史 run004 北京三元数据、D2 是否完整维持 A16/window 威胁范围、D3 精确受保护访问/探测工具/身份/寿命与额度、D4 原始数据生命周期和对外摘要** 尚未获 Owner 决定。没有 V0.0.4 freeze commit 或独立实施许可；北京三文件的 stat/exists/open/read/hash/ACL探测与科学/pytest调用权限均0。

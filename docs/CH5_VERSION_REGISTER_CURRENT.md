@@ -1,6 +1,12 @@
 # 第五章路线图与版本登记
 
-## 2026-10-13 当前：V0.0.4 版前方案已审议 / 等待 Owner 决策
+## 2026-10-13 当前：V0.0.4 Owner 已采纳 D1/D2；D3/D4 与保护门仍未闭合
+
+**`OWNER_D1_D2_ADOPTED__D3_D4_PENDING__PROTECTION_BLOCKED__NO_READ__V0.0.4_NOT_FROZEN`。** Owner 明确选择**历史 run004 初始北京三份元数据**作为拟核验对象（D1），并明确**不缩减完整 Objective A16/window 威胁模型**（D2）；对应正式[Owner D1/D2 采纳记录](../versions/0.0.4/owner_d1_d2_adoption.md)。旧 [Astra 版前审议](../versions/0.0.4/review.md)所写的 D1/D2 待决属于此前快照，现以本条为准。**D3 精确工具/principal/安全证明与保护探测/访问额度、D4 原字节/回执生命周期和公开规则仍待决**。V0.0.4 **没有冻结实施计划或独立执行授权**；不得对历史三目标进行 stat、ACL/reparse/祖先探测、open/read/hash/parse，不得编写读取器、运行测试、模型/科学任务。
+
+Codex 下一步仅可交**有界无资产接触的 Windows A16/window 保护机制技术设计**，重点问是否存在在同用户并发、祖先目录替换与句柄寿命要求下可验证的实现路径；不能用 `resolve/stat/open` 冒充保护证明。未来3次/2.125MiB/零重试仍是**未获 D3 授权的候选预算**。`NEXT_BASELINE_ADOPTION=UNDECIDED`，V0.0.3 accepted code/doc 候选 `cf74384f151427f0b7071ac0461cede6ad6cdf11` 仅推荐。A16 `FAIL_CLOSED`、window `UNACCEPTED`、C9 `PAUSED`、CALL_LEDGER、Results FALSE 不变；V0.0.5 `NOT_STARTED`。
+
+## 2026-10-13 V0.0.4 原审议：D1–D4 当时待决（历史）
 
 **`REVIEWED__OWNER_DECISION_REQUIRED__PROTECTION_BLOCKED__NO_READ__NOT_FROZEN`。** Astra 已将 [V0.0.4 Owner 待决及保护审议](../versions/0.0.4/review.md)归档。Codex `V0.0.4_EXECUTION_PROPOSAL_DRAFT` 推荐历史 run004 初始北京三文件，但现有 A16/window 威胁下的 principal/SID、祖先重解析与句柄生命周期证明及明确访问许可未闭合。**D1选择研究对象、D2保护范围、D3精确访问/保护探测、D4原数据生命周期与对外摘要均待 Owner 决定**；当前不存在 V0.0.4 冻结计划或 `ASTRA_APPROVED_EXECUTION`，且真实数据 stat/open/read/hash、pytest/科学运行的本版许可全部0。
 
