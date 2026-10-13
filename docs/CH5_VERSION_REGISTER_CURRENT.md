@@ -1,6 +1,16 @@
 # 第五章路线图与版本登记
 
-## 2026-10-13 当前：V0.0.3 DOCUMENT_ONLY 已冻结并获 Astra 实施授权
+## 2026-10-13 当前：V0.0.3 文档来源合同有限接受并关闭
+
+**终态：`CLOSED__ACCEPT__DOCUMENTARY_SOURCE_CONTRACT_ONLY__WITH_OBSERVATIONS`。** Astra 独立核验固定单父候选 `cf74384f151427f0b7071ac0461cede6ad6cdf11`，tree `372c693ca3dccea716ae8caef382f513e5a2316e`，父 `8f5457947492eef552f4261f8630c6c886af9fa5`，仅三份 `versions/0.0.3/` 新增文档，14/14个固定 GitHub path/blob 引用匹配，并按原冻结标准接受 G1–G4 `DOCUMENTARY_SOURCE_CONTRACT` 范围。文档候选不合并 main；未进行真实数据读取、科学模型或生产接线；网页未亲自重跑 LOCAL_ONLY 文档工具。
+
+- **冻结计划（不追改）**：[plan](../versions/0.0.3/plan.md)，固定 `768a3181fcbc9d367ccce08b1d69458353a48229`、blob `1bf80332586a4e3beeeb355d90b5ec049c7e503c`；[独立授权](../versions/0.0.3/authorization.md) 固定 `2ec13ea41e7bb86eacb19f4601d243a1298bd4bd`。
+- **最终归档**：[Astra 独立验收](../versions/0.0.3/acceptance.md)、[偏差复盘](../versions/0.0.3/retrospective.md)；Codex 三文档源码仅在候选 `cf74384f151427f0b7071ac0461cede6ad6cdf11`：[合同](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/cf74384f151427f0b7071ac0461cede6ad6cdf11/versions/0.0.3/producer_source_contract.md)、[Owner 请求](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/cf74384f151427f0b7071ac0461cede6ad6cdf11/versions/0.0.3/owner_read_request.md)、[执行记录](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/cf74384f151427f0b7071ac0461cede6ad6cdf11/versions/0.0.3/execution.md)。勿将这些候选文件相对链接误指向治理文档分支。
+- **Codex 本地回执**：最终树文档校验 `exit0`、耗时1.859秒、墙钟 `1303.69/5400s`、总新增 `16,143,662B`，均在分层限额；原 HEAD/index/8 dirty/5915 untracked/4553 ignored 保全为执行端回执，网页无 Windows 原字节重算。最终文档回执 sha256 `5fd3f2abe2f71a9828022bde3403cd65e98aea8f56791b8551629a09dfe581eb`，manifest `c18231495f7eb4045313b36d99b59d2db9dcea66dbb20e5db1ec531662a33523`，仅报告身份，原件 LOCAL_ONLY。
+- **保留真实偏差**：命令漏 `import sys` 且两文档误在失败后续写，确实违反 V1.2 的依赖失败即停；初次 checker 没处理 `docs/` 标题前缀。原失败与当时文本保存，后续14/14来源和最终冻结候选文档均通过。V1.2 不因此自动修改，也不将其认作全过程合规。详见正式复盘。
+- **Owner 后续选择仍未发生**：run004 北京三文件只是 `REQUEST_ONLY`，建议 3次/2.125MiB/零重试，当前实际读额度仍为0；原资产存在性、子文件 hashes、联合真实认证 `UNKNOWN`。`C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、Objective A16 `FAIL_CLOSED`、`window UNACCEPTED`、`model_activation=False`、`Results FALSE` 与旧 CLOSED 预算、人口/人均、不 `N=P/3` 均不变。V0.0.4 **NOT_STARTED**；不随本版结束自动立版或选下一代码基线。
+
+## 2026-10-13 V0.0.3 已冻结并授权的历史状态
 
 **现行状态 `FROZEN__ASTRA_APPROVED_EXECUTION__WAIT_CODEX_IMPLEMENTATION`。** Owner 已启动第三个版本；Codex 提交并停止于 `V0.0.3_EXECUTION_PROPOSAL_DRAFT`，Astra 核实 corrected producer/run004 历史接受及当前 GitHub 源码后采纳 `DOCUMENT_ONLY` 三文件方案、无科学/真实数据许可的决策包。该状态**只代表文档实施有权限，尚无 Codex 写入、通过测试或候选结果可接受**。
 

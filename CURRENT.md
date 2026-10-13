@@ -1,3 +1,14 @@
+# 第五章当前状态：V0.0.3 DOCUMENT_ONLY 验收关闭
+
+2026-10-13 `CLOSED__ACCEPT__DOCUMENTARY_SOURCE_CONTRACT_ONLY__WITH_OBSERVATIONS`。Astra 按冻结 `768a3181fcbc9d367ccce08b1d69458353a48229`（plan blob `1bf80332586a4e3beeeb355d90b5ec049c7e503c`）、独立授权 `2ec13ea41e7bb86eacb19f4601d243a1298bd4bd` 独立审查 GitHub 候选 `cf74384f151427f0b7071ac0461cede6ad6cdf11`，tree `372c693ca3dccea716ae8caef382f513e5a2316e`，单父 `8f5457947492eef552f4261f8630c6c886af9fa5`。仅三份获批 `versions/0.0.3/` 文档新增，固定引用14/14公开 GitHub blob 匹配；候选不 merge main，不修改原本地 checkout。此 PASS 仅意味着 corrected producer 路线、联合证据信任链、下一门拒绝合同和 Owner 读取请求的文档设计可接受，**不说明当下真实来源认证或数据读取已通过**。
+
+历史 run004 北京 `sealed_manifest.json`、`province_terminal_receipt.json`、`native_initialization_receipt.json` 的未来请求仍为 `REQUEST_ONLY/NOT_AUTHORIZED`（建议未来3次/2.125MiB、重试0；真实本版读取0）。Codex 报告最终候选树文档检查 exit0、1.859秒、墙钟1303.69/5400秒、存储16,143,662B，原 HEAD/index/8 dirty/5915 untracked/4553 ignored 保全；本地原收据 LOCAL_ONLY，网页只独立核 GitHub Git 身份和公开正文，不假称重跑或直接访问原盘。V1.2 fail-fast 曾出现依赖失败后仍续写两文档及首版路径检查器误读表格前缀，已如实列入 `versions/0.0.3/acceptance.md`、`retrospective.md`，不以最终 PASS 掩盖实际偏差。
+
+V0.0.1/V0.0.2 保持先前受界 ACCEPT/CLOSED；V0.0.4 `NOT_STARTED`、无 ISSUED、无下一代码基线采纳、无自动读取/部署。真实经济劳动单位、人口分母、外部年份/价格/日历、受保护源 Q/p/g/C/l 的联合身份仍 UNKNOWN；`C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、Objective A16 `UNRESOLVED/FAIL_CLOSED`、`window UNACCEPTED`、`model_activation=False`、`Results FALSE`、旧 CLOSED 预算与人口/人均/不 `N=P/3` 保护不变。工作流 V1.2 与动态文档导航仍有效。
+
+---
+# 以下为 V0.0.3 冻结授权时历史状态（原文保留）
+
 # 第五章当前状态：V0.0.3 DOCUMENT_ONLY 冻结并获独立实施许可
 
 2026-10-13：`FROZEN__ASTRA_APPROVED_EXECUTION__WAIT_CODEX_IMPLEMENTATION`。Owner 已启动 V0.0.3，经 Codex 版前提案与 Astra 来源核查，正式冻结 `versions/0.0.3/plan.md` 于提交 `768a3181fcbc9d367ccce08b1d69458353a48229`、plan blob `1bf80332586a4e3beeeb355d90b5ec049c7e503c`，独立授权 `versions/0.0.3/authorization.md` 于 `2ec13ea41e7bb86eacb19f4601d243a1298bd4bd`。仅批准三份版本文档的 SOURCE-CONTRACT/Owner 读取申请及未来门设计，**没有实际科学/受保护读取权限**。此状态只代表许可就绪，尚无本版交付、测试或已通过证据。
