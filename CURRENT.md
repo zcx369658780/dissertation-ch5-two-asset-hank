@@ -1,6 +1,12 @@
-# 第五章当前状态：第三阶段 V0.0.1 版前协商，尚未冻结
-2026-10-13 Owner 已正式启动第三阶段的版本规划，暂定 V0.0.1。Astra 已将 `versions/0.0.1/plan.md` 作为候选计划发布至文档分支；当前 `DRAFT__WAIT_CODEX_EXECUTION_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED`。Codex 仅可有界只读调查并向 Owner/网页 Astra 提交执行方案草稿。Astra 审议、固定冻结计划 SHA 与明确批准前不得写代码、执行测试或科学模型。GitHub 文档发布不改变本地 HEAD、dirty 和科学许可。C9、A16、Results、劳动桥未知及关闭旧账本保持。
-现行工作流：docs/CH5_ASTRA_WORKFLOW_CURRENT.md；动态目录：docs/DOC_INDEX_CURRENT.md；版本登记：docs/CH5_VERSION_REGISTER_CURRENT.md。新 Codex 只读接收已由 Owner 回报，`app projectId=null` 与 QMD/Basic Memory 对新会话的可用性仍未知，不冒充环境通过。
+# 第五章当前状态：V0.0.1 正式冻结，Astra 已批准工程实施
+
+2026-10-13：Owner 启动第三阶段；Codex 提交 V0.0.1 执行方案草稿，经网页 Astra 审议后正式冻结 `versions/0.0.1/plan.md`，**固定计划提交** `6c9a13bdf6a54913d8f16b5ec23fdda2a68f28e8`，**独立许可** `versions/0.0.1/authorization.md`，状态 `FROZEN__ASTRA_APPROVED_EXECUTION__WAIT_CODEX_IMPLEMENTATION`。实施仅限合成家户劳动工程桥接、允许新建的2个源码/测试文件及专属证据/脱敏 execution 报告。此状态仅代表有许可，尚未收到任何实施、测试、候选或 PASS 的事实证据。
+
+Code baseline `a1db8c114dec0ab69d69a5576e153a7f868cba0e` 为本地交接报送的既有代码提交，未包含 dirty/untracked 资料；Codex 开始前须核验本地工作树。冻结计划与科学合同不可事后追改，旧工作流仅历史；Codex 在本次限定工程版本内自主实现与 focused 测试，完成后集中交付 Astra 独立验收，不做实时监督。
+
+真实31省、HJB/KFE、C8/C9/C10、GE、Results 与受保护数据调用仍不授权；`C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、Objective A16 `FAIL_CLOSED`、`model_activation=False`、`Results FALSE` 及经济劳动单位未知保持。人口/人均方向保持、户均封存，不 `N=P/3`。
+
+动态目录 `docs/DOC_INDEX_CURRENT.md`，版本登记 `docs/CH5_VERSION_REGISTER_CURRENT.md`，授权正文 `versions/0.0.1/authorization.md`。
 
 ---
 # 以下为 2026-10-12 第二阶段迁移旧状态（历史）
