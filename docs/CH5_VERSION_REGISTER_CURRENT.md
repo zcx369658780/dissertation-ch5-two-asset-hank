@@ -1,6 +1,14 @@
 # 第五章路线图与版本登记
 
-## 2026-10-15 当前：V0.0.7 正式冻结SOURCE_ONLY经济量纲与历史来源证据审查
+## 2026-10-15 当前：V0.0.7 历史C8来源及经济量纲待证义务有限接受、正式CLOSED
+
+**`CLOSED__ACCEPT__HISTORICAL_SOURCE_CROSSWALK_AND_ECONOMIC_UNIT_CRITICAL_OBLIGATIONS_ONLY__WITH_OBSERVATIONS`**。冻结 `635cea1c54afecc78d6678805a263a889985a291`，plan blob `940ac55265f5ee9bf9b82c3e955f900fbddf32ce`；真实候选 [`d8bb49d86ea674ea4ff5e3fdf03929baa08a6514`](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/commit/d8bb49d86ea674ea4ff5e3fdf03929baa08a6514) / tree `9b685397ad5bc76a4ac3bf4203776389742c5ec5` / parent `198b70f8b1c7b802bc2e18cb4bb0825bdb495b00`，单commit 1 ahead、仅3份新增V007白名单文档，Astra独立GitHub读取并核远端候选branch `codex/ch5-v007-source-unit-audit-20261015`，没有merge main。
+
+Astra独立验收 [V0.0.7正式报告](../versions/0.0.7/acceptance.md)、[复盘](../versions/0.0.7/retrospective.md) 确认：Python在firm前覆写Lt_prev为household均值且当前Lt为migration总供给；household Tt被直接用在地区财政，AtTax为均值；Lt*tau劳动税在工资率解释下缺共同计价。Astra本轮额外只读Owner原MATLAB ZIP对应函数，发现它的`HANK_mp_1turn.m`在household→按N迁移→firm之间没有恢复old firm Lt；它只是辅助源码，不是C8历史执行字节。经济学实际结果/模型BUG、直接单位认证均未证实。Codex 10.5分钟/15,335,719B、保护原dirty/index与最终文档校核为CODEX_REPORTED_WITH_LOCAL_RECEIPTS，网页没有复跑本地命令。
+
+原C8历史manifest SHA独立已接受，但今天原始成员/尺寸/字节未知；A–D累计申请上限1,048,576 / 3,538,944 / 4,046,848 / 4,112,384 B，全部**REQUEST_ONLY**，阶段A也没有新的Owner保护stat/read/hash/parse许可。C9、Objective A16/window、model_activation、Results仍严格停；V0.0.8 NOT_STARTED且NEXT_BASELINE_ADOPTION=UNDECIDED。后续优先是劳动和财政同量纲经济判定，真实保护来源读取仍需Owner新签门。CH5_WORKFLOW_V1.2不改，原V006/V005科学和行政终态不变。
+
+## 2026-10-15 历史：V0.0.7 SOURCE_ONLY正式冻结/实施前
 
 **`FROZEN__WAIT_CODEX_SOURCE_ONLY_UNIT_RECONCILIATION__REAL_READ_REQUEST_ONLY`**。Owner立版V007后，Codex仅SOURCE_ONLY交付集中原C8来源、经济单位、37文件分期许可建议，Astra独立核实历史独立接收及原MATLAB辅助源码，发现中间预算算术少计NPZ 64KiB并已纠正。正式冻结 [V0.0.7计划](../versions/0.0.7/plan.md)，代码文档候选基线采用上版 `198b70f8b1c7b802bc2e18cb4bb0825bdb495b00`（tree `0c637893d92cafdf72a194b350b3bf7016894d5c`），但原D盘8 dirty/数千untracked和Git外部common-dir不得合并/清理。**冻结不等于实现授权**；此计划读回后才由Astra另行签发CODEX SOURCE_ONLY文档实施许可，真实protected stat/读取/哈希/解析或模型调用许可均0。
 

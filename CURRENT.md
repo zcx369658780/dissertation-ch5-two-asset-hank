@@ -1,12 +1,14 @@
-# 第五章 CURRENT：V0.0.7 已冻结SOURCE_ONLY经济量纲与历史来源证据工作
+# 第五章 CURRENT：V0.0.7 已独立验收并限范围关闭
 
 日期：2026-10-15（Asia/Shanghai）
-**状态：`FROZEN__WAIT_CODEX_SOURCE_ONLY_UNIT_RECONCILIATION__REAL_READ_REQUEST_ONLY`。冻结文档本身不构成实施/真实访问授权；只有Astra独立回读后的独立SOURCE_ONLY许可可启动Codex。**
+**终态：`CLOSED__ACCEPT__HISTORICAL_SOURCE_CROSSWALK_AND_ECONOMIC_UNIT_CRITICAL_OBLIGATIONS_ONLY__WITH_OBSERVATIONS`**
 
-Owner已明确启动V0.0.7。Astra独立核实历史C8一次执行及5,141成员manifest的历史接收文档、固定src身份、原MATLAB辅助源码经济式，并审议Codex集中SOURCE_ONLY报告；正式范围是**原C8历史可信锚与经济量纲—特别是Lt_prev家庭均值 vs 企业总劳动、Govinc公式税收/AtTax人口桥**的科学依据、条件式和Owner裁决材料，不再追加V006合成包装/测试。冻结见 [V007固定计划](versions/0.0.7/plan.md)；真原件读仍为REQUEST_ONLY。
+Owner于10月14日启动V007，Astra于10月15日冻结计划 `635cea1c54afecc78d6678805a263a889985a291` / blob `940ac55265f5ee9bf9b82c3e955f900fbddf32ce` 并另行签发`ASTRA_APPROVED_EXECUTION__CH5_V007__SOURCE_ONLY_HISTORICAL_AND_ECONOMIC_UNIT_AUDIT_ONLY`。Codex提交 [V007代码分支候选](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/commit/d8bb49d86ea674ea4ff5e3fdf03929baa08a6514) `d8bb49d86ea674ea4ff5e3fdf03929baa08a6514`，tree `9b685397ad5bc76a4ac3bf4203776389742c5ec5`，唯一parent `198b70f8b1c7b802bc2e18cb4bb0825bdb495b00`；准确变更为**仅新增3份V007交付文件**，GitHub对commit/tree、单父、范围、远端候选分支已独立核实，无main merge。正式[独立验收](versions/0.0.7/acceptance.md)、[复盘](versions/0.0.7/retrospective.md)。完整[source+unit证据](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/d8bb49d86ea674ea4ff5e3fdf03929baa08a6514/versions/0.0.7/provenance_unit_evidence.md)位于固定候选，勿用治理分支相对路径误读。
 
-上版V0.0.6已正式`CLOSED__ACCEPT__SOURCE_ONLY_IMPLEMENTATION_AND_SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS`。V007 SOURCE_ONLY 文档代码基线主动选 `198b70f8b1c7b802bc2e18cb4bb0825bdb495b00` tree `0c637893d92cafdf72a194b350b3bf7016894d5c`；GitHub模型main未合并本候选，D盘原工作树及8 dirty/数千untracked与ignored不覆盖。历史C8 dispatch `7c88960f16ce0b7dd42bbb99b882334731895749` 与独立执行候选 `63ac1ae972fe7f54dc59d2ed58764955088c57ce` 均含 `src` tree `00682b2e1a7ba23665f6e16f6acf48ad35874883`；完整C8 manifest历史SHA `5C1D740CDEAC77A232657668EA22AA79403B708DA154FF141472127534574301` 是历史受信锚而非今天资产认证。
+当前接受范围是**历史C8来源交叉表文档证据**及**经济单位关键待证义务**，不是ECONOMIC_UNITS_VERIFIED或真实C8认证：家户分布均值Lt/AtTax与企业目的省总劳动Lt_supply、`Lt_prev`覆盖、Govinc的Lt*tau货币计价与Tt人口桥可能不一致。GitHub Python源码确认Lt_prev被当前household Lt覆盖、Tt同时作为家户/地区项；Astra本轮独立只读Owner已上传的原MATLAB ZIP辅助调用链，确认在该上传版本家庭→migration乘N→firm之间没有恢复旧firm Lt，但ZIP不是历史C8执行原件。经济学真实错误与改写范围待下一轮Owner经济决定。
 
-未来读取先A单manifest，后B四输入/摘要、按需C31省五字段、可选D距离；**均未获得新Owner保护许可**。纠正申请的阶段预算算术：A≤1,048,576B、A+B≤3,538,944B、A+B+C≤4,046,848B、37文件全部≤4,112,384B，四个数仍只作REQUEST_ONLY；当前manifest本体长度UNKNOWN，1MiB cap不可冒充事实。A16/window及访问安全前置尚未解除。任何真实JSON/NPZ/MAT/CSV/receipts的stat/read/hash/parse、实际consumer、模型和科学调用均0。
+Codex报告本地最终view文档/JSON/diff PASS、原HEAD/branch/index/8 dirty字节哈希回读一致、总耗时约10.5分钟、增加存储15,335,719B；网页没有访问其LOCAL_ONLY原始delivery JSON，本地资源/原保护属于CODEX_REPORTED_WITH_LOCAL_RECEIPTS，瞬时资源UNKNOWN。原dirty及共享Git common-dir保留；不merge main，不重做V006 synthetic 40 tests，不重启V005备份/G0。
 
-仍保留既定HJB/KFE、K1 raw-ra0/lagged S、C1、人口/人均（不N=P/3）、2017 observed→2018 retrospective、价格方法归属但direct_price_verified=False/price_verified=False；历史R2 2/9、5/9 miss；A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、旧real/science budgets CLOSED。V0.0.7尚未有CODEX实施候选/Results。工作流保持CH5_WORKFLOW_V1.2，V0.0.8 NOT_STARTED。
+真实C8仍已知**历史独立接受SHA**，但今天manifest与31省原件当前bytes/尺寸/身份UNKNOWN。阶段A单manifest≤1,048,576B、A+B五文件≤3,538,944B、A+B+C 36件≤4,046,848B、可选D共37件≤4,112,384B只是REQUEST_ONLY，manifest本体size UNKNOWN；没有stat/read/hash/parse/extract的任何新许可。后续保护/Owner选择须分门签发，A16/window并未解除。
+
+仍保留Option1、人口/人均而非N=P/3、2017 observed→2018 target历史回溯、current_price_methodologically_attributed但direct_price_verified=False/price_verified=False、HJB/KFE与K1 raw-ra0/lagged同S、C1旧科学决定。R2 2/9、5/9未过；A16 UNRESOLVED/FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、旧data/science/consumer预算CLOSED、D3-real/D4-real未授权。V0.0.6继续有限CLOSED、V0.0.8 NOT_STARTED，NEXT_BASELINE_ADOPTION=UNDECIDED。继续CH5_WORKFLOW_V1.2；等待Owner下一步科学/保护决定。
