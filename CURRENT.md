@@ -1,3 +1,14 @@
+# 第五章当前状态：Owner采纳论文优先战略，原B2继续
+
+2026-10-14 `OWNER_ADOPTED_PUBLICATION_FIRST__B2_ORIGINAL_CONTRACT_UNCHANGED`。Owner同意先争取一篇科学可信、多省份HANK区域联动及反事实可投稿论文；K2/完整动态/IRF/福利依首篇研究必要性排序，不自动删除科学路线。新战略见 `docs/CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md`。Owner确认Python、MATLAB程序分别有本地及GitHub备份（`OWNER_ASSERTED`，不等于当前dirty/untracked/封存原证均已核验在云端）；因此**不再将额外物理隔离存储作为科研备份默认要求**。旧G0的可信可弃用根是Windows A16/D2敌对实验安全资源，与备份非同一目标。普通 SOURCE_ONLY/合成科研规划可在现有权限内推进，但保护真实科学资产、C9/GE/Results仍需各自科学门。
+
+现有V0.0.5 B2已按固定 `bd3cfd39c091abb7276d611dfaa0e2064864ecaf` 授权，Owner报告执行中，网页无法独立看到本机进度；**不追改B2、不重启其他复制或启动新科学版本**。项目内可弃用普通 synthetic 目录未来另论，绝不默示允许攻击真实公共祖先。B2完成后先按实际回报验收，必要旧目录清理只在备份及Owner精确删除许可满足时发生，可与科研计划并行准备。V0.0.5主要 G0仍DRAFT/UNPROVEN，`NEXT_BASELINE_ADOPTION=UNDECIDED`，V0.0.6 NOT_STARTED。
+
+科学合同保持：D1/D2、A16 UNRESOLVED/FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、D3-real/D4-real科研未授权、旧预算CLOSED、人口/人均与不N=P/3不变。
+
+---
+# 以下是2026-10-14论文优先决定前的历史状态
+
 # 第五章当前状态：B1外链安全阻塞，Owner方案A已采纳，B2长任务冻结
 
 2026-10-14 `B1_CLOSED__SAFE_STOP__B2_FROZEN_AWAIT_SEPARATE_CHAT_AUTHORIZATION`。B1 固定 `abf66d69165e3f4279e8e2cc3ef073ca3bae7f9a` 报告 `BLOCKED_PRE_COPY/UNAUTHORIZED_EXTERNAL_DEPENDENCY`：唯一项目目录reparse指向两源根之外；Codex报告2.671秒exit1、外部目标访问0、写入/复制/哈希/恢复0。Astra对照冻结合同审议，Windows行为仅CODEX_REPORTED_WITH_LOCAL_REPORT；正式 `versions/0.0.5/b1_acceptance.md`，**B1旧许可已消费不能重试**。Owner新明确采纳**方案A**：保存唯一链接类型/描述及未包含外部目标的恢复限制，绝不访问目标。新的 `versions/0.0.5/b2_link_descriptor_backup_plan.md` 已独立冻结：同两源根（模型linked worktree及外部Git common-dir）非覆盖普通文件copy/SHA256、LOCAL_ONLY被动链接描述与隔离Git恢复，唯一新目标 `C:\CH5_Research_Backup\CH5_PROJECT_LINK_DESCRIPTOR_20261014_B2_01`。**目前仍未实际创建B2快照或备份副本**，Astra将在Owner/Codex同会话签发单独实施授权，避免额外GitHub微提交。

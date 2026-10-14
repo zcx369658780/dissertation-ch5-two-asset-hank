@@ -1,6 +1,12 @@
 # 第五章路线图与版本登记
 
-## 2026-10-14 当前：Owner 采纳方案A，B1阻塞安全验收并冻结B2长任务
+## 2026-10-14 最新战略：Owner 同意优先取得可投稿科研结果
+
+`OWNER_ADOPTED_PUBLICATION_FIRST__B2_UNCHANGED__NO_NEW_SCIENCE_AUTH`。Owner明确Python/MATLAB都有本地及GitHub程序备份（Owner提供信息、非网页独立全量验证），科研代码保全**无需另找物理隔离卷**；旧“可信可弃用根”属于Windows A16/D2敌对保护实验而非备份要求。Owner同意首篇优先完成科学可信GE/区域外溢及政策反事实，K2/年度动态/IRF/福利按首篇必要性排序。详见 [2026-10-14成果优先路线](CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md)。首稿估计再约5–8个长版本，非已冻结承诺。
+
+现有B2依据原合同继续，Owner报告正在执行，网页没有独立本机进度；不追改B2或另派备份检查、物理磁盘实验。可规划不触碰protected的科研工作，所有真实科学读取、A16/C9/GE/Results门与旧消耗仍受原科学合同约束。V0.0.5核心G0未证，V0.0.6 NOT_STARTED。
+
+## 2026-10-14 成果优先战略决定前的B2历史状态
 
 `B1_CLOSED__SAFE_STOP__B2_FROZEN_AWAIT_SEPARATE_CHAT_AUTHORIZATION`。Codex B1报告唯一模型目录reparse目标指向两个许可源根以外，按B1 §3A**复制前安全停止**：exit1、2.671秒、目标访问0、快照0、复制/写入/hash/恢复0；Astra核固定B1合同并接受安全停点，运行数值仅Codex本地报告。[B1验收](../versions/0.0.5/b1_acceptance.md)。
 

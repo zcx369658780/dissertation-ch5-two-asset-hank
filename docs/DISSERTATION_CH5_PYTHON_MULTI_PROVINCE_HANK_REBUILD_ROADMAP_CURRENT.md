@@ -1,3 +1,8 @@
+# 2026-10-14 Owner成果优先战略覆盖层
+
+未来版本的现行优先级见 [CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md](CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md)。以下旧9月—10月技术路线与冻结科学决定作为历史保留，不等于当期实施许可。Owner明确不为已有Python/MATLAB本地+GitHub程序备份额外寻找隔离物理存储；可信可弃用fixture专供旧A16敌对Windows保护实验，不能与备份混同。首篇科研目标优先真实来源、K1B数值闭环、必要GE、区域联动/反事实、合格结果与论文；K2/动态/IRF按首篇经济机制必要性另决。
+
+---
 # 路线图迁移状态
 2026-10-12：新工作方式见 CH5_ASTRA_WORKFLOW_CURRENT.md，迁移后首版尚未制定，等待Owner第三阶段。下方路线与冻结版本/历史状态原样保留；旧微审批、自动续签和旧下一门不再启动。未来路线不得追改已冻结版本。
 
