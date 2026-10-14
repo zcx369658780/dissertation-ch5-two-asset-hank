@@ -1,6 +1,14 @@
 # 第五章路线图与版本登记
 
-## 2026-10-14 当前：V0.0.6 来源/三轴/双消费者合成工程有限接受并正式关闭
+## 2026-10-14 当前：Owner正式启动V0.0.7（M1真实C8来源、经济量纲和精确保护读取门）
+
+**`OWNER_STARTED__V007_DRAFT__WAIT_CODEX_CONSOLIDATED_SOURCE_ONLY_M1_EVIDENCE_PROPOSAL__NO_REAL_READ_OR_IMPLEMENTATION_AUTHORIZED`**。Owner复盘V0.0.6并决定工作流V1.2无必改项目，直接进入V0.0.7。本版本前草案为 [V0.0.7 M1计划](../versions/0.0.7/plan.md)，当前只许可Codex一次集中SOURCE_ONLY文档/代码审阅和科学单位/证据映射；**不是冻结计划，不是代码实施，也不是读取37项真实数据/受保护原件的新授权。**
+
+上版V0.0.6 `CLOSED__ACCEPT__SOURCE_ONLY_IMPLEMENTATION_AND_SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS`，accepted candidate `198b70f8b1c7b802bc2e18cb4bb0825bdb495b00`、tree `0c637893d92cafdf72a194b350b3bf7016894d5c`，未合main。NEXT_BASELINE_ADOPTION对V0.0.7为PROPOSED/UNDECIDED，需实际Git/dirty审查后冻结。本版聚焦真实original C8 historical anchor、31省五字段/进入态/S/参数、人口与资本劳动工资量纲，和既有37文件（4,112,384B）REQUEST_ONLY的最小分期准入；可读历史公开代码/文档，不得实际打开、stat、哈希、解析真实JSON/NPZ/MAT/CSV、运行模型或恢复旧预算。
+
+现仍A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE；V0.0.5有限关闭/B3非完整可信保护不变；不重启G0、B3/备份或删除。Owner仅授权立版；等Codex集中报告后由Astra科学审议、冻结，再分别处理实现与Owner真实读取许可。
+
+## 2026-10-14 历史：V0.0.6 来源/三轴/双消费者合成工程有限接受并正式关闭
 
 **CLOSED__ACCEPT__SOURCE_ONLY_IMPLEMENTATION_AND_SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS**。Owner已正式启动并由Astra独立冻结、授权V0.0.6。冻结commit `4857d9222580b491676cdf75951527eb06d16b49`，plan blob `5c96485f9b70c4c4033675134768b1ff4fe2d188`；实施候选 [`198b70f8b1c7b802bc2e18cb4bb0825bdb495b00`](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/commit/198b70f8b1c7b802bc2e18cb4bb0825bdb495b00)，tree `0c637893d92cafdf72a194b350b3bf7016894d5c`，唯一parent为已接受V0.0.3候选 `cf74384f151427f0b7071ac0461cede6ad6cdf11`。GitHub独立证明8个白名单changed paths、candidate 分支与 remote HEAD、无main merge。正式 [acceptance](../versions/0.0.6/acceptance.md) 和 [retrospective](../versions/0.0.6/retrospective.md) 仅接受 SOURCE_ONLY_IMPLEMENTATION + SYNTHETIC_ENGINEERING（受限）；真实C8来源/经济单位/31省consumer及Results不接受。
 

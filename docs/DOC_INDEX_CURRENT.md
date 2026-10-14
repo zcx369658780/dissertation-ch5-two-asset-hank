@@ -1,6 +1,6 @@
 # 第五章动态总目录
 
-**现行最新（2026-10-14）：V0.0.6已完成受限合成工程独立验收并正式关闭，分类为 `CLOSED__ACCEPT__SOURCE_ONLY_IMPLEMENTATION_AND_SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS`。冻结commit `4857d9222580b491676cdf75951527eb06d16b49`，代码candidate `198b70f8b1c7b802bc2e18cb4bb0825bdb495b00`（尚未合main）；真实原C8数据、劳动/资本单位、observed consumer、A16/C9/GE/Results仍未认证或开放。V0.0.7 NOT_STARTED；下一步等Owner明确科研立版。当前状态见 [CURRENT](../CURRENT.md)、[版本登记](CH5_VERSION_REGISTER_CURRENT.md)、[V0.0.6验收](../versions/0.0.6/acceptance.md)及[复盘](../versions/0.0.6/retrospective.md)。历史“V0.0.6 DRAFT/冻结待Codex”段落仅为历史时点。**
+**现行最新（2026-10-14）：Owner已正式启动 V0.0.7，状态 `OWNER_STARTED__V007_DRAFT__WAIT_CODEX_CONSOLIDATED_SOURCE_ONLY_M1_EVIDENCE_PROPOSAL__NO_REAL_READ_OR_IMPLEMENTATION_AUTHORIZED`。当前**仅**允许一次SOURCE_ONLY集中版前提案；不允许真实C8数据/受保护原件读取、代码改动、科学消费者或Results。V0.0.6继续已有限CLOSED，其合成工程不重复运行。见 [CURRENT](../CURRENT.md)、[版本登记](CH5_VERSION_REGISTER_CURRENT.md)和 [V0.0.7版前DRAFT计划](../versions/0.0.7/plan.md)。历史“V0.0.7 NOT_STARTED”属于旧时态。**
 
 这是当前导航；条目按用途区分当前资料与历史快照。网页顾问必须实际读取正文及提交，不能以本目录代替证据。
 
@@ -10,7 +10,8 @@
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
 | Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 决定、原证据上限及本地工具限制 |
-| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.6 已正式CLOSED（受限合成工程接受）；V0.0.7 未启动，真实科研运行未放行 |
+| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.7 OWNER_STARTED/DRAFT、待Codex集中SOURCE_ONLY提案；真实科研运行未放行 |
+| V0.0.7 M1真实来源/经济量纲版前科研主线 | [V0.0.7计划草案](../versions/0.0.7/plan.md) | 首篇论文真实C8历史原证、31省轴与经济单位/保护读取最小门；版前SOURCE_ONLY，不含实际授权 |
 | V0.0.6 M1冻结与受限最终验收 | [冻结计划](../versions/0.0.6/plan.md)、[独立验收](../versions/0.0.6/acceptance.md)、[复盘](../versions/0.0.6/retrospective.md) | 五字段/三轴/双消费者合成工程CLOSED；原始C8真实输入及Results仍UNKNOWN/BLOCKED |
 | 本次长会话决策与进度交接 | [2026-10-14晚会话交接文档](CH5_CONVERSATION_HANDOFF_20261014_EVENING.md) | V0.0.5证据/Owner决策/低频GitHub工作流、V0.0.6已启动但仅DRAFT，供新Astra恢复权威 |
 | 2026-10-14 论文成果优先战略 | [Owner新战略路线](CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md)、[历史技术路线](DISSERTATION_CH5_PYTHON_MULTI_PROVINCE_HANK_REBUILD_ROADMAP_CURRENT.md) | 不为一般备份追加物理隔离；第一篇以真实科学闭环为先，A16/Results门不虚构通过 |
