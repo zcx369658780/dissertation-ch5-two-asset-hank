@@ -50,7 +50,8 @@ def integrate_turn(repository, task_root, turn_root, turn, states, batch,
                    input_kind, price_basis, price_verified, params,
                    migration_wedge_destination_origin, spies,
                    prepared_array=None, province_mapping=None,
-                   prepared_middle_stage=None, fixed_c8_binding=None, fixed_c8_external_source=None):
+                   prepared_middle_stage=None, fixed_c8_binding=None, fixed_c8_external_source=None,
+                   joint_preparation=None):
     """Mirror historical arguments, add explicit annual carrier; spies only.
 
     The default firm_stage remains an opaque synthetic test boundary. An explicit
@@ -118,45 +119,71 @@ def integrate_turn(repository, task_root, turn_root, turn, states, batch,
             external_source=fixed_c8_external_source,
             source_identifier=annual_context.wedge.binding.source_identifier,
             source_sha256=annual_context.source_sha256)
-    _validate_input_axes(batch.ct, migration_wedge_destination_origin, n)
-    inputs = OneTurnInputs(province_order,
-        tuple(MappingProxyType(dict(r)) for r in input_states), MappingProxyType(dict(params)),
-        phi, migration_wedge_destination_origin, batch)
-    middle_module = None
-    if prepared_middle_stage is not None:
-        middle_module = sys.modules.get(type(prepared_middle_stage).__module__)
-        middle_path = Path(__file__).with_name('middle_stage.py').resolve()
-        if (middle_module is None
-                or getattr(middle_module, 'PreparedMiddleStage', None) is not type(prepared_middle_stage)
-                or Path(getattr(middle_module, '__file__', '')).resolve() != middle_path):
-            raise ValueError('exact prepared engineering middle stage required')
-        middle_module.PreparedMiddleStage.validate_pre_spy(prepared_middle_stage,
-            inputs, frozen_shares, expected_share_sha, annual_context=annual_context,
-            prepared_array=prepared_array, province_mapping=province_mapping, ledger=ledger)
-    provinces, household = inputs.old_provinces, inputs.household_outputs
-    if prepared_middle_stage is not None:
-        ledger['source_faithful_labor_reconstructions'] += 1
-    migration = spies.reconstruct_migration_labor(spies.migration_inputs_factory(
-        consumption_by_origin=household.ct, population_by_origin=[r['N'] for r in provinces],
-        old_firm_wage_by_destination=[r['wjt'] for r in provinces], tax_by_origin=[r['tau'] for r in provinces],
-        phi_destination_origin=inputs.phi_destination_origin,
-        migration_wedge_destination_origin=inputs.migration_wedge_destination_origin,
-        gamma_c=inputs.params['ga'], phi_l=inputs.params['phi_l']))
-    middle_result = None
-    if prepared_middle_stage is None:
-        firms = spies.firm_stage(inputs, migration, frozen_shares, expected_share_sha)
-    else:
-        middle_result = middle_module.PreparedMiddleStage.run(prepared_middle_stage,
-            inputs, migration, frozen_shares, expected_share_sha)
-        firms = middle_result.firms
-    if len(firms) != n:
-        raise ValueError('firm-wage stage axis mismatch')
-    if prepared_middle_stage is not None:
-        ledger['composite_wage_batches'] += 1
-    wages = spies.composite_household_wages(provinces, [f.wjt for f in firms],
-        inputs.phi_destination_origin, inputs.migration_wedge_destination_origin,
-        phi_l=inputs.params['phi_l'], alphal=inputs.params['alphal'])
-    return {'inputs': inputs, 'migration': migration, 'wages': wages,
-            'middle_result': middle_result,
-            'annual_context': annual_context, 'full_outer_runtime_integrated': False,
-            'model_activation': False}
+    joint = None
+    if use_c8_binding and prepared_middle_stage is None:
+        raise ValueError('joint fixed C8 requires explicit synthetic middle boundary')
+    joint_arguments = dict(states=states, batch=batch, frozen_shares=frozen_shares,
+        annual_context=annual_context, prepared_array=prepared_array, params=params,
+        distance=migration_wedge_destination_origin, fixed_c8_binding=fixed_c8_binding,
+        external_source=fixed_c8_external_source, turn=turn)
+    if use_c8_binding or joint_preparation is not None:
+        joint_module = sys.modules.get(type(joint_preparation).__module__)
+        joint_path = Path(__file__).with_name('fixed_c8_joint_preparation.py').resolve()
+        if (joint_module is None
+                or getattr(joint_module, 'JointPreparation', None) is not type(joint_preparation)
+                or Path(getattr(joint_module, '__file__', '')).resolve() != joint_path):
+            raise ValueError('fixed C8 requires explicit synthetic joint preparation')
+        joint = joint_preparation
+        joint.begin(**joint_arguments)
+    try:
+        _validate_input_axes(batch.ct, migration_wedge_destination_origin, n)
+        inputs = OneTurnInputs(province_order,
+            tuple(MappingProxyType(dict(r)) for r in input_states), MappingProxyType(dict(params)),
+            phi, migration_wedge_destination_origin, batch)
+        middle_module = None
+        if prepared_middle_stage is not None:
+            middle_module = sys.modules.get(type(prepared_middle_stage).__module__)
+            middle_path = Path(__file__).with_name('middle_stage.py').resolve()
+            if (middle_module is None
+                    or getattr(middle_module, 'PreparedMiddleStage', None) is not type(prepared_middle_stage)
+                    or Path(getattr(middle_module, '__file__', '')).resolve() != middle_path):
+                raise ValueError('exact prepared engineering middle stage required')
+            middle_module.PreparedMiddleStage.validate_pre_spy(prepared_middle_stage,
+                inputs, frozen_shares, expected_share_sha, annual_context=annual_context,
+                prepared_array=prepared_array, province_mapping=province_mapping, ledger=ledger)
+        provinces, household = inputs.old_provinces, inputs.household_outputs
+        if prepared_middle_stage is not None:
+            ledger['source_faithful_labor_reconstructions'] += 1
+        migration = spies.reconstruct_migration_labor(spies.migration_inputs_factory(
+            consumption_by_origin=household.ct, population_by_origin=[r['N'] for r in provinces],
+            old_firm_wage_by_destination=[r['wjt'] for r in provinces], tax_by_origin=[r['tau'] for r in provinces],
+            phi_destination_origin=inputs.phi_destination_origin,
+            migration_wedge_destination_origin=inputs.migration_wedge_destination_origin,
+            gamma_c=inputs.params['ga'], phi_l=inputs.params['phi_l']))
+        if joint is not None:
+            joint.recheck(**joint_arguments)
+        middle_result = None
+        if prepared_middle_stage is None:
+            firms = spies.firm_stage(inputs, migration, frozen_shares, expected_share_sha)
+        else:
+            middle_result = middle_module.PreparedMiddleStage.run(prepared_middle_stage,
+                inputs, migration, frozen_shares, expected_share_sha)
+            firms = middle_result.firms
+        if len(firms) != n:
+            raise ValueError('firm-wage stage axis mismatch')
+        if joint is not None:
+            joint.recheck(**joint_arguments)
+        if prepared_middle_stage is not None:
+            ledger['composite_wage_batches'] += 1
+        wages = spies.composite_household_wages(provinces, [f.wjt for f in firms],
+            inputs.phi_destination_origin, inputs.migration_wedge_destination_origin,
+            phi_l=inputs.params['phi_l'], alphal=inputs.params['alphal'])
+        if joint is not None:
+            joint.complete(**joint_arguments)
+        return {'inputs': inputs, 'migration': migration, 'wages': wages,
+                'middle_result': middle_result,
+                'annual_context': annual_context, 'full_outer_runtime_integrated': False,
+                'model_activation': False}
+    finally:
+        if joint is not None:
+            joint.close()
