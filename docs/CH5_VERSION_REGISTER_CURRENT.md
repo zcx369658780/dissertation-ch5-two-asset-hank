@@ -1,6 +1,14 @@
 # 第五章路线图与版本登记
 
-## 2026-10-14 当前：V0.0.6 已冻结并获Astra独立受限实施授权
+## 2026-10-14 当前：V0.0.6 来源/三轴/双消费者合成工程有限接受并正式关闭
+
+**CLOSED__ACCEPT__SOURCE_ONLY_IMPLEMENTATION_AND_SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS**。Owner已正式启动并由Astra独立冻结、授权V0.0.6。冻结commit `4857d9222580b491676cdf75951527eb06d16b49`，plan blob `5c96485f9b70c4c4033675134768b1ff4fe2d188`；实施候选 [`198b70f8b1c7b802bc2e18cb4bb0825bdb495b00`](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/commit/198b70f8b1c7b802bc2e18cb4bb0825bdb495b00)，tree `0c637893d92cafdf72a194b350b3bf7016894d5c`，唯一parent为已接受V0.0.3候选 `cf74384f151427f0b7071ac0461cede6ad6cdf11`。GitHub独立证明8个白名单changed paths、candidate 分支与 remote HEAD、无main merge。正式 [acceptance](../versions/0.0.6/acceptance.md) 和 [retrospective](../versions/0.0.6/retrospective.md) 仅接受 SOURCE_ONLY_IMPLEMENTATION + SYNTHETIC_ENGINEERING（受限）；真实C8来源/经济单位/31省consumer及Results不接受。
+
+Codex本地回报35/40/final40 passed（3/6进程），原工作树dirty/untracked/ignored保护、最终测试和存储/峰值回执皆为CODEX_REPORTED_WITH_LOCAL_RECEIPTS；GitHub代码身份与静态测试设计为INDEPENDENTLY_VERIFIED_GITHUB_CODE。瞬时Git pack内存/存储峰值不能补造为独立证实。未来37文件精确请求仍 REQUEST_ONLY。原 `A16 FAIL_CLOSED`、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、`model_activation=False`、Results FALSE、人口/人均、已采纳K1/C1/HJB/KFE和旧预算CLOSED均保持。V0.0.5终态继续有限行政关闭，B3/G0/清理不重启。
+
+**V0.0.7 NOT_STARTED，NEXT_BASELINE_ADOPTION=UNDECIDED（对后续版本）；candidate接受≠merge main或下一版基线自动采用。** 按CH5_WORKFLOW_V1.2等待Owner下一轮明确立版，不自动签发新科研/真实来源访问授权。
+
+## 2026-10-14 历史：V0.0.6 冻结及执行授权（候选交付前）
 
 **FROZEN__ASTRA_APPROVED_EXECUTION__WAIT_CODEX_SYNTHETIC_IMPLEMENTATION**。Owner已正式启动 V0.0.6；Codex交付唯一 SOURCE_ONLY 集中静态方案，Astra独立阅读固定GitHub源码、原科学合同并审议，接受静态方案**仅作为受界合成工程基础**；真实C8历史字节、经济单位、运行消费者仍未证实。
 
