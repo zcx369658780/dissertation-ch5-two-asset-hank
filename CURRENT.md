@@ -1,3 +1,12 @@
+# 第五章当前状态：B1外链安全阻塞，Owner方案A已采纳，B2长任务冻结
+
+2026-10-14 `B1_CLOSED__SAFE_STOP__B2_FROZEN_AWAIT_SEPARATE_CHAT_AUTHORIZATION`。B1 固定 `abf66d69165e3f4279e8e2cc3ef073ca3bae7f9a` 报告 `BLOCKED_PRE_COPY/UNAUTHORIZED_EXTERNAL_DEPENDENCY`：唯一项目目录reparse指向两源根之外；Codex报告2.671秒exit1、外部目标访问0、写入/复制/哈希/恢复0。Astra对照冻结合同审议，Windows行为仅CODEX_REPORTED_WITH_LOCAL_REPORT；正式 `versions/0.0.5/b1_acceptance.md`，**B1旧许可已消费不能重试**。Owner新明确采纳**方案A**：保存唯一链接类型/描述及未包含外部目标的恢复限制，绝不访问目标。新的 `versions/0.0.5/b2_link_descriptor_backup_plan.md` 已独立冻结：同两源根（模型linked worktree及外部Git common-dir）非覆盖普通文件copy/SHA256、LOCAL_ONLY被动链接描述与隔离Git恢复，唯一新目标 `C:\CH5_Research_Backup\CH5_PROJECT_LINK_DESCRIPTOR_20261014_B2_01`。**目前仍未实际创建B2快照或备份副本**，Astra将在Owner/Codex同会话签发单独实施授权，避免额外GitHub微提交。
+
+B2最大100k普通文件/7k目录/4GiB逻辑/2h、0自动重试；任何未知外链不追随、链接原目标无法自动恢复，成功也只能有界声称普通源字节保全，不能叫全部项目完全自包含可恢复。Owner所要求的旧版本目录清理仍需备份有界验收后提交候选清单，实际删除/移动待Owner具体授权；V0.0.5可信独立实验根主计划仍DRAFT，NEXT_BASELINE_ADOPTION=UNDECIDED；V0.0.4 CLOSED/BLOCKED、D1/D2和A16 FAIL_CLOSED/window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、科研D3-real/D4-real仍无许可，V0.0.6 NOT_STARTED。
+
+---
+# 以下为B2方案A冻结之前的历史状态
+
 # 第五章当前状态：B0 有限验收完成，B1 全量备份门已固定
 
 2026-10-14 `B0_CLOSED_LIMITED_ACCEPT__B1_FROZEN_AWAIT_SEPARATE_CHAT_AUTHORIZATION`。Codex B0 回报两个源根普通非reparse文件90,766、目录6,325、逻辑1,804,958,786 B≈1.681GiB，C可用643,058,806,784 B≈598.895GiB，1个目录reparse不跟随，10.382秒 exit0 0错/0重试；Astra根据固定B0合同有限接受 `versions/0.0.5/b0_acceptance.md`，真实本机数据仅 `CODEX_REPORTED_WITH_LOCAL_REPORT`。Owner明确新批准 **D3-backup-byte / D4-backup-local**，仅为保全允许两个精确源根（含run004等）普通文件原字节复制和SHA256，不许可科研内容解析，C本地可能明文、不得调 ACL/加密、私有清单/日志LOCAL_ONLY留至后续决定；唯一reparse对象仅查询自身、不跟随外部目标。

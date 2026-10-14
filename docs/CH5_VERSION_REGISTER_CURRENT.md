@@ -1,6 +1,12 @@
 # 第五章路线图与版本登记
 
-## 2026-10-14 当前：B0 有限验收、Owner 批准 B1 原字节保全与保密条件
+## 2026-10-14 当前：Owner 采纳方案A，B1阻塞安全验收并冻结B2长任务
+
+`B1_CLOSED__SAFE_STOP__B2_FROZEN_AWAIT_SEPARATE_CHAT_AUTHORIZATION`。Codex B1报告唯一模型目录reparse目标指向两个许可源根以外，按B1 §3A**复制前安全停止**：exit1、2.671秒、目标访问0、快照0、复制/写入/hash/恢复0；Astra核固定B1合同并接受安全停点，运行数值仅Codex本地报告。[B1验收](../versions/0.0.5/b1_acceptance.md)。
+
+Owner明确采纳**方案A**：仅保全项目内该reparse链接自身的类型/链接目标描述，不跟随也不复制外部内容，必须标记外部依赖恢复缺口；此为新B2许可，不追改B1。现已按相同两源根、D3/D4仅备份正文许可、C盘现有保护条件及B0容量实测**一次性固定 [B2长任务合同](../versions/0.0.5/b2_link_descriptor_backup_plan.md)**。B2 允许非覆盖快照内复制普通文件/逐文件hash/Git隔离恢复（文件<=100k、目录<=7k、普通逻辑<=4GiB、2小时、0重试），但不会随自动外链、VSS、提权、删除/清理或科学实验；尚无执行结果。Astra于同会话另行独立实施授权，不为授权增开GitHub微提交。项目外链未包含不能声称完整独立恢复；原科学A16/window/C9/Results与V0.0.5主G0未证保持，V0.0.6 NOT_STARTED。
+
+## 2026-10-14 B1冻结待执行、尚未出现外链阻塞时历史状态
 
 `B0_CLOSED_LIMITED_ACCEPT__B1_FROZEN_AWAIT_SEPARATE_CHAT_AUTHORIZATION`。Codex B0 回报两个固定来源非reparse普通文件90,766、目录6,325、逻辑字节1,804,958,786 B约1.681GiB，C空闲643,058,806,784 B约598.895GiB；10.382秒/exit0/0错误/0重试，**一个目录reparse未跟随、目标及ADS/hardlink/时间点一致性不明**。Astra根据固定B0合同有限验收，Windows实测只属 Codex 报告：[B0验收](../versions/0.0.5/b0_acceptance.md)。
 
