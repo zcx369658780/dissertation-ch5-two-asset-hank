@@ -1,6 +1,13 @@
 # 第五章路线图与版本登记
 
-## 2026-10-15 当前：V0.0.7 历史C8来源及经济量纲待证义务有限接受、正式CLOSED
+## 2026-10-15 当前：V0.0.8 Owner启动—劳动/财政的跨来源理论与经济计量核查
+
+**`OWNER_STARTED__V008_DRAFT__WAIT_CODEX_CROSS_SOURCE_ECONOMIC_THEORY_PROPOSAL__NO_MODEL_CHANGE_OR_REAL_READ_AUTHORIZED`**。Owner同意直接进入V008，准许需要时只读查历史科研记忆/接受原件、上传MATLAB ZIP的`.m`文本以及博士论文PDF第五章；指出老MATLAB存在错误，不能作为应当照抄的科学真值。现仅立版、发表 [V008 DRAFT](../versions/0.0.8/plan.md) 和一次Codex SOURCE_ONLY交叉核查任务，**不冻结新方程、不改模型、不给受保护C8真实原件/科学计算权限**。
+
+V007的三个科学义务继续未经济认证：`Lt_prev` 被当前household均值覆盖，对比目的省按N聚合`Lt_supply`；`Govinc` 的`Lt*tau`与`AtTax/Tt`人口桥；不同来源的迭代/模型期与人均/宏观总体。Astra进一步确实查PDF p95(5-2)、p96(5-11)、p97(5-16)、p99表5-1、p101文本及用户MATLAB `HANK_firm.m/HANK_mp_1turn.m/Lt_seperate.m/multi_prov_HANK_12sts.m`，发现论文政府收支与Python财政不完全相同、论文书面预算未明示Tt、PDF delta .0025 vs MATLAB代码 .025、31 vs26文本矛盾，**来源矛盾不是自动接受的修正方案**。请Codex先从独立经济理论+历史采纳+源码给出可证伪修订选择，勿再次堆SOURCE_ONLY接口。
+
+V007已正式 `CLOSED__ACCEPT__HISTORICAL_SOURCE_CROSSWALK_AND_ECONOMIC_UNIT_CRITICAL_OBLIGATIONS_ONLY__WITH_OBSERVATIONS`，候选 `d8bb49d86ea674ea4ff5e3fdf03929baa08a6514` / tree `9b685397ad5bc76a4ac3bf4203776389742c5ec5`；V008拟继承前版但BASELINE_PROPOSED/UNDECIDED，main及本地原dirty不自动合并。Owner Option1、人口/人均不N=P/3、K1/S/C1/HJB/KFE已采纳历史运行继续有效；真实C8 A–D仍REQUEST_ONLY，A16/window/C9/CALL_LEDGER阻断与Results FALSE持续，V0.0.9 NOT_STARTED。
+## 2026-10-15 历史：V0.0.7 历史C8来源及经济量纲待证义务有限接受、正式CLOSED
 
 **`CLOSED__ACCEPT__HISTORICAL_SOURCE_CROSSWALK_AND_ECONOMIC_UNIT_CRITICAL_OBLIGATIONS_ONLY__WITH_OBSERVATIONS`**。冻结 `635cea1c54afecc78d6678805a263a889985a291`，plan blob `940ac55265f5ee9bf9b82c3e955f900fbddf32ce`；真实候选 [`d8bb49d86ea674ea4ff5e3fdf03929baa08a6514`](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/commit/d8bb49d86ea674ea4ff5e3fdf03929baa08a6514) / tree `9b685397ad5bc76a4ac3bf4203776389742c5ec5` / parent `198b70f8b1c7b802bc2e18cb4bb0825bdb495b00`，单commit 1 ahead、仅3份新增V007白名单文档，Astra独立GitHub读取并核远端候选branch `codex/ch5-v007-source-unit-audit-20261015`，没有merge main。
 

@@ -1,6 +1,6 @@
 # 第五章动态总目录
 
-**现行最新（2026-10-15）：V0.0.7 已按正式冻结计划完成SOURCE_ONLY历史C8来源与经济量纲/财政科学义务的有限验收并正式关闭，分类为 `CLOSED__ACCEPT__HISTORICAL_SOURCE_CROSSWALK_AND_ECONOMIC_UNIT_CRITICAL_OBLIGATIONS_ONLY__WITH_OBSERVATIONS`。候选 `d8bb49d86ea674ea4ff5e3fdf03929baa08a6514`（仅三份白名单文档）未合并 main；真实C8原件、单位认证、科学消费者/GE/Results均未获得许可或通过。当前状态见 [CURRENT](../CURRENT.md)、[版本登记](CH5_VERSION_REGISTER_CURRENT.md)、[V0.0.7最终验收](../versions/0.0.7/acceptance.md)、[复盘](../versions/0.0.7/retrospective.md)。V0.0.8 NOT_STARTED，Owner下一步科学与数据保护决策待定。**
+**现行最新（2026-10-15）：Owner已明确启动 V0.0.8，状态 `OWNER_STARTED__V008_DRAFT__WAIT_CODEX_CROSS_SOURCE_ECONOMIC_THEORY_PROPOSAL__NO_MODEL_CHANGE_OR_REAL_READ_AUTHORIZED`。当前只有跨来源科学 SOURCE_ONLY 版前提案许可；用已上传博士论文PDF、原MATLAB ZIP及项目记忆/接受文档核查劳动和财政理论，不把旧MATLAB或博士论文字面当成经济正确性标准，不授予实际模型/原C8 protected读取权限。V007仍有限CLOSED。详见 [CURRENT](../CURRENT.md)、[版本登记](CH5_VERSION_REGISTER_CURRENT.md)、[V008科研计划草案](../versions/0.0.8/plan.md)。**
 
 这是当前导航；条目按用途区分当前资料与历史快照。网页顾问必须实际读取正文及提交，不能以本目录代替证据。
 
@@ -10,7 +10,8 @@
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
 | Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 决定、原证据上限及本地工具限制 |
-| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.7已SOURCE_ONLY经济量纲义务有限CLOSED；真实科研运行/读取仍0许可 |
+| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.8 Owner启动/DRAFT，跨来源理论核对；真实C8/模型读取仍0许可 |
+| V0.0.8 劳动时序与财政经济学原理核对 | [V0.0.8科研版前草案](../versions/0.0.8/plan.md) | 查博士论文/原MATLAB/过去采纳/现行Python并独立推导经济单位与财政恒等，SOURCE_ONLY方案，未冻结或改模型 |
 | V0.0.7 M1来源与经济量纲受限验收 | [冻结计划](../versions/0.0.7/plan.md)、[正式验收](../versions/0.0.7/acceptance.md)、[复盘](../versions/0.0.7/retrospective.md) | Lt_prev/Govinc/AtTax/Tt的经济量纲条件接受，37件分期REQUEST_ONLY，0 real权限 |
 | V0.0.6 M1冻结与受限最终验收 | [冻结计划](../versions/0.0.6/plan.md)、[独立验收](../versions/0.0.6/acceptance.md)、[复盘](../versions/0.0.6/retrospective.md) | 五字段/三轴/双消费者合成工程CLOSED；原始C8真实输入及Results仍UNKNOWN/BLOCKED |
 | 本次长会话决策与进度交接 | [2026-10-14晚会话交接文档](CH5_CONVERSATION_HANDOFF_20261014_EVENING.md) | V0.0.5证据/Owner决策/低频GitHub工作流、V0.0.6已启动但仅DRAFT，供新Astra恢复权威 |
