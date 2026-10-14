@@ -1,3 +1,12 @@
+# 第五章当前状态：B0元数据只读长任务已获Owner批准并冻结
+
+2026-10-14 Owner 同意 V0.0.5 全量备份 B0 **D3-backup-metadata/D4-backup-inventory**，可在两个精确源根内有界登记（包括protected/sealed/run004的**FS目录项与大小元数据**；绝不读正文），只查询已建 `C:\CH5_Research_Backup` 自身状态与C卷一次剩余空间。正式范围见 `versions/0.0.5/b0_metadata_gate.md` 固定Git提交。当前阶段 `B0_FROZEN__OWNER_APPROVED__WAIT_CODEX_CONSOLIDATED_REPORT_AFTER_SEPARATE_CHAT_AUTHORIZATION`；**Astra单独执行授权在相同会话里引用固定 SHA 签发，无第二次 GitHub微提交**。一次长任务，30min、150k files、20k dirs、depth128、正文读0、写0、重试0，无本地新增回执，不跟随reparse/外部链接。
+
+本次 Owner 强调不应再把长任务切成建文件夹式多次审批/提交，避免频繁GitHub操作；日常Codex自行完成、在重要门统一回报，GitHub集中版本固定与里程碑验收。B0只获得 source/capacity 覆盖的元数据资格，**不**授权B1复制、VSS/身份提权、实际清理或 hostile fixture。V0.0.5主可信根 G0仍UNPROVEN、`NEXT_BASELINE_ADOPTION=UNDECIDED`，C备份目录已有空目录有限验收但无实际备份；D3-real/D4-real科学读取不许可，D1/D2和A16 FAIL_CLOSED、C9 PAUSED、Results FALSE及旧CLOSED账本不变。V0.0.6 NOT_STARTED。
+
+---
+# 以下为本次B0授权前的历史状态
+
 # 第五章当前状态：完整备份方案设计已审议，等待 Owner B0元数据门
 
 2026-10-14 `REVIEWED__ACCEPT_BACKUP_DESIGN__OWNER_B0_METADATA_DECISION_REQUIRED__NO_COPY__NO_CLEANUP`。Codex提出全量备份源由 linked worktree `D:\ProjectTemp\c5k1bturn56` 与外部Git common-dir `D:\ResearchCode\dissertation-ch5-two-asset-hank\.git`组成；Astra接受源/分阶段复制/全文件校验/隔离恢复技术设计，归档于 `versions/0.0.5/full_backup_review.md`。这是 Codex 本地根身份回报和GitHub公开机制核验，不是Windows全源字节已复制或可恢复的证据。下一步 B0 只登记两个源根成员FS元数据及目的C卷空闲（可能涉及 protected/sealed路径目录项），故必须由Owner单独批准 D3-backup-metadata / D4-backup-inventory；**当前未授权 B0探测、B1正文复制/备份或清理删除**。提案128GiB/6h/150k文件上限尚未实际测量。

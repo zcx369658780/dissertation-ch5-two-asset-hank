@@ -1,6 +1,12 @@
 # 第五章路线图与版本登记
 
-## 2026-10-14 当前：V0.0.5 全量备份技术方案审议通过，等待B0元数据准入
+## 2026-10-14 当前：Owner 已批准 B0 元数据登记，长任务单冻结待执行
+
+`B0_FROZEN__OWNER_D3_BACKUP_METADATA_D4_INVENTORY_APPROVED__AWAIT_SEPARATE_CHAT_AUTHORIZATION`。Owner批准在两个固定源根（linked worktree `D:\ProjectTemp\c5k1bturn56` 与外部 Git common-dir `D:\ResearchCode\dissertation-ch5-two-asset-hank\.git`）内受界、**不跟随链接**的元数据登记（含 protected/sealed 的目录项及逻辑大小），以及 `C:\CH5_Research_Backup` 自身状态和一次 C卷空闲查询。固定 [B0冻结合同](../versions/0.0.5/b0_metadata_gate.md)，具体 SHA 以本次 GitHub 固定提交为准；**单独 Astra 实施授权在 Owner/Codex 会话中签发，不再为授权、CURRENT、单个路径另发GitHub提交**。
+
+Owner 明确纠正过去微任务/GitHub频繁提交：恢复 V1.2 的**版本长任务单**；本 B0 由 Codex 在批准范围内一次自主完成并一次集中交付，下一 GitHub 更新尽量与 B1下一实质里程碑合并。B0正文读取/复制/哈希/磁盘修改/真实清理/实验预算全部0；B1需按容量和保护情况再决定，不能自动开始。V0.0.5主G0仍UNPROVEN，D1/D2与A16 FAIL_CLOSED、C9 PAUSED、Results FALSE保持。
+
+## 2026-10-14 B0尚未获Owner批准时状态（历史）
 
 `REVIEWED__ACCEPT_BACKUP_DESIGN__OWNER_B0_METADATA_DECISION_REQUIRED__NO_COPY__NO_CLEANUP`。Astra已审议Codex的完整 SOURCE/CAPACITY/COPY/HASH/RESTORE 方案，确认现用 `D:\ProjectTemp\c5k1bturn56` 属于 linked worktree、外部 Git common-dir `D:\ResearchCode\dissertation-ch5-two-asset-hank\.git` 需纳入备份（两源路径来自 Codex Git 回报，网页无法盘核）。[完整技术审议](../versions/0.0.5/full_backup_review.md)已发布；下一阶段建议单独 B0 元数据登记，包含 protected/sealed 的**目录项与大小等 FS 元数据**，故必须先由 Owner 特别批准 D3-backup-metadata / D4-backup-inventory。当前**不允许实际全树递归探测、正文复制/散列或清理**。
 
