@@ -1,4 +1,7 @@
 # 第五章动态总目录
+
+**现行最新（2026-10-14）：V0.0.6 已正式冻结并于本次独立聊天获 Astra 受限 SOURCE_ONLY/SYNTHETIC 实施授权；冻结 commit `4857d9222580b491676cdf75951527eb06d16b49`。旧表格或历史段落中“DRAFT/未启动/等Codex提案”均为被此事实覆盖的时间点。尚无实现候选与测试PASS，真实C8/source/consumer/GE/Results继续关闭。详见 [CURRENT](../CURRENT.md)、[版本登记](CH5_VERSION_REGISTER_CURRENT.md)、[冻结计划](../versions/0.0.6/plan.md)。**
+
 这是当前导航；条目按用途区分当前资料与历史快照。网页顾问必须实际读取正文及提交，不能以本目录代替证据。
 
 | 逻辑槽位 | 现存正文 | 使用方式 |
@@ -7,8 +10,8 @@
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
 | Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 决定、原证据上限及本地工具限制 |
-| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.6已由Owner启动、处于版前DRAFT；Codex单次SOURCE_ONLY提案，未冻结科研实现或授权运行 |
-| V0.0.6 C8科研主线版前长任务 | [V0.0.6计划草案](../versions/0.0.6/plan.md)、[投稿成果优先战略](CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md) | source→C8 batch→31省输入/经济量纲→双消费者联合审查，复用SOURCE_ONLY已有成果，等待Codex一份集中提案 |
+| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | **V0.0.6已冻结，独立授权仅SOURCE_ONLY/合成工程；科学/真实数据仍0许可** |
+| V0.0.6 C8科研主线冻结工程 | [V0.0.6冻结计划](../versions/0.0.6/plan.md)、[投稿成果优先战略](CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md) | 原C8静态来源→五字段→31轴/量纲→双消费者合成合同；等待Codex受限实现，非真实科研运行 |
 | 本次长会话决策与进度交接 | [2026-10-14晚会话交接文档](CH5_CONVERSATION_HANDOFF_20261014_EVENING.md) | V0.0.5证据/Owner决策/低频GitHub工作流、V0.0.6已启动但仅DRAFT，供新Astra恢复权威 |
 | 2026-10-14 论文成果优先战略 | [Owner新战略路线](CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md)、[历史技术路线](DISSERTATION_CH5_PYTHON_MULTI_PROVINCE_HANK_REBUILD_ROADMAP_CURRENT.md) | 不为一般备份追加物理隔离；第一篇以真实科学闭环为先，A16/Results门不虚构通过 |
 | V0.0.5 最终验收、复盘与备份资格 | [最终验收](../versions/0.0.5/acceptance.md)、[复盘](../versions/0.0.5/retrospective.md)、[B3有限验收](../versions/0.0.5/b3_acceptance.md) | V0.0.5有限行政CLOSED；普通字节备份有限PASS、G0 UNPROVEN、物理清理0；V0.0.6未启动 |
