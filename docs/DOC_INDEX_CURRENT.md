@@ -7,9 +7,9 @@
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
 | Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 决定、原证据上限及本地工具限制 |
-| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.5内完成B2审议与B3纠错/备份/对齐，V0.0.6才转论文成果主线 |
+| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | B3备份有限通过，V0.0.5仍有文档本地对齐/准确清理名单收尾，G0未证；V0.0.6未启动 |
 | 2026-10-14 论文成果优先战略 | [Owner新战略路线](CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md)、[历史技术路线](DISSERTATION_CH5_PYTHON_MULTI_PROVINCE_HANK_REBUILD_ROADMAP_CURRENT.md) | 不为一般备份追加物理隔离；第一篇以真实科学闭环为先，A16/Results门不虚构通过 |
-| V0.0.5 B2安全停点与B3长任务 | [B2安全停点验收](../versions/0.0.5/b2_acceptance.md)、[B3聚焦身份纠错/保全/文档对齐冻结](../versions/0.0.5/b3_identity_correction_backup_plan.md)、[旧B2合同](../versions/0.0.5/b2_link_descriptor_backup_plan.md) | B2零复制安全停止；B3保留身份guard并新许可一次长任务，不许无限重试 |
+| V0.0.5 B3有限验收与最终收尾 | [B3正式有限验收](../versions/0.0.5/b3_acceptance.md)、[B3固定合同](../versions/0.0.5/b3_identity_correction_backup_plan.md) | 已据Codex回报保全90,766普通文件并逐个hash匹配，外部链接和时间点限制保留；旧目录只分类不得删除 |
 | V0.0.5 全量备份技术审议（历史） | [Astra 审议](../versions/0.0.5/full_backup_review.md)、[Owner范围决定](../versions/0.0.5/owner_full_backup_cleanup_decision.md)、[旧预检DRAFT](../versions/0.0.5/full_project_backup_preflight.md) | linked-worktree+外置Git管理目录均须保全；待Owner批准元数据B0，复制/删除仍禁止 |
 | V0.0.5 空备份目录附属门验收 | [有限验收](../versions/0.0.5/backup_directory_acceptance.md)、[冻结计划](../versions/0.0.5/backup_directory_gate.md)、[独立授权](../versions/0.0.5/backup_directory_authorization.md) | Codex回报仅空目录已创建；本子门CLOSED/有限接受；无备份复制；主可信根仍 DRAFT |
 | V0.0.4 阻塞验收与复盘 | [最终验收](../versions/0.0.4/acceptance.md)、[复盘](../versions/0.0.4/retrospective.md)、[冻结计划](../versions/0.0.4/plan.md)、[授权](../versions/0.0.4/authorization.md) | 安全停止、0实验/0候选，真实保护读取仍禁止 |

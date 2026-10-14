@@ -1,6 +1,14 @@
 # 第五章路线图与版本登记
 
-## 2026-10-14 当前：B2实现误报安全停点，B3同版修正/备份/对齐长任务已冻结
+## 2026-10-14 当前：B3获准普通源字节备份有限通过；V0.0.5只待文档与清理收尾
+
+**V005_B3_CLOSED_LIMITED_ACCEPT__V005_FINAL_ALIGNMENT_AND_CLEANUP_INVENTORY_PENDING__G0_UNPROVEN**。B3 Codex回报已建立唯一C盘快照 C:\CH5_Research_Backup\CH5_B3_IDSAFE_PASSIVE_LINK_20261014_01：两个已批准源根共90,766普通文件/1,804,958,786B均已复制，目标独立SHA256全部90,766匹配、0失败；Windows句柄身份检查9项合成回归PASS及一次canary通过，隔离C盘Git fsck --full exit0/5样本通过；运行942.672秒、exit0、错误/重试0，资源报告未超冻结。Astra逐项核固定B3条件，**正式有限验收见 [B3验收](../versions/0.0.5/b3_acceptance.md)**，本机操作与原回执仅为CODEX_REPORTED_WITH_LOCAL_RECEIPTS、网页未独立校验C盘字节。
+
+唯一reparse目录已保存332B被动描述、外部目标访问0、活动链接不恢复：EXTERNAL_DEPENDENCY_UNBACKED；源集合有限观察稳定、**POINT_IN_TIME_UNPROVEN**，ADS/ACL/完整NTFS恢复未证。不能称全自包含FULL_VERIFIED_BACKUP或A16/Results通过。B3关闭且不自动新增B4备份循环。Codex已做治理只读对齐，但本地CURRENT时态旧、模型树缺2026-10-14论文优先战略文档，旧战略正文还保留B2“进行中”历史时态；GitHub本次合并更新当前前缀，**不覆盖本地原dirty文件**。
+
+V0.0.5主目标可信敌对实验G0仍DRAFT/UNPROVEN；Owner此前要求备份后清理旧版本目录，但目前只有宏观六类，**没有确切安全删除候选**，不授实际删除/移动。下一步仅一次本地治理/清理准确只读分类及对齐建议的集中长任务，然后Astra对V0.0.5作最后限制性关闭；未来V0.0.6须Owner手动启动，按已接受论文成果优先战略规划。A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、Results FALSE和旧科学预算不变。
+
+## 2026-10-14 B3结果未返回之前的历史状态
 
 **V005_B2_CLOSED_SAFE_STOP__B3_FROZEN_AWAIT_CHAT_AUTHORIZATION**。Codex B2报告Win Python3.11 DirEntry.stat的st_ino/st_dev/st_nlink全零，与os.stat直接比导致SOURCE_CHANGED_BEFORE_OPEN误报；Python官方文档支持这项API区别，但Astra没有Windows本机源码与原始回执。B2约3.297s exit1，首次源正文打开0（读取额度预扣1），快照/复制/hash/恢复/FS写/Git写均报0，原普通文件汇总90,766/1,804,958,786B不代表源同一时点不变。旧B2的零重试权限已消费、不可原合同重跑。[B2安全停点审议](../versions/0.0.5/b2_acceptance.md)。
 
