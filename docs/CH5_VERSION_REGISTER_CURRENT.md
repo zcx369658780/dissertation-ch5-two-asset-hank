@@ -6,6 +6,10 @@
 
 V0.0.5终态仍[CLOSED有限工程保全、主可信根G0未证](../versions/0.0.5/acceptance.md)，源dirty保护及备份延续而不复跑；原C8 real inputs/lifetime与Objective A未过、A16 FAIL_CLOSED、C9 PAUSED/账未知、Results FALSE/旧预算CLOSED不变。代码基线采用仍UNDECIDED、没有新candidate/main merge事实，不得从文档提交推断。Owner M1科学version开启**不等于**模型activation或真实科研D3/D4来源权限。
 
+## 2026-10-14 会话交接归档（不更改V0.0.6当前权限）
+
+本长会话Owner决定、V0.0.5最终验收/复盘、备份与清理证据等级、低频GitHub V1.2长任务要求、以及**随后已由其他最新治理提交记录的V0.0.6科研版前DRAFT**，集中保存于 [会话交接封存](CH5_CONVERSATION_HANDOFF_20261014_EVENING.md)。该交接为静态证据导航、不包含任何新增科学运行或备份/OS访问权限。最新执行权威仍为本登记最顶部的V0.0.6状态、对应最新冻结/草案和Owner未来明确授权。
+
 ## 2026-10-14 V0.0.5关闭、V0.0.6尚未启动时历史状态
 
 **CLOSED__LIMITED_BACKUP_AND_ALIGNMENT_ACCEPTED__MAIN_G0_UNPROVEN__CLEANUP_DEFERRED__WITH_OBSERVATIONS**。Owner交付V0.0.5最终Codex本地对齐/清理分类报告，Astra已核B3冻结与有限验收、GitHub版本状态并审议。最终见[正式终验](../versions/0.0.5/acceptance.md)和[集中复盘](../versions/0.0.5/retrospective.md)。B3备份依Codex回报保全两个源根90,766普通文件/1,804,958,786B，各自SHA256匹配、C隔离Git fsck及5样本有限通过；**外部链接目标/活动链接、全树时间点、ADS/ACL/完整Windows敌对A16均未证明**，证据等级CODEX_REPORTED_WITH_LOCAL_RECEIPTS。

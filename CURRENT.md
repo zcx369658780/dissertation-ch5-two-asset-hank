@@ -10,3 +10,5 @@ Owner明确批准回归科研主线、进入V0.0.6。采用2026-10-14“论文�
 科学原已采纳人口/人均（不N=P/3）、原C8 frozen household/state/S、K1 raw ra0与时序、价格current_price_methodologically_attributed但direct_price_verified=False不变。A16 UNRESOLVED/FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE，旧科学/data/consumer预算CLOSED。V0.0.6版前无真实受保护文件新访问、live C8/31省家庭/GE或C9模型运行权限；历史已耗尽预算不得通过更名恢复。下版V0.0.7 NOT_STARTED。
 
 研究工作流仍为V1.2：Owner立版、Astra版前集中审议/冻结、Codex单个长任务实施、集中验收；GitHub仅在实质里程碑批量更新，禁止普通命令微审批与跨项目操作。旧CURRENT历史入口见固定 V0.0.5关闭提交，不反复嵌入历史全文。
+
+**2026-10-14会话交接入口：** `docs/CH5_CONVERSATION_HANDOFF_20261014_EVENING.md` 汇总V0.0.5终验、Owner决定和V0.0.6的已存DRAFT状态；此句不新增执行许可。

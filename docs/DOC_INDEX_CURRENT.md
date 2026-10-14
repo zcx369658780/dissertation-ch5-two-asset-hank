@@ -9,6 +9,7 @@
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 决定、原证据上限及本地工具限制 |
 | 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.6已由Owner启动、处于版前DRAFT；Codex单次SOURCE_ONLY提案，未冻结科研实现或授权运行 |
 | V0.0.6 C8科研主线版前长任务 | [V0.0.6计划草案](../versions/0.0.6/plan.md)、[投稿成果优先战略](CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md) | source→C8 batch→31省输入/经济量纲→双消费者联合审查，复用SOURCE_ONLY已有成果，等待Codex一份集中提案 |
+| 本次长会话决策与进度交接 | [2026-10-14晚会话交接文档](CH5_CONVERSATION_HANDOFF_20261014_EVENING.md) | V0.0.5证据/Owner决策/低频GitHub工作流、V0.0.6已启动但仅DRAFT，供新Astra恢复权威 |
 | 2026-10-14 论文成果优先战略 | [Owner新战略路线](CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md)、[历史技术路线](DISSERTATION_CH5_PYTHON_MULTI_PROVINCE_HANK_REBUILD_ROADMAP_CURRENT.md) | 不为一般备份追加物理隔离；第一篇以真实科学闭环为先，A16/Results门不虚构通过 |
 | V0.0.5 最终验收、复盘与备份资格 | [最终验收](../versions/0.0.5/acceptance.md)、[复盘](../versions/0.0.5/retrospective.md)、[B3有限验收](../versions/0.0.5/b3_acceptance.md) | V0.0.5有限行政CLOSED；普通字节备份有限PASS、G0 UNPROVEN、物理清理0；V0.0.6未启动 |
 | V0.0.5 全量备份技术审议（历史） | [Astra 审议](../versions/0.0.5/full_backup_review.md)、[Owner范围决定](../versions/0.0.5/owner_full_backup_cleanup_decision.md)、[旧预检DRAFT](../versions/0.0.5/full_project_backup_preflight.md) | linked-worktree+外置Git管理目录均须保全；待Owner批准元数据B0，复制/删除仍禁止 |
