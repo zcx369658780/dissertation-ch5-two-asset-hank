@@ -1,6 +1,12 @@
 # 第五章路线图与版本登记
 
-## 2026-10-14 当前：Owner 要求先备份，再继续 V0.0.5 可信实验根主任务
+## 2026-10-14 当前：Owner 确认完整第五章本地项目备份、核验后再清理
+
+**`OWNER_ADOPTED__FULL_LOCAL_PROJECT_BACKUP__POST_VERIFICATION_CLEANUP_INVENTORY_REQUIRED__NO_COPY_YET`**。Owner 明确希望**整个本地第五章项目**的全量快照，而非只保全 Git tracked，随后清理旧工作流每版创建的冗余子目录。详见 [Owner 全量备份及清理决定](../versions/0.0.5/owner_full_backup_cleanup_decision.md)与[全项目备份/清理新预检草案](../versions/0.0.5/full_project_backup_preflight.md)。备份必须计入 tracked current dirty、所有 untracked/ignored 和所需 Git history，以及受保护历史科研证据的覆盖资格；未获准或无法核验的对象必须作为 **PARTIAL** 披露，不能宣称完整。
+
+**当前尚未实际复制任何本地文件，也未删除或移动任何原目录**。Codex 下一步应只提出源/容量/敏感对象 D3-backup、D4-backup、完整 copy/hash/restore 及清理候选分类方案；网页不能直接操作本地 C/D。完成备份验证之后，可以启动清理盘点，但**实际删除/移动须有精确路径与独立权限**，旧科学来源/dirty/untracked/ignored 默认不可删。备份/清理先行不改变 V0.0.5 可信根 G0 未证，不能把项目目录新子树视为完整 A16 敌对测试根。V0.0.5 主 plan仍 DRAFT，NEXT_BASELINE_ADOPTION=UNDECIDED；D1/D2、A16 FAIL_CLOSED、C9 PAUSED、Results FALSE保持，V0.0.6 NOT_STARTED。
+
+## 2026-10-14 仅要求备份、全量覆盖尚未确定时历史状态
 
 `WAIT_CODEX_BACKUP_SCOPE_PROPOSAL__NO_COPY_AUTHORIZED__V005_MAIN_G0_UNPROVEN`。Owner 明确要求备份到已空建 `C:\CH5_Research_Backup`，完成后直接续接 V0.0.5 可信实验根；并**建议**在当前项目目录新建可弃用测试子目录。当前项目树 `D:\ProjectTemp\c5k1bturn56` 包含 dirty8/数千 untracked/ignored/历史证据，**不能因新子目录而满足完整 D2 对共享祖先与敌对替换的威胁门**，项目内只能作未来普通非敌对 synthetic 测试候选，禁止 destructive fixture。Owner 新指示和风险界限见 [决策记录](../versions/0.0.5/owner_backup_then_fixture_decision.md)。
 

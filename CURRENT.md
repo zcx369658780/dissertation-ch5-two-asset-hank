@@ -1,3 +1,12 @@
+# 第五章当前状态：Owner 已选择全量本地项目备份及备份后清理
+
+2026-10-14 `OWNER_ADOPTED__FULL_LOCAL_PROJECT_BACKUP__POST_VERIFICATION_CLEANUP_INVENTORY_REQUIRED__NO_COPY_YET`。Owner 将备份范围明确扩展为**整个第五章本地项目**，包含 tracked dirty、untracked、ignored、历史科研原证及必要 Git 历史，而非仅已提交Git文件；目标仍 `C:\CH5_Research_Backup` 下唯一新快照。备份后由 Codex 对旧版本子目录和可重建产物清理**先执行盘点及分类**，实际删除/移动仍待精确可恢复对象和单独授权。新增正式增量决定 `versions/0.0.5/owner_full_backup_cleanup_decision.md`，预检草案 `full_project_backup_preflight.md`。当前无本地实质复制，不能宣称已全备份；真实原证保护读权限 D3-backup/D4-backup、source字节/大小、路径/容量、受控恢复验证须先单独冻结/授权，不借笼统全量目的绕过 A16科学安全门。
+
+此前 `C:\CH5_Research_Backup` 空目录子门已 `CLOSED__LIMITED_ACCEPT__EMPTY_BACKUP_DIRECTORY_REPORTED_CREATED`，未备份任何文件。V0.0.5 可信可弃用攻击 root 主计划仍 `DRAFT__OWNER_SUPPLIED_ANCHOR_REQUIRED__NOT_FROZEN`，`NEXT_BASELINE_ADOPTION=UNDECIDED`；项目下新子目录不能凭名称/位置就当敌对 D2 安全根。V0.0.4 CLOSED/BLOCKED、D1 北京历史原证拟核验、D2完整威胁不变，D3-real/D4-real仍无授权。A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、旧科学/数据预算、人口/人均和不N=P/3均保持，V0.0.6 NOT_STARTED。
+
+---
+# 以下为全量备份范围确立前现行状态（历史全文）
+
 # 第五章当前状态：Owner 要求先备份，再继续 V0.0.5 可信实验根
 
 2026-10-14 `WAIT_CODEX_BACKUP_SCOPE_PROPOSAL__NO_COPY_AUTHORIZED__V005_MAIN_G0_UNPROVEN`。Owner要求用 `C:\CH5_Research_Backup` 先实际备份，完成后直接继续 V0.0.5 主研究，并推荐“当前项目目录”内新建一个可弃用实验子目录。Astra 已录于 `versions/0.0.5/owner_backup_then_fixture_decision.md`；另发布 `backup_scope_preflight.md` 只读来源分层草案。由于待备份的**具体对象集合**尚未确定，不能把保护关闭的真实 run004、数千 untracked/ignored 与 dirty 原字节通过笼统“备份”自动放开。故尚未实际复制任何文件；网页也无法直接访问 Windows C/D。Codex下一步给出公开 Git 安全基线、待Owner范围和容量/校验有界方案。
