@@ -1,6 +1,14 @@
 # 第五章路线图与版本登记
 
-## 2026-10-14 当前：Owner 已批准 B0 元数据登记，长任务单冻结待执行
+## 2026-10-14 当前：B0 有限验收、Owner 批准 B1 原字节保全与保密条件
+
+`B0_CLOSED_LIMITED_ACCEPT__B1_FROZEN_AWAIT_SEPARATE_CHAT_AUTHORIZATION`。Codex B0 回报两个固定来源非reparse普通文件90,766、目录6,325、逻辑字节1,804,958,786 B约1.681GiB，C空闲643,058,806,784 B约598.895GiB；10.382秒/exit0/0错误/0重试，**一个目录reparse未跟随、目标及ADS/hardlink/时间点一致性不明**。Astra根据固定B0合同有限验收，Windows实测只属 Codex 报告：[B0验收](../versions/0.0.5/b0_acceptance.md)。
+
+Owner 新明确同意两固定源根内普通文件（含sealed/run004）**仅为保全目的的原字节读取/复制/哈希**，并接受 C盘现有安全配置下可能的明文本地副本；私有清单/日志 LOCAL_ONLY至后续处置，reparse只查自身不跟随，无科学解析、VSS、提权、删除、Windows攻击。Astra据B0实测将 [B1 正式冻结](../versions/0.0.5/b1_backup_copy_verify_plan.md)：100k files /7k dirs /4GiB /2小时、固定唯一 C 盘新快照、全员校验与隔离Git恢复、0自动重试。**单独会话实施授权将引用本次固定 SHA，不另开GitHub微提交**。暂未获B1本地执行结果，实际文件复制数 UNKNOWN/NOT_STARTED，不能宣布备份完成。
+
+原 V0.0.5 核心可信独立实验根研究仍 DRAFT/UNPROVEN，原D2完整威胁模型、A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、Results FALSE保持。B1失败、链接/ADS/源一致性不成立须 BLOCKED或PARTIAL，不得跳过后声称全备份。清理仅Owner批准后规划，不批准任何删除/移动；`NEXT_BASELINE_ADOPTION=UNDECIDED`，V0.0.6 NOT_STARTED。
+
+## 2026-10-14 B0冻结待执行时状态（历史）
 
 `B0_FROZEN__OWNER_D3_BACKUP_METADATA_D4_INVENTORY_APPROVED__AWAIT_SEPARATE_CHAT_AUTHORIZATION`。Owner批准在两个固定源根（linked worktree `D:\ProjectTemp\c5k1bturn56` 与外部 Git common-dir `D:\ResearchCode\dissertation-ch5-two-asset-hank\.git`）内受界、**不跟随链接**的元数据登记（含 protected/sealed 的目录项及逻辑大小），以及 `C:\CH5_Research_Backup` 自身状态和一次 C卷空闲查询。固定 [B0冻结合同](../versions/0.0.5/b0_metadata_gate.md)，具体 SHA 以本次 GitHub 固定提交为准；**单独 Astra 实施授权在 Owner/Codex 会话中签发，不再为授权、CURRENT、单个路径另发GitHub提交**。
 

@@ -1,3 +1,14 @@
+# 第五章当前状态：B0 有限验收完成，B1 全量备份门已固定
+
+2026-10-14 `B0_CLOSED_LIMITED_ACCEPT__B1_FROZEN_AWAIT_SEPARATE_CHAT_AUTHORIZATION`。Codex B0 回报两个源根普通非reparse文件90,766、目录6,325、逻辑1,804,958,786 B≈1.681GiB，C可用643,058,806,784 B≈598.895GiB，1个目录reparse不跟随，10.382秒 exit0 0错/0重试；Astra根据固定B0合同有限接受 `versions/0.0.5/b0_acceptance.md`，真实本机数据仅 `CODEX_REPORTED_WITH_LOCAL_REPORT`。Owner明确新批准 **D3-backup-byte / D4-backup-local**，仅为保全允许两个精确源根（含run004等）普通文件原字节复制和SHA256，不许可科研内容解析，C本地可能明文、不得调 ACL/加密、私有清单/日志LOCAL_ONLY留至后续决定；唯一reparse对象仅查询自身、不跟随外部目标。
+
+`versions/0.0.5/b1_backup_copy_verify_plan.md` 是冻结独立B1长任务：C盘唯一路径 `C:\CH5_Research_Backup\CH5_FULL_20261014_GATEB_01`，普通文件≤100k/目录≤7k/普通逻辑≤4GiB/2h/零自动重试，全成员复制与SHA256、隔离恢复、异常BLOCKED或PARTIAL。**尚未收到B1实施回报，不代表文件已复制**。Astra在Owner/Codex会话另行签发B1实施许可，无第二个GitHub微提交，完成后集中验收。B1不得申请提权、VSS、删除/迁移或 Windows敌对攻击，仍须如实记录 reparse/ADS/hardlink、单时点一致性和完整D2保护未证情况。
+
+V0.0.5主 `plan.md` 可信独立实验根继续 DRAFT/UNPROVEN，`NEXT_BASELINE_ADOPTION=UNDECIDED`；C盘备份不能当可弃用攻击根。源原HEAD/index/dirty保持，原D1/D2已采纳，D3-real/D4-real科学读取未批准；V0.0.4 CLOSED/BLOCKED，A16 UNRESOLVED/FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、旧科学/数据CLOSED预算及不N=P/3不变。Owner要在备份验收后清理旧版本目录，但实际删除待准确候选/恢复证据和独立许可；V0.0.6 NOT_STARTED。
+
+---
+# 以下为B0有限验收/B1冻结前历史状态
+
 # 第五章当前状态：B0元数据只读长任务已获Owner批准并冻结
 
 2026-10-14 Owner 同意 V0.0.5 全量备份 B0 **D3-backup-metadata/D4-backup-inventory**，可在两个精确源根内有界登记（包括protected/sealed/run004的**FS目录项与大小元数据**；绝不读正文），只查询已建 `C:\CH5_Research_Backup` 自身状态与C卷一次剩余空间。正式范围见 `versions/0.0.5/b0_metadata_gate.md` 固定Git提交。当前阶段 `B0_FROZEN__OWNER_APPROVED__WAIT_CODEX_CONSOLIDATED_REPORT_AFTER_SEPARATE_CHAT_AUTHORIZATION`；**Astra单独执行授权在相同会话里引用固定 SHA 签发，无第二次 GitHub微提交**。一次长任务，30min、150k files、20k dirs、depth128、正文读0、写0、重试0，无本地新增回执，不跟随reparse/外部链接。

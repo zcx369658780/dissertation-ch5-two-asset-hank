@@ -7,8 +7,8 @@
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
 | Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 决定、原证据上限及本地工具限制 |
-| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | B0 元数据登记已批准并集中冻结；Codex单次长任务回报，正文复制及清理未授权 |
-| V0.0.5 B0单次元数据长任务 | [本门冻结合同](../versions/0.0.5/b0_metadata_gate.md)、[Astra备份方案审议](../versions/0.0.5/full_backup_review.md) | 仅两源根目录项/大小与C盘容量，不跟随reparse、0正文读取/0复制/0文件写入；聊天单独授权 |
+| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | B0有限验收，B1全量复制/校验/隔离恢复冻结待单独聊天授权，清理仍未授权 |
+| V0.0.5 B0验收与B1全量备份冻结 | [B0有限验收](../versions/0.0.5/b0_acceptance.md)、[B1正式冻结](../versions/0.0.5/b1_backup_copy_verify_plan.md)、[B0原合同](../versions/0.0.5/b0_metadata_gate.md) | B0非reparse计数已有限接受；B1获Owner保全读取许可，等待聊天独立授权及Codex长任务结果 |
 | V0.0.5 全量备份技术审议（历史） | [Astra 审议](../versions/0.0.5/full_backup_review.md)、[Owner范围决定](../versions/0.0.5/owner_full_backup_cleanup_decision.md)、[旧预检DRAFT](../versions/0.0.5/full_project_backup_preflight.md) | linked-worktree+外置Git管理目录均须保全；待Owner批准元数据B0，复制/删除仍禁止 |
 | V0.0.5 空备份目录附属门验收 | [有限验收](../versions/0.0.5/backup_directory_acceptance.md)、[冻结计划](../versions/0.0.5/backup_directory_gate.md)、[独立授权](../versions/0.0.5/backup_directory_authorization.md) | Codex回报仅空目录已创建；本子门CLOSED/有限接受；无备份复制；主可信根仍 DRAFT |
 | V0.0.4 阻塞验收与复盘 | [最终验收](../versions/0.0.4/acceptance.md)、[复盘](../versions/0.0.4/retrospective.md)、[冻结计划](../versions/0.0.4/plan.md)、[授权](../versions/0.0.4/authorization.md) | 安全停止、0实验/0候选，真实保护读取仍禁止 |
