@@ -1,6 +1,14 @@
 # 第五章路线图与版本登记
 
-## 2026-10-14 当前：Owner正式启动V0.0.7（M1真实C8来源、经济量纲和精确保护读取门）
+## 2026-10-15 当前：V0.0.7 正式冻结SOURCE_ONLY经济量纲与历史来源证据审查
+
+**`FROZEN__WAIT_CODEX_SOURCE_ONLY_UNIT_RECONCILIATION__REAL_READ_REQUEST_ONLY`**。Owner立版V007后，Codex仅SOURCE_ONLY交付集中原C8来源、经济单位、37文件分期许可建议，Astra独立核实历史独立接收及原MATLAB辅助源码，发现中间预算算术少计NPZ 64KiB并已纠正。正式冻结 [V0.0.7计划](../versions/0.0.7/plan.md)，代码文档候选基线采用上版 `198b70f8b1c7b802bc2e18cb4bb0825bdb495b00`（tree `0c637893d92cafdf72a194b350b3bf7016894d5c`），但原D盘8 dirty/数千untracked和Git外部common-dir不得合并/清理。**冻结不等于实现授权**；此计划读回后才由Astra另行签发CODEX SOURCE_ONLY文档实施许可，真实protected stat/读取/哈希/解析或模型调用许可均0。
+
+V007唯一长任务实质：以已接受历史C8独立SHA anchor和静态生产链为基础，完成MU/NU、At*N、Lt_prev/firm Lt、wage/tau、Govinc税/AtTax/Tt经济单位关键待证义务与Owner决策材料。原MATLAB ZIP用户上传只为辅助文本证据、不是C8历史执行字节。A/B/C/D申请请求最多37个，纠正的四级累计候选数为1,048,576 / 3,538,944 / 4,046,848 / 4,112,384 B，**依然只有REQUEST_ONLY，manifest自身大小未证**。拒绝重复V006 synthetic及G0/B3，正式原始科学/Results闭合未达。
+
+旧A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE及旧science/data/consumer预算CLOSED继续有效。V0.0.8 NOT_STARTED，未经Owner新的经济学和保护访问决定不可启动真实原件/GE。
+
+## 2026-10-14 历史：Owner启动V0.0.7版前DRAFT（已由2026-10-15冻结取代）
 
 **`OWNER_STARTED__V007_DRAFT__WAIT_CODEX_CONSOLIDATED_SOURCE_ONLY_M1_EVIDENCE_PROPOSAL__NO_REAL_READ_OR_IMPLEMENTATION_AUTHORIZED`**。Owner复盘V0.0.6并决定工作流V1.2无必改项目，直接进入V0.0.7。本版本前草案为 [V0.0.7 M1计划](../versions/0.0.7/plan.md)，当前只许可Codex一次集中SOURCE_ONLY文档/代码审阅和科学单位/证据映射；**不是冻结计划，不是代码实施，也不是读取37项真实数据/受保护原件的新授权。**
 
