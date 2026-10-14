@@ -1,3 +1,12 @@
+# 第五章当前状态：完整备份方案设计已审议，等待 Owner B0元数据门
+
+2026-10-14 `REVIEWED__ACCEPT_BACKUP_DESIGN__OWNER_B0_METADATA_DECISION_REQUIRED__NO_COPY__NO_CLEANUP`。Codex提出全量备份源由 linked worktree `D:\ProjectTemp\c5k1bturn56` 与外部Git common-dir `D:\ResearchCode\dissertation-ch5-two-asset-hank\.git`组成；Astra接受源/分阶段复制/全文件校验/隔离恢复技术设计，归档于 `versions/0.0.5/full_backup_review.md`。这是 Codex 本地根身份回报和GitHub公开机制核验，不是Windows全源字节已复制或可恢复的证据。下一步 B0 只登记两个源根成员FS元数据及目的C卷空闲（可能涉及 protected/sealed路径目录项），故必须由Owner单独批准 D3-backup-metadata / D4-backup-inventory；**当前未授权 B0探测、B1正文复制/备份或清理删除**。提案128GiB/6h/150k文件上限尚未实际测量。
+
+C盘 `C:\CH5_Research_Backup` 空目录此前有限验收已关闭，仍未进行实际数据备份；Owner全量保全意向不等于任意 protected科学源读取权。应分开字节匹配、全树时间点一致性、完整A16敌对保护。V0.0.5主 `plan.md` 仍 DRAFT，`NEXT_BASELINE_ADOPTION=UNDECIDED`；备份核验后才有清理候选审计，实际删除需Owner精确授权。V0.0.4 CLOSED/BLOCKED，D1历史北京元数据拟科学核验和D2完整A16/window不变，D3-real/D4-real NOT_AUTHORIZED；C9 PAUSED、A16 UNRESOLVED/FAIL_CLOSED、window UNACCEPTED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、旧科学数据 CLOSED 预算及不 N=P/3不变，V0.0.6 NOT_STARTED。
+
+---
+# 以下为备份具体方案审议之前历史全文
+
 # 第五章当前状态：Owner 已选择全量本地项目备份及备份后清理
 
 2026-10-14 `OWNER_ADOPTED__FULL_LOCAL_PROJECT_BACKUP__POST_VERIFICATION_CLEANUP_INVENTORY_REQUIRED__NO_COPY_YET`。Owner 将备份范围明确扩展为**整个第五章本地项目**，包含 tracked dirty、untracked、ignored、历史科研原证及必要 Git 历史，而非仅已提交Git文件；目标仍 `C:\CH5_Research_Backup` 下唯一新快照。备份后由 Codex 对旧版本子目录和可重建产物清理**先执行盘点及分类**，实际删除/移动仍待精确可恢复对象和单独授权。新增正式增量决定 `versions/0.0.5/owner_full_backup_cleanup_decision.md`，预检草案 `full_project_backup_preflight.md`。当前无本地实质复制，不能宣称已全备份；真实原证保护读权限 D3-backup/D4-backup、source字节/大小、路径/容量、受控恢复验证须先单独冻结/授权，不借笼统全量目的绕过 A16科学安全门。

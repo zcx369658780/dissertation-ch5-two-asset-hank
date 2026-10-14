@@ -1,6 +1,12 @@
 # 第五章路线图与版本登记
 
-## 2026-10-14 当前：Owner 确认完整第五章本地项目备份、核验后再清理
+## 2026-10-14 当前：V0.0.5 全量备份技术方案审议通过，等待B0元数据准入
+
+`REVIEWED__ACCEPT_BACKUP_DESIGN__OWNER_B0_METADATA_DECISION_REQUIRED__NO_COPY__NO_CLEANUP`。Astra已审议Codex的完整 SOURCE/CAPACITY/COPY/HASH/RESTORE 方案，确认现用 `D:\ProjectTemp\c5k1bturn56` 属于 linked worktree、外部 Git common-dir `D:\ResearchCode\dissertation-ch5-two-asset-hank\.git` 需纳入备份（两源路径来自 Codex Git 回报，网页无法盘核）。[完整技术审议](../versions/0.0.5/full_backup_review.md)已发布；下一阶段建议单独 B0 元数据登记，包含 protected/sealed 的**目录项与大小等 FS 元数据**，故必须先由 Owner 特别批准 D3-backup-metadata / D4-backup-inventory。当前**不允许实际全树递归探测、正文复制/散列或清理**。
+
+B0之后按实测成员数/S及 C盘容量再讨论 B1 源正文字节权限、快照一致性、敏感副本生命周期、全文件校验和隔离Git恢复。128GiB、6h等纯建议非冻结配额。V0.0.5主 G0信任根仍 DRAFT/UNPROVEN，V0.0.4 CLOSED/BLOCKED；D1/D2和 A16 FAIL_CLOSED、C9 PAUSED、Results FALSE 全保持，V0.0.6 NOT_STARTED。
+
+## 2026-10-14 Owner全量备份已选、Codex设计审议之前状态（历史）
 
 **`OWNER_ADOPTED__FULL_LOCAL_PROJECT_BACKUP__POST_VERIFICATION_CLEANUP_INVENTORY_REQUIRED__NO_COPY_YET`**。Owner 明确希望**整个本地第五章项目**的全量快照，而非只保全 Git tracked，随后清理旧工作流每版创建的冗余子目录。详见 [Owner 全量备份及清理决定](../versions/0.0.5/owner_full_backup_cleanup_decision.md)与[全项目备份/清理新预检草案](../versions/0.0.5/full_project_backup_preflight.md)。备份必须计入 tracked current dirty、所有 untracked/ignored 和所需 Git history，以及受保护历史科研证据的覆盖资格；未获准或无法核验的对象必须作为 **PARTIAL** 披露，不能宣称完整。
 
