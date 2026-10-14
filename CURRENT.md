@@ -1,22 +1,12 @@
-# 第五章 CURRENT：V0.0.5 已有限行政关闭，等待 Owner 手动启动 V0.0.6
+# 第五章 CURRENT：Owner 已启动 V0.0.6，C8科研主线版前规划
 
 日期：2026-10-14（Asia/Shanghai）
-**CLOSED__LIMITED_BACKUP_AND_ALIGNMENT_ACCEPTED__MAIN_G0_UNPROVEN__CLEANUP_DEFERRED__WITH_OBSERVATIONS**
+**状态：OWNER_STARTED__V006_DRAFT__WAIT_CODEX_CONSOLIDATED_SOURCE_ONLY_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED**
 
-## 最终裁决
+Owner明确批准回归科研主线、进入V0.0.6。采用2026-10-14“论文成果优先”战略的M1：固定原C8条件对照基线，聚焦真实source→receipt/result→batch→31省轴/年度输入master→labor与wage两个消费者的精确身份、经济单位及2017/2018时点。现存SOURCE_ONLY 31轴0/1映射、合成9测试和Owner option1均保留为其原接受等级，不能擅自当live真实输入/保护/Results PASS。正式版前目标草案 \`versions/0.0.6/plan.md\` 为DRAFT，当前只许Codex单次静态 SOURCE_ONLY 实施建议，Astra审查后才冻结和另授实现权限。
 
-V0.0.5 收尾由 Astra 通过GitHub固定合同审查，**本机事实仍按 Codex 报告分级**。B3已有限验收：C:\CH5_Research_Backup\CH5_B3_IDSAFE_PASSIVE_LINK_20261014_01，90,766个普通文件、1,804,958,786字节逐文件SHA256全匹配；332B被动reparse描述、Git结构/fsck和5样本恢复有限通过，报告显示源不被程序主动改写。参见 versions/0.0.5/b3_acceptance.md 与版本最终验收 versions/0.0.5/acceptance.md、复盘 versions/0.0.5/retrospective.md。**这不是无条件FULL_VERIFIED_BACKUP**：外部链接目标未备份/活动链接未恢复、ADS/ACL完整元数据未知、全树同一时点及旧A16/window未证明。
+上版 V0.0.5 已于固定治理提交 \`8de1fcd3aef63a541bea72075fbf61c793b6fe4f\` 有限行政关闭；B3获准普通源备份仅CODEX_REPORTED_WITH_LOCAL_RECEIPTS，外链/全树时间点不保证，G0可信可弃用敌对根UNPROVEN、旧目录删除0；不复跑备份、不新建物理隔离盘，不覆盖原工作树和dirty。前版最终验收与复盘原件不修改。历史本地代码HEAD \`a1db8c114dec0ab69d69a5576e153a7f868cba0e\`（Codex旧报告）不等于GitHub文档发布HEAD、代码candidate或main，新的实测未做；\`NEXT_BASELINE_ADOPTION=UNDECIDED\`。
 
-最新本地Codex对齐说明：仅创建 docs/CH5_LOCAL_AUTHORITY_ALIGNMENT_V005_20261014.md（3,369字节），没有覆盖旧dirty治理/源码；本地CURRENT还显示V0.0.2历史内容，Github治理branch当前状态是本文件。新说明晚于B3保全时点，不在旧90,766份快照内。对齐属于引用/说明层，不代表两个本地工作树全文相同。
+科学原已采纳人口/人均（不N=P/3）、原C8 frozen household/state/S、K1 raw ra0与时序、价格current_price_methodologically_attributed但direct_price_verified=False不变。A16 UNRESOLVED/FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE，旧科学/data/consumer预算CLOSED。V0.0.6版前无真实受保护文件新访问、live C8/31省家庭/GE或C9模型运行权限；历史已耗尽预算不得通过更名恢复。下版V0.0.7 NOT_STARTED。
 
-旧版本清理仅有B3时点76,625模型普通文件的保守分类；73个文件约2.1MB可重建缓存**候选**未核依赖，无具体安全可删除对象，**POTENTIAL_SAFE_CLEANUP=0、实际删除/移动0**。历史证据/活动dirty/Git依赖/封存和UNKNOWN全部保留。未授权追加清理、复制或恢复原实验任务。
-
-原 V0.0.5主计划可信敌对实验根 G0始终 DRAFT/UNPROVEN，并非已取得安全可弃用供应锚；V0.0.4 CLOSED/BLOCKED。A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、D3-real/D4-real科学读取未授权、旧科学与数据预算CLOSED、人口/人均和不N=P/3不变。V0.0.6 NOT_STARTED，不能自动启动科学运行。
-
-## 下一科研方向（已采纳但未立版）
-
-Owner批准 docs/CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md，以可投稿科研成果为优先：M1真实C8来源、31省输入/日历/量纲与生产-消费者接口；M2 K1B严格收敛/C9账；M3必要GE和区域反事实；M4稳健性/复现/论文。K2/动态/IRF/福利按首篇科学必要性另决。下一版只有Owner明确启动后才能版前规划、冻结与授权。长任务、集中GitHub里程碑与V1.2工作流保持。
-
-## 历史入口
-
-原动态CURRENT完整历史可在 [2026-10-14 B3已验收而V0.0.5尚未最终关闭的固定提交](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/177501e668981d9a6bf36613e7a56203f788912c/CURRENT.md) 追溯。原V0.0.5 main DRAFT与所有子门冻结、失败、验收不作事后追改。
+研究工作流仍为V1.2：Owner立版、Astra版前集中审议/冻结、Codex单个长任务实施、集中验收；GitHub仅在实质里程碑批量更新，禁止普通命令微审批与跨项目操作。旧CURRENT历史入口见固定 V0.0.5关闭提交，不反复嵌入历史全文。

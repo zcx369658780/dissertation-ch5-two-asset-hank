@@ -1,6 +1,12 @@
 # 第五章路线图与版本登记
 
-## 2026-10-14 当前：V0.0.5 有限行政关闭；可信实验根G0未证，实际目录清理未执行
+## 2026-10-14 当前：Owner 正式启动 V0.0.6，C8真实来源与输入/经济单位 M1版前长任务
+
+**OWNER_STARTED__V006_DRAFT__WAIT_CODEX_CONSOLIDATED_SOURCE_ONLY_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED**。Owner明确确认回归多省份HANK科研主线、进入V0.0.6，以投稿成果优先战略M1作为本版方向。Astra发布 [V0.0.6 C8来源/31轴/量纲/消费者闭环版前草案](../versions/0.0.6/plan.md)，不是正式冻结/科学运行许可。Codex下一步一次性SOURCE_ONLY静态审阅实际代码HEAD与dirty，复用已接受C8 option1、SOURCE_ONLY axis binding及synthetic工程证据，集中提出 original-C8 receipt/result/batch、model0↔annual1 axis、source/calendar/unit、同annual master两个消费者及producer链具体实现与最小权限方案；无科学数据正文读取、无imports/tests或模型运行。Astra评审后才冻结/授权正式V0.0.6开发。
+
+V0.0.5终态仍[CLOSED有限工程保全、主可信根G0未证](../versions/0.0.5/acceptance.md)，源dirty保护及备份延续而不复跑；原C8 real inputs/lifetime与Objective A未过、A16 FAIL_CLOSED、C9 PAUSED/账未知、Results FALSE/旧预算CLOSED不变。代码基线采用仍UNDECIDED、没有新candidate/main merge事实，不得从文档提交推断。Owner M1科学version开启**不等于**模型activation或真实科研D3/D4来源权限。
+
+## 2026-10-14 V0.0.5关闭、V0.0.6尚未启动时历史状态
 
 **CLOSED__LIMITED_BACKUP_AND_ALIGNMENT_ACCEPTED__MAIN_G0_UNPROVEN__CLEANUP_DEFERRED__WITH_OBSERVATIONS**。Owner交付V0.0.5最终Codex本地对齐/清理分类报告，Astra已核B3冻结与有限验收、GitHub版本状态并审议。最终见[正式终验](../versions/0.0.5/acceptance.md)和[集中复盘](../versions/0.0.5/retrospective.md)。B3备份依Codex回报保全两个源根90,766普通文件/1,804,958,786B，各自SHA256匹配、C隔离Git fsck及5样本有限通过；**外部链接目标/活动链接、全树时间点、ADS/ACL/完整Windows敌对A16均未证明**，证据等级CODEX_REPORTED_WITH_LOCAL_RECEIPTS。
 
