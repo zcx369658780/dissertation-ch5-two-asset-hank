@@ -1,3 +1,14 @@
+# 第五章当前状态：B2工程API误报安全关闭，B3同版集中返修长任务已冻结
+
+2026-10-14 **V005_B2_CLOSED_SAFE_STOP__B3_FROZEN_AWAIT_CHAT_AUTHORIZATION**。B2身份误报来自Windows Python3.11 DirEntry.stat().st_ino/st_dev/st_nlink填零并与os.stat直接比较；此技术解释有Python官方文档支持，但本机代码与日志仅由Codex报告。B2约3.297s exit1重试0、正文打开0（预扣读额度1）、实际快照/复制/hash/恢复与源Git写入0；安全停点依原冻结合同接受，不宣称源真的变化或已备份。见 versions/0.0.5/b2_acceptance.md，旧B2预算关闭不可重跑。
+
+Owner要求优先**完成/诚实收尾V0.0.5**，科研成果优先路线从后继V0.0.6作为首要任务生效，并要求Codex同步对齐文档。新的 versions/0.0.5/b3_identity_correction_backup_plan.md 是**V0.0.5内一份独立长任务冻结**：身份API兼容修复且保留源对象句柄守卫、内存合成聚焦回归、现有两源根一次受控普通文件保全及被动reparse描述、C盘独占新快照、全员SHA及隔离Git恢复，加只读文档对齐/冲突说明。B3须配合Astra单独聊天实施授权；仍未获得本机执行结果。若B3仍阻塞，不继续微版本重试，保留安全/备份缺口并集中复盘V0.0.5。物理清理未批准，不额外要求寻找物理隔离备份设备。
+
+科研原约束未变：V0.0.5核心G0可信敌对fixture仍UNPROVEN，V0.0.4 CLOSED/BLOCKED，A16 UNRESOLVED/FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、科学D3-real/D4-real未授权、人口/人均和不N=P/3保持。V0.0.6 NOT_STARTED，Owner已采纳论文优先战略但不能自动立版。
+
+---
+# 以下为B2关闭及B3冻结前的历史状态
+
 # 第五章当前状态：Owner采纳论文优先战略，原B2继续
 
 2026-10-14 `OWNER_ADOPTED_PUBLICATION_FIRST__B2_ORIGINAL_CONTRACT_UNCHANGED`。Owner同意先争取一篇科学可信、多省份HANK区域联动及反事实可投稿论文；K2/完整动态/IRF/福利依首篇研究必要性排序，不自动删除科学路线。新战略见 `docs/CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md`。Owner确认Python、MATLAB程序分别有本地及GitHub备份（`OWNER_ASSERTED`，不等于当前dirty/untracked/封存原证均已核验在云端）；因此**不再将额外物理隔离存储作为科研备份默认要求**。旧G0的可信可弃用根是Windows A16/D2敌对实验安全资源，与备份非同一目标。普通 SOURCE_ONLY/合成科研规划可在现有权限内推进，但保护真实科学资产、C9/GE/Results仍需各自科学门。

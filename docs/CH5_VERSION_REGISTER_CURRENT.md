@@ -1,6 +1,12 @@
 # 第五章路线图与版本登记
 
-## 2026-10-14 最新战略：Owner 同意优先取得可投稿科研结果
+## 2026-10-14 当前：B2实现误报安全停点，B3同版修正/备份/对齐长任务已冻结
+
+**V005_B2_CLOSED_SAFE_STOP__B3_FROZEN_AWAIT_CHAT_AUTHORIZATION**。Codex B2报告Win Python3.11 DirEntry.stat的st_ino/st_dev/st_nlink全零，与os.stat直接比导致SOURCE_CHANGED_BEFORE_OPEN误报；Python官方文档支持这项API区别，但Astra没有Windows本机源码与原始回执。B2约3.297s exit1，首次源正文打开0（读取额度预扣1），快照/复制/hash/恢复/FS写/Git写均报0，原普通文件汇总90,766/1,804,958,786B不代表源同一时点不变。旧B2的零重试权限已消费、不可原合同重跑。[B2安全停点审议](../versions/0.0.5/b2_acceptance.md)。
+
+Owner要求优先结束**V0.0.5**、从V0.0.6起正式调整科研优先级，并请Codex集中对齐文档，因此Astra在同版内重新[冻结B3纠错+一次补充备份+文档对齐长任务](../versions/0.0.5/b3_identity_correction_backup_plan.md)。必须保留真实身份与句柄守卫，不准直接删除或弱化；先内存聚焦合成回归，后安全准入唯一新C快照，仅保存外链被动描述不接触外部目标，按B2规模上限给**一次独立B3新额度**。实施授权由Astra单独聊天签发，不另开GitHub微提交。若仍BLOCKED则集中收尾V0.0.5，避免自动B4循环。尚未备份任何普通源字节，本地清理删除未获准。原A16/window/C9/Results、科研D3-real/D4-real、V0.0.5 G0及V0.0.6 NOT_STARTED状态不变。
+
+## 2026-10-14 B2回报前的论文成果优先战略历史状态
 
 `OWNER_ADOPTED_PUBLICATION_FIRST__B2_UNCHANGED__NO_NEW_SCIENCE_AUTH`。Owner明确Python/MATLAB都有本地及GitHub程序备份（Owner提供信息、非网页独立全量验证），科研代码保全**无需另找物理隔离卷**；旧“可信可弃用根”属于Windows A16/D2敌对保护实验而非备份要求。Owner同意首篇优先完成科学可信GE/区域外溢及政策反事实，K2/年度动态/IRF/福利按首篇必要性排序。详见 [2026-10-14成果优先路线](CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md)。首稿估计再约5–8个长版本，非已冻结承诺。
 
