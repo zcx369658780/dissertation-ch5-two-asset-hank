@@ -1,6 +1,16 @@
 # 第五章路线图与版本登记
 
-## 2026-10-14 当前：Owner 正式启动 V0.0.6，C8真实来源与输入/经济单位 M1版前长任务
+## 2026-10-14 当前：V0.0.6 已冻结并获Astra独立受限实施授权
+
+**FROZEN__ASTRA_APPROVED_EXECUTION__WAIT_CODEX_SYNTHETIC_IMPLEMENTATION**。Owner已正式启动 V0.0.6；Codex交付唯一 SOURCE_ONLY 集中静态方案，Astra独立阅读固定GitHub源码、原科学合同并审议，接受静态方案**仅作为受界合成工程基础**；真实C8历史字节、经济单位、运行消费者仍未证实。
+
+**冻结计划：** [V0.0.6 正式计划](../versions/0.0.6/plan.md)，固定 freeze commit \`4857d9222580b491676cdf75951527eb06d16b49\`，plan blob \`5c96485f9b70c4c4033675134768b1ff4fe2d188\`；原DRAFT blob \`40f640a1d9533bfdb3f36241e96d2611c0fdf4dc\` 仅历史。**独立授权：** Astra本次独立聊天签发 \`ASTRA_APPROVED_EXECUTION__CH5_V0.0.6__SOURCE_ONLY_AND_SYNTHETIC_JOINT_BINDING_ONLY\`，生效范围只限上述冻结合同；尚未有Codex后续真正实现、测试或候选PASS证据。
+
+**NEXT_BASELINE_ADOPTION=ADOPTED_FROM_EXACT_SHA：** \`cf74384f151427f0b7071ac0461cede6ad6cdf11\`；登记 tree \`372c693ca3dccea716ae8caef382f513e5a2316e\`，执行前Codex需readback。原本地模型 \`a1db8c114dec0ab69d69a5576e153a7f868cba0e\` 与 dirty tracked8（包含 \`government_assets.py\`、\`middle_stage.py\`）不覆盖、不自动合并。main 最近独立回读 \`dd90f41e0daa97cf55fcb2a7a233ee8cd64297ac\`，与候选不同；候选未合并main。未出现V0.0.6实施candidate。
+
+允许仅隔离的完整五字段/三轴/2017→2018及两消费者的SOURCE_ONLY/纯合成接口，最多8小时、6个新 focused 进程、单进程10分钟和新增存储290MiB。受保护真实JSON/NPZ/receipts、旧C8/C9预算、actual consumer、科学HJB/KFE、GE、A16 hostile/旧目录清理均0许可；导入/依赖/输出边界不能证明则相关测试STOP。A16/window/C9/CALL_LEDGER、\`model_activation=False\`、\`Results FALSE\`保持；V0.0.5继续正式有限CLOSED，V0.0.7 NOT_STARTED。候选实现与集中回执返回后由Astra独立最终验收，不因当前冻结/授权宣称M1真实source闭环或科学Results。
+
+## 2026-10-14 历史：V0.0.6 首轮DRAFT、随后已正式冻结并授权
 
 **OWNER_STARTED__V006_DRAFT__WAIT_CODEX_CONSOLIDATED_SOURCE_ONLY_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED**。Owner明确确认回归多省份HANK科研主线、进入V0.0.6，以投稿成果优先战略M1作为本版方向。Astra发布 [V0.0.6 C8来源/31轴/量纲/消费者闭环版前草案](../versions/0.0.6/plan.md)，不是正式冻结/科学运行许可。Codex下一步一次性SOURCE_ONLY静态审阅实际代码HEAD与dirty，复用已接受C8 option1、SOURCE_ONLY axis binding及synthetic工程证据，集中提出 original-C8 receipt/result/batch、model0↔annual1 axis、source/calendar/unit、同annual master两个消费者及producer链具体实现与最小权限方案；无科学数据正文读取、无imports/tests或模型运行。Astra评审后才冻结/授权正式V0.0.6开发。
 
