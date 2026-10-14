@@ -1,14 +1,14 @@
-# 第五章 CURRENT：Owner 已启动 V0.0.6，C8科研主线版前规划
+# 第五章 CURRENT：V0.0.6 已冻结并获Astra受限工程实施授权
 
 日期：2026-10-14（Asia/Shanghai）
-**状态：OWNER_STARTED__V006_DRAFT__WAIT_CODEX_CONSOLIDATED_SOURCE_ONLY_PROPOSAL__NO_IMPLEMENTATION_AUTHORIZED**
+**状态：FROZEN__ASTRA_APPROVED_EXECUTION__WAIT_CODEX_SYNTHETIC_IMPLEMENTATION**
 
-Owner明确批准回归科研主线、进入V0.0.6。采用2026-10-14“论文成果优先”战略的M1：固定原C8条件对照基线，聚焦真实source→receipt/result→batch→31省轴/年度输入master→labor与wage两个消费者的精确身份、经济单位及2017/2018时点。现存SOURCE_ONLY 31轴0/1映射、合成9测试和Owner option1均保留为其原接受等级，不能擅自当live真实输入/保护/Results PASS。正式版前目标草案 \`versions/0.0.6/plan.md\` 为DRAFT，当前只许Codex单次静态 SOURCE_ONLY 实施建议，Astra审查后才冻结和另授实现权限。
+Owner已启动 V0.0.6，Codex已交付 M1 C8 SOURCE_ONLY 联合静态方案；Astra独立核查GitHub固定源码及已采纳科学合同后，已在治理分支发布 **[V0.0.6正式冻结计划](versions/0.0.6/plan.md)**：freeze commit \`4857d9222580b491676cdf75951527eb06d16b49\`，plan blob \`5c96485f9b70c4c4033675134768b1ff4fe2d188\`。Astra于本轮聊天**另行**签发独立实施授权 \`ASTRA_APPROVED_EXECUTION__CH5_V0.0.6__SOURCE_ONLY_AND_SYNTHETIC_JOINT_BINDING_ONLY\`。**目前尚无后续Codex代码候选、测试或实施结果，不能写成PASS。**
 
-上版 V0.0.5 已于固定治理提交 \`8de1fcd3aef63a541bea72075fbf61c793b6fe4f\` 有限行政关闭；B3获准普通源备份仅CODEX_REPORTED_WITH_LOCAL_RECEIPTS，外链/全树时间点不保证，G0可信可弃用敌对根UNPROVEN、旧目录删除0；不复跑备份、不新建物理隔离盘，不覆盖原工作树和dirty。前版最终验收与复盘原件不修改。历史本地代码HEAD \`a1db8c114dec0ab69d69a5576e153a7f868cba0e\`（Codex旧报告）不等于GitHub文档发布HEAD、代码candidate或main，新的实测未做；\`NEXT_BASELINE_ADOPTION=UNDECIDED\`。
+**NEXT_BASELINE_ADOPTION=ADOPTED_FROM_EXACT_SHA**：\`cf74384f151427f0b7071ac0461cede6ad6cdf11\`，登记tree \`372c693ca3dccea716ae8caef382f513e5a2316e\`，实现前须Git fresh-readback。原模型工作树 \`D:\ProjectTemp\c5k1bturn56\`/旧HEAD \`a1db8c114dec0ab69d69a5576e153a7f868cba0e\`、外置common-dir及已有8 dirty tracked（其中 \`government_assets.py\`、\`middle_stage.py\`）必须保全；不重置、覆盖、合并main或自动吸收dirty。可在批准的全新隔离候选区作限定文件范围的合成工程实现；最终 candidate SHA/tree 还不存在。
 
-科学原已采纳人口/人均（不N=P/3）、原C8 frozen household/state/S、K1 raw ra0与时序、价格current_price_methodologically_attributed但direct_price_verified=False不变。A16 UNRESOLVED/FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE，旧科学/data/consumer预算CLOSED。V0.0.6版前无真实受保护文件新访问、live C8/31省家庭/GE或C9模型运行权限；历史已耗尽预算不得通过更名恢复。下版V0.0.7 NOT_STARTED。
+本次V0.0.6的真正目标是 M1 的 **fixed C8 historical source/receipt→五字段Ct/Lt/At/Bt/AtTax→31省三轴→2017 observed/2018 target→同年度master的migration/wage两个合成消费者→frozen S/C1/firm接口** 的来源/类型/时点/单位/拒绝合同；复用已接受 SOURCE_ONLY 和 Option1，不虚构真实运行。新许可允许最多8小时、6个新增 focused 测试进程、每进程10分钟和新增存储上限290MiB（详见原冻结），任何测试前须证明隔离的 module/import/输出/capture 边界；真实受保护数据、real consumer/HJB/KFE/GE/Results、C9/C10、A16 hostile/备份/旧目录清理均不开放。不能把条件对照冒充重求解均衡。
 
-研究工作流仍为V1.2：Owner立版、Astra版前集中审议/冻结、Codex单个长任务实施、集中验收；GitHub仅在实质里程碑批量更新，禁止普通命令微审批与跨项目操作。旧CURRENT历史入口见固定 V0.0.5关闭提交，不反复嵌入历史全文。
+V0.0.5仍 \`CLOSED__LIMITED_BACKUP_AND_ALIGNMENT_ACCEPTED__MAIN_G0_UNPROVEN__CLEANUP_DEFERRED__WITH_OBSERVATIONS\`，原B3有限字节保全仅Codex本地回执。保留 \`A16 UNRESOLVED/FAIL_CLOSED\`、\`window UNACCEPTED\`、\`C9 PAUSED\`、\`CALL_LEDGER_UNRESOLVED\`、\`model_activation=False\`、\`Results FALSE\`，旧 science/data/consumer budgets CLOSED；人口/人均保留，不 \`N=P/3\`；raw ra0/S/C1及HJB/KFE已采纳科学合同不变。V0.0.7 NOT_STARTED。
 
-**2026-10-14会话交接入口：** `docs/CH5_CONVERSATION_HANDOFF_20261014_EVENING.md` 汇总V0.0.5终验、Owner决定和V0.0.6的已存DRAFT状态；此句不新增执行许可。
+项目继续CH5_WORKFLOW_V1.2，Owner重大经济和不可逆决策权不变。Codex在受限实现内自主进行一次长任务与集中交付，GitHub不作微步骤中转；Astra独立审查候选并按实际资格验收。最新细节以冻结提交、登记和独立授权为准。
