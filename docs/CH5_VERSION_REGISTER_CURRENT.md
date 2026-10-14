@@ -1,6 +1,14 @@
 # 第五章路线图与版本登记
 
-## 2026-10-14 当前：B3获准普通源字节备份有限通过；V0.0.5只待文档与清理收尾
+## 2026-10-14 当前：V0.0.5 有限行政关闭；可信实验根G0未证，实际目录清理未执行
+
+**CLOSED__LIMITED_BACKUP_AND_ALIGNMENT_ACCEPTED__MAIN_G0_UNPROVEN__CLEANUP_DEFERRED__WITH_OBSERVATIONS**。Owner交付V0.0.5最终Codex本地对齐/清理分类报告，Astra已核B3冻结与有限验收、GitHub版本状态并审议。最终见[正式终验](../versions/0.0.5/acceptance.md)和[集中复盘](../versions/0.0.5/retrospective.md)。B3备份依Codex回报保全两个源根90,766普通文件/1,804,958,786B，各自SHA256匹配、C隔离Git fsck及5样本有限通过；**外部链接目标/活动链接、全树时间点、ADS/ACL/完整Windows敌对A16均未证明**，证据等级CODEX_REPORTED_WITH_LOCAL_RECEIPTS。
+
+最终Codex汇报仅新增本地3,369B治理对齐说明，原dirty8/staged0保持、untracked 5,947→5,948、ignored4,553不变，**既有本地CURRENT仍是V0.0.2历史时态，不是全文同步**；新说明生成在B3副本之后，不属于旧90,766快照。对B3时点模型源互斥清理分类恰好76,625文件/1,150,549,423B，但缓存候选73文件2,112,602B仍缺依赖与删除名单、POTENTIAL_SAFE_CLEANUP=0；历史证据/active dirty/protected/UNKNOWN全部保留，实际删除/移动/重命名0。两次只读汇总错误已如实记录，后继写入未启动，修正后exit0。
+
+**原V0.0.5主计划DRAFT，不追认为已正式冻结的G0 PASS，主可信可弃用敌对实验根仍BLOCKED/UNPROVEN**；V0.0.4 CLOSED/BLOCKED、D1/D2、科学D3-real/D4-real未授权、A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE和旧CLOSED资源账不变。V0.0.6 **NOT_STARTED**；Owner采纳未来投稿成果优先战略，只待本人明确手动启动后续版本。本版后无需再发备份/清理微任务。
+
+## 2026-10-14 B3受限备份通过、最终本地对齐报告尚未交付时历史状态
 
 **V005_B3_CLOSED_LIMITED_ACCEPT__V005_FINAL_ALIGNMENT_AND_CLEANUP_INVENTORY_PENDING__G0_UNPROVEN**。B3 Codex回报已建立唯一C盘快照 C:\CH5_Research_Backup\CH5_B3_IDSAFE_PASSIVE_LINK_20261014_01：两个已批准源根共90,766普通文件/1,804,958,786B均已复制，目标独立SHA256全部90,766匹配、0失败；Windows句柄身份检查9项合成回归PASS及一次canary通过，隔离C盘Git fsck --full exit0/5样本通过；运行942.672秒、exit0、错误/重试0，资源报告未超冻结。Astra逐项核固定B3条件，**正式有限验收见 [B3验收](../versions/0.0.5/b3_acceptance.md)**，本机操作与原回执仅为CODEX_REPORTED_WITH_LOCAL_RECEIPTS、网页未独立校验C盘字节。
 
