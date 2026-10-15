@@ -2,9 +2,9 @@
 
 ## 2026-10-15 当前：V0.0.9 以真实合成HANK稳态未取得而CLOSED，V0.0.10连续启动SOURCE_ONLY失败机制调查
 
-**\`V010_OWNER_CONTINUATION_DRAFT__WAIT_CODEX_V009_NEWTON_TRIAL_AND_ZERO_PRIVATE_CAPITAL_FORENSIC__ZERO_SCIENCE_CALLS\`**；前版Terminal \`CLOSED__LIMITED_ACCEPT__V009_PHI_B_CODE_AND_REPORTED_SCIENCE_STOP_ONLY__NO_SYNTHETIC_HANK_STEADY_STATE__WITH_OBSERVATIONS\`。Owner保留GDP相对劳动偏好\`max_phi=.3\`、人工二省\`phi=((1,1.1),(.9,1))\`。候选 \`e25f8e22490dddf57568e14aec2819d52603a78f\` tree \`4b161428470e4bc8070ed4ec4010a0ea08f9695a\` 唯一parent \`d41d229b681e09b913c21deff7a057085b9bc419\`，仅13白名单新增、未合并main。GitHub source静态核验+Codex本地 \`15 passed\` 回执支持方案B的工程oracle；网页不能独立看到原Windows五价点数值。
+**`V010_OWNER_CONTINUATION_DRAFT__WAIT_CODEX_V009_NEWTON_TRIAL_AND_ZERO_PRIVATE_CAPITAL_FORENSIC__ZERO_SCIENCE_CALLS`**；前版Terminal `CLOSED__LIMITED_ACCEPT__V009_PHI_B_CODE_AND_REPORTED_SCIENCE_STOP_ONLY__NO_SYNTHETIC_HANK_STEADY_STATE__WITH_OBSERVATIONS`。Owner保留GDP相对劳动偏好`max_phi=.3`、人工二省`phi=((1,1.1),(.9,1))`。候选 `e25f8e22490dddf57568e14aec2819d52603a78f` tree `4b161428470e4bc8070ed4ec4010a0ea08f9695a` 唯一parent `d41d229b681e09b913c21deff7a057085b9bc419`，仅13白名单新增、未合并main。GitHub source静态核验+Codex本地 `15 passed` 回执支持方案B的工程oracle；网页不能独立看到原Windows五价点数值。
 
-Codex报告单省5个HJB/KFE局部严格B/D、唯一KFE34状态闭类但\`At=0\`、完整资本/宏观市场不出清；第6个完整macro eval在b=2,a=2.1053,z=.8\`NO_ADMISSIBLE_POLICY\`，原代码顺序定位为1个初值+4有限差分后的**首次未接受full Newton trial**，不是初值或经济均衡已被证明无策略。首次\`os.replace\`账本共享失败是另一工程中断，未抹除计数。pytest累计7/8、science driver2/4、单省宏观2/2耗尽、household7/176、HJB55、policyQ62、selector48783/scalar21222。真正1省HANK稳态FALSE、2省NOT_RUN、动态IRF BLOCKED；[V009终验](../versions/0.0.9/acceptance.md)、[复盘](../versions/0.0.9/retrospective.md)。
+Codex报告单省5个HJB/KFE局部严格B/D、唯一KFE34状态闭类但`At=0`、完整资本/宏观市场不出清；第6个完整macro eval在b=2,a=2.1053,z=.8`NO_ADMISSIBLE_POLICY`，原代码顺序定位为1个初值+4有限差分后的**首次未接受full Newton trial**，不是初值或经济均衡已被证明无策略。首次`os.replace`账本共享失败是另一工程中断，未抹除计数。pytest累计7/8、science driver2/4、单省宏观2/2耗尽、household7/176、HJB55、policyQ62、selector48783/scalar21222。真正1省HANK稳态FALSE、2省NOT_RUN、动态IRF BLOCKED；[V009终验](../versions/0.0.9/acceptance.md)、[复盘](../versions/0.0.9/retrospective.md)。
 
 Owner连续版前立版规则有效，已经**不再逐版请示**顺序正式启动[V010 DRAFT](../versions/0.0.10/plan.md)，仅读新V009合成失败回执及Git源、复核Newton Jacobian trial/upper-b KKT候选/a=0 KFE支持，不允许新HJB/KFE模型求解/代码更改/真实C8读取。目标是一次性给可证伪算法/经济修订方案，若未来需改变科学求解语义和开新计算预算才另请Owner。A16/window/C9/CALL_LEDGER/Results及真实数据旧预算保持关闭，V0.0.11 NOT_STARTED。
 

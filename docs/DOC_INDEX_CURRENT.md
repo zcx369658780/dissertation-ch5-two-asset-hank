@@ -1,6 +1,6 @@
 # 第五章动态总目录
 
-**现行最新（2026-10-15）：V0.0.9新phi-B候选\`e25f8e22490dddf57568e14aec2819d52603a78f\`已在单省真实合成HJB/KFE的宏观稳态门正确停止；五个家庭局部求解报告满足B/D及唯一闭类KFE，但私人资本A=0，首次完整Newton未接受试探遭\`NO_ADMISSIBLE_POLICY\`，没有单省HANK GE或双省运行。Terminal \`CLOSED__LIMITED_ACCEPT__V009_PHI_B_CODE_AND_REPORTED_SCIENCE_STOP_ONLY__NO_SYNTHETIC_HANK_STEADY_STATE__WITH_OBSERVATIONS\`，详细[终验](../versions/0.0.9/acceptance.md)；按Owner长期授权已正式启动[V0.0.10 只读取证 DRAFT](../versions/0.0.10/plan.md)，状态 \`V010_OWNER_CONTINUATION_DRAFT__WAIT_CODEX_V009_NEWTON_TRIAL_AND_ZERO_PRIVATE_CAPITAL_FORENSIC__ZERO_SCIENCE_CALLS\`，禁止新科学调用、真实C8/A16/C9及Results。参见[CURRENT](../CURRENT.md)及[版本登记](CH5_VERSION_REGISTER_CURRENT.md)。V011 NOT_STARTED。**
+**现行最新（2026-10-15）：V0.0.9新phi-B候选`e25f8e22490dddf57568e14aec2819d52603a78f`已在单省真实合成HJB/KFE的宏观稳态门正确停止；五个家庭局部求解报告满足B/D及唯一闭类KFE，但私人资本A=0，首次完整Newton未接受试探遭`NO_ADMISSIBLE_POLICY`，没有单省HANK GE或双省运行。Terminal `CLOSED__LIMITED_ACCEPT__V009_PHI_B_CODE_AND_REPORTED_SCIENCE_STOP_ONLY__NO_SYNTHETIC_HANK_STEADY_STATE__WITH_OBSERVATIONS`，详细[终验](../versions/0.0.9/acceptance.md)；按Owner长期授权已正式启动[V0.0.10 只读取证 DRAFT](../versions/0.0.10/plan.md)，状态 `V010_OWNER_CONTINUATION_DRAFT__WAIT_CODEX_V009_NEWTON_TRIAL_AND_ZERO_PRIVATE_CAPITAL_FORENSIC__ZERO_SCIENCE_CALLS`，禁止新科学调用、真实C8/A16/C9及Results。参见[CURRENT](../CURRENT.md)及[版本登记](CH5_VERSION_REGISTER_CURRENT.md)。V011 NOT_STARTED。**
 
 这是当前导航；条目按用途区分当前资料与历史快照。网页顾问必须实际读取正文及提交，不能以本目录代替证据。
 

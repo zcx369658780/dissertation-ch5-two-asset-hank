@@ -2,7 +2,7 @@
 
 ## 2026-10-15 V009合成HANK失败有限关闭、连续启动V010的关键经验
 
-最新人工程序候选 \`e25f8e22490dddf57568e14aec2819d52603a78f\`，tree \`4b161428470e4bc8070ed4ec4010a0ea08f9695a\`、原13白名单和方案B \`phi11=1\`、双省目的行来源列\`phi=((1,1.1),(.9,1))\`仍保留。Codex报告真正单省宏观HANK未收敛/无非退化私人资本；五组家庭HJB/KFE有局部B/D及唯一34态KFE但At=0，初始宏观残差明显非零；第六宏观评估在upper-b=2、a=2.1053、z=.8家庭策略被拒。Astra静态读\`stationary.py\`证明**第六宏观评估是初值+4Jacobian差分后的首次未接受full Newton试探**，代码直接抛出而不继续阻尼试探；不等于经济体必无稳态。单省phi=1，所以与未跑的双省偏好\`.9/1.1\`无关。V009宏观1省2/2已耗，动态IRF仍未准入；最终Windows科学证据属Codex LOCAL_ONLY，不能冒充网页独立重跑。详见 [V009最终验收](../../versions/0.0.9/acceptance.md) 与[复盘](../../versions/0.0.9/retrospective.md)。
+最新人工程序候选 `e25f8e22490dddf57568e14aec2819d52603a78f`，tree `4b161428470e4bc8070ed4ec4010a0ea08f9695a`、原13白名单和方案B `phi11=1`、双省目的行来源列`phi=((1,1.1),(.9,1))`仍保留。Codex报告真正单省宏观HANK未收敛/无非退化私人资本；五组家庭HJB/KFE有局部B/D及唯一34态KFE但At=0，初始宏观残差明显非零；第六宏观评估在upper-b=2、a=2.1053、z=.8家庭策略被拒。Astra静态读`stationary.py`证明**第六宏观评估是初值+4Jacobian差分后的首次未接受full Newton试探**，代码直接抛出而不继续阻尼试探；不等于经济体必无稳态。单省phi=1，所以与未跑的双省偏好`.9/1.1`无关。V009宏观1省2/2已耗，动态IRF仍未准入；最终Windows科学证据属Codex LOCAL_ONLY，不能冒充网页独立重跑。详见 [V009最终验收](../../versions/0.0.9/acceptance.md) 与[复盘](../../versions/0.0.9/retrospective.md)。
 
 按Owner持续委托已经启动[ V010 SOURCE_ONLY取证计划](../../versions/0.0.10/plan.md)，仅分析已产生的V009新合成局部数组/Jacobian/失败候选及原源码，禁止新HJB/KFE/根/真实C8读取。若以后需要新经济法则、可行域Newton回溯或科学额度，先集中提交Owner决策，不自动重开V009。V1.2不变，旧A16/C9/window/CALL_LEDGER/Results资格不变。
 
