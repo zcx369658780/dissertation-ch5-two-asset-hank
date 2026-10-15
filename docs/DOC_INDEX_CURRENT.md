@@ -1,13 +1,14 @@
 # 第五章动态总目录
 
 更新：2026-10-15。
-**主线纠偏同步已经限定接受；V010当前仅运行原MATLAB方法的基线/接口/最小修错SOURCE_ONLY集中任务。未授权模型实现或数值运行。**
+**主线纠偏与V010 SOURCE_ONLY方案已限定接受；2026-10-15 Owner两项新科学决定已确认，Astra冻结前审议已归档；V010实施未冻结、未授权模型实现或数值运行。**
 
 | 用途 | 正文 | 当前适用性 |
 |---|---|---|
 | 即时状态 | [CURRENT](../CURRENT.md) | 同步接受、同V010新任务、原工作树保护 |
 | 唯一任务 | [TASK_CURRENT](../TASK_CURRENT.md)、[SOURCE_ONLY任务全文](../versions/0.0.10/mainline_alignment_task.md) | 原方法接续，不是旧Newton取证；交方案后STOP |
 | 同步验收 | [scope_sync_acceptance](../versions/0.0.10/scope_sync_acceptance.md) | Git源独立核验，本地MATCH与ACK为Codex回执；不复跑同步 |
+| V010最新Owner科学裁决与实施合同前审议 | [prefreeze_scientific_review_20261015](../versions/0.0.10/prefreeze_scientific_review_20261015.md) | GovInv原0.9/1.1；目的地税一次扣；财政总量桥；实施仍未冻结或获运行许可 |
 | 项目目的 | [Owner主线纠偏](CH5_OWNER_SCOPE_REALIGNMENT_20261015.md) | 原MATLAB修错与HA/有界外层/GovInv-Zt/递推冲击保留；其“等待同步”是当时阶段 |
 | 科研路线 | [现行路线图](CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md) | M1原框架修错，M2有界稳态/校准，M3原冲击，M4论文 |
 | V010计划 | [修订DRAFT](../versions/0.0.10/plan.md) | 精确基线/科学兼容性与一次实施方案，未科学冻结 |

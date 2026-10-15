@@ -1,13 +1,13 @@
 # 第五章当前版本登记
 
 更新：2026-10-15。依据[Owner主线纠偏](CH5_OWNER_SCOPE_REALIGNMENT_20261015.md)。
-**V010_MAINLINE_ALIGNMENT_SOURCE_ONLY_AUTHORIZED__WAIT_CONSOLIDATED_PROPOSAL。**
+**V010_SOURCE_ONLY_REVIEW_ACCEPTED__OWNER_SCIENCE_CHOICES_RESOLVED__IMPLEMENTATION_FREEZE_PENDING__NO_EXECUTION_AUTHORIZED。**
 
 | 对象 | 当前状态与权限 |
 |---|---|
 | 一次文档同步 | [限定接受](../versions/0.0.10/scope_sync_acceptance.md)：固定源Git身份独立核实，16文档本地MATCH及Scope ACK为Codex回执；不是科研运行或V010关闭。 |
-| V0.0.10 | 修订DRAFT保持原MATLAB方法；已单独下达[精准SOURCE_ONLY接续任务](../versions/0.0.10/mainline_alignment_task.md)。 |
-| 唯一当前任务 | V010_MATLAB_MAINLINE_BASELINE_AND_MINIMAL_REPAIR_PROPOSAL：确认实际基线、HA/外层接口、最小修错与GovInv/C1等冲突，交一份可冻结实施方案。 |
+| V0.0.10 | 修订DRAFT维持原MATLAB方法；[SOURCE_ONLY接续任务](../versions/0.0.10/mainline_alignment_task.md)已交付并完成限定审议，Owner两项科学选择已落实于[冻结前审议](../versions/0.0.10/prefreeze_scientific_review_20261015.md)；未正式冻结实施。 |
+| 当前Codex执行任务 | NONE；V010 SOURCE_ONLY方案已有有限审议，现等Astra正式实施合同和独立授权，暂不运行Python/HJB/KFE/pytest及数据。 |
 | 旧V010 Newton/零资本调查 | SUPERSEDED，后续执行停用；Codex报告在其本会话未开始，其它会话未经核查。 |
 | 主线代码baseline | UNSELECTED；不得自动选择人工候选、合并main或覆盖dirty。 |
 | V011 | NOT_STARTED。 |
