@@ -1,0 +1,112 @@
+{
+  "schema": "CH5_V010_CORRECTED_HA_SINGLE_PRICE_POINT_V1",
+  "status": "OWNER_APPROVED_SYNTHETIC_ONE_ATTEMPT_NOT_GE",
+  "research_purpose": "DIAGNOSTIC_CONDITIONAL_HA__COMPARE_NUMERIC_POINT_ONLY__NOT_HISTORICAL_ECONOMY_REPLICATION",
+  "frozen_code_commit": "94de4501dec051b969bee9d852eba2d4591f30ef",
+  "frozen_code_tree": "205eab47c4e4f9c6292c2ead9947d94d1a7579a5",
+  "source_fixture": {
+    "path": "versions/0.0.10/synthetic_fixture_v1.json",
+    "freeze_commit": "bf091da33d59293f147d52c11580327d3ac2a85d",
+    "git_blob": "40915658d93403cfc21b33a6b864b332b7857749"
+  },
+  "source_frozen_plan": {
+    "commit": "bf091da33d59293f147d52c11580327d3ac2a85d",
+    "plan_blob": "85138d8859d53295262fe13bf5bc277bca95ed3f"
+  },
+  "ha_inputs": {
+    "rb": 0.02,
+    "rah": 0.0675,
+    "w_eff": 15.5,
+    "transfer": 0.1,
+    "rb_gap": 0.07,
+    "parameters": {
+      "gamma_c": 2,
+      "phi_l": 5,
+      "alphal": 1,
+      "alphac": 1,
+      "rho": 0.05,
+      "chi_0": 0.1,
+      "chi_1": 2,
+      "a_bar": 0.000001,
+      "epsilon": 10,
+      "theta_rotemberg": 100,
+      "delta_depreciation": 0.025,
+      "istar": 0.015,
+      "rho_pi": 1.25,
+      "max_phi": 0.3,
+      "max_sigmau": 0.5,
+      "portfolio_beta_distance": 2,
+      "portfolio_beta_return": 0.5,
+      "HJB_Delta": 1000
+    },
+    "grid_spec": {
+      "shape_b_a_z": [
+        20,
+        20,
+        2
+      ],
+      "b_min": -2,
+      "b_max": 5,
+      "a_min": 0,
+      "a_max": 10,
+      "z": [
+        0.8,
+        1.3
+      ],
+      "z_transition_generator": [
+        [
+          -0.3333333333333333,
+          0.3333333333333333
+        ],
+        [
+          0.3333333333333333,
+          -0.3333333333333333
+        ]
+      ],
+      "layout": "F_ORDER_B_FASTEST"
+    }
+  },
+  "coordinates": {
+    "diagnostic_only": true,
+    "live_province_state": false,
+    "household_effective_wage_already_net": true,
+    "household_tax_wedge_second_application": false,
+    "household_source_reference": "SYN_A scalar transfer/gap and frozen V010 grid/parameters only",
+    "historical_comparator": "Old MATLAB-faithful numeric ra=.0675,w=15.5,rb=.02; historical wage tax treatment and solver acceptance are not identical",
+    "original_V010_first_failure_read_only": {
+      "rah": 0.055,
+      "rb": 0.02,
+      "w_eff": 1.7085897434929322,
+      "checkpoint": 2,
+      "flat_F": 25,
+      "classification": "REPORTED_NO_ADMISSIBLE_POLICY"
+    }
+  },
+  "allowed_method": "ch5_two_asset_hank.multi_province.mainline_household_runtime.HAInputs and solve_conditioned_household only",
+  "strict_gates": {
+    "required_delta": 1000,
+    "max_value_updates": 100,
+    "max_policy_Q_maps": 101,
+    "max_policy_cells": 80800,
+    "max_scalar_roots_including_V0": 400000,
+    "max_KFE_invocations": 1,
+    "bellman_inf_max": 1e-8,
+    "same_checkpoint_value_change_max": 1e-7,
+    "direct_solve_normwise_backward_error_max": 1e-12,
+    "monotonicity_halvings_max": 52,
+    "terminal_kfe": "ONE_UNIQUE_CLOSED_CLASS_SOURCE_FREE_NORMALIZED_NONNEGATIVE_STATIONARY_MASS",
+    "no_modify_selector_or_guards": true,
+    "no_retry": true
+  },
+  "resource": {
+    "new_HA_attempts": 1,
+    "science_processes": 1,
+    "ordinary_pytest_processes": 0,
+    "outer_turns": 0,
+    "response_periods": 0,
+    "max_wall_seconds": 7200,
+    "max_new_artifact_bytes": 33554432,
+    "peak_RSS_target_bytes": 536870912,
+    "no_external_production_data": true
+  }
+}
