@@ -1,6 +1,6 @@
 # 第五章动态总目录
 
-**现行最新（2026-10-15）：Owner已批准 V0.0.9 E1–E3 人工两资产 corrected HANK pilot 科学制度，首份 Python 实施计划正式冻结，状态 `V009_FROZEN__OWNER_ADOPTED_SYNTHETIC_TWO_ASSET_HANK_PILOT__WAIT_SEPARATE_BOUNDED_SCIENTIFIC_IMPLEMENTATION_AUTHORIZATION__REAL_HANK_AND_IRF_CLOSED`。严格新研究分支：20×20×2 (b,a,z) HJB/唯一闭类KFE内生资产与政府债券、CES劳动/一次工资税/竞争性企业/全国财政/省际基金R；先一省合格后两省。冻结不等于实施许可，Astra独立回读后方可单独签发限额科学任务。真实2018/C8、31省HANK及IRF未获授权。详见[CURRENT](../CURRENT.md)、[V009冻结计划](../versions/0.0.9/plan.md)、[Owner科学采纳](../versions/0.0.9/owner_scientific_adoption.md)、[科研决定总账](../SCIENTIFIC_DECISIONS.md)。V0.0.10 NOT_STARTED。**
+**现行最新（2026-10-15）：V0.0.9 人工两资产HANK科学基准已Owner采纳、正式冻结并由Astra**另行**签发受界Python HJB/KFE完整稳态实验许可。状态 `V009_FROZEN_AND_SEPARATELY_AUTHORIZED__SYNTHETIC_TWO_ASSET_HANK_ONE_PROVINCE_THEN_CONDITIONAL_TWO_PROVINCE__REAL_31_PROVINCE_AND_IRF_CLOSED`，仅新合成1省/满足所有门后2省20×20×2内生家庭最优化、平稳分布、资产/劳动/全国财政商品出清；真实2018/C8、历史科学、24×24、31省和真正IRF均0权限，Results FALSE。参阅[CURRENT](../CURRENT.md)、[V009冻结计划](../versions/0.0.9/plan.md)、[独立授权](../versions/0.0.9/authorization.md)和[Owner科学采纳](../versions/0.0.9/owner_scientific_adoption.md)。V010 NOT_STARTED。**
 
 这是当前导航；条目按用途区分当前资料与历史快照。网页顾问必须实际读取正文及提交，不能以本目录代替证据。
 
@@ -10,8 +10,8 @@
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
 | Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 2026-10-15 Owner连续推进偏好及旧科学保护限度；本地QMD/BasicMemory不宣称已同步 |
-| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V009 E1–E3已Owner采纳，人工两资产HANK科学实施冻结，待独立许可 |
-| V0.0.9 已采纳人工HANK稳态科学实现 | [正式冻结计划](../versions/0.0.9/plan.md)、[Owner科学采纳](../versions/0.0.9/owner_scientific_adoption.md)、[独立科学审议](../versions/0.0.9/scientific_proposal_review.md) | E1–E3已采纳、先1省再2省HJB/KFE内生稳态，24/31省和动态IRF仍禁，实施须单独授权 |
+| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V009科学方案冻结且独立授权1/2省人工HJB/KFE合成稳态数值，IRF/real仍0 |
+| V0.0.9 人工HANK稳态已科学授权实施 | [正式冻结计划](../versions/0.0.9/plan.md)、[独立授权](../versions/0.0.9/authorization.md)、[Owner科学采纳](../versions/0.0.9/owner_scientific_adoption.md)、[审议](../versions/0.0.9/scientific_proposal_review.md) | 1省内生HJB/KFE/资产债券+财政预算通过才2省；20×20主网格，≤176家户求解，新模型人工only |
 | V0.0.8 新corrected-model 数值里程碑正式验收 | [原冻结计划](../versions/0.0.8/plan.md)、[独立终验](../versions/0.0.8/acceptance.md)、[复盘](../versions/0.0.8/retrospective.md) | Gate A/B/C受限接受、单省人工冲击不是IRF；Gate D未具动态闭合，持续BLOCKED |
 | V0.0.7 M1来源与经济量纲受限验收 | [冻结计划](../versions/0.0.7/plan.md)、[正式验收](../versions/0.0.7/acceptance.md)、[复盘](../versions/0.0.7/retrospective.md) | Lt_prev/Govinc/AtTax/Tt的经济量纲条件接受，37件分期REQUEST_ONLY，0 real权限 |
 | V0.0.6 M1冻结与受限最终验收 | [冻结计划](../versions/0.0.6/plan.md)、[独立验收](../versions/0.0.6/acceptance.md)、[复盘](../versions/0.0.6/retrospective.md) | 五字段/三轴/双消费者合成工程CLOSED；原始C8真实输入及Results仍UNKNOWN/BLOCKED |

@@ -1,6 +1,11 @@
 # 第五章路线图与版本登记
 
-## 2026-10-15 当前：V0.0.9 Owner正式批准E1–E3并冻结合成两资产HANK稳态实施合同
+## 2026-10-15 当前：V0.0.9 合成两资产HANK已科研冻结并由Astra单独签发受限HJB/KFE实施授权
+
+**`V009_FROZEN_AND_SEPARATELY_AUTHORIZED__SYNTHETIC_TWO_ASSET_HANK_ONE_PROVINCE_THEN_CONDITIONAL_TWO_PROVINCE__REAL_31_PROVINCE_AND_IRF_CLOSED`**。Owner完整批准E1–E3，[科研采纳](../versions/0.0.9/owner_scientific_adoption.md)与[数学数值冻结计划](../versions/0.0.9/plan.md)已在commit `f7caeb54b13ec977d1b503b124067ae522ca2433` tree `7c51c01cb81b5ca1dfe2124de4de1e3a154e71cf` / plan blob `cb76a840fdd9d1756728189bf29518679831aba6` 完成一次原子发表及远端独立回读；**冻结之后单独签发** [授权文书](../versions/0.0.9/authorization.md) `ASTRA_APPROVED_EXECUTION__CH5_V009__OWNER_ADOPTED_SYNTHETIC_TWO_ASSET_HJB_KFE_STATIONARY_ONLY`，只适用于新独立corrected-model人工1省、经全部门通过后非对称2省的内生HJB/KFE/资产债券/劳动/财政商品稳态数值。基线V008 `d41d229b681e09b913c21deff7a057085b9bc419` tree `88833acf90613380afa30ab8d6ee7e0297e98664`；仅13新增白名单路径、不合并main、不动原D盘dirty和B3。
+人工参数/asset grid/init/Zgenerator在计划§3已经首跑前预注册，拒绝因不收敛事后调参。宏观根≤4、家庭新HJB/KFE≤176及8h、根/Scalar root、512MiB/256MiB硬界从实施与聚焦测试总账合并消费，重复失败与final-tree验证计入；动态IRF、24x24/31省正式求解、真实C8文件、历史已耗预算与Results仍0许可。即使软件oracle PASS，若HJB/KFE或市场条件不达标不能宣称合成HANK稳态取得；Codex必须报告失败和STOP。V0.0.10 NOT_STARTED，V1.2工作流/Owner连续委托不修改。
+
+## 2026-10-15 历史：V0.0.9 Owner已批准E1–E3并冻结实施合同（尚未单独签发）
 
 **`V009_FROZEN__OWNER_ADOPTED_SYNTHETIC_TWO_ASSET_HANK_PILOT__WAIT_SEPARATE_BOUNDED_SCIENTIFIC_IMPLEMENTATION_AUTHORIZATION__REAL_HANK_AND_IRF_CLOSED`**。Owner针对V009独立审议的E1–E3整体回复“没问题我批准”；[Owner科研采纳](../versions/0.0.9/owner_scientific_adoption.md)、[V009正式冻结计划](../versions/0.0.9/plan.md)在本次治理提交中封存，均只面向新的`SYNTHETIC_PILOT`，不更改原C8/Frozen historical math。E1: `a`私人基金权益、`b`全国债券均非负、固定S跨省回流R；E2:竞争性零利润firm/全国统一预算/公共资本gross-rental与维护净计价/允许signed财政T；E3:`MODEL_TIME_SYNTHETIC`、准确20×20×2 `(b,a,z)` b-fast及全部人工参数/资产域/初始化前冻结，1省先HJB/KFE/资产债券出清，合格后2省；24维/31省和动态IRF不在本实施里。
 

@@ -1,9 +1,10 @@
-# 第五章 CURRENT：V0.0.9 E1–E3 Owner批准，合成人工HJB/KFE稳态正式冻结
+# 第五章 CURRENT：V0.0.9 已冻结并独立授权新人工HANK稳态求解
 
 日期：2026-10-15（Asia/Shanghai）
-**状态：`V009_FROZEN__OWNER_ADOPTED_SYNTHETIC_TWO_ASSET_HANK_PILOT__WAIT_SEPARATE_BOUNDED_SCIENTIFIC_IMPLEMENTATION_AUTHORIZATION__REAL_HANK_AND_IRF_CLOSED`**
+**状态：`V009_FROZEN_AND_SEPARATELY_AUTHORIZED__SYNTHETIC_TWO_ASSET_HANK_ONE_PROVINCE_THEN_CONDITIONAL_TWO_PROVINCE__REAL_31_PROVINCE_AND_IRF_CLOSED`**
 
-Owner针对Astra V009 [SOURCE_ONLY科研审议](versions/0.0.9/scientific_proposal_review.md)中的E1–E3新人工两资产HANK制度与数值设计明确回复“没问题我批准”，[科研采纳](versions/0.0.9/owner_scientific_adoption.md)已记录。V009 [正式冻结计划](versions/0.0.9/plan.md)采用：`a>=0`私人资本基金权益、`b>=0`全国政府债券、固定S并核跨省`R_j`再分配；竞争性无利润firm、全国一税一次扣除、全国政府统一财政及可正负的统一T；调整成本为真实资源，AtTax/sigma/clip/taper=0；独立MODEL_TIME_SYNTHETIC与全套人工参数、20×20×2 (b,a,z)主网格一次预注册。**正式冻结不自行授予数值执行，须Astra独立回读SHA/blob后单独签发一次科学调用许可。**
+Owner已整体批准E1–E3合成两资产人工HANK科研制度：[Owner科学采纳](versions/0.0.9/owner_scientific_adoption.md)；[冻结正式计划](versions/0.0.9/plan.md)已在commit `f7caeb54b13ec977d1b503b124067ae522ca2433` tree `7c51c01cb81b5ca1dfe2124de4de1e3a154e71cf`、plan blob `cb76a840fdd9d1756728189bf29518679831aba6` 实际GitHub回读一致。Astra现**另外独立签发**[V009合成HJB/KFE有限实施授权](versions/0.0.9/authorization.md)：`ASTRA_APPROVED_EXECUTION__CH5_V009__OWNER_ADOPTED_SYNTHETIC_TWO_ASSET_HJB_KFE_STATIONARY_ONLY`。Codex将从accepted V008代码候选 `d41d229b681e09b913c21deff7a057085b9bc419` tree `88833acf90613380afa30ab8d6ee7e0297e98664` 安全隔离创建唯一父候选，仅新增13白名单模块/测试/交付；原main/8 dirty/untracked/ignored/外置.git/B3不改。
 
-新人工HANK科学实施代码基线为V008已接受候选 `d41d229b681e09b913c21deff7a057085b9bc419`、tree `88833acf90613380afa30ab8d6ee7e0297e98664`，仅隔离新`reconciled_hank`最多13白名单实现/测试/报告；先1省HJB→final-same-Q唯一闭类KFE→资产/债券/劳动/财政/商品均衡，全部合格后才试2省，31省/24×24/动态IRF及现实数据0许可。其结果无论成功与否都必须区别于V008给定分布的条件稳态。历史C8/2009 parity等科学结论不被重写；原D盘worktree 8 dirty/外部common-dir/untracked/ignored、B3不被清理/覆盖。
-原C8 A–D读取仍REQUEST_ONLY，A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、旧科学/真实消费者/数据预算CLOSED。V0.0.10 NOT_STARTED。CH5_WORKFLOW_V1.2及Owner连续版次授权不变，无工作流调整。
+首个研究问题：在预注册`MODEL_TIME_SYNTHETIC`、20×20×2 (b,a,z) F-order、独立CES劳动与一次工资税、a私人基金/b国家债券、给定S+显式R及竞争性企业/国家财政下，**内生HJB和KFE产生家庭资产分布后**能否同时出清1省的资产/债券/劳动/政府/商品市场；所有门达标才允许非对称2省。1省宏观≤2次、2省≤2次，全部宏观≤4；新家庭HJB/KFE总≤176，selector/scalar-root与内存/硬存储/科学进程额度见固定冻结计划和单独授权。非收敛要报告，不能修改参数或放宽B/D及KFE求解law获得PASS。
+
+**权限仍为0：**现实31省HANK/24×24网格/动态IRF/旧科学runners/真实C8受保护原件/C9/历史已耗预算/Results。原C8 A–D=REQUEST_ONLY，A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE。V008受限CLOSED，V0.0.10 NOT_STARTED。V1.2工作流+Owner连续版本委托保持，不因本授权自动运行后台Codex。
