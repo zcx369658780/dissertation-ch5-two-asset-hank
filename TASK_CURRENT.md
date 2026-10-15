@@ -1,16 +1,14 @@
-# 唯一当前任务：Owner主线纠偏文档同步一次
+# 当前任务：V010原MATLAB主线基线与最小修错集中方案
 
-2026-10-15（Asia/Shanghai）
-**ACTIVE_TASK=CH5_OWNER_SCOPE_REALIGNMENT_DOCUMENT_SYNC_ONCE_20261015。**
-**DOCUMENT_SYNC_ONLY；RESEARCH_HOLD；V010_RESCOPED_DRAFT。**
+日期：2026-10-15（Asia/Shanghai）。
+**ACTIVE_TASK=V010_MATLAB_MAINLINE_BASELINE_AND_MINIMAL_REPAIR_PROPOSAL。**
+**SOURCE_ONLY；无模型运行、测试、研究代码修改或真实数据权限。**
 
-执行正文：[versions/0.0.10/owner_scope_document_sync.md](versions/0.0.10/owner_scope_document_sync.md)。以Astra本轮公布的准确治理commit/tree为固定快照；必须包含[Owner主线纠偏](docs/CH5_OWNER_SCOPE_REALIGNMENT_20261015.md)及修訂路线图/V010草案。
+执行正文：[versions/0.0.10/mainline_alignment_task.md](versions/0.0.10/mainline_alignment_task.md)。以Astra本轮公布的固定治理commit/tree读取新任务；不从旧同步快照中的TASK_CURRENT继续派单。
 
-只读下载精确16份文档到独立新根、回读核Git blob与SHA-256、写本地SYNC_RECEIPT.json和CODEX_SCOPE_ACK.md。不得覆盖原模型CURRENT/AGENTS/8 dirty，不读C8/B3或旧V009失败数组，不研究Newton、不import科研包、不运行代码/测试/模型，不commit/push/merge或自动进入下一任务。
+先前Owner纠偏文档同步已由Astra[限定接受](versions/0.0.10/scope_sync_acceptance.md)。不重做16文档同步、不覆盖原同步根/收据，不写原模型CURRENT/AGENTS/8 dirty；本轮只是按新任务有限只读精确普通源码/历史采纳/Owner辅助.m或论文文本，集中输出可供冻结的主线修错方案。
 
-旧V010 Newton取证及过去所有已关闭任务停止作为当前执行依据。若已有在途工作，安全停止新动作、报告已发生事项，不抹除证据或共享系统进程。
+保留原HA黑箱、有界多省顺序迭代、GovInv/Zt校准和原递推冲击框架。旧V010 Newton/零资本取证明确停用；不import或运行V008/V009人工模型，不读取其失败数组，不引入Bt=Bgov、内生T或其它新宏观闭合。基线只建议、不checkout/merge。具体读范围、3小时/60份/4MiB与保护限制见任务正文。
 
-完成终态：DOCUMENT_SYNC_COMPLETE__WAIT_ASTRA_SCOPE_SYNC_REVIEW / STOP。
-Astra核验同步回执后再另发科研任务，下载成功不等于自动科研授权。旧预算和保护不变。
-
-原TASK_CURRENT全文已按原blob 9d1955c0ee3901321c92618a724fd90f0754e4ec逐字节保存于[历史副本](docs/history/scope_realignment_20261015/TASK_CURRENT_BEFORE.md)，仅历史，不启动旧任务。
+终态：WAIT_ASTRA_V010_MAINLINE_ALIGNMENT_PROPOSAL_REVIEW / STOP。
+交付后等待Astra集中审议和正式实施合同，不能自授科学ACCEPT或启动V011。旧科学/数据预算、A16/window/C9/CALL_LEDGER/Results以及原工作树保护不变。

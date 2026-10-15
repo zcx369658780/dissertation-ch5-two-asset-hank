@@ -1,45 +1,38 @@
-# V0.0.10 修订DRAFT：回归原MATLAB有界多省份迭代的修错与Python重写
+# V0.0.10 修订DRAFT：原MATLAB主线的Python修错与接续
 
-日期：2026-10-15（Asia/Shanghai）。
-**状态：V010_RESCOPED_DRAFT__WAIT_CODEX_DOCUMENT_SYNC__RESEARCH_HOLD。**
-**本次唯一允许任务：owner_scope_document_sync.md规定的一次文档同步。以下科研内容是待后续集中落实的范围，不是现在的SOURCE_ONLY、源码读取、测试或运行许可。**
+更新：2026-10-15（Asia/Shanghai）。
+**状态：V010_MAINLINE_ALIGNMENT_SOURCE_ONLY_AUTHORIZED__WAIT_CONSOLIDATED_PROPOSAL。**
+**同步已限定接受；当前只允许mainline_alignment_task.md的精确SOURCE_ONLY任务，不是模型实施或科学运行许可。**
 
-## 1. 替代旧版前任务
+## 1. 范围与阶段
 
-Owner确认原项目目的并要求先同步再继续。原V010 DRAFT在commit db2c2e289419ecab7921667e210bd510ff3c447b，blob eae74d9db34b319544ec32cd1c7b71325db6e650，任务名V0.0.10_M2_V009_PRIVATE_CAPITAL_ZERO_SUPPORT_AND_NEWTON_TRIAL_FAIL_CLOSED_FORENSIC。它尚未成为正式科学冻结合同；本次明确将其后续执行指示置为SUPERSEDED_BY_OWNER_SCOPE_REALIGNMENT，不继续Newton/Jacobian/a=0取证、不再读取为其指定的V009私有失败数组。
+Owner在CH5_OWNER_SCOPE_REALIGNMENT_20261015.md明确恢复项目目的：修正原MATLAB错误，在省级HA条件稳态黑箱、有界多省顺序迭代、GovInv/Zt自适应校准及原递推冲击框架上Python重写第五章。这个主线不再讨论是否改成另一套人工HANK。
 
-已经发生的工作如有，保留事实、调用账和文件，不反称NOT_RUN；执行状态由Codex在同步回执中报告。没有新版本号或额外微版本，仍在V010中恢复主线。
+原V010 Newton/Jacobian/零私人资本取证DRAFT及聊天任务已停用，旧内容保持在db2c2e289419ecab7921667e210bd510ff3c447b，blob eae74d9db34b319544ec32cd1c7b71325db6e650；不读取旧失败数组、不研究Newton加速。纠偏后“先同步”草案在916e2b47d3489f6eacd814b55cc568d92be4c9fb，blob b8a02f55ded8b1518b41728e6e306581df631098。本次只推进其已规定的同步后阶段，没有改写既有正式科学冻结合同，也没有另立微版本。
 
-## 2. 同步后的版本目标（待Astra另发实际任务）
+同步结果见[限定验收](scope_sync_acceptance.md)：Codex报告16文档匹配、Scope ACK和停止，Astra核远端源身份并明确Windows原回执未经网页独立读取。原同步镜像、收据、历史合同均保留。无需再次同步同一16文档。
 
-围绕原HA黑箱—单轮映射—有界外层校准这条链，完成一次集中、具体的Python修错与接续方案，优先推进已有源代码而不是新人工模型：
+## 2. 本轮具体目标
 
-A. 精确确定原MATLAB参考、已接受的source-faithful Python及后来数值修复的真实关系。不得默认以reconciled_hank人工Newton候选为父基线，也不自动切换原脏工作树。主线代码baseline目前UNSELECTED。
+以[主线基线与最小修错任务](mainline_alignment_task.md)为唯一执行入口。一次性取得：
 
-B. 对齐HA输入输出合同：资产上下界、rb/rah/w/tau/Tt/本省参数 → Ct/At/Bt/Lt、政策与稳态分布及已有统计。复用已接受HJB/KFE数学修复；只针对可核缺陷修复，不另造家庭宏观闭合。
+- 原MATLAB参考与合适source-faithful Python/已接受HJB-KFE修复的真实基线建议，不能默认采用V008/V009人工候选。
+- HA输入输出、单轮顺序、外层GovInv/Zt/边界/阻尼/退出与原冲击接口的精确图。
+- 可直接复用、已证bug最小修复、与原科学决定冲突待裁决的集中清单。
+- 一份可直接供Astra集中冻结的同V010 Python实施和验证方案，精确路径、输入/数据必要性、资源与停点；此时不实施。
 
-C. 对齐原单轮和外层更新：HA → 迁移劳动 → 私人资本及收益 → 企业 → 综合工资/货币财政 → 下一轮；明确GovInv/Zt调节、边界、阻尼、退出条件和数据校准身份。合法校准更新与事后篡改标准严格区分。
+特别处理原GovInv收益边界调节和后来C1残差律的不同角色；不自动回滚C1、不悄悄把它固定进恢复后的原外层方法。价格有界、raw/used、校准阶段与冲击阶段、Lt覆盖/人口单位/税/资本分配按原证核对。合法自适应校准不是一概禁止的事后调参，但实际更新律必须事前明确。
 
-D. 仅列阻碍该闭环的最小修错集：phi差值/轴与人均口径、劳动变量生命周期、资本份额与收益、税和财政单位等。每项写“源码证据、错误性质、最小修复、会否改变Owner已采纳法则、同输入验证办法”。不因发现财政歧义就预设全国债券供给根、内生T或竞争性新企业。
+## 3. 不改变的主线与科学保护
 
-E. 为之后的原方法稳态及递推冲击建立可核验路径；不把前瞻动态重构作为本版主目标或先决条件。
+HA可以作为模块黑箱，但其HJB/KFE、概率质量、聚合有效性仍须验证。原程序可能有错，恢复方法不等于复制bug或盲目要求所有原数值一致。phi富裕目的地低厌恶方向、max_phi=.3、人口人均不N=P/3，以及既有可信数学修复保留其范围。
 
-本版应争取一个完整科研长任务，不变成逐文件微审批。具体允许路径、试验输入和数值预算必须在同步回执接受后，基于真实源状态集中冻结；本文不预造数据、校准、可用代码SHA或求解权限。
+V008/V009人工制度、Newton根、固定Bg/内生T、竞争企业、新动态HANK方法保留为非活跃辅助，不用作原主线前置或默认baseline。原递推冲击响应是第五章目标，未来完整前瞻方法另需研究决定，不自动阻塞本主线。
 
-## 3. 必须集中处理而不能擅自决定的兼容性问题
+本轮不选择或合并代码基线、不写研究代码、不运行pytest/模型/HJB/KFE/IRF，不读真实C8/B3/旧失败数组，不重置旧预算。具体允许的普通源码与Owner辅助文本、3小时/60份/4MiB界限见任务全文；只有SOURCE_ONLY许可。
 
-- 原GovInv根据收益边界调节，后来C1为GovInv=max(Ktarget-Kprivate,0)。两者不是同一迭代映射。本轮恢复原方法优先级，但不取消C1历史接受；实际新主线更新法待对照原件后集中确认。
-- 原价格有界与后来raw-ra0/lagged回报修复，须区分raw、used、触边标志、条件HA输入和外层退出，不自动clip或回滚。
-- 已采纳人口/人均、不N=P/3及max_phi=0.3的富裕目的地偏好方向保留；人工两省pGDP比1:2不是现实31省校准。
-- 原借贷域、税/转移含义与合成试验的b>=0、Bt=Bgov、内生T不同；不把后者带回原模型。
-- 旧论文和MATLAB都可能含错。数值复现与经济正确性分账，必要的会计检查继续存在，但不得以重建另一套总均衡为默认修复方式。
+## 4. 下一停点
 
-## 4. 本轮权限与退出
+Codex交付V010_MATLAB_MAINLINE_BASELINE_AND_MINIMAL_REPAIR_PROPOSAL后STOP，Astra据真实源集中审议。若有GovInv/C1等重大科学取舍，集中提交Owner；否则依既有主线完成正式实施计划冻结，再单独授权数值/代码工作。当前未发此类授权，V011 NOT_STARTED。
 
-当前科研许可全部为0：不读模型源码/旧科研数组以继续取证，不import研究包、不运行HJB/KFE/selector/宏观迭代/Newton/IRF/pytest/MATLAB，不改变参数或网格，不建立代码候选、不push或合并main。
-
-只执行[文档同步](owner_scope_document_sync.md)：读取本次固定治理快照，保存到独立新文档目录，核每文件身份，明确旧任务停用和主线范围，提交同步回执后STOP。
-
-同步完成并经Astra核验之前，不能以Owner连续立版委托或此计划中的“同步后目标”自动开始科研。同步接受后Astra再发布同V010的具体任务；必要的科学方向冲突仍由Owner决定。V011 NOT_STARTED。
-
-A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE以及真实C8 A–D REQUEST_ONLY和旧已耗预算维持原状。原8 dirty/外部common-dir/untracked/ignored/B3不覆盖、不清理；原V008/V009辅助成果不删除。
+原8 dirty/外置common-dir/untracked/ignored与B3不覆盖或清理。A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE和真实C8 A–D REQUEST_ONLY维持。V1.2及Owner连续版次委托不改。
