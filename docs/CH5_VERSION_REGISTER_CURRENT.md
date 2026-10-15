@@ -1,6 +1,13 @@
 # 第五章路线图与版本登记
 
-## 2026-10-15 当前：V0.0.9 源码/理论/安全镜像集中提案已审，Owner新合成HANK科学决策门
+## 2026-10-15 当前：V0.0.9 Owner正式批准E1–E3并冻结合成两资产HANK稳态实施合同
+
+**`V009_FROZEN__OWNER_ADOPTED_SYNTHETIC_TWO_ASSET_HANK_PILOT__WAIT_SEPARATE_BOUNDED_SCIENTIFIC_IMPLEMENTATION_AUTHORIZATION__REAL_HANK_AND_IRF_CLOSED`**。Owner针对V009独立审议的E1–E3整体回复“没问题我批准”；[Owner科研采纳](../versions/0.0.9/owner_scientific_adoption.md)、[V009正式冻结计划](../versions/0.0.9/plan.md)在本次治理提交中封存，均只面向新的`SYNTHETIC_PILOT`，不更改原C8/Frozen historical math。E1: `a`私人基金权益、`b`全国债券均非负、固定S跨省回流R；E2:竞争性零利润firm/全国统一预算/公共资本gross-rental与维护净计价/允许signed财政T；E3:`MODEL_TIME_SYNTHETIC`、准确20×20×2 `(b,a,z)` b-fast及全部人工参数/资产域/初始化前冻结，1省先HJB/KFE/资产债券出清，合格后2省；24维/31省和动态IRF不在本实施里。
+
+唯一新代码候选基线采用V008 `d41d229b681e09b913c21deff7a057085b9bc419` / tree `88833acf90613380afa30ab8d6ee7e0297e98664`，不合并main或修改原D盘8 dirty、untracked、ignored、外置common-dir/B3。正式冻结不是执行许可；待Astra核Git readback后另行签一次8小时受限Python新`reconciled_hank`实施授权，新增最多13白名单路径、最多176次新家庭HJB/KFE、4次宏观求解（1省2、2省2）、8个focused pytest/4个独立科学driver、800状态KFE restricted-gesvd和严格原B/D/Delta/单调/唯一closed-class规则，全面实测账+0真数据。任何算术/科研错误必须STOP而非调参救PASS。
+V008原4条path额度与31省roots2/2继续历史已耗，不给新V009 science占用；原C8 A–D REQUEST_ONLY、A16 FAIL_CLOSED/window UNACCEPTED/C9 PAUSED/CALL_LEDGER_UNRESOLVED、Results FALSE旧budget CLOSED保持。V0.0.10 NOT_STARTED；工作流V1.2及Owner连续版次权不变。
+
+## 2026-10-15 历史：V009 SOURCE_ONLY提案已审、当时待Owner E1–E3采纳
 
 **`V009_SOURCE_ONLY_SCIENTIFIC_PROPOSAL_REVIEWED__WAIT_OWNER_NEW_SYNTHETIC_HANK_ECONOMIC_AND_NUMERICAL_BASELINE__NO_SCIENCE_EXECUTION`**。Codex按V009原SOURCE_ONLY只读许可完成53份精确源/合同和隔离治理镜像，零Python/HJB/KFE、零真实受保护原件、零science/模型、零代码候选，回报本地文档blob一致和receipt `22BC74F8EC66C2D77483769DEA4A3512E5BC6DAAAD0C00354FE02F1C8150B75A`；网页仅从GitHub独立确认源blobs，镜像本地读回为Codex回执证据。Astra本轮独立GitHub核V008代码、旧HJB/KFE索引/accepted科学法则，并记录 [V009正式科研审议](../versions/0.0.9/scientific_proposal_review.md)。V009原DRAFT未冻结，V1.2含连续立版规则无需新工作流变更。
 

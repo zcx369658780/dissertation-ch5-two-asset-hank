@@ -1,3 +1,11 @@
+# 2026-10-15 Owner新人工科学合同（与旧C8分支严格隔离）
+
+Owner已批准V0.0.9的E1–E3合成两资产HANK研究pilot；**本批准不追溯改写旧HJB/KFE/K1/C1、历史R2/C9、原2018/2009与RESULTS资格，也不自动签发新的数值/真实数据调用**。固定细节及严格来源见 [V009 Owner科研采纳](versions/0.0.9/owner_scientific_adoption.md)、[V009正式冻结计划](versions/0.0.9/plan.md)、[先前独立科学审议](versions/0.0.9/scientific_proposal_review.md)及当前`CURRENT.md`。
+
+新pilot：人工`a`=私人基金权益、`b`=唯一全国政府债券、均非负；固定S与`R_j`省际资本回流，调整成本为真实资源；人工AtTax/migration收费/clip/taper=0；全国唯一财政/竞争性零利润企业、一次工资税、公共资本毛回报与折旧维护统一、signed T财政工具；`MODEL_TIME_SYNTHETIC`及明确人工校准、20×20×2纠正网格，先一省全HJB/KFE/资产债券稳态、合格后两省。24×24、31省科学调用、动态IRF、原C8真实资产与旧封闭预算保持0许可。V1.2和Owner连续长版委托无变化，禁止背景自动任务。
+
+---
+
 # 2026-10-02 科学合同索引时效
 
 仅整理后续已存在的采纳与状态；父DOT终裁治理文档ACCEPT/CLOSED，非科学ACCEPT，不新增科学法则。下方表格逐字保留，其pending、未调用、DESIGN ONLY按日期联读后续原件/CURRENT顶部，不能用旧状态续用预算。
