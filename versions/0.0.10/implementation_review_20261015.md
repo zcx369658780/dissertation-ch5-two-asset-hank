@@ -17,9 +17,9 @@
 - 新`mainline_response.py`是3期条件递推入口，仅在`TARGET_CALIBRATION_VERIFIED`后可进入；工程stub存在，并无实际冲击运行证明。
 
 ## 3. Codex报告的本地执行与科学FAIL
-**以下不属于Astra独立重跑**。据Codex：最终候选树focused pytest 24项PASS，过程4/6子进程（中间有2失败/一次导入失败）；首science driver 1/4、HA尝试1/26，V0 FOC max 2.19e-12、b斜率正；checkpoint0 B=2.3410249912350563，checkpoint1 B=0.2328433126744121、D=3.290243356756511；checkpoint2 F-order flat25返回NO_ADMISSIBLE_POLICY，直接solve2次、无终端KFE、无宏观校准、无冻结验证/3期响应。2,?（预算数字以报告以下准确值）selector cells=1626，roots=1642（含V0 800）；总耗时19.1min。前两次checkpoint均未达到HJB B/D门，不能由B下降推出稳态存在或最终树科学通过。
+**以下不属于Astra独立重跑**。据Codex：最终候选树focused pytest 24项PASS，过程4/6子进程（中间有2失败/一次导入失败）；首science driver 1/4、HA尝试1/26，V0 FOC max 2.19e-12、b斜率正；checkpoint0 B=2.3410249912350563，checkpoint1 B=0.2328433126744121、D=3.290243356756511；checkpoint2 F-order flat25返回NO_ADMISSIBLE_POLICY，直接solve2次、无终端KFE、无宏观校准、无冻结验证/3期响应。selector cells=1626，roots=1642（含V0 800）；总耗时19.1min。前两次checkpoint均未达到HJB B/D门，不能由B下降推出稳态存在或最终树科学通过。
 - 仅以本轮冻结20×20×2 F-order b-fast格点推算，flat25对应`(ib=5,ia=1,iz=0)`、`b=-3/19≈-0.157895`、`a=10/19≈0.526316`、`z=0.8`，b与a均是内部节点。这不是拒绝原因的证明。
-- `NO_ADMISSIBLE_POLICY`意味着该时点按已接受selector当前候选约束没有唯一被选中的可行策略，**不**表示原MATLAB有界31省GE没有固定点。缺少该次本地`first_failed_cell.json`，不能判断是导数/边界/切换约束、数值浮点、V0或数学错误。
+- `NO_ADMISSIBLE_POLICY`意味着该时点按已接受selector当前候选约束没有任何候选被判为可接受策略，**不**表示原MATLAB有界31省GE没有固定点。缺少该次本地`first_failed_cell.json`，不能判断是导数/边界/切换约束、数值浮点、V0或数学错误。
 - Codex报告科学源码identity绑定在**封存前实现**，最终候选未再次运行science，只运行最终tree工程测试；因此不能以本次science失败/成功声称最终候选树的科学输出已复验。
 - Codex提交的本地`DELIVERY_RECEIPT.json` SHA256 `322D707CF666D5CEDF1E4B907F7FE75A5423734867BA717D28CCB6DD73A792C9`；本轮Astra不能访问D盘，不独立证明这个SHA、19.1分钟、84.4MiB RSS、约399MB clone、dirty字节或原始测试process收据。GitHub没有可见CI测试状态可替代该回执。
 
