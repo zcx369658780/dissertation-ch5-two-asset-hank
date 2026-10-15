@@ -1,13 +1,11 @@
-# TASK_CURRENT：V010首次HA失败科学根因尚未证明，暂不执行
+# TASK_CURRENT：V010 corrected HA历史价格单点新科学授权
 
 日期：2026-10-15（Asia/Shanghai）。
-**ACTIVE_CODEX_TASK=NONE__WAIT_OWNER_APPROVAL_FOR_NEW_BOUNDED_SYNTHETIC_HA_PRICE_COMPARATOR**。
-**NO_SCIENTIFIC_REEXECUTION_OR_MODEL_CODE_CHANGES_AUTHORIZED**。
+**ACTIVE_TASK=V010_CORRECTED_HA_SINGLE_PRICE_POINT_ONE_ATTEMPT**。
+**PERMISSION=OWNER_EXPLICIT_SINGLE_ATTEMPT_SYNTHETIC_HA_SCIENCE_AUTHORIZED__NO_MACRO_OR_REAL_DATA**。
 
-原`V010_FIRST_HA_FAILED_CELL_EXISTING_RECEIPT_EXTRACTION_SOURCE_ONLY`已由Codex交回`V010_FIRST_HA_FAILED_CELL_SOURCE_ONLY_EVIDENCE`，本次不要求继续原读取。Astra独立核查GitHub源码selector门与历史同领域成功价格；详见[新交叉审议](versions/0.0.10/first_ha_price_domain_source_review_20261015.md)。原报告本地MD/JSON与SHA仅`CODEX_REPORTED_WITH_LOCAL_RECEIPTS`。
+唯一任务：[corrected_ha_price_probe_task_20261015.md](versions/0.0.10/corrected_ha_price_probe_task_20261015.md)，由本发布提交固定。对应科学freeze `corrected_ha_price_probe_freeze_20261015.md` @ commit `81181490495f827aa0e15e6a6efb186e8addee67` / tree `846fd3f354d8f9d5d4978e15ad9ff78b71d2e451` / blob `24dd985c2497b5aebe5774af925b4c4b9e84be9e`；独立输入manifest `corrected_ha_price_probe_v1.json` @同一提交 / blob `c23d331bed34e5ca478324cdc05034609ecb91b7`。唯一代码候选 `94de4501dec051b969bee9d852eba2d4591f30ef`/tree`205eab47c4e4f9c6292c2ead9947d94d1a7579a5`。
 
-历史支持MATLAB-faithful诊断`rb=.02`、`ra=.06/.0675/.07`、家庭综合工资`13/15.5/18`，但其污染行KFE/单一收敛门不能替代V010 strict corrected HJB/KFE。当前首个失败HA的可独立算数输入`rah=.055`、`w_eff=1.7085897434929322`、`rb=.02`，且2省/31省原综合工资的求和规模不一样。**价格域不相容属可调查假说，不代表证明selector bug。**
+仅1次corrected HA，`rah=.0675,w_eff=15.5,rb=.02`及其全部冻结Tt/rb_gap/网格/参数；最多1科学进程，0 pytest，0宏观/IRF，严格原HJB/KFE及root/selector总门；不修源、不重跑已存失败点。任务从未用到1个科学尝试开始计算，任何科学调用后不得重新初始化用以第二次。最终`V010_SINGLE_POINT_CORRECTED_HA_PRICE_PROBE_RESULT` / `WAIT_ASTRA_V010_SINGLE_POINT_PRICE_PROBE_REVIEW / STOP`。
 
-如Owner明确同意进一步科学调用，需单独前瞻性冻结同V010独立HA对照输入、次数、证据和停止，不改先前冻结plan/fixture、无需再SOURCE_ONLY搜证。此前已耗4/6 pytest、1/4 driver、1/26 HA及selector/root账维持，余额不自动解锁。
-
-原8 dirty/index/common-dir、A16/C9/window/CALL_LEDGER、model_activation=False/Results FALSE、真实C8/B3保护、V011 NOT_STARTED不变。
+旧V010计划、原两省fixture、原8 dirty/common-dir与已消费科学账不动。旧C8/B3/2017/2018真实数据0；A16/window/C9/CALL_LEDGER保护不变；Results FALSE，V011 NOT_STARTED。
