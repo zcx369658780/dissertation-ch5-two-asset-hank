@@ -1,27 +1,22 @@
 # 第五章动态总目录
 
-更新：2026-10-15。
-**主线纠偏与V010 SOURCE_ONLY方案已限定接受；2026-10-15 Owner两项新科学决定已确认，Astra冻结前审议已归档；V010实施未冻结、未授权模型实现或数值运行。**
+更新：2026-10-15。**V010已正式冻结并下达唯一限域实施任务；只允许两省synthetic与白名单代码，不涉及真实C8/Results。**
 
-| 用途 | 正文 | 当前适用性 |
+| 用途 | 入口 | 时态 |
 |---|---|---|
-| 即时状态 | [CURRENT](../CURRENT.md) | 同步接受、同V010新任务、原工作树保护 |
-| 唯一任务 | [TASK_CURRENT](../TASK_CURRENT.md)、[SOURCE_ONLY任务全文](../versions/0.0.10/mainline_alignment_task.md) | 原方法接续，不是旧Newton取证；交方案后STOP |
-| 同步验收 | [scope_sync_acceptance](../versions/0.0.10/scope_sync_acceptance.md) | Git源独立核验，本地MATCH与ACK为Codex回执；不复跑同步 |
-| V010最新Owner科学裁决与实施合同前审议 | [prefreeze_scientific_review_20261015](../versions/0.0.10/prefreeze_scientific_review_20261015.md) | GovInv原0.9/1.1；目的地税一次扣；财政总量桥；实施仍未冻结或获运行许可 |
-| 项目目的 | [Owner主线纠偏](CH5_OWNER_SCOPE_REALIGNMENT_20261015.md) | 原MATLAB修错与HA/有界外层/GovInv-Zt/递推冲击保留；其“等待同步”是当时阶段 |
-| 科研路线 | [现行路线图](CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md) | M1原框架修错，M2有界稳态/校准，M3原冲击，M4论文 |
-| V010计划 | [修订DRAFT](../versions/0.0.10/plan.md) | 精确基线/科学兼容性与一次实施方案，未科学冻结 |
-| 科学决定 | [SCIENTIFIC_DECISIONS](../SCIENTIFIC_DECISIONS.md) | 保持原适用范围，GovInv/C1不静默回滚 |
-| 版本登记 | [当前登记](CH5_VERSION_REGISTER_CURRENT.md) | V010接续，V011未启动 |
-| 工作方式 | [V1.2](CH5_ASTRA_WORKFLOW_CURRENT.md)、[Owner持续委托](CH5_OWNER_CONTINUOUS_VERSION_DIRECTIVE_20261015.md)、[既有AGENTS](../AGENTS.md) | 角色不变；本次同步停点已由限定验收解除，执行仍看新TASK |
-| 长期知识 | [知识入口](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 记住原项目范围，不宣称本地记忆系统自动更新 |
+| 当前状态 | [CURRENT](../CURRENT.md) | V010 implementation issued / Codex待交付 |
+| 唯一任务 | [TASK_CURRENT](../TASK_CURRENT.md)、[V010实施任务](../versions/0.0.10/implementation_task.md) | 实施与两省合成科学新预算 |
+| 正式冻结计划 | [V010 plan](../versions/0.0.10/plan.md) | 固定commit `bf091da33d59293f147d52c11580327d3ac2a85d`、tree `668fa20883a295ee9bd831a0c542d39e366bec43`、blob `85138d8859d53295262fe13bf5bc277bca95ed3f` |
+| 冻结synthetic数据 | [fixture](../versions/0.0.10/synthetic_fixture_v1.json) | blob `40915658d93403cfc21b33a6b864b332b7857749`，不可临场改数 |
+| 科学决定 | [SCIENTIFIC_DECISIONS](../SCIENTIFIC_DECISIONS.md) 、[Owner裁决](../versions/0.0.10/prefreeze_scientific_review_20261015.md) | GovInv 0.9/1.1/C1历史、目的地税一次、财政总量 |
+| 源码方案接受 | [Astra限定验收](../versions/0.0.10/source_alignment_acceptance_20261015.md) | SOURCE_ONLY通过，不等于数值GE |
+| 版本登记 | [CH5_VERSION_REGISTER_CURRENT](CH5_VERSION_REGISTER_CURRENT.md) | V010冻结授权；V011未开始 |
+| 现行科研路线 | [路线图](CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md) | 原HA/有界外层/GovInv-Zt/递推IRF |
+| Owner纠偏 | [2026-10-15](CH5_OWNER_SCOPE_REALIGNMENT_20261015.md) | 科研目标及与V008/009分界 |
+| V1.2工作方式 | [CH5_ASTRA_WORKFLOW_CURRENT](CH5_ASTRA_WORKFLOW_CURRENT.md) | 委托、预算、独立验收、保护 |
+| 原16文档同步 | [限定接受](../versions/0.0.10/scope_sync_acceptance.md) | 历史已完成不重复 |
+| 长期知识 | [CH5_WEB_KNOWLEDGE_CURRENT](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 当前项目恢复入口 |
+| 前会话交接（历史） | [V010 pending review归档](CH5_CONVERSATION_HANDOFF_20261015_V010_MAINLINE_PENDING_REVIEW.md) | 历史停点，不再解释为当前待交任务 |
+| 原MATLAB源码审计 | [稳态与闭合源审计](CH5_TWO_ASSET_HANK_MATLAB_FAITHFUL_GE_STEADY_STATE_CLOSURE_SOURCE_AUDIT_AND_CONTRACT_FREEZE_REPORT.md) | 历史原方法依据，仍应修bug |
 
-| 本会话归档／下会话验收指引 | [2026-10-15 V010主线交接](CH5_CONVERSATION_HANDOFF_20261015_V010_MAINLINE_PENDING_REVIEW.md) | Owner纠偏、最新版已发表任务固定Git身份、只读预算、V009辅助化与待决GovInv/C1；当前无Codex新任务结果，交新会话审查 |
-| 历史保全 | [纠偏前原文说明](history/scope_realignment_20261015/README.md) | 历史blob未修改，没有执行权限 |
-
-精确方法来源：[原MATLAB外层稳态审计](CH5_TWO_ASSET_HANK_MATLAB_FAITHFUL_GE_STEADY_STATE_CLOSURE_SOURCE_AUDIT_AND_CONTRACT_FREEZE_REPORT.md)，记录原GovInv/Zt、边界和无联合宏观根；原论文5.2.7/5.3。需按Owner新定位使用，不能把旧“MATLAB绝对数值权威”当作复制bug的理由。
-
-[V005](../versions/0.0.5/acceptance.md)、[V006](../versions/0.0.6/acceptance.md)、[V007](../versions/0.0.7/acceptance.md)、[V008](../versions/0.0.8/acceptance.md)、[V009](../versions/0.0.9/acceptance.md)历史验收均保留。辅助人工模型不作主线必经。
-
-真实C8 A–D、A16/window/C9/CALL_LEDGER及Results旧门不变。源码只读不等于科学运行、本地同步或经济接受。
+旧V005–V009正式冻结与验收、Git blob历史不追改。V008/V009人工为AUXILIARY_RESEARCH_NOT_MAINLINE；A16/C9/旧预算与真实数据受保护，Results FALSE。

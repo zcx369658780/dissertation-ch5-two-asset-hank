@@ -9,15 +9,15 @@
 
 黑箱不豁免HJB/KFE验证，原MATLAB和论文可能含bug；应修具体错误并保留架构，不以“更标准HANK”为由改为Newton/fsolve、固定Bg/Bt=Bgov、内生T、竞争性人工经济或全新前瞻动态模型。原source-faithful复现与经济正确性分别审查。V008/V009人工实验与失败为非活跃辅助，保留、不删除、不自动当主线父基线；旧V010 Newton/a=0取证已停用。
 
-人口/人均、不N=P/3、max_phi=.3及来源减目的的人均GDP偏好方向保持。原人工pgdp1:2与两省矩阵不是现实31省校准。原GovInv收益边界更新与后来C1残差律、raw/used、Lt/Tt/AtTax/税与资本接口的差异需要集中最小核查，不一键撤销旧科学修复，也不把旧C1强迫当恢复后主线唯一规则。
+人口/人均、不N=P/3、max_phi=.3及来源减目的的人均GDP偏好方向保持。原人工pgdp1:2与两省矩阵不是现实31省校准。Owner已于2026-10-15决定新主线GovInv使用原收益边界乘0.9/1.1，C1历史效力保留但不参与新求解；工资税由工作目的地征收、家庭只扣一次，来源家庭AtTax/Tt经N桥接财政总量。raw/used和same-S/lagged严格分账，家庭Lt与firm目的地Lt不可覆盖混用。
 
 ## 当前恢复阶段
 
 Owner要求的一次16文档同步已由Astra[限定验收](../../versions/0.0.10/scope_sync_acceptance.md)。GitHub固定源916e2b47d3489f6eacd814b55cc568d92be4c9fb已独立核；本地raw MATCH、Scope ACK、保护与4.8分钟/212234B等为Codex回执等级，不是网页执行。dirty/index未字节hash、其它会话未核；QMD/BasicMemory均NOT_UPDATED。
 
-接下来只执行[同V010主线源码方案任务](../../versions/0.0.10/mainline_alignment_task.md)，不是再次同步或新的版本：确认原MATLAB/source-faithful Python实际baseline、HA—单轮—外层—冲击接口与最小bug/科学冲突，交付一个可直接冻结的实施方案。当前无模型、测试、代码改动或真实数据权限。人工失败源调查不恢复。
+V010 [SOURCE_ONLY方案](../../versions/0.0.10/mainline_alignment_task.md)已有限接受；[正式冻结计划](../../versions/0.0.10/plan.md)固定commit `bf091da33d59293f147d52c11580327d3ac2a85d`、plan blob `85138d8859d53295262fe13bf5bc277bca95ed3f`。唯一ACTIVE为[集中实施](../../versions/0.0.10/implementation_task.md)，仅在不共享common-dir的独立clone中修改15条白名单，有限两省人工HJB/KFE、稳态和3期短响应；真实31省/C8/Results仍禁，不能自动V011。
 
-旧16文档本地镜像和收据原样保留；新任务按本轮新固定Git身份读取，不覆盖原模型AGENTS/CURRENT/dirty或镜像。网页不能自动写本地知识库，历史QMD collection ch5-knowledge及Basic Memory项目ch5-two-asset-hank-knowledge只作定位线索，本轮不写。
+旧16文档本地镜像和收据原样保留；新任务按正式冻结commit/fixture blob读取，不覆盖原模型AGENTS/CURRENT/dirty或镜像。网页不能自动写本地知识库，历史QMD collection ch5-knowledge及Basic Memory项目ch5-two-asset-hank-knowledge只作定位线索，本轮不写。
 
 ## 历史与保护
 

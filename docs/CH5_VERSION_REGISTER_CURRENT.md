@@ -1,24 +1,18 @@
 # 第五章当前版本登记
 
-更新：2026-10-15。依据[Owner主线纠偏](CH5_OWNER_SCOPE_REALIGNMENT_20261015.md)。
-**V010_SOURCE_ONLY_REVIEW_ACCEPTED__OWNER_SCIENCE_CHOICES_RESOLVED__IMPLEMENTATION_FREEZE_PENDING__NO_EXECUTION_AUTHORIZED。**
+更新：2026-10-15。  
+**V010_IMPLEMENTATION_FROZEN_AND_ISSUED__AWAIT_CODEX__NO_REAL_GE_OR_RESULTS_AUTHORIZATION**。
 
-| 对象 | 当前状态与权限 |
+| 对象 | 当前状态 |
 |---|---|
-| 一次文档同步 | [限定接受](../versions/0.0.10/scope_sync_acceptance.md)：固定源Git身份独立核实，16文档本地MATCH及Scope ACK为Codex回执；不是科研运行或V010关闭。 |
-| V0.0.10 | 修订DRAFT维持原MATLAB方法；[SOURCE_ONLY接续任务](../versions/0.0.10/mainline_alignment_task.md)已交付并完成限定审议，Owner两项科学选择已落实于[冻结前审议](../versions/0.0.10/prefreeze_scientific_review_20261015.md)；未正式冻结实施。 |
-| 当前Codex执行任务 | NONE；V010 SOURCE_ONLY方案已有有限审议，现等Astra正式实施合同和独立授权，暂不运行Python/HJB/KFE/pytest及数据。 |
-| 旧V010 Newton/零资本调查 | SUPERSEDED，后续执行停用；Codex报告在其本会话未开始，其它会话未经核查。 |
-| 主线代码baseline | UNSELECTED；不得自动选择人工候选、合并main或覆盖dirty。 |
-| V011 | NOT_STARTED。 |
+| V010正式实施计划 | [plan.md](../versions/0.0.10/plan.md) 固定commit `bf091da33d59293f147d52c11580327d3ac2a85d`、tree `668fa20883a295ee9bd831a0c542d39e366bec43`、blob `85138d8859d53295262fe13bf5bc277bca95ed3f`，状态FROZEN，既有DRAFT仅在Git历史 |
+| 独立人工输入 | [synthetic_fixture_v1.json](../versions/0.0.10/synthetic_fixture_v1.json) blob `40915658d93403cfc21b33a6b864b332b7857749`；非现实数据 |
+| 唯一ACTIVE任务 | [实施task](../versions/0.0.10/implementation_task.md)：`V010_MATLAB_FIRST_MAINLINE_IMPLEMENTATION_AND_BOUNDED_SYNTHETIC_VALIDATION`，独立clone/有限代码/两省科学验证，8小时与26次省级HA总硬上限 |
+| 正式代码父 | `a1db8c114dec0ab69d69a5576e153a7f868cba0e` / tree `4a118642da526d6bf2dfb65a1130f4d59d371374`；仅工程起点，不是已通过GE；不得并入main |
+| 已完成源码任务 | [V010源码方案](../versions/0.0.10/mainline_alignment_task.md)仅历史；[Astra限定验收](../versions/0.0.10/source_alignment_acceptance_20261015.md)不等于科学运行接受 |
+| Owner新科学裁决 | [prefreeze](../versions/0.0.10/prefreeze_scientific_review_20261015.md)：原ra边界GovInv自适应、C1历史、目的地工资税一次、财政总量 |
+| 旧16文档同步 | [scope_sync_acceptance](../versions/0.0.10/scope_sync_acceptance.md)已限定接受，不重复同步 |
+| V008/V009人工 | AUXILIARY_RESEARCH_NOT_MAINLINE，历史结果与失败不追改 |
+| V011 | NOT_STARTED |
 
-V005—V009正式冻结、接受/失败和预算保持各自历史资格。V008/V009人工研究保留为AUXILIARY_RESEARCH_NOT_MAINLINE，不删除或推广，不以人工失败否定原MATLAB方法。
-
-纠偏前长登记仍以原blob 88d70fcb596ea580b8cc212b6dee4a257c15639e保存于[历史副本](history/scope_realignment_20261015/CH5_VERSION_REGISTER_BEFORE.md)。纠偏同步阶段快照固定在916e2b47d3489f6eacd814b55cc568d92be4c9fb，本轮推进不覆盖那个本地镜像。
-
-当前只有有限源码和文本方案许可，未冻结主线实现、未发放模型/真实数据调用。V1.2角色与Owner连续版次规则不改。原GovInv/C1等科学冲突待集中审议，A16/window/C9/CALL_LEDGER/Results与工作树保护维持。
-
-
-## 2026-10-15 会话冻结（不改变唯一任务）
-
-Owner要求在V010任务发表后封存当前会话，并约定**V010源码集中方案的Codex结果由新会话验收**。发布commit `0320916bd2447d1846099cc90e52bd92c920ebb1`、tree `fa514c7658a46fe2fcb4f7301ada0110bec32a59`，task blob `d4aacdafe5f4d0248745f8754088afd83fc1c6d2`保持不变。当前分类：`TASK_ISSUED__EXECUTION_RESULT_NOT_YET_PRESENT_IN_THIS_CHAT__NEXT_CHAT_REVIEWS`。 [完整Owner决策和交接](CH5_CONVERSATION_HANDOFF_20261015_V010_MAINLINE_PENDING_REVIEW.md)记录主线纠偏、同步有限接受、V008/V009人工支线隔离、原GovInv/C1待决、保护与下一验收次序；不是二次立版或科学运行许可。
+原2017/2018/C8 A–D REQUEST_ONLY；A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE和旧科学次数全不变。原dirty及外部common-dir保护不变；V1.2不修改。历史版本登记仍可按Git历史固定读取。

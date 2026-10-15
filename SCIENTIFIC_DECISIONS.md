@@ -1,9 +1,9 @@
 # 第五章科学决定：当前适用范围与历史合同索引
 
 更新：2026-10-15，Owner已确认[项目主线纠偏](docs/CH5_OWNER_SCOPE_REALIGNMENT_20261015.md)。
-**纠偏文档同步及V010 SOURCE_ONLY方案均已限定接受；Owner 2026-10-15 已作出GovInv与目的地工资税科学裁决；当前实施合同仍待正式冻结。本索引不发放代码实施、科学运行、参数修改或真实数据权限。**
+**2026-10-15 Owner GovInv/目的地工资税裁决已纳入V010正式冻结实施合同。当前仅允许该版独立候选白名单修改与明确受界synthetic调用（其授权细节必须以固定plan及准确implementation_task双重身份为准）；不放开真实C8/2017/2018/B3、生产激活、Results或旧预算。**
 
-**最新科学裁决：**[V010冻结前审议](versions/0.0.10/prefreeze_scientific_review_20261015.md)：GovInv按收益边界0.9/1.1、C1仅历史有效；目的地工资税只扣一次，AtTax/Tt按对应N桥接、GovSurplus只诊断。新增门包含家庭-企业劳动一致性、冻结后目标GDP误差≤1%以及冲击lagged-NKPC原分支。未经正式冻结不授权实施。
+**最新科学裁决：**[V010冻结前审议](versions/0.0.10/prefreeze_scientific_review_20261015.md)：GovInv按收益边界0.9/1.1、C1仅历史有效；目的地工资税只扣一次，AtTax/Tt按对应N桥接、GovSurplus只诊断。新增门包含家庭-企业劳动一致性、冻结后目标GDP误差≤1%以及冲击lagged-NKPC原分支。冻结合同见 [V010 plan](versions/0.0.10/plan.md)（commit `bf091da33d59293f147d52c11580327d3ac2a85d`，blob `85138d8859d53295262fe13bf5bc277bca95ed3f`），仅由 [当前实施task](versions/0.0.10/implementation_task.md)授权两省synthetic；真实数据和论文结果仍禁。
 
 ## 当前最高项目目的
 
@@ -27,10 +27,10 @@
 
 ## 辅助分支与历史索引
 
-V008/V009人工CES/全国债券/内生T/竞争企业/人工校准/Newton实验的批准和结果只在原范围内有效，现为非活跃辅助研究。保留全部证据，不删除、不追改验收，不把人工At=0或未接受trial失败当原方法无稳态的证据。旧V010 Newton取证任务停止；主线代码baseline未选择。
+V008/V009人工CES/全国债券/内生T/竞争企业/人工校准/Newton实验的批准和结果只在原范围内有效，现为非活跃辅助研究。保留全部证据，不删除、不追改验收，不把人工At=0或未接受trial失败当原方法无稳态的证据。旧V010 Newton取证任务停止；主线正式实施代码父固定为 `a1db8c114dec0ab69d69a5576e153a7f868cba0e`（不等于已验收数值GE）。
 
 纠偏前完整科学决定原blob 93f0ac784919482701417b507a1ec1b7c9ebcf9b原样保存于[历史索引](docs/history/scope_realignment_20261015/SCIENTIFIC_DECISIONS_BEFORE.md)，原相对链接在固定commit db2c2e289419ecab7921667e210bd510ff3c447b原SCIENTIFIC_DECISIONS.md读取。各版本正式冻结、Owner采纳、验收原件未修改。
 
 直接方法证据：docs/CH5_TWO_ASSET_HANK_MATLAB_FAITHFUL_GE_STEADY_STATE_CLOSURE_SOURCE_AUDIT_AND_CONTRACT_FREEZE_REPORT.md和博士论文5.2.7/5.3。旧审计的MATLAB数值权威措辞只表达过去重现任务范围，不取消Owner修错要求。
 
-A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、direct_price_verified=False、真实C8 A–D REQUEST_ONLY及旧已耗预算不变。只读源码方案完成后仍须正式冻结与独立授权才可实施。
+A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、direct_price_verified=False、真实C8 A–D REQUEST_ONLY及旧已耗预算不变。原SOURCE_ONLY审议已完成；正式新授权仅限V010的synthetic与白名单，旧禁令在所有未列对象上保持。
