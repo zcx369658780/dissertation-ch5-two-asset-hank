@@ -1,6 +1,12 @@
 # 第五章路线图与版本登记
 
-## 2026-10-15 当前：Owner选方案B，V009遗漏φ数值已唯一增补冻结，等待一次单独续跑授权
+## 2026-10-15 当前：V0.0.9 CES方案B增补参数已独立签发剩余科学额度续跑许可
+
+**`V009_CES_PHI_SCHEME_B_FROZEN_AND_SEPARATELY_AUTHORIZED__REMAINING_BUDGET_FULL_HANK_STATIONARY_RESUME__NO_RESULT_YET`**。原V009 plan blob `cb76a840fdd9d1756728189bf29518679831aba6`保持不变；Owner B增补冻结于`c4fe97b4bc3510c42683579ff1aa7edd1df27807` tree `7a0301e7a5a77b827a28c51066d6c84e16c086d2`、blob `1c9839fe639197176d0d8b1c981b4c13025dcd5a`，单省`phi=1`、双省人工pGDP1:2 `phi=((1,1.1),(0.9,1))`。当前[另行科研续跑授权](../versions/0.0.9/ces_phi_resume_authorization.md)为`ASTRA_APPROVED_EXECUTION__V009_CES_PHI_B__REMAINING_BUDGET_SINGLE_CONTINUATION`，只用于原13白名单内补φ并在**同一版本剩余额度**尝试20×20×2 1省真实合成HJB/KFE+资产市场/财政商品出清，1省通过后才2省；所有E1–E3其它科学方程/人工校准及旧Owner正式冻结不能追改。
+
+已发表代码阻断候选`18256cd70b827e133e52d7609746c8afadb63ac1`不可force改写，未取得full steady；Codex报告原pytest4/8、science driver0/4、macro0/4、HJB/KFE0/176及toy调用，原新候选存储和耗时均计入账。新candidate应单父原V008代码基线`d41d229b681e09b913c21deff7a057085b9bc419`，13白名单范围，不合并main或动原8 dirty。24×24/真正31省HANK/动态IRF及真实C8 A–D读取仍0，A16/window/C9/CALL_LEDGER/Results FALSE不变。V010 NOT_STARTED。
+
+## 2026-10-15 历史：Owner方案B的V009 CES φ数值增补已冻结但尚未独立授权
 
 **`V009_CES_PHI_B_OWNER_ADOPTED__SUPPLEMENT_FROZEN__WAIT_SEPARATE_REMAINING_BUDGET_AUTHORIZATION__FULL_HANK_STATIONARY_NOT_RUN`**。Owner明确希望保留博士论文跨省人均GDP带来的劳动偏好差异，`max_phi=.3`，支持目标更富裕`φ=.9`、反向`φ=1.1`；本版[唯一权威补充](../versions/0.0.9/ces_phi_supplement.md)在旧冻结plan blob `cb76a840fdd9d1756728189bf29518679831aba6`外新发布：1省`phi=((1,),)`；人工2省`pgdp_ref=(1,2)`、目的行来源列`phi=((1,1.1),(0.9,1))`，实验前固定，保持原`eta=1,nu=5,sigma=0`与E1–E3所有参数。旧MATLAB `HANK_mp_1turn.m`方向不作为本新理论正确来源。完整模型中劳动仍随HJB政策/工资等内生，不将参考GDP内生化。
 

@@ -1,6 +1,6 @@
 # 第五章动态总目录
 
-**现行最新（2026-10-15）：Owner已明确批准方案B，V009 合成人工两资产HANK的原冻结计划CES劳动权重φ数值缺口已追加唯一补充，状态 `V009_CES_PHI_B_OWNER_ADOPTED__SUPPLEMENT_FROZEN__WAIT_SEPARATE_REMAINING_BUDGET_AUTHORIZATION__FULL_HANK_STATIONARY_NOT_RUN`。1省φ=(1)，2省人工pGDP比1:2、目的行来源列矩阵[[1,1.1],[0.9,1]]；原阻断候选`18256cd70b827e133e52d7609746c8afadb63ac1`的完整HANK稳态未运行，pytest额度4/8已消耗。不得追改原冻结计划、其它经济参数或旧预算；须单独续跑授权后才可运行。见[CURRENT](../CURRENT.md)、[V009增补](../versions/0.0.9/ces_phi_supplement.md)、[原冻结](../versions/0.0.9/plan.md)和[科学决定](../SCIENTIFIC_DECISIONS.md)。V010 NOT_STARTED。**
+**现行最新（2026-10-15）：V0.0.9 的劳动偏好方案B已在[CES φ增补](../versions/0.0.9/ces_phi_supplement.md)固定，Astra另行签发[剩余额度续跑许可](../versions/0.0.9/ces_phi_resume_authorization.md)，状态 `V009_CES_PHI_SCHEME_B_FROZEN_AND_SEPARATELY_AUTHORIZED__REMAINING_BUDGET_FULL_HANK_STATIONARY_RESUME__NO_RESULT_YET`。人工1省φ=1，人工双省pGDP1:2使目的行/来源列φ=[[1,1.1],[0.9,1]]；不得修改原冻结计划或重置此前pytest4/8、toy和已耗资源。原V009 PRE-PHI候选保留，尚无完整HANK稳态结果；真实2018/C8、31省实际求解及动态IRF仍不授权。参见[CURRENT](../CURRENT.md)、[版本登记](CH5_VERSION_REGISTER_CURRENT.md)。V010 NOT_STARTED。**
 
 这是当前导航；条目按用途区分当前资料与历史快照。网页顾问必须实际读取正文及提交，不能以本目录代替证据。
 
@@ -10,8 +10,8 @@
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
 | Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 2026-10-15 Owner连续推进偏好及旧科学保护限度；本地QMD/BasicMemory不宣称已同步 |
-| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V009 φ方案B补充冻结、完整HANK未运行；等待仅剩预算续跑授权 |
-| V0.0.9 人工HANK新科学实现与CES φ方案B补充 | [原冻结计划](../versions/0.0.9/plan.md)、[CES φ方案B新冻结增补](../versions/0.0.9/ces_phi_supplement.md)、[原独立授权](../versions/0.0.9/authorization.md) | 1省φ=1、人工2省pGDP1:2使φ目的×来源[[1,1.1],[0.9,1]]；原candidate阻断，待新续跑授权 |
+| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V009 φ方案B冻结+独立剩余额度续跑授权；旧候选blocked，内生HANK仍未运行 |
+| V0.0.9 人工HANK与CES φ方案B受界续跑 | [原冻结计划](../versions/0.0.9/plan.md)、[CES φ增补](../versions/0.0.9/ces_phi_supplement.md)、[续跑独立许可](../versions/0.0.9/ces_phi_resume_authorization.md) | 1省/双省φ数值已锁定，原V009额度不重置，仅人工HJB/KFE新数值 |
 | V0.0.8 新corrected-model 数值里程碑正式验收 | [原冻结计划](../versions/0.0.8/plan.md)、[独立终验](../versions/0.0.8/acceptance.md)、[复盘](../versions/0.0.8/retrospective.md) | Gate A/B/C受限接受、单省人工冲击不是IRF；Gate D未具动态闭合，持续BLOCKED |
 | V0.0.7 M1来源与经济量纲受限验收 | [冻结计划](../versions/0.0.7/plan.md)、[正式验收](../versions/0.0.7/acceptance.md)、[复盘](../versions/0.0.7/retrospective.md) | Lt_prev/Govinc/AtTax/Tt的经济量纲条件接受，37件分期REQUEST_ONLY，0 real权限 |
 | V0.0.6 M1冻结与受限最终验收 | [冻结计划](../versions/0.0.6/plan.md)、[独立验收](../versions/0.0.6/acceptance.md)、[复盘](../versions/0.0.6/retrospective.md) | 五字段/三轴/双消费者合成工程CLOSED；原始C8真实输入及Results仍UNKNOWN/BLOCKED |
