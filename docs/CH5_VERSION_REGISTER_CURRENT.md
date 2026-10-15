@@ -1,6 +1,13 @@
 # 第五章路线图与版本登记
 
-## 2026-10-15 当前：V0.0.8 Owner启动—劳动/财政的跨来源理论与经济计量核查
+## 2026-10-15 当前：V0.0.8 理论方案独立审议完毕、待Owner科学方向选择
+
+**`V008_SOURCE_ONLY_THEORY_PROPOSAL_REVIEWED__WAIT_OWNER_CORRECTED_MODEL_CHOICE__NO_IMPLEMENTATION_OR_REAL_READ`**。Owner启动V008后Codex交付一份跨博士论文/MATLAB/Python/历史接受/理论的SOURCE_ONLY集中提案；Astra已独立核当前PDF p94–97、原MATLAB关键成员、GitHub源/历史接受，并发表 [V008方案审议](../versions/0.0.8/scientific_proposal_review.md)。Codex对PDF/ZIP当轮未可读的局限仍是执行账真实事实；Astra已独立补读，六份MATLAB源码成员的SHA256与2026-08-30 GE source audit匹配，但不能宣称历史Python C8 execution来自这份ZIP。V008仍是DRAFT，没有冻结经济方程，没有实施授权或真实C8数据许可。
+
+**研究优选而非Owner已采纳**：L1 CES劳动指数+严格双边劳动与工资对偶、全国统一单次工资税、全国统一财政/地区子账、AtTax收入/成本身份分账待证、静态/稳态会计优先；L2真实劳动+外生份额保留对照。历史Lt_prev source repair/2009 parity仅证数值源忠实；论文(5-2)统一税一次、(5-11)双边微观积分×N、(5-16)全国财政与Python不一致。私人raw/公共used/clip的潜在重复会计是条件命题，未与C8 lagged同期间封存。**等待Owner一次性科学方向选择后再冻结。**
+
+V007 `CLOSED`、建议基线`d8bb49d86ea674ea4ff5e3fdf03929baa08a6514`未自动采用或合并main；原D盘8 dirty与B3保护不变。A16/window/C9/CALL_LEDGER、Results及旧预算拒绝依旧，C8 A–D仅REQUEST_ONLY，V0.0.9 NOT_STARTED。
+## 2026-10-15 历史：V0.0.8 Owner启动版前跨来源理论核查
 
 **`OWNER_STARTED__V008_DRAFT__WAIT_CODEX_CROSS_SOURCE_ECONOMIC_THEORY_PROPOSAL__NO_MODEL_CHANGE_OR_REAL_READ_AUTHORIZED`**。Owner同意直接进入V008，准许需要时只读查历史科研记忆/接受原件、上传MATLAB ZIP的`.m`文本以及博士论文PDF第五章；指出老MATLAB存在错误，不能作为应当照抄的科学真值。现仅立版、发表 [V008 DRAFT](../versions/0.0.8/plan.md) 和一次Codex SOURCE_ONLY交叉核查任务，**不冻结新方程、不改模型、不给受保护C8真实原件/科学计算权限**。
 

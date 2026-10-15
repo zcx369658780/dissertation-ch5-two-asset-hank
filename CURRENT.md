@@ -1,12 +1,12 @@
-# 第五章 CURRENT：V0.0.8 已由Owner启动，等待跨来源经济学科学提案
+# 第五章 CURRENT：V0.0.8 跨来源理论方案已审，等待Owner科学方向选择
 
 日期：2026-10-15（Asia/Shanghai）
-**状态：`OWNER_STARTED__V008_DRAFT__WAIT_CODEX_CROSS_SOURCE_ECONOMIC_THEORY_PROPOSAL__NO_MODEL_CHANGE_OR_REAL_READ_AUTHORIZED`**
+**状态：`V008_SOURCE_ONLY_THEORY_PROPOSAL_REVIEWED__WAIT_OWNER_CORRECTED_MODEL_CHOICE__NO_IMPLEMENTATION_OR_REAL_READ`**
 
-Owner已同意继续下一长版本，并明确指出原MATLAB源码存在错误：允许必要时使用**过去研究记忆、原MATLAB ZIP和博士论文第五章**做严格的跨来源核对，但不把任一历史文本/源码或MATLAB-Python数值parity当作理论正确的权威。当前仅授权Codex按 [V0.0.8 DRAFT](versions/0.0.8/plan.md) 实施一次SOURCE_ONLY集中科学调查，不签发新实现/修改模型/读取C8原证权限。
+Owner已启动V0.0.8，Codex已提交单份`V0.0.8_M1_LABOR_FISCAL_MODEL_CROSS_SOURCE_SCIENTIFIC_RECONCILIATION_PROPOSAL`（仅SOURCE_ONLY，无模型/real数据/代码改动）。Astra独立对比已接受GitHub旧Lt_prev映射（source-faithful、2009 parity）、V007、现行Python与Owner原博士论文PDF p94–97的(5-1)/(5-2)/(5-3)/(5-11)/(5-16)，及旧MATLAB ZIP的关键.m文本；辅助ZIP六份原.m成员SHA256与2026-08-30 GitHub GE audit相符，但不追认Python历史C8 execution bytes。详见 [V008独立科学审议](versions/0.0.8/scientific_proposal_review.md)；V008[版前DRAFT计划](versions/0.0.8/plan.md)保持未冻结。
 
-首篇论文M1科研优先级：对来源家户均值`Lt`、目的企业劳动`Lt_supply`、企业`Lt_prev`的经济时序和劳动单位进行独立推导；对`Govinc=Corptax+Lt*tau+AtTax+GovInv*ra-Tt`、财政`GovSurplus`、`Bt*rb*N`、工资税和家庭`Tt`的人均—地区总量桥重建理论预算。正文中原博论文PDF p96(5-11)明确人口乘数，p97(5-16)收支式与MATLAB/Python财政并不完全同项，p95(5-2)未明确Tt，PDF p99表5-1 delta 0.0025而已上传MATLAB初始化delta 0.025；**均为原始来源文本差异，不是直接修正授权**。需要Codex核历史科研接受、实际Python和用户上传原证的共同理论条件。
+**被独立接受的是理论提案和可证伪冲突，不是新经济方程**：旧HJB单一劳动、Ct均值迁移、firm Lt_prev与目的地劳动尺度/时间不统一；`wage_caculate`目的税和HJB来源税在统一税解释下重复扣税；`Govinc`的工资税基、AtTax/Tt人均/总量、资本raw/used/clip、`Bt`政府债务身份和统一财政都缺独立会计闭合；PDF(5-16)与实现不同、delta .0025/.025。Codex优先L1 CES劳动指数/工资对偶，Astra**原则建议**L1作为未来 corrected-model 主线、L2为条件对照，同时将“以AtTax视政府税”、“默认地方发债”降级为待证选择，不授予实现许可。
 
-V0.0.7仍正式 `CLOSED__ACCEPT__HISTORICAL_SOURCE_CROSSWALK_AND_ECONOMIC_UNIT_CRITICAL_OBLIGATIONS_ONLY__WITH_OBSERVATIONS`，代码/文档候选 `d8bb49d86ea674ea4ff5e3fdf03929baa08a6514` tree `9b685397ad5bc76a4ac3bf4203776389742c5ec5`，未merge main。V008建议以该候选为基线，但NEXT_BASELINE_ADOPTION=PROPOSED/UNDECIDED，必须通过只读Git/本地保护核验后冻结。旧D盘模型worktree/head/8 tracked dirty/5948 untracked/4553 ignored、外部common-dir及C盘B3有限保全不得修改、扫描或重启备份。
+**唯一待Owner批准的方向包**：L1 CES劳动指数及严格双边最优化+工资对偶；全国一套工资税一次扣除；统一中央/全国政府财政账、各省分账仅分析使用，AtTax/中介/资源去向互斥但暂不定论；静态/稳态完整经济账户先行，动态NKPC另门。Owner确认后才可正式冻结V008并独立授权受隔离的新的corrected-model源/测试设计。新基线建议V007候选`d8bb49d86ea674ea4ff5e3fdf03929baa08a6514`，`NEXT_BASELINE_ADOPTION=PROPOSED/UNDECIDED`，不checkout/merge原dirty。
 
-Owner已采纳人口/人均，禁止N=P/3；原Option1固定C8条件对照、HJB/KFE/K1 raw-ra0同S lagged/C1/税率来源与目的角色和2017→2018回溯系数不变。旧C8 R2 2/9及5/9均未过。A16 UNRESOLVED/FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、旧模型/受保护数据/真实consumer预算CLOSED。C8阶段A–D全为REQUEST_ONLY，不因本版读取论文/原MATLAB源码而升级；V0.0.9 NOT_STARTED。继续CH5_WORKFLOW_V1.2，等待一份集中科学提案、随后Astra独立审议与必要Owner经济学采纳。
+V007继续有限CLOSED、原科学接受/2009 parity/K1 raw-ra0同S lagged/C1/Option1/人口人均不N=P/3/2017 observed→2018 retrospective/方法价格归属不变。C8原件与37项A–D仍REQUEST_ONLY；A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE，旧real/science预算CLOSED。V0.0.9 NOT_STARTED，CH5_WORKFLOW_V1.2不变。
