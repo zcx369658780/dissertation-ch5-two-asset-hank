@@ -1,6 +1,13 @@
 # 第五章路线图与版本登记
 
-## 2026-10-15 当前：Owner正式采纳V0.0.8 corrected-model并冻结首轮Python实施/人工稳态/IRF资格门
+## 2026-10-15 当前：V0.0.8 首次新Python人工稳态/冲击数值闭环受限ACCEPT，正式CLOSED
+
+**`CLOSED__ACCEPT__CORRECTED_SYNTHETIC_ACCOUNTING_CONDITIONAL_STATIONARY_AND_SHOCK_DIAGNOSTIC_ONLY__REAL_HANK_IRF_BLOCKED__WITH_OBSERVATIONS`**。已采纳新corrected CES工资/劳动对偶、全国单次工资税、统一财政人工会计，但未授权real参数/原C8或完整HANK/动态IRF。冻结commit `e222b302176f8ff627ced1442196299f804b9aa7` plan blob `891e8dae2eead0c5c39bf20a7542c68a004b5e94`；V008真实候选 `d41d229b681e09b913c21deff7a057085b9bc419` / tree `88833acf90613380afa30ab8d6ee7e0297e98664` / 唯一parent `d8bb49d86ea674ea4ff5e3fdf03929baa08a6514`，GitHub独立确定恰13个新增白名单和branch readback，无main merge。正式[验收](../versions/0.0.8/acceptance.md)、[复盘](../versions/0.0.8/retrospective.md)。
+
+人工Gate A数值/会计oracle受限通过；Gate B公开1/2/31省条件稳态由Astra独立复算最大经济残差1.18e-12/1.44e-14/9.95e-14；Gate C四条人工单省条件冲击路径140期公开数组独立复算，稳态和条件响应可核，但三坐标于t0/10/20先后注入，非三份独立真实政策IRF；Gate D因动态HJB/KFE、资产/债务/前瞻定价/终态未闭合保持`IRF_BLOCKED__NO_DYNAMIC_HANK_CLOSURE`。Codex本地最终`24 passed, 1 skipped`、pytest5/8、root10/12、31省2/2、paths4/4、原8 dirty/index SHA不变与资源账为CODEX_REPORTED_WITH_LOCAL_RECEIPTS，网页不声称复跑。路径额度已耗尽、最终树skip C是WITH_OBSERVATIONS，不自动豁免或重跑。
+
+A16/window/C9/CALL_LEDGER和旧科学预算仍关；原C8 A–D真实文件REQUEST_ONLY、model_activation=False、Results FALSE。人工条件稳态不等于两资产HANK stationary GE，条件静态shock不等于动态HANK IRF。V0.0.9 NOT_STARTED、下一代码基线UNDECIDED；Owner如欲继续必须另行批准完整HANK/动态scientific gate及其预算，不启用B3/G0/old C9。
+## 2026-10-15 历史：Owner正式采纳并冻结V0.0.8人工数值门（执行前）
 
 **`V008_FROZEN__OWNER_ADOPTED_CORRECTED_MODEL__WAIT_SEPARATE_SYNTHETIC_IMPLEMENTATION_AUTHORIZATION__REAL_HANK_AND_IRF_CLOSED`**。Owner已明确同意把Astra提出的L1 CES劳动指数与严格工资对偶、全国一税一次计价、统一全国政府账户、AtTax暂不定归属和静态/稳态先行研究路线落实到Python，并希望实测稳态与IRF。正式版固定 [V008计划](../versions/0.0.8/plan.md)，只允许**新的隔离 corrected-model + 独立人工经济体 Gate A经济oracle、Gate B条件稳态、Gate C条件冲击路径、Gate D动态IRF准入诊断**；必须由Astra在冻结提交远端readback后另行签发受界实施授权。合成人工稳态不能标为2018真实31省双资产HANK GE，逐期条件冲击不得冒充前瞻性HANK IRF。
 
