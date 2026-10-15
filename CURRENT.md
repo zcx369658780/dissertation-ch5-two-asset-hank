@@ -1,12 +1,11 @@
-# 第五章 CURRENT：V0.0.8 跨来源理论方案已审，等待Owner科学方向选择
+# 第五章 CURRENT：V0.0.8 corrected-model 实施及受界稳态/冲击诊断已冻结
 
 日期：2026-10-15（Asia/Shanghai）
-**状态：`V008_SOURCE_ONLY_THEORY_PROPOSAL_REVIEWED__WAIT_OWNER_CORRECTED_MODEL_CHOICE__NO_IMPLEMENTATION_OR_REAL_READ`**
+**状态：V008_FROZEN__OWNER_ADOPTED_CORRECTED_MODEL__WAIT_SEPARATE_SYNTHETIC_IMPLEMENTATION_AUTHORIZATION__REAL_HANK_AND_IRF_CLOSED**
 
-Owner已启动V0.0.8，Codex已提交单份`V0.0.8_M1_LABOR_FISCAL_MODEL_CROSS_SOURCE_SCIENTIFIC_RECONCILIATION_PROPOSAL`（仅SOURCE_ONLY，无模型/real数据/代码改动）。Astra独立对比已接受GitHub旧Lt_prev映射（source-faithful、2009 parity）、V007、现行Python与Owner原博士论文PDF p94–97的(5-1)/(5-2)/(5-3)/(5-11)/(5-16)，及旧MATLAB ZIP的关键.m文本；辅助ZIP六份原.m成员SHA256与2026-08-30 GitHub GE audit相符，但不追认Python历史C8 execution bytes。详见 [V008独立科学审议](versions/0.0.8/scientific_proposal_review.md)；V008[版前DRAFT计划](versions/0.0.8/plan.md)保持未冻结。
+Owner已经批准Astra研究包：CES家庭劳动指数—目的地双边最优化与工资对偶；一套全国工资税只扣一次；全国统一财政账户（省级仅分账）；AtTax/迁移成本/资本clip的经济归属尚未自动采纳；静态稳态先行，再视真实动态方程研究HANK IRF。Owner还明确希望将其落实到Python并检验能否获得稳态、IRF是否正常。固定合同见 [V008正式冻结计划](versions/0.0.8/plan.md)，本冻结**不凭文件本身签发实现许可**，须Astra独立回读后单独签发受限合成corrected-model实现授权。
 
-**被独立接受的是理论提案和可证伪冲突，不是新经济方程**：旧HJB单一劳动、Ct均值迁移、firm Lt_prev与目的地劳动尺度/时间不统一；`wage_caculate`目的税和HJB来源税在统一税解释下重复扣税；`Govinc`的工资税基、AtTax/Tt人均/总量、资本raw/used/clip、`Bt`政府债务身份和统一财政都缺独立会计闭合；PDF(5-16)与实现不同、delta .0025/.025。Codex优先L1 CES劳动指数/工资对偶，Astra**原则建议**L1作为未来 corrected-model 主线、L2为条件对照，同时将“以AtTax视政府税”、“默认地方发债”降级为待证选择，不授予实现许可。
+此版本实施代码基线：V007 accepted candidate `d8bb49d86ea674ea4ff5e3fdf03929baa08a6514`，tree `9b685397ad5bc76a4ac3bf4203776389742c5ec5`，只在全新隔离候选分支/目录新增reconciled模块和测试。原D盘历史worktree及8 dirty/untracked/ignored、外部Git common-dir、B3有限备份保持，不merge main、不改source-faithful `firm.py/wage.py/one_turn.py`、HJB/KFE/old C8科学路径。
+数值验收划分四门：Gate A经济oracle；Gate B人工条件稳态（不等于完整两资产HANK均衡）；Gate C同稳态基础上的人工条件冲击路径（不等于真正动态HANK IRF）；Gate D前瞻性HJB/KFE/政策动态等真实IRF准入审查，缺完整闭合返回`IRF_BLOCKED__NO_DYNAMIC_HANK_CLOSURE`。Codex可获范围内的新的人工经济体数值预算，但旧模型/受保护2018数据/完整31省HANK/真正IRF数值/Results预算0。
 
-**唯一待Owner批准的方向包**：L1 CES劳动指数及严格双边最优化+工资对偶；全国一套工资税一次扣除；统一中央/全国政府财政账、各省分账仅分析使用，AtTax/中介/资源去向互斥但暂不定论；静态/稳态完整经济账户先行，动态NKPC另门。Owner确认后才可正式冻结V008并独立授权受隔离的新的corrected-model源/测试设计。新基线建议V007候选`d8bb49d86ea674ea4ff5e3fdf03929baa08a6514`，`NEXT_BASELINE_ADOPTION=PROPOSED/UNDECIDED`，不checkout/merge原dirty。
-
-V007继续有限CLOSED、原科学接受/2009 parity/K1 raw-ra0同S lagged/C1/Option1/人口人均不N=P/3/2017 observed→2018 retrospective/方法价格归属不变。C8原件与37项A–D仍REQUEST_ONLY；A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE，旧real/science预算CLOSED。V0.0.9 NOT_STARTED，CH5_WORKFLOW_V1.2不变。
+当前原C8真实阶段A–D仍REQUEST_ONLY；A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、旧science/data/consumer预算CLOSED；已接受C8/2009 parity和V007经济来源问题不能被新synthetic表现取代。V0.0.9 NOT_STARTED。CH5_WORKFLOW_V1.2保持。

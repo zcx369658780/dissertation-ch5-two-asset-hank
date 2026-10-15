@@ -1,6 +1,12 @@
 # 第五章路线图与版本登记
 
-## 2026-10-15 当前：V0.0.8 理论方案独立审议完毕、待Owner科学方向选择
+## 2026-10-15 当前：Owner正式采纳V0.0.8 corrected-model并冻结首轮Python实施/人工稳态/IRF资格门
+
+**`V008_FROZEN__OWNER_ADOPTED_CORRECTED_MODEL__WAIT_SEPARATE_SYNTHETIC_IMPLEMENTATION_AUTHORIZATION__REAL_HANK_AND_IRF_CLOSED`**。Owner已明确同意把Astra提出的L1 CES劳动指数与严格工资对偶、全国一税一次计价、统一全国政府账户、AtTax暂不定归属和静态/稳态先行研究路线落实到Python，并希望实测稳态与IRF。正式版固定 [V008计划](../versions/0.0.8/plan.md)，只允许**新的隔离 corrected-model + 独立人工经济体 Gate A经济oracle、Gate B条件稳态、Gate C条件冲击路径、Gate D动态IRF准入诊断**；必须由Astra在冻结提交远端readback后另行签发受界实施授权。合成人工稳态不能标为2018真实31省双资产HANK GE，逐期条件冲击不得冒充前瞻性HANK IRF。
+
+代码基线采用V007 candidate `d8bb49d86ea674ea4ff5e3fdf03929baa08a6514` tree `9b685397ad5bc76a4ac3bf4203776389742c5ec5`，不合并main/原本地dirty。迁移sigma、AtTax三种归属、国有资本clip等**尚未被Owner实际经济归属采纳**，仅允许明确人工枚举/零值测试，错误单位/重复分录默认拒绝。Old HJB/KFE/C8/C9/原数据/真实IRF预算仍0。历史IRF旧`mpHANK_shock_2000.m`逐期单次调用并不证明完整动态最优条件，结果等级分账。A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE持续；V009 NOT_STARTED。
+
+## 2026-10-15 历史：V0.0.8 理论方案独立审议完毕、当时待Owner科学方向选择
 
 **`V008_SOURCE_ONLY_THEORY_PROPOSAL_REVIEWED__WAIT_OWNER_CORRECTED_MODEL_CHOICE__NO_IMPLEMENTATION_OR_REAL_READ`**。Owner启动V008后Codex交付一份跨博士论文/MATLAB/Python/历史接受/理论的SOURCE_ONLY集中提案；Astra已独立核当前PDF p94–97、原MATLAB关键成员、GitHub源/历史接受，并发表 [V008方案审议](../versions/0.0.8/scientific_proposal_review.md)。Codex对PDF/ZIP当轮未可读的局限仍是执行账真实事实；Astra已独立补读，六份MATLAB源码成员的SHA256与2026-08-30 GE source audit匹配，但不能宣称历史Python C8 execution来自这份ZIP。V008仍是DRAFT，没有冻结经济方程，没有实施授权或真实C8数据许可。
 

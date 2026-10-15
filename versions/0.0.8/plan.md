@@ -1,91 +1,110 @@
-# V0.0.8：多省份HANK劳动时序与财政会计的跨来源科学审订（版前DRAFT）
+# V0.0.8 正式冻结：corrected-model 劳动/财政联合实现、条件稳态及IRF资格门
 
-**Owner 于2026-10-15明确同意继续下一科研版本，允许必要时查历史项目记忆/接受文档、自己原MATLAB源码及博士论文第五章；同时特别指出原MATLAB程序本身包含错误，不得作为正确答案。**
+**冻结日期：2026-10-15（Asia/Shanghai）**
+**状态：V008_FROZEN__OWNER_ADOPTED_CORRECTED_MODEL__WAIT_SEPARATE_SYNTHETIC_IMPLEMENTATION_AUTHORIZATION__REAL_HANK_AND_IRF_CLOSED**
+**版本目标：从跨来源科学提案进入新的隔离 Python 经济模型实现与数值可行性检验。**
+**本文件为正式科研设计冻结，不因自身发布而授予执行许可；由Astra在实际回读固定commit/blob后单独签发受界工程/人工经济体数值授权。**
 
-**当前状态：`OWNER_STARTED__V008_DRAFT__WAIT_CODEX_CROSS_SOURCE_ECONOMIC_THEORY_PROPOSAL__NO_MODEL_CHANGE_OR_REAL_READ_AUTHORIZED`。本文件仅为版前DRAFT和一次SOURCE_ONLY集中提案许可，不是冻结科研方案、科学方程修改授权、真实C8资产读取、模型测试或Results许可。**
+## 1. Owner科学采纳及资格边界
 
-## 1. 唯一科学目标和权威层级
+Owner在本次会话明确批准Astra此前提出的**完整科学方向包**，要求“落实到python程序中然后看看是否能得到稳态，以及IRF是否正常”：
 
-以**第一篇可投稿、经济学自洽的多省份两资产HANK论文**为目标，集中解决V007定位的`Lt_prev`/目的省`Lt_supply`、工资税`Lt*tau`、`AtTax`、`Tt`、人口/货币与时间归一化问题。新版本必须提出可以判真伪的理论方程与最小后续科学修订方案，**不是再写一版相同的SOURCE_ONLY清单或套壳synthetic类型合同**。
+1. **劳动**：新corrected-model的主线是单一家庭 CES 劳动指数与严格来源居民—工作目的地双边劳动/工资对偶；实际劳动量+外生配置份额为可证伪对照，不默认为第二条生产分支。
+2. **税**：只存在**一套明确计价的全国工资税**，同一种税只扣一次；不得同时由destination composite wage和origin HJB预算重复扣除。迁移楔子的现金/真实资源/效用属性仍须明确，不能因名称默认为税。
+3. **财政**：全国统一政府账户与各省份分析分账，不自行创设31份独立政府债。工资税、公司税、公共资本、私人收益、转移支付与流动资产/中介债务分账户，所有收入和成本须相同货币、人口和模型时间口径。
+4. **AtTax**：仅保留原历史聚合的数值定义，不自动认定政府税收。政府征收/中介利润/真实资源成本是三种互斥的**待证解释**；新人工经济体默认使用\`AtTax=0\`的中性场景，非零则必须选择显式会计分类并完成双边分录，绝不把这种人工选择追认为真实C8的经济解释。
+5. **研究顺序**：先完整静态/稳态经济账户、市场与资源约束、可证伪的数值资格；再评估有完整跨期方程时的IRF。原HANK/Python历史C8、已接受2009 parity、HJB/KFE/K1/C1和2017/2018诊断均不被本新支线覆盖或追认。
 
-证据权威须严格区分：
-1. 数学恒等、家庭/企业最优化、资源和政府预算共同计价、一般均衡定义等**独立经济学推导**（应给出假设、量纲和可证伪条件）；
-2. Owner明确采纳的既有科学合同，对**原有accepted runs的历史资格**保持权威，但允许本版提出另立未来模型科学修订的理由，不能追改既有验收；
-3. 博士论文原文：研究意图/写出的式子/时间和数据口径的文本证据，**可能存在错误或内部矛盾**，不能自动胜过经济恒等；
-4. 用户原MATLAB ZIP：过去实现行为的辅助证据，**可能含旧科学bug**，不等于历史C8执行时该源码版本，更不因MATLAB/Python一致而正确；
-5. 已接受Python代码：现行软件行为/已接收历史运行的可核证事实，**不自动提供经济理论正确性**；
-6. 2026年早期来源合同、数值parity与过去研究笔记：只说明原接受范围，不可把`2009 MATLAB-Python parity`误认为2018/C8完整经济单位/财政正确性。
+**明确未被Owner采纳**：AtTax固定为政府税、旧sigma固定为资源成本、对现存clip/资本收益作单方面修补、静态稳态通胀置零、固定\`delta\`改成论文表5-1数值、重启V007的受保护数据/模型权限。涉及这些科学制度选择时采用可切换且明确标成\`SYNTHETIC_SCENARIO\`的会计假设或FAIL_CLOSED。
 
-本版提出改法属于DESIGN_ONLY。实际改变HJB/KFE、Lt/工资/财政/资本、校准和Results都须后续独立经济学Owner采纳、正式冻结、分级实现及验证授权。
+## 2. 代码版本身份、原资产与高风险权限
 
-## 2. 已由Astra当前会话核读的源线索（仅供Codex复核）
+- 实施候选的唯一固定代码基线采用已接受 V0.0.7 文档候选 \`d8bb49d86ea674ea4ff5e3fdf03929baa08a6514\`，完整 tree \`9b685397ad5bc76a4ac3bf4203776389742c5ec5\`，本基线已有V006合成模块。**NEXT_BASELINE_ADOPTION=ADOPTED_FOR_V008_ISOLATED_CORRECTED_MODEL**，并不代表原D盘checkout/main合并。
+- 原模型工作树 \`D:\ProjectTemp\c5k1bturn56\`、历史HEAD \`a1db8c114dec0ab69d69a5576e153a7f868cba0e\`、外部Git common-dir \`D:\ResearchCode\dissertation-ch5-two-asset-hank\.git\`、8历史tracked dirty（包含\`government_assets.py\`与\`middle_stage.py\`）、既有untracked/ignored及C盘B3有限保全一律不覆盖、不stash/reset/clean/checkout、不开A16 hostile，不得为新版任务作清理/备份/G0重复循环。
+- 本版所有代码只能写到精确新建、非reparse、与原worktree隔离的候选目录/branch。GitHub\`main\`仍不是接纳的新基线。用户上传博士论文PDF和MATLAB ZIP仅作只读辅助研究，不可上传原MATLAB源码全文、不能按历史C8原件使用。
+- 真实2017/2018经济/原C8/31省受保护JSON/NPZ/CSV/receipts的stat/read/hash/parse/extract及所有D3-real/D4-real、原C8/C9/C10、旧真实consumer/HJB/KFE/outer runner调用预算：**0**，旧\`A16 UNRESOLVED/FAIL_CLOSED\`、\`window UNACCEPTED\`、\`C9 PAUSED\`、\`CALL_LEDGER_UNRESOLVED\`、\`model_activation=False\`、\`Results FALSE\`不变。
+- 本次单独授权允许**新的、仅人工省份/人工资产/人工校准输入的corrected-model经济数值器**，不继承旧C8科技账，绝不通过改名包装、Mock原真实数据或new package import绕过旧零预算。
 
-**Owner上传博士论文PDF《基于异质性新凯恩斯模型的中国经济区域均衡协调发展研究》**，按PDF物理页数定位，打印页码比物理页码少20：
-- PDF p94–95（论文页74–75），公式(5-1)–(5-3)：31省跨地区供给、家户效用/预算、来源/目的工资税与劳动厌恶。p95(5-2)书面预算没有明确`Tt`，而原MATLAB/Python家庭预算实际有`Tt`。
-- PDF p96（论文页76），公式(5-11)明确目的省总劳动 `L_i^s=Σ_j L_{ji} N_j`，其中`L_{ji}`由原省份家庭分布积分定义；资产业务也乘`N`。这与`Lt_seperate.m`乘人口一致，说明家户均值与firm劳动总量需要同量纲桥。
-- PDF p97（论文页77），公式(5-16)的`GovInc/GovExp`写法，与MATLAB/Python的`Govinc=Corptax+Lt*tau+AtTax+GovInv*ra-Tt`、Python的`GovSurplus=sum(Govinc-Bt*rb*N)`并不完全一致。需准确转录数学式及核算每一项经济含义，**不能假定论文就是正确的预算约束**。
-- PDF p99（论文页79），表5-1折旧率记`0.0025`，而Owner上传的`multi_prov_HANK_12sts.m`源码`param.delta=0.025`；PDF p101（论文页81）同处文本既先说31省、又说26省。此类明显版本/编辑冲突只列风险、优先检查是否影响当前经济模型，不允许因此修改已接受参数。
-- PDF p100–101（论文页80–81）5.2.6/5.2.7称初期劳动人口用常住人口代理、HJB输出为家庭/户均再按总人数放大，**与后续Owner已采纳的人口/人均且不N=P/3的决定必须明确区分**；原文不构成重新采用户均政策的授权。
+## 3. 经济学不可省略的实现公理
 
-**Owner上传原MATLAB ZIP《多省份HANK_matlab原版程序.zip》**已有静态对照：
-- `HANK_2ASSETS_HJB.m` L347/L397以概率密度积分产生`results.Lt`，`Tt`进入家户预算；
-- `Lt_seperate.m` L6–15先求source→destination个人劳动再乘来源人口`N_i`；
-- `HANK_mp_1turn.m` L14–26先家庭/迁移，再L44–46调用firm；
-- `HANK_firm.m` L9读当前`Lt_supply`，L20–21读旧`Kt/Lt`，L35含`(Lt_1-Lt)/Lt`，L95为`Govinc`公式；
-- `multi_prov_HANK_12sts.m` L69 `param.delta=0.025`、L81 GDP/人口缩放`1000/100`。
-这些仅是当前上传ZIP源码事实，并非原历史C8实际运行字节。Codex可在合法可用范围内核读，不开放ZIP中任何`.mat`、真实C8 reports或无界文件查找。
+设来源省\`i\`、目的省\`j\`、效率态\`z\`、家户分布\`mu_i\`，新家庭劳动指数
+\[
+\ell_i=\left(\sum_j\phi_{ji} h_{ji}^{1+\eta}\right)^{1/(1+\eta)},\quad\eta>0,\;\phi_{ji}>0.
+\]
+在明确约束的正净工资效率价格\`v_ji\`下，同一效用问题的严格对偶
+\[
+W_i=\left(\sum_j\phi_{ji}^{-1/\eta}v_{ji}^{1+1/\eta}\right)^{\eta/(1+\eta)},\qquad
+h_{ji}=\ell_i\phi_{ji}^{-1/\eta}(v_{ji}/W_i)^{1/\eta},
+\]
+并逐状态验证\(\sum_j v_{ji}h_{ji}=W_i\ell_i\)。\`kappa/alphal\`作为家庭劳动效用或单位系数的数学位置必须在一个且仅一个明确映射里定义；不同税或效用系数不能因旧名形似混用。
+\[
+L^s_j=\sum_iN_i\int z h_{ji}(a,b,z)d\mu_i.
+\]
+**不得强制\(\sum_j h_{ji}=\ell_i\)**；旧source-faithful按\`Ct_i^{-gamma/eta}\`构造劳动流不是异质性积分的精确等价；只有状态与消费分布具备证明时才能把新的 \`int z ell_i dmu_i\`绑定到真实HJB/KFE。来源人口N不等于家户数、不设N=P/3。
 
-**V007已接收Python证据**：`k1b_turn5_turn6_bounded_continuation/run.py` L289–295把保存的旧firm `Lt_prev`覆盖成当次household `Lt`，现`Lt`是migration destination supply；`firm.py`使用该量进入`mt`和后续工资/收益；`Tt`由household预算直接加并在firm地区财政直接减；`AtTax`为家户资产收益差均值。证据见固定 [V007候选经济来源报告](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/d8bb49d86ea674ea4ff5e3fdf03929baa08a6514/versions/0.0.7/provenance_unit_evidence.md)；其经济unit status未证，不自动判为已在现实数值运行中产生BUG。
+工资税一次计价：设税前工资 \`w_j\`，全国税率\`tau\`，同一工资税只能在\`v_ji\`构建时扣一次。令人工\`migration_cost\`的费用去向为显式枚举；若未指派而为非零则拒绝真实核算，人工测试可分互斥场景。按明确费用种类用同一双边税前工资base核算
+\[
+R^w=\tau\sum_{j,i}N_i\int w_j z h_{ji}d\mu_i.
+\]
+税前收入 = 净家户收入 + 税收入 + 已定义资源成本/中介收入/费用，任何分录遗漏、二次扣税必须FAIL。对家户异质性不能用 \`(E c)^{-a}\`替代\`E(c^{-a})\`。
 
-## 3. Codex本轮单次SOURCE_ONLY集中科研调查授权
+财政必须有**完全列示的全国复式账户**：企业利润税与裁剪补贴分列；\`AtTax\`的政府征收、金融中介利润、真实成本互斥；\`Tt\`人均转移转地区总流需要N及同一期单位；流动资产\`Bt\`不能因同名即当政府债；公共资本\`K^g\`是存量，净/毛收益、\`delta\`与新增公共投资融资分别列；省际转移全国合计0。原\`GovInv=max(Ktarget-Kprivate,0)\`在旧科学历史原样冻结，新corrected模型只可将其做静态人工初值/给定资本约束，不能冒充已融资的政府投资流。
+\`raw_ra0\`私人payoff与\`used ra\`政府收益/clip若同时出现，必须按**同一期、同资本池、明确所有权和clip调整现金接收者**写可核复式账，否则fail-closed，不允许重用历史clip税条目来虚构财政盈余。
+- 人口/货币\`U=100 persons\`、\`M=100000 yuan\`、统计\`q=1000(Y/N)\`条件换算与模型期\`T\`分开。模型时间与外迭代计数不能混同；不能从历史数据直接认证任何动态参数。
+- 静态财政平衡不能靠悄悄把\`GovSurplus\`设成0；人工稳态必须明确列一个**被选择的财政工具**（例如人工lump-sum transfer为内生、其余给定），出示同时满足的预算及资源恒等；真实政策制度未定时只称\`SYNTHETIC_FINANCING_CLOSURE\`。
 
-任务名：`V0.0.8_M1_LABOR_FISCAL_MODEL_CROSS_SOURCE_SCIENTIFIC_RECONCILIATION_PROPOSAL`。
+## 4. Python实现目标与准许路径（不强求空占位）
 
-允许按需只读：
-- GitHub当前治理/科学采纳/历史接受/代码的精确SHA；先核`CURRENT.md`、`SCIENTIFIC_DECISIONS.md`、`CH5_WORKFLOW_V1.2`、V007最终验收、V007固定候选以及本DRAFT；
-- 本项目既有project-level研究知识库、Obsidian/Zotero/QMD（如果实际存在、合法连接且只读），以`Lt_prev/上期firm labor`、`2009 MATLAB-Python parity mapping`、人口/人均、`Govinc/AtTax/Tt`和原研究公理为精确查找键。先读有接受身份的直接文件，不扫描其他项目/本机全盘；个人聊天记忆只有确实可见且带原证的部分才引用，**无法访问则记UNKNOWN**；
-- 用户提供的**上述一份博士论文PDF、一份原MATLAB ZIP**的明确文本页/成员，若在Codex当地已能合法准确定位；PDF允许非模型只读文本/页面抽取，ZIP仅浏览`.m`文本，不执行MATLAB、不解出`.mat`缓存、不运行脚本，不将全文/用户私有源码上传GitHub；
-- 本仓已发布确切Git-tracked Python/MATLAB说明及校准/财政来源文本。原历史C8受保护JSON/NPZ/CSV/receipts及B3备份仍不可stat/read/hash/parse/extract。
+本版受限的**真实交付应是工作代码+独立数学oracle+受限数值结果**，不是SOURCE_ONLY清单：
+允许新增的模型模块（如确实需要，每个文件必须有实质算法）：
+- \`src/ch5_two_asset_hank/multi_province/reconciled_labor.py\`
+- \`src/ch5_two_asset_hank/multi_province/reconciled_household_prices.py\`
+- \`src/ch5_two_asset_hank/multi_province/reconciled_fiscal.py\`
+- \`src/ch5_two_asset_hank/multi_province/reconciled_stationary.py\`
+- \`src/ch5_two_asset_hank/multi_province/reconciled_shock_diagnostic.py\`
+- \`src/ch5_two_asset_hank/multi_province/reconciled_irf_gate.py\`
+允许新增的focused测试：
+- \`tests/test_v008_reconciled_labor_duality.py\`
+- \`tests/test_v008_reconciled_fiscal_double_entry.py\`
+- \`tests/test_v008_reconciled_stationary.py\`
+- \`tests/test_v008_reconciled_shock_irf_gate.py\`
+允许新增脱敏交付：
+- \`versions/0.0.8/execution.md\`
+- \`versions/0.0.8/scientific_reconciliation.md\`
+- \`versions/0.0.8/acceptance_summary.json\`
+最多13个准确路径；不强制全建。旧\`multi_province/one_turn.py\`、\`firm.py\`、\`wage.py\`、HJB/KFE、所有源码已有类与test、\`__init__.py\`、科学runner、旧dirty、\`versions/0.0.8/plan.md\`、治理文件均不可修改。不得把新实现隐式export到原生产路径。
 
-建议本轮最多90份准确Git-tracked源码/接受文档、代码正文≤4MiB、版前静态审议总时长≤4小时；两个Owner上传文件若可得，分别只读单一PDF（原约11MiB，封顶16MiB）和单一ZIP（原约1.6MiB，封顶3MiB），不计入代码正文配额但记录实际可得字节。PDF/ZIP不可达时先使用Astra当前已审线索提出未认证问题，明确`NOT_IN_CODEX_VIEW`，不要假装已亲自读。无界索引/危险路径遍历禁止。
+## 5. 稳态检验、IRF检验与明确的不等价资格
 
-**本轮禁止**任何科研Python/import/pytest/模型/MATLAB执行、HJB/KFE/31省consumer/旧tests、真实原件访问、代码/报告文件写入、Git commit/push/checkout/reset/clean/stash/pull、科学参数/经济式更改、Excel/.mat派生缓存研究或Windows A16/G0/B3实验。必要合法的只读PDF文本提取工具不属于科学模型调用；产生的临时工具副作用须在无保护安全临时区、可控且记账，不进入原repo/outputs。资源/工具不可证即限于已可读文本。
+**Gate A：经济学独立oracle（必须）**。1省、非对称2省、人工31省中检查双边劳动—工资对偶、税前/净收入/税/迁移成本恒等、财政逐项双边记账、资本私公所有权不重复、人口缩放、原/目的矩阵方向、FOC、分布异质性Jensen反例及资产负债表/金融中介分账。至少各设计一例错误税两次扣、\`AtTax\`跨账户重复、\`Lt_prev\`均值对总量的拒绝用例；\`N=1\`/零通胀掩盖缺陷的用例不得唯一支持通过。
 
-## 4. 必须独立推导与对照的科学问题
+**Gate B：人工条件稳态数值可行性（独立且受限）**。使用完全虚构的1、2和31省正参数经济体、显式人工 household distribution/asset holdings/资本分配条件和财政平衡工具，数值求解并审计：所有定量市场供需、firm FOCs、CES劳动/工资、政府预算、资源、账户、完整root向量/残差及停止次数。不得以\`Kt\`和\`Yt\`填函数输出或固定最优解来冒充求解；无法同时关闭全部被定义的剩余项则返回\`NO_CONDITIONAL_STEADY_STATE\`和最高残差、而非调整科学阈值/校准取PASS。**即便此门通过，结果仅为\`SYNTHETIC_CONDITIONAL_STATIONARY\`或\`SYNTHETIC_FACTOR_MARKET_STEADY_STATE\`；因为household HJB/KFE未联解且没有真实地区数据，不能称\`31_PROVINCE_HANK_GE_CONVERGED\`。**
 
-**L——劳动状态/时序/省份和归一化**：
-- 定义省i来源家户`l_{ji}(a,b,z,t)`、质量均值`L^h_i=\int z\sum_j l_{ji}g_i`与目的j有效劳动`L^s_j=\sum_i N_i \int z l_{ji}g_i`。请验证源代码aggregate household Lt是否事实上等于这个`Σ_j`（原历史旧HJB可能仅有一维`l`，这是独立缺口，不能默认成立）。
-- 指出`Lt_prev`究竟应该是经济期t−1的同一目的j firm supply、外层固定点迭代k−1的同一firm supply、还是当轮来源家户均值；分析原firm/NKPC表达为何要求时序/省份/单位同时一致；为至少两种理论自洽解释提供推导及可证伪的共同尺度条件。
-- 分开定值`N`=现实人口代理、工作参与率、单位效率劳动、迁移目的矩阵与统计常住人口的角色；`N=P/3`已被Owner否决，不重新采用。严格区分零通胀/无迁移/等人口退化情形会遮蔽差异。
-- 审核上一阶段历史`Lt_prev`映射修复/2009数值parity的**具体accepted范围**，不把MATLAB-Python数值一致等同于经济正确或当期C8模型版本。
+**Gate C：冲击路径诊断（仅在Gate B稳态可接受后）**。允许在**明确人工外生AR(1)**、资本/家庭分布/财政策略固定或明确变化的条件下，用新模型计算已解稳态附近的条件冲击响应（TFP/工资税/公共资本至少各一个可行人工测试，可按预算选择小省份），每个期间重新检验本期静态均衡和现金账、路径起点为Gate B同一接受稳态。测试零冲击=零响应、不同冲击幅度局部可线性缩放、回归性、期末残差、改变路径长度不敏感及数值不爆炸；不要预设所有变量正向响应，反例说明其机制。可记录\`CONDITIONAL_SHOCK_PATH_DIAGNOSTIC\`，**不得将逐期重复静态解、旧\`mpHANK_shock_2000.m\`20期调用或画图标成\`DYNAMIC_HANK_IRF_ACCEPTED\`**。
 
-**F——财政闭合、税基及货币同量纲**：
-- 按每省家庭预算（含`Tt`和净工资）、企业利润/资本所得、金融资产和政府债务/国有资本出发，**独立推导**财政总量恒等式、工资税基`w^gross\times L^s\times \tau`是否含迁移楔子、AtTax为何可作为真实政府收入、`Tt`是否按人口支付及财政期的债务利息。区分`source-faithful`与`economic-consistent`，不能先假定应该怎样补N或乘w，必须列条件和记账定义。
-- 同时核论文(5-2)、(5-11)、(5-16)，原MATLAB`HANK_firm.m`、`HANK_mp_1turn.m`以及Python`firm.py/fiscal_diagnostics.py`的**准确不同项**，判定哪些是论文漏项、实现变更或尚未解释的会计规则，给出最多三条完整备选理论规格及必要的Owner科学选择，不自动推广。
-- 保持`AtTax=At*rah-sum(a*effective_r_a*p)`的历史数值公式和`raw_ra0`同S lagged不变，设计若未来经济学改造政府税/资产规模是新模型契约而非偷偷修改原聚合。
+**Gate D：正式IRF准入审查**。逐项检查是否已经有：被接受的带资产\`(a,b,z)\`跨期家户最优化/终端V、前向KFE/分布守恒、明确政策冲击过程/资本与政府债务状态方程、firm/NKPC期待通胀结构、货币政策及跨期市场出清、初末稳态、horizon/terminal residual与资产库存流量相容。如果缺任何核心闭合就返回\`IRF_BLOCKED__NO_DYNAMIC_HANK_CLOSURE\`并列准确缺项，不能生成假正式IRF。**本版首个实施任务不授权原冻结HJB/KFE、真实31省HANK或动态模型实验。** 未来真正real/synthetic complete-HANK与IRF须明确新科学数值预算和独立审议（可保持为V008后续风险门，不预先立V009）。
 
-**D——定义/参数/经济期/科研成果条件**：
-- 每人资产`[At]=MU/NU`与`At*N`，劳动总量、工资单位、`Tt`、`Bt*rb*N`必须同样验算；分析FOC效用系数如何与货币数值缩放共变。
-- 论文表5-1 `delta=0.0025` vs ZIP`0.025`及当前Python、26 vs31、多年数据真实年份的冲突仅按范围与科学影响分级。禁止以旧MATLAB/论文字面数字覆盖既有接受校准。
-- 年度`q`（observed2017/target2018）是历史回溯偏好系数；模型期`raw_ra0`和资本/财政收益不得年化，价格`current_price_methodologically_attributed`但`direct_price_verified=False`、`price_verified=False`、release UNKNOWN、baseyear None。
-- 无需修改Option1固定C8 household/states/S/N/params/distance、HJB/KFE、C1、源忠实migration、origin/destination税索引、外层R2九分量停止历史结论；但可提出**未来单独的corrected-model研究支线**与旧 source-faithful branch的可复现比较路径，实施许可为0。
+用户要求的“看看是否能得到稳态和IRF”按证据实际报告：Gate B/C 可先取得数值可行性或明确失败，Gate D如果不具备跨期闭合必须诚实BLOCKED，不能用人工曲线满足Results。
 
-## 5. 唯一交付与后继独立门
+## 6. 本轮数值/文件/资源预算与零预算
 
-向Owner当轮Codex会话交付**一次集中纯文本报告**，名称严格：
-`V0.0.8_M1_LABOR_FISCAL_MODEL_CROSS_SOURCE_SCIENTIFIC_RECONCILIATION_PROPOSAL`。
+一次长任务总可操作时间≤10小时。允许最多8个新focused测试进程（包含修复/最终树验证），每进程≤600秒、峰值工作集目标≤512MiB（不可测记UNKNOWN）。Gate B新人工条件稳态求解总attempted≤12，其中人工31省求解≤2，单求解函数evaluation上限≤200；Gate C新人工冲击路径attempted≤4，每条最大40期，不隐式增加。失败与中途停止的调用全部计attempted，失败/修复也吃进程额度；不得按省/按日期重置。验证在进程预算内记录自动化pytest调用的所有实际solver attempts，而不是仅记用户级driver。
+新增Git/candidate_view与操作性存储≤256MiB，人工fixture/LOCAL_ONLY日志≤64MiB，公开脱敏文档≤4MiB，新增总≤324MiB；涉及磁盘snapshot须先估算容量并原地留界。命令失败先stop其依赖、按V1.2保留stdout/stderr/exit/identity；普通工程修复自主完成，不为通过而更改原冻结经济方程。
+- 原真实C8/31省经济输入，旧或生产HJB/KFE、C9/outer、任何真实消费者、MATLAB运行、protect A16/window试验、model_activation、Results、公开实值、真实GE/IRF科学预算：**0**。
+- 无需沿用或跑V006 40项合成测试、V007 SOURCE_ONLY报告作为新测试；只读精确旧代码/文档/PDF/原MATLAB \`.m\` 文本以核实模型理论，原文件不得复写/发布。
+- 当Gate B/C无收敛或资源封顶，Codex**仍交付**有数学oracle支持的新代码与失败/阻断证据；不可自行跑另一批旧科学测试、扩quota或悄悄改参数。
 
-报告需回答：
-1. 完整项目Git身份、当前dirty保护、拟议下一代码基线以及历史C8与V006/V007真实提交的区分；
-2. 博士论文/原MATLAB/已接受Python/过去memory与科学采纳文件**五源证据冲突表**，每一条都标明实际已读原文、精确公式页码/函数行号、证据强度与不可作的推论；
-3. 劳动的来源/目的省、t−1 vs k−1、家庭均值到地区总量的数学推导及至少两套候选规范，逐项反例与可证伪标准；
-4. 政府预算、工资税/AtTax/Tt、国有资本、利息、人口货币的完整恒等式与最多三套规范，可识别假设/不可识别部分/与已采纳科学合同的冲突；
-5. 哪些**文本中可确证错误**，哪些只是经济期/numeraire/福利和人口口径未知，哪些真的必须由Owner选择新方程；不因为旧论文/代码一致就宣布正确；
-6. 一份**实质修订优先**的V008正式长任务实施路线与验收oracle建议，明确安全的零科学可证验证优先、后续经济实验/真实资产访问单独权限，允许路径与资源建议；
-7. 只列Owner真正必须裁决的1–3个科研选择（如果证据不足则说明等待哪个具体原件/定义）；不会请求重新采纳人口/人均、原Option1和已采纳K1/C1法则；
-8. SOURCE_ONLY实际阅读/本地记忆检索/文本处理资源、失败与0受保护数据/0模型执行账。
+## 7. 候选交付与Astra验收上限
 
-V008版前终态：
-`WAIT_ASTRA_V008_CROSS_SOURCE_SCIENTIFIC_REVIEW__NO_IMPLEMENTATION_AUTHORIZED / STOP`。
+候选须基于 \`d8bb49d86ea674ea4ff5e3fdf03929baa08a6514\` 唯一parent建立隔离新branch，执行准确白名单diff，最后一个封存tree要有独立focused test receipt。允许一次非force候选push + SHA/tree/changed-path远端readback；旧main/原worktree不动。若候选因branch/仓库保护失败，LOCAL_ONLY完整报告停止，不强推，不偷合并main。
 
-Astra审议后才正式冻结V008、独立签发可实施范围；实质科学方程修订需Owner特别采纳。真实C8 A–D仍REQUEST_ONLY（首A manifest自身文件大小UNKNOWN），A16 UNRESOLVED/FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、旧science/data/consumer预算CLOSED。V0.0.9 NOT_STARTED。
+Codex集中报告必须分别列：
+- 接受科学的L1一税与实际实现哪一层，AtTax/migration/clip/财政工具哪些仅为\`SYNTHETIC_SCENARIO\`；
+- Gate A oracle、Gate B残差/solver attempt /人工省数、Gate C条件冲击图表可选但须明示\`NOT_REAL_IRF\`、Gate D真实动态缺项；
+- 可信代码/数值/现实数据/动态/Results五类不同证据资格；
+- 资源/错误、原dirty/index保全与未可独立网页回读的LOCAL_ONLY证据；
+- 下一次完整HANK稳态/IRF若要开始所需的**一次集中**动态方程+安全数据/科学预算申请，不能把B/C的PASS当作数据/动态权限。
+
+Astra本版首门最高可接受\`CORRECTED_MODEL_SYNTHETIC_ECONOMIC_ACCOUNTING_ACCEPTED\`、\`SYNTHETIC_CONDITIONAL_STATIONARY_ACCEPTED\`和\`CONDITIONAL_SHOCK_PATH_DIAGNOSTIC_ACCEPTED\`（逐项证据/残差独立确认），**不等于**\`TWO_ASSET_HANK_STATIONARY_GE_ACCEPTED\`或\`DYNAMIC_HANK_IRF_ACCEPTED\`、不等于真实31省政策反事实/投稿Results。
+
+终态 \`WAIT_ASTRA_V008_CORRECTED_MODEL_NUMERICAL_GATE_ACCEPTANCE / STOP\`。V0.0.9 NOT_STARTED；如本版下一高风险门被提议仍必须另行独立批准，不自动继续。

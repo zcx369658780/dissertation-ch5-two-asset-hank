@@ -1,6 +1,6 @@
 # 第五章动态总目录
 
-**现行最新（2026-10-15）：V0.0.8 Codex跨来源经济理论提案已由Astra独立审议并记录，状态 `V008_SOURCE_ONLY_THEORY_PROPOSAL_REVIEWED__WAIT_OWNER_CORRECTED_MODEL_CHOICE__NO_IMPLEMENTATION_OR_REAL_READ`，仍为DRAFT、没有新方程或科学实现授权，等待Owner对CES劳动/单次工资税/统一财政/静态先行的一次科学选择。博士PDF、MATLAB ZIP是辅助源码不是Python C8历史执行认证；真实C8 A–D读取继续REQUEST_ONLY，Results FALSE。参阅 [CURRENT](../CURRENT.md)、[版本登记](CH5_VERSION_REGISTER_CURRENT.md)、[V008科学审议](../versions/0.0.8/scientific_proposal_review.md)与[V008 DRAFT](../versions/0.0.8/plan.md)。V0.0.9 NOT_STARTED。**
+**现行最新（2026-10-15）：Owner已采纳V0.0.8新corrected-model科学方向并正式冻结首轮Python实现与人工经济体数值可行性门，状态 `V008_FROZEN__OWNER_ADOPTED_CORRECTED_MODEL__WAIT_SEPARATE_SYNTHETIC_IMPLEMENTATION_AUTHORIZATION__REAL_HANK_AND_IRF_CLOSED`。Gate A经济Oracle→Gate B条件稳态→Gate C条件冲击路径→Gate D真实HANK动态IRF资格；真实2018/C8、旧HJB/KFE、科学GE/真正IRF和Results未授权。实施须Astra单独签发，工作流V1.2不变。见[CURRENT](../CURRENT.md)、[版本登记](CH5_VERSION_REGISTER_CURRENT.md)、[V008冻结计划](../versions/0.0.8/plan.md)。V009 NOT_STARTED。**
 
 这是当前导航；条目按用途区分当前资料与历史快照。网页顾问必须实际读取正文及提交，不能以本目录代替证据。
 
@@ -10,8 +10,8 @@
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
 | Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 决定、原证据上限及本地工具限制 |
-| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.8理论提案独立审议、等待Owner选择；尚未冻结或开放模型/真实数据 |
-| V0.0.8 科学方案审议与Owner决策门 | [V0.0.8 DRAFT](../versions/0.0.8/plan.md)、[独立科学审议](../versions/0.0.8/scientific_proposal_review.md) | CES工资劳动对偶、工资重复扣税、财政与收益账户条件性冲突；等Owner正式科学选择，不实施 |
+| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.8 corrected-model正式冻结，A/B/C人工数值Gate待独立授权；真实HANK/IRF仍未放行 |
+| V0.0.8 corrected-model Python实施与人工数值检验 | [正式冻结计划](../versions/0.0.8/plan.md)、[前置独立科学审议](../versions/0.0.8/scientific_proposal_review.md) | Owner已采纳L1/单次工资税/统一财政/稳态先行；Gate A/B/C合成，Gate D真HANK IRF资格独立关闭 |
 | V0.0.7 M1来源与经济量纲受限验收 | [冻结计划](../versions/0.0.7/plan.md)、[正式验收](../versions/0.0.7/acceptance.md)、[复盘](../versions/0.0.7/retrospective.md) | Lt_prev/Govinc/AtTax/Tt的经济量纲条件接受，37件分期REQUEST_ONLY，0 real权限 |
 | V0.0.6 M1冻结与受限最终验收 | [冻结计划](../versions/0.0.6/plan.md)、[独立验收](../versions/0.0.6/acceptance.md)、[复盘](../versions/0.0.6/retrospective.md) | 五字段/三轴/双消费者合成工程CLOSED；原始C8真实输入及Results仍UNKNOWN/BLOCKED |
 | 本次长会话决策与进度交接 | [2026-10-14晚会话交接文档](CH5_CONVERSATION_HANDOFF_20261014_EVENING.md) | V0.0.5证据/Owner决策/低频GitHub工作流、V0.0.6已启动但仅DRAFT，供新Astra恢复权威 |
