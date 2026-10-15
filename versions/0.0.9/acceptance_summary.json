@@ -1,0 +1,131 @@
+{
+  "version": "0.0.9",
+  "phase": "PRE_SEAL_PHI_B_CONTINUATION",
+  "baseline": "d41d229b681e09b913c21deff7a057085b9bc419",
+  "pre_phi_candidate": "18256cd70b827e133e52d7609746c8afadb63ac1",
+  "freeze": "f7caeb54b13ec977d1b503b124067ae522ca2433",
+  "plan_blob": "cb76a840fdd9d1756728189bf29518679831aba6",
+  "phi_supplement": "c4fe97b4bc3510c42683579ff1aa7edd1df27807",
+  "phi_blob": "1c9839fe639197176d0d8b1c981b4c13025dcd5a",
+  "resume_authority": "5e32c112fed5dd096540061da3c918b0d924520b",
+  "resume_blob": "76616b2bef739a2119c510475f786d4134a7f5e6",
+  "phi": {
+    "max_phi": 0.3,
+    "one": {
+      "pgdp_ref": [
+        1
+      ],
+      "phi": [
+        [
+          1
+        ]
+      ],
+      "config_hash": "889ec09f2c355f52e48c65848d216409a45aa06c49905dd42a20a333b7549c03"
+    },
+    "two": {
+      "pgdp_ref": [
+        1,
+        2
+      ],
+      "phi": [
+        [
+          1,
+          1.1
+        ],
+        [
+          0.9,
+          1
+        ]
+      ],
+      "config_hash": "6494ea018c56fa952c9cd9ace4b9066aedc0ebeccf27537484b6180d87e0c109"
+    },
+    "axis": "destination rows, origin columns",
+    "endogenous_gdp_update": false,
+    "column_normalization": false,
+    "other_parameters_vs_pre_phi": "EXACT_MATCH"
+  },
+  "gate_A": {
+    "phi_B_oracles_005": "14 passed",
+    "phi_B_io_oracles_006": "15 passed",
+    "original_13_preserved": true,
+    "R_oracle": [
+      3.2,
+      -3.2
+    ]
+  },
+  "scientific_attempt_1": {
+    "n": 1,
+    "driver_exit": 2,
+    "seconds": 30.7554173,
+    "macro_attempt": 1,
+    "macro_evaluations_started": 1,
+    "macro_evaluations_completed": 0,
+    "household": 1,
+    "HJB_updates": 7,
+    "policy_Q_mapping_attempts": 8,
+    "policy_Q_completed": 7,
+    "terminal_KFE": 0,
+    "stop": "ENGINEERING_IO_PERMISSION_ERROR__LEDGER_OS_REPLACE",
+    "last_complete_checkpoint": {
+      "checkpoint": 6,
+      "B": 4.276595309193887E-05,
+      "D": 0.0037123504422069686,
+      "Q_row_sum": 7.216449660063518E-16,
+      "Qb_error": 2.220446049250313E-15,
+      "Qa_error": 5.384581669432009E-15
+    },
+    "scientific_nonconvergence_proven": false
+  },
+  "io_repair": {
+    "scope": "contracts.py only, no scientific algorithm/economic parameter/tolerance change",
+    "change": "two fsync durable checkpoint copies instead of rename; recover only componentwise-dominant monotone snapshot; fail on conflicting snapshots",
+    "evidence": "both original snapshots preserved; identical clocks/macros/households/counters except temporary scalar_root total 2714 vs 2713; keep higher 2714 without decrement",
+    "test": "monotone recovery and conflict refusal oracle passed",
+    "retry_basis": "original frozen plan section 5 ordinary software error exception; second one-province macro attempt consumes remaining slot"
+  },
+  "cumulative_pre_seal": {
+    "pytest": 6,
+    "science_drivers": 1,
+    "macro": 1,
+    "household": 1,
+    "HJB_updates": 7,
+    "mapping_attempts": 8,
+    "selector": 6200,
+    "scalar_root": 2714,
+    "selector_plus_root": 8914,
+    "toy_scc": 10,
+    "toy_svd": 5,
+    "toy_full_qtp": 5,
+    "terminal_household_svd": 0,
+    "ledger_started_epoch": 1792041292.515
+  },
+  "remaining_pre_seal": {
+    "pytest": 2,
+    "science_drivers": 3,
+    "macro_one": 1,
+    "macro_two": 2,
+    "household": 175
+  },
+  "final_verification": "PENDING: final tree focused check and last one-province attempt reserved; outcomes in detached receipt, not predicted",
+  "qualification": "NO_SYNTHETIC_HANK_STEADY_STATE_YET__FINAL_ONE_PROVINCE_ATTEMPT_PENDING",
+  "gate_C": "NOT_RUN__GATE_B_NOT_PASSED",
+  "IRF": "IRF_BLOCKED__NO_DYNAMIC_HANK_CLOSURE",
+  "protected": {
+    "original_before_hashes": "MATCHED_PRE_PHI_DIRTY_AND_INDEX",
+    "original_writes": false,
+    "untracked_ignored_scan": false,
+    "protected_C8": false,
+    "B3": false
+  },
+  "retained": {
+    "A16": "FAIL_CLOSED",
+    "window": "UNACCEPTED",
+    "C9": "PAUSED",
+    "CALL_LEDGER": "UNRESOLVED",
+    "model_activation": false,
+    "Results": false,
+    "V010": "NOT_STARTED"
+  },
+  "terminal": "WAIT_ASTRA_V009_SYNTHETIC_HANK_NUMERICAL_ACCEPTANCE / STOP",
+  "self_acceptance": false
+}
