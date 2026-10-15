@@ -46,6 +46,7 @@ def evaluate_firm(
     kt_supply: float,
     lt_supply: float,
     params: Mapping[str, float],
+    *, mainline: bool = False,
 ) -> FirmResult:
     """Evaluate the MATLAB steady-state branch without solving any model.
 
@@ -132,7 +133,13 @@ def evaluate_firm(
     else:
         wjt = wt0
 
-    govinc = corporate_tax + lt * tau + at_tax + gov_inv * ra - transfer
+    if mainline:
+        population = _finite(province, "N")
+        if population <= 0:
+            raise ValueError("mainline fiscal population must be positive")
+        govinc = corporate_tax + tau * wt0 * lt + population * at_tax + gov_inv * ra - population * transfer
+    else:
+        govinc = corporate_tax + lt * tau + at_tax + gov_inv * ra - transfer
     result = FirmResult(
         Kt=kt, Lt=lt, Yt=yt, mt=mt, KNratio=knratio, wt0=wt0, wjt=wjt,
         rk=rk, Thetat=thetat, It=investment, PIt=profit, Corptax=corporate_tax,

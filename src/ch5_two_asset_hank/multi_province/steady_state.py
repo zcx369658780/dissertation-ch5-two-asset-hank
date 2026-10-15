@@ -298,3 +298,17 @@ def run_manual_steady_state(inputs: ManualSteadyStateInputs) -> ManualSteadyStat
             )
             raise SteadyStateConvergenceError(result)
     raise AssertionError("unreachable manual steady-state controller path")
+
+
+def mainline_outer_diagnostics(states, tkn_previous, reg_threshold=1e-9):
+    """Outer iteration convergence is distinct from data-target verification."""
+    nk = np.array([abs(s['KNratio']/tkn_previous[i]-1) for i,s in enumerate(states)])
+    yt = np.array([abs(s['Yt']/s['Yt_1']-1) for s in states])
+    target = np.array([abs(s['Yt']/s['Yt0']-1) for s in states])
+    finite = np.isfinite(nk).all() and np.isfinite(yt).all() and np.isfinite(target).all()
+    boundary = any(s['ra'] <= s['ramin'] or s['ra'] >= s['ramax'] for s in states)
+    passed = bool(finite and np.max(nk)<reg_threshold and np.max(yt)<reg_threshold
+                  and all(s['convergent'] for s in states) and not boundary)
+    return {'OUTER_ITERATION_CONVERGED':passed,'nk_gap':nk.tolist(),'yt_gap':yt.tolist(),
+            'target_gap':target.tolist(),'ra_boundary':boundary,
+            'TARGET_CALIBRATION_VERIFIED':False}

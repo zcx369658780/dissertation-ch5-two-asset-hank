@@ -45,3 +45,25 @@ def national_fiscal_diagnostics(
     if not isfinite(surplus):
         raise ValueError("GovSurplus must be finite")
     return FiscalDiagnostics(Govinc=incomes, GovSurplus=surplus)
+
+
+def mainline_fiscal_accounts(states, firms, household, rb):
+    """Population bridge only on household means; clip compensation stays visible."""
+    rows = []
+    for i, (state, firm) in enumerate(zip(states, firms)):
+        n = float(state['N'])
+        wage_tax = state['tau'] * firm.wt0 * firm.Lt
+        asset_tax = n * float(household.at_tax[i])
+        transfers = n * state['Tt']
+        income = firm.Corptax + wage_tax + asset_tax + state['GovInv']*firm.ra - transfers
+        if abs(income-firm.Govinc) > 1e-12*max(1.0,abs(income)):
+            raise ValueError('firm and fiscal total accounts disagree')
+        rows.append({'wage_tax':wage_tax,'asset_return_gap_total':asset_tax,
+                     'transfers_total':transfers,'corporate_tax_with_clip_compensation':firm.Corptax,
+                     'government_capital_income':state['GovInv']*firm.ra,'GovInc':income,
+                     'household_labor_population_bridge':n*float(household.household_lt[i]),
+                     'firm_labor':firm.Lt,
+                     'labor_bridge_residual':firm.Lt-n*float(household.household_lt[i])})
+    diagnostic = national_fiscal_diagnostics([r['GovInc'] for r in rows], household.bt, rb,
+                                            [s['N'] for s in states])
+    return {'provinces':rows,'GovSurplus':diagnostic.GovSurplus,'budget_zero_imposed':False}

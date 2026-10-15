@@ -131,6 +131,27 @@ def reconstruct_migration_labor(inputs: MigrationLaborInputs) -> MigrationLaborR
     return MigrationLaborResult(lt_mat=matrix, lt_supply=supply)
 
 
+def reconstruct_mainline_labor(*, consumption, population, gross_wages, destination_taxes,
+                               phi, sigma, gamma_c, phi_l):
+    """Original average-Ct reconstruction, corrected destination tax and no extra N."""
+    c, n, w, tax = (np.asarray(x, dtype=float) for x in
+                    (consumption, population, gross_wages, destination_taxes))
+    phi, sigma = np.asarray(phi, dtype=float), np.asarray(sigma, dtype=float)
+    count = len(c)
+    if (c.shape != (count,) or n.shape != c.shape or w.shape != c.shape or tax.shape != c.shape
+            or phi.shape != (count,count) or sigma.shape != phi.shape
+            or not all(np.isfinite(x).all() for x in (c,n,w,tax,phi,sigma))
+            or np.any(c <= 0) or np.any(n <= 0) or np.any(phi <= 0)):
+        raise ValueError('mainline labor axes/domain invalid')
+    q = w[:,None] * (1-tax[:,None]-sigma)
+    if np.any(q < 0) or gamma_c <= 0 or phi_l <= 0:
+        raise ValueError('mainline labor net price/domain invalid')
+    matrix = c[None,:]**(-gamma_c/phi_l) * (q/phi)**(1/phi_l) * n[None,:]
+    if not np.isfinite(matrix).all():
+        raise ValueError('nonfinite mainline labor')
+    return MigrationLaborResult(matrix, np.sum(matrix,axis=1))
+
+
 _NORMALIZED_ORIENTATION = "rows=destination, columns=origin"
 _NORMALIZED_SCHEMA = "origin-preserving-normalized-migration-labor/v1"
 _NORMALIZED_TOLERANCE = 1.0e-12

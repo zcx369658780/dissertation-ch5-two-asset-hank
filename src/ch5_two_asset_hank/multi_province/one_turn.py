@@ -341,3 +341,84 @@ def run_origin_preserving_normalized_one_turn(
 
 # Descriptive alias for callers that prefer composition terminology.
 compose_one_turn = run_source_faithful_one_turn
+
+
+def prepare_mainline_household_states(states, fixture):
+    """Bind entering payoff to the very S used by this turn's capital quantities.
+
+    S depends only on completed returns/theta/distance, not on current household
+    At. Binding-test inputs remain the explicitly frozen initial HA prices.
+    """
+    from .capital_network import BilateralCapitalNetworkInputs, build_bilateral_capital_network
+    p=fixture['parameters']; raw=np.asarray([s['ra0_raw_previous'] for s in states])
+    deviation=float(np.std(raw,ddof=0))
+    score=np.zeros(len(raw)) if deviation == 0 else (raw-np.mean(raw))/deviation
+    network=build_bilateral_capital_network(BilateralCapitalNetworkInputs(
+        tuple(fixture['province_order']),np.asarray([s['At'] for s in states]),
+        np.asarray([s['N'] for s in states]),np.asarray(fixture['foreign_share_theta']),
+        np.asarray(fixture['distance_score_destination_origin']),score,raw,
+        p['portfolio_beta_distance'],p['portfolio_beta_return'],
+        'LAGGED_COMPLETED_ITERATION_RAW_RETURN__SYNTHETIC_INITIAL_ANCHOR'))
+    return tuple(dict(s,rah=float(network.household_portfolio_return_by_origin[i]))
+                 for i,s in enumerate(states))
+
+
+def run_mainline_one_turn(states, batch, fixture):
+    """V010 opt-in composition: no legacy capital or C1, immutable entering batch."""
+    from .capital_network import BilateralCapitalNetworkInputs, build_bilateral_capital_network
+    from .migration_labor import reconstruct_mainline_labor
+    from .wage import mainline_phi, mainline_effective_wages
+    from .fiscal_diagnostics import mainline_fiscal_accounts
+    p = fixture['parameters']; n = len(states)
+    if tuple(s['name'] for s in states) != tuple(fixture['province_order']):
+        raise ValueError('mainline state axis differs from fixture')
+    if not all(batch.converged) or any(not d.get('strict_qualified',False) for d in batch.diagnostics):
+        raise ValueError('all household HJB/KFE gates must pass before integration')
+    phi = mainline_phi(fixture['pgdp_reference'])
+    sigma = np.asarray(fixture['migration_wedge_destination_origin'],dtype=float)
+    population = np.array([s['N'] for s in states])
+    old_raw = np.array([s['ra0_raw_previous'] for s in states])
+    std = float(np.std(old_raw,ddof=0))
+    score = np.zeros(n) if std == 0 else (old_raw-np.mean(old_raw))/std
+    capital = build_bilateral_capital_network(BilateralCapitalNetworkInputs(
+        province_order=tuple(fixture['province_order']), illiquid_assets_per_capita_by_origin=batch.at,
+        population_by_origin=population, total_foreign_share_theta_by_origin=np.asarray(fixture['foreign_share_theta']),
+        distance_score_destination_origin=np.asarray(fixture['distance_score_destination_origin']),
+        lagged_return_score_by_destination=score,portfolio_return_by_destination=old_raw,
+        beta_distance=p['portfolio_beta_distance'],beta_return=p['portfolio_beta_return'],
+        lagged_return_provenance='LAGGED_COMPLETED_ITERATION_RAW_RETURN__SYNTHETIC_INITIAL_ANCHOR'))
+    migration = reconstruct_mainline_labor(consumption=batch.ct,population=population,
+        gross_wages=[s['wjt_gross'] for s in states],destination_taxes=[s['tau'] for s in states],
+        phi=phi,sigma=sigma,gamma_c=p['gamma_c'],phi_l=p['phi_l'])
+    params = {'epsilon':p['epsilon'],'theta':p['theta_rotemberg'],'delta':p['delta_depreciation']}
+    firms = []
+    for i,state in enumerate(states):
+        firm_source = dict(state)
+        firm_source['AtTax'] = float(batch.at_tax[i])
+        # Keep previous completed firm labor: never replace it by household Lt.
+        firms.append(evaluate_firm(firm_source,float(capital.destination_private_productive_capital[i]),
+                                  float(migration.lt_supply[i]),params,mainline=True))
+    wages = mainline_effective_wages([f.wt0 for f in firms],[s['tau'] for s in states],phi,sigma,
+                                    phi_l=p['phi_l'],alphal=p['alphal'])
+    monetary = taylor_assignment(istar=p['istar'],rho_pi=p['rho_pi'],
+                                 totalpit=fixture['totalpit'],epsilon_pi=fixture['epsilon_pi'])
+    fiscal = mainline_fiscal_accounts(states,firms,batch,monetary.rb)
+    shares = capital.portfolio_shares_destination_origin
+    raw = np.array([f.ra0 for f in firms])
+    next_payoff = raw @ shares
+    next_states = []
+    for i,(state,firm) in enumerate(zip(states,firms)):
+        updated = dict(state); updated.update(firm.as_source_dict())
+        updated.update(Ct=float(batch.ct[i]),At=float(batch.at[i]),Bt=float(batch.bt[i]),
+            AtTax=float(batch.at_tax[i]),Lt_HA=float(batch.household_lt[i]),
+            Lt_supply=firm.Lt,Kt_supply=float(capital.destination_private_productive_capital[i]),
+            Lt_firm_previous=float(state['Lt_prev']),Lt_firm_current=firm.Lt,
+            Lt_prev=firm.Lt,Kt_prev=firm.Kt,Yt_1=float(state['Yt']),
+            Zt_1=float(state['Zt']),pit_1=float(state['pit']),wjt_gross=firm.wt0,
+            rah=float(next_payoff[i]),w_eff=float(wages[i]),rb=monetary.rb,it=monetary.it,
+            ra0_raw_previous=firm.ra0,convergent=True)
+        next_states.append(updated)
+    return {'states':tuple(next_states),'firms':tuple(firms),'migration':migration,'capital':capital,
+            'fiscal':fiscal,'shares':shares,'lagged_score':score,'raw_next_payoff':next_payoff,
+            'phi':phi,'update_order':('HA','labor_and_same_S_capital','firm','net_wage','Taylor','fiscal'),
+            'GovInv_rule':'SOURCE_BOUNDARY_ADAPTATION_OUTSIDE_SINGLE_TURN__NO_C1'}

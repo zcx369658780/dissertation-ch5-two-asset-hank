@@ -74,3 +74,19 @@ def composite_household_wages(
             raise ValueError("wage_caculate produced an invalid composite wage")
         output.append(value)
     return tuple(output)
+
+
+def mainline_phi(pgdp_reference):
+    """Frozen reference, destination rows/origin columns, richer destination preferred."""
+    p = np.asarray(pgdp_reference, dtype=float)
+    if p.ndim != 1 or not np.isfinite(p).all() or np.any(p <= 0):
+        raise ValueError('pgdp reference must be a positive finite vector')
+    return 1.0 + 0.3 * (p[None, :] - p[:, None]) / (p[None, :] + p[:, None])
+
+
+def mainline_effective_wages(gross_wages, destination_taxes, phi, sigma, *, phi_l, alphal):
+    """Net composite wage; feed to HA with tau_HA=0 (no second deduction)."""
+    wages, taxes = np.asarray(gross_wages, dtype=float), np.asarray(destination_taxes, dtype=float)
+    provinces = tuple({'tau': float(t)} for t in taxes)
+    return np.asarray(composite_household_wages(provinces, wages, phi, sigma,
+                                               phi_l=phi_l, alphal=alphal))
