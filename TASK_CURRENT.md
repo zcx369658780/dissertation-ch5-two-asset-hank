@@ -1,13 +1,13 @@
-# TASK_CURRENT：V010首次HA失败单元已有回执SOURCE_ONLY精准提取
+# TASK_CURRENT：V010首次HA失败科学根因尚未证明，暂不执行
 
 日期：2026-10-15（Asia/Shanghai）。
-**ACTIVE_TASK=V010_FIRST_HA_FAILED_CELL_EXISTING_RECEIPT_EXTRACTION_SOURCE_ONLY**。
-**ALLOWED=EXISTING_SYNTHETIC_JSON_READ_AND_DEIDENTIFIED_SUMMARY_ONLY**。
-**NEW_HJB_KFE_SELECTOR_ROOT_PYTEST_MACRO_IRF_BUDGET=0；NO_CODE_CHANGES，NO_SCIENTIFIC_REEXECUTION**。
+**ACTIVE_CODEX_TASK=NONE__WAIT_OWNER_APPROVAL_FOR_NEW_BOUNDED_SYNTHETIC_HA_PRICE_COMPARATOR**。
+**NO_SCIENTIFIC_REEXECUTION_OR_MODEL_CODE_CHANGES_AUTHORIZED**。
 
-任务全文：[versions/0.0.10/first_failed_cell_evidence_task_20261015.md](versions/0.0.10/first_failed_cell_evidence_task_20261015.md)。
-确切前置：V010工程候选 `94de4501dec051b969bee9d852eba2d4591f30ef`，独立审议 `versions/0.0.10/implementation_review_20261015.md` blob `df7b4b38b3cc77b6cb0c7dac7b733d45f34274b6`。Owner已允许本轮仅从首次科学run现存`first_failed_cell.json`/`attempt_summary.json`和关联输入身份中提取原因；无权再次求解。
+原`V010_FIRST_HA_FAILED_CELL_EXISTING_RECEIPT_EXTRACTION_SOURCE_ONLY`已由Codex交回`V010_FIRST_HA_FAILED_CELL_SOURCE_ONLY_EVIDENCE`，本次不要求继续原读取。Astra独立核查GitHub源码selector门与历史同领域成功价格；详见[新交叉审议](versions/0.0.10/first_ha_price_domain_source_review_20261015.md)。原报告本地MD/JSON与SHA仅`CODEX_REPORTED_WITH_LOCAL_RECEIPTS`。
 
-原冻结plan仍固定 `bf091da33d59293f147d52c11580327d3ac2a85d`、blob `85138d8859d53295262fe13bf5bc277bca95ed3f`；不修改。原科学消费4/6 pytest，1/4 driver，1/26 HA，1626 selector cells和1642 roots仅继承记账，不构成新调用许可。原8 dirty树、真实C8/B3及旧研究不触。
+历史支持MATLAB-faithful诊断`rb=.02`、`ra=.06/.0675/.07`、家庭综合工资`13/15.5/18`，但其污染行KFE/单一收敛门不能替代V010 strict corrected HJB/KFE。当前首个失败HA的可独立算数输入`rah=.055`、`w_eff=1.7085897434929322`、`rb=.02`，且2省/31省原综合工资的求和规模不一样。**价格域不相容属可调查假说，不代表证明selector bug。**
 
-交付 `V010_FIRST_HA_FAILED_CELL_SOURCE_ONLY_EVIDENCE`，最终 `WAIT_ASTRA_V010_FIRST_HA_FAILURE_REASON_REVIEW / STOP`；V011 NOT_STARTED、Results FALSE。
+如Owner明确同意进一步科学调用，需单独前瞻性冻结同V010独立HA对照输入、次数、证据和停止，不改先前冻结plan/fixture、无需再SOURCE_ONLY搜证。此前已耗4/6 pytest、1/4 driver、1/26 HA及selector/root账维持，余额不自动解锁。
+
+原8 dirty/index/common-dir、A16/C9/window/CALL_LEDGER、model_activation=False/Results FALSE、真实C8/B3保护、V011 NOT_STARTED不变。
