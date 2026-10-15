@@ -1,11 +1,11 @@
-# TASK_CURRENT：V010实施与受界synthetic验证
+# TASK_CURRENT：V010候选已STOP，等已有首HA失败证据
 
 更新：2026-10-15（Asia/Shanghai）。  
-**ACTIVE_TASK=V010_MATLAB_FIRST_MAINLINE_IMPLEMENTATION_AND_BOUNDED_SYNTHETIC_VALIDATION**。  
-**权限=FROZEN_CODE_IMPLEMENTATION_AND_EXPLICIT_BOUNDED_SYNTHETIC_SCIENCE_ONLY**。
+**ACTIVE_CODEX_EXECUTION_TASK=NONE__WAIT_FIRST_FAILED_CELL_EVIDENCE_FOR_ASTRA**。  
+**NEW_HJB_KFE_SELECTOR_ROOT_PYTEST_MACRO_IRF_BUDGET=0__NO_NEW_EXECUTION_AUTHORIZED**。
 
-唯一准确任务：[versions/0.0.10/implementation_task.md](versions/0.0.10/implementation_task.md)。正式冻结实施合同：`versions/0.0.10/plan.md` @ commit `bf091da33d59293f147d52c11580327d3ac2a85d` / tree `668fa20883a295ee9bd831a0c542d39e366bec43` / blob `85138d8859d53295262fe13bf5bc277bca95ed3f`；人工输入 `synthetic_fixture_v1.json` blob `40915658d93403cfc21b33a6b864b332b7857749`。代码父 `a1db8c114dec0ab69d69a5576e153a7f868cba0e` / tree `4a118642da526d6bf2dfb65a1130f4d59d371374`。确认此身份后执行，不能用动态分支DRAFT或旧同步镜像代替。
+以前任务`V010_MATLAB_FIRST_MAINLINE_IMPLEMENTATION_AND_BOUNDED_SYNTHETIC_VALIDATION`，固定签发commit`cf829b695b80ece7e31328141feaec40165b0e9c`已收到Codex报告并STOP；[Astra本轮限定验收](versions/0.0.10/implementation_review_20261015.md)仅接收GitHub工程候选`94de4501dec051b969bee9d852eba2d4591f30ef`，不接收数值HA/GE。科学未重试；原冻结合同不追改。
 
-Codex在隔离的非共享Git clone中，仅改冻结白名单15个路径，自主进行工程focused以及严格预算内两省人工HA/有界外层/冻结验证/短递推；任何precondition失败或预算耗尽即STOP。受界科学预算从本次新任务开账，不重置旧C8/C9/历史失败。原保护tree、8 dirty、index/common-dir/untracked/ignored不可写；不读真实C8/2017/2018/B3/V009失败数组；不启动V011。
+下一动作只是请Codex或Owner提供其现存synthetic`first_failed_cell.json`、`attempt_summary.json`所需内容的安全脱敏摘录与源哈希供独立定位；**不是重新执行原冻结科学任务**。不得从已消费但未用尽次数推定有自动重跑许可，所有未来科学调用必须新明确授权且归入旧剩余额度账，不得恢复其他已耗预算。不改数据、参数、网格、selector门或测试标准以求PASS。
 
-终态：`WAIT_ASTRA_V010_IMPLEMENTATION_REVIEW / STOP`。结果分账：工程/人工HJB-KFE/稳态/短响应/真实GE与Results（后二者本任务必为未接受）。
+V011 NOT_STARTED；A16/window/C9/CALL_LEDGER/Results及原dirty/common-dir保护保持。

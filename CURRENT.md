@@ -1,14 +1,12 @@
-# 第五章 CURRENT：V010实施冻结与授权已发布
+# 第五章 CURRENT：V010集中实现已交付，HA第一个科学绑定FAIL_CLOSED
 
-更新：2026-10-15（Asia/Shanghai）。  
-**状态：V010_MATLAB_FIRST_MAINLINE_IMPLEMENTATION_ISSUED__AWAIT_CODEX_BOUNDED_DELIVERY**。
+日期：2026-10-15（Asia/Shanghai）。  
+**当前：V010_IMPLEMENTATION_CANDIDATE_REVIEWED__AWAIT_FAILCELL_LOCAL_EVIDENCE__NO_NEW_SCIENCE_PERMISSION。**
 
-当前唯一ACTIVE任务：[同V010集中实现与受限synthetic验证](versions/0.0.10/implementation_task.md)。**准确冻结计划身份**：commit `bf091da33d59293f147d52c11580327d3ac2a85d`，tree `668fa20883a295ee9bd831a0c542d39e366bec43`，`versions/0.0.10/plan.md` blob `85138d8859d53295262fe13bf5bc277bca95ed3f`；人工fixture blob `40915658d93403cfc21b33a6b864b332b7857749`；实施代码父 `a1db8c114dec0ab69d69a5576e153a7f868cba0e`。本次新权限由Astra单独签发，只准独立clone/白名单代码/受界synthetic科学；真实31省/2017/2018/C8、正式20期IRF、生产激活与论文Results无权限。
+Astra独立确认GitHub候选`94de4501dec051b969bee9d852eba2d4591f30ef`、tree`205eab47c4e4f9c6292c2ead9947d94d1a7579a5`、唯一parent`a1db8c114dec0ab69d69a5576e153a7f868cba0e`；15/15文件严格属于[冻结计划](versions/0.0.10/plan.md)白名单，人工fixture Git blob`40915658d93403cfc21b33a6b864b332b7857749`符合冻结身份；[V010本轮验收](versions/0.0.10/implementation_review_20261015.md)已限定接受**代码/工程来源**。Codex报告最终树24个focused测试PASS（本地回执未在Astra环境独立重跑），首个省级HA V0之后checkpoint2 F-order cell25 `NO_ADMISSIBLE_POLICY`并按合同STOP；未跑KFE、多省外层、冻结验证、响应。由于科学attempt绑定封存前实现，最终候选树仍无直接science验证。
 
-Owner已决定GovInv用原ra收益边界0.9/1.1（C1只保留历史科学验收）；工作目的地工资税一次扣除，财政人均与总量准确桥接。原MATLAB HA条件稳态+多省顺序单轮+有界GovInv/Zt外层+递推冲击继续为唯一主线。已接受的HA数值、K1 same-S/raw-ra0/lagged、人口人均与max_phi=.3方向修正不回滚。
+累计本轮Codex报告已耗：4/6 pytest进程、1/4 science driver、1/26 HA、1626 selector cells、1642 roots；余额不得因改名或重开目录自动恢复。本次没有给任何新科学运行许可；下一步先收现有synthetic`first_failed_cell.json`的可审诊断证据，不能猜测Newton/零资本失败机理。
 
-2026-10-15此前SOURCE_ONLY任务 `V010_MATLAB_MAINLINE_BASELINE_AND_MINIMAL_REPAIR_PROPOSAL` 已由Codex交付、Astra有限接受；见[限定验收](versions/0.0.10/source_alignment_acceptance_20261015.md)。[Owner科学裁决](versions/0.0.10/prefreeze_scientific_review_20261015.md)、[旧16文档同步限定验收](versions/0.0.10/scope_sync_acceptance.md)均已归档。不重复同步或重开旧Newton/V009人工调查。
+固定实施计划commit`bf091da33d59293f147d52c11580327d3ac2a85d`、plan blob`85138d8859d53295262fe13bf5bc277bca95ed3f`；签发task固定`cf829b695b80ece7e31328141feaec40165b0e9c`。Owner科学裁决GovInv原边界0.9/1.1、目的地工资税一次扣、财政总量保持；主线HA→单轮→有界外层→原递推不变。V008/V009人工仍AUXILIARY_RESEARCH_NOT_MAINLINE、旧Newton停用。
 
-代码父仅为`FROZEN_IMPLEMENTATION_START`，**不是已验收科学基线或GE**。原`D:\ProjectTemp\c5k1bturn56`、8 tracked dirty、index和external common-dir受保护；独立clone执行，不覆盖原处、不碰C8/B3和任何真实数据。V011 NOT_STARTED。A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE保持；旧预算未解锁。CH5_WORKFLOW_V1.2不变。
-
-历史2026-10-15交接在`docs/CH5_CONVERSATION_HANDOFF_20261015_V010_MAINLINE_PENDING_REVIEW.md`，属前一会话时点归档，不再是今日任务。新任务完成由Astra独立审查，不能Codex自授科学PASS。
+原D盘8 dirty/index/common-dir和旧预算不触、真实C8 A–D REQUEST_ONLY、A16 FAIL_CLOSED、C9 PAUSED、window UNACCEPTED、CALL_LEDGER UNRESOLVED、model_activation=False、Results FALSE。V011 NOT_STARTED；V1.2不变。

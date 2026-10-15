@@ -1,16 +1,17 @@
 # 第五章动态总目录
 
-更新：2026-10-15。**V010已正式冻结并下达唯一限域实施任务；只允许两省synthetic与白名单代码，不涉及真实C8/Results。**
+更新：2026-10-15。**V010已有15路径实现候选，GitHub源码限域接受；首个HA科学绑定FAIL_CLOSED，等待现有失败cell证据；无新科学运行许可，真实C8/Results仍禁。**
 
 | 用途 | 入口 | 时态 |
 |---|---|---|
-| 当前状态 | [CURRENT](../CURRENT.md) | V010 implementation issued / Codex待交付 |
-| 唯一任务 | [TASK_CURRENT](../TASK_CURRENT.md)、[V010实施任务](../versions/0.0.10/implementation_task.md) | 实施与两省合成科学新预算 |
+| 当前状态 | [CURRENT](../CURRENT.md) | V010已交候选、等待科学失败原证 |
+| 当前停点 | [TASK_CURRENT](../TASK_CURRENT.md)、[原实施任务](../versions/0.0.10/implementation_task.md) | 原task交付后STOP；等既有失败回执，不自动续跑 |
+| 最新独立验收 | [V010实施有限验收](../versions/0.0.10/implementation_review_20261015.md) | 15文件GitHub核源；24 tests Codex回执；HA第一attempt fail-closed |
 | 正式冻结计划 | [V010 plan](../versions/0.0.10/plan.md) | 固定commit `bf091da33d59293f147d52c11580327d3ac2a85d`、tree `668fa20883a295ee9bd831a0c542d39e366bec43`、blob `85138d8859d53295262fe13bf5bc277bca95ed3f` |
 | 冻结synthetic数据 | [fixture](../versions/0.0.10/synthetic_fixture_v1.json) | blob `40915658d93403cfc21b33a6b864b332b7857749`，不可临场改数 |
 | 科学决定 | [SCIENTIFIC_DECISIONS](../SCIENTIFIC_DECISIONS.md) 、[Owner裁决](../versions/0.0.10/prefreeze_scientific_review_20261015.md) | GovInv 0.9/1.1/C1历史、目的地税一次、财政总量 |
 | 源码方案接受 | [Astra限定验收](../versions/0.0.10/source_alignment_acceptance_20261015.md) | SOURCE_ONLY通过，不等于数值GE |
-| 版本登记 | [CH5_VERSION_REGISTER_CURRENT](CH5_VERSION_REGISTER_CURRENT.md) | V010冻结授权；V011未开始 |
+| 版本登记 | [CH5_VERSION_REGISTER_CURRENT](CH5_VERSION_REGISTER_CURRENT.md) | V010仅工程限域接受；V011未开始 |
 | 现行科研路线 | [路线图](CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md) | 原HA/有界外层/GovInv-Zt/递推IRF |
 | Owner纠偏 | [2026-10-15](CH5_OWNER_SCOPE_REALIGNMENT_20261015.md) | 科研目标及与V008/009分界 |
 | V1.2工作方式 | [CH5_ASTRA_WORKFLOW_CURRENT](CH5_ASTRA_WORKFLOW_CURRENT.md) | 委托、预算、独立验收、保护 |
