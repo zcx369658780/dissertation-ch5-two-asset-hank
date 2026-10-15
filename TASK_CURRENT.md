@@ -1,11 +1,13 @@
-# TASK_CURRENT：V010单点实验预检阻断，等待Owner是否补发进程许可
+# TASK_CURRENT：V010 corrected HA单点恢复的新一次科学许可
 
 日期：2026-10-16（Asia/Shanghai）。
-**ACTIVE_CODEX_TASK=NONE__PREVIOUS_ONE_PROCESS_EXHAUSTED__STORAGE_CAP_BREACHED__STOP。**
-**NEW_SCIENTIFIC_PROCESS_BUDGET=0；NEW_HA/HJB/KFE/SELECTOR/ROOT/PYTEST/MACRO/IRF_PERMISSION=0。**
+**ACTIVE_TASK=V010_CORRECTED_HA_UTF8_LOG_GUARD_ONE_SHOT_RECOVERY**。
+**PERMISSION=OWNER_REAUTHORIZED_ONE_PYTHON_PROCESS_AND_AT_MOST_ONE_CORRECTED_SYNTHETIC_HA_ONLY**。
 
-前次task `V010_CORRECTED_HA_SINGLE_PRICE_POINT_ONE_ATTEMPT`固定发行commit`21c736d4163a12978486c3b8256f4db8b9bd6c76`、任务blob`270f61b6d5e21a6afa7de1bf05aa3dabade4175d`已Codex报告`PREFLIGHT_BLOCKED_STOP`。仅触发Python预检进程1/1，九源码和全部输入未完成校验；GBK读取UTF8失败；新增文件43519638B＞33554432B硬上限（超9965206B）；HA科学0。回执SHA和本地保护为Codex报告而非Astra本机核验。
+准确任务：[versions/0.0.10/corrected_ha_price_probe_recovery_task_20261016.md](versions/0.0.10/corrected_ha_price_probe_recovery_task_20261016.md)；本次独立恢复freeze固定commit `9aca1018c77d19e9489f2baf59c02bc654923999` / tree `4a04fd536b1cd4dd82b07dbdc23b5d73d1c8f6cc` / blob `95843d1ec838f52b056a8ca768d3f4cc55022b6f`；不追改原科学probe manifest blob `c23d331bed34e5ca478324cdc05034609ecb91b7` 或固定候选代码 `94de4501dec051b969bee9d852eba2d4591f30ef`。
 
-[独立限定验收](versions/0.0.10/corrected_ha_price_probe_preflight_review_20261016.md)已归档。此处**没有剩余额度自动运行许可**；旧freeze和manifest不追改、原超额文件只读保全。后续若Owner显式同意，仅可单独冻结限域环境修复/新科学进程预算，保证修复默认GBK读文件、异常日志无raw bytes、写前硬上限，再对同一冻结价格点至多1次HA；此段只是建议，**不是ACTIVE TASK**。
+任务只能在新隔离目录修正runner UTF-8及异常日志保护，静态审核与写前存储硬门后**新增1个Python进程、最多1次HA**；output≤96MiB=100663296B（不包括但必须独立保留的历史超额文件）、新增clone≤2GiB=2147483648B、总墙钟≤2h；禁止pytest、旧任务重启、多个价格点、GE/IRF、模型代码改动、真实C8/B3读取。失败即STOP不重试。
 
-V010科学未完成，V011 NOT_STARTED；Results FALSE。原8 dirty/common-dir与C8/B3保护、A16/window/C9/CALL_LEDGER保持。
+历史违约永久并列：旧单点Python 1/1、HA0、原输出43519638B＞33554432B（超9965206B），该runner_result SHA仅Codex本地回执。原V010旧预算与A16/window/C9/CALL_LEDGER、Results FALSE、dirty/index/common-dir不动。
+
+交付`V010_CORRECTED_HA_ONE_SHOT_RECOVERY_RESULT` / 终态`WAIT_ASTRA_V010_CORRECTED_HA_RECOVERY_REVIEW / STOP`，Codex不自授科学ACCEPT，V011 NOT_STARTED。
