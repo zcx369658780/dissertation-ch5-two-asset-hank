@@ -1,3 +1,8 @@
+# 2026-10-15 新增：Owner采纳V009源→目的CES劳动厌恶权重B（合成人工专用）
+
+Owner已经批准用人均GDP相对差及`max_phi=0.3`保留富裕目的地低劳动厌恶的论文机制，而非全φ=1的中性方案。V009原冻结遗漏了数值参数，**只能用新冻结增补** [V009 φ方案B](versions/0.0.9/ces_phi_supplement.md) 追加：1省`phi=((1,),)`，2省人工`pgdp_ref=(1,2)`、目的行/来源列`phi=((1,1.1),(0.9,1))`，公式`phi[j][i]=1+.3*(pgdp_ref[i]-pgdp_ref[j])/(pgdp_ref[i]+pgdp_ref[j])`。pgdp仅外生固定人工参考，与现实2018/动态内生产出无关；原HANK/C8参数、eta=1、nu=5、sigma=0/其它固定试验参数不改。原13文件PRE-PHI候选保留未获科学稳态验收，原宏观/HJB/KFE实际0，不自动恢复已耗工程测试/旧科学额度。只有单独续跑授权后才可尝试。原论文PDF p99 公式同号，上传的旧MATLAB `HANK_mp_1turn.m:10`差值方向相反，不能照搬。动态phi/GDP反馈以后另设合同。
+
+---
 # 2026-10-15 Owner新人工科学合同（与旧C8分支严格隔离）
 
 Owner已批准V0.0.9的E1–E3合成两资产HANK研究pilot；**本批准不追溯改写旧HJB/KFE/K1/C1、历史R2/C9、原2018/2009与RESULTS资格，也不自动签发新的数值/真实数据调用**。固定细节及严格来源见 [V009 Owner科研采纳](versions/0.0.9/owner_scientific_adoption.md)、[V009正式冻结计划](versions/0.0.9/plan.md)、[先前独立科学审议](versions/0.0.9/scientific_proposal_review.md)及当前`CURRENT.md`。

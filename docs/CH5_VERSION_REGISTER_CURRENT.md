@@ -1,6 +1,12 @@
 # 第五章路线图与版本登记
 
-## 2026-10-15 当前：V0.0.9 合成两资产HANK已科研冻结并由Astra单独签发受限HJB/KFE实施授权
+## 2026-10-15 当前：Owner选方案B，V009遗漏φ数值已唯一增补冻结，等待一次单独续跑授权
+
+**`V009_CES_PHI_B_OWNER_ADOPTED__SUPPLEMENT_FROZEN__WAIT_SEPARATE_REMAINING_BUDGET_AUTHORIZATION__FULL_HANK_STATIONARY_NOT_RUN`**。Owner明确希望保留博士论文跨省人均GDP带来的劳动偏好差异，`max_phi=.3`，支持目标更富裕`φ=.9`、反向`φ=1.1`；本版[唯一权威补充](../versions/0.0.9/ces_phi_supplement.md)在旧冻结plan blob `cb76a840fdd9d1756728189bf29518679831aba6`外新发布：1省`phi=((1,),)`；人工2省`pgdp_ref=(1,2)`、目的行来源列`phi=((1,1.1),(0.9,1))`，实验前固定，保持原`eta=1,nu=5,sigma=0`与E1–E3所有参数。旧MATLAB `HANK_mp_1turn.m`方向不作为本新理论正确来源。完整模型中劳动仍随HJB政策/工资等内生，不将参考GDP内生化。
+
+Codex原候选 `18256cd70b827e133e52d7609746c8afadb63ac1` tree `6e06b66888a25640f40f265c3f4b5cb75e4cd575`、sole parent `d41d229b681e09b913c21deff7a057085b9bc419`只证明13新增科学代码及toy oracle预验收；缺phi导致真实science`NOT_RUN`，并非不收敛。报告pytest用4/8、science drivers0/4、macro0/4、HJB/KFE0/176及toy运算资源，账户不因新候选重置。须Astra对本增补commit/blob独立回读并**再次单独签发精确仅剩预算的续跑许可**；不得追改`plan.md`或`authorization.md`，也不得让V009代码candidate在未冻结参数前直接推断phi。原C8/真实31省/动态IRF/旧科学预算继续0，A16/window/C9/CALL_LEDGER/Results FALSE，V010 NOT_STARTED。
+
+## 2026-10-15 历史：V009合成人工HANK已冻结且首次授权（φ当时未固定）
 
 **`V009_FROZEN_AND_SEPARATELY_AUTHORIZED__SYNTHETIC_TWO_ASSET_HANK_ONE_PROVINCE_THEN_CONDITIONAL_TWO_PROVINCE__REAL_31_PROVINCE_AND_IRF_CLOSED`**。Owner完整批准E1–E3，[科研采纳](../versions/0.0.9/owner_scientific_adoption.md)与[数学数值冻结计划](../versions/0.0.9/plan.md)已在commit `f7caeb54b13ec977d1b503b124067ae522ca2433` tree `7c51c01cb81b5ca1dfe2124de4de1e3a154e71cf` / plan blob `cb76a840fdd9d1756728189bf29518679831aba6` 完成一次原子发表及远端独立回读；**冻结之后单独签发** [授权文书](../versions/0.0.9/authorization.md) `ASTRA_APPROVED_EXECUTION__CH5_V009__OWNER_ADOPTED_SYNTHETIC_TWO_ASSET_HJB_KFE_STATIONARY_ONLY`，只适用于新独立corrected-model人工1省、经全部门通过后非对称2省的内生HJB/KFE/资产债券/劳动/财政商品稳态数值。基线V008 `d41d229b681e09b913c21deff7a057085b9bc419` tree `88833acf90613380afa30ab8d6ee7e0297e98664`；仅13新增白名单路径、不合并main、不动原D盘dirty和B3。
 人工参数/asset grid/init/Zgenerator在计划§3已经首跑前预注册，拒绝因不收敛事后调参。宏观根≤4、家庭新HJB/KFE≤176及8h、根/Scalar root、512MiB/256MiB硬界从实施与聚焦测试总账合并消费，重复失败与final-tree验证计入；动态IRF、24x24/31省正式求解、真实C8文件、历史已耗预算与Results仍0许可。即使软件oracle PASS，若HJB/KFE或市场条件不达标不能宣称合成HANK稳态取得；Codex必须报告失败和STOP。V0.0.10 NOT_STARTED，V1.2工作流/Owner连续委托不修改。
