@@ -17,3 +17,8 @@ V005—V009正式冻结、接受/失败和预算保持各自历史资格。V008/
 纠偏前长登记仍以原blob 88d70fcb596ea580b8cc212b6dee4a257c15639e保存于[历史副本](history/scope_realignment_20261015/CH5_VERSION_REGISTER_BEFORE.md)。纠偏同步阶段快照固定在916e2b47d3489f6eacd814b55cc568d92be4c9fb，本轮推进不覆盖那个本地镜像。
 
 当前只有有限源码和文本方案许可，未冻结主线实现、未发放模型/真实数据调用。V1.2角色与Owner连续版次规则不改。原GovInv/C1等科学冲突待集中审议，A16/window/C9/CALL_LEDGER/Results与工作树保护维持。
+
+
+## 2026-10-15 会话冻结（不改变唯一任务）
+
+Owner要求在V010任务发表后封存当前会话，并约定**V010源码集中方案的Codex结果由新会话验收**。发布commit `0320916bd2447d1846099cc90e52bd92c920ebb1`、tree `fa514c7658a46fe2fcb4f7301ada0110bec32a59`，task blob `d4aacdafe5f4d0248745f8754088afd83fc1c6d2`保持不变。当前分类：`TASK_ISSUED__EXECUTION_RESULT_NOT_YET_PRESENT_IN_THIS_CHAT__NEXT_CHAT_REVIEWS`。 [完整Owner决策和交接](CH5_CONVERSATION_HANDOFF_20261015_V010_MAINLINE_PENDING_REVIEW.md)记录主线纠偏、同步有限接受、V008/V009人工支线隔离、原GovInv/C1待决、保护与下一验收次序；不是二次立版或科学运行许可。

@@ -24,3 +24,8 @@ Owner要求的一次16文档同步已由Astra[限定验收](../../versions/0.0.1
 纠偏前知识全文固定于db2c2e289419ecab7921667e210bd510ff3c447b同路径，纠偏同步快照在916e2b47d3489f6eacd814b55cc568d92be4c9fb。各版科学冻结和接受/失败原件不改。
 
 原D盘8 dirty、index、untracked/ignored、外部.git及B3不覆盖清理；A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE及真实C8 A–D REQUEST_ONLY/旧预算保持。项目原PDF/ZIP仅辅助来源，不跨入DeepLearning-HANK、EliteSync或其它仓库。V1.2及Owner连续推进委托不变。
+
+
+## 会话边界：2026-10-15 下一会话验收而非重复规划
+
+Owner已要求先在GitHub保存本次Owner决策、V010 task和科学范围，并把**同V010最新已发表的SOURCE_ONLY结果验收**留到新会话。 [交接快照](../CH5_CONVERSATION_HANDOFF_20261015_V010_MAINLINE_PENDING_REVIEW.md)。其固定发行commit `0320916bd2447d1846099cc90e52bd92c920ebb1`、task blob `d4aacdafe5f4d0248745f8754088afd83fc1c6d2`未改，直到Codex交付前不能宣称结果已审。首要保护是“修错原MATLAB、保留HA黑箱/有界多省GovInv-Zt/原递推IRF”；不继续人工Newton支线，不替Owner决定GovInv/C1，不凭同步或代码提交开放现实GE、IRF、Results。所有个人QMD/Basic Memory仍NOT_UPDATED，本次只在仓库文档中保存。

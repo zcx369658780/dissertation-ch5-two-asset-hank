@@ -15,6 +15,8 @@
 | 版本登记 | [当前登记](CH5_VERSION_REGISTER_CURRENT.md) | V010接续，V011未启动 |
 | 工作方式 | [V1.2](CH5_ASTRA_WORKFLOW_CURRENT.md)、[Owner持续委托](CH5_OWNER_CONTINUOUS_VERSION_DIRECTIVE_20261015.md)、[既有AGENTS](../AGENTS.md) | 角色不变；本次同步停点已由限定验收解除，执行仍看新TASK |
 | 长期知识 | [知识入口](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 记住原项目范围，不宣称本地记忆系统自动更新 |
+
+| 本会话归档／下会话验收指引 | [2026-10-15 V010主线交接](CH5_CONVERSATION_HANDOFF_20261015_V010_MAINLINE_PENDING_REVIEW.md) | Owner纠偏、最新版已发表任务固定Git身份、只读预算、V009辅助化与待决GovInv/C1；当前无Codex新任务结果，交新会话审查 |
 | 历史保全 | [纠偏前原文说明](history/scope_realignment_20261015/README.md) | 历史blob未修改，没有执行权限 |
 
 精确方法来源：[原MATLAB外层稳态审计](CH5_TWO_ASSET_HANK_MATLAB_FAITHFUL_GE_STEADY_STATE_CLOSURE_SOURCE_AUDIT_AND_CONTRACT_FREEZE_REPORT.md)，记录原GovInv/Zt、边界和无联合宏观根；原论文5.2.7/5.3。需按Owner新定位使用，不能把旧“MATLAB绝对数值权威”当作复制bug的理由。
