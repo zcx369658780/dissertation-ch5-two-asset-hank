@@ -1,6 +1,13 @@
 # 第五章路线图与版本登记
 
-## 2026-10-15 当前：Owner连续版次授权生效，V0.0.9已启动DRAFT并等待Codex完整HANK科学方案
+## 2026-10-15 当前：V0.0.9 源码/理论/安全镜像集中提案已审，Owner新合成HANK科学决策门
+
+**`V009_SOURCE_ONLY_SCIENTIFIC_PROPOSAL_REVIEWED__WAIT_OWNER_NEW_SYNTHETIC_HANK_ECONOMIC_AND_NUMERICAL_BASELINE__NO_SCIENCE_EXECUTION`**。Codex按V009原SOURCE_ONLY只读许可完成53份精确源/合同和隔离治理镜像，零Python/HJB/KFE、零真实受保护原件、零science/模型、零代码候选，回报本地文档blob一致和receipt `22BC74F8EC66C2D77483769DEA4A3512E5BC6DAAAD0C00354FE02F1C8150B75A`；网页仅从GitHub独立确认源blobs，镜像本地读回为Codex回执证据。Astra本轮独立GitHub核V008代码、旧HJB/KFE索引/accepted科学法则，并记录 [V009正式科研审议](../versions/0.0.9/scientific_proposal_review.md)。V009原DRAFT未冻结，V1.2含连续立版规则无需新工作流变更。
+
+科学重点：真正内生`(b,a,z)` HJB、same-Q唯一闭类KFE、CES/单次税/全国财政与资本/债券市场出清，首个合成HANK稳态要与V008给定分布的条件稳态分级。**Astra发现Codex按`I^p=(r+δ)K^p+D`书写的资本基金式在目的省层面一般缺`R_j=Σ_iS_ji A_i(r_ai-r_j)`的固定S跨省再平衡现金流，虽全国ΣR=0，仍须在新模型精确记账/非对称Oracle。**此外原top-level KFE行置换与已采纳exact-positive restricted-gesvd法则不兼容，24×24推广不能沿用800/rank799硬编码。
+
+E1资产产权(人工a权益、b国家债权/新收益无旧clip)、E2企业竞争性零利润/全国政府/signed转移/公共资本融资、E3人工时间与参数、20×20×2首次真正HJB/KFE数值及网格推广，是**新的高风险Owner经济/科学选择**；据持续授权须停Owner一次裁决，不能擅自实施。V008代码建议基线`d41d229b681e09b913c21deff7a057085b9bc419`仍PROPOSED，旧数据C8 A–D REQUEST_ONLY、A16 FAIL_CLOSED/window UNACCEPTED/C9 PAUSED/CALL_LEDGER_UNRESOLVED/Results FALSE、旧science预算CLOSED不变。V0.0.10 NOT_STARTED。
+## 2026-10-15 历史：Owner连续授权生效且V009初启版前DRAFT
 
 **`OWNER_STARTED__V009_DRAFT__WAIT_CODEX_FULL_CORRECTED_HANK_STEADY_STATE_AND_DYNAMIC_CLOSURE_PROPOSAL__NO_SCIENCE_EXECUTION_OR_REAL_READ_AUTHORIZED`**。Owner于V0.0.8独立ACCEPT/CLOSED后授权继续下一科研长版，并授予**连续长版本的版前自动启动委托**：无新的工作流/重大科学/高风险权限决策时，Astra每轮验收和归档后直接开始下一DRAFT+SOURCE_ONLY一次任务，不再反复问Owner是否继续；若需**改工作流**则`STOP_AND_NOTIFY_OWNER__WORKFLOW_CHANGE_REQUIRED`并让Codex按Owner批准在隔离位置同步文件。权威决定见 [Owner 2026-10-15长期委托](CH5_OWNER_CONTINUOUS_VERSION_DIRECTIVE_20261015.md) 与 [V1.2限域工作规则](CH5_ASTRA_WORKFLOW_CURRENT.md)，没有授权后台、自动编程、真实protected读取或新高风险模型调用。
 

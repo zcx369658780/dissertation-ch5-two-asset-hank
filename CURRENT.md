@@ -1,12 +1,14 @@
-# 第五章 CURRENT：Owner长期委托已记录，V0.0.9 已启动版前 HANK 闭合研究
+# 第五章 CURRENT：V0.0.9 SOURCE_ONLY 科学方案已独立审议，等待Owner合成HANK新经济基准
 
 日期：2026-10-15（Asia/Shanghai）
-**版本状态：`OWNER_STARTED__V009_DRAFT__WAIT_CODEX_FULL_CORRECTED_HANK_STEADY_STATE_AND_DYNAMIC_CLOSURE_PROPOSAL__NO_SCIENCE_EXECUTION_OR_REAL_READ_AUTHORIZED`**
+**状态：`V009_SOURCE_ONLY_SCIENTIFIC_PROPOSAL_REVIEWED__WAIT_OWNER_NEW_SYNTHETIC_HANK_ECONOMIC_AND_NUMERICAL_BASELINE__NO_SCIENCE_EXECUTION`。V009仍是DRAFT，尚未获批准新的经济学试验产权/财政/参数及HJB/KFE计算。**
 
-Owner在V008独立关闭后明确授权继续迈向完整HANK稳态/正式IRF，并给出长期规则：**只要已有科学路线无需新的工作流/重大科研/权限决定，Astra在每个交付后主动独立验收归档并进入下一个顺序长版本，不再逐版询问；如需要调整工作流，先STOP告诉Owner，获批后请Codex安全同步文档。** 记录见 [长期Owner版本委托](docs/CH5_OWNER_CONTINUOUS_VERSION_DIRECTIVE_20261015.md)、[V1.2限域例外](docs/CH5_ASTRA_WORKFLOW_CURRENT.md)、[知识入口](docs/knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md)。这是对话内顺序推进，不是后台任务，也不放行未批准科学计算。
+Codex通过Owner上传集中报告完成V009版前53份精确Git源/合同的SOURCE_ONLY审阅和五份治理文档的**独立本地mirror同步（CODEX_REPORTED_WITH_LOCAL_RECEIPTS）**，包括两项行政包装器错误与修复；GitHub可独立核实被同步的五个原权威blob，不能假装网页已读D盘SYNC_RECEIPT。原本地HEAD与8 dirty路径未受Codex写入影响（仅只读Git类别检查；未做本轮字节全树独立保护）。
 
-**V009 目前只是DRAFT**：[V0.0.9研究提案](versions/0.0.9/plan.md)。Codex将一次集中SOURCE_ONLY复核已接受旧HJB/KFE与新的`reconciled_*.py`，提出真的完整`(b,a,z)`家户最优化→stationary KFE→地区资本/劳动与全国财政资产出清→合成HANK稳态、进一步完整前瞻性动态IRF的方程、方法和精确硬预算。**没有新的科学调用、真实protected数据、HJB/KFE/动态数值、模型源码改写或正式实施授权**，任何新Owner未采纳方程须停点审议。
+Astra科研结论详见 [V009独立审议](versions/0.0.9/scientific_proposal_review.md)：优先真正内生`(b,a,z)` household HJB / final same-Q KFE / CES工资劳动 / 资产债券/全国财政和完整合成HANK稳态，随后才设计正确的forward KFE/backward HJB动态IRF。V008六模块可提供已接受CES和人工账户，而旧顶层`kfe.py`行置换和`(a,b,z)` a-fast与accepted corrected`(b,a,z)` b-fast及restricted gesvd不兼容；旧new corrected KFE硬编码800/rank799等，24网格推广需新科学资格。
 
-V008终态`CLOSED__ACCEPT__CORRECTED_SYNTHETIC_ACCOUNTING_CONDITIONAL_STATIONARY_AND_SHOCK_DIAGNOSTIC_ONLY__REAL_HANK_IRF_BLOCKED__WITH_OBSERVATIONS`；accepted code candidate`d41d229b681e09b913c21deff7a057085b9bc419` / tree`88833acf90613380afa30ab8d6ee7e0297e98664`未合main。V009代码基线`PROPOSED_FROM_V008`，须Codex查源Git/dirty后冻结。原D盘worktree`a1db8c114dec0ab69d69a5576e153a7f868cba0e`、8 tracked dirty/历史untracked/ignored及外置Git common-dir/B3有限备份都不合并、不覆盖、不清理。V008路径额度4/4、31省求解2/2等旧账不因顺序版次恢复。
+**新科学发现**：fixed`S[j,i]`+来源基金`r_a,i=∑_j S_ji r_j`时，省级私人资本动态必须计入跨地基金重新配置`R_j=∑_i S_ji A_i(r_a,i-r_j)`且全国∑R=0；不能将全国的`(r+δ)K+D`不带R直接用作逐省投资。新合成HANK拟议E1-E3决策包：E1私人基金权益a≥0、全国政府债券b≥0、调整真实资源成本、`AtTax/mobility/clip/taper=0`且fixed S含R；E2零利润竞争性企业、统一国家政府、Kg/Bg给定、signed T财政工具和公共资本折旧账户；E3人工模型期与预注册参数+首先20×20×2单省HJB/KFE/资产出清，2省/网格加密仅过前置后，31省和动态IRF0额度。**这些都是Astra推荐、尚未Owner科学采纳**。提案仍不冻结。
 
-Original C8历史R2未达严格阈值、真实C8阶段A–D访问仅REQUEST_ONLY；旧HJB/KFE/科学消费者/C9数据调用预算关闭。`A16 UNRESOLVED/FAIL_CLOSED`、`window UNACCEPTED`、`C9 PAUSED`、`CALL_LEDGER_UNRESOLVED`、`model_activation=False`、`Results FALSE`保持。Owner原Option1、人口人均不`N=P/3`、收益`raw-ra0`同S lagged/C1及2017/2018时间价格合同不追改。工作流`CH5_WORKFLOW_V1.2`含唯一Owner版本连续授权例外；V0.0.10 NOT_STARTED。
+V008 accepted代码`d41d229b681e09b913c21deff7a057085b9bc419` tree`88833acf90613380afa30ab8d6ee7e0297e98664`，V009建议继承但`NEXT_BASELINE_ADOPTION=PROPOSED/UNDECIDED`；GitHub main未合并，原D盘8 dirty/untracked/ignored与外部Git common-dir/C盘B3不覆盖/清理。Owner连续顺序立版授权有效，**不等于可自行采纳新E1-E3重要经济方程或重开科学预算**。这是科学停点，不是工作流变更，不必重复Codex镜像。
+
+原C8真实产物A–D仅REQUEST_ONLY、A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE、旧科学/data/consumer预算CLOSED。V0.0.10 NOT_STARTED，等待Owner对E1-E3完整人工研究pilot一次性确认后再集中冻结V009并独立授权。
