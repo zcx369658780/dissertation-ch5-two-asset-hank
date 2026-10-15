@@ -1,43 +1,30 @@
-# 第五章网页知识入口与恢复摘要
+# 第五章长期知识与恢复入口
 
-## 2026-10-15 V009合成HANK失败有限关闭、连续启动V010的关键经验
+更新：2026-10-15，Owner确认[主线纠偏](../CH5_OWNER_SCOPE_REALIGNMENT_20261015.md)。
+**优先记忆：本项目当前是修正原MATLAB错误并Python重写第五章，不是从零另建HANK模型或替换用户半年多形成的求解方法。**
 
-最新人工程序候选 `e25f8e22490dddf57568e14aec2819d52603a78f`，tree `4b161428470e4bc8070ed4ec4010a0ea08f9695a`、原13白名单和方案B `phi11=1`、双省目的行来源列`phi=((1,1.1),(.9,1))`仍保留。Codex报告真正单省宏观HANK未收敛/无非退化私人资本；五组家庭HJB/KFE有局部B/D及唯一34态KFE但At=0，初始宏观残差明显非零；第六宏观评估在upper-b=2、a=2.1053、z=.8家庭策略被拒。Astra静态读`stationary.py`证明**第六宏观评估是初值+4Jacobian差分后的首次未接受full Newton试探**，代码直接抛出而不继续阻尼试探；不等于经济体必无稳态。单省phi=1，所以与未跑的双省偏好`.9/1.1`无关。V009宏观1省2/2已耗，动态IRF仍未准入；最终Windows科学证据属Codex LOCAL_ONLY，不能冒充网页独立重跑。详见 [V009最终验收](../../versions/0.0.9/acceptance.md) 与[复盘](../../versions/0.0.9/retrospective.md)。
+## 必须跨会话保留的科研定位
 
-按Owner持续委托已经启动[ V010 SOURCE_ONLY取证计划](../../versions/0.0.10/plan.md)，仅分析已产生的V009新合成局部数组/Jacobian/失败候选及原源码，禁止新HJB/KFE/根/真实C8读取。若以后需要新经济法则、可行域Newton回溯或科学额度，先集中提交Owner决策，不自动重开V009。V1.2不变，旧A16/C9/window/CALL_LEDGER/Results资格不变。
+省级HANK_2ASSETS_HJB作为非线性条件稳态HA黑箱，在合适的价格、资产域和省级参数下产生消费/储蓄/劳动、平稳分布及已有不平等统计。多省外层按HANK_mp_1turn/HANK_mp_1eq顺序更新劳动/资本/企业/工资/货币财政，采用明确边界和GovInv/Zt自适应校准求系统稳态，再从该基点生成原递推地区冲击响应。
 
+黑箱接口不豁免HJB/KFE内部验证；原MATLAB/论文可能含错，目标是修复具体错误并保持总体方法。源忠实parity与经济正确性分账，但不得以“更标准的HANK”为由默认替换整套迭代、债券制度或动态方法。
 
-## 2026-10-15 新科研决策：保留人均GDP驱动的劳动偏好矩阵方案B
+不默认使用Newton/fsolve宏观联合根、不强加Bt=Bgov或内生财政T，不把竞争性人工模型、人工资产域/校准或完整前瞻动态路径当作主线先决条件。V008/V009辅助人工代码、实验和失败仍保留、不删除；不自动作为主线基线。旧V010 Newton/a=0调查停用。
 
-Owner明确优先保留原博士论文第79页的`max_phi=0.3`有界相对劳动厌恶机制，而非人工方案A全φ=1。V009本次只在原冻结`plan.md`之外补数值参数：[CES φ方案B](../../versions/0.0.9/ces_phi_supplement.md)。1省`phi=((1,),)`、2省目的行来源列`phi=((1,1.1),(0.9,1))`，来源是人工固定pGDP参考比`1:2`，不是2018真实数据，不在宏观求根内反复重算。旧MATLAB计算公式差值方向与论文反向，不照搬。V009已提交原blocked工程候选`18256cd70b827e133e52d7609746c8afadb63ac1`，科学HJB/KFE/宏观0次；pytest已用4/8，续跑不重置。旧科研/安全保护和V1.2工作流持续有效。
+Owner确认人口/人均，不N=P/3；保留max_phi=0.3及来源减目的的人均GDP偏好方向。人工两省phi=((1,1.1),(.9,1))只在其已冻结人工例子适用，不能代替现实31省输入。
 
-## 2026-10-15 Owner长期规则与最新科研路线（覆盖本文旧迁移时态，不覆盖科学原证）
+## 需要保留而不擅自化解的历史冲突
 
-Owner明确委托：在Codex交付并完成Astra独立验收、版本归档之后，若没有新的工作流修改/重大科学或数据授权选择，则**直接顺序立下一科研长版本**；不要每版再次询问“是否继续”。任何**工作流变更**需`STOP_AND_NOTIFY_OWNER__WORKFLOW_CHANGE_REQUIRED`，先告知Owner；经同意后让Codex在安全隔离位置同步权威文档和本地研究知识并回读，不能覆盖原8个dirty文件或未核的QMD/BasicMemory。持续有效的准确Owner授权见 [版本推进长期指令](../CH5_OWNER_CONTINUOUS_VERSION_DIRECTIVE_20261015.md)；[现行V1.2工作流](../CH5_ASTRA_WORKFLOW_CURRENT.md)新增限域Owner例外，而不是自动获取受保护数据/科学调用权限。
+原GovInv收益边界调节与后来C1残差律不同；raw-ra0/used回报、Lt时序、税基、AtTax/Tt人口单位等需最小集中对照。恢复主线不等于自动撤销所有HJB/KFE、K1/C1接受或复制旧bug。旧科学冻结、失败与预算在原范围保留。不得再以人工A=0或Newton失败推翻原方法。
 
-2026-10-15 V0.0.8已受限接受：新的corrected CES劳动—综合工资对偶/全国单次工资税/统一财政人工账，在1/2/31个**人工省份**给定两资产和家庭分布下取得条件稳态；四条单省外生AR(1)逐期静态响应数值可复算但绝非正式HANK IRF，Gate D`IRF_BLOCKED__NO_DYNAMIC_HANK_CLOSURE`，Results FALSE。已接受新代码候选`d41d229b681e09b913c21deff7a057085b9bc419`、tree`88833acf90613380afa30ab8d6ee7e0297e98664`。Owner本轮已授权顺序启动V0.0.9，重点是**完整合成两资产HANK家庭最优化/HJB、前向KFE/资产/财政与动态IRF真实科学方程闭合**，先Codex SOURCE_ONLY集中方案，实际数值新许可为0；以[CURRENT](../../CURRENT.md)为当轮状态权威。原C8 A–D真实文件仅REQUEST_ONLY，A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED/CALL_LEDGER_UNRESOLVED及旧封闭预算不变。
+## 当前接续方式
 
-2026-10-12迁移安全正文；复用本轮前已完成知识归档，不重新总结全部sessions。原本地导航、CH5_RECOVERED_KNOWLEDGE和CH5_ARCHIVE_20261012保留在唯一代码树docs/knowledge；含私有日志定位/本机细节，标LOCAL_ONLY，未作为完整外发正文。本页给网页端可用内容和覆盖边界。
+先读CURRENT、TASK_CURRENT、主线纠偏决定和修订路线图。当前V010_RESCOPE_DRAFT，**仅Codex文档同步一次**；同步回执未获Astra核验前不执行科研、读失败数组或自动立下一版。Owner连续版本委托仍在，但本轮明确先同步再继续。
 
-## 决定及来源
-2026-09-29原Owner讨论先尝试户均，随后10:02:45 UTC明确：“现在我们封存户均这个思路，把稿件改回人均（不然前期的程序参数校准部分又要重来了）。”10:13:53 UTC补充人均劳动与人均资产/收入对应，家庭不是严格三个人。原会话01a0ec2a-e8de-71d1-aa90-e7990e45276c，本地原user行538、626在已完成归档中核出，原日志LOCAL_ONLY。人口/人均方向保持、户均封存，不N=P/3，不再重问人或户。
-[劳动历史安全正文](published/CH5_LABOR_UNIT_HISTORY_AND_EVIDENCE_20261010_145723Z.md)区分人口对象与百人尺度。NU_100_PERSONS/MU_10WAN_YUAN是历史源码/外会话报告，不是本次运行核验；劳动人数/工时/效率单位、完整N缩放、真实人均分母、时点与firm可比性仍未知。firm Lt称“模型生产端劳动投入”，不能提前认效率劳动。
+[同步任务](../../versions/0.0.10/owner_scope_document_sync.md)同步本页、路线图、科学索引和当前任务到隔离文档镜像，并保存本地ACK。网页不能声称QMD/Basic Memory/ChatGPT账户记忆已经更新。历史本地知识项目名ch5-two-asset-hank-knowledge、QMD collection ch5-knowledge仅作原有定位线索；本轮无写入它们的权限。
 
-## 当前已报告接受与未闭链
-[进度快照](published/CH5_WORK_PROGRESS_FLOW_MANUAL_HANDOFF_20261011_140603Z.md)及[验收账](published/CH5_WORK_ACCEPTANCE_LEDGER_MANUAL_HANDOFF_20261011_140603Z.md)保留10月11日证据账。迁移只核其已存在内容，不新读源码/跑测试，不追认旧失败。
-HA局部sum(z*l*g*db*da)；corrected adapter局部归约及optional frozen投影；batch schema；外部callback/batch消费与firm局部接线已在交接中报告接受，SOURCE_ONLY/CACHED/DOCUMENT_ONLY范围分开。部分劳动候选本身仍写WORK_REVIEW_PENDING，其接受仅Work交接报告，本轮未核原接受工具回执。
-实际solver输出→外部数组来源、聚合及frozen实际调用、frozen标量→batch构造、callback真实装配、量纲/人口分母/时点及科学运行仍未闭。局部接受不能拼成完整actualroute/runtime/science接受。
-最新ACCEPT/CLOSED仅scripts/tools直接Python文件metadata门：13文件、名称候选binding脚本15010bytes。末binding门原turn completed308677/600000ms未超时，完整交付缺失及contextCompaction后final失配，DELIVERY_INCOMPLETE / NOT_ACCEPTED / CLOSED；prepared不等于disk，不补交不补跑。
-fiveFalse、ResultsFALSE、C9PAUSED、windowUNACCEPTED、CALL_LEDGER_UNRESOLVED、C8/RCOTUNKNOWN、A16allUNRESOLVED__FAIL_CLOSED、normalinitNOT_READY-NOT_RUN、science/economics/algorithm/convergence/guardsNOT_CHECKED及production未接受保持。
+## 历史来源与保护
 
-## 归档、恢复测试与缺口
-已有归档实际验证四类问题：人口/户均决定、Python检测与要求、完整劳动桥、末binding门拒绝原因；QMD关键词检索并回读对应正文，Basic Memory显式本地项目检索/笔记读回。它证明有限检索可找回，不证明科学正确或全历史覆盖。
-Owner在本次迁移指令补充：已完成无交接新会话恢复测试。记为OWNER_REPORTED_COMPLETED，具体测试时间、会话ID和逐字回答未提供，不补造，不升为本轮独立验收。此前归档只称尚未完成独立新会话验证的截点陈述保留，以此补充更新。
-归档未覆盖archived_sessions、其他历史Work独立日志、未落地网页会话；recall无已有数据库，未建全局索引。原user来源由已定位日志核出，不称recall成功搜索全部历史。
-Basic Memory本地项目与QMD named index均ch5-two-asset-hank-knowledge，QMD collection ch5-knowledge，显式路由；共享默认项目曾变化，原因未独立归因。网页不能调用这些本地工具。
-历史检测Python3.11.9；pyproject要求>=3.11、numpy>=2.0、scipy>=1.14；包安装版本与科学运行解释器未核。本轮没有重新检测/运行，不能把配置要求当环境通过。
+纠偏前本页全文固定在commit db2c2e289419ecab7921667e210bd510ff3c447b同路径，blob 695a75fd4e6b3e557d105dfb438042c0fed6e207；V005—V009历史与各受信来源均保留。本页不追改旧科学验收或本地原日志。
 
-## Sources正文与历史
-五份旧Markdown在[project-sources](project-sources/DISSERTATION_KNOWLEDGE_BASE_CURRENT.md)以历史快照复用：知识库资格、研究改写结构、旧治理、历史证据索引及旧替换清单。旧状态、旧Work角色和任务授权被当前[新工作流](../CH5_ASTRA_WORKFLOW_CURRENT.md)替代，科学定义/证据限制保留。
-论文PDF和MATLAB ZIP仍在项目Sources，可能含唯一全文；本轮不上传二进制、不据存在认全文已核。旧24项本地备份仅历史清单声称存在，本轮未打开或核存，LOCAL_ONLY；需要未覆盖原材料由Owner人工提供脱敏片段/提交快照。
-隔离第五章、DeepLearning-HANK、EliteSync/v10，其他项目决定不代入。敏感数据、凭据、私有日志、环境本地细节留本地；GitHub正文不是全部本地成果自动同步。
+原论文PDF/MATLAB ZIP为Owner辅助源，不能把存在、OCR或记忆摘要冒称逐式独立核验。其他项目DeepLearning-HANK、EliteSync、Zotero独立仓库不混入本模型。原dirty/index/untracked/ignored及B3不覆盖/清理；真实C8 A–D REQUEST_ONLY，A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER_UNRESOLVED、model_activation=False、Results FALSE和旧预算继续保持。

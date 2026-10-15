@@ -1,51 +1,28 @@
 # 第五章动态总目录
 
-**现行最新（2026-10-15）：V0.0.9新phi-B候选`e25f8e22490dddf57568e14aec2819d52603a78f`已在单省真实合成HJB/KFE的宏观稳态门正确停止；五个家庭局部求解报告满足B/D及唯一闭类KFE，但私人资本A=0，首次完整Newton未接受试探遭`NO_ADMISSIBLE_POLICY`，没有单省HANK GE或双省运行。Terminal `CLOSED__LIMITED_ACCEPT__V009_PHI_B_CODE_AND_REPORTED_SCIENCE_STOP_ONLY__NO_SYNTHETIC_HANK_STEADY_STATE__WITH_OBSERVATIONS`，详细[终验](../versions/0.0.9/acceptance.md)；按Owner长期授权已正式启动[V0.0.10 只读取证 DRAFT](../versions/0.0.10/plan.md)，状态 `V010_OWNER_CONTINUATION_DRAFT__WAIT_CODEX_V009_NEWTON_TRIAL_AND_ZERO_PRIVATE_CAPITAL_FORENSIC__ZERO_SCIENCE_CALLS`，禁止新科学调用、真实C8/A16/C9及Results。参见[CURRENT](../CURRENT.md)及[版本登记](CH5_VERSION_REGISTER_CURRENT.md)。V011 NOT_STARTED。**
+更新：2026-10-15。
+**当前仅执行Owner主线纠偏后的文档同步；全部科研任务暂停。V010已重定范围，旧Newton取证任务停用。**
 
-这是当前导航；条目按用途区分当前资料与历史快照。网页顾问必须实际读取正文及提交，不能以本目录代替证据。
+## 当前入口
 
-| 逻辑槽位 | 现存正文 | 使用方式 |
+| 用途 | 正文 | 适用范围 |
 |---|---|---|
-| 当前工作方式与角色 | [V1.2含Owner连续版次例外](CH5_ASTRA_WORKFLOW_CURRENT.md)、[Owner长期委托](CH5_OWNER_CONTINUOUS_VERSION_DIRECTIVE_20261015.md)、[本地启动规则](../AGENTS.md) | 仅顺序版前立版免重复请示；工作流变化需STOP+Codex同步；独立科学/数据授权不变 |
-| 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
-| Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
-| 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 2026-10-15 Owner连续推进偏好及旧科学保护限度；本地QMD/BasicMemory不宣称已同步 |
-| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V009单省宏观稳态失败且冻结预算CLOSED；V010只读Newton/a=0证据调查已启动 |
-| V0.0.10 上轮失败机理只读取证 | [版前DRAFT](../versions/0.0.10/plan.md) | 5组a=0闭类与首个Newton full-step试探拒绝取证；0新科学运行，等待Codex一次报告 |
-| V0.0.9 φ-B内生HANK求解失败正式有限验收 | [原冻结](../versions/0.0.9/plan.md)、[phi B增补](../versions/0.0.9/ces_phi_supplement.md)、[独立终验](../versions/0.0.9/acceptance.md)、[复盘](../versions/0.0.9/retrospective.md) | 工程与科学STOP有限接受；1省完整稳态未取得、2省未运行、IRF BLOCKED |
-| V0.0.8 新corrected-model 数值里程碑正式验收 | [原冻结计划](../versions/0.0.8/plan.md)、[独立终验](../versions/0.0.8/acceptance.md)、[复盘](../versions/0.0.8/retrospective.md) | Gate A/B/C受限接受、单省人工冲击不是IRF；Gate D未具动态闭合，持续BLOCKED |
-| V0.0.7 M1来源与经济量纲受限验收 | [冻结计划](../versions/0.0.7/plan.md)、[正式验收](../versions/0.0.7/acceptance.md)、[复盘](../versions/0.0.7/retrospective.md) | Lt_prev/Govinc/AtTax/Tt的经济量纲条件接受，37件分期REQUEST_ONLY，0 real权限 |
-| V0.0.6 M1冻结与受限最终验收 | [冻结计划](../versions/0.0.6/plan.md)、[独立验收](../versions/0.0.6/acceptance.md)、[复盘](../versions/0.0.6/retrospective.md) | 五字段/三轴/双消费者合成工程CLOSED；原始C8真实输入及Results仍UNKNOWN/BLOCKED |
-| 本次长会话决策与进度交接 | [2026-10-14晚会话交接文档](CH5_CONVERSATION_HANDOFF_20261014_EVENING.md) | V0.0.5证据/Owner决策/低频GitHub工作流、V0.0.6已启动但仅DRAFT，供新Astra恢复权威 |
-| 2026-10-14 论文成果优先战略 | [Owner新战略路线](CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md)、[历史技术路线](DISSERTATION_CH5_PYTHON_MULTI_PROVINCE_HANK_REBUILD_ROADMAP_CURRENT.md) | 不为一般备份追加物理隔离；第一篇以真实科学闭环为先，A16/Results门不虚构通过 |
-| V0.0.5 最终验收、复盘与备份资格 | [最终验收](../versions/0.0.5/acceptance.md)、[复盘](../versions/0.0.5/retrospective.md)、[B3有限验收](../versions/0.0.5/b3_acceptance.md) | V0.0.5有限行政CLOSED；普通字节备份有限PASS、G0 UNPROVEN、物理清理0；V0.0.6未启动 |
-| V0.0.5 全量备份技术审议（历史） | [Astra 审议](../versions/0.0.5/full_backup_review.md)、[Owner范围决定](../versions/0.0.5/owner_full_backup_cleanup_decision.md)、[旧预检DRAFT](../versions/0.0.5/full_project_backup_preflight.md) | linked-worktree+外置Git管理目录均须保全；待Owner批准元数据B0，复制/删除仍禁止 |
-| V0.0.5 空备份目录附属门验收 | [有限验收](../versions/0.0.5/backup_directory_acceptance.md)、[冻结计划](../versions/0.0.5/backup_directory_gate.md)、[独立授权](../versions/0.0.5/backup_directory_authorization.md) | Codex回报仅空目录已创建；本子门CLOSED/有限接受；无备份复制；主可信根仍 DRAFT |
-| V0.0.4 阻塞验收与复盘 | [最终验收](../versions/0.0.4/acceptance.md)、[复盘](../versions/0.0.4/retrospective.md)、[冻结计划](../versions/0.0.4/plan.md)、[授权](../versions/0.0.4/authorization.md) | 安全停止、0实验/0候选，真实保护读取仍禁止 |
-| V0.0.3 冻结与验收结果 | [冻结计划](../versions/0.0.3/plan.md)、[独立授权](../versions/0.0.3/authorization.md)、[最终验收](../versions/0.0.3/acceptance.md)、[复盘](../versions/0.0.3/retrospective.md) | freeze 768a3181fcbc…不变，candidate cf74384f1514…，真实读取仍 REQUEST_ONLY |
-| V0.0.2 冻结与最终结论 | [冻结计划](../versions/0.0.2/plan.md)、[授权](../versions/0.0.2/authorization.md)、[验收](../versions/0.0.2/acceptance.md)、[复盘](../versions/0.0.2/retrospective.md) | freeze SHA 4b11c46823e7… 未追改；candidate 8f5457947492…；真实来源认证未获得 |
-| V0.0.1 已冻结计划与结论 | [固定冻结计划](../versions/0.0.1/plan.md)、[实施授权](../versions/0.0.1/authorization.md)、[最终验收](../versions/0.0.1/acceptance.md)、[版本复盘](../versions/0.0.1/retrospective.md) | 冻结提交 6c9a13bd...不变；候选 3260ec39...；仅合成工程 ACCEPT_WITH_OBSERVATIONS |
-| 当前/历史计划、结果、验收、复盘 | 版本登记中的具体入口 | 冻结版固定 SHA；代码候选与文档分支可能分离，须按真实提交读取 |
-| 历史Sources与本地私有资料 | [知识摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md)、[手工交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 私有日志/数据不上传；按需人工提供脱敏片段 |
-| 来源/引用资格 | [原知识库正文](knowledge/project-sources/DISSERTATION_KNOWLEDGE_BASE_CURRENT.md) | 历史正文中稳定E0–E3/D0–D4资格保留 |
-| 模型研究脉络 | [9月27日改写快照](knowledge/project-sources/CH5_DISSERTATION_CHAPTER5_REWRITE_CURRENT.md)、[科学合同账](../SCIENTIFIC_DECISIONS.md) | 历史状态不能充作当前，后续决定优先 |
-| 近期交接证据 | [进度快照](knowledge/published/CH5_WORK_PROGRESS_FLOW_MANUAL_HANDOFF_20261011_140603Z.md)、[验收账快照](knowledge/published/CH5_WORK_ACCEPTANCE_LEDGER_MANUAL_HANDOFF_20261011_140603Z.md)、[劳动决定](knowledge/published/CH5_LABOR_UNIT_HISTORY_AND_EVIDENCE_20261010_145723Z.md) | 脱敏发布副本，旧流程已替代，报告接受不冒称本轮重测 |
-| 历史归档覆盖与测试 | [归档安全摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 历史检索结果及Owner补充新会话测试分开 |
-| 上传用稳定索引 | [PROJECT_SOURCE_INDEX_CH5](PROJECT_SOURCE_INDEX_CH5.md) | 只在仓库/发布分支/入口改变时通常重传 |
+| 即时状态 | [CURRENT](../CURRENT.md) | 文档已发布，待Codex同步和Astra核验；不等于本地已同步 |
+| 唯一当前任务 | [TASK_CURRENT](../TASK_CURRENT.md)、[同步任务全文](../versions/0.0.10/owner_scope_document_sync.md) | 仅一次16文档同步、身份回读和ACK，随后STOP |
+| Owner项目定位 | [主线纠偏决定](CH5_OWNER_SCOPE_REALIGNMENT_20261015.md) | 原MATLAB修错＋HA黑箱/有界迭代/GovInv-Zt校准/原递推冲击的Python重写 |
+| 科研路线图 | [修订路线图](CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md) | M1原框架修错，M2有界稳态与校准，M3原冲击响应，M4论文交付 |
+| 下一版本 | [V010修订DRAFT](../versions/0.0.10/plan.md) | 同步核验后再落实科研任务；不运行旧Newton调查 |
+| 科学合同适用性 | [SCIENTIFIC_DECISIONS](../SCIENTIFIC_DECISIONS.md) | 不自动回滚HJB/KFE/K1/C1等接受；GovInv等冲突集中处理 |
+| 工作方式 | [V1.2](CH5_ASTRA_WORKFLOW_CURRENT.md)、[Owner持续委托](CH5_OWNER_CONTINUOUS_VERSION_DIRECTIVE_20261015.md)、[既有AGENTS](../AGENTS.md) | 角色不变；本轮先同步停点优先，旧任务不能从历史文字复活 |
+| 当前版本登记 | [登记](CH5_VERSION_REGISTER_CURRENT.md) | V010范围纠正与辅助支线状态 |
+| 长期项目知识 | [知识入口](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 恢复本项目目的，不能冒称本地QMD/Basic Memory自动更新 |
+| 历史原文 | [本次历史保全说明](history/scope_realignment_20261015/README.md) | 原版本登记/科学索引/任务单字节不变，无执行资格 |
 
-2026-10-13 Owner 已启动 V0.0.5 版前规划，仅调查可信独立根的获取和隔离证明；旧 G0 实验额度没有恢复，无创建/测试/真实读取许可。
+## 必要历史来源，不作为当前任务
 
-2026-10-13 Owner 已启动 V0.0.4 版前规划。V1.2 已覆盖 fail-fast，当前不升级工作流文档；新版本仅 DRAFT 和 Codex 只读方案，没有北京历史文件读取许可、科学测试或实现授权。
+- [原MATLAB外层稳态源码审计](CH5_TWO_ASSET_HANK_MATLAB_FAITHFUL_GE_STEADY_STATE_CLOSURE_SOURCE_AUDIT_AND_CONTRACT_FREEZE_REPORT.md)：顺序有界迭代、GovInv/Zt、原退出条件及没有联合GE root的源证据；其中当时的权限与参数不是本轮重新授权。
+- [劳动单位历史](knowledge/published/CH5_LABOR_UNIT_HISTORY_AND_EVIDENCE_20261010_145723Z.md)：人口/人均及单位未证范围。
+- [V005验收](../versions/0.0.5/acceptance.md)、[V006验收](../versions/0.0.6/acceptance.md)、[V007验收](../versions/0.0.7/acceptance.md)、[V008验收](../versions/0.0.8/acceptance.md)、[V009验收](../versions/0.0.9/acceptance.md)：仅原限定对象的历史结论。V008/V009人工支线非活跃，不继续列为主线前置。
+- 纠偏前完整总目录保留在固定commit db2c2e289419ecab7921667e210bd510ff3c447b同路径（blob b04510b89bf1a62ec3eaa628b7d4d9ceb2c1cc5e）。既有历史文档、科学冻结、候选分支与数据不删除。
 
-2026-10-13 V0.0.3 已经 Astra 有限验收关闭：`CLOSED__ACCEPT__DOCUMENTARY_SOURCE_CONTRACT_ONLY__WITH_OBSERVATIONS`；GitHub 候选 `cf74384f151427f0b7071ac0461cede6ad6cdf11`、三文档及14/14固定来源匹配，真实北京读取申请仍仅 REQUEST_ONLY。Codex 本地资源/错误回执证据等级单列，V0.0.4 尚未启动。
-
-2026-10-13 Owner 已同意 V0.0.2 复盘后的轻量 V1.2 工作流修订：只增补工程失败依赖检查、编码/换行、最终候选树回执与资源 UNKNOWN 分账；未立 V0.0.3、未修改模型科学合同与冻结原证。现行规则见本表首行。
-
-2026-10-13 V0.0.2 已经由 Astra 最终受限验收：CLOSED__ACCEPT__SOURCE_CONTRACT_AND_SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS；候选 SHA 8f5457947492eef552f4261f8630c6c886af9fa5，仍不证明真实来源、科学或 Results；后续版本尚未启动。
-
-2026-10-13 工作流 V1.1 已获 Owner 批准，仅更新现行导航/规则，不改冻结版本或开启 V0.0.2；参见上方 V1.1 规则与版本登记。
-
-2026-10-13 V0.0.1 已根据正式冻结提交 6c9a13bdf6a54913d8f16b5ec23fdda2a68f28e8 完成工程候选最终验收：`CLOSED__ACCEPT__SYNTHETIC_ENGINEERING_ONLY__WITH_OBSERVATIONS`；候选固定 SHA 3260ec393dd4d53d6aab6c34d7c0442f09aa79f4。仅合成工程闭环通过，不等于真实科学/Results/生产接受；未启动后续版本。详情见版本登记、验收与复盘。
-
-先读工作流、CURRENT、迁移交接与知识摘要，再按具体版本读取冻结计划和真实候选。普通状态使用当前分支路径；正式计划、代码/证据在版本登记保存固定提交。路径带CURRENT不自动证明内容时效，表中的“历史”标记优先。
-访问失败/未发布/LOCAL_ONLY要明确缺口，使用Owner提供的对应文件或提交快照，不声称已读。本目录不赋予自动同步或额外权限。
+网页使用已授权GitHub实际读取，不能由索引推定完成同步、科学通过或本地C:/D:权限。当前不访问模型源码/科研原件、不新增预算、不push代码或切main；A16/window/C9/CALL_LEDGER和Results边界保持。
