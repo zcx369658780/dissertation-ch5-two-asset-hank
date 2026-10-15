@@ -1,0 +1,100 @@
+{
+  "version": "0.0.9",
+  "phase": "PRE_SEAL",
+  "freeze_commit": "f7caeb54b13ec977d1b503b124067ae522ca2433",
+  "freeze_tree": "7c51c01cb81b5ca1dfe2124de4de1e3a154e71cf",
+  "plan_blob": "cb76a840fdd9d1756728189bf29518679831aba6",
+  "authorization_commit": "5b4427ccc956b0189f4e0097d70862f0a29e743b",
+  "authorization_blob": "770a1fc304c3a602595e9d3d9d5ec21c2bdf1ee5",
+  "baseline": "d41d229b681e09b913c21deff7a057085b9bc419",
+  "baseline_tree": "88833acf90613380afa30ab8d6ee7e0297e98664",
+  "candidate_commit": null,
+  "candidate_tree": null,
+  "qualification": "IMPLEMENTATION_AND_TOY_ORACLES_ONLY__FULL_STATIONARY_BLOCKED",
+  "blocker": {
+    "code": "FROZEN_CES_PHI_NOT_SPECIFIED",
+    "scope": "both one- and two-province full HJB/KFE and macro solve",
+    "evidence": "plan section 2 uses phi[j,i]; section 3 registers eta and all other displayed numerical inputs but no phi matrix. Neither Owner adoption nor authorization specifies it.",
+    "action": "No scientific default. case(n).phi is null. positive_prices rejects before macro/household reservation. Exact missing coefficient requested from Astra via Owner.",
+    "not_a_numerical_nonconvergence": true
+  },
+  "gates": {
+    "A": {
+      "last_result": "13 passed",
+      "qualification": "TOY_ORACLES_WITH_EXPLICIT_TEST_INPUTS; NO_FULL_CALIBRATED_HOUSEHOLD_EXECUTION",
+      "R_paper_oracle": [
+        3.2,
+        -3.2
+      ]
+    },
+    "B": "NOT_RUN__MISSING_FROZEN_PHI",
+    "C": "NOT_RUN__GATE_B_NOT_PASSED",
+    "D": "IRF_BLOCKED__NO_DYNAMIC_HANK_CLOSURE"
+  },
+  "processes_pre_seal": [
+    {
+      "name": "red_001",
+      "kind": "pytest",
+      "exit": 2,
+      "result": "4 collection errors: new modules not implemented",
+      "seconds": 2.2356798
+    },
+    {
+      "name": "oracles_002",
+      "kind": "pytest",
+      "exit": 0,
+      "result": "11 passed",
+      "seconds": 3.4239371
+    },
+    {
+      "name": "import_001",
+      "kind": "import_only",
+      "exit": 0,
+      "seconds": 0.7441652
+    },
+    {
+      "name": "oracles_003",
+      "kind": "pytest",
+      "exit": 0,
+      "result": "13 passed",
+      "seconds": 1.2657399
+    }
+  ],
+  "attempted_pre_seal": {
+    "pytest": 3,
+    "science_driver": 0,
+    "full_macro": 0,
+    "full_household": 0,
+    "HJB_updates": 0,
+    "full_policy_Q_maps": 0,
+    "terminal_household_svd": 0,
+    "selector": 5,
+    "scalar_root": 0,
+    "toy_scc": 4,
+    "toy_svd": 2,
+    "toy_full_Qtp": 2
+  },
+  "peak_working_set_sampled_bytes": 75264000,
+  "science_peak_memory": "NOT_MEASURED__NOT_RUN",
+  "final_tree_verification": "PENDING; detached receipt, no self-referential amendment",
+  "scientific_output": {
+    "unknown_vectors": "NOT_SOLVED",
+    "HJB_B_D": "NOT_RUN",
+    "full_Q_KFE_residuals": "NOT_RUN",
+    "market_residuals": "NOT_RUN",
+    "two_province_R_actual": "NOT_RUN",
+    "real_units": "NOT_VERIFIED"
+  },
+  "protection": "Original 8 dirty paths and original index hashed before; post comparison pending. No original writes, no untracked/ignored scan, no B3.",
+  "retained": {
+    "A16": "FAIL_CLOSED",
+    "window": "UNACCEPTED",
+    "C9": "PAUSED",
+    "CALL_LEDGER": "UNRESOLVED",
+    "model_activation": false,
+    "Results": false,
+    "V010": "NOT_STARTED"
+  },
+  "terminal": "WAIT_ASTRA_V009_SYNTHETIC_HANK_NUMERICAL_ACCEPTANCE / STOP",
+  "self_acceptance": false
+}
