@@ -1,6 +1,14 @@
 # 第五章路线图与版本登记
 
-## 2026-10-15 当前：V0.0.8 首次新Python人工稳态/冲击数值闭环受限ACCEPT，正式CLOSED
+## 2026-10-15 当前：Owner连续版次授权生效，V0.0.9已启动DRAFT并等待Codex完整HANK科学方案
+
+**`OWNER_STARTED__V009_DRAFT__WAIT_CODEX_FULL_CORRECTED_HANK_STEADY_STATE_AND_DYNAMIC_CLOSURE_PROPOSAL__NO_SCIENCE_EXECUTION_OR_REAL_READ_AUTHORIZED`**。Owner于V0.0.8独立ACCEPT/CLOSED后授权继续下一科研长版，并授予**连续长版本的版前自动启动委托**：无新的工作流/重大科学/高风险权限决策时，Astra每轮验收和归档后直接开始下一DRAFT+SOURCE_ONLY一次任务，不再反复问Owner是否继续；若需**改工作流**则`STOP_AND_NOTIFY_OWNER__WORKFLOW_CHANGE_REQUIRED`并让Codex按Owner批准在隔离位置同步文件。权威决定见 [Owner 2026-10-15长期委托](CH5_OWNER_CONTINUOUS_VERSION_DIRECTIVE_20261015.md) 与 [V1.2限域工作规则](CH5_ASTRA_WORKFLOW_CURRENT.md)，没有授权后台、自动编程、真实protected读取或新高风险模型调用。
+
+本版[正式启动但未冻结的 V009 DRAFT](../versions/0.0.9/plan.md)，唯一第一任务是Codex针对已接受V008代码候选`d41d229b681e09b913c21deff7a057085b9bc419` tree`88833acf90613380afa30ab8d6ee7e0297e98664`、旧HJB/KFE及历史科学决策开展SOURCE_ONLY集中理论/数值可行性核查，形成完整合成两资产HANK稳态（真正家户优化、KFE、资产/劳动力/全国财政与市场出清）与动态IRF的分级实施闭合方案。V009代码起点建议采用V008但须独立Git/dirty确认，NEXT_BASELINE_ADOPTION=PROPOSED/UNDECIDED；`main`和原D盘8 dirty不能自动覆盖。**实际代码、pytest、HJB/KFE、真数据、GE、IRF的新增执行授权0**；Codex仅获准对新版治理文档做安全隔离mirror同步，不得改原dirty。
+
+V008终态仍`CLOSED__ACCEPT__CORRECTED_SYNTHETIC_ACCOUNTING_CONDITIONAL_STATIONARY_AND_SHOCK_DIAGNOSTIC_ONLY__REAL_HANK_IRF_BLOCKED__WITH_OBSERVATIONS`；旧V008路径4/4、31省roots2/2等全归旧封闭账，历史 C8 A–D真实文件REQUEST_ONLY、A16/window/C9/CALL_LEDGER与Results FALSE仍严格不变。V0.0.10 NOT_STARTED。
+
+## 2026-10-15 历史：V0.0.8 首次新Python人工稳态/冲击数值闭环受限ACCEPT，正式CLOSED
 
 **`CLOSED__ACCEPT__CORRECTED_SYNTHETIC_ACCOUNTING_CONDITIONAL_STATIONARY_AND_SHOCK_DIAGNOSTIC_ONLY__REAL_HANK_IRF_BLOCKED__WITH_OBSERVATIONS`**。已采纳新corrected CES工资/劳动对偶、全国单次工资税、统一财政人工会计，但未授权real参数/原C8或完整HANK/动态IRF。冻结commit `e222b302176f8ff627ced1442196299f804b9aa7` plan blob `891e8dae2eead0c5c39bf20a7542c68a004b5e94`；V008真实候选 `d41d229b681e09b913c21deff7a057085b9bc419` / tree `88833acf90613380afa30ab8d6ee7e0297e98664` / 唯一parent `d8bb49d86ea674ea4ff5e3fdf03929baa08a6514`，GitHub独立确定恰13个新增白名单和branch readback，无main merge。正式[验收](../versions/0.0.8/acceptance.md)、[复盘](../versions/0.0.8/retrospective.md)。
 

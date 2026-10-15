@@ -1,16 +1,17 @@
 # 第五章动态总目录
 
-**现行最新（2026-10-15）：V0.0.8 已正式受限接受并关闭，分类 `CLOSED__ACCEPT__CORRECTED_SYNTHETIC_ACCOUNTING_CONDITIONAL_STATIONARY_AND_SHOCK_DIAGNOSTIC_ONLY__REAL_HANK_IRF_BLOCKED__WITH_OBSERVATIONS`。六个新Python模块、四份测试和三份证据共13个白名单文件；新corrected-model在1/2/31个虚构省份给定家庭分布/资本下获得条件稳态，并独立复算四条单省条件冲击路径；完整两资产HANK/前瞻性动态IRF Gate D继续BLOCKED、Results FALSE。候选 `d41d229b681e09b913c21deff7a057085b9bc419`未合并main，原C8真实数据仍不可读取。详见 [CURRENT](../CURRENT.md)、[版本登记](CH5_VERSION_REGISTER_CURRENT.md)、[V008验收](../versions/0.0.8/acceptance.md)、[复盘](../versions/0.0.8/retrospective.md)。V0.0.9 NOT_STARTED。**
+**现行最新（2026-10-15）：Owner已授权连续推进科研长版本，V0.0.9 正式启动但仅处版前DRAFT，状态 `OWNER_STARTED__V009_DRAFT__WAIT_CODEX_FULL_CORRECTED_HANK_STEADY_STATE_AND_DYNAMIC_CLOSURE_PROPOSAL__NO_SCIENCE_EXECUTION_OR_REAL_READ_AUTHORIZED`。无重大工作流/科学/权限选择时，每次Codex交付及Astra独立验收后主动进入下一版；需要修改工作流先STOP告知Owner，获批后指派Codex安全同步治理/知识。V009第一目标是完整两资产corrected HANK家户HJB/KFE/资产财政出清与前瞻IRF科学闭合提案，当前科学执行与真实C8权限仍0。详见 [CURRENT](../CURRENT.md)、[V009研究草案](../versions/0.0.9/plan.md)、[Owner长期委托](CH5_OWNER_CONTINUOUS_VERSION_DIRECTIVE_20261015.md)及[现行工作流](CH5_ASTRA_WORKFLOW_CURRENT.md)。V008受限CLOSED；V010 NOT_STARTED。**
 
 这是当前导航；条目按用途区分当前资料与历史快照。网页顾问必须实际读取正文及提交，不能以本目录代替证据。
 
 | 逻辑槽位 | 现存正文 | 使用方式 |
 |---|---|---|
-| 当前工作方式与角色 | [V1.2现行工作流](CH5_ASTRA_WORKFLOW_CURRENT.md)、[本地启动规则](../AGENTS.md) | 延续 V1.1：新增依赖命令失败即停、UTF-8/LF 记录、最终树回执与 UNKNOWN 遥测；旧Work仅历史 |
+| 当前工作方式与角色 | [V1.2含Owner连续版次例外](CH5_ASTRA_WORKFLOW_CURRENT.md)、[Owner长期委托](CH5_OWNER_CONTINUOUS_VERSION_DIRECTIVE_20261015.md)、[本地启动规则](../AGENTS.md) | 仅顺序版前立版免重复请示；工作流变化需STOP+Codex同步；独立科学/数据授权不变 |
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
 | Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
-| 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 决定、原证据上限及本地工具限制 |
-| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V0.0.8人工条件稳态与冲击诊断受限CLOSED；动态HANK/IRF仍BLOCKED |
+| 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 2026-10-15 Owner连续推进偏好及旧科学保护限度；本地QMD/BasicMemory不宣称已同步 |
+| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V009 OWNER_STARTED/DRAFT，下一步完整HANK稳态/动态闭合方案；现仅SOURCE_ONLY |
+| V0.0.9 完整HANK静态/动态科学闭合版前 | [V009 DRAFT计划](../versions/0.0.9/plan.md) | 从人工条件均衡转向真实家户最优化、KFE与资源/债务闭合，先提案，0数值/真数据权限 |
 | V0.0.8 新corrected-model 数值里程碑正式验收 | [原冻结计划](../versions/0.0.8/plan.md)、[独立终验](../versions/0.0.8/acceptance.md)、[复盘](../versions/0.0.8/retrospective.md) | Gate A/B/C受限接受、单省人工冲击不是IRF；Gate D未具动态闭合，持续BLOCKED |
 | V0.0.7 M1来源与经济量纲受限验收 | [冻结计划](../versions/0.0.7/plan.md)、[正式验收](../versions/0.0.7/acceptance.md)、[复盘](../versions/0.0.7/retrospective.md) | Lt_prev/Govinc/AtTax/Tt的经济量纲条件接受，37件分期REQUEST_ONLY，0 real权限 |
 | V0.0.6 M1冻结与受限最终验收 | [冻结计划](../versions/0.0.6/plan.md)、[独立验收](../versions/0.0.6/acceptance.md)、[复盘](../versions/0.0.6/retrospective.md) | 五字段/三轴/双消费者合成工程CLOSED；原始C8真实输入及Results仍UNKNOWN/BLOCKED |

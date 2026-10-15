@@ -1,4 +1,11 @@
 # 第五章网页知识入口与恢复摘要
+
+## 2026-10-15 Owner长期规则与最新科研路线（覆盖本文旧迁移时态，不覆盖科学原证）
+
+Owner明确委托：在Codex交付并完成Astra独立验收、版本归档之后，若没有新的工作流修改/重大科学或数据授权选择，则**直接顺序立下一科研长版本**；不要每版再次询问“是否继续”。任何**工作流变更**需`STOP_AND_NOTIFY_OWNER__WORKFLOW_CHANGE_REQUIRED`，先告知Owner；经同意后让Codex在安全隔离位置同步权威文档和本地研究知识并回读，不能覆盖原8个dirty文件或未核的QMD/BasicMemory。持续有效的准确Owner授权见 [版本推进长期指令](../CH5_OWNER_CONTINUOUS_VERSION_DIRECTIVE_20261015.md)；[现行V1.2工作流](../CH5_ASTRA_WORKFLOW_CURRENT.md)新增限域Owner例外，而不是自动获取受保护数据/科学调用权限。
+
+2026-10-15 V0.0.8已受限接受：新的corrected CES劳动—综合工资对偶/全国单次工资税/统一财政人工账，在1/2/31个**人工省份**给定两资产和家庭分布下取得条件稳态；四条单省外生AR(1)逐期静态响应数值可复算但绝非正式HANK IRF，Gate D`IRF_BLOCKED__NO_DYNAMIC_HANK_CLOSURE`，Results FALSE。已接受新代码候选`d41d229b681e09b913c21deff7a057085b9bc419`、tree`88833acf90613380afa30ab8d6ee7e0297e98664`。Owner本轮已授权顺序启动V0.0.9，重点是**完整合成两资产HANK家庭最优化/HJB、前向KFE/资产/财政与动态IRF真实科学方程闭合**，先Codex SOURCE_ONLY集中方案，实际数值新许可为0；以[CURRENT](../../CURRENT.md)为当轮状态权威。原C8 A–D真实文件仅REQUEST_ONLY，A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED/CALL_LEDGER_UNRESOLVED及旧封闭预算不变。
+
 2026-10-12迁移安全正文；复用本轮前已完成知识归档，不重新总结全部sessions。原本地导航、CH5_RECOVERED_KNOWLEDGE和CH5_ARCHIVE_20261012保留在唯一代码树docs/knowledge；含私有日志定位/本机细节，标LOCAL_ONLY，未作为完整外发正文。本页给网页端可用内容和覆盖边界。
 
 ## 决定及来源
