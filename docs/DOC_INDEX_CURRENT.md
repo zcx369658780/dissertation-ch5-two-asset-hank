@@ -1,6 +1,6 @@
 # 第五章动态总目录
 
-**现行最新（2026-10-15）：V0.0.9 的劳动偏好方案B已在[CES φ增补](../versions/0.0.9/ces_phi_supplement.md)固定，Astra另行签发[剩余额度续跑许可](../versions/0.0.9/ces_phi_resume_authorization.md)，状态 `V009_CES_PHI_SCHEME_B_FROZEN_AND_SEPARATELY_AUTHORIZED__REMAINING_BUDGET_FULL_HANK_STATIONARY_RESUME__NO_RESULT_YET`。人工1省φ=1，人工双省pGDP1:2使目的行/来源列φ=[[1,1.1],[0.9,1]]；不得修改原冻结计划或重置此前pytest4/8、toy和已耗资源。原V009 PRE-PHI候选保留，尚无完整HANK稳态结果；真实2018/C8、31省实际求解及动态IRF仍不授权。参见[CURRENT](../CURRENT.md)、[版本登记](CH5_VERSION_REGISTER_CURRENT.md)。V010 NOT_STARTED。**
+**现行最新（2026-10-15）：V0.0.9新phi-B候选\`e25f8e22490dddf57568e14aec2819d52603a78f\`已在单省真实合成HJB/KFE的宏观稳态门正确停止；五个家庭局部求解报告满足B/D及唯一闭类KFE，但私人资本A=0，首次完整Newton未接受试探遭\`NO_ADMISSIBLE_POLICY\`，没有单省HANK GE或双省运行。Terminal \`CLOSED__LIMITED_ACCEPT__V009_PHI_B_CODE_AND_REPORTED_SCIENCE_STOP_ONLY__NO_SYNTHETIC_HANK_STEADY_STATE__WITH_OBSERVATIONS\`，详细[终验](../versions/0.0.9/acceptance.md)；按Owner长期授权已正式启动[V0.0.10 只读取证 DRAFT](../versions/0.0.10/plan.md)，状态 \`V010_OWNER_CONTINUATION_DRAFT__WAIT_CODEX_V009_NEWTON_TRIAL_AND_ZERO_PRIVATE_CAPITAL_FORENSIC__ZERO_SCIENCE_CALLS\`，禁止新科学调用、真实C8/A16/C9及Results。参见[CURRENT](../CURRENT.md)及[版本登记](CH5_VERSION_REGISTER_CURRENT.md)。V011 NOT_STARTED。**
 
 这是当前导航；条目按用途区分当前资料与历史快照。网页顾问必须实际读取正文及提交，不能以本目录代替证据。
 
@@ -10,8 +10,9 @@
 | 当前状态、在途与暂停 | [CURRENT](../CURRENT.md)、[迁移交接](CH5_ASTRA_MIGRATION_HANDOFF_20261012.md) | 当前状态入口；本地未同步差异见交接 |
 | Codex第二阶段交接（历史） | [执行端交接](CH5_ASTRA_CODEX_EXECUTION_HANDOFF_CURRENT.md)、[新会话启动 Prompt](CH5_ASTRA_CODEX_NEW_SESSION_PROMPT_CURRENT.md) | Owner已报告新会话只读接收；此项为旧迁移交接，不覆盖当前 V0.0.1 版前状态 |
 | 记忆、定义、环境 | [网页知识导航与恢复摘要](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 2026-10-15 Owner连续推进偏好及旧科学保护限度；本地QMD/BasicMemory不宣称已同步 |
-| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V009 φ方案B冻结+独立剩余额度续跑授权；旧候选blocked，内生HANK仍未运行 |
-| V0.0.9 人工HANK与CES φ方案B受界续跑 | [原冻结计划](../versions/0.0.9/plan.md)、[CES φ增补](../versions/0.0.9/ces_phi_supplement.md)、[续跑独立许可](../versions/0.0.9/ces_phi_resume_authorization.md) | 1省/双省φ数值已锁定，原V009额度不重置，仅人工HJB/KFE新数值 |
+| 路线图与版本登记 | [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V009单省宏观稳态失败且冻结预算CLOSED；V010只读Newton/a=0证据调查已启动 |
+| V0.0.10 上轮失败机理只读取证 | [版前DRAFT](../versions/0.0.10/plan.md) | 5组a=0闭类与首个Newton full-step试探拒绝取证；0新科学运行，等待Codex一次报告 |
+| V0.0.9 φ-B内生HANK求解失败正式有限验收 | [原冻结](../versions/0.0.9/plan.md)、[phi B增补](../versions/0.0.9/ces_phi_supplement.md)、[独立终验](../versions/0.0.9/acceptance.md)、[复盘](../versions/0.0.9/retrospective.md) | 工程与科学STOP有限接受；1省完整稳态未取得、2省未运行、IRF BLOCKED |
 | V0.0.8 新corrected-model 数值里程碑正式验收 | [原冻结计划](../versions/0.0.8/plan.md)、[独立终验](../versions/0.0.8/acceptance.md)、[复盘](../versions/0.0.8/retrospective.md) | Gate A/B/C受限接受、单省人工冲击不是IRF；Gate D未具动态闭合，持续BLOCKED |
 | V0.0.7 M1来源与经济量纲受限验收 | [冻结计划](../versions/0.0.7/plan.md)、[正式验收](../versions/0.0.7/acceptance.md)、[复盘](../versions/0.0.7/retrospective.md) | Lt_prev/Govinc/AtTax/Tt的经济量纲条件接受，37件分期REQUEST_ONLY，0 real权限 |
 | V0.0.6 M1冻结与受限最终验收 | [冻结计划](../versions/0.0.6/plan.md)、[独立验收](../versions/0.0.6/acceptance.md)、[复盘](../versions/0.0.6/retrospective.md) | 五字段/三轴/双消费者合成工程CLOSED；原始C8真实输入及Results仍UNKNOWN/BLOCKED |
