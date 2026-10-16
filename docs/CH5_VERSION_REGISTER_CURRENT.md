@@ -1,25 +1,19 @@
-# 第五章当前版本登记（2026-10-16，V010离线候选静态审议）
-**状态：V010_RUNNER_IO_REVIEW_DELIVERED__INDEPENDENT_STATIC_LIMITED_ACCEPT__FULL_RUNNER_IO_BLOCKED__NO_RUNTIME_AUTHORITY。**
-[完整交接](../docs/CH5_CONVERSATION_HANDOFF_20261016_V010_RUNNER_IO_OFFLINE_PENDING.md)；唯一任务`V010_RUNNER_GUARD_IO_OFFLINE_INTEGRATION_AND_SANITIZED_GITHUB_HANDOFF` @ commit `50fece7d51bbcbb7e4384b0a5a8833b81dcbf76b` / blob `0070437d83eccaaf4a1c38838e9ce2b1a2fb5634`，仍ACTIVE，不重复发布；目标review分支查询未创建，科学运行0权限。以下原登记的静态源码与科学边界保持。
+# 第五章当前版本登记（2026-10-16 ENGINEERING_ONLY preflight）
 
-**新会话实际审议**：[独立静态验收](../versions/0.0.10/runner_guard_io_offline_github_primary_review_20261016.md)：review SHA `c207e866cf70d9d5ae6fb245f43cabfdeac1d32b`、tree `b4ba5b7939653a0cdb8524fa82743d9634d79083`、sole parent原发行commit；恰3允许文件，46静态cases+23静态variants NOT_RUN；源9/9 Git Blob核对。`STATIC_DESIGN_READY=CONDITIONAL_LIMITED_ACCEPT`，`FULL_RUNNER_IO_CLOSURE=BLOCKED`，ENGINEERING_RUNTIME/HA均NOT_RUN。无新任务、新预算、V011或科学接受；等待Owner工程preflight授权决定。顶部前一历史段称review分支不存在仅指交接写入时点。
+**CURRENT_VERSION=V010 / V0.0.10；V011 NOT_STARTED。**
+**唯一ACTIVE=`V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT`**。
+Owner本会话明确允许Astra设定本轮**仅工程Windows预检**条件；正式任务已发行commit `343c22132deb23ba6d913d70e132b43a00b95f1d`，tree `2fbb740ba42e2367fb99de05a11eb533829ea72b`，task blob `08fed792ee19329313dfc7402fa174035805a345`，文件 [runner_io_engineering_only_windows_preflight_task_20261016.md](../versions/0.0.10/runner_io_engineering_only_windows_preflight_task_20261016.md)。Python工程进程≤4，真正runner≤2，HA/HJB/KFE/root/selector/GE/IRF/真实数据=0。本轮还没有Codex新的执行回执；最终需Astra独立验收并STOP。
 
-## 交接前已登记的详细状态（保留）
+| 已冻结/历史对象 | 权威身份 | 当前资格 |
+|---|---|---|
+| V010原科学计划 | commit`bf091da33d59293f147d52c11580327d3ac2a85d` / blob`85138d8859d53295262fe13bf5bc277bca95ed3f` | FROZEN，不改 |
+| synthetic fixture | blob`40915658d93403cfc21b33a6b864b332b7857749` | 历史冻结，不新增求解 |
+| 模型代码 | commit`94de4501dec051b969bee9d852eba2d4591f30ef` / tree`205eab47c4e4f9c6292c2ead9947d94d1a7579a5` | 工程限域接受；首HA失败，不是稳态 |
+| 单点corrected HA | manifest blob`c23d331bed34e5ca478324cdc05034609ecb91b7` | UNTESTED，HA新权限=0 |
+| 旧Windows guard | [上传原件独立审议](../versions/0.0.10/windows_git_guard_uploaded_primary_review_20261016.md) | STATIC方向，完整runner未闭合 |
+| 上一离线集成 | GitHub review`c207e866cf70d9d5ae6fb245f43cabfdeac1d32b` / tree`b4ba5b7939653a0cdb8524fa82743d9634d79083` | 已交付；[静态限域审议](../versions/0.0.10/runner_guard_io_offline_github_primary_review_20261016.md)完成；非ACTIVE |
+| 新preflight | commit`343c22132deb23ba6d913d70e132b43a00b95f1d` / tree`2fbb740ba42e2367fb99de05a11eb533829ea72b` / blob`08fed792ee19329313dfc7402fa174035805a345` | OWNER_APPROVED__TASK_ISSUED__AWAIT_CODEX_RESULT |
 
-**V010_WINDOWS_GIT_GUARD_PRIMARY_FILES_REVIEWED__IO_BLOCKED__OFFLINE_STATIC_INTEGRATION_ISSUED**。
+**历史预算保全**：实施Codex自报pytest4/6、science driver1/4、HA1/26、selector1626、scalar roots1642；第一次单点Python1/1、HA0、GBK错误日志43519638B超32MiB 9965206B，第二次单点Python1/1、HA0、argv guard 117446B/96MiB；第三次**科学**Python未授权。本轮四个新工程进程独立计账，不能挪用旧余额。
 
-| 对象 | 科学/工程事实与下一个gate |
-|---|---|
-| 上传原件独立验收 | [Astra源码验收](../versions/0.0.10/windows_git_guard_uploaded_primary_review_20261016.md)：MD 9998B SHA256`27CD9B23FC7032E523E0D397D2E7FAF05BD99B500E4CB8E6487AA98B20EC1151`，py 7540B SHA256`A021AFD81CE1342290A8C8387C0B49383CAE20C66B00F46336F220DB546B1C5C`，AST parse PASS，未执行 |
-| 原始argv | 旧receipt未捕获，Codex仅从旧runner重构请求端tokens；真实audit argv及child身份未知 |
-| Guard草案 | 子命令最小白名单、固定exe/cwd/env、exact list2cmdline匹配及一次性capability静态方向可用；真实output/caller绑定、stdout/stderr、源磁盘bytes、完整audit未闭环 |
-| 24例 | MD仅含8个ALLOW+16个DENY分组预期；本轮未上传逐例JSON/未执行，不可称24 PASS |
-| ACTIVE新任务 | [runner_guard_io_offline_integration_task](../versions/0.0.10/runner_guard_io_offline_integration_task_20261016.md)：在新隔离目录静态集成I/O，**0 Python/pytest/HA调用**；仅脱敏静态候选可推新review分支 |
-| 模型candidate | `94de4501dec051b969bee9d852eba2d4591f30ef` tree`205eab47c4e4f9c6292c2ead9947d94d1a7579a5` 仅工程有限接受，scientific仍FAIL_CLOSED/UNTESTED |
-| 单点manifest | `rah=.0675,w_eff=15.5,rb=.02`，blob`c23d331bed34e5ca478324cdc05034609ecb91b7`未改 |
-| 原V010 plan | commit`bf091da33d59293f147d52c11580327d3ac2a85d`、blob`85138d8859d53295262fe13bf5bc277bca95ed3f`不可追改 |
-| 两次失败进程 | 第1 Python1/1、HA0、GBK及旧32MiB超9965206B；第2 Python1/1、HA0、argv guard误拒、artifact117446B |
-| 工程runtime/HA | 未获新的科学/工程Python进程许可；完整runner I/O BLOCKED，第三次实验不得执行 |
-| 版本/结果 | V011 NOT_STARTED、Results FALSE、model_activation=False |
-
-A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER UNRESOLVED、real C8 A–D REQUEST_ONLY、原8dirty/index/common-dir/旧回执保护持续。
+原MATLAB主线：修正两资产HA后多省顺序单轮、GovInv收益边界×0.9/1.1、Zt自适应、冻结GDP误差≤1%门、原lagged-NKPC递推；same-S/lagged raw收益、家庭税后净工资只扣一次、劳动/财政量纲分账。V008/V009 Newton/CES等仅历史辅助。A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER UNRESOLVED、model_activation=False、Results FALSE、真实C8 REQUEST_ONLY、原D盘保护及旧失败回执不变。工程资格不等于科学/发布资格。

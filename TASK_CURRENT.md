@@ -1,16 +1,14 @@
-# TASK_CURRENT：V010离线静态交付已到，独立审议完成（无工程/科学运行权）
+# TASK_CURRENT：V010 ENGINEERING_ONLY Windows preflight
 
 更新：2026-10-16（Asia/Shanghai）。
-**ACTIVE_TASK=V010_RUNNER_GUARD_IO_OFFLINE_INTEGRATION_AND_SANITIZED_GITHUB_HANDOFF**。
-**STATUS=DELIVERED__INDEPENDENT_STATIC_LIMITED_ACCEPT__FULL_IO_BLOCKED__WAIT_OWNER_ENGINEERING_GATE_DECISION**。
-**PERMISSION=NO_NEW_PYTHON_OR_HA_RUNTIME__NO_NEW_SCIENCE_BUDGET__OWNER_ENGINEERING_PREFLIGHT_DECISION_REQUIRED**。
+**ACTIVE_TASK=`V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT`**。
+**STATUS=`OWNER_APPROVED__TASK_ISSUED__AWAIT_CODEX_RESULT`**。
+**PERMISSION=`ENGINEERING_ONLY_WINDOWS_PREFLIGHT_BOUNDED__NO_HA_OR_SCIENCE`**。
 
-**2026-10-16新核验**：[GitHub独立静态审议](versions/0.0.10/runner_guard_io_offline_github_primary_review_20261016.md)（相对仓库根），候选`c207e866cf70d9d5ae6fb245f43cabfdeac1d32b`/tree`b4ba5b7939653a0cdb8524fa82743d9634d79083`/唯一父`50fece7d51bbcbb7e4384b0a5a8833b81dcbf76b`。3份白名单静态文件已独立核源，46例仅声明非执行。仍用既有ACTIVE任务ID，不重发、不改冻结合同；`STATIC_DESIGN_READY=CONDITIONAL_LIMITED_ACCEPT`、`FULL_RUNNER_IO_CLOSURE=BLOCKED`，先STOP等待Owner决定工程-only preflight。下文交接时“后续收到结果再验收”属历史时点描述。
+唯一任务原件：[runner_io_engineering_only_windows_preflight_task_20261016.md](versions/0.0.10/runner_io_engineering_only_windows_preflight_task_20261016.md)，发行commit `343c22132deb23ba6d913d70e132b43a00b95f1d`，tree `2fbb740ba42e2367fb99de05a11eb533829ea72b`，blob `08fed792ee19329313dfc7402fa174035805a345`。已经正式发布，**不得二次派单**。Codex在新的隔离scratch集中完成单轮预检，严格从已批准文本candidate `c207e866cf70d9d5ae6fb245f43cabfdeac1d32b`及冻结模型代码 `94de4501dec051b969bee9d852eba2d4591f30ef`构造，只修改新的工程runner与最小harness，不触原模型算法或保护资产。
 
-权威唯一本：[runner_guard_io_offline_integration_task_20261016.md](versions/0.0.10/runner_guard_io_offline_integration_task_20261016.md)；发行commit `50fece7d51bbcbb7e4384b0a5a8833b81dcbf76b`、tree `c79f874a1ea60f3a880114fd5d80b0861e6ca21e`、task blob `0070437d83eccaaf4a1c38838e9ce2b1a2fb5634`。**任务已发布，不能因本会话交接再次重发或更换SHA。**
+核心预算：工程Python总≤4（AST≤1、isolated harness≤1、真正Windows runner≤2），每进程≤180s，总任务≤3h；每次真实runner≤5次精确只读Git child；新工程artifact≤16MiB，隔离不共享common-dir clone≤2GiB。全部工程进程**先扣外部持久账**再启动；任何失败/超额STOP。仅允许工程导入/真实Windows Git身份、source bytes、audit形态、I/O/Job回收与负例验证，`HA/HJB/KFE/selector/roots/GE/IRF/MATLAB/pytest=0`，科学进程新许可=0，真实C8读取=0。未来HA需要工程独立验收后再次请求Owner单独授权。
 
-[交接全记录](docs/CH5_CONVERSATION_HANDOFF_20261016_V010_RUNNER_IO_OFFLINE_PENDING.md)；[最新独立静态验收](versions/0.0.10/windows_git_guard_uploaded_primary_review_20261016.md)。工作内容仅是离线整合守门/runner I/O：真实Git子进程结果绑定、磁盘9源实际字节和`__file__`、有界PIPE/timeouts、audit、错误脱敏、写前配额、终态保底，以及24个静态用例和新增反例。新独立scratch≤5文件/2MiB、原小文件只读≤12件/5MiB、≤3小时；无Python/pytest/import/HA/HJB/KFE/root/selector/GE/IRF/MATLAB运行；旧工作树/真实数据不触。
+旧ACTIVE `V010_RUNNER_GUARD_IO_OFFLINE_INTEGRATION_AND_SANITIZED_GITHUB_HANDOFF` 已DELIVERED并由Astra [静态限域接受](versions/0.0.10/runner_guard_io_offline_github_primary_review_20261016.md)，不再是当前派单。旧original任务及失败回执/冻结plan/blob不修改、预算不重置。
 
-只限经脱敏3种文件向新`review/v010-runner-io-offline-20261016`分支普通non-force一次推送，远端准确回读。若无法安全去敏，提交LOCAL_ONLY报告而不是公开raw。最终交付`V010_RUNNER_GUARD_IO_OFFLINE_INTEGRATION_RESULT`，`WAIT_ASTRA_V010_RUNNER_IO_STATIC_INTEGRATION_REVIEW / STOP`；下一会话收到Codex结果后Astra独立验收，不允许Codex自授PASS、不得自动进入新科学预算。
-
-冻结V010模型plan/fixture/代码candidate与原单点input全部不追改。旧单点两次Python1/1、HA0、首次存储超限永久记账，第三次新科学Python需Owner未来单独授权。A16/window/C9/CALL_LEDGER/Results FALSE、V011 NOT_STARTED、原8dirty/index/common-dir保护不变。
+唯一最终交付 `V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT_RESULT`，终态 `WAIT_ASTRA_V010_ENGINEERING_PREFLIGHT_REVIEW / STOP`。仅能向新`review/v010-runner-io-engineering-preflight-20261016`安全脱敏发布3种指定review文件，单父为本任务发行commit，普通nonforce一次并回读；脱敏不通过LOCAL_ONLY STOP。不推main、治理或旧review分支，不自主启动HA或V011。旧8dirty/index/common-dir、A16/window/C9/CALL_LEDGER/Results保护保持。

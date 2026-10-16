@@ -1,5 +1,8 @@
 # 第五章科学决定：当前适用范围与历史合同索引
 
+> **2026-10-16后续Owner唯一工程例外（优先于下方交接时态“新Python全部0”）**：Owner已授权`V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT`，固定发行commit `343c22132deb23ba6d913d70e132b43a00b95f1d` / blob `08fed792ee19329313dfc7402fa174035805a345`；仅**4个有界工程Python进程、其中真实runner≤2次**，不得调用任何HA/HJB/KFE/selector/root/GE/IRF或真实数据。`ONE_HA`及旧科学进程许可仍为0，旧两次Python1/1历史消耗、第一次存储超额不撤销。下方“新Python全部0”仅表示**2026-10-16原交接当时**未有新的工程授权；本段仅更新工程执行权限，不修改任何科学方程、冻结计划、V1.2或Results资格。原科学决定、A16/window/C9/CALL_LEDGER与V011禁启保持。
+
+
 > **2026-10-16 会话交接时态补充（不修改Owner历史科学裁决）**：本文2026-10-15“当前允许V010受界实施/合成科学”的表述仅指原冻结签发时的历史许可，**不能作为实时调用授权**。截至最新[2026-10-16交接](docs/CH5_CONVERSATION_HANDOFF_20261016_V010_RUNNER_IO_OFFLINE_PENDING.md)，V010唯一ACTIVE是已发布的纯离线`V010_RUNNER_GUARD_IO_OFFLINE_INTEGRATION_AND_SANITIZED_GITHUB_HANDOFF`（commit `50fece7d51bbcbb7e4384b0a5a8833b81dcbf76b`、task blob `0070437d83eccaaf4a1c38838e9ce2b1a2fb5634`），**新Python/HJB/KFE/HA/pytest/macro/IRF权限全部0**。原单点两次预检进程各1/1已耗、HA各0；任何补充数值许可须Owner再次明确批准。以下经济方程决定、GovInv边界和各原冻结科学门不变。
 
 
