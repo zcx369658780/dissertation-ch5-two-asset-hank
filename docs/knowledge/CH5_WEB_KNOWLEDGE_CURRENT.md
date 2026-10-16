@@ -1,5 +1,12 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-17最新：V010 SOURCE_TIMESTAMP前置失败，GitHub交换LOCAL_ONLY、任务已STOP
+
+**ACTIVE_TASK=NONE**。上一正式证据交换`V010_CURRENT_SEAL_SANITIZED_GITHUB_EVIDENCE_EXCHANGE`已Codex交付`FAIL_CLOSED/LOCAL_ONLY`并经[限域主审](../../versions/0.0.10/current_seal_exchange_source_timestamp_fail_closed_local_only_primary_review_20261017.md)归档，review Git Blob `87d35c2270c1b8a42e19d3210f22fa0abe914bdc`。Codex报告静态准备阶段SOURCE_TIMESTAMP条件失败：脚本要求JSON解析后的timestamp类型仍为string，但实际解析类型未记录，**不代表raw timestamp格式无效**；本机已据报核前一final原件hash、当前first/final/run_id/17项关联，但未进入安全scan。GitHub实查对应review分支不存在404，candidate/tree/四文件均无。实际消耗仅PS静态1/2、旧文件5份43,468B；scan0、bare0、SSH/fetch/push0、17/20历史测试重跑0、Python/runner/HA等科学0，STOP后余量关闭、不结转。本轮失败receipt Owner提供SHA256`F93DA4C6BEE0E62F68A04620B8BF372AD60275C20DEA7782EF2C56E4BFADA6FC`，未有Astra原始本机bytes核验。
+
+旧B/S/L20证据first原字节和旧run_id均不存在，故LEGACY_SEAL_CHAIN_UNVERIFIABLE，不伪造；新17合成及其first/final只能保留Codex本机证据级，尚未远端独立验。原旧sanitizer拒绝UNKNOWN且原候选PUBLICATION_DENIED；历史ledger曾记录raw argv/短源码的过程偏差UNRESOLVED。下一步如Owner批准，仅限新独立任务下的SOURCE_TIMESTAMP解析类型/语义诊断和安全合成正反例，保留原raw与失败回执不触；未来实际GitHub发布另需新一次性授权，**不能重试原已STOP任务**。当前V010 M1原MATLAB修错/Python接线尚未真实runner I/O PASS；M2多省稳态/GovInv Zt GDP校准未科学PASS；M3无合格基点不能正式冲击；M4 Results FALSE；V011 NOT_STARTED。现有C盘独立SSD备份＋GitHub、SSH Key/443、可信工作站选择以及原8dirty/index/外Git common-dir/全部旧失败scratch、C盘备份/真实C8、A16/window/C9/CALL_LEDGER、model_activation=False、FULL_RUNNER_IO_CLOSURE BLOCKED均不变。以本段与CURRENT/TASK_CURRENT为最新时态，下方ACTIVE=证据交换均历史内容。GitHub归档不等于本地QMD/Basic Memory同步。
+
+
 ## 2026-10-16最新：M1–M4进度已核、新seal GitHub证据交换任务ACTIVE
 
 **ACTIVE_TASK=V010_CURRENT_SEAL_SANITIZED_GITHUB_EVIDENCE_EXCHANGE**；已签发固定[任务](../../versions/0.0.10/current_seal_sanitized_github_evidence_exchange_task_20261016.md)发行Commit 49ff1c3053fa1aa6a0646f55abcffb077e2b62b2/Blob 1dc5f07a88261c41de434a9c4075b0d179ee871a，Owner明确同意继续受界GitHub脱敏证据交换。最新长期[路线图进度](../../docs/CH5_V010_ROADMAP_PROGRESS_AND_NEXT_GATES_20261016.md)依据[现行论文成果优先战略](../CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md)与V010冻结plan：M1源模型修错/Python候选和本机合成工程是部分进展，但真实Windows import/runner、corrected HA单点仍未PASS；M2冻结GovInv/Zt规则但无当前合格稳态/GDP独立验证，M3尚不能产生原冲击图，M4未获Results，V011 NOT_STARTED。
