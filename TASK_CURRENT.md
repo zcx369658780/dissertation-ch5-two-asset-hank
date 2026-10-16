@@ -1,13 +1,13 @@
-# TASK_CURRENT：V010 SOURCE_ONLY已独立验收，当前无ACTIVE
+# TASK_CURRENT：V010 IMPORT_GUARD SOURCE_ONLY设计
 
-更新：2026-10-16（Asia/Shanghai）。
-**ACTIVE_TASK=NONE**。
-**LAST_TASK=V010_SOURCE_ONLY_IMPORT_DEPENDENCY_CLOSURE_AND_READONLY_ASSEMBLY_PLAN__DELIVERED__STOP**。
-**LAST_REVIEW=SOURCE_ONLY_PARTIAL_IMPORT_CLOSURE_WITH_OPEN_GATES__INDEPENDENT_DOCUMENTARY_LIMITED_ACCEPT**。
-**PUBLICATION=LOCAL_ONLY_SAFE_PUBLICATION_BLOCKED**。
-**NEXT_GATE=WAIT_OWNER_V010_IMPORT_GUARD_AND_DEPENDENCY_RESOLUTION_DECISION / STOP**。
-**EXECUTION_PERMISSION=NONE__NO_NEW_GIT_RETRY_OR_PYTHON_OR_RUNNER_OR_HA**。
+2026-10-16（Asia/Shanghai）。
+**ACTIVE_TASK=V010_IMPORT_GUARD_AND_DEPENDENCY_GATE_SOURCE_ONLY_DESIGN**。
+**STATUS=ISSUED__AWAIT_CODEX_DESIGN_DELIVERY**。
+**PERMISSION=SOURCE_ONLY_STATIC_REVIEW__NO_PYTHON_OR_MODEL_IMPORT_OR_HA**。
+**STOP=WAIT_ASTRA_V010_IMPORT_GUARD_DESIGN_REVIEW / STOP**。
 
-Owner上传两份脱敏报告及JSON后，[Astra独立主审](versions/0.0.10/source_only_import_closure_uploaded_primary_review_20261016.md) blob`07371fbeb56097c74c02f8f4d1e9e86460f0550e`已完成，独立核70/70冻结Git源Blob/byte_size、六份原始SHA256抽样、70个node/1056边记录的类型索引及42个词法可达候选。记录中有7条重复六元组边，去重1049；20个入口UNRESOLVED和第三方/动态import未知仍不能宣称FULL_IMPORT_CLOSURE_READY。旧source-only冻结任务commit`a2c9bf4b57aa9ce8f0c9ae5a1d920e141ee57ebd`/blob`7affb983e000c487dc306852383d747420400a63`已STOP，不重发、不恢复旧工程额度；本轮`write-tree`自报exit128，无新review commit/push0。
+唯一冻结task：[全文](versions/0.0.10/import_guard_dependency_design_source_only_task_20261016.md)。发行commit`79f82934184292e7d021cbef8d4322c02c9cc0bc`、tree`80a18652013613f883d4d8b48a87cb2a36c882f7`、task blob`1bdb77a12d4494cae3052ba52392125a94bf0413`，**已经发行，不重发或改SHA**。Codex先读原SOURCE_ONLY independent primary review，再只读前轮两脱敏本地图文件（hash见task），优先42个词法入口中20 UNRESOLVED+14 SIDE_EFFECT_RISK，静态设计根身份-源码根双绑定、第三方native/NumPy/SciPy与import-time安全门、未来分层可审计验证路径。若UNKNOWN未解除标PARTIAL，不自动执行。
 
-**Owner新长期交付要求已正式批准**：[未来脱敏GitHub临时审阅交换协议](docs/CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md) blob`db0e95d89b78c63add24de3ef66da0be19794264`。未来新任务必须把脱敏MD/JSON置于冻结任务指定的独立review临时分支及`_review_tmp/ch5/<task-id>/`目录，由Astra先验收及永久归档后只清理临时副本。不能把删除误当Git历史彻底擦除，不清理原冻结计划、历史失败或科研数据。未来每个新任务需明确temp branch、path、bytes和cleanup权威；当前原件已经由Owner聊天上传并验收，不需要补推。原V010科学冻结、A16/window/C9/CALL_LEDGER、Results FALSE/真实C8、受保护8dirty/common-dir以及V011 NOT_STARTED不变。
+唯一审阅发布分支`review/ch5-temp-v010-import-guard-design-20261016`，临时目录`_review_tmp/ch5/v010-import-guard-design-20261016/`，只允许脱敏`result.md`≤32KiB和`manifest.json`≤128KiB。**这个目录只存在GitHub临时review commit，禁止本地项目或模型任何worktree/index/staging创建、Git add、checkout**，不写protected树或更改.gitignore；首选GitHub Git Object API直接commit，备选项目外exclusive bare repo，无共享common-dir。一次nonforce交付，sole parent必须本任务发行commit；Astra验收永久归档并回读后清理远端临时副本。精确规则见[Owner批准的临时交换协议](docs/CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md)。
+
+本轮额外源只读≤55文件/4MiB、Git只读调用≤120、非Git工件≤8MiB、2h；**Python、AST、pytest、model import、Windows runner、science HA/HJB/KFE/selector/root/GE/IRF/C8均0**。旧STOP工程预算不结转。冻结科学合同/历史超限、Results FALSE、A16/window/C9/CALL_LEDGER、原8dirty/index/common-dir、V011禁启持续。

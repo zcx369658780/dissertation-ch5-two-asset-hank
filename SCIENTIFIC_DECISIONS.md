@@ -1,5 +1,8 @@
 # 第五章科学决定：当前适用范围与历史合同索引
 
+> **2026-10-16最新Owner限域SOURCE_ONLY设计授权（科学决定不变）**：已签发唯一新ACTIVE`V010_IMPORT_GUARD_AND_DEPENDENCY_GATE_SOURCE_ONLY_DESIGN`，commit`79f82934184292e7d021cbef8d4322c02c9cc0bc`/task Blob`1bdb77a12d4494cae3052ba52392125a94bf0413`，见[固定任务](versions/0.0.10/import_guard_dependency_design_source_only_task_20261016.md)。仅做前次静态图42模块（20 UNRESOLVED/14 SIDE_EFFECT_RISK/8 PURE_DEFINITION）import guard与第三方NumPy/SciPy/Windows native副作用控制设计，并提出身份根/源码根精确Git Blob+SHA256双绑定、未来OS隔离验证方案。所有新Python/AST/model import/runner/HA/HJB/KFE/selector/root/GE/IRF/真实C8调用0，旧工程及科学资源不结转。Owner额外要求审阅临时文件只在**远端独立review branch tree**，严禁进入本地科研模型/治理project worktree/index/staged；本条已记入长期知识和[交付协议](docs/CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md)。下方“无ACTIVE/待Owner下一决定”属签发前历史时点，原GovInv/税/迁移/科学与Results保护全部不改。
+
+
 > **2026-10-16最新SOURCE_ONLY验收及Owner临时review交付规则（不改科学合同）**：[本轮正式主审](versions/0.0.10/source_only_import_closure_uploaded_primary_review_20261016.md)核70源码Git Blob/bytes全部吻合，抽样6份raw SHA256一致，1056边记录（7重复六元组）、42个词法入口候选，结论`SOURCE_ONLY_PARTIAL_IMPORT_CLOSURE_WITH_OPEN_GATES__INDEPENDENT_DOCUMENTARY_LIMITED_ACCEPT`，不是runtime/HA PASS。上轮任务已STOP，`ACTIVE_TASK=NONE`、无Python/HA新许可。Owner批准[未来GitHub临时脱敏材料交换和清理协议](docs/CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md)：Codex今后直接发布脱敏文件到独立review分支临时目录，Astra永久审议归档后清理临时文件，Git历史仍可能保留旧提交，因此先脱敏。下方“待上传/旧ACTIVE”等为原时点描述；GovInv、HJB/KFE、税、same-S、原lagged-NKPC及Results/A16/window/C9/CALL_LEDGER/C8保护全部不变。
 
 

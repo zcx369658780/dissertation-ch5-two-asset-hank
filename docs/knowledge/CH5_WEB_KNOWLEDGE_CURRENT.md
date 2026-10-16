@@ -1,5 +1,12 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-16最新：Owner批准新V010 import guard SOURCE_ONLY静态设计门
+
+唯一ACTIVE`V010_IMPORT_GUARD_AND_DEPENDENCY_GATE_SOURCE_ONLY_DESIGN`，[正式冻结任务](../../versions/0.0.10/import_guard_dependency_design_source_only_task_20261016.md)发行commit`79f82934184292e7d021cbef8d4322c02c9cc0bc`、Blob`1bdb77a12d4494cae3052ba52392125a94bf0413`，由Owner批准继续推进；只基于此前图42个词法可达候选、20 UNRESOLVED、14 SIDE_EFFECT_RISK、8 PURE_DEFINITION、第三方numpy/scipy/Windows ABI以及动态/annotation/decorator风险，设计**Git identity root与未来独立source assembly root双绑定**、原非空init及外部native副作用隔离门、阶段化验收；不运行任何Python/AST/import/runner/HA或真实数据，不创建新的模型源码装配，science/Results资格继续冻结。新静态预算≤55源文件/4MiB、≤120 Git只读、≤8MiB新非Git工件、2h。待Codex只提交脱敏结果与manifest供Astra独立审阅，不复用上次STOP预算。
+
+**必须长期记住的Owner交付偏好**：`_review_tmp/ch5/<task-id>/`只允许是**GitHub远端临时review分支内的文件路径**，绝不创建/复制/checkout/stage/git add到本地原项目/模型/治理worktree或其Git index；GitHub API直接blob/tree/commit/ref为优先，无接口则项目外独占bare对象库且不共享common-dir。已写入[永久审阅协议](../../docs/CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md)和V1.2工作流，并在本轮任务固定。Astra先归档正式review并回读再删除远端临时副本；Git history仍可能保留，因此必须上传前彻底脱敏。这个Git长期知识记录可由未来顾问恢复，ChatGPT全局个人Memory未由工具强制即时修改。前轮PARTIAL、科学HA UNTESTED、Results FALSE、A16/window/C9/CALL_LEDGER、原8dirty/index/common-dir保护及V011 NOT_STARTED照旧。
+
+
 ## Owner长效偏好更新：GitHub审阅临时目录绝不进入本地工作树/索引（2026-10-16）
 
 Owner明确要求：“临时文件供Astra验收后清理，**不要让Git把临时目录加入工作区目录**”。作为长期项目知识锚点，未来Codex必须把`_review_tmp/ch5/<task-id>/`限制为**独立GitHub审阅分支远端tree里的暂存文件**，不能在模型或治理的本地repo/worktree/index里生成、stage、checkout；禁止触碰原受保护D盘dirty树，禁止为此改用户项目.gitignore或共享.git对象。首选经授权GitHub Git Objects API直接创建安全review Commit（不使用本地工作区）；没有此权限才允许项目外独占bare Git对象库存放临时发布元数据（无worktree/checkout，保证固定parent的Git对象闭包完整）。Astra验收并永久保存review/治理索引后，**仅删除远端review分支`_review_tmp/ch5/<task-id>/`下的白名单脱敏文件，回读cleanup**；Git旧Commit中可能仍可访问，上传前必须完全脱敏。长期权威见[临时review规则](../../docs/CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md)与[工作流V1.2](../../docs/CH5_ASTRA_WORKFLOW_CURRENT.md)。个人ChatGPT Memory不能由本工具强制立即写入，本Git文档作为项目未来顾问可实际读取的持久知识。
