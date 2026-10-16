@@ -1,5 +1,10 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-16 最新归档指针：V010集中合成工程任务已审/已停止
+
+当前 ACTIVE_TASK=NONE。B/S/L 20项合成测试结果仅Codex本机回执级；首次封存汇总空值，证据链未独立核验。正式审议见 versions/0.0.10/bare_identity_sanitizer_ledger_engineering_local_only_primary_review_20261016.md；实时授权以 CURRENT.md 和 TASK_CURRENT.md 为准。旧扫描拒绝与历史台账偏差仍未关闭，V011未启动。
+
+
 ## 2026-10-16最新：V010 bare身份/脱敏/台账 ENGINEERING_ONLY集中修复任务ACTIVE
 
 Owner已接受GPT建议，正式发布唯一 `V010_BARE_IDENTITY_SANITIZER_LEDGER_ENGINEERING_ONLY_CORRECTION`，冻结任务[全文](../../versions/0.0.10/bare_identity_sanitizer_ledger_engineering_correction_task_20261016.md)发行Commit `2a252ec2627d9a1f48dcab0c1bab16cc6cf9d9fe`、Git Blob `6c31d861a9e15f1b5956dfdfa7132a074bdb2e5e`。这是一张**一次性集中真实工程修复/合成回归**任务而非第三轮泛SOURCE_ONLY取证：新scratch `D:\ProjectTemp\ch5_v010_bare_sanitize_engcorr_20261016_01`；修复bare common-dir路径分隔符的表层误拒且坚持独占/nonshared/无reparse与负例；生成只含匿名规则ID/类别/计数的结构化sanitizer诊断并验证JSON转义、模拟凭据等合成正负例；新中间ledger从第一写入就只用typed匿名元数据，消除“先复制原argv/源码、后来在最终报告替换”的**新管线**缺陷。旧偏差回执必须保存原样，历史`PROCESS_COMPLIANCE_OPEN`不追溯擦除。上一审议Blob`9fe0549a7c02656cbf646de2a74daa47757f0205`认可路径字符串分隔符归因仅文档证据；旧脱敏拒绝具体命中文件/规则/字段/次数仍UNKNOWN，原资料禁公开。
