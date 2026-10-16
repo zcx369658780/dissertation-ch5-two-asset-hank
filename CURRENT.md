@@ -1,12 +1,14 @@
-# 第五章 CURRENT：Windows argv静态交付已报告，runner I/O仍BLOCKED
+# 第五章 CURRENT：Astra独立审原Windows Git守门草案，进入离线runner I/O集成
 
 日期：2026-10-16（Asia/Shanghai）。
-**状态：V010_WINDOWS_GIT_GUARD_STATIC_DELIVERY_LIMITED_ACCEPTED__FULL_RUNNER_IO_BLOCKED__WAIT_PRIMARY_DRAFT_FOR_INDEPENDENT_REVIEW。**
+**状态：V010_UPLOADED_GUARD_SOURCE_INDEPENDENTLY_REVIEWED__RUNNER_IO_BLOCKED__OFFLINE_INTEGRATION_TASK_ISSUED__NO_RUNTIME_PERMISSION**。
 
-原任务`V010_WINDOWS_GIT_ARGV_PREFLIGHT_STATIC_FORENSIC_AND_GUARD_REPAIR`已由Codex交付并STOP；[最新Astra限定审议](versions/0.0.10/windows_git_argv_guard_static_review_20261016.md)已登记。Codex报告已有`V010_WINDOWS_ARGV_GUARD_STATIC_REPAIR_RESULT.md`与未执行`windows_git_guard_draft.py`、24项静态allow/deny用例、3文件33576B，且本轮Python/HA/HJB/KFE/selector/root/pytest均0，保护的旧对象hash不变。因报告仍位于Windows D盘且未作为附件上传，以上仅`CODEX_REPORTED_WITH_LOCAL_RECEIPTS`，Astra未独立审原代码或24例。
+Astra已直接读取Owner上传的`V010_WINDOWS_ARGV_GUARD_STATIC_REPAIR_RESULT.md`及`windows_git_guard_draft.py`原字节、分别得SHA256`27CD9B23FC7032E523E0D397D2E7FAF05BD99B500E4CB8E6487AA98B20EC1151`与`A021AFD81CE1342290A8C8387C0B49383CAE20C66B00F46336F220DB546B1C5C`；AST源码语法PASS（未import/运行）。[独立静态审议](versions/0.0.10/windows_git_guard_uploaded_primary_review_20261016.md)裁决guard设计可供后续离线集成，但真实Windows argv仍`NOT_CAPTURED`、24例只有MD分组预期非runtime PASS、完整runner I/O仍**BLOCKED**。
 
-**核心证据更正**：原运行回执并未存实际Windows被审计argv，撤销旧“已经确认收到Windows字符串”的表述；只能说Codex报告在源码发现命令形态兼容/子命令权限约束缺陷。guard草案`STATIC_READY`是Codex自己的静态候选状态，不是runtime资格；完整runner I/O保护仍`BLOCKED`。
+最重要的代码缺口：Git身份`identity_outputs()`没有绑定实际child有界返回；`ls-tree HEAD`不证明磁盘导入的9份Python源码字节；`Popen`缺有界stdout/stderr/timeout/reap；新hook不能叠加旧hook；旧runner异常/JSON配额/启动失败闭环尚需阅读原runner修复。故**不得再因局部STATIC_READY启动第3个Python进程**。
 
-两次正式单点preflight各Python进程1/1已耗、HA均0；首次GBK预检日志43519638B/旧32MiB，超9965206B；第二次Windows守门拒绝、artifact117446B/96MiB未超额。冻结单点`rah=.0675,w_eff=15.5,rb=.02`仍**UNTESTED**，原source candidate `94de4501dec051b969bee9d852eba2d4591f30ef`工程限域接受和旧V010计划/manifest不追改。
+本轮唯一新ACTIVE为[离线整合runner守门/I/O任务](versions/0.0.10/runner_guard_io_offline_integration_task_20261016.md)；不运行Python/pytest/HA/HJB/KFE，Codex只在隔离scratch整合未执行的runner草案、静态case JSON。**task单独允许安全脱敏文档通过新review分支普通non-force GitHub交付**，不能公开上传原D盘私有日志/绝对路径；以后降低Owner手动搬运文件次数，不修改V1.2永久工作流。
 
-**ACTIVE_CODEX_TASK=NONE**，本轮不再签发新Python或HA科学运行。最短下一门是读取用户上传的上述MD/py及24静态例，先由Astra独立检查guard和I/O缺口，再制定只含工程预检的有限任务/许可；之后才可能另行请求Owner科学HA许可。旧V010消耗账、原8dirty/index/common-dir/真实C8/B3、A16 FAIL_CLOSED、C9 PAUSED、window UNACCEPTED、CALL_LEDGER UNRESOLVED、model_activation=False、Results FALSE保持，V011 NOT_STARTED。
+旧两个单点进程各1/1已耗且HA均0；首个GBK故障output43519638B超32MiB 9965206B、第二Windows守门故障117446B在96MiB内。该`rah=.0675,w_eff=15.5,rb=.02`仍`UNTESTED`；旧V010首个两省synthetic HA checkpoint2另FAIL_CLOSED。原科学模型候选`94de4501dec051b969bee9d852eba2d4591f30ef`及原计划blob`85138d8859d53295262fe13bf5bc277bca95ed3f`、单点manifest blob`c23d331bed34e5ca478324cdc05034609ecb91b7`不变。
+
+A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER UNRESOLVED、model_activation=False、Results FALSE，real C8 A–D REQUEST_ONLY、原8dirty/index/common-dir/untracked/ignored保护、V011 NOT_STARTED不变。

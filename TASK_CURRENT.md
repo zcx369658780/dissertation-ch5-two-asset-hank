@@ -1,11 +1,11 @@
-# TASK_CURRENT：静态guard交付后STOP，等待原件独立审查
+# TASK_CURRENT：V010 runner Windows argv+I/O 完整离线静态集成
 
-日期：2026-10-16（Asia/Shanghai）。
-**ACTIVE_CODEX_TASK=NONE__V010_GUARD_STATIC_DELIVERY_REPORTED__WAIT_MD_PY_AND_24_CASES**。
-**NO_NEW_PYTHON_PROCESS_OR_HA_HJB_KFE_SELECTOR_ROOT_PYTEST_MACRO_IRF_PERMISSION**。
+更新：2026-10-16（Asia/Shanghai）。
+**ACTIVE_TASK=V010_RUNNER_GUARD_IO_OFFLINE_INTEGRATION_AND_SANITIZED_GITHUB_HANDOFF**。
+**PERMISSION=OFFLINE_STATIC_DRAFT_ONLY__NO_PYTHON_OR_HA_SCIENCE_RUNTIME__GITHUB_SANITIZED_REVIEW_BRANCH_ONLY**。
 
-前task`V010_WINDOWS_GIT_ARGV_PREFLIGHT_STATIC_FORENSIC_AND_GUARD_REPAIR`已Codex报告完毕、STOP：未执行`windows_git_guard_draft.py`、24项静态allow/deny例、3文件33576B、Python/science 0；`STATIC_READY`仅草案自报，完整runner`BLOCKED`。原回执**没有**实际审计argv，不能从用户短报告臆造具体Windows命令字符串。Astra尚未直接取得Windows原MD/py，静态代码与24用例独立审阅`PENDING`。
+唯一任务：[runner_guard_io_offline_integration_task_20261016.md](versions/0.0.10/runner_guard_io_offline_integration_task_20261016.md)。必须先读取[Owner上传原件的Astra独立审议](versions/0.0.10/windows_git_guard_uploaded_primary_review_20261016.md)，补齐真实child Git身份/实际磁盘源码bytes/完整stdout-stderr/timeout/异常/IO quota/终态保证；24例只作为静态断言而非已运行PASS。旧`recovery_runner.py`和既有配套case JSON由Codex**只读**用于集成。
 
-[独立限定验收/等待材料](versions/0.0.10/windows_git_argv_guard_static_review_20261016.md)。Owner上传原本地报告`V010_WINDOWS_ARGV_GUARD_STATIC_REPAIR_RESULT.md`、`windows_git_guard_draft.py`（及24例所在文件）后，Astra继续审核；**不让Codex重复取证/执行静态例，也不重启原Python科学任务**。
+本任务**无Python/py_compile/pytest/HA/HJB/KFE/root/selector/宏观/IRF运行权**；只在新隔离scratch编辑离线文本候选。为避免Owner再手动传文件，本task唯一批准经严格去敏的静态报告/草案文本/逐例JSON发布到新`review/v010-runner-io-offline-20261016`分支，普通非force一次、远端回读；严禁原私有runner/raw数据/系统路径直接公开，禁止写main、治理accepted/原工程代码树。如果无法去敏，STOP不push。
 
-代码候选`94de4501dec051b969bee9d852eba2d4591f30ef`，原单点manifest blob`c23d331bed34e5ca478324cdc05034609ecb91b7`与原V010 plan blob`85138d8859d53295262fe13bf5bc277bca95ed3f`不改；旧两次preflight进程各1/1、HA0与原存储超限仍按历史账独立保存。原受保护D盘、A16/C9/window/CALL_LEDGER、Results FALSE、V011 NOT_STARTED不变。
+完整runner I/O仍`BLOCKED`，原两次science进程各1/1 HA0；第三次Python/HA必须Owner未来分开授予工程及科学许可。V011 NOT_STARTED、Results FALSE，原A16/C9/window/CALL_LEDGER/8dirty与真实C8/B3保护不动。
