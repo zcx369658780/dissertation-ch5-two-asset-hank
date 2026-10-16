@@ -1,5 +1,16 @@
 # 第五章脱敏审阅材料 GitHub 临时交换与清理协议（Owner 2026-10-16 授权）
 
+## Owner补充强制规则：临时审阅目录不得进入任何本地项目工作树或Git索引（2026-10-16）
+
+**长期Owner决定（优先于下方一般临时交付例示）**：`_review_tmp/ch5/<task-id>/` 是**GitHub远端独立review分支的临时文件路径**，并非本地模型、科研项目、治理工作树下可创建的文件夹。Codex**不得**在原项目repository root、任何既有项目worktree、受保护D盘旧树或其staged index内创建/复制/暂存/提交`_review_tmp`；不得把review临时目录加入本地`git add`、git status待提交项、checkout或主分支/科学模型tree；也不修改全局Git配置、本地protected worktree的`.gitignore`/`.git/info/exclude`来掩盖临时文件。不要使用`git worktree add`、共享工作树、hardlink/alternates/--reference/--shared。**同名路径仅允许存在于远端临时review commit的树中**；这不是把文件加入本地项目工作区。
+
+**推荐优先路径**：通过有权限的GitHub Git Data Objects API/连接器，直接对**完整、固定的任务发行commit**创建脱敏Git Blob、附加到远端candidate tree、单parent commit和独立临时review ref，全程不落地仓库工作树或Git索引。工具不可用时，替代为在项目工作树**之外**新建独占、非共享`git --bare`发布对象库，保持`core.bare=true`、无checkout/working-tree、不共享原`.git`或对象；在发布前证明parent/tree/所有必要blob齐全、write-tree不会因`--filter=blob:none`造成lazy-fetch依赖缺失。不能在旧/受保护的本地Git index里临时stage。模型源码、runner原件和历史失败本地树均不能为审阅发布而改写。
+
+**验收/删除范围**：Astra先从远端临时ref+commit精确读MD/JSON并归档永久review、动态治理和必要证据哈希，经GitHub远端readback确认后，才可在**该临时review分支**用允许的删除动作删`_review_tmp/ch5/<task-id>/`里的明确白名单文件并核对临时目录从分支最新tree消失。绝不在Owner本机原工程工作树里执行`git clean`、`rm -rf`、checkout、reset或`git add`；不能清理正式`versions/`验收、冻结任务、旧失败或model branch。连接器不支持安全删整个branch时，维持清理后的review ref与清理Commit，不用force/rewrite历史。文件旧commit历史仍可能可访问，所以上传前脱敏不可省。
+
+**交接/记忆锚点**：此段写入项目长期GitHub知识入口、V1.2工作流与后续固定任务；ChatGPT产品个人Memory摘要不保证由工具即时同步或可强制写入。未来顾问必须先读`docs/DOC_INDEX_CURRENT.md`、本协议及知识入口，按Owner当前决定执行；不以仅凭对话的“已记忆”替代可回读的仓库权威。
+
+
 **状态：OWNER_APPROVED_OPERATIONAL_REVIEW_EXCHANGE_POLICY**。
 **Owner指令：**“以后请你记得让codex把脱敏文件传到github仓库的临时目录中，你验收后就可以删除，这样能节省很多时间。” 本协议作为后续新任务默认交付附加条款，**不追改任何已冻结任务、科学合同、历史review候选或既有本地证据**；仅在每次未来冻结任务明确引用/允许时生效。服务于V1.2 Owner→Astra→Codex工作流的证据传输效率，不是科学或Python运行授权。
 

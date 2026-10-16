@@ -1,5 +1,12 @@
 # 第五章长期知识与恢复入口
 
+## Owner长效偏好更新：GitHub审阅临时目录绝不进入本地工作树/索引（2026-10-16）
+
+Owner明确要求：“临时文件供Astra验收后清理，**不要让Git把临时目录加入工作区目录**”。作为长期项目知识锚点，未来Codex必须把`_review_tmp/ch5/<task-id>/`限制为**独立GitHub审阅分支远端tree里的暂存文件**，不能在模型或治理的本地repo/worktree/index里生成、stage、checkout；禁止触碰原受保护D盘dirty树，禁止为此改用户项目.gitignore或共享.git对象。首选经授权GitHub Git Objects API直接创建安全review Commit（不使用本地工作区）；没有此权限才允许项目外独占bare Git对象库存放临时发布元数据（无worktree/checkout，保证固定parent的Git对象闭包完整）。Astra验收并永久保存review/治理索引后，**仅删除远端review分支`_review_tmp/ch5/<task-id>/`下的白名单脱敏文件，回读cleanup**；Git旧Commit中可能仍可访问，上传前必须完全脱敏。长期权威见[临时review规则](../../docs/CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md)与[工作流V1.2](../../docs/CH5_ASTRA_WORKFLOW_CURRENT.md)。个人ChatGPT Memory不能由本工具强制立即写入，本Git文档作为项目未来顾问可实际读取的持久知识。
+
+本轮Owner同时同意推进V010**IMPORT_GUARD_AND_DEPENDENCY_GATE**的下一纯设计阶段，**尚不构成Python/AST/import/runner/HA科学运行授权**；下一唯一冻结任务将单独发行并公布精确SHA。原V010 SOURCE_ONLY上轮70源、42候选、20 UNRESOLVED与第三方/Native未知保持，FULL_RUNNER_IO_CLOSURE BLOCKED、Results FALSE、V011 NOT_STARTED，A16/window/C9/CALL_LEDGER及旧budget/dirty tree保护照旧。
+
+
 ## 2026-10-16最新：SOURCE_ONLY依赖图限域验收完成，Owner改用GitHub临时脱敏交付
 
 [Astra独立主审](../../versions/0.0.10/source_only_import_closure_uploaded_primary_review_20261016.md)实际核验：固定模型70源码Git Blob/大小70/70一致、抽样三个原始包init和三个关键依赖源码SHA256 6/6一致；依赖图70节点、1056边记录（7条重复六元组，去重1049）、35外部名称、5 UNKNOWN分组；从runner真实入口沿import-time边静态可达42模块，其中9个原白名单，33个额外候选。42个候选风险标签20 UNRESOLVED/14 IMPORT_TIME_SIDE_EFFECT_RISK/8 PURE_DEFINITION词法。正式结论`SOURCE_ONLY_PARTIAL_IMPORT_CLOSURE_WITH_OPEN_GATES__INDEPENDENT_DOCUMENTARY_LIMITED_ACCEPT`，未达到完全语义闭包；当前Windows runtime、科学HA权限0，FULL_RUNNER_IO_CLOSURE BLOCKED，Results FALSE、V011 NOT_STARTED。Codex本地发布准备`write-tree`失败、无候选commit/push0，不补推或续预算。

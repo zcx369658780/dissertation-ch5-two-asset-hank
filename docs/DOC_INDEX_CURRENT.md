@@ -1,5 +1,8 @@
 # 第五章动态总目录（2026-10-16 SOURCE_ONLY独立限域审议完成）
 
+> **2026-10-16 Owner更新的长期审阅交付规则**：[GitHub临时脱敏审阅协议](CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md)及[V1.2工作流](CH5_ASTRA_WORKFLOW_CURRENT.md)现明确：`_review_tmp/ch5/<task-id>/`只能出现在独立远端review分支的Git tree，**不进入本地任何科研/模型/治理项目工作树或Git索引**。使用GitHub Git Data API原位提交或项目外独占bare对象库发布，验收永久归档后清理临时分支对应文件并远端回读；上传前必须脱敏，不得声称Git历史彻底抹除。当前科学新预算仍0。
+
+
 **ACTIVE_TASK=NONE**；最新 `SOURCE_ONLY_PARTIAL_IMPORT_CLOSURE_WITH_OPEN_GATES__INDEPENDENT_DOCUMENTARY_LIMITED_ACCEPT`，零新Python/runner/HA预算。以后新任务优先GitHub临时脱敏目录交付，验收归档后清理临时副本。
 
 | 入口 | 权威文件 | 当前资格 |

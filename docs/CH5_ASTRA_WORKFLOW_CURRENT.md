@@ -1,5 +1,8 @@
 # 第五章当前工作方式 · V1.2
 
+> **Owner 2026-10-16补充优先规则（GitHub审阅交换，不改V1.2科学或执行许可）**：远端临时审阅目录`_review_tmp/ch5/<task-id>/`**不得创建、下载、stage或checkout到本地原项目工作树或其index**，也不能进入main/model工作树；只存在于独立GitHub review分支的commit tree。Codex优先用GitHub Git Data API直接构造Blob/Tree/Commit/ref（不使用本地worktree），工具不支持才允许项目外独占`git --bare`无checkout发布，不共享objects/common-dir；禁止`git worktree`、`git add`到项目索引、改原.gitignore、重写模型tree、以partial blob:none基线推断write-tree必成功。Astra独立review先正式归档并回读，才只删除远端临时分支的白名单临时文件；旧Commit可能保留字节。精确见[Owner临时审阅交换协议](CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md)。本规则是可恢复项目长期约定，不是已更新ChatGPT系统记忆或Python/HA新权限。
+
+
 ## 2026-10-16 Owner批准的GitHub临时脱敏审阅材料交付补充规则（不改变V1.2科学门）
 
 Owner要求今后由Codex把**已完成脱敏**的MD/JSON审阅材料直接存入GitHub仓库**独立review分支的临时目录**，Astra验收后可以清理临时副本，避免Owner每轮手工上传。这一指令已成文于[CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md](CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md)，适用于后续**新冻结且明确引用该协议**的任务，不追改历史冻结任务/一次性budget/旧GitHub候选。未来task应明确临时分支、`_review_tmp/ch5/<task-id>/`、文件白名单/大小/唯一parent/网络预算，Codex先脱敏再发布，失败LOCAL_ONLY STOP，不自行额外fetch/重试或force。
