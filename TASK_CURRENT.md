@@ -1,13 +1,11 @@
-# TASK_CURRENT：V010 corrected HA单点恢复的新一次科学许可
+# TASK_CURRENT：V010 Windows Git argv守门静态诊断（零科学调用）
 
 日期：2026-10-16（Asia/Shanghai）。
-**ACTIVE_TASK=V010_CORRECTED_HA_UTF8_LOG_GUARD_ONE_SHOT_RECOVERY**。
-**PERMISSION=OWNER_REAUTHORIZED_ONE_PYTHON_PROCESS_AND_AT_MOST_ONE_CORRECTED_SYNTHETIC_HA_ONLY**。
+**ACTIVE_TASK=V010_WINDOWS_GIT_ARGV_PREFLIGHT_STATIC_FORENSIC_AND_GUARD_REPAIR**。
+**PERMISSION=SOURCE_ONLY_WITH_ISOLATED_STATIC_DRAFT__NEW_PYTHON_PROCESSES_0__NEW_HA/HJB/KFE/ROOT/SELECTOR/PYTEST_0**。
 
-准确任务：[versions/0.0.10/corrected_ha_price_probe_recovery_task_20261016.md](versions/0.0.10/corrected_ha_price_probe_recovery_task_20261016.md)；本次独立恢复freeze固定commit `9aca1018c77d19e9489f2baf59c02bc654923999` / tree `4a04fd536b1cd4dd82b07dbdc23b5d73d1c8f6cc` / blob `95843d1ec838f52b056a8ca768d3f4cc55022b6f`；不追改原科学probe manifest blob `c23d331bed34e5ca478324cdc05034609ecb91b7` 或固定候选代码 `94de4501dec051b969bee9d852eba2d4591f30ef`。
+精确任务：[versions/0.0.10/windows_git_argv_guard_static_repair_task_20261016.md](versions/0.0.10/windows_git_argv_guard_static_repair_task_20261016.md)。此前恢复task `042195e633dec2eec532ab1b56da9822e912afe3` 已由Codex报告`PREFLIGHT_BLOCKED_STOP`：Python进程1/1、HA0、117446B artifact，原17件旧数据保护未变据本地回执；当前不能重启同一进程许可。[Astra限域验收](versions/0.0.10/corrected_ha_recovery_argv_preflight_review_20261016.md)已归档。
 
-任务只能在新隔离目录修正runner UTF-8及异常日志保护，静态审核与写前存储硬门后**新增1个Python进程、最多1次HA**；output≤96MiB=100663296B（不包括但必须独立保留的历史超额文件）、新增clone≤2GiB=2147483648B、总墙钟≤2h；禁止pytest、旧任务重启、多个价格点、GE/IRF、模型代码改动、真实C8/B3读取。失败即STOP不重试。
+任务仅从现有独立runner/失败回执只读找Windows实际argv和guard拒绝位置，给一个精确静态修复及allow/deny矩阵；新scratch限≤1MiB。无任何新的Python/science进程、无model tracked代码改动、无Git更新、不得去C8/B3/旧报告大范围扫描。合同原freeze `9aca1018c77d19e9489f2baf59c02bc654923999`、manifest blob`c23d331bed34e5ca478324cdc05034609ecb91b7`、候选模型`94de4501dec051b969bee9d852eba2d4591f30ef`不追改。
 
-历史违约永久并列：旧单点Python 1/1、HA0、原输出43519638B＞33554432B（超9965206B），该runner_result SHA仅Codex本地回执。原V010旧预算与A16/window/C9/CALL_LEDGER、Results FALSE、dirty/index/common-dir不动。
-
-交付`V010_CORRECTED_HA_ONE_SHOT_RECOVERY_RESULT` / 终态`WAIT_ASTRA_V010_CORRECTED_HA_RECOVERY_REVIEW / STOP`，Codex不自授科学ACCEPT，V011 NOT_STARTED。
+任务交付`V010_WINDOWS_ARGV_GUARD_STATIC_REPAIR_RESULT`，终止`WAIT_ASTRA_V010_WINDOWS_ARGV_STATIC_REVIEW / STOP`；第三次科学需Owner未来单独授权。A16/window/C9/CALL_LEDGER/Results FALSE、V011 NOT_STARTED、8dirty/index/common-dir保护不变。
