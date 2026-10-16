@@ -1,5 +1,12 @@
 # 第五章当前工作方式 · V1.2
 
+## 2026-10-16 Owner批准的GitHub临时脱敏审阅材料交付补充规则（不改变V1.2科学门）
+
+Owner要求今后由Codex把**已完成脱敏**的MD/JSON审阅材料直接存入GitHub仓库**独立review分支的临时目录**，Astra验收后可以清理临时副本，避免Owner每轮手工上传。这一指令已成文于[CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md](CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md)，适用于后续**新冻结且明确引用该协议**的任务，不追改历史冻结任务/一次性budget/旧GitHub候选。未来task应明确临时分支、`_review_tmp/ch5/<task-id>/`、文件白名单/大小/唯一parent/网络预算，Codex先脱敏再发布，失败LOCAL_ONLY STOP，不自行额外fetch/重试或force。
+
+Astra先独立回读候选commit/tree/parent/blob/SHA256、完成验收，并**永久归档所需正式审议和状态**后，仅删除指定临时目录下的文件、回读清理结果；不能删除原科学冻结、历史失败、正式验收。**Git文件删除不等于从历史提交彻底擦除内容**，所以未脱敏的私钥、token、真实数据、绝对私有路径绝对禁止上传。此规则仅变更证据交换习惯；Owner仍对科学与高风险操作作最终授权，Codex工程执行/Astra独立验收、Results/A16保护及V1.2其余条款不变。
+
+
 **Owner批准：2026-10-13（Asia/Shanghai）。** V1.2 根据 V0.0.2 已归档的执行与独立验收复盘，在 V1.1 上补充命令依赖失败即停、显式 UTF-8/LF 记录、最终树测试签出与资源遥测缺口分类。它不是新的研究模型版本、科学许可或自动派单。既有 Owner / 网页 Astra / Codex 角色、冻结计划不可追改、Codex 版本内自主执行及 Astra 最终独立验收全部保留；旧 Work 微审批、实时监督、自动派单及 Dot 治理继续仅历史。**本文件是长期规则，不宣告任何研发版本的当前状态**；该状态只从 `CURRENT.md` 顶部和 `docs/CH5_VERSION_REGISTER_CURRENT.md` 读取。
 
 **文档权威**：动态总目录 `docs/DOC_INDEX_CURRENT.md` 是入口，`SCIENTIFIC_DECISIONS.md` 和科学原采纳/冻结合同约束学科内容；每版冻结计划以其登记的**固定 Git commit** 为准，动态分支只用于导航、独立授权、验收、复盘和备份。新规则不能追溯修改已冻结 V0.0.1 标准、旧科学失败、旧 CLOSED 上限或 Owner 特定裁决。

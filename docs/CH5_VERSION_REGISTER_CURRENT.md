@@ -1,12 +1,13 @@
-# 第五章版本登记（2026-10-16 SOURCE_ONLY LOCAL_ONLY交付接收）
+# 第五章版本登记（2026-10-16 SOURCE_ONLY图文档限域接受）
 
-**CURRENT_VERSION=V010/V0.0.10；V011 NOT_STARTED。**
-**ACTIVE_TASK=NONE**。
-**LATEST_DELIVERY=SOURCE_ONLY_PARTIAL_IMPORT_CLOSURE_WITH_OPEN_GATES__CODEX_REPORTED**。
-**LATEST_REVIEW=GIT_FROZEN_SOURCE_INVENTORY_70_VERIFIED__IMPORT_GRAPH_NOT_YET_REVIEWED**。
-**GITHUB_REVIEW=LOCAL_ONLY__REVIEW_BRANCH_404__PUSH_ATTEMPTS_REPORTED_0**。
-**NEXT_GATE=WAIT_OWNER_SANITIZED_SOURCE_ONLY_GRAPH_REPORT_AND_MANIFEST / STOP**。
+**CURRENT_VERSION=V010 / V0.0.10；V011 NOT_STARTED；ACTIVE_TASK=NONE**。
+**LATEST_REVIEW=SOURCE_ONLY_PARTIAL_IMPORT_CLOSURE_WITH_OPEN_GATES__INDEPENDENT_DOCUMENTARY_LIMITED_ACCEPT**。
+**PUBLICATION=LOCAL_ONLY__NO_SOURCE_ONLY_CANDIDATE_COMMIT**。
+**FULL_RUNNER_IO_CLOSURE=BLOCKED；Results FALSE；HA_SCIENCE_NOT_RUN**。
+**NEXT_GATE=WAIT_OWNER_V010_IMPORT_GUARD_AND_DEPENDENCY_RESOLUTION_DECISION / STOP**。
 
-[接收审议](../versions/0.0.10/source_only_import_closure_local_only_intake_20261016.md) blob`2446f4d12782eac9b294cca691088d4da2e8f49e`实际验证任务commit/tree `a2c9bf4b57aa9ce8f0c9ae5a1d920e141ee57ebd`/`364bb9184c554caa5ecf3b273ef5bd8b6d7271e9`及固定模型三个子tree18+30+22共70.py；Codex称依赖图1056边、42入口候选和动态import/第三方未知项，但由于两脱敏文件尚未上传，不能独立判图通过。发布准备`write-tree`本地对象缺失失败且未push为Codex回执陈述；原receipt SHA256未实算。
+[独立主审](../versions/0.0.10/source_only_import_closure_uploaded_primary_review_20261016.md) blob`07371fbeb56097c74c02f8f4d1e9e86460f0550e`已核：冻结模型70/70源码Git Blob+bytes，三真实init及其它3份关键依赖raw SHA256抽样6/6，70节点、1056记录/1049去重六元组、42静态入口可达（33不在Stage A九文件白名单）。42候选中20 UNRESOLVED、14 SIDE_EFFECT_RISK、8 PURE_DEFINITION（仅词法分类）；其它动态/第三方Native/导入次序未知，SOURCE_ONLY PARTIAL，**不批准新Windows真实import**。本轮Python/runner/HA报告均0，本地回执未网页验证；出版阶段write-tree exit128，review分支不存在/push0。
 
-V010正式plan commit`bf091da33d59293f147d52c11580327d3ac2a85d`/blob`85138d8859d53295262fe13bf5bc277bca95ed3f`，模型candidate`94de4501dec051b969bee9d852eba2d4591f30ef`/tree`205eab47c4e4f9c6292c2ead9947d94d1a7579a5`不变。上一Windows工程PARTIAL：五Git child正向/68合成PASS、N13及loader未评估；新Python/HA无授权，FULL_RUNNER_IO_CLOSURE BLOCKED、单点corrected HA UNTESTED、Results FALSE。旧实施pytest4/6、driver1/4、HA1/26、selector1626、roots1642、两次单点各Python1/1及首笔存储超额、工程Python3/4旧STOP额度继续保留且不结转。A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER UNRESOLVED、model_activation=False、真实C8 REQUEST_ONLY、原8dirty/index/common-dir和V011禁令持续。
+Owner永久批准[未来临时GitHub审阅交换方式](../docs/CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md) blob`db0e95d89b78c63add24de3ef66da0be19794264`：Codex今后将脱敏MD/JSON发布到专用review分支临时目录，Astra独立验收、正式审议归档并回读后清理临时副本；不得误称删除Git历史。旧本次LOCAL_ONLY案例不追补发布。
+
+原冻结V010 plan commit`bf091da33d59293f147d52c11580327d3ac2a85d`/blob`85138d8859d53295262fe13bf5bc277bca95ed3f`、model candidate`94de4501dec051b969bee9d852eba2d4591f30ef`/tree`205eab47c4e4f9c6292c2ead9947d94d1a7579a5`不变；单点corrected HA仍UNTESTED。原Windows B–E PARTIAL，5 Git child审计正向、68 synthetic PASS/N13未评估；旧pytest4/6、driver1/4、HA1/26、selector1626、roots1642、两次单点Python1/1且首次输出超限9965206B，全部独立留存。GovInv0.9/1.1、same-S、目的地工资税一次、lagged ra0、原NKPC递推模型不改。A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER UNRESOLVED、model_activation=False、real C8 A–D REQUEST_ONLY、8dirty/index/common-dir及失败根受保护、V011 NOT_STARTED。

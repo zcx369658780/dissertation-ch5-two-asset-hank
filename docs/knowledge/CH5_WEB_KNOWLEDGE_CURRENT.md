@@ -1,5 +1,12 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-16最新：SOURCE_ONLY依赖图限域验收完成，Owner改用GitHub临时脱敏交付
+
+[Astra独立主审](../../versions/0.0.10/source_only_import_closure_uploaded_primary_review_20261016.md)实际核验：固定模型70源码Git Blob/大小70/70一致、抽样三个原始包init和三个关键依赖源码SHA256 6/6一致；依赖图70节点、1056边记录（7条重复六元组，去重1049）、35外部名称、5 UNKNOWN分组；从runner真实入口沿import-time边静态可达42模块，其中9个原白名单，33个额外候选。42个候选风险标签20 UNRESOLVED/14 IMPORT_TIME_SIDE_EFFECT_RISK/8 PURE_DEFINITION词法。正式结论`SOURCE_ONLY_PARTIAL_IMPORT_CLOSURE_WITH_OPEN_GATES__INDEPENDENT_DOCUMENTARY_LIMITED_ACCEPT`，未达到完全语义闭包；当前Windows runtime、科学HA权限0，FULL_RUNNER_IO_CLOSURE BLOCKED，Results FALSE、V011 NOT_STARTED。Codex本地发布准备`write-tree`失败、无候选commit/push0，不补推或续预算。
+
+Owner明确批准[未来临时脱敏GitHub交换协议](../../docs/CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md)。以后Codex按新任务白名单直接把脱敏MD/JSON放到独立review分支的`_review_tmp/ch5/<task-id>/`，Astra远端独立验收并先永久归档后，清理临时副本、回读；Git历史仍可能保存已提交内容，所以绝不能把脱敏放到删除之后。聊天手工上传仅为GitHub传输失败时的保底。旧科学合同/超额、受保护8dirty/index/common-dir、A16/window/C9/CALL_LEDGER/真实C8不改变；下文“待用户上传MD/JSON”仅历史时点。
+
+
 ## 2026-10-16最新：SOURCE_ONLY传递import图LOCAL_ONLY交付，原件待核
 
 Owner批准的`V010_SOURCE_ONLY_IMPORT_DEPENDENCY_CLOSURE_AND_READONLY_ASSEMBLY_PLAN`已由Codex自报`SOURCE_ONLY_PARTIAL_IMPORT_CLOSURE_WITH_OPEN_GATES`并STOP。Codex称70份源码认证、1056条edge、42个入口候选与若干动态导入/第三方初始化UNKNOWN，零Python/AST/model import/runner/科学调用。GitHub固定模型三个非递归子tree 18+30+22=70份.py已被Astra独立核；**两份本地脱敏结果和机读图manifest尚未上传，图边/入口不能独立验收**。发布准备据报`write-tree`缺基线对象而STOP，无候选commit、push0、review分支404。当前`ACTIVE_TASK=NONE`，[GitHub接收审议](../../versions/0.0.10/source_only_import_closure_local_only_intake_20261016.md)已归档，不再自动补推或运行，等待Owner上传脱敏MD/JSON。先前Windows B–E工程PARTIAL的五Git child正向、68合成PASS、N13及loader未评估保留；FULL_RUNNER_IO_CLOSURE BLOCKED、HA UNTESTED、Results FALSE、V011 NOT_STARTED，旧科学账及首笔存储超额、原8dirty/index/common-dir、A16/window/C9/CALL_LEDGER、real C8保护不变。下方“SOURCE_ONLY已签发待执行”是历史时态。
