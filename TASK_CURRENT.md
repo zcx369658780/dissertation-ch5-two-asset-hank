@@ -1,17 +1,17 @@
-# TASK_CURRENT：V010 当前seal证据交换SOURCE_TIMESTAMP失败，原任务STOP
+# TASK_CURRENT：V010 SOURCE_TIMESTAMP 类型诊断与守门集中修复
 
 更新：2026-10-17（Asia/Shanghai）。
-**ACTIVE_TASK=NONE**。
-**LAST_TASK=V010_CURRENT_SEAL_SANITIZED_GITHUB_EVIDENCE_EXCHANGE__DELIVERED__STOPPED**。
-**LAST_DELIVERY=SOURCE_TIMESTAMP_PARSED_TYPE_GUARD_REJECTED__FAIL_CLOSED__LOCAL_ONLY**。
-**REVIEW=[本次正式主审](versions/0.0.10/current_seal_exchange_source_timestamp_fail_closed_local_only_primary_review_20261017.md)；REVIEW_GIT_BLOB=87d35c2270c1b8a42e19d3210f22fa0abe914bdc**。
-**NEXT_GATE=WAIT_OWNER_FRESH_V010_SOURCE_TIMESTAMP_TYPED_DIAGNOSTIC_AUTHORITY / STOP**。
-**NEW_RUNTIME_AUTHORITY=NONE__POWERSHELL0__SCAN0__GIT_FETCH_PUSH0__PYTHON0__RUNNER0__SCIENTIFIC_HA0**。
+**ACTIVE_TASK=V010_SOURCE_TIMESTAMP_TYPED_GUARD_CORRECTION_AND_SYNTHETIC_REGRESSION**。
+**FIXED_ISSUE_COMMIT=6dfe8a1c98a839f0a94cdd0e938bb6b60f99d520；FIXED_TASK_BLOB=68143e917df883e38fa4615ce0a7c7a86c797330**。
+**TASK_FILE=[唯一冻结任务原文](versions/0.0.10/source_timestamp_typed_guard_correction_and_synthetic_regression_task_20261017.md)**。
+**CLASS=ENGINEERING_ONLY_LOCAL_TIMESTAMP_DIAGNOSIS_AND_CORRECTION**。
+**BUDGET=PS_BATCH_MAX2__OLD_FILES_MAX12_2MIB__NEW_FLAT_FILES_MAX6_1MIB__MAX120MIN__SOURCE_FIELD_DIAGNOSTIC_MAX1__CORRECTED_FIELD_RECHECK_MAX1**。
+**NOT_AUTHORIZED=OLD_TASK_RETRY0__SANITIZER0__GIT_BARE0__GIT_COMMAND0__SSH_FETCH_PUSH0__PYTHON0__MODEL_IMPORT0__VERIFIED_LOADER0__RUNNER0__HA/HJB/KFE/GE/IRF/REAL_C8_0**。
+**GITHUB_CANDIDATE=NOT_AUTHORIZED__LOCAL_ONLY**。
+**STOP=WAIT_ASTRA_V010_SOURCE_TIMESTAMP_TYPED_CORRECTION_REVIEW / STOP**。
 
-原[正式冻结任务](versions/0.0.10/current_seal_sanitized_github_evidence_exchange_task_20261016.md)发行Commit 49ff1c3053fa1aa6a0646f55abcffb077e2b62b2，Git Blob 1dc5f07a88261c41de434a9c4075b0d179ee871a，本会话收到Codex交付并已按STOP关闭。其目标为将上一17/17合成工程当前seal证据严格脱敏后发布到唯一独立review branch。实际SOURCE_TIMESTAMP守门未通过：据Codex脚本要求JSON解析后timestamp仍为string，但未记录actual type或解析器版本；**不能认定原raw timestamp无效**，只记守门判定失败、类型UNKNOWN。此时scan还未执行，bare init/SSH/fetch/push为0，无candidate。Astra独立从GitHub核目标ref 404，与LOCAL_ONLY一致。
+Owner在收到上轮 `SOURCE_TIMESTAMP` 失败主审后明确同意继续。新任务一张集中完成来源静态核验（原raw JSON token种类、解析实际type名称、parser/PowerShell版本、失败guard表达式）、仅新scratch内修正守门和合成正反例≥12项。目标区分脚本类型误拒、原JSON schema错误、解析器行为UNKNOWN；不能先验断言一定是DateTime自动转换，也不能只删除字符串断言。新scratch D:/ProjectTemp/ch5_v010_source_timestamp_typed_20261017_01，读取上一证据交换失败scratch与其确切索引的前17/17集成封存scratch，精确12件以内、累计≤2MiB；全部源和失败回执仅只读。受限PowerShell批次≤2、合成字段≥12，不执行Git/发布/模型/科学；前次1/2未用PS余额不得结转。本轮异常或缺源即LOCAL_ONLY/FAIL_CLOSED STOP。
 
-本轮自报PS静态批次1/2、旧原证5份43,468B、脱敏/发布/模型运行为0；failure receipt完整性仅本机Codex报告，Owner给SHA256 F93DA4C6BEE0E62F68A04620B8BF372AD60275C20DEA7782EF2C56E4BFADA6FC未由Astra原字节复算。source first/final和17项测试绑定已有Codex本机核查，但尚无远端原文件或脱敏投影可供网页独立验。更旧first seal缺可认证raw及旧run_id，LEGACY_SEAL_CHAIN=UNVERIFIABLE；旧被拒候选仍DENIED且原始原因UNKNOWN、旧ledger复制raw argv/源码偏差UNRESOLVED。旧和本轮所有余额随任务STOP关闭、不得重开。
+上一已停止证据交换任务发行Commit 49ff1c3053fa1aa6a0646f55abcffb077e2b62b2 / Blob 1dc5f07a88261c41de434a9c4075b0d179ee871a；[独立主审](versions/0.0.10/current_seal_exchange_source_timestamp_fail_closed_local_only_primary_review_20261017.md) Blob 87d35c2270c1b8a42e19d3210f22fa0abe914bdc：Codex回报timestamp JSON解析后被要求仍为string但门失败、真实type与parser版本UNKNOWN，原raw日期合法性亦UNKNOWN。目标GitHub review分支实际查404，无candidate/四文件；scan/bare/fetch/push0。旧失败receipt Owner SHA256 F93DA4C6BEE0E62F68A04620B8BF372AD60275C20DEA7782EF2C56E4BFADA6FC尚未由Astra独立核本机字节。旧更早first seal缺raw和run_id永久UNVERIFIABLE，当前17/17合成和新seal仅Codex本机回执，旧sanitizer拒绝UNKNOWN/DENIED、历史ledger原argv源码偏差UNRESOLVED。
 
-**目前不签发后继执行任务。** 若Owner新授权，先另开窄域SOURCE_TIMESTAMP取证和合成typed JSON解析测试，检查源码/实际parser版本/原JSON字段与解析后类型（只报告匿名类型和规则ID，不能输出私有值）；若真正修复成功且原raw不变，未来GitHub证据发布仍须另发专门一次性SSH/branch/四文件白名单预算。不能在旧任务下自行修改或重试。
-
-V010 plan/model冻结、corrected HA单点UNTESTED、FULL_RUNNER_IO_CLOSURE BLOCKED、model_activation=False、Results FALSE、V011 NOT_STARTED，A16 FAIL_CLOSED/window UNACCEPTED/C9 PAUSED/CALL_LEDGER UNRESOLVED、real C8 A–D REQUEST_ONLY、原8dirty/index/external common-dir/C SSD备份一律不变。
+正式V010 plan/model冻结、corrected HA单点UNTESTED、M1 runner尚未闭环、M2稳态/GDP≤1%未PASS、M3正式冲击/IRF未获合法基点、M4 Results FALSE、V011 NOT_STARTED；A16/window/C9/CALL_LEDGER、原8dirty/index/external common-dir、C SSD备份、真实C8保护完全不变。任务交付ID `V010_SOURCE_TIMESTAMP_TYPED_GUARD_CORRECTION_AND_SYNTHETIC_REGRESSION_RESULT`；Codex完成即STOP，不自授新GitHub发布或工程/科学PASS。
