@@ -1,5 +1,12 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-16本会话最新交接：Trusted Loader E0双工程阻断、LOCAL_ONLY STOP
+
+[Astra本轮Github限域主审](../../versions/0.0.10/trusted_loader_e0_fail_closed_local_only_primary_review_20261016.md) Blob`d9d5a3ea38fcff89633ce09fdf0d97d9e9e61293` 与[完整会话交接](../../docs/CH5_CONVERSATION_HANDOFF_20261016_TRUSTED_LOADER_E0_LOCAL_ONLY_STOP.md) Blob`7865222ca9966720b9cc335a4e41facfc9a7fc8e` 已归档。上一固定ENGINEERING_ONLY Loader任务commit`01129efd5220683d415bd1486f23f6ecd068cb53`/blob`1e6757fd235fd96d8b08130ca3fefb3b602c413c`已执行失败并STOP：Codex称70冻结raw Git Python源码在项目外scratch装配/校验，随后**Launcher UInt32类型转换故障**阻断源根防替换/排他门，E1/E2/E3无执行、工程Python0/6/真实runner0/2；独立bare SSH443 GitHub完整发布基线核证通过但**生成mktree空白行**导致exit128、未产生candidate commit、push0、review分支远端404。无D盘原始report/receipt可读，Owner转述`DELIVERY_RECEIPT.json` SHA256`C0BE33821FCB956483F8E894A8762F9D0D24139C8377D4A1B544BA73332056F8`没有独立重算，70本机装配和所有Windows运行数值只凭Codex receipt。**此两故障分别为E0工程与Git发布准备，不是HA科学失败。**
+
+当前`ACTIVE_TASK=NONE`，下一停点`WAIT_OWNER_FRESH_V010_E0_LAUNCHER_AND_TEMP_MKTREE_CORRECTION_AUTHORITY / STOP`；Owner明示后续任务单只在新会话下达，**不能自动重试或继续前次STOP旧预算**。永久Owner决定：科研不保密，C盘物理独立SSD现有备份＋GitHub两重足够，不强制新VM/第三备份，C盘备份不得清理，Codex GitHub用现有SSH Key/443不改global配置；Astra选择可信工作站`git_identity_root/source_assembly_root`双根raw-Git-Blob VerifiedLoader，但只准新授权ENGINEERING_ONLY，不宣称native安全沙箱。GitHub临时脱敏`_review_tmp/ch5/<task-id>/`只允许存在远端独立review Tree，**不进入本地worktree/index/staged**；验收永久归档后才限定清理远端副本。原V010科学模型/正确HA单点UNTESTED、FULL_RUNNER_IO_CLOSURE BLOCKED、A16/window/C9/CALL_LEDGER、model_activation=False、Results FALSE、真实C8保护、原8dirty/index/external common-dir和V011 NOT_STARTED不变。以前“任务正在ACTIVE/等待Codex”的段落是历史时间点，本段及CURRENT/TASK_CURRENT优先。GitHub文档为未来顾问可恢复持久知识，但不能声称ChatGPT用户个人Memory已经即时同步。
+
+
 ## 2026-10-16最新：Owner既有双备份/SSH Key决策与V010可信工作站Loader实施门
 
 Owner在本次会话再次确认本科研项目**没有保密要求**；本地**C盘（物理独立于D盘的SSD）现有备份+GitHub备份两层已足够**，不需要第三备份/新VM快照。Codex连接GitHub用已有**SSH Key经SSH443**，无需PAT或修改全局Git config。Astra被授权决定隔离环境中的Python Loader，正式选择**轻量可信工作站ENGINEERING_ONLY容器式源码导入控制**（精确名称`TRUSTED_WORKSTATION_ENGINEERING_CONTAINMENT`，不是已经验证的OS native沙箱）；双根`git_identity_root`只读Stage A clone与独立`source_assembly_root`物化固定commit全部70源码、3份非空init，Loader精确认证GitBlob/SHA256/module/__file__/sys.modules，`LOADING`成功才`EXECUTED`。仅导入工程smoke，科学函数/真实数据0。GitHub[上位Owner风险与Loader决策](../../docs/CH5_OWNER_RISK_BACKUP_SSH_LOADER_DECISION_20261016.md)commit`e15b874b955883e754dee8b3e5543705ed0706a8`/blob`7f1ee509d35343521e79e5df318aa164cd513261`。
