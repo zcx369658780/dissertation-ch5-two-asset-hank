@@ -1,5 +1,8 @@
 # 第五章科学决定：当前适用范围与历史合同索引
 
+> **2026-10-16新会话最新Owner工程任务签发（优先于下方所有旧ACTIVE时态；不修改任何科学方程或经济合同）**：唯一ACTIVE现为 `V010_E0_LAUNCHER_UINT32_AND_TEMP_MKTREE_CORRECTION`，[已固定任务](versions/0.0.10/e0_launcher_uint32_temp_mktree_correction_task_20261016.md)发行commit `e474c0d25a7351b7510f6a9ba914cd8733dceffc`、task Blob `a3683c751acf08d49d700422a63f264b61130e78`。Owner要求接续交接后下达下一任务，因此只批准受界的PowerShell E0 UInt32/源根保护门与新独占bare `mktree`脱敏发布器工程纠错；**新Python、模型AST执行/import、VerifiedLoader、真实runner、HA/HJB/KFE/selector/root、GE/IRF、C8数据调用全部0**。此前Trusted Loader任务E0 FAIL_CLOSED/LOCAL_ONLY已审并STOP，其未用0/6 Python、0/2runner旧预算不能自动结转。Codex交付后Astra独立GitHub静态/工程限域验收，工程与科学新进程之后均需Owner分别授权。V010冻结计划/model候选、Owner双备份/SSH443/双根与临时远端review协议、原8dirty/index/common-dir/C盘备份、A16/window/C9/CALL_LEDGER/Results FALSE/单点corrected HA UNTESTED/V011 NOT_STARTED全部不变。
+
+
 > **2026-10-16本会话最新E0审议与Owner交接边界（不改科学公式）**：[Trusted Loader E0独立GitHub限域主审](versions/0.0.10/trusted_loader_e0_fail_closed_local_only_primary_review_20261016.md)，Blob`d9d5a3ea38fcff89633ce09fdf0d97d9e9e61293`，Codex新ENGINEERING_ONLY任务`V010_ENGINEERING_ONLY_TRUSTED_LOADER_INTEGRATION_PREFLIGHT`已在E0`FAIL_CLOSED`并STOP：报告70份固定Git源字节装配，但Launcher`UInt32`转换失败致source-root防替换门无法建立；另SSH443完整发布基线报告成功而独占bare发布`git mktree`空行exit128，candidate/push0，远端review ref404。Codex称新Python/AST/runner/科学0；本机原件未上传，Astra不自称独立证实其物理过程或原receipt SHA。**当前`ACTIVE_TASK=NONE`，旧0/6 Python、0/2runner权限已STOP不结转；下一任务仅新会话待Owner新授权。** [本会话永久交接](docs/CH5_CONVERSATION_HANDOFF_20261016_TRUSTED_LOADER_E0_LOCAL_ONLY_STOP.md) Blob`7865222ca9966720b9cc335a4e41facfc9a7fc8e`，恢复完整科学与历史预算。Owner C盘独立SSD备份+GitHub双备份足够、SSH key/443、可信工作站VerifiedLoader轻量工程方案已定，不强制VM/第三备份、不自动HA、A16/window/C9/CALL_LEDGER/Results FALSE/V011保持。下方先前写的ACTIVE/任务已发行在本轮STOP后是历史时点。
 
 
