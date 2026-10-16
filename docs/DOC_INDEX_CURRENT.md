@@ -1,16 +1,17 @@
-# 第五章动态目录（2026-10-16 V010 import guard设计任务已发行）
+# 第五章动态权威目录（2026-10-16 Import Guard静态设计独立验收）
 
-**唯一 ACTIVE：V010_IMPORT_GUARD_AND_DEPENDENCY_GATE_SOURCE_ONLY_DESIGN**；OWNER批准纯SOURCE_ONLY静态设计，**新Python、runner与科学HA均为0**。
+**ACTIVE_TASK=NONE；正式分类SOURCE_ONLY_GUARD_DESIGN_PARTIAL_WITH_OPEN_GATES__INDEPENDENT_DOCUMENTARY_LIMITED_ACCEPT。**
+临时GitHub审阅候选已独立核验，待验收治理回读后清理临时文件；Python/runner/HA新权限0。
 
-| Authority入口 | 固定路径 | 身份/用途 |
+| 当前入口 | 权威文件 | 说明 |
 |---|---|---|
-| **新ACTIVE冻结任务** | [V010 import guard & dependency gate](../versions/0.0.10/import_guard_dependency_design_source_only_task_20261016.md) | commit`79f82934184292e7d021cbef8d4322c02c9cc0bc`、Blob`1bdb77a12d4494cae3052ba52392125a94bf0413`，已发行 |
-| **Owner临时交换及本地worktree禁令** | [CH5_TEMP_SANITIZED_REVIEW_EXCHANGE](CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md) | 只远端独立review分支临时目录；不进入本地Git索引/worktree |
-| CURRENT | [当前状态](../CURRENT.md) | 已授权静态设计、研究锁及资源账 |
-| TASK_CURRENT | [唯一任务](../TASK_CURRENT.md) | 待Codex静态交付，不重复签发 |
-| 上一SOURCE_ONLY独立主审 | [import graph review](../versions/0.0.10/source_only_import_closure_uploaded_primary_review_20261016.md) | 70 Git Blob、42候选、20/14/8风险，仍PARTIAL |
-| 上一Windows B–E主审 | [partial engineering review](../versions/0.0.10/runner_io_windows_be_github_primary_review_20261016.md) | 5 Git child正向、loader尚未通过 |
-| V010科学决定/版本 | [SCIENTIFIC_DECISIONS](../SCIENTIFIC_DECISIONS.md)、[VERSION](CH5_VERSION_REGISTER_CURRENT.md) | 原模型科学和Results资格冻结 |
-| V1.2工作流/长期知识 | [workflow](CH5_ASTRA_WORKFLOW_CURRENT.md)、[knowledge](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | Owner交付偏好已写项目长期记忆 |
- 
-临时交付`_review_tmp/ch5/v010-import-guard-design-20261016/`只在**远端**`review/ch5-temp-v010-import-guard-design-20261016`审核分支存在；Codex不可checkout到本地模型工作树、不可stage、git add或污染原dirty/index。冻结科学计划blob`85138d8859d53295262fe13bf5bc277bca95ed3f`、旧科学/资源超额、A16/window/C9/CALL_LEDGER、Results FALSE、V011 NOT_STARTED保留。
+| **Import Guard独立主审** | [Astra GitHub primary review](../versions/0.0.10/import_guard_dependency_design_github_primary_review_20261016.md) | 42节点/35外部、双根/OS设计，native隔离尚待Owner决定 |
+| CURRENT | [状态](../CURRENT.md) | 当前无ACTIVE和TEMP清理序列 |
+| TASK_CURRENT | [任务/停点](../TASK_CURRENT.md) | 旧任务已STOP、不结转预算 |
+| 上轮正式task（已结束） | [V010 import guard design](../versions/0.0.10/import_guard_dependency_design_source_only_task_20261016.md) | commit`79f82934184292e7d021cbef8d4322c02c9cc0bc`、blob`1bdb77a12d4494cae3052ba52392125a94bf0413` |
+| Codex原候选（清理前） | [GitHub candidate](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/commit/dc10a8f12f5333126b16bc56695abf2e67c5b2c0) | 原Commit历史不改，清理只移动临时review ref |
+| **Owner GitHub临时目录协议** | [review exchange](CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md) | 不在本地项目worktree/index，先归档后远端清理 |
+| V1.2/长期知识 | [workflow](CH5_ASTRA_WORKFLOW_CURRENT.md)、[knowledge](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | Owner主导高风险权限 |
+| 版本和科学 | [REGISTER](CH5_VERSION_REGISTER_CURRENT.md)、[SCIENTIFIC_DECISIONS](../SCIENTIFIC_DECISIONS.md) | 原科学合同不变，Results FALSE，V011未启 |
+
+下一Owner选择`WAIT_OWNER_V010_WINDOWS_OS_ISOLATION_AND_TRUST_BROKER_CHOICE`，可比较Windows无host mount离线VM与有独立证明的其它OS约束，未授权实际实现/安装/模型import。A16/window/C9/CALL_LEDGER、原8dirty/index/外common-dir与预算不动。
