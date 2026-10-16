@@ -1,5 +1,14 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-16新ACTIVE：V010 bare Git common-dir与脱敏拒绝的最小SOURCE_ONLY取证
+
+Owner已经在最新E0 `FAIL_CLOSED/LOCAL_ONLY`审查后明确回复同意继续。最新唯一ACTIVE：`V010_BARE_COMMON_DIR_AND_SANITIZATION_SOURCE_ONLY_FORENSIC`，任务[固定文档](../../versions/0.0.10/bare_common_dir_sanitization_source_only_forensic_task_20261016.md)发行commit `5b66d6e3c0b3ad6e292009e13bbe9c19472dde1e`，任务Blob `085412aaee3df3067540c4336ff37eb4b07f9383`。只核前次E0（已STOP）现场的bare Git `BARE_COMMON_DIR`身份expected/observed及路径/cwd/env判断链、封存脱敏扫描DENIED的规则ID/匿名命中字段类别；不推断未记录的实际stdout。固定新scratch`D:\ProjectTemp\ch5_v010_bare_sanitize_forensic_20261016_01`，旧scratch最多8份小文件/2MiB、必要最多4次只读Git `rev-parse`身份探针、90分钟、新文件≤4份/512KiB。不能执行旧E0/UInt32测试、mktree、再封存/扫敏实际操作、Git fetch/push/commit、Python/runner/科学代码。两门正阻断发布，故**新任务GitHub候选发布不授权**，Codex只给简短严格脱敏摘要；回执原件保持LOCAL_ONLY，未来实际修复/工程运行另经Owner授权。
+
+上次最新独立GitHub主审 `versions/0.0.10/e0_launcher_mktree_fail_closed_local_only_primary_review_20261016.md` Blob `3f675de31449ce946a2ecb3b51ed6c9a55850197`，确认旧review分支GitHub 404、无candidate；Codex报告UInt32类型24例匹配和PowerShell E0一次受界成功，BARE_COMMON_DIR身份门失败和脱敏扫描DENIED，`mktree/fetch/push/Python/runner/science`均0；旧本机`DELIVERY_RECEIPT.json` Owner给SHA256 `AC06ECCFAA023AC4593017CC18C4AD4FAC644BC52C00FA2F71B5FD82C54C4816`未获Astra本机字节独立核验；旧预算即使未耗随STOP关闭。此次只取证并不认定E0工程全闭环、OS native sandbox、mktree有效、GitHub审阅通过或HA数值PASS。
+
+原V010科学冻结plan/模型commit、原MATLAB corrected HA→多省顺序→GovInv×0.9/1.1与Zt→GDP≤1%独立冻结验证→lagged-NKPC、目的地工资税仅一次、家庭人均/区域财政总量/三劳动账、same-S/前完整轮raw-ra0、max_phi=.3照旧；单点corrected HA UNTESTED，`model_activation=False`、`Results FALSE`、`FULL_RUNNER_IO_CLOSURE=BLOCKED`、`V011 NOT_STARTED`。Owner C盘物理独立SSD既有备份＋GitHub、SSH Key/443、非强制VM/第三备份决定不变；原D盘8dirty/index/common-dir、C盘备份及real C8/2017/2018/B3禁止越界，A16 FAIL_CLOSED/window UNACCEPTED/C9 PAUSED/CALL_LEDGER UNRESOLVED均不变。此段及CURRENT/TASK_CURRENT是现时权威，下方旧任务ACTIVE为历史时间段；GitHub持久记录不代表本机QMD/Basic Memory同步。
+
+
 ## 2026-10-16最新：E0 UInt32局部进展，bare common-dir与脱敏门拒绝；已主审归档并停止
 
 最新唯一E0修复任务 `V010_E0_LAUNCHER_UINT32_AND_TEMP_MKTREE_CORRECTION`（固定发行commit `e474c0d25a7351b7510f6a9ba914cd8733dceffc`、Blob `a3683c751acf08d49d700422a63f264b61130e78`）Codex已汇报`V010_E0_LAUNCHER_UINT32_TEMP_MKTREE_CORRECTION_RESULT: FAIL_CLOSED/LOCAL_ONLY`，正式[独立GitHub限域主审](../../versions/0.0.10/e0_launcher_mktree_fail_closed_local_only_primary_review_20261016.md) Blob `3f675de31449ce946a2ecb3b51ed6c9a55850197`。**ACTIVE_TASK=NONE，新权限NONE**。新报告：UInt32转换问题修后24类型例匹配、受界PowerShell E0实际一次成功（可信工作站工程保护下，不是Windows OS-native安全沙箱），但Git独占bare的`BARE_COMMON_DIR`身份核对失败，封存脱敏扫描拒绝拟发布材料，均STOP未重试；`mktree0/fetch0/push0/Python0/runner0/science0`，没有GitHub候选。GitHub连接器实查此任务临时review ref不存在（404），由Astra独立可证；本机24例、E0/guard error stack及扫描命中仍只有Codex本地回执级，不可宣称已远端验证，BARE_COMMON_DIR真实原因和脱敏拒绝类型UNKNOWN。Owner提供回执SHA256 `AC06ECCFAA023AC4593017CC18C4AD4FAC644BC52C00FA2F71B5FD82C54C4816`但未实际读取本机原字节或独立重算。新E0试验已用1/2、mktree0/2等余量随旧任务STOP全部关闭；前次Trusted Loader0/6 Python、0/2runner额度同样不得结转。mktree本轮未运行，绝不可说空行已修复或再次失败。
