@@ -1,5 +1,8 @@
 # 第五章长期知识与恢复入口
 
+
+> **2026-10-16最新临时文件清理完成（优先于下方`CLEANUP_PENDING`签收快照）**：[GitHub远端清理回执](../../versions/0.0.10/import_guard_dependency_design_temp_cleanup_receipt_20261016.md)已实际核review cleanup commit `823c86d2ac210d65d10568c42fa793b0de72dc41`唯一parent`dc10a8f12f5333126b16bc56695abf2e67c5b2c0`、clean tree`80a18652013613f883d4d8b48a87cb2a36c882f7`与原task tree完全相同，且`_review_tmp/ch5/v010-import-guard-design-20261016/result.md`、`_review_tmp/ch5/v010-import-guard-design-20261016/manifest.json`在review HEAD都404；cleanup相对candidate只移除这两件，原候选历史未改写。永久验收[原主审](../../versions/0.0.10/import_guard_dependency_design_github_primary_review_20261016.md)已先归档通过。当前`ACTIVE_TASK=NONE`，`WAIT_OWNER_V010_WINDOWS_OS_ISOLATION_AND_TRUST_BROKER_CHOICE / STOP`，**零新Python/runner/HA权限**，冻结科学合同、A16/Results与受保护原树不变。
+
 ## 2026-10-16最新：Import Guard +第三方依赖静态设计已独立限域审议
 
 [Astra 最新GitHub主审](../../versions/0.0.10/import_guard_dependency_design_github_primary_review_20261016.md) Blob`8d2dad9d4e915fceda498329434e0956300c89e5`已实际核Codex候选commit `dc10a8f12f5333126b16bc56695abf2e67c5b2c0`、Tree`fabb22aae49f961afe336ad209fc56b382338c84`、sole parent原task commit`79f82934184292e7d021cbef8d4322c02c9cc0bc`、仅两份远端review临时文件的Git SHA1/UTF8字节/SHA256；42个module风险队列源码Blob/大小逐项吻合，分类20 UNRESOLVED、14 SIDE_EFFECT_RISK、8 PURE_DEFINITION，三真实非空init/35 external、8 unknown、H0-H7继续开放。独立结论`SOURCE_ONLY_GUARD_DESIGN_PARTIAL_WITH_OPEN_GATES__INDEPENDENT_DOCUMENTARY_LIMITED_ACCEPT`，并未安装VM/隔离native/创建可信capsule或导入模块。Owner接下来需要选择真正Windows OS native隔离机制与host Git identity broker→guest源码根的信任边界；当前`ACTIVE_TASK=NONE`，新Python/runner/HA权限0，FULL_RUNNER_IO_CLOSURE BLOCKED、Results FALSE、V011 NOT_STARTED。

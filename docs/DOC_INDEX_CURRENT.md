@@ -1,5 +1,8 @@
 # 第五章动态权威目录（2026-10-16 Import Guard静态设计独立验收）
 
+
+> **2026-10-16最新临时文件清理完成（优先于下方`CLEANUP_PENDING`签收快照）**：[GitHub远端清理回执](../versions/0.0.10/import_guard_dependency_design_temp_cleanup_receipt_20261016.md)已实际核review cleanup commit `823c86d2ac210d65d10568c42fa793b0de72dc41`唯一parent`dc10a8f12f5333126b16bc56695abf2e67c5b2c0`、clean tree`80a18652013613f883d4d8b48a87cb2a36c882f7`与原task tree完全相同，且`_review_tmp/ch5/v010-import-guard-design-20261016/result.md`、`_review_tmp/ch5/v010-import-guard-design-20261016/manifest.json`在review HEAD都404；cleanup相对candidate只移除这两件，原候选历史未改写。永久验收[原主审](../versions/0.0.10/import_guard_dependency_design_github_primary_review_20261016.md)已先归档通过。当前`ACTIVE_TASK=NONE`，`WAIT_OWNER_V010_WINDOWS_OS_ISOLATION_AND_TRUST_BROKER_CHOICE / STOP`，**零新Python/runner/HA权限**，冻结科学合同、A16/Results与受保护原树不变。
+
 **ACTIVE_TASK=NONE；正式分类SOURCE_ONLY_GUARD_DESIGN_PARTIAL_WITH_OPEN_GATES__INDEPENDENT_DOCUMENTARY_LIMITED_ACCEPT。**
 临时GitHub审阅候选已独立核验，待验收治理回读后清理临时文件；Python/runner/HA新权限0。
 
