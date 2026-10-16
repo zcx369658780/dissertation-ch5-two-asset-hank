@@ -1,5 +1,14 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-16最新：V010 bare身份/脱敏/台账 ENGINEERING_ONLY集中修复任务ACTIVE
+
+Owner已接受GPT建议，正式发布唯一 `V010_BARE_IDENTITY_SANITIZER_LEDGER_ENGINEERING_ONLY_CORRECTION`，冻结任务[全文](../../versions/0.0.10/bare_identity_sanitizer_ledger_engineering_correction_task_20261016.md)发行Commit `2a252ec2627d9a1f48dcab0c1bab16cc6cf9d9fe`、Git Blob `6c31d861a9e15f1b5956dfdfa7132a074bdb2e5e`。这是一张**一次性集中真实工程修复/合成回归**任务而非第三轮泛SOURCE_ONLY取证：新scratch `D:\ProjectTemp\ch5_v010_bare_sanitize_engcorr_20261016_01`；修复bare common-dir路径分隔符的表层误拒且坚持独占/nonshared/无reparse与负例；生成只含匿名规则ID/类别/计数的结构化sanitizer诊断并验证JSON转义、模拟凭据等合成正负例；新中间ledger从第一写入就只用typed匿名元数据，消除“先复制原argv/源码、后来在最终报告替换”的**新管线**缺陷。旧偏差回执必须保存原样，历史`PROCESS_COMPLIANCE_OPEN`不追溯擦除。上一审议Blob`9fe0549a7c02656cbf646de2a74daa47757f0205`认可路径字符串分隔符归因仅文档证据；旧脱敏拒绝具体命中文件/规则/字段/次数仍UNKNOWN，原资料禁公开。
+
+**许可严格分离：** 最多2次PowerShell合成工程测试批次、1次新scratch合成bare `git init --bare`、该**新库**4次只读Git身份child，wall≤150分钟；旧精确小文件读取≤10/2MiB，新非Git增量≤6文件2MiB（包括终态预留≥128KiB），合成bare数据≤32MiB。Python/py_compile/pytest/Jupyter/模型import/VerifiedLoader/真实runner、前E0重复、旧bare/mktree/fetch/push/commit/GitHub候选、HA/HJB/KFE/GE/IRF/真实C8一律0。Codex本轮**不准向GitHub上传脱敏草案**（发布门本身待闭环），只在交付时提供不超4KiB、无私有原文的简短本地回执摘要，网页仍按`CODEX_REPORTED_WITH_LOCAL_RECEIPTS`审议。原历史各次STOP余额、首GBK超额、前4/4只读probe、A16/window/C9/CALL_LEDGER保护不变。
+
+主线仍是修正原MATLAB：corrected两资产HA→多省份顺序迭代→原GovInv收益边界×0.9/1.1及Zt→冻结后GDP各省误差≤1%独立目标验证→原lagged-NKPC递推；目的地工资税只征一次、家庭人均/省财政总量分账、来源/双边/firm劳动与same-S/前完整轮raw ra0、phi_max=.3均冻结。合成两省F-order25 NO_ADMISSIBLE_POLICY旧证保留，Owner单点`rah=.0675,w_eff=15.5,rb=.02,Tt=.1,rb_gap=.07`仍UNTESTED，`FULL_RUNNER_IO_CLOSURE=BLOCKED`、`model_activation=False`、`Results FALSE`、`V011 NOT_STARTED`。C盘独立SSD既有备份＋GitHub、SSH Key/443、可信工作站工程风险而非native安全沙箱选择不变；原D盘8dirty/index/外Git common-dir/全部旧失败原证、C盘备份、real C8禁触。本段与CURRENT/TASK_CURRENT是当前权威，下方旧ACTIVE/STOP为时点历史。GitHub文档持久同步不证明本机QMD/Basic Memory已更新。
+
+
 ## 2026-10-16最新V010：bare身份/脱敏 SOURCE_ONLY局部文档接受，过程偏差OPEN，当前无ACTIVE
 
 已完成原任务`V010_BARE_COMMON_DIR_AND_SANITIZATION_SOURCE_ONLY_FORENSIC`，发行commit`5b66d6e3c0b3ad6e292009e13bbe9c19472dde1e`、任务Blob`085412aaee3df3067540c4336ff37eb4b07f9383`。[独立GitHub限域主审](../../versions/0.0.10/bare_common_dir_sanitization_source_only_local_only_primary_review_20261016.md) Git Blob `9fe0549a7c02656cbf646de2a74daa47757f0205`裁定`SOURCE_ONLY_DOCUMENTARY_LIMITED_ACCEPT_WITH_REPORTED_PROCESS_DEVIATION__NO_ENGINEERING_RUNTIME_OR_SANITIZATION_ACCEPTANCE`。**ACTIVE_TASK=NONE；NEXT_GATE=WAIT_OWNER_FRESH_V010_BARE_IDENTITY_AND_SANITIZER_ENGINEERING_CORRECTION_AUTHORITY / STOP**。不自动发布后继任务、不执行旧任务余额。
