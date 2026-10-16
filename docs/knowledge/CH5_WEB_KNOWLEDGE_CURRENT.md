@@ -1,5 +1,16 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-16最新V010：bare身份/脱敏 SOURCE_ONLY局部文档接受，过程偏差OPEN，当前无ACTIVE
+
+已完成原任务`V010_BARE_COMMON_DIR_AND_SANITIZATION_SOURCE_ONLY_FORENSIC`，发行commit`5b66d6e3c0b3ad6e292009e13bbe9c19472dde1e`、任务Blob`085412aaee3df3067540c4336ff37eb4b07f9383`。[独立GitHub限域主审](../../versions/0.0.10/bare_common_dir_sanitization_source_only_local_only_primary_review_20261016.md) Git Blob `9fe0549a7c02656cbf646de2a74daa47757f0205`裁定`SOURCE_ONLY_DOCUMENTARY_LIMITED_ACCEPT_WITH_REPORTED_PROCESS_DEVIATION__NO_ENGINEERING_RUNTIME_OR_SANITIZATION_ACCEPTANCE`。**ACTIVE_TASK=NONE；NEXT_GATE=WAIT_OWNER_FRESH_V010_BARE_IDENTITY_AND_SANITIZER_ENGINEERING_CORRECTION_AUTHORITY / STOP**。不自动发布后继任务、不执行旧任务余额。
+
+本轮Codex`LOCAL_ONLY`报告：旧独占bare Git四次read-only身份探针均exit0，Git输出以`/`作为分隔符、原脚本预期反斜线导致字面比较失败，同一common-dir输出hash与旧现场一致，支持`READONLY_IDENTITY_CORROBORATED__STATIC_STRING_SEPARATOR_DEFECT`（仅回执级，**不能**推定bare非共享、完整tree/blob可达、抗reparse或源根全部可信）。脱敏规则静态会拒绝连续双反斜线，可能误伤JSON转义，但旧现场没有命中规则ID/文件/字段/次数，故具体DENIED根因UNKNOWN、原资料继续禁止GitHub发布；未重跑扫描。**本次过程偏差**：中间台账曾复制短源码行与原argv，最终四文件据报已换语义锚点/匿名参数，但不能认为全过程合规/此前字节必已彻底消失；本轮没有GitHub发布证据，不能据此反推实际泄密。保护旧原证、不删改以抹偏差。
+
+本次旧文件读取83,707B、新四文件25,100B、只读Git探针4/4、E0/mktree/fetch/push/Python/真实runner/所有科学0（Codex转述）；墙钟/读取实际文件件数/回执本机原字节尚未独立确认。Owner提供回执SHA256`AD4C071D72DC08A93D5B4867DB0DF2575653EAE07D20445342058C884D8BE5DD`，未由Astra取证重算。旧任务执行余额随STOP关闭、前次E0局部UInt32 24类型/PowerShell成功不代表全runner通过。未来建议Owner另授一个集中ENGINEERING_ONLY小任务修真实目录身份比较和强保护负例，以及匿名结构化脱敏拒绝诊断/合成JSON转义、真敏感字段测试，并审本地中间台账来源处理；**新任务、mktree/SSH发布、Python以及HA科学预算尚未授权**。
+
+原第五章V010冻结科学计划和模型候选未改，原MATLAB corrected两资产HA→多省手动顺序→GovInv×0.9/1.1及Zt→冻结GDP≤1%→lagged-NKPC，目的地工资税一次、same-S、lagged raw ra0、phi_max=.3、家庭/地区/迁移劳动及财政单位均保留；corrected单点`rah=.0675,w_eff=15.5,rb=.02,Tt=.1,rb_gap=.07`仍UNTESTED，`FULL_RUNNER_IO_CLOSURE=BLOCKED`、`model_activation=False`、`Results FALSE`、`V011 NOT_STARTED`。Owner C盘独立SSD备份+GitHub备份、SSH Key/443、可信工作站双根VerifiedLoader、不强制VM或第三备份决策不变；原D盘8dirty/index/外common-dir/旧失败原件、real C8及A16/window/C9/CALL_LEDGER保护不变。以下旧ACTIVE段落均为历史时点，当前以本段、CURRENT、TASK_CURRENT及版本登记为准；GitHub同步不是本地QMD/Basic Memory已同步的凭证。
+
+
 ## 2026-10-16新ACTIVE：V010 bare Git common-dir与脱敏拒绝的最小SOURCE_ONLY取证
 
 Owner已经在最新E0 `FAIL_CLOSED/LOCAL_ONLY`审查后明确回复同意继续。最新唯一ACTIVE：`V010_BARE_COMMON_DIR_AND_SANITIZATION_SOURCE_ONLY_FORENSIC`，任务[固定文档](../../versions/0.0.10/bare_common_dir_sanitization_source_only_forensic_task_20261016.md)发行commit `5b66d6e3c0b3ad6e292009e13bbe9c19472dde1e`，任务Blob `085412aaee3df3067540c4336ff37eb4b07f9383`。只核前次E0（已STOP）现场的bare Git `BARE_COMMON_DIR`身份expected/observed及路径/cwd/env判断链、封存脱敏扫描DENIED的规则ID/匿名命中字段类别；不推断未记录的实际stdout。固定新scratch`D:\ProjectTemp\ch5_v010_bare_sanitize_forensic_20261016_01`，旧scratch最多8份小文件/2MiB、必要最多4次只读Git `rev-parse`身份探针、90分钟、新文件≤4份/512KiB。不能执行旧E0/UInt32测试、mktree、再封存/扫敏实际操作、Git fetch/push/commit、Python/runner/科学代码。两门正阻断发布，故**新任务GitHub候选发布不授权**，Codex只给简短严格脱敏摘要；回执原件保持LOCAL_ONLY，未来实际修复/工程运行另经Owner授权。
