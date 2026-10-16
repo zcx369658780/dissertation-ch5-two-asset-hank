@@ -1,0 +1,1042 @@
+NON-EXECUTABLE SANITIZED ENGINEERING SOURCE BUNDLE. No scientific permission.
+The executed runner bytes are reproduced below; synthetic drive placeholders in harness are redacted only in this review copy.
+External host and launcher are separate from runner. No code may be executed directly from this public TXT.
+
+===== runner.py ; ACTUAL_LOCAL_SHA256=ACAF0B949A0736327ADFBDC5F09D14A1B8615A877DF3E9EE5FC4E06019ADA0A6 =====
+"""V010 ENGINEERING_ONLY Windows B-E candidate; no automatic entry.
+
+No main/CLI, no automatic hook or process. Future execution requires a NEW
+Owner-approved task and exact configuration binding. ENGINEERING_ONLY is the
+default; ONE_HA additionally requires a separately frozen science grant.
+This is trusted-machine scoped I/O control, NOT an OS sandbox or A16 proof.
+"""
+import ctypes
+from ctypes import wintypes
+import hashlib
+import importlib.abc
+import importlib.util
+import inspect
+import io
+import json
+import ntpath
+import os
+from pathlib import Path
+import stat
+import subprocess
+import sys
+import threading
+import time
+import uuid
+
+HEAD = '94de4501dec051b969bee9d852eba2d4591f30ef'
+TREE = '205eab47c4e4f9c6292c2ead9947d94d1a7579a5'
+PARENT = 'a1db8c114dec0ab69d69a5576e153a7f868cba0e'
+INPUT_BLOB = 'c23d331bed34e5ca478324cdc05034609ecb91b7'
+NEEDED = {
+ 'multi_province/mainline_household_runtime.py':'3d2d7d92aea0036f36d88ef15c05cbb3b40eba90',
+ 'corrected_diagnostic/selector.py':'51517dde0c829060b6e0c0d594ec60e7e6143883',
+ 'corrected_diagnostic/generator.py':'f86234340c6e09c7129225da1677614669754177',
+ 'corrected_diagnostic/option_a_step.py':'e0fcbf01af9b1778d245d960fe85c592f55c032c',
+ 'corrected_diagnostic/nonlinear_continuation.py':'a473f86eef22ad893673dba2a80ec8029de8afd1',
+ 'corrected_diagnostic/contracts.py':'41186454de5ba1f55d3ba273f7ce57457ded11ca',
+ 'multi_province/corrected_household_adapter.py':'f79e089f06d0d74867284dc88c94c594215dc02e',
+ 'corrected_diagnostic/v1_q1_topology.py':'a238c999d3a6e18e8672efa1aae00498e747d403',
+ 'corrected_diagnostic/q1_kfe_validation.py':'45f4b95024c4441809dba3fe27044f25b3339f0f'}
+IDENTITIES = (('rev-parse','HEAD'), ('rev-parse','HEAD^{tree}'),
+              ('show','-s','--format=%P','HEAD'),
+              ('rev-parse','--path-format=absolute','--git-common-dir'))
+SOURCE_TAIL = ('ls-tree','-r',HEAD,'--','src/ch5_two_asset_hank')
+CAP, RESERVE = 8388608, 2097152
+MODEL_MAX, RUNNER_MAX, FINAL_MAX, EMERGENCY_MAX = 16777216, 4194304, 1048576, 65536
+LOG_MAX, CHILD_TIMEOUT, REAP_TIMEOUT = 4194304, 30.0, 5.0
+FORBIDDEN_CALLS = frozenset(('construct_v0','solve_conditioned_household',
+ 'select_constrained_policy','brentq','terminal_kfe','solve_hjb',
+ 'solve_stationary_kfe','spsolve'))
+
+class Stop(RuntimeError):
+    def __init__(self, code):
+        self.code = code
+        super().__init__()  # Never attach foreign exception data.
+
+def require(ok, code):
+    if not ok:
+        raise Stop(code)
+
+def digest(raw):
+    return hashlib.sha256(raw).hexdigest()
+
+def blob(raw):
+    return hashlib.sha1(b'blob '+str(len(raw)).encode('utf-8')+b'\0'+raw).hexdigest()
+
+def exact_path(text):
+    require(type(text) is str and '\0' not in text, 'PATH_TYPE')
+    require(ntpath.isabs(text) and not text.startswith('\\\\'), 'PATH_ABSOLUTE')
+    require('/' not in text and ':' not in text[2:], 'PATH_ALIAS')
+    require(not any(x in ('.','..') for x in text.split('\\')), 'PATH_TRAVERSAL')
+    return Path(text)
+
+def chain(path, missing_leaf=False):
+    p = exact_path(str(path))
+    nodes = (p,*p.parents) if not missing_leaf else tuple(p.parents)
+    for x in nodes:
+        s = x.lstat()
+        require(not (s.st_file_attributes & 0x400), 'PATH_REPARSE')
+    require(missing_leaf or p.resolve() == p, 'PATH_RESOLUTION')
+    return p
+
+def small_error(exc):
+    # Never str/repr an unknown exception or export its args/raw byte object.
+    if type(exc) is Stop:
+        return {'type':'Stop','code':exc.code}
+    if isinstance(exc,UnicodeDecodeError):
+        return {'type':'UnicodeDecodeError','encoding':exc.encoding,
+          'start':exc.start,'end':exc.end,'reason':exc.reason,
+          'input_bytes':len(exc.object),'input_sha256':digest(exc.object)}
+    if (type(exc).__module__=='ch5_two_asset_hank.multi_province.mainline_household_runtime'
+            and type(exc).__name__=='ScienceFailure'):
+        fields=exc.args
+        if (len(fields)==1 and type(fields[0]) is str and len(fields[0])<=160
+                and all(c.isascii() and (c.isalnum() or c in '_=.-') for c in fields[0])):
+            return {'type':'ScienceFailure','code':fields[0]}
+    return {'type':type(exc).__name__,'code':'UNKNOWN_EXCEPTION_NO_MESSAGE'}
+
+class Writer:
+    """Single trusted writer; all temporary bytes remain charged on failure."""
+    def __init__(self, root):
+        self.root = exact_path(root)
+        chain(self.root,missing_leaf=True)
+        require(not self.root.exists(), 'OUTPUT_ALREADY_EXISTS')
+        self.root.mkdir()  # Bootstrap, before hook; one fresh authorized directory.
+        self.lock = threading.RLock()
+        self.ticket = threading.local()
+        self.used = self.pending = 0
+        self.log_bytes = 0
+        self.records = []
+
+    def _target(self,name):
+        p = exact_path(str(self.root/name))
+        require(p.is_relative_to(self.root), 'OUTPUT_ESCAPE')
+        chain(p,missing_leaf=True)
+        require(not p.exists(), 'OUTPUT_EXISTS')
+        return p
+
+    def mkdir(self,name):
+        p = self._target(name)
+        self.ticket.event = ('mkdir',str(p))
+        try:
+            p.mkdir()
+        finally:
+            self.ticket.event = None
+
+    def write(self,name,raw,limit,terminal=False):
+        require(type(raw) is bytes and len(raw)<=limit, 'WRITE_SINGLE_CAP')
+        with self.lock:
+            p = self._target(name)
+            require(self.used+self.pending+len(raw) <= (CAP if terminal else CAP-RESERVE),
+                    'WRITE_TOTAL_CAP')
+            tmp = self.root/('.txn_'+uuid.uuid4().hex)
+            self.used += len(raw)  # Reserve before creating any artifact.
+            self.ticket.event = ('open',str(tmp))
+            fd = None
+            try:
+                fd = os.open(tmp,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_BINARY,0o600)
+                self.ticket.event = None
+                view = memoryview(raw)
+                while view:
+                    n = os.write(fd,view)
+                    require(n>0,'WRITE_SHORT')
+                    view = view[n:]
+                os.fsync(fd)
+                os.close(fd); fd = None
+                self.ticket.event = ('rename',str(tmp),str(p))
+                # Windows rename is atomic and refuses an existing destination.
+                if getattr(self,'inject_rename_fault',False):
+                    raise OSError('CONTROLLED_ENGINEERING_RENAME_FAULT')
+                os.rename(tmp,p)
+                self.records.append({'name':name,'bytes':len(raw),'sha256':digest(raw)})
+            finally:
+                self.ticket.event = None
+                if fd is not None:
+                    os.close(fd)
+                # Do not erase partial/new evidence or release uncertain bytes.
+
+    def json(self,name,value,model=False,terminal=False):
+        raw = (json.dumps(value,ensure_ascii=False,sort_keys=True,indent=2,
+                          allow_nan=False)+'\n').encode('utf-8',errors='strict')
+        limit = FINAL_MAX if terminal else MODEL_MAX if model else RUNNER_MAX
+        self.write(name,raw,limit,terminal)
+
+    def log_append(self,raw):
+        with self.lock:
+            require(self.log_bytes+len(raw)<=LOG_MAX,'LOG_CAP')
+            require(self.used+self.pending+len(raw)<=CAP-RESERVE,'WRITE_TOTAL_CAP')
+            self.pending += len(raw)
+            self.log_bytes += len(raw)
+
+    def log_seal(self,name,raw):
+        with self.lock:
+            # Transfer, never double charge, the pending reservation.
+            before = self.used
+            self.pending -= len(raw)
+            try:
+                self.write(name,raw,LOG_MAX)
+            except BaseException:
+                if self.used==before:
+                    self.pending += len(raw)
+                # Otherwise the writer already charged a retained transaction.
+                raise
+
+    def emergency(self,code):
+        # Minimal bounded terminal payload, no arrays/foreign messages/history.
+        raw = (json.dumps({'status':'STOP','code':code},sort_keys=True)+'\n').encode('utf-8')
+        self.write('emergency_'+uuid.uuid4().hex+'.json',raw,EMERGENCY_MAX,True)
+
+class Log(io.TextIOBase):
+    def __init__(self,writer,name):
+        self.writer,self.name,self.parts = writer,name,[]
+    @property
+    def encoding(self):
+        return 'utf-8'
+    def writable(self):
+        return True
+    def flush(self):
+        return None
+    def write(self,text):
+        require(type(text) is str and len(text)<=LOG_MAX,'LOG_INPUT_CAP')
+        raw = text.encode('utf-8',errors='strict')
+        self.writer.log_append(raw)
+        self.parts.append(raw)
+        return len(text)
+    def seal(self):
+        self.writer.log_seal(self.name,b''.join(self.parts))
+
+class Hook:
+    """One hook in a NEW process; no old hook is installed or imported."""
+    def __init__(self,writer,read_roots,read_files):
+        self.writer,self.read_roots = writer,tuple(read_roots)
+        self.read_files = frozenset(read_files)
+        self.spawn = threading.local()
+        self.events = []
+    def __call__(self,event,args):
+        if event=='subprocess.Popen':
+            p = getattr(self.spawn,'plan',None)
+            require(p is not None and len(args)==4,'GIT_NO_CAPABILITY')
+            exe,argv,cwd,env = args
+            require(type(exe) is str and exe==p['exe'],'GIT_AUDIT_EXE')
+            require(type(cwd) is str and cwd==p['cwd'],'GIT_AUDIT_CWD')
+            require(type(env) is dict and env==p['env'],'GIT_AUDIT_ENV')
+            if type(argv) in (list,tuple):
+                require(tuple(argv)==p['argv'],'GIT_AUDIT_TOKENS')
+            elif type(argv) is str:
+                require(argv==p['rendered'],'GIT_AUDIT_RENDERING')
+            else:
+                raise Stop('GIT_AUDIT_TYPE')
+            self.spawn.plan = None
+            p['audit_consumed'] = True
+            self.events.append({'event_type':event,'event_arity':len(args),'nonce':p['nonce'],'argv_type':type(argv).__name__,
+              'argv_sha256':digest(p['rendered'].encode('utf-8')),
+              'exe_sha256':p['exe_hash'],'cwd_sha256':digest(cwd.encode('utf-8')),
+              'shell_false_from_request':True})
+        elif event=='open':
+            target,mode,flags = args
+            writing = (isinstance(mode,str) and any(c in mode for c in 'wax+')) or (
+              isinstance(flags,int) and flags & (os.O_WRONLY|os.O_RDWR|os.O_CREAT|os.O_TRUNC))
+            if type(target) is int:
+                require(not writing,'IO_DESCRIPTOR_WRITE')
+                return
+            require(isinstance(target,(str,os.PathLike)),'IO_PATH_TYPE')
+            p = Path(target)
+            if str(p).lower()==os.devnull.lower():
+                require(getattr(self.spawn,'plan',None) is not None,'IO_NULL_OUTSIDE_SPAWN')
+                return
+            p = exact_path(str(p))
+            if writing:
+                require(getattr(self.writer.ticket,'event',None)==('open',str(p)),
+                        'IO_UNGUARDED_WRITE')
+                required = os.O_WRONLY|os.O_CREAT|os.O_EXCL
+                require(type(flags) is int and flags & required==required,'IO_OPEN_FLAGS')
+                self.writer.ticket.event = None
+            else:
+                require(p in self.read_files or any(p.is_relative_to(r) for r in self.read_roots),
+                        'IO_READ_CLOSURE')
+                chain(p)  # Check the authorized location, never stat a denied root first.
+        elif event=='os.mkdir':
+            require(getattr(self.writer.ticket,'event',None)==('mkdir',str(args[0])),
+                    'IO_UNGUARDED_MKDIR')
+            self.writer.ticket.event = None
+        elif event=='os.rename':
+            require(getattr(self.writer.ticket,'event',None)==('rename',str(args[0]),str(args[1])),
+                    'IO_UNGUARDED_RENAME')
+            self.writer.ticket.event = None
+        elif event in ('os.remove','os.rmdir','os.link','os.symlink','os.truncate',
+                       'os.chmod','os.utime','os.system','os.startfile'):
+            raise Stop('IO_MUTATION_DENIED')
+
+class WindowsJob:
+    """Kill-on-close ownership of a trusted read-only Git child/descendants.
+
+    Assignment failure stops before identity use. Trusted installation and no
+    hostile pre-assignment escape are explicit assumptions, not OS sandbox proof.
+    """
+    def __init__(self,child):
+        class Basic(ctypes.Structure):
+            _fields_=[('user',ctypes.c_longlong),('job',ctypes.c_longlong),
+              ('flags',wintypes.DWORD),('minws',ctypes.c_size_t),('maxws',ctypes.c_size_t),
+              ('active',wintypes.DWORD),('affinity',ctypes.c_size_t),
+              ('priority',wintypes.DWORD),('scheduling',wintypes.DWORD)]
+        class IO(ctypes.Structure):
+            _fields_=[('n'+str(i),ctypes.c_ulonglong) for i in range(6)]
+        class Extended(ctypes.Structure):
+            _fields_=[('basic',Basic),('io',IO),('process_mem',ctypes.c_size_t),
+              ('job_mem',ctypes.c_size_t),('peak_process',ctypes.c_size_t),('peak_job',ctypes.c_size_t)]
+        self.k = ctypes.WinDLL('kernel32',use_last_error=True)
+        self.k.CreateJobObjectW.restype = wintypes.HANDLE
+        self.k.CreateJobObjectW.argtypes = [ctypes.c_void_p,wintypes.LPCWSTR]
+        self.k.SetInformationJobObject.argtypes = [wintypes.HANDLE,ctypes.c_int,ctypes.c_void_p,wintypes.DWORD]
+        self.k.AssignProcessToJobObject.argtypes = [wintypes.HANDLE,wintypes.HANDLE]
+        self.k.CloseHandle.argtypes = [wintypes.HANDLE]
+        self.handle = self.k.CreateJobObjectW(None,None)
+        require(bool(self.handle),'CHILD_JOB_CREATE')
+        info = Extended(); info.basic.flags = 0x2000
+        try:
+            require(bool(self.k.SetInformationJobObject(self.handle,9,ctypes.byref(info),ctypes.sizeof(info))),
+                    'CHILD_JOB_LIMIT')
+            require(bool(self.k.AssignProcessToJobObject(self.handle,wintypes.HANDLE(int(child._handle)))),
+                    'CHILD_JOB_ASSIGN')
+        except BaseException:
+            self.close()
+            raise
+    def close(self):
+        if self.handle:
+            self.k.CloseHandle(self.handle)
+            self.handle = None
+
+def bounded_child(plan,hook,proof):
+    """Only spawn site. Two readers request at most remaining+one probe byte."""
+    child = job = None
+    state = {'fault':None,'stdout':bytearray(),'stderr':bytearray()}
+    readers = []
+    lock = threading.Lock()
+    start = time.monotonic()
+    def read_pipe(pipe,name,limit):
+        try:
+            while True:
+                with lock:
+                    allowance = limit-len(state[name])
+                piece = pipe.read(min(8192,allowance+1))
+                if not piece:
+                    return
+                with lock:
+                    if len(piece)>allowance:
+                        state['fault']='CHILD_'+name.upper()+'_CAP'
+                        return  # The overflow probe is never appended.
+                    state[name].extend(piece)
+        except BaseException:
+            state['fault']='CHILD_PIPE_READ'
+    try:
+        require(getattr(hook.spawn,'plan',None) is None,'GIT_CAPABILITY_REENTRY')
+        hook.spawn.plan = plan
+        try:
+            child = subprocess.Popen(plan['argv'],executable=plan['exe'],shell=False,
+              cwd=plan['cwd'],env=plan['env'],stdin=subprocess.DEVNULL,
+              stdout=subprocess.PIPE,stderr=subprocess.PIPE,bufsize=0,close_fds=True,
+              creationflags=subprocess.CREATE_NO_WINDOW)
+        finally:
+            hook.spawn.plan = None
+        require(plan['audit_consumed'],'GIT_AUDIT_NOT_CONSUMED')
+        job = WindowsJob(child)
+        for name,pipe,limit in (('stdout',child.stdout,plan['out_cap']),
+                                ('stderr',child.stderr,4096)):
+            t = threading.Thread(target=read_pipe,args=(pipe,name,limit),daemon=True)
+            readers.append(t); t.start()
+        while child.poll() is None or any(t.is_alive() for t in readers):
+            require(state['fault'] is None,state['fault'] or 'CHILD_PIPE_READ')
+            require(time.monotonic()-start<CHILD_TIMEOUT,'CHILD_TIMEOUT')
+            time.sleep(0.01)
+        require(state['fault'] is None,state['fault'] or 'CHILD_PIPE_READ')
+        require(child.wait(timeout=REAP_TIMEOUT)==0,'CHILD_EXIT_NONZERO')
+        return bytes(state['stdout']),bytes(state['stderr'])
+    finally:
+        proof.update({'nonce':plan['nonce'],'audit_consumed':plan['audit_consumed'],
+          'stdout_bytes':len(state['stdout']),'stderr_bytes':len(state['stderr']),
+          'stdout_sha256':digest(state['stdout']),'stderr_sha256':digest(state['stderr']),
+          'fault':state['fault'],'elapsed_seconds':time.monotonic()-start,
+          'timeout':time.monotonic()-start>=CHILD_TIMEOUT,'job_assigned':job is not None,
+          'streams_complete':state['fault'] is None and child is not None and child.poll() is not None,
+          'exit_code':None,'reaped':False,'readers_joined':False})
+        if job is not None:
+            job.close()  # Kills owned remaining descendants on any exit path.
+        if child is not None:
+            if child.poll() is None:
+                child.kill()
+            try:
+                child.wait(timeout=REAP_TIMEOUT)
+            except BaseException:
+                raise Stop('CHILD_REAP_FAILED')
+            proof['exit_code']=child.returncode
+            proof['reaped']=True
+            for pipe in (child.stdout,child.stderr):
+                if pipe is not None:
+                    pipe.close()
+            for t in readers:
+                t.join(timeout=REAP_TIMEOUT)
+            proof['readers_joined']=not any(t.is_alive() for t in readers)
+            require(not any(t.is_alive() for t in readers),'CHILD_READER_NOT_JOINED')
+
+class GitGate:
+    def __init__(self,cfg,hook,writer):
+        self.root = chain(exact_path(cfg['candidate_root']))
+        self.exe = chain(exact_path(cfg['git_executable']))
+        require(self.exe.is_file(),'GIT_EXE_FILE')
+        require(self.exe.stat().st_size<=16777216,'GIT_EXE_SIZE')
+        self.exe_hash = digest(self.exe.read_bytes())
+        require(self.exe_hash==cfg['git_executable_sha256'].lower(),'GIT_EXE_HASH')
+        self.hook,self.writer,self.proofs = hook,writer,[]
+        self.__verified = False
+        self.__calls = 0
+        self.__verify_started = False
+    @property
+    def verified(self):
+        return self.__verified
+    def _run(self,tail):
+        require(type(tail) is tuple and all(type(x) is str for x in tail),'GIT_REQUEST_TYPE')
+        require(tail in IDENTITIES or (tail==SOURCE_TAIL and self.__verified),'GIT_TAIL')
+        require(self.__calls<5,'GIT_CALL_CAP')
+        self.__calls += 1
+        win = chain(exact_path(os.environ['SystemRoot']))
+        env = {'SystemRoot':str(win),'WINDIR':str(win),'GIT_CONFIG_NOSYSTEM':'1',
+          'GIT_CONFIG_GLOBAL':os.devnull,'GIT_TERMINAL_PROMPT':'0','GIT_OPTIONAL_LOCKS':'0',
+          'PATH':str(self.exe.parent)+';'+str(win/'System32'),'LANG':'C.UTF-8','LC_ALL':'C.UTF-8'}
+        argv = (str(self.exe),'--no-optional-locks','--no-pager','-C',str(self.root),*tail)
+        p = {'argv':argv,'rendered':subprocess.list2cmdline(argv),'exe':str(self.exe),
+          'exe_hash':self.exe_hash,'cwd':str(self.root),'env':env,'nonce':uuid.uuid4().hex,
+          'audit_consumed':False,'out_cap':1048576 if tail==SOURCE_TAIL else 4096}
+        proof={'tail':list(tail)}
+        try:
+            out,err = bounded_child(p,self.hook,proof)
+        finally:
+            self.proofs.append(proof)
+            self.writer.json('git_'+str(len(self.proofs))+'.json',proof)
+        require(not err,'CHILD_STDERR_NONEMPTY')
+        return out.decode('utf-8',errors='strict').strip()
+    def verify(self):
+        require(not self.__verify_started,'GIT_VERIFY_RETRY_DENIED')
+        self.__verify_started = True
+        self.__verified = False
+        self.proofs.clear()
+        # Only these actual child results can advance the identity state.
+        actual = [self._run(tail) for tail in IDENTITIES]
+        require(actual[:3]==[HEAD,TREE,PARENT],'GIT_IDENTITY_MISMATCH')
+        common = chain(exact_path(actual[3].replace('/','\\')))
+        require(common==self.root/'.git','GIT_COMMON_DIR_MISMATCH')
+        require(len(self.proofs)==4 and all(p['audit_consumed'] and p['reaped'] and
+          p['exit_code']==0 and p['job_assigned'] and p['readers_joined'] and
+          p['streams_complete'] for p in self.proofs),'GIT_IDENTITY_PROOF')
+        self.__verified = True
+    def source_map(self):
+        require(self.__verified,'GIT_SOURCE_BEFORE_IDENTITY')
+        entries = {}
+        for row in self._run(SOURCE_TAIL).splitlines():
+            meta,rel = row.split('\t',1)
+            mode,kind,identity = meta.split()
+            require(mode=='100644' and kind=='blob','SOURCE_TREE_ENTRY')
+            require(rel.startswith('src/ch5_two_asset_hank/') and '..' not in rel.split('/'),
+                    'SOURCE_TREE_PATH')
+            entries[rel]=identity
+        return entries
+
+class VerifiedLoader(importlib.abc.Loader):
+    def __init__(self,finder,fullname,rel,is_package):
+        self.finder,self.fullname,self.rel,self.is_package = finder,fullname,rel,is_package
+    def create_module(self,spec):
+        return None
+    def exec_module(self,module):
+        path,raw = self.finder.disk(self.rel)
+        # Compile exactly the authenticated bytes; never use or create pycache.
+        module.__file__ = str(path)
+        if self.is_package:
+            module.__path__ = [str(path.parent)]
+        self.finder.loaded[self.fullname] = {'path':str(path),'rel':self.rel,
+          'git_blob':self.finder.entries[self.rel],'raw_sha256':digest(raw)}
+        exec(compile(raw,str(path),'exec',dont_inherit=True),module.__dict__)
+
+class VerifiedFinder(importlib.abc.MetaPathFinder):
+    def __init__(self,gate,entries):
+        require(gate.verified,'SOURCE_IDENTITY_NOT_VERIFIED')
+        self.root,self.entries,self.loaded = gate.root,entries,{}
+    def disk(self,rel):
+        require(rel in self.entries and rel.endswith('.py'),'SOURCE_UNTRACKED')
+        path = chain(self.root/Path(rel))
+        require(path.is_relative_to(self.root/'src'/'ch5_two_asset_hank'),'SOURCE_OUTSIDE_ROOT')
+        require(path.stat().st_size<=4194304,'SOURCE_FILE_CAP')
+        raw = path.read_bytes()
+        require(len(raw)<=4194304,'SOURCE_FILE_CAP')
+        # Authenticate the very bytes to be compiled; no newline normalization.
+        require(blob(raw)==self.entries[rel],'SOURCE_DIRTY_BYTES')
+        raw.decode('utf-8',errors='strict')
+        return path,raw
+    def find_spec(self,fullname,path=None,target=None):
+        if not (fullname=='ch5_two_asset_hank' or fullname.startswith('ch5_two_asset_hank.')):
+            return None
+        base = 'src/'+fullname.replace('.','/')
+        for rel,pkg in ((base+'/__init__.py',True),(base+'.py',False)):
+            if rel in self.entries:
+                loader = VerifiedLoader(self,fullname,rel,pkg)
+                return importlib.util.spec_from_loader(fullname,loader,is_package=pkg)
+        raise Stop('SOURCE_UNTRACKED_IMPORT')
+    def check_loaded(self):
+        for suffix,wanted in NEEDED.items():
+            rel = 'src/ch5_two_asset_hank/'+suffix
+            require(self.entries.get(rel)==wanted,'SOURCE_NINE_TREE_BLOB')
+            name = 'ch5_two_asset_hank.'+suffix[:-3].replace('/','.')
+            require(name in self.loaded,'SOURCE_NINE_NOT_IMPORTED')
+            path,raw = self.disk(rel)
+            module = sys.modules.get(name)
+            require(module is not None and type(module.__loader__) is VerifiedLoader,
+                    'SOURCE_LOADER_IDENTITY')
+            require(module.__file__==str(path) and digest(raw)==self.loaded[name]['raw_sha256'],
+                    'SOURCE_IMPORTED_BYTES_CHANGED')
+
+def validate_engineering(cfg):
+    require(cfg.get('mode')=='ENGINEERING_ONLY','SCIENCE_MODE_DISABLED')
+    require(cfg.get('trusted_exclusive_root') is True and cfg.get('trusted_runtime_io') is True,
+            'IO_UNTRUSTED_CLOSURE')
+
+def check_hook_provenance():
+    require(not getattr(sys,'_v010_offline_hook_installed',False),'HOOK_STACKED')
+    require(sys.flags.isolated and sys.flags.no_site and sys.flags.no_user_site,
+            'HOOK_PROVENANCE_UNKNOWN')
+    require(not any(n in sys.modules for n in ('sitecustomize','usercustomize')),
+            'HOOK_PROVENANCE_UNKNOWN')
+
+def prohibit_science(frame,event,arg):
+    if event=='call' and frame.f_code.co_name in FORBIDDEN_CALLS:
+        raise Stop('SOURCE_IMPORT_SCIENCE_CALL')
+
+def one_ha(*args, **kwargs):
+    raise Stop('SCIENCE_MODE_DISABLED')
+
+def load_runtime(gate,writer):
+    entries=gate.source_map()
+    finder=VerifiedFinder(gate,entries)
+    actual=[]
+    for suffix,wanted in NEEDED.items():
+        rel='src/ch5_two_asset_hank/'+suffix
+        require(entries.get(rel)==wanted,'SOURCE_NINE_TREE_BLOB')
+        path,raw=finder.disk(rel)
+        actual.append({'rel':rel,'git_blob':blob(raw),'raw_sha256':digest(raw),'bytes':len(raw)})
+    require(not any(n.startswith('ch5_two_asset_hank') for n in sys.modules),'SOURCE_PRELOADED')
+    packages=('src/ch5_two_asset_hank/__init__.py',
+              'src/ch5_two_asset_hank/multi_province/__init__.py',
+              'src/ch5_two_asset_hank/corrected_diagnostic/__init__.py')
+    missing=[p for p in packages if not (gate.root/Path(p)).is_file()]
+    if missing:
+        writer.json('source_binding.json',{'required_nine':actual,'loader_import':'LOADER_IMPORT_NOT_EVALUATED',
+          'reason':'STAGE_A_SPARSE_CLONE_PACKAGE_INITIALIZERS_NOT_PRESENT',
+          'missing_relative_paths':missing,'source_fetch_or_checkout':'FORBIDDEN_NOT_ATTEMPTED'})
+        return None,finder
+    sys.meta_path.insert(0,finder)
+    sys.setprofile(prohibit_science)
+    try:
+        from ch5_two_asset_hank.multi_province import mainline_household_runtime as runtime
+    finally:
+        sys.setprofile(None)
+    finder.check_loaded()
+    writer.json('source_binding.json',{'required_nine':actual,'loaded':finder.loaded,
+      'loader_import':'IMPORTED_AND_AUTHENTICATED','pycache_used':False})
+    return runtime,finder
+
+def current_rss():
+    class PM(ctypes.Structure):
+        _fields_=[('cb',wintypes.DWORD),('faults',wintypes.DWORD)]+[
+          (x,ctypes.c_size_t) for x in ('peak','current','pp','p','pnp','np','page','peakpage')]
+    k=ctypes.WinDLL('kernel32'); p=ctypes.WinDLL('psapi')
+    k.GetCurrentProcess.restype=wintypes.HANDLE
+    p.GetProcessMemoryInfo.argtypes=[wintypes.HANDLE,ctypes.POINTER(PM),wintypes.DWORD]
+    pm=PM();pm.cb=ctypes.sizeof(pm)
+    require(bool(p.GetProcessMemoryInfo(k.GetCurrentProcess(),ctypes.byref(pm),pm.cb)), 'RSS_UNKNOWN')
+    return int(pm.peak)
+
+def run(cfg):
+    """Only invoked by the separately charged, pinned engineering launcher."""
+    writer=None; logs=[]; record={'HA':0,'science_calls':0,'status':'STOP',
+      'started_monotonic':time.monotonic(),'hook_enumeration':'NO_PYTHON_API',
+      'loader_import':'NOT_EVALUATED'}
+    try:
+        validate_engineering(cfg)
+        require(os.name=='nt','BOOTSTRAP_WINDOWS_ONLY')
+        require(sys.flags.dont_write_bytecode and sys.flags.utf8_mode,'BOOTSTRAP_FLAGS')
+        check_hook_provenance()
+        null_fd=os.open(os.devnull,os.O_RDWR)
+        try:
+            os.dup2(null_fd,1);os.dup2(null_fd,2)
+        finally:
+            os.close(null_fd)
+        writer=Writer(cfg['output_root'])
+        source=chain(exact_path(cfg['candidate_root']))/'src'/'ch5_two_asset_hank'
+        script=chain(Path(__file__).resolve())
+        exe=chain(exact_path(cfg['git_executable']))
+        runtime_roots={chain(Path(sys.base_prefix)),chain(Path(sys.prefix))}
+        hook=Hook(writer,(*runtime_roots,source,writer.root),(script,exe))
+        sys.addaudithook(hook)  # Sole project registration; fresh -I -S provenance is bounded.
+        sys._v010_offline_hook_installed=True
+        record['hook_provenance']='HOOK_PROVENANCE_BOUNDED'
+        record['startup_flags']={'isolated':sys.flags.isolated,'no_site':sys.flags.no_site,
+          'no_user_site':sys.flags.no_user_site,'dont_write_bytecode':sys.flags.dont_write_bytecode,
+          'utf8_mode':sys.flags.utf8_mode}
+        logs=[Log(writer,'stdout.log'),Log(writer,'stderr.log')]
+        sys.stdout,sys.stderr=logs
+        gate=GitGate(cfg,hook,writer);gate.verify()
+        record['four_git_identities_verified']=gate.verified
+        runtime,finder=load_runtime(gate,writer)
+        record['loader_import']='IMPORTED_AND_AUTHENTICATED' if runtime is not None else 'LOADER_IMPORT_NOT_EVALUATED'
+        writer.write('writer_normal.txt','UTF-8 engineering only\n'.encode('utf-8'),4096)
+        writer.inject_rename_fault=True
+        before=writer.used
+        try:
+            writer.write('controlled_fault.txt',b'CONTROLLED_FAULT_BYTES\n',4096)
+            raise Stop('EXPECTED_WRITER_FAULT_NOT_OBSERVED')
+        except OSError:
+            record['controlled_writer_fault']={'type':'OSError','retained_transaction_charged':writer.used>before}
+        finally:
+            writer.inject_rename_fault=False
+        writer.emergency('CONTROLLED_WRITER_FAULT_SEALED')
+        writer.json('audit_events.json',hook.events)
+        record['git_child_count']=len(gate.proofs)
+        record['git_children']=gate.proofs
+        record['status']='ENGINEERING_ONLY_PARTIAL' if runtime is None else 'ENGINEERING_ONLY_FINISHED_FOR_REVIEW'
+    except BaseException as exc:
+        record['error']=small_error(exc)
+        record['status']='STOP'
+    finally:
+        record['wall_seconds']=time.monotonic()-record['started_monotonic']
+        if writer is not None:
+            try:
+                for log in logs:
+                    log.seal()
+                record['artifact_charged_bytes']=writer.used
+                writer.json('final.json',record,terminal=True)
+            except BaseException:
+                record['status']='STOP'
+                try:
+                    writer.emergency('TERMINAL_RECEIPT_FAILURE')
+                except BaseException:
+                    pass
+    return 2 if record['status']=='STOP' else 0
+
+# NO automatic invocation. ENGINEERING_ONLY launcher is the unique external entry.
+
+===== launcher.py ; ACTUAL_LOCAL_SHA256=AD41409122883E7C3BCCAF3FB45EE49EDDFB2C63B501D21E84A491BDDAFA66C1 =====
+import json
+from pathlib import Path
+import sys
+
+def main():
+    cfg=json.loads(Path(sys.argv[1]).read_text(encoding='utf-8'))
+    if cfg.get('mode')!='ENGINEERING_ONLY':
+        return 2
+    if not (sys.flags.isolated and sys.flags.no_site and sys.flags.dont_write_bytecode and sys.flags.utf8_mode):
+        return 2
+    runner=Path(__file__).resolve().parent/'runner.py'
+    scope={'__name__':'v010_engineering_candidate','__file__':str(runner)}
+    exec(compile(runner.read_bytes(),str(runner),'exec',dont_inherit=True),scope)
+    return scope['run'](cfg)
+
+if __name__=='__main__':
+    sys.exit(main())
+
+===== harness.py ; ACTUAL_LOCAL_SHA256=07DD9C95B37AA6E898C7E78450EF8639EF0F7EB651DF7616966471CAC7BE4BC3 =====
+import copy
+import io
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+import threading
+import types
+from unittest.mock import patch
+
+R=Path(__file__).resolve().parent
+ns={'__name__':'v010_synthetic_engine','__file__':str(R/'runner.py')}
+exec(compile((R/'runner.py').read_bytes(),str(R/'runner.py'),'exec',dont_inherit=True),ns)
+m=types.SimpleNamespace(**ns)
+fixtures=R/'synthetic_only';fixtures.mkdir()
+repo=fixtures/'candidate';repo.mkdir();(repo/'.git').mkdir()
+exe=fixtures/'fake_git.exe';exe.write_bytes(b'NEVER_EXECUTED_SYNTHETIC_GIT')
+S=json.loads((R/'cases.json').read_text(encoding='utf-8'))
+results=[];extra=[]
+class DummyWriter:
+    def __init__(self):self.ticket=threading.local()
+    def json(self,*a,**k):pass
+def gate():
+    h=m.Hook(DummyWriter(),(),())
+    g=m.GitGate({'candidate_root':str(repo),'git_executable':str(exe),'git_executable_sha256':m.digest(exe.read_bytes())},h,DummyWriter())
+    return g,h
+symbols={'@PINNED_GIT_EXE@':str(exe),'@CANDIDATE_ROOT@':str(repo),
+ '@SYSTEM_ROOT@':os.environ['SystemRoot'],'@SYSTEM32@':str(Path(os.environ['SystemRoot'])/'System32'),
+ '@GIT_DIRECTORY@':str(exe.parent),'@PINNED_GIT_SHA256@':m.digest(exe.read_bytes()),
+ '@NULL_DEVICE@':os.devnull,'@ONE_SHOT_NONCE@':'SYNTHETIC_NONCE',
+ '@TAB@':'\t'}
+def replace_symbols(x):
+    if isinstance(x,str):
+        for k,v in symbols.items():x=x.replace(k,v)
+        return x
+    if isinstance(x,list):return [replace_symbols(v) for v in x]
+    if isinstance(x,dict):return {k:replace_symbols(v) for k,v in x.items()}
+    return x
+def denial(fn,code=None):
+    try:fn()
+    except (m.Stop,TypeError,AttributeError,UnicodeDecodeError,OSError) as e:
+        actual=e.code if isinstance(e,m.Stop) else type(e).__name__
+        if code is not None:assert actual==code,(actual,code)
+        return actual
+    raise AssertionError('EXPECTED_DENIAL_NOT_OBSERVED')
+def fake_run(plan,hook,proof):
+    proof.update(nonce=plan['nonce'],audit_consumed=True,reaped=True,readers_joined=True,
+      exit_code=0,job_assigned=True,streams_complete=True)
+    return m.HEAD.encode(),b''
+def hook_case(inp):
+    g,h=gate();p=inp['plan'];ev=inp['event']
+    plan={'exe':str(exe),'cwd':str(repo),'env':replace_symbols(S['cases'][0]['input']['event']['env']),
+      'argv':tuple(p['argv']),'rendered':subprocess.list2cmdline(p['argv']),
+      'nonce':'SYNTHETIC_NONCE','exe_hash':m.digest(exe.read_bytes()),'audit_consumed':False}
+    if inp['state'].get('active_nonce') is not None:h.spawn.plan=plan
+    a=ev['argv'];value=a['items'] if a['kind']=='list' else tuple(a['items']) if a['kind']=='tuple' else a.get('extra_prefix','')+plan['rendered']+a.get('extra_suffix','')
+    h(ev['name'],(ev['executable'],value,ev['cwd'],ev['env']))
+    assert plan['audit_consumed'] and h.spawn.plan is None
+def verified_fake(g):
+    answers=iter([m.HEAD,m.TREE,m.PARENT,str(repo/'.git')])
+    def respond(tail):
+        g.proofs.append({'audit_consumed':True,'reaped':True,'exit_code':0,'job_assigned':True,'readers_joined':True,'streams_complete':True})
+        return next(answers)
+    with patch.object(g,'_run',respond):g.verify()
+    assert g.verified
+class FakeChild:
+    def __init__(self,stdout=b'',stderr=b'',rc=0,hang=False,reap_fail=False):
+        self.stdout=io.BytesIO(stdout);self.stderr=io.BytesIO(stderr);self.returncode=None if hang else rc
+        self.reap_fail=reap_fail;self._handle=0
+    def poll(self):return self.returncode
+    def wait(self,timeout=None):
+        if self.reap_fail:raise subprocess.TimeoutExpired('SYNTHETIC',timeout)
+        return self.returncode
+    def kill(self):self.returncode=-9
+class FakeJob:
+    def __init__(self,child):self.child=child
+    def close(self):
+        if self.child.poll() is None:self.child.kill()
+def child_fault(which,reap_fail=False):
+    g,h=gate();p={'argv':(str(exe),'rev-parse','HEAD'),'exe':str(exe),'cwd':str(repo),'env':{},
+      'rendered':subprocess.list2cmdline((str(exe),'rev-parse','HEAD')),'nonce':'SYNTHETIC_CHILD',
+      'exe_hash':m.digest(exe.read_bytes()),'audit_consumed':False,'out_cap':4096}
+    child=FakeChild(stdout=b'x'*4097 if which=='stdout' else b'',stderr=b'e'*4097 if which=='stderr' else b'',
+      rc=1 if which=='exit' else 0,hang=which=='timeout',reap_fail=reap_fail)
+    def popen(argv,**kw):
+        h('subprocess.Popen',(kw['executable'],subprocess.list2cmdline(argv),kw['cwd'],kw['env']))
+        return child
+    proof={}
+    with patch.dict(ns,WindowsJob=FakeJob,CHILD_TIMEOUT=0.025,REAP_TIMEOUT=0.025),patch.object(subprocess,'Popen',popen):
+        denial(lambda:m.bounded_child(p,h,proof))
+    assert len(proof.get('stdout_sha256',''))==64
+    if not reap_fail:assert proof['reaped'] and proof['readers_joined']
+    return proof
+def writer(name):return m.Writer(str(fixtures/name))
+def source_finder():
+    f=object.__new__(m.VerifiedFinder);f.root=repo;f.entries={};f.loaded={};return f
+def do_case(case,inp):
+    cid=case['id'];base=cid.split('v')[0]
+    if base=='N13':return 'NOT_EVALUATED','External 180s host timeout replaced old 6600s in-process watchdog; destructive wall fault not triggered.'
+    if inp['operation']=='Hook.__call__' and base!='N14':
+        if cid.startswith('D08v'):
+            g,h=gate();denial(lambda:g._run(tuple(inp['request']['tail']['items'])),'GIT_TAIL')
+        elif cid.startswith(('A01','A02','A03')):hook_case(inp)
+        else:denial(lambda:hook_case(inp))
+    elif base in ('A04','A05','A06'):
+        g,h=gate();verified_fake(g)
+    elif base=='A07':
+        g,h=gate();g._GitGate__verified=True
+        with patch.object(g,'_run',lambda t:inp['child']['stdout']['utf8']):
+            assert g.source_map()['src/ch5_two_asset_hank/corrected_diagnostic/selector.py']==m.NEEDED['corrected_diagnostic/selector.py']
+    elif base=='A08':
+        g,h=gate()
+        with patch.dict(ns,bounded_child=fake_run):assert g._run(tuple(inp['request']['tail']['items']))==m.HEAD
+    elif base in ('D01','D02','D03','D16','N16','N17'):
+        g,h=gate()
+        if base=='N16':g._GitGate__calls=5
+        if base=='N17':g._GitGate__verified=True
+        denial(g.source_map if base=='D01' else lambda:g._run(tuple(inp['request']['tail']['items'])))
+        if base=='N16':
+            g._GitGate__verify_started=True;denial(g.verify,'GIT_VERIFY_RETRY_DENIED')
+    elif base=='D06':
+        g,h=gate();denial(lambda:g._run(('rev-parse','HEAD'),shell=True),'TypeError')
+        denial(lambda:g._run('rev-parse HEAD'),'GIT_REQUEST_TYPE')
+    elif base=='D10':denial(lambda:m.exact_path(str(repo)+'\\..\\denied'),'PATH_TRAVERSAL')
+    elif base=='D11':
+        for p in ('\\\\server\\share','\\\\?\\@SYNTHETIC_DRIVE@:\\device','@SYNTHETIC_DRIVE@:\\alias:stream'):
+            denial(lambda p=p:m.exact_path(p))
+        with patch.object(Path,'lstat',lambda p:types.SimpleNamespace(st_file_attributes=0x400)):
+            denial(lambda:m.chain(repo),'PATH_REPARSE')
+    elif base=='D15':
+        denial(lambda:m.GitGate({'candidate_root':str(repo),'git_executable':str(exe),'git_executable_sha256':'0'*64},m.Hook(DummyWriter(),(),()),DummyWriter()),'GIT_EXE_HASH')
+    elif base=='N01':
+        g,h=gate();denial(lambda:getattr(g,'identity_outputs')(inp.get('caller_supplied_outputs')),'AttributeError')
+        answers=iter((m.HEAD,m.TREE,m.PARENT,str(repo/'.git')))
+        with patch.object(g,'_run',lambda t:next(answers)):denial(g.verify,'GIT_IDENTITY_PROOF')
+        assert not g.verified
+    elif base=='N02':
+        rel='src/ch5_two_asset_hank/dirty.py';p=repo/rel;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(b'changed')
+        f=source_finder();f.entries[rel]=m.blob(b'original')
+        denial(lambda:f.disk(rel),'SOURCE_DIRTY_BYTES')
+    elif base in ('N03','N04','N05','N06'):
+        child_fault({'N03':'stdout','N04':'stderr','N05':'timeout','N06':'exit'}[base])
+        if base=='N05':child_fault('timeout',reap_fail=True)
+    elif base=='N07':
+        w=writer(cid);original=os.rename
+        def raced_rename(src,dst):
+            Path(dst).write_bytes(b'EXISTING_DESTINATION')
+            return original(src,dst)
+        with patch.object(os,'rename',raced_rename):denial(lambda:w.write('result.txt',b'x'*1024,4096),'FileExistsError')
+        assert w.used==1024 and len(list(w.root.glob('.txn_*')))==1
+        assert (w.root/'result.txt').read_bytes()==b'EXISTING_DESTINATION'
+    elif base=='N08':
+        w=writer(cid);raw=b'x'*4096;w.log_append(raw);w.inject_rename_fault=True
+        denial(lambda:w.log_seal('log.txt',raw),'OSError')
+        assert w.used==4096 and w.pending==0
+    elif base=='N09':
+        with patch.object(sys,'_v010_offline_hook_installed',True,create=True):denial(m.check_hook_provenance,'HOOK_STACKED')
+    elif base=='N10':
+        g,h=gate()
+        with patch.dict(ns,bounded_child=lambda p,h,proof:(b'\xff',b'')):
+            denial(lambda:g._run(('rev-parse','HEAD')),'UnicodeDecodeError')
+    elif base=='N11':
+        w=writer(cid);w.used=m.CAP-m.RESERVE;denial(lambda:w.write('x',b'x',1),'WRITE_TOTAL_CAP')
+    elif base=='N12':
+        w=writer(cid);denial(lambda:w.json('final.json',{'x':'x'*1048577},terminal=True),'WRITE_SINGLE_CAP')
+    elif base=='N14':
+        h=m.Hook(DummyWriter(),(),());denial(lambda:h('open',(str(fixtures/'UNAUTHORIZED'), 'r',0)),'IO_READ_CLOSURE')
+        denial(lambda:h('open',(str(fixtures/'UNAUTHORIZED'),'w',os.O_WRONLY|os.O_CREAT)),'IO_UNGUARDED_WRITE')
+    elif base=='N15':
+        g,h=gate();g._GitGate__verified=True;entries={'src/ch5_two_asset_hank/'+k:v for k,v in m.NEEDED.items()}
+        with (patch.object(g,'source_map',lambda:entries),patch.object(m.VerifiedFinder,'disk',lambda f,r:(repo/'synthetic.py',b'pass')),
+             patch.dict(sys.modules,{'ch5_two_asset_hank.untracked':types.ModuleType('synthetic')})):
+            denial(lambda:m.load_runtime(g,DummyWriter()),'SOURCE_PRELOADED')
+    elif base=='N18':
+        g,h=gate();denial(lambda:setattr(g,'verified',True),'AttributeError')
+    elif base=='N19':denial(lambda:m.validate_engineering({'mode':'ENGINEERING_ONLY','trusted_exclusive_root':True,'trusted_runtime_io':False}),'IO_UNTRUSTED_CLOSURE')
+    elif base=='N20':
+        f=source_finder();f.entries={'src/ch5_two_asset_hank/'+k:v for k,v in m.NEEDED.items()}
+        suffix=next(iter(m.NEEDED));rel='src/ch5_two_asset_hank/'+suffix;name='ch5_two_asset_hank.'+suffix[:-3].replace('/','.')
+        f.loaded[name]={'raw_sha256':m.digest(b'pass')}
+        module=types.ModuleType(name);module.__loader__=object();module.__file__='SYNTHETIC_WRONG_FILE'
+        with patch.object(f,'disk',lambda r:(repo/'synthetic.py',b'pass')),patch.dict(sys.modules,{name:module}):
+            denial(f.check_loaded,'SOURCE_LOADER_IDENTITY')
+            module.__loader__=m.VerifiedLoader(f,name,rel,False)
+            denial(f.check_loaded,'SOURCE_IMPORTED_BYTES_CHANGED')
+    elif base=='N21':denial(lambda:m.Writer(str(repo)),'OUTPUT_ALREADY_EXISTS')
+    elif base=='N22':denial(lambda:m.prohibit_science(types.SimpleNamespace(f_code=types.SimpleNamespace(co_name='select_constrained_policy')),'call',None),'SOURCE_IMPORT_SCIENCE_CALL')
+    else:return 'NOT_EVALUATED','No runtime adapter for this case.'
+    return 'PASS','Production engineering method executed against synthetic inputs/fake child; not a real Windows Git proof.'
+
+def main():
+    for case in S['cases']:
+        expanded=[(case['id'],copy.deepcopy(case['input']))]
+        for variant in case.get('variant_cases',[]):
+            data=copy.deepcopy(case['input'])
+            for op in variant['patch']:
+                obj=data;segments=op['path'].split('/')[1:]
+                for seg in segments[:-1]:obj=obj[seg]
+                obj[segments[-1]]=copy.deepcopy(op['value'])
+            expanded.append((variant['id'],data))
+        for cid,data in expanded:
+            item={'id':cid,'status':'FAIL','evidence_class':'SYNTHETIC_ENGINEERING_ONLY'}
+            try:
+                c=dict(case,id=cid);status,note=do_case(c,replace_symbols(data));item.update(status=status,note=note)
+            except BaseException as e:item['error_type']=type(e).__name__;item['error_code']=getattr(e,'code','SYNTHETIC_TEST_ASSERTION_OR_ADAPTER_ERROR')
+            results.append(item)
+    for mode in ('ONE_HA','UNKNOWN',None):
+        denial(lambda mode=mode:m.validate_engineering({'mode':mode}),'SCIENCE_MODE_DISABLED')
+    w=writer('terminal_reserve');w.used=m.CAP-1
+    denial(lambda:w.write('terminal.json',b'xx',2,terminal=True),'WRITE_TOTAL_CAP')
+    extra.extend([{'id':'SCIENCE_MODE_HARD_DENY','status':'PASS'},{'id':'TERMINAL_RESERVE_EXHAUSTION','status':'PASS'}])
+    totals={v:sum(c['status']==v for c in results) for v in ('PASS','FAIL','NOT_EVALUATED')}
+    report={'stage':'B2','case_count':69,'cases':results,'extra':extra,'totals':totals,
+      'actual_os_children':0,'science_calls':0,'global_project_hook_installed':False,
+      'other_preinstalled_hooks':'NOT_ENUMERABLE_NO_ABSOLUTE_ABSENCE_CLAIM',
+      'core_negative_gate':'CLOSED' if totals['FAIL'] else 'SYNTHETIC_CHECKS_REACHED',
+      'status':'FAIL' if totals['FAIL'] else 'PASS_WITH_EXPLICIT_NOT_EVALUATED'}
+    (R/'B2_RESULT.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    return 2 if totals['FAIL'] else 0
+if __name__=='__main__':
+    sys.exit(main())
+
+===== ast_check.py ; ACTUAL_LOCAL_SHA256=FE5C01C583364E6A289FF27E210C57CD3F9FAC800EA5EF0E55E08BBBCA5536C7 =====
+import ast
+import hashlib
+import json
+import re
+from pathlib import Path
+import sys
+
+root=Path(__file__).resolve().parent
+result={'stage':'B1','status':'FAIL','model_execution':False}
+try:
+    raw=(root/'runner.py').read_bytes()
+    assert b'\r' not in raw and not raw.startswith(b'\xef\xbb\xbf')
+    tree=ast.parse(raw,filename='ENGINEERING_RUNNER')
+    compile(tree,'ENGINEERING_RUNNER','exec',dont_inherit=True)
+    assert sum(isinstance(n,ast.Call) and isinstance(n.func,ast.Attribute) and n.func.attr=='addaudithook' for n in ast.walk(tree))==1
+    assert all(isinstance(n,(ast.Import,ast.ImportFrom,ast.Assign,ast.ClassDef,ast.FunctionDef,ast.Expr)) for n in tree.body)
+    assert all(not isinstance(n,ast.Expr) or (isinstance(n.value,ast.Constant) and isinstance(n.value.value,str)) for n in tree.body)
+    assert re.search(r'[A-Za-z]:[\\/]',raw.decode('utf-8')) is None
+    assert not any(isinstance(n,ast.Call) and isinstance(n.func,ast.Name) and n.func.id=='run' for n in tree.body)
+    one=next(n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='one_ha')
+    assert len(one.body)==1 and isinstance(one.body[0],ast.Raise)
+    banned={'solve_conditioned_household','construct_v0','select_constrained_policy','terminal_kfe','brentq','spsolve'}
+    assert not any(isinstance(n,ast.Call) and ((isinstance(n.func,ast.Name) and n.func.id in banned) or (isinstance(n.func,ast.Attribute) and n.func.attr in banned)) for n in ast.walk(tree))
+    assert b"cfg.get('mode')=='ENGINEERING_ONLY'" in raw
+    assert b'CAP, RESERVE = 8388608, 2097152' in raw
+    baseline=(root/'baseline_runner.txt').read_text(encoding='utf-8')
+    spec=json.loads((root/'cases.json').read_text(encoding='utf-8'))
+    expected=[f'A{i:02}' for i in range(1,9)]+[f'D{i:02}' for i in range(1,17)]+[f'N{i:02}' for i in range(1,23)]
+    assert [c['id'] for c in spec['cases']]==expected
+    variants=[]
+    for case in spec['cases']:
+        assert isinstance(case['input'],dict) and isinstance(case['expected'],dict)
+        assert case['expected']['source_anchor'] in baseline
+        assert all(k in case['input'] for k in ('state','event','io','operation','source','child','plan','request'))
+        for v in case.get('variant_cases',[]):
+            assert v['id'].startswith(case['id']+'v') and isinstance(v['expected'],dict)
+            for p in v['patch']:
+                assert p['op']=='replace' and p['path'].startswith('/') and 'value' in p
+                obj=case['input']
+                for segment in p['path'].split('/')[1:-1]:obj=obj[segment]
+                assert p['path'].split('/')[-1] in obj
+            variants.append(v['id'])
+    assert len(variants)==23 and len(set(expected+variants))==69
+    for name in ('harness.py','launcher.py'):
+        source=(root/name).read_bytes()
+        compile(ast.parse(source,filename=name),name,'exec',dont_inherit=True)
+    result.update(status='PASS',runner_sha256=hashlib.sha256(raw).hexdigest(),main_cases=46,variant_cases=23,
+        hook_registration_sites=1,automatic_runner_entry=False,science_mode='UNCONDITIONALLY_DISABLED',
+        case_runtime_status='NOT_EVALUATED_BY_AST',private_paths_in_runner=False)
+except BaseException as exc:
+    result['error_type']=type(exc).__name__
+(root/'B1_RESULT.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+sys.exit(0 if result['status']=='PASS' else 2)
+
+===== launch_process.ps1 ; ACTUAL_LOCAL_SHA256=E35B2FA2C9C7308B51879E2A53F08B709543E566C9AFB2ECE22AC222792D259B =====
+param([Parameter(Mandatory)][ValidateSet('B1','B2','RUNNER')][string]$Purpose)
+$ErrorActionPreference='Stop';$R=$PSScriptRoot;$u=[Text.UTF8Encoding]::new($false)
+$l=Get-Content -LiteralPath "$R/EXTERNAL_LEDGER.json" -Raw|ConvertFrom-Json -Depth 35
+$py=$l.software[1].path
+function Size {return [long](Get-ChildItem -LiteralPath $R -File -Recurse -Force|Where-Object{$_.FullName -notlike "$R\publication.git\*"}|Measure-Object Length -Sum).Sum}
+function Save {$text=($l|ConvertTo-Json -Depth 35).Replace("`r`n","`n")+"`n";[IO.File]::WriteAllText("$R/EXTERNAL_LEDGER.json",$text,$u)}
+if(([DateTime]::UtcNow-$l.startUTC.ToUniversalTime()).TotalSeconds -gt 10600){throw 'TASK_WALL_STOP'}
+if($l.engineeringProcessCount -ge 4){throw 'PYTHON_TOTAL_LIMIT_STOP'}
+$prior=@($l.engineeringProcesses|Where-Object purpose -eq $Purpose)
+$max=if($Purpose -eq 'RUNNER'){2}else{1}
+if($prior.Count -ge $max){throw 'PYTHON_PURPOSE_LIMIT_STOP'}
+if($Purpose -eq 'B2'){$b1=Get-Content -LiteralPath "$R/B1_RESULT.json" -Raw|ConvertFrom-Json;if($b1.status -ne 'PASS'){throw 'B1_DEPENDENCY_STOP'}}
+if($Purpose -eq 'RUNNER'){$b2=Get-Content -LiteralPath "$R/B2_RESULT.json" -Raw|ConvertFrom-Json;if($b2.totals.FAIL -gt 0 -or $b2.case_count -ne 69){throw 'B2_DEPENDENCY_STOP'}}
+$reservation=if($Purpose -eq 'RUNNER'){8388608+131072}elseif($Purpose -eq 'B2'){4194304}else{262144}
+if((Size)+$reservation+2097152 -gt 33554432){throw 'ARTIFACT_PREFLIGHT_CAP_STOP'}
+if((Get-FileHash -LiteralPath $py).Hash -ne $l.software[1].sha256){throw 'PYTHON_EXECUTABLE_CHANGED_STOP'}
+$scriptName=switch($Purpose){B1{'ast_check.py'}B2{'harness.py'}RUNNER{'launcher.py'}}
+$launchFile="$R/$scriptName"
+$id=$l.engineeringProcessCount+1
+$cfgFile=$null
+if($Purpose -eq 'RUNNER'){
+ $cfgFile="$R/run_config_$id.json"
+ $cfg=@{mode='ENGINEERING_ONLY';trusted_exclusive_root=$true;trusted_runtime_io=$true;candidate_root=([IO.Path]::GetFullPath($l.modelRoot));output_root=([IO.Path]::GetFullPath("$R/real_run_$id"));git_executable=$l.software[0].path;git_executable_sha256=$l.software[0].sha256}
+ [IO.File]::WriteAllText($cfgFile,($cfg|ConvertTo-Json)+"`n",$u)
+}
+$record=@{id=$id;purpose=$Purpose;attemptUTC=[DateTime]::UtcNow.ToString('o');runnerSHA256=(Get-FileHash -LiteralPath "$R/runner.py").Hash;launcherSHA256=(Get-FileHash -LiteralPath $launchFile).Hash;externalHostSHA256=(Get-FileHash -LiteralPath $PSCommandPath).Hash;pythonSHA256=$l.software[1].sha256;reservedArtifactBytes=$reservation;PID='UNKNOWN';exit='PENDING';elapsed='UNKNOWN';peakRSS='UNKNOWN';timedOut=$false;bytesBefore=(Size)}
+$l.engineeringProcessCount=$id;$l.engineeringProcesses+=$record;Save
+$line=($record|ConvertTo-Json -Compress)+"`n"
+[IO.File]::AppendAllText("$R/PROCESS_WITNESS.jsonl",$line,$u)
+$si=[Diagnostics.ProcessStartInfo]::new($py);$si.UseShellExecute=$false;$si.CreateNoWindow=$true;$si.WorkingDirectory=$R
+$si.RedirectStandardOutput=$true;$si.RedirectStandardError=$true;$si.Environment.Clear()
+foreach($e in @{SystemRoot=$env:SystemRoot;WINDIR=$env:SystemRoot;PATH="$env:SystemRoot\System32";TEMP=$R;TMP=$R;LANG='C.UTF-8';LC_ALL='C.UTF-8';OPENBLAS_NUM_THREADS='1';OMP_NUM_THREADS='1';MKL_NUM_THREADS='1'}.GetEnumerator()){$si.Environment[$e.Key]=[string]$e.Value}
+foreach($a in @('-I','-S','-B','-X','utf8',$launchFile)){$si.ArgumentList.Add($a)}
+if($cfgFile){$si.ArgumentList.Add($cfgFile)}
+$o=[IO.File]::Open("$R/process_$id.stdout",[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::ReadWrite)
+$e=[IO.File]::Open("$R/process_$id.stderr",[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::ReadWrite)
+$timer=[Diagnostics.Stopwatch]::StartNew();$p=[Diagnostics.Process]::new();$p.StartInfo=$si
+try {
+ if(-not $p.Start()){throw 'PROCESS_START_FAILED'}
+ $record.PID=$p.Id;Save
+ $ot=$p.StandardOutput.BaseStream.CopyToAsync($o);$et=$p.StandardError.BaseStream.CopyToAsync($e)
+ while(-not $p.WaitForExit(200)){
+  try{$p.Refresh();$peak=[long]$p.PeakWorkingSet64;if($peak -gt 0){$record.peakRSS=$peak}}catch{}
+  if($timer.Elapsed.TotalSeconds -ge 180 -or $o.Length -gt 65536 -or $e.Length -gt 65536 -or (Size)+2097152 -gt 33554432){$record.timedOut=$true;$p.Kill($true);break}
+ }
+ $p.WaitForExit();[Threading.Tasks.Task]::WaitAll(@($ot,$et),10000)|Out-Null
+ $record.exit=$p.ExitCode
+ try{$p.Refresh();$peak=[long]$p.PeakWorkingSet64;if($peak -gt 0){$record.peakRSS=$peak}}catch{}
+} finally {
+ $o.Dispose();$e.Dispose();$record.elapsed=$timer.Elapsed.TotalSeconds;$record.bytesAfter=(Size)
+ $record.stdoutSHA256=(Get-FileHash -LiteralPath "$R/process_$id.stdout").Hash;$record.stderrSHA256=(Get-FileHash -LiteralPath "$R/process_$id.stderr").Hash
+ Save
+ [IO.File]::AppendAllText("$R/PROCESS_WITNESS.jsonl",(($record|ConvertTo-Json -Compress)+"`n"),$u)
+}
+$record|ConvertTo-Json -Depth 6
+if($record.exit -ne 0 -or $record.timedOut){throw 'ENGINEERING_PROCESS_FAILED_STOP_NO_AUTOMATIC_RETRY'}
+
+===== launch_process_B1_source.txt ; ACTUAL_LOCAL_SHA256=5DE7B883DDE8861D236A66BFF0BCF256E68AE784F05457A184364D2280DB44C4 =====
+param([Parameter(Mandatory)][ValidateSet('B1','B2','RUNNER')][string]$Purpose)
+$ErrorActionPreference='Stop';$R=$PSScriptRoot;$u=[Text.UTF8Encoding]::new($false)
+$l=Get-Content -LiteralPath "$R/EXTERNAL_LEDGER.json" -Raw|ConvertFrom-Json -Depth 35
+$py=$l.software[1].path
+function Size {return [long](Get-ChildItem -LiteralPath $R -File -Recurse -Force|Where-Object{$_.FullName -notlike "$R\publication.git\*"}|Measure-Object Length -Sum).Sum}
+function Save {$text=($l|ConvertTo-Json -Depth 35).Replace("`r`n","`n")+"`n";[IO.File]::WriteAllText("$R/EXTERNAL_LEDGER.json",$text,$u)}
+if(([DateTime]::UtcNow-$l.startUTC.ToUniversalTime()).TotalSeconds -gt 10600){throw 'TASK_WALL_STOP'}
+if($l.engineeringProcessCount -ge 4){throw 'PYTHON_TOTAL_LIMIT_STOP'}
+$prior=@($l.engineeringProcesses|Where-Object purpose -eq $Purpose)
+$max=if($Purpose -eq 'RUNNER'){2}else{1}
+if($prior.Count -ge $max){throw 'PYTHON_PURPOSE_LIMIT_STOP'}
+if($Purpose -eq 'B2'){$b1=Get-Content -LiteralPath "$R/B1_RESULT.json" -Raw|ConvertFrom-Json;if($b1.status -ne 'PASS'){throw 'B1_DEPENDENCY_STOP'}}
+if($Purpose -eq 'RUNNER'){$b2=Get-Content -LiteralPath "$R/B2_RESULT.json" -Raw|ConvertFrom-Json;if($b2.totals.FAIL -gt 0 -or $b2.case_count -ne 69){throw 'B2_DEPENDENCY_STOP'}}
+$reservation=if($Purpose -eq 'RUNNER'){8388608+131072}elseif($Purpose -eq 'B2'){4194304}else{262144}
+if((Size)+$reservation+2097152 -gt 33554432){throw 'ARTIFACT_PREFLIGHT_CAP_STOP'}
+if((Get-FileHash -LiteralPath $py).Hash -ne $l.software[1].sha256){throw 'PYTHON_EXECUTABLE_CHANGED_STOP'}
+$scriptName=switch($Purpose){B1{'ast_check.py'}B2{'harness.py'}RUNNER{'launcher.py'}}
+$launchFile="$R/$scriptName"
+$id=$l.engineeringProcessCount+1
+$cfgFile=$null
+if($Purpose -eq 'RUNNER'){
+ $cfgFile="$R/run_config_$id.json"
+ $cfg=@{mode='ENGINEERING_ONLY';trusted_exclusive_root=$true;trusted_runtime_io=$true;candidate_root=([IO.Path]::GetFullPath($l.modelRoot));output_root=([IO.Path]::GetFullPath("$R/real_run_$id"));git_executable=$l.software[0].path;git_executable_sha256=$l.software[0].sha256}
+ [IO.File]::WriteAllText($cfgFile,($cfg|ConvertTo-Json)+"`n",$u)
+}
+$record=@{id=$id;purpose=$Purpose;attemptUTC=[DateTime]::UtcNow.ToString('o');runnerSHA256=(Get-FileHash -LiteralPath "$R/runner.py").Hash;launcherSHA256=(Get-FileHash -LiteralPath $launchFile).Hash;externalHostSHA256=(Get-FileHash -LiteralPath $PSCommandPath).Hash;pythonSHA256=$l.software[1].sha256;reservedArtifactBytes=$reservation;PID='UNKNOWN';exit='PENDING';elapsed='UNKNOWN';peakRSS='UNKNOWN';timedOut=$false;bytesBefore=(Size)}
+$l.engineeringProcessCount=$id;$l.engineeringProcesses+=$record;Save
+$line=($record|ConvertTo-Json -Compress)+"`n"
+[IO.File]::AppendAllText("$R/PROCESS_WITNESS.jsonl",$line,$u)
+$si=[Diagnostics.ProcessStartInfo]::new($py);$si.UseShellExecute=$false;$si.CreateNoWindow=$true;$si.WorkingDirectory=$R
+$si.RedirectStandardOutput=$true;$si.RedirectStandardError=$true;$si.Environment.Clear()
+foreach($e in @{SystemRoot=$env:SystemRoot;WINDIR=$env:SystemRoot;PATH="$env:SystemRoot\System32";TEMP=$R;TMP=$R;LANG='C.UTF-8';LC_ALL='C.UTF-8';OPENBLAS_NUM_THREADS='1';OMP_NUM_THREADS='1';MKL_NUM_THREADS='1'}.GetEnumerator()){$si.Environment[$e.Key]=[string]$e.Value}
+foreach($a in @('-I','-S','-B','-X','utf8',$launchFile)){$si.ArgumentList.Add($a)}
+if($cfgFile){$si.ArgumentList.Add($cfgFile)}
+$o=[IO.File]::Open("$R/process_$id.stdout",[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::ReadWrite)
+$e=[IO.File]::Open("$R/process_$id.stderr",[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::ReadWrite)
+$timer=[Diagnostics.Stopwatch]::StartNew();$p=[Diagnostics.Process]::new();$p.StartInfo=$si
+try {
+ if(-not $p.Start()){throw 'PROCESS_START_FAILED'}
+ $record.PID=$p.Id;Save
+ $ot=$p.StandardOutput.BaseStream.CopyToAsync($o);$et=$p.StandardError.BaseStream.CopyToAsync($e)
+ while(-not $p.WaitForExit(200)){
+  try{$p.Refresh();$record.peakRSS=[long]$p.PeakWorkingSet64}catch{}
+  if($timer.Elapsed.TotalSeconds -ge 180 -or $o.Length -gt 65536 -or $e.Length -gt 65536 -or (Size)+2097152 -gt 33554432){$record.timedOut=$true;$p.Kill($true);break}
+ }
+ $p.WaitForExit();[Threading.Tasks.Task]::WaitAll(@($ot,$et),10000)|Out-Null
+ $record.exit=$p.ExitCode
+ try{$p.Refresh();$record.peakRSS=[long]$p.PeakWorkingSet64}catch{}
+} finally {
+ $o.Dispose();$e.Dispose();$record.elapsed=$timer.Elapsed.TotalSeconds;$record.bytesAfter=(Size)
+ $record.stdoutSHA256=(Get-FileHash -LiteralPath "$R/process_$id.stdout").Hash;$record.stderrSHA256=(Get-FileHash -LiteralPath "$R/process_$id.stderr").Hash
+ Save
+ [IO.File]::AppendAllText("$R/PROCESS_WITNESS.jsonl",(($record|ConvertTo-Json -Compress)+"`n"),$u)
+}
+$record|ConvertTo-Json -Depth 6
+if($record.exit -ne 0 -or $record.timedOut){throw 'ENGINEERING_PROCESS_FAILED_STOP_NO_AUTOMATIC_RETRY'}
+
