@@ -1,5 +1,10 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-16最新：Stage A GitHub补交付独立通过，唯一ACTIVE转入新Windows工程Stage B–E
+
+[Astra Stage A补验收](../../versions/0.0.10/stage_a_github_publication_recovery_followup_review_20261016.md) 已实际确认 `review/v010-stage-a-model-ref-reachability-20261016` →commit `d84cc76b19cbb81e097f502348b5073633fbda6e`、tree`5a03f952ba471352a685b327e79a33176e8bd7b6`、原task sole parent、两文件Git Blob及原上传MD/JSON SHA256/原字节100%一致。发布状态从LOCAL_ONLY修复为`GITHUB_DELIVERY_VERIFIED`，首push失败保留历史；不能反推SSH443本地环境已Astra直接鉴证。Stage A仅DOCUMENTARY LIMITED ACCEPT。用户本会话指示补验收后继续，现已发行唯一新ENGINEERING_ONLY Windows runner Stage B–E任务 `V010_RUNNER_IO_WINDOWS_ENGINEERING_STAGE_B_E_PREFLIGHT`，发行commit `7ec7eae170ae744b6c1b8321c434baf565e9ef7c`/blob`72f3b503ce5f468b8f80c2cb9cb16497a4b5b75f`，[固定任务](../../versions/0.0.10/runner_io_windows_engineering_stage_b_e_preflight_task_20261016.md)。最多新工程Python4（真实runner2），0科学HA，验证Windows Git argv、Job回收、读写quota、hook和九源loader；只读使用隔离Stage A clone，不新clone/fetch、不访问受保护原树。旧预算/失败、A16/window/C9/CALL_LEDGER、corrected HA UNTESTED、Results FALSE、V011 NOT_STARTED保持；下方“无ACTIVE/待补GitHub”等都是前段历史时态。
+
+
 ## 2026-10-16 最新独立验收：Stage A脱敏MD/JSON已收到并限域接受
 
 [Astra uploaded evidence primary review](../../versions/0.0.10/stage_a_git_reachability_uploaded_primary_review_20261016.md) 已实际检查两份用户上传原件的SHA256、结构与命令预算。对固定模型Commit `94de4501dec051b969bee9d852eba2d4591f30ef` 的九份GitHub源码重新计算全部SHA256与字节数，9/9吻合上传Manifest；结论`STAGE_A_DOCUMENTARY_LIMITED_ACCEPT`，本地磁盘/独立common-dir和Git进程仍为Codex报告级，不能称直接Windows OS认证。Codex review分支仍404、单次push据报exit128，维持`LOCAL_ONLY_SAFE_PUBLICATION_BLOCKED`。此前待用户上传两文件的停点已完成，**当前ACTIVE_TASK=NONE**；下一步仅等待Owner决定新ENGINEERING_ONLY Windows preflight授权，科学HA另行决定。`FULL_RUNNER_IO_CLOSURE=BLOCKED`、Results FALSE、V011 NOT_STARTED，原V010经济法则、旧超额、A16/window/C9/CALL_LEDGER及8dirty/index/common-dir保护不变。下面任何“还没上传/待审”的描述为历史时点。

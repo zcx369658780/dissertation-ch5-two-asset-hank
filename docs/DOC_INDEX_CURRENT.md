@@ -1,17 +1,19 @@
-# 第五章动态总目录（2026-10-16 Stage A限域验收已完成）
+# 第五章动态权威总目录（2026-10-16 Stage B–E Windows预检已签发）
 
-**当前ACTIVE_TASK=NONE**。九份冻结远端源码Blob/SHA256/bytes独立复核9/9通过；本地Windows过程仍未获直接OS取证。等待Owner决定是否新授权ENGINEERING_ONLY Windows preflight；没有自动Git补推、Python或HA权限。
+**唯一ACTIVE_TASK=V010_RUNNER_IO_WINDOWS_ENGINEERING_STAGE_B_E_PREFLIGHT**。已由Owner“补上GitHub验收，然后继续”授权独立受限ENGINEERING_ONLY；**全部HA/科学进程新许可=0**。Codex集中执行，不重复派单。
 
-| 入口 | 权威文件 | 当前资格 |
+| 权威入口 | 文件 | 资格 |
 |---|---|---|
-| **最新Astra独立验收** | [Stage A uploaded evidence primary review](../versions/0.0.10/stage_a_git_reachability_uploaded_primary_review_20261016.md) | `STAGE_A_DOCUMENTARY_LIMITED_ACCEPT`；GitHub九源码9/9；本机过程报告级 |
-| CURRENT | [当前状态](../CURRENT.md) | 无ACTIVE、review分支404、旧预算及保护 |
-| TASK_CURRENT | [任务与停点](../TASK_CURRENT.md) | Stage A已STOP；下游须Owner新授权 |
-| Stage A已冻结原task | [原任务](../versions/0.0.10/stage_a_model_git_object_reachability_recovery_task_20261016.md) | commit`68530b3f121952b4382d08dc9ff964c7f6c7ab75`，不可重发 |
-| 旧Windows预检FAIL_CLOSED | [原独立审议](../versions/0.0.10/runner_io_engineering_preflight_fail_closed_primary_review_20261016.md) | clone分支范围错误（此前），已历史封存 |
-| 科学、版本 | [SCIENTIFIC_DECISIONS](../SCIENTIFIC_DECISIONS.md)、[版本登记](CH5_VERSION_REGISTER_CURRENT.md) | 原V010数学冻结，Results FALSE，V011未启动 |
-| 工作流 | [V1.2](CH5_ASTRA_WORKFLOW_CURRENT.md) | Owner授权、Codex集中执行、Astra独立验收 |
-| 知识入口 | [长期知识](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 进度、科学架构、历史错误与预算 |
-| 原交接 | [2026-10-16 snapshot](CH5_CONVERSATION_HANDOFF_20261016_V010_RUNNER_IO_OFFLINE_PENDING.md) | 固定历史时点，不覆盖最新状态 |
+| **唯一新ACTIVE冻结任务** | [V010 Windows runner Stage B–E](../versions/0.0.10/runner_io_windows_engineering_stage_b_e_preflight_task_20261016.md) | commit `7ec7eae170ae744b6c1b8321c434baf565e9ef7c`、blob `72f3b503ce5f468b8f80c2cb9cb16497a4b5b75f`；4工程Python、最多2真实runner、0HA |
+| CURRENT | [当前状态](../CURRENT.md) | GitHub发布补验收、新工程单独授权和全部旧账 |
+| TASK_CURRENT | [唯一任务](../TASK_CURRENT.md) | 已发行，等待Codex交付 |
+| **Stage A GitHub发布补验收** | [Astra follow-up primary review](../versions/0.0.10/stage_a_github_publication_recovery_followup_review_20261016.md) | candidate `d84cc76b19cbb81e097f502348b5073633fbda6e`，sole parent+2文件原字节匹配 |
+| Stage A上传原件审议 | [documentary limited accept](../versions/0.0.10/stage_a_git_reachability_uploaded_primary_review_20261016.md) | 9份源码SHA256+bytes独立复算9/9，Windows本机执行并非Astra亲验 |
+| Stage A原冻结task（已STOP） | [旧Git对象可达性任务](../versions/0.0.10/stage_a_model_git_object_reachability_recovery_task_20261016.md) | 只读历史，不重跑/结转预算 |
+| 最初Windows预检失败 | [FAIL_CLOSED independent review](../versions/0.0.10/runner_io_engineering_preflight_fail_closed_primary_review_20261016.md) | 旧single-branch clone选择错误，已纠正但原故障不删除 |
+| V010科学决定 | [SCIENTIFIC_DECISIONS](../SCIENTIFIC_DECISIONS.md) | 所有原V010经济合同冻结，真实数据/HA未批准 |
+| V010版本登记 | [CH5_VERSION_REGISTER_CURRENT](CH5_VERSION_REGISTER_CURRENT.md) | Results FALSE、V011 NOT_STARTED |
+| V1.2工作流 | [CH5_ASTRA_WORKFLOW_CURRENT](CH5_ASTRA_WORKFLOW_CURRENT.md) | Owner决策、Codex执行、Astra独立验收 |
+| 长期知识 | [CH5_WEB_KNOWLEDGE_CURRENT](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 原MATLAB方法、修复和历史科学预算 |
 
-GitHub review `review/v010-stage-a-model-ref-reachability-20261016`仍未发布；当前上传MD/JSON仅在对话中用于审议，治理审议commit不冒充Codex候选。完整runner I/O BLOCKED，正确HA UNTESTED，保留A16、窗口/C9/CALL_LEDGER、原dirty/common-dir、旧预算和C8真实数据禁令。
+固定V010科学plan commit`bf091da33d59293f147d52c11580327d3ac2a85d`/blob`85138d8859d53295262fe13bf5bc277bca95ed3f`，模型代码commit`94de4501dec051b969bee9d852eba2d4591f30ef`/tree`205eab47c4e4f9c6292c2ead9947d94d1a7579a5`，corrected HA仍UNTESTED。不得重读原受保护D盘dirty/common-dir，A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER UNRESOLVED、model_activation=False、Results FALSE、V011 NOT_STARTED。
