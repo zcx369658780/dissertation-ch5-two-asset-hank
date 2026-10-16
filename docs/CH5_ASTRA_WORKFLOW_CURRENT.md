@@ -1,5 +1,8 @@
 # 第五章当前工作方式 · V1.2
 
+> **2026-10-16新的Owner效率/备份/SSH/Loader决定（优先于下方更早“VM安全门仍待选”的历史时态，V1.2核心科学门不变）**：科研无保密需求；本地C盘与D盘是独立SSD且已有**C盘备份＋GitHub备份**足够，禁止额外无必要的第三备份/强制Windows VM。Codex GitHub使用**现有SSH Key/ssh.github.com:443**，不要求PAT或更改global/system Git config；Astra使用已连接GitHub工具作远端独立验收/治理。Astra已选`TRUSTED_WORKSTATION_ENGINEERING_CONTAINMENT`＋双根Git身份/认证原字节VerifiedLoader，仅用于有界ENGINEERING_ONLY import，不声称可防恶意native/OS sandbox。上位[Owner技术风险决策](CH5_OWNER_RISK_BACKUP_SSH_LOADER_DECISION_20261016.md)，本轮固定任务[Trusted Loader工程预检](../versions/0.0.10/trusted_workstation_loader_engineering_preflight_task_20261016.md)commit`01129efd5220683d415bd1486f23f6ecd068cb53`/blob`1e6757fd235fd96d8b08130ca3fefb3b602c413c`。新ENGINEERING Python≤6/真实runner≤2，科学HA/真实数据0；运行必须有该固定任务，旧预算不结转，A16/window/C9/CALL_LEDGER/Results与V011禁令照旧。
+
+
 > **Owner 2026-10-16补充优先规则（GitHub审阅交换，不改V1.2科学或执行许可）**：远端临时审阅目录`_review_tmp/ch5/<task-id>/`**不得创建、下载、stage或checkout到本地原项目工作树或其index**，也不能进入main/model工作树；只存在于独立GitHub review分支的commit tree。Codex优先用GitHub Git Data API直接构造Blob/Tree/Commit/ref（不使用本地worktree），工具不支持才允许项目外独占`git --bare`无checkout发布，不共享objects/common-dir；禁止`git worktree`、`git add`到项目索引、改原.gitignore、重写模型tree、以partial blob:none基线推断write-tree必成功。Astra独立review先正式归档并回读，才只删除远端临时分支的白名单临时文件；旧Commit可能保留字节。精确见[Owner临时审阅交换协议](CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md)。本规则是可恢复项目长期约定，不是已更新ChatGPT系统记忆或Python/HA新权限。
 
 

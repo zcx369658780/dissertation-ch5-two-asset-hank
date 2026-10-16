@@ -1,5 +1,14 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-16最新：Owner既有双备份/SSH Key决策与V010可信工作站Loader实施门
+
+Owner在本次会话再次确认本科研项目**没有保密要求**；本地**C盘（物理独立于D盘的SSD）现有备份+GitHub备份两层已足够**，不需要第三备份/新VM快照。Codex连接GitHub用已有**SSH Key经SSH443**，无需PAT或修改全局Git config。Astra被授权决定隔离环境中的Python Loader，正式选择**轻量可信工作站ENGINEERING_ONLY容器式源码导入控制**（精确名称`TRUSTED_WORKSTATION_ENGINEERING_CONTAINMENT`，不是已经验证的OS native沙箱）；双根`git_identity_root`只读Stage A clone与独立`source_assembly_root`物化固定commit全部70源码、3份非空init，Loader精确认证GitBlob/SHA256/module/__file__/sys.modules，`LOADING`成功才`EXECUTED`。仅导入工程smoke，科学函数/真实数据0。GitHub[上位Owner风险与Loader决策](../../docs/CH5_OWNER_RISK_BACKUP_SSH_LOADER_DECISION_20261016.md)commit`e15b874b955883e754dee8b3e5543705ed0706a8`/blob`7f1ee509d35343521e79e5df318aa164cd513261`。
+
+唯一当前ACTIVE`V010_ENGINEERING_ONLY_TRUSTED_LOADER_INTEGRATION_PREFLIGHT`，[已发行固定任务](../../versions/0.0.10/trusted_workstation_loader_engineering_preflight_task_20261016.md)commit`01129efd5220683d415bd1486f23f6ecd068cb53`/blob`1e6757fd235fd96d8b08130ca3fefb3b602c413c`，**已经签发不重发**。新工程Python≤6次（真实runner≤2次），每次≤180s，总≤4h，非Git新产物≤32MiB、项目外独占bare Git发布元数据≤1.5GiB、模型网络clone/fetch=0。旧任务预算不结转，corrected HA仍UNTESTED、FULL_RUNNER_IO_CLOSURE BLOCKED、A16/window/C9/CALL_LEDGER/Results FALSE、V011 NOT_STARTED，原V010数学不改。C盘备份**不作scratch、不清理/改写**。风险降级只意味着不强制VM或额外保密备份，**不允许误写原模型、读取真实C8或提前运行HA**。此前设计报告的`IMPORT_GUARD_OS_NATIVE_ISOLATION_UNRESOLVED`作为事实仍成立，不假称通过。
+
+**Owner GitHub临时审阅规则最新补充**：Codex SSH key/443使用项目**工作树外独占bare Git对象库**正常nonforce推送独立review分支；`_review_tmp/ch5/<task-id>/`仅在**远端GitHub review分支Tree**，绝不加入本地科研/模型/治理工作树或原index/staged。Astra通过已连接GitHub工具独立审查并归档后删除远端临时副本；Git历史Commit旧字节仍可能可读，上传前须真脱敏。[长期协议](../../docs/CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md)现在由本后续Owner的SSH指定约束以SSH作为Codex首选而不使用PAT。项目长期知识通过GitHub文件持久化，不声称强制即时写入ChatGPT个人Memory。
+
+
 
 > **2026-10-16最新临时文件清理完成（优先于下方`CLEANUP_PENDING`签收快照）**：[GitHub远端清理回执](../../versions/0.0.10/import_guard_dependency_design_temp_cleanup_receipt_20261016.md)已实际核review cleanup commit `823c86d2ac210d65d10568c42fa793b0de72dc41`唯一parent`dc10a8f12f5333126b16bc56695abf2e67c5b2c0`、clean tree`80a18652013613f883d4d8b48a87cb2a36c882f7`与原task tree完全相同，且`_review_tmp/ch5/v010-import-guard-design-20261016/result.md`、`_review_tmp/ch5/v010-import-guard-design-20261016/manifest.json`在review HEAD都404；cleanup相对candidate只移除这两件，原候选历史未改写。永久验收[原主审](../../versions/0.0.10/import_guard_dependency_design_github_primary_review_20261016.md)已先归档通过。当前`ACTIVE_TASK=NONE`，`WAIT_OWNER_V010_WINDOWS_OS_ISOLATION_AND_TRUST_BROKER_CHOICE / STOP`，**零新Python/runner/HA权限**，冻结科学合同、A16/Results与受保护原树不变。
 

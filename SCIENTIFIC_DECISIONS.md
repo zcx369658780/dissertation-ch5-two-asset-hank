@@ -1,5 +1,8 @@
 # 第五章科学决定：当前适用范围与历史合同索引
 
+> **2026-10-16最新Owner风险授权（不改任何经济/科学模型合同）**：Owner明确本第五章科研项目**无保密需求**，保留**物理独立C盘SSD既有备份＋GitHub备份**双备份即可，不再增加第三备份/强制新VM；Codex GitHub仅用已有SSH key（SSH443）、Astra选择`TRUSTED_WORKSTATION_ENGINEERING_CONTAINMENT`下的Git双根认证Python Loader。已经正式发行唯一ENGINEERING_ONLY任务`V010_ENGINEERING_ONLY_TRUSTED_LOADER_INTEGRATION_PREFLIGHT`，发行commit`01129efd5220683d415bd1486f23f6ecd068cb53`、blob`1e6757fd235fd96d8b08130ca3fefb3b602c413c`，[task](versions/0.0.10/trusted_workstation_loader_engineering_preflight_task_20261016.md)，资源工程Python≤6、真实runner≤2、**科学HA/HJB/KFE/GE/IRF/真实C8调用均0**。Owner完整技术/备份决定见[决策](docs/CH5_OWNER_RISK_BACKUP_SSH_LOADER_DECISION_20261016.md)；不伪称Windows native OS安全沙箱已认证，旧模型与受保护原8dirty/index/外common-dir、C盘现有备份不改。下文此前“等待选择Windows VM或隔离架构”的内容是新Owner选择前的历史时态，不能作为强制VM前置；A16/window/C9/CALL_LEDGER/Results FALSE、V011禁启及一切旧数值账不变。
+
+
 
 > **2026-10-16最新临时文件清理完成（优先于下方`CLEANUP_PENDING`签收快照）**：[GitHub远端清理回执](versions/0.0.10/import_guard_dependency_design_temp_cleanup_receipt_20261016.md)已实际核review cleanup commit `823c86d2ac210d65d10568c42fa793b0de72dc41`唯一parent`dc10a8f12f5333126b16bc56695abf2e67c5b2c0`、clean tree`80a18652013613f883d4d8b48a87cb2a36c882f7`与原task tree完全相同，且`_review_tmp/ch5/v010-import-guard-design-20261016/result.md`、`_review_tmp/ch5/v010-import-guard-design-20261016/manifest.json`在review HEAD都404；cleanup相对candidate只移除这两件，原候选历史未改写。永久验收[原主审](versions/0.0.10/import_guard_dependency_design_github_primary_review_20261016.md)已先归档通过。当前`ACTIVE_TASK=NONE`，`WAIT_OWNER_V010_WINDOWS_OS_ISOLATION_AND_TRUST_BROKER_CHOICE / STOP`，**零新Python/runner/HA权限**，冻结科学合同、A16/Results与受保护原树不变。
 

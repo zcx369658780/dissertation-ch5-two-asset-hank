@@ -1,5 +1,14 @@
 # 第五章脱敏审阅材料 GitHub 临时交换与清理协议（Owner 2026-10-16 授权）
 
+## 2026-10-16 Owner 最新 GitHub SSH Key连接要求（仅改变Codex发布链）
+
+Owner明确指定**Codex连接GitHub使用既有SSH Key**（已知可走`ssh.github.com:443`），不为临时审阅要求PAT、API Key或新令牌，禁止写global/system Git config或把SSH私钥/agent信息纳入公开文档。若此前本协议某段建议“GitHub Git Objects API作为Codex默认首选”，**优先于该建议的Owner新规定是：Codex在原项目工作树之外、独占且不共享.git objects的`git --bare`发布对象库中，经SSH key/443准备全部task parent-tree/blob对象并执行唯一普通nonforce push**。禁止重复以不完整`--depth=1 --filter=blob:none`基线制造`write-tree`缺promisor blob；不额外clone/fetch未授权模型代码。Astra仍可通过其已安装GitHub连接器审核、永久归档、按Owner已许可的**远端临时路径**删除review文件与回读；连接器本身不代表Codex改成PAT。
+
+**长期本地目录禁令不变且从严**：`_review_tmp/ch5/<task-id>/`只能在**远端review分支提交tree中存在**，Codex禁止在原科研/模型/治理项目worktree、index/staged、已有受保护仓库或C盘备份目录创建/checkout/git add该目录，也不靠修改.gitignore隐藏。bare Git对象库存于项目外新scratch，无checkout；本地只允许平铺脱敏MD/JSON供转换成远端树对象，不在本地创建`_review_tmp`目录。Astra先审阅并永久归档，远端readback成功后**仅清理远端temp branch当前tree中的白名单临时文件**、回读cleanup；原历史commit保留，不能靠删除实现秘密消除。每张新任务需固定分支/path/parent/大小/发布次数/失败STOP。
+
+**生效当前任务实例**：`V010_ENGINEERING_ONLY_TRUSTED_LOADER_INTEGRATION_PREFLIGHT`，已发行Commit`01129efd5220683d415bd1486f23f6ecd068cb53`、task Blob`1e6757fd235fd96d8b08130ca3fefb3b602c413c`；本条不追改旧Git候选或授权新科学过程。
+
+
 ## Owner补充强制规则：临时审阅目录不得进入任何本地项目工作树或Git索引（2026-10-16）
 
 **长期Owner决定（优先于下方一般临时交付例示）**：`_review_tmp/ch5/<task-id>/` 是**GitHub远端独立review分支的临时文件路径**，并非本地模型、科研项目、治理工作树下可创建的文件夹。Codex**不得**在原项目repository root、任何既有项目worktree、受保护D盘旧树或其staged index内创建/复制/暂存/提交`_review_tmp`；不得把review临时目录加入本地`git add`、git status待提交项、checkout或主分支/科学模型tree；也不修改全局Git配置、本地protected worktree的`.gitignore`/`.git/info/exclude`来掩盖临时文件。不要使用`git worktree add`、共享工作树、hardlink/alternates/--reference/--shared。**同名路径仅允许存在于远端临时review commit的树中**；这不是把文件加入本地项目工作区。
