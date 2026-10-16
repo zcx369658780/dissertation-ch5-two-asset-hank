@@ -19,7 +19,7 @@
 
 ### B：bare Git身份与路径比较（报告8/8）
 
-Codex表示修正旧`/`对`\\`的字符串误拒，并以8个合成用例实际验证目录句柄身份、Git alternates、真实junction、路径混淆和错误上下文的拒绝，`B01–B08=8/8 EXPECTED_MATCH`。依正式任务，保持身份根与新bare common-dir彼此独立、可信句柄/目录检查及非共享对象约束，不能简单用文本replace删掉guard。**验收：`BARE_NORMALIZED_COMPARATOR_SYNTHETIC=CODEX_REPORTED_8_OF_8`；`BARE_NONSHARED_GUARD_SYNTHETIC=CODEX_REPORTED`。** 这支持从上一轮静态缺陷归因进入真实合成验证；但**没有**核实完整原任务bare对象库、旧错误Git发布链、所有parent/tree/blob可达性、环境污染防护或同用户恶意TOCTOU，不能称`BARE_GIT_PUBLISHING_IDENTITY_PASS`或`OS_NATIVE_SECURITY_SANDBOX_VERIFIED`。
+Codex表示修正Git正斜线与Windows反斜线在字面比较中的误拒，并以8个合成用例实际验证目录句柄身份、Git alternates、真实junction、路径混淆和错误上下文的拒绝，`B01–B08=8/8 EXPECTED_MATCH`。依正式任务，保持身份根与新bare common-dir彼此独立、可信句柄/目录检查及非共享对象约束，不能简单用文本replace删掉guard。**验收：`BARE_NORMALIZED_COMPARATOR_SYNTHETIC=CODEX_REPORTED_8_OF_8`；`BARE_NONSHARED_GUARD_SYNTHETIC=CODEX_REPORTED`。** 这支持从上一轮静态缺陷归因进入真实合成验证；但**没有**核实完整原任务bare对象库、旧错误Git发布链、所有parent/tree/blob可达性、环境污染防护或同用户恶意TOCTOU，不能称`BARE_GIT_PUBLISHING_IDENTITY_PASS`或`OS_NATIVE_SECURITY_SANDBOX_VERIFIED`。
 
 ### S：脱敏结构化诊断（报告8/8）
 
