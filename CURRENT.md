@@ -1,5 +1,7 @@
 # 第五章 CURRENT：V010工程Windows preflight任务已签发
 
+> **2026-10-16 最新独立审议优先于下方旧任务签发状态：** 原唯一ACTIVE `V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT` 已由Codex以 `ENGINEERING_PREFLIGHT_FAIL_CLOSED` 交付并STOP。GitHub review candidate `416cff6c00d2b865c3e9dda4088242d2b80969ce`，tree `1d5bc390774d68ea619f6ad263c99d0090486b37`，独立查证仅3白名单文件、sole parent `343c22132deb23ba6d913d70e132b43a00b95f1d`；[Astra独立审议](versions/0.0.10/runner_io_engineering_preflight_fail_closed_primary_review_20261016.md) 判为 `A_STAGE_GIT_REF_SCOPE_FAILURE`：隔离clone只取治理分支，未取得有效模型分支对象，导致checkout 128。远端模型分支 `codex/ch5-v010-matlab-first-20261015` 的HEAD/Tree真实存在。新工程Python 0/4、科学HA0属Codex回执，69例全部未评估。本轮当前没有后继ACTIVE执行任务，`WAIT_OWNER_FRESH_A_STAGE_GIT_OBJECT_REACHABILITY_AUTHORITY / STOP`。旧未用工程余额不能越过STOP自动继续，全部V010科学冻结/历史预算/保护不改。下方“任务已签发/待交付”是原发布时间快照。
+
 更新：2026-10-16（Asia/Shanghai）。
 **状态：`V010_ENGINEERING_ONLY_WINDOWS_PREFLIGHT_TASK_ISSUED__WAIT_CODEX_DELIVERY__NO_SCIENCE_RUNTIME`。**
 

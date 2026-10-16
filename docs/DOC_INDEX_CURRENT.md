@@ -1,5 +1,7 @@
 # 第五章动态总目录（2026-10-16；ENGINEERING_ONLY preflight已发行）
 
+> **最新优先停点（2026-10-16）**：[工程preflight首次独立FAIL_CLOSED审议](../versions/0.0.10/runner_io_engineering_preflight_fail_closed_primary_review_20261016.md)；Codex review `416cff6c00d2b865c3e9dda4088242d2b80969ce`、阶段A单分支治理clone无法签出冻结模型，exit128。GitHub独立证实模型分支 `codex/ch5-v010-matlab-first-20261015` 的远端提交和树存在。上一次 `V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT` 已完成失败交付，**暂无新ACTIVE执行任务**。等待Owner单独批准Git对象可达性修复；没有Python/HA新增调用许可，旧预算及保护不变。下面“preflight已签发/ACTIVE”的文字为历史签发快照。
+
 **当前唯一ACTIVE**：`V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT`。Owner已授权限域Windows工程进程；科学新预算和HA仍为0。准确身份以本目录、CURRENT、TASK_CURRENT及固定任务发行commit核实。
 
 | 当前入口 | 文件 | 科学/工程资格 |

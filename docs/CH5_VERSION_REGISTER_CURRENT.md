@@ -1,5 +1,7 @@
 # 第五章当前版本登记（2026-10-16 ENGINEERING_ONLY preflight）
 
+> **最新V010登记（2026-10-16）：** [Astra GitHub独立审议](../versions/0.0.10/runner_io_engineering_preflight_fail_closed_primary_review_20261016.md) 已核 `416cff6c00d2b865c3e9dda4088242d2b80969ce`（sole parent`343c22132deb23ba6d913d70e132b43a00b95f1d`、3文件白名单）。原 `V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT` 以阶段A clone checkout exit128终止，`ENGINEERING_PREFLIGHT_FAIL_CLOSED`；仅准备依赖未满足，非HANK/HA失败。GitHub远端模型候选commit/tree存在于`codex/ch5-v010-matlab-first-20261015`，本机对象缺失具体形态仍需本地证据。工程Python0/4(报告)、科学0、69例均NOT_EVALUATED；**未用余额不跨任务恢复**。当前`ACTIVE_TASK=NONE`，`WAIT_OWNER_FRESH_A_STAGE_GIT_OBJECT_REACHABILITY_AUTHORITY / STOP`；V011未启动、Results FALSE。下文旧“任务已发行、待Codex”的表述仅历史时点。
+
 **CURRENT_VERSION=V010 / V0.0.10；V011 NOT_STARTED。**
 **唯一ACTIVE=`V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT`**。
 Owner本会话明确允许Astra设定本轮**仅工程Windows预检**条件；正式任务已发行commit `343c22132deb23ba6d913d70e132b43a00b95f1d`，tree `2fbb740ba42e2367fb99de05a11eb533829ea72b`，task blob `08fed792ee19329313dfc7402fa174035805a345`，文件 [runner_io_engineering_only_windows_preflight_task_20261016.md](../versions/0.0.10/runner_io_engineering_only_windows_preflight_task_20261016.md)。Python工程进程≤4，真正runner≤2，HA/HJB/KFE/root/selector/GE/IRF/真实数据=0。本轮还没有Codex新的执行回执；最终需Astra独立验收并STOP。

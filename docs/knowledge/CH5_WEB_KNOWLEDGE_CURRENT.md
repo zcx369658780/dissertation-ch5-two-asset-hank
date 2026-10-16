@@ -1,5 +1,11 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-16 本轮工程preflight独立验收：最新状态
+
+[Astra独立审议](../../versions/0.0.10/runner_io_engineering_preflight_fail_closed_primary_review_20261016.md) 已核候选 `416cff6c00d2b865c3e9dda4088242d2b80969ce`。Codex阶段A用`--single-branch`治理分支clone，无法checkout `94de4501...` 冻结模型，exit128后STOP；远端模型分支及tree经GitHub确认存在。工程Python0/4、HA0为Codex本地回执，69例NOT_EVALUATED。旧`V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT`已FAILED/CLOSED，**当前无新ACTIVE执行任务**。下一步等待Owner对独立Git对象可达性补取/隔离clone准备做新授权；原工程未用额度不得自动续用。旧GBK与Windows argv两次科学进程、原模型数学冻结、8dirty/common-dir、C8、A16/window/C9/CALL_LEDGER、Results FALSE、V011 NOT_STARTED不改变。
+
+下方“工程preflight已签发/待Codex”的段落仅为前一时点状态，不再是实时执行许可。
+
 ## 2026-10-16新Owner授权及ACTIVE状态（优先于下方旧交接快照）
 
 Owner正式批准`V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT`，授权界限由Astra制定，已在GitHub [固定任务](../../versions/0.0.10/runner_io_engineering_only_windows_preflight_task_20261016.md) 发布：commit `343c22132deb23ba6d913d70e132b43a00b95f1d`、blob `08fed792ee19329313dfc7402fa174035805a345`。仅4个工程Python进程（真实Windows runner≤2），3小时内受限工程preflight；HA/HJB/KFE/selector/root/GE/IRF/真实数据一律0调用。原静态任务已DELIVERED并经[独立静态限域审议](../../versions/0.0.10/runner_guard_io_offline_github_primary_review_20261016.md)，不再ACTIVE；其46静态主例与23变体并不构成Windows PASS。新工程结果尚未收到；待Codex交付并由Astra审验后再决定是否**另行请求Owner科学HA授权**。所有冻结经济合同、两次GBK/argv失败预算、8dirty/index/common-dir保护、A16/window/C9/CALL_LEDGER/Results FALSE、V011 NOT_STARTED照旧。下方旧“Python新许可0、离线任务ACTIVE”是旧交接当时的历史描述，不可再当目前执行入口。

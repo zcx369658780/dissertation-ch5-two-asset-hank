@@ -1,5 +1,7 @@
 # TASK_CURRENT：V010 ENGINEERING_ONLY Windows preflight
 
+> **2026-10-16 实时最优先：`ACTIVE_TASK=NONE__WAIT_OWNER_NEW_A_STAGE_AUTHORITY`。** 上一任务 `V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT` 已交付 `ENGINEERING_PREFLIGHT_FAIL_CLOSED` 并终止，不再处于执行中。Review candidate `416cff6c00d2b865c3e9dda4088242d2b80969ce` / tree `1d5bc390774d68ea619f6ad263c99d0090486b37`，独立审议[全文](versions/0.0.10/runner_io_engineering_preflight_fail_closed_primary_review_20261016.md)。阶段A clone未拿到冻结模型对象，checkout exit128、工程Python=0/4(报告)、HA=0、69个静态/变体均NOT_EVALUATED。本审议不是继续执行命令，不产生新工程clone/fetch/Python/科学预算，不重复旧任务；Owner未来决定是否授权单独Git对象可达性修复。下文历史ACTIVE字段为任务发出时点记录。
+
 更新：2026-10-16（Asia/Shanghai）。
 **ACTIVE_TASK=`V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT`**。
 **STATUS=`OWNER_APPROVED__TASK_ISSUED__AWAIT_CODEX_RESULT`**。
