@@ -1,18 +1,15 @@
-# TASK_CURRENT：V010 工程集成、封存前后链与合成mktree
+# TASK_CURRENT：V010工程集成／旧封存链／合成mktree已交付、STOP
 
 更新：2026-10-16（Asia/Shanghai）。
+**ACTIVE_TASK=NONE**。
+**LAST_TASK=V010_ENGINEERING_INTEGRATION_SEAL_CHAIN_SYNTHETIC_MKTREE_PREFLIGHT__DELIVERED__STOPPED**。
+**REVIEW=[正式限域主审](versions/0.0.10/engineering_integration_seal_chain_synthetic_mktree_local_only_primary_review_20261016.md)；REVIEW_BLOB=32272533e9f4136883f536814919bddf2cb037d9**。
+**CLASS=PARTIAL__LEGACY_SEAL_UNVERIFIABLE__NEW_SYNTHETIC_17_OF_17_CODEX_REPORTED__NEW_LOCAL_SEAL_CHAIN_REPORTED**。
+**NEXT_GATE=WAIT_OWNER_FRESH_V010_SANITIZED_EVIDENCE_EXCHANGE_AND_REAL_ENGINEERING_GATE_AUTHORITY / STOP**。
+**NEW_AUTHORITY=NONE__PS0__BARE_INIT0__GIT_IDENTITY0__MKTREE0__GIT_FETCH_PUSH0__PYTHON0__RUNNER0__HA0**。
 
-**ACTIVE_TASK=V010_ENGINEERING_INTEGRATION_SEAL_CHAIN_SYNTHETIC_MKTREE_PREFLIGHT**。
-**FIXED_ISSUE_COMMIT=34497613d7085cfeea39682aef15f983ef5030a9；FIXED_TASK_BLOB=6aa223b4c98391e051ebe4f7b8d358f88cf678bf**。
-**TASK_FILE=[冻结任务全文](versions/0.0.10/engineering_integration_seal_chain_synthetic_mktree_task_20261016.md)**。
-**CLASS=ENGINEERING_ONLY_LOCAL_INTEGRATION_AND_EVIDENCE**。
-**NEW_PS_INTEGRATION_BATCH_MAX2__BARE_INIT_MAX1__GIT_IDENTITY_MAX6__SYNTHETIC_HASH_OBJECT_WRITE_MAX2__MKTREE_MAX2__LS_TREE_MAX1__OTHER_READONLY_GIT_MAX20**。
-**PYTHON0__MODEL_IMPORT0__VERIFIED_LOADER0__REAL_RUNNER0__GITHUB_FETCH_PUSH_COMMIT_REF0__HA/HJB/KFE/GE/IRF/REAL_C8_0**。
-**GITHUB_REVIEW_PUBLICATION=NOT_AUTHORIZED；OUTPUT=LOCAL_ONLY_SAFE_SUMMARY**。
-**STOP=WAIT_ASTRA_V010_ENGINEERING_INTEGRATION_SEAL_MKTREE_REVIEW / STOP**。
+上一[正式冻结任务](versions/0.0.10/engineering_integration_seal_chain_synthetic_mktree_task_20261016.md)发行Commit 34497613d7085cfeea39682aef15f983ef5030a9、任务Blob 6aa223b4c98391e051ebe4f7b8d358f88cf678bf，已交付 `V010_ENGINEERING_INTEGRATION_SEAL_CHAIN_SYNTHETIC_MKTREE_RESULT` 并停止。Codex本机报告旧最终receipt SHA256匹配，然而旧first seal只有结构化快照和hash引用，缺可核验的原字节，旧run_id亦未记录，所以旧封存链 **UNVERIFIABLE**；严禁新造旧原件或借新测试补造旧身份。新本轮实际first/final原字节、统一run_id、17个测试hash/单向链接据报成立，但网页Astra尚未实际读取本机原证，限`CODEX_REPORTED_WITH_LOCAL_RECEIPTS`。
 
-Owner授权真实合成工程集成与first/final封存链核证，不是旧任务续费。新scratch独立受保护；从上一BSL修复scratch准确索引最多10份文件、只读总≤1MiB，核旧final SHA256 70622F5AF09089983639F81973837D7EF7D5E0CAA6B33E85D0C74B5B7EA74D23 和first/final字节、run_id、case manifest、初次null补正范围。首版不存在或未经原字节证明则标UNKNOWN，不能重新生成旧证据。新合成bare中实际检修后Git identity guard→结构化sanitizer→匿名ledger、mktree正反样例与serializer输入，不运行原真实bare发布脚本或任何原模型。新非Git≤8份/2MiB且留128KiB，新bare全部metadata≤32MiB，wall≤150min。
+本轮本地集成17/17预期匹配（bare身份/结构化脱敏/匿名ledger），serializer自身拒绝额外空行，合成mktree正例2 entries、直接空行负例Git exit128；不能扩展成旧真实bare publish / GitHub / Windows Python / runner PASS。原真实扫描拒绝仍UNKNOWN且DENIED，历史台账偏差UNRESOLVED。
 
-上轮主审 [BSL20/20合成报告](versions/0.0.10/bare_identity_sanitizer_ledger_engineering_local_only_primary_review_20261016.md) Git Blob cbafd84d7e3149692938d0e601a1413142076714 仅有限文档接受；封存链UNVERIFIED、原脱敏命中UNKNOWN且原材料禁发、历史ledger偏差UNRESOLVED。旧STOP PS第二测试1/2等未用余额不可结转。此次合成mktree是一次新限定工程允许，不是GitHub发版许可。交付ID为 V010_ENGINEERING_INTEGRATION_SEAL_CHAIN_SYNTHETIC_MKTREE_RESULT；Codex不可自授Astra工程PASS，不可随后启动Python/真实runner/HA。
-
-科学V010原模型及plan、Owner单点HA UNTESTED、真实C8请求门、A16/window/C9/CALL_LEDGER、8dirty/index/common-dir/C备份、FULL_RUNNER_IO_CLOSURE BLOCKED、Results FALSE、model_activation=False、V011 NOT_STARTED不变。
+Codex自报PS测试批次1/2、bare init1/1、Git身份read-only4/6、hash-object2/2、mktree2/2、ls-tree1/1，旧文件读取43,787B、新非Git8份68,551B、bare保守1,049,165B/16条目；旧读取文件确切个数、wall及其它命令预算未知。最终receipt SHA256（Owner转述、未复算）：859398F7F4ABF2067AAF6613213290B9F027EE48D2A7E0EEA361BC0C5FDF5197。Python/VerifiedLoader/runner/模型科学与GitHub推送0。旧/本轮剩余全部随STOP关闭，不得结转；未来新工程、审阅发布及科学进程均须Owner新授权。本轮绝不触原冻结plan/模型、8dirty/index/common-dir/C备份、real C8，A16/window/C9/CALL_LEDGER、model_activation=False、Results FALSE、V011 NOT_STARTED照旧。
