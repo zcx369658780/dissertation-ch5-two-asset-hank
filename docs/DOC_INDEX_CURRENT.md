@@ -1,4 +1,15 @@
-# 第五章动态总目录（2026-10-16）
+# 第五章动态总目录（2026-10-16，新会话交接）
+**权威停点：V010离线runner IO集成任务已签发、待Codex交付；本次GitHub仅同步交接文档，无新Python/HA授权。**
+
+| 首先读取 | GitHub入口 | 当前说明 |
+|---|---|---|
+| **最新完整交接** | [2026-10-16 会话快照](CH5_CONVERSATION_HANDOFF_20261016_V010_RUNNER_IO_OFFLINE_PENDING.md) | Owner决策、固定SHA、任务、已耗资源、保护和新会话验收顺序 |
+| CURRENT | [CURRENT](../CURRENT.md) | 任务已发布，await Codex，不重复下达 |
+| TASK_CURRENT | [TASK_CURRENT](../TASK_CURRENT.md) | 唯一ACTIVE＝V010_RUNNER_GUARD_IO_OFFLINE_INTEGRATION_AND_SANITIZED_GITHUB_HANDOFF |
+| 固定唯一执行任务 | [runner IO离线集成](../versions/0.0.10/runner_guard_io_offline_integration_task_20261016.md) | commit 50fece7d51bbcbb7e4384b0a5a8833b81dcbf76b；blob 0070437d83eccaaf4a1c38838e9ce2b1a2fb5634；无科学执行 |
+| 上轮独立验收 | [原件静态审议](../versions/0.0.10/windows_git_guard_uploaded_primary_review_20261016.md) | Guard方向有限接受，完整runner I/O BLOCKED |
+
+## 交接前详细索引（保留）
 
 **Owner上传Windows guard原MD/py已由Astra直接静态审查；真正runner I/O仍BLOCKED。当前仅允许非运行的静态runner集成，安全去敏结果通过独立GitHub review分支交付，禁止科学/工程Python调用。**
 

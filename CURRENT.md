@@ -1,14 +1,15 @@
-# 第五章 CURRENT：Astra独立审原Windows Git守门草案，进入离线runner I/O集成
+# 第五章 CURRENT：V010离线runner IO集成任务已发布，等待下一会话Codex交付
 
-日期：2026-10-16（Asia/Shanghai）。
-**状态：V010_UPLOADED_GUARD_SOURCE_INDEPENDENTLY_REVIEWED__RUNNER_IO_BLOCKED__OFFLINE_INTEGRATION_TASK_ISSUED__NO_RUNTIME_PERMISSION**。
+更新：2026-10-16（Asia/Shanghai）。
+**状态：V010_OFFLINE_RUNNER_IO_INTEGRATION_TASK_ISSUED__HANDOFF_SAVED__AWAIT_CODEX_DELIVERY__NO_RUNTIME_PERMISSION**。
+**最新交接**：[2026-10-16完整会话快照](docs/CH5_CONVERSATION_HANDOFF_20261016_V010_RUNNER_IO_OFFLINE_PENDING.md)。本次仅保存进度，不重新签发/执行Codex任务、不提供Python/HA/HJB/KFE/pytest新预算。
 
-Astra已直接读取Owner上传的`V010_WINDOWS_ARGV_GUARD_STATIC_REPAIR_RESULT.md`及`windows_git_guard_draft.py`原字节、分别得SHA256`27CD9B23FC7032E523E0D397D2E7FAF05BD99B500E4CB8E6487AA98B20EC1151`与`A021AFD81CE1342290A8C8387C0B49383CAE20C66B00F46336F220DB546B1C5C`；AST源码语法PASS（未import/运行）。[独立静态审议](versions/0.0.10/windows_git_guard_uploaded_primary_review_20261016.md)裁决guard设计可供后续离线集成，但真实Windows argv仍`NOT_CAPTURED`、24例只有MD分组预期非runtime PASS、完整runner I/O仍**BLOCKED**。
+唯一ACTIVE仍为 **`V010_RUNNER_GUARD_IO_OFFLINE_INTEGRATION_AND_SANITIZED_GITHUB_HANDOFF`**，任务全文 [runner_guard_io_offline_integration_task_20261016.md](versions/0.0.10/runner_guard_io_offline_integration_task_20261016.md)，**发行commit `50fece7d51bbcbb7e4384b0a5a8833b81dcbf76b`、tree `c79f874a1ea60f3a880114fd5d80b0861e6ca21e`、任务blob `0070437d83eccaaf4a1c38838e9ce2b1a2fb5634`**。仅离线未执行runner源码草案、Windows Git argv与磁盘9源身份、stdout/stderr有界读取、timeout/reap、异常/IO写前配额/防路径别名及静态cases。GitHub专属许可只允许经去敏的3个静态文件向新`review/v010-runner-io-offline-20261016`分支普通non-force推送并回读，不得写main/治理分支或外泄本地raw/绝对路径；若去敏失败LOCAL_ONLY STOP。发布本交接时目标review分支未发现，不能据此宣称Codex已完成。
 
-最重要的代码缺口：Git身份`identity_outputs()`没有绑定实际child有界返回；`ls-tree HEAD`不证明磁盘导入的9份Python源码字节；`Popen`缺有界stdout/stderr/timeout/reap；新hook不能叠加旧hook；旧runner异常/JSON配额/启动失败闭环尚需阅读原runner修复。故**不得再因局部STATIC_READY启动第3个Python进程**。
+**Owner科学模型方向不变**：修错原MATLAB且Python恢复条件HA→多省顺序单轮→原ra收益边界GovInv乘0.9/1.1与Zt自适应→原递推冲击；C1残差法仅历史；目的地工资税只扣一次，财政省总量/人均准确分账；same-S/lagged raw-ra0、家庭/企业Lt分离。冻结V010 `plan.md` @ commit `bf091da33d59293f147d52c11580327d3ac2a85d` / blob `85138d8859d53295262fe13bf5bc277bca95ed3f`，原人工fixture blob `40915658d93403cfc21b33a6b864b332b7857749` 不改。
 
-本轮唯一新ACTIVE为[离线整合runner守门/I/O任务](versions/0.0.10/runner_guard_io_offline_integration_task_20261016.md)；不运行Python/pytest/HA/HJB/KFE，Codex只在隔离scratch整合未执行的runner草案、静态case JSON。**task单独允许安全脱敏文档通过新review分支普通non-force GitHub交付**，不能公开上传原D盘私有日志/绝对路径；以后降低Owner手动搬运文件次数，不修改V1.2永久工作流。
+代码工程candidate `94de4501dec051b969bee9d852eba2d4591f30ef` / tree `205eab47c4e4f9c6292c2ead9947d94d1a7579a5`仅限域接受：24项工程pytest PASS为Codex报告；首个两省synthetic HA checkpoint2 F-order25 `NO_ADMISSIBLE_POLICY`，12候选全拒（Codex本地原证），无KFE、outer、IRF。历史对照点`rah=.0675,w_eff=15.5,rb=.02`的单独corrected HA **UNTESTED**，单点manifest blob `c23d331bed34e5ca478324cdc05034609ecb91b7` 不改。
 
-旧两个单点进程各1/1已耗且HA均0；首个GBK故障output43519638B超32MiB 9965206B、第二Windows守门故障117446B在96MiB内。该`rah=.0675,w_eff=15.5,rb=.02`仍`UNTESTED`；旧V010首个两省synthetic HA checkpoint2另FAIL_CLOSED。原科学模型候选`94de4501dec051b969bee9d852eba2d4591f30ef`及原计划blob`85138d8859d53295262fe13bf5bc277bca95ed3f`、单点manifest blob`c23d331bed34e5ca478324cdc05034609ecb91b7`不变。
+该单点曾两次预检STOP：首次GBK读UTF8、Python1/1 HA0、43519638B超原32MiB `9965206B`；其次Windows Git argv守门误拒首次只读核验、Python1/1 HA0、新artifact117446B在96MiB内。两次Python额度各消耗1/1、HA均0，旧违约不得抹除/重试。后续SOURCE_ONLY guard报告33576B；Owner上传MD/py原字节经Astra独立hash和AST语法审查，但真实audit argv未捕获、24项仅静态预期，**完整runner IO仍BLOCKED**。本轮新任务0 Python/pytest/HJB/KFE/HA等运行许可；工程runtime测试与真正HA需日后**分开向Owner重新申请**。
 
-A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER UNRESOLVED、model_activation=False、Results FALSE，real C8 A–D REQUEST_ONLY、原8dirty/index/common-dir/untracked/ignored保护、V011 NOT_STARTED不变。
+原V010旧Codex预算pytest4/6、science driver1/4、HA1/26、selector cells1626、scalar-root1642继续独立计账，不能通过新任务刷新。V011 NOT_STARTED；A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER UNRESOLVED、model_activation=False、Results FALSE、真实C8 A–D REQUEST_ONLY、原D盘8dirty/index/common-dir/untracked/ignored及旧报告保全持续。V1.2及Owner连续版次委托未更改，QMD/BasicMemory本次未同步。

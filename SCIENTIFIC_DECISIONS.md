@@ -1,5 +1,8 @@
 # 第五章科学决定：当前适用范围与历史合同索引
 
+> **2026-10-16 会话交接时态补充（不修改Owner历史科学裁决）**：本文2026-10-15“当前允许V010受界实施/合成科学”的表述仅指原冻结签发时的历史许可，**不能作为实时调用授权**。截至最新[2026-10-16交接](docs/CH5_CONVERSATION_HANDOFF_20261016_V010_RUNNER_IO_OFFLINE_PENDING.md)，V010唯一ACTIVE是已发布的纯离线`V010_RUNNER_GUARD_IO_OFFLINE_INTEGRATION_AND_SANITIZED_GITHUB_HANDOFF`（commit `50fece7d51bbcbb7e4384b0a5a8833b81dcbf76b`、task blob `0070437d83eccaaf4a1c38838e9ce2b1a2fb5634`），**新Python/HJB/KFE/HA/pytest/macro/IRF权限全部0**。原单点两次预检进程各1/1已耗、HA各0；任何补充数值许可须Owner再次明确批准。以下经济方程决定、GovInv边界和各原冻结科学门不变。
+
+
 更新：2026-10-15，Owner已确认[项目主线纠偏](docs/CH5_OWNER_SCOPE_REALIGNMENT_20261015.md)。
 **2026-10-15 Owner GovInv/目的地工资税裁决已纳入V010正式冻结实施合同。当前仅允许该版独立候选白名单修改与明确受界synthetic调用（其授权细节必须以固定plan及准确implementation_task双重身份为准）；不放开真实C8/2017/2018/B3、生产激活、Results或旧预算。**
 
