@@ -1,19 +1,19 @@
-# 第五章动态总目录（2026-10-16 V010工程集成+seal链+mktree唯一新任务ACTIVE）
+# 第五章动态总目录（2026-10-16 V010集成17/17回执、旧seal不可验证、任务STOP）
 
-**ACTIVE_TASK=V010_ENGINEERING_INTEGRATION_SEAL_CHAIN_SYNTHETIC_MKTREE_PREFLIGHT**；正式发行commit 34497613d7085cfeea39682aef15f983ef5030a9、任务Blob 6aa223b4c98391e051ebe4f7b8d358f88cf678bf。Owner已批准本轮小型工程集成，独立预算：本地PowerShell测试批次≤2、新bare init≤1、新库read-only身份≤6、纯合成hash-object写≤2、mktree≤2、ls-tree≤1。**GitHub fetch/push/ref/commit0，Python/runner/HA/GE/IRF0。** 上次旧测试额度不结转；不允许重新生成first seal伪证，也不恢复被拒的旧脱敏候选。
+**ACTIVE_TASK=NONE**。上一任务 `V010_ENGINEERING_INTEGRATION_SEAL_CHAIN_SYNTHETIC_MKTREE_PREFLIGHT` 已 `DELIVERED__STOPPED`；本轮GitHub独立主审为 `PARTIAL__LEGACY_SEAL_CHAIN_UNVERIFIABLE__CURRENT_SYNTHETIC_17_OF_17_CODEX_REPORTED__NO_REAL_RUNNER_PASS`。旧首版仅快照/hash引用且无旧run_id，不存在可核证raw原字节；本轮新first/final/run_id/17项hash关联为Codex当地回执级，Astra尚未直接读取本机原件。无新Python/runner/HA或GitHub发布授权。
 
-| 用途 | GitHub权威入口 | 当前状态 |
+| 用途 | GitHub权威入口 | 状态 |
 |---|---|---|
-| **唯一冻结新工程任务** | [V010集成与seal/mktree预检](../versions/0.0.10/engineering_integration_seal_chain_synthetic_mktree_task_20261016.md) | 发行commit 34497613d7085cfeea39682aef15f983ef5030a9，Blob 6aa223b4c98391e051ebe4f7b8d358f88cf678bf，已签发，待Codex |
-| CURRENT | [实时状态](../CURRENT.md) | ACTIVE新任务、工程预算与原科学硬门 |
-| TASK_CURRENT | [当前任务入口](../TASK_CURRENT.md) | 本任务独立新资源/结果ID/STOP |
-| 上轮独立主审 | [B/S/L合成工程20/20审议](../versions/0.0.10/bare_identity_sanitizer_ledger_engineering_local_only_primary_review_20261016.md) | Blob cbafd84d7e3149692938d0e601a1413142076714；文档有限接受，首版null保留 |
-| 前轮冻结任务（已STOP） | [B/S/L集中修复](../versions/0.0.10/bare_identity_sanitizer_ledger_engineering_correction_task_20261016.md) | 发行Commit 2a252ec2627d9a1f48dcab0c1bab16cc6cf9d9fe，Blob 6c31d861a9e15f1b5956dfdfa7132a074bdb2e5e |
-| Owner备份/SSH/Loader | [风险与技术决定](CH5_OWNER_RISK_BACKUP_SSH_LOADER_DECISION_20261016.md) | 既有C盘独立SSD备份+GitHub、可信工作站 |
-| 脱敏审阅协议 | [仅远端review交换](CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md) | 本任务不授权GitHub远端临时review发表，路径不落本地工作树/index |
-| 工作流 | [V1.2](CH5_ASTRA_WORKFLOW_CURRENT.md) | Codex工程执行、GPT独立主审、Owner新许可 |
-| 科学合同 | [SCIENTIFIC_DECISIONS](../SCIENTIFIC_DECISIONS.md) | 原MATLAB/HANK模型与预算保护不变 |
-| 版本登记 | [CH5_VERSION_REGISTER_CURRENT](CH5_VERSION_REGISTER_CURRENT.md) | V010仍未完成、V011禁启 |
-| 长期知识 | [CH5_WEB_KNOWLEDGE_CURRENT](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 新状态入口优于历史ACTIVE |
+| **最新正式独立主审** | [V010集成、两代封存与合成mktree主审](../versions/0.0.10/engineering_integration_seal_chain_synthetic_mktree_local_only_primary_review_20261016.md) | Blob `32272533e9f4136883f536814919bddf2cb037d9`，旧seal UNVERIFIABLE，新17/17合成回执有限接受 |
+| CURRENT | [实时状态](../CURRENT.md) | `ACTIVE_TASK=NONE`，旧预算全部关闭 |
+| TASK_CURRENT | [本轮任务关闭入口](../TASK_CURRENT.md) | 不再运行旧代码，不结转剩额 |
+| **上一冻结任务（已STOP）** | [V010工程集成、seal链与synthetic mktree](../versions/0.0.10/engineering_integration_seal_chain_synthetic_mktree_task_20261016.md) | issue Commit `34497613d7085cfeea39682aef15f983ef5030a9` / Blob `6aa223b4c98391e051ebe4f7b8d358f88cf678bf` |
+| 上轮工程主审 | [B/S/L合成20/20有限审议](../versions/0.0.10/bare_identity_sanitizer_ledger_engineering_local_only_primary_review_20261016.md) | Blob `cbafd84d7e3149692938d0e601a1413142076714`，历史first seal null |
+| 工作流V1.2 | [当前流程](CH5_ASTRA_WORKFLOW_CURRENT.md) | Owner新权限、Astra审核、Codex实施 |
+| 备份/SSH/Loader | [Owner风险决定](CH5_OWNER_RISK_BACKUP_SSH_LOADER_DECISION_20261016.md) | 独立C盘SSD既有备份+GitHub、可信工作站 |
+| 脱敏远端交换 | [Owner审阅交换协议](CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md) | 此轮不授权远端temp发布，旧候选继续DENIED |
+| 科学合同 | [SCIENTIFIC_DECISIONS](../SCIENTIFIC_DECISIONS.md) | 冻结主线与经济方程不变 |
+| 版本登记 | [CH5_VERSION_REGISTER_CURRENT](CH5_VERSION_REGISTER_CURRENT.md) | V010仍未完成，V011未启 |
+| 长期知识 | [CH5_WEB_KNOWLEDGE_CURRENT](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 最新顶层状态优先历史段落 |
 
-上一回执Owner转述SHA256 70622F5AF09089983639F81973837D7EF7D5E0CAA6B33E85D0C74B5B7EA74D23，尚未读取原始字节核算。本轮必须精确核上轮首版/终版first/final字节、case run_id及资源summary null变更，真实数据缺失不造证。冻结科学plan Commit bf091da33d59293f147d52c11580327d3ac2a85d / Blob 85138d8859d53295262fe13bf5bc277bca95ed3f，模型commit 94de4501dec051b969bee9d852eba2d4591f30ef / tree 205eab47c4e4f9c6292c2ead9947d94d1a7579a5不改。corrected单点HA UNTESTED，FULL_RUNNER_IO_CLOSURE=BLOCKED，model_activation=False，Results FALSE，V011 NOT_STARTED，A16/window/C9/CALL_LEDGER、real C8 REQUEST_ONLY、8dirty/index/外Git common-dir/C盘备份/旧失败原证保护不改。GitHub不证明本地QMD/Basic Memory已更新。
+Codex本轮报告PS批次1/2、bare init1/1、Git只读身份4/6、hash-object2/2、mktree2/2、ls-tree1/1；上一文件读取43,787B，新8文件68,551B；合成bare完整目录16条目、保守1,049,165B。合成serializer自主拒绝多余空行，正例tree有2项、Git额外空行负例exit128；不意味着真实旧Git发布和远端PASS。Owner提供本轮回执SHA256 `859398F7F4ABF2067AAF6613213290B9F027EE48D2A7E0EEA361BC0C5FDF5197`，尚未由Astra取得原字节独立复算。旧脱敏DENIED原因UNKNOWN，历史中间ledger偏差UNRESOLVED。科学plan固定commit`bf091da33d59293f147d52c11580327d3ac2a85d`/Blob`85138d8859d53295262fe13bf5bc277bca95ed3f`、模型commit`94de4501dec051b969bee9d852eba2d4591f30ef`/Tree`205eab47c4e4f9c6292c2ead9947d94d1a7579a5`均不改。corrected单点HA UNTESTED、FULL_RUNNER_IO_CLOSURE BLOCKED、Results FALSE、model_activation=False、V011 NOT_STARTED；A16/window/C9/CALL_LEDGER/real C8 REQUEST_ONLY、原8dirty/index/外common-dir/C盘备份及旧全部资源账不动。GitHub同步不等于本地QMD/Basic Memory自动同步。
