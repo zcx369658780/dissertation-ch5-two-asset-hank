@@ -1,5 +1,10 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-16最新：V010 SOURCE_ONLY全传递import闭包任务正式冻结
+
+Owner已批准唯一`V010_SOURCE_ONLY_IMPORT_DEPENDENCY_CLOSURE_AND_READONLY_ASSEMBLY_PLAN`，[固定任务](../../versions/0.0.10/source_only_import_dependency_closure_task_20261016.md)，发行commit`a2c9bf4b57aa9ce8f0c9ae5a1d920e141ee57ebd`、blob`7affb983e000c487dc306852383d747420400a63`。只读冻结模型Git目录中三份非空包init、九受监测原源码与传递import依赖，辨认import-time副作用、条件/动态未知及第三方numpy/scipy声明，提出**未来**只读隔离装配方案；模型包候选全集18+30+22=70份.py，不表示都要import。本轮0Python/AST/import/runner/HA/科学，原Stage A clone只读，禁clone/fetch/checkout。先前Windows B–E工程为PARTIAL，5Git child回执/68合成PASS保留，N13/loader与活超时未闭合；旧工程3/4 Python剩余额度不结转。FULL_RUNNER_IO_CLOSURE BLOCKED、corrected HA UNTESTED、Results FALSE、V011 NOT_STARTED；A16/window/C9/CALL_LEDGER、旧科学预算/第一次日志超额及8dirty/index/common-dir保护不变。下方“待Owner批准SOURCE_ONLY”的说明现为历史时态。
+
+
 ## 2026-10-16最新：Stage B–E Windows工程部分诊断交付、Astra独立主审完成
 
 [Windows Stage B–E独立主审](../../versions/0.0.10/runner_io_windows_be_github_primary_review_20261016.md) 核review candidate`9bcd61fc88ace3b8e2c1c07753c610e2e4b5c75e`/sole parent/3脱敏文档和69用例结构；68 synthetic PASS、N13 NOT_EVALUATED、5真实Git child/audit/Job/reap/reader正向回执。阻断在于Stage A只读sparse clone缺3份冻结Git已有且非空的`__init__.py`，import/loader/`__file__`没有执行；相关传递源码也未完成闭包认证。旧本地工程Python3/4、runner1/2额度不结转，新任务`ACTIVE_TASK=NONE`。建议Owner先授权零Python的`SOURCE_ONLY`静态传递import闭包，再分别授权Windows工程runtime与科学HA；不得自行重试或写原Stage A模型clone。`FULL_RUNNER_IO_CLOSURE=BLOCKED`、单点HA UNTESTED、Results FALSE、V011 NOT_STARTED、旧科学预算和8dirty/index/common-dir、A16/window/C9/CALL_LEDGER保护不变。下方“Windows B–E正在执行”只属历史时点。

@@ -1,14 +1,7 @@
-# 第五章 CURRENT：V010 Windows runner工程部分诊断已独立审议
+# 第五章 CURRENT：V010 SOURCE_ONLY import依赖闭包已授权和签发
 
-更新：2026-10-16（Asia/Shanghai）。
-**ACTIVE_TASK=NONE**。
-**LATEST_REVIEW=PARTIAL_ENGINEERING_DIAGNOSTIC_CONFIRMED__GIT_CHILD_POSITIVE_EVIDENCE__LOADER_BLOCKED**。
-**FULL_RUNNER_IO_CLOSURE=BLOCKED**。
-**NEXT_GATE=WAIT_OWNER_V010_ENGINEERING_SOURCE_IMPORT_CLOSURE_AUTHORITY / STOP**。
-**NO_NEW_EXECUTION_PERMISSION=PYTHON_0__HA_0__GIT_RETRY_0**。
-
-[Astra本轮正式独立验收](versions/0.0.10/runner_io_windows_be_github_primary_review_20261016.md) blob`67c15e010c4a90b9773899cd699222d756fe5772`：GitHub review候选`9bcd61fc88ace3b8e2c1c07753c610e2e4b5c75e`/tree`b36531a20a3f99090f4650e10834a54d24cb6d14`/唯一parent原任务发行`7ec7eae170ae744b6c1b8321c434baf565e9ef7c`，仅新增3份脱敏白名单文件。JSON中69个case全部与原46主+23变体ID匹配，68个合成PASS，N13 NOT_EVALUATED，0 FAIL；5个真实Windows Git child的身份+inventory、Popen审计、Job分配、正常reap、reader join回执字段均自洽。以上真实Windows进程由Codex本地报告，Astra未亲自运行Windows。
-
-**阻断**：九源码在隔离Stage A clone中存在，但三个原始包`__init__.py`在sparse checkout中缺失，导致runner fail-closed`LOADER_IMPORT_NOT_EVALUATED`；原始init均非空，import涉及更多模块，不能简单补3文件即称闭包。真实活子进程timeout kill、N13、模块`__file__`/loader及OS沙箱均未验证。旧任务 [Stage B–E冻结原件](versions/0.0.10/runner_io_windows_engineering_stage_b_e_preflight_task_20261016.md) 已交付并STOP，工程Python3/4、真实runner1/2剩余**不结转**。新任务须先Owner另批`SOURCE_ONLY`完整传递import依赖和独立只读装配方案（零Python/HA），之后工程runtime/科学HA各自再获独立权限。
-
-Codex最终口述新artifact503758B/32MiB、发布Git512047316B/1GiB；本地receipt SHA256`8CE3D65D046753CF92D01238BE09A816A87FB7C5D6960C67F3D89DA7DB157D62`未由网页实算；Manifest的419764B/497072677B只是先前快照。原V010科学plan commit`bf091da33d59293f147d52c11580327d3ac2a85d`/blob`85138d8859d53295262fe13bf5bc277bca95ed3f`及HA→多省顺序→GovInv边界0.9/1.1/Zt→独立GDP≤1%→原lagged-NKPC冲击主线不变；single-point corrected HA仍UNTESTED。旧科学pytest4/6、driver1/4、HA1/26、selector1626、roots1642、两次单点Python各1/1及首笔存储超额9,965,206B原样保留。A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER UNRESOLVED、model_activation=False、Results FALSE、真实C8 A-D REQUEST_ONLY、原8dirty/index/common-dir/旧失败根保护与V011 NOT_STARTED不变。GitHub不自动同步本机QMD/Basic Memory。
+2026-10-16。**ACTIVE_TASK=V010_SOURCE_ONLY_IMPORT_DEPENDENCY_CLOSURE_AND_READONLY_ASSEMBLY_PLAN**。**STATUS=TASK_ISSUED__WAIT_CODEX_STATIC_DELIVERY**。**SCIENCE_PERMISSION=0；PYTHON_PERMISSION=0；RUNNER_PERMISSION=0**。
+固定任务：[SOURCE_ONLY import closure](versions/0.0.10/source_only_import_dependency_closure_task_20261016.md)；发行commit `a2c9bf4b57aa9ce8f0c9ae5a1d920e141ee57ebd`、tree `364bb9184c554caa5ecf3b273ef5bd8b6d7271e9`、blob `7affb983e000c487dc306852383d747420400a63`。**已发布，禁止重复签发**。Owner同意只读核查冻结模型三份非空init、九受监测源和全传递import依赖；形成不修改Stage A只读clone的隔离装配**计划**。模型commit `94de4501dec051b969bee9d852eba2d4591f30ef`、tree`205eab47c4e4f9c6292c2ead9947d94d1a7579a5`；GitHub核源范围18+30+22=70份.py仅为候选全集，不代表全部须导入。对条件/动态import、外部numpy/scipy运行环境和import-time副作用，无法静态判定的明确标UNKNOWN。
+预算：≤2小时、≤90份源/5MiB只读、≤150次只读Git/PowerShell调用、新scratch≤8MiB；无新model clone/fetch/checkout/sparse写入，全部Python/AST/import/pytest/runner/HA/HJB/KFE/GE/IRF/真实C8运行0。GitHub限单次非force安全review、最多2个脱敏文件；详见冻结任务。
+上一[Windows B–E独立审议](versions/0.0.10/runner_io_windows_be_github_primary_review_20261016.md)裁决PARTIAL：68 synthetic PASS、N13 NOT_EVALUATED，5真实Git child审计/Job/reap正向回执；loader未import，FULL_RUNNER_IO_CLOSURE=BLOCKED。旧工程Python3/4、runner1/2余额STOP不结转。原V010冻结科学计划blob`85138d8859d53295262fe13bf5bc277bca95ed3f`、GovInv0.9/1.1、目的地工资税一次、same-S/lagged ra0、原lagged-NKPC主线不变。corrected HA单点UNTESTED、Results FALSE、model_activation=False、A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER UNRESOLVED、真实C8 A–D REQUEST_ONLY、8dirty/index/common-dir和旧失败回执受保护、V011 NOT_STARTED；旧science预算及GBK存储超额不重置。
+**NEXT_STOP=WAIT_ASTRA_V010_SOURCE_ONLY_IMPORT_CLOSURE_REVIEW / STOP**。

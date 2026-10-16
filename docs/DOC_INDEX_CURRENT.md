@@ -1,17 +1,15 @@
-# 第五章动态权威总目录（2026-10-16 Windows B–E已独立验收）
+# 第五章动态权威总目录（2026-10-16 SOURCE_ONLY import闭包已签发）
 
-**ACTIVE_TASK=NONE**。最新工程`PARTIAL_ENGINEERING_DIAGNOSTIC`：5真实Git child受限正向回执、68 synthetic PASS，N13和loader import仍未执行。**完整runner I/O BLOCKED，HA无新许可**。
+**唯一ACTIVE=V010_SOURCE_ONLY_IMPORT_DEPENDENCY_CLOSURE_AND_READONLY_ASSEMBLY_PLAN**；零Python/runner/HA许可。**固定任务已发行，不二次派发**。
 
-| 入口 | 文件 | 权威范围 |
+| 入口 | 文件 | 状态 |
 |---|---|---|
-| 最新独立审议 | [V010 Windows B–E primary review](../versions/0.0.10/runner_io_windows_be_github_primary_review_20261016.md) | GitHub commit `9bcd61fc88ace3b8e2c1c07753c610e2e4b5c75e`验收、实际回执证据分级及loader阻断 |
-| CURRENT | [当前进度](../CURRENT.md) | 无ACTIVE、资源历史与Owner新决定 |
-| TASK_CURRENT | [当前停点](../TASK_CURRENT.md) | 前一工程任务STOP，不自动重发 |
-| 上个冻结执行任务 | [Stage B–E工程任务](../versions/0.0.10/runner_io_windows_engineering_stage_b_e_preflight_task_20261016.md) | 固定发行commit `7ec7eae170ae744b6c1b8321c434baf565e9ef7c`，仅历史 |
-| Codex交付 | [9bcd61f候选](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/commit/9bcd61fc88ace3b8e2c1c07753c610e2e4b5c75e) | 仅3份静态脱敏文件，非HA运行资格 |
-| Stage A审议 | [Stage A GitHub补验收](../versions/0.0.10/stage_a_github_publication_recovery_followup_review_20261016.md) | 九源哈希及两文件字节已独立核对 |
-| 科学与版本 | [SCIENTIFIC_DECISIONS](../SCIENTIFIC_DECISIONS.md)、[VERSION_REGISTER](CH5_VERSION_REGISTER_CURRENT.md) | 经济合同冻结，Results FALSE，V011未启 |
-| 现行工作流 | [CH5_ASTRA_WORKFLOW_CURRENT](CH5_ASTRA_WORKFLOW_CURRENT.md) | V1.2 Owner授权/Codex执行/Astra审查 |
-| 知识库 | [长期知识](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 保留历史预算/原MATLAB研究路线 |
+| 新冻结任务 | [SOURCE_ONLY import closure](../versions/0.0.10/source_only_import_dependency_closure_task_20261016.md) | commit`a2c9bf4b57aa9ce8f0c9ae5a1d920e141ee57ebd`，blob`7affb983e000c487dc306852383d747420400a63` |
+| CURRENT | [当前状态](../CURRENT.md) | 静态权限和旧科学保护 |
+| TASK_CURRENT | [唯一ACTIVE](../TASK_CURRENT.md) | 待Codex一次集中交付 |
+| 上轮主审 | [Windows B–E独立验收](../versions/0.0.10/runner_io_windows_be_github_primary_review_20261016.md) | 68 synthetic PASS、N13未评估、loader阻断 |
+| 冻结科学计划 | [V010 plan](../versions/0.0.10/plan.md) | 固定blob`85138d8859d53295262fe13bf5bc277bca95ed3f` |
+| 科学/版本 | [SCIENTIFIC_DECISIONS](../SCIENTIFIC_DECISIONS.md)、[版本](CH5_VERSION_REGISTER_CURRENT.md) | 数值合同不动，V011未启 |
+| 工作流/长期知识 | [V1.2](CH5_ASTRA_WORKFLOW_CURRENT.md)、[知识](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 原MATLAB方案和历史账持续 |
 
-下一建议纯`SOURCE_ONLY`全传递import闭包；源初始化模块非空，不能只补三个文件即宣称认证。需要Owner明确新权限，不能写原Stage A只读clone或再调工程Python/HA。所有原8dirty/index/common-dir、A16/window/C9/CALL_LEDGER禁令不变。
+冻结model tree`205eab47c4e4f9c6292c2ead9947d94d1a7579a5`下相关目录70份.py为候选全集。须分析三个非空init引出的传递依赖，不运行代码、不写Stage A只读clone。A16/真实C8/原dirty/index/common-dir保护及Results FALSE照旧。
