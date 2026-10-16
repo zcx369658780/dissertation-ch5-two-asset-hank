@@ -1,0 +1,6236 @@
+{
+  "schema": "CH5_V010_OFFLINE_GUARD_IO_STATIC_CASES_V1",
+  "task_commit": "50fece7d51bbcbb7e4384b0a5a8833b81dcbf76b",
+  "status": "STATIC_DEFINITIONS_ONLY__NOT_EXECUTED",
+  "runtime_pass": false,
+  "case_count": 46,
+  "fixture_symbols": {
+    "source_identity": {
+      "parent": "a1db8c114dec0ab69d69a5576e153a7f868cba0e",
+      "head": "94de4501dec051b969bee9d852eba2d4591f30ef",
+      "tree": "205eab47c4e4f9c6292c2ead9947d94d1a7579a5"
+    },
+    "PINNED_GIT_EXE": "Independently verified trusted Git executable path",
+    "CANDIDATE_ROOT": "Future separately approved disposable candidate absolute root, never a protected original tree",
+    "rendering": "Windows list2cmdline(plan.argv), NOT arbitrary shell parsing",
+    "PROTECTED_ROOT": "Symbolic denied value only; no stat/read or hostile fixture permitted by this task",
+    "SYSTEM_ROOT": "Trusted Windows installation",
+    "PINNED_GIT_SHA256": "Independently pinned actual binary SHA256"
+  },
+  "substitution_policy": "No runtime driver supplied or executed. Symbols must be bound only by a new authorized engineering task; complete typed structures plus per-case variants are deterministic specifications.",
+  "source_sha256": "3FF7B5D6FBEF57CE851C327EA5C6E6CA8200C852A3C1629586F3AC584FACFF11",
+  "cases": [
+    {
+      "id": "A01",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Approved exact list audit representation",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "Hook.__call__",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "ALLOW_EVENT_ONLY",
+        "postcondition": "One nonce consumed; identity still false until all four actual children verify.",
+        "source_anchor": "GIT_AUDIT_TOKENS"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "A02",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Approved exact tuple audit representation",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "tuple",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "Hook.__call__",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "ALLOW_EVENT_ONLY",
+        "postcondition": "No argv parsing or arbitrary process permission.",
+        "source_anchor": "GIT_AUDIT_TOKENS"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "A03",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Exact Windows rendered argv string",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "extra_suffix": "",
+            "kind": "str",
+            "extra_prefix": "",
+            "exact_render_of": "plan.argv"
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "Hook.__call__",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "ALLOW_EVENT_ONLY",
+        "postcondition": "Exact equality with precomputed approved rendering only.",
+        "source_anchor": "GIT_AUDIT_RENDERING"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "A04",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Exact tree identity",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD^{tree}"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "GitGate.verify",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "205eab47c4e4f9c6292c2ead9947d94d1a7579a5"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD^{tree}"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD^{tree}"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "ALLOW_IDENTITY_STEP",
+        "postcondition": "Only actual bounded child output advances this step; this isolated fixture does not unlock verified.",
+        "source_anchor": "GIT_IDENTITY_MISMATCH"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "A05",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Exact sole parent identity",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "show",
+              "-s",
+              "--format=%P",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "GitGate.verify",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "a1db8c114dec0ab69d69a5576e153a7f868cba0e"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "show",
+            "-s",
+            "--format=%P",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "show",
+              "-s",
+              "--format=%P",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "ALLOW_IDENTITY_STEP",
+        "postcondition": "Only actual bounded child output advances this step; this isolated fixture does not unlock verified.",
+        "source_anchor": "GIT_IDENTITY_MISMATCH"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "A06",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Exact common-dir identity",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "--path-format=absolute",
+              "--git-common-dir"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "GitGate.verify",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "@CANDIDATE_ROOT@/.git"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "--path-format=absolute",
+            "--git-common-dir"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "--path-format=absolute",
+              "--git-common-dir"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "ALLOW_IDENTITY_STEP",
+        "postcondition": "Only actual bounded child output advances this step; this isolated fixture does not unlock verified.",
+        "source_anchor": "GIT_IDENTITY_MISMATCH"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "A07",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Source inventory only after real identity verification, fixed commit not HEAD",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": true,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "ls-tree",
+              "-r",
+              "94de4501dec051b969bee9d852eba2d4591f30ef",
+              "--",
+              "src/ch5_two_asset_hank"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "GitGate.source_map",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "100644 blob 51517dde0c829060b6e0c0d594ec60e7e6143883@TAB@src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "ls-tree",
+            "-r",
+            "94de4501dec051b969bee9d852eba2d4591f30ef",
+            "--",
+            "src/ch5_two_asset_hank"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "ls-tree",
+              "-r",
+              "94de4501dec051b969bee9d852eba2d4591f30ef",
+              "--",
+              "src/ch5_two_asset_hank"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "ALLOW_SOURCE_STEP",
+        "postcondition": "No dynamic HEAD and no source consumer yet.",
+        "source_anchor": "GIT_SOURCE_BEFORE_IDENTITY"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "A08",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Legacy helper intent rebuilt with exact pinned executable and explicit safe kwargs",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "GitGate._run",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        },
+        "legacy_request": [
+          "git",
+          "--no-optional-locks",
+          "-C",
+          "@CANDIDATE_ROOT@",
+          "rev-parse",
+          "HEAD"
+        ]
+      },
+      "expected": {
+        "action": "ALLOW_REBUILT_REQUEST",
+        "postcondition": "Never directly allow bare git in observed audit executable.",
+        "source_anchor": "GIT_REQUEST_TYPE"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "D01",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Source requested before identity completion",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "GitGate.source_map",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY",
+        "postcondition": "verified remains false.",
+        "source_anchor": "GIT_SOURCE_BEFORE_IDENTITY"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "D02",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Old status caller remains denied",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "GitGate._run",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "status",
+              "--porcelain",
+              "--untracked-files=no"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY",
+        "postcondition": "No status exception for compatibility.",
+        "source_anchor": "GIT_TAIL"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "D03",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "All write/network Git tails denied",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "GitGate._run",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "push"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY",
+        "postcondition": "No child created.",
+        "source_anchor": "GIT_TAIL"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false,
+      "variant_cases": [
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_TAIL"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": [
+                "fetch"
+              ],
+              "path": "/request/tail/items"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D03v1"
+        },
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_TAIL"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": [
+                "checkout",
+                "other"
+              ],
+              "path": "/request/tail/items"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D03v2"
+        },
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_TAIL"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": [
+                "reset",
+                "--hard"
+              ],
+              "path": "/request/tail/items"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D03v3"
+        },
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_TAIL"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": [
+                "clean",
+                "-fd"
+              ],
+              "path": "/request/tail/items"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D03v4"
+        },
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_TAIL"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": [
+                "add",
+                "x"
+              ],
+              "path": "/request/tail/items"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D03v5"
+        },
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_TAIL"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": [
+                "commit",
+                "-m",
+                "x"
+              ],
+              "path": "/request/tail/items"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D03v6"
+        },
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_TAIL"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": [
+                "merge",
+                "other"
+              ],
+              "path": "/request/tail/items"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D03v7"
+        },
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_TAIL"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": [
+                "push"
+              ],
+              "path": "/request/tail/items"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D03v8"
+        },
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_TAIL"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": [
+                "hash-object",
+                "-w",
+                "x"
+              ],
+              "path": "/request/tail/items"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D03v9"
+        }
+      ]
+    },
+    {
+      "id": "D04",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Unknown executable and shell launchers",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@UNKNOWN_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "Hook.__call__",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY",
+        "postcondition": "Active nonce is insufficient for an unpinned executable.",
+        "source_anchor": "GIT_AUDIT_EXE"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false,
+      "variant_cases": [
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_AUDIT_EXE"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": "@PYTHON_EXE@",
+              "path": "/event/executable"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D04v1"
+        },
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_AUDIT_EXE"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": "@CMD_EXE@",
+              "path": "/event/executable"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D04v2"
+        },
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_AUDIT_EXE"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": "@POWERSHELL_EXE@",
+              "path": "/event/executable"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D04v3"
+        },
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_AUDIT_EXE"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": "@UNKNOWN_EXE@",
+              "path": "/event/executable"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D04v4"
+        }
+      ]
+    },
+    {
+      "id": "D05",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Bare executable aliases in audit event",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "git",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "Hook.__call__",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY",
+        "postcondition": "No PATH-resolution assumption.",
+        "source_anchor": "GIT_AUDIT_EXE"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false,
+      "variant_cases": [
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_AUDIT_EXE"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": "git",
+              "path": "/event/executable"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D05v1"
+        },
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_AUDIT_EXE"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": "git.exe",
+              "path": "/event/executable"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D05v2"
+        }
+      ]
+    },
+    {
+      "id": "D06",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Caller cannot choose shell or submit arbitrary command string",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "CALL_WITH_UNSUPPORTED_KWARGS",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": true,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        },
+        "caller_kwargs": {
+          "shell": true
+        },
+        "string_request_variant": {
+          "tail_text": "@ARBITRARY_COMMAND_STRING@",
+          "expected_anchor": "GIT_REQUEST_TYPE",
+          "tail_kind": "str"
+        }
+      },
+      "expected": {
+        "action": "DENY",
+        "postcondition": "Python argument binding rejects extra kwargs; Popen shell=False is constant; no audit shell field invented.",
+        "source_anchor": "def _run(self,tail):"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "D07",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Wrong/inherited/protected cwd",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@OTHER_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "Hook.__call__",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY",
+        "postcondition": "No filesystem probe at a denied cwd.",
+        "source_anchor": "GIT_AUDIT_CWD"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false,
+      "variant_cases": [
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_AUDIT_CWD"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": "@PROTECTED_ROOT@",
+              "path": "/event/cwd"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D07v1"
+        },
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_AUDIT_CWD"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": "@OTHER_ROOT@",
+              "path": "/event/cwd"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D07v2"
+        },
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_AUDIT_CWD"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": null,
+              "path": "/event/cwd"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D07v3"
+        }
+      ]
+    },
+    {
+      "id": "D08",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Changed -C and argument/global-option insertion",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@OTHER_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "Hook.__call__",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY",
+        "postcondition": "Request variants also rejected by GIT_TAIL before spawn.",
+        "source_anchor": "GIT_AUDIT_TOKENS"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false,
+      "variant_cases": [
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_TAIL"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": [
+                "-c",
+                "alias.x=y",
+                "rev-parse",
+                "HEAD"
+              ],
+              "path": "/request/tail/items"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D08v1"
+        },
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_TAIL"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": [
+                "--exec-path=@OTHER@",
+                "rev-parse",
+                "HEAD"
+              ],
+              "path": "/request/tail/items"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D08v2"
+        },
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_TAIL"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": [
+                "--git-dir=@OTHER@",
+                "rev-parse",
+                "HEAD"
+              ],
+              "path": "/request/tail/items"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D08v3"
+        }
+      ]
+    },
+    {
+      "id": "D09",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Extra command tokens",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD",
+              "&&",
+              "other"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "Hook.__call__",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY",
+        "postcondition": "Exact tuple mismatch even with shell=False.",
+        "source_anchor": "GIT_AUDIT_TOKENS"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "D10",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Traversal spelling rejected before metadata lookup",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "exact_path",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        },
+        "path_fixture": {
+          "append_components": [
+            "..",
+            "@PROTECTED_ROOT@"
+          ],
+          "base": "@CANDIDATE_ROOT@"
+        }
+      },
+      "expected": {
+        "action": "DENY",
+        "postcondition": "Do not stat a denied protected root.",
+        "source_anchor": "PATH_TRAVERSAL"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "D11",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Untrusted path aliases/reparse",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "exact_path_or_chain",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        },
+        "path_fixture": {
+          "kind": "UNC_DEVICE_ADS_OR_REPARSE",
+          "variants": [
+            "UNC",
+            "DEVICE",
+            "ADS",
+            "REPARSE"
+          ]
+        }
+      },
+      "expected": {
+        "action": "DENY",
+        "postcondition": "UNC/device/ADS variants map PATH_ABSOLUTE/PATH_ALIAS before chain.",
+        "source_anchor": "PATH_REPARSE"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "D12",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Environment injection",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@",
+            "GIT_DIR": "@PROTECTED_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "Hook.__call__",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY",
+        "postcondition": "No inherited Git configuration override.",
+        "source_anchor": "GIT_AUDIT_ENV"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "D13",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Nonexact Windows rendering",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "extra_suffix": "",
+            "kind": "str",
+            "extra_prefix": " ",
+            "exact_render_of": "plan.argv"
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "Hook.__call__",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY",
+        "postcondition": "No equivalent-looking parsing allowance.",
+        "source_anchor": "GIT_AUDIT_RENDERING"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "D14",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Missing/reused one-spawn capability",
+      "input": {
+        "state": {
+          "active_nonce": null,
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "Hook.__call__",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY",
+        "postcondition": "No spawn can authenticate identity.",
+        "source_anchor": "GIT_NO_CAPABILITY"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false,
+      "variant_cases": [
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_NO_CAPABILITY"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": null,
+              "path": "/state/active_nonce"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D14v1"
+        },
+        {
+          "expected": {
+            "action": "DENY",
+            "source_anchor": "GIT_NO_CAPABILITY"
+          },
+          "patch": [
+            {
+              "op": "replace",
+              "value": null,
+              "path": "/state/active_nonce"
+            },
+            {
+              "op": "replace",
+              "value": 1,
+              "path": "/state/capability_uses"
+            }
+          ],
+          "runtime_execution": "NOT_RUN",
+          "id": "D14v2"
+        }
+      ]
+    },
+    {
+      "id": "D15",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Executable bytes differ from independently pinned hash",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "GitGate.__init__",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@HASH_MISMATCH@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY",
+        "postcondition": "No child created.",
+        "source_anchor": "GIT_EXE_HASH"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "D16",
+      "origin": "ORIGINAL_24_EXPANDED",
+      "title": "Even read-only hash-object is outside exact command set",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "GitGate._run",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "hash-object",
+              "x"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY",
+        "postcondition": "Python computes actual disk Git blob identity without a Git write command.",
+        "source_anchor": "GIT_TAIL"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N01",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Forged identity_outputs scalar method",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "CALL_NONEXISTENT_METHOD",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": false,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": false
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        },
+        "attempted_method": "identity_outputs",
+        "caller_supplied_outputs": {
+          "head": "94de4501dec051b969bee9d852eba2d4591f30ef",
+          "common_dir": "@CANDIDATE_ROOT@/.git",
+          "tree": "205eab47c4e4f9c6292c2ead9947d94d1a7579a5",
+          "parents": "a1db8c114dec0ab69d69a5576e153a7f868cba0e"
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "No public scalar-authentication method exists; verified remains false.",
+        "source_anchor": "GIT_IDENTITY_PROOF",
+        "exception": "AttributeError"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N02",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Dirty actual disk Python bytes",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "VerifiedFinder.disk",
+        "source": {
+          "disk_blob": "@DIFFERENT_DISK_BLOB@",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": false,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "No identity unlock, no HA, no retry; stop/receipt remains bounded. All effects here are declarative expectations only.",
+        "source_anchor": "SOURCE_DIRTY_BYTES"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N03",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Child stdout one byte over cap",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "bounded_child",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "generator": {
+              "count": 4097,
+              "character": "x"
+            },
+            "append_probe": false,
+            "cap": 4096
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "No identity unlock, no HA, no retry; stop/receipt remains bounded. All effects here are declarative expectations only.",
+        "source_anchor": "CHILD_"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N04",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Child stderr inflation",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "bounded_child",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "generator": {
+              "count": 4097,
+              "character": "e"
+            },
+            "append_probe": false,
+            "cap": 4096
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "No identity unlock, no HA, no retry; stop/receipt remains bounded. All effects here are declarative expectations only.",
+        "source_anchor": "CHILD_"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N05",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Child timeout with required kill/reap",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "bounded_child",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": false,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 30.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "No identity unlock, no HA, no retry; stop/receipt remains bounded. All effects here are declarative expectations only.",
+        "source_anchor": "CHILD_TIMEOUT"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N06",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Nonzero actual child exit",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "bounded_child",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 1,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "No identity unlock, no HA, no retry; stop/receipt remains bounded. All effects here are declarative expectations only.",
+        "source_anchor": "CHILD_EXIT_NONZERO"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N07",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Atomic rename transaction fault",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true,
+          "transaction": {
+            "fault": "rename_destination_exists",
+            "payload_bytes": 1024,
+            "overwrite_allowed": false,
+            "temporary_created": true
+          }
+        },
+        "operation": "Writer.write",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "New temporary evidence remains charged; destination untouched; final/emergency bounded STOP.",
+        "source_anchor": "os.rename(tmp,p)",
+        "exception": "FileExistsError"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N08",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Log transaction fails after reservation transfer",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 4096,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true,
+          "transaction": {
+            "log_bytes": 4096,
+            "restore_pending_only_if_used_unchanged": true,
+            "fault": "write_after_reservation",
+            "reservation_transfer": "pending_to_used"
+          }
+        },
+        "operation": "Writer.log_seal",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "Pending and used are not double charged; no log retry; bounded emergency STOP.",
+        "source_anchor": "if self.used==before:"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N09",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Old hook/current hook stacking",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": false,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0,
+          "known_hook_sentinel": true
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "run",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "No identity unlock, no HA, no retry; stop/receipt remains bounded. All effects here are declarative expectations only.",
+        "source_anchor": "HOOK_STACKED"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N10",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Child stdout invalid UTF-8",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "GitGate._run",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "hex": "ff",
+            "cap": 4096
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "No verified state; exception only encoding/offset/reason/length/hash, no raw bytes.",
+        "source_anchor": "out.decode",
+        "exception": "UnicodeDecodeError"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N11",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Normal write exceeds cap-minus-reserve",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 98566144,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true,
+          "next_payload_bytes": 1
+        },
+        "operation": "Writer.write",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "No identity unlock, no HA, no retry; stop/receipt remains bounded. All effects here are declarative expectations only.",
+        "source_anchor": "WRITE_TOTAL_CAP"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N12",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Final JSON exceeds actual reserved worst-case bound",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true,
+          "final_payload_bytes": 1048577,
+          "emergency_payload_max": 65536
+        },
+        "operation": "Writer.json",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "No identity unlock, no HA, no retry; stop/receipt remains bounded. All effects here are declarative expectations only.",
+        "source_anchor": "WRITE_SINGLE_CAP"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N13",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Watchdog logging fails or blocks",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true,
+          "transaction": {
+            "fault": "wall_receipt_write_blocks"
+          },
+          "watchdog": {
+            "unconditional_exit_after_note_seconds": 0.05,
+            "deadline_seconds": 6600
+          }
+        },
+        "operation": "watchdog",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "Receipt worker cannot delay os._exit; no science retry.",
+        "source_anchor": "os._exit(90)"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N14",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Unauthorized read/write I/O closure",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true,
+          "read_path": "@UNAUTHORIZED_ROOT@",
+          "write_ticket": null
+        },
+        "operation": "Hook.__call__",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "No identity unlock, no HA, no retry; stop/receipt remains bounded. All effects here are declarative expectations only.",
+        "source_anchor": "IO_READ_CLOSURE"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N15",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Untracked or preloaded project module",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "load_runtime",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py",
+          "untracked_module": "ch5_two_asset_hank.untracked",
+          "preloaded": true
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "No identity unlock, no HA, no retry; stop/receipt remains bounded. All effects here are declarative expectations only.",
+        "source_anchor": "SOURCE_PRELOADED"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N16",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Sixth Git child or retry verify",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 5,
+          "verify_started": true
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "GitGate._run",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "No identity unlock, no HA, no retry; stop/receipt remains bounded. All effects here are declarative expectations only.",
+        "source_anchor": "GIT_CALL_CAP"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N17",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Dynamic HEAD source inventory forbidden",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": true,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "GitGate._run",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "ls-tree",
+              "-r",
+              "HEAD",
+              "--",
+              "src/ch5_two_asset_hank"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "No identity unlock, no HA, no retry; stop/receipt remains bounded. All effects here are declarative expectations only.",
+        "source_anchor": "GIT_TAIL"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N18",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Caller tries to set public verified directly",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "ATTEMPT_PROPERTY_ASSIGNMENT",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": false,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        },
+        "attempted_setter": {
+          "value": true,
+          "name": "verified"
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "Read-only property has no setter; no real child proof, no unlock.",
+        "source_anchor": "def verified(self):",
+        "exception": "AttributeError"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N19",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Runtime I/O trust/exclusive-root assumption missing",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": false,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "run",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "No identity unlock, no HA, no retry; stop/receipt remains bounded. All effects here are declarative expectations only.",
+        "source_anchor": "IO_UNTRUSTED_CLOSURE"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N20",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Source path/loader/actual consumed bytes mismatch",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "VerifiedFinder.check_loaded",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py",
+          "actual_file": "@OTHER_SOURCE_ROOT@",
+          "actual_loader": "UNVERIFIED_LOADER",
+          "variant_rule": "Wrong loader first maps SOURCE_LOADER_IDENTITY; wrong file/hash maps SOURCE_IMPORTED_BYTES_CHANGED"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "No identity unlock, no HA, no retry; stop/receipt remains bounded. All effects here are declarative expectations only.",
+        "source_anchor": "SOURCE_IMPORTED_BYTES_CHANGED"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N21",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "Bootstrap output root already exists",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": false,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "Writer.__init__",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "No identity unlock, no HA, no retry; stop/receipt remains bounded. All effects here are declarative expectations only.",
+        "source_anchor": "OUTPUT_ALREADY_EXISTS"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    },
+    {
+      "id": "N22",
+      "origin": "NEW_P0_P1_COUNTEREXAMPLE",
+      "title": "KFE/science call during import",
+      "input": {
+        "state": {
+          "active_nonce": "@ONE_SHOT_NONCE@",
+          "fresh_process": true,
+          "capability_uses": 0,
+          "verified": false,
+          "git_calls": 0
+        },
+        "event": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "executable": "@PINNED_GIT_EXE@",
+          "env": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          },
+          "argv": {
+            "kind": "list",
+            "items": [
+              "@PINNED_GIT_EXE@",
+              "--no-optional-locks",
+              "--no-pager",
+              "-C",
+              "@CANDIDATE_ROOT@",
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "name": "subprocess.Popen"
+        },
+        "io": {
+          "pending": 0,
+          "terminal_max": 1048576,
+          "trusted_runtime_io": true,
+          "exclusive_new_root": true,
+          "cap": 100663296,
+          "used": 0,
+          "reserve": 2097152,
+          "emergency_max": 65536,
+          "all_ancestors_regular": true
+        },
+        "operation": "prohibit_science",
+        "source": {
+          "disk_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "expected_blob": "51517dde0c829060b6e0c0d594ec60e7e6143883",
+          "raw_bytes_compiled_exactly": true,
+          "pycache_used": false,
+          "relative_path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py",
+          "import_call": "select_constrained_policy"
+        },
+        "child": {
+          "proof_nonce": "@ONE_SHOT_NONCE@",
+          "readers_joined": true,
+          "exit_code": 0,
+          "reaped": true,
+          "spawned_by_real_gate": true,
+          "job_assigned": true,
+          "stdout": {
+            "utf8": "94de4501dec051b969bee9d852eba2d4591f30ef"
+          },
+          "stderr": {
+            "utf8": ""
+          },
+          "elapsed_seconds": 0.01,
+          "audit_consumed": true
+        },
+        "plan": {
+          "rendering": {
+            "input": "plan.argv",
+            "algorithm": "subprocess.list2cmdline"
+          },
+          "argv": [
+            "@PINNED_GIT_EXE@",
+            "--no-optional-locks",
+            "--no-pager",
+            "-C",
+            "@CANDIDATE_ROOT@",
+            "rev-parse",
+            "HEAD"
+          ],
+          "nonce": "@ONE_SHOT_NONCE@",
+          "exe_sha256": "@PINNED_GIT_SHA256@"
+        },
+        "request": {
+          "cwd": "@CANDIDATE_ROOT@",
+          "tail": {
+            "kind": "tuple",
+            "items": [
+              "rev-parse",
+              "HEAD"
+            ]
+          },
+          "shell": false,
+          "executable": "@PINNED_GIT_EXE@",
+          "environment": {
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "GIT_CONFIG_GLOBAL": "@NULL_DEVICE@",
+            "PATH": "@GIT_DIRECTORY@;@SYSTEM32@",
+            "GIT_TERMINAL_PROMPT": "0",
+            "WINDIR": "@SYSTEM_ROOT@",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "SystemRoot": "@SYSTEM_ROOT@"
+          }
+        }
+      },
+      "expected": {
+        "action": "DENY_OR_STOP_BEFORE_DOWNSTREAM",
+        "postcondition": "No identity unlock, no HA, no retry; stop/receipt remains bounded. All effects here are declarative expectations only.",
+        "source_anchor": "SOURCE_IMPORT_SCIENCE_CALL"
+      },
+      "runtime_execution": "NOT_RUN",
+      "runtime_pass": false
+    }
+  ],
+  "drafting_corrections": [
+    "PowerShell automatic variable input collided with a draft generator parameter; static JSON inspection detected missing input structures. Reconstructed all typed inputs before sealing/publication. No runtime case or Python ran."
+  ],
+  "variant_patch_standard": "RFC6902 subset replace; each patch is applied to that case input. No patch application/runtime test executed."
+}
