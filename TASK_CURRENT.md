@@ -1,11 +1,11 @@
-# TASK_CURRENT：V010 Windows Git argv守门静态诊断（零科学调用）
+# TASK_CURRENT：静态guard交付后STOP，等待原件独立审查
 
 日期：2026-10-16（Asia/Shanghai）。
-**ACTIVE_TASK=V010_WINDOWS_GIT_ARGV_PREFLIGHT_STATIC_FORENSIC_AND_GUARD_REPAIR**。
-**PERMISSION=SOURCE_ONLY_WITH_ISOLATED_STATIC_DRAFT__NEW_PYTHON_PROCESSES_0__NEW_HA/HJB/KFE/ROOT/SELECTOR/PYTEST_0**。
+**ACTIVE_CODEX_TASK=NONE__V010_GUARD_STATIC_DELIVERY_REPORTED__WAIT_MD_PY_AND_24_CASES**。
+**NO_NEW_PYTHON_PROCESS_OR_HA_HJB_KFE_SELECTOR_ROOT_PYTEST_MACRO_IRF_PERMISSION**。
 
-精确任务：[versions/0.0.10/windows_git_argv_guard_static_repair_task_20261016.md](versions/0.0.10/windows_git_argv_guard_static_repair_task_20261016.md)。此前恢复task `042195e633dec2eec532ab1b56da9822e912afe3` 已由Codex报告`PREFLIGHT_BLOCKED_STOP`：Python进程1/1、HA0、117446B artifact，原17件旧数据保护未变据本地回执；当前不能重启同一进程许可。[Astra限域验收](versions/0.0.10/corrected_ha_recovery_argv_preflight_review_20261016.md)已归档。
+前task`V010_WINDOWS_GIT_ARGV_PREFLIGHT_STATIC_FORENSIC_AND_GUARD_REPAIR`已Codex报告完毕、STOP：未执行`windows_git_guard_draft.py`、24项静态allow/deny例、3文件33576B、Python/science 0；`STATIC_READY`仅草案自报，完整runner`BLOCKED`。原回执**没有**实际审计argv，不能从用户短报告臆造具体Windows命令字符串。Astra尚未直接取得Windows原MD/py，静态代码与24用例独立审阅`PENDING`。
 
-任务仅从现有独立runner/失败回执只读找Windows实际argv和guard拒绝位置，给一个精确静态修复及allow/deny矩阵；新scratch限≤1MiB。无任何新的Python/science进程、无model tracked代码改动、无Git更新、不得去C8/B3/旧报告大范围扫描。合同原freeze `9aca1018c77d19e9489f2baf59c02bc654923999`、manifest blob`c23d331bed34e5ca478324cdc05034609ecb91b7`、候选模型`94de4501dec051b969bee9d852eba2d4591f30ef`不追改。
+[独立限定验收/等待材料](versions/0.0.10/windows_git_argv_guard_static_review_20261016.md)。Owner上传原本地报告`V010_WINDOWS_ARGV_GUARD_STATIC_REPAIR_RESULT.md`、`windows_git_guard_draft.py`（及24例所在文件）后，Astra继续审核；**不让Codex重复取证/执行静态例，也不重启原Python科学任务**。
 
-任务交付`V010_WINDOWS_ARGV_GUARD_STATIC_REPAIR_RESULT`，终止`WAIT_ASTRA_V010_WINDOWS_ARGV_STATIC_REVIEW / STOP`；第三次科学需Owner未来单独授权。A16/window/C9/CALL_LEDGER/Results FALSE、V011 NOT_STARTED、8dirty/index/common-dir保护不变。
+代码候选`94de4501dec051b969bee9d852eba2d4591f30ef`，原单点manifest blob`c23d331bed34e5ca478324cdc05034609ecb91b7`与原V010 plan blob`85138d8859d53295262fe13bf5bc277bca95ed3f`不改；旧两次preflight进程各1/1、HA0与原存储超限仍按历史账独立保存。原受保护D盘、A16/C9/window/CALL_LEDGER、Results FALSE、V011 NOT_STARTED不变。
