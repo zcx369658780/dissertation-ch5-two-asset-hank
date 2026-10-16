@@ -1,5 +1,12 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-16新会话当前ACTIVE：V010 E0 UInt32 Launcher + Git mktree集中工程纠错
+
+Owner已按最新E0长版交接要求在**新会话直接下达下一任务**，新的永久冻结任务 [E0 Launcher + mktree correction](../../versions/0.0.10/e0_launcher_uint32_temp_mktree_correction_task_20261016.md) 固定发行commit `e474c0d25a7351b7510f6a9ba914cd8733dceffc`，任务Git Blob `a3683c751acf08d49d700422a63f264b61130e78`，唯一ACTIVE `V010_E0_LAUNCHER_UINT32_AND_TEMP_MKTREE_CORRECTION`。前Trusted Loader E0失败的正式review Blob `d9d5a3ea38fcff89633ce09fdf0d97d9e9e61293` 和原本机回执 SHA256（Owner转述，未亲验） `C0BE33821FCB956483F8E894A8762F9D0D24139C8377D4A1B544BA73332056F8` 原样保留；旧工程task的0/6 Python和0/2 runner未消耗余额因STOP全部**不结转**。本新任务只授权PowerShell UInt32参数受界修复、新scratch E0 source-root写入/防替换验证（≤2次）和独占bare mktree样例（≤2次）、经严格脱敏在**新**GitHub review分支临时目录一次正常nonforce交付；**新Python/AST模型执行、canonical import、VerifiedLoader、真实runner、HA/HJB/KFE/GE/IRF/真实C8=0**。它不是重新规划V010或补推旧临时分支，也不启动V011。
+
+上一E0本机70源码raw字节装配、UInt32调用失败细节及SSH443/mktree原stderr仅 `CODEX_REPORTED_WITH_LOCAL_RECEIPTS`；远端冻结Git70个.py和前temp branch缺失已分别按上一主审核实。本任务要区分`LAUNCHER_UINT32`、`SOURCE_ROOT_E0_PROTECTION`、`MKTREE_GENERATOR`、`TEMP_PUBLICATION`各阶段资格，失败即STOP不伪造PASS。Owner不强制新VM/第三备份：既有C盘物理独立SSD备份＋GitHub双备份；Codex SSH key/443，新项目外独占bare，不修改系统global配置，`_review_tmp`路径只允许存在GitHub远端独立review tree，不能进入任何本地项目worktree/index。Astra后续先永久验收归档并回读，再依Owner协议清理当轮远端白名单temp文件；Git提交历史不擦除。科研数学仍为原MATLAB方法的corrected HA→手动多省顺序→GovInv乘0.9/1.1与Zt→冻结GDP误差≤1%→lagged-NKPC，目的地税一次/same-S/lagged raw ra0/max_phi=.3/人口劳动分账不变；单点corrected HA依旧UNTESTED、Results FALSE、model_activation=False、V011 NOT_STARTED，A16/window/C9/CALL_LEDGER/受保护旧树/真实C8等保持。下方“ACTIVE=NONE”与“等待新任务”均为历史时点，现以本段和CURRENT/TASK_CURRENT为权威。
+
+
 ## 2026-10-16本会话最新交接：Trusted Loader E0双工程阻断、LOCAL_ONLY STOP
 
 [Astra本轮Github限域主审](../../versions/0.0.10/trusted_loader_e0_fail_closed_local_only_primary_review_20261016.md) Blob`d9d5a3ea38fcff89633ce09fdf0d97d9e9e61293` 与[完整会话交接](../../docs/CH5_CONVERSATION_HANDOFF_20261016_TRUSTED_LOADER_E0_LOCAL_ONLY_STOP.md) Blob`7865222ca9966720b9cc335a4e41facfc9a7fc8e` 已归档。上一固定ENGINEERING_ONLY Loader任务commit`01129efd5220683d415bd1486f23f6ecd068cb53`/blob`1e6757fd235fd96d8b08130ca3fefb3b602c413c`已执行失败并STOP：Codex称70冻结raw Git Python源码在项目外scratch装配/校验，随后**Launcher UInt32类型转换故障**阻断源根防替换/排他门，E1/E2/E3无执行、工程Python0/6/真实runner0/2；独立bare SSH443 GitHub完整发布基线核证通过但**生成mktree空白行**导致exit128、未产生candidate commit、push0、review分支远端404。无D盘原始report/receipt可读，Owner转述`DELIVERY_RECEIPT.json` SHA256`C0BE33821FCB956483F8E894A8762F9D0D24139C8377D4A1B544BA73332056F8`没有独立重算，70本机装配和所有Windows运行数值只凭Codex receipt。**此两故障分别为E0工程与Git发布准备，不是HA科学失败。**
