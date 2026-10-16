@@ -1,5 +1,12 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-17最新：V010 SOURCE_TIMESTAMP类型诊断和合成修复任务ACTIVE
+
+Owner批准下一张唯一 `V010_SOURCE_TIMESTAMP_TYPED_GUARD_CORRECTION_AND_SYNTHETIC_REGRESSION`，在一轮任务中集中查清上次SOURCE_TIMESTAMP守门的原始JSON lexical token、解析后真实.NET/Powershell类型、所用parser/版本和判定表达式，再在新scratch独立修正版中验证原格式/日期/时区语义及至少12项合成正反例。冻结[任务原件](../../versions/0.0.10/source_timestamp_typed_guard_correction_and_synthetic_regression_task_20261017.md)发行commit`6dfe8a1c98a839f0a94cdd0e938bb6b60f99d520`、Blob`68143e917df883e38fa4615ce0a7c7a86c797330`；只允许新本地PowerShell≤2批，精确旧只读≤12件2MiB，新平铺≤6份1MiB，wall≤120分钟。旧raw first/final和本机失败回执只读，**原SOURCE_TIMESTAMP实际类型尚UNKNOWN，不得预先认定PowerShell DateTime自动转换或原始timestamp无效**。上一[失败主审](../../versions/0.0.10/current_seal_exchange_source_timestamp_fail_closed_local_only_primary_review_20261017.md) Blob`87d35c2270c1b8a42e19d3210f22fa0abe914bdc`、GitHub原目标review ref 404、失败receipt SHA256`F93DA4C6BEE0E62F68A04620B8BF372AD60275C20DEA7782EF2C56E4BFADA6FC`（仅Owner转述）已经归档。上一scan/bare/SSH/fetch/push均0，旧STOP额度不复用，本次Git/SSH/GitHub push/Python/VerifiedLoader/runner/HA/HJB/KFE/GE/IRF/real C8全0，新任务只交LOCAL_ONLY匿名摘要。
+
+更早旧B/S/L20项first没有可独立还原raw和run_id，LEGACY_SEAL_CHAIN_UNVERIFIABLE不得补造；当前17项first/final关联仅Codex本机证据，远端未独立回读；旧sanitizer拒绝具体根因UNKNOWN、旧候选DENIED，历史ledger曾复制argv/源码偏差UNRESOLVED。V010成果优先路线M1模型Python接线部分进展但Windows真实runner/Owner新HA单点未过；M2稳态校准GDP独立门未过，M3冲击需合格基点，M4 Results FALSE，V011 NOT_STARTED。原科学plan/模型冻结，GovInv×0.9/1.1与Zt、税一次、same-S/lagged raw ra0、三劳动账、phi_max=.3/20×20×2、lagged-NKPC不变；现有C盘独立SSD备份+GitHub、可信工作站/SSH Key-443（本次不联网），原D盘8dirty/index/external common-dir、C备份/真实C8以及A16/window/C9/CALL_LEDGER全部严格保护。本段和CURRENT/TASK_CURRENT优先下方历史时态，GitHub同步不是本地QMD/Basic Memory更新凭证。
+
+
 ## 2026-10-17最新：V010 SOURCE_TIMESTAMP前置失败，GitHub交换LOCAL_ONLY、任务已STOP
 
 **ACTIVE_TASK=NONE**。上一正式证据交换`V010_CURRENT_SEAL_SANITIZED_GITHUB_EVIDENCE_EXCHANGE`已Codex交付`FAIL_CLOSED/LOCAL_ONLY`并经[限域主审](../../versions/0.0.10/current_seal_exchange_source_timestamp_fail_closed_local_only_primary_review_20261017.md)归档，review Git Blob `87d35c2270c1b8a42e19d3210f22fa0abe914bdc`。Codex报告静态准备阶段SOURCE_TIMESTAMP条件失败：脚本要求JSON解析后的timestamp类型仍为string，但实际解析类型未记录，**不代表raw timestamp格式无效**；本机已据报核前一final原件hash、当前first/final/run_id/17项关联，但未进入安全scan。GitHub实查对应review分支不存在404，candidate/tree/四文件均无。实际消耗仅PS静态1/2、旧文件5份43,468B；scan0、bare0、SSH/fetch/push0、17/20历史测试重跑0、Python/runner/HA等科学0，STOP后余量关闭、不结转。本轮失败receipt Owner提供SHA256`F93DA4C6BEE0E62F68A04620B8BF372AD60275C20DEA7782EF2C56E4BFADA6FC`，未有Astra原始本机bytes核验。
