@@ -1,5 +1,10 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-16最新：V010集成工程／首末封存链／合成mktree新任务ACTIVE
+
+Owner已明确同意继续后，签发唯一 V010_ENGINEERING_INTEGRATION_SEAL_CHAIN_SYNTHETIC_MKTREE_PREFLIGHT；[冻结任务全文](../../versions/0.0.10/engineering_integration_seal_chain_synthetic_mktree_task_20261016.md)，发行Commit 34497613d7085cfeea39682aef15f983ef5030a9、Blob 6aa223b4c98391e051ebe4f7b8d358f88cf678bf。上一B/S/L 合成20/20仍仅Codex本机报告，前次first封存资源summary出现null、最后补正但未重跑的run-id/hash关联缺少独立证据。本次从上一scratch精确文件只读核验first/final原字节与关联、不能补造first/重跑上次20例；在全新独立bare做修复后Git路径身份/匿名sanitizer/typed ledger集成，以及合成mktree空行serializer正负例。仅新增PowerShell批次≤2、synthetic bare init≤1、Git身份≤6、hash-object写≤2、mktree≤2、ls-tree≤1，所有新文件/metadata及时间有冻结硬界。**这不是恢复原发布仓/前次SSH链，更不是GitHub候选上传。** GitHub发布0、Python/model import/VerifiedLoader/runner/HA/HJB/KFE/GE/IRF/真实C8全部0，仍采用LOCAL_ONLY脱敏摘要给Astra文档级验收。旧sanitizer拒绝真实命中UNKNOWN且原候选DENIED，原中间ledger复制raw argv/短源码偏差UNRESOLVED，旧预算不结转。冻结plan及70源模型不改，原MATLAB corrected HA→多省→GovInv边界×0.9/1.1与Zt→GDP≤1%→lagged-NKPC、税一次、same-S、lagged raw ra0、phi_max=.3、家庭/财政及劳动账保护；新单点HA UNTESTED、Results FALSE、FULL_RUNNER_IO_CLOSURE BLOCKED、V011 NOT_STARTED，A16/window/C9/CALL_LEDGER及8dirty/index/外Git common-dir/C盘备份/real C8硬门不变。本段与CURRENT、TASK_CURRENT优先旧历史时态；GitHub同步不等于QMD/Basic Memory本机同步。
+
+
 ## 2026-10-16 最新归档指针：V010集中合成工程任务已审/已停止
 
 当前 ACTIVE_TASK=NONE。B/S/L 20项合成测试结果仅Codex本机回执级；首次封存汇总空值，证据链未独立核验。正式审议见 versions/0.0.10/bare_identity_sanitizer_ledger_engineering_local_only_primary_review_20261016.md；实时授权以 CURRENT.md 和 TASK_CURRENT.md 为准。旧扫描拒绝与历史台账偏差仍未关闭，V011未启动。
