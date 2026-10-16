@@ -1,5 +1,8 @@
 # 第五章现行路线图：原MATLAB修错、有界迭代的Python重写与论文交付
 
+> **2026-10-16 最新进度覆盖层（优先于下方“V010实施等待Codex交付”的历史时态）**：原MATLAB修错→Python重写是唯一主线，V010冻结科学计划仍有效；已形成冻结模型代码candidate，但真实Windows import/runner I/O、单点corrected HA/HJB/KFE、外层共同稳态与GDP≤1%验证没有完成。此前B8/S8/L4合成20/20及本轮新集成17/17是Codex本地报告，不等于科学通过；旧首版seal没有原字节且缺run_id，永久UNVERIFIABLE，新first/final有本地回执但待远端独立审查。**M1部分完成，M2未获V010稳态结果，M3仍需合格基点，M4尚无Results，V011 NOT_STARTED**。详细等级与后续门见[2026-10-16 V010路线图进度](CH5_V010_ROADMAP_PROGRESS_AND_NEXT_GATES_20261016.md)。Owner已明确授权下一张**仅脱敏证据交换**任务，冻结发行Commit`49ff1c3053fa1aa6a0646f55abcffb077e2b62b2`、任务Blob`1dc5f07a88261c41de434a9c4075b0d179ee871a`，严禁借此启动Python/runner/HA/真实数据或V011；动态ACTIVE以CURRENT/TASK_CURRENT为准。
+
+
 更新：2026-10-15，依据[Owner主线纠偏](CH5_OWNER_SCOPE_REALIGNMENT_20261015.md)。
 **当前阶段：V010原方法的Python集中实施合同已冻结（commit `bf091da33d59293f147d52c11580327d3ac2a85d`）；唯一实施任务已单独签发，仅放开隔离代码与受界synthetic，不放开真实31省及Results。**
 
