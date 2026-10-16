@@ -1,21 +1,22 @@
-# 第五章 CURRENT：V010 Trusted Loader E0 FAIL_CLOSED；已验收归档并等待新会话
+# 第五章 CURRENT：V010 E0 Launcher/临时Git发布器修复任务已签发
 
-更新：2026-10-16（Asia/Shanghai）。
-**ACTIVE_TASK=NONE**。
-**LAST_TASK=V010_ENGINEERING_ONLY_TRUSTED_LOADER_INTEGRATION_PREFLIGHT__DELIVERED__STOP**。
-**LAST_DELIVERY=E0_FAIL_CLOSED__LOCAL_ONLY_SAFE_PUBLICATION_BLOCKED__CODEX_REPORTED_WITH_LOCAL_RECEIPTS**。
-**LATEST_REVIEW=INDEPENDENT_GITHUB_SCOPE_REVIEWED__LOCAL_RUNTIME_EVIDENCE_UNVERIFIED**。
-**FULL_RUNNER_IO_CLOSURE=BLOCKED**。
-**NEXT_GATE=WAIT_OWNER_FRESH_V010_E0_LAUNCHER_AND_TEMP_MKTREE_CORRECTION_AUTHORITY / STOP**。
-**EXECUTION_PERMISSION=NONE__NO_NEW_PYTHON_OR_GIT_RETRY_OR_HA**。
-**HANDOFF=ARCHIVED__NEXT_TASK_ONLY_IN_NEW_CONVERSATION**。
+更新：2026-10-16（Asia/Shanghai）；以此顶层状态优先于旧交接或历史科学决定中的旧ACTIVE时态。
 
-[本轮Astra独立GitHub限域主审](versions/0.0.10/trusted_loader_e0_fail_closed_local_only_primary_review_20261016.md) Blob`d9d5a3ea38fcff89633ce09fdf0d97d9e9e61293`和[完整会话交接](docs/CH5_CONVERSATION_HANDOFF_20261016_TRUSTED_LOADER_E0_LOCAL_ONLY_STOP.md) Blob`7865222ca9966720b9cc335a4e41facfc9a7fc8e`已永久归档。原[唯一工程冻结任务](versions/0.0.10/trusted_workstation_loader_engineering_preflight_task_20261016.md)发行commit `01129efd5220683d415bd1486f23f6ecd068cb53`、任务Blob `1e6757fd235fd96d8b08130ca3fefb3b602c413c`，据Codex本机报告在**E0就FAIL_CLOSED并STOP**：70份模型Git raw bytes已在独立scratch装配但`Launcher UInt32`参数转换失败，`source_assembly_root`防替换/排他验证未建立；故E1 AST、E2 canonical/nine import、真实Windows runner与任何HA/科学都**NOT RUN**。**70份本机装配/源根受保护情况仅Codex回执级，不冒充Astra亲验**；冻结模型远端Git Tree确有70个.py，三真实init仍在。
+**VERSION=V010/V0.0.10；ACTIVE_TASK=V010_E0_LAUNCHER_UINT32_AND_TEMP_MKTREE_CORRECTION**。
+**ACTIVE_TASK_FIXED_COMMIT=e474c0d25a7351b7510f6a9ba914cd8733dceffc；ACTIVE_TASK_BLOB=a3683c751acf08d49d700422a63f264b61130e78**。
+**TASK=[E0工程冻结任务](versions/0.0.10/e0_launcher_uint32_temp_mktree_correction_task_20261016.md)**。
+**TASK_SCOPE=ENGINEERING_ONLY_E0_AND_GIT_PUBLICATION_ONLY；NEW_PYTHON=0；REAL_RUNNER=0；HA/HJB/KFE/GE/IRF/REAL_C8=0**。
+**LAST_DELIVERY=V010_TRUSTED_LOADER_E0_FAIL_CLOSED__LOCAL_ONLY__CODEX_REPORTED_WITH_LOCAL_RECEIPTS**。
+**LATEST_INDEPENDENT_REVIEW=GITHUB_REMOTE_SCOPE_VERIFIED__LOCAL_RUNTIME_EVIDENCE_UNVERIFIED**。
+**FULL_RUNNER_IO_CLOSURE=BLOCKED；HA_SCIENCE_NOT_RUN；model_activation=False；Results FALSE；V011 NOT_STARTED**。
+**NEXT_GATE=WAIT_CODEX_V010_E0_LAUNCHER_MKTREE_CORRECTION_RESULT_THEN_ASTRA_REVIEW / STOP**。
 
-**独立发布链失败**：Codex称SSH-key/443与完整review基线对象认证成功，但新bare发布生成空白行致`git mktree` exit128，候选commit未建，push0、未重试；GitHub实际查唯一目标`review/ch5-temp-v010-trusted-loader-engineering-20261016`为404，`LOCAL_ONLY`保持。无远端临时审阅文件可删。本机`D:\ProjectTemp\ch5_v010_trusted_loader_engineering_20261016_01\DELIVERY_RECEIPT.json`由Owner给出SHA256`C0BE33821FCB956483F8E894A8762F9D0D24139C8377D4A1B544BA73332056F8`，未上传/未独立重算，具体error stack/最终资源账UNKNOWN。
+Owner已在新会话明确要求签发下一任务；本任务只修正旧Launcher UInt32转换与独占bare Git `mktree`空行发布器，允许原科学外的受界PowerShell E0门≤2次、bare合成mktree试验≤2次、新远端临时review分支最多一次正常non-force push（严格前置）；**不授任何Python/py_compile/AST模型执行、canonical import、VerifiedLoader、真实runner或科学进程**。旧STOP任务未用Python0/6与runner0/2不结转。
 
-新任务曾授权**最多6工程Python进程（真实runner≤2）**、每进程≤180s、wall≤4h、非Git工件≤32MiB、项目外独占bare发布元数据≤1.5GiB、科学0；Codex报告**Python0/6、runner0/2、AST0、科学0**。**任务已STOP，未用额度不结转**，新会话不能重复发行或补推。下一步如Owner再明确授权，先限域修复`UInt32`启动器E0门与发布`mktree`空行、保存失败原证，再安排新的受界工程import预算；本会话只验收/交接，不发后续任务。
+最新前一永久主审：[Trusted Loader E0 FAIL_CLOSED](versions/0.0.10/trusted_loader_e0_fail_closed_local_only_primary_review_20261016.md)，Blob `d9d5a3ea38fcff89633ce09fdf0d97d9e9e61293`；[2026-10-16 E0长版交接](docs/CH5_CONVERSATION_HANDOFF_20261016_TRUSTED_LOADER_E0_LOCAL_ONLY_STOP.md)，Blob `7865222ca9966720b9cc335a4e41facfc9a7fc8e`。原失败旧任务 commit `01129efd5220683d415bd1486f23f6ecd068cb53`/blob `1e6757fd235fd96d8b08130ca3fefb3b602c413c`已STOP；其本机70源码raw-byte物化与E0 UInt32/mktree日志均仍仅Codex回执等级，GitHub未收到旧temp候选。上一Owner转述旧回执SHA256 `C0BE33821FCB956483F8E894A8762F9D0D24139C8377D4A1B544BA73332056F8`未独立重算。
 
-Owner[风险与SSH/Loader决定](docs/CH5_OWNER_RISK_BACKUP_SSH_LOADER_DECISION_20261016.md) Blob`7f1ee509d35343521e79e5df318aa164cd513261`不变：**科研无保密需求，C盘物理独立SSD上的现有备份＋GitHub两重足够，无第三备份或强制VM，Codex用现有SSH key/443，Astra选择可信工作站双根Git身份与raw-byte VerifiedLoader**，不能称原生恶意代码OS沙箱已认证。C盘备份不可清理/修改。Owner远端临时脱敏目录`_review_tmp/ch5/<task-id>/`永不进入本地科研/模型/治理工作树、Git索引或暂存区，独占bare、单父/非force SSH发布、Astra正式审议远端readback后清理指定review临时文件；不重写Git历史。
+冻结V010科学plan commit `bf091da33d59293f147d52c11580327d3ac2a85d`/blob `85138d8859d53295262fe13bf5bc277bca95ed3f`及模型commit `94de4501dec051b969bee9d852eba2d4591f30ef`/tree `205eab47c4e4f9c6292c2ead9947d94d1a7579a5`均不改。新单点corrected HA `rah=.0675,w_eff=15.5,rb=.02,Tt=.1,rb_gap=.07`仍UNTESTED，初始两省synthetic另曾F-order25 NO_ADMISSIBLE_POLICY；旧原科学pytest4/6、driver1/4、HA1/26、selector1626、roots1642，历史两次预检各Python1/1且HA0、首次日志超额9965206B继续保留。
 
-原V010冻结科学plan commit`bf091da33d59293f147d52c11580327d3ac2a85d`/blob`85138d8859d53295262fe13bf5bc277bca95ed3f`、模型代码commit`94de4501dec051b969bee9d852eba2d4591f30ef`/tree`205eab47c4e4f9c6292c2ead9947d94d1a7579a5`、原MATLAB HA→多省顺序→GovInv边界0.9/1.1/Zt→GDP独立目标≤1%→lagged-NKPC主线、税/人口/劳动与same-S/lagged ra0科学法则均不改。单点corrected HA仍UNTESTED、KFE/GE/IRF没有合格结果；`model_activation=False`、`Results FALSE`、`V011 NOT_STARTED`。旧science pytest4/6/driver1/4/HA1/26/selector1626/roots1642、两次单点Python各1/1且HA0、第一次GBK日志超限9,965,206B、之前Windows B–E PARTIAL与N13/loader缺口全部历史保留。原8dirty/index/staged/untracked/ignored/external common-dir、旧失败目录与真实C8不可写/不可越权访问；`A16 FAIL_CLOSED`、`window UNACCEPTED`、`C9 PAUSED`、`CALL_LEDGER UNRESOLVED`。Github备份并不意味着本机QMD或ChatGPT Memory同步。
+Owner技术边界：[双备份/SSH/Loader风险决定](docs/CH5_OWNER_RISK_BACKUP_SSH_LOADER_DECISION_20261016.md)、[脱敏临时review远端交换协议](docs/CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md)、[V1.2工作流](docs/CH5_ASTRA_WORKFLOW_CURRENT.md)不变；C盘独立SSD既有备份＋GitHub，SSH key/443，可信工作站双根VerifiedLoader而不称native OS sandbox。原受保护`D:\ProjectTemp\c5k1bturn56`的8 dirty/index/staged/untracked/ignored/外common-dir及所有旧失败原证、C盘备份、真实C8/2017/2018/B3不可写/越权访问。
+
+**A16 FAIL_CLOSED；window UNACCEPTED；C9 PAUSED；CALL_LEDGER UNRESOLVED；real C8 A–D REQUEST_ONLY；V011 NOT_STARTED**。GitHub任务签发不等于本机QMD/Basic Memory同步或Python计算许可。
