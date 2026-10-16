@@ -1,5 +1,9 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-16最新：Stage B–E Windows工程部分诊断交付、Astra独立主审完成
+
+[Windows Stage B–E独立主审](../../versions/0.0.10/runner_io_windows_be_github_primary_review_20261016.md) 核review candidate`9bcd61fc88ace3b8e2c1c07753c610e2e4b5c75e`/sole parent/3脱敏文档和69用例结构；68 synthetic PASS、N13 NOT_EVALUATED、5真实Git child/audit/Job/reap/reader正向回执。阻断在于Stage A只读sparse clone缺3份冻结Git已有且非空的`__init__.py`，import/loader/`__file__`没有执行；相关传递源码也未完成闭包认证。旧本地工程Python3/4、runner1/2额度不结转，新任务`ACTIVE_TASK=NONE`。建议Owner先授权零Python的`SOURCE_ONLY`静态传递import闭包，再分别授权Windows工程runtime与科学HA；不得自行重试或写原Stage A模型clone。`FULL_RUNNER_IO_CLOSURE=BLOCKED`、单点HA UNTESTED、Results FALSE、V011 NOT_STARTED、旧科学预算和8dirty/index/common-dir、A16/window/C9/CALL_LEDGER保护不变。下方“Windows B–E正在执行”只属历史时点。
+
 ## 2026-10-16最新：Stage A GitHub补交付独立通过，唯一ACTIVE转入新Windows工程Stage B–E
 
 [Astra Stage A补验收](../../versions/0.0.10/stage_a_github_publication_recovery_followup_review_20261016.md) 已实际确认 `review/v010-stage-a-model-ref-reachability-20261016` →commit `d84cc76b19cbb81e097f502348b5073633fbda6e`、tree`5a03f952ba471352a685b327e79a33176e8bd7b6`、原task sole parent、两文件Git Blob及原上传MD/JSON SHA256/原字节100%一致。发布状态从LOCAL_ONLY修复为`GITHUB_DELIVERY_VERIFIED`，首push失败保留历史；不能反推SSH443本地环境已Astra直接鉴证。Stage A仅DOCUMENTARY LIMITED ACCEPT。用户本会话指示补验收后继续，现已发行唯一新ENGINEERING_ONLY Windows runner Stage B–E任务 `V010_RUNNER_IO_WINDOWS_ENGINEERING_STAGE_B_E_PREFLIGHT`，发行commit `7ec7eae170ae744b6c1b8321c434baf565e9ef7c`/blob`72f3b503ce5f468b8f80c2cb9cb16497a4b5b75f`，[固定任务](../../versions/0.0.10/runner_io_windows_engineering_stage_b_e_preflight_task_20261016.md)。最多新工程Python4（真实runner2），0科学HA，验证Windows Git argv、Job回收、读写quota、hook和九源loader；只读使用隔离Stage A clone，不新clone/fetch、不访问受保护原树。旧预算/失败、A16/window/C9/CALL_LEDGER、corrected HA UNTESTED、Results FALSE、V011 NOT_STARTED保持；下方“无ACTIVE/待补GitHub”等都是前段历史时态。

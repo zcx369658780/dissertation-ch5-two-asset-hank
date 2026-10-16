@@ -1,15 +1,12 @@
-# TASK_CURRENT：V010 Windows Stage B–E ENGINEERING_ONLY runner I/O预检
+# TASK_CURRENT：V010 Windows B–E已交付，当前无ACTIVE执行任务
 
 更新：2026-10-16（Asia/Shanghai）。
-**ACTIVE_TASK=V010_RUNNER_IO_WINDOWS_ENGINEERING_STAGE_B_E_PREFLIGHT**。
-**STATUS=ISSUED__WAIT_CODEX_DELIVERY**。
-**AUTHORITY=OWNER_20261016_CONTINUE_ENGINEERING_ONLY__NO_HA_SCIENCE**。
-**NEXT_STOP=WAIT_ASTRA_V010_RUNNER_IO_WINDOWS_BE_REVIEW / STOP**。
+**ACTIVE_TASK=NONE**。
+**LAST_TASK=V010_RUNNER_IO_WINDOWS_ENGINEERING_STAGE_B_E_PREFLIGHT__DELIVERED__STOP**。
+**LAST_REVIEW=PARTIAL_ENGINEERING_DIAGNOSTIC_CONFIRMED__FULL_IO_BLOCKED**。
+**NEXT_GATE=WAIT_OWNER_V010_ENGINEERING_SOURCE_IMPORT_CLOSURE_AUTHORITY / STOP**。
+**EXECUTION_PERMISSION=NONE__NO_NEW_PYTHON_OR_RUNNER_OR_HA**。
 
-正式唯一[冻结任务原文](versions/0.0.10/runner_io_windows_engineering_stage_b_e_preflight_task_20261016.md)：发行commit `7ec7eae170ae744b6c1b8321c434baf565e9ef7c`，tree `41da24010c732866988360bd1c01107a4e88f20c`，task blob `72f3b503ce5f468b8f80c2cb9cb16497a4b5b75f`。**已经发布，不得因会话交接而重发或改SHA。**
+固定上一[正式任务](versions/0.0.10/runner_io_windows_engineering_stage_b_e_preflight_task_20261016.md)发行commit`7ec7eae170ae744b6c1b8321c434baf565e9ef7c`、blob`72f3b503ce5f468b8f80c2cb9cb16497a4b5b75f`，已经交付，**不得重复签发或把3/4 Python、1/2 runner剩余额度续用于下一轮**。最新[独立主审](versions/0.0.10/runner_io_windows_be_github_primary_review_20261016.md) blob`67c15e010c4a90b9773899cd699222d756fe5772`确认候选`9bcd61fc88ace3b8e2c1c07753c610e2e4b5c75e`3份GitHub文件、69个case（68 synthetic PASS，N13未评估）及5个Windows Git child/audit/reap结构一致。真实loader import未执行；Stage A clone缺三个实际init且依赖尚未闭合；本任务禁止补checkout/fetch及改原模型，因此PARTIAL分类正确。
 
-前置Stage A独立限域验收和GitHub交付恢复均完成；[远端验收补遗](versions/0.0.10/stage_a_github_publication_recovery_followup_review_20261016.md)确认candidate `d84cc76b19cbb81e097f502348b5073633fbda6e` / tree `5a03f952ba471352a685b327e79a33176e8bd7b6` / sole parent `68530b3f121952b4382d08dc9ff964c7f6c7ab75`、恰2文件及原上传bytes/SHA256完全一致。原SSH第一次push失败保留历史，本机认证细节只Codex自报。
-
-新工程权限只在**新scratch且只读复用既有独立Stage A clone**下生效：工程Python累计≤4（AST≤1、纯工程负例≤1、真实runner≤2），每个外部wall≤180秒、任务总≤3h、全部新非Git工件≤32MiB、独立review元数据Git空间≤1GiB；runner每次Git child最多5条精确只读身份/inventory，无模型clone/fetch、无重跑Stage A、无旧额度结转。预运行源磁盘身份及Git common-dir再次验证；检查真实Windows argv/audit、Job Object kill/reap、双PIPE有界、写前quota/final与emergency保护、唯一可信hook来源、九源码loader，只在ENGINEERING_ONLY中运行，ONE_HA始终拒绝。
-
-**HA/HJB/KFE/selector/roots/GE/IRF/MATLAB/pytest/真实C8=0**；旧两次单点Python1/1、首次超额、8dirty/index/common-dir旧证据均不动。唯一新候选review分支`review/v010-runner-io-windows-engineering-b-e-20261016`，发行commit唯一parent，至多3份脱敏文件普通nonforce推送一次/远端回读，失败LOCAL_ONLY STOP。终态`WAIT_ASTRA_V010_RUNNER_IO_WINDOWS_BE_REVIEW / STOP`，Codex不得自授正式工程PASS或科学权限。原V010冻结合同、Results FALSE、A16/window/C9/CALL_LEDGER、real C8和V011 NOT_STARTED不变。
+建议Owner批准独立`SOURCE_ONLY TRANSITIVE IMPORT CLOSURE`：首先0 Python/HA静态查尽真正init、相关模块与外部依赖的固定Git Blob和最小只读隔离装配，再另行决定Windows工程run预算。Codex不得自动执行。V010科学计划、A16/window/C9/CALL_LEDGER、Results FALSE、真实C8、原8dirty/index/common-dir及V011 NOT_STARTED保护照旧。
