@@ -1,5 +1,9 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-16最新：SOURCE_ONLY传递import图LOCAL_ONLY交付，原件待核
+
+Owner批准的`V010_SOURCE_ONLY_IMPORT_DEPENDENCY_CLOSURE_AND_READONLY_ASSEMBLY_PLAN`已由Codex自报`SOURCE_ONLY_PARTIAL_IMPORT_CLOSURE_WITH_OPEN_GATES`并STOP。Codex称70份源码认证、1056条edge、42个入口候选与若干动态导入/第三方初始化UNKNOWN，零Python/AST/model import/runner/科学调用。GitHub固定模型三个非递归子tree 18+30+22=70份.py已被Astra独立核；**两份本地脱敏结果和机读图manifest尚未上传，图边/入口不能独立验收**。发布准备据报`write-tree`缺基线对象而STOP，无候选commit、push0、review分支404。当前`ACTIVE_TASK=NONE`，[GitHub接收审议](../../versions/0.0.10/source_only_import_closure_local_only_intake_20261016.md)已归档，不再自动补推或运行，等待Owner上传脱敏MD/JSON。先前Windows B–E工程PARTIAL的五Git child正向、68合成PASS、N13及loader未评估保留；FULL_RUNNER_IO_CLOSURE BLOCKED、HA UNTESTED、Results FALSE、V011 NOT_STARTED，旧科学账及首笔存储超额、原8dirty/index/common-dir、A16/window/C9/CALL_LEDGER、real C8保护不变。下方“SOURCE_ONLY已签发待执行”是历史时态。
+
 ## 2026-10-16最新：V010 SOURCE_ONLY全传递import闭包任务正式冻结
 
 Owner已批准唯一`V010_SOURCE_ONLY_IMPORT_DEPENDENCY_CLOSURE_AND_READONLY_ASSEMBLY_PLAN`，[固定任务](../../versions/0.0.10/source_only_import_dependency_closure_task_20261016.md)，发行commit`a2c9bf4b57aa9ce8f0c9ae5a1d920e141ee57ebd`、blob`7affb983e000c487dc306852383d747420400a63`。只读冻结模型Git目录中三份非空包init、九受监测原源码与传递import依赖，辨认import-time副作用、条件/动态未知及第三方numpy/scipy声明，提出**未来**只读隔离装配方案；模型包候选全集18+30+22=70份.py，不表示都要import。本轮0Python/AST/import/runner/HA/科学，原Stage A clone只读，禁clone/fetch/checkout。先前Windows B–E工程为PARTIAL，5Git child回执/68合成PASS保留，N13/loader与活超时未闭合；旧工程3/4 Python剩余额度不结转。FULL_RUNNER_IO_CLOSURE BLOCKED、corrected HA UNTESTED、Results FALSE、V011 NOT_STARTED；A16/window/C9/CALL_LEDGER、旧科学预算/第一次日志超额及8dirty/index/common-dir保护不变。下方“待Owner批准SOURCE_ONLY”的说明现为历史时态。
