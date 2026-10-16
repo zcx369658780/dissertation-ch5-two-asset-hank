@@ -1,16 +1,14 @@
-# TASK_CURRENT：V010 ENGINEERING_ONLY Windows preflight
+# TASK_CURRENT：V010工程preflight失败封存，当前无ACTIVE执行任务
 
-> **2026-10-16 实时最优先：`ACTIVE_TASK=NONE__WAIT_OWNER_NEW_A_STAGE_AUTHORITY`。** 上一任务 `V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT` 已交付 `ENGINEERING_PREFLIGHT_FAIL_CLOSED` 并终止，不再处于执行中。Review candidate `416cff6c00d2b865c3e9dda4088242d2b80969ce` / tree `1d5bc390774d68ea619f6ad263c99d0090486b37`，独立审议[全文](versions/0.0.10/runner_io_engineering_preflight_fail_closed_primary_review_20261016.md)。阶段A clone未拿到冻结模型对象，checkout exit128、工程Python=0/4(报告)、HA=0、69个静态/变体均NOT_EVALUATED。本审议不是继续执行命令，不产生新工程clone/fetch/Python/科学预算，不重复旧任务；Owner未来决定是否授权单独Git对象可达性修复。下文历史ACTIVE字段为任务发出时点记录。
+**更新时间：2026-10-16（Asia/Shanghai）**
+**ACTIVE_TASK=NONE**。
+**LAST_TASK=V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT**。
+**LAST_STATUS=DELIVERED__ENGINEERING_PREFLIGHT_FAIL_CLOSED__ASTRA_REVIEWED__STOP**。
+**CURRENT_PERMISSION=NO_EXECUTION__WAIT_FRESH_OWNER_A_STAGE_AUTHORITY**。
 
-更新：2026-10-16（Asia/Shanghai）。
-**ACTIVE_TASK=`V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT`**。
-**STATUS=`OWNER_APPROVED__TASK_ISSUED__AWAIT_CODEX_RESULT`**。
-**PERMISSION=`ENGINEERING_ONLY_WINDOWS_PREFLIGHT_BOUNDED__NO_HA_OR_SCIENCE`**。
+最后一个冻结任务原件：[ENGINEERING_ONLY Windows preflight](versions/0.0.10/runner_io_engineering_only_windows_preflight_task_20261016.md)，发行commit`343c22132deb23ba6d913d70e132b43a00b95f1d`、任务blob`08fed792ee19329313dfc7402fa174035805a345`。**该任务已经以失败结果结束；不能再次派发或把原工程Python 0/4余额当新许可。**
 
-唯一任务原件：[runner_io_engineering_only_windows_preflight_task_20261016.md](versions/0.0.10/runner_io_engineering_only_windows_preflight_task_20261016.md)，发行commit `343c22132deb23ba6d913d70e132b43a00b95f1d`，tree `2fbb740ba42e2367fb99de05a11eb533829ea72b`，blob `08fed792ee19329313dfc7402fa174035805a345`。已经正式发布，**不得二次派单**。Codex在新的隔离scratch集中完成单轮预检，严格从已批准文本candidate `c207e866cf70d9d5ae6fb245f43cabfdeac1d32b`及冻结模型代码 `94de4501dec051b969bee9d852eba2d4591f30ef`构造，只修改新的工程runner与最小harness，不触原模型算法或保护资产。
+本轮交付：GitHub review SHA [`416cff6c00d2b865c3e9dda4088242d2b80969ce`](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/commit/416cff6c00d2b865c3e9dda4088242d2b80969ce)，tree`1d5bc390774d68ea619f6ad263c99d0090486b37`，sole parent原任务发行commit，3份符合白名单的静态脱敏文件。Astra的[独立验收](versions/0.0.10/runner_io_engineering_preflight_fail_closed_primary_review_20261016.md)已确认Git谱系、全部69个case`NOT_EVALUATED`与远端模型commit/tree/ref真实存在。阶段A因单分支治理clone不含模型分支，checkout128即STOP；无实际Python、AST、harness、真实runner或科学计算（零执行数源自Codex私有回执）；无Windows审计/Job/磁盘九源等有效运行资格。
 
-核心预算：工程Python总≤4（AST≤1、isolated harness≤1、真正Windows runner≤2），每进程≤180s，总任务≤3h；每次真实runner≤5次精确只读Git child；新工程artifact≤16MiB，隔离不共享common-dir clone≤2GiB。全部工程进程**先扣外部持久账**再启动；任何失败/超额STOP。仅允许工程导入/真实Windows Git身份、source bytes、audit形态、I/O/Job回收与负例验证，`HA/HJB/KFE/selector/roots/GE/IRF/MATLAB/pytest=0`，科学进程新许可=0，真实C8读取=0。未来HA需要工程独立验收后再次请求Owner单独授权。
-
-旧ACTIVE `V010_RUNNER_GUARD_IO_OFFLINE_INTEGRATION_AND_SANITIZED_GITHUB_HANDOFF` 已DELIVERED并由Astra [静态限域接受](versions/0.0.10/runner_guard_io_offline_github_primary_review_20261016.md)，不再是当前派单。旧original任务及失败回执/冻结plan/blob不修改、预算不重置。
-
-唯一最终交付 `V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT_RESULT`，终态 `WAIT_ASTRA_V010_ENGINEERING_PREFLIGHT_REVIEW / STOP`。仅能向新`review/v010-runner-io-engineering-preflight-20261016`安全脱敏发布3种指定review文件，单父为本任务发行commit，普通nonforce一次并回读；脱敏不通过LOCAL_ONLY STOP。不推main、治理或旧review分支，不自主启动HA或V011。旧8dirty/index/common-dir、A16/window/C9/CALL_LEDGER/Results保护保持。
+**NEXT_GATE=WAIT_OWNER_FRESH_A_STAGE_GIT_OBJECT_REACHABILITY_AUTHORITY / STOP**。
+建议下一独立任务仅限单点Git模型分支对象可达性修复，先0 Python/HA；只有Owner批准后可发行，未来工程preflight和单点科学HA分别重新授权。所有原冻结科学法则、旧科学预算、首次存储超额、8dirty/common-dir、真实C8、A16/window/C9/CALL_LEDGER、model_activation=False、Results FALSE、V011 NOT_STARTED保持。

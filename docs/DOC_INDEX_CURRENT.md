@@ -1,21 +1,19 @@
-# 第五章动态总目录（2026-10-16；ENGINEERING_ONLY preflight已发行）
+# 第五章动态权威总目录（2026-10-16；V010工程预检失败已验收）
 
-> **最新优先停点（2026-10-16）**：[工程preflight首次独立FAIL_CLOSED审议](../versions/0.0.10/runner_io_engineering_preflight_fail_closed_primary_review_20261016.md)；Codex review `416cff6c00d2b865c3e9dda4088242d2b80969ce`、阶段A单分支治理clone无法签出冻结模型，exit128。GitHub独立证实模型分支 `codex/ch5-v010-matlab-first-20261015` 的远端提交和树存在。上一次 `V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT` 已完成失败交付，**暂无新ACTIVE执行任务**。等待Owner单独批准Git对象可达性修复；没有Python/HA新增调用许可，旧预算及保护不变。下面“preflight已签发/ACTIVE”的文字为历史签发快照。
+**实时执行状态：ACTIVE_TASK=NONE；上一V010 ENGINEERING_ONLY preflight已FAIL_CLOSED并STOP。**
+**下一停点：WAIT_OWNER_FRESH_A_STAGE_GIT_OBJECT_REACHABILITY_AUTHORITY / STOP**。没有新的Python/HA或Git补取执行许可。
 
-**当前唯一ACTIVE**：`V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT`。Owner已授权限域Windows工程进程；科学新预算和HA仍为0。准确身份以本目录、CURRENT、TASK_CURRENT及固定任务发行commit核实。
-
-| 当前入口 | 文件 | 科学/工程资格 |
+| 用途 | 权威入口 | 说明 |
 |---|---|---|
-| **唯一新ACTIVE任务** | [V010 Windows engineering preflight](../versions/0.0.10/runner_io_engineering_only_windows_preflight_task_20261016.md) | task commit `343c22132deb23ba6d913d70e132b43a00b95f1d`；blob `08fed792ee19329313dfc7402fa174035805a345`；最多4工程Python、最多2真实runner，0HA |
-| CURRENT | [当前状态](../CURRENT.md) | 新Owner授权、预算、旧失败与保护分账 |
-| TASK_CURRENT | [唯一当前任务](../TASK_CURRENT.md) | 已签发、待Codex集中交付，不二次签发 |
-| 独立审议 | [静态review验收](../versions/0.0.10/runner_guard_io_offline_github_primary_review_20261016.md) | 原candidate `c207e866...` STATIC限定接受，Windows runtime尚未验证 |
-| 源静态候选 | [Codex脱敏结果](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/c207e866cf70d9d5ae6fb245f43cabfdeac1d32b/versions/0.0.10/review_runner_io_offline_result_20261016.md) | 46主例＋23变体仅原静态定义，不是运行PASS |
-| 科学与版本 | [科学决定](../SCIENTIFIC_DECISIONS.md)、[版本登记](CH5_VERSION_REGISTER_CURRENT.md) | 经济合同不变；工程授权不是HA科学授权 |
-| 工作流 | [V1.2](CH5_ASTRA_WORKFLOW_CURRENT.md) | Owner→GPT顾问→Codex/独立验收，未改流程 |
-| 长期知识 | [第五章知识入口](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 修错原MATLAB、不是新建Newton宏观模型 |
-| 会话交接（固定历史） | [2026-10-16原交接](CH5_CONVERSATION_HANDOFF_20261016_V010_RUNNER_IO_OFFLINE_PENDING.md) | 固定SHA时点的Owner完整决定与资源，不覆盖更新后ACTIVE |
-| 上一任务（历史） | [离线静态集成任务](../versions/0.0.10/runner_guard_io_offline_integration_task_20261016.md) | 已交付与静态审议；**非ACTIVE** |
-| 固定V010模型计划 | [plan](../versions/0.0.10/plan.md) | 冻结commit `bf091da33d59293f147d52c11580327d3ac2a85d` / blob `85138d8859d53295262fe13bf5bc277bca95ed3f`；不追改 |
+| **当前状态** | [CURRENT](../CURRENT.md) | 本轮失败、未消耗进程账、旧历史保护与下一Owner决定 |
+| **当前任务/权限** | [TASK_CURRENT](../TASK_CURRENT.md) | 无ACTIVE；前一任务已STOP，不得二次派发 |
+| **最新独立验收** | [V010 Engineering preflight fail-closed primary review](../versions/0.0.10/runner_io_engineering_preflight_fail_closed_primary_review_20261016.md) | commit `416cff6c00d2b865c3e9dda4088242d2b80969ce`、clone仅治理分支、目标tree不可达与远端模型branch实际存在 |
+| **失败交付** | [Codex结果](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/416cff6c00d2b865c3e9dda4088242d2b80969ce/versions/0.0.10/review_runner_engineering_preflight_result_20261016.md) | 3脱敏文件、69用例NOT_EVALUATED；不能当工程PASS |
+| 最后已签发任务（已结束） | [ENGINEERING_ONLY task](../versions/0.0.10/runner_io_engineering_only_windows_preflight_task_20261016.md) | 发布commit`343c22132deb23ba6d913d70e132b43a00b95f1d`，blob`08fed792ee19329313dfc7402fa174035805a345` |
+| 上一轮静态设计验收 | [runner I/O static review](../versions/0.0.10/runner_guard_io_offline_github_primary_review_20261016.md) | STATIC_DESIGN_READY=conditional limited; FULL_RUNNER_IO_BLOCKED |
+| 2026-10-16原始交接（历史） | [完整会话交接](CH5_CONVERSATION_HANDOFF_20261016_V010_RUNNER_IO_OFFLINE_PENDING.md) | Owner科学主线、冻结SHA、历史进程/存储与保护 |
+| 工作流 | [CH5_ASTRA_WORKFLOW_CURRENT](CH5_ASTRA_WORKFLOW_CURRENT.md) | V1.2，Owner最终科学及资源授权 |
+| 科学决定与版本 | [SCIENTIFIC_DECISIONS](../SCIENTIFIC_DECISIONS.md)、[版本登记](CH5_VERSION_REGISTER_CURRENT.md) | 模型数学冻结、不以运行失败修改 |
+| 长期知识 | [CH5_WEB_KNOWLEDGE_CURRENT](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 博士第五章MATLAB主线纠偏、非Newton重建 |
 
-原模型工程candidate只有限接受，首双省HA checkpoint2/F25失败。单点corrected HA迄今没有真正运行；旧GBK与argv预检两次Python各1/1、HA0，第一次存储超限永久保留。A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER UNRESOLVED、model_activation=False、Results FALSE、真实C8 REQUEST_ONLY、原8dirty/index/common-dir保护、V011 NOT_STARTED。GitHub是治理/备份/审阅，不会自动更新本机QMD/Basic Memory。
+冻结V010 plan commit`bf091da33d59293f147d52c11580327d3ac2a85d`/blob`85138d8859d53295262fe13bf5bc277bca95ed3f`；原model candidate`94de4501dec051b969bee9d852eba2d4591f30ef`/tree`205eab47c4e4f9c6292c2ead9947d94d1a7579a5`；单点manifest blob`c23d331bed34e5ca478324cdc05034609ecb91b7`。A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER UNRESOLVED、model_activation=False、Results FALSE、real C8 REQUEST_ONLY、受保护dirty/index/common-dir、V011 NOT_STARTED。
