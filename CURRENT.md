@@ -1,20 +1,22 @@
-# 第五章 CURRENT：V010当前封存证据独立GitHub交换任务已签发
+# 第五章 CURRENT：V010 SOURCE_TIMESTAMP 早停，证据交换LOCAL_ONLY/STOP
 
-更新：2026-10-16（Asia/Shanghai）；当前状态优先于旧会话历史ACTIVE时态。
-**VERSION=V010/V0.0.10；ACTIVE_TASK=V010_CURRENT_SEAL_SANITIZED_GITHUB_EVIDENCE_EXCHANGE**。
-**FIXED_ISSUE_COMMIT=49ff1c3053fa1aa6a0646f55abcffb077e2b62b2；TASK_BLOB=1dc5f07a88261c41de434a9c4075b0d179ee871a**。
-**TASK=[本轮唯一冻结任务](versions/0.0.10/current_seal_sanitized_github_evidence_exchange_task_20261016.md)**。
-**SCOPE=EVIDENCE_EXCHANGE_ONLY__LIMITED_GITHUB_REVIEW_PUBLICATION**。
-**BUDGET=LOCAL_PS_STATIC_PREP_MAX2__SOURCE_FILES_MAX8_1MIB__NEW_BARE_METADATA_MAX3GIB__COMPLETE_SSH_FETCH_MAX1__NONFORCE_PUSH_MAX1__REMOTE_REF_READBACK_MAX1**。
-**NO_AUTHORITY=MODEL_PYTHON0__VERIFIED_LOADER0__REAL_RUNNER0__HA/HJB/KFE/GE/IRF/REAL_C8_0__OLD_SANITIZER_RESCAN0__OLD_TEST_RERUN0**。
-**GITHUB_REVIEW_BRANCH=review/ch5-temp-v010-current-seal-evidence-20261016**。
-**NEXT_GATE=WAIT_ASTRA_V010_CURRENT_SEAL_GITHUB_EVIDENCE_REVIEW / STOP**。
+更新：2026-10-17（Asia/Shanghai）。最新TOP状态优先于已签发但现已STOP的任何旧ACTIVE时态。
+**VERSION=V010/V0.0.10；V011 NOT_STARTED；ACTIVE_TASK=NONE**。
+**LAST_TASK=V010_CURRENT_SEAL_SANITIZED_GITHUB_EVIDENCE_EXCHANGE__DELIVERED__STOPPED**。
+**LAST_DELIVERY=FAIL_CLOSED__LOCAL_ONLY__SOURCE_TIMESTAMP_PARSED_TYPE_GUARD_REJECTED__NO_GITHUB_CANDIDATE**。
+**LATEST_INDEPENDENT_REVIEW=REMOTE_TARGET_REF_404_VERIFIED__LOCAL_TIMESTAMP_ACTUAL_TYPE_UNKNOWN**。
+**REVIEW=[最新独立限域主审](versions/0.0.10/current_seal_exchange_source_timestamp_fail_closed_local_only_primary_review_20261017.md)；REVIEW_BLOB=87d35c2270c1b8a42e19d3210f22fa0abe914bdc**。
+**NEXT_GATE=WAIT_OWNER_FRESH_V010_SOURCE_TIMESTAMP_TYPED_DIAGNOSTIC_AUTHORITY / STOP**。
+**NEW_PERMISSION=NONE__PS_STATIC0__SCAN0__BARE_INIT0__SSH0__FETCH0__PUSH0__PYTHON0__RUNNER0__HA0**。
+**TIMESTAMP_PARSED_ACTUAL_TYPE=UNRECORDED；RAW_TIMESTAMP_VALIDITY=UNKNOWN**。
+**LEGACY_SEAL_CHAIN=UNVERIFIABLE；CURRENT_SEAL_CHAIN=CODEX_REPORTED_LOCAL_RAW_LINKED__NOT_REMOTE_VERIFIED**。
+**ORIGINAL_SANITIZATION_DENIAL_CAUSE=UNKNOWN；HISTORICAL_LEDGER_DEVIATION=UNRESOLVED**。
 **FULL_RUNNER_IO_CLOSURE=BLOCKED；model_activation=False；Results FALSE；V011 NOT_STARTED**。
 
-Owner本会话要求报告路线图进度、制定后续计划并立即下达新任务。已根据最新[战略路线图](docs/CH5_PUBLICATION_FIRST_STRATEGIC_ROADMAP_20261014.md)及新[阶段进度快照](docs/CH5_V010_ROADMAP_PROGRESS_AND_NEXT_GATES_20261016.md)确认：M1原MATLAB修错及Python代码接线仅部分完成；真实Windows import/runner未闭环；M2多省稳态未达新V010独立验证；M3原冲击须合法基点；M4尚无新Results。新任务只为上一轮**当前**first/final封存和17项合成工程证据提供真正可独立回读的GitHub交换，不是科学运算或真实数据许可。
+上一[固定证据交换任务](versions/0.0.10/current_seal_sanitized_github_evidence_exchange_task_20261016.md)，发行Commit 49ff1c3053fa1aa6a0646f55abcffb077e2b62b2、Blob 1dc5f07a88261c41de434a9c4075b0d179ee871a，已按任务早停关闭。Codex最终回报在SOURCE_TIMESTAMP守门处失败：脚本要求JSON解析后的timestamp仍为string，检查未通过，但没有记录解析实际类型；既不能认定原件timestamp无效，也不能擅自猜测ConvertFrom-Json/JSON解析器如何转换。此前本机对上一final receipt哈希、first/final单向关系及17项结果关联有Codex报告级核对，但安全脱敏扫描尚未进行，**不能升级为Astra已独立核验原raw bytes的PASS**。
 
-上次正式[集成主审](versions/0.0.10/engineering_integration_seal_chain_synthetic_mktree_local_only_primary_review_20261016.md) Blob 32272533e9f4136883f536814919bddf2cb037d9：Codex报集成17/17符合预期，合成mktree正例2条、空行负例exit128，当前first/final有本机原始字节和同run_id/17项哈希单向引用，但网页未直接核原件；前一轮更旧first只有快照/hash引用且无原始run_id，LEGACY_SEAL_CHAIN=UNVERIFIABLE，不补造。旧Sanitizer首次拒绝文件/规则/字段/数量UNKNOWN，被拒材料继续PUBLICATION_DENIED，历史台账原argv/短源码复制偏差UNRESOLVED。上轮最终receipt SHA256 859398F7F4ABF2067AAF6613213290B9F027EE48D2A7E0EEA361BC0C5FDF5197仍为Owner转述未网页亲验。
+GitHub连接器独立确认目标review分支 review/ch5-temp-v010-current-seal-evidence-20261016 在核查时404（No commit found for the ref），故本轮candidate commit/tree及四份远端证据均NONE，不存在本轮remote-only临时文件需要清理。Codex报告静态批次1/2、原旧文件精确读取5份共43,468 B、scan0、bare init0、SSH0、fetch/push0、前轮17/20测试重跑0，Python/model import/VerifiedLoader/runner及HA/HJB/KFE/GE/IRF/真实C8科学0。首批及旧历史账均保留，所有本轮未使用预算随着STOP关闭**不结转**。本轮失败receipt SHA256由Owner提供 F93DA4C6BEE0E62F68A04620B8BF372AD60275C20DEA7782EF2C56E4BFADA6FC，**Astra未取得本机文件原字节，未独立重算**；新scratch具体文件数、墙钟及原解析类型UNKNOWN。
 
-新scratch D:/ProjectTemp/ch5_v010_current_seal_exchange_20261016_01；只读上轮确定的最多8件1MiB安全源文件，先核真实final receipt SHA256/first-final原件；新独立bare只用现有SSH key经ssh.github.com:443严格host-key取得固定发行parent对象及最多一次新review branch push。远端review tree的唯一白名单为 result.md、manifest.json、first_seal.json、final_seal.json；原raw若脱敏不通过只能发布明确SANITIZED_DERIVATIVE，不能冒充RAW_EXACT，也不得上传私有argv/credential/旧被拒候选。远端临时_review_tmp路径严禁在任何本地模型/治理工作树/index生成。失败LOCAL_ONLY STOP，不补推不强推；所有旧任务余额已STOP不结转。
+V010战略主线仍是修正原MATLAB并以Python复现原方法：corrected家庭HA→多省顺序→GovInv收益边界×0.9/1.1与Zt→冻结GDP误差≤1%独立验证→原lagged-NKPC递推。科学计划固定commit bf091da33d59293f147d52c11580327d3ac2a85d / Blob 85138d8859d53295262fe13bf5bc277bca95ed3f；模型候选固定commit 94de4501dec051b969bee9d852eba2d4591f30ef / Tree 205eab47c4e4f9c6292c2ead9947d94d1a7579a5均不改。目的地税一次、same-S/前完整轮raw-ra0、家庭人均与省财政总量及三劳动账、phi_max=.3和20×20×2网格/阈值均受保护。Owner corrected HA单点 rah=.0675,w_eff=15.5,rb=.02,Tt=.1,rb_gap=.07 仍UNTESTED；没有V010现实GE或正式IRF/论文Results资格。
 
-V010科学plan冻结Commit bf091da33d59293f147d52c11580327d3ac2a85d/Blob 85138d8859d53295262fe13bf5bc277bca95ed3f；模型候选commit 94de4501dec051b969bee9d852eba2d4591f30ef/tree 205eab47c4e4f9c6292c2ead9947d94d1a7579a5，不改原MATLAB corrected HA、顺序多省、GovInv×0.9/1.1/Zt、目的地税一次、same-S/lagged raw ra0、家庭/财政和三劳动账、phi_max=.3、GDP≤1%独立门、lagged-NKPC。新corrected HA单点rah=.0675,w_eff=15.5,rb=.02,Tt=.1,rb_gap=.07仍UNTESTED，真实GE/冲击/Results不合格。Owner既有C盘独立SSD备份+GitHub双备份足够，不强制VM；保护D盘c5k1bturn56的8dirty/index/staged/untracked/ignored/外Git common-dir、旧失败证据、C盘备份、真实C8/2017/2018/B3。A16 FAIL_CLOSED，window UNACCEPTED，C9 PAUSED，CALL_LEDGER UNRESOLVED，real C8 A–D REQUEST_ONLY，V011 NOT_STARTED。GitHub文档更新不证明QMD/Basic Memory本机同步。
+Owner既有C盘独立SSD备份+GitHub双备份、SSH Key/443（本轮实际未调用）、可信工作站非OS-native沙箱风险取舍保持。原D:/ProjectTemp/c5k1bturn56之8 dirty、index/staged/untracked/ignored/外common-dir、全部历史失败scratch、C备份、real C8/2017/2018/B3与V009数组禁止越权改动；远端_review_tmp仅限另获授权时的review branch tree，绝不在本地模型或治理工作树/index存在。**A16 FAIL_CLOSED；window UNACCEPTED；C9 PAUSED；CALL_LEDGER UNRESOLVED；real C8 A–D REQUEST_ONLY；V011 NOT_STARTED**。GitHub动态治理同步不证明本地QMD/Basic Memory已经更新。
