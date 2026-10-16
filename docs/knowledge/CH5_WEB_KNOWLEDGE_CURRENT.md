@@ -1,5 +1,11 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-16最新：Import Guard +第三方依赖静态设计已独立限域审议
+
+[Astra 最新GitHub主审](../../versions/0.0.10/import_guard_dependency_design_github_primary_review_20261016.md) Blob`8d2dad9d4e915fceda498329434e0956300c89e5`已实际核Codex候选commit `dc10a8f12f5333126b16bc56695abf2e67c5b2c0`、Tree`fabb22aae49f961afe336ad209fc56b382338c84`、sole parent原task commit`79f82934184292e7d021cbef8d4322c02c9cc0bc`、仅两份远端review临时文件的Git SHA1/UTF8字节/SHA256；42个module风险队列源码Blob/大小逐项吻合，分类20 UNRESOLVED、14 SIDE_EFFECT_RISK、8 PURE_DEFINITION，三真实非空init/35 external、8 unknown、H0-H7继续开放。独立结论`SOURCE_ONLY_GUARD_DESIGN_PARTIAL_WITH_OPEN_GATES__INDEPENDENT_DOCUMENTARY_LIMITED_ACCEPT`，并未安装VM/隔离native/创建可信capsule或导入模块。Owner接下来需要选择真正Windows OS native隔离机制与host Git identity broker→guest源码根的信任边界；当前`ACTIVE_TASK=NONE`，新Python/runner/HA权限0，FULL_RUNNER_IO_CLOSURE BLOCKED、Results FALSE、V011 NOT_STARTED。
+
+**Owner长期GitHub临时交付硬规则继续执行**：本候选的`_review_tmp/ch5/v010-import-guard-design-20261016/`仅在远端独立review分支的Git Tree，不能进入本地项目原worktree、index、staged，也不通过修改.gitignore隐藏。Astra已先归档正式验收和动态状态，临时文件应在远端review ref经固定SHA校验后限定删除并回读；Git历史commit旧字节可达，必须先脱敏。Codex自报本地原工作树未触及不可当Astra本机证明。所有旧科学预算/GBK超额、A16/window/C9/CALL_LEDGER及真实C8受保护树照旧，下面“等待旧设计任务执行”仅历史时点。
+
 ## 2026-10-16最新：Owner批准新V010 import guard SOURCE_ONLY静态设计门
 
 唯一ACTIVE`V010_IMPORT_GUARD_AND_DEPENDENCY_GATE_SOURCE_ONLY_DESIGN`，[正式冻结任务](../../versions/0.0.10/import_guard_dependency_design_source_only_task_20261016.md)发行commit`79f82934184292e7d021cbef8d4322c02c9cc0bc`、Blob`1bdb77a12d4494cae3052ba52392125a94bf0413`，由Owner批准继续推进；只基于此前图42个词法可达候选、20 UNRESOLVED、14 SIDE_EFFECT_RISK、8 PURE_DEFINITION、第三方numpy/scipy/Windows ABI以及动态/annotation/decorator风险，设计**Git identity root与未来独立source assembly root双绑定**、原非空init及外部native副作用隔离门、阶段化验收；不运行任何Python/AST/import/runner/HA或真实数据，不创建新的模型源码装配，science/Results资格继续冻结。新静态预算≤55源文件/4MiB、≤120 Git只读、≤8MiB新非Git工件、2h。待Codex只提交脱敏结果与manifest供Astra独立审阅，不复用上次STOP预算。
