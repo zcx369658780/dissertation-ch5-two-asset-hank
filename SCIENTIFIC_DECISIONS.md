@@ -1,5 +1,7 @@
 # 第五章科学决定：当前适用范围与历史合同索引
 
+> **2026-10-16 当前Owner新授权（Git-only，不改变科学合同）**：唯一ACTIVE `V010_STAGE_A_FROZEN_MODEL_GIT_OBJECT_REACHABILITY_RECOVERY`，正式发行commit `68530b3f121952b4382d08dc9ff964c7f6c7ab75`、blob `3688674363aa8a0c45a7a322c9c2098baed62fae`，内容仅是一个全新隔离clone取得冻结model分支commit/tree、九份源Git blob与disk bytes、独立common-dir，**Python/pytest/HA/HJB/KFE/selector/root/GE/IRF/真实数据/runner全部0许可**。已FAIL_CLOSED的前一个工程任务0/4 Python余额不可继承。本段仅替换下方旧“无ACTIVE”的时态，不更改任何科学法则、旧预算、A16/window/C9/CALL_LEDGER、Results FALSE、V011 NOT_STARTED。 [新任务](versions/0.0.10/stage_a_model_git_object_reachability_recovery_task_20261016.md)。
+
 > **2026-10-16 工程运行状态补充（不改科学法则）**：此前Owner授权的单轮`V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT`已在阶段A取得隔离clone后checkout失败（128）而FAIL_CLOSED，独立审议见[报告](versions/0.0.10/runner_io_engineering_preflight_fail_closed_primary_review_20261016.md)；原批准任务已STOP，当前无ACTIVE执行任务，也没有后继进程许可。GitHub已确认模型commit/tree远端存在，属于ref/object准备问题而非科学数值判定。之前本文件所写最多4个工程Python进程是**已STOP任务的历史额度**，不能作为当前实时执行许可；HA/科学始终0。冻结GovInv、税、same-S、HJB/KFE等决定以及C8保护完全不变。
 
 > **2026-10-16后续Owner唯一工程例外（优先于下方交接时态“新Python全部0”）**：Owner已授权`V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT`，固定发行commit `343c22132deb23ba6d913d70e132b43a00b95f1d` / blob `08fed792ee19329313dfc7402fa174035805a345`；仅**4个有界工程Python进程、其中真实runner≤2次**，不得调用任何HA/HJB/KFE/selector/root/GE/IRF或真实数据。`ONE_HA`及旧科学进程许可仍为0，旧两次Python1/1历史消耗、第一次存储超额不撤销。下方“新Python全部0”仅表示**2026-10-16原交接当时**未有新的工程授权；本段仅更新工程执行权限，不修改任何科学方程、冻结计划、V1.2或Results资格。原科学决定、A16/window/C9/CALL_LEDGER与V011禁启保持。

@@ -1,5 +1,9 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-16 当前唯一ACTIVE：Stage A 冻结模型 Git 对象可达性修复
+
+Owner正式同意另立**Git-only Stage A**新任务 `V010_STAGE_A_FROZEN_MODEL_GIT_OBJECT_REACHABILITY_RECOVERY`，发行commit `68530b3f121952b4382d08dc9ff964c7f6c7ab75`、blob `3688674363aa8a0c45a7a322c9c2098baed62fae`，固定原件 [Stage A task](../../versions/0.0.10/stage_a_model_git_object_reachability_recovery_task_20261016.md)。任务只在新隔离仓库明确取 `codex/ch5-v010-matlab-first-20261015` 分支、校commit/tree/sole parent/九份Git Blob磁盘实际字节/独立common-dir；最多一次model clone、≤2GiB Git对象及checkout、≤16MiB artifact、≤2h；Python/pytest/AST/HA/HJB/KFE/selector/root/GE/IRF/MATLAB/真实数据/runner=0。前一个checkout128的Windows工程preflight已失败封存，本轮并非恢复其Python0/4额度，V010模型冻结与8dirty保护不改变。等待Codex Stage A 结果后Astra独立验收，通过也不自动允许新Windows runner或HA。下方“无ACTIVE”是前轮工程FAIL_CLOSED后、此次Owner新授权前的历史时点。
+
 ## 2026-10-16 本轮工程preflight独立验收：最新状态
 
 [Astra独立审议](../../versions/0.0.10/runner_io_engineering_preflight_fail_closed_primary_review_20261016.md) 已核候选 `416cff6c00d2b865c3e9dda4088242d2b80969ce`。Codex阶段A用`--single-branch`治理分支clone，无法checkout `94de4501...` 冻结模型，exit128后STOP；远端模型分支及tree经GitHub确认存在。工程Python0/4、HA0为Codex本地回执，69例NOT_EVALUATED。旧`V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT`已FAILED/CLOSED，**当前无新ACTIVE执行任务**。下一步等待Owner对独立Git对象可达性补取/隔离clone准备做新授权；原工程未用额度不得自动续用。旧GBK与Windows argv两次科学进程、原模型数学冻结、8dirty/common-dir、C8、A16/window/C9/CALL_LEDGER、Results FALSE、V011 NOT_STARTED不改变。
