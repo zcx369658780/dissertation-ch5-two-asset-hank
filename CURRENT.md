@@ -1,22 +1,21 @@
-# 第五章 CURRENT：V010 B/S/L集中工程合成修复已交付；证据限域接受、等待新授权
+# 第五章 CURRENT：V010受界集成 + 封存链 + 合成mktree任务已签发
 
-更新：2026-10-16（Asia/Shanghai）。
-**VERSION=V010/V0.0.10；V011 NOT_STARTED；ACTIVE_TASK=NONE**。
-**LAST_TASK=V010_BARE_IDENTITY_SANITIZER_LEDGER_ENGINEERING_ONLY_CORRECTION__DELIVERED__STOPPED**。
-**LAST_DELIVERY=ENGINEERING_SYNTHETIC_BSL_20_OF_20_CODEX_REPORTED__LOCAL_ONLY**。
-**LATEST_INDEPENDENT_REVIEW=DOCUMENTARY_LIMITED_ACCEPT__FIRST_SEAL_SUMMARY_NULL_RESERVATION__LOCAL_RAW_BYTES_UNVERIFIED**。
-**REVIEW=[正式GitHub限域主审](versions/0.0.10/bare_identity_sanitizer_ledger_engineering_local_only_primary_review_20261016.md)；REVIEW_BLOB=cbafd84d7e3149692938d0e601a1413142076714**。
-**NEXT_GATE=WAIT_OWNER_FRESH_V010_ENGINEERING_INTEGRATION_AND_EVIDENCE_PUBLICATION_AUTHORITY / STOP**。
-**NEW_RUNTIME_AUTHORITY=NONE__POWERSHELL0__BARE_INIT0__GIT_READONLY0__MKTREE0__GIT_FETCH_PUSH0__PYTHON0__RUNNER0__HA0**。
-**ORIGINAL_SANITIZATION_DENIAL_CAUSE=UNKNOWN；HISTORICAL_LEDGER_DEVIATION=UNRESOLVED；SEAL_EVIDENCE_INTEGRITY=UNVERIFIED**。
-**FULL_RUNNER_IO_CLOSURE=BLOCKED；HA_SCIENCE_NOT_RUN；model_activation=False；Results FALSE**。
+更新：2026-10-16（Asia/Shanghai）。本段状态优先于历史时态。
 
-本轮正式冻结[ENGINEERING_ONLY任务](versions/0.0.10/bare_identity_sanitizer_ledger_engineering_correction_task_20261016.md)发行Commit `2a252ec2627d9a1f48dcab0c1bab16cc6cf9d9fe`、任务Blob `6c31d861a9e15f1b5956dfdfa7132a074bdb2e5e`，现已按STOP关闭。Owner转述Codex工程合成报告：bare身份 B01–B08 8/8、匿名结构化脱敏S01–S08 8/8、新管线台账L01–L04 4/4，均符合Codex实际预期且未自授工程PASS。新合成测试可证明报告中的限定修复方向，**没有完成原真实bare发布仓身份/parent-tree-blob可达性、旧真实扫描候选再验、Windows Python import或完整runner**。
+**VERSION=V010/V0.0.10；V011 NOT_STARTED**。
+**ACTIVE_TASK=V010_ENGINEERING_INTEGRATION_SEAL_CHAIN_SYNTHETIC_MKTREE_PREFLIGHT**。
+**FIXED_ISSUE_COMMIT=34497613d7085cfeea39682aef15f983ef5030a9；FIXED_TASK_BLOB=6aa223b4c98391e051ebe4f7b8d358f88cf678bf**。
+**TASK=[本轮唯一冻结工程任务](versions/0.0.10/engineering_integration_seal_chain_synthetic_mktree_task_20261016.md)**。
+**SCOPE=ENGINEERING_ONLY_LOCAL_INTEGRATION_AND_EVIDENCE**。
+**NEW_BUDGET=PS_BATCH_MAX2__NEW_SYNTHETIC_BARE_INIT1__GIT_READONLY_IDENTITY_MAX6__SYNTHETIC_HASH_OBJECT_WRITE_MAX2__MKTREE_MAX2__LS_TREE_MAX1**。
+**NO_AUTHORITY=GITHUB_FETCH_PUSH_COMMIT_REF0__MODEL_PYTHON0__VERIFIED_LOADER0__REAL_RUNNER0__HA/HJB/KFE/GE/IRF/REAL_C8_0**。
+**NEXT_GATE=WAIT_ASTRA_V010_ENGINEERING_INTEGRATION_SEAL_MKTREE_REVIEW / STOP**。
+**FULL_RUNNER_IO_CLOSURE=BLOCKED；model_activation=False；Results FALSE；V011 NOT_STARTED**。
 
-**封存保留：** 第一次汇总有null，首版receipt据报保留；资源汇总后修正，未重跑科学或合成测试。first/final原文件sha、测试run-id/manifest关联、具体null字段均未获网页Astra原字节核验，`SEAL_EVIDENCE_INTEGRITY=UNVERIFIED`，不得称封存无误。旧被拒材料旧命中仍UNKNOWN/公开DENIED；曾在历史中间台账复制原argv/短源码的偏差仍`UNRESOLVED`，绝不清理旧证据来假装全过程合规。
+Owner在上一 B/S/L 合成20/20本地报告受限审议后，明确批准下一轮受界工程集成与证据链验证。新 scratch 为 D:/ProjectTemp/ch5_v010_integration_seal_mktree_20261016_01，仅写新脚本、匿名结果、合成fixture和全新独占bare。首先从前次工程 scratch 精确只读最多10份总计1MiB，独立核对上一 final receipt SHA256（Owner提供值 70622F5AF09089983639F81973837D7EF7D5E0CAA6B33E85D0C74B5B7EA74D23）、first/final原始字节和RUN_ID、20用例关联、首版summary null与后版汇总变更范围；若首版实体未存在或来源无法认证必须UNKNOWN而非造证。其次在新bare对新工程修复脚本身份/结构化脱敏/匿名ledger进行合成集成验证，再用合成文字对象和最多2次mktree实际验证发布器empty-line输入格式，绝非旧真实bare发布验收。wall≤150min，新非Git文件≤8总≤2MiB（应急预留128KiB）、全部新bare metadata≤32MiB。不得将旧资源剩余额结转。
 
-**本轮Codex汇报的资源：**PowerShell合成批次1/2，新synthetic bare init1/1，该新bare只读Git identity 4/4，旧文件2份共16,826B，新非Git6份共58,657B，合成bare文件130B（**不是bare完整物理元数据独立计量**）；wall、first/final哈希关联及写前预算没有原件独立验证。Owner转述最终receipt SHA256 `70622F5AF09089983639F81973837D7EF7D5E0CAA6B33E85D0C74B5B7EA74D23`，网页未读取本机原始字节、未独立重算。E0/mktree/fetch/push/Git发布/Python/model import/VerifiedLoader/runner/HA/HJB/KFE/selector/root/GE/IRF/真实C8均报告0。任务STOP后第二次PowerShell额度及所有旧额**关闭，不得结转**。之前V010 SOURCE_ONLY 4/4只读探针、E0局部UInt32成功及历史科学/GBK超额仍永久保留。
+上一冻结 [B/S/L任务](versions/0.0.10/bare_identity_sanitizer_ledger_engineering_correction_task_20261016.md) 发行Commit 2a252ec2627d9a1f48dcab0c1bab16cc6cf9d9fe、Blob 6c31d861a9e15f1b5956dfdfa7132a074bdb2e5e 已STOP；[独立限域主审](versions/0.0.10/bare_identity_sanitizer_ledger_engineering_local_only_primary_review_20261016.md) Blob cbafd84d7e3149692938d0e601a1413142076714 只有限接受Codex B8/S8/L4报告20/20、并保留首版null、原回执未独立核验。旧脱敏拒绝命中仍UNKNOWN、原候选PUBLICATION_DENIED、旧中间台账复制短源码和argv的过程偏差UNRESOLVED。所有旧科学/工程预算/存储超额/Windows E0失败不可清零。
 
-科学plan fixed commit `bf091da33d59293f147d52c11580327d3ac2a85d`/Blob `85138d8859d53295262fe13bf5bc277bca95ed3f`，原模型commit `94de4501dec051b969bee9d852eba2d4591f30ef`/tree `205eab47c4e4f9c6292c2ead9947d94d1a7579a5`未改。原MATLAB corrected两资产HA/HJB/KFE→多省顺序→GovInv收益率边界×0.9/1.1与Zt→GDP冻结误差≤1%独立验收→lagged-NKPC原递推；目的地税一次、same-S/完整上轮raw ra0、人口/财政单位/三劳动账、phi_max=.3及原20×20×2阈值皆冻结。双省synthetic F-order25 NO_ADMISSIBLE_POLICY，Owner单点`rah=.0675,w_eff=15.5,rb=.02,Tt=.1,rb_gap=.07`仍UNTESTED；没有GE/正式IRF/Results。
+冻结V010科学plan Commit bf091da33d59293f147d52c11580327d3ac2a85d / Blob 85138d8859d53295262fe13bf5bc277bca95ed3f、模型Commit 94de4501dec051b969bee9d852eba2d4591f30ef / Tree 205eab47c4e4f9c6292c2ead9947d94d1a7579a5不改。原MATLAB corrected两资产HA→多省顺序→GovInv收益率上下界×0.9/1.1与Zt→GDP≤1%独立冻结验→原lagged-NKPC递推，目的地税仅一次、家庭人均/省总量/三劳动账、same-S、前完整轮lagged raw ra0、phi_max=.3、20×20×2阈值均不变。原双省F-order25 NO_ADMISSIBLE_POLICY，Owner单点 corrected HA (rah=.0675,w_eff=15.5,rb=.02,Tt=.1,rb_gap=.07) 仍UNTESTED。
 
-Owner现有C盘物理独立SSD备份＋GitHub备份、SSH Key/443、可信工作站非OS-native沙箱风险边界照旧；受保护原`D:\ProjectTemp\c5k1bturn56`的8dirty/index/staged/untracked/ignored/外Git common-dir、旧失败回执、C盘备份及real C8/2017/2018/B3不触碰。远端`_review_tmp`只能在另获Owner批准的独立review Git tree，不能在本地科研工作树/index存在；本轮没有授权发布的temp候选可清。**A16 FAIL_CLOSED；window UNACCEPTED；C9 PAUSED；CALL_LEDGER UNRESOLVED；real C8 A–D REQUEST_ONLY；V011 NOT_STARTED**。GitHub归档不等于本地QMD/Basic Memory已更新。
+Owner现有独立C盘SSD备份+GitHub备份足够、使用SSH Key/443但本任务不得网络Git访问，可信工作站工程风险不等于原生OS安全沙箱。保护原D:/ProjectTemp/c5k1bturn56八dirty/index/staged/untracked/ignored/外Git common-dir、所有旧失败原件、C盘备份和真实C8/2017/2018/B3。远端临时审阅路径不允许进入本地项目工作树/index；本轮不准GitHub推送。**A16 FAIL_CLOSED；window UNACCEPTED；C9 PAUSED；CALL_LEDGER UNRESOLVED；real C8 A–D REQUEST_ONLY；V011 NOT_STARTED**。GitHub治理不证明本地QMD/Basic Memory已同步。
