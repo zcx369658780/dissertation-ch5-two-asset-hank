@@ -3,7 +3,11 @@
 更新：2026-10-15，Owner确认[主线纠偏](../CH5_OWNER_SCOPE_REALIGNMENT_20261015.md)。
 **最高项目定位：修正原MATLAB错误并Python重写第五章，不是从零另建HANK，不能替换Owner半年多形成的总体求解方法。**
 
-## 2026-10-16 当前真实恢复入口（覆盖下方过期快照的ACTIVE解释）
+## 2026-10-16 新会话V010 runner IO静态验收（当前优先）
+
+GitHub review候选 `c207e866cf70d9d5ae6fb245f43cabfdeac1d32b` / tree `b4ba5b7939653a0cdb8524fa82743d9634d79083` 已交付。 [新会话独立审议](../../versions/0.0.10/runner_guard_io_offline_github_primary_review_20261016.md) 仅有限接受静态设计，46机读主例及23变体均NOT_RUN；真实Windows I/O、旧audit argv、单点corrected HA均未运行。`FULL_RUNNER_IO_CLOSURE=BLOCKED`、`model_activation=False`、`Results FALSE`、`V011 NOT_STARTED`。旧任务不重发、冻结科学不改、全部旧超额/预算保留。下一停点 `WAIT_OWNER_V010_ENGINEERING_ONLY_PREFLIGHT_DECISION / STOP`，未来工程与科学进程分别申请权限。以下“未收到Codex交付”文字为2026-10-16交接写入时点，不是当前实时结论。
+
+## 2026-10-16 会话交接时恢复入口（现由上方新会话审议更新）
 
 [本轮完整GitHub交接](../CH5_CONVERSATION_HANDOFF_20261016_V010_RUNNER_IO_OFFLINE_PENDING.md)。唯一ACTIVE `V010_RUNNER_GUARD_IO_OFFLINE_INTEGRATION_AND_SANITIZED_GITHUB_HANDOFF`，固定任务commit `50fece7d51bbcbb7e4384b0a5a8833b81dcbf76b`、blob `0070437d83eccaaf4a1c38838e9ce2b1a2fb5634`；离线静态runner/IO整合中、未收到Codex交付。只能安全去敏的新GitHub独立review分支，`Python/pytest/HA/HJB/KFE/GE/IRF=0新许可`。
 

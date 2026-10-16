@@ -1,9 +1,11 @@
-# TASK_CURRENT：V010 runner I/O未执行离线静态集成（跨会话继续）
+# TASK_CURRENT：V010离线静态交付已到，独立审议完成（无工程/科学运行权）
 
 更新：2026-10-16（Asia/Shanghai）。
 **ACTIVE_TASK=V010_RUNNER_GUARD_IO_OFFLINE_INTEGRATION_AND_SANITIZED_GITHUB_HANDOFF**。
-**STATUS=ISSUED__AWAIT_CODEX_DELIVERY__NEW_SESSION_TO_REVIEW_RESULT**。
-**PERMISSION=OFFLINE_STATIC_DRAFT_ONLY__NO_PYTHON_OR_HA_SCIENCE_RUNTIME__SANITIZED_GITHUB_REVIEW_BRANCH_ONLY**。
+**STATUS=DELIVERED__INDEPENDENT_STATIC_LIMITED_ACCEPT__FULL_IO_BLOCKED__WAIT_OWNER_ENGINEERING_GATE_DECISION**。
+**PERMISSION=NO_NEW_PYTHON_OR_HA_RUNTIME__NO_NEW_SCIENCE_BUDGET__OWNER_ENGINEERING_PREFLIGHT_DECISION_REQUIRED**。
+
+**2026-10-16新核验**：[GitHub独立静态审议](versions/0.0.10/runner_guard_io_offline_github_primary_review_20261016.md)（相对仓库根），候选`c207e866cf70d9d5ae6fb245f43cabfdeac1d32b`/tree`b4ba5b7939653a0cdb8524fa82743d9634d79083`/唯一父`50fece7d51bbcbb7e4384b0a5a8833b81dcbf76b`。3份白名单静态文件已独立核源，46例仅声明非执行。仍用既有ACTIVE任务ID，不重发、不改冻结合同；`STATIC_DESIGN_READY=CONDITIONAL_LIMITED_ACCEPT`、`FULL_RUNNER_IO_CLOSURE=BLOCKED`，先STOP等待Owner决定工程-only preflight。下文交接时“后续收到结果再验收”属历史时点描述。
 
 权威唯一本：[runner_guard_io_offline_integration_task_20261016.md](versions/0.0.10/runner_guard_io_offline_integration_task_20261016.md)；发行commit `50fece7d51bbcbb7e4384b0a5a8833b81dcbf76b`、tree `c79f874a1ea60f3a880114fd5d80b0861e6ca21e`、task blob `0070437d83eccaaf4a1c38838e9ce2b1a2fb5634`。**任务已发布，不能因本会话交接再次重发或更换SHA。**
 

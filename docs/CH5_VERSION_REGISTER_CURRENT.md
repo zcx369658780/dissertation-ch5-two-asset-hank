@@ -1,6 +1,8 @@
-# 第五章当前版本登记（2026-10-16，最新会话交接）
-**状态：V010_OFFLINE_RUNNER_IO_TASK_ISSUED__AWAIT_CODEX_DELIVERY__NO_RUNTIME_AUTHORITY。**
+# 第五章当前版本登记（2026-10-16，V010离线候选静态审议）
+**状态：V010_RUNNER_IO_REVIEW_DELIVERED__INDEPENDENT_STATIC_LIMITED_ACCEPT__FULL_RUNNER_IO_BLOCKED__NO_RUNTIME_AUTHORITY。**
 [完整交接](../docs/CH5_CONVERSATION_HANDOFF_20261016_V010_RUNNER_IO_OFFLINE_PENDING.md)；唯一任务`V010_RUNNER_GUARD_IO_OFFLINE_INTEGRATION_AND_SANITIZED_GITHUB_HANDOFF` @ commit `50fece7d51bbcbb7e4384b0a5a8833b81dcbf76b` / blob `0070437d83eccaaf4a1c38838e9ce2b1a2fb5634`，仍ACTIVE，不重复发布；目标review分支查询未创建，科学运行0权限。以下原登记的静态源码与科学边界保持。
+
+**新会话实际审议**：[独立静态验收](../versions/0.0.10/runner_guard_io_offline_github_primary_review_20261016.md)：review SHA `c207e866cf70d9d5ae6fb245f43cabfdeac1d32b`、tree `b4ba5b7939653a0cdb8524fa82743d9634d79083`、sole parent原发行commit；恰3允许文件，46静态cases+23静态variants NOT_RUN；源9/9 Git Blob核对。`STATIC_DESIGN_READY=CONDITIONAL_LIMITED_ACCEPT`，`FULL_RUNNER_IO_CLOSURE=BLOCKED`，ENGINEERING_RUNTIME/HA均NOT_RUN。无新任务、新预算、V011或科学接受；等待Owner工程preflight授权决定。顶部前一历史段称review分支不存在仅指交接写入时点。
 
 ## 交接前已登记的详细状态（保留）
 

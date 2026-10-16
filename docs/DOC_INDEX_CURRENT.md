@@ -1,8 +1,9 @@
-# 第五章动态总目录（2026-10-16，新会话交接）
-**权威停点：V010离线runner IO集成任务已签发、待Codex交付；本次GitHub仅同步交接文档，无新Python/HA授权。**
+# 第五章动态总目录（2026-10-16，V010静态review已到）
+**权威停点：V010离线runner IO review候选已交付并完成独立静态有限接受；完整runner I/O仍BLOCKED，Windows runtime和HA科学均未运行且无新增授权。**
 
 | 首先读取 | GitHub入口 | 当前说明 |
 |---|---|---|
+| **本新会话独立静态审议** | [V010 runner IO GitHub review](../versions/0.0.10/runner_guard_io_offline_github_primary_review_20261016.md) | Review commit `c207e866cf70d9d5ae6fb245f43cabfdeac1d32b`；静态有限接受，完整I/O BLOCKED；等Owner工程-only preflight决定 |
 | **最新完整交接** | [2026-10-16 会话快照](CH5_CONVERSATION_HANDOFF_20261016_V010_RUNNER_IO_OFFLINE_PENDING.md) | Owner决策、固定SHA、任务、已耗资源、保护和新会话验收顺序 |
 | CURRENT | [CURRENT](../CURRENT.md) | 任务已发布，await Codex，不重复下达 |
 | TASK_CURRENT | [TASK_CURRENT](../TASK_CURRENT.md) | 唯一ACTIVE＝V010_RUNNER_GUARD_IO_OFFLINE_INTEGRATION_AND_SANITIZED_GITHUB_HANDOFF |

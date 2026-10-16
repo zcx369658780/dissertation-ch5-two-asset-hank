@@ -1,8 +1,10 @@
-# 第五章 CURRENT：V010离线runner IO集成任务已发布，等待下一会话Codex交付
+# 第五章 CURRENT：V010离线runner IO候选已交付，独立静态有限审议完成
 
 更新：2026-10-16（Asia/Shanghai）。
-**状态：V010_OFFLINE_RUNNER_IO_INTEGRATION_TASK_ISSUED__HANDOFF_SAVED__AWAIT_CODEX_DELIVERY__NO_RUNTIME_PERMISSION**。
+**状态：V010_RUNNER_IO_GITHUB_DELIVERY_RECEIVED__INDEPENDENT_STATIC_LIMITED_ACCEPT__FULL_RUNNER_IO_BLOCKED__NO_RUNTIME_PERMISSION**。
 **最新交接**：[2026-10-16完整会话快照](docs/CH5_CONVERSATION_HANDOFF_20261016_V010_RUNNER_IO_OFFLINE_PENDING.md)。本次仅保存进度，不重新签发/执行Codex任务、不提供Python/HA/HJB/KFE/pytest新预算。
+
+**2026-10-16新会话实时核验**：review分支 `review/v010-runner-io-offline-20261016` HEAD=`c207e866cf70d9d5ae6fb245f43cabfdeac1d32b`，tree=`b4ba5b7939653a0cdb8524fa82743d9634d79083`，sole parent为原task发行commit；变更只有允许的3份脱敏静态文件。 [独立静态审议](versions/0.0.10/runner_guard_io_offline_github_primary_review_20261016.md) 已完成：`STATIC_DESIGN_READY=CONDITIONAL_LIMITED_ACCEPT`，`FULL_RUNNER_IO_CLOSURE=BLOCKED`，`ENGINEERING_RUNTIME_NOT_RUN`，`HA_SCIENCE_NOT_RUN`。原task身份不变，没有新任务或预算。下一停止点`WAIT_OWNER_V010_ENGINEERING_ONLY_PREFLIGHT_DECISION / STOP`；单独的Windows工程preflight与HA科学运行仍分别需要未来Owner授权。下文中“await Codex/分支不存在”的表述仅为交接时快照，不再代表本段新会话实时结论。
 
 唯一ACTIVE仍为 **`V010_RUNNER_GUARD_IO_OFFLINE_INTEGRATION_AND_SANITIZED_GITHUB_HANDOFF`**，任务全文 [runner_guard_io_offline_integration_task_20261016.md](versions/0.0.10/runner_guard_io_offline_integration_task_20261016.md)，**发行commit `50fece7d51bbcbb7e4384b0a5a8833b81dcbf76b`、tree `c79f874a1ea60f3a880114fd5d80b0861e6ca21e`、任务blob `0070437d83eccaaf4a1c38838e9ce2b1a2fb5634`**。仅离线未执行runner源码草案、Windows Git argv与磁盘9源身份、stdout/stderr有界读取、timeout/reap、异常/IO写前配额/防路径别名及静态cases。GitHub专属许可只允许经去敏的3个静态文件向新`review/v010-runner-io-offline-20261016`分支普通non-force推送并回读，不得写main/治理分支或外泄本地raw/绝对路径；若去敏失败LOCAL_ONLY STOP。发布本交接时目标review分支未发现，不能据此宣称Codex已完成。
 
