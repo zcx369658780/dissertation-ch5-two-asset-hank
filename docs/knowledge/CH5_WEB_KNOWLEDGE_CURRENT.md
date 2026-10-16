@@ -1,5 +1,10 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-16 最新独立验收：Stage A脱敏MD/JSON已收到并限域接受
+
+[Astra uploaded evidence primary review](../../versions/0.0.10/stage_a_git_reachability_uploaded_primary_review_20261016.md) 已实际检查两份用户上传原件的SHA256、结构与命令预算。对固定模型Commit `94de4501dec051b969bee9d852eba2d4591f30ef` 的九份GitHub源码重新计算全部SHA256与字节数，9/9吻合上传Manifest；结论`STAGE_A_DOCUMENTARY_LIMITED_ACCEPT`，本地磁盘/独立common-dir和Git进程仍为Codex报告级，不能称直接Windows OS认证。Codex review分支仍404、单次push据报exit128，维持`LOCAL_ONLY_SAFE_PUBLICATION_BLOCKED`。此前待用户上传两文件的停点已完成，**当前ACTIVE_TASK=NONE**；下一步仅等待Owner决定新ENGINEERING_ONLY Windows preflight授权，科学HA另行决定。`FULL_RUNNER_IO_CLOSURE=BLOCKED`、Results FALSE、V011 NOT_STARTED，原V010经济法则、旧超额、A16/window/C9/CALL_LEDGER及8dirty/index/common-dir保护不变。下面任何“还没上传/待审”的描述为历史时点。
+
+
 ## 2026-10-16 最新：Stage A本地VERIFIED报告、GitHub LOCAL_ONLY、网页审议待原件
 
 Codex本轮报告新模型分支clone成功、九份源码磁盘字节/独立common-dir均匹配，但唯一GitHub push据报因认证退出128，review分支和本地候选远端404。Astra[独立GitHub接收审议](../../versions/0.0.10/stage_a_git_reachability_local_only_intake_20261016.md)只确认冻结Commit/Tree/Parent及九份**远端**源码Blob9/9一致；本机原证尚未上传，不能称独立Stage A PASS。当前`ACTIVE_TASK=NONE`，`WAIT_OWNER_SANITIZED_STAGE_A_FILES_FOR_INDEPENDENT_REVIEW / STOP`。需Owner直接上传已脱敏Stage A结果MD与manifest JSON，而非重试Git或重运行Python。完整runner I/O BLOCKED、corrected HA UNTESTED、Results FALSE、V011 NOT_STARTED；A16/window/C9/CALL_LEDGER、旧科学预算/原8dirty/index/common-dir保护原样。下方旧ACTIVE/待Codex叙述均为历史时间点。

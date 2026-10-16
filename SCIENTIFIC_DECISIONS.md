@@ -1,5 +1,7 @@
 # 第五章科学决定：当前适用范围与历史合同索引
 
+> **2026-10-16 Stage A上传原件审议最新时态（不改经济科学合同）**：[独立限域验收](versions/0.0.10/stage_a_git_reachability_uploaded_primary_review_20261016.md)已核远端冻结九源Blob/SHA256/字节9/9一致，分类`STAGE_A_DOCUMENTARY_LIMITED_ACCEPT`；Windows本机过程仍为上传报告级、GitHub旧review push失败。旧Stage A任务STOP且`ACTIVE_TASK=NONE`，不能续用Git/Python预算。下方“Stage A当前ACTIVE/待Codex”已成为历史时点陈述；任何新Windows工程runner及科学HA需Owner分别授权。原GovInv/税/资本/迁移/HA/KFE、A16/window/C9/CALL_LEDGER/Results FALSE/C8原树保护全不改。
+
 > **2026-10-16 当前Owner新授权（Git-only，不改变科学合同）**：唯一ACTIVE `V010_STAGE_A_FROZEN_MODEL_GIT_OBJECT_REACHABILITY_RECOVERY`，正式发行commit `68530b3f121952b4382d08dc9ff964c7f6c7ab75`、blob `3688674363aa8a0c45a7a322c9c2098baed62fae`，内容仅是一个全新隔离clone取得冻结model分支commit/tree、九份源Git blob与disk bytes、独立common-dir，**Python/pytest/HA/HJB/KFE/selector/root/GE/IRF/真实数据/runner全部0许可**。已FAIL_CLOSED的前一个工程任务0/4 Python余额不可继承。本段仅替换下方旧“无ACTIVE”的时态，不更改任何科学法则、旧预算、A16/window/C9/CALL_LEDGER、Results FALSE、V011 NOT_STARTED。 [新任务](versions/0.0.10/stage_a_model_git_object_reachability_recovery_task_20261016.md)。
 
 > **2026-10-16 工程运行状态补充（不改科学法则）**：此前Owner授权的单轮`V010_RUNNER_IO_ENGINEERING_ONLY_WINDOWS_PREFLIGHT`已在阶段A取得隔离clone后checkout失败（128）而FAIL_CLOSED，独立审议见[报告](versions/0.0.10/runner_io_engineering_preflight_fail_closed_primary_review_20261016.md)；原批准任务已STOP，当前无ACTIVE执行任务，也没有后继进程许可。GitHub已确认模型commit/tree远端存在，属于ref/object准备问题而非科学数值判定。之前本文件所写最多4个工程Python进程是**已STOP任务的历史额度**，不能作为当前实时执行许可；HA/科学始终0。冻结GovInv、税、same-S、HJB/KFE等决定以及C8保护完全不变。
