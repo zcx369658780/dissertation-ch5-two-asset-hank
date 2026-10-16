@@ -1,20 +1,19 @@
-# 第五章动态总目录（2026-10-16 V010 E0任务FAIL_CLOSED、已STOP）
+# 第五章动态总目录（2026-10-16 V010 BARE_COMMON_DIR/脱敏静态取证任务ACTIVE）
 
-**ACTIVE_TASK=NONE**。上一固定E0 UInt32/mktree纠错任务交付`FAIL_CLOSED / LOCAL_ONLY`并STOP：Codex报告24项类型用例匹配及1次PowerShell E0成功、但新bare `BARE_COMMON_DIR`身份守门失败和封存脱敏扫描DENIED，`mktree/fetch/push/Python/runner/science=0`。本次GitHub目标review ref实查404、无候选；本地E0回执尚未独立读取，原资源余额不结转。下一门仅等待Owner新授权，不自动发下一任务。
+**ACTIVE_TASK=V010_BARE_COMMON_DIR_AND_SANITIZATION_SOURCE_ONLY_FORENSIC**；固定发行Commit`5b66d6e3c0b3ad6e292009e13bbe9c19472dde1e`、任务Blob`085412aaee3df3067540c4336ff37eb4b07f9383`。Owner已于本会话明确同意继续，唯一新任务只查`BARE_COMMON_DIR`与脱敏扫描拒绝的真实原因：受界原回执只读、必要时只读Git身份≤4次、只写项目外新scratch静态草案；**0 Python、0新E0、0 mktree/fetch/push、0HA/GE/IRF**。上一失败任务的余额已关闭，不结转；本任务新GitHub临时review发布不授权，结果LOCAL_ONLY短脱敏摘要供独立审议。
 
-| 用途 | 权威入口 | 当前事实 |
+| 功能 | 当前权威入口 | 证据/边界 |
 |---|---|---|
-| **本轮最新独立限域主审** | [V010 E0本地FAIL_CLOSED主审](../versions/0.0.10/e0_launcher_mktree_fail_closed_local_only_primary_review_20261016.md) | Blob `3f675de31449ce946a2ecb3b51ed6c9a55850197`，远端review分支不存在独立可核，本机24用例/E0证据未亲验 |
-| CURRENT | [当前状态](../CURRENT.md) | NONE ACTIVE，上一任务STOP，旧数学/预算锁 |
-| TASK_CURRENT | [当前任务/停止点](../TASK_CURRENT.md) | 等待Owner下一明确授权，禁止旧任务重试 |
-| **上一冻结工程任务** | [E0 Launcher UInt32与mktree修复](../versions/0.0.10/e0_launcher_uint32_temp_mktree_correction_task_20261016.md) | commit `e474c0d25a7351b7510f6a9ba914cd8733dceffc`，blob `a3683c751acf08d49d700422a63f264b61130e78`，已STOP |
-| 更早工程主审 | [Trusted Loader E0第一次失败](../versions/0.0.10/trusted_loader_e0_fail_closed_local_only_primary_review_20261016.md) | Blob `d9d5a3ea38fcff89633ce09fdf0d97d9e9e61293`，旧UInt32及mktree失败永久存档 |
-| 历史交接 | [E0 2026-10-16 long handoff](CH5_CONVERSATION_HANDOFF_20261016_TRUSTED_LOADER_E0_LOCAL_ONLY_STOP.md) | Blob `7865222ca9966720b9cc335a4e41facfc9a7fc8e`，曾ACTIVE=NONE/等待任务属旧时点 |
-| Owner风险及SSH | [双备份与可信Loader决定](CH5_OWNER_RISK_BACKUP_SSH_LOADER_DECISION_20261016.md) | C盘物理独立SSD备份+GitHub双备份；SSH Key/443；不强制VM |
-| 临时审阅协议 | [仅远端审阅与清理](CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md) | `_review_tmp`仅远端独立review tree，不进本地worktree/index |
-| V1.2工作流 | [CH5_ASTRA_WORKFLOW_CURRENT](CH5_ASTRA_WORKFLOW_CURRENT.md) | Codex集中工程、GPT独立限域验收、Owner新资源权威 |
-| 科学决定 | [SCIENTIFIC_DECISIONS](../SCIENTIFIC_DECISIONS.md) | GovInv×0.9/1.1、tax once、same-S/lagged等冻结 |
-| 版本登记 | [CH5_VERSION_REGISTER_CURRENT](CH5_VERSION_REGISTER_CURRENT.md) | V010未完成、无Results或V011 |
-| 长期知识 | [CH5_WEB_KNOWLEDGE_CURRENT](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 历史和实时顶层分离 |
+| **新唯一ACTIVE任务** | [V010 bare身份与脱敏SOURCE_ONLY取证](../versions/0.0.10/bare_common_dir_sanitization_source_only_forensic_task_20261016.md) | 发行commit `5b66d6e3c0b3ad6e292009e13bbe9c19472dde1e` / blob `085412aaee3df3067540c4336ff37eb4b07f9383`；等待Codex交付 |
+| CURRENT | [当前状态](../CURRENT.md) | V010在研、唯一ACTIVE、科学/预算保护 |
+| TASK_CURRENT | [任务状态](../TASK_CURRENT.md) | 固定任务、精确只读范围、最终STOP |
+| 旧任务独立主审 | [E0 UInt32 / bare身份 / 脱敏限域主审](../versions/0.0.10/e0_launcher_mktree_fail_closed_local_only_primary_review_20261016.md) | Blob `3f675de31449ce946a2ecb3b51ed6c9a55850197`；FAIL_CLOSED/LOCAL_ONLY |
+| 上一已STOP冻结任务 | [E0 Launcher与mktree工程纠错](../versions/0.0.10/e0_launcher_uint32_temp_mktree_correction_task_20261016.md) | 发行commit `e474c0d25a7351b7510f6a9ba914cd8733dceffc`，禁止复跑/结转 |
+| 更早工程失败 | [Trusted Loader E0正式主审](../versions/0.0.10/trusted_loader_e0_fail_closed_local_only_primary_review_20261016.md) | 原Launcher UInt32失败及mktree空行历史 |
+| Owner工作流和风险决定 | [V1.2](CH5_ASTRA_WORKFLOW_CURRENT.md) · [风险/备份/SSH/Loader](CH5_OWNER_RISK_BACKUP_SSH_LOADER_DECISION_20261016.md) | Owner/Codex/Astra职责，C+GitHub双备份、SSH443 |
+| 远端临时审阅 | [Owner脱敏审阅协议](CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md) | 仅GitHub独立review tree，不进本地项目worktree/index；本任务禁止发布 |
+| 科学决定 | [SCIENTIFIC_DECISIONS](../SCIENTIFIC_DECISIONS.md) | 不重开GovInv/税/same-S、corrected HA |
+| 版本登记 | [CH5_VERSION_REGISTER_CURRENT](CH5_VERSION_REGISTER_CURRENT.md) | V010未完成、V011禁启 |
+| 长期知识 | [CH5_WEB_KNOWLEDGE_CURRENT](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 历史快照优先级与恢复入口 |
 
-本轮本地最终receipt Owner给出SHA256 `AC06ECCFAA023AC4593017CC18C4AD4FAC644BC52C00FA2F71B5FD82C54C4816`，**未直接读取字节或复算**。科学plan固定commit `bf091da33d59293f147d52c11580327d3ac2a85d`、blob `85138d8859d53295262fe13bf5bc277bca95ed3f`；模型候选固定commit `94de4501dec051b969bee9d852eba2d4591f30ef`、tree `205eab47c4e4f9c6292c2ead9947d94d1a7579a5`均未改。corrected单点HA仍UNTESTED；`FULL_RUNNER_IO_CLOSURE=BLOCKED`、`A16 FAIL_CLOSED`、`window UNACCEPTED`、`C9 PAUSED`、`CALL_LEDGER UNRESOLVED`、`model_activation=False`、`Results FALSE`、`real C8 A–D REQUEST_ONLY`、`V011 NOT_STARTED`，受保护8dirty/index/common-dir、C备份及旧原证不变。GitHub同步不等于本机QMD/Basic Memory自动同步。
+V010原科学Plan `bf091da33d59293f147d52c11580327d3ac2a85d` / Blob `85138d8859d53295262fe13bf5bc277bca95ed3f`、冻结模型commit `94de4501dec051b969bee9d852eba2d4591f30ef` / tree `205eab47c4e4f9c6292c2ead9947d94d1a7579a5`保持。单点corrected HA仍UNTESTED，`FULL_RUNNER_IO_CLOSURE=BLOCKED`、`model_activation=False`、`Results FALSE`、`V011 NOT_STARTED`；`A16 FAIL_CLOSED`、`window UNACCEPTED`、`C9 PAUSED`、`CALL_LEDGER UNRESOLVED`、`real C8 A–D REQUEST_ONLY`、8dirty/index/外common-dir/C盘备份及所有旧科学/工程资源账保护不变。Github动态同步不是本地QMD/Basic Memory已更新的证明。
