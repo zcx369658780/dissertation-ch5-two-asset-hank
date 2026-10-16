@@ -1,14 +1,17 @@
-# TASK_CURRENT：V010 bare Git身份与脱敏拒绝单点SOURCE_ONLY取证
+# TASK_CURRENT：V010 bare身份与脱敏SOURCE_ONLY取证已交付并STOP
 
 更新：2026-10-16（Asia/Shanghai）。
-**ACTIVE_TASK=V010_BARE_COMMON_DIR_AND_SANITIZATION_SOURCE_ONLY_FORENSIC**。
-**FIXED_ISSUE_COMMIT=5b66d6e3c0b3ad6e292009e13bbe9c19472dde1e；FIXED_TASK_BLOB=085412aaee3df3067540c4336ff37eb4b07f9383**。
-**TASK_FILE=[本轮唯一冻结任务](versions/0.0.10/bare_common_dir_sanitization_source_only_forensic_task_20261016.md)**。
-**CLASS=READ_ONLY_FORENSIC + SOURCE_ONLY_DRAFT；STOP=WAIT_ASTRA_V010_BARE_SANITIZATION_SOURCE_ONLY_REVIEW**。
-**RUNTIME_AUTHORITY=READ_ONLY_GIT_IDENTITY_PROBES_MAX4_IF_REQUIRED__PYTHON0__RUNNER0__E0_RETEST0__MKTREE0__FETCH0__PUSH0__SCIENTIFIC_HA0**。
+**ACTIVE_TASK=NONE**。
+**LAST_TASK=V010_BARE_COMMON_DIR_AND_SANITIZATION_SOURCE_ONLY_FORENSIC__DELIVERED__STOPPED**。
+**CLASS=SOURCE_ONLY_LOCAL_ONLY_DOCUMENTARY_LIMITED_ACCEPT_WITH_PROCESS_DEVIATION**。
+**REVIEW=[最新独立限域主审](versions/0.0.10/bare_common_dir_sanitization_source_only_local_only_primary_review_20261016.md)；REVIEW_BLOB=9fe0549a7c02656cbf646de2a74daa47757f0205**。
+**NEXT_GATE=WAIT_OWNER_FRESH_V010_BARE_IDENTITY_AND_SANITIZER_ENGINEERING_CORRECTION_AUTHORITY / STOP**。
+**NEW_RUNTIME_AUTHORITY=NONE__READONLY_PROBES0__E0_RETEST0__MKTREE0__GIT_FETCH/PUSH0__PYTHON0__RUNNER0__HA0**。
 
-Owner在新会话明确同意继续调查上一轮`BARE_COMMON_DIR`身份失败与脱敏扫描DENIED。Codex只能在新独立scratch`D:\ProjectTemp\ch5_v010_bare_sanitize_forensic_20261016_01`中读取上一失败scratch精确最多8份小文件（累计≤2MiB），wall≤90分钟，新scratch≤4份UTF-8/LF平铺小文件总≤512KiB（回执保底预留≥64KiB），不得触写旧失败原证/模型树/受保护Git common-dir/C盘备份。优先静态证据，若旧原件缺少git输出且旧独占bare身份/位置已安全认证，才可最多4次新的只读Git身份探针，绝不运行mktree/重做E0/再次扫描或发布。结果须区分expected/observed有无原证，路径/cwd/env根因UNKNOWN与真实共享证明，脱敏规则ID/匿名字段分类与误报待核，明确未运行事项。
+冻结的[本轮原任务](versions/0.0.10/bare_common_dir_sanitization_source_only_forensic_task_20261016.md)发行Commit `5b66d6e3c0b3ad6e292009e13bbe9c19472dde1e`，Blob `085412aaee3df3067540c4336ff37eb4b07f9383`；已到约定`WAIT_ASTRA_V010_BARE_SANITIZATION_SOURCE_ONLY_REVIEW / STOP`，现正式关闭，不可重发/复用探针4/4旧额度。
 
-上一`V010_E0_LAUNCHER_UINT32_AND_TEMP_MKTREE_CORRECTION`（commit`e474c0d25a7351b7510f6a9ba914cd8733dceffc`、blob`a3683c751acf08d49d700422a63f264b61130e78`）已经FAIL_CLOSED / LOCAL_ONLY / STOP，正式[主审](versions/0.0.10/e0_launcher_mktree_fail_closed_local_only_primary_review_20261016.md) Blob`3f675de31449ce946a2ecb3b51ed6c9a55850197`。历史旧额度一律不可继承。原本机回执SHA256（Owner转述尚未独立重算）`AC06ECCFAA023AC4593017CC18C4AD4FAC644BC52C00FA2F71B5FD82C54C4816`，前次E0局部成功仅`CODEX_REPORTED_WITH_LOCAL_RECEIPTS`，原mktree从未运行。
+Codex的最终报告`V010_BARE_COMMON_DIR_SANITIZATION_SOURCE_ONLY_FORENSIC_RESULT`为LOCAL_ONLY：四次只读Git探针exit0，前后common-dir输出hash一致，Git`/`与脚本反斜线期望不一致，支持**源字符串分隔符误拒**；但源根非共享/对象可达/抗替换仍未证实。扫描拒绝连续双反斜线可能误判JSON转义，然而旧现场命中文件/字段/规则/次数皆UNKNOWN，扫描未重跑，候选仍禁止发布。中间台账曾复制短源码行和原argv（即使最终四文件据报已修正），需要保留为**过程证据卫生缺口**，不可称全面保护PASS或删改回执以消除痕迹。
 
-**本次Codex GitHub发布一律不授权**：原bare与脱敏两门正是取证对象，需输出短于约4KiB的严格脱敏最终摘要供Astra独立评估；被拒原材料不上传，后续任何真正工程复测、GitHub发布、Python/HA科学进程必须再由Owner分别授权。HJB/KFE、GovInv/Zt、经济模型、原冻结plan/model候选、真实C8、Results FALSE、V011 NOT_STARTED、A16 FAIL_CLOSED/window UNACCEPTED/C9 PAUSED/CALL_LEDGER UNRESOLVED及原8dirty/index/external common-dir/C备份均不改。任务完成或受限失败后`WAIT_ASTRA_V010_BARE_SANITIZATION_SOURCE_ONLY_REVIEW / STOP`，不自行派后继。
+本轮自报只读探针4/4、旧文件读取83,707B、新4文件共25,100B；本地回执SHA256据Owner为`AD4C071D72DC08A93D5B4867DB0DF2575653EAE07D20445342058C884D8BE5DD`，未上传字节、未独立hash。E0/mktree/fetch/push/Git发布/Python/runner/science0。模型原版本、受保护D盘8dirty/index/外common-dir、C盘备份、旧数值预算、第一次GBK超额和真实C8、A16/window/C9/CALL_LEDGER/model_activation=False/Results FALSE/V011 NOT_STARTED都不变。
+
+若Owner未来授权工程修复，才可单独制定`ENGINEERING_ONLY`且包含受界规范化路径比较、bare非共享及负例、匿名脱敏规则ID与JSON转义/真实密钥合成测试、途中台账原文复制约束。该建议**不是本次新任务**。未来mktree/SSH发布与Python/科学进程分别授权；目前不得自动进行。
