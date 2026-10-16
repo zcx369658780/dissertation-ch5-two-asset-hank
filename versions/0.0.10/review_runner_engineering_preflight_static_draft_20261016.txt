@@ -1,0 +1,24 @@
+V010 ENGINEERING PREFLIGHT PREPARATION DIAGNOSTIC ONLY
+NON-EXECUTABLE REVIEW TEXT. NO RUNNER DRAFT WAS CREATED OR EXECUTED.
+Frozen task: 343c22132deb23ba6d913d70e132b43a00b95f1d
+This file documents the actual preparation sequence using redacted path tokens.
+Tokens below are documentation placeholders, not executable input.
+
+1. git ls-remote --heads <PUBLIC_REPOSITORY> <NEW_REVIEW_REF>
+   exit 0; no existing target branch reported.
+2. git clone --no-checkout --single-branch --branch migration/astra-workflow-20261012 <PUBLIC_REPOSITORY> <NEW_ISOLATED_CLONE>
+   exit 0; one independent clone, no object sharing configured.
+3. git -C <NEW_ISOLATED_CLONE> config core.autocrlf false
+   exit 0.
+4. git -C <NEW_ISOLATED_CLONE> sparse-checkout set src
+   exit 0.
+5. git -C <NEW_ISOLATED_CLONE> checkout --detach 94de4501dec051b969bee9d852eba2d4591f30ef
+   exit 128; unable to read tree.
+6. STOP. NO FETCH, SECOND CLONE, PYTHON, HARNESS OR REAL RUNNER.
+
+The single-branch preparation was insufficient for the frozen candidate.
+This is not a proposed working runner and does not disable the original
+offline draft's dormant science mode. That original draft was never executed.
+The separately prepared intake/make-draft helper files were not invoked.
+A future engineering runner must explicitly fail closed for ONE_HA before
+any AST, harness or real execution; no such execution occurred here.
