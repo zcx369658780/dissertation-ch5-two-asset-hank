@@ -1,6 +1,6 @@
 # 第五章当前工作方式 · V1.3（2026-10-17 Owner批准）
 
-**AUTHORITATIVE_WORKFLOW=V1.3__OWNER_APPROVED__GITHUB_PUBLISHED__LOCAL_CODEX_SYNC_PENDING**。
+**AUTHORITATIVE_WORKFLOW=V1.3__OWNER_APPROVED__GITHUB_PUBLISHED__LOCAL_CODEX_DOC_SYNC_LIMITED_ACCEPTED**。
 **NEW_RULES=[V1.3本地工程快速通道](CH5_ASTRA_WORKFLOW_V1_3_20261017.md)**。
 **ONE_TIME_LOCAL_SYNC_TASK=[仅文档同步](../versions/0.0.10/workflow_v13_one_time_codex_local_docs_sync_task_20261017.md)**。
 新V1.3规则优先于下文V1.2关于日常工程调试/逐份验收文件的旧写法，**不追改历史冻结任务，也不改变原科学硬门、保护根或既有预算**。Codex文档镜像仍需独立一次同步回执；ChatGPT项目Sources需要Owner手动上传更新包，平台Memory并未因GitHub写入即时刷新。

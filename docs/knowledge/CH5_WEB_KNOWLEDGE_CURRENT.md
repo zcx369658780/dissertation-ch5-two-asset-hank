@@ -1,5 +1,12 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-17 V1.3本地文档镜像同步已限域验收：SOURCE SHA256 7/7
+
+**WORKFLOW=V1.3__GITHUB_PUBLISHED__LOCAL_CODEX_DOC_SYNC_LIMITED_ACCEPTED；ACTIVE_TASK=NONE**。上一固定一次性`CH5_V13_ONE_TIME_CODEX_LOCAL_DOCUMENT_SYNC`（发行Commit `77b4e7119b23008b8b708b6b39cc6b75077e2b4b`/任务Blob `daf6807397ac19a580a45a73c14e27665580bb04`）已Codex交付、任务STOP。Astra**独立从GitHub固定发行Commit读取7份文档并SHA256逐项复算，7/7与Codex报告一致，合计45,620B**。Codex报告其本地独立镜像8份文件共51,292B，AGENTS导航5,672B、SHA256 `8E6A46E76AC8A3BB3E7EFFE92448E2E3E5C0B96BF428FB976592E4436ADD2744`；写前时间顺序10:14:38只读preflight，10:15:51创建目录/复核，10:16:32首次写入，PowerShell静态2、记忆检索1、Node同步3、总114.341秒。这些**Windows本地目录/AGENTS/时序/保护没有网页原字节或文件系统独立核证**，只接受为CODEX_REPORTED_WITH_LOCAL_RECEIPTS，不宣传OS安全沙箱或原保护资产全字节已验。旧固定发行快照中的CURRENT/TASK_CURRENT保留STOP是正常的历史副本，最新任务授权一律看动态治理分支现时文件。Owner已确认上传V1.3项目Sources，但平台个人Memory summary不以此自动变更。
+
+V1.3最小流程今后E1工程可在新冻结总预算内自主修复、E2写前路径与来源硬停、E3科学/数据/外传仍新Owner权限。原V010科学合同、旧B/S/L不可验证、时间戳24/25＋1规范未决、上次prewrite顺序失败永久保留；真实runner I/O BLOCKED、corrected HA单点UNTESTED、Results FALSE、model_activation=False、V011 NOT_STARTED。**本次不派下一科研或证据发布任务**。
+
+
 ## 2026-10-17 V1.3项目工作流与记忆覆盖已批准（本段优先所有较早任务时态）
 
 Owner批准第五章GPT顾问由V1.2升级为工程快速通道V1.3。[正式V1.3](../CH5_ASTRA_WORKFLOW_V1_3_20261017.md)新增普通工程任务内自主修复、首次写入前只读Preflight、真实first/final与sourceIndex最小封存、日常精简一次验收及重要科学完整审验，不改变旧任务/科学预算。GPT Project Sources用[2026-10-17 V1.3知识覆盖](CH5_GPT_PROJECT_SOURCE_OVERLAY_V13_20261017.md)替代旧10月12日时态判断。**本地Codex文档镜像一次同步仍待实际运行回执；GPT项目Source需要Owner手动上传，平台Memory未被强制刷新。** 当前只授权DOC_ONLY的V1.3同步，不授Git/runner/HA。V010冻结科学合同不改，Results FALSE、model_activation=False、V011 NOT_STARTED。

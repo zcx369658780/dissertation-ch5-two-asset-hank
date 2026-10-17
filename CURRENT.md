@@ -1,20 +1,20 @@
-# 第五章 CURRENT · V1.3 已批准，待Codex一次本地文档同步
+# 第五章 CURRENT · V1.3 本地文档镜像同步已限域接受
 
 **UPDATED=2026-10-17**。
-**WORKFLOW=V1.3__OWNER_APPROVED__GITHUB_PUBLISHED__LOCAL_CODEX_SYNC_PENDING**。
+**WORKFLOW=V1.3__OWNER_APPROVED__GITHUB_PUBLISHED__LOCAL_CODEX_DOC_SYNC_LIMITED_ACCEPTED**。
 **RESEARCH_VERSION=V010/V0.0.10；V011 NOT_STARTED**。
-**ACTIVE_TASK=CH5_V13_ONE_TIME_CODEX_LOCAL_DOCUMENT_SYNC__DOC_ONLY**。
-**FIXED_ISSUE_COMMIT=77b4e7119b23008b8b708b6b39cc6b75077e2b4b；FIXED_TASK_BLOB=daf6807397ac19a580a45a73c14e27665580bb04**。
-**TASK=[Codex唯一DOC_ONLY同步任务](versions/0.0.10/workflow_v13_one_time_codex_local_docs_sync_task_20261017.md)**。
-**WORKFLOW_POLICY=[V1.3生效规则](docs/CH5_ASTRA_WORKFLOW_V1_3_20261017.md)**。
-**NEXT_GATE=WAIT_ASTRA_CH5_V13_LOCAL_DOC_SYNC_REVIEW / STOP**。
-**NEW_MODEL_PYTHON0__VERIFIED_LOADER0__REAL_RUNNER0__HA/HJB/KFE/GE/IRF/REAL_C8_0__GITHUB_PUSH0**。
+**ACTIVE_TASK=NONE**。
+**LAST_TASK=CH5_V13_ONE_TIME_CODEX_LOCAL_DOCUMENT_SYNC__DELIVERED__STOPPED**。
+**LATEST_DOC_ONLY_VERDICT=DOC_ONLY_ACCEPT__GITHUB_FIXED_SOURCE_SHA256_7_OF_7_INDEPENDENT__LOCAL_MIRROR_PREWRITE_AND_AGENTS_CODEX_REPORTED__NO_WINDOWS_DIRECT_ACCESS**。
+**FIXED_TASK_ISSUE_COMMIT=77b4e7119b23008b8b708b6b39cc6b75077e2b4b；TASK_GIT_BLOB=daf6807397ac19a580a45a73c14e27665580bb04**。
+**NEXT_GATE=WAIT_OWNER_FRESH_V010_ENGINEERING_PREFLIGHT_AND_SANITIZED_EVIDENCE_EXCHANGE_AUTHORITY / STOP**。
+**NEW_RUNTIME_PERMISSION=NONE__GITHUB_PUBLISH0__PYTHON0__REAL_RUNNER0__HA/HJB/KFE/GE/IRF/REAL_C8_0**。
 **FULL_RUNNER_IO_CLOSURE=BLOCKED；model_activation=False；Results FALSE；V011 NOT_STARTED**。
 
-Owner已明确授权V1.3流程升级，其作用仅为**未来任务的普通工程修复自主权、先只读preflight后写scratch的执行顺序、最小真实first/final及sourceIndex封存、日常精简验收**；不允许从本文件借用历史STOP预算或改变V010冻结科学法则。新文档已由Astra写入GitHub，本地Codex镜像和GPT项目Sources尚待实际独立同步。
+## 本次V1.3快速验收（不另建长主审）
 
-Codex本轮仅能按固定任务在经可信首次写入前核验的独立文档镜像执行**一次文档同步**；不得把同步复制到原保护模型工作树/索引或C盘备份。报告前不能说Codex已同步。本次GitHub文档升级没有运行任何HANK模型、Python loader、科学HA或GitHub代码候选提交。
+GPT顾问从固定发行Commit直接读取7份文档并独立计算SHA256，与Codex所报**7/7一致**；固定源文件原始UTF-8总量**45,620B**。镜像本地8件51,292B、其中AGENTS导航5,672B、写前只读10:14:38→创建复核10:15:51→首次写入10:16:32、PS静态2次、记忆检索1、Node同步调用3、总耗时114.341秒，均为**CODEX_REPORTED_WITH_LOCAL_RECEIPTS**；网页没有直接读D盘原始8文件/AGENTS、未独立验本机写前路径句柄与受保护目录全量byte状态，不能宣告Windows文件系统独立PASS。AGENTS据报SHA256 8E6A46E76AC8A3BB3E7EFFE92448E2E3E5C0B96BF428FB976592E4436ADD2744，未经网页重算。本地镜像CURRENT/TASK_CURRENT为固定发行STOP快照，这是预期且已在AGENTS导航中据报标注须读实时GitHub当前状态。
 
-上一`V010_CURRENT_TIMESTAMP_SANITIZED_EVIDENCE_EXCHANGE`因**首次写入之前路径身份未核验**而`FAIL_CLOSED/LOCAL_ONLY/STOP`，历史原证据不能事后补造前置PASS。更早B/S/L旧first缺raw/run_id仍`LEGACY_SEAL_CHAIN_UNVERIFIABLE`，当前timestamp旧解析类型误拒的本地报告为24/25预期匹配+1项SPEC_UNRESOLVED，历史执行代码字节UNKNOWN，科学RUNNER尚未PASS。
+Owner确认已上传V1.3项目源更新；现有项目Source可恢复V1.3知识规则，但这不是强制改写个人Memory summary。V1.3普通E1工程可在以后**明确冻结**预算内自主修复、E2写前身份及受保护资源必须硬停、E3科学与外传需Owner新授权；不追改旧任务原件与已STOP预算。
 
-V010科学计划固定Git Blob `85138d8859d53295262fe13bf5bc277bca95ed3f`、冻结模型Tree `205eab47c4e4f9c6292c2ead9947d94d1a7579a5`不变。M1真实Windows runner/Owner corrected HA单点仍未闭环，M2稳态/GDP≤1%未过，M3正式冲击缺校准稳态，M4 Results FALSE。原D盘8dirty/index/staged/untracked/ignored/external common-dir、C盘独立SSD既有备份、real C8/2017/2018/B3、A16/window/C9/CALL_LEDGER仍严格保护。GPT项目Sources更新包需Owner手动上传，ChatGPT个人Memory无法通过GitHub写入强制即时更新。
+最近V010 timestamp安全交换因**首次写入早于新scratch身份核验**已FAIL_CLOSED，不可追认或借本同步重跑。PS7.6.6时间戳合法String/Z被解析成DateTime/Utc与旧类型断言相冲突、25合成中24符合预期/1高精度SPEC_UNRESOLVED，均为Codex本地证据；历史执行源码hash仍UNVERIFIED，旧B/S/L first raw/run_id永缺UNVERIFIABLE。原V010科学plan blob 85138d8859d53295262fe13bf5bc277bca95ed3f、模型tree 205eab47c4e4f9c6292c2ead9947d94d1a7579a5未改，corrected HA单点UNTESTED、M2稳态与GDP目标/M3冲击/M4 Results均无新科学接受。原D盘8dirty/index/external common-dir、C盘独立SSD备份、历史失败原件与真实C8、A16/window/C9/CALL_LEDGER继续保护。
