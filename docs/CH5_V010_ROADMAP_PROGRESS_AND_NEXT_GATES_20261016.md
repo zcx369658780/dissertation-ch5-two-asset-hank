@@ -1,5 +1,10 @@
 # 第五章 V010 进度快照与下一阶段门禁（2026-10-16）
 
+## 2026-10-17最新覆盖：SOURCE_TIMESTAMP本机类型修复部分成功，未获远端独立原证
+
+当前`ACTIVE_TASK=NONE`；上一`V010_SOURCE_SCRIPT_PROVENANCE_RECOVERY_AND_CONDITIONAL_TIMESTAMP_FIX` 已DELIVERED/STOPPED。[最新独立限域主审](../versions/0.0.10/source_script_provenance_conditional_timestamp_local_only_primary_review_20261017.md) Blob`d6a53e96e359ac2c3d437ed9025cd5f58b129492`。Gate R现时脚本路径+当前整文件SHA与字段/schema锚点据Codex有本地证据，但历史执行脚本hash未记录；Gate T据报原JSON String/Z合法、PowerShell7.6.6解析成System.DateTime/Utc使旧的“解析后仍为string”判断误拒，历史运行版本仍UNKNOWN。Gate F25项新合成24符合预期，1项高精度形态SPEC_UNRESOLVED不计PASS；原字段修正版本机只读复核允许、源hash不变。无任何GitHub发布/Python/真实runner/HA，不能宣布完整工程PASS。M1继续部分完成、M2多省稳态/GDP目标独立校准未PASS、M3冲击缺合法基点、M4 Results FALSE、V011 NOT_STARTED。下一需Owner另授权新封存证据脱敏交换与高精度格式边界处置，旧任务预算封闭。此前文内“当前ACTIVE”的叙述属于当时快照，现行授权以CURRENT与TASK_CURRENT为准。
+
+
 ## 2026-10-17最新覆盖：SOURCE_INDEX缺失后新增有界身份恢复＋条件时间戳门
 
 现唯一ACTIVE`V010_SOURCE_SCRIPT_PROVENANCE_RECOVERY_AND_CONDITIONAL_TIMESTAMP_FIX`，冻结[任务](../versions/0.0.10/source_script_provenance_recovery_conditional_timestamp_fix_task_20261017.md)发行Commit`fafffe0582a213ceec25312f97f47ade6f1aa508`/Git Blob`22aea7c18716c36ffb1f3154d35d751d9f524bf1`。上一任务sourceIndex为空，因此Owner新增**三个精确scratch根的受限非递归metadata授权**；仅在实际脚本执行出处、全文件哈希及字段/schema锚点都可证时，继续timestamp类型取证/仅新scratch修复和≥12合成回归，否则FAIL_CLOSED。此任务不授GitHub发布/Python/HA、不能恢复上一STOP剩余额。M1工程局部完成但完整Windows runner及当前HA单点未过，M2稳态/GovInv-Zt与GDP目标独立校验未PASS，M3冲击缺合格基点，M4 Results FALSE，V011 NOT_STARTED。下方旧“无ACTIVE”属于此前快照，当前唯一执行许可读取CURRENT和TASK_CURRENT。
