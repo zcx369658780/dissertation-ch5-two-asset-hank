@@ -1,23 +1,23 @@
-# CH5 CURRENT · V010 CP2_F25机制取证/条件式实现修复长任务 ACTIVE
+# CH5 CURRENT · V010 CP2_F25取证结案、无同义实现修复证据
 
-**Owner新决定（2026-10-17）：「可以，我同意你的建议继续V010，先修复」。**
-**当前唯一冻结执行任务：[V010 CP2_F25 Selector机制/修复长任务](versions/0.0.10/v010_cp2f25_selector_mechanism_conditional_repair_long_task_20261017.md)**。
+**最新独立终审：** [V010 CP2_F25 原合同数学筛选与无修复证明主审](versions/0.0.10/v010_cp2f25_selector_no_math_preserving_repair_independent_terminal_review_20261017.md)。
 **WORKFLOW=V1.3__VERSION_LONG_TASK__NO_MICROTASK_SPLIT**。
 **RESEARCH_VERSION=V010/v0.0.10；V011 NOT_STARTED**。
-**ACTIVE_TASK=V010_CP2F25_SELECTOR_MECHANISM_AND_CONDITIONAL_REPAIR_LONG_TASK**。
-**FIXED_TASK_ISSUE_COMMIT=98b3154e84db62d4d319836db0a39e3278017c33；FIXED_TASK_ISSUE_TREE=8276017276abbeaae75ba266eae67c53646088a8；FIXED_TASK_BLOB=dfc29c2df0187875aee8d81b0ad6a23662e76a02**。
-**PREVIOUS_TASK=V010_M1_EVIDENCE_AND_CONDITIONAL_SYNTHETIC_MAINLINE_LONG_TASK__STOPPED__SCIENCE_FAIL_CLOSED__OLD_BUDGET_CLOSED**。
-**STAGE_F=AUTHORIZED__FROZEN_F25_RAW_FORENSIC_AND_INDEPENDENT_MATH_ORACLE**。
-**STAGE_R=CONDITIONAL__MATH_PRESERVING_SELECTOR_IMPLEMENTATION_BUG_FIX_ONLY**。
-**STAGE_D=CONDITIONAL__SINGLE_CELL_SELECTOR_ONLY_DIAGNOSTIC_WITH_EXPLICIT_COUNT**。
-**FULL_HA_HJB_KFE/OUTER_GE/IRF/REAL_C8_MODEL_SCIENCE_CALLS_NOW=0**。
-**NEXT=CODEX_EXECUTE_SAME_NEW_FROZEN_TASK__WAIT_ASTRA_V010_CP2F25_MECHANISM_REPAIR_REVIEW / STOP**。
+**ACTIVE_TASK=NONE**。
+**LAST_TASK=V010_CP2F25_SELECTOR_MECHANISM_AND_CONDITIONAL_REPAIR_LONG_TASK**。
+**LAST_TASK_ISSUE_COMMIT=98b3154e84db62d4d319836db0a39e3278017c33；LAST_TASK_BLOB=dfc29c2df0187875aee8d81b0ad6a23662e76a02**。
+**LAST_TASK_TERMINAL=V010_CP2F25__NO_MATH_PRESERVING_REPAIR_PROVEN__INDEPENDENT_LIMITED_ACCEPT__STOP**。
+**STAGE_F=COMPLETED__INDEPENDENT_MATH_AND_SOURCE_EVIDENCE_ACCEPTED**。
+**STAGE_R=NOT_ENTERED__NO_MATH_PRESERVING_SELECTOR_BUG_PROVEN**。
+**STAGE_D_POST_REPAIR=NOT_RUN__NO_PATCH**。
+**F25_REPLAY=NO_ADMISSIBLE_POLICY__12_OF_12_REJECTED__SELECTOR_ONLY_1__ROOTS_3**。
+**COMPLETE_HA_HJB_KFE/OUTER_GE/IRF/REAL_C8=0_UNAUTHORIZED**。
+**TASK_UNUSED_BUDGET=CLOSED_NO_CARRY_FORWARD**。
+**NEXT=WAIT_OWNER_V010_JOINT_TRIGGER_SCIENTIFIC_DECISION / STOP**。
 **FULL_RUNNER_IO_CLOSURE=BLOCKED；model_activation=False；REAL_GE=False；Results FALSE；V011 NOT_STARTED**。
 
-本次不复活上张M1科学失败后的HA1/26或unused science driver/focused余额。新工程合同≤6小时、总工程Python≤24含focused pytest≤8、selector-only单格diagnostic≤64与其内部roots≤2048，非Git新增≤64MiB；完整HA/HJB/KFE、两省稳态及动态额度为0。单格selector调用不能伪报science0，必须另账显式计数。上一CP2/F25原证12候选0可接纳，原source/fixture和冻结HJB双门/KFE、经济方程及所有保护资产保持不变。
+本次Owner实际上传私人证据ZIP 2,632,180B，SHA256 `A1459D9452F1AD7A755479AACE65B5FCA61E08130C73D098491599AB971E9141`，manifest 521/521原字节大小/SHA256验真。九月Owner采纳的联合双轴切换合同Git Blob `17e0c4de4b1fdaa9a43f1b2211fb10d8f5173c75`明确要求两侧各合法liquid-Z回执。F25 negative/backward-a对应液态端点漂移均负，无合法Z；联立`g_b=g_a=0`虽有唯一代数根但不满足当前合法触发。12候选独立Decimal复算12/12相符；旧B1原始失败、76份候选源码与前M1上传证据逐字节一致，本次没有修补实现、没有新科学资格。历史prev M1 SCIENCE_FAIL_CLOSED/全部budget关闭不变。
 
-**唯一新路径例外**：新的独立候选视图仅可在已有corrected selector的数学规则完全等价、源证证明存在实现漏项前提下，最小修改 `src/ch5_two_asset_hank/corrected_diagnostic/selector.py`，并新增一份focused测试 `tests/test_v010_cp2f25_selector_mechanism.py`。原冻结科学plan不追改；任何KKT/阈值/法则变更或需要第三条源码路径立即STOP，交Owner科学决定。不是已接受的数学修正。
+资源终态 Python3槽/24（2实际进程）、pytest0、selector1/64、roots3/2048、HA/HJB/KFE0、SSH首次失败128无重试，fetch/push0；207份账本快照与22/22进程log核验。本地OS/备份实际保护仍Codex回执级、原A16/window/C9/CALL_LEDGER旧失败/旧M1预算不追改。V010 plan Blob 85138d8859d53295262fe13bf5bc277bca95ed3f、冻结Model Tree 205eab47c4e4f9c6292c2ead9947d94d1a7579a5及唯一fixture Git Blob 40915658d93403cfc21b33a6b864b332b7857749仍完全不变。
 
-**FROZEN_PLAN_BLOB=85138d8859d53295262fe13bf5bc277bca95ed3f；MODEL_COMMIT=94de4501dec051b969bee9d852eba2d4591f30ef；MODEL_TREE=205eab47c4e4f9c6292c2ead9947d94d1a7579a5；FIXTURE_BLOB=40915658d93403cfc21b33a6b864b332b7857749**。
-
-脱敏审阅优先远端独立ref `review/ch5-temp-v010-cp2f25-selector-mechanism-20261017`、仅远端 `_review_tmp/ch5/v010-cp2f25-selector-mechanism-20261017/`，恰以ISSUE_COMMIT为review候选唯一parent，result.md、manifest.json、可选repair.patch白名单一次普通非强制push；先Astra永久归档回读，后仅清除远端临时文件。SSH失败则LOCAL_ONLY并由Owner可选上传私有ZIP，不替换固定任务。保护原D盘dirty/index/external common-dir、旧M1完整raw、C SSD备份与A16/window/C9/CALL_LEDGER；不新增VM/第三备份或重写旧失败。
+**不自动签发新任务、不直接删除联合触发门或另设HA科学预算；如继续须Owner先对已采纳数值upwind联合触发规则作E3科学决定。**
