@@ -1,20 +1,19 @@
-# 第五章版本登记（2026-10-17 V010 SOURCE_TIMESTAMP新工程任务签发）
+# 第五章版本登记（2026-10-17 V010 sourceIndex缺失提前STOP）
 
-**VERSION=V010/V0.0.10；V011 NOT_STARTED**。
-**ACTIVE_TASK=V010_SOURCE_TIMESTAMP_TYPED_GUARD_CORRECTION_AND_SYNTHETIC_REGRESSION**。
-**FIXED_ISSUE_COMMIT=6dfe8a1c98a839f0a94cdd0e938bb6b60f99d520；FIXED_TASK_BLOB=68143e917df883e38fa4615ce0a7c7a86c797330**。
-**TASK=[唯一ENGINEERING_ONLY冻结任务](../versions/0.0.10/source_timestamp_typed_guard_correction_and_synthetic_regression_task_20261017.md)**。
-**ENGINEERING_BUDGET=PS_BATCH_MAX2__OLD_SOURCE_READ_MAX12_FILES_2MIB__RAW_FIELD_DIAGNOSTIC_MAX1__CORRECTED_FIELD_RECHECK_MAX1__SYNTHETIC_CASES_AT_LEAST12__NEW_FLAT_FILES_MAX6_1MIB__WALL_MAX120MIN**。
-**NO_AUTHORITY=OLD_GITHUB_RETRY0__NEW_GIT_SSH_PUSH0__SANITIZER0__PYTHON0__VERIFIED_LOADER0__RUNNER0__HA/HJB/KFE/GE/IRF/REAL_C8_0**。
-**DELIVERY=LOCAL_ONLY__NEW_CANDIDATE_NOT_AUTHORIZED**。
-**LATEST_REVIEW=SOURCE_TIMESTAMP_GUARD_FAIL_CLOSED__PARSER_ACTUAL_TYPE_UNKNOWN__GITHUB_REF_404**。
-**NEXT_GATE=WAIT_ASTRA_V010_SOURCE_TIMESTAMP_TYPED_CORRECTION_REVIEW / STOP**。
+**VERSION=V010/V0.0.10；V011 NOT_STARTED；ACTIVE_TASK=NONE**。
+**LAST_TASK=V010_SOURCE_TIMESTAMP_TYPED_GUARD_CORRECTION_AND_SYNTHETIC_REGRESSION__DELIVERED__STOPPED**。
+**LAST_DELIVERY=FAIL_CLOSED__LOCAL_ONLY__SOURCE_INDEX_MISSING__NO_SCRIPT_IDENTITY**。
+**LATEST_REVIEW=GITHUB_TASK_IDENTITY_VERIFIED__LOCAL_SOURCE_INDEX_EMPTY_CODEX_REPORTED__NO_PARSER_DIAGNOSTIC**。
+**REVIEW=[最新主审](../versions/0.0.10/source_timestamp_typed_guard_source_index_missing_fail_closed_local_only_primary_review_20261017.md)；REVIEW_BLOB=5b4a63f453fc472cc90869ca9e029c7657757caf**。
+**NEXT_GATE=WAIT_OWNER_FRESH_V010_SOURCE_SCRIPT_IDENTITY_RECOVERY_AUTHORITY / STOP**。
+**NEW_RUN_PERMISSION=NONE__PS0__SOURCE_READ0__GIT0__SSH/PUSH0__PYTHON0__RUNNER0__HA0**。
+**ORIGINAL_SANITIZATION_DENIAL_CAUSE=UNKNOWN；LEGACY_SEAL_CHAIN=UNVERIFIABLE；HISTORICAL_LEDGER_DEVIATION=UNRESOLVED**。
 **FULL_RUNNER_IO_CLOSURE=BLOCKED；HA_SCIENCE_NOT_RUN；model_activation=False；Results FALSE**。
 
-Owner已明确批准在**同一张新任务**中完成上轮证据交换脚本 `SOURCE_TIMESTAMP` 的真实原JSON token、解析后类型/PS解析器版本取证，以及新隔离scratch内语义校验修正和≥12项合成正反例。**不凭理论推断DateTime自动转换，不接受任意字符串自动转时间、不修改旧JSON。** 原门是否被解析器类型自动变更误拒必须先以实际源码及raw token证实；若原schema不确定则标UNKNOWN，不自创日期规则。新task原件发行Commit`6dfe8a1c98a839f0a94cdd0e938bb6b60f99d520`/Blob`68143e917df883e38fa4615ce0a7c7a86c797330`，预算只适用本任务，旧额不结转。
+[本次固定冻结任务](../versions/0.0.10/source_timestamp_typed_guard_correction_and_synthetic_regression_task_20261017.md)发行Commit `6dfe8a1c98a839f0a94cdd0e938bb6b60f99d520`，Blob `68143e917df883e38fa4615ce0a7c7a86c797330`，已STOP。Codex报告在原失败receipt的manifest中发现`sourceIndex`为空，无法确证旧SOURCE_TIMESTAMP guard脚本的授权路径、整个文件SHA256和原JSON字段/schema锚点，依任务第1节无明确索引即STOP。实际时间戳raw token、解析器版本、解析后类型均UNKNOWN/未诊断，新的guard修复、≥12合成测试与原字段复核NOT_RUN。空sourceIndex**不**证明源码丢失，也不证明旧timestamp格式非法或任何具体PowerShell类型转换。
 
-上一[正式SOURCE_TIMESTAMP限域主审](../versions/0.0.10/current_seal_exchange_source_timestamp_fail_closed_local_only_primary_review_20261017.md) Blob`87d35c2270c1b8a42e19d3210f22fa0abe914bdc`：任务 `V010_CURRENT_SEAL_SANITIZED_GITHUB_EVIDENCE_EXCHANGE` 已STOP，Codex自报PS静态1/2、旧文件5份43,468B，其余scan/bare/SSH/fetch/push/Python/science0；GitHub目标ref 404独立可核，无远端候选。Owner转述本地失败receipt SHA256`F93DA4C6BEE0E62F68A04620B8BF372AD60275C20DEA7782EF2C56E4BFADA6FC`网页未重算。更早旧first seal缺raw和旧run_id而UNVERIFIABLE，最新17/17合成封存链仍仅Codex当地级，原旧scan DENIED且原因UNKNOWN，历史ledger中间argv/短源码偏差UNRESOLVED。
+本次Codex自报PS 1/2、旧文件**两份、四次实际读取共6,800B**，新四文件9,463B；Git/SSH/Python/model import/VerifiedLoader/runner/全部HANK科学0。本次新failure first/final据报保留原raw、同run_id、单向哈希链接；Owner转述final SHA256 `1E9A02F1C9AF59FAB80BED91E39353EB4CCBD87884D46C229D3E9C44610846BC`但Astra没有Windows原字节重算。所有本轮剩余额度连同全部历史STOP余额关闭；以前的source-only只读identity probes、E0、mktree synthetic和旧日志超额账不重置。
 
-最新研究战略：[V010进度](CH5_V010_ROADMAP_PROGRESS_AND_NEXT_GATES_20261016.md)。M1原MATLAB修错/Python候选局部实施，真实Windows model import/runner与corrected单点HA未验证；M2多省稳态与GovInv/Zt GDP目标≤1%独立校准未PASS；M3原递推冲击缺合格基点；M4论文Results FALSE；V011 NOT_STARTED。科学冻结plan Commit`bf091da33d59293f147d52c11580327d3ac2a85d`/Blob`85138d8859d53295262fe13bf5bc277bca95ed3f`及模型Commit`94de4501dec051b969bee9d852eba2d4591f30ef`/Tree`205eab47c4e4f9c6292c2ead9947d94d1a7579a5`原样保护。GovInv收益边界×0.9/1.1与Zt、目的地税一次、same-S、lagged raw ra0、家庭人均/省财政总量/三劳动账、phi_max=.3、lagged-NKPC与20×20×2网格/阈值不变；Owner corrected HA单点仍UNTESTED。
+V010原科学plan Commit `bf091da33d59293f147d52c11580327d3ac2a85d`/Blob`85138d8859d53295262fe13bf5bc277bca95ed3f`，模型Commit`94de4501dec051b969bee9d852eba2d4591f30ef`/Tree`205eab47c4e4f9c6292c2ead9947d94d1a7579a5`不改。原MATLAB corrected HA→多省顺序→GovInv收益边界×0.9/1.1及Zt→GDP≤1%独立验证→lagged-NKPC递推；目的地税一次、same-S/前完整轮raw ra0、phi_max=.3、家庭人均/财政总量与三劳动账不变。Owner单点 `rah=.0675,w_eff=15.5,rb=.02,Tt=.1,rb_gap=.07`仍UNTESTED，M1实际Windows runner I/O未闭，M2稳态/校准未科学PASS，M3冲击缺可用稳态，M4 Results FALSE，V011 NOT_STARTED。
 
-Owner现有C盘物理独立SSD备份+GitHub，SSH key/443（本任务禁用Git/SSH），可信工作站风险界限照旧。原D盘8dirty/index/staged/untracked/ignored/外Git common-dir/旧失败回执/C备份、真实C8/2017/2018/B3均保护。**A16 FAIL_CLOSED；window UNACCEPTED；C9 PAUSED；CALL_LEDGER UNRESOLVED；real C8 A–D REQUEST_ONLY；V011 NOT_STARTED**。
+Owner现有C盘独立SSD备份+GitHub备份、SSHKey/443与可信工作站技术决定不变；禁止触写原D盘8dirty/index/staged/untracked/ignored/外Git common-dir、所有旧失败原件、C SSD备份和真实C8/2017/2018/B3。**A16 FAIL_CLOSED；window UNACCEPTED；C9 PAUSED；CALL_LEDGER UNRESOLVED；real C8 A–D REQUEST_ONLY；V011 NOT_STARTED**。
