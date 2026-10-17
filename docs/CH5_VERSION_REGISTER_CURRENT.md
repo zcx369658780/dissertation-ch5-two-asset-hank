@@ -1,18 +1,14 @@
-# CH5 版本登记 · V010 M1证据到合成科学长任务已冻结
+# CH5 当前版本登记 · V010 Stage B条件释放（B0优先）
 
-**交接归档：** [2026-10-17 V010长期任务与Owner决策](CH5_CONVERSATION_HANDOFF_20261017_V010_VERSION_LONG_TASK_STAGE_A.md)；本文件中的TASK_ACTIVE仍为原任务，不能据交接解锁Stage B。
-
-
-**RESEARCH_VERSION=V010/V0.0.10；V011 NOT_STARTED**。
-**WORKFLOW=V1.3_VERSION_LONG_TASK**。
+**版本=V010/0.0.10；V011 NOT_STARTED；WORKFLOW=V1.3_VERSION_LONG_TASK**。
 **ACTIVE_TASK=V010_M1_EVIDENCE_AND_CONDITIONAL_SYNTHETIC_MAINLINE_LONG_TASK**。
 **TASK_ISSUE_COMMIT=54454066859692a0f481cfa44de8df8dc298ce03；TASK_BLOB=5d87753b4a3ac972f37f1ac59722b464efd11bd9**。
-**STAGE_A=RAW_M1_ENGINEERING_EVIDENCE_AND_NON_SOLVER_PREP_ACTIVE**。
-**STAGE_B=FROZEN_SYNTHETIC_V010_SCIENCE_CONDITIONAL_NOT_RELEASED**。
-**RELEASE_REQUIRED=M1_SCOPED_ADAPTER_ENGINEERING_PRECONDITION_FOR_V010_SYNTHETIC_SCIENCE_PASS_BY_ASTRA**。
-**SCIENCE_CALLS_ALLOWED_NOW=0**。
-**FULL_RUNNER_IO_CLOSURE=BLOCKED；model_activation=False；Results FALSE**。
+**A4_SIGNED=M1_SCOPED_ADAPTER_ENGINEERING_PRECONDITION_FOR_V010_SYNTHETIC_SCIENCE=PASS**。
+**STAGE_A=DELIVERED__SCOPED_A4_ACCEPT**。
+**STAGE_B=RELEASED_CONDITIONAL__B0_ENGINEERING_PRE_SOLVER_FIRST**。
+**ACTUAL_SOLVER_CALLS=0_REPORTED__B1_NOT_RUN**。
+**FULL_RUNNER_IO_CLOSURE=BLOCKED；model_activation=False；Results FALSE；REAL_GE FALSE；V011 NOT_STARTED**。
 
-本次不把上一M1本地Adapter成功当完整独立工程PASS，已上传仅`DELIVERY_RECEIPT.json`和`DELIVERY_SUMMARY.md`，九个被索引的工程原件待独立验收。仅Stage A有即时资源许可：在新独立scratch进行9原证hash/ZIP、非求解focused/fixture/oracle与工程候选准备，Codex自主修普通工程问题。Stage B数值科学冻结新资源≤26 HA但**Astra审核九原证并明确释放前一律NOT_RUN**，以原`versions/0.0.10/plan.md`、fixture GitBlob `40915658d93403cfc21b33a6b864b332b7857749`为科学硬合同。真实C8/31省GE、正式IRF/论文Results和V011均不在此授权内。
+[A4独立原证主审](../versions/0.0.10/v010_m1_stage_a_a4_scoped_adapter_precondition_primary_review_20261017.md)确认九份旧M1已交付文件原字节9/9，与包/封存链静态一致；五份原raw、四份历史既有sanitized derivative，非重新执行Windows runner。Stage A22/22 focused和Python4/16仍Codex本地证据级。首次科学求解前原B0必须关闭完整V/概率质量身份和跨driver同任务科学预算账；然后只用固定双省synthetic fixture，按原任务最高26HA与所有严格HJB/KFE/outer/冻结GDP/短响应门推进，失败STOP。独立Windows原runner全部底层日志、N13时点、原生OS隔离等UNKNOWN不因此PASS。
 
-原科学plan GitBlob`85138d8859d53295262fe13bf5bc277bca95ed3f`、模型Tree`205eab47c4e4f9c6292c2ead9947d94d1a7579a5`不变；原D盘8dirty/index/外common-dir、C盘独立SSD备份及历史失败/raw、A16/window/C9/CALL_LEDGER/real C8边界保持。
+科学plan Blob `85138d8859d53295262fe13bf5bc277bca95ed3f`；模型Tree `205eab47c4e4f9c6292c2ead9947d94d1a7579a5`；fixture Blob `40915658d93403cfc21b33a6b864b332b7857749` 不变。原MATLAB两资产、省际劳动税一次、same-S/上一完整轮raw ra0、GovInv收益边界0.9/1.1与Zt、freeze GDP≤1%、lagged-NKPC均冻结。原8dirty/index、C SSD备份、历史A16/window/C9/CALL_LEDGER及real C8仍保护。
