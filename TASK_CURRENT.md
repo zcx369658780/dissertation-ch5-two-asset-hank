@@ -1,20 +1,16 @@
-# TASK_CURRENT：V010 时间戳修复证据远端交换（2026-10-17）
+# TASK_CURRENT：V010当前timestamp脱敏交换首写前身份门违规，已停止
 
-**ACTIVE_TASK=V010_CURRENT_TIMESTAMP_SANITIZED_EVIDENCE_EXCHANGE**。
-**ISSUED_COMMIT=74b1a21f9012c60fe3ad3f3a620e0e33f214083b；TASK_BLOB=f1567a2d8b96eacadbaa951dcf955adbfc589f98**。
-**TASK=[冻结原件](versions/0.0.10/current_timestamp_sanitized_evidence_exchange_task_20261017.md)**。
-**TYPE=EVIDENCE_EXCHANGE_ONLY；SCIENTIFIC_RUNTIME=NOT_AUTHORIZED**。
-**REVIEW_BRANCH=review/ch5-temp-v010-timestamp-proof-20261017**。
-**REMOTE_ONLY_PREFIX=_review_tmp/ch5/v010-timestamp-proof-20261017/**。
-**CANDIDATE_SOLE_PARENT=74b1a21f9012c60fe3ad3f3a620e0e33f214083b**。
-**ALLOWED_FILES=result.md,manifest.json,first_seal.json,final_seal.json,cases.json**。
-**NETWORK_CAP=SSH_REF_CHECK1__FULL_FETCH1__NONFORCE_PUSH1__REMOTE_READBACK1**。
-**LOCAL_CAP=POWERSHELL_STATIC_BATCH2__SOURCE_READ_MAX8_FILES_1MIB__NEW_FLAT_MAX9_FILES_2MIB__BARE_MAX3GIB__WALL_MAX150MIN**。
-**PYTHON=0；VERIFIED_LOADER=0；REAL_RUNNER=0；HA/HJB/KFE/GE/IRF/REAL_C8=0；PRIOR_TEST_RERUN=0**。
-**STOP=WAIT_ASTRA_V010_CURRENT_TIMESTAMP_EVIDENCE_REVIEW / STOP**。
+更新：2026-10-17（Asia/Shanghai）。
 
-当前任务仅交换最近一次本地时间戳修复的五份安全静态证据。此前Gate R现存脚本SHA和schema来源有Codex本地证据，但历史运行时源码哈希未记录；Gate T当前PowerShell 7.6.6解析合法JSON String/Z为System.DateTime/Utc，历史版本未知；Gate F的25项合成中24预期匹配、1项SPEC_UNRESOLVED。审议为[本地有限接受](versions/0.0.10/source_script_provenance_conditional_timestamp_local_only_primary_review_20261017.md)，Blob d6a53e96e359ac2c3d437ed9025cd5f58b129492。
+**ACTIVE_TASK=NONE**。
+**LAST_TASK=V010_CURRENT_TIMESTAMP_SANITIZED_EVIDENCE_EXCHANGE__DELIVERED__STOPPED**。
+**CLASS=FAIL_CLOSED__LOCAL_ONLY__PREWRITE_PATH_IDENTITY_ORDER_VIOLATION__NO_GITHUB_CANDIDATE**。
+**REVIEW=[正式限域主审](versions/0.0.10/current_timestamp_evidence_exchange_prewrite_identity_order_violation_local_only_primary_review_20261017.md)；REVIEW_BLOB=8437d51264c66558ff57821618c17ee567af74a4**。
+**NEXT_GATE=WAIT_OWNER_FRESH_V010_PREWRITE_IDENTITY_GUARD_AND_EVIDENCE_EXCHANGE_AUTHORITY / STOP**。
+**NEW_RUNTIME_PERMISSION=NONE__PS0__OLD_SOURCE_READ0__GIT/SSH/PUSH0__PYTHON0__REAL_RUNNER0__HA0**。
 
-只有源、脱敏、安全投影、Git对象完整性和五份白名单均通过前置门，才能以Owner既有SSH Key经443进行唯一的普通push。RAW_EXACT与SANITIZED_DERIVATIVE必须分别记账，不得将未上传本地raw或历史执行源码称为远端认证。第25项高精度形式不得升格为PASS，不得新定技术schema。remote-only临时路径不允许在任何本地项目工作树或Git索引中创建。失败即LOCAL_ONLY/STOP，禁止重推旧ref或继承已关闭的旧预算。
+上轮[冻结任务](versions/0.0.10/current_timestamp_sanitized_evidence_exchange_task_20261017.md)发行commit 74b1a21f9012c60fe3ad3f3a620e0e33f214083b / Git Blob f1567a2d8b96eacadbaa951dcf955adbfc589f98，任务要求在任何scratch文件写入前核实根目录与父路径身份。Codex已披露**先写入准备脚本、后发现尚未完成前置核验**，随后遵照FAIL_CLOSED停止，并据报没有执行脚本、读取旧证据、进行sanitizer扫描、建立bare仓、SSH/fetch/push、重跑原25案、运行Python/runner/HA。**写入时scratch真实路径身份未认证**，不能把“未执行脚本”或“无GitHub候选”替代前置路径安全PASS；也未取得独立证据证明保护资源被改变。
 
-**FULL_RUNNER_IO_CLOSURE=BLOCKED；model_activation=False；Results FALSE；V011 NOT_STARTED**。科学冻结合同、历史旧封存不可验证及所有原始资产保护不变。
+据Codex回报终态封存批次1、新增文件2份共25,733B；其余旧证读取/模型/Git/SSH为0。未提供可分别核算的其他PowerShell准备批次、精确写入目标root路径身份或文件逐项hash，不应虚构。最终receipt SHA256 `EFC643EE08F7BE5E217DB748B11C7EA6C4E431C36B6FC00388EB0EE084A994B8`为Owner转述、本机字节未给Astra重算。GitHub查询目标ref404，远端候选commit/tree/five blobs不存在。所有本轮未用新发布/工程次数预算与更早STOP任务剩额封闭，不结转。旧V010科学计划及资产保护不变。
+
+先前本地Gate R/T/F的现时PS7.6.6类型误拒和25例24 expected、1 SPEC_UNRESOLVED仍仅CODEX_REPORTED，历史执行脚本字节仍UNVERIFIED；旧B/S/L首版seal原字节/旧run_id仍UNVERIFIABLE，旧被拒资料DENIED、历史台账原文处理偏差UNRESOLVED。未来如Owner批准，需新独立scratch、先只读验证路径、再第一次写入、最后制作安全审阅文档与单次新review ref；不能对本轮已写目录追溯造证。**当前不发行后继任务或科学预算**。FULL_RUNNER_IO_CLOSURE BLOCKED、model_activation=False、Results FALSE、V011 NOT_STARTED、real C8 REQUEST_ONLY和既有D盘/C盘备份保护均有效。
