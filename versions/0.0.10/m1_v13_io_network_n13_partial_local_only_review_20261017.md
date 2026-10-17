@@ -4,7 +4,7 @@
 **冻结任务ID：** `V010_M1_V13_IO_READ_NETWORK_AUDIT_CANONICAL_N13_INTEGRATED_REPAIR`  
 **固定发行Commit：** `72f1ef4c908b31fba339f16ccb5dba0cc7bd4fbc`  
 **固定任务Blob：** `9e0160ed27a80a49cc07374f79cb75d80cfe16aa`  
-**正式任务：** [只读冻结原件](../versions/0.0.10/m1_v13_io_read_network_audit_canonical_n13_integrated_task_20261017.md)  
+**正式任务：** [只读冻结原件](m1_v13_io_read_network_audit_canonical_n13_integrated_task_20261017.md)  
 **交付ID：** `V010_M1_V13_IO_NETWORK_CANONICAL_N13_INTEGRATED_RESULT`  
 **总分类：** `PARTIAL_ENGINEERING_DIAGNOSTIC__LOCAL_ONLY__IO_PROBE_NARROW_FIX_REPORTED__SOCKET_GETHOSTNAME_CLASSIFIED__N13_TIMED_TIMEOUT_REAP_CODEX_REPORTED__CANONICAL_IMPORT_GIT_NO_CAPABILITY_BLOCKED__NINE_MODULE_AND_RUNNER_NOT_RUN`  
 **任务结果：** `DELIVERED__STOPPED`；`ACTIVE_TASK=NONE`；全部本轮未用Python及Git额度关闭、不结转。  
