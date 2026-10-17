@@ -1,17 +1,19 @@
-# TASK_CURRENT：V010 SOURCE_TIMESTAMP来源身份门缺失，任务已STOP
+# TASK_CURRENT：V010 来源脚本恢复与条件式SOURCE_TIMESTAMP修复
 
 更新：2026-10-17（Asia/Shanghai）。
-**ACTIVE_TASK=NONE**。
-**LAST_TASK=V010_SOURCE_TIMESTAMP_TYPED_GUARD_CORRECTION_AND_SYNTHETIC_REGRESSION__DELIVERED__STOPPED**。
-**REVIEW=[正式主审](versions/0.0.10/source_timestamp_typed_guard_source_index_missing_fail_closed_local_only_primary_review_20261017.md)；REVIEW_BLOB=5b4a63f453fc472cc90869ca9e029c7657757caf**。
-**CLASS=FAIL_CLOSED__LOCAL_ONLY__SOURCE_INDEX_MISSING__NO_TYPED_DIAGNOSTIC_OR_FIX**。
-**NEXT_GATE=WAIT_OWNER_FRESH_V010_SOURCE_SCRIPT_IDENTITY_RECOVERY_AUTHORITY / STOP**。
-**NEW_PERMISSION=NONE__PS0__SOURCE_READ0__GIT/SSH/PUSH0__PYTHON0__RUNNER0__SCIENTIFIC_HA0**。
+**ACTIVE_TASK=V010_SOURCE_SCRIPT_PROVENANCE_RECOVERY_AND_CONDITIONAL_TIMESTAMP_FIX**。
+**FIXED_ISSUE_COMMIT=fafffe0582a213ceec25312f97f47ade6f1aa508；FIXED_TASK_BLOB=22aea7c18716c36ffb1f3154d35d751d9f524bf1**。
+**TASK_FILE=[唯一冻结任务原件](versions/0.0.10/source_script_provenance_recovery_conditional_timestamp_fix_task_20261017.md)**。
+**CLASS=BOUNDED_SOURCE_PROVENANCE_RECOVERY__CONDITIONAL_ENGINEERING_ONLY_TIMESTAMP_FIX**。
+**BUDGET=ROOTS3_METADATA_DEPTH0_ONCE_EACH_MAX12__OLD_READ_MAX12_FILES_2MIB__PS_BATCH_MAX2__SYNTHETIC_MIN12_IF_GATES_PASS__NEW_SCRATCH_MAX8_FLAT_FILES_1MIB__WALL150MIN**。
+**NO_AUTHORITY=GIT0__SSH0__FETCH/PUSH0__OLD_STOP_RETRY0__PYTHON0__MODEL_IMPORT0__REAL_RUNNER0__HA/HJB/KFE/GE/IRF/REAL_C8_0**。
+**DELIVERY=LOCAL_ONLY__NO_GITHUB_REVIEW_PUBLICATION**。
+**STOP=WAIT_ASTRA_V010_SOURCE_PROVENANCE_CONDITIONAL_TIMESTAMP_REVIEW / STOP**。
 
-上一[固定工程任务](versions/0.0.10/source_timestamp_typed_guard_correction_and_synthetic_regression_task_20261017.md)发行Commit `6dfe8a1c98a839f0a94cdd0e938bb6b60f99d520`、Git Blob `68143e917df883e38fa4615ce0a7c7a86c797330`，现`DELIVERED__STOPPED`。上一失败receipt实际SHA据Codex在本机匹配，但其manifest的`sourceIndex`为空，没有守门脚本确切路径、整个脚本SHA256、原字段/schema锚点。冻结任务第1节规定缺明确来源索引即STOP，Codex保留了原件并停止，**没有**猜测文件路径或运行未授权扫描。不能以`sourceIndex`为空推断守门脚本已丢失，也不能认定timestamp非法、解析器曾自动转DateTime；原token、解析类型和parser版本均未诊断，guard修复与12项合成回归`NOT_RUN`。
+Owner同意后新授权**明确枚举范围**：R1 前次SOURCE_TIMESTAMP交换失败scratch；R2 刚停止的typed修复scratch；R3 最前17项集成seal scratch。每个根至多一次非递归metadata inventory/≤12直接子项，不扩大至其他目录；只有既有执行/receipt能证明实际SOURCE_TIMESTAMP guard脚本来源、其当下整文件hash以及字段/schema锚点，才可读取并继续T/F。前任务的manifest sourceIndex为空，本轮允许有界恢复而非继续空索引循环；但仅“目录里找到类似源码”不等于该脚本被前一任务真实运行。缺来源或执行绑定→STOP，绝不伪造历史脚本/原timestamp数据。
 
-本轮Codex报告PowerShell 1/2、旧文件2份共4次读取累计6,800B、新文件4份9,463B；Git/SSH/model Python/runner/全部科学0。新first/final据报同run_id与单向hash链，仍只有本地证据等级；Owner给本轮最终receipt SHA256 `1E9A02F1C9AF59FAB80BED91E39353EB4CCBD87884D46C229D3E9C44610846BC`，Astra未取字节直接重算。旧B/S/L20首版raw和run_id缺失永久`LEGACY_SEAL_UNVERIFIABLE`；最新17/17合成及其seal仅Codex本地回执级；原Sanitizer拒绝UNKNOWN且旧候选PUBLICATION_DENIED，历史ledger原argv/源码复制偏差UNRESOLVED。
+若Gate R完整，Gate T限一次旧JSON字段真实raw token/parse后type与解析器版本诊断；Gate F只在新scratch修复且对冻结旧schema至少做12合成正反例，并可再一次原字段只读校验。所有旧read ≤12 distinct files、总实际read bytes≤2MiB；两个新PS批次（失败计入）、wall≤150min、新平铺≤8件总≤1MiB、末尾reserve≥128KiB。无GitHub发布/bare、Python/runner或科学许可；原17/20项不得重跑，旧任务未用PS1/2等预算不可结转。
 
-**本次不签发新执行任务。** 下一建议由Owner新授权一次精确来源身份恢复：从已冻结并有授权的任务/receipt索引中取得`authorized_path + whole_file_SHA256 + source_field/schema anchor`三元身份；不可从空sourceIndex无限枚举旧目录。只有来源证明完整，才可在新的独立任务权限下继续时间戳类型诊断、合成正反测试；若证据缺失继续STOP，未来GitHub发布另申请一次性授权。禁止恢复原STOP余额/擦改本机回执。
+上一正式[审议](versions/0.0.10/source_timestamp_typed_guard_source_index_missing_fail_closed_local_only_primary_review_20261017.md) Git Blob5b4a63f453fc472cc90869ca9e029c7657757caf保留SOURCE_INDEX_MISSING/FAIL_CLOSED/LOCAL_ONLY、无Guard诊断。Codex本机旧2文件四次读累计6800B，新4文件9463B；Owner上次最终receipt SHA256 1E9A02F1C9AF59FAB80BED91E39353EB4CCBD87884D46C229D3E9C44610846BC，Astra未从本机读取复核。老B/S/L first seal永久UNVERIFIABLE、新17合成证明仅CODEX_REPORTED、旧sanitization DENIED/UNKNOWN、历史ledger偏差UNRESOLVED均不变。
 
-V010科学plan/模型不变，corrected HA单点UNTESTED、FULL_RUNNER_IO_CLOSURE BLOCKED、model_activation=False、Results FALSE、V011 NOT_STARTED。原A16/window/C9/CALL_LEDGER、real C8 REQUEST_ONLY、8dirty/index/external common-dir、C SSD备份、全部历史失败原件不可触写。
+V010原MATLAB HANK主线、冻结plan/model源码、corrected单点HA UNTESTED、FULL_RUNNER_IO_CLOSURE BLOCKED、model_activation=False、Results FALSE、V011 NOT_STARTED及A16/window/C9/CALL_LEDGER、real C8 REQUEST_ONLY、原8dirty/index/common-dir/C SSD备份所有保护不变。Codex只能按本固定任务交付 V010_SOURCE_SCRIPT_PROVENANCE_RECOVERY_CONDITIONAL_TIMESTAMP_FIX_RESULT，然后STOP，不能自授PASS或下一轮许可。
