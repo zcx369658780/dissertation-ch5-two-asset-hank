@@ -1,5 +1,10 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-17 最新会话交接：V010 M1 Stage A活动中，Stage B尚未释放
+
+**新会话先读 [正式交接](../CH5_CONVERSATION_HANDOFF_20261017_V010_VERSION_LONG_TASK_STAGE_A.md) 与CURRENT/TASK_CURRENT，再读冻结任务。** 唯一`ACTIVE_TASK=V010_M1_EVIDENCE_AND_CONDITIONAL_SYNTHETIC_MAINLINE_LONG_TASK`，发行`54454066859692a0f481cfa44de8df8dc298ce03`/Blob`5d87753b4a3ac972f37f1ac59722b464efd11bd9`；Stage A仅九原件一次ZIP/非求解公式准备，Stage B原双省synthetic科学≤26HA预算只是冻结，**Astra独立审阅M1九原证并GitHub明确签出前HA/HJB/KFE/selector/root调用数0**。Owner确认V1.3大版本长任务优先，不恢复单异常/单文件微任务，普通E1故障Codex在任务内修；保留严肃保护根/经济数学硬边界。上一M1本地scoped-adapter+runner工程候选未获独立完整PASS，`DELIVERY_RECEIPT.json`、`DELIVERY_SUMMARY.md`两文件原字节SHA已由Astra复算，但索引的九个工程原件尚未上传；`Results FALSE`、`V011 NOT_STARTED`。下方旧ACTIVE均为历史时态，不能覆盖此最新任务与Stage B锁。
+
+
 ## 2026-10-17 V1.3本地文档镜像同步已限域验收：SOURCE SHA256 7/7
 
 **WORKFLOW=V1.3__GITHUB_PUBLISHED__LOCAL_CODEX_DOC_SYNC_LIMITED_ACCEPTED；ACTIVE_TASK=NONE**。上一固定一次性`CH5_V13_ONE_TIME_CODEX_LOCAL_DOCUMENT_SYNC`（发行Commit `77b4e7119b23008b8b708b6b39cc6b75077e2b4b`/任务Blob `daf6807397ac19a580a45a73c14e27665580bb04`）已Codex交付、任务STOP。Astra**独立从GitHub固定发行Commit读取7份文档并SHA256逐项复算，7/7与Codex报告一致，合计45,620B**。Codex报告其本地独立镜像8份文件共51,292B，AGENTS导航5,672B、SHA256 `8E6A46E76AC8A3BB3E7EFFE92448E2E3E5C0B96BF428FB976592E4436ADD2744`；写前时间顺序10:14:38只读preflight，10:15:51创建目录/复核，10:16:32首次写入，PowerShell静态2、记忆检索1、Node同步3、总114.341秒。这些**Windows本地目录/AGENTS/时序/保护没有网页原字节或文件系统独立核证**，只接受为CODEX_REPORTED_WITH_LOCAL_RECEIPTS，不宣传OS安全沙箱或原保护资产全字节已验。旧固定发行快照中的CURRENT/TASK_CURRENT保留STOP是正常的历史副本，最新任务授权一律看动态治理分支现时文件。Owner已确认上传V1.3项目Sources，但平台个人Memory summary不以此自动变更。

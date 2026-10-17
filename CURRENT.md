@@ -1,5 +1,8 @@
 # 第五章 CURRENT · V010 工程证据到合成科学的长任务（科学阶段待释放）
 
+**2026-10-17最新会话交接（Owner要求GitHub永久保存）：** [V010 Stage A生效、Stage B冻结以及Owner决策的完整交接](docs/CH5_CONVERSATION_HANDOFF_20261017_V010_VERSION_LONG_TASK_STAGE_A.md)。本轮交接不新增任务、不替换冻结Task Commit/Blob，不开放科学求解；后续仅按原任务接续。
+
+
 2026-10-17（Asia/Shanghai）Owner明确请求继续下达版本任务，V1.3单张版本长任务生效；不启动V011。
 **WORKFLOW=V1.3__VERSION_LONG_TASK__NO_MICROTASK_SPLIT**。
 **RESEARCH_VERSION=V010/V0.0.10；V011 NOT_STARTED**。
