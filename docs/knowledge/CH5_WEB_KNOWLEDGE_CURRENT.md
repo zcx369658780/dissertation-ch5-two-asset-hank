@@ -1,5 +1,12 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-17最新：V010 来源脚本有界恢复及条件式timestamp修正ACTIVE
+
+Owner已明确同意集中新任务`V010_SOURCE_SCRIPT_PROVENANCE_RECOVERY_AND_CONDITIONAL_TIMESTAMP_FIX`，冻结[任务全文](../../versions/0.0.10/source_script_provenance_recovery_conditional_timestamp_fix_task_20261017.md)，发行commit`fafffe0582a213ceec25312f97f47ade6f1aa508`/Git Blob`22aea7c18716c36ffb1f3154d35d751d9f524bf1`。上轮[独立主审](../../versions/0.0.10/source_timestamp_typed_guard_source_index_missing_fail_closed_local_only_primary_review_20261017.md) Blob`5b4a63f453fc472cc90869ca9e029c7657757caf`确认旧冻结任务符合STOP，Codex自报manifest中sourceIndex为空，没有旧SOURCE_TIMESTAMP守门脚本精确路径、调用身份、全文件哈希及字段/schema锚点，真实parse前后timestamp类型和解析器仍未诊断；**不证明旧脚本丢失或原timestamp非法**。为避免循环依赖这个空索引，新Owner授权对**三处指定历史scratch根各最多一次非递归depth0 metadata inventory、每根≤12个直接子项**，只允许有明确来源链的候选内容只读，全部旧文件≤12份、实际读取≤2MiB；找不到旧脚本及其实际调用绑定、全文件SHA/字段schema锚点则STOP，不能靠文件名猜测或恢复缺失的历史字节。若身份可信，才限新独立scratch运行真实解析类型诊断与语义守门修复、至少12个安全合成正反例，PS≤2批、wall≤150min、非Git flat≤8文件1MiB。新Git/SSH/证据上传、Python/runner/HA/GE/IRF/real C8所有0，旧额度不结转。
+
+更早B/S/L20旧first无raw/run_id永久UNVERIFIABLE；当前17项合成与new seal本机Codex reported未远端独立验证，旧sanitizer拒绝原命中UNKNOWN/材料DENIED、历史raw argv/源码ledger偏差UNRESOLVED。V010科学合同原MATLAB纠错/HA黑箱→多省顺序→GovInv收益边界×0.9/1.1与Zt→GDP≤1%独立回读→lagged-NKPC、目的地税一次、same-S/上完整轮raw ra0、phi_max=.3、家庭财政/三劳动账不改；M1真实runner I/O BLOCKED、Owner新corrected HA单点UNTESTED，M2稳态/校准未过，M3无合格基点，M4 Results FALSE，V011 NOT_STARTED。Owner现有C SSD+GitHub双备份/可信工作站方案、原D盘8dirty/index/外Git common-dir/旧失败回执/C备份/真实C8、A16/window/C9/CALL_LEDGER严格保护。本条与CURRENT/TASK_CURRENT优于下方所有历史ACTIVE；GitHub更新不证明本地QMD/Basic Memory同步。
+
+
 ## 2026-10-17最新：V010 sourceIndex为空，SOURCE_TIMESTAMP修复未开始，任务STOP
 
 当前`ACTIVE_TASK=NONE`。Codex交付的`V010_SOURCE_TIMESTAMP_TYPED_GUARD_CORRECTION_AND_SYNTHETIC_REGRESSION_RESULT`为`FAIL_CLOSED/LOCAL_ONLY`：上一失败回执manifest的`sourceIndex`为空，无确切守门源码授权路径、整体hash或源字段/schema索引；严格按冻结任务第1节STOP，未猜路径或扩大扫描。最新GitHub[独立限域主审](../../versions/0.0.10/source_timestamp_typed_guard_source_index_missing_fail_closed_local_only_primary_review_20261017.md) Blob `5b4a63f453fc472cc90869ca9e029c7657757caf` 已完成归档，正式任务发行Commit`6dfe8a1c98a839f0a94cdd0e938bb6b60f99d520`/Blob`68143e917df883e38fa4615ce0a7c7a86c797330`已关闭。**空sourceIndex不能证明旧源码丢失，也不是时间戳无效或解析器自动转换的证据**。JSON原token/parse类型/parser版本未知，守门修复、合成≥12例与旧字段复核均NOT_RUN。Codex报告本轮PS1/2、旧两文件四次读取累计6,800B、新四文件9,463B，Git/SSH/Python/runner/科学0；new first/final据报同run_id与单向hash关系、Owner转述final receipt SHA256`1E9A02F1C9AF59FAB80BED91E39353EB4CCBD87884D46C229D3E9C44610846BC`，但Astra未取得本机原字节独立核验。全部STOP余量不结转，无新GitHub candidate或科学授权。
