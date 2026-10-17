@@ -1,25 +1,23 @@
-# 第五章 CURRENT · V010 M1长任务B1科学失败，已 STOP
+# CH5 CURRENT · V010 CP2_F25机制取证/条件式实现修复长任务 ACTIVE
 
-**最新永久终审：** [V010 M1 B0工程/B1 CP2_F25科学失败原证主审](versions/0.0.10/v010_m1_long_synthetic_b1_cp2_f25_independent_terminal_review_20261017.md)。
-
+**Owner新决定（2026-10-17）：「可以，我同意你的建议继续V010，先修复」。**
+**当前唯一冻结执行任务：[V010 CP2_F25 Selector机制/修复长任务](versions/0.0.10/v010_cp2f25_selector_mechanism_conditional_repair_long_task_20261017.md)**。
 **WORKFLOW=V1.3__VERSION_LONG_TASK__NO_MICROTASK_SPLIT**。
-**RESEARCH_VERSION=V010/0.0.10；V011 NOT_STARTED**。
-**ACTIVE_TASK=NONE**。
-**MOST_RECENT_TASK=V010_M1_EVIDENCE_AND_CONDITIONAL_SYNTHETIC_MAINLINE_LONG_TASK**。
-**TASK_ISSUE_COMMIT=54454066859692a0f481cfa44de8df8dc298ce03；FROZEN_TASK_BLOB=5d87753b4a3ac972f37f1ac59722b464efd11bd9**。
-**TASK_TERMINAL=DELIVERED__STOPPED__SCIENCE_FAIL_CLOSED**。
-**STAGE_A=ACCEPTED_SCOPED__A4_SCIENCE_PRECONDITION_SIGNED_20261017**。
-**STAGE_B_B0=NON_SOLVER_ENGINEERING_LIMITED_ACCEPT_7_OF_7_LOCAL_RECEIPTS**。
-**STAGE_B_B1=CP2_F25_NO_ADMISSIBLE_POLICY__HA1_FAILED__NO_SECOND_HA**。
-**STAGE_B_B2_B3_B4=NOT_RUN**。
-**STOP=WAIT_OWNER_DECISION__NO_NEW_RUN_OR_BUDGET**。
-**ALL_UNUSED_FROZEN_TASK_BUDGET=CLOSED__NO_CARRY_FORWARD**。
-**FULL_RUNNER_IO_CLOSURE=BLOCKED；NATIVE_IMPORT=BLOCKED；model_activation=False；REAL_GE=False；Results FALSE；V011 NOT_STARTED**。
+**RESEARCH_VERSION=V010/v0.0.10；V011 NOT_STARTED**。
+**ACTIVE_TASK=V010_CP2F25_SELECTOR_MECHANISM_AND_CONDITIONAL_REPAIR_LONG_TASK**。
+**FIXED_TASK_ISSUE_COMMIT=98b3154e84db62d4d319836db0a39e3278017c33；FIXED_TASK_ISSUE_TREE=8276017276abbeaae75ba266eae67c53646088a8；FIXED_TASK_BLOB=dfc29c2df0187875aee8d81b0ad6a23662e76a02**。
+**PREVIOUS_TASK=V010_M1_EVIDENCE_AND_CONDITIONAL_SYNTHETIC_MAINLINE_LONG_TASK__STOPPED__SCIENCE_FAIL_CLOSED__OLD_BUDGET_CLOSED**。
+**STAGE_F=AUTHORIZED__FROZEN_F25_RAW_FORENSIC_AND_INDEPENDENT_MATH_ORACLE**。
+**STAGE_R=CONDITIONAL__MATH_PRESERVING_SELECTOR_IMPLEMENTATION_BUG_FIX_ONLY**。
+**STAGE_D=CONDITIONAL__SINGLE_CELL_SELECTOR_ONLY_DIAGNOSTIC_WITH_EXPLICIT_COUNT**。
+**FULL_HA_HJB_KFE/OUTER_GE/IRF/REAL_C8_MODEL_SCIENCE_CALLS_NOW=0**。
+**NEXT=CODEX_EXECUTE_SAME_NEW_FROZEN_TASK__WAIT_ASTRA_V010_CP2F25_MECHANISM_REPAIR_REVIEW / STOP**。
+**FULL_RUNNER_IO_CLOSURE=BLOCKED；model_activation=False；REAL_GE=False；Results FALSE；V011 NOT_STARTED**。
 
-实际Owner上传本长任务ZIP 1,877,576B，SHA256 `D76207C452496737D4A9DCA159A197826E9053A7298383AD003A6BEB30AD2E8B`，成员清单425/425逐字节hash/长度全部独立核对。包含Stage A原生记录、B0 7/7测试本机原证、第一driver argv启动失败原始stderr、第二真实science driver与 CP2_F25 first_failed_cell，以及3276事件16B持久科学journal。实际独立重算原事件CRC 3276/3276，计数HA1、policy maps3（800/800/26）、HJB updates2、roots1642、selector cells1626、KFE0；真实B1源与fixture固定身份。无合格HJB或KFE，绝不声称稳态/Results。
+本次不复活上张M1科学失败后的HA1/26或unused science driver/focused余额。新工程合同≤6小时、总工程Python≤24含focused pytest≤8、selector-only单格diagnostic≤64与其内部roots≤2048，非Git新增≤64MiB；完整HA/HJB/KFE、两省稳态及动态额度为0。单格selector调用不能伪报science0，必须另账显式计数。上一CP2/F25原证12候选0可接纳，原source/fixture和冻结HJB双门/KFE、经济方程及所有保护资产保持不变。
 
-冻结科学plan Blob `85138d8859d53295262fe13bf5bc277bca95ed3f`、模型Commit `94de4501dec051b969bee9d852eba2d4591f30ef`/Tree `205eab47c4e4f9c6292c2ead9947d94d1a7579a5`、fixture Blob `40915658d93403cfc21b33a6b864b332b7857749` 均未修改。本地两个B0工程改动只是孤立`LOCAL_EXECUTION_VIEW_ONLY`与可复算patch，GitHub无模型合并候选，未获任何科学方法变更采纳。
+**唯一新路径例外**：新的独立候选视图仅可在已有corrected selector的数学规则完全等价、源证证明存在实现漏项前提下，最小修改 `src/ch5_two_asset_hank/corrected_diagnostic/selector.py`，并新增一份focused测试 `tests/test_v010_cp2f25_selector_mechanism.py`。原冻结科学plan不追改；任何KKT/阈值/法则变更或需要第三条源码路径立即STOP，交Owner科学决定。不是已接受的数学修正。
 
-Stage A工程Python4/16、Stage B focused4/6、science drivers2/4及HA1/26为已关闭的本任务累积，不可用剩余次数重试。原corrected selector/HJB/KFE双门、原人口/劳动/税、same-S/lagged原始ra0、GovInv×0.9/1.1+Zt、GDP独立≤1%、lagged-NKPC均保持。历史A16/window/C9/CALL_LEDGER、old first/unverifiable、原8dirty/index/common-dir与C SSD备份/real C8保护继续生效。
+**FROZEN_PLAN_BLOB=85138d8859d53295262fe13bf5bc277bca95ed3f；MODEL_COMMIT=94de4501dec051b969bee9d852eba2d4591f30ef；MODEL_TREE=205eab47c4e4f9c6292c2ead9947d94d1a7579a5；FIXTURE_BLOB=40915658d93403cfc21b33a6b864b332b7857749**。
 
-**下一动作仅由Owner决定是否新签一张V010完整受界CP2_F25机制调查长任务；目前不自动派任务、无新Python/HA科学授权。**
+脱敏审阅优先远端独立ref `review/ch5-temp-v010-cp2f25-selector-mechanism-20261017`、仅远端 `_review_tmp/ch5/v010-cp2f25-selector-mechanism-20261017/`，恰以ISSUE_COMMIT为review候选唯一parent，result.md、manifest.json、可选repair.patch白名单一次普通非强制push；先Astra永久归档回读，后仅清除远端临时文件。SSH失败则LOCAL_ONLY并由Owner可选上传私有ZIP，不替换固定任务。保护原D盘dirty/index/external common-dir、旧M1完整raw、C SSD备份与A16/window/C9/CALL_LEDGER；不新增VM/第三备份或重写旧失败。
