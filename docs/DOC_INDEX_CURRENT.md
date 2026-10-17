@@ -1,21 +1,20 @@
-# 第五章动态总目录 · V1.3 M1 一体化长任务 ACTIVE
+# 第五章动态总目录 · V1.3 M1长任务工程候选已交付
 
-**WORKFLOW=V1.3__CONSOLIDATED_LONG_TASK_ACTIVE**。
 **VERSION=V010/V0.0.10；V011 NOT_STARTED**。
-**ACTIVE_TASK=V010_M1_V13_CONSOLIDATED_ENGINEERING_EXIT**。
-**FIXED_ISSUE_COMMIT=6f4df14b62fb7f5406b3df97707848aab21edf71；TASK_BLOB=762ad617365a82bc1fee2b0cc986b3e816edc883**。
+**WORKFLOW=V1.3__CONSOLIDATED_LONG_TASK_DELIVERED**。
+**ACTIVE_TASK=NONE**。
+**LAST_TASK=V010_M1_V13_CONSOLIDATED_ENGINEERING_EXIT__STOPPED**。
+**M1=FUNCTIONAL_ENGINEERING_CANDIDATE_CODEX_REPORTED__INDEPENDENT_EVIDENCE_PENDING**。
 **FULL_RUNNER_IO_CLOSURE=BLOCKED；model_activation=False；Results FALSE**。
 
-| 当前文件 | 作用 |
+| 当前文件 | 本轮用途 |
 |---|---|
-| **[V010 M1 唯一一体化工程长任务](../versions/0.0.10/m1_v13_consolidated_engineering_exit_task_20261017.md)** | 一张任务覆盖冻结源码、Git raw/logs分账、ledger并发修复、platform兼容、canonical、九模块、真实runner、集中证据 |
-| [CURRENT](../CURRENT.md)、[TASK_CURRENT](../TASK_CURRENT.md) | 权限、预算、唯一ACTIVE与STOP |
-| [上轮硬超限正式主审](../versions/0.0.10/m1_v13_platform_syscmd_ver_local_only_output_cap_fail_closed_review_20261017.md) | 上轮历史FAIL_CLOSED不改、分离raw/source与诊断日志的根因假设 |
-| [V1.3快速工程工作流](CH5_ASTRA_WORKFLOW_V1_3_20261017.md) | 普通E1缺陷在整体预算内自主修复，E2/E3保护及科学硬边界仍有效 |
-| [Owner Loader/备份决定](CH5_OWNER_RISK_BACKUP_SSH_LOADER_DECISION_20261016.md) | 冻结Git70源、可信Windows工作站、C SSD+GitHub既有备份 |
-| [可选GitHub remote-only审阅协议](CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md) | 仅新独立review branch，安全脱敏、先验收后清理 |
-| [V010冻结科学计划](../versions/0.0.10/plan.md) | GitBlob 85138d8859d53295262fe13bf5bc277bca95ed3f；科学运行另批 |
-| [科研阶段进度](CH5_V010_ROADMAP_PROGRESS_AND_NEXT_GATES_20261016.md) | M1工程待真闭合，M2稳态/M3冲击/M4 Results未获当前科学资格 |
-| [科学决定](../SCIENTIFIC_DECISIONS.md) | 原MATLAB数学合同、单位、阈值及旧失败保持 |
+| [**M1 一体化长任务正式限域主审**](../versions/0.0.10/m1_v13_consolidated_engineering_local_only_candidate_review_20261017.md) | adapter canonical、九模块、runner与负例均仅本机报告级；raw证据未获独立审阅 |
+| [CURRENT](../CURRENT.md)、[TASK_CURRENT](../TASK_CURRENT.md) | 无ACTIVE、旧预算STOP、下一阶段证据要求 |
+| [已完成的冻结长任务](../versions/0.0.10/m1_v13_consolidated_engineering_exit_task_20261017.md) | 首次发行Commit`6f4df14b62fb7f5406b3df97707848aab21edf71` / Blob`762ad617365a82bc1fee2b0cc986b3e816edc883`；不追改 |
+| [V1.3快速工程工作流](CH5_ASTRA_WORKFLOW_V1_3_20261017.md) | 不再围绕普通工程/输送错误拆微任务，集中验收 |
+| [Owner风险与VerifiedLoader决定](CH5_OWNER_RISK_BACKUP_SSH_LOADER_DECISION_20261016.md) | Windows可信工作站及原模型双根身份 |
+| [V010冻结科学计划](../versions/0.0.10/plan.md) | GitBlob 85138d8859d53295262fe13bf5bc277bca95ed3f；HA科学仍需新许可 |
+| [科学决定](../SCIENTIFIC_DECISIONS.md) | 保持原MATLAB方法/数学阈值和真实数据/Results保护 |
 
-Owner明确禁止把普通工程报错继续拆分微任务；本次新工程总预算8h、24 Python，工程工件128MiB，固定raw数据通道16MiB与日志1MiB分别计量；不续旧预算，不修改旧失败，HA/HJB/KFE/GE/IRF/real C8全部新权限0，`Results FALSE`与`V011 NOT_STARTED`。
+本轮承认M1工程候选实质进展：Codex报告23/24工程Python、canonical scoped adapter通过、九监测模块/五Git child runner I/O/负例通过、科学0；但GitHub review ref不存在，原生未适配import仍BLOCKED，缺本机可独立复算的汇总/receipt/runner原字节、first-final、资源原账。优先由Owner直接附已存在安全材料作一次集中独立审阅，**不重开M1微任务**，不在此自动授权HA、GE或V011。
