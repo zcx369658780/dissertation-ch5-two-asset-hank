@@ -1,3 +1,14 @@
+# 第五章当前工作方式 · V1.3（2026-10-17 Owner批准）
+
+**AUTHORITATIVE_WORKFLOW=V1.3__OWNER_APPROVED__GITHUB_PUBLISHED__LOCAL_CODEX_SYNC_PENDING**。
+**NEW_RULES=[V1.3本地工程快速通道](CH5_ASTRA_WORKFLOW_V1_3_20261017.md)**。
+**ONE_TIME_LOCAL_SYNC_TASK=[仅文档同步](../versions/0.0.10/workflow_v13_one_time_codex_local_docs_sync_task_20261017.md)**。
+新V1.3规则优先于下文V1.2关于日常工程调试/逐份验收文件的旧写法，**不追改历史冻结任务，也不改变原科学硬门、保护根或既有预算**。Codex文档镜像仍需独立一次同步回执；ChatGPT项目Sources需要Owner手动上传更新包，平台Memory并未因GitHub写入即时刷新。
+
+---
+
+## 以下是V1.2历史完整正文（保留作为继承约束，冲突以V1.3明确覆盖为准）
+
 # 第五章当前工作方式 · V1.2
 
 > **2026-10-16新的Owner效率/备份/SSH/Loader决定（优先于下方更早“VM安全门仍待选”的历史时态，V1.2核心科学门不变）**：科研无保密需求；本地C盘与D盘是独立SSD且已有**C盘备份＋GitHub备份**足够，禁止额外无必要的第三备份/强制Windows VM。Codex GitHub使用**现有SSH Key/ssh.github.com:443**，不要求PAT或更改global/system Git config；Astra使用已连接GitHub工具作远端独立验收/治理。Astra已选`TRUSTED_WORKSTATION_ENGINEERING_CONTAINMENT`＋双根Git身份/认证原字节VerifiedLoader，仅用于有界ENGINEERING_ONLY import，不声称可防恶意native/OS sandbox。上位[Owner技术风险决策](CH5_OWNER_RISK_BACKUP_SSH_LOADER_DECISION_20261016.md)，本轮固定任务[Trusted Loader工程预检](../versions/0.0.10/trusted_workstation_loader_engineering_preflight_task_20261016.md)commit`01129efd5220683d415bd1486f23f6ecd068cb53`/blob`1e6757fd235fd96d8b08130ca3fefb3b602c413c`。新ENGINEERING Python≤6/真实runner≤2，科学HA/真实数据0；运行必须有该固定任务，旧预算不结转，A16/window/C9/CALL_LEDGER/Results与V011禁令照旧。

@@ -1,5 +1,10 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-17 V1.3项目工作流与记忆覆盖已批准（本段优先所有较早任务时态）
+
+Owner批准第五章GPT顾问由V1.2升级为工程快速通道V1.3。[正式V1.3](../CH5_ASTRA_WORKFLOW_V1_3_20261017.md)新增普通工程任务内自主修复、首次写入前只读Preflight、真实first/final与sourceIndex最小封存、日常精简一次验收及重要科学完整审验，不改变旧任务/科学预算。GPT Project Sources用[2026-10-17 V1.3知识覆盖](CH5_GPT_PROJECT_SOURCE_OVERLAY_V13_20261017.md)替代旧10月12日时态判断。**本地Codex文档镜像一次同步仍待实际运行回执；GPT项目Source需要Owner手动上传，平台Memory未被强制刷新。** 当前只授权DOC_ONLY的V1.3同步，不授Git/runner/HA。V010冻结科学合同不改，Results FALSE、model_activation=False、V011 NOT_STARTED。
+
+
 ## 2026-10-17 最新：V010脱敏证据交换首次写入顺序违规，已FAIL_CLOSED/STOP
 
 **ACTIVE_TASK=NONE**。最新[正式GitHub限域主审](../../versions/0.0.10/current_timestamp_evidence_exchange_prewrite_identity_order_violation_local_only_primary_review_20261017.md) Git Blob `8437d51264c66558ff57821618c17ee567af74a4`：Codex在完成新scratch**创建前/写入前真实路径身份核验**之前，已经写入准备脚本；已主动披露并STOP。此为`PREWRITE_PATH_IDENTITY_ORDER_VIOLATION`，不能通过事后补检改称全程合规；scratch真实写入目标身份当时UNVERIFIED。Codex据报未执行脚本、未读取旧证据、未做脱敏安全扫描/新bare/Git/SSH/fetch/push、模型Python/runner/HA科学0。GitHub独立核指定远端review分支404，本次没有候选或五份发布文件、无temp需清。报告终态封存批次1、新增2份文件25,733B；本机receipt Owner报告SHA256`EFC643EE08F7BE5E217DB748B11C7EA6C4E431C36B6FC00388EB0EE084A994B8`未获得网页独立原字节复算。所有历史与本轮STOP余量不结转，不能重试相同旧任务/旧ref。
