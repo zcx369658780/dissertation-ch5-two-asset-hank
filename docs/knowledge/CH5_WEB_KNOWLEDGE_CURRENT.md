@@ -1,5 +1,12 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-17 最新：V010脱敏证据交换首次写入顺序违规，已FAIL_CLOSED/STOP
+
+**ACTIVE_TASK=NONE**。最新[正式GitHub限域主审](../../versions/0.0.10/current_timestamp_evidence_exchange_prewrite_identity_order_violation_local_only_primary_review_20261017.md) Git Blob `8437d51264c66558ff57821618c17ee567af74a4`：Codex在完成新scratch**创建前/写入前真实路径身份核验**之前，已经写入准备脚本；已主动披露并STOP。此为`PREWRITE_PATH_IDENTITY_ORDER_VIOLATION`，不能通过事后补检改称全程合规；scratch真实写入目标身份当时UNVERIFIED。Codex据报未执行脚本、未读取旧证据、未做脱敏安全扫描/新bare/Git/SSH/fetch/push、模型Python/runner/HA科学0。GitHub独立核指定远端review分支404，本次没有候选或五份发布文件、无temp需清。报告终态封存批次1、新增2份文件25,733B；本机receipt Owner报告SHA256`EFC643EE08F7BE5E217DB748B11C7EA6C4E431C36B6FC00388EB0EE084A994B8`未获得网页独立原字节复算。所有历史与本轮STOP余量不结转，不能重试相同旧任务/旧ref。
+
+上轮本地Gate R/T/F现时PS7.6.6合法JSON String/Z被解析成System.DateTime/Utc导致类型误拒、25案24预期匹配＋1高精度SPEC_UNRESOLVED的证据不受本轮未执行发布行为改变；历史实际执行源码raw未认证、旧B/S/L20 first raw/run_id缺失不可验证、前17项LOCAL_ONLY、旧sanitizer候选DENIED/原因UNKNOWN及历史ledger raw argv源码中间偏差UNRESOLVED不变。V010继续M1真实runner I/O BLOCKED、corrected HA单点UNTESTED、M2稳态/GDP目标未过、M3缺合格基点、M4 Results FALSE、V011 NOT_STARTED。下一步需Owner新授权**新的可信scratch根身份预检在首写前完成**，再考虑脱敏发布；在未认证根写入失败日志也不能算前置PASS。原C SSD+GitHub备份、D盘8dirty/index/外common-dir、全部旧失败/C备份/real C8、A16/window/C9/CALL_LEDGER永久保护。此条与CURRENT/TASK_CURRENT为当前权限，下面旧ACTIVE仅为历史快照。
+
+
 ## 2026-10-17最新：V010时间戳修复独立脱敏证据交换任务ACTIVE
 
 **ACTIVE_TASK=V010_CURRENT_TIMESTAMP_SANITIZED_EVIDENCE_EXCHANGE**，正式[固定任务](../../versions/0.0.10/current_timestamp_sanitized_evidence_exchange_task_20261017.md)发行Commit `74b1a21f9012c60fe3ad3f3a620e0e33f214083b`、Blob `f1567a2d8b96eacadbaa951dcf955adbfc589f98`。Owner同意用新的独立GitHub审阅分支交付当前可安全公开的本地timestamp修复证据，包括result、manifest、first/final、25个匿名case；唯一sole parent为task发行commit，remote-only临时路径严禁进入本地科研/模型/治理worktree/index。Codex使用既有SSH Key/443，最多1次固定parent完整fetch、1次普通非强制push；失败LOCAL_ONLY STOP。前次Codex本机报告现时PS7.6.6将JSON String/Z解析为System.DateTime/Utc并触发旧string断言误拒；25案24预期、1高精度形态SPEC_UNRESOLVED不计PASS；历史源码实际执行字节hash未记录，不能由当前hash倒推。RAW_EXACT仅原字节全脱敏安全时可用，否则仅SANITIZED_DERIVATIVE，未上传的raw不能声称Astra独立核证。旧B/S/L first/run_id永缺、旧被拒sanitizer资料DENIED、历史ledger偏差不擦除；旧25/17/20测试不重跑，所有旧STOP预算关闭。Python、VerifiedLoader、真实runner、HA/HJB/KFE/GE/IRF/真实C8全部0；V010原MATLAB修错/GovInv与Zt/税一次/same-S/lagged raw ra0/lagged-NKPC冻结，corrected单点HA UNTESTED、FULL_RUNNER_IO_CLOSURE BLOCKED、Results FALSE、model_activation=False、V011 NOT_STARTED。实时权限读CURRENT与TASK_CURRENT，其他旧ACTIVE均属历史。
