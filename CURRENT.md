@@ -1,20 +1,24 @@
-# 第五章 CURRENT · V010 M1 标准库版本查询来源认证后触及Git源码管道硬超限
+# 第五章 CURRENT · V010 M1 V1.3 工程闭环长任务
 
-更新：2026-10-17（Asia/Shanghai）；V1.3工程集中验收后当前生效时态。
-**WORKFLOW=V1.3__OWNER_APPROVED__CONCENTRATED_TASKS_REQUIRED**。
+更新：2026-10-17。Owner明确要求停止单报错微任务，采用一次完整M1长任务实施。最新ACTIVE以此处为准，所有较旧任务均已STOP。
+**WORKFLOW=V1.3__CONSOLIDATED_LONG_TASK_ACTIVE**。
 **RESEARCH_VERSION=V010/V0.0.10；V011 NOT_STARTED**。
-**ACTIVE_TASK=NONE**。
-**LAST_TASK=V010_M1_V13_PLATFORM_SYSCMD_VER_PROVENANCE_AND_CANONICAL_RUNNER_GATE__DELIVERED__STOPPED**。
-**VERDICT=FAIL_CLOSED__LOCAL_ONLY__SOURCE_PIPE_OUTPUT_CAP_BREACH_REPORTED__LATE_STOP__LEDGER_CONFLICT__CANONICAL_IMPORT_BLOCKED**。
-**PRIMARY_REVIEW=[正式限域主审](versions/0.0.10/m1_v13_platform_syscmd_ver_local_only_output_cap_fail_closed_review_20261017.md)**。
-**NEXT_GATE=WAIT_OWNER_FRESH_V010_M1_CONSOLIDATED_ENGINEERING_EXIT_GATE_AUTHORITY / STOP**。
-**NEW_PERMISSION=NONE__ENGINEERING_PYTHON0__REAL_RUNNER0__GIT_FETCH_PUSH0__HA/HJB/KFE/GE/IRF/REAL_C8_0**。
-**FULL_RUNNER_IO_CLOSURE=BLOCKED；model_activation=False；Results FALSE；V011 NOT_STARTED**。
+**ACTIVE_TASK=V010_M1_V13_CONSOLIDATED_ENGINEERING_EXIT**。
+**FIXED_ISSUE_COMMIT=6f4df14b62fb7f5406b3df97707848aab21edf71；TASK_BLOB=762ad617365a82bc1fee2b0cc986b3e816edc883**。
+**TASK=[本轮唯一冻结M1工程长任务](versions/0.0.10/m1_v13_consolidated_engineering_exit_task_20261017.md)**。
+**STOP=WAIT_ASTRA_V010_M1_CONSOLIDATED_ENGINEERING_REVIEW / STOP**。
+**FULL_RUNNER_IO_CLOSURE=BLOCKED；model_activation=False；Results FALSE**。
 
-本轮固定[原任务](versions/0.0.10/m1_v13_platform_syscmd_ver_provenance_canonical_runner_task_20261017.md)发行Commit`7e9ade7c36a1b606c8d8125b0fd21e9b067d4f9c`/Git Blob`67928a92b742054d7303771974cb8cb42943cd65`。Codex报告写前路径检查及冻结70份源码终态hash身份相符、已真实定位 NumPy→platform.machine→uname→win32_ver→platform._syscmd_ver→subprocess.Popen，类型LITERAL_VER/shell=True，GIT_NO_CAPABILITY创建前拒绝、无子进程能力放行。适配器语义等价性未解决/未安装，原生canonical失败、适配与九模块及runner NOT_RUN；N13前一轮已Codex本机报告PASS，本轮Job机制没改而未重跑。探针预期误把stdlib三段版本规范化视作四段，失败保留未复跑。
+**CLASS=ENGINEERING_ONLY_LONG_TASK__SINGLE_CONCENTRATED_M1_DELIVERY**。
+**SCIENTIFIC_PLAN_BLOB=85138d8859d53295262fe13bf5bc277bca95ed3f**。
+**FROZEN_MODEL_COMMIT=94de4501dec051b969bee9d852eba2d4591f30ef；MODEL_TREE=205eab47c4e4f9c6292c2ead9947d94d1a7579a5**。
+**NEW_ENGINEERING_WALL_MAX8H__PYTHON_PROCESSES_MAX24__NON_GIT_ARTIFACTS_MAX128MIB**。
+**RAW_FROZEN_GIT_SOURCE_STREAM_MAX16MIB__DIAGNOSTIC_LOGS_MAX1MIB_PER_CHILD__SEPARATELY_METERED**。
+**NEW_SCIENTIFIC_HA/HJB/KFE/SELECTOR/ROOT/GE/IRF/REAL_C8_0__NO_MODEL_SOLVE**。
+**OPTIONAL_REVIEW_REF=review/ch5-temp-v010-m1-consolidated-20261017**。
 
-**本轮硬失败**：Codex在终态发现Git源码管道输出1,106,482B超过已冻结每进程stdout+stderr上限262,144B，**超额844,338B**，当时已经执行工程Python3/8，未实时截流。另有台账并发覆盖与后续启动前文件冲突，保存为本机报告的执行链完整性缺陷。此处既承认现行冻结超额FAIL_CLOSED，也把70冻结源≈1.1MB与256KiB日志/进程总pipe界错配记为下一**大M1工程任务**需核证的流程设计问题，不能追溯豁免旧额度或自动把一切raw输出排除计量。用户已明确提醒“不能再拆成微任务”；未来整体M1任务须统一解决源数据流、账本原子、平台meta、canonical/九模块/runner及工程证据，不把每个拦截单独立版。
+本次范围一次涵盖**固定70份raw源码身份/三非空init、Git raw字节通道与日志计量分离、单写者原子ledger、Windows平台元数据/NumPy导入工程兼容、真实canonical import、九模块source、五Git child的Windows runner/Job/PIPE/reader/reap与必要负例、最终真实first/final和可选脱敏远端审阅**。Codex对任务内普通工程E1问题可自主修复和复测，无通用PowerShell命令微额度或focused回归轮次上限，实际执行仍在8h/24 Python/128MiB等总额与保护边界内；必须使真实M1结果而非工具修复本身成为交付重点。
 
-Codex报Python3/8、StageA Git7、PS20、旧文件12件总1,984,899B（小于2MiB）、新文件144件2,870,502B、wall442.730s、GitHub预检/fetch/push/readback均0、科学0、登记PID无残留。FIRST`94C6C517BF7C98A18FF3806F2B2BD0949473E63290FD7D5B5336C66908025451`，原ENGINEERING_FINAL（发现超限前、原样保留）`4BDBDBAD1F329C8AC8829C5CEAAE869FD0DBA97A1FEE80DEDF51376E55D0B5B5`，最终DELIVERY`D643C68E4537E88C551C1A316289236AF965F14C0BE6F3400784FE0C625BDC44`，全为本机SHA声明，Astra无D盘原文件复算。GitHub审议前HEAD`e4df86056037438c7a87f017193bee1abda427bc`与先前一致，固定任务Blob独立回读吻合、review ref 404，没有临时文件需清。全部本轮剩余Python5及网络额度随STOP关闭。
+对上一[Git源码管道硬超限主审](versions/0.0.10/m1_v13_platform_syscmd_ver_local_only_output_cap_fail_closed_review_20261017.md)的`FAIL_CLOSED/LOCAL_ONLY`不追改：旧管道1,106,482B高于旧262,144B限额844,338B且未及时STOP，台账并发覆盖与文件冲突保留；旧NumPy→platform._syscmd_ver→未经授权Popen来源已有本地报告，adapter未具可信全部语义/原生canonical未通过。新任务只针对工程import**实际消费的版本元数据字段**允许有来源、受控、有证据的最窄适配，必须标`SCOPED_ADAPTER_ONLY`，不得修改冻模型/stdlib或开放任意Popen/网络，不等同科学PASS。此前N13 4.039s本机正向仅在Job/reader语义变更时需本轮重测。此前所有STOP预算不得结转，旧first/raw与未知历史源证据不可追补。
 
-V010冻结计划Blob`85138d8859d53295262fe13bf5bc277bca95ed3f`、模型Tree`205eab47c4e4f9c6292c2ead9947d94d1a7579a5`未更改。corrected HA单点UNTESTED、M2稳态/GDP、M3冲击、M4论文Results均无当前新科学PASS；原8dirty/index/外common-dir、C盘独立SSD备份、旧失败原件、real C8/A16/window/C9/CALL_LEDGER均保护，Codex称未触写但无网页独立全盘核验。
+原论文主线原MATLAB corrected两资产HA/HJB/KFE→多省手动有界顺序→GovInv收益界乘0.9/1.1和Zt→冻结GDP每省误差≤1%独立验证→原lagged-NKPC递推，目的地工资税一次、same-S/上一完整轮raw ra0、家庭人均/省财政总量与三劳动账、phi_max=.3、20×20×2原数值标准照旧。Owner corrected HA单点UNTESTED；M1实质工程closed与M2稳态/M3响应/M4成果均尚需真实证据。原D盘8dirty/index/staged/untracked/ignored、外Git common-dir、独立C SSD既有备份、全部旧失败scratch与real C8/2017/2018/B3/V009资产保护不变。A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER UNRESOLVED、real C8 A–D REQUEST_ONLY仍冻结。
