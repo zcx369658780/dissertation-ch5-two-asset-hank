@@ -1,5 +1,8 @@
 # 第五章科学决定：当前适用范围与历史合同索引
 
+> **2026-10-17 最新限域主审（优先下文历史ACTIVE，科学合同不变）**：本轮`V010_CURRENT_TIMESTAMP_SANITIZED_EVIDENCE_EXCHANGE`已`DELIVERED__STOPPED`，`ACTIVE_TASK=NONE`。[正式主审](versions/0.0.10/current_timestamp_evidence_exchange_prewrite_identity_order_violation_local_only_primary_review_20261017.md) Git Blob `8437d51264c66558ff57821618c17ee567af74a4`。Codex自报在完成新scratch写入前路径身份核验**之前**已写入准备脚本，违反冻结前置顺序，故`PROCESS_ORDER_COMPLIANCE=FAIL`、`SCRATCH_ROOT_IDENTITY_AT_WRITE=UNVERIFIED`、`LOCAL_ONLY/FAIL_CLOSED`；据报脚本未运行、旧证据读取0、脱敏扫描/Git/SSH/fetch/push、Python/runner/HA/全部科学0。GitHub实际查询本轮独立review ref返回404，无候选。报告终态封存批次1、2个新文件总25,733B；Owner本机receipt SHA256`EFC643EE08F7BE5E217DB748B11C7EA6C4E431C36B6FC00388EB0EE084A994B8`网页未取得原字节重算。全部旧/新未用额度关闭、不结转，不得事后补路径检查冒充首次写入已合规。此前PS7.6.6的JSON String/Z→System.DateTime/Utc局部证据及25案24预期/1高精度SPEC_UNRESOLVED仍是本机报告级；历史脚本字节UNVERIFIED、旧seal不可验证、原拒绝sanitizer候选DENIED、旧ledger偏差UNRESOLVED不变。下一门仅Owner新批准的`PREWRITE_IDENTITY_GUARD_AND_EVIDENCE_EXCHANGE`，不得重试旧任务。原MATLAB corrected HA/HJB/KFE、多省顺序、GovInv×0.9/1.1/Zt、GDP冻结目标≤1%、税一次、same-S/前完整轮raw ra0、人口/三劳动账、phi_max=.3及lagged-NKPC不改；HA单点UNTESTED、FULL_RUNNER_IO_CLOSURE BLOCKED、model_activation=False、Results FALSE、V011 NOT_STARTED，A16/window/C9/CALL_LEDGER、原8dirty/index/外common-dir/C SSD备份/真实C8保护不变。
+
+
 > **2026-10-17 最新状态：** 当前唯一执行任务为 `V010_CURRENT_TIMESTAMP_SANITIZED_EVIDENCE_EXCHANGE`。冻结任务见 `versions/0.0.10/current_timestamp_sanitized_evidence_exchange_task_20261017.md`。本轮仅授权受限证据交换，经济学公式、模型运行禁令和旧失败裁决不变。旧ACTIVE记载均属历史。
 
 
