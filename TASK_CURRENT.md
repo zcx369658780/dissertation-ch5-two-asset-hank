@@ -1,15 +1,20 @@
-# TASK_CURRENT：V010 SOURCE_TIMESTAMP条件修复本地交付已审，任务STOP
+# TASK_CURRENT：V010 时间戳修复证据远端交换（2026-10-17）
 
-更新：2026-10-17（Asia/Shanghai）。
-**ACTIVE_TASK=NONE**。
-**LAST_TASK=V010_SOURCE_SCRIPT_PROVENANCE_RECOVERY_AND_CONDITIONAL_TIMESTAMP_FIX__DELIVERED__STOPPED**。
-**REVIEW=[最新正式限域主审](versions/0.0.10/source_script_provenance_conditional_timestamp_local_only_primary_review_20261017.md)；REVIEW_BLOB=d6a53e96e359ac2c3d437ed9025cd5f58b129492**。
-**CLASS=DOCUMENTARY_LIMITED_ACCEPT__CURRENT_GUARD_COERCION_CORROBORATED_LOCAL__24_OF_25_SYNTHETIC__1_SPEC_UNRESOLVED__HISTORICAL_EXEC_BYTES_UNVERIFIED**。
-**NEXT_GATE=WAIT_OWNER_FRESH_V010_TIMESTAMP_SPEC_BOUNDARY_AND_EVIDENCE_EXCHANGE_AUTHORITY / STOP**。
-**NEW_RUNTIME_AUTHORITY=NONE__PS0__SOURCE_READ0__GIT/SSH/PUSH0__PYTHON0__RUNNER0__SCIENTIFIC_HA0**。
+**ACTIVE_TASK=V010_CURRENT_TIMESTAMP_SANITIZED_EVIDENCE_EXCHANGE**。
+**ISSUED_COMMIT=74b1a21f9012c60fe3ad3f3a620e0e33f214083b；TASK_BLOB=f1567a2d8b96eacadbaa951dcf955adbfc589f98**。
+**TASK=[冻结原件](versions/0.0.10/current_timestamp_sanitized_evidence_exchange_task_20261017.md)**。
+**TYPE=EVIDENCE_EXCHANGE_ONLY；SCIENTIFIC_RUNTIME=NOT_AUTHORIZED**。
+**REVIEW_BRANCH=review/ch5-temp-v010-timestamp-proof-20261017**。
+**REMOTE_ONLY_PREFIX=_review_tmp/ch5/v010-timestamp-proof-20261017/**。
+**CANDIDATE_SOLE_PARENT=74b1a21f9012c60fe3ad3f3a620e0e33f214083b**。
+**ALLOWED_FILES=result.md,manifest.json,first_seal.json,final_seal.json,cases.json**。
+**NETWORK_CAP=SSH_REF_CHECK1__FULL_FETCH1__NONFORCE_PUSH1__REMOTE_READBACK1**。
+**LOCAL_CAP=POWERSHELL_STATIC_BATCH2__SOURCE_READ_MAX8_FILES_1MIB__NEW_FLAT_MAX9_FILES_2MIB__BARE_MAX3GIB__WALL_MAX150MIN**。
+**PYTHON=0；VERIFIED_LOADER=0；REAL_RUNNER=0；HA/HJB/KFE/GE/IRF/REAL_C8=0；PRIOR_TEST_RERUN=0**。
+**STOP=WAIT_ASTRA_V010_CURRENT_TIMESTAMP_EVIDENCE_REVIEW / STOP**。
 
-上一[冻结任务](versions/0.0.10/source_script_provenance_recovery_conditional_timestamp_fix_task_20261017.md)发行Commit fafffe0582a213ceec25312f97f47ade6f1aa508 / Blob 22aea7c18716c36ffb1f3154d35d751d9f524bf1，Codex交付本地三个Gate：R从原调用与回执恢复现时脚本路径/整文件hash/字段anchor，但**历史未记录源码hash**，HISTORICAL_EXECUTED_BYTES_UNVERIFIED；T本次PS 7.6.6将合法旧Z末尾JSON String时间戳解析为System.DateTime/Utc，导致解析后string断言误拒（仅当前环境本机证据，历史PS版本UNKNOWN）；F在新scratch对25项合成中24项按预期，另1项未知精度SPEC_UNRESOLVED不计PASS。原字段经一次修正版只读复核据报获准/哈希不变，不意味着真实旧发布器已修复或原回执全链Astra独立认证。
+当前任务仅交换最近一次本地时间戳修复的五份安全静态证据。此前Gate R现存脚本SHA和schema来源有Codex本地证据，但历史运行时源码哈希未记录；Gate T当前PowerShell 7.6.6解析合法JSON String/Z为System.DateTime/Utc，历史版本未知；Gate F的25项合成中24预期匹配、1项SPEC_UNRESOLVED。审议为[本地有限接受](versions/0.0.10/source_script_provenance_conditional_timestamp_local_only_primary_review_20261017.md)，Blob d6a53e96e359ac2c3d437ed9025cd5f58b129492。
 
-资源Codex自报PS2/2、三个根metadata一次各4/4/9、旧6文件14次实际读95,510B、新7文件47,844B；wall/写前reserve及文件原字节未由Astra核证；Git/SSH/Python/model import/VerifiedLoader/runner/HA科学0。新first/final据报同run_id及单向hash链接。Owner给最终receipt SHA256 B37FA71992497C299D2E218029D08AD1F863A83A6F6C60C852342C82EB0430B0，**没有原始字节供网页独立复算**。原任务已STOP，无PS余额、所有旧工程/科学额度不结转。任何未来脱敏GitHub候选发表需要Owner独立新授权，不可恢复旧ref的失败任务。
+只有源、脱敏、安全投影、Git对象完整性和五份白名单均通过前置门，才能以Owner既有SSH Key经443进行唯一的普通push。RAW_EXACT与SANITIZED_DERIVATIVE必须分别记账，不得将未上传本地raw或历史执行源码称为远端认证。第25项高精度形式不得升格为PASS，不得新定技术schema。remote-only临时路径不允许在任何本地项目工作树或Git索引中创建。失败即LOCAL_ONLY/STOP，禁止重推旧ref或继承已关闭的旧预算。
 
-旧B/S/L20 first原raw/run_id缺失LEGACY_SEAL_CHAIN_UNVERIFIABLE；17项集成仍本机回执级；旧sanitizer DENIED/UNKNOWN、ledger原argv源码偏差UNRESOLVED。冻结科学plan/model、原corrected两资产HANK/有界多省/GovInv Zt/lagged-NKPC、HA单点UNTESTED、FULL_RUNNER_IO_CLOSURE BLOCKED、model_activation=False、Results FALSE、V011 NOT_STARTED，及8dirty/index/external common-dir/C SSD备份、real C8与A16/window/C9/CALL_LEDGER硬门保持。高精度timestamp仅SPEC_UNRESOLVED，不允许擅自新增schema规则或算25/25。**本次不发行后续执行任务。**
+**FULL_RUNNER_IO_CLOSURE=BLOCKED；model_activation=False；Results FALSE；V011 NOT_STARTED**。科学冻结合同、历史旧封存不可验证及所有原始资产保护不变。
