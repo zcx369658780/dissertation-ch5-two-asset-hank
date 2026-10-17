@@ -1,5 +1,10 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-17 最新正式终审：V010 M1长任务B1 CP2_F25科学FAIL_CLOSED（优先下文全部旧ACTIVE时态）
+
+**ACTIVE_TASK=NONE；LAST_TASK=V010_M1_EVIDENCE_AND_CONDITIONAL_SYNTHETIC_MAINLINE_LONG_TASK；DELIVERED__STOPPED__SCIENCE_FAIL_CLOSED；NEXT=WAIT_OWNER_DECISION / STOP。** [本轮原证独立终审](../../versions/0.0.10/v010_m1_long_synthetic_b1_cp2_f25_independent_terminal_review_20261017.md)：Owner上传终态ZIP 1,877,576B、SHA256 `D76207C452496737D4A9DCA159A197826E9053A7298383AD003A6BEB30AD2E8B`；425件逐件SHA/字节身份PASS，含Stage A历史raw、B0 7/7非求解本机回执及science二进制调用journal 3276/3276序号/CRC、两个真实driver及失败原证。第一driver因argv拆分未启动脚本，仍计2个driver额度之一；第二启动一次匿名fixture SYN_A的corrected HA，在 CP2/F-order25 出现 `NO_ADMISSIBLE_POLICY`、12个候选策略均inadmissible；总HA1、maps3(800/800/26)、HJB更新2、selector cells1626、roots1642、KFE0。B2外层、冻结GDP≤1%、短动态均NOT_RUN，未证实整经济模型无解或具体修复。B0工程测试和Windows Job/守护过程并非GPT独立Windows重跑，旧runner IO仍BLOCKED、scoped adapter≠native sandbox。原冻结数学/数据保护、A16/window/C9/CALL_LEDGER与旧预算保持，**本次所有剩余额度永久关闭**。V010研究版本保留、`model_activation=False`、`REAL_GE=False`、`Results FALSE`、`V011 NOT_STARTED`。Owner决定下一任务之前不自动签发微任务或启动新的HA。原下方“Stage A ACTIVE / Stage B条件释放”是历史时点，不是当前许可。
+
+
 ## 2026-10-17 最新会话交接：V010 M1 Stage A活动中，Stage B尚未释放
 
 **新会话先读 [正式交接](../CH5_CONVERSATION_HANDOFF_20261017_V010_VERSION_LONG_TASK_STAGE_A.md) 与CURRENT/TASK_CURRENT，再读冻结任务。** 唯一`ACTIVE_TASK=V010_M1_EVIDENCE_AND_CONDITIONAL_SYNTHETIC_MAINLINE_LONG_TASK`，发行`54454066859692a0f481cfa44de8df8dc298ce03`/Blob`5d87753b4a3ac972f37f1ac59722b464efd11bd9`；Stage A仅九原件一次ZIP/非求解公式准备，Stage B原双省synthetic科学≤26HA预算只是冻结，**Astra独立审阅M1九原证并GitHub明确签出前HA/HJB/KFE/selector/root调用数0**。Owner确认V1.3大版本长任务优先，不恢复单异常/单文件微任务，普通E1故障Codex在任务内修；保留严肃保护根/经济数学硬边界。上一M1本地scoped-adapter+runner工程候选未获独立完整PASS，`DELIVERY_RECEIPT.json`、`DELIVERY_SUMMARY.md`两文件原字节SHA已由Astra复算，但索引的九个工程原件尚未上传；`Results FALSE`、`V011 NOT_STARTED`。下方旧ACTIVE均为历史时态，不能覆盖此最新任务与Stage B锁。
