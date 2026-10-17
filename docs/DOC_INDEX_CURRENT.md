@@ -1,19 +1,20 @@
-# 第五章动态总目录 · V1.3 M1真实工程任务ACTIVE
+# 第五章动态总目录 · V1.3 M1 IO／网络审计集中任务 ACTIVE
 
 **VERSION=V010/V0.0.10；V011 NOT_STARTED**。
-**WORKFLOW=V1.3；ACTIVE_TASK=V010_M1_V13_VERIFIED_IMPORT_RUNNER_INTEGRATED_PREFLIGHT**。
-**FIXED_ISSUE_COMMIT=1f379141cc8c7cf84a4c798f31f8b21dd3eedc7e；TASK_BLOB=f914da78fdce9b6c41fc29f68743c70f8ae83ffc**。
+**WORKFLOW=V1.3；ACTIVE_TASK=V010_M1_V13_IO_READ_NETWORK_AUDIT_CANONICAL_N13_INTEGRATED_REPAIR**。
+**FIXED_TASK_COMMIT=72f1ef4c908b31fba339f16ccb5dba0cc7bd4fbc；TASK_GIT_BLOB=9e0160ed27a80a49cc07374f79cb75d80cfe16aa**。
+**FULL_RUNNER_IO_CLOSURE=BLOCKED；model_activation=False；Results FALSE**。
 
-| 权威入口 | 当前状态 |
+| 权威入口 | 当前作用 |
 |---|---|
-| [M1新集中工程冻结任务](../versions/0.0.10/m1_v13_verified_import_runner_integrated_task_20261017.md) | 写前只读preflight→70源码装配→VerifiedLoader import-only→Windows runner I/O→可选脱敏远端审阅 |
-| [CURRENT](../CURRENT.md)、[TASK_CURRENT](../TASK_CURRENT.md) | 现行授权、预算和STOP |
-| [V1.3工作流](CH5_ASTRA_WORKFLOW_V1_3_20261017.md) | E1普通工程任务内修复，E2/E3硬停，分级验收 |
-| [Owner可信工作站与Loader决定](CH5_OWNER_RISK_BACKUP_SSH_LOADER_DECISION_20261016.md) | 双根固定源码、原独立C盘备份、受界工程import |
-| [原TrustedLoader工程任务（STOP）](../versions/0.0.10/trusted_workstation_loader_engineering_preflight_task_20261016.md) | 参考工程原设计，不继承旧预算 |
-| [V010科研冻结计划](../versions/0.0.10/plan.md) | blob 85138d8859d53295262fe13bf5bc277bca95ed3f、模型tree 205eab47c4e4f9c6292c2ead9947d94d1a7579a5不变 |
-| [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | M1工程待验，M2–M4科学未PASS |
-| [科学决定](../SCIENTIFIC_DECISIONS.md)、[长期知识](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 旧math/历史失败保护，不因任务签发改写 |
-| [证据远端交换协议](CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md) | review-only tree，发布前真实脱敏；git历史不保证彻底擦除 |
+| [**本轮固定任务**](../versions/0.0.10/m1_v13_io_read_network_audit_canonical_n13_integrated_task_20261017.md) | E0写前身份+冻结70源复核；E1 IO/Network audit归因；E2 canonical/九模块、runner、N13；E3可选远端脱敏 |
+| [CURRENT](../CURRENT.md) / [TASK_CURRENT](../TASK_CURRENT.md) | 当前唯一授权、资源、STOP |
+| [上一M1正式主审](../versions/0.0.10/m1_v13_verified_import_runner_local_only_partial_review_20261017.md) | 两runner各5 Git child、canonical被IO_READ与NETWORK_DISABLED拒绝、N13未测试（本机报告级） |
+| [V1.3工程快车道](CH5_ASTRA_WORKFLOW_V1_3_20261017.md) | 普通E1任务内修复，E2/E3保持硬门 |
+| [Owner双根VerifiedLoader与风险决策](CH5_OWNER_RISK_BACKUP_SSH_LOADER_DECISION_20261016.md) | Trusted workstation工程import，但不得宣传OS native沙箱 |
+| [临时GitHub审阅协议](CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md) | 全脱敏、remote-only Tree，先归档再限域清理 |
+| [V010科学冻结合同](../versions/0.0.10/plan.md) | 经济方程、参数、网格、C8与科学预算不变 |
+| [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | V010仍未形成稳态/IRF/Results |
+| [科学决定](../SCIENTIFIC_DECISIONS.md) | 科学需另一独立授权，旧STOP历史保留 |
 
-最近V1.3本地DOC_ONLY镜像已限域接受，所有该任务预算STOP。新任务ENGINEERING_ONLY，Python≤6、runner≤2，HA/HJB/KFE/GE/IRF/REAL_C8科学0，Results FALSE、model_activation=False、V011 NOT_STARTED。远端独立review仅条件式一次，失败保留本机工程报告但不自动PASS。下一验收按V1.3重点工程一次集中审查，通常仅更新必要CURRENT/TASK_CURRENT与正式关键裁决。
+研究目标回到原MATLAB两资产HANK的Python第五章改写。本轮只做重要工程 import-only（最多8新Python），不运行HA/HJB/KFE/GE/IRF/real C8。上一旧Python4/6的未用额度已STOP不能续；新审阅分支须新发行Commit sole parent，新回执不能追补原缺失的runner raw/旧first。重要工程验收按V1.3集中办理，不在本次签发时修改SCIENTIFIC_DECISIONS或重写长期知识。
