@@ -1,5 +1,10 @@
 # 第五章 V010 进度快照与下一阶段门禁（2026-10-16）
 
+## 2026-10-17最新：V1.3启动M1冻结源码真实工程import/runner整合任务
+
+**ACTIVE_TASK=V010_M1_V13_VERIFIED_IMPORT_RUNNER_INTEGRATED_PREFLIGHT**，[冻结任务](../versions/0.0.10/m1_v13_verified_import_runner_integrated_task_20261017.md)发行Commit`1f379141cc8c7cf84a4c798f31f8b21dd3eedc7e`/Blob`f914da78fdce9b6c41fc29f68743c70f8ae83ffc`。Owner要求重回博士第五章改写进度，本次特定新授权将原“先独立发布旧timestamp证据才考虑工程import”的行政顺序调整为**E0 V1.3写前身份 → 原模型70源码真实Git装配 → 受界VerifiedLoader真实import-only与Windows runner I/O → 条件式安全GitHub证据交换**；这不是免除源身份、脱敏或科学硬门，也不回写旧主审。GitHub发布失败不会抹掉已完成的ENGINEERING本机结果，但不能授Astra独立PASS。工程Python最多6、真实runner最多2，无HA/HJB/KFE/GE/IRF/real C8科学许可。M1当前仍未完成，M2–M4仍无新Results，V011 NOT_STARTED。此条优先此前历史章节中旧ACTIVE和“运输为工程绝对前提”的时态。
+
+
 ## 2026-10-17最新覆盖：timestamp证据交换因首写前身份门未完成而FAIL_CLOSED
 
 **ACTIVE_TASK=NONE**。上一`V010_CURRENT_TIMESTAMP_SANITIZED_EVIDENCE_EXCHANGE`已STOP，[永久限域主审](../versions/0.0.10/current_timestamp_evidence_exchange_prewrite_identity_order_violation_local_only_primary_review_20261017.md) Blob`8437d51264c66558ff57821618c17ee567af74a4`。Codex已承认在新scratch写入前路径身份核验完成之前写入准备脚本，因此过程顺序FAIL；准备脚本据报未执行、旧证读取/安全扫描/SSH Git/Python/runner/HA均0，目标远端review ref实查404，无可验候选。本轮终态封存1次，新增2件25,733B；receipt本机SHA未获Astra原字节复算。原现时PS7.6.6 timestamp类型局部修复24/25+1规范未决、历史执行源码bytes未认证不变。M1仍是有限工程进展（runner未闭），M2多省稳态和GDP目标未过，M3原冲击缺有效稳态，M4 Results FALSE，V011未启动。后续需Owner新批准写前身份门先行的新独立scratch，不允许对已写旧scratch“补前置记录”、继承STOP额度或自行启动科学计算。此条优先之前ACTIVE快照。

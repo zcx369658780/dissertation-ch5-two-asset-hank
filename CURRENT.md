@@ -1,20 +1,25 @@
-# 第五章 CURRENT · V1.3 本地文档镜像同步已限域接受
+# 第五章 CURRENT · V010 M1 冻结模型真实导入与runner工程预检
 
-**UPDATED=2026-10-17**。
-**WORKFLOW=V1.3__OWNER_APPROVED__GITHUB_PUBLISHED__LOCAL_CODEX_DOC_SYNC_LIMITED_ACCEPTED**。
+更新：2026-10-17（Asia/Shanghai）。
 **RESEARCH_VERSION=V010/V0.0.10；V011 NOT_STARTED**。
-**ACTIVE_TASK=NONE**。
-**LAST_TASK=CH5_V13_ONE_TIME_CODEX_LOCAL_DOCUMENT_SYNC__DELIVERED__STOPPED**。
-**LATEST_DOC_ONLY_VERDICT=DOC_ONLY_ACCEPT__GITHUB_FIXED_SOURCE_SHA256_7_OF_7_INDEPENDENT__LOCAL_MIRROR_PREWRITE_AND_AGENTS_CODEX_REPORTED__NO_WINDOWS_DIRECT_ACCESS**。
-**FIXED_TASK_ISSUE_COMMIT=77b4e7119b23008b8b708b6b39cc6b75077e2b4b；TASK_GIT_BLOB=daf6807397ac19a580a45a73c14e27665580bb04**。
-**NEXT_GATE=WAIT_OWNER_FRESH_V010_ENGINEERING_PREFLIGHT_AND_SANITIZED_EVIDENCE_EXCHANGE_AUTHORITY / STOP**。
-**NEW_RUNTIME_PERMISSION=NONE__GITHUB_PUBLISH0__PYTHON0__REAL_RUNNER0__HA/HJB/KFE/GE/IRF/REAL_C8_0**。
-**FULL_RUNNER_IO_CLOSURE=BLOCKED；model_activation=False；Results FALSE；V011 NOT_STARTED**。
+**WORKFLOW=V1.3__OWNER_APPROVED__CODEX_LOCAL_SYNC_LIMITED_ACCEPTED**。
+**ACTIVE_TASK=V010_M1_V13_VERIFIED_IMPORT_RUNNER_INTEGRATED_PREFLIGHT**。
+**FIXED_ISSUE_COMMIT=1f379141cc8c7cf84a4c798f31f8b21dd3eedc7e；FIXED_TASK_BLOB=f914da78fdce9b6c41fc29f68743c70f8ae83ffc**。
+**TASK=[唯一冻结工程任务](versions/0.0.10/m1_v13_verified_import_runner_integrated_task_20261017.md)**。
+**STOP=WAIT_ASTRA_V010_M1_V13_ENGINEERING_REVIEW / STOP**。
+**FULL_RUNNER_IO_CLOSURE=BLOCKED；model_activation=False；Results FALSE**。
 
-## 本次V1.3快速验收（不另建长主审）
+**CLASS=ENGINEERING_ONLY__V13_CONCENTRATED_VERIFIED_IMPORT_RUNNER_PREFLIGHT**。
+**MODEL_SOURCE_COMMIT=94de4501dec051b969bee9d852eba2d4591f30ef；MODEL_TREE=205eab47c4e4f9c6292c2ead9947d94d1a7579a5**。
+**SCIENTIFIC_PLAN_BLOB=85138d8859d53295262fe13bf5bc277bca95ed3f**。
+**PYTHON_ENGINEERING_MAX6__REAL_RUNNER_IMPORT_ONLY_MAX2__PER_PROCESS_WALL180S__TOTAL_WALL180MIN**。
+**MODEL_SOLVER_HA/HJB/KFE/SELECTOR/ROOT/GE/IRF/REAL_C8=0__NO_NEW_SCIENTIFIC_PERMISSION**。
+**REVIEW_REF_OPTIONAL=review/ch5-temp-v010-m1-import-runner-20261017**。
 
-GPT顾问从固定发行Commit直接读取7份文档并独立计算SHA256，与Codex所报**7/7一致**；固定源文件原始UTF-8总量**45,620B**。镜像本地8件51,292B、其中AGENTS导航5,672B、写前只读10:14:38→创建复核10:15:51→首次写入10:16:32、PS静态2次、记忆检索1、Node同步调用3、总耗时114.341秒，均为**CODEX_REPORTED_WITH_LOCAL_RECEIPTS**；网页没有直接读D盘原始8文件/AGENTS、未独立验本机写前路径句柄与受保护目录全量byte状态，不能宣告Windows文件系统独立PASS。AGENTS据报SHA256 8E6A46E76AC8A3BB3E7EFFE92448E2E3E5C0B96BF428FB976592E4436ADD2744，未经网页重算。本地镜像CURRENT/TASK_CURRENT为固定发行STOP快照，这是预期且已在AGENTS导航中据报标注须读实时GitHub当前状态。
+## 本轮实质目标
 
-Owner确认已上传V1.3项目源更新；现有项目Source可恢复V1.3知识规则，但这不是强制改写个人Memory summary。V1.3普通E1工程可在以后**明确冻结**预算内自主修复、E2写前身份及受保护资源必须硬停、E3科学与外传需Owner新授权；不追改旧任务原件与已STOP预算。
+Owner要求回到第五章改写主线，当前M1真实Windows import/runner I/O尚未完成。本任务改用V1.3一次集中修复：先以**只读Preflight**验证新scratch父目录与目标，再创建根并再次复核身份，随后才允许首次写入；独立Stage A只读Git对象恢复70份冻结源raw bytes、三非空__init__.py，双根VerifiedLoader与canonical import-only/受界Windows runner I/O。仅在拥有真实工程结果和合法脱敏条件时尝试一次远端GitHub临时证据交付，网络运输失败不应抹除本地阶段证据，但不得称远端独立PASS。普通E1工程错误可在本轮固定进程/时间/容量额度内修复，E2保护/来源/写前身份与E3科学/敏感发布仍硬停。全任务唯一详规见固定任务Blob。
 
-最近V010 timestamp安全交换因**首次写入早于新scratch身份核验**已FAIL_CLOSED，不可追认或借本同步重跑。PS7.6.6时间戳合法String/Z被解析成DateTime/Utc与旧类型断言相冲突、25合成中24符合预期/1高精度SPEC_UNRESOLVED，均为Codex本地证据；历史执行源码hash仍UNVERIFIED，旧B/S/L first raw/run_id永缺UNVERIFIABLE。原V010科学plan blob 85138d8859d53295262fe13bf5bc277bca95ed3f、模型tree 205eab47c4e4f9c6292c2ead9947d94d1a7579a5未改，corrected HA单点UNTESTED、M2稳态与GDP目标/M3冲击/M4 Results均无新科学接受。原D盘8dirty/index/external common-dir、C盘独立SSD备份、历史失败原件与真实C8、A16/window/C9/CALL_LEDGER继续保护。
+最近V1.3 DOC_ONLY镜像同步7/7源SHA256已网页独立确认，8份本地镜像及AGENTS/写前时序仍Codex reported；旧 `ACTIVE_TASK=CH5_V13_ONE_TIME_CODEX_LOCAL_DOCUMENT_SYNC`已DELIVERED/STOPPED，余额不结转。过去time stamp本地25例24按预期+1高精度SPEC_UNRESOLVED，历史脚本执行字节UNKNOWN、旧B/S/L first raw/run_id缺失永远UNVERIFIABLE、旧sanitizer候选DENIED及历史ledger偏差UNRESOLVED；本轮不重跑这些旧工作或借历史源作为新模型代码。
+
+Owner仍持有独立C盘SSD原备份和GitHub备份；D:/ProjectTemp/c5k1bturn56八dirty/index/staged/untracked/ignored、外common-dir、所有旧失败raw和真实C8/2017/2018/B3/V009保护不变。原MATLAB corrected HA/HJB/KFE→多省顺序→GovInv收益界乘0.9/1.1与Zt→冻结后GDP各省≤1%验证→原lagged-NKPC递推、目的地工资税一次、same-S/前完整轮raw ra0、家庭人均/省财政总量及三劳动账、phi_max=.3、20×20×2原网格与阈值照旧。Owner corrected HA给定价格单点仍UNTESTED。A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER UNRESOLVED、real C8 A–D REQUEST_ONLY，科学Results和V011门不变。

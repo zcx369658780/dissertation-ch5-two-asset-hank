@@ -1,20 +1,19 @@
-# 第五章动态总目录 · V1.3（2026-10-17）
+# 第五章动态总目录 · V1.3 M1真实工程任务ACTIVE
 
-**WORKFLOW=V1.3__OWNER_APPROVED__GITHUB_PUBLISHED__LOCAL_CODEX_DOC_SYNC_LIMITED_ACCEPTED**。
-**RESEARCH_VERSION=V010/V0.0.10；V011 NOT_STARTED；model_activation=False；Results FALSE**。
-**ACTIVE_TASK=NONE**。
-**LAST_TASK=CH5_V13_ONE_TIME_CODEX_LOCAL_DOCUMENT_SYNC__DELIVERED__STOPPED**。
-**DOC_ONLY_SOURCE_7_OF_7_SHA256=INDEPENDENT_MATCH；LOCAL_MIRROR_WINDOWS_PROTECTION=CODEX_REPORTED**。
+**VERSION=V010/V0.0.10；V011 NOT_STARTED**。
+**WORKFLOW=V1.3；ACTIVE_TASK=V010_M1_V13_VERIFIED_IMPORT_RUNNER_INTEGRATED_PREFLIGHT**。
+**FIXED_ISSUE_COMMIT=1f379141cc8c7cf84a4c798f31f8b21dd3eedc7e；TASK_BLOB=f914da78fdce9b6c41fc29f68743c70f8ae83ffc**。
 
-| 入口 | 权威 |
+| 权威入口 | 当前状态 |
 |---|---|
-| [V1.3工作流](CH5_ASTRA_WORKFLOW_V1_3_20261017.md) | Owner批准工程快速通道 |
-| [当前工作方式](CH5_ASTRA_WORKFLOW_CURRENT.md) | V1.3继承V1.2科学合同 |
-| [实时状态](../CURRENT.md)与[任务停点](../TASK_CURRENT.md) | 唯一动态执行授权 |
-| [已STOP文档镜像任务](../versions/0.0.10/workflow_v13_one_time_codex_local_docs_sync_task_20261017.md) | 发行Commit 77b4e7119b23008b8b708b6b39cc6b75077e2b4b、Blob daf6807397ac19a580a45a73c14e27665580bb04 |
-| [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | 研究V010、V011尚未启动 |
-| [项目Source V1.3覆盖层](knowledge/CH5_GPT_PROJECT_SOURCE_OVERLAY_V13_20261017.md) | Owner已告知上传 |
-| [长期知识](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 最新里程碑摘要 |
-| [科学决定](../SCIENTIFIC_DECISIONS.md)和[V010计划](../versions/0.0.10/plan.md) | 科学独立审查与原数学冻结 |
+| [M1新集中工程冻结任务](../versions/0.0.10/m1_v13_verified_import_runner_integrated_task_20261017.md) | 写前只读preflight→70源码装配→VerifiedLoader import-only→Windows runner I/O→可选脱敏远端审阅 |
+| [CURRENT](../CURRENT.md)、[TASK_CURRENT](../TASK_CURRENT.md) | 现行授权、预算和STOP |
+| [V1.3工作流](CH5_ASTRA_WORKFLOW_V1_3_20261017.md) | E1普通工程任务内修复，E2/E3硬停，分级验收 |
+| [Owner可信工作站与Loader决定](CH5_OWNER_RISK_BACKUP_SSH_LOADER_DECISION_20261016.md) | 双根固定源码、原独立C盘备份、受界工程import |
+| [原TrustedLoader工程任务（STOP）](../versions/0.0.10/trusted_workstation_loader_engineering_preflight_task_20261016.md) | 参考工程原设计，不继承旧预算 |
+| [V010科研冻结计划](../versions/0.0.10/plan.md) | blob 85138d8859d53295262fe13bf5bc277bca95ed3f、模型tree 205eab47c4e4f9c6292c2ead9947d94d1a7579a5不变 |
+| [版本登记](CH5_VERSION_REGISTER_CURRENT.md) | M1工程待验，M2–M4科学未PASS |
+| [科学决定](../SCIENTIFIC_DECISIONS.md)、[长期知识](knowledge/CH5_WEB_KNOWLEDGE_CURRENT.md) | 旧math/历史失败保护，不因任务签发改写 |
+| [证据远端交换协议](CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md) | review-only tree，发布前真实脱敏；git历史不保证彻底擦除 |
 
-**精简验收**：7份GitHub固定文档SHA256亲算全部符合Codex提供值、总45,620B；本地8份51,292B、AGENTS和写前顺序仍Codex回执级。没有独立Windows完整保护PASS。原V010科学模型/备份与旧失败未因文档同步获得新授权；ACTIVE_TASK=NONE，下一工程请Owner按V1.3另批。
+最近V1.3本地DOC_ONLY镜像已限域接受，所有该任务预算STOP。新任务ENGINEERING_ONLY，Python≤6、runner≤2，HA/HJB/KFE/GE/IRF/REAL_C8科学0，Results FALSE、model_activation=False、V011 NOT_STARTED。远端独立review仅条件式一次，失败保留本机工程报告但不自动PASS。下一验收按V1.3重点工程一次集中审查，通常仅更新必要CURRENT/TASK_CURRENT与正式关键裁决。
