@@ -1,5 +1,10 @@
 # 第五章 V010 进度快照与下一阶段门禁（2026-10-16）
 
+## 2026-10-17最新覆盖：SOURCE_INDEX缺失后新增有界身份恢复＋条件时间戳门
+
+现唯一ACTIVE`V010_SOURCE_SCRIPT_PROVENANCE_RECOVERY_AND_CONDITIONAL_TIMESTAMP_FIX`，冻结[任务](../versions/0.0.10/source_script_provenance_recovery_conditional_timestamp_fix_task_20261017.md)发行Commit`fafffe0582a213ceec25312f97f47ade6f1aa508`/Git Blob`22aea7c18716c36ffb1f3154d35d751d9f524bf1`。上一任务sourceIndex为空，因此Owner新增**三个精确scratch根的受限非递归metadata授权**；仅在实际脚本执行出处、全文件哈希及字段/schema锚点都可证时，继续timestamp类型取证/仅新scratch修复和≥12合成回归，否则FAIL_CLOSED。此任务不授GitHub发布/Python/HA、不能恢复上一STOP剩余额。M1工程局部完成但完整Windows runner及当前HA单点未过，M2稳态/GovInv-Zt与GDP目标独立校验未PASS，M3冲击缺合格基点，M4 Results FALSE，V011 NOT_STARTED。下方旧“无ACTIVE”属于此前快照，当前唯一执行许可读取CURRENT和TASK_CURRENT。
+
+
 ## 2026-10-17最新覆盖：SOURCE_TIMESTAMP任务因来源索引缺失STOP
 
 目前`ACTIVE_TASK=NONE`，上一`V010_SOURCE_TIMESTAMP_TYPED_GUARD_CORRECTION_AND_SYNTHETIC_REGRESSION`以`LOCAL_ONLY / FAIL_CLOSED`终止。Codex报告旧receipt对应manifest的sourceIndex为空，按任务的精确索引必备条件STOP。完整[独立限域主审](../versions/0.0.10/source_timestamp_typed_guard_source_index_missing_fail_closed_local_only_primary_review_20261017.md) Blob`5b4a63f453fc472cc90869ca9e029c7657757caf`。这仅是**证据来源追溯中断**，不是已证实时间戳无效或源码丢失；parser、原JSON token和解析后类型仍UNKNOWN，12项合成与修复NOT_RUN。没有GitHub发布/Python/HA新调用。M1仍局部完成、完整runner未过，M2多省稳态与GDP独立校准未过，M3原冲击未启动正式验证，M4 Results FALSE，V011 NOT_STARTED。下一建议需Owner新授权准确的来源脚本路径/hash/schema身份恢复，不能续用已STOP预算。此条优于下文此前ACTIVE的历史快照。
