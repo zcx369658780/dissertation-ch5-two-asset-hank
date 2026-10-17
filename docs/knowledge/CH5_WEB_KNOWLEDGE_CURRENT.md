@@ -1,5 +1,10 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-17 Owner最新临时实验方向：旧MATLAB-faithful HA必须冻结为黑箱，外层≥100轮观察（独立于正式V010）
+
+[Owner正式决定](../CH5_OWNER_HA_BLACKBOX_TEMP_V010_EXPERIMENT_DECISION_20261017.md)：选择最早已正式验收31省2009年MATLAB/Python稳态一致的源码状态，2026-09-01 Commit `216283cf4f1303afa60f1915e143a0b7303a9ffb`，冻结 `exports/matlab_faithful_two_asset_ha.py` 原字节，不再修改HA内部、selector、HJB或KFE。历史31省稳态通过184轮/5704次家庭调用，不是5轮；临时版先在第100轮自动观察全局轨迹、上限依来源500轮、不每轮人手审批，Bellman B仅临时诊断。已发布实验分支 `experiment/ch5-temp-matlab-ha-blackbox-100plus-20261017`，实验任务Commit `503b418f790d61049f3df9016a783dcecc793237` / Blob `0f7917d3f8b89e99c6cd1c9430bf364a02cc30b3`，正式治理`ACTIVE_TASK=NONE`不变；不重开V010旧失败额度、不授权real C8/真实31省新跑或Results，待实验结果独立验收后才考虑正式方法采纳。**不要因后续会话交接而恢复“修改HA黑箱”的旧惯性。**
+
+
 ## 2026-10-17 最新终审：V010 CP2_F25无数学合同等价修复证据（覆盖下方旧ACTIVE叙述）
 
 **ACTIVE_TASK=NONE；LAST_TASK=V010_CP2F25_SELECTOR_MECHANISM_AND_CONDITIONAL_REPAIR_LONG_TASK；TERMINAL=V010_CP2F25__NO_MATH_PRESERVING_REPAIR_PROVEN__INDEPENDENT_LIMITED_ACCEPT__STOP。** [本轮独立主审](../../versions/0.0.10/v010_cp2f25_selector_no_math_preserving_repair_independent_terminal_review_20261017.md)：Owner上传私人ZIP `CH5_V010_CP2F25_MECHANISM_EVIDENCE_20261017_FINAL.zip` 2,632,180B SHA256 `A1459D9452F1AD7A755479AACE65B5FCA61E08130C73D098491599AB971E9141`；521/521文件hash/长度与manifest吻合，旧M1原失败cell/input及旧76个候选source完全相同、原Owner采纳2026-09-16/19液态Z和joint规则Git Blob独立验证。CP2/F-order25原12个candidate拒因自行Decimal复算12/12一致；negative/backward-a的液态两侧g_b均严格为负，因而无合法Z回执，Owner联合门须两端Z均有效再触发joint；在仅联立`g_b=g_a=0`的较弱问题中又存在唯一正根，**两者不矛盾**。因此“删双侧合法Z门”是需Owner新E3科学裁决的模型数值法则修改，**非本轮允许的数学等价实现bug修复**；R未进入、修复D未运行、代码0diff。新任务selector-only1/64 roots3/2048，Python扣3槽(真实启动2)、HA/HJB/KFE0；207账本快照与11子进程22日志受界一致，第一次SSH128未重试、fetch/push0，GitHub本轮remote temp branch不存在；旧科学预算与本次unused全部关闭。真实论文Results仍FALSE，model_activation=False、REAL_GE=False、V011 NOT_STARTED、FULL_RUNNER_IO_CLOSURE=BLOCKED；原8dirty/index/外common-dir/C SSD/历史A16/window/C9/CALL_LEDGER与real C8完全保护。**NEXT=WAIT_OWNER_V010_JOINT_TRIGGER_SCIENTIFIC_DECISION / STOP**；任何新数值方案、科学预算或任务必须Owner再次批准，下方旧ACTIVE状态不再有执行效力。
