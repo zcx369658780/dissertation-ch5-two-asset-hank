@@ -1,5 +1,12 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-17最新：V010 sourceIndex为空，SOURCE_TIMESTAMP修复未开始，任务STOP
+
+当前`ACTIVE_TASK=NONE`。Codex交付的`V010_SOURCE_TIMESTAMP_TYPED_GUARD_CORRECTION_AND_SYNTHETIC_REGRESSION_RESULT`为`FAIL_CLOSED/LOCAL_ONLY`：上一失败回执manifest的`sourceIndex`为空，无确切守门源码授权路径、整体hash或源字段/schema索引；严格按冻结任务第1节STOP，未猜路径或扩大扫描。最新GitHub[独立限域主审](../../versions/0.0.10/source_timestamp_typed_guard_source_index_missing_fail_closed_local_only_primary_review_20261017.md) Blob `5b4a63f453fc472cc90869ca9e029c7657757caf` 已完成归档，正式任务发行Commit`6dfe8a1c98a839f0a94cdd0e938bb6b60f99d520`/Blob`68143e917df883e38fa4615ce0a7c7a86c797330`已关闭。**空sourceIndex不能证明旧源码丢失，也不是时间戳无效或解析器自动转换的证据**。JSON原token/parse类型/parser版本未知，守门修复、合成≥12例与旧字段复核均NOT_RUN。Codex报告本轮PS1/2、旧两文件四次读取累计6,800B、新四文件9,463B，Git/SSH/Python/runner/科学0；new first/final据报同run_id与单向hash关系、Owner转述final receipt SHA256`1E9A02F1C9AF59FAB80BED91E39353EB4CCBD87884D46C229D3E9C44610846BC`，但Astra未取得本机原字节独立核验。全部STOP余量不结转，无新GitHub candidate或科学授权。
+
+更早B/S/L20首版raw/run_id缺失永久LEGACY_SEAL_CHAIN_UNVERIFIABLE；后来17项合成结果与新seal只是Codex本地回执级；原Sanitizer旧DENIED原因UNKNOWN、历史ledger raw argv/短源码偏差UNRESOLVED。下一步仅**建议**Owner授权有界的源码身份索引恢复，从已固定合法文件/哈希与上位任务追证脚本、schema及字段引用，恢复后再可能受界运行timestamp typed诊断与合成回归；**尚未签发新任务**。项目仍V010：M1实际Windows完整runner I/O未闭、corrected HA单点UNTESTED，M2多省稳态/GDP≤1%未科学PASS，M3原冲击缺稳态基点，M4 Results FALSE，V011 NOT_STARTED；冻结经济法则、Owner备份策略、D盘8dirty/index/外Git common-dir、C备份/真实C8、A16/window/C9/CALL_LEDGER保持。以本段和CURRENT/TASK_CURRENT为现行权限，下面旧ACTIVE均属历史；GitHub治理同步非本地QMD/Basic Memory同步。
+
+
 ## 2026-10-17最新：V010 SOURCE_TIMESTAMP类型诊断和合成修复任务ACTIVE
 
 Owner批准下一张唯一 `V010_SOURCE_TIMESTAMP_TYPED_GUARD_CORRECTION_AND_SYNTHETIC_REGRESSION`，在一轮任务中集中查清上次SOURCE_TIMESTAMP守门的原始JSON lexical token、解析后真实.NET/Powershell类型、所用parser/版本和判定表达式，再在新scratch独立修正版中验证原格式/日期/时区语义及至少12项合成正反例。冻结[任务原件](../../versions/0.0.10/source_timestamp_typed_guard_correction_and_synthetic_regression_task_20261017.md)发行commit`6dfe8a1c98a839f0a94cdd0e938bb6b60f99d520`、Blob`68143e917df883e38fa4615ce0a7c7a86c797330`；只允许新本地PowerShell≤2批，精确旧只读≤12件2MiB，新平铺≤6份1MiB，wall≤120分钟。旧raw first/final和本机失败回执只读，**原SOURCE_TIMESTAMP实际类型尚UNKNOWN，不得预先认定PowerShell DateTime自动转换或原始timestamp无效**。上一[失败主审](../../versions/0.0.10/current_seal_exchange_source_timestamp_fail_closed_local_only_primary_review_20261017.md) Blob`87d35c2270c1b8a42e19d3210f22fa0abe914bdc`、GitHub原目标review ref 404、失败receipt SHA256`F93DA4C6BEE0E62F68A04620B8BF372AD60275C20DEA7782EF2C56E4BFADA6FC`（仅Owner转述）已经归档。上一scan/bare/SSH/fetch/push均0，旧STOP额度不复用，本次Git/SSH/GitHub push/Python/VerifiedLoader/runner/HA/HJB/KFE/GE/IRF/real C8全0，新任务只交LOCAL_ONLY匿名摘要。
