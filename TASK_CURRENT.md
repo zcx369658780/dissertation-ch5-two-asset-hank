@@ -1,19 +1,15 @@
-# TASK_CURRENT：V010 来源脚本恢复与条件式SOURCE_TIMESTAMP修复
+# TASK_CURRENT：V010 SOURCE_TIMESTAMP条件修复本地交付已审，任务STOP
 
 更新：2026-10-17（Asia/Shanghai）。
-**ACTIVE_TASK=V010_SOURCE_SCRIPT_PROVENANCE_RECOVERY_AND_CONDITIONAL_TIMESTAMP_FIX**。
-**FIXED_ISSUE_COMMIT=fafffe0582a213ceec25312f97f47ade6f1aa508；FIXED_TASK_BLOB=22aea7c18716c36ffb1f3154d35d751d9f524bf1**。
-**TASK_FILE=[唯一冻结任务原件](versions/0.0.10/source_script_provenance_recovery_conditional_timestamp_fix_task_20261017.md)**。
-**CLASS=BOUNDED_SOURCE_PROVENANCE_RECOVERY__CONDITIONAL_ENGINEERING_ONLY_TIMESTAMP_FIX**。
-**BUDGET=ROOTS3_METADATA_DEPTH0_ONCE_EACH_MAX12__OLD_READ_MAX12_FILES_2MIB__PS_BATCH_MAX2__SYNTHETIC_MIN12_IF_GATES_PASS__NEW_SCRATCH_MAX8_FLAT_FILES_1MIB__WALL150MIN**。
-**NO_AUTHORITY=GIT0__SSH0__FETCH/PUSH0__OLD_STOP_RETRY0__PYTHON0__MODEL_IMPORT0__REAL_RUNNER0__HA/HJB/KFE/GE/IRF/REAL_C8_0**。
-**DELIVERY=LOCAL_ONLY__NO_GITHUB_REVIEW_PUBLICATION**。
-**STOP=WAIT_ASTRA_V010_SOURCE_PROVENANCE_CONDITIONAL_TIMESTAMP_REVIEW / STOP**。
+**ACTIVE_TASK=NONE**。
+**LAST_TASK=V010_SOURCE_SCRIPT_PROVENANCE_RECOVERY_AND_CONDITIONAL_TIMESTAMP_FIX__DELIVERED__STOPPED**。
+**REVIEW=[最新正式限域主审](versions/0.0.10/source_script_provenance_conditional_timestamp_local_only_primary_review_20261017.md)；REVIEW_BLOB=d6a53e96e359ac2c3d437ed9025cd5f58b129492**。
+**CLASS=DOCUMENTARY_LIMITED_ACCEPT__CURRENT_GUARD_COERCION_CORROBORATED_LOCAL__24_OF_25_SYNTHETIC__1_SPEC_UNRESOLVED__HISTORICAL_EXEC_BYTES_UNVERIFIED**。
+**NEXT_GATE=WAIT_OWNER_FRESH_V010_TIMESTAMP_SPEC_BOUNDARY_AND_EVIDENCE_EXCHANGE_AUTHORITY / STOP**。
+**NEW_RUNTIME_AUTHORITY=NONE__PS0__SOURCE_READ0__GIT/SSH/PUSH0__PYTHON0__RUNNER0__SCIENTIFIC_HA0**。
 
-Owner同意后新授权**明确枚举范围**：R1 前次SOURCE_TIMESTAMP交换失败scratch；R2 刚停止的typed修复scratch；R3 最前17项集成seal scratch。每个根至多一次非递归metadata inventory/≤12直接子项，不扩大至其他目录；只有既有执行/receipt能证明实际SOURCE_TIMESTAMP guard脚本来源、其当下整文件hash以及字段/schema锚点，才可读取并继续T/F。前任务的manifest sourceIndex为空，本轮允许有界恢复而非继续空索引循环；但仅“目录里找到类似源码”不等于该脚本被前一任务真实运行。缺来源或执行绑定→STOP，绝不伪造历史脚本/原timestamp数据。
+上一[冻结任务](versions/0.0.10/source_script_provenance_recovery_conditional_timestamp_fix_task_20261017.md)发行Commit fafffe0582a213ceec25312f97f47ade6f1aa508 / Blob 22aea7c18716c36ffb1f3154d35d751d9f524bf1，Codex交付本地三个Gate：R从原调用与回执恢复现时脚本路径/整文件hash/字段anchor，但**历史未记录源码hash**，HISTORICAL_EXECUTED_BYTES_UNVERIFIED；T本次PS 7.6.6将合法旧Z末尾JSON String时间戳解析为System.DateTime/Utc，导致解析后string断言误拒（仅当前环境本机证据，历史PS版本UNKNOWN）；F在新scratch对25项合成中24项按预期，另1项未知精度SPEC_UNRESOLVED不计PASS。原字段经一次修正版只读复核据报获准/哈希不变，不意味着真实旧发布器已修复或原回执全链Astra独立认证。
 
-若Gate R完整，Gate T限一次旧JSON字段真实raw token/parse后type与解析器版本诊断；Gate F只在新scratch修复且对冻结旧schema至少做12合成正反例，并可再一次原字段只读校验。所有旧read ≤12 distinct files、总实际read bytes≤2MiB；两个新PS批次（失败计入）、wall≤150min、新平铺≤8件总≤1MiB、末尾reserve≥128KiB。无GitHub发布/bare、Python/runner或科学许可；原17/20项不得重跑，旧任务未用PS1/2等预算不可结转。
+资源Codex自报PS2/2、三个根metadata一次各4/4/9、旧6文件14次实际读95,510B、新7文件47,844B；wall/写前reserve及文件原字节未由Astra核证；Git/SSH/Python/model import/VerifiedLoader/runner/HA科学0。新first/final据报同run_id及单向hash链接。Owner给最终receipt SHA256 B37FA71992497C299D2E218029D08AD1F863A83A6F6C60C852342C82EB0430B0，**没有原始字节供网页独立复算**。原任务已STOP，无PS余额、所有旧工程/科学额度不结转。任何未来脱敏GitHub候选发表需要Owner独立新授权，不可恢复旧ref的失败任务。
 
-上一正式[审议](versions/0.0.10/source_timestamp_typed_guard_source_index_missing_fail_closed_local_only_primary_review_20261017.md) Git Blob5b4a63f453fc472cc90869ca9e029c7657757caf保留SOURCE_INDEX_MISSING/FAIL_CLOSED/LOCAL_ONLY、无Guard诊断。Codex本机旧2文件四次读累计6800B，新4文件9463B；Owner上次最终receipt SHA256 1E9A02F1C9AF59FAB80BED91E39353EB4CCBD87884D46C229D3E9C44610846BC，Astra未从本机读取复核。老B/S/L first seal永久UNVERIFIABLE、新17合成证明仅CODEX_REPORTED、旧sanitization DENIED/UNKNOWN、历史ledger偏差UNRESOLVED均不变。
-
-V010原MATLAB HANK主线、冻结plan/model源码、corrected单点HA UNTESTED、FULL_RUNNER_IO_CLOSURE BLOCKED、model_activation=False、Results FALSE、V011 NOT_STARTED及A16/window/C9/CALL_LEDGER、real C8 REQUEST_ONLY、原8dirty/index/common-dir/C SSD备份所有保护不变。Codex只能按本固定任务交付 V010_SOURCE_SCRIPT_PROVENANCE_RECOVERY_CONDITIONAL_TIMESTAMP_FIX_RESULT，然后STOP，不能自授PASS或下一轮许可。
+旧B/S/L20 first原raw/run_id缺失LEGACY_SEAL_CHAIN_UNVERIFIABLE；17项集成仍本机回执级；旧sanitizer DENIED/UNKNOWN、ledger原argv源码偏差UNRESOLVED。冻结科学plan/model、原corrected两资产HANK/有界多省/GovInv Zt/lagged-NKPC、HA单点UNTESTED、FULL_RUNNER_IO_CLOSURE BLOCKED、model_activation=False、Results FALSE、V011 NOT_STARTED，及8dirty/index/external common-dir/C SSD备份、real C8与A16/window/C9/CALL_LEDGER硬门保持。高精度timestamp仅SPEC_UNRESOLVED，不允许擅自新增schema规则或算25/25。**本次不发行后续执行任务。**
