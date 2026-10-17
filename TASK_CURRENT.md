@@ -1,17 +1,24 @@
-# TASK_CURRENT · V010 M1 IO/NETWORK/N13集中工程任务已审且STOP
+# TASK_CURRENT · V010 M1 / V1.3 平台版本信息Popen来源与导入工程闭环
 
-**WORKFLOW=V1.3**。
-**ACTIVE_TASK=NONE**。
-**LAST_TASK=V010_M1_V13_IO_READ_NETWORK_AUDIT_CANONICAL_N13_INTEGRATED_REPAIR__DELIVERED__STOPPED**。
-**ISSUER_COMMIT=72f1ef4c908b31fba339f16ccb5dba0cc7bd4fbc；FIXED_TASK_BLOB=9e0160ed27a80a49cc07374f79cb75d80cfe16aa**。
-**REVIEW=[正式局部工程主审](versions/0.0.10/m1_v13_io_network_n13_partial_local_only_review_20261017.md)**。
-**VERDICT=PARTIAL_ENGINEERING_DIAGNOSTIC__LOCAL_ONLY__N13_REPORTED_PASS__CANONICAL_NOT_AUTHENTICATED**。
-**NEXT_GATE=WAIT_OWNER_FRESH_V010_PLATFORM_SYSCMD_VER_SUBPROCESS_PROVENANCE_AND_IMPORT_ONLY_GATE_AUTHORITY / STOP**。
-**NEW_PERMISSION=NONE__PYTHON0__REAL_RUNNER0__GIT_SSH_PUSH0__HA/HJB/KFE/GE/IRF/REAL_C8_0**。
-**FULL_RUNNER_IO_CLOSURE=BLOCKED；model_activation=False；Results FALSE；V011 NOT_STARTED**。
+**WORKFLOW=V1.3__OWNER_APPROVED__LOCAL_CODEX_DOC_SYNC_LIMITED_ACCEPTED**。
+**RESEARCH_VERSION=V010/V0.0.10；V011 NOT_STARTED**。
+**ACTIVE_TASK=V010_M1_V13_PLATFORM_SYSCMD_VER_PROVENANCE_AND_CANONICAL_RUNNER_GATE**。
+**FIXED_ISSUE_COMMIT=7e9ade7c36a1b606c8d8125b0fd21e9b067d4f9c；FIXED_TASK_BLOB=67928a92b742054d7303771974cb8cb42943cd65**。
+**TASK=[唯一冻结本轮工程任务](versions/0.0.10/m1_v13_platform_syscmd_ver_provenance_canonical_runner_task_20261017.md)**。
+**STOP=WAIT_ASTRA_V010_M1_PLATFORM_CANONICAL_RUNNER_REVIEW / STOP**。
+**FULL_RUNNER_IO_CLOSURE=BLOCKED；model_activation=False；Results FALSE**。
 
-E0 70/70冻结源及写前preflight据Codex通过；IO负例`Lib/__future__.py`不存在缓存探测已被局部处理且读取0B；NETWORK事件实际为`socket.gethostname`，不能推断真实联网，socket创建/DNS仍DENY；N13据报4.039秒真实timeout并杀进程/回收/reader退出。两次canonical导入被`platform._syscmd_ver`产生的未经授权`subprocess.Popen`请求触发`GIT_NO_CAPABILITY`正确阻断；九监测模块显式导入和真实runner均NOT_RUN。E3只有1次远端ref preflight exit128原因UNKNOWN，fetch/push0，Astra核远端ref404。
+**ENGINEERING_SCOPE=PLATFORM_SYSCMD_VER_PROVENANCE__NO_NEW_POPEN_CAPABILITY__NATIVE_OR_SCOPED_ADAPTER_IMPORT_ONLY__NINE_MONITORED_MODULES__WINDOWS_RUNNER_IO**。
+**NEW_SCRATCH=D:/ProjectTemp/ch5_v010_m1_v13_platform_canonical_runner_20261017_01**。
+**NEW_PYTHON_PROCESSES_MAX8__STATIC_OR_PROBE2__CANONICAL_NATIVE_OR_ADAPTER3__EXPLICIT_NINE1__REAL_RUNNER2**。
+**WALL_TOTAL150MIN__PER_PROCESS180S__ARTIFACTS32MIB__OLD_READ12_FILES_2MIB__STAGE_A_GIT100**。
+**SCIENTIFIC_RUNTIME=HA/HJB/KFE/SELECTOR/ROOT/GE/IRF/REAL_C8_0**。
+**NO_ARBITRARY_SUBPROCESS_OR_NEW_NON_GIT_METADATA_CHILD_CAPABILITY**。
+**GITHUB_OPTIONAL_REF=review/ch5-temp-v010-m1-platform-syscmd-20261017**。
+**REMOTE_ONLY_TEMP_PREFIX=_review_tmp/ch5/v010-m1-platform-syscmd-20261017/**。
+**REVIEW_SOLE_PARENT=7e9ade7c36a1b606c8d8125b0fd21e9b067d4f9c；FILES=result.md,manifest.json,platform_provenance.json,import_runner_report.json**。
+**SSH_CHECK1__FULL_PARENT_FETCH1__NONFORCE_PUSH1__READBACK1**。
 
-本轮Python6/8、native dummy1、StageA git7、旧13文件28次读784,720B、新168文件2,700,463B、PowerShell29、wall1199.788s、bare127B、已登记PID无残留、科学调用0均为本机报告级。FIRST_SHA256 `C954CE76FC40CD3D339AED593E985DAC2F1995FC5A1B93F5331F853000120838`；ENGINEERING_FINAL_SHA256 `7D1464DFA00EF50A03D7B5EBD7D13BEFC5DBFCFB6CEC75821F6BBE971F9F52F5`；DELIVERY_SHA256 `D08273150803F72A35C4AFDDFF5909DE77C901065B582104E23FFE590E53AA4D`，原始Windows字节未供Astra独立复算。**本轮剩余2次Python及所有SSH/Git余量立即随STOP关闭不结转**。旧first/run_id缺失、旧sanitizer拒绝、原D盘8dirty/index/外common-dir、C SSD备份及科学硬门继续冻结。
+先按发行Commit读完整任务并核Blob，V1.3强制**写前零字节父路径/目标身份Preflight→创建全新scratch→再核身份→首次写入**。必须重新认证70模型源码及stdlib/依赖原字节，旧失败runner变体无源字节不得从旧hash伪造。首先静态/只读认证`platform._syscmd_ver`真正发起`Popen`的版本环境、调用链、参数种类及来源。坚持`GIT_NO_CAPABILITY`对非原五Git child继续DENY；如使用新scratch受界元数据兼容适配器，只在其**有明确等价证据**时用于import-only且必须标`ADAPTER_ONLY`，不能标原生无适配PASS。动态模块与副作用未知STOP；canonical安全通过才测试额外九监测模块、真runner。N13已有本地正向，只有Job/timeout语义改动需要另作条件式回归。任何科学模型求解0。
 
-后继只建议一张新的有界`platform._syscmd_ver`来源/权限与canonical/九模块/runner工程闭环任务，需Owner新的明确许可；禁止默认开启任意`Popen`、禁以新receipt补造历史raw，不能自动HA求解或V011。
+V1.3 E1普通路径/schema/兼容脚本问题可在本轮已冻预算内集中修复；E2身份、非认证stdlib、权限和资源硬门Fail Closed；E3任何保护资产、实际网络、未授权子进程、科学solve或敏感公开STOP。本轮所有剩额随STOP关闭，不继承旧Python或SSH。Codex完成后统一提交 `V010_M1_V13_PLATFORM_SYSCMD_CANONICAL_RUNNER_RESULT` 并等待Astra集中验收；不得自授FULL_RUNNER_IO_CLOSURE或启动corrected HA/论文Results。
