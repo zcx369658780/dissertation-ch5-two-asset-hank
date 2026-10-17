@@ -1,5 +1,10 @@
 # 第五章 V010 进度快照与下一阶段门禁（2026-10-16）
 
+## 2026-10-17最新覆盖：timestamp证据交换因首写前身份门未完成而FAIL_CLOSED
+
+**ACTIVE_TASK=NONE**。上一`V010_CURRENT_TIMESTAMP_SANITIZED_EVIDENCE_EXCHANGE`已STOP，[永久限域主审](../versions/0.0.10/current_timestamp_evidence_exchange_prewrite_identity_order_violation_local_only_primary_review_20261017.md) Blob`8437d51264c66558ff57821618c17ee567af74a4`。Codex已承认在新scratch写入前路径身份核验完成之前写入准备脚本，因此过程顺序FAIL；准备脚本据报未执行、旧证读取/安全扫描/SSH Git/Python/runner/HA均0，目标远端review ref实查404，无可验候选。本轮终态封存1次，新增2件25,733B；receipt本机SHA未获Astra原字节复算。原现时PS7.6.6 timestamp类型局部修复24/25+1规范未决、历史执行源码bytes未认证不变。M1仍是有限工程进展（runner未闭），M2多省稳态和GDP目标未过，M3原冲击缺有效稳态，M4 Results FALSE，V011未启动。后续需Owner新批准写前身份门先行的新独立scratch，不允许对已写旧scratch“补前置记录”、继承STOP额度或自行启动科学计算。此条优先之前ACTIVE快照。
+
+
 ## 2026-10-17最新覆盖：当前timestamp本地修复进入GitHub安全证据独立交换门
 
 唯一ACTIVE为 `V010_CURRENT_TIMESTAMP_SANITIZED_EVIDENCE_EXCHANGE`（发行commit `74b1a21f9012c60fe3ad3f3a620e0e33f214083b`，任务Blob `f1567a2d8b96eacadbaa951dcf955adbfc589f98`）。本轮严格脱敏5件本地材料后在单独远端review ref候选发布供Astra验收，24项合成符合预期/1项高精度SPEC_UNRESOLVED永久分账，原历史源码字节未获验证仍UNKNOWN；不得自动重新跑旧25项、增改schema或公开被拒旧候选。M1仍部分完成，真实runner与corrected HA单点未通过；M2稳态/GDP目标、M3冲击、M4论文Results均未通过，V011未启。只有本次远端证据独立验收后，才考虑另获Owner新工程Python与HA科学运行权限。本条优先下方旧ACTIVE时态。
