@@ -1,5 +1,10 @@
 # 第五章 V010 进度快照与下一阶段门禁（2026-10-16）
 
+## 2026-10-17最新覆盖：当前timestamp本地修复进入GitHub安全证据独立交换门
+
+唯一ACTIVE为 `V010_CURRENT_TIMESTAMP_SANITIZED_EVIDENCE_EXCHANGE`（发行commit `74b1a21f9012c60fe3ad3f3a620e0e33f214083b`，任务Blob `f1567a2d8b96eacadbaa951dcf955adbfc589f98`）。本轮严格脱敏5件本地材料后在单独远端review ref候选发布供Astra验收，24项合成符合预期/1项高精度SPEC_UNRESOLVED永久分账，原历史源码字节未获验证仍UNKNOWN；不得自动重新跑旧25项、增改schema或公开被拒旧候选。M1仍部分完成，真实runner与corrected HA单点未通过；M2稳态/GDP目标、M3冲击、M4论文Results均未通过，V011未启。只有本次远端证据独立验收后，才考虑另获Owner新工程Python与HA科学运行权限。本条优先下方旧ACTIVE时态。
+
+
 ## 2026-10-17最新覆盖：SOURCE_TIMESTAMP本机类型修复部分成功，未获远端独立原证
 
 当前`ACTIVE_TASK=NONE`；上一`V010_SOURCE_SCRIPT_PROVENANCE_RECOVERY_AND_CONDITIONAL_TIMESTAMP_FIX` 已DELIVERED/STOPPED。[最新独立限域主审](../versions/0.0.10/source_script_provenance_conditional_timestamp_local_only_primary_review_20261017.md) Blob`d6a53e96e359ac2c3d437ed9025cd5f58b129492`。Gate R现时脚本路径+当前整文件SHA与字段/schema锚点据Codex有本地证据，但历史执行脚本hash未记录；Gate T据报原JSON String/Z合法、PowerShell7.6.6解析成System.DateTime/Utc使旧的“解析后仍为string”判断误拒，历史运行版本仍UNKNOWN。Gate F25项新合成24符合预期，1项高精度形态SPEC_UNRESOLVED不计PASS；原字段修正版本机只读复核允许、源hash不变。无任何GitHub发布/Python/真实runner/HA，不能宣布完整工程PASS。M1继续部分完成、M2多省稳态/GDP目标独立校准未PASS、M3冲击缺合法基点、M4 Results FALSE、V011 NOT_STARTED。下一需Owner另授权新封存证据脱敏交换与高精度格式边界处置，旧任务预算封闭。此前文内“当前ACTIVE”的叙述属于当时快照，现行授权以CURRENT与TASK_CURRENT为准。
