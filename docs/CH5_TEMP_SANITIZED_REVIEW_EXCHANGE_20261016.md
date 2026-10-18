@@ -1,4 +1,6 @@
 # 第五章脱敏审阅材料 GitHub 临时交换与清理协议（Owner 2026-10-16 授权）
+**2026-10-18 Owner更新（文件类型优先规则）：** [MD＋ZIP远端临时审阅扩展](CH5_OWNER_REVIEW_MD_ZIP_TEMP_EXCHANGE_POLICY_20261018.md)允许以后新任务在相同独立remote review树内交付脱敏`result.md`、`manifest.json`和事前逐成员审查的`evidence_sanitized.zip`；旧文下方“仅MD/JSON/静态文本、ZIP禁止”是历史限制，**仅文件类型条款被此新授权取代**。SSH Key/443、只在remote tree创建_review_tmp、原始RAW禁止未经审查发布、先永久验收后删除、Git历史不消失的规则原样保留，旧STOP任务不追溯增加push或科学预算。
+
 
 ## 2026-10-16 Owner 最新 GitHub SSH Key连接要求（仅改变Codex发布链）
 

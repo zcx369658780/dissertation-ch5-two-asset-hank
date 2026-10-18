@@ -1,4 +1,6 @@
 # CH5 动态总目录 · V010 CP2_F25独立机制取证终结，Owner科学决定待定
+**2026-10-18新Owner交换规则与实验结果（不改变正式ACTIVE_TASK=NONE）：** [TEMP-V010 100轮独立证据终审](CH5_TEMP_V010_BLACKBOX_100_ROUNDS_INDEPENDENT_REVIEW_20261018.md)；[GitHub临时审阅支持脱敏MD＋ZIP](CH5_OWNER_REVIEW_MD_ZIP_TEMP_EXCHANGE_POLICY_20261018.md)。100轮两省未达原稳态门，HA200完整返回/201计费，ra触界100/100轮，原HA黑箱不变；正式V010/Results未接受。
+
 
 **Owner 2026-10-17新方向（正式科学合同暂不改）：** [HA黑箱与100+轮隔离实验决定](CH5_OWNER_HA_BLACKBOX_TEMP_V010_EXPERIMENT_DECISION_20261017.md)；独立实验任务 [TEMP-V010 MATLAB-faithful HA黑箱](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/503b418f790d61049f3df9016a783dcecc793237/experiments/TEMP_V010_MATLAB_FAITHFUL_HA_BLACKBOX_100PLUS_20261017/EXPERIMENT_CONTRACT.md)。**正式ACTIVE_TASK仍NONE；独立TEMP实验按其实验分支授权，不解封旧V010科学预算。**
 

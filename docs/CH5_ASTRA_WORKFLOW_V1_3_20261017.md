@@ -1,4 +1,6 @@
 # 第五章 V1.3：本地工程快速通道与分级独立验收
+**2026-10-18长期证据传输扩展：** [Owner批准新任务GitHub临时MD＋脱敏ZIP](CH5_OWNER_REVIEW_MD_ZIP_TEMP_EXCHANGE_POLICY_20261018.md)。后续固定新任务可白名单`evidence_sanitized.zip`，须逐条清单/递归内嵌压缩包审查，原RAW/私人路径不得因临时上传而公开；Codex SSH+独立bare及Astra正式归档后清remote temp文件不变。**这里只变证据交付协议，不改变E1/E2/E3门、旧科学和网络预算。**
+
 
 **Owner批准日期：2026-10-17。**
 **工作流状态：OWNER_APPROVED__GITHUB_PUBLISHED__LOCAL_CODEX_SYNC_PENDING。**

@@ -1,4 +1,10 @@
 # 第五章长期知识与恢复入口
+## 2026-10-18 Owner审批：临时GitHub审阅可传MD＋合规脱敏ZIP，100轮TEMP实验已完成但未收敛
+
+[2026-10-18 MD/ZIP政策](../CH5_OWNER_REVIEW_MD_ZIP_TEMP_EXCHANGE_POLICY_20261018.md)：**未来新固定任务**可在独立remote review分支白名单中一次普通nonforce发布`result.md`、`manifest.json`、`evidence_sanitized.zip`；必须递归扫描ZIP及内嵌压缩包、删私人Windows绝对路径与凭据、保持RAW与DERIVATIVE双哈希，Astra先永久主审并回读后清remote tree白名单；Git删除不抹历史，原项目本地工作树/index永不落地_review_tmp。旧任务已STOP不追溯增加push/HA预算；上传RAW失败则Owner私人会话fallback。
+
+[临时HA黑箱100轮独立终审](../CH5_TEMP_V010_BLACKBOX_100_ROUNDS_INDEPENDENT_REVIEW_20261018.md)：Owner上传完整6,352,227B ZIP SHA256 `4CD602CC3589F404E176937B96D21E265EB036374BCA95D708E5DC246A394156`，总910成员=909 indexed+manifest、全哈希PASS；nested旧暂停证据ZIP有94个完成HA＋1中断，续算今日106个完成HA，全200组V/density SHA原字节可信。累计100轮双省各100，HA计费201/返回200、科学进程2（第一Owner中断后从47轮恢复），终态`OWNER_100_ROUND_LIMIT_NONCONVERGED`，并非自然500轮失败；最后max KN gap0.107522、max跨轮Y gap0.012719、家庭0/2 converged，两省100/100轮ra和wage都触界。原Matlab-faithful黑箱SHA不变，Bellman只是诊断，真实31省和论文Results仍FALSE。此次RAW ZIP含本机路径及旧原证内嵌，不公开原样推Git；正式治理`ACTIVE_TASK=NONE`与V010原科学合同继续有效。
+
 
 ## 2026-10-17 Owner最新临时实验方向：旧MATLAB-faithful HA必须冻结为黑箱，外层≥100轮观察（独立于正式V010）
 

@@ -1,4 +1,6 @@
 # CH5 Owner 2026-10-17：HA黑箱优先与临时长轮次实验决定
+**2026-10-18首轮实验结果（不追改原定方向）：** [100轮私人原字节独立核验](CH5_TEMP_V010_BLACKBOX_100_ROUNDS_INDEPENDENT_REVIEW_20261018.md)。第100轮未收敛，2省在100/100轮均资本回报/工资触界，200完整HA＋1中断计费，初始黑箱SHA未改。Owner续算至100轮后停止，不能称500轮自然失败、不能据此推断旧Matlab-faithful HA无效；结果保持TEMP、Results FALSE。
+
 
 **决定性质：新的Owner独立探索方向；不是对V010冻结科学计划、先前FAIL_CLOSED、后继Results或V011的追溯修订。**
 
