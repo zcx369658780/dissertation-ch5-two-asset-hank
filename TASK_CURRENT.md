@@ -1,26 +1,24 @@
-# TASK_CURRENT — Resource Gate Adapter Integration V3 / Path Boundary Rules
+# TASK_CURRENT — V3 Adapter Evidence Delivery Only
 
-唯一当前任务：TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_20261018
+唯一当前任务：TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_GITHUB_DELIVERY_20261018
 状态：ISSUED_NOT_STARTED
-范围：ENGINEERING_ONLY / NO_SCIENCE / NO_HA
-发行提交：37271647c5818731231b6d95854174ca1dcef3ce
-合同Blob：489b636cba99a66ea40b85041f9bf87c7aaccfee
-合同路径：experiments/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_20261018/ENGINEERING_CONTRACT.md
-合同URL：https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/37271647c5818731231b6d95854174ca1dcef3ce/experiments/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_20261018/ENGINEERING_CONTRACT.md
-V1.5身份规则：docs/CH5_ASTRA_WORKFLOW_V1_5_IMMUTABLE_TASK_IDENTITY_20261018.md
-V1.6路径规则：docs/CH5_ASTRA_WORKFLOW_V1_6_PROTECTED_PATH_BOUNDARIES_20261018.md
+范围：DELIVERY_ONLY / ZERO_SCIENCE / NO_TEST_RERUN / NO_RUNNER
+发行提交：98d9705e7219b23a344fb33052dbe41fe8fdf6f2
+合同Blob：c409bf77eae018a6ff7db6cb821bb9410fe85ffe
+合同路径：tasks/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_GITHUB_DELIVERY_20261018.md
+合同URL：https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/98d9705e7219b23a344fb33052dbe41fe8fdf6f2/tasks/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_GITHUB_DELIVERY_20261018.md
+工作流：docs/CH5_ASTRA_WORKFLOW_V1_7_DELIVERY_CLOSURE_20261018.md
+治理HEAD（发行后本次更新）：由本文件所在commit历史确定；不得把任务发行commit误当成本次文档同步最终HEAD。
 
-V2任务因BOOTSTRAP 0的PATH_ALIAS诊断不足而FAIL_CLOSED_PROTECTED_PATH_IDENTITY。原始路径是递归枚举发现的node_modules依赖文件；最终路径未返回，相关性UNKNOWN。没有scratch或工件创建。不得重写历史失败。
+## 授权范围
 
-V3必须先原样读取固定合同并完成V1.5身份校验。保护路径核验只检查有限声明的保护根身份和实际目标/父链，不递归扫描所有依赖文件。无关递归项中的别名可分类为PATH_ALIAS_UNRELATED_ENUMERATION，但仅当能证明其不是目标、祖先或相关保护根时；无法证明则STOP。不得关闭alias检查或换路径绕过。
+仅对既有 run_id=33f2b49ddc274e868956f6480d5f3a3a 的已完成证据执行有限脱敏审查、fake-bare发布器预检、远端临时review分支发布、真实字节回读和交付结果封存。远端分支、固定父commit、临时路径、白名单文件、各预算和停止条件全部以固定合同为准。
 
-任务范围为单直接子进程门禁窄adapter集成。BOOTSTRAP 0/1/2通过后，先静态与合成测试，之后最多一次真实Windows smoke。nested/arbitrary descendants必须阻断。资源预算沿用固定合同：后代≤192、Python启动≤48、并发Python≤8、活动线程≤64、3小时、8批。不得网络发布/Git fetch/push，不得科学调用，不得恢复旧TEMP。
+来源工程任务 `TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_20261018` 的合同明确禁止网络发布；不追溯修改它。来源任务本地结果 `PASS_BOUNDED_ADAPTER_INTEGRATION_LOCAL` 不等于Astra独立验收通过。本任务不重跑静态测试、合成测试、Windows smoke、Python、adapter、runner或任何科学模型。
 
-ACTIVE_RESEARCH_TASK=NONE
-ACTIVE_SCIENCE_TASK=NONE
-model_activation=False
-REAL_GE=False
-Results=FALSE
-V011=NOT_STARTED
-FULL_RUNNER_IO_CLOSURE=BLOCKED
-最终停点：WAIT_ASTRA_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_REVIEW
+SCIENCE_BUDGET=0
+ENGINEERING_TEST_BUDGET=0
+MODEL_OR_RUNNER_BUDGET=0
+正式V010不变；V011 NOT_STARTED；model_activation=False；REAL_GE=False；Results=FALSE；FULL_RUNNER_IO_CLOSURE=BLOCKED。
+
+最终停点：WAIT_ASTRA_INDEPENDENT_REVIEW_AND_PERMANENT_ARCHIVE
