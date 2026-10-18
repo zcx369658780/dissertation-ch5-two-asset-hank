@@ -1,24 +1,28 @@
-# CH5 CURRENT · V3 bounded gate accepted; adapter integration task issued
+# CH5 CURRENT · Immutable identity V1.5; adapter integration reissued
 
-**LAST_ACCEPTED_TASK=TEMP_V010_RESOURCE_GATE_NATIVE_SINGLE_CHILD_V3_20261018**
-**LAST_ACCEPTED_RUN=49b82ce3c2554dbeb0aa2fb6b0b2f067**
-**LAST_ACCEPTED_VERDICT=PASS_BOUNDED_NATIVE_SINGLE_CHILD_LOCAL**
-**PRIOR_RESOURCE_GATE_V2=FAIL_CLOSED_UNRESERVED_REAL_DESCENDANT**
-**ACTIVE_TASK=TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_20261018**
+**PREVIOUS_TASK=TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_20261018**
+**PREVIOUS_TASK_RESULT=FAIL_CLOSED_TASK_RAW_IDENTITY / STOP**
+**PREVIOUS_RUN= e2a4f335b534d43778a41c588386d9071**
+**PREVIOUS_TASK_NOT_STARTED=TRUE**
+**ACTIVE_TASK=TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V2_20261018**
 **TASK_SCOPE=ENGINEERING_ONLY / NO_SCIENCE / NO_HA**
 **TASK_STATUS=ISSUED_NOT_STARTED**
-**TASK_ISSUE_COMMIT=779cc2e6013afab1c23146464ea7246edda8eedf**
-**TASK_BLOB=8cb2ecdd584e38aa040736d34a4b19a3cc8e4750**
-**TASK_PATH=experiments/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_20261018/ENGINEERING_CONTRACT.md**
+**TASK_ISSUE_COMMIT=22fbd1b1d42bb774f826d57bbca973965781f39e**
+**TASK_BLOB=fedd822504bdc0547ab91c7250d9e256efbc18c3**
+**TASK_PATH=experiments/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V2_20261018/ENGINEERING_CONTRACT.md**
+**WORKFLOW=docs/CH5_ASTRA_WORKFLOW_V1_5_IMMUTABLE_TASK_IDENTITY_20261018.md**
 
-## Accepted bounded evidence
-V3 accepted only for one direct suspended child assigned to Job and identity-verified before resume, plus one suspended second probe denied at Job assignment and never resumed. Synthetic 31/31 and bounded Windows tests 3/3 reported. Does not prove CreateProcess-before-creation denial, arbitrary descendants, lifetime cumulative process limits or full Runner I/O closure. Original standalone final receipt was not separately supplied to Astra.
+## Latest identity failure
+Previous adapter task stopped at BOOTSTRAP 0 because Codex changed historical V3 references while assembling validation text. This is a local construction error, not evidence the fixed remote contract was wrong. No files or scratch were created, tests/runners/science/network were not run. Previous task is superseded, not resumed.
+
+## Immutable startup rule
+Read the contract from its fixed issue commit/path unchanged. Never template, regex-replace, normalize or reconstruct the contract for identity checking. Distinguish Git Blob SHA from file SHA256. If only decoded connector text is available, label CONNECTOR_TEXT_VERIFIED; don't claim raw Git object verification. Mismatch => read-only STOP; no path/branch/hash guessing.
 
 ## Current task boundary
-Integrate the bounded V3 gate into the existing resource-gate executor via a narrow adapter. Fresh scratch and BOOTSTRAP 0/1/2 required. At most one new bounded Windows integration smoke run, only after synthetic/static checks pass. Unsupported nested/arbitrary descendant topology must remain blocked. No science, no old TEMP resume, no Git fetch/push, no network publication or review cleanup.
+Integrate the accepted bounded V3 single-child gate into the existing executor via a narrow adapter. Follow V1.5 identity rules and V1.4 resource/protection rules. Fresh scratch and BOOTSTRAP 0/1/2 required. Unsupported nested/arbitrary descendants remain blocked. Static/synthetic checks first; at most one real bounded Windows integration smoke after they pass. No science, no old TEMP resume, no Git fetch/push, no network publication or review cleanup.
 
 **ACTIVE_RESEARCH_TASK=NONE; ACTIVE_SCIENCE_TASK=NONE**
 **model_activation=False; REAL_GE=False; Results=FALSE; V011=NOT_STARTED**
 **FULL_RUNNER_IO_CLOSURE=BLOCKED**
-**NEXT=CODEX_EXECUTE_TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_20261018**
+**NEXT=CODEX_EXECUTE_TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V2_20261018**
 **FINAL_STOP=WAIT_ASTRA_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_REVIEW**
