@@ -1,27 +1,23 @@
-# CH5 CURRENT · V1.4 native single-child resource gate task issued
+# CH5 CURRENT · V3 bounded gate accepted; adapter integration task issued
 
-**LATEST_RUN=977d18ebe6e14a91bb049924cae715e4**
-**LAST_TASK=TEMP_V010_RESOURCE_GATE_REPAIR_20261018**
-**LAST_VERDICT=FAIL_CLOSED_UNRESERVED_REAL_DESCENDANT / STOP**
-**DOC_ONLY_REPORT=PROCEDURE_COMPLIANT_STOP; LOCAL_MIRROR_SYNC_NOT_COMPLETED**
-**ACTIVE_TASK=TEMP_V010_RESOURCE_GATE_NATIVE_SINGLE_CHILD_V3_20261018**
+**LAST_ACCEPTED_TASK=TEMP_V010_RESOURCE_GATE_NATIVE_SINGLE_CHILD_V3_20261018**
+**LAST_ACCEPTED_RUN=49b82ce3c2554dbeb0aa2fb6b0b2f067**
+**LAST_ACCEPTED_VERDICT=PASS_BOUNDED_NATIVE_SINGLE_CHILD_LOCAL**
+**PRIOR_RESOURCE_GATE_V2=FAIL_CLOSED_UNRESERVED_REAL_DESCENDANT**
+**ACTIVE_TASK=TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_20261018**
 **TASK_SCOPE=ENGINEERING_ONLY / NO_SCIENCE / NO_HA**
 **TASK_STATUS=ISSUED_NOT_STARTED**
-**TASK_ISSUE_COMMIT=09e073ee69b34fc22dd5448a6a39156a0cd11775**
-**TASK_PATH=experiments/TEMP_V010_RESOURCE_GATE_NATIVE_SINGLE_CHILD_V3_20261018/ENGINEERING_CONTRACT.md**
+**TASK_ISSUE_COMMIT=bfcc97f067340f4523cdf68f337b5f7457e25640**
+**TASK_PATH=experiments/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_20261018/ENGINEERING_CONTRACT.md**
 
-## Accepted current facts
-- Old ledger reconciliation: kernel-only ENGINEERING 35→35; conservative ENGINEERING 37→37.
-- Synthetic tests reported 28/28 pass; real Windows Job reservation 2 vs TotalProcesses 3 caused E2.
-- Two exited descendants and actual Python total remain UNKNOWN.
-- The Codex DOC_ONLY report is accepted as correct fail-closed behavior, not as successful local mirror synchronization. No local file was changed; source/target identity was not authorized. Do not retry alternate paths under that task.
-- Prior TEMP price-tuning and resource-gate runs remain FAIL_CLOSED and are not resumable.
+## Accepted bounded evidence
+V3 accepted only for one direct suspended child assigned to Job and identity-verified before resume, plus one suspended second probe denied at Job assignment and never resumed. Synthetic 31/31 and real bounded tests 3/3 reported. Does not prove CreateProcess-before-creation denial, arbitrary descendants, lifetime cumulative process limits or full Runner I/O closure. Final receipt original standalone bytes were not separately supplied to Astra.
 
-## Current permission
-The new task is engineering-only. It may inspect the gate and run bounded dummy-process tests only after protected-path bootstrap passes. No HA/HJB/KFE/selector/root solver, no science, no Git fetch/push, no remote publication or cleanup.
+## Current task boundary
+Integrate the bounded V3 gate into the existing resource-gate executor via a narrow adapter. Fresh scratch and BOOTSTRAP 0/1/2 required. At most one new bounded Windows integration smoke run, only after synthetic/static checks pass. Unsupported nested/arbitrary descendant topology must remain blocked. No science, no old TEMP resume, no Git fetch/push, no network publication or review cleanup.
 
 **ACTIVE_RESEARCH_TASK=NONE; ACTIVE_SCIENCE_TASK=NONE**
 **model_activation=False; REAL_GE=False; Results=FALSE; V011=NOT_STARTED**
 **FULL_RUNNER_IO_CLOSURE=BLOCKED**
-**NEXT=CODEX_EXECUTE_TEMP_V010_RESOURCE_GATE_NATIVE_SINGLE_CHILD_V3_20261018**
-**FINAL_STOP=WAIT_ASTRA_NATIVE_SINGLE_CHILD_RESOURCE_GATE_REVIEW**
+**NEXT=CODEX_EXECUTE_TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_20261018**
+**FINAL_STOP=WAIT_ASTRA_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_REVIEW**
