@@ -1,5 +1,10 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-18 Owner决定：独立TEMP 2×2收益/工资价格桥实验，100轮而不是500轮（覆盖下方旧TEMP科学时态）
+
+[科学授权与详细约束](../CH5_OWNER_TEMP_PRICE_BRIDGE_FACTORIAL_100_AUTHORITY_20261018.md)：独立实验 `experiment/ch5-temp-price-bridge-factorial-100-20261018` /发行Commit `2c855f616efbca05c29d4069a44e3c6651070b44` /任务Blob `4e81556bff068b9bedc6c7c608faf24ee1e439fe`；A0 raw ra0/raw wt0的已验收100轮只读复用，A1 used ra/raw wage、A2 raw ra/used wjt、A3 used ra/used wjt的**每组只跑最多100轮、全部新真实HA最多600**，不自动继续500轮、不逐轮人工审批；其他经济方程/费税/份额raw lagged score/同S/HA黑箱完全不改。注意V010源`prepare_mainline_household_states`会pre-HA强制raw绑定rah，实验必须实际覆盖/记录进入HA的被截断资本收益，防止伪对照。Owner仅批准TEMP E3方法敏感性对照，不批准正式V010改方程或Results。GitHub脱敏MD+ZIP remote-only review白名单优先，Astra终审后清当前remote temp tree；正式`ACTIVE_TASK=NONE`不变，旧计算额度全部CLOSED，`V011 NOT_STARTED`。
+
+
 ## 2026-10-18 TEMP-V010 100轮资本回报上界源证调查（最新发现，保持旧科学权威）
 
 [只读独立机制审议](../CH5_TEMP_V010_RA_BOUNDARY_SOURCE_ONLY_FORENSIC_20261018.md)用已上传的100轮私有证据与原MATLAB/固定V010源独立核算：两省raw ra0全部100轮>0.09，最小0.37333/0.41554，末轮0.38458/0.42724；受界ra_used两省始终0.09，GovInv各触发26次×1.1、从100/120升至1191.82/1430.18，Zt各调23次，原收益明显下降但未触内点。固定V010 TEMP桥沿raw ra0×same-S形成家庭rah≈0.38885/0.41871，而旧MATLAB HANK_mp_1turn使用已截断ra；TEMP下一轮工资沿wt0（未截断），MATLAB wage_caculate沿wjt（截断），第100轮固定同状态重算家庭w_eff实际6.948/7.029，对照clip报价仅2.038/2.019。两项都是**已冻结经济传导差异**，非已经证实的错误；不能以静态重算推断换价后HA/GE能收敛。末轮原PIt=0时以目标GDP固定mt作静态计算，目标ra_raw≤0.09对应K约7708/9867，约为当前总K的3.38/3.70倍，不能充当新稳态。Owner若要做raw/used收益与工资对照，需独立TEMP E3确认并有新科学预算；**本次HA/HJB/KFE新调用0、正式V010未修改、ACTIVE_TASK=NONE、Results FALSE、V011 NOT_STARTED，HA黑箱不可改。**
