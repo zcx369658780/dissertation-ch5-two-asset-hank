@@ -1,19 +1,20 @@
-# TASK_CURRENT — Adapter Integration V2 / Immutable Task Identity
+# TASK_CURRENT — Resource Gate Adapter Integration V3 / Path Boundary Rules
 
-唯一当前任务：TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V2_20261018
+唯一当前任务：TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_20261018
 状态：ISSUED_NOT_STARTED
 范围：ENGINEERING_ONLY / NO_SCIENCE / NO_HA
-发行提交：22fbd1b1d42bb774f826d57bbca973965781f39e
-合同Blob：fedd822504bdc0547ab91c7250d9e256efbc18c3
-合同路径：experiments/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V2_20261018/ENGINEERING_CONTRACT.md
-合同URL：https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/22fbd1b1d42bb774f826d57bbca973965781f39e/experiments/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V2_20261018/ENGINEERING_CONTRACT.md
-工作流V1.5：docs/CH5_ASTRA_WORKFLOW_V1_5_IMMUTABLE_TASK_IDENTITY_20261018.md
+发行提交：37271647c5818731231b6d95854174ca1dcef3ce
+合同Blob：489b636cba99a66ea40b85041f9bf87c7aaccfee
+合同路径：experiments/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_20261018/ENGINEERING_CONTRACT.md
+合同URL：https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/37271647c5818731231b6d95854174ca1dcef3ce/experiments/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_20261018/ENGINEERING_CONTRACT.md
+V1.5身份规则：docs/CH5_ASTRA_WORKFLOW_V1_5_IMMUTABLE_TASK_IDENTITY_20261018.md
+V1.6路径规则：docs/CH5_ASTRA_WORKFLOW_V1_6_PROTECTED_PATH_BOUNDARIES_20261018.md
 
-上一任务 TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_20261018 因 TASK_RAW_IDENTITY 在 BOOTSTRAP 0 停止，未实施、未创建工件、未运行测试或科学。它被SUPERSEDED_NOT_STARTED，不续跑。
+V2任务因BOOTSTRAP 0的PATH_ALIAS诊断不足而FAIL_CLOSED_PROTECTED_PATH_IDENTITY。原始路径是递归枚举发现的node_modules依赖文件；最终路径未返回，相关性UNKNOWN。没有scratch或工件创建。不得重写历史失败。
 
-本任务启动时必须原样读取固定合同，不得重写、替换历史Commit/Blob、重新拼接校验正文。Git Blob SHA和文件SHA256必须区分。只有连接器文本时标记CONNECTOR_TEXT_VERIFIED，不宣称原始Git对象已独立认证。身份不一致只读STOP，不换路径/分支/哈希。
+V3必须先原样读取固定合同并完成V1.5身份校验。保护路径核验只检查有限声明的保护根身份和实际目标/父链，不递归扫描所有依赖文件。无关递归项中的别名可分类为PATH_ALIAS_UNRELATED_ENUMERATION，但仅当能证明其不是目标、祖先或相关保护根时；无法证明则STOP。不得关闭alias检查或换路径绕过。
 
-范围：将已接受的V3单直接子进程门禁窄接入ResourceGate执行器；BOOTSTRAP 0/1/2和保护路径先通过；nested bundle/任意后代明确阻断；静态与合成通过后最多一次真实Windows集成smoke。工程预算：后代≤192、Python启动≤48、同时活动Python≤8、活动线程≤64、3小时、8批。不得Git fetch/push、网络发布、清理review或科学调用。
+任务范围为单直接子进程门禁窄adapter集成。BOOTSTRAP 0/1/2通过后，先静态与合成测试，之后最多一次真实Windows smoke。nested/arbitrary descendants必须阻断。资源预算沿用固定合同：后代≤192、Python启动≤48、并发Python≤8、活动线程≤64、3小时、8批。不得网络发布/Git fetch/push，不得科学调用，不得恢复旧TEMP。
 
 ACTIVE_RESEARCH_TASK=NONE
 ACTIVE_SCIENCE_TASK=NONE
