@@ -1,27 +1,33 @@
-# CH5 CURRENT · V1.6 path-boundary rules; adapter integration V3 issued
+# CH5 CURRENT · V1.7交付闭环规则；V3既有证据补交任务已签发
 
-**PREVIOUS_TASK=TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V2_20261018**
-**PREVIOUS_TASK_RESULT=FAIL_CLOSED_PROTECTED_PATH_IDENTITY / STOP**
-**PREVIOUS_RUN=1b1c3687d35c42b0a06ab581d4a39697**
-**ACTIVE_TASK=TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_20261018**
-**TASK_SCOPE=ENGINEERING_ONLY / NO_SCIENCE / NO_HA**
+**PREVIOUS_ENGINEERING_TASK=TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_20261018**
+**PREVIOUS_ENGINEERING_RESULT=PASS_BOUNDED_ADAPTER_INTEGRATION_LOCAL**
+**PREVIOUS_RUN=33f2b49ddc274e868956f6480d5f3a3a**
+**PREVIOUS_INDEPENDENT_ACCEPTANCE=PENDING**
+**ACTIVE_TASK=TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_GITHUB_DELIVERY_20261018**
+**TASK_SCOPE=DELIVERY_ONLY / ZERO_SCIENCE / NO_TEST_RERUN / NO_RUNNER**
 **TASK_STATUS=ISSUED_NOT_STARTED**
-**TASK_ISSUE_COMMIT=37271647c5818731231b6d95854174ca1dcef3ce**
-**TASK_BLOB=489b636cba99a66ea40b85041f9bf87c7aaccfee**
-**TASK_PATH=experiments/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_20261018/ENGINEERING_CONTRACT.md**
-**WORKFLOW_V1_6=docs/CH5_ASTRA_WORKFLOW_V1_6_PROTECTED_PATH_BOUNDARIES_20261018.md**
+**TASK_ISSUE_COMMIT=98d9705e7219b23a344fb33052dbe41fe8fdf6f2**
+**TASK_BLOB=c409bf77eae018a6ff7db6cb821bb9410fe85ffe**
+**TASK_PATH=tasks/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_GITHUB_DELIVERY_20261018.md**
+**WORKFLOW_V1_7=docs/CH5_ASTRA_WORKFLOW_V1_7_DELIVERY_CLOSURE_20261018.md**
 
-## Latest failure
-Adapter V2 stopped at BOOTSTRAP 0 with PATH_ALIAS in a recursively enumerated dependency file. The checker did not return the final resolved path, so alias target and relation to protected roots remain UNKNOWN. This does not prove model source corruption. No scratch, files, tests, runners, science or network operations occurred.
+## Current decision
 
-## V1.6 rule
-Protect finite declared root identities and the actual intended target/parent chain. Do not recursively enumerate all descendants of evidence roots to infer protection identity. If a PATH_ALIAS is encountered in an unrelated dependency file and it is demonstrably not the target, ancestor, or relevant protected root, record PATH_ALIAS_UNRELATED_ENUMERATION rather than automatically failing the task. If relevant target/boundary cannot be established, STOP. Never disable alias checks or change path to evade.
+The V3 engineering contract prohibited network publication, so its evidence was not pushed. This was contract-compliant but left the long-term delivery workflow incomplete. Do not rewrite or resume that contract. A new zero-science delivery-only task has now been issued with a separate fixed delivery budget.
 
-## Current task
-Integrate accepted V3 single-child gate through a narrow ResourceGate adapter. Immutable contract identity rules from V1.5 remain active. BOOTSTRAP 0/1/2 required. Unsupported nested/arbitrary descendant topology remains blocked. Static/synthetic tests first; at most one real bounded Windows integration smoke after they pass. No science, no old TEMP resume, no Git fetch/push, no network publication or review cleanup.
+## V1.7 hard rules
+
+SCIENCE_BUDGET, ENGINEERING_BUDGET and DELIVERY_BUDGET are independent and must be frozen separately. Any task requiring Astra independent review must specify the review branch, fixed parent, exact remote temp path, file allowlist, size limits, fake-bare preflight, publish/readback/cleanup budgets, and STOP conditions at issuance. If the task prohibits network publication, it cannot also be expected to use GitHub temp exchange; issue a new delivery-only contract rather than changing old authority.
+
+Only sanitized result.md, manifest.json and evidence_sanitized.zip may be published under the task's remote-only _review_tmp path. Review all ZIP members and nested archives; preserve raw/private evidence locally. Astra must read back actual ZIP bytes and recompute SHA256/length; if bytes cannot be independently read, mark BINARY_NOT_INDEPENDENTLY_READABLE. Permanently archive and read back the verdict before deleting only allowlisted files from the remote review branch current tree. Git deletion never erases history.
+
+## Active task
+
+`TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_GITHUB_DELIVERY_20261018` only publishes and verifies existing evidence for run `33f2b49ddc274e868956f6480d5f3a3a`. No tests, Windows smoke, Python, runner, model or scientific calls may be rerun. One successful ordinary non-force publication maximum; no PAT, force push, protected worktree/index writes or extra fetches.
 
 **ACTIVE_RESEARCH_TASK=NONE; ACTIVE_SCIENCE_TASK=NONE**
 **model_activation=False; REAL_GE=False; Results=FALSE; V011=NOT_STARTED**
 **FULL_RUNNER_IO_CLOSURE=BLOCKED**
-**NEXT=CODEX_EXECUTE_TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_20261018**
-**FINAL_STOP=WAIT_ASTRA_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_REVIEW**
+**NEXT=CODEX_EXECUTE_TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_GITHUB_DELIVERY_20261018**
+**FINAL_STOP=WAIT_ASTRA_INDEPENDENT_REVIEW_AND_PERMANENT_ARCHIVE**
