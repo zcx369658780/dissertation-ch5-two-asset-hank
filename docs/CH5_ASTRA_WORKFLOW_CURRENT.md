@@ -1,9 +1,12 @@
-# 第五章当前工作方式 · V1.3（2026-10-17 Owner批准）
+# 第五章当前工作方式 · V1.4（2026-10-18）
 
-**AUTHORITATIVE_WORKFLOW=V1.3__OWNER_APPROVED__GITHUB_PUBLISHED__LOCAL_CODEX_DOC_SYNC_LIMITED_ACCEPTED**。
-**NEW_RULES=[V1.3本地工程快速通道](CH5_ASTRA_WORKFLOW_V1_3_20261017.md)**。
-**ONE_TIME_LOCAL_SYNC_TASK=[仅文档同步](../versions/0.0.10/workflow_v13_one_time_codex_local_docs_sync_task_20261017.md)**。
-新V1.3规则优先于下文V1.2关于日常工程调试/逐份验收文件的旧写法，**不追改历史冻结任务，也不改变原科学硬门、保护根或既有预算**。Codex文档镜像仍需独立一次同步回执；ChatGPT项目Sources需要Owner手动上传更新包，平台Memory并未因GitHub写入即时刷新。
+**AUTHORITATIVE_WORKFLOW=V1.4__OWNER_REQUESTED__GITHUB_PUBLISHED__LOCAL_CODEX_DOC_SYNC_PENDING**
+**NEW_RULES=[V1.4资源门禁真实性与同步闭环](CH5_ASTRA_WORKFLOW_V1_4_RESOURCE_CONTAINMENT_20261018.md)**
+**V1.3历史正文：[本地工程快速通道与分级独立验收](CH5_ASTRA_WORKFLOW_V1_3_20261017.md)**
+
+V1.4补充的硬原则：reservation账本、Windows Job累计观测、OS创建前限制、post-hoc检测和synthetic callback必须分开；ActiveProcessLimit不是累计TotalProcesses限制。任意后代计数超额必须E2 STOP，不能靠更频繁轮询或加大预留数修饰为PASS。三平面同步（GitHub / 本地Codex / GPT Project Sources）必须分别回读，GitHub更新不等于Codex或GPT Sources已同步。
+
+最新TEMP资源修复运行 `977d18ebe6e14a91bb049924cae715e4` 已 `FAIL_CLOSED_UNRESERVED_REAL_DESCENDANT`。本次V1.4不授权新工程修复或科学运行。当前仅允许一次DOC_ONLY本地文档同步；不得运行测试、模型、runner或Git fetch/push。Owner须手动上传Source更新包至GPT Project Sources。
 
 ---
 
@@ -101,3 +104,4 @@ V0.0.2 原始复盘曾记录：PowerShell 包装器在 UTF-8 报告修复失败�
 
 ## 2026-10-12 迁移交接（历史记录）
 第二阶段由此前 Codex 完成文档同步及手工交接，第三阶段已由 Owner 于2026-10-13启动，V0.0.1 已完成并有限接受。此段仅说明迁移来源，不再构成“首版未启动”现行事实。当前终态及下一版是否获授权，始终从 `CURRENT.md` 和版本登记实际核验，不自行恢复旧任务或签发后继。
+
