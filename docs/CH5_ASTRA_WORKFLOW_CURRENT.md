@@ -1,107 +1,23 @@
-# 第五章当前工作方式 · V1.4（2026-10-18）
+# 第五章当前工作流入口 · 2026-10-19
 
-**AUTHORITATIVE_WORKFLOW=V1.4__OWNER_REQUESTED__GITHUB_PUBLISHED__LOCAL_CODEX_DOC_SYNC_PENDING**
-**NEW_RULES=[V1.4资源门禁真实性与同步闭环](CH5_ASTRA_WORKFLOW_V1_4_RESOURCE_CONTAINMENT_20261018.md)**
-**V1.3历史正文：[本地工程快速通道与分级独立验收](CH5_ASTRA_WORKFLOW_V1_3_20261017.md)**
+本文件只提供当前规则导航；执行授权只看CURRENT.md、TASK_CURRENT.md及新冻结合同，历史任务状态不构成权限。
 
-V1.4补充的硬原则：reservation账本、Windows Job累计观测、OS创建前限制、post-hoc检测和synthetic callback必须分开；ActiveProcessLimit不是累计TotalProcesses限制。任意后代计数超额必须E2 STOP，不能靠更频繁轮询或加大预留数修饰为PASS。三平面同步（GitHub / 本地Codex / GPT Project Sources）必须分别回读，GitHub更新不等于Codex或GPT Sources已同步。
+## 最新强制交付规则
 
-最新TEMP资源修复运行 `977d18ebe6e14a91bb049924cae715e4` 已 `FAIL_CLOSED_UNRESERVED_REAL_DESCENDANT`。本次V1.4不授权新工程修复或科学运行。当前仅允许一次DOC_ONLY本地文档同步；不得运行测试、模型、runner或Git fetch/push。Owner须手动上传Source更新包至GPT Project Sources。
+[验收文件必须上传，验收归档后必须清理](CH5_MANDATORY_REVIEW_DELIVERY_AND_CLEANUP_20261019.md)是Owner本轮明确的前瞻性要求。所有后续需验收的新任务必须显式冻结Codex自动GitHub临时交付和Astra验收后清理。执行期NO_NETWORK不覆盖独立DELIVERY；没有完整交付/清理条款不得签发。不得只在启动Prompt中承诺上传，却在合同中全程禁网。
 
----
+## 继续有效的限域规则
 
-## 以下是V1.2历史完整正文（保留作为继承约束，冲突以V1.3明确覆盖为准）
+- [V1.3基础工作流](CH5_ASTRA_WORKFLOW_V1_3_20261017.md)
+- [V1.4资源真实性](CH5_ASTRA_WORKFLOW_V1_4_RESOURCE_CONTAINMENT_20261018.md)
+- [V1.5不可变任务身份](CH5_ASTRA_WORKFLOW_V1_5_IMMUTABLE_TASK_IDENTITY_20261018.md)
+- [V1.6路径边界](CH5_ASTRA_WORKFLOW_V1_6_PROTECTED_PATH_BOUNDARIES_20261018.md)
+- [V1.7独立交付预算](CH5_ASTRA_WORKFLOW_V1_7_DELIVERY_CLOSURE_20261018.md)
+- [V1.8预期身份溯源](CH5_ASTRA_WORKFLOW_V1_8_SOURCE_IDENTITY_PROVENANCE_20261018.md)
+- [V1.9类型与安全判定分离](CH5_ASTRA_WORKFLOW_V1_9_REVIEW_PATH_CLASSIFIER_20261018.md)
 
-# 第五章当前工作方式 · V1.2
+以上文件内历史ACTIVE/NEXT/单任务NO_NETWORK只属于当时冻结任务，不覆盖最新CURRENT，也不授权重跑；旧合同不追溯改变。本次不改变HA黑箱、正式科学方法或科学预算。
 
-> **2026-10-16新的Owner效率/备份/SSH/Loader决定（优先于下方更早“VM安全门仍待选”的历史时态，V1.2核心科学门不变）**：科研无保密需求；本地C盘与D盘是独立SSD且已有**C盘备份＋GitHub备份**足够，禁止额外无必要的第三备份/强制Windows VM。Codex GitHub使用**现有SSH Key/ssh.github.com:443**，不要求PAT或更改global/system Git config；Astra使用已连接GitHub工具作远端独立验收/治理。Astra已选`TRUSTED_WORKSTATION_ENGINEERING_CONTAINMENT`＋双根Git身份/认证原字节VerifiedLoader，仅用于有界ENGINEERING_ONLY import，不声称可防恶意native/OS sandbox。上位[Owner技术风险决策](CH5_OWNER_RISK_BACKUP_SSH_LOADER_DECISION_20261016.md)，本轮固定任务[Trusted Loader工程预检](../versions/0.0.10/trusted_workstation_loader_engineering_preflight_task_20261016.md)commit`01129efd5220683d415bd1486f23f6ecd068cb53`/blob`1e6757fd235fd96d8b08130ca3fefb3b602c413c`。新ENGINEERING Python≤6/真实runner≤2，科学HA/真实数据0；运行必须有该固定任务，旧预算不结转，A16/window/C9/CALL_LEDGER/Results与V011禁令照旧。
+本入口先前完整正文永久保留于固定commit 326935e286d00be70306dfeee66b598e73f93725 的同一路径；更早Owner决定与失败证据不删除，不重写。
 
-
-> **Owner 2026-10-16补充优先规则（GitHub审阅交换，不改V1.2科学或执行许可）**：远端临时审阅目录`_review_tmp/ch5/<task-id>/`**不得创建、下载、stage或checkout到本地原项目工作树或其index**，也不能进入main/model工作树；只存在于独立GitHub review分支的commit tree。Codex优先用GitHub Git Data API直接构造Blob/Tree/Commit/ref（不使用本地worktree），工具不支持才允许项目外独占`git --bare`无checkout发布，不共享objects/common-dir；禁止`git worktree`、`git add`到项目索引、改原.gitignore、重写模型tree、以partial blob:none基线推断write-tree必成功。Astra独立review先正式归档并回读，才只删除远端临时分支的白名单临时文件；旧Commit可能保留字节。精确见[Owner临时审阅交换协议](CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md)。本规则是可恢复项目长期约定，不是已更新ChatGPT系统记忆或Python/HA新权限。
-
-
-## 2026-10-16 Owner批准的GitHub临时脱敏审阅材料交付补充规则（不改变V1.2科学门）
-
-Owner要求今后由Codex把**已完成脱敏**的MD/JSON审阅材料直接存入GitHub仓库**独立review分支的临时目录**，Astra验收后可以清理临时副本，避免Owner每轮手工上传。这一指令已成文于[CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md](CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md)，适用于后续**新冻结且明确引用该协议**的任务，不追改历史冻结任务/一次性budget/旧GitHub候选。未来task应明确临时分支、`_review_tmp/ch5/<task-id>/`、文件白名单/大小/唯一parent/网络预算，Codex先脱敏再发布，失败LOCAL_ONLY STOP，不自行额外fetch/重试或force。
-
-Astra先独立回读候选commit/tree/parent/blob/SHA256、完成验收，并**永久归档所需正式审议和状态**后，仅删除指定临时目录下的文件、回读清理结果；不能删除原科学冻结、历史失败、正式验收。**Git文件删除不等于从历史提交彻底擦除内容**，所以未脱敏的私钥、token、真实数据、绝对私有路径绝对禁止上传。此规则仅变更证据交换习惯；Owner仍对科学与高风险操作作最终授权，Codex工程执行/Astra独立验收、Results/A16保护及V1.2其余条款不变。
-
-
-**Owner批准：2026-10-13（Asia/Shanghai）。** V1.2 根据 V0.0.2 已归档的执行与独立验收复盘，在 V1.1 上补充命令依赖失败即停、显式 UTF-8/LF 记录、最终树测试签出与资源遥测缺口分类。它不是新的研究模型版本、科学许可或自动派单。既有 Owner / 网页 Astra / Codex 角色、冻结计划不可追改、Codex 版本内自主执行及 Astra 最终独立验收全部保留；旧 Work 微审批、实时监督、自动派单及 Dot 治理继续仅历史。**本文件是长期规则，不宣告任何研发版本的当前状态**；该状态只从 `CURRENT.md` 顶部和 `docs/CH5_VERSION_REGISTER_CURRENT.md` 读取。
-
-**文档权威**：动态总目录 `docs/DOC_INDEX_CURRENT.md` 是入口，`SCIENTIFIC_DECISIONS.md` 和科学原采纳/冻结合同约束学科内容；每版冻结计划以其登记的**固定 Git commit** 为准，动态分支只用于导航、独立授权、验收、复盘和备份。新规则不能追溯修改已冻结 V0.0.1 标准、旧科学失败、旧 CLOSED 上限或 Owner 特定裁决。
-
-## 2026-10-15 Owner连续版次委托（V1.2限域例外，优先于下方逐版手动启动条款）
-
-Owner明确授权：已获独立验收与文档归档的长版本，若下一步沿已采纳的论文科研方向且不需要新重大科学、权限或工作流选择，Astra在收到当轮交付时**可以直接启动下一长版本的版前DRAFT与SOURCE_ONLY集中提案**，不必重复征求“同意立版”。该授权仅对明确版次开始和低风险版前规划有效；**不**自动冻结实施/发放HJB/KFE/GE/动态IRF/真实数据预算，不允Codex自授候选ACCEPT，不自动后台运行。具体Owner指令及停点在[2026-10-15持续版本授权](CH5_OWNER_CONTINUOUS_VERSION_DIRECTIVE_20261015.md)。
-
-**凡需要调整其他工作流机制**，Astra先向Owner说明并停在`STOP_AND_NOTIFY_OWNER__WORKFLOW_CHANGE_REQUIRED`，经Owner同意后要求Codex在安全隔离位置同步工作流/知识/索引文档并提供准确回读，再继续受影响工作。需要未采纳经济方程/科学资源、保护文件访问或安全边界变化的也必须单独提请Owner。下文“新版本只能由Owner手动启动”的文字是默认规则，现由上述Owner明确长期委托对顺序下一版本作**唯一限域例外**；冻结合同、独立验收与实质高风险Owner决定均不变。
-
-## 职责与版前协商
-Owner保留目标取舍与方向性决定。同一ChatGPT项目中的网页端GPT 6 Astra为长期项目管理者，负责路线图、版本计划制定/审议、最终独立验收与每版本偏差复盘。Codex在Owner指定的本项目会话担任版本实现负责人。旧Work退为历史记录，不承担实时监督。
-立版前Astra提出目标草稿，Codex根据真实代码、未同步差异及环境反馈目标与执行建议；集中解决实质分歧，Owner作必要方向选择后确立版本。草稿不授权执行。
-
-## 正式冻结
-正式版本冻结目标、范围、验收标准、关键科学/产品契约和已接受限制，登记正式计划的固定提交及相关代码基线。Astra、Work、Codex不得因执行结果不理想追改原版本计划。未来路线图可更新，不能覆盖已冻结标准。
-版本发现计划错误时保留原件及证据，必要时结束本版、另立后续版。会话交接只续接原版，不重新立项；中间草稿在冻结后可正常提交清理，保留Git历史，不重写历史。
-
-## 执行与少数停点
-范围内的实现顺序、内部拆解、相关代码和测试、普通调试及修复由Codex自主调整。保留真实失败与验证记录，普通失败优先自主诊断修复，不逐步骤向Work/Astra申请，不反复询问是否继续。
-只在缺少必要决定、越过授权、涉及未授权不可逆操作，或持续无进展/额度与环境导致无法继续时保存状态并报告。明确一次性科学/数据许可、保护条件及已闭预算仍有效；自主工程不是任意科学授权。不复制旧版所有测试为永久清单，不新增审查角色或强制多模型循环。
-
-## 集中候选与验收
-Codex完成后集中交付候选版本、实际验证证据、失败修复记录和剩余问题。Astra按原冻结标准检查真实实现，批量反馈原目标内缺陷；必要修复不改计划，新需求和纯优化入后续版。
-自测通过不等于最终接受，开发接受不等于生产发布。未经真实核验标UNKNOWN；备份不等于验收。科学忠实性、数值有效性、经济可采纳性、收敛、Results资格和生产接受分开。
-
-## 复盘与交换
-无论通过、部分完成、失败、终止，Astra记录可能原因及证据，区分执行偏差、计划遗漏/错误、环境阻碍、验证不足、验收漂移。试运行顺手记录目标完成情况、集中返修轮数、人工干预/流程阻塞及实际可取得用时/额度，未知写未知，不自动监控。
-GitHub用于版本文件交换、证据发布和备份，不是微步骤审批中转站。不安排自动轮询、插单、实时监督、自动调度或后台监听，不切Dot。Git权限按版本授权；不强推、不破坏既有工作或真实资产。
-网页Astra每次立版、验收、跨会话恢复先通过已授权GitHub工具读取[总目录](DOC_INDEX_CURRENT.md)及必要正文，记录分支/提交。不能从索引推定内容、权限或自动同步，不能假定可调用本机QMD/Basic Memory或读取C:/D:。
-有GitHub写权限时用已授权工具；只能读时生成精确文档由Owner人工交给本地提交，不改回Work、不建自动写入桥。
-
-
-## 版前计划、基线与测试设计（沿用 V1.1）
-Owner 明确启动某一版本后，Astra 给出目标草案；Codex **先只读**核代码基线、实际工作树、未提交资产与依赖，提供完整执行方案草稿。Astra 集中审议，必要科学/保护取舍请 Owner 决定；随后固定计划 SHA、代码基线、范围/禁止项/验收标准、允许路径、资源和证据资格，再单独发出实施许可。发布草案或“已接受候选”均不等于允许执行下一版本。新版本只能由 Owner 手动启动，不因前版 CLOSE 自动签发。
-
-冻结计划应只写**当前有效的目标与合同**，草稿/旧授权时态留在 Git 历史或清晰标记的历史文档，不把仍写 `DRAFT` 的段落混入冻结正文形成相互冲突的指令。V0.0.1 已冻结文件属于历史原件，**不得为满足这一新文档习惯而重写**。需要引用时始终注明原冻结 SHA 与实际内容，不用后来动态分支覆盖原件。
-
-每次立版明确：文档发布分支、代码起点 commit/tree、候选分支与候选 SHA/tree、是否采用前版已接受代码、`main` 当前是否包含该代码。**ACCEPT ≠ merge main ≠ 下一版已集成**；当前代码 HEAD、文档 HEAD、私有本地 dirty/untracked 和 Git common-dir 不可混称。运行前核实唯一模型 `git rev-parse --show-toplevel`、origin、绝对执行目录、真正 host/projectId（若可知）、branch/HEAD、staged/dirty、保护路径；不以聊天 CWD 或 ChatGPT Sources 镜像代替模型树，不能为治理同步执行清理、stash、reset 或强推。
-
-模型测试先区分**接口值传递、公式恒等、特定校准/参数下的条件响应、科学经济认证**。对零乘数、零通胀、边界/非线性、clip 及退化情况设置独立 oracle；普通测试预期错误先修测试，不为取 PASS 偷换经济方程、科学 guards、网格或校准。
-
-## 普通工程资源、存储与失败修复（沿用 V1.1）
-不同版本的资源账按**明确冻结的风险、费用和范围**制定，不把 V0.0.1 的4小时、8进程、2GiB或10MiB转成永久通用模板。必须分别列：①常规 focused 工程测试/调试的数量或时间约束（如确有必要），②科学 solver、生产数据、真实模型调用和旧停止账本的单独次数/许可，③Git 临时 index/objects 与临时工作目录等**操作性存储**，④`candidate_view`/测试 fixture/私有回执的存储及预算，⑤准予 GitHub 公布的脱敏文档/manifest。每类若计入体积上限，须明确路径、是否计数和边界；**未在冻结前定义的例外不能擅自扣除硬上限**。实施前对易超限的导出、临时 index、引用闭包做快速体积预估。
-
-冻结范围内普通工程失败可以由 Codex 自主诊断、修正、重复**已授权** focused 检查并保留原失败。工程修复不得重开耗尽的测试/科学预算，不得借更换名字/工作区绕开硬停点。遇到明确硬配额超限、未授权 protected/dirty 原文件或真实数据接口、科学法则/量纲变更、权限边界变化或无法恢复的技术阻塞，应保存错误现场并 `STOP/REPORT`。Owner 对一次轻度行政/操作性调整的**明确限定授权**可按原话和适用范围执行并记入例外账，不能延伸为一般豁免；原超限与后续修复均保留，冻结版计划不为恢复而追改。环境/平台限制不得旁路。
-
-## 集中交付与证据等级（沿用 V1.1）
-除正文执行报告外，实施过测试的版本应优先生成**最小脱敏候选验收摘要**（Markdown 或 JSON，勿重复大量私有日志）：代码 baseline、候选 commit/tree、Git blob 或 SHA-256、允许路径 diff、隔离视图与实际加载模块来源、精确或安全脱敏的命令及命令/运行回执哈希、测试进程次数/通过失败、exit code、依赖版本、可取得的 UTC 起止/单调时长和资源统计、异常及返修、保护与剩余 UNKNOWN、私人原始回执的位置类别与摘要。原始 stdout/stderr/JUnit/进程日志仅在授权允许时外发，敏感位置/个人日志/真实数据保持 `LOCAL_ONLY`。不能把“有摘要哈希”写成“网页已亲自重跑”。
-
-验收逐项分账：`INDEPENDENTLY_VERIFIED_GITHUB_CODE`（网页确实读过的源码、commit、tree及差异）、`CODEX_REPORTED_WITH_LOCAL_RECEIPTS`（原始回执未被网页访问时）、`UNKNOWN/NOT_VERIFIED` 和依证据等级成立的 `SYNTHETIC_ENGINEERING` / `RUNTIME_REAL` / `SCIENCE` / `RESULTS`。静态测试设计与数量 ≠ 网页独立执行通过；同一报表中的 `PASS` 必须写清对象与限度。自测、开发接受、科学可靠性、生产部署各自独立。
-
-GitHub 文档分支与代码候选分支可以不同：导航与验收/复盘存**动态文档分支**，模型实施代码与 `execution.md` 若只在候选分支，须给**完整固定提交链接**；不能假设文档分支中的相对链接必能打开仅在候选分支的文件。合并、主分支推广与下一版基线接纳均需要明确范围和真实 Git 身份，不随验收自动发生。
-
-## V1.2 依赖步骤失败即停止与文本证据卫生
-
-V0.0.2 原始复盘曾记录：PowerShell 包装器在 UTF-8 报告修复失败后误继续启动第5次 pytest，结果属于中间候选树。这说明**命令顺序与前置条件检查**应作为普通工程基本要求，而非新增 Astra 微审批。Codex 在范围内自主执行，但有依赖关系的步骤须逐项核实际成功：命令/脚本返回值、PowerShell 原生子进程 `$LASTEXITCODE`（不能仅凭无异常或 stdout）、所需输出文件的字节/校验/目标 SHA。前置失败则停止**依赖的下游步骤**、保留原 stderr/stdout/退出码及当前候选身份；可在获批普通工程预算内自主修复并明确重新开始正确的后继，不允许在失败条件下“继续跑完”。若触发已冻结硬停点或越权，按原合同 STOP 并报告，绝不借“普通修复”豁免。
-
-生成/读取新报告、JSON、manifest、测试清单和诊断文本应**显式指定 UTF-8**；封存 Git 文本工件前验证最终字节可 UTF-8 解码、正文结构正确、以 LF 换行且无意外 CRLF/BOM/尾随空格，使用对准确待提交树适用的 `git diff --check` 等有限检查。不得根据终端 GBK 对 Unicode 字符的显示错误推断文件或模型数值损坏；优先从已保存的原始 UTF-8 回执读证。写入多个相互依赖的新报告文件时先在本版本受控临时区准备、校验成功后再按明确允许的路径封存，步骤之间检验成功；发生部分更新须保留变更前原证与失败记录，不把半完成的报告称为完整交付。**不因此修改已冻结版本的原始文档或全局编码配置。**
-
-## V1.2 最终候选树与原始回执的时间序列
-
-一份 Git 跟踪的公开摘要**无法安全地在自身内容中嵌入其最终 enclosing commit/tree SHA 与该提交之后才发生的测试结果**。因此版前按风险选择最小且可复核的两阶段模式：
-
-1. **提交前报告**：明确为 `PRE_FINAL/PRE_SEAL` 时态，说明已知中间树、预验收测试、累计预算、原回执摘要与未完成的最终门；不预填未来终态，不伪称当前已有最后一次验证。
-2. **最终树封存后**：对**最终候选 Git tree** 导出受限 `candidate_view`，读取实际模块来源并运行冻结明确允许的最后 focused 检查；将 commit/tree、精确测试结果、时间/资源、受限导出与回执 SHA 写入**独立于已封存候选内容的交付回执**。若另有获批可发布的短回执位置可以脱敏固定引用；如果仅有 LOCAL_ONLY 回执，网页验收必须标明该部分只属 `CODEX_REPORTED_WITH_LOCAL_RECEIPTS`。**不为消除 SHA 自引用而事后改写候选/冻结计划**，也不为追求报告齐全自动新增 Git 路径、第二次推送或科学运行。
-3. 候选提交后若代码/测试/公开报告字节再改变，必须重新核准确候选身份与冻结版本内许可，旧中间树的 PASS 不能替代最终树验收。Codex 汇总时明写测试进程的候选 tree、exit code、是否 FINAL，最终 GitHub commit/tree readback 与 V0.0.2 类似的中间树过程分账。
-
-资源/证据遥测从**第一次实际 focused 子进程**起尽可能按获批范围采集 UTC 时间、单调耗时、PID、退出码、测试结果、可测量的峰值工作集/内存等；缺工具或平台无法测得则记录 `UNKNOWN`，无需为普通缺失擅装 `psutil`、更改全局环境、推测历史峰值或复活已关闭预算。只有冻结明确设为硬前置条件时，遥测缺失才按该条款触发 STOP；否则需披露其对最终验收证据上限的影响。
-
-## 科学与保护
-科学定义、方程/KKT/经济边界、校准、时序、收益律、求解语义、网格、容差、重要guards及真实数据/来源认证/权限保护变更只在明确科学授权内处理。历史冻结合同保留，冲突不能靠改验收标准解决。
-人口/人均方向保持、户均封存，不N=P/3；劳动单位与完整数值桥仍未确认。C9暂停、ResultsFALSE、CALL_LEDGER_UNRESOLVED、Objective A16 FAIL_CLOSED和生产未接受保持。
-真实数据31回执consumer/模型科学运行、正式实验、发布部署、敏感外传、重要删除、SSH/SQL/云及保护变更不由本迁移开放。GitHub备份不能替代生产数据、凭据或真实资产保护。第五章不得混入DeepLearning-HANK；EliteSync与EliteSync-v10决定不得代入本项目。
-
-## 2026-10-12 迁移交接（历史记录）
-第二阶段由此前 Codex 完成文档同步及手工交接，第三阶段已由 Owner 于2026-10-13启动，V0.0.1 已完成并有限接受。此段仅说明迁移来源，不再构成“首版未启动”现行事实。当前终态及下一版是否获授权，始终从 `CURRENT.md` 和版本登记实际核验，不自行恢复旧任务或签发后继。
-
+GitHub治理源已更新并不等于本地Codex或GPT Project Sources已同步，三者分别回读。当前未进行本地入口写入或新同步任务。

@@ -1,25 +1,35 @@
-# CH5 CURRENT · V1.9 synthetic path classifier task issued
+# CH5 CURRENT · V1.9已报告完成；四份附件验收通过，实现审查待补证
 
-**PREVIOUS_TASK=TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_GITHUB_DELIVERY_V2_20261018**
-**PREVIOUS_RUN=447f9775e1b5482f9e3add9344742017**
-**PREVIOUS_RESULT=FAIL_CLOSED / STOP**
-**PREVIOUS_STOP=PATH_CLASSIFIER_FALSE_POSITIVE_AND_UNRESOLVED_JSON_ESCAPE**
-**ACTIVE_TASK=CH5_REVIEW_PATH_CLASSIFIER_V19_SYNTHETIC_ONLY_20261018**
-**TASK_SCOPE=ENGINEERING_ONLY / SYNTHETIC_ONLY / NO_ARCHIVE_SCAN / NO_NETWORK / NO_RUNNER / NO_SCIENCE**
-**TASK_STATUS=ISSUED_NOT_STARTED**
-**TASK_ISSUE_COMMIT=fa923c6048d958eba772b8145f79cf1fa857ee42**
-**TASK_BLOB=VERIFY_BY_READBACK**
-**TASK_PATH=tasks/CH5_REVIEW_PATH_CLASSIFIER_V19_SYNTHETIC_ONLY_20261018.md**
-**WORKFLOW_V1_9=docs/CH5_ASTRA_WORKFLOW_V1_9_REVIEW_PATH_CLASSIFIER_20261018.md**
+更新：2026-10-19。治理分支：migration/astra-workflow-20261012。
 
-## Previous failure
-Delivery V2 stopped after scanning 17/491 members because `https://` was misclassified as a drive path and a JSON-escaped fragment remained unresolved. Complete ZIP safety is UNKNOWN; 474 members remain unreviewed. No fake-bare or network publication occurred. This is not proof of source modification or credential leakage. Predecessor remains closed and not resumable.
+LAST_EXECUTION_TASK=CH5_REVIEW_PATH_CLASSIFIER_V19_SYNTHETIC_ONLY_20261018
+LAST_RUN=06ed068da2d948649f463889051ea157
+EXECUTION_STATUS=COMPLETED_REPORTED_STOPPED
+LOCAL_VERDICT=PASS_SYNTHETIC_CLASSIFIER_LOCAL
+FOUR_FILE_INTEGRITY=PASS
+METADATA_CONSISTENCY=PASS
+IMPLEMENTATION_REVIEW=PENDING_REQUIRED_ARTIFACTS
+ACTIVE_TASK=NONE
+RESEARCH_ACTIVE_TASK=NONE
+ENGINEERING_ACTIVE_TASK=NONE
+DELIVERY_ACTIVE_TASK=NONE
 
-## Active task
-Only build/fix the URI/path/JSON-escape classifier using synthetic fixtures. Do not read or scan the old ZIP, do not generate a ZIP, do not run fake-bare, SSH/fetch/push, adapter, runner, tests against real evidence, or scientific models. Local-only outputs only. This task does not authorize resuming Delivery V2.
+## 已核验与未核验
 
-**ACTIVE_RESEARCH_TASK=NONE; ACTIVE_SCIENCE_TASK=NONE**
-**model_activation=False; REAL_GE=False; Results=FALSE; V011=NOT_STARTED**
-**FULL_RUNNER_IO_CLOSURE=BLOCKED**
-**NEXT=CODEX_EXECUTE_CH5_REVIEW_PATH_CLASSIFIER_V19_SYNTHETIC_ONLY_20261018**
-**FINAL_STOP=WAIT_ASTRA_PATH_CLASSIFIER_V19_REVIEW**
+Astra已实际复算4份附件字节及SHA，元数据对账通过。没有得到分类器源码、语料、逐样本结果、完整资源/保护原件及外部控制器退出回执，不把Codex本地PASS提升为实现独立PASS。manifest登记33载荷；本次实物仅其中2份加manifest与最终回执，不能冒称33/33实物已验。正式审议见docs/CH5_PATH_CLASSIFIER_V19_FOUR_FILE_INDEPENDENT_REVIEW_20261019.md。
+
+旧Delivery V2及旧TEMP失败仍关闭。原491成员ZIP完整安全性仍UNKNOWN；本轮无新远端验收候选回执，TEMP_CLEANUP=NOT_APPLICABLE_NO_CANDIDATE_REPORTED。
+
+## 最新Owner交付规则
+
+所有后续需验收的新任务必须显式冻结Codex自动上传到独立GitHub临时review目录，以及Astra终审永久归档并回读后必须删除白名单临时文件。执行期离线不等于交付期禁网；缺分支、路径、父提交、白名单、独立预算或清理责任字段不得签发。见docs/CH5_MANDATORY_REVIEW_DELIVERY_AND_CLEANUP_20261019.md。
+
+本次只更新规则和验收状态，没有新执行/补交任务。GitHub更新不代表本地Codex镜像或Project Sources已同步。
+
+NEXT=WAIT_REQUIRED_ARTIFACTS_AND_EXPLICIT_DELIVERY_AUTHORIZATION
+RESEARCH_VERSION=V010/v0.0.10
+model_activation=False
+REAL_GE=False
+Results=FALSE
+V011=NOT_STARTED
+FULL_RUNNER_IO_CLOSURE=BLOCKED
