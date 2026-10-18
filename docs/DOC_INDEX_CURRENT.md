@@ -1,4 +1,16 @@
-# CH5 动态总目录 · TEMP黑箱价格调参新任务
+# CH5 动态总目录 · 资源门禁修复任务已签发（2026-10-18）
+
+## 最新权威：TEMP失败封存，不重跑科学；仅工程门禁修复
+
+最新任务：[TEMP_V010_RESOURCE_GATE_REPAIR_20261018 固定合同](../experiments/TEMP_V010_RESOURCE_GATE_REPAIR_20261018/ENGINEERING_CONTRACT.md)。发行提交：2ba4a716ebde395a7f659729513e725e0d8d1f07；任务Blob：e817ce5737ba8c2a189122e4d0bb08cd4f85ef7c。
+
+[CURRENT.md](../CURRENT.md) 与 [TASK_CURRENT.md](../TASK_CURRENT.md) 顶部为当前许可状态。当前唯一任务为 ENGINEERING_ONLY / NO_SCIENCE / NO_HA；Python/focused启动预算调整为48、并发Python进程8、跨进程活动线程64，工程总后代仍≤192。所有上限须在创建前强制执行，线程和进程分别计数。
+
+前一实验结果 [TEMP_V010_HA_BLACKBOX_SIMPLE_PRICE_TUNING_100_RESULT](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/fb1456fa1be9b547d81e93bdf52912089df664db/_review_tmp/ch5/temp-blackbox-price-tuning-100-20261018/result.md) 已因至少29个Python进程超过原24子上限而 FAIL_CLOSED。原science driver已停止，A1不续跑、A2/A3不启动，旧预算不结转。manifest/最终回执 ENGINEERING计数差异待原证核对；无原证时保持UNKNOWN。
+
+**本次新任务不授权HA/HJB/KFE/selector/root solver、正式V010修改、Git fetch/push或清理旧review候选。** 正式V010不变；V011 NOT_STARTED；model_activation=False；REAL_GE=False；Results FALSE；FULL_RUNNER_IO_CLOSURE=BLOCKED。
+
+---
 
 ## 2026-10-18本会话新Owner决定：TEMP黑箱价格调参已签发、尚未执行
 
