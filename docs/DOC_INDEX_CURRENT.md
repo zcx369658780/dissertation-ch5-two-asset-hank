@@ -1,3 +1,20 @@
+# CH5动态总目录 · V1.6保护路径边界与Adapter V3
+
+## 当前唯一任务
+
+- [CURRENT.md](../CURRENT.md)：当前许可状态。
+- [TASK_CURRENT.md](../TASK_CURRENT.md)：当前唯一任务。
+- [V1.6保护路径边界与PATH_ALIAS分类](CH5_ASTRA_WORKFLOW_V1_6_PROTECTED_PATH_BOUNDARIES_20261018.md)。
+- [V1.5不可变任务身份与启动校验](CH5_ASTRA_WORKFLOW_V1_5_IMMUTABLE_TASK_IDENTITY_20261018.md)。
+- [V1.4资源门禁真实性与三平面同步](CH5_ASTRA_WORKFLOW_V1_4_RESOURCE_CONTAINMENT_20261018.md)。
+- [Adapter Integration V3固定合同](../experiments/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_20261018/ENGINEERING_CONTRACT.md)。
+
+**最新失败：** Adapter V2在BOOTSTRAP 0因递归枚举中的node_modules依赖文件触发PATH_ALIAS而停止；最终路径未解析，相关性UNKNOWN。V1.6现要求保护根边界核验与目标路径解析分离，不再因无关依赖条目自动拒绝整个任务；无法证明无关则仍STOP。
+
+当前仅允许Adapter V3工程集成；科学调用0；正式V010不变；V011 NOT_STARTED；Results FALSE；FULL_RUNNER_IO_CLOSURE BLOCKED。
+
+---
+
 # CH5动态总目录 · V1.5不可变任务身份与Adapter V2
 
 ## 当前唯一任务
