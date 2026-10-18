@@ -1,21 +1,27 @@
-# CH5 CURRENT · TEMP资源门禁修复失败封存；等待一次DOC_ONLY同步
+# CH5 CURRENT · V1.4 native single-child resource gate task issued
 
 **LATEST_RUN=977d18ebe6e14a91bb049924cae715e4**
 **LAST_TASK=TEMP_V010_RESOURCE_GATE_REPAIR_20261018**
 **LAST_VERDICT=FAIL_CLOSED_UNRESERVED_REAL_DESCENDANT / STOP**
-**SCIENCE_CALLS=0；GIT_FETCH_PUSH=0；FORMAL_MODEL_WRITES=0**
-**ACTIVE_RESEARCH_TASK=NONE；ACTIVE_SCIENCE_TASK=NONE；ACTIVE_DELIVERY_TASK=NONE**
-**NEXT_TASK=CH5_V14_ONE_TIME_CODEX_DOC_SYNC_20261018**
-**NEXT_SCOPE=DOC_ONLY / NO_TESTS / NO_RUNNER / NO_SCIENCE / NO_NETWORK**
+**DOC_ONLY_REPORT=PROCEDURE_COMPLIANT_STOP; LOCAL_MIRROR_SYNC_NOT_COMPLETED**
+**ACTIVE_TASK=TEMP_V010_RESOURCE_GATE_NATIVE_SINGLE_CHILD_V3_20261018**
+**TASK_SCOPE=ENGINEERING_ONLY / NO_SCIENCE / NO_HA**
 **TASK_STATUS=ISSUED_NOT_STARTED**
-**V1.4_WORKFLOW=docs/CH5_ASTRA_WORKFLOW_V1_4_RESOURCE_CONTAINMENT_20261018.md**
-**V1.4_ISSUE_COMMIT=2ece8095bbeb503daec7f432fc30740002d50be9**
+**TASK_ISSUE_COMMIT=09e073ee69b34fc22dd5448a6a39156a0cd11775**
+**TASK_PATH=experiments/TEMP_V010_RESOURCE_GATE_NATIVE_SINGLE_CHILD_V3_20261018/ENGINEERING_CONTRACT.md**
 
-## Latest accepted facts
-- 旧账口径已在原件内对齐：kernel-only ENGINEERING 35→35；保守ENGINEERING 37→37；92份旧原件SHA不变。历史OS独立复算仍UNKNOWN/NOT_PERFORMED。
-- V2 synthetic 28/28 PASS只证明合成逻辑。
-- Real Windows Job预留2、累计3，触发 `FAIL_CLOSED_UNRESERVED_REAL_DESCENDANT`；两后代身份/PID UNKNOWN；Python实际总数UNKNOWN；真实计划6项中1通过、1失败、4未运行。
-- 本轮停止后没有继续修复或测试。原始材料本地封存、未网络发布。
-- `model_activation=False`; `REAL_GE=False`; `Results=FALSE`; `V011=NOT_STARTED`; `FULL_RUNNER_IO_CLOSURE=BLOCKED`.
+## Accepted current facts
+- Old ledger reconciliation: kernel-only ENGINEERING 35→35; conservative ENGINEERING 37→37.
+- Synthetic tests reported 28/28 pass; real Windows Job reservation 2 vs TotalProcesses 3 caused E2.
+- Two exited descendants and actual Python total remain UNKNOWN.
+- The Codex DOC_ONLY report is accepted as correct fail-closed behavior, not as successful local mirror synchronization. No local file was changed; source/target identity was not authorized. Do not retry alternate paths under that task.
+- Prior TEMP price-tuning and resource-gate runs remain FAIL_CLOSED and are not resumable.
 
-原TEMP任务与其所有旧预算关闭，不得恢复。V1.4只处理资源门禁的后续设计原则，不是修复许可；当前唯一允许的新工作为一次文档同步，完成后等待Owner新任务。
+## Current permission
+The new task is engineering-only. It may inspect the gate and run bounded dummy-process tests only after protected-path bootstrap passes. No HA/HJB/KFE/selector/root solver, no science, no Git fetch/push, no remote publication or cleanup.
+
+**ACTIVE_RESEARCH_TASK=NONE; ACTIVE_SCIENCE_TASK=NONE**
+**model_activation=False; REAL_GE=False; Results=FALSE; V011=NOT_STARTED**
+**FULL_RUNNER_IO_CLOSURE=BLOCKED**
+**NEXT=CODEX_EXECUTE_TEMP_V010_RESOURCE_GATE_NATIVE_SINGLE_CHILD_V3_20261018**
+**FINAL_STOP=WAIT_ASTRA_NATIVE_SINGLE_CHILD_RESOURCE_GATE_REVIEW**
