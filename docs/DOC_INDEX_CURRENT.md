@@ -1,5 +1,8 @@
 # CH5 动态总目录 · V010 CP2_F25独立机制取证终结，Owner科学决定待定
 
+**2026-10-18 GitHub MD＋ZIP远端实证核验完成：** [独立交付审议](CH5_GITHUB_ZIP_PUBLISHER_DELIVERY_RESOURCE_EXCEPTION_INDEPENDENT_REVIEW_20261018.md)确认remote review HEAD `7623a4eb4680f0b4039f03dd245307ec791cea15`、唯一任务父 `2d9a3a5a3100fa82f24f125ce3264bb68c01c333`，远端仅三文件，完整ZIP196296B/29成员、SHA256与旧私有原证相符。Codex自报Git内部子进程**至少26/24，交付工程仍FAIL_CLOSED_RESOURCE_EXCEPTION**，不能因上传成功认定工程PASS。科学与交付活动任务均NONE、正式V010/Results不变；按既定授权永久审议回读后清理remote临时分支当前三文件，保留Git历史。
+
+
 **2026-10-18最高优先交付状态：** [自动GitHub MD＋ZIP V2](CH5_GITHUB_AUTO_ZIP_REVIEW_DELIVERY_V2_20261018.md)已经签发；[TEMP2×2科学E2失败独立终审](CH5_TEMP_PRICE_BRIDGE_FACTORIAL_E2_LEDGER_TERMINAL_REVIEW_20261018.md)确认A1/A2/A3完成0/2/2、HA计费12，正式V010不变；**当前独立DELIVERY-only工程任务** [GitHub ZIP发布器修复及旧证据自动补交](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/2d9a3a5a3100fa82f24f125ce3264bb68c01c333/tasks/CH5_GITHUB_ZIP_PUBLISHER_REPAIR_DELIVERY_RECOVERY_20261018.md) 发行Commit 2d9a3a5a3100fa82f24f125ce3264bb68c01c333、Blob c0f020b6b11a6289d65aa0cbde734d415633037c。本任务只对既有脱敏result.md/manifest.json/evidence_sanitized.zip修Git argv与远端发布，science HA/HJB/KFE严格0，不复活旧预算。Owner以后不应每轮手动上传ZIP；正式研究 ACTIVE_TASK=NONE、Results FALSE、V011 NOT_STARTED。
 
 

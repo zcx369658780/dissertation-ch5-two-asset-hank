@@ -1,5 +1,10 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-18 自动GitHub ZIP真正上传成功，但工程子进程超限（最新，旧ACTIVE文句失效）
+
+[本次独立ZIP交付审议](../CH5_GITHUB_ZIP_PUBLISHER_DELIVERY_RESOURCE_EXCEPTION_INDEPENDENT_REVIEW_20261018.md)：远端独立review `review/ch5-temp-pricebridge-factorial100-deliveryrecovery-20261018` 已实际HEAD `7623a4eb4680f0b4039f03dd245307ec791cea15` / Tree `1f63524a65701a8f37d05b9766f849ce243e5dd5`，唯一父 `2d9a3a5a3100fa82f24f125ce3264bb68c01c333`，仅result.md/manifest.json/evidence_sanitized.zip三件；Astra从GitHub直接读取ZIP base64原字节并独立SHA256计算 `9f3f2cda8360577de83bfe02d01b6f57814bee4e03b1c883f3a6a79698dc08e2`、196296B、中央目录29文件，原私有上载同字节29 CRC和28/28成员清单匹配。**Owner今后不需要常规手动上传报告+ZIP**；但Codex明确自报Git内部子进程漏计，实际至少26/24，超过冻结工程上限，整任务仍`FAIL_CLOSED_RESOURCE_EXCEPTION`而绝非工程PASS；final exception回执原字节没有在此轮交给Astra，主机进程枚举不能独立证明。交付成功不复活2×2科学实验E2故障及HA12已付账、不授权任何模型改动。**正式RESEARCH ACTIVE_TASK=NONE、DELIVERY ACTIVE_TASK=NONE、Results FALSE、V011 NOT_STARTED；**接下来仅按旧授权从远端review当前HEAD清白名单三件，Git历史仍在，不擦掉SHA/原证。未来预检中需对外层CLI＋子Git调用统一持久子进程预算。
+
+
 ## 2026-10-18 Owner再次强调：默认GitHub临时目录自动验收 ZIP，不得每轮让Owner手动上传
 
 [生效的GitHub ZIP自动交付V2](../CH5_GITHUB_AUTO_ZIP_REVIEW_DELIVERY_V2_20261018.md)：以后每项新冻结科学任务默认独立DELIVERY_BUDGET，Codex自动交付MD、manifest与sanitized evidence ZIP到远端独立review tree；科学STOP关闭science但不妨碍已授权的只读安全归档及GitHub发布；普通PowerShell argv/git E1允许交付额度内修复，必须先用no-network fake-bare小型ZIP测试二进制往返；Astra验收后永久归档再清远端三件，Git历史不消失。Owner本轮不接受“ZIP已封存但Git参数拼错→又要求我手传”的常规模式。public repo不得原样传私人RAW ZIP。
