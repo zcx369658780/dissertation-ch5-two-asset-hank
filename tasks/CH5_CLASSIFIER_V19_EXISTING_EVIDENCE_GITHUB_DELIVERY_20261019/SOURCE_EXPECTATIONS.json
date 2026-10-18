@@ -1,0 +1,80 @@
+{
+  "schema": "ch5.delivery-inputs.v1",
+  "task_id": "CH5_CLASSIFIER_V19_EXISTING_EVIDENCE_GITHUB_DELIVERY_20261019",
+  "source_run_id": "06ed068da2d948649f463889051ea157",
+  "source_task_id": "CH5_REVIEW_PATH_CLASSIFIER_V19_SYNTHETIC_ONLY_20261018",
+  "source_task_commit": "fa923c6048d958eba772b8145f79cf1fa857ee42",
+  "source_contract_blob": "4e726b000065c282c3a21df415ae69f27a840413",
+  "source_identity_level": "CONNECTOR_TEXT_VERIFIED",
+  "source_root_basename": "ch5_review_path_classifier_v19_synthetic_only_20261019_01",
+  "delivery_root_basename": "ch5_classifier_v19_evidence_delivery_20261019_01",
+  "private_locator_rule": "Exact absolute roots supplied in the private Codex launch prompt; never copy host paths into public artifacts. Basenames and run/anchor identities must match.",
+  "anchors": [
+    {
+      "path": "result.md",
+      "bytes": 5157,
+      "sha256": "eea5846cb80d395101b23b681c99b5de56d9089039f69216bdad15702c993a9d",
+      "expected_value_source": "Astra byte-verification of the four Owner-uploaded originals; governance review 69652a0791e813ffaa0dd629feafcf9b5bd4db79"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 9810,
+      "sha256": "980cda58c798e1731fd4fd7ae41325d8302b73452cd5e00fb0f2457a86b7873e",
+      "expected_value_source": "Astra byte-verification of the four Owner-uploaded originals; governance review 69652a0791e813ffaa0dd629feafcf9b5bd4db79"
+    },
+    {
+      "path": "SOURCE_TEST_SHA_INDEX.json",
+      "bytes": 1970,
+      "sha256": "80920ffa46f262776ea82312f5935186c532ec5ac754661ad64a19f58ffa766e",
+      "expected_value_source": "Astra byte-verification of the four Owner-uploaded originals; governance review 69652a0791e813ffaa0dd629feafcf9b5bd4db79"
+    },
+    {
+      "path": "FINAL_RECEIPT.json",
+      "bytes": 6419,
+      "sha256": "2c2a7d37069e1aa9fb0d077bd17ebd0963f1ab43a2e35d7a707ee4d41171cb76",
+      "expected_value_source": "Astra byte-verification of the four Owner-uploaded originals; governance review 69652a0791e813ffaa0dd629feafcf9b5bd4db79"
+    }
+  ],
+  "payload_source": "members array in the hash-verified original source manifest.json",
+  "source_payload_count": 33,
+  "source_files_total_including_manifest_and_final_receipt": 35,
+  "source_declared_bytes_total": 319370,
+  "critical_payloads": [
+    {
+      "path": "src/PathClassifier_reliable.cs",
+      "bytes": 14094,
+      "SHA256": "edf79756d312db91d637d9c4f0d314aabe55f53e78034893b14094fd0fc7745c"
+    },
+    {
+      "path": "tests/SyntheticSuite_reliable.cs",
+      "bytes": 11448,
+      "SHA256": "21ca50613de888db337f7cd60e0054f7171a3082e2c22603eab0837093e97273"
+    },
+    {
+      "path": "fixtures/synthetic_cases.json",
+      "bytes": 16748,
+      "SHA256": "d4d234be949bb71e0ec15aea23a8cb2950524fafec9fed99ad80e7840fec9730"
+    },
+    {
+      "path": "attempt_02/RESULTS.json",
+      "bytes": 131865,
+      "SHA256": "4ce27e1cf640345b6f71b92c30fbf62002bd929014331a0e782bfe5fe9288ef7"
+    },
+    {
+      "path": "docs/CLASSIFIER_BOUNDARY.md",
+      "bytes": 2885,
+      "SHA256": "cffbac7a06269194a2d3c05a712d4eee3490c7b205dd7941648d906bb21a618f"
+    }
+  ],
+  "source_controller_exit_original": "Read existing external tool completion if available. Missing historic exit evidence stays UNKNOWN; no rerun and no invented receipt.",
+  "remote": {
+    "review_branch": "review/ch5-classifier-v19-evidence-20261019",
+    "fixed_parent": "69652a0791e813ffaa0dd629feafcf9b5bd4db79",
+    "temp_path": "_review_tmp/ch5/classifier-v19-evidence-20261019/",
+    "files": [
+      "result.md",
+      "manifest.json",
+      "evidence_sanitized.zip"
+    ]
+  }
+}
