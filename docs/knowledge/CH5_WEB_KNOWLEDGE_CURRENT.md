@@ -1,3 +1,15 @@
+# 第五章长期知识与恢复入口 · 新TEMP任务
+
+## 2026-10-18本会话新Owner决定：TEMP黑箱价格调参已签发、尚未执行
+
+Owner在完成旧会话恢复后明确“可以，让我们继续TEMP的方向（HA黑箱+约束条件简单化 的调参）”。[新授权与精确身份](../CH5_OWNER_TEMP_BLACKBOX_SIMPLE_PRICE_TUNING_100_AUTHORITY_20261018.md)；[新冻结长任务](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/6d07cdf1a565376927bd64997780ad77669d9390/experiments/TEMP_V010_HA_BLACKBOX_SIMPLE_PRICE_TUNING_100_20261018/EXPERIMENT_CONTRACT.md)。
+
+**唯一ACTIVE_TASK=TEMP_V010_HA_BLACKBOX_SIMPLE_PRICE_TUNING_100_20261018；SCOPE=TEMP_SYNTHETIC_ONLY；STATUS=ISSUED_NOT_STARTED。** 发行Commit 6d07cdf1a565376927bd64997780ad77669d9390 / Tree 628677d32b773d7fd8cb9a4e9f906979d17067b5 / Blob 04af299d04f1e37243d8af806fb4a4e10eed0feb。先工程P0（账本/STOP/完整进程计数/fake-bare ZIP/价格stub），通过后同任务内自动A1→A2→A3串行、各≤100轮/200HA，总≤600；A0复用旧原件。HA黑箱不改，Bellman等只观察但源式收敛不伪造；只两条raw/used家庭价桥，不另扩参数网格。正式V010无活动任务/方法修改，Results FALSE、V011 NOT_STARTED。
+
+工程、科学、交付独立新预算；旧STOP、旧0/2/2与12HA、旧至少26/24报告级异常及已完成清理均保留。以下旧ACTIVE/NEXT/NONE是当时历史，不能覆盖本次新任务，也不能恢复旧额度。当前许可只看CURRENT/TASK_CURRENT顶部与固定新合同。
+
+## 前序知识记录（保留历史）
+
 # 第五章长期知识与恢复入口
 
 ## 2026-10-18会话最终交接（优先于下方所有历史时态）
