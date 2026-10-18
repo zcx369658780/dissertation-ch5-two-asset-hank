@@ -1,4 +1,9 @@
 # 第五章长期知识与恢复入口
+
+## 2026-10-18 TEMP-V010 100轮资本回报上界源证调查（最新发现，保持旧科学权威）
+
+[只读独立机制审议](../CH5_TEMP_V010_RA_BOUNDARY_SOURCE_ONLY_FORENSIC_20261018.md)用已上传的100轮私有证据与原MATLAB/固定V010源独立核算：两省raw ra0全部100轮>0.09，最小0.37333/0.41554，末轮0.38458/0.42724；受界ra_used两省始终0.09，GovInv各触发26次×1.1、从100/120升至1191.82/1430.18，Zt各调23次，原收益明显下降但未触内点。固定V010 TEMP桥沿raw ra0×same-S形成家庭rah≈0.38885/0.41871，而旧MATLAB HANK_mp_1turn使用已截断ra；TEMP下一轮工资沿wt0（未截断），MATLAB wage_caculate沿wjt（截断），第100轮固定同状态重算家庭w_eff实际6.948/7.029，对照clip报价仅2.038/2.019。两项都是**已冻结经济传导差异**，非已经证实的错误；不能以静态重算推断换价后HA/GE能收敛。末轮原PIt=0时以目标GDP固定mt作静态计算，目标ra_raw≤0.09对应K约7708/9867，约为当前总K的3.38/3.70倍，不能充当新稳态。Owner若要做raw/used收益与工资对照，需独立TEMP E3确认并有新科学预算；**本次HA/HJB/KFE新调用0、正式V010未修改、ACTIVE_TASK=NONE、Results FALSE、V011 NOT_STARTED，HA黑箱不可改。**
+
 ## 2026-10-18 Owner审批：临时GitHub审阅可传MD＋合规脱敏ZIP，100轮TEMP实验已完成但未收敛
 
 [2026-10-18 MD/ZIP政策](../CH5_OWNER_REVIEW_MD_ZIP_TEMP_EXCHANGE_POLICY_20261018.md)：**未来新固定任务**可在独立remote review分支白名单中一次普通nonforce发布`result.md`、`manifest.json`、`evidence_sanitized.zip`；必须递归扫描ZIP及内嵌压缩包、删私人Windows绝对路径与凭据、保持RAW与DERIVATIVE双哈希，Astra先永久主审并回读后清remote tree白名单；Git删除不抹历史，原项目本地工作树/index永不落地_review_tmp。旧任务已STOP不追溯增加push/HA预算；上传RAW失败则Owner私人会话fallback。
