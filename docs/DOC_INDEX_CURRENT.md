@@ -1,3 +1,19 @@
+# CH5动态总目录 · V1.8来源身份溯源与Delivery V2
+
+## 当前唯一任务
+
+- [CURRENT.md](../CURRENT.md)：当前许可与状态。
+- [TASK_CURRENT.md](../TASK_CURRENT.md)：当前唯一任务。
+- [V1.8来源证据身份与预期值溯源](CH5_ASTRA_WORKFLOW_V1_8_SOURCE_IDENTITY_PROVENANCE_20261018.md)。
+- [V1.7交付闭环规则](CH5_ASTRA_WORKFLOW_V1_7_DELIVERY_CLOSURE_20261018.md)。
+- [Delivery Recovery V2固定合同](../tasks/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_GITHUB_DELIVERY_V2_20261018.md)。
+
+上一交付任务在SOURCE_FINAL_RECEIPT_IDENTITY停止，因为本地校验器添加了65字符、未在合同中冻结的手抄预期SHA。不得将其定性为源文件修改。V1.8要求预期值有明确来源；新V2合同已冻结ZIP、manifest、FINAL_RECEIPT三个来源身份及预算。新任务只审查/交付已有证据，禁止测试、runner或科学重跑。
+
+科学调用0；正式V010不变；V011 NOT_STARTED；Results FALSE；FULL_RUNNER_IO_CLOSURE BLOCKED。
+
+---
+
 # CH5动态总目录 · V1.7交付闭环与V3证据补交
 
 ## 当前唯一任务
