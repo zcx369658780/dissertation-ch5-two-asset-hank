@@ -1,3 +1,19 @@
+# CH5动态总目录 · V1.9路径分类器合成修复任务
+
+## 当前唯一任务
+
+- [CURRENT.md](../CURRENT.md)：当前许可与状态。
+- [TASK_CURRENT.md](../TASK_CURRENT.md)：当前唯一任务。
+- [V1.9 URI/文件路径/JSON转义分类器规则](CH5_ASTRA_WORKFLOW_V1_9_REVIEW_PATH_CLASSIFIER_20261018.md)。
+- [V1.9合成-only固定任务](../tasks/CH5_REVIEW_PATH_CLASSIFIER_V19_SYNTHETIC_ONLY_20261018.md)。
+- [V1.8来源身份溯源](CH5_ASTRA_WORKFLOW_V1_8_SOURCE_IDENTITY_PROVENANCE_20261018.md)；[V1.7交付闭环](CH5_ASTRA_WORKFLOW_V1_7_DELIVERY_CLOSURE_20261018.md)。
+
+Delivery V2 run_id=447f9775e1b5482f9e3add9344742017已STOP，17/491成员审查、474未审，完整ZIP安全性UNKNOWN。新任务只处理合成分类器，不访问旧ZIP、不发布网络、不运行runner或科学模型。旧Delivery V2保持关闭。
+
+正式V010不变；V011 NOT_STARTED；model_activation=False；REAL_GE=False；Results FALSE；FULL_RUNNER_IO_CLOSURE BLOCKED。
+
+---
+
 # CH5动态总目录 · V1.8来源身份溯源与Delivery V2
 
 ## 当前唯一任务
