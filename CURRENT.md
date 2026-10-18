@@ -1,28 +1,25 @@
-# CH5 CURRENT · V1.8 source identity provenance; delivery recovery V2 issued
+# CH5 CURRENT · V1.9 synthetic path classifier task issued
 
-**PREVIOUS_DELIVERY_TASK=TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_GITHUB_DELIVERY_20261018**
-**PREVIOUS_RUN=6568ae4f4d134f3b9459e47d983f2acc**
+**PREVIOUS_TASK=TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_GITHUB_DELIVERY_V2_20261018**
+**PREVIOUS_RUN=447f9775e1b5482f9e3add9344742017**
 **PREVIOUS_RESULT=FAIL_CLOSED / STOP**
-**PREVIOUS_STOP=SOURCE_FINAL_RECEIPT_IDENTITY**
-**ACTIVE_TASK=TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_GITHUB_DELIVERY_V2_20261018**
-**TASK_SCOPE=DELIVERY_ONLY / ZERO_SCIENCE / NO_TEST_RERUN / NO_RUNNER**
+**PREVIOUS_STOP=PATH_CLASSIFIER_FALSE_POSITIVE_AND_UNRESOLVED_JSON_ESCAPE**
+**ACTIVE_TASK=CH5_REVIEW_PATH_CLASSIFIER_V19_SYNTHETIC_ONLY_20261018**
+**TASK_SCOPE=ENGINEERING_ONLY / SYNTHETIC_ONLY / NO_ARCHIVE_SCAN / NO_NETWORK / NO_RUNNER / NO_SCIENCE**
 **TASK_STATUS=ISSUED_NOT_STARTED**
-**TASK_ISSUE_COMMIT=454453dcdc56d62da11d2fbb0a603aa1e015c9e4**
-**TASK_BLOB=ff17fbd3f672ba35e58c60d882da634be294ae7b**
-**TASK_PATH=tasks/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_GITHUB_DELIVERY_V2_20261018.md**
-**WORKFLOW_V1_8=docs/CH5_ASTRA_WORKFLOW_V1_8_SOURCE_IDENTITY_PROVENANCE_20261018.md**
+**TASK_ISSUE_COMMIT=fa923c6048d958eba772b8145f79cf1fa857ee42**
+**TASK_BLOB=VERIFY_BY_READBACK**
+**TASK_PATH=tasks/CH5_REVIEW_PATH_CLASSIFIER_V19_SYNTHETIC_ONLY_20261018.md**
+**WORKFLOW_V1_9=docs/CH5_ASTRA_WORKFLOW_V1_9_REVIEW_PATH_CLASSIFIER_20261018.md**
 
-## Latest delivery failure
-The predecessor stopped before ZIP audit/fake-bare/network because a 65-character receipt SHA was manually copied into a local validator. That expected value was not in the predecessor contract. This does not prove source evidence changed. Do not resume the predecessor or alter its receipt.
-
-## V1.8 rule
-Expected source identities must be frozen in the current task contract or an explicitly authoritative source index. Do not add manual hashes from chat as gates. Validate hash format/length, report expected value and its source separately from actual bytes, and distinguish VALIDATOR_EXPECTATION_DEFECT from SOURCE_IDENTITY_MISMATCH. The corrected receipt identity for the new task is explicitly frozen in its contract.
+## Previous failure
+Delivery V2 stopped after scanning 17/491 members because `https://` was misclassified as a drive path and a JSON-escaped fragment remained unresolved. Complete ZIP safety is UNKNOWN; 474 members remain unreviewed. No fake-bare or network publication occurred. This is not proof of source modification or credential leakage. Predecessor remains closed and not resumable.
 
 ## Active task
-The new V2 delivery-only task handles existing run 33f2b49ddc274e868956f6480d5f3a3a only. It may audit/sanitize/publish/read back the three allowlisted files under its unique remote review branch/path. No tests, Windows smoke, Python, runner or model/science calls. Prior delivery budget is closed; use only this new task's budget.
+Only build/fix the URI/path/JSON-escape classifier using synthetic fixtures. Do not read or scan the old ZIP, do not generate a ZIP, do not run fake-bare, SSH/fetch/push, adapter, runner, tests against real evidence, or scientific models. Local-only outputs only. This task does not authorize resuming Delivery V2.
 
 **ACTIVE_RESEARCH_TASK=NONE; ACTIVE_SCIENCE_TASK=NONE**
 **model_activation=False; REAL_GE=False; Results=FALSE; V011=NOT_STARTED**
 **FULL_RUNNER_IO_CLOSURE=BLOCKED**
-**NEXT=CODEX_EXECUTE_TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_GITHUB_DELIVERY_V2_20261018**
-**FINAL_STOP=WAIT_ASTRA_INDEPENDENT_REVIEW_AND_PERMANENT_ARCHIVE**
+**NEXT=CODEX_EXECUTE_CH5_REVIEW_PATH_CLASSIFIER_V19_SYNTHETIC_ONLY_20261018**
+**FINAL_STOP=WAIT_ASTRA_PATH_CLASSIFIER_V19_REVIEW**
