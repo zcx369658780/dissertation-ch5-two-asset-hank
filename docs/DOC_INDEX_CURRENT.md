@@ -1,3 +1,19 @@
+# CH5动态总目录 · V1.5不可变任务身份与Adapter V2
+
+## 当前唯一任务
+
+- [CURRENT.md](../CURRENT.md)：当前许可状态。
+- [TASK_CURRENT.md](../TASK_CURRENT.md)：当前唯一任务。
+- [V1.5不可变任务身份与启动校验](CH5_ASTRA_WORKFLOW_V1_5_IMMUTABLE_TASK_IDENTITY_20261018.md)。
+- [V1.4资源门禁真实性与三平面同步](CH5_ASTRA_WORKFLOW_V1_4_RESOURCE_CONTAINMENT_20261018.md)。
+- [Adapter Integration V2固定合同](../experiments/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V2_20261018/ENGINEERING_CONTRACT.md)。
+
+**当前状态：** 前一Adapter任务因本地组装校验文本替换了历史V3身份而在BOOTSTRAP 0停止；该任务未实施、未创建工件，现已SUPERSEDED_NOT_STARTED。新V2合同不含自身发行身份，身份元数据仅放在CURRENT/TASK_CURRENT。必须原样读取固定合同，不得重写正文进行校验。
+
+科学调用0；正式V010不变；V011 NOT_STARTED；Results FALSE；FULL_RUNNER_IO_CLOSURE BLOCKED。当前任务仅限ResourceGate窄adapter集成；不得恢复旧TEMP科学运行。
+
+---
+
 # CH5动态总目录 · V1.4资源门禁与Codex同步
 
 ## 当前唯一任务：一次性DOC_ONLY同步
