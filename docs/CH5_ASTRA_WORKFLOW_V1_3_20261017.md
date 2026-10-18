@@ -1,4 +1,7 @@
 # 第五章 V1.3：本地工程快速通道与分级独立验收
+
+**2026-10-18 Owner再次要求的GitHub验收V2最高默认：** [自动交付MD＋ZIP](CH5_GITHUB_AUTO_ZIP_REVIEW_DELIVERY_V2_20261018.md)。此后新任务必须预设GitHub临时remote tree自动发布result.md、manifest.json和有证据时的evidence_sanitized.zip；Owner手动上传只为不可恢复的最后兜底。科学STOP立即关闭科学预算，但已事前许可的独立DELIVERY_BUDGET继续用于只读封存、脱敏和上传；普通PowerShell/git argv E1在交付预算内有限修复，**不再因一个本地参数错误就要求Owner搬运ZIP**。首次科学执行前先本地fake bare＋真实小ZIP二进制发布回读自检。此处不改变经济模型或原科学权限。
+
 **2026-10-18长期证据传输扩展：** [Owner批准新任务GitHub临时MD＋脱敏ZIP](CH5_OWNER_REVIEW_MD_ZIP_TEMP_EXCHANGE_POLICY_20261018.md)。后续固定新任务可白名单`evidence_sanitized.zip`，须逐条清单/递归内嵌压缩包审查，原RAW/私人路径不得因临时上传而公开；Codex SSH+独立bare及Astra正式归档后清remote temp文件不变。**这里只变证据交付协议，不改变E1/E2/E3门、旧科学和网络预算。**
 
 

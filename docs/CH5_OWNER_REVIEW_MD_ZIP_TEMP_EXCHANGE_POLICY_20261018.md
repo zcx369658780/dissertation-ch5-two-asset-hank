@@ -1,5 +1,8 @@
 # CH5 Owner 2026-10-18：GitHub远端临时审阅扩展为 MD + ZIP（长期默认）
 
+**2026-10-18 Owner二次强调，最高交付优先规则：** [GitHub自动ZIP审阅V2](CH5_GITHUB_AUTO_ZIP_REVIEW_DELIVERY_V2_20261018.md)。本文件旧“ZIP可选、一次E1发布失败就LOCAL_ONLY要求Owner手传”的操作习惯被替代；今后新任务默认必自动尝试发布MD＋manifest＋sanitized ZIP，并单列可容纳普通argv修复的DELIVERY_BUDGET，预先fake bare自检，科学停止不关闭安全归档的独立额度。旧科学/发布预算不追溯解封，已有STOP本轮由独立零科学交付工程任务处理。
+
+
 **Authority：Owner 2026-10-18明确要求“类似的报告和zip文档也可以上传github临时目录（验收后清理）”。**
 **状态：OWNER_APPROVED_PROSPECTIVE_DELIVERY_PROTOCOL；**优先于2026-10-16旧[脱敏临时交换协议](CH5_TEMP_SANITIZED_REVIEW_EXCHANGE_20261016.md)中“只允许MD/JSON或第三份静态文本、ZIP不许发布”的旧文件类型限制。**未改变**Owner已有GitHub SSH Key-over-443、仅remote临时目录、先验收归档再清理、Git历史留存、原项目工作树保护及真实科研数据防误公开等硬边界。V1.3普通工程自主修复与E2/E3停止门不变。
 
