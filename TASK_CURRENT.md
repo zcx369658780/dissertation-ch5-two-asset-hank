@@ -1,20 +1,19 @@
-# TASK_CURRENT — TEMP V010 Resource Gate V3 Adapter Integration
+# TASK_CURRENT — Adapter Integration V2 / Immutable Task Identity
 
-唯一当前任务：TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_20261018
+唯一当前任务：TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V2_20261018
 状态：ISSUED_NOT_STARTED
 范围：ENGINEERING_ONLY / NO_SCIENCE / NO_HA
-发行提交：779cc2e6013afab1c23146464ea7246edda8eedf
-合同Blob：8cb2ecdd584e38aa040736d34a4b19a3cc8e4750
-固定合同：experiments/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_20261018/ENGINEERING_CONTRACT.md
+发行提交：22fbd1b1d42bb774f826d57bbca973965781f39e
+合同Blob：fedd822504bdc0547ab91c7250d9e256efbc18c3
+合同路径：experiments/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V2_20261018/ENGINEERING_CONTRACT.md
+合同URL：https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/22fbd1b1d42bb774f826d57bbca973965781f39e/experiments/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V2_20261018/ENGINEERING_CONTRACT.md
+工作流V1.5：docs/CH5_ASTRA_WORKFLOW_V1_5_IMMUTABLE_TASK_IDENTITY_20261018.md
 
-固定合同：
-https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/779cc2e6013afab1c23146464ea7246edda8eedf/experiments/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_20261018/ENGINEERING_CONTRACT.md
+上一任务 TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_20261018 因 TASK_RAW_IDENTITY 在 BOOTSTRAP 0 停止，未实施、未创建工件、未运行测试或科学。它被SUPERSEDED_NOT_STARTED，不续跑。
 
-上一V3任务run_id=49b82ce3c2554dbeb0aa2fb6b0b2f067，已接受为PASS_BOUNDED_NATIVE_SINGLE_CHILD_LOCAL。仅证明受界单直接子进程与Job并发准入路径；不证明CreateProcess前阻断、任意后代、生命周期累计创建控制或完整Runner I/O。原独立FINAL_RECEIPT未由Astra单独复算。
+本任务启动时必须原样读取固定合同，不得重写、替换历史Commit/Blob、重新拼接校验正文。Git Blob SHA和文件SHA256必须区分。只有连接器文本时标记CONNECTOR_TEXT_VERIFIED，不宣称原始Git对象已独立认证。身份不一致只读STOP，不换路径/分支/哈希。
 
-本任务将已接受V3门禁以窄adapter接入既有ResourceGate执行器。必须先通过BOOTSTRAP 0/1/2和独立scratch保护身份。仅允许单一直接子进程拓扑；nested bundle/任意后代拓扑明确阻断为UNSUPPORTED_DESCENDANT_TOPOLOGY。静态与合成测试通过后最多运行一次新的真实Windows集成smoke：一个子进程挂起、分配Job并核验后恢复；第二个挂起探针在Job准入阶段拒绝且绝不恢复。出现未知PID、意外后代、账本/Job不一致或STOP失效立即E2 STOP。
-
-预算：工程后代≤192；Python启动≤48；同时活动Python≤8；跨进程活动线程≤64；工程时间≤3小时；最多8批。无Git fetch/push、无网络发布、无旧review清理。科学调用严格为0；不续跑旧TEMP，不改正式V010。
+范围：将已接受的V3单直接子进程门禁窄接入ResourceGate执行器；BOOTSTRAP 0/1/2和保护路径先通过；nested bundle/任意后代明确阻断；静态与合成通过后最多一次真实Windows集成smoke。工程预算：后代≤192、Python启动≤48、同时活动Python≤8、活动线程≤64、3小时、8批。不得Git fetch/push、网络发布、清理review或科学调用。
 
 ACTIVE_RESEARCH_TASK=NONE
 ACTIVE_SCIENCE_TASK=NONE
