@@ -1,5 +1,10 @@
 # CH5 动态总目录 · V010 CP2_F25独立机制取证终结，Owner科学决定待定
 
+## 当前权威（2026-10-18交接，下面旧ACTIVE/NEXT均视作历史，不自动授权）
+- [本会话全部Owner决定、TEMP黑箱、2×2科学E2、GitHub ZIP实际交付与26/24工程失败、远端清理和下一会话边界](CH5_SESSION_HANDOFF_20261018_AFTER_TEMP_HA_PRICE_BRIDGE_AND_GITHUB_ZIP_CLOSEOUT.md)。
+- 当前实际：**RESEARCH ACTIVE_TASK=NONE；DELIVERY ACTIVE_TASK=NONE；ALL_BUDGETS_CLOSED；OWNER_NEW_TASK=NEXT_CONVERSATION_ONLY**。正式V010冻结，Results FALSE，V011 NOT_STARTED。上一纯交付任务已结束、临时审阅3/3清理成功。
+- 本目录下文保留各历史任务发行/STOP及旧“当前”措辞作可溯源记录。**以CURRENT.md、TASK_CURRENT.md及上述本会话handoff的2026-10-18状态为准，不能从后文旧NEXT推导执行权。**
+
 **2026-10-18 GitHub MD＋ZIP远端实证核验完成：** [独立交付审议](CH5_GITHUB_ZIP_PUBLISHER_DELIVERY_RESOURCE_EXCEPTION_INDEPENDENT_REVIEW_20261018.md)确认remote review HEAD `7623a4eb4680f0b4039f03dd245307ec791cea15`、唯一任务父 `2d9a3a5a3100fa82f24f125ce3264bb68c01c333`，远端仅三文件，完整ZIP196296B/29成员、SHA256与旧私有原证相符。Codex自报Git内部子进程**至少26/24，交付工程仍FAIL_CLOSED_RESOURCE_EXCEPTION**，不能因上传成功认定工程PASS。科学与交付活动任务均NONE、正式V010/Results不变；按既定授权永久审议回读后清理remote临时分支当前三文件，保留Git历史。
 
 
