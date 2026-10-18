@@ -1,20 +1,27 @@
-# TASK_CURRENT · 一次性V1.4 DOC_ONLY同步
+# TASK_CURRENT — TEMP V010 Native Single-Child Resource Gate V3
 
-**唯一当前任务：CH5_V14_ONE_TIME_CODEX_DOC_SYNC_20261018**
-**STATUS=ISSUED_NOT_STARTED**
-**SCOPE=DOC_ONLY / NO_TESTS / NO_RUNNER / NO_SCIENCE / NO_NETWORK**
-**WORKFLOW=docs/CH5_ASTRA_WORKFLOW_V1_4_RESOURCE_CONTAINMENT_20261018.md**
-**WORKFLOW_ISSUE_COMMIT=2ece8095bbeb503daec7f432fc30740002d50be9**
+唯一当前任务：TEMP_V010_RESOURCE_GATE_NATIVE_SINGLE_CHILD_V3_20261018
+状态：ISSUED_NOT_STARTED
+范围：ENGINEERING_ONLY / NO_SCIENCE / NO_HA
+发行提交：09e073ee69b34fc22dd5448a6a39156a0cd11775
+固定合同：experiments/TEMP_V010_RESOURCE_GATE_NATIVE_SINGLE_CHILD_V3_20261018/ENGINEERING_CONTRACT.md
 
-## 允许范围
-只读恢复最新治理源并核对本地Codex文档镜像；在通过既有V1.3 BOOTSTRAP 0/1/2、确认目标白名单与保护路径后，仅同步文档入口、当前状态和工作流导航。一次集中回执须包含源commit/blob、本地目标路径、前后SHA、差异、保护状态及UNKNOWN。若无法认证目标或写前身份，只做只读报告并STOP。
+固定合同链接：
+https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/migration/astra-workflow-20261012/experiments/TEMP_V010_RESOURCE_GATE_NATIVE_SINGLE_CHILD_V3_20261018/ENGINEERING_CONTRACT.md
 
-## 明确禁止
-不运行测试、不启动Python/C# runner、不运行HA/HJB/KFE/selector/root solver、不修复TEMP资源门禁、不重跑任何实验、不Git fetch/push、不创建或清理review候选、不写正式模型树/保护worktree/index/common-dir/旧scratch/备份。旧任务预算不结转。
+前置事实：上一次DOC_ONLY报告被接受为程序合规的STOP，不代表本地镜像同步成功。未写本地文件，不得擅自改用其他路径重试。上一资源门禁任务仍为FAIL_CLOSED_UNRESERVED_REAL_DESCENDANT；28/28合成测试不能抵消真实Windows Job预留2、累计3的E2。
 
-## 依据与结果
-最近失败任务：`TEMP_V010_RESOURCE_GATE_REPAIR_20261018`，run_id `977d18ebe6e14a91bb049924cae715e4`，终态 `FAIL_CLOSED_UNRESERVED_REAL_DESCENDANT / STOP`。V2合成28/28不能抵消真实Job预留2、累计3的E2失败。旧账已对齐为kernel-only 35→35、保守37→37；两后代身份及实际Python总数仍UNKNOWN。
+本任务只检查和修复资源门禁的有界单子进程控制及计数。先核验保护路径和独立scratch；无法核验则只读报告并STOP。合成与真实OS测试分开报告。真实测试仅允许一个直接子进程，不允许测试子进程再派生后代；创建时挂起，分配Job并核验身份后才恢复运行。ActiveProcessLimit=1只限制并发活动进程，不代表限制生命周期累计创建数。任何未知身份、计数不一致、意外后代或STOP异常立即E2 STOP。
 
-**ACTIVE_RESEARCH_TASK=NONE；ACTIVE_SCIENCE_TASK=NONE；ACTIVE_DELIVERY_TASK=NONE**
-**model_activation=False；REAL_GE=False；Results FALSE；V011 NOT_STARTED；FULL_RUNNER_IO_CLOSURE=BLOCKED**
-**FINAL_STOP=WAIT_OWNER_NEW_TASK_AFTER_DOC_SYNC**
+预算：工程全部后代≤192；Python启动≤48；同时活动Python≤8；跨进程活动线程≤64；工程时间≤3小时；最多8批。所有上限必须在创建前执行。
+
+禁止HA/HJB/KFE/selector/root solver，禁止科学运行，禁止Git fetch/push、网络发布和旧review清理。旧预算不结转。
+
+ACTIVE_RESEARCH_TASK=NONE
+SCIENCE_CALLS=0
+model_activation=False
+REAL_GE=False
+Results=FALSE
+V011=NOT_STARTED
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+最终停点：WAIT_ASTRA_NATIVE_SINGLE_CHILD_RESOURCE_GATE_REVIEW
