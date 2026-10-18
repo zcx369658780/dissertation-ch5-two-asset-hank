@@ -1,3 +1,17 @@
+# CH5动态总目录 · V1.7交付闭环与V3证据补交
+
+## 当前唯一任务
+
+- [CURRENT.md](../CURRENT.md)：当前许可与状态。
+- [TASK_CURRENT.md](../TASK_CURRENT.md)：当前唯一任务登记。
+- [V1.7交付闭环规则](CH5_ASTRA_WORKFLOW_V1_7_DELIVERY_CLOSURE_20261018.md)：分离SCIENCE/ENGINEERING/DELIVERY预算；明确远端临时审阅、fake-bare预检、原字节核验、先归档后清理。
+- [V3既有证据补交任务](../tasks/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_GITHUB_DELIVERY_20261018.md)：只交付run_id=33f2b49ddc274e868956f6480d5f3a3a的既有证据，不重跑测试、runner或模型。
+- [来源V3工程合同](../experiments/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_INTEGRATION_V3_20261018/ENGINEERING_CONTRACT.md)：其禁止网络发布的限制保持不变；新的delivery-only任务不追溯修改它。
+
+当前来源工程结果为PASS_BOUNDED_ADAPTER_INTEGRATION_LOCAL，Astra独立验收仍PENDING。delivery任务尚未开始，不能声称远端材料已发布。正式V010不变；V011 NOT_STARTED；model_activation=False；REAL_GE=False；Results FALSE；FULL_RUNNER_IO_CLOSURE BLOCKED。
+
+---
+
 # CH5动态总目录 · V1.6保护路径边界与Adapter V3
 
 ## 当前唯一任务
