@@ -1,32 +1,41 @@
-# TASK_CURRENT · TEMP HA黑箱与简化观察门：价格调参长任务
+# TASK_CURRENT · TEMP V010资源门禁与累计账本修复
 
-**唯一任务：TEMP_V010_HA_BLACKBOX_SIMPLE_PRICE_TUNING_100_20261018**
-**ACTIVE_TASK=TEMP_V010_HA_BLACKBOX_SIMPLE_PRICE_TUNING_100_20261018；RESEARCH_ACTIVE_TASK=TEMP_V010_HA_BLACKBOX_SIMPLE_PRICE_TUNING_100_20261018；TASK_SCOPE=TEMP_SYNTHETIC_ONLY**
-**FORMAL_V010_ACTIVE_TASK=NONE；ACTIVE_DELIVERY_ONLY_TASK=NONE**
-**STATUS=ISSUED_NOT_STARTED；PHASE=P0_ENGINEERING_PRECHECK**
-**ISSUE_COMMIT=6d07cdf1a565376927bd64997780ad77669d9390；ISSUE_TREE=628677d32b773d7fd8cb9a4e9f906979d17067b5；TASK_BLOB=04af299d04f1e37243d8af806fb4a4e10eed0feb**
-**TASK_SHA256=2e6fc6e118c3c4bd71d4380a0d6f070d5fe2839ed4dffbaf13ae123bf9da9dc3；TASK_BYTES=25559**
-**TASK_PATH=experiments/TEMP_V010_HA_BLACKBOX_SIMPLE_PRICE_TUNING_100_20261018/EXPERIMENT_CONTRACT.md**
+**唯一当前任务：TEMP_V010_RESOURCE_GATE_REPAIR_20261018**
+**ACTIVE_TASK=TEMP_V010_RESOURCE_GATE_REPAIR_20261018；TASK_SCOPE=ENGINEERING_ONLY / NO_SCIENCE / NO_HA**
+**STATUS=ISSUED_NOT_STARTED**
+**ISSUE_COMMIT=2ba4a716ebde395a7f659729513e725e0d8d1f07**
+**TASK_BLOB=e817ce5737ba8c2a189122e4d0bb08cd4f85ef7c**
+**TASK_PATH=experiments/TEMP_V010_RESOURCE_GATE_REPAIR_20261018/ENGINEERING_CONTRACT.md**
 
-[完整固定合同](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/6d07cdf1a565376927bd64997780ad77669d9390/experiments/TEMP_V010_HA_BLACKBOX_SIMPLE_PRICE_TUNING_100_20261018/EXPERIMENT_CONTRACT.md)；[本轮Owner授权与实施范围](docs/CH5_OWNER_TEMP_BLACKBOX_SIMPLE_PRICE_TUNING_100_AUTHORITY_20261018.md)。必须读固定合同全文，不凭本页摘要运行。P0通过后允许同一任务内自动进入P1，无逐轮人工批准；未收到执行结果前不称P0通过或模型已开始。
+[固定任务合同](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/migration/astra-workflow-20261012/experiments/TEMP_V010_RESOURCE_GATE_REPAIR_20261018/ENGINEERING_CONTRACT.md)
 
-| 预算域 | 新上限与用途 |
-|---|---|
-| SCIENCE | 唯一HA driver；A1→A2→A3各新起点≤100轮/200计费HA，总≤600；科学≤18h |
-| ENGINEERING | 全部真实后代≤192，修复/验证批次≤8，纯Python/pytest≤24，bootstrap≤3；主动工程≤3h |
-| DELIVERY | 全部真实后代≤192（含P0发布器预演/全部Git/SSH）；恢复≤6批、SSH≤2/fetch≤3/push≤2、最多一次成功发布；累计≤3h |
-| 总约束 | 总任务≤24h；真实新进程≤385，三域互斥累计、旧余额不结转；非Git增量≤512MiB、独立Git对象合计≤2GiB |
+## 任务边界
 
-首次HA前的失败bootstrap才可计ENGINEERING；唯一进入HA的driver归SCIENCE且不重复计。实际进入HA后不启动第二个science driver，不恢复旧A2/A3，不用未消费额度更换参数。时间/Owner/共同硬门中止时保留实际完整轮和partial轮，未开始臂NOT_RUN。
+只处理已失败TEMP任务的资源硬门与累计账本核对。不得重启科学driver、续跑A1、启动A2/A3、运行任何HA/HJB/KFE/selector/root solver或更改正式模型。当前任务SCIENCE调用预算=0。
 
-HA原SHA B92F6EFC59D9398F89F8FB6EE67BF6C5F947282D76895051BEC194967EC9C3E3；仅raw/used收益和工资两开关，raw lagged score、同S、税/人口、GovInv/Zt/边界保持。HJB False但正常返回可继续观察，Bellman/KKT为诊断，源式收敛判据不放宽。
+## 新资源上限（只对本任务生效）
 
-**NEW_REVIEW_BRANCH=review/ch5-temp-blackbox-price-tuning-100-20261018**
-**NEW_REVIEW_PARENT=6d07cdf1a565376927bd64997780ad77669d9390**
-**NEW_REVIEW_PATH=_review_tmp/ch5/temp-blackbox-price-tuning-100-20261018/**
-**DELIVERY_FILES=result.md / manifest.json / evidence_sanitized.zip**
-科学STOP关闭科学预算；安全域仍可信时独立交付继续。发布后最终资源回执原字节Base64/长度/SHA256随一次最终结果给出，发布前ZIP计数不冒称任务最终计数。
+| 域 | 上限 |
+|---|---:|
+| ENGINEERING全部真实子进程/后代 | 192 |
+| Python/focused pytest启动总数 | 48 |
+| 同时活动Python进程 | 8 |
+| 跨全部Python进程活动工作线程 | 64 |
+| 主动工程墙钟 | 3小时 |
+| 工程修复/验证批次 | 8 |
+| 新增非Git字节 | 512 MiB |
 
-**PREVIOUS_TASKS=STOP；PREVIOUS_BUDGETS=CLOSED_NO_CARRY_FORWARD；OLD_TEMP_REVIEW_CLEANUP=COMPLETE**
-**Results FALSE；V011 NOT_STARTED；FULL_RUNNER_IO_CLOSURE=BLOCKED；正式V010模型与方法未改**
-**FINAL_STOP=WAIT_ASTRA_TEMP_BLACKBOX_PRICE_TUNING_100_REVIEW**
+上限必须在创建/启动前强制执行。进程与线程分开计数；资源账本不得静默倒退。写前身份与STOP规则不放宽。
+
+## 重点验收
+
+1. 对账manifest打包前ENGINEERING=37与最终receipt ENGINEERING=35的差异；没有原始证据就保留UNKNOWN，不猜测。
+2. 合成测试证明Python第49次启动、并发第9个Python进程、总第65个活动线程、工程第193个后代均在创建前拒绝。
+3. 注入账本/checkpoint故障或STOP后，dummy后续调用数必须为0。
+4. 全过程HA/HJB/KFE/selector/root solver调用数严格为0。
+5. 保留初始失败和原TEMP证据；不发布/清理旧review候选，不运行Git fetch/push。
+
+**PREVIOUS_TEMP=FAIL_CLOSED_SHARED_RESOURCE_PRECONDITION；OLD_BUDGETS=CLOSED_NO_CARRY_FORWARD**
+**FORMAL_V010_UNCHANGED；model_activation=False；REAL_GE=False；Results FALSE；V011 NOT_STARTED**
+**FULL_RUNNER_IO_CLOSURE=BLOCKED**
+**FINAL_STOP=WAIT_ASTRA_RESOURCE_GATE_REPAIR_REVIEW / NO_SCIENCE**
