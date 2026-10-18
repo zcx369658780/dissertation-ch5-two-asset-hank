@@ -1,5 +1,8 @@
 # CH5 动态总目录 · V010 CP2_F25独立机制取证终结，Owner科学决定待定
 
+**2026-10-18最高优先交付状态：** [自动GitHub MD＋ZIP V2](CH5_GITHUB_AUTO_ZIP_REVIEW_DELIVERY_V2_20261018.md)已经签发；[TEMP2×2科学E2失败独立终审](CH5_TEMP_PRICE_BRIDGE_FACTORIAL_E2_LEDGER_TERMINAL_REVIEW_20261018.md)确认A1/A2/A3完成0/2/2、HA计费12，正式V010不变；**当前独立DELIVERY-only工程任务** [GitHub ZIP发布器修复及旧证据自动补交](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/2d9a3a5a3100fa82f24f125ce3264bb68c01c333/tasks/CH5_GITHUB_ZIP_PUBLISHER_REPAIR_DELIVERY_RECOVERY_20261018.md) 发行Commit 2d9a3a5a3100fa82f24f125ce3264bb68c01c333、Blob c0f020b6b11a6289d65aa0cbde734d415633037c。本任务只对既有脱敏result.md/manifest.json/evidence_sanitized.zip修Git argv与远端发布，science HA/HJB/KFE严格0，不复活旧预算。Owner以后不应每轮手动上传ZIP；正式研究 ACTIVE_TASK=NONE、Results FALSE、V011 NOT_STARTED。
+
+
 **2026-10-18 Owner新临时数值实验已签发（正式V010仍ACTIVE_TASK=NONE）：** [2×2价格桥实验Owner科学授权](CH5_OWNER_TEMP_PRICE_BRIDGE_FACTORIAL_100_AUTHORITY_20261018.md)；[独立TEMP100轮冻结任务](https://github.com/zcx369658780/dissertation-ch5-two-asset-hank/blob/2c855f616efbca05c29d4069a44e3c6651070b44/experiments/TEMP_V010_PRICE_BRIDGE_FACTORIAL_100_20261018/EXPERIMENT_CONTRACT.md)。A0旧raw/raw100轮不重跑，新A1 used/raw、A2 raw/used、A3 used/used各最多100轮，新science最多600 HA，严禁改原HA黑箱；进入HA前必须防止旧prepare重绑raw价；本任务与旧科学预算完全分开，正式V010数学合同不改、Results FALSE。
 
 **2026-10-18 TEMP 100轮原始收益与价格桥机制源证：** [ra0长期越界/家户收益与工资输入同MATLAB的来源差异](CH5_TEMP_V010_RA_BOUNDARY_SOURCE_ONLY_FORENSIC_20261018.md)。两省100/100轮raw ra0>0.09（最低0.3733/0.4155），各26次GovInv×1.1；本轮家户rah沿raw ra0 same-S，w_eff沿wt0而非有界ra/wjt，现价桥与MATLAB源不等价。**这不是已证明的HA故障或替代实验收敛，也没有批准更改V010原模型；正式ACTIVE_TASK仍NONE、旧预算CLOSED。**

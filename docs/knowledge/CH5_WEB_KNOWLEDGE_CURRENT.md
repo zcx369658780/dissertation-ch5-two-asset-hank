@@ -1,5 +1,12 @@
 # 第五章长期知识与恢复入口
 
+## 2026-10-18 Owner再次强调：默认GitHub临时目录自动验收 ZIP，不得每轮让Owner手动上传
+
+[生效的GitHub ZIP自动交付V2](../CH5_GITHUB_AUTO_ZIP_REVIEW_DELIVERY_V2_20261018.md)：以后每项新冻结科学任务默认独立DELIVERY_BUDGET，Codex自动交付MD、manifest与sanitized evidence ZIP到远端独立review tree；科学STOP关闭science但不妨碍已授权的只读安全归档及GitHub发布；普通PowerShell argv/git E1允许交付额度内修复，必须先用no-network fake-bare小型ZIP测试二进制往返；Astra验收后永久归档再清远端三件，Git历史不消失。Owner本轮不接受“ZIP已封存但Git参数拼错→又要求我手传”的常规模式。public repo不得原样传私人RAW ZIP。
+
+[本次TEMP价格桥2×2 E2独立主审](../CH5_TEMP_PRICE_BRIDGE_FACTORIAL_E2_LEDGER_TERMINAL_REVIEW_20261018.md)：私人ZIP1,214,713B SHA256 F3E8984FE4D2EF4BE65692C27FA7594D96B870D372A8C45D029899F7891841D8，277/277 manifest PASS、77/77源SHA/GitBlob PASS；A1/A2/A3完成0/2/2轮，共HA12（完整9、失败1、停止中断2）；A1第2HA原子checkpoint WinError5，append 11条但current止seq9，A2/A3各25条与current一致，故E2共享科学账本硬故障、无法形成四ARM经济比较。旧HA原字节保持、所有旧 science 余额CLOSED。Codex SSH预检真实成功，fetch因--git-dir与-c合并同一个PS实参在本地失败，远端push0；**三件可发表的sanitized交付（MD、manifest、196296B ZIP）已在旧私人包中存在**。为修此E1和实现Owner的自动化要求，新签独立零科学发布器交付任务发行Commit 2d9a3a5a3100fa82f24f125ce3264bb68c01c333 /Blob c0f020b6b11a6289d65aa0cbde734d415633037c，路径 tasks/CH5_GITHUB_ZIP_PUBLISHER_REPAIR_DELIVERY_RECOVERY_20261018.md；科学/正式V010不因此重新启动，model_activation=False、Results FALSE、V011 NOT_STARTED。
+
+
 ## 2026-10-18 Owner决定：独立TEMP 2×2收益/工资价格桥实验，100轮而不是500轮（覆盖下方旧TEMP科学时态）
 
 [科学授权与详细约束](../CH5_OWNER_TEMP_PRICE_BRIDGE_FACTORIAL_100_AUTHORITY_20261018.md)：独立实验 `experiment/ch5-temp-price-bridge-factorial-100-20261018` /发行Commit `2c855f616efbca05c29d4069a44e3c6651070b44` /任务Blob `4e81556bff068b9bedc6c7c608faf24ee1e439fe`；A0 raw ra0/raw wt0的已验收100轮只读复用，A1 used ra/raw wage、A2 raw ra/used wjt、A3 used ra/used wjt的**每组只跑最多100轮、全部新真实HA最多600**，不自动继续500轮、不逐轮人工审批；其他经济方程/费税/份额raw lagged score/同S/HA黑箱完全不改。注意V010源`prepare_mainline_household_states`会pre-HA强制raw绑定rah，实验必须实际覆盖/记录进入HA的被截断资本收益，防止伪对照。Owner仅批准TEMP E3方法敏感性对照，不批准正式V010改方程或Results。GitHub脱敏MD+ZIP remote-only review白名单优先，Astra终审后清当前remote temp tree；正式`ACTIVE_TASK=NONE`不变，旧计算额度全部CLOSED，`V011 NOT_STARTED`。
