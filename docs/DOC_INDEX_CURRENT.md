@@ -1,4 +1,20 @@
-# CH5 动态总目录 · 资源门禁修复任务已签发（2026-10-18）
+# CH5动态总目录 · V1.4资源门禁与Codex同步
+
+## 当前唯一任务：一次性DOC_ONLY同步
+
+- [CURRENT.md](../CURRENT.md)：当前许可状态。
+- [TASK_CURRENT.md](../TASK_CURRENT.md)：当前唯一任务。
+- [V1.4资源门禁真实性与同步闭环](CH5_ASTRA_WORKFLOW_V1_4_RESOURCE_CONTAINMENT_20261018.md)。
+- [V1.4一次性Codex文档同步合同](../versions/0.0.10/ch5_v14_one_time_codex_doc_sync_task_20261018.md)。
+
+**当前状态：** 上一资源修复任务 `TEMP_V010_RESOURCE_GATE_REPAIR_20261018` 已 `FAIL_CLOSED_UNRESERVED_REAL_DESCENDANT / STOP`。28/28 synthetic通过不等于真实Windows Job门禁通过；预留2、Job累计3触发E2。科学调用0、Git fetch/push 0。旧账本按同口径已对齐kernel-only ENGINEERING 35→35、保守37→37；两个退出后代身份与实际Python总数仍UNKNOWN。
+
+**本次只允许一次DOC_ONLY本地Codex文档同步。** 不测试、不启动runner、不运行科学模型、不改正式模型、不执行Git fetch/push、不清理旧审阅目录。Owner必须手动上传Project Source更新包；GitHub发布不代表Codex本地或ChatGPT Sources已同步。
+
+**正式科学状态：** V010不变；V011 NOT_STARTED；model_activation=False；REAL_GE=False；Results FALSE；FULL_RUNNER_IO_CLOSURE=BLOCKED。
+
+---
+
 
 ## 最新权威：TEMP失败封存，不重跑科学；仅工程门禁修复
 
