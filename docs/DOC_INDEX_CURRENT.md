@@ -1,3 +1,19 @@
+# CH5动态总目录 · Safe blocked-report Delivery V2
+
+## 当前唯一任务
+- [CURRENT.md](../CURRENT.md)：TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_V2_20261019，ISSUED_NOT_STARTED。
+- [TASK_CURRENT.md](../TASK_CURRENT.md)：V2固定路径、来源锚点、独立预算、远端白名单及清理义务。
+- [V2固定合同](../tasks/TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_V2_20261019/CONTRACT.md)：Git Blob 92d11f71519c999bca51bc7a34682f8d6337ec8c。
+- [V2发行清单](../tasks/TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_V2_20261019/ISSUE_MANIFEST.json)：Git Blob 8c53c65656d61ff5135e8029aca903161ed68efe。
+
+## 路径错误更正
+前序Delivery任务错误地查询仓库根目录DOC_INDEX_CURRENT.md并因404停止。正式动态索引唯一规范路径是docs/DOC_INDEX_CURRENT.md；该路径已在冻结治理HEAD d5abe373910c874fa0c918e057fe142ab36a4dd8只读验证存在。V2合同已明确精确路径，不要求Codex通过其他路径重试。
+
+## 范围
+仅读取三份已固定身份的文本源并生成安全阻断报告，不读取、解压、哈希或发布原491成员ZIP及任何成员。Codex必须自动上传三件白名单材料；Astra验收归档回读后，必须删除当前tree中的白名单文件并验证缺失。科学/模型调用0，正式V010不变。
+
+---
+
 # CH5动态总目录 · Safe blocked-report交付任务已签发
 
 ## 当前唯一任务
