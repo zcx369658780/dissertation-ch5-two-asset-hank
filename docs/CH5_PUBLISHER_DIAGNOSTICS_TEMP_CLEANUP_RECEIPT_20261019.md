@@ -1,0 +1,44 @@
+# 发布器诊断证据：终审退修后的临时文件清理回执
+
+日期：2026-10-19。
+任务：CH5_PUBLISHER_DIAGNOSTICS_AND_DELIVERY_REPAIR_20261019
+run_id：f6466e1e2f674dc38c25a1614f15812e
+
+## 已执行顺序
+
+1. Astra定向终审为CHANGES_REQUIRED_REMOTE_READBACK_IMPLEMENTATION；完整ZIP及全部158项未独立复算，不授予完整交付PASS。
+2. 终审记录和2059字节原回执永久归档于治理提交48f6bd340ed7e9fe9958b73c6f5aa65602f7db35，并回读终审正文及live治理ref。
+3. 清理前再次读取review/ch5-publisher-diagnostics-20261019，HEAD仍精确等于42ac4f1c76ece94e5ada633f66daa7efddc1512d。
+4. 创建一个清理tree和一个清理commit，compare确认仅删除三条白名单路径；以expected_sha等于旧候选、force=false更新该review ref。
+5. 读取更新后的review ref以及三条精确文件路径；ref指向清理commit，三个文件均为404/Not Found。
+
+## 固定身份
+
+REVIEW_ARCHIVE_COMMIT=48f6bd340ed7e9fe9958b73c6f5aa65602f7db35
+PRE_CLEANUP_REVIEW_HEAD=42ac4f1c76ece94e5ada633f66daa7efddc1512d
+CLEANUP_COMMIT=479fa5ded0742f70e6c8825fe237730b557c3f0c
+CLEANUP_TREE=6fc66cdf0ff30ec086c9adfbea572193370e8d44
+CLEANUP_SOLE_PARENT=42ac4f1c76ece94e5ada633f66daa7efddc1512d
+FORCE=false
+DELETED_PATH_COUNT=3
+
+精确删除路径：
+- _review_tmp/ch5/publisher-diagnostics-20261019/result.md
+- _review_tmp/ch5/publisher-diagnostics-20261019/manifest.json
+- _review_tmp/ch5/publisher-diagnostics-20261019/evidence_sanitized.zip
+
+没有删除其他分支、其他路径、旧失败或科学文件；没有重写Git历史。原候选及其源码材料在历史commit中保留。Astra没有重跑发布器或再次push候选。
+
+## 最终状态
+
+TERMINAL_REVIEW_ARCHIVED_AND_READBACK=TRUE
+REMOTE_CANDIDATE_PRESENCE_BEFORE_CLEANUP=CONFIRMED
+TEMP_CLEANUP_VERIFIED=TRUE
+FULL_DELIVERY_ACCEPTANCE=NOT_GRANTED
+ORIGINAL_CODEX_STATUS=DELIVERY_BLOCKED
+TASK_DISPOSITION=REVIEWED_CHANGES_REQUIRED_NO_RESUME
+LIFECYCLE_PASS=FALSE
+
+清理成功不是完整交付验收通过；原回执中的ASTRA_PENDING_CANDIDATE_REVIEW保留为历史原件，不覆盖。原件和退修理由永久归档，当前无活动任务。后续新任务必须另行授权，不继承本轮预算。
+
+正式V010和HA黑箱不变；model_activation=False；REAL_GE=False；Results=FALSE；V011=NOT_STARTED；FULL_RUNNER_IO_CLOSURE=BLOCKED。
