@@ -1,0 +1,79 @@
+{
+  "task_id": "TEMP_V010_RESOURCE_GATE_V3_ADAPTER_EVIDENCE_ARCHIVE_AUDIT_DELIVERY_20261019",
+  "status": "ISSUED_NOT_STARTED",
+  "scope": "BOUNDED_ENGINEERING_AND_DELIVERY_ONLY_ZERO_SCIENCE",
+  "issue_commit": "2b6d73bd4e09ae9d62fe8601e81a329c88325d20",
+  "contract": {
+    "path": "tasks/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_EVIDENCE_ARCHIVE_AUDIT_DELIVERY_20261019/CONTRACT.md",
+    "bytes": 10094,
+    "sha256": "619e83d5127d55cf3b73b6c6c786691df44ac083565a4da4c2dd1b715093f088",
+    "git_blob": "3179b9c041e29a3c75b324a86ecaae3cc78b73de"
+  },
+  "governance_branch": "migration/astra-workflow-20261012",
+  "governance_head_at_issue": "2b6d73bd4e09ae9d62fe8601e81a329c88325d20",
+  "review_branch": "review/ch5-temp-resource-gate-v3-adapter-archive-audit-20261019",
+  "fixed_parent": "a2a2f465435441573805f5ca44c69d59c46fcd48",
+  "remote_temp_path": "_review_tmp/ch5/temp-resource-gate-v3-adapter-archive-audit-20261019/",
+  "remote_allowlist": ["result.md", "manifest.json", "evidence_sanitized.zip"],
+  "source_root": "D:\\ProjectTemp\\ch5_temp_resource_gate_v3_adapter_integration_v3_20261018_01\\delivery",
+  "source_files": ["result.md", "manifest.json", "evidence_sanitized.zip", "FINAL_RECEIPT.json"],
+  "hard_anchors": {
+    "evidence_sanitized.zip": {
+      "bytes": 332933,
+      "sha256": "fc7a846d09758590dbd268b430ffd8c2c47aa0b2c63e307b510586f2443fafa0",
+      "reported_members": 491
+    },
+    "FINAL_RECEIPT.json": {
+      "bytes": 9339,
+      "sha256": "14ca468c0c9b4339cea7a8bc91578fc899b88a4be7a9c96d4d7d552945d599f5"
+    }
+  },
+  "size_ceilings": {
+    "result.md_bytes": 65536,
+    "manifest.json_bytes": 1048576,
+    "evidence_sanitized.zip_bytes": 16777216,
+    "zip_member_uncompressed_bytes": 16777216,
+    "zip_total_uncompressed_bytes": 67108864,
+    "zip_compression_ratio": 100
+  },
+  "budgets": {
+    "engineering_seconds": 3600,
+    "engineering_batches": 4,
+    "engineering_processes_total_including_children_and_tool_observations": 64,
+    "python_starts": 8,
+    "python_concurrent": 2,
+    "worker_threads": 8,
+    "new_non_git_bytes": 134217728,
+    "delivery_seconds": 1800,
+    "delivery_batches": 3,
+    "delivery_e1_repairs": 2,
+    "fake_bare": 1,
+    "ssh_preflight": 1,
+    "fetch": 2,
+    "push_attempts": 1,
+    "successful_publications": 1,
+    "read_only_get": 32
+  },
+  "cleanup": {
+    "owner": "ASTRA_AFTER_REVIEW_AND_PERMANENT_ARCHIVE",
+    "must_delete_current_tree_allowlist_only": true,
+    "must_readback_absence": true,
+    "force_push": false
+  },
+  "prohibited": {
+    "science_calls": 0,
+    "model_runner_calls": 0,
+    "classifier_compile_or_suite_rerun": 0,
+    "formal_v010_writes": 0,
+    "v011_start": false,
+    "old_task_reopen": false
+  },
+  "expected_stop": "WAIT_ASTRA_TEMP_V3_ADAPTER_ARCHIVE_AUDIT_REVIEW",
+  "formal_state": {
+    "model_activation": false,
+    "REAL_GE": false,
+    "Results": false,
+    "V011": "NOT_STARTED",
+    "FULL_RUNNER_IO_CLOSURE": "BLOCKED"
+  }
+}
