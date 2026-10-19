@@ -1,0 +1,258 @@
+{
+  "schema": "ch5.publisher-repair.task-parameters.security-reviewed.v1",
+  "task_id": "CH5_PUBLISHER_DIAGNOSTICS_AND_DELIVERY_REPAIR_20261019",
+  "governance_branch": "migration/astra-workflow-20261012",
+  "baseline_commit": "09b0986415dbfc85db0d28199194ad4f817cc292",
+  "baseline_is_not_current_authorization": true,
+  "canonical_governance_paths": [
+    "CURRENT.md",
+    "TASK_CURRENT.md",
+    "docs/DOC_INDEX_CURRENT.md",
+    "docs/CH5_ASTRA_WORKFLOW_CURRENT.md",
+    "docs/CH5_ASTRA_WORKFLOW_V1_6_PROTECTED_PATH_BOUNDARIES_20261018.md",
+    "docs/CH5_MANDATORY_REVIEW_DELIVERY_AND_CLEANUP_20261019.md"
+  ],
+  "historical_inputs": [
+    {
+      "path": "docs/CH5_SAFE_BLOCKED_REPORT_V3_FAKE_BARE_FAILURE_REVIEW_20261019.md",
+      "ref": "09b0986415dbfc85db0d28199194ad4f817cc292",
+      "git_blob": "f72d040a319fb43afba8e055173ec4ef23a47aff"
+    },
+    {
+      "path": "docs/evidence/safe-blocked-v3-3ef2b1b1/FINAL_RECEIPT.json",
+      "ref": "09b0986415dbfc85db0d28199194ad4f817cc292",
+      "git_blob": "4dacea30fe7856a19cf4fc7ec7e111f987c21f92",
+      "bytes": 1700,
+      "sha256": "5b4999f9488b7a3ce98f85145e1d932ba0d6ef7af89052a6d9a273e8235f2a2e"
+    }
+  ],
+  "paths": {
+    "trusted_parent": "D:\\ProjectTemp",
+    "new_scratch": "D:\\ProjectTemp\\ch5_publisher_diagnostics_repair_20261019_01",
+    "new_scratch_must_be_absent": true,
+    "protected_roots": [
+      {
+        "role": "formal_worktree",
+        "path": "D:\\ProjectTemp\\c5k1bturn56",
+        "access": "metadata-only; .git locator/index identity exceptions in contract",
+        "required": true
+      },
+      {
+        "role": "original_adapter_root",
+        "path": "D:\\ProjectTemp\\ch5_temp_resource_gate_v3_adapter_integration_v3_20261018_01",
+        "access": "root metadata only; no content reads",
+        "required": true
+      },
+      {
+        "role": "closed_failed_publisher_root",
+        "path": "D:\\ProjectTemp\\ch5_temp_v3_safe_blocked_report_v3_20261019_01",
+        "access": "root metadata only; no content reads",
+        "required": true
+      },
+      {
+        "role": "known_documentation_mirror",
+        "path": "D:\\ProjectTemp\\ch5_workflow_v13_docs_mirror_20261017_01",
+        "access": "root metadata only",
+        "required": false
+      }
+    ],
+    "git_identity_resolution": {
+      "cwd": "D:\\ProjectTemp\\c5k1bturn56",
+      "environment": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "read_only_commands": [
+        [
+          "git",
+          "rev-parse",
+          "--absolute-git-dir"
+        ],
+        [
+          "git",
+          "rev-parse",
+          "--git-common-dir"
+        ],
+        [
+          "git",
+          "rev-parse",
+          "--git-path",
+          "index"
+        ]
+      ],
+      "max_resolution_rounds": 2,
+      "locator_and_index_hashing_allowed": true,
+      "no_recursive_git_scan": true
+    },
+    "backup_policy": "No backup destination designated for this task; other backups not asserted absent; no backup search or write.",
+    "allowed_new_subdirectories": [
+      "inputs",
+      "src",
+      "tests",
+      "attempts",
+      "raw_private",
+      "sanitized",
+      "package",
+      "git"
+    ],
+    "publisher_entry": "src/ch5_evidence_publisher.py",
+    "lock_file": "publisher_lock.json"
+  },
+  "budgets": {
+    "engineering": {
+      "wall_seconds": 7200,
+      "repair_batches": 6,
+      "accounted_process_starts": 192,
+      "python_starts": 48,
+      "concurrent_python": 2,
+      "python_worker_threads": 16,
+      "new_non_git_bytes": 134217728,
+      "fake_bare_rounds_including_final_qualification": 4
+    },
+    "delivery": {
+      "wall_seconds": 7200,
+      "repair_batches": 3,
+      "accounted_process_starts": 256,
+      "python_starts": 16,
+      "concurrent_python": 2,
+      "python_worker_threads": 16,
+      "new_non_git_bytes": 67108864,
+      "ssh_preflight_attempts": 2,
+      "fixed_parent_fetch_attempts": 3,
+      "push_attempts": 2,
+      "successful_publications": 1
+    },
+    "global": {
+      "accounted_process_starts": 448,
+      "python_starts": 64,
+      "read_only_connector_or_http_gets": 64,
+      "git_storage_bytes": 1073741824,
+      "new_non_git_bytes": 201326592
+    },
+    "intake_local_metadata_calls_max": 12,
+    "timeouts": {
+      "local_operation_seconds": 120,
+      "network_operation_seconds": 900,
+      "minimum_finalization_reserve_seconds": 180
+    },
+    "remote_reconciliation_get_reserve_within_global": 8,
+    "cleanup_by_astra_after_review": {
+      "tree_objects": 1,
+      "cleanup_commits": 1,
+      "nonforce_ref_update": 1,
+      "readback_gets": 8
+    },
+    "diagnostic_limits": {
+      "per_stream_bytes": 4194304,
+      "total_private_output_bytes": 67108864,
+      "synthetic_large_output_per_stream_bytes": 262144,
+      "limit_action": "stop own child, retain partial bytes, label incomplete; never claim full output"
+    }
+  },
+  "publication": {
+    "repository": "zcx369658780/dissertation-ch5-two-asset-hank",
+    "review_branch": "review/ch5-publisher-diagnostics-20261019",
+    "fixed_parent": "09b0986415dbfc85db0d28199194ad4f817cc292",
+    "temp_path": "_review_tmp/ch5/publisher-diagnostics-20261019/",
+    "allowlist": [
+      "result.md",
+      "manifest.json",
+      "evidence_sanitized.zip"
+    ],
+    "transport": "existing SSH key at ssh.github.com:443",
+    "required_new_zip_payload_categories": [
+      "final publisher sources and entry",
+      "source lock and sanitized configuration",
+      "new tests and synthetic fixtures",
+      "individual test assertions/results",
+      "generated raw/public retention proofs; no raw_private files",
+      "readable sanitized operation logs",
+      "fake-bare raw-byte readback and whitelist-cleanup proof",
+      "first errors and all repairs",
+      "protection and resource summaries",
+      "prepublication receipt"
+    ],
+    "limits": {
+      "result_bytes": 131072,
+      "manifest_bytes": 1048576,
+      "zip_bytes": 8388608,
+      "expanded_zip_bytes": 33554432,
+      "per_member_bytes": 4194304,
+      "member_count": 256,
+      "nested_archives": 0
+    },
+    "sha_verification": "standard-library hashlib SHA256; no custom implementation",
+    "postpublication_receipt": "original Base64 + bytes + SHA256 in final tool/message, external controller completion separate",
+    "cleanup_owner": "ASTRA_AFTER_TERMINAL_REVIEW_PERMANENT_ARCHIVE_AND_READBACK"
+  },
+  "acceptance": {
+    "required_test_groups": 12,
+    "same_locked_code_for_final_fake_and_real": true,
+    "historical_error_reconstruction_forbidden": true,
+    "old_local_publisher_availability_not_prerequisite": true
+  },
+  "prohibitions": {
+    "science_calls": 0,
+    "model_runner_calls": 0,
+    "old_491_archive_or_member_reads": 0,
+    "classifier_compile_or_91_suite_rerun": 0,
+    "old_adapter_or_HA_runs": 0,
+    "old_local_evidence_content_reads": 0,
+    "formal_model_writes": 0,
+    "package_installations": 0,
+    "main_or_governance_writes_by_codex": 0,
+    "old_budget_carry_forward": 0
+  },
+  "stop": "WAIT_ASTRA_PUBLISHER_DIAGNOSTICS_REPAIR_REVIEW",
+  "formal_state": {
+    "model_activation": false,
+    "REAL_GE": false,
+    "Results": false,
+    "V011": "NOT_STARTED",
+    "FULL_RUNNER_IO_CLOSURE": "BLOCKED"
+  },
+  "revision": "SECURITY_REVIEWED_20261019",
+  "replaces_unactivated_draft_commit": "3d76281c4f0fabd1906bee60176f1e9224358940",
+  "execution_policy": {
+    "shell": false,
+    "arbitrary_executable_or_command_string": false,
+    "allowed_direct_executables": [
+      "resolved installed Python",
+      "resolved installed Git"
+    ],
+    "python_helper_scope": "new synthetic scripts under this scratch only",
+    "git_allowed_families": [
+      "init --bare",
+      "hash-object",
+      "mktree",
+      "commit-tree",
+      "rev-parse",
+      "ls-tree",
+      "cat-file",
+      "show",
+      "diff-tree",
+      "rev-list",
+      "for-each-ref",
+      "update-ref (new local bare only)",
+      "fetch (fixed parent only)",
+      "push (fixed review ref only)"
+    ],
+    "git_per_operation_path_and_ref_validation": true,
+    "existing_ssh_usage": "Git transport only, existing authentication, host verification unchanged",
+    "credential_file_or_environment_dump": false,
+    "unrelated_process_control": false,
+    "termination_scope": "owned launch handle only",
+    "raw_private_publish": false,
+    "package_members": "explicit safe payload enumeration only",
+    "platform_denial": "stop; no alternative tool/account/transport to bypass"
+  },
+  "qualification_profiles": {
+    "single_implementation_digest": true,
+    "separate_test_and_delivery_profiles": true,
+    "both_profiles_locked_before_final_qualification": true,
+    "allowed_differences": [
+      "test versus fixed remote destination",
+      "synthetic versus fixed parent",
+      "new synthetic versus this-task public payload identities"
+    ]
+  }
+}
