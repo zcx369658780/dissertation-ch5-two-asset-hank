@@ -1,3 +1,19 @@
+# CH5动态总目录 · Safe blocked-report Delivery V3已签发
+
+## 当前唯一任务
+- [CURRENT.md](../CURRENT.md)：TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_V3_20261019，ISSUED_NOT_STARTED。
+- [TASK_CURRENT.md](../TASK_CURRENT.md)：已冻结有限保护根清单、固定scratch目标、源身份、资源预算与远端清理要求。
+- [V3固定合同](../tasks/TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_V3_20261019/CONTRACT.md)：Git Blob 5e8a1b68f9eb0b853f3e36b599047dd33a0f35ab。
+- [V3发行清单](../tasks/TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_V3_20261019/ISSUE_MANIFEST.json)：Git Blob 3f9364068d69b6ee97e463df349bf792a6365cce。
+
+## 相比V2的修正
+V2在BOOTSTRAP 0因未冻结有限保护根清单和scratch目标而正确STOP。V3明确固定正式worktree、来源根、已知文档镜像、scratch父目录及唯一scratch目标；common-dir/index只能通过两条有界只读Git元数据命令解析；本任务未指定备份目标，明确记录NONE_DESIGNATED_FOR_THIS_TASK，不搜索、不写备份。任何身份或边界仍无法判断时仍必须STOP，不允许换路径。
+
+## 范围
+只读取三个固定文本来源，重新生成安全阻断报告；原491成员ZIP及成员均禁止读取/解压/发布。Codex自动发布三件白名单材料，Astra独立验收并永久归档、回读后删除当前tree临时文件并验证缺失。零科学、零模型调用；正式V010不变。
+
+---
+
 # CH5动态总目录 · Safe blocked-report Delivery V2
 
 ## 当前唯一任务
