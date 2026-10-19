@@ -1,38 +1,29 @@
-# 第五章：验收材料上传与验收后清理的强制条款
+# 第五章：强制交付、分层验收与终审后清理
 
-日期：2026-10-19。
-Owner本轮明确要求：后续任务单必须写明，Codex将验收文件上传至GitHub临时目录，验收后也必须删除。
+更新：2026-10-19；本次Owner批准验收提效方案。既有冻结任务、失败回执和关闭预算不追溯改变。本条款覆盖未来DOC_ONLY、工程、合成和科学任务的交付与验收组织，不修改科学合同。
 
-## 1. 生效范围与不可混用的权限
+## 1. 发单不得缺项或冲突
+必须填实：候选对象/来源身份、规范路径、有限保护根与唯一scratch、必要验收内容、REVIEW_BRANCH、FIXED_PARENT、TEMP_PATH、文件白名单、大小上限、独立DELIVERY预算、E1恢复范围、成功发布次数、原字节通道、终态回执通道、清理责任。
+执行期离线不覆盖交付联网。不得一边要求上传一边全程NO_NETWORK；LOCAL_ONLY须另有Owner明确批准。基础读取、路径或身份字段不一致由Planner在发行前解决，不让Codex猜测；失败读取不证明源文件被修改。
 
-本条款适用于此后新签发的所有需Astra独立验收的任务，包括DOC_ONLY、合成测试、工程修复及科学任务。它补强V1.7交付闭环，不改变V1.4—V1.9已有的科学、来源身份、路径保护与证据等级规则。旧固定合同和旧预算不追溯重开；本文件本身不授权任何旧任务重跑或立即上传旧材料。
+## 2. Codex自动交付实际证据
+安全条件满足时必须自动上传result.md、manifest.json、evidence_sanitized.zip，不以本地路径或Owner搬运为正常终点。必要源码、fixtures、逐项结果和首错须有可审阅内容，不能只交摘要或哈希索引。公开每项内容均须有安全审查，raw_private和凭据不得直接打包。
+result写明本轮变化、验收定位、执行结果和已知问题；manifest以相对路径登记载荷、长度、SHA256、来源/派生关系及critical_evidence。ZIP内同一原件只放一次，历史不变件可引用已接受的固定身份，但本轮必需原件不得遗漏。完整原件留存与是否重点语义阅读分开。
+manifest不要求自身最终哈希；候选commit/tree、manifest哈希和发布后计数写入包外最终回执。FINAL_RECEIPT及控制器退出后事件必须有明确原字节通道；未发生或未知就如实记录，不从摘要重建。
 
-任务执行期不联网，与完成后的独立DELIVERY阶段必须联网，是两个不同的许可域。不得再把EXECUTION_NO_NETWORK写成覆盖整个任务及交付阶段的NO_NETWORK。签发前必须同时检查合同、CURRENT/TASK_CURRENT和Codex启动Prompt；出现必须上传与全程禁止发布的冲突时，由Planner修正后再发行，不留给Codex猜测。LOCAL_ONLY不得作为顾问自行选择的默认例外；确需例外须有Owner对该新任务的明确批准。
+## 3. Astra验收读取策略
+按当前工作流五步执行。固定commit后精确读取目录和三文件，不获取root recursive tree。一次成功获取后复用原字节缓存；成熟标准库批量完成全部成员的长度/CRC/SHA及清单检查。原字节不可获取时标REVIEW_PENDING_IO，不用Git Blob ID或URL代替计算证明。
+完整性是机器全量检查，语义审阅按本轮变化和风险聚焦；隐私门不因聚焦而豁免。已有足够证据确认缺陷时可CHANGES_REQUIRED并列出未完成项，无需继续无关全包审查。完整PASS必须完成当前合同全部必需项。
+验收工具故障记REVIEW_TOOL_ERROR或REVIEW_PENDING_IO，不算候选缺陷。独立Windows内核UNKNOWN不当作0，也不为消除无关历史UNKNOWN自动运行测试。
 
-## 2. 签发前必须填实的交付字段
+## 4. 停止、恢复与状态
+普通参数/语法/确定性误报在新任务已冻结的E1预算内修复并保留首错。平台/认证拒绝、实际保护区风险、真来源失配、资源失控或隐私风险为硬门，不绕过。读失败不自动授权重推、重跑或新任务。来源commit与已关闭预算保持不变。
+主裁决为PASS、CHANGES_REQUIRED、REVIEW_PENDING_IO；机器记录另列artifact_integrity、implementation_review、privacy_review、delivery、cleanup、not_completed，不能用一项通过覆盖其他未查项。
+普通工程验收5—10分钟为软目标。记录四阶段耗时，不因超时强判失败；及时报告阻塞，拒绝无边界读取与临时开发校验器。
 
-每张任务单必须填写具体值而非待定占位符：REVIEW_BRANCH、唯一远端TEMP_PATH、FIXED_PARENT、远端文件白名单、源文件身份和来源、必要验收内容清单、文件/归档大小上限、独立DELIVERY预算、E1恢复范围、成功发布次数、远端字节回读方式、清理责任人及清理权限。缺项或相互矛盾时不得标记ISSUED。
+## 5. 终审后必须删除
+责任人Astra。终审PASS或CHANGES_REQUIRED后，先永久归档结论与证据身份并回读，再核review HEAD未被无关写入改变，以普通non-force提交删除本任务当前tree白名单文件并回读缺失。验收PENDING时不得先删；不扩大删除范围，不改写历史，不替Codex重新推送。
+没有候选记NOT_APPLICABLE_NO_CANDIDATE。清理失败记TEMP_CLEANUP_PENDING。operations_closed可表示退修终审及清理结束，不代表acceptance_pass；只有必需验收、交付核验、归档回读、清理均满足才允许完整成功。删除当前tree不抹除历史，所以发布前脱敏不能省略。
 
-Codex负责自动生成并发布脱敏result.md、manifest.json和evidence_sanitized.zip；本轮有源码、语料或逐项证据需要审查时，ZIP必须含这些必要原件的安全可审阅副本，不能只交哈希索引。FINAL_RECEIPT及控制器退出后的证据必须有明确交付通道，可作为提前冻结的额外白名单文件或放入后续有独立身份的交付回执；不得让最后一段证据永远留在本地而宣称完整闭环。合成语料标签与源码本身不是自动通过公开脱敏检查的证明。
-
-SHA256/长度按字节计算；预期值从冻结来源字段读取，不手抄增设门禁。manifest只哈希其载荷，不要求包含自身最终哈希，也不要求在候选commit创建前写入自身所属的候选commit/tree。候选身份、manifest自身哈希和发布后计数由包外交付回执及独立回读记录，保持单向依赖，避免自引用。
-
-## 3. 上传与验收
-
-Codex在安全条件满足时必须自动完成一次授权的普通非强制发布，不能把本地路径或Owner手工上传作为正常终点。执行/科学预算关闭不恢复测试或求解权限；已单独冻结的安全封存、脱敏、发布、回读预算可继续使用。可恢复E1在明确预算内修复并保留首错；真实身份、保护区、敏感信息、资源或权限硬门失败则停止相关动作，记录DELIVERY_BLOCKED，不把既有技术PASS改写为科学失败。
-
-沿用既有SSH Key/443与项目外独占bare对象库规则；不新增凭据、不改global/system配置、不将_review_tmp放入本地保护worktree/index。逐成员检查发布内容和嵌套归档，保留RAW与脱敏派生件不同身份。无法排除敏感信息时不得为了完成上传而发布。Astra必须实际取得远端字节并核验，不能只凭URL、摘要或Git Blob ID宣布完成。
-
-## 4. 验收后必须清理，不能提前清理
-
-清理责任人：Astra，通过已连接GitHub工具执行；Codex在WAIT_ASTRA处停止，不在Astra验收前自行删除材料。
-
-Astra完成终审（PASS或FAIL均可）、永久归档结论/必要证据身份并回读后，必须删除该任务独立review分支当前tree内的精确白名单临时文件，并回读确认路径缺失。先核review HEAD未被其他写入改变；不用force，不扩大删除范围，不触及模型、冻结合同、历史失败或其他任务。验收仍PENDING时保留临时材料。
-
-清理失败记TEMP_CLEANUP_PENDING，不写成CLOSED。工作流终结必须同时满足：DELIVERY_VERIFIED、REVIEW_ARCHIVED_AND_READBACK、TEMP_CLEANUP_VERIFIED。删除当前tree文件不等于抹除Git历史，所以发布前脱敏不能省略。没有生成远端候选时只能记录NOT_APPLICABLE_NO_CANDIDATE，不能伪造清理成功。
-
-## 5. 状态与同步
-
-工程/科学结论、证据完整性、远端交付、独立验收和清理状态分别记录。任务合同签发后附一份单一代码框Codex启动Prompt，导航到固定合同并重申上传与验收后清理义务，不重组合同正文。
-
-GitHub治理、本地Codex入口与ChatGPT Project Sources分别回读。治理已更新不等于本地镜像或Project Sources已同步。当前仅更新规则和验收记录；没有签发新的执行、补交或科学任务。
+## 6. 同步
+GitHub治理、本地Codex入口、Project Sources三个平面独立核验。签发后附单一代码框启动Prompt；它只导航固定合同，不重组正文。此次规则落实与DOC_ONLY同步不授权HTTP代码修复、旧491成员ZIP读取、分类器重跑或任何科学运行。

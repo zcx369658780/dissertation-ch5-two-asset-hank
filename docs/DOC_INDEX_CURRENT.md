@@ -1,12 +1,16 @@
-# CH5 动态总目录 · 发布器回读退修与临时清理完成
+# CH5动态总目录 · 验收流程优化已落实
 
-本页只有一个当前状态；旧索引在历史提交保留。
+当前仅一个任务：[CH5_REVIEW_WORKFLOW_ONE_TIME_DOC_SYNC_20261019](../tasks/CH5_REVIEW_WORKFLOW_ONE_TIME_DOC_SYNC_20261019/CONTRACT.md)，DOC_ONLY_AND_OWN_DELIVERY，尚未执行；不是HTTP代码修复或科学任务。
 
-- [CURRENT.md](../CURRENT.md)：ACTIVE_TASK=NONE；已确认发布，回读实现待修。
-- [TASK_CURRENT.md](../TASK_CURRENT.md)：终审CHANGES_REQUIRED，旧任务不续跑。
-- [定向终审记录](CH5_PUBLISHER_DIAGNOSTICS_REMOTE_READBACK_REVIEW_20261019.md)：实际完整读取的六份核心成员、源码定位与未完成的全ZIP/158项核验限制。
-- [最终回执原件](evidence/publisher-f6466e1e/FINAL_RECEIPT.json)：2059字节及固定SHA256。
-- [临时清理回执](CH5_PUBLISHER_DIAGNOSTICS_TEMP_CLEANUP_RECEIPT_20261019.md)：终审归档后删除三件并回读404；不是交付PASS。
-- [强制上传与终审后清理规则](CH5_MANDATORY_REVIEW_DELIVERY_AND_CLEANUP_20261019.md)。
+## 当前入口
+- [CURRENT](../CURRENT.md)、[TASK_CURRENT](../TASK_CURRENT.md)：live权限与三平面同步状态。
+- [当前工作流](CH5_ASTRA_WORKFLOW_CURRENT.md)：五步验收、标准库全量完整性核验、差异审阅、软计时。
+- [强制交付与终审后清理](CH5_MANDATORY_REVIEW_DELIVERY_AND_CLEANUP_20261019.md)。
+- [任务模板](CH5_REVIEW_TASK_TEMPLATE_CURRENT.md)：模板不是授权。
+- [项目记忆](CH5_PROJECT_MEMORY_CURRENT.md)：已接受决定与证据等级，不等于平台Memory。
+- [Sources索引](knowledge/PROJECT_SOURCE_INDEX_CH5.md)、[当前覆盖层](knowledge/CH5_GPT_PROJECT_SOURCE_OVERLAY_CURRENT.md)。
+- [同步参数](../tasks/CH5_REVIEW_WORKFLOW_ONE_TIME_DOC_SYNC_20261019/TASK_PARAMETERS.json)、[发行清单](../tasks/CH5_REVIEW_WORKFLOW_ONE_TIME_DOC_SYNC_20261019/ISSUE_MANIFEST.json)。
 
-候选42ac4f1c76ece94e5ada633f66daa7efddc1512d确实曾在指定review ref；清理commit=479fa5ded0742f70e6c8825fe237730b557c3f0c，旧候选历史保留。后续只讨论有界HTTP回读及其诊断，不自动派单、不重推、不重做旧分类器或资源门禁。完整交付尚未获PASS。正式V010不变，HA黑箱；Results FALSE；V011 NOT_STARTED；FULL_RUNNER_IO_CLOSURE BLOCKED。
+## 保留的最新证据
+[发布器回读退修](CH5_PUBLISHER_DIAGNOSTICS_REMOTE_READBACK_REVIEW_20261019.md)；[临时清理回执](CH5_PUBLISHER_DIAGNOSTICS_TEMP_CLEANUP_RECEIPT_20261019.md)。曾上传候选42ac4f1c76ece94e5ada633f66daa7efddc1512d，全部158项未完成独立核验；旧记录不改写，不再下载同一包。
+旧索引完整正文在3d1ed4958430b25ced65451c3738fe8d9ec6b1fd同一路径保留，不追加历史ACTIVE段落。正式V010不改，HA黑箱，Results FALSE，V011 NOT_STARTED，FULL_RUNNER_IO_CLOSURE BLOCKED。

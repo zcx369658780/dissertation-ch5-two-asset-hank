@@ -1,0 +1,30 @@
+# 一次性验收流程文档同步
+
+TASK_ID=CH5_REVIEW_WORKFLOW_ONE_TIME_DOC_SYNC_20261019
+SCOPE=DOC_ONLY_AND_OWN_DELIVERY
+Owner已批准本次治理/记忆/Sources落实及必要的一次Codex文档同步。无旧任务恢复，科学与代码修复预算0。
+
+## 输入与身份
+先读一次live治理ref及同快照CURRENT/TASK_CURRENT/docs/DOC_INDEX_CURRENT，确认本任务。按后发ISSUE_MANIFEST的issue_commit读取合同、TASK_PARAMETERS和九份文档，完整原字节比较预期身份。baseline 3d1ed4958430b25ced65451c3738fe8d9ec6b1fd是历史与review parent，不是新HEAD。
+不拼装校验正文，不手抄哈希；仅连接器文本则如实报告其等级。文档相同为NO_CHANGE，不制造修改。所有本地目标在参数中固定，禁止另找目录或搜索旧档案。
+
+## 同步写入范围
+BOOTSTRAP 0只检查有限保护根、镜像和scratch父链；正式worktree/Git定位与index仅元数据和前后身份哈希，不递归读源码/依赖。可信父目录包含新scratch是预期关系，不算保护冲突。参数里的镜像是本次唯一允许覆盖的既有目录，仅白名单文件允许写，其余保持不动。
+确认新scratch不存在、镜像存在且最终路径无重定向后，独占创建scratch并完成BOOTSTRAP 1/2。先将白名单内已存在旧文档逐字节备份到scratch/private_backup并哈希；新文件记录ABSENT_BEFORE。再批量复制九份固定文档到镜像同相对路径，创建必要docs/knowledge子目录。
+镜像AGENTS.md可更新导航：在原文顶部加入唯一标识CH5_REVIEW_OPTIMIZATION_20261019及当前入口/规范索引/本次状态；旧正文保持在历史段，禁止重写正式代码worktree的AGENTS。AGENTS全文件先备份。若标识已存在且内容相同则NO_CHANGE；冲突保留原件并报告，不覆盖无关修改。
+结束复算镜像九份文件长度/SHA与发行输入一致，记录AGENTS修改范围、旧备份哈希、前后保护身份以及真实同步状态。新镜像文档自身说明它是固定快照，不授权日后自动执行。
+
+## 允许工具与预算
+仅允许已安装的PowerShell/Python标准库/Git完成读取、哈希、文本复制、ZIP及本任务交付；不安装包、不编译、不运行任何模型、发布器测试、旧分类器或旧491成员ZIP。不得转储环境或读取凭据文件。
+数字在TASK_PARAMETERS分账。确定性文件编码/参数/引用错误在已给E1批次内修复并保留首错；真实来源失配、实际保护重定向、权限/平台拒绝、当前资源失控和隐私风险停止相关动作。历史内核UNKNOWN不当0，不引出额外测试。旧备份不删除，新失败attempt不覆盖。
+
+## 自动交付，不开发新发布器
+本任务执行复制可离线，读取治理与独立交付联网已明确授权。使用标准Git/SSH操作与现有安全工具，不调用有已知缺陷的全仓库recursive HTTP回读，不在本任务修复它。fake-bare只验证本次三文档/ZIP字节交换和白名单清理，允许成熟Git直接操作而非要求未验发布器作为前置依赖；不运行软件功能测试。
+真实候选只有参数指定三条新增路径、唯一固定parent，新review分支普通non-force发布。既有SSH Key/443和正常主机验证，不读密钥、不新增凭据、不改全局配置、不在保护worktree/index创建_review_tmp。只取固定parent必要对象，不宽泛clone。
+远端按精确目录/三文件实际回读并用标准库校验；如果完整已验证对象已有缓存则复用。一次同对象有界恢复后仍失败则交付标PENDING_IO/DELIVERY_BLOCKED，不重推、不扩大发布范围。平台拒绝不换路线。现有交付无法完成时保存真实回执，不能转而开发发布器、要求Owner搬运或声称成功。
+ZIP只含安全的九份同步输入副本、同步差异/哈希表及脱敏保护/资源/原错记录；不含private_backup、原镜像AGENTS全文、私有路径或代码证据。AGENTS只交安全导航差异。每项公开内容审查与全成员哈希必须通过。manifest不自引用，最终原始回执以Base64/字节数/SHA256和独立退出事件返回。
+
+## 验收与关闭
+Astra按本次新五步验收，DOC_ONLY重点检查九份目标身份、导航范围和保护证据。PASS仅表示这一次镜像文档同步及其交付；不是实际publisher修复、模型就绪或平台Memory写入。Project Sources仍待Owner手动上传。
+Codex停在WAIT_ASTRA_REVIEW_WORKFLOW_DOC_SYNC_REVIEW。Astra终审归档回读后必须核review HEAD，单个普通清理commit删除三件白名单并回读；PENDING不删，无候选N/A。不得重跑上轮候选。
+model_activation=False；REAL_GE=False；Results=FALSE；V011=NOT_STARTED；FULL_RUNNER_IO_CLOSURE=BLOCKED。

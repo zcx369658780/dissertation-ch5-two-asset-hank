@@ -1,0 +1,126 @@
+{
+  "schema": "ch5.doc-sync.review-optimization.v1",
+  "task_id": "CH5_REVIEW_WORKFLOW_ONE_TIME_DOC_SYNC_20261019",
+  "repository": "zcx369658780/dissertation-ch5-two-asset-hank",
+  "branch": "migration/astra-workflow-20261012",
+  "baseline": "3d1ed4958430b25ced65451c3738fe8d9ec6b1fd",
+  "source_policy": "Read only nine documents plus fixed contract/parameters/issue manifest; no model/archive reads.",
+  "sync_paths": [
+    "CURRENT.md",
+    "TASK_CURRENT.md",
+    "docs/DOC_INDEX_CURRENT.md",
+    "docs/CH5_ASTRA_WORKFLOW_CURRENT.md",
+    "docs/CH5_MANDATORY_REVIEW_DELIVERY_AND_CLEANUP_20261019.md",
+    "docs/CH5_REVIEW_TASK_TEMPLATE_CURRENT.md",
+    "docs/CH5_PROJECT_MEMORY_CURRENT.md",
+    "docs/knowledge/PROJECT_SOURCE_INDEX_CH5.md",
+    "docs/knowledge/CH5_GPT_PROJECT_SOURCE_OVERLAY_CURRENT.md"
+  ],
+  "paths": {
+    "mirror_root": "D:\\ProjectTemp\\ch5_workflow_v13_docs_mirror_20261017_01",
+    "mirror_write_allowlist": [
+      "CURRENT.md",
+      "TASK_CURRENT.md",
+      "docs/DOC_INDEX_CURRENT.md",
+      "docs/CH5_ASTRA_WORKFLOW_CURRENT.md",
+      "docs/CH5_MANDATORY_REVIEW_DELIVERY_AND_CLEANUP_20261019.md",
+      "docs/CH5_REVIEW_TASK_TEMPLATE_CURRENT.md",
+      "docs/CH5_PROJECT_MEMORY_CURRENT.md",
+      "docs/knowledge/PROJECT_SOURCE_INDEX_CH5.md",
+      "docs/knowledge/CH5_GPT_PROJECT_SOURCE_OVERLAY_CURRENT.md",
+      "AGENTS.md"
+    ],
+    "trusted_parent": "D:\\ProjectTemp",
+    "new_scratch": "D:\\ProjectTemp\\ch5_review_workflow_doc_sync_20261019_01",
+    "backup_subdir": "private_backup",
+    "bare_subdir": "git",
+    "protected_metadata_only": [
+      "D:\\ProjectTemp\\c5k1bturn56",
+      "D:\\ProjectTemp\\ch5_temp_resource_gate_v3_adapter_integration_v3_20261018_01",
+      "D:\\ProjectTemp\\ch5_publisher_diagnostics_repair_20261019_01"
+    ],
+    "git_resolution": {
+      "cwd": "D:\\ProjectTemp\\c5k1bturn56",
+      "environment": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "commands": [
+        [
+          "git",
+          "rev-parse",
+          "--absolute-git-dir"
+        ],
+        [
+          "git",
+          "rev-parse",
+          "--git-common-dir"
+        ],
+        [
+          "git",
+          "rev-parse",
+          "--git-path",
+          "index"
+        ]
+      ],
+      "locator_and_index_hash_only": true
+    },
+    "backup_policy": "Only backup allowlisted old mirror documents to the new scratch; do not search/write other backups."
+  },
+  "budgets": {
+    "document_sync": {
+      "wall_seconds": 1800,
+      "e1_batches": 3,
+      "accounted_process_starts": 64,
+      "python_starts": 8,
+      "concurrent_python": 2,
+      "worker_threads": 8,
+      "new_bytes": 33554432
+    },
+    "delivery": {
+      "wall_seconds": 3600,
+      "e1_batches": 3,
+      "accounted_process_starts": 128,
+      "python_starts": 8,
+      "fake_bare_attempts": 2,
+      "ssh_preflight": 1,
+      "fixed_parent_fetches": 2,
+      "push_attempts": 1,
+      "successful_publications": 1,
+      "new_bytes": 33554432
+    },
+    "read_only_gets_total": 40,
+    "git_storage_bytes": 1073741824,
+    "per_operation_timeout_seconds": 300,
+    "finalization_reserve_seconds": 120
+  },
+  "publication": {
+    "review_branch": "review/ch5-review-workflow-doc-sync-20261019",
+    "fixed_parent": "3d1ed4958430b25ced65451c3738fe8d9ec6b1fd",
+    "temp_path": "_review_tmp/ch5/review-workflow-doc-sync-20261019/",
+    "allowlist": [
+      "result.md",
+      "manifest.json",
+      "evidence_sanitized.zip"
+    ],
+    "limits": {
+      "result_bytes": 65536,
+      "manifest_bytes": 262144,
+      "zip_bytes": 2097152,
+      "uncompressed_bytes": 8388608,
+      "members": 32
+    },
+    "raw_private_publish": false,
+    "transport": "existing SSH key/443; no new credentials or host-check disabling",
+    "cleanup_owner": "ASTRA_AFTER_TERMINAL_REVIEW_ARCHIVE_READBACK"
+  },
+  "prohibited": {
+    "science": 0,
+    "model_runs": 0,
+    "code_repair": 0,
+    "regression_tests": 0,
+    "old_archive_reads": 0,
+    "formal_worktree_writes": 0,
+    "package_installs": 0
+  },
+  "expected_stop": "WAIT_ASTRA_REVIEW_WORKFLOW_DOC_SYNC_REVIEW"
+}

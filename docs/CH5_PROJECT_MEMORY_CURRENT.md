@@ -1,0 +1,26 @@
+# 第五章项目记忆 · 当前接受的决定
+
+更新：2026-10-19。用途为本项目持久记忆与交接，不是平台自动Memory写入、不替代live执行授权。本文件只记录已批准决定、已归档状态和明确待办，不把建议写成已实施。
+
+## 权威与科研边界
+Owner最终决定经济方法、预算和重大不可逆事项；GPT顾问规划、审阅与状态管理；Codex执行批准合同。治理仓库zcx369658780/dissertation-ch5-two-asset-hank，分支migration/astra-workflow-20261012；CURRENT/TASK_CURRENT同一live快照为当前授权。其他项目不得混入。
+正式研究版本V010/v0.0.10；V011 NOT_STARTED；model_activation=False；REAL_GE=False；Results=FALSE；FULL_RUNNER_IO_CLOSURE=BLOCKED。所有已STOP/关闭旧预算不延续。
+HA按Owner决定作为历史MATLAB-faithful黑箱；不擅改HJB/KFE、策略、FOC、成本、迎风选择或收敛算法。TEMP价格/宏观迭代与正式方法修改分开。TEMP Bellman残差仅观察，不自动改写正式V010硬门。恢复TEMP必须有新授权，不自动返回旧F25微任务。
+历史2009年31省MATLAB/Python一致性为已接受案例，不代表其他年份通过；本次文档更新未重核科学原件。详见03f61eda86546bd6f1204c03a2923aac9081a2c1下docs/CH5_SESSION_HANDOFF_20261018_AFTER_TEMP_HA_PRICE_BRIDGE_AND_GITHUB_ZIP_CLOSEOUT.md。
+
+## 最新工程证据状态（本轮不复跑）
+上个任务CH5_PUBLISHER_DIAGNOSTICS_AND_DELIVERY_REPAIR_20261019，run f6466e1e2f674dc38c25a1614f15812e，候选42ac4f1c76ece94e5ada633f66daa7efddc1512d已确认曾发布。原Codex状态DELIVERY_BLOCKED保持；终审CHANGES_REQUIRED_REMOTE_READBACK_IMPLEMENTATION，完整ZIP和158项未完成验收，不提升为PASS。
+已读取的六份核心成员支持定向退修：回读先取全仓库recursive tree再筛三件，HTTP部分响应留存不足；唯一传输根因未证明。12组本地PASS为历史记录，不是Astra复跑。清理commit 479fa5ded0742f70e6c8825fe237730b557c3f0c，归档回读后删除三件并核缺失，清理不改变退修结论。
+来源：docs/CH5_PUBLISHER_DIAGNOSTICS_REMOTE_READBACK_REVIEW_20261019.md及docs/CH5_PUBLISHER_DIAGNOSTICS_TEMP_CLEANUP_RECEIPT_20261019.md，状态基线3d1ed4958430b25ced65451c3738fe8d9ec6b1fd。
+原491成员ZIP完整安全性仍UNKNOWN；旧分类器有限合成验收不等于生产覆盖或科学就绪。
+
+## Owner本次已批准的验收改进
+固定五步：固定对象→一次性字节核验→针对性审阅→裁决→集中归档与清理。三文件精确读，不取root recursive tree；同一完整原字节缓存复用；使用标准库，不临时重写哈希/解压器。
+所有成员完整性机器检查，语义按变化/接口/异常聚焦；不把抽样阅读说成全查，隐私门不削弱。哈希未变且已有明确接受的组件复用旧结论，科学/关键接口变化另行检查。
+验收工具错误不算候选错误；PASS、CHANGES_REQUIRED、REVIEW_PENDING_IO分开。已有充分缺陷证据可定向退修，未完成项诚实记录。普通工程5—10分钟是软目标，记录获取/完整性/语义/归档清理耗时，无硬超时FAIL。
+Codex必须自动上传GitHub临时目录三件实际证据；Astra终审永久归档回读后必须删除精确白名单。PENDING时不提前清理，无候选只记N/A；不恢复Owner手工搬运为默认。
+
+## 当前实施与待办
+本次只落实规则、模板、持久项目记忆、Project Sources包及一次DOC_ONLY本地文档同步。新同步合同见tasks/CH5_REVIEW_WORKFLOW_ONE_TIME_DOC_SYNC_20261019/CONTRACT.md；本机尚待Codex执行/回执，Project Sources尚待Owner上传。
+下一代码候选方向仅为现有发布器的精确HTTP回读与中断诊断，尚未签发。不得重新设计发布器、资源门禁或分类器，不自动开启HA调参。
+GitHub、本地Codex入口、Project Sources分别回读；记忆文件更新不代表平台自动Memory或本机文件已更新。
