@@ -1,21 +1,23 @@
-# CH5 CURRENT · Safe blocked-report Delivery V2 issued
+# CH5 CURRENT · Safe blocked-report Delivery V3 issued
 
 Updated: 2026-10-19.
-ACTIVE_TASK=TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_V2_20261019
+ACTIVE_TASK=TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_V3_20261019
 TASK_STATUS=ISSUED_NOT_STARTED
 TASK_SCOPE=SAFE_BLOCKED_REPORT_ONLY / DELIVERY_ONLY / ZERO_SCIENCE
-TASK_ISSUE_COMMIT=8baec47a11a63b976e94285338e3b8700b3bd115
-TASK_CONTRACT_BLOB=92d11f71519c999bca51bc7a34682f8d6337ec8c
-TASK_CONTRACT_PATH=tasks/TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_V2_20261019/CONTRACT.md
-TASK_ISSUE_MANIFEST=tasks/TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_V2_20261019/ISSUE_MANIFEST.json
-TASK_MANIFEST_COMMIT=989d7d4c6dd6a6df2dda9b6ae45b38de92c7a6ec
+TASK_ISSUE_COMMIT=49e587491e443540fbc8a841a8efe3054ba11a1e
+TASK_CONTRACT_BLOB=5e8a1b68f9eb0b853f3e36b599047dd33a0f35ab
+TASK_CONTRACT_PATH=tasks/TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_V3_20261019/CONTRACT.md
+TASK_ISSUE_MANIFEST=tasks/TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_V3_20261019/ISSUE_MANIFEST.json
+TASK_MANIFEST_COMMIT=82d581d4d578aec94f68ca859388159663732b51
+TASK_MANIFEST_BLOB=3f9364068d69b6ee97e463df349bf792a6365cce
 CANONICAL_DOC_INDEX=docs/DOC_INDEX_CURRENT.md
-GOVERNANCE_HEAD_AT_ISSUE=d5abe373910c874fa0c918e057fe142ab36a4dd8
-REVIEW_BRANCH=review/ch5-temp-v3-safe-blocked-report-v2-20261019
-REVIEW_FIXED_PARENT=d5abe373910c874fa0c918e057fe142ab36a4dd8
-REMOTE_TEMP_PATH=_review_tmp/ch5/temp-v3-safe-blocked-report-v2-20261019/
-PREDECESSOR=TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_20261019
-PREDECESSOR_STATUS=DELIVERY_BLOCKED_CANONICAL_INDEX_PATH_SPECIFICATION_DEFECT
+GOVERNANCE_HEAD_AT_ISSUE=0126a027e256b55363ae1e3ca43298508271c9f9
+REVIEW_BRANCH=review/ch5-temp-v3-safe-blocked-report-v3-20261019
+REVIEW_FIXED_PARENT=0126a027e256b55363ae1e3ca43298508271c9f9
+REMOTE_TEMP_PATH=_review_tmp/ch5/temp-v3-safe-blocked-report-v3-20261019/
+SCRATCH_TARGET=D:\ProjectTemp\ch5_temp_v3_safe_blocked_report_v3_20261019_01
+PREDECESSOR_V1=DELIVERY_BLOCKED_CANONICAL_INDEX_PATH_SPECIFICATION_DEFECT
+PREDECESSOR_V2=DELIVERY_BLOCKED_PROTECTED_ROOT_IDENTITY
 SCIENCE_BUDGET=0
 ORIGINAL_ZIP_MEMBER_READS=0
 CLASSIFIER_COMPILE_OR_SUITE_RERUN=0
@@ -24,7 +26,7 @@ REAL_GE=False
 Results=FALSE
 V011=NOT_STARTED
 FULL_RUNNER_IO_CLOSURE=BLOCKED
-NEXT=CODEX_EXECUTE_TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_V2_20261019
-FINAL_STOP=WAIT_ASTRA_SAFE_BLOCKED_REPORT_V2_REVIEW
+NEXT=CODEX_EXECUTE_TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_V3_20261019
+FINAL_STOP=WAIT_ASTRA_SAFE_BLOCKED_REPORT_V3_REVIEW
 
-The prior task stopped because it incorrectly requested root DOC_INDEX_CURRENT.md. The only canonical current index path is docs/DOC_INDEX_CURRENT.md, confirmed present at the frozen governance ref. Prior task remains closed; this V2 is a fresh issue. It publishes only a newly generated safe blocked-report package from three verified text files. The original 491-member ZIP and all members remain prohibited. Codex must automatically publish; Astra archives and reads back the verdict before deleting only the three allowlisted files and verifying absence.
+V3 addresses the previous BOOTSTRAP 0 defect by explicitly enumerating the finite protected-root inventory and one fixed scratch target. The formal model worktree, source evidence root and known documentation mirror are fixed; Git common-dir/index are resolved through exactly two bounded read-only Git metadata commands; no task-specific backup root is designated and none may be searched or written. If any listed identity cannot be resolved or boundaries overlap, STOP with exact diagnostics; no alternate scratch. Original ZIP and members remain prohibited.
