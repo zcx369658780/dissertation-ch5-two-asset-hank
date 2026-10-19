@@ -1,31 +1,27 @@
-# CH5 CURRENT · V1.9完整证据验收归档与临时清理全部完成
+# CH5 CURRENT · V3 adapter证据归档审计与GitHub交付已签发
 
 更新：2026-10-19。
-LAST_EXECUTION_TASK=CH5_REVIEW_PATH_CLASSIFIER_V19_SYNTHETIC_ONLY_20261018
-SOURCE_RUN=06ed068da2d948649f463889051ea157
-DELIVERY_TASK=CH5_CLASSIFIER_V19_EXISTING_EVIDENCE_GITHUB_DELIVERY_20261019
-DELIVERY_RUN=1a3849c860944d119d3eb08497449139
-DELIVERY_COMMIT=41922a7370f8388ef1a5d0063327da65f3066e52
-DELIVERY_TREE=5a386bc1066d23c4c138c3340fc517c472603825
-REVIEW_VERDICT=PASS_BOUNDED_SYNTHETIC_CLASSIFIER_EVIDENCE_WITH_OBSERVATIONS
-REVIEW_ARCHIVE=docs/CH5_PATH_CLASSIFIER_V19_FULL_EVIDENCE_INDEPENDENT_REVIEW_20261019.md
-REVIEW_ARCHIVE_COMMIT=f3d80d5536743c6bc2bfd68d3cf53b79649f9228
-TEMP_CLEANUP_RECEIPT=docs/CH5_PATH_CLASSIFIER_V19_TEMP_CLEANUP_RECEIPT_20261019.md
-TEMP_CLEANUP_COMMIT=7a931f8bd8429ce4b072b2e94828fecb3e54fcad
-TEMP_CLEANUP_VERIFIED=TRUE
-DELIVERY_VERIFIED=TRUE
-REVIEW_ARCHIVED_AND_READBACK=TRUE
-LIFECYCLE_CLOSED=TRUE
-ACTIVE_TASK=NONE
+ACTIVE_TASK=TEMP_V010_RESOURCE_GATE_V3_ADAPTER_EVIDENCE_ARCHIVE_AUDIT_DELIVERY_20261019
+TASK_STATUS=ISSUED_NOT_STARTED
+TASK_SCOPE=BOUNDED_ENGINEERING_AND_DELIVERY_ONLY_ZERO_SCIENCE
+TASK_ISSUE_COMMIT=2b6d73bd4e09ae9d62fe8601e81a329c88325d20
+TASK_CONTRACT_BLOB=3179b9c041e29a3c75b324a86ecaae3cc78b73de
+TASK_CONTRACT_BYTES=10094
+TASK_CONTRACT_SHA256=619e83d5127d55cf3b73b6c6c786691df44ac083565a4da4c2dd1b715093f088
+TASK_CONTRACT_PATH=tasks/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_EVIDENCE_ARCHIVE_AUDIT_DELIVERY_20261019/CONTRACT.md
+TASK_ISSUE_MANIFEST=tasks/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_EVIDENCE_ARCHIVE_AUDIT_DELIVERY_20261019/ISSUE_MANIFEST.json
+REVIEW_BRANCH=review/ch5-temp-resource-gate-v3-adapter-archive-audit-20261019
+REVIEW_FIXED_PARENT=a2a2f465435441573805f5ca44c69d59c46fcd48
+REMOTE_TEMP_PATH=_review_tmp/ch5/temp-resource-gate-v3-adapter-archive-audit-20261019/
 RESEARCH_ACTIVE_TASK=NONE
-ENGINEERING_ACTIVE_TASK=NONE
-DELIVERY_ACTIVE_TASK=NONE
+SCIENCE_BUDGET=0
+ENGINEERING_BUDGET=3600s/4 batches/64 accounted processes
+DELIVERY_BUDGET=1800s/3 batches/2 E1 repairs/1 successful publish
+model_activation=False
+REAL_GE=False
+Results=FALSE
+V011=NOT_STARTED
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+NEXT=WAIT_ASTRA_TEMP_V3_ADAPTER_ARCHIVE_AUDIT_REVIEW
 
-Astra independently read the remote result.md, manifest.json and ZIP bytes. Published file SHA256/length matched the post-publication receipt. ZIP SHA256 independently matched; central directory parsed, 44/44 member sizes and CRCs passed; inventory count, path safety, duplicate/case collision and no-nested-archive checks passed. The manifest member SHA256 values were not all independently recomputed individually; this limitation is explicitly recorded in the permanent review. Source/test/fixture/per-sample results were statically reviewed, not executed or rerun.
-
-Bounded verdict only: PASS_BOUNDED_SYNTHETIC_CLASSIFIER_EVIDENCE_WITH_OBSERVATIONS. 91/91 samples and 1754/1754 assertions remain the historical run result, not an Astra rerun. Old 491-member ZIP safety remains UNKNOWN.
-
-The review verdict was permanently archived and read back before cleanup. Cleanup commit 7a931f8bd8429ce4b072b2e94828fecb3e54fcad has sole parent 41922a7370f8388ef1a5d0063327da65f3066e52 and deletes exactly the three allowlisted files. Branch HEAD and all three 404 responses were independently read back. Git history still retains the original delivery commit; only current-tree files were removed.
-
-Formal V010 unchanged; model_activation=False; REAL_GE=False; Results=FALSE; V011=NOT_STARTED; FULL_RUNNER_IO_CLOSURE=BLOCKED.
-NEXT=WAIT_OWNER_NEXT_TASK
+This task is a new bounded engineering+delivery task. It audits the previously unreviewed 491-member adapter-evidence ZIP, using fixed local source anchors and accepted V1.9 classifier as a read-only inspection helper only if its exact source identity is verified. No classifier compile/suite rerun; no HA/HJB/KFE/selector/root/GE/IRF/model calls. Codex must automatically publish result.md, manifest.json and a safe evidence ZIP to the fixed GitHub temporary path after content review. Astra archives the verdict and reads it back before deleting only those three remote current-tree files. Old failures and source receipts remain immutable.
