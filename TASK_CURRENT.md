@@ -1,34 +1,42 @@
-# TASK_CURRENT · V3 adapter证据归档审计与自动交付
+# TASK_CURRENT · Safe blocked-report delivery only
 
-ACTIVE_TASK=TEMP_V010_RESOURCE_GATE_V3_ADAPTER_EVIDENCE_ARCHIVE_AUDIT_DELIVERY_20261019
+ACTIVE_TASK=TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_20261019
 STATUS=ISSUED_NOT_STARTED
-SCOPE=BOUNDED_ENGINEERING_AND_DELIVERY_ONLY_ZERO_SCIENCE
-ISSUE_COMMIT=2b6d73bd4e09ae9d62fe8601e81a329c88325d20
-CONTRACT_BLOB=3179b9c041e29a3c75b324a86ecaae3cc78b73de
-CONTRACT_BYTES=10094
-CONTRACT_SHA256=619e83d5127d55cf3b73b6c6c786691df44ac083565a4da4c2dd1b715093f088
-CONTRACT_PATH=tasks/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_EVIDENCE_ARCHIVE_AUDIT_DELIVERY_20261019/CONTRACT.md
-ISSUE_MANIFEST=tasks/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_EVIDENCE_ARCHIVE_AUDIT_DELIVERY_20261019/ISSUE_MANIFEST.json
-REVIEW_BRANCH=review/ch5-temp-resource-gate-v3-adapter-archive-audit-20261019
-FIXED_PARENT=a2a2f465435441573805f5ca44c69d59c46fcd48
-REMOTE_TEMP_PATH=_review_tmp/ch5/temp-resource-gate-v3-adapter-archive-audit-20261019/
+SCOPE=SAFE_BLOCKED_REPORT_ONLY / DELIVERY_ONLY / ZERO_SCIENCE
+ISSUE_COMMIT=25cc06e1ac5f92eb9b4e8a760b70aafd0aa33696
+CONTRACT_BLOB=d4116d3e920ff540efd8e6f85ffca97432075f56
+CONTRACT_PATH=tasks/TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_20261019/CONTRACT.md
+ISSUE_MANIFEST=tasks/TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_20261019/ISSUE_MANIFEST.json
+ISSUE_MANIFEST_BLOB=d68e8b1cff947f268e28d0b4655efa421ebb45a3
+ISSUE_MANIFEST_COMMIT=77182e762481676d675c0c1340a9afcda3f572e1
+
+REVIEW_BRANCH=review/ch5-temp-v3-safe-blocked-report-20261019
+FIXED_PARENT=bb85659984702e2229609cc3c979e8824cd89902
+REMOTE_TEMP_PATH=_review_tmp/ch5/temp-v3-safe-blocked-report-20261019/
 REMOTE_ALLOWLIST=result.md;manifest.json;evidence_sanitized.zip
+
 SOURCE_ROOT=D:\ProjectTemp\ch5_temp_resource_gate_v3_adapter_integration_v3_20261018_01\delivery
-SOURCE_ZIP_BYTES=332933
-SOURCE_ZIP_SHA256=fc7a846d09758590dbd268b430ffd8c2c47aa0b2c63e307b510586f2443fafa0
-SOURCE_ZIP_REPORTED_MEMBERS=491
+SOURCE_FILES=result.md;manifest.json;FINAL_RECEIPT.json
+SOURCE_RESULT_BYTES=6196
+SOURCE_RESULT_SHA256=457e5647be449721d9138cbab40ae4d4c788370d889229f271d36c2cb0eabaf6
+SOURCE_MANIFEST_BYTES=239695
+SOURCE_MANIFEST_SHA256=1086f3b04166d406fdb4a87b684f06fb37dd34ff733728510003dfff0d635bbd
 SOURCE_RECEIPT_BYTES=9339
 SOURCE_RECEIPT_SHA256=14ca468c0c9b4339cea7a8bc91578fc899b88a4be7a9c96d4d7d552945d599f5
-ENGINEERING_BUDGET=3600s;4 batches;64 total accounted processes including children/tool observations;Python starts 8;concurrent Python 2;threads 8;new non-Git bytes 128MiB
-DELIVERY_BUDGET=1800s;3 batches;2 E1 repairs;fake-bare 1;SSH 1;fetch 2;push attempts 1;successful publication 1;GET 32
+ORIGINAL_ZIP_READ=PROHIBITED
+ORIGINAL_ZIP_MEMBER_READS=0
+ORIGINAL_ZIP_PUBLISH=PROHIBITED
+
+ENGINEERING_BUDGET=1200s;2 batches;24 accounted processes;Python starts 4;concurrent Python 2;threads 8;new non-Git bytes 16MiB
+DELIVERY_BUDGET=1200s;2 batches;fake-bare 1;SSH preflight 1;fetch 2;push attempts 1;successful publication 1;read-only GET 24
 SCIENCE_BUDGET=0
 MODEL_RUNNER_BUDGET=0
 CLASSIFIER_COMPILE_OR_SUITE_RERUN=0
 FORMAL_V010_WRITES=0
 V011_START=PROHIBITED
-EXPECTED_STOP=WAIT_ASTRA_TEMP_V3_ADAPTER_ARCHIVE_AUDIT_REVIEW
+EXPECTED_STOP=WAIT_ASTRA_SAFE_BLOCKED_REPORT_REVIEW
 
-The earlier local adapter PASS is not yet Astra-accepted. The previous delivery attempt remains FAIL_CLOSED and immutable. This new task audits the original 491-member ZIP, refuses unsafe/unknown content, and publishes only after all gates pass. Delivery is explicitly network-authorized and separate from engineering execution. Astra owns cleanup after verdict archive and readback.
+Source identity failures or sanitization uncertainty mean DELIVERY_BLOCKED and no publication. If successful, Codex automatically publishes a newly generated safe blocked-report package. Astra independently reads bytes, permanently archives the verdict, reads it back, then deletes only the three allowlisted files from the review branch current tree and verifies absence.
 
 model_activation=False
 REAL_GE=False
