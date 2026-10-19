@@ -1,53 +1,23 @@
-# CH5 CURRENT · V1.9完整原件补交已签发
+# CH5 CURRENT · V1.9完整证据已验收归档；远端临时清理进行中
 
-更新：2026-10-19。治理分支：migration/astra-workflow-20261012。
-
-ACTIVE_TASK=CH5_CLASSIFIER_V19_EXISTING_EVIDENCE_GITHUB_DELIVERY_20261019
-TASK_STATUS=ISSUED_NOT_STARTED
-TASK_SCOPE=DELIVERY_ONLY / ZERO_SCIENCE / NO_TEST_RERUN / NO_OLD_ARCHIVE
-RESEARCH_ACTIVE_TASK=NONE
-ENGINEERING_ACTIVE_TASK=NONE
-DELIVERY_ACTIVE_TASK=CH5_CLASSIFIER_V19_EXISTING_EVIDENCE_GITHUB_DELIVERY_20261019
-TASK_ISSUE_COMMIT=2aee7451c6f20a95ec12ab75d226fb3319e8a9c4
-TASK_PATH=tasks/CH5_CLASSIFIER_V19_EXISTING_EVIDENCE_GITHUB_DELIVERY_20261019/CONTRACT.md
-TASK_BLOB=42d205d5f0085584318d903fef653f08f62a3030
-TASK_BYTES=12581
-TASK_SHA256=36ac5d4e2344ff390836b715a3ae571a706525fd068abf1a0c5ecbd6f068e33e
-ISSUE_MANIFEST=tasks/CH5_CLASSIFIER_V19_EXISTING_EVIDENCE_GITHUB_DELIVERY_20261019/ISSUE_MANIFEST.json
-
-## 既有结果保持
-
+更新：2026-10-19。
 LAST_EXECUTION_TASK=CH5_REVIEW_PATH_CLASSIFIER_V19_SYNTHETIC_ONLY_20261018
 SOURCE_RUN=06ed068da2d948649f463889051ea157
-LOCAL_VERDICT=PASS_SYNTHETIC_CLASSIFIER_LOCAL
-FOUR_FILE_INTEGRITY=PASS
-METADATA_CONSISTENCY=PASS
-IMPLEMENTATION_REVIEW=PENDING_REQUIRED_ARTIFACTS
+DELIVERY_TASK=CH5_CLASSIFIER_V19_EXISTING_EVIDENCE_GITHUB_DELIVERY_20261019
+DELIVERY_RUN=1a3849c860944d119d3eb08497449139
+DELIVERY_COMMIT=41922a7370f8388ef1a5d0063327da65f3066e52
+DELIVERY_TREE=5a386bc1066d23c4c138c3340fc517c472603825
+REVIEW_VERDICT=PASS_BOUNDED_SYNTHETIC_CLASSIFIER_EVIDENCE_WITH_OBSERVATIONS
+REVIEW_ARCHIVE=docs/CH5_PATH_CLASSIFIER_V19_FULL_EVIDENCE_INDEPENDENT_REVIEW_20261019.md
+REVIEW_ARCHIVE_COMMIT=f3d80d5536743c6bc2bfd68d3cf53b79649f9228
+TEMP_CLEANUP=IN_PROGRESS
+ACTIVE_TASK=NONE
+RESEARCH_ACTIVE_TASK=NONE
+ENGINEERING_ACTIVE_TASK=NONE
+DELIVERY_ACTIVE_TASK=NONE
 
-四份附件验收结论不变；完整源码、gold语料、逐样本结果和原始保护/资源/错误记录尚待独立读取。旧合成执行已停止，4/4批次不结转。原491成员ZIP安全性UNKNOWN，禁止本任务读取或扫描。旧Delivery及TEMP失败原件不改写。
+Astra independently read remote result.md, manifest.json and ZIP raw bytes. SHA256/length for all three published files matched the external receipt. ZIP SHA256 independently verified; ZIP central directory parsed; 44/44 member sizes and CRCs pass; 44-member inventory matches manifest count, no duplicate/case-collision/unsafe paths/links/nested archives. Limitation: per-member SHA256 values were not individually recomputed; this is recorded in the archived verdict. Source/test/fixture/results were statically reviewed; classifier was not run or recompiled. Reported 91/91 synthetic tests and 1754/1754 assertions retained as historical run evidence.
 
-## 唯一新授权
+Old 491-member archive safety remains UNKNOWN. No science/model execution. Formal V010 unchanged; model_activation=False; REAL_GE=False; Results=FALSE; V011=NOT_STARTED; FULL_RUNNER_IO_CLOSURE=BLOCKED.
 
-Owner已同意补交现成材料。Codex只读核对原manifest的33个载荷加manifest和FINAL_RECEIPT，共35份原件，在精确授权的新DELIVERY_ROOT形成安全副本并自动上传GitHub。SOURCE_EXPECTATIONS.json以四份已独立核验附件为锚点，关键实现及其余载荷由冻结原manifest溯源；不手抄新增期望值，不重跑分类器。
-
-REVIEW_BRANCH=review/ch5-classifier-v19-evidence-20261019
-FIXED_PARENT=69652a0791e813ffaa0dd629feafcf9b5bd4db79
-TEMP_PATH=_review_tmp/ch5/classifier-v19-evidence-20261019/
-REMOTE_ALLOWLIST=result.md,manifest.json,evidence_sanitized.zip
-CLEANUP_OWNER=ASTRA_AFTER_ARCHIVE_AND_READBACK
-DELIVERY_STATUS=NOT_STARTED
-REMOTE_CANDIDATE=NOT_CREATED
-TEMP_CLEANUP=NOT_APPLICABLE_NO_CANDIDATE
-
-发布辅助程序、fake-bare自检及有限SSH/fetch/push/回读有独立预算；这些不等于模型runner或分类器测试。Codex不得以本地路径作为常规交付终点，亦不得提前删远端材料。Astra终审永久归档并回读后必须清理该候选三条临时路径。完整权限、E1恢复、硬门、回执通道及限额见固定合同；无全程禁网条款。
-
-NEXT=CODEX_EXECUTE_FROZEN_EVIDENCE_DELIVERY
-FINAL_STOP=WAIT_ASTRA_CLASSIFIER_V19_FULL_EVIDENCE_REVIEW
-RESEARCH_VERSION=V010/v0.0.10
-model_activation=False
-REAL_GE=False
-Results=FALSE
-V011=NOT_STARTED
-FULL_RUNNER_IO_CLOSURE=BLOCKED
-
-本次仅签发交付并更新GitHub治理，未启动本机任务、未上传验收候选；未同步本地镜像或GPT Project Sources。
+Astra must now remove only the three allowlisted files from the review branch current tree and verify absence. No force push and no broader deletion.
