@@ -1,3 +1,17 @@
+# CH5动态总目录 · Safe blocked-report交付任务已签发
+
+## 当前唯一任务
+- [CURRENT.md](../CURRENT.md)：`TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_20261019`，ISSUED_NOT_STARTED。
+- [TASK_CURRENT.md](../TASK_CURRENT.md)：固定源身份、预算、远端白名单与验收后清理责任。
+- [固定合同](../tasks/TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_20261019/CONTRACT.md)：Git Blob `d4116d3e920ff540efd8e6f85ffca97432075f56`。
+- [发行清单](../tasks/TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_20261019/ISSUE_MANIFEST.json)：固定源身份、远端parent、大小上限和分账预算。
+
+本任务只从固定delivery目录读取result.md、manifest.json、FINAL_RECEIPT.json，重新生成安全阻断报告包。严禁读取/解压/发布原491成员ZIP及任何成员，严禁重试前次push，严禁科学/模型调用。成功时Codex必须自动上传result.md、manifest.json、evidence_sanitized.zip；Astra独立验收并永久归档、回读后删除远端当前tree白名单三件并回读确认。
+
+前次V3审计交付run_id=44826358dcbd4de096926294160f677d保持FAIL_CLOSED；远端候选d3a2aeb6174cd14bbbef8b0a01170e9c8c9b9b13在检查时NOT_FOUND。新任务不改写或续跑前次任务。
+
+---
+
 # CH5动态总目录 · V3 adapter证据审计与自动交付任务已签发
 
 ## 当前唯一ACTIVE
