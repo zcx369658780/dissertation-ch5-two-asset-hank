@@ -1,18 +1,18 @@
-# TASK_CURRENT · Safe blocked-report delivery only
+# TASK_CURRENT · Safe blocked-report Delivery V2
 
-ACTIVE_TASK=TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_20261019
+ACTIVE_TASK=TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_V2_20261019
 STATUS=ISSUED_NOT_STARTED
 SCOPE=SAFE_BLOCKED_REPORT_ONLY / DELIVERY_ONLY / ZERO_SCIENCE
-ISSUE_COMMIT=25cc06e1ac5f92eb9b4e8a760b70aafd0aa33696
-CONTRACT_BLOB=d4116d3e920ff540efd8e6f85ffca97432075f56
-CONTRACT_PATH=tasks/TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_20261019/CONTRACT.md
-ISSUE_MANIFEST=tasks/TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_20261019/ISSUE_MANIFEST.json
-ISSUE_MANIFEST_BLOB=d68e8b1cff947f268e28d0b4655efa421ebb45a3
-ISSUE_MANIFEST_COMMIT=77182e762481676d675c0c1340a9afcda3f572e1
-
-REVIEW_BRANCH=review/ch5-temp-v3-safe-blocked-report-20261019
-FIXED_PARENT=bb85659984702e2229609cc3c979e8824cd89902
-REMOTE_TEMP_PATH=_review_tmp/ch5/temp-v3-safe-blocked-report-20261019/
+ISSUE_COMMIT=8baec47a11a63b976e94285338e3b8700b3bd115
+CONTRACT_BLOB=92d11f71519c999bca51bc7a34682f8d6337ec8c
+CONTRACT_PATH=tasks/TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_V2_20261019/CONTRACT.md
+ISSUE_MANIFEST=tasks/TEMP_V010_RESOURCE_GATE_V3_SAFE_BLOCKED_REPORT_DELIVERY_V2_20261019/ISSUE_MANIFEST.json
+ISSUE_MANIFEST_BLOB=FROZEN_IN_MANIFEST_COMMIT_989d7d4c6dd6a6df2dda9b6ae45b38de92c7a6ec
+CANONICAL_DOC_INDEX=docs/DOC_INDEX_CURRENT.md
+GOVERNANCE_HEAD_AT_ISSUE=d5abe373910c874fa0c918e057fe142ab36a4dd8
+REVIEW_BRANCH=review/ch5-temp-v3-safe-blocked-report-v2-20261019
+FIXED_PARENT=d5abe373910c874fa0c918e057fe142ab36a4dd8
+REMOTE_TEMP_PATH=_review_tmp/ch5/temp-v3-safe-blocked-report-v2-20261019/
 REMOTE_ALLOWLIST=result.md;manifest.json;evidence_sanitized.zip
 
 SOURCE_ROOT=D:\ProjectTemp\ch5_temp_resource_gate_v3_adapter_integration_v3_20261018_01\delivery
@@ -26,17 +26,16 @@ SOURCE_RECEIPT_SHA256=14ca468c0c9b4339cea7a8bc91578fc899b88a4be7a9c96d4d7d552945
 ORIGINAL_ZIP_READ=PROHIBITED
 ORIGINAL_ZIP_MEMBER_READS=0
 ORIGINAL_ZIP_PUBLISH=PROHIBITED
-
-ENGINEERING_BUDGET=1200s;2 batches;24 accounted processes;Python starts 4;concurrent Python 2;threads 8;new non-Git bytes 16MiB
-DELIVERY_BUDGET=1200s;2 batches;fake-bare 1;SSH preflight 1;fetch 2;push attempts 1;successful publication 1;read-only GET 24
 SCIENCE_BUDGET=0
 MODEL_RUNNER_BUDGET=0
 CLASSIFIER_COMPILE_OR_SUITE_RERUN=0
 FORMAL_V010_WRITES=0
 V011_START=PROHIBITED
-EXPECTED_STOP=WAIT_ASTRA_SAFE_BLOCKED_REPORT_REVIEW
+ENGINEERING_BUDGET=1200s;2 batches;24 processes;Python 4 starts;concurrent 2;threads 8;16MiB new non-Git bytes
+DELIVERY_BUDGET=1200s;2 batches;fake-bare 1;SSH 1;fetch 2;push attempts 1;successful publication 1;GET 24
+EXPECTED_STOP=WAIT_ASTRA_SAFE_BLOCKED_REPORT_V2_REVIEW
 
-Source identity failures or sanitization uncertainty mean DELIVERY_BLOCKED and no publication. If successful, Codex automatically publishes a newly generated safe blocked-report package. Astra independently reads bytes, permanently archives the verdict, reads it back, then deletes only the three allowlisted files from the review branch current tree and verifies absence.
+Predecessor stopped because it requested root DOC_INDEX_CURRENT.md. Correct canonical path is docs/DOC_INDEX_CURRENT.md. V2 is a new task; no predecessor retry. If canonical path fails at frozen governance ref, STOP without alternate path.
 
 model_activation=False
 REAL_GE=False
