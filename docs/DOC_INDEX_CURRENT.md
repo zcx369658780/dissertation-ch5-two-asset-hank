@@ -1,3 +1,19 @@
+# CH5动态总目录 · V3 adapter证据审计与自动交付任务已签发
+
+## 当前唯一ACTIVE
+- [CURRENT.md](../CURRENT.md)：`TEMP_V010_RESOURCE_GATE_V3_ADAPTER_EVIDENCE_ARCHIVE_AUDIT_DELIVERY_20261019`，ISSUED_NOT_STARTED。
+- [TASK_CURRENT.md](../TASK_CURRENT.md)：精确来源锚点、预算、远端临时目录与清理规则。
+- [固定合同](../tasks/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_EVIDENCE_ARCHIVE_AUDIT_DELIVERY_20261019/CONTRACT.md)：10094字节，Git Blob `3179b9c041e29a3c75b324a86ecaae3cc78b73de`，SHA256 `619e83d5127d55cf3b73b6c6c786691df44ac083565a4da4c2dd1b715093f088`。
+- [发行清单](../tasks/TEMP_V010_RESOURCE_GATE_V3_ADAPTER_EVIDENCE_ARCHIVE_AUDIT_DELIVERY_20261019/ISSUE_MANIFEST.json)：固定review parent、远端白名单、资源预算与源身份锚点。
+
+## 范围与禁止项
+这是本地PASS_BOUNDED_ADAPTER_INTEGRATION_LOCAL结果的首次完整归档审计交付，不是新科学任务。需要审计此前未复核的491成员证据ZIP；若安全门不通过，不得发布原ZIP或不安全副本。V1.9分类器只能在源身份确认后作为只读审查辅助；不得编译或重跑91样本测试。HA/HJB/KFE/selector/root/GE/IRF及正式模型调用全部为0。Codex须自动上传远端三件；Astra验收归档并回读后删除当前tree白名单三件。
+
+- [V1.9合成分类器验收](CH5_PATH_CLASSIFIER_V19_FULL_EVIDENCE_INDEPENDENT_REVIEW_20261019.md)：仅91个合成样本，旧491成员ZIP安全性仍UNKNOWN。
+- [强制上传与验收后清理规则](CH5_MANDATORY_REVIEW_DELIVERY_AND_CLEANUP_20261019.md)。
+
+---
+
 # CH5动态总目录 · V1.9完整证据交付生命周期已关闭
 
 ## 当前状态
