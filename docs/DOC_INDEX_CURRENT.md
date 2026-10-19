@@ -1,3 +1,18 @@
+# CH5动态总目录 · V1.9完整证据交付生命周期已关闭
+
+## 当前状态
+- [CURRENT.md](../CURRENT.md)：无活动任务；V1.9交付、验收归档与清理全部完成。
+- [TASK_CURRENT.md](../TASK_CURRENT.md)：`ACTIVE_TASK=NONE`。
+- [完整证据独立验收](CH5_PATH_CLASSIFIER_V19_FULL_EVIDENCE_INDEPENDENT_REVIEW_20261019.md)：`PASS_BOUNDED_SYNTHETIC_CLASSIFIER_EVIDENCE_WITH_OBSERVATIONS`。
+- [远端临时清理回执](CH5_PATH_CLASSIFIER_V19_TEMP_CLEANUP_RECEIPT_20261019.md)：单个普通清理commit，唯一parent为交付候选，三条白名单路径均已回读404。
+- [强制上传与验收后清理规则](CH5_MANDATORY_REVIEW_DELIVERY_AND_CLEANUP_20261019.md)。
+
+交付候选：`41922a7370f8388ef1a5d0063327da65f3066e52`。清理commit：`7a931f8bd8429ce4b072b2e94828fecb3e54fcad`。Git历史保留原候选字节；仅review branch当前tree已删除三件。
+
+独立验收范围限于91个合成样本的既有证据与交付包完整性；Astra未重跑分类器。每个ZIP成员SHA256未全部独立复算，已在验收报告披露。旧491成员ZIP安全性仍UNKNOWN。正式V010不变；model_activation=False；REAL_GE=False；Results FALSE；V011 NOT_STARTED；FULL_RUNNER_IO_CLOSURE BLOCKED。
+
+---
+
 # CH5动态总目录 · V1.9完整证据验收与清理状态
 
 ## 当前状态
