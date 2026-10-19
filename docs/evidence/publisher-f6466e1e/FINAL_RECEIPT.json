@@ -1,0 +1,62 @@
+{
+  "task_id": "CH5_PUBLISHER_DIAGNOSTICS_AND_DELIVERY_REPAIR_20261019",
+  "run_id": "f6466e1e2f674dc38c25a1614f15812e",
+  "actual_phase": "READ_ONLY_REMOTE_RECONCILIATION",
+  "status": "DELIVERY_BLOCKED",
+  "candidate": "42ac4f1c76ece94e5ada633f66daa7efddc1512d",
+  "tree": "1aead7b7ff2e4b8823b986218a5dad1f1074881c",
+  "parent": "09b0986415dbfc85db0d28199194ad4f817cc292",
+  "planned_stop": "WAIT_ASTRA_PUBLISHER_DIAGNOSTICS_REPAIR_REVIEW",
+  "prior_receipt": {
+    "bytes": 1495,
+    "sha256": "75ab7bb9e8115a33d0fe6af54882b9763cdf2ff9aa44033f77d45318b0e9ba44"
+  },
+  "first_delivery_error": "IncompleteRead(2228224 bytes read)",
+  "push_exit": 0,
+  "push_reaped": true,
+  "push_attempts": 1,
+  "cleanup": "ASTRA_PENDING_CANDIDATE_REVIEW",
+  "science_calls": 0,
+  "model_calls": 0,
+  "old_archive_reads": 0,
+  "formal": {
+    "model_activation": false,
+    "REAL_GE": false,
+    "Results": false,
+    "V011": "NOT_STARTED",
+    "FULL_RUNNER_IO_CLOSURE": "BLOCKED"
+  },
+  "source_lock_unchanged": true,
+  "reconciliation_error": "IncompleteRead(12910592 bytes read)",
+  "remote_byte_verification": "UNKNOWN_INCOMPLETE",
+  "resources": {
+    "engineering": {
+      "direct_starts": 74,
+      "python_starts": 16,
+      "batches": 3,
+      "fake_rounds": 1,
+      "gets": 15,
+      "fetches": 0,
+      "pushes": 0,
+      "successes": 0,
+      "private_bytes": 536921,
+      "started": 1792415865.733488
+    },
+    "delivery": {
+      "direct_starts": 22,
+      "python_starts": 2,
+      "batches": 2,
+      "fake_rounds": 0,
+      "gets": 7,
+      "fetches": 1,
+      "pushes": 1,
+      "successes": 0,
+      "private_bytes": 2968,
+      "started": 1792416320.2119443
+    },
+    "kernel_observation": "UNKNOWN_NOT_INDEPENDENTLY_OBSERVED",
+    "accounting": "application reservations plus separately observed intake; not OS descendant prevention"
+  },
+  "resource_count_semantics": "Conservative launch reservations, includes one synthetic log-open refusal; not independent kernel totals",
+  "external_controller_completion": "RETURNED_SEPARATELY_AFTER_EXIT"
+}

@@ -1,19 +1,14 @@
-# CH5 动态总目录 · 安全复核后的发布器修复
+# CH5 动态总目录 · 发布器远端回读定向终审
 
-本页只有一个当前任务。旧索引、失败回执及未激活草案保留历史，不从旧ACTIVE/NEXT推导权限。
+本页只有一个当前状态。旧索引完整保留于46758ea1498d82085f160240cabd449a32afb96a，不从历史ACTIVE/NEXT推导授权。
 
-## 当前唯一任务
-- [CURRENT.md](../CURRENT.md)：CH5_PUBLISHER_DIAGNOSTICS_AND_DELIVERY_REPAIR_20261019，SECURITY_REVIEWED_20261019，ISSUED_NOT_STARTED。
-- [TASK_CURRENT.md](../TASK_CURRENT.md)：有界工程修复和自动交付；科学调用0。
-- [完整合同](../tasks/CH5_PUBLISHER_DIAGNOSTICS_AND_DELIVERY_REPAIR_20261019/CONTRACT.md)。
-- [结构化参数](../tasks/CH5_PUBLISHER_DIAGNOSTICS_AND_DELIVERY_REPAIR_20261019/TASK_PARAMETERS.json)：精确路径、保护根、命令权限、日志边界、预算、分支和清理。
-- [发行身份清单](../tasks/CH5_PUBLISHER_DIAGNOSTICS_AND_DELIVERY_REPAIR_20261019/ISSUE_MANIFEST.json)。
-- [发行前安全复核](CH5_PUBLISHER_REPAIR_SECURITY_REVIEW_20261019.md)：上一轮拦截具体原因未披露，本轮收紧权限，不宣称解除平台控制。
+## 当前状态
+- [CURRENT.md](../CURRENT.md)：无活动任务；候选确已上传，HTTP回读实现需修正。
+- [TASK_CURRENT.md](../TASK_CURRENT.md)：原DELIVERY_BLOCKED不改，终审CHANGES_REQUIRED，无预算延续。
+- [本轮终审记录](CH5_PUBLISHER_DIAGNOSTICS_REMOTE_READBACK_REVIEW_20261019.md)：六份完整源码/测试成员字节核验、两个源码问题及未完成的全包核验限制。
+- [最终回执原件](evidence/publisher-f6466e1e/FINAL_RECEIPT.json)：2059字节，SHA256 00e3df31e90984b5b33e8b0f9220a2576a382a1c1380f2dd8c6a5ecf0b6d1d2b。
+- [强制上传与终审后清理](CH5_MANDATORY_REVIEW_DELIVERY_AND_CLEANUP_20261019.md)。
 
-## 长期规则与历史证据
-- [当前工作流入口](CH5_ASTRA_WORKFLOW_CURRENT.md)。
-- [强制上传与验收后清理](CH5_MANDATORY_REVIEW_DELIVERY_AND_CLEANUP_20261019.md)。
-- [原fake-bare失败复核](CH5_SAFE_BLOCKED_REPORT_V3_FAKE_BARE_FAILURE_REVIEW_20261019.md)。
-- [原始1700字节回执](evidence/safe-blocked-v3-3ef2b1b1/FINAL_RECEIPT.json)。
+候选42ac4f1c76ece94e5ada633f66daa7efddc1512d，三文件存在且唯一parent匹配。终审退修，不宣称全部158成员/整体ZIP已独立核验。归档回读后Astra仅清理本任务三条白名单；清理完成不升级交付为PASS。
 
-任务测试及交付只针对新发布器；不是安全阻断报告V4。旧491成员ZIP安全性UNKNOWN，不读取、不重跑HA/adapter/旧91样本。正式V010不变，Results FALSE，V011 NOT_STARTED，FULL_RUNNER_IO_CLOSURE BLOCKED。Codex自动上传，Astra终审归档回读后必须清理。
+下一方向仅是讨论有界HTTP回读及诊断接口修复，不是立即执行。旧491成员ZIP和科学模型均未读取/运行。正式V010与HA黑箱不变；Results FALSE；V011 NOT_STARTED；FULL_RUNNER_IO_CLOSURE BLOCKED。
