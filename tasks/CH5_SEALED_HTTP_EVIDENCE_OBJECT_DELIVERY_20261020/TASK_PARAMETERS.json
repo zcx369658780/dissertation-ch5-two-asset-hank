@@ -1,0 +1,181 @@
+{
+  "schema": "ch5.sealed-http-evidence.git-object-delivery.v1",
+  "task_id": "CH5_SEALED_HTTP_EVIDENCE_OBJECT_DELIVERY_20261020",
+  "revision": "ISSUED_20261020_R1",
+  "owner_decision": "2026-10-20 approved precise GitHub object API when authorized, Git storage limit relaxation with bounded SSH plan",
+  "repository": "zcx369658780/dissertation-ch5-two-asset-hank",
+  "governance_branch": "migration/astra-workflow-20261012",
+  "canonical_index": "docs/DOC_INDEX_CURRENT.md",
+  "historical": {
+    "source_task": "CH5_SEALED_SOURCE_IDENTITY_RECOVERY_20261020",
+    "source_run": "c333014661d24524b2f75cb87caf65ae",
+    "source_terminal": "DELIVERY_BLOCKED_RESOURCE_STORAGE_LIMIT",
+    "source_artifact_review_level": "CODEX_REPORT_HASH_IN_AUTHENTICATED_RECEIPT__RAW_FILE_NOT_ASTRA_VERIFIED",
+    "previous_git_storage_bytes": 500084907,
+    "previous_git_storage_budget": 268435456,
+    "previous_remote_candidate": "NOT_CONFIRMED_REF_AND_COMMIT_404",
+    "previous_budget_reopened": false
+  },
+  "files": {
+    "source_root": "D:\\ProjectTemp\\ch5_sealed_source_identity_recovery_20261020_01",
+    "candidate_relative_directories": [
+      "package",
+      "sanitized",
+      "."
+    ],
+    "sealed_files": [
+      {
+        "name": "result.md",
+        "bytes": 319,
+        "sha256": "8ca5c572ed26cb5fd6bcbce2699e7241bbd95a00996e5af05a51dca1c259597a"
+      },
+      {
+        "name": "manifest.json",
+        "bytes": 12535,
+        "sha256": "9c551db5a5635582597495eec2d65a4d35ffaf8e97c97378e4a247c68be0680d"
+      },
+      {
+        "name": "evidence_sanitized.zip",
+        "bytes": 38378,
+        "sha256": "d5f312960ff245321ee9e28ae750603cf27bf39e32c000bfdbf12a3c464ac5c7"
+      }
+    ],
+    "source_locator_policy": "stat only 9 exact path candidates, no recursion; select one unique regular resolved file for each sealed member; symlink/reparse/duplicate/ambiguous -> STOP",
+    "old_fixed_content_source": {
+      "root": "D:\\ProjectTemp\\ch5_publisher_precise_http_fix_20261020_01",
+      "read_policy": "NO_READ_BY_DEFAULT; prior run envelope should embed base64 of original source result/manifest; inspect only if explicit independent contract need and authorized exact file"
+    },
+    "trusted_parent": "D:\\ProjectTemp",
+    "new_scratch": "D:\\ProjectTemp\\ch5_http_object_evidence_delivery_20261020_01",
+    "new_scratch_must_be_absent": true,
+    "protected_metadata_only": [
+      "D:\\ProjectTemp\\c5k1bturn56",
+      "D:\\ProjectTemp\\ch5_publisher_diagnostics_repair_20261019_01",
+      "D:\\ProjectTemp\\ch5_publisher_precise_http_fix_20261020_01",
+      "D:\\ProjectTemp\\ch5_workflow_v13_docs_mirror_20261017_01",
+      "D:\\ProjectTemp\\ch5_sealed_source_identity_recovery_20261020_01"
+    ],
+    "formal_git_locator": {
+      "cwd": "D:\\ProjectTemp\\c5k1bturn56",
+      "environment": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "commands": [
+        [
+          "git",
+          "rev-parse",
+          "--absolute-git-dir"
+        ],
+        [
+          "git",
+          "rev-parse",
+          "--git-common-dir"
+        ],
+        [
+          "git",
+          "rev-parse",
+          "--git-path",
+          "index"
+        ]
+      ],
+      "locator_and_index_hash_only": true
+    },
+    "writes": "new_scratch only, and strictly fixed new review ref + three remote files"
+  },
+  "publication": {
+    "review_branch": "review/ch5-http-object-evidence-20261020",
+    "fixed_parent": "36aeff199911b397b3a841113c6404aa59deaf20",
+    "temp_path": "_review_tmp/ch5/http-object-evidence-20261020/",
+    "allowlist": [
+      "result.md",
+      "manifest.json",
+      "evidence_sanitized.zip"
+    ],
+    "sizes": {
+      "result_max_bytes": 65536,
+      "manifest_max_bytes": 262144,
+      "zip_max_bytes": 2097152,
+      "expanded_zip_max_bytes": 8388608,
+      "zip_members_max": 40
+    },
+    "allowed_methods": [
+      "authenticated_exact_git_data_api",
+      "existing_ssh_git_minimal_object_fetch"
+    ],
+    "method_selection": "choose one before remote mutation: API only if existing credential-safe permitted GitHub Git Data API write tool is confirmed available; if API write capability ABSENT without attempted denied request, SSH Git may be selected. Any API HTTP 401/403/429/policy denial -> stop entire task, no fallback",
+    "api_allowed_endpoints": [
+      "GET /git/ref/heads/{exact_review_branch}",
+      "GET /git/commits/{fixed_parent}",
+      "POST /git/blobs (three exact payloads)",
+      "POST /git/trees (base tree fixed_parent tree, only three entries)",
+      "POST /git/commits (sole parent fixed_parent)",
+      "POST /git/refs (new exact ref only)",
+      "GET exact newly created ref/commit/trees/blobs for readback"
+    ],
+    "api_forbidden": "No PATCH existing ref, no force, no opaque fallback endpoints, no auth token retrieval/logging and no arbitrary path mutations",
+    "ssh_plan": "existing SSH to ssh.github.com:443, normal host checking, exact fixed-parent object fetch, exclusive new bare repo; no clone/fetch-all, force, credentials changes or transport switches after rejection",
+    "push_attempts": 1,
+    "successful_publications_max": 1,
+    "ambiguous_result": "read-only reconcile exact ref/commit/blob, no blind re-push",
+    "astra_cleanup": "terminal PASS/CHANGES_REQUIRED -> permanent archive + readback -> check current review HEAD -> single nonforce three file delete -> readback; PENDING retains files; no candidate N/A"
+  },
+  "budget": {
+    "verification": {
+      "wall_seconds": 1200,
+      "e1_batches": 2,
+      "python_starts": 8,
+      "direct_starts": 32,
+      "expanded_zip_bytes": 8388608,
+      "members": 40
+    },
+    "delivery": {
+      "wall_seconds": 4500,
+      "e1_batches": 3,
+      "python_starts": 12,
+      "direct_starts": 128,
+      "api_preflight_gets": 4,
+      "api_mutating_requests_max": 7,
+      "ssh_preflight_max": 1,
+      "git_fixed_parent_fetch_max": 2,
+      "push_max": 1,
+      "remote_readback_gets": 12
+    },
+    "global": {
+      "git_storage_bytes": 2147483648,
+      "new_non_git_bytes": 67108864,
+      "total_process_starts": 160,
+      "read_only_gets": 40,
+      "op_timeout_seconds": 600,
+      "finalization_reserve_seconds": 180
+    },
+    "allow_soft_resource_warning_at_bytes": 1610612736
+  },
+  "required_checks": [
+    "three sealed originals raw byte lengths and sha256, exact unique canonical identities",
+    "all original ZIP members CRC/SHA256/size/path safety and original manifest mapping",
+    "public privacy audit each member plus any envelope derivative, no raw_private/credentials",
+    "produce new result and new manifest envelope recording immutable previous evidence identifiers, with original old envelope bytes included via base64 only after privacy clearance",
+    "original evidence_sanitized.zip copied bitwise identical",
+    "one eligible publication method selected and documented before mutation",
+    "exact fixed_parent, three tree entries only, no extra changed files",
+    "remote original bytes and all ZIP member integrity independent readback, not URLs/hashes only",
+    "raw final receipt full Base64+bytes+hash and separate controller event"
+  ],
+  "prohibitions": {
+    "science": 0,
+    "model": 0,
+    "code_changes": 0,
+    "test_reruns": 0,
+    "fake_bare_reruns": 0,
+    "old_491_archive_reads": 0,
+    "old_158_archive_reads": 0,
+    "classifier": 0,
+    "adapter": 0,
+    "formal_worktree_writes": 0,
+    "package_installs": 0,
+    "old_budget_carry_forward": 0,
+    "git_root_recursive_tree": 0,
+    "unbounded_clone": 0
+  },
+  "stop": "WAIT_ASTRA_HTTP_OBJECT_DELIVERY_REVIEW"
+}
