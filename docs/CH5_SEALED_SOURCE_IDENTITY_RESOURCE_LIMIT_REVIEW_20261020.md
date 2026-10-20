@@ -1,0 +1,48 @@
+# CH5 封存原件身份恢复 · 2026-10-20 资源硬门终审
+
+TASK_ID=CH5_SEALED_SOURCE_IDENTITY_RECOVERY_20261020
+REVISION=ISSUED_20261020_R1
+RUN_ID=c333014661d24524b2f75cb87caf65ae
+CODEX_ACTUAL_TERMINAL=DELIVERY_BLOCKED_RESOURCE_STORAGE_LIMIT
+ASTRA_MAIN_REVIEW=CHANGES_REQUIRED_DELIVERY_STORAGE_RESOURCE_LIMIT
+REVIEW_CLASS=DELIVERY_RESOURCE_HARD_STOP__NOT_PROOF_OF_HTTP_IMPLEMENTATION_DEFECT
+REVIEW_DATE=2026-10-20
+
+## 固定对象与独立取证
+- 发行HEAD/独立查询治理ref：`30c28aa9565e745333d8a48a58dff2dea1cde966`。本任务固定issue commit：`4665c2e9e12b94cd2b94328e74ed42b186ca5003`，单一review parent：`4ec6d1ba9b7f5754895dc1ebd0cef3057299e172`。
+- Codex提供最终原始JSON完整Base64（Owner在会话中作为上传文本提供），本轮在Python标准库中Base64严格解码、json解析（拒绝重复键）、hashlib SHA256：9604字节；SHA256 `27079168f8ca59e288f778e3419cc2b0bb192f4a9d093527827cccfbc0d2a495`，与声明一致。这只认证最终回执本身，不证明其列举的旧本机文件和命令执行事实已被Astra独立复演。
+- 独立读取 GitHub `review/ch5-sealed-source-identity-20261020` 精确ref：404；精确查询Codex提供的本地候选commit `820e8f73b1372946cb01e2a32f36a1ced7c95285`：404。因此本轮检查时未发现远端可访问候选，不能把此前push期间的远端状态从UNKNOWN追溯写为确定失败或成功。未用仓库root recursive tree，不对不存在对象进行盲目重推/清理。
+
+## 已由Codex回执确认的本地身份（未取得三份源文件独立字节）
+| 原始文件 | Codex声明bytes | Codex报告的完整SHA256 |
+|---|---:|---|
+| result.md | 611 | `c349136f89d7524139b93979747fd49658fb679021b274111d2d961b132b8ef9` |
+| manifest.json | 4564 | `5ebae0e8bc12b2db854433e40201d465aead25d55bec44cf4123de5b1d3a6467` |
+| evidence_sanitized.zip | 38378 | `d5f312960ff245321ee9e28ae750603cf27bf39e32c000bfdbf12a3c464ac5c7` |
+
+上表三个哈希均为64位合法值，**来自认证过的Codex回执的本机计算声明**，不是Astra对三份原文件内容独立计算。上一轮Planner错误预填的63位SHA不再作为身份权威，不猜补旧字符串。
+Codex回执还报告：三件都唯一定位于既有旧scratch的`package/`，14/14 ZIP成员路径/CRC/bytes/SHA/manifest对应PASS（总展开167511字节）；16项组件隐私PASS；源文件和正式Git定位/index前后不变；十组HTTP测试及旧fake-bare不重跑。原ZIP、其中的HTTP代码、测试、隐私逐成员原始内容本轮并未由Astra直接取得，不能写为INDEPENDENT_PASS。
+第一次隐私检查把合成二进制的转义序列误报为UNC，Codex保留首错并只在明确合成场景调整扫描器，仍报告实际UNC路径检测有效。这是其自述E1，不同于交付硬失败。
+
+## 真实交付失败和预算
+- Codex报告HTTP精确preflight=404（有界完整响应），显示当时新ref不存在；显式SSH preflight/fixed-parent fetch/non-force push分别1次，无后续重推。
+- Codex给出本地候选`820e8f73b1372946cb01e2a32f36a1ced7c95285`，tree `6ca63819129362384f01c2640e664207ff906677`，sole parent `4ec6d1ba9b7f5754895dc1ebd0cef3057299e172`，均未获GitHub远端对象独立确认。
+- push期间触发本任务Git存储硬门；Codex回执记录控制器退出后的bare Git存储占用500084907字节，冻结预算268435456字节，超过231649451字节，约1.863倍。超额事实属于经哈希认证回执所报告的执行测量，不是Astra对本机磁盘的新鲜测量。根因尚不明，不能仅凭此推断HTTP代码缺陷、GitHub故障或完整Git获取链路哪一步造成增量。
+- 控制器两次完成事件分别为chunk_id=4afb56/exit_code=0、chunk_id=013b11/exit_code=0；只反映控制器运行结束，不代表push成功。Codex在硬门后未继续联网，其隐式Git子进程和远端是否接受提交均标UNKNOWN；Astra此次独立ref/commit查询404，不把UNKNOWN当0或成功。
+- 本任务停止，既有预算不延续，不在本轮自动重试/扩增268MB预算/换账号或绕过安全策略。
+
+## 分层裁决
+artifact_integrity=RECEIPT_RAW_BYTES_PASS__SEALED_SOURCE_BYTES_NOT_INDEPENDENTLY_VERIFIED
+implementation_review=NOT_COMPLETED_HTTP_SOURCE_NOT_INDEPENDENTLY_REVIEWED
+privacy_review=CODEX_SELF_REPORTED_16_COMPONENT_PASS__ASTRA_NOT_COMPLETED
+delivery=DELIVERY_BLOCKED_RESOURCE_STORAGE_LIMIT
+cleanup=NOT_APPLICABLE_NO_CONFIRMED_REMOTE_CANDIDATE__EXACT_REF_AND_CANDIDATE_404_AT_REVIEW
+not_completed=REMOTE_CANDIDATE_CONFIRMATION;REMOTE_THREE_ORIGINAL_BYTES;ZIP_14_MEMBER_INDEPENDENT_CHECK;HTTP_CODE_SEMANTIC_REVIEW;PUBLIC_PAYLOAD_PRIVACY_INDEPENDENT_REVIEW
+MAIN_REVIEW=CHANGES_REQUIRED_DELIVERY_STORAGE_RESOURCE_LIMIT
+OPERATIONS_DISPOSITION=REVIEWED_AND_CLOSED__NO_OLD_BUDGET_RESUME
+
+主退修因资源硬门阻断，**不是已发现候选HTTP实现缺陷**。现有证据足够关闭这一失败的交付尝试；不需要为形成退修结论而读取整仓库或重复下载先前完好的对象。若未来Owner授权，可先制定适用于仓库体量的轻量精确Git对象交付/限域传输计划和新的内存、存储预算，并对来源三原字节作独立复算；不能从本次终审自动继续push或调大预算。
+
+## 耗时与科学冻结
+Codex回执自报verification measured_seconds_from_bootstrap=109.815，delivery measured_seconds=155.332；本轮Astra各阶段精确墙钟时长fetch_seconds=UNKNOWN，integrity_seconds=UNKNOWN，semantic_seconds=UNKNOWN，archive_cleanup_seconds=UNKNOWN，不谎称已复演本地性能。
+正式V010/v0.0.10；model_activation=False；REAL_GE=False；Results=FALSE；V011=NOT_STARTED；FULL_RUNNER_IO_CLOSURE=BLOCKED；科研调用0，所有已关闭预算不延续。
