@@ -1,0 +1,172 @@
+{
+  "schema": "ch5.sealed-source-identity-recovery.v1",
+  "task_id": "CH5_SEALED_SOURCE_IDENTITY_RECOVERY_20261020",
+  "revision": "ISSUED_20261020_R1",
+  "owner_authority": "Owner approved source-original-byte identity recovery after planner 63-hex issuance error on 2026-10-20",
+  "governance": {
+    "repository": "zcx369658780/dissertation-ch5-two-asset-hank",
+    "branch": "migration/astra-workflow-20261012",
+    "current_index": "docs/DOC_INDEX_CURRENT.md"
+  },
+  "source": {
+    "prior_task": "CH5_PUBLISHER_PRECISE_HTTP_READBACK_FIX_20261020",
+    "prior_run_id": "b6a028b65b98471d9480517ab18be22b",
+    "trusted_parent": "D:\\ProjectTemp",
+    "sealed_root": "D:\\ProjectTemp\\ch5_publisher_precise_http_fix_20261020_01",
+    "finite_relative_candidate_dirs": [
+      "package",
+      "sanitized",
+      "."
+    ],
+    "exact_filenames": [
+      "result.md",
+      "manifest.json",
+      "evidence_sanitized.zip"
+    ],
+    "sha256_expected": null,
+    "sha256_state": "UNFROZEN_MUST_DERIVE_FROM_ACTUAL_RAW_BYTES",
+    "byte_lengths_prior_claims_not_hard_gates": {
+      "result.md": 611,
+      "manifest.json": 4564,
+      "evidence_sanitized.zip": 38378
+    },
+    "zip_member_count_prior_claim_not_hard_gate": 14,
+    "forbidden_as_authoritative_input": "CLOSED previous delivery TASK_PARAMETERS sealed_files 63-hex SHA256; do not use as hash prefixes or attempt repair by guessing"
+  },
+  "filesystem": {
+    "new_scratch": "D:\\ProjectTemp\\ch5_sealed_source_identity_recovery_20261020_01",
+    "new_scratch_must_be_absent": true,
+    "protected_metadata_only": [
+      "D:\\ProjectTemp\\c5k1bturn56",
+      "D:\\ProjectTemp\\ch5_publisher_diagnostics_repair_20261019_01",
+      "D:\\ProjectTemp\\ch5_publisher_http_fix_sealed_delivery_20261020_01",
+      "D:\\ProjectTemp\\ch5_workflow_v13_docs_mirror_20261017_01"
+    ],
+    "formal_git_read_only": {
+      "cwd": "D:\\ProjectTemp\\c5k1bturn56",
+      "environment": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "exact_commands": [
+        [
+          "git",
+          "rev-parse",
+          "--absolute-git-dir"
+        ],
+        [
+          "git",
+          "rev-parse",
+          "--git-common-dir"
+        ],
+        [
+          "git",
+          "rev-parse",
+          "--git-path",
+          "index"
+        ]
+      ],
+      "locator_index_identity_only": true
+    },
+    "only_source_reads": "stat and original bytes of at most three exact named files across three candidate directories; no content walk outside selected ZIP itself",
+    "writable": "new_scratch only and exact new remote review branch three temporary files"
+  },
+  "budget": {
+    "verification": {
+      "wall_seconds": 1200,
+      "e1_batches": 2,
+      "direct_process_starts": 24,
+      "python_starts": 6,
+      "max_uncompressed_bytes": 8388608,
+      "max_zip_members": 40,
+      "max_input_file_bytes": 2097152,
+      "max_private_output_bytes": 1048576
+    },
+    "delivery": {
+      "wall_seconds": 2400,
+      "e1_batches": 2,
+      "direct_process_starts": 64,
+      "python_starts": 8,
+      "http_ref_preflight_gets": 1,
+      "ssh_preflight_attempts": 1,
+      "fixed_parent_fetches": 2,
+      "nonforce_push_attempts": 1,
+      "successful_publications": 1,
+      "remote_readback_gets": 8
+    },
+    "global": {
+      "read_only_gets": 24,
+      "git_storage_bytes": 268435456,
+      "new_non_git_bytes": 16777216,
+      "per_operation_timeout_seconds": 300,
+      "finalization_reserve_seconds": 120
+    }
+  },
+  "evidence": {
+    "source_expected_hashes": null,
+    "derive_using": [
+      "hashlib.sha256",
+      "zipfile",
+      "json",
+      "base64"
+    ],
+    "required_sections": [
+      "three source bytes and sha256",
+      "source candidate selection evidence",
+      "all ZIP members CRC sizes sha256 and manifest linkage",
+      "privacy audit per published component",
+      "protected-path and index pre/post identity",
+      "complete or incomplete GET/transport evidence",
+      "non-reproduced historical test status",
+      "new envelope and original source bytes provenance"
+    ],
+    "new_envelope_result_and_manifest": true,
+    "new_manifest_embeds_original_result_and_manifest_base64_only_after_privacy_pass": true,
+    "evidence_zip_original_byte_unchanged": true,
+    "forbidden_source_exposure": [
+      "raw_private",
+      "credential files",
+      "old scratch backups",
+      "unreviewed original AGENTS text"
+    ],
+    "final_receipt_transport": "Complete final JSON Base64 plus raw byte count and SHA256 in Codex reply; separate controller completion event"
+  },
+  "publication": {
+    "repository": "zcx369658780/dissertation-ch5-two-asset-hank",
+    "review_branch": "review/ch5-sealed-source-identity-20261020",
+    "fixed_parent": "4ec6d1ba9b7f5754895dc1ebd0cef3057299e172",
+    "temp_path": "_review_tmp/ch5/sealed-source-identity-20261020/",
+    "allowlist": [
+      "result.md",
+      "manifest.json",
+      "evidence_sanitized.zip"
+    ],
+    "limits": {
+      "result_bytes": 65536,
+      "manifest_bytes": 262144,
+      "zip_bytes": 2097152,
+      "total_expanded_zip_bytes": 8388608,
+      "members": 40
+    },
+    "one_exact_http_ref_get_before_ssh": true,
+    "rate_limit_403_or_429": "HARD_STOP_NO_SSH_FETCH_PUSH",
+    "transport": "existing SSH key to ssh.github.com:443 with normal host verification, only if HTTP ref preflight succeeds",
+    "push": "ONE_NORMAL_NON_FORCE_ONLY",
+    "owner_cleanup": "ASTRA_AFTER_FINAL_REVIEW_ARCHIVE_READBACK",
+    "no_candidate_cleanup": "NOT_APPLICABLE_NO_CANDIDATE"
+  },
+  "prohibitions": {
+    "model_calls": 0,
+    "science_calls": 0,
+    "code_modifications": 0,
+    "old_test_reruns": 0,
+    "fake_bare_reruns": 0,
+    "old_491_zip_reads": 0,
+    "old_158_member_zip_reads": 0,
+    "classifier": 0,
+    "adapter": 0,
+    "formal_worktree_writes": 0,
+    "package_installations": 0,
+    "old_budget_carry_forward": 0
+  },
+  "expected_stop": "WAIT_ASTRA_SEALED_SOURCE_IDENTITY_RECOVERY_REVIEW"
+}

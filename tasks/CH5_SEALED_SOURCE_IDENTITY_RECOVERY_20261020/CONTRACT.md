@@ -1,0 +1,34 @@
+# 第五章 · 封存交付原件身份恢复与独立交付
+
+TASK_ID=CH5_SEALED_SOURCE_IDENTITY_RECOVERY_20261020
+REVISION=ISSUED_20261020_R1
+SCOPE=BOUNDED_SOURCE_RAW_BYTE_IDENTITY_RECOVERY_AND_OWN_EVIDENCE_DELIVERY
+OWNER_AUTHORIZATION=2026-10-20 用户明确同意先恢复三件本地原字节的真实SHA256、ZIP/隐私核验，再决定是否发行修订DELIVERY_ONLY
+
+## 1. 单一目标与未解决状态
+本次仅识别和检查上一HTTP修复run b6a028b65b98471d9480517ab18be22b的三件本地封存安全文件，用真实原字节计算完整64位SHA256，不擅自补写前一次失败合同中三条63位哈希。本轮**不是**修订DELIVERY_ONLY任务本身，也不授权继续HTTP源码开发/旧测试重跑/模型求解。
+上一已关闭任务CH5_PUBLISHER_HTTP_FIX_SEALED_DELIVERY_ONLY_20261020在冻结身份门正常停止，原状态DELIVERY_BLOCKED，Astra终审CHANGES_REQUIRED_INVALID_FROZEN_SHA256_ISSUANCE且归因Planner；review ref查询404。前任务的错误参数永久保留原样，其63位字段不得作为真实哈希、前缀或伪验证依据。全部预算另行定义。
+现行同一live治理快照的CURRENT.md、TASK_CURRENT.md和docs/DOC_INDEX_CURRENT.md必须指向本任务；此后按ISSUE_MANIFEST后发发行commit/issue_commit读取本合同、参数及原字节来源定位。历史基线不等于live HEAD。
+
+## 2. 冻结的定位，未冻结的哈希
+参数只冻结本地可信父目录、此前HTTP修复scratch根、三个允许的相对候选目录（package、sanitized、根本身）以及三个精确文件名：result.md、manifest.json、evidence_sanitized.zip。每个文件最多检查这三个精确候选路径，不可递归枚举整个旧scratch。可信路径需检查reparse/junction/symlink及目录父链；不能通过软链接走出授权根。初步stat候选；若同一文件名有多个真实候选/有不确定映射，STOP_AMBIGUOUS_SOURCE_PATH并列出安全脱敏相对位置，不凭大小或63位前缀选择。若全部缺失，STOP_SOURCE_ABSENT。
+冻结参数中source.sha256_expected和evidence.source_expected_hashes都刻意设为JSON null、状态UNFROZEN_MUST_DERIVE_FROM_ACTUAL_RAW_BYTES。此前自报的611、4564、38378字节以及14成员数只作为对比提示，不是冻结已认证身份，也不要求计算出的哈希与旧63位记录匹配。
+在任何外发/新任务定值之前，对本轮实际取得的三份完整原字节使用已安装Python标准库hashlib.sha256各计算一个完整64位十六进制摘要及实际长度。计算后验证hex格式和字节范围，独立保存可再验的原件身份表与源路径角色；不能只从旧日志/清单/摘要抄写哈希。源目录只读，不能回写任何文件。
+
+## 3. ZIP全量检查与隐私
+使用标准库zipfile、hashlib、json、base64、io对封存ZIP的每一成员做CRC、uncompressed length、SHA256、路径穿越/绝对路径、重复/大小写碰撞、符号链接、压缩炸弹额度、嵌套归档检查。读取原始manifest.json后校对声明成员身份/数量/摘要及必要关键证据，区分源清单声明与本轮计算；不能凭此前Codex的14成员PASS记本轮PASS。凡是结构未知、成员缺失、SHA矛盾或安全问题，停止并保存私有首错，不进行远端发布。
+每项计划公开内容，包括源result、源manifest、ZIP全部成员，都必须检查私人本机路径、密钥、token、原始HTTP私有错误响应、credentials/AGENTS全文等。私有original bytes留在受保护新scratch；未完成隐私审核不可发布。无关旧91样本/158成员/491成员档案不读。
+禁止实际执行封存ZIP中的脚本或测试。已报告的上一轮10/10与fresh fake-bare是历史Codex回执，不是本轮运行也不是Astra PASS。
+
+## 4. 保护/资源及本任务交付
+BOOTSTRAP0在创建前以有限父链元数据核实唯一新scratch原不存在、目标不与保护根冲突；正式worktree和旧scratch仅限合同允许的元数据或精确原件读取；Git locator/index按参数给定3条只读命令和hash before/after。BOOTSTRAP1独占创建新scratch，BOOTSTRAP2初始化新任务最小安全日志。创建、包装、私有证据、bare Git store和原件缓存只能落在新scratch；保留失败首错，不覆盖旧证据。没有运行OS级全局进程监控时kernel descendant=UNKNOWN，不能报0。
+若所有本地身份和隐私检查通过，构建本任务result.md和manifest.json两个**新交付封套**（不能伪装成旧原件）。将原result.md及原manifest.json的经隐私审核原字节以base64独立字段放在新manifest，记录二者本轮实际字节长度与64位sha；字段仅来自本轮直接读取。原封存evidence_sanitized.zip逐字节不变作为本次第三个交付文件；新manifest记录其本轮实际SHA、ZIP逐成员结果和与旧manifest的联系，并对自身不作自引用。此方案允许Astra收到远端三件后独立重算三个旧源文件摘要，不把哈希报告当验证。
+正常交付新review branch：review/ch5-sealed-source-identity-20261020，固定parent与路径在参数中。先HTTP精确单ref只读预检：403/429 rate limit、认证、平台拒绝即STOP、不得再SSH/fetch/push。预检成功且ref不存在时仅使用已存在SSH认证+正常主机验证到ssh.github.com:443，必要固定Git对象局部获取并在新bare创建唯一parent、三件精确新增的候选，普通non-force仅一次push。禁止root recursive=1、整仓库clone、强推/重推、切换账号或绕过拒绝；push不确定时只做同对象精确read-only reconciliation，不盲推。
+发布之后必须通过同固定candidate的ref/commit/tree/parent、三件raw bytes/哈希、ZIP全部成员，核对完整交付；不可用URL或Git Blob ID代替原字节证明。未成功远端上传时如实DELIVERY_BLOCKED或REVIEW_PENDING_IO，已完成的本地SHA只属本地受界事实，非Astra独立复算。未有候选时cleanup=NOT_APPLICABLE_NO_CANDIDATE，不提前归档成完整PASS。
+Astra收到材料按五步验收、机器全成员+语义聚焦+隐私，不要求读全部仓库；PASS/CHANGES_REQUIRED后永久归档回读，再检查review HEAD，普通非强制精确清理三件并回读；PENDING不删。
+
+## 5. 硬停止与预算
+仅使用已安装Python标准库/Git及既有批准的HTTP/SSH通道；所有数字预算见TASK_PARAMETERS。E1普通文件编码/固定证据格式问题可在当前批次内修复并保留首错；来源不存在、路径冲突、原件损坏、隐私违规、来源不确定、限流/平台/凭据拒绝为硬门。源文件自身损坏属于SOURCE_INTEGRITY_FAILURE，不归罪于之前的Planner长度缺陷。
+禁止科学模型、HA/HJB/KFE/GE/IRF、TEMP、旧档案/分类器/adapter、原发布器源码修改、旧10组测试和fake-bare重跑、安装依赖、变更认证或正式模型工作树、旧任务重启/额外预算。
+最终完整JSON回执Base64+length+hashlib SHA256+run_id+实际终态/阶段/本地三源身份/14成员检查/隐私/资源/保护/GET-SSH-fetch-push计数/候选/缺口；再给独立controller完成事件。预定停点WAIT_ASTRA_SEALED_SOURCE_IDENTITY_RECOVERY_REVIEW，不将预定停点当已实现状态。
+正式科研仍为V010/v0.0.10；model_activation=False；REAL_GE=False；Results=FALSE；V011=NOT_STARTED；FULL_RUNNER_IO_CLOSURE=BLOCKED。SCIENCE_BUDGET=0。
