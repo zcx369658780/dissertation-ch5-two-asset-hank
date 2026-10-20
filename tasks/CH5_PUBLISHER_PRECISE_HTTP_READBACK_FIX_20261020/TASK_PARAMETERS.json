@@ -1,0 +1,143 @@
+{
+  "schema": "ch5.publisher-precise-http-fix.parameters.v1",
+  "task_id": "CH5_PUBLISHER_PRECISE_HTTP_READBACK_FIX_20261020",
+  "revision": "ISSUED_20261020_R1",
+  "repository": "zcx369658780/dissertation-ch5-two-asset-hank",
+  "governance_branch": "migration/astra-workflow-20261012",
+  "frozen_review_source": {
+    "review_doc": "docs/CH5_PUBLISHER_DIAGNOSTICS_REMOTE_READBACK_REVIEW_20261019.md",
+    "previous_terminal": "CHANGES_REQUIRED_REMOTE_READBACK_IMPLEMENTATION",
+    "previous_candidate": "42ac4f1c76ece94e5ada633f66daa7efddc1512d",
+    "old_deliverable_zip_read_allowed": false
+  },
+  "paths": {
+    "trusted_parent": "D:\\ProjectTemp",
+    "new_scratch": "D:\\ProjectTemp\\ch5_publisher_precise_http_fix_20261020_01",
+    "new_scratch_must_be_absent": true,
+    "prior_source_root": "D:\\ProjectTemp\\ch5_publisher_diagnostics_repair_20261019_01",
+    "formal_worktree": "D:\\ProjectTemp\\c5k1bturn56",
+    "prior_adapter_root": "D:\\ProjectTemp\\ch5_temp_resource_gate_v3_adapter_integration_v3_20261018_01",
+    "local_doc_mirror": "D:\\ProjectTemp\\ch5_workflow_v13_docs_mirror_20261017_01",
+    "prior_doc_sync_scratch": "D:\\ProjectTemp\\ch5_review_workflow_doc_sync_20261019_01",
+    "git_resolution": {
+      "cwd": "D:\\ProjectTemp\\c5k1bturn56",
+      "environment": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "commands": [
+        [
+          "git",
+          "rev-parse",
+          "--absolute-git-dir"
+        ],
+        [
+          "git",
+          "rev-parse",
+          "--git-common-dir"
+        ],
+        [
+          "git",
+          "rev-parse",
+          "--git-path",
+          "index"
+        ]
+      ],
+      "locator_and_index_hash_only": true
+    }
+  },
+  "immutable_local_inputs": [
+    {
+      "path": "src/ch5_evidence_publisher.py",
+      "sha256": "bc6a0af991d239b84ef543f46be2fec767a177a3cd2d78d4f3948a86ac624782",
+      "bytes": 35057
+    },
+    {
+      "path": "tests/test_publisher.py",
+      "sha256": "e2cd746d82066c5319d13a60fcb2e948b5c84d23de75943cf0080603089ed1cc",
+      "bytes": 5951
+    },
+    {
+      "path": "tests/helper.py",
+      "sha256": "98a0f9687b04fa317b11ff1fd1e7bc5550ee24a541bf073fbf2d6f87652ad68c",
+      "bytes": 1112
+    },
+    {
+      "path": "publisher_lock.json",
+      "sha256": "10273e6d25003b45f36dc332e1a95616616e36302c5b19dd48ae304e77a1bc7c",
+      "bytes": 1573
+    }
+  ],
+  "allowed_mutation": [
+    "new_scratch only",
+    "fixed review ref creation of three temporary files only"
+  ],
+  "git_read_only_formal": true,
+  "budgets": {
+    "engineering": {
+      "wall_seconds": 5400,
+      "e1_batches": 3,
+      "direct_process_starts": 128,
+      "python_starts": 32,
+      "concurrent_python": 2,
+      "threads": 8,
+      "new_bytes": 67108864,
+      "fake_bare_rounds": 2
+    },
+    "delivery": {
+      "wall_seconds": 3600,
+      "e1_batches": 2,
+      "direct_process_starts": 96,
+      "python_starts": 12,
+      "ssh_preflight": 1,
+      "fixed_parent_fetches": 2,
+      "push_attempts": 1,
+      "successful_publications": 1,
+      "new_bytes": 33554432
+    },
+    "global": {
+      "read_only_gets": 40,
+      "git_storage_bytes": 536870912,
+      "per_process_timeout_seconds": 300,
+      "finalization_reserve_seconds": 180
+    }
+  },
+  "publication": {
+    "review_branch": "review/ch5-publisher-precise-http-fix-20261020",
+    "fixed_parent": "f86e7fd1b37dcf7f1138810fc3a4f0a9a97847d5",
+    "temp_path": "_review_tmp/ch5/publisher-precise-http-fix-20261020/",
+    "allowlist": [
+      "result.md",
+      "manifest.json",
+      "evidence_sanitized.zip"
+    ],
+    "limits": {
+      "result_bytes": 65536,
+      "manifest_bytes": 262144,
+      "zip_bytes": 2097152,
+      "expanded_bytes": 8388608,
+      "members": 40
+    },
+    "transport": "existing SSH key to ssh.github.com:443 only; normal host verification",
+    "cleanup_owner": "ASTRA_AFTER_TERMINAL_ARCHIVE_AND_READBACK",
+    "one_push_then_read_only_reconciliation": true
+  },
+  "tests": {
+    "new_focused_assertion_clusters_min": 7,
+    "fresh_fake_bare": true,
+    "old_12_group_full_rerun": false,
+    "real_model": false
+  },
+  "prohibited": {
+    "science": 0,
+    "model_runner": 0,
+    "prior_491_archive": 0,
+    "prior_158_zip": 0,
+    "old_91_classifier": 0,
+    "adapter": 0,
+    "formal_worktree_writes": 0,
+    "code_outside_http_fix": 0,
+    "package_install": 0,
+    "old_task_budget_reuse": 0
+  },
+  "stop": "WAIT_ASTRA_PUBLISHER_PRECISE_HTTP_FIX_REVIEW"
+}

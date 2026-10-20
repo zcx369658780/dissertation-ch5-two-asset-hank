@@ -24,3 +24,9 @@ Codex必须自动上传GitHub临时目录三件实际证据；Astra终审永久�
 本次只落实规则、模板、持久项目记忆、Project Sources包及一次DOC_ONLY本地文档同步。新同步合同见tasks/CH5_REVIEW_WORKFLOW_ONE_TIME_DOC_SYNC_20261019/CONTRACT.md；本机尚待Codex执行/回执，Project Sources尚待Owner上传。
 下一代码候选方向仅为现有发布器的精确HTTP回读与中断诊断，尚未签发。不得重新设计发布器、资源门禁或分类器，不自动开启HA调参。
 GitHub、本地Codex入口、Project Sources分别回读；记忆文件更新不代表平台自动Memory或本机文件已更新。
+
+
+## 2026-10-20 Owner追加决定与下一工程任务
+Codex最新文档镜像任务run_id=c371ca7d684f495a94221e3dd23f90a0，自报九份固定文档全部本地身份匹配（4更新/5新增）、AGENTS顶部导航正确、旧正文及私有备份保留；本地ZIP隐私12成员自检PASS。Codex原交付状态DELIVERY_BLOCKED，push exit128，精确远端ref 404；Astra另行只读查询相同review ref及候选commit均404。它不满足原GitHub交付合同的完整PASS；远端三文件原字节、ZIP成员Astra完整性核验未完成。2026-10-20 Owner明确同意「这次同步文档并不同步到github」，接受本地完成且免补交GitHub三文件，旧任务停止/预算不续，清理NOT_APPLICABLE_NO_CANDIDATE。此豁免仅适用于此次DOC_ONLY，不修改其他任务默认交付和验收规则。
+Owner此前另确认ChatGPT Project Sources手动上传完成，记OWNER_CONFIRMED_UPLOAD_COMPLETE，平台文件级独立字节回读未完成；不得继续记录为等待Owner上传。平台自动Memory未直接写入。
+Owner 2026-10-20批准下一Codex任务：CH5_PUBLISHER_PRECISE_HTTP_READBACK_FIX_20261020；只针对既有发布器的精准非递归GitHub HTTP回读、IncompleteRead原始部分字节私有留存与精简合成测试；旧491ZIP/158ZIP、91样本分类器、adapter、HA、TEMP及真实模型不运行。新合同在tasks/CH5_PUBLISHER_PRECISE_HTTP_READBACK_FIX_20261020/。尚无代码候选或科学结果。
