@@ -1,0 +1,94 @@
+{
+  "schema": "ch5.sealed-http-object-delivery.issue.v1",
+  "task_id": "CH5_SEALED_HTTP_EVIDENCE_OBJECT_DELIVERY_20261020",
+  "revision": "ISSUED_20261020_R1",
+  "status": "ISSUED_NOT_STARTED",
+  "issue_commit": "d546f3c53b271a0e4078c29676fe5efe2edf17c4",
+  "governance_branch": "migration/astra-workflow-20261012",
+  "fixed_review_parent": "36aeff199911b397b3a841113c6404aa59deaf20",
+  "review_branch": "review/ch5-http-object-evidence-20261020",
+  "temp_path": "_review_tmp/ch5/http-object-evidence-20261020/",
+  "allowlist": [
+    "result.md",
+    "manifest.json",
+    "evidence_sanitized.zip"
+  ],
+  "immutable_issue_files": [
+    {
+      "path": "tasks/CH5_SEALED_HTTP_EVIDENCE_OBJECT_DELIVERY_20261020/CONTRACT.md",
+      "bytes": 6456,
+      "git_blob": "7150ed90f2e753f33e9e49d60b363ad440bb9928",
+      "from_commit": "d546f3c53b271a0e4078c29676fe5efe2edf17c4",
+      "hash_verification": "sha256 computed from exact bytes with standard library at intake"
+    },
+    {
+      "path": "tasks/CH5_SEALED_HTTP_EVIDENCE_OBJECT_DELIVERY_20261020/TASK_PARAMETERS.json",
+      "bytes": 7574,
+      "git_blob": "3876bfe4f74d839180d280b3b608574532d1e614",
+      "from_commit": "d546f3c53b271a0e4078c29676fe5efe2edf17c4",
+      "hash_verification": "sha256 computed from exact bytes with standard library at intake"
+    },
+    {
+      "path": "CURRENT.md",
+      "bytes": 1746,
+      "git_blob": "7f09e08b2bb4d0d8c734dcd67f49100bc901db7f",
+      "from_commit": "d546f3c53b271a0e4078c29676fe5efe2edf17c4",
+      "hash_verification": "sha256 computed from exact bytes with standard library at intake"
+    },
+    {
+      "path": "TASK_CURRENT.md",
+      "bytes": 1197,
+      "git_blob": "469edc922bdff98d43393550cbcc4b7842438bd3",
+      "from_commit": "d546f3c53b271a0e4078c29676fe5efe2edf17c4",
+      "hash_verification": "sha256 computed from exact bytes with standard library at intake"
+    },
+    {
+      "path": "docs/DOC_INDEX_CURRENT.md",
+      "bytes": 1331,
+      "git_blob": "0f00907ff8511da8269364b4c67844e1cd41ea96",
+      "from_commit": "d546f3c53b271a0e4078c29676fe5efe2edf17c4",
+      "hash_verification": "sha256 computed from exact bytes with standard library at intake"
+    },
+    {
+      "path": "docs/CH5_PROJECT_MEMORY_CURRENT.md",
+      "bytes": 10978,
+      "git_blob": "c65a6b1e0027c292e5a25b69e7636179ce596549",
+      "from_commit": "d546f3c53b271a0e4078c29676fe5efe2edf17c4",
+      "hash_verification": "sha256 computed from exact bytes with standard library at intake"
+    }
+  ],
+  "frozen_sealed_originals": [
+    {
+      "name": "result.md",
+      "bytes": 319,
+      "sha256": "8ca5c572ed26cb5fd6bcbce2699e7241bbd95a00996e5af05a51dca1c259597a",
+      "verification_level": "CODEX_REPORT_EXTRACTED_FROM_HASH_VERIFIED_9604_BYTE_RECEIPT__RECHECK_LOCAL_RAW_BYTES_BEFORE_USE"
+    },
+    {
+      "name": "manifest.json",
+      "bytes": 12535,
+      "sha256": "9c551db5a5635582597495eec2d65a4d35ffaf8e97c97378e4a247c68be0680d",
+      "verification_level": "CODEX_REPORT_EXTRACTED_FROM_HASH_VERIFIED_9604_BYTE_RECEIPT__RECHECK_LOCAL_RAW_BYTES_BEFORE_USE"
+    },
+    {
+      "name": "evidence_sanitized.zip",
+      "bytes": 38378,
+      "sha256": "d5f312960ff245321ee9e28ae750603cf27bf39e32c000bfdbf12a3c464ac5c7",
+      "verification_level": "CODEX_REPORT_EXTRACTED_FROM_HASH_VERIFIED_9604_BYTE_RECEIPT__RECHECK_LOCAL_RAW_BYTES_BEFORE_USE"
+    }
+  ],
+  "owner_budget_override": {
+    "new_task_git_storage_limit_bytes": 2147483648,
+    "warning_bytes": 1610612736,
+    "old_budget_not_reopened": true
+  },
+  "candidate_policy": "No Git full clone or root recursive tree; api first if existing authorized write capability. SSH only when API write capability absent before denial. 401/403/429/policy refusal stops all mutation; never swap channels to bypass a denial.",
+  "historical_receipt": {
+    "run_id": "c333014661d24524b2f75cb87caf65ae",
+    "bytes": 9604,
+    "sha256": "27079168f8ca59e288f778e3419cc2b0bb192f4a9d093527827cccfbc0d2a495",
+    "evidence_level": "ASTRA_VERIFIED_FINAL_RECEIPT_BYTES_ONLY"
+  },
+  "execute": "Read live CURRENT/TASK_CURRENT/DOC_INDEX from same live branch snapshot. Manifest is at later release commit. Read pinned issue files from issue_commit and validate Git blob+bytes, use standard library SHA256. Input scientific result permission 0.",
+  "delivery": "Three exact files to separate review ref with sole fixed_parent. Astra independent full raw bytes and all ZIP member check. PASS/CHANGES_REQUIRED -> archive/readback then exact nonforce cleanup. PENDING -> preserve, no candidate -> N/A."
+}
