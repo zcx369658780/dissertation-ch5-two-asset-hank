@@ -1,0 +1,149 @@
+{
+  "schema": "ch5.publisher.sealed-delivery-only.parameters.v1",
+  "task_id": "CH5_PUBLISHER_HTTP_FIX_SEALED_DELIVERY_ONLY_20261020",
+  "revision": "ISSUED_20261020_R1",
+  "repository": "zcx369658780/dissertation-ch5-two-asset-hank",
+  "governance_branch": "migration/astra-workflow-20261012",
+  "source_task_id": "CH5_PUBLISHER_PRECISE_HTTP_READBACK_FIX_20261020",
+  "source_run_id": "b6a028b65b98471d9480517ab18be22b",
+  "source_terminal": "DELIVERY_BLOCKED_HTTP_403_RATE_LIMIT",
+  "source_receipt_claim": {
+    "bytes": 5388,
+    "sha256": "6e988c4ec191420449b10821ed403efeff13d8a331c999b9f0709935e13786e1",
+    "verification": "PREVIOUS_CODEX_SELF_REPORTED_NOT_INDEPENDENTLY_VERIFIED"
+  },
+  "paths": {
+    "trusted_parent": "D:\\ProjectTemp",
+    "new_scratch": "D:\\ProjectTemp\\ch5_publisher_http_fix_sealed_delivery_20261020_01",
+    "new_scratch_must_be_absent": true,
+    "sealed_previous_scratch": "D:\\ProjectTemp\\ch5_publisher_precise_http_fix_20261020_01",
+    "allowed_source_candidate_dirs": [
+      "package",
+      "sanitized",
+      "."
+    ],
+    "previous_scratch_read_allowlist": [
+      "result.md",
+      "manifest.json",
+      "evidence_sanitized.zip"
+    ],
+    "protected_metadata_only": [
+      "D:\\ProjectTemp\\c5k1bturn56",
+      "D:\\ProjectTemp\\ch5_publisher_diagnostics_repair_20261019_01",
+      "D:\\ProjectTemp\\ch5_review_workflow_doc_sync_20261019_01",
+      "D:\\ProjectTemp\\ch5_workflow_v13_docs_mirror_20261017_01"
+    ],
+    "git_resolution": {
+      "cwd": "D:\\ProjectTemp\\c5k1bturn56",
+      "environment": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "commands": [
+        [
+          "git",
+          "rev-parse",
+          "--absolute-git-dir"
+        ],
+        [
+          "git",
+          "rev-parse",
+          "--git-common-dir"
+        ],
+        [
+          "git",
+          "rev-parse",
+          "--git-path",
+          "index"
+        ]
+      ],
+      "metadata_and_hash_only": true
+    }
+  },
+  "sealed_files": [
+    {
+      "name": "result.md",
+      "bytes": 611,
+      "sha256": "c349136f89d7524139b93979747fd49658fb679021b27411d2d961b132b8ef9"
+    },
+    {
+      "name": "manifest.json",
+      "bytes": 4564,
+      "sha256": "5ebae0e8c12b2db854433e40201d465aeaad2d55bec44c64123de5b1d2e6467"
+    },
+    {
+      "name": "evidence_sanitized.zip",
+      "bytes": 38378,
+      "sha256": "d5f312960ff24532ee9e28ae750603c6f27bf39e3c300bfdbf12a3c464ac5c7"
+    }
+  ],
+  "sealed_zip_members_claimed": 14,
+  "allowed_outputs": [
+    "new-scratch/result.md",
+    "new-scratch/manifest.json",
+    "new-scratch/evidence_sanitized.zip (unaltered copy of sealed source ZIP)",
+    "new-scratch private audit/receipt and bare git objects"
+  ],
+  "budgets": {
+    "verification": {
+      "wall_seconds": 900,
+      "direct_process_starts": 16,
+      "python_starts": 4,
+      "zip_expanded_bytes": 8388608,
+      "zip_members": 40,
+      "e1_batches": 1
+    },
+    "delivery": {
+      "wall_seconds": 1800,
+      "direct_process_starts": 48,
+      "python_starts": 6,
+      "e1_batches": 2,
+      "preflight_gets": 1,
+      "ssh_preflights": 1,
+      "fixed_parent_fetches": 2,
+      "push_attempts": 1,
+      "successful_publications": 1,
+      "readback_gets": 8
+    },
+    "global": {
+      "read_only_gets_max": 16,
+      "git_storage_bytes": 268435456,
+      "new_non_git_bytes": 16777216,
+      "per_operation_timeout_seconds": 300,
+      "finalization_reserve_seconds": 120
+    }
+  },
+  "publication": {
+    "review_branch": "review/ch5-publisher-http-fix-sealed-delivery-20261020",
+    "fixed_parent": "0f18347e422be66f2406eafd062de22a87d96670",
+    "temp_path": "_review_tmp/ch5/publisher-http-fix-sealed-delivery-20261020/",
+    "allowlist": [
+      "result.md",
+      "manifest.json",
+      "evidence_sanitized.zip"
+    ],
+    "limits": {
+      "result_bytes": 65536,
+      "manifest_bytes": 262144,
+      "zip_bytes": 2097152,
+      "expanded_bytes": 8388608,
+      "members": 40
+    },
+    "transport": "Existing GitHub HTTP exact-ref read preflight; existing SSH key to ssh.github.com:443 for fixed Git delivery with normal host verification; no alternate auth/channel upon denial",
+    "cleanup_owner": "ASTRA_AFTER_TERMINAL_REVIEW_PERMANENT_ARCHIVE_AND_READBACK"
+  },
+  "prohibited": {
+    "science": 0,
+    "model": 0,
+    "http_code_changes": 0,
+    "all_engineering_code_changes": 0,
+    "test_reruns": 0,
+    "old_archives": 0,
+    "classifier": 0,
+    "adapter": 0,
+    "source_scratch_writes": 0,
+    "protected_root_writes": 0,
+    "new_credentials": 0,
+    "package_installs": 0
+  },
+  "expected_stop": "WAIT_ASTRA_SEALED_HTTP_FIX_DELIVERY_REVIEW"
+}
