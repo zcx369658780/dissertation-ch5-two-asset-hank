@@ -1,0 +1,66 @@
+{
+  "schema": "ch5.publisher.sealed-delivery.issue.v1",
+  "task_id": "CH5_PUBLISHER_HTTP_FIX_SEALED_DELIVERY_ONLY_20261020",
+  "issue_commit": "45f80d8ec78d22c289fa2b15e7a75325f3794942",
+  "governance_branch": "migration/astra-workflow-20261012",
+  "publication_fixed_parent": "0f18347e422be66f2406eafd062de22a87d96670",
+  "status": "ISSUED_NOT_STARTED",
+  "pinned_files": [
+    {
+      "path": "tasks/CH5_PUBLISHER_HTTP_FIX_SEALED_DELIVERY_ONLY_20261020/CONTRACT.md",
+      "bytes": 7363,
+      "git_blob": "0842e1d687dd7ed5964a71c8fcda73ef8074b71d",
+      "commit": "45f80d8ec78d22c289fa2b15e7a75325f3794942",
+      "sha256_policy": "hashlib.sha256 at intake; independently compare Git blob and length"
+    },
+    {
+      "path": "tasks/CH5_PUBLISHER_HTTP_FIX_SEALED_DELIVERY_ONLY_20261020/TASK_PARAMETERS.json",
+      "bytes": 4630,
+      "git_blob": "f48e5034717b225e3ca015ce2f3ed1340be73c0d",
+      "commit": "45f80d8ec78d22c289fa2b15e7a75325f3794942",
+      "sha256_policy": "hashlib.sha256 at intake; independently compare Git blob and length"
+    },
+    {
+      "path": "CURRENT.md",
+      "bytes": 1739,
+      "git_blob": "f9db38703616ce6d192d43442218817ab6a5ee10",
+      "commit": "45f80d8ec78d22c289fa2b15e7a75325f3794942",
+      "sha256_policy": "hashlib.sha256 at intake; independently compare Git blob and length"
+    },
+    {
+      "path": "TASK_CURRENT.md",
+      "bytes": 1132,
+      "git_blob": "e2ac7ab4d20841f8d4820263ec22b2d34bbba611",
+      "commit": "45f80d8ec78d22c289fa2b15e7a75325f3794942",
+      "sha256_policy": "hashlib.sha256 at intake; independently compare Git blob and length"
+    },
+    {
+      "path": "docs/DOC_INDEX_CURRENT.md",
+      "bytes": 1540,
+      "git_blob": "5c3a66c846dd366febd8f75c3fe0f6233c1ea5dd",
+      "commit": "45f80d8ec78d22c289fa2b15e7a75325f3794942",
+      "sha256_policy": "hashlib.sha256 at intake; independently compare Git blob and length"
+    },
+    {
+      "path": "docs/CH5_PROJECT_MEMORY_CURRENT.md",
+      "bytes": 6971,
+      "git_blob": "73246e6f060a9340e91f9ab3e519eb39789a1631",
+      "commit": "45f80d8ec78d22c289fa2b15e7a75325f3794942",
+      "sha256_policy": "hashlib.sha256 at intake; independently compare Git blob and length"
+    }
+  ],
+  "source_facts": {
+    "previous_run_id": "b6a028b65b98471d9480517ab18be22b",
+    "previous_status": "DELIVERY_BLOCKED_HTTP_403_RATE_LIMIT",
+    "code_accepted_by_astra": false,
+    "source_zip_members_self_reported": 14
+  },
+  "execution_rule": "Read these fixed files at issue_commit after verifying CURRENT and TASK_CURRENT at the same live branch snapshot; verify Git blob and byte counts, compute SHA256 with a standard library. Never require future live head to equal issue or release commit.",
+  "release_rule": "This manifest is added by a later release commit; no self-reference. Review fixed_parent is not the future branch HEAD.",
+  "science_budget": 0,
+  "model_runs": 0,
+  "code_changes_allowed": 0,
+  "test_reruns_allowed": 0,
+  "one_remote_preflight_get_before_ssh": true,
+  "cleanup_rule": "Astra only after terminal review archived and read back; pending leaves candidate; no candidate N/A"
+}
