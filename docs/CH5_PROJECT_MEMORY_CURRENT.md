@@ -48,3 +48,10 @@ Owner同意先用受界本地原始三文件计算完整64位SHA256、审查原Z
 
 ## 2026-10-20 22:31 · Owner授权轻量交付及存储放宽
 Owner明确接受前次“优先GitHub精确Git对象API建立blob/tree/commit并在独立review ref发布”的建议，并确认本机硬盘空间充足，同意放宽存储。新任务CH5_SEALED_HTTP_EVIDENCE_OBJECT_DELIVERY_20261020采用授权写入能力可用时的精确Git Data API；只有API写能力在任何拒绝前客观缺失时可预选已授权SSH Git受界模式。上一任务因500084907 bytes>268435456 bytes停机，本任务单独新冻结Git存储预算2147483648 bytes及预警1610612736 bytes，旧任务预算不可续用，仍严禁全仓库clone和无界扫描。上一源原始回执9604字节（SHA256 27079168f8ca59e288f778e3419cc2b0bb192f4a9d093527827cccfbc0d2a495）重新用Python解码，从envelope_identity读取319/12535/38378 bytes和相应完整SHA256作为待验本地原件身份，**尚未Astra对该三原件独立重算**；本次必须读真实文件核对14成员及隐私并提交可审字节，不能仅凭回执接纳。任何403/429/权限/策略拒绝必须停止，不能改账号或切换方法绕过。科研预算0，V010和HA黑箱不变。
+
+
+## 2026-10-21 · Owner接受提效并回归TEMP科学主线
+Owner要求压缩发布器工具链反复任务并恢复第五章科学研究。已证GitHub review候选`1579e7f1d7a1975c322dd6ae9af1776e88e83e7c`为一份唯一parent的三文件候选，GitHub文件API显示ZIP blob，长度38,378B；但此次独立Reviewer尚未把原始ZIP完整字节送到可使用标准库逐成员核验的环境，故其状态仅`REVIEW_PENDING_IO`，不能把Codex的14/14及隐私20项自检认定为Astra独立PASS。远端review白名单**必须保留**，直到真正终审归档后再精确清理。候选manifest在本轮可见18条privacy_review记录，Codex总结为20项，统计边界待核对。
+Owner同时同意修改验收工作流：默认在授权能力及安全门允许下使用精确Git对象API，避免root recursive与本地大bare；发行前统一机器校验冻结hash/path/bytes/预算；不再因小型可恢复工程错误无限重复签发。完整机器验证/隐私、原字节、审查后的清理等硬门仍有效。
+科学主线已切回TEMP黑箱HA+宏观价格约束解释与简化的**规划**。来自已接受2026-10-18独立审查：双省100轮max KN gap约0.10752、Y gap约0.01272、两类价格边界100/100触发；因WinError5共享ledger故障，旧2×2 A0/A1/A2/A3尚无科学可比较结果。先不运行HA的宏观价格来源/单位时点审阅及账本可靠性前置验证，后续2×2真实再运行必须有Owner新冻结科学预算。正式V010、Results FALSE、V011 NOT_STARTED。
+详见`docs/CH5_TEMP_SCIENCE_REENTRY_BRIEF_20261021.md`。
