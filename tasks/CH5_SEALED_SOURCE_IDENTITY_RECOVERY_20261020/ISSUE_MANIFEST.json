@@ -1,0 +1,74 @@
+{
+  "schema": "ch5.sealed-source-identity.issue.v1",
+  "task_id": "CH5_SEALED_SOURCE_IDENTITY_RECOVERY_20261020",
+  "status": "ISSUED_NOT_STARTED",
+  "scope": "BOUNDED_SOURCE_RAW_BYTE_IDENTITY_RECOVERY_AND_OWN_EVIDENCE_DELIVERY",
+  "issue_commit": "4665c2e9e12b94cd2b94328e74ed42b186ca5003",
+  "governance_branch": "migration/astra-workflow-20261012",
+  "immutable_governance_inputs": [
+    {
+      "path": "tasks/CH5_SEALED_SOURCE_IDENTITY_RECOVERY_20261020/CONTRACT.md",
+      "source_commit": "4665c2e9e12b94cd2b94328e74ed42b186ca5003",
+      "bytes": 7434,
+      "git_blob": "3b68c95172b23ea68b7cc9c7cf3baa73cc8a52c9",
+      "sha256": null,
+      "sha256_rule": "Calculate standard-library hashlib.sha256 from actual input bytes at intake; not a frozen source hash"
+    },
+    {
+      "path": "tasks/CH5_SEALED_SOURCE_IDENTITY_RECOVERY_20261020/TASK_PARAMETERS.json",
+      "source_commit": "4665c2e9e12b94cd2b94328e74ed42b186ca5003",
+      "bytes": 5954,
+      "git_blob": "a4a43d87dbe96ef5ba7824a6569b24e7c89fa230",
+      "sha256": null,
+      "sha256_rule": "Calculate standard-library hashlib.sha256 from actual input bytes at intake; not a frozen source hash"
+    },
+    {
+      "path": "CURRENT.md",
+      "source_commit": "4665c2e9e12b94cd2b94328e74ed42b186ca5003",
+      "bytes": 1797,
+      "git_blob": "5f82e07f2ece361c1ee367926037d9ce19aab224",
+      "sha256": null,
+      "sha256_rule": "Calculate standard-library hashlib.sha256 from actual input bytes at intake; not a frozen source hash"
+    },
+    {
+      "path": "TASK_CURRENT.md",
+      "source_commit": "4665c2e9e12b94cd2b94328e74ed42b186ca5003",
+      "bytes": 1180,
+      "git_blob": "94e5cd04690061aa583a0425e313789fdc4ad39c",
+      "sha256": null,
+      "sha256_rule": "Calculate standard-library hashlib.sha256 from actual input bytes at intake; not a frozen source hash"
+    },
+    {
+      "path": "docs/DOC_INDEX_CURRENT.md",
+      "source_commit": "4665c2e9e12b94cd2b94328e74ed42b186ca5003",
+      "bytes": 1170,
+      "git_blob": "b39bb8f1e2dd02cfffa15d5a8332de941d265938",
+      "sha256": null,
+      "sha256_rule": "Calculate standard-library hashlib.sha256 from actual input bytes at intake; not a frozen source hash"
+    },
+    {
+      "path": "docs/CH5_PROJECT_MEMORY_CURRENT.md",
+      "source_commit": "4665c2e9e12b94cd2b94328e74ed42b186ca5003",
+      "bytes": 8639,
+      "git_blob": "2bdee8a9b7fd0b53285edb4f2e1e8d1c3136125e",
+      "sha256": null,
+      "sha256_rule": "Calculate standard-library hashlib.sha256 from actual input bytes at intake; not a frozen source hash"
+    }
+  ],
+  "source_original_sha256_expected": null,
+  "source_original_sha256_status": "UNFROZEN_COMPUTE_FROM_THREE_ACTUAL_FILES_NOT_63_HEX_PRIOR_CLAIMS",
+  "previous_invalid_frozen_source": "tasks/CH5_PUBLISHER_HTTP_FIX_SEALED_DELIVERY_ONLY_20261020/TASK_PARAMETERS.json",
+  "fixed_review_parent": "4ec6d1ba9b7f5754895dc1ebd0cef3057299e172",
+  "review_branch": "review/ch5-sealed-source-identity-20261020",
+  "temp_path": "_review_tmp/ch5/sealed-source-identity-20261020/",
+  "remote_allowlist": [
+    "result.md",
+    "manifest.json",
+    "evidence_sanitized.zip"
+  ],
+  "authority_rule": "Read live CURRENT/TASK_CURRENT/DOC_INDEX at one real governance commit. Read this manifest at its release commit. Read contract/parameters at issue_commit; verify blob and byte lengths; compute SHA256 with standard library. Live HEAD can advance.",
+  "safety_rule": "No old sealed 63 hex value is accepted as identity. No model, code repair, test rerun, source scratch writes, recursive repo tree, or auth bypass. New ZIP publication only after full member and privacy checks.",
+  "cleanup_rule": "Astra after archival final review and readback; PENDING preserves, no candidate N/A",
+  "science_budget": 0,
+  "code_modification_budget": 0
+}
