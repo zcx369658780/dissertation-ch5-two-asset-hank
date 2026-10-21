@@ -47,3 +47,7 @@ HA保持黑箱；TEMP Bellman观察原则不自动改变正式V010合同。科�
 - **交付与独立验证是不同状态**：Codex已完成GitHub自动上传、远端commit与原字节自检，不等于Astra在其独立运行环境完成ZIP全部成员SHA/CRC语义/隐私检查；反过来，Astra无法从连接器Base64把ZIP送进标准库，只能记`REVIEW_PENDING_IO`，**不能误写成Codex没有上传**、要求Codex重复推送或扩建发布器。
 - Astra优先按固定commit/path直接从GitHub原字节受支持通道验收；工具不能提供可运行标准库的完整原字节时，保留既有remote候选并暂停清理。仅作为**经Owner自愿选择的例外兜底**，可由Owner把同一候选ZIP原件上传到会话，必须先核其Git原生blob身份后再复算。不能把Owner手动中转改成常态工作流，不能要求为纯取证障碍重跑Codex或重签任务。
 - 终审PASS或CHANGES_REQUIRED归档回读后仅用普通non-force精确删除当前review分支当前树三文件、逐文件404及diff回读；Git历史不会被删除，因此脱敏门仍是发行前硬门。PENDING时不删。
+
+
+## 2026-10-22 TEMP参数探索的Owner逐轮人工决策门
+仅在Owner明确批准的冻结合同中，Codex可自动运行单ARM的前10外层迭代并按**先验阈值**安全地延至最多20轮；完成本轮任务后`ACTIVE_TASK=NONE`，Astra必须先独立审查逐省价格触界/企业—家庭投入表，与Owner**讨论并获得下一组参数的独立明示批准**才能签下一任务。严禁自动扩宽N序列、调整Zt/GovInv初值/HA内部、放宽边界，或把价位接近clip错称成正式稳态。完整研究协议见[半自动路线](CH5_TEMP_SEMIAUTO_N_DIAGNOSTIC_ROADMAP_20261022.md)。原GitHub三文件自动交付、限域机验和清理规则不变，平台写入拦截不能靠更换认证等绕过。

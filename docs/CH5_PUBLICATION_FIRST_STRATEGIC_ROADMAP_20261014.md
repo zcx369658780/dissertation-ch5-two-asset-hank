@@ -39,3 +39,7 @@ IMPLEMENTATION_CODE_PARENT=`a1db8c114dec0ab69d69a5576e153a7f868cba0e`，只是�
 旧2026-10-14路线全文保留在db2c2e289419ecab7921667e210bd510ff3c447b，纠偏同步阶段在916e2b47d3489f6eacd814b55cc568d92be4c9fb同路径。本次不改任何已冻结版本/历史接受，也不要求覆盖原16文档镜像。
 
 真实C8/C9与旧预算、A16/window/CALL_LEDGER/Results、原worktree与B3保护不变；不借路线恢复重开真实数据或调用。V1.2工作流保持。
+
+
+## 2026-10-22 最新Owner路线覆盖：TEMP半自动N诊断（优先历史ACTIVE描述）
+正式M1部分完成、M2稳态未通过、M3/M4无新Results，V010不变。Owner决定研究先于继续扩建旧控制器：单次只调人口规模N，固定当前TEMP两省可认证来源，10轮观察，若前10轮无明确恶化且安全合格则同一任务扩至最多20轮；记录每省企业raw/used工资与ra边界、家庭wt/rah参考带、Zt/Kt/Lt与At/劳动供给的单位对照。每次独立验收后先Owner讨论，不自动签下一组N/Z/约束。详见[2026-10-22 TEMP半自动N路线](CH5_TEMP_SEMIAUTO_N_DIAGNOSTIC_ROADMAP_20261022.md)。本段不变更正式V010方程、Results=False及生产GLOBAL_STOP=UNVERIFIED。GitHub原B-only Review永久归档此前遇平台阻断，未完成清理，必须继续保留。

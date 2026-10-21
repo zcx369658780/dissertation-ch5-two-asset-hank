@@ -75,3 +75,7 @@
 ## 权威保护
 
 Owner既有C盘独立SSD备份与GitHub备份足够；Codex以现有SSH Key经443路径（仅当前发布任务许可）。原保护D:/ProjectTemp/c5k1bturn56之8 dirty/index/staged/untracked/ignored、外Git common-dir、全部旧失败原证/C盘备份/真实C8/2017/2018/B3与V009错误数组不可触写。远端_review_tmp/ch5/<task-id>/仅允许在独立GitHub review tree，不进入本地工作树/index；旧科学账、首次GBK超额、A16 FAIL_CLOSED、window UNACCEPTED、C9 PAUSED、CALL_LEDGER UNRESOLVED、real C8 REQUEST_ONLY、Results FALSE、V011 NOT_STARTED均原样保护。GitHub文档状态不等于本地QMD/Basic Memory实际同步。
+
+
+## 2026-10-22 进度覆盖：TEMP半自动参数窗口是M2研究预筛，不是M2稳态PASS
+已接受两省100轮为`OWNER_100_ROUND_LIMIT_NONCONVERGED`（末轮KN gap0.1075218256230952、Y gap0.012719310966908814，厂商工资和收益全部100/100轮触界）；初级价格桥A0-A3样本不可比，Ledger派生修复仅隔离fixture PASS/未部署、真实supervisor/reader和production STOP未证。最新B-only GitHub精确Blob四件读取及12件公开审阅ZIP取得限域PASS，但GitHub最终归档仍被平台写入安全门阻断。Owner把下一科学方向定为同源双省人口N缩放0.5的10轮/有界20轮诊断，重点报各省`wt/rah`与企业`wt0/wjt,ra0/ra`不同定义及上下界变化、Zt/Kt/Lt和家庭At/实际劳动供给的量纲桥；逐次Astra审查之后必须Owner讨论决定下一方向。详见[研究协议](CH5_TEMP_SEMIAUTO_N_DIAGNOSTIC_ROADMAP_20261022.md)。V010 scientific math冻结、真实31省/GE/IRF未授权、Results FALSE，M2不能因观察了10/20轮升级稳态。
