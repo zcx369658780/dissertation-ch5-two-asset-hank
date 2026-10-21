@@ -1,0 +1,39 @@
+# CH5 TEMP V010 宏观约束与真实账本源码门 —— 独立审查检查点（非终审）
+
+审查日期：2026-10-21
+TASK_ID=CH5_TEMP_V010_MACRO_CONSTRAINT_PRODUCTION_LEDGER_SOURCE_GATE_20261021
+RUN_ID=62b125e43d734729aca0782104d9df6b
+ORIGINAL_CODEX_TERMINAL=WAIT_ASTRA_TEMP_MACRO_LEDGER_SOURCE_GATE_REVIEW
+MAIN_REVIEW=REVIEW_PENDING_IO
+IS_TERMINAL_REVIEW=FALSE
+PASS_NOT_GRANTED=TRUE
+CHANGES_REQUIRED_NOT_ISSUED=TRUE
+
+## 固定对象与独立核验
+- 治理发行HEAD在本次审查开始为`ca51ebdacfa27816d1398b6a3dcabfc058b74c47`；目标review ref `review/ch5-temp-macro-ledger-source-gate-20261021`真实指向`94d2a65a518d843853127ee4de924095c54d3736`；候选tree=`099eaf1bab9a51e1ee2daa6c912f8dacf1f4e244`，唯一parent=`727eea690f86c909770c94858acc35c1906b1529`，与冻结任务固定父一致。
+- GitHub compare：ahead=1, behind=0，且只新增`_review_tmp/ch5/temp-macro-ledger-source-gate-20261021/`下 result.md、manifest.json、evidence_sanitized.zip三条白名单。三文件Git Blob分别为 `1a76bca587044a1bd8981feb5f3fb79a91fdcf6b`、`40b036d6888e73a97c6b4d0c91e82a2f8863c447`、`6616eabb144e56a093a28675e8f6c4f91b11cdfd`。
+- 已读取result.md、manifest.json文本；GitHub connector可返回ZIP Base64（无空白后29932字符、推算22448字节，与manifest声明一致），但当前独立审阅环境无法将全部Base64原字节无损移交至可运行Python标准库zipfile/hashlib的通道；本轮没有完成ZIP整体SHA256=`dc8898c660a82a30d8976a761aaacd1558f660006aa7ae72866783703bc97148`及16/16成员CRC、长度、SHA256独立复核。取得Git Blob及Base64长度本身不等于二进制完整性PASS。
+- 公共manifest共有16项source_identity，16项成员清单均具合法格式的CRC32/SHA256/bytes字段；名称唯一，无明显遍历/绝对路径。清单声明解压总量45034字节。以上仅`MANIFEST_SCHEMA_PASS`；内容和逐成员隐私未独立检查。
+- Owner报告最终JSON回执原字节4181、SHA256=`8a719d5a49a55f3a30627814b245b9198f735798b4885136f546d1471e7a7f9b`及退出chunk_id=ad1320/exit_code=0。本轮未自行对该完整Base64做字节SHA复算，不称为Astra证实。
+- 另两旧review ref `4e05976bbc8068b971ba5915133e9a6c3b73193d`及`1579e7f1d7a1975c322dd6ae9af1776e88e83e7c`在审查时均仍存在。本轮未改变任何review分支。
+
+## 科学静态独立核验与证据等级
+- 2026-10-18已接受的历史100轮来源分析提供第100轮K约2278.055/2668.517、rk约0.409584/0.452239、delta=0.025、ra_used上界0.09。
+- 在**固定当轮K、rk对应的观测GDP**这一静态条件下复算`K_req = K*rk/(0.09+0.025)`，得到8113.520688与10493.977909。该结果与Codex本轮报告8113.520688/10493.977909一致；对比此前按固定目标GDP得到约7708/9867，其不同是Y条件差别，不是矛盾。两项都只是CONDITIONAL_STATIC_IDENTITY，不是新稳态或100轮非收敛因果证明。
+- 真实ledger旧独立审查已确认A1的11条events而checkpoint只到seq9、A2/A3各25条，且`WinError5`导致原子replace失败、E2 STOP传播迟滞。Codex本轮表示12份有限选定源文本/66401解码字节、61/61事件链复核，并指出`current.next`恢复、`E2_`文本分类静态风险；这些新增源码定位仍在ZIP未独立取得的报告成员中。本轮**没有独立认证生产代码语义、没有复现生产WinError5的唯一根因，也未执行真实HA**。
+- 不能把已接受历史审查与本轮新源码自检混称为“本轮所有静态源码已审阅”。
+
+## 分层裁决
+artifact_integrity=GIT_CANDIDATE_DIFF_AND_MANIFEST_FORMAT_PASS__ZIP_RAW_NOT_COMPLETED
+science_macro=CONDITIONAL_STATIC_CAPITAL_FORMULA_INDEPENDENTLY_RECOMPUTED__NO_CAUSAL_IDENTIFICATION
+implementation_review=PRODUCTION_LEDGER_SOURCE_MEMBERS_NOT_INDEPENDENTLY_READ
+privacy_review=CODEX_DECLARATION_ONLY__NOT_MEMBER_VERIFIED
+delivery=REMOTE_CANDIDATE_CONFIRMED__ZIP_MEMBER_ORIGINAL_BYTES_PENDING
+cleanup=PENDING_RETAINED__NO_DELETE
+not_completed=ZIP_WHOLE_SHA256;ZIP_16_MEMBER_CRC_SHA_SIZE;MEMBER_PRIVACY;PRODUCTION_LEDGER_STATIC_CODE_IN_ZIP;EXTERNAL_FINAL_RECEIPT_RAW_BYTES
+fetch_seconds=UNKNOWN
+integrity_seconds=UNKNOWN
+semantic_seconds=UNKNOWN
+archive_cleanup_seconds=UNKNOWN
+
+本文件只归档非终审检查点，**不能触发终审后清理**。缺失的是当前审阅工具的受支持二进制文件入口，不构成明确候选缺陷；不得为此自动要求Codex重新跑16成员封存、模型/科研预算、老账本或新通用发布器工作。待具备已授权原字节通道时按相同固定commit恢复同一轮独立机器核验；已证Git身份和历史来源判定可复用。正式 V010、model_activation=False、REAL_GE=False、Results=FALSE、V011=NOT_STARTED、FULL_RUNNER_IO_CLOSURE=BLOCKED，科研预算0。
