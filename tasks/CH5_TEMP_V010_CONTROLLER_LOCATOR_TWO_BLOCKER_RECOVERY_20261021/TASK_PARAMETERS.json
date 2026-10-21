@@ -1,0 +1,287 @@
+{
+  "schema": "ch5.temp_v010.two_blocker_locator_recovery.v1",
+  "task_id": "CH5_TEMP_V010_CONTROLLER_LOCATOR_TWO_BLOCKER_RECOVERY_20261021",
+  "revision": "ISSUED_20261021_R1",
+  "approved_by_owner": "2026-10-21: bounded recovery of Windows inode comparison/observation flush and GitHub tasks listing overfetch, no broad provenance continuation",
+  "repository": "zcx369658780/dissertation-ch5-two-asset-hank",
+  "governance_branch": "migration/astra-workflow-20261012",
+  "baseline_commit": "5090d84c1cb4ae03b12a230b984bb312de92afeb",
+  "historical_task": {
+    "task_id": "CH5_TEMP_V010_CONTROLLER_SOURCE_PROVENANCE_LOCATOR_GATE_20261021",
+    "run_id": "bb28bb74ec6f46c78287d82937eb1209",
+    "terminal": "STOP_RESOURCE_GITHUB_DIRECTORY_METADATA_LIMIT_EXCEEDED",
+    "status": "CLOSED_NOT_PASS",
+    "old_budget_carry_forward": 0,
+    "prior_review_candidate": "NONE"
+  },
+  "exact_git_pins": [
+    {
+      "path": "docs/CH5_TEMP_V010_CONTROLLER_SOURCE_PROVENANCE_RESOURCE_STOP_INDEPENDENT_REVIEW_20261021.md",
+      "blob": "626544b0ca0795de2c68898db418091b18814f93"
+    },
+    {
+      "path": "docs/CH5_MANDATORY_REVIEW_DELIVERY_AND_CLEANUP_20261019.md",
+      "blob": "43a865d830898b1bd7714b9165440682b2559d4e"
+    },
+    {
+      "path": "docs/CH5_REVIEW_TASK_TEMPLATE_CURRENT.md",
+      "blob": "28fce3ca1802b463f03d5046efa1866ab2f2155c"
+    },
+    {
+      "path": "tasks/CH5_TEMP_V010_CONTROLLER_SOURCE_PROVENANCE_LOCATOR_GATE_20261021/CONTRACT.md",
+      "blob": "89c953cb0ed4f8e5f82eea0486a1a7b845910bd3"
+    },
+    {
+      "path": "tasks/CH5_TEMP_V010_CONTROLLER_SOURCE_PROVENANCE_LOCATOR_GATE_20261021/TASK_PARAMETERS.json",
+      "blob": "dec4b2af86710fb4529f537643d3b70d7ccf7c0b"
+    },
+    {
+      "path": "tasks/CH5_TEMP_V010_CONTROLLER_SOURCE_PROVENANCE_LOCATOR_GATE_20261021/ISSUE_MANIFEST.json",
+      "blob": "92ddcee91f89ee014c6e33c7bdb64d6734b8e97d"
+    }
+  ],
+  "frozen_source_background": {
+    "private_archive_sha256": "f3e8984fe4d2ef4be65692c27fa7594d96b870d372a8c45d029899f7891841d8",
+    "old_private_archive_check": "PRIOR_CODEX_REPORTED_PASS__NO_NEW_READ_AUTHORIZED",
+    "prior_github_tasks_response": "CODEX_REPORTED_400_DIRECTORY_ENTRIES_EXCEEDED_64",
+    "prior_local_metadata": "DirEntry.st_ino=0 versus Path.stat.st_ino!=0 on owned observation; source scan coverage NOT_FLUSHED_UNKNOWN",
+    "failed_run_private_receipts": "READ_ONLY_PRIOR_FACTS_DO_NOT_SEARCH_OLD_SCRATCH"
+  },
+  "authorized_execution": {
+    "exact_new_scratch": "D:\\ProjectTemp\\ch5_temp_v010_controller_locator_two_blocker_recovery_20261021_01",
+    "trusted_parent": "D:\\ProjectTemp",
+    "must_be_absent_before_bootstrap": true,
+    "protected_roots_metadata_only": [
+      "D:\\ProjectTemp\\c5k1bturn56",
+      "D:\\ProjectTemp\\ch5_temp_pricebridge_2x2_100_20261018_01",
+      "D:\\ProjectTemp\\ch5_temp_v010_controller_source_locator_20261021_01",
+      "D:\\ProjectTemp\\ch5_temp_v010_ledger_safe_integration_crossprocess_20261021_01",
+      "D:\\ProjectTemp\\ch5_temp_v010_ledger_minimal_repair_nonha_20261021_01"
+    ],
+    "git_locator": {
+      "cwd": "D:\\ProjectTemp\\c5k1bturn56",
+      "environment": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "exact_commands": [
+        [
+          "git",
+          "rev-parse",
+          "--absolute-git-dir"
+        ],
+        [
+          "git",
+          "rev-parse",
+          "--git-common-dir"
+        ],
+        [
+          "git",
+          "rev-parse",
+          "--git-path",
+          "index"
+        ]
+      ],
+      "before_after_shas": true
+    },
+    "readonly_old_directory_probe": {
+      "exact_root": "D:\\ProjectTemp\\ch5_temp_pricebridge_2x2_100_20261018_01",
+      "one_exact_root_metadata_only": true,
+      "child_enumeration_max": 0,
+      "old_file_content_reads": 0
+    },
+    "write_scope": "ONLY_NEW_SCRATCH_PLUS_EXACT_GITHUB_REVIEW_3",
+    "no_original_task_resume": true,
+    "no_old_budget_mutation": true
+  },
+  "repair_A_windows_metadata": {
+    "platform": "Windows local isolated stdlib only",
+    "first_step": "Before any inode comparison, serialize raw DirEntry and canonical Path stat observations to append-only new scratch journal, flush+os.fsync and record sequence/id/cursor. Preserve original values including zero inode, errors and UNKNOWN.",
+    "probes": "One synthetic owned normal file, one owned directory, one owned symlink/reparse negative if safe and supported, and exact known old root metadata-only no child enumeration; bounded tests only",
+    "source_invariant": "Never assert equality across different Windows inode APIs as proof of identical object. Detect missing or zero/unreliable IDs as UNKNOWN, use one canonical identity acquisition interface and an owned file handle when available; verify no reparse escape, regular-file type, stable before/after identity and optional hash ONLY for synthetic owned test files.",
+    "fail_closed": "If stable protected identity cannot be established do NOT read old candidates, STOP_UNSAFE_IDENTITY; never skip symlink/reparse check or treat size+mtime alone as identity or evidence of immutable bytes.",
+    "journal_expected": [
+      "precheck_and_raw_values.jsonl",
+      "precheck_cursor_checkpoints.json",
+      "identity_decision_matrix.json",
+      "owned_probe_source.py",
+      "synthetic_probe_results.json",
+      "first_error_capture.json"
+    ],
+    "negative_conditions": [
+      "DirEntry.st_ino=0 and Path.stat.st_ino>0",
+      "symlink or reparse root escape",
+      "changed synthetic owned file between checks",
+      "forced capture write failure",
+      "unknown field and noncomparable source"
+    ],
+    "progress_atomicity": "Capture before assertion, fsync, then judge; if journal fsync fails STOP without claiming coverage; resume not authorized."
+  },
+  "repair_B_github_exact_objects": {
+    "forbidden_prefixes": [
+      "tasks",
+      ""
+    ],
+    "forbidden_actions": [
+      "GET /contents/tasks",
+      "list_directory(tasks)",
+      "root tree recursive=1",
+      "paginated 400 entry payload then truncate to 64",
+      "any broad metadata call with uncertain upper bound"
+    ],
+    "exact_file_fetches": [
+      {
+        "path": "tasks/CH5_TEMP_V010_CONTROLLER_SOURCE_PROVENANCE_LOCATOR_GATE_20261021/CONTRACT.md",
+        "ref": "5090d84c1cb4ae03b12a230b984bb312de92afeb",
+        "git_blob": "89c953cb0ed4f8e5f82eea0486a1a7b845910bd3"
+      },
+      {
+        "path": "tasks/CH5_TEMP_V010_CONTROLLER_SOURCE_PROVENANCE_LOCATOR_GATE_20261021/TASK_PARAMETERS.json",
+        "ref": "5090d84c1cb4ae03b12a230b984bb312de92afeb",
+        "git_blob": "dec4b2af86710fb4529f537643d3b70d7ccf7c0b"
+      },
+      {
+        "path": "tasks/CH5_TEMP_V010_CONTROLLER_SOURCE_PROVENANCE_LOCATOR_GATE_20261021/ISSUE_MANIFEST.json",
+        "ref": "5090d84c1cb4ae03b12a230b984bb312de92afeb",
+        "git_blob": "92ddcee91f89ee014c6e33c7bdb64d6734b8e97d"
+      },
+      {
+        "path": "docs/CH5_TEMP_V010_CONTROLLER_SOURCE_PROVENANCE_RESOURCE_STOP_INDEPENDENT_REVIEW_20261021.md",
+        "ref": "5090d84c1cb4ae03b12a230b984bb312de92afeb",
+        "git_blob": "626544b0ca0795de2c68898db418091b18814f93"
+      }
+    ],
+    "max_exact_file_fetches": 4,
+    "max_successful_response_objects": 4,
+    "max_total_decoded_content_bytes": 45000,
+    "content_policy": "Require exact pinned full path and ref, returned kind file and expected Git blob, single response object, no directory listing; if tool can't guarantee bounded kind/size before request use direct precise Git blob fetch by known 40-char SHA only; no guessing missing identities.",
+    "replay_prior_error": "Static reference only to Codex 400 count; do not repeat the failing tasks listing or reinterpret response truncation as compliance.",
+    "report_expected": [
+      "exact_file_fetch_log.json",
+      "response_type_count_and_blob_readback.json",
+      "blocked_tasks_prefix_policy.md",
+      "safe_fixed_path_reader_source.py"
+    ],
+    "fail_closed": "Provider returns directory/list/unknown type or >1 object, over-size, wrong blob, or HTTP denial => STOP; no requery/cross-channel bypass; respect all existing platform controls."
+  },
+  "acceptance": {
+    "target": "TWO_BLOCKER_RECOVERY_READY_FOR_NEW_OWNER_DECISION__NO_ORIGINAL_LOCATOR_CONTINUATION",
+    "A_requirements": [
+      "Owned synthetic Windows mismatch reproduces or is categorized no-repro honestly",
+      "raw observations and cursor are fsync-persisted before identity assertion",
+      "zero inode across APIs neither hard false-negative nor silently accepted",
+      "symlink/reparse/changed contents fail closed",
+      "no historical root scan/reads"
+    ],
+    "B_requirements": [
+      "All allowed GitHub requests exact file or exact Git blob only",
+      "no request to /tasks directory",
+      "fixed SHA and path/commit identities compare",
+      "≤4 single-file response objects and ≤45000 decoded bytes",
+      "no historical source scan resumed"
+    ],
+    "source_status": "REAL_SUPERVISOR_READER_SOURCE_UNVERIFIED__P2_P3_P4_NOT_RESUMED",
+    "old_tasks_state": "CLOSED_RESOURCE_STOP__NEVER_REOPEN",
+    "failure_handling": "If cannot prove preflight request size/type, stop with exact blocker; do not claim PASS from mere unit mocks; no automatic scope/budget extension.",
+    "deliver_in_zip": [
+      "recovery_scope_and_old_stop_identity.md",
+      "windows_metadata_original_values_and_cursor.jsonl",
+      "identity_decision_matrix.json",
+      "synthetic_windows_probe_source.py",
+      "synthetic_windows_probe_results.json",
+      "exact_github_file_fetch_log.json",
+      "github_single_object_preflight_and_blob_checks.json",
+      "safe_exact_github_reader_source.py",
+      "first_errors_and_resource_ledger.json",
+      "privacy_protection_and_readiness.md"
+    ]
+  },
+  "budgets": {
+    "total_wall_seconds": 7200,
+    "verification": {
+      "wall_seconds": 900,
+      "python_starts_max": 4,
+      "direct_starts_max": 14,
+      "E1_batches": 1
+    },
+    "engineering": {
+      "wall_seconds": 3900,
+      "python_starts_max": 16,
+      "direct_starts_max": 54,
+      "git_exact_get_max": 10,
+      "old_root_metadata_reads_max": 2,
+      "E1_batches": 3,
+      "owned_process_starts_max": 2
+    },
+    "delivery": {
+      "wall_seconds": 1800,
+      "python_starts_max": 7,
+      "direct_starts_max": 32,
+      "api_mutations_max": 7,
+      "E1_batches": 2,
+      "successful_publications_max": 1
+    },
+    "global": {
+      "max_exact_read_only_GET": 30,
+      "max_new_nongit_bytes": 16777216,
+      "git_object_storage_max_bytes": 268435456,
+      "finalization_reserve_seconds": 180
+    },
+    "science_calls": {
+      "HA": 0,
+      "HJB": 0,
+      "KFE": 0,
+      "GE": 0,
+      "IRF": 0,
+      "scientific_drivers": 0,
+      "model_runner": 0
+    },
+    "old_budget_carryforward": 0
+  },
+  "delivery": {
+    "auto_github_upload": true,
+    "review_branch": "review/ch5-temp-controller-locator-two-blocker-recovery-20261021",
+    "fixed_parent": "5090d84c1cb4ae03b12a230b984bb312de92afeb",
+    "temp_path": "_review_tmp/ch5/temp-controller-locator-two-blocker-recovery-20261021/",
+    "exact_only_three": [
+      "result.md",
+      "manifest.json",
+      "evidence_sanitized.zip"
+    ],
+    "byte_caps": {
+      "result": 65536,
+      "manifest": 196608,
+      "zip": 1048576,
+      "expanded": 2097152,
+      "members": 25
+    },
+    "method": "EXISTING_AUTHORIZED_EXACT_GIT_DATA_API_FIRST",
+    "no_force": true,
+    "no_root_recursive": true,
+    "policy_rejections": "STOP_ON_401_403_429_OR_POLICY_REJECT_WITHOUT_CHANNEL_SWITCH",
+    "readback": "exact 3 remote bytes, SHA256, ZIP all member CRC/length/SHA, full original final receipt and separate controller completion event",
+    "cleanup": "Astra terminal review and archive readback, then exact nonforce 3-path removal; PENDING preserves",
+    "older_reviews_untouched": [
+      "4e05976bbc8068b971ba5915133e9a6c3b73193d",
+      "1579e7f1d7a1975c322dd6ae9af1776e88e83e7c"
+    ]
+  },
+  "forbidden": {
+    "wide_tasks_directory_query": 0,
+    "recursive_git_root_tree": 0,
+    "resume_old_task_budget": 0,
+    "run_P3_or_P5_controller_provenance": 0,
+    "read_other_old_dirs": 0,
+    "read_old_science_archive": 0,
+    "read_old_journal": 0,
+    "production_run": 0,
+    "real_HA_call": 0,
+    "HA_import": 0,
+    "model_equation_edit": 0,
+    "create_stop_fixture": 0,
+    "production_deploy": 0,
+    "new_dependency_install": 0,
+    "global_codex_sessions_read": 0,
+    "old_review_cleanup": 0
+  },
+  "planned_stop": "WAIT_ASTRA_TWO_BLOCKER_RECOVERY_REVIEW"
+}
