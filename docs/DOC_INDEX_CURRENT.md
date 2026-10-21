@@ -19,3 +19,6 @@ ACTIVE_TASK=NONE。最后执行的两阻断恢复任务A仅Codex受控合成测�
 - [项目长期记忆](CH5_PROJECT_MEMORY_CURRENT.md)
 V010冻结、Results FALSE、V011未启动、HA/GE/IRF预算0，生产supervisor/reader和全局STOP不曾认证。
 
+
+## R2发行技术勘误（本轮有效执行入口）
+原任务R1已在正式执行前发现Git Blob头NUL字节书写歧义，**未修改R1合同/参数/原发行manifest**。有效执行源为R1合同+R1参数+[R2勘误](../tasks/CH5_TEMP_V010_GITHUB_EXACT_OBJECT_TRANSPORT_RECOVERY_20261021/REVISION_R2_CORRECTION.md)+[R2发行清单](../tasks/CH5_TEMP_V010_GITHUB_EXACT_OBJECT_TRANSPORT_RECOVERY_20261021/ISSUE_MANIFEST_R2.json)，R2仅纠正Git Blob字节公式，其他科学/工程预算和Review身份不变。前一次`8f3e1adf95b3ebfd404c0448f00e678a4098ab35` R1发行现在仅为历史；Codex应以本次R2 live release确认任务有效版本。
