@@ -1,0 +1,21 @@
+# CH5 TEMP V010跨进程STOP无HA门 · 终审后精确清理回执
+TASK_ID=CH5_TEMP_V010_LEDGER_SAFE_INTEGRATION_CROSS_PROCESS_GATE_20261021
+RUN_ID=42f4abb91e7146a397d2a33403e75dbd
+ASTRA_VERDICT=PASS__BOUNDED_SOURCE_STATIC_AND_COOPERATING_CROSS_PROCESS_FIXTURE_EVIDENCE
+CODEX_TERMINAL=DELIVERY_BLOCKED_REMOTE_RAW_BYTE_READBACK_UNRESOLVED
+CLEANUP=TEMP_CLEANUP_VERIFIED
+FORMAL_REVIEW=docs/CH5_TEMP_LEDGER_SAFE_INTEGRATION_CROSS_PROCESS_FINAL_INDEPENDENT_REVIEW_20261021.md
+REVIEW_ARCHIVE_COMMIT=803d097d95f6434e3f09bc8be1f9f82b0be5f2ab
+REVIEW_BRANCH_CLEANUP_COMMIT=2d160b53dfd320a35e75635022fca38a2fdc677f
+
+## 审阅通过与真实界限
+Owner自愿上传相同Git Blob的42,773B ZIP，Astra以Python标准库核SHA256 a3f8247d0099f334382174ddf1403f039880c348f0f6cc6fdacb0742c6868ba6、原生Git Blob 76a8b7bbf8b460b52c743a6a686ca12b0f907daa，并逐成员复核23/23 CRC32、长度与SHA256，全部对应固定GitHub manifest。X1-X6公开源码、Windows跨进程锁事件、完整STOP ACK时序、原type fault与Fail-closed、私有源census以及逐项公开隐私均获得Astra范围内的限域审阅。历史私人原source/patch全AST、Windows实际重跑、本机kernel读写未由Astra另行执行；Codex原remote readback失败且根因UNKNOWN不能改写。
+真正的supervisor/reader源码未找到，原run只有静态接线，生产级GLOBAL_STOP未验证。X2/X3 PASS仅属于cooperating task-owned independent-process fixture；HA/GE/IRF及A1-A3为0/NOT_AUTHORIZED，补丁NOT_DEPLOYED。
+
+## 先归档、再清理、最后回读
+1. Astra先归档`docs/CH5_TEMP_LEDGER_SAFE_INTEGRATION_CROSS_PROCESS_FINAL_INDEPENDENT_REVIEW_20261021.md`及治理导航、记忆于`803d097d95f6434e3f09bc8be1f9f82b0be5f2ab`，远端HEAD及五份Git Blob回读身份PASS。
+2. 回读时Review分支 `review/ch5-temp-ledger-safe-integration-gate-20261021`仍是固定candidate`e08fb30bbca028aa4cb495b1dba7a54729783241`、tree`69c0d110ce33f1f9b2506aad165a1484d6694848`、唯一parent`48d39c23b912ad4704e5ea10781ab993081c44a1`。
+3. 仅删除`_review_tmp/ch5/temp-ledger-safe-integration-gate-20261021/`下`result.md`、`manifest.json`、`evidence_sanitized.zip`三个精准路径，构建cleanup tree `bd9608c013d3b8da520cdf4d2131f5dccc01c22d`；单parent为原candidate的提交`2d160b53dfd320a35e75635022fca38a2fdc677f`，expected SHA匹配的正常non-force review branch更新。
+4. GitHub比较candidate→cleanup恰有3条`removed`，分别为上述白名单文件，且对清理commit的三次path fetch均返回404。删除当前tree**不擦除Git对象历史**。
+5. 之前两条review ref完全未变：`review/ch5-temp-price-ledger-precondition-20261021` → `4e05976bbc8068b971ba5915133e9a6c3b73193d`、`review/ch5-http-object-evidence-20261020` → `1579e7f1d7a1975c322dd6ae9af1776e88e83e7c`，仍为REVIEW_PENDING_IO。
+无生产部署、无科学预算恢复、无新任务自动签发。
