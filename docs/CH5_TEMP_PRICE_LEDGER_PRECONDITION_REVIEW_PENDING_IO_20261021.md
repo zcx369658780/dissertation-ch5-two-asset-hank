@@ -1,0 +1,52 @@
+# CH5 TEMP V010 A+B — 已发布候选的Astra独立审查检查点（非终审）
+
+审查日：2026-10-21
+TASK_ID=CH5_TEMP_V010_PRICE_ATTRIBUTION_LEDGER_PRECONDITION_20261021
+RUN_ID=f619d7ce43a94088ab9b20ac0be1c45c
+CODEX_PLANNED_STOP=WAIT_ASTRA_TEMP_PRICE_LEDGER_PRECONDITION_REVIEW
+CODEX_ACTUAL_STATE=EXECUTION_REPORTED_COMPLETE__REMOTE_CANDIDATE_PUBLISHED
+ASTRA_MAIN_REVIEW=REVIEW_PENDING_IO
+ASTRA_TERMINAL_PASS=NOT_GRANTED
+ASTRA_TERMINAL_CHANGES_REQUIRED=NOT_ISSUED
+REVIEW_NOT_TERMINAL=TRUE
+
+## 一、独立GitHub对象身份与exact diff（PASS）
+- 治理分支在审查开始时为`cf3f3119da887667ea1f7dfa38446ec5108ef3d3`。
+- 当前候选review ref `review/ch5-temp-price-ledger-precondition-20261021` 指向`4e05976bbc8068b971ba5915133e9a6c3b73193d`。
+- 精确candidate commit `4e05976bbc8068b971ba5915133e9a6c3b73193d`，tree `7999e830b5024a7783319b41618c80d35d89fcd5`，唯一parent `a48137c03cebaa4c5e4090a7880ae170a1bb1aca`。
+- GitHub compare证明仅比固定parent ahead 1 / behind 0、恰新增三个文件，无其它变更：
+  `_review_tmp/ch5/temp-price-ledger-precondition-20261021/result.md`；
+  `_review_tmp/ch5/temp-price-ledger-precondition-20261021/manifest.json`；
+  `_review_tmp/ch5/temp-price-ledger-precondition-20261021/evidence_sanitized.zip`。
+- 三文件Git blob分别为`011236fe3abe7784df432288fdca2b4155146562`、`9af0b8f6ec03c179aceee8de340ef913374c3f53`、`67453ba92179099fa45e72ea12dfe0018bbaffbf`。取得result和manifest文本，ZIP取得base64编码响应，但在当前工具链没有授权的可直接将该53KB base64原件交给标准库zipfile/hashlib的字节通道。**原字节二进制ZIP未由Astra独立SHA/CRC复算。**
+- 另一已存在的 `review/ch5-http-object-evidence-20261020` 在审查时仍指向 `1579e7f1d7a1975c322dd6ae9af1776e88e83e7c`；本次没有变更/清理。
+
+## 二、可审计的公开清单结构（LIMITED_PASS）
+- 远端`manifest.json`声明run_id与任务一致；包含18项source_identity，其中6项治理、12项科研来源（6文档、5静态源码、1历史合同），各项SHA256与Git Blob字段格式合法。
+- 公开ZIP登记19成员，声明展开合计106592字节，全部19个成员路径不含遍历/绝对路径，名称及小写映射唯一，每项具备字节长度、CRC32和64位SHA256字段；这是清单结构检查，尚未取得每个成员原始内容重算。
+- ZIP经GitHub文件接口以base64响应，移除空白后编码推导原文件长度39475字节，与manifest登记一致。此**不证明ZIP原SHA256 `71e0f8bd87b919b444de4930948a885835532e7c43a386cb065a5e1f0b2fde9b`或19成员SHA/CRC**。
+- result.md原文明确SOURCE_ONLY和PRODUCTION_UNVERIFIED边界。manifest的science_calls均为0、engineering_python_starts=17、engineering_direct_starts=72，均属Codex自报并在冻结预算内；kernel_descendants/OS_threads UNKNOWN，不改写为0。
+- Codex外部最终回执原始JSON仅以本轮Owner摘要说明bytes=18615、SHA256=839f159b7fa7ca0080de3f292b46efef27152e5a3a74ecf7f3e31e964bc6aa5e，未在本轮独立获得其完整原始Base64进行字节复算，不能写RECEIPT_RAW_PASS。
+
+## 三、阶段A经济学边界
+Codex报告：13项价格来源矩阵与7项纯代数检查、12份固定科研来源身份检查；raw ra0/ra_used/rah、wt0/wjt、lagged same-S、目的地税后工资及财政补偿差异。此前已接受`docs/CH5_TEMP_V010_RA_BOUNDARY_SOURCE_ONLY_FORENSIC_20261018.md`显示原100轮收益及工资长期触界，静态价格来源差异明确；但**本轮的矩阵、公式代码、结果及静态源码摘录在ZIP内，未逐原字节取得，不授予Astra独立语义PASS**。原TEMP桥/HA入口/100轮原轨迹不在这张任务白名单，Codex将其标未观察，是符合证据边界的报告。
+PRICE_BRIDGE_CAUSES_100_ROUND_NONCONVERGENCE=UNPROVEN。
+
+## 四、阶段B工程边界
+Codex报告6组合成ledger测试、7个自有helper回收、持读句柄的两种情形均真实触发WinError5、释放后成功、模拟E2 STOP约16ms，后续惯性入口0；2次E1修正纯公式常量与嵌套JSON脱敏。相关Python源码、test结果、诊断轨迹属于19成员原件，Astra本轮未取得ZIP中对应实际字节。因此不能把Codex自检升级为审阅方确证。
+PRODUCTION_LEDGER=PRODUCTION_UNVERIFIED，不能推断历史WinError5唯一根因、真实共享ledger已修复或A1-A3正式科学执行许可。
+
+## 五、分层裁决与尚缺
+artifact_integrity=GIT_CANDIDATE_IDENTITY_PASS__MANIFEST_SCHEMA_PASS__ZIP_RAW_SHA_CRC_NOT_COMPLETED
+semantic_economic_review=HISTORICAL_CONTEXT_SUPPORTS_DIRECTION__NEW_STAGE_A_EVIDENCE_NOT_READ
+implementation_review=STAGE_B_TEST_CODE_AND_TRACES_NOT_READ
+privacy_review=CODEX_SELF_REPORTED_PER_MEMBER_PASS__ASTRA_NOT_VERIFIED
+delivery=REMOTE_COMMIT_AND_EXACT_THREE_FILES_CONFIRMED__INDEPENDENT_ZIP_RAW_BYTES_PENDING
+cleanup=PENDING_RETAINED__DO_NOT_DELETE
+not_completed=ZIP_FULL_ORIGINAL_BYTES_SHA256;ZIP_19_MEMBER_CRC_SIZE_SHA256;NEW_FORMULA_SOURCE_AND_RESULTS;SYNTHETIC_LEDGER_TEST_CODE_AND_RUN_EVIDENCE;PUBLIC_PAYLOAD_MEMBER_PRIVACY;FINAL_CODEX_RECEIPT_RAW_SHA
+fetch_seconds=UNKNOWN
+integrity_seconds=UNKNOWN
+semantic_seconds=UNKNOWN
+archive_cleanup_seconds=UNKNOWN
+
+当前评审属于只读阶段性检查点：**缺少工具支持的二进制raw字节独立校验环境，故主审必须REVIEW_PENDING_IO，非候选缺陷**。不自行手写Base64/SHA/ZIP/DEFLATE解码，也不为使结果转为PASS而取全仓库recursive tree或盲推/重跑Codex。待有成熟标准库的受授权原字节通道时按同固定candidate、同三文件继续审查；已有核实的Git身份/元数据可复用。没有terminal PASS/CHANGES_REQUIRED，不触发远端文件删除。当前科学预算0，阶段C A1-A3未授权；正式V010/HA黑箱、Results FALSE、V011 NOT_STARTED、FULL_RUNNER_IO_CLOSURE BLOCKED。
