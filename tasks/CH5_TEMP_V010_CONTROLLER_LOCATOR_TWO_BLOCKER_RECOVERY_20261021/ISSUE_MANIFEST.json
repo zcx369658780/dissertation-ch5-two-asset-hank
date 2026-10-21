@@ -1,0 +1,203 @@
+{
+  "schema": "ch5.v010.two_blocker_recovery.issue.v1",
+  "task_id": "CH5_TEMP_V010_CONTROLLER_LOCATOR_TWO_BLOCKER_RECOVERY_20261021",
+  "revision": "ISSUED_20261021_R1",
+  "status": "ISSUED_NOT_STARTED",
+  "issue_commit": "7064ce8e300cb017513b586df05aa5fe05cc56e6",
+  "governance_branch": "migration/astra-workflow-20261012",
+  "fixed_review_parent": "5090d84c1cb4ae03b12a230b984bb312de92afeb",
+  "pinned_task_and_governance_files": [
+    {
+      "path": "tasks/CH5_TEMP_V010_CONTROLLER_LOCATOR_TWO_BLOCKER_RECOVERY_20261021/CONTRACT.md",
+      "issue_commit": "7064ce8e300cb017513b586df05aa5fe05cc56e6",
+      "git_blob": "15965f04c1225f05f45a7c5712441c8d806d3a30",
+      "utf8_bytes": 8011
+    },
+    {
+      "path": "tasks/CH5_TEMP_V010_CONTROLLER_LOCATOR_TWO_BLOCKER_RECOVERY_20261021/TASK_PARAMETERS.json",
+      "issue_commit": "7064ce8e300cb017513b586df05aa5fe05cc56e6",
+      "git_blob": "46819eab174a3c416f4c04a4506ff21446ba9b11",
+      "utf8_bytes": 12499
+    },
+    {
+      "path": "CURRENT.md",
+      "issue_commit": "7064ce8e300cb017513b586df05aa5fe05cc56e6",
+      "git_blob": "f4164699b1a61ba3feb1918985f6a81823197d90",
+      "utf8_bytes": 1590
+    },
+    {
+      "path": "TASK_CURRENT.md",
+      "issue_commit": "7064ce8e300cb017513b586df05aa5fe05cc56e6",
+      "git_blob": "320caf15268e0bf2a142b13c5d1e1a617367e12f",
+      "utf8_bytes": 1253
+    },
+    {
+      "path": "docs/DOC_INDEX_CURRENT.md",
+      "issue_commit": "7064ce8e300cb017513b586df05aa5fe05cc56e6",
+      "git_blob": "9d8b6b947fecb5c6ffc11958c124011b6b014b1b",
+      "utf8_bytes": 1389
+    },
+    {
+      "path": "docs/CH5_PROJECT_MEMORY_CURRENT.md",
+      "issue_commit": "7064ce8e300cb017513b586df05aa5fe05cc56e6",
+      "git_blob": "479764d61cf2ccae5ca95f363892a6df6b060323",
+      "utf8_bytes": 38624
+    }
+  ],
+  "reference_source_docs": [
+    {
+      "path": "docs/CH5_TEMP_V010_CONTROLLER_SOURCE_PROVENANCE_RESOURCE_STOP_INDEPENDENT_REVIEW_20261021.md",
+      "blob": "626544b0ca0795de2c68898db418091b18814f93"
+    },
+    {
+      "path": "docs/CH5_MANDATORY_REVIEW_DELIVERY_AND_CLEANUP_20261019.md",
+      "blob": "43a865d830898b1bd7714b9165440682b2559d4e"
+    },
+    {
+      "path": "docs/CH5_REVIEW_TASK_TEMPLATE_CURRENT.md",
+      "blob": "28fce3ca1802b463f03d5046efa1866ab2f2155c"
+    },
+    {
+      "path": "tasks/CH5_TEMP_V010_CONTROLLER_SOURCE_PROVENANCE_LOCATOR_GATE_20261021/CONTRACT.md",
+      "blob": "89c953cb0ed4f8e5f82eea0486a1a7b845910bd3"
+    },
+    {
+      "path": "tasks/CH5_TEMP_V010_CONTROLLER_SOURCE_PROVENANCE_LOCATOR_GATE_20261021/TASK_PARAMETERS.json",
+      "blob": "dec4b2af86710fb4529f537643d3b70d7ccf7c0b"
+    },
+    {
+      "path": "tasks/CH5_TEMP_V010_CONTROLLER_SOURCE_PROVENANCE_LOCATOR_GATE_20261021/ISSUE_MANIFEST.json",
+      "blob": "92ddcee91f89ee014c6e33c7bdb64d6734b8e97d"
+    }
+  ],
+  "prior_stop": {
+    "task_id": "CH5_TEMP_V010_CONTROLLER_SOURCE_PROVENANCE_LOCATOR_GATE_20261021",
+    "run_id": "bb28bb74ec6f46c78287d82937eb1209",
+    "terminal": "STOP_RESOURCE_GITHUB_DIRECTORY_METADATA_LIMIT_EXCEEDED",
+    "status": "CLOSED_NOT_PASS",
+    "old_budget_carry_forward": 0,
+    "prior_review_candidate": "NONE"
+  },
+  "source_archive_identity_only": "f3e8984fe4d2ef4be65692c27fa7594d96b870d372a8c45d029899f7891841d8",
+  "phase_boundaries": {
+    "A": "isolated Windows cross-API inode test and capture/fsync before compare; no historical child directory enumeration",
+    "B": "only 4 exact known GitHub files or blobs at fixed full paths and ref; no tasks directory listing, no post-hoc truncation",
+    "restricted": "do not resume prior P2-P5 controller source provenance; do not touch old science artifacts"
+  },
+  "budgets": {
+    "total_wall_seconds": 7200,
+    "verification": {
+      "wall_seconds": 900,
+      "python_starts_max": 4,
+      "direct_starts_max": 14,
+      "E1_batches": 1
+    },
+    "engineering": {
+      "wall_seconds": 3900,
+      "python_starts_max": 16,
+      "direct_starts_max": 54,
+      "git_exact_get_max": 10,
+      "old_root_metadata_reads_max": 2,
+      "E1_batches": 3,
+      "owned_process_starts_max": 2
+    },
+    "delivery": {
+      "wall_seconds": 1800,
+      "python_starts_max": 7,
+      "direct_starts_max": 32,
+      "api_mutations_max": 7,
+      "E1_batches": 2,
+      "successful_publications_max": 1
+    },
+    "global": {
+      "max_exact_read_only_GET": 30,
+      "max_new_nongit_bytes": 16777216,
+      "git_object_storage_max_bytes": 268435456,
+      "finalization_reserve_seconds": 180
+    },
+    "science_calls": {
+      "HA": 0,
+      "HJB": 0,
+      "KFE": 0,
+      "GE": 0,
+      "IRF": 0,
+      "scientific_drivers": 0,
+      "model_runner": 0
+    },
+    "old_budget_carryforward": 0
+  },
+  "read_policy": {
+    "forbidden_prefixes": [
+      "tasks",
+      ""
+    ],
+    "forbidden_actions": [
+      "GET /contents/tasks",
+      "list_directory(tasks)",
+      "root tree recursive=1",
+      "paginated 400 entry payload then truncate to 64",
+      "any broad metadata call with uncertain upper bound"
+    ],
+    "exact_file_fetches": [
+      {
+        "path": "tasks/CH5_TEMP_V010_CONTROLLER_SOURCE_PROVENANCE_LOCATOR_GATE_20261021/CONTRACT.md",
+        "ref": "5090d84c1cb4ae03b12a230b984bb312de92afeb",
+        "git_blob": "89c953cb0ed4f8e5f82eea0486a1a7b845910bd3"
+      },
+      {
+        "path": "tasks/CH5_TEMP_V010_CONTROLLER_SOURCE_PROVENANCE_LOCATOR_GATE_20261021/TASK_PARAMETERS.json",
+        "ref": "5090d84c1cb4ae03b12a230b984bb312de92afeb",
+        "git_blob": "dec4b2af86710fb4529f537643d3b70d7ccf7c0b"
+      },
+      {
+        "path": "tasks/CH5_TEMP_V010_CONTROLLER_SOURCE_PROVENANCE_LOCATOR_GATE_20261021/ISSUE_MANIFEST.json",
+        "ref": "5090d84c1cb4ae03b12a230b984bb312de92afeb",
+        "git_blob": "92ddcee91f89ee014c6e33c7bdb64d6734b8e97d"
+      },
+      {
+        "path": "docs/CH5_TEMP_V010_CONTROLLER_SOURCE_PROVENANCE_RESOURCE_STOP_INDEPENDENT_REVIEW_20261021.md",
+        "ref": "5090d84c1cb4ae03b12a230b984bb312de92afeb",
+        "git_blob": "626544b0ca0795de2c68898db418091b18814f93"
+      }
+    ],
+    "max_exact_file_fetches": 4,
+    "max_successful_response_objects": 4,
+    "max_total_decoded_content_bytes": 45000,
+    "content_policy": "Require exact pinned full path and ref, returned kind file and expected Git blob, single response object, no directory listing; if tool can't guarantee bounded kind/size before request use direct precise Git blob fetch by known 40-char SHA only; no guessing missing identities.",
+    "replay_prior_error": "Static reference only to Codex 400 count; do not repeat the failing tasks listing or reinterpret response truncation as compliance.",
+    "report_expected": [
+      "exact_file_fetch_log.json",
+      "response_type_count_and_blob_readback.json",
+      "blocked_tasks_prefix_policy.md",
+      "safe_fixed_path_reader_source.py"
+    ],
+    "fail_closed": "Provider returns directory/list/unknown type or >1 object, over-size, wrong blob, or HTTP denial => STOP; no requery/cross-channel bypass; respect all existing platform controls."
+  },
+  "review": {
+    "branch": "review/ch5-temp-controller-locator-two-blocker-recovery-20261021",
+    "fixed_parent": "5090d84c1cb4ae03b12a230b984bb312de92afeb",
+    "temp_path": "_review_tmp/ch5/temp-controller-locator-two-blocker-recovery-20261021/",
+    "exact_three": [
+      "result.md",
+      "manifest.json",
+      "evidence_sanitized.zip"
+    ],
+    "auto_upload": true,
+    "cleanup": "ASTRA_ONLY_AFTER_TERMINAL_AND_ARCHIVE_READBACK"
+  },
+  "not_authorized": "Production runtime, HA/HJB/KFE/GE/IRF/A0-A3, new STOP fixture, actual controller source scan, old task budget resurrection",
+  "other_review_refs_preserve": [
+    "4e05976bbc8068b971ba5915133e9a6c3b73193d",
+    "1579e7f1d7a1975c322dd6ae9af1776e88e83e7c"
+  ],
+  "preflight": {
+    "task": true,
+    "rev": true,
+    "old_task_closed": true,
+    "no_source_resume": true,
+    "budget0": true,
+    "read_limit": true,
+    "delivery": true,
+    "allfiles": true
+  }
+}
