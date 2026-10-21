@@ -1,0 +1,28 @@
+# CH5 TEMP V010 真实Ledger最小修复：Astra独立审查检查点（非终审）
+TASK_ID=CH5_TEMP_V010_LEDGER_MINIMAL_REPAIR_NONHA_REGRESSION_20261021
+RUN_ID=2e291bedc84d41199fa8d187898eb6a2
+ASTRA_MAIN_REVIEW=REVIEW_PENDING_IO
+TERMINAL_PASS=NOT_GRANTED
+CLEANUP=PENDING_RETAINED
+
+## 已独立核实
+Owner粘贴的完整Base64最终JSON由Python标准库`base64`、`hashlib`、`json`实际解码：**10336 bytes**、SHA256=`ea191978675bc00e43ca3ce520e4787c0565de89796f72c9012c50a6f5d9ec06`，与Owner提供的冻结身份匹配。该回执仅证明Codex提交了自洽身份的报告，不等于Astra重跑Windows脚本。
+GitHub精确review ref `review/ch5-temp-ledger-minimal-repair-nonha-20261021`真实指向candidate `6cbac91ccaab323a938e94a7bc0720238c91dd36`，tree `89c4652ad47c5e869a92b24d26d23aac53a5d59d`，sole parent `f34cbd06e613481bf185d839a7e319e30cfc192f`，GitHub compare ahead1/behind0，**仅新增**`_review_tmp/ch5/temp-ledger-minimal-repair-nonha-20261021/`下`result.md`、`manifest.json`、`evidence_sanitized.zip`三件。三个Git Blob分别为`95bed4ba98233140a40a20450684f8eaea36dd24`、`9c1faae8f44cd7724ff2706ffe9ce350432c5de7`、`3dd5e6c28ed55f02ec332f0c2fc8c743c9877e56`。**Codex已经按工作流自动上传到GitHub，不存在未交付。**
+已精确读取GitHub result与manifest文本；ZIP受支持连接器以Base64返回，去空白后63600字符，编码长度对应47700字节，和manifest登记一致，但尚**无法将整ZIP移至Python标准库zipfile/hashlib校验环境**。已尝试远端raw URL，当前可用工具取证失败；不能把URL、Git Blob、Base64长度或Codex自检代替29/29独立CRC/长度/SHA256、逐成员隐私与patch语义审查。
+公开清单自身通过格式核验：29项成员、总展开199020字节，路径无绝对/遍历及大小写重复，所有CRC32/bytes/64位SHA256字段格式有效；含`minimal_patch.diff.txt`、`safe_ast_patch_manifest.json`、`original_vs_patched_test_matrix.json`、T1–T6与J1/J2八组结果、harness源码、typed fault和STOP证据。清单声明 ZIP SHA256=`76ed04b3864b694bc2475666c970862d9514559775a8db31b40b0c39d28a074f`，未独立复算。
+
+## 待审工程主张及边界
+Codex完整报告原方法guard/event/checkpoint/begin_ha/finish五方法被最小派生修改、原constructor/profile/close/外部AST不变；原方法对照T1–T6+J1/J2合格，包括合法staged幂等恢复、损坏链fail-closed、首错保全、typed E2，以及仅参与同一协议者的LOCAL_FENCE。私有修复候选SHA256=`51005056766f99b9f6c4bf4fe0fb8d42d6547ace8eebba9ab5bba30465ff8a3c`。这些仍是Codex回执/manifest级报告；关键harness、最小diff、trace、8组真实结果在未解读的ZIP中，**未获Astra独立接受**。
+Codex资源报告核验Python2、工程Python27/32、工程E1 2/4、4 helpers全部回收、scientific calls HA/HJB/KFE/GE/IRF为0、kernel descendants UNKNOWN；系回执级主张而非独立Windows OS审计。
+Patch状态`PATCH_PREPARED_NOT_DEPLOYED`，`GLOBAL_SUPERVISOR_READER_UNVERIFIED`，`PRODUCTION_RUNTIME_UNVERIFIED`。不得解锁TEMP A1–A3，正式V010/Results FALSE/V011 NOT_STARTED。
+
+## 裁决
+artifact_integrity=GIT_CANDIDATE_AND_MANIFEST_SCHEMA_PASS__ZIP_RAW_NOT_COMPLETED
+semantic_patch=NOT_COMPLETED__SOURCE_DIFF_AND_AST_NOT_READ
+paired_regression=T1_T6_J1_J2_CODEX_REPORTED_PASS__ASTRA_NOT_ACCEPTED
+privacy=NOT_COMPLETED__ZIP_MEMBER_BYTES
+delivery=REMOTE_AUTOMATIC_GITHUB_UPLOAD_CONFIRMED__ASTRA_BINARY_READ_PENDING
+cleanup=PENDING_RETAINED
+NOT_COMPLETED=ZIP_WHOLE_SHA256;ZIP_29_MEMBERS_CRC_LEN_SHA;PATCH_AST_AND_DIFF;EIGHT_GROUPS_SOURCE_AND_RAW_RESULTS;LOCAL_FENCE_TRACE;ALL_MEMBER_PRIVACY
+FETCH_SECONDS=UNKNOWN;INTEGRITY_SECONDS=UNKNOWN;SEMANTIC_SECONDS=UNKNOWN;ARCHIVE_CLEANUP_SECONDS=UNKNOWN
+此文件是阶段性非终审记录：因Astra原字节工具通道阻断维持`REVIEW_PENDING_IO`，**不是候选缺陷、不是Codex上传失败**。不得重推、重跑Codex或新建发布器任务以处理Reviewer纯IO障碍。可在Owner自愿上传同一固定Git Blob原件的47700字节脱敏ZIP后续审；首先比对实际Git原生Blob与SHA。只有终审PASS/CHANGES_REQUIRED并归档回读，才允许精确nonforce清理本轮review三件。两个原有PENDING ref `4e05976bbc8068b971ba5915133e9a6c3b73193d`、`1579e7f1d7a1975c322dd6ae9af1776e88e83e7c`继续保留。
