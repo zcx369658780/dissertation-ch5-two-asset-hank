@@ -1,0 +1,18 @@
+# 第五章 Ledger最小修复：Astra限域终审后的精确清理回执
+TASK_ID=CH5_TEMP_V010_LEDGER_MINIMAL_REPAIR_NONHA_REGRESSION_20261021
+RUN_ID=2e291bedc84d41199fa8d187898eb6a2
+ASTRA_REVIEW=PASS__BOUNDED_ISOLATED_REPAIR_REGRESSION_EVIDENCE
+CLEANUP_STATUS=TEMP_CLEANUP_VERIFIED
+REVIEW_REPORT=docs/CH5_TEMP_LEDGER_MINIMAL_REPAIR_NONHA_FINAL_INDEPENDENT_REVIEW_20261021.md
+ARCHIVED_REVIEW_GOVERNANCE_COMMIT=90834d17a347693c07f4b3332827ad18c5e87d8f
+CLEANUP_COMMIT=a2341fea2da8494d6c2e2b24d27efcbc44f13950
+
+## 完整性与正确顺序
+- Owner上传的脱敏ZIP原字节47700B，SHA256 `76ed04b3864b694bc2475666c970862d9514559775a8db31b40b0c39d28a074f`，原生Git Blob `3dd5e6c28ed55f02ec332f0c2fc8c743c9877e56`，与固定已发布候选`6cbac91ccaab323a938e94a7bc0720238c91dd36`一致。Astra使用Python标准库逐成员复核29/29 CRC、长度、SHA256，总展开199020B，并审查T1-T6/J1/J2配对结果及公开harness和隐私，限域终审PASS、不代表真实生产已修复。
+- Astra先将正式终审报告及CURRENT/TASK_CURRENT/DOC_INDEX/PROJECT_MEMORY永久归档至 `90834d17a347693c07f4b3332827ad18c5e87d8f`，并独立回读治理HEAD及5份归档Git Blob一致（审阅report blob `0eb2bec0fa5ff1d48ecaf7274488a75e728431a8`）。
+- 归档回读后核本轮review ref尚指向原候选`6cbac91ccaab323a938e94a7bc0720238c91dd36`、tree`89c4652ad47c5e869a92b24d26d23aac53a5d59d`，唯一parent`f34cbd06e613481bf185d839a7e319e30cfc192f`。以该tree为base仅执行三文件sha=null精确删除，生成清理tree `dd407795d0d1d7595ce63fdce1e19b2478840902`，普通expected_sha non-force更新review ref到`a2341fea2da8494d6c2e2b24d27efcbc44f13950`，该提交唯一parent为原候选。
+- GitHub compare原candidate→cleanup恰三项`removed`：`_review_tmp/ch5/temp-ledger-minimal-repair-nonha-20261021/result.md`、`manifest.json`、`evidence_sanitized.zip`。在清理commit三条精确文件均返回404，**当前review tree已验证删除**，并不抹除Git历史。
+- 其它历史review refs仍保留：`review/ch5-temp-price-ledger-precondition-20261021`=`4e05976bbc8068b971ba5915133e9a6c3b73193d`；`review/ch5-http-object-evidence-20261020`=`1579e7f1d7a1975c322dd6ae9af1776e88e83e7c`，均REVIEW_PENDING_IO，不触碰。
+
+## 修复与科学状态
+派生私有补丁仍是`PATCH_PREPARED_NOT_DEPLOYED`。隔离旧/修复Budget方法成对证据限域通过，不等于全源码由Astra重验或Windows生产运行认证。生产driver、external supervisor/reader、跨进程STOP、power-loss、原WinError5根因均UNVERIFIED；A1-A3/HA没有授权。正式V010、model_activation=False、REAL_GE=False、Results=FALSE、V011=NOT_STARTED、FULL_RUNNER_IO_CLOSURE=BLOCKED不变。后续仅Owner另批实际生产安全集成与协议资格，不能从限域PASS自动部署。
