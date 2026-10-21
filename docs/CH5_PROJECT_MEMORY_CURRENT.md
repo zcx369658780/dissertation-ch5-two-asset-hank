@@ -55,3 +55,6 @@ Owner要求压缩发布器工具链反复任务并恢复第五章科学研究。
 Owner同时同意修改验收工作流：默认在授权能力及安全门允许下使用精确Git对象API，避免root recursive与本地大bare；发行前统一机器校验冻结hash/path/bytes/预算；不再因小型可恢复工程错误无限重复签发。完整机器验证/隐私、原字节、审查后的清理等硬门仍有效。
 科学主线已切回TEMP黑箱HA+宏观价格约束解释与简化的**规划**。来自已接受2026-10-18独立审查：双省100轮max KN gap约0.10752、Y gap约0.01272、两类价格边界100/100触发；因WinError5共享ledger故障，旧2×2 A0/A1/A2/A3尚无科学可比较结果。先不运行HA的宏观价格来源/单位时点审阅及账本可靠性前置验证，后续2×2真实再运行必须有Owner新冻结科学预算。正式V010、Results FALSE、V011 NOT_STARTED。
 详见`docs/CH5_TEMP_SCIENCE_REENTRY_BRIEF_20261021.md`。
+
+## 2026-10-21 · Owner批准恢复TEMP科学前置A+B合并长任务
+Owner明确接受将SOURCE_ONLY宏观价格来源/公式链（ra0、ra_used、rah、S、wt0、wjt、税楔、财政、轮次与单位）与新scratch内无HA的WinError5/journal/atomic checkpoint/E2 STOP合成可靠性验证合并成唯一Codex任务CH5_TEMP_V010_PRICE_ATTRIBUTION_LEDGER_PRECONDITION_20261021。冻结源为治理基线a48137c03cebaa4c5e4090a7880ae170a1bb1aca下6份科研文档、模型历史commit 94de4501dec051b969bee9d852eba2d4591f30ef下5份固定只读源码、旧TEMP 2×2实验合同（只读历史）。如真实TEMP private bridge或旧100轮原始轨迹不在白名单，只能标SOURCE_NOT_AVAILABLE，不得擅自读取保护区私有档案或猜测跨轮数据。阶段B只认证合成参考实现的行为，不能提升为生产ledger修复PASS或WinError5唯一根因证明。阶段C A0-A3真正HA调用仍未获Owner批准，预算0；历史黑箱HA与正式V010经济方程不改，Results FALSE。上一HTTP候选1579e7f1d7a1975c322dd6ae9af1776e88e83e7c仍为REVIEW_PENDING_IO，保持远端临时三文件。此次恢复科研方向不是恢复旧科学预算，验收后再由Owner决定真正数值对照范围。
