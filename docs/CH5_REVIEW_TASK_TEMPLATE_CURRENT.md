@@ -26,3 +26,8 @@ Codex自动上传result.md、manifest.json、evidence_sanitized.zip；必要内�
 ## 裁决与关闭
 PASS / CHANGES_REQUIRED / REVIEW_PENDING_IO；分列完整性、实现、隐私、交付、清理与NOT_COMPLETED。先集中归档回读，再由Astra核ref、白名单删除及回读。PENDING保留材料，无候选只记N/A；清理成功不自动等于通过。
 发单前检查合同、参数、CURRENT/TASK_CURRENT、Prompt、来源包是否同义且无缺项。给单一代码框启动Prompt。同步面状态分别登记，不自动启动下一任务。
+
+## 2026-10-21 固定任务Prompt必须明写
+将以下完整义务作为每张新任务合同和**单一启动Prompt**的显式句子：
+“Codex必须把本任务逐成员脱敏后的`evidence_sanitized.zip`连同`result.md`、`manifest.json`，自动上传至GitHub仓库的`REVIEW_BRANCH/TEMP_PATH`所指定的**独立Review分支临时目录**，只允许三文件白名单；必须在最终回执给出候选身份及三原件远端原字节读回证据。Astra终审归档后负责准确清理。Owner人工搬运不是默认交付流程。”
+若验收方原字节通道受限，归类`REVIEW_PENDING_IO`而不是Codex上传未完成；当前已知候选不重推，Owner同意才可仅上传同一已固定Git Blob原件作例外的审核入口。

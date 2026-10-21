@@ -27,3 +27,11 @@ manifest不要求自身最终哈希；候选commit/tree、manifest哈希和发�
 
 ## 6. 同步
 GitHub治理、本地Codex入口、Project Sources三个平面独立核验。签发后附单一代码框启动Prompt；它只导航固定合同，不重组正文。此次规则落实与DOC_ONLY同步不授权HTTP代码修复、旧491成员ZIP读取、分类器重跑或任何科学运行。
+
+
+## 2026-10-21 · Owner重申自动GitHub临时ZIP交付与审阅取证分账（明确执行口径）
+
+- **Codex执行交付是硬要求**：每张已授权可公开证据的长任务都必须在合同/参数/启动Prompt中明写固定 `REVIEW_BRANCH`、`FIXED_PARENT`、`TEMP_PATH`，并由Codex自动上传该**GitHub独立review分支临时目录**的三份原件 `result.md`、`manifest.json`、`evidence_sanitized.zip`。候选commit/tree/三文件Git Blob、大小/哈希和远端完整字节回读必须提供；只打印本地路径不算发布完成。违反安全/权限/限额时如实STOP，不能绕过门禁。旧独立review树不许因新单被清理。
+- **交付与独立验证是不同状态**：Codex已完成GitHub自动上传、远端commit与原字节自检，不等于Astra在其独立运行环境完成ZIP全部成员SHA/CRC语义/隐私检查；反过来，Astra无法从连接器Base64把ZIP送进标准库，只能记`REVIEW_PENDING_IO`，**不能误写成Codex没有上传**、要求Codex重复推送或扩建发布器。
+- Astra优先按固定commit/path直接从GitHub原字节受支持通道验收；工具不能提供可运行标准库的完整原字节时，保留既有remote候选并暂停清理。仅作为**经Owner自愿选择的例外兜底**，可由Owner把同一候选ZIP原件上传到会话，必须先核其Git原生blob身份后再复算。不能把Owner手动中转改成常态工作流，不能要求为纯取证障碍重跑Codex或重签任务。
+- 终审PASS或CHANGES_REQUIRED归档回读后仅用普通non-force精确删除当前review分支当前树三文件、逐文件404及diff回读；Git历史不会被删除，因此脱敏门仍是发行前硬门。PENDING时不删。
