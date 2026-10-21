@@ -1,0 +1,30 @@
+# CH5 · 两阻断限定恢复任务终止审查与会话封存（2026-10-21）
+
+TASK_ID=CH5_TEMP_V010_CONTROLLER_LOCATOR_TWO_BLOCKER_RECOVERY_20261021
+RUN_ID=acc01657357a41a280d05b4fb28fdcac
+ACTUAL_TERMINAL=STOP_EXACT_GITHUB_BLOB_TRANSPORT_UNAVAILABLE
+ASTRA_CLASSIFICATION=STOP_ACCEPTED__CONNECTOR_TRANSPORT__A_BOUNDED_CODEX_PASS_B_INCOMPLETE
+COMBINED_ACCEPTANCE=NOT_PASS__TWO_BLOCKER_RECOVERY_NOT_READY
+ACTIVE_TASK_AFTER_ARCHIVE=NONE
+REVIEW_CANDIDATE=NONE
+CLEANUP=NOT_APPLICABLE_NO_CANDIDATE
+
+## 原字节与远端身份
+Owner提交的完整Codex最终JSON Base64在审阅容器中已独立解码校验：12027字节，SHA256 602eb0be67b557c332abd9067b1aa46391454a78bfce01fe309f382e20c4865b。发行治理HEAD=9d8389b0cc3e6389b42b0526cdd1f07156321491；已固定源合同与参数Blob分别15965f04c1225f05f45a7c5712441c8d806d3a30、46819eab174a3c416f4c04a4506ff21446ba9b11。本轮review/ch5-temp-controller-locator-two-blocker-recovery-20261021准确查询404，未发生GitHub候选发布，不得虚构临时ZIP或清理。
+早前REVIEW_PENDING_IO保留：AB=4e05976bbc8068b971ba5915133e9a6c3b73193d，HTTP=1579e7f1d7a1975c322dd6ae9af1776e88e83e7c。
+
+## A：Windows身份采集
+Codex报告在新scratch任务自有合成对象上六组受控测试PASS、24条日志、11次判断；真实观察DirEntry.st_ino=0，而Path.stat/owned handle ID可匹配。跨API inode比较标NONCOMPARABLE；capture先flush/fsync并readback，再judgment。改变内容即使size/mtime不变、伪造身份、缺失身份、注入fsync失败等均fail-closed。原生symlink创建受到WinError1314限制，本轮只有reparse/symlink的注入式拒绝证据。因此A_BOUNDED_CODEX_REPORTED_PASS__NATIVE_SYMLINK_UNOBSERVED；Astra没有再次读私有测试源码与日志或重跑Windows内核测试，不得升级为生产路径身份认证。
+
+## B：精确GitHub原对象读取
+Codex向精确已知40位Git Blob 89c953cb0ed4f8e5f82eea0486a1a7b845910bd3请求单文件原件时，连接器传输层发生Transport send error，未得到任何GitHub provider HTTP响应、文件对象或解码字节。仅请求一次；其余三个固定文件未读取；没有tasks目录枚举、重试或切换账号与渠道。B_NOT_COMPLETED__CONNECTOR_TRANSPORT_SEND_ERROR。不等于GitHub 401/403/429，也不等于原文件缺失。
+
+## Owner决策、既有科学结论及未授权事项
+Owner此前授权原Budget修复隔离T1-T6/J1/J2，Astra限域通过；随后跨进程X1-X6仅任务自有cooperating fixture限域PASS。真实生产supervisor/reader源码未找到、原run仅静态映射，GLOBAL_STOP和PRODUCTION_RUNTIME均UNVERIFIED，patch PREPARED_NOT_DEPLOYED。
+Owner授权过有界真实来源定位，但其任务run bb28bb74ec6f46c78287d82937eb1209因GitHub tasks一次返回400条超过64条硬门，合法STOP、无候选；后来只授权本轮Windows身份采集＋四精确文件读取，旧任务与旧预算从未复活。本轮B连接器失败后未得到复工授权。
+2026-10-21本会话末Owner明确要求：**仅保存当前会话进度、Owner决策并生成交接Prompt；最新任务单将在新会话由Owner明确下达**。不得在此次封存中自动创建后继TASK。
+禁止运行HA/HJB/KFE/GE/IRF、A0-A3、生产run或控制器，禁止修改正式V010，禁止继续旧P2-P5扫描，禁止以模拟STOP证明生产协议。
+model_activation=False; REAL_GE=False; Results=FALSE; V011=NOT_STARTED; FULL_RUNNER_IO_CLOSURE=BLOCKED; SCIENCE_BUDGET=0。
+
+## 治理同步区别
+在本次封存前，Astra前次尝试将结论写入GitHub时曾被平台安全检查阻断，治理文件尚显示旧ISSUED_NOT_STARTED；本次Owner明确授权归档，必须以后续实际Git commit/ref/Blob远端回读判定是否已保存，不能凭本正文推断GitHub同步成功。GPT顾问仍未直接访问用户Windows私有测试/现场OS状态。
