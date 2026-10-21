@@ -1,0 +1,199 @@
+{
+  "schema": "ch5.temp_v010.semiauto_n050_price_boundary_10_20.v1",
+  "task_id": "CH5_TEMP_V010_SEMIAUTO_N050_PRICE_BOUNDARY_10_20_20261022",
+  "revision": "ISSUED_20261022_R1",
+  "owner_authorized": "2026-10-22",
+  "governance_branch": "migration/astra-workflow-20261012",
+  "task_baseline": "cc8616038c595c302915b736e2f356cef46bc695",
+  "task_dir": "tasks/CH5_TEMP_V010_SEMIAUTO_N050_PRICE_BOUNDARY_10_20_20261022",
+  "science": {
+    "stage": "TEMP_SYNTHETIC_ONLY",
+    "provinces": [
+      "SYN_A",
+      "SYN_B"
+    ],
+    "n_baseline": [
+      100,
+      160
+    ],
+    "n_trial": [
+      50,
+      80
+    ],
+    "n_scaling": 0.5,
+    "only_arm": "N050",
+    "max_outer": 20,
+    "initial_outer": 10,
+    "conditional_extension": 10,
+    "source_code_commit": "94de4501dec051b969bee9d852eba2d4591f30ef",
+    "blackbox_commit": "216283cf4f1303afa60f1915e143a0b7303a9ffb",
+    "blackbox_path": "exports/matlab_faithful_two_asset_ha.py",
+    "blackbox_git_blob": "9e7dc9556a2b76811e78f89999abecc045886106",
+    "fixture_path": "versions/0.0.10/synthetic_fixture_v1.json",
+    "fixture_commit": "bf091da33d59293f147d52c11580327d3ac2a85d",
+    "fixture_git_blob": "40915658d93403cfc21b33a6b864b332b7857749",
+    "freeze_initial_zt": true,
+    "freeze_initial_govinv": true,
+    "allow_original_adaptive_updates": true,
+    "other_initial_parameters_unchanged": true,
+    "change_economic_equations": false,
+    "real_provinces": false,
+    "formal_ge": false,
+    "policy_irf": false,
+    "results": false
+  },
+  "stop_gate": {
+    "start_10": true,
+    "hard_stop_on_invalid": true,
+    "need_10_full_for_extension": true,
+    "first_window": [
+      1,
+      2,
+      3
+    ],
+    "last_window": [
+      8,
+      9,
+      10
+    ],
+    "gap_relative_worsening_threshold": 1.2,
+    "gaps_required": [
+      "max_KN_gap",
+      "max_Y_gap"
+    ],
+    "boundary_window": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "both_provinces_any_firm_raw_outside_min_rounds": 4,
+    "if_obviously_worsening": "STOP_AT_10",
+    "if_unclear_and_safe": "EXTEND_SAME_ARM_TO_MAX_20",
+    "no_other_arms": true
+  },
+  "metrics": {
+    "mandatory_price_by_province_round": [
+      "raw_ra0",
+      "used_ra",
+      "lower_ra",
+      "upper_ra",
+      "raw_wt0",
+      "used_wjt",
+      "lower_wjt",
+      "upper_wjt",
+      "rah",
+      "household_wage_actual",
+      "rk",
+      "divrate",
+      "N",
+      "Zt",
+      "GovInv",
+      "Kt",
+      "Lt",
+      "KN_gap",
+      "Y_gap",
+      "HA_status"
+    ],
+    "bound_counts": [
+      "hit_upper",
+      "hit_lower",
+      "inside",
+      "equal_exact",
+      "first_hit_round",
+      "inside_to_outside",
+      "repeat_hit",
+      "per_valid_round_denominator"
+    ],
+    "household_used_reference_bounds_only_when_comparable": true,
+    "mandatory_firm_household": [
+      "Zt",
+      "Kt",
+      "Kprivate",
+      "GovInv",
+      "Lt_firm",
+      "At_per_capita",
+      "At_times_N",
+      "household_labor_per_capita",
+      "household_labor_total",
+      "Lt_mat_destination_origin",
+      "Kt_div_Lt",
+      "bridge_residuals"
+    ],
+    "unstated_Lst_mapping": "REQUIRE_SOURCE_OR_MARK_UNMAPPED",
+    "markdown_and_csv": true,
+    "per_round_required": true
+  },
+  "budget": {
+    "wall_seconds": 21600,
+    "verification_seconds": 2400,
+    "engineering_seconds": 3600,
+    "science_seconds": 14220,
+    "delivery_seconds": 1200,
+    "engineering_python_starts_max": 12,
+    "direct_starts_max": 50,
+    "E1_batches_max": 2,
+    "science_driver_starts_max": 1,
+    "HA_HJB_attempts_max": 40,
+    "KFE_attempts_max": 40,
+    "max_ha_per_province": 20,
+    "max_outer_rounds": 20,
+    "max_hjb_updates_per_ha": 100,
+    "max_scalar_roots_per_ha": 400000,
+    "max_total_scalar_roots": 16000000,
+    "new_scratch_bytes_max": 268435456,
+    "delivery_mutations_max": 8,
+    "publication_max": 1,
+    "old_budget_carryforward": 0,
+    "finalization_reserve_seconds": 180
+  },
+  "scratch": {
+    "root": "D:\\ProjectTemp",
+    "path": "D:\\ProjectTemp\\ch5_temp_n050_price10or20_20261022_01",
+    "must_not_exist": true,
+    "write_scope": "task_owned_scratch_and_review_3_only",
+    "no_old_archive_reads": true,
+    "protected_existing_worktrees": true,
+    "safety_fail_closed": true
+  },
+  "delivery": {
+    "auto_github": true,
+    "branch": "review/ch5-temp-n050-price-boundary-10-20-20261022",
+    "fixed_parent": "cc8616038c595c302915b736e2f356cef46bc695",
+    "temp_path": "_review_tmp/ch5/temp-n050-price-boundary-10-20-20261022/",
+    "only_files": [
+      "result.md",
+      "manifest.json",
+      "evidence_sanitized.zip"
+    ],
+    "max_public_bytes": 2097152,
+    "max_zip_expanded_bytes": 4194304,
+    "max_members": 32,
+    "no_force": true,
+    "no_root_recursive": true,
+    "require_remote_raw_readback": true,
+    "cleanup": "ASTRA_AFTER_ARCHIVE_AND_READBACK",
+    "old_review_refs": [
+      "f8db0251fb98f2b157affc9bf7391895b86edba0",
+      "4e05976bbc8068b971ba5915133e9a6c3b73193d",
+      "1579e7f1d7a1975c322dd6ae9af1776e88e83e7c"
+    ]
+  },
+  "forbidden": {
+    "manual_second_arm": 0,
+    "alter_Z_initial": 0,
+    "reestimate_Z_from_changed_N": 0,
+    "alter_GovInv_initial": 0,
+    "alter_price_bounds": 0,
+    "modify_HA_blackbox": 0,
+    "modify_economic_equations": 0,
+    "run_old_production_driver": 0,
+    "read_old_private_archive": 0,
+    "run_real_31_provinces": 0,
+    "run_GE_or_IRF": 0,
+    "auto_issue_next_task": 0,
+    "cleanup_other_reviews": 0
+  },
+  "planned_terminal": "WAIT_ASTRA_AND_OWNER_PARAMETER_DISCUSSION"
+}
