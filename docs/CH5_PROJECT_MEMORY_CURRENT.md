@@ -73,3 +73,6 @@ Owner本轮上传完整原字节三件（result1025B、manifest10356B、ZIP22448
 
 ## 2026-10-21 · SOURCE_ONLY PASS后精准清理验证回执
 Astra先归档并远端回读最新SOURCE_ONLY终审报告（治理commit a9f8cd3103ff222424553e4453c294bad422fedf）；再在review HEAD无变化条件下普通nonforce创建清理commit `324acba02d9725fc3ae39160391161021488bd0c`，其唯一父为原候选94d2a65a518d843853127ee4de924095c54d3736，比较恰删除三个白名单文件，三原路径精确回读404，`TEMP_CLEANUP_VERIFIED`。不影响另两份review ref（4e05976...与1579e7f...仍保留PENDING），Git历史永久保存。完整凭证：docs/CH5_TEMP_V010_MACRO_LEDGER_SOURCE_CLEANUP_RECEIPT_20261021.md。科研HA仍0，生产ledger运行时UNVERIFIED，无A1-A3预算。
+
+## 2026-10-21 · Owner批准真实Budget原方法无HA接口验证长任务
+上一SOURCE_ONLY任务已经独立原字节验收PASS，16/16 ZIP成员及精确review清理成功，治理HEAD d4cda508159116d27cf2a3c722a316b1c7214bab；但原真实生产ledger运行时、Windows WinError5唯一根因和global STOP仍未得到认证。Owner批准新独立任务`CH5_TEMP_V010_REAL_LEDGER_NONHA_INTERFACE_GATE_20261021`在唯一隔离scratch、严格原私有archive输入SHA与原始factorial_driver.py方法AST一致的情况下，**真正调用历史Budget旧方法**验证原子checkpoint/错误分类/持句柄读者及共享STOP。不能用新编模拟Ledger替代原方法，也不能import/exec原生产driver或temp_driver/HA；动态依赖不安全则STOP源资格。原真实ledger及旧journal一律只读，不能擅改生产源码；即使找到确定性错误，也先报告缺陷不运行科学。预算全新独立且HA/HJB/KFE/GE/IRF=0，A0-A3未授权；先前两个REVIEW_PENDING_IO分支保持。此任务的T1-T6有限接口结果和完整字节证据提交后由Astra终审，不自动解锁模型。
