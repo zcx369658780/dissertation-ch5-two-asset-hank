@@ -1,0 +1,38 @@
+# CH5 TEMP V010 · B-only GitHub精确对象恢复独立审查检查点（2026-10-21）
+
+TASK_ID=CH5_TEMP_V010_GITHUB_EXACT_OBJECT_TRANSPORT_RECOVERY_20261021
+EFFECTIVE_REVISION=ISSUED_20261021_R2
+RUN_ID=9c6e5cf85fbc4e498b479e0f242be939
+CODEX_REPORTED_TERMINAL=WAIT_ASTRA_EXACT_OBJECT_CONNECTOR_REVIEW
+CODEX_REPORTED_SOURCE_CLASSIFICATION=BLOB_EXACT_4_OF_4_VERIFIED
+ASTRA_REVIEW=REVIEW_PENDING_IO__REMOTE_GITHUB_CANDIDATE_CONFIRMED__ZIP_RAW_BYTE_INTEGRITY_AND_PRIVACY_NOT_COMPLETED
+ENGINEERING_SOURCE_RESULT=CODEX_REPORTED__NOT_ASTRA_FULL_PRIVATE_RUN_REPRODUCED
+DELIVERY_CANDIDATE=CONFIRMED
+REVIEW_CANDIDATE=f8db0251fb98f2b157affc9bf7391895b86edba0
+REVIEW_TREE=0c36ef090d7fef60c7b87aa14b55ba17a4c9872d
+REVIEW_SOLE_PARENT=543146f61e9bcf345ca1700bdc8149d4bc470ba7
+REVIEW_BRANCH=review/ch5-temp-v010-github-exact-object-transport-recovery-20261021
+ZIP_GIT_BLOB=55ee936b0cf67c67aa2d5ebaa3e5df47447b7279
+ZIP_BASE64_ENCODED_LENGTH_INFERRED=22322
+ZIP_MANIFEST_MEMBERS=12
+ZIP_MANIFEST_EXPANDED_BYTES=45583
+CLEANUP=DEFERRED__PENDING_PRESERVE
+ACTIVE_TASK_AFTER_CODEX=NONE
+REVIEW_PENDING=TRUE
+NEXT=WAIT_OWNER_OPTIONAL_EXACT_ZIP_REVIEW_IO_OR_AUTHORIZED_BYTE_CHANNEL__NO_AUTO_NEW_TASK
+
+## 固定GitHub身份及Astra真正核过的远端证据
+- 正式治理分支在审查开始时live HEAD `066f341f2d2b5c724b5f24779728b4d9a6c8560b`，compare identical；本轮未批准其他执行任务。
+- GitHub精确commit GET确认候选commit `f8db0251fb98f2b157affc9bf7391895b86edba0`、tree `0c36ef090d7fef60c7b87aa14b55ba17a4c9872d`、唯一parent `543146f61e9bcf345ca1700bdc8149d4bc470ba7`。
+- review ref和固定candidate compare identical；parent...candidate = ahead1/behind0且仅新增 `_review_tmp/ch5/temp-v010-github-exact-object-transport-recovery-20261021/result.md`、`_review_tmp/ch5/temp-v010-github-exact-object-transport-recovery-20261021/manifest.json`、`_review_tmp/ch5/temp-v010-github-exact-object-transport-recovery-20261021/evidence_sanitized.zip`，没有越界路径。
+- 精确读取result.md，Git Blob `419c3e79e72b8f8d7e71d4df25a8fcd3499d013d`；精确读取manifest.json，Git Blob `0b8395e76e20c2737f9fb55e245be0bba35c2f01`。两文件字段相互对照一致。
+- 精确读取ZIP的GitHub base64响应，provider声明Blob `55ee936b0cf67c67aa2d5ebaa3e5df47447b7279` 与manifest相同；Base64格式/长度可推出ZIP 22322字节，与manifest声明相同；开始标记为PK。12条member路径无absolute、..、反斜杠或大小写重复，CRC32字段均8位hex、SHA256字段均64位hex；成员长度求和45583与manifest一致；隐私标签12项均报告PASS。
+- **明确尚未完成**：没有将完整ZIP解码字节移入可用Python标准库环境，未真正独立运行zipfile逐成员read/CRC/len/SHA256及逐成员隐私语义审阅。GitHub fetch_blob原生二进制UTF-8解码报错；审阅容器网络不能从GitHub raw下载；这不是Codex上传缺失或候选本身完整性失败。不能因manifest字段合格或Codex自检12/12而声称Astra全量PASS。
+- 未取得用户Windows本地 `DELIVERY_FINAL_RECEIPT.json` 与 `completion_event.json` 原件；10,768字节SHA256 `f99df5e10368bf4c9d20b62fd5c4781aa72afb76bb84cdc3cfce1100eeb7a749`、完成事件exit_code0等属于Owner转述Codex回执，**Astra未独立解码最终JSON**。
+
+## 科学和工程分账
+Codex/result/manifest报告4个精确Git Blob原始UTF-8对象，length=7292、12023、8625、6983，合计34923≤45000；各四份Source Git Blob与冻结参数相同，SHA256见manifest。Astra没有重跑Codex连接器环境，所有4/4和资源数字属于Codex公开证明与自报，不得冒充生产接口认证；Astra独立证实远端审阅产物已发布。
+未观察源Transport错误、provider HTTP status为UNKNOWN_NOT_EXPOSED，没有推断200。源path fallback未运行，理由符合Blob成功时的冻结条件。工程回执报告直接执行31/32，Python8/8，交付写6/8，wall641.92s，E1一批；原始详细本地日志未得到全部复算。
+A Windows受界6组原结论保留但原生symlink未观察，未重跑；正式V010冻结、model_activation=False、REAL_GE=False、Results=FALSE、V011=NOT_STARTED、FULL_RUNNER_IO_CLOSURE=BLOCKED。HA/HJB/KFE/GE/IRF/TEMP A0–A3调用预算0、生产Budget派生补丁PREPARED_NOT_DEPLOYED、真实supervisor/reader、production GLOBAL_STOP与runtime均UNVERIFIED。不得恢复旧P2–P5控制器搜寻/科学实验。
+旧两PENDING refs独立只读比较均identical：`review/ch5-temp-price-ledger-precondition-20261021`=`4e05976bbc8068b971ba5915133e9a6c3b73193d`，`review/ch5-http-object-evidence-20261020`=`1579e7f1d7a1975c322dd6ae9af1776e88e83e7c`。均不得删除。
+本轮Review目前PENDING，**禁止先清理**。不能要求Codex重复push或重跑A。若将来Owner自愿提供已固定Blob的原ZIP文件作为审阅I/O例外，必须先核Git Blob身份与SHA再复算全员；不将人工中转定为默认路径。若有真实合法完整字节通道也可按现行审核合同继续独立终审，但本次不自动运行新模型或签发新任务。
