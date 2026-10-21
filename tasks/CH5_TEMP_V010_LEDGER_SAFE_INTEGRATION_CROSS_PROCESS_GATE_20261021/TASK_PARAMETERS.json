@@ -1,0 +1,306 @@
+{
+  "task_id": "CH5_TEMP_V010_LEDGER_SAFE_INTEGRATION_CROSS_PROCESS_GATE_20261021",
+  "revision": "ISSUED_20261021_R1",
+  "schema": "ch5.v010.real_ledger_cross_process_safe_integration.v1",
+  "owner_authorization": "2026-10-21 Owner approved continue after minimal repair PASS; conditional source-only production run wiring and new-scratch no-HA cross-process verification, no deployment",
+  "repository": "zcx369658780/dissertation-ch5-two-asset-hank",
+  "governance_branch": "migration/astra-workflow-20261012",
+  "baseline_parent": "48d39c23b912ad4704e5ea10781ab993081c44a1",
+  "source_docs": [
+    {
+      "path": "docs/CH5_TEMP_LEDGER_MINIMAL_REPAIR_NONHA_FINAL_INDEPENDENT_REVIEW_20261021.md",
+      "commit": "48d39c23b912ad4704e5ea10781ab993081c44a1",
+      "git_blob": "0eb2bec0fa5ff1d48ecaf7274488a75e728431a8",
+      "access": "READ_ONLY"
+    },
+    {
+      "path": "docs/CH5_TEMP_LEDGER_MINIMAL_REPAIR_NONHA_CLEANUP_RECEIPT_20261021.md",
+      "commit": "48d39c23b912ad4704e5ea10781ab993081c44a1",
+      "git_blob": "78d2bd962a64bf0d4ca16594f356cb2a70b30cbc",
+      "access": "READ_ONLY"
+    },
+    {
+      "path": "docs/CH5_TEMP_REAL_LEDGER_NONHA_INTERFACE_FINAL_INDEPENDENT_REVIEW_20261021.md",
+      "commit": "48d39c23b912ad4704e5ea10781ab993081c44a1",
+      "git_blob": "af2df97b111285ec92e60470717b8455576b856f",
+      "access": "READ_ONLY"
+    },
+    {
+      "path": "docs/CH5_ASTRA_WORKFLOW_CURRENT.md",
+      "commit": "48d39c23b912ad4704e5ea10781ab993081c44a1",
+      "git_blob": "cccd5baeeca39e9c34a3ff03a18801b88b07cafa",
+      "access": "READ_ONLY"
+    },
+    {
+      "path": "docs/CH5_MANDATORY_REVIEW_DELIVERY_AND_CLEANUP_20261019.md",
+      "commit": "48d39c23b912ad4704e5ea10781ab993081c44a1",
+      "git_blob": "43a865d830898b1bd7714b9165440682b2559d4e",
+      "access": "READ_ONLY"
+    },
+    {
+      "path": "docs/CH5_REVIEW_TASK_TEMPLATE_CURRENT.md",
+      "commit": "48d39c23b912ad4704e5ea10781ab993081c44a1",
+      "git_blob": "28fce3ca1802b463f03d5046efa1866ab2f2155c",
+      "access": "READ_ONLY"
+    }
+  ],
+  "original_archive": {
+    "name": "TEMP_V010_PRICE_BRIDGE_FACTORIAL_100_PRIVATE_FINAL.zip",
+    "bytes": 1214713,
+    "sha256": "f3e8984fe4d2ef4be65692c27fa7594d96b870d372a8c45d029899f7891841d8",
+    "safe_root": "D:\\ProjectTemp\\ch5_temp_pricebridge_2x2_100_20261018_01",
+    "finite_relative_candidates": [
+      "TEMP_V010_PRICE_BRIDGE_FACTORIAL_100_PRIVATE_FINAL.zip",
+      "package/TEMP_V010_PRICE_BRIDGE_FACTORIAL_100_PRIVATE_FINAL.zip",
+      "private/TEMP_V010_PRICE_BRIDGE_FACTORIAL_100_PRIVATE_FINAL.zip",
+      "evidence/TEMP_V010_PRICE_BRIDGE_FACTORIAL_100_PRIVATE_FINAL.zip"
+    ],
+    "fixed_python_members": [
+      {
+        "name": "factorial_driver.py",
+        "bytes": 12102,
+        "sha256": "2f956b9c1495d1026b23b219da059681b9cdd98fadb9233acf02154559ddf456"
+      },
+      {
+        "name": "temp_driver.py",
+        "bytes": 16549,
+        "sha256": "c4f6aedfc9ae22afc5e2ddc59d490eee29267049de132090d36df93f0a42e001"
+      }
+    ],
+    "max_central_entries": 300,
+    "limited_controller_basenames": [
+      "supervisor.py",
+      "parent_supervisor.py",
+      "controller.py",
+      "parent_controller.py",
+      "reader.py",
+      "stop_reader.py",
+      "PARENT_STOP_REQUEST.json",
+      "MAIN_STOP_PROCESS_RECEIPT.json"
+    ],
+    "max_extra_source_members": 4,
+    "max_extra_member_bytes": 65536,
+    "max_total_source_uncompressed_bytes": 131072,
+    "missing_controller_result": "REAL_SUPERVISOR_READER_SOURCE_UNAVAILABLE__FIXTURE_ONLY",
+    "no_reparse_no_symlink": true
+  },
+  "prior_patch": {
+    "exact_path": "D:\\ProjectTemp\\ch5_temp_v010_ledger_minimal_repair_nonha_20261021_01\\private_repaired_candidate\\factorial_driver.py",
+    "bytes": 13136,
+    "sha256": "51005056766f99b9f6c4bf4fe0fb8d42d6547ace8eebba9ab5bba30465ff8a3c",
+    "missing_policy": "In new scratch reconstruct from authenticated original and accepted public builder, require EXACT SHA256 and size; otherwise SOURCE_UNAVAILABLE",
+    "deployment": "NOT_DEPLOYED"
+  },
+  "accepted_public_bundle": {
+    "exact_historical_commit": "6cbac91ccaab323a938e94a7bc0720238c91dd36",
+    "path": "_review_tmp/ch5/temp-ledger-minimal-repair-nonha-20261021/evidence_sanitized.zip",
+    "bytes": 47700,
+    "sha256": "76ed04b3864b694bc2475666c970862d9514559775a8db31b40b0c39d28a074f",
+    "git_blob": "3dd5e6c28ed55f02ec332f0c2fc8c743c9877e56",
+    "static_pinned_members": [
+      {
+        "name": "harness/repair_support.py",
+        "sha256": "727802dc267138d64235cbaeb153dcecc9bdf3a034a360b09afb181fbbccad43"
+      },
+      {
+        "name": "harness/build_candidate.py",
+        "sha256": "3794f3a3bb177d22b261e044b31e4120c80aeecf93dd982731d71760779a75b8"
+      },
+      {
+        "name": "harness/nonha_regression_source.py",
+        "sha256": "09e63b19fd17897b1071d5c6ff02b20da05da934aa1a4e3e761f7816ec3dea98"
+      },
+      {
+        "name": "safe_ast_patch_manifest.json",
+        "sha256": "1f43332d575a492cd37958ca196dd8ab064ee66ff31cc8bf9043a3e576d27dcb"
+      },
+      {
+        "name": "readiness_gate.md",
+        "sha256": "757cb04e92afe9f857d1859e345b27b9b334157d9672cd6358113c4db1cad8dd"
+      }
+    ],
+    "max_additional_public_members": 4
+  },
+  "scratch": {
+    "unique": "D:\\ProjectTemp\\ch5_temp_v010_ledger_safe_integration_crossprocess_20261021_01",
+    "parent": "D:\\ProjectTemp",
+    "must_be_absent": true,
+    "protected_metadata_roots": [
+      "D:\\ProjectTemp\\c5k1bturn56",
+      "D:\\ProjectTemp\\ch5_temp_pricebridge_2x2_100_20261018_01",
+      "D:\\ProjectTemp\\ch5_temp_v010_ledger_minimal_repair_nonha_20261021_01",
+      "D:\\ProjectTemp\\ch5_temp_v010_real_ledger_nonha_gate_20261021_01"
+    ],
+    "formal_git_locator": {
+      "cwd": "D:\\ProjectTemp\\c5k1bturn56",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "readonly_git_commands": [
+        [
+          "git",
+          "rev-parse",
+          "--absolute-git-dir"
+        ],
+        [
+          "git",
+          "rev-parse",
+          "--git-common-dir"
+        ],
+        [
+          "git",
+          "rev-parse",
+          "--git-path",
+          "index"
+        ]
+      ]
+    },
+    "writes": "ONLY_OWN_SCRATCH_AND_GITHUB_EXACT_THREE_REVIEW_TEMP_FILES"
+  },
+  "gates": {
+    "G0": "preflight authenticated source, patch, public bundle; baseline AST, no import/run original",
+    "G1": "static-only AST exact original run() E2_ classifier and shared STOP calls; create safe new adapter, do not execute original run or temp driver",
+    "G2": "two or three separate OWNED Windows OS processes with same stable scratch-file byte-range fence, one authenticated-derived Budget writer, one independent STOP publisher, one bounded reader; inert only",
+    "G3": "typed plain PermissionError/WinError5, first error retention, fsync STOP ACK, corrupted marker, checkpoint-stage fault and duplicate ACK; no real HA",
+    "G4": "controller-source census exact archive members and provenance-tagged readiness; missing actual supervisor/reader -> no real controller certification"
+  },
+  "tests": [
+    {
+      "id": "X1",
+      "scope": "original run control flow AST and five method/private patch identity"
+    },
+    {
+      "id": "X2",
+      "scope": "actual separate OWNED processes coordinate STOP writer/publisher and ACK boundary, two inert arms only"
+    },
+    {
+      "id": "X3",
+      "scope": "independent reader STOP visibility, charges/entries after ACK zero; real reader only if source-authenticated, otherwise fixture"
+    },
+    {
+      "id": "X4",
+      "scope": "typed E2 failure vs unrelated E1 and primary exception under checkpoint WinError5"
+    },
+    {
+      "id": "X5",
+      "scope": "fault injection: staged checkpoint/partial STOP/duplicate STOP/native reader holding/owned process crash; fail closed"
+    },
+    {
+      "id": "X6",
+      "scope": "prior T1-T6/J1/J2 accepted baseline no-regression at bound provenance and final source-gap/readiness report"
+    }
+  ],
+  "cross_process_protocol": {
+    "lock": "Windows msvcrt.locking stable byte-range OS fence, own shared scratch file, real separate file handles/processes; original RepairProtocol xb constructor is NOT reusable by second process",
+    "attachment": "New scratch-only STOP publisher adapter may attach through verified ownership; no claimed original supervisor unless original exact source pinned and safely tested",
+    "publisher": "obtain same fence; atomically write+fsync owned STOP request; ACK only after durable STOP, while lock held",
+    "writer": "same fence guards budget.guard -> append/checkpoint durable charge -> inert entry return, no new successful admission after ACK",
+    "reader": "own process reads STOP boundedly; never allow HA, never read original journal",
+    "classifications": [
+      "REAL_CONTROLLER_SOURCE_FOUND_BUT_STATIC_ONLY",
+      "REAL_CONTROLLER_SOURCE_NOT_AVAILABLE",
+      "COOPERATING_CROSS_PROCESS_FIXTURE_PASS",
+      "COOPERATING_CROSS_PROCESS_FIXTURE_FAIL",
+      "RUN_TYPED_WIRING_STATIC_READY",
+      "RUN_TYPED_WIRING_SOURCE_GAP",
+      "GLOBAL_SUPERVISOR_READER_UNVERIFIED"
+    ],
+    "prohibitions": "Do not call fixture test a global production STOP pass. Do not infer uncoordinated STOP writers have acquired same fence."
+  },
+  "budgets": {
+    "total_wall_seconds": 14400,
+    "verification": {
+      "wall_seconds": 1500,
+      "python_starts": 6,
+      "direct_starts": 24,
+      "E1_batches": 1
+    },
+    "engineering": {
+      "wall_seconds": 9000,
+      "python_starts": 32,
+      "direct_starts": 120,
+      "pytest_starts": 7,
+      "helper_starts": 16,
+      "max_concurrent_helpers": 3,
+      "attempts_per_named_group": 3,
+      "E1_batches": 4,
+      "timeout_per_owned_process_seconds": 180
+    },
+    "delivery": {
+      "wall_seconds": 2700,
+      "python_starts": 9,
+      "direct_starts": 50,
+      "api_mutations": 7,
+      "successful_publications": 1,
+      "E1_batches": 2
+    },
+    "global": {
+      "max_read_gets": 48,
+      "incremental_files_bytes": 67108864,
+      "git_storage_bytes": 1073741824,
+      "final_reserve_seconds": 180
+    },
+    "science_calls": {
+      "HA": 0,
+      "HJB": 0,
+      "KFE": 0,
+      "GE": 0,
+      "IRF": 0,
+      "model_runner": 0,
+      "scientific_driver": 0
+    },
+    "old_budgets_carryover": 0
+  },
+  "delivery": {
+    "mandatory_auto_upload": true,
+    "review_branch": "review/ch5-temp-ledger-safe-integration-gate-20261021",
+    "fixed_parent": "48d39c23b912ad4704e5ea10781ab993081c44a1",
+    "temp_path": "_review_tmp/ch5/temp-ledger-safe-integration-gate-20261021/",
+    "exact_files": [
+      "result.md",
+      "manifest.json",
+      "evidence_sanitized.zip"
+    ],
+    "limits": {
+      "zip_bytes": 2097152,
+      "expanded_bytes": 8388608,
+      "max_members": 42,
+      "result_bytes": 65536,
+      "manifest_bytes": 262144
+    },
+    "files_inside_zip": [
+      "source_identity_and_controller_census.json",
+      "original_run_typed_stop_static_map.md",
+      "proposed_typed_wiring_sanitized.diff",
+      "safe_cross_process_adapter.py",
+      "safe_cross_process_test_source.py",
+      "X1_X6_results_and_first_errors.json",
+      "STOP_ACK_admission_reader_timeline.json",
+      "native_windows_handles_and_crash.json",
+      "boundary_and_readiness.md",
+      "privacy_resources_protection.json"
+    ],
+    "mode": "Existing authorized Git Data API first, never bypass 401/403/429; limited preauthorized SSH only when API absent before denial",
+    "no_force_push": true,
+    "full_remote_bytes_readback": true,
+    "no_repo_recursive_tree": true,
+    "old_review_refs_to_keep": [
+      "4e05976bbc8068b971ba5915133e9a6c3b73193d",
+      "1579e7f1d7a1975c322dd6ae9af1776e88e83e7c"
+    ],
+    "final_review": "Astra raw byte + full member CRC/length/SHA + privacy + scoped semantic. On terminal verdict archive readback then precise nonforce delete only own three; PENDING retains."
+  },
+  "prohibited": {
+    "production_deploy": 0,
+    "production_source_edit": 0,
+    "original_module_import_or_run": 0,
+    "HA_import_or_call": 0,
+    "model_science_edits": 0,
+    "execute_A0_A1_A2_A3": 0,
+    "write_old_journal": 0,
+    "unbounded_filesystem_search": 0,
+    "read_other_old_archives": 0,
+    "install_packages": 0
+  },
+  "stop": "WAIT_ASTRA_TEMP_LEDGER_SAFE_INTEGRATION_GATE_REVIEW"
+}
