@@ -1,0 +1,12 @@
+# CH5 TEMP31 2018工资与就业人口统计来源审计路线（2026-10-22）
+STATUS=OWNER_APPROVED_SOURCE_ONLY_TASK_ISSUED
+TASK_ID=CH5_TEMP31_2018_NBS_WAGE_EMPLOYMENT_PROVENANCE_GATE_20261022
+ISSUE_COMMIT=5771a46c31ea6c90371c365db8bf537321d70dd5
+CONTRACT=tasks/CH5_TEMP31_2018_NBS_WAGE_EMPLOYMENT_PROVENANCE_GATE_20261022/CONTRACT.md
+FORMAL_V010=FROZEN_UNCHANGED
+HA_HJB_KFE_GE_IRF=ZERO
+1. 调研31省2018私营与非私营单位税前年均工资，优先国家统计局、2019《中国统计年鉴》、省统计局。附省份/统计期/调查范围/官方表号和URL，缺失值保留MISSING_OFFICIAL_SOURCE。国家统计局全国工资平均数82461与49575仅为独立口径源核查，不是31省平均数。
+2. 企业劳动相关的人口优先考虑就业人口，但家庭N居民总量、就业人口N_employed、工资覆盖N_wage_covered必须分列。2018年分省全社会就业资料的历史编制口径与2020后统一测算不可自动比较，居住地就业/工作地生产不能合并，工资权重不使用人口替代。
+3. 数值单位SOURCE_ONLY：MU=10万元，NU=100人；统计年工资元/人/年÷1000为MU/NU/年，再与家庭HU候选s_H作条件转换；未正式采纳的s_H=64.8906755511不能自动成为HA数值单位。工资均值不等于有效劳动工资，工资上下界与HA资产a/b网格皆不调整。
+4. 任务成果为31省工资/就业数据表、每项原始来源账、范围和年份对照、来源失败记录、HU映射条件方案。无正式模型程序变更、HA/数值求解及参数搜索。Astra验收后Owner讨论，未批准前不自发下单。
+5. 本任务在正常GitHub冻结Issue/Release以及准确CURRENT入口后激活；Codex自动Review三件在独立分支，仅限精确白名单、非force、远端回读和隐私门。此前无HA任务已STOP、无Review候选、审阅证据不足，其32/32不得冒充独立通过。三个历史PENDING保留。
