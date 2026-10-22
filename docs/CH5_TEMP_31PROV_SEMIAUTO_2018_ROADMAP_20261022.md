@@ -1,0 +1,14 @@
+# CH5 TEMP 31省参数探索｜2026-10-22 Owner最新科学方向
+
+STATUS=OWNER_APPROVED_SINGLE_TASK__PRECONDITIONS_FIRST
+FORMAL_V010=FROZEN_UNCHANGED
+FIRST_TASK=CH5_TEMP_V010_31PROV_CANONICAL2018_CORRECTED_PRICE_10_20_20261022
+ISSUE_COMMIT=6a9a537836479248510d567899ef2eb0c3378537
+GOVERNANCE_BASELINE=d401df1b54e522fad184c60ea121dec0387a1f33
+
+1. Owner确认匿名两省与真实31省并非同一稳态校准，之前N050双省价格触界20轮只作有限机制证据，不再以其人口、Zt或资本边界值作为31省调参基点。TEMP改为有来源认证的31省真实多省系统，前半段集成此前已接受的Python家户单位、源—目的地迁移31×31矩阵、同轮资本份额/收益、源价格与裁切、财政、GovInv/Zt和迭代状态。正式V010数学、真实31省GE/IRF/Results权益不因此解锁。
+2. 唯一第一期数据选择既有2018年规范同年31省工作簿，固定真实原件SHA256 AEA5A12B5E6474056C1C3EF84BF0156BA88442EF54B0A4FB9C4C6F33CA963F67；不得沿用错误混年MATLAB2018 cache，也不得把2009正式有限parity直接当成2018结果。输入授权仅对应已知确切工作簿只读2018字段，其它保护数据仍禁止。2018家户资产网格到总资本的单位桥与工资/收益边界同单位资格可能尚未由Owner终审；未有最新已采纳来源时止于STOP_BEFORE_HA并出缺口表，不用任意汇率和乘数制造结果。
+3. 单ARM，所有2018同年初始数按源，N/Zt/GovInv初值不主动调参；先10轮/条件续到20轮，每轮31省HA需真实记账。描述性已知有限postloop HA不等于严格HJB D收敛或正式稳态。真数值与安全故障即停。第10轮事前双gap恶化20%且第6-10轮至少4轮不少于16省raw企业价越界才提前停止，否则仅在资格与预算允许下延至20；不是自动第二ARM。
+4. 两套31省×轮核心表：价格wt0/wjt、ra0/ra与家户w_eff/rah分账，真raw触上下界比例、首次触界及趋势；企业Zt,Kt,Lt,K/L、家户At与N×At、家户劳动/目的地Lt_mat的单位桥与资本S守恒。另交HJB/KFE逐省状态、全国31省每轮价格上下界数、最严重省份排名及关键轮变化。不能用同名字段或used等于边界替代实际raw事件。
+5. 每张新任务结束后：Codex自动三件GitHub review证据→Astra原字节和语义验收、归档、清理→Owner与GPT人工讨论确定后续N/Zt/GovInv/mt或边界，**未批准前不自动下一单**。前任三PENDING Review不动，原N050已完成限域审查及白名单清理。
+6. 真实31省数据和人口—家户资产桥尚未科学认证、生产GLOBAL_STOP/supervisor/reader仍UNVERIFIED。即使完成20轮，也不是正式V010 GE、政策IRF或论文Results。核心科学价值是有界探索参数是否可能存在合理稳态范围。

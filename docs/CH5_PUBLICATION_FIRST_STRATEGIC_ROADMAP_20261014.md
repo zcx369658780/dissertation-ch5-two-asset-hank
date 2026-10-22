@@ -43,3 +43,6 @@ IMPLEMENTATION_CODE_PARENT=`a1db8c114dec0ab69d69a5576e153a7f868cba0e`，只是�
 
 ## 2026-10-22 最新Owner路线覆盖：TEMP半自动N诊断（优先历史ACTIVE描述）
 正式M1部分完成、M2稳态未通过、M3/M4无新Results，V010不变。Owner决定研究先于继续扩建旧控制器：单次只调人口规模N，固定当前TEMP两省可认证来源，10轮观察，若前10轮无明确恶化且安全合格则同一任务扩至最多20轮；记录每省企业raw/used工资与ra边界、家庭wt/rah参考带、Zt/Kt/Lt与At/劳动供给的单位对照。每次独立验收后先Owner讨论，不自动签下一组N/Z/约束。详见[2026-10-22 TEMP半自动N路线](CH5_TEMP_SEMIAUTO_N_DIAGNOSTIC_ROADMAP_20261022.md)。本段不变更正式V010方程、Results=False及生产GLOBAL_STOP=UNVERIFIED。GitHub原B-only Review永久归档此前遇平台阻断，未完成清理，必须继续保留。
+
+## 2026-10-22 Owner最新覆盖：TEMP从双省转向真实31省（优先历史双省ACTIVE）
+双省模型与31省非同一调参问题，停止继续降低双省N。正式V010原MATLAB→Python路线/M1-M4未更改；TEMP可在单独隔离源候选上集成已采纳的家户单位、31×31迁移/资本份额、企业工资财政与外层修正，先验2018同年规范数据及未决家庭资产桥，才可首10轮/条件20轮。详细Owner逐轮审批与STOP见[31省半自动路线](CH5_TEMP_31PROV_SEMIAUTO_2018_ROADMAP_20261022.md)。不能自动采用PARTIAL规范化建议、混年MATLAB缓存、假造31份双省；生产GLOBAL_STOP依然UNVERIFIED、Results=FALSE、V011 NOT_STARTED。
