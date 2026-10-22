@@ -1,0 +1,35 @@
+# CH5 TEMP31 · 2018工资与就业统计：E1源值单位门STOP独立终审
+DATE=2026-10-22
+TASK_ID=CH5_TEMP31_2018_NBS_WAGE_EMPLOYMENT_PROVENANCE_GATE_20261022
+RUN_ID=a456168dea274581b2b63df0533610ea
+CODEX_ACTUAL_TERMINAL=STOP_E1_EXHAUSTED_SOURCE_VALUE_UNIT_GATE
+TASK_OVERALL=NOT_PASS__END_TO_END_OFFICIAL_VALUES_UNVALIDATED
+ASTRA_DECISION=STOP_ACCEPTED__INDEPENDENT_EVIDENCE_INTEGRITY_PASS__DATA_NOT_ACCEPTED
+REMOTE_CANDIDATE=d3bb242ed531e749d96aaea24151cb0133b625aa
+REMOTE_TREE=defaf410dba6910f74eee5685c51800afd9f3e20
+REMOTE_PARENT=7d0b6b43604b70bbaccd64dca9549836dee6234b
+REVIEW_BRANCH=review/ch5-temp31-wage-employed-2018-20261022
+REMOTE_THREE_FILES=PASS__EXACT_WHITELIST
+CODEX_REMOTE_BYTE_READBACK=CODEX_REPORTED_PASS
+ASTRA_RAW_ZIP_MEMBERS=17_OF_17_CRC_LENGTH_SHA256_PASS
+OWNER_FINAL_RECEIPT_ORIGINAL=NOT_READ__CODEX_REPORTED_ONLY
+RESULTS=FALSE
+CLEANUP=PENDING_AFTER_ARCHIVE_REMOTE_READBACK
+
+## 一、真实证据与独立验收范围
+GitHub固定commit `d3bb242ed531e749d96aaea24151cb0133b625aa` / parent `7d0b6b43604b70bbaccd64dca9549836dee6234b` compare ahead1 behind0，diff仅三个`_review_tmp/ch5/temp31-wage-employed-2018-20261022/`文件，无额外路径；本轮review branch指向固定候选。Owner上传本会话三件原件，独立按原始bytes重算：
+- result.md 5015B，SHA256 25e508a417f3329dc0659b6ec872d85ca1d97b06f43688fabb5cab920f4055e7，Git Blob 48ba0a3515c90e7bd33c9e249285835e0818eb36
+- manifest.json 5142B，SHA256 eade17cddbb8d8b0353967d2648f5477b718ae4fd4c8eb9b306a48d7808a9231，Git Blob d9fc1e81f4e69640caa2930c6cb7798cb9f39ccd
+- evidence_sanitized.zip 588196B，SHA256 962d1f789ccd6f61fccbad503ab1a4d780c30abdb8af38c9730a03321bdfcca2，Git Blob fdeaed7d0335c65b5f00954aba87a44f61e2c77e。
+与GitHub固定候选三文件Git Blob完全一致。Python标准库zipfile/hashlib独立校验17/17 ZIP成员原始长度、CRC32、SHA256与manifest一致，展开3341634B，testzip=无CRC错，路径无遍历。ZIP内31条公开官方源original record的Base64按原长度/SHA256逐条复算31/31匹配，另有15条CONNECTOR_EXTRACT，独立读了217行来源账、31行2018省份整理表，省序1—31、年份、覆盖统计独立检查。**原字节保真≠所有具体省级工资来源真实和完整数值资格已通过**。本审阅未再访问互联网原站逐页复证、未重启Codex，也未读取Owner Windows原始最终JSON（用户报告9080B/SHA256 c82150a921ce58ba7fc39e833b1161bc2798d446a821c8d5598010b8769116f3），不能称其已经独立CRC或主机进程验收。
+可用独立机器证明另存 `/mnt/data/CH5_TEMP31_2018_WAGE_EMPLOYMENT_INDEPENDENT_AUDIT_20261022.json`，SHA256 fa65fb64bdbd97496bf98b3e4aa9fac6d23ba106acc35e55cde5f423ddbaaf71；该文件是会话本地工件，不冒充已发布到GitHub的证据。
+
+## 二、吉林前置门与经济口径
+ZIP内`JL_COV`官方站原始HTML 30087B/SHA256 7b6e9bdce3315c1e75358ff2a83ac3768df3577db91f86aaa3c854dfea74b86f；原表题`4-2 城镇非私营单位就业人员人数（2018年末）`，全省行`2793233`人，整理表`279.3233`万人，两者÷10000严格一致。预检代码用整理数值`279.3233`直接在来源字面值`2793233`中查找而报`VALUE_NOT_IN_EVIDENCE`，属于**明确可定位的跨单位比较误报**，不是该局部数量本身错换。但2018年末城镇非私营单位就业人数**不是**同年工资调查年度平均人数/全社会就业人数，必须保留其scope/time标签；不得因为算术相等就升级为全部数据PASS。
+前两批E1已消耗2/2，Codex正确止于来源值门，没有追溯修补、重跑资料流水线或用别年数值补缺。所有公开整理行统一标`OBSERVATIONS_ONLY_PIPELINE_STOP_NOT_FINAL_VALIDATED`。
+独立重算观察覆盖：私营工资12/31、非私营16/31、全社会就业13/31、城镇就业7/31、私营工资覆盖人数0/31、非私营调查/年末框架人数6/31、常住人口4/31；彼此分母与时点不同，不能自动加权计算全省平均工资、直接以此替换家庭N/企业L。吉林之外已有省份有来源403/404/502、地方官方转载与年份vintage差异、工资调查框架与就业人数混口径，整批端到端验证未完成，不可写成省级工资面板采纳。
+HA/HJB/KFE/roots/science driver/outer/GE/IRF 均Codex报告0，未被Astra现场复演；正式V010不改、Results FALSE、V011 NOT_STARTED。Codex资源：页面100/150、Python11/16、direct39/60、E1 2/2。未用额度及旧任务预算不得转移为新任务许可。
+
+## 三、裁决和后继人工作业
+执行终态保留`STOP_E1_EXHAUSTED_SOURCE_VALUE_UNIT_GATE`，科学数据`NOT_PASS`；审阅证据完整性`PASS`；Source gate反例`JL_COV` 现可核，但不能证明其他来源全部准确。该停止不需要重新执行HA；如Owner后续批准，可以在新任务使用已核原始source件的固定SHA/URL，只修转换-aware的无HA机检，继续缺失省份官方搜集和逐值验证；不重做31件已取得原件的无用抓取、也不自动选择HU/a-b网格/人口替换。
+报告治理归档后必须远端回读；再按固定review HEAD、普通nonforce严格删除**本轮**三份临时文件并逐件404。历史B-only、AB、HTTP三个PENDING候选均只读不清；无后继授权时ACTIVE_TASK=NONE。
