@@ -12,3 +12,6 @@ GOVERNANCE_BASELINE=d401df1b54e522fad184c60ea121dec0387a1f33
 4. 两套31省×轮核心表：价格wt0/wjt、ra0/ra与家户w_eff/rah分账，真raw触上下界比例、首次触界及趋势；企业Zt,Kt,Lt,K/L、家户At与N×At、家户劳动/目的地Lt_mat的单位桥与资本S守恒。另交HJB/KFE逐省状态、全国31省每轮价格上下界数、最严重省份排名及关键轮变化。不能用同名字段或used等于边界替代实际raw事件。
 5. 每张新任务结束后：Codex自动三件GitHub review证据→Astra原字节和语义验收、归档、清理→Owner与GPT人工讨论确定后续N/Zt/GovInv/mt或边界，**未批准前不自动下一单**。前任三PENDING Review不动，原N050已完成限域审查及白名单清理。
 6. 真实31省数据和人口—家户资产桥尚未科学认证、生产GLOBAL_STOP/supervisor/reader仍UNVERIFIED。即使完成20轮，也不是正式V010 GE、政策IRF或论文Results。核心科学价值是有界探索参数是否可能存在合理稳态范围。
+
+## 2026-10-22 最新Owner决定：先统一31省数值单位，才能重开任何HA调参
+不再让unit gate阻止不需要HA的31×31结构/矩阵代数测试。以 [统一物理量纲和家庭计价基准工作合同](CH5_TEMP31_PHYSICAL_UNITS_AND_HOUSEHOLD_NUMERAIRE_WORKING_CONTRACT_20261022.md) 作为无HA接线的SOURCE_ONLY实验基准。MU=10万元、NU=100人解决2018现价GDP/资本/人口同基数问题；一个通用家庭货币因子s_H对资产a/b、消费、工资、转移、税费同口径，真实工资/收益边界解释和utility成本需验。默认不自选s_H=1，也不用边界命中减少来反向优化该基准。允许Codex在只读2018确切工作簿和受界合成模型内计算来源约束的候选numeraire及31x31 noHA结构oracle；下一次Owner看表讨论并确定唯一s_H及其单位、期次，再另批准31省10/20轮HA。正式V010科学合同不改、HA本轮预算0。

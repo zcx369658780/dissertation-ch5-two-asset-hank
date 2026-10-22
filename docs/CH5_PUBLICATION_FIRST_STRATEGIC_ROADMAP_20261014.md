@@ -46,3 +46,6 @@ IMPLEMENTATION_CODE_PARENT=`a1db8c114dec0ab69d69a5576e153a7f868cba0e`，只是�
 
 ## 2026-10-22 Owner最新覆盖：TEMP从双省转向真实31省（优先历史双省ACTIVE）
 双省模型与31省非同一调参问题，停止继续降低双省N。正式V010原MATLAB→Python路线/M1-M4未更改；TEMP可在单独隔离源候选上集成已采纳的家户单位、31×31迁移/资本份额、企业工资财政与外层修正，先验2018同年规范数据及未决家庭资产桥，才可首10轮/条件20轮。详细Owner逐轮审批与STOP见[31省半自动路线](CH5_TEMP_31PROV_SEMIAUTO_2018_ROADMAP_20261022.md)。不能自动采用PARTIAL规范化建议、混年MATLAB缓存、假造31份双省；生产GLOBAL_STOP依然UNVERIFIED、Results=FALSE、V011 NOT_STARTED。
+
+## 2026-10-22 覆盖：31省TEMP统一数值系统SOURCE_ONLY门
+旧TEMP31因家庭资产a/b数值货币单位、asset_bridge和工资边界无最终单位依据合法STOP，科学0。Owner先要求统一量纲。新 `CH5_TEMP31_UNIT_NUMERAIRE_AND_NONHA_MATRIX_GATE_20261022` 仅作MU/NU宏观同单位SOURCE_ONLY与家庭共同numeraire的可核候选计算、31×31劳动/资本和财政符号测试；**不跑HA、不自动选择未获批的家庭numeraire，不修改正式V010**。数值调参待Owner验收并明确批准唯一单位合同。见[统一数值系统](CH5_TEMP31_PHYSICAL_UNITS_AND_HOUSEHOLD_NUMERAIRE_WORKING_CONTRACT_20261022.md)。
