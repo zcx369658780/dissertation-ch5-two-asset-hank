@@ -1,0 +1,28 @@
+# CH5 TEMP31 Unit Bridge STOP · 审阅证据精确清理回执
+Date=2026-10-22
+TASK_ID=CH5_TEMP_V010_31PROV_CANONICAL2018_CORRECTED_PRICE_10_20_20261022
+ACTUAL_SCIENCE_TERMINAL=STOP_UNIT_BRIDGE_UNRESOLVED
+ASTRA_REVIEW=STOP_ACCEPTED__TASK_OVERALL_NOT_PASS__ARTIFACT_20_OF_20_PASS
+ARCHIVE_GOVERNANCE_COMMIT=96498addeddfd8244554e560dc274a47559dd24a
+ARCHIVE_REPORT=docs/CH5_TEMP31_UNIT_BRIDGE_STOP_FINAL_INDEPENDENT_REVIEW_20261022.md
+ARCHIVE_REMOTE_READBACK=5_OF_5_GIT_BLOB_MATCHED
+REVIEW_BRANCH=review/ch5-temp-31prov-canonical2018-price-10-20-20261022
+REVIEW_PREVIOUS_CANDIDATE=3f9fe1efe2e4b1e0bf523f2ad8074f0370498951
+REVIEW_CLEANUP_COMMIT=2914ecc80046de97cff6957a1f360b134aafd87d
+REVIEW_CLEANUP_TREE=aca782d0ec2054a882a2788b069790986e7df837
+REVIEW_CLEANUP_PARENT=3f9fe1efe2e4b1e0bf523f2ad8074f0370498951
+CLEANUP=TEMP_CLEANUP_VERIFIED__3_OF_3_PRECISE_PATH_404
+
+## 清理顺序与范围
+Astra先将31省单位前置门合法STOP的独立终审永久归档正式治理branch，准确记录20件ZIP字节机器完整性PASS、三个公开Git Blob身份PASS、31省经济单位U01/U02/U04未裁决、模型集成和科学调用均未运行；非强制治理更新至`96498addeddfd8244554e560dc274a47559dd24a`并远端readback五个精确原件Git Blob全部匹配。
+之后核Review HEAD未移动、固定parent/Tree一致，精确取得三份原始Review文件Git Blob：
+- result.md `ab1343eaa2b49bdceab690a476eb35b5527ce763`
+- manifest.json `4872228edea76c526c24ed4e634742007ae67987`
+- evidence_sanitized.zip `d8878f96c155f07086e12aa7f389d4dec8d0be5d`
+以Review候选tree`6ad96a294547f756a1323fad202bd3f91338b993`为base仅删除`_review_tmp/ch5/temp-31prov-canonical2018-price-10-20-20261022/`下三件指定文件，无其它Git路径变更。cleanup commit `2914ecc80046de97cff6957a1f360b134aafd87d`唯一parent固定旧Review候选，compare仅一个commit/三个`removed`，普通nonforce按expected SHA更新Review branch成功。之后远端ref/cleanup compare identical，三个精确路径全返回404。
+三个旧review branches原SHA均单独compare identical，未读写其内容也未清理：B-only `f8db0251fb98f2b157affc9bf7391895b86edba0`、AB `4e05976bbc8068b971ba5915133e9a6c3b73193d`、HTTP `1579e7f1d7a1975c322dd6ae9af1776e88e83e7c`。
+Git当前tree删除不抹Git历史commit/blob；本次公开包已先进行来源与脱敏验收。Codex当时本地Base64严格回读失败仍按真实终态记录，不因Astra后验取得原件而改写为Codex当时成功。
+
+## 未闭科研门
+Unit U01/U02/U04缺Owner最终经济学采纳；Ct/Bt/AtTax/Tt/Lt总量口径未闭。31省TEMP修正集成、迁移/资本31×31数值oracle、STOP runner未运行，0轮/0 HA，比例NA；绝不假定本次存在价格触界或稳态。
+ACTIVE_TASK=NONE；正式V010不动，Results=FALSE，V011 NOT_STARTED，生产GLOBAL_STOP UNVERIFIED。必须先Owner/GPT讨论单位合同。建议下一独立工程门在批准前可先做**无HA的31省结构接线及symbolic/unit-variable oracles**，但不得在经济单位不清时带数值资本映射运行HA；任何后继预算均须Owner重新明示授权，不能继承旧620次。
