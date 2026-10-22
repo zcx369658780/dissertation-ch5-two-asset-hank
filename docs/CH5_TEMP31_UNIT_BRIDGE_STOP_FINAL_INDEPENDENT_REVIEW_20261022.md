@@ -1,0 +1,39 @@
+# 第五章 TEMP31：2018年单位桥前置门 STOP 独立终审
+Date: 2026-10-22
+TASK_ID=CH5_TEMP_V010_31PROV_CANONICAL2018_CORRECTED_PRICE_10_20_20261022
+RUN_ID=4776bb24b09648eca919a637d6c13a07
+CODEX_ACTUAL_TERMINAL=STOP_UNIT_BRIDGE_UNRESOLVED
+TASK_OVERALL=NOT_PASS__NO_MODEL_INTEGRATION_OR_SCIENCE
+ASTRA_DECISION=STOP_ACCEPTED__UNIT_BRIDGE_HARD_GATE_CORRECTLY_ENFORCED
+ARTIFACT_INTEGRITY=PASS__20_OF_20_INDEPENDENT_CRC_LENGTH_SHA256
+REMOTE_PUBLICATION=PASS__THREE_EXACT_FILES_PRESENT__ASTRA_INDEPENDENT_IDENTITIES
+CODEX_ORIGINAL_REMOTE_READBACK=FAILED__STRICT_BASE64_LOCAL_VALIDATOR
+ASTRA_ORIGINAL_LOCAL_FINAL_JSON=NOT_OBTAINED__OWNER_REPORTED_ONLY
+SCIENCE_RESULTS=FALSE
+CLEANUP=ONLY_AFTER_ARCHIVE_READBACK
+
+## 1. 身份与原字节
+冻结GitHub治理HEAD `4c988bf97adc16a2a266afe9475f77c2bd043944`；候选commit `3f9fe1efe2e4b1e0bf523f2ad8074f0370498951`，tree `6ad96a294547f756a1323fad202bd3f91338b993`，唯一parent `d401df1b54e522fad184c60ea121dec0387a1f33`，review ref `review/ch5-temp-31prov-canonical2018-price-10-20-20261022` exact identical。compare ahead1/behind0，恰新增 `_review_tmp/ch5/temp-31prov-canonical2018-price-10-20-20261022/result.md`、`manifest.json`、`evidence_sanitized.zip`；无越界新增。
+Owner在本会话自愿提供三个同身份原件以完成独立二进制取证：
+- result.md：4305B、Git Blob `ab1343eaa2b49bdceab690a476eb35b5527ce763`、SHA256 `280e947e637ac74ea406d73ad94007e88433090a8d7d794330d90ef126466d79`；
+- manifest.json：8005B、Git Blob `4872228edea76c526c24ed4e634742007ae67987`、SHA256 `5efc0cef23a17aace5bc943c9e448ac90b28f6e9e2afae54085095149129ba94`；
+- evidence_sanitized.zip：16510B、Git Blob `d8878f96c155f07086e12aa7f389d4dec8d0be5d`、SHA256 `641fbf796b28acc89149c9a662cd0f5cc4757afa80957c9e0e27afa12dc2275f`。
+Astra使用Python标准库对真实ZIP原件独立复算20/20成员CRC32、原始长度、SHA256精确等于固定远端manifest；展开108475B，testzip PASS、无路径穿越/符号链接/异常文件；所有文本UTF-8可解码。公开载荷常见私钥头、Bearer、GitHub/OpenAI类token、Windows用户/ProjectTemp绝对路径等针对性扫描无发现，不等于所有秘密形式的穷尽证明。
+可重复的公开来源身份账 `source_identity_checks.json`列18个固定source/path/ref/blob，Astra另外用同账号GitHub连接器逐件固定ref/path核实际provider Git Blob：18/18精确匹配。所有公开成员的机器哈希及语义检查不代表Astra重新运行Codex Windows内核或重新打开本机私人工作簿。
+非致命包装观察：`input_unit_authority.csv`和`unit_authority.csv`内容原字节完全相同、共279行各自重复一份；违背压缩包相同原件尽量只存一次的精简约定，下次按别名引用，不把这件重复计成两份独立经济学来源。当前内容未丢失且公开包仍低于成员和字节上限。
+
+## 2. 单位门停止的经济学依据
+来源层：`canonical2018_source_check.json`报告2018 GDP/POP/PIM资本/Zt各31条且31省顺序、同年行与2018 binding一致，工作簿完整SHA256被Codex报告匹配 `AEA5A12B5E6474056C1C3EF84BF0156BA88442EF54B0A4FB9C4C6F33CA963F67`；**Astra没有在本次环境独立访问该私人XLSX的原字节**，因此仅把工作簿级年份/质量验证定为Codex受限来源报告，不升格独立重算。
+正式源SPEC `docs/CH5_MP4C_MULTI_PROVINCE_STEADY_STATE_CALIBRATION_AND_INITIALIZATION_REDESIGN_SPEC.md` Git Blob `d4c021aca1ac35549781ba725607ed20aeb0f8fb` 是 PARTIAL，不是Owner同意其全部单位提案的证明。其GDP亿元×1000、人口万人×100、PIM资本万元÷10、MU=10万元和NU=100人的统一单位方案只是SOURCE_ONLY提议；当前家庭a/b网格一个单位等值金额没有正式来源，`asset_bridge`无获批显式系数，`wjt`工资上下界也未与2018宏观工资流量单位正式对应。
+`unresolved_items.csv`明确U01家庭网格货币、U02 asset_bridge为HA硬阻断，U04企业工资及收益边界可比性硬阻断，U03 Ct/Bt/AtTax/Tt/劳动财政口径待闭，Q01 31×31资产/迁移oracle及Q02任务自身STOP runner为NOT_RUN。公开原件`input_unit_authority.csv`实际279行=31省×9个检查对象，缺正式采纳单位处皆保留NOT_AUTHORIZED/BLOCKING，不因实质模型无观测而填假值或0。若任意采用asset_bridge=1/100/10000会改变经济解释，绝非工程默认值。
+Codex报告正确在第一次HA前停于`STOP_UNIT_BRIDGE_UNRESOLVED`；model integration、31×31矩阵测试、财政oracle、安全runner资格均未执行，不能称作已把Python修正实装31省；这不是模型求解数值错误/HA不收敛。
+
+## 3. 数值、原终态与交付分账
+4个逐轮CSV(`price_rounds_31.csv`, `firm_household_rounds_31.csv`, `ha_status_31.csv`, `national_rounds.csv`)真实仅表头、0行数据；`province_summary_31.csv`真实31省，每省状态NOT_RUN、触上下界率NA_NO_COMPLETED_ROUNDS、首次触边NA；这不等于0%触边。outer=0、HA/HJB/KFE/roots/driver=0、10轮条件门NOT_REACHED、Results=FALSE、V011=NOT_STARTED。
+Codex上报实际总计direct29/90、工程Python6/20、E1两批用尽、Git写6/8、成功发布1/1；ZIP中是PRE_PUBLICATION_BUILD快照 direct25/Python5/Git写0，快照时点与最终回执不同，不误判为伪造冲突。最早两项非科学工程误差是编排SyntaxError和PowerShell DateTime字符串相等误报，E1额度已用尽；无科学首错。Owner给出的本机完整最终JSON5276字节、SHA256 `1d1af04f4501e61e83cd44de927c57bd3d95c75b2a46e542349e6f62a7b56395`、外部完成事件进程状态为Owner/Codex报告，Astra没有取得本地最终JSON/完成事件原字节独立重算。
+真实Codex交付回读失败（本地严格Base64解码器）不能被后验推翻为Codex当时PASS。独立Astra取得候选ref、三原件Git Blob，并依Owner上传的实际字节完成ZIP逐件审查，所以`ASTRA_REMOTE_EVIDENCE_REVIEW=PASS`，`CODEX_LOCAL_REMOTE_READBACK=FAILED`可以同时成立。没有理由重跑科学，因为科学调用为0且源单位尚待Owner裁决。
+
+## 4. 不可解锁与下一步
+本轮`STOP_ACCEPTED`不等于任务科学实施PASS，正式V010原始冻结、模型激活False、REAL_GE=False、Results=FALSE、V011 NOT_STARTED、生产GLOBAL_STOP及supervisor/reader仍UNVERIFIED，补丁PREPARED_NOT_DEPLOYED。
+下一步必须Owner先参与单位决策：确认2018同年公共资本与GDP/人口单位；将家庭资产网格a/b、Ct、At/Bt、工资/财政人均单位连至宏观MU/NU并给出显式、来源可审的资产桥；判断收入、工资和回报边界如何保持同单位。**这是一项经济学E3决定，不是给Codex任意补一个常数，也不自动恢复旧620次HA额度。** 讨论结束再独立冻结后续一张任务，可在已合法完成的source identity和工作簿只读取证基础上复用，而非重做已接受的输入普查。
+本轮Review证据仅在正式报告永久归档、同commit回读后才允许精确普通非强制只删本轮Review当前树三个文件并逐件404；旧B-only ref `f8db0251fb98f2b157affc9bf7391895b86edba0`、旧AB `4e05976bbc8068b971ba5915133e9a6c3b73193d`、旧HTTP `1579e7f1d7a1975c322dd6ae9af1776e88e83e7c`保持不变。Owner未授权下一组调参，ACTIVE_TASK须复位NONE。
