@@ -49,3 +49,6 @@ IMPLEMENTATION_CODE_PARENT=`a1db8c114dec0ab69d69a5576e153a7f868cba0e`，只是�
 
 ## 2026-10-22 覆盖：31省TEMP统一数值系统SOURCE_ONLY门
 旧TEMP31因家庭资产a/b数值货币单位、asset_bridge和工资边界无最终单位依据合法STOP，科学0。Owner先要求统一量纲。新 `CH5_TEMP31_UNIT_NUMERAIRE_AND_NONHA_MATRIX_GATE_20261022` 仅作MU/NU宏观同单位SOURCE_ONLY与家庭共同numeraire的可核候选计算、31×31劳动/资本和财政符号测试；**不跑HA、不自动选择未获批的家庭numeraire，不修改正式V010**。数值调参待Owner验收并明确批准唯一单位合同。见[统一数值系统](CH5_TEMP31_PHYSICAL_UNITS_AND_HOUSEHOLD_NUMERAIRE_WORKING_CONTRACT_20261022.md)。
+
+## 2026-10-22 TEMP31 数据策略覆盖：有来源插值与整体经济映射
+Owner准许继续官方搜集和在两端同省同统计总体2017/2019可比时进行单独标记的2018工资/就业时间插值；官方值O/插值I/情景S不混层。研究重点转居民家庭人口—就业来源与目的地—效率劳动—单位工资覆盖的整体映射，而非追求31省每字段必须由单一工资表完整覆盖。新SOURCE_ONLY任务`CH5_TEMP31_2018_EMPLOYMENT_WAGE_IMPUTATION_AND_LABOR_MAPPING_20261022`在新scratch建立省级分层面板、31x31非HA符号可行性和Owner E3决策表，不改正式V010或恢复HA；见[路线](CH5_TEMP31_2018_EMPLOYMENT_WAGE_IMPUTATION_LABOR_MAPPING_ROADMAP_20261022.md)。
