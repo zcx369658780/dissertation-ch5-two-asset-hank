@@ -1,0 +1,113 @@
+{
+  "schema": "ch5.temp31.2018_imputation_labor_mapping.v1",
+  "task_id": "CH5_TEMP31_2018_EMPLOYMENT_WAGE_IMPUTATION_AND_LABOR_MAPPING_20261022",
+  "revision": "ISSUED_20261022_R1",
+  "owner_approved": "official gap research and explicitly marked interpolation; prioritize overall household/employment/wage/firm-labor mapping",
+  "baseline": "4500347a525c39a8d7c5c2a483fac19bebaa18a3",
+  "history": {
+    "fixed_source_candidate": "e9eb6a0d131bc8046af61d95892b2aa45e5740d8",
+    "zip_sha256": "14746e539ce792189dc85d207ec148e97bad27f8101a4c598c475d49a05008fc",
+    "blob": "87b3173fc12f4ec3bec34dbde785f27ad627e37f",
+    "member_count": 26,
+    "unit_oracle_validated_cases": 258,
+    "query_count_canonical": 58,
+    "query_count_faulty_builder": 50,
+    "review_cleanup": "3d4f33b704c229ede144451fed4df6aa4eb66d10"
+  },
+  "input": {
+    "year": 2018,
+    "provinces": 31,
+    "official_priority": "NBS/2019 yearbook/province statistic bureaus",
+    "read_2018_workbook_only_if_needed": "D:\\ProjectTemp\\ch5-canonical-data-workbook-20260909-001\\CH5_MULTI_PROVINCE_CANONICAL_DATA_V1.xlsx",
+    "workbook_sha256": "AEA5A12B5E6474056C1C3EF84BF0156BA88442EF54B0A4FB9C4C6F33CA963F67"
+  },
+  "hierarchy": {
+    "O": "2018 same-year same-metric official source verified",
+    "I": "2017,2019 SAME province+scope+vintage unit endpoints; exp((ln17+ln19)/2); arithmetic interpolated sensitivity only; never official",
+    "S": "separate scenario with disclosed formulas, no official status or automatic integration",
+    "no_I_without_both_endpoints": true,
+    "no_cross_province_interpolation_in_I": true,
+    "no_imputed_overwrite_observed": true,
+    "missing_not_zero": true
+  },
+  "population_contract": {
+    "household_resident": "H_resident_origin",
+    "employed_resident": "E_employed_resident_origin",
+    "employed_workplace": "E_employed_workplace_destination",
+    "wage_covered": "E_wage_unit_private_or_nonprivate_avg",
+    "firm_eff_labor": "L_firm_eff_destination",
+    "migration_destination_origin": true,
+    "source_faithful_labor_formula_not_modified": true,
+    "participation_rate_only_when_denominators_comparable": true,
+    "HU_numeraire_not_adopted": true
+  },
+  "deliverables": [
+    "wage_employment_2018_observed_31.csv",
+    "wage_employment_2018_interpolated_31.csv",
+    "official_source_and_endpoint_ledger.csv",
+    "employment_population_scope_bridge.md",
+    "household_firm_labor_mapping_contract.md",
+    "mapping_31_synthetic_oracles.json",
+    "imputation_method_and_sensitivity.md",
+    "source_request_canonical_events.jsonl",
+    "source_request_reconciliation.json",
+    "unresolved_economic_E3.md",
+    "first_error_budget_and_stop.json"
+  ],
+  "budgets": {
+    "wall_seconds": 14400,
+    "source_recovery_seconds": 1800,
+    "official_research_seconds": 6000,
+    "structural_design_seconds": 3000,
+    "delivery_seconds": 3000,
+    "final_reserve_seconds": 600,
+    "official_requests_max": 160,
+    "engineering_python_starts_max": 24,
+    "direct_process_starts_max": 100,
+    "E1_batches_max": 3,
+    "scratch_bytes_max": 268435456,
+    "review_public_bytes_max": 6291456,
+    "zip_expanded_bytes_max": 16777216,
+    "zip_members_max": 40,
+    "git_write_calls_max": 8,
+    "published_review_max": 1,
+    "old_budget_reuse": 0,
+    "HA": 0,
+    "HJB": 0,
+    "KFE": 0,
+    "roots": 0,
+    "science_driver": 0,
+    "outer": 0,
+    "GE": 0,
+    "IRF": 0
+  },
+  "scratch": {
+    "root": "D:\\ProjectTemp",
+    "new_path": "D:\\ProjectTemp\\ch5_temp31_employment_wage_mapping_20261022_01",
+    "must_be_new": true,
+    "old_data_read_only": true
+  },
+  "delivery": {
+    "branch": "review/ch5-temp31-wage-employment-mapping-20181022",
+    "fixed_parent": "4500347a525c39a8d7c5c2a483fac19bebaa18a3",
+    "temp_path": "_review_tmp/ch5/temp31-wage-employment-mapping-20181022/",
+    "only": [
+      "result.md",
+      "manifest.json",
+      "evidence_sanitized.zip"
+    ],
+    "automatic": true,
+    "no_force": true,
+    "remote_raw_bytes_verification": true,
+    "previous_pending_preserved": true
+  },
+  "science": {
+    "V010_unmodified": true,
+    "Results": false,
+    "V011": "NOT_STARTED",
+    "household_population_replaced": false,
+    "HU_adopted": false,
+    "HA_grid_changed": false,
+    "no_next_arm": true
+  }
+}
