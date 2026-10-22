@@ -1,0 +1,12 @@
+# TEMP31 · 2018年31省工资和就业数据：源值单位归一化与官方缺口续审
+STATUS=OWNER_APPROVED__SINGLE_SOURCE_ONLY_RECOVERY_TASK_ISSUED
+TASK_ID=CH5_TEMP31_2018_WAGE_EMPLOYMENT_UNIT_NORMALIZED_RECOVERY_20261022
+ISSUE_COMMIT=34c3c0371fa9b17a129f67ecefef0f7bfd83876c
+GOVERNANCE_BASELINE=f3e2e1bb148c001c714db7ae42072d7f820e1aed
+FORMAL_V010=FROZEN_UNCHANGED
+HA_HJB_KFE_OUTER_GE_IRF=0
+1. 已审前一轮 STOP_E1_EXHAUSTED_SOURCE_VALUE_UNIT_GATE，官方旧原件31条，17成员ZIP完整性独立PASS；31省观察表和217来源台账尚未全量通过。不能因ZIP证据PASS将数据升级为合格31省面板。旧候选d3bb242ed531e749d96aaea24151cb0133b625aa为固定Git历史只读来源，不恢复已清理的review当前树。
+2. 优先修复纯工程机检：吉林2793233人=279.3233万人应通过，2793232人不应通过；来源表题的省份、指标种类、2018年份、年末与年度平均、工作地/居住地都必须入值机检。工资元/人/年和人口万人不应混单位；不能把吉林非私营年末单位人数当工资调查年度平均分母。
+3. 在修复与验证旧值后，仅从国家统计局/2019年鉴/省统计局/官方政府历史转载的有证来源续搜缺口；每值保留原单位、统计覆盖、年份及来源层级。西藏缺失和陕西错位、上海版本差异、浙江云表行名、新疆后年回溯摘录等为重点风险。预算内无法取得官方原件则留MISSING并报告原因，不编造值或借其他年份填补。
+4. 报告31省观察改为逐值来源归一化机检状态、分口径覆盖统计；可受界接受来源子集，不等于完整31省面板。不得机械平均私营与非私营工资，不将常住人口全局改就业人口，家庭HU、a/b网格、工资上界和收益率界均不自定。Owner在Astra独立审查后决定下一步。
+5. Codex单轮长任务内自主执行源证据恢复、单位oracle、有限官方网页读取、自动GitHub三件Review上传；独立Astra先归档后精准清理。旧三个PENDING Review完全保留，正式科研预算0，不自动下一任务。
