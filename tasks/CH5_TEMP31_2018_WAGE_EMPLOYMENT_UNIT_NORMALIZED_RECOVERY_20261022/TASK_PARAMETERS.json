@@ -1,0 +1,128 @@
+{
+  "schema": "ch5.temp31.2018_wage_employment_unit_normalized_recovery.v1",
+  "task_id": "CH5_TEMP31_2018_WAGE_EMPLOYMENT_UNIT_NORMALIZED_RECOVERY_20261022",
+  "revision": "ISSUED_20261022_R1",
+  "owner_approval": "2026-10-22 allow unit-aware prior evidence recovery and source-only continued 2018 province wage/employment research",
+  "governance_baseline": "f3e2e1bb148c001c714db7ae42072d7f820e1aed",
+  "previous": {
+    "run_id": "a456168dea274581b2b63df0533610ea",
+    "terminal": "STOP_E1_EXHAUSTED_SOURCE_VALUE_UNIT_GATE",
+    "candidate_commit": "d3bb242ed531e749d96aaea24151cb0133b625aa",
+    "candidate_tree": "defaf410dba6910f74eee5685c51800afd9f3e20",
+    "original_zip": {
+      "bytes": 588196,
+      "sha256": "962d1f789ccd6f61fccbad503ab1a4d780c30abdb8af38c9730a03321bdfcca2",
+      "git_blob": "fdeaed7d0335c65b5f00954aba87a44f61e2c77e",
+      "members": 17,
+      "original_source_records": 31,
+      "official_extracts": 15,
+      "source_ledger_rows": 217
+    },
+    "precise_local_existing": "D:\\ProjectTemp\\ch5_temp31_nbs2018_wages_employment_20261022_01\\public_review\\evidence_sanitized.zip",
+    "allow_old_commit_read": true,
+    "not_old_science_rerun": true
+  },
+  "source": {
+    "calendar_year": 2018,
+    "provinces": 31,
+    "primary": "2019 NBS China Statistical Yearbook / NBS official historical data / 2019 province yearbooks and province statistical offices",
+    "secondary": "official republication with vintage and authorship explicitly tagged",
+    "no_nonofficial_values": true,
+    "keep_workplace_residence_separate": true,
+    "keep_private_nonprivate_wages_separate": true,
+    "distinguish_year_end_from_annual_average": true,
+    "source_url_review_required": true
+  },
+  "unit_gate": {
+    "source_people_to_wan_factor": "0.0001",
+    "wage_yuan_to_target_wan": "UNCHANGED_IN_WAGE_PANEL",
+    "source_year_2018_only": true,
+    "precision_documented": true,
+    "strict_negative_tests": [
+      "2793233_people_to_279.3233_wan_PASS",
+      "2793232_people_to_279.3233_wan_FAIL",
+      "year_end_is_not_annual_average",
+      "province_permutation_detect",
+      "2017_vs_2018_reject",
+      "wage_nonprivate_not_total_employment"
+    ],
+    "no_substring_only_gate": true
+  },
+  "initial_observation_coverage": {
+    "private_wages": 12,
+    "nonprivate_wages": 16,
+    "total_employment": 13,
+    "urban_employment": 7,
+    "private_wage_covered": 0,
+    "nonprivate_wage_covered": 6,
+    "residents": 4,
+    "not_final_validated": true
+  },
+  "outputs": [
+    "wage_employment_2018_31_verified.csv",
+    "source_value_normalization_ledger.csv",
+    "official_source_provenance_2018.csv",
+    "missing_and_conflicts_2018.md",
+    "verified_coverage_2018.md",
+    "unit_validator_tests.json",
+    "source_reuse_and_new_fetch_ledger.json",
+    "first_error_and_budget.json"
+  ],
+  "scratch": {
+    "parent": "D:\\ProjectTemp",
+    "new_path": "D:\\ProjectTemp\\ch5_temp31_wage_unit_validator_recovery_20261022_01",
+    "must_be_absent": true,
+    "no_protected_write": true
+  },
+  "limits": {
+    "wall_seconds": 12600,
+    "identity_and_reuse_seconds": 1800,
+    "validator_engineering_seconds": 2400,
+    "new_official_sources_seconds": 4800,
+    "delivery_seconds": 3000,
+    "reserve_seconds": 600,
+    "new_source_fetches_max": 120,
+    "python_engineering_starts_max": 22,
+    "direct_process_starts_max": 100,
+    "E1_batches_max": 3,
+    "scratch_total_bytes_max": 268435456,
+    "public_three_files_bytes_max": 6291456,
+    "zip_expanded_bytes_max": 16777216,
+    "zip_members_max": 40,
+    "git_write_api_max": 8,
+    "published_review_max": 1,
+    "old_budget_carry_forward": 0,
+    "HA": 0,
+    "HJB": 0,
+    "KFE": 0,
+    "roots": 0,
+    "science_driver": 0,
+    "outer": 0,
+    "GE": 0,
+    "IRF": 0
+  },
+  "review": {
+    "branch": "review/ch5-temp31-wage-employed-unit-recovery-20261022",
+    "fixed_parent": "f3e2e1bb148c001c714db7ae42072d7f820e1aed",
+    "temp_path": "_review_tmp/ch5/temp31-wage-employed-unit-recovery-20261022/",
+    "three_files": [
+      "result.md",
+      "manifest.json",
+      "evidence_sanitized.zip"
+    ],
+    "auto_git": true,
+    "raw_readback_required": true,
+    "cleanup_owner": "ASTRA_AFTER_ARCHIVE_REMOTE_READBACK",
+    "no_force": true,
+    "older_three_reviews_protected": true
+  },
+  "science": {
+    "formal_V010_unchanged": true,
+    "Results": false,
+    "V011": "NOT_STARTED",
+    "household_numeraire_adopted": false,
+    "employment_replaces_household_N": false,
+    "no_auto_next_task": true
+  },
+  "terminal": "WAIT_ASTRA_INDEPENDENT_DATA_REVIEW_AND_OWNER_NEXT_DECISION"
+}

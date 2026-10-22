@@ -1,0 +1,46 @@
+# CH5 TEMP31｜2018年31省工资/就业官方数据的单位归一化来源验证与续审（单张长任务）
+REVISION=ISSUED_20261022_R1
+TASK_ID=CH5_TEMP31_2018_WAGE_EMPLOYMENT_UNIT_NORMALIZED_RECOVERY_20261022
+OWNER_APPROVED=2026-10-22__REUSE_ACCEPTED_2018_WAGE_EMPLOYMENT_EVIDENCE_REPAIR_UNIT_CHECK_THEN_FILL_OFFICIAL_GAPS
+MODE=SOURCE_ONLY_OFFICIAL_DATA_RESEARCH_AND_BOUNDED_VALIDATOR_ENGINEERING
+GOVERNANCE_PARENT=f3e2e1bb148c001c714db7ae42072d7f820e1aed
+REVIEW_BRANCH=review/ch5-temp31-wage-employed-unit-recovery-20261022
+FIXED_REVIEW_PARENT=f3e2e1bb148c001c714db7ae42072d7f820e1aed
+REVIEW_TEMP_PATH=_review_tmp/ch5/temp31-wage-employed-unit-recovery-20261022/
+FORMAL_V010_UNCHANGED=TRUE
+HA_HJB_KFE_ROOTS_SCIENCE_DRIVER_OUTER_GE_IRF_CALLS=0
+
+## 1. Owner科学决定与本轮唯一验收范围
+Owner已同意沿用上一轮31省2018年工资及就业人口来源证据，优先修复吉林来源数值“人”与整理表“万人”未转换的机检，再续补未取得的官方同年同范围工资与就业资料。科研目标是来源及统计口径可信的2018省级数据面板，**不是重新构造HA模型、恢复20轮调参或仅因观察数据存在就认定31省数据PASS**。
+不触碰正式V010/HA网格/效用/工资上限/原MATLAB、现有旧SOURCE_ONLY/科学预算、生产GLOBAL_STOP/ledger、旧工作树。企业劳动今后考虑就业人口而非常住人口，但本任务必须分别保留N_resident、N_employed_total、N_employed_urban、N_wage_covered_private、N_wage_covered_nonprivate及工作地/居住地和年末/年度平均时点，不替代家庭人口N，也不把任一种单位就业人数冒充全社会就业。
+
+## 2. 不得重抓的已归档来源和受保护输入
+已独立审阅的前轮run=a456168dea274581b2b63df0533610ea，实际STOP_E1_EXHAUSTED_SOURCE_VALUE_UNIT_GATE，2018工资/就业原数据端到端NOT_PASS。此前候选commit d3bb242ed531e749d96aaea24151cb0133b625aa，Tree defaf410dba6910f74eee5685c51800afd9f3e20，唯一parent 7d0b6b43604b70bbaccd64dca9549836dee6234b，三件在其Git历史commit可精确读，review当前树已合法清理，不恢复该分支。前序ZIP证据原件evidence_sanitized.zip Git Blob fdeaed7d0335c65b5f00954aba87a44f61e2c77e，size=588196B，SHA256=962d1f789ccd6f61fccbad503ab1a4d780c30abdb8af38c9730a03321bdfcca2，17成员完整性、其中31条official_origin_bytes原length/SHA经Astra独立PASS。报告 docs/CH5_TEMP31_2018_WAGE_EMPLOYMENT_E1_STOP_INDEPENDENT_REVIEW_20261022.md 和清理回执 docs/CH5_TEMP31_2018_WAGE_EMPLOYMENT_E1_STOP_CLEANUP_RECEIPT_20261022.md 在本轮baseline只读。
+Codex应先在其本地已知前轮scratch精确定位只读ZIP D:\ProjectTemp\ch5_temp31_nbs2018_wages_employment_20261022_01\public_review\evidence_sanitized.zip，验证SHA与完整17成员；不需将已有31份来源重新下载。若精确本地原件不可取得，则从固定旧commit的指定三文件只读取得原始证据（Git历史可访问不代表当前review tree仍有文件），检查exact Blob及SHA；若两者均不可取得就STOP_SOURCE_EVIDENCE_UNAVAILABLE，不可宽扫历史私人archive或把报告摘要代替源字节。解包只进入本轮可信新scratch，前轮全部目录只读。
+原前轮关键可复用成员：wage_employment_2018_31.csv（31省及status）、wage_source_ledger.csv（217行）、official_origin_bytes.jsonl（31源原字节）、official_connector_extracts.jsonl（15条官方摘录）、source_request_outcomes.json、query_audit.json、missing_and_unresolved.md、source_gate_failure_sanitized.json、wage_coverage_summary.md。仅对已核SHA原件进行读取与派生，保存输入固定摘要而非重复公开全包。不得把Git原始历史研究失败升级成已合格数据。
+已确认缺陷例子：吉林原表表题2018年末城镇非私营单位就业人数，原数2793233人，对应整理279.3233万人；原validator把字符串279.3233直接在原HTML文本2793233里寻找，VALUE_NOT_IN_EVIDENCE。这是一个**单位转换机检设计缺陷**；它不是2018工资年度平均就业分母，也不是全社会就业人数。
+
+## 3. 修复来源值机检：源文本定位→单位及期间转换→同口径数值核对
+在本轮唯一scratch内实现受界无HA检测（旧正式代码不改）。逐个非缺失整理值的最少检查链：官方源身份/URL/页面版本及SHA；原文中精确表题/表行/省名与字段提取；原值及source_unit；源年份/发布年份/vintage；metric population scope(private/nonprivate/total/urban)、workplace/residence、year_end/annual_average/unknown；用十进制或有理数对source value进行单位换算；目标单位；与整理值在明确披露的出版精度下比较；最后形成PASS_UNIT_AND_SCOPE_MATCH或真实SOURCE_CONFLICT/MISSING/INDETERMINATE，不得允许仅字符串包含就过机检。
+标准转换：就业人数people/10000=万人，工资yuan_per_person_per_year照原单位保留，来源若是千元/万元要有原表unit；人数目标NU=100人时原人在模型N=people/100, 但本任务CSV人数维持万人且另外保留unit_NU转换指示。各字段检查是scope-specific：YEAR_END_WAGE_UNIT_EMPLOYED不得用于YEAR_AVERAGE_WAGE_WEIGHT，resident/total-employment/urban-wage-coverage不得互相替换；2018不能拿2017/2020字段替代，不以2019页面日期误判2018值。
+预先固定正/反oracle：2793233人→279.3233万人=PASS（保留year-end非私营scope），2793232人→279.3233万人=FAIL；2018年末和2018年度平均的相等数值=TIME_SCOPE_NOT_EQUIVALENT；2017 vs 2018=YEAR_MISMATCH；陕西/西藏表列偏移=PROVINCE_MISMATCH；杭州/浙江非省行=PROVINCE_AXIS_ERROR；缺官方数=SOURCE_MISSING而非0；工资分母未同口径/同平均期不得合并私营/非私营工资。测试须记录validator Python/公式与每个case的真实input/output，不得改来源原文本来满足比较。
+对于已保存的31来源和15连接器摘录，逐项旧值检验，保留过去所有非确定官方值的原等级；不能把政府转载、省统计局署名第三方转载、后年回溯表、站点403/404、PDF机器提取等统一标“官方原站E3”。每个观测记录SOURCE_CLASS、DOC_VINTAGE、SOURCE_SHA、TABLENAME_ROW、RAW_VALUE,RAW_UNIT,NORMALIZED_VALUE,TRANSFORM_EXACTNESS,PRECISION,STAT_POPULATION,TIME_TYPE,GEOGRAPHIC_AXIS,VALIDATION_STATUS、EXCEPTION_REASON；若缺字段须保留UNKNOWN并按门停止相应采纳。
+
+## 4. 续搜数据：限定真实官方来源，不需追求假31/31
+在完成受控unit oracle和旧证据复核后才进入缺口补全。优先国家统计局/国家数据平台/2019《中国统计年鉴》/省统计局2019统计年鉴2018行/2018统计公报；同指标后年发布回溯2018行可按vintage分层备选，不与原年版相同权威；官方政府转载仅带source_owner和host_owner的双标签可作为次级证据。31省私营与非私营税前年均工资分列，查的是城镇单位而非全体劳动者；就业人数优先全社会、城镇就业、工资调查覆盖各类，**当年实际是否有官方发布、单位、时点、原表定义要保留**。MISSING_OFFICIAL_SOURCE表示本轮不能核验，不声称统计机构没有发布。
+需聚焦先前未验证私营19省、非私营15省、总就业18省、城镇24省等缺口，尤其天津、内蒙古、黑龙江、山东、浙江、广西、贵州、西藏、青海。保存搜索命中/失败URL、查询时间、网站HTTP响应及样本浏览来源，优先利用原始资料再找新增，不将省份名字/顺序错配为值。特定风险：上海140270与非官方140400版本差异未决；新疆非私营75457仅后年年鉴摘录、原站404；浙江88883顶层标签未匹配，辽宁67324口径未证，甘肃两个数原为署名第三方转载，不自动升级正式统计局原表。
+每一个新增值须能回读原文/表格定位、来源年份、统计口径、值和单位的实际证据，适当保存有限官方公开字节/精确引用或来源定位；不允许只搜到搜索摘要就填写，亦不允许随意替换旧列来增加覆盖率。官方原站403/404/页面无法取原值时保留SOURCE_UNAVAILABLE，能用官方连接器摘录时标EXTRACT_ONLY_NOT_ORIGINAL_BYTES_VERIFIED。可将来源不完备的面板整理为D1/D2候选，但**不可因预算内无法找到全部31省就编造或把部分合格数据宣布为完整31省**。
+
+## 5. 必交内容与验收
+原非缺失观察值逐项unit-normalized validation ledger，一省一行31行source statuses面板（包括已核、未核、冲突/失配、缺失）；每项来源的raw单位/precision/年末与平均/范围和URL；修改前后JL回归正反oracles以及至少完整一组非对称31省工资和人数年单位反例。输出 `wage_employment_2018_31_verified.csv`, `source_value_normalization_ledger.csv`, `official_source_provenance_2018.csv`, `missing_and_conflicts_2018.md`, `verified_coverage_2018.md`, `unit_validator_tests.json`, `source_reuse_and_new_fetch_ledger.json`, `first_error_and_budget.json`，外加冻结源码diff或脚本、运行测试记录、所有未决官方来源目录。
+分类三层：SOURCE_BYTES_INTEGRITY_PASS（旧原件核准）、VALUE_UNIT_VALIDATED_SUBSET（局部数值范围/年份通过）、COMPLETE_31_PROVINCE_WAGE_EMPLOYMENT_PANEL（仅全部必需字段覆盖且资格具备时）。可以在预算内补全失败后得到限定的`PASS_BOUNDED_VERIFIED_SUBSET__INCOMPLETE_PANEL`，但绝不能写full PASS。若原validator真实失败或数据/单位污染，应STOP并交真实失败证据而不是尽力报覆盖。
+财政/人口经济学决策仍待Owner：两个工资口径无同覆盖年度平均人数不得机械加权；居民N不能全局改就业人口，跨省firm L是工作地流入和效率劳动，不等于工资单位调查人数。GDP/HU旧候选s_H=64.8906755511未采纳。正式V010及全部HA/outer/政策模型调用恒0。
+
+## 6. 预算、Scratch与安全
+独立新scratch `D:\ProjectTemp\ch5_temp31_wage_unit_validator_recovery_20261022_01`；父目录D:\ProjectTemp只作为已批准临时受控根，创建前核可信父目录、唯一新目录不存在、无reparse/symlink逃逸及protected项目Git common-dir索引保护、首次写前二次复核。只有这个新scratch可写新脚本、测试、校验/来源与证据、最终回执；上一任务scratch及GitHub治理代码只读。不要以绝对路径为GitHub公开证据，脱敏时保留源URL但剥除本地信息。
+预算wall<=12600秒（源身份/旧证据核对1800、unit-validator工程2400、额外官方来源采集4800、交付3000、封存600）；新官方源查询/页面fetch<=120，工程Python starts<=22、direct process starts<=100、E1工程恢复<=3批（只限无HA单位归一化/路径/编码/序列化确定性bug，可修后保留原首错并重测相关受界用例；不可修真实经济失配/伪造原文本）；独立来源变更以文档保存，不使用旧任务E1 2/2/旧任何预算续费。调用按每次真实尝试计，失败同样计；总新scratch源及衍生证据<=256MiB，公开3件<=6MiB、ZIP展开<=16MiB/成员<=40、Git write API<=8、成功publish<=1；单科学driver/HA/HJB/KFE/roots/outer/GE/IRF均0。时间以真实事件记录，无法测OS descendants记UNKNOWN。
+
+## 7. Codex自动Review三件与验收后清理
+Codex必须独立自动向review分支 `review/ch5-temp31-wage-employed-unit-recovery-20261022` 的 `_review_tmp/ch5/temp31-wage-employed-unit-recovery-20261022/` 提交且**只有** result.md、manifest.json、evidence_sanitized.zip 三件，Review sole parent固定 `f3e2e1bb148c001c714db7ae42072d7f820e1aed`（治理Issue/Release提交是另一个分支），普通nonforce操作。manifest列成员相对路径、长度、SHA256、必要源identity及内容; ZIP全成员真实CRC/length/SHA、来源/原值unit-validator的必要证据、关键修正源码、真实失败，隐私每件检查。不重复封装已有不变的完整31份HTML源：通过固定旧候选SHA与在新包内来源引用指向其可回读的Git历史，**但本任务真正新增官方来源及关键unit oracle必须随包完整可验**。必要原始证据若旧固定对象不可获得，须停止在SOURCE_UNAVAILABLE而非输出只有哈希的虚构结果。
+完整回读后外置最终原始JSON与控制器退出后事件，包含字节数、SHA256、Base64合法存储、候选commit/tree/parent、三件Blob、ZIP成员清单、全部预算和实际终态；从当前原始合法bytes读取，无自制编码器。平台401/403/429或OpenAI安全屏蔽需硬停，不能更换账号/路径或身份绕过。前3个历史PENDING及上一轮review cleanup均只读不动，Astra独立审查后先正式归档readback再精准普通nonforce清理**本次**三个文件，若证据不完整REVIEW_PENDING_IO则保留。
+本轮结束不自动新参数、不启动31省HA，停在WAIT_ASTRA_INDEPENDENT_DATA_REVIEW_AND_OWNER_NEXT_DECISION，Results=FALSE，V011=NOT_STARTED，生产GLOBAL_STOP=UNVERIFIED。
