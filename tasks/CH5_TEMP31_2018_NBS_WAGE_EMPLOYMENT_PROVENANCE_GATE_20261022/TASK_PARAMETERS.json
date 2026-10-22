@@ -1,0 +1,126 @@
+{
+  "schema": "ch5.temp31.2018_official_wages_employment_provenance.v1",
+  "task_id": "CH5_TEMP31_2018_NBS_WAGE_EMPLOYMENT_PROVENANCE_GATE_20261022",
+  "revision": "ISSUED_20261022_R1",
+  "owner_approval": "2026-10-22__2018_OFFICIAL_WAGES_AND_EMPLOYMENT",
+  "governance": {
+    "repo": "zcx369658780/dissertation-ch5-two-asset-hank",
+    "branch": "migration/astra-workflow-20261012",
+    "baseline": "7d0b6b43604b70bbaccd64dca9549836dee6234b",
+    "contract_blob": "885acbdb0cb9b4323bb6fa1e5b596f4353b0fadf"
+  },
+  "scope": {
+    "year": 2018,
+    "provinces": 31,
+    "method": "SOURCE_ONLY_OFFICIAL_STATISTICS_AND_NOHA_UNIT_MAPPING",
+    "independent_2018_wages": true,
+    "all_residents_not_automatically_employed": true,
+    "code_changes": 0,
+    "HA": 0,
+    "HJB": 0,
+    "KFE": 0,
+    "root_solves": 0,
+    "science_driver": 0,
+    "outer": 0,
+    "formal_GE": 0,
+    "IRF": 0,
+    "Results": false
+  },
+  "population_dimensions": [
+    "N_resident",
+    "N_employed_total",
+    "N_employed_urban",
+    "N_wage_covered",
+    "N_workplace_effective_labor"
+  ],
+  "wage_categories": [
+    "urban_private_annual_average_wage_pre_tax",
+    "urban_nonprivate_annual_average_wage_pre_tax"
+  ],
+  "exclude": [
+    "N_employed_as_wage_covered_without_proof",
+    "national_to_province_imputation",
+    "province_year_mismatch",
+    "residence_workplace_conflation",
+    "automatic_private_nonprivate_weighted_wage",
+    "automatic_grid_bounds"
+  ],
+  "source_priority": [
+    "NBS_2019_China_Statistical_Yearbook_for_2018",
+    "NBS_official_annual_database",
+    "province_2019_statistical_yearbook",
+    "province_2018_statistical_bulletin"
+  ],
+  "official_sources": [
+    "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1900311.html",
+    "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1900312.html",
+    "https://www.stats.gov.cn/xxgk/sjfb/tjgb2020/201902/t20190228_1768642.html",
+    "https://www.stats.gov.cn/hd/lyzx/zxgk/202508/t20250807_1960621.html",
+    "https://www.stats.gov.cn/hd/lyzx/zxgk/202408/t20240829_1956132.html",
+    "https://www.stats.gov.cn/hd/lyzx/zxgk/202407/t20240719_1955719.html"
+  ],
+  "canonical_workbook": {
+    "path": "D:\\ProjectTemp\\ch5-canonical-data-workbook-20260909-001\\CH5_MULTI_PROVINCE_CANONICAL_DATA_V1.xlsx",
+    "sha256": "AEA5A12B5E6474056C1C3EF84BF0156BA88442EF54B0A4FB9C4C6F33CA963F67",
+    "read_only_if_used": true,
+    "never_upload": true
+  },
+  "noha_scaling": {
+    "MU_yuan": 100000,
+    "NU_persons": 100,
+    "wage_year_yuan_to_MU_per_NU_divisor": 1000,
+    "previous_s_H_candidate": 64.8906755511,
+    "s_H_authorized": false,
+    "wage_source_bounds_authorized": false,
+    "household_population_replacement_authorized": false
+  },
+  "outputs": [
+    "wage_employment_2018_31.csv",
+    "wage_source_ledger.csv",
+    "employment_scope_matrix.csv",
+    "wage_coverage_summary.md",
+    "source_urls_verified.md",
+    "first_error_and_budget.json"
+  ],
+  "budget": {
+    "wall_seconds": 7200,
+    "official_page_fetch_max": 150,
+    "engineering_python_starts_max": 16,
+    "direct_starts_max": 60,
+    "E1_batches_max": 2,
+    "artifacts_bytes_max": 67108864,
+    "review_zip_expanded_bytes_max": 8388608,
+    "review_zip_members_max": 32,
+    "old_budget_carry_forward": 0
+  },
+  "scratch": {
+    "root": "D:\\ProjectTemp",
+    "new_path": "D:\\ProjectTemp\\ch5_temp31_nbs2018_wages_employment_20261022_01",
+    "must_not_exist": true,
+    "prewrite_identity_checks": true,
+    "protected_worktrees_read_only": true
+  },
+  "delivery": {
+    "review_branch": "review/ch5-temp31-wage-employed-2018-20261022",
+    "fixed_parent": "7d0b6b43604b70bbaccd64dca9549836dee6234b",
+    "temp_path": "_review_tmp/ch5/temp31-wage-employed-2018-20261022/",
+    "only_files": [
+      "result.md",
+      "manifest.json",
+      "evidence_sanitized.zip"
+    ],
+    "automatic_publication": true,
+    "non_force": true,
+    "raw_readback_required": true,
+    "privacy_review_required": true,
+    "preserve_previous_pending": true
+  },
+  "previous": {
+    "task": "CH5_TEMP31_UNIT_NUMERAIRE_AND_NONHA_MATRIX_GATE_20261022",
+    "terminal": "STOP_E1_EXHAUSTED_PUBLIC_PACKAGE_PRIVACY_CHECK",
+    "reported_structural_32_32": "CODEX_ONLY_NOT_ASTRA_VERIFIED",
+    "reported_dimensional_32_32": "CODEX_ONLY_NOT_ASTRA_VERIFIED",
+    "last_review_candidate": null
+  },
+  "final_state": "WAIT_ASTRA_AND_OWNER_WAGE_EMPLOYMENT_DISCUSSION"
+}
