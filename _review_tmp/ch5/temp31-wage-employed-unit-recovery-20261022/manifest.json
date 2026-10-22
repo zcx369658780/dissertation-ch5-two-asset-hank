@@ -1,0 +1,316 @@
+{
+  "schema": "ch5.unit_recovery.stop_delivery.v1",
+  "run_id": "1f540705a35e4212b5fe61951c74493b",
+  "actual_terminal": "STOP_E1_EXHAUSTED_SOURCE_REQUEST_LEDGER_ASSERTION",
+  "overall": "NOT_PASS",
+  "head": "9a53b2960ee1b088ac12c2815eb0a6debdf2aa19",
+  "review_branch": "review/ch5-temp31-wage-employed-unit-recovery-20261022",
+  "fixed_parent": "f3e2e1bb148c001c714db7ae42072d7f820e1aed",
+  "temp_path": "_review_tmp/ch5/temp31-wage-employed-unit-recovery-20261022/",
+  "only_files": [
+    "result.md",
+    "manifest.json",
+    "evidence_sanitized.zip"
+  ],
+  "failure": {
+    "actual_terminal": "STOP_E1_EXHAUSTED_SOURCE_REQUEST_LEDGER_ASSERTION",
+    "controller_chunk": "310dbd",
+    "exit_code": 1,
+    "script": "build_delivery.py",
+    "line": 71,
+    "error_type": "AssertionError",
+    "error_original": "assert request_count==58,(request_count,len(web),len(new))\nAssertionError: (50, 47, 5)",
+    "E1_used": 3,
+    "E1_limit": 3,
+    "failed_pipeline_restarted": false,
+    "closure_scope": "package existing partial artifacts and raw failure only; no source research or validator recovery"
+  },
+  "coverage_provisional": {
+    "wage_private_yuan_year": {
+      "observed": 12,
+      "origin_unit_scope": 7,
+      "extract_only_scope": 4
+    },
+    "wage_nonprivate_yuan_year": {
+      "observed": 16,
+      "origin_unit_scope": 10,
+      "extract_only_scope": 5
+    },
+    "N_employed_total_wan": {
+      "observed": 14,
+      "origin_unit_scope": 0,
+      "extract_only_scope": 0
+    },
+    "N_employed_urban_wan": {
+      "observed": 8,
+      "origin_unit_scope": 0,
+      "extract_only_scope": 0
+    },
+    "N_wage_covered_private_wan": {
+      "observed": 0,
+      "origin_unit_scope": 0,
+      "extract_only_scope": 0
+    },
+    "N_wage_covered_nonprivate_wan": {
+      "observed": 6,
+      "origin_unit_scope": 1,
+      "extract_only_scope": 0
+    },
+    "N_resident_wan": {
+      "observed": 4,
+      "origin_unit_scope": 2,
+      "extract_only_scope": 2
+    }
+  },
+  "source_counter_builder_failed": 50,
+  "source_counter_controller": 58,
+  "source_pipeline_repair_or_rerun": false,
+  "member_integrity_pass": true,
+  "zip": {
+    "bytes": 220081,
+    "sha256": "14746e539ce792189dc85d207ec148e97bad27f8101a4c598c475d49a05008fc",
+    "git_blob": "87b3173fc12f4ec3bec34dbde785f27ad627e37f",
+    "expanded_bytes": 1121717,
+    "members": [
+      {
+        "path": "additional_observations.json",
+        "bytes": 799,
+        "sha256": "73fb5e9392983dbf77071a83c4fc836557227a9808de25e4749cdf6ea991ea6e",
+        "crc32": "ca103b47",
+        "privacy": "PASS"
+      },
+      {
+        "path": "audit_prior.py",
+        "bytes": 6550,
+        "sha256": "daa2e0af11f381f84dfd5f1294799e53ee45cbab772382c7624dd774e3c5baa5",
+        "crc32": "8049f95e",
+        "privacy": "PASS"
+      },
+      {
+        "path": "authority_verified_sanitized.json",
+        "bytes": 1817,
+        "sha256": "ba18e2da5998bf9f68d4213934c16dceb2aceeaf564cd36383ffafcf9bfb3b61",
+        "crc32": "69a333a5",
+        "privacy": "PASS"
+      },
+      {
+        "path": "build_delivery.py",
+        "bytes": 20138,
+        "sha256": "cef95e980322c7e9a777cf4899b9fefe13c912d7c0c544a474e6266eefca1d62",
+        "crc32": "832f8cc8",
+        "privacy": "PASS"
+      },
+      {
+        "path": "engineering_recovery_batch2.json",
+        "bytes": 361,
+        "sha256": "dc94c21da5c087f72788d781c4eee1a365d6d376a9aaacf6589b8146a43378a6",
+        "crc32": "28572282",
+        "privacy": "PASS"
+      },
+      {
+        "path": "engineering_recovery_batch3.json",
+        "bytes": 347,
+        "sha256": "636e8e6c34d05db80d71be41e856d28a8d97febf2d30a28182179eb3d324ac31",
+        "crc32": "f77c2bb1",
+        "privacy": "PASS"
+      },
+      {
+        "path": "extract_v2.py",
+        "bytes": 2316,
+        "sha256": "f3bdfc4848cda3381b6d1092df37a2ffac2b8a987dc3ef604fcb14e4b6090fbd",
+        "crc32": "45c73432",
+        "privacy": "PASS"
+      },
+      {
+        "path": "fetch_official_v2.py",
+        "bytes": 2636,
+        "sha256": "9646adc994c2d8c8c07cb73b09b34be71e6782279babdd725c3b26f9629bd1fa",
+        "crc32": "659627d9",
+        "privacy": "PASS"
+      },
+      {
+        "path": "first_error_and_budget.json",
+        "bytes": 1723,
+        "sha256": "53ea176d2f4f16250f52f1dde7b1cd499560724dc5d88cdd9b455db2c63d469c",
+        "crc32": "ca8607a3",
+        "privacy": "PASS"
+      },
+      {
+        "path": "first_error_engineering.json",
+        "bytes": 535,
+        "sha256": "34d11433b146653bc386af1a33799cd9ad0d43aea11d580641337929b5967e09",
+        "crc32": "c9926abb",
+        "privacy": "PASS"
+      },
+      {
+        "path": "jl_oracle_original.html",
+        "bytes": 30087,
+        "sha256": "7b6e9bdce3315c1e75358ff2a83ac3768df3577db91f86aaa3c854dfea74b86f",
+        "crc32": "17636b37",
+        "privacy": "PASS"
+      },
+      {
+        "path": "member_integrity.json",
+        "bytes": 4642,
+        "sha256": "b82475c4b012b2cd89e7158594bd6f37eff5f147c0be9ba093a4ebdc24103097",
+        "crc32": "72bc3275",
+        "privacy": "PASS"
+      },
+      {
+        "path": "missing_and_conflicts_2018.md",
+        "bytes": 10614,
+        "sha256": "094bf7c46614b2b43914f6367ed9261b049d455c00fa8f0e338bfa2559cc7e8a",
+        "crc32": "4b45c267",
+        "privacy": "PASS"
+      },
+      {
+        "path": "new_official_sources.jsonl",
+        "bytes": 120243,
+        "sha256": "63cc65af51b9d76c1d140e88f8485194e065a94028026c603fdf3cd599161377",
+        "crc32": "0b9e6c20",
+        "privacy": "PASS"
+      },
+      {
+        "path": "official_discovery_receipts.jsonl",
+        "bytes": 482575,
+        "sha256": "1835277e900d4d874b85a3fcc20c38eaa46664ab46593b444e573ea093b7b20a",
+        "crc32": "3ef3b9e3",
+        "privacy": "PASS"
+      },
+      {
+        "path": "official_source_provenance_2018.csv",
+        "bytes": 15490,
+        "sha256": "376481f71a25ced2089f48dbfe015a73b6e51153be6d179bc0444b4cba9cf74a",
+        "crc32": "06d707b2",
+        "privacy": "PASS"
+      },
+      {
+        "path": "privacy_check.json",
+        "bytes": 2711,
+        "sha256": "d48207e853eee490ce9d02934dc17f44a148303c3a8f7caca21f47c3f178ef55",
+        "crc32": "a9faf1a8",
+        "privacy": "PASS"
+      },
+      {
+        "path": "source_gate_failure_sanitized.json",
+        "bytes": 510,
+        "sha256": "b7114362afdecdba60b3561ebfe8b28212993f6fba17e05383a57d710cb33858",
+        "crc32": "7d09c565",
+        "privacy": "PASS"
+      },
+      {
+        "path": "source_province_registry.json",
+        "bytes": 701,
+        "sha256": "cef5e2ef6ff421a045f77f648beb022ea11f5bac71fb1abff5407e2516868e56",
+        "crc32": "5b6a8770",
+        "privacy": "PASS"
+      },
+      {
+        "path": "source_reuse_and_new_fetch_ledger.json",
+        "bytes": 12286,
+        "sha256": "b012d1e62d01299a94b3f1a1e026a04865d383380a87908f6f073f58b65f167b",
+        "crc32": "e944e889",
+        "privacy": "PASS"
+      },
+      {
+        "path": "source_value_normalization_ledger.csv",
+        "bytes": 100821,
+        "sha256": "f0375280940f03a0910655eee1dbf7f3c25b9791ce38e84928d0d32630f92f56",
+        "crc32": "a4f30d29",
+        "privacy": "PASS"
+      },
+      {
+        "path": "unit_and_model_mapping.md",
+        "bytes": 634,
+        "sha256": "161550c4866f54a0f9a3ba1cfc18ecbfbd88ddfc1129bd81b301cd1d05c7b94b",
+        "crc32": "1c6e4f82",
+        "privacy": "PASS"
+      },
+      {
+        "path": "unit_validator.py",
+        "bytes": 4436,
+        "sha256": "537d54b4ecb83ada9696f330ae1129992b246899e423a93a9d2a384942b2ba52",
+        "crc32": "db4946dd",
+        "privacy": "PASS"
+      },
+      {
+        "path": "unit_validator_tests.json",
+        "bytes": 278585,
+        "sha256": "c818f7d39b9f12cce47727e991ffacc2286311c54cd28c3b3818fe518d2564f4",
+        "crc32": "9d139cde",
+        "privacy": "PASS"
+      },
+      {
+        "path": "verified_coverage_2018.md",
+        "bytes": 3395,
+        "sha256": "5d319f451d14347bf9a806ba0dbb75ddf278637ca3760d71626445ee9e9b3d53",
+        "crc32": "ac6afc14",
+        "privacy": "PASS"
+      },
+      {
+        "path": "wage_employment_2018_31_verified.csv",
+        "bytes": 16765,
+        "sha256": "bda2d8b3a939f5d4c3f812c6a65dd0c31ef68693770bcbc48e5d47651c4cd1cb",
+        "crc32": "7a0dca21",
+        "privacy": "PASS"
+      }
+    ]
+  },
+  "result": {
+    "bytes": 15454,
+    "sha256": "7ef1ff28f7da316d648420952df368c0b34e8a453b6593f2098ed722beba3b88",
+    "git_blob": "2fe57d4dc1528564d996716e94cf596b54062317"
+  },
+  "privacy": "PASS",
+  "budget_snapshot": {
+    "stage": "PREPUBLICATION_STOP_CLOSURE_SNAPSHOT",
+    "run_id": "1f540705a35e4212b5fe61951c74493b",
+    "started_utc": "2026-10-22T11:59:19Z",
+    "as_of_utc": "2026-10-22T12:19:27.125400+00:00",
+    "wall_seconds": 1208.1254,
+    "python_starts": 13,
+    "direct_process_starts": 34,
+    "E1_batches_used": 3,
+    "E1_limit": 3,
+    "controller_official_source_attempts": 58,
+    "failed_builder_source_counter": 50,
+    "source_counter_assertion_failed": true,
+    "old_budget_carry": 0,
+    "git_write_used": 0,
+    "git_write_reserved": 6,
+    "science_calls": {
+      "HA": 0,
+      "HJB": 0,
+      "KFE": 0,
+      "roots": 0,
+      "science_driver": 0,
+      "outer": 0,
+      "GE": 0,
+      "IRF": 0
+    },
+    "OS_descendants": "UNKNOWN",
+    "actual_terminal": "STOP_E1_EXHAUSTED_SOURCE_REQUEST_LEDGER_ASSERTION",
+    "first_engineering_error": "MOJIBAKE in preliminary HTML text extraction; original bytes unchanged",
+    "first_runtime_error": "ModuleNotFoundError: requests; d73436 exit1",
+    "terminal_error": {
+      "actual_terminal": "STOP_E1_EXHAUSTED_SOURCE_REQUEST_LEDGER_ASSERTION",
+      "controller_chunk": "310dbd",
+      "exit_code": 1,
+      "script": "build_delivery.py",
+      "line": 71,
+      "error_type": "AssertionError",
+      "error_original": "assert request_count==58,(request_count,len(web),len(new))\nAssertionError: (50, 47, 5)",
+      "E1_used": 3,
+      "E1_limit": 3,
+      "failed_pipeline_restarted": false,
+      "closure_scope": "package existing partial artifacts and raw failure only; no source research or validator recovery"
+    },
+    "first_web_source_error": "web_015 timeout: provider HTTP UNKNOWN",
+    "first_origin_transport_error": "GX TLSV1_UNRECOGNIZED_NAME: provider HTTP UNKNOWN",
+    "real_origin_denial": "HLJ_2020_TOC HTTP403; not retried"
+  },
+  "adoption": "NONE_PENDING_ASTRA",
+  "Results": false,
+  "V011": "NOT_STARTED",
+  "GLOBAL_STOP": "UNVERIFIED"
+}

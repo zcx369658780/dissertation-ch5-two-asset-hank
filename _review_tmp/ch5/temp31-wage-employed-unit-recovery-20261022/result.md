@@ -1,0 +1,90 @@
+# 2018年31省工资就业单位归一化任务——真实STOP交付
+
+run_id=1f540705a35e4212b5fe61951c74493b
+actual_terminal=STOP_E1_EXHAUSTED_SOURCE_REQUEST_LEDGER_ASSERTION
+整体NOT_PASS。
+
+吉林精确单位正例及少1人负例通过，31省非对称工资/人数和年份、范围反例共258/258通过。旧ZIP17/17成员和31原始来源字节身份通过。旧58项观察完成初步逐项复核：20项原字节单位/声明范围局部通过，11项仅摘录支持，25项时间/地理基准未决，2项来源等级不足。新增天津年末总就业896.56万人、城镇714.21万人，仍有地理口径未决。均不等于完整31省通过或经济模型采用。
+
+终止原因：build_delivery.py第71行资源计数断言失败，计算50、控制器账58、47份web回执和5个原站请求。E1工程恢复已用3/3；未修复、未重跑、未继承旧额度。仅进行STOP证据封装、正常Review发布与回读。
+
+来源补查未取得可采纳的新省级工资；新原字节成功为NBS2019年鉴入口与目录。广西TLS失败无HTTP；内蒙古候选302；黑龙江原站403。网页工具不可取不等于已知Provider拒绝。无账号/认证/代理替换、无TLS降级。检索摘要与非官方表未用于补值。
+
+本表是失败流水线已产出的部分证据，未完成端到端校验，整体NOT_PASS。✓仅为本机原字节/单位/已声明范围局部通过；E为仅官方连接器摘录支持；?为时点、地理基准或来源等级未决，不能采用；MISSING表示本轮未取得可核官方值，不等于统计机构没有发布。
+
+|省份|私营工资 元/年|非私营工资 元/年|总就业 万人|城镇就业 万人|私营调查人数 万人|非私营调查人数 万人|常住人口 万人|
+|---|---:|---:|---:|---:|---:|---:|---:|
+|北京|76908E|145766E|1237.8?|MISSING|MISSING|MISSING|MISSING|
+|天津|MISSING|MISSING|896.56?|714.21?|MISSING|MISSING|1559.60✓|
+|河北|39512✓|68717✓|MISSING|MISSING|MISSING|MISSING|MISSING|
+|山西|34535✓|65917E|MISSING|MISSING|MISSING|MISSING|MISSING|
+|内蒙古|MISSING|MISSING|MISSING|MISSING|MISSING|MISSING|MISSING|
+|辽宁|MISSING|MISSING|2260.6?|1050.2?|MISSING|501.6267?|MISSING|
+|吉林|35026E|68533E|MISSING|MISSING|MISSING|279.3233✓|MISSING|
+|黑龙江|MISSING|MISSING|MISSING|MISSING|MISSING|MISSING|3773.1E|
+|上海|57056E|140270E|MISSING|MISSING|MISSING|MISSING|MISSING|
+|江苏|54161E|84688✓|4750.9?|3227.5?|MISSING|MISSING|MISSING|
+|浙江|MISSING|MISSING|MISSING|MISSING|MISSING|MISSING|MISSING|
+|安徽|MISSING|74378✓|MISSING|MISSING|MISSING|MISSING|MISSING|
+|福建|52930✓|74316✓|2791.37?|MISSING|MISSING|705.36?|MISSING|
+|江西|MISSING|MISSING|2636.1?|MISSING|MISSING|MISSING|4647.6E|
+|山东|MISSING|MISSING|MISSING|MISSING|MISSING|MISSING|MISSING|
+|河南|40209✓|63174✓|MISSING|MISSING|MISSING|MISSING|MISSING|
+|湖北|MISSING|MISSING|3580?|MISSING|MISSING|MISSING|MISSING|
+|湖南|40175✓|70221✓|3738.58?|1863.85?|MISSING|546.27?|MISSING|
+|广东|MISSING|MISSING|6508.65?|MISSING|MISSING|MISSING|MISSING|
+|广西|MISSING|MISSING|MISSING|MISSING|MISSING|MISSING|MISSING|
+|海南|MISSING|MISSING|603.73?|277.81?|MISSING|MISSING|934.32✓|
+|重庆|52558✓|78928✓|MISSING|MISSING|MISSING|391.2?|MISSING|
+|四川|43352✓|77686✓|4881?|1680?|MISSING|MISSING|MISSING|
+|贵州|MISSING|MISSING|MISSING|MISSING|MISSING|MISSING|MISSING|
+|云南|MISSING|75701✓|2992.80?|862.7?|MISSING|MISSING|MISSING|
+|西藏|MISSING|MISSING|MISSING|MISSING|MISSING|MISSING|MISSING|
+|陕西|MISSING|MISSING|2071?|MISSING|MISSING|MISSING|MISSING|
+|甘肃|39834?|70695?|1555.6?|637.6?|MISSING|MISSING|MISSING|
+|青海|MISSING|MISSING|MISSING|MISSING|MISSING|MISSING|MISSING|
+|宁夏|MISSING|78384✓|MISSING|MISSING|MISSING|67.97?|MISSING|
+|新疆|MISSING|75457E|MISSING|MISSING|MISSING|MISSING|MISSING|
+
+SOURCE_ONLY：MU=10万元，NU=100人。工资元/人/年转MU/NU/年除1000；人数万人转NU乘100。吉林2793233人/10000=279.3233万人，年末非私营单位人数不能作为工资年度平均分母或全社会就业。辽宁5-4原表单位万人，501.6267不重复缩放，其时点仍UNKNOWN。天津公报新定位896.56和714.21万人均年末，工作地/居住地仍UNKNOWN。
+WORKPLACE_UNIT_REPORTING为单位报告口径，不证明家庭居民地/实际劳动工作地映射。HU参考64.8906755511未采纳；N、HU、a/b、工资与收益率界和asset_bridge未改。HA/HJB/KFE/roots/driver/outer/GE/IRF全0。
+
+# 未完成与冲突表
+
+- 北京：wage_private_yuan_year=VALUE_UNIT_SCOPE_MATCH__EXTRACT_ONLY, wage_nonprivate_yuan_year=VALUE_UNIT_SCOPE_MATCH__EXTRACT_ONLY, N_employed_total_wan=INDETERMINATE_TIME_TYPE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 天津：wage_private_yuan_year=MISSING_OFFICIAL_SOURCE, wage_nonprivate_yuan_year=MISSING_OFFICIAL_SOURCE, N_employed_total_wan=INDETERMINATE_GEOGRAPHIC_BASIS, N_employed_urban_wan=INDETERMINATE_GEOGRAPHIC_BASIS, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE
+- 河北：N_employed_total_wan=MISSING_OFFICIAL_SOURCE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 山西：wage_nonprivate_yuan_year=VALUE_UNIT_SCOPE_MATCH__EXTRACT_ONLY, N_employed_total_wan=MISSING_OFFICIAL_SOURCE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 内蒙古：wage_private_yuan_year=MISSING_OFFICIAL_SOURCE, wage_nonprivate_yuan_year=MISSING_OFFICIAL_SOURCE, N_employed_total_wan=MISSING_OFFICIAL_SOURCE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 辽宁：wage_private_yuan_year=MISSING_OFFICIAL_SOURCE, wage_nonprivate_yuan_year=MISSING_OFFICIAL_SOURCE, N_employed_total_wan=INDETERMINATE_GEOGRAPHIC_BASIS, N_employed_urban_wan=INDETERMINATE_GEOGRAPHIC_BASIS, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=INDETERMINATE_TIME_TYPE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 吉林：wage_private_yuan_year=VALUE_UNIT_SCOPE_MATCH__EXTRACT_ONLY, wage_nonprivate_yuan_year=VALUE_UNIT_SCOPE_MATCH__EXTRACT_ONLY, N_employed_total_wan=MISSING_OFFICIAL_SOURCE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 黑龙江：wage_private_yuan_year=MISSING_OFFICIAL_SOURCE, wage_nonprivate_yuan_year=MISSING_OFFICIAL_SOURCE, N_employed_total_wan=MISSING_OFFICIAL_SOURCE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=VALUE_UNIT_SCOPE_MATCH__EXTRACT_ONLY
+- 上海：wage_private_yuan_year=VALUE_UNIT_SCOPE_MATCH__EXTRACT_ONLY, wage_nonprivate_yuan_year=VALUE_UNIT_SCOPE_MATCH__EXTRACT_ONLY, N_employed_total_wan=MISSING_OFFICIAL_SOURCE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 江苏：wage_private_yuan_year=VALUE_UNIT_SCOPE_MATCH__EXTRACT_ONLY, N_employed_total_wan=INDETERMINATE_GEOGRAPHIC_BASIS, N_employed_urban_wan=INDETERMINATE_GEOGRAPHIC_BASIS, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 浙江：wage_private_yuan_year=MISSING_OFFICIAL_SOURCE, wage_nonprivate_yuan_year=MISSING_OFFICIAL_SOURCE, N_employed_total_wan=MISSING_OFFICIAL_SOURCE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 安徽：wage_private_yuan_year=MISSING_OFFICIAL_SOURCE, N_employed_total_wan=MISSING_OFFICIAL_SOURCE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 福建：N_employed_total_wan=INDETERMINATE_TIME_TYPE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=INDETERMINATE_TIME_TYPE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 江西：wage_private_yuan_year=MISSING_OFFICIAL_SOURCE, wage_nonprivate_yuan_year=MISSING_OFFICIAL_SOURCE, N_employed_total_wan=INDETERMINATE_GEOGRAPHIC_BASIS, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=VALUE_UNIT_SCOPE_MATCH__EXTRACT_ONLY
+- 山东：wage_private_yuan_year=MISSING_OFFICIAL_SOURCE, wage_nonprivate_yuan_year=MISSING_OFFICIAL_SOURCE, N_employed_total_wan=MISSING_OFFICIAL_SOURCE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 河南：N_employed_total_wan=MISSING_OFFICIAL_SOURCE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 湖北：wage_private_yuan_year=MISSING_OFFICIAL_SOURCE, wage_nonprivate_yuan_year=MISSING_OFFICIAL_SOURCE, N_employed_total_wan=INDETERMINATE_TIME_TYPE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 湖南：N_employed_total_wan=INDETERMINATE_TIME_TYPE, N_employed_urban_wan=INDETERMINATE_TIME_TYPE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=INDETERMINATE_TIME_TYPE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 广东：wage_private_yuan_year=MISSING_OFFICIAL_SOURCE, wage_nonprivate_yuan_year=MISSING_OFFICIAL_SOURCE, N_employed_total_wan=INDETERMINATE_TIME_TYPE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 广西：wage_private_yuan_year=MISSING_OFFICIAL_SOURCE, wage_nonprivate_yuan_year=MISSING_OFFICIAL_SOURCE, N_employed_total_wan=MISSING_OFFICIAL_SOURCE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 海南：wage_private_yuan_year=MISSING_OFFICIAL_SOURCE, wage_nonprivate_yuan_year=MISSING_OFFICIAL_SOURCE, N_employed_total_wan=INDETERMINATE_GEOGRAPHIC_BASIS, N_employed_urban_wan=INDETERMINATE_GEOGRAPHIC_BASIS, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE
+- 重庆：N_employed_total_wan=MISSING_OFFICIAL_SOURCE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=INDETERMINATE_TIME_TYPE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 四川：N_employed_total_wan=INDETERMINATE_GEOGRAPHIC_BASIS, N_employed_urban_wan=INDETERMINATE_GEOGRAPHIC_BASIS, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 贵州：wage_private_yuan_year=MISSING_OFFICIAL_SOURCE, wage_nonprivate_yuan_year=MISSING_OFFICIAL_SOURCE, N_employed_total_wan=MISSING_OFFICIAL_SOURCE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 云南：wage_private_yuan_year=MISSING_OFFICIAL_SOURCE, N_employed_total_wan=INDETERMINATE_GEOGRAPHIC_BASIS, N_employed_urban_wan=INDETERMINATE_GEOGRAPHIC_BASIS, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 西藏：wage_private_yuan_year=MISSING_OFFICIAL_SOURCE, wage_nonprivate_yuan_year=MISSING_OFFICIAL_SOURCE, N_employed_total_wan=MISSING_OFFICIAL_SOURCE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 陕西：wage_private_yuan_year=MISSING_OFFICIAL_SOURCE, wage_nonprivate_yuan_year=MISSING_OFFICIAL_SOURCE, N_employed_total_wan=INDETERMINATE_TIME_TYPE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 甘肃：wage_private_yuan_year=VALUE_UNIT_MATCH__SOURCE_CLASS_NOT_PRIMARY, wage_nonprivate_yuan_year=VALUE_UNIT_MATCH__SOURCE_CLASS_NOT_PRIMARY, N_employed_total_wan=INDETERMINATE_GEOGRAPHIC_BASIS, N_employed_urban_wan=INDETERMINATE_GEOGRAPHIC_BASIS, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 青海：wage_private_yuan_year=MISSING_OFFICIAL_SOURCE, wage_nonprivate_yuan_year=MISSING_OFFICIAL_SOURCE, N_employed_total_wan=MISSING_OFFICIAL_SOURCE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 宁夏：wage_private_yuan_year=MISSING_OFFICIAL_SOURCE, N_employed_total_wan=MISSING_OFFICIAL_SOURCE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=INDETERMINATE_TIME_TYPE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+- 新疆：wage_private_yuan_year=MISSING_OFFICIAL_SOURCE, wage_nonprivate_yuan_year=VALUE_UNIT_SCOPE_MATCH__EXTRACT_ONLY, N_employed_total_wan=MISSING_OFFICIAL_SOURCE, N_employed_urban_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_private_wan=MISSING_OFFICIAL_SOURCE, N_wage_covered_nonprivate_wan=MISSING_OFFICIAL_SOURCE, N_resident_wan=MISSING_OFFICIAL_SOURCE
+
+上海140270/非官方140400版本差异未核；新疆75457后年年鉴摘录原站404；辽宁67324口径未证、浙江88883轴未映射，维持MISSING；甘肃两工资来源等级保留。两类工资的同范围年度平均人数均0/31，不得合并工资。2020年后重估就业口径未与2018统一。
+
+资源账构建断言失败后未恢复。尚未完成正常流水线完整生成、全部来源元数据独立抽取确认、完整31省面板资格、Astra独立验收。
+
+本包公开三件仅result.md、manifest.json、evidence_sanitized.zip。外置最终JSON结算Git提交、远端完整字节/ZIP成员回读与实际资源；本文件为发布前STOP快照。正式V010未改；Results=FALSE；V011=NOT_STARTED；生产GLOBAL_STOP=UNVERIFIED。候选保留待Astra独立审查，不自行清理、不自动下一任务。
