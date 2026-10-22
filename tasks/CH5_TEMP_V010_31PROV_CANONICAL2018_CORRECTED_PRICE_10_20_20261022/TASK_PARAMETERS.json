@@ -1,0 +1,115 @@
+{
+  "schema": "ch5.temp31.canonical2018.gated_price10or20.v1",
+  "task_id": "CH5_TEMP_V010_31PROV_CANONICAL2018_CORRECTED_PRICE_10_20_20261022",
+  "revision": "ISSUED_20261022_R1",
+  "repository": "zcx369658780/dissertation-ch5-two-asset-hank",
+  "base": "d401df1b54e522fad184c60ea121dec0387a1f33",
+  "pinned_source_commit": "94de4501dec051b969bee9d852eba2d4591f30ef",
+  "pinned_modules": {
+    "mainline_household_runtime.py": "3d2d7d92aea0036f36d88ef15c05cbb3b40eba90",
+    "migration_labor.py": "ed71689bd4e2c7cee2c0d59034781309d73f8b7d",
+    "capital_network.py": "dbb182f63ac62fd0cd8495463239c8e8c246a61b",
+    "one_turn.py": "4242cf787d8c30bec7ac884dcd9e24bcea288c28",
+    "steady_state.py": "5fa6c73884067391bd2b998d4b050443c97c38e8",
+    "firm.py": "3b902a2c62df816bdb85b0e09b127f1b7a547130",
+    "wage.py": "1459d1b465f134a2d8746c252e71e060459465ca",
+    "fiscal_diagnostics.py": "663e7e4a944d78392695c81062d97d961491ed4f"
+  },
+  "ha": {
+    "commit": "216283cf4f1303afa60f1915e143a0b7303a9ffb",
+    "blob": "9e7dc9556a2b76811e78f89999abecc045886106"
+  },
+  "input": {
+    "year": 2018,
+    "count": 31,
+    "canonical_path": "D:\\ProjectTemp\\ch5-canonical-data-workbook-20260909-001\\CH5_MULTI_PROVINCE_CANONICAL_DATA_V1.xlsx",
+    "sha256": "AEA5A12B5E6474056C1C3EF84BF0156BA88442EF54B0A4FB9C4C6F33CA963F67",
+    "read_only": true,
+    "asset_unit_bridge_must_be_authorized": true,
+    "no_mixed_cache": true,
+    "no_auto_year_fallback": true
+  },
+  "scratch": {
+    "path": "D:\\ProjectTemp\\ch5_temp_31prov_canonical2018_price10or20_20261022_01",
+    "parent": "D:\\ProjectTemp",
+    "must_be_absent": true,
+    "no_production_write": true
+  },
+  "science": {
+    "one_arm": true,
+    "start_rounds": 10,
+    "max_rounds": 20,
+    "N_initial_scale": 1,
+    "Z_initial_scale": 1,
+    "GovInv_initial_scale": 1,
+    "HA_HJB_max": 620,
+    "KFE_max": 620,
+    "driver_max": 1,
+    "no_next_parameter_auto": true,
+    "gate": {
+      "early": [
+        1,
+        2,
+        3
+      ],
+      "late": [
+        8,
+        9,
+        10
+      ],
+      "factor": 1.2,
+      "min_rounds_6_10_with_half_province_raw_outside": 4,
+      "min_provinces": 16
+    },
+    "formal_GE": 0,
+    "IRF": 0,
+    "Results": false
+  },
+  "budget": {
+    "wall": 28800,
+    "verify": 3600,
+    "engineering": 7200,
+    "science": 14400,
+    "delivery": 3000,
+    "reserve": 600,
+    "engineering_python": 20,
+    "direct": 90,
+    "E1": 2,
+    "HA": 620,
+    "KFE": 620,
+    "science_driver": 1,
+    "HJB_updates_per_HA": 100,
+    "roots_per_HA": 400000,
+    "roots_total": 248000000,
+    "scratch_bytes": 536870912,
+    "clone_bytes": 2147483648,
+    "public_bytes": 5242880,
+    "public_expanded_bytes": 12582912,
+    "zip_members": 64,
+    "git_mutations": 8,
+    "publications": 1,
+    "old_budget_carry": 0
+  },
+  "required": [
+    "input_unit_authority.csv",
+    "accepted_corrections.csv",
+    "price_rounds_31.csv",
+    "firm_household_rounds_31.csv",
+    "ha_status_31.csv",
+    "national_rounds.csv"
+  ],
+  "delivery": {
+    "branch": "review/ch5-temp-31prov-canonical2018-price-10-20-20261022",
+    "parent": "d401df1b54e522fad184c60ea121dec0387a1f33",
+    "temp_path": "_review_tmp/ch5/temp-31prov-canonical2018-price-10-20-20261022/",
+    "files": [
+      "result.md",
+      "manifest.json",
+      "evidence_sanitized.zip"
+    ],
+    "auto_upload": true,
+    "no_force": true,
+    "no_old_review_cleanup": true
+  },
+  "formal_v010_frozen": true
+}
