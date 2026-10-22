@@ -1,0 +1,81 @@
+{
+  "schema": "ch5.temp31.unit_numeraire_nonha.v1",
+  "task_id": "CH5_TEMP31_UNIT_NUMERAIRE_AND_NONHA_MATRIX_GATE_20261022",
+  "revision": "ISSUED_20261022_R1",
+  "baseline": "ec91e9e5dcb32ca04a3f83c97a6795c176f55bcf",
+  "owner_approval": "2026-10-22 unify units before new tuning; no HA approved",
+  "unit_reference": {
+    "working_macro_MU_yuan": 100000,
+    "working_NU_persons": 100,
+    "Y_gdp_100million_to_MU": 1000,
+    "K_PIM_ten_thousand_to_MU": 0.1,
+    "POP_ten_thousand_persons_to_NU": 100,
+    "per_NU_money_MU_per_NU_yuan_per_person": 1000,
+    "ha_numeraire": "s_H MU/NU per HU",
+    "owner_HU_E3_pending": true,
+    "options": [
+      "2018_national_GDP_per_capita",
+      "model_derived_labor_compensation_reference"
+    ],
+    "no_auto_pick": true
+  },
+  "input": {
+    "workbook_path": "D:\\ProjectTemp\\ch5-canonical-data-workbook-20260909-001\\CH5_MULTI_PROVINCE_CANONICAL_DATA_V1.xlsx",
+    "workbook_sha256": "AEA5A12B5E6474056C1C3EF84BF0156BA88442EF54B0A4FB9C4C6F33CA963F67",
+    "year": 2018,
+    "provinces": 31,
+    "workbook_read_only": true,
+    "no_old_data_search": true
+  },
+  "scope": {
+    "noHA_synthetic_31x31": true,
+    "unit_dimensional_tests": true,
+    "economic_methods_source_only": true,
+    "old_accepted_math_unchanged": true
+  },
+  "scratch": {
+    "root": "D:\\ProjectTemp",
+    "path": "D:\\ProjectTemp\\ch5_temp31_unit_numeraire_nonha_20261022_01",
+    "must_be_absent": true
+  },
+  "budgets": {
+    "wall_seconds": 5400,
+    "unit_source_seconds": 900,
+    "engineering_seconds": 2400,
+    "delivery_seconds": 1500,
+    "reserve_seconds": 600,
+    "python_starts_max": 12,
+    "direct_starts_max": 40,
+    "E1_batches_max": 1,
+    "source_single_objects_max": 30,
+    "scratch_bytes_max": 67108864,
+    "git_writes_max": 8,
+    "publications_max": 1,
+    "review_bytes_max": 2097152,
+    "expanded_zip_bytes_max": 4194304,
+    "zip_members_max": 28,
+    "HA": 0,
+    "HJB": 0,
+    "KFE": 0,
+    "roots": 0,
+    "science_driver": 0,
+    "outer_rounds": 0,
+    "GE": 0,
+    "IRF": 0,
+    "model_activation": false
+  },
+  "review": {
+    "branch": "review/ch5-temp31-unit-numeraire-nonha-20261022",
+    "fixed_parent": "ec91e9e5dcb32ca04a3f83c97a6795c176f55bcf",
+    "temp_path": "_review_tmp/ch5/temp31-unit-numeraire-nonha-20261022/",
+    "only_files": [
+      "result.md",
+      "manifest.json",
+      "evidence_sanitized.zip"
+    ],
+    "auto_upload": true,
+    "cleanup_by_astra_after_archive": true,
+    "old_pending_unchanged": true
+  },
+  "stop": "WAIT_ASTRA_AND_OWNER_HOUSEHOLD_NUMERAIRE_DECISION"
+}
