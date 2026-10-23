@@ -1,3 +1,6 @@
+## CURRENT OVERRIDE 2026-10-23: OWNER APPROVED LOCAL ZIP DELIVERY
+本文件过去要求每次Codex自动上传GitHub result/manifest/evidence与终审后精确删除的条款，现已被Owner批准的离线默认流程替代。新合同必须规定Owner人工上传**一个**外层ZIP（result.md、manifest.json、evidence_sanitized.zip、DELIVERY_FINAL_RECEIPT.json、INDEPENDENT_COMPLETION_EVENT.json）；GitHub REVIEW_BRANCH/FIXED_PARENT/TEMP_PATH标NOT_APPLICABLE_OFFLINE，避免旧模板诱发远端写入。其他来源、隐私、独立验收和STOP规则仍严格生效。历史在线任务/已发布候选不追溯改变。权威：docs/CH5_OFFLINE_WORKFLOW_AUTHORITY_CURRENT_20261023.md。
+
 # 第五章：强制交付、分层验收与终审后清理
 
 更新：2026-10-19；本次Owner批准验收提效方案。既有冻结任务、失败回执和关闭预算不追溯改变。本条款覆盖未来DOC_ONLY、工程、合成和科学任务的交付与验收组织，不修改科学合同。

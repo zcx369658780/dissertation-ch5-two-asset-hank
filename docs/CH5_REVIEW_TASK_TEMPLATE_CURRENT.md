@@ -1,3 +1,6 @@
+## 2026-10-23 离线任务模板生效覆盖
+新合同的交付字段填 `DELIVERY_MODE=LOCAL_ZIP_MANUAL_OWNER_UPLOAD`，`GITHUB_AUTO_REVIEW=DISABLED`；具体外层ZIP包含result、manifest、evidence、FINAL_RECEIPT、INDEPENDENT_COMPLETION_EVENT。Owner一次上传，Astra原字节验收；不用每张任务填GitHub新Review分支/父提交或强制远端删除。只有Owner单独授权的未来在线合同才能重新使用下文老字段。科学预算、隐私和STOP不变。
+
 # 第五章任务模板 · 验收范围优先
 
 TEMPLATE_ONLY / NOT_EXECUTABLE。下列字段须在实例中填实；本模板不发单，不授权任何旧任务。

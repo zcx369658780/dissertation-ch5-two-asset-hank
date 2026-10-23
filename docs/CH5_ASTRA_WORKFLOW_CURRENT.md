@@ -1,3 +1,4 @@
+> **2026-10-23 Owner离线工作流优先覆盖**：当前默认改为冻结MD→本地Codex→脱敏外层ZIP→Owner手动上传→GPT独立验收；GitHub自动Issue/Review上传/清理已停用。正式规则见 [CH5_OFFLINE_WORKFLOW_AUTHORITY_CURRENT_20261023.md](CH5_OFFLINE_WORKFLOW_AUTHORITY_CURRENT_20261023.md)。本文件余下旧GitHub自动交付条款仅供历史研究任务或Owner明确批准的未来在线任务，不能反向覆盖新规则；科学预算和隐私要求继续有效。
 # 第五章当前工作流入口 · 验收流程优化（2026-10-19）
 
 Owner已批准本次改进。本页整合现行验收流程，不新增通用工作流版本，不追溯改写冻结合同。执行授权以同一live治理快照的CURRENT.md、TASK_CURRENT.md和当前固定合同为准；离线记忆与旧ACTIVE/NEXT不是授权。

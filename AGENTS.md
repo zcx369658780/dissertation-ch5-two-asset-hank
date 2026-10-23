@@ -1,3 +1,5 @@
+> **CURRENT OWNER OVERRIDE (2026-10-23)**：本项目现在正式采用离线优先工作流。日常不再要求GitHub Issue发行、Codex自动上传Review三文件或Astra自动清理；GPT给MD，Owner交Codex本地执行，Codex生成脱敏审阅ZIP，Owner一次手动上传，GPT独立审查。GitHub仅只读来源与Owner另批准的阶段备份。旧文中相冲突的GitHub自动要求被覆盖，正式科学门不改变。见 `docs/CH5_OFFLINE_WORKFLOW_AUTHORITY_CURRENT_20261023.md`。
+
 # 第五章当前项目入口（V1.2，2026-10-13）
 Owner已批准基于 V0.0.2 复盘的 V1.2 轻量治理修订。先读 docs/DOC_INDEX_CURRENT.md、docs/CH5_ASTRA_WORKFLOW_CURRENT.md（V1.2）与 CURRENT.md 顶部；立版/验收按需读版本登记及原科学合同的固定证据。此处仅为长期执行规则；**研究版本即时状态以 CURRENT 与版本登记为准**。
 网页端同项目GPT 6 Astra接任长期路线图、版本计划、最终独立验收与偏差复盘；Codex是指定会话中的版本实现负责人。Owner保留方向取舍。旧Work退出实时管理。
