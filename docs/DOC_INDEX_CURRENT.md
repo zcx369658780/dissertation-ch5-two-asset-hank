@@ -1,4 +1,11 @@
-# CH5 DOC_INDEX_CURRENT · 离线优先正式覆盖 2026-10-23
+# CH5 DOC_INDEX_CURRENT · 2026-10-23 正式离线工作流与R+P待审交接
+ACTIVE_TASK=NONE
+- [本次会话交接与Owner最新决定](CH5_SESSION_HANDOFF_20261023_A1_RP_OFFLINE_PENDING_INDEPENDENT_REVIEW.md)
+- [离线工作流最高权威](CH5_OFFLINE_WORKFLOW_AUTHORITY_CURRENT_20261023.md)
+- [项目完整长期记忆](CH5_PROJECT_MEMORY_CURRENT.md)
+- [当前状态](../CURRENT.md) | [待验任务](../TASK_CURRENT.md)
+A1是已选TEMP31研究路线；R+P为优先研究方向、未经经济学制度采纳。最新Owner上传R+P ZIP仅登记外层SHA/文件名和回执自报身份，**Astra独立验收尚未开展，保留至下一会话**。不能以自报PASS开启真实HA或宣称31省校准。GitHub仅本次Owner授权文档里程碑备份，日常交付仍是MD→本地Codex→手动上传ZIP。
+## 历史导航（不授执行许可）
 ACTIVE_TASK=NONE
 - [Owner离线优先最高权威](CH5_OFFLINE_WORKFLOW_AUTHORITY_CURRENT_20261023.md)
 - [当前工作流入口](CH5_ASTRA_WORKFLOW_CURRENT.md) | [离线覆盖的强制交付规则](CH5_MANDATORY_REVIEW_DELIVERY_AND_CLEANUP_20261019.md)
