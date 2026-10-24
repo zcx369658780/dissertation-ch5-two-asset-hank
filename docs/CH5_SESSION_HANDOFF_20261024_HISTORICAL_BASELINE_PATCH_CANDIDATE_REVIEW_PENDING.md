@@ -98,3 +98,11 @@ TeX 草稿只修订第三章 `c3.tex) 的综合工资一般公式；`c5.tex) 原
 ## 8. 本次 GitHub 备份范围
 
 本次 GitHub 写入是 Owner 为会话交接作出的单次明确授权，仅更新本交接文档、CURRENT、TASK_CURRENT、DOC_INDEX_CURRENT 与项目长期记忆的当前状态段。此举不恢复 GitHub 自动任务/Review中转工作流；日常工作仍为离线 MD → 本地 Codex → Owner手动上传 ZIP → Astra独立验收。
+
+
+## 9. GitHub 持久记录导航
+
+- Owner决定：[CH5_TEMP31_OWNER_DECISION_HISTORICAL_PYTHON_BASELINE_20261024.md](CH5_TEMP31_OWNER_DECISION_HISTORICAL_PYTHON_BASELINE_20261024.md)
+- 任务与交付摘要：[CH5_TEMP31_HISTORICAL_BASELINE_PATCH_CANDIDATE_TASK_RECORD_20261024.md](CH5_TEMP31_HISTORICAL_BASELINE_PATCH_CANDIDATE_TASK_RECORD_20261024.md)
+- 当前索引：[DOC_INDEX_CURRENT.md](DOC_INDEX_CURRENT.md)
+- 当前状态：[/CURRENT.md](../CURRENT.md) | [TASK_CURRENT.md](../TASK_CURRENT.md) | [项目长期记忆](CH5_PROJECT_MEMORY_CURRENT.md)
