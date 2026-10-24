@@ -1,3 +1,17 @@
+## 2026-10-24 Owner最新决定与历史Python基线候选待审
+
+Owner明确选择以2026年9月初首次复现MATLAB多省份HANK的Python版本作为修订基线；先恢复可追溯来源，再由GPT/Astra独立审阅MATLAB/TeX与隔离patch，Owner最终接受后才可能冻结新来源。历史 corrected-2009 证据为Python SOURCE_CONVERGED、184轮、5704次家户调用、31/31省；MATLAB对照184/5704。历史成功只适用于指定案例，不代表修订候选已收敛或所有经济学接口正确。
+
+最新上传候选包：`CH5_TEMP31_HISTORICAL_BASELINE_PATCH_CANDIDATE_R1_OFFLINE_REVIEW_20261024.zip`，131442 B，SHA256 `36143632a1497d3f7e470bafbc3155ac5d1937b104f02169e939ec7bf0e7959c`。Codex run `156211a0597e49c4a40f37e5c9489812` 自报终态 `PASS_BOUNDED_HISTORICAL_BASELINE_IDENTIFIED__PATCH_CANDIDATE_READY__GPT_REVIEW_PENDING`。候选基线 commit `ba98537fd5ae004f0aa37d319865da1f1739e503)，tree `f432f0acb5d94e0f60cd976b74a236be883e0db3`；94de候选在本地missing，未被用作来源。报告称390个原始Git文件经cat-file逐件核验，历史导出SHA `b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3` 与入口guard匹配且guard未改；这些仍需Astra按上传ZIP独立审阅，不能将Codex自报当作科学接受。
+
+隔离候选有三处一行改动：wage.py综合工资一般公式幂次；firm.py工资税收入候选 `lt*wjt*tau`；mp4b_python_empirical.py目的地劳动厌恶偏好方向。另有未接生产的隔离劳动/净工资桥、GDP目标残差帮助函数和c3.tex公式草稿。c5.tex原来源/目的地下标方向报告为正确；`Lt -> Lt_prev`缺陷在选定基线中已修复，不重复改。候选合成2/3/31省，2132项数值对照、5项预期拒绝；最大绝对差约1.82e-12、相对差约8.33e-16；便携算术重放1046项。历史184/5704案例未重跑；没有HA/HJB/KFE/outer/GE/IRF、正式one_turn/firm或真实31省校准。
+
+未解决E3：动态Y/L与现实/滞后人均GDP选择；唯一生产回调、净工资实际接线、最终价格/HA/GDP残差与末次batch规则；HU/期间与共同单位；sigma归宿；完整财政；是否正式冻结候选。保持 `FORMAL_V010=UNCHANGED`、`V011=NOT_STARTED`、`Results=FALSE`、`model_activation=False`、`REAL_GE=False`、`FULL_RUNNER_IO_CLOSURE=BLOCKED`。三个历史PENDING Review、历史STOP与已关闭预算保持原样。
+
+下一会话第一工作：独立验收上述上传ZIP的原字节、双层归档、manifest、来源身份、候选diff、税率使用清单、测试及TeX公式；清楚区分历史基线身份、隔离候选数学PASS、经济学采纳和正式来源冻结。不得自动启动新任务或真实模型运行。本次GitHub更新为Owner单次明确授权的里程碑备份，不恢复日常GitHub任务中转。
+
+---
+
 # 第五章项目记忆 · 当前接受的决定
 
 更新：2026-10-19。用途为本项目持久记忆与交接，不是平台自动Memory写入、不替代live执行授权。本文件只记录已批准决定、已归档状态和明确待办，不把建议写成已实施。
