@@ -296,3 +296,7 @@ Owner明确批准第五章后续任务可使用人工控制的在线流程：GPT
 
 ## 2026-10-25 · 正式迁移至人工GitHub在线任务与证据审阅
 Owner批准：GPT顾问发布GitHub任务单 → Owner交本地Codex → Codex按冻结合同通过已授权普通权限SSH推送独立候选分支 → GPT/Astra直接从固定commit审阅 → Owner决定下一步。复杂程序项目不再默认依赖完整离线ZIP；以GitHub真实源码上下文、来源映射和证据文件为主。人工逐任务，不恢复自动Issue/PR、自动合并、自动清理或自动下一任务。GitHub插件连接失败不阻断SSH，但任何权限/安全拒绝必须STOP且不得绕过。Project Sources、GitHub与本地Codex为三个独立同步平面。正式规则：docs/CH5_GITHUB_WORKFLOW_AUTHORITY_CURRENT_20261025.md；审阅V3、模板V3配套。科研证据、旧STOP/PENDING、历史科学裁决全部保留。V010=UNCHANGED；V011=NOT_STARTED；Results=FALSE；model_activation=False；REAL_GE=False；FULL_RUNNER_IO_CLOSURE=BLOCKED。
+
+
+## 2026-10-25 · 既有工资数据只读发现任务已签发
+TASK=CH5_TEMP31_EXISTING_WAGE_DATA_DISCOVERY_R1_20261025；任务单：tasks/CH5_TEMP31_EXISTING_WAGE_DATA_DISCOVERY_R1_20261025.md。目标是优先搜索本地工作区、现有数据、归档及历史TEMP31证据中的工资变量和31省映射，不新增数据、不外网搜索、不运行模型。候选必须记录路径/成员、SHA-256、来源、年份/vintage、省份ID/顺序、工资定义、单位及证据引用；缺失保留UNKNOWN/BLOCKED。任务签发不代表canonical来源或单位已经确认。科学状态继续V010=UNCHANGED、V011=NOT_STARTED、Results=FALSE、model_activation=False、REAL_GE=False、FULL_RUNNER_IO_CLOSURE=BLOCKED。
