@@ -1,11 +1,11 @@
-# CH5 DOC_INDEX_CURRENT · 2026-10-25 独立审阅规则持久化
+# CH5 DOC_INDEX_CURRENT · 2026-10-25 独立审阅规则 V2 持久化
 ACTIVE_TASK=NONE
-- [独立审阅四条规则（Owner批准）](CH5_INDEPENDENT_REVIEW_RULES_20261025.md)
+- [独立审阅规则 V2：两阶段、六项硬门、有界早停](CH5_INDEPENDENT_REVIEW_RULES_20261025.md)
 - [历史Python基线候选任务记录](CH5_TEMP31_HISTORICAL_BASELINE_PATCH_CANDIDATE_TASK_RECORD_20261024.md)
-- [项目长期记忆](CH5_PROJECT_MEMORY_CURRENT.md)
+- [项目长期记忆及V2规则摘要](CH5_PROJECT_MEMORY_CURRENT.md)
 - [当前状态](../CURRENT.md) | [当前任务状态](../TASK_CURRENT.md)
 
-规则更新只涉及证据与裁决，不启动候选审阅或改变科研权限。原索引历史内容保留如下。
+V2仅细化证据复用、关键来源核验、风险聚焦、早停和分层裁决；不启动候选审阅、不改变科研权限、不重写历史记录。原索引历史内容保留如下。
 
 ---
 
