@@ -2,17 +2,18 @@
   "task": "CH5_TEMP31_CURRENT_PROGRESS_GITHUB_EVIDENCE_PUBLICATION_R1_20261025",
   "branch": "codex/ch5-temp31-evidence-publication-20261025-r1",
   "route_base": "04a5572d1978202f2a66be06f27748cf0585d989",
-  "kind": "NORMAL_PRIVILEGE_SSH_RECOVERY",
-  "self_exclusion": "manifest.json only; final sealing identity and own hash externally reported",
+  "kind": "BOUNDED_DELIVERY_RECEIPT_REPAIR_OF_EXISTING_TASK",
+  "self_exclusion": "manifest.json only; own Blob/bytes/SHA-256 and final sealing Commit/Parent/Root are in the external final readback receipt",
   "files": [
     {
       "path": "tasks/CH5_TEMP31_CURRENT_PROGRESS_GITHUB_EVIDENCE_PUBLICATION_R1_20261025/DELIVERY_FINAL_RECEIPT.json",
-      "bytes": 526,
-      "sha256": "8b69be400190668d56da13336535ade27c60de81d336233245edfc8a443b4dab",
-      "git_blob": "1df957e182669990cb1f7b308f71db1ae440410a",
-      "purpose": "Prepared receipt, not a completed delivery claim",
+      "bytes": 47434,
+      "sha256": "e81cc565e46f54e177a21d57f615eb8a9d5e1e8444506aaa71477b2f6ae2a1c0",
+      "git_blob": "32c5a6c80c8153012cc5112ec80e72c3d8d5c401",
+      "purpose": "Truthful verified candidate receipt and sealing boundary",
       "provenance": {
-        "kind": "CURRENT_PREPUBLICATION_RECEIPT"
+        "kind": "BOUNDED_DELIVERY_METADATA_REPAIR",
+        "verified_original_candidate": "c4e9cda7fe1cea93dc1a80a84254d43c896c280b"
       }
     },
     {
@@ -819,13 +820,21 @@
     },
     {
       "path": "tasks/CH5_TEMP31_CURRENT_PROGRESS_GITHUB_EVIDENCE_PUBLICATION_R1_20261025/result.md",
-      "bytes": 2602,
-      "sha256": "0337751e87164e7d3c93c8c6d24b27e5c48fcc8331e2c3fe41085d682616880a",
-      "git_blob": "6922608885dfeed061880130a56c689243816e2a",
-      "purpose": "Current publication state and unresolved gates",
+      "bytes": 2804,
+      "sha256": "6e20fd53d65f54c74e0b7033893aac6a790134cb042f55f8124e348d3b8946eb",
+      "git_blob": "c0439d4c8bf53b7770ce8b92ad8659f59be6f713",
+      "purpose": "Current verified delivery state, budgets and unchanged scientific limits",
       "provenance": {
-        "kind": "CURRENT_PUBLICATION_REPORT"
+        "kind": "BOUNDED_DELIVERY_METADATA_REPAIR",
+        "verified_original_candidate": "c4e9cda7fe1cea93dc1a80a84254d43c896c280b"
       }
     }
-  ]
+  ],
+  "verified_original_candidate": {
+    "commit": "c4e9cda7fe1cea93dc1a80a84254d43c896c280b",
+    "parent": "04a5572d1978202f2a66be06f27748cf0585d989",
+    "tree": "aa26238bf401bb72d4ecfeb3478b2c01b042642b",
+    "registered_files": 70,
+    "raw_byte_checks": "PASS_ALL_70_PLUS_MANIFEST"
+  }
 }
