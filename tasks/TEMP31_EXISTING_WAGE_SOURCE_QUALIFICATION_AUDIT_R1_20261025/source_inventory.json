@@ -1,0 +1,720 @@
+{
+  "task_id": "TEMP31_EXISTING_WAGE_SOURCE_QUALIFICATION_AUDIT_R1_20261025",
+  "fixed_task_commit": "f4ffac5c7c270ad79b00cadaf5091873daec1ca5",
+  "prior_discovery_identity": {
+    "commit": "1072e615062ca85437c06b500d5a301939de6734",
+    "path": "tasks/CH5_TEMP31_EXISTING_WAGE_DATA_DISCOVERY_R1_20261025/source_inventory.json",
+    "blob": "627b3b9b224658a0fdc583e0f22b8b9412ecee49",
+    "bytes": 33002,
+    "sha256": "645041481788C4925BDADC2E2872281F6E94936C6D140FC10715D4E24628FEFC",
+    "sources": [
+      {
+        "source_id": "S03",
+        "sha256": "e51a4b38503df6701beea4456bedb0cde8bf97ecfdc36f08fc74c03d6ce3bf9d",
+        "bytes": 13197
+      },
+      {
+        "source_id": "S04",
+        "sha256": "bda2d8b3a939f5d4c3f812c6a65dd0c31ef68693770bcbc48e5d47651c4cd1cb",
+        "bytes": 16765
+      },
+      {
+        "source_id": "S08",
+        "sha256": "d1524f2fc185eddf825bd801423b932866447cee70ce02009ed820c09aad15c4",
+        "bytes": 13369
+      },
+      {
+        "source_id": "S09",
+        "sha256": "fb5eb3378ada025f7c22e1dbae847d97a5b6ab8a0bf6f9e70143df5afdaea9ef",
+        "bytes": 12131
+      },
+      {
+        "source_id": "RAW_CQ_W",
+        "sha256": "16a3dd434264db28eab05abf2dd3aed37518e55260e29c38bdf8b621d6f2b06e",
+        "bytes": 86367
+      },
+      {
+        "source_id": "RAW_FJ_NP",
+        "sha256": "0abd3df77c94c5d044869577dd05226529c04d4aaf56e20a46ad98f95811310f",
+        "bytes": 225209
+      },
+      {
+        "source_id": "RAW_FJ_P",
+        "sha256": "d6f65af9692dbd57b6b9c017d3b3ecec39ebae9c040558861774ff32376bf8f8",
+        "bytes": 99671
+      },
+      {
+        "source_id": "RAW_HN_NP",
+        "sha256": "09e96d363bd5907492f83e1c12ac820dcadd36d9678121dc4b0b94a157e6f751",
+        "bytes": 104225
+      },
+      {
+        "source_id": "RAW_HN_P",
+        "sha256": "9a033b64237d0d350ff6ad7128e830f8197542b71f21af9c036536c83392f9f5",
+        "bytes": 31801
+      },
+      {
+        "source_id": "RAW_YN_NP",
+        "sha256": "6b3ca8e0aeeab983b36b281a1bab9605be200ff2d7be76c75df913557f66e862",
+        "bytes": 60524
+      }
+    ]
+  },
+  "existing_inputs": [
+    {
+      "alias": "EXISTING_LEDGER/official_source_provenance_2018.csv",
+      "bytes": 15490,
+      "sha256": "376481f71a25ced2089f48dbfe015a73b6e51153be6d179bc0444b4cba9cf74a"
+    },
+    {
+      "alias": "EXISTING_LEDGER/source_value_normalization_ledger.csv",
+      "bytes": 100821,
+      "sha256": "f0375280940f03a0910655eee1dbf7f3c25b9791ce38e84928d0d32630f92f56"
+    },
+    {
+      "alias": "EXISTING_LEDGER/official_source_and_endpoint_ledger.csv",
+      "bytes": 76497,
+      "sha256": "a2a1460be1aed1ebefc8d2aef763b8b64dee39073fd2ffa044ce00373b488027"
+    },
+    {
+      "alias": "EXISTING_LEDGER/wage_employment_2018_observed_31.csv",
+      "bytes": 13197,
+      "sha256": "e51a4b38503df6701beea4456bedb0cde8bf97ecfdc36f08fc74c03d6ce3bf9d"
+    },
+    {
+      "alias": "EXISTING_LEDGER/wage_employment_2018_31_verified.csv",
+      "bytes": 16765,
+      "sha256": "bda2d8b3a939f5d4c3f812c6a65dd0c31ef68693770bcbc48e5d47651c4cd1cb"
+    },
+    {
+      "alias": "EXISTING_LEDGER/wage_employment_2018_interpolated_31.csv",
+      "bytes": 13369,
+      "sha256": "d1524f2fc185eddf825bd801423b932866447cee70ce02009ed820c09aad15c4"
+    },
+    {
+      "alias": "EXISTING_LEDGER/wage_employment_2018_scenario_31.csv",
+      "bytes": 12131,
+      "sha256": "fb5eb3378ada025f7c22e1dbae847d97a5b6ab8a0bf6f9e70143df5afdaea9ef"
+    },
+    {
+      "alias": "EXISTING_LEDGER/source_province_registry.json",
+      "bytes": 701,
+      "sha256": "cef5e2ef6ff421a045f77f648beb022ea11f5bac71fb1abff5407e2516868e56"
+    },
+    {
+      "alias": "EXISTING_LEDGER/official_discovery_receipts.jsonl",
+      "bytes": 482575,
+      "sha256": "1835277e900d4d874b85a3fcc20c38eaa46664ab46593b444e573ea093b7b20a"
+    },
+    {
+      "alias": "EXISTING_RAW/HB_W.html",
+      "bytes": 6236,
+      "sha256": "778d2f6a554ed287851e26e17955bc3d8b60a25d516839cfb210ff99d56db50c"
+    },
+    {
+      "alias": "EXISTING_RAW/SX_P.html",
+      "bytes": 50079,
+      "sha256": "b2a1b8c8644bd6273e7719aa1857832c6c6f99b578502f4af1d5a203fa2489e4"
+    },
+    {
+      "alias": "EXISTING_RAW/JS_W_RELAY.html",
+      "bytes": 55034,
+      "sha256": "8cfc9e69f92200225b31fa1a13dec06902c2f93990e170055d60ad953c89fb1a"
+    },
+    {
+      "alias": "EXISTING_RAW/AH_NP_RELAY.html",
+      "bytes": 28763,
+      "sha256": "942d2d57d86eb1826bcae1f901bf4df98598e5f66e7f075d58483c677b5fe8e9"
+    },
+    {
+      "alias": "EXISTING_RAW/FJ_P.html",
+      "bytes": 99671,
+      "sha256": "d6f65af9692dbd57b6b9c017d3b3ecec39ebae9c040558861774ff32376bf8f8"
+    },
+    {
+      "alias": "EXISTING_RAW/FJ_NP.html",
+      "bytes": 225209,
+      "sha256": "0abd3df77c94c5d044869577dd05226529c04d4aaf56e20a46ad98f95811310f"
+    },
+    {
+      "alias": "EXISTING_RAW/HE_W.html",
+      "bytes": 6122,
+      "sha256": "a05de6f1e8341a06251f791f3b44921462f717623d2bbe07f1cc4496801b03d3"
+    },
+    {
+      "alias": "EXISTING_RAW/HN_P.html",
+      "bytes": 31801,
+      "sha256": "9a033b64237d0d350ff6ad7128e830f8197542b71f21af9c036536c83392f9f5"
+    },
+    {
+      "alias": "EXISTING_RAW/HN_NP.html",
+      "bytes": 104225,
+      "sha256": "09e96d363bd5907492f83e1c12ac820dcadd36d9678121dc4b0b94a157e6f751"
+    },
+    {
+      "alias": "EXISTING_RAW/CQ_W.html",
+      "bytes": 86367,
+      "sha256": "16a3dd434264db28eab05abf2dd3aed37518e55260e29c38bdf8b621d6f2b06e"
+    },
+    {
+      "alias": "EXISTING_RAW/SC_WE.html",
+      "bytes": 45319,
+      "sha256": "533eaf6a54a2d526badae08b921066c5ca33e94afda12467fc7c0cb31b25de2d"
+    },
+    {
+      "alias": "EXISTING_RAW/YN_NP.html",
+      "bytes": 60524,
+      "sha256": "6b3ca8e0aeeab983b36b281a1bab9605be200ff2d7be76c75df913557f66e862"
+    },
+    {
+      "alias": "EXISTING_RAW/GS_P_CANDIDATE.html",
+      "bytes": 23705,
+      "sha256": "eecb21cf61012bd0b41a0c6e40388e5b9797d7516d38aaf386b1817d39dbdc6b"
+    },
+    {
+      "alias": "EXISTING_RAW/GS_NP_CANDIDATE.html",
+      "bytes": 19792,
+      "sha256": "6d0a2db7976e2c639c8340e2b88889a3702ba874d1e7a3b15d08cc1bc2771f57"
+    },
+    {
+      "alias": "EXISTING_RAW/NX_NP.html",
+      "bytes": 138845,
+      "sha256": "4d539b50e5217ed0765410f608dbaa9f158141b5a39fdc909e949ccd86df8ec0"
+    }
+  ],
+  "existing_source_inventory": "existing_source_inventory.json",
+  "official_web_sources": [
+    {
+      "id": "W01",
+      "title": "2018年城镇私营单位就业人员年平均工资",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1900312.html",
+      "publisher": "国家统计局",
+      "year": 2018,
+      "vintage": "2019-05-14 09:30; URL迁移日期不作发布年份",
+      "availability": "READABLE_OFFICIAL_PAGE",
+      "table": "表1：2018年城镇私营单位分地区就业人员年平均工资；表2：分行业",
+      "locator": "网页抽取行55-65（表1）；104-162（附注）",
+      "finding": "表1为东部/中部/西部/东北四大区域，不能作为31省表；附注说明单位就业人员、税前工资和年度平均概念。",
+      "unit": "元；表内另有增长率%",
+      "scope": "城镇私营法人单位就业人员，非居民人均收入",
+      "gross_net": "GROSS_PRETAX_EXPLICIT",
+      "nominal_real": "货币工资水平与实际增长率分列；无共同模型价格基准",
+      "table_access_proven": true,
+      "province_coverage_proven": false,
+      "raw_downloaded": false
+    },
+    {
+      "id": "W02",
+      "title": "2018年城镇非私营单位就业人员年平均工资",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1900311.html",
+      "publisher": "国家统计局",
+      "year": 2018,
+      "vintage": "2019-05-14（检索摘要）",
+      "availability": "OFFICIAL_PAGE_UNAVAILABLE",
+      "table": "表1：2018年城镇非私营单位分地区就业人员年平均工资（摘要所列）",
+      "locator": "本轮open超时；摘要提示四大区域",
+      "finding": "未将检索摘要提升为完整表读取或31省覆盖。",
+      "unit": "UNKNOWN_LIVE_PAGE_UNREAD",
+      "scope": "城镇非私营（标题）；详细口径原页本轮未读",
+      "gross_net": "UNKNOWN_PAGE_UNREAD",
+      "nominal_real": "UNKNOWN",
+      "table_access_proven": false,
+      "raw_downloaded": false
+    },
+    {
+      "id": "W03",
+      "title": "中国统计年鉴2019目录",
+      "url": "https://www.stats.gov.cn/sj/ndsj/2019/left.htm",
+      "publisher": "国家统计局",
+      "year": 2018,
+      "vintage": "2019版",
+      "availability": "READABLE_OFFICIAL_CATALOG",
+      "table": "第4章；4-12至4-16工资表目录",
+      "locator": "目录抽取行61-80",
+      "finding": "当前目录列全国/行业工资表；未据此确认31省×两类别可比表。",
+      "table_access_proven": false,
+      "raw_downloaded": false
+    },
+    {
+      "id": "W04",
+      "title": "4-7 城镇非私营单位就业人员工资总额、平均工资（2018年）",
+      "url": "https://tjj.jl.gov.cn/tjsj/tjnj/2019/2019/B4_7.htm",
+      "publisher": "吉林省统计局",
+      "year": 2018,
+      "vintage": "2019吉林统计年鉴",
+      "availability": "READABLE_OFFICIAL_TABLE",
+      "table": "4-7",
+      "locator": "表题/表头抽取行1-3；全省总计行可读",
+      "unit": "就业人员平均工资(元)；工资总额另为万元",
+      "scope": "城镇非私营单位就业人员，须与在岗职工列区分",
+      "gross_net": "UNKNOWN_IN_TABLE; 口径说明待补",
+      "nominal_real": "UNKNOWN_PRICE_BASE",
+      "table_access_proven": true,
+      "provinces": [
+        "吉林"
+      ],
+      "categories": [
+        "NONPRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W05",
+      "title": "吉林省2018年城镇私营单位就业人员年平均工资35026元",
+      "url": "https://tjj.jl.gov.cn/tjsj/qwfb/201905/t20190517_5879168.html",
+      "publisher": "吉林省统计局",
+      "year": 2018,
+      "vintage": "2019-05-17",
+      "availability": "READABLE_OFFICIAL_PAGE",
+      "table": "发布正文第1段及附注（无编号数据总表）",
+      "locator": "抽取行10-19；附注27-53",
+      "unit": "元；年平均就业人员工资",
+      "scope": "城镇私营法人单位就业人员",
+      "gross_net": "GROSS_PRETAX_EXPLICIT",
+      "nominal_real": "名义工资水平与扣除物价后的增长率分别报告",
+      "table_access_proven": true,
+      "provinces": [
+        "吉林"
+      ],
+      "categories": [
+        "PRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W06",
+      "title": "2018年上海市城镇单位就业人员平均工资",
+      "url": "https://tjj.sh.gov.cn/tjxw/20190621/0014-1003597.html",
+      "publisher": "上海市统计局",
+      "year": 2018,
+      "vintage": "2019-06-21",
+      "availability": "READABLE_OFFICIAL_PAGE",
+      "table": "正文第1段及注1/4/5/6（无编号表）",
+      "locator": "抽取行4、8、13-19",
+      "unit": "元；年平均就业人员工资",
+      "scope": "本市城镇区域独立核算法人单位就业人员；排除个体/自由职业等非单位人员",
+      "gross_net": "GROSS_PRETAX_EXPLICIT",
+      "nominal_real": "UNKNOWN_COMMON_PRICE_BASE",
+      "finding": "新旧平均工资在地域、对象、人员类型方面存在差异，不能直接比较。",
+      "table_access_proven": true,
+      "provinces": [
+        "上海"
+      ],
+      "categories": [
+        "PRIVATE",
+        "NONPRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W07",
+      "title": "福建省2018年城镇非私营单位就业人员年平均工资74316元",
+      "url": "https://tjj.fujian.gov.cn/xxgk/tjxx/gzqk/201905/t20190523_4882127.htm",
+      "publisher": "福建省统计局",
+      "year": 2018,
+      "vintage": "2019-05-23",
+      "availability": "READABLE_OFFICIAL_PAGE",
+      "table": "正文首段；2018年分行业/分登记注册类型/分设区市就业人员年平均工资表",
+      "locator": "抽取行25-34、84-85、103-104；首段为省级值",
+      "unit": "元；年平均就业人员工资",
+      "scope": "城镇非私营单位就业人员；不得替换为在岗职工（含劳务派遣工）",
+      "gross_net": "GROSS_PRETAX_EXPLICIT_IN_CACHED_DEFINITION",
+      "nominal_real": "名义增长与实际增长分列",
+      "table_access_proven": true,
+      "provinces": [
+        "福建"
+      ],
+      "categories": [
+        "NONPRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W08",
+      "title": "福建省2018年城镇私营单位就业人员年平均工资52930元",
+      "url": "https://tjj.fujian.gov.cn/xxgk/tjxx/gzqk/201905/t20190523_4883071.htm",
+      "publisher": "福建省统计局",
+      "year": 2018,
+      "vintage": "2019-05-23",
+      "availability": "READABLE_OFFICIAL_PAGE",
+      "table": "正文首段；2018年城镇私营单位分行业就业人员年平均工资表",
+      "locator": "抽取行25-34、64-92",
+      "unit": "元；年平均就业人员工资",
+      "scope": "城镇私营法人单位就业人员",
+      "gross_net": "GROSS_PRETAX_EXPLICIT",
+      "nominal_real": "名义增长与实际增长分列",
+      "finding": "该页行业分类附注明列GB/T4754-2011；国家同年发布附注为GB/T4754-2017。保留差异，不擅自修正或直接认定可比。",
+      "table_access_proven": true,
+      "provinces": [
+        "福建"
+      ],
+      "categories": [
+        "PRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W09",
+      "title": "2018年湖南城镇非私营单位就业人员年平均工资达70221元",
+      "url": "https://tjj.hunan.gov.cn/tjfx/jmxx/2019jmxx/201905/t20190516_5334865.html",
+      "publisher": "湖南省统计局",
+      "year": 2018,
+      "vintage": "2019-05-16",
+      "availability": "READABLE_OFFICIAL_PAGE",
+      "table": "首段；表1分区域、表2分行业、表3分登记注册类型",
+      "locator": "抽取行38-47、54-56、78-80",
+      "unit": "元；年平均就业人员工资",
+      "scope": "城镇非私营单位就业人员；在岗职工是不同列/口径",
+      "gross_net": "GROSS_PRETAX_EXPLICIT_IN_CACHED_DEFINITION",
+      "nominal_real": "UNKNOWN_COMMON_PRICE_BASE",
+      "table_access_proven": true,
+      "provinces": [
+        "湖南"
+      ],
+      "categories": [
+        "NONPRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W10",
+      "title": "2018年城镇私营单位从业人员年平均工资",
+      "url": "https://tjj.hunan.gov.cn/m/tjsj/201905/t20190516_5335128.html",
+      "publisher": "湖南省统计局",
+      "year": 2018,
+      "vintage": "2019-05-16（既有缓存）",
+      "availability": "OFFICIAL_PAGE_UNAVAILABLE",
+      "table": "行业表/总计（旧缓存）；本轮网页工具不可读取",
+      "locator": "既有HN_P原件哈希见现有审计；live工具不可访问",
+      "table_access_proven": false,
+      "provinces": [
+        "湖南"
+      ],
+      "categories": [
+        "PRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W11",
+      "title": "2018年重庆市城镇单位就业人员平均工资解读",
+      "url": "https://tjj.cq.gov.cn/zwgk_233/fdzdgknr/tjxx/sjzl_55471/tjgb_55472/202002/t20200219_5274459.html",
+      "publisher": "重庆市统计局",
+      "year": 2018,
+      "vintage": "2019-05-29（既有台账；URL为迁移路径）",
+      "availability": "OFFICIAL_PAGE_UNAVAILABLE",
+      "table": "旧缓存首段包含两类别；live超时",
+      "locator": "CQ_W既有原件；本轮open超时",
+      "table_access_proven": false,
+      "provinces": [
+        "重庆"
+      ],
+      "categories": [
+        "PRIVATE",
+        "NONPRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W12",
+      "title": "2018年云南城镇非私营单位就业人员平均工资情况",
+      "url": "https://stats.yn.gov.cn/zwgk/zfxxgk/fdzdgknr/tjsj/sjjd/201906/t20190611_1203898.html",
+      "publisher": "云南省统计局",
+      "year": 2018,
+      "vintage": "2019-06-11（旧台账）；站点元数据有后迁移痕迹",
+      "availability": "OFFICIAL_PAGE_UNAVAILABLE",
+      "table": "旧缓存首段/分行业表；live返回405",
+      "locator": "YN_NP既有原件；open 405 Method Not Allowed",
+      "table_access_proven": false,
+      "provinces": [
+        "云南"
+      ],
+      "categories": [
+        "NONPRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W13",
+      "title": "3-15 主要年份城镇非私营单位就业人员平均工资",
+      "url": "https://tjj.xinjiang.gov.cn/tjj/rkjyug/202203/72389d7fc1064ca9aa188eedf8f08c36.shtml",
+      "publisher": "新疆维吾尔自治区统计局",
+      "year": 2018,
+      "vintage": "2021年鉴历史行；网页发布2022-03-01",
+      "availability": "OFFICIAL_PAGE_UNAVAILABLE",
+      "table": "3-15，2018历史行（索引提示，本轮表不可读）",
+      "locator": "本轮open 404；不能以搜索摘要证明原表已读",
+      "table_access_proven": false,
+      "provinces": [
+        "新疆"
+      ],
+      "categories": [
+        "NONPRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W14",
+      "title": "3-25 城镇非私营单位就业人员平均工资（2018年）",
+      "url": "https://tj.jiangsu.gov.cn/2019/nj03/nj0325.htm",
+      "publisher": "江苏省统计局",
+      "year": 2018,
+      "vintage": "江苏统计年鉴2019",
+      "availability": "READABLE_OFFICIAL_TABLE",
+      "table": "3-25",
+      "locator": "官方2019/nj03.htm链接元数据确认；表头行0-6及总计行可读",
+      "unit": "元；年平均工资",
+      "scope": "城镇非私营单位就业人员；在岗/其他人员分列",
+      "gross_net": "UNKNOWN_IN_TABLE",
+      "nominal_real": "UNKNOWN_PRICE_BASE",
+      "table_access_proven": true,
+      "provinces": [
+        "江苏"
+      ],
+      "categories": [
+        "NONPRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W15",
+      "title": "3-29 城镇私营单位就业人员平均工资",
+      "url": "https://tj.jiangsu.gov.cn/2019/nj03/nj0329.htm",
+      "publisher": "江苏省统计局",
+      "year": 2018,
+      "vintage": "江苏统计年鉴2019",
+      "availability": "READABLE_OFFICIAL_TABLE",
+      "table": "3-29，2018年列",
+      "locator": "官方目录真实href确认；表头行0-2明列2013—2018",
+      "unit": "元；年平均工资",
+      "scope": "城镇私营单位就业人员",
+      "gross_net": "UNKNOWN_IN_TABLE",
+      "nominal_real": "UNKNOWN_PRICE_BASE",
+      "table_access_proven": true,
+      "provinces": [
+        "江苏"
+      ],
+      "categories": [
+        "PRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W16",
+      "title": "解读2018年北京市就业人员平均工资",
+      "url": "https://www.beijing.gov.cn/gongkai/shuju/sjjd/201905/t20190531_1837979.html",
+      "publisher": "北京市政府门户网站；明确署来源北京市统计局网站",
+      "year": 2018,
+      "vintage": "2019-05-30 18:24；URL日期不是该字段替代品",
+      "availability": "READABLE_OFFICIAL_GOV_PORTAL_BUREAU_ATTRIBUTED",
+      "table": "首段两类别；说明段（无编号表）",
+      "locator": "抽取行7、13、27",
+      "unit": "元；年平均就业人员工资",
+      "scope": "城镇私营/非私营单位就业人员",
+      "gross_net": "GROSS_WITH_WITHHOLDINGS_EXPLICIT",
+      "finding": "正文确实可读；为防把政府镜像当统计局首发原件，原件资格仍单列UNKNOWN，不计入直接局站FOUND。",
+      "table_access_proven": true,
+      "provinces": [
+        "北京"
+      ],
+      "categories": [
+        "PRIVATE",
+        "NONPRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W17",
+      "title": "2018-2019年辽宁统计年鉴数据（Excel）下载",
+      "url": "https://tjj.ln.gov.cn/tjj/tjsj/tjnj/njsjxz/2023110210084851581/index.shtml",
+      "publisher": "辽宁省统计局",
+      "year": 2018,
+      "vintage": "目录列2019版；网页日期2020-06-09",
+      "availability": "READABLE_OFFICIAL_CATALOG",
+      "table": "目标私营/非私营就业人员年平均工资具体表号UNKNOWN",
+      "locator": "目录抽取行98-115；附件名2019年辽宁统计年鉴数据.zip",
+      "access_condition": "ZIP下载线索已证；本任务未下载，未查明目标表/单元格可用性",
+      "table_access_proven": false,
+      "provinces": [
+        "辽宁"
+      ],
+      "categories": [
+        "PRIVATE",
+        "NONPRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W18",
+      "title": "2019黑龙江统计年鉴",
+      "url": "https://tjj.hlj.gov.cn/tjj/c106782/202001/c00_30326302.shtml",
+      "publisher": "黑龙江省统计局统计发展服务中心",
+      "year": 2018,
+      "vintage": "2019版；网页日期2020-01-20",
+      "availability": "READABLE_OFFICIAL_CATALOG",
+      "table": "目标表号/页码UNKNOWN",
+      "locator": "目录抽取行25-31；真实href=30326302/files/2019黑龙江统计年鉴.zip",
+      "access_condition": "仅ZIP目录；没有下载或证明目标表可读",
+      "table_access_proven": false,
+      "provinces": [
+        "黑龙江"
+      ],
+      "categories": [
+        "PRIVATE",
+        "NONPRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W19",
+      "title": "浙江统计年鉴2019编辑说明",
+      "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web3077/site/flash/tjj/Reports1/2019%E5%B9%B4%E7%BB%9F%E8%AE%A1%E5%B9%B4%E9%89%B4%E5%85%89%E7%9B%98/html/cn/%E7%BC%96%E8%80%85%E8%AF%B4%E6%98%8E.html",
+      "publisher": "浙江统计年鉴官方政务云页面",
+      "year": 2018,
+      "vintage": "2019版",
+      "availability": "READABLE_EDITION_PREFACE_ONLY",
+      "table": "未定位目标工资表号，不作为私营数据可用证明",
+      "locator": "编辑说明抽取行1-5",
+      "finding": "明确主要收录2018统计资料且对既发数据有核实修订；不能据此推断工资表完整或共同vintage。",
+      "table_access_proven": false,
+      "raw_downloaded": false
+    },
+    {
+      "id": "W20",
+      "title": "浙江统计年鉴2020目录",
+      "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web3077/site/flash/tjj/Reports1/2020-%E7%BB%9F%E8%AE%A1%E5%B9%B4%E9%89%B4/indexcn.html",
+      "publisher": "浙江统计年鉴官方政务云页面",
+      "year": 2018,
+      "vintage": "2020版，历史系列候选",
+      "availability": "READABLE_OFFICIAL_CATALOG",
+      "table": "5-4 非私营单位就业人员平均工资(1985-2019年)",
+      "locator": "目录抽取行97-105",
+      "finding": "系列年份包含2018，但具体2018行和数值未读取；不能冒称表可用。",
+      "table_access_proven": false,
+      "provinces": [
+        "浙江"
+      ],
+      "categories": [
+        "NONPRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W21",
+      "title": "全省统计年鉴：2019年统计年鉴",
+      "url": "https://tjj.hubei.gov.cn/tjsj/sjkscx/tjnj/qstjnj/index.shtml",
+      "publisher": "湖北省统计局",
+      "year": 2018,
+      "vintage": "目录2019-12-10；文件名有2024更新时间痕迹",
+      "availability": "READABLE_OFFICIAL_CATALOG",
+      "table": "目标表号/页码UNKNOWN",
+      "locator": "目录抽取行38；实际链接为RAR附件",
+      "attachment_url": "http://tjj.hubei.gov.cn/tjsj/sjkscx/tjnj/qstjnj/201912/P020240903632511602780.rar",
+      "access_condition": "未访问/下载RAR；不因文件名推断最终发布版本或目标表可用",
+      "table_access_proven": false,
+      "provinces": [
+        "湖北"
+      ],
+      "categories": [
+        "PRIVATE",
+        "NONPRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W22",
+      "title": "城镇非私营单位就业人员和城镇私营单位就业人员年平均工资（业务问答）",
+      "url": "https://stats.hainan.gov.cn/tjj/hdjl/cjwt/yw/202411/t20241104_3762257.html",
+      "publisher": "海南省统计局",
+      "year": "UNKNOWN_TARGET_YEAR_NOT_VERIFIED",
+      "vintage": "2024路径，正文未读",
+      "availability": "OFFICIAL_PAGE_UNAVAILABLE",
+      "table": "具体2018表未知",
+      "locator": "open返回403；没有绕过、重试或认证",
+      "table_access_proven": false,
+      "provinces": [
+        "海南"
+      ],
+      "categories": [
+        "PRIVATE",
+        "NONPRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W23",
+      "title": "广东省及21个市统计年鉴专栏",
+      "url": "https://gdzd.stats.gov.cn/dcsj/gdsnjsj/201902/t20190201_154503.html",
+      "publisher": "国家统计局广东调查总队",
+      "year": "UNKNOWN_TARGET_EDITION_NOT_VERIFIED",
+      "vintage": "UNKNOWN",
+      "availability": "OFFICIAL_PAGE_UNAVAILABLE",
+      "table": "2018工资目标表未知",
+      "locator": "open超时",
+      "table_access_proven": false,
+      "provinces": [
+        "广东"
+      ],
+      "categories": [
+        "PRIVATE",
+        "NONPRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W24",
+      "title": "广西统计局数据发布目录",
+      "url": "https://tjj.gxzf.gov.cn/tjsj/xwfb/tjxx_sjfb/index_7.shtml",
+      "publisher": "广西壮族自治区统计局",
+      "year": "UNKNOWN_TARGET_TABLE_NOT_VERIFIED",
+      "vintage": "UNKNOWN",
+      "availability": "OFFICIAL_PAGE_UNAVAILABLE",
+      "table": "检索仅提示规模以上企业分岗位工资，不能替代两类别省级年平均工资",
+      "locator": "open超时；检索摘要非表读取证据",
+      "table_access_proven": false,
+      "provinces": [
+        "广西"
+      ],
+      "categories": [
+        "PRIVATE",
+        "NONPRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W25",
+      "title": "统计年鉴目录",
+      "url": "https://www.nx.gov.cn/zwgk/zfxxgk/fdzdgknr/tjxx_40901/tjnj/",
+      "publisher": "宁夏回族自治区政府",
+      "year": "UNKNOWN_TARGET_EDITION_NOT_VERIFIED",
+      "vintage": "UNKNOWN",
+      "availability": "OFFICIAL_PAGE_UNAVAILABLE",
+      "table": "具体2018目标表未知",
+      "locator": "open超时；不把目录链接存在当作数据可用",
+      "table_access_proven": false,
+      "provinces": [
+        "宁夏"
+      ],
+      "categories": [
+        "PRIVATE",
+        "NONPRIVATE"
+      ],
+      "raw_downloaded": false
+    },
+    {
+      "id": "W26",
+      "title": "五 从业人员和职工工资（未定版次旧目录说明）",
+      "url": "https://www.stats.gov.cn/yearbook/ml/ec.htm",
+      "publisher": "国家统计局",
+      "year": "UNKNOWN",
+      "vintage": "UNKNOWN_EDITION",
+      "availability": "READABLE_CONTEXT_ONLY_NOT_2018_EVIDENCE",
+      "table": "提及31省统计及劳动年鉴更详细；未证2018版及目标两类别表",
+      "locator": "抽取行4-19",
+      "table_access_proven": false,
+      "raw_downloaded": false
+    }
+  ],
+  "original_web_byte_sha256": "UNKNOWN_NOT_DOWNLOADED; metadata observations are not raw-byte identity proofs",
+  "raw_data_files_included": false
+}
