@@ -287,3 +287,8 @@ Owner 已批准并保持的决定：
 连续会话回复中断后，确认本项目需要强化有界分段验收和范围控制。新增协议见 docs/CH5_INDEPENDENT_REVIEW_RULES_20261025.md 的“中断恢复与有界分段验收协议”以及 CH5_ASTRA_WORKFLOW_CURRENT.md 的对应补充。验收分A交付/来源、B关键实现/数值/科学风险、C分层裁决三阶段；每阶段短检查点，标记COMPLETED/BLOCKED/NOT_COMPLETED/NEXT_ACTION。中断后从固定任务合同和最近检查点恢复，复用已核验证据；不从头重跑、不扩展无关历史对象、不推断工具未返回结果。来源核对固定到本任务声明的repository/commit/tree/path/blob；跨commit差异不直接视为候选缺陷。工具/取证故障分别记REVIEW_TOOL_ERROR/REVIEW_PENDING_IO。此为治理流程改进，不代表本轮canonical输入审计已完成全部科学验收。
 
 保持 ACTIVE_TASK=NONE；FORMAL_SOURCE_FREEZE=FALSE；V010=UNCHANGED；V011=NOT_STARTED；Results=FALSE；model_activation=False；REAL_GE=False；FULL_RUNNER_IO_CLOSURE=BLOCKED。未授权任何HA/HJB/KFE/GE/IRF、源码/测试/预检运行或新任务。
+
+
+## 2026-10-25 · Owner批准恢复逐任务GitHub任务单与证据分支（非自动化）
+
+Owner明确批准第五章后续任务可使用人工控制的在线流程：GPT顾问下达GitHub任务单 → 本地Codex按单执行 → Codex上传独立候选分支及完整证据 → GPT/Astra直接读取GitHub固定commit验收 → Owner决定下一步。此决定针对科研任务的可追溯性和证据充分性，不恢复自动化流水线；不自动创建Issue/PR、合并、清理或启动下一任务。每单固定parent、commit/tree/path/blob、写入白名单、预算、STOP及独立验收字段。平台写入拒绝即STOP，不绕过。当前仅授权 TEMP31 当前进度证据发布任务；不授权真实HA/HJB/KFE/GE/IRF、测试、预检、V010改动或正式来源冻结。

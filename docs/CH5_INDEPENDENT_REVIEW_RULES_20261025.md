@@ -77,3 +77,14 @@ GITHUB_WRITES=EXPLICIT_OWNER_APPROVED_MILESTONE_BACKUP_ONLY
 
 ### D. 本轮落地与权限
 本次协议修订仅为治理文档更新，不启动新的科研/实现任务，不执行源码、测试、预检、模型、HA/HJB/KFE/GE/IRF，不改变正式V010，不冻结来源，不清理旧PENDING对象。Project Sources更新包是手动上传覆盖层；GitHub治理文档、Project Sources和本地Codex仍是三个独立平面，未获各自回执不得声称同步。
+
+
+## 2026-10-25 Owner明示授权：逐任务GitHub任务单与证据分支（非自动化）
+
+Owner已批准后续第五章任务可采用：GPT顾问发布/维护精确GitHub任务单 → 本地Codex按任务单执行 → Codex将候选与证据上传至独立候选分支 → GPT/Astra直接从固定GitHub commit阅读验收 → Owner决定后续。此授权是逐任务人工治理，不是自动化流水线。
+
+- 每项任务必须有唯一任务单、固定父提交/来源身份、独立候选分支与证据目录、精确文件白名单、科学/工程/交付预算、STOP条件和验收字段。
+- 只授权当前任务单明示的GitHub写入。禁止自动创建下一任务、自动合并、自动清理、修改保护区或默认分支科研源码。
+- Codex完成交付后停止；GPT/Astra必须独立核验GitHub实际返回的固定commit/tree/parent/path/blob及证据内容。自报PASS、存在commit或上传成功不等于验收通过。
+- 不得绕过平台安全/权限拒绝，不得换认证、账号、协议或路径规避拒绝。若写入被拒绝，停止并报告。
+- 本次仅授权 TEMP31 当前进度证据发布任务，不授权HA/HJB/KFE/GE/IRF、测试、预检、正式V010改动、来源冻结或下一科研任务。

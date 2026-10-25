@@ -211,3 +211,9 @@ V010冻结、Results FALSE、V011未启动、HA/GE/IRF预算0，生产supervisor
 - [独立审阅规则 V2](CH5_INDEPENDENT_REVIEW_RULES_20261025.md)：新增三阶段检查点、固定来源身份、范围纪律和工具故障分类。
 - [当前工作流入口](CH5_ASTRA_WORKFLOW_CURRENT.md)：对应执行补充。
 - [离线工作流最高权威](CH5_OFFLINE_WORKFLOW_AUTHORITY_CURRENT_20261023.md)：明确本补充不改变科研权限。
+
+
+## 2026-10-25 · Owner授权逐任务GitHub交付（非自动化）
+- [TEMP31当前进度证据发布任务单](tasks/CH5_TEMP31_CURRENT_PROGRESS_GITHUB_EVIDENCE_PUBLICATION_R1_20261025.md)
+- [独立审阅规则V2](CH5_INDEPENDENT_REVIEW_RULES_20261025.md)：逐任务GitHub候选证据交付边界。
+- [离线工作流最高权威](CH5_OFFLINE_WORKFLOW_AUTHORITY_CURRENT_20261023.md)：新授权为人工逐任务流程，不恢复自动化。
