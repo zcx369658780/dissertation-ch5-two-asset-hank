@@ -1,0 +1,830 @@
+{
+  "task_id": "CH5_TEMP31_EXISTING_WAGE_DATA_DISCOVERY_R1_20261025",
+  "source_count": 31,
+  "sources": [
+    {
+      "source_id": "S01",
+      "alias": "CANONICAL_WORKBOOK",
+      "filename": "CH5_MULTI_PROVINCE_CANONICAL_DATA_V1.xlsx",
+      "exists": true,
+      "bytes": 224020,
+      "sha256": "aea5a12b5e6474056c1c3ef84bf0156ba88442ef54b0a4fb9c4c6f33ca963f67",
+      "format": ".xlsx",
+      "public_locator": "CANONICAL_WORKBOOK/CH5_MULTI_PROVINCE_CANONICAL_DATA_V1.xlsx",
+      "raw_uploaded": false,
+      "evidence": "header_metadata_evidence.json#S01",
+      "period": "Sheet labels 2000-2023; PLM/Zt 2009-2023; wage vintage UNKNOWN",
+      "units": "UNKNOWN unless unit ledger explicitly states",
+      "kind": "CANONICAL_MACRO_WORKBOOK_NOT_WAGE_PANEL",
+      "wage_fields": "No wage header in inspected 12 sheets",
+      "province_join": "PROVINCE_ORDER!A1:D32"
+    },
+    {
+      "source_id": "S02",
+      "alias": "CANONICAL_WORKBOOK",
+      "filename": "canonical_data.json",
+      "exists": true,
+      "bytes": 1674393,
+      "sha256": "c5a3ca72939f7b46229b3be258d1b407c37dd07f8cd677e2d04ad67ce409adc5",
+      "format": ".json",
+      "public_locator": "CANONICAL_WORKBOOK/canonical_data.json",
+      "raw_uploaded": false,
+      "evidence": "header_metadata_evidence.json#S02",
+      "period": "UNKNOWN unless explicitly stated",
+      "units": "UNKNOWN unless unit ledger explicitly states",
+      "kind": "MACRO_JSON_EXPORT_NOT_507D_CANONICAL_INPUT",
+      "wage_fields": "No wage/scalars key in inspected schema"
+    },
+    {
+      "source_id": "S03",
+      "alias": "WAGE_MAPPING",
+      "filename": "wage_employment_2018_observed_31.csv",
+      "exists": true,
+      "bytes": 13197,
+      "sha256": "e51a4b38503df6701beea4456bedb0cde8bf97ecfdc36f08fc74c03d6ce3bf9d",
+      "format": ".csv",
+      "public_locator": "WAGE_MAPPING/wage_employment_2018_observed_31.csv",
+      "raw_uploaded": false,
+      "evidence": "header_metadata_evidence.json#S03",
+      "period": "2018 as declared",
+      "units": "Header declares yuan/person/year; specific row/source scope is in official_source_evidence.json",
+      "kind": "CURATED_OBSERVED_LAYER_PARTIAL",
+      "wage_fields": [
+        "wage_private_yuan_year",
+        "wage_nonprivate_yuan_year"
+      ],
+      "numeric_coverage": {
+        "rows": 31,
+        "fields": {
+          "wage_private_yuan_year": {
+            "numeric_count": 3,
+            "covered_provinces": [
+              "福建",
+              "湖南",
+              "重庆"
+            ]
+          },
+          "wage_nonprivate_yuan_year": {
+            "numeric_count": 4,
+            "covered_provinces": [
+              "福建",
+              "湖南",
+              "重庆",
+              "云南"
+            ]
+          },
+          "N_resident_wan": {
+            "numeric_count": 2,
+            "covered_provinces": [
+              "天津",
+              "海南"
+            ]
+          },
+          "E_employed_resident_origin_wan": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          },
+          "E_employed_workplace_destination_wan": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          },
+          "E_wage_private_annual_average_wan": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          },
+          "E_wage_nonprivate_annual_average_wan": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          },
+          "N_wage_nonprivate_year_end_wan": {
+            "numeric_count": 1,
+            "covered_provinces": [
+              "吉林"
+            ]
+          }
+        },
+        "note": "Count numeric observations only; missing/qualifier strings do not count as observed."
+      },
+      "province_join": "31 explicit names equal workbook mapping; national administration codes absent"
+    },
+    {
+      "source_id": "S04",
+      "alias": "WAGE_MAPPING",
+      "filename": "wage_employment_2018_31_verified.csv",
+      "exists": true,
+      "bytes": 16765,
+      "sha256": "bda2d8b3a939f5d4c3f812c6a65dd0c31ef68693770bcbc48e5d47651c4cd1cb",
+      "format": ".csv",
+      "public_locator": "WAGE_MAPPING/wage_employment_2018_31_verified.csv",
+      "raw_uploaded": false,
+      "evidence": "header_metadata_evidence.json#S04",
+      "period": "2018 as declared",
+      "units": "Header declares yuan/person/year; specific row/source scope is in official_source_evidence.json",
+      "kind": "FLAGGED_HISTORICAL_PARTIAL_OBSERVATIONS",
+      "wage_fields": [
+        "wage_private_yuan_year",
+        "wage_nonprivate_yuan_year"
+      ],
+      "numeric_coverage": {
+        "rows": 31,
+        "fields": {
+          "wage_private_yuan_year": {
+            "numeric_count": 12,
+            "covered_provinces": [
+              "北京",
+              "河北",
+              "山西",
+              "吉林",
+              "上海",
+              "江苏",
+              "福建",
+              "河南",
+              "湖南",
+              "重庆",
+              "四川",
+              "甘肃"
+            ]
+          },
+          "wage_nonprivate_yuan_year": {
+            "numeric_count": 16,
+            "covered_provinces": [
+              "北京",
+              "河北",
+              "山西",
+              "吉林",
+              "上海",
+              "江苏",
+              "安徽",
+              "福建",
+              "河南",
+              "湖南",
+              "重庆",
+              "四川",
+              "云南",
+              "甘肃",
+              "宁夏",
+              "新疆"
+            ]
+          },
+          "N_employed_total_wan": {
+            "numeric_count": 14,
+            "covered_provinces": [
+              "北京",
+              "天津",
+              "辽宁",
+              "江苏",
+              "福建",
+              "江西",
+              "湖北",
+              "湖南",
+              "广东",
+              "海南",
+              "四川",
+              "云南",
+              "陕西",
+              "甘肃"
+            ]
+          },
+          "N_employed_urban_wan": {
+            "numeric_count": 8,
+            "covered_provinces": [
+              "天津",
+              "辽宁",
+              "江苏",
+              "湖南",
+              "海南",
+              "四川",
+              "云南",
+              "甘肃"
+            ]
+          },
+          "N_wage_covered_private_wan": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          },
+          "N_wage_covered_nonprivate_wan": {
+            "numeric_count": 6,
+            "covered_provinces": [
+              "辽宁",
+              "吉林",
+              "福建",
+              "湖南",
+              "重庆",
+              "宁夏"
+            ]
+          },
+          "N_resident_wan": {
+            "numeric_count": 4,
+            "covered_provinces": [
+              "天津",
+              "黑龙江",
+              "江西",
+              "海南"
+            ]
+          }
+        },
+        "note": "Count numeric observations only; missing/qualifier strings do not count as observed."
+      },
+      "province_join": "31 explicit names equal workbook mapping; national administration codes absent"
+    },
+    {
+      "source_id": "S05",
+      "alias": "WAGE_MAPPING",
+      "filename": "official_source_provenance_2018.csv",
+      "exists": true,
+      "bytes": 15490,
+      "sha256": "376481f71a25ced2089f48dbfe015a73b6e51153be6d179bc0444b4cba9cf74a",
+      "format": ".csv",
+      "public_locator": "WAGE_MAPPING/official_source_provenance_2018.csv",
+      "raw_uploaded": false,
+      "evidence": "header_metadata_evidence.json#S05",
+      "period": "UNKNOWN unless explicitly stated",
+      "units": "UNKNOWN unless unit ledger explicitly states",
+      "kind": "EXISTING_SOURCE_METADATA"
+    },
+    {
+      "source_id": "S06",
+      "alias": "WAGE_RECOVERY",
+      "filename": "source_province_registry.json",
+      "exists": true,
+      "bytes": 701,
+      "sha256": "cef5e2ef6ff421a045f77f648beb022ea11f5bac71fb1abff5407e2516868e56",
+      "format": ".json",
+      "public_locator": "WAGE_RECOVERY/source_province_registry.json",
+      "raw_uploaded": false,
+      "evidence": "header_metadata_evidence.json#S06",
+      "period": "UNKNOWN unless explicitly stated",
+      "units": "UNKNOWN unless unit ledger explicitly states",
+      "kind": "EXISTING_SOURCE_METADATA"
+    },
+    {
+      "source_id": "S07",
+      "alias": "WAGE_MAPPING",
+      "filename": "source_value_normalization_ledger.csv",
+      "exists": true,
+      "bytes": 100821,
+      "sha256": "f0375280940f03a0910655eee1dbf7f3c25b9791ce38e84928d0d32630f92f56",
+      "format": ".csv",
+      "public_locator": "WAGE_MAPPING/source_value_normalization_ledger.csv",
+      "raw_uploaded": false,
+      "evidence": "header_metadata_evidence.json#S07",
+      "period": "UNKNOWN unless explicitly stated",
+      "units": "UNKNOWN unless unit ledger explicitly states",
+      "kind": "EXISTING_SOURCE_METADATA"
+    },
+    {
+      "source_id": "S08",
+      "alias": "WAGE_MAPPING",
+      "filename": "wage_employment_2018_interpolated_31.csv",
+      "exists": true,
+      "bytes": 13369,
+      "sha256": "d1524f2fc185eddf825bd801423b932866447cee70ce02009ed820c09aad15c4",
+      "format": ".csv",
+      "public_locator": "WAGE_MAPPING/wage_employment_2018_interpolated_31.csv",
+      "raw_uploaded": false,
+      "evidence": "header_metadata_evidence.json#S08",
+      "period": "2018 as declared",
+      "units": "Header declares yuan/person/year; specific row/source scope is in official_source_evidence.json",
+      "kind": "UNFILLED_INTERPOLATION_TEMPLATE",
+      "wage_fields": [
+        "wage_private_yuan_year",
+        "wage_nonprivate_yuan_year"
+      ],
+      "numeric_coverage": {
+        "rows": 31,
+        "fields": {
+          "wage_private_yuan_year": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          },
+          "wage_nonprivate_yuan_year": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          },
+          "N_resident_wan": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          },
+          "E_employed_resident_origin_wan": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          },
+          "E_employed_workplace_destination_wan": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          },
+          "E_wage_private_annual_average_wan": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          },
+          "E_wage_nonprivate_annual_average_wan": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          },
+          "N_wage_nonprivate_year_end_wan": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          }
+        },
+        "note": "Count numeric observations only; missing/qualifier strings do not count as observed."
+      },
+      "province_join": "31 explicit names equal workbook mapping; national administration codes absent"
+    },
+    {
+      "source_id": "S09",
+      "alias": "WAGE_MAPPING",
+      "filename": "wage_employment_2018_scenario_31.csv",
+      "exists": true,
+      "bytes": 12131,
+      "sha256": "fb5eb3378ada025f7c22e1dbae847d97a5b6ab8a0bf6f9e70143df5afdaea9ef",
+      "format": ".csv",
+      "public_locator": "WAGE_MAPPING/wage_employment_2018_scenario_31.csv",
+      "raw_uploaded": false,
+      "evidence": "header_metadata_evidence.json#S09",
+      "period": "2018 as declared",
+      "units": "Header declares yuan/person/year; specific row/source scope is in official_source_evidence.json",
+      "kind": "UNFILLED_SCENARIO_TEMPLATE",
+      "wage_fields": [
+        "wage_private_yuan_year",
+        "wage_nonprivate_yuan_year"
+      ],
+      "numeric_coverage": {
+        "rows": 31,
+        "fields": {
+          "wage_private_yuan_year": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          },
+          "wage_nonprivate_yuan_year": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          },
+          "N_resident_wan": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          },
+          "E_employed_resident_origin_wan": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          },
+          "E_employed_workplace_destination_wan": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          },
+          "E_wage_private_annual_average_wan": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          },
+          "E_wage_nonprivate_annual_average_wan": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          },
+          "N_wage_nonprivate_year_end_wan": {
+            "numeric_count": 0,
+            "covered_provinces": []
+          }
+        },
+        "note": "Count numeric observations only; missing/qualifier strings do not count as observed."
+      },
+      "province_join": "31 explicit names equal workbook mapping; national administration codes absent"
+    },
+    {
+      "source_id": "S10",
+      "alias": "PROJECT",
+      "filename": "province_contracts.py",
+      "exists": true,
+      "bytes": 5069,
+      "sha256": "aab7e148438e477572fffe965536e18fd180c4bd9884cb8eeb8897ba7eeba3bc",
+      "format": ".py",
+      "repository_relative_path": "src/ch5_two_asset_hank/multi_province/province_contracts.py",
+      "index_entry": "100644 88e7ed6569e6b519af1027d1631e740ddf6959a0 0\tsrc/ch5_two_asset_hank/multi_province/province_contracts.py",
+      "head_entry": "100644 blob 88e7ed6569e6b519af1027d1631e740ddf6959a0\tsrc/ch5_two_asset_hank/multi_province/province_contracts.py",
+      "head_commit": "a1db8c114dec0ab69d69a5576e153a7f868cba0e",
+      "public_locator": "src/ch5_two_asset_hank/multi_province/province_contracts.py",
+      "raw_uploaded": false,
+      "evidence": "header_metadata_evidence.json#S10",
+      "period": "UNKNOWN unless explicitly stated",
+      "units": "UNKNOWN unless unit ledger explicitly states",
+      "kind": "EXISTING_SOURCE_METADATA"
+    },
+    {
+      "source_id": "S11",
+      "alias": "PROJECT",
+      "filename": "多省份HANK_matlab原版程序.zip",
+      "exists": true,
+      "bytes": 1578316,
+      "sha256": "ceb94ccf34d2d218722b81e5111a8f4c530571a9f886bd4afe0610a00321f755",
+      "format": ".zip",
+      "repository_relative_path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip",
+      "public_locator": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip",
+      "raw_uploaded": false,
+      "evidence": "header_metadata_evidence.json#S11",
+      "period": "UNKNOWN unless explicitly stated",
+      "units": "UNKNOWN unless unit ledger explicitly states",
+      "kind": "EXISTING_SOURCE_METADATA"
+    },
+    {
+      "source_id": "S12",
+      "alias": "CANONICAL_AUDIT",
+      "filename": "canonical_wage_lineage.json",
+      "exists": true,
+      "bytes": 1302,
+      "sha256": "149656ea14ef41f11a26fcbca562e922fd984f9bb28106e62518a27864096f74",
+      "format": ".json",
+      "public_locator": "CANONICAL_AUDIT/canonical_wage_lineage.json",
+      "raw_uploaded": false,
+      "evidence": "header_metadata_evidence.json#S12",
+      "period": "UNKNOWN unless explicitly stated",
+      "units": "UNKNOWN unless unit ledger explicitly states",
+      "kind": "EXISTING_SOURCE_METADATA"
+    },
+    {
+      "source_id": "S13",
+      "alias": "CANONICAL_AUDIT",
+      "filename": "CH5_TEMP31_CANONICAL_INPUT_SOURCE_AND_UNITS_AUDIT_R1_OFFLINE_REVIEW_20261025.zip",
+      "exists": true,
+      "bytes": 100834,
+      "sha256": "00ecaf1cf987956d48379e440015dd39963c84779bc5ba9f94ca2ee2e38431fa",
+      "format": ".zip",
+      "public_locator": "CANONICAL_AUDIT/CH5_TEMP31_CANONICAL_INPUT_SOURCE_AND_UNITS_AUDIT_R1_OFFLINE_REVIEW_20261025.zip",
+      "raw_uploaded": false,
+      "evidence": "header_metadata_evidence.json#S13",
+      "period": "UNKNOWN unless explicitly stated",
+      "units": "UNKNOWN unless unit ledger explicitly states",
+      "kind": "EXISTING_SOURCE_METADATA"
+    },
+    {
+      "source_id": "S14",
+      "alias": "WAGE_MAPPING",
+      "filename": "official_source_and_endpoint_ledger.csv",
+      "exists": true,
+      "bytes": 76497,
+      "sha256": "a2a1460be1aed1ebefc8d2aef763b8b64dee39073fd2ffa044ce00373b488027",
+      "format": ".csv",
+      "public_locator": "WAGE_MAPPING/official_source_and_endpoint_ledger.csv",
+      "raw_uploaded": false,
+      "evidence": "header_metadata_evidence.json#S14",
+      "period": "UNKNOWN unless explicitly stated",
+      "units": "UNKNOWN unless unit ledger explicitly states",
+      "kind": "EXISTING_SOURCE_METADATA"
+    },
+    {
+      "source_id": "S15",
+      "alias": "WAGE_MAPPING",
+      "filename": "official_discovery_receipts.jsonl",
+      "exists": true,
+      "bytes": 482575,
+      "sha256": "1835277e900d4d874b85a3fcc20c38eaa46664ab46593b444e573ea093b7b20a",
+      "format": ".jsonl",
+      "public_locator": "WAGE_MAPPING/official_discovery_receipts.jsonl",
+      "raw_uploaded": false,
+      "evidence": "header_metadata_evidence.json#S15",
+      "period": "UNKNOWN unless explicitly stated",
+      "units": "UNKNOWN unless unit ledger explicitly states",
+      "kind": "EXISTING_SOURCE_METADATA"
+    },
+    {
+      "source_id": "S16",
+      "alias": "PROJECT",
+      "filename": "第五章_省级修订数据候选_2015-2018.xlsx",
+      "exists": true,
+      "bytes": 30698,
+      "sha256": "345f011de45ae57e24066b1625700e82b1eade98f7197551f5cf2c77f2417050",
+      "format": ".xlsx",
+      "repository_relative_path": "EVIDENCE/ch5_revised_data_table_20260930/第五章_省级修订数据候选_2015-2018.xlsx",
+      "index_entry": "100644 31f0d51a9dee73e65c7692205e1261ae17ac040d 0\t\"EVIDENCE/ch5_revised_data_table_20260930/\\347\\254\\254\\344\\272\\224\\347\\253\\240_\\347\\234\\201\\347\\272\\247\\344\\277\\256\\350\\256\\242\\346\\225\\260\\346\\215\\256\\345\\200\\231\\351\\200\\211_2015-2018.xlsx\"",
+      "head_entry": "100644 blob 31f0d51a9dee73e65c7692205e1261ae17ac040d\t\"EVIDENCE/ch5_revised_data_table_20260930/\\347\\254\\254\\344\\272\\224\\347\\253\\240_\\347\\234\\201\\347\\272\\247\\344\\277\\256\\350\\256\\242\\346\\225\\260\\346\\215\\256\\345\\200\\231\\351\\200\\211_2015-2018.xlsx\"",
+      "head_commit": "a1db8c114dec0ab69d69a5576e153a7f868cba0e",
+      "public_locator": "EVIDENCE/ch5_revised_data_table_20260930/第五章_省级修订数据候选_2015-2018.xlsx",
+      "raw_uploaded": false,
+      "evidence": "header_metadata_evidence.json#S16",
+      "period": "UNKNOWN unless explicitly stated",
+      "units": "UNKNOWN unless unit ledger explicitly states",
+      "kind": "EXISTING_SOURCE_METADATA"
+    },
+    {
+      "source_id": "S17",
+      "alias": "PROJECT",
+      "filename": "canonical_workbook_manifest.json",
+      "exists": true,
+      "bytes": 1553,
+      "sha256": "479bb750a81f28af5fd398b03260ed6bd78f6ce2605776c4e2c12e06db21867b",
+      "format": ".json",
+      "repository_relative_path": "reports/mp4c_2018_revised_gdp_canonical_workbook_20260909/canonical_workbook_manifest.json",
+      "index_entry": "100644 27fe3e96b723e67a70c4f81eb56454b77cbd8806 0\treports/mp4c_2018_revised_gdp_canonical_workbook_20260909/canonical_workbook_manifest.json",
+      "head_entry": "100644 blob 27fe3e96b723e67a70c4f81eb56454b77cbd8806\treports/mp4c_2018_revised_gdp_canonical_workbook_20260909/canonical_workbook_manifest.json",
+      "head_commit": "a1db8c114dec0ab69d69a5576e153a7f868cba0e",
+      "public_locator": "reports/mp4c_2018_revised_gdp_canonical_workbook_20260909/canonical_workbook_manifest.json",
+      "raw_uploaded": false,
+      "evidence": "header_metadata_evidence.json#S17",
+      "period": "UNKNOWN unless explicitly stated",
+      "units": "UNKNOWN unless unit ledger explicitly states",
+      "kind": "EXISTING_SOURCE_METADATA"
+    },
+    {
+      "source_id": "S18",
+      "alias": "PROJECT",
+      "filename": "wage_semantic_trace.json",
+      "exists": true,
+      "bytes": 3293,
+      "sha256": "036a382b9a5802d92b677f6e01010ce5b36764d849a4e76269701a183413c68b",
+      "format": ".json",
+      "repository_relative_path": "docs/evidence/ch5_mp4c_k1_ra_w_health_region_provincial_mapping/wage_semantic_trace.json",
+      "index_entry": "100644 59edb90165865ed02941149ac91e68cfc811b2a2 0\tdocs/evidence/ch5_mp4c_k1_ra_w_health_region_provincial_mapping/wage_semantic_trace.json",
+      "head_entry": "100644 blob 59edb90165865ed02941149ac91e68cfc811b2a2\tdocs/evidence/ch5_mp4c_k1_ra_w_health_region_provincial_mapping/wage_semantic_trace.json",
+      "head_commit": "a1db8c114dec0ab69d69a5576e153a7f868cba0e",
+      "public_locator": "docs/evidence/ch5_mp4c_k1_ra_w_health_region_provincial_mapping/wage_semantic_trace.json",
+      "raw_uploaded": false,
+      "evidence": "header_metadata_evidence.json#S18",
+      "period": "UNKNOWN unless explicitly stated",
+      "units": "UNKNOWN unless unit ledger explicitly states",
+      "kind": "EXISTING_SOURCE_METADATA"
+    },
+    {
+      "source_id": "S19",
+      "alias": "HISTORICAL_2009_PREMODEL",
+      "filename": "calendar_2009_primary_premodel_input.json",
+      "bytes": 36263,
+      "sha256": "507d1259a8a515e4224f40d434bd89645c02472650b51f5ada3181ba4bcdad48",
+      "public_locator": "HISTORICAL_2009_PREMODEL/calendar_2009_primary_premodel_input.json",
+      "raw_uploaded": false,
+      "git_commit": null,
+      "git_blob": null,
+      "kind": "HISTORICAL_MODEL_INPUT_NOT_EMPIRICAL_WAGE_OBSERVATIONS",
+      "period": "UNKNOWN_FROM_FILENAME_ALONE",
+      "units": "UNKNOWN",
+      "evidence": "header_metadata_evidence.json#S19",
+      "binding": {
+        "analysis_index": 1,
+        "calendar_year": 2009,
+        "data_mat_index": 1,
+        "output_filename_year": 2009,
+        "regression_vintage_key": 10,
+        "workbook_data_row_index": 10
+      },
+      "fixed_zt_calendar_year": 2020,
+      "wage_fields": [
+        "scalars.composite_wage",
+        "scalars.wjt",
+        "scalars.wage_tax"
+      ],
+      "wage_shape": "Single scalars, not 31 wage observations",
+      "wage_period": "UNKNOWN",
+      "gross_net": "UNKNOWN",
+      "expected_sha256": "507d1259a8a515e4224f40d434bd89645c02472650b51f5ada3181ba4bcdad48",
+      "expected_hash_matches": true,
+      "province_join": "31 explicit names match S01 map"
+    },
+    {
+      "source_id": "S20",
+      "alias": "LEGACY_MATLAB_DATA",
+      "filename": "2000年后各省数据.xlsx",
+      "bytes": 119265,
+      "sha256": "09814a45d933b2685a35238a15c0c7bb501f00a63597796b3cadce15c230ecb3",
+      "public_locator": "LEGACY_MATLAB_DATA/2000年后各省数据.xlsx",
+      "raw_uploaded": false,
+      "git_commit": null,
+      "git_blob": null,
+      "kind": "EXISTING_LEGACY_WORKBOOK_METADATA",
+      "period": "UNKNOWN_FROM_FILENAME_ALONE",
+      "units": "UNKNOWN",
+      "evidence": "header_metadata_evidence.json#S20",
+      "sheet_names": [
+        "GDP",
+        "固定资产投资额",
+        "常住人口",
+        "总人口数",
+        "就业人数",
+        "第一产业从业人员数",
+        "第一产业固定资产投资额",
+        "第一产业占GDP的比重",
+        "第二产业从业人员数",
+        "第二产业固定资产投资额",
+        "第二产业占GDP比重",
+        "第三产业从业人员数",
+        "第三产业固定资产投资额",
+        "第三产业占GDP的比重"
+      ]
+    },
+    {
+      "source_id": "S21",
+      "alias": "LEGACY_MATLAB_DATA",
+      "filename": "2000年后各省数据_填充NA.xlsx",
+      "bytes": 171292,
+      "sha256": "c826b01b6c124eaaadc063dfc2d5510e50e72ed85bb34848f28ab318e4b88929",
+      "public_locator": "LEGACY_MATLAB_DATA/2000年后各省数据_填充NA.xlsx",
+      "raw_uploaded": false,
+      "git_commit": null,
+      "git_blob": null,
+      "kind": "EXISTING_LEGACY_WORKBOOK_METADATA",
+      "period": "UNKNOWN_FROM_FILENAME_ALONE",
+      "units": "UNKNOWN",
+      "evidence": "header_metadata_evidence.json#S21",
+      "sheet_names": [
+        "GDP",
+        "固定资产投资额",
+        "总人口数",
+        "常住人口",
+        "就业人数",
+        "第一产业固定资产投资额",
+        "第一产业从业人员数",
+        "第一产业占GDP的比重",
+        "第二产业固定资产投资额",
+        "第二产业从业人员数",
+        "第二产业占GDP比重",
+        "第三产业固定资产投资额",
+        "第三产业从业人员数",
+        "第三产业占GDP的比重",
+        "总资本存量",
+        "第一产业资本存量",
+        "第二产业资本存量",
+        "第三产业资本存量",
+        "R语言计算资本存量"
+      ]
+    },
+    {
+      "source_id": "S22",
+      "alias": "LEGACY_MATLAB_DATA",
+      "filename": "2024年数据原始版.xlsx",
+      "bytes": 116887,
+      "sha256": "3ef3f80167ac630b0269601c88942ab6d8a7fec769373828cd2aac9c1c9f5c86",
+      "public_locator": "LEGACY_MATLAB_DATA/2024年数据原始版.xlsx",
+      "raw_uploaded": false,
+      "git_commit": null,
+      "git_blob": null,
+      "kind": "EXISTING_LEGACY_WORKBOOK_METADATA",
+      "period": "UNKNOWN_FROM_FILENAME_ALONE",
+      "units": "UNKNOWN",
+      "evidence": "header_metadata_evidence.json#S22",
+      "sheet_names": [
+        "Sheet2",
+        "Sheet0"
+      ]
+    },
+    {
+      "source_id": "S23",
+      "alias": "LEGACY_MATLAB_DATA",
+      "filename": "2024年数据原始版_纵坐标为年.xlsx",
+      "bytes": 91506,
+      "sha256": "60a66f1bb9de071dc9cb4049bf59912862050783bc5ae3093e8bdaf75bc2fc4e",
+      "public_locator": "LEGACY_MATLAB_DATA/2024年数据原始版_纵坐标为年.xlsx",
+      "raw_uploaded": false,
+      "git_commit": null,
+      "git_blob": null,
+      "kind": "EXISTING_LEGACY_WORKBOOK_METADATA",
+      "period": "UNKNOWN_FROM_FILENAME_ALONE",
+      "units": "UNKNOWN",
+      "evidence": "header_metadata_evidence.json#S23",
+      "sheet_names": [
+        "Sheet0"
+      ]
+    },
+    {
+      "source_id": "S24",
+      "alias": "LEGACY_MATLAB_DATA",
+      "filename": "12年稳态值.xlsx",
+      "bytes": 523739,
+      "sha256": "ff65b8a0bc27cf9a382c5f00fe1e377575517ee9b5a568976452bffeaa83ce4b",
+      "public_locator": "LEGACY_MATLAB_DATA/12年稳态值.xlsx",
+      "raw_uploaded": false,
+      "git_commit": null,
+      "git_blob": null,
+      "kind": "EXISTING_LEGACY_WORKBOOK_METADATA",
+      "period": "UNKNOWN_FROM_FILENAME_ALONE",
+      "units": "UNKNOWN",
+      "evidence": "header_metadata_evidence.json#S24",
+      "sheet_names": [
+        "Sheet1",
+        "稳态值_Yt0",
+        "稳态值_Yt",
+        "稳态值_Kt0",
+        "稳态值_Kt",
+        "稳态值_Lt0",
+        "稳态值_Lt"
+      ]
+    },
+    {
+      "source_id": "RAW_CQ_W",
+      "public_locator": "OFFICIAL_WAGE_CACHE/CQ_W.html",
+      "filename": "CQ_W.html",
+      "bytes": 86367,
+      "sha256": "16a3dd434264db28eab05abf2dd3aed37518e55260e29c38bdf8b621d6f2b06e",
+      "raw_identity_matches_prior_provenance": true,
+      "url": "https://tjj.cq.gov.cn/zwgk_233/fdzdgknr/tjxx/sjzl_55471/tjgb_55472/202002/t20200219_5274459.html",
+      "vintage": "2019-05-29",
+      "period": "2018 statistics; 2019 publication",
+      "units": "Annual employee wage; specific metadata/definitions attached",
+      "old_fixed_commit": "d3bb242ed531e749d96aaea24151cb0133b625aa",
+      "old_zip_git_blob": "fdeaed7d0335c65b5f00954aba87a44f61e2c77e",
+      "blob_role": "Containing historical ZIP Blob, not HTML Blob",
+      "kind": "RAW_OFFICIAL_CACHE_NOT_UPLOADED",
+      "raw_uploaded": false,
+      "evidence": "official_source_evidence.json#CQ_W"
+    },
+    {
+      "source_id": "RAW_FJ_NP",
+      "public_locator": "OFFICIAL_WAGE_CACHE/FJ_NP.html",
+      "filename": "FJ_NP.html",
+      "bytes": 225209,
+      "sha256": "0abd3df77c94c5d044869577dd05226529c04d4aaf56e20a46ad98f95811310f",
+      "raw_identity_matches_prior_provenance": true,
+      "url": "https://tjj.fujian.gov.cn/xxgk/tjxx/gzqk/201905/t20190523_4882127.htm",
+      "vintage": "2019-05-23",
+      "period": "2018 statistics; 2019 publication",
+      "units": "Annual employee wage; specific metadata/definitions attached",
+      "old_fixed_commit": "d3bb242ed531e749d96aaea24151cb0133b625aa",
+      "old_zip_git_blob": "fdeaed7d0335c65b5f00954aba87a44f61e2c77e",
+      "blob_role": "Containing historical ZIP Blob, not HTML Blob",
+      "kind": "RAW_OFFICIAL_CACHE_NOT_UPLOADED",
+      "raw_uploaded": false,
+      "evidence": "official_source_evidence.json#FJ_NP"
+    },
+    {
+      "source_id": "RAW_FJ_P",
+      "public_locator": "OFFICIAL_WAGE_CACHE/FJ_P.html",
+      "filename": "FJ_P.html",
+      "bytes": 99671,
+      "sha256": "d6f65af9692dbd57b6b9c017d3b3ecec39ebae9c040558861774ff32376bf8f8",
+      "raw_identity_matches_prior_provenance": true,
+      "url": "https://tjj.fujian.gov.cn/xxgk/tjxx/gzqk/201905/t20190523_4883071.htm",
+      "vintage": "2019-05-23",
+      "period": "2018 statistics; 2019 publication",
+      "units": "Annual employee wage; specific metadata/definitions attached",
+      "old_fixed_commit": "d3bb242ed531e749d96aaea24151cb0133b625aa",
+      "old_zip_git_blob": "fdeaed7d0335c65b5f00954aba87a44f61e2c77e",
+      "blob_role": "Containing historical ZIP Blob, not HTML Blob",
+      "kind": "RAW_OFFICIAL_CACHE_NOT_UPLOADED",
+      "raw_uploaded": false,
+      "evidence": "official_source_evidence.json#FJ_P"
+    },
+    {
+      "source_id": "RAW_HN_NP",
+      "public_locator": "OFFICIAL_WAGE_CACHE/HN_NP.html",
+      "filename": "HN_NP.html",
+      "bytes": 104225,
+      "sha256": "09e96d363bd5907492f83e1c12ac820dcadd36d9678121dc4b0b94a157e6f751",
+      "raw_identity_matches_prior_provenance": true,
+      "url": "https://tjj.hunan.gov.cn/tjfx/jmxx/2019jmxx/201905/t20190516_5334865.html",
+      "vintage": "2019-05-16",
+      "period": "2018 statistics; 2019 publication",
+      "units": "Annual employee wage; specific metadata/definitions attached",
+      "old_fixed_commit": "d3bb242ed531e749d96aaea24151cb0133b625aa",
+      "old_zip_git_blob": "fdeaed7d0335c65b5f00954aba87a44f61e2c77e",
+      "blob_role": "Containing historical ZIP Blob, not HTML Blob",
+      "kind": "RAW_OFFICIAL_CACHE_NOT_UPLOADED",
+      "raw_uploaded": false,
+      "evidence": "official_source_evidence.json#HN_NP"
+    },
+    {
+      "source_id": "RAW_HN_P",
+      "public_locator": "OFFICIAL_WAGE_CACHE/HN_P.html",
+      "filename": "HN_P.html",
+      "bytes": 31801,
+      "sha256": "9a033b64237d0d350ff6ad7128e830f8197542b71f21af9c036536c83392f9f5",
+      "raw_identity_matches_prior_provenance": true,
+      "url": "https://tjj.hunan.gov.cn/m/tjsj/201905/t20190516_5335128.html",
+      "vintage": "2019-05-16",
+      "period": "2018 statistics; 2019 publication",
+      "units": "Annual employee wage; specific metadata/definitions attached",
+      "old_fixed_commit": "d3bb242ed531e749d96aaea24151cb0133b625aa",
+      "old_zip_git_blob": "fdeaed7d0335c65b5f00954aba87a44f61e2c77e",
+      "blob_role": "Containing historical ZIP Blob, not HTML Blob",
+      "kind": "RAW_OFFICIAL_CACHE_NOT_UPLOADED",
+      "raw_uploaded": false,
+      "evidence": "official_source_evidence.json#HN_P"
+    },
+    {
+      "source_id": "RAW_YN_NP",
+      "public_locator": "OFFICIAL_WAGE_CACHE/YN_NP.html",
+      "filename": "YN_NP.html",
+      "bytes": 60524,
+      "sha256": "6b3ca8e0aeeab983b36b281a1bab9605be200ff2d7be76c75df913557f66e862",
+      "raw_identity_matches_prior_provenance": true,
+      "url": "https://stats.yn.gov.cn/zwgk/zfxxgk/fdzdgknr/tjsj/sjjd/201906/t20190611_1203898.html",
+      "vintage": "2019-06-11",
+      "period": "2018 statistics; 2019 publication",
+      "units": "Annual employee wage; specific metadata/definitions attached",
+      "old_fixed_commit": "d3bb242ed531e749d96aaea24151cb0133b625aa",
+      "old_zip_git_blob": "fdeaed7d0335c65b5f00954aba87a44f61e2c77e",
+      "blob_role": "Containing historical ZIP Blob, not HTML Blob",
+      "kind": "RAW_OFFICIAL_CACHE_NOT_UPLOADED",
+      "raw_uploaded": false,
+      "evidence": "official_source_evidence.json#YN_NP"
+    },
+    {
+      "source_id": "S25",
+      "public_locator": "validators/multi_province/mp4b_python_empirical.py",
+      "filename": "mp4b_python_empirical.py",
+      "bytes": 22204,
+      "sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b",
+      "computed_raw_blob": "102dbb88a629283a71a3f02541cd7f74f9944213",
+      "kind": "STATIC_SOURCE_NOT_EXECUTED",
+      "evidence": "loader_excerpt.md; source lines 101-121",
+      "raw_uploaded": false,
+      "index_entry": "100644 b1710ae3c5d8d7baf96e85c932d777fa5f3b908c 0\tvalidators/multi_province/mp4b_python_empirical.py",
+      "head_entry": "100644 blob b1710ae3c5d8d7baf96e85c932d777fa5f3b908c\tvalidators/multi_province/mp4b_python_empirical.py"
+    }
+  ],
+  "private_locator_mapping": "Kept only in local external receipts; never published",
+  "confidence_policy": "Verified identity is not scientific suitability or adoption."
+}

@@ -1,0 +1,37 @@
+{
+  "task_commit": "7349f9bc381b9d8cb7c24e175de101324dce259f",
+  "governance_parent": "b52e3dd2dfce52eb38d4d06365aef78526575d19",
+  "context_evidence_commit": "2aa2f67f4e5eaa1117d174b7866c3eb7b7b109b0",
+  "root_aliases": [
+    "PROJECT",
+    "CANONICAL_WORKBOOK",
+    "WAGE_MAPPING",
+    "WAGE_RECOVERY",
+    "CANONICAL_AUDIT",
+    "HISTORICAL_2009_PREMODEL",
+    "LEGACY_MATLAB_DATA",
+    "OFFICIAL_WAGE_CACHE"
+  ],
+  "method": "Filename and literal-text searches in known project/evidence roots; exact documentary path following; bounded ZIP directory, schemas, workbook headers, official definitions and explicit province labels. No project-code import.",
+  "bounds": {
+    "csv_max_rows": 2500,
+    "xlsx_initial_rows": 3,
+    "legacy_xlsx_text_rows": 8,
+    "archive_member_filter_cap": 70,
+    "selected_official_originals": 6
+  },
+  "not_read": [
+    "Whole disk or unrelated projects",
+    "MAT numerical caches",
+    "Full raw/purchased datasets",
+    "Model/test/preflight execution"
+  ],
+  "route_status": "Missing locally; read exact task-commit GitHub context without downloading new scientific data.",
+  "tooling_notes": [
+    "Wrong skill locator corrected to catalog path.",
+    "One read-only filename-search expression had a parser error and was corrected; no scientific command ran.",
+    "Numeric observation counts exclude missing/qualifier strings.",
+    "Skill selftests and generic Git tests not run: task budgets are zero."
+  ]
+}
+

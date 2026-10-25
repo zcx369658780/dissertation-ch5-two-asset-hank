@@ -1,0 +1,69 @@
+{
+  "task_id": "CH5_TEMP31_EXISTING_WAGE_DATA_DISCOVERY_R1_20261025",
+  "gaps": [
+    {
+      "id": "G01",
+      "status": "BLOCKED",
+      "field": "完整 31 省现实工资",
+      "observed": "O 私营 3/31、非私营 4/31；旧表资格混合",
+      "needed_evidence": "其余省份同定义原件与来源资格；本轮不获取新数据"
+    },
+    {
+      "id": "G02",
+      "status": "BLOCKED",
+      "field": "当前 TEMP31 净工资生成链",
+      "observed": "找到 2009 输入原件，不代表当前净工资",
+      "needed_evidence": "明确生成函数、原始输入、税基及同快照 digest"
+    },
+    {
+      "id": "G03",
+      "status": "UNKNOWN",
+      "field": "历史工资标量的经济单位/频率",
+      "observed": "只确认字段与标量类型",
+      "needed_evidence": "原有单位字典和生成回执；不按数量级猜测"
+    },
+    {
+      "id": "G04",
+      "status": "UNKNOWN",
+      "field": "共同 vintage",
+      "observed": "历史绑定 2009、固定 Zt 字段 2020；现实工资为 2018/2019 发布",
+      "needed_evidence": "Owner/来源合同；不自动换年或拼快照"
+    },
+    {
+      "id": "G05",
+      "status": "PARTIAL",
+      "field": "31 省 ID/生产接线",
+      "observed": "名称映射已核，行政码和生产数组共同连接未证",
+      "needed_evidence": "真实 wjt/tau/sigma/phi ID/顺序/维度证据"
+    },
+    {
+      "id": "G06",
+      "status": "BLOCKED",
+      "field": "税前统计工资到净有效劳动工资",
+      "observed": "多份原件明确税前总额；匹配就业权重缺失",
+      "needed_evidence": "税费、期间、工时、效率和人口总体合同"
+    },
+    {
+      "id": "G07",
+      "status": "BLOCKED",
+      "field": "生产 callback/共同输入快照",
+      "observed": "本轮无执行或生产绑定认证",
+      "needed_evidence": "单独授权的设计/实施证据"
+    },
+    {
+      "id": "G08",
+      "status": "UNKNOWN",
+      "field": "有界范围外的存在性",
+      "observed": "未搜全盘、无关项目或读取数值 MAT 缓存",
+      "needed_evidence": "Owner 指定的其他确切来源；本轮不自动扩大"
+    },
+    {
+      "id": "G09",
+      "status": "UNKNOWN",
+      "field": "独立完成事件/科学接受",
+      "observed": "执行者及远端回读不是独立见证",
+      "needed_evidence": "独立固定提交审阅；事件保持 UNKNOWN"
+    }
+  ]
+}
+
