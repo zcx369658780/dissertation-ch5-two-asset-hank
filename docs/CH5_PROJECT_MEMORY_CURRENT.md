@@ -202,3 +202,7 @@ Owner明确请求当前会话GitHub持久保存阶段决定与状态，属于`CH
 
 ## 2026-10-25 · Owner批准独立审阅四条规则
 按 `docs/CH5_INDEPENDENT_REVIEW_RULES_20261025.md` 执行：固定并复用已核验原始字节，成熟标准库全量机验；语义聚焦本轮diff和关键接口；有证据可有界退修并记录 `NOT_COMPLETED`；分层记录完整性、来源、数值、实现、科学、隐私、实际终态、交付、清理和未完成项。工具故障不归咎候选，Codex自报PASS不算独立接受。此规则不改变V010、HA黑箱、科学预算或Owner权限，不授权HA/HJB/KFE/GE/IRF。
+
+
+## 2026-10-25 · Owner批准独立审阅规则V2（有界两阶段验收）
+V2细化并取代前述四条规则的执行表述，不改变其治理方向或历史证据。两阶段六项硬门：A阶段先固定原始ZIP字节身份并用成熟标准库全量机器核验，再固定候选commit/tree与关键源码Blob来源；关键原件/工具不可用时分别记录REVIEW_PENDING_IO/REVIEW_TOOL_ERROR，不拼造结果，同一对象失败最多一次有界恢复。B阶段聚焦候选diff、受影响真实接口、工资税/劳动单位、关键推导、代表性数值和测试错误检测能力；测试数量、自报PASS、退出码、重复输出不等于独立证据。历史390文件等全量导出可作为有来源的历史报告，不得称为Astra本轮重验全部文件，也不为单一候选递归扫描无关仓库。已有足够缺陷证据可提前CHANGES_REQUIRED，列出位置、证据、修复方向及NOT_COMPLETED；纯工具故障不算候选失败。每轮分别报告artifact_integrity、source_identity、numeric_review、implementation_review、scientific_review、privacy_review、actual_terminal、delivery、cleanup、not_completed，并区分COMPLETED/BLOCKED/NOT_COMPLETED/NEXT_ACTION。5–10分钟仍仅为普通工程软目标，不是硬FAIL。V010不变、V011未启动、Results FALSE、model_activation=False、REAL_GE=False、FULL_RUNNER_IO_CLOSURE=BLOCKED；不授权HA/HJB/KFE/GE/IRF或正式来源冻结。详细规范见docs/CH5_INDEPENDENT_REVIEW_RULES_20261025.md。
