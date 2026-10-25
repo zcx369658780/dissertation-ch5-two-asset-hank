@@ -260,3 +260,24 @@ TEMP31 是独立临时研究/实现验证路线，与旧主线、正式生产来
 下一阶段方向为“历史整轮 fixture 更新与受界集成验证”，尚未签发独立离线任务单、尚未启动。必须先完成本次远端提交与五文件回读，经 Owner/GPT 复核身份，再由 GPT 顾问签发新任务。不得因本次备份成功自动执行、冻结正式来源或恢复旧预算。历史 2009 年 184/5704、31/31 收敛属于旧合同下的历史案例，不能自动视为新税率口径通过。
 
 详见 [TEMP31 独立路线状态](CH5_TEMP31_WORKPLACE_TAX_ROUTE_STATUS_20261025.md)。本节只追加，不覆盖、压缩或修订此前记忆。GitHub 项目记忆更新不等于本机受保护入口、Project Sources 或平台自动 Memory 已同步；本次没有这些同步授权。
+
+
+## 2026-10-25 · TEMP31 canonical 输入来源与单位静态审计完成；Owner 决策与下一步待交接
+
+最新只读审计任务 CH5_TEMP31_CANONICAL_INPUT_SOURCE_AND_UNITS_AUDIT_R1 已完成并 STOP。run_id=0e5c56f56a7f446d9748212738b509ee；终态 PASS_BOUNDED_TEMP31_CANONICAL_SOURCE_AND_UNITS_AUDIT__OWNER_DECISIONS_PENDING。交付 ZIP 为 100834 bytes，SHA-256 00ecaf1cf987956d48379e440015dd39963c84779bc5ba9f94ca2ee2e38431fa；独立验收报告 SHA-256 716a3405aff2f047bdb44eef6d75122cf717be63a53f7b71589dd8c20180ae4b。指定 A/B/C 三个上游 ZIP 身份匹配；审计包 98 条源码片段逐条匹配指定原始成员与行范围，30 项字段账本证据可追溯。本轮没有源码执行、测试、预检、模型调用、联网或 GitHub 写入。
+
+关键发现与阻塞：
+- 初始 w 的源码映射到 canonical.scalars.composite_wage 可确认；真实 canonical 原始字节、唯一生产生成函数、SHA 与同快照税后工资身份未建立，标记 BLOCKED_SOURCE_NOT_ESTABLISHED。
+- wjt、tau、sigma、phi 的真实 31 省共同 ID/顺序 join、权威单位和 vintage 仍 UNKNOWN/BLOCKED。
+- 指定多省 HA 适配路径局部传 tau=0，通用 HA 保留非零 tau 语义；企业端工资税静态项为 Lt_supply[j] * new_firm_wjt[j] * entering_tau[j]。家庭综合工资与企业 gross payroll 的共同税基、单位及价格 vintage 一致性尚未证明。
+- phi 每轮根据进入状态 Y/L 刷新，家户继续读取携带的 state.w；初始 Y/L 分母使用 population，后续企业劳动来自 Lt，定义桥与单位仍未知。
+- 当前不能构造真实 31 省 snapshot_digest 或 household_input_tuple_digest。合成 fixture 与 fake spy 不能替代真实 canonical 输入。
+
+Owner 已批准并保持的决定：
+- D1=B：目标合同是每轮家户批次使用一致的旧期输入快照，初始化与 solve 共享同一 input tuple digest；这只是目标合同，不代表生产源码已实现。
+- D2：未来采用显式 31 省 batch adapter，不把 validation-only solve_batch 称为生产 callback。
+- D3=B：真实 HA 前先运行隔离 no-HA contract spy，使用 fake doubles 验证输入顺序、快照、整批屏障和更新顺序。
+- 矩阵列合同修订已通过有界审阅：来源列使用完整 matrix[:, i]；该结论仅针对 synthetic contract prototype。
+- 下一步建议为只读 canonical 原件/生成链、单位字典与 31 省 ID join 资料发现任务；该任务尚未签发，Owner 在本会话最后请求交接，未授权真实 HA。
+
+保持 ACTIVE_TASK=NONE、FORMAL_SOURCE_FREEZE=FALSE、V010=UNCHANGED、V011=NOT_STARTED、Results=FALSE、model_activation=False、REAL_GE=False、FULL_RUNNER_IO_CLOSURE=BLOCKED。不得自动启动下一任务或真实 HA。

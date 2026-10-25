@@ -65,3 +65,24 @@ TEMP31 是独立临时研究/实现验证路线，与旧主线、正式生产来
 - [当前任务](../TASK_CURRENT.md)
 - [项目记忆](CH5_PROJECT_MEMORY_CURRENT.md)
 - [文档索引](DOC_INDEX_CURRENT.md)
+
+
+## 2026-10-25 · Canonical 输入来源与单位静态审计完成；下一步待新会话交接
+
+最新审计 run_id=0e5c56f56a7f446d9748212738b509ee，终态 PASS_BOUNDED_TEMP31_CANONICAL_SOURCE_AND_UNITS_AUDIT__OWNER_DECISIONS_PENDING。交付 ZIP 100834 B，SHA-256 00ecaf1cf987956d48379e440015dd39963c84779bc5ba9f94ca2ee2e38431fa；独立验收报告 SHA-256 716a3405aff2f047bdb44eef6d75122cf717be63a53f7b71589dd8c20180ae4b。三份指定上游 ZIP 身份匹配；98 条源码片段与对应原始归档成员/行范围逐项匹配，30 项字段账本可追溯。只读审计无源码执行、测试、预检、模型、联网或 GitHub 写入。
+
+### 本轮结论
+- 初始 w 从 canonical.scalars.composite_wage 映射到状态字段的代码路径可确认；真实 canonical 原始字节、生成函数和同快照税后工资身份未建立。
+- wjt/tau/sigma/phi 的真实 31 省共同 ID/顺序 join、权威单位与 vintage 仍 UNKNOWN/BLOCKED。
+- 家户路径局部使用 tau=0，通用 HA 仍保留非零 tau 语义；企业工资税静态式为 Lt_supply[j] * new_firm_wjt[j] * entering_tau[j]，但家庭与企业税基、单位和价格 vintage 一致性未证明。
+- phi 根据进入轮 Y/L 刷新，家户继续读取携带的 state.w；初始人口分母与后续企业劳动 Lt 的定义桥未知。
+- 真实 31 省 snapshot/tuple digest 尚不可构造；synthetic fixture/spy 不能替代真实 canonical 来源。
+
+### Owner 决策（保留）
+- D1=B：目标合同为每轮统一旧期输入快照，初始化与 solve 共享 tuple digest；当前生产实现尚未证明。
+- D2：未来采用显式 31 省 batch adapter，不把 validation-only callback 冒充生产入口。
+- D3=B：任何真实 HA 前先运行隔离 no-HA contract spy。
+- 矩阵列合同修订已通过有界审阅，来源列使用完整 matrix[:, i]；仅为 synthetic contract prototype。
+- 下一步建议为只读 canonical 原件/生成链、单位字典与 31 省 ID join 资料发现任务；尚未签发。
+
+保持 ACTIVE_TASK=NONE、FORMAL_SOURCE_FREEZE=FALSE、V010=UNCHANGED、V011=NOT_STARTED、Results=FALSE、model_activation=False、REAL_GE=False、FULL_RUNNER_IO_CLOSURE=BLOCKED。不得自动启动真实 HA 或下一任务。
