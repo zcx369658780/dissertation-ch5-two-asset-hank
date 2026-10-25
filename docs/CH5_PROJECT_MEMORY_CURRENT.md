@@ -304,3 +304,7 @@ TASK=CH5_TEMP31_EXISTING_WAGE_DATA_DISCOVERY_R1_20261025；任务单：tasks/CH5
 
 ## 2026-10-25 · 既有工资数据发现 R1 独立验收（有界通过）
 候选提交：1072e615062ca85437c06b500d5a301939de6734。验收结论：PASS_BOUNDED_EXISTING_SOURCE_DISCOVERY__NO_SCIENTIFIC_ACCEPTANCE。固定候选的14个manifest列示文件已从GitHub直接读取，Git Blob、字节数及SHA-256逐项匹配；manifest本身另行核验。发现：2009历史输入S19的工资/税字段是共同标量并被loader赋给各省，不能视为现实31省工资向量；2018严格O层表S03私营工资3省、非私营工资4省；S04有12/16个值但来源资格混合；31省名称映射可匹配，但生产wjt/tau/sigma/phi接线未知；六份官方网页的本地原字节哈希匹配旧台账是Codex报告事实，本轮未上传原网页，未独立重哈希原始HTML。没有完整31省净工资面板，单位、共同vintage、gross-to-net桥、生产callback/快照和科学接受仍UNKNOWN/BLOCKED。数值、测试、预检、模型均未运行。独立完成事件仍UNKNOWN。验收报告已临时上传GitHub并回读，随后从当前树移除，Git提交历史保留。ACTIVE_TASK=NONE；V010=UNCHANGED；V011=NOT_STARTED；Results=FALSE；model_activation=False；REAL_GE=False；FULL_RUNNER_IO_CLOSURE=BLOCKED。
+
+
+## 2026-10-25 · 工资来源资格审计已签发
+任务：TEMP31_EXISTING_WAGE_SOURCE_QUALIFICATION_AUDIT_R1_20261025；任务单：tasks/TEMP31_EXISTING_WAGE_SOURCE_QUALIFICATION_AUDIT_R1_20261025.md。先审计既有2018工资来源台账与S03/S04/S08/S09，再只读检索国家统计局及省级统计局/统计年鉴官方来源是否可覆盖缺失省份。省级统计年鉴是优先核查路径；淘宝整理数据仅为条件性备选。本任务不搜索或联系淘宝卖家、不购买、不下载付费数据、不创建模型面板、不插值、不定义净工资转换、不运行模型。若官方来源不足，输出采购规格供Owner决定。科研状态仍V010=UNCHANGED、V011=NOT_STARTED、Results=FALSE、model_activation=False、REAL_GE=False、FULL_RUNNER_IO_CLOSURE=BLOCKED。
