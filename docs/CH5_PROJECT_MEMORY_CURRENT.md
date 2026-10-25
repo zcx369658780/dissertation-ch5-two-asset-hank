@@ -292,3 +292,7 @@ Owner 已批准并保持的决定：
 ## 2026-10-25 · Owner批准恢复逐任务GitHub任务单与证据分支（非自动化）
 
 Owner明确批准第五章后续任务可使用人工控制的在线流程：GPT顾问下达GitHub任务单 → 本地Codex按单执行 → Codex上传独立候选分支及完整证据 → GPT/Astra直接读取GitHub固定commit验收 → Owner决定下一步。此决定针对科研任务的可追溯性和证据充分性，不恢复自动化流水线；不自动创建Issue/PR、合并、清理或启动下一任务。每单固定parent、commit/tree/path/blob、写入白名单、预算、STOP及独立验收字段。平台写入拒绝即STOP，不绕过。当前仅授权 TEMP31 当前进度证据发布任务；不授权真实HA/HJB/KFE/GE/IRF、测试、预检、V010改动或正式来源冻结。
+
+
+## 2026-10-25 · 正式迁移至人工GitHub在线任务与证据审阅
+Owner批准：GPT顾问发布GitHub任务单 → Owner交本地Codex → Codex按冻结合同通过已授权普通权限SSH推送独立候选分支 → GPT/Astra直接从固定commit审阅 → Owner决定下一步。复杂程序项目不再默认依赖完整离线ZIP；以GitHub真实源码上下文、来源映射和证据文件为主。人工逐任务，不恢复自动Issue/PR、自动合并、自动清理或自动下一任务。GitHub插件连接失败不阻断SSH，但任何权限/安全拒绝必须STOP且不得绕过。Project Sources、GitHub与本地Codex为三个独立同步平面。正式规则：docs/CH5_GITHUB_WORKFLOW_AUTHORITY_CURRENT_20261025.md；审阅V3、模板V3配套。科研证据、旧STOP/PENDING、历史科学裁决全部保留。V010=UNCHANGED；V011=NOT_STARTED；Results=FALSE；model_activation=False；REAL_GE=False；FULL_RUNNER_IO_CLOSURE=BLOCKED。

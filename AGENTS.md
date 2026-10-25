@@ -112,3 +112,7 @@ Use historical reports only for a specific provenance question. Do not recursive
 ## Reporting
 
 Report outcome, evidence, changed paths, checks, local commit, limitations, and the next gate. Keep scientific PASS, implementation fidelity, numerical validity, Reviewer acceptance, and Results eligibility distinct.
+
+
+# CURRENT OWNER OVERRIDE · 2026-10-25 GitHub Workflow V3
+Current authority: docs/CH5_GITHUB_WORKFLOW_AUTHORITY_CURRENT_20261025.md. GPT publishes a frozen GitHub task sheet; Owner hands it to local Codex; Codex pushes an isolated candidate branch through authorized SSH; GPT/Astra reviews the fixed commit; Owner decides. No default offline ZIP for complex projects. No auto issue/PR, merge, cleanup, or next task. Scientific permissions unchanged.
