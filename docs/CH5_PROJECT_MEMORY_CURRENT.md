@@ -281,3 +281,9 @@ Owner 已批准并保持的决定：
 - 下一步建议为只读 canonical 原件/生成链、单位字典与 31 省 ID join 资料发现任务；该任务尚未签发，Owner 在本会话最后请求交接，未授权真实 HA。
 
 保持 ACTIVE_TASK=NONE、FORMAL_SOURCE_FREEZE=FALSE、V010=UNCHANGED、V011=NOT_STARTED、Results=FALSE、model_activation=False、REAL_GE=False、FULL_RUNNER_IO_CLOSURE=BLOCKED。不得自动启动下一任务或真实 HA。
+
+## 2026-10-25 · Owner批准的验收工作流修正
+
+连续会话回复中断后，确认本项目需要强化有界分段验收和范围控制。新增协议见 docs/CH5_INDEPENDENT_REVIEW_RULES_20261025.md 的“中断恢复与有界分段验收协议”以及 CH5_ASTRA_WORKFLOW_CURRENT.md 的对应补充。验收分A交付/来源、B关键实现/数值/科学风险、C分层裁决三阶段；每阶段短检查点，标记COMPLETED/BLOCKED/NOT_COMPLETED/NEXT_ACTION。中断后从固定任务合同和最近检查点恢复，复用已核验证据；不从头重跑、不扩展无关历史对象、不推断工具未返回结果。来源核对固定到本任务声明的repository/commit/tree/path/blob；跨commit差异不直接视为候选缺陷。工具/取证故障分别记REVIEW_TOOL_ERROR/REVIEW_PENDING_IO。此为治理流程改进，不代表本轮canonical输入审计已完成全部科学验收。
+
+保持 ACTIVE_TASK=NONE；FORMAL_SOURCE_FREEZE=FALSE；V010=UNCHANGED；V011=NOT_STARTED；Results=FALSE；model_activation=False；REAL_GE=False；FULL_RUNNER_IO_CLOSURE=BLOCKED。未授权任何HA/HJB/KFE/GE/IRF、源码/测试/预检运行或新任务。

@@ -21,3 +21,8 @@ GitHub只读查冻结代码和历史证据允许（需任务单精确指定）�
 ACTIVE_TASK=NONE（规则迁移，不启动科研任务）
 Owner已选A1作为TEMP31研究路线：家户财富、消费与财政按居民H聚合，劳动核沿用Ct机制且企业来源规模E=pH；A2未采纳，**A1尚未实装入冻结正式V010**。离线run56ea4f3d6a304913a022c9653c48230b受界终审PASS_BOUNDED_A1_SYNTHETIC_ADAPTER_AND_ALGEBRA__HA_ADMISSION_BLOCKED；真实家庭收入预算、HU与劳动时间单位、2018省份数据均未闭合。O合格候选10格7省，实际I/S为0；s_H=64.8906755511未获Owner批准。HA/HJB/KFE/GE/IRF预算0；Results=FALSE、V011=NOT_STARTED、model_activation=False、REAL_GE=False、FULL_RUNNER_IO_CLOSURE=BLOCKED。
 旧Github未发行Scheme A Issue a46eb80156e9fca7f85be166ea03adc1ea1676ab仅作为历史对象，不能当新ACTIVE。三个更早PENDING Review refs仍保护，禁止本次治理任务清理。
+
+
+## 2026-10-25 Owner批准的中断恢复补充（治理文档任务）
+
+离线优先主流程不变。针对长会话验收，采用有界三阶段：A交付与来源硬门、B关键实现/数值/科学风险、C分层裁决与归档建议；每阶段保留短检查点，显式标注COMPLETED/BLOCKED/NOT_COMPLETED/NEXT_ACTION。中断恢复只依据固定合同和最近已确认检查点，复用已完成证据；不从头重跑、不扩展到无关历史源码，不把工具故障转成候选失败。此补充仅调整审阅执行方式，不授权科研运行、正式源码修改或来源冻结。

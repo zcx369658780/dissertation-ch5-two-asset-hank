@@ -53,3 +53,27 @@ GITHUB_WRITES=EXPLICIT_OWNER_APPROVED_MILESTONE_BACKUP_ONLY
 ## 与交付、归档及同步的关系
 
 继续执行离线优先流程：离线MD任务单 → 本地Codex → Owner手动上传完整脱敏ZIP → Astra独立验收。GitHub仅用于Owner明确批准的阶段性治理备份/Code Review；不自动创建Issue、Review分支、上传或清理。终审归档、清理及同步状态分别报告；PENDING时不提前清理。GitHub、Project Sources、本地Codex三个平面只有各自有真实回执后才能称同步。
+
+## 2026-10-25 Owner批准：中断恢复与有界分段验收协议（V2补充，不替代六项硬门）
+
+本补充针对长会话验收中断与范围漂移，优先于任何要求一次性完成超长审阅、重复读取原件或扩展无关历史对象的旧执行措辞；不追溯改变既有任务合同、已归档裁决、STOP/PENDING、预算或科学权限。
+
+### A. 分段、检查点与回复预算
+1. 将一次离线ZIP验收固定为最多三个审阅阶段：A交付/来源硬门；B关键实现、数值和科学风险；C分层裁决与归档建议。每阶段形成可独立理解的短检查点，明确 COMPLETED、BLOCKED、NOT_COMPLETED、NEXT_ACTION。不得把检查点误写成最终PASS。
+2. 发生回复截断、会话中断、工具输出截断或状态不确定时，停止继续扩展；恢复时先重读本任务的固定合同、最近检查点和已核验对象清单，复用已完成证据，不从头重跑，也不依据未见到的工具结果推断成功。
+3. 工具调用按必要性最小化。单次输出只保留与裁决有关的摘要、关键行/字段和身份值；大段源码、全文件、历史记录不得直接倾倒到会话。需要深入时只读相关文件/行段。
+4. 不因对话可能中断而把一个任务拆成未经Owner批准的新任务；同一任务内只可继续已冻结范围。若证据不足或会话预算将尽，提交中间检查点并暂停。
+
+### B. 来源身份与范围纪律
+1. 先固定任务包自身声明的 repository、commit、tree、path、blob 和输入ZIP身份。只核对本轮 critical_evidence 清单中的必要对象；不因某个GitHub读取接口返回内容不合适，就换用未经证明等价的端点或扩大到其他历史commit。
+2. GitHub Contents API 返回的 blob SHA 与文件内容可用于身份核对，但必须在相同 repository/commit/path 下比较；不可将不同commit的Blob差异直接称为候选缺陷。若接口/路径/编码返回不支持或原字节无法取得，记录 REVIEW_PENDING_IO 或 REVIEW_TOOL_ERROR，并在一次有界恢复后停止该对象。
+3. 固定commit的tree/parent和候选来源账本与ZIP manifest分别核对。任何不一致先区分：真正来源冲突、查询ref/路径错误、工具返回形态问题、证据缺失。未完成归因前不得将其归为实现失败。
+4. 已完整核验的归档只检查一次并缓存结论；不反复解压、复算或重复打印同一清单。历史回执只作历史证据，不冒称本轮重验。
+
+### C. 语义审阅与早停
+1. 语义审阅以任务唯一问题和风险清单为边界；先看交付摘要、关键字段账本和对应源码片段，再按需追查原件。不得把“30项账本/98条片段”等数量当作自动PASS，也不得为穷尽无关细节扩大范围。
+2. 一旦已出现足以支持 CHANGES_REQUIRED 的明确候选缺陷，可提前停止，并列出定位、证据、建议修复方向及 NOT_COMPLETED。若只是工具或取证故障，则记 REVIEW_PENDING_IO/REVIEW_TOOL_ERROR，不转嫁给候选实现。
+3. 如证据支持有限结论，只能使用 PASS_BOUNDED 并明确边界；完整PASS必须完成本任务所有必需硬门。artifact_integrity、source_identity、numeric_review、implementation_review、scientific_review、privacy_review、actual_terminal、delivery、cleanup、not_completed 必须分别记录。
+
+### D. 本轮落地与权限
+本次协议修订仅为治理文档更新，不启动新的科研/实现任务，不执行源码、测试、预检、模型、HA/HJB/KFE/GE/IRF，不改变正式V010，不冻结来源，不清理旧PENDING对象。Project Sources更新包是手动上传覆盖层；GitHub治理文档、Project Sources和本地Codex仍是三个独立平面，未获各自回执不得声称同步。

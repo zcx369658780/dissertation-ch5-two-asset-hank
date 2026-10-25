@@ -205,3 +205,9 @@ V010冻结、Results FALSE、V011未启动、HA/GE/IRF预算0，生产supervisor
 
 
 
+
+
+## 2026-10-25 · 验收中断恢复与有界分段协议
+- [独立审阅规则 V2](CH5_INDEPENDENT_REVIEW_RULES_20261025.md)：新增三阶段检查点、固定来源身份、范围纪律和工具故障分类。
+- [当前工作流入口](CH5_ASTRA_WORKFLOW_CURRENT.md)：对应执行补充。
+- [离线工作流最高权威](CH5_OFFLINE_WORKFLOW_AUTHORITY_CURRENT_20261023.md)：明确本补充不改变科研权限。

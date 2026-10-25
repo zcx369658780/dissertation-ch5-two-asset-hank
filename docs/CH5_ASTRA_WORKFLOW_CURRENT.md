@@ -52,3 +52,8 @@ HA保持黑箱；TEMP Bellman观察原则不自动改变正式V010合同。科�
 
 ## 2026-10-22 TEMP参数探索的Owner逐轮人工决策门
 仅在Owner明确批准的冻结合同中，Codex可自动运行单ARM的前10外层迭代并按**先验阈值**安全地延至最多20轮；完成本轮任务后`ACTIVE_TASK=NONE`，Astra必须先独立审查逐省价格触界/企业—家庭投入表，与Owner**讨论并获得下一组参数的独立明示批准**才能签下一任务。严禁自动扩宽N序列、调整Zt/GovInv初值/HA内部、放宽边界，或把价位接近clip错称成正式稳态。完整研究协议见[半自动路线](CH5_TEMP_SEMIAUTO_N_DIAGNOSTIC_ROADMAP_20261022.md)。原GitHub三文件自动交付、限域机验和清理规则不变，平台写入拦截不能靠更换认证等绕过。
+
+
+## 2026-10-25 · 中断恢复与有界分段验收补充（Owner批准）
+
+本文件的五步验收和离线优先覆盖继续有效；新增执行要求：一次验收最多按A交付/来源、B针对性实现/科学风险、C分层裁决三个阶段组织。每阶段先形成短检查点，标明COMPLETED/BLOCKED/NOT_COMPLETED/NEXT_ACTION；检查点不等于最终PASS。会话/回复/工具输出中断时，恢复固定任务合同与最近检查点，复用已核验证据，不从头重跑、不扩大范围、不推断未返回的工具结果。每次只读取当前任务必要的critical_evidence；不因接口或查询问题改查无关commit/tree，不把跨commit Blob差异误报为候选缺陷。已足够支持退修时早停；纯取证/工具故障分别记REVIEW_PENDING_IO/REVIEW_TOOL_ERROR。详见CH5_INDEPENDENT_REVIEW_RULES_20261025.md的2026-10-25补充。
