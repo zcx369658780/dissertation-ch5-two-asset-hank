@@ -1,3 +1,40 @@
+# CH5 CURRENT · 2026-10-25 TEMP31 独立路线隔离审阅里程碑
+
+```text
+ACTIVE_TASK=NONE
+CURRENT_ROUTE=TEMP31_WORKPLACE_WAGE_TAX_SINGLE_APPLICATION_AND_DESTINATION_INDEX
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=False
+REAL_GE=False
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+SCIENTIFIC_MODEL_CALLS=0
+HA_HJB_KFE_GE_IRF=0
+NEXT_TASK_AUTOSTART=FALSE
+CURRENT_PHASE=ISOLATED_PATCH_BOUNDED_REVIEWS_COMPLETE__FORMAL_INTEGRATION_BLOCKED
+LATEST_CANDIDATE_RUN_ID=1ae1549d867a43239d75a619c3d39208
+LATEST_ASTRA_VERDICT=PASS_BOUNDED_DESTINATION_TAX_INDEX_PATCH__FORMAL_INTEGRATION_BLOCKED
+R2_ASTRA_VERDICT=CHANGES_REQUIRED_BOUNDED_SCOPE_GAP
+GITHUB_MILESTONE_BACKUP=OWNER_EXPLICIT_DOC_ONLY_20261025
+GITHUB_AUTO_TASK_REVIEW_CLEANUP=DISABLED
+```
+
+TEMP31 是独立临时研究/实现验证路线，与旧主线、正式生产来源隔离。历史候选基线 commit 为 `ba98537fd5ae004f0aa37d319865da1f1739e503`，tree 声明为 `f432f0acb5d94e0f60cd976b74a236be883e0db3`。Owner 已决定工资税按实际工作地/目的地省份归属；含目的地税的综合工资不得在 HA 适配层重复扣同一税率，劳动拆分按目的地 `tau_j` 索引。
+
+“进度超过旧主线”仅指 TEMP31 的隔离工程验证进度已经超过旧主线原先停留阶段。它不表示完整财政、真实模型调用闭包、正式科学结果、生产就绪或正式来源冻结已通过。旧主线的历史记录、STOP、PENDING、科研合同及关闭预算全部保留，不追溯改写。R3 解决的是 R2 已定位的目的地税率索引缺口，不能把 R2 的历史 CHANGES_REQUIRED 改写为完整通过。
+
+仍未闭合：历史整轮 fixture 的新口径认证、正式集成与生产 HA 接线、真实生产调用闭包、最终价格/末次 batch 规则、完整财政、工资/劳动/效率/模型期及 HU/期间单位、指标选择、sigma 的经济收受方和 Owner 正式来源接受。
+
+下一阶段方向为“历史整轮 fixture 更新与受界集成验证”，尚未签发独立离线任务单、尚未启动。必须先完成本次远端提交与五文件回读，经 Owner/GPT 复核身份，再由 GPT 顾问签发新任务。不得因本次备份成功自动执行、冻结正式来源或恢复旧预算。历史 2009 年 184/5704、31/31 收敛属于旧合同下的历史案例，不能自动视为新税率口径通过。
+
+路线原件身份与三轮分层裁决见 [TEMP31 独立路线状态](docs/CH5_TEMP31_WORKPLACE_TAX_ROUTE_STATUS_20261025.md)。裁决来源为 Owner 本次任务单，非本备份重新科学验收。正式 V010 未变、V011 未启动、科研预算零；备份后 STOP。
+
+## 历史快照：原 CURRENT 正文（完整保留，以下不是当前执行授权）
+
+---
+
 # CH5 CURRENT · 2026-10-24 历史 Python 基线修订候选待 Astra 独立审阅
 ACTIVE_TASK=NONE
 CURRENT_PHASE=HISTORICAL_PYTHON_BASELINE_PATCH_CANDIDATE__GPT_ASTRA_REVIEW_PENDING
