@@ -1,0 +1,77 @@
+{
+  "whole_repository_closure": false,
+  "rows": [
+    {
+      "caller": "load_entry_state",
+      "direct_callee": "canonical JSON read",
+      "evidence": "S06:101-121",
+      "scope_limit": "raw canonical not present; key mapping only"
+    },
+    {
+      "caller": "run_python_once",
+      "direct_callee": "OnlineStationaryInputs / run_online_stationary",
+      "evidence": "S06:369-373",
+      "scope_limit": "validation entry, not closed production adapter"
+    },
+    {
+      "caller": "run_online_stationary",
+      "direct_callee": "household_solver then one_turn then _post_turn_states",
+      "evidence": "S13:50-58",
+      "scope_limit": "static batch return ordering; not an actual real batch receipt"
+    },
+    {
+      "caller": "solve_batch",
+      "direct_callee": "_source_initial_arrays then HouseholdInputs then solve_matlab_source_postloop_household",
+      "evidence": "S06:337-368",
+      "scope_limit": "fresh phi but carried w; no C schema admission or source digest freeze"
+    },
+    {
+      "caller": "solve_matlab_source_postloop_household",
+      "direct_callee": "HJB then KFE then aggregate_stationary_household",
+      "evidence": "S15:15-41",
+      "scope_limit": "not invoked; distinct from generic solve_household_steady_state entry"
+    },
+    {
+      "caller": "run_source_faithful_one_turn",
+      "direct_callee": "reconstruct_migration_labor then evaluate_firm then composite_household_wages",
+      "evidence": "S04:161-205",
+      "scope_limit": "prefrozen batch is the input; no HA call"
+    },
+    {
+      "caller": "_post_turn_states",
+      "direct_callee": "carry next composite wage and firm state",
+      "evidence": "S14:147-169",
+      "scope_limit": "changes next entering w; does not reprice last HA output"
+    },
+    {
+      "caller": "build_static_household_call",
+      "direct_callee": "StaticHouseholdCall kwargs",
+      "evidence": "S02:204-233",
+      "scope_limit": "describes a call; does not execute the solver"
+    },
+    {
+      "caller": "C BatchSpy",
+      "direct_callee": "exact FakeHouseholdDouble only / complete-batch barrier",
+      "evidence": "S17:50-77",
+      "scope_limit": "synthetic target implementation; not a production callback"
+    },
+    {
+      "caller": "run_source_faithful_one_turn",
+      "direct_callee": "allocate_productive_capital -> household_illiquid_return_rah",
+      "evidence": "S23:70-108",
+      "scope_limit": "unique direct household return producer; no source execution"
+    },
+    {
+      "caller": "run_source_faithful_one_turn",
+      "direct_callee": "taylor_assignment -> it,rb",
+      "evidence": "S24:15-25",
+      "scope_limit": "unique policy-rate producer; physical period remains unknown"
+    },
+    {
+      "caller": "run_source_faithful_one_turn",
+      "direct_callee": "national_fiscal_diagnostics -> GovSurplus",
+      "evidence": "S25:16-47",
+      "scope_limit": "direct Govinc consumer; accounting units remain unknown"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "confirmed_adopted_contract_conflict": false,
+  "real_data_comparison": "NOT_PERFORMED_NO_REAL_CANONICAL_ARTIFACT",
+  "rows": [
+    {
+      "id": "V1",
+      "fields": [
+        "initial w",
+        "wjt",
+        "tau",
+        "sigma",
+        "phi"
+      ],
+      "observed": "initial w is independent scalar seed; phi freshly derived; matrices external",
+      "status": "BLOCKED_SOURCE_NOT_ESTABLISHED",
+      "conflict_type": "Missing co-generation evidence, not a measured contradictory dataset",
+      "evidence": [
+        "S06:101-121",
+        "S06:337-350"
+      ],
+      "owner_gate": "Accept proved historical seed lineage or require same-snapshot derivation"
+    },
+    {
+      "id": "V2",
+      "fields": [
+        "carried w",
+        "refreshed phi"
+      ],
+      "observed": "phi computed from entering Y/L before HA loop, but state.w not recomputed; previous macro w used previous callback phi",
+      "status": "OWNER_DECISION_REQUIRED",
+      "conflict_type": "Source-confirmed timing split; conditional conflict with a future strict co-generation rule, not an adopted production contract",
+      "evidence": [
+        "S06:337-351",
+        "S14:153-167"
+      ],
+      "owner_gate": "Define synchronous versus explicitly lagged phi/w rule"
+    },
+    {
+      "id": "V3",
+      "fields": [
+        "migration wjt_old",
+        "fiscal wjt_new",
+        "next composite w"
+      ],
+      "observed": "labor split at old destination wage; fiscal and composite at new firm wage",
+      "status": "OWNER_DECISION_REQUIRED",
+      "conflict_type": "Source-ordered old/new use; must not relabel all as one frozen old-price payroll",
+      "evidence": [
+        "S04:168-204",
+        "S05:126-139"
+      ],
+      "owner_gate": "Declare allowed quantity/price timing and fiscal comparison base"
+    },
+    {
+      "id": "V4",
+      "fields": [
+        "Y/L indicator initial",
+        "Y/L indicator later"
+      ],
+      "observed": "initial Lt=canonical.pop; subsequent Lt=FirmResult.Lt; both used under the same Y/L expression",
+      "status": "BLOCKED_NOT_EVIDENCED",
+      "conflict_type": "Denominator meaning/unit continuity unproved",
+      "evidence": [
+        "S06:108-114",
+        "S06:337-341",
+        "S14:153-167"
+      ],
+      "owner_gate": "Provide population-to-labor bridge and indicator dictionary"
+    },
+    {
+      "id": "V5",
+      "fields": [
+        "dataset calendar year",
+        "regression vintage key",
+        "physical model period",
+        "outer iteration"
+      ],
+      "observed": "binding includes year 2009 and regression key/row index 10; fixed-point iteration is a count",
+      "status": "UNKNOWN",
+      "conflict_type": "Labels are not proof of observation dates, publication vintage or rate time unit",
+      "evidence": [
+        "S06:101-105",
+        "S13:48-55"
+      ],
+      "owner_gate": "Supply dataset dictionary and model time declaration"
+    },
+    {
+      "id": "V6",
+      "fields": [
+        "C OLD_TURN labels",
+        "real callback inputs"
+      ],
+      "observed": "C synthetic-only source gate and full-column schema have no producer link to real callback input files",
+      "status": "BLOCKED_NOT_EVIDENCED",
+      "conflict_type": "Target design versus real-input provenance gap; no equivalence inferred",
+      "evidence": [
+        "S16:119-126",
+        "S16:68-90",
+        "S06:337-351"
+      ],
+      "owner_gate": "Source and unit closure before future adapter admission"
+    }
+  ]
+}

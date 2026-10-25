@@ -1,0 +1,22 @@
+{
+  "status": "PASS_FINITE_PATTERNS",
+  "patterns": [
+    "absolute_drive",
+    "absolute_home",
+    "UNC",
+    "private_key",
+    "access_token",
+    "private_local_username"
+  ],
+  "scope": "Every public text string/key/name and original ZIP recursively, JSON decoded first",
+  "redactions": [
+    {
+      "target": "local worktree metadata",
+      "method": "Path replaced with role label and path hash; raw full status excluded, tracked changed relative paths and status hash/count retained",
+      "scientific_source_identity_changed": false
+    }
+  ],
+  "exact_original_zip_modified": false,
+  "source_context_bytes_modified": false,
+  "universal_privacy_proof": false
+}

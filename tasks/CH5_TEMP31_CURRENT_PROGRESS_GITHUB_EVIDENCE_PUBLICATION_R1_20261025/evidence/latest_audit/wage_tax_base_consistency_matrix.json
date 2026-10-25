@@ -1,0 +1,96 @@
+{
+  "conclusion": "Destination indexing and single explicit payroll tau factor confirmed; real source, units, vintage and household-payroll tax-base equality BLOCKED",
+  "rows": [
+    {
+      "item": "province axis",
+      "household_side": "wage and migration tax use destination j",
+      "firm_side": "firm j receives migration.lt_supply[j] and province tau[j]",
+      "status": "SOURCE_CONFIRMED_POSITIONAL_ONLY",
+      "evidence": [
+        "S04:168-204",
+        "S05:81-84"
+      ],
+      "unproved": "Real 31-ID names/order and policy data source join"
+    },
+    {
+      "item": "tax rate",
+      "household_side": "1-tau_enter[j]-sigma[j,i]",
+      "firm_side": "tau_enter[j] multiplies destination payroll",
+      "status": "SOURCE_CONFIRMED_FORMULA_RATE_INDEX",
+      "evidence": [
+        "S01:55-63",
+        "S03:113-132",
+        "S05:135-139"
+      ],
+      "unproved": "Same authentic policy vintage/rate-unit convention"
+    },
+    {
+      "item": "wage vintage",
+      "household_side": "HA reads carried w; labor split uses wjt_old[j]",
+      "firm_side": "newly derived/clipped firm.wjt[j] used by fiscal and next composite",
+      "status": "OWNER_DECISION_REQUIRED",
+      "evidence": [
+        "S06:345-351",
+        "S04:168-204",
+        "S05:126-139"
+      ],
+      "unproved": "Common payroll price/quantity vintage and legitimate lag rule"
+    },
+    {
+      "item": "labor base",
+      "household_side": "HA l_ss=sum(z*l*g*db*da); bilateral split derived from Ct and N",
+      "firm_side": "Lt_supply[j]=sum_i bilateral[j,i]",
+      "status": "BLOCKED_NOT_EVIDENCED",
+      "evidence": [
+        "S19:619-629",
+        "S03:104-137"
+      ],
+      "unproved": "Household labor, reconstructed destination labor, efficiency and hours bridge"
+    },
+    {
+      "item": "gross payroll versus composite wage",
+      "household_side": "nonlinear origin composite embeds destination tax and sigma",
+      "firm_side": "gross wage * destination row-sum labor * tau",
+      "status": "BLOCKED_NOT_EVIDENCED",
+      "evidence": [
+        "S01:52-76",
+        "S05:135-139"
+      ],
+      "unproved": "Equality of tax bases or national household-income/payroll accounting; cannot assert by formula shape"
+    },
+    {
+      "item": "HA second deduction",
+      "household_side": "named net-composite paths tau=0 and migration_costs=[0]",
+      "firm_side": "one tau factor in payroll term",
+      "status": "SOURCE_CONFIRMED_NAMED_PATH_ONLY",
+      "evidence": [
+        "S02:211-225",
+        "S06:345-351",
+        "S19:131-135"
+      ],
+      "unproved": "Initial seed actually net; all callers outside named scope"
+    },
+    {
+      "item": "sigma revenue",
+      "household_side": "sigma separately reduces net wage base",
+      "firm_side": "no separate sigma-revenue term in inspected Govinc expression",
+      "status": "OWNER_DECISION_REQUIRED",
+      "evidence": [
+        "S01:55-63",
+        "S05:135-139"
+      ],
+      "unproved": "Recipient and full fiscal treatment of sigma; no decision here"
+    },
+    {
+      "item": "fiscal units",
+      "household_side": "HA transfer Tt and asset/consumption units UNKNOWN",
+      "firm_side": "Govinc adds payroll, corporate tax, AtTax, GovInv*ra and subtracts Tt",
+      "status": "BLOCKED_NOT_EVIDENCED",
+      "evidence": [
+        "S05:135-139",
+        "S06:352-356"
+      ],
+      "unproved": "Common money scale, HU/person/province scale and physical period"
+    }
+  ]
+}

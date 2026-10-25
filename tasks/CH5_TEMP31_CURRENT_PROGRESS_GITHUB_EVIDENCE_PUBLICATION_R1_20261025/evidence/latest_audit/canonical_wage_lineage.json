@@ -1,0 +1,35 @@
+{
+  "initial_w": {
+    "source_key": "canonical.scalars.composite_wage",
+    "loader": "load_entry_state",
+    "copies": "same scalar to each origin",
+    "key_mapping_status": "SOURCE_CONFIRMED",
+    "real_canonical_status": "BLOCKED_SOURCE_NOT_ESTABLISHED",
+    "same_snapshot_from_wjt_tau_sigma_phi": "NOT_EVIDENCED",
+    "evidence": [
+      "S06:101-121"
+    ]
+  },
+  "later_w": {
+    "producer": "composite_household_wages -> one_turn.household_composite_wage -> _post_turn_states.w",
+    "status": "SOURCE_CONFIRMED_STATIC_ONLY",
+    "evidence": [
+      "S01:52-76",
+      "S04:198-205",
+      "S14:153-167"
+    ]
+  },
+  "identity_gap": {
+    "declared_CANONICAL_SHA": "507D1259A8A515E4224F40D434BD89645C02472650B51F5ADA3181BA4BCDAD48",
+    "actual_canonical_bytes": "NOT_SUPPLIED_IN_SELECTED_INPUTS",
+    "actual_canonical_sha256": "UNKNOWN",
+    "loader_hash_comparison": "ABSENT_IN_INSPECTED_LOADER; declared constant is logged, not compared to bytes here",
+    "upstream_generator": "UNKNOWN_NOT_LOCATED_NO_BROAD_SEARCH",
+    "evidence": [
+      "S06:78-78",
+      "S06:101-121",
+      "S06:323-329"
+    ]
+  },
+  "limit": "No assertion that the original canonical file cannot exist elsewhere. No raw data, tests, initializer, preflight or model was run."
+}

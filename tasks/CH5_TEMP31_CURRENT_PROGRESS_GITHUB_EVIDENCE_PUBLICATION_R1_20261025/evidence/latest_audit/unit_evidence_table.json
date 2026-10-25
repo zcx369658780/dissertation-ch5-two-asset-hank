@@ -1,0 +1,324 @@
+{
+  "rule": "Code role and algebraic inference are separate from an authoritative unit. No numeric magnitude is used to infer a real unit.",
+  "rows": [
+    {
+      "field_name": "wjt / destination firm wage",
+      "unit_status": "UNKNOWN: currency, normalization, per-efficiency-labor and physical period not defined",
+      "evidence": [
+        "S06:101-119",
+        "S05:100-135",
+        "S04:168-204"
+      ],
+      "minimum_missing_evidence": "Original canonical file, its producer, source data dictionary, province ID map and wage normalization"
+    },
+    {
+      "field_name": "tau_j / destination wage tax",
+      "unit_status": "INFERRED: ratio in 1-tau-sigma; authoritative fraction/percent convention UNKNOWN",
+      "evidence": [
+        "S06:108-119",
+        "S01:42-63",
+        "S03:109-132",
+        "S05:81-84",
+        "S05:135-139"
+      ],
+      "minimum_missing_evidence": "Authoritative policy/tax file, fraction/percent convention, validity dates and exact ID joins"
+    },
+    {
+      "field_name": "sigma[destination,origin] / sigmau",
+      "unit_status": "UNKNOWN: subtraction suggests a dimensionless wedge locally, which is inference only",
+      "evidence": [
+        "S06:369-373",
+        "S13:40-55",
+        "S01:55-63",
+        "S03:113-132"
+      ],
+      "minimum_missing_evidence": "Original sigmau matrix, axis IDs/order, dictionary, construction function, date and accepted economic interpretation"
+    },
+    {
+      "field_name": "phi[destination,origin] and indicator",
+      "unit_status": "UNKNOWN: preference scale and underlying Y/L normalization not defined by a data dictionary",
+      "evidence": [
+        "S06:108-114",
+        "S06:337-350",
+        "S13:40-55",
+        "S14:153-167",
+        "S01:55-72"
+      ],
+      "minimum_missing_evidence": "Indicator dictionary, population vs firm labor bridge, reference dates and Owner synchronous/lagged decision"
+    },
+    {
+      "field_name": "initial canonical w / composite_after_tax_wage",
+      "unit_status": "UNKNOWN: money, labor, price base and period",
+      "evidence": [
+        "S06:101-121",
+        "S06:171-185",
+        "S06:345-351"
+      ],
+      "minimum_missing_evidence": "Exact original canonical bytes and SHA verification, producer function, wjt/tau/sigma/phi inputs and derivation receipt"
+    },
+    {
+      "field_name": "next composite w",
+      "unit_status": "UNKNOWN: model coefficient scale known algebraically only",
+      "evidence": [
+        "S01:52-76",
+        "S04:198-205",
+        "S14:153-167"
+      ],
+      "minimum_missing_evidence": "Owner wage snapshot definition and provenance-bearing freeze record"
+    },
+    {
+      "field_name": "HouseholdInputs.wages",
+      "unit_status": "UNKNOWN",
+      "evidence": [
+        "S02:204-226",
+        "S06:345-351",
+        "S19:53-78",
+        "S19:131-135"
+      ],
+      "minimum_missing_evidence": "Accepted original wage derivation and full real snapshot tuple"
+    },
+    {
+      "field_name": "HouseholdInputs.tau",
+      "unit_status": "INFERRED: rate factor; real policy/period convention UNKNOWN",
+      "evidence": [
+        "S02:204-218",
+        "S06:345-351",
+        "S19:53-78",
+        "S19:131-135",
+        "S19:280-286"
+      ],
+      "minimum_missing_evidence": "Seed net-wage authority plus separately authorized production admission"
+    },
+    {
+      "field_name": "household consumption Ct / c_ss",
+      "unit_status": "UNKNOWN: currency, per-household/person reference and model period",
+      "evidence": [
+        "S19:619-629",
+        "S15:30-41",
+        "S06:345-366"
+      ],
+      "minimum_missing_evidence": "HA normalization, consumption units, household/population bridge and time dictionary"
+    },
+    {
+      "field_name": "household labor Lt / l_ss",
+      "unit_status": "UNKNOWN: hours, worker reference, efficiency normalization and HU",
+      "evidence": [
+        "S19:619-629",
+        "S02:236-244",
+        "S04:168-177",
+        "S04:186-195"
+      ],
+      "minimum_missing_evidence": "Labor/efficiency/HU dictionary and reconciliation of household l_ss, N and destination supply"
+    },
+    {
+      "field_name": "illiquid assets a / At / a_ss",
+      "unit_status": "UNKNOWN: currency, real/nominal, household/person basis",
+      "evidence": [
+        "S06:109-119",
+        "S06:332-335",
+        "S19:619-629",
+        "S06:352-356"
+      ],
+      "minimum_missing_evidence": "Asset normalization, price base, units dictionary and canonical seed derivation"
+    },
+    {
+      "field_name": "liquid assets b / Bt / b_ss",
+      "unit_status": "UNKNOWN: monetary normalization and household/person basis",
+      "evidence": [
+        "S06:114-119",
+        "S06:332-335",
+        "S19:265-286",
+        "S19:619-629"
+      ],
+      "minimum_missing_evidence": "Asset/liability dictionary and monetary normalization"
+    },
+    {
+      "field_name": "government transfer_income / Tt",
+      "unit_status": "UNKNOWN: per person/household vs provincial total and flow period",
+      "evidence": [
+        "S06:113-117",
+        "S02:220-226",
+        "S19:280-302",
+        "S05:135-139"
+      ],
+      "minimum_missing_evidence": "Transfer recipient/accounting-unit dictionary, scaling bridge and fiscal timing authority"
+    },
+    {
+      "field_name": "portfolio transfer d / transfer (not Tt)",
+      "unit_status": "UNKNOWN: asset transfer flow scale and period",
+      "evidence": [
+        "S19:80-91",
+        "S19:148-167"
+      ],
+      "minimum_missing_evidence": "Formal variable dictionary distinguishing portfolio d and government Tt"
+    },
+    {
+      "field_name": "Lt_mat[destination,origin]",
+      "unit_status": "UNKNOWN: N/pop scale, labor efficiency and hours; formula alone cannot fix units",
+      "evidence": [
+        "S03:104-137",
+        "S04:168-177"
+      ],
+      "minimum_missing_evidence": "Population/HU/efficiency dictionary, axis ID manifest and vintage contract"
+    },
+    {
+      "field_name": "Lt_supply[destination]",
+      "unit_status": "UNKNOWN",
+      "evidence": [
+        "S03:82-101",
+        "S03:128-137",
+        "S04:186-195",
+        "S05:44-63"
+      ],
+      "minimum_missing_evidence": "Destination labor unit and household/population/efficiency bridge"
+    },
+    {
+      "field_name": "firm wage/labor/capital inputs",
+      "unit_status": "UNKNOWN: K/GovInv, Y, L and wage normalization",
+      "evidence": [
+        "S04:179-204",
+        "S05:44-68",
+        "S05:86-110"
+      ],
+      "minimum_missing_evidence": "Capital/GDP/GovInv/L dictionaries and common price/period normalization"
+    },
+    {
+      "field_name": "payroll tax base and Govinc",
+      "unit_status": "UNKNOWN: payroll monetary flow and transfer/AtTax/GovInv compatibility",
+      "evidence": [
+        "S04:186-204",
+        "S05:81-84",
+        "S05:126-139"
+      ],
+      "minimum_missing_evidence": "Per-destination payroll units, timing convention and economic bridge between composite household wage and bilateral payroll"
+    },
+    {
+      "field_name": "asset returns r_a / rah / ra / rk",
+      "unit_status": "UNKNOWN: time^{-1}, compounding/annualization and price basis",
+      "evidence": [
+        "S06:113-119",
+        "S02:211-225",
+        "S19:111-124",
+        "S05:100-125",
+        "S14:159-167",
+        "S23:83-108"
+      ],
+      "minimum_missing_evidence": "Rate dictionary, aggregation/asset allocation authority and calendar conversion"
+    },
+    {
+      "field_name": "liquid rate rb / borrowing_rate_gap",
+      "unit_status": "UNKNOWN: per-period, annualization, gross/net and compounding convention",
+      "evidence": [
+        "S06:113-117",
+        "S02:211-225",
+        "S19:265-286",
+        "S24:15-25"
+      ],
+      "minimum_missing_evidence": "Interest/spread definitions and period conversion dictionary"
+    },
+    {
+      "field_name": "nominal rate it / inflation pit / totalpit / price",
+      "unit_status": "UNKNOWN: price-level vs inflation-rate normalization, annualization and model period",
+      "evidence": [
+        "S06:113-119",
+        "S04:206-216",
+        "S05:75-100",
+        "S05:104-106",
+        "S24:15-25"
+      ],
+      "minimum_missing_evidence": "Monetary/price dictionary, numeraire, nominal-real conversion and date"
+    },
+    {
+      "field_name": "initial_value and baseline_labor",
+      "unit_status": "UNKNOWN: utility, hours and initialization resource units",
+      "evidence": [
+        "S06:171-185",
+        "S06:332-351",
+        "S02:170-186"
+      ],
+      "minimum_missing_evidence": "Accepted initialization authority and its original unit/normalization specification; any formula change requires separate task"
+    },
+    {
+      "field_name": "grid a,b,z and switch_matrix",
+      "unit_status": "UNKNOWN: physical asset/efficiency/time units despite explicit numerical grid",
+      "evidence": [
+        "S06:332-335",
+        "S02:145-177",
+        "S19:619-629"
+      ],
+      "minimum_missing_evidence": "Grid dictionary, z normalization and switching-rate time basis"
+    },
+    {
+      "field_name": "efficiency z / labor_weights / alphal",
+      "unit_status": "UNKNOWN: efficiency normalization and actual labor/hour interpretation",
+      "evidence": [
+        "S06:332-350",
+        "S02:145-149",
+        "S02:211-218",
+        "S19:131-145",
+        "S19:619-629"
+      ],
+      "minimum_missing_evidence": "Efficiency/labor/HU dictionary and accepted relation between z, alphal and bilateral labor"
+    },
+    {
+      "field_name": "N / population and GDP/capital upstream",
+      "unit_status": "UNKNOWN: population persons/households/scaling, GDP/capital monetary units",
+      "evidence": [
+        "S06:103-119",
+        "S03:128-132",
+        "S05:86-86"
+      ],
+      "minimum_missing_evidence": "Original population/GDP/capital dictionaries, source table ID joins and household bridge"
+    },
+    {
+      "field_name": "model physical period and numerical delta",
+      "unit_status": "UNKNOWN: annual/quarterly/continuous-time model unit and rate calibration",
+      "evidence": [
+        "S06:103-105",
+        "S06:332-341",
+        "S13:48-55",
+        "S19:29-49"
+      ],
+      "minimum_missing_evidence": "Model-time declaration and rate/flow annualization authority"
+    },
+    {
+      "field_name": "snapshot digest / household tuple digest",
+      "unit_status": "UNKNOWN for real inputs; hash carries declared units but cannot verify their truth",
+      "evidence": [
+        "S16:23-60",
+        "S16:119-126",
+        "S16:140-149",
+        "S06:323-350"
+      ],
+      "minimum_missing_evidence": "Exact real source bytes, accepted field units, ID/order manifest, vintage decisions and source-closed adapter"
+    },
+    {
+      "field_name": "sigma_ref / phi_ref full columns",
+      "unit_status": "UNKNOWN: no new physical units established",
+      "evidence": [
+        "S16:68-90",
+        "S16:140-149"
+      ],
+      "minimum_missing_evidence": "Authoritative real matrices, IDs, dictionaries and snapshot rules"
+    },
+    {
+      "field_name": "productive capital and household return upstream",
+      "unit_status": "UNKNOWN: asset/HU/population scaling and return-period basis",
+      "evidence": [
+        "S04:179-184",
+        "S23:70-108"
+      ],
+      "minimum_missing_evidence": "At/N/ratio dictionary and accepted household vs firm return definition"
+    },
+    {
+      "field_name": "national GovSurplus and debt-interest units",
+      "unit_status": "UNKNOWN: Govinc versus Bt*N scale and common physical flow period",
+      "evidence": [
+        "S04:212-217",
+        "S25:16-22",
+        "S25:33-47"
+      ],
+      "minimum_missing_evidence": "Government accounting dictionary and consistent household/population/money/interest-period normalization"
+    }
+  ]
+}

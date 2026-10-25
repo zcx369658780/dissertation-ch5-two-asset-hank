@@ -1,0 +1,82 @@
+{
+  "task": "CH5_TEMP31_CURRENT_PROGRESS_GITHUB_EVIDENCE_PUBLICATION_R1_20261025",
+  "attempt": "OWNER_AUTHORIZED_SSH_RECOVERY_20261025_R1",
+  "recorded_utc": "2026-10-25T11:13:40.259841+00:00",
+  "authorization": "Owner explicitly requested SSH-key-only retry and no GitHub connector use. No research or next-task authorization.",
+  "repository": "zcx369658780/dissertation-ch5-two-asset-hank",
+  "fixed_task_commit": "04a5572d1978202f2a66be06f27748cf0585d989",
+  "fixed_task_blob": "4d2de8e2e81de411d32a0e90969ed42c7bee7dc8",
+  "governance_branch": "migration/astra-workflow-20261012",
+  "candidate_branch": "codex/ch5-temp31-evidence-publication-20261025-r1",
+  "connector": {
+    "github_connector_calls": 0,
+    "session_use": "DISABLED_BY_EXECUTION_POLICY",
+    "global_disable": "NOT_PERFORMED_NO_SUPPORTED_DISABLE_TOOL",
+    "uninstall": false
+  },
+  "ssh": {
+    "client": "Windows OpenSSH",
+    "identity": "OWNER_SPECIFIED_ED25519_KEY_LOCATOR_REDACTED",
+    "private_key_content_read": false,
+    "BatchMode": "yes",
+    "ConnectTimeout": 15,
+    "StrictHostKeyChecking": "yes",
+    "IdentitiesOnly": "yes",
+    "IdentityAgent": "none",
+    "observed_endpoint": "20.205.243.160:443",
+    "host_mapping": "Existing github.com mapping to ssh.github.com:443; no global config change"
+  },
+  "command_public": "git ls-remote git@github.com:zcx369658780/dissertation-ch5-two-asset-hank.git refs/heads/migration/astra-workflow-20261012 refs/heads/codex/ch5-temp31-evidence-publication-20261025-r1",
+  "operation": "READ_ONLY_REMOTE_REF_DISCOVERY",
+  "tool_result": {
+    "exit_code": 128,
+    "wall_time_seconds": 3.3251131,
+    "output": "Connection closed by 20.205.243.160 port 443\nfatal: Could not read from remote repository.\n\nPlease make sure you have the correct access rights\nand the repository exists.\n",
+    "provenance": "Exact visible tool-result text transcribed to JSON; CRLF normalized to LF. No separately captured native stderr file."
+  },
+  "interpretation": "SSH connection closed; authentication, repository authorization, and remote refs NOT_VERIFIED. Generic Git rights advice is not evidence of a permission rejection. Underlying network/server cause UNKNOWN.",
+  "actual_terminal": "SSH_CONNECTION_CLOSED__REMOTE_REFS_NOT_VERIFIED__PUBLICATION_NOT_ATTEMPTED__STOPPED",
+  "delivery": "BLOCKED_SSH_CONNECTION",
+  "artifact_integrity": "PRIOR_STOP_ZIP_ACTUAL_BYTES_AND_SHA256_MATCHED",
+  "source_identity": "HISTORICAL_EVIDENCE_REUSED_NOT_REAUDITED",
+  "numeric_review": "NOT_RUN",
+  "implementation_review": "NO_NEW_IMPLEMENTATION",
+  "scientific_review": "NOT_RUN",
+  "privacy_review": "FINITE_RECOVERY_PACKAGE_SCAN_ONLY",
+  "cleanup": "NOT_AUTHORIZED_NOT_PERFORMED",
+  "not_completed": [
+    "Remote ref live verification",
+    "Candidate evidence commit publication",
+    "Remote commit/tree/blob/full-byte readback",
+    "Global connector disable"
+  ],
+  "budget": {
+    "ssh_remote_attempts": 1,
+    "ssh_push_attempts": 0,
+    "retries_after_failure": 0,
+    "alternate_port_protocol_identity_attempts": 0,
+    "github_connector_calls": 0,
+    "blob_creation_calls": 0,
+    "research_source_execution": 0,
+    "tests": 0,
+    "preflights": 0,
+    "models_HA_HJB_KFE_GE_IRF": 0,
+    "formal_source_writes": 0,
+    "protected_worktree_index_ref_writes": 0,
+    "global_git_ssh_config_writes": 0
+  },
+  "protected_state": "No writes or further audit of protected code tree performed during this recovery; previous protection checks remain historical evidence, not a new whole-tree equality check.",
+  "prior_stop_zip": {
+    "name": "CH5_TEMP31_CURRENT_PROGRESS_GITHUB_EVIDENCE_PUBLICATION_R1_20261025_LOCAL_STOP_EVIDENCE.zip",
+    "bytes": 263746,
+    "sha256": "953ebbc8ed0e08eff35e71b876ac69504c2098008ec05611b49659b704b89f09",
+    "unchanged": true
+  },
+  "prior_remote_state": "Prior connector readback and adviser observation only; both refs at fixed governance commit. NOT freshly verified through SSH.",
+  "V010": "UNCHANGED",
+  "V011": "NOT_STARTED",
+  "Results": false,
+  "FORMAL_SOURCE_FREEZE": false,
+  "AUTO_NEXT": false,
+  "STOP": true
+}

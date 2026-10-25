@@ -1,0 +1,137 @@
+"""Isolated fake-only batch contract spy. It cannot accept a real solver."""
+from dataclasses import dataclass
+from contract_schema import ContractViolation,FrozenSnapshot,canonical,digest,freeze_snapshot
+
+
+class FakeFailure(RuntimeError):pass
+
+
+@dataclass(frozen=True)
+class TupleEnvelope:
+    province_id: str
+    snapshot_digest: str
+    tuple_digest: str
+    body_bytes: bytes
+
+
+@dataclass(frozen=True)
+class FakeOutput:
+    province_id: str
+    snapshot_digest: str
+    tuple_digest: str
+    token: str
+    scope: str = "SYNTHETIC_NO_HA_OUTPUT"
+
+
+class FakeHouseholdDouble:
+    def __init__(self,fail_at=None,fail_phase="solve"):
+        self.fail_at=fail_at;self.fail_phase=fail_phase
+        self.initializations=[];self.solves=[]
+
+    def initialize(self,envelope,attempt):
+        self.initializations.append((envelope.province_id,envelope.tuple_digest))
+        if attempt==self.fail_at and self.fail_phase=="initialize":raise FakeFailure("SYNTHETIC_INITIALIZE_FAILURE")
+        return envelope.tuple_digest
+
+    def solve(self,envelope,attempt):
+        self.solves.append((envelope.province_id,envelope.tuple_digest))
+        if attempt==self.fail_at and self.fail_phase=="solve":raise FakeFailure("SYNTHETIC_SOLVE_FAILURE")
+        return FakeOutput(envelope.province_id,envelope.snapshot_digest,envelope.tuple_digest,
+                          digest({"fake_only":True,"province":envelope.province_id,"tuple":envelope.tuple_digest}))
+
+
+@dataclass(frozen=True)
+class CompletedBatch:
+    snapshot_id: str
+    snapshot_digest: str
+    province_ids: tuple
+    household_outputs: tuple
+    output_digest: str
+    batch_status: str = "COMPLETE"
+    real_ha_admission: str = "BLOCKED_NOT_A_PRODUCTION_CALLBACK"
+
+
+class BatchSpy:
+    def __init__(self,expected_province_ids,expected_snapshot_id,expected_snapshot_digest,solver):
+        if type(solver) is not FakeHouseholdDouble:
+            raise ContractViolation("FAKE_ONLY","solver","No real callable or subclass accepted")
+        self.expected_ids=tuple(expected_province_ids);self.expected_id=expected_snapshot_id;self.expected_digest=expected_snapshot_digest
+        self.solver=solver;self.status="NOT_STARTED";self.attempts=0;self.outputs=[];self.events=[]
+        self.failure_ledger=[];self._seen=set();self._macro_done=False
+
+    def event(self,name,**data):
+        self.events.append({"sequence":len(self.events)+1,"event":name,"batch_status":self.status,**data})
+
+    def begin(self,snapshot):
+        if type(snapshot) is not FrozenSnapshot:raise ContractViolation("SNAPSHOT_TYPE","snapshot")
+        if snapshot.snapshot_id in self._seen:raise ContractViolation("NO_RETRY","snapshot_id")
+        self._seen.add(snapshot.snapshot_id)
+        try:
+            self.snapshot=freeze_snapshot(snapshot.document(),self.expected_ids)
+            if (snapshot.snapshot_id,snapshot.snapshot_digest,snapshot.turn_index,snapshot.province_ids)!=(self.snapshot.snapshot_id,self.snapshot.snapshot_digest,self.snapshot.turn_index,self.snapshot.province_ids):
+                raise ContractViolation("FROZEN_CACHE_IDENTITY","snapshot")
+            if self.snapshot.snapshot_id!=self.expected_id or self.snapshot.snapshot_digest!=self.expected_digest:
+                raise ContractViolation("ADMISSION_IDENTITY_MISMATCH","snapshot_digest")
+        except Exception as exc:
+            self.status="FAILED";self.failure_ledger.append({"attempts":0,"province_id":None,"exception_type":type(exc).__name__,"retry_allowed":False})
+            raise
+        self.document=self.snapshot.document();self.status="IN_PROGRESS"
+        self.event("BATCH_STARTED",snapshot_id=self.snapshot.snapshot_id,snapshot_digest=self.snapshot.snapshot_digest)
+
+    def step(self):
+        if self.status!="IN_PROGRESS":raise ContractViolation("BATCH_NOT_IN_PROGRESS","batch_status")
+        try:
+            checked=freeze_snapshot(self.document,self.expected_ids)
+            if checked.snapshot_digest!=self.snapshot.snapshot_digest:raise ContractViolation("MIDBATCH_IDENTITY","snapshot_digest")
+        except ContractViolation as exc:
+            self.status="FAILED"
+            self.failure_ledger.append({"attempts":self.attempts,"completed":len(self.outputs),"province_id":self.expected_ids[len(self.outputs)],
+                                        "exception_type":type(exc).__name__,"retry_allowed":False,"stage":"PRECALL_REVALIDATION"})
+            self.event("BATCH_FAILED_PRECHECK",field=exc.field)
+            raise
+        i=len(self.outputs);record=self.document["province_inputs"][i]
+        envelope=TupleEnvelope(record["province_id"],self.snapshot.snapshot_digest,record["household_input_tuple_digest"],canonical(record["household_input_tuple"]))
+        attempt=self.attempts+1
+        self.attempts=attempt  # Count the attempt before initialize or solve can fail.
+        self.event("ATTEMPT_STARTED",province_id=envelope.province_id,attempt=attempt)
+        try:
+            init_digest=self.solver.initialize(envelope,attempt)
+            self.event("INITIALIZED",province_id=envelope.province_id,tuple_digest=init_digest)
+            output=self.solver.solve(envelope,attempt)
+            if init_digest!=envelope.tuple_digest or output.province_id!=envelope.province_id or output.snapshot_digest!=envelope.snapshot_digest or output.tuple_digest!=envelope.tuple_digest:
+                raise ContractViolation("OUTPUT_IDENTITY_MISMATCH","household_outputs")
+        except Exception as exc:
+            self.status="FAILED"
+            self.failure_ledger.append({"attempts":self.attempts,"completed":len(self.outputs),"province_id":envelope.province_id,
+                                        "exception_type":type(exc).__name__,"retry_allowed":False})
+            self.event("BATCH_FAILED",province_id=envelope.province_id,exception_type=type(exc).__name__)
+            raise
+        self.outputs.append(output);self.event("PROVINCE_COMPLETED",province_id=envelope.province_id,completed=len(self.outputs))
+        if len(self.outputs)==31:
+            self.status="COMPLETE";self.event("BATCH_COMPLETE",completed=31)
+
+    def completed_batch(self):
+        if self.status!="COMPLETE" or len(self.outputs)!=31 or self.attempts!=31:
+            raise ContractViolation("INCOMPLETE_BATCH_BARRIER","batch_status")
+        if tuple(o.province_id for o in self.outputs)!=self.expected_ids:
+            raise ContractViolation("OUTPUT_ORDER","household_outputs")
+        checked=freeze_snapshot(self.document,self.expected_ids)
+        if checked.snapshot_digest!=self.snapshot.snapshot_digest:raise ContractViolation("FINAL_INPUT_IDENTITY","snapshot_digest")
+        return CompletedBatch(self.snapshot.snapshot_id,self.snapshot.snapshot_digest,self.expected_ids,tuple(self.outputs),
+                              digest([o.token for o in self.outputs]))
+
+    def macro_update_fake(self):
+        self.completed_batch()  # Full return barrier applies before a fake macro event.
+        if self._macro_done:raise ContractViolation("MACRO_ALREADY_DONE","batch_status")
+        self._macro_done=True;self.event("MACRO_UPDATE_FAKE",completed=len(self.outputs))
+        return {"scope":"FAKE_NEXT_TURN_MARKER_ONLY","turn_index":self.snapshot.turn_index+1}
+
+    def public_state(self):
+        return {"batch_status":self.status,"attempts":self.attempts,"completed_count":len(self.outputs),
+                "household_outputs":[o.token for o in self.outputs] if self.status=="COMPLETE" else [],
+                "failure_ledger":self.failure_ledger,"retry_allowed":False,"real_ha_admission":"BLOCKED_NOT_A_PRODUCTION_CALLBACK"}
+
+    def run(self,snapshot):
+        self.begin(snapshot)
+        while self.status=="IN_PROGRESS":self.step()
+        return self.completed_batch()

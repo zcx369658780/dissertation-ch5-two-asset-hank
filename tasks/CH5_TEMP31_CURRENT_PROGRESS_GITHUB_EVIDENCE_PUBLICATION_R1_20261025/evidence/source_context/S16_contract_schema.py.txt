@@ -1,0 +1,175 @@
+"""Isolated target-contract model; not a production HA adapter.
+
+Canonical hashing uses standard JSON/hashlib. No economic equation is evaluated.
+UNKNOWN units never become real-HA admission; synthetic sources stay synthetic.
+"""
+from copy import deepcopy
+from dataclasses import dataclass
+import hashlib
+import json
+
+SCHEMA = "TEMP31_NO_HA_BATCH_CONTRACT_DRAFT_V1"
+PRICE_FIELDS = ("wjt_old", "tau_destination_old", "sigma_old", "phi_old", "composite_after_tax_wage_old")
+RECORD_FIELDS = ("wjt", "tau_destination", "sigma_ref", "phi_ref", "composite_after_tax_wage",
+                 "ha_parameters", "initialization_parameters")
+
+
+class ContractViolation(ValueError):
+    def __init__(self, code, field, detail=""):
+        self.code=code;self.field=field;self.detail=detail
+        super().__init__(code+" @ "+field+(": "+detail if detail else ""))
+
+
+def canonical(value):
+    return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False, allow_nan=False).encode()
+
+
+def digest(value):
+    return hashlib.sha256(canonical(value)).hexdigest()
+
+
+def vintage(doc):
+    return {"snapshot_id":doc["snapshot_id"],"turn_index":doc["turn_index"],"phase":"OLD_TURN"}
+
+
+def payload_for_snapshot(doc):
+    result=deepcopy(doc)
+    result.pop("snapshot_digest",None)
+    for record in result["province_inputs"]:record.pop("snapshot_digest",None)
+    return result
+
+
+def tuple_body(doc, record):
+    return {"snapshot_id":doc["snapshot_id"],"turn_index":doc["turn_index"],"province_id":record["province_id"],
+            "old_price_component_digests":doc["component_digests"],
+            "input_source_identity_digest":digest(doc["input_source_identity"]),
+            "record_fields":{k:record[k] for k in RECORD_FIELDS},
+            "wage_tax_applied_count":record["wage_tax_applied_count"],"units":record["units"],"vintage":record["vintage"]}
+
+
+def seal_document(document):
+    """Hash attachment only, deliberately NOT validation or real-source acceptance."""
+    doc=deepcopy(document)
+    doc["component_digests"]={k:digest(doc["prices"][k]) for k in PRICE_FIELDS}
+    for r in doc["province_inputs"]:
+        r["household_input_tuple"]=tuple_body(doc,r)
+        td=digest(r["household_input_tuple"])
+        r["household_input_tuple_digest"]=td
+        r["initialization_tuple_digest"]=td;r["solve_tuple_digest"]=td
+    sd=digest(payload_for_snapshot(doc));doc["snapshot_digest"]=sd
+    for r in doc["province_inputs"]:r["snapshot_digest"]=sd
+    return doc
+
+
+def _require(condition, code, field, detail=""):
+    if not condition:raise ContractViolation(code,field,detail)
+
+
+def matrix_column_reference(doc, key, origin_column_index):
+    """Synthetic target-contract reference to matrix[:, origin], not a diagonal.
+
+    The column digest binds destination order, origin, values and vintage.
+    It deliberately excludes the whole-matrix digest: changing another origin
+    changes matrix identity without changing this column's projection identity.
+    No real source identity or economic interpretation is established here.
+    """
+    ids=doc["province_ids"]
+    _require(key in ("sigma_old","phi_old"),"MATRIX_REFERENCE","matrix_key")
+    _require(type(origin_column_index) is int and 0<=origin_column_index<len(ids),
+             "MATRIX_REFERENCE","origin_column_index")
+    matrix=doc["prices"][key]
+    _require(len(ids)==31 and len(matrix)==31 and all(len(row)==31 for row in matrix),
+             "MATRIX_SHAPE","prices."+key)
+    projection={"origin_column_index":origin_column_index,
+                "origin_column_id":ids[origin_column_index],
+                "destination_ids_in_order":list(ids),
+                "values":[row[origin_column_index] for row in matrix],
+                "vintage":vintage(doc),
+                "projection_semantics":"FULL_DESTINATION_COLUMN_FOR_ORIGIN"}
+    return {**projection,"matrix_shape":[31,31],"matrix_digest":digest(matrix),
+            "column_digest":digest(projection)}
+
+
+def _validate(doc, expected_ids):
+    allowed={"schema","snapshot_id","snapshot_digest","turn_index","province_ids","prices","units","province_inputs",
+             "input_source_identity","phi_generation","composite_wage_provenance","price_vintages","component_digests"}
+    _require(set(doc)==allowed,"SCHEMA_FIELDS","snapshot")
+    _require(doc["schema"]==SCHEMA,"SCHEMA","schema")
+    _require(isinstance(doc["snapshot_id"],str) and bool(doc["snapshot_id"]),"SNAPSHOT_ID","snapshot_id")
+    _require(type(doc["turn_index"]) is int and doc["turn_index"]>=0,"TURN_INDEX","turn_index")
+    ids=doc["province_ids"]
+    _require(len(expected_ids)==31 and all(isinstance(p,str) and p for p in expected_ids) and len(set(expected_ids))==31,"EXPECTED_ORDER","province_ids")
+    _require(len(ids)==31 and all(isinstance(p,str) and p for p in ids) and len(set(ids))==31,"PROVINCE_COUNT_OR_DUPLICATE","province_ids")
+    _require(tuple(ids)==tuple(expected_ids),"PROVINCE_ORDER","province_ids")
+    records=doc["province_inputs"]
+    _require(len(records)==31,"PROVINCE_INPUT_COUNT","province_inputs")
+    v=vintage(doc)
+    _require(doc["phi_generation"]["vintage"]==v,"MIXED_VINTAGE","phi_generation.vintage")
+    _require(bool(doc["phi_generation"]["indicator"]) and bool(doc["phi_generation"]["source_status"]),"PHI_PROVENANCE","phi_generation")
+    for field in PRICE_FIELDS:
+        _require(doc["price_vintages"][field]==v,"MIXED_VINTAGE","price_vintages."+field)
+        values=doc["prices"][field]
+        _require(len(values)==31,"PRICE_SHAPE","prices."+field)
+        if field in ("sigma_old","phi_old"):
+            _require(all(len(row)==31 for row in values),"MATRIX_SHAPE","prices."+field)
+            _require(all(type(x) in (int,float) for row in values for x in row),"PRICE_TYPE","prices."+field)
+        else:
+            _require(all(type(x) in (int,float) for x in values),"PRICE_TYPE","prices."+field)
+        _require(digest(values)==doc["component_digests"][field],"COMPONENT_DIGEST_MISMATCH","prices."+field)
+    _require(doc["snapshot_digest"]==digest(payload_for_snapshot(doc)),"SNAPSHOT_DIGEST_MISMATCH","snapshot_digest")
+    _require(doc["composite_wage_provenance"]["status"]=="SYNTHETIC_ONLY",
+             "BLOCKED_SOURCE_NOT_ESTABLISHED","composite_wage_provenance.status",
+             "This no-HA prototype admits clearly synthetic evidence only, never real canonical authority")
+    _require(doc["input_source_identity"]["canonical"]["status"]=="SYNTHETIC_ONLY",
+             "BLOCKED_SOURCE_NOT_ESTABLISHED","input_source_identity.canonical.status")
+    _require(doc["composite_wage_provenance"]["sha256"]==digest(doc["prices"]["composite_after_tax_wage_old"]),
+             "COMPOSITE_PROVENANCE_DIGEST","composite_wage_provenance.sha256")
+    _require(bool(doc["units"]) and all(isinstance(s,str) and bool(s) for s in doc["units"].values()),"UNITS_METADATA","units")
+    for i,r in enumerate(records):
+        prefix="province_inputs["+str(i)+"]"
+        record_keys={"province_id","position","snapshot_id","snapshot_digest","vintage","field_vintages","units","wage_tax_applied_count",
+                     "household_input_tuple","household_input_tuple_digest","initialization_tuple_digest","solve_tuple_digest"}|set(RECORD_FIELDS)
+        _require(set(r)==record_keys,"SCHEMA_FIELDS",prefix)
+        _require(r["province_id"]==ids[i] and type(r["position"]) is int and r["position"]==i,"PROVINCE_RECORD_ORDER",prefix+".province_id")
+        _require(r["snapshot_id"]==doc["snapshot_id"] and r["snapshot_digest"]==doc["snapshot_digest"],"PROVINCE_SNAPSHOT",prefix+".snapshot_digest")
+        _require(r["vintage"]==v and all(r["field_vintages"][k]==v for k in RECORD_FIELDS),"MIXED_VINTAGE",prefix+".field_vintages")
+        _require(r["wjt"]==doc["prices"]["wjt_old"][i],"PRICE_MAPPING",prefix+".wjt")
+        _require(r["tau_destination"]==doc["prices"]["tau_destination_old"][i],"PRICE_MAPPING",prefix+".tau_destination")
+        _require(r["composite_after_tax_wage"]==doc["prices"]["composite_after_tax_wage_old"][i],"PRICE_MAPPING",prefix+".composite_after_tax_wage")
+        for field,key in (("sigma_ref","sigma_old"),("phi_ref","phi_old")):
+            ref=r[field]
+            _require(type(ref) is dict and type(ref.get("origin_column_index")) is int,
+                     "MATRIX_REFERENCE",prefix+"."+field)
+            _require(canonical(ref)==canonical(matrix_column_reference(doc,key,i)),
+                     "MATRIX_REFERENCE",prefix+"."+field)
+        _require(r["wage_tax_applied_count"]==1 and r["ha_parameters"]["tau"]==0.,"DUPLICATE_WAGE_TAX",prefix+".ha_parameters.tau")
+        body=tuple_body(doc,r);td=digest(body)
+        _require(r["household_input_tuple"]==body,"TUPLE_CONTENT",prefix+".household_input_tuple")
+        _require(r["household_input_tuple_digest"]==td and r["initialization_tuple_digest"]==td and r["solve_tuple_digest"]==td,
+                 "INITIALIZE_SOLVE_TUPLE_MISMATCH",prefix+".household_input_tuple_digest")
+
+
+@dataclass(frozen=True)
+class FrozenSnapshot:
+    canonical_document: bytes
+    snapshot_id: str
+    snapshot_digest: str
+    turn_index: int
+    province_ids: tuple
+    real_ha_admission: str = "BLOCKED_SYNTHETIC_SOURCE_AND_UNKNOWN_UNITS"
+
+    def document(self):
+        return json.loads(self.canonical_document)
+
+
+def freeze_snapshot(document, expected_province_ids):
+    """Validate a target-contract snapshot for synthetic fake-only observation."""
+    doc=deepcopy(document)
+    try:
+        canonical(doc)
+        _validate(doc,tuple(expected_province_ids))
+    except ContractViolation:
+        raise
+    except (KeyError,TypeError,IndexError,ValueError) as exc:
+        raise ContractViolation("MALFORMED_PAYLOAD","snapshot",type(exc).__name__) from None
+    return FrozenSnapshot(canonical(doc),doc["snapshot_id"],doc["snapshot_digest"],doc["turn_index"],tuple(doc["province_ids"]))

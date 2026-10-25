@@ -1,0 +1,1864 @@
+{
+  "scope": "STATIC_ONLY_NO_SOURCE_EXECUTION",
+  "field_count": 30,
+  "rows": [
+    {
+      "field_name": "wjt / destination firm wage",
+      "source_path_and_lines": [
+        "S06:101-119",
+        "S05:100-135",
+        "S04:168-204"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S06:101-119",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S05:100-135",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/firm.py",
+          "sha256": "0939886706b8bcb42f3a41fc244000e7f8ad01884c61afdbdd31036bee908218",
+          "blob": "ab40ac7210eb1b7730900c3c6223b1ed2bddbcac"
+        },
+        {
+          "evidence_id": "S04:168-204",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "sha256": "afeadbffd88e1405c2f32d22fd256e7fd0451fc4ecbfe2492bc0db5dbdc728fa",
+          "blob": "7c85ea1651c46dd91884f37867253c963292ca79"
+        }
+      ],
+      "producer_function": "load_entry_state; evaluate_firm",
+      "direct_consumers": [
+        "reconstruct_migration_labor",
+        "composite_household_wages",
+        "evaluate_firm.Govinc"
+      ],
+      "formula_or_mapping": "Initial s.wjt copied to every record; wt0=m*(1-alpha)*Z*(K/L)^alpha; clipping selects wjt; migration uses entering wjt, composite and fiscal use newly produced firm.wjt",
+      "province_axis_semantics": "destination j in the same positional province sequence",
+      "vintage_or_snapshot": "seed UNKNOWN; subsequent entering vs newly computed wage explicitly differ",
+      "unit_status": "UNKNOWN: currency, normalization, per-efficiency-labor and physical period not defined",
+      "tax_semantics": "Gross firm wage coefficient; destination tau applied in downstream expressions",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S06:101-119",
+          "quote": "def load_entry_state(canonical_path: Path) -> tuple[dict, tuple[dict[str, object], ...]]:\n    canonical = json.loads(Path(canonical_path).read_text(encoding=\"utf-8\"))\n    if canonical[\"binding\"] != {\"analysis_index\":1,\"calendar_year\":2009,\"data_mat_index\":1,\n            \"output_filename_year\":2009,\"regression_vintage_key\":10,\"workbook_data_row_index\":10}:\n        raise ValueError(\"canonical annual binding mismatch\")\n    v=canonical[\"vectors\"]; s=canonical[\"scalars\"]\n    states=[]\n    for i,name in enumerate(canonical[\"province_order\"]):\n        state={\"name\":name,\"N\":v[\"pop\"][i],\"alpha\":v[\"ind_alpha\"][i],\"Zt\":v[\"initialized_zt\"][i],\n            \"Kt0\":v[\"cap\"][i],\"Kt\":v[\"cap\"][i],\"Kt_prev\":v[\"cap\"][i],\"Lt\":v[\"pop\"][i],\n            \"Lt_prev\":v[\"pop\"][i],\"Yt0\":v[\"gdp\"][i],\"Yt\":v[\"gdp\"][i],\"Zt_1\":v[\"initialized_zt\"][i],\n            \"GovInv\":v[\"gov_inv\"][i],\"inter_prv_ratio\":v[\"inter_province_asset_ratio\"][i],\n            \"rb_gap\":s[\"rb_gap\"],\"rah\":s[\"rah\"],\"ra\":s[\"ra\"],\"it\":s[\"nominal_rate\"],\n            \"rb\":s[\"rb\"],\"rk\":s[\"rk\"],\"wjt\":s[\"wjt\"],\"w\":s[\"composite_wage\"],\n            \"Tt\":s[\"transfer_income\"],\"pit\":s[\"inflation\"],\"pit_1\":s[\"inflation\"],\n            \"totalpit\":s[\"inflation\"],\"epsilon_pi\":0.0,\"tau\":s[\"wage_tax\"],\"At\":s[\"initial_at\"],\n            \"Bt\":s[\"initial_bt\"],\"mt\":s[\"initial_mt\"],\"Ct\":s[\"initial_ct\"],\"AtTax\":0.0,\n            \"GovSurplus\":0.0,\"corptau\":s[\"corporate_tax\"],\"ramin\":0.02,\"ramax\":0.09,\n            \"wjtmin\":0.8,\"wjtmax\":1.3}"
+        },
+        {
+          "evidence_id": "S05:100-135",
+          "quote": "    )  # line 35, steady-state branch\n    knratio = kt / lt\n    wt0 = mt * (1.0 - alpha) * zt * knratio**alpha\n    rk = mt * alpha / (kt / yt)\n    thetat = theta / 2.0 * pit**2 * yt\n    investment = kt - kt_previous + delta * kt\n    profit = (1.0 - mt) * yt - thetat\n    if profit < 0.0:  # lines 48-51\n        profit = 0.0\n    corporate_tax = profit * corptau\n    ra0 = rk - delta + profit * (1.0 - corptau) / kt\n\n    ramin = _finite(province, \"ramin\")\n    ramax = _finite(province, \"ramax\")\n    wjtmin = _finite(province, \"wjtmin\")\n    wjtmax = _finite(province, \"wjtmax\")\n    if ramin > ramax or wjtmin > wjtmax:\n        raise ValueError(\"firm clipping minima must not exceed maxima\")\n    if ra0 > ramax:  # preserve lines 57-65 ordering\n        corporate_tax += (ra0 - ramax) * kt\n        ra = ramax\n    elif ra0 < ramin:\n        corporate_tax -= (ramin - ra0) * kt\n        ra = ramin\n    else:\n        ra = ra0\n    if wt0 < wjtmin:  # preserve lines 66-74 ordering\n        corporate_tax -= (wjtmin - wt0) * lt\n        wjt = wjtmin\n    elif wt0 > wjtmax:\n        corporate_tax += (wt0 - wjtmax) * lt\n        wjt = wjtmax\n    else:\n        wjt = wt0\n\n    govinc = corporate_tax + lt * wjt * tau + at_tax + gov_inv * ra - transfer"
+        },
+        {
+          "evidence_id": "S04:168-204",
+          "quote": "    migration = reconstruct_migration_labor(MigrationLaborInputs(\n        consumption_by_origin=household.ct,\n        population_by_origin=[province[\"N\"] for province in provinces],\n        old_firm_wage_by_destination=[province[\"wjt\"] for province in provinces],\n        tax_by_destination=[province[\"tau\"] for province in provinces],\n        phi_destination_origin=inputs.phi_destination_origin,\n        migration_wedge_destination_origin=inputs.migration_wedge_destination_origin,\n        gamma_c=inputs.params[\"ga\"],\n        phi_l=inputs.params[\"phi_l\"],\n    ))\n\n    capital = allocate_productive_capital(CapitalAllocationInputs(\n        illiquid_assets_at=household.at,\n        population=[province[\"N\"] for province in provinces],\n        inter_province_ratio=[province[\"inter_prv_ratio\"] for province in provinces],\n        old_firm_return_ra=[province[\"ra\"] for province in provinces],\n    ))\n\n    firms: list[FirmResult] = []\n    for index in range(n):\n        firm_source = dict(provinces[index])\n        firm_source[\"AtTax\"] = float(household.at_tax[index])\n        firm_source[\"Lt_prev\"] = float(household.household_lt[index])\n        firms.append(evaluate_firm(\n            firm_source,\n            float(capital.kt_supply[index]),\n            float(migration.lt_supply[index]),\n            inputs.params,\n        ))\n\n    composite_wage = composite_household_wages(\n        provinces,\n        [firm.wjt for firm in firms],\n        inputs.phi_destination_origin,\n        inputs.migration_wedge_destination_origin,\n        phi_l=inputs.params[\"phi_l\"],\n        alphal=inputs.params[\"alphal\"],"
+        }
+      ],
+      "what_this_does_not_prove": "Formula and position do not identify actual canonical bytes, payroll unit or a current 31-ID data mapping",
+      "minimum_missing_evidence": "Original canonical file, its producer, source data dictionary, province ID map and wage normalization"
+    },
+    {
+      "field_name": "tau_j / destination wage tax",
+      "source_path_and_lines": [
+        "S06:108-119",
+        "S01:42-63",
+        "S03:109-132",
+        "S05:81-84",
+        "S05:135-139"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S06:108-119",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S01:42-63",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/wage.py",
+          "sha256": "af2e2739d10b24ec02e8c20d6eb25faeade6c3acf6c81dae92b2d02601e25214",
+          "blob": "64d212eb075414c4600304903df965878065914e"
+        },
+        {
+          "evidence_id": "S03:109-132",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/migration_labor.py",
+          "sha256": "66600d6d1121db319b03383436999aa53b5e1aa5f8eecc72516fd1922b7b52dc",
+          "blob": "5a1cae1113f62407ffb3fa85939f55f7e9da2f42"
+        },
+        {
+          "evidence_id": "S05:81-84",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/firm.py",
+          "sha256": "0939886706b8bcb42f3a41fc244000e7f8ad01884c61afdbdd31036bee908218",
+          "blob": "ab40ac7210eb1b7730900c3c6223b1ed2bddbcac"
+        },
+        {
+          "evidence_id": "S05:135-139",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/firm.py",
+          "sha256": "0939886706b8bcb42f3a41fc244000e7f8ad01884c61afdbdd31036bee908218",
+          "blob": "ab40ac7210eb1b7730900c3c6223b1ed2bddbcac"
+        }
+      ],
+      "producer_function": "load_entry_state scalar wage_tax",
+      "direct_consumers": [
+        "wage aggregation",
+        "migration incentive",
+        "firm payroll tax"
+      ],
+      "formula_or_mapping": "Each initial state tau=s.wage_tax (one common scalar); uses taxes[destination] and lt*wjt*tau",
+      "province_axis_semantics": "destination j at all inspected uses; no independently sourced province-specific tax vector proved",
+      "vintage_or_snapshot": "Carried state tau; real tax vintage UNKNOWN",
+      "unit_status": "INFERRED: ratio in 1-tau-sigma; authoritative fraction/percent convention UNKNOWN",
+      "tax_semantics": "Workplace wage tax; not sigma; HA neutralized on the named composite path",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S06:108-119",
+          "quote": "    for i,name in enumerate(canonical[\"province_order\"]):\n        state={\"name\":name,\"N\":v[\"pop\"][i],\"alpha\":v[\"ind_alpha\"][i],\"Zt\":v[\"initialized_zt\"][i],\n            \"Kt0\":v[\"cap\"][i],\"Kt\":v[\"cap\"][i],\"Kt_prev\":v[\"cap\"][i],\"Lt\":v[\"pop\"][i],\n            \"Lt_prev\":v[\"pop\"][i],\"Yt0\":v[\"gdp\"][i],\"Yt\":v[\"gdp\"][i],\"Zt_1\":v[\"initialized_zt\"][i],\n            \"GovInv\":v[\"gov_inv\"][i],\"inter_prv_ratio\":v[\"inter_province_asset_ratio\"][i],\n            \"rb_gap\":s[\"rb_gap\"],\"rah\":s[\"rah\"],\"ra\":s[\"ra\"],\"it\":s[\"nominal_rate\"],\n            \"rb\":s[\"rb\"],\"rk\":s[\"rk\"],\"wjt\":s[\"wjt\"],\"w\":s[\"composite_wage\"],\n            \"Tt\":s[\"transfer_income\"],\"pit\":s[\"inflation\"],\"pit_1\":s[\"inflation\"],\n            \"totalpit\":s[\"inflation\"],\"epsilon_pi\":0.0,\"tau\":s[\"wage_tax\"],\"At\":s[\"initial_at\"],\n            \"Bt\":s[\"initial_bt\"],\"mt\":s[\"initial_mt\"],\"Ct\":s[\"initial_ct\"],\"AtTax\":0.0,\n            \"GovSurplus\":0.0,\"corptau\":s[\"corporate_tax\"],\"ramin\":0.02,\"ramax\":0.09,\n            \"wjtmin\":0.8,\"wjtmax\":1.3}"
+        },
+        {
+          "evidence_id": "S01:42-63",
+          "quote": "    taxes = []\n    for province in provinces:\n        try:\n            tax = float(province[\"tau\"])\n        except KeyError as exc:\n            raise ValueError(\"every province requires destination tau\") from exc\n        if not isfinite(tax):\n            raise ValueError(\"destination tau must be finite\")\n        taxes.append(tax)\n\n    exponent = 1.0 + 1.0 / phi_l\n    outer_exponent = phi_l / (1.0 + phi_l)\n    output: list[float] = []\n    for origin in range(count):\n        total = 0.0\n        for destination in range(count):\n            divisor = phi[destination, origin]\n            base = (\n                wages[destination]\n                * (1.0 - taxes[destination] - sigma[destination, origin])\n                / divisor\n            )"
+        },
+        {
+          "evidence_id": "S03:109-132",
+          "quote": "    for origin in range(n):\n        consumption_scale = inputs.consumption_by_origin[origin] ** (\n            -inputs.gamma_c / inputs.phi_l\n        )\n        for destination in range(n):\n            base = (\n                inputs.old_firm_wage_by_destination[destination]\n                * (\n                    1.0\n                    - inputs.tax_by_destination[destination]\n                    - inputs.migration_wedge_destination_origin[destination, origin]\n                )\n                / inputs.phi_destination_origin[destination, origin]\n            )\n            if not np.isfinite(base) or base < 0.0:\n                raise ValueError(\n                    \"Lt_seperate power base must be finite and non-negative \"\n                    f\"at destination={destination}, origin={origin}\"\n                )\n            value = (\n                consumption_scale\n                * base ** (1.0 / inputs.phi_l)\n                * inputs.population_by_origin[origin]\n            )"
+        },
+        {
+          "evidence_id": "S05:81-84",
+          "quote": "    corptau = _finite(province, \"corptau\")\n    at_tax = _finite(province, \"AtTax\")\n    tau = _finite(province, \"tau\")\n    transfer = _finite(province, \"Tt\")"
+        },
+        {
+          "evidence_id": "S05:135-139",
+          "quote": "    govinc = corporate_tax + lt * wjt * tau + at_tax + gov_inv * ra - transfer\n    result = FirmResult(\n        Kt=kt, Lt=lt, Yt=yt, mt=mt, KNratio=knratio, wt0=wt0, wjt=wjt,\n        rk=rk, Thetat=thetat, It=investment, PIt=profit, Corptax=corporate_tax,\n        ra0=ra0, ra=ra, Govinc=govinc,"
+        }
+      ],
+      "what_this_does_not_prove": "Positional consistency and a common seed do not prove province-tax data authority or a heterogeneous rate schedule",
+      "minimum_missing_evidence": "Authoritative policy/tax file, fraction/percent convention, validity dates and exact ID joins"
+    },
+    {
+      "field_name": "sigma[destination,origin] / sigmau",
+      "source_path_and_lines": [
+        "S06:369-373",
+        "S13:40-55",
+        "S01:55-63",
+        "S03:113-132"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S06:369-373",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S13:40-55",
+          "archive_member": "evidence_sanitized.zip!/source_originals/supplemental_fixed_commit/src/ch5_two_asset_hank/multi_province/stationary_runtime.py.txt",
+          "sha256": "226be912ab776f57a8d8eface912ab2a3331e865638ac36976f6d578bdb086a0",
+          "blob": "8717cfa759948bd1ad3c8cd788f8f4736f250598"
+        },
+        {
+          "evidence_id": "S01:55-63",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/wage.py",
+          "sha256": "af2e2739d10b24ec02e8c20d6eb25faeade6c3acf6c81dae92b2d02601e25214",
+          "blob": "64d212eb075414c4600304903df965878065914e"
+        },
+        {
+          "evidence_id": "S03:113-132",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/migration_labor.py",
+          "sha256": "66600d6d1121db319b03383436999aa53b5e1aa5f8eecc72516fd1922b7b52dc",
+          "blob": "5a1cae1113f62407ffb3fa85939f55f7e9da2f42"
+        }
+      ],
+      "producer_function": "canonical.matrices.sigmau passed through OnlineStationaryInputs",
+      "direct_consumers": [
+        "wage aggregation",
+        "migration reconstruction"
+      ],
+      "formula_or_mapping": "wjt[j]*(1-tau[j]-sigma[j,i])/phi[j,i]; no producer or raw matrix data present among the selected sources",
+      "province_axis_semantics": "row=destination j; column=origin i",
+      "vintage_or_snapshot": "External runtime matrix; raw source date and freeze identity UNKNOWN",
+      "unit_status": "UNKNOWN: subtraction suggests a dimensionless wedge locally, which is inference only",
+      "tax_semantics": "Distinct wedge, not demonstrated government wage-tax revenue",
+      "canonical_status": "UNKNOWN",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S06:369-373",
+          "quote": "    p={\"ga\":2.0,\"phi_l\":5.0,\"alphal\":1.0,\"epsilon\":10.0,\"theta\":100.0,\"delta\":0.025,\n       \"istar\":0.015,\"rho_pi\":1.25,\"totalpit\":0.02,\"epsilon_pi\":0.0}\n    try:\n        result=run_online_stationary(OnlineStationaryInputs(tuple(canonical[\"province_order\"]),states,p,\n            phi_matrix,np.array(canonical[\"matrices\"][\"sigmau\"]),solve_batch,1e-9,500,True))"
+        },
+        {
+          "evidence_id": "S13:40-55",
+          "quote": "    if n < 2 or len(states) != n or any(str(s.get(\"name\", \"\")) != order[i] for i, s in enumerate(states)):\n        raise ValueError(\"province state and order mismatch\")\n    phi = np.asarray(inputs.phi_destination_origin, dtype=float)\n    wedges = np.asarray(inputs.migration_wedge_destination_origin, dtype=float)\n    if phi.shape != (n, n) or wedges.shape != (n, n):\n        raise ValueError(\"cross-province matrices have the wrong shape\")\n    if inputs.reg_threshold <= 0 or inputs.max_iterations < 1:\n        raise ValueError(\"invalid controller bounds\")\n    tkn_ratio = np.full(n, 3.0, dtype=float)\n    history: list[IterationRecord] = []\n    for iteration in range(1, inputs.max_iterations + 1):\n        entering = states\n        batch = inputs.household_solver(entering, iteration)\n        turn = run_source_faithful_one_turn(OneTurnInputs(\n            order, entering, MappingProxyType(dict(inputs.params)), phi, wedges, batch\n        ))"
+        },
+        {
+          "evidence_id": "S01:55-63",
+          "quote": "    for origin in range(count):\n        total = 0.0\n        for destination in range(count):\n            divisor = phi[destination, origin]\n            base = (\n                wages[destination]\n                * (1.0 - taxes[destination] - sigma[destination, origin])\n                / divisor\n            )"
+        },
+        {
+          "evidence_id": "S03:113-132",
+          "quote": "        for destination in range(n):\n            base = (\n                inputs.old_firm_wage_by_destination[destination]\n                * (\n                    1.0\n                    - inputs.tax_by_destination[destination]\n                    - inputs.migration_wedge_destination_origin[destination, origin]\n                )\n                / inputs.phi_destination_origin[destination, origin]\n            )\n            if not np.isfinite(base) or base < 0.0:\n                raise ValueError(\n                    \"Lt_seperate power base must be finite and non-negative \"\n                    f\"at destination={destination}, origin={origin}\"\n                )\n            value = (\n                consumption_scale\n                * base ** (1.0 / inputs.phi_l)\n                * inputs.population_by_origin[origin]\n            )"
+        }
+      ],
+      "what_this_does_not_prove": "Axis evidence does not decide recipient, actual source, estimated meaning, risk status or units",
+      "minimum_missing_evidence": "Original sigmau matrix, axis IDs/order, dictionary, construction function, date and accepted economic interpretation"
+    },
+    {
+      "field_name": "phi[destination,origin] and indicator",
+      "source_path_and_lines": [
+        "S06:108-114",
+        "S06:337-350",
+        "S13:40-55",
+        "S14:153-167",
+        "S01:55-72"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S06:108-114",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S06:337-350",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S13:40-55",
+          "archive_member": "evidence_sanitized.zip!/source_originals/supplemental_fixed_commit/src/ch5_two_asset_hank/multi_province/stationary_runtime.py.txt",
+          "sha256": "226be912ab776f57a8d8eface912ab2a3331e865638ac36976f6d578bdb086a0",
+          "blob": "8717cfa759948bd1ad3c8cd788f8f4736f250598"
+        },
+        {
+          "evidence_id": "S14:153-167",
+          "archive_member": "evidence_sanitized.zip!/source_originals/supplemental_fixed_commit/src/ch5_two_asset_hank/multi_province/steady_state.py.txt",
+          "sha256": "7065d0fcbfda6a88c8f773debdf277f6e300a8e0195b7cc635f7a0033d74d88c",
+          "blob": "5c5b56e6a2eb82fab4e80eb7b8e5bbbf97f08c22"
+        },
+        {
+          "evidence_id": "S01:55-72",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/wage.py",
+          "sha256": "af2e2739d10b24ec02e8c20d6eb25faeade6c3acf6c81dae92b2d02601e25214",
+          "blob": "64d212eb075414c4600304903df965878065914e"
+        }
+      ],
+      "producer_function": "run_python_once.<locals>.solve_batch",
+      "direct_consumers": [
+        "one_turn migration",
+        "one_turn composite wage"
+      ],
+      "formula_or_mapping": "q_j=entering.Yt_j/entering.Lt_j; phi[j,i]=1-0.3*(q_j-q_i)/(q_j+q_i). Initial Lt=v.pop; later Lt overwritten by FirmResult.Lt in _post_turn_states",
+      "province_axis_semantics": "destination q_j in rows, origin q_i in columns",
+      "vintage_or_snapshot": "Recomputed from entering iteration k; w consumed in the same callback remains carried; same-generating-vintage BLOCKED",
+      "unit_status": "UNKNOWN: preference scale and underlying Y/L normalization not defined by a data dictionary",
+      "tax_semantics": "Divisor/preference matrix; no wage-tax application at its generation",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S06:108-114",
+          "quote": "    for i,name in enumerate(canonical[\"province_order\"]):\n        state={\"name\":name,\"N\":v[\"pop\"][i],\"alpha\":v[\"ind_alpha\"][i],\"Zt\":v[\"initialized_zt\"][i],\n            \"Kt0\":v[\"cap\"][i],\"Kt\":v[\"cap\"][i],\"Kt_prev\":v[\"cap\"][i],\"Lt\":v[\"pop\"][i],\n            \"Lt_prev\":v[\"pop\"][i],\"Yt0\":v[\"gdp\"][i],\"Yt\":v[\"gdp\"][i],\"Zt_1\":v[\"initialized_zt\"][i],\n            \"GovInv\":v[\"gov_inv\"][i],\"inter_prv_ratio\":v[\"inter_province_asset_ratio\"][i],\n            \"rb_gap\":s[\"rb_gap\"],\"rah\":s[\"rah\"],\"ra\":s[\"ra\"],\"it\":s[\"nominal_rate\"],\n            \"rb\":s[\"rb\"],\"rk\":s[\"rk\"],\"wjt\":s[\"wjt\"],\"w\":s[\"composite_wage\"],"
+        },
+        {
+          "evidence_id": "S06:337-350",
+          "quote": "    phi_matrix=np.ones((31,31),dtype=float)\n    def solve_batch(snapshot,iteration):\n        nonlocal call_count\n        productivity=np.array([float(s[\"Yt\"])/float(s[\"Lt\"]) for s in snapshot])\n        phi_matrix[:]=1.0-0.3*(productivity[:,None]-productivity[None,:])/(productivity[:,None]+productivity[None,:])\n        outputs=[]\n        _write_json(root/f'turn_{iteration:03d}_household_inputs.json', {\n            \"iteration\":iteration,\"state_entering_turn\":snapshot,\"phi_destination_origin\":phi_matrix})\n        try:\n            for province_index,state in enumerate(snapshot):\n                initial,labor=_source_initial_arrays(state,grid,params)\n                result=solve_matlab_source_postloop_household(grid,params,HouseholdInputs(\n                    float(state[\"rah\"]),float(state[\"rb\"]),0.0,  # tau already in state['w']\n                    np.array([state[\"w\"]]),np.array([0.0]),np.array([1.0])),initial,labor,"
+        },
+        {
+          "evidence_id": "S13:40-55",
+          "quote": "    if n < 2 or len(states) != n or any(str(s.get(\"name\", \"\")) != order[i] for i, s in enumerate(states)):\n        raise ValueError(\"province state and order mismatch\")\n    phi = np.asarray(inputs.phi_destination_origin, dtype=float)\n    wedges = np.asarray(inputs.migration_wedge_destination_origin, dtype=float)\n    if phi.shape != (n, n) or wedges.shape != (n, n):\n        raise ValueError(\"cross-province matrices have the wrong shape\")\n    if inputs.reg_threshold <= 0 or inputs.max_iterations < 1:\n        raise ValueError(\"invalid controller bounds\")\n    tkn_ratio = np.full(n, 3.0, dtype=float)\n    history: list[IterationRecord] = []\n    for iteration in range(1, inputs.max_iterations + 1):\n        entering = states\n        batch = inputs.household_solver(entering, iteration)\n        turn = run_source_faithful_one_turn(OneTurnInputs(\n            order, entering, MappingProxyType(dict(inputs.params)), phi, wedges, batch\n        ))"
+        },
+        {
+          "evidence_id": "S14:153-167",
+          "quote": "    for i, old in enumerate(states):\n        firm = turn.firms[i]\n        state = dict(old)\n        state.update({\n            \"Ct\": float(batch.ct[i]), \"At\": float(batch.at[i]), \"Bt\": float(batch.bt[i]),\n            \"AtTax\": float(batch.at_tax[i]), \"convergent\": bool(batch.converged[i]),\n            \"Lt_supply\": float(turn.migration.lt_supply[i]),\n            \"Kt_supply\": float(turn.capital.kt_supply[i]),\n            \"rah\": float(turn.capital.household_illiquid_return_rah[i]),\n            \"w\": float(turn.household_composite_wage[i]), \"it\": turn.monetary.it,\n            \"rb\": turn.monetary.rb, \"Yt_1\": float(old[\"Yt\"]),\n            \"Kt_prev\": firm.Kt, \"Lt_prev\": firm.Lt, \"Zt_1\": float(old[\"Zt\"]),\n            \"pit_1\": float(old[\"pit\"]),\n        })\n        state.update(firm.as_source_dict())"
+        },
+        {
+          "evidence_id": "S01:55-72",
+          "quote": "    for origin in range(count):\n        total = 0.0\n        for destination in range(count):\n            divisor = phi[destination, origin]\n            base = (\n                wages[destination]\n                * (1.0 - taxes[destination] - sigma[destination, origin])\n                / divisor\n            )\n            if base < 0.0:\n                raise ValueError(\"wage_caculate source power base would be negative/non-real\")\n            term = divisor * base**exponent\n            if not isfinite(term):\n                raise ValueError(\"wage_caculate term must be finite\")\n            total += term\n        if total < 0.0:\n            raise ValueError(\"wage_caculate outer power base would be negative/non-real\")\n        value = alphal ** (1.0 / (1.0 + phi_l)) * total**outer_exponent"
+        }
+      ],
+      "what_this_does_not_prove": "Y/L code is proved; real productivity meaning, denominator comparability and allowed lag are not. Iteration index is not physical time",
+      "minimum_missing_evidence": "Indicator dictionary, population vs firm labor bridge, reference dates and Owner synchronous/lagged decision"
+    },
+    {
+      "field_name": "initial canonical w / composite_after_tax_wage",
+      "source_path_and_lines": [
+        "S06:101-121",
+        "S06:171-185",
+        "S06:345-351"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S06:101-121",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S06:171-185",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S06:345-351",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        }
+      ],
+      "producer_function": "load_entry_state reads canonical.scalars.composite_wage",
+      "direct_consumers": [
+        "_source_initial_arrays",
+        "HouseholdInputs.wages"
+      ],
+      "formula_or_mapping": "state.w=s.composite_wage for all provinces; no composite_household_wages invocation in loader",
+      "province_axis_semantics": "Common scalar copied to origin records; no origin-specific net-wage derivation supplied",
+      "vintage_or_snapshot": "canonical annual-binding labels present; raw canonical and wage derivation vintage UNKNOWN/BLOCKED",
+      "unit_status": "UNKNOWN: money, labor, price base and period",
+      "tax_semantics": "Declared destination-tax-net by adapter comments; initial seed actually net is unproved",
+      "canonical_status": "BLOCKED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S06:101-121",
+          "quote": "def load_entry_state(canonical_path: Path) -> tuple[dict, tuple[dict[str, object], ...]]:\n    canonical = json.loads(Path(canonical_path).read_text(encoding=\"utf-8\"))\n    if canonical[\"binding\"] != {\"analysis_index\":1,\"calendar_year\":2009,\"data_mat_index\":1,\n            \"output_filename_year\":2009,\"regression_vintage_key\":10,\"workbook_data_row_index\":10}:\n        raise ValueError(\"canonical annual binding mismatch\")\n    v=canonical[\"vectors\"]; s=canonical[\"scalars\"]\n    states=[]\n    for i,name in enumerate(canonical[\"province_order\"]):\n        state={\"name\":name,\"N\":v[\"pop\"][i],\"alpha\":v[\"ind_alpha\"][i],\"Zt\":v[\"initialized_zt\"][i],\n            \"Kt0\":v[\"cap\"][i],\"Kt\":v[\"cap\"][i],\"Kt_prev\":v[\"cap\"][i],\"Lt\":v[\"pop\"][i],\n            \"Lt_prev\":v[\"pop\"][i],\"Yt0\":v[\"gdp\"][i],\"Yt\":v[\"gdp\"][i],\"Zt_1\":v[\"initialized_zt\"][i],\n            \"GovInv\":v[\"gov_inv\"][i],\"inter_prv_ratio\":v[\"inter_province_asset_ratio\"][i],\n            \"rb_gap\":s[\"rb_gap\"],\"rah\":s[\"rah\"],\"ra\":s[\"ra\"],\"it\":s[\"nominal_rate\"],\n            \"rb\":s[\"rb\"],\"rk\":s[\"rk\"],\"wjt\":s[\"wjt\"],\"w\":s[\"composite_wage\"],\n            \"Tt\":s[\"transfer_income\"],\"pit\":s[\"inflation\"],\"pit_1\":s[\"inflation\"],\n            \"totalpit\":s[\"inflation\"],\"epsilon_pi\":0.0,\"tau\":s[\"wage_tax\"],\"At\":s[\"initial_at\"],\n            \"Bt\":s[\"initial_bt\"],\"mt\":s[\"initial_mt\"],\"Ct\":s[\"initial_ct\"],\"AtTax\":0.0,\n            \"GovSurplus\":0.0,\"corptau\":s[\"corporate_tax\"],\"ramin\":0.02,\"ramax\":0.09,\n            \"wjtmin\":0.8,\"wjtmax\":1.3}\n        states.append(state)\n    return canonical, tuple(states)"
+        },
+        {
+          "evidence_id": "S06:171-185",
+          "quote": "def _source_initial_arrays(state: Mapping[str, object], grid: MatlabFaithfulHJBGrid, params: EconomicParams):\n    # state['w'] is destination-tax-net; state['tau'] remains fiscal metadata.\n    shape=(grid.b.size,grid.a.size,grid.z.size); labor=np.empty(shape); value=np.empty(shape)\n    for k,z in enumerate(grid.z):\n        for j,a in enumerate(grid.a):\n            effective=float(matlab_faithful_illiquid_return(a,grid.a[-1],float(state[\"rah\"])))\n            for i,b in enumerate(grid.b):\n                rb=float(state[\"rb\"])+(float(state[\"rb_gap\"]) if b<0 else 0.0)\n                temp=effective*effective+rb*b+float(state[\"Tt\"])\n                wage=float(state[\"w\"])*z\n                l,_=_source_labor_root(wage=wage,temp=temp,frisch_l=1.0/params.phi,ga=params.gamma_c)\n                c=wage*l+rb*b+float(state[\"Tt\"])\n                labor[i,j,k]=l\n                value[i,j,k]=(c**(1-params.gamma_c)/(1-params.gamma_c)-l**6/6)/params.rho\n    return value,labor"
+        },
+        {
+          "evidence_id": "S06:345-351",
+          "quote": "        try:\n            for province_index,state in enumerate(snapshot):\n                initial,labor=_source_initial_arrays(state,grid,params)\n                result=solve_matlab_source_postloop_household(grid,params,HouseholdInputs(\n                    float(state[\"rah\"]),float(state[\"rb\"]),0.0,  # tau already in state['w']\n                    np.array([state[\"w\"]]),np.array([0.0]),np.array([1.0])),initial,labor,\n                    float(state[\"Tt\"]),float(state[\"rb_gap\"]),numerics)"
+        }
+      ],
+      "what_this_does_not_prove": "Source key is confirmed, canonical source identity and same-snapshot net-wage construction are not; BLOCKED_SOURCE_NOT_ESTABLISHED",
+      "minimum_missing_evidence": "Exact original canonical bytes and SHA verification, producer function, wjt/tau/sigma/phi inputs and derivation receipt"
+    },
+    {
+      "field_name": "next composite w",
+      "source_path_and_lines": [
+        "S01:52-76",
+        "S04:198-205",
+        "S14:153-167"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S01:52-76",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/wage.py",
+          "sha256": "af2e2739d10b24ec02e8c20d6eb25faeade6c3acf6c81dae92b2d02601e25214",
+          "blob": "64d212eb075414c4600304903df965878065914e"
+        },
+        {
+          "evidence_id": "S04:198-205",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "sha256": "afeadbffd88e1405c2f32d22fd256e7fd0451fc4ecbfe2492bc0db5dbdc728fa",
+          "blob": "7c85ea1651c46dd91884f37867253c963292ca79"
+        },
+        {
+          "evidence_id": "S14:153-167",
+          "archive_member": "evidence_sanitized.zip!/source_originals/supplemental_fixed_commit/src/ch5_two_asset_hank/multi_province/steady_state.py.txt",
+          "sha256": "7065d0fcbfda6a88c8f773debdf277f6e300a8e0195b7cc635f7a0033d74d88c",
+          "blob": "5c5b56e6a2eb82fab4e80eb7b8e5bbbf97f08c22"
+        }
+      ],
+      "producer_function": "composite_household_wages; _post_turn_states",
+      "direct_consumers": [
+        "next callback _source_initial_arrays and HouseholdInputs"
+      ],
+      "formula_or_mapping": "alphal^(1/(1+phi_l)) * (sum_j phi[j,i]*(wjt_new[j]*(1-tau_enter[j]-sigma[j,i])/phi[j,i])^(1+1/phi_l))^(phi_l/(1+phi_l)); carried into next state.w",
+      "province_axis_semantics": "output origin i; sums all destination j",
+      "vintage_or_snapshot": "Macro result k stored for next entering state; phi computed at callback k from entering Y/L",
+      "unit_status": "UNKNOWN: model coefficient scale known algebraically only",
+      "tax_semantics": "Contains destination wage tax in expression",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S01:52-76",
+          "quote": "    exponent = 1.0 + 1.0 / phi_l\n    outer_exponent = phi_l / (1.0 + phi_l)\n    output: list[float] = []\n    for origin in range(count):\n        total = 0.0\n        for destination in range(count):\n            divisor = phi[destination, origin]\n            base = (\n                wages[destination]\n                * (1.0 - taxes[destination] - sigma[destination, origin])\n                / divisor\n            )\n            if base < 0.0:\n                raise ValueError(\"wage_caculate source power base would be negative/non-real\")\n            term = divisor * base**exponent\n            if not isfinite(term):\n                raise ValueError(\"wage_caculate term must be finite\")\n            total += term\n        if total < 0.0:\n            raise ValueError(\"wage_caculate outer power base would be negative/non-real\")\n        value = alphal ** (1.0 / (1.0 + phi_l)) * total**outer_exponent\n        if not isfinite(value) or value < 0.0:\n            raise ValueError(\"wage_caculate produced an invalid composite wage\")\n        output.append(value)\n    return tuple(output)"
+        },
+        {
+          "evidence_id": "S04:198-205",
+          "quote": "    composite_wage = composite_household_wages(\n        provinces,\n        [firm.wjt for firm in firms],\n        inputs.phi_destination_origin,\n        inputs.migration_wedge_destination_origin,\n        phi_l=inputs.params[\"phi_l\"],\n        alphal=inputs.params[\"alphal\"],\n    )"
+        },
+        {
+          "evidence_id": "S14:153-167",
+          "quote": "    for i, old in enumerate(states):\n        firm = turn.firms[i]\n        state = dict(old)\n        state.update({\n            \"Ct\": float(batch.ct[i]), \"At\": float(batch.at[i]), \"Bt\": float(batch.bt[i]),\n            \"AtTax\": float(batch.at_tax[i]), \"convergent\": bool(batch.converged[i]),\n            \"Lt_supply\": float(turn.migration.lt_supply[i]),\n            \"Kt_supply\": float(turn.capital.kt_supply[i]),\n            \"rah\": float(turn.capital.household_illiquid_return_rah[i]),\n            \"w\": float(turn.household_composite_wage[i]), \"it\": turn.monetary.it,\n            \"rb\": turn.monetary.rb, \"Yt_1\": float(old[\"Yt\"]),\n            \"Kt_prev\": firm.Kt, \"Lt_prev\": firm.Lt, \"Zt_1\": float(old[\"Zt\"]),\n            \"pit_1\": float(old[\"pit\"]),\n        })\n        state.update(firm.as_source_dict())"
+        }
+      ],
+      "what_this_does_not_prove": "No real derived vector was computed, sealed or compared to a canonical seed; no final-price repricing is shown",
+      "minimum_missing_evidence": "Owner wage snapshot definition and provenance-bearing freeze record"
+    },
+    {
+      "field_name": "HouseholdInputs.wages",
+      "source_path_and_lines": [
+        "S02:204-226",
+        "S06:345-351",
+        "S19:53-78",
+        "S19:131-135"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S02:204-226",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/household_adapter.py",
+          "sha256": "c248bdeccfce3427b74d11b3c893cd5327659dfb6e4d4f34e8bbe379c8f2c569",
+          "blob": "2d689e72067251f2da46fd807c5edca60341867a"
+        },
+        {
+          "evidence_id": "S06:345-351",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S19:53-78",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/exports/matlab_faithful_two_asset_ha.py",
+          "sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+          "blob": "9e7dc9556a2b76811e78f89999abecc045886106"
+        },
+        {
+          "evidence_id": "S19:131-135",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/exports/matlab_faithful_two_asset_ha.py",
+          "sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+          "blob": "9e7dc9556a2b76811e78f89999abecc045886106"
+        }
+      ],
+      "producer_function": "build_static_household_call or MP4B direct constructor",
+      "direct_consumers": [
+        "labor_from_vb",
+        "local policy / HJB budget"
+      ],
+      "formula_or_mapping": "wages=(composite_wage,) / [state.w]; generic net_wage=wages*(1-tau-migration_costs)*z",
+      "province_axis_semantics": "Named multi-province path uses singleton labor choice per origin, not 31 assets or destination wage entries",
+      "vintage_or_snapshot": "Same state.w used by initializer and solve; raw underlying price vintage UNKNOWN",
+      "unit_status": "UNKNOWN",
+      "tax_semantics": "Net composite path declares net inputs; generic API applies caller-provided tau",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S02:204-226",
+          "quote": "def build_static_household_call(inputs: MultiProvinceHouseholdInputs) -> StaticHouseholdCall:\n    \"\"\"Map a destination-tax-net composite wage without invoking the HA solver.\n\n    Generic HA callers supplying gross wages still use their own nonzero tau.\n    Outer tau is metadata here and remains available for destination fiscal use.\n    \"\"\"\n\n    return StaticHouseholdCall(\n        household_input_kwargs=MappingProxyType({\n            \"r_a\": inputs.rah,\n            \"r_b\": inputs.rb,\n            \"tau\": 0.0,\n            \"wages\": (inputs.composite_wage,),\n            \"migration_costs\": (inputs.composite_migration_cost,),\n            \"labor_weights\": (inputs.composite_labor_weight,),\n        }),\n        grid=inputs.grid,\n        economic_params=inputs.economic_params,\n        initial_value=inputs.initial_value,\n        baseline_labor=inputs.baseline_labor,\n        transfer_income=inputs.transfer_income,\n        borrowing_rate_gap=inputs.borrowing_rate_gap,\n        numerics=inputs.numerics,"
+        },
+        {
+          "evidence_id": "S06:345-351",
+          "quote": "        try:\n            for province_index,state in enumerate(snapshot):\n                initial,labor=_source_initial_arrays(state,grid,params)\n                result=solve_matlab_source_postloop_household(grid,params,HouseholdInputs(\n                    float(state[\"rah\"]),float(state[\"rb\"]),0.0,  # tau already in state['w']\n                    np.array([state[\"w\"]]),np.array([0.0]),np.array([1.0])),initial,labor,\n                    float(state[\"Tt\"]),float(state[\"rb_gap\"]),numerics)"
+        },
+        {
+          "evidence_id": "S19:53-78",
+          "quote": "class HouseholdInputs:\n    r_a: float\n    r_b: float\n    tau: float\n    wages: np.ndarray\n    migration_costs: np.ndarray\n    labor_weights: np.ndarray\n\n    def __post_init__(self) -> None:\n        for name in (\"wages\", \"migration_costs\", \"labor_weights\"):\n            array = np.array(getattr(self, name), dtype=float, copy=True)\n            if array.ndim != 1 or array.size == 0 or not np.all(np.isfinite(array)):\n                raise ValueError(f\"{name} must be a non-empty finite vector\")\n            array.flags.writeable = False\n            object.__setattr__(self, name, array)\n        if not (self.wages.shape == self.migration_costs.shape == self.labor_weights.shape):\n            raise ValueError(\"province input vectors must share one shape\")\n        if not np.all(self.wages >= 0) or not np.all(self.labor_weights > 0):\n            raise ValueError(\"wages must be non-negative and labor weights positive\")\n        if not np.isfinite([self.r_a, self.r_b, self.tau]).all():\n            raise ValueError(\"rates and tax must be finite\")\n        if np.any(1.0 - self.tau - self.migration_costs < 0.0):\n            raise ValueError(\"after-tax migration wedges must be non-negative\")\n        effective_wages = self.wages * (1.0 - self.tau - self.migration_costs)\n        if not np.any(effective_wages > 0.0):\n            raise ValueError(\"at least one province must have a strictly positive effective wage\")"
+        },
+        {
+          "evidence_id": "S19:131-135",
+          "quote": "def labor_from_vb(v_b: float, z: float, inputs: HouseholdInputs, params: EconomicParams) -> np.ndarray:\n    if v_b <= 0 or z < 0:\n        raise ValueError(\"labor FOC requires V_b > 0 and z >= 0\")\n    net_wage = inputs.wages * (1.0 - inputs.tau - inputs.migration_costs) * z\n    labor = np.power(v_b * net_wage / inputs.labor_weights, 1.0 / params.phi)"
+        }
+      ],
+      "what_this_does_not_prove": "Named caller mapping does not validate actual net status or all other repository callers",
+      "minimum_missing_evidence": "Accepted original wage derivation and full real snapshot tuple"
+    },
+    {
+      "field_name": "HouseholdInputs.tau",
+      "source_path_and_lines": [
+        "S02:204-218",
+        "S06:345-351",
+        "S19:53-78",
+        "S19:131-135",
+        "S19:280-286"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S02:204-218",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/household_adapter.py",
+          "sha256": "c248bdeccfce3427b74d11b3c893cd5327659dfb6e4d4f34e8bbe379c8f2c569",
+          "blob": "2d689e72067251f2da46fd807c5edca60341867a"
+        },
+        {
+          "evidence_id": "S06:345-351",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S19:53-78",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/exports/matlab_faithful_two_asset_ha.py",
+          "sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+          "blob": "9e7dc9556a2b76811e78f89999abecc045886106"
+        },
+        {
+          "evidence_id": "S19:131-135",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/exports/matlab_faithful_two_asset_ha.py",
+          "sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+          "blob": "9e7dc9556a2b76811e78f89999abecc045886106"
+        },
+        {
+          "evidence_id": "S19:280-286",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/exports/matlab_faithful_two_asset_ha.py",
+          "sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+          "blob": "9e7dc9556a2b76811e78f89999abecc045886106"
+        }
+      ],
+      "producer_function": "Named adapter/MP4B set 0.0; generic constructor accepts scalar tau",
+      "direct_consumers": [
+        "generic labor FOC",
+        "local budget"
+      ],
+      "formula_or_mapping": "Only destination-net composite callers set HA tau=0; generic equations keep 1-tau-migration_costs",
+      "province_axis_semantics": "Scalar per origin HA invocation, not a substitute destination-rate schedule",
+      "vintage_or_snapshot": "Named tuple shares state reads, actual real snapshot UNKNOWN",
+      "unit_status": "INFERRED: rate factor; real policy/period convention UNKNOWN",
+      "tax_semantics": "Single application boundary is local to net-composite path; nonzero generic tau retained",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S02:204-218",
+          "quote": "def build_static_household_call(inputs: MultiProvinceHouseholdInputs) -> StaticHouseholdCall:\n    \"\"\"Map a destination-tax-net composite wage without invoking the HA solver.\n\n    Generic HA callers supplying gross wages still use their own nonzero tau.\n    Outer tau is metadata here and remains available for destination fiscal use.\n    \"\"\"\n\n    return StaticHouseholdCall(\n        household_input_kwargs=MappingProxyType({\n            \"r_a\": inputs.rah,\n            \"r_b\": inputs.rb,\n            \"tau\": 0.0,\n            \"wages\": (inputs.composite_wage,),\n            \"migration_costs\": (inputs.composite_migration_cost,),\n            \"labor_weights\": (inputs.composite_labor_weight,),"
+        },
+        {
+          "evidence_id": "S06:345-351",
+          "quote": "        try:\n            for province_index,state in enumerate(snapshot):\n                initial,labor=_source_initial_arrays(state,grid,params)\n                result=solve_matlab_source_postloop_household(grid,params,HouseholdInputs(\n                    float(state[\"rah\"]),float(state[\"rb\"]),0.0,  # tau already in state['w']\n                    np.array([state[\"w\"]]),np.array([0.0]),np.array([1.0])),initial,labor,\n                    float(state[\"Tt\"]),float(state[\"rb_gap\"]),numerics)"
+        },
+        {
+          "evidence_id": "S19:53-78",
+          "quote": "class HouseholdInputs:\n    r_a: float\n    r_b: float\n    tau: float\n    wages: np.ndarray\n    migration_costs: np.ndarray\n    labor_weights: np.ndarray\n\n    def __post_init__(self) -> None:\n        for name in (\"wages\", \"migration_costs\", \"labor_weights\"):\n            array = np.array(getattr(self, name), dtype=float, copy=True)\n            if array.ndim != 1 or array.size == 0 or not np.all(np.isfinite(array)):\n                raise ValueError(f\"{name} must be a non-empty finite vector\")\n            array.flags.writeable = False\n            object.__setattr__(self, name, array)\n        if not (self.wages.shape == self.migration_costs.shape == self.labor_weights.shape):\n            raise ValueError(\"province input vectors must share one shape\")\n        if not np.all(self.wages >= 0) or not np.all(self.labor_weights > 0):\n            raise ValueError(\"wages must be non-negative and labor weights positive\")\n        if not np.isfinite([self.r_a, self.r_b, self.tau]).all():\n            raise ValueError(\"rates and tax must be finite\")\n        if np.any(1.0 - self.tau - self.migration_costs < 0.0):\n            raise ValueError(\"after-tax migration wedges must be non-negative\")\n        effective_wages = self.wages * (1.0 - self.tau - self.migration_costs)\n        if not np.any(effective_wages > 0.0):\n            raise ValueError(\"at least one province must have a strictly positive effective wage\")"
+        },
+        {
+          "evidence_id": "S19:131-135",
+          "quote": "def labor_from_vb(v_b: float, z: float, inputs: HouseholdInputs, params: EconomicParams) -> np.ndarray:\n    if v_b <= 0 or z < 0:\n        raise ValueError(\"labor FOC requires V_b > 0 and z >= 0\")\n    net_wage = inputs.wages * (1.0 - inputs.tau - inputs.migration_costs) * z\n    labor = np.power(v_b * net_wage / inputs.labor_weights, 1.0 / params.phi)"
+        },
+        {
+          "evidence_id": "S19:280-286",
+          "quote": "    net_wage = float(\n        local_inputs.wages[0]\n        * (1.0 - local_inputs.tau - local_inputs.migration_costs[0])\n        * z\n    )\n    liquid_resources_b = net_wage * labor_b + transfer_income + effective_r_b * b\n    liquid_resources_f = net_wage * labor_f + transfer_income + effective_r_b * b"
+        }
+      ],
+      "what_this_does_not_prove": "No license to globally zero tau; initial wage being tax-net remains unproven",
+      "minimum_missing_evidence": "Seed net-wage authority plus separately authorized production admission"
+    },
+    {
+      "field_name": "household consumption Ct / c_ss",
+      "source_path_and_lines": [
+        "S19:619-629",
+        "S15:30-41",
+        "S06:345-366"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S19:619-629",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/exports/matlab_faithful_two_asset_ha.py",
+          "sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+          "blob": "9e7dc9556a2b76811e78f89999abecc045886106"
+        },
+        {
+          "evidence_id": "S15:30-41",
+          "archive_member": "evidence_sanitized.zip!/source_originals/supplemental_fixed_commit/validators/multi_province/mp4b_matlab_source_postloop_household_adapter.py.txt",
+          "sha256": "8a6308870606a02886e9a8e4b32e942a7d433237405e6b9e86ee4175fb2dff06",
+          "blob": "0033baee136c0328e80ffb8b794a88d4405c976c"
+        },
+        {
+          "evidence_id": "S06:345-366",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        }
+      ],
+      "producer_function": "aggregate_stationary_household",
+      "direct_consumers": [
+        "PreFrozenHouseholdOutputBatch.ct",
+        "migration consumption_by_origin"
+      ],
+      "formula_or_mapping": "c_ss=sum(C*g*db*da); callback maps agg.c_ss into ct",
+      "province_axis_semantics": "HA (b,a,z) grid then origin batch order",
+      "vintage_or_snapshot": "Household solution at entering prices if run; none run this task",
+      "unit_status": "UNKNOWN: currency, per-household/person reference and model period",
+      "tax_semantics": "Consumption itself not a payroll-tax base",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S19:619-629",
+          "quote": "def aggregate_stationary_household(grid, consumption, labor, density):\n    \"\"\"Exact MATLAB sums; L is effective z-weighted household labor, not GE labor.\"\"\"\n    shape=(grid.b.size,grid.a.size,grid.z.size)\n    C=np.asarray(consumption,dtype=float); l=np.asarray(labor,dtype=float); g=np.asarray(density,dtype=float)\n    if C.shape!=shape or l.shape!=shape or g.shape!=shape or not np.isfinite(C).all() or not np.isfinite(l).all() or not np.isfinite(g).all():\n        raise ValueError(\"aggregate arrays must be finite and match (b,a,z)\")\n    db=float(grid.b[1]-grid.b[0]); da=float(grid.a[1]-grid.a[0]); weight=db*da\n    b=np.broadcast_to(grid.b[:,None,None],shape); a=np.broadcast_to(grid.a[None,:,None],shape); z=np.broadcast_to(grid.z[None,None,:],shape)\n    c_ss=float(np.sum(C*g*weight)); l_ss=float(np.sum(z*l*g*weight))\n    a_ss=float(np.sum(a*g*weight)); b_ss=float(np.sum(b*g*weight))\n    return StationaryHouseholdAggregates(c_ss,l_ss,a_ss,b_ss,a_ss+b_ss,float(np.sum(g)*weight))"
+        },
+        {
+          "evidence_id": "S15:30-41",
+          "quote": "    hjb = hjb_solver(\n        grid, params, inputs, initial_value, baseline_labor,\n        transfer_income, borrowing_rate_gap, numerics,\n    )\n    shape = (grid.b.size, grid.a.size, grid.z.size)\n    db = float(grid.b[1] - grid.b[0])\n    da = float(grid.a[1] - grid.a[0])\n    kfe = kfe_solver(\n        hjb.post_convergence_operator.full, shape=shape, db=db, da=da,\n    )\n    aggregates = aggregator(grid, hjb.consumption, hjb.labor, kfe.density)\n    return HouseholdSteadyStateResult(hjb, kfe, aggregates)"
+        },
+        {
+          "evidence_id": "S06:345-366",
+          "quote": "        try:\n            for province_index,state in enumerate(snapshot):\n                initial,labor=_source_initial_arrays(state,grid,params)\n                result=solve_matlab_source_postloop_household(grid,params,HouseholdInputs(\n                    float(state[\"rah\"]),float(state[\"rb\"]),0.0,  # tau already in state['w']\n                    np.array([state[\"w\"]]),np.array([0.0]),np.array([1.0])),initial,labor,\n                    float(state[\"Tt\"]),float(state[\"rb_gap\"]),numerics)\n                call_count+=1; agg=result.aggregates; density=result.kfe.density\n                effective=matlab_faithful_illiquid_return(grid.a,grid.a[-1],float(state[\"rah\"]))\n                at_tax=agg.a_ss*float(state[\"rah\"])-float(np.sum(grid.a[None,:,None]*effective[None,:,None]*density)*result.kfe.cell_weight)\n                outputs.append((agg.c_ss,agg.l_ss,agg.a_ss,agg.b_ss,at_tax,\n                    result.hjb.converged,result.hjb.iterations,result.hjb.convergence_statistic))\n        except Exception as exc:\n            _write_json(root/f'turn_{iteration:03d}_household_failure.json', {\n                \"iteration\":iteration,\"completed_households\":len(outputs),\"household_call_count\":call_count,\n                \"error_type\":type(exc).__name__,\"error\":str(exc)})\n            raise\n        batch=PreFrozenHouseholdOutputBatch(\n            ct=[x[0] for x in outputs],household_lt=[x[1] for x in outputs],at=[x[2] for x in outputs],\n            bt=[x[3] for x in outputs],at_tax=[x[4] for x in outputs],converged=tuple(x[5] for x in outputs),\n            diagnostics=tuple({\"hjb_converged\":x[5],\"hjb_iterations\":x[6],\n                \"hjb_statistic\":x[7],\"iteration\":iteration} for x in outputs))"
+        }
+      ],
+      "what_this_does_not_prove": "Density sum implementation is not a household-unit or real income normalization certificate",
+      "minimum_missing_evidence": "HA normalization, consumption units, household/population bridge and time dictionary"
+    },
+    {
+      "field_name": "household labor Lt / l_ss",
+      "source_path_and_lines": [
+        "S19:619-629",
+        "S02:236-244",
+        "S04:168-177",
+        "S04:186-195"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S19:619-629",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/exports/matlab_faithful_two_asset_ha.py",
+          "sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+          "blob": "9e7dc9556a2b76811e78f89999abecc045886106"
+        },
+        {
+          "evidence_id": "S02:236-244",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/household_adapter.py",
+          "sha256": "c248bdeccfce3427b74d11b3c893cd5327659dfb6e4d4f34e8bbe379c8f2c569",
+          "blob": "2d689e72067251f2da46fd807c5edca60341867a"
+        },
+        {
+          "evidence_id": "S04:168-177",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "sha256": "afeadbffd88e1405c2f32d22fd256e7fd0451fc4ecbfe2492bc0db5dbdc728fa",
+          "blob": "7c85ea1651c46dd91884f37867253c963292ca79"
+        },
+        {
+          "evidence_id": "S04:186-195",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "sha256": "afeadbffd88e1405c2f32d22fd256e7fd0451fc4ecbfe2492bc0db5dbdc728fa",
+          "blob": "7c85ea1651c46dd91884f37867253c963292ca79"
+        }
+      ],
+      "producer_function": "aggregate_stationary_household",
+      "direct_consumers": [
+        "batch.household_lt",
+        "firm_source.Lt_prev diagnostic input"
+      ],
+      "formula_or_mapping": "l_ss=sum(z*l*g*db*da); firms receive migration.lt_supply separately, while Lt_prev is assigned household.household_lt",
+      "province_axis_semantics": "Within-origin effective z-weighted aggregate; distinct destination firm row sum",
+      "vintage_or_snapshot": "Household batch at entering state; firm uses current reconstructed supply",
+      "unit_status": "UNKNOWN: hours, worker reference, efficiency normalization and HU",
+      "tax_semantics": "Not automatically identical to destination payroll labor",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S19:619-629",
+          "quote": "def aggregate_stationary_household(grid, consumption, labor, density):\n    \"\"\"Exact MATLAB sums; L is effective z-weighted household labor, not GE labor.\"\"\"\n    shape=(grid.b.size,grid.a.size,grid.z.size)\n    C=np.asarray(consumption,dtype=float); l=np.asarray(labor,dtype=float); g=np.asarray(density,dtype=float)\n    if C.shape!=shape or l.shape!=shape or g.shape!=shape or not np.isfinite(C).all() or not np.isfinite(l).all() or not np.isfinite(g).all():\n        raise ValueError(\"aggregate arrays must be finite and match (b,a,z)\")\n    db=float(grid.b[1]-grid.b[0]); da=float(grid.a[1]-grid.a[0]); weight=db*da\n    b=np.broadcast_to(grid.b[:,None,None],shape); a=np.broadcast_to(grid.a[None,:,None],shape); z=np.broadcast_to(grid.z[None,None,:],shape)\n    c_ss=float(np.sum(C*g*weight)); l_ss=float(np.sum(z*l*g*weight))\n    a_ss=float(np.sum(a*g*weight)); b_ss=float(np.sum(b*g*weight))\n    return StationaryHouseholdAggregates(c_ss,l_ss,a_ss,b_ss,a_ss+b_ss,float(np.sum(g)*weight))"
+        },
+        {
+          "evidence_id": "S02:236-244",
+          "quote": "@dataclass(frozen=True)\nclass FrozenHouseholdOutputs:\n    \"\"\"Outer-loop household outputs; ``Lt`` is not destination firm labor.\"\"\"\n\n    Ct: float\n    Lt: float\n    At: float\n    Bt: float\n    AtTax: float"
+        },
+        {
+          "evidence_id": "S04:168-177",
+          "quote": "    migration = reconstruct_migration_labor(MigrationLaborInputs(\n        consumption_by_origin=household.ct,\n        population_by_origin=[province[\"N\"] for province in provinces],\n        old_firm_wage_by_destination=[province[\"wjt\"] for province in provinces],\n        tax_by_destination=[province[\"tau\"] for province in provinces],\n        phi_destination_origin=inputs.phi_destination_origin,\n        migration_wedge_destination_origin=inputs.migration_wedge_destination_origin,\n        gamma_c=inputs.params[\"ga\"],\n        phi_l=inputs.params[\"phi_l\"],\n    ))"
+        },
+        {
+          "evidence_id": "S04:186-195",
+          "quote": "    firms: list[FirmResult] = []\n    for index in range(n):\n        firm_source = dict(provinces[index])\n        firm_source[\"AtTax\"] = float(household.at_tax[index])\n        firm_source[\"Lt_prev\"] = float(household.household_lt[index])\n        firms.append(evaluate_firm(\n            firm_source,\n            float(capital.kt_supply[index]),\n            float(migration.lt_supply[index]),\n            inputs.params,"
+        }
+      ],
+      "what_this_does_not_prove": "No employment-conditional mean, no p scaling authority, no household-to-firm labor identity proved",
+      "minimum_missing_evidence": "Labor/efficiency/HU dictionary and reconciliation of household l_ss, N and destination supply"
+    },
+    {
+      "field_name": "illiquid assets a / At / a_ss",
+      "source_path_and_lines": [
+        "S06:109-119",
+        "S06:332-335",
+        "S19:619-629",
+        "S06:352-356"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S06:109-119",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S06:332-335",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S19:619-629",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/exports/matlab_faithful_two_asset_ha.py",
+          "sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+          "blob": "9e7dc9556a2b76811e78f89999abecc045886106"
+        },
+        {
+          "evidence_id": "S06:352-356",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        }
+      ],
+      "producer_function": "canonical initial_at; generic aggregation",
+      "direct_consumers": [
+        "batch.at",
+        "capital allocation call",
+        "AtTax reconstruction"
+      ],
+      "formula_or_mapping": "a_ss=sum(a*g*db*da); grid a=linspace(0,10,20); initial_at is distinct scalar seed",
+      "province_axis_semantics": "Grid axis a; aggregation per origin",
+      "vintage_or_snapshot": "Seed vintage UNKNOWN; aggregate would belong to household batch",
+      "unit_status": "UNKNOWN: currency, real/nominal, household/person basis",
+      "tax_semantics": "AtTax derived separately, not wage tax",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S06:109-119",
+          "quote": "        state={\"name\":name,\"N\":v[\"pop\"][i],\"alpha\":v[\"ind_alpha\"][i],\"Zt\":v[\"initialized_zt\"][i],\n            \"Kt0\":v[\"cap\"][i],\"Kt\":v[\"cap\"][i],\"Kt_prev\":v[\"cap\"][i],\"Lt\":v[\"pop\"][i],\n            \"Lt_prev\":v[\"pop\"][i],\"Yt0\":v[\"gdp\"][i],\"Yt\":v[\"gdp\"][i],\"Zt_1\":v[\"initialized_zt\"][i],\n            \"GovInv\":v[\"gov_inv\"][i],\"inter_prv_ratio\":v[\"inter_province_asset_ratio\"][i],\n            \"rb_gap\":s[\"rb_gap\"],\"rah\":s[\"rah\"],\"ra\":s[\"ra\"],\"it\":s[\"nominal_rate\"],\n            \"rb\":s[\"rb\"],\"rk\":s[\"rk\"],\"wjt\":s[\"wjt\"],\"w\":s[\"composite_wage\"],\n            \"Tt\":s[\"transfer_income\"],\"pit\":s[\"inflation\"],\"pit_1\":s[\"inflation\"],\n            \"totalpit\":s[\"inflation\"],\"epsilon_pi\":0.0,\"tau\":s[\"wage_tax\"],\"At\":s[\"initial_at\"],\n            \"Bt\":s[\"initial_bt\"],\"mt\":s[\"initial_mt\"],\"Ct\":s[\"initial_ct\"],\"AtTax\":0.0,\n            \"GovSurplus\":0.0,\"corptau\":s[\"corporate_tax\"],\"ramin\":0.02,\"ramax\":0.09,\n            \"wjtmin\":0.8,\"wjtmax\":1.3}"
+        },
+        {
+          "evidence_id": "S06:332-335",
+          "quote": "    grid=MatlabFaithfulHJBGrid(np.linspace(-2,5,20),np.linspace(0,10,20),np.array([0.8,1.3]),\n                              np.array([[-1/3,1/3],[1/3,-1/3]]))\n    params=EconomicParams(0.05,2.0,5.0,0.1,2.0,1e-6,0.0,0.0)\n    numerics=MatlabFaithfulHJBNumerics(1000.0,1e-7,100,1e-12)"
+        },
+        {
+          "evidence_id": "S19:619-629",
+          "quote": "def aggregate_stationary_household(grid, consumption, labor, density):\n    \"\"\"Exact MATLAB sums; L is effective z-weighted household labor, not GE labor.\"\"\"\n    shape=(grid.b.size,grid.a.size,grid.z.size)\n    C=np.asarray(consumption,dtype=float); l=np.asarray(labor,dtype=float); g=np.asarray(density,dtype=float)\n    if C.shape!=shape or l.shape!=shape or g.shape!=shape or not np.isfinite(C).all() or not np.isfinite(l).all() or not np.isfinite(g).all():\n        raise ValueError(\"aggregate arrays must be finite and match (b,a,z)\")\n    db=float(grid.b[1]-grid.b[0]); da=float(grid.a[1]-grid.a[0]); weight=db*da\n    b=np.broadcast_to(grid.b[:,None,None],shape); a=np.broadcast_to(grid.a[None,:,None],shape); z=np.broadcast_to(grid.z[None,None,:],shape)\n    c_ss=float(np.sum(C*g*weight)); l_ss=float(np.sum(z*l*g*weight))\n    a_ss=float(np.sum(a*g*weight)); b_ss=float(np.sum(b*g*weight))\n    return StationaryHouseholdAggregates(c_ss,l_ss,a_ss,b_ss,a_ss+b_ss,float(np.sum(g)*weight))"
+        },
+        {
+          "evidence_id": "S06:352-356",
+          "quote": "                call_count+=1; agg=result.aggregates; density=result.kfe.density\n                effective=matlab_faithful_illiquid_return(grid.a,grid.a[-1],float(state[\"rah\"]))\n                at_tax=agg.a_ss*float(state[\"rah\"])-float(np.sum(grid.a[None,:,None]*effective[None,:,None]*density)*result.kfe.cell_weight)\n                outputs.append((agg.c_ss,agg.l_ss,agg.a_ss,agg.b_ss,at_tax,\n                    result.hjb.converged,result.hjb.iterations,result.hjb.convergence_statistic))"
+        }
+      ],
+      "what_this_does_not_prove": "Grid range or illiquid label does not establish monetary/wealth units",
+      "minimum_missing_evidence": "Asset normalization, price base, units dictionary and canonical seed derivation"
+    },
+    {
+      "field_name": "liquid assets b / Bt / b_ss",
+      "source_path_and_lines": [
+        "S06:114-119",
+        "S06:332-335",
+        "S19:265-286",
+        "S19:619-629"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S06:114-119",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S06:332-335",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S19:265-286",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/exports/matlab_faithful_two_asset_ha.py",
+          "sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+          "blob": "9e7dc9556a2b76811e78f89999abecc045886106"
+        },
+        {
+          "evidence_id": "S19:619-629",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/exports/matlab_faithful_two_asset_ha.py",
+          "sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+          "blob": "9e7dc9556a2b76811e78f89999abecc045886106"
+        }
+      ],
+      "producer_function": "canonical initial_bt; aggregate_stationary_household",
+      "direct_consumers": [
+        "batch.bt",
+        "national fiscal diagnostic"
+      ],
+      "formula_or_mapping": "b_ss=sum(b*g*db*da); grid b=linspace(-2,5,20); borrowing gap applies for b<0",
+      "province_axis_semantics": "Grid axis b; origin aggregate",
+      "vintage_or_snapshot": "Seed vintage UNKNOWN; output batch vintage if run",
+      "unit_status": "UNKNOWN: monetary normalization and household/person basis",
+      "tax_semantics": "Asset/liability balance, not payroll tax",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S06:114-119",
+          "quote": "            \"rb\":s[\"rb\"],\"rk\":s[\"rk\"],\"wjt\":s[\"wjt\"],\"w\":s[\"composite_wage\"],\n            \"Tt\":s[\"transfer_income\"],\"pit\":s[\"inflation\"],\"pit_1\":s[\"inflation\"],\n            \"totalpit\":s[\"inflation\"],\"epsilon_pi\":0.0,\"tau\":s[\"wage_tax\"],\"At\":s[\"initial_at\"],\n            \"Bt\":s[\"initial_bt\"],\"mt\":s[\"initial_mt\"],\"Ct\":s[\"initial_ct\"],\"AtTax\":0.0,\n            \"GovSurplus\":0.0,\"corptau\":s[\"corporate_tax\"],\"ramin\":0.02,\"ramax\":0.09,\n            \"wjtmin\":0.8,\"wjtmax\":1.3}"
+        },
+        {
+          "evidence_id": "S06:332-335",
+          "quote": "    grid=MatlabFaithfulHJBGrid(np.linspace(-2,5,20),np.linspace(0,10,20),np.array([0.8,1.3]),\n                              np.array([[-1/3,1/3],[1/3,-1/3]]))\n    params=EconomicParams(0.05,2.0,5.0,0.1,2.0,1e-6,0.0,0.0)\n    numerics=MatlabFaithfulHJBNumerics(1000.0,1e-7,100,1e-12)"
+        },
+        {
+          "evidence_id": "S19:265-286",
+          "quote": "    effective_r_b = inputs.r_b + (borrowing_rate_gap if b < 0.0 else 0.0)\n    local_inputs = HouseholdInputs(\n        inputs.r_a,\n        effective_r_b,\n        inputs.tau,\n        inputs.wages,\n        inputs.migration_costs,\n        inputs.labor_weights,\n    )\n    vb_b = max(v_b_backward, MATLAB_DERIVATIVE_FLOOR)\n    vb_f = max(v_b_forward, MATLAB_DERIVATIVE_FLOOR)\n    consumption_b = consumption_from_vb(vb_b, params)\n    consumption_f = consumption_from_vb(vb_f, params)\n    labor_b = float(labor_from_vb(vb_b, z, local_inputs, params)[0])\n    labor_f = float(labor_from_vb(vb_f, z, local_inputs, params)[0])\n    net_wage = float(\n        local_inputs.wages[0]\n        * (1.0 - local_inputs.tau - local_inputs.migration_costs[0])\n        * z\n    )\n    liquid_resources_b = net_wage * labor_b + transfer_income + effective_r_b * b\n    liquid_resources_f = net_wage * labor_f + transfer_income + effective_r_b * b"
+        },
+        {
+          "evidence_id": "S19:619-629",
+          "quote": "def aggregate_stationary_household(grid, consumption, labor, density):\n    \"\"\"Exact MATLAB sums; L is effective z-weighted household labor, not GE labor.\"\"\"\n    shape=(grid.b.size,grid.a.size,grid.z.size)\n    C=np.asarray(consumption,dtype=float); l=np.asarray(labor,dtype=float); g=np.asarray(density,dtype=float)\n    if C.shape!=shape or l.shape!=shape or g.shape!=shape or not np.isfinite(C).all() or not np.isfinite(l).all() or not np.isfinite(g).all():\n        raise ValueError(\"aggregate arrays must be finite and match (b,a,z)\")\n    db=float(grid.b[1]-grid.b[0]); da=float(grid.a[1]-grid.a[0]); weight=db*da\n    b=np.broadcast_to(grid.b[:,None,None],shape); a=np.broadcast_to(grid.a[None,:,None],shape); z=np.broadcast_to(grid.z[None,None,:],shape)\n    c_ss=float(np.sum(C*g*weight)); l_ss=float(np.sum(z*l*g*weight))\n    a_ss=float(np.sum(a*g*weight)); b_ss=float(np.sum(b*g*weight))\n    return StationaryHouseholdAggregates(c_ss,l_ss,a_ss,b_ss,a_ss+b_ss,float(np.sum(g)*weight))"
+        }
+      ],
+      "what_this_does_not_prove": "Signed grid does not prove a currency unit or physical period",
+      "minimum_missing_evidence": "Asset/liability dictionary and monetary normalization"
+    },
+    {
+      "field_name": "government transfer_income / Tt",
+      "source_path_and_lines": [
+        "S06:113-117",
+        "S02:220-226",
+        "S19:280-302",
+        "S05:135-139"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S06:113-117",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S02:220-226",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/household_adapter.py",
+          "sha256": "c248bdeccfce3427b74d11b3c893cd5327659dfb6e4d4f34e8bbe379c8f2c569",
+          "blob": "2d689e72067251f2da46fd807c5edca60341867a"
+        },
+        {
+          "evidence_id": "S19:280-302",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/exports/matlab_faithful_two_asset_ha.py",
+          "sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+          "blob": "9e7dc9556a2b76811e78f89999abecc045886106"
+        },
+        {
+          "evidence_id": "S05:135-139",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/firm.py",
+          "sha256": "0939886706b8bcb42f3a41fc244000e7f8ad01884c61afdbdd31036bee908218",
+          "blob": "ab40ac7210eb1b7730900c3c6223b1ed2bddbcac"
+        }
+      ],
+      "producer_function": "canonical.scalars.transfer_income",
+      "direct_consumers": [
+        "HA initializer",
+        "HA budget",
+        "firm.Govinc"
+      ],
+      "formula_or_mapping": "Tt=s.transfer_income; added to household liquid resources; firm Govinc subtracts transfer once with no explicit N scaling at this site",
+      "province_axis_semantics": "Initial common scalar copied per province",
+      "vintage_or_snapshot": "Carried state; actual fiscal source/vintage UNKNOWN",
+      "unit_status": "UNKNOWN: per person/household vs provincial total and flow period",
+      "tax_semantics": "Fiscal transfer separate from wage tax",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S06:113-117",
+          "quote": "            \"rb_gap\":s[\"rb_gap\"],\"rah\":s[\"rah\"],\"ra\":s[\"ra\"],\"it\":s[\"nominal_rate\"],\n            \"rb\":s[\"rb\"],\"rk\":s[\"rk\"],\"wjt\":s[\"wjt\"],\"w\":s[\"composite_wage\"],\n            \"Tt\":s[\"transfer_income\"],\"pit\":s[\"inflation\"],\"pit_1\":s[\"inflation\"],\n            \"totalpit\":s[\"inflation\"],\"epsilon_pi\":0.0,\"tau\":s[\"wage_tax\"],\"At\":s[\"initial_at\"],\n            \"Bt\":s[\"initial_bt\"],\"mt\":s[\"initial_mt\"],\"Ct\":s[\"initial_ct\"],\"AtTax\":0.0,"
+        },
+        {
+          "evidence_id": "S02:220-226",
+          "quote": "        grid=inputs.grid,\n        economic_params=inputs.economic_params,\n        initial_value=inputs.initial_value,\n        baseline_labor=inputs.baseline_labor,\n        transfer_income=inputs.transfer_income,\n        borrowing_rate_gap=inputs.borrowing_rate_gap,\n        numerics=inputs.numerics,"
+        },
+        {
+          "evidence_id": "S19:280-302",
+          "quote": "    net_wage = float(\n        local_inputs.wages[0]\n        * (1.0 - local_inputs.tau - local_inputs.migration_costs[0])\n        * z\n    )\n    liquid_resources_b = net_wage * labor_b + transfer_income + effective_r_b * b\n    liquid_resources_f = net_wage * labor_f + transfer_income + effective_r_b * b\n    sc_b = liquid_resources_b - consumption_b\n    sc_f = liquid_resources_f - consumption_f\n    use_liquid_b = sc_b < -tolerance\n    use_liquid_f = sc_f > tolerance and not use_liquid_b\n    if use_liquid_b:\n        liquid_label = \"B\"\n        consumption = consumption_b\n        labor = labor_b\n    elif use_liquid_f:\n        liquid_label = \"F\"\n        consumption = consumption_f\n        labor = labor_f\n    else:\n        liquid_label = \"0\"\n        labor = baseline_labor\n        consumption = net_wage * baseline_labor + transfer_income + effective_r_b * b"
+        },
+        {
+          "evidence_id": "S05:135-139",
+          "quote": "    govinc = corporate_tax + lt * wjt * tau + at_tax + gov_inv * ra - transfer\n    result = FirmResult(\n        Kt=kt, Lt=lt, Yt=yt, mt=mt, KNratio=knratio, wt0=wt0, wjt=wjt,\n        rk=rk, Thetat=thetat, It=investment, PIt=profit, Corptax=corporate_tax,\n        ra0=ra0, ra=ra, Govinc=govinc,"
+        }
+      ],
+      "what_this_does_not_prove": "Same variable use does not prove household and firm fiscal unit consistency",
+      "minimum_missing_evidence": "Transfer recipient/accounting-unit dictionary, scaling bridge and fiscal timing authority"
+    },
+    {
+      "field_name": "portfolio transfer d / transfer (not Tt)",
+      "source_path_and_lines": [
+        "S19:80-91",
+        "S19:148-167"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S19:80-91",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/exports/matlab_faithful_two_asset_ha.py",
+          "sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+          "blob": "9e7dc9556a2b76811e78f89999abecc045886106"
+        },
+        {
+          "evidence_id": "S19:148-167",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/exports/matlab_faithful_two_asset_ha.py",
+          "sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+          "blob": "9e7dc9556a2b76811e78f89999abecc045886106"
+        }
+      ],
+      "producer_function": "transfer_candidate / local policy",
+      "direct_consumers": [
+        "asset_drifts_matlab_faithful",
+        "adjustment_cost"
+      ],
+      "formula_or_mapping": "mu_a=r_a_effective*a+d; mu_b=r_b*b+labor_income-d-adjustment_cost-consumption",
+      "province_axis_semantics": "Within HA asset cell",
+      "vintage_or_snapshot": "Local policy flow, physical time UNKNOWN",
+      "unit_status": "UNKNOWN: asset transfer flow scale and period",
+      "tax_semantics": "Portfolio movement distinct from government Tt and sigma tax recipient",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S19:80-91",
+          "quote": "def adjustment_cost(d: np.ndarray | float, a: np.ndarray | float, params: EconomicParams) -> np.ndarray:\n    d_array = np.asarray(d, dtype=float)\n    scale = np.maximum(np.asarray(a, dtype=float), params.a_bar)\n    return params.chi_0 * np.abs(d_array) + 0.5 * params.chi_1 * d_array**2 / scale\n\ndef transfer_candidate(v_a: float, v_b: float, a: float, params: EconomicParams) -> float:\n    \"\"\"Return the production MATLAB-faithful bare-a transfer candidate.\"\"\"\n    if not np.isfinite([v_a, v_b, a]).all() or v_b <= 0:\n        raise ValueError(\"transfer FOC requires finite derivatives and V_b > 0\")\n    q = v_a / v_b - 1.0\n    threshold = min(q + params.chi_0, 0.0) + max(q - params.chi_0, 0.0)\n    return a * threshold / params.chi_1"
+        },
+        {
+          "evidence_id": "S19:148-167",
+          "quote": "def asset_drifts_matlab_faithful(\n    a: float,\n    b: float,\n    z: float,\n    consumption: float,\n    labor: np.ndarray,\n    transfer: float,\n    inputs: HouseholdInputs,\n    params: EconomicParams,\n    a_max: float,\n) -> tuple[float, float, float]:\n    \"\"\"Use the MATLAB taper in mu_a while preserving the existing liquid budget.\"\"\"\n    cost = float(adjustment_cost(transfer, a, params))\n    labor_income = float(\n        np.sum(inputs.wages * (1.0 - inputs.tau - inputs.migration_costs) * z * labor)\n    )\n    mu_b = inputs.r_b * b + labor_income - transfer - cost - consumption\n    r_a_effective = float(matlab_faithful_illiquid_return(a, a_max, inputs.r_a))\n    mu_a = r_a_effective * a + transfer\n    return mu_a, mu_b, cost"
+        }
+      ],
+      "what_this_does_not_prove": "The overloaded word transfer does not establish a shared fiscal concept",
+      "minimum_missing_evidence": "Formal variable dictionary distinguishing portfolio d and government Tt"
+    },
+    {
+      "field_name": "Lt_mat[destination,origin]",
+      "source_path_and_lines": [
+        "S03:104-137",
+        "S04:168-177"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S03:104-137",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/migration_labor.py",
+          "sha256": "66600d6d1121db319b03383436999aa53b5e1aa5f8eecc72516fd1922b7b52dc",
+          "blob": "5a1cae1113f62407ffb3fa85939f55f7e9da2f42"
+        },
+        {
+          "evidence_id": "S04:168-177",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "sha256": "afeadbffd88e1405c2f32d22fd256e7fd0451fc4ecbfe2492bc0db5dbdc728fa",
+          "blob": "7c85ea1651c46dd91884f37867253c963292ca79"
+        }
+      ],
+      "producer_function": "reconstruct_migration_labor",
+      "direct_consumers": [
+        "destination lt_supply row sum"
+      ],
+      "formula_or_mapping": "Lt_mat[j,i]=Ct[i]^(-ga/phi_l)*(wjt_old[j]*(1-tau[j]-sigma[j,i])/phi[j,i])^(1/phi_l)*N[i]",
+      "province_axis_semantics": "destination j rows, origin i columns",
+      "vintage_or_snapshot": "Uses entering old wage/tau and batch Ct plus supplied refreshed phi",
+      "unit_status": "UNKNOWN: N/pop scale, labor efficiency and hours; formula alone cannot fix units",
+      "tax_semantics": "Destination tau in labor incentive; no tax revenue summed here",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S03:104-137",
+          "quote": "def reconstruct_migration_labor(inputs: MigrationLaborInputs) -> MigrationLaborResult:\n    \"\"\"Keep destination-origin axes and arithmetic, using workplace tax tau_j.\"\"\"\n\n    n = inputs.consumption_by_origin.size\n    matrix = np.empty((n, n), dtype=float)\n    for origin in range(n):\n        consumption_scale = inputs.consumption_by_origin[origin] ** (\n            -inputs.gamma_c / inputs.phi_l\n        )\n        for destination in range(n):\n            base = (\n                inputs.old_firm_wage_by_destination[destination]\n                * (\n                    1.0\n                    - inputs.tax_by_destination[destination]\n                    - inputs.migration_wedge_destination_origin[destination, origin]\n                )\n                / inputs.phi_destination_origin[destination, origin]\n            )\n            if not np.isfinite(base) or base < 0.0:\n                raise ValueError(\n                    \"Lt_seperate power base must be finite and non-negative \"\n                    f\"at destination={destination}, origin={origin}\"\n                )\n            value = (\n                consumption_scale\n                * base ** (1.0 / inputs.phi_l)\n                * inputs.population_by_origin[origin]\n            )\n            if not np.isfinite(value) or value < 0.0:\n                raise ValueError(\"migration labor produced a non-finite or negative value\")\n            matrix[destination, origin] = value\n    supply = np.sum(matrix, axis=1)\n    return MigrationLaborResult(lt_mat=matrix, lt_supply=supply)"
+        },
+        {
+          "evidence_id": "S04:168-177",
+          "quote": "    migration = reconstruct_migration_labor(MigrationLaborInputs(\n        consumption_by_origin=household.ct,\n        population_by_origin=[province[\"N\"] for province in provinces],\n        old_firm_wage_by_destination=[province[\"wjt\"] for province in provinces],\n        tax_by_destination=[province[\"tau\"] for province in provinces],\n        phi_destination_origin=inputs.phi_destination_origin,\n        migration_wedge_destination_origin=inputs.migration_wedge_destination_origin,\n        gamma_c=inputs.params[\"ga\"],\n        phi_l=inputs.params[\"phi_l\"],\n    ))"
+        }
+      ],
+      "what_this_does_not_prove": "No proven equality to household l_ss or population-independent labor unit",
+      "minimum_missing_evidence": "Population/HU/efficiency dictionary, axis ID manifest and vintage contract"
+    },
+    {
+      "field_name": "Lt_supply[destination]",
+      "source_path_and_lines": [
+        "S03:82-101",
+        "S03:128-137",
+        "S04:186-195",
+        "S05:44-63"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S03:82-101",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/migration_labor.py",
+          "sha256": "66600d6d1121db319b03383436999aa53b5e1aa5f8eecc72516fd1922b7b52dc",
+          "blob": "5a1cae1113f62407ffb3fa85939f55f7e9da2f42"
+        },
+        {
+          "evidence_id": "S03:128-137",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/migration_labor.py",
+          "sha256": "66600d6d1121db319b03383436999aa53b5e1aa5f8eecc72516fd1922b7b52dc",
+          "blob": "5a1cae1113f62407ffb3fa85939f55f7e9da2f42"
+        },
+        {
+          "evidence_id": "S04:186-195",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "sha256": "afeadbffd88e1405c2f32d22fd256e7fd0451fc4ecbfe2492bc0db5dbdc728fa",
+          "blob": "7c85ea1651c46dd91884f37867253c963292ca79"
+        },
+        {
+          "evidence_id": "S05:44-63",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/firm.py",
+          "sha256": "0939886706b8bcb42f3a41fc244000e7f8ad01884c61afdbdd31036bee908218",
+          "blob": "ab40ac7210eb1b7730900c3c6223b1ed2bddbcac"
+        }
+      ],
+      "producer_function": "MigrationLaborResult row sums",
+      "direct_consumers": [
+        "evaluate_firm lt_supply"
+      ],
+      "formula_or_mapping": "Lt_supply[j]=sum_i Lt_mat[j,i]; firm lt=float(lt_supply)",
+      "province_axis_semantics": "destination row j",
+      "vintage_or_snapshot": "Current macro labor from household batch and entering wage inputs",
+      "unit_status": "UNKNOWN",
+      "tax_semantics": "Firm payroll labor quantity at the inspected use site",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S03:82-101",
+          "quote": "@dataclass(frozen=True)\nclass MigrationLaborResult:\n    \"\"\"``lt_mat[destination, origin]`` and its destination row sums.\"\"\"\n\n    lt_mat: np.ndarray\n    lt_supply: np.ndarray\n\n    def __post_init__(self) -> None:\n        matrix = np.array(self.lt_mat, dtype=float, copy=True)\n        supply = np.array(self.lt_supply, dtype=float, copy=True)\n        if matrix.ndim != 2 or matrix.shape[0] != matrix.shape[1]:\n            raise ValueError(\"lt_mat must be a square destination-by-origin matrix\")\n        if supply.shape != (matrix.shape[0],) or not np.all(np.isfinite(matrix)) or not np.all(np.isfinite(supply)):\n            raise ValueError(\"migration-labor result has an invalid shape or non-finite value\")\n        if not np.array_equal(supply, np.sum(matrix, axis=1)):\n            raise ValueError(\"lt_supply must equal destination row sums of lt_mat\")\n        matrix.flags.writeable = False\n        supply.flags.writeable = False\n        object.__setattr__(self, \"lt_mat\", matrix)\n        object.__setattr__(self, \"lt_supply\", supply)"
+        },
+        {
+          "evidence_id": "S03:128-137",
+          "quote": "            value = (\n                consumption_scale\n                * base ** (1.0 / inputs.phi_l)\n                * inputs.population_by_origin[origin]\n            )\n            if not np.isfinite(value) or value < 0.0:\n                raise ValueError(\"migration labor produced a non-finite or negative value\")\n            matrix[destination, origin] = value\n    supply = np.sum(matrix, axis=1)\n    return MigrationLaborResult(lt_mat=matrix, lt_supply=supply)"
+        },
+        {
+          "evidence_id": "S04:186-195",
+          "quote": "    firms: list[FirmResult] = []\n    for index in range(n):\n        firm_source = dict(provinces[index])\n        firm_source[\"AtTax\"] = float(household.at_tax[index])\n        firm_source[\"Lt_prev\"] = float(household.household_lt[index])\n        firms.append(evaluate_firm(\n            firm_source,\n            float(capital.kt_supply[index]),\n            float(migration.lt_supply[index]),\n            inputs.params,"
+        },
+        {
+          "evidence_id": "S05:44-63",
+          "quote": "def evaluate_firm(\n    province: Mapping[str, float],\n    kt_supply: float,\n    lt_supply: float,\n    params: Mapping[str, float],\n) -> FirmResult:\n    \"\"\"Evaluate the MATLAB steady-state branch without solving any model.\n\n    ``lt_supply`` is destination firm labor.  Household aggregate ``Lt`` is\n    intentionally not read from ``province``.\n    \"\"\"\n\n    kt_supply = float(kt_supply)\n    lt = float(lt_supply)\n    if not isfinite(kt_supply) or not isfinite(lt):\n        raise ValueError(\"Kt_supply and Lt_supply must be finite\")\n    gov_inv = _finite(province, \"GovInv\")\n    kt = kt_supply + gov_inv  # HANK_firm.m:14\n    if kt <= 0.0 or lt <= 0.0:\n        raise ValueError(\"firm Kt and destination Lt_supply must be positive\")"
+        }
+      ],
+      "what_this_does_not_prove": "Row-sum equality does not prove a human-hours/person/payroll-efficiency measure",
+      "minimum_missing_evidence": "Destination labor unit and household/population/efficiency bridge"
+    },
+    {
+      "field_name": "firm wage/labor/capital inputs",
+      "source_path_and_lines": [
+        "S04:179-204",
+        "S05:44-68",
+        "S05:86-110"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S04:179-204",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "sha256": "afeadbffd88e1405c2f32d22fd256e7fd0451fc4ecbfe2492bc0db5dbdc728fa",
+          "blob": "7c85ea1651c46dd91884f37867253c963292ca79"
+        },
+        {
+          "evidence_id": "S05:44-68",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/firm.py",
+          "sha256": "0939886706b8bcb42f3a41fc244000e7f8ad01884c61afdbdd31036bee908218",
+          "blob": "ab40ac7210eb1b7730900c3c6223b1ed2bddbcac"
+        },
+        {
+          "evidence_id": "S05:86-110",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/firm.py",
+          "sha256": "0939886706b8bcb42f3a41fc244000e7f8ad01884c61afdbdd31036bee908218",
+          "blob": "ab40ac7210eb1b7730900c3c6223b1ed2bddbcac"
+        }
+      ],
+      "producer_function": "one_turn assembles per-destination firm source",
+      "direct_consumers": [
+        "evaluate_firm"
+      ],
+      "formula_or_mapping": "L=lt_supply[j]; K=kt_supply[j]+GovInv[j]; Y=Z*K^alpha*L^(1-alpha); wjt derived and clipped",
+      "province_axis_semantics": "same positional destination j; province.name checked in OneTurnInputs",
+      "vintage_or_snapshot": "Mixed entering source fields with reconstructed current capital/labor; not an HA-old-price object",
+      "unit_status": "UNKNOWN: K/GovInv, Y, L and wage normalization",
+      "tax_semantics": "wjt gross at this block",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S04:179-204",
+          "quote": "    capital = allocate_productive_capital(CapitalAllocationInputs(\n        illiquid_assets_at=household.at,\n        population=[province[\"N\"] for province in provinces],\n        inter_province_ratio=[province[\"inter_prv_ratio\"] for province in provinces],\n        old_firm_return_ra=[province[\"ra\"] for province in provinces],\n    ))\n\n    firms: list[FirmResult] = []\n    for index in range(n):\n        firm_source = dict(provinces[index])\n        firm_source[\"AtTax\"] = float(household.at_tax[index])\n        firm_source[\"Lt_prev\"] = float(household.household_lt[index])\n        firms.append(evaluate_firm(\n            firm_source,\n            float(capital.kt_supply[index]),\n            float(migration.lt_supply[index]),\n            inputs.params,\n        ))\n\n    composite_wage = composite_household_wages(\n        provinces,\n        [firm.wjt for firm in firms],\n        inputs.phi_destination_origin,\n        inputs.migration_wedge_destination_origin,\n        phi_l=inputs.params[\"phi_l\"],\n        alphal=inputs.params[\"alphal\"],"
+        },
+        {
+          "evidence_id": "S05:44-68",
+          "quote": "def evaluate_firm(\n    province: Mapping[str, float],\n    kt_supply: float,\n    lt_supply: float,\n    params: Mapping[str, float],\n) -> FirmResult:\n    \"\"\"Evaluate the MATLAB steady-state branch without solving any model.\n\n    ``lt_supply`` is destination firm labor.  Household aggregate ``Lt`` is\n    intentionally not read from ``province``.\n    \"\"\"\n\n    kt_supply = float(kt_supply)\n    lt = float(lt_supply)\n    if not isfinite(kt_supply) or not isfinite(lt):\n        raise ValueError(\"Kt_supply and Lt_supply must be finite\")\n    gov_inv = _finite(province, \"GovInv\")\n    kt = kt_supply + gov_inv  # HANK_firm.m:14\n    if kt <= 0.0 or lt <= 0.0:\n        raise ValueError(\"firm Kt and destination Lt_supply must be positive\")\n\n    alpha = _finite(province, \"alpha\")\n    zt = _finite(province, \"Zt\")\n    if not 0.0 < alpha < 1.0 or zt <= 0.0:\n        raise ValueError(\"firm alpha must be in (0,1) and Zt must be positive\")"
+        },
+        {
+          "evidence_id": "S05:86-110",
+          "quote": "    yt = zt * kt**alpha * lt ** (1.0 - alpha)  # line 30\n    mstar = 1.0 - 1.0 / epsilon\n    mt = (\n        (\n            prior_rk\n            - (zt_previous - zt) / zt\n            - alpha * (kt_previous - kt) / kt\n            - (1.0 - alpha) * (lt_previous - lt) / lt\n        )\n        * pit\n        * theta\n        / epsilon\n        + mstar\n        - (pit - pit_previous) * theta / epsilon\n    )  # line 35, steady-state branch\n    knratio = kt / lt\n    wt0 = mt * (1.0 - alpha) * zt * knratio**alpha\n    rk = mt * alpha / (kt / yt)\n    thetat = theta / 2.0 * pit**2 * yt\n    investment = kt - kt_previous + delta * kt\n    profit = (1.0 - mt) * yt - thetat\n    if profit < 0.0:  # lines 48-51\n        profit = 0.0\n    corporate_tax = profit * corptau\n    ra0 = rk - delta + profit * (1.0 - corptau) / kt"
+        }
+      ],
+      "what_this_does_not_prove": "Static production equation is not a physical unit definition or real dataset check",
+      "minimum_missing_evidence": "Capital/GDP/GovInv/L dictionaries and common price/period normalization"
+    },
+    {
+      "field_name": "payroll tax base and Govinc",
+      "source_path_and_lines": [
+        "S04:186-204",
+        "S05:81-84",
+        "S05:126-139"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S04:186-204",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "sha256": "afeadbffd88e1405c2f32d22fd256e7fd0451fc4ecbfe2492bc0db5dbdc728fa",
+          "blob": "7c85ea1651c46dd91884f37867253c963292ca79"
+        },
+        {
+          "evidence_id": "S05:81-84",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/firm.py",
+          "sha256": "0939886706b8bcb42f3a41fc244000e7f8ad01884c61afdbdd31036bee908218",
+          "blob": "ab40ac7210eb1b7730900c3c6223b1ed2bddbcac"
+        },
+        {
+          "evidence_id": "S05:126-139",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/firm.py",
+          "sha256": "0939886706b8bcb42f3a41fc244000e7f8ad01884c61afdbdd31036bee908218",
+          "blob": "ab40ac7210eb1b7730900c3c6223b1ed2bddbcac"
+        }
+      ],
+      "producer_function": "evaluate_firm",
+      "direct_consumers": [
+        "national_fiscal_diagnostics receives firm.Govinc"
+      ],
+      "formula_or_mapping": "payroll_base[j]=Lt_supply[j]*wjt_new[j]; wage tax=base*tau_enter[j]; Govinc=corporate_tax+wage_tax+AtTax+GovInv*ra-Tt",
+      "province_axis_semantics": "same per-destination firm j and province tau_j",
+      "vintage_or_snapshot": "New firm wjt with reconstructed labor that used old wjt; tau from entering record",
+      "unit_status": "UNKNOWN: payroll monetary flow and transfer/AtTax/GovInv compatibility",
+      "tax_semantics": "Single explicit tau multiplier in firm wage-tax term; sigma is not booked as government payroll tax",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S04:186-204",
+          "quote": "    firms: list[FirmResult] = []\n    for index in range(n):\n        firm_source = dict(provinces[index])\n        firm_source[\"AtTax\"] = float(household.at_tax[index])\n        firm_source[\"Lt_prev\"] = float(household.household_lt[index])\n        firms.append(evaluate_firm(\n            firm_source,\n            float(capital.kt_supply[index]),\n            float(migration.lt_supply[index]),\n            inputs.params,\n        ))\n\n    composite_wage = composite_household_wages(\n        provinces,\n        [firm.wjt for firm in firms],\n        inputs.phi_destination_origin,\n        inputs.migration_wedge_destination_origin,\n        phi_l=inputs.params[\"phi_l\"],\n        alphal=inputs.params[\"alphal\"],"
+        },
+        {
+          "evidence_id": "S05:81-84",
+          "quote": "    corptau = _finite(province, \"corptau\")\n    at_tax = _finite(province, \"AtTax\")\n    tau = _finite(province, \"tau\")\n    transfer = _finite(province, \"Tt\")"
+        },
+        {
+          "evidence_id": "S05:126-139",
+          "quote": "    if wt0 < wjtmin:  # preserve lines 66-74 ordering\n        corporate_tax -= (wjtmin - wt0) * lt\n        wjt = wjtmin\n    elif wt0 > wjtmax:\n        corporate_tax += (wt0 - wjtmax) * lt\n        wjt = wjtmax\n    else:\n        wjt = wt0\n\n    govinc = corporate_tax + lt * wjt * tau + at_tax + gov_inv * ra - transfer\n    result = FirmResult(\n        Kt=kt, Lt=lt, Yt=yt, mt=mt, KNratio=knratio, wt0=wt0, wjt=wjt,\n        rk=rk, Thetat=thetat, It=investment, PIt=profit, Corptax=corporate_tax,\n        ra0=ra0, ra=ra, Govinc=govinc,"
+        }
+      ],
+      "what_this_does_not_prove": "Shared destination index does not prove household income/payroll tax-base equality or full fiscal closure",
+      "minimum_missing_evidence": "Per-destination payroll units, timing convention and economic bridge between composite household wage and bilateral payroll"
+    },
+    {
+      "field_name": "asset returns r_a / rah / ra / rk",
+      "source_path_and_lines": [
+        "S06:113-119",
+        "S02:211-225",
+        "S19:111-124",
+        "S05:100-125",
+        "S14:159-167",
+        "S23:83-108"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S06:113-119",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S02:211-225",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/household_adapter.py",
+          "sha256": "c248bdeccfce3427b74d11b3c893cd5327659dfb6e4d4f34e8bbe379c8f2c569",
+          "blob": "2d689e72067251f2da46fd807c5edca60341867a"
+        },
+        {
+          "evidence_id": "S19:111-124",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/exports/matlab_faithful_two_asset_ha.py",
+          "sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+          "blob": "9e7dc9556a2b76811e78f89999abecc045886106"
+        },
+        {
+          "evidence_id": "S05:100-125",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/firm.py",
+          "sha256": "0939886706b8bcb42f3a41fc244000e7f8ad01884c61afdbdd31036bee908218",
+          "blob": "ab40ac7210eb1b7730900c3c6223b1ed2bddbcac"
+        },
+        {
+          "evidence_id": "S14:159-167",
+          "archive_member": "evidence_sanitized.zip!/source_originals/supplemental_fixed_commit/src/ch5_two_asset_hank/multi_province/steady_state.py.txt",
+          "sha256": "7065d0fcbfda6a88c8f773debdf277f6e300a8e0195b7cc635f7a0033d74d88c",
+          "blob": "5c5b56e6a2eb82fab4e80eb7b8e5bbbf97f08c22"
+        },
+        {
+          "evidence_id": "S23:83-108",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/capital_allocation.py",
+          "sha256": "8fd00e62b002e7a254a883a3786af7738972b79acc0ec0b05c795786565fecb2",
+          "blob": "3617b946f839dfea91f9b7f4922c8a3b8ca1c528"
+        }
+      ],
+      "producer_function": "canonical seeds; firm output; turn.capital household return mapped to rah",
+      "direct_consumers": [
+        "HouseholdInputs.r_a",
+        "initializer illiquid return",
+        "firm and fiscal source"
+      ],
+      "formula_or_mapping": "HA r_a=rah, not necessarily firm ra; rah_i=(1-ratio_i)*ra_old_i+ratio_i*(sum_k ratio_k*ra_old_k-ratio_i*ra_old_i)/(n-1); taper r_a*(1-0.1*(a/a_max)^9); firm ra0=rk-delta+profit*(1-corptau)/K with caps",
+      "province_axis_semantics": "HA per origin rah; firm ra/rk per destination",
+      "vintage_or_snapshot": "Carried entry vs newly computed firm return; physical time basis UNKNOWN",
+      "unit_status": "UNKNOWN: time^{-1}, compounding/annualization and price basis",
+      "tax_semantics": "Asset return/AtTax distinct from wage tax",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S06:113-119",
+          "quote": "            \"rb_gap\":s[\"rb_gap\"],\"rah\":s[\"rah\"],\"ra\":s[\"ra\"],\"it\":s[\"nominal_rate\"],\n            \"rb\":s[\"rb\"],\"rk\":s[\"rk\"],\"wjt\":s[\"wjt\"],\"w\":s[\"composite_wage\"],\n            \"Tt\":s[\"transfer_income\"],\"pit\":s[\"inflation\"],\"pit_1\":s[\"inflation\"],\n            \"totalpit\":s[\"inflation\"],\"epsilon_pi\":0.0,\"tau\":s[\"wage_tax\"],\"At\":s[\"initial_at\"],\n            \"Bt\":s[\"initial_bt\"],\"mt\":s[\"initial_mt\"],\"Ct\":s[\"initial_ct\"],\"AtTax\":0.0,\n            \"GovSurplus\":0.0,\"corptau\":s[\"corporate_tax\"],\"ramin\":0.02,\"ramax\":0.09,\n            \"wjtmin\":0.8,\"wjtmax\":1.3}"
+        },
+        {
+          "evidence_id": "S02:211-225",
+          "quote": "    return StaticHouseholdCall(\n        household_input_kwargs=MappingProxyType({\n            \"r_a\": inputs.rah,\n            \"r_b\": inputs.rb,\n            \"tau\": 0.0,\n            \"wages\": (inputs.composite_wage,),\n            \"migration_costs\": (inputs.composite_migration_cost,),\n            \"labor_weights\": (inputs.composite_labor_weight,),\n        }),\n        grid=inputs.grid,\n        economic_params=inputs.economic_params,\n        initial_value=inputs.initial_value,\n        baseline_labor=inputs.baseline_labor,\n        transfer_income=inputs.transfer_income,\n        borrowing_rate_gap=inputs.borrowing_rate_gap,"
+        },
+        {
+          "evidence_id": "S19:111-124",
+          "quote": "def matlab_faithful_illiquid_return(\n    a: np.ndarray | float,\n    a_max: float,\n    r_a: float,\n) -> np.ndarray:\n    \"\"\"Apply the designated MATLAB finite-grid illiquid-return taper.\"\"\"\n    a_array = np.asarray(a, dtype=float)\n    if not np.all(np.isfinite(a_array)) or not np.isfinite([a_max, r_a]).all():\n        raise ValueError(\"faithful illiquid-return inputs must be finite\")\n    if a_max <= 0.0:\n        raise ValueError(\"faithful illiquid-return taper requires a_max > 0\")\n    if np.any(a_array < 0.0) or np.any(a_array > a_max):\n        raise ValueError(\"faithful illiquid-return taper requires 0 <= a <= a_max\")\n    return r_a * (1.0 - 0.1 * (a_array / a_max) ** 9)"
+        },
+        {
+          "evidence_id": "S05:100-125",
+          "quote": "    )  # line 35, steady-state branch\n    knratio = kt / lt\n    wt0 = mt * (1.0 - alpha) * zt * knratio**alpha\n    rk = mt * alpha / (kt / yt)\n    thetat = theta / 2.0 * pit**2 * yt\n    investment = kt - kt_previous + delta * kt\n    profit = (1.0 - mt) * yt - thetat\n    if profit < 0.0:  # lines 48-51\n        profit = 0.0\n    corporate_tax = profit * corptau\n    ra0 = rk - delta + profit * (1.0 - corptau) / kt\n\n    ramin = _finite(province, \"ramin\")\n    ramax = _finite(province, \"ramax\")\n    wjtmin = _finite(province, \"wjtmin\")\n    wjtmax = _finite(province, \"wjtmax\")\n    if ramin > ramax or wjtmin > wjtmax:\n        raise ValueError(\"firm clipping minima must not exceed maxima\")\n    if ra0 > ramax:  # preserve lines 57-65 ordering\n        corporate_tax += (ra0 - ramax) * kt\n        ra = ramax\n    elif ra0 < ramin:\n        corporate_tax -= (ramin - ra0) * kt\n        ra = ramin\n    else:\n        ra = ra0"
+        },
+        {
+          "evidence_id": "S14:159-167",
+          "quote": "            \"Lt_supply\": float(turn.migration.lt_supply[i]),\n            \"Kt_supply\": float(turn.capital.kt_supply[i]),\n            \"rah\": float(turn.capital.household_illiquid_return_rah[i]),\n            \"w\": float(turn.household_composite_wage[i]), \"it\": turn.monetary.it,\n            \"rb\": turn.monetary.rb, \"Yt_1\": float(old[\"Yt\"]),\n            \"Kt_prev\": firm.Kt, \"Lt_prev\": firm.Lt, \"Zt_1\": float(old[\"Zt\"]),\n            \"pit_1\": float(old[\"pit\"]),\n        })\n        state.update(firm.as_source_dict())"
+        },
+        {
+          "evidence_id": "S23:83-108",
+          "quote": "    total_capital = sum(float(value) for value in contributions)\n    total_return = sum(\n        float(inputs.inter_province_ratio[i] * inputs.old_firm_return_ra[i])\n        for i in range(n)\n    )\n    kt_supply = np.array(\n        [(total_capital - contributions[i]) / (n - 1) for i in range(n)],\n        dtype=float,\n    )\n    rah = np.array(\n        [\n            (1.0 - inputs.inter_province_ratio[i]) * inputs.old_firm_return_ra[i]\n            + inputs.inter_province_ratio[i]\n            * (\n                total_return\n                - inputs.inter_province_ratio[i] * inputs.old_firm_return_ra[i]\n            )\n            / (n - 1)\n            for i in range(n)\n        ],\n        dtype=float,\n    )\n    return CapitalAllocationResult(\n        productive_contribution=contributions,\n        kt_supply=kt_supply,\n        household_illiquid_return_rah=rah,"
+        }
+      ],
+      "what_this_does_not_prove": "Variable names do not justify equating rah, ra and rk or fixing annual/quarterly units",
+      "minimum_missing_evidence": "Rate dictionary, aggregation/asset allocation authority and calendar conversion"
+    },
+    {
+      "field_name": "liquid rate rb / borrowing_rate_gap",
+      "source_path_and_lines": [
+        "S06:113-117",
+        "S02:211-225",
+        "S19:265-286",
+        "S24:15-25"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S06:113-117",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S02:211-225",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/household_adapter.py",
+          "sha256": "c248bdeccfce3427b74d11b3c893cd5327659dfb6e4d4f34e8bbe379c8f2c569",
+          "blob": "2d689e72067251f2da46fd807c5edca60341867a"
+        },
+        {
+          "evidence_id": "S19:265-286",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/exports/matlab_faithful_two_asset_ha.py",
+          "sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+          "blob": "9e7dc9556a2b76811e78f89999abecc045886106"
+        },
+        {
+          "evidence_id": "S24:15-25",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/monetary.py",
+          "sha256": "3aacb8046a27c80e9da8c1bdf5974e2efae3450fbc4eec7087651f88a5474ed5",
+          "blob": "520cbbaa510e6e55bfee6c1ac095715b075146cb"
+        }
+      ],
+      "producer_function": "canonical scalars rb,rb_gap; subsequent macro rb carried",
+      "direct_consumers": [
+        "HouseholdInputs.r_b",
+        "HA budget",
+        "initializer"
+      ],
+      "formula_or_mapping": "r_b_effective=rb+(rb_gap if b<0 else 0); next it=istar+rho_pi*totalpit+epsilon_pi; next rb=it-totalpit",
+      "province_axis_semantics": "Common seed copied per origin; scalar per HA call",
+      "vintage_or_snapshot": "Carried state; economic time basis UNKNOWN",
+      "unit_status": "UNKNOWN: per-period, annualization, gross/net and compounding convention",
+      "tax_semantics": "Interest income/borrowing cost distinct from wage tax",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S06:113-117",
+          "quote": "            \"rb_gap\":s[\"rb_gap\"],\"rah\":s[\"rah\"],\"ra\":s[\"ra\"],\"it\":s[\"nominal_rate\"],\n            \"rb\":s[\"rb\"],\"rk\":s[\"rk\"],\"wjt\":s[\"wjt\"],\"w\":s[\"composite_wage\"],\n            \"Tt\":s[\"transfer_income\"],\"pit\":s[\"inflation\"],\"pit_1\":s[\"inflation\"],\n            \"totalpit\":s[\"inflation\"],\"epsilon_pi\":0.0,\"tau\":s[\"wage_tax\"],\"At\":s[\"initial_at\"],\n            \"Bt\":s[\"initial_bt\"],\"mt\":s[\"initial_mt\"],\"Ct\":s[\"initial_ct\"],\"AtTax\":0.0,"
+        },
+        {
+          "evidence_id": "S02:211-225",
+          "quote": "    return StaticHouseholdCall(\n        household_input_kwargs=MappingProxyType({\n            \"r_a\": inputs.rah,\n            \"r_b\": inputs.rb,\n            \"tau\": 0.0,\n            \"wages\": (inputs.composite_wage,),\n            \"migration_costs\": (inputs.composite_migration_cost,),\n            \"labor_weights\": (inputs.composite_labor_weight,),\n        }),\n        grid=inputs.grid,\n        economic_params=inputs.economic_params,\n        initial_value=inputs.initial_value,\n        baseline_labor=inputs.baseline_labor,\n        transfer_income=inputs.transfer_income,\n        borrowing_rate_gap=inputs.borrowing_rate_gap,"
+        },
+        {
+          "evidence_id": "S19:265-286",
+          "quote": "    effective_r_b = inputs.r_b + (borrowing_rate_gap if b < 0.0 else 0.0)\n    local_inputs = HouseholdInputs(\n        inputs.r_a,\n        effective_r_b,\n        inputs.tau,\n        inputs.wages,\n        inputs.migration_costs,\n        inputs.labor_weights,\n    )\n    vb_b = max(v_b_backward, MATLAB_DERIVATIVE_FLOOR)\n    vb_f = max(v_b_forward, MATLAB_DERIVATIVE_FLOOR)\n    consumption_b = consumption_from_vb(vb_b, params)\n    consumption_f = consumption_from_vb(vb_f, params)\n    labor_b = float(labor_from_vb(vb_b, z, local_inputs, params)[0])\n    labor_f = float(labor_from_vb(vb_f, z, local_inputs, params)[0])\n    net_wage = float(\n        local_inputs.wages[0]\n        * (1.0 - local_inputs.tau - local_inputs.migration_costs[0])\n        * z\n    )\n    liquid_resources_b = net_wage * labor_b + transfer_income + effective_r_b * b\n    liquid_resources_f = net_wage * labor_f + transfer_income + effective_r_b * b"
+        },
+        {
+          "evidence_id": "S24:15-25",
+          "quote": "def taylor_assignment(\n    *, istar: float, rho_pi: float, totalpit: float, epsilon_pi: float\n) -> MonetaryResult:\n    values = tuple(float(value) for value in (istar, rho_pi, totalpit, epsilon_pi))\n    if not all(isfinite(value) for value in values):\n        raise ValueError(\"Taylor inputs must be finite\")\n    interest = values[0] + values[1] * values[2] + values[3]\n    rb = interest - values[2]\n    if not isfinite(interest) or not isfinite(rb):\n        raise ValueError(\"Taylor assignment produced a non-finite result\")\n    return MonetaryResult(it=interest, rb=rb)"
+        }
+      ],
+      "what_this_does_not_prove": "Observed rates or numerical values are not evidence of a physical period",
+      "minimum_missing_evidence": "Interest/spread definitions and period conversion dictionary"
+    },
+    {
+      "field_name": "nominal rate it / inflation pit / totalpit / price",
+      "source_path_and_lines": [
+        "S06:113-119",
+        "S04:206-216",
+        "S05:75-100",
+        "S05:104-106",
+        "S24:15-25"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S06:113-119",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S04:206-216",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "sha256": "afeadbffd88e1405c2f32d22fd256e7fd0451fc4ecbfe2492bc0db5dbdc728fa",
+          "blob": "7c85ea1651c46dd91884f37867253c963292ca79"
+        },
+        {
+          "evidence_id": "S05:75-100",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/firm.py",
+          "sha256": "0939886706b8bcb42f3a41fc244000e7f8ad01884c61afdbdd31036bee908218",
+          "blob": "ab40ac7210eb1b7730900c3c6223b1ed2bddbcac"
+        },
+        {
+          "evidence_id": "S05:104-106",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/firm.py",
+          "sha256": "0939886706b8bcb42f3a41fc244000e7f8ad01884c61afdbdd31036bee908218",
+          "blob": "ab40ac7210eb1b7730900c3c6223b1ed2bddbcac"
+        },
+        {
+          "evidence_id": "S24:15-25",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/monetary.py",
+          "sha256": "3aacb8046a27c80e9da8c1bdf5974e2efae3450fbc4eec7087651f88a5474ed5",
+          "blob": "520cbbaa510e6e55bfee6c1ac095715b075146cb"
+        }
+      ],
+      "producer_function": "canonical nominal_rate and inflation seeds; taylor_assignment returns it/rb",
+      "direct_consumers": [
+        "firm inflation adjustment",
+        "macro/fiscal inputs"
+      ],
+      "formula_or_mapping": "Initial pit=pit_1=totalpit=s.inflation; it=s.nominal_rate; no price-level/currency numeraire contract present in inspected source",
+      "province_axis_semantics": "Copied scalar source fields per destination",
+      "vintage_or_snapshot": "Calendar seed claimed 2009; actual observation date and normalization UNKNOWN",
+      "unit_status": "UNKNOWN: price-level vs inflation-rate normalization, annualization and model period",
+      "tax_semantics": "No direct payroll tax role",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S06:113-119",
+          "quote": "            \"rb_gap\":s[\"rb_gap\"],\"rah\":s[\"rah\"],\"ra\":s[\"ra\"],\"it\":s[\"nominal_rate\"],\n            \"rb\":s[\"rb\"],\"rk\":s[\"rk\"],\"wjt\":s[\"wjt\"],\"w\":s[\"composite_wage\"],\n            \"Tt\":s[\"transfer_income\"],\"pit\":s[\"inflation\"],\"pit_1\":s[\"inflation\"],\n            \"totalpit\":s[\"inflation\"],\"epsilon_pi\":0.0,\"tau\":s[\"wage_tax\"],\"At\":s[\"initial_at\"],\n            \"Bt\":s[\"initial_bt\"],\"mt\":s[\"initial_mt\"],\"Ct\":s[\"initial_ct\"],\"AtTax\":0.0,\n            \"GovSurplus\":0.0,\"corptau\":s[\"corporate_tax\"],\"ramin\":0.02,\"ramax\":0.09,\n            \"wjtmin\":0.8,\"wjtmax\":1.3}"
+        },
+        {
+          "evidence_id": "S04:206-216",
+          "quote": "    monetary = taylor_assignment(\n        istar=inputs.params[\"istar\"],\n        rho_pi=inputs.params[\"rho_pi\"],\n        totalpit=inputs.params[\"totalpit\"],\n        epsilon_pi=inputs.params[\"epsilon_pi\"],\n    )\n    fiscal = national_fiscal_diagnostics(\n        [firm.Govinc for firm in firms],\n        household.bt,\n        monetary.rb,\n        [province[\"N\"] for province in provinces],"
+        },
+        {
+          "evidence_id": "S05:75-100",
+          "quote": "    pit = _finite(province, \"pit\")\n    kt_previous = _finite(province, \"Kt_prev\")\n    lt_previous = _finite(province, \"Lt_prev\")\n    zt_previous = _finite(province, \"Zt_1\")\n    pit_previous = _finite(province, \"pit_1\")\n    prior_rk = _finite(province, \"rk\")\n    corptau = _finite(province, \"corptau\")\n    at_tax = _finite(province, \"AtTax\")\n    tau = _finite(province, \"tau\")\n    transfer = _finite(province, \"Tt\")\n\n    yt = zt * kt**alpha * lt ** (1.0 - alpha)  # line 30\n    mstar = 1.0 - 1.0 / epsilon\n    mt = (\n        (\n            prior_rk\n            - (zt_previous - zt) / zt\n            - alpha * (kt_previous - kt) / kt\n            - (1.0 - alpha) * (lt_previous - lt) / lt\n        )\n        * pit\n        * theta\n        / epsilon\n        + mstar\n        - (pit - pit_previous) * theta / epsilon\n    )  # line 35, steady-state branch"
+        },
+        {
+          "evidence_id": "S05:104-106",
+          "quote": "    thetat = theta / 2.0 * pit**2 * yt\n    investment = kt - kt_previous + delta * kt\n    profit = (1.0 - mt) * yt - thetat"
+        },
+        {
+          "evidence_id": "S24:15-25",
+          "quote": "def taylor_assignment(\n    *, istar: float, rho_pi: float, totalpit: float, epsilon_pi: float\n) -> MonetaryResult:\n    values = tuple(float(value) for value in (istar, rho_pi, totalpit, epsilon_pi))\n    if not all(isfinite(value) for value in values):\n        raise ValueError(\"Taylor inputs must be finite\")\n    interest = values[0] + values[1] * values[2] + values[3]\n    rb = interest - values[2]\n    if not isfinite(interest) or not isfinite(rb):\n        raise ValueError(\"Taylor assignment produced a non-finite result\")\n    return MonetaryResult(it=interest, rb=rb)"
+        }
+      ],
+      "what_this_does_not_prove": "Code names inflation/nominal do not prove data dictionary meaning or an independent price level",
+      "minimum_missing_evidence": "Monetary/price dictionary, numeraire, nominal-real conversion and date"
+    },
+    {
+      "field_name": "initial_value and baseline_labor",
+      "source_path_and_lines": [
+        "S06:171-185",
+        "S06:332-351",
+        "S02:170-186"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S06:171-185",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S06:332-351",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S02:170-186",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/household_adapter.py",
+          "sha256": "c248bdeccfce3427b74d11b3c893cd5327659dfb6e4d4f34e8bbe379c8f2c569",
+          "blob": "2d689e72067251f2da46fd807c5edca60341867a"
+        }
+      ],
+      "producer_function": "_source_initial_arrays",
+      "direct_consumers": [
+        "HA wrapper initial_value,baseline_labor"
+      ],
+      "formula_or_mapping": "wage=state.w*z; effective=taper(a,rah); temp=effective*effective+rb*b+Tt; root and utility arrays constructed on (b,a,z)",
+      "province_axis_semantics": "(b,a,z), recomputed per origin",
+      "vintage_or_snapshot": "Reads same named entering state as solve; raw initial input identity UNKNOWN",
+      "unit_status": "UNKNOWN: utility, hours and initialization resource units",
+      "tax_semantics": "Initializer uses declared net state.w and no extra tau",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S06:171-185",
+          "quote": "def _source_initial_arrays(state: Mapping[str, object], grid: MatlabFaithfulHJBGrid, params: EconomicParams):\n    # state['w'] is destination-tax-net; state['tau'] remains fiscal metadata.\n    shape=(grid.b.size,grid.a.size,grid.z.size); labor=np.empty(shape); value=np.empty(shape)\n    for k,z in enumerate(grid.z):\n        for j,a in enumerate(grid.a):\n            effective=float(matlab_faithful_illiquid_return(a,grid.a[-1],float(state[\"rah\"])))\n            for i,b in enumerate(grid.b):\n                rb=float(state[\"rb\"])+(float(state[\"rb_gap\"]) if b<0 else 0.0)\n                temp=effective*effective+rb*b+float(state[\"Tt\"])\n                wage=float(state[\"w\"])*z\n                l,_=_source_labor_root(wage=wage,temp=temp,frisch_l=1.0/params.phi,ga=params.gamma_c)\n                c=wage*l+rb*b+float(state[\"Tt\"])\n                labor[i,j,k]=l\n                value[i,j,k]=(c**(1-params.gamma_c)/(1-params.gamma_c)-l**6/6)/params.rho\n    return value,labor"
+        },
+        {
+          "evidence_id": "S06:332-351",
+          "quote": "    grid=MatlabFaithfulHJBGrid(np.linspace(-2,5,20),np.linspace(0,10,20),np.array([0.8,1.3]),\n                              np.array([[-1/3,1/3],[1/3,-1/3]]))\n    params=EconomicParams(0.05,2.0,5.0,0.1,2.0,1e-6,0.0,0.0)\n    numerics=MatlabFaithfulHJBNumerics(1000.0,1e-7,100,1e-12)\n    call_count=0\n    phi_matrix=np.ones((31,31),dtype=float)\n    def solve_batch(snapshot,iteration):\n        nonlocal call_count\n        productivity=np.array([float(s[\"Yt\"])/float(s[\"Lt\"]) for s in snapshot])\n        phi_matrix[:]=1.0-0.3*(productivity[:,None]-productivity[None,:])/(productivity[:,None]+productivity[None,:])\n        outputs=[]\n        _write_json(root/f'turn_{iteration:03d}_household_inputs.json', {\n            \"iteration\":iteration,\"state_entering_turn\":snapshot,\"phi_destination_origin\":phi_matrix})\n        try:\n            for province_index,state in enumerate(snapshot):\n                initial,labor=_source_initial_arrays(state,grid,params)\n                result=solve_matlab_source_postloop_household(grid,params,HouseholdInputs(\n                    float(state[\"rah\"]),float(state[\"rb\"]),0.0,  # tau already in state['w']\n                    np.array([state[\"w\"]]),np.array([0.0]),np.array([1.0])),initial,labor,\n                    float(state[\"Tt\"]),float(state[\"rb_gap\"]),numerics)"
+        },
+        {
+          "evidence_id": "S02:170-186",
+          "quote": "        if switch.shape != (z.size, z.size) or not np.isfinite(switch).all():\n            raise ValueError(\"accepted grid switch_matrix must have shape (z,z) and be finite\")\n        initial = np.array(self.initial_value, dtype=float, copy=True)\n        labor = np.array(self.baseline_labor, dtype=float, copy=True)\n        accepted_shape = (b.size, a.size, z.size)\n        if initial.shape != accepted_shape or labor.shape != accepted_shape:\n            raise ValueError(\n                \"initial_value and baseline_labor must match accepted grid shape (b,a,z)\"\n            )\n        if not np.all(np.isfinite(initial)) or not np.all(np.isfinite(labor)):\n            raise ValueError(\"initial_value and baseline_labor must be finite\")\n        if np.any(labor < 0.0):\n            raise ValueError(\"baseline_labor must be non-negative\")\n        initial.flags.writeable = False\n        labor.flags.writeable = False\n        object.__setattr__(self, \"initial_value\", initial)\n        object.__setattr__(self, \"baseline_labor\", labor)"
+        }
+      ],
+      "what_this_does_not_prove": "effective*effective is transcribed static source, not endorsed dimensional consistency; no roots, arrays or preflights evaluated",
+      "minimum_missing_evidence": "Accepted initialization authority and its original unit/normalization specification; any formula change requires separate task"
+    },
+    {
+      "field_name": "grid a,b,z and switch_matrix",
+      "source_path_and_lines": [
+        "S06:332-335",
+        "S02:145-177",
+        "S19:619-629"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S06:332-335",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S02:145-177",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/household_adapter.py",
+          "sha256": "c248bdeccfce3427b74d11b3c893cd5327659dfb6e4d4f34e8bbe379c8f2c569",
+          "blob": "2d689e72067251f2da46fd807c5edca60341867a"
+        },
+        {
+          "evidence_id": "S19:619-629",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/exports/matlab_faithful_two_asset_ha.py",
+          "sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+          "blob": "9e7dc9556a2b76811e78f89999abecc045886106"
+        }
+      ],
+      "producer_function": "run_python_once constructs grid constants",
+      "direct_consumers": [
+        "HA wrapper",
+        "aggregator"
+      ],
+      "formula_or_mapping": "b[-2,5] with 20 nodes; a[0,10] with 20 nodes; z=[0.8,1.3]; switching=[[-1/3,1/3],[1/3,-1/3]]",
+      "province_axis_semantics": "(b,a,z), not destination/origin axes",
+      "vintage_or_snapshot": "Numerical grid constants; source/time/normalization authority not established",
+      "unit_status": "UNKNOWN: physical asset/efficiency/time units despite explicit numerical grid",
+      "tax_semantics": "No direct wage-tax implementation",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S06:332-335",
+          "quote": "    grid=MatlabFaithfulHJBGrid(np.linspace(-2,5,20),np.linspace(0,10,20),np.array([0.8,1.3]),\n                              np.array([[-1/3,1/3],[1/3,-1/3]]))\n    params=EconomicParams(0.05,2.0,5.0,0.1,2.0,1e-6,0.0,0.0)\n    numerics=MatlabFaithfulHJBNumerics(1000.0,1e-7,100,1e-12)"
+        },
+        {
+          "evidence_id": "S02:145-177",
+          "quote": "        _require_public_fields(\"grid\", self.grid, (\"b\", \"a\", \"z\", \"switch_matrix\"))\n        _require_public_fields(\n            \"economic_params\",\n            self.economic_params,\n            (\"rho\", \"gamma_c\", \"phi\", \"chi_0\", \"chi_1\", \"a_bar\", \"mu_z\", \"sigma_z\"),\n        )\n        _require_public_fields(\n            \"numerics\",\n            self.numerics,\n            (\"delta\", \"convergence_tolerance\", \"max_iterations\", \"drift_tolerance\"),\n        )\n        b = np.asarray(getattr(self.grid, \"b\"), dtype=float)\n        a = np.asarray(getattr(self.grid, \"a\"), dtype=float)\n        z = np.asarray(getattr(self.grid, \"z\"), dtype=float)\n        switch = np.asarray(getattr(self.grid, \"switch_matrix\"), dtype=float)\n        if any(\n            axis.ndim != 1\n            or axis.size < 2\n            or not np.isfinite(axis).all()\n            or not np.all(np.diff(axis) > 0.0)\n            for axis in (b, a, z)\n        ):\n            raise ValueError(\n                \"accepted grid axes must be finite, one-dimensional, and strictly increasing\"\n            )\n        if switch.shape != (z.size, z.size) or not np.isfinite(switch).all():\n            raise ValueError(\"accepted grid switch_matrix must have shape (z,z) and be finite\")\n        initial = np.array(self.initial_value, dtype=float, copy=True)\n        labor = np.array(self.baseline_labor, dtype=float, copy=True)\n        accepted_shape = (b.size, a.size, z.size)\n        if initial.shape != accepted_shape or labor.shape != accepted_shape:\n            raise ValueError(\n                \"initial_value and baseline_labor must match accepted grid shape (b,a,z)\""
+        },
+        {
+          "evidence_id": "S19:619-629",
+          "quote": "def aggregate_stationary_household(grid, consumption, labor, density):\n    \"\"\"Exact MATLAB sums; L is effective z-weighted household labor, not GE labor.\"\"\"\n    shape=(grid.b.size,grid.a.size,grid.z.size)\n    C=np.asarray(consumption,dtype=float); l=np.asarray(labor,dtype=float); g=np.asarray(density,dtype=float)\n    if C.shape!=shape or l.shape!=shape or g.shape!=shape or not np.isfinite(C).all() or not np.isfinite(l).all() or not np.isfinite(g).all():\n        raise ValueError(\"aggregate arrays must be finite and match (b,a,z)\")\n    db=float(grid.b[1]-grid.b[0]); da=float(grid.a[1]-grid.a[0]); weight=db*da\n    b=np.broadcast_to(grid.b[:,None,None],shape); a=np.broadcast_to(grid.a[None,:,None],shape); z=np.broadcast_to(grid.z[None,None,:],shape)\n    c_ss=float(np.sum(C*g*weight)); l_ss=float(np.sum(z*l*g*weight))\n    a_ss=float(np.sum(a*g*weight)); b_ss=float(np.sum(b*g*weight))\n    return StationaryHouseholdAggregates(c_ss,l_ss,a_ss,b_ss,a_ss+b_ss,float(np.sum(g)*weight))"
+        }
+      ],
+      "what_this_does_not_prove": "Numbers, dimensions and ordering do not prove actual asset/HU/time units",
+      "minimum_missing_evidence": "Grid dictionary, z normalization and switching-rate time basis"
+    },
+    {
+      "field_name": "efficiency z / labor_weights / alphal",
+      "source_path_and_lines": [
+        "S06:332-350",
+        "S02:145-149",
+        "S02:211-218",
+        "S19:131-145",
+        "S19:619-629"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S06:332-350",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S02:145-149",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/household_adapter.py",
+          "sha256": "c248bdeccfce3427b74d11b3c893cd5327659dfb6e4d4f34e8bbe379c8f2c569",
+          "blob": "2d689e72067251f2da46fd807c5edca60341867a"
+        },
+        {
+          "evidence_id": "S02:211-218",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/household_adapter.py",
+          "sha256": "c248bdeccfce3427b74d11b3c893cd5327659dfb6e4d4f34e8bbe379c8f2c569",
+          "blob": "2d689e72067251f2da46fd807c5edca60341867a"
+        },
+        {
+          "evidence_id": "S19:131-145",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/exports/matlab_faithful_two_asset_ha.py",
+          "sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+          "blob": "9e7dc9556a2b76811e78f89999abecc045886106"
+        },
+        {
+          "evidence_id": "S19:619-629",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/exports/matlab_faithful_two_asset_ha.py",
+          "sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+          "blob": "9e7dc9556a2b76811e78f89999abecc045886106"
+        }
+      ],
+      "producer_function": "Explicit grid/params and named HA input constructor",
+      "direct_consumers": [
+        "labor FOC",
+        "utility",
+        "effective labor aggregator"
+      ],
+      "formula_or_mapping": "z multiplies wage and labor aggregate; named HA labor_weights=[1], adapter takes composite_labor_weight; alphal enters composite wage formula",
+      "province_axis_semantics": "z is within-household efficiency axis, not a province-count multiplier",
+      "vintage_or_snapshot": "Hardcoded/model parameter vintage; real normalization UNKNOWN",
+      "unit_status": "UNKNOWN: efficiency normalization and actual labor/hour interpretation",
+      "tax_semantics": "No additional p or employment conversion evidenced",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S06:332-350",
+          "quote": "    grid=MatlabFaithfulHJBGrid(np.linspace(-2,5,20),np.linspace(0,10,20),np.array([0.8,1.3]),\n                              np.array([[-1/3,1/3],[1/3,-1/3]]))\n    params=EconomicParams(0.05,2.0,5.0,0.1,2.0,1e-6,0.0,0.0)\n    numerics=MatlabFaithfulHJBNumerics(1000.0,1e-7,100,1e-12)\n    call_count=0\n    phi_matrix=np.ones((31,31),dtype=float)\n    def solve_batch(snapshot,iteration):\n        nonlocal call_count\n        productivity=np.array([float(s[\"Yt\"])/float(s[\"Lt\"]) for s in snapshot])\n        phi_matrix[:]=1.0-0.3*(productivity[:,None]-productivity[None,:])/(productivity[:,None]+productivity[None,:])\n        outputs=[]\n        _write_json(root/f'turn_{iteration:03d}_household_inputs.json', {\n            \"iteration\":iteration,\"state_entering_turn\":snapshot,\"phi_destination_origin\":phi_matrix})\n        try:\n            for province_index,state in enumerate(snapshot):\n                initial,labor=_source_initial_arrays(state,grid,params)\n                result=solve_matlab_source_postloop_household(grid,params,HouseholdInputs(\n                    float(state[\"rah\"]),float(state[\"rb\"]),0.0,  # tau already in state['w']\n                    np.array([state[\"w\"]]),np.array([0.0]),np.array([1.0])),initial,labor,"
+        },
+        {
+          "evidence_id": "S02:145-149",
+          "quote": "        _require_public_fields(\"grid\", self.grid, (\"b\", \"a\", \"z\", \"switch_matrix\"))\n        _require_public_fields(\n            \"economic_params\",\n            self.economic_params,\n            (\"rho\", \"gamma_c\", \"phi\", \"chi_0\", \"chi_1\", \"a_bar\", \"mu_z\", \"sigma_z\"),"
+        },
+        {
+          "evidence_id": "S02:211-218",
+          "quote": "    return StaticHouseholdCall(\n        household_input_kwargs=MappingProxyType({\n            \"r_a\": inputs.rah,\n            \"r_b\": inputs.rb,\n            \"tau\": 0.0,\n            \"wages\": (inputs.composite_wage,),\n            \"migration_costs\": (inputs.composite_migration_cost,),\n            \"labor_weights\": (inputs.composite_labor_weight,),"
+        },
+        {
+          "evidence_id": "S19:131-145",
+          "quote": "def labor_from_vb(v_b: float, z: float, inputs: HouseholdInputs, params: EconomicParams) -> np.ndarray:\n    if v_b <= 0 or z < 0:\n        raise ValueError(\"labor FOC requires V_b > 0 and z >= 0\")\n    net_wage = inputs.wages * (1.0 - inputs.tau - inputs.migration_costs) * z\n    labor = np.power(v_b * net_wage / inputs.labor_weights, 1.0 / params.phi)\n    return np.asarray(labor, dtype=float)\n\ndef flow_utility(consumption: float, labor: np.ndarray, inputs: HouseholdInputs, params: EconomicParams) -> float:\n    if consumption <= 0 or np.any(labor < 0):\n        return -np.inf\n    if np.isclose(params.gamma_c, 1.0):\n        consumption_utility = np.log(consumption)\n    else:\n        consumption_utility = consumption ** (1.0 - params.gamma_c) / (1.0 - params.gamma_c)\n    disutility = np.sum(inputs.labor_weights * labor ** (1.0 + params.phi) / (1.0 + params.phi))"
+        },
+        {
+          "evidence_id": "S19:619-629",
+          "quote": "def aggregate_stationary_household(grid, consumption, labor, density):\n    \"\"\"Exact MATLAB sums; L is effective z-weighted household labor, not GE labor.\"\"\"\n    shape=(grid.b.size,grid.a.size,grid.z.size)\n    C=np.asarray(consumption,dtype=float); l=np.asarray(labor,dtype=float); g=np.asarray(density,dtype=float)\n    if C.shape!=shape or l.shape!=shape or g.shape!=shape or not np.isfinite(C).all() or not np.isfinite(l).all() or not np.isfinite(g).all():\n        raise ValueError(\"aggregate arrays must be finite and match (b,a,z)\")\n    db=float(grid.b[1]-grid.b[0]); da=float(grid.a[1]-grid.a[0]); weight=db*da\n    b=np.broadcast_to(grid.b[:,None,None],shape); a=np.broadcast_to(grid.a[None,:,None],shape); z=np.broadcast_to(grid.z[None,None,:],shape)\n    c_ss=float(np.sum(C*g*weight)); l_ss=float(np.sum(z*l*g*weight))\n    a_ss=float(np.sum(a*g*weight)); b_ss=float(np.sum(b*g*weight))\n    return StationaryHouseholdAggregates(c_ss,l_ss,a_ss,b_ss,a_ss+b_ss,float(np.sum(g)*weight))"
+        }
+      ],
+      "what_this_does_not_prove": "Do not infer an employment-conditional average, fixed household size, or p/N conversion from these coefficients",
+      "minimum_missing_evidence": "Efficiency/labor/HU dictionary and accepted relation between z, alphal and bilateral labor"
+    },
+    {
+      "field_name": "N / population and GDP/capital upstream",
+      "source_path_and_lines": [
+        "S06:103-119",
+        "S03:128-132",
+        "S05:86-86"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S06:103-119",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S03:128-132",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/migration_labor.py",
+          "sha256": "66600d6d1121db319b03383436999aa53b5e1aa5f8eecc72516fd1922b7b52dc",
+          "blob": "5a1cae1113f62407ffb3fa85939f55f7e9da2f42"
+        },
+        {
+          "evidence_id": "S05:86-86",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/firm.py",
+          "sha256": "0939886706b8bcb42f3a41fc244000e7f8ad01884c61afdbdd31036bee908218",
+          "blob": "ab40ac7210eb1b7730900c3c6223b1ed2bddbcac"
+        }
+      ],
+      "producer_function": "canonical.vectors.pop/gdp/cap/initialized_zt",
+      "direct_consumers": [
+        "entry state",
+        "migration N",
+        "firm old-state fields"
+      ],
+      "formula_or_mapping": "N=v.pop; initial Lt=v.pop; Yt=v.gdp; Kt=v.cap; no raw source dictionary provided",
+      "province_axis_semantics": "Indexed by canonical.province_order; original source ID join UNKNOWN",
+      "vintage_or_snapshot": "Entry binding claims 2009 / regression_vintage_key=10; raw data vintage UNKNOWN",
+      "unit_status": "UNKNOWN: population persons/households/scaling, GDP/capital monetary units",
+      "tax_semantics": "N scales reconstructed labor and thus payroll base indirectly",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S06:103-119",
+          "quote": "    if canonical[\"binding\"] != {\"analysis_index\":1,\"calendar_year\":2009,\"data_mat_index\":1,\n            \"output_filename_year\":2009,\"regression_vintage_key\":10,\"workbook_data_row_index\":10}:\n        raise ValueError(\"canonical annual binding mismatch\")\n    v=canonical[\"vectors\"]; s=canonical[\"scalars\"]\n    states=[]\n    for i,name in enumerate(canonical[\"province_order\"]):\n        state={\"name\":name,\"N\":v[\"pop\"][i],\"alpha\":v[\"ind_alpha\"][i],\"Zt\":v[\"initialized_zt\"][i],\n            \"Kt0\":v[\"cap\"][i],\"Kt\":v[\"cap\"][i],\"Kt_prev\":v[\"cap\"][i],\"Lt\":v[\"pop\"][i],\n            \"Lt_prev\":v[\"pop\"][i],\"Yt0\":v[\"gdp\"][i],\"Yt\":v[\"gdp\"][i],\"Zt_1\":v[\"initialized_zt\"][i],\n            \"GovInv\":v[\"gov_inv\"][i],\"inter_prv_ratio\":v[\"inter_province_asset_ratio\"][i],\n            \"rb_gap\":s[\"rb_gap\"],\"rah\":s[\"rah\"],\"ra\":s[\"ra\"],\"it\":s[\"nominal_rate\"],\n            \"rb\":s[\"rb\"],\"rk\":s[\"rk\"],\"wjt\":s[\"wjt\"],\"w\":s[\"composite_wage\"],\n            \"Tt\":s[\"transfer_income\"],\"pit\":s[\"inflation\"],\"pit_1\":s[\"inflation\"],\n            \"totalpit\":s[\"inflation\"],\"epsilon_pi\":0.0,\"tau\":s[\"wage_tax\"],\"At\":s[\"initial_at\"],\n            \"Bt\":s[\"initial_bt\"],\"mt\":s[\"initial_mt\"],\"Ct\":s[\"initial_ct\"],\"AtTax\":0.0,\n            \"GovSurplus\":0.0,\"corptau\":s[\"corporate_tax\"],\"ramin\":0.02,\"ramax\":0.09,\n            \"wjtmin\":0.8,\"wjtmax\":1.3}"
+        },
+        {
+          "evidence_id": "S03:128-132",
+          "quote": "            value = (\n                consumption_scale\n                * base ** (1.0 / inputs.phi_l)\n                * inputs.population_by_origin[origin]\n            )"
+        },
+        {
+          "evidence_id": "S05:86-86",
+          "quote": "    yt = zt * kt**alpha * lt ** (1.0 - alpha)  # line 30"
+        }
+      ],
+      "what_this_does_not_prove": "No NU_100_PERSONS, HU, or N=P/3 authority is established by this code excerpt",
+      "minimum_missing_evidence": "Original population/GDP/capital dictionaries, source table ID joins and household bridge"
+    },
+    {
+      "field_name": "model physical period and numerical delta",
+      "source_path_and_lines": [
+        "S06:103-105",
+        "S06:332-341",
+        "S13:48-55",
+        "S19:29-49"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S06:103-105",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S06:332-341",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        },
+        {
+          "evidence_id": "S13:48-55",
+          "archive_member": "evidence_sanitized.zip!/source_originals/supplemental_fixed_commit/src/ch5_two_asset_hank/multi_province/stationary_runtime.py.txt",
+          "sha256": "226be912ab776f57a8d8eface912ab2a3331e865638ac36976f6d578bdb086a0",
+          "blob": "8717cfa759948bd1ad3c8cd788f8f4736f250598"
+        },
+        {
+          "evidence_id": "S19:29-49",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/exports/matlab_faithful_two_asset_ha.py",
+          "sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+          "blob": "9e7dc9556a2b76811e78f89999abecc045886106"
+        }
+      ],
+      "producer_function": "Entry calendar binding; solver numerics; outer iteration index",
+      "direct_consumers": [
+        "callback",
+        "future HA numerics"
+      ],
+      "formula_or_mapping": "calendar_year=2009 is a dataset label; outer iteration is a fixed-point count; numerical delta=1000 is not proven physical duration",
+      "province_axis_semantics": "Calendar binding and outer count are different from province axes",
+      "vintage_or_snapshot": "Physical period UNKNOWN; callback iteration k is not a time-series date",
+      "unit_status": "UNKNOWN: annual/quarterly/continuous-time model unit and rate calibration",
+      "tax_semantics": "Tax data validity interval also UNKNOWN",
+      "canonical_status": "UNKNOWN",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S06:103-105",
+          "quote": "    if canonical[\"binding\"] != {\"analysis_index\":1,\"calendar_year\":2009,\"data_mat_index\":1,\n            \"output_filename_year\":2009,\"regression_vintage_key\":10,\"workbook_data_row_index\":10}:\n        raise ValueError(\"canonical annual binding mismatch\")"
+        },
+        {
+          "evidence_id": "S06:332-341",
+          "quote": "    grid=MatlabFaithfulHJBGrid(np.linspace(-2,5,20),np.linspace(0,10,20),np.array([0.8,1.3]),\n                              np.array([[-1/3,1/3],[1/3,-1/3]]))\n    params=EconomicParams(0.05,2.0,5.0,0.1,2.0,1e-6,0.0,0.0)\n    numerics=MatlabFaithfulHJBNumerics(1000.0,1e-7,100,1e-12)\n    call_count=0\n    phi_matrix=np.ones((31,31),dtype=float)\n    def solve_batch(snapshot,iteration):\n        nonlocal call_count\n        productivity=np.array([float(s[\"Yt\"])/float(s[\"Lt\"]) for s in snapshot])\n        phi_matrix[:]=1.0-0.3*(productivity[:,None]-productivity[None,:])/(productivity[:,None]+productivity[None,:])"
+        },
+        {
+          "evidence_id": "S13:48-55",
+          "quote": "    tkn_ratio = np.full(n, 3.0, dtype=float)\n    history: list[IterationRecord] = []\n    for iteration in range(1, inputs.max_iterations + 1):\n        entering = states\n        batch = inputs.household_solver(entering, iteration)\n        turn = run_source_faithful_one_turn(OneTurnInputs(\n            order, entering, MappingProxyType(dict(inputs.params)), phi, wedges, batch\n        ))"
+        },
+        {
+          "evidence_id": "S19:29-49",
+          "quote": "class EconomicParams:\n    rho: float\n    gamma_c: float\n    phi: float\n    chi_0: float\n    chi_1: float\n    a_bar: float\n    mu_z: float\n    sigma_z: float\n\n    def __post_init__(self) -> None:\n        values = np.array(\n            [self.rho, self.gamma_c, self.phi, self.chi_0, self.chi_1, self.a_bar, self.mu_z, self.sigma_z]\n        )\n        if not np.all(np.isfinite(values)):\n            raise ValueError(\"economic parameters must be finite\")\n        if self.rho <= 0 or self.gamma_c <= 0 or self.phi <= 0:\n            raise ValueError(\"rho, gamma_c, and phi must be positive\")\n        if self.chi_0 < 0 or self.chi_1 <= 0 or self.a_bar <= 0:\n            raise ValueError(\"adjustment parameters violate the frozen domain\")\n        if self.mu_z < 0 or self.sigma_z < 0:"
+        }
+      ],
+      "what_this_does_not_prove": "Do not turn a calendar-year label, delta or 31-province count into a model-period definition",
+      "minimum_missing_evidence": "Model-time declaration and rate/flow annualization authority"
+    },
+    {
+      "field_name": "snapshot digest / household tuple digest",
+      "source_path_and_lines": [
+        "S16:23-60",
+        "S16:119-126",
+        "S16:140-149",
+        "S06:323-350"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S16:23-60",
+          "archive_member": "evidence_sanitized.zip!/prototype/contract_schema.py",
+          "sha256": "6c700dc474bb25091fdd804ee24b103aba72a37ccbbfeadc194f1209610ff0f7",
+          "blob": "NOT_A_GIT_BLOB_AUTHORITY"
+        },
+        {
+          "evidence_id": "S16:119-126",
+          "archive_member": "evidence_sanitized.zip!/prototype/contract_schema.py",
+          "sha256": "6c700dc474bb25091fdd804ee24b103aba72a37ccbbfeadc194f1209610ff0f7",
+          "blob": "NOT_A_GIT_BLOB_AUTHORITY"
+        },
+        {
+          "evidence_id": "S16:140-149",
+          "archive_member": "evidence_sanitized.zip!/prototype/contract_schema.py",
+          "sha256": "6c700dc474bb25091fdd804ee24b103aba72a37ccbbfeadc194f1209610ff0f7",
+          "blob": "NOT_A_GIT_BLOB_AUTHORITY"
+        },
+        {
+          "evidence_id": "S06:323-350",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/validators/multi_province/mp4b_python_empirical.py",
+          "sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+          "blob": "ebae8a2e84556a3edd1feedecdc580181d045de4"
+        }
+      ],
+      "producer_function": "C prototype canonical/digest/seal_document; real MP4B only logs labeled canonical hash",
+      "direct_consumers": [
+        "C freeze_snapshot and fake spy"
+      ],
+      "formula_or_mapping": "Standard JSON SHA256 binds component/tuple metadata; seal_document attaches hashes only; real callback does not construct C provenance-bearing snapshot",
+      "province_axis_semantics": "C has caller-supplied 31-ID order; no real canonical ID list supplied",
+      "vintage_or_snapshot": "C enforces one OLD_TURN label synthetically; real generation-vintage reconciliation BLOCKED",
+      "unit_status": "UNKNOWN for real inputs; hash carries declared units but cannot verify their truth",
+      "tax_semantics": "C single-tax tag and HA tau=0 are target contract metadata",
+      "canonical_status": "SYNTHETIC_ONLY",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S16:23-60",
+          "quote": "def canonical(value):\n    return json.dumps(value, sort_keys=True, separators=(\",\", \":\"), ensure_ascii=False, allow_nan=False).encode()\n\n\ndef digest(value):\n    return hashlib.sha256(canonical(value)).hexdigest()\n\n\ndef vintage(doc):\n    return {\"snapshot_id\":doc[\"snapshot_id\"],\"turn_index\":doc[\"turn_index\"],\"phase\":\"OLD_TURN\"}\n\n\ndef payload_for_snapshot(doc):\n    result=deepcopy(doc)\n    result.pop(\"snapshot_digest\",None)\n    for record in result[\"province_inputs\"]:record.pop(\"snapshot_digest\",None)\n    return result\n\n\ndef tuple_body(doc, record):\n    return {\"snapshot_id\":doc[\"snapshot_id\"],\"turn_index\":doc[\"turn_index\"],\"province_id\":record[\"province_id\"],\n            \"old_price_component_digests\":doc[\"component_digests\"],\n            \"input_source_identity_digest\":digest(doc[\"input_source_identity\"]),\n            \"record_fields\":{k:record[k] for k in RECORD_FIELDS},\n            \"wage_tax_applied_count\":record[\"wage_tax_applied_count\"],\"units\":record[\"units\"],\"vintage\":record[\"vintage\"]}\n\n\ndef seal_document(document):\n    \"\"\"Hash attachment only, deliberately NOT validation or real-source acceptance.\"\"\"\n    doc=deepcopy(document)\n    doc[\"component_digests\"]={k:digest(doc[\"prices\"][k]) for k in PRICE_FIELDS}\n    for r in doc[\"province_inputs\"]:\n        r[\"household_input_tuple\"]=tuple_body(doc,r)\n        td=digest(r[\"household_input_tuple\"])\n        r[\"household_input_tuple_digest\"]=td\n        r[\"initialization_tuple_digest\"]=td;r[\"solve_tuple_digest\"]=td\n    sd=digest(payload_for_snapshot(doc));doc[\"snapshot_digest\"]=sd\n    for r in doc[\"province_inputs\"]:r[\"snapshot_digest\"]=sd"
+        },
+        {
+          "evidence_id": "S16:119-126",
+          "quote": "    _require(doc[\"snapshot_digest\"]==digest(payload_for_snapshot(doc)),\"SNAPSHOT_DIGEST_MISMATCH\",\"snapshot_digest\")\n    _require(doc[\"composite_wage_provenance\"][\"status\"]==\"SYNTHETIC_ONLY\",\n             \"BLOCKED_SOURCE_NOT_ESTABLISHED\",\"composite_wage_provenance.status\",\n             \"This no-HA prototype admits clearly synthetic evidence only, never real canonical authority\")\n    _require(doc[\"input_source_identity\"][\"canonical\"][\"status\"]==\"SYNTHETIC_ONLY\",\n             \"BLOCKED_SOURCE_NOT_ESTABLISHED\",\"input_source_identity.canonical.status\")\n    _require(doc[\"composite_wage_provenance\"][\"sha256\"]==digest(doc[\"prices\"][\"composite_after_tax_wage_old\"]),\n             \"COMPOSITE_PROVENANCE_DIGEST\",\"composite_wage_provenance.sha256\")"
+        },
+        {
+          "evidence_id": "S16:140-149",
+          "quote": "            ref=r[field]\n            _require(type(ref) is dict and type(ref.get(\"origin_column_index\")) is int,\n                     \"MATRIX_REFERENCE\",prefix+\".\"+field)\n            _require(canonical(ref)==canonical(matrix_column_reference(doc,key,i)),\n                     \"MATRIX_REFERENCE\",prefix+\".\"+field)\n        _require(r[\"wage_tax_applied_count\"]==1 and r[\"ha_parameters\"][\"tau\"]==0.,\"DUPLICATE_WAGE_TAX\",prefix+\".ha_parameters.tau\")\n        body=tuple_body(doc,r);td=digest(body)\n        _require(r[\"household_input_tuple\"]==body,\"TUPLE_CONTENT\",prefix+\".household_input_tuple\")\n        _require(r[\"household_input_tuple_digest\"]==td and r[\"initialization_tuple_digest\"]==td and r[\"solve_tuple_digest\"]==td,\n                 \"INITIALIZE_SOLVE_TUPLE_MISMATCH\",prefix+\".household_input_tuple_digest\")"
+        },
+        {
+          "evidence_id": "S06:323-350",
+          "quote": "def run_python_once(canonical_path: Path, run_root: Path):\n    root=Path(run_root); root.mkdir(parents=True,exist_ok=False)\n    canonical,states=load_entry_state(canonical_path)\n    _write_json(root/'python_run_manifest.json', {\n        \"schema\":\"CH5_MP4B_PYTHON_SCIENTIFIC_RUN_V1\", \"calendar_year\":2009,\n        \"canonical_sha256\":CANONICAL_SHA, \"province_order\":canonical[\"province_order\"],\n        \"reg_threshold\":1e-9, \"max_iterations\":500,\n        \"interface_only_unused_fields\":{\"mu_z\":0.0,\"sigma_z\":0.0},\n    })\n    grid=MatlabFaithfulHJBGrid(np.linspace(-2,5,20),np.linspace(0,10,20),np.array([0.8,1.3]),\n                              np.array([[-1/3,1/3],[1/3,-1/3]]))\n    params=EconomicParams(0.05,2.0,5.0,0.1,2.0,1e-6,0.0,0.0)\n    numerics=MatlabFaithfulHJBNumerics(1000.0,1e-7,100,1e-12)\n    call_count=0\n    phi_matrix=np.ones((31,31),dtype=float)\n    def solve_batch(snapshot,iteration):\n        nonlocal call_count\n        productivity=np.array([float(s[\"Yt\"])/float(s[\"Lt\"]) for s in snapshot])\n        phi_matrix[:]=1.0-0.3*(productivity[:,None]-productivity[None,:])/(productivity[:,None]+productivity[None,:])\n        outputs=[]\n        _write_json(root/f'turn_{iteration:03d}_household_inputs.json', {\n            \"iteration\":iteration,\"state_entering_turn\":snapshot,\"phi_destination_origin\":phi_matrix})\n        try:\n            for province_index,state in enumerate(snapshot):\n                initial,labor=_source_initial_arrays(state,grid,params)\n                result=solve_matlab_source_postloop_household(grid,params,HouseholdInputs(\n                    float(state[\"rah\"]),float(state[\"rb\"]),0.0,  # tau already in state['w']\n                    np.array([state[\"w\"]]),np.array([0.0]),np.array([1.0])),initial,labor,"
+        }
+      ],
+      "what_this_does_not_prove": "A valid synthetic digest does not establish authentic canonical data, producer authority or real production admission",
+      "minimum_missing_evidence": "Exact real source bytes, accepted field units, ID/order manifest, vintage decisions and source-closed adapter"
+    },
+    {
+      "field_name": "sigma_ref / phi_ref full columns",
+      "source_path_and_lines": [
+        "S16:68-90",
+        "S16:140-149"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S16:68-90",
+          "archive_member": "evidence_sanitized.zip!/prototype/contract_schema.py",
+          "sha256": "6c700dc474bb25091fdd804ee24b103aba72a37ccbbfeadc194f1209610ff0f7",
+          "blob": "NOT_A_GIT_BLOB_AUTHORITY"
+        },
+        {
+          "evidence_id": "S16:140-149",
+          "archive_member": "evidence_sanitized.zip!/prototype/contract_schema.py",
+          "sha256": "6c700dc474bb25091fdd804ee24b103aba72a37ccbbfeadc194f1209610ff0f7",
+          "blob": "NOT_A_GIT_BLOB_AUTHORITY"
+        }
+      ],
+      "producer_function": "C matrix_column_reference",
+      "direct_consumers": [
+        "C synthetic validator / tuple body"
+      ],
+      "formula_or_mapping": "Full matrix[:,i] values + origin ID/index + ordered destination IDs + shape + vintage; column_digest excludes whole-matrix digest",
+      "province_axis_semantics": "31 destination rows for each origin column",
+      "vintage_or_snapshot": "Explicit same synthetic snapshot/vintage labels only",
+      "unit_status": "UNKNOWN: no new physical units established",
+      "tax_semantics": "Reference metadata does not decide sigma tax recipient",
+      "canonical_status": "SYNTHETIC_ONLY",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S16:68-90",
+          "quote": "def matrix_column_reference(doc, key, origin_column_index):\n    \"\"\"Synthetic target-contract reference to matrix[:, origin], not a diagonal.\n\n    The column digest binds destination order, origin, values and vintage.\n    It deliberately excludes the whole-matrix digest: changing another origin\n    changes matrix identity without changing this column's projection identity.\n    No real source identity or economic interpretation is established here.\n    \"\"\"\n    ids=doc[\"province_ids\"]\n    _require(key in (\"sigma_old\",\"phi_old\"),\"MATRIX_REFERENCE\",\"matrix_key\")\n    _require(type(origin_column_index) is int and 0<=origin_column_index<len(ids),\n             \"MATRIX_REFERENCE\",\"origin_column_index\")\n    matrix=doc[\"prices\"][key]\n    _require(len(ids)==31 and len(matrix)==31 and all(len(row)==31 for row in matrix),\n             \"MATRIX_SHAPE\",\"prices.\"+key)\n    projection={\"origin_column_index\":origin_column_index,\n                \"origin_column_id\":ids[origin_column_index],\n                \"destination_ids_in_order\":list(ids),\n                \"values\":[row[origin_column_index] for row in matrix],\n                \"vintage\":vintage(doc),\n                \"projection_semantics\":\"FULL_DESTINATION_COLUMN_FOR_ORIGIN\"}\n    return {**projection,\"matrix_shape\":[31,31],\"matrix_digest\":digest(matrix),\n            \"column_digest\":digest(projection)}"
+        },
+        {
+          "evidence_id": "S16:140-149",
+          "quote": "            ref=r[field]\n            _require(type(ref) is dict and type(ref.get(\"origin_column_index\")) is int,\n                     \"MATRIX_REFERENCE\",prefix+\".\"+field)\n            _require(canonical(ref)==canonical(matrix_column_reference(doc,key,i)),\n                     \"MATRIX_REFERENCE\",prefix+\".\"+field)\n        _require(r[\"wage_tax_applied_count\"]==1 and r[\"ha_parameters\"][\"tau\"]==0.,\"DUPLICATE_WAGE_TAX\",prefix+\".ha_parameters.tau\")\n        body=tuple_body(doc,r);td=digest(body)\n        _require(r[\"household_input_tuple\"]==body,\"TUPLE_CONTENT\",prefix+\".household_input_tuple\")\n        _require(r[\"household_input_tuple_digest\"]==td and r[\"initialization_tuple_digest\"]==td and r[\"solve_tuple_digest\"]==td,\n                 \"INITIALIZE_SOLVE_TUPLE_MISMATCH\",prefix+\".household_input_tuple_digest\")"
+        }
+      ],
+      "what_this_does_not_prove": "Column fix is target schema evidence only; it is not a real source identity, unit certificate or production bridge",
+      "minimum_missing_evidence": "Authoritative real matrices, IDs, dictionaries and snapshot rules"
+    },
+    {
+      "field_name": "productive capital and household return upstream",
+      "source_path_and_lines": [
+        "S04:179-184",
+        "S23:70-108"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S04:179-184",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "sha256": "afeadbffd88e1405c2f32d22fd256e7fd0451fc4ecbfe2492bc0db5dbdc728fa",
+          "blob": "7c85ea1651c46dd91884f37867253c963292ca79"
+        },
+        {
+          "evidence_id": "S23:70-108",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/capital_allocation.py",
+          "sha256": "8fd00e62b002e7a254a883a3786af7738972b79acc0ec0b05c795786565fecb2",
+          "blob": "3617b946f839dfea91f9b7f4922c8a3b8ca1c528"
+        }
+      ],
+      "producer_function": "allocate_productive_capital",
+      "direct_consumers": [
+        "evaluate_firm kt_supply",
+        "next state.rah"
+      ],
+      "formula_or_mapping": "contribution_i=ratio_i*At_i*N_i; kt_supply_i=(sum contribution-contribution_i)/(n-1); household rah uses old firm ra and ratios as explicitly recorded in return row",
+      "province_axis_semantics": "Contribution per origin; recipient supply excludes own contribution by positional i",
+      "vintage_or_snapshot": "Current household At, entering N/ratio/old firm ra; next rah carried after macro turn",
+      "unit_status": "UNKNOWN: asset/HU/population scaling and return-period basis",
+      "tax_semantics": "No wage-tax application; distinct capital/return channel",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S04:179-184",
+          "quote": "    capital = allocate_productive_capital(CapitalAllocationInputs(\n        illiquid_assets_at=household.at,\n        population=[province[\"N\"] for province in provinces],\n        inter_province_ratio=[province[\"inter_prv_ratio\"] for province in provinces],\n        old_firm_return_ra=[province[\"ra\"] for province in provinces],\n    ))"
+        },
+        {
+          "evidence_id": "S23:70-108",
+          "quote": "def allocate_productive_capital(inputs: CapitalAllocationInputs) -> CapitalAllocationResult:\n    \"\"\"Apply the literal source exclusion/division and ``rah`` ratio placement.\"\"\"\n\n    n = inputs.illiquid_assets_at.size\n    contributions = np.array(\n        [\n            inputs.inter_province_ratio[i]\n            * inputs.illiquid_assets_at[i]\n            * inputs.population[i]\n            for i in range(n)\n        ],\n        dtype=float,\n    )\n    total_capital = sum(float(value) for value in contributions)\n    total_return = sum(\n        float(inputs.inter_province_ratio[i] * inputs.old_firm_return_ra[i])\n        for i in range(n)\n    )\n    kt_supply = np.array(\n        [(total_capital - contributions[i]) / (n - 1) for i in range(n)],\n        dtype=float,\n    )\n    rah = np.array(\n        [\n            (1.0 - inputs.inter_province_ratio[i]) * inputs.old_firm_return_ra[i]\n            + inputs.inter_province_ratio[i]\n            * (\n                total_return\n                - inputs.inter_province_ratio[i] * inputs.old_firm_return_ra[i]\n            )\n            / (n - 1)\n            for i in range(n)\n        ],\n        dtype=float,\n    )\n    return CapitalAllocationResult(\n        productive_contribution=contributions,\n        kt_supply=kt_supply,\n        household_illiquid_return_rah=rah,"
+        }
+      ],
+      "what_this_does_not_prove": "At-only source arithmetic is not monetary/household normalization proof and must not be changed under this audit",
+      "minimum_missing_evidence": "At/N/ratio dictionary and accepted household vs firm return definition"
+    },
+    {
+      "field_name": "national GovSurplus and debt-interest units",
+      "source_path_and_lines": [
+        "S04:212-217",
+        "S25:16-22",
+        "S25:33-47"
+      ],
+      "source_blob_or_archive_member_identity": [
+        {
+          "evidence_id": "S04:212-217",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "sha256": "afeadbffd88e1405c2f32d22fd256e7fd0451fc4ecbfe2492bc0db5dbdc728fa",
+          "blob": "7c85ea1651c46dd91884f37867253c963292ca79"
+        },
+        {
+          "evidence_id": "S25:16-22",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/fiscal_diagnostics.py",
+          "sha256": "d1ce633ee68cab1ecee88c546842a59521c2ad5cbffbd03be138561ccac12af6",
+          "blob": "c24bbda9ea88c1581eeed6d734062b30d13def2f"
+        },
+        {
+          "evidence_id": "S25:33-47",
+          "archive_member": "evidence_sanitized.zip!/candidate_source/src/ch5_two_asset_hank/multi_province/fiscal_diagnostics.py",
+          "sha256": "d1ce633ee68cab1ecee88c546842a59521c2ad5cbffbd03be138561ccac12af6",
+          "blob": "c24bbda9ea88c1581eeed6d734062b30d13def2f"
+        }
+      ],
+      "producer_function": "national_fiscal_diagnostics",
+      "direct_consumers": [
+        "OneTurnResult.fiscal.GovSurplus"
+      ],
+      "formula_or_mapping": "sum_j(Govinc[j]-Bt[j]*rb[j]*N[j]); scalar rb broadcast if supplied",
+      "province_axis_semantics": "Per-province positional arrays summed nationally",
+      "vintage_or_snapshot": "Uses firm Govinc and new monetary rb, household Bt from batch and entering N",
+      "unit_status": "UNKNOWN: Govinc versus Bt*N scale and common physical flow period",
+      "tax_semantics": "Diagnostic only; no balanced-budget closure; wage tax is included upstream in Govinc",
+      "canonical_status": "SOURCE_CONFIRMED",
+      "evidence_quote_or_excerpt": [
+        {
+          "evidence_id": "S04:212-217",
+          "quote": "    fiscal = national_fiscal_diagnostics(\n        [firm.Govinc for firm in firms],\n        household.bt,\n        monetary.rb,\n        [province[\"N\"] for province in provinces],\n    )"
+        },
+        {
+          "evidence_id": "S25:16-22",
+          "quote": "def national_fiscal_diagnostics(\n    govinc: Sequence[float],\n    bt: Sequence[float],\n    rb: float | Sequence[float],\n    population: Sequence[float],\n) -> FiscalDiagnostics:\n    \"\"\"Compute ``sum(Govinc_i - Bt_i * rb_i * N_i)`` (one-turn lines 61-65).\"\"\""
+        },
+        {
+          "evidence_id": "S25:33-47",
+          "quote": "    incomes = tuple(float(value) for value in govinc)\n    liquid_assets = tuple(float(value) for value in bt)\n    populations = tuple(float(value) for value in population)\n    values = incomes + liquid_assets + returns + populations\n    if not all(isfinite(value) for value in values):\n        raise ValueError(\"fiscal diagnostic inputs must be finite\")\n    if any(value < 0.0 for value in populations):\n        raise ValueError(\"province populations must be non-negative\")\n    surplus = sum(\n        incomes[i] - liquid_assets[i] * returns[i] * populations[i]\n        for i in range(count)\n    )\n    if not isfinite(surplus):\n        raise ValueError(\"GovSurplus must be finite\")\n    return FiscalDiagnostics(Govinc=incomes, GovSurplus=surplus)"
+        }
+      ],
+      "what_this_does_not_prove": "A national diagnostic expression does not establish full fiscal closure or transfer/asset/payroll unit consistency",
+      "minimum_missing_evidence": "Government accounting dictionary and consistent household/population/money/interest-period normalization"
+    }
+  ]
+}
