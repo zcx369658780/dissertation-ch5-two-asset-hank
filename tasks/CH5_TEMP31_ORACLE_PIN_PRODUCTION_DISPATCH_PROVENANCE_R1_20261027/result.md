@@ -1,0 +1,40 @@
+# Oracle pin与production dispatch有界来源审计
+
+**固定pin的历史原件已精确找到；实际TEMP31采用入口及真实输入绑定仍BLOCKED，来源发现STOP。** 没有模型/测试/no-HA/预检/源码修改。
+
+发文commit=231d7db746afe9db70d8fcfc9c958929c8f9c1c0；候选固定基点=174260f367e91edc9985a5ed712b972dea4f1fd0，不同角色不互换。仅比较b69ae535a1518c68822733603f1e506620327375、ba98537fd5ae004f0aa37d319865da1f1739e503、2aa2f67f4e5eaa1117d174b7866c3eb7b7b109b0这3个固定源码版本。
+
+## 实际答案
+
+1. pin精确匹配ba98537...的exports/matlab_faithful_two_asset_ha.py原始28641字节：SHA256=b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3；Git Blob=9e7dc9556a2b76811e78f89999abecc045886106。当前本地同名31859字节、SHA256=f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8；冻结b69/2aa同名31143字节、SHA256=a7539eb6ba076176b81f832c1800d38d8d170dad8f3619d3b0f3893c5a163fff。历史648行到新716行有helper/分支/shadow字段改动；当前与冻结新源逐行payload相同而换行不同。证明期望版本存在和版本差异，不证明损坏/科学正确性、不选替代。三版ENTRY同Blob均保留旧pin，首次写入提交/任务UNKNOWN，未全历史扫描。
+
+2. 新定位静态caller：BATCH:43–45 subprocess调用年度PRODUCTION worker；worker:24导入validation anchor，167–187建立callback/controller。EMPIRICAL:86–104 prepare_canonical确实调用ANNUAL.load_primary_annual_input；BATCH:49–59有runtime cache/Owner-A输入物化分支。源码调用者/worker/generator可定位，但标签和CLI不是Owner当前采用或部署证明。ACTUAL_PRODUCTION=UNKNOWN，REAL_CANONICAL_BINDING=BLOCKED；缺入口/配置/版本采纳、实际生成调用与原件、行政ID有序join和D1旧期tuple。
+
+## 三件事件分开
+
+pin冲突是静态原始字节身份事实，未运行bootstrap或观察runtime失败。长会话/验收超时仅Owner假说，无带时间精确日志，本轮不扫会话JSONL。前轮SSH回读断线是交付事件；GPT后在固定GitHub候选核验14/14，见174260f367e91edc9985a5ed712b972dea4f1fd0独立审阅，不追改执行者原中断。三者因果UNKNOWN，不归责模型机制。
+
+## Owner下一步最小可选方案（未采纳/未执行）
+
+- 指定一组批准的入口/HA版本与磁盘原始字节合同：历史匹配版或保留新版后另做guard设计审查；本轮不回退、不改pin/换行、不修公式。
+- 指定当前TEMP31 dispatcher、命令/配置、representation/year与真实canonical生成调用，给受界原件路径/hash、source hashes、行政ID顺序及共同旧期tuple证据。
+- 如需首创pin或超时原因，另给精确任务/提交或带时间错误日志及边界；不以猜想取代日志，不展开全历史调查。
+
+工作地/目的地tau_j且同税只扣一次保持。R2/R3未合并，D1/D2/D3未生产闭合；gross/net、劳动/人口/有效单位、财政税基、phi/sigma/alphal、NBS口径/vintage/期间桥仍未决。三个Excel MODEL_ADOPTED=FALSE，不读取工资行或生成净工资。
+
+## 实际预算、交付和未完成
+
+源码内容16/18，终核ENTRY/ORACLE预留2次，含终核保守18/18；定位3/6、冻结版本3/3、新引用最多两层。治理任务/Owner规则/裁决与保护资产哈希另列；不继承旧27/30预算。报告使用缓存，源发现已关闭。科研、数值、测试、no-HA、预检、项目import、生产脚本、HA/HJB/KFE/GE/IRF、源码/数据改写全部0。一次报告生成语法错误发生在解析前，无文件写入/来源读取；仅报告工具修正，不重试科学调查。只读瞬时错误最多1次同命令重试，实际见回执。
+
+artifact_integrity=SEE_FIXED_CANDIDATE_REMOTE_READBACK_RECEIPTS
+source_identity=EXACT_HISTORICAL_PIN_MATCH__CURRENT_RAW_VERSION_DISTINCT
+numeric_review=NOT_RUN
+implementation_review=STATIC_SOURCE_ONLY__NOT_EXECUTED
+scientific_review=BLOCKED_UNTIL_OWNER_APPROVAL
+privacy_review=BOUNDED_SAFE_SOURCE_FRAGMENTS_METADATA
+actual_terminal=STOP__PIN_MATCH__ACTUAL_PRODUCTION_AND_REAL_INPUT_BINDING_BLOCKED
+delivery=AUTHORIZED_SSH_CANDIDATE__ACTUAL_FINAL_READBACK_IN_RECEIPTS
+cleanup=NOT_AUTHORIZED_NOT_PERFORMED
+not_completed=PIN_FIRST_INTRODUCTION;OWNER_VERSION_AND_BYTE_CONTRACT;ACTUAL_DEPLOYED_PRODUCTION;REAL_CANONICAL_INVOCATION_AND_INPUT;31_ID_OLD_TUPLE;D1_D2_D3;TIMEOUT_CAUSALITY;SCIENTIFIC_ACCEPTANCE
+
+前后保护实测见回执，不把预留当已测。FORMAL_SOURCE_FREEZE=FALSE；V010=UNCHANGED；V011=NOT_STARTED；Results=FALSE；model_activation=False；REAL_GE=False；FULL_RUNNER_IO_CLOSURE=BLOCKED。独立候选发布回读后STOP，不Issue/PR、合并、清理或自动后继。

@@ -1,0 +1,1685 @@
+{
+  "task_id": "CH5_TEMP31_ORACLE_PIN_PRODUCTION_DISPATCH_PROVENANCE_R1_20261027",
+  "task_publication_commit": "231d7db746afe9db70d8fcfc9c958929c8f9c1c0",
+  "candidate_fixed_base": "174260f367e91edc9985a5ed712b972dea4f1fd0",
+  "source_discovery_terminal": "STOP__PIN_MATCH__ACTUAL_PRODUCTION_AND_REAL_INPUT_ADOPTION_UNPROVEN",
+  "budgets": {
+    "source_content_reads": 16,
+    "final_entry_oracle_hash_reads_reserved": 2,
+    "conservative_total_after_final_hash": 18,
+    "max_exact_source_content_reads": 18,
+    "targeted_queries": 3,
+    "max_targeted_queries": 6,
+    "frozen_version_refs": 3,
+    "max_frozen_version_refs": 3,
+    "max_new_dispatch_depth": 2,
+    "science": 0,
+    "numeric_model": 0,
+    "tests": 0,
+    "no_HA": 0,
+    "preflight": 0,
+    "project_import": 0,
+    "production_execution": 0,
+    "model_calls": 0,
+    "HA_HJB_KFE_GE_IRF": 0,
+    "formal_source_writes": 0,
+    "data_transformations": 0,
+    "external_data_downloads": 0,
+    "transient_read_only_retries_used_at_report_creation": 0,
+    "max_transient_read_only_retries": 1,
+    "report_authoring_parse_error": 1,
+    "report_authoring_correction": "Task scratch only; failed inline builder parsed no code, wrote no payload and added no source reads. No source investigation retry."
+  },
+  "protected_before": {
+    "head": "a1db8c114dec0ab69d69a5576e153a7f868cba0e",
+    "branch": "codex/ch5-mp4c-k1b-turn5-turn6-bounded-continuation-20260922",
+    "index_sha256": "28058a7e2d9ab773c5813205c75999e6c221533aeae0b9bb094b9a83451bf7cc",
+    "refs_sha256": "600912e7f3dabd0661d2314f533bb432d95cf4bd35b622ab5b16d6149e3c6729",
+    "refs_count": 243,
+    "status_sha256": "c443420c888f5e776cfb6cd05b27cbed56e58a787b82639aa23a47ce7f2ac2f3",
+    "status_null_record_count": 5971,
+    "protected": [
+      {
+        "path": "AGENTS.md",
+        "bytes": 132027,
+        "sha256": "d42041e26da7e795e3ae5c236e0029a8a356e14c8058ffa6f95383494f031b3e"
+      },
+      {
+        "path": "CURRENT.md",
+        "bytes": 337540,
+        "sha256": "3133011df542cbef25ff23b48996a35d7c3f98c8a5444417746faf8248e1737f"
+      },
+      {
+        "path": "TASK_CURRENT.md",
+        "bytes": 266971,
+        "sha256": "10749bcb69ba8fdd3807a511b20d64786627ec701706af421acd13550bf39b11"
+      },
+      {
+        "path": "docs/CH5_GITHUB_WORKFLOW_AUTHORITY_CURRENT_20261025.md",
+        "bytes": 2623,
+        "sha256": "36ea79e2d22a1ddef37d7d3db4bf419d5c8c4bdb8d67a8a2c98a54da297e4ecc"
+      },
+      {
+        "path": "docs/CH5_INDEPENDENT_REVIEW_RULES_20261025.md",
+        "bytes": 1424,
+        "sha256": "413e58b5fc773805075bd9a6e95bf304c1b2c33845ad9bdca163440d1e42b620"
+      },
+      {
+        "path": "docs/CH5_ASTRA_WORKFLOW_CURRENT.md",
+        "bytes": 15676,
+        "sha256": "b3cab64d249ff768f98403e8ccbc6f8aaf7d04b009f66255d41f26fb842ec2a7"
+      },
+      {
+        "path": "data/external_sources/nbs_provincial_urban_unit_wage_20261027/分省年度数据_城镇单位就业人员平均工资(元).xlsx",
+        "bytes": 12652,
+        "sha256": "8bb799fc41da5728a52c4958b2da0641ccbc81470a8d6e377625d79b5816b176"
+      },
+      {
+        "path": "data/external_sources/nbs_provincial_urban_unit_wage_20261027/SOURCE_RECEIPT_20261027.json",
+        "bytes": 2291,
+        "sha256": "6d66a514fb672b245b018dac2dd513cd126d60a32a636acf2707c0b54450035a"
+      },
+      {
+        "path": "data/external_sources/nbs_wage_supplement_20261027/分省年度数据_城镇私营单位就业人员平均工(元).xlsx",
+        "bytes": 12411,
+        "sha256": "5c790a478a244ca12b4c3c2c682465683c64e2b36bbf1d6f5e430bd79b23f21a"
+      },
+      {
+        "path": "data/external_sources/nbs_wage_supplement_20261027/分省年度数据_城镇单位就业人员工资总额(亿元).xlsx",
+        "bytes": 13310,
+        "sha256": "f27313c73dc08e8217aeeefe147ce62d7bc0d7c463ecc651c54c7682682c9dc7"
+      },
+      {
+        "path": "data/external_sources/nbs_wage_supplement_20261027/SOURCE_RECEIPT_20261027.json",
+        "bytes": 6348,
+        "sha256": "87ef3d9a8a072a7eb4e029fb67187b218f7d45a2c21bcb79ad6ba9506628a2c3"
+      }
+    ]
+  },
+  "protected_after": "NOT_YET_MEASURED_AT_REPORT_CREATION__FINAL_RECEIPTS_REQUIRED",
+  "preview_not_actual": "Before/after checkpoint hashes measured; final after-remote-readback source rehash not yet run and recorded in final receipts.",
+  "source_read_ledger": [
+    {
+      "read_number": 1,
+      "source_id": "LOCAL_ENTRY",
+      "path": "validators/multi_province/mp4b_python_empirical.py",
+      "kind": "CURRENT_LOCAL_RAW"
+    },
+    {
+      "read_number": 2,
+      "source_id": "LOCAL_ORACLE",
+      "path": "exports/matlab_faithful_two_asset_ha.py",
+      "kind": "CURRENT_LOCAL_RAW"
+    },
+    {
+      "read_number": 3,
+      "source_id": "F1_ENTRY",
+      "path": "validators/multi_province/mp4b_python_empirical.py",
+      "kind": "FIXED_GIT_RAW",
+      "commit": "b69ae535a1518c68822733603f1e506620327375"
+    },
+    {
+      "read_number": 4,
+      "source_id": "F1_ORACLE",
+      "path": "exports/matlab_faithful_two_asset_ha.py",
+      "kind": "FIXED_GIT_RAW",
+      "commit": "b69ae535a1518c68822733603f1e506620327375"
+    },
+    {
+      "read_number": 5,
+      "source_id": "F2_ENTRY",
+      "path": "validators/multi_province/mp4b_python_empirical.py",
+      "kind": "FIXED_GIT_RAW",
+      "commit": "ba98537fd5ae004f0aa37d319865da1f1739e503"
+    },
+    {
+      "read_number": 6,
+      "source_id": "F2_ORACLE",
+      "path": "exports/matlab_faithful_two_asset_ha.py",
+      "kind": "FIXED_GIT_RAW",
+      "commit": "ba98537fd5ae004f0aa37d319865da1f1739e503"
+    },
+    {
+      "read_number": 7,
+      "source_id": "F3_ENTRY",
+      "path": "validators/multi_province/mp4b_python_empirical.py",
+      "kind": "FIXED_GIT_RAW",
+      "commit": "2aa2f67f4e5eaa1117d174b7866c3eb7b7b109b0"
+    },
+    {
+      "read_number": 8,
+      "source_id": "F3_ORACLE",
+      "path": "exports/matlab_faithful_two_asset_ha.py",
+      "kind": "FIXED_GIT_RAW",
+      "commit": "2aa2f67f4e5eaa1117d174b7866c3eb7b7b109b0"
+    },
+    {
+      "read_number": 9,
+      "source_id": "LOCAL_ANNUAL",
+      "path": "src/ch5_two_asset_hank/multi_province/annual.py",
+      "kind": "CURRENT_LOCAL_RAW"
+    },
+    {
+      "read_number": 10,
+      "source_id": "LOCAL_POSTLOOP",
+      "path": "validators/multi_province/mp4b_matlab_source_postloop_household_adapter.py",
+      "kind": "CURRENT_LOCAL_RAW"
+    },
+    {
+      "read_number": 11,
+      "source_id": "LOCAL_RUNTIME",
+      "path": "src/ch5_two_asset_hank/multi_province/stationary_runtime.py",
+      "kind": "CURRENT_LOCAL_RAW"
+    },
+    {
+      "read_number": 12,
+      "source_id": "LOCAL_PRODUCTION",
+      "path": "validators/multi_province/mp4c_python_annual_production.py",
+      "kind": "CURRENT_LOCAL_RAW"
+    },
+    {
+      "read_number": 13,
+      "source_id": "LOCAL_EMPIRICAL",
+      "path": "validators/multi_province/mp4c_python_annual_empirical.py",
+      "kind": "CURRENT_LOCAL_RAW"
+    },
+    {
+      "read_number": 14,
+      "source_id": "LOCAL_CACHE",
+      "path": "validators/multi_province/mp4c_matlab_runtime_cache.py",
+      "kind": "CURRENT_LOCAL_RAW"
+    },
+    {
+      "read_number": 15,
+      "source_id": "LOCAL_OWNER_A",
+      "path": "validators/multi_province/mp4c_owner_a_2009_2022.py",
+      "kind": "CURRENT_LOCAL_RAW"
+    },
+    {
+      "read_number": 16,
+      "source_id": "LOCAL_BATCH",
+      "path": "validators/multi_province/mp4c_run_full_annual_batch.py",
+      "kind": "CURRENT_LOCAL_RAW"
+    }
+  ],
+  "queries": [
+    {
+      "id": "Q01",
+      "kind": "ONE_LEVEL_FILENAME_METADATA_ONLY",
+      "scope": [
+        "validators/multi_province",
+        "src/ch5_two_asset_hank/multi_province",
+        "src/ch5_two_asset_hank/corrected_diagnostic",
+        "exports"
+      ],
+      "result": "LOCAL_KNOWN_DIRECTORY_METADATA.json",
+      "contents_read_by_query": 0
+    },
+    {
+      "id": "Q02",
+      "kind": "EXPECTED_PIN_DEFINITION_IN_ALREADY_READ_FIXED_ENTRY_BUFFERS",
+      "source_ids": [
+        "LOCAL_ENTRY",
+        "F1_ENTRY",
+        "F2_ENTRY",
+        "F3_ENTRY"
+      ],
+      "pattern": "ORACLE_SHA|_bootstrap_repository_imports",
+      "hits": [
+        {
+          "source_id": "LOCAL_ENTRY",
+          "line": 19,
+          "text": "ORACLE_SHA = \"B92F6EFC59D9398F89F8FB6EE67BF6C5F947282D76895051BEC194967EC9C3E3\""
+        },
+        {
+          "source_id": "LOCAL_ENTRY",
+          "line": 30,
+          "text": "def _bootstrap_repository_imports() -> dict[str, object]:"
+        },
+        {
+          "source_id": "LOCAL_ENTRY",
+          "line": 35,
+          "text": "    if oracle_sha != ORACLE_SHA:"
+        },
+        {
+          "source_id": "LOCAL_ENTRY",
+          "line": 64,
+          "text": "BOOTSTRAP_IDENTITY = _bootstrap_repository_imports()"
+        },
+        {
+          "source_id": "F1_ENTRY",
+          "line": 19,
+          "text": "ORACLE_SHA = \"B92F6EFC59D9398F89F8FB6EE67BF6C5F947282D76895051BEC194967EC9C3E3\""
+        },
+        {
+          "source_id": "F1_ENTRY",
+          "line": 30,
+          "text": "def _bootstrap_repository_imports() -> dict[str, object]:"
+        },
+        {
+          "source_id": "F1_ENTRY",
+          "line": 35,
+          "text": "    if oracle_sha != ORACLE_SHA:"
+        },
+        {
+          "source_id": "F1_ENTRY",
+          "line": 64,
+          "text": "BOOTSTRAP_IDENTITY = _bootstrap_repository_imports()"
+        },
+        {
+          "source_id": "F2_ENTRY",
+          "line": 19,
+          "text": "ORACLE_SHA = \"B92F6EFC59D9398F89F8FB6EE67BF6C5F947282D76895051BEC194967EC9C3E3\""
+        },
+        {
+          "source_id": "F2_ENTRY",
+          "line": 30,
+          "text": "def _bootstrap_repository_imports() -> dict[str, object]:"
+        },
+        {
+          "source_id": "F2_ENTRY",
+          "line": 35,
+          "text": "    if oracle_sha != ORACLE_SHA:"
+        },
+        {
+          "source_id": "F2_ENTRY",
+          "line": 64,
+          "text": "BOOTSTRAP_IDENTITY = _bootstrap_repository_imports()"
+        },
+        {
+          "source_id": "F3_ENTRY",
+          "line": 19,
+          "text": "ORACLE_SHA = \"B92F6EFC59D9398F89F8FB6EE67BF6C5F947282D76895051BEC194967EC9C3E3\""
+        },
+        {
+          "source_id": "F3_ENTRY",
+          "line": 30,
+          "text": "def _bootstrap_repository_imports() -> dict[str, object]:"
+        },
+        {
+          "source_id": "F3_ENTRY",
+          "line": 35,
+          "text": "    if oracle_sha != ORACLE_SHA:"
+        },
+        {
+          "source_id": "F3_ENTRY",
+          "line": 64,
+          "text": "BOOTSTRAP_IDENTITY = _bootstrap_repository_imports()"
+        }
+      ]
+    },
+    {
+      "id": "Q03",
+      "kind": "EXACT_SAVED_SOURCE_IMPORT_DISPATCH_AND_CANONICAL_REFERENCE_QUERY",
+      "source_ids": [
+        "LOCAL_PRODUCTION",
+        "LOCAL_EMPIRICAL",
+        "LOCAL_CACHE",
+        "LOCAL_OWNER_A",
+        "LOCAL_BATCH",
+        "LOCAL_ANNUAL"
+      ],
+      "pattern": "^from |^import |^def |production|Popen|subprocess|load_primary_annual_input|canonical|primary_sources|source_scalars|SOURCE_HASHES|--|PROVINCE_ORDER",
+      "hits": [
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 1,
+          "text": "\"\"\"Terminal-only MP4C annual production worker; importing it performs no science.\"\"\""
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 2,
+          "text": "from __future__ import annotations"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 4,
+          "text": "import argparse"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 5,
+          "text": "import csv"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 6,
+          "text": "import json"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 7,
+          "text": "import os"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 8,
+          "text": "import platform"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 9,
+          "text": "import sys"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 10,
+          "text": "import time"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 11,
+          "text": "from dataclasses import asdict"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 12,
+          "text": "from hashlib import sha256"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 13,
+          "text": "from pathlib import Path"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 14,
+          "text": "from typing import Any, Mapping"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 16,
+          "text": "import numpy as np"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 17,
+          "text": "from scipy.io import loadmat, savemat"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 24,
+          "text": "from validators.multi_province import mp4b_python_empirical as anchor"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 25,
+          "text": "from validators.multi_province import mp4c_python_annual_empirical as empirical"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 26,
+          "text": "from validators.multi_province import mp4c_matlab_runtime_cache as runtime_cache"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 27,
+          "text": "from validators.multi_province import mp4c_owner_a_2009_2022 as owner_a"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 28,
+          "text": "from ch5_two_asset_hank.multi_province.one_turn import PreFrozenHouseholdOutputBatch"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 29,
+          "text": "from ch5_two_asset_hank.multi_province.stationary_runtime import OnlineStationaryInputs, run_online_stationary"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 30,
+          "text": "from ch5_two_asset_hank.multi_province.steady_state import SteadyStateConvergenceError"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 38,
+          "text": "def _sha(path: Path) -> str:"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 46,
+          "text": "def _jsonable(value: Any) -> Any:"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 56,
+          "text": "def write_json_no_overwrite(path: Path, payload: Any) -> None:"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 63,
+          "text": "def scientific_identities() -> dict[str, str]:"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 76,
+          "text": "def serialize_final_state(states: tuple[Mapping[str, object], ...]) -> list[dict[str, object]]:"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 90,
+          "text": "def validate_lt_mat(matrix: np.ndarray, province_order: list[str]) -> np.ndarray:"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 97,
+          "text": "def extract_household_checkpoint(result: Any, grid: Any, province: str) -> dict[str, Any]:"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 111,
+          "text": "def persist_checkpoint(root: Path, year: int, canonical_sha: str, source_hashes: Mapping[str, str],"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 125,
+          "text": "        \"schema\": CHECKPOINT_SCHEMA, \"calendar_year\": year, \"canonical_sha256\": canonical_sha,"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 135,
+          "text": "            \"data_MAT\": \"represented by canonical annual input JSON and SHA, not copied as a legacy MATLAB struct\","
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 137,
+          "text": "            \"sigmau_MAT\": \"canonical matrices.sigmau; live shock source reloads it rather than consuming st.sigmau_MAT\","
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 145,
+          "text": "def run_year(runtime_input_path: Path, cache_path: Path, run_root: Path) -> int:"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 152,
+          "text": "        canonical=supplied; scalars=asdict(empirical.accepted_source_scalars());states=owner_a.entry_states(canonical,scalars)"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 155,
+          "text": "        rebuilt=runtime_cache.add_runtime_support(runtime_cache.load_runtime_year(cache_path,year),distance_workbook=empirical.primary_sources(REPO_ROOT/\"data_local/matlab_primary_source_snapshot\").distance_workbook,distance_sha256=empirical.SOURCE_HASHES[\"中国各省省会地理距离矩阵.xlsx\"],max_sigmau=empirical.accepted_source_scalars().max_sigmau)"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 156,
+          "text": "        if runtime_cache.canonical_bytes(rebuilt)!=Path(runtime_input_path).read_bytes():raise ValueError(\"runtime input bytes do not match exact cache materialization\")"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 157,
+          "text": "        canonical=supplied; scalars=asdict(empirical.accepted_source_scalars());states=runtime_cache.entry_states(canonical,scalars)"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 159,
+          "text": "    canonical_copy = root / f\"calendar_{year}_matlab_runtime_cache_input.json\""
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 160,
+          "text": "    canonical_copy.write_bytes(Path(runtime_input_path).read_bytes())"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 161,
+          "text": "    canonical_sha = _sha(canonical_copy); started = time.time(); started_mono = time.monotonic()"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 183,
+          "text": "    manifest={\"schema\":\"CH5_MP4C_ANNUAL_PRODUCTION_RUN_V2\",\"representation\":representation,\"logging_mode\":\"terminal-only\",\"calendar_year\":year,\"runtime_input_sha256\":canonical_sha,\"runtime_cache_sha256\":canonical[\"cache_sha256\"],\"scientific_code_identities\":scientific_identities(),\"max_outer_turns\":empirical.MAX_OUTER_TURNS,\"max_household_calls\":empirical.MAX_HOUSEHOLD_CALLS,\"automatic_reruns\":0,\"wall_clock_timeout_seconds\":None,\"thread_environment\":{k:os.environ.get(k) for k in THREAD_ENV}}"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 187,
+          "text": "        result=run_online_stationary(OnlineStationaryInputs(tuple(canonical[\"province_order\"]),states,model_params,phi,np.array(canonical[\"runtime_support\"][\"sigmau_destination_origin\"]),solve_batch,1e-9,empirical.MAX_OUTER_TURNS,True))"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 190,
+          "text": "    lt=validate_lt_mat(np.asarray(last.one_turn.migration.lt_mat),list(canonical[\"province_order\"]))"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 192,
+          "text": "    terminal={\"schema\":\"CH5_MP4C_ANNUAL_TERMINAL_V1\",\"calendar_year\":year,\"status\":result.termination_reason,\"converged\":bool(result.converged),\"iteration_count\":result.iteration_count,\"household_call_count\":calls,\"household_converged_count\":last.household_converged_count,\"ra_upper_count\":last.ra_upper_count,\"ra_lower_count\":last.ra_lower_count,\"wage_upper_count\":last.wage_upper_count,\"wage_lower_count\":last.wage_lower_count,\"province_order\":canonical[\"province_order\"],\"final_31x20\":rows,\"legacy_workbook_rows\":[{\"name\":str(s[\"name\"]),\"Yt0\":float(s[\"Yt0\"])/float(canonical[\"scalars\"][\"gdp_multiplier\"]),\"Yt\":float(s[\"Yt\"])/float(canonical[\"scalars\"][\"gdp_multiplier\"]),\"Kt0\":float(s[\"Kt0\"])/float(canonical[\"scalars\"][\"gdp_multiplier\"]),\"Kt\":float(s[\"Kt\"])/float(canonical[\"scalars\"][\"gdp_multiplier\"]),\"Lt0\":float(s[\"N\"])/float(canonical[\"scalars\"][\"pop_multiplier\"]),\"Lt\":float(s[\"Lt\"])/float(canonical[\"scalars\"][\"pop_multiplier\"])} for s in result.final_state],\"national\":{f:sum(float(r[f]) for r in rows) for f in (\"Ct\",\"At\",\"Bt\",\"Yt\")},\"Lt_mat\":{\"orientation\":\"destination_row_x_origin_column\",\"row_axis\":canonical[\"province_order\"],\"column_axis\":canonical[\"province_order\"],\"path\":\"Lt_mat_destination_row_origin_column.npy\"},\"wall_clock_seconds\":time.monotonic()-started_mono}"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 196,
+          "text": "    persist_checkpoint(root,year,canonical_sha,{\"数据估计结果_1000_100_0.mat\":canonical[\"cache_sha256\"],\"中国各省省会地理距离矩阵.xlsx\":canonical[\"runtime_support\"][\"distance_sha256\"]},list(canonical[\"province_order\"]),final_checkpoints,terminal_sha)"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 199,
+          "text": "    required=[canonical_copy,root/\"run_manifest.json\",root/\"final_steady_state.json\",root/\"final_31x20.csv\",root/\"Lt_mat_destination_row_origin_column.npy\",root/\"final_household_restart.npz\",root/f\"Python_Multi_Province_12sts_{year}.mat\",root/\"checkpoint_manifest.json\",root/\"year_timing.json\"]"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 200,
+          "text": "    marker={\"schema\":\"CH5_MP4C_YEAR_SUCCESS_V2\",\"representation\":representation,\"year\":year,\"status\":result.termination_reason,\"runtime_input_sha256\":canonical_sha,\"runtime_cache_sha256\":canonical[\"cache_sha256\"],\"scientific_code_identities\":scientific_identities(),\"checkpoint_schema\":CHECKPOINT_SCHEMA,\"outputs\":{p.name:{\"sha256\":_sha(p),\"bytes\":p.stat().st_size} for p in required}}"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "line": 205,
+          "text": "def main(argv=None) -> int:"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 2,
+          "text": "from __future__ import annotations"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 4,
+          "text": "import json"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 5,
+          "text": "import sys"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 6,
+          "text": "import time"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 7,
+          "text": "from pathlib import Path"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 8,
+          "text": "from typing import Mapping"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 10,
+          "text": "import numpy as np"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 19,
+          "text": "from validators.multi_province import mp4b_python_empirical as anchor"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 20,
+          "text": "from ch5_two_asset_hank.multi_province.annual import ("
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 24,
+          "text": "    load_primary_annual_input,"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 26,
+          "text": "from ch5_two_asset_hank.multi_province.one_turn import PreFrozenHouseholdOutputBatch"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 27,
+          "text": "from ch5_two_asset_hank.multi_province.stationary_runtime import ("
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 31,
+          "text": "from ch5_two_asset_hank.multi_province.steady_state import SteadyStateConvergenceError"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 34,
+          "text": "SOURCE_HASHES = {"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 46,
+          "text": "def accepted_source_scalars() -> AnnualSourceScalars:"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 74,
+          "text": "def primary_sources(local_root: Path) -> PrimaryAnnualSourceFiles:"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 80,
+          "text": "        expected_filled_sha256=SOURCE_HASHES[\"2000年后各省数据_填充NA.xlsx\"],"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 81,
+          "text": "        expected_regression_sha256=SOURCE_HASHES[\"R语言估计结果_plm估计.xlsx\"],"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 82,
+          "text": "        expected_distance_sha256=SOURCE_HASHES[\"中国各省省会地理距离矩阵.xlsx\"],"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 86,
+          "text": "def prepare_canonical(year: int, local_root: Path, output_root: Path) -> dict[str, object]:"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 87,
+          "text": "    \"\"\"Build and persist one annual canonical input without any model call.\"\"\""
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 89,
+          "text": "    canonical = load_primary_annual_input("
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 90,
+          "text": "        sources=primary_sources(local_root), binding=binding, scalars=accepted_source_scalars()"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 94,
+          "text": "    canonical_path = root / f\"calendar_{year}_primary_premodel_input.json\""
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 95,
+          "text": "    canonical_path.write_bytes(canonical.canonical_bytes())"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 100,
+          "text": "        \"canonical_path\": str(canonical_path.resolve()),"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 101,
+          "text": "        \"canonical_sha256\": canonical.canonical_sha256(),"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 102,
+          "text": "        \"source_hashes\": dict(canonical.source_hashes),"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 103,
+          "text": "        \"province_order\": list(canonical.province_axis.labels),"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 104,
+          "text": "        \"regression_sheet\": canonical.regression_sheet,"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 105,
+          "text": "        \"fixed_zt_calendar_year\": canonical.fixed_zt_calendar_year,"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 107,
+          "text": "            np.isfinite(getattr(canonical, name)).all()"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 119,
+          "text": "def load_entry_state(canonical_path: Path) -> tuple[dict, tuple[dict[str, object], ...]]:"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 120,
+          "text": "    canonical = json.loads(Path(canonical_path).read_text(encoding=\"utf-8\"))"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 121,
+          "text": "    year = int(canonical[\"binding\"][\"calendar_year\"])"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 131,
+          "text": "    if canonical[\"binding\"] != expected_binding:"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 132,
+          "text": "        raise ValueError(\"canonical annual binding mismatch\")"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 133,
+          "text": "    if canonical[\"regression_sheet\"] != f\"总面板回归系数_{expected.regression_vintage_key}_行业4\":"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 134,
+          "text": "        raise ValueError(\"canonical annual regression vintage mismatch\")"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 135,
+          "text": "    if canonical[\"source_hashes\"] != SOURCE_HASHES:"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 136,
+          "text": "        raise ValueError(\"canonical annual source hashes mismatch\")"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 137,
+          "text": "    vectors = canonical[\"vectors\"]"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 138,
+          "text": "    scalars = canonical[\"scalars\"]"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 140,
+          "text": "    for index, name in enumerate(canonical[\"province_order\"]):"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 161,
+          "text": "    return canonical, tuple(states)"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 164,
+          "text": "def _terminal_evidence(result, call_count: int, elapsed: float) -> dict[str, object]:"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 191,
+          "text": "def run_python_once(canonical_path: Path, run_root: Path):"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 195,
+          "text": "    canonical, states = load_entry_state(canonical_path)"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 196,
+          "text": "    year = int(canonical[\"binding\"][\"calendar_year\"])"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 199,
+          "text": "    canonical_sha = anchor._sha256(Path(canonical_path))"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 203,
+          "text": "        \"binding\": canonical[\"binding\"],"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 204,
+          "text": "        \"canonical_sha256\": canonical_sha,"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 205,
+          "text": "        \"source_hashes\": canonical[\"source_hashes\"],"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 206,
+          "text": "        \"province_order\": canonical[\"province_order\"],"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 288,
+          "text": "            tuple(canonical[\"province_order\"]), states, model_params, phi_matrix,"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 289,
+          "text": "            np.array(canonical[\"matrices\"][\"sigmau\"]), solve_batch, 1e-9,"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 309,
+          "text": "def main(argv=None) -> int:"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 311,
+          "text": "    if len(args) == 4 and args[0] == \"--prepare-canonical\":"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 312,
+          "text": "        prepare_canonical(int(args[1]), Path(args[2]), Path(args[3]))"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "line": 316,
+          "text": "            \"usage: mp4c_python_annual_empirical.py --prepare-canonical YEAR LOCAL_DATA_ROOT FRESH_OUTPUT_ROOT | \""
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 2,
+          "text": "from __future__ import annotations"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 3,
+          "text": "import json"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 4,
+          "text": "from hashlib import sha256"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 5,
+          "text": "from pathlib import Path"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 6,
+          "text": "from typing import Any, Mapping"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 7,
+          "text": "import h5py"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 8,
+          "text": "import numpy as np"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 10,
+          "text": "from ch5_two_asset_hank.multi_province.annual import DecoupledAnnualIndex, _normalize_province, _xlsx_sheet_rows"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 11,
+          "text": "from ch5_two_asset_hank.multi_province.province_contracts import PROVINCE_ORDER"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 18,
+          "text": "def file_sha256(path:Path)->str:"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 24,
+          "text": "def _text(h5:h5py.File,ref)->str:"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 27,
+          "text": "def _numeric(h5:h5py.File,ref)->np.ndarray:"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 32,
+          "text": "def _cell_numeric(h5:h5py.File,group:h5py.Group,field:str,matlab_index:int)->np.ndarray:"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 37,
+          "text": "def inspect_cache(path:Path,expected_sha:str=EXPECTED_CACHE_SHA256)->dict[str,Any]:"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 50,
+          "text": "            if normalized!=PROVINCE_ORDER:raise ValueError(f\"wrong province order in entry {index+1}\")"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 57,
+          "text": "def load_runtime_year(path:Path,year:int,expected_sha:str=EXPECTED_CACHE_SHA256)->dict[str,Any]:"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 70,
+          "text": "        if names!=PROVINCE_ORDER:raise ValueError(\"wrong runtime cache province order\")"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 87,
+          "text": "def add_runtime_support(runtime:dict[str,Any],*,distance_workbook:Path,distance_sha256:str,max_sigmau:float)->dict[str,Any]:"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 91,
+          "text": "    if row_axis!=PROVINCE_ORDER or col_axis!=PROVINCE_ORDER:raise ValueError(\"distance axes mismatch\")"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 95,
+          "text": "def canonical_bytes(payload:Mapping[str,Any])->bytes:"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 98,
+          "text": "def entry_states(payload:Mapping[str,Any],accepted_scalars:Mapping[str,float])->tuple[dict[str,Any],...]:"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "line": 101,
+          "text": "    if tuple(names)!=PROVINCE_ORDER:raise ValueError(\"runtime input province order mismatch\")"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 1,
+          "text": "\"\"\"Owner-A corrected 2009--2022 annual empirical input representation."
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 6,
+          "text": "from __future__ import annotations"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 8,
+          "text": "import json"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 9,
+          "text": "import sys"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 10,
+          "text": "from dataclasses import asdict"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 11,
+          "text": "from pathlib import Path"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 12,
+          "text": "from typing import Any, Mapping"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 14,
+          "text": "import h5py"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 15,
+          "text": "import numpy as np"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 22,
+          "text": "from ch5_two_asset_hank.multi_province.annual import _normalize_province, _xlsx_sheet_rows"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 23,
+          "text": "from ch5_two_asset_hank.multi_province.province_contracts import PROVINCE_ORDER"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 24,
+          "text": "from validators.multi_province import mp4c_matlab_runtime_cache as cache"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 25,
+          "text": "from validators.multi_province import mp4c_python_annual_empirical as empirical"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 38,
+          "text": "def _sha(path: Path) -> str:"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 42,
+          "text": "def _binding(year: int) -> dict[str, int]:"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 55,
+          "text": "def _year(value: object) -> int:"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 65,
+          "text": "def _axis(rows: Mapping[int, Mapping[int, object]], start: int, end: int) -> tuple[str, ...]:"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 67,
+          "text": "    if labels != PROVINCE_ORDER:"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 72,
+          "text": "def _level(rows: Mapping[int, Mapping[int, object]], physical_row: int, start: int, end: int, year: int) -> np.ndarray:"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 81,
+          "text": "def _technology(cache_path: Path, year: int) -> tuple[np.ndarray, np.ndarray, list[str]]:"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 89,
+          "text": "        if names != PROVINCE_ORDER:"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 100,
+          "text": "def _numeric_cells(rows: Mapping[int, Mapping[int, object]]) -> list[float]:"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 104,
+          "text": "def static_plm_audit(data_root: Path, cache_path: Path) -> dict[str, Any]:"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 105,
+          "text": "    \"\"\"Verify frozen stored vintages 10--23 without invoking R.\"\"\""
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 139,
+          "text": "def build_input(data_root: Path, cache_path: Path, year: int) -> dict[str, Any]:"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 144,
+          "text": "    sources = empirical.primary_sources(root)"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 155,
+          "text": "    scalars = empirical.accepted_source_scalars()"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 187,
+          "text": "def canonical_bytes(payload: Mapping[str, Any]) -> bytes:"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 191,
+          "text": "def validate(payload: Mapping[str, Any]) -> None:"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 198,
+          "text": "    if tuple(payload.get(\"province_order\", ())) != PROVINCE_ORDER:"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "line": 215,
+          "text": "def entry_states(payload: Mapping[str, Any], accepted_scalars: Mapping[str, float]) -> tuple[dict[str, Any], ...]:"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 1,
+          "text": "\"\"\"Resumable year-subprocess scheduler for the Owner-run MP4C production batch.\"\"\""
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 2,
+          "text": "from __future__ import annotations"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 3,
+          "text": "import argparse, csv, json, os, platform, subprocess, sys, time"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 4,
+          "text": "from concurrent.futures import FIRST_COMPLETED, Future, ThreadPoolExecutor, wait"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 5,
+          "text": "from datetime import datetime, timezone"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 6,
+          "text": "from hashlib import sha256"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 7,
+          "text": "from pathlib import Path"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 8,
+          "text": "from typing import Any"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 9,
+          "text": "import numpy as np"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 10,
+          "text": "from openpyxl import Workbook"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 15,
+          "text": "from validators.multi_province import mp4c_python_annual_empirical as empirical"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 16,
+          "text": "from validators.multi_province import mp4c_python_annual_production as production"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 17,
+          "text": "from validators.multi_province import mp4c_matlab_runtime_cache as runtime_cache"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 18,
+          "text": "from validators.multi_province import mp4c_owner_a_2009_2022 as owner_a"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 22,
+          "text": "def sha(path:Path)->str:"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 28,
+          "text": "def now()->str:return datetime.now(timezone.utc).isoformat()"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 30,
+          "text": "def valid_success(year_dir:Path,year:int,canonical_sha:str,representation:str=runtime_cache.REPRESENTATION)->bool:"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 35,
+          "text": "    if p.get(\"schema\")!=\"CH5_MP4C_YEAR_SUCCESS_V2\" or p.get(\"representation\")!=representation or p.get(\"year\")!=year or p.get(\"status\")!=\"SOURCE_CONVERGED\" or p.get(\"runtime_input_sha256\")!=canonical_sha or p.get(\"runtime_cache_sha256\")!=runtime_cache.EXPECTED_CACHE_SHA256:return False"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 36,
+          "text": "    if p.get(\"scientific_code_identities\")!=production.scientific_identities() or p.get(\"checkpoint_schema\")!=production.CHECKPOINT_SCHEMA:return False"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 40,
+          "text": "def worker_env()->dict[str,str]:"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 41,
+          "text": "    env=os.environ.copy(); env.update(production.THREAD_ENV); return env"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 43,
+          "text": "def launch_year(year:int,canonical:Path,cache_path:Path,year_dir:Path)->dict[str,Any]:"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 45,
+          "text": "    proc=subprocess.run([sys.executable,str(REPO_ROOT/\"validators/multi_province/mp4c_python_annual_production.py\"),str(canonical),str(cache_path),str(year_dir)],cwd=REPO_ROOT,env=worker_env(),text=True)"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 49,
+          "text": "def prepare_runtime_inputs(data_root:Path,cache_path:Path,batch_root:Path,years:tuple[int,...]=YEARS,owner_a_inputs:bool=False)->dict[int,Path]:"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 53,
+          "text": "        expected=owner_a.build_input(data_root,cache_path,year) if owner_a_inputs else runtime_cache.add_runtime_support(runtime_cache.load_runtime_year(cache_path,year),distance_workbook=empirical.primary_sources(data_root).distance_workbook,distance_sha256=empirical.SOURCE_HASHES[\"中国各省省会地理距离矩阵.xlsx\"],max_sigmau=empirical.accepted_source_scalars().max_sigmau)"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 54,
+          "text": "        expected_bytes=owner_a.canonical_bytes(expected) if owner_a_inputs else runtime_cache.canonical_bytes(expected)"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 62,
+          "text": "def aggregate(root:Path,statuses:list[dict[str,Any]],years:tuple[int,...])->None:"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 72,
+          "text": "        w=csv.DictWriter(f,fieldnames=[\"year\",\"name\",*production.FINAL_FIELDS]);w.writeheader();w.writerows(rows)"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 93,
+          "text": "def run_batch(data_root:Path,cache_path:Path,root:Path,workers:int,years:tuple[int,...]=YEARS,owner_a_inputs:bool=False)->int:"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 104,
+          "text": "    manifest={\"schema\":\"CH5_MP4C_FULL_BATCH_V3\",\"representation\":representation,\"years\":list(years),\"workers\":workers,\"data_root\":str(data_root.resolve()),\"runtime_cache_path\":str(cache_path.resolve()),\"runtime_cache_sha256\":runtime_cache.EXPECTED_CACHE_SHA256,\"output_root\":str(root.resolve()),\"python\":sys.executable,\"thread_environment\":production.THREAD_ENV,\"start\":now()}"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 110,
+          "text": "    else: production.write_json_no_overwrite(manifest_path,manifest)"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 135,
+          "text": "    production.write_json_no_overwrite(root/\"batch_summary.json\",{\"schema\":\"CH5_MP4C_BATCH_SUMMARY_V1\",\"years\":statuses})"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 139,
+          "text": "    timing={\"batch_start\":manifest[\"start\"],\"batch_end\":now(),\"preflight_start\":preflight_start,\"preflight_end\":preflight_end,\"first_scientific_worker_start\":first_worker,\"last_scientific_worker_end\":last_worker,\"scientific_wall_clock_seconds\":scientific_wall,\"total_launcher_wall_clock_seconds\":time.monotonic()-overall,\"workers\":workers,\"python\":sys.version,\"numpy\":np.__version__,\"scipy\":__import__(\"scipy\").__version__,\"os\":platform.platform(),\"logical_cpu_count\":os.cpu_count(),\"thread_environment\":production.THREAD_ENV}"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 140,
+          "text": "    production.write_json_no_overwrite(root/\"batch_timing.json\",timing)"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 143,
+          "text": "    production.write_json_no_overwrite(root/\"artifact_hash_manifest.json\",{p.name:{\"sha256\":sha(p),\"bytes\":p.stat().st_size} for p in required})"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 146,
+          "text": "def main(argv=None)->int:"
+        },
+        {
+          "source_id": "LOCAL_BATCH",
+          "line": 147,
+          "text": "    p=argparse.ArgumentParser();p.add_argument(\"--data-root\",required=True);p.add_argument(\"--runtime-cache\",required=True);p.add_argument(\"--output-root\",required=True);p.add_argument(\"--workers\",type=int,default=DEFAULT_WORKERS);p.add_argument(\"--years\",type=int,nargs=\"+\");p.add_argument(\"--owner-a-inputs\",action=\"store_true\");a=p.parse_args(argv)"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 7,
+          "text": "from __future__ import annotations"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 9,
+          "text": "from dataclasses import dataclass, fields"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 10,
+          "text": "from hashlib import sha256"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 11,
+          "text": "import json"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 12,
+          "text": "from pathlib import Path"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 13,
+          "text": "import re"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 14,
+          "text": "from types import MappingProxyType"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 15,
+          "text": "from typing import Mapping"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 16,
+          "text": "import xml.etree.ElementTree as ET"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 17,
+          "text": "from zipfile import ZipFile"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 19,
+          "text": "import numpy as np"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 21,
+          "text": "from .province_contracts import PROVINCE_ORDER, ProvinceAxis"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 36,
+          "text": "def _readonly_vector(name: str, value: object) -> np.ndarray:"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 44,
+          "text": "def _readonly_matrix(name: str, value: object) -> np.ndarray:"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 52,
+          "text": "def _sha256(path: Path) -> str:"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 223,
+          "text": "            raise ValueError(\"canonical input binding is not the decoupled annual identity\")"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 224,
+          "text": "        if self.province_axis.labels != PROVINCE_ORDER:"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 225,
+          "text": "            raise ValueError(\"canonical input must use the accepted province order\")"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 227,
+          "text": "            raise ValueError(\"canonical annual input preserves source industry 4\")"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 253,
+          "text": "    def canonical_payload(self) -> dict[str, object]:"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 275,
+          "text": "    def canonical_bytes(self) -> bytes:"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 276,
+          "text": "        return (json.dumps(self.canonical_payload(), ensure_ascii=False, sort_keys=True,"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 279,
+          "text": "    def canonical_sha256(self) -> str:"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 280,
+          "text": "        return sha256(self.canonical_bytes()).hexdigest().upper()"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 285,
+          "text": "    canonical_input_sha256: str"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 292,
+          "text": "def build_python_parity_entry(canonical: CanonicalAnnualInput) -> PythonAnnualParityEntry:"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 296,
+          "text": "        canonical.canonical_sha256(), canonical.binding, canonical.province_axis.labels,"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 305,
+          "text": "def write_canonical_artifact(canonical: CanonicalAnnualInput, output_root: Path) -> Path:"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 306,
+          "text": "    \"\"\"Write exactly one canonical JSON artifact into a new empty directory.\"\"\""
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 310,
+          "text": "    artifact = root / f\"calendar_{canonical.binding.calendar_year}_primary_premodel_input.json\""
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 312,
+          "text": "        stream.write(canonical.canonical_bytes())"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 316,
+          "text": "def validate_corrected_annual_payload("
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 324,
+          "text": "        raise ValueError(\"missing or legacy canonical annual input schema\")"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 358,
+          "text": "def _column_index(reference: str) -> int:"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 368,
+          "text": "def _xlsx_sheet_rows(path: Path, sheet_name: str) -> dict[int, dict[int, object]]:"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 412,
+          "text": "def _normalize_province(label: object) -> str:"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 419,
+          "text": "def _province_header(rows: Mapping[int, Mapping[int, object]]) -> tuple[str, ...]:"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 425,
+          "text": "def _year_from_cell(value: object) -> int:"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 432,
+          "text": "def load_primary_annual_input("
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 447,
+          "text": "    if any(header != PROVINCE_ORDER for header in headers):"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 474,
+          "text": "    if row_labels != PROVINCE_ORDER or column_labels != PROVINCE_ORDER:"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 484,
+          "text": "        province_axis=ProvinceAxis(PROVINCE_ORDER),"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 513,
+          "text": "def compare_runtime_representation("
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 514,
+          "text": "    canonical: CanonicalAnnualInput,"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 525,
+          "text": "        \"GDP\": canonical.gdp,"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 526,
+          "text": "        \"CAP\": canonical.cap,"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 527,
+          "text": "        \"POP\": canonical.pop,"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 528,
+          "text": "        \"log_pgdp\": canonical.log_pgdp,"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 529,
+          "text": "        \"log_pcap\": canonical.log_pcap,"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 530,
+          "text": "        \"IND_alpha\": canonical.ind_alpha,"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 531,
+          "text": "        \"IND_Zt\": canonical.ind_zt,"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 532,
+          "text": "        \"GDP_multiplier\": np.array(canonical.scalars.gdp_multiplier),"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 533,
+          "text": "        \"POP_multiplier\": np.array(canonical.scalars.pop_multiplier),"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 534,
+          "text": "        \"delta\": np.array(canonical.scalars.calibration_delta),"
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 558,
+          "text": "            \"EXACT\" if cache_names == canonical.province_axis.labels else \"MATERIAL_MISMATCH\","
+        },
+        {
+          "source_id": "LOCAL_ANNUAL",
+          "line": 559,
+          "text": "            0.0 if cache_names == canonical.province_axis.labels else float(\"inf\"),"
+        }
+      ]
+    }
+  ],
+  "source_write_allowlist_empty": true,
+  "auto_next": false,
+  "report_integrity_tool_note": "A raw JSON regex falsely classified code identifiers followed by a serialized newline as drive paths. The corrected check scans decoded JSON string values with identifier boundaries. The explanatory note itself was then reworded to avoid including a path-shaped example. Original fragments unchanged; no actual private locators found. This is scratch report authoring, not source/model execution or a source retry.",
+  "protected_after_checkpoint_before_first_push": {
+    "worktree": {
+      "head": "a1db8c114dec0ab69d69a5576e153a7f868cba0e",
+      "branch": "codex/ch5-mp4c-k1b-turn5-turn6-bounded-continuation-20260922",
+      "index_sha256": "28058a7e2d9ab773c5813205c75999e6c221533aeae0b9bb094b9a83451bf7cc",
+      "refs_sha256": "600912e7f3dabd0661d2314f533bb432d95cf4bd35b622ab5b16d6149e3c6729",
+      "status_sha256": "c443420c888f5e776cfb6cd05b27cbed56e58a787b82639aa23a47ce7f2ac2f3"
+    },
+    "protected_file_count": 11,
+    "protected_assets": [
+      {
+        "path": "AGENTS.md",
+        "bytes": 132027,
+        "sha256": "d42041e26da7e795e3ae5c236e0029a8a356e14c8058ffa6f95383494f031b3e",
+        "unchanged": true
+      },
+      {
+        "path": "CURRENT.md",
+        "bytes": 337540,
+        "sha256": "3133011df542cbef25ff23b48996a35d7c3f98c8a5444417746faf8248e1737f",
+        "unchanged": true
+      },
+      {
+        "path": "TASK_CURRENT.md",
+        "bytes": 266971,
+        "sha256": "10749bcb69ba8fdd3807a511b20d64786627ec701706af421acd13550bf39b11",
+        "unchanged": true
+      },
+      {
+        "path": "docs/CH5_GITHUB_WORKFLOW_AUTHORITY_CURRENT_20261025.md",
+        "bytes": 2623,
+        "sha256": "36ea79e2d22a1ddef37d7d3db4bf419d5c8c4bdb8d67a8a2c98a54da297e4ecc",
+        "unchanged": true
+      },
+      {
+        "path": "docs/CH5_INDEPENDENT_REVIEW_RULES_20261025.md",
+        "bytes": 1424,
+        "sha256": "413e58b5fc773805075bd9a6e95bf304c1b2c33845ad9bdca163440d1e42b620",
+        "unchanged": true
+      },
+      {
+        "path": "docs/CH5_ASTRA_WORKFLOW_CURRENT.md",
+        "bytes": 15676,
+        "sha256": "b3cab64d249ff768f98403e8ccbc6f8aaf7d04b009f66255d41f26fb842ec2a7",
+        "unchanged": true
+      },
+      {
+        "path": "data/external_sources/nbs_provincial_urban_unit_wage_20261027/分省年度数据_城镇单位就业人员平均工资(元).xlsx",
+        "bytes": 12652,
+        "sha256": "8bb799fc41da5728a52c4958b2da0641ccbc81470a8d6e377625d79b5816b176",
+        "unchanged": true
+      },
+      {
+        "path": "data/external_sources/nbs_provincial_urban_unit_wage_20261027/SOURCE_RECEIPT_20261027.json",
+        "bytes": 2291,
+        "sha256": "6d66a514fb672b245b018dac2dd513cd126d60a32a636acf2707c0b54450035a",
+        "unchanged": true
+      },
+      {
+        "path": "data/external_sources/nbs_wage_supplement_20261027/分省年度数据_城镇私营单位就业人员平均工(元).xlsx",
+        "bytes": 12411,
+        "sha256": "5c790a478a244ca12b4c3c2c682465683c64e2b36bbf1d6f5e430bd79b23f21a",
+        "unchanged": true
+      },
+      {
+        "path": "data/external_sources/nbs_wage_supplement_20261027/分省年度数据_城镇单位就业人员工资总额(亿元).xlsx",
+        "bytes": 13310,
+        "sha256": "f27313c73dc08e8217aeeefe147ce62d7bc0d7c463ecc651c54c7682682c9dc7",
+        "unchanged": true
+      },
+      {
+        "path": "data/external_sources/nbs_wage_supplement_20261027/SOURCE_RECEIPT_20261027.json",
+        "bytes": 6348,
+        "sha256": "87ef3d9a8a072a7eb4e029fb67187b218f7d45a2c21bcb79ad6ba9506628a2c3",
+        "unchanged": true
+      }
+    ],
+    "final_source_hashes": [],
+    "final_source_hashes_measured": false
+  }
+}

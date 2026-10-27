@@ -1,0 +1,371 @@
+{
+  "task_id": "CH5_TEMP31_ORACLE_PIN_PRODUCTION_DISPATCH_PROVENANCE_R1_20261027",
+  "expected_sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+  "exact_match": {
+    "source_id": "F2_ORACLE",
+    "git_commit": "ba98537fd5ae004f0aa37d319865da1f1739e503",
+    "tree": "f432f0acb5d94e0f60cd976b74a236be883e0db3",
+    "path": "exports/matlab_faithful_two_asset_ha.py",
+    "git_blob": "9e7dc9556a2b76811e78f89999abecc045886106",
+    "bytes": 28641,
+    "sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3"
+  },
+  "raw_match_verified": true,
+  "pin_definition": [
+    {
+      "source_id": "F2_ENTRY",
+      "path": "validators/multi_province/mp4b_python_empirical.py",
+      "start_line": 18,
+      "end_line": 19,
+      "source_sha256": "9033218710204ca4ea2af0351376e47bb5b4f203923e6155dc4776add336091e",
+      "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+    },
+    {
+      "source_id": "LOCAL_ENTRY",
+      "path": "validators/multi_province/mp4b_python_empirical.py",
+      "start_line": 18,
+      "end_line": 19,
+      "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b",
+      "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+    }
+  ],
+  "pin_first_introduction": "UNKNOWN_NOT_FOUND_IN_BOUNDED_SCOPE__THREE_SAMPLED_ENTRY_BLOBS_IDENTICAL",
+  "pin_consumer": {
+    "citations": [
+      {
+        "source_id": "LOCAL_ENTRY",
+        "path": "validators/multi_province/mp4b_python_empirical.py",
+        "start_line": 30,
+        "end_line": 36,
+        "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b",
+        "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+      },
+      {
+        "source_id": "LOCAL_ENTRY",
+        "path": "validators/multi_province/mp4b_python_empirical.py",
+        "start_line": 64,
+        "end_line": 75,
+        "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b",
+        "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+      }
+    ],
+    "current_target": "LOCAL_ORACLE",
+    "actual_sha256": "f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8",
+    "static_mismatch": true,
+    "bootstrap_executed": false,
+    "runtime_failure_observed": false
+  },
+  "version_delta_opcodes": [
+    {
+      "kind": "insert",
+      "historical_lines": [
+        196,
+        195
+      ],
+      "frozen_lines": [
+        196,
+        259
+      ],
+      "old_line_count": 0,
+      "new_line_count": 64,
+      "classification": "STATIC_TEXT_DIFFERENCE_ONLY"
+    },
+    {
+      "kind": "insert",
+      "historical_lines": [
+        225,
+        224
+      ],
+      "frozen_lines": [
+        289,
+        289
+      ],
+      "old_line_count": 0,
+      "new_line_count": 1,
+      "classification": "STATIC_TEXT_DIFFERENCE_ONLY"
+    },
+    {
+      "kind": "replace",
+      "historical_lines": [
+        310,
+        319
+      ],
+      "frozen_lines": [
+        375,
+        386
+      ],
+      "old_line_count": 10,
+      "new_line_count": 12,
+      "classification": "STATIC_TEXT_DIFFERENCE_ONLY"
+    },
+    {
+      "kind": "replace",
+      "historical_lines": [
+        358,
+        359
+      ],
+      "frozen_lines": [
+        425,
+        426
+      ],
+      "old_line_count": 2,
+      "new_line_count": 2,
+      "classification": "STATIC_TEXT_DIFFERENCE_ONLY"
+    },
+    {
+      "kind": "replace",
+      "historical_lines": [
+        363,
+        364
+      ],
+      "frozen_lines": [
+        430,
+        431
+      ],
+      "old_line_count": 2,
+      "new_line_count": 2,
+      "classification": "STATIC_TEXT_DIFFERENCE_ONLY"
+    },
+    {
+      "kind": "replace",
+      "historical_lines": [
+        645,
+        645
+      ],
+      "frozen_lines": [
+        712,
+        713
+      ],
+      "old_line_count": 1,
+      "new_line_count": 2,
+      "classification": "STATIC_TEXT_DIFFERENCE_ONLY"
+    }
+  ],
+  "static_calls": [
+    {
+      "caller": "LOCAL_BATCH",
+      "callee": "LOCAL_PRODUCTION",
+      "kind": "subprocess launch expression",
+      "citations": [
+        {
+          "source_id": "LOCAL_BATCH",
+          "path": "validators/multi_province/mp4c_run_full_annual_batch.py",
+          "start_line": 43,
+          "end_line": 45,
+          "source_sha256": "cde1e8dcb1b7bf8fe3c9d9c0238ed1e82dc728573c24cf5c988ac3d178215d1d",
+          "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+        }
+      ],
+      "exploration_depth": 1
+    },
+    {
+      "caller": "LOCAL_PRODUCTION",
+      "callee": "LOCAL_ENTRY",
+      "kind": "top-level anchor import",
+      "citations": [
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "path": "validators/multi_province/mp4c_python_annual_production.py",
+          "start_line": 24,
+          "end_line": 24,
+          "source_sha256": "ef17be151eb0f2189c77447f691b714eff6315fa37e14a688e0475d2e9071b80",
+          "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+        }
+      ],
+      "exploration_depth": 1
+    },
+    {
+      "caller": "LOCAL_PRODUCTION",
+      "callee": "LOCAL_EMPIRICAL",
+      "kind": "import and scalar use",
+      "citations": [
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "path": "validators/multi_province/mp4c_python_annual_production.py",
+          "start_line": 25,
+          "end_line": 25,
+          "source_sha256": "ef17be151eb0f2189c77447f691b714eff6315fa37e14a688e0475d2e9071b80",
+          "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+        },
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "path": "validators/multi_province/mp4c_python_annual_production.py",
+          "start_line": 145,
+          "end_line": 161,
+          "source_sha256": "ef17be151eb0f2189c77447f691b714eff6315fa37e14a688e0475d2e9071b80",
+          "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+        }
+      ],
+      "exploration_depth": 1
+    },
+    {
+      "caller": "LOCAL_PRODUCTION",
+      "callee": "LOCAL_RUNTIME",
+      "kind": "controller callback expression",
+      "citations": [
+        {
+          "source_id": "LOCAL_PRODUCTION",
+          "path": "validators/multi_province/mp4c_python_annual_production.py",
+          "start_line": 167,
+          "end_line": 187,
+          "source_sha256": "ef17be151eb0f2189c77447f691b714eff6315fa37e14a688e0475d2e9071b80",
+          "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+        },
+        {
+          "source_id": "LOCAL_RUNTIME",
+          "path": "src/ch5_two_asset_hank/multi_province/stationary_runtime.py",
+          "start_line": 50,
+          "end_line": 56,
+          "source_sha256": "6cabaa5941c47799bcc6d299edee48e4b7cb52f2213b7b9155de3aa9b032c1e6",
+          "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+        }
+      ],
+      "exploration_depth": 1
+    },
+    {
+      "caller": "LOCAL_EMPIRICAL",
+      "callee": "LOCAL_ANNUAL",
+      "kind": "static generator call",
+      "citations": [
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "path": "validators/multi_province/mp4c_python_annual_empirical.py",
+          "start_line": 19,
+          "end_line": 25,
+          "source_sha256": "0c7610a38a1a5d7118f02fd1f32d5e8722e70645d53fa499b3c99f222d2deb0c",
+          "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+        },
+        {
+          "source_id": "LOCAL_EMPIRICAL",
+          "path": "validators/multi_province/mp4c_python_annual_empirical.py",
+          "start_line": 86,
+          "end_line": 104,
+          "source_sha256": "0c7610a38a1a5d7118f02fd1f32d5e8722e70645d53fa499b3c99f222d2deb0c",
+          "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+        }
+      ],
+      "exploration_depth": 2
+    },
+    {
+      "caller": "LOCAL_BATCH",
+      "callee": "LOCAL_CACHE",
+      "kind": "runtime canonical preparation",
+      "citations": [
+        {
+          "source_id": "LOCAL_BATCH",
+          "path": "validators/multi_province/mp4c_run_full_annual_batch.py",
+          "start_line": 49,
+          "end_line": 59,
+          "source_sha256": "cde1e8dcb1b7bf8fe3c9d9c0238ed1e82dc728573c24cf5c988ac3d178215d1d",
+          "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "path": "validators/multi_province/mp4c_matlab_runtime_cache.py",
+          "start_line": 57,
+          "end_line": 73,
+          "source_sha256": "693d3a75633d8acceb5841c7b45330a86ebc0f6e952db0476728387e3fc59ab8",
+          "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+        },
+        {
+          "source_id": "LOCAL_CACHE",
+          "path": "validators/multi_province/mp4c_matlab_runtime_cache.py",
+          "start_line": 83,
+          "end_line": 107,
+          "source_sha256": "693d3a75633d8acceb5841c7b45330a86ebc0f6e952db0476728387e3fc59ab8",
+          "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+        }
+      ],
+      "exploration_depth": 1
+    },
+    {
+      "caller": "LOCAL_BATCH",
+      "callee": "LOCAL_OWNER_A",
+      "kind": "alternative materialization",
+      "citations": [
+        {
+          "source_id": "LOCAL_BATCH",
+          "path": "validators/multi_province/mp4c_run_full_annual_batch.py",
+          "start_line": 49,
+          "end_line": 59,
+          "source_sha256": "cde1e8dcb1b7bf8fe3c9d9c0238ed1e82dc728573c24cf5c988ac3d178215d1d",
+          "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "path": "validators/multi_province/mp4c_owner_a_2009_2022.py",
+          "start_line": 139,
+          "end_line": 155,
+          "source_sha256": "563c0f5a34ffa0ebbb79bbece0a676a2cf658953a27db177da70bc8768fcdfd5",
+          "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+        },
+        {
+          "source_id": "LOCAL_OWNER_A",
+          "path": "validators/multi_province/mp4c_owner_a_2009_2022.py",
+          "start_line": 168,
+          "end_line": 188,
+          "source_sha256": "563c0f5a34ffa0ebbb79bbece0a676a2cf658953a27db177da70bc8768fcdfd5",
+          "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+        }
+      ],
+      "exploration_depth": 1
+    },
+    {
+      "caller": "LOCAL_ENTRY",
+      "callee": "LOCAL_POSTLOOP",
+      "kind": "known validation callback",
+      "citations": [
+        {
+          "source_id": "LOCAL_ENTRY",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 64,
+          "end_line": 75,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b",
+          "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+        },
+        {
+          "source_id": "LOCAL_ENTRY",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 336,
+          "end_line": 350,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b",
+          "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+        },
+        {
+          "source_id": "LOCAL_POSTLOOP",
+          "path": "validators/multi_province/mp4b_matlab_source_postloop_household_adapter.py",
+          "start_line": 1,
+          "end_line": 41,
+          "source_sha256": "cb90229f3c90ff2ba2fec0cf2e768404ad2ffe8a9ec291d7ed2c6dd22102337f",
+          "line_number_basis": "PHYSICAL_LF_DELIMITED_ORIGINAL_BYTE_LINES"
+        }
+      ],
+      "exploration_depth": 1
+    }
+  ],
+  "actual_production": "UNKNOWN_OWNER_ADOPTION_UNPROVEN",
+  "canonical_binding": "BLOCKED_REAL_INVOCATION_AND_INPUT_ORIGINALS",
+  "events": [
+    {
+      "id": "E1",
+      "fact": "Raw pin/version conflict",
+      "evidence": "This task exact raw and fixed Git object comparisons",
+      "observed": true
+    },
+    {
+      "id": "E2",
+      "fact": "Owner long-session/review timeout hypothesis",
+      "evidence": "Frozen task/Owner record; no timestamped original log inspected",
+      "observed": false,
+      "status": "HYPOTHESIS_UNCONFIRMED"
+    },
+    {
+      "id": "E3",
+      "fact": "Prior executor final SSH readback interrupted; GPT later verified 14/14 fixed GitHub files",
+      "evidence": "Independent fixed review at 174260f367e91edc9985a5ed712b972dea4f1fd0",
+      "observed": "HISTORICAL_FIXED_REVIEW_FACT_NOT_A_NEW_RUN"
+    }
+  ],
+  "causal_relations": "UNKNOWN_NO_LINKING_LOG_EVIDENCE",
+  "repairs": 0
+}
