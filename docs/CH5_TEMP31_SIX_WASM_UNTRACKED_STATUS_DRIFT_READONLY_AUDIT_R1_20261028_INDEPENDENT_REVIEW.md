@@ -1,0 +1,83 @@
+# TEMP31六WASM未跟踪路径诊断：reparse安全STOP独立审阅
+
+REVIEW_DATE=2026-10-28
+REVIEW_KIND=GPT_GITHUB_FIXED_COMMIT_THREE_STAGE_INDEPENDENT_REVIEW
+TASK_ID=CH5_TEMP31_SIX_WASM_UNTRACKED_STATUS_DRIFT_READONLY_AUDIT_R1_20261027
+TASK_PUBLICATION_COMMIT=1f047103794e5f0f16c9174d1b20e3269a2ad518
+CANDIDATE_COMMIT=13eff77c59f15011bbb563e283a6253d483f67b5
+CANDIDATE_BRANCH=codex/ch5-temp31-six-wasm-untracked-drift-audit-20261027-r1
+CANDIDATE_FIXED_BASE=9d5f5f4a6a4e4a0f70a69b850091462b6e02c6a3
+CANDIDATE_PAYLOAD_COMMIT=d4951902d33855085028397ba27fef63805ef2e8
+CANDIDATE_SEAL_PARENT=d4951902d33855085028397ba27fef63805ef2e8
+CANDIDATE_SEAL_TREE=cfa63677d674e19283caf92c3e7c3c46526bc91e
+VERDICT=STOP_ACCEPTED__GITHUB_EVIDENCE_INTEGRITY_PASS__REPARSE_SAFETY_GATE__WASM_AND_BASELINE_BLOCKED
+P3_RECOMMENDED=TRUE
+P3_OWNER_FORMALLY_ADOPTED=FALSE
+ACTIVE_TASK=NONE
+AUTO_NEXT=FALSE
+
+## Stage A · 固定GitHub候选与交付完整性 (COMPLETED_BOUNDED)
+
+- 审阅时直接读取治理分支为发文提交 `1f047103794e5f0f16c9174d1b20e3269a2ad518`，候选分支HEAD固定`13eff77c59f15011bbb563e283a6253d483f67b5`。候选seal parent=`d4951902d33855085028397ba27fef63805ef2e8`，root tree=`cfa63677d674e19283caf92c3e7c3c46526bc91e`。从固定候选base `9d5f5f4a6a4e4a0f70a69b850091462b6e02c6a3` 对比ahead=2/behind=0，差异恰14件任务目录新增证据，无科研源码、原始数据、历史证据、治理源的候选改写。
+- GPT直接从最终固定GitHub提交获取14/14份报告。manifest登记13份payload的UTF-8 bytes、SHA-256及GitHub Blob均独立重算匹配，13/13 PASS。manifest自体6,208字节，Blob=`a0196c186289a4a008773c3746544e5e0fab217a`，SHA256=`c3f2d622facfa8c3d3785be67e912147a04944ff9f47f6ac815bb01b0694ce57`另核；7段任务/治理与本地辅助程序的公开短摘录text SHA256=7/7通过。
+- 源码摘录中的reparse guard控制流来自执行者发表的本地辅助程序短片段，片段哈希完整不代表GPT独立取得整份本地程序、实测reparse目标或Windows的原始lstat结果。固定公开GitHub证据支持报告内部一致性；执行者Windows私有账本`OWNER_PRIVATE_SIX_PATH_LEDGER.json`和WASM字节均不可由GPT直接读取，不能伪称已独立见证。
+- 本轮报告未向GitHub提交6个真实WASM路径、绝对D盘私有地址、原始WASM二进制、密钥或工资Excel。候选隐私审查仅限GitHub发布内容，不代表本地整体设备扫描。
+- `INDEPENDENT_COMPLETION_EVENT`仍为UNKNOWN，独立科学接受不能以SSH或固定候选交付替代。
+
+## Stage B · Windows保护基线、reparse STOP与科学审查 (COMPLETED_BOUNDED__HARD_BLOCKERS)
+
+### B1. 三阶段状态身份严格分层
+
+|状态来源|报告SHA-256|NUL条数|独立性/边界|
+|---|---|---|---|
+|历史已记录旧基线|c443420c888f5e776cfb6cd05b27cbed56e58a787b82639aa23a47ce7f2ac2f3|5971|前轮来源记录；旧NUL原始流本轮不可复算|
+|上轮恢复状态|734f11763de35c822f7fbf9a3ab8e2c6b8fb0ae7c8e7c49174ae3e19948e865b|5971|执行者记录，非Owner已采纳保护基线|
+|本轮诊断BEFORE|734f11763de35c822f7fbf9a3ab8e2c6b8fb0ae7c8e7c49174ae3e19948e865b|5971|执行者称本轮新测的raw git status|
+|本轮诊断AFTER|734f11763de35c822f7fbf9a3ab8e2c6b8fb0ae7c8e7c49174ae3e19948e865b|5971|执行者称reparse STOP时再测，无后续科研树访问|
+
+- 执行者报告HEAD=`a1db8c114dec0ab69d69a5576e153a7f868cba0e`、index SHA256=`28058a7e2d9ab773c5813205c75999e6c221533aeae0b9bb094b9a83451bf7cc`、refs SHA256=`600912e7f3dabd0661d2314f533bb432d95cf4bd35b622ab5b16d6149e3c6729`（243条）、11件保护资产前后均未改变；记录可核一致但GPT不能直读Windows磁盘复核。
+- 原WASM未跟踪status旧三条当前不在状态流，新三条在且为`??`，本轮执行者依当前NUL状态流比较其精确记录。原始旧NUL流无符合白名单的固定原件可读，因此“全部旧新集合恰仅这6条变化”保留为旧执行者来源见证，不能当作由GPT或本轮完整NUL before复验成立。
+- 新旧status SHA不等的事实不能被本轮诊断BEFORE/AFTER相同抵消。未确认WASM文件字节、安全性、重命名原因或基线应采纳状态。
+
+### B2. reparse祖先检查的早停正确，但证据回执存在缺口
+
+- 执行者报告在检查第一条旧WASM精确路径时，辅助程序经逐级祖先lstat检查发现reparse属性，触发`REPARSE_ANCESTOR_BLOCKED_STOP`，未跟随reparse目标。公开辅助程序短摘录可读到`p.lstat()`、`if reparse(s): raise ...`，以及祖先检查早于文件本体metadata计数的控制流。
+- **可接受本次STOP与不越权行为；不能独立认证命中的是哪个物理/逻辑目录。** 辅助程序未在退出前持久化命中的祖先组件身份以及累计lstat次数，作为`REPARSE_COMPONENT_IDENTITY=UNKNOWN`和`ANCESTOR_CHECK_COUNT=UNKNOWN`单独保留。不能据`reparse`字样判定文件系统损坏、恶意篡改或违规操作。
+- 六路径直接exists/文件类型、size、UTC/北京时间时间戳、WASM raw SHA=0/6；6条父目录/路径物理身份未证，包manifest及确定构建来源=0，逐文件Git查询=0。旧三条当前不在status不等于文件物理删除；新三条在status不等于已获准直接读取它们。
+- 本轮私有delta JSON读取1/2，保护快照2/2、每轮11资产；其余WASM/依赖/delta旧status读预算未使用。科学数值/模型/测试/no-HA/preflight、WASM执行、依赖安装重建、文件拷贝移动删除、Git clean/rebaseline=0。
+- 因出现reparse安全门，未继续路径遍历或补跑helper；正确的终态为`STOP__REPARSE_ANCESTOR_BLOCKED__DELTA_PRIOR_ATTESTATION_ONLY__OWNER_PROTECTION_DECISION_REQUIRED`。D盘根目录模型版本时间线未启动，三份primary宏观原件未搜；不能以这次STOP证明D盘存在或不存在这些文件。
+
+### B3. 科研及Owner选项保持
+
+- 维持 TEMP31 实际生产入口、真实canonical原件、31省有序ID与旧期tuple、D1/B D2 D3/B均BLOCKED；正式V010/V011及模型Results未激活。较新版HA仍只是Owner偏好待审，不修改旧pin、Zt新旧年份字段、人口/就业单位、工资目的地tax_j与单次税机制，不合并R2/R3，也不采用三份NBS工资Excel。
+- P1=保留旧保护status合同并另行授权调查/恢复；P2=有可信物理和构建证据后由Owner明确批准新基线；P3=继续BLOCKED等待可信reparse祖先与旧新状态原始证据。当前证据支持**建议P3继续阻塞**，但是用户只是转述Codex建议，尚未明示作为最终保护基线裁决；因此`P3_OWNER_FORMALLY_ADOPTED=FALSE`、`BASELINE_REBIND=NOT_AUTHORIZED`。
+- 若将来Owner愿意补源，最小下一步应先只读、且不跟随reparse目标地**准确记下命中祖先的匿名身份、受保护目录边界与lstat属性**，核实旧status原始固定身份/来源；只有具备明确授权和可信原件后才重新考虑WASM内容、目录盘点。**此审阅不自动签发新任务、也不授权跟随链接、重设保护哈希或恢复D盘搜源。**
+- Owner长期治理目标继续为科研路线最终决定后“原路线一处正式工作目录、TEMP31一处正式工作目录”；任何清理须另行完成D盘盘点、唯一源码/数据/科研证据辨识、可恢复备份验证、dry-run和逐目录明确Owner删除批准，本次没有清理许可。
+
+## Stage C · 分层最终裁决 (COMPLETED_BOUNDED)
+
+artifact_integrity=PASS_BOUNDED__GITHUB_13_OF_13_MANIFEST_PAYLOADS_BLOB_BYTES_SHA256__MANIFEST_6208B_SEPARATE__7_OF_7_SAFE_EXCERPTS
+source_identity=EXECUTOR_METADATA_AND_STATUS_MEMBERSHIP_BOUNDED__REPARSE_COMPONENT_AND_WASM_PHYSICAL_BYTES_UNVERIFIED
+numeric_review=NOT_RUN
+implementation_review=REPARSE_SAFETY_STOP_ACCEPTED__WASM_CLASSIFICATION_NOT_COMPLETED
+scientific_review=SCIENTIFIC_ACCEPTANCE_BLOCKED__PROTECTION_BASELINE_UNRESOLVED
+privacy_review=BOUNDED_GITHUB_ALIAS_ONLY__LOCAL_PRIVATE_LEDGER_NOT_INDEPENDENTLY_READ
+actual_terminal=STOP__REPARSE_ANCESTOR_BLOCKED__DELTA_PRIOR_ATTESTATION_ONLY__OWNER_PROTECTION_DECISION_REQUIRED
+delivery=PASS_BOUNDED__GITHUB_FIXED_SEAL_14_OF_14_FILES_INDEPENDENTLY_READ
+cleanup=NOT_AUTHORIZED_NOT_PERFORMED
+not_completed=REPARSE_COMPONENT_IDENTITY;BEFORE_STATUS_RAW_PROVENANCE;SIX_WASM_FILE_EXISTENCE_AND_HASH;DEPENDENCY_BUILD_CAUSE;RENAME_OR_BYTE_EQUALITY;OWNER_PROTECTION_BASELINE_DECISION;D_ROOT_VERSION_SEARCH;REAL_TEMP31_PRODUCTION_CANONICAL;D1_D2_D3;SCIENTIFIC_ACCEPTANCE
+NEXT_ACTION=OWNER_DECISION_P3_RECOMMENDED__NO_NEXT_TASK_ISSUED
+
+本报告仅写入独立治理分支审阅与状态，保留原候选、私有账本、历史STOP/PENDING和全部科研原件。禁止自动issue/PR/merge/cleanup/rebaseline/next-task。
+
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+ACTIVE_TASK=NONE
+AUTO_NEXT=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
