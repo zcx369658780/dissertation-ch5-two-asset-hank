@@ -340,3 +340,16 @@ Owner上传 `分省年度数据_城镇私营单位就业人员平均工(元).xls
 
 ## 2026-10-27 · 长会话退出：正式交接摘要和Owner决策保存在GitHub
 最新入口：`docs/CH5_SESSION_HANDOFF_20261027_CURRENT.md`。本会话末尾再次回读治理HEAD，发现上一条用户可见回复“静态任务刚签发”已过时：任务 `CH5_TEMP31_WAGE_LABOR_TAX_SEMANTICS_STATIC_AUDIT_R1_20261027` 候选 `9bdc9e83127d32e6e29a0a5895800fd97d92cd3a` 已独立有界验收，治理记录提交 `7a42502946117862df021a9ec0a3909b1d77a8b1`，裁决 `PASS_BOUNDED_STATIC_SOURCE_SEMANTICS__SCIENTIFIC_ACCEPTANCE_BLOCKED`，当前 `ACTIVE_TASK=NONE`。下个会话先读GitHub最新HEAD、完整handoff及候选result/owner_decision_brief/gaps，不得重发任务或自动运行。Owner长期决策：手动GitHub任务单→本地Codex SSH候选→GPT固定commit独立审阅→Owner决策；所有验收材料先上GitHub，临时审阅文件仅回读后删除且保留Git历史；复杂科研代码不再默认离线ZIP；禁止自动合并/清理科研证据/下一任务。工资税工作地/目的地只扣一次的设计合同持续有效，R3局部与正式生产闭包未混同。NBS三份原始工资候选与模型w/wjt无直接匹配被证，统计口径/共同vintage/有效劳动单位桥、生产回调均未闭合。严守V010=UNCHANGED、V011=NOT_STARTED、Results=FALSE、FORMAL_SOURCE_FREEZE=FALSE、model_activation=FALSE、REAL_GE=FALSE、FULL_RUNNER_IO_CLOSURE=BLOCKED。
+
+
+## 2026-10-27 · Owner 授权 GPT 有界低风险科研任务治理与微预算裁量（持续有效，直至 Owner 撤回）
+
+OWNER_DECISION=GPT_DELEGATED_BOUNDED_LOW_RISK_TASK_AND_MICROBUDGET_AUTHORITY
+OWNER_EXPLICIT_AUTHORIZATION=TRUE
+SCOPE=OWNER_DIRECTED_TEMP31_AND_SIMILAR_BOUNDED_EVIDENCE_WORK
+授权事实：Owner 在正式会话迁移后明确同意 GPT 继续下达下一项冻结科研任务，并将今后同类低风险尝试次数、预检/测试和小规模运算预算的任务内批准权下放 GPT，减少重复请求。GPT须在每张任务单写清目标、来源、确切预算上限、入口/写入白名单、停止条件、可审查证据；不能把授权视为无限期自由执行。
+- 允许 GPT 在 Owner 已明确指定方向或同意开启的一张任务内，裁量只读来源核验、静态接口追踪、在隔离 scratch 使用完全合成数据的 no-HA spy/契约测试，按任务写明合理的小次数尝试与有限重试；每次可见结果到达门槛即 STOP，不以用满预算为目标。默认每任务最多2轮独立合成检查、每项至多1次工具性重试；若需更多，另向Owner说明或取得更具体授权。
+- 本次授权**不允许**默认执行真实 HA/HJB/KFE/GE/IRF、真实稳态/校准/调参、生产程序导入或部署、修改正式经济学方程、采纳/转换NBS工资Excel、插值、正式来源冻结、激活模型、修改 V010、启动 V011、生成 Results、改变真实财政机制、合并/清理科研证据；这些为高风险或实质科研决策，仍须 Owner 单独明确授权。
+- 工作流继续为：GPT 在治理分支发布一张冻结任务单→Owner转本地Codex→Codex按已授权普通SSH推送独立候选→GPT固定commit独立验收→Owner决定后续。委托微预算不等于自动开展下一张任务；禁止自动Issue/PR、合并、清理或批量自动启动。
+- 若出现经济学定义冲突、源身份/ID/单位/vintage不一致、科研机制改动要求、越权预算、权限拒绝、数据缺失、隐私风险或真实模型运行要求，GPT/Codex必须停止相关尝试并通知Owner，请Owner裁决。旧历史 STOP/PENDING 与科学证据原封不动保留。
+- 本轮 Owner 同意继续的具体方向：先闭合真实生产入口/canonical输入生成链、31省同快照与工资税净/税前语义证据，再讨论统计数据如何使用；不预先指定修正公式。科研门限仍 FORMAL_SOURCE_FREEZE=FALSE、V010=UNCHANGED、V011=NOT_STARTED、Results=FALSE、model_activation=FALSE、REAL_GE=FALSE、FULL_RUNNER_IO_CLOSURE=BLOCKED。
