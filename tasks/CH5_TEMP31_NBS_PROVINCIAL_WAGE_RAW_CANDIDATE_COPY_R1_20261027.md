@@ -6,7 +6,7 @@ REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
 GOVERNANCE_BRANCH=migration/astra-workflow-20261012
 GOVERNANCE_PARENT=e6cde7e95aa808cabc6623d0e754b60c096695e3
 CANDIDATE_BRANCH=codex/ch5-temp31-nbs-wage-raw-candidate-copy-20261027-r1
-SOURCE_DIRECTORY=C:\Users\zcxve\Downloads
+SOURCE_DIRECTORY=OWNER_WINDOWS_DOWNLOADS_FOLDER__RESOLVE_USING_USERPROFILE
 SOURCE_FILENAME=分省年度数据_城镇单位就业人员平均工资(元).xlsx
 EXPECTED_SOURCE_BYTES=12652
 EXPECTED_SOURCE_SHA256=8bb799fc41da5728a52c4958b2da0641ccbc81470a8d6e377625d79b5816b176
@@ -44,8 +44,8 @@ NBS definition/provenance references for documentary use:
 
 ## 3. Authorized local actions
 
-1. Read the effective AGENTS and current workflow authority from GitHub at this task-issuing commit, and verify the actual repository/worktree identity. Expected historic local worktree identity was `D:\ProjectTemp\c5k1bturn56`, but verify rather than blindly assuming it.
-2. In the precise Downloads directory above, verify the exact source filename, 12,652 bytes and SHA-256. If absent or mismatch, STOP without guessing substitutes. Do not enumerate unrelated personal files.
+1. Read the effective AGENTS and current workflow authority from GitHub at this task-issuing commit, and verify the actual repository/worktree identity. Resolve the intended local dissertation worktree from effective AGENTS and existing local project context; do not publish private absolute paths in GitHub evidence.
+2. In the Owner Windows Downloads directory (e.g. resolve from $env:USERPROFILE\Downloads locally, without publishing the user profile path), verify the exact source filename, 12,652 bytes and SHA-256. If absent or mismatch, STOP without guessing substitutes. Do not enumerate unrelated personal files.
 3. Check the exact destination path under the verified project. If a file already exists with different bytes/hash, STOP rather than overwrite. If identical, record ALREADY_PRESENT_IDENTICAL.
 4. Copy the original file without modification into `data/external_sources/nbs_provincial_urban_unit_wage_20261027/分省年度数据_城镇单位就业人员平均工资(元).xlsx`. Reopen the destination from disk and independently confirm byte length and SHA-256 match the source. Preserve source in Downloads unchanged.
 5. In the SAME destination directory, create a concise `SOURCE_RECEIPT_20261027.json` with original filename, source_role=OWNER_DOWNLOADED_NBS_CLAIMED, source_sha256, bytes, destination-relative-path, workbook/sheet/range metadata, 2018_31_count, accepted_as_raw_candidate=true, official_definitive_indicator_id=UNKNOWN, sector=NONPRIVATE_LIKELY__DEFINITION_PENDING, model_adopted=false, excluded_years=[2001,2002,2003,2004,2005,2025], excluded_reason=ALL_31_LITERAL_30, no_net_wage_conversion=true, provenance_url=UNKNOWN_UNTIL_OWNER_PROVIDES_ORIGINAL_EXPORT_LINK, and readback result.
