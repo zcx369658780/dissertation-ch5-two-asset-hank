@@ -27,7 +27,7 @@ AUTO_NEXT=FALSE
 ### B1. 严格区分中断前旧基线与恢复后实际状态
 
 执行者在本地记录:
-- 科学工作区HEAD=`a1db8c114dec0ab69d69a5576e153a7f868cba0e`、branch旧工作树，Git index SHA256=`28058a7e2d9ab773c5813205c75999e6c221533aeae0b9bb094b8a2`（此处以最终回执正式指纹为准：`28058a7e2d9ab773c5813205c75999e6c221533aeae0b9bb094b9a83451bf7cc`），refs SHA256=`600912e7f3dabd0661d2314f533bb432d95cf4bd35b622ab5b16d6149e3c6729`、refs数243不变；11件受保护资产原字节SHA不变。
+- 科学工作区HEAD=`a1db8c114dec0ab69d69a5576e153a7f868cba0e`、branch旧工作树，Git index SHA256=`28058a7e2d9ab773c5813205c75999e6c221533aeae0b9bb094b9a83451bf7cc`，refs SHA256=`600912e7f3dabd0661d2314f533bb432d95cf4bd35b622ab5b16d6149e3c6729`、refs数243不变；11件受保护资产原字节SHA不变。
 - 旧status SHA256=`c443420c888f5e776cfb6cd05b27cbed56e58a787b82639aa23a47ce7f2ac2f3`；恢复检查SHA256=`734f11763de35c822f7fbf9a3ab8e2c6b8fb0ae7c8e7c49174ae3e19948e865b`，两者**不匹配**。status的NUL记录数均5971，但记录集合有3条未跟踪WASM路径移出、3条未跟踪WASM路径加入。不能称旧保护基线保持不变，不能由记录数相同就否认路径变化。
 - 该WASM差异属于报告中的依赖目录，原始内容、6条具体路径、是否三组一一对应重命名、创建/修改时间、sha及变化原因为UNKNOWN。**Git status路径变化不能直接证明内容变更、工具重建、恶意行为或科研源改动**；只有本地准确状态delta及必要文件身份检查才可能澄清。
 - 交付回执进一步记录恢复时新status SHA在整个交付期间稳定，index/HEAD/refs/11资产亦稳定；这只代表“恢复后未再发现新的变化”，不是“中断前旧基线恢复”。
