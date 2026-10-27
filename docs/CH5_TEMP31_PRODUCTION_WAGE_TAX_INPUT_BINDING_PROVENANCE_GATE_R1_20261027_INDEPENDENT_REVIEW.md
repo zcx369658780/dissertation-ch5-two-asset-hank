@@ -1,0 +1,64 @@
+# TEMP31 生产工资税输入绑定来源门 R1 · GPT 固定提交独立审阅
+
+DATE=2026-10-27
+REVIEW_KIND=INDEPENDENT_FIXED_GITHUB_COMMIT_REVIEW
+TASK_ID=CH5_TEMP31_PRODUCTION_WAGE_TAX_INPUT_BINDING_PROVENANCE_GATE_R1_20261027
+TASK_ISSUANCE_COMMIT=eaf11cb5edfd311e7f942858a1c85424a6b5d672
+CANDIDATE_COMMIT=b9d0931b454334a5449ba26d8def13ebf0da7b37
+VERDICT=STOP_ACCEPTED__SOURCE_GATE_BLOCKED__GITHUB_ARTIFACTS_VERIFIED__EXECUTOR_FINAL_SSH_READBACK_INTERRUPTED
+STOP=TRUE
+AUTO_NEXT=FALSE
+SCIENTIFIC_ACCEPTANCE=BLOCKED
+
+## Stage A: 固定交付与来源硬门（COMPLETED_BOUNDED）
+
+- GitHub候选分支实时HEAD直接核对为 `b9d0931b454334a5449ba26d8def13ebf0da7b37`。
+- 候选终封提交parent=`736f92cd7fa21fe3ee25416e49abc4d1fefd0d1a`，tree=`798f316e134f6875ee1a066d2776b5d13fa6ae17`；中间payload提交parent为冻结候选基点 `ef980d454726d3fadd12184b669517fea564d721`，无非法合并来源。
+- 冻结候选基点到候选提交ahead=2、behind=0；diff恰14个新增任务证据文件，无科研源码/数据变更。治理分支在独立审阅开始时仍为发文提交 `eaf11cb5edfd311e7f942858a1c85424a6b5d672`。
+- 直接从最终固定候选回读manifest登记的13件UTF-8原始文本，逐项独立计算SHA-256/字节数并对照GitHub返回Blob：13/13全匹配。manifest自身Git Blob=`7b26946639c6ea829ec879964fe090127c9ce22a`、UTF-8长度9450字节，另行核查；整体14/14件可在GitHub固定commit独立读到。
+- source_excerpts.json有35段精确摘录，35/35文本SHA-256与登记一致；producer_consumer_tax_and_labor_lineage.json有7条静态调用边。此核验只证明公开摘录身份和证据包内部一致性，不等于9份本地dirty/untracked源码原件均由GPT独立读到。
+- Codex报告首个payload的13件远端SSH回读已完成，但最终seal之后逐文件SSH回读中断且未重试。**保留Codex真实terminal**；GPT此次另从GitHub固定seal提交取回14/14，不抹去当时失败记录。Owner提供的D:/ProjectTemp本地外置回执本轮无权限直接读取，不能宣称其原字节已验。
+- GitHub保护范围内没有科研文件变更，执行者关于原Windows工作树、index、refs、5971状态记录及11件保护资产不变的前后哈希属可追溯执行者报告；GPT不能独立读取Windows磁盘回核。
+
+## Stage B: 静态实现/科学风险（COMPLETED_BOUNDED_WITH_SOURCE_BLOCKERS）
+
+### B1 守卫来源身份
+- GPT直接回读冻结源commit `b69ae535a1518c68822733603f1e506620327375` 中的 `validators/multi_province/mp4b_python_empirical.py`，确认首行声称validation-only，行19固定 `ORACLE_SHA=B92F6EFC59D9398F89F8FB6EE67BF6C5F947282D76895051BEC194967EC9C3E3`；行30–36先核目标哈希不符就raise；行64在HA import前执行bootstrap。相同静态核心文本亦见候选精确短摘录。
+- Codex候选报告该路径真实本地导出 `exports/matlab_faithful_two_asset_ha.py` 的SHA-256为 `f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8`，与固定pin不相同。**实际本地目标原件未上传GitHub且无法由GPT单独重哈希**；因此这是“固定守卫原文独立证实 + 本地哈希有界来源报告支持”的条件性静态阻断，非实际runtime报错。不得自行更换pin/导出源、跳过guard或假称 production HA fault。
+- 冻结远端同名文件Git Blob与执行者本地9源身份报告0/9一致；本次独立查看了冻结GitHub ENTRY、HA export、stationary_runtime局部代码，证实它们部分静态结构可比，但**不能**据此推断所有本地版本语义一致、同字节或生产部署。
+### B2 生产入口、canonical和31省绑定
+- 源文件首行确认ENTRY是validation-only；另一个corrected_diagnostic文件自称opt-in且不改变默认生产路线。只能证明 CLI→run_python_once→局部solve_batch→postloop→泛型HA及控制器回调表达式，尚无独立生产入口/真实派发绑定。
+- `annual.py`具备接受调用者sources/binding/scalars生成canonical的静态函数，不构成实际生成调用或采纳本地工资Excel的证据。历史2009输入工资/税为各一个共用scalar，2018三份NBS仅原始候选，仍不可当作31省真实生产向量。
+- 31省label/shape检查和origin/destination矩阵方向可在源码中观察，不等于行政ID真实join、共同旧期tuple digest(D1=B)、正式显式batch adapter(D2)或no-HA先验spy(D3=B)已完成。
+- 跨目的地w包含税/迁移楔子、非零tau进入HA消费者的重复工资税风险依旧是**条件性静态风险**；R2局部tau=0与R3目的地tau_j修改未形成实际生产闭包。
+- 财政税基/量纲、phi符号、alphal幂、sigma成本承担、N与z加权劳动及工资年/期单位等上轮未决仍未决；未经Owner不得补公式或合成统计工资。
+### B3 合规停止与预算
+- Guard身份不一致、真实生产/canonical来源缺失使Gate A/B前置门阻塞，执行者停止科学来源扩展，不执行条件性no-HA。这符合禁止制造synthetic PASS的冻结合同。
+- 执行者账本：18次内容读取 + 9次原件终核计27/30；定向定位2/12；no-HA 0/2、故障重试0；科学/模型/import/test/preflight/数据改写/HA/HJB/KFE/GE/IRF全部0。这些本地计数/保护哈希来自提交报告，未由GPT运行环境独立观测。外置最终中断JSON本轮没有原字节，不代Codex修复读取失败。
+
+## Stage C: 分层最终裁决（COMPLETED_BOUNDED）
+
+artifact_integrity=PASS_BOUNDED__GITHUB_13_OF_13_PAYLOAD_SHA256_BYTES_BLOB__MANIFEST_SEPARATE_9450_BYTES
+source_identity=PASS_BOUNDED_PUBLISHED_QUOTE_AND_FROZEN_GUARD__CURRENT_UNCOMMITTED_SOURCE_FULL_BYTES_NOT_INDEPENDENTLY_AVAILABLE
+numeric_review=NOT_RUN
+implementation_review=STATIC_SOURCE_GATE_BLOCKED__ACTUAL_PRODUCTION_UNVERIFIED
+scientific_review=SCIENTIFIC_ACCEPTANCE_BLOCKED__NO_REAL_HA_OR_GE
+privacy_review=BOUNDED_PUBLIC_SHORT_EXCERPTS_METADATA_ONLY__NOT_FULL_PRIVATE_SOURCE_REVIEW
+actual_terminal=STOP__SOURCE_GATE_BLOCKED__CODEX_FINAL_SSH_READBACK_INTERRUPTED
+delivery=CODEx_PHASE1_13_OF_13_ATTESTED__GPT_FIXED_SEAL_COMMIT_14_OF_14_INDEPENDENTLY_VERIFIED
+cleanup=NOT_AUTHORIZED_NOT_PERFORMED
+not_completed=REAL_PRODUCTION_ENTRYPOINT_AND_DISPATCH;AUTHENTIC_LOCAL_HA_EXPORT_SOURCE_BINDING;REAL_CANONICAL_GENERATION_INVOCATION;REAL_31_PROVINCE_ID_SNAPSHOT;INITIAL_GROSS_NET_AND_PERIOD_LABOR_BRIDGE;D1_D2_D3;SCIENTIFIC_AND_NUMERIC_ACCEPTANCE
+NEXT_ACTION=OWNER_DECISION__NO_NEW_TASK_ISSUED
+
+结论：**接收任务对来源阻塞的合规STOP及已能在GitHub独立取得的证据交付**，不授予Gate A/B PASS、不因SSH故障退回让Codex重跑、不把执行者最后一次SSH读回状态修改为PASS、不执行或签发后续科研任务。若Owner以后授权最小解阻，应首先有界确认固定pin所期望的真实HA源版本、哪个入口被正式采用，以及真实canonical生成调用，**不修pin、不替换文件、不导入Excel、不运行模型**。
+
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+AUTO_NEXT=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
