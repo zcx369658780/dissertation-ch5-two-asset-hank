@@ -1,0 +1,37 @@
+# 新版HA/dispatch/canonical采纳前置证据预包：有界STOP
+
+Owner已同意“较新版HA优先待审”，未正式采纳、未批准pin修订/源码替换/入口或数据口径。发文commit=7dffdd9ccfbda364e55f2b110a8f1ebacdd1fb9d；候选固定基点=32d6b827aabea861ea44ffe427abbd63dbe681be，角色不同不互换。
+
+实际来源终态=STOP__EXACT_CANDIDATE_INPUT_MISSING_OR_MISMATCH__TEMP31_ADOPTION_AND_CANONICAL_BINDING_UNPROVEN
+
+## Gate A/B真实发现
+
+- 原工作树HEAD/index/refs/dirty/untracked与11件保护资产起始指纹一致。旧LF Oracle、冻结新版LF、当前CRLF原始身份已准确记录，当前新版与冻结新版行payload相同，但原字节SHA不同；guard不会因语义相似自动接受。未改ORACLE_SHA、换行或文件，未import/bootstrap。
+- MP4C batch→年度worker→validation anchor→callback/controller、三种canonical生成/物化路线均有静态源码证据；不等于Owner当前TEMP31生产采纳。一个精确引用的matlab_persistence_contract.json实存可读，但只是一份legacy/cache/checkpoint合同，不能替代有版本、时间、入口、year/representation及工作地税采纳的真实启动/运行清单。
+- WORKER:155与EMPIRICAL:74–82给出的data_local/matlab_primary_source_snapshot/中国各省省会地理距离矩阵.xlsx为MISSING_AT_EXACT_PATH。首个精确输入缺失即停，未检查第二份工作簿、未找其他目录、未跟随配置里的私人绝对根。原始输入实际hash检查0/2，只有1次存在性失败；不声称全仓库无此文件。
+- 仅使用已缓存源码作报告：冻结任务的历史fixed_zt=2020与当前ANNUAL的steady-year Zt字段、EMPIRICAL旧属性引用必须分版本说明；primary常住人口与Owner-A就业人数表名也不能视为同一已核N口径。没有运行生成器/属性访问、核原表、决定年份/劳动单位或修schema。
+
+## 交付和Owner门
+
+A/B/C矩阵仅比较：A历史原件+旧pin（不是默认回退）；B保留新版待审、将来另审版本化原字节/目标构建身份合同（Owner偏好，不是实施许可）；C保持blocked先认证真实入口/输入。每项列必要身份、科学/回滚/生产风险、额外Owner授权和最小后续范围。没有patch、测试源码、canonical JSON或执行结果。
+
+Owner最小待提供：准确拟采用入口/命令/配置/版本和year/representation；已存运行/生成清单及canonical原件准确路径/hash/来源读取权限；31省行政ID有序字典和共同旧期tuple来源。实际生产入口与canonical原件未认证就STOP，不用2018工资或伪输入替代。
+
+工作地tau_j/同税一次仍是目标合同；当前legacy劳动拆分origin税与综合工资destination税有静态差异，净/税前输入及实际重复楔子仍条件风险。FOC与预算同一税后价格不是按出现次数判双扣。家户z加权劳动/来源N/目的地Lt及财政税基、sigma/phi/alphal、单位/vintage/NBS桥未决；R2/R3未合并，D1/D2/D3未生产闭合。长会话/SSH中断/源码差异因果不作新调查或推断，旧STOP/PENDING保持。
+
+## 实际预算与分层字段
+
+14个版本化精确源码对象、14次内容读取；metadata合同1件；终核ENTRY/ORACLE预留2次。按metadata与终核全算的保守总量17/20，distinct14/14，定位3/6，历史版本2/3。现存manifest/input metadata1/3，raw input hash0/2（缺失检查1）；11件保护资产哈希与治理身份另列。仅用本轮缓存完成报告，不重跑旧53摘录审计或旧预算。科研/模型/数值/测试/no-HA/预检、项目import、生产脚本、canonical生成、HA/HJB/KFE/GE/IRF、数据转换/源码改写全部0。
+
+artifact_integrity=SEE_FIXED_CANDIDATE_REMOTE_READBACK_RECEIPTS
+source_identity=OLD_NEW_CURRENT_RAW_IDENTITIES_VERIFIED__NO_FORMAL_ADOPTION
+numeric_review=NOT_RUN
+implementation_review=READ_ONLY_STATIC_AND_ONE_EXISTING_CONTRACT__NO_EXECUTION
+scientific_review=BLOCKED_UNTIL_OWNER_APPROVAL
+privacy_review=SHORT_SOURCE_FRAGMENTS_AND_REDACTED_CONFIG_FIELDS
+actual_terminal=STOP__EXACT_INPUT_MISSING__TEMP31_ADOPTION_AND_REAL_CANONICAL_BINDING_BLOCKED
+delivery=AUTHORIZED_SSH_CANDIDATE__FINAL_ACTUAL_READBACK_IN_RECEIPTS
+cleanup=NOT_AUTHORIZED_NOT_PERFORMED
+not_completed=APPROVED_RAW_GUARD_POLICY;ACTUAL_TEMP31_ENTRY_CONFIG;REAL_CANONICAL_GENERATION_AND_ORIGINALS;SOURCE_LOCATION;YEAR_ZT_POP_UNIT_CONTRACT;31_ID_OLD_TUPLE;D1_D2_D3;SCIENTIFIC_ACCEPTANCE
+
+FORMAL_SOURCE_FREEZE=FALSE；V010=UNCHANGED；V011=NOT_STARTED；Results=FALSE；model_activation=False；REAL_GE=False；FULL_RUNNER_IO_CLOSURE=BLOCKED。任务证据独立分支发布、固定commit逐件回读后STOP，等待GPT独立审阅。未合并、清理、Issue/PR或自动后继。

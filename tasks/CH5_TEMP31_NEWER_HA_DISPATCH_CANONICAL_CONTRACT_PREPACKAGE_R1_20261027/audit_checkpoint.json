@@ -1,0 +1,1452 @@
+{
+  "task_id": "CH5_TEMP31_NEWER_HA_DISPATCH_CANONICAL_CONTRACT_PREPACKAGE_R1_20261027",
+  "task_publication_commit": "7dffdd9ccfbda364e55f2b110a8f1ebacdd1fb9d",
+  "candidate_fixed_base": "32d6b827aabea861ea44ffe427abbd63dbe681be",
+  "Gate_A": "PROTECTED_IDENTITY_VERIFIED__THREE_RAW_CONTRACTS_DOCUMENTED__NO_ADOPTION",
+  "Gate_B": "BLOCKED_EXACT_INPUT_MISSING_AND_NO_APPROVED_TEMP31_DISPATCH_OR_REAL_CANONICAL",
+  "actual_source_stop": {
+    "actual_terminal": "STOP__EXACT_CANDIDATE_INPUT_MISSING_OR_MISMATCH__TEMP31_ADOPTION_AND_CANONICAL_BINDING_UNPROVEN",
+    "reason": "Exact candidate input is missing or mismatched. No other raw input/source location read after that condition; only cached report packaging and delivery remain.",
+    "conditional_raw_input_failure": true,
+    "source_discovery_closed": true,
+    "source_code_content_reads": 14,
+    "distinct_exact_source_objects": 14,
+    "existing_metadata_content_reads": 1,
+    "conditional_raw_input_hash_checks": 0,
+    "raw_input_missing_path_checks": 1,
+    "final_entry_oracle_hash_reads_reserved": 2,
+    "conservative_read_accounting_including_metadata_input_hashes_and_final": 17,
+    "targeted_locator_queries": 3,
+    "sampled_frozen_source_refs": 2,
+    "max_chain_depth": 2,
+    "model_tests_preflight_no_HA": 0
+  },
+  "source_read_ledger": [
+    {
+      "read_number": 1,
+      "source_id": "ENTRY",
+      "path": "validators/multi_province/mp4b_python_empirical.py",
+      "kind": "CURRENT_LOCAL_RAW"
+    },
+    {
+      "read_number": 2,
+      "source_id": "ORACLE",
+      "path": "exports/matlab_faithful_two_asset_ha.py",
+      "kind": "CURRENT_LOCAL_RAW"
+    },
+    {
+      "read_number": 3,
+      "source_id": "BATCH",
+      "path": "validators/multi_province/mp4c_run_full_annual_batch.py",
+      "kind": "CURRENT_LOCAL_RAW"
+    },
+    {
+      "read_number": 4,
+      "source_id": "WORKER",
+      "path": "validators/multi_province/mp4c_python_annual_production.py",
+      "kind": "CURRENT_LOCAL_RAW"
+    },
+    {
+      "read_number": 5,
+      "source_id": "EMPIRICAL",
+      "path": "validators/multi_province/mp4c_python_annual_empirical.py",
+      "kind": "CURRENT_LOCAL_RAW"
+    },
+    {
+      "read_number": 6,
+      "source_id": "CACHE",
+      "path": "validators/multi_province/mp4c_matlab_runtime_cache.py",
+      "kind": "CURRENT_LOCAL_RAW"
+    },
+    {
+      "read_number": 7,
+      "source_id": "OWNER_A",
+      "path": "validators/multi_province/mp4c_owner_a_2009_2022.py",
+      "kind": "CURRENT_LOCAL_RAW"
+    },
+    {
+      "read_number": 8,
+      "source_id": "ANNUAL",
+      "path": "src/ch5_two_asset_hank/multi_province/annual.py",
+      "kind": "CURRENT_LOCAL_RAW"
+    },
+    {
+      "read_number": 9,
+      "source_id": "RUNTIME",
+      "path": "src/ch5_two_asset_hank/multi_province/stationary_runtime.py",
+      "kind": "CURRENT_LOCAL_RAW"
+    },
+    {
+      "read_number": 10,
+      "source_id": "ONE_TURN",
+      "path": "src/ch5_two_asset_hank/multi_province/one_turn.py",
+      "kind": "CURRENT_LOCAL_RAW"
+    },
+    {
+      "read_number": 11,
+      "source_id": "WAGE",
+      "path": "src/ch5_two_asset_hank/multi_province/wage.py",
+      "kind": "DIRECT_IMPORT_FROM_ONE_TURN"
+    },
+    {
+      "read_number": 12,
+      "source_id": "MIGRATION",
+      "path": "src/ch5_two_asset_hank/multi_province/migration_labor.py",
+      "kind": "DIRECT_IMPORT_FROM_ONE_TURN"
+    },
+    {
+      "read_number": 13,
+      "source_id": "NEW_GIT",
+      "path": "exports/matlab_faithful_two_asset_ha.py",
+      "kind": "FROZEN_RAW_ORACLE_IDENTITY",
+      "commit": "b69ae535a1518c68822733603f1e506620327375"
+    },
+    {
+      "read_number": 14,
+      "source_id": "OLD_GIT",
+      "path": "exports/matlab_faithful_two_asset_ha.py",
+      "kind": "FROZEN_RAW_ORACLE_IDENTITY",
+      "commit": "ba98537fd5ae004f0aa37d319865da1f1739e503"
+    }
+  ],
+  "existing_metadata_reads": 1,
+  "conditional_new_raw_input_hashes": 0,
+  "exact_missing_input_path_checks": 1,
+  "targeted_queries": [
+    {
+      "id": "Q01",
+      "kind": "EXACT_ALREADY_CACHED_IMPORTS_AND_CONFIG_INPUT_LITERAL_REFERENCES",
+      "source_ids": [
+        "ENTRY",
+        "ORACLE",
+        "BATCH",
+        "WORKER",
+        "EMPIRICAL",
+        "CACHE",
+        "OWNER_A",
+        "ANNUAL",
+        "RUNTIME",
+        "ONE_TURN"
+      ],
+      "pattern": "^from |^import |matlab_persistence_contract|run_manifest|batch_manifest|canonical_path|data_local|REPRESENTATION|EXPECTED_CACHE|FILLED_WORKBOOK|DISTANCE_WORKBOOK",
+      "hits": [
+        {
+          "source_id": "ENTRY",
+          "line": 2,
+          "text": "from __future__ import annotations"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 4,
+          "text": "import json"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 5,
+          "text": "import hashlib"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 6,
+          "text": "import importlib.util"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 7,
+          "text": "import sys"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 8,
+          "text": "from dataclasses import fields, is_dataclass"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 9,
+          "text": "from pathlib import Path"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 10,
+          "text": "from typing import Mapping"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 12,
+          "text": "import numpy as np"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 13,
+          "text": "from scipy.optimize import brentq"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 66,
+          "text": "from exports.matlab_faithful_two_asset_ha import ("
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 70,
+          "text": "from validators.multi_province.mp4b_matlab_source_postloop_household_adapter import ("
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 73,
+          "text": "from ch5_two_asset_hank.multi_province.one_turn import PreFrozenHouseholdOutputBatch"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 74,
+          "text": "from ch5_two_asset_hank.multi_province.stationary_runtime import OnlineStationaryInputs, run_online_stationary"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 75,
+          "text": "from ch5_two_asset_hank.multi_province.steady_state import SteadyStateConvergenceError"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 101,
+          "text": "def load_entry_state(canonical_path: Path) -> tuple[dict, tuple[dict[str, object], ...]]:"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 102,
+          "text": "    canonical = json.loads(Path(canonical_path).read_text(encoding=\"utf-8\"))"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 187,
+          "text": "def run_full_initialization_preflight(canonical_path: Path, output_path: Path) -> dict[str, object]:"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 189,
+          "text": "    canonical,states=load_entry_state(canonical_path)"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 242,
+          "text": "    canonical_path: Path, accepted_contract_path: Path, output_path: Path,"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 245,
+          "text": "    canonical, states = load_entry_state(canonical_path)"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 322,
+          "text": "def run_python_once(canonical_path: Path, run_root: Path):"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 324,
+          "text": "    canonical,states=load_entry_state(canonical_path)"
+        },
+        {
+          "source_id": "ENTRY",
+          "line": 325,
+          "text": "    _write_json(root/'python_run_manifest.json', {"
+        },
+        {
+          "source_id": "ORACLE",
+          "line": 22,
+          "text": "from __future__ import annotations"
+        },
+        {
+          "source_id": "ORACLE",
+          "line": 23,
+          "text": "from dataclasses import dataclass"
+        },
+        {
+          "source_id": "ORACLE",
+          "line": 24,
+          "text": "import numpy as np"
+        },
+        {
+          "source_id": "ORACLE",
+          "line": 25,
+          "text": "from scipy import sparse"
+        },
+        {
+          "source_id": "ORACLE",
+          "line": 26,
+          "text": "from scipy.sparse import linalg"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 2,
+          "text": "from __future__ import annotations"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 3,
+          "text": "import argparse, csv, json, os, platform, subprocess, sys, time"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 4,
+          "text": "from concurrent.futures import FIRST_COMPLETED, Future, ThreadPoolExecutor, wait"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 5,
+          "text": "from datetime import datetime, timezone"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 6,
+          "text": "from hashlib import sha256"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 7,
+          "text": "from pathlib import Path"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 8,
+          "text": "from typing import Any"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 9,
+          "text": "import numpy as np"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 10,
+          "text": "from openpyxl import Workbook"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 15,
+          "text": "from validators.multi_province import mp4c_python_annual_empirical as empirical"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 16,
+          "text": "from validators.multi_province import mp4c_python_annual_production as production"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 17,
+          "text": "from validators.multi_province import mp4c_matlab_runtime_cache as runtime_cache"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 18,
+          "text": "from validators.multi_province import mp4c_owner_a_2009_2022 as owner_a"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 30,
+          "text": "def valid_success(year_dir:Path,year:int,canonical_sha:str,representation:str=runtime_cache.REPRESENTATION)->bool:"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 35,
+          "text": "    if p.get(\"schema\")!=\"CH5_MP4C_YEAR_SUCCESS_V2\" or p.get(\"representation\")!=representation or p.get(\"year\")!=year or p.get(\"status\")!=\"SOURCE_CONVERGED\" or p.get(\"runtime_input_sha256\")!=canonical_sha or p.get(\"runtime_cache_sha256\")!=runtime_cache.EXPECTED_CACHE_SHA256:return False"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 98,
+          "text": "    contract=REPO_ROOT/\"validators/multi_province/matlab_persistence_contract.json\"; contract_copy=root/contract.name"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 102,
+          "text": "    if runtime_cache.file_sha256(cache_path)!=runtime_cache.EXPECTED_CACHE_SHA256:raise RuntimeError(\"shared MATLAB runtime cache identity defect\")"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 103,
+          "text": "    representation=owner_a.REPRESENTATION if owner_a_inputs else runtime_cache.REPRESENTATION"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 104,
+          "text": "    manifest={\"schema\":\"CH5_MP4C_FULL_BATCH_V3\",\"representation\":representation,\"years\":list(years),\"workers\":workers,\"data_root\":str(data_root.resolve()),\"runtime_cache_path\":str(cache_path.resolve()),\"runtime_cache_sha256\":runtime_cache.EXPECTED_CACHE_SHA256,\"output_root\":str(root.resolve()),\"python\":sys.executable,\"thread_environment\":production.THREAD_ENV,\"start\":now()}"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 105,
+          "text": "    manifest_path=root/\"batch_manifest.json\""
+        },
+        {
+          "source_id": "BATCH",
+          "line": 108,
+          "text": "        if existing.get(\"schema\")!=\"CH5_MP4C_FULL_BATCH_V3\" or existing.get(\"years\")!=list(years) or existing.get(\"representation\")!=representation or existing.get(\"data_root\")!=str(data_root.resolve()) or existing.get(\"runtime_cache_sha256\")!=runtime_cache.EXPECTED_CACHE_SHA256: raise RuntimeError(\"shared batch manifest defect\")"
+        },
+        {
+          "source_id": "BATCH",
+          "line": 142,
+          "text": "    required=[root/n for n in (\"batch_manifest.json\",\"batch_summary.json\",\"batch_summary.csv\",\"batch_timing.json\",f\"steady_state_panel_{suffix}.csv\",f\"{suffix}_稳态值.xlsx\",f\"{suffix}_稳态Ltmat.xlsx\",\"matlab_persistence_contract.json\")]"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 2,
+          "text": "from __future__ import annotations"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 4,
+          "text": "import argparse"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 5,
+          "text": "import csv"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 6,
+          "text": "import json"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 7,
+          "text": "import os"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 8,
+          "text": "import platform"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 9,
+          "text": "import sys"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 10,
+          "text": "import time"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 11,
+          "text": "from dataclasses import asdict"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 12,
+          "text": "from hashlib import sha256"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 13,
+          "text": "from pathlib import Path"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 14,
+          "text": "from typing import Any, Mapping"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 16,
+          "text": "import numpy as np"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 17,
+          "text": "from scipy.io import loadmat, savemat"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 24,
+          "text": "from validators.multi_province import mp4b_python_empirical as anchor"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 25,
+          "text": "from validators.multi_province import mp4c_python_annual_empirical as empirical"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 26,
+          "text": "from validators.multi_province import mp4c_matlab_runtime_cache as runtime_cache"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 27,
+          "text": "from validators.multi_province import mp4c_owner_a_2009_2022 as owner_a"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 28,
+          "text": "from ch5_two_asset_hank.multi_province.one_turn import PreFrozenHouseholdOutputBatch"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 29,
+          "text": "from ch5_two_asset_hank.multi_province.stationary_runtime import OnlineStationaryInputs, run_online_stationary"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 30,
+          "text": "from ch5_two_asset_hank.multi_province.steady_state import SteadyStateConvergenceError"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 134,
+          "text": "            \"param_num\": \"bound by scientific code identities and run_manifest.json\","
+        },
+        {
+          "source_id": "WORKER",
+          "line": 149,
+          "text": "    if representation == owner_a.REPRESENTATION:"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 155,
+          "text": "        rebuilt=runtime_cache.add_runtime_support(runtime_cache.load_runtime_year(cache_path,year),distance_workbook=empirical.primary_sources(REPO_ROOT/\"data_local/matlab_primary_source_snapshot\").distance_workbook,distance_sha256=empirical.SOURCE_HASHES[\"中国各省省会地理距离矩阵.xlsx\"],max_sigmau=empirical.accepted_source_scalars().max_sigmau)"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 184,
+          "text": "    write_json_no_overwrite(root/\"run_manifest.json\",manifest)"
+        },
+        {
+          "source_id": "WORKER",
+          "line": 199,
+          "text": "    required=[canonical_copy,root/\"run_manifest.json\",root/\"final_steady_state.json\",root/\"final_31x20.csv\",root/\"Lt_mat_destination_row_origin_column.npy\",root/\"final_household_restart.npz\",root/f\"Python_Multi_Province_12sts_{year}.mat\",root/\"checkpoint_manifest.json\",root/\"year_timing.json\"]"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 2,
+          "text": "from __future__ import annotations"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 4,
+          "text": "import json"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 5,
+          "text": "import sys"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 6,
+          "text": "import time"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 7,
+          "text": "from pathlib import Path"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 8,
+          "text": "from typing import Mapping"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 10,
+          "text": "import numpy as np"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 19,
+          "text": "from validators.multi_province import mp4b_python_empirical as anchor"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 20,
+          "text": "from ch5_two_asset_hank.multi_province.annual import ("
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 26,
+          "text": "from ch5_two_asset_hank.multi_province.one_turn import PreFrozenHouseholdOutputBatch"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 27,
+          "text": "from ch5_two_asset_hank.multi_province.stationary_runtime import ("
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 31,
+          "text": "from ch5_two_asset_hank.multi_province.steady_state import SteadyStateConvergenceError"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 94,
+          "text": "    canonical_path = root / f\"calendar_{year}_primary_premodel_input.json\""
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 95,
+          "text": "    canonical_path.write_bytes(canonical.canonical_bytes())"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 100,
+          "text": "        \"canonical_path\": str(canonical_path.resolve()),"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 119,
+          "text": "def load_entry_state(canonical_path: Path) -> tuple[dict, tuple[dict[str, object], ...]]:"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 120,
+          "text": "    canonical = json.loads(Path(canonical_path).read_text(encoding=\"utf-8\"))"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 191,
+          "text": "def run_python_once(canonical_path: Path, run_root: Path):"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 195,
+          "text": "    canonical, states = load_entry_state(canonical_path)"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 199,
+          "text": "    canonical_sha = anchor._sha256(Path(canonical_path))"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 200,
+          "text": "    anchor._write_json(root / \"python_run_manifest.json\", {"
+        },
+        {
+          "source_id": "CACHE",
+          "line": 2,
+          "text": "from __future__ import annotations"
+        },
+        {
+          "source_id": "CACHE",
+          "line": 3,
+          "text": "import json"
+        },
+        {
+          "source_id": "CACHE",
+          "line": 4,
+          "text": "from hashlib import sha256"
+        },
+        {
+          "source_id": "CACHE",
+          "line": 5,
+          "text": "from pathlib import Path"
+        },
+        {
+          "source_id": "CACHE",
+          "line": 6,
+          "text": "from typing import Any, Mapping"
+        },
+        {
+          "source_id": "CACHE",
+          "line": 7,
+          "text": "import h5py"
+        },
+        {
+          "source_id": "CACHE",
+          "line": 8,
+          "text": "import numpy as np"
+        },
+        {
+          "source_id": "CACHE",
+          "line": 10,
+          "text": "from ch5_two_asset_hank.multi_province.annual import DecoupledAnnualIndex, _normalize_province, _xlsx_sheet_rows"
+        },
+        {
+          "source_id": "CACHE",
+          "line": 11,
+          "text": "from ch5_two_asset_hank.multi_province.province_contracts import PROVINCE_ORDER"
+        },
+        {
+          "source_id": "CACHE",
+          "line": 13,
+          "text": "EXPECTED_CACHE_SHA256=\"923CC9E592C14B320C624509A0B498DBCC7D2533F77F0E4B4793521B10849E9A\""
+        },
+        {
+          "source_id": "CACHE",
+          "line": 14,
+          "text": "REPRESENTATION=\"MATLAB_PROTECTED_RUNTIME_DATA_CACHE\""
+        },
+        {
+          "source_id": "CACHE",
+          "line": 37,
+          "text": "def inspect_cache(path:Path,expected_sha:str=EXPECTED_CACHE_SHA256)->dict[str,Any]:"
+        },
+        {
+          "source_id": "CACHE",
+          "line": 55,
+          "text": "        return {\"schema\":\"CH5_MP4C_MATLAB_RUNTIME_CACHE_STRUCTURE_V1\",\"representation\":REPRESENTATION,\"cache_path\":str(path.resolve()),\"cache_sha256\":actual,\"top_level_variables\":[\"mydata2\"],\"mydata2_shape\":[15,1],\"entry_count\":15,\"industry_matlab_index\":4,\"province_order\":list(normalized_axis),\"entries\":summaries}"
+        },
+        {
+          "source_id": "CACHE",
+          "line": 57,
+          "text": "def load_runtime_year(path:Path,year:int,expected_sha:str=EXPECTED_CACHE_SHA256)->dict[str,Any]:"
+        },
+        {
+          "source_id": "CACHE",
+          "line": 85,
+          "text": "    return {\"schema\":\"CH5_MP4C_MATLAB_RUNTIME_YEAR_INPUT_V1\",\"representation\":REPRESENTATION,\"cache_sha256\":actual,\"binding\":{k:getattr(binding,k) for k in (\"calendar_year\",\"analysis_index\",\"workbook_data_row_index\",\"data_mat_index\",\"output_filename_year\",\"regression_vintage_key\")},\"cache_entry_index_matlab_1based\":entry_index,\"cache_data_year_index_matlab_1based\":row_index,\"industry_matlab_index\":4,\"province_order\":list(names),\"cache_province_labels\":original_names,\"scalars\":{\"gdp_multiplier\":gdp_multiplier,\"pop_multiplier\":pop_multiplier,\"calibration_delta\":delta},\"vectors\":{k:v.tolist() for k,v in selected.items()},\"derived\":{\"gov_inv\":selected[\"CAP\"].tolist(),\"inter_province_asset_ratio\":ratios.tolist()},\"source_field_paths\":{f:f\"mydata2{{{entry_index}}}.{f}{{4}}({row_index},:)\" for f in selected}}"
+        },
+        {
+          "source_id": "CACHE",
+          "line": 99,
+          "text": "    if payload.get(\"representation\")!=REPRESENTATION or payload.get(\"cache_sha256\")!=EXPECTED_CACHE_SHA256:raise ValueError(\"runtime input identity mismatch\")"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 6,
+          "text": "from __future__ import annotations"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 8,
+          "text": "import json"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 9,
+          "text": "import sys"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 10,
+          "text": "from dataclasses import asdict"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 11,
+          "text": "from pathlib import Path"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 12,
+          "text": "from typing import Any, Mapping"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 14,
+          "text": "import h5py"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 15,
+          "text": "import numpy as np"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 22,
+          "text": "from ch5_two_asset_hank.multi_province.annual import _normalize_province, _xlsx_sheet_rows"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 23,
+          "text": "from ch5_two_asset_hank.multi_province.province_contracts import PROVINCE_ORDER"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 24,
+          "text": "from validators.multi_province import mp4c_matlab_runtime_cache as cache"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 25,
+          "text": "from validators.multi_province import mp4c_python_annual_empirical as empirical"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 28,
+          "text": "REPRESENTATION = \"OWNER_A_2009_2022_VERIFIED_CHNCAPITALSTOCK_ROLLING_PLM_END_YEAR_CALENDAR_INPUT\""
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 30,
+          "text": "FILLED_WORKBOOK = \"2000年后各省数据_填充NA.xlsx\""
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 32,
+          "text": "DISTANCE_WORKBOOK = \"中国各省省会地理距离矩阵.xlsx\""
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 83,
+          "text": "    if _sha(cache_path) != cache.EXPECTED_CACHE_SHA256:"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 136,
+          "text": "    return {\"schema\": \"CH5_MP4C_OWNER_A_STORED_PLM_VINTAGES_10_23_STATIC_AUDIT_V1\", \"representation\": REPRESENTATION, \"years\": results}"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 143,
+          "text": "    filled = root / FILLED_WORKBOOK"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 146,
+          "text": "    if _sha(filled) != source_hashes[FILLED_WORKBOOK]:"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 164,
+          "text": "        distance_sha256=source_hashes[DISTANCE_WORKBOOK], max_sigmau=scalars.max_sigmau,"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 170,
+          "text": "        \"representation\": REPRESENTATION,"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 192,
+          "text": "    if payload.get(\"representation\") != REPRESENTATION or payload.get(\"schema\") != \"CH5_MP4C_OWNER_A_CORRECTED_RUNTIME_INPUT_V1\":"
+        },
+        {
+          "source_id": "ANNUAL",
+          "line": 7,
+          "text": "from __future__ import annotations"
+        },
+        {
+          "source_id": "ANNUAL",
+          "line": 9,
+          "text": "from dataclasses import dataclass, fields"
+        },
+        {
+          "source_id": "ANNUAL",
+          "line": 10,
+          "text": "from hashlib import sha256"
+        },
+        {
+          "source_id": "ANNUAL",
+          "line": 11,
+          "text": "import json"
+        },
+        {
+          "source_id": "ANNUAL",
+          "line": 12,
+          "text": "from pathlib import Path"
+        },
+        {
+          "source_id": "ANNUAL",
+          "line": 13,
+          "text": "import re"
+        },
+        {
+          "source_id": "ANNUAL",
+          "line": 14,
+          "text": "from types import MappingProxyType"
+        },
+        {
+          "source_id": "ANNUAL",
+          "line": 15,
+          "text": "from typing import Mapping"
+        },
+        {
+          "source_id": "ANNUAL",
+          "line": 16,
+          "text": "import xml.etree.ElementTree as ET"
+        },
+        {
+          "source_id": "ANNUAL",
+          "line": 17,
+          "text": "from zipfile import ZipFile"
+        },
+        {
+          "source_id": "ANNUAL",
+          "line": 19,
+          "text": "import numpy as np"
+        },
+        {
+          "source_id": "ANNUAL",
+          "line": 21,
+          "text": "from .province_contracts import PROVINCE_ORDER, ProvinceAxis"
+        },
+        {
+          "source_id": "RUNTIME",
+          "line": 3,
+          "text": "from __future__ import annotations"
+        },
+        {
+          "source_id": "RUNTIME",
+          "line": 5,
+          "text": "from dataclasses import dataclass"
+        },
+        {
+          "source_id": "RUNTIME",
+          "line": 6,
+          "text": "from types import MappingProxyType"
+        },
+        {
+          "source_id": "RUNTIME",
+          "line": 7,
+          "text": "from typing import Callable, Mapping, Sequence"
+        },
+        {
+          "source_id": "RUNTIME",
+          "line": 9,
+          "text": "import numpy as np"
+        },
+        {
+          "source_id": "RUNTIME",
+          "line": 11,
+          "text": "from .one_turn import OneTurnInputs, PreFrozenHouseholdOutputBatch, run_source_faithful_one_turn"
+        },
+        {
+          "source_id": "RUNTIME",
+          "line": 12,
+          "text": "from .steady_state import ("
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 8,
+          "text": "from __future__ import annotations"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 10,
+          "text": "from dataclasses import dataclass"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 11,
+          "text": "from math import isfinite"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 12,
+          "text": "from types import MappingProxyType"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 13,
+          "text": "from typing import Mapping, Sequence"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 15,
+          "text": "import numpy as np"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 17,
+          "text": "from .capital_allocation import ("
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 22,
+          "text": "from .firm import FirmResult, evaluate_firm"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 23,
+          "text": "from .fiscal_diagnostics import FiscalDiagnostics, national_fiscal_diagnostics"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 24,
+          "text": "from .migration_labor import ("
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 32,
+          "text": "from .monetary import MonetaryResult, taylor_assignment"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 33,
+          "text": "from .wage import composite_household_wages"
+        }
+      ]
+    },
+    {
+      "id": "Q02",
+      "kind": "EXACT_CACHED_SCHEMA_YEAR_TAX_LABOR_AND_SNAPSHOT_REFERENCES",
+      "source_ids": [
+        "ANNUAL",
+        "EMPIRICAL",
+        "CACHE",
+        "OWNER_A",
+        "ONE_TURN",
+        "WAGE",
+        "MIGRATION"
+      ],
+      "pattern": "fixed_zt_calendar_year|CANONICAL_ANNUAL_INPUT_SCHEMA|REPRESENTATION|YEARS|tax_by_origin|def reconstruct_migration|def composite_household|old_firm_wage_by_destination|population_by_origin|household_composite_wage",
+      "hits": [
+        {
+          "source_id": "ANNUAL",
+          "line": 30,
+          "text": "CANONICAL_ANNUAL_INPUT_SCHEMA = \"CH5_CANONICAL_ANNUAL_PREMODEL_INPUT_V2\""
+        },
+        {
+          "source_id": "ANNUAL",
+          "line": 255,
+          "text": "            \"schema\": CANONICAL_ANNUAL_INPUT_SCHEMA,"
+        },
+        {
+          "source_id": "ANNUAL",
+          "line": 323,
+          "text": "    if payload.get(\"schema\") != CANONICAL_ANNUAL_INPUT_SCHEMA:"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 40,
+          "text": "AUTHORIZED_SCIENTIFIC_YEARS = (2010, 2011)"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 105,
+          "text": "        \"fixed_zt_calendar_year\": canonical.fixed_zt_calendar_year,"
+        },
+        {
+          "source_id": "EMPIRICAL",
+          "line": 197,
+          "text": "    if year not in AUTHORIZED_SCIENTIFIC_YEARS:"
+        },
+        {
+          "source_id": "CACHE",
+          "line": 14,
+          "text": "REPRESENTATION=\"MATLAB_PROTECTED_RUNTIME_DATA_CACHE\""
+        },
+        {
+          "source_id": "CACHE",
+          "line": 15,
+          "text": "YEARS=tuple(range(2009,2024)); INDUSTRY_MATLAB_INDEX=4"
+        },
+        {
+          "source_id": "CACHE",
+          "line": 55,
+          "text": "        return {\"schema\":\"CH5_MP4C_MATLAB_RUNTIME_CACHE_STRUCTURE_V1\",\"representation\":REPRESENTATION,\"cache_path\":str(path.resolve()),\"cache_sha256\":actual,\"top_level_variables\":[\"mydata2\"],\"mydata2_shape\":[15,1],\"entry_count\":15,\"industry_matlab_index\":4,\"province_order\":list(normalized_axis),\"entries\":summaries}"
+        },
+        {
+          "source_id": "CACHE",
+          "line": 59,
+          "text": "    if year not in YEARS:raise ValueError(\"runtime cache calendar year outside 2009-2023\")"
+        },
+        {
+          "source_id": "CACHE",
+          "line": 85,
+          "text": "    return {\"schema\":\"CH5_MP4C_MATLAB_RUNTIME_YEAR_INPUT_V1\",\"representation\":REPRESENTATION,\"cache_sha256\":actual,\"binding\":{k:getattr(binding,k) for k in (\"calendar_year\",\"analysis_index\",\"workbook_data_row_index\",\"data_mat_index\",\"output_filename_year\",\"regression_vintage_key\")},\"cache_entry_index_matlab_1based\":entry_index,\"cache_data_year_index_matlab_1based\":row_index,\"industry_matlab_index\":4,\"province_order\":list(names),\"cache_province_labels\":original_names,\"scalars\":{\"gdp_multiplier\":gdp_multiplier,\"pop_multiplier\":pop_multiplier,\"calibration_delta\":delta},\"vectors\":{k:v.tolist() for k,v in selected.items()},\"derived\":{\"gov_inv\":selected[\"CAP\"].tolist(),\"inter_province_asset_ratio\":ratios.tolist()},\"source_field_paths\":{f:f\"mydata2{{{entry_index}}}.{f}{{4}}({row_index},:)\" for f in selected}}"
+        },
+        {
+          "source_id": "CACHE",
+          "line": 99,
+          "text": "    if payload.get(\"representation\")!=REPRESENTATION or payload.get(\"cache_sha256\")!=EXPECTED_CACHE_SHA256:raise ValueError(\"runtime input identity mismatch\")"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 28,
+          "text": "REPRESENTATION = \"OWNER_A_2009_2022_VERIFIED_CHNCAPITALSTOCK_ROLLING_PLM_END_YEAR_CALENDAR_INPUT\""
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 29,
+          "text": "YEARS = tuple(range(2009, 2023))"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 43,
+          "text": "    if year not in YEARS:"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 108,
+          "text": "    for year in YEARS:"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 136,
+          "text": "    return {\"schema\": \"CH5_MP4C_OWNER_A_STORED_PLM_VINTAGES_10_23_STATIC_AUDIT_V1\", \"representation\": REPRESENTATION, \"years\": results}"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 170,
+          "text": "        \"representation\": REPRESENTATION,"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 192,
+          "text": "    if payload.get(\"representation\") != REPRESENTATION or payload.get(\"schema\") != \"CH5_MP4C_OWNER_A_CORRECTED_RUNTIME_INPUT_V1\":"
+        },
+        {
+          "source_id": "OWNER_A",
+          "line": 196,
+          "text": "    if year not in YEARS or binding != _binding(int(year)):"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 41,
+          "text": "    \"household_composite_wage\","
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 143,
+          "text": "    household_composite_wage: tuple[float, ...]"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 152,
+          "text": "            or len(self.household_composite_wage) != n"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 160,
+          "text": "        if not all(isfinite(float(value)) for value in self.household_composite_wage):"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 173,
+          "text": "    household_composite_wage: tuple[float, ...]"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 182,
+          "text": "            or len(self.household_composite_wage) != n"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 190,
+          "text": "        if not all(isfinite(float(value)) for value in self.household_composite_wage):"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 203,
+          "text": "        population_by_origin=[province[\"N\"] for province in provinces],"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 204,
+          "text": "        old_firm_wage_by_destination=[province[\"wjt\"] for province in provinces],"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 205,
+          "text": "        tax_by_origin=[province[\"tau\"] for province in provinces],"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 257,
+          "text": "        household_composite_wage=tuple(composite_wage),"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 281,
+          "text": "            population_by_origin=[province[\"N\"] for province in provinces],"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 282,
+          "text": "            old_firm_wage_by_destination=[province[\"wjt\"] for province in provinces],"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 283,
+          "text": "            tax_by_origin=[province[\"tau\"] for province in provinces],"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "line": 336,
+          "text": "        household_composite_wage=tuple(composite_wage),"
+        },
+        {
+          "source_id": "WAGE",
+          "line": 11,
+          "text": "def composite_household_wages("
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 40,
+          "text": "    population_by_origin: np.ndarray"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 41,
+          "text": "    old_firm_wage_by_destination: np.ndarray"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 42,
+          "text": "    tax_by_origin: np.ndarray"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 51,
+          "text": "        population = _readonly_vector(\"population_by_origin\", self.population_by_origin, n)"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 52,
+          "text": "        wages = _readonly_vector(\"old_firm_wage_by_destination\", self.old_firm_wage_by_destination, n)"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 53,
+          "text": "        taxes = _readonly_vector(\"tax_by_origin\", self.tax_by_origin, n)"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 67,
+          "text": "        object.__setattr__(self, \"population_by_origin\", population)"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 68,
+          "text": "        object.__setattr__(self, \"old_firm_wage_by_destination\", wages)"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 69,
+          "text": "        object.__setattr__(self, \"tax_by_origin\", taxes)"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 98,
+          "text": "def reconstruct_migration_labor(inputs: MigrationLaborInputs) -> MigrationLaborResult:"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 109,
+          "text": "                inputs.old_firm_wage_by_destination[destination]"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 112,
+          "text": "                    - inputs.tax_by_origin[origin]"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 125,
+          "text": "                * inputs.population_by_origin[origin]"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 151,
+          "text": "    population_by_origin: np.ndarray"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 152,
+          "text": "    old_firm_wage_by_destination: np.ndarray"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 153,
+          "text": "    tax_by_origin: np.ndarray"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 167,
+          "text": "        population = _readonly_vector(\"population_by_origin\", self.population_by_origin, n)"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 168,
+          "text": "        wages = _readonly_vector(\"old_firm_wage_by_destination\", self.old_firm_wage_by_destination, n)"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 169,
+          "text": "        taxes = _readonly_vector(\"tax_by_origin\", self.tax_by_origin, n)"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 188,
+          "text": "        object.__setattr__(self, \"population_by_origin\", population)"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 189,
+          "text": "        object.__setattr__(self, \"old_firm_wage_by_destination\", wages)"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 190,
+          "text": "        object.__setattr__(self, \"tax_by_origin\", taxes)"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 329,
+          "text": "                inputs.old_firm_wage_by_destination[destination]"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 332,
+          "text": "                    - inputs.tax_by_origin[origin]"
+        },
+        {
+          "source_id": "MIGRATION",
+          "line": 355,
+          "text": "    origin_mass = inputs.household_labor_per_capita_by_origin * inputs.population_by_origin"
+        }
+      ]
+    },
+    {
+      "id": "Q03",
+      "kind": "EXACT_RELATIVE_INPUT_PATH_IDENTITY_CHECKS_NO_DIRECTORY_SEARCH",
+      "paths": [
+        "data_local/matlab_primary_source_snapshot/中国各省省会地理距离矩阵.xlsx"
+      ],
+      "result": "LOCAL_RAW_INPUT_HASH_CHECKS.json",
+      "scope": "Two named candidate source files maximum; stop on first missing/mismatch; no workbook parse or copies"
+    }
+  ],
+  "budget_separation": "14 source objects/content reads + 1 config metadata read + reserved 2 original hashes = conservative17/20. Mandatory 11 protected-asset fingerprints and control/governance intake separately attributed; no raw salary parsing. Cached reuse is not new source discovery.",
+  "protected_before": {
+    "head": "a1db8c114dec0ab69d69a5576e153a7f868cba0e",
+    "branch": "codex/ch5-mp4c-k1b-turn5-turn6-bounded-continuation-20260922",
+    "index_sha256": "28058a7e2d9ab773c5813205c75999e6c221533aeae0b9bb094b9a83451bf7cc",
+    "refs_sha256": "600912e7f3dabd0661d2314f533bb432d95cf4bd35b622ab5b16d6149e3c6729",
+    "refs_count": 243,
+    "status_sha256": "c443420c888f5e776cfb6cd05b27cbed56e58a787b82639aa23a47ce7f2ac2f3",
+    "status_null_record_count": 5971,
+    "protected": [
+      {
+        "path": "AGENTS.md",
+        "bytes": 132027,
+        "sha256": "d42041e26da7e795e3ae5c236e0029a8a356e14c8058ffa6f95383494f031b3e"
+      },
+      {
+        "path": "CURRENT.md",
+        "bytes": 337540,
+        "sha256": "3133011df542cbef25ff23b48996a35d7c3f98c8a5444417746faf8248e1737f"
+      },
+      {
+        "path": "TASK_CURRENT.md",
+        "bytes": 266971,
+        "sha256": "10749bcb69ba8fdd3807a511b20d64786627ec701706af421acd13550bf39b11"
+      },
+      {
+        "path": "docs/CH5_GITHUB_WORKFLOW_AUTHORITY_CURRENT_20261025.md",
+        "bytes": 2623,
+        "sha256": "36ea79e2d22a1ddef37d7d3db4bf419d5c8c4bdb8d67a8a2c98a54da297e4ecc"
+      },
+      {
+        "path": "docs/CH5_INDEPENDENT_REVIEW_RULES_20261025.md",
+        "bytes": 1424,
+        "sha256": "413e58b5fc773805075bd9a6e95bf304c1b2c33845ad9bdca163440d1e42b620"
+      },
+      {
+        "path": "docs/CH5_ASTRA_WORKFLOW_CURRENT.md",
+        "bytes": 15676,
+        "sha256": "b3cab64d249ff768f98403e8ccbc6f8aaf7d04b009f66255d41f26fb842ec2a7"
+      },
+      {
+        "path": "data/external_sources/nbs_provincial_urban_unit_wage_20261027/分省年度数据_城镇单位就业人员平均工资(元).xlsx",
+        "bytes": 12652,
+        "sha256": "8bb799fc41da5728a52c4958b2da0641ccbc81470a8d6e377625d79b5816b176"
+      },
+      {
+        "path": "data/external_sources/nbs_provincial_urban_unit_wage_20261027/SOURCE_RECEIPT_20261027.json",
+        "bytes": 2291,
+        "sha256": "6d66a514fb672b245b018dac2dd513cd126d60a32a636acf2707c0b54450035a"
+      },
+      {
+        "path": "data/external_sources/nbs_wage_supplement_20261027/分省年度数据_城镇私营单位就业人员平均工(元).xlsx",
+        "bytes": 12411,
+        "sha256": "5c790a478a244ca12b4c3c2c682465683c64e2b36bbf1d6f5e430bd79b23f21a"
+      },
+      {
+        "path": "data/external_sources/nbs_wage_supplement_20261027/分省年度数据_城镇单位就业人员工资总额(亿元).xlsx",
+        "bytes": 13310,
+        "sha256": "f27313c73dc08e8217aeeefe147ce62d7bc0d7c463ecc651c54c7682682c9dc7"
+      },
+      {
+        "path": "data/external_sources/nbs_wage_supplement_20261027/SOURCE_RECEIPT_20261027.json",
+        "bytes": 6348,
+        "sha256": "87ef3d9a8a072a7eb4e029fb67187b218f7d45a2c21bcb79ad6ba9506628a2c3"
+      }
+    ]
+  },
+  "protected_after": "NOT_YET_FINAL__MEASURED_FINAL_RECEIPTS_REQUIRED",
+  "preview_not_actual": "Before/after checkpoint hashes measured; final after-remote-readback source rehash not yet run and recorded in final receipts.",
+  "model_tests_preflight_no_HA": 0,
+  "auto_next": false,
+  "protected_after_checkpoint_before_first_push": {
+    "worktree": {
+      "head": "a1db8c114dec0ab69d69a5576e153a7f868cba0e",
+      "branch": "codex/ch5-mp4c-k1b-turn5-turn6-bounded-continuation-20260922",
+      "index_sha256": "28058a7e2d9ab773c5813205c75999e6c221533aeae0b9bb094b9a83451bf7cc",
+      "refs_sha256": "600912e7f3dabd0661d2314f533bb432d95cf4bd35b622ab5b16d6149e3c6729",
+      "status_sha256": "c443420c888f5e776cfb6cd05b27cbed56e58a787b82639aa23a47ce7f2ac2f3"
+    },
+    "protected_file_count": 11,
+    "protected_assets": [
+      {
+        "path": "AGENTS.md",
+        "bytes": 132027,
+        "sha256": "d42041e26da7e795e3ae5c236e0029a8a356e14c8058ffa6f95383494f031b3e",
+        "unchanged": true
+      },
+      {
+        "path": "CURRENT.md",
+        "bytes": 337540,
+        "sha256": "3133011df542cbef25ff23b48996a35d7c3f98c8a5444417746faf8248e1737f",
+        "unchanged": true
+      },
+      {
+        "path": "TASK_CURRENT.md",
+        "bytes": 266971,
+        "sha256": "10749bcb69ba8fdd3807a511b20d64786627ec701706af421acd13550bf39b11",
+        "unchanged": true
+      },
+      {
+        "path": "docs/CH5_GITHUB_WORKFLOW_AUTHORITY_CURRENT_20261025.md",
+        "bytes": 2623,
+        "sha256": "36ea79e2d22a1ddef37d7d3db4bf419d5c8c4bdb8d67a8a2c98a54da297e4ecc",
+        "unchanged": true
+      },
+      {
+        "path": "docs/CH5_INDEPENDENT_REVIEW_RULES_20261025.md",
+        "bytes": 1424,
+        "sha256": "413e58b5fc773805075bd9a6e95bf304c1b2c33845ad9bdca163440d1e42b620",
+        "unchanged": true
+      },
+      {
+        "path": "docs/CH5_ASTRA_WORKFLOW_CURRENT.md",
+        "bytes": 15676,
+        "sha256": "b3cab64d249ff768f98403e8ccbc6f8aaf7d04b009f66255d41f26fb842ec2a7",
+        "unchanged": true
+      },
+      {
+        "path": "data/external_sources/nbs_provincial_urban_unit_wage_20261027/分省年度数据_城镇单位就业人员平均工资(元).xlsx",
+        "bytes": 12652,
+        "sha256": "8bb799fc41da5728a52c4958b2da0641ccbc81470a8d6e377625d79b5816b176",
+        "unchanged": true
+      },
+      {
+        "path": "data/external_sources/nbs_provincial_urban_unit_wage_20261027/SOURCE_RECEIPT_20261027.json",
+        "bytes": 2291,
+        "sha256": "6d66a514fb672b245b018dac2dd513cd126d60a32a636acf2707c0b54450035a",
+        "unchanged": true
+      },
+      {
+        "path": "data/external_sources/nbs_wage_supplement_20261027/分省年度数据_城镇私营单位就业人员平均工(元).xlsx",
+        "bytes": 12411,
+        "sha256": "5c790a478a244ca12b4c3c2c682465683c64e2b36bbf1d6f5e430bd79b23f21a",
+        "unchanged": true
+      },
+      {
+        "path": "data/external_sources/nbs_wage_supplement_20261027/分省年度数据_城镇单位就业人员工资总额(亿元).xlsx",
+        "bytes": 13310,
+        "sha256": "f27313c73dc08e8217aeeefe147ce62d7bc0d7c463ecc651c54c7682682c9dc7",
+        "unchanged": true
+      },
+      {
+        "path": "data/external_sources/nbs_wage_supplement_20261027/SOURCE_RECEIPT_20261027.json",
+        "bytes": 6348,
+        "sha256": "87ef3d9a8a072a7eb4e029fb67187b218f7d45a2c21bcb79ad6ba9506628a2c3",
+        "unchanged": true
+      }
+    ],
+    "final_source_hashes": [],
+    "final_source_hashes_measured": false
+  }
+}
