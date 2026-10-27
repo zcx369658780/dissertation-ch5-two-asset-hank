@@ -249,3 +249,10 @@ V010冻结、Results FALSE、V011未启动、HA/GE/IRF预算0，生产supervisor
 
 ## 2026-10-27 · 两份工资相关NBS原始候选精确复制
 - [CH5_TEMP31_NBS_WAGE_TWO_WORKBOOK_RAW_CANDIDATES_COPY_R1_20261027](tasks/CH5_TEMP31_NBS_WAGE_TWO_WORKBOOK_RAW_CANDIDATES_COPY_R1_20261027.md)：私营平均工资及城镇单位工资总额，精确原字节复制、本地来源回执、GitHub仅脱敏报告，科研模型未授权。
+
+
+## 2026-10-27 · 两份工资原始候选文件复制验收
+- 候选任务：CH5_TEMP31_NBS_WAGE_TWO_WORKBOOK_RAW_CANDIDATES_COPY_R1_20261027
+- 候选提交：a02eb9a830c2bd3b150bc3a425ad38c36604d06c
+- 裁决：PASS_BOUNDED_RAW_CANDIDATE_COPY_AND_DELIVERY__NO_MODEL_ADOPTION
+- GitHub固定提交任务目录内的result.md、SOURCE_COPY_RECEIPT_PUBLIC.json、gap_register.json及其它回执为证据入口。科研与模型使用仍未授权。
