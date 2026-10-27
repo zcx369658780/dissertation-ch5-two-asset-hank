@@ -1,0 +1,47 @@
+# TEMP31 生产工资税输入绑定来源门：有界STOP
+
+actual_scientific_terminal=STOP__BOOTSTRAP_PIN_MISMATCH_AND_ACTUAL_PRODUCTION_BINDING_UNPROVEN
+Gate A来源绑定和Gate B真实生产/canonical来源未闭合；**no-HA检查NOT_RUN，使用0/2，重试0。** 发现关键来源身份冲突后已停止源发现，不继续搜索、修复或模型运行；只完成冻结合同要求的证据交付。
+
+## 冻结身份分别记录
+
+- 任务发文commit：eaf11cb5edfd311e7f942858a1c85424a6b5d672，任务Blob=b2872ae362aa58ca46ca450e602e63d735d9055e，11677字节，SHA256=135451b40d8b71ba0ffdd3ef8833af44ba9bfe2cf9eb521e5c91bc4c7f997bb8。
+- 候选分支固定基点：ef980d454726d3fadd12184b669517fea564d721。它不是任务发文commit；payload首提交必须以此为唯一parent。后续交付封存commit如存在，以已回读payload为parent，分支基点不改；payload parent、seal parent和任务发文分别披露。
+- 冻结源：b69ae535a1518c68822733603f1e506620327375 / tree 8dbd81c0938f603511c7de1c763ed29b6d2d4b83。
+- 候选分支：codex/ch5-temp31-production-wage-tax-input-binding-20261027-r1。
+- 上轮9bdc9e83127d32e6e29a0a5895800fd97d92cd3a及其PASS_BOUNDED_STATIC_SOURCE_SEMANTICS__SCIENTIFIC_ACCEPTANCE_BLOCKED/STOP继承，不重建116摘录/25边、不重跑历史验收。
+
+## 本轮新增真实证据
+
+1. ENTRY:1明确是validation-only calendar-2009入口；CORRECTED_ENTRY:1–5明确是opt-in任务driver且不改变默认/生产路线。已有CLI和callback表达式不是已认证生产部署证明；在本轮9个精确代码文件中未建立一个ACTUAL_PRODUCTION绑定。不宣称全仓库无生产入口。
+
+2. ENTRY:18–36的bootstrap要求HA导出SHA为`b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3`，当前准确目标原件SHA为`f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8`，静态不匹配。ENTRY:64在HA导入前调用该guard。**未实际import/运行，故不是观察到的runtime失败。** 没有改pin、换文件、标准化来源、跳过guard或尝试其他版本。
+
+3. 9份当前原件均与上轮本地源哈希一致；与b69ae535a1518c68822733603f1e506620327375下同名文件的Git Blob没有一个完全相同（0/9）。公开本地SHA与准确短摘录，不能把远端同名源码称为本地同字节原件，不能据此宣布语义全不同或已部署。
+
+4. 可见静态链为CLI → run_python_once → OnlineStationaryInputs(solve_batch) → controller callback → postloop → HA；另有静态字段映射和state更新。由于入口角色、源guard及真实canonical生成/输入身份未满足，链不能升级为实际生产闭包。ANNUAL生成函数接受调用者给出的sources/binding/scalars，不能仅凭生成器存在证明当前真实生产输入来自它，也不能将canonical载荷哈希冒充D1共同旧期batch tuple witness。
+
+## 保留的科学/数据边界
+
+既有工作地tax_j、单次扣税、D1旧期共同tuple、D2显式31省batch adapter、D3先隔离no-HA均是目标合同；本轮未认证实现。已含目的地税/摩擦的net w进入非零tau消费者仍只是条件性风险，通用gross wage消费者的非零tau未必错。FOC/预算共同税后价格、政府与家户双边记账不按出现次数判双扣。
+
+本轮不合并R2/R3，不重判财政lt*tau与lt*wjt*tau、c5 i/j、alphal幂、phi符号或sigma收受方。个体l、分布∫zl dg、来源人口N、目的地Lt_supply、统计就业/工时不互换。三份2018 NBS声称来源原始候选继续MODEL_ADOPTED=FALSE，全部30异常隔离原样；不生成工资序列、净工资、就业、校准参数或转换公式。
+
+source_inventory.json区分CURRENT_LOCAL_DIRTY、VALIDATION_ONLY、历史来源、R2/R3和ACTUAL_PRODUCTION UNKNOWN；production_entrypoint_and_import_trace.md给出具体入口/guard/静态调用；canonical_wage_tax_state_snapshot_matrix.md覆盖w/wjt/tau/sigma/phi/N/Ct/Lt/Tt与ID/旧新期缺口；G01–G11逐项保留并标明本轮新增证据。source_excerpts.json只给本来源门必要摘录，不替代或重复上轮全域审计。
+
+## 实际预算和交付
+
+新开精确代码文件9份，上轮指定证据9件，内容读取计18/30；定向定位2/12。最后原件身份回读预留9次，只作完整性哈希，不增加科学语义读取；计入后的保守来源读取总量27/30。保护资产与治理/任务身份检查另列；同一任务scratch缓存复用，不重开原源码作语义分析。条件性no-HA检查0/2、工具故障重试0，未编写或运行spy。科研/数值/真实HA/HJB/KFE/GE/IRF、项目import、预检、生产脚本运行、源码/数据改写均0。未用预算在STOP关闭，不自动延续。
+
+artifact_integrity=REPORT_IDENTITIES_AND_SOURCE_QUOTES_TO_BE_REMOTE_VERIFIED__SEE_RECEIPTS
+source_identity=CURRENT_SOURCE_SHA_IDENTIFIED__BOOTSTRAP_PIN_CONFLICT__ACTUAL_PRODUCTION_UNPROVEN
+numeric_review=NOT_RUN
+implementation_review=BOUNDED_STATIC_PROVENANCE_ONLY__NO_HA_NOT_RUN
+scientific_review=BLOCKED_UNTIL_OWNER_APPROVAL
+privacy_review=SHORT_SAFE_SOURCE_QUOTES_AND_METADATA_ONLY
+actual_terminal=SOURCE_GATE_BLOCKED__EVIDENCE_DELIVERY_AND_FINAL_REMOTE_READBACK_RECORDED_EXTERNALLY
+delivery=AUTHORIZED_SSH_CANDIDATE_ONLY__SEE_DELIVERY_FINAL_RECEIPT_AND_EXTERNAL_FINAL_REMOTE_READBACK
+cleanup=NOT_AUTHORIZED_NOT_PERFORMED
+not_completed=ACTUAL_PRODUCTION_DISPATCH;AUTHENTIC_CONSUMER_PIN_BINDING;REAL_CANONICAL_PRODUCER_AND_INPUT;D1_D2_D3;REAL_31_ID_SNAPSHOT_AND_UNITS;SCIENTIFIC_ACCEPTANCE
+
+原科学工作树、index/refs、dirty/untracked、原件和历史STOP/PENDING保留。FORMAL_SOURCE_FREEZE=FALSE；V010=UNCHANGED；V011=NOT_STARTED；Results=FALSE；model_activation=False；REAL_GE=False；FULL_RUNNER_IO_CLOSURE=BLOCKED。证据先发布独立GitHub候选并回读，随后最终STOP，不发Issue/PR、不合并、不清理、不启动下一任务。

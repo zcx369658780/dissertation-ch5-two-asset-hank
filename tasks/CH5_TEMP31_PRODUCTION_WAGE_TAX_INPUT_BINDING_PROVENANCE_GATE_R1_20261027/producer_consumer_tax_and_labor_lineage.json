@@ -1,0 +1,298 @@
+{
+  "task_id": "CH5_TEMP31_PRODUCTION_WAGE_TAX_INPUT_BINDING_PROVENANCE_GATE_R1_20261027",
+  "nodes": [
+    {
+      "id": "ENTRY",
+      "path": "validators/multi_province/mp4b_python_empirical.py",
+      "source_class": "CURRENT_LOCAL_DIRTY",
+      "runtime_adoption": "UNKNOWN",
+      "sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b"
+    },
+    {
+      "id": "ANNUAL",
+      "path": "src/ch5_two_asset_hank/multi_province/annual.py",
+      "source_class": "CURRENT_LOCAL_DIRTY",
+      "runtime_adoption": "UNKNOWN",
+      "sha256": "290f6f65ad2f74799260b76562dea7338cac94d80e70ea5496aeded24c59ca0d"
+    },
+    {
+      "id": "RUNTIME",
+      "path": "src/ch5_two_asset_hank/multi_province/stationary_runtime.py",
+      "source_class": "CURRENT_LOCAL_DIRTY",
+      "runtime_adoption": "UNKNOWN",
+      "sha256": "6cabaa5941c47799bcc6d299edee48e4b7cb52f2213b7b9155de3aa9b032c1e6"
+    },
+    {
+      "id": "STATE_UPDATE",
+      "path": "src/ch5_two_asset_hank/multi_province/steady_state.py",
+      "source_class": "CURRENT_LOCAL_DIRTY",
+      "runtime_adoption": "UNKNOWN",
+      "sha256": "b8897fdef9cc59a2811561a18cb0fadf059a158ad8e5f3661bd10a5734d264aa"
+    },
+    {
+      "id": "ONE_TURN",
+      "path": "src/ch5_two_asset_hank/multi_province/one_turn.py",
+      "source_class": "CURRENT_LOCAL_DIRTY",
+      "runtime_adoption": "UNKNOWN",
+      "sha256": "020611e7ceb6fe558727ffac083ee45f6ba05d1b17f73d62c1f9a929df970e67"
+    },
+    {
+      "id": "HA_ADAPTER",
+      "path": "src/ch5_two_asset_hank/multi_province/household_adapter.py",
+      "source_class": "CURRENT_LOCAL_DIRTY",
+      "runtime_adoption": "UNKNOWN",
+      "sha256": "0963591a95293e896b9f9a8c3f4c630cd3dbb9519950171170e28822c8a4ef0f"
+    },
+    {
+      "id": "POSTLOOP",
+      "path": "validators/multi_province/mp4b_matlab_source_postloop_household_adapter.py",
+      "source_class": "CURRENT_LOCAL_DIRTY",
+      "runtime_adoption": "UNKNOWN",
+      "sha256": "cb90229f3c90ff2ba2fec0cf2e768404ad2ffe8a9ec291d7ed2c6dd22102337f"
+    },
+    {
+      "id": "HA_CONSUMER",
+      "path": "exports/matlab_faithful_two_asset_ha.py",
+      "source_class": "CURRENT_LOCAL_DIRTY",
+      "runtime_adoption": "UNKNOWN",
+      "sha256": "f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8"
+    },
+    {
+      "id": "CORRECTED_ENTRY",
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+      "source_class": "CURRENT_LOCAL_DIRTY",
+      "runtime_adoption": "UNKNOWN",
+      "sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07"
+    }
+  ],
+  "edges": [
+    {
+      "source": "ENTRY",
+      "consumer": "RUNTIME",
+      "flow": "CLI run_python_once supplies local solve_batch callback; controller invokes it on entering state",
+      "citations": [
+        {
+          "source_id": "ENTRY",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 390,
+          "end_line": 408,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b",
+          "source_class": "CURRENT_LOCAL_DIRTY",
+          "execution": "NOT_RUN"
+        },
+        {
+          "source_id": "ENTRY",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 370,
+          "end_line": 372,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b",
+          "source_class": "CURRENT_LOCAL_DIRTY",
+          "execution": "NOT_RUN"
+        },
+        {
+          "source_id": "RUNTIME",
+          "path": "src/ch5_two_asset_hank/multi_province/stationary_runtime.py",
+          "start_line": 50,
+          "end_line": 55,
+          "source_sha256": "6cabaa5941c47799bcc6d299edee48e4b7cb52f2213b7b9155de3aa9b032c1e6",
+          "source_class": "CURRENT_LOCAL_DIRTY",
+          "execution": "NOT_RUN"
+        }
+      ],
+      "status": "STATIC_REFERENCE_ONLY__REACHABILITY_AND_ADOPTION_UNPROVEN",
+      "executed": false
+    },
+    {
+      "source": "ENTRY",
+      "consumer": "POSTLOOP",
+      "flow": "solve_batch source expression supplies HouseholdInputs(state.tau,[state.w],...)",
+      "citations": [
+        {
+          "source_id": "ENTRY",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 345,
+          "end_line": 350,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b",
+          "source_class": "CURRENT_LOCAL_DIRTY",
+          "execution": "NOT_RUN"
+        },
+        {
+          "source_id": "POSTLOOP",
+          "path": "validators/multi_province/mp4b_matlab_source_postloop_household_adapter.py",
+          "start_line": 15,
+          "end_line": 33,
+          "source_sha256": "cb90229f3c90ff2ba2fec0cf2e768404ad2ffe8a9ec291d7ed2c6dd22102337f",
+          "source_class": "CURRENT_LOCAL_DIRTY",
+          "execution": "NOT_RUN"
+        }
+      ],
+      "status": "STATIC_REFERENCE_ONLY__REACHABILITY_AND_ADOPTION_UNPROVEN",
+      "executed": false
+    },
+    {
+      "source": "POSTLOOP",
+      "consumer": "HA_CONSUMER",
+      "flow": "Same inputs object forwarded to generic HJB/aggregate imports; no execution here",
+      "citations": [
+        {
+          "source_id": "POSTLOOP",
+          "path": "validators/multi_province/mp4b_matlab_source_postloop_household_adapter.py",
+          "start_line": 30,
+          "end_line": 40,
+          "source_sha256": "cb90229f3c90ff2ba2fec0cf2e768404ad2ffe8a9ec291d7ed2c6dd22102337f",
+          "source_class": "CURRENT_LOCAL_DIRTY",
+          "execution": "NOT_RUN"
+        },
+        {
+          "source_id": "HA_CONSUMER",
+          "path": "exports/matlab_faithful_two_asset_ha.py",
+          "start_line": 159,
+          "end_line": 166,
+          "source_sha256": "f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8",
+          "source_class": "CURRENT_LOCAL_DIRTY",
+          "execution": "NOT_RUN"
+        }
+      ],
+      "status": "STATIC_REFERENCE_ONLY__REACHABILITY_AND_ADOPTION_UNPROVEN",
+      "executed": false
+    },
+    {
+      "source": "RUNTIME",
+      "consumer": "ONE_TURN",
+      "flow": "Controller passes entering state, phi, wedges and callback batch into OneTurnInputs",
+      "citations": [
+        {
+          "source_id": "RUNTIME",
+          "path": "src/ch5_two_asset_hank/multi_province/stationary_runtime.py",
+          "start_line": 50,
+          "end_line": 56,
+          "source_sha256": "6cabaa5941c47799bcc6d299edee48e4b7cb52f2213b7b9155de3aa9b032c1e6",
+          "source_class": "CURRENT_LOCAL_DIRTY",
+          "execution": "NOT_RUN"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "path": "src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "start_line": 201,
+          "end_line": 209,
+          "source_sha256": "020611e7ceb6fe558727ffac083ee45f6ba05d1b17f73d62c1f9a929df970e67",
+          "source_class": "CURRENT_LOCAL_DIRTY",
+          "execution": "NOT_RUN"
+        }
+      ],
+      "status": "STATIC_REFERENCE_ONLY__REACHABILITY_AND_ADOPTION_UNPROVEN",
+      "executed": false
+    },
+    {
+      "source": "ONE_TURN",
+      "consumer": "STATE_UPDATE",
+      "flow": "Per-origin composite wage stored into next state.w through controller post-turn update",
+      "citations": [
+        {
+          "source_id": "RUNTIME",
+          "path": "src/ch5_two_asset_hank/multi_province/stationary_runtime.py",
+          "start_line": 53,
+          "end_line": 56,
+          "source_sha256": "6cabaa5941c47799bcc6d299edee48e4b7cb52f2213b7b9155de3aa9b032c1e6",
+          "source_class": "CURRENT_LOCAL_DIRTY",
+          "execution": "NOT_RUN"
+        },
+        {
+          "source_id": "ONE_TURN",
+          "path": "src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "start_line": 231,
+          "end_line": 238,
+          "source_sha256": "020611e7ceb6fe558727ffac083ee45f6ba05d1b17f73d62c1f9a929df970e67",
+          "source_class": "CURRENT_LOCAL_DIRTY",
+          "execution": "NOT_RUN"
+        },
+        {
+          "source_id": "STATE_UPDATE",
+          "path": "src/ch5_two_asset_hank/multi_province/steady_state.py",
+          "start_line": 153,
+          "end_line": 168,
+          "source_sha256": "b8897fdef9cc59a2811561a18cb0fadf059a158ad8e5f3661bd10a5734d264aa",
+          "source_class": "CURRENT_LOCAL_DIRTY",
+          "execution": "NOT_RUN"
+        }
+      ],
+      "status": "STATIC_REFERENCE_ONLY__REACHABILITY_AND_ADOPTION_UNPROVEN",
+      "executed": false
+    },
+    {
+      "source": "ANNUAL",
+      "consumer": "ENTRY",
+      "flow": "Schema compatibility only: scalar fields/province vectors produced and read; actual producer invocation/file binding unavailable",
+      "citations": [
+        {
+          "source_id": "ANNUAL",
+          "path": "src/ch5_two_asset_hank/multi_province/annual.py",
+          "start_line": 253,
+          "end_line": 273,
+          "source_sha256": "290f6f65ad2f74799260b76562dea7338cac94d80e70ea5496aeded24c59ca0d",
+          "source_class": "CURRENT_LOCAL_DIRTY",
+          "execution": "NOT_RUN"
+        },
+        {
+          "source_id": "ENTRY",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 101,
+          "end_line": 121,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b",
+          "source_class": "CURRENT_LOCAL_DIRTY",
+          "execution": "NOT_RUN"
+        }
+      ],
+      "status": "STATIC_REFERENCE_ONLY__REACHABILITY_AND_ADOPTION_UNPROVEN",
+      "executed": false
+    },
+    {
+      "source": "CORRECTED_ENTRY",
+      "consumer": "HA_CONSUMER",
+      "flow": "Separate source contexts, not asserted same active dispatcher: corrected scalars preserve tau/wage, generic consumer keeps own tau",
+      "citations": [
+        {
+          "source_id": "CORRECTED_ENTRY",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+          "start_line": 285,
+          "end_line": 305,
+          "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07",
+          "source_class": "CURRENT_LOCAL_DIRTY",
+          "execution": "NOT_RUN"
+        },
+        {
+          "source_id": "HA_CONSUMER",
+          "path": "exports/matlab_faithful_two_asset_ha.py",
+          "start_line": 159,
+          "end_line": 164,
+          "source_sha256": "f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8",
+          "source_class": "CURRENT_LOCAL_DIRTY",
+          "execution": "NOT_RUN"
+        }
+      ],
+      "status": "CONTEXT_COMPARISON_NOT_AN_ACTUAL_CALL_EDGE",
+      "executed": false,
+      "edge_kind": "SEPARATE_CONTEXT_ONLY"
+    }
+  ],
+  "hard_block": {
+    "expected_sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+    "actual_current_target_sha256": "f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8",
+    "target_path": "exports/matlab_faithful_two_asset_ha.py",
+    "guard_lines": [
+      18,
+      36
+    ],
+    "bootstrap_invocation_line": 64,
+    "static_sha_mismatch": true,
+    "executed": false,
+    "runtime_failure_observed": false
+  },
+  "actual_production_root": "UNKNOWN_NOT_FABRICATED",
+  "canonical_generation_invocation": "SOURCE_UNAVAILABLE_IN_BOUND_SCOPE",
+  "inherited_R2_R3": "Fixed prior audit only; no merge, package initialization, or execution",
+  "conditional_risk": "A net composite wage entering nonzero tau is a conditional repeated-wedge risk, not an observed runtime defect; generic gross wage consumers may use nonzero tau legitimately",
+  "non_duplicates": "FOC/budget shared after-tax price and household/government bookkeeping are not counted as separate tax deductions",
+  "actual_macro_identity": "BLOCKED",
+  "no_code_execution": true
+}
