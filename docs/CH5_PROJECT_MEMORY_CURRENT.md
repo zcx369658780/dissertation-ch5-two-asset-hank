@@ -353,3 +353,8 @@ SCOPE=OWNER_DIRECTED_TEMP31_AND_SIMILAR_BOUNDED_EVIDENCE_WORK
 - 工作流继续为：GPT 在治理分支发布一张冻结任务单→Owner转本地Codex→Codex按已授权普通SSH推送独立候选→GPT固定commit独立验收→Owner决定后续。委托微预算不等于自动开展下一张任务；禁止自动Issue/PR、合并、清理或批量自动启动。
 - 若出现经济学定义冲突、源身份/ID/单位/vintage不一致、科研机制改动要求、越权预算、权限拒绝、数据缺失、隐私风险或真实模型运行要求，GPT/Codex必须停止相关尝试并通知Owner，请Owner裁决。旧历史 STOP/PENDING 与科学证据原封不动保留。
 - 本轮 Owner 同意继续的具体方向：先闭合真实生产入口/canonical输入生成链、31省同快照与工资税净/税前语义证据，再讨论统计数据如何使用；不预先指定修正公式。科研门限仍 FORMAL_SOURCE_FREEZE=FALSE、V010=UNCHANGED、V011=NOT_STARTED、Results=FALSE、model_activation=FALSE、REAL_GE=FALSE、FULL_RUNNER_IO_CLOSURE=BLOCKED。
+
+
+## 2026-10-27 · Owner批准有界来源解阻继续（不推断长会话导致哈希冲突）
+
+上一轮来源门固定候选 b9d0931b454334a5449ba26d8def13ebf0da7b37，GPT独立验收文档 docs/CH5_TEMP31_PRODUCTION_WAGE_TAX_INPUT_BINDING_PROVENANCE_GATE_R1_20261027_INDEPENDENT_REVIEW.md，治理验收commit 174260f367e91edc9985a5ed712b972dea4f1fd0：STOP_ACCEPTED__SOURCE_GATE_BLOCKED__GITHUB_ARTIFACTS_VERIFIED__EXECUTOR_FINAL_SSH_READBACK_INTERRUPTED；GitHub14/14报告独立可读、13/13 manifest payload匹配；Codex当时最终SSH回读中断不可追溯改写。已证validation-only固定pin与执行者报告本地HA导出SHA不一致（本地原字节GPT未独立重核）、actual production/canonical binding仍未知。Owner同意继续最小只读追踪固定pin历史原件、真实production dispatch及canonical生成调用，并提出可能与长会话验收超时相关；该猜想没有因果证据，必须区分SSH交付故障与源码版本身份差异。新任务CH5_TEMP31_ORACLE_PIN_PRODUCTION_DISPATCH_PROVENANCE_R1_20261027只读、来源预算明确且模型/测试0，不允许改pin/替换文件/运行HA/引入工资Excel/修改V010或自动下一任务；等固定候选独立验收后Owner决策。
