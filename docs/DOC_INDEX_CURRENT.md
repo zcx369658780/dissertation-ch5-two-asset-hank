@@ -268,3 +268,8 @@ V010冻结、Results FALSE、V011未启动、HA/GE/IRF预算0，生产supervisor
 - 结果：PASS_BOUNDED_STATIC_SOURCE_SEMANTICS__SCIENTIFIC_ACCEPTANCE_BLOCKED
 - 独立验收报告历史提交：4699787ea100310ce09d20833fe25aa321bae200
 - 关键证据：候选目录的source_excerpts.json、wage_labor_tax_lineage.json、symbol_semantics_matrix.md、statistics_to_model_bridge_matrix.md和gap_register.json；禁止把静态PASS提升为生产科研接受。
+
+
+## 2026-10-27 · 最新会话正式交接入口（请先读）
+- [CH5_SESSION_HANDOFF_20261027_CURRENT.md](CH5_SESSION_HANDOFF_20261027_CURRENT.md)：Owner已批准流程与科学边界、三份工资数据身份、最后静态语义任务有界通过、下个会话只读恢复步骤。
+- 最新静态审阅候选：`9bdc9e83127d32e6e29a0a5895800fd97d92cd3a`；结论 `PASS_BOUNDED_STATIC_SOURCE_SEMANTICS__SCIENTIFIC_ACCEPTANCE_BLOCKED`；`ACTIVE_TASK=NONE`，不得自动重复执行。
