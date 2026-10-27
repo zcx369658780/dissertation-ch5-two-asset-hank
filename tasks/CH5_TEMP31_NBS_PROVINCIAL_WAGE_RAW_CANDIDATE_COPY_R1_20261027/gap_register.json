@@ -1,0 +1,57 @@
+{
+  "task_id": "CH5_TEMP31_NBS_PROVINCIAL_WAGE_RAW_CANDIDATE_COPY_R1_20261027",
+  "gaps": [
+    {
+      "id": "G01",
+      "field": "official_definitive_indicator_id",
+      "status": "UNKNOWN",
+      "needed": "Original NBS indicator code and full definition; NONPRIVATE_LIKELY__DEFINITION_PENDING remains provisional"
+    },
+    {
+      "id": "G02",
+      "field": "provenance_url_export_timestamp_revision_vintage",
+      "status": "UNKNOWN",
+      "needed": "Owner original export permalink, export timestamp and revision vintage; task documentary URLs are not workbook export provenance"
+    },
+    {
+      "id": "G03",
+      "field": "excluded_years",
+      "status": "QUARANTINED_NOT_ADMITTED",
+      "years": [
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2025
+      ],
+      "reason": "ALL_31_LITERAL_30",
+      "handling": "Original workbook bytes retained; exclusion metadata only, no rows deleted or corrected"
+    },
+    {
+      "id": "G04",
+      "field": "other_years_certification",
+      "status": "NOT_CERTIFIED",
+      "needed": "Separate evidence for each year; only 2018 is a raw candidate, no other year admitted"
+    },
+    {
+      "id": "G05",
+      "field": "source_definition_tax_scope_model_bridge",
+      "status": "BLOCKED_NOT_AUTHORIZED",
+      "needed": "Separate acceptance of statistical population, gross/net concept, common vintage, labor/hours/efficiency units and economic/model eligibility; no conversion defined"
+    },
+    {
+      "id": "G06",
+      "field": "production_wjt_tau_sigma_phi_join_callback",
+      "status": "UNKNOWN_UNCHANGED",
+      "needed": "Separately authorized production evidence; this copy is not consumed by any model"
+    },
+    {
+      "id": "G07",
+      "field": "independent_delivery_and_scientific_acceptance",
+      "status": "NOT_PERFORMED",
+      "needed": "GPT/Astra fixed-commit review and Owner decision; executor readback is delivery evidence only"
+    }
+  ],
+  "automatic_next": false
+}
