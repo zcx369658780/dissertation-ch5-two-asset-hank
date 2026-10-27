@@ -1,0 +1,9 @@
+# 来源证据与不可作出的安全结论
+
+六条精确记录的字面位置属于项目相对依赖树的WASM目录，六条共享同一字面父目录。这只提供路径类别线索。第一条路径的祖先reparse守卫实际触发，命中组件未持久化；没有跟随目标，没有完成实际父目录物理身份或文件身份认证。不能将字面父目录当作当前物理存储来源。
+
+没有读取package/build manifest：允许的现有证据未明确指定可读的同层安全manifest，且真实安全硬门已STOP。没有读取泛化依赖树、缓存、会话日志或链接目标来补来源。
+
+没有旧WASM哈希或当前WASM内容哈希，没有pairwise内容相同证据，没有可追溯构建ID/构建命令/安装清单/刷新时间见证。因此 METADATA_MATCHES_DOCUMENTED_DEPENDENCY_REFRESH、CONSISTENT_WITH_RENAME_ONLY、SAME_BYTES_DIFFERENT_PATHS 均NOT_ESTABLISHED。扩展名、同父目录和相似命名不能证明依赖更新、合法性、无害性、恶意性或科学代码变动。
+
+历史路径记录变化、当前状态流成员、祖先守卫结果和辅助程序回执缺口分别记录；不推断其因果关系。源身份、归因、内容比较及保护基线选择继续BLOCKED。
