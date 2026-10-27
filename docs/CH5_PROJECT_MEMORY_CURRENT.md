@@ -316,3 +316,7 @@ TASK=CH5_TEMP31_EXISTING_WAGE_DATA_DISCOVERY_R1_20261025；任务单：tasks/CH5
 
 ## 2026-10-27 · 国家统计局分省城镇单位工资Excel新候选
 Owner手动下载并提供文件 `分省年度数据_城镇单位就业人员平均工资(元).xlsx`，12652B，SHA-256 `8bb799fc41da5728a52c4958b2da0641ccbc81470a8d6e377625d79b5816b176`。GPT直接检查Sheet1 A1:Z36，31省2018列I共31个非空数字、31省标签唯一；福建74316、湖南70221与官方非私营工资记录一致。国家统计局口径答复一般将简称“城镇单位”解释为非私营单位，但该Excel无权威指标代码、直链和导出时间，因此 status=NONPRIVATE_LIKELY__DEFINITION_PENDING。2025及2001-2005各省均为字面值30，标为隔离异常，不得作为工资数据。其余历史列未经逐年认证。该文件可以作为原始候选保留，不能直接当作家庭净工资、有效劳动工资、正式w/wjt模型输入或Results。已签发本地精确字节复制任务 `CH5_TEMP31_NBS_PROVINCIAL_WAGE_RAW_CANDIDATE_COPY_R1_20261027`，只允许在项目内单独保存原件及来源回执，GitHub仅发布脱敏元数据；不运行科学模型、测试/预检或修改V010。
+
+
+## 2026-10-27 · 国家统计局声称来源原始工资 Excel 本地复制验收
+候选commit=8de1c89ae04dcfd7b1462c642418a29ae03715d5；任务=CH5_TEMP31_NBS_PROVINCIAL_WAGE_RAW_CANDIDATE_COPY_R1_20261027；独立验收=PASS_BOUNDED_COPY_AND_DELIVERY__NO_MODEL_ADOPTION。GitHub固定提交5文件：4项manifest载荷的Blob/大小/SHA-256重新独立核验均通过，manifest自身另审；仅脱敏资料进入GitHub，不包含原始xlsx。用户上传的Excel原件由GPT在当前会话的文件容器再次计算，12652字节，SHA-256=8bb799fc41da5728a52c4958b2da0641ccbc81470a8d6e377625d79b5816b176，并按表结构核2018列31项；2025及2001-2005各省均为30，隔离不采纳。本地Codex报告项目副本与下载原件同字节、目标回读同哈希，旁置SOURCE_RECEIPT存在；由于GPT不能直接读取用户Windows项目目录，独立本地磁盘副本复哈希未完成，属于执行者可追溯报告事实，不夸称已亲自重读本地副本。统计口径NONPRIVATE_LIKELY__DEFINITION_PENDING，指标代码/下载直链/导出时间/修订vintage UNKNOWN。2018仅是原始候选，不是净工资、模型w/wjt或科学结果。科研、数值、测试、预检、模型、数据转化均未授权，V010=UNCHANGED、V011=NOT_STARTED、Results=FALSE、model_activation=False、REAL_GE=False、FULL_RUNNER_IO_CLOSURE=BLOCKED。验收报告按Owner规则先临时发布GitHub回读，随后从当前审阅树移除，Git历史留存。没有签发下一任务。
