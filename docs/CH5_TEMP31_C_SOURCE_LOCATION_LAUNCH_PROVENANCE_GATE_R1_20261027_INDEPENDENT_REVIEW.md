@@ -1,0 +1,79 @@
+# TEMP31 C方案原件定位与启动来源认证门 · GPT固定提交独立审阅
+
+DATE=2026-10-27
+REVIEW_KIND=GITHUB_FIXED_CANDIDATE_THREE_STAGE_INDEPENDENT_REVIEW
+TASK_ID=CH5_TEMP31_C_SOURCE_LOCATION_LAUNCH_PROVENANCE_GATE_R1_20261027
+TASK_PUBLICATION_COMMIT=f26941ddd47e1b937f17aa4d51759b052bf018a0
+CANDIDATE_COMMIT=ec5b2ccef4da2440af3eb74e3d51b4ce47b33e6c
+CANDIDATE_BRANCH=codex/ch5-temp31-c-source-location-launch-provenance-20261027-r1
+CANDIDATE_FIXED_PARENT=40b48a85e8ed66265dde29a9cda98c51778811d8
+CANDIDATE_PAYLOAD_COMMIT=6282ed78af0da64299996b1709ed57280761ac30
+CANDIDATE_FINAL_SEAL_PARENT=6282ed78af0da64299996b1709ed57280761ac30
+CANDIDATE_FINAL_SEAL_TREE=bc774ac06544a45479ceb8fb5dc7402193bb64f8
+VERDICT=PASS_BOUNDED_C_SOURCE_LOCATION_NEGATIVE_COVERAGE_AND_STOP__REAL_SOURCE_LAUNCH_CANONICAL_BLOCKED
+SCIENTIFIC_ACCEPTANCE=BLOCKED
+ACTUAL_TERMINAL=STOP__NOT_FOUND_IN_BOUNDED_SOURCE_LOCATIONS__OWNER_EXACT_SOURCE_AND_TEMP31_LAUNCH_REQUIRED
+ACTIVE_TASK=NONE
+AUTO_NEXT=FALSE
+
+## A阶段：固定提交身份、交付原字节与来源门 (COMPLETED_BOUNDED)
+
+- 通过GitHub连接器实时核对治理分支在验收开始时为任务发文提交`f26941ddd47e1b937f17aa4d51759b052bf018a0`；候选分支HEAD=`ec5b2ccef4da2440af3eb74e3d51b4ce47b33e6c`；seal parent=`6282ed78af0da64299996b1709ed57280761ac30`、seal tree=`bc774ac06544a45479ceb8fb5dc7402193bb64f8`；从固定候选基点`40b48a85e8ed66265dde29a9cda98c51778811d8`到最终seal ahead 2/behind 0。diff只有当前任务目录14个新增报告，没有科研源码/原始数据改动。发文commit和候选固定parent角色分开。
+- 从最终seal commit直接获取全部14/14件证据。manifest内登记13个UTF-8 payload，GPT逐个重新计算UTF-8字节数/SHA-256、核GitHub Blob：13/13 PASS。manifest自身UTF-8 10549字节，Blob=`1eb4c6762a8b3cca158f36e800261eea9e736610`、SHA-256=`fc6a046e101f5b6fd38dbf077a61230178f6e09e322de83435300b5e8ddfb678`，单独核算。13段源摘录的LF可读文本SHA-256及各自Base64解码原始字节SHA-256/长度13/13全部相符。结果仅证明固定GitHub证据内部身份和短源码片段，不代表原Windows本地科学树及其宏观xlsx已由GPT独立读到。
+- Codex交付receipt声明payload原始13件远端回读，最终seal本次由GPT从GitHub另回读14件。用户指向`D:/ProjectTemp/.../EXTERNAL_FINAL_REMOTE_READBACK_RECEIPT.json`的Windows本地绝对路径，GPT当前不能直接取得其原始字节，不能宣称已独立读取本地外置回执。
+- GitHub候选从固定base比对无科学源码变更。Executor给出science HEAD/index/refs/dirty/untracked及11件保护资产前后哈希一致的报告；这是有界可追溯的执行者测量，GPT不可冒充独立核验Windows保护状态。INDEPENDENT_COMPLETION_EVENT=UNKNOWN保持，不重写为独立见证成功。
+
+## B阶段：定向来源排查、启动/canonical与科学语义 (COMPLETED_BOUNDED__SOURCE_GATES_BLOCKED)
+
+### B1. 4个精确相对位置有界排除，不扩大到全仓/全盘
+- 已签发C方案限定以代码明确的`data_local/matlab_primary_source_snapshot/`为默认原始来源根。Codex`bounded_source_location_ledger.json`记录：
+  Q01 `data_local/matlab_primary_source_snapshot/中国各省省会地理距离矩阵.xlsx`: ABSENT_AT_TESTED_PATH；
+  Q02 `data_local/matlab_primary_source_snapshot/2000年后各省数据_填充NA.xlsx`: ABSENT_AT_TESTED_PATH；
+  Q03 `data_local/matlab_primary_source_snapshot/R语言估计结果_plm估计.xlsx`: ABSENT_AT_TESTED_PATH；
+  Q04 `data_local`: DIRECTORY_ABSENT。
+- GPT直接读取冻结GitHub原始源`validators/multi_province/mp4c_python_annual_empirical.py:34–38,74–82`、`mp4c_python_annual_production.py:155`，确认代码中上述3个basename、各expected SHA-256常量及默认相对根的表达式确实存在。但不存在是**Codex Windows项目根下4项检查的执行者观察**，GPT无法从GitHub独立检查该本地目录。并非整个仓库、其他磁盘或历史任何版本不存在的证明。
+- 无可进入的`data_local`下一层目录、无任务准许的第二相对原件路径，所以在4/8 locator后STOP，不凭剩余预算无限猜路径/查私人绝对根。原始宏观工作簿没有可读取的字节，3个原件实际size/SHA均为NOT_MEASURED，原始文件哈希0/3；expected代码常量**绝不**等同现场原件通过。这是合规早停，不是模型执行失败、数据已经科学拒绝或“全库不存在”。
+
+### B2. 真实启动/生成清单及canonical仍未取得
+- GPT独立核对冻结GitHub中的MP4C batch→worker subprocess`mp4c_run_full_annual_batch.py:43–60`、worker`mp4c_python_annual_production.py:147–157`、empirical`prepare_canonical`→`load_primary_annual_input`及不同runtime cache/Owner-A分支；只是可证静态源码调用。
+- batch_manifest.json/run_manifest.json及calendar_<year>_* JSON均只见root/year参数构造的路径表达式，没有实际Owner批准的run_root、年期、representation或固定输入文件位置。Executor未读取任何现存run/canonical原件(0/2)。既有`matlab_persistence_contract.json`的schema及READ_ONLY_ZERO_SCIENCE声明可在冻结GitHub源核实，Codex报告的本地配置原字节/保护指纹仅由执行者核验；该合同仅legacy/cache/checkpoint，绝不是TEMP31本次启动/正式采纳的执行凭据。
+- Owner只批准C路线的有界来源定位，未批准具体MP4C/TEMP31真实生产命令、版本、representation/year、真实原始工资数据采纳、canonical生成或2020/Zt方案。因此`ACTUAL_PRODUCTION=UNKNOWN/BLOCKED`、`CANONICAL_REAL_BYTES_AND_SOURCE_HASHES=BLOCKED`、`REAL_31_ID_AND_D1_TUPLE=BLOCKED`，D2/D3及科学运行均仍未完成。即使以后发现宏观Excel的准确hash，也只证明原件身份而不等于真实生产采纳。
+
+### B3. Zt/人口经济学合同不得假设修复
+- 上轮且本轮冻结原码可独立确认`annual.py`新版`CanonicalAnnualInput`仅有`zt_source_calendar_year`字段、`mp4c_python_annual_empirical.py:105`仍访问`fixed_zt_calendar_year`，是静态跨模块属性不一致；没有运行/观察真实AttributeError。历史Zt固定2020与新版steady-year取值不能自动合并或改名。
+- `annual.py:441`为`常住人口`来源表，`mp4c_owner_a_2009_2022.py:35`则为`就业人数`来源名称。静态文字不证明真实31省输入N、就业、户数、有效`z*l`或劳动时长等价；用户未做单位和税基科学定义选择，本任务也未改公式。
+- 工资税按工作地目的地`tau_j`且同一税只扣一次是Owner既定设计目标；旧MATLAB/Python origin/destination索引差异、已净综合工资+非零HA tau的条件性重复楔子风险、R2/R3隔离、财政税基等历史审阅结论保持。三份2018 NBS-claimed工资Excel仍MODEL_ADOPTED=FALSE，不能充当这里缺失的三份primary原件。
+
+### B4. 预算的保守计数与实际计数必须区分
+- Codex`result.md`称“保守9/10”，该数为实际6件源码内容、已知持久化配置读取1件，并将原计划的EMPIRICAL/ANNUAL两次最终完整性读取作为**预留上限**计入。GitHub`DELIVERY_FINAL_RECEIPT.json`明确`source_code_content_reads=6`、`known_source_config_reads=1`、`final_empirical_annual_hash_reads=0`、`final_source_hashes_measured=false`。所以实际为6次源码内容+1次配置读取，另外两次未执行；保守9/10不宜写成已实际执行9次。预算未超，且不是质量退修硬门。
+- Locator实际4/8；raw macro hash0/3；run/canonical metadata0/2；测试/no-HA/preflight、project import、宏观数据读取、真实HA/HJB/KFE/GE/IRF/steady-run均0。执行者声明未修改科学源、index/refs及11保护资产，GitHub候选diff另独立支持候选范围仅任务证据。
+- 发现源路径和Owner启动身份缺失后停止科学来源调查，仍完成受授权的只读缓存整理与GitHub证据交付。STOP合规，无“必须用满预算”的要求。独立隐私审查仅覆盖GitHub公开任务包，不覆盖Windows目录的全部文件。
+
+## C阶段：分层最终裁决 (COMPLETED_BOUNDED)
+
+artifact_integrity=PASS_BOUNDED__13_OF_13_MANIFEST_PAYLOAD_SHA256_BYTES_BLOB__MANIFEST_SEPARATE_10549_BYTES__13_OF_13_TEXT_AND_ORIGINAL_EXCERPTS
+source_identity=PASS_BOUNDED__FOUR_REPORTED_LOCAL_PATH_OBSERVATIONS__GIT_STATIC_SOURCE_PINS__RAW_MACRO_BYTES_NOT_AVAILABLE
+numeric_review=NOT_RUN
+implementation_review=BOUNDED_SOURCE_LOCATION_NEGATIVE_COVERAGE_ACCEPTED__REAL_LAUNCH_AND_CANONICAL_BLOCKED
+scientific_review=SCIENTIFIC_ACCEPTANCE_BLOCKED__NO_ORIGINAL_INPUT_OR_MODEL_RUN
+privacy_review=BOUNDED_GITHUB_SAFE_EXCERPTS_METADATA_ONLY
+actual_terminal=STOP__NOT_FOUND_IN_BOUNDED_SOURCE_LOCATIONS__OWNER_EXACT_SOURCE_AND_TEMP31_LAUNCH_REQUIRED
+delivery=PASS_BOUNDED__GITHUB_FIXED_SEAL_14_OF_14_FILES_INDEPENDENTLY_AVAILABLE__LOCAL_EXTERNAL_RECEIPT_UNVERIFIED
+cleanup=NOT_AUTHORIZED_NOT_PERFORMED
+not_completed=THREE_REAL_MACRO_SOURCE_PATHS_AND_BYTES;OWNER_APPROVED_LAUNCH_VERSION_COMMAND_REPRESENTATION_YEAR;REAL_RUN_CANONICAL_MANIFEST_ORIGINAL;SOURCE_HASHES_31_ADMIN_ID_AND_OLD_BATCH_TUPLE;ZT_SOURCE_YEAR_AND_EMPIRICAL_ATTRIBUTE_CONTRACT;N_RESIDENT_POPULATION_EMPLOYMENT_AND_EFFICIENCY_UNIT;TAX_GROSS_NET_PRODUCTION_INTEGRATION;D1_D2_D3;NUMERIC_AND_SCIENTIFIC_ACCEPTANCE
+NEXT_ACTION=OWNER_SPECIFIES_EXACT_ORIGINAL_DIRECTORY_AND_LAUNCH_EVIDENCE__NO_NEW_TASK_ISSUED
+VERDICT=PASS_BOUNDED_C_SOURCE_LOCATION_NEGATIVE_COVERAGE_AND_STOP__REAL_SOURCE_LAUNCH_CANONICAL_BLOCKED
+
+接收本轮受限4个项目位置不存在的来源报告、未发现原件的事实限域表达、13+manifest GitHub证据交付及有界STOP；**不**授予来源、生产、模型、真实canonical、经济口径、R2/R3合并、新版HA版本守卫修订或数据采用PASS。下个任务须待Owner提供/明确授权精准project-relative路径或另一有限目录、原件大小/真实SHA和来源时间/vintage；并指定准备采用的TEMP31入口/命令/版本/representation/year及已有run/canonical准确相对目录。不得自行跨根搜索、拷贝、重建或启动模型。旧STOP/PENDING保留。
+
+ACTIVE_TASK=NONE
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+AUTO_NEXT=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
