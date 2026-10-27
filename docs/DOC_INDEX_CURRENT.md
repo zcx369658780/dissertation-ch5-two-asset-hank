@@ -260,3 +260,11 @@ V010冻结、Results FALSE、V011未启动、HA/GE/IRF预算0，生产supervisor
 
 ## 2026-10-27 · 工资-劳动-税收语义静态审阅任务
 - [CH5_TEMP31_WAGE_LABOR_TAX_SEMANTICS_STATIC_AUDIT_R1_20261027](../tasks/CH5_TEMP31_WAGE_LABOR_TAX_SEMANTICS_STATIC_AUDIT_R1_20261027.md)：对比第五章TeX、原始MATLAB、Python复现及TEMP31中的w/wjt/tau/劳动/税前税后和工作地索引，再评估三个工资Excel原始候选的经济口径匹配。不运行模型、不改科学源码。
+
+
+## 2026-10-27 · 工资、劳动、税收静态审阅独立验收记录
+- 任务：CH5_TEMP31_WAGE_LABOR_TAX_SEMANTICS_STATIC_AUDIT_R1_20261027
+- 候选提交：9bdc9e83127d32e6e29a0a5895800fd97d92cd3a
+- 结果：PASS_BOUNDED_STATIC_SOURCE_SEMANTICS__SCIENTIFIC_ACCEPTANCE_BLOCKED
+- 独立验收报告历史提交：4699787ea100310ce09d20833fe25aa321bae200
+- 关键证据：候选目录的source_excerpts.json、wage_labor_tax_lineage.json、symbol_semantics_matrix.md、statistics_to_model_bridge_matrix.md和gap_register.json；禁止把静态PASS提升为生产科研接受。
