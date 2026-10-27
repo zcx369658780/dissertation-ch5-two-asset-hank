@@ -1,0 +1,289 @@
+{
+  "task_id": "CH5_TEMP31_NBS_WAGE_TWO_WORKBOOK_RAW_CANDIDATES_COPY_R1_20261027",
+  "fixed_task_commit": "a2f3489e99382c56ee35ba55eac15bfdaaa8f04d",
+  "task_blob": "af28d759688070189423aac70a2f1b5bab307350",
+  "task_bytes": 6765,
+  "task_sha256": "58a2ebb24c87e96c0b46077aedd962155264a2fc431afcaf14d3160b66916f2c",
+  "task_actual_parent": "d4ccd0df13e5a166857ae782cc3babb7f66b1cc0",
+  "declared_governance_parent": "d4ccd0df13e5a166857ae782cc3babb7f66b1cc0",
+  "sanitized_source_qualifications": [
+    {
+      "id": "A",
+      "filename": "分省年度数据_城镇私营单位就业人员平均工(元).xlsx",
+      "bytes": 12411,
+      "sha256": "5c790a478a244ca12b4c3c2c682465683c64e2b36bbf1d6f5e430bd79b23f21a",
+      "sheet": "Sheet1",
+      "range": "A1:Z36",
+      "indicator_label": "城镇私营单位就业人员平均工资 (元)",
+      "unit": "元",
+      "measure": "ANNUAL_AVERAGE_WAGE_PRIVATE_URBAN_UNITS__SOURCE_DEF_PENDING",
+      "year_2018": {
+        "cell_range": "I5:I35",
+        "province_labels": 31,
+        "non_anomalous_raw_candidate_cells": 30,
+        "quarantined_region": "西藏自治区",
+        "quarantined_region_literal": "30",
+        "status": "2018_30_NON_ANOMALOUS_RAW_CANDIDATES__TIBET_QUARANTINED__SOURCE_DEF_PENDING"
+      },
+      "quarantine": {
+        "all_31_literal_30_years": [
+          2001,
+          2002,
+          2003,
+          2004,
+          2005,
+          2006,
+          2007,
+          2008,
+          2025
+        ],
+        "region_specific": [
+          {
+            "region": "西藏自治区",
+            "years": [
+              2009,
+              2010,
+              2011,
+              2012,
+              2013,
+              2014,
+              2015,
+              2016,
+              2017,
+              2018,
+              2019
+            ],
+            "literal": "30"
+          }
+        ],
+        "literal_30_semantics": "UNKNOWN__MISSING_SENTINEL_NOT_PROVEN",
+        "handling": "Metadata quarantine only; original cells retained without edits, zero replacement, deletion or fill"
+      },
+      "relative_path": "data/external_sources/nbs_wage_supplement_20261027/分省年度数据_城镇私营单位就业人员平均工(元).xlsx"
+    },
+    {
+      "id": "B",
+      "filename": "分省年度数据_城镇单位就业人员工资总额(亿元).xlsx",
+      "bytes": 13310,
+      "sha256": "f27313c73dc08e8217aeeefe147ce62d7bc0d7c463ecc651c54c7682682c9dc7",
+      "sheet": "Sheet1",
+      "range": "A1:Z37",
+      "indicator_label": "城镇单位就业人员工资总额 (亿元)",
+      "unit": "亿元",
+      "measure": "WAGE_BILL_TOTAL__SOURCE_DEF_PENDING",
+      "year_2018": {
+        "cell_range": "I5:I35",
+        "province_labels": 31,
+        "non_anomalous_raw_candidate_cells": 31,
+        "status": "2018_31_NON_ANOMALOUS_RAW_CANDIDATES__SOURCE_DEF_PENDING"
+      },
+      "quarantine": {
+        "all_31_literal_30_years": [
+          2001,
+          2002,
+          2003,
+          2005,
+          2025
+        ],
+        "partial_years": [
+          {
+            "year": 2004,
+            "literal_30_province_count": 25,
+            "non_30_province_count": 6,
+            "affected_province_names": "UNKNOWN_NOT_ENUMERATED_IN_FIXED_TASK",
+            "policy": "2004 is not admitted as a candidate year; its 25 literal-30 cells are quarantined, other 6 values are not certified"
+          }
+        ],
+        "literal_30_semantics": "UNKNOWN__MISSING_SENTINEL_NOT_PROVEN",
+        "handling": "Metadata quarantine only; original cells retained without edits, zero replacement, deletion or fill"
+      },
+      "historical_caveat": {
+        "workbook_location": "Sheet1!A36",
+        "fixed_task_wording": "1995–2008 城镇单位就业人员工资总额原为劳动报酬总额",
+        "original_wording_preserved_by": "Unmodified byte-identical workbook copy; task wording quoted here, not claimed to be a new transcription of the entire original cell",
+        "longitudinal_comparability": "NOT_ASSUMED"
+      },
+      "relative_path": "data/external_sources/nbs_wage_supplement_20261027/分省年度数据_城镇单位就业人员工资总额(亿元).xlsx"
+    }
+  ],
+  "metadata_basis": "Selected public metadata from fixed task GPT byte-identity counterpart inspection; executor did not reparse/certify wage cells. Original local sidecar contents are not embedded; only its file identity is recorded.",
+  "source_role": "OWNER_DOWNLOADED_NBS_CLAIMED",
+  "source_def_status": "SOURCE_DEF_PENDING",
+  "model_adopted": false,
+  "local_copy_readback": {
+    "files": [
+      {
+        "id": "A",
+        "relative_path": "data/external_sources/nbs_wage_supplement_20261027/分省年度数据_城镇私营单位就业人员平均工(元).xlsx",
+        "bytes": 12411,
+        "sha256": "5c790a478a244ca12b4c3c2c682465683c64e2b36bbf1d6f5e430bd79b23f21a",
+        "action": "COPIED_NEW_EXCLUSIVE_CREATE",
+        "original_unchanged": true,
+        "byte_identical": true
+      },
+      {
+        "id": "B",
+        "relative_path": "data/external_sources/nbs_wage_supplement_20261027/分省年度数据_城镇单位就业人员工资总额(亿元).xlsx",
+        "bytes": 13310,
+        "sha256": "f27313c73dc08e8217aeeefe147ce62d7bc0d7c463ecc651c54c7682682c9dc7",
+        "action": "COPIED_NEW_EXCLUSIVE_CREATE",
+        "original_unchanged": true,
+        "byte_identical": true
+      }
+    ],
+    "sidecar": {
+      "relative_path": "data/external_sources/nbs_wage_supplement_20261027/SOURCE_RECEIPT_20261027.json",
+      "bytes": 6348,
+      "sha256": "87ef3d9a8a072a7eb4e029fb67187b218f7d45a2c21bcb79ad6ba9506628a2c3"
+    },
+    "exact_exempt_paths": [
+      "data/external_sources/nbs_wage_supplement_20261027/分省年度数据_城镇私营单位就业人员平均工(元).xlsx",
+      "data/external_sources/nbs_wage_supplement_20261027/分省年度数据_城镇单位就业人员工资总额(亿元).xlsx",
+      "data/external_sources/nbs_wage_supplement_20261027/SOURCE_RECEIPT_20261027.json"
+    ],
+    "all_other_status_index_refs_protected_files_unchanged": true,
+    "prior_mean_workbook_and_receipt_unchanged": true
+  },
+  "protected_state_before": {
+    "repository": "zcx369658780/dissertation-ch5-two-asset-hank",
+    "head": "a1db8c114dec0ab69d69a5576e153a7f868cba0e",
+    "branch": "codex/ch5-mp4c-k1b-turn5-turn6-bounded-continuation-20260922",
+    "index_sha256": "28058a7e2d9ab773c5813205c75999e6c221533aeae0b9bb094b9a83451bf7cc",
+    "refs_sha256": "5c8550e990cf34db6441b3f84462a532fef4337c625f959a45e5cfd26515bec5",
+    "refs_count": 243,
+    "status_raw_sha256": "94ef0f45e5785c8126bdd83be599df8cc70a4188ee323d1b0ec04763cd760f7e",
+    "status_record_count": 5968,
+    "status_except_three_exact_paths_sha256": "94ef0f45e5785c8126bdd83be599df8cc70a4188ee323d1b0ec04763cd760f7e",
+    "status_except_three_exact_paths_record_count": 5968,
+    "protected_files": [
+      {
+        "relative_path": "AGENTS.md",
+        "bytes": 132027,
+        "sha256": "d42041e26da7e795e3ae5c236e0029a8a356e14c8058ffa6f95383494f031b3e"
+      },
+      {
+        "relative_path": "CURRENT.md",
+        "bytes": 337540,
+        "sha256": "3133011df542cbef25ff23b48996a35d7c3f98c8a5444417746faf8248e1737f"
+      },
+      {
+        "relative_path": "TASK_CURRENT.md",
+        "bytes": 266971,
+        "sha256": "10749bcb69ba8fdd3807a511b20d64786627ec701706af421acd13550bf39b11"
+      },
+      {
+        "relative_path": "docs/CH5_GITHUB_WORKFLOW_AUTHORITY_CURRENT_20261025.md",
+        "bytes": 2623,
+        "sha256": "36ea79e2d22a1ddef37d7d3db4bf419d5c8c4bdb8d67a8a2c98a54da297e4ecc"
+      },
+      {
+        "relative_path": "docs/CH5_INDEPENDENT_REVIEW_RULES_20261025.md",
+        "bytes": 1424,
+        "sha256": "413e58b5fc773805075bd9a6e95bf304c1b2c33845ad9bdca163440d1e42b620"
+      },
+      {
+        "relative_path": "docs/CH5_ASTRA_WORKFLOW_CURRENT.md",
+        "bytes": 15676,
+        "sha256": "b3cab64d249ff768f98403e8ccbc6f8aaf7d04b009f66255d41f26fb842ec2a7"
+      },
+      {
+        "relative_path": "data/external_sources/nbs_provincial_urban_unit_wage_20261027/分省年度数据_城镇单位就业人员平均工资(元).xlsx",
+        "bytes": 12652,
+        "sha256": "8bb799fc41da5728a52c4958b2da0641ccbc81470a8d6e377625d79b5816b176"
+      },
+      {
+        "relative_path": "data/external_sources/nbs_provincial_urban_unit_wage_20261027/SOURCE_RECEIPT_20261027.json",
+        "bytes": 2291,
+        "sha256": "6d66a514fb672b245b018dac2dd513cd126d60a32a636acf2707c0b54450035a"
+      }
+    ]
+  },
+  "protected_state_after_copy": {
+    "repository": "zcx369658780/dissertation-ch5-two-asset-hank",
+    "head": "a1db8c114dec0ab69d69a5576e153a7f868cba0e",
+    "branch": "codex/ch5-mp4c-k1b-turn5-turn6-bounded-continuation-20260922",
+    "index_sha256": "28058a7e2d9ab773c5813205c75999e6c221533aeae0b9bb094b9a83451bf7cc",
+    "refs_sha256": "5c8550e990cf34db6441b3f84462a532fef4337c625f959a45e5cfd26515bec5",
+    "refs_count": 243,
+    "status_raw_sha256": "c443420c888f5e776cfb6cd05b27cbed56e58a787b82639aa23a47ce7f2ac2f3",
+    "status_record_count": 5971,
+    "status_except_three_exact_paths_sha256": "94ef0f45e5785c8126bdd83be599df8cc70a4188ee323d1b0ec04763cd760f7e",
+    "status_except_three_exact_paths_record_count": 5968,
+    "protected_files": [
+      {
+        "relative_path": "AGENTS.md",
+        "bytes": 132027,
+        "sha256": "d42041e26da7e795e3ae5c236e0029a8a356e14c8058ffa6f95383494f031b3e"
+      },
+      {
+        "relative_path": "CURRENT.md",
+        "bytes": 337540,
+        "sha256": "3133011df542cbef25ff23b48996a35d7c3f98c8a5444417746faf8248e1737f"
+      },
+      {
+        "relative_path": "TASK_CURRENT.md",
+        "bytes": 266971,
+        "sha256": "10749bcb69ba8fdd3807a511b20d64786627ec701706af421acd13550bf39b11"
+      },
+      {
+        "relative_path": "docs/CH5_GITHUB_WORKFLOW_AUTHORITY_CURRENT_20261025.md",
+        "bytes": 2623,
+        "sha256": "36ea79e2d22a1ddef37d7d3db4bf419d5c8c4bdb8d67a8a2c98a54da297e4ecc"
+      },
+      {
+        "relative_path": "docs/CH5_INDEPENDENT_REVIEW_RULES_20261025.md",
+        "bytes": 1424,
+        "sha256": "413e58b5fc773805075bd9a6e95bf304c1b2c33845ad9bdca163440d1e42b620"
+      },
+      {
+        "relative_path": "docs/CH5_ASTRA_WORKFLOW_CURRENT.md",
+        "bytes": 15676,
+        "sha256": "b3cab64d249ff768f98403e8ccbc6f8aaf7d04b009f66255d41f26fb842ec2a7"
+      },
+      {
+        "relative_path": "data/external_sources/nbs_provincial_urban_unit_wage_20261027/分省年度数据_城镇单位就业人员平均工资(元).xlsx",
+        "bytes": 12652,
+        "sha256": "8bb799fc41da5728a52c4958b2da0641ccbc81470a8d6e377625d79b5816b176"
+      },
+      {
+        "relative_path": "data/external_sources/nbs_provincial_urban_unit_wage_20261027/SOURCE_RECEIPT_20261027.json",
+        "bytes": 2291,
+        "sha256": "6d66a514fb672b245b018dac2dd513cd126d60a32a636acf2707c0b54450035a"
+      }
+    ]
+  },
+  "protected_except_three_exact_paths": true,
+  "previous_mean_workbook_and_receipt_unchanged": true,
+  "local_launcher_context": "Zotero R40 startup index is unrelated and not executed; only Owner-pinned current GitHub task is executed",
+  "privacy": {
+    "raw_workbooks_uploaded": false,
+    "local_source_sidecar_uploaded": false,
+    "wage_value_tables_uploaded": false,
+    "private_paths_credentials_uploaded": false
+  },
+  "budgets": {
+    "science": 0,
+    "tests": 0,
+    "preflights": 0,
+    "model_calls": 0,
+    "HA_HJB_KFE_GE_IRF": 0,
+    "formal_source_writes": 0,
+    "external_data_downloads": 0,
+    "workbook_edits": 0,
+    "model_input_writes": 0,
+    "net_wage_or_wage_rate_generation": 0
+  },
+  "protected_markers": {
+    "V010": "UNCHANGED",
+    "V011": "NOT_STARTED",
+    "Results": false,
+    "FORMAL_SOURCE_FREEZE": false,
+    "model_activation": false,
+    "REAL_GE": false,
+    "FULL_RUNNER_IO_CLOSURE": "BLOCKED"
+  },
+  "implementation_review": "COPY_ONLY",
+  "numeric_review": "NOT_RUN",
+  "scientific_review": "NOT_RUN",
+  "independent_completion_event": "UNKNOWN"
+}

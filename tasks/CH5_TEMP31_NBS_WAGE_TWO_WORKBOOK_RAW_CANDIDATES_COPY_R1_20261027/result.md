@@ -1,0 +1,46 @@
+# TEMP31 两份工资工作簿原始候选复制回执
+
+固定任务提交：a2f3489e99382c56ee35ba55eac15bfdaaa8f04d
+治理父提交：d4ccd0df13e5a166857ae782cc3babb7f66b1cc0
+候选分支：codex/ch5-temp31-nbs-wage-two-workbooks-copy-20261027-r1
+日期：2026-10-27（Asia/Shanghai）
+
+## 复制与文件身份
+
+两份Downloads原件均按准确文件名、大小和SHA-256匹配，使用排他新建方式复制到论文工作树内 `data/external_sources/nbs_wage_supplement_20261027`，逐份重新打开原件和副本，确认长度、SHA-256及逐字节一致。原件未修改，不覆盖不同内容文件。同目录已创建并回读本地SOURCE_RECEIPT_20261027.json。
+
+- A：分省年度数据_城镇私营单位就业人员平均工(元).xlsx；12411字节；SHA-256=5c790a478a244ca12b4c3c2c682465683c64e2b36bbf1d6f5e430bd79b23f21a。
+- B：分省年度数据_城镇单位就业人员工资总额(亿元).xlsx；13310字节；SHA-256=f27313c73dc08e8217aeeefe147ce62d7bc0d7c463ecc651c54c7682682c9dc7。
+
+原始Excel及本地来源旁置回执只保留本地，GitHub仅发布本轮脱敏报告，无工资数值表、用户绝对路径或凭据。
+
+## 原始候选资格及异常隔离
+
+A为Sheet1 A1:Z36，指标为城镇私营单位就业人员平均工资（元）。2018列I的31个地区中只有30个非异常原始候选；西藏自治区为字面字符串30，隔离待核，不能记作已核验工资。2025及2001—2008年全部31省为字面字符串30；西藏2009—2019年也为字面字符串30，全部登记在旁置回执和公开缺口元数据中。
+
+B为Sheet1 A1:Z37，指标为城镇单位就业人员工资总额（亿元）。2018有31个非异常原始候选数值。2025、2001—2003、2005年全部31省为字面字符串30。2004年25省为字面字符串30，另6个非30；受影响单元均隔离，2004整年不获候选接纳。固定任务单没有列出这25省的逐省名单，该名单保留UNKNOWN，不猜测；未对另外6个值给年度认证。
+
+字符串30的含义仍UNKNOWN，未断言必为缺失哨兵或真实工资。隔离仅作元数据标记，工作簿不改零、不删除、不填补、不转CSV。B的Sheet1 A36历史说明随原始字节完整保留；固定任务单表述为“1995–2008 城镇单位就业人员工资总额原为劳动报酬总额”。不据此假设全时序可比。
+
+上述表结构、2018覆盖及异常事实明确沿用固定任务单中GPT对字节相同附件的独立读取；本地执行者仅做文件身份、复制及字节回读，没有重新解析或计算工资单元。跨文件25年表头与31省去空白名称/顺序匹配也仅为任务单记录的候选标签关系，不证明行政ID或生产数组身份。
+
+SOURCE_ROLE=OWNER_DOWNLOADED_NBS_CLAIMED；SOURCE_DEF_PENDING；RAW_CANDIDATE_ONLY=TRUE；MODEL_ADOPTED=FALSE。原NBS指标代码、原始导出链接、导出时间、修订vintage及完整定义仍UNKNOWN。上一份平均工资文件保持NONPRIVATE_LIKELY__DEFINITION_PENDING。私营平均工资（元）与工资总额（亿元）对象、单位不同；没有据此推导就业人数、工资率、净工资、加权工资或劳动效率/工时桥，没有写入模型输入和生产w/wjt/tau/sigma/phi。
+
+## 保护与交付
+
+复制前后HEAD/分支/index/refs、六份治理入口以及上一份平均工资原始候选和其来源回执均核对保留。除两个新工作簿及一个新JSON旁置回执这三个准确路径外，dirty/untracked指纹一致。没有在科研工作树暂存、提交或推送；仅外置隔离对象库通过普通权限SSH发布指定候选分支。
+
+artifact_integrity=LOCAL_TWO_BYTE_IDENTICAL_COPIES_PASS__REMOTE_REPORT_READBACK_IN_RECEIPTS
+source_identity=OWNER_DOWNLOADED_NBS_CLAIMED__SOURCE_DEF_PENDING
+implementation_review=COPY_ONLY
+numeric_review=NOT_RUN
+scientific_review=NOT_RUN
+privacy_review=RAW_EXCEL_LOCAL_SIDECAR_WAGE_TABLE_PRIVATE_LOCATORS_EXCLUDED
+actual_terminal=COPY_COMPLETE__FINAL_REMOTE_READBACK_AND_STOP_RECORDED_EXTERNALLY
+delivery=SEE_DELIVERY_FINAL_RECEIPT_AND_EXTERNAL_FINAL_REMOTE_READBACK
+cleanup=NOT_AUTHORIZED
+not_completed=DEFINITIVE_SOURCE;EXPORT_PROVENANCE;ANOMALY_SEMANTICS;MODEL_BRIDGE;ID_ARRAY_IDENTITY;INDEPENDENT_ACCEPTANCE
+INDEPENDENT_COMPLETION_EVENT=UNKNOWN
+
+科研、测试、预检、模型、HA/HJB/KFE/GE/IRF、科研源码写入、外部数据下载和工资率/净工资生成均为0。V010=UNCHANGED，V011=NOT_STARTED，Results=FALSE，FORMAL_SOURCE_FREEZE=FALSE，model_activation=False，REAL_GE=False，FULL_RUNNER_IO_CLOSURE=BLOCKED。
+远端回读完成后STOP，不合并、不清理、不自动启动后续任务，不自认科学接受。

@@ -1,0 +1,124 @@
+{
+  "task_id": "CH5_TEMP31_NBS_WAGE_TWO_WORKBOOK_RAW_CANDIDATES_COPY_R1_20261027",
+  "gaps": [
+    {
+      "id": "G01",
+      "field": "official_indicator_ids_original_export_urls_export_timestamp_revision_vintage",
+      "status": "UNKNOWN",
+      "needed": "Original NBS database identities, permalinks and export/vintage evidence for both files; SOURCE_ROLE remains OWNER_DOWNLOADED_NBS_CLAIMED"
+    },
+    {
+      "id": "G02",
+      "field": "anomaly_literal_30_semantics",
+      "status": "UNKNOWN__QUARANTINED",
+      "needed": "Do not infer missing sentinel, zero or actual pay. Keep every task-identified suspicious cell/year quarantined"
+    },
+    {
+      "id": "G03",
+      "field": "tibet_private_2018",
+      "status": "QUARANTINED_NOT_A_VERIFIED_WAGE",
+      "needed": "Separate original-source qualification. Private 2018 raw candidate coverage is 30, not 31"
+    },
+    {
+      "id": "G04",
+      "field": "wage_bill_historical_comparability",
+      "status": "NOT_ESTABLISHED",
+      "needed": "Preserve A36 historical definition caveat; 1995-2008 remuneration total is not assumed identical to later wage-bill definition"
+    },
+    {
+      "id": "G05",
+      "field": "candidate_join_labels_vs_administrative_id_production_array",
+      "status": "UNPROVEN",
+      "needed": "Task GPT counterpart showed equal 25 headers and trimmed 31 names/order only; no administrative ID or array identity inferred"
+    },
+    {
+      "id": "G06",
+      "field": "tax_scope_unit_denominator_employment_labor_model_bridge",
+      "status": "BLOCKED_NOT_AUTHORIZED",
+      "needed": "Private average pay and wage bill have different units/objects; do not derive employment, wage rate, net wage, weights, or production w/wjt/tau/sigma/phi"
+    },
+    {
+      "id": "G07",
+      "field": "other_years_and_independent_acceptance",
+      "status": "NOT_CERTIFIED_NOT_PERFORMED",
+      "needed": "No other year or model adopted; independent reviewer must distinguish local executor attestations from independently accessed originals"
+    }
+  ],
+  "quarantine": [
+    {
+      "source_id": "A",
+      "year_2018": {
+        "cell_range": "I5:I35",
+        "province_labels": 31,
+        "non_anomalous_raw_candidate_cells": 30,
+        "quarantined_region": "西藏自治区",
+        "quarantined_region_literal": "30",
+        "status": "2018_30_NON_ANOMALOUS_RAW_CANDIDATES__TIBET_QUARANTINED__SOURCE_DEF_PENDING"
+      },
+      "quarantine": {
+        "all_31_literal_30_years": [
+          2001,
+          2002,
+          2003,
+          2004,
+          2005,
+          2006,
+          2007,
+          2008,
+          2025
+        ],
+        "region_specific": [
+          {
+            "region": "西藏自治区",
+            "years": [
+              2009,
+              2010,
+              2011,
+              2012,
+              2013,
+              2014,
+              2015,
+              2016,
+              2017,
+              2018,
+              2019
+            ],
+            "literal": "30"
+          }
+        ],
+        "literal_30_semantics": "UNKNOWN__MISSING_SENTINEL_NOT_PROVEN",
+        "handling": "Metadata quarantine only; original cells retained without edits, zero replacement, deletion or fill"
+      }
+    },
+    {
+      "source_id": "B",
+      "year_2018": {
+        "cell_range": "I5:I35",
+        "province_labels": 31,
+        "non_anomalous_raw_candidate_cells": 31,
+        "status": "2018_31_NON_ANOMALOUS_RAW_CANDIDATES__SOURCE_DEF_PENDING"
+      },
+      "quarantine": {
+        "all_31_literal_30_years": [
+          2001,
+          2002,
+          2003,
+          2005,
+          2025
+        ],
+        "partial_years": [
+          {
+            "year": 2004,
+            "literal_30_province_count": 25,
+            "non_30_province_count": 6,
+            "affected_province_names": "UNKNOWN_NOT_ENUMERATED_IN_FIXED_TASK",
+            "policy": "2004 is not admitted as a candidate year; its 25 literal-30 cells are quarantined, other 6 values are not certified"
+          }
+        ],
+        "literal_30_semantics": "UNKNOWN__MISSING_SENTINEL_NOT_PROVEN",
+        "handling": "Metadata quarantine only; original cells retained without edits, zero replacement, deletion or fill"
+      }
+    }
+  ],
+  "auto_next": false
+}
