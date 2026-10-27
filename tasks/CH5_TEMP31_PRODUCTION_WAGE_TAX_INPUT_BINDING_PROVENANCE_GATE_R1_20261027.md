@@ -1,0 +1,118 @@
+# CH5_TEMP31_PRODUCTION_WAGE_TAX_INPUT_BINDING_PROVENANCE_GATE_R1_20261027
+
+TASK_ID=CH5_TEMP31_PRODUCTION_WAGE_TAX_INPUT_BINDING_PROVENANCE_GATE_R1_20261027
+STATUS=OWNER_AUTHORIZED__ISSUED_WAITING_LOCAL_CODEX
+DATE=2026-10-27
+TASK_TYPE=BOUNDED_READ_ONLY_PRODUCTION_INPUT_AND_WAGE_TAX_SOURCE_PROVENANCE
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_PARENT=ef980d454726d3fadd12184b669517fea564d721
+FIXED_PARENT=ef980d454726d3fadd12184b669517fea564d721
+FIXED_PARENT_ROLE=CANDIDATE_BRANCH_BASE__TASK_SHEET_IN_NEXT_GOVERNANCE_ISSUANCE_COMMIT
+CANDIDATE_BRANCH=codex/ch5-temp31-production-wage-tax-input-binding-20261027-r1
+SOURCE_COMMIT=b69ae535a1518c68822733603f1e506620327375
+SOURCE_TREE=8dbd81c0938f603511c7de1c763ed29b6d2d4b83
+TASK_PATH=tasks/CH5_TEMP31_PRODUCTION_WAGE_TAX_INPUT_BINDING_PROVENANCE_GATE_R1_20261027.md
+DELIVERY_DIRECTORY=tasks/CH5_TEMP31_PRODUCTION_WAGE_TAX_INPUT_BINDING_PROVENANCE_GATE_R1_20261027/
+DELIVERY_MODE=ISOLATED_GITHUB_CANDIDATE_BY_AUTHORIZED_SSH
+PRIOR_STATIC_AUDIT_COMMIT=9bdc9e83127d32e6e29a0a5895800fd97d92cd3a
+OWNER_DELEGATED_BOUNDED_AUTHORITY_COMMIT=ef980d454726d3fadd12184b669517fea564d721
+CURRENT_ROUTE=TEMP31_WORKPLACE_WAGE_TAX_SINGLE_APPLICATION_AND_DESTINATION_INDEX
+AUTO_ISSUE=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
+
+## 1. 唯一科研证据问题
+
+不运行真实HA/HJB/KFE/GE/IRF，查明TEMP31所需的一条实际生产入口、canonical数据生成与同轮31省输入、工资税生产者→家户/厂商消费者的静态来源闭包，形成可供Owner决策的证据：
+A. 真实生产driver/adapter/callback由谁导入、调用，哪些只是validator、历史复现、R2/R3隔离补丁；能否证明运行时真正采用该实现？
+B. 初始和后续w/wjt/tau/sigma/phi/N/Ct/Lt与31省ID、轴顺序、单位、vintage和共同旧期snapshot的真实来源与消费者在哪里？gross/net到底哪条路径有来源证明？
+C. 现有工作地tax_j和单次扣税合同在具体已识别的调用路径中，哪些差异已证实、哪些仍是条件性风险、哪些缺少来源无法判断？
+
+本任务不是重复上轮116摘录/25边的静态全域审计，不是修复、模型验收或选择统计工资目标。对缺口给出源码证据或明确BLOCKED，不能自定经济公式。
+
+## 2. 冻结来源与Owner已批准合同
+
+- 治理固定源：b69ae535a1518c68822733603f1e506620327375 / tree 8dbd81c0938f603511c7de1c763ed29b6d2d4b83。Owner微预算委托和现行工作流追加规则已写入 ef980d454726d3fadd12184b669517fea564d721。本任务在治理分支该parent的后续独立发文commit，Codex需从实际GitHub任务URL固定读取并记录发文commit。
+- 上轮静态审计候选：9bdc9e83127d32e6e29a0a5895800fd97d92cd3a，优先阅读其result、source_inventory、source_excerpts、wage_labor_tax_lineage、symbol_semantics_matrix、statistics_to_model_bridge_matrix、owner_decision_brief、gap_register、audit_checkpoint；继承历史PASS_BOUNDED_STATIC_SOURCE_SEMANTICS__SCIENTIFIC_ACCEPTANCE_BLOCKED与STOP，不重复验收。
+- 历史Python基线ba98537fd5ae004f0aa37d319865da1f1739e503、TEMP31源上下文2aa2f67f4e5eaa1117d174b7866c3eb7b7b109b0、历史输入发现1072e615062ca85437c06b500d5a301939de6734仅作固定证据，不能自动视为当前已部署版本。
+- Owner已决定工资税按工作地/目的地，迁移劳动拆分按目的地tau_j，同一工资税只扣一次。综合净工资不得在HA重复扣同一税。原论文统一tau与TEMP31省际异质tau_j不是同一研究合同，未经Owner允许不得改写论文或选择新公式。
+- D1=B旧期一致batch tuple digest、D2显式31省batch adapter、D3=B先隔离no-HA synthetic spy均只是批准的目标设计，尚未获得生产闭包或真实求解PASS。
+- 三份Owner本地保存的2018年NBS声称来源工资候选均MODEL_ADOPTED=FALSE。A非私营倾向31省、B私营30省且西藏字面30隔离、C单位工资总额31省。指标ID、原始导出链接/时间、共同修订vintage、税前/净工资、有效劳动和模型期均未闭合。不上传原始Excel、工资值表，不插值、不转换。2009 JSON共用scalar工资/税不是31省实测工资。
+
+## 3. Gate A：本地保护与原件身份（读）
+
+A1. 核验真实本地AGENTS、工作区branch/HEAD、index、refs、dirty/untracked指纹、固定任务和可读source identity。以前报告的local science HEAD a1db8c114dec0ab69d69a5576e153a7f868cba0e只作历史检查，不得checkout、reset、stash或修改以匹配。源身份/权限存在风险时STOP而非修复。
+A2. 严格区分 ORIGINAL_TEX、MATLAB_ARCHIVE、HISTORIC_GIT、CURRENT_LOCAL_DIRTY、ISOLATED_TEMP31_R2_R3、VALIDATION_ONLY、ACTUAL_PRODUCTION、UNKNOWN。当前本地工作树字节若没有固定GitHub同Blob，记录SHA与精确安全摘录，禁止假装远端同名源码等价或已部署。
+A3. 起点仅为上轮source_inventory有路径的以下代码：src/ch5_two_asset_hank/multi_province的annual.py、steady_state.py、stationary_runtime.py、one_turn.py、migration_labor.py、wage.py、firm.py、household_adapter.py；validators/multi_province/mp4b_python_empirical.py及其已记录postloop模块、exports/matlab_faithful_two_asset_ha.py；必要时只读corrected_diagnostic的optionb_turn2_household_integration.py、nonlinear_continuation.py、selector.py及对应已登记初始化run.py。其它来源只有在上述具体import/调用直接指向时才准纳入，记录该证据。
+A4. 上限30个精确文件内容读取、12次限定上述目录/符号的定向定位查询。禁止全盘/广泛历史树扫描，禁止读取/写入与本任务无关的个人数据或秘钥。范围内未找到原件只可标SOURCE_UNAVAILABLE，不能宣布整个仓库无此文件。
+
+## 4. Gate B：生产者与消费者的关键静态链
+
+B1. 实际入口和callback证据：给出file:line、real import/dispatch、caller和callee身份。validators/multi_province/mp4b_python_empirical.py历史自称validation-only，若没有其他证据绝不称为已认证生产入口。只读发现，不import/execute源码。
+B2. 创建w/wjt/tau/sigma/phi/Ct/Lt/N/Tt的producer→consumer带证据矩阵，区分旧/新时点、origin/destination索引、31省ID及有序数组、gross/net、模型期/价格/人口或效率劳动单位。审视初始化与下一轮w的身份可能不同；目标为说明能否满足D1/D2而非构造假digest。
+B3. 追踪wjt由目的地企业边际生产决定，w为来源家户综合指数；已含tau/sigma楔子的net w进入非零tau消费者为有条件风险，通用gross wage消费者的tau未必有误。FOC与预算使用同一税后价格、政府记账与家户缴税不自动等于双扣。
+B4. 对照综合工资中的目的地tax、劳动拆分中的来源/目的地tax，识别R2和R3补丁的实际来源和调用范围；财政lt*tau与lt*wjt*tau量纲、c5公司税i/j下标、alphal幂次、phi偏好符号、sigma成本承担者全部保留未决，不准静默改式。
+B5. 个体l、分布加权∫zl dg、来源人口N、目的地Lt_supply、统计就业/工时不能互换；年份、vintage、实际-名义、税前-税后和共同快照必须原文可证。缺失不生成新转换、31省工资序列、就业或校准参数。
+B6. 保留上轮G01-G11缺口的逐项状态，并明确本轮新增了何种真实证据；不能单凭相同姓名/省份数/日志声称callback或live real GE闭合。
+
+## 5. 可选无HA隔离纯合成契约微检
+
+仅当Gate A/B找到足够的真实源输入字段与实际消费者签名时，允许任务专属scratch中自编最多两次 no-HA synthetic spy，使用31个完全虚构标签只核对形状、行列轴、旧轮tuple传递、失配是否拒绝。不得使用真实工资值、真实生产代码、任何宏观公式，禁止import/执行项目src/validators/exports、HANK模块或模型runner。每项至多1次工具故障重试；如输入身份不足，不运行，提交no_ha_spy_protocol_or_evidence.json并标记NOT_RUN，不以用尽次数为目的。独立合成spy PASS永远不等于D1/D2/D3正式生产实现、真实HA或数值科学通过。
+
+## 6. 授权预算与读写白名单
+
+SCIENCE_EXECUTION_BUDGET=0
+NUMERIC_MODEL_BUDGET=0
+REAL_HA_HJB_KFE_GE_IRF=0
+MODEL_CALLS=0
+MODEL_IMPORT_EXECUTION=0
+PRODUCTION_SCRIPT_EXECUTION=0
+REAL_DATA_TRANSFORMATIONS=0
+TEST_BUDGET=2_MAX_CONDITIONAL_ISOLATED_SELF_AUTHORED_NO_HA
+TEST_RETRIES=1_TOOL_FAILURE_RETRY_PER_CHECK_MAX
+PREFLIGHT_BUDGET=0
+FORMAL_SOURCE_WRITES=0
+DATA_WRITES=0
+EXTERNAL_DOWNLOADS=0
+MAX_SOURCE_FILE_READS=30
+MAX_TARGETED_LOCATOR_QUERIES=12
+GITHUB_WRITE_ALLOWLIST=tasks/CH5_TEMP31_PRODUCTION_WAGE_TAX_INPUT_BINDING_PROVENANCE_GATE_R1_20261027/__ON_ISOLATED_CANDIDATE_BRANCH_ONLY
+LOCAL_WRITE_ALLOWLIST=ONE_TASK_OWNED_DISPOSABLE_SCRATCH_OUTSIDE_SCIENCE_WORKTREE_FOR_REPORTS_AND_CONDITIONAL_SYNTHETIC_SPY
+PROTECTED=ALL_OTHER_SOURCE_CODE_DATA_TEX_MODEL_RESULTS_GOVERNANCE_HISTORY_STOP_PENDING
+
+只读源不运行；不修改V010、V011、正式经济学方程、财政机制或科研原始数据；不建立新模型输入/不合并补丁/不发布Results。禁止自动Issue/PR、合并、科研证据清理和下一任务。任何平台/安全/SSH权限拒绝立即STOP；不得换协议、账号、凭据、目录绕过。不得运行真实HA/HJB/KFE/GE/IRF或任何求解/预检。
+
+## 7. 必须由Codex先发布GitHub的证据
+
+候选分支必须从固定parent ef980d454726d3fadd12184b669517fea564d721 创建；如分支已有且identity不符合，则STOP。Owner交本任务单给本地Codex，Codex验证本地科学工作树只读后，通过Owner授权的普通权限SSH仅写候选目录 tasks/CH5_TEMP31_PRODUCTION_WAGE_TAX_INPUT_BINDING_PROVENANCE_GATE_R1_20261027/：
+- result.md（有界结论、NOT_COMPLETED、STOP）
+- source_inventory.json、source_excerpts.json（必要真实源码/原文短摘录、Git ref/Blob或本地SHA、行范围/来源类）
+- production_entrypoint_and_import_trace.md
+- canonical_wage_tax_state_snapshot_matrix.md
+- province_axis_and_id_join_evidence.json
+- producer_consumer_tax_and_labor_lineage.json
+- no_ha_spy_protocol_or_evidence.json（真实执行次数/原始隔离结果或NOT_RUN）
+- gap_register.json、audit_checkpoint.json、privacy_report.json
+- manifest.json（每件path/UTF8 bytes/SHA256/Git Blob/provenance/purpose）
+- DELIVERY_FINAL_RECEIPT.json（候选commit/parent/root tree/remote readback/budget）
+- INDEPENDENT_COMPLETION_EVENT.json（无独立见证则UNKNOWN）
+
+完整原始TeX、MATLAB ZIP、工资Excel、数值行、本地绝对隐私路径或密钥不得进入GitHub；摘要或哈希不得取代审阅所需的必要源码上下文。如涉及本地uncommitted原件无法独立在GitHub核字节，公开安全短摘录并明确限制，不得称完整原件已远端认证。
+
+Codex推送独立候选后固定commit逐件远端回读路径、Blob、长度、必要SHA256；manifest自引用问题单独记录。在当前任务的真实终态STOP，不得发下一张、改治理文件、清理或合并。GPT在候选固定commit进行A交付/来源、B静态实现/科学问题、C分层裁决，然后Owner决定。
+
+## 8. 固定保护状态和STOP
+
+FINAL_ACCEPTANCE_FIELDS=artifact_integrity,source_identity,numeric_review,implementation_review,scientific_review,privacy_review,actual_terminal,delivery,cleanup,not_completed
+SCIENTIFIC_ACCEPTANCE=BLOCKED_UNTIL_OWNER_APPROVAL
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+AUTO_NEXT=FALSE
+STOP_AFTER_REMOTE_READBACK=TRUE
