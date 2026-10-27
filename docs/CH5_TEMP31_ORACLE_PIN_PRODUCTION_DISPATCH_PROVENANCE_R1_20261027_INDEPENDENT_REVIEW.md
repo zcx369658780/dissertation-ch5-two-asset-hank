@@ -1,0 +1,73 @@
+# CH5 TEMP31 Oracle pin / production dispatch · GPT独立固定提交审阅
+
+REVIEW_DATE=2026-10-27
+REVIEW_KIND=GITHUB_FIXED_COMMIT_INDEPENDENT_REVIEW
+TASK_ID=CH5_TEMP31_ORACLE_PIN_PRODUCTION_DISPATCH_PROVENANCE_R1_20261027
+TASK_PUBLICATION_COMMIT=231d7db746afe9db70d8fcfc9c958929c8f9c1c0
+CANDIDATE_COMMIT=19e03fdd2da0532e3ef8158ff7a032fe87724565
+CANDIDATE_PARENT=da69749b0dd66d0d6f0921d49c709c6b74ae4f90
+CANDIDATE_TREE=74d32433d9e59a6f22614fffe68a47e826793e2d
+CANDIDATE_FIXED_BASE=174260f367e91edc9985a5ed712b972dea4f1fd0
+VERDICT=PASS_BOUNDED_HISTORICAL_PIN_AND_STATIC_CALLSITE_PROVENANCE__PRODUCTION_ADOPTION_BLOCKED
+ACTUAL_TERMINAL=STOP__PIN_MATCH__ACTUAL_PRODUCTION_AND_REAL_INPUT_ADOPTION_UNPROVEN
+ACTIVE_TASK=NONE
+AUTO_NEXT=FALSE
+
+## A阶段：固定提交/交付/来源完整性（COMPLETED_BOUNDED）
+
+- GitHub候选分支codex/ch5-temp31-oracle-pin-production-dispatch-20261027-r1的实时HEAD=`19e03fdd2da0532e3ef8158ff7a032fe87724565`；父提交`da69749b0dd66d0d6f0921d49c709c6b74ae4f90`，root tree=`74d32433d9e59a6f22614fffe68a47e826793e2d`。冻结候选基点`174260f367e91edc9985a5ed712b972dea4f1fd0`到最终seal ahead=2 behind=0，diff仅13个任务证据新增文件，无科研源码/数据写入。
+- 固定最终seal直接读取13/13份GitHub文件。manifest列出的12份UTF-8 payload由GPT独立计算SHA-256/字节数并核对GitHub Blob：12/12全匹配。manifest自身Git Blob=`93240c0260d89673f0d1b45b35c7b37d33e40ce6`，UTF-8 9464字节，SHA-256=`6207f263d5775ddc363ad5d2347073ea762bfdcce621991e7f35c3e5f4e659b8`，单独核算，无自引用。
+- source_excerpts.json的53段可读LF文本SHA256逐项53/53正确；另外53段Base64编码的原始源码短片段，逐个解码后SHA256与字节长度53/53匹配。上述哈希独立验证了GitHub公开交付及其片段，不意味着GPT拿到Executor Windows整份私有源码。
+- Codex回执报告最终交付13/13完成；本轮只按GitHub固定commit的真实字节独立验收。用户提供D:/ProjectTemp/本地最终回执并非本轮可读对象，未冒称独立验证其原件。执行者保护快照/本地18/18次数是附有证据的执行者陈述，GPT无Windows本地独立观察；源/正式模型执行依旧0。
+- 隐私范围：必要静态短片段、相对路径及SHA/Blob；未见任务提交修改真实代码或上传工资原表，未做完整私有文件/环境扫描。INDEPENDENT_COMPLETION_EVENT=UNKNOWN保留。
+
+## B阶段：关键源版本与生产科学风险（COMPLETED_BOUNDED_WITH_OPEN_PRODUCTION_GATES）
+
+### B1. 固定Oracle历史原件准确身份（独立PROVEN）
+
+- 从GitHub固定历史commit `ba98537fd5ae004f0aa37d319865da1f1739e503`直接读取 `exports/matlab_faithful_two_asset_ha.py` UTF-8完整原文字节，独立SHA-256=`b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3`、28641字节、Git Blob=`9e7dc9556a2b76811e78f89999abecc045886106`。与ENTRY:19的固定ORACLE_SHA完全相同。
+- 同样从冻结源 `b69ae535a1518c68822733603f1e506620327375`及TEMP31上下文`2aa2f67f4e5eaa1117d174b7866c3eb7b7b109b0`读取HA同名源：两者Blob=`e144c645d3f4dc842c2faa6b93b2ba0e24275dcf`，均31143字节、SHA-256=`a7539eb6ba076176b81f832c1800d38d8d170dad8f3619d3b0f3893c5a163fff`。这不是旧pin原件；版本间存在文本新增与分支改动，不能把不匹配解释成单纯SSH故障或只由换行产生。
+- 上轮Codex本地当前ORACLE为31859字节CRLF、SHA-256=`f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8`，本轮报告称其与冻结新版LF逐行内容相同；**此本地整文件与CRLF细节属执行者来源报告，GPT不能亲自从Windows复核。** 报告亦指出两条特定本地入口/Oracle路径porcelain干净而LF/CRLF原字节SHA不同，不可因为跨平面Git Blob不同就一律称其有未提交语义改动。
+- 三个被抽查的GitHub版本ENTRY固定同一个旧pin；首次引入commit、意图及当前已批准替换版本仍UNKNOWN，未扩大Git历史搜索。
+- 对当前目标若确为新原件，bootstrap guard静态上会在HA import前拒绝，但未运行，不得宣称实际runtime error。**准确定位旧pin原件不授权修改pin、覆盖当前ORACLE或回退历史helper/分支。**
+
+### B2. caller、dispatch与canonical静态链（独立源印证，未获生产采纳）
+
+- GPT直接读取冻结GitHub源码 `validators/multi_province/mp4c_run_full_annual_batch.py` line43–59，看到subprocess指向MP4C年度worker及runtime cache/Owner-A构建分支；`mp4c_python_annual_production.py` line24–30导入validation anchor，line145–187选择representation、构建callback并传给OnlineStationaryInputs；`mp4c_python_annual_empirical.py` line86–104明确调用load_primary_annual_input后写入canonical_bytes。以上均为可证静态源码表达式。
+- `mp4c_matlab_runtime_cache.py`与`mp4c_owner_a_2009_2022.py`有路径/源SHA/shape和有序标签校验、静态输入物化；但本轮既无真实生产运行/调度记录、当前Owner采纳版本、具体启动命令/representation/year，也无真实canonical原件完整身份和真实31省ID、同旧期tuple witness。
+- MP4B anchor仍自称validation-only；worker文件名中的production并不是已认证部署身份。真实TEMP31生产调用、真实数据采纳及D1/D2/D3均BLOCKED；只有源码层面发现路径，**不能把源代码可达性等价于运行时已执行、生产闭包通过。**
+- 三份2018 NBS声称来源工资Excel继续MODEL_ADOPTED=FALSE；历史2009 scalar不能被冒充实测31省工资。以前Owner工作地目的地tau_j、同税只扣一次的设计合同不改。R2/R3仍为局部隔离候选；gross/net、劳动单位/人口/有效劳动、财政税基、phi/sigma/alphal、价格单位/共同vintage及完整科学验收均未决定。
+- 长会话验收超时、SSH曾经断线和当前源码pin版本差异之间没有带时间证据证明因果，不能归责会话长度或把源码版本冲突看作上传损坏。
+
+### B3. 预算和停止
+
+- Executor自报源内容16/18，加ENTRY/ORACLE终核2计18/18；定位3/6、冻结版本3/3、调用发现≤2层；模型、科研数值、测试、no-HA、预检、HA/HJB/KFE/GE/IRF、项目import及正式源写入均0。上报解析前报告生成语法错误仅为自编证据脚本，不是科学运行；保护资产未变为执行者回执，GPT未独立Windows复核。
+- 静态身份答案已到界，缺生产采纳/真实原件，STOP合法；未因预算用完而增试模型，也未签发自动后继。
+
+## C阶段：分层裁决（COMPLETED_BOUNDED）
+
+artifact_integrity=PASS_BOUNDED__GITHUB_PAYLOAD_12_OF_12_SHA256_BYTES_BLOB__MANIFEST_SEPARATE__EXCERPTS_TEXT_AND_RAW_53_OF_53
+source_identity=PASS_BOUNDED__F2_HISTORICAL_ORACLE_EXACT_RAW_SHA256_MATCH__LOCAL_WINDOWS_BYTES_EXECUTOR_ATTESTED
+numeric_review=NOT_RUN
+implementation_review=PASS_BOUNDED_STATIC_DISPATCH_AND_CANONICAL_CALLSITE_EVIDENCE__ACTUAL_DEPLOYMENT_BLOCKED
+scientific_review=SCIENTIFIC_ACCEPTANCE_BLOCKED
+privacy_review=BOUNDED_PUBLIC_SOURCE_FRAGMENT_AND_DELIVERY_SCOPE
+actual_terminal=STOP__PIN_MATCH__ACTUAL_PRODUCTION_AND_REAL_INPUT_ADOPTION_UNPROVEN
+delivery=PASS_BOUNDED__GITHUB_FIXED_FINAL_CANDIDATE_13_OF_13_INDEPENDENTLY_READ__LOCAL_EXTERNAL_RECEIPT_NOT_READ
+cleanup=NOT_AUTHORIZED_NOT_PERFORMED
+not_completed=OWNER_AUTHENTIC_VERSION_AND_BYTE_CONTRACT;PIN_FIRST_INTRODUCTION;CURRENT_TEMP31_PRODUCTION_ADOPTION;REAL_CANONICAL_INVOCATION_ORIGINALS;31_PROVINCE_ID_OLD_TUPLE;D1_D2_D3;TIMEOUT_SSH_CAUSALITY;SCIENTIFIC_AND_NUMERIC_ACCEPTANCE
+NEXT_ACTION=OWNER_DECISION__NO_NEW_TASK_ISSUED
+
+结论：**限域接受历史Oracle pin真实身份及静态调用证据，并接受本任务STOP；不接受现行生产/真实数据绑定，不授权改pin、回退source、导入Excel、运行模型或合并R2/R3。** 后续是否以历史原件、现有新版原件或另定身份守卫合同作为目标，必须Owner独立决定；最小需要当前正式入口命令/配置、版本/representation/year、生成调用和准确原件及31省ID证据，不得借本审阅自动启动新任务。
+
+ACTIVE_TASK=NONE
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+AUTO_NEXT=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
