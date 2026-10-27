@@ -1,0 +1,74 @@
+# 第五章TEMP31 D盘多版本时间线来源任务：保护基线漂移STOP独立审阅
+
+REVIEW_DATE=2026-10-27
+REVIEW_KIND=GPT_FIXED_GITHUB_CANDIDATE_THREE_STAGE_INDEPENDENT_REVIEW
+TASK_ID=CH5_TEMP31_D_DRIVE_VERSION_TIMELINE_AND_PRIMARY_SOURCE_LOCATOR_R1_20261027
+TASK_PUBLICATION_COMMIT=afa9d4725ea9666f298a0e87d2f122f4a366761e
+CANDIDATE_COMMIT=cb5ca11dff10b8f64e97e1df76ae23b4659d1ccd
+CANDIDATE_BRANCH=codex/ch5-temp31-d-drive-version-timeline-source-locator-20261027-r1
+CANDIDATE_FIXED_BASE=1aa1026daceb6b0966470f28fcaa7516cde4a908
+CANDIDATE_FINAL_PARENT=e27b1ac301d2f25b78ec1422c02d66b8a7e4b8c0
+CANDIDATE_FINAL_TREE=dadd30b487a568833277b276bca3574edf266d42
+VERDICT=PASS_BOUNDED_EVIDENCE_DELIVERY_AND_PROTECTION_STOP__UNTRACKED_BASELINE_DRIFT_UNRESOLVED__D_ROOT_DISCOVERY_NOT_STARTED
+ACTIVE_TASK=NONE
+SCIENTIFIC_ACCEPTANCE=BLOCKED
+AUTO_NEXT=FALSE
+
+## A. 固定提交、证据身份与可读性：COMPLETED_BOUNDED
+
+- GPT直接向GitHub核对治理分支当时HEAD=`afa9d4725ea9666f298a0e87d2f122f4a366761e`；独立候选分支HEAD=`cb5ca11dff10b8f64e97e1df76ae23b4659d1ccd`；最终提交parent=`e27b1ac301d2f25b78ec1422c02d66b8a7e4b8c0`，root tree=`dadd30b487a568833277b276bca3574edf266d42`。从冻结候选基点`1aa1026daceb6b0966470f28fcaa7516cde4a908`到seal为ahead 2、behind 0，diff仅当前任务证据目录14个新增文件，无科研源码、数据或治理文件变更。发文commit与候选base不同，角色明确。
+- 从固定最终commit直接取齐14/14报告；manifest登记13件UTF-8载荷，逐项由GPT独立复算SHA-256/字节数、核对GitHub返回Blob：13/13 PASS。manifest自身原文4708字节，Git Blob`f8197a131acc7fedd134acb0e44fbc6e8b96cb27`，SHA256=`6c66b0b946d953b4913555376769468427e8cda6d13013221866e37a0ec945cd`，独立单检。source_excerpts.json内5段现行任务/治理文件的短摘录SHA256全部5/5匹配；此次并无WASM原字节摘录或独立本地内容认证。
+- Codex回执确认SSH指定密钥认证与分批读取/上传/远端交付；SSH认证测试exit_code 1附success message适用于无交互式shell场景，仅说明其此次所记录的认证尝试成功。上一未完成的长fetch成因仍UNKNOWN，本轮短取成功不证明历史SSH原因。
+- 原始Windows本地回执`OWNER_LOCAL_PATH_LOOKUP.json`及`RESUME_STATUS_DELTA_PRIVATE.json`仅存Codex本地；GPT无法从GitHub打开其原字节/真实私有路径，不宣称直接确认WASM精确文件名或其本地变化时间。GitHub已验的是公开脱敏证据与其内部一致性；不是Windows保护状态的独立磁盘检测。
+- `INDEPENDENT_COMPLETION_EVENT`仍UNKNOWN，不能将GPT此时报告当作执行时的独立见证。交付隐私审阅限公开安全身份、哈希/状态计数和摘要；没有在候选差异中见原始宏观/工资文件。
+
+## B. 保护硬门、实际执行与科学风险：COMPLETED_BOUNDED_WITH_PROTECTION_GATE_BLOCKED
+
+### B1. 严格区分中断前旧基线与恢复后实际状态
+
+执行者在本地记录:
+- 科学工作区HEAD=`a1db8c114dec0ab69d69a5576e153a7f868cba0e`、branch旧工作树，Git index SHA256=`28058a7e2d9ab773c5813205c75999e6c221533aeae0b9bb094b8a2`（此处以最终回执正式指纹为准：`28058a7e2d9ab773c5813205c75999e6c221533aeae0b9bb094b9a83451bf7cc`），refs SHA256=`600912e7f3dabd0661d2314f533bb432d95cf4bd35b622ab5b16d6149e3c6729`、refs数243不变；11件受保护资产原字节SHA不变。
+- 旧status SHA256=`c443420c888f5e776cfb6cd05b27cbed56e58a787b82639aa23a47ce7f2ac2f3`；恢复检查SHA256=`734f11763de35c822f7fbf9a3ab8e2c6b8fb0ae7c8e7c49174ae3e19948e865b`，两者**不匹配**。status的NUL记录数均5971，但记录集合有3条未跟踪WASM路径移出、3条未跟踪WASM路径加入。不能称旧保护基线保持不变，不能由记录数相同就否认路径变化。
+- 该WASM差异属于报告中的依赖目录，原始内容、6条具体路径、是否三组一一对应重命名、创建/修改时间、sha及变化原因为UNKNOWN。**Git status路径变化不能直接证明内容变更、工具重建、恶意行为或科研源改动**；只有本地准确状态delta及必要文件身份检查才可能澄清。
+- 交付回执进一步记录恢复时新status SHA在整个交付期间稳定，index/HEAD/refs/11资产亦稳定；这只代表“恢复后未再发现新的变化”，不是“中断前旧基线恢复”。
+- GPT未收到私有差异原件，不应直接接受恢复时的status SHA作为新的科学保护基线；任何baseline rebinding属于Owner下一次明确决定。Codex本轮没有清理、修改、复位或尝试自动解释未跟踪WASM差异，触发Gate A后停止科学/目录工作是正确的。
+
+### B2. D盘任务目标未执行，不能给数据/版本新结论
+
+- 本轮实际D:/根直接子目录列举0、模型版本候选0、子目录元数据0、文件exists/size/时间0、宏观原件hash 0、Git版本根核验0、run/canonical manifest 0；因此没有目录时间线、primary Excel来源位置、实际canonical证据。结果文件明确没有把“NOT_STARTED”说成“D盘没有文件”。
+- 之前C方案在当前scientific worktree的`data_local`缺失仍属于上一任务的有界事实；不能在本轮把它扩展到D盘其它版本目录的缺失证据。
+- 当前TEMP31生产入口/命令/representation/year、真实31省原始canonical、D1/B D2 D3/B、Zt新旧来源定义和人口/就业/有效劳动合同仍保持BLOCKED；目的地tau_j单次扣税目标、R2/R3隔离、新版HA仅优先待审、三NBS工资Excel未采纳均保持旧裁决，未运行数值模型。
+- 以本轮实际0次科学任务量，STOP合规；不允许因为已成功SSH就自动跨过保护门继续D盘搜源。
+
+### B3. 需Owner最小决定（保守建议）
+
+建议先仅对本地私有`RESUME_STATUS_DELTA_PRIVATE.json`列出的**6条准确旧/新WASM路径**开展单独授权的有界只读核对：原属哪个依赖目录、具体状态码/是否重命名、路径是否实际存在、允许的size/CreationTimeUTC/LastWriteTimeUTC和必要文件SHA、是否已知安全的构建/依赖缓存产物；不执行WASM、不清理/移动、不下载/重建/安装依赖，不触碰D盘其它项目目录。将精确路径与内容保留Owner本地，不上传GitHub；提交脱敏差异矩阵/原始状态哈希给GPT审阅。
+只有明确解释3移出+3加入及变化期间无受保护科学文件改变，且Owner明确选择新的状态基线/保护范围后，才另发D盘源版本时间线新任务或授权从指定步骤继续。不能默许`734f...`成为正式基线，不能把未知WASM认为必然无害。
+
+## C. 分层裁决：COMPLETED_BOUNDED
+
+artifact_integrity=PASS_BOUNDED__GITHUB_13_OF_13_PAYLOAD_SHA256_BYTES_BLOB__MANIFEST_SEPARATE_4708_BYTES
+source_identity=PASS_BOUNDED_AUTHORITY_AND_EXECUTOR_PROTECTION_METADATA__PRIVATE_WINDOWS_WASM_BYTES_NOT_INDEPENDENTLY_VERIFIED
+numeric_review=NOT_RUN
+implementation_review=STOP_AT_UNTRACKED_PROTECTION_GATE__D_ROOT_SOURCE_DISCOVERY_NOT_STARTED
+scientific_review=SCIENTIFIC_ACCEPTANCE_BLOCKED
+privacy_review=BOUNDED_PUBLIC_SAFE_SOURCE_AND_STATUS_HASHES_ONLY
+actual_terminal=STOP__PROTECTED_UNTRACKED_BASELINE_DRIFT__D_ROOT_DISCOVERY_NOT_STARTED
+delivery=PASS_BOUNDED_GITHUB_FIXED_CANDIDATE_14_OF_14_READ__EXECUTOR_SSH_BATCED_READBACK_SUPPORTED
+cleanup=NOT_AUTHORIZED_NOT_PERFORMED
+not_completed=UNTRACKED_WASM_SIX_PATH_IDENTITY_CAUSALITY_AND_OWNER_BASELINE_DECISION;D_ROOT_VERSION_TIMELINE;THREE_PRIMARY_ORIGINALS;PRODUCTION_ADOPTION;REAL_CANONICAL;31_ID_D1_D2_D3;ZT_POPULATION_LABOR_AND_TAX_SEMANTICS;SCIENTIFIC_AND_NUMERIC_ACCEPTANCE
+NEXT_ACTION=OWNER_EXPLICIT_PROTECTION_BASELINE_DECISION_AFTER_BOUNDED_WASM_READ_ONLY_CLASSIFICATION__NO_NEW_TASK_ISSUED
+VERDICT=PASS_BOUNDED_EVIDENCE_DELIVERY_AND_PROTECTION_STOP__UNTRACKED_BASELINE_DRIFT_UNRESOLVED__D_ROOT_DISCOVERY_NOT_STARTED
+
+本报告由GPT直接提交GitHub治理分支，Codex现有封存证据不改写、历史STOP/PENDING不清理。正式科研护栏保持：
+ACTIVE_TASK=NONE
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+AUTO_NEXT=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
