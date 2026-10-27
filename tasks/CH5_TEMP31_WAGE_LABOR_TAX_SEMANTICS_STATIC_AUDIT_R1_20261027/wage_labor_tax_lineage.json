@@ -1,0 +1,1195 @@
+{
+  "task_id": "CH5_TEMP31_WAGE_LABOR_TAX_SEMANTICS_STATIC_AUDIT_R1_20261027",
+  "nodes": [
+    {
+      "id": "INIT2009",
+      "label": "Common scalar composite_wage,wjt,wage_tax; ordered population vector",
+      "source_class": "HISTORIC_REPLICATION",
+      "citations": [],
+      "identity_source": "INPUT_2009",
+      "numeric_values_withheld": true
+    },
+    {
+      "id": "LOAD",
+      "label": "load_entry_state state construction",
+      "source_class": "PRODUCTION_CALLER",
+      "citations": [
+        {
+          "source_id": "C_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 101,
+          "end_line": 121,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b"
+        }
+      ]
+    },
+    {
+      "id": "HA_INIT",
+      "label": "Current/historical _source_initial_arrays",
+      "source_class": "HISTORIC_REPLICATION",
+      "citations": [
+        {
+          "source_id": "C_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 171,
+          "end_line": 184,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b"
+        }
+      ]
+    },
+    {
+      "id": "HA_INPUT",
+      "label": "Current solve_batch HouseholdInputs and static adapter",
+      "source_class": "PRODUCTION_CALLER",
+      "citations": [
+        {
+          "source_id": "C_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 345,
+          "end_line": 350,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b"
+        },
+        {
+          "source_id": "C_A",
+          "path": "src/ch5_two_asset_hank/multi_province/household_adapter.py",
+          "start_line": 200,
+          "end_line": 211,
+          "source_sha256": "0963591a95293e896b9f9a8c3f4c630cd3dbb9519950171170e28822c8a4ef0f"
+        }
+      ]
+    },
+    {
+      "id": "HA",
+      "label": "Generic exported local policy and budget",
+      "source_class": "HISTORIC_REPLICATION",
+      "citations": [
+        {
+          "source_id": "C_HA",
+          "path": "exports/matlab_faithful_two_asset_ha.py",
+          "start_line": 131,
+          "end_line": 136,
+          "source_sha256": "f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8"
+        },
+        {
+          "source_id": "C_HA",
+          "path": "exports/matlab_faithful_two_asset_ha.py",
+          "start_line": 159,
+          "end_line": 166,
+          "source_sha256": "f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8"
+        }
+      ]
+    },
+    {
+      "id": "AGG",
+      "label": "Post-loop aggregator: Ct and z-weighted household Lt",
+      "source_class": "PRODUCTION_CALLER",
+      "citations": [
+        {
+          "source_id": "C_POST",
+          "path": "validators/multi_province/mp4b_matlab_source_postloop_household_adapter.py",
+          "start_line": 30,
+          "end_line": 40,
+          "source_sha256": "cb90229f3c90ff2ba2fec0cf2e768404ad2ffe8a9ec291d7ed2c6dd22102337f"
+        },
+        {
+          "source_id": "C_HA",
+          "path": "exports/matlab_faithful_two_asset_ha.py",
+          "start_line": 686,
+          "end_line": 696,
+          "source_sha256": "f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8"
+        }
+      ]
+    },
+    {
+      "id": "CTRL",
+      "label": "Online stationary callback and one-turn controller",
+      "source_class": "PRODUCTION_CALLER",
+      "citations": [
+        {
+          "source_id": "C_RT",
+          "path": "src/ch5_two_asset_hank/multi_province/stationary_runtime.py",
+          "start_line": 50,
+          "end_line": 58,
+          "source_sha256": "6cabaa5941c47799bcc6d299edee48e4b7cb52f2213b7b9155de3aa9b032c1e6"
+        }
+      ]
+    },
+    {
+      "id": "PHI",
+      "label": "Entering Y/L relative-disutility matrix",
+      "source_class": "PRODUCTION_CALLER",
+      "citations": [
+        {
+          "source_id": "C_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 337,
+          "end_line": 343,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b"
+        },
+        {
+          "source_id": "C_BASE",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+          "start_line": 857,
+          "end_line": 873,
+          "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07"
+        }
+      ]
+    },
+    {
+      "id": "MIG",
+      "label": "Default reconstruction with origin tax",
+      "source_class": "HISTORIC_REPLICATION",
+      "citations": [
+        {
+          "source_id": "C_L",
+          "path": "src/ch5_two_asset_hank/multi_province/migration_labor.py",
+          "start_line": 101,
+          "end_line": 131,
+          "source_sha256": "a8961e66518265c4a97770a421c10c60740e7205e247ceb7ff4b3dd3bec83730"
+        }
+      ]
+    },
+    {
+      "id": "FIRM",
+      "label": "Given destination labor -> marginal wage and clipping",
+      "source_class": "HISTORIC_REPLICATION",
+      "citations": [
+        {
+          "source_id": "C_F",
+          "path": "src/ch5_two_asset_hank/multi_province/firm.py",
+          "start_line": 99,
+          "end_line": 109,
+          "source_sha256": "d4c3dada5577f25e0159831dcc9de3883ea656e80aa3e1c407e6bb0af0d4ca0d"
+        },
+        {
+          "source_id": "C_F",
+          "path": "src/ch5_two_asset_hank/multi_province/firm.py",
+          "start_line": 126,
+          "end_line": 138,
+          "source_sha256": "d4c3dada5577f25e0159831dcc9de3883ea656e80aa3e1c407e6bb0af0d4ca0d"
+        }
+      ]
+    },
+    {
+      "id": "W",
+      "label": "Composite origin wage with destination tax",
+      "source_class": "HISTORIC_REPLICATION",
+      "citations": [
+        {
+          "source_id": "C_W",
+          "path": "src/ch5_two_asset_hank/multi_province/wage.py",
+          "start_line": 52,
+          "end_line": 76,
+          "source_sha256": "6dc1bfcd5526afc4ed876f4923f7fefb39a68f66427c490f741a2475d2ffe433"
+        }
+      ]
+    },
+    {
+      "id": "POST",
+      "label": "Next state.w from composite wage",
+      "source_class": "PRODUCTION_CALLER",
+      "citations": [
+        {
+          "source_id": "C_SS",
+          "path": "src/ch5_two_asset_hank/multi_province/steady_state.py",
+          "start_line": 153,
+          "end_line": 168,
+          "source_sha256": "b8897fdef9cc59a2811561a18cb0fadf059a158ad8e5f3661bd10a5734d264aa"
+        }
+      ]
+    },
+    {
+      "id": "FISCAL",
+      "label": "Current lt*tau vs R2 lt*wjt*tau",
+      "source_class": "TEMP31_PATCH",
+      "citations": [
+        {
+          "source_id": "C_F",
+          "path": "src/ch5_two_asset_hank/multi_province/firm.py",
+          "start_line": 135,
+          "end_line": 135,
+          "source_sha256": "d4c3dada5577f25e0159831dcc9de3883ea656e80aa3e1c407e6bb0af0d4ca0d"
+        },
+        {
+          "source_id": "P2_F",
+          "path": "src/ch5_two_asset_hank/multi_province/firm.py",
+          "start_line": 135,
+          "end_line": 135,
+          "source_sha256": "0939886706b8bcb42f3a41fc244000e7f8ad01884c61afdbdd31036bee908218"
+        }
+      ]
+    },
+    {
+      "id": "P2_INIT",
+      "label": "R2 isolated net-composite initializer",
+      "source_class": "TEMP31_PATCH",
+      "citations": [
+        {
+          "source_id": "P2_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 171,
+          "end_line": 184,
+          "source_sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6"
+        }
+      ]
+    },
+    {
+      "id": "P2_INPUT",
+      "label": "R2 isolated adapter/solve caller tau=0",
+      "source_class": "TEMP31_PATCH",
+      "citations": [
+        {
+          "source_id": "P2_A",
+          "path": "src/ch5_two_asset_hank/multi_province/household_adapter.py",
+          "start_line": 204,
+          "end_line": 218,
+          "source_sha256": "c248bdeccfce3427b74d11b3c893cd5327659dfb6e4d4f34e8bbe379c8f2c569"
+        },
+        {
+          "source_id": "P2_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 346,
+          "end_line": 351,
+          "source_sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6"
+        }
+      ]
+    },
+    {
+      "id": "P3_CALL",
+      "label": "R3 isolated one_turn destination-tax keyword",
+      "source_class": "TEMP31_PATCH",
+      "citations": [
+        {
+          "source_id": "P3_O",
+          "path": "src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "start_line": 168,
+          "end_line": 176,
+          "source_sha256": "afeadbffd88e1405c2f32d22fd256e7fd0451fc4ecbfe2492bc0db5dbdc728fa"
+        }
+      ]
+    },
+    {
+      "id": "P3_MIG",
+      "label": "R3 isolated migration destination-tax read",
+      "source_class": "TEMP31_PATCH",
+      "citations": [
+        {
+          "source_id": "P3_L",
+          "path": "src/ch5_two_asset_hank/multi_province/migration_labor.py",
+          "start_line": 104,
+          "end_line": 137,
+          "source_sha256": "66600d6d1121db319b03383436999aa53b5e1aa5f8eecc72516fd1922b7b52dc"
+        }
+      ]
+    },
+    {
+      "id": "CURRENT_DIRECT",
+      "label": "Current K1B integrate_turn -> base.source reconstruction",
+      "source_class": "PRODUCTION_CALLER",
+      "citations": [
+        {
+          "source_id": "C_RUN",
+          "path": "validators/multi_province/k1b_turn5_turn6_bounded_continuation/run.py",
+          "start_line": 227,
+          "end_line": 240,
+          "source_sha256": "92018027502ffa5281f9bfac91ee70d2bed17876b65100b3321819b2c0c59db6"
+        },
+        {
+          "source_id": "C_BASE",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+          "start_line": 27,
+          "end_line": 43,
+          "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07"
+        }
+      ]
+    },
+    {
+      "id": "NORMALIZED",
+      "label": "Separately named normalized household-Lt allocation",
+      "source_class": "HISTORIC_REPLICATION",
+      "citations": [
+        {
+          "source_id": "C_L",
+          "path": "src/ch5_two_asset_hank/multi_province/migration_labor.py",
+          "start_line": 311,
+          "end_line": 355,
+          "source_sha256": "a8961e66518265c4a97770a421c10c60740e7205e247ceb7ff4b3dd3bec83730"
+        },
+        {
+          "source_id": "C_O",
+          "path": "src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "start_line": 270,
+          "end_line": 288,
+          "source_sha256": "020611e7ceb6fe558727ffac083ee45f6ba05d1b17f73d62c1f9a929df970e67"
+        }
+      ]
+    },
+    {
+      "id": "UNWIRED_HELPER",
+      "label": "R1 helper explicitly detached from production",
+      "source_class": "TEMP31_PATCH",
+      "citations": [
+        {
+          "source_id": "P1_HELP",
+          "path": "isolated_bridge_candidate.py",
+          "start_line": 1,
+          "end_line": 5,
+          "source_sha256": "a3d8e4afc22a88aee2c0cc4978418a12a2474e7fc70836799deb375f4c75840a"
+        },
+        {
+          "source_id": "P1_HELP",
+          "path": "isolated_bridge_candidate.py",
+          "start_line": 17,
+          "end_line": 33,
+          "source_sha256": "a3d8e4afc22a88aee2c0cc4978418a12a2474e7fc70836799deb375f4c75840a"
+        }
+      ]
+    },
+    {
+      "id": "NBS_A_NONPRIVATE_LIKELY",
+      "label": "Local raw candidate, not model-adopted",
+      "source_class": "DOC_ONLY",
+      "citations": [],
+      "source_identity": "NBS_A_NONPRIVATE_LIKELY"
+    },
+    {
+      "id": "NBS_B_PRIVATE",
+      "label": "Local raw candidate, not model-adopted",
+      "source_class": "DOC_ONLY",
+      "citations": [],
+      "source_identity": "NBS_B_PRIVATE"
+    },
+    {
+      "id": "NBS_C_BILL",
+      "label": "Local raw candidate, not model-adopted",
+      "source_class": "DOC_ONLY",
+      "citations": [],
+      "source_identity": "NBS_C_BILL"
+    },
+    {
+      "id": "CORR_INPUT",
+      "label": "Current _province_inputs BoundOptionAInputs scalar wage/tau",
+      "source_class": "PRODUCTION_CALLER",
+      "citations": [
+        {
+          "source_id": "C_BASE",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+          "start_line": 285,
+          "end_line": 305,
+          "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07"
+        }
+      ]
+    },
+    {
+      "id": "CORR_INIT",
+      "label": "Current source_initial_arrays retains wage scalar tax",
+      "source_class": "PRODUCTION_CALLER",
+      "citations": [
+        {
+          "source_id": "C_INIT",
+          "path": "validators/multi_province/corrected_2018_single_turn/run.py",
+          "start_line": 153,
+          "end_line": 176,
+          "source_sha256": "9eaf82373ee564e5f27bea14d49d2177e0637a6969d946c86f519608ffbae614"
+        }
+      ]
+    },
+    {
+      "id": "CORR_CELL",
+      "label": "Current nonlinear_continuation._cell creates net_wage",
+      "source_class": "PRODUCTION_CALLER",
+      "citations": [
+        {
+          "source_id": "C_CONT",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/nonlinear_continuation.py",
+          "start_line": 704,
+          "end_line": 732,
+          "source_sha256": "e43b3990370f39b82486e05c4f286ca2719fbfa304333cb7999c5180c3875701"
+        }
+      ]
+    },
+    {
+      "id": "CORR_CONTROL",
+      "label": "Corrected selector _controls uses cell.net_wage for labor and budget",
+      "source_class": "PRODUCTION_CALLER",
+      "citations": [
+        {
+          "source_id": "C_SEL",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py",
+          "start_line": 388,
+          "end_line": 414,
+          "source_sha256": "85e3a85f88a617d0b71692bd426e03c37e8b729249d5cc5b671115b4165f613b"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "E01",
+      "source": "INIT2009",
+      "consumer": "LOAD",
+      "flow": "Same scalar wage/tax fields used in each ordered province state",
+      "citations": [
+        {
+          "source_id": "C_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 106,
+          "end_line": 120,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b"
+        }
+      ],
+      "location_index": "origin state index from province_order; input scalar types verified",
+      "time_position": "2009 input binding; fixed_zt_calendar_year separately 2020",
+      "tax_position": "initial composite tax position unknown",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_ASSIGNMENT",
+      "runtime_executed": false
+    },
+    {
+      "id": "E02",
+      "source": "LOAD",
+      "consumer": "HA_INIT",
+      "flow": "state.w,state.tau enter initial labor wage expression",
+      "citations": [
+        {
+          "source_id": "C_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 171,
+          "end_line": 181,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b"
+        }
+      ],
+      "location_index": "origin state and productivity grid z",
+      "time_position": "entering state / initialization",
+      "tax_position": "(1-state.tau)*state.w*z",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_EXPRESSION_OR_CALL",
+      "runtime_executed": false
+    },
+    {
+      "id": "E03",
+      "source": "LOAD",
+      "consumer": "HA_INPUT",
+      "flow": "state.w,state.tau supplied to singleton HouseholdInputs",
+      "citations": [
+        {
+          "source_id": "C_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 345,
+          "end_line": 350,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b"
+        }
+      ],
+      "location_index": "origin household province, singleton wage vector",
+      "time_position": "entering state",
+      "tax_position": "nonzero tau field preserved",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_EXPRESSION_OR_CALL",
+      "runtime_executed": false
+    },
+    {
+      "id": "E04",
+      "source": "HA_INIT",
+      "consumer": "HA",
+      "flow": "initial value and baseline_labor passed alongside inputs",
+      "citations": [
+        {
+          "source_id": "C_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 345,
+          "end_line": 350,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b"
+        }
+      ],
+      "location_index": "(b,a,z)",
+      "time_position": "same call expression; real common snapshot identity unproven",
+      "tax_position": "initializer already uses scalar household tau",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_EXPRESSION_OR_CALL",
+      "runtime_executed": false
+    },
+    {
+      "id": "E05",
+      "source": "HA_INPUT",
+      "consumer": "HA",
+      "flow": "Imported postloop caller forwards inputs to hjb_solver",
+      "citations": [
+        {
+          "source_id": "C_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 66,
+          "end_line": 74,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b"
+        },
+        {
+          "source_id": "C_POST",
+          "path": "validators/multi_province/mp4b_matlab_source_postloop_household_adapter.py",
+          "start_line": 30,
+          "end_line": 33,
+          "source_sha256": "cb90229f3c90ff2ba2fec0cf2e768404ad2ffe8a9ec291d7ed2c6dd22102337f"
+        },
+        {
+          "source_id": "C_HA",
+          "path": "exports/matlab_faithful_two_asset_ha.py",
+          "start_line": 159,
+          "end_line": 164,
+          "source_sha256": "f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8"
+        }
+      ],
+      "location_index": "household origin and state grid",
+      "time_position": "call-site inputs forwarded",
+      "tax_position": "generic consumer multiplies its tau/migration wedge",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_EXPRESSION_OR_CALL",
+      "runtime_executed": false
+    },
+    {
+      "id": "E06",
+      "source": "HA",
+      "consumer": "AGG",
+      "flow": "Policy arrays and postloop density feed aggregate_stationary_household",
+      "citations": [
+        {
+          "source_id": "C_POST",
+          "path": "validators/multi_province/mp4b_matlab_source_postloop_household_adapter.py",
+          "start_line": 30,
+          "end_line": 40,
+          "source_sha256": "cb90229f3c90ff2ba2fec0cf2e768404ad2ffe8a9ec291d7ed2c6dd22102337f"
+        },
+        {
+          "source_id": "C_HA",
+          "path": "exports/matlab_faithful_two_asset_ha.py",
+          "start_line": 686,
+          "end_line": 696,
+          "source_sha256": "f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8"
+        }
+      ],
+      "location_index": "distribution grid within each origin",
+      "time_position": "post-household outputs",
+      "tax_position": "no additional wage tax deduction in labor aggregation",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_EXPRESSION_OR_CALL",
+      "runtime_executed": false
+    },
+    {
+      "id": "E07",
+      "source": "AGG",
+      "consumer": "CTRL",
+      "flow": "Ct/l_ss etc form callback batch consumed by online loop",
+      "citations": [
+        {
+          "source_id": "C_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 351,
+          "end_line": 365,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b"
+        },
+        {
+          "source_id": "C_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 370,
+          "end_line": 372,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b"
+        },
+        {
+          "source_id": "C_RT",
+          "path": "src/ch5_two_asset_hank/multi_province/stationary_runtime.py",
+          "start_line": 50,
+          "end_line": 58,
+          "source_sha256": "6cabaa5941c47799bcc6d299edee48e4b7cb52f2213b7b9155de3aa9b032c1e6"
+        }
+      ],
+      "location_index": "ordered origin batch",
+      "time_position": "household outputs before one_turn",
+      "tax_position": "tax position inherited from input budget",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_EXPRESSION_OR_CALL",
+      "runtime_executed": false
+    },
+    {
+      "id": "E08",
+      "source": "CTRL",
+      "consumer": "MIG",
+      "flow": "OneTurnInputs forwards batch Ct, origin N, entering wjt/tau",
+      "citations": [
+        {
+          "source_id": "C_RT",
+          "path": "src/ch5_two_asset_hank/multi_province/stationary_runtime.py",
+          "start_line": 53,
+          "end_line": 55,
+          "source_sha256": "6cabaa5941c47799bcc6d299edee48e4b7cb52f2213b7b9155de3aa9b032c1e6"
+        },
+        {
+          "source_id": "C_O",
+          "path": "src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "start_line": 201,
+          "end_line": 209,
+          "source_sha256": "020611e7ceb6fe558727ffac083ee45f6ba05d1b17f73d62c1f9a929df970e67"
+        },
+        {
+          "source_id": "C_L",
+          "path": "src/ch5_two_asset_hank/multi_province/migration_labor.py",
+          "start_line": 103,
+          "end_line": 130,
+          "source_sha256": "a8961e66518265c4a97770a421c10c60740e7205e247ceb7ff4b3dd3bec83730"
+        }
+      ],
+      "location_index": "rows destination, columns origin",
+      "time_position": "household Ct with entering firm prices",
+      "tax_position": "default tau_by_origin[origin]",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_EXPRESSION_OR_CALL",
+      "runtime_executed": false
+    },
+    {
+      "id": "E09",
+      "source": "LOAD",
+      "consumer": "PHI",
+      "flow": "Entering state Yt/Lt used to build pairwise phi",
+      "citations": [
+        {
+          "source_id": "C_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 337,
+          "end_line": 343,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b"
+        },
+        {
+          "source_id": "C_BASE",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+          "start_line": 857,
+          "end_line": 873,
+          "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07"
+        }
+      ],
+      "location_index": "destination-origin matrix",
+      "time_position": "entering turn Y/L; initial Lt seeded by population",
+      "tax_position": "preference, not tax",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_EXPRESSION_OR_CALL",
+      "runtime_executed": false
+    },
+    {
+      "id": "E10",
+      "source": "PHI",
+      "consumer": "MIG",
+      "flow": "phi_ji divisor in labor splitting",
+      "citations": [
+        {
+          "source_id": "C_O",
+          "path": "src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "start_line": 201,
+          "end_line": 209,
+          "source_sha256": "020611e7ceb6fe558727ffac083ee45f6ba05d1b17f73d62c1f9a929df970e67"
+        },
+        {
+          "source_id": "C_L",
+          "path": "src/ch5_two_asset_hank/multi_province/migration_labor.py",
+          "start_line": 107,
+          "end_line": 125,
+          "source_sha256": "a8961e66518265c4a97770a421c10c60740e7205e247ceb7ff4b3dd3bec83730"
+        }
+      ],
+      "location_index": "destination j / origin i",
+      "time_position": "one-turn matrix",
+      "tax_position": "alongside origin-tax wedge",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_EXPRESSION_OR_CALL",
+      "runtime_executed": false
+    },
+    {
+      "id": "E11",
+      "source": "MIG",
+      "consumer": "FIRM",
+      "flow": "Destination row sum passed as lt_supply, not household Lt",
+      "citations": [
+        {
+          "source_id": "C_L",
+          "path": "src/ch5_two_asset_hank/multi_province/migration_labor.py",
+          "start_line": 129,
+          "end_line": 131,
+          "source_sha256": "a8961e66518265c4a97770a421c10c60740e7205e247ceb7ff4b3dd3bec83730"
+        },
+        {
+          "source_id": "C_O",
+          "path": "src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "start_line": 219,
+          "end_line": 228,
+          "source_sha256": "020611e7ceb6fe558727ffac083ee45f6ba05d1b17f73d62c1f9a929df970e67"
+        },
+        {
+          "source_id": "C_F",
+          "path": "src/ch5_two_asset_hank/multi_province/firm.py",
+          "start_line": 47,
+          "end_line": 65,
+          "source_sha256": "d4c3dada5577f25e0159831dcc9de3883ea656e80aa3e1c407e6bb0af0d4ca0d"
+        }
+      ],
+      "location_index": "destination row j",
+      "time_position": "current reconstructed supply into firm",
+      "tax_position": "gross wage formation before wage-tax wedge",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_EXPRESSION_OR_CALL",
+      "runtime_executed": false
+    },
+    {
+      "id": "E12",
+      "source": "FIRM",
+      "consumer": "W",
+      "flow": "New firm.wjt vector enters composite_household_wages",
+      "citations": [
+        {
+          "source_id": "C_O",
+          "path": "src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "start_line": 231,
+          "end_line": 238,
+          "source_sha256": "020611e7ceb6fe558727ffac083ee45f6ba05d1b17f73d62c1f9a929df970e67"
+        },
+        {
+          "source_id": "C_W",
+          "path": "src/ch5_two_asset_hank/multi_province/wage.py",
+          "start_line": 52,
+          "end_line": 76,
+          "source_sha256": "6dc1bfcd5526afc4ed876f4923f7fefb39a68f66427c490f741a2475d2ffe433"
+        }
+      ],
+      "location_index": "sum over destination for each origin",
+      "time_position": "new firm wages + input preference matrix",
+      "tax_position": "destination tau and sigma included in composite",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_EXPRESSION_OR_CALL",
+      "runtime_executed": false
+    },
+    {
+      "id": "E13",
+      "source": "PHI",
+      "consumer": "W",
+      "flow": "Same OneTurnInputs matrix forwarded to wage expression",
+      "citations": [
+        {
+          "source_id": "C_O",
+          "path": "src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "start_line": 231,
+          "end_line": 238,
+          "source_sha256": "020611e7ceb6fe558727ffac083ee45f6ba05d1b17f73d62c1f9a929df970e67"
+        }
+      ],
+      "location_index": "destination-origin",
+      "time_position": "one-turn input matrix with new firm wages",
+      "tax_position": "preference weights distinct from wage tax",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_EXPRESSION_OR_CALL",
+      "runtime_executed": false
+    },
+    {
+      "id": "E14",
+      "source": "W",
+      "consumer": "POST",
+      "flow": "household_composite_wage stored into next state.w",
+      "citations": [
+        {
+          "source_id": "C_SS",
+          "path": "src/ch5_two_asset_hank/multi_province/steady_state.py",
+          "start_line": 153,
+          "end_line": 168,
+          "source_sha256": "b8897fdef9cc59a2811561a18cb0fadf059a158ad8e5f3661bd10a5734d264aa"
+        }
+      ],
+      "location_index": "one scalar per origin",
+      "time_position": "post-turn / next entering state",
+      "tax_position": "stored coefficient already incorporates destination wage-tax wedge",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_ASSIGNMENT",
+      "runtime_executed": false
+    },
+    {
+      "id": "E15",
+      "source": "POST",
+      "consumer": "HA_INPUT",
+      "flow": "Next online iteration calls household_solver with updated state",
+      "citations": [
+        {
+          "source_id": "C_RT",
+          "path": "src/ch5_two_asset_hank/multi_province/stationary_runtime.py",
+          "start_line": 50,
+          "end_line": 58,
+          "source_sha256": "6cabaa5941c47799bcc6d299edee48e4b7cb52f2213b7b9155de3aa9b032c1e6"
+        },
+        {
+          "source_id": "C_RT",
+          "path": "src/ch5_two_asset_hank/multi_province/stationary_runtime.py",
+          "start_line": 79,
+          "end_line": 86,
+          "source_sha256": "6cabaa5941c47799bcc6d299edee48e4b7cb52f2213b7b9155de3aa9b032c1e6"
+        },
+        {
+          "source_id": "C_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 345,
+          "end_line": 350,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b"
+        }
+      ],
+      "location_index": "origin household",
+      "time_position": "next turn",
+      "tax_position": "net-composite-to-nonzero-tau path is statically visible; runtime effect NOT_RUN",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_EXPRESSION_OR_CALL",
+      "runtime_executed": false
+    },
+    {
+      "id": "E16",
+      "source": "FIRM",
+      "consumer": "FISCAL",
+      "flow": "Government term reads same province tau; R2 adds wage factor",
+      "citations": [
+        {
+          "source_id": "C_F",
+          "path": "src/ch5_two_asset_hank/multi_province/firm.py",
+          "start_line": 135,
+          "end_line": 135,
+          "source_sha256": "d4c3dada5577f25e0159831dcc9de3883ea656e80aa3e1c407e6bb0af0d4ca0d"
+        },
+        {
+          "source_id": "P2_F",
+          "path": "src/ch5_two_asset_hank/multi_province/firm.py",
+          "start_line": 135,
+          "end_line": 135,
+          "source_sha256": "0939886706b8bcb42f3a41fc244000e7f8ad01884c61afdbdd31036bee908218"
+        }
+      ],
+      "location_index": "destination firm/fiscal state",
+      "time_position": "current firm evaluation",
+      "tax_position": "tax-revenue recording is not another household deduction",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_EXPRESSION_OR_CALL",
+      "runtime_executed": false
+    },
+    {
+      "id": "E17",
+      "source": "P2_INIT",
+      "consumer": "P2_INPUT",
+      "flow": "R2 init uses w*z, then solve supplies tau=0",
+      "citations": [
+        {
+          "source_id": "P2_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 171,
+          "end_line": 184,
+          "source_sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6"
+        },
+        {
+          "source_id": "P2_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 346,
+          "end_line": 351,
+          "source_sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6"
+        }
+      ],
+      "location_index": "origin composite coefficient",
+      "time_position": "isolated R2 call expression",
+      "tax_position": "same wage tax not reapplied locally",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_EXPRESSION_OR_CALL",
+      "runtime_executed": false
+    },
+    {
+      "id": "E18",
+      "source": "P2_INPUT",
+      "consumer": "HA",
+      "flow": "R2 supplies zero tau to unchanged generic consumer",
+      "citations": [
+        {
+          "source_id": "P2_A",
+          "path": "src/ch5_two_asset_hank/multi_province/household_adapter.py",
+          "start_line": 204,
+          "end_line": 218,
+          "source_sha256": "c248bdeccfce3427b74d11b3c893cd5327659dfb6e4d4f34e8bbe379c8f2c569"
+        },
+        {
+          "source_id": "P2_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 346,
+          "end_line": 351,
+          "source_sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6"
+        },
+        {
+          "source_id": "C_HA",
+          "path": "exports/matlab_faithful_two_asset_ha.py",
+          "start_line": 159,
+          "end_line": 164,
+          "source_sha256": "f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8"
+        }
+      ],
+      "location_index": "singleton composite wage",
+      "time_position": "isolated candidate, deployment/import resolution not proved",
+      "tax_position": "generic gross-wage callers retain their own tau",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_EXPRESSION_OR_CALL",
+      "runtime_executed": false
+    },
+    {
+      "id": "E19",
+      "source": "P3_CALL",
+      "consumer": "P3_MIG",
+      "flow": "Renamed destination tax vector passed then selected by destination",
+      "citations": [
+        {
+          "source_id": "P3_O",
+          "path": "src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "start_line": 168,
+          "end_line": 176,
+          "source_sha256": "afeadbffd88e1405c2f32d22fd256e7fd0451fc4ecbfe2492bc0db5dbdc728fa"
+        },
+        {
+          "source_id": "P3_L",
+          "path": "src/ch5_two_asset_hank/multi_province/migration_labor.py",
+          "start_line": 113,
+          "end_line": 136,
+          "source_sha256": "66600d6d1121db319b03383436999aa53b5e1aa5f8eecc72516fd1922b7b52dc"
+        }
+      ],
+      "location_index": "destination-indexed tau_j, origin population_i",
+      "time_position": "isolated R3 supplied caller/function",
+      "tax_position": "workplace tax position in both local expressions",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_EXPRESSION_OR_CALL",
+      "runtime_executed": false
+    },
+    {
+      "id": "E20",
+      "source": "CURRENT_DIRECT",
+      "consumer": "MIG",
+      "flow": "Current base.source imports one_turn and passes tax_by_origin",
+      "citations": [
+        {
+          "source_id": "C_RUN",
+          "path": "validators/multi_province/k1b_turn5_turn6_bounded_continuation/run.py",
+          "start_line": 20,
+          "end_line": 20,
+          "source_sha256": "92018027502ffa5281f9bfac91ee70d2bed17876b65100b3321819b2c0c59db6"
+        },
+        {
+          "source_id": "C_BASE",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+          "start_line": 28,
+          "end_line": 28,
+          "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07"
+        },
+        {
+          "source_id": "C_RUN",
+          "path": "validators/multi_province/k1b_turn5_turn6_bounded_continuation/run.py",
+          "start_line": 235,
+          "end_line": 240,
+          "source_sha256": "92018027502ffa5281f9bfac91ee70d2bed17876b65100b3321819b2c0c59db6"
+        }
+      ],
+      "location_index": "source rows remain origin-tau read",
+      "time_position": "current worktree caller source, NOT executed",
+      "tax_position": "R3 patch not present at these read current callsites",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_EXPRESSION_OR_CALL",
+      "runtime_executed": false
+    },
+    {
+      "id": "E21",
+      "source": "AGG",
+      "consumer": "NORMALIZED",
+      "flow": "Separate entry can allocate household_labor_per_capita*N with normalized columns",
+      "citations": [
+        {
+          "source_id": "C_O",
+          "path": "src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "start_line": 270,
+          "end_line": 288,
+          "source_sha256": "020611e7ceb6fe558727ffac083ee45f6ba05d1b17f73d62c1f9a929df970e67"
+        },
+        {
+          "source_id": "C_L",
+          "path": "src/ch5_two_asset_hank/multi_province/migration_labor.py",
+          "start_line": 311,
+          "end_line": 355,
+          "source_sha256": "a8961e66518265c4a97770a421c10c60740e7205e247ceb7ff4b3dd3bec83730"
+        }
+      ],
+      "location_index": "column origin mass, destination rows",
+      "time_position": "separately named route; default adoption not inferred",
+      "tax_position": "separate kernel still reads origin tax",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_EXPRESSION_OR_CALL",
+      "runtime_executed": false
+    },
+    {
+      "id": "E22",
+      "source": "LOAD",
+      "consumer": "CORR_INIT",
+      "flow": "Current corrected initializer call with state.w/state.tau",
+      "citations": [
+        {
+          "source_id": "C_BASE",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+          "start_line": 663,
+          "end_line": 665,
+          "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07"
+        },
+        {
+          "source_id": "C_INIT",
+          "path": "validators/multi_province/corrected_2018_single_turn/run.py",
+          "start_line": 153,
+          "end_line": 176,
+          "source_sha256": "9eaf82373ee564e5f27bea14d49d2177e0637a6969d946c86f519608ffbae614"
+        }
+      ],
+      "location_index": "Origin-province state, then (a,b,z) cell; not province N",
+      "time_position": "entering state",
+      "tax_position": "initializer (1-tau)*w*z",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_CALL_OR_ASSIGNMENT",
+      "runtime_executed": false
+    },
+    {
+      "id": "E23",
+      "source": "LOAD",
+      "consumer": "CORR_INPUT",
+      "flow": "Current corrected _province_inputs forwards wage/tau scalar fields",
+      "citations": [
+        {
+          "source_id": "C_BASE",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+          "start_line": 285,
+          "end_line": 305,
+          "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07"
+        },
+        {
+          "source_id": "C_BASE",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+          "start_line": 680,
+          "end_line": 687,
+          "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07"
+        }
+      ],
+      "location_index": "Origin-province state, then (a,b,z) cell; not province N",
+      "time_position": "entering state -> BoundOptionAInputs",
+      "tax_position": "scalar wage tax retained",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_CALL_OR_ASSIGNMENT",
+      "runtime_executed": false
+    },
+    {
+      "id": "E24",
+      "source": "CORR_INPUT",
+      "consumer": "CORR_CELL",
+      "flow": "Imported _map_checkpoint calls _cell with frozen inputs",
+      "citations": [
+        {
+          "source_id": "C_BASE",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+          "start_line": 47,
+          "end_line": 77,
+          "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07"
+        },
+        {
+          "source_id": "C_BASE",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+          "start_line": 695,
+          "end_line": 702,
+          "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07"
+        },
+        {
+          "source_id": "C_CONT",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/nonlinear_continuation.py",
+          "start_line": 763,
+          "end_line": 770,
+          "source_sha256": "e43b3990370f39b82486e05c4f286ca2719fbfa304333cb7999c5180c3875701"
+        },
+        {
+          "source_id": "C_CONT",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/nonlinear_continuation.py",
+          "start_line": 704,
+          "end_line": 732,
+          "source_sha256": "e43b3990370f39b82486e05c4f286ca2719fbfa304333cb7999c5180c3875701"
+        }
+      ],
+      "location_index": "Origin-province state, then (a,b,z) cell; not province N",
+      "time_position": "frozen input + policy checkpoint",
+      "tax_position": "cell.net_wage=(1-tau)*wage*z",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_CALL_OR_ASSIGNMENT",
+      "runtime_executed": false
+    },
+    {
+      "id": "E25",
+      "source": "CORR_CELL",
+      "consumer": "CORR_CONTROL",
+      "flow": "Cell forwarded to select_constrained_policy; internal controls consume net_wage",
+      "citations": [
+        {
+          "source_id": "C_CONT",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/nonlinear_continuation.py",
+          "start_line": 763,
+          "end_line": 770,
+          "source_sha256": "e43b3990370f39b82486e05c4f286ca2719fbfa304333cb7999c5180c3875701"
+        },
+        {
+          "source_id": "C_SEL",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py",
+          "start_line": 388,
+          "end_line": 414,
+          "source_sha256": "85e3a85f88a617d0b71692bd426e03c37e8b729249d5cc5b671115b4165f613b"
+        },
+        {
+          "source_id": "C_SEL",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py",
+          "start_line": 811,
+          "end_line": 819,
+          "source_sha256": "85e3a85f88a617d0b71692bd426e03c37e8b729249d5cc5b671115b4165f613b"
+        },
+        {
+          "source_id": "C_SEL",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py",
+          "start_line": 1561,
+          "end_line": 1575,
+          "source_sha256": "85e3a85f88a617d0b71692bd426e03c37e8b729249d5cc5b671115b4165f613b"
+        }
+      ],
+      "location_index": "Origin-province state, then (a,b,z) cell; not province N",
+      "time_position": "local (a,b,z) cell and policy derivative",
+      "tax_position": "net_wage used in FOC and budget; same price, not two tax deductions",
+      "confidence": "PROVEN_STATIC_SOURCE_FLOW",
+      "edge_kind": "STATIC_CALL_OR_ASSIGNMENT",
+      "runtime_executed": false
+    }
+  ],
+  "blocked_edges": [
+    {
+      "source": "NBS_A_NONPRIVATE_LIKELY",
+      "consumer": "LOAD/FIRM/W/HA/NORMALIZED",
+      "status": "BLOCKED_NO_IMPLEMENTED_DATA_BRIDGE_ESTABLISHED_IN_READ_SCOPE",
+      "evidence": "Scoped literal src+validators search: zero references to the new raw-candidate directory names/receipt tags; existing annual loader reads GDP/capital/resident-population sources and accepts wage scalars. No claim about all dynamic/out-of-scope code.",
+      "required": "Indicator identity, units, time/tax/statistical population, approved model target and production provenance"
+    },
+    {
+      "source": "NBS_B_PRIVATE",
+      "consumer": "LOAD/FIRM/W/HA/NORMALIZED",
+      "status": "BLOCKED_NO_IMPLEMENTED_DATA_BRIDGE_ESTABLISHED_IN_READ_SCOPE",
+      "evidence": "Scoped literal src+validators search: zero references to the new raw-candidate directory names/receipt tags; existing annual loader reads GDP/capital/resident-population sources and accepts wage scalars. No claim about all dynamic/out-of-scope code.",
+      "required": "Indicator identity, units, time/tax/statistical population, approved model target and production provenance"
+    },
+    {
+      "source": "NBS_C_BILL",
+      "consumer": "LOAD/FIRM/W/HA/NORMALIZED",
+      "status": "BLOCKED_NO_IMPLEMENTED_DATA_BRIDGE_ESTABLISHED_IN_READ_SCOPE",
+      "evidence": "Scoped literal src+validators search: zero references to the new raw-candidate directory names/receipt tags; existing annual loader reads GDP/capital/resident-population sources and accepts wage scalars. No claim about all dynamic/out-of-scope code.",
+      "required": "Indicator identity, units, time/tax/statistical population, approved model target and production provenance"
+    },
+    {
+      "source": "P2_INPUT+P3_MIG+UNWIRED_HELPER",
+      "consumer": "CURRENT_DIRECT",
+      "status": "PRODUCTION_CLOSURE_UNPROVEN",
+      "required": "Actual common-snapshot production callback/import binding, initializer parity and 31-province ID/array join. Historical isolated patches are not a combined production execution."
+    }
+  ],
+  "orientation_convention": "Python/MATLAB bilateral rows=destination, columns=origin; TeX c5 L^j_it uses i=workplace,j=origin; factory-variety j is a distinct namespace",
+  "confidence_policy": "PROVEN_STATIC_SOURCE_FLOW means literal expression/call present, not reachability, execution, numerical validity or scientific acceptance",
+  "no_project_import_or_execution": true
+}

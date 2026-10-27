@@ -1,0 +1,142 @@
+{
+  "task_id": "CH5_TEMP31_WAGE_LABOR_TAX_SEMANTICS_STATIC_AUDIT_R1_20261027",
+  "fixed_task_commit": "a4476b1873b0950cf4fbd3d10122de41cd981dec",
+  "governance_parent": "79b0502feae4c400be3a1cdbd7aad3aa67c55004",
+  "candidate_branch": "codex/ch5-temp31-wage-labor-tax-semantics-20261027-r1",
+  "date": "2026-10-27",
+  "timezone": "Asia/Shanghai",
+  "gates": {
+    "A": {
+      "status": "COMPLETED_BOUNDED_SOURCE_IDENTITY",
+      "original_archives_verified": true,
+      "historical_ref": "ba98537fd5ae004f0aa37d319865da1f1739e503",
+      "next_action": "No source recovery or new downloads required"
+    },
+    "B": {
+      "status": "COMPLETED_BOUNDED_STATIC_TRACE__PRODUCTION_CLOSURE_BLOCKED",
+      "source_excerpts": 116,
+      "lineage_edges": 25,
+      "runtime_executed": false,
+      "next_action": "Independent review of fixed evidence; no automatic implementation"
+    },
+    "C": {
+      "status": "COMPLETED_BOUNDED_CORRESPONDENCE_MATRIX__NO_MODEL_ADOPTION",
+      "data_sources": 3,
+      "actual_targets": 9,
+      "matrix_cells": 27,
+      "direct_matches": 0,
+      "next_action": "Owner decides any future evidence scope; no conversion or successor authorized"
+    }
+  },
+  "budgets": {
+    "science_execution": 0,
+    "numeric_model": 0,
+    "tests": 0,
+    "preflights": 0,
+    "model_calls": 0,
+    "HA_HJB_KFE_GE_IRF": 0,
+    "formal_source_writes": 0,
+    "data_rewrites": 0,
+    "external_data_downloads": 0
+  },
+  "protected_markers": {
+    "FORMAL_SOURCE_FREEZE": false,
+    "V010": "UNCHANGED",
+    "V011": "NOT_STARTED",
+    "Results": false,
+    "model_activation": false,
+    "REAL_GE": false,
+    "FULL_RUNNER_IO_CLOSURE": "BLOCKED"
+  },
+  "protected_state_baseline": {
+    "head": "a1db8c114dec0ab69d69a5576e153a7f868cba0e",
+    "branch": "codex/ch5-mp4c-k1b-turn5-turn6-bounded-continuation-20260922",
+    "index_sha256": "28058a7e2d9ab773c5813205c75999e6c221533aeae0b9bb094b9a83451bf7cc",
+    "refs_sha256": "600912e7f3dabd0661d2314f533bb432d95cf4bd35b622ab5b16d6149e3c6729",
+    "refs_count": 243,
+    "status_sha256": "c443420c888f5e776cfb6cd05b27cbed56e58a787b82639aa23a47ce7f2ac2f3",
+    "status_null_record_count": 5971,
+    "protected": [
+      {
+        "path": "AGENTS.md",
+        "bytes": 132027,
+        "sha256": "d42041e26da7e795e3ae5c236e0029a8a356e14c8058ffa6f95383494f031b3e"
+      },
+      {
+        "path": "CURRENT.md",
+        "bytes": 337540,
+        "sha256": "3133011df542cbef25ff23b48996a35d7c3f98c8a5444417746faf8248e1737f"
+      },
+      {
+        "path": "TASK_CURRENT.md",
+        "bytes": 266971,
+        "sha256": "10749bcb69ba8fdd3807a511b20d64786627ec701706af421acd13550bf39b11"
+      },
+      {
+        "path": "docs/CH5_GITHUB_WORKFLOW_AUTHORITY_CURRENT_20261025.md",
+        "bytes": 2623,
+        "sha256": "36ea79e2d22a1ddef37d7d3db4bf419d5c8c4bdb8d67a8a2c98a54da297e4ecc"
+      },
+      {
+        "path": "docs/CH5_INDEPENDENT_REVIEW_RULES_20261025.md",
+        "bytes": 1424,
+        "sha256": "413e58b5fc773805075bd9a6e95bf304c1b2c33845ad9bdca163440d1e42b620"
+      },
+      {
+        "path": "docs/CH5_ASTRA_WORKFLOW_CURRENT.md",
+        "bytes": 15676,
+        "sha256": "b3cab64d249ff768f98403e8ccbc6f8aaf7d04b009f66255d41f26fb842ec2a7"
+      },
+      {
+        "path": "data/external_sources/nbs_provincial_urban_unit_wage_20261027/分省年度数据_城镇单位就业人员平均工资(元).xlsx",
+        "bytes": 12652,
+        "sha256": "8bb799fc41da5728a52c4958b2da0641ccbc81470a8d6e377625d79b5816b176"
+      },
+      {
+        "path": "data/external_sources/nbs_provincial_urban_unit_wage_20261027/SOURCE_RECEIPT_20261027.json",
+        "bytes": 2291,
+        "sha256": "6d66a514fb672b245b018dac2dd513cd126d60a32a636acf2707c0b54450035a"
+      },
+      {
+        "path": "data/external_sources/nbs_wage_supplement_20261027/分省年度数据_城镇私营单位就业人员平均工(元).xlsx",
+        "bytes": 12411,
+        "sha256": "5c790a478a244ca12b4c3c2c682465683c64e2b36bbf1d6f5e430bd79b23f21a"
+      },
+      {
+        "path": "data/external_sources/nbs_wage_supplement_20261027/分省年度数据_城镇单位就业人员工资总额(亿元).xlsx",
+        "bytes": 13310,
+        "sha256": "f27313c73dc08e8217aeeefe147ce62d7bc0d7c463ecc651c54c7682682c9dc7"
+      },
+      {
+        "path": "data/external_sources/nbs_wage_supplement_20261027/SOURCE_RECEIPT_20261027.json",
+        "bytes": 6348,
+        "sha256": "87ef3d9a8a072a7eb4e029fb67187b218f7d45a2c21bcb79ad6ba9506628a2c3"
+      }
+    ]
+  },
+  "source_checkpoint": "All code is read as text/raw bytes only; no project module imports, compile, tests, synthetic calculations, HJB/KFE/HA/GE/IRF, or LaTeX compilation",
+  "tool_limits": [
+    {
+      "event": "Existing current-worktree code graph unavailable; MATLAB function search empty",
+      "handling": "Exact documented paths and source text fallback; no new index"
+    },
+    {
+      "event": "PowerShell metadata-only foreach/pipeline syntax error",
+      "handling": "Corrected shell syntax once before path checks ran; no source/model operation occurred"
+    },
+    {
+      "event": "Several tool outputs truncated due to long documentary metadata",
+      "handling": "Necessary exact excerpts subsequently read from complete private byte caches; truncated output never used as proof of unreturned content"
+    },
+    {
+      "event": "Executor prepublication privacy scan caught local path comments in original MATLAB excerpt",
+      "handling": "Public range selection excludes M_DATA lines75-78; original archive/code unchanged, provisional reports preserved locally; no remote payload publication before correction"
+    }
+  ],
+  "independent_completion_event": "UNKNOWN",
+  "delivery": "Remote identity/readback in delivery receipts; final seal identity external",
+  "cleanup": "NOT_AUTHORIZED_NOT_PERFORMED",
+  "auto_next": false,
+  "current_direct_consumer_scope": "Current frozen scalars -> imported _map_checkpoint/_cell -> selector control expressions and initializer read as text; independent Option-A expression separately labelled",
+  "draft_preservation": "Earlier provisional reports preserved locally before extending direct current consumers; no original source/data/history changed"
+}

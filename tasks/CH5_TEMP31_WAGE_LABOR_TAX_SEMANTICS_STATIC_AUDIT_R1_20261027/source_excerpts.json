@@ -1,0 +1,1176 @@
+{
+  "task_id": "CH5_TEMP31_WAGE_LABOR_TAX_SEMANTICS_STATIC_AUDIT_R1_20261027",
+  "scope": "Necessary bounded equations and source expressions only. No full thesis, archive, workbook, or salary-value table is included.",
+  "transformation": "Exact decoded lines, source line numbers retained; line endings represented as LF in excerpts only. Originals are never normalized or written.",
+  "excerpts": [
+    {
+      "excerpt_id": "T5_L30_35",
+      "source_id": "T5",
+      "path": "docs/project_sources_offline/博士论文tex.zip!c5.tex",
+      "start_line": 30,
+      "end_line": 35,
+      "source_sha256": "9193fd7aef06478f2bbf20f81bed0d14d42870dd924ff5b1cefc296cb18c6ae9",
+      "excerpt_sha256": "8894b9d87a5c86e7c1c405f14337d8ef668f675f0e809a59e741b2ff5f64f7d5",
+      "text": "假设经济体中共有$N\\in \\mathbb{N}$个省份，因此每个省份中的家户都有$N$个劳动供给决策，当前省份的家户在时间点对第$j$个省份提供的劳动供给就可以记作$l_{j,t}$。家户的效用函数为CRRA效用函数，则家户的最优化问题可以描述为：\n\\begin{equation}\n\tU(c_t,l_{1,t},...,l_{N,t}) = \\frac{c_t^{1-\\gamma_c}}{1-\\gamma_c} -  \\sum\\limits_{j=1}\\limits^{N} { \\varphi_j \\frac{l_{j,t}^{1+\\phi}}{1+\\phi} }\n\\end{equation}\n\n其中$\\varphi_j$代表家户去第$j$个省份工作的厌恶程度，$\\phi$代表家户弗里茨弹性的倒数。为了便于求解，这里假设家户去不同省份工作造成的效用损失比例不同，但是因为劳动本身无差异，所以不同省份的劳动弹性相同。\n"
+    },
+    {
+      "excerpt_id": "T5_L38_57",
+      "source_id": "T5",
+      "path": "docs/project_sources_offline/博士论文tex.zip!c5.tex",
+      "start_line": 38,
+      "end_line": 57,
+      "source_sha256": "9193fd7aef06478f2bbf20f81bed0d14d42870dd924ff5b1cefc296cb18c6ae9",
+      "excerpt_sha256": "15ebca8731cd781146dbb3e48f2122dfa19cfb074d64bd91efe7a1cfa12c95ef",
+      "text": "\\begin{equation}\n\t\\begin{aligned}\n\t\t\\dot{b} &= r_b b_t + \\sum\\limits_{j=1}\\limits^{N} { w_{j,t} \\left(1 - \\tau - \\sigma_j \\right) z_t l_{j,t} } - d_t - \\chi(d_t, a_t) - c_t \\\\\n\t\t\\dot{a} &= r_a a_t + d_t\n\t\\end{aligned}\n\\end{equation}\n\n其中$w_{j,t}$为第$j$个省份在时间点$t$提供的平均工资率，$\\tau$为全国统一的工资税率，$\\sigma_j$为家户去第$j$个省份工作的迁移成本，迁移成本仅和省份之间的距离有关，因此家户在本省工作时迁移成本为0。$d_t$为家户在时间点t的储蓄额，代表家户从流动性资产（通常是现金）账户向非流动性资产账户转入的额度，$d_t<0$则代表家户从非流动性资产账户提取资金。$\\chi$代表修改非流动性资产账户的资金转移成本。\n\n参考第三章的省级异质性主体框架算法，通过求解家户效用的最优化问题，可以得到家户的总劳动供给和平均工资率：\n\\begin{equation}\n\t\\begin{aligned}\n\t\tl_{j,t} &= c_t^{-\\frac{\\gamma_c}{\\phi}} \\left( w_{j,t} z_t \\frac{1 - \\tau - \\sigma_j}{\\varphi_j}\\right)^{\\frac{1}{\\phi}},\\ j \\in [1,...,N],\\\\\n\t\tl_t & = c_t^{-\\frac{\\gamma_c}{\\phi}} \\varphi^{-\\frac{1}{1+\\phi}} \\left[\\sum\\limits_{j=1}\\limits^{N} { \\varphi_j \\left( w_{j,t} z_t\\frac{1 - \\tau - \\sigma_j}{\\varphi_j}\\right)^{1+\\frac{1}{\\phi}}}\\right] ^ {\\frac{1}{1+\\phi}},\\\\\n\t\tw_t &= \\varphi^{-\\frac{\\phi}{1+\\phi}} \\left[\\sum\\limits_{j=1}\\limits^{N} { \\varphi_j \\left( w_{j,t} \\frac{1 - \\tau - \\sigma_j}{\\varphi_j}\\right)^{1+\\frac{1}{\\phi}}}\\right] ^ {\\frac{\\phi}{1+\\phi}},\\\\\n\t\tw_t z_t l_t &= c_t^{\\gamma_c} \\varphi l_t^{1+\\phi} = l_t \\varphi^{-\\frac{\\phi}{1+\\phi}} z_t \\left[\\sum\\limits_{j=1}\\limits^{N} { \\varphi_j \\left( w_{j,t} \\frac{1 - \\tau - \\sigma_j}{\\varphi_j}\\right)^{1+\\frac{1}{\\phi}}}\\right] ^ {\\frac{\\phi}{1+\\phi}}.\n\t\\end{aligned}\n\\end{equation}\n\n其中$l_t$和$w_t$为本省家户的总劳动供给和总平均工资。\n"
+    },
+    {
+      "excerpt_id": "T5_L117_125",
+      "source_id": "T5",
+      "path": "docs/project_sources_offline/博士论文tex.zip!c5.tex",
+      "start_line": 117,
+      "end_line": 125,
+      "source_sha256": "9193fd7aef06478f2bbf20f81bed0d14d42870dd924ff5b1cefc296cb18c6ae9",
+      "excerpt_sha256": "d9e3b1d2ab58665acf93e83053d159e0d081d104f9cc6a5fcf0d097df1de7ec4",
+      "text": "\\begin{equation}\n\t\\begin{aligned}\n\t\t&Ls^i_t = \\sum_{j=1}^{N} L^j_{it} N^j_t, \\quad L^j_{it} = \\int z^j_t l^j_{it} d g^j_t. \\\\\n\t\t&Ks^i_t = (1-\\kappa^i) A^i_{t} N^i_t + \\frac{\\sum_{j \\neq i} \\kappa^j A^j_{t} N^j_t}{N-1} + Kg^i_t, \\quad A^i_{t} = \\int a^i_{t} d g^i_t. \\\\\n\t\t&Y^i_t = Z^i_t (Ks^i_t)^{\\alpha^i}(Ls^i_t)^{1-\\alpha^i}.\n\t\\end{aligned}\n\\end{equation}\n\n其中$g^j_t$代表第$j$个省份的家户分布函数，$N^j_t$为该省的人口规模，$\\kappa^j$为该省份家户的跨省投资比例，每个省的家户都会均匀购买其余30个省份的非流动性资产。第$i$个省份的劳动供给等同于全国家户对该省的有效劳动供给$L^j_{it} N^j_t$之和，而资本供给等于本省的家户资产与政府资产$Kg^i_t$之和。\n"
+    },
+    {
+      "excerpt_id": "T5_L135_141",
+      "source_id": "T5",
+      "path": "docs/project_sources_offline/博士论文tex.zip!c5.tex",
+      "start_line": 135,
+      "end_line": 141,
+      "source_sha256": "9193fd7aef06478f2bbf20f81bed0d14d42870dd924ff5b1cefc296cb18c6ae9",
+      "excerpt_sha256": "04fc9e45bcee9b5c40195c27b236e5ea5624bebcffa36bb152c85da730d755b3",
+      "text": "第$i$个省份的劳动和资本的边际产量为：\n\\begin{equation}\n\t\\begin{aligned}\n\t\tw^i_t = mc^i_t Z^i_t (1-\\alpha^i) \\left(\\frac{Ks^i_t}{Ls^i_t}\\right)^{\\alpha^i}, \\\\\n\t\tr^i_{kt} = mc^i_t Z^i_t \\alpha^i \\left(\\frac{Ls^i_t}{Ks^i_t}\\right)^{1-\\alpha^i}.\n\t\\end{aligned}\n\\end{equation}\n"
+    },
+    {
+      "excerpt_id": "T5_L155_164",
+      "source_id": "T5",
+      "path": "docs/project_sources_offline/博士论文tex.zip!c5.tex",
+      "start_line": 155,
+      "end_line": 164,
+      "source_sha256": "9193fd7aef06478f2bbf20f81bed0d14d42870dd924ff5b1cefc296cb18c6ae9",
+      "excerpt_sha256": "78c433d666696b34f6b2051b837e36b7fffb02b00cf3496f1107f113f45dcd0c",
+      "text": "\\xsubsection{中央银行和政府部门}{Central Bank and Government Sector}\n\n本章的省级异质性主体新凯恩斯框架中，所有省份接受统一的政府税率与央行。\n政府允许拥有盈余项，政府收入和支出分别为：\n\\begin{equation}\n\t\\begin{aligned}\n\t\tGovInc = \\sum_{j=1}^{31} \\left\\{\\Pi^i_t \\tau^i_{firm} +  Ls^j_t \\tau + Kg^j_t r^j_{at}\\right\\} ,\\\\\n\t\tGovExp = \\sum_{j=1}^{31} \\left\\{ T^j_t + (Y^j_t + B^j_t) r_{b}\\right\\}\n\t\\end{aligned}\n\\end{equation}\n"
+    },
+    {
+      "excerpt_id": "T3_L48_53",
+      "source_id": "T3",
+      "path": "docs/project_sources_offline/博士论文tex.zip!c3.tex",
+      "start_line": 48,
+      "end_line": 53,
+      "source_sha256": "df6ad15190bc34023a89cd9eef36732929b641f3b3a4d98fcfc05427199ffc57",
+      "excerpt_sha256": "9807eb7f03d34fa8fecf3ce5c90d43fc5a4b5f04a18c0895c8c6675848fefa8a",
+      "text": "HANK模型中的政府部门允许财政存在赤字或盈余，其预算约束形式一般为：\n\\begin{equation}\n\tT_t + M_t r_b + S_t = L_t w_t \\tau_w + \\tau_{firm} \\Pi_t + Kg_t r_a\n\\end{equation}\n\n上式左侧为政府支出项，从左到右分别为对家户的转移支付总额、政府债券（也即货币总量）利息和政府盈余，右侧为政府收入项，主要包括工资税收、企业税收和政府投资收益。由于本文主要研究不同地区家户和企业在经济发展中的关联，政府部门在HANK模型中是中性部门，不具有最优化目标。\n"
+    },
+    {
+      "excerpt_id": "T3_L355_366",
+      "source_id": "T3",
+      "path": "docs/project_sources_offline/博士论文tex.zip!c3.tex",
+      "start_line": 355,
+      "end_line": 366,
+      "source_sha256": "df6ad15190bc34023a89cd9eef36732929b641f3b3a4d98fcfc05427199ffc57",
+      "excerpt_sha256": "9a8f8d60aa93a6d32ac43a795e1ee401529a88be30ee3ef1f4f62bb0e6c82743",
+      "text": "在HJB方程两侧，对消费和劳动分别求偏导可得一阶条件方程：\n\\begin{equation}\n\t\\begin{aligned}\n\t\tc_t^{-\\gamma_c} &= V_b\\\\\n\t\t\\varphi_j  l_{j,t}^{\\phi} &= V_b w_{j,t} \\left(1 - \\tau - \\sigma_j \\right) z_t ,\\ j \\in [1,N] \\\\\n\t\\end{aligned}\n\\end{equation}\n\n上式的共同点是右侧都有值函数的偏导数$V_b$，并且值函数的偏导数必然不等于零，因此可以对劳动的一阶条件进行化简：\n\\begin{equation} \\label{ljt_func}\n\tl_{j,t}= c_t^{-\\frac{\\gamma_c}{\\phi}} \\left( w_{j,t} z_t \\frac{1 - \\tau - \\sigma_j}{\\varphi_j}\\right)^{\\frac{1}{\\phi}},\\ j \\in [1,...,N]\n\\end{equation}\n"
+    },
+    {
+      "excerpt_id": "T3_L369_379",
+      "source_id": "T3",
+      "path": "docs/project_sources_offline/博士论文tex.zip!c3.tex",
+      "start_line": 369,
+      "end_line": 379,
+      "source_sha256": "df6ad15190bc34023a89cd9eef36732929b641f3b3a4d98fcfc05427199ffc57",
+      "excerpt_sha256": "456216029b2bdbdb7c905af3a705e35badba6e7dfb8ab71cdd3e63883493ff87",
+      "text": "\\begin{equation}\n\t\\begin{aligned}\n\t\tw_t z_t l_t &= \\sum\\limits_{j=1}\\limits^{N} w_{j,t} \\left(1 - \\tau - \\sigma_j\\right) z_t  l_{j,t} \\\\\n\t\tU(c_t,l_t) &= \\frac{c_t^{1-\\gamma_c}}{1-\\gamma_c} - \\varphi \\frac{l_t^{1+\\phi}}{1+\\phi} = \t\\frac{c_t^{1-\\gamma_c}}{1-\\gamma_c} -  \\sum\\limits_{j=1}\\limits^{N} { \\varphi_j \\frac{l_{j,t}^{1+\\phi}}{1+\\phi} }\n\t\\end{aligned}\n\\end{equation}\n\n上面第二个方程中，可以将两侧的消费项消去后得到总劳动供给和各省份劳动供给的替代方程：\n\\begin{equation}\n\t\\varphi l_t^{1+\\phi} = \\sum\\limits_{j=1}\\limits^{N} { \\varphi_j  l_{j,t}^{1+\\phi} } \n\\end{equation}\n"
+    },
+    {
+      "excerpt_id": "T3_L383_387",
+      "source_id": "T3",
+      "path": "docs/project_sources_offline/博士论文tex.zip!c3.tex",
+      "start_line": 383,
+      "end_line": 387,
+      "source_sha256": "df6ad15190bc34023a89cd9eef36732929b641f3b3a4d98fcfc05427199ffc57",
+      "excerpt_sha256": "66c93113989dd14ff277b7bcf1f26a038405f84e1ff12f53e95f3c4366a0d492",
+      "text": "\\begin{equation} \\label{lt_func}\n\t\\begin{aligned}\n\t\t\\varphi l_t^{1+\\phi} = \\sum\\limits_{j=1}\\limits^{N} { \\varphi_j  l_{j,t}^{1+\\phi} }  &= c_t^{-\\frac{\\gamma_c(1+\\phi)}{\\phi}} \\sum\\limits_{j=1}\\limits^{N} { \\varphi_j \\left( w_{j,t} z_t\\frac{1 - \\tau - \\sigma_j}{\\varphi_j}\\right)^{1+\\frac{1}{\\phi}}}, \\\\\n\t\tl_t & = c_t^{-\\frac{\\gamma_c}{\\phi}} \\varphi^{-\\frac{1}{1+\\phi}} \\left[\\sum\\limits_{j=1}\\limits^{N} { \\varphi_j \\left( w_{j,t} z_t\\frac{1 - \\tau - \\sigma_j}{\\varphi_j}\\right)^{1+\\frac{1}{\\phi}}}\\right] ^ {\\frac{1}{1+\\phi}}\n\t\\end{aligned}\n"
+    },
+    {
+      "excerpt_id": "T3_L397_404",
+      "source_id": "T3",
+      "path": "docs/project_sources_offline/博士论文tex.zip!c3.tex",
+      "start_line": 397,
+      "end_line": 404,
+      "source_sha256": "df6ad15190bc34023a89cd9eef36732929b641f3b3a4d98fcfc05427199ffc57",
+      "excerpt_sha256": "f968414656d5c3cd634b2175d5b7b921e537084098114cd45a0550446b45647f",
+      "text": "\\begin{equation}\n\t\\begin{aligned}\n\t\tw_t z_t l_t &= c_t^{\\gamma_c} \\varphi l_t^{1+\\phi} = l_t \\varphi^{-\\frac{\\phi}{1+\\phi}} z_t \\left[\\sum\\limits_{j=1}\\limits^{N} { \\varphi_j \\left( w_{j,t} \\frac{1 - \\tau - \\sigma_j}{\\varphi_j}\\right)^{1+\\frac{1}{\\phi}}}\\right] ^ {\\frac{\\phi}{1+\\phi}},\\\\\n\t\tw_t &= \\varphi^{-\\frac{\\phi}{1+\\phi}} \\left[\\sum\\limits_{j=1}\\limits^{N} { \\varphi_j \\left( w_{j,t} \\frac{1 - \\tau - \\sigma_j}{\\varphi_j}\\right)^{1+\\frac{1}{\\phi}}}\\right] ^ {\\frac{\\phi}{1+\\phi}}\n\t\\end{aligned}\n\\end{equation}\n\n目前为止，我们已经完成了对家户的总劳动$l_t$和总工资$w_t$的推导，并且总劳动的效用厌恶系数$\\varphi$是可以设定的外生参数，后续这个HJB问题的求解就转化成了经典的单劳动供给两资产模型的求解。在求解完成后，每个省份的劳动供给可以由\\ref{ljt_func}反推出来。\n"
+    },
+    {
+      "excerpt_id": "P1_T3_L397_402",
+      "source_id": "P1_T3",
+      "path": "dissertation/c3.tex",
+      "start_line": 397,
+      "end_line": 402,
+      "source_sha256": "c51b86fa85dfef5e9f9412737981743c21371461b34b9e77e689ddca5579cad0",
+      "excerpt_sha256": "ec20767b83346a3b103d34478ca0f4a0de457462eecbbf61463098f81a09e482",
+      "text": "\\begin{equation}\n\t\\begin{aligned}\n\t\tw_t z_t l_t &= c_t^{\\gamma_c} \\varphi l_t^{1+\\phi} = l_t \\varphi^{\\frac{1}{1+\\phi}} z_t \\left[\\sum\\limits_{j=1}\\limits^{N} { \\varphi_j \\left( w_{j,t} \\frac{1 - \\tau - \\sigma_j}{\\varphi_j}\\right)^{1+\\frac{1}{\\phi}}}\\right] ^ {\\frac{\\phi}{1+\\phi}},\\\\\n\t\tw_t &= \\varphi^{\\frac{1}{1+\\phi}} \\left[\\sum\\limits_{j=1}\\limits^{N} { \\varphi_j \\left( w_{j,t} \\frac{1 - \\tau - \\sigma_j}{\\varphi_j}\\right)^{1+\\frac{1}{\\phi}}}\\right] ^ {\\frac{\\phi}{1+\\phi}}\n\t\\end{aligned}\n\\end{equation}\n"
+    },
+    {
+      "excerpt_id": "M_W_L1_11",
+      "source_id": "M_W",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!wage_caculate.m",
+      "start_line": 1,
+      "end_line": 11,
+      "source_sha256": "0fb84b51e2be50cd3d065d33385882311a31e12596aeeb0ce2c808a8c36b6a63",
+      "excerpt_sha256": "9f9e639eb1110b01b0f0661a007b452a205f8bea5ac6530ec9493170dd2e3a18",
+      "text": "function wt_vec = wage_caculate(results, param, phi_l_mat, sigmau_MAT, N_prov)\n% 论文中的平均工资计算\nwt_vec = zeros(N_prov,1);\nfor i = 1:N_prov\n\ttemp = 0;\n\n\tfor j = 1:N_prov\n\t\ttemp = temp + phi_l_mat(j,i)*(results{j}.wjt*(1 - results{j}.tau - sigmau_MAT(j,i))/phi_l_mat(j,i))^(1+1/param.phi_l);\n\tend\n\t\n\twt_vec(i) = param.alphal^(-param.phi_l/(1+param.phi_l)) * temp^(param.phi_l/(1+param.phi_l));\n"
+    },
+    {
+      "excerpt_id": "M_L_L1_15",
+      "source_id": "M_L",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!Lt_seperate.m",
+      "start_line": 1,
+      "end_line": 15,
+      "source_sha256": "d30519ad81837e8eb5ebfe74bf25cc770e40b5c5ae5a254951ad97d436cace26",
+      "excerpt_sha256": "29ce2a24af5b2551c5d3e1a5ac05f1c4cbfbfcc91f7667eee14c449c8cd39b3c",
+      "text": "function Lt_mat = Lt_seperate(results, param, phi_mat, sigmau_MAT, N_prov)\n% 这个函数专门拆解并计算家户部门的劳动迁移结果\nLt_mat = zeros(N_prov,N_prov);\nfor i = 1:N_prov\n\tfor j = 1:N_prov\n\t% Lt_mat(j,i)代表的是省份i的家户去省份j工作的平均个人时长，因此最后要乘以省份i的人口规模\n\tLt_mat(j,i) = results{i}.Ct^(-param.ga/param.phi_l) * (results{j}.wjt * (1-results{i}.tau - sigmau_MAT(j,i))/phi_mat(j,i))^(1/param.phi_l);\n\tif isreal(Lt_mat(j,i)) == 0\n\t\tdisp(['Lt_mat(j,i) = ',num2str(Lt_mat(j,i))])\n\t\tdisp(['相关参数：sigmau_MAT, phi_mat, paramphi_l, results.wjt, 以及((results{j}.wjt * (1-results{i}.tau - sigmau_MAT(j,i))/phi_mat(j,i)))=', num2str(sigmau_MAT(j,i)), ', ', num2str(phi_mat(j,i)), ', ', num2str(param.phi_l), ', ', num2str(results{j}.wjt), ', 以及 ', num2str((results{j}.wjt * (1-results{i}.tau - sigmau_MAT(j,i))/phi_mat(j,i))), ', ', num2str(results{i}.Ct)])\n\t\terror('Lt_mat计算出现虚数！')\n\tend\n\tend\n\tLt_mat(:,i) = Lt_mat(:,i) * results{i}.N; % 要乘以各省的人口规模\n\t%disp([\"检查Lt综合：Lt_total/Lt_sum=\", num2str(results{i}.Lt*results{i}.N), ' / ', num2str(sum(Lt_mat(:,i),'all'))])\n"
+    },
+    {
+      "excerpt_id": "M_F_L1_14",
+      "source_id": "M_F",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!HANK_firm.m",
+      "start_line": 1,
+      "end_line": 14,
+      "source_sha256": "ee02c15414adf9f99aade04f1f22e64fa7094c8ab77753b6130bc4bfa6ce7bd5",
+      "excerpt_sha256": "5b0bab28dcf6507cec97dbf47a23ebbca638fd694c4c34df75d27cf32838efcb",
+      "text": "function results = HANK_firm(param, grids, results, steadystate, show_result)\n%% 2023年12月6日 多省份HANK模型的企业部门求解\n%% 算法说明：暂时只会根据输入的劳动和资本存量来计算产出、工资。\n\t\n\tepsilon = param.epsilon;\n\ttheta = param.theta;\n\tdelta = param.delta;\n\tcorptau = results.corptau;\n\tLt = results.Lt_supply; % \n\t%if steadystate == 1\n\t%\tKt = results.Kt0; % 求解稳态时，资产固定为外生值\n\t%\tresults.GovInv = Kt - results.Kt_supply;\n\t%else\n\t\tKt = results.Kt_supply + results.GovInv; % 新算法，添加资产外溢效应\n"
+    },
+    {
+      "excerpt_id": "M_F_L29_45",
+      "source_id": "M_F",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!HANK_firm.m",
+      "start_line": 29,
+      "end_line": 45,
+      "source_sha256": "ee02c15414adf9f99aade04f1f22e64fa7094c8ab77753b6130bc4bfa6ce7bd5",
+      "excerpt_sha256": "4787a8ab7e1e4287ccdf021f9cd929ad9b80dad9fd3e9e5e5dc9a25a8c591652",
+      "text": "\t% 首先计算产出\n\tYt = Zt * Kt^alpha * Lt^(1-alpha);\n\t\n\t% NKPC曲线\n\tmstar = 1 - 1/epsilon; % 中间品厂商替代弹性，目标边际成本\n\tif steadystate == 1 % 求解稳态的时候\n\t\tmt = (rk - (Zt_1-Zt)/Zt - alpha*(Kt_1-Kt)/Kt -(1-alpha)*(Lt_1-Lt)/Lt)*pit*theta/epsilon + mstar - (pit-pit_1)*theta/epsilon;\n\telse % 求解冲击响应的时候，用稳态值计算差额\n\t\tmt = (rk - (results.Zt_ss-Zt)/Zt - alpha*(results.Kt_ss-Kt)/Kt -(1-alpha)*(results.Lt_ss-Lt)/Lt)*pit*theta/epsilon + mstar - (pit-results.pit_ss)*theta/epsilon;\n\tend\n\t%mt = 1/Zt * (rk/alpha)^alpha * (results.wjt/(1-alpha))^(1-alpha);\n\t% 计算厂商收益率\n\tYdot = Yt - Yt_1;\n\tKNratio = Kt/Lt;\n\twt0 = mt*(1-alpha)*Zt*KNratio^alpha; % 劳动回报率\n\tKYratio = Kt/Yt;\n\trk = mt*alpha/KYratio; % 资本租金\n"
+    },
+    {
+      "excerpt_id": "M_F_L66_74",
+      "source_id": "M_F",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!HANK_firm.m",
+      "start_line": 66,
+      "end_line": 74,
+      "source_sha256": "ee02c15414adf9f99aade04f1f22e64fa7094c8ab77753b6130bc4bfa6ce7bd5",
+      "excerpt_sha256": "ec5113360a77c3749b8578e57eb01bb7167a640b5152d4ba946749f461347ac0",
+      "text": "\t\tif wt0 < grids.wjtmin\n\t\t\tCorptax = Corptax - (grids.wjtmin-wt0)*Lt; % 工资太低就用税收抵扣\n\t\t\twjt = grids.wjtmin;\n\t\telseif wt0 > grids.wjtmax\n\t\t\tCorptax = Corptax + (wt0-grids.wjtmax)*Lt;\n\t\t\twjt = grids.wjtmax;\n\t\telse\n\t\t\twjt = wt0;\n\t\tend\n"
+    },
+    {
+      "excerpt_id": "M_F_L80_98",
+      "source_id": "M_F",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!HANK_firm.m",
+      "start_line": 80,
+      "end_line": 98,
+      "source_sha256": "ee02c15414adf9f99aade04f1f22e64fa7094c8ab77753b6130bc4bfa6ce7bd5",
+      "excerpt_sha256": "31f95947847d545e253ff9b161e8558cc3eabb9a82956279ace6580acd6e0299",
+      "text": "\t% 保存结果\n\tresults.wjt = wjt; % wjt是一个省的工资率，家户的工资率是results.w\n\tresults.Yt = Yt;\n\tresults.Yt_1 = Yt_1;\n\tresults.ra = ra;\n\tresults.Kt_1 = Kt;\n\tresults.Kt = Kt;\n\tresults.Lt_1 = Lt;\n\tresults.Lt = Lt;\n\tresults.Ct_total = results.Ct * results.N;\n\tresults.Zt_1 = Zt;\n\tresults.Zt = Zt;\n\tresults.pit_1 = pit;\n\tresults.mt = mt;\n\tresults.rk = rk;\n\tresults.Govinc = Corptax + Lt*results.tau + results.AtTax + results.GovInv*ra - results.Tt;% 省政府的收入\n\tresults.Corptax = Corptax;\n\tresults.Thetat = Thetat;\n\tresults.KNratio = KNratio;\n"
+    },
+    {
+      "excerpt_id": "M_H_L26_31",
+      "source_id": "M_H",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!HANK_2ASSETS_HJB.m",
+      "start_line": 26,
+      "end_line": 31,
+      "source_sha256": "049136b769560040bc678f828f5d3ec5338ddcaa2090d6bed4e40732f56c3eae",
+      "excerpt_sha256": "0aa55568c6b1781890297ebe08b8597c39bf05576fadfb6ab6d05525e9596575",
+      "text": "\trb\t\t=\tresults.rb;\n\trah\t\t=\tresults.rah;\n\tw\t\t=\tresults.w;\n\trb_gap\t=\tresults.rb_gap;\n\ttau\t\t=\tresults.tau;\n\tTt\t=\tresults.Tt;\n"
+    },
+    {
+      "excerpt_id": "M_H_L100_112",
+      "source_id": "M_H",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!HANK_2ASSETS_HJB.m",
+      "start_line": 100,
+      "end_line": 112,
+      "source_sha256": "049136b769560040bc678f828f5d3ec5338ddcaa2090d6bed4e40732f56c3eae",
+      "excerpt_sha256": "fa5d065a47755cce0bafed4f82b6bc040fccbed71935915bbe4a663fe828e1de",
+      "text": "\tfor nz = 1:Nz\n\t\t\tfor j = 1:J\n\t\t\t\tfor i = 1:I\n\t\t\t\t\tparams = [alphac,alphal, tau, w, zzz(i,j,nz), frisch_l, tempMat(i,j,nz), ga]; \n\t\t\t\t\tmyfun = @(l) lab_solve2(l, params); \n\t\t\t\t\tx0 = ((1-tau)*w*zzz(i,j,nz))^(frisch_l*(1-ga)/(1+ga*frisch_l)); \n\t\t\t\t\t[l0j,fval,exitflag] = fzero(myfun,x0,options); \n\t\t\t\t\tl0(i,j,nz)= l0j;\n\t\t\t\tend\n\t\t\tend\n\tend\n\tc0 = (1-tau).*w.*zzz.*l0 + Rb.*bbb + Tt; \n\tv02 = (c0.^(1-ga)./(1-ga) * alphac - alphal*l0.^(1+1/frisch_l)./(1+1/frisch_l))./ rho;\n"
+    },
+    {
+      "excerpt_id": "M_H_L115_130",
+      "source_id": "M_H",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!HANK_2ASSETS_HJB.m",
+      "start_line": 115,
+      "end_line": 130,
+      "source_sha256": "049136b769560040bc678f828f5d3ec5338ddcaa2090d6bed4e40732f56c3eae",
+      "excerpt_sha256": "aa7fa940554b66a37ba5a129c652e3eb284c40e021be9fb73469a496cf91fd0a",
+      "text": "\t\tV = v;\n\t\tVbF(1:I-1,:,:) = (V(2:I,:,:)-V(1:I-1,:,:))/db;\n\t\tVbF(I,:,:) = alphac*((1-tau).*w.*zzz(I,:,:).*l0(I,:,:) + Tt + Rb(I,:,:).*bbb(I,:,:)).^(-ga);\n\t\tVbB(2:I,:,:) = (V(2:I,:,:)-V(1:I-1,:,:))/db;\n\t\tVbB(1,:,:) = alphac*((1-tau).*w.*zzz(1,:,:).*l0(1,:,:) + Tt + Rb(1,:,:).*bbb(1,:,:)).^(-ga);\n\t\tVahF(:,1:J-1,:) = (V(:,2:J,:)-V(:,1:J-1,:))/dah;\n\t\tVahB(:,2:J,:) = (V(:,2:J,:)-V(:,1:J-1,:))/dah;\n\t\tVahF(:,J,:) = zeros(I,1,Nz);\n\t\tVahB(:,1,:) = zeros(I,1,Nz);\n\t\tC_B = max(VbB/alphac,10^(-6)/alphac).^(-1/ga);\n\t\tC_F = max(VbF/alphac,10^(-6)/alphac).^(-1/ga);\n\t\tC_0 = (1-tau)*w.*zzz.*l0 + Tt + Rb.*bbb;\n\t\tl_B = (max(VbB,10^(-6))*(1-tau)*w.*zzz/alphal).^frisch_l;\n\t\tl_F = (max(VbF,10^(-6))*(1-tau)*w.*zzz/alphal).^frisch_l;\n\t\tsc_B = (1-tau)*w.*zzz.*l_B + Tt + Rb.*bbb - C_B;\n\t\tsc_F = (1-tau)*w.*zzz.*l_F + Tt + Rb.*bbb - C_F;\n"
+    },
+    {
+      "excerpt_id": "M_H_L343_354",
+      "source_id": "M_H",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!HANK_2ASSETS_HJB.m",
+      "start_line": 343,
+      "end_line": 354,
+      "source_sha256": "049136b769560040bc678f828f5d3ec5338ddcaa2090d6bed4e40732f56c3eae",
+      "excerpt_sha256": "fc1c1e62c747a276bd76e41c6e0e0b8502488bdbdd1409385f7e3346be7c80bc",
+      "text": "\tg(:,:,1) = reshape(g_stacked(1:I*J),[I,J]);\n\tg(:,:,2) = reshape(g_stacked(I*J+1:I*J*2),[I,J]);\n\tsumg = sum(g*dah*db , 'all');\n\tmaxg = max(abs(g), [] , 'all');\n\tLt = sum(zzz.*l.*g*dah*db , 'all');\n\tBt = sum(bbb.*g*dah*db , 'all');\n\tBt_pos = sum(bbb.*(bbb>=0).*g*dah*db, 'all');\n\tBt_neg = abs( sum(bbb.*(bbb<0).*g*dah*db, 'all') );\n\tAht = sum(aaah.*g*dah*db, 'all');\n\tBdotres = sum(((1-tau)*w*zzz.*l + Rb.*bbb + Tt - Cmin  - dh - HANK3_cost(results,CHIh,dh,aaah,0) - C).*g*dah*db , 'all');\n\tIncome = (1-tau)*w*zzz.*l + Rb.*bbb + Tt - Cmin  - dh - HANK3_cost(results,CHIh,dh,aaah,0);\n\tCt = sum(C.*g*dah*db, 'all');\n"
+    },
+    {
+      "excerpt_id": "M_H_L390_400",
+      "source_id": "M_H",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!HANK_2ASSETS_HJB.m",
+      "start_line": 390,
+      "end_line": 400,
+      "source_sha256": "049136b769560040bc678f828f5d3ec5338ddcaa2090d6bed4e40732f56c3eae",
+      "excerpt_sha256": "c359bbc8789c3e62b009201ff2b36407cd6556f16be2fd5fbff24e5403b8adf4",
+      "text": "\t%results.Income = Income;\n\tresults.min_Household_Income = min_Household_Income;\n\t%results.MPC = MPC;\n\t%results.u = u;\n\tresults.l = zzz.*l.*g*dah*db;\n\t%results.s = s;\n\t%results.V = V;\n\tresults.Lt = Lt;\n\tresults.Bt = Bt;\n\tresults.Bt_pos = Bt_pos;\n\tresults.Bt_neg = Bt_neg;\n"
+    },
+    {
+      "excerpt_id": "M_O_L1_16",
+      "source_id": "M_O",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!HANK_mp_1turn.m",
+      "start_line": 1,
+      "end_line": 16,
+      "source_sha256": "d3d03f37286ed66202673ea63d49babce8d5309bac9c13793c8e60585c21fecf",
+      "excerpt_sha256": "524305df94baa40db2e023ae983fa8a4f75b8c19b20c0319571fdcdc81faebee",
+      "text": "function [results, GDP_vec] = HANK_mp_1turn(results_temp, param, grids, num, CHI, sigmau_MAT, N_prov, show_result, steady_state)\n% 根据给定的数据，计算一轮的各省份数据。主要用于计算近似偏导。\n\t% 计算劳动厌恶系数矩阵\n\tphi_MAT = zeros(N_prov,N_prov); % 劳动相对厌恶系数矩阵，不进入HJB\n\tfor i = 1:N_prov\n\t\tfor j = 1:N_prov\n\t\t\t% 效用函数中，第i个省份的人去第j个省份工作时的劳动厌恶系数。目标地点人均GDP越高则这个厌恶系数越低，代表人们喜欢去发达地区工作。\n\t\t\t%phi_MAT(j,i) = 1 - param.max_phi*(results{j}.Yt/results{j}.Lt - results{i}.Yt/results{i}.Lt)/results{j}.Yt/results{j}.Lt; \n\t\t\t% 新算法，phi值最高为1+max_phi，最低为1-max_phi\n\t\t\tphi_MAT(j,i) = 1 + param.max_phi*(results_temp{j}.Yt/results_temp{j}.Lt - results_temp{i}.Yt/results_temp{i}.Lt)/(results_temp{j}.Yt/results_temp{j}.Lt + results_temp{i}.Yt/results_temp{i}.Lt); \n\t\tend\n\tend\n\t% 计算每个省份的家户部门，粗略算出当前轮次的总产出\n\t\tfor i = 1:N_prov\n\t\t\tresults{i} = HANK_2ASSETS_HJB(param, grids{i}, num, CHI, results_temp{i}, show_result);\n\t\tend\n"
+    },
+    {
+      "excerpt_id": "M_O_L21_25",
+      "source_id": "M_O",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!HANK_mp_1turn.m",
+      "start_line": 21,
+      "end_line": 25,
+      "source_sha256": "d3d03f37286ed66202673ea63d49babce8d5309bac9c13793c8e60585c21fecf",
+      "excerpt_sha256": "398fbe13a575f96e633a54986e3d94b480606bc87eb2267325b866980bd5fc21",
+      "text": "\t% 计算每个省份的劳动流向，然后更新每个省的总劳动供给\n\t% 2024年6月5日更新：保存劳动力流向矩阵，方面画图。\n\tLt_mat = Lt_seperate(results, param, phi_MAT, sigmau_MAT, N_prov);\n\t\tfor i = 1:N_prov\n\t\t\tresults{i}.Lt_supply = sum(Lt_mat(i,:), 'all');\n"
+    },
+    {
+      "excerpt_id": "M_O_L44_53",
+      "source_id": "M_O",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!HANK_mp_1turn.m",
+      "start_line": 44,
+      "end_line": 53,
+      "source_sha256": "d3d03f37286ed66202673ea63d49babce8d5309bac9c13793c8e60585c21fecf",
+      "excerpt_sha256": "c78759a2eceb34eba2c95bbf1465f324ebe9a08d6401788c00c8d2604d27fb25",
+      "text": "\t% 计算每个省份的企业部门\n\t\tfor i = 1:N_prov\n\t\t\tresults{i} = HANK_firm(param, grids{i}, results{i}, steady_state, show_result);\n\t\tend\n\n\t% 计算当前的平均工资\n\t\twt_vec = wage_caculate(results, param, phi_MAT, sigmau_MAT, N_prov);\n\t\tfor i = 1:N_prov\n\t\t\tresults{i}.w = wt_vec(i); % 家户下一期使用的工资率\n\t\tend\n"
+    },
+    {
+      "excerpt_id": "M_LAB_L1_11",
+      "source_id": "M_LAB",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!lab_solve2.m",
+      "start_line": 1,
+      "end_line": 11,
+      "source_sha256": "74fd6ae8d76ab50a571831fab95464ae4fce919f3e70b660e5abf6b9c5662c20",
+      "excerpt_sha256": "422ee9a685ac78b403e47e1139a74e3064426d6ddff11cb17a713e421d3909dd",
+      "text": "function eq = lab_solve2(l,params)\nalphac = params(1);\nalphal = params(2);\ntau = params(3);\nw = params(4);\nzzz = params(5);\nfrisch_l = params(6);\ntempMat = params(7);\nga = params(8);\n\neq = l - (alphac/alphal*(1-tau)*w*zzz)^frisch_l * (l*(1-tau)*w*zzz + tempMat)^(-ga*frisch_l);\n"
+    },
+    {
+      "excerpt_id": "M_INIT_L58_64",
+      "source_id": "M_INIT",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!multi_prov_HANK_12sts.m",
+      "start_line": 58,
+      "end_line": 64,
+      "source_sha256": "3c44449cfd4047b5c9e17e540afea2f50b4251150f8f74ab8cceed26e15dec97",
+      "excerpt_sha256": "1caf97892bb07458b6fb794a0a355e3885c43f76cbc9ef9e7fb93c37279152c7",
+      "text": "\n%% HANK model parameters\nparam.ga\t\t=\t2; % 家户，效用函数的消费风险厌恶系数。\nparam.phi_l\t\t=\t5; % 家户，农村劳动弗里茨弹性的倒数\nparam.alphal\t=\t1; % 家户，总劳动相对厌恶系数\nparam.alphap\t=\t1; % 家户，总消费相对厌恶系数\nparam.frisch_l\t=\t0.2; % 家户，农村劳动弗里茨弹性\n"
+    },
+    {
+      "excerpt_id": "M_INIT_L127_133",
+      "source_id": "M_INIT",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!multi_prov_HANK_12sts.m",
+      "start_line": 127,
+      "end_line": 133,
+      "source_sha256": "3c44449cfd4047b5c9e17e540afea2f50b4251150f8f74ab8cceed26e15dec97",
+      "excerpt_sha256": "86ad6e88c09cc69e248e2a4d2b0daba2efcd3780387e4ae479d2e5be1ee791ce",
+      "text": "\t%% 读取数据。现在读取的是所有年份的数据了\n\tdata_MAT = load_GDPdata(param.GDP_multiplier, param.POP_multiplier,0.096, param.smooth_method, param.reg_method);\n\t% 2023年12月17日更新：添加了一二三产业的数据，估计了三个产业的Zt和alpha，并且填补了缺失数据。\n\t% 2024年4月28日更新： 使用张军的方法估计数据。\n\t% 2024年5月3日更新： 放弃一二三产业，改用R语言的CHNCapitalStock包提供的各省年度资本存量数据，并且省级数据的人口采用常住人口\n\t% 2024年6月1日更新：现在采用前10年的数据估计本年的alpha，也即2000-2009年的数据可以估计出2009年的alpha。\n\tst = mpHANK_equilibrium_2000(param,grids,num,CHI,inits,data_MAT{ii}, 4, ii);save(stfile, 'st', '-v7.3');\n"
+    },
+    {
+      "excerpt_id": "M_EQ_L22_32",
+      "source_id": "M_EQ",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!mpHANK_equilibrium_2000.m",
+      "start_line": 22,
+      "end_line": 32,
+      "source_sha256": "26ea44552da33919f8ccd777c084e15eca0ea9575fee80a07f9e0056f3f97de5",
+      "excerpt_sha256": "68b17a5a7dccb59ad34fc90e583ace1c9e8144cc87093fbcae99edfbadf581cc",
+      "text": "\tfor i = 1:N_prov\n\t\t% 这个程序只计算第st_ind产业的第1年的稳态\n\t\t%results{i}.Zt = data_MAT.IND_Zt{st_ind}(1,i); % 估计的该省产业生产力\n\t\tresults{i}.Zt = data_MAT.IND_Zt{st_ind}(1,i) * param.Ztratio;\n\t\tresults{i}.alpha = data_MAT.IND_alpha{st_ind}(1,i); % 估计的该省产业资本弹性\n\t\tresults{i}.Kt0 = data_MAT.CAP{st_ind}(data_year,i); % 实际产业总资本数据\n\t\tresults{i}.Kt = results{i}.Kt0;\n\t\tresults{i}.N = data_MAT.POP{st_ind}(data_year,i); % 实际产业人口规模数据\n\t\tresults{i}.Lt = results{i}.N;\n\t\tresults{i}.Yt0 = data_MAT.GDP{st_ind}(data_year,i); % 实际产业GDP数据\n\t\tresults{i}.Yt = results{i}.Yt0;\n"
+    },
+    {
+      "excerpt_id": "M_DATA_L1_4",
+      "source_id": "M_DATA",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!load_GDPdata.m",
+      "start_line": 1,
+      "end_line": 4,
+      "source_sha256": "deca8af3f22097550b8957fe848989e6342619cb9929a1c00076e020549366c5",
+      "excerpt_sha256": "7b33a4e77c5f34f99ba8865efd7bc1a5a3a6690200f4b300290f7a248e3049e3",
+      "text": "function mydata2 = load_GDPdata(GDP_multiplier, POP_multiplier, delta, smooth_method, reg_method)\n%% 读取GDP等实际数据。注意第一列是年份，第二列是全国总值。\n%% 旧数据说明：GDP(亿元) 常住人口(万人) 总人口数(万人) 固定资产投资额(万元)\ntic\n"
+    },
+    {
+      "excerpt_id": "M_DATA_L93_104",
+      "source_id": "M_DATA",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!load_GDPdata.m",
+      "start_line": 93,
+      "end_line": 104,
+      "source_sha256": "deca8af3f22097550b8957fe848989e6342619cb9929a1c00076e020549366c5",
+      "excerpt_sha256": "903bee59967564b61f808cca0a0923c06269d2a5a98b04c2e4e26a55b5a07c8d",
+      "text": "\tmydata.GDP{4} = temp1(:,2:32)*GDP_multiplier; \n\tmydata.CAP{4} = temp2(:,2:32)*GDP_multiplier; \n\tmydata.GDP{1} = temp1(:,2:32) .* temp6(:,2:32) / 100; \n\tmydata.CAP{1} = temp4(:,2:32)*GDP_multiplier; \n\tmydata.GDP{2} = temp1(:,2:32) .* temp9(:,2:32) / 100; \n\tmydata.CAP{2} = temp7(:,2:32)*GDP_multiplier; \n\tmydata.GDP{3} = temp1(:,2:32) .* temp12(:,2:32) / 100; \n\tmydata.CAP{3} = temp10(:,2:32)*GDP_multiplier; \n\tmydata.POP{1} = temp5(:,2:32)*POP_multiplier; \n\tmydata.POP{2} = temp8(:,2:32)*POP_multiplier; \n\tmydata.POP{3} = temp11(:,2:32)*POP_multiplier; \n\tmydata.POP{4} = temp3(:,2:32)*POP_multiplier; \n"
+    },
+    {
+      "excerpt_id": "C_W_L11_25",
+      "source_id": "C_W",
+      "path": "src/ch5_two_asset_hank/multi_province/wage.py",
+      "start_line": 11,
+      "end_line": 25,
+      "source_sha256": "6dc1bfcd5526afc4ed876f4923f7fefb39a68f66427c490f741a2475d2ffe433",
+      "excerpt_sha256": "c9e98384d8259f142959b95dae34bf9e04ce070c3dcedc6b7820984a48f0795f",
+      "text": "def composite_household_wages(\n    provinces: Sequence[Mapping[str, float]],\n    firm_wages: Sequence[float],\n    phi_mat: Sequence[Sequence[float]],\n    sigmau_mat: Sequence[Sequence[float]],\n    *,\n    phi_l: float,\n    alphal: float,\n) -> tuple[float, ...]:\n    \"\"\"Return one composite wage per origin household province.\n\n    Rows are destinations and columns are origins.  The MATLAB wage formula\n    intentionally indexes ``tau`` by destination, unlike ``Lt_seperate``.\n    \"\"\"\n\n"
+    },
+    {
+      "excerpt_id": "C_W_L43_76",
+      "source_id": "C_W",
+      "path": "src/ch5_two_asset_hank/multi_province/wage.py",
+      "start_line": 43,
+      "end_line": 76,
+      "source_sha256": "6dc1bfcd5526afc4ed876f4923f7fefb39a68f66427c490f741a2475d2ffe433",
+      "excerpt_sha256": "bea24c06e955f6460b38d6cc0202e81581daf27f41a99b0a0fe98c43ea7d56c8",
+      "text": "    for province in provinces:\n        try:\n            tax = float(province[\"tau\"])\n        except KeyError as exc:\n            raise ValueError(\"every province requires destination tau\") from exc\n        if not isfinite(tax):\n            raise ValueError(\"destination tau must be finite\")\n        taxes.append(tax)\n\n    exponent = 1.0 + 1.0 / phi_l\n    outer_exponent = phi_l / (1.0 + phi_l)\n    output: list[float] = []\n    for origin in range(count):\n        total = 0.0\n        for destination in range(count):\n            divisor = phi[destination, origin]\n            base = (\n                wages[destination]\n                * (1.0 - taxes[destination] - sigma[destination, origin])\n                / divisor\n            )\n            if base < 0.0:\n                raise ValueError(\"wage_caculate source power base would be negative/non-real\")\n            term = divisor * base**exponent\n            if not isfinite(term):\n                raise ValueError(\"wage_caculate term must be finite\")\n            total += term\n        if total < 0.0:\n            raise ValueError(\"wage_caculate outer power base would be negative/non-real\")\n        value = alphal ** (-outer_exponent) * total**outer_exponent\n        if not isfinite(value) or value < 0.0:\n            raise ValueError(\"wage_caculate produced an invalid composite wage\")\n        output.append(value)\n    return tuple(output)\n"
+    },
+    {
+      "excerpt_id": "H_W_L52_76",
+      "source_id": "H_W",
+      "path": "src/ch5_two_asset_hank/multi_province/wage.py",
+      "start_line": 52,
+      "end_line": 76,
+      "source_sha256": "12393521821b5a7616eec8f19bcd4a10cbb2da37e0a87fcb5c5b4128a0c98dbe",
+      "excerpt_sha256": "61cd273c4cd5782362757b06d1f0c7ecee14ed746e6ab8f45cb9e808ea8c28be",
+      "text": "    exponent = 1.0 + 1.0 / phi_l\n    outer_exponent = phi_l / (1.0 + phi_l)\n    output: list[float] = []\n    for origin in range(count):\n        total = 0.0\n        for destination in range(count):\n            divisor = phi[destination, origin]\n            base = (\n                wages[destination]\n                * (1.0 - taxes[destination] - sigma[destination, origin])\n                / divisor\n            )\n            if base < 0.0:\n                raise ValueError(\"wage_caculate source power base would be negative/non-real\")\n            term = divisor * base**exponent\n            if not isfinite(term):\n                raise ValueError(\"wage_caculate term must be finite\")\n            total += term\n        if total < 0.0:\n            raise ValueError(\"wage_caculate outer power base would be negative/non-real\")\n        value = alphal ** (-outer_exponent) * total**outer_exponent\n        if not isfinite(value) or value < 0.0:\n            raise ValueError(\"wage_caculate produced an invalid composite wage\")\n        output.append(value)\n    return tuple(output)\n"
+    },
+    {
+      "excerpt_id": "P2_W_L52_76",
+      "source_id": "P2_W",
+      "path": "src/ch5_two_asset_hank/multi_province/wage.py",
+      "start_line": 52,
+      "end_line": 76,
+      "source_sha256": "af2e2739d10b24ec02e8c20d6eb25faeade6c3acf6c81dae92b2d02601e25214",
+      "excerpt_sha256": "9e7065d4b756b82636cb7221c52e74099e9d2f8a14326d36a2bf38cd84e3e557",
+      "text": "    exponent = 1.0 + 1.0 / phi_l\n    outer_exponent = phi_l / (1.0 + phi_l)\n    output: list[float] = []\n    for origin in range(count):\n        total = 0.0\n        for destination in range(count):\n            divisor = phi[destination, origin]\n            base = (\n                wages[destination]\n                * (1.0 - taxes[destination] - sigma[destination, origin])\n                / divisor\n            )\n            if base < 0.0:\n                raise ValueError(\"wage_caculate source power base would be negative/non-real\")\n            term = divisor * base**exponent\n            if not isfinite(term):\n                raise ValueError(\"wage_caculate term must be finite\")\n            total += term\n        if total < 0.0:\n            raise ValueError(\"wage_caculate outer power base would be negative/non-real\")\n        value = alphal ** (1.0 / (1.0 + phi_l)) * total**outer_exponent\n        if not isfinite(value) or value < 0.0:\n            raise ValueError(\"wage_caculate produced an invalid composite wage\")\n        output.append(value)\n    return tuple(output)\n"
+    },
+    {
+      "excerpt_id": "C_L_L35_47",
+      "source_id": "C_L",
+      "path": "src/ch5_two_asset_hank/multi_province/migration_labor.py",
+      "start_line": 35,
+      "end_line": 47,
+      "source_sha256": "a8961e66518265c4a97770a421c10c60740e7205e247ceb7ff4b3dd3bec83730",
+      "excerpt_sha256": "d892fb0a897ed91a1d99bb4df8016149513e6595b01152c3107b1132369ae264",
+      "text": "@dataclass(frozen=True)\nclass MigrationLaborInputs:\n    \"\"\"Complete literal inputs; matrices use rows=destination, columns=origin.\"\"\"\n\n    consumption_by_origin: np.ndarray\n    population_by_origin: np.ndarray\n    old_firm_wage_by_destination: np.ndarray\n    tax_by_origin: np.ndarray\n    phi_destination_origin: np.ndarray\n    migration_wedge_destination_origin: np.ndarray\n    gamma_c: float\n    phi_l: float\n\n"
+    },
+    {
+      "excerpt_id": "C_L_L97_131",
+      "source_id": "C_L",
+      "path": "src/ch5_two_asset_hank/multi_province/migration_labor.py",
+      "start_line": 97,
+      "end_line": 131,
+      "source_sha256": "a8961e66518265c4a97770a421c10c60740e7205e247ceb7ff4b3dd3bec83730",
+      "excerpt_sha256": "fc1645e63038ecafd08cb7872f541f437bbafd81f042a226c393361d4552806c",
+      "text": "\ndef reconstruct_migration_labor(inputs: MigrationLaborInputs) -> MigrationLaborResult:\n    \"\"\"Evaluate ``Lt_seperate`` literally, preserving its index placement.\"\"\"\n\n    n = inputs.consumption_by_origin.size\n    matrix = np.empty((n, n), dtype=float)\n    for origin in range(n):\n        consumption_scale = inputs.consumption_by_origin[origin] ** (\n            -inputs.gamma_c / inputs.phi_l\n        )\n        for destination in range(n):\n            base = (\n                inputs.old_firm_wage_by_destination[destination]\n                * (\n                    1.0\n                    - inputs.tax_by_origin[origin]\n                    - inputs.migration_wedge_destination_origin[destination, origin]\n                )\n                / inputs.phi_destination_origin[destination, origin]\n            )\n            if not np.isfinite(base) or base < 0.0:\n                raise ValueError(\n                    \"Lt_seperate power base must be finite and non-negative \"\n                    f\"at destination={destination}, origin={origin}\"\n                )\n            value = (\n                consumption_scale\n                * base ** (1.0 / inputs.phi_l)\n                * inputs.population_by_origin[origin]\n            )\n            if not np.isfinite(value) or value < 0.0:\n                raise ValueError(\"migration labor produced a non-finite or negative value\")\n            matrix[destination, origin] = value\n    supply = np.sum(matrix, axis=1)\n    return MigrationLaborResult(lt_mat=matrix, lt_supply=supply)\n"
+    },
+    {
+      "excerpt_id": "C_L_L311_319",
+      "source_id": "C_L",
+      "path": "src/ch5_two_asset_hank/multi_province/migration_labor.py",
+      "start_line": 311,
+      "end_line": 319,
+      "source_sha256": "a8961e66518265c4a97770a421c10c60740e7205e247ceb7ff4b3dd3bec83730",
+      "excerpt_sha256": "3a2c6034cee764e8f1f9443db9d23e190569e2d85c51d8a8075ec1079b494586",
+      "text": "def reconstruct_origin_preserving_normalized_migration_labor(\n    inputs: OriginPreservingNormalizedMigrationLaborInputs,\n) -> OriginPreservingNormalizedMigrationLaborResult:\n    \"\"\"Allocate each origin's household labor mass by normalized literal kernel.\n\n    The legacy reconstruction remains untouched.  Here the literal kernel is\n    first evaluated *without* population, then each origin column is normalized\n    and receives ``household_labor_per_capita * population`` exactly once.\n    \"\"\"\n"
+    },
+    {
+      "excerpt_id": "C_L_L321_360",
+      "source_id": "C_L",
+      "path": "src/ch5_two_asset_hank/multi_province/migration_labor.py",
+      "start_line": 321,
+      "end_line": 360,
+      "source_sha256": "a8961e66518265c4a97770a421c10c60740e7205e247ceb7ff4b3dd3bec83730",
+      "excerpt_sha256": "0cbcd44ddb4c70289c3607a8386bc35d9ef221fc0975ebe1afcec9a441c876c2",
+      "text": "    n = inputs.consumption_by_origin.size\n    q = np.empty((n, n), dtype=float)\n    for origin in range(n):\n        consumption_scale = inputs.consumption_by_origin[origin] ** (\n            -inputs.gamma_c / inputs.phi_l\n        )\n        for destination in range(n):\n            base = (\n                inputs.old_firm_wage_by_destination[destination]\n                * (\n                    1.0\n                    - inputs.tax_by_origin[origin]\n                    - inputs.migration_wedge_destination_origin[destination, origin]\n                )\n                / inputs.phi_destination_origin[destination, origin]\n            )\n            if not np.isfinite(base) or base < 0.0:\n                raise ValueError(\n                    \"Lt_seperate power base must be finite and non-negative \"\n                    f\"at destination={destination}, origin={origin}\"\n                )\n            value = consumption_scale * base ** (1.0 / inputs.phi_l)\n            if not np.isfinite(value) or value < 0.0:\n                raise ValueError(\"normalized migration kernel produced a non-finite or negative value\")\n            q[destination, origin] = value\n    column_totals = np.sum(q, axis=0)\n    if not np.all(np.isfinite(column_totals)) or np.any(column_totals <= 0.0):\n        raise ValueError(\"every origin attractiveness column must have a finite positive total\")\n    shares = q / column_totals[np.newaxis, :]\n    share_sums = np.sum(shares, axis=0)\n    if np.any(shares < 0.0) or not np.allclose(\n        share_sums, 1.0, rtol=_NORMALIZED_TOLERANCE, atol=_NORMALIZED_TOLERANCE\n    ):\n        raise ValueError(\"normalized migration shares must be non-negative and sum to one by origin\")\n    origin_mass = inputs.household_labor_per_capita_by_origin * inputs.population_by_origin\n    if not np.all(np.isfinite(origin_mass)) or np.any(origin_mass < 0.0):\n        raise ValueError(\"origin labor mass must be finite and non-negative\")\n    flows = shares * origin_mass[np.newaxis, :]\n    destination = np.sum(flows, axis=1)\n    flow_sums = np.sum(flows, axis=0)\n"
+    },
+    {
+      "excerpt_id": "H_L_L98_131",
+      "source_id": "H_L",
+      "path": "src/ch5_two_asset_hank/multi_province/migration_labor.py",
+      "start_line": 98,
+      "end_line": 131,
+      "source_sha256": "99b939e74346e9493236b18922b5ac05a05ee0784c6d0b8b71a17055c0c6ef05",
+      "excerpt_sha256": "ef54c21e76210f6410dc9cd36b64d7493947b22a73489e201e0f469139b30689",
+      "text": "def reconstruct_migration_labor(inputs: MigrationLaborInputs) -> MigrationLaborResult:\n    \"\"\"Evaluate ``Lt_seperate`` literally, preserving its index placement.\"\"\"\n\n    n = inputs.consumption_by_origin.size\n    matrix = np.empty((n, n), dtype=float)\n    for origin in range(n):\n        consumption_scale = inputs.consumption_by_origin[origin] ** (\n            -inputs.gamma_c / inputs.phi_l\n        )\n        for destination in range(n):\n            base = (\n                inputs.old_firm_wage_by_destination[destination]\n                * (\n                    1.0\n                    - inputs.tax_by_origin[origin]\n                    - inputs.migration_wedge_destination_origin[destination, origin]\n                )\n                / inputs.phi_destination_origin[destination, origin]\n            )\n            if not np.isfinite(base) or base < 0.0:\n                raise ValueError(\n                    \"Lt_seperate power base must be finite and non-negative \"\n                    f\"at destination={destination}, origin={origin}\"\n                )\n            value = (\n                consumption_scale\n                * base ** (1.0 / inputs.phi_l)\n                * inputs.population_by_origin[origin]\n            )\n            if not np.isfinite(value) or value < 0.0:\n                raise ValueError(\"migration labor produced a non-finite or negative value\")\n            matrix[destination, origin] = value\n    supply = np.sum(matrix, axis=1)\n    return MigrationLaborResult(lt_mat=matrix, lt_supply=supply)\n"
+    },
+    {
+      "excerpt_id": "P3_L_L36_47",
+      "source_id": "P3_L",
+      "path": "src/ch5_two_asset_hank/multi_province/migration_labor.py",
+      "start_line": 36,
+      "end_line": 47,
+      "source_sha256": "66600d6d1121db319b03383436999aa53b5e1aa5f8eecc72516fd1922b7b52dc",
+      "excerpt_sha256": "353b56e54e154ee5eb015f4b9e72952c6ba1319384d8b1336666c36c83527f7c",
+      "text": "@dataclass(frozen=True)\nclass MigrationLaborInputs:\n    \"\"\"Complete literal inputs; matrices use rows=destination, columns=origin.\"\"\"\n\n    consumption_by_origin: np.ndarray\n    population_by_origin: np.ndarray\n    old_firm_wage_by_destination: np.ndarray\n    tax_by_destination: np.ndarray\n    phi_destination_origin: np.ndarray\n    migration_wedge_destination_origin: np.ndarray\n    gamma_c: float\n    phi_l: float\n"
+    },
+    {
+      "excerpt_id": "P3_L_L104_137",
+      "source_id": "P3_L",
+      "path": "src/ch5_two_asset_hank/multi_province/migration_labor.py",
+      "start_line": 104,
+      "end_line": 137,
+      "source_sha256": "66600d6d1121db319b03383436999aa53b5e1aa5f8eecc72516fd1922b7b52dc",
+      "excerpt_sha256": "b655043ba4a97657bf878b22c48dbe76d94f9da0400ffcabbbd006e94c01c452",
+      "text": "def reconstruct_migration_labor(inputs: MigrationLaborInputs) -> MigrationLaborResult:\n    \"\"\"Keep destination-origin axes and arithmetic, using workplace tax tau_j.\"\"\"\n\n    n = inputs.consumption_by_origin.size\n    matrix = np.empty((n, n), dtype=float)\n    for origin in range(n):\n        consumption_scale = inputs.consumption_by_origin[origin] ** (\n            -inputs.gamma_c / inputs.phi_l\n        )\n        for destination in range(n):\n            base = (\n                inputs.old_firm_wage_by_destination[destination]\n                * (\n                    1.0\n                    - inputs.tax_by_destination[destination]\n                    - inputs.migration_wedge_destination_origin[destination, origin]\n                )\n                / inputs.phi_destination_origin[destination, origin]\n            )\n            if not np.isfinite(base) or base < 0.0:\n                raise ValueError(\n                    \"Lt_seperate power base must be finite and non-negative \"\n                    f\"at destination={destination}, origin={origin}\"\n                )\n            value = (\n                consumption_scale\n                * base ** (1.0 / inputs.phi_l)\n                * inputs.population_by_origin[origin]\n            )\n            if not np.isfinite(value) or value < 0.0:\n                raise ValueError(\"migration labor produced a non-finite or negative value\")\n            matrix[destination, origin] = value\n    supply = np.sum(matrix, axis=1)\n    return MigrationLaborResult(lt_mat=matrix, lt_supply=supply)\n"
+    },
+    {
+      "excerpt_id": "C_F_L47_65",
+      "source_id": "C_F",
+      "path": "src/ch5_two_asset_hank/multi_province/firm.py",
+      "start_line": 47,
+      "end_line": 65,
+      "source_sha256": "d4c3dada5577f25e0159831dcc9de3883ea656e80aa3e1c407e6bb0af0d4ca0d",
+      "excerpt_sha256": "bc6cf24266c859dcf785d359a5b0723ca770a3b41159f1bb0bb39a30b50ce675",
+      "text": "    lt_supply: float,\n    params: Mapping[str, float],\n) -> FirmResult:\n    \"\"\"Evaluate the MATLAB steady-state branch without solving any model.\n\n    ``lt_supply`` is destination firm labor.  Household aggregate ``Lt`` is\n    intentionally not read from ``province``.\n    \"\"\"\n\n    kt_supply = float(kt_supply)\n    lt = float(lt_supply)\n    if not isfinite(kt_supply) or not isfinite(lt):\n        raise ValueError(\"Kt_supply and Lt_supply must be finite\")\n    gov_inv = _finite(province, \"GovInv\")\n    kt = kt_supply + gov_inv  # HANK_firm.m:14\n    if kt <= 0.0 or lt <= 0.0:\n        raise ValueError(\"firm Kt and destination Lt_supply must be positive\")\n\n    alpha = _finite(province, \"alpha\")\n"
+    },
+    {
+      "excerpt_id": "C_F_L92_110",
+      "source_id": "C_F",
+      "path": "src/ch5_two_asset_hank/multi_province/firm.py",
+      "start_line": 92,
+      "end_line": 110,
+      "source_sha256": "d4c3dada5577f25e0159831dcc9de3883ea656e80aa3e1c407e6bb0af0d4ca0d",
+      "excerpt_sha256": "6ec29315d2aa549593d14653e1ab1e30649e06b431626e894ba200c62f3de30c",
+      "text": "            - alpha * (kt_previous - kt) / kt\n            - (1.0 - alpha) * (lt_previous - lt) / lt\n        )\n        * pit\n        * theta\n        / epsilon\n        + mstar\n        - (pit - pit_previous) * theta / epsilon\n    )  # line 35, steady-state branch\n    knratio = kt / lt\n    wt0 = mt * (1.0 - alpha) * zt * knratio**alpha\n    rk = mt * alpha / (kt / yt)\n    thetat = theta / 2.0 * pit**2 * yt\n    investment = kt - kt_previous + delta * kt\n    profit = (1.0 - mt) * yt - thetat\n    if profit < 0.0:  # lines 48-51\n        profit = 0.0\n    corporate_tax = profit * corptau\n    ra0 = rk - delta + profit * (1.0 - corptau) / kt\n"
+    },
+    {
+      "excerpt_id": "C_F_L126_143",
+      "source_id": "C_F",
+      "path": "src/ch5_two_asset_hank/multi_province/firm.py",
+      "start_line": 126,
+      "end_line": 143,
+      "source_sha256": "d4c3dada5577f25e0159831dcc9de3883ea656e80aa3e1c407e6bb0af0d4ca0d",
+      "excerpt_sha256": "6fdae50717d50e180c4d0cc6ae842dfa1a41e76a9c09c0f59fa0dbc7acc6191e",
+      "text": "    if wt0 < wjtmin:  # preserve lines 66-74 ordering\n        corporate_tax -= (wjtmin - wt0) * lt\n        wjt = wjtmin\n    elif wt0 > wjtmax:\n        corporate_tax += (wt0 - wjtmax) * lt\n        wjt = wjtmax\n    else:\n        wjt = wt0\n\n    govinc = corporate_tax + lt * tau + at_tax + gov_inv * ra - transfer\n    result = FirmResult(\n        Kt=kt, Lt=lt, Yt=yt, mt=mt, KNratio=knratio, wt0=wt0, wjt=wjt,\n        rk=rk, Thetat=thetat, It=investment, PIt=profit, Corptax=corporate_tax,\n        ra0=ra0, ra=ra, Govinc=govinc,\n    )\n    if not all(isfinite(value) for value in asdict(result).values()):\n        raise ValueError(\"firm arithmetic produced a non-finite output\")\n    return result\n"
+    },
+    {
+      "excerpt_id": "H_F_L130_138",
+      "source_id": "H_F",
+      "path": "src/ch5_two_asset_hank/multi_province/firm.py",
+      "start_line": 130,
+      "end_line": 138,
+      "source_sha256": "f0aea719a4121f5562aaa9ccf3f219cc8afd6c51f84cc2f64a2fe486cef7fb69",
+      "excerpt_sha256": "f12145cd2c921c58c504bb66b66784b01a0a41548d09698423fd25d4d3dcf7d9",
+      "text": "        corporate_tax += (wt0 - wjtmax) * lt\n        wjt = wjtmax\n    else:\n        wjt = wt0\n\n    govinc = corporate_tax + lt * tau + at_tax + gov_inv * ra - transfer\n    result = FirmResult(\n        Kt=kt, Lt=lt, Yt=yt, mt=mt, KNratio=knratio, wt0=wt0, wjt=wjt,\n        rk=rk, Thetat=thetat, It=investment, PIt=profit, Corptax=corporate_tax,\n"
+    },
+    {
+      "excerpt_id": "P2_F_L126_140",
+      "source_id": "P2_F",
+      "path": "src/ch5_two_asset_hank/multi_province/firm.py",
+      "start_line": 126,
+      "end_line": 140,
+      "source_sha256": "0939886706b8bcb42f3a41fc244000e7f8ad01884c61afdbdd31036bee908218",
+      "excerpt_sha256": "c485a3baffea2b442167eccf75431f95df871b5598c88d5c762bf09f919757a6",
+      "text": "    if wt0 < wjtmin:  # preserve lines 66-74 ordering\n        corporate_tax -= (wjtmin - wt0) * lt\n        wjt = wjtmin\n    elif wt0 > wjtmax:\n        corporate_tax += (wt0 - wjtmax) * lt\n        wjt = wjtmax\n    else:\n        wjt = wt0\n\n    govinc = corporate_tax + lt * wjt * tau + at_tax + gov_inv * ra - transfer\n    result = FirmResult(\n        Kt=kt, Lt=lt, Yt=yt, mt=mt, KNratio=knratio, wt0=wt0, wjt=wjt,\n        rk=rk, Thetat=thetat, It=investment, PIt=profit, Corptax=corporate_tax,\n        ra0=ra0, ra=ra, Govinc=govinc,\n    )\n"
+    },
+    {
+      "excerpt_id": "C_O_L194_238",
+      "source_id": "C_O",
+      "path": "src/ch5_two_asset_hank/multi_province/one_turn.py",
+      "start_line": 194,
+      "end_line": 238,
+      "source_sha256": "020611e7ceb6fe558727ffac083ee45f6ba05d1b17f73d62c1f9a929df970e67",
+      "excerpt_sha256": "2df01bd93d87bc46faf4b957c8c5d58829a162268503e1d65fd82661b730ecd5",
+      "text": "def run_source_faithful_one_turn(inputs: OneTurnInputs) -> OneTurnResult:\n    \"\"\"Compose the MP2 arithmetic once, in literal MATLAB source order.\"\"\"\n\n    n = len(inputs.province_order)\n    household = inputs.household_outputs\n    provinces = inputs.old_provinces\n\n    migration = reconstruct_migration_labor(MigrationLaborInputs(\n        consumption_by_origin=household.ct,\n        population_by_origin=[province[\"N\"] for province in provinces],\n        old_firm_wage_by_destination=[province[\"wjt\"] for province in provinces],\n        tax_by_origin=[province[\"tau\"] for province in provinces],\n        phi_destination_origin=inputs.phi_destination_origin,\n        migration_wedge_destination_origin=inputs.migration_wedge_destination_origin,\n        gamma_c=inputs.params[\"ga\"],\n        phi_l=inputs.params[\"phi_l\"],\n    ))\n\n    capital = allocate_productive_capital(CapitalAllocationInputs(\n        illiquid_assets_at=household.at,\n        population=[province[\"N\"] for province in provinces],\n        inter_province_ratio=[province[\"inter_prv_ratio\"] for province in provinces],\n        old_firm_return_ra=[province[\"ra\"] for province in provinces],\n    ))\n\n    firms: list[FirmResult] = []\n    for index in range(n):\n        firm_source = dict(provinces[index])\n        firm_source[\"AtTax\"] = float(household.at_tax[index])\n        firm_source[\"Lt_prev\"] = float(household.household_lt[index])\n        firms.append(evaluate_firm(\n            firm_source,\n            float(capital.kt_supply[index]),\n            float(migration.lt_supply[index]),\n            inputs.params,\n        ))\n\n    composite_wage = composite_household_wages(\n        provinces,\n        [firm.wjt for firm in firms],\n        inputs.phi_destination_origin,\n        inputs.migration_wedge_destination_origin,\n        phi_l=inputs.params[\"phi_l\"],\n        alphal=inputs.params[\"alphal\"],\n    )\n"
+    },
+    {
+      "excerpt_id": "C_O_L270_288",
+      "source_id": "C_O",
+      "path": "src/ch5_two_asset_hank/multi_province/one_turn.py",
+      "start_line": 270,
+      "end_line": 288,
+      "source_sha256": "020611e7ceb6fe558727ffac083ee45f6ba05d1b17f73d62c1f9a929df970e67",
+      "excerpt_sha256": "a0986fab46aed3f9b2bc2bb43310940fc2b26e1869a3478dca394113c0ea84c6",
+      "text": "    capital, firm, wage, monetary, and fiscal component functions.\n    \"\"\"\n\n    n = len(inputs.province_order)\n    household = inputs.household_outputs\n    provinces = inputs.old_provinces\n\n    migration = reconstruct_origin_preserving_normalized_migration_labor(\n        OriginPreservingNormalizedMigrationLaborInputs(\n            consumption_by_origin=household.ct,\n            household_labor_per_capita_by_origin=household.household_lt,\n            population_by_origin=[province[\"N\"] for province in provinces],\n            old_firm_wage_by_destination=[province[\"wjt\"] for province in provinces],\n            tax_by_origin=[province[\"tau\"] for province in provinces],\n            phi_destination_origin=inputs.phi_destination_origin,\n            migration_wedge_destination_origin=inputs.migration_wedge_destination_origin,\n            gamma_c=inputs.params[\"ga\"],\n            phi_l=inputs.params[\"phi_l\"],\n        )\n"
+    },
+    {
+      "excerpt_id": "H_O_L161_202",
+      "source_id": "H_O",
+      "path": "src/ch5_two_asset_hank/multi_province/one_turn.py",
+      "start_line": 161,
+      "end_line": 202,
+      "source_sha256": "3f2c6c4cd44f06d90d43c2b60b69def8141c0ab002a3b3d11972659a4d579a00",
+      "excerpt_sha256": "a4748be4a5f5f744e44184c18a46fc7ad52b9fecaf956223ce33ae3c8e4dfede",
+      "text": "def run_source_faithful_one_turn(inputs: OneTurnInputs) -> OneTurnResult:\n    \"\"\"Compose the MP2 arithmetic once, in literal MATLAB source order.\"\"\"\n\n    n = len(inputs.province_order)\n    household = inputs.household_outputs\n    provinces = inputs.old_provinces\n\n    migration = reconstruct_migration_labor(MigrationLaborInputs(\n        consumption_by_origin=household.ct,\n        population_by_origin=[province[\"N\"] for province in provinces],\n        old_firm_wage_by_destination=[province[\"wjt\"] for province in provinces],\n        tax_by_origin=[province[\"tau\"] for province in provinces],\n        phi_destination_origin=inputs.phi_destination_origin,\n        migration_wedge_destination_origin=inputs.migration_wedge_destination_origin,\n        gamma_c=inputs.params[\"ga\"],\n        phi_l=inputs.params[\"phi_l\"],\n    ))\n\n    capital = allocate_productive_capital(CapitalAllocationInputs(\n        illiquid_assets_at=household.at,\n        population=[province[\"N\"] for province in provinces],\n        inter_province_ratio=[province[\"inter_prv_ratio\"] for province in provinces],\n        old_firm_return_ra=[province[\"ra\"] for province in provinces],\n    ))\n\n    firms: list[FirmResult] = []\n    for index in range(n):\n        firm_source = dict(provinces[index])\n        firm_source[\"AtTax\"] = float(household.at_tax[index])\n        firm_source[\"Lt_prev\"] = float(household.household_lt[index])\n        firms.append(evaluate_firm(\n            firm_source,\n            float(capital.kt_supply[index]),\n            float(migration.lt_supply[index]),\n            inputs.params,\n        ))\n\n    composite_wage = composite_household_wages(\n        provinces,\n        [firm.wjt for firm in firms],\n        inputs.phi_destination_origin,\n        inputs.migration_wedge_destination_origin,\n"
+    },
+    {
+      "excerpt_id": "P3_O_L161_205",
+      "source_id": "P3_O",
+      "path": "src/ch5_two_asset_hank/multi_province/one_turn.py",
+      "start_line": 161,
+      "end_line": 205,
+      "source_sha256": "afeadbffd88e1405c2f32d22fd256e7fd0451fc4ecbfe2492bc0db5dbdc728fa",
+      "excerpt_sha256": "fe2446ed453ea827af554023c10d265a942ddd255a1ea27a1820ee5e888dece0",
+      "text": "def run_source_faithful_one_turn(inputs: OneTurnInputs) -> OneTurnResult:\n    \"\"\"Compose the MP2 arithmetic once, in literal MATLAB source order.\"\"\"\n\n    n = len(inputs.province_order)\n    household = inputs.household_outputs\n    provinces = inputs.old_provinces\n\n    migration = reconstruct_migration_labor(MigrationLaborInputs(\n        consumption_by_origin=household.ct,\n        population_by_origin=[province[\"N\"] for province in provinces],\n        old_firm_wage_by_destination=[province[\"wjt\"] for province in provinces],\n        tax_by_destination=[province[\"tau\"] for province in provinces],\n        phi_destination_origin=inputs.phi_destination_origin,\n        migration_wedge_destination_origin=inputs.migration_wedge_destination_origin,\n        gamma_c=inputs.params[\"ga\"],\n        phi_l=inputs.params[\"phi_l\"],\n    ))\n\n    capital = allocate_productive_capital(CapitalAllocationInputs(\n        illiquid_assets_at=household.at,\n        population=[province[\"N\"] for province in provinces],\n        inter_province_ratio=[province[\"inter_prv_ratio\"] for province in provinces],\n        old_firm_return_ra=[province[\"ra\"] for province in provinces],\n    ))\n\n    firms: list[FirmResult] = []\n    for index in range(n):\n        firm_source = dict(provinces[index])\n        firm_source[\"AtTax\"] = float(household.at_tax[index])\n        firm_source[\"Lt_prev\"] = float(household.household_lt[index])\n        firms.append(evaluate_firm(\n            firm_source,\n            float(capital.kt_supply[index]),\n            float(migration.lt_supply[index]),\n            inputs.params,\n        ))\n\n    composite_wage = composite_household_wages(\n        provinces,\n        [firm.wjt for firm in firms],\n        inputs.phi_destination_origin,\n        inputs.migration_wedge_destination_origin,\n        phi_l=inputs.params[\"phi_l\"],\n        alphal=inputs.params[\"alphal\"],\n    )\n"
+    },
+    {
+      "excerpt_id": "C_A_L95_114",
+      "source_id": "C_A",
+      "path": "src/ch5_two_asset_hank/multi_province/household_adapter.py",
+      "start_line": 95,
+      "end_line": 114,
+      "source_sha256": "0963591a95293e896b9f9a8c3f4c630cd3dbb9519950171170e28822c8a4ef0f",
+      "excerpt_sha256": "f512133e3886ca5ed2d9129eecfc855f69558bc55f0b5bb41f341f866170a77d",
+      "text": "@dataclass(frozen=True)\nclass MultiProvinceHouseholdInputs:\n    \"\"\"All outer-state values required to describe one accepted HA call.\n\n    ``composite_wage`` is already reduced before the HJB.  The singleton vector\n    representation is required only because the accepted Python API generalises\n    the labor FOC over labor choices; it does not expose 31 illiquid states.\n    Every economic and numerical object is mandatory to prevent implicit\n    calibration defaults.\n    \"\"\"\n\n    rah: float\n    rb: float\n    tau: float\n    composite_wage: float\n    composite_migration_cost: float\n    composite_labor_weight: float\n    transfer_income: float\n    borrowing_rate_gap: float\n    grid: object\n"
+    },
+    {
+      "excerpt_id": "C_A_L200_225",
+      "source_id": "C_A",
+      "path": "src/ch5_two_asset_hank/multi_province/household_adapter.py",
+      "start_line": 200,
+      "end_line": 225,
+      "source_sha256": "0963591a95293e896b9f9a8c3f4c630cd3dbb9519950171170e28822c8a4ef0f",
+      "excerpt_sha256": "7d771195f210bd6ff1eec956ec550f65ae8c81d25a58146654e62da625c52c9f",
+      "text": "def build_static_household_call(inputs: MultiProvinceHouseholdInputs) -> StaticHouseholdCall:\n    \"\"\"Map source roles to accepted API arguments without invoking any callable.\"\"\"\n\n    return StaticHouseholdCall(\n        household_input_kwargs=MappingProxyType({\n            \"r_a\": inputs.rah,\n            \"r_b\": inputs.rb,\n            \"tau\": inputs.tau,\n            \"wages\": (inputs.composite_wage,),\n            \"migration_costs\": (inputs.composite_migration_cost,),\n            \"labor_weights\": (inputs.composite_labor_weight,),\n        }),\n        grid=inputs.grid,\n        economic_params=inputs.economic_params,\n        initial_value=inputs.initial_value,\n        baseline_labor=inputs.baseline_labor,\n        transfer_income=inputs.transfer_income,\n        borrowing_rate_gap=inputs.borrowing_rate_gap,\n        numerics=inputs.numerics,\n        pre_solve_composite_fields=(\"w\", \"rah\", \"rb\", \"tau\", \"Tt\", \"rb_gap\"),\n        post_solve_reconstruction=(\n            \"AtTax_from_density_and_tapered_illiquid_return\",\n            \"Lt_mat_from_Ct_and_destination_firm_wages\",\n            \"Lt_supply_as_destination_row_sum\",\n        ),\n    )\n"
+    },
+    {
+      "excerpt_id": "H_A_L200_219",
+      "source_id": "H_A",
+      "path": "src/ch5_two_asset_hank/multi_province/household_adapter.py",
+      "start_line": 200,
+      "end_line": 219,
+      "source_sha256": "3df2acd1569238e66b891d5ac4e490fb6a1ef0b70367eb319f37cbe8267be777",
+      "excerpt_sha256": "c858a1b41bfc764a3af6e6e9ce106508358facf78fb634cddc251c42eaaa0022",
+      "text": "def build_static_household_call(inputs: MultiProvinceHouseholdInputs) -> StaticHouseholdCall:\n    \"\"\"Map source roles to accepted API arguments without invoking any callable.\"\"\"\n\n    return StaticHouseholdCall(\n        household_input_kwargs=MappingProxyType({\n            \"r_a\": inputs.rah,\n            \"r_b\": inputs.rb,\n            \"tau\": inputs.tau,\n            \"wages\": (inputs.composite_wage,),\n            \"migration_costs\": (inputs.composite_migration_cost,),\n            \"labor_weights\": (inputs.composite_labor_weight,),\n        }),\n        grid=inputs.grid,\n        economic_params=inputs.economic_params,\n        initial_value=inputs.initial_value,\n        baseline_labor=inputs.baseline_labor,\n        transfer_income=inputs.transfer_income,\n        borrowing_rate_gap=inputs.borrowing_rate_gap,\n        numerics=inputs.numerics,\n        pre_solve_composite_fields=(\"w\", \"rah\", \"rb\", \"tau\", \"Tt\", \"rb_gap\"),\n"
+    },
+    {
+      "excerpt_id": "P2_A_L204_227",
+      "source_id": "P2_A",
+      "path": "src/ch5_two_asset_hank/multi_province/household_adapter.py",
+      "start_line": 204,
+      "end_line": 227,
+      "source_sha256": "c248bdeccfce3427b74d11b3c893cd5327659dfb6e4d4f34e8bbe379c8f2c569",
+      "excerpt_sha256": "c95046edaf638d0c369cc2d4d7abfd727b0461080245ede238bed2faa5422043",
+      "text": "def build_static_household_call(inputs: MultiProvinceHouseholdInputs) -> StaticHouseholdCall:\n    \"\"\"Map a destination-tax-net composite wage without invoking the HA solver.\n\n    Generic HA callers supplying gross wages still use their own nonzero tau.\n    Outer tau is metadata here and remains available for destination fiscal use.\n    \"\"\"\n\n    return StaticHouseholdCall(\n        household_input_kwargs=MappingProxyType({\n            \"r_a\": inputs.rah,\n            \"r_b\": inputs.rb,\n            \"tau\": 0.0,\n            \"wages\": (inputs.composite_wage,),\n            \"migration_costs\": (inputs.composite_migration_cost,),\n            \"labor_weights\": (inputs.composite_labor_weight,),\n        }),\n        grid=inputs.grid,\n        economic_params=inputs.economic_params,\n        initial_value=inputs.initial_value,\n        baseline_labor=inputs.baseline_labor,\n        transfer_income=inputs.transfer_income,\n        borrowing_rate_gap=inputs.borrowing_rate_gap,\n        numerics=inputs.numerics,\n        pre_solve_composite_fields=(\"w\", \"rah\", \"rb\", \"tau\", \"Tt\", \"rb_gap\"),\n"
+    },
+    {
+      "excerpt_id": "C_EMP_L66_75",
+      "source_id": "C_EMP",
+      "path": "validators/multi_province/mp4b_python_empirical.py",
+      "start_line": 66,
+      "end_line": 75,
+      "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b",
+      "excerpt_sha256": "bdfe7b8ced1765f82f2b9dffa160a35c9cbd7fbc5a0be82b8e07af19085b8a30",
+      "text": "from exports.matlab_faithful_two_asset_ha import (\n    EconomicParams, HouseholdInputs, MatlabFaithfulHJBGrid,\n    MatlabFaithfulHJBNumerics, matlab_faithful_illiquid_return,\n)\nfrom validators.multi_province.mp4b_matlab_source_postloop_household_adapter import (\n    solve_matlab_source_postloop_household,\n)\nfrom ch5_two_asset_hank.multi_province.one_turn import PreFrozenHouseholdOutputBatch\nfrom ch5_two_asset_hank.multi_province.stationary_runtime import OnlineStationaryInputs, run_online_stationary\nfrom ch5_two_asset_hank.multi_province.steady_state import SteadyStateConvergenceError\n"
+    },
+    {
+      "excerpt_id": "C_EMP_L101_121",
+      "source_id": "C_EMP",
+      "path": "validators/multi_province/mp4b_python_empirical.py",
+      "start_line": 101,
+      "end_line": 121,
+      "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b",
+      "excerpt_sha256": "cea785d3a3836ff36557d0fa209f2fc767be0cd2ee8f70ee6d29e0b6d1c2f144",
+      "text": "def load_entry_state(canonical_path: Path) -> tuple[dict, tuple[dict[str, object], ...]]:\n    canonical = json.loads(Path(canonical_path).read_text(encoding=\"utf-8\"))\n    if canonical[\"binding\"] != {\"analysis_index\":1,\"calendar_year\":2009,\"data_mat_index\":1,\n            \"output_filename_year\":2009,\"regression_vintage_key\":10,\"workbook_data_row_index\":10}:\n        raise ValueError(\"canonical annual binding mismatch\")\n    v=canonical[\"vectors\"]; s=canonical[\"scalars\"]\n    states=[]\n    for i,name in enumerate(canonical[\"province_order\"]):\n        state={\"name\":name,\"N\":v[\"pop\"][i],\"alpha\":v[\"ind_alpha\"][i],\"Zt\":v[\"initialized_zt\"][i],\n            \"Kt0\":v[\"cap\"][i],\"Kt\":v[\"cap\"][i],\"Kt_prev\":v[\"cap\"][i],\"Lt\":v[\"pop\"][i],\n            \"Lt_prev\":v[\"pop\"][i],\"Yt0\":v[\"gdp\"][i],\"Yt\":v[\"gdp\"][i],\"Zt_1\":v[\"initialized_zt\"][i],\n            \"GovInv\":v[\"gov_inv\"][i],\"inter_prv_ratio\":v[\"inter_province_asset_ratio\"][i],\n            \"rb_gap\":s[\"rb_gap\"],\"rah\":s[\"rah\"],\"ra\":s[\"ra\"],\"it\":s[\"nominal_rate\"],\n            \"rb\":s[\"rb\"],\"rk\":s[\"rk\"],\"wjt\":s[\"wjt\"],\"w\":s[\"composite_wage\"],\n            \"Tt\":s[\"transfer_income\"],\"pit\":s[\"inflation\"],\"pit_1\":s[\"inflation\"],\n            \"totalpit\":s[\"inflation\"],\"epsilon_pi\":0.0,\"tau\":s[\"wage_tax\"],\"At\":s[\"initial_at\"],\n            \"Bt\":s[\"initial_bt\"],\"mt\":s[\"initial_mt\"],\"Ct\":s[\"initial_ct\"],\"AtTax\":0.0,\n            \"GovSurplus\":0.0,\"corptau\":s[\"corporate_tax\"],\"ramin\":0.02,\"ramax\":0.09,\n            \"wjtmin\":0.8,\"wjtmax\":1.3}\n        states.append(state)\n    return canonical, tuple(states)\n"
+    },
+    {
+      "excerpt_id": "C_EMP_L171_184",
+      "source_id": "C_EMP",
+      "path": "validators/multi_province/mp4b_python_empirical.py",
+      "start_line": 171,
+      "end_line": 184,
+      "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b",
+      "excerpt_sha256": "4d40b3e05b1455944eec648ded2ee4b08dc1a915b4044e25d64b2743d60fb5eb",
+      "text": "def _source_initial_arrays(state: Mapping[str, object], grid: MatlabFaithfulHJBGrid, params: EconomicParams):\n    shape=(grid.b.size,grid.a.size,grid.z.size); labor=np.empty(shape); value=np.empty(shape)\n    for k,z in enumerate(grid.z):\n        for j,a in enumerate(grid.a):\n            effective=float(matlab_faithful_illiquid_return(a,grid.a[-1],float(state[\"rah\"])))\n            for i,b in enumerate(grid.b):\n                rb=float(state[\"rb\"])+(float(state[\"rb_gap\"]) if b<0 else 0.0)\n                temp=effective*effective+rb*b+float(state[\"Tt\"])\n                wage=(1-float(state[\"tau\"]))*float(state[\"w\"])*z\n                l,_=_source_labor_root(wage=wage,temp=temp,frisch_l=1.0/params.phi,ga=params.gamma_c)\n                c=wage*l+rb*b+float(state[\"Tt\"])\n                labor[i,j,k]=l\n                value[i,j,k]=(c**(1-params.gamma_c)/(1-params.gamma_c)-l**6/6)/params.rho\n    return value,labor\n"
+    },
+    {
+      "excerpt_id": "C_EMP_L337_355",
+      "source_id": "C_EMP",
+      "path": "validators/multi_province/mp4b_python_empirical.py",
+      "start_line": 337,
+      "end_line": 355,
+      "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b",
+      "excerpt_sha256": "1411be800a5849cdeac7e536876666c7563bd5a01f0ed2c3a8092732a05016b3",
+      "text": "    def solve_batch(snapshot,iteration):\n        nonlocal call_count\n        productivity=np.array([float(s[\"Yt\"])/float(s[\"Lt\"]) for s in snapshot])\n        phi_matrix[:]=1.0+0.3*(productivity[:,None]-productivity[None,:])/(productivity[:,None]+productivity[None,:])\n        outputs=[]\n        _write_json(root/f'turn_{iteration:03d}_household_inputs.json', {\n            \"iteration\":iteration,\"state_entering_turn\":snapshot,\"phi_destination_origin\":phi_matrix})\n        try:\n            for province_index,state in enumerate(snapshot):\n                initial,labor=_source_initial_arrays(state,grid,params)\n                result=solve_matlab_source_postloop_household(grid,params,HouseholdInputs(\n                    float(state[\"rah\"]),float(state[\"rb\"]),float(state[\"tau\"]),\n                    np.array([state[\"w\"]]),np.array([0.0]),np.array([1.0])),initial,labor,\n                    float(state[\"Tt\"]),float(state[\"rb_gap\"]),numerics)\n                call_count+=1; agg=result.aggregates; density=result.kfe.density\n                effective=matlab_faithful_illiquid_return(grid.a,grid.a[-1],float(state[\"rah\"]))\n                at_tax=agg.a_ss*float(state[\"rah\"])-float(np.sum(grid.a[None,:,None]*effective[None,:,None]*density)*result.kfe.cell_weight)\n                outputs.append((agg.c_ss,agg.l_ss,agg.a_ss,agg.b_ss,at_tax,\n                    result.hjb.converged,result.hjb.iterations,result.hjb.convergence_statistic))\n"
+    },
+    {
+      "excerpt_id": "C_EMP_L370_372",
+      "source_id": "C_EMP",
+      "path": "validators/multi_province/mp4b_python_empirical.py",
+      "start_line": 370,
+      "end_line": 372,
+      "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b",
+      "excerpt_sha256": "caf64658bb1990c1fb4ce8d40af53f39297fafefcf0e120c9049b24ea48c53af",
+      "text": "    try:\n        result=run_online_stationary(OnlineStationaryInputs(tuple(canonical[\"province_order\"]),states,p,\n            phi_matrix,np.array(canonical[\"matrices\"][\"sigmau\"]),solve_batch,1e-9,500,True))\n"
+    },
+    {
+      "excerpt_id": "H_EMP_L101_121",
+      "source_id": "H_EMP",
+      "path": "validators/multi_province/mp4b_python_empirical.py",
+      "start_line": 101,
+      "end_line": 121,
+      "source_sha256": "9033218710204ca4ea2af0351376e47bb5b4f203923e6155dc4776add336091e",
+      "excerpt_sha256": "cea785d3a3836ff36557d0fa209f2fc767be0cd2ee8f70ee6d29e0b6d1c2f144",
+      "text": "def load_entry_state(canonical_path: Path) -> tuple[dict, tuple[dict[str, object], ...]]:\n    canonical = json.loads(Path(canonical_path).read_text(encoding=\"utf-8\"))\n    if canonical[\"binding\"] != {\"analysis_index\":1,\"calendar_year\":2009,\"data_mat_index\":1,\n            \"output_filename_year\":2009,\"regression_vintage_key\":10,\"workbook_data_row_index\":10}:\n        raise ValueError(\"canonical annual binding mismatch\")\n    v=canonical[\"vectors\"]; s=canonical[\"scalars\"]\n    states=[]\n    for i,name in enumerate(canonical[\"province_order\"]):\n        state={\"name\":name,\"N\":v[\"pop\"][i],\"alpha\":v[\"ind_alpha\"][i],\"Zt\":v[\"initialized_zt\"][i],\n            \"Kt0\":v[\"cap\"][i],\"Kt\":v[\"cap\"][i],\"Kt_prev\":v[\"cap\"][i],\"Lt\":v[\"pop\"][i],\n            \"Lt_prev\":v[\"pop\"][i],\"Yt0\":v[\"gdp\"][i],\"Yt\":v[\"gdp\"][i],\"Zt_1\":v[\"initialized_zt\"][i],\n            \"GovInv\":v[\"gov_inv\"][i],\"inter_prv_ratio\":v[\"inter_province_asset_ratio\"][i],\n            \"rb_gap\":s[\"rb_gap\"],\"rah\":s[\"rah\"],\"ra\":s[\"ra\"],\"it\":s[\"nominal_rate\"],\n            \"rb\":s[\"rb\"],\"rk\":s[\"rk\"],\"wjt\":s[\"wjt\"],\"w\":s[\"composite_wage\"],\n            \"Tt\":s[\"transfer_income\"],\"pit\":s[\"inflation\"],\"pit_1\":s[\"inflation\"],\n            \"totalpit\":s[\"inflation\"],\"epsilon_pi\":0.0,\"tau\":s[\"wage_tax\"],\"At\":s[\"initial_at\"],\n            \"Bt\":s[\"initial_bt\"],\"mt\":s[\"initial_mt\"],\"Ct\":s[\"initial_ct\"],\"AtTax\":0.0,\n            \"GovSurplus\":0.0,\"corptau\":s[\"corporate_tax\"],\"ramin\":0.02,\"ramax\":0.09,\n            \"wjtmin\":0.8,\"wjtmax\":1.3}\n        states.append(state)\n    return canonical, tuple(states)\n"
+    },
+    {
+      "excerpt_id": "H_EMP_L171_184",
+      "source_id": "H_EMP",
+      "path": "validators/multi_province/mp4b_python_empirical.py",
+      "start_line": 171,
+      "end_line": 184,
+      "source_sha256": "9033218710204ca4ea2af0351376e47bb5b4f203923e6155dc4776add336091e",
+      "excerpt_sha256": "4d40b3e05b1455944eec648ded2ee4b08dc1a915b4044e25d64b2743d60fb5eb",
+      "text": "def _source_initial_arrays(state: Mapping[str, object], grid: MatlabFaithfulHJBGrid, params: EconomicParams):\n    shape=(grid.b.size,grid.a.size,grid.z.size); labor=np.empty(shape); value=np.empty(shape)\n    for k,z in enumerate(grid.z):\n        for j,a in enumerate(grid.a):\n            effective=float(matlab_faithful_illiquid_return(a,grid.a[-1],float(state[\"rah\"])))\n            for i,b in enumerate(grid.b):\n                rb=float(state[\"rb\"])+(float(state[\"rb_gap\"]) if b<0 else 0.0)\n                temp=effective*effective+rb*b+float(state[\"Tt\"])\n                wage=(1-float(state[\"tau\"]))*float(state[\"w\"])*z\n                l,_=_source_labor_root(wage=wage,temp=temp,frisch_l=1.0/params.phi,ga=params.gamma_c)\n                c=wage*l+rb*b+float(state[\"Tt\"])\n                labor[i,j,k]=l\n                value[i,j,k]=(c**(1-params.gamma_c)/(1-params.gamma_c)-l**6/6)/params.rho\n    return value,labor\n"
+    },
+    {
+      "excerpt_id": "H_EMP_L337_355",
+      "source_id": "H_EMP",
+      "path": "validators/multi_province/mp4b_python_empirical.py",
+      "start_line": 337,
+      "end_line": 355,
+      "source_sha256": "9033218710204ca4ea2af0351376e47bb5b4f203923e6155dc4776add336091e",
+      "excerpt_sha256": "1411be800a5849cdeac7e536876666c7563bd5a01f0ed2c3a8092732a05016b3",
+      "text": "    def solve_batch(snapshot,iteration):\n        nonlocal call_count\n        productivity=np.array([float(s[\"Yt\"])/float(s[\"Lt\"]) for s in snapshot])\n        phi_matrix[:]=1.0+0.3*(productivity[:,None]-productivity[None,:])/(productivity[:,None]+productivity[None,:])\n        outputs=[]\n        _write_json(root/f'turn_{iteration:03d}_household_inputs.json', {\n            \"iteration\":iteration,\"state_entering_turn\":snapshot,\"phi_destination_origin\":phi_matrix})\n        try:\n            for province_index,state in enumerate(snapshot):\n                initial,labor=_source_initial_arrays(state,grid,params)\n                result=solve_matlab_source_postloop_household(grid,params,HouseholdInputs(\n                    float(state[\"rah\"]),float(state[\"rb\"]),float(state[\"tau\"]),\n                    np.array([state[\"w\"]]),np.array([0.0]),np.array([1.0])),initial,labor,\n                    float(state[\"Tt\"]),float(state[\"rb_gap\"]),numerics)\n                call_count+=1; agg=result.aggregates; density=result.kfe.density\n                effective=matlab_faithful_illiquid_return(grid.a,grid.a[-1],float(state[\"rah\"]))\n                at_tax=agg.a_ss*float(state[\"rah\"])-float(np.sum(grid.a[None,:,None]*effective[None,:,None]*density)*result.kfe.cell_weight)\n                outputs.append((agg.c_ss,agg.l_ss,agg.a_ss,agg.b_ss,at_tax,\n                    result.hjb.converged,result.hjb.iterations,result.hjb.convergence_statistic))\n"
+    },
+    {
+      "excerpt_id": "P2_EMP_L171_185",
+      "source_id": "P2_EMP",
+      "path": "validators/multi_province/mp4b_python_empirical.py",
+      "start_line": 171,
+      "end_line": 185,
+      "source_sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+      "excerpt_sha256": "03d056aa2fd68235c8f4aaa2af15132ad8e103163cd7e5a6aaa4653c4fc1a26e",
+      "text": "def _source_initial_arrays(state: Mapping[str, object], grid: MatlabFaithfulHJBGrid, params: EconomicParams):\n    # state['w'] is destination-tax-net; state['tau'] remains fiscal metadata.\n    shape=(grid.b.size,grid.a.size,grid.z.size); labor=np.empty(shape); value=np.empty(shape)\n    for k,z in enumerate(grid.z):\n        for j,a in enumerate(grid.a):\n            effective=float(matlab_faithful_illiquid_return(a,grid.a[-1],float(state[\"rah\"])))\n            for i,b in enumerate(grid.b):\n                rb=float(state[\"rb\"])+(float(state[\"rb_gap\"]) if b<0 else 0.0)\n                temp=effective*effective+rb*b+float(state[\"Tt\"])\n                wage=float(state[\"w\"])*z\n                l,_=_source_labor_root(wage=wage,temp=temp,frisch_l=1.0/params.phi,ga=params.gamma_c)\n                c=wage*l+rb*b+float(state[\"Tt\"])\n                labor[i,j,k]=l\n                value[i,j,k]=(c**(1-params.gamma_c)/(1-params.gamma_c)-l**6/6)/params.rho\n    return value,labor\n"
+    },
+    {
+      "excerpt_id": "P2_EMP_L338_355",
+      "source_id": "P2_EMP",
+      "path": "validators/multi_province/mp4b_python_empirical.py",
+      "start_line": 338,
+      "end_line": 355,
+      "source_sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6",
+      "excerpt_sha256": "c07aa4cb09dc89ffe163b0358899744499e7ecdc8ac780496110f8cf509767d1",
+      "text": "    def solve_batch(snapshot,iteration):\n        nonlocal call_count\n        productivity=np.array([float(s[\"Yt\"])/float(s[\"Lt\"]) for s in snapshot])\n        phi_matrix[:]=1.0-0.3*(productivity[:,None]-productivity[None,:])/(productivity[:,None]+productivity[None,:])\n        outputs=[]\n        _write_json(root/f'turn_{iteration:03d}_household_inputs.json', {\n            \"iteration\":iteration,\"state_entering_turn\":snapshot,\"phi_destination_origin\":phi_matrix})\n        try:\n            for province_index,state in enumerate(snapshot):\n                initial,labor=_source_initial_arrays(state,grid,params)\n                result=solve_matlab_source_postloop_household(grid,params,HouseholdInputs(\n                    float(state[\"rah\"]),float(state[\"rb\"]),0.0,  # tau already in state['w']\n                    np.array([state[\"w\"]]),np.array([0.0]),np.array([1.0])),initial,labor,\n                    float(state[\"Tt\"]),float(state[\"rb_gap\"]),numerics)\n                call_count+=1; agg=result.aggregates; density=result.kfe.density\n                effective=matlab_faithful_illiquid_return(grid.a,grid.a[-1],float(state[\"rah\"]))\n                at_tax=agg.a_ss*float(state[\"rah\"])-float(np.sum(grid.a[None,:,None]*effective[None,:,None]*density)*result.kfe.cell_weight)\n                outputs.append((agg.c_ss,agg.l_ss,agg.a_ss,agg.b_ss,at_tax,\n"
+    },
+    {
+      "excerpt_id": "C_HA_L53_77",
+      "source_id": "C_HA",
+      "path": "exports/matlab_faithful_two_asset_ha.py",
+      "start_line": 53,
+      "end_line": 77,
+      "source_sha256": "f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8",
+      "excerpt_sha256": "eac3332c2cfabd44e7f3ad67d12888e2fc84e4f02b3a8920428e7f8313043bf7",
+      "text": "class HouseholdInputs:\n    r_a: float\n    r_b: float\n    tau: float\n    wages: np.ndarray\n    migration_costs: np.ndarray\n    labor_weights: np.ndarray\n\n    def __post_init__(self) -> None:\n        for name in (\"wages\", \"migration_costs\", \"labor_weights\"):\n            array = np.array(getattr(self, name), dtype=float, copy=True)\n            if array.ndim != 1 or array.size == 0 or not np.all(np.isfinite(array)):\n                raise ValueError(f\"{name} must be a non-empty finite vector\")\n            array.flags.writeable = False\n            object.__setattr__(self, name, array)\n        if not (self.wages.shape == self.migration_costs.shape == self.labor_weights.shape):\n            raise ValueError(\"province input vectors must share one shape\")\n        if not np.all(self.wages >= 0) or not np.all(self.labor_weights > 0):\n            raise ValueError(\"wages must be non-negative and labor weights positive\")\n        if not np.isfinite([self.r_a, self.r_b, self.tau]).all():\n            raise ValueError(\"rates and tax must be finite\")\n        if np.any(1.0 - self.tau - self.migration_costs < 0.0):\n            raise ValueError(\"after-tax migration wedges must be non-negative\")\n        effective_wages = self.wages * (1.0 - self.tau - self.migration_costs)\n        if not np.any(effective_wages > 0.0):\n"
+    },
+    {
+      "excerpt_id": "C_HA_L131_136",
+      "source_id": "C_HA",
+      "path": "exports/matlab_faithful_two_asset_ha.py",
+      "start_line": 131,
+      "end_line": 136,
+      "source_sha256": "f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8",
+      "excerpt_sha256": "0da62b3418f1403e20f70517502b1196ca829821fde1bbd872839df23d5b9eca",
+      "text": "def labor_from_vb(v_b: float, z: float, inputs: HouseholdInputs, params: EconomicParams) -> np.ndarray:\n    if v_b <= 0 or z < 0:\n        raise ValueError(\"labor FOC requires V_b > 0 and z >= 0\")\n    net_wage = inputs.wages * (1.0 - inputs.tau - inputs.migration_costs) * z\n    labor = np.power(v_b * net_wage / inputs.labor_weights, 1.0 / params.phi)\n    return np.asarray(labor, dtype=float)\n"
+    },
+    {
+      "excerpt_id": "C_HA_L148_166",
+      "source_id": "C_HA",
+      "path": "exports/matlab_faithful_two_asset_ha.py",
+      "start_line": 148,
+      "end_line": 166,
+      "source_sha256": "f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8",
+      "excerpt_sha256": "6e4bbdbf4e607c82026ef6f36bc965cdbb133a0a7494d7e151a9207305d4543d",
+      "text": "def asset_drifts_matlab_faithful(\n    a: float,\n    b: float,\n    z: float,\n    consumption: float,\n    labor: np.ndarray,\n    transfer: float,\n    inputs: HouseholdInputs,\n    params: EconomicParams,\n    a_max: float,\n) -> tuple[float, float, float]:\n    \"\"\"Use the MATLAB taper in mu_a while preserving the existing liquid budget.\"\"\"\n    cost = float(adjustment_cost(transfer, a, params))\n    labor_income = float(\n        np.sum(inputs.wages * (1.0 - inputs.tau - inputs.migration_costs) * z * labor)\n    )\n    mu_b = inputs.r_b * b + labor_income - transfer - cost - consumption\n    r_a_effective = float(matlab_faithful_illiquid_return(a, a_max, inputs.r_a))\n    mu_a = r_a_effective * a + transfer\n"
+    },
+    {
+      "excerpt_id": "C_HA_L331_350",
+      "source_id": "C_HA",
+      "path": "exports/matlab_faithful_two_asset_ha.py",
+      "start_line": 331,
+      "end_line": 350,
+      "source_sha256": "f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8",
+      "excerpt_sha256": "35bf2723fea54f80b931d4d22de406aa0972eaec4a934a92c0e6641149278101",
+      "text": "    local_inputs = HouseholdInputs(\n        inputs.r_a,\n        effective_r_b,\n        inputs.tau,\n        inputs.wages,\n        inputs.migration_costs,\n        inputs.labor_weights,\n    )\n    vb_b = max(v_b_backward, MATLAB_DERIVATIVE_FLOOR)\n    vb_f = max(v_b_forward, MATLAB_DERIVATIVE_FLOOR)\n    consumption_b = consumption_from_vb(vb_b, params)\n    consumption_f = consumption_from_vb(vb_f, params)\n    labor_b = float(labor_from_vb(vb_b, z, local_inputs, params)[0])\n    labor_f = float(labor_from_vb(vb_f, z, local_inputs, params)[0])\n    net_wage = float(\n        local_inputs.wages[0]\n        * (1.0 - local_inputs.tau - local_inputs.migration_costs[0])\n        * z\n    )\n    liquid_resources_b = net_wage * labor_b + transfer_income + effective_r_b * b\n"
+    },
+    {
+      "excerpt_id": "C_HA_L600_605",
+      "source_id": "C_HA",
+      "path": "exports/matlab_faithful_two_asset_ha.py",
+      "start_line": 600,
+      "end_line": 605,
+      "source_sha256": "f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8",
+      "excerpt_sha256": "08224678cffc83fec8ec5f6c486ba81391209cc7052f596111331f787f4fd41d",
+      "text": "        for j, a in enumerate(grid.a):\n            for nz, z in enumerate(grid.z):\n                for i in (0, grid.b.size - 1):\n                    rb = inputs.r_b + (borrowing_rate_gap if grid.b[i] < 0 else 0.0)\n                    resources = (1-inputs.tau)*inputs.wages[0]*z*labor0[i,j,nz] + transfer_income + rb*grid.b[i]\n                    marginal = resources ** (-params.gamma_c)\n"
+    },
+    {
+      "excerpt_id": "C_HA_L686_696",
+      "source_id": "C_HA",
+      "path": "exports/matlab_faithful_two_asset_ha.py",
+      "start_line": 686,
+      "end_line": 696,
+      "source_sha256": "f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8",
+      "excerpt_sha256": "6e98b00315a6488ab1695e99fde022c36934ab0297394a1a681736c3803d05a7",
+      "text": "def aggregate_stationary_household(grid, consumption, labor, density):\n    \"\"\"Exact MATLAB sums; L is effective z-weighted household labor, not GE labor.\"\"\"\n    shape=(grid.b.size,grid.a.size,grid.z.size)\n    C=np.asarray(consumption,dtype=float); l=np.asarray(labor,dtype=float); g=np.asarray(density,dtype=float)\n    if C.shape!=shape or l.shape!=shape or g.shape!=shape or not np.isfinite(C).all() or not np.isfinite(l).all() or not np.isfinite(g).all():\n        raise ValueError(\"aggregate arrays must be finite and match (b,a,z)\")\n    db=float(grid.b[1]-grid.b[0]); da=float(grid.a[1]-grid.a[0]); weight=db*da\n    b=np.broadcast_to(grid.b[:,None,None],shape); a=np.broadcast_to(grid.a[None,:,None],shape); z=np.broadcast_to(grid.z[None,None,:],shape)\n    c_ss=float(np.sum(C*g*weight)); l_ss=float(np.sum(z*l*g*weight))\n    a_ss=float(np.sum(a*g*weight)); b_ss=float(np.sum(b*g*weight))\n    return StationaryHouseholdAggregates(c_ss,l_ss,a_ss,b_ss,a_ss+b_ss,float(np.sum(g)*weight))\n"
+    },
+    {
+      "excerpt_id": "H_HA_L131_136",
+      "source_id": "H_HA",
+      "path": "exports/matlab_faithful_two_asset_ha.py",
+      "start_line": 131,
+      "end_line": 136,
+      "source_sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+      "excerpt_sha256": "0da62b3418f1403e20f70517502b1196ca829821fde1bbd872839df23d5b9eca",
+      "text": "def labor_from_vb(v_b: float, z: float, inputs: HouseholdInputs, params: EconomicParams) -> np.ndarray:\n    if v_b <= 0 or z < 0:\n        raise ValueError(\"labor FOC requires V_b > 0 and z >= 0\")\n    net_wage = inputs.wages * (1.0 - inputs.tau - inputs.migration_costs) * z\n    labor = np.power(v_b * net_wage / inputs.labor_weights, 1.0 / params.phi)\n    return np.asarray(labor, dtype=float)\n"
+    },
+    {
+      "excerpt_id": "H_HA_L159_166",
+      "source_id": "H_HA",
+      "path": "exports/matlab_faithful_two_asset_ha.py",
+      "start_line": 159,
+      "end_line": 166,
+      "source_sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+      "excerpt_sha256": "b03713f8ee18c2872d51203bc43de934d770e2b28ab0f2b51cd614df91513441",
+      "text": "    \"\"\"Use the MATLAB taper in mu_a while preserving the existing liquid budget.\"\"\"\n    cost = float(adjustment_cost(transfer, a, params))\n    labor_income = float(\n        np.sum(inputs.wages * (1.0 - inputs.tau - inputs.migration_costs) * z * labor)\n    )\n    mu_b = inputs.r_b * b + labor_income - transfer - cost - consumption\n    r_a_effective = float(matlab_faithful_illiquid_return(a, a_max, inputs.r_a))\n    mu_a = r_a_effective * a + transfer\n"
+    },
+    {
+      "excerpt_id": "H_HA_L619_629",
+      "source_id": "H_HA",
+      "path": "exports/matlab_faithful_two_asset_ha.py",
+      "start_line": 619,
+      "end_line": 629,
+      "source_sha256": "b92f6efc59d9398f89f8fb6ee67bf6c5f947282d76895051bec194967ec9c3e3",
+      "excerpt_sha256": "6e98b00315a6488ab1695e99fde022c36934ab0297394a1a681736c3803d05a7",
+      "text": "def aggregate_stationary_household(grid, consumption, labor, density):\n    \"\"\"Exact MATLAB sums; L is effective z-weighted household labor, not GE labor.\"\"\"\n    shape=(grid.b.size,grid.a.size,grid.z.size)\n    C=np.asarray(consumption,dtype=float); l=np.asarray(labor,dtype=float); g=np.asarray(density,dtype=float)\n    if C.shape!=shape or l.shape!=shape or g.shape!=shape or not np.isfinite(C).all() or not np.isfinite(l).all() or not np.isfinite(g).all():\n        raise ValueError(\"aggregate arrays must be finite and match (b,a,z)\")\n    db=float(grid.b[1]-grid.b[0]); da=float(grid.a[1]-grid.a[0]); weight=db*da\n    b=np.broadcast_to(grid.b[:,None,None],shape); a=np.broadcast_to(grid.a[None,:,None],shape); z=np.broadcast_to(grid.z[None,None,:],shape)\n    c_ss=float(np.sum(C*g*weight)); l_ss=float(np.sum(z*l*g*weight))\n    a_ss=float(np.sum(a*g*weight)); b_ss=float(np.sum(b*g*weight))\n    return StationaryHouseholdAggregates(c_ss,l_ss,a_ss,b_ss,a_ss+b_ss,float(np.sum(g)*weight))\n"
+    },
+    {
+      "excerpt_id": "C_E_L79_85",
+      "source_id": "C_E",
+      "path": "src/ch5_two_asset_hank/economics.py",
+      "start_line": 79,
+      "end_line": 85,
+      "source_sha256": "191f4a93d35fb5861ca7e9260f59cfaca5b9c5750f26bbeddae68fe600cc4009",
+      "excerpt_sha256": "186e1c774c71649c77f824a2a57d7b3bb4a5faa081923f4a8b8f2d7afad83116",
+      "text": "\ndef labor_from_vb(v_b: float, z: float, inputs: HouseholdInputs, params: EconomicParams) -> np.ndarray:\n    if v_b <= 0 or z < 0:\n        raise ValueError(\"labor FOC requires V_b > 0 and z >= 0\")\n    net_wage = inputs.wages * (1.0 - inputs.tau - inputs.migration_costs) * z\n    labor = np.power(v_b * net_wage / inputs.labor_weights, 1.0 / params.phi)\n    return np.asarray(labor, dtype=float)\n"
+    },
+    {
+      "excerpt_id": "C_E_L109_115",
+      "source_id": "C_E",
+      "path": "src/ch5_two_asset_hank/economics.py",
+      "start_line": 109,
+      "end_line": 115,
+      "source_sha256": "191f4a93d35fb5861ca7e9260f59cfaca5b9c5750f26bbeddae68fe600cc4009",
+      "excerpt_sha256": "aab8fe55ad07ac59f5b56e832cf42871a08e6b303911ee3c62a7401099e81cbb",
+      "text": "    cost = float(adjustment_cost(transfer, a, params))\n    labor_income = float(\n        np.sum(inputs.wages * (1.0 - inputs.tau - inputs.migration_costs) * z * labor)\n    )\n    mu_b = inputs.r_b * b + labor_income - transfer - cost - consumption\n    mu_a = inputs.r_a * a + transfer\n    return mu_a, mu_b, cost\n"
+    },
+    {
+      "excerpt_id": "C_POST_L15_41",
+      "source_id": "C_POST",
+      "path": "validators/multi_province/mp4b_matlab_source_postloop_household_adapter.py",
+      "start_line": 15,
+      "end_line": 41,
+      "source_sha256": "cb90229f3c90ff2ba2fec0cf2e768404ad2ffe8a9ec291d7ed2c6dd22102337f",
+      "excerpt_sha256": "6c3bfb617df01cb9a22494ab6cb444db8730396ae36e89bc8f4f69dd99db08cf",
+      "text": "def solve_matlab_source_postloop_household(\n    grid,\n    params,\n    inputs,\n    initial_value,\n    baseline_labor,\n    transfer_income,\n    borrowing_rate_gap,\n    numerics,\n    *,\n    hjb_solver: Callable = solve_matlab_faithful_hjb,\n    kfe_solver: Callable = solve_matlab_faithful_stationary_kfe,\n    aggregator: Callable = aggregate_stationary_household,\n) -> HouseholdSteadyStateResult:\n    \"\"\"Compose accepted primitives without treating ``hjb.converged`` as an exception.\"\"\"\n    hjb = hjb_solver(\n        grid, params, inputs, initial_value, baseline_labor,\n        transfer_income, borrowing_rate_gap, numerics,\n    )\n    shape = (grid.b.size, grid.a.size, grid.z.size)\n    db = float(grid.b[1] - grid.b[0])\n    da = float(grid.a[1] - grid.a[0])\n    kfe = kfe_solver(\n        hjb.post_convergence_operator.full, shape=shape, db=db, da=da,\n    )\n    aggregates = aggregator(grid, hjb.consumption, hjb.labor, kfe.density)\n    return HouseholdSteadyStateResult(hjb, kfe, aggregates)\n"
+    },
+    {
+      "excerpt_id": "H_POST_L15_41",
+      "source_id": "H_POST",
+      "path": "validators/multi_province/mp4b_matlab_source_postloop_household_adapter.py",
+      "start_line": 15,
+      "end_line": 41,
+      "source_sha256": "8a6308870606a02886e9a8e4b32e942a7d433237405e6b9e86ee4175fb2dff06",
+      "excerpt_sha256": "6c3bfb617df01cb9a22494ab6cb444db8730396ae36e89bc8f4f69dd99db08cf",
+      "text": "def solve_matlab_source_postloop_household(\n    grid,\n    params,\n    inputs,\n    initial_value,\n    baseline_labor,\n    transfer_income,\n    borrowing_rate_gap,\n    numerics,\n    *,\n    hjb_solver: Callable = solve_matlab_faithful_hjb,\n    kfe_solver: Callable = solve_matlab_faithful_stationary_kfe,\n    aggregator: Callable = aggregate_stationary_household,\n) -> HouseholdSteadyStateResult:\n    \"\"\"Compose accepted primitives without treating ``hjb.converged`` as an exception.\"\"\"\n    hjb = hjb_solver(\n        grid, params, inputs, initial_value, baseline_labor,\n        transfer_income, borrowing_rate_gap, numerics,\n    )\n    shape = (grid.b.size, grid.a.size, grid.z.size)\n    db = float(grid.b[1] - grid.b[0])\n    da = float(grid.a[1] - grid.a[0])\n    kfe = kfe_solver(\n        hjb.post_convergence_operator.full, shape=shape, db=db, da=da,\n    )\n    aggregates = aggregator(grid, hjb.consumption, hjb.labor, kfe.density)\n    return HouseholdSteadyStateResult(hjb, kfe, aggregates)\n"
+    },
+    {
+      "excerpt_id": "D2_POST_L15_41",
+      "source_id": "D2_POST",
+      "path": "validators/multi_province/mp4b_matlab_source_postloop_household_adapter.py",
+      "start_line": 15,
+      "end_line": 41,
+      "source_sha256": "8a6308870606a02886e9a8e4b32e942a7d433237405e6b9e86ee4175fb2dff06",
+      "excerpt_sha256": "6c3bfb617df01cb9a22494ab6cb444db8730396ae36e89bc8f4f69dd99db08cf",
+      "text": "def solve_matlab_source_postloop_household(\n    grid,\n    params,\n    inputs,\n    initial_value,\n    baseline_labor,\n    transfer_income,\n    borrowing_rate_gap,\n    numerics,\n    *,\n    hjb_solver: Callable = solve_matlab_faithful_hjb,\n    kfe_solver: Callable = solve_matlab_faithful_stationary_kfe,\n    aggregator: Callable = aggregate_stationary_household,\n) -> HouseholdSteadyStateResult:\n    \"\"\"Compose accepted primitives without treating ``hjb.converged`` as an exception.\"\"\"\n    hjb = hjb_solver(\n        grid, params, inputs, initial_value, baseline_labor,\n        transfer_income, borrowing_rate_gap, numerics,\n    )\n    shape = (grid.b.size, grid.a.size, grid.z.size)\n    db = float(grid.b[1] - grid.b[0])\n    da = float(grid.a[1] - grid.a[0])\n    kfe = kfe_solver(\n        hjb.post_convergence_operator.full, shape=shape, db=db, da=da,\n    )\n    aggregates = aggregator(grid, hjb.consumption, hjb.labor, kfe.density)\n    return HouseholdSteadyStateResult(hjb, kfe, aggregates)\n"
+    },
+    {
+      "excerpt_id": "C_RT_L11_16",
+      "source_id": "C_RT",
+      "path": "src/ch5_two_asset_hank/multi_province/stationary_runtime.py",
+      "start_line": 11,
+      "end_line": 16,
+      "source_sha256": "6cabaa5941c47799bcc6d299edee48e4b7cb52f2213b7b9155de3aa9b032c1e6",
+      "excerpt_sha256": "52a64f4522f6150ae9a492ca664529d27e63473011665e3137146db7a9c0021b",
+      "text": "from .one_turn import OneTurnInputs, PreFrozenHouseholdOutputBatch, run_source_faithful_one_turn\nfrom .steady_state import (\n    AdaptiveAction, IterationRecord, ManualSteadyStateResult,\n    SteadyStateConvergenceError, TERMINATION_CONVERGED, TERMINATION_MAX_ITERATIONS,\n    _adapt, _diagnostics, _freeze_state, _post_turn_states,\n)\n"
+    },
+    {
+      "excerpt_id": "C_RT_L35_58",
+      "source_id": "C_RT",
+      "path": "src/ch5_two_asset_hank/multi_province/stationary_runtime.py",
+      "start_line": 35,
+      "end_line": 58,
+      "source_sha256": "6cabaa5941c47799bcc6d299edee48e4b7cb52f2213b7b9155de3aa9b032c1e6",
+      "excerpt_sha256": "864efe677db05107d57fc19984c3aff1077d03a4c8b47b9f0ac724a5c92ff9a2",
+      "text": "def run_online_stationary(inputs: OnlineStationaryInputs) -> ManualSteadyStateResult:\n    \"\"\"Mirror MP3 exactly while obtaining one simultaneous HA batch per turn.\"\"\"\n    order = tuple(inputs.province_order)\n    states = _freeze_state(inputs.initial_provinces)\n    n = len(order)\n    if n < 2 or len(states) != n or any(str(s.get(\"name\", \"\")) != order[i] for i, s in enumerate(states)):\n        raise ValueError(\"province state and order mismatch\")\n    phi = np.asarray(inputs.phi_destination_origin, dtype=float)\n    wedges = np.asarray(inputs.migration_wedge_destination_origin, dtype=float)\n    if phi.shape != (n, n) or wedges.shape != (n, n):\n        raise ValueError(\"cross-province matrices have the wrong shape\")\n    if inputs.reg_threshold <= 0 or inputs.max_iterations < 1:\n        raise ValueError(\"invalid controller bounds\")\n    tkn_ratio = np.full(n, 3.0, dtype=float)\n    history: list[IterationRecord] = []\n    for iteration in range(1, inputs.max_iterations + 1):\n        entering = states\n        batch = inputs.household_solver(entering, iteration)\n        turn = run_source_faithful_one_turn(OneTurnInputs(\n            order, entering, MappingProxyType(dict(inputs.params)), phi, wedges, batch\n        ))\n        before = _post_turn_states(entering, batch, turn)\n        diagnostic = _diagnostics(before, batch, tkn_ratio, inputs.reg_threshold)\n        snapshot = _freeze_state(before)\n"
+    },
+    {
+      "excerpt_id": "C_RT_L79_86",
+      "source_id": "C_RT",
+      "path": "src/ch5_two_asset_hank/multi_province/stationary_runtime.py",
+      "start_line": 79,
+      "end_line": 86,
+      "source_sha256": "6cabaa5941c47799bcc6d299edee48e4b7cb52f2213b7b9155de3aa9b032c1e6",
+      "excerpt_sha256": "f1d2ea34fc0e95d0cd63928a74d439198783a8b8ede05ccabc247b0726b2b298",
+      "text": "            adaptive_actions=actions,\n        )\n        history.append(record); states = _freeze_state(next_states)\n        if converged:\n            return ManualSteadyStateResult(True, TERMINATION_CONVERGED, iteration, states, tuple(history))\n        tkn_ratio = tkn_after\n    result = ManualSteadyStateResult(False, TERMINATION_MAX_ITERATIONS, inputs.max_iterations, states, tuple(history))\n    raise SteadyStateConvergenceError(result)\n"
+    },
+    {
+      "excerpt_id": "D2_RT_L35_58",
+      "source_id": "D2_RT",
+      "path": "src/ch5_two_asset_hank/multi_province/stationary_runtime.py",
+      "start_line": 35,
+      "end_line": 58,
+      "source_sha256": "226be912ab776f57a8d8eface912ab2a3331e865638ac36976f6d578bdb086a0",
+      "excerpt_sha256": "864efe677db05107d57fc19984c3aff1077d03a4c8b47b9f0ac724a5c92ff9a2",
+      "text": "def run_online_stationary(inputs: OnlineStationaryInputs) -> ManualSteadyStateResult:\n    \"\"\"Mirror MP3 exactly while obtaining one simultaneous HA batch per turn.\"\"\"\n    order = tuple(inputs.province_order)\n    states = _freeze_state(inputs.initial_provinces)\n    n = len(order)\n    if n < 2 or len(states) != n or any(str(s.get(\"name\", \"\")) != order[i] for i, s in enumerate(states)):\n        raise ValueError(\"province state and order mismatch\")\n    phi = np.asarray(inputs.phi_destination_origin, dtype=float)\n    wedges = np.asarray(inputs.migration_wedge_destination_origin, dtype=float)\n    if phi.shape != (n, n) or wedges.shape != (n, n):\n        raise ValueError(\"cross-province matrices have the wrong shape\")\n    if inputs.reg_threshold <= 0 or inputs.max_iterations < 1:\n        raise ValueError(\"invalid controller bounds\")\n    tkn_ratio = np.full(n, 3.0, dtype=float)\n    history: list[IterationRecord] = []\n    for iteration in range(1, inputs.max_iterations + 1):\n        entering = states\n        batch = inputs.household_solver(entering, iteration)\n        turn = run_source_faithful_one_turn(OneTurnInputs(\n            order, entering, MappingProxyType(dict(inputs.params)), phi, wedges, batch\n        ))\n        before = _post_turn_states(entering, batch, turn)\n        diagnostic = _diagnostics(before, batch, tkn_ratio, inputs.reg_threshold)\n        snapshot = _freeze_state(before)\n"
+    },
+    {
+      "excerpt_id": "C_SS_L149_169",
+      "source_id": "C_SS",
+      "path": "src/ch5_two_asset_hank/multi_province/steady_state.py",
+      "start_line": 149,
+      "end_line": 169,
+      "source_sha256": "b8897fdef9cc59a2811561a18cb0fadf059a158ad8e5f3661bd10a5734d264aa",
+      "excerpt_sha256": "e33c7e94c5bc6b002d939efcd77466d2044ef31f72a8e6e943aca4681ecd4b00",
+      "text": "    batch: PreFrozenHouseholdOutputBatch,\n    turn: OneTurnResult,\n) -> list[dict[str, object]]:\n    updated: list[dict[str, object]] = []\n    for i, old in enumerate(states):\n        firm = turn.firms[i]\n        state = dict(old)\n        state.update({\n            \"Ct\": float(batch.ct[i]), \"At\": float(batch.at[i]), \"Bt\": float(batch.bt[i]),\n            \"AtTax\": float(batch.at_tax[i]), \"convergent\": bool(batch.converged[i]),\n            \"Lt_supply\": float(turn.migration.lt_supply[i]),\n            \"Kt_supply\": float(turn.capital.kt_supply[i]),\n            \"rah\": float(turn.capital.household_illiquid_return_rah[i]),\n            \"w\": float(turn.household_composite_wage[i]), \"it\": turn.monetary.it,\n            \"rb\": turn.monetary.rb, \"Yt_1\": float(old[\"Yt\"]),\n            \"Kt_prev\": firm.Kt, \"Lt_prev\": firm.Lt, \"Zt_1\": float(old[\"Zt\"]),\n            \"pit_1\": float(old[\"pit\"]),\n        })\n        state.update(firm.as_source_dict())\n        updated.append(state)\n    return updated\n"
+    },
+    {
+      "excerpt_id": "D2_SS_L149_169",
+      "source_id": "D2_SS",
+      "path": "src/ch5_two_asset_hank/multi_province/steady_state.py",
+      "start_line": 149,
+      "end_line": 169,
+      "source_sha256": "7065d0fcbfda6a88c8f773debdf277f6e300a8e0195b7cc635f7a0033d74d88c",
+      "excerpt_sha256": "e33c7e94c5bc6b002d939efcd77466d2044ef31f72a8e6e943aca4681ecd4b00",
+      "text": "    batch: PreFrozenHouseholdOutputBatch,\n    turn: OneTurnResult,\n) -> list[dict[str, object]]:\n    updated: list[dict[str, object]] = []\n    for i, old in enumerate(states):\n        firm = turn.firms[i]\n        state = dict(old)\n        state.update({\n            \"Ct\": float(batch.ct[i]), \"At\": float(batch.at[i]), \"Bt\": float(batch.bt[i]),\n            \"AtTax\": float(batch.at_tax[i]), \"convergent\": bool(batch.converged[i]),\n            \"Lt_supply\": float(turn.migration.lt_supply[i]),\n            \"Kt_supply\": float(turn.capital.kt_supply[i]),\n            \"rah\": float(turn.capital.household_illiquid_return_rah[i]),\n            \"w\": float(turn.household_composite_wage[i]), \"it\": turn.monetary.it,\n            \"rb\": turn.monetary.rb, \"Yt_1\": float(old[\"Yt\"]),\n            \"Kt_prev\": firm.Kt, \"Lt_prev\": firm.Lt, \"Zt_1\": float(old[\"Zt\"]),\n            \"pit_1\": float(old[\"pit\"]),\n        })\n        state.update(firm.as_source_dict())\n        updated.append(state)\n    return updated\n"
+    },
+    {
+      "excerpt_id": "C_BASE_L27_43",
+      "source_id": "C_BASE",
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+      "start_line": 27,
+      "end_line": 43,
+      "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07",
+      "excerpt_sha256": "e86a0dee8df294a77a3ea73b8b02028e9de4a2a08fb8345fcf4f082c8b3f65ec",
+      "text": "from exports import matlab_faithful_two_asset_ha as oracle\nfrom ch5_two_asset_hank.multi_province import one_turn as source\nfrom ch5_two_asset_hank.multi_province.c1_residual_public_asset import C1_UPDATE_ORDER\nfrom ch5_two_asset_hank.multi_province.capital_allocation import CapitalAllocationInputs\nfrom ch5_two_asset_hank.multi_province.corrected_household_adapter import (\n    CorrectedHouseholdAggregateInputs,\n    evaluate_corrected_household_aggregates,\n)\nfrom ch5_two_asset_hank.multi_province.government_assets import residual_government_asset_levels\nfrom ch5_two_asset_hank.multi_province.k1a_runtime_adapter import (\n    K1ARuntimeConfig,\n    allocate_k1a_capital,\n    load_accepted_distance_score,\n)\nfrom ch5_two_asset_hank.multi_province.one_turn import OneTurnInputs, PreFrozenHouseholdOutputBatch\nfrom ch5_two_asset_hank.multi_province.province_contracts import PROVINCE_ORDER\nfrom validators.multi_province.corrected_2018_single_turn.run import source_initial_arrays\n"
+    },
+    {
+      "excerpt_id": "C_BASE_L285_305",
+      "source_id": "C_BASE",
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+      "start_line": 285,
+      "end_line": 305,
+      "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07",
+      "excerpt_sha256": "3a31db4b7ab5d0e795473ff54b34e99dc174260c0ce965b030191ccb8e8ff459",
+      "text": "def _province_inputs(\n    repository: Path,\n    state: Mapping[str, Any],\n    value: np.ndarray,\n    grid: CorrectedDiagnosticGrid,\n) -> BoundOptionAInputs:\n    scalars = {\n        \"r_a\": float(state[\"rah\"]),\n        \"r_b\": float(state[\"rb\"]),\n        \"borrowing_rate_gap\": float(state[\"rb_gap\"]),\n        \"tau\": float(state[\"tau\"]),\n        \"wage\": float(state[\"w\"]),\n        \"transfer_income\": float(state[\"Tt\"]),\n        \"rho\": 0.05,\n        \"gamma_c\": 2.0,\n        \"phi\": 5.0,\n        \"chi_0\": 0.1,\n        \"chi_1\": 2.0,\n        \"a_bar\": 1.0e-6,\n        \"labor_weight\": 1.0,\n        \"delta\": DELTA,\n"
+    },
+    {
+      "excerpt_id": "C_BASE_L857_873",
+      "source_id": "C_BASE",
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+      "start_line": 857,
+      "end_line": 873,
+      "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07",
+      "excerpt_sha256": "c3f37610611ffe36e3a31662e5f2653d753db79427bc75b5fa8d0f15916ffcee",
+      "text": "def _one_turn_inputs(\n    repository: Path,\n    states: tuple[dict[str, Any], ...],\n    batch: PreFrozenHouseholdOutputBatch,\n) -> OneTurnInputs:\n    productivity = np.array([float(state[\"Yt\"]) / float(state[\"Lt\"]) for state in states])\n    phi = 1.0 + 0.3 * (productivity[:, None] - productivity[None, :]) / (\n        productivity[:, None] + productivity[None, :]\n    )\n    distance = load_accepted_distance_score(repository / DISTANCE_RELATIVE)\n    wedges = 0.5 * distance\n    params = MappingProxyType({\n        \"ga\": 2.0, \"phi_l\": 5.0, \"alphal\": 1.0, \"epsilon\": 10.0,\n        \"theta\": 100.0, \"delta\": 0.025, \"istar\": 0.015, \"rho_pi\": 1.25,\n        \"totalpit\": 0.02, \"epsilon_pi\": 0.0,\n    })\n    return OneTurnInputs(PROVINCE_ORDER, states, params, phi, wedges, batch)\n"
+    },
+    {
+      "excerpt_id": "C_BASE_L935_953",
+      "source_id": "C_BASE",
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+      "start_line": 935,
+      "end_line": 953,
+      "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07",
+      "excerpt_sha256": "2250a36f2da7cfd1873281fe7129eb59d8c4e9b56cff6c104a13e17a7205edf4",
+      "text": "def integrate_one_turn(\n    repository: Path,\n    states: tuple[dict[str, Any], ...],\n    batch: PreFrozenHouseholdOutputBatch,\n    ledger: dict[str, Any],\n) -> dict[str, Any]:\n    inputs = _one_turn_inputs(repository, states, batch)\n    household = inputs.household_outputs\n    provinces = inputs.old_provinces\n    ledger[\"source_faithful_labor_reconstructions\"] += 1\n    migration = source.reconstruct_migration_labor(source.MigrationLaborInputs(\n        consumption_by_origin=household.ct,\n        population_by_origin=[row[\"N\"] for row in provinces],\n        old_firm_wage_by_destination=[row[\"wjt\"] for row in provinces],\n        tax_by_origin=[row[\"tau\"] for row in provinces],\n        phi_destination_origin=inputs.phi_destination_origin,\n        migration_wedge_destination_origin=inputs.migration_wedge_destination_origin,\n        gamma_c=inputs.params[\"ga\"], phi_l=inputs.params[\"phi_l\"],\n    ))\n"
+    },
+    {
+      "excerpt_id": "C_BASE_L986_994",
+      "source_id": "C_BASE",
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+      "start_line": 986,
+      "end_line": 994,
+      "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07",
+      "excerpt_sha256": "f37e5c09cbe9eb1e37edcfa9ccbb757d54796ff4a8c852e527165935044d4b00",
+      "text": "                {\"province_index\": index, \"province\": PROVINCE_ORDER[index]},\n            )\n    ledger[\"composite_wage_batches\"] += 1\n    wages = source.composite_household_wages(\n        provinces, [firm.wjt for firm in firms],\n        inputs.phi_destination_origin, inputs.migration_wedge_destination_origin,\n        phi_l=inputs.params[\"phi_l\"], alphal=inputs.params[\"alphal\"],\n    )\n    ledger[\"monetary_assignments\"] += 1\n"
+    },
+    {
+      "excerpt_id": "C_BASE_L1040_1049",
+      "source_id": "C_BASE",
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+      "start_line": 1040,
+      "end_line": 1049,
+      "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07",
+      "excerpt_sha256": "d99377ba1ba72ad72a888be2dba0fc84a875a301296740f878a3e5a24601db81",
+      "text": "        state = dict(provinces[i])\n        state.update({\n            \"Ct\": float(batch.ct[i]), \"At\": float(batch.at[i]), \"Bt\": float(batch.bt[i]),\n            \"AtTax\": float(batch.at_tax[i]), \"convergent\": True,\n            \"Lt_supply\": float(migration.lt_supply[i]),\n            \"Kt_supply\": float(capital.kt_supply[i]),\n            \"rah\": float(rah_next[i]), \"w\": float(wages[i]),\n            \"it\": float(monetary.it), \"rb\": float(monetary.rb),\n            \"Yt_1\": float(provinces[i][\"Yt\"]), \"Kt_prev\": float(firms[i].Kt),\n            \"Lt_prev\": float(firms[i].Lt), \"Zt_1\": float(provinces[i][\"Zt\"]),\n"
+    },
+    {
+      "excerpt_id": "C_RUN_L16_29",
+      "source_id": "C_RUN",
+      "path": "validators/multi_province/k1b_turn5_turn6_bounded_continuation/run.py",
+      "start_line": 16,
+      "end_line": 29,
+      "source_sha256": "92018027502ffa5281f9bfac91ee70d2bed17876b65100b3321819b2c0c59db6",
+      "excerpt_sha256": "28d94b8dd8de4dd84ec854c9ad27ea4d9ff696fac590f6806e3db23a1be0b24f",
+      "text": "REPOSITORY_ROOT = Path(__file__).resolve().parents[3]\nsys.path.insert(0, str(REPOSITORY_ROOT))\nsys.path.insert(0, str(REPOSITORY_ROOT / \"src\"))\n\nfrom ch5_two_asset_hank.corrected_diagnostic import optionb_turn2_household_integration as base\nfrom ch5_two_asset_hank.corrected_diagnostic.contracts import CorrectedDiagnosticGrid\nfrom ch5_two_asset_hank.corrected_diagnostic.nonlinear_continuation import FailClosed\nfrom ch5_two_asset_hank.multi_province.capital_network import (\n    CONSERVATION_TOLERANCE,\n    ForeignConditionalShareInputs,\n    foreign_conditional_shares,\n)\nfrom ch5_two_asset_hank.multi_province.one_turn import PreFrozenHouseholdOutputBatch\nfrom ch5_two_asset_hank.multi_province.province_contracts import PROVINCE_ORDER\n"
+    },
+    {
+      "excerpt_id": "C_RUN_L227_240",
+      "source_id": "C_RUN",
+      "path": "validators/multi_province/k1b_turn5_turn6_bounded_continuation/run.py",
+      "start_line": 227,
+      "end_line": 240,
+      "source_sha256": "92018027502ffa5281f9bfac91ee70d2bed17876b65100b3321819b2c0c59db6",
+      "excerpt_sha256": "fb853b2a9025f95d34d107d75abc3ffd45adfc6d64703580bab635d492115e63",
+      "text": "def integrate_turn(repository: Path, task_root: Path, turn_root: Path, turn: int,\n                   states: tuple[dict[str, Any], ...], batch: PreFrozenHouseholdOutputBatch,\n                   frozen_shares: np.ndarray, expected_share_sha: str,\n                   ledger: dict[str, Any], household_rows: list[dict[str, Any]]) -> dict[str, Any]:\n    next_turn = turn + 1\n    inputs = base._one_turn_inputs(repository, states, batch)\n    household, provinces = inputs.household_outputs, inputs.old_provinces\n    ledger[\"source_faithful_labor_reconstructions\"] += 1\n    migration = base.source.reconstruct_migration_labor(base.source.MigrationLaborInputs(\n        consumption_by_origin=household.ct, population_by_origin=[row[\"N\"] for row in provinces],\n        old_firm_wage_by_destination=[row[\"wjt\"] for row in provinces], tax_by_origin=[row[\"tau\"] for row in provinces],\n        phi_destination_origin=inputs.phi_destination_origin,\n        migration_wedge_destination_origin=inputs.migration_wedge_destination_origin,\n        gamma_c=inputs.params[\"ga\"], phi_l=inputs.params[\"phi_l\"]))\n"
+    },
+    {
+      "excerpt_id": "C_RUN_L289_305",
+      "source_id": "C_RUN",
+      "path": "validators/multi_province/k1b_turn5_turn6_bounded_continuation/run.py",
+      "start_line": 289,
+      "end_line": 305,
+      "source_sha256": "92018027502ffa5281f9bfac91ee70d2bed17876b65100b3321819b2c0c59db6",
+      "excerpt_sha256": "d3b53066d2739ef121b69bc0f42b2fe13c491c8a2d566ba784d38e1737bb9760",
+      "text": "    firms = []\n    for index, province in enumerate(provinces):\n        source = dict(province)\n        source.update(GovInv=float(accounting.GovInv_residual_MU[index]),\n                      AtTax=float(household.at_tax[index]), Lt_prev=float(household.household_lt[index]))\n        ledger[\"firm_evaluations\"] += 1\n        firm = base.source.evaluate_firm(source, float(private[index]), float(migration.lt_supply[index]), inputs.params)\n        expected_k = float(accounting.firm_K_accounting_MU[index])\n        if abs(float(firm.Kt) - expected_k) > 1e-12 * max(1.0, abs(expected_k)):\n            raise FailClosed(f\"FAIL__TURN{turn}_C1_FIRM_CAPITAL_ACCOUNTING\", {\"province_index\": index})\n        firms.append(firm)\n    if not np.all(np.isfinite([value for firm in firms for value in firm.as_source_dict().values()])):\n        raise FailClosed(f\"FAIL__TURN{turn}_FIRM_NONFINITE\", {})\n    ledger[\"composite_wage_batches\"] += 1\n    wages = base.source.composite_household_wages(provinces, [firm.wjt for firm in firms],\n        inputs.phi_destination_origin, inputs.migration_wedge_destination_origin,\n        phi_l=inputs.params[\"phi_l\"], alphal=inputs.params[\"alphal\"])\n"
+    },
+    {
+      "excerpt_id": "C_AN_L164_186",
+      "source_id": "C_AN",
+      "path": "src/ch5_two_asset_hank/multi_province/annual.py",
+      "start_line": 164,
+      "end_line": 186,
+      "source_sha256": "290f6f65ad2f74799260b76562dea7338cac94d80e70ea5496aeded24c59ca0d",
+      "excerpt_sha256": "7cd795b3dd5e9ba41b18200c948e6b14aeadcd7e6d492a5735f0e1ced4b62e6f",
+      "text": "class AnnualSourceScalars:\n    gdp_multiplier: float\n    pop_multiplier: float\n    calibration_delta: float\n    zt_ratio: float\n    gov_inv_ratio: float\n    max_sigmau: float\n    rb_gap: float\n    rah: float\n    ra: float\n    nominal_rate: float\n    rb: float\n    rk: float\n    wjt: float\n    composite_wage: float\n    transfer_income: float\n    inflation: float\n    wage_tax: float\n    initial_at: float\n    initial_bt: float\n    initial_mt: float\n    initial_ct: float\n    corporate_tax: float\n"
+    },
+    {
+      "excerpt_id": "C_AN_L432_456",
+      "source_id": "C_AN",
+      "path": "src/ch5_two_asset_hank/multi_province/annual.py",
+      "start_line": 432,
+      "end_line": 456,
+      "source_sha256": "290f6f65ad2f74799260b76562dea7338cac94d80e70ea5496aeded24c59ca0d",
+      "excerpt_sha256": "c911fb82c99a66b2948d34df9a64b521a8149d26d338c9674cc4648e490b004a",
+      "text": "def load_primary_annual_input(\n    *,\n    sources: PrimaryAnnualSourceFiles,\n    binding: DecoupledAnnualIndex,\n    scalars: AnnualSourceScalars,\n) -> CanonicalAnnualInput:\n    \"\"\"Reconstruct one annual input directly from the three primary workbooks.\"\"\"\n\n    hashes = sources.verified_hashes()\n    sheet_specs = {\"gdp\": \"GDP\", \"cap\": \"总资本存量\", \"pop\": \"常住人口\"}\n    sheet_rows = {\n        name: _xlsx_sheet_rows(Path(sources.filled_workbook), sheet)\n        for name, sheet in sheet_specs.items()\n    }\n    headers = tuple(_province_header(rows) for rows in sheet_rows.values())\n    if any(header != PROVINCE_ORDER for header in headers):\n        raise ValueError(\"annual workbook sheets do not share the accepted province order\")\n    physical_row = binding.workbook_data_row_index + 1\n    for rows in sheet_rows.values():\n        if _year_from_cell(rows[physical_row][1]) != binding.calendar_year:\n            raise ValueError(\"workbook row does not match the explicit calendar year\")\n\n    gdp = np.array([sheet_rows[\"gdp\"][physical_row][column] for column in range(3, 34)]) * scalars.gdp_multiplier\n    cap = np.array([sheet_rows[\"cap\"][physical_row][column] for column in range(3, 34)]) * scalars.gdp_multiplier\n    pop = np.array([sheet_rows[\"pop\"][physical_row][column] for column in range(3, 34)]) * scalars.pop_multiplier\n"
+    },
+    {
+      "excerpt_id": "C_AN_L478_503",
+      "source_id": "C_AN",
+      "path": "src/ch5_two_asset_hank/multi_province/annual.py",
+      "start_line": 478,
+      "end_line": 503,
+      "source_sha256": "290f6f65ad2f74799260b76562dea7338cac94d80e70ea5496aeded24c59ca0d",
+      "excerpt_sha256": "c31bfe9143de3a0cd40c19f8ba1ffe50a44bef4e1221904f6d4a73c2d390f7fe",
+      "text": "    sigmau = distance / np.max(distance) * scalars.max_sigmau\n    ratios = 0.3 * (np.exp(log_pcap) - np.min(np.exp(log_pcap))) / (\n        np.max(np.exp(log_pcap)) - np.min(np.exp(log_pcap))\n    )\n    return CanonicalAnnualInput(\n        binding=binding,\n        province_axis=ProvinceAxis(PROVINCE_ORDER),\n        source_hashes=hashes,\n        regression_sheet=regression_sheet,\n        industry_index=4,\n        zt_source_data_row_index=binding.workbook_data_row_index,\n        zt_source_calendar_year=binding.calendar_year,\n        scalars=scalars,\n        gdp=gdp,\n        cap=cap,\n        pop=pop,\n        log_pgdp=log_pgdp,\n        log_pcap=log_pcap,\n        ind_alpha=ind_alpha,\n        ind_zt=ind_zt,\n        initialized_zt=ind_zt * scalars.zt_ratio,\n        gov_inv=cap * scalars.gov_inv_ratio,\n        inter_province_asset_ratio=ratios,\n        distance=distance,\n        sigmau=sigmau,\n    )\n"
+    },
+    {
+      "excerpt_id": "P1_HELP_L1_5",
+      "source_id": "P1_HELP",
+      "path": "isolated_bridge_candidate.py",
+      "start_line": 1,
+      "end_line": 5,
+      "source_sha256": "a3d8e4afc22a88aee2c0cc4978418a12a2474e7fc70836799deb375f4c75840a",
+      "excerpt_sha256": "2f60c3f8827c84f6e5eb9d21c3dc619eba7c453b923a9fc67e31dabd168dce81",
+      "text": "\"\"\"Research helper, detached from production imports and fixed-point ordering.\n\nCaller must supply same-snapshot q/beta and all-resident HA LHA. This helper does\nnot certify observed units, employment identity or actual HA callback provenance.\n\"\"\"\n"
+    },
+    {
+      "excerpt_id": "P1_HELP_L17_24",
+      "source_id": "P1_HELP",
+      "path": "isolated_bridge_candidate.py",
+      "start_line": 17,
+      "end_line": 24,
+      "source_sha256": "a3d8e4afc22a88aee2c0cc4978418a12a2474e7fc70836799deb375f4c75840a",
+      "excerpt_sha256": "d6274cf9052e08853b93c326567ceb50b26fc1a04fc7e9bcc885139e540128c5",
+      "text": "def labor_bridge(H,LHA,q,beta,phi,alpha=1.,p=None,*,resident_distribution=True):\n    if not resident_distribution:raise ValueError('ALL_RESIDENTS_REQUIRED')\n    H=positive(H);phi=positive(phi);alpha=positive(alpha);LHA=float(LHA)\n    if not isfinite(LHA) or LHA<0:raise ValueError('LHA_DOMAIN')\n    if len(q)==0 or len(q)!=len(beta):raise ValueError('PRICE_SHAPE')\n    q=tuple(positive(x) for x in q);beta=tuple(positive(x) for x in beta)\n    Q=fsum(x*(x/b)**(1/phi) for x,b in zip(q,beta));W=alpha**(1/(1+phi))*Q**(phi/(1+phi))\n    omega=tuple((alpha*x/(b*W))**(1/phi) for x,b in zip(q,beta))\n"
+    },
+    {
+      "excerpt_id": "P1_HELP_L30_33",
+      "source_id": "P1_HELP",
+      "path": "isolated_bridge_candidate.py",
+      "start_line": 30,
+      "end_line": 33,
+      "source_sha256": "a3d8e4afc22a88aee2c0cc4978418a12a2474e7fc70836799deb375f4c75840a",
+      "excerpt_sha256": "0d3324e473b91645f57ae52264399833eeba8d7c9faa904c8f32321171e39570",
+      "text": "        E=p*H;worker=LHA/p if p else None\n        status='WORKER_EQUIVALENT_ACCOUNTING' if p else 'NO_EMPLOYED_DENOMINATOR'\n    return {'Wnet':W,'omega':omega,'Lji':tuple(H*LHA*x for x in omega),'resident_total':H*LHA,'E':E,'worker_equivalent':worker,'population_status':status,\n            'not_conditional_employed_mean':True,'not_person_OD':True,'production_binding':'BLOCKED_FIXED_POINT_PRICE_CONTRACT'}\n"
+    },
+    {
+      "excerpt_id": "P1_HELP_L36_43",
+      "source_id": "P1_HELP",
+      "path": "isolated_bridge_candidate.py",
+      "start_line": 36,
+      "end_line": 43,
+      "source_sha256": "a3d8e4afc22a88aee2c0cc4978418a12a2474e7fc70836799deb375f4c75840a",
+      "excerpt_sha256": "7e9e1179b5ee9279ea500143839e4b759ce627671a3392dce95b23d35844c2de",
+      "text": "def private_net_slice(original,Wnet):\n    \"\"\"Synthetic metadata-only input copy. Not a bound real initialization path.\"\"\"\n    Wnet=positive(Wnet);local=deepcopy(original)\n    def freeze(x):\n        if isinstance(x,dict):return MappingProxyType({k:freeze(v) for k,v in x.items()})\n        if isinstance(x,list):return tuple(freeze(v) for v in x)\n        return x\n    return freeze({'wages':[Wnet],'tau':0.,'migration_costs':[0.],'r_a':local['rah'],'r_b':local['rb'],'transfer_income':local['Tt'],'borrowing_rate_gap':local['rb_gap'],'metadata':local.get('metadata',{})})\n"
+    },
+    {
+      "excerpt_id": "P1_HELP_L46_53",
+      "source_id": "P1_HELP",
+      "path": "isolated_bridge_candidate.py",
+      "start_line": 46,
+      "end_line": 53,
+      "source_sha256": "a3d8e4afc22a88aee2c0cc4978418a12a2474e7fc70836799deb375f4c75840a",
+      "excerpt_sha256": "8a080ffc7cb8927f444eaff3ea781f21053c19e60e40eadfd467aabae2587db9",
+      "text": "def payroll(w,tau,sigma,labor):\n    if not(len(w)==len(tau)==len(sigma)==len(labor)):raise ValueError('PRICE_SHAPE')\n    gross=[];tax=[];wedge=[];net=[]\n    for ww,t,s,ll in zip(w,tau,sigma,labor):\n        ww=positive(ww);t=float(t);s=float(s);ll=float(ll)\n        if not all(isfinite(x) for x in [t,s,ll]) or t<0 or s<0 or t+s>=1 or ll<0:raise ValueError('PAYROLL_DOMAIN')\n        gross.append(ww*ll);tax.append(t*ww*ll);wedge.append(s*ww*ll);net.append((1-t-s)*ww*ll)\n    return {'gross':gross,'tax':tax,'sigma':wedge,'net':net,'sigma_recipient':'UNKNOWN'}\n"
+    },
+    {
+      "excerpt_id": "C_SEL_L388_414",
+      "source_id": "C_SEL",
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py",
+      "start_line": 388,
+      "end_line": 414,
+      "source_sha256": "85e3a85f88a617d0b71692bd426e03c37e8b729249d5cc5b671115b4165f613b",
+      "excerpt_sha256": "88e22f4d6119a46932045c090d0fc6b94f86d5b240fc6a82c65f8007e0735444",
+      "text": "def _controls(\n    q_b: float,\n    d: float,\n    cell: CorrectedSelectorCell,\n    parameters: CorrectedSelectorParameters,\n) -> tuple[float, float, float, float, float, float]:\n    if not math.isfinite(q_b) or q_b <= 0.0:\n        raise ValueError(\"q_b must be finite and strictly positive\")\n    c = float(q_b ** (-1.0 / parameters.gamma_c))\n    l = float(\n        (q_b * cell.net_wage / parameters.labor_weight) ** (1.0 / parameters.phi)\n    )\n    cost = regularized_adjustment_cost(\n        d,\n        cell.a,\n        chi_0=parameters.chi_0,\n        chi_1=parameters.chi_1,\n        a_bar=parameters.a_bar,\n    )\n    g_b = float(\n        cell.net_wage * l\n        + cell.effective_r_b * cell.b\n        + cell.transfer_income\n        - c\n        - d\n        - cost\n    )\n"
+    },
+    {
+      "excerpt_id": "C_SEL_L811_819",
+      "source_id": "C_SEL",
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py",
+      "start_line": 811,
+      "end_line": 819,
+      "source_sha256": "85e3a85f88a617d0b71692bd426e03c37e8b729249d5cc5b671115b4165f613b",
+      "excerpt_sha256": "20651c9978afcb898e004748f3a82a1c61413458bd8988dbfcbf7881fd23cd18",
+      "text": "                    root_status=root_status,\n                    lower_a_zero_kink_multiplier_receipt=lower_a_zero_kink_receipt,\n                    interior_z_receipt=interior_z_receipt,\n                )\n            assert lower_a_zero_kink_receipt.chosen_q_a is not None\n            q_a = lower_a_zero_kink_receipt.chosen_q_a\n        c, l, cost, g_b, g_a, utility = _controls(q_b, d, cell, parameters)\n    except (ArithmeticError, OverflowError, ValueError) as exc:\n        return _rejected(\n"
+    },
+    {
+      "excerpt_id": "C_SEL_L1561_1575",
+      "source_id": "C_SEL",
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py",
+      "start_line": 1561,
+      "end_line": 1575,
+      "source_sha256": "85e3a85f88a617d0b71692bd426e03c37e8b729249d5cc5b671115b4165f613b",
+      "excerpt_sha256": "24277b90d7ffc7a71c7dfb487e93b4774076a9a72902382add17dacba3d6a8ed",
+      "text": "def select_constrained_policy(\n    cell: CorrectedSelectorCell,\n    parameters: CorrectedSelectorParameters,\n    *,\n    budget: SelectorBudget,\n) -> SelectorResult:\n    \"\"\"Evaluate one cell exactly once and return a fail-closed selection receipt.\"\"\"\n\n    ordinal = budget.begin_selector()\n    root_start = budget.root_invocations\n    interior_z_root_start = budget.interior_z_root_invocations\n    interior_a_root_start = budget.interior_a_switching_root_invocations\n    joint_root_start = budget.joint_switching_root_invocations\n    faces = _faces(cell)\n    face_rows = list(faces.values())\n"
+    },
+    {
+      "excerpt_id": "C_STEP_L704_732",
+      "source_id": "C_STEP",
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/option_a_step.py",
+      "start_line": 704,
+      "end_line": 732,
+      "source_sha256": "9ab40de5c621f8c0d508dcfd8556b40b3709ce0daa4f18c5a408fcaa1cdd2a47",
+      "excerpt_sha256": "446bd3001d9a48f2b83ab5e744ace75070a458d0361760a7f2369acb66cbbeb4",
+      "text": "        i_b, i_a, i_z = index\n        b = float(inputs.grid.b[i_b])\n        a = float(inputs.grid.a[i_a])\n        z = float(inputs.grid.z[i_z])\n        derivatives, markers = boundary_cell_derivatives(fields, index, inputs.grid)\n        cell = CorrectedSelectorCell(\n            cell_id=f\"option_a_f{flat_index:04d}_b{i_b:03d}_a{i_a:03d}_z{i_z:03d}\",\n            b=b,\n            a=a,\n            z=z,\n            b_lower=float(inputs.grid.b[0]),\n            b_upper=float(inputs.grid.b[-1]),\n            a_lower=float(inputs.grid.a[0]),\n            a_upper=float(inputs.grid.a[-1]),\n            net_wage=float((1.0 - inputs.scalars[\"tau\"]) * inputs.scalars[\"wage\"] * z),\n            effective_r_b=float(\n                inputs.scalars[\"r_b\"]\n                + (inputs.scalars[\"borrowing_rate_gap\"] if b < 0.0 else 0.0)\n            ),\n            transfer_income=inputs.scalars[\"transfer_income\"],\n            effective_r_a=float(\n                inputs.scalars[\"r_a\"] * (1.0 - 0.1 * (a / 10.0) ** 9)\n            ),\n            derivatives=derivatives,\n        )\n        receipt_path = evidence / f\"cell_{flat_index:04d}.json\"\n        input_receipt = _cell_input_receipt(index, flat_index, cell, markers)\n        try:\n            result = select_constrained_policy(cell, inputs.parameters, budget=budget)\n"
+    },
+    {
+      "excerpt_id": "C_INIT_L153_176",
+      "source_id": "C_INIT",
+      "path": "validators/multi_province/corrected_2018_single_turn/run.py",
+      "start_line": 153,
+      "end_line": 176,
+      "source_sha256": "9eaf82373ee564e5f27bea14d49d2177e0637a6969d946c86f519608ffbae614",
+      "excerpt_sha256": "73f37f7021de82b2259d3d1ab7bbae029507ba5529e1a932bc52bcb0bf6be2ef",
+      "text": "def source_initial_arrays(state: Mapping[str, object], grid: Any, params: Any,\n                          on_root=None, on_root_return=None) -> tuple[np.ndarray, np.ndarray]:\n    shape = (grid.b.size, grid.a.size, grid.z.size)\n    labor = np.empty(shape)\n    value = np.empty(shape)\n    for k, z in enumerate(grid.z):\n        for j, a in enumerate(grid.a):\n            effective = float(oracle.matlab_faithful_illiquid_return(a, grid.a[-1], float(state[\"rah\"])))\n            for i, b in enumerate(grid.b):\n                rb = float(state[\"rb\"]) + (float(state[\"rb_gap\"]) if b < 0 else 0.0)\n                temp = effective * effective + rb * b + float(state[\"Tt\"])\n                wage = (1 - float(state[\"tau\"])) * float(state[\"w\"]) * z\n                if on_root is not None:\n                    on_root()\n                solved_labor, _ = source_labor_root(\n                    wage=wage, temp=temp, frisch_l=1.0 / params.phi, ga=params.gamma_c)\n                if on_root_return is not None:\n                    on_root_return()\n                consumption = wage * solved_labor + rb * b + float(state[\"Tt\"])\n                labor[i, j, k] = solved_labor\n                value[i, j, k] = (\n                    consumption ** (1 - params.gamma_c) / (1 - params.gamma_c)\n                    - solved_labor ** 6 / 6\n                ) / params.rho\n"
+    },
+    {
+      "excerpt_id": "C_CONT_L43_44",
+      "source_id": "C_CONT",
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/nonlinear_continuation.py",
+      "start_line": 43,
+      "end_line": 44,
+      "source_sha256": "e43b3990370f39b82486e05c4f286ca2719fbfa304333cb7999c5180c3875701",
+      "excerpt_sha256": "d19f7ed516f30374a62425fa16a9eac82eeea4d32e5454e2c8b3c4f6eb64573f",
+      "text": "SHAPE = (20, 20, 2)\nN = 800\n"
+    },
+    {
+      "excerpt_id": "C_CONT_L704_732",
+      "source_id": "C_CONT",
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/nonlinear_continuation.py",
+      "start_line": 704,
+      "end_line": 732,
+      "source_sha256": "e43b3990370f39b82486e05c4f286ca2719fbfa304333cb7999c5180c3875701",
+      "excerpt_sha256": "826e8435d5f560ea72cbfe0484caf41b6ba3d713bb96ffa1b1f0f82c447bc611",
+      "text": "def _cell(\n    inputs: BoundOptionAInputs,\n    index: tuple[int, int, int],\n    derivatives: Any,\n    checkpoint: int,\n    flat: int,\n) -> CorrectedSelectorCell:\n    i_b, i_a, i_z = index\n    b = float(inputs.grid.b[i_b])\n    a = float(inputs.grid.a[i_a])\n    z = float(inputs.grid.z[i_z])\n    return CorrectedSelectorCell(\n        cell_id=f\"v{checkpoint:03d}_f{flat:04d}_b{i_b:03d}_a{i_a:03d}_z{i_z:03d}\",\n        b=b,\n        a=a,\n        z=z,\n        b_lower=float(inputs.grid.b[0]),\n        b_upper=float(inputs.grid.b[-1]),\n        a_lower=float(inputs.grid.a[0]),\n        a_upper=float(inputs.grid.a[-1]),\n        net_wage=float((1.0 - inputs.scalars[\"tau\"]) * inputs.scalars[\"wage\"] * z),\n        effective_r_b=float(\n            inputs.scalars[\"r_b\"]\n            + (inputs.scalars[\"borrowing_rate_gap\"] if b < 0.0 else 0.0)\n        ),\n        transfer_income=inputs.scalars[\"transfer_income\"],\n        effective_r_a=float(inputs.scalars[\"r_a\"] * (1.0 - 0.1 * (a / 10.0) ** 9)),\n        derivatives=derivatives,\n    )\n"
+    },
+    {
+      "excerpt_id": "C_CONT_L763_770",
+      "source_id": "C_CONT",
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/nonlinear_continuation.py",
+      "start_line": 763,
+      "end_line": 770,
+      "source_sha256": "e43b3990370f39b82486e05c4f286ca2719fbfa304333cb7999c5180c3875701",
+      "excerpt_sha256": "a428c7aba7982260fc4f5e52e6432b7317113a0f271f4dde4bfd332a463ca85a",
+      "text": "    selected_rows: list[dict[str, Any]] = []\n    ledger[\"new_corrected_policy_maps\"] += 1\n    for flat, index in enumerate(iter_f_order_indices(SHAPE)):\n        derivatives, markers = boundary_cell_derivatives(fields, index, inputs.grid)\n        cell = _cell(inputs, index, derivatives, checkpoint, flat)\n        path = directory / f\"cell_{flat:04d}.json\"\n        try:\n            result = select_constrained_policy(cell, inputs.parameters, budget=budget)\n"
+    },
+    {
+      "excerpt_id": "C_BASE_L47_77",
+      "source_id": "C_BASE",
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+      "start_line": 47,
+      "end_line": 77,
+      "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07",
+      "excerpt_sha256": "81b1f738900862addac1e6ff6bd91543c70548a6bc75f397469e1f81434c2539",
+      "text": "from .nonlinear_continuation import (\n    BACKWARD_ERROR_TOLERANCE,\n    BELLMAN_TOLERANCE,\n    CYCLE_TOLERANCE,\n    DELTA,\n    N,\n    OMEGA,\n    SHAPE,\n    VALUE_TOLERANCE,\n    FailClosed,\n    _canonical_sha256,\n    _field_sha256,\n    _map_checkpoint,\n    _operator_diagnostics,\n    _policy_arrays,\n    _policy_diagnostics,\n    _scientific_code_hashes,\n    _selected_identity,\n    _sha256,\n    _sparse_identity,\n    _terminal_kfe,\n    _write_json,\n    checkpoint_identity,\n    detect_approximate_cycle,\n    detect_exact_cycle,\n    normwise_backward_error,\n    monotonicity_preserving_relaxation,\n    primary_converged,\n)\nfrom .option_a_step import BoundOptionAInputs\nfrom .selector import CorrectedSelectorParameters, SelectorBudget\n"
+    },
+    {
+      "excerpt_id": "C_BASE_L663_665",
+      "source_id": "C_BASE",
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+      "start_line": 663,
+      "end_line": 665,
+      "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07",
+      "excerpt_sha256": "cad7a3285e59394a9a76b806cc474ec4263f0842ce4a3a7a1d03f8ceac49b01b",
+      "text": "    value, native_labor = source_initial_arrays(\n        state, native_grid, native_params, root_attempt, root_return\n    )\n"
+    },
+    {
+      "excerpt_id": "C_BASE_L680_687",
+      "source_id": "C_BASE",
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+      "start_line": 680,
+      "end_line": 687,
+      "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07",
+      "excerpt_sha256": "269aa2126568a35f82520c9ec752c6af86a4e7fd40cb1c69f9f0a08189b5735b",
+      "text": "    inputs = _province_inputs(repository, state, value, grid)\n    budget = SelectorBudget(\n        max_selector_evaluations=MAX_MAPS_PER_PROVINCE * N,\n        max_root_invocations=MAX_ROOTS_PER_PROVINCE,\n        max_interior_z_root_invocations=MAX_ROOTS_PER_PROVINCE,\n        max_interior_a_switching_root_invocations=MAX_MAPS_PER_PROVINCE * N,\n        max_joint_switching_root_invocations=MAX_MAPS_PER_PROVINCE * N,\n    )\n"
+    },
+    {
+      "excerpt_id": "C_BASE_L695_702",
+      "source_id": "C_BASE",
+      "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+      "start_line": 695,
+      "end_line": 702,
+      "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07",
+      "excerpt_sha256": "cc463eb15d0371a5c68376ead2972f306420e4dceb6c4a00b8cb4e61a6e29364",
+      "text": "    for checkpoint in range(MAX_MAPS_PER_PROVINCE):\n        if _task_hashes(repository) != task_hashes:\n            raise FailClosed(\"BLOCKED__SCIENTIFIC_CODE_CHANGED_AFTER_FREEZE\", {\"province\": province})\n        directory = province_root / f\"checkpoint_{checkpoint:03d}\"\n        before = dict(local)\n        rows, arrays, q, d2 = _map_checkpoint(\n            repository, province_root, checkpoint, values[-1], inputs, budget, local, core_hashes\n        )\n"
+    },
+    {
+      "excerpt_id": "M_DATA_L74_74",
+      "source_id": "M_DATA",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!load_GDPdata.m",
+      "start_line": 74,
+      "end_line": 74,
+      "source_sha256": "deca8af3f22097550b8957fe848989e6342619cb9929a1c00076e020549366c5",
+      "excerpt_sha256": "9c36eb2a1091c0cb2534dafeaf5f865386dbc0ee93dc40f2009fbecf3fd644ef",
+      "text": "\t[temp1,header] = xlsread(writefile, \"GDP\"); mydata.prvname = header(1,3:33);\n"
+    },
+    {
+      "excerpt_id": "M_DATA_L79_81",
+      "source_id": "M_DATA",
+      "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!load_GDPdata.m",
+      "start_line": 79,
+      "end_line": 81,
+      "source_sha256": "deca8af3f22097550b8957fe848989e6342619cb9929a1c00076e020549366c5",
+      "excerpt_sha256": "c166630872ecc0be278b527f971c034b94d793dd1a8bba5c1992265e6868535b",
+      "text": "\ttemp3 = xlsread(writefile, \"常住人口\");\n\t%temp3 = xlsread(writefile, \"就业人数\");\n\t%temp3 = xlsread(writefile, \"总人口数\");\n"
+    }
+  ],
+  "omitted_unnecessary_context": [
+    {
+      "source_id": "M_DATA",
+      "start_line": 75,
+      "end_line": 78,
+      "reason": "Unnecessary capital-reader context/comments contain local absolute path; excluded from public excerpts. Resident-population reader and scaling expressions remain. No formulas changed or source edited.",
+      "source_sha256": "deca8af3f22097550b8957fe848989e6342619cb9929a1c00076e020549366c5"
+    }
+  ]
+}

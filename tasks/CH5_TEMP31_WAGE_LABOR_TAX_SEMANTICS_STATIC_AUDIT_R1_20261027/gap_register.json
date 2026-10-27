@@ -1,0 +1,396 @@
+{
+  "task_id": "CH5_TEMP31_WAGE_LABOR_TAX_SEMANTICS_STATIC_AUDIT_R1_20261027",
+  "gaps": [
+    {
+      "id": "G01",
+      "status": "BLOCKED",
+      "item": "Combined production callback, initializer and fixed common snapshot",
+      "evidence": [
+        {
+          "source_id": "P2_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 171,
+          "end_line": 184,
+          "source_sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6"
+        },
+        {
+          "source_id": "P2_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 346,
+          "end_line": 351,
+          "source_sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6"
+        },
+        {
+          "source_id": "P3_O",
+          "path": "src/ch5_two_asset_hank/multi_province/one_turn.py",
+          "start_line": 168,
+          "end_line": 176,
+          "source_sha256": "afeadbffd88e1405c2f32d22fd256e7fd0451fc4ecbfe2492bc0db5dbdc728fa"
+        },
+        {
+          "source_id": "C_RUN",
+          "path": "validators/multi_province/k1b_turn5_turn6_bounded_continuation/run.py",
+          "start_line": 235,
+          "end_line": 240,
+          "source_sha256": "92018027502ffa5281f9bfac91ee70d2bed17876b65100b3321819b2c0c59db6"
+        }
+      ],
+      "needed": "Real production import/callback identity, initializer/solve wage tax position and single 31-province snapshot provenance; no runtime authorized"
+    },
+    {
+      "id": "G02",
+      "status": "PROVEN_STATIC_DIFFERENCE__SCIENTIFIC_RESOLUTION_NOT_ADOPTED",
+      "item": "Origin/destination tax index discrepancy and isolated R3 scope",
+      "evidence": [
+        {
+          "source_id": "M_L",
+          "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!Lt_seperate.m",
+          "start_line": 6,
+          "end_line": 14,
+          "source_sha256": "d30519ad81837e8eb5ebfe74bf25cc770e40b5c5ae5a254951ad97d436cace26"
+        },
+        {
+          "source_id": "C_L",
+          "path": "src/ch5_two_asset_hank/multi_province/migration_labor.py",
+          "start_line": 107,
+          "end_line": 125,
+          "source_sha256": "a8961e66518265c4a97770a421c10c60740e7205e247ceb7ff4b3dd3bec83730"
+        },
+        {
+          "source_id": "C_W",
+          "path": "src/ch5_two_asset_hank/multi_province/wage.py",
+          "start_line": 57,
+          "end_line": 63,
+          "source_sha256": "6dc1bfcd5526afc4ed876f4923f7fefb39a68f66427c490f741a2475d2ffe433"
+        },
+        {
+          "source_id": "P3_L",
+          "path": "src/ch5_two_asset_hank/multi_province/migration_labor.py",
+          "start_line": 113,
+          "end_line": 131,
+          "source_sha256": "66600d6d1121db319b03383436999aa53b5e1aa5f8eecc72516fd1922b7b52dc"
+        }
+      ],
+      "needed": "Retain Owner workplace contract; independently review actual intended production caller closure, without treating uniform historical tau as a heterogeneous-tax check"
+    },
+    {
+      "id": "G03",
+      "status": "SUSPECTED_CONTRACT_DEFECT__RUNTIME_NOT_RUN",
+      "item": "Composite net-wage enters nonzero-tau HA",
+      "evidence": [
+        {
+          "source_id": "C_W",
+          "path": "src/ch5_two_asset_hank/multi_province/wage.py",
+          "start_line": 57,
+          "end_line": 72,
+          "source_sha256": "6dc1bfcd5526afc4ed876f4923f7fefb39a68f66427c490f741a2475d2ffe433"
+        },
+        {
+          "source_id": "C_SS",
+          "path": "src/ch5_two_asset_hank/multi_province/steady_state.py",
+          "start_line": 153,
+          "end_line": 168,
+          "source_sha256": "b8897fdef9cc59a2811561a18cb0fadf059a158ad8e5f3661bd10a5734d264aa"
+        },
+        {
+          "source_id": "C_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 345,
+          "end_line": 350,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b"
+        },
+        {
+          "source_id": "C_HA",
+          "path": "exports/matlab_faithful_two_asset_ha.py",
+          "start_line": 159,
+          "end_line": 164,
+          "source_sha256": "f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8"
+        },
+        {
+          "source_id": "C_BASE",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/optionb_turn2_household_integration.py",
+          "start_line": 285,
+          "end_line": 305,
+          "source_sha256": "e2d5edbbf73abf60dba183fb04a5d364d3d83ffcd262254f58ead53ec2f36d07"
+        },
+        {
+          "source_id": "C_INIT",
+          "path": "validators/multi_province/corrected_2018_single_turn/run.py",
+          "start_line": 153,
+          "end_line": 176,
+          "source_sha256": "9eaf82373ee564e5f27bea14d49d2177e0637a6969d946c86f519608ffbae614"
+        },
+        {
+          "source_id": "C_CONT",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/nonlinear_continuation.py",
+          "start_line": 704,
+          "end_line": 732,
+          "source_sha256": "e43b3990370f39b82486e05c4f286ca2719fbfa304333cb7999c5180c3875701"
+        },
+        {
+          "source_id": "C_SEL",
+          "path": "src/ch5_two_asset_hank/corrected_diagnostic/selector.py",
+          "start_line": 388,
+          "end_line": 414,
+          "source_sha256": "85e3a85f88a617d0b71692bd426e03c37e8b729249d5cc5b671115b4165f613b"
+        }
+      ],
+      "needed": "Establish initial and carried wage tax identity. Generic HA gross-wage consumers must not be globally forced to tau=0 by inference"
+    },
+    {
+      "id": "G04",
+      "status": "SUSPECTED_DIMENSIONAL_INCONSISTENCY",
+      "item": "lt*tau fiscal item versus ad-valorem wage-tax interpretation",
+      "evidence": [
+        {
+          "source_id": "T5",
+          "path": "docs/project_sources_offline/博士论文tex.zip!c5.tex",
+          "start_line": 157,
+          "end_line": 163,
+          "source_sha256": "9193fd7aef06478f2bbf20f81bed0d14d42870dd924ff5b1cefc296cb18c6ae9"
+        },
+        {
+          "source_id": "T3",
+          "path": "docs/project_sources_offline/博士论文tex.zip!c3.tex",
+          "start_line": 48,
+          "end_line": 53,
+          "source_sha256": "df6ad15190bc34023a89cd9eef36732929b641f3b3a4d98fcfc05427199ffc57"
+        },
+        {
+          "source_id": "C_F",
+          "path": "src/ch5_two_asset_hank/multi_province/firm.py",
+          "start_line": 135,
+          "end_line": 135,
+          "source_sha256": "d4c3dada5577f25e0159831dcc9de3883ea656e80aa3e1c407e6bb0af0d4ca0d"
+        },
+        {
+          "source_id": "P2_F",
+          "path": "src/ch5_two_asset_hank/multi_province/firm.py",
+          "start_line": 135,
+          "end_line": 135,
+          "source_sha256": "0939886706b8bcb42f3a41fc244000e7f8ad01884c61afdbdd31036bee908218"
+        }
+      ],
+      "needed": "Independent semantic adoption of the payroll base and transfer/population units; no fiscal repair performed",
+      "additional_index_observation": "T5 line161 sums over j but corporate Pi^i*tau_firm^i remains indexed by i; mixed index notation is source-proven, scientific correction/context remains SUSPECTED/UNKNOWN"
+    },
+    {
+      "id": "G05",
+      "status": "PROVEN_EXPRESSION_DIFFERENCE__OWNER_ADOPTION_OPEN",
+      "item": "Composite disutility exponent and phi preference sign",
+      "evidence": [
+        {
+          "source_id": "T5",
+          "path": "docs/project_sources_offline/博士论文tex.zip!c5.tex",
+          "start_line": 52,
+          "end_line": 53,
+          "source_sha256": "9193fd7aef06478f2bbf20f81bed0d14d42870dd924ff5b1cefc296cb18c6ae9"
+        },
+        {
+          "source_id": "P1_T3",
+          "path": "dissertation/c3.tex",
+          "start_line": 399,
+          "end_line": 400,
+          "source_sha256": "c51b86fa85dfef5e9f9412737981743c21371461b34b9e77e689ddca5579cad0"
+        },
+        {
+          "source_id": "P2_W",
+          "path": "src/ch5_two_asset_hank/multi_province/wage.py",
+          "start_line": 72,
+          "end_line": 72,
+          "source_sha256": "af2e2739d10b24ec02e8c20d6eb25faeade6c3acf6c81dae92b2d02601e25214"
+        },
+        {
+          "source_id": "M_O",
+          "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!HANK_mp_1turn.m",
+          "start_line": 7,
+          "end_line": 10,
+          "source_sha256": "d3d03f37286ed66202673ea63d49babce8d5309bac9c13793c8e60585c21fecf"
+        },
+        {
+          "source_id": "P2_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 340,
+          "end_line": 341,
+          "source_sha256": "901355d1709caf9392e0d133423c77bb39c5a65c07204cbca36a5830068740a6"
+        }
+      ],
+      "needed": "Review existing equations and isolated amendments as separate versions; do not silently overwrite c5, legacy Python or formal V010"
+    },
+    {
+      "id": "G06",
+      "status": "UNKNOWN",
+      "item": "Hours, employment, productivity weights and population-to-labor bridge",
+      "evidence": [
+        {
+          "source_id": "T5",
+          "path": "docs/project_sources_offline/博士论文tex.zip!c5.tex",
+          "start_line": 119,
+          "end_line": 125,
+          "source_sha256": "9193fd7aef06478f2bbf20f81bed0d14d42870dd924ff5b1cefc296cb18c6ae9"
+        },
+        {
+          "source_id": "M_L",
+          "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!Lt_seperate.m",
+          "start_line": 6,
+          "end_line": 14,
+          "source_sha256": "d30519ad81837e8eb5ebfe74bf25cc770e40b5c5ae5a254951ad97d436cace26"
+        },
+        {
+          "source_id": "C_HA",
+          "path": "exports/matlab_faithful_two_asset_ha.py",
+          "start_line": 686,
+          "end_line": 696,
+          "source_sha256": "f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8"
+        },
+        {
+          "source_id": "M_EQ",
+          "path": "docs/project_sources_offline/多省份HANK_matlab原版程序.zip!mpHANK_equilibrium_2000.m",
+          "start_line": 29,
+          "end_line": 30,
+          "source_sha256": "26ea44552da33919f8ccd777c084e15eca0ea9575fee80a07f9e0056f3f97de5"
+        }
+      ],
+      "needed": "Define and evidence actual statistical population, employment/hours/efficiency/frequency as appropriate to Owner target; do not infer household count, divide N by three, or derive employment from wage bill/mean"
+    },
+    {
+      "id": "G07",
+      "status": "UNKNOWN",
+      "item": "Three NBS file-specific source identities and tax/price/vintage definitions",
+      "source_ids": [
+        "NBS_A_NONPRIVATE_LIKELY",
+        "NBS_B_PRIVATE",
+        "NBS_C_BILL"
+      ],
+      "needed": "NBS indicator IDs, original export URLs/time, revision vintage and exact sector/statistical/tax/price definitions. Preserve B Tibet and all original year/cell quarantines"
+    },
+    {
+      "id": "G08",
+      "status": "UNKNOWN",
+      "item": "Administrative province IDs, origin/destination array join and tuple digest",
+      "needed": "Names and array shape are not sufficient; common actual source snapshot, ID dictionary, producer/consumer provenance and accepted callback binding required"
+    },
+    {
+      "id": "G09",
+      "status": "NOT_ESTABLISHED_IN_READ_SCOPE",
+      "item": "Annual yuan wage versus model wage frequency/numeraire",
+      "evidence": [
+        {
+          "source_id": "C_AN",
+          "path": "src/ch5_two_asset_hank/multi_province/annual.py",
+          "start_line": 164,
+          "end_line": 186,
+          "source_sha256": "290f6f65ad2f74799260b76562dea7338cac94d80e70ea5496aeded24c59ca0d"
+        },
+        {
+          "source_id": "C_EMP",
+          "path": "validators/multi_province/mp4b_python_empirical.py",
+          "start_line": 101,
+          "end_line": 121,
+          "source_sha256": "b9165a71e6a206dc78ad86c23c3502f27a4d81f1329d2efe83c304809556789b"
+        },
+        {
+          "source_id": "C_F",
+          "path": "src/ch5_two_asset_hank/multi_province/firm.py",
+          "start_line": 99,
+          "end_line": 109,
+          "source_sha256": "d4c3dada5577f25e0159831dcc9de3883ea656e80aa3e1c407e6bb0af0d4ca0d"
+        }
+      ],
+      "needed": "Separate approved model period, price/deflator and labor-unit evidence. No conversion formula authored"
+    },
+    {
+      "id": "G10",
+      "status": "UNKNOWN",
+      "item": "Confidential original manuscript latest-version relation",
+      "needed": "This audit identifies exact archived c5.tex/c3.tex bytes; latest submission/PDF or later amended TeX identity not inferred"
+    },
+    {
+      "id": "G11",
+      "status": "NOT_PERFORMED",
+      "item": "Numeric/model validation and independent scientific acceptance",
+      "needed": "Numeric review NOT_RUN; static semantic audit is not solver, runtime failure proof, formal source freeze or scientific acceptance"
+    }
+  ],
+  "source_read_scope": [
+    "T5",
+    "T3",
+    "M_W",
+    "M_L",
+    "M_F",
+    "M_H",
+    "M_O",
+    "M_MAIN",
+    "M_MULTI",
+    "M_LAB",
+    "C_W",
+    "C_L",
+    "C_F",
+    "C_O",
+    "C_A",
+    "C_E",
+    "C_AN",
+    "C_EMP",
+    "C_HA",
+    "C_POST",
+    "C_SS",
+    "C_RT",
+    "H_W",
+    "H_L",
+    "H_F",
+    "H_O",
+    "H_A",
+    "H_EMP",
+    "H_HA",
+    "H_POST",
+    "P2_W",
+    "P2_F",
+    "P2_A",
+    "P2_EMP",
+    "P3_L",
+    "P3_O",
+    "D2_RT",
+    "D2_SS",
+    "D2_POST",
+    "P1_T3",
+    "P1_HELP",
+    "REC_A",
+    "REC_BC",
+    "P2_ZIP",
+    "P3_ZIP",
+    "M_INIT",
+    "C_BASE",
+    "C_RUN",
+    "M_EQ",
+    "M_DATA",
+    "INPUT_2009",
+    "DOC_docs_CH5_GITHUB_WORKFLOW_AUTHORITY_CURRENT_20261025.md",
+    "DOC_docs_CH5_INDEPENDENT_REVIEW_RULES_20261025.md",
+    "DOC_CURRENT.md",
+    "DOC_TASK_CURRENT.md",
+    "DOC_docs_CH5_PROJECT_MEMORY_CURRENT.md",
+    "DOC_docs_CH5_TEMP31_WORKPLACE_TAX_ROUTE_STATUS_20261025.md",
+    "NBS_A_NONPRIVATE_LIKELY",
+    "NBS_B_PRIVATE",
+    "NBS_C_BILL",
+    "C_SEL",
+    "C_STEP",
+    "C_INIT",
+    "C_CONT"
+  ],
+  "negative_search": {
+    "scope": [
+      "src",
+      "validators"
+    ],
+    "terms": [
+      "nbs_provincial_urban_unit_wage_20261027",
+      "nbs_wage_supplement_20261027",
+      "SOURCE_RECEIPT_20261027",
+      "NONPRIVATE_LIKELY__DEFINITION_PENDING"
+    ],
+    "hits": 0,
+    "meaning": "No literal references in searched scopes; no assertion that all dynamic or out-of-scope bindings are absent"
+  },
+  "auto_next": false
+}
