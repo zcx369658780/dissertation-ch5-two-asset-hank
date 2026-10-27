@@ -1,0 +1,35 @@
+# C方案来源位置与生产启动前置门：有界STOP
+
+本轮按Owner批准C方案，先找原件/真实入口，不实施B守卫。发文commit=f26941ddd47e1b937f17aa4d51759b052bf018a0；候选固定parent/base=40b48a85e8ed66265dde29a9cda98c51778811d8，二者不混同。
+
+**没有在本轮许可的位置找到三份primary原件。4/8次位置请求完成：3个默认准确文件路径均ABSENT_AT_TESTED_PATH，data_local直接目录本身DIRECTORY_ABSENT。** 因无现存子目录或额外准确项目内相对路径，定位停止；没有扩大到其它根。原始macro哈希0/3，bytes/SHA为NOT_MEASURED，不拿expected常量填现场hash。
+
+Gate A=PROVEN_BOUNDED_METADATA_COVERAGE_ONLY__ORIGINAL_AUTHENTICATION_BLOCKED。
+Gate B=PROVEN_STATIC_CALLSITE_ONLY__EXISTING_LAUNCH_CANONICAL_AND_OWNER_ADOPTION_PENDING。
+actual_source_terminal=STOP__NOT_FOUND_IN_BOUNDED_SCOPE__OWNER_EXACT_SOURCE_AND_LAUNCH_REQUIRED。
+
+## 新证据与限度
+
+- 此次是新授权的项目内有限覆盖，不沿用前轮首个默认路径缺失即停规则。Q01距离、Q02填充宏观、Q03回归工作簿、Q04 data_local根；没有进入任何目录子树，额外路径0/2。剩余4次查询不能用来猜路径或读私人根，不宣称全仓/全盘无这些文件。
+- 6份准确源码与1份已知持久化配置只读取得身份；配置schema=CH5_MP4C_MATLAB_PERSISTENCE_CONTRACT_V1，仅描述legacy/cache/checkpoint，不是Owner实际TEMP31启动或运行清单。batch/worker/anchor/callback及三种canonical路线仍是静态代码表达式；无有依据的准确run/output目录和year，run/canonical元数据原件读取0/2。
+- C方向与较新版HA优先待审是Owner已批准的事实，实际入口/版本/representation/year和任何HA/guard/数据科学采纳仍未批准。RUNTIME_EXECUTED_THIS_SCOPE=FALSE。没有将production命名、SOURCE_CONVERGED标签、预定manifest写入位置或旧2009共用scalar当作真实运行证明。
+- Zt新字段与EMPIRICAL旧属性引用、常住人口与就业人数表名差别仅记SOURCE_DEFINED/NEEDS_OWNER；没有属性调用、观察到的AttributeError、选年、定义N或修代码。工资目的地tau_j单次、R2/R3隔离及D1/D2/D3未生产闭合、NBS未采纳和旧STOP/PENDING均保持。
+
+Owner下一步最少补三项来源事实：准确项目相对路径或可授权目录；每件bytes/SHA256；来源时间/版本。同样需明确拟采用的TEMP31入口/命令/代码版本/representation/year，并给准确运行/生成清单和canonical路径/hash/可读字段。详细账本、三源矩阵、启动/canonical四层证据、Zt人口问题和Owner说明均已提供。
+
+## 实际预算与保护
+
+源代码内容6/10，终核EMPIRICAL/ANNUAL预留2次；已知config1次另列，即把它也算入为保守9/10。位置请求4/8，macro原件哈希0/3，run/canonical metadata0/2。治理任务/Owner记录、11件保护资产指纹与本轮报告缓存重复使用单独记账。模型/科研数值/测试/no-HA/预检、项目import、production runner、canonical生成、Excel sheet/header读取、数据转换、正式源码/数据写入均0。
+
+artifact_integrity=SEE_FIXED_CANDIDATE_REMOTE_READBACK_RECEIPTS
+source_identity=BOUNDED_LOCAL_ABSENCE_AND_STATIC_REFERENCE_ONLY__RAW_PRIMARY_HASH_NOT_MEASURED
+numeric_review=NOT_RUN
+implementation_review=READ_ONLY_PROVENANCE_ONLY
+scientific_review=NO_FORMAL_ACCEPTANCE
+privacy_review=BOUNDED_METADATA_AND_SAFE_SHORT_EXCERPTS
+actual_terminal=STOP__NOT_FOUND_IN_BOUNDED_SOURCE_LOCATIONS__ACTUAL_TEMP31_LAUNCH_AND_CANONICAL_BLOCKED
+delivery=AUTHORIZED_SSH_ISOLATED_CANDIDATE__ACTUAL_FINAL_READBACK_IN_RECEIPTS
+cleanup=NOT_AUTHORIZED_NOT_PERFORMED
+not_completed=RAW_PRIMARY_LOCATION_AND_AUTHENTICITY;OWNER_ACTUAL_LAUNCH_REPRESENTATION_YEAR;REAL_CANONICAL_PRODUCER_ORIGINAL;ZT_AND_POPULATION_CONTRACT;REAL_31_ID_JOIN;D1_D2_D3;SCIENTIFIC_ADOPTION
+
+本地保护前后实际哈希见最终回执，预留不冒充已测。FORMAL_SOURCE_FREEZE=FALSE；V010=UNCHANGED；V011=NOT_STARTED；Results=FALSE；model_activation=False；REAL_GE=False；FULL_RUNNER_IO_CLOSURE=BLOCKED。GitHub固定候选回读后STOP，等待GPT独立审阅；不Issue/PR、合并、清理或自动下一任务。
