@@ -1,0 +1,18 @@
+test_destination_tax_asymmetric_golden (temp31_isolated_tests.WorksiteTaxTests.test_destination_tax_asymmetric_golden)
+First run deliberately rejects origin-tax history as TEMP31 target. ... FAIL
+
+======================================================================
+FAIL: test_destination_tax_asymmetric_golden (temp31_isolated_tests.WorksiteTaxTests.test_destination_tax_asymmetric_golden)
+First run deliberately rejects origin-tax history as TEMP31 target.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<ISOLATED_CANDIDATE_ROOT>\tests\test_temp31_worksite_tax_isolated.py", line 66, in test_destination_tax_asymmetric_golden
+    self.assertMatrix(matrix, ((3.6, 0.15), (1.0, 0.525)))
+  File "<ISOLATED_CANDIDATE_ROOT>\tests\test_temp31_worksite_tax_isolated.py", line 47, in assertMatrix
+    self.assertTrue(math.isclose(float(value), wanted, rel_tol=1e-12, abs_tol=1e-12), (value, wanted))
+AssertionError: False is not true : (np.float64(0.11249999999999999), 0.15)
+
+----------------------------------------------------------------------
+Ran 1 test in 0.131s
+
+FAILED (failures=1)
