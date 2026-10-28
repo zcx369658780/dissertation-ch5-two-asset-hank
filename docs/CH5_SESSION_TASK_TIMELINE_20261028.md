@@ -1,0 +1,47 @@
+# CH5 TEMP31 · 2026-10-27—2026-10-28 固定任务与验收时间线
+
+LEDGER_DATE=2026-10-28
+HANDOFF_PARENT=40f770af6a98f9bca381247d3d9783703b6cf765
+CANONICAL_HANDOFF=docs/CH5_SESSION_HANDOFF_CURRENT.md
+ACTIVE_TASK=NONE
+AUTO_NEXT=FALSE
+
+此文件保存本会话完整的近期主要任务身份和限域结论。任务发文commit、Codex隔离候选commit、GPT独立验收治理commit三者职责不同；正式裁决以固定GPT审阅正文为准。若未来出现更晚的正式治理提交，不覆盖旧证据而按新提交继续。
+
+|顺序|任务方向|固定任务发文commit|Codex固定候选final|GPT独立review治理commit|本轮限域结论|
+|---|---|---|---|---|---|
+|前置|新版HA分发与canonical/生产合同预包|之前任务的治理历史|bdc2091de80dd6a82013534fd39013ffb5acbb07|40b48a85e8ed66265dde29a9cda98c51778811d8|新HA仅优先待审；实际生产和来源未闭合|
+|1|C方案三个原件位置与真实入口|f26941ddd47e1b937f17aa4d51759b052bf018a0|ec5b2ccef4da2440af3eb74e3d51b4ce47b33e6c|1aa1026daceb6b0966470f28fcaa7516cde4a908|在当前科学工作区4个受界位置未找到；原件哈希0/3、生产canonical BLOCKED|
+|2|D盘多模型版本时间线与原件定位|afa9d4725ea9666f298a0e87d2f122f4a366761e|cb5ca11dff10b8f64e97e1df76ae23b4659d1ccd|9d5f5f4a6a4e4a0f70a69b850091462b6e02c6a3|Git未跟踪WASM路径漂移触发保护门；D盘搜索0次|
+|3|六条WASM旧新未跟踪路径只读分类|1f047103794e5f0f16c9174d1b20e3269a2ad518|13eff77c59f15011bbb563e283a6253d483f67b5|0a278dfe1c355e6f8d07254960acb8ba52e3b5d4|祖先reparse STOP；组件身份缺口、WASM实体0次、P3仍未正式采纳|
+|4|P3匿名祖先组件精确定位|0cec18b4a2cc68920dcc32912ed2f40097151bef|623348bd9ef774288293aa02660e552a4029748a|ddd60f910a4dc493ba92fb33bf9826f320ac1be8|Owner已正式采纳P3；ANCESTOR_03深度3、第4次lstat属性0x410，先保存后安全STOP|
+|5|P3 reparse组件词法角色/原生tag|711063b7d3e914268e9ef5c27a9454fda5b318e5|5b484df4df2af80e5563e5af8b92d6dea2e6a027|1d28ab3e1c0f1bf6306ff78dc5c29111d4a3e4f3|词法依赖目录；tag=0xA0000003 MOUNT_POINT类别，物理来源UNKNOWN|
+|6 最新|P3安全父侧准确白名单声明|be41231f5ccbb2c76b6234531982a1d379afa94b|67449b0e7e4ef75e4f795530a9334dc3d905a485|40f770af6a98f9bca381247d3d9783703b6cf765|ANCESTOR_02一次完整直属列举21条、10白名单命中0、原件内容0，P3继续BLOCKED|
+
+## 固定验收报告路径（不要只看用户回执或摘要）
+
+- C source gate: `docs/CH5_TEMP31_C_SOURCE_LOCATION_LAUNCH_PROVENANCE_GATE_R1_20261027_INDEPENDENT_REVIEW.md`，commit 1aa1026daceb6b0966470f28fcaa7516cde4a908，正式限域STOP。
+- D-root attempted locator: `docs/CH5_TEMP31_D_DRIVE_VERSION_TIMELINE_AND_PRIMARY_SOURCE_LOCATOR_R1_20261027_INDEPENDENT_REVIEW.md`，commit 9d5f5f4a6a4e4a0f70a69b850091462b6e02c6a3。
+- Six WASM drift: `docs/CH5_TEMP31_SIX_WASM_UNTRACKED_STATUS_DRIFT_READONLY_AUDIT_R1_20261028_INDEPENDENT_REVIEW.md`，commit 0a278dfe1c355e6f8d07254960acb8ba52e3b5d4。
+- First reparse component: `docs/CH5_TEMP31_P3_REPARSE_ANCESTOR_COMPONENT_IDENTITY_R1_20261028_INDEPENDENT_REVIEW.md`，commit ddd60f910a4dc493ba92fb33bf9826f320ac1be8。
+- Reparse native tag and lexical role: `docs/CH5_TEMP31_P3_REPARSE_COMPONENT_ROLE_PROVENANCE_R1_20261028_INDEPENDENT_REVIEW.md`，commit 1d28ab3e1c0f1bf6306ff78dc5c29111d4a3e4f3。
+- Most recent safe-parent whitelist: `docs/CH5_TEMP31_P3_SAFE_PARENT_DECLARATION_WITNESS_GATE_R1_20261028_INDEPENDENT_REVIEW.md`，commit 40f770af6a98f9bca381247d3d9783703b6cf765。
+
+## Owner授权与禁止自动放大的界限
+
+- C路线（真实原件与启动/canonical先行）获批；新版HA只是优先审阅候选，旧pin不得擅变。
+- D盘根目录多个历史模型版本文件夹的创建/修改/Git时间戳及source调查方向**获过单张受界任务授权**，但该任务在正式D盘调查开始前因WASM status漂移STOP；不能在后续会话把既有旧任务当作长期有效的搜盘通行证。
+- Owner经明确确认正式选择P3继续BLOCKED，并逐张授权六WASM状态、ANCESTOR_03身份、原生tag、父侧manifest门等只读任务；每张任务均完成并STOP，没有开放链接跟随或WASM内容。
+- D盘整理长期目标是原研究主路线和TEMP31各保留**一处正式活动工作目录**；现阶段未授权实际保留/删除清单、迁移或清理，必须备份/恢复核验后另批。
+- 当前没有任何active Codex任务，下一张任务**留到下个会话**由Owner明确决定。交接文档本身不构成任务发文或科学/安全权限升级。
+
+## 原件、保护和预算摘要
+
+- 三份primary原件basenames和源码expected SHA256分别为：
+  - `中国各省省会地理距离矩阵.xlsx` — `26e44d174a8effbdca526d95da38f0e5883e0c78fdfd036d2dff1d1fba5a3566`
+  - `2000年后各省数据_填充NA.xlsx` — `c826b01b6c124eaaadc063dfc2d5510e50e72ed85bb34848f28ab318e4b88929`
+  - `R语言估计结果_plm估计.xlsx` — `a6f444fcccb30cb93aa5de084f1dd163c54e5f53c4287c2cd3e13a045eb64a68`
+  这三个SHA来自源码预设常量，**不是现场三份原始Excel已经认证的哈希**。
+- 本地受保护科学工作树执行者报告HEAD`a1db8c114dec0ab69d69a5576e153a7f868cba0e`、index SHA`28058a7e2d9ab773c5813205c75999e6c221533aeae0b9bb094b9a83451bf7cc`，refs总数243。旧status SHA`c443420c888f5e776cfb6cd05b27cbed56e58a787b82639aa23a47ce7f2ac2f3`与恢复观察SHA`734f11763de35c822f7fbf9a3ab8e2c6b8fb0ae7c8e7c49174ae3e19948e865b`并不相同，虽然分别有5971个非空NUL状态记录。前者完整原始状态流当前未可供GPT独立复算，后者没有被Owner采纳为新保护基线。
+- 最新safe-parent受界源门：`ANCESTOR_02`为非reparse目录，1次直属列举21个真实条目、10指定basename全部不匹配、额外文件metadata 0、声明内容0，正确的边界标签是`NO_EXACT_SAFE_PARENT_DECLARATION_FOUND_IN_SINGLE_DIRECT_LIST`。完整21个文件名只在Owner本地私有记录。不得说“本项目没有声明文件”。
+- GitHub最新候选`67449b0e7e4ef75e4f795530a9334dc3d905a485`总15件证据，manifest登记14件payload；GPT独立重算14/14 payload SHA256/bytes/Blob、manifest自身6800 bytes/sha256 e92e1eca1fdc8906a190bead2a6f57a5a499ddaf7f0db199e4b2a4d0cfd897e1、11/11源码摘录文本哈希。GitHub完备证据不等于GPT有独立Windows目录见证。
