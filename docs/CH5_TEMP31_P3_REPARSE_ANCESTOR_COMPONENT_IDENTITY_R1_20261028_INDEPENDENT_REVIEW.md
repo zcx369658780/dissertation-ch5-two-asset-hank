@@ -1,0 +1,74 @@
+# TEMP31 P3 · Reparse祖先组件定位独立审阅
+
+REVIEW_DATE=2026-10-28
+TASK_ID=CH5_TEMP31_P3_REPARSE_ANCESTOR_COMPONENT_IDENTITY_R1_20261028
+REVIEW_METHOD=INDEPENDENT_FIXED_GITHUB_COMMIT
+GOVERNANCE_TASK_PUBLICATION_COMMIT=0cec18b4a2cc68920dcc32912ed2f40097151bef
+CANDIDATE_FIXED_PARENT=0a278dfe1c355e6f8d07254960acb8ba52e3b5d4
+CANDIDATE_SEAL_COMMIT=623348bd9ef774288293aa02660e552a4029748a
+CANDIDATE_SEAL_PARENT=2998b8b84e1fda43a3897cbd095999eb10b0ad5c
+CANDIDATE_SEAL_TREE=236c11e169e38e879b5e90e52e5d9e2a4167399d
+VERDICT=PASS_BOUNDED_ANONYMOUS_REPARSE_ANCESTOR_EVIDENCE_AND_STOP__P3_BASELINE_REMAINS_BLOCKED
+P3_OWNER_APPROVED=TRUE
+ACTIVE_TASK=NONE
+CUMULATIVE_CURRENT_TASK_CURRENT_SYNC=NOT_VERIFIED_AS_UPDATED
+AUTO_NEXT=FALSE
+
+## A. 固定提交与交付完整性 (COMPLETED_BOUNDED)
+
+- GitHub候选分支`codex/ch5-temp31-p3-reparse-ancestor-identity-20261028-r1` HEAD与最终`623348bd9ef774288293aa02660e552a4029748a`一致；seal parent `2998b8b84e1fda43a3897cbd095999eb10b0ad5c`、tree `236c11e169e38e879b5e90e52e5d9e2a4167399d`。对冻结候选base `0a278dfe1c355e6f8d07254960acb8ba52e3b5d4` ahead=2, behind=0，候选diff仅13份任务报告新增，无科研模型/数据源码变更。发文治理commit=`0cec18b4a2cc68920dcc32912ed2f40097151bef`与候选固定base不同，不相互替代。
+- GPT直接读取最终seal中的13/13份GitHub文件，独立重算manifest所列12份UTF-8 payload的字节数/SHA256及GitHub Blob：12/12全部匹配。manifest自体UTF-8 5784字节、Git Blob `0dd067d7f2329a40a7764446dc45901f898d41de`、SHA256 `ae95cf845dc3d001137ffaaef7c5e600effb3eec1b6fffc9e3bbc68359c01cfc`，单独核验，不伪造循环自引用。12段安全治理/辅助程序短摘录文本哈希12/12正确。
+- 原始私有`OWNER_PRIVATE_COMPONENT_PATH_LOOKUP.json`及单组件的本地保存回执原件没有被GPT直接读取；GitHub报告是执行者观测后的脱敏证据，虽然内部字节和摘要通过独立验收，但不能升级为GPT独立Windows lstat、fsync或链接类型鉴定。INDEPENDENT_COMPLETION_EVENT=UNKNOWN保持。
+- GitHub公开证据仅包括匿名component alias、深度、raw attributes、哈希/有限时间与安全控制流摘录，不包括实际D盘完整路径、私人组件名、链接目标、WASM二进制或敏感工资数据；独立隐私审阅范围仅GitHub固定提交。
+
+## B. Reparse组件定位与安全停止 (COMPLETED_BOUNDED_WITH_OBSERVATIONS)
+
+### B1. 首次命中匿名身份及属性
+
+- `reparse_ancestor_component_ledger.json`记录：WASM_OLD_01的核准SCIENCE_TREE根向下检查4/16个非跟随祖先。序号1–3分别ANCESTOR_00/01/02、深度0/1/2、attributes=16即0x10，reparse=false。序号4为`ANCESTOR_03`、相对根深度3、attributes=1040即0x410，`FILE_ATTRIBUTE_DIRECTORY=0x10`及`FILE_ATTRIBUTE_REPARSE_POINT=0x400`均置位；命中UTC 2026-10-28T00:35:38.500154+00:00（北京时间08:35:38.500154）。4个独立的公开记录包含原始私有记录SHA、字节数、flush/fsync与读回确认的执行者证据，公开control-flow文本声称先持久存储再执行安全分支；命中后未检查后代/文件本体或跟随目标。
+- 该事实**只证实执行者报告的匿名元数据层级和reparse标志**，不是NTFS junction/symlink/mount的确切种类或目标物理身份，也不是WASM合法/无害或依赖刷新/重命名证据。真实组件名/路径只在Owner本地私有映射，本轮GitHub不含原件可供GPT物理验证。
+
+### B2. 首次辅助计时断言与缓存接续的限制
+
+- 初始执行辅助程序的根`ANCESTOR_00`记录已落盘且读回确认，附加计时“严格大于”断言在相同0.015625秒分辨率读数下触发`PERSISTENCE_ORDER_CONFLICT_STOP`。执行者保存旧异常，不覆盖历史记录；随后依据现存缓存验证根记录原字节身份，取消对粗分辨率时钟严格递增的假设，从下一未检查组件接续，报告实际4次lstat、没有重复根读取。
+- 该问题不是`lstat`或reparse安全检查本身的必然失败，且本轮公开证据支持“持久保存确认先于安全决定”的串行控制流和无重复计数说明。**但完整辅助程序与私有checkpoint不在GPT可读范围，不能独立证明操作系统fsync在崩溃条件下的耐久性或真实lstat次数**。故裁决为`PASS_BOUNDED_WITH_DISCLOSED_HELPER_CLOCK_ASSERTION_RECOVERY`而非无保留的执行实现PASS；无科学数值检查。
+- 单一私有账本读取1次；私人delta额外读取0，祖先lstat 4/16；输入私有JSON对象的lstat另报告1次，非WASM文件检查。保护before/after快照2/2，11保护资产各两次；其他5条WASM路径、WASM内容、链接目标、目录列表、D盘版本盘点、科学/模型/测试/noHA/预检、Git修改、安装/重建和清理均0。
+
+### B3. 累计治理状态不一致（未修复但对本项受界只读不构成独立科学许可）
+
+- 固定发文commit `0cec18b4a2cc68920dcc32912ed2f40097151bef`包含本任务冻结全文及Owner正式P3批准文件`docs/CH5_OWNER_P3_PROTECTION_AND_FUTURE_DIRECTORY_INTENT_20261028.md`。其中累计`CURRENT.md`和`TASK_CURRENT.md`仍显示上一轮`ACTIVE_TASK=NONE`和P3待批准。上一GPT任务发文已明确披露无法同步累计文件；本轮Codex未修改任何治理文件。
+- 2026-10-25现行最高权威允许Owner逐张冻结任务交本地Codex、先核本地保护再做限域只读证据；在已知冻结发文与Owner直接批准、且无科学或保护rebaseline行为的本轮，执行者的`ALLOW_BOUNDED_READ_ONLY_WITH_DISCLOSED_CUMULATIVE_STATE_SYNC_GAP`可**限此任务**接受。不得由此主张`CURRENT.md`已经同步、全面豁免治理状态检查或获取模型修改/真实运行权限。
+- 建议治理状态后续受允许的规范写入方式恢复一致性，同时保存历史状态/阻断源由来，不绕过平台拒绝；本次GPT可新增独立审阅和状态补充文档但不冒称已改写大文件。
+
+### B4. 保护科研与数据合同
+
+- 报告本轮before/after git status raw SHA相同=`734f11763de35c822f7fbf9a3ab8e2c6b8fb0ae7c8e7c49174ae3e19948e865b`、5971 NUL记录；HEAD=`a1db8c114dec0ab69d69a5576e153a7f868cba0e`、index SHA=`28058a7e2d9ab773c5813205c75999e6c221533aeae0b9bb094b9a83451bf7cc`、refs数243及SHA、11件保护资产与既有执行者身份一致。它证明执行者报告的本次诊断窗口稳定，不解决历史旧status`c443420c888f5e776cfb6cd05b27cbed56e58a787b82639aa23a47ce7f2ac2f3`来源差异。
+- Owner正式P3：保护基线仍BLOCKED、不得把当前734f...自动采纳可信值。WASM本体物理身份/哈希、历史before-status原件、reparse链接目标、依赖构建来源、真实TEMP31生产入口/canonical及31省共同旧期tuple均未认证。新版HA仍优先待审不正式采纳，目的地tau_j同税扣一次、R2/R3隔离、Zt字段冲突与常住人口/就业含义、NBS工资未采用保持；D盘多版本时间线NOT_STARTED，未删除任何目录。
+- Owner未来原路线一处活动目录与TEMP31一处活动目录目标，仍须版本盘点、独有科学原件/证据保留、可恢复备份、dry-run及每项删除明示许可，本任务绝无目录清理权。
+
+## C. 分层裁决 (COMPLETED_BOUNDED)
+
+artifact_integrity=PASS_BOUNDED__GITHUB_12_OF_12_PAYLOAD_SHA256_BYTES_BLOB__MANIFEST_5784_BYTES_SEPARATE__12_OF_12_SAFE_EXCERPTS
+source_identity=PASS_BOUNDED_ANONYMOUS_EXECUTOR_REPARSE_METADATA__PRIVATE_PHYSICAL_COMPONENT_NOT_INDEPENDENTLY_READ
+numeric_review=NOT_RUN
+implementation_review=PASS_BOUNDED_WITH_DISCLOSED_HELPER_CLOCK_ASSERTION_RECOVERY__NO_WASM_OR_LINK_FOLLOW
+scientific_review=SCIENTIFIC_ACCEPTANCE_BLOCKED__P3_FORMALLY_APPROVED
+privacy_review=BOUNDED_GITHUB_ALIAS_ONLY_PRIVATE_WINDOWS_MAPPING_UNREAD
+actual_terminal=STOP__P3_FIRST_REPARSE_COMPONENT_IDENTIFIED__TARGET_NOT_FOLLOWED__BASELINE_BLOCKED
+delivery=PASS_BOUNDED__GITHUB_FINAL_FIXED_SEAL_13_OF_13_FILES_INDEPENDENTLY_READ
+cleanup=NOT_AUTHORIZED_NOT_PERFORMED
+not_completed=PRIVATE_COMPONENT_PHYSICAL_IDENTITY;REPARSE_TAG_OR_TARGET;SIX_WASM_CONTENT_OR_OLD_STATUS;DEPENDENCY_REFRESH_OR_RENAME_CAUSE;CUMULATIVE_GOVERNANCE_STATE_SYNC;OWNER_SOURCE_AND_TEMP31_LAUNCH_CANONICAL;D_ROOT_VERSION_DISCOVERY;D1_D2_D3;SCIENTIFIC_AND_NUMERIC_ACCEPTANCE
+NEXT_ACTION=OWNER_DECISION__NO_NEXT_TASK_ISSUED
+VERDICT=PASS_BOUNDED_ANONYMOUS_REPARSE_ANCESTOR_EVIDENCE_AND_STOP__P3_BASELINE_REMAINS_BLOCKED
+
+正式终态：已经定位匿名`ANCESTOR_03`、第4次lstat、深度3，原始attrs=1040(0x410)；接受先记录后STOP的有界执行者来源证据，**不**认定WASM/链接安全、不重绑定保护基线、不恢复D盘目录搜源、不运行模型、不改写科学历史。旧STOP/PENDING原样保留。
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+AUTO_NEXT=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
