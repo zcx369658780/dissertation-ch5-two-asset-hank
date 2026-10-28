@@ -1,0 +1,82 @@
+# TEMP31 P3 / Reparse祖先组件身份的有界只读任务
+
+TASK_ID=CH5_TEMP31_P3_REPARSE_ANCESTOR_COMPONENT_IDENTITY_R1_20261028
+STATUS=ISSUED_WAITING_LOCAL_CODEX
+DATE=2026-10-28
+OWNER_DECISION=P3_FORMALLY_APPROVED__KEEP_BLOCKED
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_PARENT=0a278dfe1c355e6f8d07254960acb8ba52e3b5d4
+CANDIDATE_FIXED_PARENT=0a278dfe1c355e6f8d07254960acb8ba52e3b5d4
+CANDIDATE_BRANCH=codex/ch5-temp31-p3-reparse-ancestor-identity-20261028-r1
+TASK_PATH=tasks/CH5_TEMP31_P3_REPARSE_ANCESTOR_COMPONENT_IDENTITY_R1_20261028.md
+EVIDENCE_DIR=tasks/CH5_TEMP31_P3_REPARSE_ANCESTOR_COMPONENT_IDENTITY_R1_20261028/
+PRIOR_CANDIDATE=13eff77c59f15011bbb563e283a6253d483f67b5
+PRIOR_REVIEW=docs/CH5_TEMP31_SIX_WASM_UNTRACKED_STATUS_DRIFT_READONLY_AUDIT_R1_20261028_INDEPENDENT_REVIEW.md
+OLD_STATUS_SHA256=c443420c888f5e776cfb6cd05b27cbed56e58a787b82639aa23a47ce7f2ac2f3
+OBSERVED_STATUS_SHA256=734f11763de35c822f7fbf9a3ab8e2c6b8fb0ae7c8e7c49174ae3e19948e865b
+PROTECTION_BASELINE_REBIND=NOT_AUTHORIZED
+AUTO_NEXT=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+
+## 唯一目标
+
+Owner正式选择P3继续阻塞保护基线，并授权定位**上轮首次触发reparse安全门的匿名祖先组件**。上轮WASM_OLD_01的逐级lstat检查触发STOP，但没有在异常前持久保存命中组件和累计lstat次数。此次任务只补足该项可审阅证据，不能进入六个WASM文件，也不恢复D盘版本时间线、模型、依赖处理或原件搜索。
+
+## 固定来源与本地允许输入
+
+从GitHub固定发文提交阅读全文、现行2026-10-25治理权威和上述独立验收。只读本地私有精确账本：
+D:/ProjectTemp/ch5_temp31_six_wasm_untracked_drift_audit_20261027_r1/OWNER_PRIVATE_SIX_PATH_LEDGER.json
+只选其精确识别的WASM_OLD_01旧路径。必要时可核对前任务固定私有delta：
+D:/ProjectTemp/ch5_temp31_d_drive_version_timeline_source_locator_20261027_r1/ssh_batch_resume/RESUME_STATUS_DELTA_PRIVATE.json
+若私有别名与SCIENCE_TREE实际根不能可靠一致匹配、路径出现非法父跳转、访问拒绝或越界，立即STOP。不得扫描相邻目录或其它旧/新WASM路径。
+
+## Gate A 身份保护
+
+在科学工作树before/after各执行一次HEAD/branch、index SHA256、refs SHA256和条数、git status porcelain=v1 -z --untracked-files=all的原始SHA256/NUL非空计数、11件保护文件大小和SHA256，不改工作树、index或refs。不公布其他未跟踪文件记录、任何私有绝对路径。把历史旧status、既有恢复status、此次before/after区分，任何当前status都不自动升级可信基线。
+
+## Gate B 非跟随祖先检查
+
+仅对WASM_OLD_01词法父链，从核准的SCIENCE_TREE根向下对每个已知祖先调用非跟随lstat；上限16次，包含可能有reparse属性的根组件。严禁resolve、realpath、readlink、stat-follow、遍历子目录或跟随链接目标，更不读WASM文件本体。路径验证失败则STOP。
+
+**关键不可省略的执行次序**：每次lstat取得原始attributes后，立即在本次任务独立私有scratch中写入“递增检查号、匿名组件alias、相对根深度、非跟随attributes整数、reparse标记、目录类型、UTC检测时刻”，并验证记录已持久保存；然后才判断reparse并抛出安全STOP。私有alias映射保存真实组件名和完整路径；GitHub只发布别名、深度、有限属性和安全STOP状态，绝不公开真实私有组件名或任何链接目标。
+
+首次reparse触发立即STOP，不探测后代、其它五条路径或链接目标。如辅助记录仍无法持久化，STOP并写COMPONENT_IDENTITY_INCOMPLETE，禁止为补证重跑或扩大范围。若祖先链此次未出现reparse，同样在末端STOP，不访问WASM文件或否认先前报告。若保护状态额外发生变化，记录并STOP，不修复或重置。
+
+## 预算、结论与隐私
+
+PRIVATE_LEDGER_READ=1
+OPTIONAL_EXACT_DELTA_READ=1
+ANCESTOR_LSTAT_MAX=16
+GIT_PROTECTION_SNAPSHOTS=2
+PROTECTED_FILE_HASHES_MAX=11_PER_SNAPSHOT
+WASM_FILE_METADATA=0
+WASM_HASH_OR_CONTENT_READ=0
+LINK_TARGET_TRAVERSAL=0
+DIRECTORY_ENUMERATION=0
+D_ROOT_DISCOVERY=0
+MODEL_SCIENCE_NUMERIC_TEST_NO_HA_PREFLIGHT=0
+WASM_EXECUTION=0
+DEPENDENCY_INSTALL_REBUILD=0
+CANONICAL_GENERATION=0
+ORIGINAL_SOURCE_AND_DATA_WRITES=0
+CLEANUP_MOVE_DELETE=0
+GIT_CHECKOUT_RESET_STASH_CLEAN=0
+LOCAL_WRITE_ALLOWLIST=TASK_OWNED_SCRATCH_OUTSIDE_SCIENCE_WORKTREE
+GITHUB_WRITE_ALLOWLIST=tasks/CH5_TEMP31_P3_REPARSE_ANCESTOR_COMPONENT_IDENTITY_R1_20261028/__ISOLATED_CANDIDATE_ONLY
+
+即使定位reparse祖先，也**不能**据此证明WASM安全、依赖更新、合法重命名或原件被改写；所有相关结论保持UNKNOWN/BLOCKED。Owner正式P3不变，新基线不得采纳。未来原路线与TEMP31各一个正式活动工作目录的长期目标保持，但本任务无任何清理权限。
+
+## 独立候选必须交付
+
+仅在任务独立分支目录交付 result.md、reparse_ancestor_component_ledger.json、reparse_guard_control_flow_evidence.md、protection_snapshot_before_after.md、owner_p3_decision_brief.md、source_inventory.json、source_excerpts.json、gap_register.json、audit_checkpoint.json、privacy_report.json、INDEPENDENT_COMPLETION_EVENT.json、manifest.json、DELIVERY_FINAL_RECEIPT.json。提供实际lstat数量、最先命中组件匿名ID和已证安全STOP，无法确认则UNKNOWN。私有路径和原始状态流只留Owner本地scratch，GitHub只提供脱敏短摘录与原件身份映射规则；manifest按UTF-8大小/SHA256/Git Blob分开核验，不能让self/seal循环引用制造虚假一致。
+
+按普通已授权SSH发布隔离候选，远端从固定commit逐文件回读Blob、size、SHA256、parent和tree，然后STOP，等GPT独立审阅。不得自动Issue/PR/merge/cleanup/后继任务。
+
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED

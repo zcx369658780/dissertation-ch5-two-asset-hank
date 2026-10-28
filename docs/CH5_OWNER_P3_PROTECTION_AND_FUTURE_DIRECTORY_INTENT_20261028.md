@@ -1,0 +1,16 @@
+# 2026-10-28 · Owner P3保护策略正式确认
+
+Owner同意将六WASM未跟踪路径问题的保护策略正式确定为P3：继续保持BLOCKED，不采纳恢复后的git status SHA作为新保护基线。并授权下一项极小只读任务 CH5_TEMP31_P3_REPARSE_ANCESTOR_COMPONENT_IDENTITY_R1_20261028，仅对私有账本里WASM_OLD_01的祖先链作非跟随lstat并在STOP前持久化匿名组件证据；不得读取WASM、跟随reparse目标、恢复D盘调查、运行模型或清理文件。
+
+原路线及TEMP31将来各保留一个正式活动工作目录是长期整理目标；必须先完成科研版本盘点、独有原件与历史证据核实、可恢复备份和Owner对每项删除动作的单独批准。本轮无删除授权。
+
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+AUTO_NEXT=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
