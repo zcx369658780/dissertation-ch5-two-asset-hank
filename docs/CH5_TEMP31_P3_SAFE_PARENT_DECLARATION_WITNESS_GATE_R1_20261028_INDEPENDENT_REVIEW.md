@@ -1,0 +1,62 @@
+# TEMP31 P3 · 安全父目录来源声明有界阴性覆盖 — GPT独立审阅
+
+REVIEW_DATE=2026-10-28
+TASK_ID=CH5_TEMP31_P3_SAFE_PARENT_DECLARATION_WITNESS_GATE_R1_20261028
+REVIEW_KIND=FIXED_GITHUB_CANDIDATE_INDEPENDENT_A_B_C
+TASK_PUBLICATION_COMMIT=be41231f5ccbb2c76b6234531982a1d379afa94b
+CANDIDATE_FIXED_PARENT=1d28ab3e1c0f1bf6306ff78dc5c29111d4a3e4f3
+CANDIDATE_SEAL_COMMIT=67449b0e7e4ef75e4f795530a9334dc3d905a485
+CANDIDATE_PAYLOAD_COMMIT=2fdecfb731f21aa0cada3d51f39424b37023c9c8
+CANDIDATE_FINAL_PARENT=2fdecfb731f21aa0cada3d51f39424b37023c9c8
+CANDIDATE_FINAL_TREE=7ee7c52d2f26637c89512f3997e271ad091d977a
+VERDICT=PASS_BOUNDED_SINGLE_SAFE_PARENT_DIRECT_LIST_NEGATIVE_WHITELIST_AND_STOP__P3_SOURCE_AND_BASELINE_BLOCKED
+P3_OWNER_APPROVED=TRUE
+ACTIVE_TASK=NONE
+AUTO_NEXT=FALSE
+
+## A. 固定身份与载荷完整性 — COMPLETED_BOUNDED
+
+- 直接读取GitHub治理分支冻结任务发文`be41231f5ccbb2c76b6234531982a1d379afa94b`、任务Blob`649db8fb6ed88a86bd38dd296e92e22e07772d60`及现行高位治理和专项状态补充。候选分支HEAD固定为`67449b0e7e4ef75e4f795530a9334dc3d905a485`，seal parent `2fdecfb731f21aa0cada3d51f39424b37023c9c8`，root tree `7ee7c52d2f26637c89512f3997e271ad091d977a`。从固定候选父`1d28ab3e1c0f1bf6306ff78dc5c29111d4a3e4f3`至seal ahead2/behind0；提交差异仅本任务目录15份新证据，无候选科研源码、原始数据、Git治理源改动。发文commit不是候选固定parent。
+- GPT独立从最终seal读取15/15文件。manifest登记14份UTF-8 payload的原字节长度、SHA256与Git Blob，14/14经独立计算匹配。manifest本身6800 UTF-8 bytes、Blob `2fe59299db1fec852b075996326022587f9c466f`、SHA256 `e92e1eca1fdc8906a190bead2a6f57a5a499ddaf7f0db199e4b2a4d0cfd897e1`独立校验。source_excerpts 11/11脱敏片段文本SHA256匹配。没有把执行者manifest摘要自证当作GPT独立核验。
+- 私有Owner目录完整列表`OWNER_DIRECT_ENTRY_LIST.json`及Windows原始读取不在GitHub公开文件，GPT不能直接检查21条实际文件名或Windows lstat、目录句柄调用；公开账本、原始摘要和安全短片段经校验仅证明报告内部身份一致。INDEPENDENT_COMPLETION_EVENT仍UNKNOWN，科学与原本机独立见证未取得。
+
+## B. 来源、目录边界、保护和科研实质 — COMPLETED_BOUNDED_WITH_NEGATIVE_SCOPE
+
+### B1. 单一父侧一次完整直属列举
+- 任务新授权仅允许已知`ANCESTOR_02`安全父目录的直接子目录项名/非跟随类型，在安全门后一次列举，不超过64条；允许的10个basename为`package.json`、`package-lock.json`、`npm-shrinkwrap.json`、`pnpm-lock.yaml`、`yarn.lock`、`Cargo.toml`、`Cargo.lock`、`pyproject.toml`、`environment.yml`、`.gitmodules`。无整盘、其他父层或链接目标扩大许可。
+- 执行者`safe_parent_direct_entry_coverage.json`报告`ANCESTOR_02`获准根侧安全属性16/0x10、reparse=false；以单个FindFirstFileW/FindNextFileW句柄取得21个排除点条目的实际条目，正常EOF，21/64、覆盖一轮直属条目、白名单精准命中0；已知ANCESTOR_03边界仅在父级目录列举结果里被动返回，未对子目录执行额外lstat、open、进入或链接目标解析；额外未知reparse条目报告为0。该无直接访问的分类与冻结范围相容。
+- 无白名单候选时精确文件metadata 0/2、内容0/2、脱敏字段提取0，STOP终态`STOP__NO_EXACT_SAFE_PARENT_DECLARATION_FOUND_IN_SINGLE_DIRECT_LIST`正确。未以剩余预算试探其他名字或访问上级/下级目录。**本轮可接受仅是执行者受界目录列表在10个basename上的阴性结果**，不证明整个仓库、磁盘其他目录、不同basename、其他工作树没有任何声明；也不证明真实WASM物理来源或安装过程。
+- 私有映射与两份旧LIVE_COMPONENT_02/03固定身份的声称，由执行者报告并可与冻结前候选来源摘要交叉核查；但私人原件及目录清单GPT无法直接读取，故标签为EXECUTOR_REPORTED_BOUNDED_COVERAGE，而非INDEPENDENT_WINDOWS_FS_WITNESS。
+
+### B2. 保护、预算及治理一致性
+- 执行者记载两次科学树保护status SHA=`734f11763de35c822f7fbf9a3ab8e2c6b8fb0ae7c8e7c49174ae3e19948e865b`，非空NUL各5971；HEAD `a1db8c114dec0ab69d69a5576e153a7f868cba0e`、index SHA、refs SHA/243、11件保护资产与既有执行者基准一致。它说明执行者报告的此次窗口稳定，不否定历史旧status `c443420c888f5e776cfb6cd05b27cbed56e58a787b82639aa23a47ce7f2ac2f3`到恢复status的差异。Owner正式P3仍BLOCKED，不采纳734f...为新可信基线；GPT没有独立测量Windows工作树。
+- 实际报告预算：私有映射1/1、旧记录2/2、安全父lstat1/1、单次直属列举1/1、21/64条、声明metadata/content0/2、保护快照2/2且保护资产各11、工具重试0。目录列举中被动返回的已知边界名称不等于访问ANCESTOR_03或目标。WASM、readlink/目标、模型/HA/HJB/KFE/GE/IRF/测试/noHA/preflight、D根版本、科研源/数据/治理写入、移动复制删除清理均据执行者报告为0。
+- `CURRENT.md`/`TASK_CURRENT.md`仍记录更早的ACTIVE_TASK=NONE及P3推荐，累计状态尚未同步。最新精准冻结任务与专项状态补充共同构成本项Owner批准的限域只读来源，符合2026-10-25最高逐张任务工作流的有界解释；**仅此次零科学/零保护域写入任务**予以接受，不宣称累计文件已更新或赋予后续科研执行、跨域扫描、自动签单许可。GPT此轮也不尝试绕过已有的历史大文件更新安全阻断。
+- 真实TEMP31生产入口/canonical、原始宏观三件、31省ID、D1/D2/D3、Zt属性和人口/就业劳动/工资税科学合同、较新版HA版本化守卫仍BLOCKED；不因缺少依赖声明推断模型错误。长期原路线、TEMP31各一个正式活动目录目标保留，仍须独立版本盘点、受保护资料备份恢复、Owner逐目录删除批准；本轮不清理。
+
+## C. 分层裁决 — COMPLETED_BOUNDED
+
+artifact_integrity=PASS_BOUNDED__GITHUB_14_OF_14_MANIFEST_PAYLOADS_SHA256_BYTES_BLOB__MANIFEST_SEPARATE_6800_BYTES__11_OF_11_SAFE_SOURCE_EXCERPTS
+source_identity=EXECUTOR_REPORTED_BOUNDED_SINGLE_PARENT_21_ENTRY_EXACT_WHITELIST_NEGATIVE__NOT_INDEPENDENT_WINDOWS_ORIGIN
+numeric_review=NOT_RUN
+implementation_review=PASS_BOUNDED_SINGLE_SAFE_PARENT_DIRECT_ENUMERATION_AND_CORRECT_NO_CANDIDATE_STOP
+scientific_review=SCIENTIFIC_ACCEPTANCE_BLOCKED__P3_FORMALLY_APPROVED
+privacy_review=BOUNDED_GITHUB_ALIAS_AND_WHITELIST_ONLY__OWNER_PRIVATE_FULL_ENTRY_LIST_UNREAD
+actual_terminal=STOP__NO_EXACT_SAFE_PARENT_DECLARATION_FOUND_IN_SINGLE_DIRECT_LIST
+delivery=PASS_BOUNDED_GITHUB_FIXED_CANDIDATE_15_OF_15_FILES
+cleanup=NOT_AUTHORIZED_NOT_PERFORMED
+not_completed=REAL_DECLARATION_OR_INSTALL_PROVENANCE;LINK_TARGET_AND_WASM_BYTES_OR_SAFETY;OLD_STATUS_DRIFT_CAUSE;TRUSTED_NEW_BASELINE;CUMULATIVE_CURRENT_TASK_CURRENT_SYNC;D_ROOT_VERSION_TIMELINE;REAL_TEMP31_SOURCE_CANONICAL_AND_SCIENTIFIC_ACCEPTANCE
+NEXT_ACTION=OWNER_DECISION__NO_NEXT_TASK_ISSUED
+VERDICT=PASS_BOUNDED_SINGLE_SAFE_PARENT_DIRECT_LIST_NEGATIVE_WHITELIST_AND_STOP__P3_SOURCE_AND_BASELINE_BLOCKED
+
+正式结论：接受本轮**一目录、一次、21条、准确10名称白名单0命中**的限域阴性来源观察及STOP；不认证实际依赖来源、WASM、安全、目标物理身份或新保护基线。无自动Issue/PR/merge/cleanup/next task。
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+AUTO_NEXT=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
