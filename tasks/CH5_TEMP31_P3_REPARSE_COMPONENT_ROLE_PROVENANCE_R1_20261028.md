@@ -1,0 +1,93 @@
+# TEMP31 P3：已定位reparse组件的角色与来源边界（只读）
+
+TASK_ID=CH5_TEMP31_P3_REPARSE_COMPONENT_ROLE_PROVENANCE_R1_20261028
+STATUS=OWNER_AUTHORIZED__ISSUED_WAITING_LOCAL_CODEX
+DATE=2026-10-28
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_PARENT=ddd60f910a4dc493ba92fb33bf9826f320ac1be8
+CANDIDATE_FIXED_PARENT=ddd60f910a4dc493ba92fb33bf9826f320ac1be8
+CANDIDATE_BRANCH=codex/ch5-temp31-p3-reparse-boundary-provenance-20261028-r1
+TASK_PATH=tasks/CH5_TEMP31_P3_REPARSE_COMPONENT_ROLE_PROVENANCE_R1_20261028.md
+EVIDENCE_DIR=tasks/CH5_TEMP31_P3_REPARSE_COMPONENT_ROLE_PROVENANCE_R1_20261028/
+PRIOR_CANDIDATE=623348bd9ef774288293aa02660e552a4029748a
+PRIOR_INDEPENDENT_REVIEW=docs/CH5_TEMP31_P3_REPARSE_ANCESTOR_COMPONENT_IDENTITY_R1_20261028_INDEPENDENT_REVIEW.md
+OWNER_SCOPE=READ_ONLY_EXACT_ANCESTOR_03_ROLE_AND_PRE_LINK_BOUNDARY_EVIDENCE
+OWNER_P3=FORMALLY_APPROVED__KEEP_PROTECTION_BASELINE_BLOCKED
+TRUSTED_NEW_STATUS_BASELINE=NOT_APPROVED
+D_ROOT_MODEL_DIRECTORY_DISCOVERY=NOT_STARTED__FORBIDDEN_THIS_TASK
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
+
+## 一、当前可继承的固定来源
+
+已验收的前一轮仅证明执行者可审阅元数据：WASM_OLD_01祖先链前3个普通目录属性为16，第四次非跟随lstat命中ANCESTOR_03（相对根深度3；属性1040/0x410，目录位0x10+reparse位0x400）；先持久化、回读，再安全STOP，未跟随目标。真实名称与路径没有进入GitHub，不能因“reparse”推断junction/symlink、恶意修改、依赖更新或WASM安全。
+
+本轮只回答：该命中组件在**核准科研工作树的词法目录结构中扮演什么角色**，从根至reparse前安全祖先能取得哪些可审阅来源证据，Windows非跟随lstat能否提供reparse tag及其明确边界。**不得解开目标路径、读取六WASM本体或恢复D盘盘点。**
+
+已知治理事实：2026-10-25 GitHub逐张冻结任务权威仍有效；Owner已正式采纳P3；前次GPT报告及独立状态补充固定于`ddd60f910a4dc493ba92fb33bf9826f320ac1be8`。累计CURRENT.md和TASK_CURRENT.md仍记载更旧的ACTIVE_TASK=NONE/P3推荐，未完成同步；不得伪称其已经同步或自行编辑大文件。Owner本轮逐张授权这项只读任务，若依现行最高规则核对后仍存在硬性权限冲突，STOP并交治理冲突证据，不擅改源。
+
+## 二、Gate A：私有原件与工作树保护
+
+1. 从本任务**发文固定GitHub提交**读取完整任务和现行权限、上一审阅。仅允许读取前一轮本地私有路径映射和对应4组件私有证据，明确路径：
+   - `D:/ProjectTemp/ch5_temp31_p3_reparse_ancestor_identity_20261028_r1/OWNER_PRIVATE_COMPONENT_PATH_LOOKUP.json`
+   - 同一任务scratch下`OWNER_COMPONENT_03.json`，以及映射中准确指向的`OWNER_COMPONENT_00/01/02.json`，仅在其身份与公开前一候选的hash/alias一一对应时可读。
+   若这些精确文件不存在、不属于该任务scratch、别名/检查序号不一致，STOP；不借全盘搜索其他同名记录。
+2. 当前SCIENCE_TREE HEAD/branch/index SHA256、refs SHA256/count、raw `git status --porcelain=v1 -z --untracked-files=all` SHA256与非空NUL计数、11件保护资产，各取before和after快照，记录原始采集方式。旧c443420c...与恢复734f1176...分开；当前status相同也不等于新可信基线。不得checkout/reset/stash/clean/update-index。
+3. 保护的私有映射须提供实际组件相对于SCIENCE_TREE的词法父链及其原别名、组件类别。只允许把这个事实转成项目内的安全类别/匿名层级，不公开真实组件名或D盘绝对路径。若组件名本身可识别依赖类型，仅可说“依赖目录命名线索”，不作物理来源结论。
+
+## 三、Gate B：组件属性与安全父边界
+
+1. 优先使用**上一轮已有的4个私有原始记录和确认记录**，不重复旧lstat。必要时只对`ANCESTOR_03`本身和紧邻其上的`ANCESTOR_02`执行最多2次新的非跟随lstat；上层至组件路径必须在词法范围内、原父链已确认非reparse，不允许透过任何其他reparse祖先访问。第一次发现身份变化或逃逸即STOP。
+2. 仅允许读取当前Python/Windows非跟随`lstat`返回的`st_file_attributes`、`st_reparse_tag`（如果系统原生提供），`st_mode`和有限时间元数据。不调用readlink、resolve、realpath、FSCTL读取链接数据、打开链接目标或枚举组件子目录。tag若未知/缺失写UNKNOWN，若可取得只可识别Windows标签类别；不推断目标、WASM安全或生成原因。
+3. 仅在安全的`ANCESTOR_02`及更上层**非reparse目录侧**，才允许按私有ledger已经指定的准确文件名读取最多2个小型构建/依赖声明（例如既有package/build manifest的选定安全字段），每件不超过16KB。禁止glob、猜文件名、列目录、读取依赖缓存、运行构建或访问ANCESTOR_03下的任何路径；如果没有已指定的精确文件，直接记录NO_ADMISSIBLE_MANIFEST。
+4. 允许至多2次`git ls-files`等只读index对象查询，参数仅限目标组件的词法相对路径或已验证安全父节点，不能访问实际链接子树；如遇Git路径规则不确定则不调用。纯Git index身份只证明跟踪关系，不证明链接物理内容或安装来源。
+5. 所有新元数据和证据写在任务独立scratch，**先持久化、回读确认再下结论**。输出角色标签优先用`LEXICAL_DEPENDENCY_DIRECTORY`、`PROJECT_LOCAL_WORKTREE_DIRECTORY`、`OTHER_OR_UNKNOWN`及证据强度；对任何实体/安全性结论不得超出来源。触发reparse并不是此次“解阻”的依据，保持P3。
+6. 本任务全程不得追踪reparse目标、调用Windows链接目标解析API、访问六WASM文件、读取D盘根目录、整理模型版本或修改科研代码/原始数据。出现新保护状态漂移、身份冲突、权限拒绝立即STOP，禁止通过提权或其它凭据绕过。
+
+## 四、硬预算与交付
+
+PRIVATE_PREVIOUS_COMPONENT_LOOKUP_READS=1
+PRIVATE_EXACT_COMPONENT_EVIDENCE_READS_MAX=4
+LIVE_NONFOLLOW_LSTAT_MAX=2
+SAFE_SIDE_EXACT_MANIFEST_READS_MAX=2
+SAFE_MANIFEST_SIZE_MAX_BYTES=16384
+GIT_EXACT_INDEX_LOOKUP_MAX=2
+PROTECTION_SNAPSHOTS=2
+PROTECTED_ASSET_HASH_CHECKS=11_PER_SNAPSHOT
+WASM_FILE_READS_OR_SHA=0
+LINK_TARGET_FOLLOW_OR_READ=0
+DIRECTORY_ENUMERATIONS=0
+D_ROOT_SEARCH=0
+SCIENCE_HA_HJB_KFE_GE_IRF=0
+MODEL_TEST_NO_HA_PREFLIGHT=0
+CANONICAL_GENERATION=0
+SOURCE_DATA_WRITES=0
+GIT_CHECKOUT_RESET_CLEAN=0
+COPY_MOVE_DELETE_CLEANUP=0
+TOOL_RETRY=1_TRANSIENT_READONLY_ONLY_NOT_AFTER_SAFETY_FAILURE
+LOCAL_WRITE_ALLOWLIST=ONE_TASK_SCRATCH_OUTSIDE_SCIENCE_TREE
+GITHUB_WRITE_ALLOWLIST=tasks/CH5_TEMP31_P3_REPARSE_COMPONENT_ROLE_PROVENANCE_R1_20261028/__ISOLATED_CANDIDATE_ONLY
+AUTO_NEXT=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+
+交付仅在GitHub独立候选`tasks/CH5_TEMP31_P3_REPARSE_COMPONENT_ROLE_PROVENANCE_R1_20261028/`下写入 result.md、reparse_component_role_matrix.md、safe_parent_provenance_evidence.md、component_nofollow_identity.json、protection_before_after.md、owner_p3_decision_brief.md、source_inventory.json、source_excerpts.json、gap_register.json、audit_checkpoint.json、privacy_report.json、INDEPENDENT_COMPLETION_EVENT.json、manifest.json、DELIVERY_FINAL_RECEIPT.json。公开只用ANCESTOR_02/03等别名、相对深度、属性/tag数值和分类依据；私有真实路径、本地组件名和任何敏感manifest字段仅留Owner本地scratch。manifest登记UTF8 bytes/SHA256/Git Blob；自引用与seal身份分开处理。
+
+依据固定候选父`ddd60f910a4dc493ba92fb33bf9826f320ac1be8`在隔离分支经已批准普通SSH上传，最终按固定GitHub commit逐个回读Blob、bytes、SHA256、parent、tree后STOP，等待GPT独立A/B/C审阅及Owner下一个明确决定。无需用完预算；无新原件或无安全路径则合规STOP。
+
+## 五、科研保护
+
+P3_OWNER_APPROVED=TRUE
+PROTECTION_BASELINE_REBIND=FALSE
+ACTIVE_TASK_STOP_AFTER_REMOTE_READBACK=TRUE
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
