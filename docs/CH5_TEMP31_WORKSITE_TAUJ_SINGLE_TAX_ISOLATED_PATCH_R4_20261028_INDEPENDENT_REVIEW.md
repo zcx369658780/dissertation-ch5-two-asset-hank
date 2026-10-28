@@ -1,0 +1,75 @@
+# TEMP31 R4 工作地工资税隔离补丁：GPT 独立 A/B/C 审阅
+
+REVIEW_DATE=2026-10-28
+TASK_ID=CH5_TEMP31_WORKPLACE_TAUJ_SINGLE_TAX_ISOLATED_PATCH_R4_20261028
+REVIEW_KIND=INDEPENDENT_GITHUB_FIXED_COMMIT_ABC
+GOVERNANCE_PARENT_AT_REVIEW=16c3bcfd5ed0b1048b4ea39ea205986d20e6e884
+TASK_PUBLICATION_COMMIT=16c3bcfd5ed0b1048b4ea39ea205986d20e6e884
+SOURCE_COMMIT=5e4ec0ae4c310b8071b6aef68642fd0ffd862478
+SOURCE_ROOT_TREE=e636e09a2542deb29f386a26f5456e2b517f7911
+CANDIDATE_BRANCH=codex/ch5-temp31-worksite-tauj-single-tax-isolated-20261028-r4
+PAYLOAD_COMMIT=e99c622b41b255e5312589c61c57689a42a0b3e3
+PAYLOAD_PARENT=5e4ec0ae4c310b8071b6aef68642fd0ffd862478
+PAYLOAD_ROOT_TREE=17e5e57ca917d28b29171ec88fb69cbddd164143
+FINAL_SEAL_COMMIT=92ec73bc4fabfdf92a9f34c3715ebbdd4fb51f27
+FINAL_PARENT=e99c622b41b255e5312589c61c57689a42a0b3e3
+FINAL_ROOT_TREE=adb98b1ad14920902b62ad16bc8ed8e2df4605dc
+OVERALL=PASS_BOUNDED_R4_ISOLATED_WORKSITE_TAU_J_AND_SINGLE_NET_WAGE_DATA_CONTRACT__REAL_HA_FISCAL_EMPIRICAL_BLOCKED
+
+## A. Git对象、23件原字节、十份冻结源码
+
+- GitHub Git对象API独立回读：任务发布commit唯一parent=db8ec2d14c09b422bff9d8df493ca69172029222、root tree=cbdb854a7f2a2d0726f3d910a7fc5afe79f38f44，diff只新增R4合同；候选分支远端HEAD=FINAL_SEAL_COMMIT，seal直接父为PAYLOAD_COMMIT，其父为SOURCE_COMMIT；payload/final tree均与上方身份一致。
+- compare SOURCE_COMMIT → FINAL_SEAL_COMMIT：ahead2/behind0，恰好23个新增文件、0个原有文件修改/删除。3个新增代码文件及本R4任务内证据；payload → final只新增DELIVERY_FINAL_RECEIPT.json。旧migration_labor、one_turn、wage、firm、stationary、年度生产、HA/HJB/KFE没有变更。
+- 从FINAL_SEAL_COMMIT固定路径以GitHub fetch_file(encoding=base64)读取21件manifest payload，独立解码原始字节，复算大小、SHA-256并核对GitHub Git Blob：**21/21全部一致**。manifest另核9116 bytes、SHA256=8aa5ca885bf3aeb120a9e4965f0ce650f57c76bd132e01280b115fb531ba0561、Blob=86f37cf8efe25550adb981c4ee43950cd88b1e04；最终seal另核10644 bytes、SHA256=f019b77f6b5b4fffa327724bb34426910eb8d8343589b5e11153b5a02df0b7e5、Blob=b1c55247d1eacd1bb97c4ccfa2064f792dc475a8。**总计23/23远端文件字节/哈希/Blob独立一致**。SHA256实现以标准空串和abc向量自校验；不是直接照抄Codex manifest。Git Blob与SHA256分别核对。
+- 对固定 SOURCE_COMMIT 下十份源码原字节也逐件计算SHA256/bytes并核Git Blob，**10/10与source_identity.json匹配**，历史模型来源身份由GitHub固定对象独立证实。
+- 注意：GitHub最终seal文件内部写seal_stage.remote_readback=PENDING_EXTERNAL_FINAL_RECEIPT，所指外置最终本地回执未上传，GPT没有其原字节；不能宣称外置本地回执独立通过。但GPT已直接认证最终GitHub commit全部23件原始内容，故**远端交付本身PASS**。Codex的SSH过程、Windows保护边界及本地STOP动作不属GPT独立现场验证。
+
+A_COMPLETED=COMMIT_PARENT_TREE__23_OF_23_REMOTE_BYTES_SHA256_BLOB__10_OF_10_SOURCE_BYTES_SHA256_BLOB
+A_BLOCKED=LOCAL_ONLY_EXTERNAL_RECEIPT__PRIVATE_ORIGINAL_STDERR__LOCAL_PROTECTION_WITNESS
+
+## B. 真实代码与科学/数值审阅
+
+实际固定新增：
+- src/ch5_two_asset_hank/multi_province/temp31_worksite_tax.py：Git Blob=90667ddc00c72b9290e91481af4835c808ecfccb；
+- validators/multi_province/temp31_worksite_tax_isolated.py：Git Blob=8f8de4130f393f2d8a222e9beebf6dab550b5e99；
+- tests/test_temp31_worksite_tax_isolated.py：Git Blob=a5ba41ca6406e9ff65fa41c94fc87ecde0da32ac。
+
+1. 新隔离函数对目的地j行/原籍i列取税率tau_j，其吸引力核q_ji=C_i^(-gamma_c/phi_l)*[w_j*(1-tau_j-sigma_ji)/phi_ji]^(1/phi_l)。source-like返回M_ji=q_ji*N_i、L_supply_j=行和；normalized返回s_ji=q_ji/sum_k q_ki、M_ji=s_ji*ell_i*N_i。后者有原籍列质量守恒，前者不主张此守恒；两套方案没有互相混同，历史MATLAB-faithful路径维持。
+2. 独立人工重算其两省fixture：C=(1,4),N=(2,3),w=(2,4),tau=(0.1,0.3),phi=((1,2),(4,1)),sigma=((0,0.1),(0.2,0)),gamma=2,phi_l=1。目的地税率M=((3.6,0.15),(1.0,0.525))，旧原籍税率M=((3.6,0.1125),(1.4,0.525))；normalized原籍质量(1,6)、份额((18/23,2/9),(5/23,7/9))、全国总质量7。断言可识别错误税率索引，并检验人口只乘一次。
+3. 净工资适配对象要求NET_COMPOSITE语义，拟议HA单类别 tau_for_HA=0、sigma_for_HA=0、weight=1，初始化与HJB未来视图共享同一不可变tuple，effective_wage=输入净工资。**仅为纯数据接口**，尚未真正调用HouseholdInputs、初始化、HJB或HA；semantic标签可由调用方错误声明，不能认证真实首轮w确实已净。真实消费者反复扣税是否解除仍未验证。
+4. 已检查真实两次定向测试日志及对应原字节：invocation1旧路径预设红灯exit1，1次断言失败、0 errors，追踪(0.1125 != 0.15)；invocation2定向12项全绿exit0、12/12、0 failures/errors。源代码有非对称税率、目的地/原籍独立置换、税率换位、历史行为、边界/非单位弹性、归一化和质量守恒、税楔二次施加注入等断言。测试runner直接载入独立纯数学文件，未导入真实生产/HA/HJB/KFE。**测试历史执行来自Codex，GPT没有复演全部12项运行**，结论限制在有界源码/日志/公式审阅。
+5. 财政diagnose_temp31_conditional_wage_tax只对tau*L和tau*w*L条件比较，标SCIENTIFIC_PENDING；firm.py正式Govinc的Lt*tau未修改。L、z_i、N_i、人口/就业/劳动时间、wjt clipping、sigma的经济归属、真实财政工资税基以及首轮净综合工资均缺科学合同。三份primary Excel/canonical也没有取得正式原件认证。
+
+B_IMPLEMENTATION=PASS_BOUNDED_ISOLATED_BILATERAL_TAUJ_AND_PURE_NET_WAGE_DATA_VIEWS
+B_NUMERIC=PASS_BOUNDED_INDEPENDENT_TWO_PROVINCE_HAND_CALC__TEST_LOGS_AUTHENTIC__NOT_RERUN
+B_SCIENTIFIC=SCIENTIFIC_PENDING_HA_ACTUAL_CONSUMER__FIRST_ROUND_WAGE__FISCAL_UNITS__EMPIRICAL_ORIGINALS
+
+## C. 分层裁决与隐私
+
+artifact_integrity=PASS__23_OF_23_FINAL_REMOTE_BYTES_SHA256_BLOB
+source_identity=PASS__10_OF_10_FIXED_SOURCE_BYTES_SHA256_BLOB__COMMIT_PARENT_TREE
+numeric_review=PASS_BOUNDED__INDEPENDENT_HAND_MATH__EXECUTOR_RECORDED_12_CASES
+implementation_review=PASS_BOUNDED__ISOLATED_TWO_WORKSITE_TAX_LABOR_ROUTES_AND_NET_WAGE_VIEWS__UNWIRED
+scientific_review=SCIENTIFIC_PENDING__HA_CONSUMER__INITIAL_WAGE__FISCAL_Z_N_UNITS
+privacy_review=PASS_BOUNDED__PUBLIC_REDACTED_TRACEBACK__PRIVATE_ORIGINAL_NOT_AVAILABLE
+actual_terminal=EXECUTOR_REPORTED_STOP_AFTER_DELIVERY__GITHUB_FINAL_CANDIDATE_CONFIRMED__LOCAL_STOP_NOT_WITNESSED
+delivery=PASS__TWO_STAGE_FIXED_COMMIT_CHAIN_AND_23_OF_23_BYTES_BLOB_SHA256
+cleanup=NOT_AUTHORIZED_NOT_PERFORMED__PRESERVE_ALL_CANDIDATE_AND_HISTORY
+not_completed=REAL_HA_HJB_KFE_GE_IRF__PRODUCTION_WIRING__FISCAL_ADOPTION__PRIMARY_DATA__31_PROVINCE__V010_V011__RESULTS
+OVERALL=PASS_BOUNDED_R4_ISOLATED_WORKSITE_TAU_J_AND_SINGLE_NET_WAGE_DATA_CONTRACT__REAL_HA_FISCAL_EMPIRICAL_BLOCKED
+NEXT_ACTION=OWNER_DECISION_REQUIRED__NO_AUTOMATIC_TASK
+
+第一次测试stderr公开版本以<ISOLATED_CANDIDATE_ROOT>替换私人目录：公开1171字节SHA256=6dcf4eb7b333418c743f205fde3b87b8bdc9d8eee077775d28623b1a9e262e68已独立核验；原始stderr仅Codex声明1265字节SHA256=dffe173524f90ba202a86f42c2b8fb1a0283b30ff7e93815f96398429d7ee7cc，未提供原件，不能独立验证仅替换两次。公开材料未见明显私人绝对路径/凭据/个人工资微观数据；对不可取得的本地文件不能给出完整隐私PASS。无清理/合并/新任务。
+
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+PROTECTION_BASELINE=BLOCKED
+AUTO_ISSUE=FALSE
+AUTO_NEXT=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
