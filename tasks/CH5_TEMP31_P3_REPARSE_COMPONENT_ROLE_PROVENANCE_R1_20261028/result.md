@@ -1,0 +1,21 @@
+# P3：词法目录角色及原生tag有界证据，物理来源仍BLOCKED
+
+终态：`STOP__P3_LEXICAL_COMPONENT_ROLE_AND_NATIVE_TAG_ONLY__NO_ADMISSIBLE_MANIFEST__PROVENANCE_BLOCKED`。ANCESTOR_03可标记`LEXICAL_DEPENDENCY_DIRECTORY`，证据仅为获准私有记录中的精确组件名称及项目词法层级。该标签不认证物理目标、安装来源、依赖更新、合法重命名或WASM安全。
+
+四份上一轮私有原始组件记录均已逐件核对其raw bytes/SHA256、alias、序号和深度，与固定前候选`623348bd9ef774288293aa02660e552a4029748a`中的公开保存确认一一匹配。该候选ledger本身也按其manifest核对Blob/bytes/SHA。本轮继承的是可追溯执行者元数据，不冒称GPT直读Windows私有原件。映射原件新测bytes/SHA已登记，其原先独立固定SHA未提供，不把内部一致性升级为独立见证。
+
+旧记录没有reparse tag，为取得任务允许的原生字段，本轮仅新增2/2次非跟随lstat：先ANCESTOR_02，再ANCESTOR_03。两者attributes/raw_mode与旧记录一致；安全父组件为attributes16且非reparse，命中组件attributes1040/0x410。新元数据先写私有scratch、flush/fsync并原字节回读，再作结论。上层ANCESTOR_00/01使用已验证旧记录，没有重新lstat。六个WASM文件及命中组件之后的路径均未访问。
+
+ANCESTOR_03原生`st_reparse_tag`=2684354563 / `0xA0000003`，与当前Python stat的`IO_REPARSE_TAG_MOUNT_POINT`常量相符。只解释Windows标签类别；不区分或认定具体junction/volume-mount子类型，不读取或推断目标路径、盘符、设备、数据及其可信性。未使用readlink/resolve/realpath/FSCTL或链接目标API。attributes/mode相同也不证明物理对象或链接目标始终相同。
+
+获准映射和四份记录没有指定安全父侧的确切小型构建/依赖声明文件，故直接记`NO_ADMISSIBLE_MANIFEST`，读取0/2。没有猜package文件名、glob、列目录、查看缓存或读取链接之后的文件。该结论是缺乏可受理声明路径，不是宣称声明文件在磁盘不存在。Git exact index查询0/2，未以index代替物理来源。
+
+## 治理与保护
+
+固定发文 `711063b7d3e914268e9ef5c27a9454fda5b318e5` 与候选固定parent `ddd60f910a4dc493ba92fb33bf9826f320ac1be8` 分开。现行2026-10-25最高规则允许Owner逐张冻结任务转交后限域执行；本轮固定状态补充明确ACTIVE_TASK及Owner P3授权、未同步累计文件的限制。上一GPT验收接受其上一张精确只读任务的同类治理解释；本轮另有新任务及新补充授权。所读最高规则没有要求先改写累计大文件才能执行本项零科学只读任务，治理判断`ALLOW_EXACT_READONLY_TASK_WITH_FROZEN_STATUS_SUPPLEMENT_AND_DISCLOSED_SYNC_GAP`。CURRENT/TASK_CURRENT仍是旧NONE/P3推荐历史，未宣称同步、未改写或重试受阻写入，也不把此判断泛化为科学运行许可。
+
+本次before/after status均 `734f11763de35c822f7fbf9a3ab8e2c6b8fb0ae7c8e7c49174ae3e19948e865b`、5971条非空NUL记录；HEAD、branch、index、243条refs和11保护资产两次一致，匹配既有保护身份。旧 `c443420c888f5e776cfb6cd05b27cbed56e58a787b82639aa23a47ce7f2ac2f3` 和恢复观察 `734f11763de35c822f7fbf9a3ab8e2c6b8fb0ae7c8e7c49174ae3e19948e865b` 分层保留。P3正式批准，保护基线继续BLOCKED，未采用任何新可信status。两次保护快照在诊断前及STOP后完成，后续仅证据生成/发布，无第三次科研树读取。
+
+实际预算：lookup1/1、四组件私有记录4/4、live nonfollow lstat2/2、safe manifest0/2、exact index0/2、保护快照2/2且资产各11；重试0/1。原件只用非跟随只读句柄读取指定5件JSON并核属性，未额外调用路径lstat。模型、测试、no-HA、预检、WASM、目标跟随、目录列举、D盘搜索、写科研源码/数据、复制移动删除清理均0。
+
+有限角色与tag证据已足以完成本轮可授权观察；依赖物理来源缺少可受理manifest，继续UNKNOWN/BLOCKED，不扩大搜索或自行修复。发布脱敏GitHub证据并固定提交回读后STOP，等待GPT独立审阅及Owner下一明确决定。
