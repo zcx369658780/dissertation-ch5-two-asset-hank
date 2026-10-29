@@ -1,0 +1,103 @@
+# TEMP31：首轮有效工资猜测19与HA内部删除重复工资税，隔离修正R1
+
+TASK_ID=CH5_TEMP31_HA_TAU_REMOVAL_NUMERICAL_BOOTSTRAP19_ISOLATED_R1_20261029
+STATUS=ISSUED_AWAITING_OWNER_TRANSFER
+OWNER_APPROVAL=2026-10-29__BOOTSTRAP_A_INITIAL_EFFECTIVE_WAGE_19__REMOVE_HJB_HOUSEHOLD_DUPLICATE_TAU
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_PARENT=48326a32e50af7c6c559778132e8b99e1cf371c2
+TASK_PUBLICATION_COMMIT=GPT_PROVIDES_EXACT_40_HEX_AFTER_PUBLICATION
+EXPECTED_REMOTE_GOVERNANCE_HEAD=TASK_PUBLICATION_COMMIT_STRICT_EQUALITY
+TASK_CONTRACT_PATH=tasks/CH5_TEMP31_HA_TAU_REMOVAL_NUMERICAL_BOOTSTRAP19_ISOLATED_R1_20261029/CONTRACT.md
+FIXED_PARENT=5f55365d2aff6bd1517a567e2bcaf17452960a7e
+SOURCE_COMMIT=5f55365d2aff6bd1517a567e2bcaf17452960a7e
+SOURCE_ROOT_TREE=84424adb69027d4bb3b82f6481f5b961f051033c
+CANDIDATE_BRANCH=codex/ch5-temp31-ha-net-wage-no-tau-bootstrap19-20261029-r1
+PREVIOUS_TASK=CH5_TEMP31_HA_WAGE_FIRST_ROUND_PROVENANCE_AND_CONSUMER_STATIC_DEBUG_R1_20261028
+PREVIOUS_REVIEW_GOVERNANCE_COMMIT=48326a32e50af7c6c559778132e8b99e1cf371c2
+REAL_HA_HJB_KFE_GE_IRF_CALLS=0
+SCIENCE_RUN_BUDGET=0
+MODEL_CALLS=0
+NO_PRODUCTION_WIRING=TRUE
+NEW_GIT_REPOSITORIES=0
+SYNTHETIC_TEST_COMMANDS_MAX=2
+TECHNICAL_RETRIES_MAX=1_WITHIN_PREAPPROVED_BOUNDARIES
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
+
+## 0. Owner最终裁决的机制，不得擅改
+
+(1) 方案A已获Owner批准：当前冻结初值w=20、参考历史HA税率0.05时，首轮HA局部有效工资数值猜测=20*(1-0.05)=19。它是保持历史首轮有效劳动工资系数不变的求解器初始条件，标记NUMERICAL_NET_WAGE_INITIAL_GUESS_NOT_EMPIRICAL，既不是企业真实工资也不是已由省际模型计算的净工资，不把历史origin tau视为正确工资税制度。若初始数值/税率改变，必须停止并提出新的数值初猜合同，不能不经批准推广恒等于19。
+(2) HJB及相关家户消费端的工资税率应该删除。对于经来源核验已由wage.py计算的W_i_net，HA劳动供给FOC、HJB边界resources、policy劳动/消费、asset drifts、初始化工资系数都必须使用W_i_net*z*l或其一致的数学等价形式，不再在HA内部乘(1-tau_i)、(1-tau)、(1-tau-sigma)等重复税楔。真实tau_j继续在工资形成、工作地双边劳动和以后经批准的财政机制；严禁全局将各省真实税率置零。
+(3) 本次是科学机制已批准的隔离源码修正，不是正式生产替换或真实HA数值运行授权。历史MATLAB-faithful源保持原字节，R4/R5已独立审阅的隔离模块及任务证据不改写。不推送治理分支科学源码、不自动合并。
+
+## 1. 同步最新固定代码和Git硬门
+
+第一步先只读核验R3-R5批准的安全独立Git仓库身份、objects、refs、工作区无覆盖风险，不触碰旧shallow.lock仓库、D盘受保护科研树、P3/WASM/reparse目标、不重绑基线、不建新库、不清理历史文件。有锁、异常重解析或保护身份不可确定，立即STOP。
+
+GPT签发后在Owner转交指令提供本任务发布commit的准确40位SHA；远端治理HEAD必须严格等于该发布commit；其唯一直接parent必须严格等于48326a32e50af7c6c559778132e8b99e1cf371c2；其diff必须仅新增本任务合同。不得把治理HEAD误当成SOURCE_COMMIT或改用祖先关系代替严格相等。SSH读取治理HEAD保持有界，若传输瞬时错误仅许可原授权普通SSH同通道最多一次技术重试，权限/安全拒绝禁止重试绕过。
+
+在任何修改之前先核验最新科学候选源码：SOURCE_COMMIT=5f55365d2aff6bd1517a567e2bcaf17452960a7e，root tree=84424adb69027d4bb3b82f6481f5b961f051033c，上一R5已通过GPT独立审阅但尚未合并。读取R4净工资适配器和R5工资来源守卫的固定Git Blob/可获得原字节，验证实际代码与冻结源码一致。自FIXED_PARENT新建单一隔离候选分支；保留所有R3/R4/R5候选分支和私人STOP证据。本合同仅存在于发布后的治理commit，在FIXED_PARENT不存在是正常状态。
+
+必要固定历史源码与Git Blob：
+- src/ch5_two_asset_hank/multi_province/wage.py = 48001b2e4ca64d81dda6174255f6ccf130e07004；目的地tau_j与sigma已经进入净综合工资
+- src/ch5_two_asset_hank/multi_province/temp31_worksite_tax.py = 90667ddc00c72b9290e91481af4835c808ecfccb；R4税后单类别工资合同
+- src/ch5_two_asset_hank/multi_province/temp31_ha_wage_debug.py = 7df9c03fdd55d72beded7383866d683ca9356bc9；R5首轮来源/跨轮次守卫
+- src/ch5_two_asset_hank/contracts.py = c746b616bec38531a7d96da81a54e2899d8aba53；HouseholdInputs含tau与effective_wages
+- src/ch5_two_asset_hank/matlab_faithful_hjb.py = e06f9871b361c8e1c8df7aab5c43c2dbd3b09b50；边界resources的1-tau
+- src/ch5_two_asset_hank/matlab_faithful_policy.py = 2021db630f3057026ffc37d375a43aaddbccec48；local policy中的工资税及迁移楔
+- src/ch5_two_asset_hank/economics.py = 810e0875febc873ae85bef7e88edd4de349b00b2；labor_from_vb行80-85、asset_drifts行99-115、asset_drifts_matlab_faithful行118-137均使用1-tau-sigma
+- validators/multi_province/mp4b_python_empirical.py = b1710ae3c5d8d7baf96e85c932d777fa5f3b908c；初始化行171-183乘1-tau
+- validators/multi_province/mp4c_python_annual_empirical.py = d2e74cb8b491489053dcde525cd4d83cb4bd0b3a；composite_wage=20、wage_tax=.05、wjt=.6
+- validators/multi_province/mp4c_python_annual_production.py = 7473e04418744d745000afb21d84588273cc5bca；实际HA调用行167-175
+- src/ch5_two_asset_hank/multi_province/stationary_runtime.py = 8717cfa759948bd1ad3c8cd788f8f4736f250598；先HA后工资形成
+- src/ch5_two_asset_hank/multi_province/steady_state.py = 5c5b56e6a2eb82fab4e80eb7b8e5bbbf97f08c22；前一轮净综合工资回写
+
+若Codex新隔离库缺少必要辅助源码的Git对象，不得假称本地来源已验证。仅明确授权一次普通SSH有界必要对象同步，限定上述固定路径和SOURCE_COMMIT、限量/限时/限空间；不能全量unshallow、全历史或大数据下载，也不能改HTTP/账号/SSH身份，失败立即停止受影响部分。若仅有GPT合同中的静态事实，须标SOURCE_STATIC_OBSERVATION而不是LOCAL_BYTES_VERIFIED；不得凭推测复制完整求解器或伪造函数。
+
+## 2. 实施：首轮19与HA无额外tau全链条
+
+A. 首轮数值接口：建立具名TEMP31局部输入记录，保留原始初始w=20、历史参考tau=.05、净有效数值猜测19、NUMERICAL_GUESS非经验标签与固定来源身份。首轮不要求R5上一轮企业工资见证；后续轮次必须延续R5的完整wage.py目的地tau_j净综合工资证据，核验产生轮次、phi、wjt、sigma、tau_j、地区次序和运行上下文。任何未经证实的一般首轮数值或错误标签都应fail closed。未来生产如授权接线，首轮只在HA入口传入有效19，不能偷偷把正式state的原始w或真实省际tau改为19/0。
+B. 删除重复税楔：与R4适配的已净工资一致，在具名TEMP31 corrected HA路径中移除独立工资税参数及额外迁移楔的乘法；必须逐点核对HJB boundary、local policy劳动/消费、labor_from_vb、两种asset_drifts、初始化labor/value的有效工资系数。不能只从HJB行91删去tau就宣称正确。若为了验证代数等价临时传给旧HouseholdInputs一个tau=0，必须标COMPATIBILITY_ONLY，不能视作新HJB源代码已经删除tau；最终只有新corrected消费者代码不存在额外工资税且所有相关依赖一致时才可标SOURCE_LEVEL_TAU_REMOVAL_BOUNDED。
+C. 旧shared HouseholdInputs、历史matlab_faithful_hjb/policy/economics、旧初始化、MP4C生产入口均保留原始字节。不得变更HJB有限差分算子、边界、成本、资产收益、utility、KKT及KFE数值机制；一旦完整改写会引起未批准科学差异，停止相关模块并提交明确gap，而不是声称完成HA算法修复。新增独立模块可只针对确证的工资税消费位置做局部纯函数/结构化适配和AST检查；缺少完整必要源码时保留未完成项，不能编造。
+D. 两次以内无HA合成测试：首轮20*(1-.05)=19并保持state原值；来源轮次/上下文失败必须被拒绝；两个不同tau_j、sigma_ji的来源地净工资不被额外扣税；FOC工资边际、HJB边界工资收入、policy预算、两类asset drifts的劳动收入系数按W_net*z一致。对legacy以一次扣税得到的初轮系数可仅作纯数学比对，不得把全HA数值输出宣称等价。静态检查要识别遗漏的tax乘子；不得调用真正HA/HJB/KFE或改动参数和正式模型。
+
+## 3. 只允许的隔离写入白名单
+
+- src/ch5_two_asset_hank/multi_province/temp31_ha_taxfree_bootstrap.py
+- src/ch5_two_asset_hank/temp31_netwage_hjb.py（如能从认证源码生成且维持非税算法）
+- src/ch5_two_asset_hank/temp31_netwage_policy.py（同上）
+- src/ch5_two_asset_hank/temp31_netwage_economics.py（同上）
+- validators/multi_province/temp31_ha_taxfree_bootstrap_isolated.py
+- tests/test_temp31_ha_taxfree_bootstrap_isolated.py
+- tasks/CH5_TEMP31_HA_TAU_REMOVAL_NUMERICAL_BOOTSTRAP19_ISOLATED_R1_20261029/（仅交付和证据）
+
+所有其他源、现有R4/R5隔离文件、历史baseline、正式生产、原件和保护树只读。不能借此将旧MATLAB-faithful源码覆盖为新版。未满足核心税率删除全部消费端时，不可标识SOURCE_LEVEL_TAU_REMOVAL_COMPLETE；允许提供已认证的首轮19合同和缺口报告，但不得伪称实际HA修复。
+
+TEST_BUDGET=2_BOUNDED_NO_HA_COMMAND_INVOCATIONS
+REAL_HA_HJB_KFE_GE_IRF_CALLS=0
+SCIENCE_RUN_BUDGET=0
+NO_REAL_31_PROVINCE_OR_POLICY_SHOCK=TRUE
+NO_EMPIRICAL_DATA_ORIGINAL_READ=TRUE
+NO_FISCAL_FORMULA_CHANGES=TRUE
+NO_PRIMARY_SOURCE_ADOPTION=TRUE
+PROTECTION_BASELINE=BLOCKED
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+
+## 4. 证据与交付
+
+报告需含：result.md，source_identity.json，bootstrap19_source_and_semantics.md，hjb_wage_tax_consumer_matrix.md（含economics.py多点），corrected_vs_historical_algebra.md，synthetic_test_evidence.md（真实原始输出），gap_register.md，privacy_report.md，manifest.json逐path/bytes/SHA-256/Git Blob及来源，DELIVERY_FINAL_RECEIPT.json包含阶段commit/parent/tree/readback。明确区分已完成纯数据合同、已完成源码级去tau、实际HA消费者验证和真实生产替换四种不同状态。
+
+通过授权普通SSH小批次推送候选分支，先payload后seal，按固定远端提交回读所有必要证据，原字节SHA-256与Git Blob分开记录。保留本地私人路径/日志、P3原有资产；权限/安全硬门拒绝立即STOP，不更换账号/凭据/协议逃避；不得自动Issue/PR/Merge/Cleanup/Next。停止并返回候选精确commit、parent、root tree、测试预算、未决科学合同，等待GPT A/B/C独立审核。
+
+FINAL_TERMINAL=STOP_AFTER_FIXED_CANDIDATE_DELIVERY_OR_SAFETY_GATE
+OWNER_NEXT_ACTION=OWNER_DECISION_ONLY
