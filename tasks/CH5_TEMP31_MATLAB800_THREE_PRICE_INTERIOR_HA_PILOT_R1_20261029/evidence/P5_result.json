@@ -1,0 +1,239 @@
+{
+  "event": "point_result",
+  "point": "P5",
+  "prices": {
+    "id": "P5",
+    "rah": 0.07,
+    "rb": 0.02,
+    "wt": 15.5
+  },
+  "classification": "KFE_NOT_CERTIFIED",
+  "fatal_to_task": false,
+  "wage_provenance": {
+    "scope": "COUNTERFACTUAL_SYNTHETIC_WAGE_WITNESS_NO_REAL_FIRM_EMPIRICAL_PROVENANCE",
+    "chain": [
+      "SyntheticNetWageCalculation",
+      "calculated_round_record",
+      "later_net_wage_record",
+      "netwage_inputs"
+    ],
+    "generated_after_iteration": 1,
+    "entering_iteration": 2,
+    "synthetic_firm_wage": 9.156927236208043,
+    "phi_destination_origin": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "phi_l": 5,
+    "alphal": 1,
+    "metadata_only_no_actual_firm_or_iteration_run": true,
+    "point": "P5",
+    "requested_effective_wage": 15.5,
+    "actual_source_effective_wage": 15.5,
+    "wage_error": 0.0,
+    "context_id": "TEMP31_MATLAB800_SYNTHETIC_PRICE_PILOT_20261029_P5",
+    "province_order": [
+      "A",
+      "B"
+    ],
+    "record_semantics": "CALCULATED_NET_AFTER_DESTINATION_TAU_AND_SIGMA",
+    "real_empirical_provenance": false,
+    "tax_background_preserved": true
+  },
+  "initialization": {
+    "shape": [
+      20,
+      20,
+      2
+    ],
+    "states": 800,
+    "value_min": -2.7177439386564872,
+    "value_max": -1.7554036560408204,
+    "labor_min": 0.6482517055100516,
+    "labor_max": 0.6996633289657964,
+    "finite": true,
+    "value_F_float64_sha256": "56ece12004dfb5610b0b6e2be1ad41f5cdbe6e5d9acae4ca858287e6983c4f9c",
+    "labor_F_float64_sha256": "3c62d5a40942e55446531a298857063cee2f82d1b224ce366953406ada6cdf8d",
+    "fresh_for_point": "P5",
+    "warm_start": false
+  },
+  "HJB": {
+    "converged": true,
+    "iterations": 23,
+    "convergence_statistic": 5.910864775415803e-08,
+    "finite_return_fields": {
+      "value": true,
+      "initial_value": true,
+      "consumption": true,
+      "labor": true,
+      "transfer": true,
+      "adjustment_cost": true,
+      "effective_illiquid_return": true,
+      "mu_a": true,
+      "mu_b": true,
+      "utility": true
+    },
+    "iteration_operator": {
+      "shape": [
+        800,
+        800
+      ],
+      "nnz": 3642,
+      "finite": true,
+      "row_sum_abs_max": 0.005239191752443584,
+      "max_signed_row_sum": 4.496403249731884e-15,
+      "min_offdiagonal_including_implicit_zeros": -3.991510483284642,
+      "csr_sha256": "ba76efbf04afc8747a525db9cda825e301a5fddee45e424a73824d16e14a57cd"
+    },
+    "post_convergence_operator": {
+      "shape": [
+        800,
+        800
+      ],
+      "nnz": 3122,
+      "finite": true,
+      "row_sum_abs_max": 3.995721135191245,
+      "max_signed_row_sum": 2.942091015256665e-15,
+      "min_offdiagonal_including_implicit_zeros": 0.0,
+      "csr_sha256": "a5f502235a866409cc5c734a57243143ea7e3998eee4d130003c2f36f0c079f7"
+    },
+    "max_observed_iteration_row_sum_abs": 0.005239191752443584,
+    "MATLAB_homecrit": 0.01,
+    "observed_homecrit_violation": false,
+    "homecrit_guard_internal": "ABSENT_UNCHANGED_EXTERNAL_READONLY_OBSERVATION",
+    "source_parity": "PARITY_UNCERTIFIED_RAW_MATLAB_NOT_LOCALLY_VERIFIED",
+    "stale_last_policy_residual": 5.910827383104333e-11,
+    "implicit_identity_error": 3.032563089533369e-14,
+    "full_nonlinear_Bellman_residual": "NOT_EVALUATED",
+    "warnings": []
+  },
+  "KFE": {
+    "status": "KFE_NOT_CERTIFIED",
+    "At": 7.3037783353426775,
+    "Bt": 4.688757796460507,
+    "Lt": 0.6832514159077452,
+    "Ct": 10.030219826524505,
+    "a_mass20": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0736906897091034e-06,
+      2.58860381248297e-05,
+      0.00021161420865978742,
+      0.0011964202610417892,
+      0.005462953501438368,
+      0.02161114412194649,
+      0.0735546868528762,
+      0.20698230686468322,
+      0.4909936837965792,
+      0.10347344178277595,
+      0.06904690787622875,
+      0.02592943911238146,
+      0.0015104418925742029,
+      0.0
+    ],
+    "b_mass20": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -9.479719387873241e-19,
+      2.0589736877230899e-19,
+      -1.0566862575014676e-18,
+      -9.14838225621992e-19,
+      -1.1154672152236739e-17,
+      -1.3820143963510754e-17,
+      -1.060917532115361e-17,
+      0.09029519507601798,
+      0.08384894640333868,
+      0.07866814957442575,
+      0.07473634808711097,
+      0.6724513608591067
+    ],
+    "total_probability": 1.0,
+    "negative_probability_mass": 9.617791826786443e-17,
+    "negative_density_cells": 56,
+    "density_min": -6.071635761805038e-17,
+    "density_max": 0.6138981889564865,
+    "a_lower_mass": 0.0,
+    "a_upper_mass": 0.0,
+    "a_internal_mass": 0.9999999999999999,
+    "b_lower_mass": 0.0,
+    "b_upper_mass": 0.6724513608591067,
+    "b_internal_mass": 0.32754863914089327,
+    "a_mode_indices0": [
+      14
+    ],
+    "a_mode_asset_positions": [
+      7.368421052631579
+    ],
+    "At_distance_from_lower": 7.3037783353426775,
+    "At_distance_from_upper": 2.6962216646573225,
+    "stationary_residual": 3.4077708099368875,
+    "contaminated_raw_system_residual": 1.9827347229328662e-17,
+    "source_raw_residual_inf": 1.9827347229328662e-17,
+    "contaminated_row_index0": 295,
+    "rhs_at_contaminated_row": 0.007,
+    "normalization_factor": 0.016963996265069475,
+    "cell_weight": 0.19390581717451522,
+    "certification_tests": {
+      "density_finite": true,
+      "total_probability_abs_error_le_1e8": true,
+      "negative_probability_mass_le_1e8": true,
+      "post_stationary_residual_le_1e7": false,
+      "contaminated_raw_system_residual_le_1e7": true
+    },
+    "interior_tests": {
+      "At_strict_0_10": true,
+      "a_internal_mass_ge_point10": true,
+      "a_lower_mass_le_point50": true,
+      "a_upper_mass_le_point50": true,
+      "a_modal_indices_not_only_endpoints": true,
+      "b_internal_mass_ge_point05": true
+    },
+    "warnings": [],
+    "signed_density_unmodified": true,
+    "source_post_operator_passed_directly_and_unchanged": true,
+    "LOCAL_ONLY_archive": {
+      "task_relative_path": "evidence\\LOCAL_ONLY_P5_true_KFE_density.npz",
+      "bytes": 4829,
+      "sha256": "49de998ed142009475e6a96fd4164dfbfe0520a7db04cc1ac6e3fe5871390e70"
+    }
+  },
+  "observed_counts": {
+    "initializer_calls": 1,
+    "root_cells": 800,
+    "brentq_calls": 800,
+    "hjb_calls": 1,
+    "hjb_iterations": 23,
+    "hjb_policy_cells": 18400,
+    "operator_assemblies": 24,
+    "hjb_linear_solves": 23,
+    "kfe_calls": 1,
+    "kfe_linear_solves": 1,
+    "kfe_contaminated_row_index_calls": 1
+  },
+  "LOCAL_ONLY_hjb_archive": {
+    "task_relative_path": "evidence\\LOCAL_ONLY_P5_true_arrays_and_rates.npz",
+    "bytes": 106796,
+    "sha256": "913767bf54c82c2e007d8c3623c00d09b3a6874270a0bec8782c1307c5a23b90",
+    "LOCAL_ONLY": true,
+    "observed_new_point_not_historical_tinygrid": true
+  },
+  "MATLAB_RAW_LOCAL_VERIFICATION": "NOT_AVAILABLE",
+  "firm_GE_IRF_outer_31province_data_calls": 0,
+  "source_or_economic_parameter_changes": 0
+}

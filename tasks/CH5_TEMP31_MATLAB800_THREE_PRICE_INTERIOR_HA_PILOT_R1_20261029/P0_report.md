@@ -1,0 +1,231 @@
+# P0: KFE_NOT_CERTIFIED
+
+Exactly one supervised command; exit0,elapsed39.218000s,timeoutFalse. The original point inputs and complete scalar result are below. Model calls are actual code-object observations, not inferred budgets. No warm start,clipping,source change or extra solve.
+
+```json
+{
+  "event": "point_result",
+  "point": "P0",
+  "prices": {
+    "id": "P0",
+    "rah": 0.09,
+    "rb": 0.02,
+    "wt": 19.0
+  },
+  "classification": "KFE_NOT_CERTIFIED",
+  "fatal_to_task": false,
+  "wage_provenance": {
+    "scope": "NUMERICAL_NET_WAGE_INITIAL_GUESS_NOT_EMPIRICAL",
+    "chain": [
+      "numerical_bootstrap19",
+      "netwage_inputs"
+    ],
+    "entering_iteration": 1,
+    "synthetic_firm_wage": null,
+    "point": "P0",
+    "requested_effective_wage": 19.0,
+    "actual_source_effective_wage": 19.0,
+    "wage_error": 0.0,
+    "context_id": "TEMP31_MATLAB800_SYNTHETIC_PRICE_PILOT_20261029_P0",
+    "province_order": [
+      "A",
+      "B"
+    ],
+    "record_semantics": "NUMERICAL_NET_WAGE_INITIAL_GUESS_NOT_EMPIRICAL",
+    "real_empirical_provenance": false,
+    "tax_background_preserved": true
+  },
+  "initialization": {
+    "shape": [
+      20,
+      20,
+      2
+    ],
+    "states": 800,
+    "value_min": -2.2796313738283325,
+    "value_max": -1.4773664265733266,
+    "labor_min": 0.6300791328340912,
+    "labor_max": 0.6792832786668417,
+    "finite": true,
+    "value_F_float64_sha256": "3a789ab7f343da48007c23a2ee907560d5d3c8e70e8463d3a83f0bd87781957f",
+    "labor_F_float64_sha256": "f881dd2c70d11bd9d45deeef9720c8b75ab8983a3eed71cbf5272a54b70528d6",
+    "fresh_for_point": "P0",
+    "warm_start": false
+  },
+  "HJB": {
+    "converged": true,
+    "iterations": 64,
+    "convergence_statistic": 3.5073277615538245e-11,
+    "finite_return_fields": {
+      "value": true,
+      "initial_value": true,
+      "consumption": true,
+      "labor": true,
+      "transfer": true,
+      "adjustment_cost": true,
+      "effective_illiquid_return": true,
+      "mu_a": true,
+      "mu_b": true,
+      "utility": true
+    },
+    "iteration_operator": {
+      "shape": [
+        800,
+        800
+      ],
+      "nnz": 3692,
+      "finite": true,
+      "row_sum_abs_max": 0.008681365872774904,
+      "max_signed_row_sum": 4.052314039881821e-15,
+      "min_offdiagonal_including_implicit_zeros": -4.325362249996913,
+      "csr_sha256": "bc900e81477482797c6cfad203656c800bbd768923c1673b6906f458be9039bd"
+    },
+    "post_convergence_operator": {
+      "shape": [
+        800,
+        800
+      ],
+      "nnz": 3131,
+      "finite": true,
+      "row_sum_abs_max": 4.332347913709393,
+      "max_signed_row_sum": 4.718447854656915e-15,
+      "min_offdiagonal_including_implicit_zeros": 0.0,
+      "csr_sha256": "cd8a9681c13a9b22410ca5a66cd3bf84d79190872b56bfc6549a47258429dbbc"
+    },
+    "max_observed_iteration_row_sum_abs": 0.008681365872774904,
+    "MATLAB_homecrit": 0.01,
+    "observed_homecrit_violation": false,
+    "homecrit_guard_internal": "ABSENT_UNCHANGED_EXTERNAL_READONLY_OBSERVATION",
+    "source_parity": "PARITY_UNCERTIFIED_RAW_MATLAB_NOT_LOCALLY_VERIFIED",
+    "stale_last_policy_residual": 3.415323579503138e-14,
+    "implicit_identity_error": 2.4255930597405496e-14,
+    "full_nonlinear_Bellman_residual": "NOT_EVALUATED",
+    "warnings": []
+  },
+  "KFE": {
+    "status": "KFE_NOT_CERTIFIED",
+    "At": 7.274097868486394,
+    "Bt": 4.698277466946672,
+    "Lt": 0.6476235981141042,
+    "Ct": 11.400731651949163,
+    "a_mass20": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      4.6668179977986134e-20,
+      0.00015029125119023388,
+      0.002097531989473559,
+      0.0135619139868542,
+      0.058977892053201905,
+      0.20513170507611594,
+      0.5763744285725969,
+      0.09819048163852657,
+      0.04103698245357141,
+      0.0044787729784693114,
+      0.0,
+      0.0
+    ],
+    "b_mass20": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -1.2931682429435777e-19,
+      5.14119662641878e-18,
+      2.0016072819718858e-17,
+      1.1979742981669342e-17,
+      1.45955773929409e-17,
+      1.5178957802300833e-17,
+      1.3351522060770473e-17,
+      1.7843010776288972e-17,
+      1.3391526981843772e-17,
+      1.2845271851576003e-17,
+      0.0853432032940166,
+      0.08166059565175911,
+      0.07845920129572242,
+      0.07568815842195699,
+      0.6788488413365447
+    ],
+    "total_probability": 0.9999999999999998,
+    "negative_probability_mass": 7.276860876773987e-17,
+    "negative_density_cells": 53,
+    "density_min": -7.18835744677619e-17,
+    "density_max": 0.9652556342238119,
+    "a_lower_mass": 0.0,
+    "a_upper_mass": 0.0,
+    "a_internal_mass": 1.0,
+    "b_lower_mass": 0.0,
+    "b_upper_mass": 0.6788488413365447,
+    "b_internal_mass": 0.3211511586634552,
+    "a_mode_indices0": [
+      14
+    ],
+    "a_mode_asset_positions": [
+      7.368421052631579
+    ],
+    "At_distance_from_lower": 7.274097868486394,
+    "At_distance_from_upper": 2.725902131513606,
+    "stationary_residual": 4.686593832556138,
+    "contaminated_raw_system_residual": 2.8456122435781354e-17,
+    "source_raw_residual_inf": 2.8456122435781354e-17,
+    "contaminated_row_index0": 295,
+    "rhs_at_contaminated_row": 0.007,
+    "normalization_factor": 0.017226953180266767,
+    "cell_weight": 0.19390581717451522,
+    "certification_tests": {
+      "density_finite": true,
+      "total_probability_abs_error_le_1e8": true,
+      "negative_probability_mass_le_1e8": true,
+      "post_stationary_residual_le_1e7": false,
+      "contaminated_raw_system_residual_le_1e7": true
+    },
+    "interior_tests": {
+      "At_strict_0_10": true,
+      "a_internal_mass_ge_point10": true,
+      "a_lower_mass_le_point50": true,
+      "a_upper_mass_le_point50": true,
+      "a_modal_indices_not_only_endpoints": true,
+      "b_internal_mass_ge_point05": true
+    },
+    "warnings": [],
+    "signed_density_unmodified": true,
+    "source_post_operator_passed_directly_and_unchanged": true,
+    "LOCAL_ONLY_archive": {
+      "task_relative_path": "evidence\\LOCAL_ONLY_P0_true_KFE_density.npz",
+      "bytes": 5668,
+      "sha256": "ff4910422c85fc18585a3a058e7b481e79b91a131bf6dad883ab64148a83b417"
+    }
+  },
+  "observed_counts": {
+    "initializer_calls": 1,
+    "root_cells": 800,
+    "brentq_calls": 800,
+    "hjb_calls": 1,
+    "hjb_iterations": 64,
+    "hjb_policy_cells": 51200,
+    "operator_assemblies": 65,
+    "hjb_linear_solves": 64,
+    "kfe_calls": 1,
+    "kfe_linear_solves": 1,
+    "kfe_contaminated_row_index_calls": 1
+  },
+  "LOCAL_ONLY_hjb_archive": {
+    "task_relative_path": "evidence\\LOCAL_ONLY_P0_true_arrays_and_rates.npz",
+    "bytes": 107250,
+    "sha256": "8b7c952a741f86ce9184b8a01bb00389681ada6d8c6c8cfae213ef7ba998d7a4",
+    "LOCAL_ONLY": true,
+    "observed_new_point_not_historical_tinygrid": true
+  },
+  "MATLAB_RAW_LOCAL_VERIFICATION": "NOT_AVAILABLE",
+  "firm_GE_IRF_outer_31province_data_calls": 0,
+  "source_or_economic_parameter_changes": 0
+}
+```
+
+Corresponding evidence/P0_claim.json binds the command and entry/supervisor/grid hashes. evidence/P0_iteration_trajectory.json records every completed iteration's scalar value changes and actual operator diagnostics. All raw/public stdout/stderr hashes,redaction and resource/call receipts are retained. KFE probability marginals,when actually computed,contain all20 signed bins,not a truncated display. A noncertified KFE moment is not a successful stationary estimate.

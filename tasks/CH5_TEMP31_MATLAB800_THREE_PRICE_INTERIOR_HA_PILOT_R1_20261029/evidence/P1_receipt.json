@@ -1,0 +1,191 @@
+{
+  "point": "P1",
+  "classification": "HJB_NOT_CONVERGED",
+  "fatal_to_task": false,
+  "exit_code": 0,
+  "timed_out": false,
+  "pre_import_memory_block": false,
+  "elapsed_seconds": 57.76600000006147,
+  "hard_timeout_seconds": 180,
+  "memory_limit": {
+    "status": "PROCESS_MEMORY_HARD_LIMIT_ENFORCED",
+    "bytes": 1073741824,
+    "kind": "Windows Job process committed memory",
+    "RSS_hard_cap": "NOT_SEPARATELY_ENFORCED",
+    "active_process_limit": 1,
+    "kill_on_job_close": true,
+    "applied_before_scientific_import_handshake": true,
+    "observed_peak_process_committed_bytes": 95764480
+  },
+  "science_child_processes": 1,
+  "final_event": {
+    "event": "point_result",
+    "point": "P1",
+    "prices": {
+      "id": "P1",
+      "rah": 0.07,
+      "rb": 0.02,
+      "wt": 19.0
+    },
+    "classification": "HJB_NOT_CONVERGED",
+    "fatal_to_task": false,
+    "wage_provenance": {
+      "scope": "NUMERICAL_NET_WAGE_INITIAL_GUESS_NOT_EMPIRICAL",
+      "chain": [
+        "numerical_bootstrap19",
+        "netwage_inputs"
+      ],
+      "entering_iteration": 1,
+      "synthetic_firm_wage": null,
+      "point": "P1",
+      "requested_effective_wage": 19.0,
+      "actual_source_effective_wage": 19.0,
+      "wage_error": 0.0,
+      "context_id": "TEMP31_MATLAB800_SYNTHETIC_PRICE_PILOT_20261029_P1",
+      "province_order": [
+        "A",
+        "B"
+      ],
+      "record_semantics": "NUMERICAL_NET_WAGE_INITIAL_GUESS_NOT_EMPIRICAL",
+      "real_empirical_provenance": false,
+      "tax_background_preserved": true
+    },
+    "initialization": {
+      "shape": [
+        20,
+        20,
+        2
+      ],
+      "states": 800,
+      "value_min": -2.279631151856975,
+      "value_max": -1.4773663871500722,
+      "labor_min": 0.6301158009333518,
+      "labor_max": 0.6793322536694514,
+      "finite": true,
+      "value_F_float64_sha256": "e3bd5d747ec35e841c3d197d6864c4e3e4103d75e86092983231ac0b76cb39f4",
+      "labor_F_float64_sha256": "a2305617fafd4058eebfacdfa7522bb2671ef1ccaac67e3f30bf32291f68ad96",
+      "fresh_for_point": "P1",
+      "warm_start": false
+    },
+    "HJB": {
+      "converged": false,
+      "iterations": 100,
+      "convergence_statistic": 0.03255254500944704,
+      "finite_return_fields": {
+        "value": true,
+        "initial_value": true,
+        "consumption": true,
+        "labor": true,
+        "transfer": true,
+        "adjustment_cost": true,
+        "effective_illiquid_return": true,
+        "mu_a": true,
+        "mu_b": true,
+        "utility": true
+      },
+      "iteration_operator": {
+        "shape": [
+          800,
+          800
+        ],
+        "nnz": 3612,
+        "finite": true,
+        "row_sum_abs_max": 0.0052520141208040605,
+        "max_signed_row_sum": 2.1903662217326314e-10,
+        "min_offdiagonal_including_implicit_zeros": -4.555762519057568,
+        "csr_sha256": "6bf9f9128cc2f4f288729c7bf56a104917b203ffe331ecccb4bb973807b4f8bf"
+      },
+      "post_convergence_operator": {
+        "shape": [
+          800,
+          800
+        ],
+        "nnz": 3089,
+        "finite": true,
+        "row_sum_abs_max": 4.560760103992458,
+        "max_signed_row_sum": 7.76101960475728e-11,
+        "min_offdiagonal_including_implicit_zeros": 0.0,
+        "csr_sha256": "d52b6a6c50f547b03810f71f4fbda277b13006d9dc1df51a84fd0ae882753b94"
+      },
+      "max_observed_iteration_row_sum_abs": 0.0052520141208040605,
+      "MATLAB_homecrit": 0.01,
+      "observed_homecrit_violation": false,
+      "homecrit_guard_internal": "ABSENT_UNCHANGED_EXTERNAL_READONLY_OBSERVATION",
+      "source_parity": "PARITY_UNCERTIFIED_RAW_MATLAB_NOT_LOCALLY_VERIFIED",
+      "stale_last_policy_residual": 3.255254501359495e-05,
+      "implicit_identity_error": 1.9904208725681532e-10,
+      "full_nonlinear_Bellman_residual": "NOT_EVALUATED",
+      "warnings": []
+    },
+    "KFE": {
+      "status": "NOT_EXECUTED_HJB_NOT_CONVERGED",
+      "At": null,
+      "Bt": null,
+      "Lt": null,
+      "Ct": null,
+      "a_mass20": null,
+      "b_mass20": null
+    },
+    "observed_counts": {
+      "initializer_calls": 1,
+      "root_cells": 800,
+      "brentq_calls": 800,
+      "hjb_calls": 1,
+      "hjb_iterations": 100,
+      "hjb_policy_cells": 80000,
+      "operator_assemblies": 101,
+      "hjb_linear_solves": 100,
+      "kfe_calls": 0,
+      "kfe_linear_solves": 0,
+      "kfe_contaminated_row_index_calls": 0
+    },
+    "LOCAL_ONLY_hjb_archive": {
+      "task_relative_path": "evidence\\LOCAL_ONLY_P1_true_arrays_and_rates.npz",
+      "bytes": 106557,
+      "sha256": "032efbb6ea1de128a434fa500bafff961ac261dd49269d775b3389d1be3afb49",
+      "LOCAL_ONLY": true,
+      "observed_new_point_not_historical_tinygrid": true
+    },
+    "MATLAB_RAW_LOCAL_VERIFICATION": "NOT_AVAILABLE",
+    "firm_GE_IRF_outer_31province_data_calls": 0,
+    "source_or_economic_parameter_changes": 0
+  },
+  "raw_public_log_identity": {
+    "transformation": "exact workspace/runtime prefix replacement only; raw originals stay LOCAL_ONLY",
+    "stdout": {
+      "raw_bytes": 67654,
+      "raw_sha256": "61ab96a14a72811082d4f5a3e23bfc534699c7ded3b97da518b19e6376fa56bc",
+      "public_bytes": 67204,
+      "public_sha256": "1c80290ab604a5469f00715dafc296bfb29d63889347e14bba1b3cf8f59106b8",
+      "changes": [
+        {
+          "prefix_category": "<ISOLATED_CANDIDATE_ROOT>",
+          "prefix_sha256": "70a5570d471875736fa2d308720219eab72913a07a45d264a3b98fe8c7aae2a3",
+          "replacements": 9
+        }
+      ]
+    },
+    "stderr": {
+      "raw_bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0,
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "changes": []
+    }
+  },
+  "retries": 0,
+  "actual_counts": {
+    "initializer_calls": 1,
+    "root_cells": 800,
+    "brentq_calls": 800,
+    "hjb_calls": 1,
+    "hjb_iterations": 100,
+    "hjb_policy_cells": 80000,
+    "operator_assemblies": 101,
+    "hjb_linear_solves": 100,
+    "kfe_calls": 0,
+    "kfe_linear_solves": 0,
+    "kfe_contaminated_row_index_calls": 0
+  },
+  "completed_iteration_metrics": 100
+}

@@ -1,0 +1,142 @@
+{
+  "task_id": "CH5_TEMP31_MATLAB800_THREE_PRICE_INTERIOR_HA_PILOT_R1_20261029",
+  "points": [
+    {
+      "id": "P0",
+      "rah": 0.09,
+      "rb": 0.02,
+      "wt": 19.0
+    },
+    {
+      "id": "P1",
+      "rah": 0.07,
+      "rb": 0.02,
+      "wt": 19.0
+    },
+    {
+      "id": "P2",
+      "rah": 0.05,
+      "rb": 0.02,
+      "wt": 19.0
+    },
+    {
+      "id": "P3",
+      "rah": 0.07,
+      "rb": 0.01,
+      "wt": 19.0
+    },
+    {
+      "id": "P4",
+      "rah": 0.07,
+      "rb": 0.03,
+      "wt": 19.0
+    },
+    {
+      "id": "P5",
+      "rah": 0.07,
+      "rb": 0.02,
+      "wt": 15.5
+    },
+    {
+      "id": "P6",
+      "rah": 0.07,
+      "rb": 0.02,
+      "wt": 22.0
+    }
+  ],
+  "grid": {
+    "b_min": -2.0,
+    "b_max": 5.0,
+    "b_count": 20,
+    "a_min": 0.0,
+    "a_max": 10.0,
+    "a_count": 20,
+    "z": [
+      0.8,
+      1.3
+    ],
+    "switch_matrix": [
+      [
+        -0.3333333333333333,
+        0.3333333333333333
+      ],
+      [
+        0.3333333333333333,
+        -0.3333333333333333
+      ]
+    ],
+    "shape": [
+      20,
+      20,
+      2
+    ],
+    "states": 800
+  },
+  "economic_params": {
+    "rho": 0.05,
+    "gamma_c": 2.0,
+    "phi": 5.0,
+    "chi_0": 0.1,
+    "chi_1": 2.0,
+    "a_bar": 1e-06,
+    "mu_z": 0,
+    "sigma_z": 0
+  },
+  "fixed": {
+    "Tt": 0.1,
+    "rb_gap": 0.07,
+    "tau_background": 0.05,
+    "tax_by_destination": [
+      0.05,
+      0.05
+    ],
+    "sigma_destination_origin": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "labor_weights": [
+      1.0
+    ],
+    "province_order": [
+      "A",
+      "B"
+    ],
+    "origin_index": 0
+  },
+  "numerics": {
+    "delta": 1000.0,
+    "convergence_tolerance": 1e-07,
+    "max_iterations": 100,
+    "drift_tolerance": 1e-12
+  },
+  "MATLAB_homecrit": 0.01,
+  "interior_tests": {
+    "probability_mass_abs_error_max": 1e-08,
+    "negative_probability_mass_max": 1e-08,
+    "stationary_residual_max": 1e-07,
+    "contaminated_raw_system_residual_max": 1e-07,
+    "At_strict_bounds": [
+      0,
+      10
+    ],
+    "a_internal_mass_min": 0.1,
+    "a_each_endpoint_mass_max": 0.5,
+    "a_mode_not_only_endpoints": true,
+    "b_internal_mass_min": 0.05
+  },
+  "price_wage_scope": "P0-P4 numerical bootstrap19; P5/P6 COUNTERFACTUAL_SYNTHETIC_WAGE_WITNESS_NO_REAL_FIRM_EMPIRICAL_PROVENANCE, generated_after1 entering2",
+  "homecrit_policy": "read-only observe all source iterations; any max_abs_row_sum>.01 downgrades this point SOURCE_PARITY_BLOCKED; do not patch/stop/reassemble source kernel",
+  "resource_limits": {
+    "per_command_seconds": 180,
+    "science_processes": 1,
+    "committed_memory_bytes": 1073741824,
+    "BLAS_environment_threads": 1
+  },
+  "exception_policy": "resource/protection/permission/source/provenance failure ends task; ordinary HJB nonconvergence may continue; KFE numerical failure is recorded KFE_NOT_CERTIFIED without retry; no HJB exception is silently treated as nonconvergence"
+}
