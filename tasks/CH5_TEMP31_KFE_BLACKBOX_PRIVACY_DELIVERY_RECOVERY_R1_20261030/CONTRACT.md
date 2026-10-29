@@ -1,0 +1,117 @@
+# TEMP31 KFE黑箱R1：发布前隐私硬门分诊与原有证据零科研预算交付恢复
+
+TASK_ID=CH5_TEMP31_KFE_BLACKBOX_PRIVACY_DELIVERY_RECOVERY_R1_20261030
+STATUS=ISSUED_AWAITING_OWNER_TRANSFER
+OWNER_APPROVED=2026-10-30__RECOVER_KFE_BLACKBOX_R1_PRIVACY_BLOCKED_DELIVERY_NO_SCIENCE_REPLAY
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_PARENT=85e0b2da2192c35b0ddc999ab4d6036789183d01
+TASK_PUBLICATION_COMMIT=GPT_TO_SUPPLY_EXACT_40_HEX_AFTER_PUBLISH
+EXPECTED_GOVERNANCE_REMOTE_HEAD=TASK_PUBLICATION_COMMIT_STRICT_EQUALITY
+TASK_CONTRACT_PATH=tasks/CH5_TEMP31_KFE_BLACKBOX_PRIVACY_DELIVERY_RECOVERY_R1_20261030/CONTRACT.md
+RECOVERS_TASK_ID=CH5_TEMP31_MATLAB_KFE_BLACKBOX_PARITY_FREEZE_R1_20261029
+RECOVERS_PRIOR_CONTRACT_COMMIT=85e0b2da2192c35b0ddc999ab4d6036789183d01
+RECOVERS_PRIOR_CONTRACT_BLOB=62ec3305cbbc7fa17a14786b84ff24e7b1c06cd9
+RECOVERS_CANDIDATE_BRANCH=codex/ch5-temp31-kfe-matlab-blackbox-freeze-r1-20261029
+FIXED_PARENT=56447829ce0e6c3c85552c53c351b26a2452a4bd
+SOURCE_COMMIT=56447829ce0e6c3c85552c53c351b26a2452a4bd
+SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
+SOURCE_PARENT=a51c2e7ff6548340a1ee86857b0ee55792fa69b4
+OWNER_KFE_METHOD_FREEZE_COMMIT=e6241bfa59317c93ef0eeb57d092e5ab3151ca10
+SCIENTIFIC_CALL_BUDGET=0
+MODEL_HJB_HA_POLICY_INITIALIZER_ROOT_KFE_CALLS=0
+PRICE_POINTS_NEW=0
+NUMERICAL_REPLAY=0
+FORMAL_SCIENTIFIC_SOURCE_WRITES=0
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
+
+## 0. 新授权的唯一性质
+
+Owner已同意：上一任务四点KFE-only回放结束且自报四次原结果/归一化与历史归档完全一致，但于publish前遇source_identity.json隐私硬门，未生成payload/seal commit、未推送。现只授权恢复该任务的**发布前隐私分诊、安全公开证据脱敏、两阶段远端交付**；绝不授权第五次KFE、重跑HJB、改原源码、增加价格点、重新计算四套密度、打开GE/firm/31省等科研动作。恢复旧本地已停止任务证据而非新建一套模拟/重做科学任务。
+
+GPT独立核验的本轮前状态：2026-10-30治理HEAD=85e0b2da2192c35b0ddc999ab4d6036789183d01；GitHub尚无codex/ch5-temp31-kfe-matlab-blackbox-freeze-r1-20261029远端branch。原本地candidate据Owner报告指向FIXED_PARENT、未有payload/seal commit，原始四点证据LOCAL_ONLY。LOCAL_ONLY外置STOP receipt是本地报告，不由GitHub当前直接可读取；不能声称远端已收到证据。
+
+本任务明确授权**复用既有安全独立工作库中同名原candidate分支与现存、未经提交的旧任务工作文件**；不要求新repo/worktree，不把工作目录切到治理branch，不复制旧task的私人数据到新公众目录。原候选目前HEAD须严格等于FIXED_PARENT，且远端未存在同名候选；若已漂移、有其它提交/覆盖风险或无法确认untracked数据安全则STOP，不执行reset/clean/checkout覆盖。原payload只允许从FIXED_PARENT产生唯一正常新增提交。
+
+## 1. 先定位privacy FAIL，不能猜测也不能绕过
+
+第一步限只读检查，不改source_identity.json，不运行隐私扫描器的unsafe自动修复：
+1) 找到本地先前停机日志和LOCAL_ONLY_EXTERNAL_FINAL_STOP_RECEIPT.json、发布前privacy扫描的**具体规则与版本/哈希**、作用于哪个公开候选文件和确切JSON field path、匹配类别（private absolute path/credential/token/key/account data/regex overmatch/unreadable encoding/etc）、源/目标文件sha256/bytes及退出码。为每个命中记录source JSON pointer、规则ID、原因类别、敏感性分级、是否需修复、公开安全的摘要；**绝对不要把被匹配的实际敏感值、绝对路径、credential或secret写入聊天、GitHub、公开stdout/stderr或PR**。
+2) 分开 TRUE_SENSITIVE_PRIVATE_DATA、FALSE_POSITIVE_EVIDENCED、SCANNER_OR_MANIFEST_BUG、UNKNOWN_NEEDS_OWNER_DECISION；若仍未读到触发位置，结论PRIVACY_TRIAGE_BLOCKED并STOP。不能无证据地把所有命中说成LOCAL_ONLY路径误报。
+3) 原扫描器、白名单与门槛规则不可关闭/宽松化、不可在命中上加ignore、skip、allowlist、不删掉隐私报告、不通过改名把私有数据藏到其他提交路径。禁止越过保护目录、旧locked/shallow/P3、秘钥存储、Git认证库或网络其它源去找匹配数据。
+4) 真正高危泄露/凭据命中、证据源身份不足、不可安全脱敏或无法判断来源时，保留STOP，向Owner交一份**不含敏感值**的诊断请求，不推送，不能自行宣布隐私通过。若仅原工具误报，需不泄露值地证明规则为何误判（匹配字段名/仅字面语法类别可列），仍让原强制隐私检查实际再次返回PASS，不能靠口头申明豁免。
+
+## 2. 仅限公开副本的最小隐私修复
+
+不得更改任何真实科学计算：冻结原源码、KFE source/export字节、四套原Post G、density、raw solve、归一化、残差、观测调用计数、执行前后snapshot、原始LOCAL_ONLY文件及其hash或原始历史回执都不得改动。前序已STOP科学任务绝不能继续运行。
+
+若命中的是发布副本的私有路径/身份元数据，允许只对**尚未提交的公众派生证据**做字段级脱敏：将精确私有绝对路径改成可理解的稳定角色标签（例如 LOCAL_ONLY_SOURCE_CACHE、LOCAL_ONLY_ARCHIVE、ISOLATED_CANDIDATE_ROOT），不改变绑定源码的SOURCE_COMMIT/relative repo path/Git Blob/bytes/SHA256，不删除必要证明。原始source_identity.json作为不可变、可验证的LOCAL_ONLY原本保留；公众副本每项替换需记录JSON pointer、替换类别、原字段是否属于数值科学链、原本完整文件长度与SHA256、公开文件长度与SHA256、转换前后审阅凭证（不得泄露原敏感值或其明文片段）。变更的所有公布文件要保留可独立A/B/C核查的来源及矩阵/密度证据，不能用仅hash的空壳替换必要内容。
+如原始source_identity.json同时被执行器当作运行时输入，只能在全部既有模型运行已经关闭之后产生公众副本；不可把脱敏后的副本反向用来证明旧实际函数读取了这些脱敏值，须区分EXECUTION_SOURCE_RAW_LOCAL_ONLY与PUBLICATION_DERIVATIVE_REDACTED。必须保存原件hash/bytes到privacy报告。
+允许不改变本任务科研结果的已存在未提交旧任务目录中**公开文档/JSON/脱敏日志**的最小路径替换、完整manifest与seal身份更新，及本新恢复任务目录中的隔离诊断/证据文件。禁止修改新的或旧的任何Python科研/validator/runner/supervisor代码、src、exports、模型依赖、既有治理文档和历史已提交证据；禁止删除本地原始四套科学归档；不得新增平行KFE数学算法。
+对每处修改都需有可审阅最小diff和理由。若需更改科学数据、删除证据、关闭scanner、修改由原任务validator产生的计算路径才可通过，STOP并列出OWNER_DECISION_REQUIRED。
+
+## 3. 零科研预算与验证范围
+
+科学预算：HJB/HA/policy/initializer/root/KFE/firm/GE/IRF/31省/真实数据加载=全部0；不得执行上一任务pilot、replay、旧科学runner，不能以"预检"之名调KFE solve函数；没有额外重试授权。现有P0/P2/P4/P5的真实旧回放执行者摘要保留原状，最多只作公开JSON静态核验和已归档历史哈希比较，不能伪称独立新数值运行。
+
+静态隐私检查预算最多4次只读/只针对发布副本：定位一次、改后验收一次、final staging验收一次、为工具误报准备的一次有限复核。不得出于没找到原因而无限试探。扫描器如有自带副作用需确保扫描副本而非修改原件。git diff/check/status、哈希、JSON schema、路径/manifest preflight允许，不消耗科研调用。当前数学结论与原版关系分层展示：
+- KFE_SOURCE_MATCH_NO_CODE_CHANGE（源KFE Blob 4ccb7cec8c4754e91bd8830a95dc533811784391；export Blob e144c645d3f4dc842c2faa6b93b2ba0e24275dcf，**待独立GitHub B审查**）
+- P0/P2/P4/P5的MATLAB源法计算可得有限归一密度，但原始postG.T@g诊断分别4.686593832556138、0.3255716333674026、3.7634433046985296、3.4077708099368875；仍不满足先前额外1e-7门。
+- 原版MATLAB KFE求解状态与额外post驻定残差严格分开；上轮R1的KFE_NOT_CERTIFIED仍为真实历史严格审查结论，不能改写成科学认证PASS，也不得因为均值At落在(0,10)就认定严格驻定解。
+- MATLAB_RAW_LOCAL_VERIFICATION与完整Python-MATLAB数值逐元素等价尚有界，不能因隐私修复自动升级科研冻结。第一次发表前不得把LIVE_4_OF_4_REPLAY宣称为GPT独立见证。
+
+## 4. 交付、两阶段SSH及停止门
+
+发布白名单严格限定：
+A. 旧任务未提交的授权新增文件，路径仅为
+tasks/CH5_TEMP31_MATLAB_KFE_BLACKBOX_PARITY_FREEZE_R1_20261029/
+validators/multi_province/temp31_matlab_kfe_blackbox_parity_freeze_isolated.py
+旧任务CONTRACT仅在治理branch，不复制覆盖；既有可提交旧任务中必要的报告、KFE静态map、四点回放回执、source identity**公开派生版本**、privacy报告、manifest，必须保留科学内容与结果。
+B. 新恢复任务新增目录
+tasks/CH5_TEMP31_KFE_BLACKBOX_PRIVACY_DELIVERY_RECOVERY_R1_20261030/
+至少包含result.md、privacy_triage_safe.md、redaction_provenance.json、staged_public_diff_audit.md、science_budget_zero.json、gap_register.md、privacy_report.md、source_identity_linkage.md、manifest_or_delivery_map.md（不重复/篡改上一任务原始manifest）、必要安全脱敏日志。
+不得在上述范围之外修改/创建文件。禁止写入任何历史已发布科研证据。
+
+每个待发布文件必须通过同一隐私hard gate、可读的安全JSON验证与路径检查；对有修改的公众副本重新算实际Git Blob、bytes/SHA256并在manifest列原科学证明与变换。不能把目录名/默认Git ignore 当作强制扫描已通过的证据。scan规则本身不动，输出实际PASS日志或受控FAIL。原始LOCAL_ONLY/private路径不得出现在Git file path、JSON内容、commit message、终端公开摘要与final receipt中。
+
+PAYLOAD_PRECONDITION=PRIVACY_SCAN_PASS_AND_EVIDENCE_IDENTITY_PASS_AND_NO_SCIENCE_REPLAY_AND_SOURCE_UNCHANGED
+否则继续STOP，payload_commit=NONE, seal_commit=NONE, SSH_PUSH=0。
+满足所有条件后才允许对既有候选的固定SOURCE_COMMIT生成**一个payload commit**，只用既有授权普通SSH推送一次到原同名候选branch。外部远端回读commit/parent/tree、全部新增文件路径/Blob/原始bytes/SHA256与manifest，确认没有禁改源码或现有保护数据差异；不可直接相信本地输出。
+然后只能创建**一个seal commit**，该提交唯一新增
+tasks/CH5_TEMP31_MATLAB_KFE_BLACKBOX_PARITY_FREEZE_R1_20261029/DELIVERY_FINAL_RECEIPT.json
+再次普通SSH推送最多一次及完整远端回读。最终root tree和seal commit身份由外部LOCAL_ONLY readback receipt绑定，避免self-hash。SSH如不确定，不得盲目retry/换账号/协议/credential，先有界只读消歧，真正权限/安全拒绝即STOP。
+交付时不得自称原MATLAB/HJB/KFE源完全数值等价已证明；本任务只是恢复远端独立审阅所需证据。
+达成后STOP__AWAITING_GPT_INDEPENDENT_ABC；若未达成STOP__PRIVACY_GATE_BLOCKED并报告准确安全类别、当前阻塞与零push。无自动PR、Issue、merge、cleanup、next。
+
+## 5. GPT独立验收字段、未解决问题
+
+交付必须提供可核对的旧STOP→恢复授权→最终公开副本谱系（source commit/tree, old task ID, this recovery ID, original local-only file identity hashes, public derivative bytes/SHA, validation rule and result）与每一处脱敏记录。所有LOCAL_ONLY数据只由Codex保管，不要求GPT能直接访问Windows本地路径。GPT未来A阶段核全部GitHub固定提交/Blob/bytes/SHA；B阶段核4点回放与数学源码/隐私脱敏证据；C阶段区分源KFE执行成功、额外驻定性警告和正式数学稳态是否可认证。独立验收前不得自称已完成Python正式源冻结。
+
+artifact_integrity=PENDING_IO_UNTIL_REMOTE_DELIVERY
+source_identity=FIXED_SCIENCE_SOURCE_UNCHANGED__REVIEW_REQUIRED
+numeric_review=NO_NEW_NUMERICAL_RUN__RECOVER_OLD_LOCAL_ONLY
+implementation_review=STATIC_PRIVACY_AND_DELIVERY_ONLY
+scientific_review=SOURCE_KFE_EXECUTION_SEPARATE_FROM_STATIONARITY_DIAGNOSTIC
+privacy_review=MUST_PASS_REAL_ORIGINAL_GATE
+actual_terminal=STOP_AFTER_READBACK_OR_BLOCKER
+delivery=CONDITIONAL_ONLY
+cleanup=NONE
+not_completed=MATLAB_FULL_PARITY__STRICT_KFE_STATIONARITY_CERTIFICATION__NEW_PRICE_DOMAIN__STAGE2_3
+
+P3=BLOCKED
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
