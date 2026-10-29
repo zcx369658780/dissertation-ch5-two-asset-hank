@@ -1,0 +1,110 @@
+# TEMP31 KFE黑箱：源等价回放与隐私恢复交付独立A/B/C裁决（2026-10-30）
+
+REVIEW_DATE=2026-10-30
+ORIGINAL_TASK_ID=CH5_TEMP31_MATLAB_KFE_BLACKBOX_PARITY_FREEZE_R1_20261029
+RECOVERY_TASK_ID=CH5_TEMP31_KFE_BLACKBOX_PRIVACY_DELIVERY_RECOVERY_R1_20261030
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_HEAD_BEFORE_REVIEW=bd9f83550b05cd1c7a9c29996fd1fc628e83d761
+FIXED_SOURCE_COMMIT=56447829ce0e6c3c85552c53c351b26a2452a4bd
+FIXED_SOURCE_PARENT=a51c2e7ff6548340a1ee86857b0ee55792fa69b4
+FIXED_SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
+CANDIDATE_BRANCH=codex/ch5-temp31-kfe-matlab-blackbox-freeze-r1-20261029
+PAYLOAD_COMMIT=7f5deb1034e80347193e30bb7578e36a7ffdd915
+PAYLOAD_PARENT=56447829ce0e6c3c85552c53c351b26a2452a4bd
+PAYLOAD_TREE=d2fb78d97de714b9a39c01cc0c8f1655e87b469f
+FINAL_COMMIT=46fd085a98724f0bfefdea085502088e2f9ceb7f
+FINAL_PARENT=7f5deb1034e80347193e30bb7578e36a7ffdd915
+FINAL_TREE=f66255c504f88d9b7f8e3d38111171f7b0e51f6b
+OVERALL=PASS_BOUNDED__55_OF_55_FIXED_REMOTE_DELIVERY__FOUR_ARCHIVED_KFE_REPLAY_WITNESSES__MATLAB_KFE_METHOD_SOURCE_FROZEN__STRICT_STATIONARITY_NOT_CERTIFIED
+SCIENCE_EXECUTION_IN_GPT_REVIEW=0
+KFE_SOURCE_CHANGES=0
+RECOVERY_NEW_SCIENTIFIC_CALLS=0
+
+## A. GitHub来源、交付完整性与隐私硬门
+
+1. 直接从GitHub读取：治理branch HEAD=bd9f83550b05cd1c7a9c29996fd1fc628e83d761，候选branch HEAD=FINAL_COMMIT；payload唯一父提交SOURCE_COMMIT、tree=d2fb78d97de714b9a39c01cc0c8f1655e87b469f；final唯一父提交payload、tree=f66255c504f88d9b7f8e3d38111171f7b0e51f6b。SOURCE→FINAL仅两提交，55条新增路径，严格限定在原KFE黑箱任务目录、新privacy-recovery目录及指定唯一validator，没有修改旧src、exports、历史tasks/docs或其他旧validator。PAYLOAD→FINAL仅增加原KFE任务中的DELIVERY_FINAL_RECEIPT.json。
+2. 本次GPT独立从固定FINAL的GitHub源码获取全部53条manifest登记的payload文件**base64原始字节**，以标准SHA-256算法直接计算并与manifest之bytes、SHA256、Git Blob逐项对照：53/53全部通过。算法自测 SHA256("abc")=ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad。
+3. manifest原始26383 bytes，SHA256=dda16a6a7147f2c6f3ed47af91369c73476bbdca535a037e7338c41a5cf878aa，Git Blob=c0b56806057ace50a68581aa41d33ea930f9c968；其身份与seal中payload_remote_readback对应条目完全一致。
+4. seal原始42422 bytes，SHA256=03f230d727d9750eb6327cb21cbc4cd6e334cf8c737ff8f660c4a79f96522f3f，Git Blob=fd6da4e7d7a2ae2bbddae92e582d2bf5e3d0052f。seal源自身不要求在自己内容中预填自己的最终commit/tree，GitHub固定FINAL与独立本轮Git数据是外部佐证。53 payload + manifest + seal = **55/55固定远端字节/Blob/SHA256验证通过**。
+5. 隐私问题有据：公开恢复证据将失败分类为FALSE_POSITIVE_EVIDENCED；原扫描规则R4_DOUBLE_BACKSLASH_BYTES命中 source_identity.json 的 /history/prior_STOP_final_receipts/5/path 及四份日志记录的 /KFE_file；5处均属已标注来源角色的相对/脱敏路径分隔符序列。原件/私人原始字节LOCAL_ONLY保留；仅公开派生副本执行separator normalization，原件/公开副本的bytes、SHA256、Blob与JSON字段路径均在redaction_provenance.json公开登记。
+6. GPT直接读取固定FINAL这5份公开派生文件，确认相关JSONL可解析、不再包含原双反斜杠匹配、未发现对应绝对Windows盘符/私钥头类指示。第三次54/54强制扫描PASS、原扫描器SHA256=95f5de1f1d926de8683ff721bd1bcdcf2f7c90bdc52c1f6be799cfd3cb624ad2、规则未变更/无ignore，来自交付的原扫描回执；第四次55/55最终扫描PASS及本地外置收尾回执由执行者报告。**GPT没有在Windows现场重跑隐私扫描器，也不能直接读取LOCAL_ONLY原始私密文件与外置seal最终回执**；因此隐私审阅为PASS_BOUNDED_REMOTE_DERIVATIVE_AND_WITNESS，而不是无边界独立现场证实。最后补充收尾查询曾遇工具错误，GPT已独立再次读取最终候选HEAD和远端全部55个固定文件对象；这不改变交付完整性结论。
+7. 本轮治理审阅只是在治理branch额外增一份本报告，不意味着对科研候选进行合并/清理。恢复任务公开记录新增科研调用0；原KFE任务四次回放是此前已预算的旧科研调用，不属于恢复任务的新增调用。
+
+A_ARTIFACT_INTEGRITY=PASS__55_OF_55_BYTES_SHA256_GIT_BLOB
+A_SOURCE_IDENTITY=PASS__FIXED_SOURCE_AND_KFE_BLOBS_UNCHANGED
+A_PRIVACY_REVIEW=PASS_BOUNDED__FIVE_PUBLIC_DERIVATIVES__ORIGINAL_GATE_ATTESTED__LOCAL_ONLY_NOT_WITNESSED
+A_EXECUTION_HOST=BOUNDED_EVIDENCE__NOT_DIRECTLY_WITNESSED
+
+## B. KFE黑箱方法、数值回放与驻定残差独立审核
+
+### B1. 原始MATLAB与冻结Python源码
+
+GPT本轮直接以用户上传的多省份HANK_matlab原版程序.zip读取原始HANK_2ASSETS_HJB.m字节，验证ZIP SHA256=ceb94ccf34d2d218722b81e5111a8f4c530571a9f886bd4afe0610a00321f755；.m原文件12227 bytes、SHA256=049136b769560040bc678f828f5d3ec5338ddcaa2090d6bed4e40732f56c3eae。
+原MATLAB第262–264行先根据最后policy的dh重新求s,mh；第265–333行重构post BB+AAH+Bswitch=A；第334–344行AT=A'、M=I*J*Nz、iFix=floor(.37*M)（MATLAB一基）、rhs[iFix]=.007、AT被选行改为单位行、求AT\vec、以sum(raw)*db*dah归一、按MATLAB列优先将g reshape为(I,J,Nz)。
+固定Python核心src/ch5_two_asset_hank/matlab_faithful_kfe.py Git Blob=4ccb7cec8c4754e91bd8830a95dc533811784391（2195 bytes）；导出exports/matlab_faithful_two_asset_ha.py Git Blob=e144c645d3f4dc842c2faa6b93b2ba0e24275dcf（31143 bytes）。GPT独立从固定SOURCE_COMMIT读取两者文本，逐段比较KFE结果类、matlab_contaminated_row_index和solve_matlab_faithful_stationary_kfe三个定义，文本内容一致。800状态时MATLAB一基iFix=296，Python零基=295；数值.007、行替换、线性求解、db*da归一、F-order reshape一致。
+因此在**已核验的KFE原版计算方法范围内**，当前Python核心及导出版本可按Owner既定黑箱裁决冻结具体固定Git Blob，结论KFE_SOURCE_MATCH_NO_CODE_CHANGE；不需要重写。**但并未使用MATLAB运行时对新旧二进制算子/密度逐元素直接对跑**；包括HJB到post算子、原spdiags边界、经济参数/税/价格接口在内的完整模型移植等价性仍未认证。不能据此宣布FORMAL_SOURCE_FREEZE=TRUE或31省实际稳态已经成功。
+
+### B2. 已有四套KFE-only回放证据与自主复核
+
+候选源码实际隔离validator明确从旧800状态实验LOCAL_ONLY归档读取已认证的post G CSR与raw/density、核对旧P?_result.json身份、源G SHA、输入矩阵/归档SHA后仅调用原KFE一次；禁止HJB/policy/initializer/root。各点回执exit0、无超时/重试、Job进程提交内存上限1GiB及单科学子进程；4次KFE+4次spsolve，零其他模型调用。执行者报告四次raw向量、density与原历史归档逐元素相等、归一化完全一致；归档原二进制LOCAL_ONLY不在远端，故此结论属于可追溯的执行者见证，不是GPT亲自对照本地800项原二进制。恢复任务新科学调用均报告0，候选新增代码未替换原KFE数学过程。
+GPT从候选四份P?_result.json重新读取20维a/b边缘质量，独立依据原20点 b∈[-2,5]、a∈[0,10]计算At、Bt、a/b总质量，并与固定旧实验提交 c46a6e5e7220009450cceaf5d59e6e4db7c34f11 中对应4份P?_result.json逐点比较。a/b所有边缘格点最大差≤3e-16，At/Bt与历史最多约2e-15差，原始驻定标量残差逐点完全一致。数值内容未因隐私公开派生而被修改。
+
+| 点 | 原KFE方法执行（回执） | 公开未认证At | 公开未认证Bt | post原始驻定残差 | 被替换行外残差上限（执行者证据） |
+|---|---|---:|---:|---:|---:|
+| P0 | REPLAY_MATCH | 7.274097868486394 | 4.698277466946672 | 4.686593832556138 | 1.6518372191536135e-15 |
+| P2 | REPLAY_MATCH | 5.0722995536457365 | 1.8147088284647883 | 0.3255716333674026 | 1.0148132334464322e-16 |
+| P4 | REPLAY_MATCH | 7.2688448772635486 | 4.70974313001291 | 3.7634433046985296 | 9.43689570931383e-16 |
+| P5 | REPLAY_MATCH | 7.3037783353426775 | 4.688757796460507 | 3.4077708099368875 | 1.5569143196891844e-15 |
+
+四份回放记录均指出原post A'g最大残差恰在索引295（MATLAB296，即原KFE人为替换的一行），该行原方程残差的绝对值即表中总驻定残差；其他799个未替换行的残差量级约1e-16至1e-15。这个关键定位受执行者真实G/g计算代码、公开回执与历史旧标量残差支持；但未归档800×800原post G和800格密度的公开原始元素，不能称GPT已经独立逐元素重新计算原G'g全向量。
+数学解释：**单行替换后求解被替换矩阵的线性系统**可以高精度满足剩余799个原驻定方程和替换的固定值方程，但不保证被替换的原始第296行驻定方程。若原post转移算子各行严格守恒，该被删方程可能由剩余方程推出；此次post矩阵实际具有大幅负行和（绝对最大约2.82–4.33，最大带符号行和接近0）以及非负offdiag的执行者摘要，至少与未替换原方程未满足一致。不能由此擅自改变MATLAB概率流/边界算法、或将严格驻定门直接升级为原MATLAB方法成功的必要条件。
+必须同时保留：
+- MATLAB_KFE_METHOD_EXECUTED=TRUE (四点，**执行者回放证据**，GPT完成静态实现审阅)
+- KFE_ORIGINAL_STATIONARITY_RESIDUAL_DIAGNOSTIC=STATIONARITY_WARNING（四点）
+- STRICT_ECONOMIC_STATIONARITY_CERTIFIED=FALSE（四点）
+- ORIGINAL_R1_CLASSIFICATION=KFE_NOT_CERTIFIED（历史原有裁决，未变）
+- 兼容解释SOURCE_KFE_COMPUTED_WITH_STATIONARITY_WARNING。At处于0与10之间，只说明该**归一化输出的数值均值**在内部，不能将其直接用于31省正式资本供给或称为严格不变分布。
+
+### B3. 不变性和未完成风险
+
+Git diff证实核心/导出KFE、整个HJB/policy/operator以及历史旧任务源码和证据**没有任何文件修改**；用户报告两个冻结KFE源Blob与GPT独立GitHub读取相同。候选本次只增加一个隔离KFE-only回放validator、证据和恢复隐私文档，没有任何新价格调试。源代码“黑箱版本冻结”是对这两个已存在的**特定文件Git Blob**及其受保护算法的认可，不等于批准更改经济参数、重构整个HJB/KFE或放行正式全局来源冻结。
+执行者的四次KFE回放均完成；隐私恢复时没有额外科研执行。两次SSH实际各成功一次由交付回执证明，GPT只能独立验证远端结果与commit身份，不能重构Windows执行现场或认定所有原始LOCAL_ONLY SHA值已经由GPT重新求得。
+本任务没有证明全MATLAB–Python系统的动态逐元素等价性，也没有通过严格KFE驻定门；现有7价格点中仅4个HJB停止收敛，不能由该新分类将7/7或任何经济稳态宣称成功。下一步若Owner批准恢复价格域调试，应明确源算法可计算性与额外严格驻定风险的双通道记录，不得静默忽略后者或修改黑箱。第二、三阶段、省级分配和正式Results仍未授权。
+
+B_IMPLEMENTATION_REVIEW=PASS_BOUNDED__MATLAB_KFE_FUNCTION_SEMANTICS_MATCH__ZERO_KFE_SOURCE_CODE_CHANGE
+B_NUMERIC_REVIEW=PASS_BOUNDED__FOUR_REPLAY_RECEIPTS__TWENTY_BIN_MOMENTS_INDEPENDENTLY_RECOMPUTED
+B_SCIENTIFIC_REVIEW=SOURCE_METHOD_COMPUTED_WITH_STATIONARITY_WARNING__NO_STRICT_ECONOMIC_STATIONARY_PASS
+B_FULL_MATLAB_PYTHON_PARITY=BLOCKED_NOT_DEMONSTRATED
+B_KFE_SOURCE_METHOD_BLOBS=FROZEN_FOR_BOUNDED_TEMP31_REFERENCE__FORMAL_SOURCE_FREEZE_FALSE
+
+## C. 分层正式裁决
+
+artifact_integrity=PASS__55_OF_55_FIXED_REMOTE_BYTES_SHA256_BLOB
+source_identity=PASS__FIXED_SOURCE_COMMIT_AND_CORE_EXPORT_KFE_BLOBS_UNCHANGED
+numeric_review=PASS_BOUNDED__4_OF_4_EXECUTOR_ARCHIVE_REPLAY_WITNESSES__20_BIN_INDEPENDENT_CROSSCHECK
+implementation_review=PASS_BOUNDED__MATLAB_KFE_METHOD_MATCH__NO_CODE_REWRITE
+scientific_review=KFE_SOURCE_METHOD_ACCEPTED_WITH_STATIONARITY_WARNINGS__STRICT_ECONOMIC_STATIONARY_NOT_CERTIFIED
+privacy_review=PASS_BOUNDED__FIVE_PUBLIC_DERIVATIVES_VERIFIED__FINAL_SCAN4_LOCAL_ONLY_ATTESTATION
+actual_terminal=EXECUTOR_REPORTED_STOP__FINAL_REMOTE_CANDIDATE_HEAD_VERIFIED
+delivery=PASS__PAYLOAD_AND_SEAL__55_OF_55_FIXED_REMOTE_DELIVERY
+cleanup=NOT_AUTHORIZED__NOT_PERFORMED
+not_completed=FULL_MATLAB_HJB_POST_OPERATOR_PARITY__STRICT_KFE_STATIONARITY_CERTIFICATION__CONTINUOUS_THREE_PRICE_FEASIBLE_DOMAIN__STAGE2_STAGE3__REAL_31PROVINCE_GE_IRF_RESULTS
+OVERALL=PASS_BOUNDED__SOURCE_KFE_METHOD_FROZEN_BLOBS__PRIVATE_DELIVERY_RECOVERED__SCIENTIFIC_WARNINGS_PRESERVED
+
+P3=BLOCKED
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
+NEXT_ACTION=STOP_AWAIT_OWNER_DECISION__NO_PRICE_SEARCH_OR_NEW_TASK_AUTHORIZED_BY_THIS_REVIEW
+
+本报告为独立验收和有限KFE方法源码Blob冻结结论，不覆盖已有KFE_NOT_CERTIFIED历史审阅、不会改写历史源码或报表，也不触发源码修改/真实模型运行/merge/cleanup。下一步须由Owner逐项授权。
