@@ -1,0 +1,17 @@
+test_actual_hjb_call_binding (__main__.OldSourceCounterexample.test_actual_hjb_call_binding) ... FAIL
+
+======================================================================
+FAIL: test_actual_hjb_call_binding (__main__.OldSourceCounterexample.test_actual_hjb_call_binding)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<ISOLATED_CANDIDATE_ROOT>\tests\test_temp31_hjb_policy_call_binding_r2.py", line 51, in test_actual_hjb_call_binding
+    assert_call_binding((ROOT / HJB).read_bytes(), (ROOT / POLICY).read_bytes())
+  File "<ISOLATED_CANDIDATE_ROOT>\tests\test_temp31_hjb_policy_call_binding_r2.py", line 42, in assert_call_binding
+    assert call.func.id in imports, (
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: UNBOUND_HJB_POLICY_CALL line=105 symbol=select_matlab_faithful_local_policy; imported=['select_temp31_netwage_local_policy']
+
+----------------------------------------------------------------------
+Ran 1 test in 0.003s
+
+FAILED (failures=1)
