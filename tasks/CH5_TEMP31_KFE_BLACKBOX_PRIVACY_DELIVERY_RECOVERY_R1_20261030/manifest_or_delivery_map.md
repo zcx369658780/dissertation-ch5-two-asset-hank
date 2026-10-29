@@ -1,0 +1,5 @@
+# Delivery map
+
+The sole payload manifest is tasks/CH5_TEMP31_MATLAB_KFE_BLACKBOX_PARITY_FREEZE_R1_20261029/manifest.json, generated for this first publication; no prior manifest existed. It registers original-task public evidence, validator and this recovery directory's public evidence with exact Git Blob, bytes, SHA256, origin and purpose. It excludes itself from self-hashing; its own identity is bound by delivery receipts. No original binary/raw/private operational file is payload.
+
+Payload parent is 56447829ce0e6c3c85552c53c351b26a2452a4bd. The second and final commit adds only tasks/CH5_TEMP31_MATLAB_KFE_BLACKBOX_PARITY_FREEZE_R1_20261029/DELIVERY_FINAL_RECEIPT.json. Payload/seal each permits one authorized ordinary SSH push. All registered files plus manifest and seal must be independently read back at fixed remote commits. Final core/export files must keep frozen Blobs and bytes. No third commit is created to resolve seal self-reference. Final external receipt remains LOCAL_ONLY.

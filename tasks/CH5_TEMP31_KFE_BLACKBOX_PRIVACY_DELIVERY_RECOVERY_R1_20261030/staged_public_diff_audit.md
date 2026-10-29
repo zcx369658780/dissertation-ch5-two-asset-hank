@@ -1,0 +1,7 @@
+# Staged public diff audit
+
+Relative to FIXED_PARENT the payload adds only the original allowed validator, old task public evidence, and recovery task public evidence. Existing src, exports, production files and historical committed objects are untouched. Candidate uses Git plumbing in the existing bare object store; no checkout, index, reset, clean, new branch/repository/worktree or history rewrite.
+
+Relative to previously unsubmitted local evidence there are exactly five publication-derived files: source_identity.json has one path-separator normalization plus an explicit publication provenance marker; four stdout JSONL files each change only record1 /KFE_file separators. All other41-file bundle members retain original bytes. redaction_provenance.json enumerates originals, derivatives, pointers and scientific invariants. Original files are not overwritten: the publication mapping supplies exact new bytes under the original intended Git paths. This is explicit provenance, not a filename bypass.
+
+Raw execution source identity is distinct from the later publication derivative. Old redaction records and receipt log identities continue to bind the original stage1 derivatives, retained LOCAL_ONLY; the new provenance extends that chain. Existing raw/private binaries, operational scripts and stop receipts are excluded from publication, without deleting them. Source mathematical evidence remains present, including actual point results and raw/public log identities.

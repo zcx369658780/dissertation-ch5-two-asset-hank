@@ -1,0 +1,84 @@
+{
+  "task_id": "CH5_TEMP31_MATLAB_KFE_BLACKBOX_PARITY_FREEZE_R1_20261029",
+  "status": "VERSION_FREEZE_CANDIDATE_PENDING_GPT_ABC",
+  "decision": "KFE_SOURCE_MATCH_NO_CODE_CHANGE",
+  "source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+  "source_root_tree": "7b7cb29dd5b37be92561e7f1bc688c0d29789732",
+  "immutable_KFE_sources": [
+    {
+      "path": "src/ch5_two_asset_hank/matlab_faithful_kfe.py",
+      "git_blob": "4ccb7cec8c4754e91bd8830a95dc533811784391",
+      "bytes": 2195,
+      "sha256": "27da91779788e76c9f92697247fff520d460cb9ccafac2de39cdcff7440a3e88"
+    },
+    {
+      "path": "exports/matlab_faithful_two_asset_ha.py",
+      "git_blob": "e144c645d3f4dc842c2faa6b93b2ba0e24275dcf",
+      "bytes": 31143,
+      "sha256": "a7539eb6ba076176b81f832c1800d38d8d170dad8f3619d3b0f3893c5a163fff"
+    }
+  ],
+  "MATLAB_provenance": "SOURCE_EXCERPT_ONLY",
+  "MATLAB_raw_local_verification": "NOT_AVAILABLE",
+  "MATLAB_runtime": "NOT_RUN",
+  "MATLAB_KFE_excerpt_range": "334-344",
+  "post_operator_excerpt_range": "262-333",
+  "aggregate_excerpt_range": "345-354",
+  "method": {
+    "input": "unchanged post G, not HJB implicit matrix",
+    "transpose": true,
+    "M": 800,
+    "MATLAB_pin1": 296,
+    "Python_pin0": 295,
+    "rhs": 0.007,
+    "solve": "scipy.sparse.linalg.spsolve",
+    "normalization": "sum(raw)*db*da",
+    "reshape": "Fortran (b,a,z)"
+  },
+  "core_export_AST_parity": [
+    {
+      "symbol": "MatlabFaithfulKFEResult",
+      "core_lines": [
+        10,
+        23
+      ],
+      "export_lines": [
+        632,
+        645
+      ],
+      "exact_AST_equal_ignoring_location": true,
+      "AST_sha256": "9aa028b974d70a9383ab5e1d91f908a5c01bf1469324daeebcbda758946ac668"
+    },
+    {
+      "symbol": "matlab_contaminated_row_index",
+      "core_lines": [
+        25,
+        28
+      ],
+      "export_lines": [
+        647,
+        650
+      ],
+      "exact_AST_equal_ignoring_location": true,
+      "AST_sha256": "50bcca272ad3567c0ab09c72000db525398d2583ec59e83f7d8133b19ad1275d"
+    },
+    {
+      "symbol": "solve_matlab_faithful_stationary_kfe",
+      "core_lines": [
+        30,
+        47
+      ],
+      "export_lines": [
+        652,
+        669
+      ],
+      "exact_AST_equal_ignoring_location": true,
+      "AST_sha256": "83e5d943c900044446fb3a2f76fdd1ebeec07c7baaae016d5ec21e8f15fb13d3"
+    }
+  ],
+  "replays": 4,
+  "exact_raw_density_archive_matches": 4,
+  "full_post_HJB_MATLAB_parity": "BOUNDED_BLOCKED",
+  "strict_economic_stationarity_certified": false,
+  "FORMAL_SOURCE_FREEZE": false
+}

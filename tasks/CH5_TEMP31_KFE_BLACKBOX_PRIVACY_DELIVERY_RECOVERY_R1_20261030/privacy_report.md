@@ -1,0 +1,5 @@
+# Privacy recovery report
+
+Five original R4 serialization hits are evidenced false positives. Only public metadata path separators change; every original rule is still enforced on every final staged byte. No ignore/skip, scanner modification or credential/protocol change. Public source identity is labelled as post-execution derivative and records original full-file bytes/hash. All scientific source identities and numerical outputs/counters are preserved. Redaction provenance records exact fields and derivative identities without exposing original sensitive values.
+
+Original raw/private logs, caches, archive binaries, private absolute locations, operational code and local STOP/final receipts stay LOCAL_ONLY. All old originals remain at their original locations, not renamed or removed. Authenticated staged copies are an explicit Git-path-to-byte mapping; all paths and contents must pass the original gate. Actual scan3/4 results and preservation checks are recorded in final receipts. Privacy budget4 maximum; zero scientific budget.
