@@ -1,0 +1,106 @@
+# TEMP31真实HJB数值步长阶梯R1：GPT独立A/B/C终审（3组均未收敛、算子科学风险）
+
+REVIEW_DATE=2026-10-29
+TASK_ID=CH5_TEMP31_HJB_TINYGRID_CONVERGENCE_NUMERICAL_DELTA_LADDER_R1_20261029
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+REVIEW_KIND=INDEPENDENT_FIXED_GITHUB_COMMIT_SOURCE_AND_RAW_DELIVERY_BYTES
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_PARENT_AT_REVIEW=f000099d353969903df0ba0819cf30c7cf3b3f8a
+TASK_PUBLICATION_COMMIT=f000099d353969903df0ba0819cf30c7cf3b3f8a
+TASK_PUBLICATION_PARENT=17eb34072d006bb92ea7517d6ec92e62baea1957
+TASK_CONTRACT_GIT_BLOB=476b6648447b6650a8aaeeae30af3dcd4b62477c
+FIXED_SCIENTIFIC_PARENT=ffdb7fcd41019bed7ce4652ee01c753bff6fcec8
+FIXED_SCIENTIFIC_PARENT_TREE=0e2c278ff8915c43dce0ccda8de82e02fe607fe7
+CANDIDATE_BRANCH=codex/ch5-temp31-hjb-convergence-delta-ladder-20261029-r1
+PAYLOAD_COMMIT=a51c2e7ff6548340a1ee86857b0ee55792fa69b4
+PAYLOAD_PARENT=ffdb7fcd41019bed7ce4652ee01c753bff6fcec8
+PAYLOAD_TREE=c614a9ab8a94a14a0eac52cebe3e491665c7a012
+FINAL_COMMIT=56447829ce0e6c3c85552c53c351b26a2452a4bd
+FINAL_PARENT=a51c2e7ff6548340a1ee86857b0ee55792fa69b4
+FINAL_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
+OVERALL=PASS_BOUNDED_NUMERICAL_LADDER_EXECUTION_AND_34_OF_34_DELIVERY__NOT_CONVERGED__GENERATOR_SCIENTIFIC_RISK_BLOCKED
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
+
+## A. GitHub来源与34份远端原始文件
+
+- 独立查询GitHub候选分支当前HEAD严格等于 FINAL_COMMIT；Git对象final唯一直接parent=PAYLOAD_COMMIT、root tree=FINAL_ROOT_TREE；payload唯一直接parent=FIXED_SCIENTIFIC_PARENT、root tree=PAYLOAD_TREE。对比FIXED_SCIENTIFIC_PARENT→FINAL_COMMIT为ahead2/behind0；只新增34条本任务白名单验证代码/报告/evidence路径，没有修改或删除任何既有科学src、历史测试、任务证据。payload→seal唯一新增文件 tasks/CH5_TEMP31_HJB_TINYGRID_CONVERGENCE_NUMERICAL_DELTA_LADDER_R1_20261029/DELIVERY_FINAL_RECEIPT.json。审阅前治理HEAD=TASK_PUBLICATION_COMMIT，未漂移。
+- 从FINAL_COMMIT通过GitHub固定路径fetch_file(encoding=base64)读取manifest中**32份payload**原始bytes并独立SHA-256计算，核对每条manifest实际bytes、SHA-256、Git Blob，**32/32全部一致**。SHA-256实现由公开空串和abc标准向量自检。manifest自身Git Blob=83c46c234169c9e5f26a60d5dccbb9fd76f6b25a，17727 bytes，SHA-256=c0203a00454936f71c7f4ea5b526743f881d5bcf67fee9170e1eaa228e29cb9c；final seal Git Blob=4ea2671815fd4ac4f856231987eb8df13d5a16ab，36226 bytes，SHA-256=45ecbb42f93f9227808ae9f54255b41b644e8b5e074dae11012a7d1788e2cb66。**总计34/34最终远端原始字节/哈希/Blob精确匹配**，不是仅复述执行者34/34自报。
+- SOURCE_COMMIT下真实数学计算所需8份Scientific source paths经GitHub固定源码commit再次独立读取，**8/8 Git Blob与 source_identity.json严格一致**：bootstrap b82eadea383a4d7546a11d4f19686440f8d71870、HJB 56441c1c41ec94190997ce6f0ecbb2b5c2ca7b56、policy d90eb4ba627d4c702062116c2a4ffadac0f43d86、economics 30528d55b884c62f3c9785dfe59197a61f125a3c、contracts c746b616bec38531a7d96da81a54e2899d8aba53、operator 9a511e151c9bf449412dc5605dfa1a2076711277、工资来源调试模块 7df9c03fdd55d72beded7383866d683ca9356bc9、R4工作地税模块90667ddc00c72b9290e91481af4835c808ecfccb。package的两个__init__.py经上轮合同明确跳过，**真实完整包导入未验证**。
+- 本地LOCAL_ONLY执行环境、SSH实际命令与密钥、原始stdout/stderr及外置回执没有提供给GPT直接读取；push各一次、Windows Job/Codex已STOP与P3未触碰为执行者现场报告。GPT的独立核验覆盖**远端Git内容与日志的真实性、执行入口源码及其计数方式的一致性**，不冒称在本地重跑或独立见证Windows进程。
+
+A_ARTIFACT=PASS__34_OF_34_FINAL_BYTES_SHA256_GIT_BLOB
+A_SOURCE=PASS__FIXED_COMMIT_TREE__8_OF_8_SOURCE_BLOB
+A_LOCAL_ONLY_RECEIPT=NOT_INDEPENDENTLY_READ
+
+## B. 三组真实执行、残差代数与边界风险
+
+### B1 冻结条件和逐轮证据
+
+- 冻结前一个完整8-state R1 tinygrid smoke参数与原source不变，来源省份0、合成省份A/B、工资19只作历史数值猜测，目的地税率均0.05、迁移成本0、grid=(2,2,2)，收敛容差1e-7；仅 numerics.delta 和 max_iterations 按Owner预批准顺序 1000/80→100/80→10/80 变化。三组分别从同一真正初始化值/劳动数组开始；公开回执中的value_F_float64_sha256=c649277b2fee82d18a05772a74a0e1ed1daf096fca202b099913b58814b15289、labor_F_float64_sha256=5e949ee3990545189c8c690a6c247edee3dfa82f20e5e8d180bc41707c99bd5e完全一致，没有热启动。
+- GPT直接审阅真实新增执行入口 validators/multi_province/temp31_hjb_convergence_delta_ladder_isolated.py（Blob0dfc598bfa4d6f3a6980d5e8f5612b40eb2f9f3b）和监督脚本 tasks/CH5_TEMP31_HJB_TINYGRID_CONVERGENCE_NUMERICAL_DELTA_LADDER_R1_20261029/run_convergence_supervised.py（Blobd708f39e6db4cf9cd851b365cf475e759436a952）：真实SourceFileLoader载入固定数学源，借之前认证的namespace shell跳过包__init__，未见mock数学函数；sys.setprofile按HJB/policy/operator/spsolve真实代码对象计数，sys.settrace在HJB for-loop真实行读取old/new V、数组、G、已用矩阵/RHS，只记录标量轨迹，不另启HJB求解或重新求政策。
+- 3份固定原始公开trajectory分别包含完整、严格连续序号1..80的80轮记录（共240轮），且每组最后一轮的value_change_sup与source result.convergence_statistic、convergence_summary和交付报告**逐值完全匹配**。两组阶段切换由上一轮receipt的NOT_CONVERGED_FINITE、80次真实迭代、无异常、有限及一致性门控制。3条科研命令的事前claims、实际receipt、数值summary、raw/public byte/hash/脱敏记录在32份已独立认证payload中。执行者回执全部exit0，无超时/异常、无重试。GPT未重复执行科学计算。
+- 预算按执行日志/计数机制证明：3条命令、3次HJB driver、每Arm80轮、240轮合计；每Arm640个policy cell，合计1920；每Arm initializer1批/8 root/8 brentq，共3批/24 root；每Arm source operator80次+post-operator1次，共243；SciPy spsolve240次；KFE/GE/IRF、外层稳态及真实经验数据IO=0。数值源及非测试模块没有修改。
+- 每条命令外部监督施加30秒超时，Codex现场receipt记录Windows Job process committed memory上限1GiB，elapsed约1.813/1.390/1.406秒，没有资源异常；这不是单独RSS上限的证明。BLAS六个环境变量被设为1，但本地native threads未被独立测量，不能声称“实测单线程”。
+
+### B2 数值终态、隐式残差与非收敛
+
+| Arm | delta | iterations | converged | final value_change_sup | last frozen policy R_stale | implicit vector identity error |
+|---|---:|---:|---|---:|---:|---:|
+| A | 1000 | 80 | false | 0.031119609835753792 | 0.00003111960983563644 | 1.0489384968254134e-15 |
+| B | 100 | 80 | false | 0.01607907986119894 | 0.00016079079861245488 | 5.084840426321235e-16 |
+| C | 10 | 80 | false | 0.16462851608474538 | 0.016462851608474036 | 1.087671619437458e-15 |
+
+- 值函数变化所有组均明显高于1e-7；每组result.converged=false，因此**三组都没有取得有界收敛认证**。三组所有检查返回数组和最终算子数据均有限，线性求解没有记录到rank warning。
+- GPT独立抽查三组连续80轮记录的末轮值与summary、各Arm last value change/delta 与 residual 的标量关系：A差1.17e-16，B差4.65e-16，C差5.03e-16。执行者记录matrix=(1/delta+rho)I-G、rhs=u_last+V_old/delta与实际捕获矩阵/RHS相等，线性方程残差约1e-15。此乃**求解固定末轮政策的隐式线性方程的自洽**，并非非线性Bellman最优性/收敛。
+- 最后两轮A的successive_update_cosine约-0.99866，79轮-0.99991；B/C的轨迹中也出现大量变化符号交替和增长比>1。减少delta未单调改善最后迭代变化/残差；A末轮stale-policy residual在三臂中最低，但它仍高于阈值1e-7。不能只取最后线性残差小或退出码0就宣称成功，也不能从有限80轮推断此HJB永远无法收敛。
+
+B_REAL_NUMERICAL_EXECUTION=PASS_BOUNDED__FROZEN_3_ARM_240_ITERATION_LADDER_EXECUTED_FINITE
+B_IMPLICIT_LINEAR_ALGEBRA=PASS_BOUNDED__ROUNDING_LEVEL_IDENTITY
+B_FIXED_POINT=NOT_CONVERGED__A_B_C_ALL_FALSE
+B_NONLINEAR_BELLMAN_RESIDUAL=NOT_EVALUATED__REOPTIMIZATION_NOT_AUTHORIZED
+
+### B3 算子科学风险：当前比进一步delta调参更优先
+
+- 三组最终G的最大绝对行和都约0.00045691399330394233，且存在真实负非对角元素：A最小-0.2891145162423588、B最小-0.081、C最小-0.27379287506930644。**必须区分max signed row sum (约0)与max absolute row sum (非零)**，不能引用前者误认G每行求和为0。若把G按通常连续时间马尔可夫生成元解读，非对角率应非负，行和应为0；本实验的G不满足这些标准条件。它可能来自历史source-faithful离散化/边界行为，并不自动说明该HJB经济学方程本身错误或不收敛的唯一原因。
+- 独立检查原始受保护source-derived operator：src/ch5_two_asset_hank/matlab_faithful_operator.py Blob9a511e151c9bf449412dc5605dfa1a2076711277，**行39-43会在边界跳过越界的offdiagonal，但对角项仍无条件计入-(rb+rf)**。这为非零行和提供了具体的源结构可疑机制；尚未用本次固定8×8矩阵逐项分解确证责任数值。
+- 独立检查新tax-free policy：src/ch5_two_asset_hank/temp31_netwage_policy.py Blobd90eb4ba627d4c702062116c2a4ffadac0f43d86，上界分支行230-232令mh_b=shadow_transfer_b+effective_return*a_max，行261令a_backward_rate=-mh_b/da，**没有非负截断**。这为某些负向插入系数提供具体可能来源；尚未通过逐点policy rate/矩阵单元证据证明A/B/C三个负非对角均由此产生。不得未经Owner允许就更改source operator、边界条件或policy门。
+- 在尚未完成源自MATLAB的边界条件/Markov生成元科学审查前，优先建议**另行Owner授权的只读/有限纯数学算子来源审计**（分解bb/aah/bswitch、行和、负offdiag坐标、边界截断以及MATLAB-faithful对应关系），而**非继续增加迭代轮数、缩小delta、改经济参数**。此建议不是本轮已签发的后续任务。
+
+B_GENERATOR_ADMISSIBILITY=SCIENTIFIC_RISK__NEGATIVE_OFFDIAGONAL_AND_NONZERO_ABSOLUTE_ROW_SUM
+B_SOURCE_CAUSAL_ATTRIBUTION=HYPOTHESIS_ONLY__NEEDS_SEPARATE_BOUNDED_AUDIT
+
+## C. 正式分层裁决
+
+artifact_integrity=PASS__34_OF_34_FINAL_REMOTE_ORIGINAL_BYTES_SHA256_GIT_BLOB
+source_identity=PASS__FIXED_COMMIT_PARENT_TREE__8_OF_8_SCIENTIFIC_GIT_BLOBS
+numerical_implementation=PASS_BOUNDED__THREE_AUTHORIZED_HJB_ARMS__SOURCE_AND_PARAMETER_PINS__BUDGETS
+implicit_linear_consistency=PASS_BOUNDED__RESIDUAL_ERROR_ORDER_1E_MINUS15
+convergence=NOT_ESTABLISHED__THREE_80_ITERATION_ARMS_FALSE
+scientific_operator=RISK_BLOCKED__NEGATIVE_OFFDIAGONALS__ROW_SUM_ABS_4_569139933E_MINUS4
+scientific_review=BLOCKED__NONLINEAR_OPTIMALITY__KFE_GE_IRF__FISCAL_Z_N__PRIMARY_EMPIRICAL_EXCEL__PRODUCTION
+privacy_review=PASS_BOUNDED__PUBLIC_REDACTED_ARTIFACTS_VERIFIED__LOCAL_RAW_AND_P3_NOT_WITNESSED
+actual_terminal=EXECUTOR_REPORTED_STOP__FINAL_GITHUB_BRANCH_AND_BYTES_INDEPENDENT_CONFIRMED
+delivery=PASS__TWO_STAGE_CHAIN__34_OF_34_FIXED_REMOTE_FILES
+cleanup=NOT_AUTHORIZED_NOT_PERFORMED__KEEP_R3_R4_R5_R1_R2_SMOKE_LADDER
+not_completed=HJB_CONVERGENCE__GENERATOR_SCIENTIFIC_CAUSAL_AUDIT__NONLINEAR_BELLMAN_RESIDUAL__FULL_PACKAGE_AND_PRODUCTION_IO__KFE_GE_IRF__31_PROVINCES__FISCAL_AND_EFFECTIVE_LABOR_UNITS__PRIMARY_SOURCE_AUTHENTICATION
+OVERALL=PASS_BOUNDED_NUMERICAL_LADDER_EXECUTION_AND_34_OF_34_DELIVERY__NOT_CONVERGED__GENERATOR_SCIENTIFIC_RISK_BLOCKED
+NEXT_ACTION=OWNER_DECISION_REQUIRED__NO_AUTO_MORE_HJB_CALLS_OR_DELTA_TUNING
+PROTECTION_BASELINE=BLOCKED
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
+
+本审阅只归档独立A/B/C结论，不修改已有候选、治理科研源码、旧MATLAB/P3、经验数据、主分支，不继续HA计算或自动创建算子诊断任务。下一任务须Owner重新明确批准。
