@@ -1,0 +1,135 @@
+{
+  "task_id": "CH5_TEMP31_HJB_TINYGRID_CONVERGENCE_NUMERICAL_DELTA_LADDER_R1_20261029",
+  "source_commit": "ffdb7fcd41019bed7ce4652ee01c753bff6fcec8",
+  "frozen_parameters": {
+    "province_order": [
+      "A",
+      "B"
+    ],
+    "context_id": "TEMP31_TINY_HA_SMOKE_SYNTHETIC_20261029",
+    "entering_iteration": 1,
+    "w_initial": 20.0,
+    "tau_legacy_reference": 0.05,
+    "effective_wage_guess": 19.0,
+    "tax_by_destination": [
+      0.05,
+      0.05
+    ],
+    "sigma_destination_origin": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "r_a": 0.09,
+    "r_b": 0.02,
+    "rb_gap": 0.07,
+    "Tt": 0.1,
+    "labor_weights": [
+      1.0
+    ],
+    "EconomicParams": {
+      "rho": 0.05,
+      "gamma_c": 2.0,
+      "phi": 5.0,
+      "chi_0": 0.1,
+      "chi_1": 2.0,
+      "a_bar": 1e-06,
+      "mu_z": 0,
+      "sigma_z": 0
+    },
+    "grid": {
+      "b": [
+        -2.0,
+        5.0
+      ],
+      "a": [
+        0.0,
+        10.0
+      ],
+      "z": [
+        0.8,
+        1.3
+      ],
+      "switch_matrix": [
+        [
+          -0.3333333333333333,
+          0.3333333333333333
+        ],
+        [
+          0.3333333333333333,
+          -0.3333333333333333
+        ]
+      ]
+    },
+    "numerics": {
+      "delta": 1000.0,
+      "convergence_tolerance": 1e-07,
+      "max_iterations": 1,
+      "drift_tolerance": 1e-12
+    },
+    "phase1_cell": {
+      "i": 0,
+      "j": 0,
+      "nz": 0,
+      "a": 0.0,
+      "b": -2.0,
+      "z": 0.8,
+      "v_a_forward": 1.0,
+      "v_a_backward": 1.0,
+      "v_b_forward": 1.0,
+      "v_b_backward": 1.0,
+      "at_lower_a": true,
+      "at_upper_a": false,
+      "at_lower_b": true,
+      "at_upper_b": false
+    },
+    "command_hard_timeout_seconds": 30,
+    "blas_threads": 1,
+    "science_processes_per_command": 1
+  },
+  "arms": {
+    "A": {
+      "delta": 1000.0,
+      "max_iterations": 80
+    },
+    "B": {
+      "delta": 100.0,
+      "max_iterations": 80
+    },
+    "C": {
+      "delta": 10.0,
+      "max_iterations": 80
+    }
+  },
+  "convergence_tolerance": 1e-07,
+  "drift_tolerance": 1e-12,
+  "hard_timeout_seconds": 30,
+  "max_total_command_seconds": 90,
+  "max_hjb_driver_calls": 3,
+  "max_total_iterations": 240,
+  "max_total_hjb_policy_cells": 1920,
+  "arm_transition": "only NOT_CONVERGED_FINITE at80 with no errors allows the next arm; bounded pass or any hard failure stops the ladder",
+  "initialization": "one real initialization per arm from same frozen original state; compare raw F-order initial-array hashes, no warm starts",
+  "residual": "rho*V_new-u_last-G_last@V_new; final stale policy only; F-order; no policy reoptimization",
+  "implicit_identity": "residual_vector=(V_old-V_new)/delta; also check actual captured matrix and RHS against the same implicit equation",
+  "implicit_consistency_tolerance_formula": "1e-10*(1+max(norm_inf(u_last),norm_inf(rho*V_new),norm_inf(G_last@V_new),norm_inf((V_old-V_new)/delta)))",
+  "bounded_pass_requirements": [
+    "result.converged=True",
+    "source and observed iterations<=80",
+    "source statistic<1e-7",
+    "all relevant arrays and operators finite",
+    "stale_policy_residual<=1e-7",
+    "implicit vector/matrix/RHS audit within the frozen rounding bound"
+  ],
+  "operator_risk_policy": "finite row-sum/offdiagonal generator sign deviations are reported as source scientific risks; invalid dimensions/nonfinite matrices or matrix/G/RHS algebra inconsistency are hard numerical errors. No operator is changed.",
+  "oscillation_indicators": "record update cosine and deltaV growth ratios; indicators do not themselves prove failure or optimality",
+  "native_BLAS": "six environment limits1; report whether native measurement is available; do not install dependencies",
+  "full_nonlinear_Bellman_residual": "NOT_EVALUATED_NO_EXTRA_POLICY_CALLS",
+  "P3": "BLOCKED",
+  "Results": false
+}

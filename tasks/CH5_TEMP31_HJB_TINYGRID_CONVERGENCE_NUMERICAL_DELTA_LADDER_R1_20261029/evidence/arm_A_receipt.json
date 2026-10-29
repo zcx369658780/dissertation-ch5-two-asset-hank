@@ -1,0 +1,126 @@
+{
+  "arm": "A",
+  "command_number": 1,
+  "delta": 1000.0,
+  "max_iterations": 80,
+  "exit_code": 0,
+  "timed_out": false,
+  "hard_timeout_seconds": 30,
+  "elapsed_seconds": 1.812999999965541,
+  "memory_limit": {
+    "status": "PROCESS_MEMORY_HARD_LIMIT_ENFORCED",
+    "bytes": 1073741824,
+    "kind": "Windows Job process committed memory",
+    "RSS_hard_cap": "NOT_SEPARATELY_ENFORCED",
+    "active_process_limit": 1,
+    "kill_on_job_close": true,
+    "applied_before_scientific_import_handshake": true,
+    "observed_peak_process_committed_bytes": 89681920
+  },
+  "transition_outcome": "NOT_CONVERGED_FINITE",
+  "final_event": {
+    "event": "arm_result",
+    "arm": "A",
+    "delta": 1000.0,
+    "max_iterations": 80,
+    "outcome": "NOT_CONVERGED_FINITE",
+    "result_converged": false,
+    "actual_iterations": 80,
+    "last_value_change": 0.031119609835753792,
+    "finite_return_arrays": {
+      "value": true,
+      "initial_value": true,
+      "consumption": true,
+      "labor": true,
+      "transfer": true,
+      "adjustment_cost": true,
+      "effective_illiquid_return": true,
+      "mu_a": true,
+      "mu_b": true,
+      "utility": true
+    },
+    "operator": {
+      "shape": [
+        8,
+        8
+      ],
+      "nnz": 26,
+      "density": 0.40625,
+      "max_row_sum": 5.551115123125783e-17,
+      "row_sum_abs_max": 0.00045691399330394233,
+      "min_offdiagonal_including_implicit_zeros": -0.2891145162423588,
+      "finite": true,
+      "returned_last_policy_operator_equals_captured_iteration_operator": true
+    },
+    "implicit_audit": {
+      "stale_policy_residual_sup": 3.111960983563644e-05,
+      "last_step_change_over_delta": 3.111960983575379e-05,
+      "residual_vector_implicit_identity_error_sup": 1.0489384968254134e-15,
+      "stale_norm_step_norm_difference": 1.1735133264439979e-16,
+      "captured_linear_equation_residual_sup": 1.0408340855860843e-15,
+      "captured_matrix_vs_expected_error_sup": 0.0,
+      "captured_rhs_vs_expected_error_sup": 0.0,
+      "frozen_rounding_bound": 1.1139815686914166e-10,
+      "full_nonlinear_Bellman_optimality_residual": "NOT_EVALUATED_NO_POLICY_REOPTIMIZATION"
+    },
+    "implicit_consistent": true,
+    "oscillation_growth": {
+      "negative_successive_update_cosines": 40,
+      "growth_ratio_above_one_count": 38,
+      "max_growth_ratio": 6.722940331129853,
+      "interpretation": "observable update oscillation/growth indicators only; not a nonlinear optimality test"
+    },
+    "source_operator_scientific_risks": [
+      "source operator row sums depart from zero; generator/scientific risk, no operator repair",
+      "source operator has negative offdiagonal; generator/scientific risk, no operator repair"
+    ],
+    "warnings": [],
+    "original_initialization_hashes": {
+      "value_F_float64_sha256": "c649277b2fee82d18a05772a74a0e1ed1daf096fca202b099913b58814b15289",
+      "labor_F_float64_sha256": "5e949ee3990545189c8c690a6c247edee3dfa82f20e5e8d180bc41707c99bd5e"
+    },
+    "observed_counts": {
+      "initializer_batches": 1,
+      "root_cells": 8,
+      "brentq_calls": 8,
+      "hjb_driver_calls": 1,
+      "hjb_iteration_entries": 80,
+      "hjb_policy_cells": 640,
+      "operator_assemblies": 81,
+      "linear_solves": 80
+    },
+    "source_commit": "ffdb7fcd41019bed7ce4652ee01c753bff6fcec8",
+    "Fortran_order": true,
+    "KFE_GE_IRF": 0,
+    "outer_steady_state_turns": 0,
+    "empirical_data_reads": 0
+  },
+  "completed_iteration_metrics": 80,
+  "stop_ladder": false,
+  "redaction": {
+    "transformation": "exact workspace/runtime prefix replacement; raw originals retained LOCAL_ONLY",
+    "stdout": {
+      "raw_bytes": 69249,
+      "raw_sha256": "59054ca951212abdac02aa008069a9865665c208b59321817ef7c95ea511b994",
+      "public_bytes": 68849,
+      "public_sha256": "2e08cfeac5b1251d1a4db85f5893b24ecf4e8db0439bfa7556c881c599be8add",
+      "changes": [
+        {
+          "prefix_category": "<ISOLATED_CANDIDATE_ROOT>",
+          "prefix_sha256": "70a5570d471875736fa2d308720219eab72913a07a45d264a3b98fe8c7aae2a3",
+          "replacements": 8
+        }
+      ]
+    },
+    "stderr": {
+      "raw_bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0,
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "changes": []
+    }
+  },
+  "retries": 0,
+  "science_child_processes": 1,
+  "counter_capture": "actual final profile counters"
+}

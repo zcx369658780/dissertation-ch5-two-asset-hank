@@ -1,0 +1,9 @@
+# Remaining numerical and scientific gaps
+
+- All three frozen numerical arms reached80 iterations without convergence; this is NUMERICAL_CONVERGENCE_NOT_ESTABLISHED_AFTER_FROZEN_LADDER, not permanent impossibility. The3/240/1920 driver/iteration/policy budgets are exhausted. No fourth arm, rerun, different initial value or altered equation is authorized.
+- Real update oscillation/growth indicators and nonmonotonic delta sensitivity are documented. Implicit linear solves are consistent and finite, but finite solves do not certify the policy/generator or nonlinear optimality.
+- All arms' source operators have negative offdiagonal entries and nonzero row-sum absolute norms. Contract3.4 requires reporting these as scientific risks without modifying the operator; no bounded convergence PASS is claimed. A future dedicated source/algorithm review would need new authorization.
+- The fixed last-policy residual is not a full nonlinear Bellman residual or policy reoptimization check. No extra policy evaluation was used to improve or relabel it.
+- Scope remains8 synthetic states, single HA origin0 in the A/B context, uniform destination taxes.05 and zero sigma, numerical wage guess19. It is not asymmetric tax-incidence evidence, empirical wage validation, fiscal/effective labor z/N adjudication,31-province convergence, KFE/GE/IRF or steady-state closure.
+- Package initializer paths are expressly bypassed. Production imports/runner IO closure and P3 remain BLOCKED. BLAS environment limits are1; native thread counts unavailable. The1GiB Job cap covers committed memory, not a separately enforced RSS limit. No timeouts/resource failures occurred.
+- Results FALSE, FORMAL_SOURCE_FREEZE FALSE, V010 unchanged, V011 not started. Independent GPT A/B/C acceptance and Owner decisions remain pending; no automatic successor or cleanup.
