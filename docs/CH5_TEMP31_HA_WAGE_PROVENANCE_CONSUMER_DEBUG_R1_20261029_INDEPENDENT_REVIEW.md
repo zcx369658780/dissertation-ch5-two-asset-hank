@@ -1,0 +1,89 @@
+# TEMP31 HA—工资首轮来源及消费端调试 R1：GPT 独立 A/B/C 审阅
+
+REVIEW_DATE=2026-10-29
+TASK_ID=CH5_TEMP31_HA_WAGE_FIRST_ROUND_PROVENANCE_AND_CONSUMER_STATIC_DEBUG_R1_20261028
+REVIEW_MODE=GITHUB_FIXED_COMMIT_INDEPENDENT_ABC
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_PARENT_AT_REVIEW_ISSUANCE=93af343aca76a1c1776bfd2485058c7bd37932a0
+TASK_PUBLICATION_COMMIT=93af343aca76a1c1776bfd2485058c7bd37932a0
+TASK_PUBLICATION_PARENT=0167450609c863ef26a9c48ede74d8ab83a3996e
+FIXED_SOURCE_COMMIT=92ec73bc4fabfdf92a9f34c3715ebbdd4fb51f27
+FIXED_SOURCE_ROOT_TREE=adb98b1ad14920902b62ad16bc8ed8e2df4605dc
+CANDIDATE_BRANCH=codex/ch5-temp31-ha-wage-first-round-debug-20261028-r1
+PAYLOAD_COMMIT=fe9d7e269e664b5b2d0c2dd7723af66a35e49a6b
+PAYLOAD_PARENT=92ec73bc4fabfdf92a9f34c3715ebbdd4fb51f27
+PAYLOAD_ROOT_TREE=6f2132bfe3788a06e4c211f871e65fb5371e4fee
+FINAL_COMMIT=5f55365d2aff6bd1517a567e2bcaf17452960a7e
+FINAL_PARENT=fe9d7e269e664b5b2d0c2dd7723af66a35e49a6b
+FINAL_ROOT_TREE=84424adb69027d4bb3b82f6481f5b961f051033c
+FINAL_VERDICT=PASS_BOUNDED_TEMP31_HA_WAGE_PROVENANCE_AND_SYNTHETIC_CONSUMER_DATA_CONTRACT__REAL_FIRST_ROUND_AND_HA_EXECUTION_BLOCKED
+AUTO_NEXT=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+
+## A. 提交链、冻结源、23件远端原字节
+
+1. GitHub Git commit API确认最终候选SHA、唯一parent及root tree与Codex交付一致；payload commit唯一parent是R4最终隔离候选；远端candidate branch指向最终固定提交。compare(R4_source,final)为ahead=2、behind=0，恰23个新增文件，**没有任何已有文件被修改或删除**，其中3份新隔离代码、20份本任务证据（包括manifest及seal）。
+2. 通过GitHub固定final commit的fetch_file(encoding=base64)逐一读取manifest登记的21件payload；在GPT端解码原字节、独立复算SHA-256和字节数，逐件比对GitHub返回的Git Blob与manifest记录：**21/21通过**。独立SHA-256实现用空字节串及abc两个标准测试向量自检。
+3. 最终manifest另核 **10700 bytes、SHA256=4a1e9d214723fa85ae70cb33bc2adbf4777b5fe3d455a5d22046b1e8edfb895c、Git Blob=939692238cbb17c9d80a6e4d3fb3b468627be833**；seal回执另核**12409 bytes、SHA256=e16f99290a5ee9e912df70c07ff8747fb463ac90bb831348410dd0fb7b1da244、Git Blob=4141a5590fca6a311075a8b297bd17ccda79f34d**。最终统计**23/23完全一致**。
+4. 特别区别：payload阶段的旧manifest自检为9426字节、Blob=df5665edb58324df20893f8149baadb311c56a8e，seal阶段修订了manifest的provenance/purpose元数据，最终manifest是10700字节。compare(payload,final)显示仅manifest修改和seal新增；不能拿旧manifest的SHA验证最终对象。原21件payload的路径/blob/大小/SHA身份与最终manifest一致，seal文件内部remote_readback=PENDING_EXTERNAL_FINAL_RECEIPT，所指Codex本地外置回执**未取得原字节**；这不妨碍GPT直接独立认证23件最终GitHub文件，但不能声称外置本地回执已独立验收。
+5. source_identity.json登记R4基线13份固定源码。GPT从R4固定commit逐件回读13份路径的Git Blob，**13/13与身份登记一致**；本轮没有对这13份全部重新独立计算SHA-256，沿用此前R4独立审阅已经认证的源身份与本轮Git compare 0已有文件变化结论。七份Codex本地缺失辅助文件经GPT从R4固定commit再次读取：Git Blob **7/7与source_identity中的planner_git_blob相符**。这些远端静态源码可读，不表示Codex本地取得或曾运行它们。
+6. GitHub已证明远端提交/文件身份；本地SSH全过程、未访问P3的Windows文件系统现场、外置最终回执、实际进程退出仍为Codex执行者报告，不提升为GPT独立本机证据。
+
+A_COMPLETED=PINNED_COMMIT_PARENT_TREE__23_OF_23_REMOTE_BYTES_SHA256_BLOB__R4_13_BLOB_PRESERVATION
+A_BLOCKED=LOCAL_EXTERNAL_RECEIPT_RAW_BYTES__INDEPENDENT_WINDOWS_PROCESS_AND_PROTECTED_TREE_WITNESS
+
+## B. 实际实现、经济学及17项测试
+
+直接审阅的新增源码及Git Blob：
+- src/ch5_two_asset_hank/multi_province/temp31_ha_wage_debug.py = 7df9c03fdd55d72beded7383866d683ca9356bc9
+- validators/multi_province/temp31_ha_wage_debug_isolated.py = b26d443f5b56462cb8b66fb517c512b2c98effc1
+- tests/test_temp31_ha_wage_debug_isolated.py = 714881de51e9b24ebc469e32c77019758818de9a
+
+1. 固定生产路径事实：annual empirical/Owner-A/runtime_cache进入外层第一轮时state['w']源自accepted_source_scalars.composite_wage=20.0，初始wjt=0.6、tau=0.05；该默认值没有通过wage.py计算的来源证据，也未证明是税前或税后。stationary_runtime先执行HA batch、之后one_turn生产工资、steady_state._post_turn_states再将本轮税后综合工资写回state['w']。因此第2轮以后**静态调用链**可追溯至前一轮目的地tau_j/sigma_ji的净综合工资；第1轮末计算不能反证第1轮HA的默认输入。实际首轮bootstrap科学方案仍未定稿。
+2. 新SyntheticNetWageCalculation保存合成目的地税率/工资、双边phi/sigma、来源git身份、generation iteration、province_order、context_id；独立纯Python重算固定wage.py CES式综合净工资。prepare_proposed_consumers在调用R4适配器前严格拒绝INITIAL_DEFAULT_UNPROVEN、第一轮、仅标签、缺证据、错轮次、错地区顺序、错上下文、伪造固定身份及无法数值复算的工资；被拒观测值留在WageProvenanceBlocked诊断中。它不是正式运行时对来源的签名/不可伪造证明，完整计算对象也可能由调用方合成，故结果只支持**synthetic witness**，不能提升真实生产provenance。
+3. 公式有界复核：两省合成w_destination=(5,10)、tau=(0.2,0.6)、phi全为1、sigma=((0,0.8),(0.1,0))、phi_l=alphal=1时，原籍A的税后目的地有效工资为(4,3)、其CES合成为sqrt(4²+3²)=5，原籍B为(0,4)、综合净工资4，与固定wage.py源函数及断言一致。另一组三省非单位弹性与原固定wage.py进行比较。
+4. 新适配器继承R4的tau_for_HA=sigma_for_HA=0、初始化与HJB共享同一只读net wage views，且真实tau_j/sigma_ji存放于单独源机制数据；probe_proposed_resource_identity只做W_net*z*labor、转移支付、rb*b、其他资源和假设储蓄的纯代数。示例W=5,z=0.5,l=2,T=2,rb=.1,b=10,other=3,saving=4，工资收入5、总资源11、演示消费7独立一致。**这不是实际初始化价值函数、HJB边界resources或policy消费方程的运行等价证明**，不能声明HA已修复或生产工资只扣一次。
+5. 固定三HA消费点静态事实：_source_initial_arrays初值处有(1-state['tau'])*state['w']*z；HJB边界有(1-inputs.tau)*inputs.wages[0]*z*labor；local policy有w*(1-tau-sigma)*z并用于收入/消费。不同消费点是同一个家庭问题内部计算，不能把三个公式误说成发生三笔财政税收。若进入的w确为已扣目的地税的composite，非零原籍tau再次乘上将造成不一致；真实消费者及HA/HJB/KFE本轮均未执行或改写。七份Codex本地MISSING_LOCAL_OBJECT不影响GPT固定GitHub源码可读的事实，但挡住了Codex本地真实消费者运行。
+6. 测试源和原始stdout/stderr、预声明、receipt均已读取并确认SHA匹配：第一命令provenance=8/8，第二命令algebra=9/9，二者exit0、无fail/error；总计17/17与两次命令预算一致。测试明确覆盖首轮拒绝早于R4适配器、错误标签/轮次/地区/上下文拒绝、模型净工资公式复算、三省非单位弹性、净工资视图共享和二次税楔注入识别、w*z*labor、保留历史13份代码身份。未调用真实生产包或HA；输出中的“HA calls=0”及import列表是定向测试runner记录，不是全系统执行监视证明。GPT**未重跑**17项，只独立复核其源码判错逻辑、公式和远端测试原始日志。
+7. 尚未闭合：首轮以wjt=.6生成候选净工资是否合适（firm clip floor .8）、phi形成时序、工资/有效劳动量纲、真实HA初始化/边界/policy消费与R4适配器的实际接线、真实年份与三份primary Excel来源、财政税基tau_j*w_j*L_j以及z/N/就业定义。这些均是科学决策门，不因合成通过而自动接受。
+
+B_IMPLEMENTATION=PASS_BOUNDED_SYNTHETIC_PROVENANCE_GUARD_AND_PROPOSED_HA_WAGE_CONSUMER_DATA
+B_NUMERIC=PASS_BOUNDED_HAND_RECALC_AND_17_OF_17_EXECUTOR_TEST_LOGS_NOT_GPT_RERUN
+B_SCIENTIFIC=BLOCKED_FIRST_ROUND_GROSS_NET_PROVENANCE__REAL_HA_CONSUMER__FISCAL_LABOR_UNITS__PRIMARY_DATA
+
+## C. 分层裁决
+
+artifact_integrity=PASS__23_OF_23_FINAL_REMOTE_BYTES_SHA256_BLOB
+source_identity=PASS_BOUNDED__R4_FIXED_PARENT_TREE__13_SOURCE_GIT_BLOBS_MATCH__R4_PRIOR_SOURCE_ACCEPTANCE_REUSED
+numeric_review=PASS_BOUNDED__2_PROVINCE_HAND_GOLDEN__17_EXECUTOR_TESTS_LOGGED__NO_REAL_HA
+implementation_review=PASS_BOUNDED__INITIAL_DEFAULT_FAIL_CLOSED__SYNTHETIC_NET_WAGE_RECOMPUTATION__PROPOSED_RESOURCE_IDENTITIES
+scientific_review=BLOCKED__REAL_FIRST_ROUND_NET_WAGE__ACTUAL_INITIALIZATION_HJB_POLICY__FISCAL_AND_UNITS
+privacy_review=PASS_BOUNDED__21_PUBLIC_PAYLOADS_AND_SEAL_INSPECTED__NO_LOCAL_PRIVATE_WITNESS
+actual_terminal=EXECUTOR_REPORTED_STOP_AFTER_FINAL_READBACK__GITHUB_CANDIDATE_CONFIRMED__LOCAL_STOP_NOT_INDEPENDENTLY_WITNESSED
+delivery=PASS__GITHUB_TWO_STAGE_COMMIT_CHAIN_AND_23_OF_23_FINAL_ORIGINAL_BYTES
+cleanup=NOT_AUTHORIZED_NOT_PERFORMED__PRESERVE_R3_R4_AND_CURRENT_CANDIDATE
+not_completed=REAL_HA_HJB_KFE_GE_IRF__PRODUCTION_WIRING__EMPIRICAL_WAGE_SOURCE__PRIMARY_DATA__FISCAL_ADOPTION__31_PROVINCE__V010_V011__RESULTS
+OVERALL=PASS_BOUNDED_TEMP31_HA_WAGE_PROVENANCE_AND_SYNTHETIC_CONSUMER_DATA_CONTRACT__REAL_FIRST_ROUND_AND_HA_EXECUTION_BLOCKED
+NEXT_ACTION=OWNER_DECISION_REQUIRED__NO_AUTOMATIC_NEW_TASK
+
+## 隐私和不自引用seal限制
+
+公开test stdout/stderr均为成功测试的记录，未出现公开traceback私有绝对路径；21件payload依照manifest核验。候选中的原始运行诊断与私人工作区细节未公开，不能对本地未见材料作完整隐私证明。最终seal内部remote_readback=PENDING_EXTERNAL_FINAL_RECEIPT，其外置原始回执仍留在本地；本报告的23/23是直接对GitHub最终提交重新核验得出的独立结果，而非对本地外置回执的验收。
+
+## 科研状态与边界
+
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+PROTECTION_BASELINE=BLOCKED
+AUTO_NEXT=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+
+本报告只归档R1已完成的固定候选独立验收，未合并、未清理、未运行HA/HJB/KFE、未选择首轮工资bootstrap科学机制、未冻结任何正式来源，也不构成下一任务授权。
