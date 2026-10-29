@@ -1,0 +1,102 @@
+# TEMP31 HJB→Policy R2 最终封存：一次有界的 seal-only SSH 交付恢复
+
+TASK_ID=CH5_TEMP31_HJB_POLICY_R2_SEAL_ONLY_DELIVERY_RECOVERY_R1_20261029
+STATUS=ISSUED_AWAITING_OWNER_TRANSFER
+OWNER_APPROVAL=2026-10-29__ONE_BOUNDED_SEAL_ONLY_RECOVERY__EXISTING_R2_CANDIDATE__NO_CODE_OR_TEST_REDO
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_PARENT=a40708e3ac681e76ef693216056684873f2a64c9
+TASK_PUBLICATION_COMMIT=GPT_SUPPLIES_EXACT_FULL_40_HEX_AFTER_PUBLICATION
+EXPECTED_GOVERNANCE_REMOTE_HEAD=TASK_PUBLICATION_COMMIT__STRICT_EQUALITY
+TASK_CONTRACT_PATH=tasks/CH5_TEMP31_HJB_POLICY_R2_SEAL_ONLY_DELIVERY_RECOVERY_R1_20261029/CONTRACT.md
+EXISTING_CANDIDATE_BRANCH=codex/ch5-temp31-hjb-policy-call-target-repair-20261029-r2
+PINNED_REMOTE_CANDIDATE_HEAD=fd81e93782c1b63bb235eeb57a6abe215228e0d8
+PINNED_REMOTE_CANDIDATE_PARENT=10ee7973713c547faa581388aa97fbfd898809de
+PINNED_REMOTE_CANDIDATE_ROOT_TREE=23483f12d5a8c5f9d934a591bcace2672681ccc4
+PROPOSED_LOCAL_SEAL_COMMIT=b4f5471aeca304f60da4bd2340e4238561c5a92d
+REQUIRED_LOCAL_SEAL_PARENT=fd81e93782c1b63bb235eeb57a6abe215228e0d8
+ALLOWED_SEAL_ONLY_DIFF_PATH=tasks/CH5_TEMP31_HA_TAXFREE_HJB_POLICY_CALL_BINDING_REPAIR_R2_20261029/DELIVERY_FINAL_RECEIPT.json
+PAYLOAD_MANIFEST_PATH=tasks/CH5_TEMP31_HA_TAXFREE_HJB_POLICY_CALL_BINDING_REPAIR_R2_20261029/manifest.json
+PAYLOAD_MANIFEST_GIT_BLOB=3b5ee14dba57fb884c5da629f410322fbe80c89c
+PAYLOAD_MANIFEST_BYTES=9987
+PAYLOAD_MANIFEST_SHA256=674ef60978ab4bdf86b6d0a7730a687d7c5975b76ceaf01cf9140a9811dad828
+PREVIOUS_R2_EXECUTOR_TERMINAL=STOP__SEAL_SSH_CONNECTION_CLOSED_BEFORE_ADVERTISEMENT__PAYLOAD_REMOTE_READBACK_VERIFIED__FINAL_SEAL_NOT_DELIVERED
+PREVIOUS_GPT_REVIEW_COMMIT=a40708e3ac681e76ef693216056684873f2a64c9
+PREVIOUS_GPT_REVIEW=IMPLEMENTATION_PASS_BOUNDED__PAYLOAD_21_OF_21_INDEPENDENT_VERIFIED__FINAL_SEAL_DELIVERY_BLOCKED
+NEW_GIT_REPOSITORIES=0
+NEW_BRANCHES=0
+NEW_COMMITS=0
+SOURCE_CODE_WRITES=0
+TEST_COMMANDS=0
+SCIENTIFIC_COMPUTATION=0
+REAL_HA_HJB_KFE_GE_IRF_CALLS=0
+SEAL_PUSH_ATTEMPTS_MAX=1
+SSH_PROTOCOL_OR_CREDENTIAL_SWITCHES=0
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
+
+## 0. 任务目的与授权的唯一动作
+
+Owner明确授权一次**只交付已经在R2本地创建的最终封存提交**的受界恢复。上轮R2阶段一已通过普通SSH发布，远端固定commit=fd81e93782c1b63bb235eeb57a6abe215228e0d8；GPT在2026-10-29独立核验该commit下**20件payload+manifest，共21/21件原始bytes、SHA-256、Git Blob均匹配**，并独立确认源代码恰好仅把HJB第105行旧调用select_matlab_faithful_local_policy修为select_temp31_netwage_local_policy。预期红灯和修后8/8静态测试已获有界验收。R2终态因seal阶段普通SSH在advertisement前连接中断而STOP；这不是代码或测试失败，不得重新执行已关闭预算。
+
+本次授权只包括：
+1. 在**同一个**先前批准的安全隔离Git仓库中只读认证本地现存seal commit b4f5471aeca304f60da4bd2340e4238561c5a92d；
+2. 只在严格身份/路径/安全门全部通过时，通过原先授权的普通SSH对**现有同名R2候选分支**执行**一次**无force的快进seal-only push；
+3. 用固定远端commit进行实际原始字节与Git Blob、SHA-256回读并生成**本地外置回执**，准确区分成功/阻塞/不确定。
+
+不得重新修改HJB、重新运行红灯/绿灯、创建替代seal commit、重新封装payload/manifest、修改Git历史、签发其它科研任务、修改或合并正式生产、运行HA/HJB/KFE/GE/IRF，也不得借本次seal恢复授权打开已有P3科学保护门。
+
+## 1. 强制只读身份与安全预检
+
+1. 在任何Git写入、SSH push之前，仅使用既获准的非跟随只读安全预检，确认本仓库是R3/R4/R5/R1/R2既有独立仓库，其Git对象库/refs与旧shallow.lock仓库、P3科研树、WASM、reparse目标、D盘历史科研版本物理隔离。确认无活跃Git锁、未授权进程、reparse/alternates、未跟踪数据被覆盖风险。旧库/锁和R3/R4/R5/R1所有证据与branch保持不变；不clean/reset/rebase/cherry-pick/checkout受保护树、不新建仓库/worktree。如不能确认，立即STOP。
+2. **治理身份门**：GPT在本任务发布后通过Owner交接给出完整40位TASK_PUBLICATION_COMMIT。在已批准的同一普通SSH通道有界只读核验远端治理HEAD必须**严格等于该发布SHA**，不是a40708e3ac681e76ef693216056684873f2a64c9或候选payload SHA。发布提交须恰好一个直接parent=a40708e3ac681e76ef693216056684873f2a64c9，相对parent的diff**仅新增本seal-only恢复CONTRACT.md**。本地没有发布commit Git对象时按允许的远端固定Git元数据报告LOCAL_PUBLICATION_OBJECT_ABSENT，不为了检查任务无限fetch历史/转换协议。治理HEAD发生漂移或不一致，STOP。
+3. **候选远端门**：受界只读确认refs/heads/codex/ch5-temp31-hjb-policy-call-target-repair-20261029-r2的HEAD严格为fd81e93782c1b63bb235eeb57a6abe215228e0d8，其唯一parent=10ee7973713c547faa581388aa97fbfd898809de，root tree=23483f12d5a8c5f9d934a591bcace2672681ccc4；阶段一manifest固定Git Blob/bytes/SHA-256为本合同的完整值。不能仅以HEAD是祖先或本地Git分支显示成功代替远端精确相等。若远端已前进、出现未知seal或任何其他SHA，停止，不强制push/覆盖/重建。
+4. **本地seal门**：本地未发布Git commit对象必须**精确等于**b4f5471aeca304f60da4bd2340e4238561c5a92d。通过原始Git对象核验其唯一直接parent**精确等于**fd81e93782c1b63bb235eeb57a6abe215228e0d8；相对于parent的tree diff必须**且只能**新增路径 tasks/CH5_TEMP31_HA_TAXFREE_HJB_POLICY_CALL_BINDING_REPAIR_R2_20261029/DELIVERY_FINAL_RECEIPT.json，且不能修改任何既有文件（尤其manifest和HJB），无其他提交或文件。核本地seal Git Blob、实际bytes、SHA-256、合法JSON内容、R2 TASK_ID、候选身份和上轮payload阶段冻结信息；payload tree和本地封存tree均应可从对象读取，记录真实40位root tree，不猜填。本地seal若含另一个路径、修改manifest或有无法验证/敏感内容，立即STOP：**不创建替代seal，不改写现有对象，不补交其他文件**。
+5. seal内容属于封存时点证据，可能带PENDING_EXTERNAL_FINAL_RECEIPT以避免自指。不得因其本身无法预写未来commit而要求原地改写已签名Git对象；独立远端回读由外置本地回执处理。对本地seal/回执进行私有路径、凭据、真实个人工资数据等隐私门；原证据不得删除。
+
+## 2. 唯一准许的远端操作与错误分支
+
+在全部门通过后，**SEAL_PUSH_ATTEMPTS_MAX=1**。使用原有已获准普通SSH、相同仓库URL、现有身份和现有R2候选分支，执行只包含已存在seal commit对象的fast-forward push（非force、非删除、非修改治理/main）。不做新的Git commit、重建pack脚本的科学变更、重复fetch、自动fallback、协议/账号/Key切换。受界记录开始结束、命令摘要（不得写出密钥/敏感URL）、timeout、接收端pack/refs状态、SSH exit和实际传输字节；本轮若网络断开，不做第二次push。
+
+如果SSH写操作返回异常或在advertisement/receive确认前中断，**远端状态为UNKNOWN**。只允许有界的原授权SSH**只读**查询候选HEAD消歧：
+- 如HEAD恰好等于经本地核验的b4f5471aeca304f60da4bd2340e4238561c5a92d，继续按远端实际内容进行完整回读；能验证成功才可标记DELIVERED，必须记录push传输异常；
+- 如HEAD仍是fd81e93782c1b63bb235eeb57a6abe215228e0d8，维持STOP__SEAL_NOT_DELIVERED，不自行重推；
+- 如HEAD是其他SHA或无法查到，STOP__REMOTE_SEAL_STATE_UNKNOWN_OR_DRIFT，不猜测、不强推。
+权限/安全拒绝、保护门变化、对象不一致不得重试、换凭据或从GitHub写对象API绕过。单次push已消耗预算后，不得通过“检查命令”偷做第二次写入。
+
+## 3. 精确远端回读与终态
+
+仅当实际候选远端HEAD等于b4f5471aeca304f60da4bd2340e4238561c5a92d时，按新最终固定SHA独立核：
+1. 唯一parent=fd81e93782c1b63bb235eeb57a6abe215228e0d8，tree仅增加seal文件，原阶段一21个已独立验收的文件与manifest逐path Git Blob、bytes及SHA-256身份保持。完整最终交付预期共**22件文件：20个manifest payload、manifest本身和seal**；如路径数不同不得宣称22/22。
+2. seal文件 tasks/CH5_TEMP31_HA_TAXFREE_HJB_POLICY_CALL_BINDING_REPAIR_R2_20261029/DELIVERY_FINAL_RECEIPT.json 在最终固定SHA上真实可取得，严格等于本地原seal的Blob/bytes/SHA-256；其语义与payload、stage receipts、任务编号一致，且没有引入自引用哈希问题。
+3. 读取远端commit、parent、root tree、候选branch HEAD和所有22件文件的实际原字节；可以复用GPT已认证的21个历史身份，但不得用本地摘要替代最终seal原始字节。必须区分Git Blob与SHA-256。只在**22/22固定远端回读均匹配**时才能报告FINAL_REMOTE_DELIVERY_VERIFIED。
+4. 生成**LOCAL_ONLY外置最终回执**保存本次身份、SSH写入尝试次数和结果、前后远端SHA、实际root tree、22件readback摘要/缺口和最终终态，保留之前EXTERNAL_STOP_RECEIPT.json及本地证据不变。外置回执不要求推回GitHub或通过新的seal commit以免制造自指循环；私有本地路径仅在必要的本地证据中记录，不上传私有路径。
+
+交付报告应准确返回：TASK_ID、任务发布commit及唯一parent、远端候选HEAD前后、已核本地seal commit/parent/root tree、真实Git diff、seal Git Blob/bytes/SHA256、push attempt/SSH exit/异常、远端readback数及其Blob/bytes/SHA256核验、LOCAL_ONLY回执路径、实施预算和P3状态。未能完成则返回具体STOP而非虚构PASS。
+
+无R2代码改动、无测试重跑、无模型运行、无生产接线；不宣布整个真实HA runtime、稳态、政策函数、财政税基、有效劳动z/N或primary Excel已通过。最终STOP等待GPT后续从**最终固定远端commit**审阅交付seal，OWNER决定下一步，不自动签发。
+
+## 4. 永久保护与预算
+
+P3_PROTECTION_BASELINE=BLOCKED
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+SOURCE_CODE_WRITES=0
+TEST_COMMANDS=0
+SCIENTIFIC_COMPUTATION=0
+REAL_HA_HJB_KFE_GE_IRF_CALLS=0
+NEW_GIT_REPOSITORIES=0
+NEW_BRANCHES=0
+NEW_COMMITS=0
+SEAL_PUSH_ATTEMPTS_MAX=1
+NO_AUTO_CLEANUP=TRUE
+AUTO_MERGE=FALSE
+AUTO_NEXT=FALSE
