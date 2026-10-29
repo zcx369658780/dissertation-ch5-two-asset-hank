@@ -1,0 +1,112 @@
+# TEMP31 HJB生成元边界与MATLAB摘录审计R1：GPT独立A/B/C终审
+
+REVIEW_DATE=2026-10-29
+REVIEW_KIND=INDEPENDENT_FIXED_GITHUB_SOURCE_AND_REMOTE_BYTE_VERIFICATION
+TASK_ID=CH5_TEMP31_HJB_GENERATOR_BOUNDARY_MATLAB_PROVENANCE_ISOLATED_AUDIT_R1_20261029
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_HEAD_BEFORE_REVIEW=07e169b081876ed4d6d077486c1c801d56b5c29f
+TASK_PUBLICATION_COMMIT=07e169b081876ed4d6d077486c1c801d56b5c29f
+TASK_PUBLICATION_PARENT=7bb47760f13e8b8dbdb23c9b3eb635dec51fa17e
+TASK_CONTRACT_GIT_BLOB=ec81efd3584116f43139e3cc30a0e7afa138de17
+SOURCE_COMMIT=56447829ce0e6c3c85552c53c351b26a2452a4bd
+SOURCE_PARENT=a51c2e7ff6548340a1ee86857b0ee55792fa69b4
+SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
+CANDIDATE_BRANCH=codex/ch5-temp31-hjb-generator-boundary-matlab-audit-20261029-r1
+PAYLOAD_COMMIT=f597cd56020b5605a9735a0c358f6880a72697df
+PAYLOAD_PARENT=56447829ce0e6c3c85552c53c351b26a2452a4bd
+PAYLOAD_ROOT_TREE=ba2f157df931a9f63ac7b4f4318e785e6ea1d3bb
+FINAL_COMMIT=57af4365554396e2bd34b1e6a1256f0725111bf0
+FINAL_PARENT=f597cd56020b5605a9735a0c358f6880a72697df
+FINAL_ROOT_TREE=b40c9da31ad456580e2c0ab5350e7d1730896d18
+
+OVERALL=PASS_BOUNDED__PURE_GENERATOR_BOUNDARY_MATLAB_EXCERPT_AUDIT_AND_31_OF_31_REMOTE_DELIVERY__HISTORICAL_CAUSAL_ATTRIBUTION_BLOCKED__NO_MODEL_CONVERGENCE_CLAIM
+
+## A. 固定来源、提交和全部远端字节
+
+- 直接通过已连接的GitHub检查治理HEAD，严格等于任务发布commit；候选branch HEAD严格等于FINAL_COMMIT。
+- Git对象：payload唯一parent=SOURCE_COMMIT，root tree=ba2f157df931a9f63ac7b4f4318e785e6ea1d3bb；seal唯一parent=payload，root tree=b40c9da31ad456580e2c0ab5350e7d1730896d18。
+- 对SOURCE_COMMIT→FINAL_COMMIT的GitHub比较结果ahead=2、behind=0，31个变更文件全部为added，路径仅位于隔离validator和本任务证据目录白名单；未见既有科研源码、历史证据、正式模型的修改或删除。payload→seal的比较严格只有一个新增DELIVERY_FINAL_RECEIPT.json。
+- 从固定FINAL_COMMIT独立读取29个manifest payload原始base64字节，以自检通过的SHA-256标准实现分别重新计算并核对bytes、SHA-256和GitHub返回的Git Blob：29/29匹配。SHA-256实现经空串与abc公开标准向量自检。
+- manifest.json独立核得16863 bytes、Git Blob=b12974c472b2628c71d4ecae2be92ad923b5f349、SHA-256=4f1d75ba66a17381f615a7cb608ed6ede91428669bbb49131d3a61a7f8260309，与seal文件引用的manifest身份一致。
+- FINAL seal独立读取，26467 bytes、Git Blob=74b2a8088fa0b0b100ad7c1059d648cb131bdc8d、SHA-256=78e24149f5c67a64a7e5e339d90841017dbf14a295bee14fa60ac9f929af0244。seal自身不存自哈希/最终commit，是避免循环引用的合理证据边界；该对象由当前固定FINAL_COMMIT及远端Git对象支持。
+- 所以31/31远端文件的实际原始字节、对象身份和适用的前序manifest/seal交叉关系均通过独立核验。此处31=29 payload+manifest+seal；不是把执行者的自报当作独立校验。
+- SOURCE_COMMIT上的四份关键科学文件再次从GitHub固定路径读取，Git Blob全部4/4匹配：operator=9a511e151c9bf449412dc5605dfa1a2076711277；policy=d90eb4ba627d4c702062116c2a4ffadac0f43d86；HJB=56441c1c41ec94190997ce6f0ecbb2b5c2ca7b56；economics=30528d55b884c62f3c9785dfe59197a61f125a3c。
+- 本地D盘LOCAL_ONLY外置回执、Windows进程和私有raw日志不在当前GitHub证据面，未被GPT直接读取；不把GitHub文件核验提升为本地进程独立见证。
+
+A_ARTIFACT_INTEGRITY=PASS__31_OF_31_FIXED_REMOTE_BYTES_SHA256_BLOB
+A_SOURCE_IDENTITY=PASS__PARENT_TREE__FOUR_SOURCE_BLOBS
+A_LOCAL_ONLY_OPERATIONS=EXECUTOR_REPORTED_NOT_INDEPENDENTLY_WITNESSED
+
+## B. 源码/数学、合成测试与MATLAB来源的独立复核
+
+### B1 冻结代码调用与预算
+
+- 读取真实新增隔离validator (Git Blob 0bcf03ddbb7aaaacfe4cdac53ff3814588afdf14)及监督器(Git Blob bbabaf696a8cebc6b3a452c5b72028724506c134)，发现隔离validator通过经过固定哈希核验的source cache，仅导入纯matlab_faithful_operator.py，不导入真实HJB/policy包；以实际代码对象profile计数pure assemble_source_operator/assemble_source_axis，且有禁止真实solver名称的检查。
+- 公开两条命令的claim、receipt、fixture_results、stdout/stderr与预算记录相互一致：两条纯合成Python命令，四个8状态fixture，四次真实纯operator组装及八次axis组装。回执记录两条exit0、无超时、无重试。HA/initializer/root/policy/HJB/KFE/GE/IRF/firm调用均0。
+- 监督器代码实现Windows Job process committed-memory 1GiB限制、单活动子进程、30秒硬超时以及六个BLAS线程环境变量=1；回执声明子进程GO前施加限制。但实际Windows Job状态、真实native线程数以及LOCAL_ONLY raw日志未由GPT直接见证；不能宣称已实测单native线程或RSS上限。
+- 未运行或重跑任何HJB/HA/GE，也没有动用本审阅之外的新科研预算。
+
+### B2 独立数学重建
+
+按照fixture合同原始signed rate向量、shape=(2,2,2)、Fortran索引r=i+j*I+nz*I*J、BB偏移±1、AAH偏移±2、Bswitch偏移±4，GPT直接用独立标量公式重算四组所有BB/AAH/Bswitch/G的8x8矩阵，逐项对照两份远端fixture_results中的逐行非零元素和行和。4组×4组件×8行×8列=1024项，全部一致，未见差异。
+
+| 合成fixture | 独立重算max abs row sum | min offdiag | 数学生成元检验 |
+|---|---:|---:|---|
+| F1_VALID_INWARD_RATES | 约1.11e-16 | 0 | PASS（浮点舍入内） |
+| F2_SYNTHETIC_SMALL_UPPER_B_LEAK | 0.00045691399330394233 | 0 | FAIL（行和） |
+| F3_SYNTHETIC_UPPER_A_NEGATIVE_RATE | 0 | -0.081 | FAIL（负非对角） |
+| F4_COMPOSITE_SIGNED_BOUNDARY_COUNTEREXAMPLE | 约0.004 | -0.081 | FAIL（两类风险） |
+
+- 对于纯operator轴，越界的非对角邻居被略去、但对角无条件扣除完整rb+rf；每行该轴的行和等于被省略signed rates的相反数。正越界rate产生负行和，负越界rate可以产生正行和。这是源码和数学层面的机制证明。
+- 对于资产上界，policy.py 230–232行使用mh_b=shadow_transfer_b+effective_return*a_max、mh_f=0，261行a_backward_rate=-mh_b/da；当mh_b>0和da>0时rate为负，上界的后向邻居存在，因而AAH中可保留负非对角。F3是该机制的合成反例，不是历史Arm B的来源证明。
+- 当前实际HJB隐式步骤使用iteration_b_backward/forward与a_backward/forward率；不应将post-operator以max(±mu,0)组装的诊断率替代真实HJB迭代算子。冻结两状态Bswitch的非对角非负且行和0；但历史最负空间元素究竟由BB还是AAH产生，仍缺逐格原始rates证据。
+- 行和0是守恒必要条件，不足以保证offdiagonal非负。源忠实、CTMC生成元有效性、收敛性和历史因果归因是彼此独立的判定维度。
+
+### B3 MATLAB摘录对照与历史边界
+
+- Codex没有拿到MATLAB原版ZIP/.m完整原字节；MATLAB_RAW_LOCAL_VERIFICATION=NOT_AVAILABLE，比较只能标注GPT_EXCERPT_PROVENANCE_ONLY。冻结摘录的X/Y/Z、MhB/MhF、chih/yyh/zetah、spdiags offsets、implicit step等与Python有有界代数对应关系；不能证明MATLAB全部spdiags padding、shift、完整selector、源文件逐字节或whole-matrix等价。
+- MATLAB原版冻结摘录含A2max=max(abs(sum(A,2)))与homecrit=1e-2后STOP；当前Python HJB在assemble至spsolve路径未见该homecrit守卫。这是有界源码差异。
+- 历史A/B/C最后G max abs row sum约4.569139933e-4，小于原MATLAB阈值1e-2，不能称为违反原版homecrit。原版行和检查也无法证明负非对角不存在。
+- 历史完整最后8x8 G及每格rates未归档，仅有标量摘要。LAST_ITERATION_EXACT_RATE_ATTRIBUTION=BLOCKED_NOT_ARCHIVED。F2刻意使用历史行和量级、F3使用-0.081，并不提供历史单元级因果识别。不得将合成fixture重新标记为历史HJB真值。
+- 上一阶段真实3臂HJB仍是delta=1000/100/10，每臂80次、全部converged=False；本次仅证明数学风险机制，不证明这些风险必然解释全部不收敛或HJB经济结构不能收敛。
+
+B_NUMERIC_REVIEW=PASS_BOUNDED__FOUR_SYNTHETIC_8_CELL_FIXTURES__1024_INDEPENDENT_COMPONENT_CELL_CHECKS
+B_IMPLEMENTATION_REVIEW=PASS_BOUNDED__STATIC_SOURCE_AND_PURE_BUILDER_ONLY__NO_SOURCE_MODIFICATIONS
+B_MATLAB_PROVENANCE=PASS_BOUNDED_EXCERPT_ONLY__RAW_LOCAL_UNAVAILABLE
+B_GENERATOR_ADMISSIBILITY=SCIENTIFIC_RISK_CONFIRMED__COUNTEREXAMPLES_OF_NONCONSERVATION_AND_NEGATIVE_OFFDIAGONAL
+B_HISTORICAL_EXACT_CAUSAL_ATTRIBUTION=BLOCKED_NOT_ARCHIVED
+
+## C. 分层正式裁决
+
+artifact_integrity=PASS__31_OF_31_FIXED_REMOTE_BYTES_SHA256_BLOB
+source_identity=PASS__FROZEN_SOURCE_COMMIT_PARENT_TREE__4_OF_4_SOURCE_BLOBS
+numeric_review=PASS_BOUNDED__PURE_2_COMMANDS_4_FIXTURES__INDEPENDENT_1024_CELL_CROSSCHECK
+implementation_review=PASS_BOUNDED__ISOLATED_VALIDATOR_AND_SUPERVISOR__NO_REAL_MODEL_CALLS_IN_PUBLISHED_EXECUTION_PATH
+scientific_review=PASS_BOUNDED_MECHANISM_AUDIT__CTMC_GENERATOR_VALIDITY_NOT_ESTABLISHED__HISTORICAL_ATTRIBUTION_BLOCKED
+matlab_raw_provenance=NOT_AVAILABLE__GPT_EXCERPT_ONLY
+privacy_review=PASS_BOUNDED__PUBLIC_ARTIFACTS_AND_REDACTION_RECORDS_CHECKED__LOCAL_RAW_NOT_WITNESSED
+actual_terminal=EXECUTOR_REPORTED_STOP__FINAL_REMOTE_BRANCH_AND_CONTENT_INDEPENDENT_CONFIRMED
+delivery=PASS__PAYLOAD_PLUS_SEAL__31_OF_31_FIXED_REMOTE_FILES
+cleanup=NOT_AUTHORIZED__NOT_PERFORMED_ON_REVIEW_SIDE__HISTORY_PRESERVED_IN_REMOTE_DIFF
+not_completed=FULL_MATLAB_SPDIAGS_EQUIVALENCE__HISTORICAL_EXACT_G_RATE_ATTRIBUTION__GENERATOR_REPAIR__HJB_CONVERGENCE__PRICE_DOMAIN__FIRM_MAP__31_PROVINCE_GE__SOURCE_EMPIRICAL_IO
+OVERALL=PASS_BOUNDED__OPERATOR_MECHANISM_AND_DELIVERY__NO_CLAIM_OF_SCIENTIFIC_MODEL_PASS
+NEXT_ACTION=OWNER_DECISION_REQUIRED__NO_AUTO_ISSUE_PR_MERGE_CLEANUP_NEXT
+
+## 权限与保护边界
+
+P3=BLOCKED
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
+
+本审阅未运行科研模型、未改变科研源码、未清理候选或历史证据、未签发任何新的科研任务。Owner既定“家户可收敛价格域→厂商价格映射→分省扩展至31省”的三阶段方法仅作为后续研究计划保留，不自动启动。涉及源忠实与数学正确性的修正取舍、具体边界经济学解释和未来预算必须另由Owner明确决定。
