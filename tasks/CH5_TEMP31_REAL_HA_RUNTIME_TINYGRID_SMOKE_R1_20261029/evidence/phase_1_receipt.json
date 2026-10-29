@@ -1,0 +1,66 @@
+{
+  "phase": "import-initial-policy",
+  "command_number": 1,
+  "exit_code": 0,
+  "passed": true,
+  "timed_out": false,
+  "hard_timeout_seconds": 30,
+  "elapsed_seconds": 4.030999999959022,
+  "memory_limit": {
+    "status": "PROCESS_MEMORY_HARD_LIMIT_ENFORCED",
+    "bytes": 1073741824,
+    "kind": "Windows Job process committed memory",
+    "RSS_hard_cap": "NOT_SEPARATELY_ENFORCED",
+    "active_process_limit": 1,
+    "kill_on_job_close": true,
+    "applied_before_scientific_import_handshake": true,
+    "observed_peak_process_committed_bytes": 56229888
+  },
+  "science_child_processes": 1,
+  "final_event": {
+    "event": "phase_result",
+    "phase": "import-initial-policy",
+    "outcome": "PASS_BOUNDED_RUNTIME_SMOKE",
+    "import_status": "IMPORT_RUNTIME_PASS",
+    "initializer_policy_status": "INITIALIZER_POLICY_CELL_PASS",
+    "hjb_status": "NOT_EXECUTED",
+    "counts": {
+      "initializer_batches": 1,
+      "root_cells": 8,
+      "brentq_calls": 8,
+      "direct_policy_cells": 1,
+      "hjb_policy_cells": 0,
+      "hjb_driver_calls": 0,
+      "hjb_iteration_entries": 0,
+      "operator_assemblies": 0,
+      "linear_solves": 0
+    },
+    "KFE_GE_IRF": 0,
+    "outer_steady_state_turns": 0,
+    "empirical_data_reads": 0
+  },
+  "raw_log_identity": {
+    "transformation": "exact workspace/runtime prefix replacements only; original bytes retained LOCAL_ONLY",
+    "stdout": {
+      "raw_bytes": 6151,
+      "raw_sha256": "f3c90ba9d6cbd58c27b41adc9e51bf49db91ab098c1f2ca5885b137a7dbfb8c3",
+      "public_bytes": 5751,
+      "public_sha256": "03dd9a5cd207a7b68874386dcc6633fa275b37f63e3133f6b5760401a634d5eb",
+      "changes": [
+        {
+          "prefix_category": "<ISOLATED_CANDIDATE_ROOT>",
+          "prefix_sha256": "70a5570d471875736fa2d308720219eab72913a07a45d264a3b98fe8c7aae2a3",
+          "replacements": 8
+        }
+      ]
+    },
+    "stderr": {
+      "raw_bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0,
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "changes": []
+    }
+  },
+  "retries": 0
+}
