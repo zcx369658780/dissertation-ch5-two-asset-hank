@@ -1,0 +1,66 @@
+{
+  "authority": "GPT_EXCERPT_PROVENANCE_ONLY",
+  "publication_commit": "07e169b081876ed4d6d077486c1c801d56b5c29f",
+  "contract_blob": "ec81efd3584116f43139e3cc30a0e7afa138de17",
+  "MATLAB_RAW_LOCAL_VERIFICATION": "NOT_AVAILABLE",
+  "Codex_raw_ZIP_or_MATLAB_read": false,
+  "ZIP": {
+    "name": "\u591a\u7701\u4efdHANK_matlab\u539f\u7248\u7a0b\u5e8f.zip",
+    "sha256": "ceb94ccf34d2d218722b81e5111a8f4c530571a9f886bd4afe0610a00321f755"
+  },
+  "files": [
+    {
+      "name": "HANK_2ASSETS_HJB.m",
+      "bytes": 12227,
+      "sha256": "049136b769560040bc678f828f5d3ec5338ddcaa2090d6bed4e40732f56c3eae"
+    },
+    {
+      "name": "multi_prov_HANK_12sts.m",
+      "bytes": 5531,
+      "sha256": "3c44449cfd4047b5c9e17e540afea2f50b4251150f8f74ab8cceed26e15dec97"
+    },
+    {
+      "name": "HANK_mp_1turn.m",
+      "bytes": 3254,
+      "sha256": "d3d03f37286ed66202673ea63d49babce8d5309bac9c13793c8e60585c21fecf"
+    }
+  ],
+  "excerpts": [
+    {
+      "file": "HANK_2ASSETS_HJB.m",
+      "lines": "155-157",
+      "text": "X=-Ic_B.*sc_B/db - Idh_B.*sdh_B/db; Y=Ic_B.*sc_B/db + Idh_B.*sdh_B/db - Ic_F.*sc_F/db - Idh_F.*sdh_F/db; Z=Ic_F.*sc_F/db + Idh_F.*sdh_F/db"
+    },
+    {
+      "file": "HANK_2ASSETS_HJB.m",
+      "lines": "185-189",
+      "text": "BBi uses spdiags diagonal and offsets +/-1; BB2max=max(sum(BB,2))"
+    },
+    {
+      "file": "HANK_2ASSETS_HJB.m",
+      "lines": "190-198",
+      "text": "MhB=min(dhB,0); MhF=max(dhF,0)+Rah.*aaah; upper bound MhB(:,J,:)=dhB(:,J,:)+Rah(:,J,:).*ahmax; MhF(:,J,:)=0; chih=-MhB/dah; yyh=(MhB-MhF)/dah; zetah=MhF/dah"
+    },
+    {
+      "file": "HANK_2ASSETS_HJB.m",
+      "lines": "226-239",
+      "text": "AAH spdiags offsets +/-I; A=BB+AAH+Bswitch; A2max=max(abs(sum(A,2))); if A2max>num.homecrit report Improper Transition Matrix and break"
+    },
+    {
+      "file": "HANK_2ASSETS_HJB.m",
+      "lines": "240-244",
+      "text": "B=(1/Delta+rho)*I-A; rhs=u+V/Delta; B\\rhs"
+    },
+    {
+      "file": "multi_prov_HANK_12sts.m",
+      "lines": "14,18,19",
+      "text": "num.maxit=100; num.homecrit=10^(-2); num.Delta=1000"
+    },
+    {
+      "file": "HANK_mp_1turn.m",
+      "lines": "15,46,50",
+      "text": "households first; firm update; composite wage calculation; coarse future-map timing only"
+    }
+  ],
+  "excerpt_limits": "not complete raw MATLAB source or all spdiags padding/alignment/boundary code; does not establish full bytewise equivalence"
+}

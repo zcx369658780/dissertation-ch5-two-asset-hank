@@ -1,0 +1,265 @@
+{
+  "shape": [
+    2,
+    2,
+    2
+  ],
+  "linear_index": "r=i+2*j+4*nz; Fortran order; zero based",
+  "switch_matrix": [
+    [
+      -0.3333333333333333,
+      0.3333333333333333
+    ],
+    [
+      0.3333333333333333,
+      -0.3333333333333333
+    ]
+  ],
+  "fixtures": [
+    {
+      "id": "F1_VALID_INWARD_RATES",
+      "b_backward": [
+        0,
+        0.3,
+        0,
+        0.3,
+        0,
+        0.3,
+        0,
+        0.3
+      ],
+      "b_forward": [
+        0.2,
+        0,
+        0.2,
+        0,
+        0.2,
+        0,
+        0.2,
+        0
+      ],
+      "a_backward": [
+        0,
+        0,
+        0.07,
+        0.07,
+        0,
+        0,
+        0.07,
+        0.07
+      ],
+      "a_forward": [
+        0.05,
+        0.05,
+        0,
+        0,
+        0.05,
+        0.05,
+        0,
+        0
+      ],
+      "expected_row_sum": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "expected": "conservative and nonnegative offdiagonal"
+    },
+    {
+      "id": "F2_SYNTHETIC_SMALL_UPPER_B_LEAK",
+      "b_backward": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "b_forward": [
+        0,
+        0.00045691399330394233,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "a_backward": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "a_forward": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected_row_sum": [
+        0,
+        -0.00045691399330394233,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "expected": "negative row sum from one dropped positive outward rate; nonzero yet below MATLAB homecrit",
+      "historical_magnitude_use": "epsilon only uses reported scalar scale; this is not a historical matrix or historical cell rate"
+    },
+    {
+      "id": "F3_SYNTHETIC_UPPER_A_NEGATIVE_RATE",
+      "b_backward": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "b_forward": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "a_backward": [
+        0,
+        0,
+        -0.081,
+        -0.081,
+        0,
+        0,
+        -0.081,
+        -0.081
+      ],
+      "a_forward": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected_row_sum": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "expected": "negative retained upper-a backward rates with zero row sums",
+      "scalar_analogy": {
+        "shadow_transfer_b": 0.0,
+        "effective_return": 0.081,
+        "a_max": 10.0,
+        "da": 10.0,
+        "mh_b": 0.81,
+        "a_backward_rate": -0.081,
+        "scope": "pure algebra only; no real policy call or historical rate attribution"
+      }
+    },
+    {
+      "id": "F4_COMPOSITE_SIGNED_BOUNDARY_COUNTEREXAMPLE",
+      "b_backward": [
+        0,
+        0.3,
+        0,
+        0.3,
+        -0.004,
+        0.3,
+        0,
+        0.3
+      ],
+      "b_forward": [
+        0.2,
+        0.00045691399330394233,
+        0.2,
+        0,
+        0.2,
+        0,
+        0.2,
+        0
+      ],
+      "a_backward": [
+        0,
+        0,
+        -0.081,
+        -0.081,
+        0,
+        0,
+        -0.081,
+        -0.081
+      ],
+      "a_forward": [
+        0.05,
+        0.05,
+        0,
+        0.002,
+        0.05,
+        0.05,
+        0,
+        0
+      ],
+      "expected_row_sum": [
+        0,
+        -0.00045691399330394233,
+        0,
+        -0.002,
+        0.004,
+        0,
+        0,
+        0
+      ],
+      "expected": "combined negative stored rates and both signs of row leakage from dropped outward rates"
+    }
+  ],
+  "fixture_groups": {
+    "conservation": [
+      "F1_VALID_INWARD_RATES",
+      "F2_SYNTHETIC_SMALL_UPPER_B_LEAK"
+    ],
+    "signs": [
+      "F3_SYNTHETIC_UPPER_A_NEGATIVE_RATE",
+      "F4_COMPOSITE_SIGNED_BOUNDARY_COUNTEREXAMPLE"
+    ]
+  },
+  "max_commands": 2,
+  "max_fixtures": 4,
+  "hard_timeout_seconds": 30,
+  "matrix_comparison_atol": 5e-15,
+  "matlab_homecrit": 0.01,
+  "synthetic_not_historical": true,
+  "rate_vectors": "actual8-cell fixture inputs in F order, not outputs of a household policy and not new economic parameters",
+  "model_calls": 0,
+  "fixtures_may_not_all_be_reachable_from_actual_household_policy": true
+}

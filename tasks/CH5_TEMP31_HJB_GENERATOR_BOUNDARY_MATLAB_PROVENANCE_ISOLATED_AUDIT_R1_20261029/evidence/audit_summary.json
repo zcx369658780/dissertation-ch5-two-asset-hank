@@ -1,0 +1,50 @@
+{
+  "task_id": "CH5_TEMP31_HJB_GENERATOR_BOUNDARY_MATLAB_PROVENANCE_ISOLATED_AUDIT_R1_20261029",
+  "mathematical_validation": "PASS_PURE_SYNTHETIC_MECHANISM_CHECKS_NOT_UNIVERSAL_GENERATOR_PASS",
+  "fixtures": [
+    {
+      "fixture_id": "F1_VALID_INWARD_RATES",
+      "row_sum_abs_max": 5.551115123125783e-17,
+      "max_signed_row_sum": 5.551115123125783e-17,
+      "min_offdiagonal_including_implicit_zeros": 0.0,
+      "original_homecrit_1e_minus2_would_pass": true,
+      "conservative_generator_math_checks_pass": true,
+      "expected_counterexample_detected": false
+    },
+    {
+      "fixture_id": "F2_SYNTHETIC_SMALL_UPPER_B_LEAK",
+      "row_sum_abs_max": 0.00045691399330394233,
+      "max_signed_row_sum": 0.0,
+      "min_offdiagonal_including_implicit_zeros": 0.0,
+      "original_homecrit_1e_minus2_would_pass": true,
+      "conservative_generator_math_checks_pass": false,
+      "expected_counterexample_detected": true
+    },
+    {
+      "fixture_id": "F3_SYNTHETIC_UPPER_A_NEGATIVE_RATE",
+      "row_sum_abs_max": 0.0,
+      "max_signed_row_sum": 0.0,
+      "min_offdiagonal_including_implicit_zeros": -0.081,
+      "original_homecrit_1e_minus2_would_pass": true,
+      "conservative_generator_math_checks_pass": false,
+      "expected_counterexample_detected": true
+    },
+    {
+      "fixture_id": "F4_COMPOSITE_SIGNED_BOUNDARY_COUNTEREXAMPLE",
+      "row_sum_abs_max": 0.004000000000000059,
+      "max_signed_row_sum": 0.004000000000000059,
+      "min_offdiagonal_including_implicit_zeros": -0.081,
+      "original_homecrit_1e_minus2_would_pass": true,
+      "conservative_generator_math_checks_pass": false,
+      "expected_counterexample_detected": true
+    }
+  ],
+  "commands": 2,
+  "fixture_operator_assemblies": 4,
+  "axis_assemblies": 8,
+  "real_model_calls": 0,
+  "MATLAB_RAW_LOCAL_VERIFICATION": "NOT_AVAILABLE",
+  "source_comparison": "GPT_EXCERPT_PROVENANCE_ONLY",
+  "LAST_ITERATION_EXACT_RATE_ATTRIBUTION": "BLOCKED_NOT_ARCHIVED",
+  "no_historical_matrix_reconstruction_or_solver_rerun": true
+}

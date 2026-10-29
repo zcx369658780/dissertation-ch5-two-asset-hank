@@ -1,0 +1,9 @@
+# Gaps and scientific risks
+
+- MATLAB_RAW_LOCAL_VERIFICATION=NOT_AVAILABLE. Only the frozen contract's GPT excerpts are compared; full spdiags padding, complete source equality and every selector/boundary predicate are not independently verified. The absence statement is limited to the fixed safe Git tree metadata, not the protected filesystem.
+- LAST_ITERATION_EXACT_RATE_ATTRIBUTION=BLOCKED_NOT_ARCHIVED. Historical final G and all cell rates are absent from prior archived scalar evidence. Synthetic matrices, coincident-.081 and matching row-loss scales must never be relabeled as historical truth. No real HJB/policy/root was called to fill the gap.
+- Python's signed-rate builder and upper-a coefficient can be source-semantic matches while failing conservative CTMC criteria. A negative row sum might be a killed-process subgenerator only if scientifically intended; that household interpretation is not established. Any correction needs new Owner authorization and method review.
+- Python HJB omits the original quoted homecrit guard, but historical4.56914e-4 is below original1e-2. No claim that the old threshold would have stopped those runs is justified. Row-sum tolerance is not an offdiagonal sign check.
+- Numerical nonconvergence/oscillation is historical evidence; current counterexamples prove mechanisms, not exhaustive historical causality or impossibility of convergence. Full nonlinear Bellman optimality remains unverified.
+- Household price-domain exploration, firm-map invariance and joint provincial convergence are preserved as three future stages only. No price/rate/wage search, data read, fiscal correction, model parameter change or future task was performed.
+- Real HA/initializer/root/policy/HJB/KFE/GE/IRF/firm calls0. P3 and FULL_RUNNER_IO_CLOSURE BLOCKED; V010 unchanged, V011 not started, Results and FORMAL_SOURCE_FREEZE FALSE. Independent GPT review remains pending.

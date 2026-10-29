@@ -1,0 +1,1361 @@
+{
+  "group": "conservation",
+  "fixtures": [
+    {
+      "event": "fixture",
+      "fixture_id": "F1_VALID_INWARD_RATES",
+      "is_historical_matrix": false,
+      "shape": [
+        2,
+        2,
+        2
+      ],
+      "state_cells": 8,
+      "inputs": {
+        "id": "F1_VALID_INWARD_RATES",
+        "b_backward": [
+          0,
+          0.3,
+          0,
+          0.3,
+          0,
+          0.3,
+          0,
+          0.3
+        ],
+        "b_forward": [
+          0.2,
+          0,
+          0.2,
+          0,
+          0.2,
+          0,
+          0.2,
+          0
+        ],
+        "a_backward": [
+          0,
+          0,
+          0.07,
+          0.07,
+          0,
+          0,
+          0.07,
+          0.07
+        ],
+        "a_forward": [
+          0.05,
+          0.05,
+          0,
+          0,
+          0.05,
+          0.05,
+          0,
+          0
+        ],
+        "expected_row_sum": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": "conservative and nonnegative offdiagonal"
+      },
+      "component_reference_errors": {
+        "BB": 0.0,
+        "AAH": 0.0,
+        "Bswitch": 0.0
+      },
+      "row_sum_abs_max": 5.551115123125783e-17,
+      "max_signed_row_sum": 5.551115123125783e-17,
+      "min_offdiagonal_including_implicit_zeros": 0.0,
+      "original_homecrit_1e_minus2_would_pass": true,
+      "conservative_generator_math_checks_pass": true,
+      "expected_counterexample_detected": false,
+      "rows": [
+        {
+          "row0": 0,
+          "row1": 1,
+          "coordinate0": [
+            0,
+            0,
+            0
+          ],
+          "actual_input_rates": {
+            "b_backward": 0,
+            "b_forward": 0.2,
+            "a_backward": 0,
+            "a_forward": 0.05
+          },
+          "components": {
+            "BB": {
+              "nonzero_entries": [
+                {
+                  "column0": 0,
+                  "column1": 1,
+                  "value": -0.2
+                },
+                {
+                  "column0": 1,
+                  "column1": 2,
+                  "value": 0.2
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "AAH": {
+              "nonzero_entries": [
+                {
+                  "column0": 0,
+                  "column1": 1,
+                  "value": -0.05
+                },
+                {
+                  "column0": 2,
+                  "column1": 3,
+                  "value": 0.05
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "Bswitch": {
+              "nonzero_entries": [
+                {
+                  "column0": 0,
+                  "column1": 1,
+                  "value": -0.3333333333333333
+                },
+                {
+                  "column0": 4,
+                  "column1": 5,
+                  "value": 0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "G": {
+              "nonzero_entries": [
+                {
+                  "column0": 0,
+                  "column1": 1,
+                  "value": -0.5833333333333333
+                },
+                {
+                  "column0": 1,
+                  "column1": 2,
+                  "value": 0.2
+                },
+                {
+                  "column0": 2,
+                  "column1": 3,
+                  "value": 0.05
+                },
+                {
+                  "column0": 4,
+                  "column1": 5,
+                  "value": 0.3333333333333333
+                }
+              ],
+              "row_sum": 5.551115123125783e-17
+            }
+          },
+          "dropped_outward_rates": [],
+          "analytic_row_sum_from_dropped_rates": 0,
+          "causal_scope": "synthetic input-to-builder causality only; not a historical household rate"
+        },
+        {
+          "row0": 1,
+          "row1": 2,
+          "coordinate0": [
+            1,
+            0,
+            0
+          ],
+          "actual_input_rates": {
+            "b_backward": 0.3,
+            "b_forward": 0,
+            "a_backward": 0,
+            "a_forward": 0.05
+          },
+          "components": {
+            "BB": {
+              "nonzero_entries": [
+                {
+                  "column0": 0,
+                  "column1": 1,
+                  "value": 0.3
+                },
+                {
+                  "column0": 1,
+                  "column1": 2,
+                  "value": -0.3
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "AAH": {
+              "nonzero_entries": [
+                {
+                  "column0": 1,
+                  "column1": 2,
+                  "value": -0.05
+                },
+                {
+                  "column0": 3,
+                  "column1": 4,
+                  "value": 0.05
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "Bswitch": {
+              "nonzero_entries": [
+                {
+                  "column0": 1,
+                  "column1": 2,
+                  "value": -0.3333333333333333
+                },
+                {
+                  "column0": 5,
+                  "column1": 6,
+                  "value": 0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "G": {
+              "nonzero_entries": [
+                {
+                  "column0": 0,
+                  "column1": 1,
+                  "value": 0.3
+                },
+                {
+                  "column0": 1,
+                  "column1": 2,
+                  "value": -0.6833333333333333
+                },
+                {
+                  "column0": 3,
+                  "column1": 4,
+                  "value": 0.05
+                },
+                {
+                  "column0": 5,
+                  "column1": 6,
+                  "value": 0.3333333333333333
+                }
+              ],
+              "row_sum": -5.551115123125783e-17
+            }
+          },
+          "dropped_outward_rates": [],
+          "analytic_row_sum_from_dropped_rates": 0,
+          "causal_scope": "synthetic input-to-builder causality only; not a historical household rate"
+        },
+        {
+          "row0": 2,
+          "row1": 3,
+          "coordinate0": [
+            0,
+            1,
+            0
+          ],
+          "actual_input_rates": {
+            "b_backward": 0,
+            "b_forward": 0.2,
+            "a_backward": 0.07,
+            "a_forward": 0
+          },
+          "components": {
+            "BB": {
+              "nonzero_entries": [
+                {
+                  "column0": 2,
+                  "column1": 3,
+                  "value": -0.2
+                },
+                {
+                  "column0": 3,
+                  "column1": 4,
+                  "value": 0.2
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "AAH": {
+              "nonzero_entries": [
+                {
+                  "column0": 0,
+                  "column1": 1,
+                  "value": 0.07
+                },
+                {
+                  "column0": 2,
+                  "column1": 3,
+                  "value": -0.07
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "Bswitch": {
+              "nonzero_entries": [
+                {
+                  "column0": 2,
+                  "column1": 3,
+                  "value": -0.3333333333333333
+                },
+                {
+                  "column0": 6,
+                  "column1": 7,
+                  "value": 0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "G": {
+              "nonzero_entries": [
+                {
+                  "column0": 0,
+                  "column1": 1,
+                  "value": 0.07
+                },
+                {
+                  "column0": 2,
+                  "column1": 3,
+                  "value": -0.6033333333333333
+                },
+                {
+                  "column0": 3,
+                  "column1": 4,
+                  "value": 0.2
+                },
+                {
+                  "column0": 6,
+                  "column1": 7,
+                  "value": 0.3333333333333333
+                }
+              ],
+              "row_sum": 5.551115123125783e-17
+            }
+          },
+          "dropped_outward_rates": [],
+          "analytic_row_sum_from_dropped_rates": 0,
+          "causal_scope": "synthetic input-to-builder causality only; not a historical household rate"
+        },
+        {
+          "row0": 3,
+          "row1": 4,
+          "coordinate0": [
+            1,
+            1,
+            0
+          ],
+          "actual_input_rates": {
+            "b_backward": 0.3,
+            "b_forward": 0,
+            "a_backward": 0.07,
+            "a_forward": 0
+          },
+          "components": {
+            "BB": {
+              "nonzero_entries": [
+                {
+                  "column0": 2,
+                  "column1": 3,
+                  "value": 0.3
+                },
+                {
+                  "column0": 3,
+                  "column1": 4,
+                  "value": -0.3
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "AAH": {
+              "nonzero_entries": [
+                {
+                  "column0": 1,
+                  "column1": 2,
+                  "value": 0.07
+                },
+                {
+                  "column0": 3,
+                  "column1": 4,
+                  "value": -0.07
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "Bswitch": {
+              "nonzero_entries": [
+                {
+                  "column0": 3,
+                  "column1": 4,
+                  "value": -0.3333333333333333
+                },
+                {
+                  "column0": 7,
+                  "column1": 8,
+                  "value": 0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "G": {
+              "nonzero_entries": [
+                {
+                  "column0": 1,
+                  "column1": 2,
+                  "value": 0.07
+                },
+                {
+                  "column0": 2,
+                  "column1": 3,
+                  "value": 0.3
+                },
+                {
+                  "column0": 3,
+                  "column1": 4,
+                  "value": -0.7033333333333334
+                },
+                {
+                  "column0": 7,
+                  "column1": 8,
+                  "value": 0.3333333333333333
+                }
+              ],
+              "row_sum": -5.551115123125783e-17
+            }
+          },
+          "dropped_outward_rates": [],
+          "analytic_row_sum_from_dropped_rates": 0,
+          "causal_scope": "synthetic input-to-builder causality only; not a historical household rate"
+        },
+        {
+          "row0": 4,
+          "row1": 5,
+          "coordinate0": [
+            0,
+            0,
+            1
+          ],
+          "actual_input_rates": {
+            "b_backward": 0,
+            "b_forward": 0.2,
+            "a_backward": 0,
+            "a_forward": 0.05
+          },
+          "components": {
+            "BB": {
+              "nonzero_entries": [
+                {
+                  "column0": 4,
+                  "column1": 5,
+                  "value": -0.2
+                },
+                {
+                  "column0": 5,
+                  "column1": 6,
+                  "value": 0.2
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "AAH": {
+              "nonzero_entries": [
+                {
+                  "column0": 4,
+                  "column1": 5,
+                  "value": -0.05
+                },
+                {
+                  "column0": 6,
+                  "column1": 7,
+                  "value": 0.05
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "Bswitch": {
+              "nonzero_entries": [
+                {
+                  "column0": 0,
+                  "column1": 1,
+                  "value": 0.3333333333333333
+                },
+                {
+                  "column0": 4,
+                  "column1": 5,
+                  "value": -0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "G": {
+              "nonzero_entries": [
+                {
+                  "column0": 0,
+                  "column1": 1,
+                  "value": 0.3333333333333333
+                },
+                {
+                  "column0": 4,
+                  "column1": 5,
+                  "value": -0.5833333333333333
+                },
+                {
+                  "column0": 5,
+                  "column1": 6,
+                  "value": 0.2
+                },
+                {
+                  "column0": 6,
+                  "column1": 7,
+                  "value": 0.05
+                }
+              ],
+              "row_sum": 5.551115123125783e-17
+            }
+          },
+          "dropped_outward_rates": [],
+          "analytic_row_sum_from_dropped_rates": 0,
+          "causal_scope": "synthetic input-to-builder causality only; not a historical household rate"
+        },
+        {
+          "row0": 5,
+          "row1": 6,
+          "coordinate0": [
+            1,
+            0,
+            1
+          ],
+          "actual_input_rates": {
+            "b_backward": 0.3,
+            "b_forward": 0,
+            "a_backward": 0,
+            "a_forward": 0.05
+          },
+          "components": {
+            "BB": {
+              "nonzero_entries": [
+                {
+                  "column0": 4,
+                  "column1": 5,
+                  "value": 0.3
+                },
+                {
+                  "column0": 5,
+                  "column1": 6,
+                  "value": -0.3
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "AAH": {
+              "nonzero_entries": [
+                {
+                  "column0": 5,
+                  "column1": 6,
+                  "value": -0.05
+                },
+                {
+                  "column0": 7,
+                  "column1": 8,
+                  "value": 0.05
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "Bswitch": {
+              "nonzero_entries": [
+                {
+                  "column0": 1,
+                  "column1": 2,
+                  "value": 0.3333333333333333
+                },
+                {
+                  "column0": 5,
+                  "column1": 6,
+                  "value": -0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "G": {
+              "nonzero_entries": [
+                {
+                  "column0": 1,
+                  "column1": 2,
+                  "value": 0.3333333333333333
+                },
+                {
+                  "column0": 4,
+                  "column1": 5,
+                  "value": 0.3
+                },
+                {
+                  "column0": 5,
+                  "column1": 6,
+                  "value": -0.6833333333333333
+                },
+                {
+                  "column0": 7,
+                  "column1": 8,
+                  "value": 0.05
+                }
+              ],
+              "row_sum": -5.551115123125783e-17
+            }
+          },
+          "dropped_outward_rates": [],
+          "analytic_row_sum_from_dropped_rates": 0,
+          "causal_scope": "synthetic input-to-builder causality only; not a historical household rate"
+        },
+        {
+          "row0": 6,
+          "row1": 7,
+          "coordinate0": [
+            0,
+            1,
+            1
+          ],
+          "actual_input_rates": {
+            "b_backward": 0,
+            "b_forward": 0.2,
+            "a_backward": 0.07,
+            "a_forward": 0
+          },
+          "components": {
+            "BB": {
+              "nonzero_entries": [
+                {
+                  "column0": 6,
+                  "column1": 7,
+                  "value": -0.2
+                },
+                {
+                  "column0": 7,
+                  "column1": 8,
+                  "value": 0.2
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "AAH": {
+              "nonzero_entries": [
+                {
+                  "column0": 4,
+                  "column1": 5,
+                  "value": 0.07
+                },
+                {
+                  "column0": 6,
+                  "column1": 7,
+                  "value": -0.07
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "Bswitch": {
+              "nonzero_entries": [
+                {
+                  "column0": 2,
+                  "column1": 3,
+                  "value": 0.3333333333333333
+                },
+                {
+                  "column0": 6,
+                  "column1": 7,
+                  "value": -0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "G": {
+              "nonzero_entries": [
+                {
+                  "column0": 2,
+                  "column1": 3,
+                  "value": 0.3333333333333333
+                },
+                {
+                  "column0": 4,
+                  "column1": 5,
+                  "value": 0.07
+                },
+                {
+                  "column0": 6,
+                  "column1": 7,
+                  "value": -0.6033333333333333
+                },
+                {
+                  "column0": 7,
+                  "column1": 8,
+                  "value": 0.2
+                }
+              ],
+              "row_sum": 5.551115123125783e-17
+            }
+          },
+          "dropped_outward_rates": [],
+          "analytic_row_sum_from_dropped_rates": 0,
+          "causal_scope": "synthetic input-to-builder causality only; not a historical household rate"
+        },
+        {
+          "row0": 7,
+          "row1": 8,
+          "coordinate0": [
+            1,
+            1,
+            1
+          ],
+          "actual_input_rates": {
+            "b_backward": 0.3,
+            "b_forward": 0,
+            "a_backward": 0.07,
+            "a_forward": 0
+          },
+          "components": {
+            "BB": {
+              "nonzero_entries": [
+                {
+                  "column0": 6,
+                  "column1": 7,
+                  "value": 0.3
+                },
+                {
+                  "column0": 7,
+                  "column1": 8,
+                  "value": -0.3
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "AAH": {
+              "nonzero_entries": [
+                {
+                  "column0": 5,
+                  "column1": 6,
+                  "value": 0.07
+                },
+                {
+                  "column0": 7,
+                  "column1": 8,
+                  "value": -0.07
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "Bswitch": {
+              "nonzero_entries": [
+                {
+                  "column0": 3,
+                  "column1": 4,
+                  "value": 0.3333333333333333
+                },
+                {
+                  "column0": 7,
+                  "column1": 8,
+                  "value": -0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "G": {
+              "nonzero_entries": [
+                {
+                  "column0": 3,
+                  "column1": 4,
+                  "value": 0.3333333333333333
+                },
+                {
+                  "column0": 5,
+                  "column1": 6,
+                  "value": 0.07
+                },
+                {
+                  "column0": 6,
+                  "column1": 7,
+                  "value": 0.3
+                },
+                {
+                  "column0": 7,
+                  "column1": 8,
+                  "value": -0.7033333333333334
+                }
+              ],
+              "row_sum": -5.551115123125783e-17
+            }
+          },
+          "dropped_outward_rates": [],
+          "analytic_row_sum_from_dropped_rates": 0,
+          "causal_scope": "synthetic input-to-builder causality only; not a historical household rate"
+        }
+      ]
+    },
+    {
+      "event": "fixture",
+      "fixture_id": "F2_SYNTHETIC_SMALL_UPPER_B_LEAK",
+      "is_historical_matrix": false,
+      "shape": [
+        2,
+        2,
+        2
+      ],
+      "state_cells": 8,
+      "inputs": {
+        "id": "F2_SYNTHETIC_SMALL_UPPER_B_LEAK",
+        "b_backward": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "b_forward": [
+          0,
+          0.00045691399330394233,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "a_backward": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "a_forward": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "expected_row_sum": [
+          0,
+          -0.00045691399330394233,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": "negative row sum from one dropped positive outward rate; nonzero yet below MATLAB homecrit",
+        "historical_magnitude_use": "epsilon only uses reported scalar scale; this is not a historical matrix or historical cell rate"
+      },
+      "component_reference_errors": {
+        "BB": 0.0,
+        "AAH": 0.0,
+        "Bswitch": 0.0
+      },
+      "row_sum_abs_max": 0.00045691399330394233,
+      "max_signed_row_sum": 0.0,
+      "min_offdiagonal_including_implicit_zeros": 0.0,
+      "original_homecrit_1e_minus2_would_pass": true,
+      "conservative_generator_math_checks_pass": false,
+      "expected_counterexample_detected": true,
+      "rows": [
+        {
+          "row0": 0,
+          "row1": 1,
+          "coordinate0": [
+            0,
+            0,
+            0
+          ],
+          "actual_input_rates": {
+            "b_backward": 0.0,
+            "b_forward": 0,
+            "a_backward": 0.0,
+            "a_forward": 0.0
+          },
+          "components": {
+            "BB": {
+              "nonzero_entries": [],
+              "row_sum": 0.0
+            },
+            "AAH": {
+              "nonzero_entries": [],
+              "row_sum": 0.0
+            },
+            "Bswitch": {
+              "nonzero_entries": [
+                {
+                  "column0": 0,
+                  "column1": 1,
+                  "value": -0.3333333333333333
+                },
+                {
+                  "column0": 4,
+                  "column1": 5,
+                  "value": 0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "G": {
+              "nonzero_entries": [
+                {
+                  "column0": 0,
+                  "column1": 1,
+                  "value": -0.3333333333333333
+                },
+                {
+                  "column0": 4,
+                  "column1": 5,
+                  "value": 0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            }
+          },
+          "dropped_outward_rates": [],
+          "analytic_row_sum_from_dropped_rates": 0,
+          "causal_scope": "synthetic input-to-builder causality only; not a historical household rate"
+        },
+        {
+          "row0": 1,
+          "row1": 2,
+          "coordinate0": [
+            1,
+            0,
+            0
+          ],
+          "actual_input_rates": {
+            "b_backward": 0.0,
+            "b_forward": 0.00045691399330394233,
+            "a_backward": 0.0,
+            "a_forward": 0.0
+          },
+          "components": {
+            "BB": {
+              "nonzero_entries": [
+                {
+                  "column0": 1,
+                  "column1": 2,
+                  "value": -0.00045691399330394233
+                }
+              ],
+              "row_sum": -0.00045691399330394233
+            },
+            "AAH": {
+              "nonzero_entries": [],
+              "row_sum": 0.0
+            },
+            "Bswitch": {
+              "nonzero_entries": [
+                {
+                  "column0": 1,
+                  "column1": 2,
+                  "value": -0.3333333333333333
+                },
+                {
+                  "column0": 5,
+                  "column1": 6,
+                  "value": 0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "G": {
+              "nonzero_entries": [
+                {
+                  "column0": 1,
+                  "column1": 2,
+                  "value": -0.33379024732663726
+                },
+                {
+                  "column0": 5,
+                  "column1": 6,
+                  "value": 0.3333333333333333
+                }
+              ],
+              "row_sum": -0.00045691399330394233
+            }
+          },
+          "dropped_outward_rates": [
+            {
+              "component": "BB",
+              "direction": "forward",
+              "rate": 0.00045691399330394233,
+              "row_sum_contribution": -0.00045691399330394233,
+              "reason": "upper boundary neighbor outside grid"
+            }
+          ],
+          "analytic_row_sum_from_dropped_rates": -0.00045691399330394233,
+          "causal_scope": "synthetic input-to-builder causality only; not a historical household rate"
+        },
+        {
+          "row0": 2,
+          "row1": 3,
+          "coordinate0": [
+            0,
+            1,
+            0
+          ],
+          "actual_input_rates": {
+            "b_backward": 0.0,
+            "b_forward": 0,
+            "a_backward": 0.0,
+            "a_forward": 0.0
+          },
+          "components": {
+            "BB": {
+              "nonzero_entries": [],
+              "row_sum": 0.0
+            },
+            "AAH": {
+              "nonzero_entries": [],
+              "row_sum": 0.0
+            },
+            "Bswitch": {
+              "nonzero_entries": [
+                {
+                  "column0": 2,
+                  "column1": 3,
+                  "value": -0.3333333333333333
+                },
+                {
+                  "column0": 6,
+                  "column1": 7,
+                  "value": 0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "G": {
+              "nonzero_entries": [
+                {
+                  "column0": 2,
+                  "column1": 3,
+                  "value": -0.3333333333333333
+                },
+                {
+                  "column0": 6,
+                  "column1": 7,
+                  "value": 0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            }
+          },
+          "dropped_outward_rates": [],
+          "analytic_row_sum_from_dropped_rates": 0,
+          "causal_scope": "synthetic input-to-builder causality only; not a historical household rate"
+        },
+        {
+          "row0": 3,
+          "row1": 4,
+          "coordinate0": [
+            1,
+            1,
+            0
+          ],
+          "actual_input_rates": {
+            "b_backward": 0.0,
+            "b_forward": 0,
+            "a_backward": 0.0,
+            "a_forward": 0.0
+          },
+          "components": {
+            "BB": {
+              "nonzero_entries": [],
+              "row_sum": 0.0
+            },
+            "AAH": {
+              "nonzero_entries": [],
+              "row_sum": 0.0
+            },
+            "Bswitch": {
+              "nonzero_entries": [
+                {
+                  "column0": 3,
+                  "column1": 4,
+                  "value": -0.3333333333333333
+                },
+                {
+                  "column0": 7,
+                  "column1": 8,
+                  "value": 0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "G": {
+              "nonzero_entries": [
+                {
+                  "column0": 3,
+                  "column1": 4,
+                  "value": -0.3333333333333333
+                },
+                {
+                  "column0": 7,
+                  "column1": 8,
+                  "value": 0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            }
+          },
+          "dropped_outward_rates": [],
+          "analytic_row_sum_from_dropped_rates": 0,
+          "causal_scope": "synthetic input-to-builder causality only; not a historical household rate"
+        },
+        {
+          "row0": 4,
+          "row1": 5,
+          "coordinate0": [
+            0,
+            0,
+            1
+          ],
+          "actual_input_rates": {
+            "b_backward": 0.0,
+            "b_forward": 0,
+            "a_backward": 0.0,
+            "a_forward": 0.0
+          },
+          "components": {
+            "BB": {
+              "nonzero_entries": [],
+              "row_sum": 0.0
+            },
+            "AAH": {
+              "nonzero_entries": [],
+              "row_sum": 0.0
+            },
+            "Bswitch": {
+              "nonzero_entries": [
+                {
+                  "column0": 0,
+                  "column1": 1,
+                  "value": 0.3333333333333333
+                },
+                {
+                  "column0": 4,
+                  "column1": 5,
+                  "value": -0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "G": {
+              "nonzero_entries": [
+                {
+                  "column0": 0,
+                  "column1": 1,
+                  "value": 0.3333333333333333
+                },
+                {
+                  "column0": 4,
+                  "column1": 5,
+                  "value": -0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            }
+          },
+          "dropped_outward_rates": [],
+          "analytic_row_sum_from_dropped_rates": 0,
+          "causal_scope": "synthetic input-to-builder causality only; not a historical household rate"
+        },
+        {
+          "row0": 5,
+          "row1": 6,
+          "coordinate0": [
+            1,
+            0,
+            1
+          ],
+          "actual_input_rates": {
+            "b_backward": 0.0,
+            "b_forward": 0,
+            "a_backward": 0.0,
+            "a_forward": 0.0
+          },
+          "components": {
+            "BB": {
+              "nonzero_entries": [],
+              "row_sum": 0.0
+            },
+            "AAH": {
+              "nonzero_entries": [],
+              "row_sum": 0.0
+            },
+            "Bswitch": {
+              "nonzero_entries": [
+                {
+                  "column0": 1,
+                  "column1": 2,
+                  "value": 0.3333333333333333
+                },
+                {
+                  "column0": 5,
+                  "column1": 6,
+                  "value": -0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "G": {
+              "nonzero_entries": [
+                {
+                  "column0": 1,
+                  "column1": 2,
+                  "value": 0.3333333333333333
+                },
+                {
+                  "column0": 5,
+                  "column1": 6,
+                  "value": -0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            }
+          },
+          "dropped_outward_rates": [],
+          "analytic_row_sum_from_dropped_rates": 0,
+          "causal_scope": "synthetic input-to-builder causality only; not a historical household rate"
+        },
+        {
+          "row0": 6,
+          "row1": 7,
+          "coordinate0": [
+            0,
+            1,
+            1
+          ],
+          "actual_input_rates": {
+            "b_backward": 0.0,
+            "b_forward": 0,
+            "a_backward": 0.0,
+            "a_forward": 0.0
+          },
+          "components": {
+            "BB": {
+              "nonzero_entries": [],
+              "row_sum": 0.0
+            },
+            "AAH": {
+              "nonzero_entries": [],
+              "row_sum": 0.0
+            },
+            "Bswitch": {
+              "nonzero_entries": [
+                {
+                  "column0": 2,
+                  "column1": 3,
+                  "value": 0.3333333333333333
+                },
+                {
+                  "column0": 6,
+                  "column1": 7,
+                  "value": -0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "G": {
+              "nonzero_entries": [
+                {
+                  "column0": 2,
+                  "column1": 3,
+                  "value": 0.3333333333333333
+                },
+                {
+                  "column0": 6,
+                  "column1": 7,
+                  "value": -0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            }
+          },
+          "dropped_outward_rates": [],
+          "analytic_row_sum_from_dropped_rates": 0,
+          "causal_scope": "synthetic input-to-builder causality only; not a historical household rate"
+        },
+        {
+          "row0": 7,
+          "row1": 8,
+          "coordinate0": [
+            1,
+            1,
+            1
+          ],
+          "actual_input_rates": {
+            "b_backward": 0.0,
+            "b_forward": 0,
+            "a_backward": 0.0,
+            "a_forward": 0.0
+          },
+          "components": {
+            "BB": {
+              "nonzero_entries": [],
+              "row_sum": 0.0
+            },
+            "AAH": {
+              "nonzero_entries": [],
+              "row_sum": 0.0
+            },
+            "Bswitch": {
+              "nonzero_entries": [
+                {
+                  "column0": 3,
+                  "column1": 4,
+                  "value": 0.3333333333333333
+                },
+                {
+                  "column0": 7,
+                  "column1": 8,
+                  "value": -0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            },
+            "G": {
+              "nonzero_entries": [
+                {
+                  "column0": 3,
+                  "column1": 4,
+                  "value": 0.3333333333333333
+                },
+                {
+                  "column0": 7,
+                  "column1": 8,
+                  "value": -0.3333333333333333
+                }
+              ],
+              "row_sum": 0.0
+            }
+          },
+          "dropped_outward_rates": [],
+          "analytic_row_sum_from_dropped_rates": 0,
+          "causal_scope": "synthetic input-to-builder causality only; not a historical household rate"
+        }
+      ]
+    }
+  ],
+  "real_historical_matrices": false
+}

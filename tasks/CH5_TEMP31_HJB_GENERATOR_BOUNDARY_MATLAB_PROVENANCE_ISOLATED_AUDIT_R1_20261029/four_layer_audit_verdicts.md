@@ -1,0 +1,12 @@
+# Four distinct audit layers and numerical evidence
+
+| Layer | Bounded conclusion | Not established |
+|---|---|---|
+| ORIGINAL_MATLAB_EXCERPT_SEMANTICS | Contract-authenticated GPT excerpts contain X/Y/Z, signed upper-a MhB, chih/yyh/zetah, spdiags offsets, homecrit=.01 and implicit step. | Codex raw ZIP/.m verification; complete padding/vector shifts, flags and every boundary convention. |
+| PYTHON_SOURCE_FAITHFULNESS_BOUND | Authenticated Python matches those quoted coefficient identities and offsets at a bounded semantic level. The absence of the quoted homecrit guard in this Python HJB is observable. | Whole-file identity or full MATLAB/Python matrix isomorphism; corrected net-wage code is not an untouched original. |
+| CTMC_GENERATOR_ADMISSIBILITY_MATH | Pure original builder accepts finite signed rates, can retain negative offdiagonals and lose/produce row mass under truncation. F1 is conservative; F2/F3/F4 expose different violations of the conservative criteria. | An accepted household boundary interpretation, all-selector input reachability, or a corrected generator implementation. |
+| CAUSAL_ATTRIBUTION_EVIDENCE | Synthetic matrices identify the injected input/component mechanism exactly. Historical summaries establish some negative entries and nonzero row norms, but not their row/rate attribution. | LAST_ITERATION_EXACT_RATE_ATTRIBUTION=BLOCKED_NOT_ARCHIVED for all three actual historical final matrices. |
+
+The previous delta1000/100/10 runs each stopped at80 without convergence; their max_abs_row_sum=.00045691399330394233 is below original homecrit=.01. Thus these values do not demonstrate a violation of the original MATLAB row-sum STOP threshold. Negative offdiagonals separately fail the ordinary conservative CTMC nonnegativity criterion, even with row sum0. MATLAB's quoted row-sum test alone does not enforce that criterion. Neither this static audit nor its four synthetic matrices proves that a given generator issue caused every observed oscillation/nonconvergence. Source fidelity, generator admissibility, numerical convergence and actual causal attribution are separate verdicts.
+
+A source-faithful formula may inherit a numerical/mathematical defect or an unstated boundary interpretation. Owner must decide archival-faithful replication versus a newly justified corrected scheme before any repair. No sign clipping, diagonal correction, boundary redistribution, tax change or policy modification was performed. No scientific/production PASS is issued.
