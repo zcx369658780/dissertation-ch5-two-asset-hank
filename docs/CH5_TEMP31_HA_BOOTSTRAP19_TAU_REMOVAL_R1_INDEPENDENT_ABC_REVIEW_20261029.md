@@ -1,0 +1,89 @@
+# TEMP31 首轮数值工资19 + HJB去重复税楔：GPT独立 A/B/C 审阅
+
+REVIEW_DATE=2026-10-29
+REVIEW_KIND=INDEPENDENT_GITHUB_FIXED_COMMIT_A_B_C
+TASK_ID=CH5_TEMP31_HA_TAU_REMOVAL_NUMERICAL_BOOTSTRAP19_ISOLATED_R1_20261029
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_PARENT_AT_REVIEW=3a7ff55530726e4ef872d793874467f52437e587
+TASK_PUBLICATION_COMMIT=3a7ff55530726e4ef872d793874467f52437e587
+TASK_PUBLICATION_PARENT=48326a32e50af7c6c559778132e8b99e1cf371c2
+TASK_PUBLICATION_ROOT_TREE=0c27bad839ee899ae925a8914c82b7416259dc7e
+SOURCE_COMMIT=5f55365d2aff6bd1517a567e2bcaf17452960a7e
+SOURCE_ROOT_TREE=84424adb69027d4bb3b82f6481f5b961f051033c
+CANDIDATE_BRANCH=codex/ch5-temp31-ha-net-wage-no-tau-bootstrap19-20261029-r1
+PAYLOAD_COMMIT=5b073e6e2d5caffb69e3d6d5e21f3f7ae1e23168
+PAYLOAD_PARENT=5f55365d2aff6bd1517a567e2bcaf17452960a7e
+PAYLOAD_ROOT_TREE=a868deab011370850b944709a3e2d73fea745f06
+FINAL_COMMIT=10ee7973713c547faa581388aa97fbfd898809de
+FINAL_PARENT=5b073e6e2d5caffb69e3d6d5e21f3f7ae1e23168
+FINAL_ROOT_TREE=301340d8521e645275466602159343527344390a
+OVERALL=CHANGES_REQUIRED__NEW_TEMP31_HJB_POLICY_CALL_UNBOUND__DELIVERY_AND_NUMERICAL_BOOTSTRAP_BOUNDED_PASS
+AUTO_NEXT=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+
+## A. Git提交链、原始交付文件及来源
+
+1. GitHub Git对象API直接确认治理任务发布commit的直接parent及tree、候选branch HEAD、payload commit和seal commit各唯一parent/root tree，与交付所列固定身份一致。compare SOURCE_COMMIT→FINAL_COMMIT为ahead2/behind0、**30个新增文件、0个原有文件修改/删除**。其中6个新代码文件及24件证据。compare PAYLOAD_COMMIT→FINAL_COMMIT仅新增DELIVERY_FINAL_RECEIPT.json。
+2. 从FINAL_COMMIT经GitHub固定路径 fetch_file(encoding=base64) 精确读取manifest列出的**28件payload**，独立base64解码原字节后计算bytes及SHA-256，逐项核对manifest记载bytes/SHA256和GitHub返回的Git Blob：**28/28一致**。独立SHA-256纯实现用空串及abc公开标准测试向量校验。manifest及seal独立追加核验，总计 **30/30远端字节/哈希/Blob一致**。
+3. 本次manifest Git Blob=cd194280cc7d3e2eb7edb085a7000f349158b353，bytes=13938，SHA256=5075abcc580d1ac66ce7d298ade7fe723bef79a976743fc3a2c4d851fb063aba。seal Git Blob=4954cc3ee6957251148255aa56ad6002d216f774，bytes=13975，SHA256=2960aeafbba828ef3b16af281e80277a4160b53e9667685c72affc48475474b8。
+4. SOURCE_COMMIT的12份必要原始路径经GitHub固定commit读取逐项核Git Blob，**12/12与source_identity.json匹配**。其中5份本地缺失源的Git对象通过一次有界SSH获取，pack14,020 bytes、5 objects、0 retries是Codex执行回执，GPT只确认其公开核验回执原字节及这5份GitHub源码Blob，未独立观察SSH传输或本地pack字节/哈希，不把执行者记录误写为GPT现场认证。
+5. 外置最终原始readback回执仍在用户本地D盘，GPT无其原字节；seal内部remote_readback=PENDING_EXTERNAL_FINAL_RECEIPT属于不自引用设计。GPT本轮已经直接对GitHub最终固定commit进行30/30完整远端校验，因此remote delivery=PASS，但不是本地外置回执PASS。P3未触碰、锁保持原状、实际终端STOP均为Codex报告，不是GPT独立Windows工作区监控。
+
+A_DELIVERY=PASS__30_OF_30_FINAL_REMOTE_BYTES_SHA256_BLOB
+A_SOURCE_IDENTITY=PASS__FIXED_PARENT_TREE__12_REQUIRED_BLOBS_MATCH
+A_LOCAL_ONLY_RECEIPTS=NOT_INDEPENDENTLY_OBSERVED
+
+## B. 固定代码与独立关键问题：HJB调用目标未绑定
+
+六份新增代码确实将首轮有效工资19分离为NUMERICAL_NET_WAGE_INITIAL_GUESS_NOT_EMPIRICAL，同时新Temp31NetWageInputs不含tau/migration_costs，原始state和真实目的地tau_j/sigma保持独立数据；这一决策与Owner已批准方案A相符。
+
+对新增源码的指定六处工资因子，静态实际代码为：
+- src/ch5_two_asset_hank/multi_province/temp31_ha_taxfree_bootstrap.py 行212：wage=inputs.wages[0]*z，旧初始化中(1-tau)因子已取消；
+- src/ch5_two_asset_hank/temp31_netwage_hjb.py 行93：resources=inputs.wages[0]*z*labor0 + transfer_income + rb*b；
+- src/ch5_two_asset_hank/temp31_netwage_policy.py 行137-140：net_wage=local_inputs.wages[0]*z，policy预算/消费继续使用该系数；
+- src/ch5_two_asset_hank/temp31_netwage_economics.py 行81-87：劳动FOC有效工资inputs.wages*z；
+- 同一economics行101-118、121-141：两类asset drifts均以sum(inputs.wages*z*labor)计劳动收入。
+这些局部表达式在限定的源码级含义下去除了额外税/迁移楔。历史MATLAB-faithful源及R4/R5已审阅文件没有被当前候选修改。
+
+**B阶段确认的阻断性缺陷（FIX_REQUIRED-001，非推测）：**
+- 固定候选文件 src/ch5_two_asset_hank/temp31_netwage_hjb.py **第14行**：from .temp31_netwage_policy import select_temp31_netwage_local_policy
+- 同文件**第105行**：policy = select_matlab_faithful_local_policy(...)
+- 新HJB模块没有导入/定义第105行的旧名select_matlab_faithful_local_policy。故当真实HJB运行路径到达第105行时会发生NameError，除非发生未经证实的外部运行时猴子补丁；不能宣称新HJB的调用链已经可执行闭合或完整SOURCE_LEVEL_TAU_REMOVAL_COMPLETE。
+- 这也解释了现有测试为何漏检：test_corrected_dependency_bindings_and_operator_unchanged只检验**正确import语句存在**，未检查被调用的实际函数名称是否引用了该import；测试的RestoreHistorical AST逆变换将新名称映射回旧名称，可能令保留的旧调用名在旧版AST等价检查中不显异常。源表达式标量测试并不调用HJB/policy函数。
+- 这是应当有界修复的调用目标绑定错误：新HJB第105行应调用已经导入的 select_temp31_netwage_local_policy；同时新增针对HJB AST**import/definition/call目标一致性**的断言与故意恢复旧函数名的反例。须在新的受控候选中完成与重新审阅，不能修改已冻结的本任务候选、历史MATLAB或直接接线生产。真正的完整HJB运行仍另需Owner科学预算。
+- 除此之外，源码级净工资19同旧20*(1-.05)数值系数相等的标量示例，以及后续目的地税后工资(5,4)的纯代数比较有支持；但**尚无初始化root/local policy/HJB/grid/operator/KFE真实执行，不能推断运行正确、数值收敛或一般均衡闭合。**
+
+测试证据：第一组contract 8/8 exit0，第二组source-algebra 8/8 exit0，总16/16，两次命令预算2/2，日志、事前claim和exit/hash回执均在28件已独立认证的payload中。测试runner只做有限模块definition加载、源码AST和单元素标量表达式，不导入执行新HJB/policy，也未做真实求解。因此 numeric_review=PASS_BOUNDED_ON_TESTED_ALGEBRA，但 implementation_review=CHANGES_REQUIRED_ON_ACTUAL_CORRECTED_CALL_GRAPH。
+
+## C. 分层裁决
+
+artifact_integrity=PASS__30_OF_30_FIXED_REMOTE_ORIGINAL_BYTES_SHA256_GIT_BLOB
+source_identity=PASS__COMMIT_PARENT_TREE__12_OF_12_SOURCE_BLOB
+numeric_review=PASS_BOUNDED__16_OF_16_EXECUTOR_LOGGED_SCALAR_AST_CASES__NO_REAL_HA
+implementation_review=CHANGES_REQUIRED__UNBOUND_SELECT_MATLAB_FAITHFUL_LOCAL_POLICY_NAME_IN_NEW_HJB_LINE105
+scientific_review=BLOCKED__ACTUAL_HA_HJB_KFE_GRID_OPERATOR_NOT_RUN__FISCAL_Z_N_UNITS_AND_PRIMARY_WAGE_SOURCES_PENDING
+privacy_review=PASS_BOUNDED__PUBLIC_PAYLOAD_CHECKED__PRIVATE_LOCAL_ONLY_RECEIPTS_NOT_SEEN
+actual_terminal=EXECUTOR_REPORTED_STOP__REMOTE_COMMIT_CONFIRMED__LOCAL_STOP_NOT_WITNESSED
+delivery=PASS__TWO_STAGE_CHAIN__30_OF_30_GITHUB_BYTES_HASH
+cleanup=NOT_AUTHORIZED_NOT_PERFORMED__KEEP_R3_R4_R5_AND_CURRENT_CANDIDATE
+not_completed=CORRECTED_HJB_CALL_GRAPH_REPAIR__REAL_HA_CONSUMER__PRODUCTION_WIRING__FISCAL_AND_LABOR_UNITS__THREE_PRIMARY_EXCEL__V010_V011__RESULTS
+OVERALL=CHANGES_REQUIRED__CALL_TARGET_NOT_BOUND__PRESERVE_BOUNDED_BOOTSTRAP19_AND_SIX_LOCAL_WAGE_FORMULAS
+NEXT_ACTION=OWNER_DECISION_REQUIRED__NO_AUTO_REPAIR_TASK
+
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+PROTECTION_BASELINE=BLOCKED
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
+
+本报告只提出需要修复的固定源码缺陷及遗漏的测试硬门，不进行候选修改、合并、生产接线、旧保护树访问、真实HA运行或自动下单。
