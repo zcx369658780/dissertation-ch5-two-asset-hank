@@ -1,0 +1,118 @@
+# CH5 TEMP31 R6-R3-R2-R1：固定合同来源读取恢复＋R40入口冲突只读治理（独立任务）
+
+TASK_ID=CH5_TEMP31_R6_R3_R2_R1_FIXED_CONTRACT_READ_AND_ROUTER_RECOVERY_20261031
+STATUS=ISSUED_AWAITING_OWNER_TRANSFER
+OWNER_APPROVAL=2026-10-31__ONE_BOUNDED_SOURCE_READ_RECOVERY_AND_R40_ROUTER_ISOLATION__NO_MATLAB
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_PARENT=40e7b2e1ee93973ca63b509f53f20e21c6f149ad
+TASK_PUBLICATION_COMMIT=GPT_SUPPLIES_EXACT_40_HEX_SHA_AFTER_PUBLICATION
+EXPECTED_GOVERNANCE_HEAD=TASK_PUBLICATION_COMMIT_STRICT_EQUALITY
+TASK_CONTRACT_PATH=tasks/CH5_TEMP31_R6_R3_R2_R1_FIXED_CONTRACT_READ_AND_ROUTER_RECOVERY_20261031/CONTRACT.md
+CANDIDATE_BRANCH=codex/ch5-temp31-r6-r3-r2-r1-fixed-contract-router-recovery-20261031
+FIXED_SCIENTIFIC_PARENT=56447829ce0e6c3c85552c53c351b26a2452a4bd
+FIXED_SCIENTIFIC_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
+TARGET_R6_R3_R2_TASK_ID=CH5_TEMP31_R6_R3_R2_120S_ISOLATED_PREFDIR_NATIVE_STARTUP_20261030
+TARGET_R6_R3_R2_CONTRACT_COMMIT=40e7b2e1ee93973ca63b509f53f20e21c6f149ad
+TARGET_R6_R3_R2_CONTRACT_PATH=tasks/CH5_TEMP31_R6_R3_R2_120S_ISOLATED_PREFDIR_NATIVE_STARTUP_20261030/CONTRACT.md
+TARGET_R6_R3_R2_CONTRACT_BLOB=1d7c4c960b9b6d47cc9e8182afd2859372caa168
+TARGET_R6_R3_R2_CONTRACT_UTF8_BYTES=15857
+TARGET_R6_R3_R2_CONTRACT_PARENT=3957f405143af3d08aba70800f25b099d81d4d48
+TARGET_R6_R3_R2_CONTRACT_TREE=9f10a1c03e56c142eb1a3f88a2a8ee0494cff343
+TARGET_R6_R3_R2_CANDIDATE_BRANCH=codex/ch5-temp31-r6-r3-r2-120s-native-startup-20261030
+TARGET_R6_R3_R2_INITIAL_REMOTE_CANDIDATE=NOT_FOUND_AS_OF_2026_10_31_GPT_READ
+TARGET_R6_R3_R2_ORIGINAL_STOP=EXECUTOR_STOP_AT_FIXED_CONTRACT_HTTP_TRANSPORT_FAILURE__EXACT_TERMINAL_LABEL_NOT_SUPPLIED
+TARGET_R6_R3_R2_ORIGINAL_ROOT_CAUSE=UNKNOWN
+TARGET_R6_R3_R2_MATLAB_CALLS=0
+LOCAL_BOOT_INDEX_AT_OWNER_REPORT=POINTS_TO_UNRELATED_R40_TASK__EXECUTOR_ATTESTED
+R40_EXACT_TASK_ID=UNKNOWN__DO_NOT_GUESS
+R40_PAYLOAD_ACCESS=NOT_AUTHORIZED
+R40_EXECUTION=NOT_AUTHORIZED
+MAX_NEW_MATLAB_PROCESS_CREATIONS=0
+MAX_NEW_MATLAB_RUNTIME_COMMANDS=0
+MAX_NEW_JOB_OR_COMPLETION_PORT_EXPERIMENTS=0
+MAX_NATIVE_PREFDIR_CREATIONS_OR_ENTRY_READS=0
+MAX_HA_HJB_KFE_GE_IRF_POLICY_FIRM_REAL31_MODEL_CALLS=0
+MAX_PRICE_POINTS=0
+MAX_OLD_NPZ_READS=0
+MAX_RUNTIME_SCIENCE_TESTS=0
+MAX_FORMAL_SCIENCE_SOURCE_WRITES=0
+MAX_R40_ROUTER_SOURCE_WRITES=0
+MAX_GLOBAL_TASK_INDEX_WRITES=0
+MAX_OLD_TASK_HISTORY_WRITES=0
+MAX_TARGET_CONTRACT_READ_INITIAL_ATTEMPTS=1
+MAX_TARGET_CONTRACT_TRANSIENT_SAME_ROUTE_RETRIES=1
+MAX_ALTERNATE_PROTOCOL_ACCOUNT_ENDPOINT_SOURCE_READS=0
+MAX_NEW_REPOSITORIES_WORKTREES=0
+MAX_ISSUE_PR_MERGE_CLEANUP=0
+AUTO_NEXT=FALSE
+
+## 0. 新独立授权、旧STOP及不能自行恢复120秒实验
+
+Owner批准独立一轮修复上一轮R6-R3-R2因GitHub固定合同读取HTTP传输错误而在执行前STOP的问题，并核对本地启动索引误指向无关R40任务。此任务只做固定GitHub源读取、一次有界原同路瞬时失败重试（满足下列明确前提）、本地既有任务入口只读身份核验、任务专属LOCAL_ONLY交接标识和可发布的安全诊断。**不授权执行原120秒MATLAB实验**；即便所有预检PASS也STOP__AWAITING_GPT_INDEPENDENT_ABC及随后Owner授权，不得把已停止旧任务的剩余预算自动恢复使用。
+
+上一轮事实只能记：Codex在读取治理固定提交40e7b2e1...中的CONTRACT.md时遇HTTP transport exception，未取得合同，未重试、未切途径，MATLAB/Job/目录/控制器/Git写入均0；治理parent/tree/Blob/候选身份等没有在旧Codex执行中验完。旧本地启动索引仍指向不同R40任务，旧R40没有执行；原始具体错误码/堆栈和精确R40 ID目前没有上传GPT，因此都必须保留UNKNOWN/EXECUTOR_ATTESTED，不编造或追溯修改旧STOP。已核验的GPT独立新证据：同固定提交与path通过已连接GitHub fetch_file成功，Git Blob=1d7c4c960b9b6d47cc9e8182afd2859372caa168，治理HEAD仍40e7b2e1...，tree9f10a1c03e56c142eb1a3f88a2a8ee0494cff343，原R6-R3-R2候选404。GPT读取成功不能证明Codex旧HTTP失败根因或Codex新连接可用。
+
+原R6、R6-R1、R6-R2、R6-R3、R6-R3-R1全部历史STOP、LOCAL_ONLY日志、原首选项目录与源码保护不变。此前科研状态P3=BLOCKED、Results=FALSE；不自动走后续源模型、MATLAB或PR/Issue。
+
+## 1. 来源读取阶段：身份、单路径同路有界重试及真实异常记录
+
+优先核对GPT发布后治理commit的真实单parent=GOVERNANCE_PARENT、root tree、diff仅本新CONTRACT、contract Git Blob、UTF8 byte count/SHA256。应在调用新任务合同的本地既有授权GitHub连接器之前确保正在使用明确的TASK_PUBLICATION_COMMIT和本TASK_CONTRACT_PATH，不使用无ref默认分支、模糊branch或历史R40合同代替；对新合同和旧目标合同的所有单项调用均逐项记录成功/错误。治理分支远端HEAD必须严格等于TASK_PUBLICATION_COMMIT，任何推进均STOP。新任务candidate和旧目标candidate是否存在须分别从精确ref只读核验；已存在新candidate时STOP，不覆盖。
+
+**目标源硬门**：仅允许官方既有获批GitHub连接器在固定 TARGET_R6_R3_R2_CONTRACT_COMMIT 和精确 TARGET_R6_R3_R2_CONTRACT_PATH 读取完整UTF8正文。一次initial attempt，若真实异常确属TEMPORARY_HTTP_TRANSPORT/TIMEOUT/CONNECTION_RESET/5XX，最多在**完全相同工具动作、同ref、同path、同认证、同连接端点、同获取参数**进行一次retry；重试无论成功失败都留下实际attempt_index/exception class、可安全脱敏的HTTP status及message、阶段和结果。成功后必须从真实返回内容独立校验Git Blob、实际UTF8 bytes=15857、SHA256、完整正文含任务ID/owner approval/120秒/Job与策略B预算。不用仅200或名义blob代替真实全文；若实际内容不完整、blob不符、UTF8异常或与已批准合同矛盾，即STOP，不能使用旧缓存或摘要填补。
+
+若返回401/403、PERMISSION_DENIED、UNAUTHORIZED、安全访问拒绝、真实404、固定SHA不一致、内容解码/完整性失败，立即STOP；不得重试、切换账号/凭据/协议、REST/raw/浏览器端点、远程镜像、网络代理或历史ZIP；不得通过默认分支、公共网页、GPT在对话中复制的合同、Project Sources、私人本地缓存替代**Codex实际固定ref来源读取硬门**。对于transport但无真实error detail，允许本合同约束的一次同路retry，也不得声称旧错误根因已知。若Codex连接器自身并未提供确切官方固定ref可读动作、或者其API仍不允许读完整正文，按合同STOP不绕过。无需重新枚举R5/R6旧历史来源。
+
+保留 source_read_attempts.jsonl LOCAL_ONLY真记录；公开仅脱敏摘录与来源身份，至少有 step/ref/path-role/method/tool-call role/attempt_index/response kind/found/actual blob/utf8 bytes/SHA256/error name/sanitized transport failure/stage/retry classification/terminal。若成功需要同时取得新任务合同及旧目标合同的真实完整字节身份，不可把GPT先前的读回冒充本地Codex读回。
+
+## 2. R40入口冲突：只读识别与任务专属路由，不动旧索引
+
+仅在当前已授权既有安全工作区、且目标固定合同READ_PASS之后，对实际被Owner报告指向R40的**已知本地启动索引的那个确切文件**进行只读验证（文件路径必须已在该安全工作区授权配置/既有明确入口中可确定，不能glob式搜索所有launchers/保护目录）。公开报告只记录角色、原文件Git Blob/bytes/SHA256（若适用）、入口任务标识字符串及其取值等级，不公开私人绝对路径、敏感环境值。只需读取判别入口所需的最小字节/字段；如文件中包含R40任务正文、保密材料或其他任务路径，不解引用/打开R40任务文件，不读取R40源码、不执行R40或其子脚本。
+
+必须严格区分：
+- GLOBAL_OR_PRIOR_LAUNCH_INDEX，原来指向R40，属于历史受保护入口；
+- R6_R3_R2_R1_SOURCE_RECOVERY_TASK，当前已签发的诊断任务；
+- R6_R3_R2_120S_TARGET_CONTRACT，是未来实验合同，但**本次没有实验执行权限**。
+
+不允许修改全球/既有启动索引或R40任何文件，不允许持久化覆盖“active task”、更改全局AGENTS/工作流或把R40标为已执行。只允许在本新任务唯一LOCAL_ONLY证据子目录新增task-scoped direct handoff pointer或静态 JSON/MD，明确原任务合同commit/path/blob与当前诊断任务 TASK_ID、当前零MATLAB预算、路由目标；对这个新文件立即readback并检查目标字符串完全正确，没有R40任务被分配给当前执行流程。该pointer只能用于本轮非执行的身份隔离证明，不可自动触发旧R6-R3-R2或R40。要想在旧全局launcher下真正运行未来实验，仍需新的Owner明确批准其安全路由方式。若既有launcher的优先级始终强制读取R40且安全路线无法证实绕开其**执行**，则STOP__R6_R3_R2_R1_ROUTER_UNRESOLVED；不以自己的新pointer存在冒充全局索引已修复。允许进行无子进程启动的静态路由解析/AST检查，实际执行命令、模型运行与读取R40 payload预算0。
+
+如R40标识本身只存在于执行者先前口头报告、无授权可读实际index，则标ROUTER_PENDING_IO，不造一个假R40文件或路径。禁止使用本任务为由修复、更改或运行R40。
+
+## 3. 新任务交付白名单、预算、隐私及严格STOP
+
+本任务科学/原生运行=0。只允许新增一个**隔离纯只读来源和router核验辅助脚本**：
+validators/multi_province/temp31_r6_r3_r2_r1_fixed_source_router_preflight_isolated.py
+必须以Python标准库进行确切授权本地文件读取、hash、静态文本/JSON校验和脱敏。不能subprocess.Popen或os.system执行命令，不访问系统进程、内存、Job、MATLAB、NPZ、旧prefdir、工作区外文件。连接器调用可由Codex本地获批连接器完成并以其真实返回写入隔离LOCAL_ONLY receipt，不需要新网络脚本/credential bypass；若工具无法按固定ref提供内容，STOP。
+
+唯一允许新增公开证据目录：
+tasks/CH5_TEMP31_R6_R3_R2_R1_FIXED_CONTRACT_READ_AND_ROUTER_RECOVERY_20261031/
+下的 result.md、source_identity.json、source_read_attempts_public.json、target_contract_fixed_ref_readback.json、governance_and_candidate_ref_gate.json、local_launcher_index_identity.md、task_scoped_handoff_pointer_identity.json、r40_nonexecution_and_router_risk.md、prior_stop_preservation.md、model_budget_zero.json、gap_register.md、privacy_report.md、manifest.json、DELIVERY_FINAL_RECEIPT.json 及确实必要的少量脱敏原始证据。新task-scoped pointer的完整可执行路径/个人绝对路径与连接器原始错误堆栈仅LOCAL_ONLY；可发布其结构化去标识摘要/哈希，不得把真实connector token、账号、私密文件路径写进GitHub。旧R6-R3-R2原合同、旧本地boot index、R40、科学src/exports、治理规则和已有STOP/日志/偏好目录不可修改。隐私门强制调用现有未修改的扫描规则，不能放宽、跳过或用新的正则替代。
+
+只有当新治理/旧目标固定全文来源均READ_PASS，R40安全隔离路由READ_PASS或严格有界标ROUTER_PENDING_IO（不得声称解决），且安全/隐私满足条件时才能从固定科研父提交创建唯一新candidate并尝试交付；如果目标来源失败，允许保留LOCAL_ONLY真实STOP回执但不允许发布“通过”的GitHub候选，科学调用0。合法交付时只新增白名单脚本/新任务证据，payload单一新commit及经已授权正常SSH普通push最多一次，固定远端读取commit/parent/tree及每个path Git Blob/bytes/SHA256；seal只新增本任务DELIVERY_FINAL_RECEIPT.json，独立隐私门PASS后SSH普通push最多一次，再完整远端回读；final seal自身份外置LOCAL_ONLY回执，不追加第三commit。SSH状态未知只准同一官方ref只读消歧，不重试push、不替换账号/协议/端点；不能Issue/PR/merge/cleanup/force-push或自动签发下一任务。
+
+建议严格终态：
+STOP__AWAITING_GPT_INDEPENDENT_ABC = 固定来源读取PASS、router隔离有据且正常交付；
+STOP__R6_R3_R2_R1_SOURCE_READ_RECOVERY_BLOCKED = 原固定来源本轮仍无法获得或身份不符；
+STOP__R6_R3_R2_R1_ROUTER_UNRESOLVED = 入口无法证明安全、或者仍强制指向R40；
+STOP__R6_R3_R2_R1_SOURCE_PRIVACY_OR_DELIVERY_BLOCKED = 源身份、权限、隐私或GitHub交付硬门阻断；
+STOP__R6_R3_R2_R1_BOUNDED_ROUTER_PENDING_IO = 固定来源可证、原索引无合法原字节，已如实交付有界报告但未认证入口安全。
+
+GPT后续独立A：固定来源、字节/Blob、candidate完整性、远端readback、隐私；B：错误保真/合法重试、R40真实pointer是否安全隔离、真实本地入口是否已知、旧索引保护；C：artifact_integrity/source_identity/numeric_review/implementation_review/scientific_review/privacy_review/actual_terminal/delivery/cleanup/not_completed。科学/原生 numeric_review=NOT_TESTED_BY_DESIGN。本任务产物**不是**原R6-R3-R2 120秒实验的通过凭证和新的启动授权。完成后STOP，Owner再决定是否单独恢复实验。
+
+继承科学状态不变：
+P3=BLOCKED
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+STRICT_KFE_STATIONARITY=FALSE_INHERITED_R3_R4_R5
+OLD_R6_R6_R1_R6_R2_R6_R3_R6_R3_R1_STOPS=IMMUTABLE
+ORIGINAL_R5_BATCH_FAILURE_ROOT_CAUSE=UNKNOWN
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
