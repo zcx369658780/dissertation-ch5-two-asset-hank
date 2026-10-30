@@ -1,0 +1,145 @@
+{
+  "event": "point_result",
+  "point": "D00",
+  "prices": {
+    "id": "D00",
+    "rah": 0.045,
+    "rb": 0.02,
+    "wt": 19
+  },
+  "classification": "HJB_NOT_CONVERGED",
+  "fatal_to_task": false,
+  "wage_provenance": {
+    "scope": "NUMERICAL_NET_WAGE_INITIAL_GUESS_NOT_EMPIRICAL",
+    "chain": [
+      "numerical_bootstrap19",
+      "netwage_inputs"
+    ],
+    "entering_iteration": 1,
+    "synthetic_firm_wage": null,
+    "point": "D00",
+    "requested_effective_wage": 19,
+    "actual_source_effective_wage": 19.0,
+    "wage_error": 0.0,
+    "context_id": "TEMP31_MATLAB800_SYNTHETIC_LOCAL_DOMAIN_R2_20261030_D00",
+    "province_order": [
+      "A",
+      "B"
+    ],
+    "record_semantics": "NUMERICAL_NET_WAGE_INITIAL_GUESS_NOT_EMPIRICAL",
+    "real_empirical_provenance": false,
+    "tax_background_preserved": true
+  },
+  "initialization": {
+    "consumption_shape": [
+      20,
+      20,
+      2
+    ],
+    "consumption_min": 10.246408658681453,
+    "consumption_max": 15.764783032262208,
+    "consumption_F_sha256": "359c73cef2ef4e1a8323218a723ea487a9a18058eea13e811275ba2327cbbe17",
+    "shape": [
+      20,
+      20,
+      2
+    ],
+    "states": 800,
+    "value_min": -2.279631045581999,
+    "value_max": -1.4773663682785227,
+    "labor_min": 0.6301487494957371,
+    "labor_max": 0.6793762621614103,
+    "finite": true,
+    "value_F_float64_sha256": "81e3e5cb22d723faf576a179b3600c77a0a72d01c60cb26b7b0979f4a019f694",
+    "labor_F_float64_sha256": "aefa6b5a27b9581a5932e4f80755a3770cf2a81a2744b4657e4c0e1ac2915c52",
+    "fresh_for_point": "D00",
+    "warm_start": false
+  },
+  "HJB_SOURCE_CONVERGED": false,
+  "MATLAB_KFE_METHOD_EXECUTED": "NOT_RUN",
+  "SOURCE_METHOD_INTERIOR_CANDIDATE": "NOT_EVALUATED",
+  "STRICT_ECONOMIC_STATIONARITY_CERTIFIED": "NOT_EVALUATED",
+  "HJB": {
+    "converged": false,
+    "iterations": 100,
+    "convergence_statistic": 0.41998664703399347,
+    "finite_return_fields": {
+      "value": true,
+      "initial_value": true,
+      "consumption": true,
+      "labor": true,
+      "transfer": true,
+      "adjustment_cost": true,
+      "effective_illiquid_return": true,
+      "mu_a": true,
+      "mu_b": true,
+      "utility": true
+    },
+    "iteration_operator": {
+      "shape": [
+        800,
+        800
+      ],
+      "nnz": 3543,
+      "finite": true,
+      "row_sum_abs_max": 0.0021705954057352206,
+      "max_signed_row_sum": 3.1596175398274085e-08,
+      "min_offdiagonal_including_implicit_zeros": -209.10423734287883,
+      "csr_sha256": "c74256be89e28ac88fe17a79680aa7fd12f3ff2e67d130f9e049e89f027dd3cc"
+    },
+    "post_convergence_operator": {
+      "shape": [
+        800,
+        800
+      ],
+      "nnz": 3121,
+      "finite": true,
+      "row_sum_abs_max": 0.7695000000000316,
+      "max_signed_row_sum": 7.947285968201712e-08,
+      "min_offdiagonal_including_implicit_zeros": 0.0,
+      "csr_sha256": "65e398efa049ea3dfd7c7f6bf45533fd9bc5a86c5d3a3204b3cdc62361f55999"
+    },
+    "max_observed_iteration_row_sum_abs": 0.021404780369872867,
+    "MATLAB_homecrit": 0.01,
+    "observed_homecrit_violation": true,
+    "homecrit_guard_internal": "ABSENT_UNCHANGED_EXTERNAL_READONLY_OBSERVATION",
+    "source_parity": "SOURCE_PARITY_WARNING_OR_BLOCKED",
+    "stale_last_policy_residual": 0.00041998664703384037,
+    "implicit_identity_error": 3.241262999662594e-07,
+    "full_nonlinear_Bellman_residual": "NOT_EVALUATED",
+    "warnings": []
+  },
+  "KFE": {
+    "status": "NOT_EXECUTED_HJB_NOT_CONVERGED",
+    "source_method_executed": false,
+    "At": null,
+    "Bt": null,
+    "Lt": null,
+    "Ct": null,
+    "a_mass20": null,
+    "b_mass20": null
+  },
+  "observed_counts": {
+    "initializer_calls": 1,
+    "root_cells": 800,
+    "brentq_calls": 800,
+    "hjb_calls": 1,
+    "hjb_iterations": 100,
+    "hjb_policy_cells": 80000,
+    "operator_assemblies": 101,
+    "hjb_linear_solves": 100,
+    "kfe_calls": 0,
+    "kfe_linear_solves": 0,
+    "kfe_contaminated_row_index_calls": 0
+  },
+  "LOCAL_ONLY_hjb_archive": {
+    "task_relative_path": "evidence/LOCAL_ONLY_D00_true_arrays_and_rates.npz",
+    "bytes": 109079,
+    "sha256": "dd82517824c8791c10b9a8af4ecd133c2000d829ec0cde7a95b2c76c5ccac602",
+    "LOCAL_ONLY": true,
+    "observed_new_point_not_historical_tinygrid": true
+  },
+  "MATLAB_RAW_LOCAL_VERIFICATION": "NOT_AVAILABLE",
+  "firm_GE_IRF_outer_31province_data_calls": 0,
+  "source_or_economic_parameter_changes": 0
+}

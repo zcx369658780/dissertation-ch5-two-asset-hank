@@ -1,0 +1,5 @@
+# Exact public evidence privacy gate
+
+Raw scientific stdout/stderr, complete density/vector and CSR archives remain LOCAL_ONLY. Public logs are derived by authenticated exact workspace/runtime-prefix replacement plus separator normalization of metadata fields only; per-point redaction records bind raw/public bytes/SHA256 and JSON pointers. Numerical values, failures, warnings and true counters are preserved. Source identity and archive references use forward-slash repository-relative paths. No private MATLAB, personal empirical data or credentials are published.
+
+The previously authenticated mandatory privacy assert is evaluated unchanged on every exact payload file and manifest before any commit, then again on all final files including seal. No rule ignore/skip or relaxed conditions. JSON/AST validation is static only. Actual scan results belong to delivery receipts; no public success is inferred merely from file naming. Scientific source caches, operational helpers and external final receipt are excluded and retained locally.

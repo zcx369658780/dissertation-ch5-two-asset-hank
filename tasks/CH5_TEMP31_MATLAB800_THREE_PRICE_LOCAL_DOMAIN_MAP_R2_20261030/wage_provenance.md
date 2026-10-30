@@ -1,0 +1,5 @@
+# Net wage source and fresh initialization
+
+D00-D04 use actual numerical_bootstrap19 -> netwage_inputs, NUMERICAL_NET_WAGE_INITIAL_GUESS_NOT_EMPIRICAL. D05-D11 use actual SyntheticNetWageCalculation -> calculated_round_record -> later_net_wage_record -> netwage_inputs. The firm wage is target wt divided by .95*2^(5/6), with A/B, tau_j=.05, sigma=0, phi_ji=1, phi_l=5, alphal=1. All12 source-derived effective wages were checked inside D00 before model calls, each error<=1e-12; actual per-point witness is in result/point_wage_input events. No real firm or iteration was run; after_iteration1/entering_iteration2 are provenance witness labels only.
+
+Every point calls the fixed initializer exactly once with fresh arrays, source wages*z, no second tau/sigma and no warm start. Initial value/labor/consumption summaries and F-byte hashes plus800 root cells and actual brentq count are recorded. Initial consumption is a read-only reconstruction of the source initializer's budget line, not another solve. The source temp uses effective_return squared; its scientific interpretation is not resolved or modified here.
