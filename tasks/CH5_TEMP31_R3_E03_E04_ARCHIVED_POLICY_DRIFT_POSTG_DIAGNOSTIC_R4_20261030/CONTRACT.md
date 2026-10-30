@@ -1,0 +1,109 @@
+# TEMP31 R4：E03/E04 原归档政策结果、资产漂移与后置算子只读机制审计
+
+TASK_ID=CH5_TEMP31_R3_E03_E04_ARCHIVED_POLICY_DRIFT_POSTG_DIAGNOSTIC_R4_20261030
+STATUS=ISSUED_AWAITING_OWNER_TRANSFER
+OWNER_APPROVAL=2026-10-30__ARCHIVED_E03_E04_ONLY_ZERO_MODEL_CALL_MECHANISM_AUDIT
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_PARENT=074a97985de1e1952bc42e20b3a44e1a3851a8bb
+TASK_PUBLICATION_COMMIT=GPT_SUPPLIES_EXACT_SHA_AFTER_PUBLICATION
+EXPECTED_GOVERNANCE_HEAD=TASK_PUBLICATION_COMMIT_STRICT_EQUALITY
+TASK_CONTRACT_PATH=tasks/CH5_TEMP31_R3_E03_E04_ARCHIVED_POLICY_DRIFT_POSTG_DIAGNOSTIC_R4_20261030/CONTRACT.md
+CANDIDATE_BRANCH=codex/ch5-temp31-r3-e03-e04-readonly-mechanism-r4-20261030
+FIXED_SCIENTIFIC_PARENT=56447829ce0e6c3c85552c53c351b26a2452a4bd
+SOURCE_PARENT=a51c2e7ff6548340a1ee86857b0ee55792fa69b4
+SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
+SOURCE_HJB_BLOB=56441c1c41ec94190997ce6f0ecbb2b5c2ca7b56
+SOURCE_KFE_CORE_BLOB=4ccb7cec8c4754e91bd8830a95dc533811784391
+SOURCE_KFE_EXPORT_BLOB=e144c645d3f4dc842c2faa6b93b2ba0e24275dcf
+SOURCE_OPERATOR_BLOB=9a511e151c9bf449412dc5605dfa1a2076711277
+R3_FINAL_SEAL=e194e44be4287cc447fdc3d83adb0dbd01bcb9d0
+R3_FINAL_TREE=febefaa66934df27c90abbde87504e47fc12b555
+R3_FINAL_GPT_REVIEW=074a97985de1e1952bc42e20b3a44e1a3851a8bb
+R3_REVIEW_BLOB=6828fa84a9769e9d49382c514b99c92e20af6977
+R3_E03_RESULT_BLOB=9833a587cf4e8fd6795f769747f0326cd3bd60e5
+R3_E04_RESULT_BLOB=3d77f71537c9272e1e4c5b786114586c178ecee6
+MAX_NEW_PRICES=0
+MAX_MODEL_CALLS_HJB_KFE_POLICY_INITIALIZER_ROOT_FIRM_GE_IRF_REAL31=0
+MAX_SPARSE_OR_DENSE_NUMERICAL_SOLVES=0
+MAX_ARCHIVED_DIAGNOSTIC_PROCESSES=1
+MAX_ORIGINAL_ARCHIVE_FILES_READ=4
+MAX_NEW_SCIENTIFIC_SOURCE_EDITS=0
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
+
+## 0. 唯一科研目标与证据边界
+
+Owner授权只读核查R3中E03与E04之间已观察到的条件性资产分布离散变化。E03价格rah=.05,rb=.02,wt=19.75，16轮HJB停止、源MATLAB风格KFE产生有限归一密度；E04价格rah=.05,rb=.02,wt=19.90，24轮停止、源KFE产生有限归一密度。原R3确认ΔAt=+2.184072629709945、ΔBt=+2.887900475653729、Δb上界质量=+.4393009995569363，a/b边缘半L1距离=.5507289161806087/.6423866234047643。原严格驻定认证两个点均FALSE，未替换原始post矩阵的驻定残差分别为.32169695841610524和2.9445205842114848。此处是原算法条件性数值输出变化，不是已证实的经济分岔、工资临界点或双重严格稳态。
+本任务只用原R3已经产生的完整存档，观察实际保存的value、consumption、labor、utility、mu_a、mu_b、末次HJB方向率、iteration G、post G、原KFE g的不同，并研究非守恒残差与状态位置。不得补做任何原模型HJB、KFE线性求解、policy、初值、根、价格扫描、模拟、GE、31省、IRF；不能构造另一套求解器或重算缺失源政策。
+
+## 1. 四份唯一授权原始档案，必须先验SHA身份
+
+仅允许在已经获准的安全独立R3工作域中，通过真实不跟随/非reparse的受控task-relative路径读取以下4个LOCAL_ONLY原档案。文件目前仅以R3发布回执记录身份，GPT未直接获得原始字节；本地Codex必须逐个核查真实存在、实际bytes、SHA256后才能加载，不得从未授权受保护P3/WASM/旧locked仓库、私人外部位置或私有网络重新搜寻/补录。
+
+R3固定seal:e194e44be4287cc447fdc3d83adb0dbd01bcb9d0
+R3 task:tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/
+
+E03 已发布 point result Git Blob=9833a587cf4e8fd6795f769747f0326cd3bd60e5
+- evidence/LOCAL_ONLY_E03_true_arrays_and_rates.npz: 107984 bytes，SHA256 265d9c8ea51b638d63376f91d357efadd3d8a85a48819443b2d0a49d2ffbc33c
+- evidence/LOCAL_ONLY_E03_true_KFE_density.npz: 12120 bytes，SHA256 0cf74725a77b2dcb85097950e81fbf0dbc9a32f7debe75adde13705a53e04ce6
+- iteration G CSR identity aca1857db0415b5df48df5722ad54e55e609740eaed51a4d8b1e7364598d1a85
+- post G CSR identity 6f80f95f976d76ca3432aace8edc45e1edc820b50cfe9d2b8973432b57ab3b72
+
+E04 已发布 point result Git Blob=3d77f71537c9272e1e4c5b786114586c178ecee6
+- evidence/LOCAL_ONLY_E04_true_arrays_and_rates.npz: 106470 bytes，SHA256 84ec4cff5f89fe6b56cf695ec21fabfdd3c18198d4ec53c07f6b54fab353107c
+- evidence/LOCAL_ONLY_E04_true_KFE_density.npz: 13137 bytes，SHA256 9bddbc20afc0e6b09da27e491749ee062bfd8d4e7e299644d5f5ce72e5f45873
+- iteration G CSR identity 45a872e8b7808b7d04729b09ba41c076def94474afe018dce23cfbee787fe97b
+- post G CSR identity 57d6579203f030c0fb869dd39e2d4af4195023c2817864b986528bd0390d1d3e
+
+既有R3 validator保存了以下npz成员，须逐项安全确认：
+HJB档案：initial_value,initial_labor,value,consumption,labor,mu_a,mu_b,utility,iteration_G_data/indices/indptr,post_G_data/indices/indptr,b_backward,b_forward,a_backward,a_forward。
+KFE档案：raw,density,a_mass,b_mass。
+严格使用np.load(allow_pickle=False)和事前定长、dtype、member、CSR shape/indices/indptr校验；800状态、(b,a,z)=(20,20,2)、Fortran重排、db=7/19、da=10/19。必须有解压大小/对象数组/路径防护。原始字节只读、不复制至不安全位置。
+特别注意：原R3归档没有完整transfer、adjustment_cost、liquid_label、transfer_label或全部政策迭代快照。没有这些成员就必须显示POLICY_LABELS_NOT_ARCHIVED，不许调用原policy selector或反向捏造完整方向标签。保存的b_backward等是末轮HJB记录率，不能混称post policy全量。
+
+若4份归档有任何一份缺失、SHA不符、访问路径不安全、原source身份不符，应STOP__ARCHIVE_AUTHENTICATION_BLOCKED，模型调用始终0；不为恢复报告重新运行R3、修改历史或读取P3。
+
+## 2. 唯一准许数值程序：只读数组与线性代数诊断，不求解
+
+本轮最多启动一个独立read-only analysis Python进程，硬超时180秒、Windows Job或同等级1GiB process committed-memory硬限制、单科研分析子进程、六类BLAS相关线程环境变量全部1并在import前施加。只允许numpy数值数组操作与scipy.sparse对**保存的原CSR三数组**作直接读取组装和矩阵-向量乘法。禁止导入/调用任何冻结HJB/KFE/政策/初始化函数或求解器；禁止spsolve、dense solve、GMRES、eig、ODE、fixed-point、政策重选、源算子重新生成、以新postG反求g。允许独立计算从档案到结果的描述性差、概率质量汇总和数学恒等式，绝不称为新KFE求解。
+如果模型调用/资源保护/档案安全门无法保证，STOP，不先启动Python再修复权限。任何需要第二次读取性数值进程、数据重建、更多归档的建议必须等Owner新授权。
+
+## 3. 五组事前冻结的必须报告内容
+
+A. 真值复验：从真实g密度和grid计算两点a_mass20、b_mass20、At/Bt/Lt/Ct、质量归一、签名负质量、pinned row source KFE status，与原R3公开结果的相同字段逐一对照，记录绝对误差和原始密度不变性。原source文件/源算子没有写入许可。
+B. 源已存状态/漂移比较：比较value、consumption、labor、utility、mu_a、mu_b的diff min/max、平均绝对变化与分位数、按a/b内部/边界及z分类的变化；drift sign按来源drift_tol=1e-12作只读符号分类并统计负→正、正→负、零→非零等；比较末次HJB b_backward/forward和a_backward/forward记录率，但不把它们冒充最后更新值函数所对应的新政策。标出b上界及a下界附近的状态变化与可能关联，不能因关联直接认定“最优调整选择触发跃迁”。
+C. 真实原iteration G与post G：由档案直接CSR装配，校对已公布矩阵CSR SHA、nnz、形状/row-sum/offdiag；分别报告E03/04的G_iter、G_post、post-minus-iteration及post_E04-minus-post_E03矩阵差的maxabs、nonzero、行和和状态边界分组；可分析按CSR索引偏移分区，但未保存单独BB/AAH矩阵时不得冒充完全原MATLAB算子项的结构性归因。
+D. 原source KFE后诊断：使用原postG.T乘原g，核对固定行295与其余799残差、带符号sum residual*db*da、postG行和与g的内积，检验sum(G.T@g)=g@(G@ones)代数恒等式；按b/a边界/内部和z对g-weighted非守恒贡献定位，提供最重要位置与符号。此为纯代数，不是重解KFE或修复质量损失；原source KFE已返回和严格驻定不通过必须继续分列。
+E. 800格密度变化的可定位摘要：不改变g，比较两点g*db*da的状态质量差、全800格半L1签名质量距离及a/b/z边缘分区；从状态质量变动核对ΔAt、ΔBt、b上界差与已公开a/b边缘半L1 .550728916/.642386623；给出主要正负贡献的state(b_index,a_index,z_index)、资产值及聚合贡献，但不向GitHub发布原800项向量或完整CSR。因原g不严格驻定/可能有微小负值，半L1仅标记为SIGNED_SOURCE_OUTPUT_DISTANCE，不得包装为已认证概率分布的统计总变差或正式比较静态。
+
+上述所有结论必须区分DIRECT_ARCHIVE_OBSERVATION、PURE_ARCHIVE_ALGEBRA、HYPOTHESIS_ONLY、NOT_AVAILABLE；不得宣布连续价格临界值、经济学分岔、双稳态、唯一性或因果机制已经证实。完整MATLAB-Python parity及full Bellman residual仍为NOT_CERTIFIED/NOT_EVALUATED。对E03→E04的条件数值差距可验证，但科学解释强度不得超过归档所支持的内容。
+
+## 4. 交付白名单、隐私与独立验收
+
+唯一允许新增的隔离诊断程序：
+validators/multi_province/temp31_r3_e03_e04_readonly_archive_mechanism_r4_isolated.py
+及唯一允许新增任务目录：
+tasks/CH5_TEMP31_R3_E03_E04_ARCHIVED_POLICY_DRIFT_POSTG_DIAGNOSTIC_R4_20261030/
+
+最低交付：result.md、source_identity.json、archive_authentication.json、npz_member_inventory.json、readonly_diagnostic_receipt.json、policy_drift_comparison.md、operator_post_vs_iteration.md、kfe_row_loss_localization.md、density_reallocation.md、numeric_crosschecks.json、inference_boundaries.md、model_budget_zero.json、gap_register.md、privacy_report.md、manifest.json、DELIVERY_FINAL_RECEIPT.json及必要脱敏分析输出。审阅者需可核算关键和差，不能仅给hash；完整800维原数组/私有路径保留LOCAL_ONLY，公开报告仅充分汇总/极少数状态索引，原文件与原日志不修改。
+所有已有科学src、exports、HJB、KFE、policy、operator、MATLAB、原R3任务/validator、历史报告/Git工作流零编辑。候选必须严格从FIXED_SCIENTIFIC_PARENT建分支，不从R3 seal或治理分支派生；不创建新repo/worktree；不clean/reset/rebase/force push、覆盖任何安全工作树或获取P3/旧locked/WASM。安全本地repo不支持工作域只读归档时STOP而不复制私档绕权。
+先核GitHub治理发布HEAD精确值、唯一parent=074a97985de1e1952bc42e20b3a44e1a3851a8bb及本任务合同Blob，并核SOURCE_COMMIT/tree、冻结源Blob及原R3 E03/E04 point result的Git Blob。隐私门沿用强制原规则，公开派生副本中的私有绝对路径及R4_DOUBLE_BACKSLASH_BYTES风险仅允许可溯源的路径元数据脱敏，不修改原始计算字节或放宽原scanner；payload(含manifest)隐私PASS才允许创建一个payload commit并正常授权SSH最多推送一次、远端逐文件Blob/真实bytes/SHA256 readback；seal唯一新增DELIVERY_FINAL_RECEIPT.json，隐私原规则PASS后普通SSH最多推送一次、最终readback。Git最终seal自哈希由LOCAL_ONLY外部回执闭合，不得再增第三commit。SSH不明确只读消歧，禁止盲目重试、改账号/密钥/协议。受保护权限或隐私/identity失败立即STOP且不越界补救。
+执行完后报告具体读档状态、0 solver calls、最多1诊断进程、归档源差核验、每个诊断与证据等级、远端payload/final commit-parent-tree、文件身份数与隐私门、未完成风险；成功STOP__AWAITING_GPT_INDEPENDENT_ABC，失败STOP__ARCHIVE_OR_PRIVACY_OR_DELIVERY_BLOCKED。GPT固定commit独立审阅A/B/C后Owner决定下一任务。禁止自行Issue/PR/merge/cleanup/新价格/Stage2/3/31省/GE。
+
+P3=BLOCKED
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
