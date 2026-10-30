@@ -1,0 +1,141 @@
+# TEMP31 R6-R3-R1：策略B独立空白首选项目录恢复 + 一次有界MATLAB原生启动诊断
+
+TASK_ID=CH5_TEMP31_R6_R3_R1_ISOLATED_PREFDIR_NATIVE_STARTUP_20261030
+STATUS=ISSUED_AWAITING_OWNER_TRANSFER
+OWNER_APPROVAL=2026-10-30__STRATEGY_B_NEW_EMPTY_ISOLATED_CHILD_ONLY_MATLAB_PREFDIR__ONE_BOUNDED_NATIVE_STARTUP
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_PARENT=fcc11c6a2938a49b2847e404f8ccb03cd79288d7
+TASK_PUBLICATION_COMMIT=GPT_PROVIDES_EXACT_SHA_AFTER_PUBLICATION
+EXPECTED_GOVERNANCE_REMOTE_HEAD=TASK_PUBLICATION_COMMIT_STRICT_EQUALITY
+TASK_CONTRACT_PATH=tasks/CH5_TEMP31_R6_R3_R1_ISOLATED_PREFDIR_NATIVE_STARTUP_20261030/CONTRACT.md
+CANDIDATE_BRANCH=codex/ch5-temp31-r6-r3-r1-isolated-prefdir-native-startup-20261030
+FIXED_SCIENTIFIC_PARENT=56447829ce0e6c3c85552c53c351b26a2452a4bd
+FIXED_SCIENTIFIC_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
+ORIGINAL_R6_R3_TASK=CH5_TEMP31_R6_R3_INSTRUMENTED_NATIVE_MATLAB_STARTUP_20261030
+ORIGINAL_R6_R3_CONTRACT_COMMIT=fcc11c6a2938a49b2847e404f8ccb03cd79288d7
+ORIGINAL_R6_R3_CONTRACT_BLOB=1b9e1ab519696105caae1aec79fd6454a3459896
+ORIGINAL_R6_R3_STOP=STOP__R6_R3_CONTROLLER_OR_JOB_GATE_FAILED
+ORIGINAL_R6_R3_MATLAB_CREATIONS=0
+ORIGINAL_R6_R3_JOB_CREATIONS=0
+ORIGINAL_R6_R3_CANDIDATE_REMOTE=NOT_FOUND_AT_TASK_ISSUANCE
+ORIGINAL_R6_R3_LOCAL_MANIFEST=EXECUTOR_ATTESTED_17_OF_17__GPT_NOT_INDEPENDENTLY_READ
+ORIGINAL_R6_R3_SELECTED_OLD_FILES=EXECUTOR_ATTESTED_10_UNCHANGED
+ORIGINAL_R6_R3_OLD_PREFDIR=4_EXISTING_ENTRIES_EXECUTOR_REPORTED__CONTENTS_UNAUTHORIZED
+R6_R2_FINAL_GPT_REVIEW_COMMIT=9c5aaff059bf18b71a8986b325d34894d8fe8099
+R6_R2_FINAL_GPT_REVIEW_BLOB=69393e960547b2861cc81aef54e59f1b23873874
+R6_R2_ORIGINAL_EXECUTOR_STOP=STOP__R6_R2_SOURCE_PRIVACY_OR_DELIVERY_BLOCKED
+R6_R2_REMOTE_GPT_REVIEW=PASS_BOUNDED_24_OF_24
+R6_R1_STOP=STOP__R6_R1_NATIVE_MATLAB_GATE_FAILED
+R6_STOP=STOP__R6_MATLAB_RUNTIME_UNAVAILABLE
+OWNER_MATLAB_ZIP_SHA256=ceb94ccf34d2d218722b81e5111a8f4c530571a9f886bd4afe0610a00321f755
+OWNER_MATLAB_HJB_SHA256=049136b769560040bc678f828f5d3ec5338ddcaa2090d6bed4e40732f56c3eae
+R6_R1_CONTROLLER_SHA256=919aed33544ab9bc5c8f46229b7b7308e061136178731ceb1f5c76da76dcca00
+R6_R1_MATLAB_EXECUTABLE_REPORTED_SHA256=4d251e680b8409d76d0524a1eb716de3c9e747386d3101e10f6ce1405ad1a59d
+MATLAB_RELEASE=R2022b
+MAX_NEW_CONTROLLER_RUNS=1
+MAX_NEW_MATLAB_PROCESS_CREATIONS=1
+MAX_NATIVE_MATLAB_LAUNCH_ATTEMPTS=1
+MAX_NEW_WATCHER_THREADS=1
+MAX_WINDOW_AFTER_RESUME_SECONDS=30
+MAX_NEW_EMPTY_PREFDIR=1
+MAX_PREFDIR_MIGRATIONS_COPIES_OLD_ENTRY_READS=0
+MAX_OLD_TASK_OR_OLD_PREFDIR_WRITES=0
+MAX_MATLAB_PROBE_SCRIPTS=1
+MAX_MATLAB_POST_OPERATOR_COMPARISONS=0
+MAX_E03_E04_NPZ_READS=0
+MAX_HA_HJB_KFE_GE_IRF_POLICY_FIRM_REAL31_MODEL_CALLS=0
+MAX_SPARSE_LINEAR_SOLVES=0
+MAX_PRICE_POINTS=0
+MAX_SCIENTIFIC_SOURCE_WRITES=0
+MAX_NEW_REPOS_WORKTREES=0
+MAX_ISSUE_PR_MERGE_CLEANUP=0
+MAX_RETRIES=0
+AUTO_NEXT=FALSE
+
+## 0. Owner新授权、仅一次独立恢复
+
+Owner明确批准**策略B**，不是策略A/C/D：不再让新的MATLAB测试进程将MATLAB_PREFDIR指向R6-R1历史目录；不得对历史目录四个条目执行open/read/copy/move/rename/unlink/reset/cleanup，也不得将其作为模板。只允许在已授权当前安全工作区创建一个本任务唯一、起初不存在且空白、可写、非符号链接/非junction的LOCAL_ONLY首选项目录，并在**子进程专属**环境设置MATLAB_PREFDIR。不能改变用户/系统永久环境变量、默认MATLAB偏好、用户日常会话或原有历史任务的配置文件。旧R6/R6-R1/R6-R2/R6-R3 STOP和证据必须原字节保留。新MATLAB实例生成的设置/日志全部保留LOCAL_ONLY，不得自动清理，不进GitHub。
+
+R6-R3原始STOP发生在配置保护预检、MATLAB/controller/Job/completion port调用皆0。该记录必须保持STOP__R6_R3_CONTROLLER_OR_JOB_GATE_FAILED，本R6-R3-R1享有独立且仅独立的启动/安全预算，不追溯复用旧轮剩余预算。原R6-R3本地17/17、历史10个文件不变是执行者见证；GPT当前没有Windows本地原件，不可以升级为GPT亲验PASS。新任务不以全面读取原R6-R3本地17件作为运行前提，只读必要的合法固定身份和配置键。
+
+本任务从R6-R3冻结原生启动研究范围接续：去掉Windows R2022b不支持的-nojvm，增加LOCAL_ONLY -logfile，仅执行一次带时间戳/Job completion port观测的原生MATLAB最小marker/version/1x1 sparse启动探针。MATLAB_PREFDIR新空目录是本轮额外明确授权的**唯一环境隔离差异**。成功不证明旧R6-R1 timeout由-nojvm或历史首选项造成；因为同时改变启动参数、偏好目录、日志与仪表化。MATLAB内部初始化阶段和Job事件若未直接观察，继续UNKNOWN。绝不自动执行后置算子逐元素、真实MATLAB HANK主函数、HA/HJB/KFE/GE/IRF、31省或价格求解。
+
+MathWorks当前官方记录可定界：
+https://www.mathworks.com/matlabcentral/answers/93696-how-do-i-change-the-matlab-preferences-directory-location
+用于MATLAB_PREFDIR实例级环境变量。自定义prefdir并非官方推荐常规工作流，存在不可预知的兼容风险，必须记录并验证实际prefdir；
+https://www.mathworks.com/help/matlab/matlab_env/startup-options.html
+说明Windows R2025a之前不支持-nojvm，支持-batch及-logfile；
+https://learn.microsoft.com/en-us/windows/win32/procthread/job-objects
+用于Job对象与通知限制。外部文档不是原R6-R1历史超时根因的现场认证。
+
+## 1. Git与本地前置硬门
+
+从发布后的TASK_PUBLICATION_COMMIT读取本合同，核对commit唯一parent=GOVERNANCE_PARENT、root tree、diff仅本新增合同、Git Blob及UTF8 bytes/SHA256；治理远端HEAD必须严格等于TASK_PUBLICATION_COMMIT；新候选远端开始不存在，若已存在即STOP，不覆盖。科研candidate只从FIXED_SCIENTIFIC_PARENT派生，严禁治理或旧R6候选当作科学父提交。不允许新repo/worktree、reset/rebase/clean/force-push、跨盘或锁仓搜索、换账号/SSH协议/密钥。必须保护本地未提交证据，任何工作区冲突STOP。源代码与原MATLAB只读，原.m未合法存在时继续MATLAB_RAW_LOCAL_NOT_AVAILABLE；本轮不需要运行原HANK函数。旧R6-R3合同与R6-R2终审分别从各自固定提交核对上述Blob。只允许读取既有授权当前工作区的明确源配置/安全报告；历史R6-R1首选项目录及四个子条目不得触碰，也不需要本轮重新统计四个条目。
+
+原启动环境中可存在旧MATLAB_PREFDIR值；只允许检查环境变量**是否存在及其来源角色**而不读取旧目录内容。只将新子进程的env字典内MATLAB_PREFDIR覆盖为当前R6-R3-R1新目录的绝对规范路径；不得os.environ赋值或setx、注册表、全局环境/用户设置。其他MATLAB计算与许可环境保持原R6-R3约定不变（原受限OPENBLAS/OMP等线程约束、MATLABPATH=空、MATLAB_PREFDIR除外），不得额外改变配置以绕过许可或内存限额。执行前只读校验合法MATLAB R2022b executable身份、路径与固定哈希，不能用另一次matlab -version/-help启动核验，不能下载或替代MATLAB/Octave。
+
+## 2. 策略B首选项目录隔离硬门（必须早于进程创建）
+
+新首选项目录仅允许位于既有Owner授权安全工作区中的**本新任务专属LOCAL_ONLY目录**，推荐角色位置为 task_worksite_LOCAL_ONLY/R6_R3_R1_RUNTIME/matlab_prefdir_fresh；控制器必须根据原安全工作区定位和任务固定相对标识计算绝对路径，不能硬编码个人盘符或去Owner其他目录。创建前原目标path必须不存在，所有父路径必须属于已授权工作区、不穿越reparse point/symlink/junction/网络重解析、旧R6-R1或其他历史目录；使用不可跟随链接且独占的安全创建机制（如os.mkdir(...), fail-if-exists）并在创建后立即验证真实规范路径仍处于当前LOCAL_ONLY root、目录为空、具有本任务用户写权限、没有alias指向历史目录。若任何一步不确定，STOP，**不选择复制历史目录、默认MATLAB prefdir或系统TEMP作为fallback**。对旧四个条目执行的读/写/复制/枚举/哈希次数必须0。若运行前R6-R3-R1同名目录已经存在，STOP，不能复用、rename或clean。
+
+因原旧目录可能位于与新任务同一个物理安全工作区，不可只按文本前缀判断不同：验证新路径与历史目录由已知配置角色区分，不解析/列举旧四子件，必要时用历史已知固定父路径文本或目录自身身份进行排除；不越权追查历史子内容。创建后把实际envblock中MATLAB_PREFDIR的预期新目标身份记录在LOCAL_ONLY，并向公开receipt仅出示相对角色、路径字节哈希、目录创建前不存在/创建后空、child_only_override=true、old_prefdir_read_copy_write=0。
+
+MATLAB唯一最小probe首行创建ENTERED_MATLAB_USER_SCRIPT阶段marker后，在不读取旧配置文件的前提下，通过内置prefdir命令获取**当前新进程实际首选项目录**，与预期值按Windows规范case-insensitive path语义比较；结果与实际字符串只LOCAL_ONLY，公开仅输出PREFDIR_EQUALS_EXPECTED=true/false、原始记录hash及标志。实际prefdir不一致立即在probe内退出或返回安全失败，禁止继续下一版测试、更改prefdir/重启；MATLAB开始时如果已经访问未知系统路径，不能推断所有全局配置绝对隔离，要明确该界限。新目录MATLAB运行后可能出现新文件；只允许按本任务隔离目录统计entry_count/bytes/sha或列不含个人信息的最小身份，禁止内容公开；不要在试验结束清理新目录。不存在与空白是**启动前**的强制条件，运行后出现文件属于本次新实例证据而非安全失败。
+
+## 3. Windows启动控制器与资源硬门
+
+只允许新增R6-R3-R1 isolated控制器脚本，不修改旧R6-R3、R6-R1控制器或其LOCAL_ONLY配置。原Windows受控顺序保持：CreateJobObject→SetInformationJobObject(ExtendedLimitInformation 1GiB process+job committed-memory、active-process1、NO_BREAKAWAY、KILL_ON_JOB_CLOSE)→CreateIoCompletionPort并在Job没有成员时关联成功→CreateProcessW suspended→AssignProcessToJobObject→QueryInformationJobObject/IsProcessInJob/单成员核验→ResumeThread，失败时停止且绝不resume无约束process。Job对象通知观测如NEW_PROCESS、EXIT_PROCESS、PROCESS_MEMORY_LIMIT/JOB_MEMORY_LIMIT仅作实际收件，Windows对部分Job通知不保证送达，未收到事件不是未触发证明。最多1个controller内部watcher线程，有明确结束信号与有界join，绝不启动额外实验进程。
+
+原Windows启动参数保持：从R6-R1原argv移除-nojvm；原-nodesktop、-nosplash、-singleCompThread、-batch保留；仅加-logfile指向新的LOCAL_ONLY运行文件；batch仅调用本任务新隔离最小probe。与R6-R3合同相同，不添-r/-wait或任何授权外选项；本轮仅新增child-only MATALB_PREFDIR空目录替代旧历史目录，不允许其他启动参数/用户配置变更。启动前验证生成脚本路径与安全目录身份，argv只在LOCAL_ONLY保存完整文本；公开仅token差异及脱敏角色。
+
+一次进程创建与30秒resume后deadline，最长30秒probe窗口、不重试；每个阶段记录UTC/time.monotonic_ns差值、Win32返回/错误、Job通知、marker/child exit；捕获独立stdout/stderr与LOCAL_ONLY -logfile，报告原bytes/hash与安全脱敏摘要。进程30秒仍未完成则仅终止本owned Job并有界WaitForSingleObject回收、记录forced exit（非MATLAB原生码）、所有句柄close和watcher join，不杀/扫描其他MATLAB会话。无stderr、无marker或无Job通知不得宣称许可/限额原因；任何真实错误需保留最小脱敏字段证据。
+
+## 4. MATLAB最小阶段探针与通过条件
+
+MATLAB唯一新隔离.m脚本只进行：
+1. 到达首条用户代码写ENTERED_MATLAB_USER_SCRIPT marker并flush/close；
+2. 调用内置prefdir核对与本任务child-only env目标相同（原始路径私有，公共仅bool/hash），若不同标PREFDIR_MISMATCH并退出，不能继续；
+3. 记录version/release及MATLAB内部时间戳；
+4. 创建与验证1x1 sparse，size/nnz检查，写SPARSE_PROBE_PASS marker，正常退出。
+
+上述marker由新实验控制器在安全LOCAL_ONLY内核验完整内容/有界顺序、原件hash。不能调用原HANK成本函数、HJB/KFE/spsolve、Python scientific、旧R3原NPZ、合成3×3×2或后置800×800矩阵。成功只认证在**新空首选项目录、去-nojvm、加-logfile且原1GiB/30秒/单进程限制**下MATLAB R2022b最小原生探针通过；绝不认证原历史超时的唯一根因、更不认证原MATLAB–Python稀疏算子逐元素等价。若首个marker未写入，仅用户脚本未观测，内部初始化/许可/资源原因UNKNOWN。若首marker到达但prefdir不一致，须终止并记录新隔离门失败。无重试/无自动放宽资源限制。
+
+## 5. 白名单、证据、隐私和两阶段交付
+
+唯一允许新增isolated脚本：
+validators/multi_province/temp31_r6_r3_r1_isolated_prefdir_native_controller.py
+validators/multi_province/temp31_r6_r3_r1_isolated_prefdir_native_probe.m
+唯一允许新增报告文件路径为
+tasks/CH5_TEMP31_R6_R3_R1_ISOLATED_PREFDIR_NATIVE_STARTUP_20261030/
+下的result.md、source_identity.json、strategy_b_prefdir_preflight.json、child_env_override_and_path_gate.json、old_prefdir_protection.md、old_r6_r3_stop_preservation.md、original_vs_new_argv.md、job_gate_completion_port_receipt.json、native_stage_timeline.json、native_prefdir_and_probe_receipt.json、stdout_stderr_logfile_summary.md、owned_process_cleanup_receipt.json、hypothesis_update.md、model_budget_zero.json、gap_register.md、privacy_report.md、manifest.json、DELIVERY_FINAL_RECEIPT.json及真实必要的最小安全证据。新MATLAB首选项目录、新运行日志、完整私有配置与原始标志/进程信息全部LOCAL_ONLY，不在公开git manifest中作为可下载文件；可以公开其脱敏证明hash/bytes，隐私scanner必须使用既有严格原规则，不修改/禁用。任何明确旧四条目的名字/内容、个人绝对路径、许可证/凭据、可识别设备标识不可公开。旧R6-R3 17件LOCAL_ONLY原件完全保持，若不在合法白名单就只写执行者认证而不擅自核对/读出。
+
+原工作区不创建额外repo/worktree，新增源码与报告必须在唯一candidate从FIXED_SCIENTIFIC_PARENT派生，旧source、exports、validators、旧任务和论文Results均不可更改。只有来源/安全门通过、报告/强制隐私扫描PASS才提交payload单一新增commit并经已授权正常SSH最多一次push，remote按固定sha逐文件Git Blob/bytes/SHA256/readback、parent/tree核验。seal仅新增本目录DELIVERY_FINAL_RECEIPT.json，privacy再次PASS、SSH最多一次push，最终所有文件remote读回、外置LOCAL_ONLY seal自身回执、不追加第三commit。SSH失败或状态不明仅相同ref、认证、官方接口只读消歧，不能自动retry、切换账号/协议/密钥。即使原生失败、如果合同安全门允许也可以交付脱敏失败证据，不能为凑PASS伪造MATLAB成功。禁止Issue、PR、merge、cleanup、AUTO_NEXT。
+
+## 6. 终态与独立GPT审阅
+
+STOP__AWAITING_GPT_INDEPENDENT_ABC：新独立prefdir门、1次原生最小probe通过且合法交付；
+STOP__R6_R3_R1_PREFDIR_PRECHECK_BLOCKED：新目录创建/权限/隔离失败，0原生启动，保留原件与已做的安全证据；
+STOP__R6_R3_R1_PREFDIR_RUNTIME_MISMATCH：MATLAB实际prefdir非预期，停止且不进行其他模型/重试；
+STOP__R6_R3_R1_NATIVE_GATE_FAILED_REQUIRES_REVIEW：受限原生早退/超时/Job资源导致受控失败，可在隐私允许时交付真实失败回执；
+STOP__R6_R3_R1_SOURCE_PRIVACY_OR_DELIVERY_BLOCKED：合同来源、身份、隐私、SSH等阻断。
+
+GPT独立A：治理+候选fixed commit/parent/tree/bytes/Blob/SHA、原STOP保护、唯一空prefdir与隐私；B：环境变量作用范围、运行时prefdir匹配、原生启动时间/资源限制、Job消息有效性、最小marker、MATLAB版本与错误原因证据；C：artifact_integrity/source_identity/numeric_review/implementation_review/scientific_review/privacy_review/actual_terminal/delivery/cleanup/not_completed分层认证。numeric_review仅1x1 sparse sanity，后置算子逐元素=NOT_TESTED；严格KFE驻定、31省/GE/IRF=BLOCKED。历史R6-R1超时根因继续UNKNOWN，除非有同一旧实验的直接因果证据（本轮本身不足以证明）。
+
+继承科学状态：
+P3=BLOCKED
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+STRICT_KFE_STATIONARITY=FALSE_INHERITED_R3_R4_R5
+OLD_R6_R6_R1_R6_R2_R6_R3_STOPS=IMMUTABLE
+ORIGINAL_R5_BATCH_FAILURE_ROOT_CAUSE=UNKNOWN
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
