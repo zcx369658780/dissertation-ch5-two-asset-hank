@@ -1,0 +1,189 @@
+{
+  "task_id": "CH5_TEMP31_R6_R2_NATIVE_MATLAB_TIMEOUT_EVIDENCE_AUDIT_20261030",
+  "ROOT_CAUSE": "UNKNOWN",
+  "receipt_identity": {
+    "bytes": 118196,
+    "sha256": "6bd6a4316ce5071e917b11bcae9907d39ef247b82ff9820d3844d376f93c0247",
+    "git_blob": "9a119d9639dbd0a7df54869732619a8eb19621a9"
+  },
+  "controller_identity": {
+    "bytes": 17189,
+    "sha256": "919aed33544ab9bc5c8f46229b7b7308e061136178731ceb1f5c76da76dcca00",
+    "git_blob": "57ea43508a8e1419862668168c617b1782dbf84d"
+  },
+  "historical_wall_clock_start": null,
+  "historical_wall_clock_end": null,
+  "historical_timezone": "UNKNOWN_NOT_RECORDED",
+  "per_event_timestamps": "ABSENT",
+  "original_elapsed_seconds": 30.18700000003446,
+  "original_elapsed_clock": "time.monotonic duration from before config/AST/binary hash/API setup through cleanup/log hashes; underlying counter values absent",
+  "probe_deadline_seconds": 30,
+  "deadline_relation": "after native.start returns, after ResumeThread and thread-handle close; exact resume-to-deadline delay absent",
+  "observable_internal_MATLAB_initialization_seconds": null,
+  "events_in_recorded_order": [
+    {
+      "original_index": 2,
+      "selector": "events[2]",
+      "event": {
+        "api": "matlab:CreateJobObjectW",
+        "ok": true,
+        "win32_error": 0
+      },
+      "timestamp": null,
+      "timezone": null,
+      "clock_source": "NOT_RECORDED",
+      "grade": "EXECUTOR_RECEIPT_ONLY"
+    },
+    {
+      "original_index": 3,
+      "selector": "events[3]",
+      "event": {
+        "api": "matlab:SetJobLimits",
+        "ok": true,
+        "win32_error": 0
+      },
+      "timestamp": null,
+      "timezone": null,
+      "clock_source": "NOT_RECORDED",
+      "grade": "EXECUTOR_RECEIPT_ONLY"
+    },
+    {
+      "original_index": 7,
+      "selector": "events[7]",
+      "event": {
+        "api": "matlab:CreateProcessW",
+        "ok": true,
+        "win32_error": 0
+      },
+      "timestamp": null,
+      "timezone": null,
+      "clock_source": "NOT_RECORDED",
+      "grade": "EXECUTOR_RECEIPT_ONLY"
+    },
+    {
+      "original_index": 8,
+      "selector": "events[8]",
+      "event": {
+        "api": "matlab:AssignProcessToJobObject",
+        "ok": true,
+        "win32_error": 0
+      },
+      "timestamp": null,
+      "timezone": null,
+      "clock_source": "NOT_RECORDED",
+      "grade": "EXECUTOR_RECEIPT_ONLY"
+    },
+    {
+      "original_index": 9,
+      "selector": "events[9]",
+      "event": {
+        "api": "matlab:QueryJobLimits",
+        "ok": true,
+        "win32_error": 0
+      },
+      "timestamp": null,
+      "timezone": null,
+      "clock_source": "NOT_RECORDED",
+      "grade": "EXECUTOR_RECEIPT_ONLY"
+    },
+    {
+      "original_index": 10,
+      "selector": "events[10]",
+      "event": {
+        "api": "matlab:IsProcessInJob",
+        "ok": true,
+        "win32_error": 0
+      },
+      "timestamp": null,
+      "timezone": null,
+      "clock_source": "NOT_RECORDED",
+      "grade": "EXECUTOR_RECEIPT_ONLY"
+    },
+    {
+      "original_index": 11,
+      "selector": "events[11]",
+      "event": {
+        "api": "matlab:QueryJobMembers",
+        "ok": true,
+        "win32_error": 0
+      },
+      "timestamp": null,
+      "timezone": null,
+      "clock_source": "NOT_RECORDED",
+      "grade": "EXECUTOR_RECEIPT_ONLY"
+    },
+    {
+      "original_index": 13,
+      "selector": "events[13]",
+      "event": {
+        "api": "matlab:ResumeThread",
+        "previous_suspend_count": 1,
+        "ok": true
+      },
+      "timestamp": null,
+      "timezone": null,
+      "clock_source": "NOT_RECORDED",
+      "grade": "EXECUTOR_RECEIPT_ONLY"
+    },
+    {
+      "original_index": 14,
+      "selector": "events[14]",
+      "event": {
+        "api": "CloseHandle",
+        "handle_role": "matlab:main_thread",
+        "ok": true,
+        "win32_error": 0
+      },
+      "timestamp": null,
+      "timezone": null,
+      "clock_source": "NOT_RECORDED",
+      "grade": "EXECUTOR_RECEIPT_ONLY"
+    },
+    {
+      "original_index": 1196,
+      "selector": "events[1196]",
+      "event": {
+        "api": "matlab:TerminateOwnedJobOrSuspendedChild",
+        "ok": true,
+        "win32_error": 0
+      },
+      "timestamp": null,
+      "timezone": null,
+      "clock_source": "NOT_RECORDED",
+      "grade": "EXECUTOR_RECEIPT_ONLY"
+    },
+    {
+      "original_index": 1198,
+      "selector": "events[1198]",
+      "event": {
+        "api": "matlab:QueryFinalMemory",
+        "ok": true,
+        "win32_error": 0
+      },
+      "timestamp": null,
+      "timezone": null,
+      "clock_source": "NOT_RECORDED",
+      "grade": "EXECUTOR_RECEIPT_ONLY"
+    }
+  ],
+  "error": {
+    "type": "TimeoutError",
+    "message": "NATIVE_WALL_TIMEOUT",
+    "stage": "MATLAB_NATIVE_PROBE"
+  },
+  "code_lines": {
+    "controller_start": 161,
+    "native_start": 175,
+    "deadline": 176,
+    "wait_probe": 177,
+    "wait_loop": 154,
+    "timeout": 157
+  },
+  "grades": {
+    "actual_original_bytes": "DIRECT_BYTES_AND_CODE_VERIFIED",
+    "historical_APIs": "EXECUTOR_RECEIPT_ONLY",
+    "algorithm": "CODE_PATH_STATIC_ONLY",
+    "internal_initialization": "UNKNOWN_NO_EVIDENCE",
+    "license_or_resource_cause": "HYPOTHESIS_UNTESTED"
+  }
+}
