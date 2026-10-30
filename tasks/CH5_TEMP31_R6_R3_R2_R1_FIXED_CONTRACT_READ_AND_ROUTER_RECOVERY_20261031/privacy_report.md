@@ -1,0 +1,8 @@
+# Mandatory original privacy rule and publication boundary
+
+The existing scanner source is unchanged, SHA256 95f5de1f1d926de8683ff721bd1bcdcf2f7c90bdc52c1f6be799cfd3cb624ad2.
+The exact original STOP_PRIVATE_PAYLOAD assertion is selected by AST from its prepare function, compiled without changing its expression, and executed against every included file's actual bytes, including the manifest and later seal. Assertion source identity: 38f498e140dd2d583d0ab760d0294a29f30b4cd1e73e8ee045240daaa4ea34ee; original source line 180. The original full module is not executed because it contains unrelated legacy preparation and replay bookkeeping. No replacement regex or relaxed rule is used. JSON and the single Python AST are also parsed.
+
+Raw connector replies, full local index snapshot and absolute identity, LOCAL_ONLY pointer, private error/context and operational state stay LOCAL_ONLY. Public evidence uses fixed repository refs, relative contract paths, source hashes, numeric counts and redacted structured roles. The public pointer derivative contains no local executable path or command. No new MATLAB raw log or preference data exists in this task.
+
+Only the exact allowlisted validator and this task's named public reports are selected for Git. The manifest excludes itself and the seal from its own hash list; each is scanned and verified separately. Final seal identity is recorded externally LOCAL_ONLY with no third commit. Per-phase scan results are retained in LOCAL_ONLY and the delivery receipt; successful delivery remains conditional on both actual scans and full official remote byte readback.

@@ -1,0 +1,140 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R1_FIXED_CONTRACT_READ_AND_ROUTER_RECOVERY_20261031",
+  "contract_reads": [
+    {
+      "role": "recovery",
+      "ref": "444c4157df866b8c4a993dfe67e321f95324f2cd",
+      "path": "tasks/CH5_TEMP31_R6_R3_R2_R1_FIXED_CONTRACT_READ_AND_ROUTER_RECOVERY_20261031/CONTRACT.md",
+      "method": "mcp__codex_apps__github_fetch_file",
+      "encoding": "utf-8",
+      "attempt_index": 1,
+      "response_kind": "SUCCESS_COMPLETE_UTF8",
+      "found": true,
+      "actual_blob_matches_returned_sha": true,
+      "bytes": 13734,
+      "sha256": "08820bbd749115f475966b41c4c9ba02b1a19f0030cd301e0e590083823fb6ce",
+      "git_blob": "6e8bc13e7955c9e3c27c6ac20669cb9b8fb68707",
+      "stage": "FIXED_CONTRACT_SOURCE_READ",
+      "error_name": null,
+      "http_status": "NOT_EXPORTED_ON_SUCCESS",
+      "sanitized_transport_failure": null,
+      "retry_classification": "SUCCESS_NO_RETRY",
+      "same_route_retry_count": 0,
+      "terminal": "READ_PASS",
+      "call_timestamp": "NOT_EXPORTED_BY_TOOL; no fabricated source-event timestamp"
+    },
+    {
+      "role": "target",
+      "ref": "40e7b2e1ee93973ca63b509f53f20e21c6f149ad",
+      "path": "tasks/CH5_TEMP31_R6_R3_R2_120S_ISOLATED_PREFDIR_NATIVE_STARTUP_20261030/CONTRACT.md",
+      "method": "mcp__codex_apps__github_fetch_file",
+      "encoding": "utf-8",
+      "attempt_index": 1,
+      "response_kind": "SUCCESS_COMPLETE_UTF8",
+      "found": true,
+      "actual_blob_matches_returned_sha": true,
+      "bytes": 15857,
+      "sha256": "89a61828f7889ccaa06eb43dd0ce018f22d29a352a32fd2da8b16d87af52fe8c",
+      "git_blob": "1d7c4c960b9b6d47cc9e8182afd2859372caa168",
+      "stage": "FIXED_CONTRACT_SOURCE_READ",
+      "error_name": null,
+      "http_status": "NOT_EXPORTED_ON_SUCCESS",
+      "sanitized_transport_failure": null,
+      "retry_classification": "SUCCESS_NO_RETRY",
+      "same_route_retry_count": 0,
+      "terminal": "READ_PASS",
+      "call_timestamp": "NOT_EXPORTED_BY_TOOL; no fabricated source-event timestamp"
+    }
+  ],
+  "initial_contract_attempts": 2,
+  "transient_errors": 0,
+  "retries_used": 0,
+  "alternate_source_routes": 0,
+  "metadata_calls": [
+    {
+      "role": "GOVERNANCE_COMMIT",
+      "ref": "444c4157df866b8c4a993dfe67e321f95324f2cd",
+      "method": "mcp__codex_apps__github_fetch",
+      "response": "SUCCESS",
+      "attempt_index": 1,
+      "raw_receipt_identity": {
+        "bytes": 3642,
+        "sha256": "2f47c4e4b52e53eb0b0ccfe64a4bede3769f554ba383c5bf86ed858b10e060ca",
+        "git_blob": "6a84a37dda21e521df813195df0eb6be1309e6f9"
+      }
+    },
+    {
+      "role": "GOVERNANCE_BRANCH_HEAD",
+      "ref": "migration/astra-workflow-20261012",
+      "method": "mcp__codex_apps__github_fetch",
+      "response": "SUCCESS",
+      "attempt_index": 1,
+      "raw_receipt_identity": {
+        "bytes": 1702,
+        "sha256": "4b11c9f57872e08000afd8628dde9a0ef6cbb41bac400d129d7d922cb564e429",
+        "git_blob": "c5f6106e63873ce5dad8e76b75ff43af1af28614"
+      }
+    },
+    {
+      "role": "GOVERNANCE_SINGLE_CONTRACT_DIFF",
+      "ref": "40e7b2e1ee93973ca63b509f53f20e21c6f149ad...444c4157df866b8c4a993dfe67e321f95324f2cd",
+      "method": "mcp__codex_apps__github_fetch",
+      "response": "SUCCESS",
+      "attempt_index": 1,
+      "raw_receipt_identity": {
+        "bytes": 56358,
+        "sha256": "bf4b6ff66bc5525f8e399b396400069e1cde029e2998ff54d060c732e7b73191",
+        "git_blob": "bda1300c3e175fa69456351e4ca20d80e8e969b0"
+      }
+    },
+    {
+      "role": "TARGET_COMMIT",
+      "ref": "40e7b2e1ee93973ca63b509f53f20e21c6f149ad",
+      "method": "mcp__codex_apps__github_fetch",
+      "response": "SUCCESS",
+      "attempt_index": 1,
+      "raw_receipt_identity": {
+        "bytes": 3644,
+        "sha256": "7fce337e9421c6332288ff74f478fde056f352c0dc87e979fba0b4f829f73406",
+        "git_blob": "cfd5acbc40999f35a8bd4aa6fea169d5d74c8599"
+      }
+    },
+    {
+      "role": "NEW_CANDIDATE_REF",
+      "ref": "codex/ch5-temp31-r6-r3-r2-r1-fixed-contract-router-recovery-20261031",
+      "method": "mcp__codex_apps__github_fetch",
+      "response": "EXPECTED_NOT_FOUND_404",
+      "attempt_index": 1,
+      "raw_receipt_identity": {
+        "bytes": 537,
+        "sha256": "235189cb51badabba1a59d31c96dc97e01f3591b2fe1a95f448142af49d1d1cb",
+        "git_blob": "84784f593c13c570bd1372874060fdad39f0b61e"
+      }
+    },
+    {
+      "role": "OLD_TARGET_CANDIDATE_REF",
+      "ref": "codex/ch5-temp31-r6-r3-r2-120s-native-startup-20261030",
+      "method": "mcp__codex_apps__github_fetch",
+      "response": "EXPECTED_NOT_FOUND_404",
+      "attempt_index": 1,
+      "raw_receipt_identity": {
+        "bytes": 537,
+        "sha256": "235189cb51badabba1a59d31c96dc97e01f3591b2fe1a95f448142af49d1d1cb",
+        "git_blob": "84784f593c13c570bd1372874060fdad39f0b61e"
+      }
+    },
+    {
+      "role": "SCIENTIFIC_BASE_COMMIT",
+      "ref": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+      "method": "mcp__codex_apps__github_fetch",
+      "response": "SUCCESS",
+      "attempt_index": 1,
+      "raw_receipt_identity": {
+        "bytes": 3446,
+        "sha256": "19234fc3baadba138a55d77dbc7d918b663982ef8b11e6dcb0789816e64e0084",
+        "git_blob": "24cb35767dcb56923265238a0511369fd8549dbb"
+      }
+    }
+  ],
+  "metadata_note": "Official connector fetch used only for ref, commit and diff metadata; both complete contract bodies fetched using the original fetch_file action. A missing candidate is an expected absence gate, not a contract 404."
+}
