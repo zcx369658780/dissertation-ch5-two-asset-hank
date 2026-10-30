@@ -1,0 +1,123 @@
+# CH5 TEMP31 R6-R3-R2-R2：R40误路由防护与未来120秒实验专用入口零模型Canary验证（冻结合同）
+
+TASK_ID=CH5_TEMP31_R6_R3_R2_R2_EXPLICIT_RUNTIME_ROUTER_CANARY_20261031
+STATUS=ISSUED_AWAITING_OWNER_TRANSFER
+OWNER_APPROVAL=2026-10-31__ONE_BOUNDED_EXPLICIT_EXECUTION_ROUTE_DRY_RUN_CANARY__NO_MATLAB
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_PARENT=42070ecb7c31b0ca9002da57ad73c1dcc1d38915
+TASK_PUBLICATION_COMMIT=GPT_SUPPLIES_EXACT_40_HEX_AFTER_PUBLICATION
+EXPECTED_GOVERNANCE_HEAD=TASK_PUBLICATION_COMMIT_STRICT_EQUALITY
+TASK_CONTRACT_PATH=tasks/CH5_TEMP31_R6_R3_R2_R2_EXPLICIT_RUNTIME_ROUTER_CANARY_20261031/CONTRACT.md
+CANDIDATE_BRANCH=codex/ch5-temp31-r6-r3-r2-r2-explicit-runtime-router-canary-20261031
+FIXED_SCIENTIFIC_PARENT=56447829ce0e6c3c85552c53c351b26a2452a4bd
+FIXED_SCIENTIFIC_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
+R6_R3_R2_R1_FINAL_REVIEW_COMMIT=42070ecb7c31b0ca9002da57ad73c1dcc1d38915
+R6_R3_R2_R1_FINAL_REVIEW_BLOB=6ec240679d2d2732b8782b5f360448af418d764d
+R6_R3_R2_R1_CANDIDATE_SEAL=d88f0cece88785c168015b2861a7faa650596240
+R6_R3_R2_R1_CANDIDATE_TREE=59d684739680c4ea4bc4d0a3eb18c4accaa53841
+R6_R3_R2_R1_EXECUTOR_STOP=STOP__AWAITING_GPT_INDEPENDENT_ABC
+R6_R3_R2_R1_GPT_REVIEW_OVERALL=PASS_BOUNDED_SOURCE_RECOVERY_AND_PUBLIC_ARTIFACT__FUTURE_RUNTIME_ROUTER_UNCERTIFIED
+TARGET_EXPERIMENT_TASK_ID=CH5_TEMP31_R6_R3_R2_120S_ISOLATED_PREFDIR_NATIVE_STARTUP_20261030
+TARGET_EXPERIMENT_CONTRACT_COMMIT=40e7b2e1ee93973ca63b509f53f20e21c6f149ad
+TARGET_EXPERIMENT_CONTRACT_BLOB=1d7c4c960b9b6d47cc9e8182afd2859372caa168
+TARGET_EXPERIMENT_CONTRACT_UTF8_BYTES=15857
+TARGET_EXPERIMENT_CONTRACT_PATH=tasks/CH5_TEMP31_R6_R3_R2_120S_ISOLATED_PREFDIR_NATIVE_STARTUP_20261030/CONTRACT.md
+R40_GLOBAL_INDEX_ROLE=tasks/TASK_INDEX_CURRENT.md
+R40_GLOBAL_INDEX_EXECUTOR_REPORTED_BYTES=545
+R40_GLOBAL_INDEX_EXECUTOR_REPORTED_SHA256=7ef2825468fa7ecd0e97d14e4b8f83484e9e01953b8deb631cb9d4e83e3cdda8
+R40_GLOBAL_INDEX_EXECUTOR_REPORTED_AUTHORITY=POST_R5_R6_HJB_TRAJECTORY_R40_TARGET_HJB_NONCONVERGENCE_DECOMPOSITION
+GLOBAL_INDEX_WRITE_BUDGET=0
+GLOBAL_INDEX_REPAIR=NOT_AUTHORIZED
+MAX_NEW_MATLAB_PROCESSES=0
+MAX_NEW_WINDOWS_JOB_EXPERIMENTS=0
+MAX_NEW_PREFDIR_CREATIONS=0
+MAX_HJB_KFE_HA_GE_IRF_FIRM_POLICY_REAL31_MODEL_CALLS=0
+MAX_PRICE_POINTS=0
+MAX_NPZ_READS=0
+MAX_NEW_TASK_SCOPED_ROUTE_CANARY_INVOCATIONS=1
+MAX_IN_MEMORY_NEGATIVE_CONTROL_CASES=3
+MAX_ROUTER_RUNTIME_RETRIES=0
+MAX_EXISTING_LAUNCHER_EXECUTIONS=0
+MAX_R40_PAYLOAD_READS_OR_EXECUTIONS=0
+MAX_OLD_TASK_OR_GLOBAL_INDEX_WRITES=0
+MAX_FORMAL_SCIENCE_SOURCE_WRITES=0
+MAX_NEW_REPOS_WORKTREES=0
+MAX_ISSUE_PR_MERGE_CLEANUP=0
+AUTO_NEXT=FALSE
+
+## 0. Owner新授权及明确工作目标
+
+Owner同意上一轮GPT建议：下一项任务**先解决未来120秒MATLAB实验的安全执行路由**，不授权直接运行120秒MATLAB实验。上轮来源恢复已经证明固定ref的两份GitHub合同可通过Codex原连接器首次完整读取，且诊断流程本身未执行R40，但其任务专属静态pointer不足以说明未来真正启动时的任务优先级。当前原有全局任务索引仍指向R40，且旧执行器的真实调用优先级未被认证。本次目的：以现存已授权本地工作区里的**实际可调用、无模型/无MATLAB的独立任务专属入口**进行一次显式目标选择Canary，确认其固定参数选择R6-R3-R2目标，遇到缺省/R40/错误身份输入时fail closed，且在执行路径不读取或运行R40任务正文。这个通过证据只能称EXPLICIT_TASK_SCOPED_CANARY_ROUTE_VALIDATED；不能称GLOBAL_DEFAULT_LAUNCHER_REPAIRED，也不能称120S_MATLAB_RUNTIME_EXECUTION_CERTIFIED。
+
+不要主动打开R40任务正文、科学源、旧R6旧NPZ、历史首选项目录。R40索引的确切本地文件已在上轮通过565? NO: 经执行者给出545 bytes身份认证；此处只允许读取其**原已知**索引位置和最低必要任务ID字段，无目录搜索、target-follow、任务调度。若不能根据本地既有明确授权的入口文件定位，标INDEX_PENDING_IO，不假造R40身份或使用默认branch代替。
+
+Owner拒绝默认自动下一步。原R6/R6-R1/R6-R2/R6-R3/R6-R3-R1/R6-R3-R2及R6-R3-R2-R1的所有STOP保留，治理现有科学状态不变。唯一拟检查的未来实验合同是 TARGET_EXPERIMENT_CONTRACT_* 固定提交的**来源事实**，其中120秒、30/60/90/120 checkpoint、Strategy B全新prefdir、1GiB process/job committed、active1、no-breakaway、单次MATLAB及0重试等预算全部沿袭为静态上下文；在本任务中这些值**不构成执行权限**。
+
+## 1. GitHub来源、预检与既有工作区安全门
+
+先在GitHub治理TASK_PUBLICATION_COMMIT读取完整本合同，核验唯一parent=GOVERNANCE_PARENT、root tree、diff仅本合同、Git Blob/UTF8 bytes/SHA256；治理远端HEAD严格等于该提交。新candidate远端初始不存在；若已有分支则STOP，不覆盖。固定科学父仅FIXED_SCIENTIFIC_PARENT，候选必须由此出发，不能以治理或旧R6-R3-R2-R1候选为parent。原GPT终审在R6_R3_R2_R1_FINAL_REVIEW_COMMIT；120秒实验合同在TARGET_EXPERIMENT_CONTRACT_COMMIT，各自固定ref/path读取，核对Blob和真实UTF8 bytes；不可从科学source parent找后生治理文件。固定源失败、身份不匹配、权限拒绝等直接STOP，除非符合此前已获批准的相同连接器瞬时故障有界机制且本轮明示：对某一ref/path最多一初次读取+一次同路瞬时工具失败重试；不同认证/host/endpoint/无ref fallback的预算=0，真正401/403/404不重试。将所有read attempt/error如实记录，不把历史成功当本次成功。
+
+当前本地授权worksite必须安全，不可以改全局AGENTS、旧tasks/TASK_INDEX_CURRENT.md、任何系统任务启动配置、现有launchers或Git refs；不reset/clean/rebase/stash/force push，不新repo/worktree。若工作区已有未提交证据或新白名单路径冲突，保全并STOP。不从R40文本定位额外脚本/路径、不import R40模块、不执行R40。不在当前任务中遍历系统进程或运行先前MATLAB控制器。
+
+## 2. 路由设计：实际可调用但唯一无执行入口（只允许canary）
+
+在新任务白名单内新增一个纯标准库、无模型的Python入口，该文件是**本轮真正以固定显式命令调用**的程序，不能仅生成一个JSON pointer就声称执行路径验证。入口应支持且仅支持 --dry-run / --verify-route（名称可同义但固定），必须要求通过命令行显式提供:
+- active diagnostic task ID=本任务 TASK_ID；
+- target future task ID=TARGET_EXPERIMENT_TASK_ID；
+- target fixed contract commit/path/Blob/bytes完全等于任务合同；
+- fixed governance commit与固定scientific parent；
+- explicit zero-runtime authority (matlab_budget=0, can_execute=false, mode=DRY_RUN_ONLY)。
+必须采用强制精确匹配，不得接受默认task、自动推断R40 current index、仅传分支名、模糊URL或允许跳过拒绝项。无参数或不匹配时立刻失败，无fallback。入口可读取固定 LOCAL_ONLY 中上轮已授权的契约回执摘要或本次实际连接器逐项取得的、明确同ref/path的来源正文，但不应访问R40目录或脚本，也不应把旧LOCAL_ONLY存档预像复制到公共Git。
+
+运行一次真正的安全CLI canary：命令形态为当前已授权Python解释器用 -B 执行新isolated入口，显式给出所有固定任务/合同身份与 --dry-run，捕获真实argv（公开仅稳定角色及固定Git ref）、exit code、stdout JSON、stderr、脚本bytes/SHA-256、耗时和本任务LOCAL_ONLY文件读写清单。唯一这一轮才允许此入口在用户安全工作区运行，其所有输出是ROUTE_CHECK，仅可选择声明一个目标**不会启动目标控制器、MATLAB、Job、系统进程、R40、浏览器或价格/模型求解器**。若无法在授权环境内以受控方式调用该唯一孤立Python脚本，标CANARY_NOT_TESTED_RUNTIME、STOP，不以静态解析冒称动态验证。
+
+同一进程中可进行最多三个**纯内存负例**：省略必需target identity、将目标ID替换为已知R40 authority字符串、传入错误Blob/commit；均应明确拒绝且不能产生任何其他副作用。不允许用原全局launcher实际尝试运行负例、不能通过它运行R40，更不能修改旧launcher以便测试。需检查原旧launcher/index是否可能强制覆盖新任务，在不能证实的情况下只标GLOBAL_LAUNCHER_PRECEDENCE=UNTESTED，**本任务不授权运行原全局launcher**。这一条使未来实验只能在经新Owner认可的明确task-scoped route下启动；默认索引仍R40时不得使用旧默认入口。
+
+需提供一个针对未来120秒实验的**仅供Owner审阅的路由建议**：说明如何使用本任务明确受控的task-scoped invocation模式代替旧全局索引、未来所需的额外授权和安全检查，但本轮不提供能直接启动MATLAB的可执行command action，不添加 --execute/--arm/--run-target 分支。不要创建可被意外运行的自动触发器、计划任务、hook、Codex全局配置或指令文件。
+
+证据等级拆分:
+- DIRECT_EXECUTED_ZERO_RUNTIME_CANARY：新独立入口真的被调用、正例和负例均有安全输出；
+- EXPLICIT_TASK_SCOPED_ROUTE_SAFE_FOR_NONEXECUTING_IDENTITY_CHECK：限定当前这条显式命令；
+- GLOBAL_DEFAULT_LAUNCHER_PRECEDENCE=UNTESTED/NOT_REPAIRED；
+- FUTURE_MATLAB_120S_TARGET_RUNTIME=NOT_AUTHORIZED_NOT_TESTED。
+若canary失败后不得自动修正脚本再运行第二次以获得PASS；保留真实失败及源码供独立审阅。
+
+## 3. 可写白名单、隐私、两阶段交付
+
+只允许新增这一份隔离可调用的无科学路由canary脚本：
+validators/multi_province/temp31_r6_r3_r2_r2_explicit_task_route_canary_isolated.py
+
+只允许在新任务目录新建真实必要的安全证据：
+tasks/CH5_TEMP31_R6_R3_R2_R2_EXPLICIT_RUNTIME_ROUTER_CANARY_20261031/
+下的 result.md、source_identity.json、fixed_contract_readback.json、governance_candidate_gate.json、prior_r40_index_readonly_identity.md、explicit_invocation_identity.json、direct_canary_execution_receipt.json、positive_and_negative_route_cases.json、route_code_and_fallback_audit.md、global_launcher_precedence_gap.md、future_120s_route_proposal_for_owner.md、old_stop_preservation.md、model_budget_zero.json、privacy_report.md、gap_register.md、manifest.json、DELIVERY_FINAL_RECEIPT.json和确有必要的最少脱敏证据。原始CLI全路径、账号、敏感env、stdout原件（可能含私有信息）、执行跟踪/连接器原始异常可保留LOCAL_ONLY，新GitHub公开衍生版本必须带原字节、sha256、脱敏转换身份；不得公开R40正文或读其任务目标文件。原任务index、旧STOP、prefs、旧science src/exports、研究Result一律不可改。不能向GitHub提交无效空壳报告、没有实际代码路径的口头“路由已安全”。
+
+科学调用=0；新MATLAB=0；Job/prefdir=0；R40读取执行=0；唯一路由canary程序调用最多1次且零重试。若任何权限拒绝、隐私门失败、文件来源不合法，立即STOP，不更换账号/认证/协议/目录绕过。强制隐私扫描原规则必须真实PASS；仅可抽取原既有assertion作为不放宽规则前提下执行，必须记录所用原规则字节/SHA与覆盖所有即将公开文件。
+
+合法payload在唯一新candidate从FIXED_SCIENTIFIC_PARENT创建一个commit，经原强制隐私门PASS后普通SSH最多一次push，固定ref回读commit/parent/tree及每个文件路径/Blob/UTF8 bytes/SHA256；seal仅新增本任务DELIVERY_FINAL_RECEIPT.json、再扫描全部final文件且SSH普通push最多一次，固定ref全量读取并校验。最终Seal自身份外置LOCAL_ONLY回执，无第三commit。网络未知/SSH不确定只允许不改变身份的固定ref只读消歧，禁止额外push、PR/Issue、merge、cleanup、auto next。
+
+## 4. 终态、GPT A/B/C与科学状态
+
+成功安全canary＋公开交付：STOP__AWAITING_GPT_INDEPENDENT_ABC，**不是恢复120秒实验**。
+若无安全执行环境或负例未能fail closed：STOP__R6_R3_R2_R2_EXPLICIT_CANARY_ROUTER_UNCERTIFIED；
+若原入口优先级/索引不能安全隔离到task-scoped命令：STOP__R6_R3_R2_R2_ROUTER_UNRESOLVED；可以提交真实有界失败报告，不能擅自修旧索引。
+来源、权限、隐私、交付失败：STOP__R6_R3_R2_R2_SOURCE_PRIVACY_OR_DELIVERY_BLOCKED。
+
+GPT独立A核来源/commit/parent/tree/manifest、每文件字节/Blob/SHA、隐私证据；B独立读取canary实际代码、正负case、真实调用receipt、旧R40 index只读范围与任何fallback风险；C分别裁决artifact_integrity/source_identity/numeric_review/implementation_review/scientific_review/privacy_review/actual_terminal/delivery/cleanup/not_completed。纯路由canary不是经济学模型、MATLAB启动或GE/KFE驻定性验证。即使本轮PASS，仍由Owner对下一项具体120秒实验及其可执行路由再授权。保持R40原指针不动，任何全局路由变更需Owner专门批准。
+
+P3=BLOCKED
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+STRICT_KFE_STATIONARITY=FALSE_INHERITED_R3_R4_R5
+OLD_R6_R6_R1_R6_R2_R6_R3_R6_R3_R1_R6_R3_R2_STOPS=IMMUTABLE
+ORIGINAL_R5_BATCH_FAILURE_ROOT_CAUSE=UNKNOWN
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
