@@ -1,0 +1,120 @@
+# TEMP31 R6-R2：MATLAB R2022b 30秒启动超时证据只读审计（冻结合同）
+
+TASK_ID=CH5_TEMP31_R6_R2_NATIVE_MATLAB_TIMEOUT_EVIDENCE_AUDIT_20261030
+STATUS=ISSUED_AWAITING_OWNER_TRANSFER
+OWNER_APPROVAL=2026-10-30__BOUNDED_READONLY_R6_R1_TIMEOUT_AUDIT
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_PARENT=9d73fb5946f7a4c740e45b60da8d2b0c9b21791f
+TASK_PUBLICATION_COMMIT=GPT_PROVIDES_EXACT_40_HEX_AFTER_PUBLICATION
+EXPECTED_GOVERNANCE_HEAD=TASK_PUBLICATION_COMMIT_STRICT_EQUALITY
+TASK_CONTRACT_PATH=tasks/CH5_TEMP31_R6_R2_NATIVE_MATLAB_TIMEOUT_EVIDENCE_AUDIT_20261030/CONTRACT.md
+CANDIDATE_BRANCH=codex/ch5-temp31-r6-r2-native-matlab-timeout-evidence-audit-20261030
+FIXED_SCIENTIFIC_PARENT=56447829ce0e6c3c85552c53c351b26a2452a4bd
+FIXED_SCIENCE_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
+R6_CONTRACT_COMMIT=3df6645c63c393658b7e9d19ce35ef7c7b7cbb8c
+R6_CONTRACT_BLOB=b2c8fb6b1808730a4bc777ff88b0e9d014496a43
+R6_STOP=STOP__R6_MATLAB_RUNTIME_UNAVAILABLE
+R6_R1_CONTRACT_COMMIT=9d73fb5946f7a4c740e45b60da8d2b0c9b21791f
+R6_R1_CONTRACT_BLOB=cac2883faa2a1b75281d204de5ffecc9b7ed09d9
+R6_R1_STOP=STOP__R6_R1_NATIVE_MATLAB_GATE_FAILED
+R6_R1_EXECUTOR_REPORTED=JOB_PRE_EXECUTION_PASS__MATLAB_CREATED_RESUMED_1__TIMEOUT_30_SECONDS__OUTPUT_EMPTY__ROOT_CAUSE_UNKNOWN
+R6_R1_LOCAL_MANIFEST=EXECUTOR_REPORTED_26_OF_26__GPT_NOT_INDEPENDENTLY_VERIFIED
+R6_LOCAL_MANIFEST=EXECUTOR_REPORTED_20_OF_20__GPT_NOT_INDEPENDENTLY_VERIFIED
+R6_R1_LOCAL_TASK_RELATIVE=tasks/CH5_TEMP31_R6_R1_MATLAB_LAUNCH_CONTROLLER_RECOVERY_20261030/
+R6_LOCAL_TASK_RELATIVE=tasks/CH5_TEMP31_R6_MATLAB_PYTHON_POST_OPERATOR_ELEMENTWISE_PARITY_20261030/
+R5_REVIEW_COMMIT=f17a5cb8b1bb151f340d2f10e92d6ea126c389ba
+MAX_NEW_MATLAB_PROCESS_CREATIONS=0
+MAX_MATLAB_RUNTIME_COMMANDS=0
+MAX_NEW_JOB_PROCESS_EXPERIMENTS=0
+MAX_MODEL_HA_HJB_KFE_GE_IRF_POLICY_FIRM_REAL31_CALLS=0
+MAX_NEW_PRICE_POINTS=0
+MAX_OLD_NPZ_READS=0
+MAX_EXISTING_SCIENTIFIC_SOURCE_WRITES=0
+MAX_OLD_TASK_OR_RECEIPT_WRITES=0
+MAX_NEW_REPOSITORIES_WORKTREES=0
+MAX_ISSUE_PR_MERGE_CLEANUP=0
+AUTO_NEXT=FALSE
+
+## 0. 唯一目标与历史停止保护
+
+Owner批准本次独立、有限、只读的MATLAB启动超时证据诊断。仅阅读既有本地授权安全工作区中R6、R6-R1的结果、控制器实际源码、原生probe、Job Object回执、原始日志及manifest，判断哪些超时解释有真实证据支持。**不新启动MATLAB**，不运行MATLAB版本探测、-batch、-logfile，不运行任何HJB/KFE/GE/IRF、价格点、政策、求解器、旧NPZ，不修改原R6/R6-R1来源或任何科学代码，不提高30秒timeout或放宽1GiB、单进程、non-breakaway限制。本任务可使用本地标准库做纯文件读取/哈希及既有隐私扫描（计入审计执行器，不计入模型或MATLAB）。
+
+原R6-R1历史STOP必须保持原值STOP__R6_R1_NATIVE_MATLAB_GATE_FAILED；旧R6亦保持STOP__R6_MATLAB_RUNTIME_UNAVAILABLE。已知只是在成功CreateProcess/ResumeThread之后30秒空输出，根因UNKNOWN。不要把本轮对旧记录的静态推断冒充当时MATLAB内部的实测事件，不把进程创建成功冒充完成初始化。旧本地R6 20件、R6-R1 26件的执行者声称HASH PASS，目前GPT未取得实际本地文件；本轮尽力从原件独立复核，不可改写、移动、更名或覆盖旧报告/日志。
+
+## 1. GitHub固定提交、来源身份、安全工作区门
+
+Codex先读取TASK_PUBLICATION_COMMIT中的本合同，核验其单parent等于GOVERNANCE_PARENT、root tree、diff仅新增本合同、真实Blob/bytes/SHA256，远端治理HEAD必须严格等于TASK_PUBLICATION_COMMIT。确认新CANDIDATE_BRANCH远端不存在。已有R6-R1候选分支不存在不代表旧本地未跟踪文件可以覆盖；必须保护已有全部旧工作树/未提交文件，若不能在原已获准安全工作区无破坏地建立新候选，则STOP并记录阻断。新候选只从FIXED_SCIENTIFIC_PARENT派生，不从治理或旧R6候选派生。不访问私人目录、其他盘、网络镜像或加密锁仓，不改账号、SSH密钥、协议、root。
+
+源合同必须按各自固定GitHub ref读取：R6从R6_CONTRACT_COMMIT，R6-R1从R6_R1_CONTRACT_COMMIT，分别核验上列Blob。R5独立报告仅从R5_REVIEW_COMMIT读取；不要把不存在于旧科学parent中的后置review视为异常。无需重跑R5旧9/9和无关历史。正式src/exports仅核验冻结身份，不导入或修改。
+
+原本地已授权的R6-R1任务目录仅许可读取以下明确存在的文件（如不存在如实记录）：result.md, manifest.json, matlab_native_probe_receipt.json, windows_job_pre_execution_gate.json, controller_failure_and_repair_map.md, source_identity.json, model_budget_zero.json, gap_register.md, privacy_report.md，以及该任务既有原日志中已由上述回执精确标明、且未越出本安全任务目录的路径。既有隔离控制器源码 validators/multi_province/temp31_r6_r1_matlab_launch_controller_isolated.py 和隔离MATLAB recipe只读文件亦在白名单，仅阅读函数与执行路径，绝不执行。旧R6任务目录优先只读manifest.json、result.md；manifest明确指向其本身同目录内文件或上列既有隔离脚本时可对确切文件执行HASH检查，禁止glob搜索、符号链接越界或猜测丢失路径。
+
+如果旧manifest引用其他未授权路径，记录MISSING_OR_OUT_OF_SCOPE，不自动扩展访问。分别逐件验原R6 20件、R6-R1 26件实际存在性/bytes/SHA256/Git Blob（若原manifest有Git Blob身份）；报告真实成功、缺失、超范围、未比对数，不得抄旧PASS当本轮PASS。若必要原件不存在或隐私不允许公开，保留EXECUTOR_ATTESTED/REVIEW_PENDING_IO而非编造。
+
+## 2. 原R6-R1控制器与30秒超时时间线
+
+在不运行任何新MATLAB的前提下，利用封存的源码/receipt/日志建立事件表：
+(1) pre-create：原R2022b可执行文件的来源、实际启动参数（仅在本地记录真值，公开一律脱敏绝对路径、环境变量值、许可服务器、用户名）、是否使用batch/logfile/nodesktop、stdout/stderr绑定、超时计时起点；
+(2) pre-resume：CreateProcessW与CREATE_SUSPENDED的标志/返回、AssignProcessToJobObject、Job Object的1GiB committed-memory/active process=1/non-breakaway、query验证、ResumeThread的结果和原Win32错误；必须核验限制生效先于恢复，否则只可标EXECUTOR_REPORTED；
+(3) running：30秒到底等待什么对象，使用哪种计时/轮询/管道read方法，MATLAB是否已报告内部启动事件、stdout与stderr是否分别捕获、是否有独立logfile；空stdout不等于无MATLAB活动；是否有真实Job触顶或新子进程创建被阻事件，不得因没有事件便认定没有触发；
+(4) timeout/cleanup：真实elapsed、原进程在timeout时是否仍存活、原始error/exit code（如果实际记录）、job终止/子进程退出/句柄释放的回执和没有遗留孤儿的见证。不得运行本轮OS进程扫描替代旧时点事实，不得对任何其他已存在MATLAB会话执行清理。
+
+所有时间字段必须保留原始timestamp/timezone/clock source，区分墙钟与monotonic；若时区或起点不明即记录UNKNOWN，不插值、不发明毫秒事件。每项观测分类为 DIRECT_BYTES_AND_CODE_VERIFIED / EXECUTOR_RECEIPT_ONLY / CODE_PATH_STATIC_ONLY / HYPOTHESIS_UNTESTED / UNKNOWN_NO_EVIDENCE。对每件证据指向原path role、SHA256、字节数及实际行或JSON key。分析每种解释所需的最小证据和当前有无，禁止把“有可能”写成“发生了”。
+
+## 3. 必须回答的诊断问题
+
+A. MATLAB原生probe计时是否从进程创建前、ResumeThread之后还是stdout读取时开始？在本轮实际30秒窗口内还有多少是可观察MATLAB初始化时间？
+B. MATLAB真实命令行是直接R2022b exe还是shim/launcher，是否传递batch/logfile等参数，stdout/stderr是否真正被捕捉？
+C. Job Object限制实际被查询成功了吗？有没有DIRECT记录显示内存commit触顶或单活动进程阻断？如无，不能认定资源限制就是根因。
+D. 有无许可或配置初始化日志？如无LICENSE_CAUSE=UNKNOWN，不因企业许可证常见问题而指认license。
+E. 控制器的wait/pipe/handle逻辑是否存在可能死锁/丢日志/计时误判的静态风险？无实际堆栈或日志证明时只能列为CODE_PATH_STATIC_RISK，不判直接原因。
+F. cleanup后是否可靠地回收对应进程、是否保存原退出码和job close顺序？不得仅凭报告“无遗留”伪造现场检查。
+G. 是否有原实测证据表明MATLAB已经运行到了合成spdiags装配？用户已报告未跑，应当核对源码和日志，并根据证据等级记录NOT_TESTED。
+H. 将root cause严格定为 CONFIRMED_WITH_DIRECT_EVIDENCE 或 UNKNOWN；证据不足时必须保持UNKNOWN，不允许新启动或修改超时值来填补。
+
+可写下一轮Owner备选设计，例如需要单进程增加启动阶段日志、分辨Job限额事件、在明确约束下单变量延长超时等，必须逐项说明新预算、先验风险与预期归因力，**本任务不执行备选方案**。
+
+## 4. 交付材料、独立证据等级与隐私
+
+允许新增的唯一isolated只读源：
+validators/multi_province/temp31_r6_r2_timeout_evidence_readonly_isolated.py
+它只能用Python标准库读取本次精确许可文件、hash、离线整理/脱敏，不可import模型、subprocess启动、系统进程探测或抓取新OS记录。实际运行次数与身份登记在receipt，不得扫描私有路径。
+
+仅新增任务目录 tasks/CH5_TEMP31_R6_R2_NATIVE_MATLAB_TIMEOUT_EVIDENCE_AUDIT_20261030/ 下必要证据：
+- result.md（COMPLETED/BLOCKED/NOT_COMPLETED/NEXT_ACTION）、source_identity.json、original_manifest_readback.json；
+- controller_code_evidence.md（真实控制流片段/准确行号/原文件bytes-SHA，脱敏副本，不能只有自然语言摘要）；
+- startup_event_timeline.json、timeout_competing_hypotheses.md、matlab_stdout_stderr_visibility.md；
+- native_job_limit_evidence.md、original_stop_preservation.md、next_owner_decision_options.md；
+- gap_register.md、model_budget_zero.json、privacy_report.md、manifest.json、DELIVERY_FINAL_RECEIPT.json和必要最少佐证。
+旧source及log不发布原始全文，不发布私人绝对路径、设备名、账户、密钥、环境变量值、license server、旧NPZ或完整存档数组。使用稳定角色标签代替路径，脱敏变换以old_sha/bytes+new_sha/bytes对照记录，旧原件绝对不可修改。公开的诊断必须足够让GPT独立检查算法路径：保留安全真实代码片段而非只给哈希/摘要，隐私有冲突就优先STOP或有界标注REVIEW_PENDING_IO。既有强制隐私门原规则必须真实PASS，不得放松、关闭或变更。
+
+## 5. 候选、双阶段SSH与审阅STOP
+
+如来源/隐私安全及必要只读审计通过，才可在原授权安全工作库中从FIXED_SCIENTIFIC_PARENT创建唯一新候选。payload只新增本validator与本任务安全证据，恰好一个payload commit，经强制隐私门PASS普通SSH push最多一次；回读固定远端commit、parent、tree、path、Blob、bytes、SHA-256。seal只新增本任务目录DELIVERY_FINAL_RECEIPT.json且原隐私门PASS，再普通SSH push最多一次与远端逐文件回读；最终seal自身身份外置LOCAL_ONLY回执，不创建第三commit。禁止自动PR/Issue/merge/cleanup/next、force push或改账号协议。SSH状态未知只读官方原ref消歧，不重试push。工具/权限拒绝立即STOP。不要在已STOP的旧R6/R6-R1候选中补交文件。
+
+最终:
+- STOP__AWAITING_GPT_INDEPENDENT_ABC：合法只读审计与正式证据交付完成。ROOT_CAUSE仍可UNKNOWN；
+- STOP__R6_R2_REQUIRED_LOCAL_EVIDENCE_UNAVAILABLE：必要旧LOCAL_ONLY文件无法合法读取；
+- STOP__R6_R2_SOURCE_PRIVACY_OR_DELIVERY_BLOCKED：来源/权限/隐私/交付硬门失败；
+- STOP__R6_R2_ROOT_CAUSE_UNKNOWN_EVIDENCE_BOUNDED：原证据有界仍不足，未完成认证；有合法交付能力时应发布受限报告再STOP，不自动继续实验。
+
+GPT之后独立A证据/字节/来源、B源码计时/Job/stdout超时归因、C分层裁决；R6-R2 numeric_review=NOT_TESTED_BY_DESIGN，不因文件PASS推断MATLAB或科学算子PASS。每阶段标COMPLETED/BLOCKED/NOT_COMPLETED/NEXT_ACTION。
+
+继承科研状态：
+P3=BLOCKED
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+STRICT_KFE_STATIONARITY=FALSE_INHERITED_R3_R4_R5
+ORIGINAL_R5_BATCH_FAILURE_ROOT_CAUSE=UNKNOWN
+OLD_R6_AND_R6_R1_STOPS=IMMUTABLE
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
