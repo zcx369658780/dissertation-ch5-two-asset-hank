@@ -1,0 +1,36 @@
+{
+  "point": "E08",
+  "prices": {
+    "id": "E08",
+    "rah": 0.055,
+    "rb": 0.025,
+    "wt": 19.0
+  },
+  "command_number": 9,
+  "command": [
+    "python",
+    "-B",
+    "validators/multi_province/temp31_matlab800_price_neighborhood_r3_isolated.py",
+    "--point",
+    "E08"
+  ],
+  "working_directory": "<ISOLATED_CANDIDATE_ROOT>",
+  "claimed_at_utc": "2026-10-30T03:19:40.381713+00:00",
+  "hard_timeout_seconds": 180,
+  "max_science_processes": 1,
+  "process_committed_memory_max": 1073741824,
+  "source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+  "entry_sha256": "bf7a960deee85f91f3184fc228cdda0cf4fb4dd1652cc15a7de7237ee2fc0692",
+  "supervisor_sha256": "efe40c0fab143ea0b8e00c9961c15fa28aa0c5072bd3c37ff66cb10fd837cb9d",
+  "point_grid_sha256": "788b0475b3693bc46ac4d03ddfb814217ef806e2ce578a3d13b063595eccbc72",
+  "call_limits": {
+    "initializer_calls": 1,
+    "root_cells": 800,
+    "hjb_calls": 1,
+    "hjb_iterations": 100,
+    "hjb_policy_cells": 80000,
+    "kfe_calls": 1
+  },
+  "retry_allowed": false,
+  "KFE_gate": "only actual source HJB converged with statistic<1e-7; unchanged returned post operator"
+}

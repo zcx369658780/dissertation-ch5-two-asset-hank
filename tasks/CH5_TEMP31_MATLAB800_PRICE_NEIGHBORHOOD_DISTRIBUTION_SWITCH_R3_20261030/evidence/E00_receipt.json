@@ -1,0 +1,382 @@
+{
+  "point": "E00",
+  "classification": "SOURCE_KFE_COMPUTED_WITH_STATIONARITY_WARNING",
+  "fatal_to_task": false,
+  "exit_code": 0,
+  "timed_out": false,
+  "pre_import_memory_block": false,
+  "elapsed_seconds": 18.469000000040978,
+  "hard_timeout_seconds": 180,
+  "memory_limit": {
+    "status": "PROCESS_MEMORY_HARD_LIMIT_ENFORCED",
+    "bytes": 1073741824,
+    "kind": "Windows Job process committed memory",
+    "RSS_hard_cap": "NOT_SEPARATELY_ENFORCED",
+    "active_process_limit": 1,
+    "kill_on_job_close": true,
+    "applied_before_scientific_import_handshake": true,
+    "observed_peak_process_committed_bytes": 95977472
+  },
+  "science_child_processes": 1,
+  "final_event": {
+    "event": "point_result",
+    "point": "E00",
+    "prices": {
+      "id": "E00",
+      "rah": 0.05,
+      "rb": 0.02,
+      "wt": 19.1
+    },
+    "classification": "SOURCE_KFE_COMPUTED_WITH_STATIONARITY_WARNING",
+    "fatal_to_task": false,
+    "wage_provenance": {
+      "scope": "COUNTERFACTUAL_SYNTHETIC_WAGE_WITNESS_NO_REAL_FIRM_EMPIRICAL_PROVENANCE",
+      "chain": [
+        "SyntheticNetWageCalculation",
+        "calculated_round_record",
+        "later_net_wage_record",
+        "netwage_inputs"
+      ],
+      "generated_after_iteration": 1,
+      "entering_iteration": 2,
+      "synthetic_firm_wage": 11.283697433004752,
+      "phi_destination_origin": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "phi_l": 5,
+      "alphal": 1,
+      "metadata_only_no_actual_firm_or_iteration_run": true,
+      "point": "E00",
+      "requested_effective_wage": 19.1,
+      "actual_source_effective_wage": 19.100000000000005,
+      "wage_error": 3.552713678800501e-15,
+      "context_id": "TEMP31_MATLAB800_SYNTHETIC_NEIGHBORHOOD_R3_20261030_E00",
+      "province_order": [
+        "A",
+        "B"
+      ],
+      "record_semantics": "CALCULATED_NET_AFTER_DESTINATION_TAU_AND_SIGMA",
+      "real_empirical_provenance": false,
+      "tax_background_preserved": true
+    },
+    "initialization": {
+      "consumption_shape": [
+        20,
+        20,
+        2
+      ],
+      "consumption_min": 10.292739027240417,
+      "consumption_max": 15.835122256991374,
+      "consumption_F_sha256": "5d599c94bce17ed1355bfbaff506a8a0ca6350d09277876bf1bd4e91fa14922e",
+      "shape": [
+        20,
+        20,
+        2
+      ],
+      "states": 800,
+      "value_min": -2.2693289169498834,
+      "value_max": -1.4708058986054566,
+      "labor_min": 0.6296813445537653,
+      "labor_max": 0.6788531068016798,
+      "finite": true,
+      "value_F_float64_sha256": "68eeece6c7d0f5f54d5015f39004b98a0cd9f362382db771194ec4111bf38f74",
+      "labor_F_float64_sha256": "a95d03e519c62280fb07c2d420c83507034fe8a779b86a0aade6b6488689a400",
+      "fresh_for_point": "E00",
+      "warm_start": false
+    },
+    "HJB_SOURCE_CONVERGED": true,
+    "MATLAB_KFE_METHOD_EXECUTED": true,
+    "SOURCE_METHOD_INTERIOR_CANDIDATE": true,
+    "STRICT_ECONOMIC_STATIONARITY_CERTIFIED": false,
+    "HJB": {
+      "converged": true,
+      "iterations": 18,
+      "convergence_statistic": 2.677054133926049e-09,
+      "finite_return_fields": {
+        "value": true,
+        "initial_value": true,
+        "consumption": true,
+        "labor": true,
+        "transfer": true,
+        "adjustment_cost": true,
+        "effective_illiquid_return": true,
+        "mu_a": true,
+        "mu_b": true,
+        "utility": true
+      },
+      "iteration_operator": {
+        "shape": [
+          800,
+          800
+        ],
+        "nnz": 4032,
+        "finite": true,
+        "row_sum_abs_max": 0.002679876658607583,
+        "max_signed_row_sum": 1.609823385706477e-15,
+        "min_offdiagonal_including_implicit_zeros": -2.8204285748468236,
+        "csr_sha256": "870ced8bd0cd1f6c9759ea0b4488a256e6ee574c6b49243c7f825ecbd95655fd"
+      },
+      "post_convergence_operator": {
+        "shape": [
+          800,
+          800
+        ],
+        "nnz": 3139,
+        "finite": true,
+        "row_sum_abs_max": 2.822599294709024,
+        "max_signed_row_sum": 1.1657341758564144e-15,
+        "min_offdiagonal_including_implicit_zeros": 0.0,
+        "csr_sha256": "4ece68370de96a0b3725c5e93394f21675f6ba2b65e926a14d39c6a05178c7d3"
+      },
+      "max_observed_iteration_row_sum_abs": 0.0026798766586078604,
+      "MATLAB_homecrit": 0.01,
+      "observed_homecrit_violation": false,
+      "first_homecrit_exceeded_iteration": null,
+      "homecrit_exceeded_iterations": [],
+      "homecrit_guard_internal": "ABSENT_UNCHANGED_EXTERNAL_READONLY_OBSERVATION",
+      "source_parity": "PARITY_UNCERTIFIED_RAW_MATLAB_NOT_LOCALLY_VERIFIED",
+      "stale_last_policy_residual": 2.6811330933185218e-12,
+      "implicit_identity_error": 1.609801181245985e-14,
+      "full_nonlinear_Bellman_residual": "NOT_EVALUATED",
+      "warnings": []
+    },
+    "KFE": {
+      "status": "SOURCE_KFE_COMPUTED_WITH_STATIONARITY_WARNING",
+      "source_method_executed": true,
+      "At": 5.068317469043946,
+      "Bt": 1.8151672433916255,
+      "Lt": 0.6537020976131965,
+      "Ct": 12.719633632614748,
+      "original_residual_at_pin_row295": -0.325060164644086,
+      "non_pin799_residual_max": 7.905358496724385e-17,
+      "residual_argmax_index0": 295,
+      "normalized_contaminated_equation_residual": 7.905358496724385e-17,
+      "SOURCE_METHOD_INTERIOR_CANDIDATE": true,
+      "STRICT_ECONOMIC_STATIONARITY_CERTIFIED": false,
+      "B_UPPER_BOUNDARY_WARNING": false,
+      "b_mode_indices0": [
+        19
+      ],
+      "b_mode_asset_positions": [
+        5.0
+      ],
+      "a_mass20": [
+        0.05386467504775741,
+        0.005922739778013082,
+        0.010815516693506336,
+        0.0177585737243005,
+        0.026541249306360138,
+        0.036926305508057755,
+        0.04832402001004059,
+        0.0601672935248085,
+        0.07178694835405876,
+        0.08313315550787159,
+        0.0912889373960884,
+        0.09488097702955517,
+        0.09828122563210143,
+        0.11622078242481677,
+        0.18357099039115476,
+        0.0005166096715087923,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "b_mass20": [
+        0.04999593010129506,
+        0.09306464825067656,
+        0.046474723480672914,
+        0.044870239298412176,
+        0.044949545528507696,
+        0.04432052295973249,
+        0.0408061346772669,
+        0.0377667569995228,
+        0.03619552195845578,
+        0.03529737141844339,
+        0.03476214317921831,
+        0.03444281007179706,
+        0.03426083332459941,
+        0.03417054894725037,
+        0.03414407066102096,
+        0.034163303051913764,
+        0.023809909255248007,
+        0.02341678342586774,
+        0.023042034105142856,
+        0.25004616930495577
+      ],
+      "total_probability": 1.0,
+      "negative_probability_mass": 0.0,
+      "negative_density_cells": 0,
+      "density_min": 0.0,
+      "density_max": 0.15738316515859513,
+      "a_lower_mass": 0.05386467504775741,
+      "a_upper_mass": 0.0,
+      "a_internal_mass": 0.9461353249522426,
+      "b_lower_mass": 0.04999593010129506,
+      "b_upper_mass": 0.25004616930495577,
+      "b_internal_mass": 0.6999579005937491,
+      "a_mode_indices0": [
+        14
+      ],
+      "a_mode_asset_positions": [
+        7.368421052631579
+      ],
+      "At_distance_from_lower": 5.068317469043946,
+      "At_distance_from_upper": 4.931682530956054,
+      "stationary_residual": 0.325060164644086,
+      "contaminated_raw_system_residual": 8.429671891074797e-18,
+      "source_raw_residual_inf": 8.429671891074797e-18,
+      "contaminated_row_index0": 295,
+      "rhs_at_contaminated_row": 0.007,
+      "normalization_factor": 0.11629286380215587,
+      "cell_weight": 0.19390581717451522,
+      "certification_tests": {
+        "density_finite": true,
+        "total_probability_abs_error_le_1e8": true,
+        "negative_probability_mass_le_1e8": true,
+        "post_stationary_residual_le_1e7": false,
+        "contaminated_raw_system_residual_le_1e7": true
+      },
+      "interior_tests": {
+        "At_strict_0_10": true,
+        "a_internal_mass_ge_point10": true,
+        "a_lower_mass_le_point50": true,
+        "a_upper_mass_le_point50": true,
+        "a_modal_indices_not_only_endpoints": true,
+        "b_internal_mass_ge_point05": true
+      },
+      "warnings": [],
+      "signed_density_unmodified": true,
+      "source_post_operator_passed_directly_and_unchanged": true,
+      "LOCAL_ONLY_archive": {
+        "task_relative_path": "evidence/LOCAL_ONLY_E00_true_KFE_density.npz",
+        "bytes": 10889,
+        "sha256": "b4f514fd54a47d5fd08812c9e4be30b22627c3fb6c36c03adebe8a3977ec7224"
+      }
+    },
+    "observed_counts": {
+      "initializer_calls": 1,
+      "root_cells": 800,
+      "brentq_calls": 800,
+      "hjb_calls": 1,
+      "hjb_iterations": 18,
+      "hjb_policy_cells": 14400,
+      "operator_assemblies": 19,
+      "hjb_linear_solves": 18,
+      "kfe_calls": 1,
+      "kfe_linear_solves": 1,
+      "kfe_contaminated_row_index_calls": 1
+    },
+    "LOCAL_ONLY_hjb_archive": {
+      "task_relative_path": "evidence/LOCAL_ONLY_E00_true_arrays_and_rates.npz",
+      "bytes": 108054,
+      "sha256": "24785b8bd52ef97d0a91541b7176f77d04ac7fe78b275e3bc7b4293714c79c82",
+      "LOCAL_ONLY": true,
+      "observed_new_point_not_historical_tinygrid": true
+    },
+    "MATLAB_RAW_LOCAL_VERIFICATION": "NOT_AVAILABLE",
+    "firm_GE_IRF_outer_31province_data_calls": 0,
+    "source_or_economic_parameter_changes": 0
+  },
+  "raw_public_log_identity": {
+    "role": "PUBLICATION_DERIVATIVE_REDACTED",
+    "original_role": "EXECUTION_STDOUT_STDERR_RAW_LOCAL_ONLY",
+    "stdout": {
+      "raw_bytes": 39566,
+      "raw_sha256": "9b70bed642e938d1427a56da971cce9bd08e5e287fd361afb8c5ace88051b6cc",
+      "public_bytes": 39043,
+      "public_sha256": "55666bcb1a2360064b864c90081dd9bae02ffd463ac506077b6d0b1acc154951",
+      "changes": {
+        "prefix_replacements": [
+          {
+            "prefix_category": "<ISOLATED_CANDIDATE_ROOT>",
+            "prefix_sha256": "70a5570d471875736fa2d308720219eab72913a07a45d264a3b98fe8c7aae2a3",
+            "replacements": 9
+          }
+        ],
+        "field_transformations": [
+          {
+            "json_pointer": "/JSONL_record_1/modules/0/file",
+            "transform": "metadata path separator normalization after exact private-prefix replacement",
+            "original_role_value_sha256": "bf70378304e2faac58a0923e21d871f133c933ec59d0311c3d7765e7ab1e04e9"
+          },
+          {
+            "json_pointer": "/JSONL_record_1/modules/1/file",
+            "transform": "metadata path separator normalization after exact private-prefix replacement",
+            "original_role_value_sha256": "21bf397b77e5aeab391009508ac2d9867214fcc323aecc0163d9643b8e18fb35"
+          },
+          {
+            "json_pointer": "/JSONL_record_1/modules/2/file",
+            "transform": "metadata path separator normalization after exact private-prefix replacement",
+            "original_role_value_sha256": "d362114d9ec969ef84798917908c8267d991583aa7c136242275268c6013cb4e"
+          },
+          {
+            "json_pointer": "/JSONL_record_1/modules/3/file",
+            "transform": "metadata path separator normalization after exact private-prefix replacement",
+            "original_role_value_sha256": "e66cf947dc0add4f80372662afb1d5c7211e49d48e9d43682ac2ff6228757235"
+          },
+          {
+            "json_pointer": "/JSONL_record_1/modules/4/file",
+            "transform": "metadata path separator normalization after exact private-prefix replacement",
+            "original_role_value_sha256": "4f9f6e4a187cc7f539463b14d3ee2ff104b3e4dd895dc88248f794a60804b37c"
+          },
+          {
+            "json_pointer": "/JSONL_record_1/modules/5/file",
+            "transform": "metadata path separator normalization after exact private-prefix replacement",
+            "original_role_value_sha256": "a86934a029a5c5a9e39dffb1347ad673d499f023e7fe448db048e0f7c81fe70e"
+          },
+          {
+            "json_pointer": "/JSONL_record_1/modules/6/file",
+            "transform": "metadata path separator normalization after exact private-prefix replacement",
+            "original_role_value_sha256": "18de8997f5d29a3b4bba39aa7546f54ca8a0c4e4b4095ac6c066dc9c0bc7f1de"
+          },
+          {
+            "json_pointer": "/JSONL_record_1/modules/7/file",
+            "transform": "metadata path separator normalization after exact private-prefix replacement",
+            "original_role_value_sha256": "0106be1a5a63b8f9034b3654b8b1f780880fcd099085e692a6e0ebbf76e9ad55"
+          },
+          {
+            "json_pointer": "/JSONL_record_1/modules/8/file",
+            "transform": "metadata path separator normalization after exact private-prefix replacement",
+            "original_role_value_sha256": "c4a7a2b8ebd672a0f217dc5369d71694b1f3d8b389a48b2894de449e12eea1e4"
+          }
+        ],
+        "serialization": "public JSONL reserialized after metadata-only transformation; raw bytes preserved"
+      }
+    },
+    "stderr": {
+      "raw_bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0,
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "changes": {
+        "prefix_replacements": [],
+        "field_transformations": [],
+        "serialization": "public JSONL reserialized after metadata-only transformation; raw bytes preserved"
+      }
+    },
+    "scientific_numeric_values_modified": false
+  },
+  "retries": 0,
+  "actual_counts": {
+    "initializer_calls": 1,
+    "root_cells": 800,
+    "brentq_calls": 800,
+    "hjb_calls": 1,
+    "hjb_iterations": 18,
+    "hjb_policy_cells": 14400,
+    "operator_assemblies": 19,
+    "hjb_linear_solves": 18,
+    "kfe_calls": 1,
+    "kfe_linear_solves": 1,
+    "kfe_contaminated_row_index_calls": 1
+  },
+  "completed_iteration_metrics": 18
+}

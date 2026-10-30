@@ -1,0 +1,1701 @@
+{
+  "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+  "predeclared_rules": {
+    "main_ladder": [
+      "P2",
+      "E00",
+      "E01",
+      "E02",
+      "E03",
+      "E04",
+      "D07"
+    ],
+    "abs_delta_At_min": 1.0,
+    "abs_delta_b_upper_mass_min": 0.25,
+    "TV": "half-L1 over original20bin marginal masses, no clipping",
+    "if_missing": "UNTESTED_INTERVAL",
+    "rb_pairs": [
+      [
+        "E02",
+        "E05"
+      ],
+      [
+        "E02",
+        "E06"
+      ]
+    ],
+    "joint_pairs": [
+      [
+        "D09",
+        "E07"
+      ],
+      [
+        "D09",
+        "E08"
+      ],
+      [
+        "D09",
+        "E09"
+      ],
+      [
+        "D09",
+        "E10"
+      ],
+      [
+        "D09",
+        "E11"
+      ],
+      [
+        "D11",
+        "E07"
+      ],
+      [
+        "D11",
+        "E08"
+      ],
+      [
+        "D11",
+        "E09"
+      ],
+      [
+        "D11",
+        "E10"
+      ],
+      [
+        "D11",
+        "E11"
+      ]
+    ],
+    "mass_comparability": "source method successful, common frozen grid/source, finite arrays; mass and negative-mass flags use inherited1e-8 thresholds; strict stationarity independently displayed"
+  },
+  "main_wage_ladder": [
+    {
+      "left_id": "P2",
+      "right_id": "E00",
+      "comparison_kind": "PREREGISTERED_WAGE_LADDER",
+      "left_provenance": {
+        "kind": "HISTORICAL_READ_ONLY",
+        "task_id": "CH5_TEMP31_MATLAB800_THREE_PRICE_INTERIOR_HA_PILOT_R1_20261029",
+        "commit": "c46a6e5e7220009450cceaf5d59e6e4db7c34f11",
+        "path": "tasks/CH5_TEMP31_MATLAB800_THREE_PRICE_INTERIOR_HA_PILOT_R1_20261029/evidence/P2_result.json",
+        "result_identity": {
+          "bytes": 6814,
+          "sha256": "4feb4c2dbb0b6e158915882cb24fed5e177c805674340eba041e80377c936ade",
+          "git_blob": "683e7a944e71372b5d2cb170310758d24c5f8585"
+        },
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+        "new_HJB_KFE_calls": 0
+      },
+      "right_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E00_result.json",
+        "result_identity": {
+          "bytes": 8222,
+          "sha256": "a29b4cd3b2ba4ca21f7689d624e503d5620c0a89722681f6a0c081e47ccf9e43",
+          "git_blob": "4fa1e08233c16111db9872bf145204d639c79a56"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "left_prices": {
+        "id": "P2",
+        "rah": 0.05,
+        "rb": 0.02,
+        "wt": 19.0
+      },
+      "right_prices": {
+        "id": "E00",
+        "rah": 0.05,
+        "rb": 0.02,
+        "wt": 19.1
+      },
+      "left_strict_certified": false,
+      "right_strict_certified": false,
+      "strict_stationarity_warning": true,
+      "changed_price_axes": [
+        "wt"
+      ],
+      "contrast_scope": "SINGLE_PRICE_DIFFERENCE",
+      "status": "OBSERVED_CONDITIONAL_DISTRIBUTION_COMPARISON",
+      "delta_At": -0.00398208460179017,
+      "abs_delta_At": 0.00398208460179017,
+      "delta_Bt": 0.00045841492683718066,
+      "abs_delta_Bt": 0.00045841492683718066,
+      "delta_b_upper_mass": 0.0007133622946436657,
+      "abs_delta_b_upper_mass": 0.0007133622946436657,
+      "delta_a_mass20": [
+        -3.099713621958211e-05,
+        1.150051789107747e-05,
+        2.7608764474360697e-05,
+        5.2835187327470584e-05,
+        8.568148507072035e-05,
+        0.00012213339074403778,
+        0.00015209376756255416,
+        0.00017230620080138648,
+        0.0001776494158198666,
+        0.00015951055924155744,
+        0.00016447443188284672,
+        9.705902352157014e-05,
+        -2.1732995904202856e-05,
+        -0.00022312398642665432,
+        -0.0009339199666922593,
+        -1.3078659094832015e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delta_b_mass20": [
+        0.000375188102143556,
+        0.00019506213404800465,
+        -4.120101595846831e-05,
+        -6.529142256764264e-05,
+        -8.406025546276591e-05,
+        -9.144127592441986e-05,
+        -8.654569172306115e-05,
+        -8.301905688562483e-05,
+        -8.301978240268099e-05,
+        -8.407708164154953e-05,
+        -8.551691080151136e-05,
+        -8.70662718615578e-05,
+        -8.861583777966531e-05,
+        -9.012077051453321e-05,
+        -9.157579428696605e-05,
+        -9.298872018629473e-05,
+        -4.667293970831224e-05,
+        -4.301838150382736e-05,
+        -3.938132162634861e-05,
+        0.0007133622946436657
+      ],
+      "a_marginal_TV_half_L1": 0.0012228527443374896,
+      "b_marginal_TV_half_L1": 0.0012836125308352282,
+      "marginal_arrays_unclipped": true,
+      "DISCRETE_TRANSITION_FLAG": false,
+      "interpretation": "descriptive finite-point comparison of unverified source outputs; not bifurcation, continuous critical price or formal comparative statics"
+    },
+    {
+      "left_id": "E00",
+      "right_id": "E01",
+      "comparison_kind": "PREREGISTERED_WAGE_LADDER",
+      "left_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E00_result.json",
+        "result_identity": {
+          "bytes": 8222,
+          "sha256": "a29b4cd3b2ba4ca21f7689d624e503d5620c0a89722681f6a0c081e47ccf9e43",
+          "git_blob": "4fa1e08233c16111db9872bf145204d639c79a56"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "right_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E01_result.json",
+        "result_identity": {
+          "bytes": 4843,
+          "sha256": "c4b10f97f03332336ef85a4969393b3ba26440cf2e00b9f26facec59355b3381",
+          "git_blob": "04872725a642abe17abe9394899bbbed7454d2ea"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "left_prices": {
+        "id": "E00",
+        "rah": 0.05,
+        "rb": 0.02,
+        "wt": 19.1
+      },
+      "right_prices": {
+        "id": "E01",
+        "rah": 0.05,
+        "rb": 0.02,
+        "wt": 19.25
+      },
+      "left_strict_certified": false,
+      "right_strict_certified": false,
+      "strict_stationarity_warning": true,
+      "changed_price_axes": [
+        "wt"
+      ],
+      "contrast_scope": "SINGLE_PRICE_DIFFERENCE",
+      "status": "UNTESTED_INTERVAL",
+      "DISCRETE_TRANSITION_FLAG": "NOT_EVALUATED",
+      "reason": "one or both original adjacent points lack source HJB convergence/finite KFE; no interpolation or gap bridging"
+    },
+    {
+      "left_id": "E01",
+      "right_id": "E02",
+      "comparison_kind": "PREREGISTERED_WAGE_LADDER",
+      "left_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E01_result.json",
+        "result_identity": {
+          "bytes": 4843,
+          "sha256": "c4b10f97f03332336ef85a4969393b3ba26440cf2e00b9f26facec59355b3381",
+          "git_blob": "04872725a642abe17abe9394899bbbed7454d2ea"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "right_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E02_result.json",
+        "result_identity": {
+          "bytes": 4868,
+          "sha256": "dd86465f2ac07f4bf9efac0d0d289440bdf0997dfc3b5eeb1236d3d92f36bfd9",
+          "git_blob": "a9344bdf5994d71f985ec45af9ed17298c8392b3"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "left_prices": {
+        "id": "E01",
+        "rah": 0.05,
+        "rb": 0.02,
+        "wt": 19.25
+      },
+      "right_prices": {
+        "id": "E02",
+        "rah": 0.05,
+        "rb": 0.02,
+        "wt": 19.5
+      },
+      "left_strict_certified": false,
+      "right_strict_certified": false,
+      "strict_stationarity_warning": true,
+      "changed_price_axes": [
+        "wt"
+      ],
+      "contrast_scope": "SINGLE_PRICE_DIFFERENCE",
+      "status": "UNTESTED_INTERVAL",
+      "DISCRETE_TRANSITION_FLAG": "NOT_EVALUATED",
+      "reason": "one or both original adjacent points lack source HJB convergence/finite KFE; no interpolation or gap bridging"
+    },
+    {
+      "left_id": "E02",
+      "right_id": "E03",
+      "comparison_kind": "PREREGISTERED_WAGE_LADDER",
+      "left_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E02_result.json",
+        "result_identity": {
+          "bytes": 4868,
+          "sha256": "dd86465f2ac07f4bf9efac0d0d289440bdf0997dfc3b5eeb1236d3d92f36bfd9",
+          "git_blob": "a9344bdf5994d71f985ec45af9ed17298c8392b3"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "right_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E03_result.json",
+        "result_identity": {
+          "bytes": 8229,
+          "sha256": "671ab7b4bfecc24e1e72a27c612335536dd4eac9bffad2463bca82e01489d99d",
+          "git_blob": "9833a587cf4e8fd6795f769747f0326cd3bd60e5"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "left_prices": {
+        "id": "E02",
+        "rah": 0.05,
+        "rb": 0.02,
+        "wt": 19.5
+      },
+      "right_prices": {
+        "id": "E03",
+        "rah": 0.05,
+        "rb": 0.02,
+        "wt": 19.75
+      },
+      "left_strict_certified": false,
+      "right_strict_certified": false,
+      "strict_stationarity_warning": true,
+      "changed_price_axes": [
+        "wt"
+      ],
+      "contrast_scope": "SINGLE_PRICE_DIFFERENCE",
+      "status": "UNTESTED_INTERVAL",
+      "DISCRETE_TRANSITION_FLAG": "NOT_EVALUATED",
+      "reason": "one or both original adjacent points lack source HJB convergence/finite KFE; no interpolation or gap bridging"
+    },
+    {
+      "left_id": "E03",
+      "right_id": "E04",
+      "comparison_kind": "PREREGISTERED_WAGE_LADDER",
+      "left_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E03_result.json",
+        "result_identity": {
+          "bytes": 8229,
+          "sha256": "671ab7b4bfecc24e1e72a27c612335536dd4eac9bffad2463bca82e01489d99d",
+          "git_blob": "9833a587cf4e8fd6795f769747f0326cd3bd60e5"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "right_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E04_result.json",
+        "result_identity": {
+          "bytes": 8388,
+          "sha256": "dfe9b640288ef2a5f4d7ff442e4f1bae64ceea4bb671e13ad116dc3a57bb9515",
+          "git_blob": "3d77f71537c9272e1e4c5b786114586c178ecee6"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "left_prices": {
+        "id": "E03",
+        "rah": 0.05,
+        "rb": 0.02,
+        "wt": 19.75
+      },
+      "right_prices": {
+        "id": "E04",
+        "rah": 0.05,
+        "rb": 0.02,
+        "wt": 19.9
+      },
+      "left_strict_certified": false,
+      "right_strict_certified": false,
+      "strict_stationarity_warning": true,
+      "changed_price_axes": [
+        "wt"
+      ],
+      "contrast_scope": "SINGLE_PRICE_DIFFERENCE",
+      "status": "OBSERVED_CONDITIONAL_DISTRIBUTION_COMPARISON",
+      "delta_At": 2.184072629709945,
+      "abs_delta_At": 2.184072629709945,
+      "delta_Bt": 2.887900475653729,
+      "abs_delta_Bt": 2.887900475653729,
+      "delta_b_upper_mass": 0.4393009995569363,
+      "abs_delta_b_upper_mass": 0.4393009995569363,
+      "delta_a_mass20": [
+        -0.05366480865579234,
+        -0.005995619372410754,
+        -0.010990611304298006,
+        -0.018092113380214034,
+        -0.0270741582021029,
+        -0.03765402696894861,
+        -0.04912116646551608,
+        -0.060711215667124244,
+        -0.07125481829099785,
+        -0.07932149408733588,
+        -0.07871983304027047,
+        -0.05812905074559752,
+        0.00055456234358503,
+        0.1025262136524816,
+        0.24405047348948938,
+        0.09912153694143407,
+        0.06487988022119846,
+        0.03502244729743202,
+        0.004573802234988023,
+        1.9075127315957168e-18
+      ],
+      "delta_b_mass20": [
+        -0.052420870980217374,
+        -0.09426710828903312,
+        -0.04620302584389363,
+        -0.04445005886203219,
+        -0.04441313172604009,
+        -0.043738396441556165,
+        -0.04025547388456505,
+        -0.037238885576692006,
+        -0.0356679757282402,
+        -0.03476333285341615,
+        -0.03421910124614596,
+        -0.03389000679175732,
+        -0.0336982221723716,
+        -0.03359838321965716,
+        -0.033562649789146276,
+        0.05385326208666711,
+        0.05516200496332391,
+        0.048986897641605215,
+        0.04508345915623167,
+        0.4393009995569363
+      ],
+      "a_marginal_TV_half_L1": 0.5507289161806087,
+      "b_marginal_TV_half_L1": 0.6423866234047643,
+      "marginal_arrays_unclipped": true,
+      "DISCRETE_TRANSITION_FLAG": true,
+      "interpretation": "descriptive finite-point comparison of unverified source outputs; not bifurcation, continuous critical price or formal comparative statics"
+    },
+    {
+      "left_id": "E04",
+      "right_id": "D07",
+      "comparison_kind": "PREREGISTERED_WAGE_LADDER",
+      "left_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E04_result.json",
+        "result_identity": {
+          "bytes": 8388,
+          "sha256": "dfe9b640288ef2a5f4d7ff442e4f1bae64ceea4bb671e13ad116dc3a57bb9515",
+          "git_blob": "3d77f71537c9272e1e4c5b786114586c178ecee6"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "right_provenance": {
+        "kind": "HISTORICAL_READ_ONLY",
+        "task_id": "CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030",
+        "commit": "ffb156712e56bd2fe24924ba40295858ad67e18f",
+        "path": "tasks/CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030/evidence/D07_result.json",
+        "result_identity": {
+          "bytes": 8265,
+          "sha256": "ac7a9e2b9d2be410f3052a05ce98005e5389f087c43b4ee87710bb188499592a",
+          "git_blob": "51f977895267f11430d2f3735b12aa22639fee79"
+        },
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+        "new_HJB_KFE_calls": 0
+      },
+      "left_prices": {
+        "id": "E04",
+        "rah": 0.05,
+        "rb": 0.02,
+        "wt": 19.9
+      },
+      "right_prices": {
+        "id": "D07",
+        "rah": 0.05,
+        "rb": 0.02,
+        "wt": 20
+      },
+      "left_strict_certified": false,
+      "right_strict_certified": false,
+      "strict_stationarity_warning": true,
+      "changed_price_axes": [
+        "wt"
+      ],
+      "contrast_scope": "SINGLE_PRICE_DIFFERENCE",
+      "status": "OBSERVED_CONDITIONAL_DISTRIBUTION_COMPARISON",
+      "delta_At": -0.0001810035924725284,
+      "abs_delta_At": 0.0001810035924725284,
+      "delta_Bt": 0.0005739458772806572,
+      "abs_delta_Bt": 0.0005739458772806572,
+      "delta_b_upper_mass": 0.0005536382758365432,
+      "abs_delta_b_upper_mass": 0.0005536382758365432,
+      "delta_a_mass20": [
+        -7.600428776221083e-06,
+        -3.1901518813948544e-07,
+        -1.620881796938824e-07,
+        -9.348179468794646e-08,
+        -1.162090312663225e-07,
+        -2.7190241795075433e-07,
+        -6.533309564739321e-07,
+        -1.5102547681469314e-06,
+        -3.456969775244038e-06,
+        -7.912416520095e-06,
+        -1.7979742590943162e-05,
+        -3.7542465826025107e-05,
+        -2.8177542025789593e-05,
+        2.8664000401801282e-05,
+        0.00027038623212005675,
+        4.382223683879749e-05,
+        -1.0249152195773714e-05,
+        -0.0001346035650549235,
+        -9.222390425918381e-05,
+        -9.55150504306249e-19
+      ],
+      "delta_b_mass20": [
+        -7.226666611558352e-09,
+        -7.145136443582445e-09,
+        -3.861834665077815e-09,
+        -3.867222702512668e-09,
+        -4.002947082575499e-09,
+        -4.143526025562746e-09,
+        -3.899867341779433e-09,
+        -3.6310427354282647e-09,
+        -3.5151252116184273e-09,
+        -3.4638399039007413e-09,
+        -3.4475049436214307e-09,
+        -3.452089952132819e-09,
+        -3.4717152773568107e-09,
+        -3.510732692619319e-09,
+        -3.61153660877377e-09,
+        -0.00019928637223037837,
+        -0.00014607641736739951,
+        -0.00011346397563836985,
+        -9.47492598120242e-05,
+        0.0005536382758365432
+      ],
+      "a_marginal_TV_half_L1": 0.0003428724693606074,
+      "b_marginal_TV_half_L1": 0.0005536382758364566,
+      "marginal_arrays_unclipped": true,
+      "DISCRETE_TRANSITION_FLAG": false,
+      "interpretation": "descriptive finite-point comparison of unverified source outputs; not bifurcation, continuous critical price or formal comparative statics"
+    }
+  ],
+  "rb_neighborhood": [
+    {
+      "left_id": "E02",
+      "right_id": "E05",
+      "comparison_kind": "RB_NEIGHBORHOOD",
+      "left_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E02_result.json",
+        "result_identity": {
+          "bytes": 4868,
+          "sha256": "dd86465f2ac07f4bf9efac0d0d289440bdf0997dfc3b5eeb1236d3d92f36bfd9",
+          "git_blob": "a9344bdf5994d71f985ec45af9ed17298c8392b3"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "right_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E05_result.json",
+        "result_identity": {
+          "bytes": 4874,
+          "sha256": "008525df944e57046ca4494626ca371c24eec295f79d482dbfb95f03f4d9b3df",
+          "git_blob": "0f2bf9abfb93108976f8cbf088630ddc5e48781f"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "left_prices": {
+        "id": "E02",
+        "rah": 0.05,
+        "rb": 0.02,
+        "wt": 19.5
+      },
+      "right_prices": {
+        "id": "E05",
+        "rah": 0.05,
+        "rb": 0.0175,
+        "wt": 19.5
+      },
+      "left_strict_certified": false,
+      "right_strict_certified": false,
+      "strict_stationarity_warning": true,
+      "changed_price_axes": [
+        "rb"
+      ],
+      "contrast_scope": "SINGLE_PRICE_DIFFERENCE",
+      "status": "UNTESTED_INTERVAL",
+      "DISCRETE_TRANSITION_FLAG": "NOT_EVALUATED",
+      "reason": "one or both original adjacent points lack source HJB convergence/finite KFE; no interpolation or gap bridging"
+    },
+    {
+      "left_id": "E02",
+      "right_id": "E06",
+      "comparison_kind": "RB_NEIGHBORHOOD",
+      "left_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E02_result.json",
+        "result_identity": {
+          "bytes": 4868,
+          "sha256": "dd86465f2ac07f4bf9efac0d0d289440bdf0997dfc3b5eeb1236d3d92f36bfd9",
+          "git_blob": "a9344bdf5994d71f985ec45af9ed17298c8392b3"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "right_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E06_result.json",
+        "result_identity": {
+          "bytes": 8248,
+          "sha256": "3fe2a18fc7fc9f1fa017eb40f5832bc1386c7ac722f2472e3de2580111bc60e2",
+          "git_blob": "c0b77cecc657935096d056a80ad4689af2116d23"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "left_prices": {
+        "id": "E02",
+        "rah": 0.05,
+        "rb": 0.02,
+        "wt": 19.5
+      },
+      "right_prices": {
+        "id": "E06",
+        "rah": 0.05,
+        "rb": 0.0225,
+        "wt": 19.5
+      },
+      "left_strict_certified": false,
+      "right_strict_certified": false,
+      "strict_stationarity_warning": true,
+      "changed_price_axes": [
+        "rb"
+      ],
+      "contrast_scope": "SINGLE_PRICE_DIFFERENCE",
+      "status": "UNTESTED_INTERVAL",
+      "DISCRETE_TRANSITION_FLAG": "NOT_EVALUATED",
+      "reason": "one or both original adjacent points lack source HJB convergence/finite KFE; no interpolation or gap bridging"
+    }
+  ],
+  "joint_neighborhood": [
+    {
+      "left_id": "D09",
+      "right_id": "E07",
+      "comparison_kind": "JOINT_PRICE_NEIGHBORHOOD",
+      "left_provenance": {
+        "kind": "HISTORICAL_READ_ONLY",
+        "task_id": "CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030",
+        "commit": "ffb156712e56bd2fe24924ba40295858ad67e18f",
+        "path": "tasks/CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030/evidence/D09_result.json",
+        "result_identity": {
+          "bytes": 8155,
+          "sha256": "6ba520822a101d9bc8b5e281721a885a5f72bc57228973c40a07e0f13a8b3457",
+          "git_blob": "ae7bb4ba69021817fffcc157e820189ee4ffb9a5"
+        },
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+        "new_HJB_KFE_calls": 0
+      },
+      "right_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E07_result.json",
+        "result_identity": {
+          "bytes": 8287,
+          "sha256": "04ea38e678781aa019467de2f1e920869b89ec53e718cf57f47c6e87d6cc78c5",
+          "git_blob": "46108d6c38865325e0f8018eebe00c36d0b4b4b7"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "left_prices": {
+        "id": "D09",
+        "rah": 0.055,
+        "rb": 0.025,
+        "wt": 18
+      },
+      "right_prices": {
+        "id": "E07",
+        "rah": 0.055,
+        "rb": 0.025,
+        "wt": 17.0
+      },
+      "left_strict_certified": false,
+      "right_strict_certified": false,
+      "strict_stationarity_warning": true,
+      "changed_price_axes": [
+        "wt"
+      ],
+      "contrast_scope": "SINGLE_PRICE_DIFFERENCE",
+      "status": "OBSERVED_CONDITIONAL_DISTRIBUTION_COMPARISON",
+      "delta_At": 0.03783775422959845,
+      "abs_delta_At": 0.03783775422959845,
+      "delta_Bt": 0.00720707869417736,
+      "abs_delta_Bt": 0.00720707869417736,
+      "delta_b_upper_mass": -0.006111030765729525,
+      "abs_delta_b_upper_mass": 0.006111030765729525,
+      "delta_a_mass20": [
+        0.0,
+        0.0,
+        4.912903091911545e-06,
+        1.4030250062750237e-05,
+        -2.1723236605960703e-05,
+        -0.0001778808311296877,
+        -0.000529603439522441,
+        -0.0010866698477398871,
+        -0.0018123699750523803,
+        -0.0025427561472102927,
+        -0.003138538266123786,
+        -0.0034616424288574366,
+        -0.0029020916822058984,
+        -0.001637320459198871,
+        0.012816893594090606,
+        0.0044747595664014015,
+        1.1638034234897715e-18,
+        3.087235139307389e-18,
+        0.0,
+        0.0
+      ],
+      "delta_b_mass20": [
+        -0.0028919131369176954,
+        -0.00449238111145861,
+        5.620689730877204e-05,
+        0.0004372760722980498,
+        0.0008057929705869923,
+        0.0009285480066900317,
+        0.0008691201087767664,
+        0.000845694408417641,
+        0.000868028509954745,
+        0.0009033084913637468,
+        0.000942810771135956,
+        0.0009837143761643949,
+        0.0010249587012215386,
+        0.001066504727526521,
+        0.0011080585908263205,
+        0.0011499418096242373,
+        0.0005523012287302481,
+        0.0005015705190717715,
+        0.00045148882440803825,
+        -0.006111030765729525
+      ],
+      "a_marginal_TV_half_L1": 0.017310596313646655,
+      "b_marginal_TV_half_L1": 0.0134953250141058,
+      "marginal_arrays_unclipped": true,
+      "DISCRETE_TRANSITION_FLAG": "NOT_APPLIED_OUTSIDE_MAIN_LADDER",
+      "interpretation": "descriptive finite-point comparison of unverified source outputs; not bifurcation, continuous critical price or formal comparative statics"
+    },
+    {
+      "left_id": "D09",
+      "right_id": "E08",
+      "comparison_kind": "JOINT_PRICE_NEIGHBORHOOD",
+      "left_provenance": {
+        "kind": "HISTORICAL_READ_ONLY",
+        "task_id": "CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030",
+        "commit": "ffb156712e56bd2fe24924ba40295858ad67e18f",
+        "path": "tasks/CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030/evidence/D09_result.json",
+        "result_identity": {
+          "bytes": 8155,
+          "sha256": "6ba520822a101d9bc8b5e281721a885a5f72bc57228973c40a07e0f13a8b3457",
+          "git_blob": "ae7bb4ba69021817fffcc157e820189ee4ffb9a5"
+        },
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+        "new_HJB_KFE_calls": 0
+      },
+      "right_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E08_result.json",
+        "result_identity": {
+          "bytes": 7875,
+          "sha256": "e1d55710d52073935e0a6a204caee6f219e3a7ca230538f325dec62469590c30",
+          "git_blob": "7d55c47765b890baeb20053ae717ff5fe7d1615f"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "left_prices": {
+        "id": "D09",
+        "rah": 0.055,
+        "rb": 0.025,
+        "wt": 18
+      },
+      "right_prices": {
+        "id": "E08",
+        "rah": 0.055,
+        "rb": 0.025,
+        "wt": 19.0
+      },
+      "left_strict_certified": false,
+      "right_strict_certified": false,
+      "strict_stationarity_warning": true,
+      "changed_price_axes": [
+        "wt"
+      ],
+      "contrast_scope": "SINGLE_PRICE_DIFFERENCE",
+      "status": "OBSERVED_CONDITIONAL_DISTRIBUTION_COMPARISON",
+      "delta_At": -0.03563651170665327,
+      "abs_delta_At": 0.03563651170665327,
+      "delta_Bt": -0.00651692408178195,
+      "abs_delta_Bt": 0.00651692408178195,
+      "delta_b_upper_mass": 0.005803237460810878,
+      "abs_delta_b_upper_mass": 0.005803237460810878,
+      "delta_a_mass20": [
+        0.0,
+        0.0,
+        -4.485770640713246e-06,
+        -1.3983852911589952e-05,
+        1.853555215850411e-05,
+        0.0001698165976895174,
+        0.0005157250094153642,
+        0.0010658990999590293,
+        0.0017678131700247027,
+        0.0024746224324136007,
+        0.0029644532941910107,
+        0.0032947096450289537,
+        0.002543112869693054,
+        0.0013733344739424447,
+        -0.012734820831827753,
+        -0.0034347316891361074,
+        -2.065793499439791e-19,
+        -5.1247612903396226e-18,
+        0.0,
+        0.0
+      ],
+      "delta_b_mass20": [
+        0.0029887018336781437,
+        0.003977281421774684,
+        -5.5208384254025467e-05,
+        -0.000454426810281211,
+        -0.0007786244833962036,
+        -0.0008862363404544132,
+        -0.0008275400117409709,
+        -0.0008018903915073677,
+        -0.0008201481259755075,
+        -0.0008511573962516963,
+        -0.0008865383516561756,
+        -0.0009234690168825055,
+        -0.0009608524147939473,
+        -0.0009985091747819613,
+        -0.0010363744636781372,
+        -0.0010743122358214882,
+        -0.0005149160580976211,
+        -0.00047114503759740356,
+        -0.0004278720190930771,
+        0.005803237460810878
+      ],
+      "a_marginal_TV_half_L1": 0.016188022144516177,
+      "b_marginal_TV_half_L1": 0.01276922071626371,
+      "marginal_arrays_unclipped": true,
+      "DISCRETE_TRANSITION_FLAG": "NOT_APPLIED_OUTSIDE_MAIN_LADDER",
+      "interpretation": "descriptive finite-point comparison of unverified source outputs; not bifurcation, continuous critical price or formal comparative statics"
+    },
+    {
+      "left_id": "D09",
+      "right_id": "E09",
+      "comparison_kind": "JOINT_PRICE_NEIGHBORHOOD",
+      "left_provenance": {
+        "kind": "HISTORICAL_READ_ONLY",
+        "task_id": "CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030",
+        "commit": "ffb156712e56bd2fe24924ba40295858ad67e18f",
+        "path": "tasks/CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030/evidence/D09_result.json",
+        "result_identity": {
+          "bytes": 8155,
+          "sha256": "6ba520822a101d9bc8b5e281721a885a5f72bc57228973c40a07e0f13a8b3457",
+          "git_blob": "ae7bb4ba69021817fffcc157e820189ee4ffb9a5"
+        },
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+        "new_HJB_KFE_calls": 0
+      },
+      "right_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E09_result.json",
+        "result_identity": {
+          "bytes": 8165,
+          "sha256": "b4d3c020039c5a79e63a12a1a80f8a1b6c72d11f6e03e97925cae3b3188d4d89",
+          "git_blob": "019e78863e27be6705ee5d056869a3db58e0aa54"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "left_prices": {
+        "id": "D09",
+        "rah": 0.055,
+        "rb": 0.025,
+        "wt": 18
+      },
+      "right_prices": {
+        "id": "E09",
+        "rah": 0.06,
+        "rb": 0.025,
+        "wt": 18.0
+      },
+      "left_strict_certified": false,
+      "right_strict_certified": false,
+      "strict_stationarity_warning": true,
+      "changed_price_axes": [
+        "rah"
+      ],
+      "contrast_scope": "SINGLE_PRICE_DIFFERENCE",
+      "status": "OBSERVED_CONDITIONAL_DISTRIBUTION_COMPARISON",
+      "delta_At": 0.49970310930545203,
+      "abs_delta_At": 0.49970310930545203,
+      "delta_Bt": -0.08264611160314472,
+      "abs_delta_Bt": 0.08264611160314472,
+      "delta_b_upper_mass": -0.029287231823307336,
+      "abs_delta_b_upper_mass": 0.029287231823307336,
+      "delta_a_mass20": [
+        0.0,
+        0.0,
+        -3.1156706927703514e-05,
+        -0.00039181160037880916,
+        -0.0018183947158852323,
+        -0.005311319629227462,
+        -0.01128072342904633,
+        -0.018845454719404246,
+        -0.026528335496191185,
+        -0.0327167611023861,
+        -0.0358025175539437,
+        -0.031071223713539528,
+        -0.01744347933959535,
+        0.00043871747009710527,
+        0.11859276121968604,
+        0.06144289438509509,
+        0.0007668049316477049,
+        -2.656904714848268e-18,
+        0.0,
+        0.0
+      ],
+      "delta_b_mass20": [
+        -0.00833252709736753,
+        -0.005599755112953575,
+        0.002692755155216685,
+        0.003527381344947858,
+        0.004444469066369729,
+        0.004379974683523573,
+        0.0034208072545568458,
+        0.002875564884921397,
+        0.002735498841968949,
+        0.002743098735339948,
+        0.002823402951566384,
+        0.0029470961072065732,
+        0.003100081265322227,
+        0.0032758363617478026,
+        0.00347043215809735,
+        0.0036821383388900494,
+        -0.000909631733622903,
+        -0.000967011329497558,
+        -0.0010223800529262812,
+        -0.029287231823307336
+      ],
+      "a_marginal_TV_half_L1": 0.18124117800652578,
+      "b_marginal_TV_half_L1": 0.04611853714967527,
+      "marginal_arrays_unclipped": true,
+      "DISCRETE_TRANSITION_FLAG": "NOT_APPLIED_OUTSIDE_MAIN_LADDER",
+      "interpretation": "descriptive finite-point comparison of unverified source outputs; not bifurcation, continuous critical price or formal comparative statics"
+    },
+    {
+      "left_id": "D09",
+      "right_id": "E10",
+      "comparison_kind": "JOINT_PRICE_NEIGHBORHOOD",
+      "left_provenance": {
+        "kind": "HISTORICAL_READ_ONLY",
+        "task_id": "CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030",
+        "commit": "ffb156712e56bd2fe24924ba40295858ad67e18f",
+        "path": "tasks/CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030/evidence/D09_result.json",
+        "result_identity": {
+          "bytes": 8155,
+          "sha256": "6ba520822a101d9bc8b5e281721a885a5f72bc57228973c40a07e0f13a8b3457",
+          "git_blob": "ae7bb4ba69021817fffcc157e820189ee4ffb9a5"
+        },
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+        "new_HJB_KFE_calls": 0
+      },
+      "right_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E10_result.json",
+        "result_identity": {
+          "bytes": 8133,
+          "sha256": "df1460b172c30f4ede2388e12d894de987817829b6f521da34485f9b9d712505",
+          "git_blob": "e365850ef045c7d6eaac5477636b748f013948fe"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "left_prices": {
+        "id": "D09",
+        "rah": 0.055,
+        "rb": 0.025,
+        "wt": 18
+      },
+      "right_prices": {
+        "id": "E10",
+        "rah": 0.065,
+        "rb": 0.025,
+        "wt": 17.0
+      },
+      "left_strict_certified": false,
+      "right_strict_certified": false,
+      "strict_stationarity_warning": true,
+      "changed_price_axes": [
+        "rah",
+        "wt"
+      ],
+      "contrast_scope": "MULTIPLE_PRICE_DIFFERENCES__NO_SINGLE_FACTOR_ATTRIBUTION",
+      "status": "OBSERVED_CONDITIONAL_DISTRIBUTION_COMPARISON",
+      "delta_At": 0.8498567391222709,
+      "abs_delta_At": 0.8498567391222709,
+      "delta_Bt": -0.08380046433858346,
+      "abs_delta_Bt": 0.08380046433858346,
+      "delta_b_upper_mass": -0.051731507950220024,
+      "abs_delta_b_upper_mass": 0.051731507950220024,
+      "delta_a_mass20": [
+        0.0,
+        0.0,
+        -3.1156706927703514e-05,
+        -0.00039181160037880916,
+        -0.0018183947158852323,
+        -0.005350015147095386,
+        -0.011954119827798535,
+        -0.022341401442374398,
+        -0.036386967183651836,
+        -0.05151642246459699,
+        -0.06483356207809363,
+        -0.0687821596490582,
+        -0.05684881173351648,
+        -0.03263426641465003,
+        0.16275876174789516,
+        0.1764900429550979,
+        0.01364028426103433,
+        -2.656904714848268e-18,
+        0.0,
+        0.0
+      ],
+      "delta_b_mass20": [
+        -0.01640627160928654,
+        -0.024120937969100045,
+        0.003949559970682137,
+        0.006147116540760382,
+        0.008938983946761077,
+        0.009050867591991404,
+        0.00697572539776891,
+        0.005884928429297498,
+        0.0056954933307642175,
+        0.00581571853449004,
+        0.00608438416962289,
+        0.006441183616322468,
+        0.006859201647521657,
+        0.007325914087652673,
+        0.007833931885130173,
+        0.008380640976576655,
+        -0.0009167553689079788,
+        -0.0010426282371170624,
+        -0.0011655489907103668,
+        -0.051731507950220024
+      ],
+      "a_marginal_TV_half_L1": 0.35288908896402726,
+      "b_marginal_TV_half_L1": 0.0953836501253421,
+      "marginal_arrays_unclipped": true,
+      "DISCRETE_TRANSITION_FLAG": "NOT_APPLIED_OUTSIDE_MAIN_LADDER",
+      "interpretation": "descriptive finite-point comparison of unverified source outputs; not bifurcation, continuous critical price or formal comparative statics"
+    },
+    {
+      "left_id": "D09",
+      "right_id": "E11",
+      "comparison_kind": "JOINT_PRICE_NEIGHBORHOOD",
+      "left_provenance": {
+        "kind": "HISTORICAL_READ_ONLY",
+        "task_id": "CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030",
+        "commit": "ffb156712e56bd2fe24924ba40295858ad67e18f",
+        "path": "tasks/CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030/evidence/D09_result.json",
+        "result_identity": {
+          "bytes": 8155,
+          "sha256": "6ba520822a101d9bc8b5e281721a885a5f72bc57228973c40a07e0f13a8b3457",
+          "git_blob": "ae7bb4ba69021817fffcc157e820189ee4ffb9a5"
+        },
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+        "new_HJB_KFE_calls": 0
+      },
+      "right_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E11_result.json",
+        "result_identity": {
+          "bytes": 8140,
+          "sha256": "c13d3b7956f9023a0afddf610bd4741103af6acb21cb0e307b75ba42115c08f7",
+          "git_blob": "0743257f85e08eadf53901ca0680524e2310653c"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "left_prices": {
+        "id": "D09",
+        "rah": 0.055,
+        "rb": 0.025,
+        "wt": 18
+      },
+      "right_prices": {
+        "id": "E11",
+        "rah": 0.07,
+        "rb": 0.025,
+        "wt": 18.0
+      },
+      "left_strict_certified": false,
+      "right_strict_certified": false,
+      "strict_stationarity_warning": true,
+      "changed_price_axes": [
+        "rah"
+      ],
+      "contrast_scope": "SINGLE_PRICE_DIFFERENCE",
+      "status": "OBSERVED_CONDITIONAL_DISTRIBUTION_COMPARISON",
+      "delta_At": 1.0419467252801313,
+      "abs_delta_At": 1.0419467252801313,
+      "delta_Bt": -0.08517662990329011,
+      "abs_delta_Bt": 0.08517662990329011,
+      "delta_b_upper_mass": -0.0607389248059019,
+      "abs_delta_b_upper_mass": 0.0607389248059019,
+      "delta_a_mass20": [
+        0.0,
+        0.0,
+        -3.1156706927703514e-05,
+        -0.00039181160037880916,
+        -0.0018183947158852323,
+        -0.005350015147095386,
+        -0.011954119827798535,
+        -0.02235251563508342,
+        -0.036904629907935964,
+        -0.05576562419364071,
+        -0.07787802512905517,
+        -0.09229786088876289,
+        -0.08812167056804193,
+        -0.06365408397621855,
+        0.16528321015385672,
+        0.2545323725853491,
+        0.036624039574571055,
+        8.028598304761108e-05,
+        2.6448143699511277e-18,
+        2.32898962348939e-18
+      ],
+      "delta_b_mass20": [
+        -0.019606455128706204,
+        -0.03686204874926687,
+        0.004996843516795732,
+        0.008349631138947773,
+        0.012624006607731178,
+        0.012579720668822535,
+        0.009130346365048732,
+        0.007366038450223704,
+        0.007017809160687151,
+        0.0071458085265560176,
+        0.00749868653739897,
+        0.007985313547565681,
+        0.008565299420662635,
+        0.009219091920449549,
+        0.00993571676233599,
+        0.0107104175586119,
+        -0.0018982381747159015,
+        -0.0019731528830717986,
+        -0.0020459104401747384,
+        -0.0607389248059019
+      ],
+      "a_marginal_TV_half_L1": 0.45651990829682443,
+      "b_marginal_TV_half_L1": 0.12312473018183748,
+      "marginal_arrays_unclipped": true,
+      "DISCRETE_TRANSITION_FLAG": "NOT_APPLIED_OUTSIDE_MAIN_LADDER",
+      "interpretation": "descriptive finite-point comparison of unverified source outputs; not bifurcation, continuous critical price or formal comparative statics"
+    },
+    {
+      "left_id": "D11",
+      "right_id": "E07",
+      "comparison_kind": "JOINT_PRICE_NEIGHBORHOOD",
+      "left_provenance": {
+        "kind": "HISTORICAL_READ_ONLY",
+        "task_id": "CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030",
+        "commit": "ffb156712e56bd2fe24924ba40295858ad67e18f",
+        "path": "tasks/CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030/evidence/D11_result.json",
+        "result_identity": {
+          "bytes": 7998,
+          "sha256": "4cb998cd66bb1d3dc7c20c9c8bba519204353b127ddada2cdb3b83bcb82d6924",
+          "git_blob": "9692ffa626a382638f4e60ddc030b304196451ca"
+        },
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+        "new_HJB_KFE_calls": 0
+      },
+      "right_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E07_result.json",
+        "result_identity": {
+          "bytes": 8287,
+          "sha256": "04ea38e678781aa019467de2f1e920869b89ec53e718cf57f47c6e87d6cc78c5",
+          "git_blob": "46108d6c38865325e0f8018eebe00c36d0b4b4b7"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "left_prices": {
+        "id": "D11",
+        "rah": 0.07,
+        "rb": 0.025,
+        "wt": 17
+      },
+      "right_prices": {
+        "id": "E07",
+        "rah": 0.055,
+        "rb": 0.025,
+        "wt": 17.0
+      },
+      "left_strict_certified": false,
+      "right_strict_certified": false,
+      "strict_stationarity_warning": true,
+      "changed_price_axes": [
+        "rah"
+      ],
+      "contrast_scope": "SINGLE_PRICE_DIFFERENCE",
+      "status": "OBSERVED_CONDITIONAL_DISTRIBUTION_COMPARISON",
+      "delta_At": -1.0372899668866138,
+      "abs_delta_At": 1.0372899668866138,
+      "delta_Bt": 0.06600366575684169,
+      "abs_delta_Bt": 0.06600366575684169,
+      "delta_b_upper_mass": 0.057159303127076205,
+      "abs_delta_b_upper_mass": 0.057159303127076205,
+      "delta_a_mass20": [
+        0.0,
+        0.0,
+        3.606961001961506e-05,
+        0.0004058418504415594,
+        0.0017966714792792716,
+        0.005172134315965698,
+        0.011424516388276094,
+        0.021265845787343533,
+        0.035092259932883584,
+        0.05322848132475761,
+        0.07501809532801089,
+        0.09057519538160795,
+        0.08960798044853732,
+        0.06985896278884454,
+        -0.13742584103025296,
+        -0.26884558944787174,
+        -0.04686545312990029,
+        -0.0003451710279425758,
+        0.0,
+        0.0
+      ],
+      "delta_b_mass20": [
+        0.01732116289116799,
+        0.038758560357081306,
+        -0.0039429495322136285,
+        -0.007516098054313337,
+        -0.012066350620036782,
+        -0.012109476441726774,
+        -0.00873740540178368,
+        -0.007051950381561076,
+        -0.006763425362803853,
+        -0.006942331758458452,
+        -0.0073436893220085245,
+        -0.007879010383022196,
+        -0.008509477937374235,
+        -0.009216255983886638,
+        -0.009989326512962436,
+        -0.010824321135642453,
+        0.0018161965175123342,
+        0.0018849734118628302,
+        0.0019518725230934404,
+        0.057159303127076205
+      ],
+      "a_marginal_TV_half_L1": 0.45348205463596764,
+      "b_marginal_TV_half_L1": 0.11889206882779409,
+      "marginal_arrays_unclipped": true,
+      "DISCRETE_TRANSITION_FLAG": "NOT_APPLIED_OUTSIDE_MAIN_LADDER",
+      "interpretation": "descriptive finite-point comparison of unverified source outputs; not bifurcation, continuous critical price or formal comparative statics"
+    },
+    {
+      "left_id": "D11",
+      "right_id": "E08",
+      "comparison_kind": "JOINT_PRICE_NEIGHBORHOOD",
+      "left_provenance": {
+        "kind": "HISTORICAL_READ_ONLY",
+        "task_id": "CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030",
+        "commit": "ffb156712e56bd2fe24924ba40295858ad67e18f",
+        "path": "tasks/CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030/evidence/D11_result.json",
+        "result_identity": {
+          "bytes": 7998,
+          "sha256": "4cb998cd66bb1d3dc7c20c9c8bba519204353b127ddada2cdb3b83bcb82d6924",
+          "git_blob": "9692ffa626a382638f4e60ddc030b304196451ca"
+        },
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+        "new_HJB_KFE_calls": 0
+      },
+      "right_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E08_result.json",
+        "result_identity": {
+          "bytes": 7875,
+          "sha256": "e1d55710d52073935e0a6a204caee6f219e3a7ca230538f325dec62469590c30",
+          "git_blob": "7d55c47765b890baeb20053ae717ff5fe7d1615f"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "left_prices": {
+        "id": "D11",
+        "rah": 0.07,
+        "rb": 0.025,
+        "wt": 17
+      },
+      "right_prices": {
+        "id": "E08",
+        "rah": 0.055,
+        "rb": 0.025,
+        "wt": 19.0
+      },
+      "left_strict_certified": false,
+      "right_strict_certified": false,
+      "strict_stationarity_warning": true,
+      "changed_price_axes": [
+        "rah",
+        "wt"
+      ],
+      "contrast_scope": "MULTIPLE_PRICE_DIFFERENCES__NO_SINGLE_FACTOR_ATTRIBUTION",
+      "status": "OBSERVED_CONDITIONAL_DISTRIBUTION_COMPARISON",
+      "delta_At": -1.1107642328228655,
+      "abs_delta_At": 1.1107642328228655,
+      "delta_Bt": 0.05227966298088238,
+      "abs_delta_Bt": 0.05227966298088238,
+      "delta_b_upper_mass": 0.06907357135361661,
+      "abs_delta_b_upper_mass": 0.06907357135361661,
+      "delta_a_mass20": [
+        0.0,
+        0.0,
+        2.6670936286990268e-05,
+        0.0003778277474672192,
+        0.0018369302680437364,
+        0.005519831744784903,
+        0.0124698448372139,
+        0.02341841473504245,
+        0.038672443077960666,
+        0.058245859904381504,
+        0.08112108688832569,
+        0.09733154745549434,
+        0.09505318500043627,
+        0.07286961772198586,
+        -0.16297755545617132,
+        -0.27675508070340926,
+        -0.04686545312990029,
+        -0.00034517102794258403,
+        0.0,
+        0.0
+      ],
+      "delta_b_mass20": [
+        0.02320177786176383,
+        0.0472282228903146,
+        -0.004054364813776426,
+        -0.008407800936892598,
+        -0.013650768074019978,
+        -0.01392426078887122,
+        -0.010434065522301417,
+        -0.008699535181486084,
+        -0.008451601998734105,
+        -0.008696797646073895,
+        -0.009173038444800656,
+        -0.009786193776069096,
+        -0.010495289053389721,
+        -0.01128126988619512,
+        -0.012133759567466894,
+        -0.013048575181088179,
+        0.0007489792306844649,
+        0.0009122578551936551,
+        0.001072511679592325,
+        0.06907357135361661
+      ],
+      "a_marginal_TV_half_L1": 0.4869432603174235,
+      "b_marginal_TV_half_L1": 0.14223732087116545,
+      "marginal_arrays_unclipped": true,
+      "DISCRETE_TRANSITION_FLAG": "NOT_APPLIED_OUTSIDE_MAIN_LADDER",
+      "interpretation": "descriptive finite-point comparison of unverified source outputs; not bifurcation, continuous critical price or formal comparative statics"
+    },
+    {
+      "left_id": "D11",
+      "right_id": "E09",
+      "comparison_kind": "JOINT_PRICE_NEIGHBORHOOD",
+      "left_provenance": {
+        "kind": "HISTORICAL_READ_ONLY",
+        "task_id": "CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030",
+        "commit": "ffb156712e56bd2fe24924ba40295858ad67e18f",
+        "path": "tasks/CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030/evidence/D11_result.json",
+        "result_identity": {
+          "bytes": 7998,
+          "sha256": "4cb998cd66bb1d3dc7c20c9c8bba519204353b127ddada2cdb3b83bcb82d6924",
+          "git_blob": "9692ffa626a382638f4e60ddc030b304196451ca"
+        },
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+        "new_HJB_KFE_calls": 0
+      },
+      "right_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E09_result.json",
+        "result_identity": {
+          "bytes": 8165,
+          "sha256": "b4d3c020039c5a79e63a12a1a80f8a1b6c72d11f6e03e97925cae3b3188d4d89",
+          "git_blob": "019e78863e27be6705ee5d056869a3db58e0aa54"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "left_prices": {
+        "id": "D11",
+        "rah": 0.07,
+        "rb": 0.025,
+        "wt": 17
+      },
+      "right_prices": {
+        "id": "E09",
+        "rah": 0.06,
+        "rb": 0.025,
+        "wt": 18.0
+      },
+      "left_strict_certified": false,
+      "right_strict_certified": false,
+      "strict_stationarity_warning": true,
+      "changed_price_axes": [
+        "rah",
+        "wt"
+      ],
+      "contrast_scope": "MULTIPLE_PRICE_DIFFERENCES__NO_SINGLE_FACTOR_ATTRIBUTION",
+      "status": "OBSERVED_CONDITIONAL_DISTRIBUTION_COMPARISON",
+      "delta_At": -0.5754246118107602,
+      "abs_delta_At": 0.5754246118107602,
+      "delta_Bt": -0.023849524540480393,
+      "abs_delta_Bt": 0.023849524540480393,
+      "delta_b_upper_mass": 0.033983102069498394,
+      "abs_delta_b_upper_mass": 0.033983102069498394,
+      "delta_a_mass20": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3.869551786792357e-05,
+        0.0006733963987522071,
+        0.0035070609156791738,
+        0.010376294411744777,
+        0.02305447636958181,
+        0.042354116040190966,
+        0.06296561409692586,
+        0.07506659279114786,
+        0.07193500071814052,
+        -0.03164997340465753,
+        -0.21187745462917806,
+        -0.04609864819825259,
+        -0.00034517102794258154,
+        0.0,
+        0.0
+      ],
+      "delta_b_mass20": [
+        0.011880548930718158,
+        0.03765118635558634,
+        -0.0013064012743057157,
+        -0.004425992781663529,
+        -0.008427674524254046,
+        -0.008658049764893233,
+        -0.0061857182560036,
+        -0.0050220799050573195,
+        -0.004895955030789649,
+        -0.005102541514482251,
+        -0.0054630971415780966,
+        -0.005915628651980018,
+        -0.006434355373273547,
+        -0.007006924349665357,
+        -0.0076269529456914065,
+        -0.008292124606376641,
+        0.000354263555159183,
+        0.0004163915632935007,
+        0.00047800364575912094,
+        0.033983102069498394
+      ],
+      "a_marginal_TV_half_L1": 0.28997124726003093,
+      "b_marginal_TV_half_L1": 0.08476349612001455,
+      "marginal_arrays_unclipped": true,
+      "DISCRETE_TRANSITION_FLAG": "NOT_APPLIED_OUTSIDE_MAIN_LADDER",
+      "interpretation": "descriptive finite-point comparison of unverified source outputs; not bifurcation, continuous critical price or formal comparative statics"
+    },
+    {
+      "left_id": "D11",
+      "right_id": "E10",
+      "comparison_kind": "JOINT_PRICE_NEIGHBORHOOD",
+      "left_provenance": {
+        "kind": "HISTORICAL_READ_ONLY",
+        "task_id": "CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030",
+        "commit": "ffb156712e56bd2fe24924ba40295858ad67e18f",
+        "path": "tasks/CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030/evidence/D11_result.json",
+        "result_identity": {
+          "bytes": 7998,
+          "sha256": "4cb998cd66bb1d3dc7c20c9c8bba519204353b127ddada2cdb3b83bcb82d6924",
+          "git_blob": "9692ffa626a382638f4e60ddc030b304196451ca"
+        },
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+        "new_HJB_KFE_calls": 0
+      },
+      "right_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E10_result.json",
+        "result_identity": {
+          "bytes": 8133,
+          "sha256": "df1460b172c30f4ede2388e12d894de987817829b6f521da34485f9b9d712505",
+          "git_blob": "e365850ef045c7d6eaac5477636b748f013948fe"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "left_prices": {
+        "id": "D11",
+        "rah": 0.07,
+        "rb": 0.025,
+        "wt": 17
+      },
+      "right_prices": {
+        "id": "E10",
+        "rah": 0.065,
+        "rb": 0.025,
+        "wt": 17.0
+      },
+      "left_strict_certified": false,
+      "right_strict_certified": false,
+      "strict_stationarity_warning": true,
+      "changed_price_axes": [
+        "rah"
+      ],
+      "contrast_scope": "SINGLE_PRICE_DIFFERENCE",
+      "status": "OBSERVED_CONDITIONAL_DISTRIBUTION_COMPARISON",
+      "delta_At": -0.22527098199394135,
+      "abs_delta_At": 0.22527098199394135,
+      "delta_Bt": -0.02500387727591913,
+      "abs_delta_Bt": 0.02500387727591913,
+      "delta_b_upper_mass": 0.011538825942585706,
+      "abs_delta_b_upper_mass": 0.011538825942585706,
+      "delta_a_mass20": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.1114192709022113e-05,
+        0.0005176627242841308,
+        0.004254815007370912,
+        0.013323071516041042,
+        0.02525467816140719,
+        0.03566126039722673,
+        0.03886201683339338,
+        0.012516027123551599,
+        -0.09683030605917525,
+        -0.033225168868865965,
+        -0.00034517102794258154,
+        0.0,
+        0.0
+      ],
+      "delta_b_mass20": [
+        0.0038068044187991464,
+        0.01913000349943987,
+        -4.959645884026337e-05,
+        -0.0018062575858510052,
+        -0.003933159643862698,
+        -0.0039871568564254015,
+        -0.0026308001127915356,
+        -0.0020127163606812187,
+        -0.0019359605419943804,
+        -0.0020299217153321586,
+        -0.00220211592352159,
+        -0.0024215411428641226,
+        -0.002675234991074117,
+        -0.002956846623760487,
+        -0.003263453218658584,
+        -0.003593621968690036,
+        0.0003471399198741072,
+        0.0003407746556739963,
+        0.00033483470797503537,
+        0.011538825942585706
+      ],
+      "a_marginal_TV_half_L1": 0.13040064595598388,
+      "b_marginal_TV_half_L1": 0.03549838314434773,
+      "marginal_arrays_unclipped": true,
+      "DISCRETE_TRANSITION_FLAG": "NOT_APPLIED_OUTSIDE_MAIN_LADDER",
+      "interpretation": "descriptive finite-point comparison of unverified source outputs; not bifurcation, continuous critical price or formal comparative statics"
+    },
+    {
+      "left_id": "D11",
+      "right_id": "E11",
+      "comparison_kind": "JOINT_PRICE_NEIGHBORHOOD",
+      "left_provenance": {
+        "kind": "HISTORICAL_READ_ONLY",
+        "task_id": "CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030",
+        "commit": "ffb156712e56bd2fe24924ba40295858ad67e18f",
+        "path": "tasks/CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030/evidence/D11_result.json",
+        "result_identity": {
+          "bytes": 7998,
+          "sha256": "4cb998cd66bb1d3dc7c20c9c8bba519204353b127ddada2cdb3b83bcb82d6924",
+          "git_blob": "9692ffa626a382638f4e60ddc030b304196451ca"
+        },
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+        "new_HJB_KFE_calls": 0
+      },
+      "right_provenance": {
+        "kind": "NEW_R3",
+        "task_id": "CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030",
+        "path": "tasks/CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030/evidence/E11_result.json",
+        "result_identity": {
+          "bytes": 8140,
+          "sha256": "c13d3b7956f9023a0afddf610bd4741103af6acb21cb0e307b75ba42115c08f7",
+          "git_blob": "0743257f85e08eadf53901ca0680524e2310653c"
+        },
+        "publication_commit": "BOUND_LATER_BY_DELIVERY_RECEIPT",
+        "scientific_source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd"
+      },
+      "left_prices": {
+        "id": "D11",
+        "rah": 0.07,
+        "rb": 0.025,
+        "wt": 17
+      },
+      "right_prices": {
+        "id": "E11",
+        "rah": 0.07,
+        "rb": 0.025,
+        "wt": 18.0
+      },
+      "left_strict_certified": false,
+      "right_strict_certified": false,
+      "strict_stationarity_warning": true,
+      "changed_price_axes": [
+        "wt"
+      ],
+      "contrast_scope": "SINGLE_PRICE_DIFFERENCE",
+      "status": "OBSERVED_CONDITIONAL_DISTRIBUTION_COMPARISON",
+      "delta_At": -0.03318099583608092,
+      "abs_delta_At": 0.03318099583608092,
+      "delta_Bt": -0.026380042840625784,
+      "abs_delta_Bt": 0.026380042840625784,
+      "delta_b_upper_mass": 0.0025314090869038297,
+      "abs_delta_b_upper_mass": 0.0025314090869038297,
+      "delta_a_mass20": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        5.6132783271946405e-06,
+        0.0002786084650794982,
+        0.0017389769217024953,
+        0.004388401562701275,
+        0.007842199271824862,
+        0.015040475529513153,
+        -0.018787976428924047,
+        -0.010241413555329239,
+        -0.0002648850448949678,
+        2.6448143699511277e-18,
+        2.32898962348939e-18
+      ],
+      "delta_b_mass20": [
+        0.0006066208993794828,
+        0.006388892719273044,
+        0.0009976870872733315,
+        0.00039625701233638594,
+        -0.00024813698289259667,
+        -0.00045830377959427127,
+        -0.000476179145511714,
+        -0.0005316063397550128,
+        -0.0006136447120714469,
+        -0.000699831723266181,
+        -0.0007878135557455104,
+        -0.0008774112116209098,
+        -0.0009691372179331387,
+        -0.0010636687909636108,
+        -0.0011616683414527665,
+        -0.001263845386654791,
+        -0.0006343428859338154,
+        -0.0005897499902807399,
+        -0.0005455267414893362,
+        0.0025314090869038297
+      ],
+      "a_marginal_TV_half_L1": 0.029294275029148366,
+      "b_marginal_TV_half_L1": 0.010920866805165958,
+      "marginal_arrays_unclipped": true,
+      "DISCRETE_TRANSITION_FLAG": "NOT_APPLIED_OUTSIDE_MAIN_LADDER",
+      "interpretation": "descriptive finite-point comparison of unverified source outputs; not bifurcation, continuous critical price or formal comparative statics"
+    }
+  ],
+  "new_model_calls_in_comparisons": 0,
+  "source_arrays_or_results_modified": false
+}

@@ -1,0 +1,251 @@
+{
+  "event": "point_result",
+  "point": "E08",
+  "prices": {
+    "id": "E08",
+    "rah": 0.055,
+    "rb": 0.025,
+    "wt": 19.0
+  },
+  "classification": "SOURCE_KFE_COMPUTED_WITH_STATIONARITY_WARNING",
+  "fatal_to_task": false,
+  "wage_provenance": {
+    "scope": "NUMERICAL_NET_WAGE_INITIAL_GUESS_NOT_EMPIRICAL",
+    "chain": [
+      "numerical_bootstrap19",
+      "netwage_inputs"
+    ],
+    "entering_iteration": 1,
+    "synthetic_firm_wage": null,
+    "point": "E08",
+    "requested_effective_wage": 19.0,
+    "actual_source_effective_wage": 19.0,
+    "wage_error": 0.0,
+    "context_id": "TEMP31_MATLAB800_SYNTHETIC_NEIGHBORHOOD_R3_20261030_E08",
+    "province_order": [
+      "A",
+      "B"
+    ],
+    "record_semantics": "NUMERICAL_NET_WAGE_INITIAL_GUESS_NOT_EMPIRICAL",
+    "real_empirical_provenance": false,
+    "tax_background_preserved": true
+  },
+  "initialization": {
+    "consumption_shape": [
+      20,
+      20,
+      2
+    ],
+    "consumption_min": 10.238994839253541,
+    "consumption_max": 15.782480660072308,
+    "consumption_F_sha256": "94192dc3ffed360a58e07b48d3dad292e6ff63079bd0865dc1e4ad0556387f1c",
+    "shape": [
+      20,
+      20,
+      2
+    ],
+    "states": 800,
+    "value_min": -2.2815371454284343,
+    "value_max": -1.475356933598172,
+    "labor_min": 0.6298509370469594,
+    "labor_max": 0.6795500033222188,
+    "finite": true,
+    "value_F_float64_sha256": "65f8ffc7a5ccb37c01a20edb507b4bbe9ae751f9dfb8eb6d0d1412605f9adfb1",
+    "labor_F_float64_sha256": "a1e6ad32b6775b0b4444efb0012baf0d93528c0d564892a302256e9ce84b4cde",
+    "fresh_for_point": "E08",
+    "warm_start": false
+  },
+  "HJB_SOURCE_CONVERGED": true,
+  "MATLAB_KFE_METHOD_EXECUTED": true,
+  "SOURCE_METHOD_INTERIOR_CANDIDATE": true,
+  "STRICT_ECONOMIC_STATIONARITY_CERTIFIED": false,
+  "HJB": {
+    "converged": true,
+    "iterations": 15,
+    "convergence_statistic": 1.7745718228212581e-09,
+    "finite_return_fields": {
+      "value": true,
+      "initial_value": true,
+      "consumption": true,
+      "labor": true,
+      "transfer": true,
+      "adjustment_cost": true,
+      "effective_illiquid_return": true,
+      "mu_a": true,
+      "mu_b": true,
+      "utility": true
+    },
+    "iteration_operator": {
+      "shape": [
+        800,
+        800
+      ],
+      "nnz": 3919,
+      "finite": true,
+      "row_sum_abs_max": 0.0032372772851965714,
+      "max_signed_row_sum": 4.052314039881821e-15,
+      "min_offdiagonal_including_implicit_zeros": -2.981009839630705,
+      "csr_sha256": "3eeaabc455db2ebc8116a1cfcc465c8e6411ce69630adaa8e9e558392d659a78"
+    },
+    "post_convergence_operator": {
+      "shape": [
+        800,
+        800
+      ],
+      "nnz": 3140,
+      "finite": true,
+      "row_sum_abs_max": 2.983632063267831,
+      "max_signed_row_sum": 1.1657341758564144e-15,
+      "min_offdiagonal_including_implicit_zeros": 0.0,
+      "csr_sha256": "13121f91afd0dc1a2ac1b0fb2840c603a6a45b620b0d01f975d874013980a2a5"
+    },
+    "max_observed_iteration_row_sum_abs": 0.003237277285196627,
+    "MATLAB_homecrit": 0.01,
+    "observed_homecrit_violation": false,
+    "first_homecrit_exceeded_iteration": null,
+    "homecrit_exceeded_iterations": [],
+    "homecrit_guard_internal": "ABSENT_UNCHANGED_EXTERNAL_READONLY_OBSERVATION",
+    "source_parity": "PARITY_UNCERTIFIED_RAW_MATLAB_NOT_LOCALLY_VERIFIED",
+    "stale_last_policy_residual": 1.778785452266618e-12,
+    "implicit_identity_error": 1.5991985513608105e-14,
+    "full_nonlinear_Bellman_residual": "NOT_EVALUATED",
+    "warnings": []
+  },
+  "KFE": {
+    "status": "SOURCE_KFE_COMPUTED_WITH_STATIONARITY_WARNING",
+    "source_method_executed": true,
+    "At": 6.346893789753567,
+    "Bt": 1.6924895907523838,
+    "Lt": 0.6405208093443193,
+    "Ct": 12.426811714315988,
+    "original_residual_at_pin_row295": -0.49063309282561246,
+    "non_pin799_residual_max": 2.3071822230491534e-16,
+    "residual_argmax_index0": 295,
+    "normalized_contaminated_equation_residual": 2.3071822230491534e-16,
+    "SOURCE_METHOD_INTERIOR_CANDIDATE": true,
+    "STRICT_ECONOMIC_STATIONARITY_CERTIFIED": false,
+    "B_UPPER_BOUNDARY_WARNING": false,
+    "b_mode_indices0": [
+      19
+    ],
+    "b_mode_asset_positions": [
+      5.0
+    ],
+    "a_mass20": [
+      0.0,
+      0.0,
+      2.6670936286990268e-05,
+      0.0003778277474672192,
+      0.0018369302680437364,
+      0.005519831744784903,
+      0.0124698448372139,
+      0.02341841473504245,
+      0.038672443077960666,
+      0.05827087903139504,
+      0.08236212654084264,
+      0.10832904217458633,
+      0.1335873496151743,
+      0.16990703685762454,
+      0.3550053728178646,
+      0.010216229615712665,
+      8.446949755215938e-19,
+      -2.4678565754913546e-18,
+      0.0,
+      0.0
+    ],
+    "b_mass20": [
+      0.024939053638984545,
+      0.09115208312487785,
+      0.0517567350644474,
+      0.05139451931293852,
+      0.05258289520175742,
+      0.05178098145484777,
+      0.04676925860989937,
+      0.042807273154069,
+      0.040939980012784295,
+      0.0399829876610271,
+      0.03950454717310012,
+      0.03930844627645149,
+      0.03929307752626944,
+      0.039400047846183395,
+      0.03959476023322429,
+      0.03985425545718133,
+      0.023056155426726673,
+      0.02256295807412409,
+      0.022091938304548,
+      0.20122804644655787
+    ],
+    "total_probability": 0.9999999999999998,
+    "negative_probability_mass": 2.568376030197779e-18,
+    "negative_density_cells": 55,
+    "density_min": -1.604340908498843e-18,
+    "density_max": 0.30683618271165547,
+    "a_lower_mass": 0.0,
+    "a_upper_mass": 0.0,
+    "a_internal_mass": 1.0,
+    "b_lower_mass": 0.024939053638984545,
+    "b_upper_mass": 0.20122804644655787,
+    "b_internal_mass": 0.7738328999144576,
+    "a_mode_indices0": [
+      14
+    ],
+    "a_mode_asset_positions": [
+      7.368421052631579
+    ],
+    "At_distance_from_lower": 6.346893789753567,
+    "At_distance_from_upper": 3.653106210246433,
+    "stationary_residual": 0.49063309282561246,
+    "contaminated_raw_system_residual": 1.1980434005964824e-17,
+    "source_raw_residual_inf": 1.1980434005964824e-17,
+    "contaminated_row_index0": 295,
+    "rhs_at_contaminated_row": 0.007,
+    "normalization_factor": 0.06757928858773386,
+    "cell_weight": 0.19390581717451522,
+    "certification_tests": {
+      "density_finite": true,
+      "total_probability_abs_error_le_1e8": true,
+      "negative_probability_mass_le_1e8": true,
+      "post_stationary_residual_le_1e7": false,
+      "contaminated_raw_system_residual_le_1e7": true
+    },
+    "interior_tests": {
+      "At_strict_0_10": true,
+      "a_internal_mass_ge_point10": true,
+      "a_lower_mass_le_point50": true,
+      "a_upper_mass_le_point50": true,
+      "a_modal_indices_not_only_endpoints": true,
+      "b_internal_mass_ge_point05": true
+    },
+    "warnings": [],
+    "signed_density_unmodified": true,
+    "source_post_operator_passed_directly_and_unchanged": true,
+    "LOCAL_ONLY_archive": {
+      "task_relative_path": "evidence/LOCAL_ONLY_E08_true_KFE_density.npz",
+      "bytes": 10981,
+      "sha256": "99ea298a02c5f02e782891baeeff9e9180a80c897250314a3714c8f168e8857e"
+    }
+  },
+  "observed_counts": {
+    "initializer_calls": 1,
+    "root_cells": 800,
+    "brentq_calls": 800,
+    "hjb_calls": 1,
+    "hjb_iterations": 15,
+    "hjb_policy_cells": 12000,
+    "operator_assemblies": 16,
+    "hjb_linear_solves": 15,
+    "kfe_calls": 1,
+    "kfe_linear_solves": 1,
+    "kfe_contaminated_row_index_calls": 1
+  },
+  "LOCAL_ONLY_hjb_archive": {
+    "task_relative_path": "evidence/LOCAL_ONLY_E08_true_arrays_and_rates.npz",
+    "bytes": 105749,
+    "sha256": "3f8ef081389723649e1d9a4196b990336a09e5c529791d236d3d182901270dad",
+    "LOCAL_ONLY": true,
+    "observed_new_point_not_historical_tinygrid": true
+  },
+  "MATLAB_RAW_LOCAL_VERIFICATION": "NOT_AVAILABLE",
+  "firm_GE_IRF_outer_31province_data_calls": 0,
+  "source_or_economic_parameter_changes": 0
+}
