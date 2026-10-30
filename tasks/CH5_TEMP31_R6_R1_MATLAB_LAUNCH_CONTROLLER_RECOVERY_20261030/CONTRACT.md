@@ -1,0 +1,149 @@
+# TEMP31 R6-R1：Windows MATLAB 启动控制器恢复与受限后置算子逐元素验证（冻结合同）
+
+TASK_ID=CH5_TEMP31_R6_R1_MATLAB_LAUNCH_CONTROLLER_RECOVERY_20261030
+STATUS=ISSUED_AWAITING_OWNER_TRANSFER
+OWNER_APPROVAL=2026-10-30__ONE_BOUNDED_R6_CONTROLLER_RECOVERY_AND_CONDITIONAL_POST_ASSEMBLY_PARITY
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_PARENT=3df6645c63c393658b7e9d19ce35ef7c7b7cbb8c
+TASK_PUBLICATION_COMMIT=GPT_PROVIDES_EXACT_SHA_AFTER_PUBLICATION
+EXPECTED_GOVERNANCE_HEAD=TASK_PUBLICATION_COMMIT_STRICT_EQUALITY
+TASK_CONTRACT_PATH=tasks/CH5_TEMP31_R6_R1_MATLAB_LAUNCH_CONTROLLER_RECOVERY_20261030/CONTRACT.md
+CANDIDATE_BRANCH=codex/ch5-temp31-r6-r1-matlab-launch-recovery-elementwise-20261030
+FIXED_SCIENTIFIC_PARENT=56447829ce0e6c3c85552c53c351b26a2452a4bd
+FIXED_SCIENTIFIC_SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
+FIXED_SCIENTIFIC_SOURCE_PARENT=a51c2e7ff6548340a1ee86857b0ee55792fa69b4
+ORIGINAL_R6_TASK_ID=CH5_TEMP31_R6_MATLAB_PYTHON_POST_OPERATOR_ELEMENTWISE_PARITY_20261030
+ORIGINAL_R6_CONTRACT_COMMIT=3df6645c63c393658b7e9d19ce35ef7c7b7cbb8c
+ORIGINAL_R6_CONTRACT_BLOB=b2c8fb6b1808730a4bc777ff88b0e9d014496a43
+ORIGINAL_R6_STOP=STOP__R6_MATLAB_RUNTIME_UNAVAILABLE
+ORIGINAL_R6_RUNTIME_CAPABILITY=UNTESTED
+ORIGINAL_R6_OBSERVED_FAILURE=PYTHON_LAUNCH_CONTROLLER_ATTRIBUTE_ERROR__subprocess.CREATE_SUSPENDED_NOT_FOUND
+ORIGINAL_R6_CANDIDATE_REMOTE=NOT_FOUND_404_AT_TASK_ISSUANCE
+ORIGINAL_R6_LOCAL_MANIFEST=EXECUTOR_REPORTED_20_OF_20__NOT_GPT_INDEPENDENT_VERIFIED
+R5_FINAL_CANDIDATE_SEAL=cd6ef027dc0c7242e4f62ae648ca83641fc6f1c6
+R5_FINAL_REVIEW_COMMIT=f17a5cb8b1bb151f340d2f10e92d6ea126c389ba
+R5_FINAL_REVIEW_BLOB=e8e10a02ddedc3316bd44a4bf508b492bb0dc06c
+R4_FINAL_REVIEW_COMMIT=1033b4a0531613093ce13789e3916fd228ae9b5b
+R4_FINAL_SEAL_COMMIT=5e1933e4c166fa40b95c82bed377538d843c7576
+OWNER_MATLAB_ZIP_SHA256=ceb94ccf34d2d218722b81e5111a8f4c530571a9f886bd4afe0610a00321f755
+OWNER_MATLAB_HJB_FILE=HANK_2ASSETS_HJB.m
+OWNER_MATLAB_HJB_BYTES=12227
+OWNER_MATLAB_HJB_SHA256=049136b769560040bc678f828f5d3ec5338ddcaa2090d6bed4e40732f56c3eae
+SOURCE_HJB_BLOB=56441c1c41ec94190997ce6f0ecbb2b5c2ca7b56
+SOURCE_OPERATOR_BLOB=9a511e151c9bf449412dc5605dfa1a2076711277
+SOURCE_KFE_BLOB=4ccb7cec8c4754e91bd8830a95dc533811784391
+SOURCE_EXPORT_BLOB=e144c645d3f4dc842c2faa6b93b2ba0e24275dcf
+MAX_NEW_MATLAB_PROCESS_CREATIONS=1
+MAX_NEW_MATLAB_LAUNCH_ATTEMPTS=1
+MAX_NEW_PYTHON_COMPARISON_CHILD_PROCESSES=1
+MAX_NEW_SYNTHETIC_CASESETS=1
+MAX_PRIOR_E03_E04_ARCHIVED_CASESETS=2
+MAX_RETRIES=0
+MAX_REAL_HA_HJB_KFE_POLICY_INITIALIZER_ROOT_FIRM_GE_IRF_REAL31_CALLS=0
+MAX_SPARSE_LINEAR_SOLVES=0
+MAX_PRICE_POINTS=0
+MAX_FORMAL_SCIENCE_SOURCE_EDITS=0
+MAX_NEW_REPOS_WORKTREES=0
+MAX_ISSUE_PR_MERGE_CLEANUP=0
+AUTO_NEXT=FALSE
+
+## 0. 唯一目标、范围及继承原R6 STOP
+
+Owner新授权**一个**独立的恢复任务：先解释并隔离消除前R6的预启动控制器实现错误，再在先验资源约束确实成立的情况下，使用一次受控MATLAB原生进程验证原MATLAB后置spdiags装配recipe，对相同人工数值漂移输入与冻结Python后置算子进行逐元素对照。若全部安全门成功，附条件沿原R6约定完成最多两份已封存E03/E04纯重装配对照与只读来源政策映射。新R6-R1不自动修改旧R6合同，不开放整套经济模型运行。
+
+原R6的STOP__R6_MATLAB_RUNTIME_UNAVAILABLE属于执行者历史原始终态，**不可覆盖/删除/追溯改名**；本次细分类说明原先错误发生于MATLAB进程创建之前，MATLAB R2022b已安装但启动能力尚未测。前R6没有MATLAB启动、Python比较、NPZ读取、模型调用、candidate提交/推送；执行者声明原LOCAL_ONLY manifest 20/20；GPT未独立获得这20个私有文件的bytes和SHA。任何历史LOCAL_ONLY停止回执、manifest、日志、保护目录及旧任务证据保持原位置和字节不变。对原R6 manifest/result仅可使用原已授权工作区中确切的旧R6路径只读查看，若不可访问则标EXECUTOR_ATTESTED_NOT_INDEPENDENTLY_VERIFIED，不猜测其他盘符或凭据、不重算旧任务。
+
+## 1. Git/GitHub与原始来源硬门
+
+首先从GitHub固定TASK_PUBLICATION_COMMIT读取本合同、检查其唯一parent等于GOVERNANCE_PARENT、root tree、diff仅新增本文件且其Git Blob/bytes与远端对应。确认治理分支远端HEAD**严格等于**TASK_PUBLICATION_COMMIT；若被其他人推进即STOP，不自行rebase、reset或改基点。R6-R1远端候选分支在开始时必须不存在，不能覆盖已存在的branch。新candidate仅可从FIXED_SCIENTIFIC_PARENT派生，不从治理或旧R6/R5候选派生；未通过所有本任务preflight，不得创建/推送candidate。
+
+固定Python来源从FIXED_SCIENTIFIC_PARENT逐个取真实源码并核对Git Blob、tree，特别是：
+- src/ch5_two_asset_hank/temp31_netwage_hjb.py => SOURCE_HJB_BLOB
+- src/ch5_two_asset_hank/matlab_faithful_operator.py => SOURCE_OPERATOR_BLOB
+- src/ch5_two_asset_hank/matlab_faithful_kfe.py => SOURCE_KFE_BLOB
+- exports/matlab_faithful_two_asset_ha.py => SOURCE_EXPORT_BLOB
+
+原MATLAB ZIP/HJB文件是Owner给GPT的已认证原件（固定上列SHA）；Codex本地若没有**Owner已明确授权交到安全工作区**的原始.m字节，须继续标记MATLAB_RAW_LOCAL_NOT_AVAILABLE / RECIPE_SOURCE_FROM_GPT_AUTHENTICATED_ORIGINAL，不能在公开仓库伪称对原MATLAB二进制直接核验。不得私搜Owner盘符、私有锁仓、浏览器缓存、额外下载或换协议补原件。运行MATLAB只允许执行新隔离.m script中的**逐段来源映射recipe**，不得调用原HANK_2ASSETS_HJB.m本体、HANK3成本/FOC或任何真实模型函数。无原始.m字节时即使recipe矩阵与Python逐元素一致，最高证据级别仍是MATLAB_NATIVE_RECIPE_ELEMENTWISE_MATCH_ON_IDENTICAL_INPUTS，不是原完整HJB原件运行时或政策等价认证。
+
+R5正式终审在R5_FINAL_REVIEW_COMMIT；原R6合同在ORIGINAL_R6_CONTRACT_COMMIT；R4终审与源码属于不同commit。必须按各自ref/path读取，不能将不存在于固定科研parent的后生报告视为source缺失，更不要重复旧R5的9/9验证或不相关历史。
+
+## 2. 唯一修复对象：隔离Windows启动控制器（首要硬门）
+
+已知前R6异常：Python controller误用不存在的subprocess.CREATE_SUSPENDED属性，引发AttributeError，MATLAB尚未启动。只允许在本任务新增的独立controller脚本中修正启动方式/编排，不得修改旧R6脚本、系统Python标准库、原MATLAB或固定科学代码。不得以简单替换为整数0x00000004后调用subprocess.Popen就宣称安全：挂起子线程必须有经验证的resume/terminate与句柄关闭路径。允许的有界实现包括：用明确封装的Windows CreateProcessW + CREATE_SUSPENDED常量，在创建真实MATLAB子进程后、恢复其主线程前设置Job Object资源限制，验证AssignProcessToJobObject成功，再ResumeThread；或者采用等强度的、可证实子进程第一条用户代码前就已受既有非breakaway Job约束的机制。不得仅在进程已运行后再赋予限制；不得绕过权限、UAC提升、下载额外控制器、改用管理员账户或新服务器。
+
+控制器必须在MATLAB恢复前证明限制：1GiB committed-memory job limit、最多1 active MATLAB child、明确的终止/回收策略（含job关闭时杀子进程及超时处理）；使用Windows原生Job Object API读取/核验限制、Job成员身份与进程创建返回码。若机器已有Job限制导致AssignProcessToJobObject失败，则在恢复前结束已挂起进程、清理句柄，记录实际Win32错误并STOP；不得选择不受控的备用启动路径。确认没有多余matlab.exe孤儿进程，也不得误杀工作区外既有MATLAB会话。每个句柄、终止和退出码必须形成脱敏现场回执。禁止将非活动/无法查询的Job Object包装为PASS。MATLAB可使用已经安装的R2022b，静态证实可执行文件及版本来源；不可自动安装、更换版本、采用Octave冒称MATLAB、绕过许可/授权。若真实MATLAB启动失败（例如许可问题），应记录独立的真实MATLAB报错而不是继续沿用旧AttributeError标签。
+
+允许最多**一次**新MATLAB子进程创建与启动；MAX_RETRIES=0，未通过硬门即停止。如果控制器在创建进程前再次抛错，MATLAB_RUNTIME_CAPABILITY仍=UNTESTED，标CONTROLLER_PREFLIGHT_ERROR；若进程已创建/恢复但不能完成最小版本/稀疏装配能力检查，则标MATLAB_NATIVE_GATE_FAILED及证据，不归咎原后置算子。为了遵守单进程预算，MATLAB最小runtime probe与通过后的synthetic spdiags对照应在**同一个** MATLAB进程里分阶段执行；不是第一次启动验证完成后又启动第二个MATLAB。
+
+## 3. 第二硬门：同输入后置装配逐元素真实MATLAB recipe比较
+
+仅当第2节controller和MATLAB native probe确实PASS，才允许在同一MATLAB进程运行隔离纯矩阵装配脚本。唯一人工网格 (I,J,Nz)=(3,3,2)，固定且完整公开s、mh及行和0、非对称的2x2状态转移Q，覆盖正负零漂移、两轴上下边界、角点、b行/列接缝、a条带、z块接缝。禁止以真实模型产生漂移、调用policy/HJB/KFE、调用spsolve或任何稀疏线性求解器。输出必须记录确切人工输入表、MATLAB版本、MATLAB spdiags实际输入向量长度与输出稀疏(row,col,value)排序值。
+
+MATLAB来源recipe：HANK_2ASSETS_HJB.m第262-264行s,mh来源只做静态映射（本数值实验直接人工固定s=mu_b、mh=mu_a）；第265-296行b轴 X=-min(s,0)/db，Y=min(s,0)/db-max(s,0)/db，Z=max(s,0)/db，按原source lowdiag/updiag/center和spdiags偏移0/±1填BB；第299-333行a轴chih=-min(mh,0)/dah，yyh=min(mh,0)/dah-max(mh,0)/dah，zetah=max(mh,0)/dah，按原source diag与spdiags偏移0/±I填AAH；Bswitch按原z块矩阵拼接；A=BB+AAH+Bswitch。不要预先“修正”原MATLAB spdiags填充或边界对角项，也不要用标准化行和=0替换原source离散矩阵。
+
+冻结Python: matlab_faithful_operator.py assemble_source_axis(0/1)、assemble_source_operator；固定后置驱动temp31_netwage_hjb.py为 max(-mu_b,0)/db、max(mu_b,0)/db、max(-mu_a,0)/da、max(mu_a,0)/da。允许独立Python comparison script按冻结来源纯装配或经Blob认证的同源片段运行，但不得导入运行HJB driver、任何policy selector、KFE或模型入口。对比时固定s=mu_b、mh=mu_a和相同Q；MATLAB一基i+(j-1)*I+(nz-1)*IJ，Python零基i+j*I+nz*IJ，order='F'必须一致。
+
+至少独立比较BB、AAH、Bswitch、A的形状、非零坐标、逐元素值、对角与非对角、z块、边界与角点、每行sum；输出严格非零差异count、在abs1e-12/rel1e-10下的差异count、max abs/relative element error、首次差异(row,col,2 values)或逐元素MATCH。严禁只比较nnz/行和/范数就宣布等价。某边界负行和是原MATLAB recipe自身产生还是Python额外产生，必须有MATLAB运行时实际矩阵数值支持；若出现差异，记录最小反例、潜在源因，不能修改科学源码或自动做第二轮试验。
+
+## 4. 原R6的附条件延续：旧档案与经济预算来源映射
+
+仅在第3节小网格MATLAB native recipe与Python逐元素比较完成、且旧R3 E03/E04归档**已在明确授权的原安全工作区有固定文件身份可直接访问**时，可在现有MATLAB进程和受控Python比较过程中最多只读两组旧存档mu_b/mu_a、grid、switch，按R4固定来源SHA/bytes校验后进行纯后置装配比较。不能重新调用任何原HJB/KFE、不能重解KFE、不能新设价格点，也不能改变或公开原NPZ、完整密度g或完整旧800矩阵。不能猜测被保护文件路径、跨工作区读取或从R4摘要制造假800数值。若小网格失败、MATLAB启动失败、存档不可访问或资源限制不允许，分别如实标NOT_TESTED或BLOCKED；不要为满足2/2输出而升级权限或补造实验。
+
+独立只读source_to_source_budget_map中，应查MATLAB s/mh与Python mu_b/mu_a的工资税是否单次扣除、Rb正负资产分支、Cmin=0、Tt/transfer_income、dh与调整成本、Rah taper、末次C/l/Idh/dh政策时序、MATLAB homecrit BREAK在冻结Python driver中缺失这一历史差异。没有获得同一真实policy对象/现金预算和精确输入映射时只能判定CONDITIONAL/UNRESOLVED，不能将人工同输入装配MATCH推成政策层或原完整HJB运行时等价。
+
+R4已有postG非守恒源行E03=20、E04=29；max|row sum|约2.8401907108/3.8646700569；G.T@g原驻定残差约0.3216969584/2.9445205842；被污染的destination方程zero-based295不等于source行295亏损。这些属于历史归档而非本轮新测MATLAB完整原HJB矩阵。严格驻定性保持FALSE，不通过本轮元件比较升级。
+
+## 5. 资源预算、审计证据与严禁事项
+
+最多1个启动受控MATLAB进程，最多1个独立Python comparator子进程，最多1组合成样例+2组来源许可的旧数组；失败、环境/隐私门阻塞后无自动重试。预检阶段可无模型、无子进程做普通文本/AST和静态源码核查，不能改变系统设置。必须记录每个新进程真实执行与完成情况（0/1、退出码、Job上限及是否生效、超时/内存状态）；不能把没有创建进程写成MATLAB_RUNTIME_UNAVAILABLE已证实。参考原R6与本任务均为有限预算，不能把修controller算作新价格点或默认恢复全部科学求解。
+
+禁止：修改固定scientific parent、原HANK MATLAB、旧R6合同/LOCAL_ONLY证据；修改生效生产代码；运行HA/HJB/KFE/GE/IRF/价格根求解/真实31省或政策优化；调用MATLAB原函数本体；读非授权个人文件；上传真实密度、完整旧NPZ、用户名、绝对隐私路径、token/keys；替代Job限制或关闭隐私门；新增Issue/PR；合并、重基、清理、force push；擅自衍生下一科研任务。
+
+## 6. 严格新增白名单与两阶段GitHub交付
+
+仅新增以下隔离工具源码：
+- validators/multi_province/temp31_r6_r1_matlab_launch_controller_isolated.py
+- validators/multi_province/temp31_r6_r1_matlab_post_recipe_isolated.m
+- validators/multi_province/temp31_r6_r1_python_post_elementwise_isolated.py
+
+仅新增以下证据目录内的实际最小必要文件：
+- tasks/CH5_TEMP31_R6_R1_MATLAB_LAUNCH_CONTROLLER_RECOVERY_20261030/
+  result.md, source_identity.json, r6_original_stop_preservation.md, controller_failure_and_repair_map.md,
+  windows_job_pre_execution_gate.json, matlab_native_probe_receipt.json,
+  synthetic_inputs.json, matlab_python_elementwise_comparison.json,
+  sparse_index_boundary_diff.md, archived_input_gate.json,
+  archived_elementwise_summary.json(only if performed),
+  policy_budget_source_map.md, gap_register.md, model_budget_zero.json,
+  privacy_report.md, manifest.json, DELIVERY_FINAL_RECEIPT.json and the minimum safe logs necessary to independently verify actual work.
+
+临时.mat/.csv、原MATLAB真实source或旧NPZ只可存在LOCAL_ONLY安全隔离目录，不公开。新validator与报告必须能独立体现修正、真实native原生验证和数值差异；纯“成功”摘要不够。原LOCAL_ONLY旧R6的20文件不复制/移动/重命名；引用其确切公开可核验身份和执行者见证等级。
+
+来源、Job、隐私/安全任一门不满足，则保留LOCAL_ONLY失败证据并STOP，不得伪造候选提交。若允许交付，在FIXED_SCIENTIFIC_PARENT基础上创建唯一candidate、payload仅一新增commit且SSH正常推送最多一次，回读commit/parent/tree/全部path/Blob/bytes/SHA256；final seal仅新增本任务目录DELIVERY_FINAL_RECEIPT.json，经原既有强制隐私扫描PASS后第二次普通SSH push最多一次、全部远端回读；外置LOCAL_ONLY最终回执绑定final seal、不追加第三commit。平台权限拒绝即STOP，不换账号、密钥、认证、协议、目录或端点。若推送状态不明，只允许同一官方ref只读消歧，严禁自动第二次push。保持旧全部科研/STOP证据和源文件原样。
+
+## 7. 终态与GPT独立A/B/C硬门
+
+- STOP__R6_R1_CONTROLLER_PREFLIGHT_FAILED：控制器在MATLAB进程创建前报错；MATLAB_RUNTIME_CAPABILITY=UNTESTED。
+- STOP__R6_R1_NATIVE_MATLAB_GATE_FAILED：已经尝试本轮受控原生MATLAB启动，但Job/许可/版本/运行最小能力失败；注明真实执行和资源证据。
+- STOP__R6_R1_ELEMENTWISE_DIFFERENCE_OWNER_DECISION：受控MATLAB recipe对固定同输入与Python出现实质数值不一致；不得修正式源码。
+- STOP__R6_R1_SOURCE_PRIVACY_OR_DELIVERY_BLOCKED：身份、安全、隐私或交付失败；不绕过。
+- STOP__AWAITING_GPT_INDEPENDENT_ABC：约定测试和合法交付完成，等待GPT独立审阅；**不代表源运行时、经济稳态或严格驻定认证PASS**。
+
+GPT独立审阅A：治理/候选commit parent/tree/Blob/bytes/SHA、原R6 STOP保存、真实Job预执行、隐私/执行见证。B：controller异常修复+真实MATLAB R2022b运行证据+source recipe/冻结Python BB/AAH/Bswitch/A同输入逐元素差异与边界定位+经济预算来源缺口。C：artifact_integrity、source_identity、numeric_review、implementation_review、scientific_review、privacy_review、actual_terminal、delivery、cleanup、not_completed分层裁决。失败时报告真实硬门，不因新脚本存在就自动判PASS。
+
+继承不变：
+P3=BLOCKED
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+STRICT_KFE_STATIONARITY=FALSE_INHERITED_R3_R4_R5
+ORIGINAL_R5_BATCH_FAILURE_ROOT_CAUSE=UNKNOWN
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
