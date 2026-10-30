@@ -1,0 +1,64 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R1_ISOLATED_PREFDIR_NATIVE_STARTUP_20261030",
+  "governance": "6a82aa941e32efd3136fa5611374b274f8a46464",
+  "parent": "fcc11c6a2938a49b2847e404f8ccb03cd79288d7",
+  "tree": "1fd3d6d43c297670cb5155bde4a8f4feec687166",
+  "scientific": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+  "scientific_tree": "7b7cb29dd5b37be92561e7f1bc688c0d29789732",
+  "scientific_parent": "a51c2e7ff6548340a1ee86857b0ee55792fa69b4",
+  "candidate_remote": "EXACT_REF_404",
+  "sources": [
+    {
+      "role": "contract",
+      "bytes": 17076,
+      "sha256": "2c2d01a28f7c32f33a50bb3561e47780971fc7aa75f55c95d5ed17d919317fd9",
+      "git_blob": "391cfaad8fe0fb0977aedb6e76582986c6912170"
+    },
+    {
+      "role": "r3_contract",
+      "bytes": 12889,
+      "sha256": "471121216d4d15755fd356ea0b381d5944e6f93dcd9e79dd96f3ae66e68de91c",
+      "git_blob": "1b9e1ab519696105caae1aec79fd6454a3459896"
+    },
+    {
+      "role": "r2_review",
+      "bytes": 11362,
+      "sha256": "eea7acef4bc48768da97e4d201a40a63607838263d8ee688bbb3d2445f5f03d9",
+      "git_blob": "69393e960547b2861cc81aef54e59f1b23873874"
+    }
+  ],
+  "old_controller": {
+    "bytes": 17189,
+    "sha256": "919aed33544ab9bc5c8f46229b7b7308e061136178731ceb1f5c76da76dcca00",
+    "git_blob": "57ea43508a8e1419862668168c617b1782dbf84d"
+  },
+  "old_runtime_configuration": {
+    "bytes": 338,
+    "sha256": "b3cbdc146551162248e16944c13361be164fd678268a377eeb1a6dca78821504",
+    "git_blob": "dcd269cd1d0f4a1a613112ca8dfea609428d76c9"
+  },
+  "executable": {
+    "bytes": 235648,
+    "sha256": "4d251e680b8409d76d0524a1eb716de3c9e747386d3101e10f6ce1405ad1a59d",
+    "git_blob": "5a86b6a05b04b64e64272a30dba725eeee12bfee"
+  },
+  "MATLAB_RAW_LOCAL": "MATLAB_RAW_LOCAL_NOT_AVAILABLE",
+  "old_prefdir_entry_reads": 0,
+  "official_references": [
+    {
+      "host": "www.mathworks.com",
+      "path": "/matlabcentral/answers/93696-how-do-i-change-the-matlab-preferences-directory-location",
+      "finding": "instance startup MATLAB_PREFDIR workaround; not officially supported general workflow; verify actual prefdir"
+    },
+    {
+      "host": "www.mathworks.com",
+      "path": "/help/matlab/matlab_env/startup-options.html",
+      "finding": "Windows no-JVM unsupported before R2025a; use batch/logfile as authorized"
+    },
+    {
+      "host": "learn.microsoft.com",
+      "path": "/en-us/windows/win32/procthread/job-objects",
+      "finding": "completion-port observation; absence is not proof of no event"
+    }
+  ]
+}

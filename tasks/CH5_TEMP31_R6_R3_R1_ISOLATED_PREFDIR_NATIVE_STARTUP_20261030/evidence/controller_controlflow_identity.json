@@ -1,0 +1,64 @@
+{
+  "executed_controller": {
+    "bytes": 24951,
+    "sha256": "a2350702840d352eb3b7b35e2cf6ff0c30cffda85b4ab8eaae813fc3154bac0c",
+    "git_blob": "2aa98c299cfa5b3a4f4866a0bb599ec29cd6fa3b"
+  },
+  "executed_probe": {
+    "bytes": 1773,
+    "sha256": "8fe9515c47de13ab91414fc117fc50cd4a3348d8487a3db31c9e7baecb7d995e",
+    "git_blob": "ad478fdf76bbb88e60d364dc5b4178ca906d9aae"
+  },
+  "source_lines": [
+    {
+      "line": 63,
+      "text": "    bind(\"CreateIoCompletionPort\",[w.HANDLE,w.HANDLE,ctypes.c_size_t,w.DWORD],w.HANDLE)"
+    },
+    {
+      "line": 80,
+      "text": "def pref_preflight():"
+    },
+    {
+      "line": 131,
+      "text": "        self.port=k.CreateIoCompletionPort(ctypes.c_void_p(-1).value,None,0,1);checked(bool(self.port),\"CreateIoCompletionPort\")"
+    },
+    {
+      "line": 133,
+      "text": "        checked(k.SetInformationJobObject(self.job,7,ctypes.byref(port),ctypes.sizeof(port)),\"associate_completion_port_before_assignment\")"
+    },
+    {
+      "line": 145,
+      "text": "        checked(ok,\"suspended_CreateProcess_return\");self.created=True;self.record[\"created\"]=True"
+    },
+    {
+      "line": 147,
+      "text": "        checked(k.AssignProcessToJobObject(self.job,self.pi.hProcess),\"assign_job\");self.assigned=True"
+    },
+    {
+      "line": 151,
+      "text": "        self.record[\"pre_execution_gate\"]=dict(**limits,membership=True,single_member_is_owned=True,completion_port_associated_before_assignment=True)"
+    },
+    {
+      "line": 152,
+      "text": "        dump(R/\"job_gate_completion_port_receipt.json\",dict(status=\"PASS_BEFORE_RESUME\",**self.record[\"pre_execution_gate\"]))"
+    },
+    {
+      "line": 156,
+      "text": "        event(\"ResumeThread_return\",at=at,previous_suspend_count=int(prior),ok=prior==1)"
+    },
+    {
+      "line": 160,
+      "text": "        event(\"deadline_set\",origin_monotonic_ns=at[\"monotonic_ns\"],deadline_monotonic_ns=self.deadline,maximum_seconds=30)"
+    },
+    {
+      "line": 173,
+      "text": "                    checked(k.TerminateJobObject(self.job,0xE0000001) if self.assigned else k.TerminateProcess(self.pi.hProcess,0xE0000001),\"TerminateOwnedJob_or_suspended_owned_process\")"
+    },
+    {
+      "line": 188,
+      "text": "def read_markers(nat):"
+    }
+  ],
+  "source_reexecuted": false,
+  "first_development_hash_was_not_executed": true
+}
