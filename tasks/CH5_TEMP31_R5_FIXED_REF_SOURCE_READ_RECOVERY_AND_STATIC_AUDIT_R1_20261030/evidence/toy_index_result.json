@@ -1,0 +1,890 @@
+{
+  "passed": true,
+  "rounds": 1,
+  "grid": {
+    "I": 3,
+    "J": 3,
+    "Nz": 2,
+    "states": 18
+  },
+  "manual_rates": "drift in (-2,0,3), h=1; no economic inputs",
+  "math_convention": "square diagonal d: A[r,r+d]=band_d[r+d], zero based; required storage alignment example, not a MATLAB runtime emulator",
+  "axis_rows": [
+    {
+      "axis": "b",
+      "source_index0": 0,
+      "state_index0": [
+        0,
+        0,
+        0
+      ],
+      "manual_drift": -2,
+      "spacing": 1,
+      "diag": -2,
+      "back_rate": 2,
+      "forward_rate": 0,
+      "legal_backward_target": null,
+      "legal_forward_target": 1,
+      "expected_row_sum": -2,
+      "actual_row_sum": -2
+    },
+    {
+      "axis": "b",
+      "source_index0": 1,
+      "state_index0": [
+        1,
+        0,
+        0
+      ],
+      "manual_drift": 0,
+      "spacing": 1,
+      "diag": 0,
+      "back_rate": 0,
+      "forward_rate": 0,
+      "legal_backward_target": 0,
+      "legal_forward_target": 2,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "b",
+      "source_index0": 2,
+      "state_index0": [
+        2,
+        0,
+        0
+      ],
+      "manual_drift": 3,
+      "spacing": 1,
+      "diag": -3,
+      "back_rate": 0,
+      "forward_rate": 3,
+      "legal_backward_target": 1,
+      "legal_forward_target": null,
+      "expected_row_sum": -3,
+      "actual_row_sum": -3
+    },
+    {
+      "axis": "b",
+      "source_index0": 3,
+      "state_index0": [
+        0,
+        1,
+        0
+      ],
+      "manual_drift": 3,
+      "spacing": 1,
+      "diag": -3,
+      "back_rate": 0,
+      "forward_rate": 3,
+      "legal_backward_target": null,
+      "legal_forward_target": 4,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "b",
+      "source_index0": 4,
+      "state_index0": [
+        1,
+        1,
+        0
+      ],
+      "manual_drift": -2,
+      "spacing": 1,
+      "diag": -2,
+      "back_rate": 2,
+      "forward_rate": 0,
+      "legal_backward_target": 3,
+      "legal_forward_target": 5,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "b",
+      "source_index0": 5,
+      "state_index0": [
+        2,
+        1,
+        0
+      ],
+      "manual_drift": 0,
+      "spacing": 1,
+      "diag": 0,
+      "back_rate": 0,
+      "forward_rate": 0,
+      "legal_backward_target": 4,
+      "legal_forward_target": null,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "b",
+      "source_index0": 6,
+      "state_index0": [
+        0,
+        2,
+        0
+      ],
+      "manual_drift": 0,
+      "spacing": 1,
+      "diag": 0,
+      "back_rate": 0,
+      "forward_rate": 0,
+      "legal_backward_target": null,
+      "legal_forward_target": 7,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "b",
+      "source_index0": 7,
+      "state_index0": [
+        1,
+        2,
+        0
+      ],
+      "manual_drift": 3,
+      "spacing": 1,
+      "diag": -3,
+      "back_rate": 0,
+      "forward_rate": 3,
+      "legal_backward_target": 6,
+      "legal_forward_target": 8,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "b",
+      "source_index0": 8,
+      "state_index0": [
+        2,
+        2,
+        0
+      ],
+      "manual_drift": -2,
+      "spacing": 1,
+      "diag": -2,
+      "back_rate": 2,
+      "forward_rate": 0,
+      "legal_backward_target": 7,
+      "legal_forward_target": null,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "b",
+      "source_index0": 9,
+      "state_index0": [
+        0,
+        0,
+        1
+      ],
+      "manual_drift": 0,
+      "spacing": 1,
+      "diag": 0,
+      "back_rate": 0,
+      "forward_rate": 0,
+      "legal_backward_target": null,
+      "legal_forward_target": 10,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "b",
+      "source_index0": 10,
+      "state_index0": [
+        1,
+        0,
+        1
+      ],
+      "manual_drift": 3,
+      "spacing": 1,
+      "diag": -3,
+      "back_rate": 0,
+      "forward_rate": 3,
+      "legal_backward_target": 9,
+      "legal_forward_target": 11,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "b",
+      "source_index0": 11,
+      "state_index0": [
+        2,
+        0,
+        1
+      ],
+      "manual_drift": -2,
+      "spacing": 1,
+      "diag": -2,
+      "back_rate": 2,
+      "forward_rate": 0,
+      "legal_backward_target": 10,
+      "legal_forward_target": null,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "b",
+      "source_index0": 12,
+      "state_index0": [
+        0,
+        1,
+        1
+      ],
+      "manual_drift": -2,
+      "spacing": 1,
+      "diag": -2,
+      "back_rate": 2,
+      "forward_rate": 0,
+      "legal_backward_target": null,
+      "legal_forward_target": 13,
+      "expected_row_sum": -2,
+      "actual_row_sum": -2
+    },
+    {
+      "axis": "b",
+      "source_index0": 13,
+      "state_index0": [
+        1,
+        1,
+        1
+      ],
+      "manual_drift": 0,
+      "spacing": 1,
+      "diag": 0,
+      "back_rate": 0,
+      "forward_rate": 0,
+      "legal_backward_target": 12,
+      "legal_forward_target": 14,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "b",
+      "source_index0": 14,
+      "state_index0": [
+        2,
+        1,
+        1
+      ],
+      "manual_drift": 3,
+      "spacing": 1,
+      "diag": -3,
+      "back_rate": 0,
+      "forward_rate": 3,
+      "legal_backward_target": 13,
+      "legal_forward_target": null,
+      "expected_row_sum": -3,
+      "actual_row_sum": -3
+    },
+    {
+      "axis": "b",
+      "source_index0": 15,
+      "state_index0": [
+        0,
+        2,
+        1
+      ],
+      "manual_drift": 3,
+      "spacing": 1,
+      "diag": -3,
+      "back_rate": 0,
+      "forward_rate": 3,
+      "legal_backward_target": null,
+      "legal_forward_target": 16,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "b",
+      "source_index0": 16,
+      "state_index0": [
+        1,
+        2,
+        1
+      ],
+      "manual_drift": -2,
+      "spacing": 1,
+      "diag": -2,
+      "back_rate": 2,
+      "forward_rate": 0,
+      "legal_backward_target": 15,
+      "legal_forward_target": 17,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "b",
+      "source_index0": 17,
+      "state_index0": [
+        2,
+        2,
+        1
+      ],
+      "manual_drift": 0,
+      "spacing": 1,
+      "diag": 0,
+      "back_rate": 0,
+      "forward_rate": 0,
+      "legal_backward_target": 16,
+      "legal_forward_target": null,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "source_index0": 0,
+      "state_index0": [
+        0,
+        0,
+        0
+      ],
+      "manual_drift": 0,
+      "spacing": 1,
+      "diag": 0,
+      "back_rate": 0,
+      "forward_rate": 0,
+      "legal_backward_target": null,
+      "legal_forward_target": 3,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "source_index0": 1,
+      "state_index0": [
+        1,
+        0,
+        0
+      ],
+      "manual_drift": 3,
+      "spacing": 1,
+      "diag": -3,
+      "back_rate": 0,
+      "forward_rate": 3,
+      "legal_backward_target": null,
+      "legal_forward_target": 4,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "source_index0": 2,
+      "state_index0": [
+        2,
+        0,
+        0
+      ],
+      "manual_drift": -2,
+      "spacing": 1,
+      "diag": -2,
+      "back_rate": 2,
+      "forward_rate": 0,
+      "legal_backward_target": null,
+      "legal_forward_target": 5,
+      "expected_row_sum": -2,
+      "actual_row_sum": -2
+    },
+    {
+      "axis": "a",
+      "source_index0": 3,
+      "state_index0": [
+        0,
+        1,
+        0
+      ],
+      "manual_drift": -2,
+      "spacing": 1,
+      "diag": -2,
+      "back_rate": 2,
+      "forward_rate": 0,
+      "legal_backward_target": 0,
+      "legal_forward_target": 6,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "source_index0": 4,
+      "state_index0": [
+        1,
+        1,
+        0
+      ],
+      "manual_drift": 0,
+      "spacing": 1,
+      "diag": 0,
+      "back_rate": 0,
+      "forward_rate": 0,
+      "legal_backward_target": 1,
+      "legal_forward_target": 7,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "source_index0": 5,
+      "state_index0": [
+        2,
+        1,
+        0
+      ],
+      "manual_drift": 3,
+      "spacing": 1,
+      "diag": -3,
+      "back_rate": 0,
+      "forward_rate": 3,
+      "legal_backward_target": 2,
+      "legal_forward_target": 8,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "source_index0": 6,
+      "state_index0": [
+        0,
+        2,
+        0
+      ],
+      "manual_drift": 3,
+      "spacing": 1,
+      "diag": -3,
+      "back_rate": 0,
+      "forward_rate": 3,
+      "legal_backward_target": 3,
+      "legal_forward_target": null,
+      "expected_row_sum": -3,
+      "actual_row_sum": -3
+    },
+    {
+      "axis": "a",
+      "source_index0": 7,
+      "state_index0": [
+        1,
+        2,
+        0
+      ],
+      "manual_drift": -2,
+      "spacing": 1,
+      "diag": -2,
+      "back_rate": 2,
+      "forward_rate": 0,
+      "legal_backward_target": 4,
+      "legal_forward_target": null,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "source_index0": 8,
+      "state_index0": [
+        2,
+        2,
+        0
+      ],
+      "manual_drift": 0,
+      "spacing": 1,
+      "diag": 0,
+      "back_rate": 0,
+      "forward_rate": 0,
+      "legal_backward_target": 5,
+      "legal_forward_target": null,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "source_index0": 9,
+      "state_index0": [
+        0,
+        0,
+        1
+      ],
+      "manual_drift": 3,
+      "spacing": 1,
+      "diag": -3,
+      "back_rate": 0,
+      "forward_rate": 3,
+      "legal_backward_target": null,
+      "legal_forward_target": 12,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "source_index0": 10,
+      "state_index0": [
+        1,
+        0,
+        1
+      ],
+      "manual_drift": -2,
+      "spacing": 1,
+      "diag": -2,
+      "back_rate": 2,
+      "forward_rate": 0,
+      "legal_backward_target": null,
+      "legal_forward_target": 13,
+      "expected_row_sum": -2,
+      "actual_row_sum": -2
+    },
+    {
+      "axis": "a",
+      "source_index0": 11,
+      "state_index0": [
+        2,
+        0,
+        1
+      ],
+      "manual_drift": 0,
+      "spacing": 1,
+      "diag": 0,
+      "back_rate": 0,
+      "forward_rate": 0,
+      "legal_backward_target": null,
+      "legal_forward_target": 14,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "source_index0": 12,
+      "state_index0": [
+        0,
+        1,
+        1
+      ],
+      "manual_drift": 0,
+      "spacing": 1,
+      "diag": 0,
+      "back_rate": 0,
+      "forward_rate": 0,
+      "legal_backward_target": 9,
+      "legal_forward_target": 15,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "source_index0": 13,
+      "state_index0": [
+        1,
+        1,
+        1
+      ],
+      "manual_drift": 3,
+      "spacing": 1,
+      "diag": -3,
+      "back_rate": 0,
+      "forward_rate": 3,
+      "legal_backward_target": 10,
+      "legal_forward_target": 16,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "source_index0": 14,
+      "state_index0": [
+        2,
+        1,
+        1
+      ],
+      "manual_drift": -2,
+      "spacing": 1,
+      "diag": -2,
+      "back_rate": 2,
+      "forward_rate": 0,
+      "legal_backward_target": 11,
+      "legal_forward_target": 17,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "source_index0": 15,
+      "state_index0": [
+        0,
+        2,
+        1
+      ],
+      "manual_drift": -2,
+      "spacing": 1,
+      "diag": -2,
+      "back_rate": 2,
+      "forward_rate": 0,
+      "legal_backward_target": 12,
+      "legal_forward_target": null,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "source_index0": 16,
+      "state_index0": [
+        1,
+        2,
+        1
+      ],
+      "manual_drift": 0,
+      "spacing": 1,
+      "diag": 0,
+      "back_rate": 0,
+      "forward_rate": 0,
+      "legal_backward_target": 13,
+      "legal_forward_target": null,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "source_index0": 17,
+      "state_index0": [
+        2,
+        2,
+        1
+      ],
+      "manual_drift": 3,
+      "spacing": 1,
+      "diag": -3,
+      "back_rate": 0,
+      "forward_rate": 3,
+      "legal_backward_target": 14,
+      "legal_forward_target": null,
+      "expected_row_sum": -3,
+      "actual_row_sum": -3
+    }
+  ],
+  "sign_cases": [
+    {
+      "axis": "b",
+      "location": "lower",
+      "drift": -2,
+      "diag": -2,
+      "legal_offdiag_sum": 0,
+      "expected_row_sum": -2,
+      "actual_row_sum": -2
+    },
+    {
+      "axis": "b",
+      "location": "lower",
+      "drift": 0,
+      "diag": 0,
+      "legal_offdiag_sum": 0,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "b",
+      "location": "lower",
+      "drift": 3,
+      "diag": -3,
+      "legal_offdiag_sum": 3,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "b",
+      "location": "interior",
+      "drift": -2,
+      "diag": -2,
+      "legal_offdiag_sum": 2,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "b",
+      "location": "interior",
+      "drift": 0,
+      "diag": 0,
+      "legal_offdiag_sum": 0,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "b",
+      "location": "interior",
+      "drift": 3,
+      "diag": -3,
+      "legal_offdiag_sum": 3,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "b",
+      "location": "upper",
+      "drift": -2,
+      "diag": -2,
+      "legal_offdiag_sum": 2,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "b",
+      "location": "upper",
+      "drift": 0,
+      "diag": 0,
+      "legal_offdiag_sum": 0,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "b",
+      "location": "upper",
+      "drift": 3,
+      "diag": -3,
+      "legal_offdiag_sum": 0,
+      "expected_row_sum": -3,
+      "actual_row_sum": -3
+    },
+    {
+      "axis": "a",
+      "location": "lower",
+      "drift": -2,
+      "diag": -2,
+      "legal_offdiag_sum": 0,
+      "expected_row_sum": -2,
+      "actual_row_sum": -2
+    },
+    {
+      "axis": "a",
+      "location": "lower",
+      "drift": 0,
+      "diag": 0,
+      "legal_offdiag_sum": 0,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "location": "lower",
+      "drift": 3,
+      "diag": -3,
+      "legal_offdiag_sum": 3,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "location": "interior",
+      "drift": -2,
+      "diag": -2,
+      "legal_offdiag_sum": 2,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "location": "interior",
+      "drift": 0,
+      "diag": 0,
+      "legal_offdiag_sum": 0,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "location": "interior",
+      "drift": 3,
+      "diag": -3,
+      "legal_offdiag_sum": 3,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "location": "upper",
+      "drift": -2,
+      "diag": -2,
+      "legal_offdiag_sum": 2,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "location": "upper",
+      "drift": 0,
+      "diag": 0,
+      "legal_offdiag_sum": 0,
+      "expected_row_sum": 0,
+      "actual_row_sum": 0
+    },
+    {
+      "axis": "a",
+      "location": "upper",
+      "drift": 3,
+      "diag": -3,
+      "legal_offdiag_sum": 0,
+      "expected_row_sum": -3,
+      "actual_row_sum": -3
+    }
+  ],
+  "strip_checks": {
+    "b": {
+      "offsets": [
+        -1,
+        0,
+        1
+      ],
+      "entry_count": 20,
+      "manual_adjacency_equals_required_strip_projection": true
+    },
+    "a": {
+      "offsets": [
+        -3,
+        0,
+        3
+      ],
+      "entry_count": 20,
+      "manual_adjacency_equals_required_strip_projection": true
+    }
+  },
+  "switch_Q": [
+    [
+      -2,
+      2
+    ],
+    [
+      3,
+      -3
+    ]
+  ],
+  "switch_row_sums": [
+    0,
+    0
+  ],
+  "transpose_Q_row_sums": [
+    1,
+    -1
+  ],
+  "combined_row_sums": [
+    -2,
+    0,
+    -5,
+    0,
+    0,
+    0,
+    -3,
+    0,
+    0,
+    0,
+    -2,
+    0,
+    -2,
+    0,
+    -3,
+    0,
+    0,
+    -3
+  ],
+  "real_science_imports": 0,
+  "model_calls": 0,
+  "solver_calls": 0,
+  "MATLAB_runtime_calls": 0,
+  "original_800_state_arrays_read": 0,
+  "scope": "PURE_NO_HA_TOY_ALGEBRA; cannot certify actual original MATLAB strips or full runtime parity"
+}

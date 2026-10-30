@@ -1,0 +1,1011 @@
+{
+  "grade": "PUBLIC_GITHUB_SOURCE_BYTES",
+  "files": [
+    {
+      "path": "src/ch5_two_asset_hank/temp31_netwage_hjb.py",
+      "source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+      "segments": [
+        {
+          "start": 85,
+          "end": 118,
+          "lines": [
+            {
+              "line": 85,
+              "text": "    for iteration in range(1, numerics.max_iterations + 1):"
+            },
+            {
+              "line": 86,
+              "text": "        old = value.copy()"
+            },
+            {
+              "line": 87,
+              "text": "        vb_f = np.zeros(shape); vb_b = np.zeros(shape); va_f = np.zeros(shape); va_b = np.zeros(shape)"
+            },
+            {
+              "line": 88,
+              "text": "        vb_f[:-1] = (old[1:] - old[:-1]) / db; vb_b[1:] = vb_f[:-1]"
+            },
+            {
+              "line": 89,
+              "text": "        for j, a in enumerate(grid.a):"
+            },
+            {
+              "line": 90,
+              "text": "            for nz, z in enumerate(grid.z):"
+            },
+            {
+              "line": 91,
+              "text": "                for i in (0, grid.b.size - 1):"
+            },
+            {
+              "line": 92,
+              "text": "                    rb = inputs.r_b + (borrowing_rate_gap if grid.b[i] < 0 else 0.0)"
+            },
+            {
+              "line": 93,
+              "text": "                    resources = inputs.wages[0]*z*labor0[i,j,nz] + transfer_income + rb*grid.b[i]"
+            },
+            {
+              "line": 94,
+              "text": "                    marginal = resources ** (-params.gamma_c)"
+            },
+            {
+              "line": 95,
+              "text": "                    if i == 0: vb_b[i,j,nz] = marginal"
+            },
+            {
+              "line": 96,
+              "text": "                    else: vb_f[i,j,nz] = marginal"
+            },
+            {
+              "line": 97,
+              "text": "        va_f[:, :-1] = (old[:, 1:] - old[:, :-1]) / da; va_b[:, 1:] = va_f[:, :-1]"
+            },
+            {
+              "line": 98,
+              "text": "        names = (\"consumption\",\"labor\",\"transfer\",\"adjustment_cost\",\"effective_illiquid_return\",\"mu_a\",\"mu_b\",\"utility\")"
+            },
+            {
+              "line": 99,
+              "text": "        arrays = {name: np.empty(shape) for name in names}"
+            },
+            {
+              "line": 100,
+              "text": "        liquid = np.empty(shape, dtype=\"U1\"); transfer_label = np.empty(shape, dtype=\"U1\")"
+            },
+            {
+              "line": 101,
+              "text": "        bb = np.empty(shape); bf = np.empty(shape); ab = np.empty(shape); af = np.empty(shape)"
+            },
+            {
+              "line": 102,
+              "text": "        for nz, z in enumerate(grid.z):"
+            },
+            {
+              "line": 103,
+              "text": "            for j, a in enumerate(grid.a):"
+            },
+            {
+              "line": 104,
+              "text": "                for i, b in enumerate(grid.b):"
+            },
+            {
+              "line": 105,
+              "text": "                    policy = select_temp31_netwage_local_policy(a=float(a),b=float(b),z=float(z),v_a_forward=float(va_f[i,j,nz]),v_a_backward=float(va_b[i,j,nz]),v_b_forward=float(vb_f[i,j,nz]),v_b_backward=float(vb_b[i,j,nz]),baseline_labor=float(labor0[i,j,nz]),transfer_income=transfer_income,borrowing_rate_gap=borrowing_rate_gap,a_max=float(grid.a[-1]),da=da,db=db,at_lower_a=j==0,at_upper_a=j+1==grid.a.size,at_lower_b=i==0,at_upper_b=i+1==grid.b.size,inputs=inputs,params=params,tolerance=numerics.drift_tolerance)"
+            },
+            {
+              "line": 106,
+              "text": "                    for name in names: arrays[name][i,j,nz] = getattr(policy, name)"
+            },
+            {
+              "line": 107,
+              "text": "                    liquid[i,j,nz]=policy.liquid_label; transfer_label[i,j,nz]=policy.transfer_label"
+            },
+            {
+              "line": 108,
+              "text": "                    bb[i,j,nz]=policy.iteration_b_backward_rate; bf[i,j,nz]=policy.iteration_b_forward_rate"
+            },
+            {
+              "line": 109,
+              "text": "                    ab[i,j,nz]=policy.a_backward_rate; af[i,j,nz]=policy.a_forward_rate"
+            },
+            {
+              "line": 110,
+              "text": "        operator = assemble_source_operator(bb,bf,ab,af,grid.switch_matrix)"
+            },
+            {
+              "line": 111,
+              "text": "        matrix = (1/numerics.delta + params.rho)*sparse.eye(np.prod(shape),format=\"csr\") - operator.full"
+            },
+            {
+              "line": 112,
+              "text": "        rhs = arrays[\"utility\"].ravel(order=\"F\") + old.ravel(order=\"F\")/numerics.delta"
+            },
+            {
+              "line": 113,
+              "text": "        value = linalg.spsolve(matrix,rhs).reshape(shape,order=\"F\")"
+            },
+            {
+              "line": 114,
+              "text": "        statistic = float(np.max(np.abs(value-old)))"
+            },
+            {
+              "line": 115,
+              "text": "        if statistic < numerics.convergence_tolerance: converged=True; break"
+            },
+            {
+              "line": 116,
+              "text": "    assert operator is not None"
+            },
+            {
+              "line": 117,
+              "text": "    post = assemble_source_operator(np.maximum(-arrays[\"mu_b\"],0)/db,np.maximum(arrays[\"mu_b\"],0)/db,np.maximum(-arrays[\"mu_a\"],0)/da,np.maximum(arrays[\"mu_a\"],0)/da,grid.switch_matrix)"
+            },
+            {
+              "line": 118,
+              "text": "    return Temp31NetWageHJBResult(value,initial,arrays[\"consumption\"],arrays[\"labor\"],arrays[\"transfer\"],arrays[\"adjustment_cost\"],arrays[\"effective_illiquid_return\"],arrays[\"mu_a\"],arrays[\"mu_b\"],arrays[\"utility\"],liquid,transfer_label,operator,post,iteration,converged,statistic)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "src/ch5_two_asset_hank/matlab_faithful_operator.py",
+      "source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+      "segments": [
+        {
+          "start": 19,
+          "end": 59,
+          "lines": [
+            {
+              "line": 19,
+              "text": "def assemble_source_axis("
+            },
+            {
+              "line": 20,
+              "text": "    backward: np.ndarray, forward: np.ndarray, axis: int"
+            },
+            {
+              "line": 21,
+              "text": ") -> sparse.csr_matrix:"
+            },
+            {
+              "line": 22,
+              "text": "    \"\"\"Place signed source components, truncating outward entries but not their diagonal.\"\"\""
+            },
+            {
+              "line": 23,
+              "text": "    backward = np.asarray(backward, dtype=float)"
+            },
+            {
+              "line": 24,
+              "text": "    forward = np.asarray(forward, dtype=float)"
+            },
+            {
+              "line": 25,
+              "text": "    if backward.shape != forward.shape or backward.ndim != 3:"
+            },
+            {
+              "line": 26,
+              "text": "        raise ValueError(\"source axis components must share a three-dimensional shape\")"
+            },
+            {
+              "line": 27,
+              "text": "    if axis not in (0, 1) or not np.isfinite(backward).all() or not np.isfinite(forward).all():"
+            },
+            {
+              "line": 28,
+              "text": "        raise ValueError(\"invalid source axis components\")"
+            },
+            {
+              "line": 29,
+              "text": "    i_count, j_count, z_count = backward.shape"
+            },
+            {
+              "line": 30,
+              "text": "    rows: list[int] = []"
+            },
+            {
+              "line": 31,
+              "text": "    cols: list[int] = []"
+            },
+            {
+              "line": 32,
+              "text": "    data: list[float] = []"
+            },
+            {
+              "line": 33,
+              "text": "    for nz in range(z_count):"
+            },
+            {
+              "line": 34,
+              "text": "        for j in range(j_count):"
+            },
+            {
+              "line": 35,
+              "text": "            for i in range(i_count):"
+            },
+            {
+              "line": 36,
+              "text": "                row = i + j * i_count + nz * i_count * j_count"
+            },
+            {
+              "line": 37,
+              "text": "                rb = float(backward[i, j, nz])"
+            },
+            {
+              "line": 38,
+              "text": "                rf = float(forward[i, j, nz])"
+            },
+            {
+              "line": 39,
+              "text": "                if rb != 0.0 and ((axis == 0 and i > 0) or (axis == 1 and j > 0)):"
+            },
+            {
+              "line": 40,
+              "text": "                    rows.append(row); cols.append(row - (1 if axis == 0 else i_count)); data.append(rb)"
+            },
+            {
+              "line": 41,
+              "text": "                if rf != 0.0 and ((axis == 0 and i + 1 < i_count) or (axis == 1 and j + 1 < j_count)):"
+            },
+            {
+              "line": 42,
+              "text": "                    rows.append(row); cols.append(row + (1 if axis == 0 else i_count)); data.append(rf)"
+            },
+            {
+              "line": 43,
+              "text": "                rows.append(row); cols.append(row); data.append(-(rb + rf))"
+            },
+            {
+              "line": 44,
+              "text": "    size = i_count * j_count * z_count"
+            },
+            {
+              "line": 45,
+              "text": "    return sparse.coo_matrix((data, (rows, cols)), shape=(size, size)).tocsr()"
+            },
+            {
+              "line": 46,
+              "text": ""
+            },
+            {
+              "line": 47,
+              "text": ""
+            },
+            {
+              "line": 48,
+              "text": "def assemble_source_operator("
+            },
+            {
+              "line": 49,
+              "text": "    b_backward: np.ndarray,"
+            },
+            {
+              "line": 50,
+              "text": "    b_forward: np.ndarray,"
+            },
+            {
+              "line": 51,
+              "text": "    a_backward: np.ndarray,"
+            },
+            {
+              "line": 52,
+              "text": "    a_forward: np.ndarray,"
+            },
+            {
+              "line": 53,
+              "text": "    switch_matrix: np.ndarray,"
+            },
+            {
+              "line": 54,
+              "text": ") -> MatlabFaithfulOperator:"
+            },
+            {
+              "line": 55,
+              "text": "    bb = assemble_source_axis(b_backward, b_forward, 0)"
+            },
+            {
+              "line": 56,
+              "text": "    aah = assemble_source_axis(a_backward, a_forward, 1)"
+            },
+            {
+              "line": 57,
+              "text": "    state_size = int(np.prod(b_backward.shape[:2]))"
+            },
+            {
+              "line": 58,
+              "text": "    bswitch = sparse.kron(sparse.csr_matrix(switch_matrix), sparse.eye(state_size), format=\"csr\")"
+            },
+            {
+              "line": 59,
+              "text": "    return MatlabFaithfulOperator(bb, aah, bswitch, (bb + aah + bswitch).tocsr())"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "src/ch5_two_asset_hank/matlab_faithful_kfe.py",
+      "source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+      "segments": [
+        {
+          "start": 25,
+          "end": 47,
+          "lines": [
+            {
+              "line": 25,
+              "text": "def matlab_contaminated_row_index(state_count: int) -> int:"
+            },
+            {
+              "line": 26,
+              "text": "    if state_count < 3:"
+            },
+            {
+              "line": 27,
+              "text": "        raise ValueError(\"faithful KFE requires at least three states\")"
+            },
+            {
+              "line": 28,
+              "text": "    return int(np.floor(0.37 * state_count)) - 1"
+            },
+            {
+              "line": 29,
+              "text": ""
+            },
+            {
+              "line": 30,
+              "text": "def solve_matlab_faithful_stationary_kfe(post_convergence_operator, *, shape, db, da):"
+            },
+            {
+              "line": 31,
+              "text": "    operator=sparse.csr_matrix(post_convergence_operator,dtype=float)"
+            },
+            {
+              "line": 32,
+              "text": "    size=int(np.prod(shape))"
+            },
+            {
+              "line": 33,
+              "text": "    if operator.shape!=(size,size) or len(shape)!=3 or min(shape)<1:"
+            },
+            {
+              "line": 34,
+              "text": "        raise ValueError(\"operator and faithful (b,a,z) shape are incompatible\")"
+            },
+            {
+              "line": 35,
+              "text": "    if not np.isfinite(operator.data).all() or not np.isfinite([db,da]).all() or db<=0 or da<=0:"
+            },
+            {
+              "line": 36,
+              "text": "        raise ValueError(\"faithful KFE inputs must be finite with positive spacings\")"
+            },
+            {
+              "line": 37,
+              "text": "    transpose=operator.transpose().tocsr()"
+            },
+            {
+              "line": 38,
+              "text": "    row=matlab_contaminated_row_index(size)"
+            },
+            {
+              "line": 39,
+              "text": "    contaminated=transpose.tolil(copy=True); contaminated[row,:]=0.0; contaminated[row,row]=1.0; contaminated=contaminated.tocsr()"
+            },
+            {
+              "line": 40,
+              "text": "    rhs=np.zeros(size); rhs[row]=0.007"
+            },
+            {
+              "line": 41,
+              "text": "    raw=np.asarray(linalg.spsolve(contaminated,rhs),dtype=float)"
+            },
+            {
+              "line": 42,
+              "text": "    if not np.isfinite(raw).all(): raise ValueError(\"faithful contaminated-row solve is non-finite\")"
+            },
+            {
+              "line": 43,
+              "text": "    factor=float(np.sum(raw)*db*da)"
+            },
+            {
+              "line": 44,
+              "text": "    if not np.isfinite(factor) or factor==0.0: raise ValueError(\"faithful density normalization is invalid\")"
+            },
+            {
+              "line": 45,
+              "text": "    density=raw/factor"
+            },
+            {
+              "line": 46,
+              "text": "    residual=float(np.linalg.norm(contaminated@raw-rhs,ord=np.inf))"
+            },
+            {
+              "line": 47,
+              "text": "    return MatlabFaithfulKFEResult(operator,transpose,row,contaminated,rhs,raw,factor,density,density.reshape(tuple(shape),order=\"F\"),float(db),float(da),float(db*da),residual)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "exports/matlab_faithful_two_asset_ha.py",
+      "source_commit": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+      "segments": [
+        {
+          "start": 111,
+          "end": 124,
+          "lines": [
+            {
+              "line": 111,
+              "text": "def matlab_faithful_illiquid_return("
+            },
+            {
+              "line": 112,
+              "text": "    a: np.ndarray | float,"
+            },
+            {
+              "line": 113,
+              "text": "    a_max: float,"
+            },
+            {
+              "line": 114,
+              "text": "    r_a: float,"
+            },
+            {
+              "line": 115,
+              "text": ") -> np.ndarray:"
+            },
+            {
+              "line": 116,
+              "text": "    \"\"\"Apply the designated MATLAB finite-grid illiquid-return taper.\"\"\""
+            },
+            {
+              "line": 117,
+              "text": "    a_array = np.asarray(a, dtype=float)"
+            },
+            {
+              "line": 118,
+              "text": "    if not np.all(np.isfinite(a_array)) or not np.isfinite([a_max, r_a]).all():"
+            },
+            {
+              "line": 119,
+              "text": "        raise ValueError(\"faithful illiquid-return inputs must be finite\")"
+            },
+            {
+              "line": 120,
+              "text": "    if a_max <= 0.0:"
+            },
+            {
+              "line": 121,
+              "text": "        raise ValueError(\"faithful illiquid-return taper requires a_max > 0\")"
+            },
+            {
+              "line": 122,
+              "text": "    if np.any(a_array < 0.0) or np.any(a_array > a_max):"
+            },
+            {
+              "line": 123,
+              "text": "        raise ValueError(\"faithful illiquid-return taper requires 0 <= a <= a_max\")"
+            },
+            {
+              "line": 124,
+              "text": "    return r_a * (1.0 - 0.1 * (a_array / a_max) ** 9)"
+            }
+          ]
+        },
+        {
+          "start": 148,
+          "end": 167,
+          "lines": [
+            {
+              "line": 148,
+              "text": "def asset_drifts_matlab_faithful("
+            },
+            {
+              "line": 149,
+              "text": "    a: float,"
+            },
+            {
+              "line": 150,
+              "text": "    b: float,"
+            },
+            {
+              "line": 151,
+              "text": "    z: float,"
+            },
+            {
+              "line": 152,
+              "text": "    consumption: float,"
+            },
+            {
+              "line": 153,
+              "text": "    labor: np.ndarray,"
+            },
+            {
+              "line": 154,
+              "text": "    transfer: float,"
+            },
+            {
+              "line": 155,
+              "text": "    inputs: HouseholdInputs,"
+            },
+            {
+              "line": 156,
+              "text": "    params: EconomicParams,"
+            },
+            {
+              "line": 157,
+              "text": "    a_max: float,"
+            },
+            {
+              "line": 158,
+              "text": ") -> tuple[float, float, float]:"
+            },
+            {
+              "line": 159,
+              "text": "    \"\"\"Use the MATLAB taper in mu_a while preserving the existing liquid budget.\"\"\""
+            },
+            {
+              "line": 160,
+              "text": "    cost = float(adjustment_cost(transfer, a, params))"
+            },
+            {
+              "line": 161,
+              "text": "    labor_income = float("
+            },
+            {
+              "line": 162,
+              "text": "        np.sum(inputs.wages * (1.0 - inputs.tau - inputs.migration_costs) * z * labor)"
+            },
+            {
+              "line": 163,
+              "text": "    )"
+            },
+            {
+              "line": 164,
+              "text": "    mu_b = inputs.r_b * b + labor_income - transfer - cost - consumption"
+            },
+            {
+              "line": 165,
+              "text": "    r_a_effective = float(matlab_faithful_illiquid_return(a, a_max, inputs.r_a))"
+            },
+            {
+              "line": 166,
+              "text": "    mu_a = r_a_effective * a + transfer"
+            },
+            {
+              "line": 167,
+              "text": "    return mu_a, mu_b, cost"
+            }
+          ]
+        },
+        {
+          "start": 330,
+          "end": 353,
+          "lines": [
+            {
+              "line": 330,
+              "text": "    effective_r_b = inputs.r_b + (borrowing_rate_gap if b < 0.0 else 0.0)"
+            },
+            {
+              "line": 331,
+              "text": "    local_inputs = HouseholdInputs("
+            },
+            {
+              "line": 332,
+              "text": "        inputs.r_a,"
+            },
+            {
+              "line": 333,
+              "text": "        effective_r_b,"
+            },
+            {
+              "line": 334,
+              "text": "        inputs.tau,"
+            },
+            {
+              "line": 335,
+              "text": "        inputs.wages,"
+            },
+            {
+              "line": 336,
+              "text": "        inputs.migration_costs,"
+            },
+            {
+              "line": 337,
+              "text": "        inputs.labor_weights,"
+            },
+            {
+              "line": 338,
+              "text": "    )"
+            },
+            {
+              "line": 339,
+              "text": "    vb_b = max(v_b_backward, MATLAB_DERIVATIVE_FLOOR)"
+            },
+            {
+              "line": 340,
+              "text": "    vb_f = max(v_b_forward, MATLAB_DERIVATIVE_FLOOR)"
+            },
+            {
+              "line": 341,
+              "text": "    consumption_b = consumption_from_vb(vb_b, params)"
+            },
+            {
+              "line": 342,
+              "text": "    consumption_f = consumption_from_vb(vb_f, params)"
+            },
+            {
+              "line": 343,
+              "text": "    labor_b = float(labor_from_vb(vb_b, z, local_inputs, params)[0])"
+            },
+            {
+              "line": 344,
+              "text": "    labor_f = float(labor_from_vb(vb_f, z, local_inputs, params)[0])"
+            },
+            {
+              "line": 345,
+              "text": "    net_wage = float("
+            },
+            {
+              "line": 346,
+              "text": "        local_inputs.wages[0]"
+            },
+            {
+              "line": 347,
+              "text": "        * (1.0 - local_inputs.tau - local_inputs.migration_costs[0])"
+            },
+            {
+              "line": 348,
+              "text": "        * z"
+            },
+            {
+              "line": 349,
+              "text": "    )"
+            },
+            {
+              "line": 350,
+              "text": "    liquid_resources_b = net_wage * labor_b + transfer_income + effective_r_b * b"
+            },
+            {
+              "line": 351,
+              "text": "    liquid_resources_f = net_wage * labor_f + transfer_income + effective_r_b * b"
+            },
+            {
+              "line": 352,
+              "text": "    sc_b = liquid_resources_b - consumption_b"
+            },
+            {
+              "line": 353,
+              "text": "    sc_f = liquid_resources_f - consumption_f"
+            }
+          ]
+        },
+        {
+          "start": 415,
+          "end": 455,
+          "lines": [
+            {
+              "line": 415,
+              "text": "    use_transfer_f = sdh_f > tolerance"
+            },
+            {
+              "line": 416,
+              "text": "    use_transfer_b = sdh_b < -tolerance and not use_transfer_f"
+            },
+            {
+              "line": 417,
+              "text": "    if at_lower_b:"
+            },
+            {
+              "line": 418,
+              "text": "        use_transfer_b = False"
+            },
+            {
+              "line": 419,
+              "text": "    if at_upper_b:"
+            },
+            {
+              "line": 420,
+              "text": "        use_transfer_f = False"
+            },
+            {
+              "line": 421,
+              "text": "        use_transfer_b = True"
+            },
+            {
+              "line": 422,
+              "text": "    if use_transfer_b:"
+            },
+            {
+              "line": 423,
+              "text": "        transfer_label = \"B\""
+            },
+            {
+              "line": 424,
+              "text": "        transfer = d_b"
+            },
+            {
+              "line": 425,
+              "text": "        shadow_transfer_b = candidates.eligible_shadow[0]"
+            },
+            {
+              "line": 426,
+              "text": "        shadow_transfer_f = candidates.eligible_shadow[1]"
+            },
+            {
+              "line": 427,
+              "text": "    elif use_transfer_f:"
+            },
+            {
+              "line": 428,
+              "text": "        transfer_label = \"F\""
+            },
+            {
+              "line": 429,
+              "text": "        transfer = d_f"
+            },
+            {
+              "line": 430,
+              "text": "        shadow_transfer_b = candidates.eligible_shadow[2]"
+            },
+            {
+              "line": 431,
+              "text": "        shadow_transfer_f = candidates.eligible_shadow[3]"
+            },
+            {
+              "line": 432,
+              "text": "    else:"
+            },
+            {
+              "line": 433,
+              "text": "        transfer_label = \"0\""
+            },
+            {
+              "line": 434,
+              "text": "        transfer = 0.0"
+            },
+            {
+              "line": 435,
+              "text": "        shadow_transfer_b = 0.0"
+            },
+            {
+              "line": 436,
+              "text": "        shadow_transfer_f = 0.0"
+            },
+            {
+              "line": 437,
+              "text": ""
+            },
+            {
+              "line": 438,
+              "text": "    effective_return = float(matlab_faithful_illiquid_return(a, a_max, inputs.r_a))"
+            },
+            {
+              "line": 439,
+              "text": "    mh_b = min(shadow_transfer_b, 0.0)"
+            },
+            {
+              "line": 440,
+              "text": "    mh_f = max(shadow_transfer_f, 0.0) + effective_return * a"
+            },
+            {
+              "line": 441,
+              "text": "    if at_upper_a:"
+            },
+            {
+              "line": 442,
+              "text": "        mh_b = shadow_transfer_b + effective_return * a_max"
+            },
+            {
+              "line": 443,
+              "text": "        mh_f = 0.0"
+            },
+            {
+              "line": 444,
+              "text": ""
+            },
+            {
+              "line": 445,
+              "text": "    mu_a, mu_b, cost = asset_drifts_matlab_faithful("
+            },
+            {
+              "line": 446,
+              "text": "        a,"
+            },
+            {
+              "line": 447,
+              "text": "        b,"
+            },
+            {
+              "line": 448,
+              "text": "        z,"
+            },
+            {
+              "line": 449,
+              "text": "        consumption - transfer_income,"
+            },
+            {
+              "line": 450,
+              "text": "        np.array([labor]),"
+            },
+            {
+              "line": 451,
+              "text": "        transfer,"
+            },
+            {
+              "line": 452,
+              "text": "        local_inputs,"
+            },
+            {
+              "line": 453,
+              "text": "        params,"
+            },
+            {
+              "line": 454,
+              "text": "        a_max,"
+            },
+            {
+              "line": 455,
+              "text": "    )"
+            }
+          ]
+        },
+        {
+          "start": 470,
+          "end": 481,
+          "lines": [
+            {
+              "line": 470,
+              "text": "        b_backward_rate=max(-float(mu_b), 0.0) / db,"
+            },
+            {
+              "line": 471,
+              "text": "        b_forward_rate=max(float(mu_b), 0.0) / db,"
+            },
+            {
+              "line": 472,
+              "text": "        a_backward_rate=-float(mh_b) / da,"
+            },
+            {
+              "line": 473,
+              "text": "        a_forward_rate=float(mh_f) / da,"
+            },
+            {
+              "line": 474,
+              "text": "        iteration_b_backward_rate=-float("
+            },
+            {
+              "line": 475,
+              "text": "            (sc_b if use_liquid_b else 0.0) + (sdh_b if use_transfer_b else 0.0)"
+            },
+            {
+              "line": 476,
+              "text": "        )"
+            },
+            {
+              "line": 477,
+              "text": "        / db,"
+            },
+            {
+              "line": 478,
+              "text": "        iteration_b_forward_rate=float("
+            },
+            {
+              "line": 479,
+              "text": "            (sc_f if use_liquid_f else 0.0) + (sdh_f if use_transfer_f else 0.0)"
+            },
+            {
+              "line": 480,
+              "text": "        )"
+            },
+            {
+              "line": 481,
+              "text": "        / db,"
+            }
+          ]
+        },
+        {
+          "start": 647,
+          "end": 669,
+          "lines": [
+            {
+              "line": 647,
+              "text": "def matlab_contaminated_row_index(state_count: int) -> int:"
+            },
+            {
+              "line": 648,
+              "text": "    if state_count < 3:"
+            },
+            {
+              "line": 649,
+              "text": "        raise ValueError(\"faithful KFE requires at least three states\")"
+            },
+            {
+              "line": 650,
+              "text": "    return int(np.floor(0.37 * state_count)) - 1"
+            },
+            {
+              "line": 651,
+              "text": ""
+            },
+            {
+              "line": 652,
+              "text": "def solve_matlab_faithful_stationary_kfe(post_convergence_operator, *, shape, db, da):"
+            },
+            {
+              "line": 653,
+              "text": "    operator=sparse.csr_matrix(post_convergence_operator,dtype=float)"
+            },
+            {
+              "line": 654,
+              "text": "    size=int(np.prod(shape))"
+            },
+            {
+              "line": 655,
+              "text": "    if operator.shape!=(size,size) or len(shape)!=3 or min(shape)<1:"
+            },
+            {
+              "line": 656,
+              "text": "        raise ValueError(\"operator and faithful (b,a,z) shape are incompatible\")"
+            },
+            {
+              "line": 657,
+              "text": "    if not np.isfinite(operator.data).all() or not np.isfinite([db,da]).all() or db<=0 or da<=0:"
+            },
+            {
+              "line": 658,
+              "text": "        raise ValueError(\"faithful KFE inputs must be finite with positive spacings\")"
+            },
+            {
+              "line": 659,
+              "text": "    transpose=operator.transpose().tocsr()"
+            },
+            {
+              "line": 660,
+              "text": "    row=matlab_contaminated_row_index(size)"
+            },
+            {
+              "line": 661,
+              "text": "    contaminated=transpose.tolil(copy=True); contaminated[row,:]=0.0; contaminated[row,row]=1.0; contaminated=contaminated.tocsr()"
+            },
+            {
+              "line": 662,
+              "text": "    rhs=np.zeros(size); rhs[row]=0.007"
+            },
+            {
+              "line": 663,
+              "text": "    raw=np.asarray(linalg.spsolve(contaminated,rhs),dtype=float)"
+            },
+            {
+              "line": 664,
+              "text": "    if not np.isfinite(raw).all(): raise ValueError(\"faithful contaminated-row solve is non-finite\")"
+            },
+            {
+              "line": 665,
+              "text": "    factor=float(np.sum(raw)*db*da)"
+            },
+            {
+              "line": 666,
+              "text": "    if not np.isfinite(factor) or factor==0.0: raise ValueError(\"faithful density normalization is invalid\")"
+            },
+            {
+              "line": 667,
+              "text": "    density=raw/factor"
+            },
+            {
+              "line": 668,
+              "text": "    residual=float(np.linalg.norm(contaminated@raw-rhs,ord=np.inf))"
+            },
+            {
+              "line": 669,
+              "text": "    return MatlabFaithfulKFEResult(operator,transpose,row,contaminated,rhs,raw,factor,density,density.reshape(tuple(shape),order=\"F\"),float(db),float(da),float(db*da),residual)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
