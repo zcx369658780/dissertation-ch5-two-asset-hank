@@ -1,0 +1,38 @@
+{
+  "task_id": "CH5_TEMP31_R3_E03_E04_ARCHIVED_POLICY_DRIFT_POSTG_DIAGNOSTIC_R4_20261030",
+  "started_at_utc": "2026-10-30T05:53:13.347539+00:00",
+  "diagnostic_number": 1,
+  "maximum": 1,
+  "retry": false,
+  "entry_sha256": "2374adf55cae9a555917218f186e0bab1418eee37d07ff057f140f5e911c252c",
+  "supervisor_sha256": "95b5b6c679ed0973e648ba883823063e23a97d6832e11370d2977cdd63346139",
+  "command": [
+    "python",
+    "-B",
+    "validators/multi_province/temp31_r3_e03_e04_readonly_archive_mechanism_r4_isolated.py"
+  ],
+  "cwd": "<ISOLATED_CANDIDATE_ROOT>",
+  "timeout_seconds": 180,
+  "process_commit_limit": 1073741824,
+  "active_child_limit": 1,
+  "thread_environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1"
+  },
+  "static_import_whitelist": [
+    "__future__",
+    "hashlib",
+    "json",
+    "os",
+    "sys",
+    "pathlib",
+    "numpy",
+    "scipy",
+    "scipy.sparse"
+  ],
+  "forbidden_model_and_solver_AST_symbols_absent": true
+}
