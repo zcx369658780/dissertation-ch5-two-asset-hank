@@ -49,3 +49,16 @@ clean/source-free KFE方法学已有稳定合同：共享backward generator `Q`�
 冲击law、动态时序、初末条件、校准和政策解释等实质选择由Owner决定。MATLAB命名IRF的顺序比较静态不当作已验证动态HANK。
 
 正式Results、福利和政策claim必须绑定已接受输出及独立Results gate；诊断表和静态counterfactual不得误标论文结果。
+
+
+---
+
+## Owner override — Python research mainline (2026-10-31)
+
+The active research implementation is now the Python multi-province HANK model. MATLAB is retained only as historical source/reference and is not a prerequisite for Python development, numerical diagnosis, or scientific validation. MATLAB executable validation and broad MATLAB–Python parity are removed from the critical path.
+
+The legacy MATLAB program is not an unconditional scientific oracle. Identified legacy errors corrected in Python must not be reintroduced merely to reproduce legacy behavior. Preserve the distinction between source-faithful historical behavior and the corrected Python successor; every substantive economic/numerical change still requires traceable derivation, task scope, and Owner authorization.
+
+R8–R12 remain immutable historical engineering records. R12 remains STOP__R12_SOURCE_PRIVACY_OR_DELIVERY_BLOCKED. R13 offline recovery is not authorized. Do not read LOCAL_ONLY matrices/source, repair or rerun the comparator, relax privacy assertions, or restart MATLAB without a new explicit Owner task.
+
+For Python numeric diagnosis, raw experiment artifacts outrank chat summaries. Distinguish HJB convergence, KFE execution, strict stationarity, boundary mass/flow, and economic steady-state validity. No one status implies another. See `PROJECT_RULE_PYTHON_RESEARCH_MAINLINE_CURRENT_20261031.md`.
