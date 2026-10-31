@@ -1,0 +1,76 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R2_EXPLICIT_RUNTIME_ROUTER_CANARY_20261031",
+  "actual_program_invocations": 1,
+  "actual_exit_code": 0,
+  "positive": {
+    "result": "ACCEPTED",
+    "selected_target": "CH5_TEMP31_R6_R3_R2_120S_ISOLATED_PREFDIR_NATIVE_STARTUP_20261030",
+    "can_execute": false,
+    "matlab_budget": 0,
+    "authority_mode": "DRY_RUN_ONLY"
+  },
+  "negative_cases": [
+    {
+      "case": "MISSING_REQUIRED_TARGET_IDENTITY",
+      "result": "REJECTED",
+      "rejected_fields": [
+        "target_contract_blob"
+      ],
+      "level": "PURE_IN_MEMORY_VALIDATOR",
+      "file_opens_during_case": 0,
+      "external_actions": 0
+    },
+    {
+      "case": "R40_TARGET_SUBSTITUTION",
+      "result": "REJECTED",
+      "rejected_fields": [
+        "target_task_id"
+      ],
+      "level": "PURE_IN_MEMORY_VALIDATOR",
+      "file_opens_during_case": 0,
+      "external_actions": 0
+    },
+    {
+      "case": "WRONG_CONTRACT_COMMIT_AND_BLOB",
+      "result": "REJECTED",
+      "rejected_fields": [
+        "target_contract_blob",
+        "target_contract_commit"
+      ],
+      "level": "PURE_IN_MEMORY_VALIDATOR",
+      "file_opens_during_case": 0,
+      "external_actions": 0
+    }
+  ],
+  "negative_control_count": 3,
+  "negative_control_level": "Same process pure-memory validate_identity calls; no second CLI, no old launcher and no R40 task execution",
+  "third_case_scope": "Commit and Blob jointly mutated in one case; rejection reports both mismatched fields. Not four cases and not separate CLI negative invocations.",
+  "positive_source_read_checks": [
+    {
+      "role": "governance",
+      "fixed_ref": "c98f0bb543b1f4f9be48094f1d5935e534af7e4a",
+      "request_matched": true,
+      "bytes": 13558,
+      "sha256": "201271bfab73c07f53c9124be359438cc8ac13bbc876a955f1a75a89b4a84faf",
+      "git_blob": "4983caae325d3a7fc3e7042b3f0428b69d604e3f"
+    },
+    {
+      "role": "target",
+      "fixed_ref": "40e7b2e1ee93973ca63b509f53f20e21c6f149ad",
+      "request_matched": true,
+      "bytes": 15857,
+      "sha256": "89a61828f7889ccaa06eb43dd0ce018f22d29a352a32fd2da8b16d87af52fe8c",
+      "git_blob": "1d7c4c960b9b6d47cc9e8182afd2859372caa168"
+    }
+  ],
+  "raw_stdout_identity": {
+    "bytes": 4058,
+    "sha256": "716c76dbe313718bad44df229dd338b91b76140fbe4c7a6cce92e1ea2277970c",
+    "git_blob": "cf8df8c1c3928e5ae5c5c8b1db33fb1ce76127e4"
+  },
+  "public_stdout_identity": {
+    "bytes": 4058,
+    "sha256": "716c76dbe313718bad44df229dd338b91b76140fbe4c7a6cce92e1ea2277970c",
+    "git_blob": "cf8df8c1c3928e5ae5c5c8b1db33fb1ce76127e4"
+  }
+}
