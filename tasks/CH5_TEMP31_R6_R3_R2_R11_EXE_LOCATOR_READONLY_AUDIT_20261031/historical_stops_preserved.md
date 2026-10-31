@@ -1,0 +1,3 @@
+# Historical protection
+
+R8 bounded minimal native success, R9 host-blocked STOP, R10 executable-identity STOP and all other historic STOPs remain unchanged. Only3 explicitly listed old LOCAL_ONLY JSONs were opened once each, immediately reduced to authorized locator/identity fields. No raw old JSON was copied and no old directory was enumerated. Other logs/prefs/dump/NPZ/environment/license data remain unopened.26 existing local refs were snapshotted; only new R11 candidate may be added. No scientific source/main2/AGENTS/global R40 index, binary, permissions or shared setting changed. No new repo/worktree/reset/clean/stash/rebase/force-push/merge/cleanup or successor.

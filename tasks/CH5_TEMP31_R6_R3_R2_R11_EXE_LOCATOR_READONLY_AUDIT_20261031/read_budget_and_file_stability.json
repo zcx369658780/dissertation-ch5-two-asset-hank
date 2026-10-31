@@ -1,0 +1,54 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R11_EXE_LOCATOR_READONLY_AUDIT_20261031",
+  "status": "PASS_BOUNDED",
+  "actual": {
+    "old_receipts_opened": 3,
+    "old_receipt_bytes": 1849,
+    "target_files_opened": 2,
+    "target_bytes_read": 563056,
+    "target_hash_passes": 2,
+    "explicit_Windows_file_id_queries": 2,
+    "drive_type_queries": 1,
+    "retries": 0
+  },
+  "maximum_old_receipts": 3,
+  "maximum_receipt_bytes_each": 131072,
+  "maximum_target_opens": 2,
+  "maximum_target_bytes_each": 1048576,
+  "maximum_target_bytes_total": 2097152,
+  "maximum_explicit_OS_file_id_queries": 2,
+  "maximum_hash_passes_per_target": 1,
+  "per_target": [
+    {
+      "role": "R8_SUCCESS_TARGET",
+      "bytes_read": 235648,
+      "hash_passes": 1,
+      "file_stable": true,
+      "read_only": true,
+      "regular": true,
+      "no_reparse": true,
+      "local_fixed_drive": true
+    },
+    {
+      "role": "R10_SELECTED_TARGET",
+      "bytes_read": 327408,
+      "hash_passes": 1,
+      "file_stable": true,
+      "read_only": true,
+      "regular": true,
+      "no_reparse": true,
+      "local_fixed_drive": true
+    }
+  ],
+  "stability_method": "pre/post path lstat and open-handle fstat compare device/inode/size/mtime/ctime/attributes; inode tied to the single explicit Windows handle FileIndex per target",
+  "explicit_identity_query_scope": "two GetFileInformationByHandle calls total; ordinary stat metadata checks separate",
+  "all_target_handles_closed": true,
+  "all_receipt_context_handles_closed": true,
+  "source": {
+    "role": "audit_execution_receipt_raw.json",
+    "bytes": 9727,
+    "sha256": "fbad8b46f2f23285eb00822b31343ce058508f451c62e4e9b516cc3a9bba13cd",
+    "git_blob": "598d48593cbfbe9594ece6719aee190f536e3e89"
+  },
+  "redaction": "raw volume serial/index, inode values and high-resolution times remain LOCAL_ONLY"
+}

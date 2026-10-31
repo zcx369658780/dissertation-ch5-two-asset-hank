@@ -1,0 +1,5 @@
+# Exact mandatory privacy assertion
+
+Scanner source SHA256=95f5de1f1d926de8683ff721bd1bcdcf2f7c90bdc52c1f6be799cfd3cb624ad2; original155-byte STOP_PRIVATE_PAYLOAD assertion SHA256=38f498e140dd2d583d0ab760d0294a29f30b4cd1e73e8ee045240daaa4ea34ee. The unmodified assertion is extracted by AST and applied to every actual public payload/seal byte including manifest. Added JSON/AST/GUID/private identifier checks do not replace or relax it.
+
+Exact absolute paths, raw volume serial/file indexes, device/inode values, nanosecond times and selected old private JSON fields remain in new LOCAL_ONLY. Original old JSONs are not copied. Public derivative fields are strict whitelists: roles, historical/current binary bytes/SHA256/Git Blob, same-path/file-ID booleans, safety/stability flags, UTC date only, counters and provenance identities. No raw file-ID value/hash, high-resolution file timestamp combination, full argv/JSON, user/environment/license/nonce or original log is published. The final seal own identity stays in the external LOCAL_ONLY receipt, never a third commit.
