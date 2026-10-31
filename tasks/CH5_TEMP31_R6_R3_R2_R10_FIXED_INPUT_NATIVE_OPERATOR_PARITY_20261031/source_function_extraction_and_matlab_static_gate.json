@@ -1,0 +1,38 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R10_FIXED_INPUT_NATIVE_OPERATOR_PARITY_20261031",
+  "status": "NOT_REACHED_EXECUTABLE_IDENTITY_BLOCKED",
+  "planned_runner": "validators/multi_province/t31_r10_op.m",
+  "planned_stem": "t31_r10_op",
+  "planned_stem_length": 10,
+  "conservative_limit": 32,
+  "R2022b_limit": 63,
+  "actual_new_runner_exists": false,
+  "actual_source_identity": null,
+  "actual_unique_path_and_run_target_check": null,
+  "actual_source_extraction_check": null,
+  "actual_positive_negative_cases": 0,
+  "executable_failure": {
+    "task_id": "CH5_TEMP31_R6_R3_R2_R10_FIXED_INPUT_NATIVE_OPERATOR_PARITY_20261031",
+    "status": "BLOCKED_SELECTED_EXECUTABLE_SHA256_MISMATCH",
+    "selected_file_role": "STANDARD_R2022B_BIN_ENTRY_MATLAB_EXE",
+    "selected_actual_identity": {
+      "bytes": 327408,
+      "sha256": "79ab79050fd8d79e0b57632efb3a600e682af08ab9c32947d1c5d942e5af7059",
+      "git_blob": "5a5fff0ed12140d9497a1a6f00b7f91763dd2dd1"
+    },
+    "expected_sha256": "4d251e680b8409d76d0524a1eb716de3c9e747386d3101e10f6ce1405ad1a59d",
+    "match": false,
+    "interpretation": "the executor-selected standard bin entry is not the contract hash-bound native executable; this is an entry-location selection error, not proof that the installed MATLAB runtime is unavailable",
+    "alternate_executable_paths_tried": 0,
+    "processes_created": 0,
+    "initial_hash_gate_failures": 1,
+    "read_only_same_file_identity_confirmations": 1,
+    "source": {
+      "role": "executable_identity_failure_raw.json",
+      "bytes": 881,
+      "sha256": "c989e9613e64c3174a98e5dea9ccb2414415da886637362a7a78bb96d3a02adb",
+      "git_blob": "93a6d237f827691c27fbb7090f994899a4695b35"
+    },
+    "redaction": "selected absolute path replaced by role; file byte identity retained"
+  }
+}

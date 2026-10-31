@@ -1,0 +1,77 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R10_FIXED_INPUT_NATIVE_OPERATOR_PARITY_20261031",
+  "status": "EXPECTED_R9_RULES_AUTHENTICATED_ONLY_NOT_R10_REBUILT",
+  "fixed_R9_spec_identity": {
+    "role": "r9_spec_fixed_utf8.txt",
+    "bytes": 1998,
+    "sha256": "edcc22db0d3d66e379035c01cccad496992e7f0d48b06cd871f6569ac5f68eb9",
+    "git_blob": "918d02947f5de5956e273c56eb120f0cdd3b3056"
+  },
+  "R9_fixed_helper_identity": {
+    "role": "r9_helper_fixed_utf8.txt",
+    "bytes": 16885,
+    "sha256": "1dbcbb182c9dd8d9546bdf9799a23f5cd98e813590b54ec900b0607e516cfbc0",
+    "git_blob": "f008a5e087b46de311dbae019aa1a92879c21335"
+  },
+  "field_order": [
+    "b_backward",
+    "b_forward",
+    "a_backward",
+    "a_forward"
+  ],
+  "pool": [
+    0,
+    0.125,
+    -0.25,
+    0.5,
+    -0.75,
+    0.25,
+    -0.125,
+    0.75
+  ],
+  "field_formula": "pool[(k*(2*f+1)+f+1)%8]",
+  "vector_formula": "((k%7)-3)/8",
+  "dtype": "float64",
+  "flatten_order": "F",
+  "serialization": "json.dumps(payload,sort_keys=True,separators=(',',':'),allow_nan=False).encode('ascii')",
+  "expected_fixtures": [
+    {
+      "fixture_id": "fixture_1",
+      "shape": [
+        2,
+        2,
+        2
+      ],
+      "states": 8,
+      "expected_input_identity": {
+        "bytes": 415,
+        "sha256": "28463dcec6577cb9c13193febfe54181a97adfea1485caa98c0799972404588a",
+        "git_blob": "692eea67ba06aa24fcc9911fe4be8894b0ac11e3"
+      },
+      "actual_R10_bytes": null,
+      "actual_R10_sha256": null,
+      "actual_R10_git_blob": null,
+      "status": "NOT_REBUILT_EXECUTABLE_IDENTITY_BLOCKED"
+    },
+    {
+      "fixture_id": "fixture_2",
+      "shape": [
+        3,
+        2,
+        2
+      ],
+      "states": 12,
+      "expected_input_identity": {
+        "bytes": 516,
+        "sha256": "58025487a12361b6ccd36334ac8054f0f321046247e8e86f5d51ff6241ebca40",
+        "git_blob": "88a92741effcd0a63d101eebb965caccd01fb420"
+      },
+      "actual_R10_bytes": null,
+      "actual_R10_sha256": null,
+      "actual_R10_git_blob": null,
+      "status": "NOT_REBUILT_EXECUTABLE_IDENTITY_BLOCKED"
+    }
+  ],
+  "fixture_generation_calls": 0,
+  "old_raw_fixture_reads": 0
+}
