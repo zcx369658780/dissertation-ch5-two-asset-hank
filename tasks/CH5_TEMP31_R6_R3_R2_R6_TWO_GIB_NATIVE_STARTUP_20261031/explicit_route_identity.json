@@ -1,0 +1,136 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R6_TWO_GIB_NATIVE_STARTUP_20261031",
+  "actual_entry_invocations": 1,
+  "controller_function_invocations": 1,
+  "same_python_process_fixed_controller_call": true,
+  "entry_exit_code": 1,
+  "elapsed_seconds": 0.156,
+  "actual_public_argv_roles": [
+    "<AUTHORIZED_EXISTING_PYTHON>",
+    "-I",
+    "-S",
+    "-B",
+    "validators/multi_province/temp31_r6_r3_r2_r6_two_gib_explicit_entry_isolated.py",
+    "--run-authorized-native",
+    "--task-id",
+    "CH5_TEMP31_R6_R3_R2_R6_TWO_GIB_NATIVE_STARTUP_20261031",
+    "--runtime-target-task-id",
+    "CH5_TEMP31_R6_R3_R2_R6_TWO_GIB_NATIVE_STARTUP_20261031",
+    "--contract-commit",
+    "ae85e7d9846642e9cbad2742651ae75994d235de",
+    "--contract-path",
+    "tasks/CH5_TEMP31_R6_R3_R2_R6_TWO_GIB_NATIVE_STARTUP_20261031/CONTRACT.md",
+    "--contract-blob",
+    "fe9d217ae0e2089e3b50ce9f86bfabf735c60c8d",
+    "--contract-bytes",
+    "19427",
+    "--governance-commit",
+    "ae85e7d9846642e9cbad2742651ae75994d235de",
+    "--scientific-parent",
+    "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+    "--owner-authorization",
+    "2026-10-31__ONE_NEW_TWO_GIB_PROCESS_AND_JOB_MEMORY_CAP_COMPARATIVE_MATLAB_NATIVE_STARTUP__120_SECONDS__NO_MAIN2",
+    "--controller-sha256",
+    "c38b2606d48ecd8f5a9466c00a93e2b8291bdb15ccfc656155fde728076c624e",
+    "--controller-bytes",
+    "28530",
+    "--probe-sha256",
+    "886b5e6414a0a219360aff7e134189dc9609b47bdd98e9603fa49be65fe724da",
+    "--probe-bytes",
+    "1767",
+    "--run-token",
+    "<DIAGNOSTIC_RUN_NONCE_LOCAL_ONLY>",
+    "--run-mode",
+    "ONE_NATIVE_MINIMAL_PROBE",
+    "--matlab-budget",
+    "1",
+    "--native-seconds",
+    "120",
+    "--memory-limit",
+    "2147483648",
+    "--active-processes",
+    "1",
+    "--reference-native-seal",
+    "29ec5f7466da1ec951f491650fc27ca3f59ce02b",
+    "--reference-r5-review-commit",
+    "e235b18a851bd6bce93ef9ead49a28dc4692473e"
+  ],
+  "cwd_role": "AUTHORIZED_SAFE_CANDIDATE_ROOT",
+  "explicit_identity_fields": {
+    "task_id": "CH5_TEMP31_R6_R3_R2_R6_TWO_GIB_NATIVE_STARTUP_20261031",
+    "runtime_target_task_id": "CH5_TEMP31_R6_R3_R2_R6_TWO_GIB_NATIVE_STARTUP_20261031",
+    "contract_commit": "ae85e7d9846642e9cbad2742651ae75994d235de",
+    "contract_path": "tasks/CH5_TEMP31_R6_R3_R2_R6_TWO_GIB_NATIVE_STARTUP_20261031/CONTRACT.md",
+    "contract_blob": "fe9d217ae0e2089e3b50ce9f86bfabf735c60c8d",
+    "contract_bytes": 19427,
+    "governance_commit": "ae85e7d9846642e9cbad2742651ae75994d235de",
+    "scientific_parent": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+    "owner_authorization": "2026-10-31__ONE_NEW_TWO_GIB_PROCESS_AND_JOB_MEMORY_CAP_COMPARATIVE_MATLAB_NATIVE_STARTUP__120_SECONDS__NO_MAIN2",
+    "controller_sha256": "c38b2606d48ecd8f5a9466c00a93e2b8291bdb15ccfc656155fde728076c624e",
+    "controller_bytes": 28530,
+    "probe_sha256": "886b5e6414a0a219360aff7e134189dc9609b47bdd98e9603fa49be65fe724da",
+    "probe_bytes": 1767,
+    "run_mode": "ONE_NATIVE_MINIMAL_PROBE",
+    "matlab_budget": 1,
+    "native_seconds": 120,
+    "memory_limit": 2147483648,
+    "active_processes": 1,
+    "reference_native_seal": "29ec5f7466da1ec951f491650fc27ca3f59ce02b",
+    "reference_r5_review_commit": "e235b18a851bd6bce93ef9ead49a28dc4692473e",
+    "run_token_string_sha256": "8a7b315af0eb3a8ca1e0729049a19176f6c2bc1353f94b386994fee7e3487912"
+  },
+  "negative_cases": [
+    {
+      "case": "MISSING_IDENTITY",
+      "result": "REJECTED",
+      "fields": [
+        "contract_blob"
+      ],
+      "pure_memory": true
+    },
+    {
+      "case": "R40_TARGET",
+      "result": "REJECTED",
+      "fields": [
+        "runtime_target_task_id"
+      ],
+      "pure_memory": true
+    },
+    {
+      "case": "WRONG_COMMIT_AND_BLOB",
+      "result": "REJECTED",
+      "fields": [
+        "contract_blob",
+        "contract_commit"
+      ],
+      "pure_memory": true
+    }
+  ],
+  "negative_cases_count": 3,
+  "all_rejected_before_controller_call": true,
+  "source_route_gate": "SOURCE_IDENTITY_PASS_HOST_GATE_NOT_YET_CALLED",
+  "host_gate_result": "BLOCKED",
+  "controller_source_bound_before_call": {
+    "bytes": 28530,
+    "sha256": "c38b2606d48ecd8f5a9466c00a93e2b8291bdb15ccfc656155fde728076c624e",
+    "git_blob": "722fd240c748f09ee212726a7dfb486eda7e49ed"
+  },
+  "probe_source_bound_before_call": {
+    "bytes": 1767,
+    "sha256": "886b5e6414a0a219360aff7e134189dc9609b47bdd98e9603fa49be65fe724da",
+    "git_blob": "7f1ea4579a5f8ac4a840b9a0890c8e3fcc558105"
+  },
+  "global_launcher_and_old_canary_calls": 0,
+  "actual_entry_error": null,
+  "raw_route_receipt_identity": {
+    "bytes": 5487,
+    "sha256": "56cc9b7a713a408394d839f19e3d375df1644c3860b5b13c0903d733f812be9d",
+    "git_blob": "f102263dac40cce707877cbd1fcd440c312eede4"
+  },
+  "raw_outer_receipt_identity": {
+    "bytes": 2870,
+    "sha256": "62cfe68805155e6c1f4a3fec99d31eaf0339dc9bd1025485f1d112b261dfd0bc",
+    "git_blob": "5c8b9194ef3571406f721ea866eb8accda6ee149"
+  },
+  "redaction": "Interpreter/full source path/cwd/CLI diagnostic nonce projected to roles or hash; exhausted nonce in allowed source is a diagnostic identity, not an authentication credential"
+}

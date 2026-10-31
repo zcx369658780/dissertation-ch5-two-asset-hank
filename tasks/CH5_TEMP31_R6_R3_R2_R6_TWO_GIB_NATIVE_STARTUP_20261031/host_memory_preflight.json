@@ -1,0 +1,47 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R6_TWO_GIB_NATIVE_STARTUP_20261031",
+  "status": "BLOCKED",
+  "api": "GlobalMemoryStatusEx",
+  "api_calls": 1,
+  "api_success": true,
+  "win32_error": 0,
+  "fields_reliable": true,
+  "before": {
+    "monotonic_ns": 1014289453000000,
+    "utc": "2026-10-31T02:18:11.969131+00:00",
+    "clock_pair_order": "monotonic_then_UTC"
+  },
+  "observed": {
+    "monotonic_ns": 1014289453000000,
+    "utc": "2026-10-31T02:18:11.969131+00:00",
+    "clock_pair_order": "monotonic_then_UTC"
+  },
+  "measured_gib": {
+    "total_physical_gib": 31.483287811279297,
+    "available_physical_gib": 3.3084678649902344,
+    "available_commit_gib": 7.11492919921875
+  },
+  "minimum_threshold_gib": {
+    "total_physical_gib": 8,
+    "available_physical_gib": 4,
+    "available_commit_gib": 3
+  },
+  "threshold_checks": {
+    "total_physical": true,
+    "available_physical": false,
+    "available_commit": true
+  },
+  "block_reason": "Available physical RAM below4GiB",
+  "commit_source_field": "GlobalMemoryStatusEx.ullAvailPageFile",
+  "commit_semantics": "Windows reported maximum additional commit for current caller; conservative caller-available headroom, not inferred from RAM or working set",
+  "not_inferred_from_physical_RAM_or_working_set": true,
+  "raw_readings": "LOCAL_ONLY",
+  "raw_host_receipt_identity": {
+    "bytes": 1287,
+    "sha256": "476d882565c42254ac7762e9c8d3d2929e8f7007556e465da6e04c999e9b3efb",
+    "git_blob": "373990dc534a313a76e102313eeb025df73294b9"
+  },
+  "system_pagefile_privilege_priority_or_other_process_changes": false,
+  "host_measurements_after_block": 0,
+  "matlab_processes_created": 0
+}

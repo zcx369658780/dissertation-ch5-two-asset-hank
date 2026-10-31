@@ -1,0 +1,99 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R6_TWO_GIB_NATIVE_STARTUP_20261031",
+  "actual_terminal": "STOP__R6_R3_R2_R6_HOST_CAPACITY_OR_RUNTIME_PREEXECUTION_GATE_BLOCKED",
+  "events": [
+    {
+      "source_event_index": 0,
+      "event": "initial_config_verify",
+      "monotonic_ns": 1014289453000000,
+      "utc": "2026-10-31T02:18:11.969131+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "source_route_identity_pass": true,
+      "executable_sha256": "4d251e680b8409d76d0524a1eb716de3c9e747386d3101e10f6ce1405ad1a59d",
+      "old_prefdir_entry_accesses": 0
+    },
+    {
+      "source_event_index": 1,
+      "event": "host_memory_preflight",
+      "monotonic_ns": 1014289453000000,
+      "utc": "2026-10-31T02:18:11.969634+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "status": "BLOCKED",
+      "api": "GlobalMemoryStatusEx",
+      "api_calls": 1,
+      "api_success": true,
+      "win32_error": 0,
+      "before": {
+        "monotonic_ns": 1014289453000000,
+        "utc": "2026-10-31T02:18:11.969131+00:00",
+        "clock_pair_order": "monotonic_then_UTC"
+      },
+      "observed": {
+        "monotonic_ns": 1014289453000000,
+        "utc": "2026-10-31T02:18:11.969131+00:00",
+        "clock_pair_order": "monotonic_then_UTC"
+      },
+      "reliable_fields": true,
+      "checks": {
+        "total_physical": true,
+        "available_physical": false,
+        "available_commit": true
+      },
+      "available_commit_field": "ullAvailPageFile",
+      "semantic_scope": "Windows reported maximum additional commit for current caller; conservative caller-available headroom, not inferred from RAM or working set",
+      "system_pagefile_or_other_workload_changes": false,
+      "measured_gib": {
+        "total_physical_gib": 31.483287811279297,
+        "available_physical_gib": 3.3084678649902344,
+        "available_commit_gib": 7.11492919921875
+      },
+      "minimum_threshold_gib": {
+        "total_physical_gib": 8,
+        "available_physical_gib": 4,
+        "available_commit_gib": 3
+      }
+    },
+    {
+      "source_event_index": 2,
+      "event": "controller_exception",
+      "monotonic_ns": 1014289453000000,
+      "utc": "2026-10-31T02:18:11.969634+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "error_type": "HostCapacityBlocked",
+      "phase": "HOST_CAPACITY_PREFLIGHT"
+    }
+  ],
+  "raw_event_count": 3,
+  "native_created": 0,
+  "native_resume_observed": null,
+  "native_deadline_established": false,
+  "checkpoints": [
+    {
+      "nominal_seconds": 30,
+      "status": "NOT_REACHED_HOST_GATE_BLOCKED_BEFORE_PROCESS_CREATION"
+    },
+    {
+      "nominal_seconds": 60,
+      "status": "NOT_REACHED_HOST_GATE_BLOCKED_BEFORE_PROCESS_CREATION"
+    },
+    {
+      "nominal_seconds": 90,
+      "status": "NOT_REACHED_HOST_GATE_BLOCKED_BEFORE_PROCESS_CREATION"
+    },
+    {
+      "nominal_seconds": 120,
+      "status": "NOT_REACHED_HOST_GATE_BLOCKED_BEFORE_PROCESS_CREATION"
+    }
+  ],
+  "raw_trace_identity": {
+    "bytes": 1844,
+    "sha256": "c54bfa2c7764073f5937101ffbd8e12bb8b2bd6d00b6929afec4348337f8721f",
+    "git_blob": "a49c0177332044b2b8bbaaebfe59fcdd54ecf251"
+  },
+  "raw_controller_receipt_identity": {
+    "bytes": 3323,
+    "sha256": "c073084e73d5af711b771c5ff4ee49be0c3534a6575d74e26222ac825a99283a",
+    "git_blob": "ddb8240db5aa95e8a5c123cce94f0fc497999f9c"
+  },
+  "publication_transform": "All actual event ordering/UTC/monotonic values preserved with source indexes; only GlobalMemoryStatusEx raw struct/capacity thresholds projected to GiB. No synthetic native checkpoint or phase."
+}

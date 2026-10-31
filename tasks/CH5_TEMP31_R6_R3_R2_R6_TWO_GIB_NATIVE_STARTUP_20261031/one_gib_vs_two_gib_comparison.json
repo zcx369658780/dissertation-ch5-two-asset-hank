@@ -1,0 +1,126 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R6_TWO_GIB_NATIVE_STARTUP_20261031",
+  "control_1GiB": {
+    "evidence": "FROZEN_HISTORICAL_R3_ACTUAL_NATIVE_TRIAL",
+    "seal": "29ec5f7466da1ec951f491650fc27ca3f59ce02b",
+    "executable_sha256": "4d251e680b8409d76d0524a1eb716de3c9e747386d3101e10f6ce1405ad1a59d",
+    "native_created": 1,
+    "native_resumed": true,
+    "process_commit_cap": 1073741824,
+    "job_commit_cap": 1073741824,
+    "active_limit": 1,
+    "no_breakaway": true,
+    "kill_on_close": true,
+    "completion_port_associated": true,
+    "resume_to_first_user_marker_seconds": null,
+    "first_user_marker_status": "NOT_OBSERVED",
+    "resume_to_first_memory_limit_notification_seconds": 16.266,
+    "resume_to_exit_seconds": 23.313,
+    "exit_code": "0xC00000FD",
+    "exit_kind": "NATURAL_ABNORMAL",
+    "forced_termination": false,
+    "peak_process_commit": 1073741824,
+    "peak_job_commit": 1073741824,
+    "process_memory_limit_notification": true,
+    "job_memory_limit_notification_observed": false,
+    "native_log_bytes": {
+      "stdout": 0,
+      "stderr": 0,
+      "logfile": 0
+    },
+    "prefdir_match": "UNOBSERVED",
+    "version_release": "UNOBSERVED",
+    "sparse_1x1": "UNOBSERVED",
+    "old_STOP": "STOP__R6_R3_R2_R3_NATIVE_GATE_FAILED_REQUIRES_REVIEW"
+  },
+  "trial_2GiB": {
+    "evidence": "ACTUAL_SINGLE_HOST_PREFLIGHT_BLOCK; NATIVE_TRIAL_NOT_STARTED",
+    "executable_sha256": "4d251e680b8409d76d0524a1eb716de3c9e747386d3101e10f6ce1405ad1a59d",
+    "native_created": 0,
+    "native_resumed": false,
+    "planned_process_commit_cap": 2147483648,
+    "planned_job_commit_cap": 2147483648,
+    "actual_process_and_job_caps_applied": false,
+    "active_limit_applied": "NOT_APPLICABLE_NO_JOB",
+    "completion_port_associated": false,
+    "resume_to_first_user_marker_seconds": null,
+    "first_user_marker_status": "NOT_RUN_HOST_BLOCKED",
+    "resume_to_first_memory_limit_notification_seconds": null,
+    "resume_to_exit_seconds": null,
+    "exit_code": null,
+    "exit_kind": "NO_NATIVE_PROCESS",
+    "forced_termination": false,
+    "peak_process_commit": null,
+    "peak_job_commit": null,
+    "process_or_job_memory_notification": "NOT_TESTED_MONITOR_NOT_STARTED",
+    "native_log_status": {
+      "stdout": "NOT_CREATED",
+      "stderr": "NOT_CREATED",
+      "logfile": "NOT_CREATED"
+    },
+    "prefdir_match": "NOT_TESTED",
+    "version_release": "NOT_TESTED",
+    "sparse_1x1": "NOT_RUN",
+    "host_values_gib": {
+      "total_physical_gib": 31.483287811279297,
+      "available_physical_gib": 3.3084678649902344,
+      "available_commit_gib": 7.11492919921875
+    },
+    "host_threshold_checks": {
+      "total_physical": true,
+      "available_physical": false,
+      "available_commit": true
+    },
+    "new_STOP": "STOP__R6_R3_R2_R6_HOST_CAPACITY_OR_RUNTIME_PREEXECUTION_GATE_BLOCKED"
+  },
+  "intended_native_configuration_difference": "Process/Job committed caps only1GiB->2GiB; fresh task/prefdir/nonce and additional host guard are declared isolation/safety differences",
+  "argv_token_role_comparison": [
+    {
+      "role": "fixed executable SHA",
+      "comparison": "SAME_SEMANTICS"
+    },
+    {
+      "role": "-nodesktop",
+      "comparison": "SAME_SEMANTICS"
+    },
+    {
+      "role": "-nosplash",
+      "comparison": "SAME_SEMANTICS"
+    },
+    {
+      "role": "-singleCompThread",
+      "comparison": "SAME_SEMANTICS"
+    },
+    {
+      "role": "-logfile flag",
+      "comparison": "SAME_SEMANTICS"
+    },
+    {
+      "role": "-batch flag",
+      "comparison": "SAME_SEMANTICS"
+    },
+    {
+      "role": "run fixed minimal probe",
+      "comparison": "SAME_SEMANTICS"
+    },
+    {
+      "role": "log/probe/task/prefdir paths and diagnostic identity",
+      "comparison": "NEW_TASK_SPECIFIC_VALUES_REQUIRED"
+    }
+  ],
+  "native_source_semantic_delta": {
+    "native_class_AST_identical_to_fixed_R3": true,
+    "read_markers_AST_identical_to_fixed_R3": true,
+    "probe_equal_after_only_task_token_display_label_projection": true,
+    "only_native_resource_configuration_change": "Process and Job committed caps1073741824->2147483648",
+    "additional_preexecution_host_gate": true,
+    "new_paths_and_nonce_required_for_isolation": true,
+    "timeout_120_active1_flags_stdio_env_poll_cleanup_unchanged": true,
+    "old_scripts_executed": false,
+    "host_API_calls_during_generation": 0
+  },
+  "new_2GiB_runtime_comparison_performed": false,
+  "causal_result": "NO_NEW_NATIVE_RESOURCE_COMPARISON; cannot conclude2GiB succeeds or fails",
+  "temporal_confounders": "Historical1GiB observation is not rerun; host state/time/new directory differ; no strict causal identification",
+  "reference_raw_logs_read": false
+}
