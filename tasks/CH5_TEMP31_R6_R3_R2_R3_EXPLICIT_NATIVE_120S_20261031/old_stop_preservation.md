@@ -1,0 +1,5 @@
+# Protected history and entry
+
+Old R6/R6-R1/R6-R2/R6-R3/R6-R3-R1/R6-R3-R2/R6-R3-R2-R1/R6-R3-R2-R2 STOPs and source remain unchanged. The older zero-runtime Canary was neither modified nor executed. Old native controllers were fetched only as fixed GitHub text, never loaded or run. No historical preference entries, NPZ, R40 task payload, HANK function or economic science source were opened.
+
+The exact known prior index was read and snapshotted without following its target; it still identifies R40. The exact historical controller configuration was read only to obtain/authenticate the executable field and prior file identity. No preferences or credential files were opened. Current entry is direct with-I -S -B and no global launcher. Existing scanner and SSH helper sources are reused unchanged. All18 prior Git refs were snapshotted; only the unique new candidate may be added/advanced. Scope plus selected index/helper/ref checks are not an exhaustive new historical-byte audit. No filesystem cleanup, checkout/reset/stash or new repository/worktree occurs.

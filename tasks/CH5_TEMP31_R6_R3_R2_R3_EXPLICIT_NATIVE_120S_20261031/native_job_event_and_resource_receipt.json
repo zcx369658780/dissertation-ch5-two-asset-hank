@@ -1,0 +1,83 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R3_EXPLICIT_NATIVE_120S_20261031",
+  "pre_resume_job_gate": {
+    "flags": 8968,
+    "process_commit_limit": 1073741824,
+    "job_commit_limit": 1073741824,
+    "active_process_limit": 1,
+    "breakaway_allowed": false,
+    "kill_on_job_close": true,
+    "peak_process_commit": 385024,
+    "peak_job_commit": 385024,
+    "membership": true,
+    "single_member_is_owned": true,
+    "completion_port_associated_before_assignment": true,
+    "source_route_identity_pass": true
+  },
+  "received_notifications": [
+    {
+      "event": "Job_notification_received",
+      "monotonic_ns": 1007869218000000,
+      "utc": "2026-10-31T00:31:11.727743+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "message_id": 6,
+      "message": "NEW_PROCESS",
+      "subject_role": "OWNED_MATLAB",
+      "occurrence_timestamp": "NOT_PROVIDED_BY_API",
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "Job_notification_received",
+      "monotonic_ns": 1007885484000000,
+      "utc": "2026-10-31T00:31:27.996070+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "message_id": 9,
+      "message": "PROCESS_MEMORY_LIMIT",
+      "subject_role": "OWNED_MATLAB",
+      "occurrence_timestamp": "NOT_PROVIDED_BY_API",
+      "seconds_after_resume": 16.266
+    },
+    {
+      "event": "Job_notification_received",
+      "monotonic_ns": 1007892718000000,
+      "utc": "2026-10-31T00:31:35.237421+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "message_id": 8,
+      "message": "ABNORMAL_EXIT_PROCESS",
+      "subject_role": "OWNED_MATLAB",
+      "occurrence_timestamp": "NOT_PROVIDED_BY_API",
+      "seconds_after_resume": 23.5
+    },
+    {
+      "event": "Job_notification_received",
+      "monotonic_ns": 1007892718000000,
+      "utc": "2026-10-31T00:31:35.237421+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "message_id": 4,
+      "message": "ACTIVE_PROCESS_ZERO",
+      "subject_role": "NO_PROCESS_ID",
+      "occurrence_timestamp": "NOT_PROVIDED_BY_API",
+      "seconds_after_resume": 23.5
+    }
+  ],
+  "process_memory_limit_notification_observed": true,
+  "job_memory_limit_notification_observed": false,
+  "final_limits_and_peak_commit": {
+    "flags": 8968,
+    "process_commit_limit": 1073741824,
+    "job_commit_limit": 1073741824,
+    "active_process_limit": 1,
+    "breakaway_allowed": false,
+    "kill_on_job_close": true,
+    "peak_process_commit": 1073741824,
+    "peak_job_commit": 1073741824
+  },
+  "native_exit_code_decimal": 3221225725,
+  "native_exit_code_hex": "0xc00000fd",
+  "forced_termination": false,
+  "event_time_grade": "DIRECT_RECEIPT_TIME_NOT_OS_EVENT_OCCURRENCE",
+  "resource_evidence": "PROCESS_MEMORY_LIMIT directly observed before abnormal process exit; process/job peak commit exactly1073741824 bytes",
+  "causality_limit": "This proves a current resource-limit notification, not its unique causal role in exit or any old30-second timeout cause",
+  "watcher_threads": 0,
+  "completion_port_empty_polls": 2199
+}

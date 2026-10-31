@@ -1,0 +1,144 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R3_EXPLICIT_NATIVE_120S_20261031",
+  "entry_invocations": 1,
+  "controller_function_invocations": 1,
+  "controller_called_same_python_process": true,
+  "entry_exit_code": 1,
+  "outer_elapsed_seconds": 23.688,
+  "argv_public": [
+    "<AUTHORIZED_EXISTING_PYTHON>",
+    "-I",
+    "-S",
+    "-B",
+    "validators/multi_province/temp31_r6_r3_r2_r3_explicit_native_entry_isolated.py",
+    "--run-authorized-native",
+    "--task-id",
+    "CH5_TEMP31_R6_R3_R2_R3_EXPLICIT_NATIVE_120S_20261031",
+    "--runtime-target-task-id",
+    "CH5_TEMP31_R6_R3_R2_R3_EXPLICIT_NATIVE_120S_20261031",
+    "--original-target-task-id",
+    "CH5_TEMP31_R6_R3_R2_120S_ISOLATED_PREFDIR_NATIVE_STARTUP_20261030",
+    "--contract-commit",
+    "582396de2a67826a6ec0f90701aa066d05eb6850",
+    "--contract-path",
+    "tasks/CH5_TEMP31_R6_R3_R2_R3_EXPLICIT_NATIVE_120S_20261031/CONTRACT.md",
+    "--contract-blob",
+    "e76d43c3f03b8740d6c3b360c82c177ea492e43a",
+    "--contract-bytes",
+    "17076",
+    "--original-target-commit",
+    "40e7b2e1ee93973ca63b509f53f20e21c6f149ad",
+    "--original-target-path",
+    "tasks/CH5_TEMP31_R6_R3_R2_120S_ISOLATED_PREFDIR_NATIVE_STARTUP_20261030/CONTRACT.md",
+    "--original-target-blob",
+    "1d7c4c960b9b6d47cc9e8182afd2859372caa168",
+    "--original-target-bytes",
+    "15857",
+    "--governance-commit",
+    "582396de2a67826a6ec0f90701aa066d05eb6850",
+    "--scientific-parent",
+    "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+    "--owner-authorization",
+    "2026-10-31__NEW_EXPLICIT_RUNTIME_ROUTE_WITH_PREEXECUTION_HARD_GATES__ONE_120S_NATIVE_MATLAB_MINIMAL_PROBE",
+    "--controller-sha256",
+    "91543ddf57a22c72d0fb9bdc8b848f1ffe2a70eedbd517a240db9f880554bf16",
+    "--controller-bytes",
+    "26210",
+    "--probe-sha256",
+    "bfdbf23c64cef41205a018c3ccff135a106494d31c3f3bd7dc6d672d52364d2a",
+    "--probe-bytes",
+    "1757",
+    "--run-token",
+    "TEMP31_R3_ee813324476a4bcebabe8fd1c223a7ec",
+    "--authority-mode",
+    "ONE_NATIVE_120S_ONLY",
+    "--matlab-budget",
+    "1",
+    "--native-seconds",
+    "120",
+    "--memory-limit",
+    "1073741824",
+    "--active-processes",
+    "1"
+  ],
+  "cwd_role": "AUTHORIZED_SAFE_CANDIDATE_ROOT",
+  "actual_owner_authority": "2026-10-31__NEW_EXPLICIT_RUNTIME_ROUTE_WITH_PREEXECUTION_HARD_GATES__ONE_120S_NATIVE_MATLAB_MINIMAL_PROBE",
+  "selected_runtime_task": "CH5_TEMP31_R6_R3_R2_R3_EXPLICIT_NATIVE_120S_20261031",
+  "original_target_contract_is_context_not_resumed_old_task": true,
+  "run_token_replay_guard": "Exact new token plus exclusive entry/controller claims; no old token reuse",
+  "bound_new_scripts": [
+    {
+      "path": "validators/multi_province/temp31_r6_r3_r2_r3_explicit_native_entry_isolated.py",
+      "bytes": 8870,
+      "sha256": "49061e453c025182de34aaac1ee5cef9e5a771150eef96b2e3ece8bc7edfea37",
+      "git_blob": "a03ab8aa07944bd795a52674884161ddb416cf57"
+    },
+    {
+      "path": "validators/multi_province/temp31_r6_r3_r2_r3_120s_native_controller_isolated.py",
+      "bytes": 26210,
+      "sha256": "91543ddf57a22c72d0fb9bdc8b848f1ffe2a70eedbd517a240db9f880554bf16",
+      "git_blob": "dd4d0f915ea0ac3c90ee9d38dadcf304485dc2a2"
+    },
+    {
+      "path": "validators/multi_province/temp31_r6_r3_r2_r3_120s_native_probe_isolated.m",
+      "bytes": 1757,
+      "sha256": "bfdbf23c64cef41205a018c3ccff135a106494d31c3f3bd7dc6d672d52364d2a",
+      "git_blob": "87d26a52386637244724f9db4cb707d8732e0970"
+    }
+  ],
+  "source_gate_status": "PASS_BEFORE_CONTROLLER_CALL",
+  "entry_error": null,
+  "negative_controls": {
+    "cases": [
+      {
+        "case": "MISSING_IDENTITY",
+        "result": "REJECTED",
+        "fields": [
+          "contract_blob"
+        ],
+        "pure_memory": true
+      },
+      {
+        "case": "R40_TARGET",
+        "result": "REJECTED",
+        "fields": [
+          "runtime_target_task_id"
+        ],
+        "pure_memory": true
+      },
+      {
+        "case": "WRONG_COMMIT_AND_BLOB",
+        "result": "REJECTED",
+        "fields": [
+          "contract_blob",
+          "contract_commit"
+        ],
+        "pure_memory": true
+      }
+    ],
+    "count": 3,
+    "in_same_entry_process": true
+  },
+  "global_launcher_used": false,
+  "legacy_canary_or_controller_run": false,
+  "proof_scope": "ACTUAL_EXPLICIT_ENTRY_TO_FIXED_CONTROLLER_FUNCTION_EXECUTED; native probe failed before user code",
+  "raw_entry_receipt_identity": {
+    "bytes": 2049,
+    "sha256": "b45928c0a2671a5b719face1bff461827c8e703a07a7970c19e4f3362417dc53",
+    "git_blob": "7efa257a8739834e1af1756475caf742b9ee90d6"
+  },
+  "raw_outer_receipt_identity": {
+    "bytes": 3133,
+    "sha256": "dcdf3a86eb167fced2939525d0640801678b254e6c49ce3ee84ff80cc2223ac9",
+    "git_blob": "f2a03e6ff3001dbc3d272c19ff99d4e1879a6443"
+  },
+  "redaction_transform": {
+    "type": "STRUCTURED_PROJECTION",
+    "argv_indexes_replaced": [
+      0,
+      4
+    ],
+    "cwd_replaced_by_role": true,
+    "all_identity_and_timing_values_preserved": true
+  }
+}

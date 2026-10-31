@@ -1,0 +1,38 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R3_EXPLICIT_NATIVE_120S_20261031",
+  "cases": [
+    {
+      "case": "MISSING_IDENTITY",
+      "result": "REJECTED",
+      "fields": [
+        "contract_blob"
+      ],
+      "pure_memory": true
+    },
+    {
+      "case": "R40_TARGET",
+      "result": "REJECTED",
+      "fields": [
+        "runtime_target_task_id"
+      ],
+      "pure_memory": true
+    },
+    {
+      "case": "WRONG_COMMIT_AND_BLOB",
+      "result": "REJECTED",
+      "fields": [
+        "contract_blob",
+        "contract_commit"
+      ],
+      "pure_memory": true
+    }
+  ],
+  "count": 3,
+  "in_same_entry_process": true,
+  "scope": "Three pure-memory cases in the one runtime entry process before controller load/call; third jointly mutates commit and Blob; no legacy launcher or R40 payload used",
+  "raw_identity": {
+    "bytes": 558,
+    "sha256": "bc7d2058332edece60ce883603af4d08c7634f92d5de949bed3798a8b35d9c88",
+    "git_blob": "8686481b86b41f163aa129efb8464c47fc8f24ee"
+  }
+}

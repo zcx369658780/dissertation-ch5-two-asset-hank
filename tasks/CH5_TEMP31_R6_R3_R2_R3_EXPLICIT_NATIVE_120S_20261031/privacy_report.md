@@ -1,0 +1,8 @@
+# Original privacy rule and actual publication projection
+
+Unmodified existing scanner source SHA256=95f5de1f1d926de8683ff721bd1bcdcf2f7c90bdc52c1f6be799cfd3cb624ad2.
+Original STOP_PRIVATE_PAYLOAD assertion: 155 bytes, SHA256=38f498e140dd2d583d0ab760d0294a29f30b4cd1e73e8ee045240daaa4ea34ee, original line180. The exact AST assertion is compiled and executed unchanged against every actual file selected for payload and seal, including manifest. It is not replaced by a new regex or loosened. Full legacy preparation module is not executed because it contains unrelated historical operations.
+
+Connector replies and complete fixed source cache, executable/config/private argv, owned PID/TID, old index snapshot, entry/controller execution originals, raw trace/logs, marker/preference originals and all preference names stay LOCAL_ONLY. Public evidence carries real source identities, complete safe89-event objects, resource values, UTC/monotonic observations, code and failures. Timeline event array is unchanged from both raw trace and raw receipt, with added duration and unreached-checkpoint metadata. Source identities and raw original hashes bind each projection.
+
+Public argv replaces interpreter/script/executable/log absolute paths by stable roles or repository-relative source paths; cwd and executable configuration are roles. No original native log bytes or preference contents are published. All actual runtime logs are0 bytes; their identities are reported. Raw first-user markers do not exist and are not fabricated. Manifest and the external LOCAL_ONLY final receipt bind the public derivatives without self-reference. JSON and AST parsing complement the original mandatory scan. Final seal adds only DELIVERY_FINAL_RECEIPT.json; no third commit.
