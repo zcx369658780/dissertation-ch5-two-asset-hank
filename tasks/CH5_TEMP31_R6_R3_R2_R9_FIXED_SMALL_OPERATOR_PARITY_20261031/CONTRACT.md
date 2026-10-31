@@ -1,0 +1,174 @@
+# CH5 TEMP31 R6-R3-R2-R9：双端冻结来源配对的固定小尺寸 MATLAB–Python 稀疏算子逐元素对照（冻结合同）
+
+TASK_ID=CH5_TEMP31_R6_R3_R2_R9_FIXED_SMALL_OPERATOR_PARITY_20261031
+STATUS=ISSUED_AWAITING_OWNER_TRANSFER
+OWNER_APPROVAL=2026-10-31__ONE_TASK_SYNTHETIC_SOURCE_ANCHORED_MATLAB_PYTHON_SPARSE_OPERATOR_ASSEMBLY_ELEMENTWISE_PARITY__ZERO_HA_HJB_KFE_SOLVE__ZERO_MAIN2
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_PARENT=35753c5cf88dc2716f9b6bd9a44cd72d5da44c70
+GOVERNANCE_PARENT_TREE=a65da3d810e29ec62674ac82ece3b672f95a4d59
+TASK_PUBLICATION_COMMIT=GPT_PROVIDES_EXACT_SHA_AFTER_PUBLICATION
+EXPECTED_GOVERNANCE_HEAD=TASK_PUBLICATION_COMMIT_STRICT_EQUALITY
+TASK_CONTRACT_PATH=tasks/CH5_TEMP31_R6_R3_R2_R9_FIXED_SMALL_OPERATOR_PARITY_20261031/CONTRACT.md
+CANDIDATE_BRANCH=codex/ch5-temp31-r6-r3-r2-r9-fixed-small-operator-parity-20261031
+FIXED_SCIENTIFIC_PARENT=56447829ce0e6c3c85552c53c351b26a2452a4bd
+FIXED_SCIENTIFIC_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
+R8_GPT_REVIEW_COMMIT=35753c5cf88dc2716f9b6bd9a44cd72d5da44c70
+R8_GPT_REVIEW_BLOB=b59da6547cc706e20a27aa760a1e2e64488a60ca
+R8_GPT_REVIEW_UTF8_BYTES=13962
+R8_CANDIDATE_SEAL=09d26fe51e2ff1442c232949f89008c7ca6f42ce
+R8_NATIVE_CONTROLLER_BLOB=ede25554d6e33a82f3b44fda610dc0891e44dbd1
+R8_NATIVE_CONTROLLER_UTF8_BYTES=33588
+R8_NATIVE_PROBE_BLOB=8c969cb977c38519ee8d12fc2be2d6b2c6c8c17a
+R8_NATIVE_MINIMAL_OUTCOME=PASS_BOUNDED_ONE_SHOT_1X1_SPARSE_EXIT0_8P828_SECONDS
+R8_MAX_PROCESS_AND_JOB_COMMIT=2147483648
+R8_SCIENTIFIC_RESULTS=FALSE
+FROZEN_MATLAB_SOURCE_PATH=validators/multi_province/call725_policy_operator_stability/matlab_trajectory.m
+FROZEN_MATLAB_SOURCE_REF=56447829ce0e6c3c85552c53c351b26a2452a4bd
+FROZEN_MATLAB_SOURCE_BLOB=0e38270154ab8953290ae3ef6c92f95d38230afb
+FROZEN_MATLAB_SOURCE_UTF8_BYTES=8387
+FROZEN_MATLAB_FUNCTION=axis_operator
+FROZEN_MATLAB_FUNCTION_LINES=110-130_INCLUSIVE_AT_FIXED_REF
+FROZEN_MATLAB_SOURCE_AXES=FIRST_AXIS_I_FAST_SECOND_AXIS_J_STRIDE_I
+FROZEN_PYTHON_SOURCE_PATH=src/ch5_two_asset_hank/matlab_faithful_operator.py
+FROZEN_PYTHON_SOURCE_REF=56447829ce0e6c3c85552c53c351b26a2452a4bd
+FROZEN_PYTHON_SOURCE_BLOB=9a511e151c9bf449412dc5605dfa1a2076711277
+FROZEN_PYTHON_SOURCE_UTF8_BYTES=2483
+FROZEN_PYTHON_FUNCTIONS=assemble_source_axis;assemble_source_operator
+FROZEN_INDEXING_PATH=src/ch5_two_asset_hank/indexing.py
+FROZEN_INDEXING_BLOB=3aee864af5dce5128957896e5d7803c2a815aab6
+FROZEN_INDEXING_UTF8_BYTES=1551
+MATLAB_AXIS_NUMBER_1_TO_PYTHON_AXIS=0
+MATLAB_AXIS_NUMBER_2_TO_PYTHON_AXIS=1
+MATLAB_SWITCH_SOURCE_EXPRESSION=kron(sparse(switch_matrix),speye(I*J))
+PYTHON_SWITCH_SOURCE_EXPRESSION=sparse.kron(csr_matrix(switch_matrix),sparse.eye(I*J))
+MATLAB_EXPECTED_RELEASE=R2022b
+MATLAB_EXE_SHA256=4d251e680b8409d76d0524a1eb716de3c9e747386d3101e10f6ce1405ad1a59d
+NEW_MATLAB_RUNNER=validators/multi_province/t31_r9_op.m
+NEW_MATLAB_STEM=t31_r9_op
+NEW_MATLAB_STEM_LENGTH=9
+NEW_MATLAB_STEM_CONSERVATIVE_MAX=32
+TEST_FIXTURES=2
+FIXTURE_1_SHAPE_I_J_NZ=2,2,2
+FIXTURE_1_STATES=8
+FIXTURE_2_SHAPE_I_J_NZ=3,2,2
+FIXTURE_2_STATES=12
+MAX_STATES=12
+MAX_SPARSE_MATRIX_DIM=12x12
+MAX_DENSE_ENTRIES_PER_MATRIX=144
+MAX_OPERATORS_PER_FIXTURE=4_BB_AAH_BSWITCH_A
+MAX_MATLAB_OPERATOR_CONSTRUCTIONS=8
+MAX_PYTHON_OPERATOR_CONSTRUCTIONS=8
+MAX_LINEAR_SYSTEM_SOLVES=0
+MAX_HA_HJB_KFE_GE_IRF_PRICE_POLICY_FIRM_SOLVER_CALLS=0
+MAX_MAIN2_M_CALLS=0
+MAX_ORIGINAL_HANK_FULL_RUNS=0
+MAX_PREVIOUS_NPZ_READS=0
+MAX_REAL_31_PROVINCE_INPUT_READS=0
+MAX_MATLAB_PROCESS_CREATIONS=1_ONLY_IF_ALL_PREFLIGHT_GATES_PASS
+MAX_MATLAB_EXECUTION_ATTEMPTS=1
+MAX_WINDOWS_JOBS=1
+MAX_NATIVE_AFTER_RESUME_SECONDS=120
+MAX_OWNED_REAP_SECONDS=5
+JOB_PROCESS_COMMITTED_MEMORY_CAP_BYTES=2147483648
+JOB_TOTAL_COMMITTED_MEMORY_CAP_BYTES=2147483648
+JOB_ACTIVE_PROCESSES=1
+JOB_BREAKAWAY=FALSE
+JOB_KILL_ON_CLOSE=TRUE
+MIN_TOTAL_PHYSICAL_MEMORY_BYTES=8589934592
+MIN_AVAILABLE_PHYSICAL_MEMORY_BYTES=4294967296
+MIN_AVAILABLE_COMMIT_BYTES=3221225472
+MAX_GLOBAL_MEMORY_STATUS_SAMPLES=1
+MAX_RUNTIME_RETRIES=0
+MAX_REPLAY_OF_R8_OR_EARLIER_CONTROLLERS=0
+MAX_R40_GLOBAL_LAUNCHER_CALLS=0
+MAX_SCIENTIFIC_SOURCE_WRITES=0
+MAX_OLD_STOP_WRITES=0
+MAX_NEW_REPOSITORIES_WORKTREES=0
+MAX_ISSUE_PR_MERGE_CLEANUP=0
+PARITY_ABSOLUTE_TOLERANCE=1e-12
+PARITY_RELATIVE_TOLERANCE=1e-12
+PARITY_SUPPORT_TOLERANCE=0_EXACT_NONZERO_INDEX_PAIRS
+PARITY_NAN_INF_TOLERANCE=0
+PARITY_ALL_FIXTURES_ALL_FOUR_OPERATORS_REQUIRED=TRUE
+AUTO_NEXT=FALSE
+
+## 0. Owner授权、科学定义、禁止泛化
+
+Owner在R8已独立审阅通过后明确同意签发下一张严格限定的小尺寸MATLAB–Python算子逐元素对照任务。与完整MATLAB原版main2.m耗时约3小时的HANK求解不同，本任务仅构造与冻结科学源码对应的**纯合成小型稀疏矩阵**，不求解HJB/KFE方程，不求稳态/福利/GE/IRF，不导入省份数据，不检查政策数值和真实HANK算子，也不打开/运行原始main2.m。R8只证明单次MATLAB R2022b在新2GiB Job下成功进入最小用户脚本及1x1 sparse；此授权不复活R8预算，不允许R40全局启动或继续历史STOP任务。任何R9小型结构对照通过都只能归类为BOUND_SYNTHETIC_SOURCE_AXIS_ASSEMBLY_PARITY，**严禁称后置经济学算子、真实31省、正式政策模型或strict KFE定常性等价通过**。
+
+本轮已根据冻结科学父提交实际核实双端来源：
+- MATLAB侧：validators/multi_province/call725_policy_operator_stability/matlab_trajectory.m 固定Blob 0e38270154ab8953290ae3ef6c92f95d38230afb，第110-130行确有局部function G=axis_operator(backward,forward,axis_number)，MATLAB 1-based row=i+(j-1)*I+(nz-1)*I*J；axis_number1邻接行±1、axis_number2邻接行±I；对角元始终=-(rb+rf)，越界外向邻接项被跳过但对角贡献仍保留；G=sparse(rows,cols,vals,M,M)。同一冻结文件的Bswitch=kron(sparse(switch_matrix),speye(I*J))、BB=axis_operator(bbB,bbF,1)、AAH=axis_operator(aaB,aaF,2)、A=BB+AAH+Bswitch是原source-extracted历史MATLAB路径的可核字段，**不能把整份matlab_trajectory.m当作本次可运行输入**，因为该旧路径含实际HJB循环/矩阵求解。
+- Python侧：src/ch5_two_asset_hank/matlab_faithful_operator.py，固定Blob 9a511e151c9bf449412dc5605dfa1a2076711277，函数assemble_source_axis(backward,forward,axis0/1)、assemble_source_operator(b_backward,b_forward,a_backward,a_forward,switch_matrix)。axis0对应MATLAB axis_number1、axis1对应MATLAB axis_number2；代码对角为-(rb+rf)，越界邻接不加入，且bswitch=csr kron(switch,eye(I*J))。src/ch5_two_asset_hank/indexing.py 固定Blob 3aee864af5dce5128957896e5d7803c2a815aab6，源码规定i-fast Fortran顺序k=i+I*(j+J*z)（0-based）。
+这是源锚定的**组装算子子程序**配对，不声称已经读到原MATLAB main2.m或真正的最终收敛后KFE/HJB科学operator。必须完整保存源路径/ref/Git Blob/bytes及被使用的准确函数体片段和归属级别，不能从助手描述发明函数、重写Python核心算法或暗中把MATLAB改为Python伪实现。如果固定源缺失/函数不一致/源码类型不支持适配=>STOP__R9_OPERATOR_SOURCE_PAIR_OR_STATIC_MAPPING_BLOCKED，MATLAB调用0。
+
+## 1. 固定来源、GitHub、环境和任务显式路由
+
+执行者首先通过当前已批准GitHub连接器、**固定TASK_PUBLICATION_COMMIT**读取本合同完整UTF8内容，核bytes/SHA256/Git Blob；审计唯一parent=GOVERNANCE_PARENT、root tree/diff仅加本合同、治理远端HEAD严格同一commit。新candidate远端尚不存在；固定科学parent和root tree必须实际核验，候选只能从固定科学父提交产生，不得从治理、R8或旧候选派生。上述MATLAB/Python/indexing三份来源按固定science ref/blob逐字节读回，R8正式GPT A/B/C报告与R8控制器/runner/原Job/主机/marker回执按冻结ref必要范围读取；不扫描、执行任何历史HANK程序、旧控制器、原dump、旧NPZ或prefs，禁止读R40默认index或使用默认launcher。若来源无法认证立即STOP；暂时性GitHub连接器transport错误最多同ref/path/账号/端点单次只读重试；401/403/真实404或科学源Blob不符不得换凭据、路径、账号或绕过。
+
+沿用既有Owner批准安全worksite，所有原未提交数据、旧LOCAL_ONLY、R3/R4/R5/R6/R7/R8历史STOP与正式科学文件保护；不得reset/clean/stash/rebase/force-push、new repo/worktree、修改AGENTS/科学源/模型公式/全局index。独立新candidate只新增本轮白名单和任务证据；以前R8 controller不可直接运行、不可使用R8任务预算或向科学源码植入临时调试语句。仅通过本次一个明确命名/固定hash的Python -I -S -B入口执行1次（允许其固定来源校验、合成fixture准备、一个Python侧双fixture组装与一轮受限MATLAB controller），内部同进程run_once且0 runtime retries。独立校验3项纯内存错误路由（缺合同字段、错R40 target、错误commit/blob）必须在系统进程创建前全部REJECT。若科学Python实现可受控方式使用NumPy/SciPy，执行者必须证明当前Python依赖身份/导入路径只指向冻结科学仓库，禁止动态安装网络pip/环境修改/替代Python手写算法。
+
+## 2. 两个确定、共同、只读、无经济政策数据的fixture
+
+唯一新任务LOCAL_ONLY允许创建两个确定性共同输入fixture，shape分别(I,J,Nz)=(2,2,2)及(3,2,2)，状态总数8及12，任何附加测试超过MAX_STATES均禁止。由本轮一次fixture builder同时生成统一的JSON或MATLAB可精确读取的受限source payload，包含shape、b_backward/b_forward/a_backward/a_forward四个3D张量的**按Fortran顺序展平的float64数组**、2x2 switching matrix与必要固定标识，不含HANK原模型数据。Python必须从同一持久化fixture输入文件重新读取，而不能使用构造fixture时的另一套内存值；MATLAB也只能读取相同文件与SHA256绑定的原字节。输入只允许显式有限dyadic二进制可精确表示值（如0、±0.125、±0.25、±0.5、±0.75），各固定元素的位置由确定性纯代码定义并永久写入任务公开的合成fixture spec和源hash；不能随机种子/随机数据、运行时调整fixture以使比较通过。还要**至少一个样例**包含非零越界外向backward/forward的对角保留情况、内部非零正反向条目、零条目和跨第二轴stride，避免只测零矩阵；另一个样例包含不同I=3的±I步长与非对称switch。每组switch为数值有限2x2（推荐无小数精度风险的[-0.25,0.25;0.125,-0.125]等dyadic），不得改变原源定义，只对输入施加fixture限制。绝不能用“期望守恒行和=0”判定源越界对角行为正确，因为本冻结source保留outward diagonal时该行和可能非零。
+
+fixture必须在两端对应轴和顺序完全可复现：MATLAB reshape(flat,[I,J,Nz])；Python reshape(flat,(I,J,Nz),order="F")；完整记录MATLAB1-based (i,j,z)->row 和Python0-based canonical index的同义映射及向量flatten roundtrip。新MATLAB runner stem固定t31_r9_op(9 ASCII chars，<=合同32及R2022b的63)，应首先由Python对其真实绝对路径/扩展名/source SHA、MATLAB -batch run('唯一目标')路径同一性做静态fail-closed硬门；验证实际运行文件而非仅校验建议字符串。所有新的MATLAB script local function axis_operator函数体必须可从冻结MATLAB_SOURCE第110-130行**逐行或可信的去空白/注释规范化字节证实为原样提取**，除缩进/必要包裹位置差异外不允改source内行索引/条件/对角表达式。若本地script调用source全量matlab_trajectory.m、HANK3_FOC、cost、HJB/KFE矩阵求解或main2，立即STOP。本次MATLAB脚本只负责加载两组fixture和调用源锚定axis_operator + kron(switch,speye)、保存BB/AAH/Bswitch/A，不执行完整历史MATLAB trajectory。
+
+## 3. 预执行禁算子求解硬门、MATLAB Job资源和一次运行
+
+创建MATLAB进程前先验证：源码双端身份，冻结函数映射，fixture唯一2组及shape/number限制，IEEE dyadic数值及无nan/inf，输入文件sha，列优先坐标映射，MATLAB短文件名/静态argv/真实函数体，Python SciPy依赖可用，未调用任何真实HANK/HA/HJB/KFE/GE/IRF/政策函数，不包括线性系统求解。要求source-positive+mutated-source-negative等至少两项纯内存静态失配门，其中负例不启动MATLAB。禁止对比前先修改Python科学source、更新旧.mat、人工修正outward diagonal或matrix normalization。Python端仅调用固定Python assemble_source_operator一次/fixture，并保留返回BB/AAH/Bswitch/A四个矩阵用于对照；不能从MATLAB结果回代修改Python算法或以自造共同函数绕过双端独立执行。
+
+主机容量仍用一次GlobalMemoryStatusEx验证总物理>=8GiB、可用物理>=4GiB、caller可用commit>=3GiB；如失败MATLAB及新Job/Prefdir创建0，立刻STOP，不能因R8曾有13GiB可用就无条件重启。主机门与源码/fixture静态门全部PASS后，创建唯一新task LOCAL_ONLY空MATLAB_PREFDIR，不读旧prefs/旧logs，MATLAB child-only env，父环境不变。继承R8受控Windows Job安全逻辑但**必须复制为本任务新独立controller**，Process/Job committed caps各2147483648 bytes，active1，no-breakaway，kill-on-job-close，completion port先于挂接，CREATE_SUSPENDED且AssignProcessToJobObject、IsProcessInJob、成员和limit真实读回全部PASS后才ResumeThread；任何安全门失败绝不能放行未受约束进程。唯一允许MATLAB R2022b.exe sha256如上；argv兼容-nodesktop -nosplash -singleCompThread -logfile NEW_LOCAL_ONLY -batch run(NEW_SHORT_M_SCRIPT)；禁止-nojvm、-r、main2、旧R8 probe、MATLAB Engine、多次启动或任何原始HANK运行。
+
+Resume成功后设120秒单调硬deadline、单Job有界状态+内存峰值/完成端口通知/stdio+log身份记录；自然退出则即刻按真实exitcode+时间结束，超时仅TerminateJobObject本次owned一次并最多5秒回收，所有handles关闭，无其他用户进程操作。不需要以30/60/90/120检查点“必须到达”作为成功判据，提前自然成功时均NOT_REACHED。一次MATLAB进程顺序处理两组fixture，每组四个稀疏矩阵最多12x12，不得增加额外native启动。脚本必须原子写entry与fixture进度marker，验证MATLAB runtime release=2022b及实际prefdir child match，输出独立真实.mat（-v7即可，MATLAB sparse matrix保真）或有界固定序 triplet/json；只输出合成BB、AAH、Bswitch、A，必须实际完成两组后exit0并记录日志，未经对照前不得声称PARITY_PASS。若MATLAB因为输入/脚本/资源失败，保留真实阶段+STOP，绝不第二次重启。
+
+## 4. 严格逐元素比较规则与失败保留
+
+新Python comparator只从冻结Python函数的真实调用结果与**MATLAB实际写出的文件**独立读取进行对照，不将Python期望值冒充MATLAB输出，也不把MATLAB输出作为Python函数的输入。共2 fixture×4 matrices =8 matrices；形状按8x8、12x12，全部finite float64；矩阵CSR/CSC内部存储格式可不同，但必须记录原生格式/nnz/duplicates处理。对同一轴顺序下双方完整dense 8x8/12x12所有元素逐项计算diff；同时将coalesced sparse triplets按(row,col)做**exact nonzero-support**（不把绝对值低于容差的真实非零元素自动删掉）。记录每矩阵的shape、MATLAB与Python nnz/support nnz、support symmetric difference count、max_abs_diff、max_rel_diff、数值误差不满足门的最大坐标(脱敏只写有限整数)、差异项计数、对角行为与越界方向节点的指定cell spot check、一次M @ dyadic deterministic vector动作和结果元素级对照（非solve）。计算最大误差应包含双方全部entries/zero-values，统一有限的相对误差定义，近零点以atol=1e-12先判，非零以abs(a-b)<=1e-12+1e-12*max(abs(a),abs(b))判；不通过时报告真实第一个差值与有界总差异计数，不能round、clip、排序重排来使某一个operand等值。结构支持严格完全相同，任何NaN/Inf、shape、index、support不匹配即FAIL。每组还要检A=(BB+AAH+Bswitch)分别对本语言自身成立，确保比较的确是总算子而非同名不同字段。不要施加不在冻结源要求的行和零/非负移速条件；源包括可能非守恒的边界截断对角。
+
+对照结果只可判：PASS_SYNTHETIC_TWO_FIXTURES_EIGHT_MATRICES_SOURCE_ASSEMBLY_ELEMENTWISE、FAIL_SOURCE_OPERATOR_ELEMENTWISE_REVIEW_REQUIRED、NOT_TESTED_RUNTIME_NOT_REACHED、SOURCE_PAIR_NOT_AUTHENTICATED等。**不得称“真实后置HANK算子PASS”“HJB/KFE站稳PASS”“MATLAB-Python科学结论等价”“主模型1 period已验证”**。如果对照失败，禁止为了通过而修改冻结Python/MATLAB源、替换fixture或提高误差阈值；原材料照样交付、后继科学变更另批。
+
+## 5. 文件白名单、LOCAL_ONLY隐私、候选两阶段交付与STOP
+
+只允许新增本R9隔离脚本（明确相互职责）：
+validators/multi_province/t31_r9_op.m
+validators/multi_province/temp31_r9_explicit_entry_isolated.py
+validators/multi_province/temp31_r9_native_controller_isolated.py
+validators/multi_province/temp31_r9_fixture_and_compare_isolated.py
+
+只允许新增唯一新任务公开证据目录：
+tasks/CH5_TEMP31_R6_R3_R2_R9_FIXED_SMALL_OPERATOR_PARITY_20261031/
+下的CONTRACT.md仅在治理分支存在；候选只可添加result.md、source_identity.json、source_pair_mapping_and_limitations.md、fixed_fixtures_spec.json、input_sha_and_indexing_receipt.json、static_m_source_extraction_gate.json、explicit_route_gate.json、host_memory_preflight.json、job_pre_resume_gate.json、matlab_run_and_markers.json、matlab_sparse_output_identities.json、python_operator_build_receipt.json、elementwise_comparison_8_matrices.json、outward_boundary_and_stride_spotchecks.json、native_timeline.json、owned_process_cleanup.json、privacy_report.md、model_budget_zero.json、old_stops_preserved.md、gap_register.md、manifest.json、DELIVERY_FINAL_RECEIPT.json及少数必要非敏感衍生证据。严禁候选包含任何改变src/ch5_two_asset_hank、tests、main2、旧任务、科研源/数据的文件。若未能找到必要依赖或现有Python路径无法从冻结源码安全import，只允许在这个新隔离compare脚本中做最窄的import适配，不得私自改写frozen函数公式或重安装/联网下载依赖。
+
+原始共同fixture输入、MATLAB .mat合成输出、Python矩阵、原本地路径/命令、原始stdout/stderr/log、nonce、系统内存结构体与任何原raw receipts仅在本任务LOCAL_ONLY中保存不清理；合成矩阵若确实均不敏感，公开对照可用严格白名单发布有限元素级失败证据，但不得自动上传系统原日志/全部.mat或新prefs。凡公开文本、manifest与seal必须通过原强制隐私扫描器SHA256=95f5de1f1d926de8683ff721bd1bcdcf2f7c90bdc52c1f6be799cfd3cb624ad2，原STOP_PRIVATE_PAYLOAD AST assertion不可关闭/改写/放宽；公开衍生证据必须引用原LOCAL_ONLY收据的bytes/SHA256和脱敏规则。新Job/进程/日志仅Owned范围回收，不关闭/清理其它用户进程或任何历史证据。
+
+治理commit签发后本地Codex从固定科学父提交创建唯一候选branch，payload仅一commit新增上述脚本及本任务公开证据，普通授权SSH最多一次push；固定远端核commit唯一parent/tree、每个路径Blob/UTF8 bytes/SHA256和manifest；seal最多一个commit且仅新增DELIVERY_FINAL_RECEIPT.json，隐私完整扫描后正常SSH最多一次push，固定seal回读所有公开文件。最终seal自身的commit/tree/sha回执放在新LOCAL_ONLY外部，不得第三次commit，不自动Issue/PR/merge/cleanup或next task。GitHub权限/平台错误最多同ref只读确认，不换账号、凭据、endpoint、协议或自动重push。任何早STOP可以安全交付真实阶段证据，不得为制造PASS隐匿失败。
+
+预源配对或fixture/静态MATLAB函数/索引检查失败：STOP__R9_OPERATOR_SOURCE_PAIR_OR_STATIC_MAPPING_BLOCKED，MATLAB=0。
+主机容量/Job安全/新runtime路径预执行门失败：STOP__R9_HOST_OR_NATIVE_PREEXECUTION_GATE_BLOCKED。
+MATLAB起不来/异常/120s超时/两组输出不全：STOP__R9_NATIVE_OPERATOR_RUN_FAILED_REQUIRES_REVIEW。
+MATLAB与Python有一处真实元素或support不符：STOP__R9_SOURCE_OPERATOR_ELEMENTWISE_MISMATCH_REQUIRES_REVIEW。
+2个fixture×4矩阵全部严格合规且交付成功：STOP__AWAITING_GPT_INDEPENDENT_ABC。
+来源、隐私或两阶段SSH交付受阻：STOP__R9_SOURCE_PRIVACY_OR_DELIVERY_BLOCKED。
+所有STOP保留具体真实错误、源身份、shape、进程/Job次数与未完成；不自动修复/放宽阈值/再次启动/运行main2。
+
+## 6. GPT独立A/B/C权限和科研长期硬边界
+
+GPT A独立读取新治理commit、冻结科学源ref和候选payload/seal全文件真实bytes/SHA256/Git Blob，核元数据、私有源与隐私边界；B源码证实axis_operator原函数体真是冻结MATLAB相同语义，Python真实调用冻结assemble_source_operator，双端共同fixture和8 matrix支持及逐元素比较，Job与120s唯一MATLAB；C分级artifact_integrity/source_identity/numeric_review/implementation_review/scientific_review/privacy_review/actual_terminal/delivery/cleanup/not_completed。B数值通过仍只承认SYNTHETIC_SOURCE_ASSEMBLY_PARITY，不给HANK后置算子或真实31省GE/IRF任何PASS，严禁自动把模型结果写入论文。R3 1GiB 0xC00000FD及旧30s超时的唯一cause UNKNOWN，R7 filename故障、R8 bounded native success及所有旧STOP全部不可追溯改写。严格KFE唯一闭类等门限仍无新增科学证据。
+
+P3=BLOCKED
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+STRICT_KFE_STATIONARITY=FALSE_INHERITED_R3_R4_R5
+ALL_PRIOR_STOPS=IMMUTABLE
+GLOBAL_R40_LAUNCHER=UNMODIFIED_UNCERTIFIED
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
