@@ -1,3 +1,14 @@
+> **OWNER OVERRIDE — 2026-10-31 (Python research mainline + current GitHub workflow)**
+> Active Chapter 5 research implementation: Python multi-province HANK. MATLAB is historical reference only; MATLAB executable validation and broad MATLAB–Python parity are not prerequisites. Do not reintroduce identified legacy errors into Python merely for parity. R8–R12 and all STOP/PENDING evidence remain immutable history; R12 remains STOP__R12_SOURCE_PRIVACY_OR_DELIVERY_BLOCKED; R13 is not authorized.
+>
+> Current project task workflow follows the Owner-approved 2026-10-25 GitHub fixed-commit process: GPT issues one frozen bounded task only after Owner authorization → Owner hands it to local Codex → Codex works in the authorized scope and pushes an independent candidate branch via authorized SSH → Codex reads back commit/tree/path/Blob/size/hash and STOPs → GPT independently reviews the fixed commit → Owner decides. No auto Issue/PR/merge/cleanup/next task. GitHub, local Codex and Project Sources are separate sync planes. Older offline-first statements below are superseded where they conflict with this override.
+>
+> Session startup is incremental: read the Python-mainline rule, compact current state, Owner-designated task and only directly relevant raw evidence. Do not recursively load the archive or repeat the dissertation/historical handoffs. Raw numerical evidence outranks assistant summaries. No model run, scientific-source change, calibration/parameter/solver/tolerance change or formal Results is authorized without a specific Owner-approved task.
+>
+> Permanent state: FORMAL_SOURCE_FREEZE=FALSE; V010=UNCHANGED; V011=NOT_STARTED; Results=FALSE; model_activation=FALSE; REAL_GE=FALSE; FULL_RUNNER_IO_CLOSURE=BLOCKED; STRICT_KFE_STATIONARITY=FALSE; AUTO_NEXT=FALSE.
+
+---
+
 > **CURRENT OWNER OVERRIDE (2026-10-23)**：本项目现在正式采用离线优先工作流。日常不再要求GitHub Issue发行、Codex自动上传Review三文件或Astra自动清理；GPT给MD，Owner交Codex本地执行，Codex生成脱敏审阅ZIP，Owner一次手动上传，GPT独立审查。GitHub仅只读来源与Owner另批准的阶段备份。旧文中相冲突的GitHub自动要求被覆盖，正式科学门不改变。见 `docs/CH5_OFFLINE_WORKFLOW_AUTHORITY_CURRENT_20261023.md`。
 
 # 第五章当前项目入口（V1.2，2026-10-13）
