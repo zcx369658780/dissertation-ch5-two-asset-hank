@@ -1,0 +1,5 @@
+# Preserve prior native and WER STOPs
+
+R3 remains STOP__R6_R3_R2_R3_NATIVE_GATE_FAILED_REQUIRES_REVIEW; R4 remains STOP__R6_R3_R2_R4_WER_PERMISSION_OR_SCOPE_BLOCKED. Current Owner authority permits bounded content reads only for this one R4-recorded dump; it does not retroactively change R4's no-content boundary or its permission failure. Older STOPs, R40 global index, AGENTS, native controllers/Canary and scientific source were not modified or executed.
+
+Only the exact R4 LOCAL_ONLY metadata receipt and exact R3 owned-process JSON were read as newly authorized source roles. No old preferences, logs, unrelated dump or WER archive directory was accessed. Current target stat matched the R4 filename/size/times and standard-root/no-reparse identity; post-stat matched pre-stat. This is readonly operation and metadata evidence, not a whole dump-body SHA256 verification. Existing Git store and helper/scanner are reused. All20 prior Git refs are snapshotted for delivery; no exhaustive new historical-file byte audit is claimed.

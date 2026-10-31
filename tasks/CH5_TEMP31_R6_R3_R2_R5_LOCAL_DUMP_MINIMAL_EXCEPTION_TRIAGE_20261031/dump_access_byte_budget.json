@@ -1,0 +1,155 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R5_LOCAL_DUMP_MINIMAL_EXCEPTION_TRIAGE_20261031",
+  "actual_dump_open_attempts": 1,
+  "maximum_dump_open_attempts": 1,
+  "actual_dump_bytes_read": 16746,
+  "maximum_dump_bytes_read": 65536,
+  "actual_seek_read_calls": 12,
+  "maximum_seek_read_calls": 32,
+  "unbuffered_FileIO": true,
+  "read_records_without_private_offsets": [
+    {
+      "index": 1,
+      "requested_bytes": 32,
+      "actual_bytes": 32,
+      "role": "HEADER"
+    },
+    {
+      "index": 2,
+      "requested_bytes": 180,
+      "actual_bytes": 180,
+      "role": "DIRECTORY"
+    },
+    {
+      "index": 3,
+      "requested_bytes": 2,
+      "actual_bytes": 2,
+      "role": "SYSTEM_ARCHITECTURE"
+    },
+    {
+      "index": 4,
+      "requested_bytes": 12,
+      "actual_bytes": 12,
+      "role": "MISC_PROCESS_ID_PREFIX"
+    },
+    {
+      "index": 5,
+      "requested_bytes": 32,
+      "actual_bytes": 32,
+      "role": "EXCEPTION_HEADER"
+    },
+    {
+      "index": 6,
+      "requested_bytes": 8,
+      "actual_bytes": 8,
+      "role": "EXCEPTION_CONTEXT_DESCRIPTOR"
+    },
+    {
+      "index": 7,
+      "requested_bytes": 4,
+      "actual_bytes": 4,
+      "role": "MODULE_COUNT"
+    },
+    {
+      "index": 8,
+      "requested_bytes": 16308,
+      "actual_bytes": 16308,
+      "role": "MODULE_TABLE"
+    },
+    {
+      "index": 9,
+      "requested_bytes": 4,
+      "actual_bytes": 4,
+      "role": "MODULE_NAME_LENGTH"
+    },
+    {
+      "index": 10,
+      "requested_bytes": 58,
+      "actual_bytes": 58,
+      "role": "MODULE_NAME_UTF16"
+    },
+    {
+      "index": 11,
+      "requested_bytes": 4,
+      "actual_bytes": 4,
+      "role": "MODULE_NAME_LENGTH"
+    },
+    {
+      "index": 12,
+      "requested_bytes": 102,
+      "actual_bytes": 102,
+      "role": "MODULE_NAME_UTF16"
+    }
+  ],
+  "read_totals_by_role": {
+    "HEADER": {
+      "read_calls": 1,
+      "bytes": 32
+    },
+    "DIRECTORY": {
+      "read_calls": 1,
+      "bytes": 180
+    },
+    "SYSTEM_ARCHITECTURE": {
+      "read_calls": 1,
+      "bytes": 2
+    },
+    "MISC_PROCESS_ID_PREFIX": {
+      "read_calls": 1,
+      "bytes": 12
+    },
+    "EXCEPTION_HEADER": {
+      "read_calls": 1,
+      "bytes": 32
+    },
+    "EXCEPTION_CONTEXT_DESCRIPTOR": {
+      "read_calls": 1,
+      "bytes": 8
+    },
+    "MODULE_COUNT": {
+      "read_calls": 1,
+      "bytes": 4
+    },
+    "MODULE_TABLE": {
+      "read_calls": 1,
+      "bytes": 16308
+    },
+    "MODULE_NAME_LENGTH": {
+      "read_calls": 2,
+      "bytes": 8
+    },
+    "MODULE_NAME_UTF16": {
+      "read_calls": 2,
+      "bytes": 160
+    }
+  },
+  "actual_exception_structure_bytes": 40,
+  "maximum_exception_structure_bytes": 256,
+  "actual_module_list_table_bytes": 16312,
+  "maximum_module_list_table_bytes": 16384,
+  "actual_module_names_read": 2,
+  "maximum_module_names": 8,
+  "maximum_bytes_per_utf16_name": 256,
+  "all_reads_in_file_bounds": true,
+  "exception_parameters_or_context_registers_read": 0,
+  "memory_stream_or_stack_memory_reads": 0,
+  "mmap_or_whole_dump_hash": false,
+  "dump_content_sha256": "NOT_COMPUTED",
+  "debugger_additional_dump_reads": "NONE_NO_DEBUGGER_INVOCATION",
+  "outer_execution_receipt": {
+    "invocation_index": 1,
+    "exit_code": 0,
+    "elapsed_seconds": 0.11,
+    "start_utc": "2026-10-31T01:38:11.224334+00:00",
+    "end_utc": "2026-10-31T01:38:11.342554+00:00",
+    "start_monotonic_ns": 1011888718000000,
+    "end_monotonic_ns": 1011888828000000,
+    "retries": 0
+  },
+  "raw_read_trace_identity": {
+    "bytes": 11570,
+    "sha256": "128d19598621bf348f1e9fb0d1691285a04ae46cd7f39232dd42c8d185bd8f37",
+    "git_blob": "c5bdd190d90e418805086a218b89f8f7614b79ce"
+  },
+  "offset_redaction": "Actual dump-file offsets remain LOCAL_ONLY; public role/size/call count unchanged"
+}
