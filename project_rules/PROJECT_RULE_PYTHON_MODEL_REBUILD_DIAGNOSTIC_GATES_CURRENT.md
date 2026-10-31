@@ -24,3 +24,14 @@ Builder 可修复已授权的工程故障并重试相关普通检查。模型重
 按证据保存规则保留失败和成功输出。一份 run manifest + 相关诊断 + 一份结果报告通常足够。
 优化在受影响正确性有证据后进行；性能改动须验证数值行为未改变。
 科学模块测试通过不自动证明全部模型、校准、政策效应或论文结论成立。
+
+
+---
+
+## Owner override — Python is the active research implementation (2026-10-31)
+
+Python multi-province HANK is the sole active implementation for ongoing research work. MATLAB is a historical reference and not a mandatory oracle, executable dependency, or parity gate. Do not redirect a Python numerical issue into MATLAB execution validation by default.
+
+A numeric report must separately state: HJB convergence/residual; KFE execution; strict stationary residual against the original generator; mass/nonnegativity/closed-class checks; upper/lower boundary mass and flows; prices/grid/parameters; source and input identities; budget. Do not equate a normalized distribution or successful KFE call with strict stationarity.
+
+Use raw reports, arrays, logs, manifests and exact commit identities. If only a prior assistant summary is available, label it SECONDARY_SUMMARY_ONLY / NOT_INDEPENDENTLY_VERIFIED. Never invent missing residuals or replace null/unknown with zero. No science run, solver change, tolerance change, calibration change or model-source write is authorized by this diagnostic rule alone.
