@@ -1,0 +1,67 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R7_RELEASED_MEMORY_TWO_GIB_NATIVE_20261031",
+  "executable_sha256": "4d251e680b8409d76d0524a1eb716de3c9e747386d3101e10f6ce1405ad1a59d",
+  "argv_roles": [
+    "FIXED_MATLAB_EXECUTABLE",
+    "-nodesktop",
+    "-nosplash",
+    "-singleCompThread",
+    "-logfile",
+    "NEW_LOCAL_ONLY_LOGFILE",
+    "-batch",
+    "run(NEW_FIXED_MINIMAL_PROBE)"
+  ],
+  "nojvm": false,
+  "common_safety": {
+    "active_processes": 1,
+    "no_breakaway": true,
+    "kill_on_job_close": true,
+    "completion_port": true,
+    "native_window_seconds": 120
+  },
+  "r3_one_gib": {
+    "actual_native": true,
+    "process_cap": 1073741824,
+    "job_cap": 1073741824,
+    "peak_process": 1073741824,
+    "peak_job": 1073741824,
+    "process_memory_limit_received_seconds": 16.266,
+    "natural_exit_seconds": 23.313,
+    "native_exit": "0xC00000FD",
+    "first_marker": false,
+    "probe_results": "UNOBSERVED"
+  },
+  "r6": {
+    "actual_native": false,
+    "role": "host blocked only; never a2GiB native result"
+  },
+  "r7_two_gib": {
+    "actual_native": true,
+    "host": {
+      "total_physical": 31.483287811279297,
+      "available_physical": 17.051959991455078,
+      "caller_available_commit": 26.267505645751953
+    },
+    "process_cap": 2147483648,
+    "job_cap": 2147483648,
+    "peak_process": 1624793088,
+    "peak_job": 1624793088,
+    "memory_limit_notification_observed": false,
+    "natural_exit_seconds": 67.297,
+    "native_exit": "0x1",
+    "forced": false,
+    "timed_out": false,
+    "first_marker": false,
+    "probe_results": "UNOBSERVED",
+    "logged_failure": "new65-character probe stem truncated at63 then unrecognized"
+  },
+  "non_memory_differences": [
+    "different date/time host load and released-memory state",
+    "new task root and blank prefdir",
+    "new private nonce; child-only nonce environment rather than public literal",
+    "contract-mandated new probe stem is65 characters; R7 loader error is additional incompatibility"
+  ],
+  "interpretation": "R7 actual peak exceeded historical1GiB cap without repeating visible0xC00000FD, but probe never executed; no proof2GiB is sufficient for intended probe and no strict single-factor causal identification",
+  "historical_root_cause": "UNKNOWN",
+  "scientific_equivalence": "NOT_TESTED"
+}

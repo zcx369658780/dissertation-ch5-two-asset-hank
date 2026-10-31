@@ -1,0 +1,85 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R7_RELEASED_MEMORY_TWO_GIB_NATIVE_20261031",
+  "status": "PASS_BEFORE_CONTROLLER",
+  "entry_identity": {
+    "bytes": 7946,
+    "sha256": "88ae692edf58212b46e00c0b2a684498b0c709aea1106bd66890967e812fc46e",
+    "git_blob": "89cd192cf370794353fb956d2da9e95f33efa8d0"
+  },
+  "controller_identity": {
+    "bytes": 28742,
+    "sha256": "8774b39ff86136fd0a0b6757598054485155610548ad4188e1814b44e92638d7",
+    "git_blob": "7c085d6c39fe7392b73b6df858e57506e4b8397a"
+  },
+  "probe_identity": {
+    "bytes": 1822,
+    "sha256": "cf9ee6d7e371e2a82dcde0f867304ba6903b621fe1b1e01543b6d6b772a7ae72",
+    "git_blob": "9c4dbee496ce85d7b95c0a118ba5f8b54070552f"
+  },
+  "contract_identity": {
+    "bytes": 17149,
+    "sha256": "6644b31493c118b035663d63afa44b8c8a745e8525c306a1ada417b0930e0aba",
+    "git_blob": "0f57e68432a2b3a33eed72bca088448a9551ff40"
+  },
+  "source_gate_identity": {
+    "bytes": 3655,
+    "sha256": "883107fa7026bc2a8ba433273c1ee5df0d5471f82b4e476cf936f1668ff1465a",
+    "git_blob": "f108d5d355c8617b4a383f0ac2c0465439513f3e"
+  },
+  "entry_invocations": 1,
+  "controller_function_invocations": 1,
+  "same_process_direct_hash_bound_compile_and_run_once": true,
+  "three_pure_memory_negative_tests": [
+    {
+      "case": "MISSING_TARGET_IDENTITY",
+      "rejected": true,
+      "error": "MISSING_OR_EXTRA_IDENTITY_FIELD",
+      "side_effects": 0
+    },
+    {
+      "case": "R40_TASK_REPLACEMENT",
+      "rejected": true,
+      "error": "EXACT_IDENTITY_MISMATCH_task_id",
+      "side_effects": 0
+    },
+    {
+      "case": "WRONG_COMMIT_AND_BLOB",
+      "rejected": true,
+      "error": "EXACT_IDENTITY_MISMATCH_contract_commit",
+      "side_effects": 0
+    }
+  ],
+  "global_router_reads": 0,
+  "r40_invocations": 0,
+  "old_canary_or_controllers_executed": 0,
+  "shell_invocations": 0,
+  "entry_exit": 1,
+  "outer_elapsed_seconds": 67.75,
+  "outer_python_interpreter_flags": [
+    "-I",
+    "-S",
+    "-B"
+  ],
+  "private_nonce": "independent R7; local sealed plan and child-only environment; never published",
+  "sources": [
+    {
+      "role": "explicit_route_pre_execution_gate_raw.json",
+      "bytes": 1300,
+      "sha256": "aafae3f85d13857f9c72128a16785eb4f251f65fcd322d18f544a8e0fac59c8d",
+      "git_blob": "f2afac0c1da4e9f1cd426840a9a2a8d2c59bf208"
+    },
+    {
+      "role": "explicit_entry_execution_receipt_raw.json",
+      "bytes": 406,
+      "sha256": "9e14abfc363f8639fe8319e0cba99d9139876d3118fbbb60f2ae7ae4414b4bfe",
+      "git_blob": "0abe7aa89aa07d39a05e9a6cb756199b81c19b04"
+    },
+    {
+      "role": "outer_execution_receipt_raw.json",
+      "bytes": 692,
+      "sha256": "d6619f658ead0a6e77375ebbd0219c80347edde65b4cfc94b8f0bb07dbef5d0a",
+      "git_blob": "05c1cced71d4ad34c472e891523b8682c894f197"
+    }
+  ],
+  "redaction": "private argv, run nonce, interpreter/cwd and executable paths retained LOCAL_ONLY; identities and roles published"
+}

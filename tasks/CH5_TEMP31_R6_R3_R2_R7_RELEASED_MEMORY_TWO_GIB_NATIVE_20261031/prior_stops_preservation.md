@@ -1,0 +1,3 @@
+# Historical states preserved
+
+R3 actual1GiB native failure, R5 dump review, R6 host-blocked STOP and all older states remain unchanged. No historical prefs/dump/native logs opened, copied or cleaned. Only fixed public R6 controller/probe, R6/R5 reviews, host and R3 Job receipts were read. The prior exact executable-locator configuration field was used solely to identify and rehash the same executable.22 existing local refs were snapshotted; delivery permits only one new R7 candidate. Source changes are the three new R7 validators. No R40 index/AGENTS/global launcher or formal science source is modified. No new repo/worktree, reset/clean/stash/rebase/merge or successor is authorized.

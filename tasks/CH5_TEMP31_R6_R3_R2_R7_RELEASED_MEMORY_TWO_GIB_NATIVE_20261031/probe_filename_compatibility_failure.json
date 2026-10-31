@@ -1,0 +1,25 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R7_RELEASED_MEMORY_TWO_GIB_NATIVE_20261031",
+  "evidence_grade": "DIRECT_CURRENT_LOG_TEXT_AND_STATIC_FILENAME_LENGTH",
+  "probe_basename_role": "CONTRACT_MANDATED_NEW_R7_PROBE",
+  "probe_stem": "temp31_r6_r3_r2_r7_released_memory_two_gib_minimal_probe_isolated",
+  "actual_stem_characters": 65,
+  "MATLAB_logged_name_limit": 63,
+  "logged_action": "truncated probe name to63; evalin then reported truncated function or variable unrecognized",
+  "run_loader_line": 91,
+  "entry_marker": "NOT_OBSERVED",
+  "source": {
+    "bytes": 439,
+    "sha256": "dbd2e048c6a8d5c0e179af4b7e194190a4cab2925a917e541d60f6e3df818094",
+    "git_blob": "4895068d450a06abe92d1c648daadf30028e0c08"
+  },
+  "log_role": "NEW_NATIVE_LOGFILE",
+  "redaction": "exact new probe basename and truncated name converted to roles; raw logs remain LOCAL_ONLY",
+  "safe_excerpt": "[\u8b66\u544a: '<R7_PROBE_STEM_65_CHARS>' \u8d85\u8fc7 MATLAB \u7684\u6700\u5927\u540d\u79f0\u957f\u5ea6(63 \u4e2a\u5b57\u7b26)\uff0c\u5c06\u88ab\u622a\u65ad\u4e3a\n'<R7_PROBE_STEM_TRUNCATED_63_CHARS>'\u3002] \n[> \u4f4d\u7f6e\uff1arun (\u7b2c 91 \u884c)] \n{\u9519\u8bef\u4f7f\u7528 evalin\n\u51fd\u6570\u6216\u53d8\u91cf '<R7_PROBE_STEM_TRUNCATED_63_CHARS>' \u65e0\u6cd5\u8bc6\u522b\u3002\n\n\u51fa\u9519 run (\u7b2c 91 \u884c)\nevalin('caller', strcat(script, ';'));\n} \n",
+  "implementation_limitation": "pre-run static review checked Python syntax, identity and Job ordering but missed MATLAB name-length compatibility",
+  "contract_name_conflict": true,
+  "source_renames_or_fixes_after_run": 0,
+  "retries": 0,
+  "historical_one_gib_root_cause": "UNKNOWN",
+  "causal_scope": "immediate R7 loader error is directly logged; does not prove historical1GiB failure mechanism"
+}

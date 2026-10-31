@@ -1,0 +1,2593 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R7_RELEASED_MEMORY_TWO_GIB_NATIVE_20261031",
+  "clock_semantics": "paired monotonic then UTC; notification time is receipt time, never OS occurrence time",
+  "resume": {
+    "monotonic_ns": 1017674765000000,
+    "utc": "2026-10-31T03:14:37.281024+00:00",
+    "clock_pair_order": "monotonic_then_UTC"
+  },
+  "natural_exit_observation": {
+    "event": "natural_exit_observed",
+    "monotonic_ns": 1017742062000000,
+    "utc": "2026-10-31T03:15:44.579633+00:00",
+    "clock_pair_order": "monotonic_then_UTC",
+    "exit_code": 1
+  },
+  "native_elapsed_seconds": 67.297,
+  "checkpoints": [
+    {
+      "event": "native_checkpoint",
+      "monotonic_ns": 1017704765000000,
+      "utc": "2026-10-31T03:15:07.279160+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 30.0,
+      "nominal_seconds": 30,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 954892288,
+        "peak_job_commit": 954892288
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "native_checkpoint",
+      "monotonic_ns": 1017734765000000,
+      "utc": "2026-10-31T03:15:37.270421+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 60.0,
+      "nominal_seconds": 60,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    }
+  ],
+  "not_reached_checkpoints": [
+    90,
+    120
+  ],
+  "reason": "natural exit before90s; not timeout or forced early stop",
+  "events": [
+    {
+      "event": "initial_config_verify",
+      "monotonic_ns": 1017674750000000,
+      "utc": "2026-10-31T03:14:37.268976+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "source_route_identity_pass": true,
+      "executable_sha256": "4d251e680b8409d76d0524a1eb716de3c9e747386d3101e10f6ce1405ad1a59d",
+      "old_prefdir_entry_accesses": 0,
+      "seconds_after_resume": -0.015
+    },
+    {
+      "event": "host_memory_preflight",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.269979+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "status": "PASS",
+      "api": "GlobalMemoryStatusEx",
+      "api_calls": 1,
+      "api_success": true,
+      "win32_error": 0,
+      "before": {
+        "monotonic_ns": 1017674750000000,
+        "utc": "2026-10-31T03:14:37.268976+00:00",
+        "clock_pair_order": "monotonic_then_UTC"
+      },
+      "observed": {
+        "monotonic_ns": 1017674750000000,
+        "utc": "2026-10-31T03:14:37.268976+00:00",
+        "clock_pair_order": "monotonic_then_UTC"
+      },
+      "reliable_fields": true,
+      "checks": {
+        "total_physical": true,
+        "available_physical": true,
+        "available_commit": true
+      },
+      "available_commit_field": "ullAvailPageFile",
+      "semantic_scope": "Windows reported maximum additional commit for current caller; conservative caller-available headroom, not inferred from RAM or working set",
+      "system_pagefile_or_other_workload_changes": false,
+      "values_GiB": {
+        "total_physical": 31.483287811279297,
+        "available_physical": 17.051959991455078,
+        "caller_available_commit": 26.267505645751953
+      },
+      "thresholds_GiB": {
+        "total_physical": 8,
+        "available_physical": 4,
+        "caller_available_commit": 3
+      },
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "prefdir_open_directory_FILE_ADD_FILE",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.274904+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "CloseHandle",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.274904+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "role": "prefdir_write_permission_directory_handle",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "prefdir_preflight_pass",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.275904+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "status": "PASS",
+      "role": "NEW_TASK_LOCAL_ONLY_FRESH_PREFDIR",
+      "created_exclusively": true,
+      "existed_before": false,
+      "empty_after_create": true,
+      "empty_after_permission_check": true,
+      "directory_FILE_ADD_FILE_access": true,
+      "no_reparse": true,
+      "canonical_within_new_LOCAL_ONLY": true,
+      "historical_alias_excluded": true,
+      "path_bytes_sha256": "e94bed17a05b16f17845e404abb0de5fb452c85131fcfba11e742e4f3d465ad9",
+      "child_only_override": true,
+      "old_prefdir_reads": 0,
+      "old_prefdir_enumerations": 0,
+      "old_prefdir_copies": 0,
+      "old_prefdir_writes": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "CreateJobObject",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.275904+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "SetJobLimits",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.275904+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.275904+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "QueryJobMembers",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.275904+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "CreateIoCompletionPort",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.275904+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "associate_completion_port_before_assignment",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.275904+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "QueryJobMembers",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.275904+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "create_stdio_stdin",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.275904+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "create_stdio_stdout",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.276899+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "create_stdio_stderr",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.276899+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "suspended_CreateProcess_begin",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.276899+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "creation_flags": 134218756,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "suspended_CreateProcess_return",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.281024+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "assign_job",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.281024+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "IsProcessInJob",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.281024+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "QueryJobMembers",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.281024+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.281024+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "GetQueuedCompletionStatus_message",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.281024+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "Job_notification_received",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.281024+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "message_id": 6,
+      "message": "NEW_PROCESS",
+      "subject_role": "OWNED_MATLAB",
+      "occurrence_timestamp": "NOT_PROVIDED_BY_API",
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "ResumeThread_begin",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.281024+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "ResumeThread_return",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.281024+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "previous_suspend_count": 1,
+      "ok": true,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "deadline_set",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.281024+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "origin_monotonic_ns": 1017674765000000,
+      "deadline_monotonic_ns": 1017794765000000,
+      "maximum_seconds": 120,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "CloseHandle",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.281024+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "role": "native_primary_thread",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.281024+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017674765000000,
+      "utc": "2026-10-31T03:14:37.281024+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 0.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 385024,
+        "peak_job_commit": 385024
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017675765000000,
+      "utc": "2026-10-31T03:14:38.273955+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 1.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017675765000000,
+      "utc": "2026-10-31T03:14:38.273955+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 1.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 59367424,
+        "peak_job_commit": 59367424
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017676765000000,
+      "utc": "2026-10-31T03:14:39.273086+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 2.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017676765000000,
+      "utc": "2026-10-31T03:14:39.273086+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 2.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 71692288,
+        "peak_job_commit": 71692288
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017677765000000,
+      "utc": "2026-10-31T03:14:40.270102+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 3.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017677765000000,
+      "utc": "2026-10-31T03:14:40.270102+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 3.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 308248576,
+        "peak_job_commit": 308248576
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017678765000000,
+      "utc": "2026-10-31T03:14:41.274382+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 4.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017678765000000,
+      "utc": "2026-10-31T03:14:41.274382+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 4.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 590606336,
+        "peak_job_commit": 590606336
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017679765000000,
+      "utc": "2026-10-31T03:14:42.277578+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 5.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017679765000000,
+      "utc": "2026-10-31T03:14:42.277578+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 5.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 600317952,
+        "peak_job_commit": 600317952
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017680765000000,
+      "utc": "2026-10-31T03:14:43.271211+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 6.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017680765000000,
+      "utc": "2026-10-31T03:14:43.271211+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 6.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 601931776,
+        "peak_job_commit": 601931776
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017681765000000,
+      "utc": "2026-10-31T03:14:44.277283+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 7.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017681765000000,
+      "utc": "2026-10-31T03:14:44.277283+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 7.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 603783168,
+        "peak_job_commit": 603783168
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017682765000000,
+      "utc": "2026-10-31T03:14:45.277791+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 8.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017682765000000,
+      "utc": "2026-10-31T03:14:45.277791+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 8.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 605257728,
+        "peak_job_commit": 605257728
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017683765000000,
+      "utc": "2026-10-31T03:14:46.274038+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 9.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017683765000000,
+      "utc": "2026-10-31T03:14:46.274038+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 9.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 606113792,
+        "peak_job_commit": 606113792
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017684765000000,
+      "utc": "2026-10-31T03:14:47.272902+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 10.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017684765000000,
+      "utc": "2026-10-31T03:14:47.272902+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 10.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 606113792,
+        "peak_job_commit": 606113792
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017685765000000,
+      "utc": "2026-10-31T03:14:48.270507+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 11.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017685765000000,
+      "utc": "2026-10-31T03:14:48.270507+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 11.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 607621120,
+        "peak_job_commit": 607621120
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017686765000000,
+      "utc": "2026-10-31T03:14:49.273184+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 12.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017686765000000,
+      "utc": "2026-10-31T03:14:49.273184+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 12.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 610779136,
+        "peak_job_commit": 610779136
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017687765000000,
+      "utc": "2026-10-31T03:14:50.276189+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 13.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017687765000000,
+      "utc": "2026-10-31T03:14:50.276189+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 13.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 616255488,
+        "peak_job_commit": 616255488
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017688765000000,
+      "utc": "2026-10-31T03:14:51.270682+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 14.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017688765000000,
+      "utc": "2026-10-31T03:14:51.270682+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 14.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 616255488,
+        "peak_job_commit": 616255488
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017689765000000,
+      "utc": "2026-10-31T03:14:52.275450+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 15.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017689765000000,
+      "utc": "2026-10-31T03:14:52.275450+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 15.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 617943040,
+        "peak_job_commit": 617943040
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017690765000000,
+      "utc": "2026-10-31T03:14:53.279465+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 16.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017690765000000,
+      "utc": "2026-10-31T03:14:53.279465+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 16.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 620711936,
+        "peak_job_commit": 620711936
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017691765000000,
+      "utc": "2026-10-31T03:14:54.274357+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 17.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017691765000000,
+      "utc": "2026-10-31T03:14:54.274357+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 17.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 620711936,
+        "peak_job_commit": 620711936
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017692765000000,
+      "utc": "2026-10-31T03:14:55.273250+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 18.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017692765000000,
+      "utc": "2026-10-31T03:14:55.273250+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 18.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 621756416,
+        "peak_job_commit": 621756416
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017693765000000,
+      "utc": "2026-10-31T03:14:56.275669+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 19.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017693765000000,
+      "utc": "2026-10-31T03:14:56.275669+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 19.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 622583808,
+        "peak_job_commit": 622583808
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017694765000000,
+      "utc": "2026-10-31T03:14:57.279870+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 20.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017694765000000,
+      "utc": "2026-10-31T03:14:57.279870+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 20.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 622796800,
+        "peak_job_commit": 622796800
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017695765000000,
+      "utc": "2026-10-31T03:14:58.278556+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 21.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017695765000000,
+      "utc": "2026-10-31T03:14:58.278556+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 21.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 622796800,
+        "peak_job_commit": 622796800
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017696765000000,
+      "utc": "2026-10-31T03:14:59.275680+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 22.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017696765000000,
+      "utc": "2026-10-31T03:14:59.275680+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 22.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 623341568,
+        "peak_job_commit": 623341568
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017697765000000,
+      "utc": "2026-10-31T03:15:00.270779+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 23.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017697765000000,
+      "utc": "2026-10-31T03:15:00.270779+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 23.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 625553408,
+        "peak_job_commit": 625553408
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017698765000000,
+      "utc": "2026-10-31T03:15:01.274275+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 24.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017698765000000,
+      "utc": "2026-10-31T03:15:01.274275+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 24.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 627044352,
+        "peak_job_commit": 627044352
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017699765000000,
+      "utc": "2026-10-31T03:15:02.279439+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 25.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017699765000000,
+      "utc": "2026-10-31T03:15:02.279439+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 25.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 629067776,
+        "peak_job_commit": 629067776
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017700765000000,
+      "utc": "2026-10-31T03:15:03.279114+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 26.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017700765000000,
+      "utc": "2026-10-31T03:15:03.279114+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 26.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 631169024,
+        "peak_job_commit": 631169024
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017701765000000,
+      "utc": "2026-10-31T03:15:04.279094+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 27.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017701765000000,
+      "utc": "2026-10-31T03:15:04.279094+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 27.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 929005568,
+        "peak_job_commit": 929005568
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017702765000000,
+      "utc": "2026-10-31T03:15:05.273548+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 28.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017702765000000,
+      "utc": "2026-10-31T03:15:05.273548+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 28.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 949284864,
+        "peak_job_commit": 949284864
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017703765000000,
+      "utc": "2026-10-31T03:15:06.269971+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 29.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017703765000000,
+      "utc": "2026-10-31T03:15:06.269971+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 29.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 954892288,
+        "peak_job_commit": 954892288
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017704765000000,
+      "utc": "2026-10-31T03:15:07.279160+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 30.0
+    },
+    {
+      "event": "native_checkpoint",
+      "monotonic_ns": 1017704765000000,
+      "utc": "2026-10-31T03:15:07.279160+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 30.0,
+      "nominal_seconds": 30,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 954892288,
+        "peak_job_commit": 954892288
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017704765000000,
+      "utc": "2026-10-31T03:15:07.279160+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 30.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017704765000000,
+      "utc": "2026-10-31T03:15:07.279160+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 30.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 954892288,
+        "peak_job_commit": 954892288
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017705765000000,
+      "utc": "2026-10-31T03:15:08.272611+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 31.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017705765000000,
+      "utc": "2026-10-31T03:15:08.272611+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 31.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1010036736,
+        "peak_job_commit": 1010036736
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017706765000000,
+      "utc": "2026-10-31T03:15:09.278597+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 32.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017706765000000,
+      "utc": "2026-10-31T03:15:09.278597+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 32.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1138376704,
+        "peak_job_commit": 1138376704
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017707765000000,
+      "utc": "2026-10-31T03:15:10.271724+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 33.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017707765000000,
+      "utc": "2026-10-31T03:15:10.271724+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 33.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1285996544,
+        "peak_job_commit": 1285996544
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017708765000000,
+      "utc": "2026-10-31T03:15:11.270059+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 34.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017708765000000,
+      "utc": "2026-10-31T03:15:11.270059+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 34.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1525354496,
+        "peak_job_commit": 1525354496
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017709765000000,
+      "utc": "2026-10-31T03:15:12.274645+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 35.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017709765000000,
+      "utc": "2026-10-31T03:15:12.274645+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 35.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1550581760,
+        "peak_job_commit": 1550581760
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017710765000000,
+      "utc": "2026-10-31T03:15:13.274618+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 36.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017710765000000,
+      "utc": "2026-10-31T03:15:13.274618+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 36.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624350720,
+        "peak_job_commit": 1624350720
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017711765000000,
+      "utc": "2026-10-31T03:15:14.270402+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 37.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017711765000000,
+      "utc": "2026-10-31T03:15:14.270402+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 37.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017712765000000,
+      "utc": "2026-10-31T03:15:15.276253+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 38.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017712765000000,
+      "utc": "2026-10-31T03:15:15.276253+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 38.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017713765000000,
+      "utc": "2026-10-31T03:15:16.280007+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 39.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017713765000000,
+      "utc": "2026-10-31T03:15:16.280007+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 39.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017714765000000,
+      "utc": "2026-10-31T03:15:17.274124+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 40.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017714765000000,
+      "utc": "2026-10-31T03:15:17.274124+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 40.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017715765000000,
+      "utc": "2026-10-31T03:15:18.275197+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 41.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017715765000000,
+      "utc": "2026-10-31T03:15:18.275197+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 41.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017716765000000,
+      "utc": "2026-10-31T03:15:19.272360+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 42.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017716765000000,
+      "utc": "2026-10-31T03:15:19.272360+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 42.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017717765000000,
+      "utc": "2026-10-31T03:15:20.277095+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 43.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017717765000000,
+      "utc": "2026-10-31T03:15:20.277095+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 43.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017718765000000,
+      "utc": "2026-10-31T03:15:21.270597+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 44.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017718765000000,
+      "utc": "2026-10-31T03:15:21.270597+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 44.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017719765000000,
+      "utc": "2026-10-31T03:15:22.274453+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 45.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017719765000000,
+      "utc": "2026-10-31T03:15:22.274453+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 45.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017720765000000,
+      "utc": "2026-10-31T03:15:23.273713+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 46.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017720765000000,
+      "utc": "2026-10-31T03:15:23.273713+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 46.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017721765000000,
+      "utc": "2026-10-31T03:15:24.273946+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 47.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017721765000000,
+      "utc": "2026-10-31T03:15:24.273946+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 47.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017722765000000,
+      "utc": "2026-10-31T03:15:25.279292+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 48.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017722765000000,
+      "utc": "2026-10-31T03:15:25.279292+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 48.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017723765000000,
+      "utc": "2026-10-31T03:15:26.280073+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 49.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017723765000000,
+      "utc": "2026-10-31T03:15:26.280073+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 49.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017724765000000,
+      "utc": "2026-10-31T03:15:27.272803+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 50.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017724765000000,
+      "utc": "2026-10-31T03:15:27.272803+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 50.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017725765000000,
+      "utc": "2026-10-31T03:15:28.274954+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 51.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017725765000000,
+      "utc": "2026-10-31T03:15:28.274954+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 51.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017726765000000,
+      "utc": "2026-10-31T03:15:29.277795+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 52.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017726765000000,
+      "utc": "2026-10-31T03:15:29.277795+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 52.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017727765000000,
+      "utc": "2026-10-31T03:15:30.272836+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 53.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017727765000000,
+      "utc": "2026-10-31T03:15:30.272836+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 53.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017728765000000,
+      "utc": "2026-10-31T03:15:31.279514+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 54.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017728765000000,
+      "utc": "2026-10-31T03:15:31.279514+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 54.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017729765000000,
+      "utc": "2026-10-31T03:15:32.275147+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 55.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017729765000000,
+      "utc": "2026-10-31T03:15:32.275147+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 55.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017730765000000,
+      "utc": "2026-10-31T03:15:33.273341+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 56.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017730765000000,
+      "utc": "2026-10-31T03:15:33.273341+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 56.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017731765000000,
+      "utc": "2026-10-31T03:15:34.279618+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 57.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017731765000000,
+      "utc": "2026-10-31T03:15:34.279618+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 57.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017732765000000,
+      "utc": "2026-10-31T03:15:35.274031+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 58.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017732765000000,
+      "utc": "2026-10-31T03:15:35.274031+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 58.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017733765000000,
+      "utc": "2026-10-31T03:15:36.270996+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 59.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017733765000000,
+      "utc": "2026-10-31T03:15:36.270996+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 59.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017734765000000,
+      "utc": "2026-10-31T03:15:37.270421+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 60.0
+    },
+    {
+      "event": "native_checkpoint",
+      "monotonic_ns": 1017734765000000,
+      "utc": "2026-10-31T03:15:37.270421+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 60.0,
+      "nominal_seconds": 60,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017734765000000,
+      "utc": "2026-10-31T03:15:37.270421+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 60.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017734765000000,
+      "utc": "2026-10-31T03:15:37.270421+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 60.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017735765000000,
+      "utc": "2026-10-31T03:15:38.271376+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 61.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017735765000000,
+      "utc": "2026-10-31T03:15:38.271376+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 61.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017736765000000,
+      "utc": "2026-10-31T03:15:39.274792+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 62.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017736765000000,
+      "utc": "2026-10-31T03:15:39.274792+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 62.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017737765000000,
+      "utc": "2026-10-31T03:15:40.279150+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 63.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017737765000000,
+      "utc": "2026-10-31T03:15:40.279150+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 63.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017738765000000,
+      "utc": "2026-10-31T03:15:41.275365+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 64.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017738765000000,
+      "utc": "2026-10-31T03:15:41.275365+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 64.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017739765000000,
+      "utc": "2026-10-31T03:15:42.275280+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 65.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017739765000000,
+      "utc": "2026-10-31T03:15:42.275280+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 65.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017740765000000,
+      "utc": "2026-10-31T03:15:43.279589+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 66.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017740765000000,
+      "utc": "2026-10-31T03:15:43.279589+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 66.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017741765000000,
+      "utc": "2026-10-31T03:15:44.272063+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 67.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1017741765000000,
+      "utc": "2026-10-31T03:15:44.272063+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 67.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1624793088,
+        "peak_job_commit": 1624793088
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "natural_exit_observed",
+      "monotonic_ns": 1017742062000000,
+      "utc": "2026-10-31T03:15:44.579633+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "exit_code": 1,
+      "seconds_after_resume": 67.297
+    },
+    {
+      "event": "WaitForSingleObject_reaping",
+      "monotonic_ns": 1017742375000000,
+      "utc": "2026-10-31T03:15:44.886815+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "result": 0,
+      "maximum_ms": 5000,
+      "seconds_after_resume": 67.61
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1017742375000000,
+      "utc": "2026-10-31T03:15:44.886815+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 67.61
+    },
+    {
+      "event": "GetQueuedCompletionStatus_message",
+      "monotonic_ns": 1017742375000000,
+      "utc": "2026-10-31T03:15:44.886815+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 67.61
+    },
+    {
+      "event": "Job_notification_received",
+      "monotonic_ns": 1017742375000000,
+      "utc": "2026-10-31T03:15:44.886815+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "message_id": 7,
+      "message": "EXIT_PROCESS",
+      "subject_role": "OWNED_MATLAB",
+      "occurrence_timestamp": "NOT_PROVIDED_BY_API",
+      "seconds_after_resume": 67.61
+    },
+    {
+      "event": "GetQueuedCompletionStatus_message",
+      "monotonic_ns": 1017742375000000,
+      "utc": "2026-10-31T03:15:44.886815+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 67.61
+    },
+    {
+      "event": "Job_notification_received",
+      "monotonic_ns": 1017742375000000,
+      "utc": "2026-10-31T03:15:44.886815+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "message_id": 4,
+      "message": "ACTIVE_PROCESS_ZERO",
+      "subject_role": "NO_PROCESS_ID",
+      "occurrence_timestamp": "NOT_PROVIDED_BY_API",
+      "seconds_after_resume": 67.61
+    },
+    {
+      "event": "CloseHandle",
+      "monotonic_ns": 1017742375000000,
+      "utc": "2026-10-31T03:15:44.886815+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "role": "native_process",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 67.61
+    },
+    {
+      "event": "CloseHandle",
+      "monotonic_ns": 1017742390000000,
+      "utc": "2026-10-31T03:15:44.899305+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "role": "owned_job",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 67.625
+    },
+    {
+      "event": "CloseHandle",
+      "monotonic_ns": 1017742390000000,
+      "utc": "2026-10-31T03:15:44.899305+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "role": "completion_port",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 67.625
+    },
+    {
+      "event": "CloseHandle",
+      "monotonic_ns": 1017742390000000,
+      "utc": "2026-10-31T03:15:44.899305+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "role": "stdio_0",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 67.625
+    },
+    {
+      "event": "CloseHandle",
+      "monotonic_ns": 1017742390000000,
+      "utc": "2026-10-31T03:15:44.899305+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "role": "stdio_1",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 67.625
+    },
+    {
+      "event": "CloseHandle",
+      "monotonic_ns": 1017742390000000,
+      "utc": "2026-10-31T03:15:44.899305+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "role": "stdio_2",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 67.625
+    }
+  ],
+  "source": {
+    "role": "native_execution_receipt_raw.json",
+    "bytes": 80630,
+    "sha256": "55ab64743af07924b2a64aaf4c2a0e2dac049a9757fcfdfa53330437c744f9d9",
+    "git_blob": "257107797fca7c9c8fb6ea53369128c0e11a64a2"
+  },
+  "redaction": "host raw memory struct projected to GiB; no private paths or process identifiers published"
+}

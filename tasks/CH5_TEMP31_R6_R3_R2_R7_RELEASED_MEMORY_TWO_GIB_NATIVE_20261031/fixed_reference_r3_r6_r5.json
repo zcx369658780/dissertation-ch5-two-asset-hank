@@ -1,0 +1,100 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R7_RELEASED_MEMORY_TWO_GIB_NATIVE_20261031",
+  "sources": [
+    {
+      "role": "r6_review",
+      "ref": "d9380912094fee0f08a98c78453a93502610c892",
+      "path": "docs/CH5_TEMP31_R6_R3_R2_R6_TWO_GIB_HOST_CAPACITY_BLOCK_20261031_INDEPENDENT_ABC_FINAL_REVIEW.md",
+      "blob": "c4bbd3cee7206fc412aeb6447f08f1665d6c7983",
+      "bytes": 11090,
+      "sha256": "e92bf347a2ee272d1643987ee88bf3080a316003d4f666d1434135e7166852d0",
+      "git_blob": "c4bbd3cee7206fc412aeb6447f08f1665d6c7983",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "role": "r6_host",
+      "ref": "7af91f7923c8161953d11e2f6daf870c33c19be7",
+      "path": "tasks/CH5_TEMP31_R6_R3_R2_R6_TWO_GIB_NATIVE_STARTUP_20261031/host_memory_preflight.json",
+      "blob": "1a7f55f4f7c9b1fa93ee53a388fd263628512d29",
+      "bytes": 1644,
+      "sha256": "adb025bcdfe116f92b3c6ebfa950f93b278951419adc99d3d1d7c697a8449121",
+      "git_blob": "1a7f55f4f7c9b1fa93ee53a388fd263628512d29",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "role": "r6_controller",
+      "ref": "7af91f7923c8161953d11e2f6daf870c33c19be7",
+      "path": "validators/multi_province/temp31_r6_r3_r2_r6_two_gib_native_controller_isolated.py",
+      "blob": "722fd240c748f09ee212726a7dfb486eda7e49ed",
+      "bytes": 28530,
+      "sha256": "c38b2606d48ecd8f5a9466c00a93e2b8291bdb15ccfc656155fde728076c624e",
+      "git_blob": "722fd240c748f09ee212726a7dfb486eda7e49ed",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "role": "r6_probe",
+      "ref": "7af91f7923c8161953d11e2f6daf870c33c19be7",
+      "path": "validators/multi_province/temp31_r6_r3_r2_r6_two_gib_minimal_probe_isolated.m",
+      "blob": "7f1ea4579a5f8ac4a840b9a0890c8e3fcc558105",
+      "bytes": 1767,
+      "sha256": "886b5e6414a0a219360aff7e134189dc9609b47bdd98e9603fa49be65fe724da",
+      "git_blob": "7f1ea4579a5f8ac4a840b9a0890c8e3fcc558105",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "role": "r3_job",
+      "ref": "29ec5f7466da1ec951f491650fc27ca3f59ce02b",
+      "path": "tasks/CH5_TEMP31_R6_R3_R2_R3_EXPLICIT_NATIVE_120S_20261031/native_job_event_and_resource_receipt.json",
+      "blob": "dee4642b194845a020e3fb6a2b685b41e0ac3fe7",
+      "bytes": 3019,
+      "sha256": "8c617035ec453b54bc4b24c0dc1a18a11639f74260aa55886c5bc00673f41a2e",
+      "git_blob": "dee4642b194845a020e3fb6a2b685b41e0ac3fe7",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "role": "r5_review",
+      "ref": "e235b18a851bd6bce93ef9ead49a28dc4692473e",
+      "path": "docs/CH5_TEMP31_R6_R3_R2_R5_LOCAL_MINIDUMP_EXCEPTION_20261031_INDEPENDENT_ABC_FINAL_REVIEW.md",
+      "blob": "b38cbe4dc5a8ae062b0fdd65b153f94e1be00b4d",
+      "bytes": 8998,
+      "sha256": "42aea5f47ddd2d3ee0e8d703267a543a9950339c5b9d20ef467944ed91e4faea",
+      "git_blob": "b38cbe4dc5a8ae062b0fdd65b153f94e1be00b4d",
+      "attempts": 1,
+      "retries": 0
+    }
+  ],
+  "r3": {
+    "role": "ACTUAL_HISTORICAL_ONE_GIB_NATIVE",
+    "seal": "29ec5f7466da1ec951f491650fc27ca3f59ce02b",
+    "process_cap": 1073741824,
+    "job_cap": 1073741824,
+    "process_memory_limit_received_seconds": 16.266,
+    "peak_process_commit": 1073741824,
+    "peak_job_commit": 1073741824,
+    "natural_exit_seconds": 23.313,
+    "exit_code": "0xC00000FD",
+    "first_user_marker": "NOT_OBSERVED",
+    "reruns": 0
+  },
+  "r6": {
+    "role": "HOST_BLOCK_REFERENCE_NOT_NATIVE_CONTROL",
+    "seal": "7af91f7923c8161953d11e2f6daf870c33c19be7",
+    "available_physical_GiB": 3.3084678649902344,
+    "available_commit_GiB": 7.11492919921875,
+    "matlab_creations": 0,
+    "job_creations": 0,
+    "prefdir_creations": 0,
+    "stop": "STOP__R6_R3_R2_R6_HOST_CAPACITY_OR_RUNTIME_PREEXECUTION_GATE_BLOCKED"
+  },
+  "r5": {
+    "role": "FIXED_REVIEW_ONLY_NO_DUMP_READ",
+    "exception_stream": "0xC00000FD",
+    "stack_frames": 0,
+    "historical_root_cause": "UNKNOWN"
+  }
+}
