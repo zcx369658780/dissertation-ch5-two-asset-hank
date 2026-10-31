@@ -1,39 +1,36 @@
-# Local Task and Codex Workflow
+# Codex 与 GitHub 固定提交工作流（Owner批准，2026-10-25；2026-10-31复核）
 
-Updated: 2026-09-23. This replaces GitHub-heavy daily workflow requirements.
+STATUS=OWNER_APPROVED_CURRENT
+MODE=MANUAL_PER_TASK_NOT_AUTOMATED
+DEFAULT_WORKFLOW=GPT_FROZEN_TASK_SHEET__LOCAL_CODEX__SSH_CANDIDATE_BRANCH__GPT_FIXED_COMMIT_REVIEW__OWNER_DECISION
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
 
-## One bounded task
+## 1. 每项任务单独授权
 
-`TASK_CURRENT.md` is the only default Builder task. It states objective, allowed scope, inputs, checks, evidence, stop conditions, forbidden work, and expected terminal. A bounded task does not expand into a roadmap.
+GPT顾问仅在Owner授权后发布一张冻结任务单，必须列明唯一TASK_ID、治理HEAD、候选分支、固定parent、来源commit/tree/path/Blob、读写白名单、预算、STOP条件和验收字段。Owner将任务交给本地Codex执行。任务单本身不得超出Owner授权。
 
-## Start and execute
+## 2. 本地执行与候选发布
 
-1. Read `CURRENT.md`, `SCIENTIFIC_DECISIONS.md`, `TASK_CURRENT.md`, and `REVIEW_GATE.md`.
-2. Check local HEAD and worktree status.
-3. Read only directly relevant source/evidence.
-4. Execute the authorized scope and preserve the first scientific failure.
-5. Persist focused evidence and update local current state when the task permits.
+Codex先核验本地仓库、HEAD、worktree/index状态及任务允许路径；仅在获准的独立候选分支/目录执行。完成后通过已授权普通权限SSH推送独立候选分支，并回读commit、parent、tree、路径、Git Blob、大小及必要SHA-256。完成远端回读后STOP，不自动创建Issue/PR、不合并、不清理、不签发下一任务。
 
-Routine imports, paths, serialization, manifest, readback, and report defects may be repaired inside a task when they preserve the accepted scientific object and allowed paths. Actual scientific calls always count.
+遇平台、权限或安全拒绝必须STOP；不得换账号、凭据、协议、路径或其他方式绕过。GitHub插件连接器不是SSH推送前提。
 
-## Local Git
+## 3. GPT固定commit独立审阅
 
-- Local working tree, local commit, and local evidence are repository-state authority.
-- Use explicit staging and an atomic local commit when useful.
-- GitHub fetch, issue, branch, push, pull request, and remote readback are optional backup/publication actions, not daily completion or scientific acceptance gates.
-- Never equate a commit or publication with scientific acceptance.
-- Preserve unrelated dirty files; do not reset, clean, stash, force push, or overwrite user work for convenience.
+GPT/Astra直接从固定commit阅读足够的真实源码和证据上下文，独立审阅提交/来源、关键实现、数值和科学风险、隐私、实际终态及交付。摘要、哈希索引、ZIP或执行者结论不能替代必要原件。每阶段标记COMPLETED/BLOCKED/NOT_COMPLETED/NEXT_ACTION；工具故障为REVIEW_TOOL_ERROR，原字节/必要来源缺失为REVIEW_PENDING_IO。科学审阅与交付审阅分开。
 
-## Review
+## 4. 三个同步平面
 
-Use `REVIEW_GATE.md`. Reuse sealed evidence when it answers the review question. A completed task cannot be rerun or expanded by historical authority alone.
+GitHub仓库、Owner本地Codex工作区、ChatGPT Project Sources是三个独立同步平面。GitHub推送成功不证明本地Codex或Project Sources已同步；Project Source ZIP上传也不改变GitHub代码。每次同步必须核验具体commit/文件身份。
 
-After recording ACCEPT/REJECT, Work prepares the next bounded task automatically if existing authority determines the next action and no substantive Owner choice is needed. A rejected candidate receives a scoped repair or design task only when its target behavior is already authorized. Handoff defers task issuance to the resumed conversation; it does not grant execution authority by itself.
+## 5. 科研权限与安全
 
-## Local backup
+本流程不授权HA/HJB/KFE/GE/IRF、稳态、校准、福利、正式源修改或正式Results。任何科学执行、参数/方程/边界/网格/求解器/容差变更均需单独、明确、有限的Owner授权。永久科学状态按当前科学规则保持；本工作流不重置预算、不解除STOP/PENDING。
 
-- Use the Owner-designated destination on a different volume when available. A temporary `C:` destination is acceptable until replaced by an independent device or location.
-- Back up at scientific milestones and before high-risk source changes, not after every small edit. First commit the intended local state and check for unrelated dirty files.
-- Create a Git bundle covering the current branch history, record HEAD/tree, bundle SHA-256, source tree, and evidence identities, then run `git bundle verify` and a restore check in an isolated directory.
-- Git does not include untracked or ignored evidence. Copy only necessary named artifacts separately with relative paths, byte sizes, SHA-256, and readback; do not silently include secrets or unrelated files.
-- Backup failure is reported as a backup problem. It neither converts a scientific result to failure nor grants authority to bypass a required pre-change preservation gate.
+## 6. 当前科研路线专项规则
+
+自2026-10-31起，Python多省份HANK为唯一主动研究实现，MATLAB仅为历史参考；具体见`PROJECT_RULE_PYTHON_RESEARCH_MAINLINE_CURRENT_20261031.md`。本工作流管理任务和审阅，不决定科学结论。
