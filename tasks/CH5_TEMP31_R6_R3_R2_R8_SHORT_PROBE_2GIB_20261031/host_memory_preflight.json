@@ -1,0 +1,44 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R8_SHORT_PROBE_2GIB_20261031",
+  "status": "PASS",
+  "api": "GlobalMemoryStatusEx",
+  "api_calls": 1,
+  "api_success": true,
+  "win32_error": 0,
+  "structure_bytes": 64,
+  "fields_reliable": true,
+  "before": {
+    "monotonic_ns": 1026980843000000,
+    "utc": "2026-10-31T05:49:44.272689+00:00",
+    "clock_pair_order": "monotonic_then_UTC"
+  },
+  "observed": {
+    "monotonic_ns": 1026980843000000,
+    "utc": "2026-10-31T05:49:44.272689+00:00",
+    "clock_pair_order": "monotonic_then_UTC"
+  },
+  "values_GiB": {
+    "total_physical": 31.483287811279297,
+    "available_physical": 13.38608169555664,
+    "caller_available_commit": 24.579448699951172
+  },
+  "thresholds_GiB": {
+    "total_physical": 8,
+    "available_physical": 4,
+    "caller_available_commit": 3
+  },
+  "checks": {
+    "total_physical": true,
+    "available_physical": true,
+    "available_commit": true
+  },
+  "commit_field": "ullAvailPageFile; not RAM or working set inference",
+  "no_resample_or_wait": true,
+  "source": {
+    "role": "host_memory_preflight_raw.json",
+    "bytes": 1285,
+    "sha256": "a6a184de871b5661f957398ce5417c30a048967a9ae222a1571506d1f478fcfe",
+    "git_blob": "3d139aad6f7ad48748b7cd6b337214d6c9e2f3e7"
+  },
+  "redaction": "raw memory struct projected to GiB; unrelated virtual fields omitted"
+}

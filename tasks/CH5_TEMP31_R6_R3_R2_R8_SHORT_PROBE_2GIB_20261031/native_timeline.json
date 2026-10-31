@@ -1,0 +1,849 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R8_SHORT_PROBE_2GIB_20261031",
+  "clock_semantics": "paired monotonic then UTC; Job times are receipt times, not OS occurrence times",
+  "resume": {
+    "monotonic_ns": 1026980859000000,
+    "utc": "2026-10-31T05:49:44.284651+00:00",
+    "clock_pair_order": "monotonic_then_UTC"
+  },
+  "natural_exit_observation": {
+    "event": "natural_exit_observed",
+    "monotonic_ns": 1026989687000000,
+    "utc": "2026-10-31T05:49:53.101118+00:00",
+    "clock_pair_order": "monotonic_then_UTC",
+    "exit_code": 0
+  },
+  "native_elapsed_seconds": 8.828,
+  "first_marker_observed_seconds": 4.078,
+  "checkpoints": [],
+  "not_reached_checkpoints": [
+    30,
+    60,
+    90,
+    120
+  ],
+  "reason": "natural successful completion before30s; no forced wait and no120s sustained-run claim",
+  "events": [
+    {
+      "event": "initial_config_verify",
+      "monotonic_ns": 1026980843000000,
+      "utc": "2026-10-31T05:49:44.272180+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "source_route_identity_pass": true,
+      "executable_sha256": "4d251e680b8409d76d0524a1eb716de3c9e747386d3101e10f6ce1405ad1a59d",
+      "old_prefdir_entry_accesses": 0,
+      "seconds_after_resume": -0.016
+    },
+    {
+      "event": "static_matlab_name_argv_gate",
+      "monotonic_ns": 1026980843000000,
+      "utc": "2026-10-31T05:49:44.272689+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "status": "PASS",
+      "actual_stem": "temp31_r8_probe",
+      "actual_stem_length": 15,
+      "conservative_limit": 32,
+      "R2022b_limit": 63,
+      "source_identity": {
+        "bytes": 1790,
+        "sha256": "a1c6554a792233888e3860caf957be608548011dd852af6e7e570e9465fee3c3",
+        "git_blob": "8c969cb977c38519ee8d12fc2be2d6b2c6c8c17a"
+      },
+      "full_path_sha256": "0228d95fef60d522fac7e6795d4f32515b5514033befe75656ea1702a4187aab",
+      "run_target_equals_same_real_file": true,
+      "seconds_after_resume": -0.016
+    },
+    {
+      "event": "host_memory_preflight",
+      "monotonic_ns": 1026980843000000,
+      "utc": "2026-10-31T05:49:44.272689+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "status": "PASS",
+      "api": "GlobalMemoryStatusEx",
+      "api_calls": 1,
+      "api_success": true,
+      "win32_error": 0,
+      "before": {
+        "monotonic_ns": 1026980843000000,
+        "utc": "2026-10-31T05:49:44.272689+00:00",
+        "clock_pair_order": "monotonic_then_UTC"
+      },
+      "observed": {
+        "monotonic_ns": 1026980843000000,
+        "utc": "2026-10-31T05:49:44.272689+00:00",
+        "clock_pair_order": "monotonic_then_UTC"
+      },
+      "reliable_fields": true,
+      "checks": {
+        "total_physical": true,
+        "available_physical": true,
+        "available_commit": true
+      },
+      "available_commit_field": "ullAvailPageFile",
+      "semantic_scope": "Windows reported maximum additional commit for current caller; conservative caller-available headroom, not inferred from RAM or working set",
+      "system_pagefile_or_other_workload_changes": false,
+      "values_GiB": {
+        "total_physical": 31.483287811279297,
+        "available_physical": 13.38608169555664,
+        "caller_available_commit": 24.579448699951172
+      },
+      "thresholds_GiB": {
+        "total_physical": 8,
+        "available_physical": 4,
+        "caller_available_commit": 3
+      },
+      "seconds_after_resume": -0.016
+    },
+    {
+      "event": "prefdir_open_directory_FILE_ADD_FILE",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.275402+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "CloseHandle",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.275402+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "role": "prefdir_write_permission_directory_handle",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "prefdir_preflight_pass",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.275905+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "status": "PASS",
+      "role": "NEW_TASK_LOCAL_ONLY_FRESH_PREFDIR",
+      "created_exclusively": true,
+      "existed_before": false,
+      "empty_after_create": true,
+      "empty_after_permission_check": true,
+      "directory_FILE_ADD_FILE_access": true,
+      "no_reparse": true,
+      "canonical_within_new_LOCAL_ONLY": true,
+      "historical_alias_excluded": true,
+      "path_bytes_sha256": "972e4e3f3326b5060e3276c432dd88abbf46185f0e661ffa58957ef871922b92",
+      "child_only_override": true,
+      "old_prefdir_reads": 0,
+      "old_prefdir_enumerations": 0,
+      "old_prefdir_copies": 0,
+      "old_prefdir_writes": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "CreateJobObject",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.275905+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "SetJobLimits",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.275905+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.275905+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "QueryJobMembers",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.275905+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "CreateIoCompletionPort",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.275905+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "associate_completion_port_before_assignment",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.275905+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "QueryJobMembers",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.275905+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "create_stdio_stdin",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.275905+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "create_stdio_stdout",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.276615+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "create_stdio_stderr",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.276615+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "suspended_CreateProcess_begin",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.276615+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "creation_flags": 134218756,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "suspended_CreateProcess_return",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.284651+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "assign_job",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.284651+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "IsProcessInJob",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.284651+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "QueryJobMembers",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.284651+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.284651+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "GetQueuedCompletionStatus_message",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.284651+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "Job_notification_received",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.284651+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "message_id": 6,
+      "message": "NEW_PROCESS",
+      "subject_role": "OWNED_MATLAB",
+      "occurrence_timestamp": "NOT_PROVIDED_BY_API",
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "ResumeThread_begin",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.284651+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "ResumeThread_return",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.284651+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "previous_suspend_count": 1,
+      "ok": true,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "deadline_set",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.284651+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "origin_monotonic_ns": 1026980859000000,
+      "deadline_monotonic_ns": 1027100859000000,
+      "maximum_seconds": 120,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "CloseHandle",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.284651+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "role": "native_primary_thread",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.284651+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 0.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1026980859000000,
+      "utc": "2026-10-31T05:49:44.284651+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 0.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 380928,
+        "peak_job_commit": 380928
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1026981859000000,
+      "utc": "2026-10-31T05:49:45.281244+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 1.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1026981859000000,
+      "utc": "2026-10-31T05:49:45.281244+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 1.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 363184128,
+        "peak_job_commit": 363184128
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1026982859000000,
+      "utc": "2026-10-31T05:49:46.281866+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 2.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1026982859000000,
+      "utc": "2026-10-31T05:49:46.281866+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 2.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 912285696,
+        "peak_job_commit": 912285696
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1026983859000000,
+      "utc": "2026-10-31T05:49:47.276379+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 3.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1026983859000000,
+      "utc": "2026-10-31T05:49:47.276379+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 3.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1005563904,
+        "peak_job_commit": 1005563904
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1026984859000000,
+      "utc": "2026-10-31T05:49:48.278449+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 4.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1026984859000000,
+      "utc": "2026-10-31T05:49:48.278449+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 4.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1165361152,
+        "peak_job_commit": 1165361152
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "MATLAB_marker_observed",
+      "monotonic_ns": 1026984937000000,
+      "utc": "2026-10-31T05:49:48.361588+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "stage": "ENTERED_MATLAB_USER_SCRIPT",
+      "MATLAB_utc": "2026-10-31T05:49:48.307Z",
+      "observed": {
+        "monotonic_ns": 1026984937000000,
+        "utc": "2026-10-31T05:49:48.361588+00:00",
+        "clock_pair_order": "monotonic_then_UTC"
+      },
+      "seconds_after_resume": 4.078,
+      "raw_identity": {
+        "bytes": 199,
+        "sha256": "e1ddbb7fad4269761314c841b4e4c1c9425ec9a4e9701a5354061af5710f4bc0",
+        "git_blob": "d75d43742a8fce8199e24aee765a3474f42d2e54"
+      }
+    },
+    {
+      "event": "MATLAB_marker_observed",
+      "monotonic_ns": 1026984953000000,
+      "utc": "2026-10-31T05:49:48.372635+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "stage": "PREFDIR_MATCH",
+      "MATLAB_utc": "2026-10-31T05:49:48.360Z",
+      "observed": {
+        "monotonic_ns": 1026984953000000,
+        "utc": "2026-10-31T05:49:48.372635+00:00",
+        "clock_pair_order": "monotonic_then_UTC"
+      },
+      "seconds_after_resume": 4.094,
+      "raw_identity": {
+        "bytes": 644,
+        "sha256": "55eeddb23203c54a98f04cb20adbf51865bc55625222f7ddf2ccc3263ab1766f",
+        "git_blob": "a1d52d3e0b5e097258150ef0c589745d97717a16"
+      },
+      "PREFDIR_EQUALS_EXPECTED": true,
+      "actual_path_sha256": "972e4e3f3326b5060e3276c432dd88abbf46185f0e661ffa58957ef871922b92",
+      "expected_path_sha256": "972e4e3f3326b5060e3276c432dd88abbf46185f0e661ffa58957ef871922b92"
+    },
+    {
+      "event": "MATLAB_marker_observed",
+      "monotonic_ns": 1026984968000000,
+      "utc": "2026-10-31T05:49:48.394579+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "stage": "MATLAB_VERSION",
+      "MATLAB_utc": "2026-10-31T05:49:48.377Z",
+      "observed": {
+        "monotonic_ns": 1026984968000000,
+        "utc": "2026-10-31T05:49:48.394579+00:00",
+        "clock_pair_order": "monotonic_then_UTC"
+      },
+      "seconds_after_resume": 4.109,
+      "raw_identity": {
+        "bytes": 240,
+        "sha256": "a15c893c68842c6369c32e5110130d85b9e2bbe945e1b2287ecd2062a9f991e2",
+        "git_blob": "55b2bb0b79cae1d224a26f4b8dc4a4e9d7862bb9"
+      },
+      "version": "9.13.0.2049777 (R2022b)",
+      "release": "2022b"
+    },
+    {
+      "event": "MATLAB_marker_observed",
+      "monotonic_ns": 1026984984000000,
+      "utc": "2026-10-31T05:49:48.405277+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "stage": "SPARSE_PROBE_PASS",
+      "MATLAB_utc": "2026-10-31T05:49:48.392Z",
+      "observed": {
+        "monotonic_ns": 1026984984000000,
+        "utc": "2026-10-31T05:49:48.405277+00:00",
+        "clock_pair_order": "monotonic_then_UTC"
+      },
+      "seconds_after_resume": 4.125,
+      "raw_identity": {
+        "bytes": 225,
+        "sha256": "538b7252028b77415eea9ac448e398e55b85cd7e4efe530beeb9f32977e402a7",
+        "git_blob": "f7f314c15170347af9fafe73f175d5decf69795e"
+      },
+      "sparse": {
+        "rows": 1,
+        "cols": 1,
+        "nnz": 1,
+        "value": 1
+      }
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1026985859000000,
+      "utc": "2026-10-31T05:49:49.278909+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 5.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1026985859000000,
+      "utc": "2026-10-31T05:49:49.278909+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 5.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [
+        "ENTERED_MATLAB_USER_SCRIPT",
+        "PREFDIR_MATCH",
+        "MATLAB_VERSION",
+        "SPARSE_PROBE_PASS"
+      ],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1218478080,
+        "peak_job_commit": 1218478080
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1026986859000000,
+      "utc": "2026-10-31T05:49:50.279707+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 6.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1026986859000000,
+      "utc": "2026-10-31T05:49:50.279707+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 6.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [
+        "ENTERED_MATLAB_USER_SCRIPT",
+        "PREFDIR_MATCH",
+        "MATLAB_VERSION",
+        "SPARSE_PROBE_PASS"
+      ],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1218478080,
+        "peak_job_commit": 1218478080
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1026987859000000,
+      "utc": "2026-10-31T05:49:51.273111+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 7.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1026987859000000,
+      "utc": "2026-10-31T05:49:51.273111+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 7.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [
+        "ENTERED_MATLAB_USER_SCRIPT",
+        "PREFDIR_MATCH",
+        "MATLAB_VERSION",
+        "SPARSE_PROBE_PASS"
+      ],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1218478080,
+        "peak_job_commit": 1218478080
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1026988859000000,
+      "utc": "2026-10-31T05:49:52.273634+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 8.0
+    },
+    {
+      "event": "native_activity_snapshot",
+      "monotonic_ns": 1026988859000000,
+      "utc": "2026-10-31T05:49:52.273634+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "seconds_after_resume": 8.0,
+      "nominal_seconds": null,
+      "process_exit_code": 259,
+      "markers": [
+        "ENTERED_MATLAB_USER_SCRIPT",
+        "PREFDIR_MATCH",
+        "MATLAB_VERSION",
+        "SPARSE_PROBE_PASS"
+      ],
+      "resource": {
+        "flags": 8968,
+        "process_commit_limit": 2147483648,
+        "job_commit_limit": 2147483648,
+        "active_process_limit": 1,
+        "breakaway_allowed": false,
+        "kill_on_job_close": true,
+        "peak_process_commit": 1218478080,
+        "peak_job_commit": 1218478080
+      },
+      "termination_already_requested": false
+    },
+    {
+      "event": "natural_exit_observed",
+      "monotonic_ns": 1026989687000000,
+      "utc": "2026-10-31T05:49:53.101118+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "exit_code": 0,
+      "seconds_after_resume": 8.828
+    },
+    {
+      "event": "WaitForSingleObject_reaping",
+      "monotonic_ns": 1026989890000000,
+      "utc": "2026-10-31T05:49:53.311283+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "result": 0,
+      "maximum_ms": 5000,
+      "seconds_after_resume": 9.031
+    },
+    {
+      "event": "QueryJobLimits",
+      "monotonic_ns": 1026989890000000,
+      "utc": "2026-10-31T05:49:53.311283+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 9.031
+    },
+    {
+      "event": "GetQueuedCompletionStatus_message",
+      "monotonic_ns": 1026989890000000,
+      "utc": "2026-10-31T05:49:53.311283+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 9.031
+    },
+    {
+      "event": "Job_notification_received",
+      "monotonic_ns": 1026989890000000,
+      "utc": "2026-10-31T05:49:53.311283+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "message_id": 7,
+      "message": "EXIT_PROCESS",
+      "subject_role": "OWNED_MATLAB",
+      "occurrence_timestamp": "NOT_PROVIDED_BY_API",
+      "seconds_after_resume": 9.031
+    },
+    {
+      "event": "GetQueuedCompletionStatus_message",
+      "monotonic_ns": 1026989890000000,
+      "utc": "2026-10-31T05:49:53.311283+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 9.031
+    },
+    {
+      "event": "Job_notification_received",
+      "monotonic_ns": 1026989890000000,
+      "utc": "2026-10-31T05:49:53.311283+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "message_id": 4,
+      "message": "ACTIVE_PROCESS_ZERO",
+      "subject_role": "NO_PROCESS_ID",
+      "occurrence_timestamp": "NOT_PROVIDED_BY_API",
+      "seconds_after_resume": 9.031
+    },
+    {
+      "event": "CloseHandle",
+      "monotonic_ns": 1026989890000000,
+      "utc": "2026-10-31T05:49:53.311283+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "role": "native_process",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 9.031
+    },
+    {
+      "event": "CloseHandle",
+      "monotonic_ns": 1026989890000000,
+      "utc": "2026-10-31T05:49:53.311283+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "role": "owned_job",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 9.031
+    },
+    {
+      "event": "CloseHandle",
+      "monotonic_ns": 1026989890000000,
+      "utc": "2026-10-31T05:49:53.311283+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "role": "completion_port",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 9.031
+    },
+    {
+      "event": "CloseHandle",
+      "monotonic_ns": 1026989890000000,
+      "utc": "2026-10-31T05:49:53.311283+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "role": "stdio_0",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 9.031
+    },
+    {
+      "event": "CloseHandle",
+      "monotonic_ns": 1026989890000000,
+      "utc": "2026-10-31T05:49:53.311283+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "role": "stdio_1",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 9.031
+    },
+    {
+      "event": "CloseHandle",
+      "monotonic_ns": 1026989890000000,
+      "utc": "2026-10-31T05:49:53.311283+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "role": "stdio_2",
+      "ok": true,
+      "win32_error": 0,
+      "seconds_after_resume": 9.031
+    }
+  ],
+  "source": {
+    "role": "native_execution_receipt_raw.json",
+    "bytes": 30913,
+    "sha256": "6cccbda5a9ba3a974d814c0d656791f6acd766124ef686dc59b963751b296fb3",
+    "git_blob": "69eb9c7fe8ab3c3eab1384f3ffc8ab22d9ec8aba"
+  },
+  "redaction": "raw host memory struct projected to GiB; marker actual/expected paths represented by equality and hashes; raw marker nonce excluded"
+}

@@ -1,0 +1,87 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R8_SHORT_PROBE_2GIB_20261031",
+  "status": "PASS_BEFORE_CONTROLLER",
+  "entry_identity": {
+    "bytes": 8043,
+    "sha256": "dd292fc33d9c28664e8f9bebda1bc12fb14adc7ba9c0454d4f576159abb49c7c",
+    "git_blob": "737e4d8c49cbe48f74ecc6fbe44b1e17ba3ec1ab"
+  },
+  "controller_identity": {
+    "bytes": 33588,
+    "sha256": "77e40b93b1ebe5a2c18f21b0362d020d735519734c4a9df5785f8f0d726d6146",
+    "git_blob": "ede25554d6e33a82f3b44fda610dc0891e44dbd1"
+  },
+  "probe_identity": {
+    "bytes": 1790,
+    "sha256": "a1c6554a792233888e3860caf957be608548011dd852af6e7e570e9465fee3c3",
+    "git_blob": "8c969cb977c38519ee8d12fc2be2d6b2c6c8c17a"
+  },
+  "contract_identity": {
+    "bytes": 19802,
+    "sha256": "7ae1c5fcc41f7e9f7e723bc001b92baa8d0fee8165924f5e923a8632ea2eb18c",
+    "git_blob": "773786f094a33d19b2d34a3a48180dc94c6b6b12"
+  },
+  "source_gate_identity": {
+    "bytes": 4601,
+    "sha256": "0180e1ee8a822810981a9869b6f538357bc5df37c492544c65344d82ade92b39",
+    "git_blob": "3056d98729b1ce7707a2ab73eb8281dc01d40b2e"
+  },
+  "entry_invocations": 1,
+  "controller_function_calls": 1,
+  "direct_same_Python_process": true,
+  "second_Python_controller_dispatches": 0,
+  "outer_python_wrapper_processes": 0,
+  "isolated_flags": [
+    "-I",
+    "-S",
+    "-B"
+  ],
+  "negative_cases": [
+    {
+      "case": "MISSING_CONTRACT_BLOB",
+      "rejected": true,
+      "error": "MISSING_OR_EXTRA_IDENTITY_FIELD",
+      "side_effects": 0
+    },
+    {
+      "case": "R40_TASK_REPLACEMENT",
+      "rejected": true,
+      "error": "EXACT_IDENTITY_task_id",
+      "side_effects": 0
+    },
+    {
+      "case": "WRONG_COMMIT_AND_BLOB",
+      "rejected": true,
+      "error": "EXACT_IDENTITY_contract_commit",
+      "side_effects": 0
+    }
+  ],
+  "default_router_reads": 0,
+  "r40_invocations": 0,
+  "old_controllers_or_canaries_executed": 0,
+  "shell_dispatches": 0,
+  "entry_exit": 0,
+  "outer_elapsed_seconds": 9.1794995,
+  "private_nonce": "new R8 sealed plan and child-only TEMP31_RUN_NONCE; never public",
+  "sources": [
+    {
+      "role": "explicit_route_pre_execution_gate_raw.json",
+      "bytes": 1311,
+      "sha256": "a1d321595e86fab99772edab5a519bcf9516e0fcac3488d64bac3864403e5e9f",
+      "git_blob": "25c7b311a39c84f2f32d44e8d06c1a7778e04513"
+    },
+    {
+      "role": "explicit_entry_execution_receipt_raw.json",
+      "bytes": 392,
+      "sha256": "f9b8975618190062f1eb5b4dc0586f62869ceebf02477ab52541beb8570abb37",
+      "git_blob": "0047412959245b408c458438c1de646b7c1dacf3"
+    },
+    {
+      "role": "outer_execution_receipt_raw.json",
+      "bytes": 437,
+      "sha256": "85e7f94c9a09356e7e70e20f79b15bd99ade8d95cde1d648f5fc45dfb55d4061",
+      "git_blob": "8501f2570c067e75d86a3fd5439be292db7d7810"
+    }
+  ],
+  "redaction": "raw argv, cwd, paths and nonce stay LOCAL_ONLY; outer capture is PowerShell decoded presentation text, not raw native stdout"
+}

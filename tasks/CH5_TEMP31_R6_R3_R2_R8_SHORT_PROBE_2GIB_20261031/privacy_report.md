@@ -1,0 +1,5 @@
+# Mandatory original privacy gate
+
+Scanner source SHA256=95f5de1f1d926de8683ff721bd1bcdcf2f7c90bdc52c1f6be799cfd3cb624ad2. Original155-byte STOP_PRIVATE_PAYLOAD assertion SHA256=38f498e140dd2d583d0ab760d0294a29f30b4cd1e73e8ee045240daaa4ea34ee is compiled from its AST unchanged and applied to every actual public payload/seal byte, including manifest. Added JSON/AST/GUID and exact nonce checks never replace or relax it. Stage scan receipts bind exact files.
+
+New raw logs/markers, full memory struct, actual absolute paths/argv, Python object identity, process identity, private nonce, environment configuration and preference metadata remain LOCAL_ONLY. Public static gate replaces full path/command/object address by roles and path hash. Timeline replaces raw host struct with GiB; marker data omits nonce and replaces actual prefdir with equality/hashes; source receipt raw bytes/SHA256 identities bind derivatives. Runtime version and1x1 sparse values are explicitly allowed public fields. No raw MATLAB log or preference content is uploaded or cleaned. Final seal own identity is external LOCAL_ONLY, never a third commit.

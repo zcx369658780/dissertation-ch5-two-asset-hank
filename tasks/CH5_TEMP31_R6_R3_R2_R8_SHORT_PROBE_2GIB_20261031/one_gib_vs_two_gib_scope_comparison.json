@@ -1,0 +1,57 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R8_SHORT_PROBE_2GIB_20261031",
+  "executable_sha256": "4d251e680b8409d76d0524a1eb716de3c9e747386d3101e10f6ce1405ad1a59d",
+  "common": {
+    "active_processes": 1,
+    "no_breakaway": true,
+    "kill_on_close": true,
+    "completion_port": true,
+    "native_window_seconds": 120,
+    "compatible_argv": true,
+    "nojvm": false
+  },
+  "R3_one_gib": {
+    "actual": true,
+    "process_job_cap": 1073741824,
+    "peak_commit": 1073741824,
+    "memory_notification": "PROCESS_MEMORY_LIMIT +16.266s",
+    "native_exit": "0xC00000FD",
+    "exit_seconds": 23.313,
+    "first_marker": false
+  },
+  "R6": {
+    "actual_native": false,
+    "role": "host block only"
+  },
+  "R7_two_gib": {
+    "actual": true,
+    "process_job_cap": 2147483648,
+    "peak_commit": 1624793088,
+    "native_exit": 1,
+    "exit_seconds": 67.297,
+    "first_marker": false,
+    "loader_failure": "65-character probe truncated to63"
+  },
+  "R8_two_gib": {
+    "actual": true,
+    "process_job_cap": 2147483648,
+    "peak_process_commit": 1218478080,
+    "peak_job_commit": 1218478080,
+    "native_exit": 0,
+    "exit_seconds": 8.828,
+    "first_marker_seconds": 4.078,
+    "prefdir_match": true,
+    "release": "2022b",
+    "one_by_one_sparse": "PASS",
+    "memory_limit_notification_observed": false,
+    "short_stem_length": 15
+  },
+  "differences": [
+    "short probe replaces historical65-character stem with15; static name/argv gate is new",
+    "new task root, blank prefdir and private nonce",
+    "different time, host state and initialization/cache state not controlled"
+  ],
+  "interpretation": "R8 directly demonstrates a minimal script completed in this2GiB configuration. It resolves this invocation name incompatibility, not historical root-cause uniqueness or strict resource causality.",
+  "historical_R3_and_old_timeout_unique_causes": "UNKNOWN",
+  "scientific_equivalence": "NOT_TESTED"
+}

@@ -1,0 +1,3 @@
+# Historical protection
+
+R7 original65-character probe and STOP, R3 actual1GiB native evidence, R5 dump review, R6 host-block result and every earlier STOP are preserved. Only fixed public GitHub sources were read as references; no historical raw logs, prefs or dump opened/enumerated/copied/cleaned. The exact prior configuration executable locator field was used solely for current rehash.23 existing local refs were snapshotted, and delivery allows only this new R8 candidate. No R40 index/global launcher/AGENTS or formal science source changed. No new repo/worktree, reset/rebase/stash/clean/force-push, merge or successor.
