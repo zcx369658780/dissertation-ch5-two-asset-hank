@@ -1,0 +1,139 @@
+# R12：R8认证MATLAB入口下的固定输入双端稀疏算子对照
+
+TASK_ID=CH5_TEMP31_R6_R3_R2_R12_R8_EXE_FIXED_INPUT_OPERATOR_PARITY_20261031
+STATUS=ISSUED_AWAITING_OWNER_TRANSFER
+OWNER_AUTHORIZATION=2026-10-31__USE_EXACT_R8_SUCCESSFUL_EXECUTABLE_IDENTITY__ONE_NEW_2GIB_120S_SYNTHETIC_OPERATOR_PARITY
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_PARENT=2810f44f0282a179c392d4350cec4ca2bcb76b55
+GOVERNANCE_PARENT_TREE=e237e4abb3e6f4723ab31ca648b7ab3b9ae1463f
+TASK_CONTRACT_PATH=tasks/CH5_TEMP31_R6_R3_R2_R12_R8_EXE_FIXED_INPUT_OPERATOR_PARITY_20261031/CONTRACT.md
+TASK_PUBLICATION_COMMIT=GPT_SUPPLIES_AFTER_PUBLICATION
+CANDIDATE_BRANCH=codex/ch5-temp31-r6-r3-r2-r12-r8-exe-fixed-input-operator-parity-20261031
+FIXED_SCIENTIFIC_PARENT=56447829ce0e6c3c85552c53c351b26a2452a4bd
+FIXED_SCIENTIFIC_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
+R11_REVIEW=2810f44f0282a179c392d4350cec4ca2bcb76b55
+R11_SEAL=b55dfee755c27c66c4c542fe1e9a9fa7ceea464e
+R11_PRIVATE_RECEIPT=tasks/CH5_TEMP31_R6_R3_R2_R11_EXE_LOCATOR_READONLY_AUDIT_20261031/LOCAL_ONLY/audit_execution_receipt_raw.json
+R11_RECEIPT_BYTES=9727
+R11_RECEIPT_SHA256=fbad8b46f2f23285eb00822b31343ce058508f451c62e4e9b516cc3a9bba13cd
+R11_RECEIPT_GIT_BLOB=598d48593cbfbe9594ece6719aee190f536e3e89
+R11_ONLY_ROLE=R8_SUCCESS_TARGET
+R11_ONLY_FIELDS=locator,identity
+R11_RECEIPT_READS=1
+R8_EXE_BYTES=235648
+R8_EXE_SHA256=4d251e680b8409d76d0524a1eb716de3c9e747386d3101e10f6ce1405ad1a59d
+R8_EXE_GIT_BLOB=5a86b6a05b04b64e64272a30dba725eeee12bfee
+R10_EXE_MUST_NOT_BE_READ_OR_USED=TRUE
+MATLAB_SOURCE=validators/multi_province/call725_policy_operator_stability/matlab_trajectory.m
+MATLAB_SOURCE_BLOB=0e38270154ab8953290ae3ef6c92f95d38230afb
+MATLAB_FUNCTION=axis_operator_LINES_110_TO_130
+PYTHON_SOURCE=src/ch5_two_asset_hank/matlab_faithful_operator.py
+PYTHON_SOURCE_BLOB=9a511e151c9bf449412dc5605dfa1a2076711277
+INDEXING_SOURCE=src/ch5_two_asset_hank/indexing.py
+INDEXING_SOURCE_BLOB=3aee864af5dce5128957896e5d7803c2a815aab6
+R9_FIXTURE_SPEC=tasks/CH5_TEMP31_R6_R3_R2_R9_FIXED_SMALL_OPERATOR_PARITY_20261031/fixed_fixtures_spec.json
+R9_FIXTURE_SPEC_BLOB=918d02947f5de5956e273c56eb120f0cdd3b3056
+F1_SHAPE=2,2,2
+F1_BYTES=415
+F1_SHA256=28463dcec6577cb9c13193febfe54181a97adfea1485caa98c0799972404588a
+F1_GIT_BLOB=692eea67ba06aa24fcc9911fe4be8894b0ac11e3
+F2_SHAPE=3,2,2
+F2_BYTES=516
+F2_SHA256=58025487a12361b6ccd36334ac8054f0f321046247e8e86f5d51ff6241ebca40
+F2_GIT_BLOB=88a92741effcd0a63d101eebb965caccd01fb420
+FIELDS=b_backward,b_forward,a_backward,a_forward
+POOL=0,0.125,-0.25,0.5,-0.75,0.25,-0.125,0.75
+FIELD_FORMULA=pool[(k*(2*f+1)+f+1)%8]
+VECTOR_FORMULA=((k%7)-3)/8
+F1_SWITCH=-0.25,0.25;0.125,-0.125
+F2_SWITCH=-0.5,0.5;0.25,-0.25
+SERIALIZATION=json.dumps(payload,sort_keys=True,separators=(',',':'),allow_nan=False).encode('ascii')
+MATRICES=BB,AAH,Bswitch,A
+MAX_FIXTURES=2
+MAX_STATES=12
+MAX_MATRIX_PAIRS=8
+MAX_SCALAR_COMPARISONS=832
+MAX_MATVEC_PAIRS=8
+ATOL=1e-12
+RTOL=1e-12
+EXACT_SUPPORT_DIFFERENCE=0
+MAX_R11_RECEIPTS=1
+MAX_EXECUTABLE_FILES=1
+MAX_EXECUTABLE_BYTES=1048576
+MAX_EXECUTABLE_HASH_PASSES=1
+MAX_FILE_ID_QUERIES=1
+MAX_GLOBALMEMORYSTATUSEX=1
+MIN_TOTAL_RAM=8_GIB
+MIN_AVAILABLE_RAM=4_GIB
+MIN_AVAILABLE_COMMIT=3_GIB
+MAX_MATLAB_PROCESSES=1
+MAX_JOBS=1
+MAX_PREFDIRS=1
+PROCESS_AND_JOB_COMMIT_LIMIT=2_GIB
+JOB_ACTIVE_PROCESSES=1
+JOB_BREAKAWAY=FALSE
+JOB_KILL_ON_CLOSE=TRUE
+MAX_RUNTIME_AFTER_RESUME=120_SECONDS
+MAX_REAP=5_SECONDS
+MAX_RETRIES=0
+MATLAB_RELEASE=R2022b
+MATLAB_RUNNER=validators/multi_province/t31_r12_op.m
+MATLAB_RUNNER_STEM_LENGTH=10
+MAX_MAIN2_M=0
+MAX_HANK_HA_HJB_KFE_GE_IRF=0
+MAX_REAL_31_PROVINCE_READS=0
+MAX_OLD_NPZ_MAT_READS=0
+MAX_LINEAR_SOLVES=0
+MAX_SCIENCE_SOURCE_WRITES=0
+AUTO_NEXT=FALSE
+
+## 0. 授权与科学边界
+
+Owner同意以R8曾成功运行且R11当前只读身份复核通过的同一可执行文件定位和235648-byte内容身份为基础，签发独立R12任务。R12不复活R9/R10，不结转旧MATLAB预算，不修改R10哈希，不使用R10的327408-byte标准bin入口。
+
+唯一问题：两组合成输入下，历史提取MATLAB axis_operator与冻结Python assemble_source_operator是否生成同索引、同非零支持、逐元素一致的BB、AAH、Bswitch、A矩阵，并对同一确定性向量给出一致matvec。最高结论仅为PASS_BOUNDED_SYNTHETIC_SOURCE_ASSEMBLY_EIGHT_MATRIX_ELEMENTWISE，不代表真实31省HANK后置算子、HJB/KFE、GE/IRF或论文Results通过。
+
+## 1. R8可执行文件身份门
+
+只允许打开R11_PRIVATE_RECEIPT一次，核验9727 bytes、SHA256和Git Blob，只抽取targets中role=R8_SUCCESS_TARGET的locator及identity。不得分析R10 target locator、其它R8/R10私有回执或R9路径。回执缺失、身份变化或字段缺失即STOP__R12_R8_EXECUTABLE_LOCATOR_OR_SOURCE_IDENTITY_BLOCKED，不猜路径、不全盘搜索。
+
+从精确locator只读打开一个可执行文件，验证绝对本地路径、fixed drive、regular .exe、无UNC/symlink/junction/reparse及前后稳定性；最多1MiB读取一次、SHA256一次、Windows File ID查询一次。必须匹配235648 bytes、R8_EXE_SHA256及R8_EXE_GIT_BLOB。若不匹配，MATLAB/Job/prefdir/fixture/Python矩阵/host sample均0。绝不读取R10可执行文件或替代入口，不修改哈希、不复制或改名。
+
+## 2. 冻结来源与fixture
+
+MATLAB只从固定科学parent的MATLAB_SOURCE提取第110–130行axis_operator函数体；新runner须逐行或规范化字节证明等价，禁止运行整份matlab_trajectory.m。Python真正调用PYTHON_SOURCE中的assemble_source_operator/assemble_source_axis及INDEXING_SOURCE函数；缺包只允许固定GitHub原字节LOCAL_ONLY窄模块加载，不修改函数体、不联网安装、不手写替代算法。
+
+按R9固定spec在R12新LOCAL_ONLY重建两份ASCII JSON，不读R9/R10旧LOCAL_ONLY输入或矩阵。字段、pool、field公式、vector公式、switch和序列化严格按合同头部。真实readback匹配F1/F2字节、SHA256、Git Blob；任一不符即STOP，不调fixture。
+
+索引采用MATLAB第一轴优先/Fortran顺序：MATLAB row=i1+(j1-1)I+(z1-1)IJ，Python k=i0+I(j0+Jz0)；MATLAB axis1对应Python axis0/stride1，axis2对应Python axis1/stride I。边界外向邻接截断，但对角-(backward+forward)仍保留，不要求边界行和为0。Bswitch按MATLAB kron(switch,speye(IJ))与Python sparse.kron(switch,eye(IJ))配对。
+
+## 3. 预执行门与单次MATLAB运行
+
+先核R11 receipt、R8当前二进制、固定源、R12 fixture、索引、短名、run argv一致性、MATLAB函数体和纯内存负例。MATLAB唯一脚本为MATLAB_RUNNER，stem长度10。硬门全部通过前不创建MATLAB/Job/prefdir。
+
+Python从R12新落盘fixture重新读取，冻结assemble_source_operator恰好调用2次、axis函数共4次，生成8个Python矩阵；不得复用R9旧矩阵。NumPy/SciPy仅用本机已有依赖，网络pip安装0。
+
+GlobalMemoryStatusEx最多一次；总物理>=8GiB、可用物理>=4GiB、可用commit>=3GiB。任一失败STOP__R12_HOST_CAPACITY_OR_NATIVE_PREEXECUTION_GATE_BLOCKED；MATLAB/Job/prefdir均0，不重测、不等待、不改pagefile、不关闭用户进程。
+
+若通过，创建R12独立空prefdir及child-only MATLAB_PREFDIR。只允许R8精确locator启动MATLAB。Process/Job committed limits各2GiB、ActiveProcessLimit=1、no-breakaway、kill-on-close、completion port；CREATE_SUSPENDED后完成Job挂接、成员和限额readback才ResumeThread。参数仅-nodesktop -nosplash -singleCompThread -logfile LOCAL_ONLY -batch run(新runner)。禁止-nojvm、-r、MATLAB Engine和第二进程。Resume后120秒硬截止；30/60/90/120检查点，提前自然退出则后续NOT_REACHED；超时仅终止owned Job一次并5秒内回收。0重试。
+
+MATLAB runner只加载两份R12输入，验证原始字节、Fortran索引、R2022b与prefdir，调用提取axis_operator及kron组装BB、AAH、Bswitch、A，写出真实MATLAB稀疏矩阵、输入回显、索引表和8组matvec。不得运行旧完整MATLAB源、main2.m、HJB/KFE/GE/IRF或线性求解。
+
+## 4. 比较规则
+
+仅当MATLAB实际完成两组输入、marker完整、prefdir/version匹配、真实输出文件存在且exit0后，才允许一次comparator。Python端从R12 fixture重新读取并调用冻结源码；MATLAB矩阵必须来自MATLAB真实输出，不能用Python期望冒充。
+
+2 fixtures×4 matrices=8矩阵，8x8及12x12，总计832个元素位置。比较shape、finite float64、stored nnz、exact nonzero support、全部元素、最大绝对/相对误差、超差坐标、边界对角、第二轴stride及8组matvec。规则abs(p-m)<=1e-12+1e-12*max(abs(p),abs(m))；support差异必须0；NaN/Inf或字段缺失FAIL。核两端A=BB+AAH+Bswitch。不得round/clip/重排/修改输入或放宽阈值。任一不一致STOP__R12_SOURCE_OPERATOR_ELEMENTWISE_MISMATCH_REQUIRES_REVIEW。MATLAB未运行则8项全部NOT_TESTED，误差与support差异为null，不填0。
+
+## 5. 文件、隐私、交付与STOP
+
+仅新增四份隔离源码：validators/multi_province/t31_r12_op.m、temp31_r12_explicit_entry_isolated.py、temp31_r12_native_controller_isolated.py、temp31_r12_fixture_and_compare_isolated.py。
+
+唯一公开任务目录为tasks/CH5_TEMP31_R6_R3_R2_R12_R8_EXE_FIXED_INPUT_OPERATOR_PARITY_20261031/，只按实际阶段添加报告、来源/fixture/身份/主机/Job/marker/比较/隐私/manifest/交付证据。R11私有receipt、R8可执行路径、R12原始fixture、矩阵、MAT文件、原始日志、nonce、PID、绝对路径均LOCAL_ONLY。
+
+原强制隐私scanner SHA256=95f5de1f1d926de8683ff721bd1bcdcf2f7c90bdc52c1f6be799cfd3cb624ad2；原155-byte STOP_PRIVATE_PAYLOAD AST assertion SHA256=38f498e140dd2d583d0ab760d0294a29f30b4cd1e73e8ee045240daaa4ea34ee，必须原样执行。payload/seal两阶段普通SSH各最多一次；逐文件核commit/parent/tree/Git Blob/UTF8 bytes/SHA256/manifest；seal只新增DELIVERY_FINAL_RECEIPT.json，最终seal身份留LOCAL_ONLY，不得第三次commit。不得自动Issue/PR/merge/cleanup/重试。
+
+STOP：STOP__R12_R8_EXECUTABLE_LOCATOR_OR_SOURCE_IDENTITY_BLOCKED；STOP__R12_FIXTURE_OR_SOURCE_PAIR_BLOCKED；STOP__R12_HOST_CAPACITY_OR_NATIVE_PREEXECUTION_GATE_BLOCKED；STOP__R12_NATIVE_OPERATOR_ASSEMBLY_FAILED_REQUIRES_REVIEW；STOP__R12_SOURCE_OPERATOR_ELEMENTWISE_MISMATCH_REQUIRES_REVIEW；STOP__R12_SOURCE_PRIVACY_OR_DELIVERY_BLOCKED；STOP__AWAITING_GPT_INDEPENDENT_ABC。
+
+任何STOP均交付真实证据并停止；不自动后继。R8历史成功、R9/R10旧STOP保持不变。P3=BLOCKED；FORMAL_SOURCE_FREEZE=FALSE；V010=UNCHANGED；V011=NOT_STARTED；Results=FALSE；model_activation=FALSE；REAL_GE=FALSE；FULL_RUNNER_IO_CLOSURE=BLOCKED；STRICT_KFE_STATIONARITY=FALSE；AUTO_NEXT=FALSE。
