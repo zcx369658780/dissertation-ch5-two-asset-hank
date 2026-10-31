@@ -1,0 +1,148 @@
+# CH5 TEMP31 R6-R3-R2-R5：单一既有MATLAB崩溃转储的本地最小异常上下文审计（冻结合同）
+
+TASK_ID=CH5_TEMP31_R6_R3_R2_R5_LOCAL_DUMP_MINIMAL_EXCEPTION_TRIAGE_20261031
+STATUS=ISSUED_AWAITING_OWNER_TRANSFER
+OWNER_APPROVAL=2026-10-31__SINGLE_LOCAL_EXISTING_CRASH_DUMP_MINIMAL_EXCEPTION_CONTEXT_TRIAGE_NO_NEW_MATLAB
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_PARENT=2117264cbb5a0dbe6a5b65677d6f5e70bf4d3008
+TASK_PUBLICATION_COMMIT=GPT_SUPPLIES_EXACT_SHA_AFTER_PUBLICATION
+EXPECTED_GOVERNANCE_HEAD=TASK_PUBLICATION_COMMIT_STRICT_EQUALITY
+TASK_CONTRACT_PATH=tasks/CH5_TEMP31_R6_R3_R2_R5_LOCAL_DUMP_MINIMAL_EXCEPTION_TRIAGE_20261031/CONTRACT.md
+CANDIDATE_BRANCH=codex/ch5-temp31-r6-r3-r2-r5-local-dump-exception-triage-20261031
+FIXED_SCIENTIFIC_PARENT=56447829ce0e6c3c85552c53c351b26a2452a4bd
+FIXED_SCIENTIFIC_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
+PRIOR_GPT_R4_REVIEW_COMMIT=2117264cbb5a0dbe6a5b65677d6f5e70bf4d3008
+PRIOR_GPT_R4_REVIEW_BLOB=13e6f5e42a2ac395b35b212cabeb7aee6c73ece4
+PRIOR_R4_CANDIDATE_SEAL=9db5d3162e4e39916de06924214afad810ec500b
+PRIOR_R4_DUMP_METADATA_BLOB=b81191aeb86c4c9ca7b6688d7e5ca8611c5a5d28
+PRIOR_R4_WER_ROOTS_METADATA_BLOB=6f5ae6c8e3e1ea8133e8f45849b4c399a96cc336
+PRIOR_R4_EXECUTOR_TERMINAL=STOP__R6_R3_R2_R4_WER_PERMISSION_OR_SCOPE_BLOCKED
+PRIOR_R3_CANDIDATE_SEAL=29ec5f7466da1ec951f491650fc27ca3f59ce02b
+PRIOR_R3_EXECUTOR_TERMINAL=STOP__R6_R3_R2_R3_NATIVE_GATE_FAILED_REQUIRES_REVIEW
+PRIOR_R3_EXIT_STATUS=0xC00000FD
+PRIOR_R3_MEMORY_NOTIFICATION=PROCESS_MEMORY_LIMIT_RECEIVED_AT_RESUME_PLUS_16.266_SECONDS
+PRIOR_R3_UTC_EXIT_OBSERVED=2026-10-31T00:31:35.050422Z
+PRIOR_R3_PEAK_JOB_AND_PROCESS_COMMIT=1073741824_BYTES
+TARGET_DUMP_ROOT_ROLE=E_LOCALAPPDATA_CRASHDUMPS
+TARGET_DUMP_BASENAME_SHA256=fef366b31732a6d889909d0525bdc1ac014444f1297c147a035116a983119677
+TARGET_DUMP_SIZE_BYTES=23219990
+TARGET_DUMP_CREATION_UTC=2026-10-31T00:31:33.828285Z
+TARGET_DUMP_MTIME_UTC=2026-10-31T00:31:35.037390Z
+TARGET_DUMP_CONTENT_SHA256=NOT_AVAILABLE_NOT_PREVIOUSLY_HASHED
+TARGET_DUMP_PROCESS_IDENTITY=NOT_YET_AUTHENTICATED
+TARGET_DUMP_STACK_TRACE=NOT_YET_READ
+MAX_EXISTING_DUMP_TARGET_FILES=1
+MAX_EXISTING_DUMP_OPEN_ATTEMPTS=1
+MAX_EXPLICIT_READ_AT_OFFSETS=32
+MAX_PYTHON_TOTAL_DUMP_CONTENT_BYTES_READ=65536
+MAX_MINIDUMP_STREAM_DIRECTORY_ENTRIES_INSPECTED=128
+MAX_READ_EXCEPTION_STREAM_BYTES=256
+MAX_READ_MODULE_LIST_TABLE_BYTES=16384
+MAX_MODULE_BASENAME_IDENTITIES_PUBLISHED=8
+MAX_EXCEPTION_PARAMETERS_PUBLISHED=0
+MAX_CONTEXT_REGISTER_VALUES_PUBLISHED=0
+MAX_STACK_FRAMES_PUBLISHED=8
+MAX_PREINSTALLED_CDB_INVOCATIONS=1_OPTIONAL_ONLY_AFTER_HARD_GATES
+MAX_CDB_CHILD_PROCESS_TIMEOUT_SECONDS=45
+MAX_CDB_EXTERNAL_NETWORK_OR_SYMBOL_SERVER_REQUESTS=0
+MAX_DEBUGGER_INSTALLS_OR_DOWNLOADS=0
+MAX_DEBUGGER_SCRIPT_OR_EXTENSION_EXECUTIONS=0
+MAX_NEW_DUMP_CREATIONS=0
+MAX_WER_ARCHIVE_DIRECTORY_RETRIES=0
+MAX_ELEVATION_OR_ACL_CHANGES=0
+MAX_NEW_MATLAB_PROCESS_CREATIONS=0
+MAX_JOB_OR_MATLAB_CONTROLLER_RUNS=0
+MAX_HANK_HA_HJB_KFE_GE_IRF_FIRM_POLICY_REAL31_CALLS=0
+MAX_POST_OPERATOR_EQUALITY_CALLS=0
+MAX_OLD_NPZ_READS=0
+MAX_RUNTIME_RETRIES=0
+MAX_ORIGINAL_DUMP_COPIES_MOVES_MODIFICATIONS=0
+MAX_OLD_PREFDIR_READS_OR_WRITES=0
+MAX_REPO_SCIENCE_SOURCE_EDITS=0
+MAX_NEW_REPOSITORIES_WORKTREES=0
+MAX_ISSUE_PR_MERGE_CLEANUP=0
+AUTO_NEXT=FALSE
+
+## 0. Owner新授权、明确敏感数据边界和科研事实
+
+Owner在收到R4正式终审并明确理解dump包含进程内存、可能含私有内容后，批准**仅在本机对已找到的一份、大小23219990字节的MATLAB名称和时间相符.dmp候选进行最小异常上下文解析**，目标是验证dump是否属于上一轮受控MATLAB，以及dump的异常码/地址所属模块和最多8帧栈的信息（如果证据支持）。这是新的、独立的特殊读取授权；前轮R4不准打开dump原件的边界在历史任务中仍保持，不能追溯更改旧STOP。本轮可以在明确界定的少量字节位置对这一份dump进行只读seek/read，并可在严格离线限制下使用已预装CDB分析该同一文件。不能将其扩展为用户所有dump、WER归档内文件、内存扫描、个人数据或凭据提取。
+
+上一轮事实：只有R4 metadata实地核验了名称/时间候选的.dmp文件存在（不是内容或进程ID认证），creation 2026-10-31T00:31:33.828285Z，mtime 00:31:35.037390Z，size23219990。此前R3 MATLAB Job确实收到PROCESS_MEMORY_LIMIT，peak committed分别达到1GiB，进程在Resume后23.313秒、UTC00:31:35.050422自行异常退出0xC00000FD=STATUS_STACK_OVERFLOW，但旧调用栈和唯一原因UNKNOWN。R4 ProgramData下WER archive候选子项 os.scandir被PermissionError；**本任务禁止重试、提权、绕过或继续读取这个archive**。Windows Application事件1000/1001限定查询NO_MATCH，不再查询或改变系统日志。当前目标唯一允许路径来源是本机标准%LOCALAPPDATA%\CrashDumps下、与R4原始候选basename hash严格一致的一个既有file。不扫描全盘，不使用文件搜索来“找另一个差不多的dump”。
+
+转储可能包括敏感内存和私密绝对路径。原始.dmp的任何bytes/substring、寄存器raw值、栈内存、未脱敏调试器stdout/stderr、原生模块完整路径、进程ID/threadID、报告GUID、用户名、机器名、命令行、环境、私有符号路径、local exception parameters都只能在本新任务LOCAL_ONLY，**不得上传GitHub、粘贴在对话、放入公开报告、通过任何API/网络发送**。允许GitHub发布固定字段的低敏元数据：是否为可识别dump格式、是否存在异常流、异常码、异常flags（若可读）、异常地址是否落在模块范围内、模块basename或稳定非私有模块角色、最多8帧的模块basename+相对偏移且没有地址/参数/栈原文、栈是否可解析的分层状态与反事实限制、候选身份是否匹配；对敏感字段仅发布本地文件**basename字符串哈希**或衍生收据SHA256，绝不能将其称为dump-body SHA256。原件保持原地只读、无mtime修改、无复制或清理。
+
+官方格式/离线调试语义：
+https://learn.microsoft.com/en-us/windows/win32/api/minidumpapiset/ne-minidumpapiset-minidump_stream_type
+https://learn.microsoft.com/en-us/windows/win32/api/minidumpapiset/ns-minidumpapiset-minidump_exception_stream
+https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/analyzing-a-user-mode-dump-file
+https://learn.microsoft.com/en-us/windows-hardware/drivers/debuggercmds/-exr--display-exception-record-
+https://learn.microsoft.com/en-us/windows-hardware/drivers/debuggercmds/-ecxr--display-exception-context-record-
+https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/cdb-command-line-options
+微软指出MINIDUMP的ExceptionStream类型6、ModuleListStream类型4；.exr -1查看异常记录、.ecxr设置异常上下文、k查看调用栈。CDB -z仅打开已存在dump；-sins忽略符号/映像路径环境变量，-netsyms:no禁用网络符号，-nosqm关闭遥测，-noshell禁止shell命令。官方定义不代替本机真实证据。
+
+## 1. 来源和目录身份硬门：开始读dump前全部PASS
+
+Codex先通过已授权GitHub原连接器从TASK_PUBLICATION_COMMIT获取本合同完整UTF8字节，核验Git Blob、SHA256、提交唯一parent、root tree、diff仅新合同、治理远端HEAD严格等于该commit；新candidate远端初始不存在且科学候选parent固定为FIXED_SCIENTIFIC_PARENT。上轮R4正式review及R4 dump_presence_and_no_content_read_receipt.json必须从各自固定ref/pat​​h读原字节核对预期Blob/size；R3故障事件/owned_process_cleanup_receipt等可从固定R3 seal只读有限源码证据，不扫描全部历史。来源失败STOP；瞬时官方连接器transport故障最多同ref/path同认证路径1次工具层重试，401/403/固定404/内容身份不符不得换源或越权。原R40默认index、AGENTS、旧controller与科学源均不可改。
+
+本地合法目标路径是**从R4原LOCAL_ONLY安全回执里记载的同一已见证候选路径**取出，并与当前用户的标准LOCALAPPDATA CrashDumps预期根和R4 basename SHA256严格比对。不运行glob/recursive scan、不枚举其他dump、不从无关目录猜路径。目录/文件及所有祖先必须不是symlink、junction、reparse或UNC；如有实际权限拒绝立刻STOP，无权限提升/ACL变更。对这个唯一目标os.lstat：regular file，23219990bytes，creation/mtime与R4回执匹配（时间戳允许文件系统精度误差不超过0.1秒，任何实际超出都STOP并报告），basename字符串的SHA256严格等于TARGET_DUMP_BASENAME_SHA256。若候选变动或身份不一致则DUMP_IDENTITY_NOT_ESTABLISHED，不打开dump。新任务LOCAL_ONLY输出目录创建时独占、拒绝旧路径冲突、拒绝系统外路径。
+
+如上轮R3 LOCAL_ONLY中唯一固定owned_process_private_identity.json存在且具有正常已认证结构，可**仅只读这一份精确既有owned PID身份回执**，在内存对比R4 dump basename中的PID段（如果命名模式确实含十进制PID）；仅公开PID_MATCH/PID_MISMATCH/NOT_AVAILABLE，不能上传或打印PID。文件名无PID不算不匹配，只能NOT_AVAILABLE。禁止另读R3旧preferences、full raw logs或任何进程/用户注册表。候选Pid_MATCH最多进一步支持归属，不构成dump中的实际进程认证；异常流必须独立验证。
+
+开始读取前先记录目标stat（LOCAL_ONLY原本值），通过open(...,"rb")仅只读，严禁open("w"/"a"/"r+")或文件映射整个dump；结束后再次stat size/mtime/ctime，确保没有由本次分析修改原件。若不是Minidump，不要假装支持其ExceptionStream；记录UNSUPPORTED_OR_NON_MINIDUMP_FORMAT并转入可选离线已装CDB路径（如果硬门允许）；不强求所有dump都是MDMP，不擅自改扩展名、重采样或生成新的dump。
+
+## 2. 第一阶段：只读少量结构化异常元数据，不读取内存流
+
+使用本轮唯一新增Python标准库审计器（例如struct、io、os、pathlib、hashlib、json）最多**一个**目标文件open和32次精确受界seek/read，总读取**不超过65536字节**。只解析MINIDUMP_HEADER固定字段及合法stream directory（最多128条），验证总目录及每个实际读取RVA/size落在当前目标文件范围内，整数加法/乘法溢出防护；仅查需要的SystemInfoStream、ExceptionStream、ModuleListStream及必要进程身份字段。可以读取ExceptionStream不超过256字节（异常码、flags、record address与context descriptor的存在性），ModuleListStream table最多16384字节；禁止读取ThreadList的stack memory、MemoryList/Memory64List数据、MemoryInfoList、HandleData、CommentStream、TokenStream、环境或命令行等敏感stream内容。未知stream类型只记录存在，不打开。最多对8个与异常地址合理有关的ModuleList条目读取其最短名称utf16以确定module basename，单个名称字节硬上限256且必须做unicode strict/类型保护，**不得把完整路径/源码路径/私有信息发布**。如果stream layout、版型、边界或权限不清楚，STOP此stage并标PARSE_UNCERTAIN，绝不靠猜地址或bulk-read扩大权限。
+
+ExceptionStream中异常码应与R3的0xC00000FD比较；如果不一致必须原样记录MISMATCH，不能修改历史真值或补造stack。公开异常address不显示绝对虚拟地址，仅报告是否落在已读模块基址范围及相对偏移（如果模块确实匹配）。ThreadId/raw context寄存器绝不公开。公开的dump_identity grade必须区分DUMP_FILE_STAT_MATCH、PID_NAME_MATCH、EXCEPTION_STREAM_CODE_MATCH、OFFLINE_DEBUGGER_REVIEWED_STACK、STILL_UNVERIFIED。Minidump不存在ExceptionStream时该字段就是NOT_PRESENT，不能从上轮exit code填充为dump中证据。
+
+## 3. 第二阶段：唯一可选离线、现有CDB有限调用栈（严防泄漏）
+
+用户明确允许尝试最多8帧调用栈，但**不授权下载/安装任何调试工具、符号、PDB、扩展或联网**。如果当前Windows机器已有可信已安装的Microsoft Windows Debugging Tools x64 cdb.exe，且能从既有明确Windows Kits路径定位、无系统搜索、无提权，验证该二进制正常本地签名/基本元数据身份（不执行单独help/version），可选择**最多一次**CDB user-mode crash-dump离线只读进程。否则如实记DEBUGGER_NOT_AVAILABLE并只交付第一阶段结果；无需因此尝试WinDbg商店安装、符号服务器或网络替代品。CDB本身可能解析大量dump内部内存，因此它仅为本合同批准的这一个文件服务，不使用可调试其他进程的模式，不连接任何PID/live process，不读取别的dump。
+
+唯一允许使用的固定安全argv语义：
+- cdb.exe预装原路径，-sins（忽略外部环境符号路径）、-netsyms:no（禁止网络符号）、-nosqm（禁止遥测）、-noshell（拒绝shell debugger commands）、-y 指向本任务LOCAL_ONLY **新空白本地符号目录**且没有srv/UNC/http入口、-z 指向身份严格匹配的一份既有.dmp、-c 只运行“.exr -1;.ecxr;k 8;q”。
+- 禁止!analyze -v、.dump、.writemem、.shell、任何用户/第三方扩展命令、符号下载、.symfix/.reload从服务器、源码/PDB搜索、stack-local变量显示、参数/内存dump、调试live进程、开启GFlags/WER/注册表和关闭杀毒；没有自动fallback。若调试工具命令行选项不支持或无法保证零网络，**直接skip**，不运行一个弱化的调试器。
+- 启动前额外禁用子进程网络相关符号环境（_NT_SYMBOL_PATH/_NT_ALT_SYMBOL_PATH与其它相关可见变量），禁止继承任何SRV/UNC路径；本轮自己只写新LOCAL_ONLY输出/空符号目录。严禁将私人dump路径或内容传给远端；唯一命令必须spawn shell=False、timeout<=45s、0重试。CDB可能产生极长或敏感原始输出：stdout/stderr仅本任务LOCAL_ONLY，截断采集上限64KiB且原输出被截断要报告；禁止把原始stdout/stderr、寄存器数字、指针、源路径、exception parameters或原stack文本加入公开Git，必须用严格allowlist解析归纳最多8帧中的模块basename及相对偏移，不能借正则将未知内容原样拷贝。若部分帧不可信/符号不可用，只报告UNKNOWN_FRAME/UNRESOLVED。
+- 可在本机本轮新LOCAL_ONLY受控目录下新建仅本次用的空符号路径，但不可变更用户级symbol配置；不得因为符号缺失而联网。CDB安全门失败不进行第二次/其他调试器尝试。即使CDB退出0，也不等于dump具备所有帧、也不能证明唯一栈异常根因。若未能证实无网络访问条件，停止本阶段、保留第一阶段有界结果并STOP，不触发其它进程或安装。
+
+## 4. 证据等级、隐私、写入与交付
+
+新任务只允许新增一个隔离只读Python标准库审计器：
+validators/multi_province/temp31_r6_r3_r2_r5_minidump_exception_triage_isolated.py
+
+仅允许新增本任务证据目录：
+tasks/CH5_TEMP31_R6_R3_R2_R5_LOCAL_DUMP_MINIMAL_EXCEPTION_TRIAGE_20261031/
+其中result.md、source_identity.json、governance_candidate_gate.json、target_dump_identity_gate.json、minidump_header_and_stream_inventory.json、exception_record_limited_public.json、offline_debugger_availability_and_invocation.json、stack_top8_sanitized.json、dump_process_identity_correlation.json、dump_access_byte_budget.json、no_network_no_raw_dump_upload.md、prior_stops_preservation.md、causality_grade_and_gaps.md、model_budget_zero.json、privacy_report.md、manifest.json、DELIVERY_FINAL_RECEIPT.json以及少量必要真实字段证据。不允许创建新的公开二进制附件、dump任何完整原文或粘贴用户本地路径。任何可能的本地文件名、PIDs、R3历史owned process信息、真实CDB命令与完整输出只能LOCAL_ONLY。**公开报告的原始dump SHA256必须写NOT_COMPUTED，不能错误地将basename字符串SHA256当dump SHA256**；公开的实际异常码可报告，但不能把上轮0xC00000FD冒充本轮dump读取字段。所有旧STOP/科学源码、旧R40索引、历史prefdir、WER权限阻断、原来日志与原dump必须保持不变；本轮不清理新旧数据。
+
+隐私门沿用已验证原scanner SHA256=95f5de1f1d926de8683ff721bd1bcdcf2f7c90bdc52c1f6be799cfd3cb624ad2及未更改STOP_PRIVATE_PAYLOAD断言，对每一个准备公开的payload/seal的实际bytes检查，不得放宽规则。GitHub公开证据必须是**真实本机只读收据的有界脱敏衍生**且有本地原收据身份（对新LOCAL_ONLY文本收据哈希允许；不哈希原dump）。合法交付沿用固定科学source新唯一candidate，单payload commit只含该验证器+本任务文件，获批普通SSH至多一次push，固定GitHub远端核commit/parent/tree/每文件Blob/UTF8bytes/SHA256；单seal commit仅新增本任务DELIVERY_FINAL_RECEIPT.json，隐私再PASS至多一次push且远端全量readback。最终seal自身身份仅LOCAL_ONLY记录，无第三commit，不自动Issue、PR、merge、cleanup、force-push、重试push或修改Git认证路径。权限/平台错误只准同一官方ref只读消歧，不能权限升级或端点绕过。
+
+有界部分成功也是合法交付，不可伪造stack、PID、ExceptionStream或CDB运行结果。如果原文件不匹配，原则上必须停在未打开dump的preflight并按真实状态报告；如privacy+来源允许可交付此阶段证据。任何异常导致原件被修改或超字节预算则安全STOP，不掩盖。CDB步骤可因已装工具不存在或网络安全不足而SKIP_WITH_REASON，而不能判定dump内容解析全部PASS。
+
+## 5. 终态、GPT A/B/C与科学状态
+
+STOP__AWAITING_GPT_INDEPENDENT_ABC：完成一份目标dump的有界异常字段读取、按允许条件离线栈尝试或合理skip，以及隐私合规两阶段交付；
+STOP__R6_R3_R2_R5_DUMP_IDENTITY_OR_PERMISSION_BLOCKED：目标dump与先前metadata身份不符、权限拒绝或基础来源不可信；
+STOP__R6_R3_R2_R5_DUMP_FORMAT_OR_EXCEPTION_UNRESOLVED：格式不支持/异常流无效/安全读取预算不足、局部结果可合法交付；
+STOP__R6_R3_R2_R5_OFFLINE_DEBUGGER_SECURITY_GATE_BLOCKED：已开始准备CDB但发现工具/符号路径/网络硬门不成立；只保留合法先前证据，禁止放宽；
+STOP__R6_R3_R2_R5_SOURCE_PRIVACY_OR_DELIVERY_BLOCKED：来源、隐私或GitHub交付硬门失败；
+STOP__R6_R3_R2_R5_UNEXPECTED_DUMP_WRITE_OR_EXFIL_ATTEMPT：原dump写入、内容外传/超预算或不在白名单访问，必须立即停止并如实报告，不尝试隐藏/清理。
+
+GPT独立A核治理与科学parent/白名单候选、公开manifest/固定远端逐文件bytes/Blob/SHA256/隐私；B阅读实际新Python parser/如果用了CDB则审查完整严格argv角色与脱敏输出，对照此前R4原候选身份、dump的格式/ExceptionStream及可能的上轮PID证据，区别是源内容读取事实还是先验EXIT码；C分别裁决artifact_integrity/source_identity/numeric_review/implementation_review/scientific_review/privacy_review/actual_terminal/delivery/cleanup/not_completed。即使确认dump异常码=0xC00000FD且栈top8，也只支持特定崩溃诊断，不自动证明1GiB限额是唯一必要且充分因果，不追溯解释全部旧30秒超时，不改科学模型或启动MATLAB。
+
+P3=BLOCKED
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+STRICT_KFE_STATIONARITY=FALSE_INHERITED_R3_R4_R5
+OLD_R6_R6_R1_R6_R2_R6_R3_R6_R3_R1_R6_R3_R2_R6_R3_R2_R1_R6_R3_R2_R2_R6_R3_R2_R3_R6_R3_R2_R4_STOPS=IMMUTABLE
+GLOBAL_R40_LAUNCHER=UNMODIFIED_UNCERTIFIED
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
