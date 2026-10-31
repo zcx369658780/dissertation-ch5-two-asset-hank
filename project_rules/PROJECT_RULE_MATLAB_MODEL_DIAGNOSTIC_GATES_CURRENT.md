@@ -19,3 +19,10 @@
 按实际对象检查 HJB/KFE、算子方向、质量/非负性、聚合、市场或外层收敛等适用项。单次首轮比较不要求验证不存在的冲击/IRF对象。
 smoke、exit 0、成功绘图只支持对应工程行为。保护源身份和来源足够明确时不重复做全目录考古。
 正式 Results 按已接受科学范围审阅；本规则不授权任何模型调用。
+
+
+---
+
+## Historical-only status (Owner decision, 2026-10-31)
+
+This document remains a historical procedure reference for MATLAB tasks only. It is not on the active Chapter 5 research critical path. MATLAB source/executable work is not a prerequisite for Python multi-province HANK development. Do not initiate a MATLAB task or infer execution permission from this document. A new MATLAB task requires a specific Owner-approved scientific question, exact scope and budget; R12/R13 restrictions remain in force. Preserve all historical MATLAB code, tasks, outputs and STOP/PENDING evidence.
