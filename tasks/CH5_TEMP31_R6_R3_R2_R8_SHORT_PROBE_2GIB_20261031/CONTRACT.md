@@ -1,0 +1,174 @@
+# TEMP31 R6-R3-R2-R8：MATLAB R2022b 63字符脚本名称修复与单次2GiB最小原生探针（冻结科研合同）
+
+TASK_ID=CH5_TEMP31_R6_R3_R2_R8_SHORT_PROBE_2GIB_20261031
+STATUS=ISSUED_AWAITING_OWNER_TRANSFER
+OWNER_APPROVAL=2026-10-31__NEW_INDEPENDENT_R2022B_SHORT_M_PROBE_FILENAME_STATIC_HARD_GATE__IF_PASS_ONE_2GIB_120S_NATIVE_MINIMAL_PROBE__NO_MAIN2
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_PARENT=6539dcfc03b0fd593e92a9ad894e5072ada3b449
+GOVERNANCE_PARENT_TREE=efca10605321dd3210eff1b4be9c40faa2070880
+TASK_PUBLICATION_COMMIT=GPT_PROVIDES_EXACT_COMMIT_AFTER_PUBLICATION
+EXPECTED_GOVERNANCE_HEAD=TASK_PUBLICATION_COMMIT_STRICT_EQUALITY
+TASK_CONTRACT_PATH=tasks/CH5_TEMP31_R6_R3_R2_R8_SHORT_PROBE_2GIB_20261031/CONTRACT.md
+CANDIDATE_BRANCH=codex/ch5-temp31-r6-r3-r2-r8-short-probe-2gib-20261031
+FIXED_SCIENTIFIC_PARENT=56447829ce0e6c3c85552c53c351b26a2452a4bd
+FIXED_SCIENTIFIC_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
+PRIOR_R7_GPT_REVIEW_COMMIT=6539dcfc03b0fd593e92a9ad894e5072ada3b449
+PRIOR_R7_GPT_REVIEW_BLOB=3d6206368b358e8770c3b7b2e44d9c727e756d0c
+PRIOR_R7_GPT_REVIEW_UTF8_BYTES=12895
+PRIOR_R7_NATIVE_SEAL=e3b35471eeb346df2172e0511e9f34b8ab13b8cf
+PRIOR_R7_NATIVE_PAYLOAD=0a13e38813828c58262e456f2211c8c825e3ea2b
+PRIOR_R7_CONTROLLER_BLOB=7c085d6c39fe7392b73b6df858e57506e4b8397a
+PRIOR_R7_CONTROLLER_UTF8_BYTES=28742
+PRIOR_R7_PROBE_BLOB=9c4dbee496ce85d7b95c0a118ba5f8b54070552f
+PRIOR_R7_PROBE_UTF8_BYTES=1822
+PRIOR_R7_NAME_FAILURE_BLOB=5d7ad5a8af42f262f5e46c369551cffadf9c16a2
+PRIOR_R7_NAME_FAILURE_UTF8_BYTES=1761
+PRIOR_R7_NATIVE_EXIT_CODE=1
+PRIOR_R7_NATIVE_EXIT_SECONDS=67.297
+PRIOR_R7_NATIVE_PEAK_COMMIT_BYTES=1624793088
+PRIOR_R7_NATIVE_PROCESS_LIMIT=2147483648
+PRIOR_R7_FIRST_USER_MARKER=NOT_OBSERVED
+PRIOR_R7_ACTUAL_TERMINAL=STOP__R6_R3_R2_R7_NATIVE_GATE_FAILED_REQUIRES_REVIEW
+PRIOR_R7_PROBE_STEM=temp31_r6_r3_r2_r7_released_memory_two_gib_minimal_probe_isolated
+PRIOR_R7_PROBE_STEM_LENGTH=65
+R2022B_MATLAB_IDENTIFIER_MAX_LENGTH=63
+NEW_R8_PROBE_PATH=validators/multi_province/temp31_r8_probe.m
+NEW_R8_PROBE_STEM=temp31_r8_probe
+NEW_R8_PROBE_STEM_LENGTH=15
+NEW_R8_EXPECTED_M_EXTENSION=.m
+NEW_R8_ALLOWED_PROBE_STEM_LIMIT=32
+MAX_MATLAB_R2022B_IDENTIFIER_LENGTH=63
+R3_NATIVE_1GIB_SEAL=29ec5f7466da1ec951f491650fc27ca3f59ce02b
+R3_NATIVE_1GIB_JOB_EVIDENCE_BLOB=dee4642b194845a020e3fb6a2b685b41e0ac3fe7
+R3_ACTUAL_1GIB_MEMORY_LIMIT_EVENT_SECONDS=16.266
+R3_ACTUAL_1GIB_ABNORMAL_EXIT_SECONDS=23.313
+R3_ACTUAL_EXIT_CODE=0xC00000FD
+R6_HOST_BLOCK_SEAL=7af91f7923c8161953d11e2f6daf870c33c19be7
+R5_DUMP_GPT_REVIEW_COMMIT=e235b18a851bd6bce93ef9ead49a28dc4692473e
+R5_DUMP_GPT_REVIEW_BLOB=b38cbe4dc5a8ae062b0fdd65b153f94e1be00b4d
+MATLAB_R2022B_EXECUTABLE_SHA256=4d251e680b8409d76d0524a1eb716de3c9e747386d3101e10f6ce1405ad1a59d
+HOST_MIN_TOTAL_PHYSICAL_BYTES=8589934592
+HOST_MIN_AVAILABLE_PHYSICAL_BYTES=4294967296
+HOST_MIN_AVAILABLE_COMMIT_BYTES=3221225472
+JOB_PROCESS_COMMIT_CAP_BYTES=2147483648
+JOB_TOTAL_COMMIT_CAP_BYTES=2147483648
+JOB_ACTIVE_PROCESS_LIMIT=1
+JOB_ALLOW_BREAKAWAY=FALSE
+JOB_KILL_ON_JOB_CLOSE=TRUE
+MAX_NATIVE_WINDOW_AFTER_RESUME_SECONDS=120
+NATIVE_CHECKPOINTS_SECONDS=30,60,90,120
+MAX_POST_DEADLINE_OWNED_REAP_SECONDS=5
+MAX_HOST_MEMORY_SAMPLES=1
+MAX_STATIC_PROBE_COMPATIBILITY_PRECHECKS=1_BOUNDED_GROUP
+MAX_RUNTIME_ENTRY_INVOCATIONS=1
+MAX_CONTROLLER_RUN_ONCE_CALLS=1
+MAX_MATLAB_PROCESS_CREATIONS=1_ONLY_AFTER_ALL_HARD_GATES
+MAX_MATLAB_LAUNCH_ATTEMPTS=1_ONLY_AFTER_ALL_HARD_GATES
+MAX_JOB_CREATIONS=1_ONLY_AFTER_ALL_HARD_GATES
+MAX_NEW_PREFDIR_CREATIONS=1_ONLY_AFTER_ALL_HARD_GATES
+MAX_NEGATIVE_ROUTE_CASES_IN_MEMORY=3
+MAX_RUNTIME_RETRIES=0
+MAX_OLD_TASK_REPLAYS=0
+MAX_R40_LAUNCHER_RUNS=0
+MAX_MATLAB_MAIN2_M_CALLS=0
+MAX_ORIGINAL_MULTI_PROVINCE_HANK_CALLS=0
+MAX_HA_HJB_KFE_GE_IRF_POLICY_FIRM_REAL31_CALLS=0
+MAX_SPARSE_LINEAR_SYSTEM_SOLVES=0
+MAX_PREVIOUS_NPZ_READS=0
+MAX_POST_OPERATOR_COMPARISONS=0
+MAX_PRICE_GRID_POINTS=0
+MAX_SCIENCE_SOURCE_WRITES=0
+MAX_OLD_STOP_OR_INDEX_EDITS=0
+MAX_NEW_REPOSITORIES_WORKTREES=0
+MAX_ISSUE_PR_MERGE_CLEANUP=0
+AUTO_NEXT=FALSE
+
+## 0. 冻结权限、唯一问题和科学保全
+
+Owner已阅读GPT R7独立A/B/C裁决并明确授权“先修复MATLAB R2022b不兼容的65字符.m探针文件名，增加启动前静态硬门；如全部通过，则再启动一次2GiB、最长120秒、单MATLAB原生最小probe”。本R8是新的独立合同、独立预算、候选分支与LOCAL_ONLY工作区；**不能在R7原候选改名、原地重试、重开已STOP的R7**。R7虽在2GiB Job下创建MATLAB并自然运行67.297秒，峰值1624793088 bytes，没有复现R3的0xC00000FD，却因合同指定65字符探针名在MATLAB run/evalin中被截断至63后无法识别，首用户marker未出现。R7的直接日志及固定GitHub证据支持**本轮特定调用的filename兼容性失败**，不能据此判定原HANK经济模型问题或旧R3栈异常的唯一原因。
+
+MATLAB R2022b的脚本/函数标识符上限为63（MathWorks R2025a才扩至2048）；本次额外采用**更保守的合同硬门<=32字符**以避免边界风险。唯一冻结的新.m文件名为temp31_r8_probe.m，主干temp31_r8_probe（15个ASCII字符），不是给旧65字文件增加MATLAB alias。参考官方：https://www.mathworks.com/help/matlab/ref/namelengthmax.html 和 https://www.mathworks.com/help/matlab/ref/run.html 。仅将公开官方文档作为版本解释，不替代用户机器的真实日志。所有长名字的Python入口/任务目录不属于MATLAB的文件名标识符长度检查对象，**须检查的是实际将被run执行的.m文件主干**。
+
+原多省份HANK模型的MATLAB入口main2.m据Owner说明完整运行约3小时。本次严禁运行该入口、原HANK多省份模型、HA/HJB/KFE/GE/IRF、政策或科学结果；不能把本任务最小原生启动当作完整模型求解。P3=BLOCKED、Results=FALSE、strict KFE stationarity FALSE、真实GE/IRF阻断全部维持。
+
+## 1. GitHub固定来源、治理与候选硬门
+
+Codex首次必须通过当前已授权GitHub连接器在**固定TASK_PUBLICATION_COMMIT**读取本合同完整原UTF8正文，独立核验实际Git Blob、SHA256、字节数、唯一parent=GOVERNANCE_PARENT、root tree及治理变更只新加本合同；远端治理HEAD严格等于发布commit。R7正式GPT独立终审报告固定ref/Git Blob、R7日志名称错误公开回执、R7原controller/probe、R7 2GiB Job运行摘要，R3 1GiB历史Job收据、R5 dump终审、R6 host-block资料均用各自固定commit/ref/path读取并核身份；不得从默认branch、旧global task index、R40、缓存名称或任何非固定源回退。唯一新candidate远端初始应不存在，新候选只能由FIXED_SCIENTIFIC_PARENT派生，不能从治理HEAD/R7/R3 candidate或任意生产模型分支派生。GitHub连接器瞬时transport问题仅可在相同path/ref/认证/端点做一次**工具级只读重试**；401/403/真正404或身份不符即STOP，不切用户、协议、镜像或凭据。
+
+使用已有Owner授权安全工作区；任务LOCAL_ONLY root初始不存在且创建独占、不得新repo/worktree、reset/rebase/stash/clean/force push或覆盖任何未提交源。不得修改旧STOP、科学源、AGENTS、R40索引或历史MATLAB命令。不运行全局launcher、旧R2 Canary、R3/R6/R7 native controller、R7长名.m。所有新源码只在本任务白名单内增加，不修改原R7源码。失败可以交付真实STOP证据，不得为PASS进行自动二次尝试。
+
+## 2. 显式路由和**启动前MATLAB兼容性静态安全门**
+
+本次只有一条显式独立entry，必须由现有授权Python解释器以-I -S -B调用一次。entry需要精确核验新TASK_ID、Owner授权、治理/科学父/合同commit/path/blob/bytes、当前独立新controller实际SHA256/bytes、冻结新probe SHA256/bytes、2GiB cap、120s、active1、fresh run nonce（不同于R7），不允许缺字段、额外可控controller路径或默认路由。三项pure-memory负例（缺少关键合同Blob、R40 task ID、错误commit+Blob）在**同一进程中不创建任何Job/MATLAB**且必须REJECT；然后才允许hash-bound的单一本任务controller.run_once(sealed_plan)同Python进程直接调用，不能shell、二次Python进程、任意外部loader或fallback。新run nonce仅LOCAL_ONLY或新child-only环境变量，不嵌入公开代码/证据中作明文。
+
+本次特设可机器核对、执行前必须PASS的**单一静态相容性报告**，放在native Job和MATLAB.CreateProcess之前：
+1. 真实文件来自新固定白名单path validators/multi_province/temp31_r8_probe.m；先核绝对规范path与当前被授权工作区containment、父祖先无symlink/junction/reparse、非UNC/network路径、regular file、严格.m扩展名、正好唯一候选、当前源码字节SHA256和Git Blob绑定。文件路径basename必须精确是temp31_r8_probe.m（大小写/扩展语义遵循Windows），不能生成第二个同名或别名文件。
+2. 用Python只读对当前实际path的Path.stem检查ASCII，正则必须符合^[A-Za-z][A-Za-z0-9_]*$；count codepoints严格15且<=本合同32、<=R2022b 63。不能错误地把扩展名.m或目录名长度算入stem，也不能只检Git仓库相对文件名却不检真要传给MATLAB的物理路径。
+3. controller构造的argv必须与读回的同一绝对真实脚本文件路径严格一致；必须显式检查-batch后一项唯一形如run('FULL_PATH')且调用该新短名.m，源路径中不允许未转义单引号、换行、命令分隔符或影响MATLAB字符串引用的字符；不得转换为仅截断63字符的symbol，也不得误运行main2.m或R7历史65字探针。如果路径包含单引号或命令构造不能在离线纯静态核对中证明安全，应FAIL CLOSED，不得临时修改原路径或fallback到MATLABPATH。
+4. 对源代码静态确认.m文件首条**用户级**可执行语句是原子生成ENTERED_MATLAB_USER_SCRIPT标志的调用，后续只有prefdir对照、R2022b version/release及1×1 sparse sanity，不含原HANK/main2/HA/HJB/KFE/GE/IRF函数或MATLAB toolboxes额外工作。脚本需保留与R7已冻结probe可验证的核心语义，除了task ID、run nonce child-only身份和短名不得引入新科研功能。静态判定只承诺被审阅的明显语法/调用身份，不伪称已由MATLAB真正parse/执行或运行了namelengthmax。
+5. 把长名R7实际值65、截断63、当前新真实值15、当前完整argv调用实际目标名、source Blob/bytes、M文件路径安全身份及静态失败门结果入新LOCAL_ONLY原收据，公开只放脱敏角色、实数长度/源码身份、通过布尔和恰当safe excerpt。若任一子项失败，必须终态STOP__R6_R3_R2_R8_STATIC_MATLAB_NAME_OR_ARGV_GATE_BLOCKED，**MATLAB、Job及新native prefdir创建为0**，无重试、不强行使用MATLAB运行时namelengthmax救场。
+
+## 3. 主机内存实测硬门和隔离Strategy B
+
+R7上次主机可用物理17.051959991GiB、可用commit26.267505646GiB只是2026-10-31T03:14:37Z的一次历史快照，不能视为本次实时通过。R8必须在新native root/Job/进程创建前，用GlobalMemoryStatusEx仅调用一次检查ullTotalPhys>=8GiB、ullAvailPhys>=4GiB、ullAvailPageFile>=3GiB（Windows报告caller-available commit headroom，不是working set），验证MEMORYSTATUSEX结构/API成功和所有字段一致性。如果任何不满足，STOP__R6_R3_R2_R8_HOST_CAPACITY_OR_RUNTIME_PREEXECUTION_BLOCKED、native创建0、没有第二次采样/等待/关闭其他程序/改页文件/降门限。主机读数含UTC+monotonic、失败来源和单位脱敏证据。
+
+前述来源、路由、MATLAB文件名、argv和主机容量全部PASS才允许在本任务LOCAL_ONLY创建新的策略B唯一空白MATLAB_PREFDIR目录（create-exclusive），验证local nonreparse、within current allowed worksite、空/写权限。仅覆写子MATLAB进程环境MATLAB_PREFDIR并保持R7兼容MATLABPATH空和线程上限配置；父环境及系统/用户级settings不变。不得读取枚举/复制/清理R7/R3历史prefdir、R5原dump或原raw日志。
+
+## 4. 最多一次2GiB Windows Job MATLAB 原生最小探针
+
+R8新controller基于固定R7安全控制设计，保留其限额、completion-port、单进程、事件和cleanup语义，且在源码A/B证据中记录可验证的源码/AST对照，只允许修复确有必要的任务身份、新短名及本轮路径，不能默默改变数值实验配置。新原生Job在无进程时SetInformationJobObject process committed 2147483648 bytes、job committed 2147483648 bytes、active1、no-breakaway/silent-breakaway、kill-on-job-close；在空Job时完成completion port关联并读回limits和零成员。唯一CreateProcessW(CREATE_SUSPENDED)，必须先AssignProcessToJobObject并IsProcessInJob/唯一owned成员、真实limit readback及进程still-active后ResumeThread，任何失败不能恢复未受限MATLAB。固定MATLAB.exe SHA256匹配MATLAB_R2022B_EXECUTABLE_SHA256；不另启MATLAB -version、license、help或main2.m。
+
+固定相容 argv token角色：单一MATLAB.exe、-nodesktop、-nosplash、-singleCompThread、-logfile (本次LOCAL_ONLY新路径)、-batch run(当前唯一短文件validators/multi_province/temp31_r8_probe.m的绝对路径)，不包括-nojvm、-r、未知许可选项或旧long probe。**静态比较构造命令与实际传入CreateProcessW的同一argv对象**；只在必要时转换Windows路径分隔符供run识别。任何未知MATLAB字符串/路径引用风险必须在Process创建前STOP，而不是等MATLAB报错。已经批准的R8 MATLAB启动预算只为这个单一新probe，绝无原模型。
+
+从ResumeThread成功返回起采用time.monotonic_ns严格最多120s、30/60/90/120s checkpoints与有界每秒快照；报告job NEW_PROCESS/PROCESS_MEMORY_LIMIT/JOB_MEMORY_LIMIT/EXIT/ABNORMAL_EXIT/ACTIVE_PROCESS_ZERO接收UTC与monotonic、实际Process及Job峰值committed、stdout/stderr/-logfile长度、真实marker、exit code以及是否超时。job通知的时间是消息接收时间，不是OS内部事件时刻；没收到内存通知不能证明没有压力。自然完成/自然错误提前exit立即记录真实时间并停止，不必等待120秒；若120秒仍活动，只允许对本Job执行TerminateJobObject一次0xE0000001，最多5秒回收；owned process/thread/Job/port/stdio全部有限关闭，禁止终止其他用户程序或修改资源上限。0重试，无第二次MATLAB启动。
+
+.m脚本唯一最小流程必须为：
+- 第一条用户级执行语句原子生成ENTERED_MATLAB_USER_SCRIPT marker，绑定本轮新run nonce和UTC；
+- 验证MATLAB运行时prefdir和child-only预期路径一致，输出PREFDIR_MATCH或PREFDIR_MISMATCH；不符受控STOP；
+- 仅调用version/version('-release')验证R2022b，记录受限脱敏版本结果；
+- 仅构造1×1 sparse并检查size、nnz、value，输出SPARSE_PROBE_PASS；
+- 无模型、无真实31省数据、无HA/HJB/KFE/GE/IRF/政策、无价格、无旧NPZ、无矩阵元素比较、无稀疏线性方程求解、无main2.m。
+允许自然退出0且所有按序marker正确时终态STOP__AWAITING_GPT_INDEPENDENT_ABC，但**最小probe PASS不代表原完整多省HANK启动/数值等价已经通过**。如MATLAB无法识别新短名，需要完整安全日志及真实错误阶段，不能把原R7同样的filename错误“修复”成证据；仍然fail and STOP。
+
+## 5. 实际比较、文件白名单、隐私和封存STOP
+
+本次仅允许新增：
+validators/multi_province/temp31_r8_explicit_entry_isolated.py
+validators/multi_province/temp31_r8_native_controller_isolated.py
+validators/multi_province/temp31_r8_probe.m
+
+以及唯一新证据目录：
+tasks/CH5_TEMP31_R6_R3_R2_R8_SHORT_PROBE_2GIB_20261031/
+下的必要公开脱敏文件，例如result.md、source_identity.json、governance_candidate_gate.json、fixed_r7_failure_and_r3_comparison.json、explicit_route_identity.json、matlab_r2022b_static_name_and_argv_gate.json、host_memory_preflight.json、fresh_prefdir_preflight.json、job_pre_resume_gate.json、native_timeline.json、job_resource_notifications_and_exit.json、minimal_probe_markers_and_runtime_prefdir.json、new_stdout_stderr_logfile_metadata.md、one_gib_vs_two_gib_scope_comparison.json、owned_process_cleanup_receipt.json、model_budget_zero.json、privacy_report.md、gap_register.md、prior_stops_preserved.md、manifest.json、DELIVERY_FINAL_RECEIPT.json及最多必要的少量具源身份的真实安全回执。全部原raw日志、异常路径、PID/TID、用户名字、run nonce/许可、MATLAB首选项内容、旧dump仅LOCAL_ONLY，不上传、复制、删除或无授权索取；R7原65字.m、所有旧STOP、原科学源及索引不更改。
+
+原强制隐私扫描器唯一正确SHA256=95f5de1f1d926de8683ff721bd1bcdcf2f7c90bdc52c1f6be799cfd3cb624ad2，原STOP_PRIVATE_PAYLOAD断言/AST与所有实际payload/seal字节扫描不得放宽；只发布字段白名单、来源原件bytes/SHA256身份及脱敏变换说明；不得把作业stdout的原敏感路径/GUID/私人数据传GitHub。固定科研父commit派生唯一新候选，正常SSH payload最多一次push仅含三份新隔离脚本和本任务证据；固定远端readback核commit唯一parent/tree、各path Git Blob/UTF8 bytes/SHA256/manifest。Seal唯一新增本任务DELIVERY_FINAL_RECEIPT.json，隐私再PASS后正常SSH最多一次push，固定seal ref逐件回读身份；seal自身身份放本次LOCAL_ONLY外置回执，无第三commit。平台错误只允许同一官方路径只读消歧，不重push/切账号/协议/认证/代管镜像。禁止自动Issue/PR/merge/cleanup/下一科研合同。
+
+预运行静态名称或脚本调用身份失败：STOP__R6_R3_R2_R8_STATIC_MATLAB_NAME_OR_ARGV_GATE_BLOCKED。
+本轮主机容量/Win32 Job安全/来源之外运行前阻断：STOP__R6_R3_R2_R8_HOST_CAPACITY_OR_RUNTIME_PREEXECUTION_BLOCKED。
+MATLAB进程错误、120秒超时、用户marker未出现：STOP__R6_R3_R2_R8_NATIVE_GATE_FAILED_REQUIRES_REVIEW。
+运行时prefdir不匹配：STOP__R6_R3_R2_R8_PREFDIR_RUNTIME_MISMATCH。
+全部marker及自然exit0且安全交付：STOP__AWAITING_GPT_INDEPENDENT_ABC。
+来源、隐私、SSH受阻：STOP__R6_R3_R2_R8_SOURCE_PRIVACY_OR_DELIVERY_BLOCKED。
+所有STOP必须有真实状态、Job/进程预算、原始本地证据身份及未完成项目，不得为成功虚构运行结果。每轮保留旧科学状态与旧R7失败记录，无R7原地fix、无自动续跑。
+
+## 6. GPT独立A/B/C后续审查
+
+GPT独立A固定新合同/候选提交parent/tree/manifest与每个远端公开真实bytes/Blob/SHA256/隐私扫描；B直接阅读新entry/controller/probe，复算真实.m主干长度15及正则/路径/argv的**启动前断言**，复查是否确实未导入main2/HANK、主机内存和Job限额前置、安全启动120秒时序、真实日志marker和退出、0重试；C分别裁决artifact_integrity/source_identity/numeric_review/implementation_review/scientific_review/privacy_review/actual_terminal/delivery/cleanup/not_completed。只有已见证1x1 sparse才允许最小native数值PASS，MATLAB-Python后置算子、strict KFE、真实31省GE仍BLOCKED；R3 1GiB的0xC00000FD唯一因果及旧30秒超时根因继续UNKNOWN，R7 filename STOP不可追溯变更。即便新短名probe跑通，完整原版main2.m约3小时模型求解和任何科学对等比较需要Owner下一份专项合同，不自动开展。
+
+P3=BLOCKED
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+STRICT_KFE_STATIONARITY=FALSE_INHERITED_R3_R4_R5
+ALL_PRIOR_STOPS=IMMUTABLE
+GLOBAL_R40_INDEX=UNMODIFIED_UNCERTIFIED
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
