@@ -1,0 +1,9 @@
+# Mandatory original rule and metadata-only projection
+
+Unmodified scanner source SHA256=95f5de1f1d926de8683ff721bd1bcdcf2f7c90bdc52c1f6be799cfd3cb624ad2. Exact original STOP_PRIVATE_PAYLOAD assertion=155 UTF8 bytes, SHA256=38f498e140dd2d583d0ab760d0294a29f30b4cd1e73e8ee045240daaa4ea34ee, original line180. Its AST is extracted and compiled unchanged for every actual payload/seal file, including manifest; no replacement regex, skip or relaxed rule. Full historical preparation module is not run. JSON and source AST checks are additional.
+
+Raw connector replies, event-query matched fields/errors/private command, actual roots, basename/GUID/PID-bearing strings, registry values and original audit invocation stay LOCAL_ONLY. No original WER report, dump or preference body was opened, copied or uploaded. Public metadata removes all private-prefixed fields, publishes basename hashes, and replaces directory suffixes by NOT_APPLICABLE_DIRECTORY because a directory suffix can contain report identifiers. Unknown regular-file suffixes would be string-hashed. Registry paths become stable HKLM64 roles; custom DumpFolder values would become hashes/classifications without traversal.
+
+Event public output contains exact scope/result/error class only; no full event message/XML, unrelated app record, PID, machine/user identity or report GUID. Original new metadata receipt bytes/SHA256/Blob bind each public projection. Those receipt hashes and basename hashes are not dump-content hashes. File content SHA256 is explicitly NOT_COMPUTED_UNAUTHORIZED. Source argv and working directory are represented by roles, with original receipt identity and actual exit/timing recorded.
+
+Only the single allowed read-only auditor and named current-task reports are selected. No raw path-bearing receipt or original WER/preference is staged. Final seal identity remains external LOCAL_ONLY, without a third commit. Permission block is preserved, not redacted into PASS.

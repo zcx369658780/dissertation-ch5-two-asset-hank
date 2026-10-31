@@ -1,0 +1,42 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R4_WER_STACK_METADATA_AUDIT_20261031",
+  "keys": [
+    {
+      "source_role": "HKLM_LOCALDUMPS_GLOBAL_64",
+      "hive": "HKEY_LOCAL_MACHINE",
+      "view": "64_BIT",
+      "access": "KEY_READ",
+      "status": "PRESENT",
+      "values": {
+        "DumpType": {
+          "status": "NOT_SET"
+        },
+        "DumpCount": {
+          "status": "NOT_SET"
+        },
+        "DumpFolder": {
+          "status": "NOT_SET"
+        }
+      }
+    },
+    {
+      "source_role": "HKLM_LOCALDUMPS_MATLAB_EXE_64",
+      "hive": "HKEY_LOCAL_MACHINE",
+      "view": "64_BIT",
+      "access": "KEY_READ",
+      "status": "NOT_FOUND",
+      "values": {},
+      "error_class": "FileNotFoundError"
+    }
+  ],
+  "hive": "HKEY_LOCAL_MACHINE",
+  "writes": 0,
+  "custom_folder_followed": false,
+  "note": "Missing configuration does not prove no WER dump exists",
+  "raw_registry_receipt_identity": {
+    "bytes": 1020,
+    "sha256": "169afedb00b378d724cad5a5db0f62e46aad7a1c447771afb7a57dea596982f9",
+    "git_blob": "1694daeca7bc168b16893a72c53e5a2d2d953d01"
+  },
+  "redaction": "Exact registry-key strings replaced by role/HKLM64 labels; custom folder values, if any, removed in favor of string hash/classification; no folder followed"
+}
