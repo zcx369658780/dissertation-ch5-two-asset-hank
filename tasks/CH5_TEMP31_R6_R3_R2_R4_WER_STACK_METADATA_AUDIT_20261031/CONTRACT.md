@@ -1,0 +1,151 @@
+# CH5 TEMP31 R6-R3-R2-R4：既有Windows故障记录/WER转储存在性只读审计（冻结合同）
+
+TASK_ID=CH5_TEMP31_R6_R3_R2_R4_WER_STACK_METADATA_AUDIT_20261031
+STATUS=ISSUED_AWAITING_OWNER_TRANSFER
+OWNER_APPROVAL=2026-10-31__ONE_READ_ONLY_WINDOWS_EVENT_WER_EXISTENCE_AND_LATEST_TASK_PREFDIR_METADATA_AUDIT__NO_NATIVE_RESTART
+REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
+GOVERNANCE_BRANCH=migration/astra-workflow-20261012
+GOVERNANCE_PARENT=b3762e6696d7e3b27325a2df1166b56507743da3
+TASK_PUBLICATION_COMMIT=GPT_SUPPLIES_EXACT_SHA_AFTER_PUBLICATION
+EXPECTED_GOVERNANCE_HEAD=TASK_PUBLICATION_COMMIT_STRICT_EQUALITY
+TASK_CONTRACT_PATH=tasks/CH5_TEMP31_R6_R3_R2_R4_WER_STACK_METADATA_AUDIT_20261031/CONTRACT.md
+CANDIDATE_BRANCH=codex/ch5-temp31-r6-r3-r2-r4-wer-stack-metadata-audit-20261031
+FIXED_SCIENTIFIC_PARENT=56447829ce0e6c3c85552c53c351b26a2452a4bd
+FIXED_SCIENTIFIC_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
+PREVIOUS_FINAL_GPT_REVIEW_COMMIT=b3762e6696d7e3b27325a2df1166b56507743da3
+PREVIOUS_FINAL_GPT_REVIEW_BLOB=a427021db7371a3314fee0d9eeecc5a832ff238f
+PREVIOUS_NATIVE_CANDIDATE_SEAL=29ec5f7466da1ec951f491650fc27ca3f59ce02b
+PREVIOUS_NATIVE_CANDIDATE_SEAL_TREE=40946d033052b693c2177c2c9b50276cdfe3355e
+PREVIOUS_NATIVE_PAYLOAD=ab7b206b125503bf4931903f88f479ba4d70171a
+PREVIOUS_NATIVE_STOP=STOP__R6_R3_R2_R3_NATIVE_GATE_FAILED_REQUIRES_REVIEW
+PREVIOUS_NATIVE_CONTROLLER_BLOB=dd4d0f915ea0ac3c90ee9d38dadcf304485dc2a2
+PREVIOUS_NATIVE_EVENT_RECEIPT_BLOB=dee4642b194845a020e3fb6a2b685b41e0ac3fe7
+PREVIOUS_NATIVE_CLEANUP_RECEIPT_BLOB=ba095414f2ddc6a47d7cd1f568e390dbc1cb86e4
+PREVIOUS_NATIVE_UTC_RESUME=2026-10-31T00:31:11.727743Z
+PREVIOUS_NATIVE_UTC_ABNORMAL_EXIT_OBSERVED=2026-10-31T00:31:35.050422Z
+PREVIOUS_NATIVE_LOCAL_TIME=2026-10-31_08:31:35_ASIA_SHANGHAI
+PREVIOUS_NATIVE_EXIT_CODE=0xC00000FD
+PREVIOUS_NATIVE_EXIT_NTSTATUS=STATUS_STACK_OVERFLOW
+PREVIOUS_NATIVE_JOB_MEMORY_EVENT=PROCESS_MEMORY_LIMIT_RECEIVED_AT_PLUS_16.266_S
+PREVIOUS_NATIVE_PEAK_PROCESS_AND_JOB_COMMIT=1073741824_BYTES
+PREVIOUS_NATIVE_FIRST_USER_CODE=NOT_OBSERVED
+PREVIOUS_NATIVE_RESOURCE_CAUSALITY=UNKNOWN
+PREVIOUS_OLD_TIMEOUT_ROOT_CAUSE=UNKNOWN
+EVENT_LOG_NAME=Application
+EVENT_LOG_ALLOWED_IDS=1000,1001
+EVENT_LOG_ALLOWED_PROVIDERS=Application_Error,Windows_Error_Reporting
+EVENT_QUERY_UTC_START=2026-10-31T00:26:00Z
+EVENT_QUERY_UTC_END=2026-10-31T01:01:00Z
+EVENT_QUERY_MATCH_APPLICATION=MATLAB.EXE_ONLY_CASE_INSENSITIVE
+MAX_APPLICATION_LOG_QUERY_CALLS=1
+MAX_EVENT_QUERY_CHILD_PROCESSES=1_POWERSHELL_NO_PROFILE_READ_ONLY
+MAX_EVENT_LOG_CANDIDATES_RETURNED=100
+MAX_MATCHED_MATLAB_EVENTS_RECORDED=12
+MAX_WER_STANDARD_ROOTS=5
+MAX_METADATA_CANDIDATE_REPORT_DIRS=12
+MAX_CHILD_METADATA_ENTRIES_PER_MATCHED_DIR=16
+MAX_WER_CONTENT_FILE_READS=0
+MAX_DUMP_CONTENT_READS_OR_HASHES=0
+MAX_REPORT_WER_CONTENT_READS=0
+MAX_REPARSE_LINK_FOLLOWS=0
+MAX_CUSTOM_DUMPFOLDER_TRAVERSALS=0
+MAX_WER_OR_REGISTRY_SETTINGS_WRITES=0
+MAX_NEW_DUMP_CREATIONS=0
+MAX_NEW_MATLAB_PROCESSES=0
+MAX_NATIVE_RUNTIME_OR_JOB_EXPERIMENTS=0
+MAX_NEW_PREFDIRS=0
+MAX_PRIOR_PREFDIR_FILE_CONTENT_READS=0
+MAX_OLD_TASK_WRITES=0
+MAX_HA_HJB_KFE_GE_IRF_POLICY_FIRM_REAL31_MODEL_CALLS=0
+MAX_OLD_NPZ_READS=0
+MAX_POST_OPERATOR_COMPARISONS=0
+MAX_PRICE_POINTS=0
+MAX_FORMAL_SCIENTIFIC_SOURCE_WRITES=0
+MAX_NEW_REPOSITORIES_OR_WORKTREES=0
+MAX_RUNTIME_RETRIES=0
+MAX_ISSUE_PR_MERGE_CLEANUP=0
+AUTO_NEXT=FALSE
+
+## 0. 授权事实、调查对象与因果纪律
+
+Owner批准GPT上一轮推荐的独立低风险只读调查：检查本轮已发生MATLAB异常退出是否留下Windows Application Error/WER事件、已存在的崩溃转储文件身份及最新本任务LOCAL_ONLY首选项目录的**文件系统元数据**。本轮**不运行MATLAB、Job、HJB/KFE/GE/IRF或原科学模型，不产生/读取/上传dump内容，不读取Report.wer正文或MATLAB偏好文件内容，不修改WER注册表或日志/转储设置**。源身份来自固定GitHub，故障锚点为上轮Resume UTC00:31:11.727743及Exit UTC00:31:35.050422。PROCESS_MEMORY_LIMIT已实际收到、process/job peak commit各等于1GiB；随后进程自行异常退出0xC00000FD。当前事实足以支持“内存硬门真实触发”和“栈防护页创建相关异常退出”，但没有调用栈/异常上下文，不可断言两者唯一因果；旧30秒超时仍UNKNOWN。
+
+Windows官方参考仅界定事件语义，不构成本机直接证据：
+https://learn.microsoft.com/en-us/troubleshoot/windows-server/performance/troubleshoot-application-service-crashing-behavior
+此文指出Application事件ID1000/1001常用于应用崩溃排障、Event1000一般包含错误模块/exception code；
+https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-a-stack-overflow
+此文定义0xC00000FD=STATUS_STACK_OVERFLOW；
+https://learn.microsoft.com/en-us/windows/win32/wer/wer-settings
+此文说明WER LocalDumps相关默认路径和配置；
+https://learn.microsoft.com/en-us/windows-server/failover-clustering/troubleshooting-using-WER-reports
+包含已存在WER ReportQueue/ReportArchive的示意。不能因无1000/1001事件或无dump而否定真实异常；日志可能禁用、未生成、已轮转/清理、上报延迟或权限不足。
+
+## 1. 固定来源、工作区和旧证据安全门
+
+在执行任何本地event query前，先从TASK_PUBLICATION_COMMIT通过原已获批GitHub连接器读取完整新合同，核对commit唯一parent=GOVERNANCE_PARENT、root tree、diff仅新增此合同、真实Git Blob/UTF8 bytes/SHA256、治理远端HEAD严格等于TASK_PUBLICATION_COMMIT。Candidate远端初始不存在（若已存在STOP），candidate科学parent唯一FIXED_SCIENTIFIC_PARENT；不得以治理/旧candidate为科学parent。旧报告和上轮native源码/Job收据固定ref/Blob只读可用，从PREVIOUS_NATIVE_CANDIDATE_SEAL读取有限必要字段；无须重新扫描所有历史树，不得变更旧STOP。暂时失去GitHub来源或身份不符必须安全STOP；瞬时官方连接器故障最多同路径同ref同认证1次工具重试，401/403/真实404/权限拒绝不重试、不换账号或端点。
+
+只能在现有已授权安全工作区执行，保留旧LOCAL_ONLY证据、未提交数据和原index指向R40的历史事实。不运行旧全局launcher、不打开R40源码、不改变TASK_INDEX_CURRENT.md/AGENTS/任何工作流。禁止reset/clean/rebase/stash/force-push、新Git仓库或工作树、批量搜索其他盘符。创建新任务专属LOCAL_ONLY目录存放只读观察过程和原始安全回执（如果已存在/冲突则STOP，不覆盖），运行前由脚本校验固定相对路径、路径重解析/非链接属性、可写范围。旧R6-R1、R6-R3-R1等历史prefdir全部禁止接触；只允许上轮R6-R3-R2-R3既有明确路径中的最新prefdir统计自身与直接子项的元数据。
+
+准确最新任务路径来自已经认证的上轮controller：
+tasks/CH5_TEMP31_R6_R3_R2_R3_EXPLICIT_NATIVE_120S_20261031/LOCAL_ONLY/R3_NATIVE_RUNTIME/matlab_prefdir_fresh
+若此具体历史worksite LOCAL_ONLY不存在或路径身份不符，应标LATEST_PREFDIR_PENDING_IO，**不猜盘符、不扫描替代偏好目录**。本轮仅对这个明确最新目录进行lstat、最多16条直接child的文件大小、mtime/ctime/文件类型/是否reparse（用哈希代替文件名公开），不打开/解析/哈希child内容，不递归、不改动、不删除。上一轮执行者见证有4项；本轮可重新计算实际数，但“目录确实有文件”不证明MATLAB用户代码已进入或运行时prefdir匹配。
+
+## 2. Application事件日志：一次限定范围的只读查询
+
+允许且仅允许使用已授权当前Python进程直接运行一次无profile、非交互PowerShell子进程以完成Windows Application Event Log只读过滤，或者若既有授权Win32 Event API可在不额外进程的情况下完成同一一次查询则选其一、不可两者都试。优先方法为powershell.exe -NoProfile -NonInteractive -Command只包含Get-WinEvent -FilterHashtable读Application日志（ID1000、1001，UTC 2026-10-31 00:26:00至01:01:00），绝不执行Get-WinEvent -ListLog扫描、wevtutil cl、Clear-EventLog、Register/Schedule task、修改服务、注册表、组策略或生成dump。最多提取100个窗口内候选，并在内存筛选ProviderName为Application Error/Windows Error Reporting且事件内容明确匹配MATLAB.exe；最多保留12条本次匹配的事件，不能把其它程序事件原文保存。时区全部明确采用UTC时间对象进行比较，事件提供的时间转换UTC后保留原始粒度，不能将当前本地时区与UTC混用。
+
+对每个匹配MATLAB事件，仅公开event_id、provider、UTC event timestamp、level、exception_code（若明确存在）、faulting_module_basename（若明确存在）、report_category、是否有report/dump提示等已支持的最少元数据；不要公开Computer/User、PID/TID、绝对路径、完整fault offset、报表GUID、事件Message/原XML全文或其他用户应用事件。若事件结构包含可能泄漏的路径/报告正文，只能在本任务LOCAL_ONLY原始receipt短期保留为诊断证据，GitHub只允许脱敏衍生摘要并记录原字节SHA256/Blob和脱敏映射。无法读取日志（权限/不支持/日志不在）应如实分类NO_PERMISSION/NOT_AVAILABLE/NO_MATCH，**不得提升权限、启用WER、修改日志保留策略、进行第二次查询**。单次PowerShell调用只允许只读事件查询，不可组合其他命令改变系统状态。
+
+事件1001和1000都不是原生底层call stack；faulting_module是事件归因字段，不能单独证明堆栈异常的完整调用链。任何没有匹配事件的结论只能是NOT_OBSERVED_IN_BOUNDED_QUERY，不是ABSENT_SYSTEM_WIDE。
+
+## 3. WER/CrashDumps：仅已存在受限目录元数据与注册表只读设置
+
+允许在**预先约束的5个标准已知根目录**（各根不存在即NOT_FOUND，禁止创建或fallback扫描）仅作一次lstat及浅层目录名过滤：
+A: %ProgramData%\Microsoft\Windows\WER\ReportArchive
+B: %ProgramData%\Microsoft\Windows\WER\ReportQueue
+C: %LOCALAPPDATA%\Microsoft\Windows\WER\ReportArchive
+D: %LOCALAPPDATA%\Microsoft\Windows\WER\ReportQueue
+E: %LOCALAPPDATA%\CrashDumps
+不要访问其他账号、第三方位置、盘符广域目录、系统Temp、Program Files，或递归搜索用户配置文件。只检测与MATLAB.exe/AppCrash_MATLAB直接匹配的名称和本轮UTC时间窗（允许报告创建时间在退出后至01:01Z），最多12个匹配报告目录，每匹配目录最多16个直接子项；只使用os.scandir/lstat/stat且follow_symlinks=False，拒绝任何reparse/junction。不得打开文件内容，无论是*.dmp、*.mdmp、Report.wer、*.hdmp、*.cab都只能查询**existence、文件大小、mtime/ctime、扩展名、basename hash和相对来源角色**，文件内容SHA256一律NOT_COMPUTED_UNAUTHORIZED。目录里无相关文件只能说NOT_FOUND_IN_ALLOWED_ROOTS，不得称不存在任何dump。无需将WER全目录内容或名称带回公共候选。
+
+只允许通过Python标准库winreg在已授权用户权限下只读核验HKLM SOFTWARE\Microsoft\Windows\Windows Error Reporting\LocalDumps及MATLAB.exe特定子键是否存在、DumpType/DumpCount/DumpFolder是否配置；没有权限/值不存在记UNKNOWN/NOT_SET。不得访问其他注册表路径、修改设置或将DumpFolder自定义值当作授权扫描新位置；如出现自定义路径只提供CUSTOM_LOCATION_CONFIGURED+路径哈希/作用级别，不跟随到目录。微软文档说明LocalDumps配置的适用范围/可能并非HKCU，记录实际已读Hive，不能猜测。配置不存在不代表WER一定未生成dump。
+
+若查看任何特殊路径需要提权、取权/解除ACL，立即STOP该子项而非进行管理员重试。所有文件元数据和原地W​​ER报告不复制、不移动、不改权限、不打包、不上传，保留已有隐私/科学源不变。禁止读取或试图分析dump的二进制调用栈；没有dump内证据，STACK_TRACE=NOT_OBSERVED。
+
+## 4. 观察等级、保密和任务交付
+
+允许新增**一个独立Python标准库只读审计器**：
+validators/multi_province/temp31_r6_r3_r2_r4_wer_stack_metadata_audit_isolated.py
+Python自身可用os/pathlib/winreg/subprocess/hashlib/json/datetime但绝不创建MATLAB/Job进程、不调用MATLAB、科学模型、文件内容哈希dump或导入历史应用依赖；仅一次Windows event query子进程（如用纯ctypes WinAPI则0PowerShell），不得重试。只在新LOCAL_ONLY目录生成诊断原始receipt与有限脱敏汇总，并且控制每个访问点通过固定role白名单。审计器不能在import阶段触及其他系统文件/环境，不允许宽泛glob、os.walk、递归查找或外部联网。记录新任务被执行一次/零重试，禁止前几轮有界失败自动继续。
+
+唯一允许公开新增目录：
+tasks/CH5_TEMP31_R6_R3_R2_R4_WER_STACK_METADATA_AUDIT_20261031/
+下的result.md、source_identity.json、governance_candidate_gate.json、old_stop_preservation.md、event_query_scope_and_return.json、event_1000_1001_matlab_public_metadata.json、wer_standard_roots_presence_metadata.json、localdumps_registry_readonly_summary.json、latest_prefdir_shallow_metadata.json、dump_presence_and_no_content_read_receipt.json、causality_grade_and_gaps.md、model_budget_zero.json、privacy_report.md、manifest.json、DELIVERY_FINAL_RECEIPT.json及确有必要的少量字段映射/安全源证据；另加上面允许的唯一新验证器脚本。不得公开真实用户绝对路径、目录名称中包含的报表GUID、PID、用户名、计算机名、系统其它程序事故、token或dump内容。公开衍生信息要记录原件字段来源类型和有界查阅权限、发生不确定性、脱敏方式；不能靠无源“PASS”代替必要安全摘录。已有源日志、MATLAB偏好、WER文件本体一律维持原位置不动；新LOCAL_ONLY原始调查证据保留不清理。
+
+原强制隐私扫描器SHA256=95f5de1f1d926de8683ff721bd1bcdcf2f7c90bdc52c1f6be799cfd3cb624ad2，原断言不允许关闭/改写/放宽；payload和seal分别对每个实际文件字节扫描。合法交付：从FIXED_SCIENTIFIC_PARENT建立新candidate，一次payload新增commit仅含本任务白名单文件（不触动科学源码和旧证据），已授权正常SSH push最多一次，远端对固定commit/parent/tree及每个path Git Blob/真实UTF8 bytes/SHA256进行回读；seal只新增本任务DELIVERY_FINAL_RECEIPT.json，经相同隐私门后最多一次普通SSH push，固定ref完整远端复核；最终seal自身外置LOCAL_ONLY回执，不增加第三次commit。平台故障只读核清，不切换认证/协议/账号/端点、不自动重push。受限事件无匹配或无转储是合法观测结果，可以合规交付，不得为获得PASS伪造WER证据。
+
+## 5. 终态和GPT独立A/B/C
+
+STOP__AWAITING_GPT_INDEPENDENT_ABC：完成合法有界只读审计及两阶段交付，纵使没有发现匹配WER也可使用；
+STOP__R6_R3_R2_R4_WER_PERMISSION_OR_SCOPE_BLOCKED：只读查询权限/范围/来源门被阻断（若可安全交付则报告准确阶段，不扩权限）；
+STOP__R6_R3_R2_R4_SOURCE_PRIVACY_OR_DELIVERY_BLOCKED：固定来源、隐私或SSH交付硬门阻断；
+STOP__R6_R3_R2_R4_UNEXPECTED_WRITE_OR_RUNTIME_ATTEMPT：审计意外触及非白名单写入/进程，必须立即停止并上报真实事实，不能回滚隐藏。
+
+GPT独立A：治理commit、科学parent、candidate payload/seal、manifest/全部Git Blob/bytes/SHA256、隐私；B：真实固定窗口事件、WER各根的只读浅层路径/元数据、registry读取、原prefdir元数据、错误类型及源代码白名单，重点区分事件1000/1001异常字段与0xC00000FD、dump存在性与dump内容未读；C：artifact_integrity/source_identity/numeric_review/implementation_review/scientific_review/privacy_review/actual_terminal/delivery/cleanup/not_completed。numeric_review=NOT_TESTED_BY_DESIGN，scientific_review仍不升级；既有原生失败STOP、旧R6等历史STOP均保持，SOURCE_FREEZE、Results/GE/IRF无任何变化。没有新Owner决定前禁止下一次资源限额对照、增加1GiB上限、生成dump、重启MATLAB或开展逐元素科学模型对照。
+
+P3=BLOCKED
+FORMAL_SOURCE_FREEZE=FALSE
+V010=UNCHANGED
+V011=NOT_STARTED
+Results=FALSE
+model_activation=FALSE
+REAL_GE=FALSE
+FULL_RUNNER_IO_CLOSURE=BLOCKED
+STRICT_KFE_STATIONARITY=FALSE_INHERITED_R3_R4_R5
+OLD_R6_R6_R1_R6_R2_R6_R3_R6_R3_R1_R6_R3_R2_R6_R3_R2_R1_R6_R3_R2_R2_R6_R3_R2_R3_STOPS=IMMUTABLE
+GLOBAL_R40_LAUNCHER=UNMODIFIED_UNCERTIFIED
+AUTO_ISSUE=FALSE
+AUTO_PR=FALSE
+AUTO_MERGE=FALSE
+AUTO_CLEANUP=FALSE
+AUTO_NEXT=FALSE
