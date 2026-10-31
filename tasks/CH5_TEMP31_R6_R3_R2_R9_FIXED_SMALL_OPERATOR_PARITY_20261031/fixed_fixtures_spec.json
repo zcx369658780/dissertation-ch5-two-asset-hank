@@ -1,0 +1,86 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R9_FIXED_SMALL_OPERATOR_PARITY_20261031",
+  "fixture_builder_invocations": 1,
+  "randomness": "NONE",
+  "field_order": [
+    "b_backward",
+    "b_forward",
+    "a_backward",
+    "a_forward"
+  ],
+  "field_index_f": "0,1,2,3",
+  "flat_index_k": "0 through I*J*Nz-1",
+  "pool": [
+    0,
+    0.125,
+    -0.25,
+    0.5,
+    -0.75,
+    0.25,
+    -0.125,
+    0.75
+  ],
+  "field_formula": "pool[(k*(2*f+1)+f+1)%8]",
+  "dtype": "float64",
+  "flatten_order": "F",
+  "vector_formula": "((k%7)-3)/8",
+  "fixtures": [
+    {
+      "fixture_id": "fixture_1",
+      "shape": [
+        2,
+        2,
+        2
+      ],
+      "states": 8,
+      "input_identity": {
+        "bytes": 415,
+        "sha256": "28463dcec6577cb9c13193febfe54181a97adfea1485caa98c0799972404588a",
+        "git_blob": "692eea67ba06aa24fcc9911fe4be8894b0ac11e3"
+      },
+      "switch_matrix": [
+        [
+          -0.25,
+          0.25
+        ],
+        [
+          0.125,
+          -0.125
+        ]
+      ]
+    },
+    {
+      "fixture_id": "fixture_2",
+      "shape": [
+        3,
+        2,
+        2
+      ],
+      "states": 12,
+      "input_identity": {
+        "bytes": 516,
+        "sha256": "58025487a12361b6ccd36334ac8054f0f321046247e8e86f5d51ff6241ebca40",
+        "git_blob": "88a92741effcd0a63d101eebb965caccd01fb420"
+      },
+      "switch_matrix": [
+        [
+          -0.5,
+          0.5
+        ],
+        [
+          0.25,
+          -0.25
+        ]
+      ]
+    }
+  ],
+  "all_values_finite_dyadic_denominator_at_most8": true,
+  "boundary_design": "nonzero outward components, zeros, internal signed components, second-axis strides2/3 and asymmetric switch; no tuning",
+  "raw_common_inputs": "LOCAL_ONLY",
+  "builder_source_identity": {
+    "path": "validators/multi_province/temp31_r9_fixture_and_compare_isolated.py",
+    "bytes": 16885,
+    "sha256": "1dbcbb182c9dd8d9546bdf9799a23f5cd98e813590b54ec900b0607e516cfbc0",
+    "git_blob": "f008a5e087b46de311dbae019aa1a92879c21335"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R9_FIXED_SMALL_OPERATOR_PARITY_20261031",
+  "status": "BLOCKED",
+  "api": "GlobalMemoryStatusEx",
+  "api_calls": 1,
+  "api_success": true,
+  "win32_error": 0,
+  "structure_bytes": 64,
+  "fields_reliable": true,
+  "before": {
+    "monotonic_ns": 1031692671000000,
+    "utc": "2026-10-31T07:08:16.140460+00:00",
+    "clock_pair_order": "monotonic_then_UTC"
+  },
+  "observed": {
+    "monotonic_ns": 1031692671000000,
+    "utc": "2026-10-31T07:08:16.140460+00:00",
+    "clock_pair_order": "monotonic_then_UTC"
+  },
+  "values_GiB": {
+    "total_physical": 31.483287811279297,
+    "available_physical": 3.8377685546875,
+    "caller_available_commit": 6.141838073730469
+  },
+  "thresholds_GiB": {
+    "total_physical": 8,
+    "available_physical": 4,
+    "caller_available_commit": 3
+  },
+  "checks": {
+    "total_physical": true,
+    "available_physical": false,
+    "available_commit": true
+  },
+  "commit_field": "ullAvailPageFile; not RAM or working set inference",
+  "failed_gate": "AVAILABLE_PHYSICAL",
+  "MATLAB_created": 0,
+  "Job_created": 0,
+  "prefdir_created": 0,
+  "no_resampling_wait_or_threshold_change": true,
+  "source": {
+    "role": "host_memory_preflight_raw.json",
+    "bytes": 1287,
+    "sha256": "47390de53e602953cc1d6f17caf66a06622b26b00c7b00cdbef5444c4e4eab0c",
+    "git_blob": "e985f44ba569c428fefa714e54e66d4b997ef6fc"
+  },
+  "redaction": "raw struct projected to GiB; unrelated virtual fields omitted"
+}

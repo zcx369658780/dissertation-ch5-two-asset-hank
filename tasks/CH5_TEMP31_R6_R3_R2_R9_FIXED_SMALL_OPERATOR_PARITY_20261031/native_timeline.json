@@ -1,0 +1,91 @@
+{
+  "task_id": "CH5_TEMP31_R6_R3_R2_R9_FIXED_SMALL_OPERATOR_PARITY_20261031",
+  "actual_terminal": "STOP__R9_HOST_OR_NATIVE_PREEXECUTION_GATE_BLOCKED",
+  "phase": "HOST_CAPACITY_PREFLIGHT",
+  "events": [
+    {
+      "event": "initial_config_verify",
+      "monotonic_ns": 1031692640000000,
+      "utc": "2026-10-31T07:08:16.114326+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "source_route_identity_pass": true,
+      "executable_sha256": "4d251e680b8409d76d0524a1eb716de3c9e747386d3101e10f6ce1405ad1a59d",
+      "old_prefdir_entry_accesses": 0
+    },
+    {
+      "event": "static_matlab_source_and_argv_gate",
+      "monotonic_ns": 1031692671000000,
+      "utc": "2026-10-31T07:08:16.139959+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "status": "PASS",
+      "actual_stem": "t31_r9_op",
+      "actual_stem_length": 9,
+      "axis_source_blob": "0e38270154ab8953290ae3ef6c92f95d38230afb",
+      "source_identity": {
+        "bytes": 4252,
+        "sha256": "66aa2f4779ca5abe73cec8c7fec883b336863c0f7b230a98ba6dfb3cb76a9598",
+        "git_blob": "d1dd46c97f63b25d80a5c4eb0d52d5102aabadb5"
+      },
+      "run_target_equals_same_real_file": true
+    },
+    {
+      "event": "host_memory_preflight",
+      "monotonic_ns": 1031692671000000,
+      "utc": "2026-10-31T07:08:16.141969+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "status": "BLOCKED",
+      "api": "GlobalMemoryStatusEx",
+      "api_calls": 1,
+      "api_success": true,
+      "win32_error": 0,
+      "before": {
+        "monotonic_ns": 1031692671000000,
+        "utc": "2026-10-31T07:08:16.140460+00:00",
+        "clock_pair_order": "monotonic_then_UTC"
+      },
+      "observed": {
+        "monotonic_ns": 1031692671000000,
+        "utc": "2026-10-31T07:08:16.140460+00:00",
+        "clock_pair_order": "monotonic_then_UTC"
+      },
+      "reliable_fields": true,
+      "checks": {
+        "total_physical": true,
+        "available_physical": false,
+        "available_commit": true
+      },
+      "available_commit_field": "ullAvailPageFile",
+      "semantic_scope": "Windows reported maximum additional commit for current caller; conservative caller-available headroom, not inferred from RAM or working set",
+      "system_pagefile_or_other_workload_changes": false,
+      "values_GiB": {
+        "total_physical": 31.483287811279297,
+        "available_physical": 3.8377685546875,
+        "caller_available_commit": 6.141838073730469
+      },
+      "thresholds_GiB": {
+        "total_physical": 8,
+        "available_physical": 4,
+        "caller_available_commit": 3
+      }
+    },
+    {
+      "event": "controller_exception",
+      "monotonic_ns": 1031692671000000,
+      "utc": "2026-10-31T07:08:16.141969+00:00",
+      "clock_pair_order": "monotonic_then_UTC",
+      "error_type": "HostCapacityBlocked",
+      "phase": "HOST_CAPACITY_PREFLIGHT"
+    }
+  ],
+  "native_resume_time": null,
+  "checkpoints": [],
+  "native_timing": "NOT_STARTED",
+  "clock_semantics": "paired monotonic then UTC; no process/Job events",
+  "source": {
+    "role": "native_execution_receipt_raw.json",
+    "bytes": 3926,
+    "sha256": "8db5800684cc426d4cdb7d52989357c271f3f79de21e410df94e96e5071e2be5",
+    "git_blob": "cf8b23ec50aee1a6851536a1a41b16bf49a4c02d"
+  },
+  "redaction": "memory struct projected to GiB"
+}

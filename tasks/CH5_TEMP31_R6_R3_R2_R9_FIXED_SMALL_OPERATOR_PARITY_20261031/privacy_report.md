@@ -1,0 +1,5 @@
+# Exact mandatory privacy gate
+
+Scanner source SHA256=95f5de1f1d926de8683ff721bd1bcdcf2f7c90bdc52c1f6be799cfd3cb624ad2. Original155-byte STOP_PRIVATE_PAYLOAD AST assertion SHA256=38f498e140dd2d583d0ab760d0294a29f30b4cd1e73e8ee045240daaa4ea34ee is compiled unchanged and applied to every actual payload/seal byte, including manifest. Added JSON/AST/GUID and exact nonce checks never relax or replace it.
+
+Original common fixtures, complete Python matrices, source/dependency paths, raw source responses, memory struct, private argv/nonce and receipts remain LOCAL_ONLY. No MATLAB log/output/new prefs exist. Public fixture spec publishes deterministic finite dyadic rules and raw byte identities. Python-only matrix fields and null unavailable MATLAB/error fields are explicit. Paths become roles; raw source receipt byte/SHA256 identities bind derivatives. Timeline projects memory to GiB. No real data, raw MAT/NPZ, dump, old logs/prefs or credentials published. Final seal own identity stays external LOCAL_ONLY without third commit.
