@@ -266,3 +266,15 @@ OWNER_ASSET_RETURN_DIRECTION=ADOPTED_A_TIMES_EFFECTIVE_R_A
 工程规格随本决定收敛为：资产数量来自对应a网格；资本收益计算一次，并在未来劳动根的资源项、c0和V0效用构造之间使用同一明确资源定义，避免只改劳动根而保留另一份不一致的c0。V010候选R=r_b(b)*b+a*r_a(a)+T、c0=w_eff*z*l0+R继续作为既有冻结数值初猜规则核对；本次措辞未额外裁决立即无成本提款、调整成本为零、两个账户均静止、真实政策可行性或其数值资格，不能将这些假设与“收益率×资产”捆绑成Owner新采纳。
 
 后续纯公式/结构验证规格已列入当前接线方案：a=0或r_a=0时资本收益为0、收益符号保留、固定收益率下随资产线性变化、劳动根与c0同源资源、净工资不重复扣税。以上是待验证条件，不是已运行测试或新科学预算。原V010冻结文件、科学源码、参数与输入本轮均未更改；无模型import/求根/HJB/KFE/HA/GE/IRF/MATLAB或校准调用，无分支删除。FORMAL_SOURCE_FREEZE/Results/model_activation/REAL_GE仍FALSE，原保护门保持。
+
+## 2026-11-01 Owner继续后：资产乘收益率初始化的独立实现
+AUTHORITY=OWNER_CONTINUATION_AFTER_EXPLICIT_A_TIMES_R_A_ADOPTION_AND_RECORDED_INITIALIZER_SPECIFICATION
+GOVERNANCE_CHECK_PARENT=2a2e944aeaded03872ab442fddaefd61504a8066
+CODE_CANDIDATE=1cdebe761dc4406a83093884ae15f0377d891b8f__LOCAL_ONLY_NOT_PUSHED
+CODE_PARENT=64dfaeb7e4c5dd6bb97874e38e9f7d0244c4e58f
+
+本轮在独立新工作区仅新增temp31_asset_return_initializer.py与一份stdlib-only静态合同测试。新入口计算a*r_a(a)，劳动根与c0/V0同一R，必须显式声明V010总财富数值初猜语义；不默示无成本提款或两账户静止，也不作为运行预算许可。根区间、容差/maxiter依现有V010冻结文本编码，输入率/净工资/单位劳动类别及V0有限性/正斜率有拒绝guard；原初始化、收益率定义、正式预算与科学参数均未修改。详细身份、检查与未完成项见CH5_TEMP31_ASSET_RETURN_INITIALIZER_IMPLEMENTATION_20261101.md。
+
+实际完成一次预期缺文件的red、实施后10项静态通过、补充符号性质后11/11最终静态通过；只解析源码AST和符号表达式，没有导入或执行科学模块、标量资源函数、根求解器或数组初始化。变异检查可拒旧收益率平方、R漏资本收入与c0资源不一致；原565路径Blob与历史初始化原字节保持。工程结论仅为独立源码与静态合同PASS，不是数值验证、真实运行或独立科学接受。
+
+新增代码candidate只在本地；治理同步不扩为模型源码或原始回执公开上传。下一步需明确隔离运行验证的输入、语义及新预算，随后才可能调用initializer/root；生产接线、HA/HJB/KFE/GE/IRF、MATLAB、校准、数据采用仍未运行/未放行。FORMAL_SOURCE_FREEZE/Results/model_activation/REAL_GE仍FALSE；WASM/R12 STOP、R13未授权、16项义务、保护状态与旧耗额保留，无分支删除、main合并或旧工作树/index变更。

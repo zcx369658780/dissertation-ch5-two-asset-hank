@@ -1,6 +1,6 @@
 # TEMP31 当前生产接线方案 · 2026-11-01
 
-STATUS=PLAN_READY__SOURCE_WORKSPACE_VERIFIED__SCIENTIFIC_IMPLEMENTATION_NOT_STARTED
+STATUS=INDEPENDENT_INITIALIZER_IMPLEMENTED__STATIC_CONTRACT_PASS__RUNTIME_AND_PRODUCTION_NOT_RUN
 OWNER_SOURCE_ADOPTION=56447829ce0e6c3c85552c53c351b26a2452a4bd__DEVELOPMENT_SOURCE_ANCHOR
 SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
 LOCAL_SOURCE_MATERIALIZATION_COMMIT=91941302f966f12d5f206691f74c800cadf3e797__LOCAL_ONLY_NOT_PUSHED
@@ -73,3 +73,17 @@ Owner已明确选择收益率×资产；资本收益项不再是未决定的二�
 | 净工资与预算分账 | 净工资仅在生产端扣目的地税一次；资本收益不冒充工资税修正，不以此删去正式两账户的d与chi | SPEC_ONLY；无生产接线或运行 |
 
 完整消费资源/提款/积累/调整成本及可行域解释仍须单列。Owner选定资本收益项并不自动证明V010初猜是两个账户均静止的可行策略；也不授权变更正式经济机制、调用旧helper或重用既有耗尽预算。当前只记录决定与规格，不改源、不执行根求解/模型/测试、不删除历史分支。
+
+## 2026-11-01 实施增量：独立初始化已编码，运行验证未开始
+
+实现与11项静态/符号合同检查见CH5_TEMP31_ASSET_RETURN_INITIALIZER_IMPLEMENTATION_20261101.md。新增源candidate为本地1cdebe761dc4406a83093884ae15f0377d891b8f，旧565路径及历史平方helper保持。
+
+当前可审阅的新入口以a*r_a(a)构造资本收益，并让劳动根、c0与初始效用共用R；通过显式必填resource_convention区分V010数值初猜与真实现金流政策，不接生产路径。11项检查只读AST/符号表达式，实际初始化/root/模型调用0；不能将静态通过升级成数值PASS。下一门是新输入身份、数值初猜语义、受界import/initializer/root验证范围与预算；旧V010执行预算不复用，不自动运行、改正式预算或发布源码candidate。
+
+## 下一次实际初始化验证的具体提案（未授权、未执行）
+
+供Owner单独决定：在固定candidate上，一次新Python子进程、墙钟最多30秒、一次数组初始化、最多8个劳动根、每根maxiter=100；失败即停、重试0。HJB/KFE/HA/GE/IRF/policy/MATLAB调用全部0。运行前须核来源和隔离import，不把此提案当作现有运行许可。
+
+仅用明确标记的合成8格：b=[-0.1,0.1]，a=[0,1]，z=[0.8,1.2]，grid.switch_matrix为2×2零矩阵（初始化不使用）；rah=.09、rb=.02、rb_gap=.07、Tt=.1、rho=.05、gamma_c=2、phi=5、劳动权重1。为完整构造既有参数类型，另记录chi_0=.1、chi_1=2、a_bar=1e-6、mu_z=0、sigma_z=0；这些字段不在本次初始化资源式中消费，不是对调整成本的新经济采纳。工资沿已有numerical_bootstrap19语义：初始20与参考税.05构成19，合成省序A/B、origin0、税向量[.05,.05]、迁移楔为零矩阵，并明确V010_TOTAL_WEALTH_NUMERICAL_INITIAL_GUESS标签；不是实证工资或真实省份。
+
+该提案只检验新初始化函数的同源资源、正消费、FOC残差诊断、有限V0/资产斜率与F-order身份，严格记录实际调用；不改输入或网格救通过。它不是原冻结20×20×2运行，也不修改原V010 fixture或采纳新经济参数。其输入/资源语义、工程import与8次求根预算必须由Owner另行授权；当前均NOT_RUN。
