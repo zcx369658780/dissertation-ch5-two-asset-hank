@@ -278,3 +278,24 @@ CODE_PARENT=64dfaeb7e4c5dd6bb97874e38e9f7d0244c4e58f
 实际完成一次预期缺文件的red、实施后10项静态通过、补充符号性质后11/11最终静态通过；只解析源码AST和符号表达式，没有导入或执行科学模块、标量资源函数、根求解器或数组初始化。变异检查可拒旧收益率平方、R漏资本收入与c0资源不一致；原565路径Blob与历史初始化原字节保持。工程结论仅为独立源码与静态合同PASS，不是数值验证、真实运行或独立科学接受。
 
 新增代码candidate只在本地；治理同步不扩为模型源码或原始回执公开上传。下一步需明确隔离运行验证的输入、语义及新预算，随后才可能调用initializer/root；生产接线、HA/HJB/KFE/GE/IRF、MATLAB、校准、数据采用仍未运行/未放行。FORMAL_SOURCE_FREEZE/Results/model_activation/REAL_GE仍FALSE；WASM/R12 STOP、R13未授权、16项义务、保护状态与旧耗额保留，无分支删除、main合并或旧工作树/index变更。
+
+## 2026-11-01 Owner授权单次8格初始化探针；导入防护误拦截后停止
+
+OWNER_EXACT_STATEMENT=我授权，请继续
+GOVERNANCE_AUTHORIZATION_PARENT=f886d29cfd74cffab67a81ac17082f6008a9a098
+SOURCE_WORKSPACE_HEAD_AT_ATTEMPT=4448899ec1e9419021fc6f4a36ec762280f4407a
+SCIENTIFIC_CODE_CANDIDATE=1cdebe761dc4406a83093884ae15f0377d891b8f__UNCHANGED_LOCAL_ONLY
+AUTHORIZATION=ONE_NEW_SYNTHETIC_WORKER__30_SECONDS_INCLUDING_IMPORT__ONE_8_CELL_INITIALIZER__UP_TO_8_ROOTS__BRENT_MAXITER_100__RETRY_0
+ACTUAL_OUTCOME=STOP_NO_RETRY_DURING_IMPORT__INITIALIZER_NOT_REACHED
+
+此授权明确承接既有单次合成探针提案，不是原V010冻结网格重跑或生产预算。固定输入662字节，SHA-256=cfc69df57a1f224a42dd92d33bb3bd38a786893456d71c7c32b293c45a8d7f23；输入内容及总财富数值初猜标签保持提案原样，未读取真实数据或旧数组。环境元数据为Python3.11.9/NumPy2.4.6/SciPy1.17.1。
+
+实际只启动1个验证worker，父进程墙钟2.438秒，退出码1，未超时，重试0。进入包入口和contracts的导入后，SciPy sparse依赖间接导入NumPy testing/platform；其socket.gethostname本机名查询被验证器自行设置的过宽socket.*审计规则阻止。该事件是本机元数据查询，不能标成实际联网尝试；没有执行外部子进程。根因是验证器工程规则，而非本轮已观察到的资本收益公式错误。原worker/回执保留，不修改后再试。
+
+实际数组初始化0、劳动根0、Python/原生Brent各0、HJB/KFE/HA/GE/IRF/policy/MATLAB各0；项目求解/策略函数无调用或拦截尝试。未生成V0/labor数组，消费、FOC、斜率和数组运行性质全部NOT_MEASURED，不能给数值PASS或科学收敛结论。预检75份源码已按固定HEAD核实，运行前进入的2份项目文件再次验证；停止后75份原字节/Blob/SHA-256保持。受保护旧工作树HEAD、index SHA-256及432条默认状态记录保持。原始脚本/traceback/逐项证据仅LOCAL_ONLY，公开同步为聚合说明。
+
+下一步形成具体新提案：仅将socket.gethostname本机元数据事件从误拦截范围中排除，继续禁止网络/子进程及非许可模型函数；源、固定合成输入、30秒/单进程/单初始化/8根/maxiter100/重试0全部保持。该方案未实施或执行；本次单次预算已经消耗，任何新worker必须另获Owner明确授权。工程诊断和同步不构成重试许可。
+
+NUMERICAL_VALIDATION=NOT_REACHED__IMPORT_GUARD_BLOCK
+ENGINEERING_VERDICT=FAIL_CLOSED_EXECUTION_AND_CAUSE_RECORDED__NO_NUMERICAL_PASS
+生产接线/科学接受/分支清理均未推进；FORMAL_SOURCE_FREEZE/Results/model_activation/REAL_GE保持FALSE，V010原件、WASM/R12 STOP、R13未授权、OWNER_BASELINE_REBIND=NOT_AUTHORIZED、16项义务和旧耗额保持。新增源码分支未推送，无分支删除或main合并。

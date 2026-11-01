@@ -1,12 +1,14 @@
 # TEMP31 当前生产接线方案 · 2026-11-01
 
-STATUS=INDEPENDENT_INITIALIZER_IMPLEMENTED__STATIC_CONTRACT_PASS__RUNTIME_AND_PRODUCTION_NOT_RUN
+STATUS=INITIALIZER_STATIC_PASS__SINGLE_RUNTIME_PROBE_STOPPED_DURING_IMPORT__PRODUCTION_NOT_RUN
 OWNER_SOURCE_ADOPTION=56447829ce0e6c3c85552c53c351b26a2452a4bd__DEVELOPMENT_SOURCE_ANCHOR
 SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
 LOCAL_SOURCE_MATERIALIZATION_COMMIT=91941302f966f12d5f206691f74c800cadf3e797__LOCAL_ONLY_NOT_PUSHED
 SCIENTIFIC_SOURCE_FREEZE=FALSE
 
 本方案承接Owner对上一轮TEMP31选择建议的同意，落实来源采纳、独立源码工作区和接线设计。不重写V010冻结计划、不恢复旧预算，也不把选定来源等同于接受其中每个历史数值写法。唯一当前进度仍由CH5_LOCAL_FIRST_STATUS_CURRENT.md维护，Owner决定见OWNER_LOCAL_FIRST_CODEX_20261101.md。
+
+当前增量：独立初始化已实施并通过11项静态检查；随后获准的单次合成探针已在依赖导入时停止，尚未执行初始化或求根。下列按阶段保留的SPEC_ONLY/未授权/未执行描述不是当前探针状态；以文末增量和唯一短状态为准。
 
 ## 已完成的工程基础
 
@@ -87,3 +89,9 @@ Owner已明确选择收益率×资产；资本收益项不再是未决定的二�
 仅用明确标记的合成8格：b=[-0.1,0.1]，a=[0,1]，z=[0.8,1.2]，grid.switch_matrix为2×2零矩阵（初始化不使用）；rah=.09、rb=.02、rb_gap=.07、Tt=.1、rho=.05、gamma_c=2、phi=5、劳动权重1。为完整构造既有参数类型，另记录chi_0=.1、chi_1=2、a_bar=1e-6、mu_z=0、sigma_z=0；这些字段不在本次初始化资源式中消费，不是对调整成本的新经济采纳。工资沿已有numerical_bootstrap19语义：初始20与参考税.05构成19，合成省序A/B、origin0、税向量[.05,.05]、迁移楔为零矩阵，并明确V010_TOTAL_WEALTH_NUMERICAL_INITIAL_GUESS标签；不是实证工资或真实省份。
 
 该提案只检验新初始化函数的同源资源、正消费、FOC残差诊断、有限V0/资产斜率与F-order身份，严格记录实际调用；不改输入或网格救通过。它不是原冻结20×20×2运行，也不修改原V010 fixture或采纳新经济参数。其输入/资源语义、工程import与8次求根预算必须由Owner另行授权；当前均NOT_RUN。
+
+## 2026-11-01 单次探针后的路线位置
+
+Owner已授权前述单次8格验证。唯一worker运行2.438秒后在依赖导入阶段停止：验证器把socket.gethostname本机元数据查询误归入socket.*禁止事件。初始化/root/Brent和HJB/KFE/HA/GE/IRF/policy/MATLAB调用均0；未生成V0，数值性质未测得。详见实现说明文末及Owner记录；原执行证据保留，不修后重试，本次1/1尝试已消耗。
+
+路线仍在“独立初始化静态通过、数值验证尚未到达”处，未进入生产接线或严格驻定。下一具体方案只修正验证器对本机名事件的误拦截，维持固定源/固定合成输入和原30秒、单进程、一次初始化、8根/maxiter100、零重试限制；它是未实施的新提案，新worker需Owner另行授权。后续生产接线、31省/GE/动态/IRF/福利与Results门均未放行。原保护门、历史科学预算与分支清理限制保持。

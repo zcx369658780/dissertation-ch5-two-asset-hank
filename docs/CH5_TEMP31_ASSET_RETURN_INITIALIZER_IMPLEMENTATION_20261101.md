@@ -1,11 +1,13 @@
 # TEMP31 资产收益初始化：独立实现与静态合同核查 · 2026-11-01
 
-STATUS=LOCAL_ADDITIVE_IMPLEMENTATION__STATIC_CONTRACT_PASS__NUMERICAL_NOT_RUN
+STATUS=STATIC_CONTRACT_PASS__ONE_AUTHORIZED_RUNTIME_ATTEMPT_STOPPED_DURING_IMPORT__NUMERICAL_NOT_REACHED
 LOCAL_CODE_CANDIDATE=1cdebe761dc4406a83093884ae15f0377d891b8f
 LOCAL_CODE_PARENT=64dfaeb7e4c5dd6bb97874e38e9f7d0244c4e58f
 LOCAL_CODE_TREE=7c2cdaec977353d9b41de0e68cdffad1d78cdbe6
 CODE_PUBLICATION=LOCAL_ONLY_NOT_PUSHED
-MODEL_IMPORTS_INITIALIZER_ROOT_HA_HJB_KFE_GE_IRF_CALLS=0
+IMPLEMENTATION_PHASE_MODEL_IMPORTS_INITIALIZER_ROOT_HA_HJB_KFE_GE_IRF_CALLS=0
+
+当前增量：Owner已另行授权下文单次8格探针；实际进程在依赖导入阶段因验证器误拦截本机名查询而停止，初始化/root仍0。本文后续“未授权/未执行/NOT_RUN”段落保留为实施和提案阶段记录，当前执行结果以文末为准。
 
 ## 授权与实施范围
 
@@ -55,3 +57,24 @@ OWNER_SCIENTIFIC_ACCEPTANCE_OF_EXECUTED_INITIALIZER=NOT_GRANTED
 仅用明确标记的合成8格：b=[-0.1,0.1]，a=[0,1]，z=[0.8,1.2]，grid.switch_matrix为2×2零矩阵（初始化不使用）；rah=.09、rb=.02、rb_gap=.07、Tt=.1、rho=.05、gamma_c=2、phi=5、劳动权重1。为完整构造既有参数类型，另记录chi_0=.1、chi_1=2、a_bar=1e-6、mu_z=0、sigma_z=0；这些字段不在本次初始化资源式中消费，不是对调整成本的新经济采纳。工资沿已有numerical_bootstrap19语义：初始20与参考税.05构成19，合成省序A/B、origin0、税向量[.05,.05]、迁移楔为零矩阵，并明确V010_TOTAL_WEALTH_NUMERICAL_INITIAL_GUESS标签；不是实证工资或真实省份。
 
 该提案只检验新初始化函数的同源资源、正消费、FOC残差诊断、有限V0/资产斜率与F-order身份，严格记录实际调用；不改输入或网格救通过。它不是原冻结20×20×2运行，也不修改原V010 fixture或采纳新经济参数。其输入/资源语义、工程import与8次求根预算必须由Owner另行授权；当前均NOT_RUN。
+
+## 2026-11-01 单次探针执行记录：导入防护误拦截，数值未到达
+
+Owner随后以“我授权，请继续”批准上述具体提案。代码candidate仍为1cdebe761dc4406a83093884ae15f0377d891b8f；实际工作区HEAD4448899ec1e9419021fc6f4a36ec762280f4407a仅为文档后继。固定输入SHA-256=cfc69df57a1f224a42dd92d33bb3bd38a786893456d71c7c32b293c45a8d7f23，未变更。环境元数据Python3.11.9/NumPy2.4.6/SciPy1.17.1，不等于完整依赖导入通过。
+
+| 检查 | 实际结果 |
+|---|---|
+| 单次worker与时间 | 1/1已消耗，父进程墙钟2.438秒，退出码1，未超时，重试0 |
+| 失败位置 | 包入口/contracts导入过程中，SciPy sparse间接加载NumPy testing/platform，本机名查询socket.gethostname被验证器的socket.*规则误拦截 |
+| 初始化/劳动根/Brent | 数组初始化0；劳动根0；Python Brent0；原生Brent0；maxiter未实际使用 |
+| HJB/KFE/HA/GE/IRF/policy/MATLAB | 全部0；无项目求解/策略调用尝试 |
+| 消费、FOC、V0斜率、数组性质 | NOT_MEASURED；没有生成V0或labor数组，不能报告数值通过或失败 |
+| 来源保持 | 75份源码停后原字节/Blob/SHA-256一致；进入的2份项目文件在执行前再次认证 |
+
+原因已沿原始traceback定点确认。socket.gethostname在此为本机元数据查询，不能将审计拦截记成真实网络活动；这也不是六路径WASM保护门的触发或重试。错误属于验证器，不是已观察到的初始化公式失败。未修改验证器、输入、模型或容差后重跑，原脚本/计数/原始异常及证据清单LOCAL_ONLY保留。
+
+后续可审阅提案为：仅允许上述本机名元数据事件，保留网络/子进程阻断、项目源身份和函数调用白名单；固定源和合成输入、单新进程/30秒/单初始化/8根/每根maxiter100/重试0均不变。未实施、未执行；本次预算不恢复，新进程需Owner另行授权。原11项静态通过保持，运行资格仍未建立；不推断两账户政策可行、严格驻定、独立科学接受或Results。
+
+CURRENT_RUNTIME_VERDICT=STOP_NO_RETRY__IMPORT_GUARD_OVERBROAD
+CURRENT_NUMERICAL_VALIDATION=NOT_REACHED
+CURRENT_PRODUCTION_BINDING=NOT_DONE
