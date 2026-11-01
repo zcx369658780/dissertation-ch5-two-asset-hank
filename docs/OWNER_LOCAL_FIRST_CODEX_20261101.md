@@ -317,3 +317,25 @@ GENERAL_NUMERICAL_DEBUG_POLICY=DETAILS_TO_BE_SUPPLIED__NOT_YET_RECEIVED
 
 LATEST_EXECUTION_VERDICT=AUTH2_STOP_NO_RETRY__DEPENDENCY_WINDOWS_METADATA_SUBPROCESS_GATE
 NUMERICAL_VALIDATION=NOT_REACHED
+
+## 2026-11-01 Owner批准有限累计初始化调试规则及HA黑箱/价格参考约束
+
+OWNER_EXACT_STATEMENT=可以我同意，这里附带之前的结论：1、HA模块的grid参数不允许更改，视为黑箱。2、ra rb wt等价格变量的范围，参考你之前进行过的稳态测试选择。
+GOVERNANCE_AUTHORIZATION_PARENT=46aaa5c9c8b531ac18f8ea8219dcaa0645f3ce60
+SOURCE_WORKSPACE_HEAD_AT_EXECUTION=239a45e362155d1747a26c42c1a3f757b165b8a6
+AUTHORIZATION_RULE=CH5_TEMP31_BOUNDED_INITIALIZER_DEBUG_AUTHORIZATION_20261101.md
+
+本次明确同意上一轮10个新验证进程、每个≤30秒、每次初始化≤1/劳动根≤8/maxiter100的提案，工程误拦截/导入/日志等可在同一累计余量内修复重试，真实数值/域/来源/保护失败则停止；固定公式、参数、输入、根域/容差不改。只允许当前独立初始化及验证器，HA/HJB/KFE/GE/IRF/policy/MATLAB仍0；成功即停，不自动续预算。前两次独立单次授权仍已耗且原件保留。规则进入AGENTS及专门文档，并按Owner要求追加长期记忆，替代此前“细则待补”的当前状态。
+
+Owner补充两条规则原义保留：HA grid参数不可变、视为黑箱；ra/rb/wt等价格的选择须有前次测试来源。本轮固定8格是先前及本次同时同意的独立合成初始化fixture，不缩减/替换/重绑生产HA网格。定点回读R1固定c46a6e5...及R2 ffb1567.../R3 e194e44...公开point_grid/result，确认R1 P0(.09,.02,净19)确已执行，且与本次固定价格相同。R1–R3全部已测点分量包络rah [.045,.09]、rb [.01,.03]、净wt[15.5,22]；严格驻定认证点均0，不把区间包络称为连续可行盒、真实稳态或企业毛工资合同。本轮未改任何价格。
+
+新预算实际3/10：第1进程2.656秒，在stdlib dataclass生成工厂被验证器误拦截处停止；第2进程4.734秒，在来源登记DataArtifactProvenance.__post_init__调用前被误拦截；均未进入初始化或求根。静态核查后仅放行绑定已认证源码的标准库工厂及上述纯字符串/哈希格式校验，第3进程2.375秒exit0通过固定8格检查。每进程限定Windows本机版本ver查询实际1次，其他命令/网络仍禁止。两个工程修复重试按本次批准执行，不是复活前两次旧预算；真实模型源码/输入/根算法未改。
+
+累计实际初始化1、劳动根8、Python/原生Brent各8、每根maxiter100，原生实际迭代数UNKNOWN；所有HA/HJB/KFE/GE/IRF/policy/MATLAB调用及尝试0。35份实际导入模块全部同源身份通过；8格资源重构精确一致，消费最小10.369151545690562，有限数组、小端float64、F-order/只读和两资产轴正差分通过。劳动根残差max4.592992652874273e-13、FOC残差max8.200018442039436e-11仅如实诊断，不新增FOC科学接受阈值。原始V0/labor数组和脚本/逐项日志均LOCAL_ONLY，输出哈希见实现说明；停后75份源码/固定输入身份保持。
+
+ENGINEERING_NUMERICAL_VERDICT=PASS_BOUNDED_FIXED_SYNTHETIC_INITIALIZER_ONLY
+NEW_BUDGET_WORKERS_USED=3_OF_10
+NEW_BUDGET_REMAINING=7__NO_AUTOMATIC_RENEWAL__TARGET_REACHED_NO_EXTRA_RUNS
+HA_GRID_MUTATIONS=0
+
+路线前进到独立初始化合成检查通过；后续仅静态明确生产绑定与网格/价格来源接口，不从本次批准外推科学源变更、实证数据、HA运行、稳态、31省/GE/IRF或科学接受。生产接线仍未实施，FORMAL_SOURCE_FREEZE/Results/model_activation/REAL_GE仍FALSE。旧dirty工作树/HEAD/index、九月与TEMP31历史证据、V010、WASM/R12 STOP、R13未授权、保护重绑定未授权、16项义务保持；无分支删除或main合并。

@@ -1,13 +1,13 @@
 # TEMP31 资产收益初始化：独立实现与静态合同核查 · 2026-11-01
 
-STATUS=STATIC_CONTRACT_PASS__ONE_AUTHORIZED_RUNTIME_ATTEMPT_STOPPED_DURING_IMPORT__NUMERICAL_NOT_REACHED
+STATUS=STATIC_CONTRACT_PASS__FIXED_SYNTHETIC_8_CELL_NUMERICAL_ENGINEERING_CHECK_PASS__PRODUCTION_NOT_BOUND
 LOCAL_CODE_CANDIDATE=1cdebe761dc4406a83093884ae15f0377d891b8f
 LOCAL_CODE_PARENT=64dfaeb7e4c5dd6bb97874e38e9f7d0244c4e58f
 LOCAL_CODE_TREE=7c2cdaec977353d9b41de0e68cdffad1d78cdbe6
 CODE_PUBLICATION=LOCAL_ONLY_NOT_PUSHED
 IMPLEMENTATION_PHASE_MODEL_IMPORTS_INITIALIZER_ROOT_HA_HJB_KFE_GE_IRF_CALLS=0
 
-当前增量：Owner已两次分别授权下文单次8格探针；首次在本机名查询处停止，第二次仅修正该误拦截后又在Windows版本元数据子进程门停止，初始化/root累计仍0。本文按阶段保留的“未授权/未执行/NOT_RUN”和首次停止记录为历史过程，当前执行结果以文末为准。
+当前增量：前两次独立单次授权的导入停止原样保留。Owner随后批准10个新worker的有限累计工程调试规则；新预算用3/10，第三次通过固定8格初始化，累计初始化1/root8/HA及求解0。本文按阶段保留的“未授权/未执行/NOT_RUN”和两次停止记录为历史过程，当前执行结果以文末为准。
 
 ## 授权与实施范围
 
@@ -96,3 +96,28 @@ Owner表示后续将提供类似数值调试授权细则，并允许写入项目
 LATEST_RUNTIME_VERDICT=AUTH2_STOP_NO_RETRY__WINDOWS_VERSION_METADATA_SUBPROCESS_BLOCKED
 LATEST_NUMERICAL_VALIDATION=NOT_REACHED
 GENERAL_DEBUG_POLICY=DETAILS_PENDING__NOT_INFERRED
+
+## 2026-11-01 有限累计调试授权后的固定8格数值工程检查
+
+Owner批准上一轮明确提案，补充HA grid不可变黑箱、价格参考既有稳态测试。完整规则见CH5_TEMP31_BOUNDED_INITIALIZER_DEBUG_AUTHORIZATION_20261101.md：10个新验证worker、每个≤30秒，每worker初始化≤1、根≤8/maxiter100；仅工程错误可在余量内修复重试，真实数值/来源/保护失败停止。该预算不循环恢复，前两次单次授权保留。source candidate仍1cdebe761dc4406a83093884ae15f0377d891b8f，固定合成输入SHA-256仍cfc69df57a1f224a42dd92d33bb3bd38a786893456d71c7c32b293c45a8d7f23，源码/参数/输入/根域/容差均未修改。
+
+| 新预算尝试 | 墙钟 | 结果及实际数值调用 |
+|---|---:|---|
+| 1 | 2.656秒 | 限定Windows版本查询正常；验证器误拦截stdlib dataclass生成工厂，止于导入，初始化/root0 |
+| 2 | 4.734秒 | 仅允许已认证来源对应的dataclass工厂后，误拦截来源登记DataArtifactProvenance.__post_init__；其主体尚未进入，初始化/root0 |
+| 3 | 2.375秒 | 静态核实该函数仅校验字符串/哈希格式/元数据标志后加入精确白名单，固定8格检查通过，初始化1/root8 |
+
+三个worker均未超时。尝试2的项目guard block为来源登记校验的误拦截，不是求解器调用；所有HA/HJB/KFE/GE/IRF/policy/MATLAB调用和尝试均0。每worker只允许1次标准库platform._syscmd_ver系统cmd.exe /c ver本机版本查询，实际各1次；未放开任意命令/网络。只有验证器、计数/输出分类修复，不改任何科学源。尝试日志与原件独立保留；本预算3/10已用、余7，达到目标后不继续运行。与此前两个独立授权合计5个worker，累计仅一次实际初始化。
+
+通过范围：35份实际导入项目模块都解析到经Blob/原字节/SHA-256认证的同一选定源码；8格value/labor全部有限、小端float64、F-order、只读。实际根入参R与独立重构c0/V0资源在8格精确一致，消费范围[10.369151545690562,14.71721457654322]，最小b轴V0差分0.0010162584464343816、a轴差分0.007508957926102733，均为正。这里报告的是原网格点差分，不称连续导数或经济可行域认证。
+
+劳动根最大绝对残差4.592992652874273e-13；FOC形式l^phi*c^gamma_c-w的最大绝对残差8.200018442039436e-11，按Owner批准完整报告，不新增科学接受阈值。Python Brent和原生Brent实际各8次、maxiter均100；原生实际迭代数UNKNOWN，不把函数调用数当迭代数。
+
+输出原始F-order小端float64字节各64 bytes，仅LOCAL_ONLY：V0 SHA-256=9905b7ce0cd17bd43bdde66918e3b952c26e81c0be579f0c388d6d744000e5df；labor SHA-256=2c0067494ee7753d38e43a1b69963c5cc6d8eb5954b673ad21c3b3e2497e266f。停止后75份源码与原输入身份保持，HA grid参数更改0。合成8格fixture不替换或缩减生产HA网格；本价格(.09,.02,净19)与R1 P0实际已测点相同。历史价格来源、各自资格和网格身份见授权文档；没有采纳连续价格可行盒。
+
+LATEST_ENGINEERING_NUMERICAL_VERDICT=PASS_BOUNDED_FIXED_SYNTHETIC_INITIALIZER_ONLY
+LATEST_BUDGET=3_OF_10_WORKERS_USED__7_REMAIN__NO_AUTOMATIC_RENEWAL_OR_EXTRA_RUNS
+PRODUCTION_BINDING=NOT_DONE
+HA_STEADY_STATE_INDEPENDENT_SCIENTIFIC_ACCEPTANCE_AND_RESULTS=NOT_ESTABLISHED
+
+下一工程目标是静态明确生产入口绑定及HA网格/价格来源合同；本次通过不新增HA运行、科学源修改、真实数据、31省/GE/IRF、保护重绑定或分支删除权限。

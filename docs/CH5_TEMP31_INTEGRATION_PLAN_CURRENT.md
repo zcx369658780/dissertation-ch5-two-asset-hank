@@ -1,6 +1,6 @@
 # TEMP31 当前生产接线方案 · 2026-11-01
 
-STATUS=INITIALIZER_STATIC_PASS__SINGLE_RUNTIME_PROBE_STOPPED_DURING_IMPORT__PRODUCTION_NOT_RUN
+STATUS=INITIALIZER_STATIC_AND_FIXED_SYNTHETIC_NUMERICAL_ENGINEERING_PASS__PRODUCTION_NOT_BOUND
 OWNER_SOURCE_ADOPTION=56447829ce0e6c3c85552c53c351b26a2452a4bd__DEVELOPMENT_SOURCE_ANCHOR
 SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
 LOCAL_SOURCE_MATERIALIZATION_COMMIT=91941302f966f12d5f206691f74c800cadf3e797__LOCAL_ONLY_NOT_PUSHED
@@ -8,7 +8,7 @@ SCIENTIFIC_SOURCE_FREEZE=FALSE
 
 本方案承接Owner对上一轮TEMP31选择建议的同意，落实来源采纳、独立源码工作区和接线设计。不重写V010冻结计划、不恢复旧预算，也不把选定来源等同于接受其中每个历史数值写法。唯一当前进度仍由CH5_LOCAL_FIRST_STATUS_CURRENT.md维护，Owner决定见OWNER_LOCAL_FIRST_CODEX_20261101.md。
 
-当前增量：独立初始化已实施并通过11项静态检查；两次分别明确获准的单次合成探针均在依赖导入时停止，尚未执行初始化或求根。下列按阶段保留的SPEC_ONLY/未授权/未执行描述不是当前探针状态；以文末增量和唯一短状态为准。
+当前增量：独立初始化已实施并通过11项静态检查；此前两次单次授权导入停止保留。Owner新批准10个worker有限累计调试后，用3/10通过固定8格初始化数值工程检查，HA及求解0。下列按阶段保留的SPEC_ONLY/未授权/未执行描述为历史过程；以文末增量和唯一短状态为准。
 
 ## 已完成的工程基础
 
@@ -101,3 +101,11 @@ Owner已授权前述单次8格验证。唯一worker运行2.438秒后在依赖导
 Owner明确批准上述同限额新探针，另表示稍后提供可纳入项目规则/长期记忆的通用数值调试细则。已按批准仅排除本机名事件；新worker在1.532秒后因stdlib Windows版本查询拟调用本地ver命令、触发仍保持的子进程禁止门而停止。该本地命令未创建，初始化/root和全部模型求解累计0；没有在本次授权内自动修改防护再试。
 
 当前仍为11项静态通过、数值验证未到达；不能越过初始化门接生产或宣称严格驻定/Results。后续工程需明确Windows元数据查询的验证器接口；通用授权细则尚未收到，本轮不把“下方给你”外推为无限次或新增科学预算。两次独立授权/原始证据分开保留，科学源码、合成输入与所有保护门保持。
+
+## 2026-11-01 固定合成初始化通过；HA黑箱及价格来源约束落地
+
+Owner已批准专门有限调试规则，见CH5_TEMP31_BOUNDED_INITIALIZER_DEBUG_AUTHORIZATION_20261101.md及AGENTS。新预算用3/10，前两次只修验证器导入误拦截；第三次2.375秒通过固定8格工程数值检查。累计初始化1、劳动根/两层Brent各8、HA/HJB/KFE/GE/IRF/policy/MATLAB均0；成功即停，余7不自动消耗或恢复。源码、合成输入、原根域/容差和HA grid参数保持，具体诊断与输出身份见实现说明文末。
+
+HA网格作为不可变黑箱，不能为收敛改变节点、上下界、轴/切换矩阵；本次独立8格fixture不替换生产HA网格。价格必须参考经认证历史测试：R1–R3已测分量包络rah[.045,.09]、rb[.01,.03]、净wt[15.5,22]，本次(.09,.02,净19)直接对应R1 P0。所有这些是离散诊断点，严格驻定认证点仍0，不能把分量包络任意组合成认证连续可行域或采纳企业毛工资。
+
+路线推进到“独立初始化静态+固定合成数值工程检查通过”；下一步是生产绑定的静态规格与来源/网格/价格身份接口。生产接线未实施，真实双账户政策可行性、严格驻定、31省/GE/动态/IRF/福利和Results均未获得本次通过资格。旧预算、保护门、历史证据和清理限制保持。
