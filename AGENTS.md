@@ -22,7 +22,7 @@ The 2026-10-28 six-path WASM/reparse protection STOP remains; OWNER_BASELINE_REB
 AUTO_NEXT=FALSE blocks unauthorized scientific successors, model runs and STOP retries. It does not require GPT dispatch for ordinary engineering already within authorization. New science, unapproved scientific changes or special budgets require a specific Owner decision.
 Preserve unrelated dirty files, index, refs, worktrees and historical evidence. Use explicit paths and isolated changes; no blanket staging, reset/stash/clean, force push, main merge, branch deletion, publication or cleanup without applicable authorization.
 Keep one short current state and faithful Owner decisions; synchronize meaningful milestones to GitHub. Report NOT_RUN, UNKNOWN and OWNER_DECISION_PENDING accurately. Public synchronization must exclude secrets, private data, sensitive local paths/logs and unapproved raw scientific assets.
-This migration grants no science, test, model or G1 budget. G1 remains ISSUED / COMPLETION_NOT_VERIFIED; its zero-write budgets are unchanged. R12 STOP and R13 NOT_AUTHORIZED remain.
+Governance/progress synchronization grants no model, scientific or raw-asset publication budget. G1/G1B progress is recorded only in the short state; the original G1 contract and consumed/zero-write budgets are not amended or reused. R12 STOP and R13 NOT_AUTHORIZED remain.
 Only the 2026-11-01 governance migration ends at its explicit STOP; that stop does not restore GPT daily dispatch.
 
 ## Current navigation and historical precedence

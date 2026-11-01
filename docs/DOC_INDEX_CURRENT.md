@@ -15,7 +15,7 @@
 | HISTORICAL_EVIDENCE ＋ SCIENTIFIC_CONSTRAINT | [CURRENT 历史](../CURRENT.md) / [TASK_CURRENT 历史](../TASK_CURRENT.md) | 原文和 STOP 身份不改写；不能由旧 ACTIVE/NEXT 自动续跑 |
 | UNKNOWN（运行时加载范围） | 宿主注入的 instructions/skills 入口 | 已核当前根规则与提供的宿主入口；实际运行时选择及全量注入顺序 UNKNOWN，不扫描缓存或改全局规则 |
 
-G1 保持 ISSUED / COMPLETION_NOT_VERIFIED；WASM STOP、R12 STOP、R13 未授权、16项义务、耗尽预算及受保护研究资产均保持。此导航不产生科学或保护重绑定权限。
+G1 限额内报告已交付并获Owner确认；原任务ISSUED文本与零写预算不改，资产身份/恢复资格仍未闭合。G1B为下一工程目标，精确缺件/公开白名单待明确；以短状态为当前进度。WASM/R12 STOP、R13未授权、16项义务、耗尽预算及资产保护保持，本导航不授科学、上传或保护重绑定权限。
 以下为既有索引正文，逐字节保留为历史导航。旧“当前状态/下一步/最新 ZIP”按各自固定日期理解；发现具体失效历史链接时再定点处理，不因整理而搬迁、删除或采纳科学资产。
 
 ---

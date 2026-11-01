@@ -86,3 +86,42 @@ tracked、staged 和治理范围 untracked/ignored 已定点核对；为保持 W
 
 G1=ISSUED / COMPLETION_NOT_VERIFIED；本轮不执行、不补做、不关闭、不修改 G1。九月首次复现和实际 TEMP31 修正源保护、WASM STOP、OWNER_BASELINE_REBIND=NOT_AUTHORIZED、R12 STOP、R13 NOT_AUTHORIZED、16项义务、已耗预算及全部科研硬门保持。
 模型/测试/MATLAB=NOT_RUN；main 合并、rebase、PR、归档/复制/移动/删除/清理科研资产、改变 snapshot/worktree/branch 历史、Desktop/CUA/node_repl/mirror/安全配置修改=NOT_DONE。完成此治理整合后 STOP，不自动进入下一阶段。
+
+## 2026-11-01 项目源交接进度核对与本地对齐
+AUTHORITY=OWNER_REQUEST_TO_ALIGN_G1B_HANDOFF_PROGRESS_AND_EXPLAIN_ROADMAP_POSITION
+ALIGNMENT_PARENT=351b456c8866e36e5dbc92bcd8c338e0d8d0bff8
+ALIGNMENT_SCOPE=GOVERNANCE_AND_PROGRESS_RECORDS_ONLY__NO_ASSET_PUBLICATION_OR_SCIENCE
+Owner 本次确认后续日常执行由 Local Codex 负责。本轮先核交接、对齐本地进度并报告路线位置/下一目标；不是直接执行原件恢复、科研运行或科学采纳。Owner 最终科学权威不变；交接中旧 GPT 派单、逐任务终验职责按 Local-first 决定理解，不再充当普通工程门禁。
+
+### 交接与当前记录的差异
+- 交接中的 migration/astra-workflow-20261012@758954a31e1dff7e3d6c8eafef6af62ead11314c 是历史治理锚点。当前工程治理线为 governance/ch5-codex-local-first-20261101，本次对齐以351b456c8866e36e5dbc92bcd8c338e0d8d0bff8为父。不得据旧交接向 main 合并、重放835条历史或覆盖当前分支。
+- “本地模型仓库是 shallow bare”仅适用于已知 TEMP31 对象库，不能概括本地全部模型仓库；旧登记代码工作树、common-dir、TEMP31 snapshot 和治理工作树是不同对象。
+- G1 限额内盘点报告已在本聊天交付，Owner 本次确认其完成。登记为 REPORT_COMPLETED_BOUNDED__OWNER_CONFIRMED；资产身份/完整原件/恢复资格尚未闭合。交接所称182行仅为 OWNER_REPORTED，未重新计行。原 G1 合同 ISSUED 文本、零写预算及既有终态不改写，不补做 G1，也不把报告完成升级为资产归档接受或科学接受。
+- 九月9日父源码提交725cbcc86756eb92bd50f477875ca30d53e88c5e与结果提交90ee5b29f3be070d9f8f28c9614e1b59fe798462必须共同保留；后者还新增运行器/finalize/测试。完整原始 checkout 的确定仍未闭合。
+- 交接被截断的九月10日身份可由现场 Git 元数据补全：登记工作树 HEAD=a7bd3b1a705ff42e2933b22a8c6563ec47248ce4，tree=1490e63dda5da128306e4a1dbc9f071f94170837，分支 codex/ch5-python-runtime-input-binding-repair-20260910。本轮只核祖先安全和 Git 身份，不认证其实际源码完整性、dirty 状态或科学资格，也不以此替代九月9日里程碑。
+- TEMP31 六文件字节身份、R4/Bootstrap19/HJB调用修补/价格R3/机制R4/源码R5的分离、R2/R3缓存重复但保留来源证明等，沿用已交付 G1 报告，未重哈希或重读科学原件。任务命名中的 R2/R3/R4 有复用，后续须用完整 TASK_ID＋日期＋commit，不能只写轮次。
+
+### 路线图位置：工程已有积累，当前处于可信资产/来源恢复前置门
+定点读取的旧本地路线图保留原件及哈希，未复制到公开治理线、未改写冻结路线。旧路线图的迁移顶注停留在2026-10-12；历史家户基础、K1B turn5/6等仅适用于其原合同，不自动认证当前 TEMP31。
+| 依赖层 | 当前定位 | 证据强度/限制 |
+|---|---|---|
+| Local-first 日常治理与导航 | 已完成两阶段治理提交 | 本地回执和远端固定提交直接核对 |
+| 旧家户/K1B 与 TEMP31 隔离工程 | 有既有代码、有限轨迹和工资税修补积累 | 旧路线图/既有报告；本轮未运行或重新科学验收 |
+| G1 归档前盘点 | 限额内报告已交付并获 Owner 确认 | 资产身份、完整性和可恢复性未全部闭合 |
+| G1B 缺件恢复准备 | 下一工程目标；精确缺件/公开范围未冻结 | 候选分支本次 fresh 查询不存在；未创建、未上传 |
+| 正式 TEMP31 工作树/来源与生产接线 | 尚未通过 | formal source freeze false；生产输入/consumer闭合、严格驻定仍阻塞 |
+| 完整31省稳态/GE、动态IRF/福利与论文 Results | 未放行 | 各自独立科学门；Results false |
+
+这是一张对既有状态的依赖映射，不是重新冻结研究路线或撤销旧限定接受。当前不能给出科学完成百分比。既有保护“16”按旧路线图的4×4分类格身份保留，不在本轮重新定性或解除。
+
+### 下一任务目标：CH5_TEMP31_G1B_MISSING_ASSET_RECOVERY
+目标是把“哪份原件、GitHub是否确实缺失、能否公开、如何完整恢复”形成可追溯闭合，而非批量上传全部 LOCAL_ONLY 文件或重跑模型。
+1. 用精确 locator 和既有 Git 身份区分九月9日/10日、TEMP31单税模块、Bootstrap19、调用修补、后续诊断；先形成逐件身份与缺口表，不把六文件一致宣称成整棵模型一致。
+2. 逐件判断远端已有对象/仅缺导航/确实缺件；已存在资产优先记录固定引用，避免重复上传。缓存重复不等于可删，科学原件仍按保护范围保留。
+3. 建立精确公开白名单和排除项：文件路径、用途、bytes、Git Blob、SHA-256、来源/依赖、原件或脱敏副本、公开依据。新私密数据、R12 LOCAL_ONLY、敏感源/矩阵、凭据和保护门未开的资产禁止访问或发布；不明确的公开资格交 Owner 对具体原件作决定。
+4. 只有范围与公开资格明确后，才按新的受界恢复授权使用独立候选分支；建议名称 codex/ch5-temp31-g1b-missing-asset-recovery-20261031，开工重新核基线和 ref。本轮没有创建该分支。G1B 不沿用 G1 已耗读取/哈希额度或零写合同。
+5. 恢复后核 commit/parent/tree/路径/Blob/大小/哈希及必要依赖完整性，区分工程恢复验收、独立科学评议和 Owner 接受。恢复不等于正式来源采用、生产接线、驻定、归档接受或科学 Results。
+
+精确白名单与科学/隐私边界是后续原件恢复的必要条件，不是等待 Web GPT 派单。当前消息要求的进度对齐完成后先向 Owner 报告，不自动进入 G1B 上传或科研运行。
+本次只更新当前治理记录和安全的本地入口；原模型 HEAD/index、未编辑文档、旧路线图和既存源码 dirty 状态保留。本地四个当前入口同步新治理版本，DOC_INDEX 只同步当前导航前缀并保留本地历史正文；不复制科研原件或将治理工作树采纳为模型树。
+G1 合同、WASM STOP、OWNER_BASELINE_REBIND=NOT_AUTHORIZED、R12 STOP、R13 NOT_AUTHORIZED、所有旧预算和科学硬门保持。模型/测试/MATLAB/G1重跑/G1B原件上传=NOT_RUN。
