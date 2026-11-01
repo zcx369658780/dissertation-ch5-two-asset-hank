@@ -7,7 +7,7 @@ LOCAL_CODE_TREE=7c2cdaec977353d9b41de0e68cdffad1d78cdbe6
 CODE_PUBLICATION=LOCAL_ONLY_NOT_PUSHED
 IMPLEMENTATION_PHASE_MODEL_IMPORTS_INITIALIZER_ROOT_HA_HJB_KFE_GE_IRF_CALLS=0
 
-当前增量：Owner已另行授权下文单次8格探针；实际进程在依赖导入阶段因验证器误拦截本机名查询而停止，初始化/root仍0。本文后续“未授权/未执行/NOT_RUN”段落保留为实施和提案阶段记录，当前执行结果以文末为准。
+当前增量：Owner已两次分别授权下文单次8格探针；首次在本机名查询处停止，第二次仅修正该误拦截后又在Windows版本元数据子进程门停止，初始化/root累计仍0。本文按阶段保留的“未授权/未执行/NOT_RUN”和首次停止记录为历史过程，当前执行结果以文末为准。
 
 ## 授权与实施范围
 
@@ -78,3 +78,21 @@ Owner随后以“我授权，请继续”批准上述具体提案。代码candid
 CURRENT_RUNTIME_VERDICT=STOP_NO_RETRY__IMPORT_GUARD_OVERBROAD
 CURRENT_NUMERICAL_VALIDATION=NOT_REACHED
 CURRENT_PRODUCTION_BINDING=NOT_DONE
+
+## 2026-11-01 第二次明确授权：本机名查询通过，Windows版本查询被拦截
+
+OWNER_EXACT_STATEMENT=可以我授权，类似数值调试授权我下方给你，你可以计入项目规则和长期记忆
+GOVERNANCE_AUTHORIZATION_PARENT=fec3a1381fa3c9e9a15cafffd1d8855f49de6f75
+SOURCE_WORKSPACE_HEAD_AT_ATTEMPT=d7ec3d5c1f6998f2e4156a051758559a78daccda
+
+本次明确批准上一轮同输入/同限额提案：科学candidate仍1cdebe761dc4406a83093884ae15f0377d891b8f，合成输入SHA-256仍cfc69df57a1f224a42dd92d33bb3bd38a786893456d71c7c32b293c45a8d7f23。只在新LOCAL_ONLY证据目录建立worker副本，将socket.gethostname从网络/子进程审计条件中排除；原worker/回执未覆盖，supervisor不变，全部模型函数白名单和调用限制不变。
+
+新授权实际消耗1/1进程，墙钟1.532秒，退出码1，未超时，重试0。本机名查询不再拦截；导入SciPy sparse间接导入NumPy testing/platform时，platform.win32_ver随后调用标准库平台版本查询函数_syscmd_ver，拟通过subprocess.Popen执行本地ver命令，被仍保持的子进程审计拦截。仅静态读取对应stdlib短段落核实因果，没有启动ver或其他新检查进程来试探。该查询不是科研计算，亦不是六路径WASM保护操作；但本次授权仅排除本机名事件，未擅自扩为任意子进程许可。
+
+实际初始化、劳动根、Python/原生Brent及HA/HJB/KFE/GE/IRF/policy/MATLAB全部0；项目求解/策略尝试0；没有生成V0/labor，消费/FOC/斜率/数组性质仍NOT_MEASURED。75份源码停后身份、原固定输入和受保护工作树HEAD/index/432条默认状态保持。累计为两次独立获准尝试，每次重试0，不能记成一次授权下自动重试，也不能将导入停止记成模型公式通过或失败。
+
+Owner表示后续将提供类似数值调试授权细则，并允许写入项目规则和长期记忆。本轮仅记录已明确的具体授权及该待补事项；未收到通用细则，不增加长期科学运行/重试预算。下一工程问题是Windows元数据查询与验证器子进程门的明确接口，须保留原件、来源和全部科学计数；本轮未继续修改防护后执行。生产接线和科学接受状态不变。
+
+LATEST_RUNTIME_VERDICT=AUTH2_STOP_NO_RETRY__WINDOWS_VERSION_METADATA_SUBPROCESS_BLOCKED
+LATEST_NUMERICAL_VALIDATION=NOT_REACHED
+GENERAL_DEBUG_POLICY=DETAILS_PENDING__NOT_INFERRED
