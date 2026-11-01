@@ -1,6 +1,6 @@
 # TEMP31 当前生产接线方案 · 2026-11-01
 
-STATUS=INITIALIZER_STATIC_AND_FIXED_SYNTHETIC_NUMERICAL_ENGINEERING_PASS__PRODUCTION_NOT_BOUND
+STATUS=INITIALIZER_SYNTHETIC_PASS__PRODUCTION_BINDING_STATIC_SPEC_READY__IMPLEMENTATION_NOT_DONE
 OWNER_SOURCE_ADOPTION=56447829ce0e6c3c85552c53c351b26a2452a4bd__DEVELOPMENT_SOURCE_ANCHOR
 SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
 LOCAL_SOURCE_MATERIALIZATION_COMMIT=91941302f966f12d5f206691f74c800cadf3e797__LOCAL_ONLY_NOT_PUSHED
@@ -9,6 +9,8 @@ SCIENTIFIC_SOURCE_FREEZE=FALSE
 本方案承接Owner对上一轮TEMP31选择建议的同意，落实来源采纳、独立源码工作区和接线设计。不重写V010冻结计划、不恢复旧预算，也不把选定来源等同于接受其中每个历史数值写法。唯一当前进度仍由CH5_LOCAL_FIRST_STATUS_CURRENT.md维护，Owner决定见OWNER_LOCAL_FIRST_CODEX_20261101.md。
 
 当前增量：独立初始化已实施并通过11项静态检查；此前两次单次授权导入停止保留。Owner新批准10个worker有限累计调试后，用3/10通过固定8格初始化数值工程检查，HA及求解0。下列按阶段保留的SPEC_ONLY/未授权/未执行描述为历史过程；以文末增量和唯一短状态为准。
+
+当前生产接线细化规格：[CH5_TEMP31_PRODUCTION_BINDING_SPEC_20261101.md](CH5_TEMP31_PRODUCTION_BINDING_SPEC_20261101.md)。已定点核实20文件身份/20项AST观察，给出工资证据、逐来源地输入、新初始化、HA公开组合、严格资格、批次单位与外层时序的接口及缺口；仍未实现或激活生产入口。
 
 ## 已完成的工程基础
 
@@ -109,3 +111,11 @@ Owner已批准专门有限调试规则，见CH5_TEMP31_BOUNDED_INITIALIZER_DEBUG
 HA网格作为不可变黑箱，不能为收敛改变节点、上下界、轴/切换矩阵；本次独立8格fixture不替换生产HA网格。价格必须参考经认证历史测试：R1–R3已测分量包络rah[.045,.09]、rb[.01,.03]、净wt[15.5,22]，本次(.09,.02,净19)直接对应R1 P0。所有这些是离散诊断点，严格驻定认证点仍0，不能把分量包络任意组合成认证连续可行域或采纳企业毛工资。
 
 路线推进到“独立初始化静态+固定合成数值工程检查通过”；下一步是生产绑定的静态规格与来源/网格/价格身份接口。生产接线未实施，真实双账户政策可行性、严格驻定、31省/GE/动态/IRF/福利和Results均未获得本次通过资格。旧预算、保护门、历史证据和清理限制保持。
+
+## 2026-11-01 生产静态接线规格完成
+
+已完成当前年度入口链的限定核查，详见上述生产接线规格。静态确认旧年度入口仍使用历史bootstrap/平方初始化/含tau输入，旧单轮劳动仍为来源地税；净工资生产者本身已扣目的地税，不能继续向家户端重复扣。现有后轮工资证据明确为合成公式见证，真实生产凭据及消费者校验桥尚未实现。新HA包装/严格资格也尚未实现：原adapter无HJB收敛条件即调用KFE，原KFE结果的raw_residual_inf不是原驻定方程证书，旧外层HJB-only标志不能替代严格资格。
+
+本轮只绑定原HA网格构造式与来源，未生成/更改任何生产节点；家庭rah/净wt历史包络和企业ra/wjt及其边界已在规格中区分，不自动重设企业clamp。最小拟议劳动路线保持现有source-like机制并修目的地税索引；归一化替代路线未采纳，若改机制仍需Owner决定。输入人口/年频/货币单位、真实canonical和实际生产依赖闭合均未因静态检查获得认证。
+
+下一可实施工程分片是隔离惰性接口与显式stub-only检查，不导入模型、不改变经济公式/HA网格或消耗7个剩余合成worker来运行800格HA。其后真实HA、严格驻定和生产运行须各自对应来源、科学决定和预算。本轮科学import/initializer/root/HA/HJB/KFE/GE/IRF/policy/MATLAB均0，源码未改，保护门/旧证据/Results FALSE保持。
