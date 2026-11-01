@@ -151,3 +151,43 @@ R2完整任务为 CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030�
 建议恢复分支本轮fresh查询仍不存在，未创建，无原件上传。继续使用已有固定引用，避免重复复制。完整原件/checkout可恢复性与私有备份完整性仍未闭环；若需受限备份，应由Owner对具体原件范围、目标存储和访问权限作决定，不能用一般工程自主权覆盖LOCAL_ONLY。无需补交已有路径或等待GPT派单。
 
 本轮工程验收仅覆盖公开子集身份核对和治理记录；不是数值验证、独立科学评议、归档接受或正式Results。模型/测试/MATLAB=NOT_RUN；无科学源码变更、保护重绑定、清理、main合并或G1预算复活。既有科学STOP保持；后续正式基线选择和科研运行不自动启动。
+
+## 2026-11-01 G1B 完整工作树与依赖核对：工程证据，非来源采纳决定
+AUTHORITY=OWNER_HANDOFF_TO_CONTINUE_READONLY_GIT_METADATA_EXACT_INVENTORY_AND_NECESSARY_STATIC_DEPENDENCY_CHECKS
+CHECK_PARENT=9299d90cee4423c965249659ebc2d30075088667
+SOURCE_ADOPTION=OWNER_DECISION_PENDING
+ENGINEERING_SCOPE=BOUNDED_FIXED_OBJECT_METADATA_AND_STATIC_ANALYSIS_ONLY
+
+治理分支/parent/tree、登记代码HEAD/tree/index和远端main启动刷新均与交接一致；治理工作树干净，代码工作树432条默认porcelain记录及既存改动保留。六条相关历史分支fresh ls-remote均指向已登记的九月9/10、Bootstrap19、HJB ladder、机制R4和来源恢复R5提交。未重开G1，不重复核对既已交付的R2/R3和九月载荷清单。
+
+### 固定来源与正式基线候选
+| 候选/用途 | 身份与核对 | 尚未证明 |
+|---|---|---|
+| 九月9日纠正复现 | source 725cbcc86756eb92bd50f477875ca30d53e88c5e / tree5032974d251926d802267c7cc5bcb0a64cdad6d4；result 90ee5b29f3be070d9f8f28c9614e1b59fe798462 / tree7cf2741803bde15c4eaee3cbcf46d53fabcfc32c。限定src/exports/validators/tests/pyproject清单分别208/212路径、207/211不同Blob，既存模型对象库均有对应blob类型/大小元数据。result另加3份validator与1份test，不能只保留父源码而丢结果提交。 | 全部原始工作文件、外部输入、原始证据和恢复可执行性；本轮未认证原始物理checkout |
+| 九月10日输入绑定里程碑 | a7bd3b1a705ff42e2933b22a8c6563ec47248ce4 / tree1490e63dda5da128306e4a1dbc9f071f94170837；限定清单252路径、251不同Blob均有本地元数据。对应登记工作树现场HEAD/tree/branch匹配、porcelain为空。 | clean Git状态不是私有输入或完整原件认证，不取代九月9日 |
+| TEMP31来源候选锚点 | 建议56447829ce0e6c3c85552c53c351b26a2452a4bd，parent a51c2e7ff6548340a1ee86857b0ee55792fa69b4，root tree7b7cb29dd5b37be92561e7f1bc688c0d29789732；src subtree8ac1458f0586f1fad58e7bcb85d8acf1a3ef0600，exports subtreef0614665143257e024cc7857afc3bbaf08e730c0。 | NOT_ADOPTED；完整工作树、生产接线、科学资格未认证 |
+
+上述src/exports/pyproject在ffdb7fcd41019bed7ce4652ee01c753bff6fcec8（调用修补seal）、56447829、5e1933e4c166fa40b95c82bed377538d843c7576（机制R4）、cd6ef027dc0c7242e4f62ae648ca83641fc6f1c6（来源恢复R5）中身份相同；后两者没有新的src/exports/pyproject变化。Bootstrap19@10ee7973713c547faa581388aa97fbfd898809de到调用修补仅改temp31_netwage_hjb.py；R4单税模块e99c622b...不是完整TEMP31生产源。这里是固定候选间的身份结论，不是全仓库“最新版本”认证或历史科学终审。
+
+### 缺口分类与依赖范围
+| 分类 | 本轮结论 | 后续边界 |
+|---|---|---|
+| 已有资产、主要缺物化/导航 | 固定56447829清单：src74、exports1、validators308、tests181、pyproject1，共565路径；每个Blob的类型/大小元数据可在两个既存对象库合集中找到，无新fetch或源码物化。snapshot仅存在13/74源码路径、0/1 export、8/308 validator、4/181 test及0/1 pyproject；本轮未重哈希这些工作文件。 | 对象分散存在不等于完整对象图、可恢复checkout或完整原件认证；不上传重复文件，不建空恢复分支 |
+| 确失且明确可公开的原件 | 该固定源码/工程清单未发现本地对象不可用项；原R2/R3及九月载荷结论沿用。 | 不是全仓库或外部原件零缺失声明 |
+| LOCAL_ONLY或资格不明 | R2/R3数组/密度/CSR/原始日志/源码缓存/操作脚本及九月外部137资产、62 NPZ保持原边界；内容未读、未拷贝、未上传。R12材料未读。 | 尚未产生必须选择私有备份位置的具体恢复动作；不要求Owner重复提供已有路径 |
+| 身份已定位、依赖/工作树未认证 | 以六个TEMP31模块及export为种子，35个静态import/package-initializer节点可映射到固定路径和本地原始Blob；23个未物化。35份对象重算Blob/bytes/SHA-256后做AST分析；另对有界生产入口/辅助入口静态核对。 | AST无未映射目标只适用于这35节点；不覆盖全部生产validator动态加载、文件输入、运行环境或实际调用。普通package初始化亦未执行 |
+
+pyproject Blob5c778f7ccbbabfaf1046d4696cf843dc0adbb34c声明Python>=3.11、NumPy>=2.0、SciPy>=1.14、setuptools>=68；它是版本下限，不是锁定且已认证的运行环境。本轮不安装、不导入第三方或模型模块。目标snapshot无可用图谱索引，未自动索引；采用固定Git路径与有界AST。三份公开固定文件（pyproject、temp31_netwage_hjb.py、exports/matlab_faithful_two_asset_ha.py）经GitHub connector新回读并重算Blob/bytes/SHA-256，与本地固定对象一致；未扩大为565文件远端逐件字节认证。
+
+### 明确生产入口阻塞及Owner门
+固定生产入口mp4c_python_annual_production.py（Blob7473e04418744d745000afb21d84588273cc5bca）依赖mp4b_python_empirical.py（Blobb1710ae3c5d8d7baf96e85c932d777fa5f3b908c）。后者第19行ORACLE_SHA为B92F6EFC59D9398F89F8FB6EE67BF6C5F947282D76895051BEC194967EC9C3E3；其bootstrap在导入前要求.git、src和export存在并检查此pin。
+
+同一固定提交的export Blob=e144c645d3f4dc842c2faa6b93b2ba0e24275dcf，GitHub与本地均为31143字节、SHA-256=a7539eb6ba076176b81f832c1800d38d8d170dad8f3619d3b0f3893c5a163fff。仅内存转换为CRLF后31859字节、SHA-256=f6007c1166c951b4a0c98b0fbf551921a2664d2e3943e7d77f847634261524f8，仍不等于pin。故该入口存在静态身份合同冲突，不把它归因于简单换行，也不声称本轮运行观察到异常。未改pin、未替换export、未恢复旧错误、未运行loader。私有primary输入、canonical、runtime cache的可用性和采纳资格仍未认证，未访问其内容。
+
+供Owner审阅的具体决定是：是否将上述56447829固定源树采纳为后续完整TEMP31工作树的来源锚点，以及export/loader身份合同冲突应依据哪份获准科学来源处理。在作出对应决定前，不采纳、不创建或hydrate模型工作树、不改科学源码或pin、不启动生产接线或科研运行。该候选本身不具备可运行/科学接受结论。
+
+ENGINEERING_VERDICT=PASS_BOUNDED_SOURCE_LOCATION_AND_GAP_REPORT_ONLY
+FULL_CHECKOUT_AND_DEPENDENCY_CERTIFICATION=NOT_ESTABLISHED
+SCIENTIFIC_ACCEPTANCE=NOT_GRANTED
+MODEL_IMPORTS_RUNS_TESTS_MATLAB=NOT_RUN
+R12=STOP__R12_SOURCE_PRIVACY_OR_DELIVERY_BLOCKED；R13=NOT_AUTHORIZED；OWNER_BASELINE_REBIND=NOT_AUTHORIZED；FORMAL_SOURCE_FREEZE=FALSE；Results/model_activation/REAL_GE=FALSE。原WASM STOP和全部旧预算保持。完整路径清单、静态依赖边、私有路径映射、回滚原件与核对记录仅保存在本地隔离证据中；公开同步只包含这两份治理文档。
