@@ -1,6 +1,6 @@
 # TEMP31 当前生产接线方案 · 2026-11-01
 
-STATUS=INITIALIZER_SYNTHETIC_PASS__PRODUCTION_BINDING_STATIC_SPEC_READY__IMPLEMENTATION_NOT_DONE
+STATUS=INITIALIZER_SYNTHETIC_PASS__INERT_INTERFACE_AND_STUB_CHECKS_IMPLEMENTED__REAL_PRODUCTION_NOT_BOUND
 OWNER_SOURCE_ADOPTION=56447829ce0e6c3c85552c53c351b26a2452a4bd__DEVELOPMENT_SOURCE_ANCHOR
 SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
 LOCAL_SOURCE_MATERIALIZATION_COMMIT=91941302f966f12d5f206691f74c800cadf3e797__LOCAL_ONLY_NOT_PUSHED
@@ -11,6 +11,8 @@ SCIENTIFIC_SOURCE_FREEZE=FALSE
 当前增量：独立初始化已实施并通过11项静态检查；此前两次单次授权导入停止保留。Owner新批准10个worker有限累计调试后，用3/10通过固定8格初始化数值工程检查，HA及求解0。下列按阶段保留的SPEC_ONLY/未授权/未执行描述为历史过程；以文末增量和唯一短状态为准。
 
 当前生产接线细化规格：[CH5_TEMP31_PRODUCTION_BINDING_SPEC_20261101.md](CH5_TEMP31_PRODUCTION_BINDING_SPEC_20261101.md)。已定点核实20文件身份/20项AST观察，给出工资证据、逐来源地输入、新初始化、HA公开组合、严格资格、批次单位与外层时序的接口及缺口；仍未实现或激活生产入口。
+
+当前惰性工程分片已实施：[CH5_TEMP31_INERT_BINDING_IMPLEMENTATION_20261101.md](CH5_TEMP31_INERT_BINDING_IMPLEMENTATION_20261101.md)。新增模块只接不透明模拟token/声明，45项限定检查通过，真实HA执行和正式接受始终禁用；真实生产凭据/HA组合及资格桥仍未实现。
 
 ## 已完成的工程基础
 
@@ -119,3 +121,11 @@ HA网格作为不可变黑箱，不能为收敛改变节点、上下界、轴/�
 本轮只绑定原HA网格构造式与来源，未生成/更改任何生产节点；家庭rah/净wt历史包络和企业ra/wjt及其边界已在规格中区分，不自动重设企业clamp。最小拟议劳动路线保持现有source-like机制并修目的地税索引；归一化替代路线未采纳，若改机制仍需Owner决定。输入人口/年频/货币单位、真实canonical和实际生产依赖闭合均未因静态检查获得认证。
 
 下一可实施工程分片是隔离惰性接口与显式stub-only检查，不导入模型、不改变经济公式/HA网格或消耗7个剩余合成worker来运行800格HA。其后真实HA、严格驻定和生产运行须各自对应来源、科学决定和预算。本轮科学import/initializer/root/HA/HJB/KFE/GE/IRF/policy/MATLAB均0，源码未改，保护门/旧证据/Results FALSE保持。
+
+## 2026-11-01 惰性接口分片实施与模拟行为检查完成
+
+Owner明确同意后，独立新模块temp31_binding_skeleton.py及一份行为测试落地，本地candidate df05d020b67030a8878bd43d755afe432cc17ae1，未推送。没有修改既有公式、初始化、HA/外层代码或网格。接口默认DISABLED，只能显式用预给定StubBackend回复校验完整批次；任意solver callback和真实模式被拒，返回真实执行/正式HA接受始终FALSE。
+
+45项限定检查通过（34新行为+11既有静态），包括31个虚拟省份标签、错上下文/省序/期次/源或快照声明、错网格身份、重复扣税状态、完整批次/顺序、单位及HJB-only/污染系统标签误用。它不计算工资/密度/残差或验证真实文件身份；尚不能替代生产来源桥或真实严格资格。详情及TDD/代码身份见实施说明。
+
+本轮只加载新标准库工程模块和测试，没有导入NumPy/SciPy/原科学模块，没有初始化/root/HA/HJB/KFE/GE/IRF/policy/MATLAB调用；数值账本不变3/10、余7。下一工程对象是生产工资证据接口及外部来源/网格身份预检的设计，实际生产者/HA组合和科研运行保持关闭，后续适用科学与输入/预算门不变。

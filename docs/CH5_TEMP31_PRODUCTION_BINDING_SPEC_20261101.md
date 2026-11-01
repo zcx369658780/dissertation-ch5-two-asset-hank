@@ -1,6 +1,6 @@
 # TEMP31 生产入口：静态接线规格与缺口 · 2026-11-01
 
-STATUS=STATIC_SPECIFICATION_READY__PRODUCTION_IMPLEMENTATION_AND_ACTIVATION_NOT_DONE
+STATUS=STATIC_SPEC_READY__INERT_STUB_SKELETON_IMPLEMENTED__REAL_PRODUCTION_NOT_BOUND
 AUTHORITY=OWNER_CONTINUATION_OF_STATIC_PRODUCTION_BINDING_AND_GRID_PRICE_IDENTITY_REVIEW
 GOVERNANCE_CHECK_PARENT=af72ab735e510f239fb69a612001ea80c5b96f4d
 SOURCE_WORKSPACE_HEAD_AT_CHECK=db56cfb8b30e14f0f63a2bd30ce40af8e90f596d
@@ -9,6 +9,8 @@ LOCAL_INITIALIZER_CANDIDATE=1cdebe761dc4406a83093884ae15f0377d891b8f__NOT_PUSHED
 METHOD=EXACT_FILE_GIT_IDENTITIES_AND_STDLIB_AST__NO_PROJECT_IMPORTS
 
 本轮把生产接线方案细化到实际入口、输入输出和拒绝条件，没有实现或运行新生产程序。当前源码工作区未建代码图谱，未使用其他历史仓库图谱推断当前代码；限定读取20个相关源码/入口文件，现场字节与当前HEAD的Git Blob、大小、SHA-256一致，20项静态观察确认。它不是全仓库动态依赖闭合或生产验收。
+
+后续已获Owner同意并实施惰性工程分片，见[CH5_TEMP31_INERT_BINDING_IMPLEMENTATION_20261101.md](CH5_TEMP31_INERT_BINDING_IMPLEMENTATION_20261101.md)：只接显式模拟数据，不接求解器callback，45项限定检查通过。下文真实生产凭据/组件/资格桥仍为未实施规格，不因stub通过而激活。
 
 ## 已核实的现有调用链
 
@@ -69,7 +71,7 @@ HA所有grid参数继续视为不可变黑箱。当前旧年度入口第162行�
 
 ## 可实施分片与仍未完成的门
 
-先做隔离的惰性接口骨架：生产工资证据、逐来源地输入包、完整批次与严格资格记录，实际HA依赖只能由显式stub注入且默认禁用。然后用不导入模型的工程检查拒绝错省序/错期次/错源/重复扣税/错单位/网格更改/不完整批次及HJB-only资格；这类工程接线结果仍不能替代真实数值验证。该骨架和检查尚未实施。
+隔离惰性接口与检查已实施：上下文/模拟工资声明、逐来源地请求、完整批次及模拟资格记录使用不透明字符串token；依赖只能是预给定的stub回复数据，默认禁用且没有真实callback入口。45项限定检查拒绝错省序/错期次/错源声明/重复扣税状态/错单位标签/网格身份变更/不完整批次及HJB-only资格，并完成31个虚拟来源地拼装。它不读取真实输入、核验实际来源文件或执行数值方程，不构成真实生产桥或科学资格；详见实施说明。
 
 之后才可能在对应授权内绑定不变公开组件，并另行安排冻结网格单点HA及严格驻定；生产来源桥、劳动机制/时序的适用科学合同、真实输入、数值初猜可行性及各自预算须明确。31省稳态、GE、动态、IRF、福利和论文Results排在这些门之后。
 
@@ -78,3 +80,4 @@ HA所有grid参数继续视为不可变黑箱。当前旧年度入口第162行�
 ENGINEERING_VERDICT=PASS_BOUNDED_STATIC_CALL_CHAIN_AND_REVIEWABLE_INTERFACE_SPECIFICATION
 PRODUCTION_BINDING=NOT_IMPLEMENTED_NOT_ACTIVATED
 SCIENTIFIC_ACCEPTANCE_AND_STRICT_STATIONARITY=NOT_ESTABLISHED
+INERT_STUB_BINDING=IMPLEMENTED_AND_45_FOCUSED_CHECKS_PASS__REAL_EXECUTION_ALWAYS_FALSE
