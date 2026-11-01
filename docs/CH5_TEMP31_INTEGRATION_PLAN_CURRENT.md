@@ -1,6 +1,6 @@
 # TEMP31 当前生产接线方案 · 2026-11-01
 
-STATUS=INITIALIZER_SYNTHETIC_PASS__INERT_INTERFACE_AND_STUB_CHECKS_IMPLEMENTED__REAL_PRODUCTION_NOT_BOUND
+STATUS=SOURCE_BYTE_PREFLIGHT_AND_PENDING_WAGE_INTERFACE_IMPLEMENTED__REAL_PRODUCTION_NOT_BOUND
 OWNER_SOURCE_ADOPTION=56447829ce0e6c3c85552c53c351b26a2452a4bd__DEVELOPMENT_SOURCE_ANCHOR
 SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
 LOCAL_SOURCE_MATERIALIZATION_COMMIT=91941302f966f12d5f206691f74c800cadf3e797__LOCAL_ONLY_NOT_PUSHED
@@ -13,6 +13,8 @@ SCIENTIFIC_SOURCE_FREEZE=FALSE
 当前生产接线细化规格：[CH5_TEMP31_PRODUCTION_BINDING_SPEC_20261101.md](CH5_TEMP31_PRODUCTION_BINDING_SPEC_20261101.md)。已定点核实20文件身份/20项AST观察，给出工资证据、逐来源地输入、新初始化、HA公开组合、严格资格、批次单位与外层时序的接口及缺口；仍未实现或激活生产入口。
 
 当前惰性工程分片已实施：[CH5_TEMP31_INERT_BINDING_IMPLEMENTATION_20261101.md](CH5_TEMP31_INERT_BINDING_IMPLEMENTATION_20261101.md)。新增模块只接不透明模拟token/声明，45项限定检查通过，真实HA执行和正式接受始终禁用；真实生产凭据/HA组合及资格桥仍未实现。
+
+2026-11-02当前工程分片：[CH5_TEMP31_WAGE_EVIDENCE_PREFLIGHT_IMPLEMENTATION_20261102.md](CH5_TEMP31_WAGE_EVIDENCE_PREFLIGHT_IMPLEMENTATION_20261102.md)。九角色源字节实际预检通过，待见证工资输入/输出接口已实施，79项限定检查通过；实际生产者执行及科学消费者交接仍未验证/启用。文末已提出单独的固定合成输入源工资函数观察预算，未授权、未执行。
 
 ## 已完成的工程基础
 
@@ -129,3 +131,11 @@ Owner明确同意后，独立新模块temp31_binding_skeleton.py及一份行为�
 45项限定检查通过（34新行为+11既有静态），包括31个虚拟省份标签、错上下文/省序/期次/源或快照声明、错网格身份、重复扣税状态、完整批次/顺序、单位及HJB-only/污染系统标签误用。它不计算工资/密度/残差或验证真实文件身份；尚不能替代生产来源桥或真实严格资格。详情及TDD/代码身份见实施说明。
 
 本轮只加载新标准库工程模块和测试，没有导入NumPy/SciPy/原科学模块，没有初始化/root/HA/HJB/KFE/GE/IRF/policy/MATLAB调用；数值账本不变3/10、余7。下一工程对象是生产工资证据接口及外部来源/网格身份预检的设计，实际生产者/HA组合和科研运行保持关闭，后续适用科学与输入/预算门不变。
+
+## 2026-11-02 源字节预检及待见证工资接口已实施
+
+新增标准库模块temp31_wage_evidence_preflight.py及测试，本地candidate dc87980d5377309f9b18c1928173488ba1050415，既有代码不改。verify_source_bundle只读九个固定代码角色，按既定pins验证Blob/SHA-256/大小及路径/读前后状态；现场9/9通过。它不导入旧loader、不改其pin、不解决旧保护基线，也不是完整动态闭合认证。
+
+工资接口把上下文/省序/生成t进入t+1、源根/源集合、生成快照及六类输入/输出的封存字节绑定；可以拒绝错角色、错源、替换字节和不合法构造，但不执行工资函数、不解析经济数据，producer_invocation_verified/consumer_ready保持FALSE。没有用模拟见证标签接入旧消费者；真实HA、严格资格及生产外层仍未接通。
+
+34项新检查与45项既有限定检查共79/79通过，科学导入/调用0，冻结HA网格/价格和3/10初始化预算保持。再前进涉及一次实际composite_household_wages调用，故已形成独立新提案：固定既有A/B合成配方、最多3进程各30秒、累计生产函数进入最多1次，进入后不重跑，其他科学调用0。输入与源身份已封存，提案未获Owner运行授权，不能占用或恢复旧预算；详见新实施说明最后一节。该门只限制实际科学调用，不恢复网页GPT日常派单或阻断其他已授权工程。
