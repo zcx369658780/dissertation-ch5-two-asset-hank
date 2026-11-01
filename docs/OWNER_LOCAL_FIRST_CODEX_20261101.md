@@ -242,3 +242,16 @@ Owner本次“可以我同意，请继续”承接上一轮明确建议：采用
 具体接线范围、来源子树、验证顺序和保护门见CH5_TEMP31_INTEGRATION_PLAN_CURRENT.md。进一步静态核查识别：TEMP31历史初猜helper第211行仍用effective*effective，其第214行消费未含同一资产收益项；既有V010冻结合同（bf091da33d59293f147d52c11580327d3ac2a85d / Blob85138d8859d53295262fe13bf5bc277bca95ed3f）明确要求a*r_a(a)及c0=w_eff*z*l0+R。来源采纳不等于接受这一旧写法。本轮未修改或执行helper；接线前必须把适用合同和初猜公式对齐，不能静默恢复已纠正错误或擅自改冻结合同。
 
 本轮工程验收只覆盖来源采纳记录、独立源码范围完整性、Git自包含和方案交付；不是科学源码实现验收、数值验证、独立科学评议或Owner科学接受。模型import/HA/HJB/KFE/GE/IRF/MATLAB/校准及数值测试=0；FORMAL_SOURCE_FREEZE=FALSE，Results/model_activation/REAL_GE=FALSE。WASM/R12 STOP、R13未授权、OWNER_BASELINE_REBIND=NOT_AUTHORIZED、16项义务和全部旧耗额保持。无分支删除、main合并或原件移动；私有路径与逐件回执保存在本地隔离证据，公开同步仅当前治理记录和接线方案。
+
+## 2026-11-01 初始化公式来源与经济含义核查
+AUTHORITY=OWNER_REQUEST_TO_TRACE_V010_ASSET_TIMES_RETURN_AND_TEMP31_RETURN_SQUARED_AND_EXPLAIN_ECONOMICS
+CHECK_PARENT=207603ae569327855205e3cdc6797c46bc9561a0
+SCIENTIFIC_CONTRACT_CHANGE=NOT_AUTHORIZED_NOT_DONE
+
+来源链及逐式解释见CH5_TEMP31_INITIALIZATION_FORMULA_PROVENANCE_20261101.md。本轮只读Owner已提供原MATLAB HJB/lab_solve2和第五章理论预算短段落、固定Git源码/合同/变换清单；未读原始数据或数组、未运行模型。原HJB文件SHA-256=049136b769560040bc678f828f5d3ec5338ddcaa2090d6bed4e40732f56c3eae，匹配既有原件身份；私有路径与短摘录回执仅在本地保留。
+
+已证实：原MATLAB的Rah/raah均是有效收益率，初始化Rah.*raah相当于收益率平方；九月Python已有同项，TEMP31 Bootstrap19变换清单明确非税公式保留。V010的a*r_a(a)初猜规则由bf091da...正式冻结新增，但资产收益本身更早存在于论文dot(a)=r_a*a+d及原MATLAB mh=dh+Rah.*aaah，不是V010新增机制。
+
+当前经济判断需区分：资产乘收益率有资产收入/财富增长含义，平方项未找到作为收入的推导；然而非流动性收益不自动成为流动消费现金。V010 c0=w_eff*z*l0+r_b*b+r_a(a)*a+T是数值初猜合同，尚不能由该收入恒等式证明其双账户可行静止策略解释。若要求两账户都不积累，需有可行提款d=-r_a*a并计调整成本；若d=0且流动资产不变，初猜消费不直接含r_a*a。前述把a*r_a(a)作为直接替换修正的表述据此作限定，不改V010冻结原件，也不将本审计推断记成Owner新科学采纳。
+
+原MATLAB/TEMP31劳动根资源含平方项而初始效用消费不含同项，亦已定位；数值影响NOT_RUN，不据此否定全部历史结果或保证只影响收敛速度。最早作者意图/最初引入记录UNKNOWN。来源锚点与独立代码工作区不变，接线先对齐V0资源、提款/积累、成本与可行域假设；新公式采纳、运行或冻结合同修改仍由Owner决定。科学源码/参数/输入变更0，模型import/HA/HJB/KFE/GE/IRF/MATLAB运行0，分支删除0，所有保护门和Results FALSE保持。
