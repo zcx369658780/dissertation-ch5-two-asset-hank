@@ -125,3 +125,29 @@ Owner 本次确认后续日常执行由 Local Codex 负责。本轮先核交接�
 精确白名单与科学/隐私边界是后续原件恢复的必要条件，不是等待 Web GPT 派单。当前消息要求的进度对齐完成后先向 Owner 报告，不自动进入 G1B 上传或科研运行。
 本次只更新当前治理记录和安全的本地入口；原模型 HEAD/index、未编辑文档、旧路线图和既存源码 dirty 状态保留。本地四个当前入口同步新治理版本，DOC_INDEX 只同步当前导航前缀并保留本地历史正文；不复制科研原件或将治理工作树采纳为模型树。
 G1 合同、WASM STOP、OWNER_BASELINE_REBIND=NOT_AUTHORIZED、R12 STOP、R13 NOT_AUTHORIZED、所有旧预算和科学硬门保持。模型/测试/MATLAB/G1重跑/G1B原件上传=NOT_RUN。
+
+## 2026-11-01 G1B 公开范围核对：工程发现，非新的科学决策
+AUTHORITY=OWNER_REQUEST_TO_CONTINUE_PROJECT_UNDER_EXISTING_LOCAL_FIRST_BOUNDARIES
+SCOPE_CHECK_PARENT=700383670711dc218451ba6e001709f81db556dd
+SCOPE=FIXED_REF_PUBLIC_MANIFEST_RECONCILIATION_AND_EXISTING_PRIVACY_POLICY_METADATA_ONLY
+
+| 资产子集 | 固定提交 | 本轮核对与限制 |
+|---|---|---|
+| 九月9日 repository_files | 90ee5b29f3be070d9f8f28c9614e1b59fe798462 | 11/11存在；11份重算Git Blob匹配远端身份；10份原始字节大小/SHA-256匹配清单，1份CSV经CRLF表示转换匹配 |
+| 九月10日 files | a7bd3b1a705ff42e2933b22a8c6563ec47248ce4 | 7/7存在；7份重算Git Blob匹配远端身份；6份原始字节大小/SHA-256匹配清单，1份CSV经CRLF表示转换匹配 |
+| TEMP31价格域R2公开载荷 | ffb156712e56bd2fe24924ba40295858ad67e18f | 101/101路径、Git Blob匹配；100份可返回大小匹配，1份工具未返回大小；不宣称新逐件SHA-256验证 |
+| TEMP31分布切换R3公开载荷 | e194e44be4287cc447fdc3d83adb0dbd01bcb9d0 | 103/103路径、Git Blob匹配；102份可返回大小匹配，1份工具未返回大小；不宣称新逐件SHA-256验证 |
+
+九月9日清单为 reports/mp4c_2018_corrected_single_turn_20260909/manifest.json，Blob=ad83d69578943843acface6b1da953afcd95f327；其中含一份目录外的报告，已单独回读。九月10日清单为 reports/mp4c_python_runtime_input_binding_repair_20260910/manifest.json，Blob=c1cedfdb1496865906e9a633d20eb2aca1480faf。目录中的清单和readback自身不计入18份载荷。
+
+两份CSV均保留现有原件；只在内存中计算换行转换哈希，不写回、不解析数值：
+- 九月9日 per_province_observables.csv：Git Blob=2be3ba3706b8f37b5737931e5711d1b490a3ed80；Git字节15486，SHA-256=e9ca1d7705735a24cee7d25e353a1118512392a3e1a8b652c6e98a2196f3853d；CRLF表示15518字节，SHA-256=12cd4c359ddc6a655dc81c1dff5b2a5c7f77c000480f7a60bf94131cc49851b5，与历史清单一致。
+- 九月10日 runtime_reconciliation_31province.csv：Git Blob=57589714dfffc1a37fa312f675086f71d15fd353；Git字节14277，SHA-256=63ec896e7544d7e8398d946fac836e48af4f14dc51097e5995e6681651757be9；CRLF表示14309字节，SHA-256=445b7f6b44cd1a24713496fe8edcb4408d2d5d0806cbf23604efde05e52c607c，与历史清单一致。
+
+R2完整任务为 CH5_TEMP31_MATLAB800_THREE_PRICE_LOCAL_DOMAIN_MAP_R2_20261030，manifest Blob=d9e5b56d6af26b94b4f3a85bc4a3a19edea37f19；R3为 CH5_TEMP31_MATLAB800_PRICE_NEIGHBORHOOD_DISTRIBUTION_SWITCH_R3_20261030，manifest Blob=bc657aae19917303e32434375dcdd93878cde1bd。各自既有privacy_report明确：完整数组/密度/CSR、原始stdout/stderr、源码缓存及操作脚本保留LOCAL_ONLY；公开日志是已认证脱敏派生件。原mandatory privacy assert和无ignore/skip要求不降低。本轮只读这些既有清单/隐私说明，不打开数组、缓存源码或R12材料。
+
+结论仅为上述子集未识别出公开缺件，不是整个仓库或完整原始checkout的恢复认证。九月外部manifest列出的137份外部资产及62份NPZ只是清单元数据，不因未列入仓库载荷就获得公开资格；本轮不读取内容、不上传。六份TEMP31源码身份不升级为完整模型快照一致。
+
+建议恢复分支本轮fresh查询仍不存在，未创建，无原件上传。继续使用已有固定引用，避免重复复制。完整原件/checkout可恢复性与私有备份完整性仍未闭环；若需受限备份，应由Owner对具体原件范围、目标存储和访问权限作决定，不能用一般工程自主权覆盖LOCAL_ONLY。无需补交已有路径或等待GPT派单。
+
+本轮工程验收仅覆盖公开子集身份核对和治理记录；不是数值验证、独立科学评议、归档接受或正式Results。模型/测试/MATLAB=NOT_RUN；无科学源码变更、保护重绑定、清理、main合并或G1预算复活。既有科学STOP保持；后续正式基线选择和科研运行不自动启动。
