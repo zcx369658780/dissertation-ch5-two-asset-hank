@@ -12,7 +12,7 @@ METHOD=EXACT_FILE_GIT_IDENTITIES_AND_STDLIB_AST__NO_PROJECT_IMPORTS
 
 后续已获Owner同意并实施惰性工程分片，见[CH5_TEMP31_INERT_BINDING_IMPLEMENTATION_20261101.md](CH5_TEMP31_INERT_BINDING_IMPLEMENTATION_20261101.md)：只接显式模拟数据，不接求解器callback，45项限定检查通过。下文真实生产凭据/组件/资格桥仍为未实施规格，不因stub通过而激活。
 
-2026-11-02进一步实施源字节预检与待见证工资接口，见[CH5_TEMP31_WAGE_EVIDENCE_PREFLIGHT_IMPLEMENTATION_20261102.md](CH5_TEMP31_WAGE_EVIDENCE_PREFLIGHT_IMPLEMENTATION_20261102.md)：现场九源身份通过、79项限定检查通过，但未见证实际生产者执行，不能释放现有科学消费者。新单次工资函数观察仍为未授权提案，不属于剩余8格初始化预算。
+2026-11-02进一步实施源字节预检与待见证工资接口，见[CH5_TEMP31_WAGE_EVIDENCE_PREFLIGHT_IMPLEMENTATION_20261102.md](CH5_TEMP31_WAGE_EVIDENCE_PREFLIGHT_IMPLEMENTATION_20261102.md)：现场九源身份通过、79项限定检查通过。后续独立授权的[单次源工资函数观测](CH5_TEMP31_SOURCE_WAGE_OBSERVATION_20261102.md)也已完成，实际进入/返回各1；外部见证尚未转换成科学消费者资格，不能释放现有消费者。该观测额度已按单次进入封闭，原8格初始化预算不变。
 
 ## 已核实的现有调用链
 

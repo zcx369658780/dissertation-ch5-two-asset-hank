@@ -7,8 +7,10 @@ LOCAL_CODE_CANDIDATE=dc87980d5377309f9b18c1928173488ba1050415
 LOCAL_CODE_PARENT=5f7a4cf21b9f0de1c829a3a56fc4a40644b3e161
 LOCAL_CODE_TREE=6b4a8360b59c375cafb069a22f1f96b6b11f45d8
 CODE_PUBLICATION=LOCAL_ONLY_NOT_PUSHED
-PRODUCER_INVOCATION_VERIFIED=FALSE
+PENDING_INTERFACE_PRODUCER_INVOCATION_VERIFIED=FALSE
 SCIENTIFIC_CONSUMER_READY=FALSE
+
+后续状态：文末独立单次源工资函数观测提案已获Owner明确批准并执行，见[CH5_TEMP31_SOURCE_WAGE_OBSERVATION_20261102.md](CH5_TEMP31_SOURCE_WAGE_OBSERVATION_20261102.md)。外部实际进入/返回各1、字节交接通过；本接口未自动接纳该外部见证，科学消费者继续关闭。下文提案“未授权/未执行”为原阶段记录，不覆盖后续执行事实。
 
 本轮新增标准库工程模块及测试，实现两项不同的工作：对显式授权根下的限定源文件做真实字节预检；对调用方提供的工资输入/输出字节建立尚未见证执行的凭据接口。没有运行工资生产者、初始化或HA，没有修改原科学模块及其消费者校验器。源码、测试和完整日志仅本地，公开交付本说明与进度。
 

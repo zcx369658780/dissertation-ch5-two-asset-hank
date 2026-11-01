@@ -417,3 +417,31 @@ REAL_PRODUCTION_CONSUMER_AND_SCIENTIFIC_ACCEPTANCE=NOT_RELEASED
 为下一实际函数观察已封存具体新提案，尚未获准或执行：最多3个新worker各≤30秒，累计composite_household_wages进入最多1次；仅进入前工程错误可在余量内修复，进入后不重跑，来源/保护/域失败或状态不明即停。固定A/B、目的地tau=.05、phi全1、sigma全0、phi_l5、alphal1及既有合成企业工资表达式19/(.95*2^(5/6))；期次1→2为反事实标签，不是真实企业更新。只报告源函数实际进入/返回和差异诊断，初始化/root/HA/HJB/KFE/GE/IRF/policy/MATLAB/真实数据0，不新增接受阈值。新输入1230 bytes、SHA-256=98471bf5b9f3594b8051c5e25247aa95ab1e583a8fa769c58b127ee6dcded79f，表达式未求值。该提案不能花用剩余7次8格初始化预算，需Owner另行科学调用授权；当前主工作仅暂停该实际调用，普通工程权保持。
 
 代码/测试仍仅本地，公开只同步脱敏记录。旧dirty工作树/HEAD/index、旧证据/耗额、V010、WASM/R12 STOP、R13未授权、保护重绑定未授权和16项义务保持，无分支删除/main合并/原件移动/全局配置修改，FORMAL_SOURCE_FREEZE/Results/model_activation/REAL_GE仍FALSE。
+
+## 2026-11-02 Owner批准单次源工资函数观测；实际进入/返回各1
+
+OWNER_EXACT_STATEMENT=可以我同意，请继续
+AUTHORITY=APPROVE_PREVIOUS_MAX3_WORKERS_30_SECONDS_AND_TOTAL1_SOURCE_WAGE_FUNCTION_ENTRY_PROPOSAL
+GOVERNANCE_AUTHORIZATION_PARENT=6345dbcdbf475076f321cd7745cea38140ff3f45
+SOURCE_WORKSPACE_HEAD_AT_EXECUTION=9bb924a3d717bfd8220c7e94a238117458d3d41f
+CODE_CANDIDATE=dc87980d5377309f9b18c1928173488ba1050415__UNCHANGED_LOCAL_ONLY
+DELIVERABLE=CH5_TEMP31_SOURCE_WAGE_OBSERVATION_20261102.md
+
+本次明确批准上一轮封存A/B合成输入提案，而非泛化科研运行。预算最多3个新worker各≤30秒、累计composite_household_wages进入最多1次；仅进入前工程错误可在余量内处理，进入后无论结果不再重跑，来源/保护/域失败或状态不明即停。初始化/root/HA/HJB/KFE/GE/IRF/policy/MATLAB/真实数据调用均0，原8格初始化预算分开保持。
+
+实际只用1个worker，退出0、墙钟1.157秒、未超时、重试0；源工资函数frame进入1、主体允许1、实际返回1，其他原科学函数尝试/主体0。进入前有独占且flush/fsync的持久claim，其存在即禁止本授权全部后续worker；剩余两个启动槽不能用于重算。运行前核Python3.11.9/NumPy2.4.6、九源和封存输入；按精确文件加载原wage.py/工程接口和NumPy，没有导入SciPy/完整原科学包/旧loader，不改其source pin。
+
+固定输入仍1230 bytes、SHA-256=98471bf5b9f3594b8051c5e25247aa95ab1e583a8fa769c58b127ee6dcded79f；企业工资表达式只在本次获准worker内求值，其他参数/输入未改。两元素输出均19.000000000000004，相对数值19各差3.552713678800501e-15，只如实诊断，无新增接受容差。该对称合成输入不证明非对称目的地税配置、真实工资、实际企业/外层迭代、31省或端到端生产修正。
+
+实际frame绑定参数与封存调用参数字节吻合，实际return与驱动收到结果及pending输出字节吻合，输出规范字节SHA-256=2900a554e1c52b4ffc9cb27a820046750ae902e79458b52d7892fd1ae54f23b3；原函数Blob48001b2e4ca64d81dda6174255f6ccf130e07004及SHA-256=12393521821b5a7616eec8f19bcd4a10cbb2da37e0a87fcb5c5b4128a0c98dbe保持。原始参数/日志/执行器/见证均LOCAL_ONLY，公开聚合计数/诊断和哈希。
+
+外部记录已见证该固定源函数在该合成输入上的实际执行；现有pending接口的producer_invocation_verified/consumer_ready依旧FALSE，科学消费者仍拒绝，因为本轮没有把外部记录转换/采纳成该消费者的类型化资格，也没有修改旧科学校验器。不能把一次观测自动升级为真实生产凭据、源采纳、独立科学接受或Results。下一步仅使用保存的进入/返回记录做类型化接口对接/拒绝检查，不重新计算、不放行HA。
+
+ENGINEERING_VERDICT=PASS_BOUNDED_SINGLE_SOURCE_FUNCTION_OBSERVATION_AND_INPUT_OUTPUT_LINEAGE
+OBSERVATION_BUDGET=WORKER1_OF3_USED__SOURCE_ENTRY1_OF1_CONSUMED__CLOSED_AFTER_ENTRY
+SCIENTIFIC_CONSUMER_RELEASE=FALSE
+SCIENTIFIC_SOURCE_PARAMETER_OR_HA_GRID_CHANGES=0
+OTHER_SCIENTIFIC_CALLS_THIS_OBSERVATION=0
+INITIALIZER_DEBUG_BUDGET=3_OF10_USED__7_REMAIN__UNCHANGED
+
+停后九源/固定输入身份保持，旧dirty工作树/HEAD/index、原件/缓存/历史证据、V010、WASM/R12 STOP、R13未授权、保护重绑定未授权、16项义务和旧耗额保持。源码分支未推送，无分支删除/main合并/原件移动/全局配置修改，FORMAL_SOURCE_FREEZE/Results/model_activation/REAL_GE仍FALSE。
