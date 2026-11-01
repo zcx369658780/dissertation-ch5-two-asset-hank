@@ -1,3 +1,14 @@
+<!-- LOCAL_FIRST_CLASSIFICATION_20261101 -->
+> **适用范围：SUPERSEDED_WORKFLOW（日常角色）＋ SCIENTIFIC_CONSTRAINT（保护要求）**
+>
+> 当前执行入口：[AGENTS](../AGENTS.md) → [唯一短状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md) → [唯一工作流](CH5_ASTRA_WORKFLOW_CURRENT.md)。Owner 决策见 [2026-11-01 决策记录](OWNER_LOCAL_FIRST_CODEX_20261101.md)。
+>
+> 下方旧 GPT 日常派单、普通工程网页终验、强制三阶段流程及“本文件最高权威”的当前角色声明，已由 2026-11-01 Owner 决定覆盖。普通授权内工程由 Local Codex 自治推进、自作工程验收；Web GPT 按需咨询。
+> 原始来源/字节身份、足够实际证据、科学与数值审查、预算、隐私、平台拒绝、STOP/PENDING 和禁止越权的实质要求保留；特定科学合同明确规定的独立门仍有效。
+> 旧 GPT 微预算裁量条款不自动转授或恢复试验/重试额度；不得从历史默认次数生成新授权。下方正文逐字节保留为历史与保护依据，不从中复活旧任务。
+
+---
+
 # CH5 GitHub 在线任务与证据审阅工作流（正式权威规则）
 STATUS=OWNER_APPROVED_CURRENT
 EFFECTIVE=2026-10-25

@@ -1,3 +1,14 @@
+<!-- LOCAL_FIRST_CLASSIFICATION_20261101 -->
+> **适用范围：SCIENTIFIC_CONSTRAINT；普通工程网页终验角色属于 SUPERSEDED_WORKFLOW**
+>
+> 当前执行入口：[AGENTS](../AGENTS.md) → [唯一短状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md) → [唯一工作流](CH5_ASTRA_WORKFLOW_CURRENT.md)。Owner 决策见 [2026-11-01 决策记录](OWNER_LOCAL_FIRST_CODEX_20261101.md)。
+>
+> 本文件不整体失效：来源身份、实际原件、数值证据、公式/单位/税基/劳动/时序/边界审查、隐私、STOP、缺口分层和不得推断未返回结果的要求继续保留。
+> 不再据此要求普通工程必须等 GPT/Astra 或强制 A/B/C 网页验收。Local Codex 工程验收不等于独立科学评议；仍有效科学合同要求的独立科学门与 Owner 最终科学接受不能由自验代替。
+> 下方原文保留；历史 STATUS/AUTHORITY 和 A/B/C 叙述须按上述范围理解，不能成为新的普通工程门禁或科学执行许可。
+
+---
+
 # CH5 独立审阅规则 V3（GitHub 固定提交优先）
 STATUS=OWNER_APPROVED_CURRENT
 AUTHORITY=docs/CH5_GITHUB_WORKFLOW_AUTHORITY_CURRENT_20261025.md

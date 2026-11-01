@@ -1,3 +1,14 @@
+<!-- LOCAL_FIRST_CLASSIFICATION_20261101 -->
+> **适用范围：SUPERSEDED_WORKFLOW（普通工程派单模板）＋ SCIENTIFIC_CONSTRAINT（有界证据要素）**
+>
+> 当前执行入口：[AGENTS](../AGENTS.md) → [唯一短状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md) → [唯一工作流](CH5_ASTRA_WORKFLOW_CURRENT.md)。Owner 决策见 [2026-11-01 决策记录](OWNER_LOCAL_FIRST_CODEX_20261101.md)。
+>
+> 此历史模板不是普通工程启动或网页终验的必填表。任务账本由 Local Codex 按实际授权维护；不得机械要求 GPT 发单、默认离线 ZIP 或每步新增报告。
+> 未来具体科学合同若明确采用其中的来源/白名单/预算/原件/隐私/独立见证要求，仍须遵守；填写模板本身不产生 Owner 授权，不恢复旧额度。科学接受与普通工程验收分层。
+> 下方模板及零预算默认原样保留，历史占位符不是当前待执行任务。
+
+---
+
 # CH5 GitHub 任务单模板 V3
 TASK_ID=
 STATUS=ISSUED_ONLY_AFTER_OWNER_AUTHORIZATION

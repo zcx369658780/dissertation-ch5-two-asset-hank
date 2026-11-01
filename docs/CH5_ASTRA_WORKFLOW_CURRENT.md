@@ -1,6 +1,8 @@
 # CH5 current workflow — Local-first Codex
 Effective 2026-11-01. Sole current workflow entry; retains this existing filename to avoid a second workflow system.
 Owner decision: [OWNER_LOCAL_FIRST_CODEX_20261101.md](OWNER_LOCAL_FIRST_CODEX_20261101.md).
+Classified navigation: [DOC_INDEX current section](DOC_INDEX_CURRENT.md#local-first-current-navigation).
+Verified local engineering execution state is the primary record; GitHub is its remote audit mirror, not a source of new scientific authority.
 Short state: [CH5_LOCAL_FIRST_STATUS_CURRENT.md](CH5_LOCAL_FIRST_STATUS_CURRENT.md).
 
 Owner sets goals and scientific boundaries → Local Codex plans, implements authorized engineering, reviews and accepts engineering scope → meaningful milestones are recorded locally and synchronized to GitHub → Owner decides scientific, protected and irreversible matters. Web GPT provides optional strategic, mathematical, numerical-method and architecture advice from fixed references.

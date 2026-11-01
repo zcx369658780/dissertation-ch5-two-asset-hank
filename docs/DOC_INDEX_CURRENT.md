@@ -1,3 +1,25 @@
+<!-- LOCAL_FIRST_CLASSIFICATION_20261101 -->
+<a id="local-first-current-navigation"></a>
+# CH5 Local-first 当前导航 · 2026-11-01
+
+先核真实本地身份；日常启动只读短状态、唯一工作流和本次必要合同/证据。Local Codex 负责授权内工程，Web GPT 按需咨询，Owner 最终科学决定。
+| 分类 | 精确入口 | 读取与适用范围 |
+|---|---|---|
+| CURRENT_GOVERNANCE | [AGENTS](../AGENTS.md) | 当前职责、短启动与权限边界 |
+| CURRENT_GOVERNANCE | [唯一工作流](CH5_ASTRA_WORKFLOW_CURRENT.md) / [唯一短状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md) | 日常工程推进与当前状态；不用旧 CURRENT/TASK 代替本导航 |
+| CURRENT_GOVERNANCE | [Owner 决策及本阶段记录](OWNER_LOCAL_FIRST_CODEX_20261101.md) | 决策原意、覆盖关系、固定版本和同步回执定位 |
+| SUPERSEDED_WORKFLOW ＋ SCIENTIFIC_CONSTRAINT | [旧 GitHub authority](CH5_GITHUB_WORKFLOW_AUTHORITY_CURRENT_20261025.md) | 日常派单/工程网页验收已覆盖；原件、证据、预算、隐私和 STOP 要求保留 |
+| SCIENTIFIC_CONSTRAINT | [独立科学审阅规则](CH5_INDEPENDENT_REVIEW_RULES_20261025.md) | 不整体作废；特定科学独立门保留，普通工程不默认网页终验 |
+| SUPERSEDED_WORKFLOW | [旧离线流程](CH5_OFFLINE_WORKFLOW_AUTHORITY_CURRENT_20261023.md) / [历史任务模板](CH5_REVIEW_TASK_TEMPLATE_CURRENT.md) | 不作普通工程默认启动链；科学合同明确采用的保护要求仍有效 |
+| HISTORICAL_EVIDENCE | [研究记忆](CH5_PROJECT_MEMORY_CURRENT.md) | 只按具体问题读片段；不默认整份加载 |
+| HISTORICAL_EVIDENCE ＋ SCIENTIFIC_CONSTRAINT | [CURRENT 历史](../CURRENT.md) / [TASK_CURRENT 历史](../TASK_CURRENT.md) | 原文和 STOP 身份不改写；不能由旧 ACTIVE/NEXT 自动续跑 |
+| UNKNOWN（运行时加载范围） | 宿主注入的 instructions/skills 入口 | 已核当前根规则与提供的宿主入口；实际运行时选择及全量注入顺序 UNKNOWN，不扫描缓存或改全局规则 |
+
+G1 保持 ISSUED / COMPLETION_NOT_VERIFIED；WASM STOP、R12 STOP、R13 未授权、16项义务、耗尽预算及受保护研究资产均保持。此导航不产生科学或保护重绑定权限。
+以下为既有索引正文，逐字节保留为历史导航。旧“当前状态/下一步/最新 ZIP”按各自固定日期理解；发现具体失效历史链接时再定点处理，不因整理而搬迁、删除或采纳科学资产。
+
+---
+
 # CH5 DOC_INDEX_CURRENT · 2026-10-25 TEMP31 canonical 来源/单位审计完成；Owner 决策待交接
 
 - TEMP31 独立路线状态：CH5_TEMP31_WORKPLACE_TAX_ROUTE_STATUS_20261025.md

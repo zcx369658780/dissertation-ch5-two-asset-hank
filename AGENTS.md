@@ -26,6 +26,7 @@ This migration grants no science, test, model or G1 budget. G1 remains ISSUED / 
 Only the 2026-11-01 governance migration ends at its explicit STOP; that stop does not restore GPT daily dispatch.
 
 ## Current navigation and historical precedence
+Classified navigation (read only its current section): `docs/DOC_INDEX_CURRENT.md#local-first-current-navigation`.
 Single workflow: `docs/CH5_ASTRA_WORKFLOW_CURRENT.md`.
 Owner decision and exact historical-recovery index: `docs/OWNER_LOCAL_FIRST_CODEX_20261101.md`.
 Conflicting routine-dispatch/engineering-acceptance wording in older files, skills and indexes is superseded by the 2026-11-01 Owner decision. Scientific/protection clauses and specific scientific review gates remain effective. Consult the decision's small follow-up list; do not bulk rewrite the archive.

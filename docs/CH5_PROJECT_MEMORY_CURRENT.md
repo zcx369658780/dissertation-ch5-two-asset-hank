@@ -1,3 +1,15 @@
+<!-- LOCAL_FIRST_CLASSIFICATION_20261101 -->
+# 历史决策与研究记忆档案：按需读取
+CLASSIFICATION=HISTORICAL_EVIDENCE
+DEFAULT_FULL_READ=FALSE
+
+当前执行入口：[AGENTS](../AGENTS.md) → [唯一短状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md) → [唯一工作流](CH5_ASTRA_WORKFLOW_CURRENT.md)。Owner 决策见 [2026-11-01 决策记录](OWNER_LOCAL_FIRST_CODEX_20261101.md)。
+定点导航及规则分类见 [DOC_INDEX 当前导航](DOC_INDEX_CURRENT.md#local-first-current-navigation)。
+下方正文逐字节保留，不重写历史研究叙述。旧派单、网页工程终验、默认 ZIP 以及历史“下一会话先做”均不构成当前任务；具体科学约束、原件身份、STOP/PENDING、未解决义务和已耗预算保持。
+只按当前具体问题检索所需片段，不默认全量加载本档案，不从历史 PASS 或候选叙述推导当前科学接受。
+
+---
+
 ## 2026-10-24 Owner最新决定与历史Python基线候选待审
 
 Owner明确选择以2026年9月初首次复现MATLAB多省份HANK的Python版本作为修订基线；先恢复可追溯来源，再由GPT/Astra独立审阅MATLAB/TeX与隔离patch，Owner最终接受后才可能冻结新来源。历史 corrected-2009 证据为Python SOURCE_CONVERGED、184轮、5704次家户调用、31/31省；MATLAB对照184/5704。历史成功只适用于指定案例，不代表修订候选已收敛或所有经济学接口正确。

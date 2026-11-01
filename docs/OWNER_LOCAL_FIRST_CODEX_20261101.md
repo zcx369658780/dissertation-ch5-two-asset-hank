@@ -53,3 +53,36 @@ AUTO_NEXT=FALSE 仍禁未经授权的科学 successor、模型运行和 STOP 续
 - docs/CH5_INDEPENDENT_REVIEW_RULES_20261025.md：保留特定科学独立门；普通工程不再默认网页终验。
 - 旧离线 authority、任务模板、DOC_INDEX、长记忆和相关 Skills：仅按实际需要补导航，不批量重写，不从历史任务复活预算。
 完成本治理迁移后 STOP。不自动进入 G1、研究运行、源码修改或仓库整理；此停点不恢复 GPT 日常派单制度。
+
+## 2026-11-01 第二阶段：GitHub 治理导航整合（Owner 再授权）
+AUTHORITY=OWNER_CONFIRMED_EXECUTION_OF_CH5_GITHUB_GOVERNANCE_PROMPT
+AUTHORIZATION_TEXT_SHA256=9f72eb07c7969e53901bb3a1b20430112ca9f42fef41534c8214f3e553675a59
+PHASE2_GOVERNANCE_BASE=38d60e9c55f809cd699a56646250abc8610295cc
+PHASE2_MAIN_REFERENCE=b7e595ceb1cd7ffb5adfbf54e2de4e65f01090a5
+PHASE2_BRANCH=governance/ch5-codex-local-first-20261101
+PHASE2_WRITE_SCOPE=EXACT_TEN_GOVERNANCE_NAVIGATION_FILES_IN_ISOLATED_WORKTREE
+上节“后续定点治理清单（未执行）”保留为第1阶段原始记录；本节记录后续独立授权的履行，不追溯改写第1阶段。
+
+现场复核：本地治理 HEAD、parent、tree、干净状态和第1阶段回执逐文件一致；原模型 HEAD/index 与既存 tracked 状态保持。治理线相对 migration 基线 ahead 1 / behind 0；相对 main diverged、ahead 835 / behind 4，属于历史祖先关系，不是本阶段新增835提交。只在本治理分支安全 fast-forward 增量，不 PR/merge main、不 rebase、不强推。
+原模型工作树本阶段不写。此前已应用的 Local-first 根规则仍在；第2阶段导航增量只存在于独立治理工作树及其 GitHub 副本，不宣称已铺到原模型工作树的旧副本。TEMP31 完整工作树/基线仍待 Owner 决定。
+tracked、staged 和治理范围 untracked/ignored 已定点核对；为保持 WASM/保护门，不递归盘点原模型受保护 untracked/ignored。全量覆盖 UNKNOWN，未作保护基线重绑定。
+
+### 本阶段精确分类和动作
+| 入口 | 分类 | 本轮动作 |
+|---|---|---|
+| AGENTS.md、唯一工作流、唯一短状态、本 Owner 决策 | CURRENT_GOVERNANCE | 连接分类导航、记录阶段身份和适用范围；不另造角色权威 |
+| CH5_GITHUB_WORKFLOW_AUTHORITY_CURRENT_20261025.md | SUPERSEDED_WORKFLOW ＋ SCIENTIFIC_CONSTRAINT | 仅标识旧日常派单/工程网页终验被覆盖；原字节正文及来源、预算、隐私、STOP要求保留 |
+| CH5_INDEPENDENT_REVIEW_RULES_20261025.md | SCIENTIFIC_CONSTRAINT；普通工程网页门禁为 SUPERSEDED_WORKFLOW | 不整体作废，不降低特定科学独立审查门；原字节正文保留 |
+| CH5_OFFLINE_WORKFLOW_AUTHORITY_CURRENT_20261023.md | SUPERSEDED_WORKFLOW / HISTORICAL_EVIDENCE | 加正确当前入口；保留历史正文 |
+| CH5_REVIEW_TASK_TEMPLATE_CURRENT.md | SUPERSEDED_WORKFLOW ＋ SCIENTIFIC_CONSTRAINT | 标为历史模板，不能机械发单、激活科学或恢复额度；正文不改 |
+| DOC_INDEX_CURRENT.md | CURRENT_GOVERNANCE 导航；下方 HISTORICAL_EVIDENCE | 新增唯一当前导航和五类分流，旧索引正文不改 |
+| CH5_PROJECT_MEMORY_CURRENT.md | HISTORICAL_EVIDENCE | 只加按需读取导航前缀，原研究记忆正文逐字节保留 |
+| CURRENT.md、TASK_CURRENT.md、历史任务/审查/STOP/证据 | HISTORICAL_EVIDENCE ＋ SCIENTIFIC_CONSTRAINT | 不写、不删、不移动，固定身份保持 |
+| 当前宿主 instructions/skills 的实际注入与选择 | UNKNOWN（运行时适用性） | 只核根规则、宿主提供入口与既用 Git 工作流技能入口；不扫描工具缓存或修改全局规则 |
+
+本阶段所有新增导航目标均定点核对。旧档案内部的全部链接、宿主完整运行时注入顺序和保护状态全量盘点不在本轮覆盖，不宣称已验证；有具体需要时再在相应授权内处理。
+公开内容检查覆盖全部新增/修改的治理范围与新增文本；原长记忆、旧索引和旧约束正文保留，不上传 LOCAL_ONLY 回执或私有原件，不新增敏感本地路径。旧正文和新前缀分别核对字节身份，Git 历史可恢复。
+本阶段自主验收仅限治理导航工程；不是外部独立科学审查，不接受旧科研候选。实际新 commit、remote HEAD、文件列表、字节/Blob/哈希回读由 Git 及本地阶段交付回执固定，失败为 PENDING_SYNC，不写自引用 SHA。
+
+G1=ISSUED / COMPLETION_NOT_VERIFIED；本轮不执行、不补做、不关闭、不修改 G1。九月首次复现和实际 TEMP31 修正源保护、WASM STOP、OWNER_BASELINE_REBIND=NOT_AUTHORIZED、R12 STOP、R13 NOT_AUTHORIZED、16项义务、已耗预算及全部科研硬门保持。
+模型/测试/MATLAB=NOT_RUN；main 合并、rebase、PR、归档/复制/移动/删除/清理科研资产、改变 snapshot/worktree/branch 历史、Desktop/CUA/node_repl/mirror/安全配置修改=NOT_DONE。完成此治理整合后 STOP，不自动进入下一阶段。
