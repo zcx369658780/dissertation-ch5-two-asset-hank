@@ -1,0 +1,61 @@
+# TEMP31 默认关闭装配入口与调用观察组件 · 2026-11-02
+
+STATUS=PASS_PINNED_COMPILE_CATALOG_NEUTRAL_ASSEMBLY_AND_GRANT_DECLARATION_CHECKS__SCIENTIFIC_DISPATCH_ABSENT
+AUTHORIZATION_PARENT=6a66b2cbb280cdb325966a2d2754a5b4f91074f4
+OWNER_CONTINUATION=可以请继续
+OBSERVER_CODE=a22afb819560a2369298d6cd1b5f2e5b10dc3284
+ASSEMBLY_CODE=c83349ae0f2547c1b8b3f322a61d0d7372ff023d
+ASSEMBLY_PARENT=a22afb819560a2369298d6cd1b5f2e5b10dc3284
+ASSEMBLY_TREE=ea4ed6b129852681e3cacfebe51ea9dd9684fb50
+SOURCE_PUBLICATION=LOCAL_ONLY_NOT_PUSHED
+
+本轮完成默认禁用入口的工程准备：固定科学源码的只读字节/编译清单、真实非科学模块装配、精确Python/C调用观察及授权声明绑定检查。最终27项行为检查通过（观察器13项、装配/声明14项），错误/失败/跳过均0。没有导入或执行真实科学模块，没有初始化/HA/HJB/KFE/GE/IRF/policy/MATLAB/校准或真实数组运算。运行过的四阶段管线只传不透明Token及标签，不是HA计算。
+
+## 固定科学来源：只读和编译，不执行
+
+catalog_fixed_sources只接收前次冻结计划原字节，固定大小31241与SHA-256=aea2f06db3bb05bfc3b7ea6ee29e3a46ae2e5cd9f96448ee4e843ee90d2152fc。E1工程模块本身先按固定SHA核验并直接从原字节加载，不触发科学包__init__。原11模块路径顺序为硬白名单，调用方不能改Root或清单去读取LOCAL_ONLY/其他来源。
+
+现场11份源码大小、Git Blob与SHA逐项匹配；完整compile产生177条类/函数/嵌套代码的符号指纹元数据，未exec这些代码。177不是177项独立测试，也不是运行闭合认证。原字节哈希/Blob是来源证据；编译码指纹受本机Python版本与文件位置影响，不能冒充跨环境科学身份。
+
+清单只给出PINNED_SOURCE_BYTES_AND_COMPILE_ONLY，科学模块执行0、scientific_run_authorized/runtime_ready_for_ha/scientific_acceptance均FALSE。清单记录的source_head仍是冻结计划原阶段身份，不拿当前工程提交替换旧科学证据。没有生成生产网格或改参数/价格/输入/容差。
+
+## 调用观察器的实际能力与限度
+
+PythonBinding绑定实际代码对象及全局命名空间；NativeBinding绑定实际C/builtin对象与明确Python调用者，另按阶段区分。监控文件内的同名异码、异globals、未声明函数、错误阶段或超额调用在主体前被拒绝；不能只伪造文件名/函数名。非科学案例使用实际len对象验证C入口前计数，未导入或绑定SciPy的Brent/线性求解器，不能说真实科学C链已验证。
+
+尝试数与准入数分开记录；可为关键入口持久写入ENTRY，阶段切换写CHECKPOINT，异常/超额写STOP，退出写TERMINAL，均flush/fsync。内部细粒度计数在内存，不为每个网格点执行磁盘同步；突然丢失worker时，最后检查点之后的计数必须UNKNOWN，整个意图仍消耗，不能恢复为0或重跑。profile的return事件在异常时也可能出现，字段明确名为profile_return_events_not_success，不能据此认证函数正常返回。
+
+CPython会在profile回调抛错后关闭profiling，因此ObservedStop直接派生BaseException；固定调用者必须立即退出观察上下文/未来worker。invoke与退出都会检查STOP和钩子丢失，既有其他profile钩子拒绝覆盖，原观察器不可重新进入；吞掉异常也不能获得COMPLETE。顺序阶段必须全部访问，跳转/漏尾阶段STOP。它仅观察所属当前线程，不是对其他线程、任意直接调用或同解释器恶意代码的完整隔离；未来科学worker仍需明确线程与执行边界，不能因此标完整科学观察就绪。
+
+独占意图目录、CLAIM和EVENTS账本保留；成功/失败均不得复用原意图，字段快照不是重置/恢复API。
+
+## 实际非科学装配与默认科学门
+
+exercise_neutral_assembly是唯一可执行装配路线，只接受两份硬pin的tests/fixtures中性源码。独占assembly CLAIM在创建包命名空间/执行模块之前持久保存；相对导入使用独立包容器，不替换原ch5包或科学__init__。中性seed→hjb_marker→kfe_marker→aggregate_marker每阶段准入1次，实际相对导入、阶段交接和返回Token完成；阶段名称不授予科学资格，子账本位于该fixture意图的calls目录。
+
+Owner授权检查目前是**声明校验**：核独立预期字节身份、Owner决策引用、意图、计划/目录/输入/驱动/环境摘要、严格整数限额及零自动后继/接受旗标。匹配后仍为DECLARATION_MATCH_ONLY_NOT_OWNER_AUTHORITY，owner_decision_verified/owner_authority_bound/scientific_run_authorized始终FALSE；没有读取或认证一个真实Owner科学许可，也未伪造已批准决定。
+
+run_first_origin_ha没有科学dispatch分支，任何布尔标志、环境变量或看似一致的声明都在文件I/O和导入前返回OWNER_HA_AUTHORITY_UNBOUND__SCIENTIFIC_DISPATCH_NOT_IMPLEMENTED。本轮不是可运行的真实HA程序，也没有在原工资消费者增加真实生产分支。未来实际科学worker必须另实现、受限启动并绑定真实Owner决定后才可执行，不能简单翻转一个标志或放大toy限额。
+
+## 检查过程与自审
+
+首个观察器API及关闭入口分别先由缺API用例复现。增量测试先发现“未走完全部阶段也可COMPLETE”，增加失败用例并修复；自审又复现“已有关闭意图在拒绝前已建立中性模块命名空间”和“预算1e999未按明确拒绝类型退出”，分别将持久claim前移并改用严格整数限额。最终27/27通过。最初扩展工程harness误选未创建的测试文件，在测试执行前停止，原脚本与STOP保留；另存精确修正版本后继续，没有科学预算或观测重试。
+
+没有重复执行前轮Windows toy资源案例；原11个toy意图/9个进程账本保持。本轮均在独立非科学工程检查进程内完成中性fixture和调用测试，新增科学worker0、科学模块实际导入/执行0。真实SciPy/native调用、第三方环境、原网格/算子运行谱系与严格诊断仍NOT_RUN/UNKNOWN。
+
+| 文件 | 字节 | Git Blob | SHA-256 |
+|---|---:|---|---|
+| src/ch5_two_asset_hank/multi_province/temp31_call_observer.py | 9193 | 26f8e77515b2cdda8c773bd9fddff0078951b666 | e318102cdc57a0eb1ccc50022575d4ca16d563352a2aa6eb860b00f1a1bc96fb |
+| tests/test_temp31_call_observer.py | 7899 | 2f1be503ae2319daf832db51a0be19b7ed27c8c2 | 7b85d9c6c4207261e8022b4b613fd888dcdb1cbc9d8b5c977284b44fcda2069a |
+| src/ch5_two_asset_hank/multi_province/temp31_dormant_assembly.py | 12749 | 06723ca1db6a1df410f913a0c47dd33240325289 | 3c88fb81a598d3d6d274f9a168231128d9ee7c94b128b5a4d89ddf80b636825f |
+| tests/test_temp31_dormant_assembly.py | 8399 | c4440233d54be169408f5a4f58b3c51dbc258ba6 | e67008272a3c9f2ccdc8b43479b9108fa99c260165a0edd1830621865cfcb198 |
+| tests/fixtures/temp31_neutral_inputs.py | 150 | 22b4763e277749ab9d27ab7042c96296d3637583 | 612797117a2e6d9c07c7f33df1232d68a086a72f39197b24c0a2a4fb14e8f9ce |
+| tests/fixtures/temp31_neutral_pipeline.py | 551 | c17d6d3993b5b8b4fc166db18ac1df0c2da9eeb0 | c2811f95a99575a04694491bf684e57adb66f290f792db906d0f9b4f85d91dd2 |
+
+仅新增两个工程模块、两份测试、两份中性fixture，原583条代码路径和最初565条基线保持，现589路径；两个代码candidate仅本地。验收为Local Codex工程自审，不是独立科学评议。
+
+## 下一工程对象与科学门
+
+下一普通工程对象是**仍锁闭的实际科学worker编排与父进程资源约束接合**：把已固定11模块的装配顺序、实际Python/C目标解析、单来源地调用/持久账本、原对象身份及Owner许可绑定落实到独立驱动，先用中性替身验证；环境身份可先做不导入科学模块的精确元数据登记。它尚未实现/验证，不能用当前中性加载器或声明报告直接派发科学函数。
+
+具体科学worker、最终输入/代码/环境pins及原120秒/2GiB等约束可审阅后，才提交新的S2科学运行许可。首轮19与原800格/800根等仍为提案，余7个8格初始化worker不适用。真实生产兼容A/B未选择、Owner科学决定未绑定，严格判据reference/thresholds仍null，诊断不自动接受。原工资/补录各1/1关闭，初始化3/10余7，旧dirty树/HEAD/index、R12/R13/WASM、未授权保护重绑定及16义务保持。FORMAL_SOURCE_FREEZE/Results/model_activation/REAL_GE和全部生产/科学接受门仍FALSE；无分支删除、main合并、原件清理或全局配置修改。

@@ -1,6 +1,6 @@
 # TEMP31 当前生产接线方案 · 2026-11-01
 
-STATUS=E1_PREFLIGHT_AND_E2_WINDOWS_TOY_GUARDS_IMPLEMENTED__SCIENTIFIC_DRIVER_PENDING__REAL_PRODUCTION_NOT_BOUND
+STATUS=COMPILE_CATALOG_NEUTRAL_ASSEMBLY_CALL_OBSERVER_AND_DECLARATION_CHECKS_READY__SCIENTIFIC_DISPATCH_ABSENT
 OWNER_SOURCE_ADOPTION=56447829ce0e6c3c85552c53c351b26a2452a4bd__DEVELOPMENT_SOURCE_ANCHOR
 SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
 LOCAL_SOURCE_MATERIALIZATION_COMMIT=91941302f966f12d5f206691f74c800cadf3e797__LOCAL_ONLY_NOT_PUSHED
@@ -193,3 +193,9 @@ Owner批准上述具体预算后，只启动1个新worker，墙钟1.157秒，源
 [实施记录](CH5_TEMP31_PREEXECUTION_TOY_GUARDS_IMPLEMENTATION_20261102.md)：新计划身份/元数据及计数模块与固定toy监督器已落地，E1 candidate2383af1...、E2 candidateedb8104...仅本地。26项不同的行为检查通过（扩展25通过+测试夹具修复后的1项定点通过）；累计11个toy意图/9进程全部保留，真实观察Windows job恢复前绑定/回读、墙钟超时、提交内存与单进程数拒绝、崩溃及重复意图不重用。2个设置/pin拒绝未建进程；科学模块实际导入/调用和科学worker均0，原578/565代码路径保持，现583路径。
 
 实际固定计划只获得PLAN_METADATA_ONLY，声明的11模块pins未因格式检查而成为源字节/输入/运行资格。E2没有任意脚本或callback入口，只允许toy模式/小限额，不能直接放大到120秒/2GiB运行HA。下一工程准备默认禁用的固定11模块装配、精确Python/C调用观察、持久科学意图账本及Owner许可门，先用非科学夹具验证。完成具体可审阅驱动/最终pins后，再交Owner首HA许可；真实兼容A/B与科学判据、正式输入和接受门仍分开。原预算/STOP/Results FALSE保持。
+
+## 2026-11-02 关闭装配准备与精确调用观察组件完成
+
+[实施记录](CH5_TEMP31_DORMANT_ASSEMBLY_OBSERVER_IMPLEMENTATION_20261102.md)：candidate a22afb8.../c83349a...只在本地，新增6路径后589，原583/565保持。27项行为检查通过；11科学源大小/Blob/SHA与compile匹配、177条符号元数据，未exec科学代码。中性两模块相对导入和四标签阶段完成，持久claim先于任何fixture模块执行；代码/global与C对象/调用者、阶段顺序/缺尾/超额/失钩/重复意图/授权声明等拒绝路径已覆盖。
+
+当前科学入口没有dispatch分支，任何声明匹配都不自动成为Owner科学权限。观察器只对当前线程受管路径负责，异常return事件不等于成功，真实SciPy/科学调用未验证。下一工程为仍锁闭的实际科学worker编排与父进程约束接合，先中性替身测试和不导入科学模块的环境元数据登记；具体驱动/最终pins可审阅后才交Owner新S2运行门。原800格/800根与120秒/2GiB仍未授权，旧8格余7不适用，科学判据、生产兼容与输入采纳门保持独立，Results FALSE。
