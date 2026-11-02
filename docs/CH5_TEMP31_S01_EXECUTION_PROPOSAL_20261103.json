@@ -1,0 +1,162 @@
+{
+  "proposal_id": "TEMP31_S01_RAH005_RB002_NET19_20261103",
+  "status": "OWNER_AUTHORIZED_NEW_FINITE_S01_DIAGNOSTIC",
+  "action": "RUN_TEMP31_FIRST_ORIGIN_HA",
+  "code_candidate": "ee15d70469bca831ed1c613c52a737c88c73b411",
+  "code_tree": "a4754741c9e6a7dd9a7d971552840915cae5324c",
+  "code_pins": {
+    "worker": "67174a715918589b89e9062c2904b05e604d755636e6a827bbeaa4ccdf8492d9",
+    "supervisor": "92c42b4a273d344fe1567ad3898d32f0adca3a67fa8db0fc1d08854c384c0697",
+    "support": {
+      "temp31_toy_supervisor.py": "61a60f431eaa5bb6cf539419788299c6cdb1fbf388e916a21d5d55833443c099",
+      "temp31_execution_preflight.py": "a83905dcc8ceb1d5228f679f7be63a084efdf9269215827085c0cc60491baf75",
+      "temp31_call_observer.py": "b61a4c46ac47e0e9cabdc5f82ed05ac8bcb2fd84a74b47ecec050343412fdad3",
+      "temp31_dormant_assembly.py": "0aa36f017748959873546e2d2df2916b667bf107c05e4500b1606e905345a431"
+    }
+  },
+  "environment_sha256": "4dd77c75ee2b6743aff07e6875171fcdec3e8f7e32d1c326e81159d0b11256e8",
+  "source_bundle_sha256": "0655861a536372db05ad7f6938d0999763c6135bd2e67b82fc513000cada211b",
+  "fixture_sha256": "3722cd0883d495bc774d9bd780efd806d1c4d9648fb585a3bf37dda1a17f9862",
+  "fixed_plan_sha256": "aea2f06db3bb05bfc3b7ea6ee29e3a46ae2e5cd9f96448ee4e843ee90d2152fc",
+  "selected_development_source": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+  "python": "3.11.9",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "limits": {
+    "worker_processes": 1,
+    "wall_seconds": 120,
+    "memory_bytes": 2147483648,
+    "origin_attempts": 1,
+    "initializer_calls": 1,
+    "brent_python_max": 800,
+    "brent_native_max": 800,
+    "hjb_calls": 1,
+    "hjb_linear_solves_max": 100,
+    "policy_calls_max": 80000,
+    "kfe_calls_max": 1,
+    "kfe_linear_solves_max": 1,
+    "aggregate_calls_max": 1,
+    "producer_calls": 0,
+    "other_science_calls": 0,
+    "retries": 0
+  },
+  "fixture_summary": {
+    "province_order": [
+      "A",
+      "B"
+    ],
+    "origin": "A",
+    "origin_index": 0,
+    "entering_iteration": 1,
+    "generated_after_iteration": null,
+    "calendar_year": null,
+    "scope": "FIXED_SYNTHETIC_NUMERICAL_GUESS_ONLY",
+    "grid_shape": [
+      20,
+      20,
+      2
+    ],
+    "b": "linspace(-2,5,20)",
+    "a": "linspace(0,10,20)",
+    "z": [
+      0.8,
+      1.3
+    ],
+    "switch": "[[-1/3,1/3],[1/3,-1/3]]",
+    "rah": 0.05,
+    "rb": 0.02,
+    "rb_gap": 0.07,
+    "Tt": 0.1,
+    "net_wage": 19.0,
+    "labor_weight": 1.0,
+    "resource_convention": "V010_TOTAL_WEALTH_NUMERICAL_INITIAL_GUESS",
+    "parameters": {
+      "rho": 0.05,
+      "gamma_c": 2.0,
+      "phi": 5.0,
+      "chi_0": 0.1,
+      "chi_1": 2.0,
+      "a_bar": 1e-06,
+      "mu_z": 0.0,
+      "sigma_z": 0.0
+    },
+    "hjb_controls": {
+      "delta": 1000.0,
+      "convergence_tolerance": 1e-07,
+      "max_iterations": 100,
+      "drift_tolerance": 1e-12
+    },
+    "root_controls": {
+      "xtol": 1e-12,
+      "rtol": 1e-12,
+      "maxiter": 100,
+      "upper_bracket": 1024.0,
+      "lower_bracket": "max(0,-resources/wage)+1e-12"
+    }
+  },
+  "sequence": "prepare fixed original grid and bootstrap19 -> one a*r_a initializer -> one net-wage HJB -> KFE only after HJB convergence and unchanged grid -> raw aggregates and diagnostics only",
+  "output_root_label": "LOCAL_ONLY_TEMP31_S2_FIRST_ORIGIN_20261102",
+  "intent_id_when_approved": "temp31_s2_s01_rah005_rb002_net19_20261103",
+  "stop_policy": [
+    "any input/source/environment/protection mismatch",
+    "initializer domain/root/slope failure",
+    "HJB exception/nonfinite/nonconverged",
+    "grid/operator lineage change",
+    "KFE or density/normalization failure",
+    "timeout/memory/process/observer loss",
+    "unknown/missing return"
+  ],
+  "failure_policy": "Preserve all existing inputs/checkpoints/returns/logs; spend this single attempt; no retry, renamed intent or automatic successor",
+  "explicitly_not_authorized": [
+    "real data",
+    "31-origin batch",
+    "firm/GE/IRF/welfare/calibration/MATLAB",
+    "formula/grid/price/parameter/tolerance changes",
+    "formal qualification or Results"
+  ],
+  "auto_next": false,
+  "scientific_acceptance": false,
+  "consumer_ready": false,
+  "formal_ha_accepted": false,
+  "Results": false,
+  "runtime_qualification_before_probe": "BASELINE_P0_HJB100_RETURNED_NOT_CONVERGED__S01_NUMERICS_NOT_RUN",
+  "approval_material": "CH5_TEMP31_PRICE_DIAGNOSTIC_DESIGN_20261102.md",
+  "previous_attempts_used": 3,
+  "new_attempts_requested": 1,
+  "total_attempts_if_approved": 4,
+  "prior_intent_closed": true,
+  "requires_new_owner_decision": true,
+  "original_scientific_inputs_and_limits_unchanged": false,
+  "meaning": "One Owner-approved external S01 price substitution. No reopening of previous grants, no reserve point or automatic retry.",
+  "helper_budgets": {
+    "generic_per_phase_limit_unchanged": 1000000,
+    "hjb_validator_call_bound": 560001,
+    "hjb_validator_nested_code_bound": 3360006,
+    "observer_binding_validation_max": 3360006,
+    "other_core_function_limits": "UNCHANGED",
+    "source11_modules": "BYTE_IDENTICAL; do not relocate validation or memoize source calls"
+  },
+  "hjb_progress_recording": {
+    "max_iterations": 100,
+    "iteration50": "observe_if_reached; do not force continuation if source converged earlier",
+    "criterion": "original max(abs(value-old)) < 1e-7",
+    "delta": 1000.0,
+    "drift_tolerance": 1e-12,
+    "progress": "Record existing scalar statistic at the next iteration entry plus actual final return; never relabel it HJB equation residual.",
+    "raw_arrays": "LOCAL_ONLY; preserve returned initial/HJB/KFE arrays and original operator diagnostics"
+  },
+  "external_price_input": {
+    "path": "docs/CH5_TEMP31_S01_PRICE_INPUT_20261102.json",
+    "point_id": "S01",
+    "sha256": "a5178cbf9d74df7f9eebd0e2cd51f7e1dfcd0baf6e52db1c0a92c3676f584776"
+  },
+  "price_design_sha256": "00487866b05da31f063dda856f545785db897c4dfba9203fdfcce056c609cfd1",
+  "scientific_kernel_grid_nonprice_inputs_and_limits_unchanged": true,
+  "only_scientific_input_change": {
+    "field": "state.rah/consumer.r_a",
+    "from": 0.09,
+    "to": 0.05
+  },
+  "reserve_points_authorized": false,
+  "baseline_debug_plan_sha256": "ad2fb2c11ba571d6aa3b65c0af9c622af23e054bb4d98a9a2541891455c44cd9"
+}

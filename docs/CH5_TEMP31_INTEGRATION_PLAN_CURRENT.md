@@ -1,6 +1,6 @@
 # TEMP31 当前生产接线方案 · 2026-11-01
 
-STATUS=HJB100_NOT_CONVERGED__BLACK_BOX_EXTERNAL_PRICE_DESIGN_READY__NO_NEW_RUN_AUTHORITY
+STATUS=S01_HJB_CONVERGED25_RAW_HA_CHAIN_RETURNED__STRICT_KFE_NOT_CERTIFIED__CLOSED_NO_RETRY
 OWNER_SOURCE_ADOPTION=56447829ce0e6c3c85552c53c351b26a2452a4bd__DEVELOPMENT_SOURCE_ANCHOR
 SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
 LOCAL_SOURCE_MATERIALIZATION_COMMIT=91941302f966f12d5f206691f74c800cadf3e797__LOCAL_ONLY_NOT_PUSHED
@@ -223,3 +223,10 @@ Owner批准上述具体预算后，只启动1个新worker，墙钟1.157秒，源
 ## 2026-11-02 Owner外部价格优先方向与历史设计
 
 最新方案CH5_TEMP31_PRICE_DIAGNOSTIC_DESIGN_20261102.md按Owner黑箱原则保留HA内部与网格，先做外部价格诊断设计。定点核对R1/R2/R3九文档31点，历史24个HJB成功但严格驻定0；旧平方初始化与当前a*r_a差异保留，历史同价P0成功不外推当前可行域。推荐先唯一S01=(.05,.02,19)（P2历史22轮），相对当前只变rah；后备S02/S03仅rb .015/.025（D03/D04历史15/16轮），不自动执行或扩成三维扫参。新外部价格manifest及最终代码pins未准备，本轮设计不授予科学运行或开新额度；CURRENT关闭、3/3用完。原100轮未收敛、严格标准null、生产兼容/31省GE等缺口和保护STOP保持。
+
+
+## 2026-11-03最新增量：S01单点原HJB25轮成功，完整原始链返回
+
+Owner具体继续S01后，固定外部清单只把rah .09→.05，原rb=.02/净19与科学11源/网格/参数/容差/100轮保持。工程两源路径+一测试，41项检查通过；ee15d70仅本地，595路径。新决定_04与输入/代码pins登记后唯一26.234秒进程返回：HJB25轮true、变化3.85018072979193e-10，原KFE/汇总各1。相对当前控制100轮false，本点支持外部价格诊断方向；旧历史平方初始化22轮不是本次逐字复现。
+
+完整原算子驻定残差3.618851426605556，原raw系统小残差和质量近1不能代替驻定；严格合同/阈值仍null，formal_ha_accepted/科学接受/Results FALSE。详情CH5_TEMP31_S01_PRICE_DIAGNOSTIC_RESULT_20261103.md。CURRENT=CLOSED_COMPLETED_NO_RETRY、4/4用完零重试，预备S02/S03未执行；真实生产工资桥、正式输入、31省/GE/IRF与严格接受仍未完成。下一步讨论KFE资格，全部旧预算/保护STOP保持，不自动后继或修改黑箱内部。

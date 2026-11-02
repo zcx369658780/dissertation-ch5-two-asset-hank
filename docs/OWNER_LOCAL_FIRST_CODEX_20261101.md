@@ -643,3 +643,24 @@ DESIGN=CH5_TEMP31_PRICE_DIAGNOSTIC_DESIGN_20261102.md
 AUTHORITY_INTERPRETATION=HISTORICAL_REFERENCE_AND_DESIGN_ONLY__NO_NEW_SCIENTIFIC_RUN_GRANT
 
 按本指示保持HA科学核/网格不变，先用历史价格成功点做有限外部诊断设计，不按前述内部policy/导数方向直接改源。九份固定公开文档核对31个唯一点，24个历史HJB成功但严格驻定0；历史P0同当前价格曾64轮成功，旧初始化等条件差异保留，价格原因仍待验证。推荐先唯一S01=(rah .05,rb .02,净19)，历史R1/P2为22轮；相对当前仅rah变化。S02/S03=(.05,.015,19)/(.05,.025,19)历史15/16轮，后备不自动启动。暂不变净工资或借旧见证，未来工资轴须单独明确反事实合同。此为方案不是新运行决定，未创建_04或新意图；旧三次许可关闭、预算与保护门/科学接受/Results FALSE保持。
+
+
+## 2026-11-03 Owner批准唯一S01；HJB25轮及原KFE/汇总返回
+
+OWNER_EXACT_STATEMENT=可以请继续
+AUTHORIZATION_CONTEXT=紧接S01=(rah .05,rb .02,净工资19)的具体单次提案，1进程120秒/2GiB/零重试，预备S02/S03保持关闭。
+OWNER_DECISION=CH5_TEMP31_S2_OWNER_DECISION_20261103_04.json
+OWNER_DECISION_SHA256=45597c53e677a3dc7e80d151edcf452fc59ef0cf17316eac6da24f1590d49de8
+EXTERNAL_INPUT=CH5_TEMP31_S01_PRICE_INPUT_20261102.json
+RESULT=CH5_TEMP31_S01_PRICE_DIAGNOSTIC_RESULT_20261103.md
+
+先实施固定外部输入/父子独立核验，保留原科学核/网格/参数/容差/100轮与旧fixture。41项限定检查通过后固定工程代码ee15d70及新输入，登记不可变决定_04/独立累计账本，再执行唯一进程。实际26.234秒，HJB25轮true，变化3.85018072979193e-10；KFE和汇总各1、exit0，Job/退出清理确认。原算子驻定残差3.618851426605556，虽raw系统残差4.901949072350087e-17、质量近1，严格阈值/引用仍null，未接受HA或Results。只替换rah支持当前单点HJB收敛，不证明连续价格域、均衡或历史解复现。
+
+本次1/1、累计4/4已用、重试0；CURRENT=CLOSED_COMPLETED_NO_RETRY，预备点0额度未执行。旧三次决定/账本、初始化3/10余7、工资/补录1/1关闭与dirty树/index/432状态及保护STOP保持。下一步与Owner讨论KFE原驻定及严格资格，不自动扫其他价格、进入31省或修改黑箱科学内部。原始数组/日志及图LOCAL_ONLY，模型代码不推。
+
+
+## 2026-11-03 Owner要求本次运行后停下，明天继续
+
+OWNER_EXACT_STATEMENT=你好这次运行后请停下，明天继续
+SCOPE=SAVE_EXISTING_S01_RESULTS_AND_HANDOFF_THEN_STOP__NO_NEW_ANALYSIS_OR_SCIENTIFIC_RUN
+收到指令时S01已完成、唯一进程退出与清理确认。仅完成现有结果/停止指令存档；HJB25轮成功、KFE严格资格未认证、CURRENT关闭4/4用完、零重试。明天由Owner恢复后从此接续，不自动启动或建立定时任务，预备S02/S03保持关闭。
