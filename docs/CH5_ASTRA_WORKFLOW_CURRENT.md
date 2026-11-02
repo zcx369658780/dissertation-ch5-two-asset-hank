@@ -9,6 +9,7 @@ Owner sets goals and scientific boundaries → Local Codex plans, implements aut
 
 Routine engineering no longer requires GPT-issued task sheets, per-task GPT final acceptance, a web-session handoff, or an A–D/three-stage substitute review chain. Do not use AUTO_NEXT=FALSE as an artificial GPT dispatch gate. It still forbids unapproved scientific successors, new runs, budget resets and retries of historical STOPs.
 No generic autonomy grants scientific-source/formula changes, data adoption, numerical runs or special budgets beyond an existing applicable contract. Ask Owner only for the concrete affected scientific/protected decision; continue unrelated authorized engineering where safe.
+Specific 2026-11-02 Owner delegation: [equivalent bounded debug grants](CH5_TEMP31_DELEGATED_DEBUG_AUTHORITY_CURRENT.md) may be issued prospectively by Local Codex within that fixed scope, without asking Owner again. This does not renew a closed grant or open solver/real-data/production/scientific-acceptance gates.
 
 Keep these verdicts separate: engineering acceptance; numerical validation; scientific-contract compliance; independent scientific review; Owner scientific acceptance; formal Results. A self-check cannot be labelled independent review, and cannot release a scientific gate.
 Python TEMP31 is the chosen active research mainline. MATLAB is historical reference, broad parity is not a prerequisite, and corrected legacy errors must not be reintroduced.
