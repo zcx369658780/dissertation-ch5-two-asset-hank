@@ -1,0 +1,149 @@
+{
+  "proposal_id": "TEMP31_FIRST_ORIGIN_HA_BOUNDED_OBSERVER_20261102",
+  "status": "OWNER_AUTHORIZED_NEW_FINITE_ATTEMPT_AFTER_REVIEWED_ENGINEERING",
+  "action": "RUN_TEMP31_FIRST_ORIGIN_HA",
+  "code_candidate": "b26ee2d737cea77479b8632cf8d5395e472655eb",
+  "code_tree": "77bd328ee3f3fd30ec3df32843a25ad9f329afe5",
+  "code_pins": {
+    "worker": "676060134feff0a2ebac7e8095969296c09b61daef1ee843b1929c3329dab980",
+    "supervisor": "c9e21f3fde642bd159344af6895d92337b6977ee462a5875583e6d1d065fa817",
+    "support": {
+      "temp31_toy_supervisor.py": "61a60f431eaa5bb6cf539419788299c6cdb1fbf388e916a21d5d55833443c099",
+      "temp31_execution_preflight.py": "a83905dcc8ceb1d5228f679f7be63a084efdf9269215827085c0cc60491baf75",
+      "temp31_call_observer.py": "b61a4c46ac47e0e9cabdc5f82ed05ac8bcb2fd84a74b47ecec050343412fdad3",
+      "temp31_dormant_assembly.py": "0aa36f017748959873546e2d2df2916b667bf107c05e4500b1606e905345a431"
+    }
+  },
+  "environment_sha256": "4dd77c75ee2b6743aff07e6875171fcdec3e8f7e32d1c326e81159d0b11256e8",
+  "source_bundle_sha256": "0655861a536372db05ad7f6938d0999763c6135bd2e67b82fc513000cada211b",
+  "fixture_sha256": "f8efc2443a2facdcc4720ddf48866a527579623083dbb006b9ace0fd1b5c1a65",
+  "fixed_plan_sha256": "aea2f06db3bb05bfc3b7ea6ee29e3a46ae2e5cd9f96448ee4e843ee90d2152fc",
+  "selected_development_source": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+  "python": "3.11.9",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "limits": {
+    "worker_processes": 1,
+    "wall_seconds": 120,
+    "memory_bytes": 2147483648,
+    "origin_attempts": 1,
+    "initializer_calls": 1,
+    "brent_python_max": 800,
+    "brent_native_max": 800,
+    "hjb_calls": 1,
+    "hjb_linear_solves_max": 100,
+    "policy_calls_max": 80000,
+    "kfe_calls_max": 1,
+    "kfe_linear_solves_max": 1,
+    "aggregate_calls_max": 1,
+    "producer_calls": 0,
+    "other_science_calls": 0,
+    "retries": 0
+  },
+  "fixture_summary": {
+    "province_order": [
+      "A",
+      "B"
+    ],
+    "origin": "A",
+    "origin_index": 0,
+    "entering_iteration": 1,
+    "generated_after_iteration": null,
+    "calendar_year": null,
+    "scope": "FIXED_SYNTHETIC_NUMERICAL_GUESS_ONLY",
+    "grid_shape": [
+      20,
+      20,
+      2
+    ],
+    "b": "linspace(-2,5,20)",
+    "a": "linspace(0,10,20)",
+    "z": [
+      0.8,
+      1.3
+    ],
+    "switch": "[[-1/3,1/3],[1/3,-1/3]]",
+    "rah": 0.09,
+    "rb": 0.02,
+    "rb_gap": 0.07,
+    "Tt": 0.1,
+    "net_wage": 19.0,
+    "labor_weight": 1.0,
+    "resource_convention": "V010_TOTAL_WEALTH_NUMERICAL_INITIAL_GUESS",
+    "parameters": {
+      "rho": 0.05,
+      "gamma_c": 2.0,
+      "phi": 5.0,
+      "chi_0": 0.1,
+      "chi_1": 2.0,
+      "a_bar": 1e-06,
+      "mu_z": 0.0,
+      "sigma_z": 0.0
+    },
+    "hjb_controls": {
+      "delta": 1000.0,
+      "convergence_tolerance": 1e-07,
+      "max_iterations": 100,
+      "drift_tolerance": 1e-12
+    },
+    "root_controls": {
+      "xtol": 1e-12,
+      "rtol": 1e-12,
+      "maxiter": 100,
+      "upper_bracket": 1024.0,
+      "lower_bracket": "max(0,-resources/wage)+1e-12"
+    }
+  },
+  "sequence": "prepare fixed original grid and bootstrap19 -> one a*r_a initializer -> one net-wage HJB -> KFE only after HJB convergence and unchanged grid -> raw aggregates and diagnostics only",
+  "output_root_label": "LOCAL_ONLY_TEMP31_S2_FIRST_ORIGIN_20261102",
+  "intent_id_when_approved": "temp31_s2_first_origin_a_bounded_observer_20261102",
+  "stop_policy": [
+    "any input/source/environment/protection mismatch",
+    "initializer domain/root/slope failure",
+    "HJB exception/nonfinite/nonconverged",
+    "grid/operator lineage change",
+    "KFE or density/normalization failure",
+    "timeout/memory/process/observer loss",
+    "unknown/missing return"
+  ],
+  "failure_policy": "Preserve all existing inputs/checkpoints/returns/logs; spend this single attempt; no retry, renamed intent or automatic successor",
+  "explicitly_not_authorized": [
+    "real data",
+    "31-origin batch",
+    "firm/GE/IRF/welfare/calibration/MATLAB",
+    "formula/grid/price/parameter/tolerance changes",
+    "formal qualification or Results"
+  ],
+  "auto_next": false,
+  "scientific_acceptance": false,
+  "consumer_ready": false,
+  "formal_ha_accepted": false,
+  "Results": false,
+  "runtime_qualification_before_probe": "NUMPY_SCIPY_AND11_MODULE_IMPORT_COMPLETED_ON_PRIOR_ATTEMPT__MODEL_NUMERICS_NOT_REACHED",
+  "approval_material": "CH5_TEMP31_S2_ATTEMPT3_FROZEN_DEBUG_PLAN_20261102.json",
+  "previous_attempts_used": 2,
+  "new_attempts_requested": 1,
+  "total_attempts_if_approved": 3,
+  "prior_intent_closed": true,
+  "requires_new_owner_decision": true,
+  "original_scientific_inputs_and_limits_unchanged": true,
+  "meaning": "One new Owner-authorized diagnostic after finite engineering budget review; prior two grants stay closed.",
+  "frozen_debug_plan_sha256": "ad2fb2c11ba571d6aa3b65c0af9c622af23e054bb4d98a9a2541891455c44cd9",
+  "helper_budgets": {
+    "generic_per_phase_limit_unchanged": 1000000,
+    "hjb_validator_call_bound": 560001,
+    "hjb_validator_nested_code_bound": 3360006,
+    "observer_binding_validation_max": 3360006,
+    "other_core_function_limits": "UNCHANGED",
+    "source11_modules": "BYTE_IDENTICAL; do not relocate validation or memoize source calls"
+  },
+  "hjb_progress_recording": {
+    "max_iterations": 100,
+    "iteration50": "observe_if_reached; do not force continuation if source converged earlier",
+    "criterion": "original max(abs(value-old)) < 1e-7",
+    "delta": 1000.0,
+    "drift_tolerance": 1e-12,
+    "progress": "Record existing scalar statistic at the next iteration entry plus actual final return; never relabel it HJB equation residual.",
+    "raw_arrays": "LOCAL_ONLY; preserve returned initial/HJB/KFE arrays and original operator diagnostics"
+  }
+}

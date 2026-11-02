@@ -1,6 +1,6 @@
 # TEMP31 当前生产接线方案 · 2026-11-01
 
-STATUS=LOCKED_SCIENTIFIC_WORKER_AND_PARENT_CHILD_LIMIT_BINDING_IMPLEMENTED__OWNER_S2_RUN_AUTHORITY_PENDING
+STATUS=ATTEMPT3_HJB_RETURNED100_NOT_CONVERGED__CLOSED_NO_RETRY__NUMERICAL_ANALYSIS_PENDING
 OWNER_SOURCE_ADOPTION=56447829ce0e6c3c85552c53c351b26a2452a4bd__DEVELOPMENT_SOURCE_ANCHOR
 SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
 LOCAL_SOURCE_MATERIALIZATION_COMMIT=91941302f966f12d5f206691f74c800cadf3e797__LOCAL_ONLY_NOT_PUSHED
@@ -211,3 +211,10 @@ Owner批准上述具体预算后，只启动1个新worker，墙钟1.157秒，源
 [停止与工程修复](CH5_TEMP31_S2_DIAGNOSTIC_STOP_AND_LABEL_REPAIR_20261102.md)记录Owner明确授权后的1/1进程：2.875秒、1344159744字节峰值提交内存，NumPy/SciPy与原11源模块加载后在观察器构造DUPLICATE_BINDING停止；网格/初始化/模型根/HJB/KFE/汇总均未进入，无数值结果，退出清理确认。CURRENT=CLOSED_STOP_NO_RETRY，不因历史owner_approved=true续期。
 
 同一行不同生成器共用来源标签的工程缺陷已用两个中性夹具复现并修复；修后9项相关检查通过，阶段与code/global/native保护和限额不变，工程阶段科学导入/worker0。修复candidate c8a323dec6662221b377240921408e7905f2e1a9仅本地，原科学核心/网格/价格/参数/容差保持。固定[新一次提案](CH5_TEMP31_S2_AFTER_LABEL_REPAIR_PROPOSAL_20261102.json)仅请求同输入、1进程120秒/2GiB和同调用上限的新尝试，尚未授权/启动；不重开旧意图，不改旧预算或零自动重试。严格接受、生产兼容选择、31省/GE/IRF与Results仍分开待门。
+
+
+## 2026-11-02最新增量：固定诊断口径与辅助预算后，HJB100轮返回未收敛
+
+最新执行协议为CH5_TEMP31_HA_DEBUG_PROTOCOL_CURRENT.md，最新结果见CH5_TEMP31_S2_ATTEMPT3_HJB_100_NONCONVERGENCE_20261102.md；唯一进度以CH5_LOCAL_FIRST_STATUS_CURRENT.md文末为准。Owner同意后新决定_03执行1次，原100轮/1e-7及全部科学输入不变。辅助计数按静态固定结构派生560001/3360006并增加原值函数变化进度记录；工程33项检查通过，原11科学源和565基线保持，code b26ee2d仅本地，594路径。
+
+本次95.844秒完成100轮HJB，返回false，变化量0.47047754769224237；50轮1.2933388650413509、末10轮非单调波动。KFE/汇总0，无驻定结果；CURRENT关闭，S2累计3/3已用、重试0，旧预算不动。生产工资兼容选择、31省接线/GE/IRF及严格资格仍未完成。下一步与Owner分析导数、policy边界/上风选择和迭代算子，不默认加迭代/改delta/容差/网格；严格科学判据null、Results FALSE。前文各旧“未授权/尚无HJB执行”段是历史时点，本段为当前增量，旧决定/意图/证据不改写。

@@ -1,0 +1,170 @@
+{
+  "schema": "ch5.temp31.frozen_debug_plan.v1",
+  "date": "2026-11-02T22:56:28.593244+08:00",
+  "scope": "ONE_FIXED_SYNTHETIC_FIRST_ORIGIN_HA_DIAGNOSTIC_WITH_ENGINEERING_COUNTER_REPAIR_AND_PROGRESS",
+  "owner_exact_statement": "可以我同意，请先执行你上面的冻结等步骤，然后我们一起分析HJB。HA模块按照我的经验循环次数是50或100就可以判定是否收敛，请你执行上述建议步骤后开始调试，看看HA模块具体结果，然后我们继续讨论",
+  "interpretation": "Execute the agreed finite counter-design and progress-recording engineering, then one new same-input HA diagnostic. Retain existing100 iteration maximum and existing tolerance;50 is an observation milestone. No automatic retry or acceptance.",
+  "goal": "Obtain a complete single-origin diagnostic return if possible; distinguish engineering stop, original HJB convergence/nonconvergence, KFE diagnostics, and formal acceptance.",
+  "source_code_before": "c8a323dec6662221b377240921408e7905f2e1a9",
+  "model_head_before": "233741d01d6f5bd4f54d36f1e3452a9580130719",
+  "governance_head_before": "d9fb98771d1b86f7a3e55691d11af477306da3ae",
+  "unchanged_scientific_identity": {
+    "selected_development_source": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+    "source_bundle_sha256": "0655861a536372db05ad7f6938d0999763c6135bd2e67b82fc513000cada211b",
+    "fixture_sha256": "f8efc2443a2facdcc4720ddf48866a527579623083dbb006b9ace0fd1b5c1a65",
+    "fixed_plan_sha256": "aea2f06db3bb05bfc3b7ea6ee29e3a46ae2e5cd9f96448ee4e843ee90d2152fc",
+    "environment_sha256": "4dd77c75ee2b6743aff07e6875171fcdec3e8f7e32d1c326e81159d0b11256e8",
+    "fixture_summary": {
+      "province_order": [
+        "A",
+        "B"
+      ],
+      "origin": "A",
+      "origin_index": 0,
+      "entering_iteration": 1,
+      "generated_after_iteration": null,
+      "calendar_year": null,
+      "scope": "FIXED_SYNTHETIC_NUMERICAL_GUESS_ONLY",
+      "grid_shape": [
+        20,
+        20,
+        2
+      ],
+      "b": "linspace(-2,5,20)",
+      "a": "linspace(0,10,20)",
+      "z": [
+        0.8,
+        1.3
+      ],
+      "switch": "[[-1/3,1/3],[1/3,-1/3]]",
+      "rah": 0.09,
+      "rb": 0.02,
+      "rb_gap": 0.07,
+      "Tt": 0.1,
+      "net_wage": 19.0,
+      "labor_weight": 1.0,
+      "resource_convention": "V010_TOTAL_WEALTH_NUMERICAL_INITIAL_GUESS",
+      "parameters": {
+        "rho": 0.05,
+        "gamma_c": 2.0,
+        "phi": 5.0,
+        "chi_0": 0.1,
+        "chi_1": 2.0,
+        "a_bar": 1e-06,
+        "mu_z": 0.0,
+        "sigma_z": 0.0
+      },
+      "hjb_controls": {
+        "delta": 1000.0,
+        "convergence_tolerance": 1e-07,
+        "max_iterations": 100,
+        "drift_tolerance": 1e-12
+      },
+      "root_controls": {
+        "xtol": 1e-12,
+        "rtol": 1e-12,
+        "maxiter": 100,
+        "upper_bracket": 1024.0,
+        "lower_bracket": "max(0,-resources/wage)+1e-12"
+      }
+    }
+  },
+  "core_limits": {
+    "worker_processes": 1,
+    "wall_seconds": 120,
+    "memory_bytes": 2147483648,
+    "origin_attempts": 1,
+    "initializer_calls": 1,
+    "brent_python_max": 800,
+    "brent_native_max": 800,
+    "hjb_calls": 1,
+    "hjb_linear_solves_max": 100,
+    "policy_calls_max": 80000,
+    "kfe_calls_max": 1,
+    "kfe_linear_solves_max": 1,
+    "aggregate_calls_max": 1,
+    "producer_calls": 0,
+    "other_science_calls": 0,
+    "retries": 0
+  },
+  "prior_s2_attempts_used": 2,
+  "new_scientific_attempt_limit": 1,
+  "total_s2_attempt_limit": 3,
+  "retries": 0,
+  "auto_next": false,
+  "hjb_diagnostics": {
+    "max_iterations": 100,
+    "iteration50": "observe_if_reached; do not force continuation if source converged earlier",
+    "criterion": "original max(abs(value-old)) < 1e-7",
+    "delta": 1000.0,
+    "drift_tolerance": 1e-12,
+    "progress": "Record existing scalar statistic at the next iteration entry plus actual final return; never relabel it HJB equation residual.",
+    "raw_arrays": "LOCAL_ONLY; preserve returned initial/HJB/KFE arrays and original operator diagnostics"
+  },
+  "strict_ha_criteria": {
+    "reference": null,
+    "thresholds": null,
+    "status": "CRITERIA_UNBOUND__DIAGNOSTIC_ONLY",
+    "required_diagnostic_definitions": [
+      "original A_post.T@g infinity norm including contaminated row",
+      "density finite/minimum",
+      "mass=sum(g)*db*da with discrete z sum",
+      "negative_mass=sum(max(-g,0))*db*da",
+      "original contaminated raw residual preserved separately",
+      "HJB原converged/iterations/value_change; original operator lineage"
+    ],
+    "scientific_acceptance": false,
+    "formal_ha_accepted": false,
+    "Results": false
+  },
+  "hypotheses": [
+    {
+      "id": "H1",
+      "prediction": "The source policy validates wage data7 times per cell; one HJB-entry validation plus<=80000policy calls yields<=560001 validations. Fixed2x2 nested generators allow<=6 Python entries per validation;3360006 is a finite bound, so generic1000000 can stop an otherwise within-budget HJB.",
+      "success": "Static source/call-site/cardinality audit and scaled non-scientific fixture demonstrate undercount and derived bound.",
+      "failure": "Unexpected call structure or input cardinality stops engineering; do not silently extend."
+    },
+    {
+      "id": "H2",
+      "prediction": "With matched engineering budgets, original HJB may return converged or max100 nonconverged.",
+      "success": "Save actual source return and scalar history; KFE only when converged.",
+      "failure": "Nonconvergence stops without changing grid/parameters/tolerance."
+    },
+    {
+      "id": "H3",
+      "prediction": "Walltime/memory/domain/observer failures may preempt return.",
+      "success": "Record latest completed-iteration evidence and exact stop classification.",
+      "failure": "Preserve and stop; no automatic retry."
+    }
+  ],
+  "engineering_changes_allowlist": [
+    "validators/multi_province/temp31_first_origin_worker.py",
+    "src/ch5_two_asset_hank/multi_province/temp31_call_observer.py",
+    "src/ch5_two_asset_hank/multi_province/temp31_worker_supervisor.py",
+    "src/ch5_two_asset_hank/multi_province/temp31_dormant_assembly.py",
+    "tests/test_temp31_hjb_debug_instrumentation.py"
+  ],
+  "helper_policy": {
+    "generic_per_phase_limit_unchanged": 1000000,
+    "hjb_validator_call_bound": 560001,
+    "hjb_validator_nested_code_bound": 3360006,
+    "observer_binding_validation_max": 3360006,
+    "other_core_function_limits": "UNCHANGED",
+    "source11_modules": "BYTE_IDENTICAL; do not relocate validation or memoize source calls"
+  },
+  "stop_policy": [
+    "any input/source/environment/protection mismatch",
+    "initializer domain/root/slope failure",
+    "HJB exception/nonfinite/nonconverged",
+    "grid/operator lineage change",
+    "KFE or density/normalization failure",
+    "timeout/memory/process/observer loss",
+    "unknown/missing return"
+  ],
+  "old_budgets": "initializer3/10used7preserved; wage/capture1/1closed; S2first2grantsclosed",
+  "scientific_freeze": false,
+  "model_activation": false,
+  "consumer_ready": false,
+  "REAL_GE": false,
+  "final_code_pins": "Freeze after engineering checks and before one-shot dispatch; immutable Owner decision_03 binds them."
+}
