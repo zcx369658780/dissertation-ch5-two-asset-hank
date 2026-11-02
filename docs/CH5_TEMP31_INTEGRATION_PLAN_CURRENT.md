@@ -1,6 +1,6 @@
 # TEMP31 当前生产接线方案 · 2026-11-01
 
-STATUS=SAVED_SYNTHETIC_METADATA_ATTACHMENT_COMPLETE__REAL_PRODUCTION_NOT_BOUND
+STATUS=PRODUCTION_COMPATIBILITY_FIRST_HA_STATIC_PLAN_READY__RUNNER_PENDING__REAL_PRODUCTION_NOT_BOUND
 OWNER_SOURCE_ADOPTION=56447829ce0e6c3c85552c53c351b26a2452a4bd__DEVELOPMENT_SOURCE_ANCHOR
 SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
 LOCAL_SOURCE_MATERIALIZATION_COMMIT=91941302f966f12d5f206691f74c800cadf3e797__LOCAL_ONLY_NOT_PUSHED
@@ -181,3 +181,9 @@ Owner批准上述具体预算后，只启动1个新worker，墙钟1.157秒，源
 [旁证接入实施](CH5_TEMP31_SUPPLEMENT_ATTACHMENT_IMPLEMENTATION_20261102.md)已交付，本地candidate69745f9212c8997efc272ecd7d06cc8cd1318c92。198项限定检查通过；现场只核固定元数据/旁证，原bridge仍两缺口/BLOCKED，新bridge参数206字节、实际返回形状(2,)、缺失元数据空，分类SAVED_SYNTHETIC_ONLY。源/输入采纳、现场生产资格、正工资域和HA严格接受均未获得资格；科学导入/调用、原捕获重读0。
 
 这结束保存合成证据的元数据工程链。下一授权内片应从既有生产接线/凭据合同给出精确静态兼容方案：识别旧合成重算校验与新生产凭据的交接、首来源地输入/不可变HA网格/初始化、依赖闭合、原算子诊断及科学判据引用和有限运行计划。不为重复元数据验证而重跑已成功观测。实际HA/HJB/KFE与生产消费者放行仍须具体Owner科学决定；判据/阈值null保持UNKNOWN，不能用旧初始化7次余额替代HA授权。所有保护门与Results FALSE保持。
+
+## 2026-11-02 真实工资兼容与首来源地HA静态方案完成
+
+[精确方案](CH5_TEMP31_PRODUCTION_COMPATIBILITY_FIRST_HA_PLAN_20261102.md)及配套JSON已交付：16份文件身份与26项AST观察通过，源码候选69745f9...保持。真实生产推荐新增独立输入类型并在共用门显式分派，保留旧合成/首轮类型与SOURCE_COMMIT；备选旧记录版本化分支，Owner尚未选定，实际门改动未实施。普通包导入的额外模块面已识别，11模块/16本地边隔离装配仍是未运行提案。
+
+首HA不以生产桥为前置，可用现有bootstrap19，在原800格网格仅A/index0做单次诊断；原8格检查不涵盖800根或HJB/KFE，另列1进程120秒/2GiB、HJB1/KFE≤1/汇总≤1、零重试预算建议，尚未获准。科学阈值未绑定，未运行任何科学模块或生成网格。下一普通工程先做标准库计划/pins/计数预检及toy隔离启动/限额/失败保留；待结果与最终pins就绪再交Owner具体HA运行门，不提前申请不完整运行器的许可。真实消费者、正式输入和严格接受另按Owner门处理，旧预算/STOP/Results FALSE保持。

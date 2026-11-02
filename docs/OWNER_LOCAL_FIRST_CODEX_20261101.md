@@ -518,3 +518,17 @@ AUTHORITY=ORDINARY_METADATA_ENGINEERING_UNDER_EXISTING_OWNER_CONTINUATION__NO_NE
 按独立固定父合同/清单核旁证字节、旧manifest/lineage、7字段context、提取器版本及捕获身份后，只补参数206字节和实际返回形状(2,)。现场base仍两缺口/BLOCKED，新不可变结果无元数据缺口、SAVED_SYNTHETIC_ONLY；不是生产凭据、正工资域核验或科学接受。198项限定检查通过，原565路径保持，现578路径，源码candidate仅本地。工程驱动首轮在模块加载前因缓存读取被保护拒绝，失败记录保留；改为直接加载已核验工程源字节后通过，没有放宽门或读取原捕获。
 
 本轮科学导入/调用、新科学worker、原捕获重读均0；没有重跑提取器或工资函数，没有改科学源码/参数/网格/输入/容差。消费者/科学接受/Results仍FALSE，旧工资与补录各1/1关闭，初始化3/10余7不变。完成保存合成元数据阶段后，下一工程仅形成真实生产兼容和首来源地HA的精确静态方案，列明输入/网格/判据/预算与具体Owner科学门，不自行开放HA或生产运行。原dirty树/HEAD/index、R12/R13/WASM、保护重绑定未授权和16义务保持；本次是工程自审而非独立科学评议，不新增分支删除/main合并/原件清理权限。
+
+## 2026-11-02 继续完成真实工资兼容与首来源地HA静态方案
+
+OWNER_EXACT_STATEMENT=可以请继续
+AUTHORIZATION_PARENT=b91146f8144ae565157c3170f1c66123b64ea241
+ACTIVE_CODE_CANDIDATE=69745f9212c8997efc272ecd7d06cc8cd1318c92__UNCHANGED_LOCAL_ONLY
+DELIVERABLE=CH5_TEMP31_PRODUCTION_COMPATIBILITY_FIRST_HA_PLAN_20261102.md
+AUTHORITY=CONTINUATION_OF_STATIC_ENGINEERING_PLAN__NOT_PRODUCTION_CONSUMER_CHANGE_OR_HA_RUN_APPROVAL
+
+16份指定代码/配置字节、Blob与SHA-256核对一致，26项AST观察通过。确认共用净工资门只兼容首轮初猜/旧合成重算类型，真实生产不能强转；推荐独立新生产输入类型加共享门显式分派，备选为旧记录版本化生产分支。两者均未获Owner选择，本轮科学源码/门/公式/输入/参数/网格/容差改动0，未签发生产资格。普通package导入会扩大HJB/年度模块面，已列11模块/16本地静态边的隔离入口提案，不冒称实际依赖闭合。
+
+首来源地HA可走原首轮19初猜、A/index0、原20×20×2网格与既有价格/参数提案；它是新的800格/最多800根HA范围，不能借用初始化余7次。1进程×120秒、2GiB、HJB1/KFE≤1/汇总≤1、零生产者/GE/重试等为Codex具体建议，不冒称Owner已批准。所有HA/求解/诊断均NOT_RUN，科学判据reference/thresholds保持null。
+
+下一步先在既有普通工程权限内实现标准库预执行计划/pins/计数校验及非科学toy启动/限额/失败保留检查；真实模块导入、共同门改动、正式源/输入采用及HA实际运行分别保留具体Owner门。先形成可运行、可审阅证据，再提出有限科学运行许可；本轮不把用户“继续”升级为科学授权。旧工资/补录各1/1关闭、初始化3/10余7、dirty树/HEAD/index、V010/R12/R13/WASM/未授权重绑定和16义务保持；消费者/科学接受/Results均FALSE。未删分支、合并main或清理原件，自审不替代独立科学评议。
