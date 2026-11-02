@@ -458,3 +458,13 @@ RULE=CH5_TEMP31_DELEGATED_DEBUG_AUTHORITY_CURRENT.md
 HA grid不可变，科学公式/参数/输入选择、真实数据与正式来源采纳、HA/HJB/KFE/GE/IRF/policy/MATLAB运行、科学接受/生产激活/Results和受保护操作仍由Owner保留。本轮只推进保存见证的工程接口；前次工资许可关闭、初始化3/10已用余7保持。委托同步项目规则、当前工作流和长期记忆；原始见证继续LOCAL_ONLY。
 
 同次继续工程已完成：本地candidate547a17b1b0e28d67a4944dd819412d64038955de扩展既有标准库工程接口、新增一份测试；原565路径Blob全部保持，现572选定代码路径。24项新检查与79项既有共103项通过，无失败/错误/跳过。前次固定证据清单SHA-256=c6b41cdad2124c86f98fdb608643179cafcd186fc4827b139e7469b70deb222f，现场按其核对10份记录，并重新核九源身份；实际参数/返回/调用计数/授权/预算和pending身份一致。SavedWageWitness仅声明保存的记录一致，live_execution_verified/consumer_ready/model_activation均FALSE，旧消费者继续PRODUCER_INVOCATION_NOT_VERIFIED。科学导入/调用和新科学worker均0，原工资/初始化账本保持。工程自审不替代独立科学评议；代码仅本地，公开同步脱敏文档。详见CH5_TEMP31_SAVED_WAGE_WITNESS_IMPLEMENTATION_20261102.md。
+
+## 2026-11-02 继续完成生产工资凭据与HA资格静态设计
+
+OWNER_EXACT_STATEMENT=可以请继续
+AUTHORIZATION_PARENT=e075a52f4653280fc97a656bfdf97cb6621e7aed
+DELIVERABLES=CH5_TEMP31_PRODUCTION_CREDENTIAL_HA_SPEC_20261102.md_AND_MATCHING_CONTRACT_JSON
+
+本次继续上一已提出的静态设计，不扩大科学运行许可。当前源HEAD67fd70d636ee650732b6c8a0112651f29c711458，代码candidate547a17b1b0e28d67a4944dd819412d64038955de不变。定点10文件大小/Blob/SHA-256与固定HEAD一致、14项AST观察确认；设计8种记录和14条拟议拒绝路径，区分数值初猜、旧合成保存记录、未来现场生产候选及运行/输入/来源/接受资格。现有later消费者会重算合成公式且不兼容新生产凭据；原工资允许0而当前家户要求正值，不能自动补epsilon。保留HJB值变化范数和KFE污染系统残差，原算子归一化密度驻定及质量诊断另列、未计算。科学判据引用/阈值未在本轮绑定或新增，不能缺失即通过。
+
+下一工程片可在现有授权内实现标准库惰性准入/诊断记录及拒绝检查，所有真实执行/接受标志固定FALSE；不接科学callback、真实数组运算、求解或消费者修改。当前科学导入/调用0、代码/网格/参数/输入/容差改动0，工资1/1关闭和初始化3/10原账本保持。工程自审不替代独立科学评议；旧dirty树/HEAD/index、V010、WASM/R12 STOP、R13未授权、保护重绑定未授权、16义务和Results FALSE保持，无分支删除/main合并/原件移动。
