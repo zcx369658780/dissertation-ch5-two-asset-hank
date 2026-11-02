@@ -606,3 +606,17 @@ SCOPE=GITHUB_DOCUMENTATION_CHECKPOINT_AND_HANDOFF_PROMPT_ONLY
 HANDOFF=CH5_SESSION_HANDOFF_20261102_S2_STOP_CURRENT.md
 
 本次仅保存进度/Owner决定/授权账本/现场身份与下一会话指引。原S2单次1/1已用、零重试，CURRENT=CLOSED_STOP_NO_RETRY；修复后新一次提案仍待新Owner决定。本句不批准第二次HA或其他科研运行，不重开预算或清理分支。最新任务单留待下次会话接收；已完成标签修复/9项检查不重跑，科学接受/Results FALSE，历史dirty树/index及全部STOP保持。
+
+
+## 2026-11-02 本会话Owner批准修复后新增1次；第2次已停止
+
+OWNER_EXACT_STATEMENT=我授权，请继续
+OWNER_APPROVED_QUESTION=是否授权修复后新增1次相同输入诊断，仍限120秒、2GiB，失败即停？
+OWNER_DECISION=CH5_TEMP31_S2_OWNER_DECISION_20261102_02.json
+OWNER_DECISION_SHA256=bfb8a75a4ed1a303079373d57ea81189b4c745844bf1ac6016dc243167973944
+PROPOSAL=CH5_TEMP31_S2_AFTER_LABEL_REPAIR_PROPOSAL_20261102.json
+REPORT=CH5_TEMP31_S2_ATTEMPT2_OBSERVER_LIMIT_STOP_20261102.md
+
+本决定新开唯一1次固定合成A/index0首轮诊断，原20×20×2网格/输入/代码c8a323d与原全部限额保持；不是恢复旧1/1、复用旧意图或借用初始化余7。新不可变决定和独立累计账本先登记，再执行1进程。35.313秒后exit73停止，峰值提交内存1,377,615,872字节，退出/Job限额及清理确认。初始化返回保存、Python/native Brent各800；HJB进入但未返回，线性求解准入29、policy准入23,810；工资验证第55行嵌套生成器尝试1,000,001次超过原辅助代码上限1,000,000，观察器拒绝。KFE/汇总0，无HJB收敛或正式HA结论。
+
+本次1/1已用，S2两决定累计2/2已用、重试0；CURRENT=CLOSED_STOP_NO_RETRY。不提高/忽略上限，不再启动第3次、不自动后继。原失败和成功保存点均LOCAL_ONLY保留，源码/公式/网格/参数/容差/旧预算及历史dirty树/index/432条状态保持；严格判据null、科学接受/Results FALSE，R12/R13/WASM/保护重绑定及16义务保持。登记阶段porcelain表示误报在无科学意图/进程时纠正，旧-z摘要完全匹配，未重绑定保护。仅脱敏治理文档同步GitHub，模型代码/原始载荷不推送。下一科学尝试仍须Owner新的具体决定。
