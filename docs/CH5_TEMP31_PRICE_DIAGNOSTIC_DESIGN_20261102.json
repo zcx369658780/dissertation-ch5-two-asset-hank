@@ -1,0 +1,237 @@
+{
+  "schema": "ch5.temp31.price_diagnostic_design.v1",
+  "status": "DESIGN_REVIEW_READY__EXECUTION_NOT_READY_NOT_AUTHORIZED",
+  "date": "2026-11-02T23:35:25.952081+08:00",
+  "owner_exact_statement": "可以我同意，目前HJB确实没收敛，按照黑箱原则我认为这是价格变量不在合理范围内。\n下一步请你参考之前HJB收敛实验的结果设计",
+  "authorization_interpretation": "Reference past HJB-convergence experiments and design external-price diagnostics. No new worker, initialization, HJB/KFE or automatic successor authorized by this design request.",
+  "owner_priority": "HA scientific kernel/grid treated as black box; examine external household prices first, rather than internal-policy modifications.",
+  "question": "Does replacing household rah .09 with the historically successful .05, holding all other current black-box settings fixed, recover source HJB convergence within100 iterations?",
+  "hypothesis_status": "PRICE_SENSITIVITY_PLAUSIBLE_NOT_ESTABLISHED_AS_CAUSE",
+  "endpoint": {
+    "primary": "Actual source HJB return with converged=true, finite original max(abs(value-old))<1e-7, iterations<=100",
+    "measurement": "Original returned HJB fields and100-scalar progress recorder; not equation residual",
+    "unit": "One deterministic fixed synthetic point, not population/seed samples",
+    "statistical_testing": "NOT_APPLICABLE; no p-values, power or empirical success probability",
+    "secondary": [
+      "Full value-change trajectory and observations at50 if reached",
+      "Grid/source/environment identity and call counters",
+      "Same-return KFE/aggregates as raw diagnostics only if HJB converged"
+    ]
+  },
+  "baseline": {
+    "scope": "Reuse saved current attempt3 as control; do not rerun it",
+    "code_candidate": "b26ee2d737cea77479b8632cf8d5395e472655eb",
+    "rah": 0.09,
+    "rb": 0.02,
+    "net_wage": 19,
+    "hjb_iterations": 100,
+    "hjb_converged": false,
+    "hjb_value_change": 0.47047754769224237,
+    "source_report": "CH5_TEMP31_S2_ATTEMPT3_HJB_100_NONCONVERGENCE_20261102.md"
+  },
+  "recommended_next_scope": {
+    "point_id": "S01",
+    "historical_point": "R1/P2",
+    "rah": 0.05,
+    "rb": 0.02,
+    "net_wage": 19,
+    "only_external_difference_from_current": "rah .09 -> .05; use the same initializer algorithm, recomputing its price-dependent initial arrays",
+    "historical_iterations": 22,
+    "hypothesis": "This one replacement yields the fixed primary endpoint",
+    "falsifier": "A valid source return after100 iterations remains converged=false/criterion not met; this narrow replacement is not sufficient. Do not infer all prices irrelevant.",
+    "inconclusive": "Timeout/protection/source/environment/domain/observer/unknown-return event; stop, do not label as100-iteration nonconvergence",
+    "success_action": "Keep first HJB candidate; optionally complete same-return original KFE/aggregate under the proposed budget, then stop for review. No GE/31-province activation.",
+    "nonconverged_action": "Save all return/progress evidence and stop. No automatic second price point."
+  },
+  "deferred_reserve_points": [
+    {
+      "point_id": "S02",
+      "historical_point": "R2/D03",
+      "rah": 0.05,
+      "rb": 0.015,
+      "net_wage": 19,
+      "historical_iterations": 15,
+      "comparison_center": "S01",
+      "only_change_from_center": "rb .02 -> .015",
+      "status": "RESERVE_ONLY__REQUIRES_LATER_SPECIFIC_DECISION"
+    },
+    {
+      "point_id": "S03",
+      "historical_point": "R2/D04",
+      "rah": 0.05,
+      "rb": 0.025,
+      "net_wage": 19,
+      "historical_iterations": 16,
+      "comparison_center": "S01",
+      "only_change_from_center": "rb .02 -> .025",
+      "status": "RESERVE_ONLY__REQUIRES_LATER_SPECIFIC_DECISION"
+    }
+  ],
+  "why_this_center": [
+    "R1/P2 is the smallest direct price change count from the current point: one rah change and unchanged rb/net wage.",
+    "R2/D03,D04 provide previously successful discrete rb neighbors around that same center.",
+    "P2/D03/D04 historical b-upper mass about .249/.242/.257 is lower than D01/D02 about .692/.694, but all remain non-certified source-KFE diagnostics.",
+    "Historical P0 at the current price converged64 but current100 did not; initialization/runtime differences prevent attributing the cross-era difference to prices alone."
+  ],
+  "not_selected_yet": {
+    "rah_only_reserves": [
+      {
+        "historical_point": "D01",
+        "rah": 0.055,
+        "rb": 0.02,
+        "net_wage": 19,
+        "historical_iterations": 57,
+        "warning": "Historical b-upper concentration"
+      },
+      {
+        "historical_point": "D02",
+        "rah": 0.06,
+        "rb": 0.02,
+        "net_wage": 19,
+        "historical_iterations": 37,
+        "warning": "Historical b-upper concentration"
+      }
+    ],
+    "wage_variation": "Defer. Current numerical_bootstrap19 requires exact19. Alternative net wages need an explicitly admitted counterfactual wage/context record, not an array overwrite or another tax deduction.",
+    "continuous_region": "Not inferred. R3 at rah .05/rb .02 has convergence at wt19.1, failure19.25/19.5, success19.75/19.9; do not interpolate a certified feasible box."
+  },
+  "black_box_fixed": {
+    "source_bundle_sha256": "0655861a536372db05ad7f6938d0999763c6135bd2e67b82fc513000cada211b",
+    "scientific_modules": 11,
+    "grid_shape": [
+      20,
+      20,
+      2
+    ],
+    "grid": {
+      "b_min": -2.0,
+      "b_max": 5.0,
+      "b_count": 20,
+      "a_min": 0.0,
+      "a_max": 10.0,
+      "a_count": 20,
+      "z": [
+        0.8,
+        1.3
+      ],
+      "switch_matrix": [
+        [
+          -0.3333333333333333,
+          0.3333333333333333
+        ],
+        [
+          0.3333333333333333,
+          -0.3333333333333333
+        ]
+      ],
+      "shape": [
+        20,
+        20,
+        2
+      ],
+      "states": 800
+    },
+    "economic_params": {
+      "rho": 0.05,
+      "gamma_c": 2.0,
+      "phi": 5.0,
+      "chi_0": 0.1,
+      "chi_1": 2.0,
+      "a_bar": 1e-06,
+      "mu_z": 0,
+      "sigma_z": 0
+    },
+    "hjb_controls": {
+      "delta": 1000.0,
+      "convergence_tolerance": 1e-07,
+      "max_iterations": 100,
+      "drift_tolerance": 1e-12
+    },
+    "Tt": 0.1,
+    "rb_gap": 0.07,
+    "province_order": [
+      "A",
+      "B"
+    ],
+    "origin_index": 0,
+    "net_wage_contract": "Exact numerical_bootstrap19",
+    "initializer": "Same approved a*r_a algorithm and resource convention; no return to rate-squared historical initializer",
+    "other_rules": "No HJB/policy/operator/KFE equations, boundary, derivative floors, tolerances or grid changes."
+  },
+  "proposed_new_budget_not_grant": {
+    "processes": 1,
+    "seconds_including_import": 120,
+    "memory_bytes": 2147483648,
+    "core_function_limits": {
+      "worker_processes": 1,
+      "wall_seconds": 120,
+      "memory_bytes": 2147483648,
+      "origin_attempts": 1,
+      "initializer_calls": 1,
+      "brent_python_max": 800,
+      "brent_native_max": 800,
+      "hjb_calls": 1,
+      "hjb_linear_solves_max": 100,
+      "policy_calls_max": 80000,
+      "kfe_calls_max": 1,
+      "kfe_linear_solves_max": 1,
+      "aggregate_calls_max": 1,
+      "producer_calls": 0,
+      "other_science_calls": 0,
+      "retries": 0
+    },
+    "hjb_wage_validator_limit": 560001,
+    "hjb_wage_generator_limit": 3360006,
+    "retries": 0,
+    "automatic_next_points": 0,
+    "kfe_aggregate": "At most1 each, only after converged HJB, unchanged grid, and the same returned original operator; stop on any failure."
+  },
+  "execution_readiness": {
+    "ready": false,
+    "owner_run_approved": false,
+    "final_engineering_code_pins": null,
+    "new_point_fixture_sha256": null,
+    "needed": [
+      "Implement a fixed allowlisted external S01 price manifest in engineering wrapper; do not edit old fixed-plan/fixture hashes or scientific kernels.",
+      "Bind state rah and consumer r_a consistently to .05 and keep all other fields unchanged; verify with non-scientific fixtures.",
+      "Freeze new manifest/code/environment/provenance/counters and obtain a new immutable finite Owner run decision before scientific dispatch."
+    ],
+    "new_owner_s2_decision_created": false,
+    "new_scientific_intent_created": false
+  },
+  "preserved_authority": {
+    "current": "CLOSED_STOP_NO_RETRY",
+    "s2_prior_grants": "3_OF3_USED__RETRIES0",
+    "initializer_budget": "3_OF10_USED__7_PRESERVED",
+    "wage_capture": "1_OF1_CLOSED_EACH"
+  },
+  "strict_acceptance": {
+    "reference": null,
+    "thresholds": null,
+    "historical_thresholds": "Preserved as historical evidence only, not rebound to current acceptance",
+    "formal_ha_accepted": false,
+    "scientific_acceptance": false,
+    "Results": false
+  },
+  "FORMAL_SOURCE_FREEZE": false,
+  "consumer_ready": false,
+  "model_activation": false,
+  "REAL_GE": false,
+  "unresolved_protections": "R12 STOP/R13 NOT_AUTHORIZED/WASM6 STOP/OWNER_BASELINE_REBIND NOT_AUTHORIZED/16 obligations unchanged",
+  "source_evidence": "CH5_TEMP31_HISTORICAL_PRICE_EVIDENCE_20261102.json",
+  "scientific_runs_this_design": 0,
+  "bounded_plan_review": {
+    "tool": "light-research-plan plan_gate.py",
+    "exit_code": 0,
+    "overall": "warn",
+    "fair_baseline": "pass",
+    "falsifiable": "pass",
+    "ablation_isolation": "warn",
+    "statistical_power": "skip",
+    "warning_decision": {
+      "ablation_isolation": "Retain warning; component ablations are not applicable to this deterministic one-price black-box diagnostic, which makes no component-contribution or mechanism-causality claim. The one-factor external-input control is explicitly fixed.",
+      "statistical_power": "No inference across independent statistical units; no seed/fold or iteration pseudo-replication.",
+      "scope": "Design review only; not a final research-package/execution gate PASS, not Owner run approval."
+    }
+  }
+}

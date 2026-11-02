@@ -1,6 +1,6 @@
 # CH5 Local-first会话交接 · 2026-11-02 · 第3次HJB100轮未收敛
 
-STATUS=HJB100_RETURNED_NOT_CONVERGED__CLOSED_NO_RETRY__DISCUSS_NEXT_WITH_OWNER
+STATUS=HJB100_NOT_CONVERGED__BLACK_BOX_PRICE_DESIGN_ONLY__AWAIT_SPECIFIC_NEXT_SCOPE
 REPOSITORY=zcx369658780/dissertation-ch5-two-asset-hank
 GOVERNANCE_BRANCH=governance/ch5-codex-local-first-20261101
 GOVERNANCE_PRE_ATTEMPT_HEAD=d9fb98771d1b86f7a3e55691d11af477306da3ae
@@ -30,3 +30,10 @@ Python TEMP31固定开发来源56447829ce0e6c3c85552c53c351b26a2452a4bd，九月
 旧初始化3/10已用余7、工资/补录各1/1关闭。历史dirty树HEAD/index/porcelain -z摘要及432状态保持，不清理或重绑定。FORMAL_SOURCE_FREEZE/consumer_ready/formal_ha_accepted/科学接受/Results/model_activation/REAL_GE均FALSE；R12 STOP、R13未授权、WASM六路径STOP、OWNER_BASELINE_REBIND未授权及16义务保持。
 
 不删除/移动原件、缓存、证据或分支，不reset/stash/clean/强推/main合并，不改Desktop/CUA/全局配置，不公开LOCAL_ONLY原始载荷。只同步脱敏治理文档；模型代码保持本地。原交接版本分别在此前提交中保留；当前以本页及短状态最新段为准。
+
+
+## 最新Owner方向：价格优先，当前只完成设计
+
+Owner认为价格范围可能不合适，明确要求按HA黑箱原则参考此前HJB实验设计。最新CH5_TEMP31_PRICE_DIAGNOSTIC_DESIGN_20261102.md/json与CH5_TEMP31_HISTORICAL_PRICE_EVIDENCE_20261102.json记录9份固定公开文档、31离散点/24历史HJB成功/严格驻定0。推荐先唯一S01=(rah .05,rb .02,净19)，历史P2为22轮；相对当前只变rah。S02/S03=(.05,.015,19)/(.05,.025,19)为后备15/16轮成功点，不自动执行。历史P0同当前价格曾64轮成功，旧平方初始化与当前a*r_a及运行条件差异保留；当前不把价格解释认定为已证实根因，不恢复旧初始化。
+
+本次新模型导入/运行/源码修改0，未建立决定_04或新科学意图，最终外部点fixture/代码pins未就绪，CURRENT保持CLOSED_STOP_NO_RETRY、3/3用完。下一次若Owner明确要求实施/运行，先完成精确外部S01输入manifest及非科学检查，保留旧fixture，冻结新pins并登记新有限科学决定才可执行；不借旧余7或自动跑后备点。最新Owner价格优先方向替代上文内部policy/导数优先次序，原HJB100结果、所有科学和保护门不变。

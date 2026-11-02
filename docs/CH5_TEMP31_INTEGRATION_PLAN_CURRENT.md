@@ -1,6 +1,6 @@
 # TEMP31 当前生产接线方案 · 2026-11-01
 
-STATUS=ATTEMPT3_HJB_RETURNED100_NOT_CONVERGED__CLOSED_NO_RETRY__NUMERICAL_ANALYSIS_PENDING
+STATUS=HJB100_NOT_CONVERGED__BLACK_BOX_EXTERNAL_PRICE_DESIGN_READY__NO_NEW_RUN_AUTHORITY
 OWNER_SOURCE_ADOPTION=56447829ce0e6c3c85552c53c351b26a2452a4bd__DEVELOPMENT_SOURCE_ANCHOR
 SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
 LOCAL_SOURCE_MATERIALIZATION_COMMIT=91941302f966f12d5f206691f74c800cadf3e797__LOCAL_ONLY_NOT_PUSHED
@@ -218,3 +218,8 @@ Owner批准上述具体预算后，只启动1个新worker，墙钟1.157秒，源
 最新执行协议为CH5_TEMP31_HA_DEBUG_PROTOCOL_CURRENT.md，最新结果见CH5_TEMP31_S2_ATTEMPT3_HJB_100_NONCONVERGENCE_20261102.md；唯一进度以CH5_LOCAL_FIRST_STATUS_CURRENT.md文末为准。Owner同意后新决定_03执行1次，原100轮/1e-7及全部科学输入不变。辅助计数按静态固定结构派生560001/3360006并增加原值函数变化进度记录；工程33项检查通过，原11科学源和565基线保持，code b26ee2d仅本地，594路径。
 
 本次95.844秒完成100轮HJB，返回false，变化量0.47047754769224237；50轮1.2933388650413509、末10轮非单调波动。KFE/汇总0，无驻定结果；CURRENT关闭，S2累计3/3已用、重试0，旧预算不动。生产工资兼容选择、31省接线/GE/IRF及严格资格仍未完成。下一步与Owner分析导数、policy边界/上风选择和迭代算子，不默认加迭代/改delta/容差/网格；严格科学判据null、Results FALSE。前文各旧“未授权/尚无HJB执行”段是历史时点，本段为当前增量，旧决定/意图/证据不改写。
+
+
+## 2026-11-02 Owner外部价格优先方向与历史设计
+
+最新方案CH5_TEMP31_PRICE_DIAGNOSTIC_DESIGN_20261102.md按Owner黑箱原则保留HA内部与网格，先做外部价格诊断设计。定点核对R1/R2/R3九文档31点，历史24个HJB成功但严格驻定0；旧平方初始化与当前a*r_a差异保留，历史同价P0成功不外推当前可行域。推荐先唯一S01=(.05,.02,19)（P2历史22轮），相对当前只变rah；后备S02/S03仅rb .015/.025（D03/D04历史15/16轮），不自动执行或扩成三维扫参。新外部价格manifest及最终代码pins未准备，本轮设计不授予科学运行或开新额度；CURRENT关闭、3/3用完。原100轮未收敛、严格标准null、生产兼容/31省GE等缺口和保护STOP保持。
