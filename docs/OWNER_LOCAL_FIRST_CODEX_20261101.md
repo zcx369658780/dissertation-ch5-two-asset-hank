@@ -598,3 +598,11 @@ EXECUTION_BUDGET=1_OF1_USED__RETRIES0__CLOSED_STOP_NO_RETRY
 REPAIR_CODE=c8a323dec6662221b377240921408e7905f2e1a9__LOCAL_ONLY_NOT_PUSHED
 
 实际单进程2.875秒，峰值提交内存1344159744字节，资源约束与退出清理确认；NumPy/SciPy和原11源已加载，在CallObserver构造被DUPLICATE_BINDING拒绝，网格/初始化/模型根/HJB/KFE/汇总尚未进入。停止原件/账本保留，无数值结果或科学接受。静态定位同一行不同生成器标签冲突，标签唯一性工程修复后相关9项纯工程检查通过（2个新夹具先失败后通过），不放宽保护和调用限制，未重跑科研进程。原授权已用完；新的同输入/同限额单次提案已备，仍须新Owner明确决定，不使用原初始化余额、不自动后继。原科学源码/网格/参数/容差、dirty树/index/旧预算与STOP保持，科学接受/Results FALSE。
+
+## 2026-11-02 会话存档与下次交接
+
+OWNER_EXACT_STATEMENT=你好，当前会话太长，请立即在github端文档中保存当前会话的任务进度、Owner决策等信息，然后给我当前会话的交接prompt。最新的任务单将在下个会话继续交接。
+SCOPE=GITHUB_DOCUMENTATION_CHECKPOINT_AND_HANDOFF_PROMPT_ONLY
+HANDOFF=CH5_SESSION_HANDOFF_20261102_S2_STOP_CURRENT.md
+
+本次仅保存进度/Owner决定/授权账本/现场身份与下一会话指引。原S2单次1/1已用、零重试，CURRENT=CLOSED_STOP_NO_RETRY；修复后新一次提案仍待新Owner决定。本句不批准第二次HA或其他科研运行，不重开预算或清理分支。最新任务单留待下次会话接收；已完成标签修复/9项检查不重跑，科学接受/Results FALSE，历史dirty树/index及全部STOP保持。
