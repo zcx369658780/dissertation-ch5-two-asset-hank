@@ -1,6 +1,6 @@
 # TEMP31 当前生产接线方案 · 2026-11-01
 
-STATUS=APPEND_ONLY_CAPTURE_METADATA_SUPPLEMENT_EXTRACTED__TYPED_ATTACHMENT_PENDING__REAL_PRODUCTION_NOT_BOUND
+STATUS=SAVED_SYNTHETIC_METADATA_ATTACHMENT_COMPLETE__REAL_PRODUCTION_NOT_BOUND
 OWNER_SOURCE_ADOPTION=56447829ce0e6c3c85552c53c351b26a2452a4bd__DEVELOPMENT_SOURCE_ANCHOR
 SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
 LOCAL_SOURCE_MATERIALIZATION_COMMIT=91941302f966f12d5f206691f74c800cadf3e797__LOCAL_ONLY_NOT_PUSHED
@@ -175,3 +175,9 @@ Owner批准上述具体预算后，只启动1个新worker，墙钟1.157秒，源
 [补录合同](CH5_TEMP31_METADATA_SUPPLEMENT_CONTRACT_20261102.md)先冻结，再依Owner同类工程调试委托实施[词法元数据提取器](CH5_TEMP31_METADATA_SUPPLEMENT_IMPLEMENTATION_20261102.md)。限定检查182项及文件保护夹具6项通过；一次工程读取进程0.438秒，两份固定合成捕获文件各读一次，匹配原规范哈希并取得参数206字节、返回形状(2,)和返回39字节。科学数字保持原始token字节，未解释为数值/数组，未调用原工资或任何求解器。
 
 新旁证只追加，原文件/清单/耗额保持。旧保存桥仍按原元数据保留None，下一工程可添加严格身份绑定的旁证接入分支；没有旁证的旧行为不变。即使两项元数据接入，合成scope与生产资格仍分开，所有消费者/科学接受门继续关闭。code candidate b9af5ba423f66876481dd56324406b30f2ca471b仅本地，原575代码路径保持，现577路径；未触及HA网格、科学阈值、R12/R13/WASM保护门或Results。
+
+## 2026-11-02 保存合成元数据接入闭环；转向生产兼容静态方案
+
+[旁证接入实施](CH5_TEMP31_SUPPLEMENT_ATTACHMENT_IMPLEMENTATION_20261102.md)已交付，本地candidate69745f9212c8997efc272ecd7d06cc8cd1318c92。198项限定检查通过；现场只核固定元数据/旁证，原bridge仍两缺口/BLOCKED，新bridge参数206字节、实际返回形状(2,)、缺失元数据空，分类SAVED_SYNTHETIC_ONLY。源/输入采纳、现场生产资格、正工资域和HA严格接受均未获得资格；科学导入/调用、原捕获重读0。
+
+这结束保存合成证据的元数据工程链。下一授权内片应从既有生产接线/凭据合同给出精确静态兼容方案：识别旧合成重算校验与新生产凭据的交接、首来源地输入/不可变HA网格/初始化、依赖闭合、原算子诊断及科学判据引用和有限运行计划。不为重复元数据验证而重跑已成功观测。实际HA/HJB/KFE与生产消费者放行仍须具体Owner科学决定；判据/阈值null保持UNKNOWN，不能用旧初始化7次余额替代HA授权。所有保护门与Results FALSE保持。

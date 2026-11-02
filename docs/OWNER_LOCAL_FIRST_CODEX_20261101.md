@@ -506,3 +506,15 @@ AUTHORITY=LOCAL_CODEX_ISSUED_BOUNDED_ENGINEERING_EXTRACTION_UNDER_OWNER_STANDING
 182项限定检查+6项文件保护夹具通过。修正了超大字节夹具的预期入口、经失败用例复现的字符串长度边界及祖先重解析检查顺序；夹具未读原捕获文件。实际提取进程退出0、未超时、墙钟0.438秒，entry/return各读一次、重试0；取得canonical参数206字节和实际返回形状(2,)，规范返回39字节，各SHA与原记录一致。科学数字token未转换为Python int/float/科学数组，不重算工资、初始化/root/HA/HJB/KFE/GE/IRF/policy/MATLAB，不改旧文件或科学公式/参数/输入/网格/容差。
 
 独立旁证LOCAL_ONLY保存；原基元数据的None仍保持，尚未把旁证接回惰性桥；所有消费者和科学接受/Results门保持FALSE。原575/最初565路径Blob保持，新增模块/测试后577路径，源码candidate仅本地。新工程读取1/1已耗并封闭，旧工资1/1关闭和初始化3/10余7不变，不能为重算而重命名意图或重置预算。下一工程只实现并验证旁证接入，不运行模型。旧dirty树/HEAD/index、V010、WASM/R12 STOP、R13未授权、保护重绑定未授权和16义务保持；工程自审不替代独立科学评议，无分支删除/main合并/原件移动/全局配置修改。
+
+## 2026-11-02 继续完成旁证接入；保存合成元数据闭环
+
+OWNER_EXACT_STATEMENT=请继续
+AUTHORIZATION_PARENT=8a0155eb7b703711c01e58d0e76033c7c8eac99c
+LOCAL_CODE_CANDIDATE=69745f9212c8997efc272ecd7d06cc8cd1318c92
+DELIVERABLE=CH5_TEMP31_SUPPLEMENT_ATTACHMENT_IMPLEMENTATION_20261102.md
+AUTHORITY=ORDINARY_METADATA_ENGINEERING_UNDER_EXISTING_OWNER_CONTINUATION__NO_NEW_SCIENTIFIC_RUN_OR_ACCEPTANCE
+
+按独立固定父合同/清单核旁证字节、旧manifest/lineage、7字段context、提取器版本及捕获身份后，只补参数206字节和实际返回形状(2,)。现场base仍两缺口/BLOCKED，新不可变结果无元数据缺口、SAVED_SYNTHETIC_ONLY；不是生产凭据、正工资域核验或科学接受。198项限定检查通过，原565路径保持，现578路径，源码candidate仅本地。工程驱动首轮在模块加载前因缓存读取被保护拒绝，失败记录保留；改为直接加载已核验工程源字节后通过，没有放宽门或读取原捕获。
+
+本轮科学导入/调用、新科学worker、原捕获重读均0；没有重跑提取器或工资函数，没有改科学源码/参数/网格/输入/容差。消费者/科学接受/Results仍FALSE，旧工资与补录各1/1关闭，初始化3/10余7不变。完成保存合成元数据阶段后，下一工程仅形成真实生产兼容和首来源地HA的精确静态方案，列明输入/网格/判据/预算与具体Owner科学门，不自行开放HA或生产运行。原dirty树/HEAD/index、R12/R13/WASM、保护重绑定未授权和16义务保持；本次是工程自审而非独立科学评议，不新增分支删除/main合并/原件清理权限。
