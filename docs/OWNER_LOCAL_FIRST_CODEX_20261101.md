@@ -532,3 +532,18 @@ AUTHORITY=CONTINUATION_OF_STATIC_ENGINEERING_PLAN__NOT_PRODUCTION_CONSUMER_CHANG
 首来源地HA可走原首轮19初猜、A/index0、原20×20×2网格与既有价格/参数提案；它是新的800格/最多800根HA范围，不能借用初始化余7次。1进程×120秒、2GiB、HJB1/KFE≤1/汇总≤1、零生产者/GE/重试等为Codex具体建议，不冒称Owner已批准。所有HA/求解/诊断均NOT_RUN，科学判据reference/thresholds保持null。
 
 下一步先在既有普通工程权限内实现标准库预执行计划/pins/计数校验及非科学toy启动/限额/失败保留检查；真实模块导入、共同门改动、正式源/输入采用及HA实际运行分别保留具体Owner门。先形成可运行、可审阅证据，再提出有限科学运行许可；本轮不把用户“继续”升级为科学授权。旧工资/补录各1/1关闭、初始化3/10余7、dirty树/HEAD/index、V010/R12/R13/WASM/未授权重绑定和16义务保持；消费者/科学接受/Results均FALSE。未删分支、合并main或清理原件，自审不替代独立科学评议。
+
+## 2026-11-02 继续完成E1预执行校验与E2非科学进程保护
+
+OWNER_EXACT_STATEMENT=可以请继续
+AUTHORIZATION_PARENT=e0aaa2f3b034a9af6e68b112cff63069aece30ba
+E1_CODE_CANDIDATE=2383af15b97fcf7efdc52a5e4248b8f383c40c55
+E2_CODE_CANDIDATE=edb8104c8a186b989ee26b39ac909d82268cf988
+DELIVERABLE=CH5_TEMP31_PREEXECUTION_TOY_GUARDS_IMPLEMENTATION_20261102.md
+AUTHORITY=ORDINARY_E1_E2_ENGINEERING_ONLY__NOT_HA_SOURCE_IMPORT_RUN_OR_PRODUCTION_CONSUMER_APPROVAL
+
+E1标准库计划身份/元数据校验和调用前计数、E2固定非科学toy启动保护已实施。26项不同行为检查通过：扩展检查25通过，1项夹具自身在调用API前拼接function参数报错；修测试后只复核这一失败项通过，保留旧日志，不重跑成功的进程案例。现场固定父计划元数据通过，source_bytes_verified/runtime_ready/scientific_run_authorized保持FALSE，没有读取科学源载荷或启动科学函数。
+
+累计11个独立非科学意图、9个toy进程（初版正向1、扩展案例8，另2设置/pin失败无进程）；各意图独占持久claim，成功/失败均不可重用/覆盖。实际通过挂起绑定并回读job后恢复、0.5秒超时终止、96MiB提交内存拒绝256MiB分配、单进程限制拒绝再建子进程、超额前阻断/崩溃/导入拒绝/重复意图等行为。一次刻意numpy导入尝试被拒绝，实际科学模块载入及科学调用0。所有数据均为toy与计划元数据，原工资/补录/初始化账本不受影响，不能把9个toy进程记为科学worker或用其结果放行HA。
+
+仅新增两个工程模块、两份测试和一toy夹具，原578条代码路径与最初565基线保持，现583路径。两项代码提交仅本地，治理同步脱敏进度。下一普通工程可准备默认禁用的固定模块装配/确切函数与C调用观察/Owner许可校验及非科学夹具；真实科学导入、800格/800根/HJB/KFE运行必须等具体运行器、最终pins和新Owner科学许可，不将“继续”升级为S2许可。真实工资兼容A/B未选、原工资门/SOURCE_COMMIT未改、严格判据未绑定；初始化3/10余7、工资与补录1/1关闭、旧dirty树/HEAD/index、R12/R13/WASM/未授权重绑定及16义务保持。生产/科学接受/Results仍FALSE，无分支删除/main合并/原件清理/全局配置修改，自审不是独立科学评议。

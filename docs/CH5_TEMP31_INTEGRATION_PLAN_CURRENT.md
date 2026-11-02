@@ -1,6 +1,6 @@
 # TEMP31 当前生产接线方案 · 2026-11-01
 
-STATUS=PRODUCTION_COMPATIBILITY_FIRST_HA_STATIC_PLAN_READY__RUNNER_PENDING__REAL_PRODUCTION_NOT_BOUND
+STATUS=E1_PREFLIGHT_AND_E2_WINDOWS_TOY_GUARDS_IMPLEMENTED__SCIENTIFIC_DRIVER_PENDING__REAL_PRODUCTION_NOT_BOUND
 OWNER_SOURCE_ADOPTION=56447829ce0e6c3c85552c53c351b26a2452a4bd__DEVELOPMENT_SOURCE_ANCHOR
 SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
 LOCAL_SOURCE_MATERIALIZATION_COMMIT=91941302f966f12d5f206691f74c800cadf3e797__LOCAL_ONLY_NOT_PUSHED
@@ -187,3 +187,9 @@ Owner批准上述具体预算后，只启动1个新worker，墙钟1.157秒，源
 [精确方案](CH5_TEMP31_PRODUCTION_COMPATIBILITY_FIRST_HA_PLAN_20261102.md)及配套JSON已交付：16份文件身份与26项AST观察通过，源码候选69745f9...保持。真实生产推荐新增独立输入类型并在共用门显式分派，保留旧合成/首轮类型与SOURCE_COMMIT；备选旧记录版本化分支，Owner尚未选定，实际门改动未实施。普通包导入的额外模块面已识别，11模块/16本地边隔离装配仍是未运行提案。
 
 首HA不以生产桥为前置，可用现有bootstrap19，在原800格网格仅A/index0做单次诊断；原8格检查不涵盖800根或HJB/KFE，另列1进程120秒/2GiB、HJB1/KFE≤1/汇总≤1、零重试预算建议，尚未获准。科学阈值未绑定，未运行任何科学模块或生成网格。下一普通工程先做标准库计划/pins/计数预检及toy隔离启动/限额/失败保留；待结果与最终pins就绪再交Owner具体HA运行门，不提前申请不完整运行器的许可。真实消费者、正式输入和严格接受另按Owner门处理，旧预算/STOP/Results FALSE保持。
+
+## 2026-11-02 E1/E2工程准备完成，实际HA驱动仍未就绪
+
+[实施记录](CH5_TEMP31_PREEXECUTION_TOY_GUARDS_IMPLEMENTATION_20261102.md)：新计划身份/元数据及计数模块与固定toy监督器已落地，E1 candidate2383af1...、E2 candidateedb8104...仅本地。26项不同的行为检查通过（扩展25通过+测试夹具修复后的1项定点通过）；累计11个toy意图/9进程全部保留，真实观察Windows job恢复前绑定/回读、墙钟超时、提交内存与单进程数拒绝、崩溃及重复意图不重用。2个设置/pin拒绝未建进程；科学模块实际导入/调用和科学worker均0，原578/565代码路径保持，现583路径。
+
+实际固定计划只获得PLAN_METADATA_ONLY，声明的11模块pins未因格式检查而成为源字节/输入/运行资格。E2没有任意脚本或callback入口，只允许toy模式/小限额，不能直接放大到120秒/2GiB运行HA。下一工程准备默认禁用的固定11模块装配、精确Python/C调用观察、持久科学意图账本及Owner许可门，先用非科学夹具验证。完成具体可审阅驱动/最终pins后，再交Owner首HA许可；真实兼容A/B与科学判据、正式输入和接受门仍分开。原预算/STOP/Results FALSE保持。
