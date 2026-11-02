@@ -1,6 +1,6 @@
 # TEMP31 当前生产接线方案 · 2026-11-01
 
-STATUS=DORMANT_WAGE_AND_HA_ADMISSION_IMPLEMENTED__REAL_PRODUCTION_NOT_BOUND
+STATUS=SAVED_METADATA_BRIDGE_IMPLEMENTED__TWO_METADATA_GAPS_EXPLICIT__REAL_PRODUCTION_NOT_BOUND
 OWNER_SOURCE_ADOPTION=56447829ce0e6c3c85552c53c351b26a2452a4bd__DEVELOPMENT_SOURCE_ANCHOR
 SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
 LOCAL_SOURCE_MATERIALIZATION_COMMIT=91941302f966f12d5f206691f74c800cadf3e797__LOCAL_ONLY_NOT_PUSHED
@@ -163,3 +163,9 @@ Owner批准上述具体预算后，只启动1个新worker，墙钟1.157秒，源
 [惰性准入实施记录](CH5_TEMP31_DORMANT_ADMISSION_IMPLEMENTATION_20261102.md)：新增标准库元数据模块与测试，8核心类型、14条拒绝路径，145项限定检查通过。上游工资/HJB失败可追溯到批次；HJB收敛、完整31虚拟标签、调用方声称正值或填写判据引用均不升级科学资格。candidate ac1572df9e6cad02646afd827a633693aedad5b2仅本地，原572代码路径保持。记录工厂不读文件、不解析科学载荷、不接callback，所有消费者/求解/接受门始终FALSE。
 
 下一工程片只把已有保存见证的元数据送入明确标记的惰性声明/拒绝报告，逐项列出缺失的字节身份或来源资格，不能补造byte_count、来源采纳或现场执行；不重新计算工资、不改旧消费者。真实生产桥、HA与科学接受门保持。
+
+## 2026-11-02 固定保存元数据的真实对接与缺口
+
+[元数据桥实施记录](CH5_TEMP31_SAVED_METADATA_BRIDGE_IMPLEMENTATION_20261102.md)：扩展惰性模块、新增测试，candidate3f32f958be1574e173900479fc164a9aa5f46514仅本地。163项限定检查通过；两份固定元数据文件和两份清单现场核验，源清单元数据1757字节重建哈希匹配，六输入/输出身份已对齐。未读取原参数、返回值、科学数组或账本日志，相关claim/ledger仅保留历史清单条目身份，不冒称本轮文件回读。
+
+该旧元数据未封存完整参数的byte_count和实际输出shape，桥接报告保留两项缺口，实际参数身份与输出shape保持None，惰性准入明确BLOCKED。旧外部单次观测事实保持原资格；缺口不等于观测失败，也不能被补造为生产凭据。下一工程先拟定只追加元数据补录合同和允许的非数值提取范围，不改历史文件、不重跑生产者或放行消费者。
