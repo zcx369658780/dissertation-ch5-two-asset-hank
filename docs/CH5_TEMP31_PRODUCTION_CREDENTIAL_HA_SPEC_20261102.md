@@ -87,3 +87,9 @@ model_activation=FALSE
 REAL_GE=FALSE
 
 旧dirty工作树/HEAD/index、V010、WASM/R12 STOP、R13未授权、保护重绑定未授权、16项义务、旧预算和历史证据保持。本轮无分支删除、main合并、原件移动或全局配置修改；自审是工程审查，不是独立科学评议。
+
+## 后续实施 · 2026-11-02
+
+[惰性准入模块](CH5_TEMP31_DORMANT_ADMISSION_IMPLEMENTATION_20261102.md)已按本设计的下一分片完成：8核心记录、两种公开辅助声明、14条拒绝路径，145项限定检查通过。本文头部STATIC_DESIGN及原10文件/14观察保持其原阶段身份；并未因此出现真实生产验证器或HA接受能力。具体接口补充字段和代码身份已追加到配套JSON的dormant_implementation。
+
+实现允许声明LIVE_SOURCE_OBSERVATION_CANDIDATE以便拒绝/报告，但它的scope固定INERT_UNVERIFIED_CANDIDATE_DECLARATION、live_execution_verified=FALSE；不能构造真实现场凭据。正值域、运行/来源/判据等引用一律仍是未验证声明。HA原标志与诊断身份保存在不可变HADiagnosticClaims中，工厂只封存元数据身份，不读/计算被引用载荷。所有生产/科学接受标志始终FALSE，旧源程序/API/SOURCE_COMMIT不变。

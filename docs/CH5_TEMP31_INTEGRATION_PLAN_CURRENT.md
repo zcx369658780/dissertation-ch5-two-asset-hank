@@ -1,6 +1,6 @@
 # TEMP31 当前生产接线方案 · 2026-11-01
 
-STATUS=PRODUCTION_WAGE_CREDENTIAL_AND_HA_QUALIFICATION_STATIC_CONTRACT_READY__REAL_PRODUCTION_NOT_BOUND
+STATUS=DORMANT_WAGE_AND_HA_ADMISSION_IMPLEMENTED__REAL_PRODUCTION_NOT_BOUND
 OWNER_SOURCE_ADOPTION=56447829ce0e6c3c85552c53c351b26a2452a4bd__DEVELOPMENT_SOURCE_ANCHOR
 SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
 LOCAL_SOURCE_MATERIALIZATION_COMMIT=91941302f966f12d5f206691f74c800cadf3e797__LOCAL_ONLY_NOT_PUSHED
@@ -157,3 +157,9 @@ Owner批准上述具体预算后，只启动1个新worker，墙钟1.157秒，源
 [静态接口合同](CH5_TEMP31_PRODUCTION_CREDENTIAL_HA_SPEC_20261102.md)及[机读设计](CH5_TEMP31_PRODUCTION_CREDENTIAL_HA_CONTRACT_20261102.json)将真实生产工资凭据、原HA诊断与科学资格分成8种记录，给出14条拟议拒绝路径。限定10文件身份核对、14项AST观察通过，科学import/调用0；代码candidate547a17b1b0e28d67a4944dd819412d64038955de不变。旧合成校验存在公式重算，不能靠改标签/强转接生产凭据；当前消费者要求正工资，零工资只拒绝不修补。原污染行残差与原算子归一化驻定分开，判据引用/阈值未在本轮绑定或新增，严格HA仍未通过。
 
 下一可实施片仅增加标准库惰性准入/诊断记录及拒绝检查，旧消费者/API/SOURCE_COMMIT保持；所有真实执行和科学接受标志固定FALSE，普通工程可直接继续，无须重复Owner许可。生产兼容修改、冻结网格初始化/HA、真实输入采纳、严格资格接受和后续31省GE/动态/IRF/福利/Results仍按各自合同及Owner边界处理。
+
+## 2026-11-02 惰性准入实施完成
+
+[惰性准入实施记录](CH5_TEMP31_DORMANT_ADMISSION_IMPLEMENTATION_20261102.md)：新增标准库元数据模块与测试，8核心类型、14条拒绝路径，145项限定检查通过。上游工资/HJB失败可追溯到批次；HJB收敛、完整31虚拟标签、调用方声称正值或填写判据引用均不升级科学资格。candidate ac1572df9e6cad02646afd827a633693aedad5b2仅本地，原572代码路径保持。记录工厂不读文件、不解析科学载荷、不接callback，所有消费者/求解/接受门始终FALSE。
+
+下一工程片只把已有保存见证的元数据送入明确标记的惰性声明/拒绝报告，逐项列出缺失的字节身份或来源资格，不能补造byte_count、来源采纳或现场执行；不重新计算工资、不改旧消费者。真实生产桥、HA与科学接受门保持。
