@@ -1,0 +1,300 @@
+{
+  "schema_id": "ch5.temp31.saved_capture_metadata_supplement.plan.v1",
+  "status": "FROZEN_SPEC__ACTUAL_EXECUTION_STATUS_RECORDED_SEPARATELY",
+  "authority": {
+    "issuer": "LOCAL_CODEX_UNDER_OWNER_DELEGATED_BOUNDED_ENGINEERING_AUTHORITY",
+    "owner_rule": "CH5_TEMP31_DELEGATED_DEBUG_AUTHORITY_CURRENT.md",
+    "owner_exact_continuation": "请继续",
+    "governance_parent": "5a4f5070304d71d02d8114fef49847a6a530d376",
+    "new_scientific_run_grant": false,
+    "repeated_owner_permission_for_this_bounded_engineering": false
+  },
+  "intent_id": "CH5_TEMP31_FIXED_CAPTURE_METADATA_SUPPLEMENT_20261102_V1",
+  "purpose": "Append exact argument canonical byte count and measured return shape to fixed historical synthetic observation metadata without rerunning science or overwriting evidence",
+  "future_capture_read_allowlist": [
+    {
+      "path": "attempt01/FUNCTION_ENTRY_OBSERVATION.json",
+      "bytes": 686,
+      "sha256": "a4748223ff08dba37f0c269e99b39ed67a0b0c3e6481bec0f781d8e48dd80124"
+    },
+    {
+      "path": "attempt01/FUNCTION_RETURN_OBSERVATION.json",
+      "bytes": 237,
+      "sha256": "c36f6fa3e6e965f23079e0490b2f6c9bc69083be334ebca222a1e7a3c148e8ad"
+    }
+  ],
+  "future_supporting_read_allowlist": [
+    {
+      "path": "EVIDENCE_SHA256_MANIFEST.json",
+      "bytes": 4279,
+      "sha256": "c6b41cdad2124c86f98fdb608643179cafcd186fc4827b139e7469b70deb222f"
+    },
+    {
+      "path": "attempt01/OBSERVED_LINEAGE_RECEIPT.json",
+      "bytes": 4927,
+      "sha256": "e8c614f6cc38f08bd42e767a4dba4facf7543919096467b5962078ccb368af58"
+    },
+    {
+      "path": "attempt01/worker.py",
+      "bytes": 12122,
+      "sha256": "55a03d2d247b799c5a728a393f9609b21e8259c6d18eddf85b96600de6939bb9"
+    }
+  ],
+  "encoder_provenance": {
+    "worker_pin": {
+      "path": "attempt01/worker.py",
+      "bytes": 12122,
+      "sha256": "55a03d2d247b799c5a728a393f9609b21e8259c6d18eddf85b96600de6939bb9"
+    },
+    "canonical_encoder": {
+      "sort_keys": true,
+      "separators": [
+        ",",
+        ":"
+      ],
+      "ensure_ascii": true,
+      "allow_nan": false,
+      "encoding": "UTF8"
+    },
+    "capture_writer": {
+      "ensure_ascii": true,
+      "indent": 2
+    },
+    "capture_root_keys": {
+      "FUNCTION_ENTRY_OBSERVATION.json": [
+        "arguments",
+        "canonical_sha256",
+        "code_filename_matches",
+        "code_first_line"
+      ],
+      "FUNCTION_RETURN_OBSERVATION.json": [
+        "values",
+        "element_types",
+        "canonical_sha256"
+      ]
+    },
+    "status": "STATIC_AST_CONFIRMED_NOT_IMPORTED_OR_RUN"
+  },
+  "fixed_bindings": {
+    "observation_manifest_sha256": "c6b41cdad2124c86f98fdb608643179cafcd186fc4827b139e7469b70deb222f",
+    "lineage_sha256": "e8c614f6cc38f08bd42e767a4dba4facf7543919096467b5962078ccb368af58",
+    "context": {
+      "context_id": "TEMP31_ONE_SOURCE_WAGE_CALL_OBSERVATION_20261102",
+      "province_order": [
+        "A",
+        "B"
+      ],
+      "generated_after_iteration": 1,
+      "entering_iteration": 2,
+      "input_snapshot_sha256": "4ca13e81208eeed3d6be66343b3e02535f28db47543af378bba52db5622f2a63",
+      "source_bundle_sha256": "1a3d44635e53c623b7748e77553f708ac9b1480efcda67597a7c847043529825",
+      "source_root_sha256": "946ec901589b6f8dfd8e6fdf79a0d23be1249a3a5223cce9063e3257f15e5f28"
+    },
+    "argument_canonical_sha256": "7ea0130eb362d12a951f967275d61fa34a963cba20e27080378cc4be986ffd28",
+    "return_canonical_sha256": "2900a554e1c52b4ffc9cb27a820046750ae902e79458b52d7892fd1ae54f23b3",
+    "return_canonical_byte_count": 39,
+    "argument_canonical_byte_count": null,
+    "actual_return_shape": null
+  },
+  "future_engineering_budget": {
+    "state": "NOT_ISSUED_NOT_USED__CODEX_ISSUES_CONCRETE_GRANT_AFTER_FIXTURE_PASS",
+    "maximum_extractor_workers": 1,
+    "wall_seconds_per_worker": 30,
+    "maximum_capture_files": 2,
+    "maximum_reads_per_capture_file": 1,
+    "new_scientific_workers": 0,
+    "scientific_function_entries": 0,
+    "claim_name": "METADATA_EXTRACTION_CLAIM.json",
+    "claim_timing": "exclusive durable create and flush/fsync before the first capture-file open",
+    "unknown_or_failure": "preserve evidence and stop this extraction intent; no silent rerun, renamed intent or budget reset",
+    "old_wage_budget": "ENTRY1_OF1_CLOSED_UNCHANGED",
+    "old_initializer_budget": "3_OF10_USED__7_RESERVED_UNCHANGED"
+  },
+  "read_scope": {
+    "allowed_in_future": "Raw bytes of only two fixed synthetic capture documents, containing previously recorded synthetic values, solely for lexical/structural metadata extraction",
+    "not_allowed": "Scientific numeric interpretation, arrays, model computation, any other raw/private/purchased data, R12 assets, old source execution or a new producer observation",
+    "current_delivery": "No capture-file bytes read; only metadata and encoder source AST inspected"
+  },
+  "lexical_method": {
+    "id": "OPAQUE_JSON_TOKEN_METADATA_V1",
+    "canonical_arguments": "Locate the exact arguments object; parse container structure and sort decoded object keys; preserve scalar value token bytes and generate compact canonical JSON bytes in memory",
+    "argument_count": "len of that exact reconstructed canonical byte sequence, accepted only after matching both old canonical SHA references",
+    "return_shape": "count the numeric-token leaves of the actual flat values array; shape=(measured_count,), not province count",
+    "return_identity": "hash and byte_count of the compact values array must match the fixed return identity",
+    "scientific_numeric_tokens": "validate JSON grammar only; never convert/evaluate/normalize numeric lexemes or build scientific arrays",
+    "string_policy": "decode object keys only as needed for sorting/duplicate detection; preserve value-string lexemes; differing canonical bytes fail instead of being repaired",
+    "provenance_note": "Both verified old encoders use ensure_ascii=True; raw capture writer indents while canonical writer sorts keys and uses compact separators",
+    "no_numeric_repair": [
+      "float()/int()/Decimal() on scientific number tokens",
+      "eval/exec or source-package imports",
+      "numeric reformatting or rounding to match a hash",
+      "clipping or changing parameters/values",
+      "retrying the original wage function"
+    ]
+  },
+  "resource_limits": {
+    "maximum_document_bytes": 1048576,
+    "maximum_nesting_depth": 64,
+    "maximum_tokens_per_document": 16384,
+    "maximum_string_token_bytes": 65536
+  },
+  "planned_output": {
+    "artifact": "SUPPLEMENTARY_CAPTURE_METADATA.json",
+    "write_mode": "exclusive new file in the registered LOCAL_ONLY execution root; never overwrite a capture, manifest or prior supplement",
+    "scope": "SUPPLEMENTAL_METADATA_FOR_FIXED_SYNTHETIC_OBSERVATION_ONLY_NOT_PRODUCTION_OR_ACCEPTANCE",
+    "required_fields": [
+      "intent_id",
+      "parent_manifest_sha256",
+      "input_capture_pins",
+      "lineage_pin",
+      "extractor_code_pin",
+      "method_id",
+      "canonical_argument_sha256",
+      "canonical_argument_byte_count",
+      "canonical_return_sha256",
+      "canonical_return_byte_count",
+      "actual_return_shape",
+      "source_span_hashes_and_offsets",
+      "numeric_values_interpreted",
+      "scientific_function_calls",
+      "old_observation_scope",
+      "acceptance_flags"
+    ],
+    "numeric_values_interpreted": false,
+    "scientific_function_calls": 0,
+    "raw_output_prohibited": [
+      "argument token text",
+      "canonical argument bytes",
+      "return numeric token text",
+      "canonical return bytes",
+      "scientific arrays",
+      "raw input/output values"
+    ]
+  },
+  "attachment_contract": {
+    "old_records": "unchanged; supplement is a separately pinned child evidence record",
+    "existing_bridge_without_supplement": "keeps two unknown fields and BLOCKED behavior",
+    "future_bridge_with_verified_supplement": "may fill only the two measured metadata fields, with exact historical identity and context bindings",
+    "no_scientific_upgrade": "even complete saved synthetic metadata is not production wage evidence or source/input/scientific acceptance"
+  },
+  "closed_gates": {
+    "consumer_ready": false,
+    "real_execution_enabled": false,
+    "producer_invocation_verified_by_this_extraction": false,
+    "scientific_acceptance": false,
+    "formal_ha_accepted": false,
+    "FORMAL_SOURCE_FREEZE": false,
+    "Results": false,
+    "model_activation": false,
+    "REAL_GE": false
+  },
+  "fixture_matrix": [
+    {
+      "id": "object_key_order",
+      "required_behavior": "Sort decoded object keys while preserving value lexemes; match the fixed canonical digest",
+      "status": "PLANNED_NOT_RUN"
+    },
+    {
+      "id": "whitespace_and_strings",
+      "required_behavior": "Remove structural whitespace only; preserve whitespace inside quoted strings",
+      "status": "PLANNED_NOT_RUN"
+    },
+    {
+      "id": "string_escapes",
+      "required_behavior": "Handle escaped quotes, backslashes and Unicode keys without decoding numeric values",
+      "status": "PLANNED_NOT_RUN"
+    },
+    {
+      "id": "numeric_lexemes",
+      "required_behavior": "Preserve decimal/exponent/sign/negative-zero spelling; no int/float/Decimal conversion of scientific tokens",
+      "status": "PLANNED_NOT_RUN"
+    },
+    {
+      "id": "duplicate_keys",
+      "required_behavior": "Reject duplicate decoded keys, including escaped aliases",
+      "status": "PLANNED_NOT_RUN"
+    },
+    {
+      "id": "nonfinite_tokens",
+      "required_behavior": "Reject NaN/Infinity and invalid JSON literals",
+      "status": "PLANNED_NOT_RUN"
+    },
+    {
+      "id": "number_grammar",
+      "required_behavior": "Reject malformed numbers, leading-zero forms and trailing junk without numeric conversion",
+      "status": "PLANNED_NOT_RUN"
+    },
+    {
+      "id": "truncation",
+      "required_behavior": "Reject incomplete objects, arrays, escapes or strings",
+      "status": "PLANNED_NOT_RUN"
+    },
+    {
+      "id": "capture_envelope",
+      "required_behavior": "Require exact entry/return capture field sets, correct metadata types and expected keys",
+      "status": "PLANNED_NOT_RUN"
+    },
+    {
+      "id": "argument_identity",
+      "required_behavior": "Canonical argument SHA must match entry metadata and fixed lineage SHA",
+      "status": "PLANNED_NOT_RUN"
+    },
+    {
+      "id": "return_identity",
+      "required_behavior": "Canonical values SHA and byte_count must match return metadata and the fixed 39-byte output record",
+      "status": "PLANNED_NOT_RUN"
+    },
+    {
+      "id": "shape_from_structure",
+      "required_behavior": "Measure rank1 length from the values array itself; do not infer it from province labels; reject nested/non-number leaves",
+      "status": "PLANNED_NOT_RUN"
+    },
+    {
+      "id": "type_metadata_crosscheck",
+      "required_behavior": "Cross-check measured shape against element_types count and only then the expected origin count",
+      "status": "PLANNED_NOT_RUN"
+    },
+    {
+      "id": "swapped_or_changed_records",
+      "required_behavior": "Reject wrong file hash/size, source-record swap or changed context/manifest bindings",
+      "status": "PLANNED_NOT_RUN"
+    },
+    {
+      "id": "resource_limits",
+      "required_behavior": "Enforce byte/depth/token limits before exposing any output",
+      "status": "PLANNED_NOT_RUN"
+    },
+    {
+      "id": "path_and_read_changes",
+      "required_behavior": "Reject reparse/symlink ancestors, permission issues or changed file state; fixture metadata injection is not a protection rebind",
+      "status": "PLANNED_NOT_RUN"
+    },
+    {
+      "id": "budget_and_claim",
+      "required_behavior": "Existing durable intent claim blocks all subsequent actual reads; no renewal after failure or success",
+      "status": "PLANNED_NOT_RUN"
+    },
+    {
+      "id": "append_only_output",
+      "required_behavior": "Existing output blocks overwrite; preserve original records and avoid raw-token/value logging",
+      "status": "PLANNED_NOT_RUN"
+    }
+  ],
+  "spec_stage": {
+    "code_candidate": "3f32f958be1574e173900479fc164a9aa5f46514",
+    "code_changes": 0,
+    "capture_files_opened": 0,
+    "missing_fields_filled": 0,
+    "scientific_imports_and_calls": 0,
+    "extraction_worker_started": false
+  },
+  "execution_grant_template": {
+    "pure_fixture_tests_passed": false,
+    "extractor_code_pin": null,
+    "fixed_input_and_metadata_pin_recheck_required": true,
+    "concrete_bounded_engineering_grant_required": true,
+    "issuer_of_that_grant": "LOCAL_CODEX_WITHIN_EXISTING_OWNER_DELEGATION",
+    "any_missing_gate_means": "NO_CAPTURE_READ",
+    "note": "Template only; actual code pin/fixture result and finite authorization are recorded separately before the single capture read"
+  }
+}

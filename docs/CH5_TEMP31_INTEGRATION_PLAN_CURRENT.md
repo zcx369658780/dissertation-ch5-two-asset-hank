@@ -1,6 +1,6 @@
 # TEMP31 当前生产接线方案 · 2026-11-01
 
-STATUS=SAVED_METADATA_BRIDGE_IMPLEMENTED__TWO_METADATA_GAPS_EXPLICIT__REAL_PRODUCTION_NOT_BOUND
+STATUS=APPEND_ONLY_CAPTURE_METADATA_SUPPLEMENT_EXTRACTED__TYPED_ATTACHMENT_PENDING__REAL_PRODUCTION_NOT_BOUND
 OWNER_SOURCE_ADOPTION=56447829ce0e6c3c85552c53c351b26a2452a4bd__DEVELOPMENT_SOURCE_ANCHOR
 SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
 LOCAL_SOURCE_MATERIALIZATION_COMMIT=91941302f966f12d5f206691f74c800cadf3e797__LOCAL_ONLY_NOT_PUSHED
@@ -169,3 +169,9 @@ Owner批准上述具体预算后，只启动1个新worker，墙钟1.157秒，源
 [元数据桥实施记录](CH5_TEMP31_SAVED_METADATA_BRIDGE_IMPLEMENTATION_20261102.md)：扩展惰性模块、新增测试，candidate3f32f958be1574e173900479fc164a9aa5f46514仅本地。163项限定检查通过；两份固定元数据文件和两份清单现场核验，源清单元数据1757字节重建哈希匹配，六输入/输出身份已对齐。未读取原参数、返回值、科学数组或账本日志，相关claim/ledger仅保留历史清单条目身份，不冒称本轮文件回读。
 
 该旧元数据未封存完整参数的byte_count和实际输出shape，桥接报告保留两项缺口，实际参数身份与输出shape保持None，惰性准入明确BLOCKED。旧外部单次观测事实保持原资格；缺口不等于观测失败，也不能被补造为生产凭据。下一工程先拟定只追加元数据补录合同和允许的非数值提取范围，不改历史文件、不重跑生产者或放行消费者。
+
+## 2026-11-02 两项缺失元数据已取得独立旁证
+
+[补录合同](CH5_TEMP31_METADATA_SUPPLEMENT_CONTRACT_20261102.md)先冻结，再依Owner同类工程调试委托实施[词法元数据提取器](CH5_TEMP31_METADATA_SUPPLEMENT_IMPLEMENTATION_20261102.md)。限定检查182项及文件保护夹具6项通过；一次工程读取进程0.438秒，两份固定合成捕获文件各读一次，匹配原规范哈希并取得参数206字节、返回形状(2,)和返回39字节。科学数字保持原始token字节，未解释为数值/数组，未调用原工资或任何求解器。
+
+新旁证只追加，原文件/清单/耗额保持。旧保存桥仍按原元数据保留None，下一工程可添加严格身份绑定的旁证接入分支；没有旁证的旧行为不变。即使两项元数据接入，合成scope与生产资格仍分开，所有消费者/科学接受门继续关闭。code candidate b9af5ba423f66876481dd56324406b30f2ca471b仅本地，原575代码路径保持，现577路径；未触及HA网格、科学阈值、R12/R13/WASM保护门或Results。

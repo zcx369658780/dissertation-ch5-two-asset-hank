@@ -492,3 +492,17 @@ DELIVERABLE=CH5_TEMP31_SAVED_METADATA_BRIDGE_IMPLEMENTATION_20261102.md
 旧元数据中没有完整实际参数的字节数和实际返回shape；保留known argument SHA，但参数EvidenceIdentity和输出shape保持None。省份数量不代替实际返回shape，不估算byte_count，惰性准入BLOCKED，consumer_ready/real_execution/科学接受标志均FALSE。旧外部观测事实保持，不以缺元数据否认原单次调用，也不把它升级为生产资格。新增工厂只解析限定元数据JSON，拒绝浮点/非有限、重复key和未知字段，不解析科学数值载荷。
 
 18新+145旧=163项限定检查通过，现场元数据对接通过；原565路径保持，原574仅惰性工程模块扩展，新增测试后575选定代码路径。代码仅本地，科学导入/调用及新科学worker0，原参数/网格/公式/容差、工资1/1关闭、初始化3/10已用余7、dirty树/index和STOP保持。下一工程只拟定只追加补录合同和非数值提取范围，不改旧文件或自行运行科学消费者。自审不替代独立科学评议，无分支删除/main合并/原件移动，Results保持FALSE。
+
+## 2026-11-02 只追加元数据补录合同、实现与一次工程取证
+
+OWNER_EXACT_STATEMENT=请继续
+AUTHORIZATION_PARENT=5a4f5070304d71d02d8114fef49847a6a530d376
+LOCAL_CODE_CANDIDATE=b9af5ba423f66876481dd56324406b30f2ca471b
+DELIVERABLE=CH5_TEMP31_METADATA_SUPPLEMENT_IMPLEMENTATION_20261102.md
+AUTHORITY=LOCAL_CODEX_ISSUED_BOUNDED_ENGINEERING_EXTRACTION_UNDER_OWNER_STANDING_DELEGATION__NOT_NEW_SCIENTIFIC_RUN_AUTHORITY
+
+先形成固定文件/哈希/方法/只追加输出合同；静态确认旧canonical编码器与捕获writer均ensure_ascii=True，canonical排序并去结构空白。随后在既有同类工程调试委托内继续实现和夹具检查；1个工程进程×30秒、两份固定合成捕获文件各读一次为Codex具体执行限额，不冒称Owner原句逐字指定，也不复活旧工资/初始化预算。提取器固定代码和原清单后登记具体许可、独占持久claim，再执行一次字节词法/结构取证；无新科学worker或科学函数入口。
+
+182项限定检查+6项文件保护夹具通过。修正了超大字节夹具的预期入口、经失败用例复现的字符串长度边界及祖先重解析检查顺序；夹具未读原捕获文件。实际提取进程退出0、未超时、墙钟0.438秒，entry/return各读一次、重试0；取得canonical参数206字节和实际返回形状(2,)，规范返回39字节，各SHA与原记录一致。科学数字token未转换为Python int/float/科学数组，不重算工资、初始化/root/HA/HJB/KFE/GE/IRF/policy/MATLAB，不改旧文件或科学公式/参数/输入/网格/容差。
+
+独立旁证LOCAL_ONLY保存；原基元数据的None仍保持，尚未把旁证接回惰性桥；所有消费者和科学接受/Results门保持FALSE。原575/最初565路径Blob保持，新增模块/测试后577路径，源码candidate仅本地。新工程读取1/1已耗并封闭，旧工资1/1关闭和初始化3/10余7不变，不能为重算而重命名意图或重置预算。下一工程只实现并验证旁证接入，不运行模型。旧dirty树/HEAD/index、V010、WASM/R12 STOP、R13未授权、保护重绑定未授权和16义务保持；工程自审不替代独立科学评议，无分支删除/main合并/原件移动/全局配置修改。
