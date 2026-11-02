@@ -564,3 +564,20 @@ AUTHORITY=DEFAULT_DISABLED_ENGINEERING_PREPARATION_AND_NEUTRAL_FIXTURES_ONLY__NO
 声明校验只对比预期字节与计划/来源/输入/代码/环境/预算等字段，不验证真实Owner决定；即便匹配scientific_run_authorized仍FALSE。run_first_origin_ha无科学dispatch分支，标志/环境变量/自报许可均在I/O前拒绝。本轮不是实际科学运行器就绪或S2许可，不改原工资消费者/SOURCE_COMMIT、科学源码/公式/参数/输入/网格/容差；仅新增6工程/测试/夹具路径，原583/565保持，现589，代码仅本地。
 
 下一授权内工程可落实仍锁闭的科学worker编排与父进程资源接合、先以中性替身验证，并只读登记环境元数据；实际科学装配、调用与120秒/2GiB等新预算仍须具体驱动/最终pins就绪后Owner决定。兼容A/B未选择、严格判据null、原工资与补录1/1关闭、初始化3/10余7、dirty树/HEAD/index、R12/R13/WASM/未授权保护重绑定和16义务保持，生产/科学接受/Results均FALSE，无删除分支/main合并/原件清理/全局配置修改；本轮自审非独立科学评议。
+
+## 2026-11-02 继续完成锁闭科学worker与资源接合；提交S2申请但未获科学许可
+
+OWNER_EXACT_STATEMENT=好的请继续
+AUTHORIZATION_PARENT=eb85c03079c9378ddcae60a9ec0d6e8acb676ee5
+CODE_CANDIDATE=41eb30005c223eced9b25d744f5253c288256864
+DELIVERABLE=CH5_TEMP31_LOCKED_WORKER_BINDING_IMPLEMENTATION_20261102.md
+CURRENT_SCIENTIFIC_AUTHORITY=CH5_TEMP31_SINGLE_ORIGIN_HA_AUTHORITY_CURRENT.json__PENDING_OWNER_AUTHORIZATION
+AUTHORITY=ENGINEERING_WORKER_PREPARATION_AND_NEUTRAL_PROCESS_TESTS_ONLY__NO_ACTUAL_HA_AUTHORIZATION
+
+独立worker的固定科学路径与监督器已写成，但只启动非科学模式。16项不同检查通过（15项整套检查及新增子进程预算绑定检查通过；新版中性worker正向回归通过）：实际120秒/2GiB配置、父进程恢复前绑定/回读、子进程查真实同Job成员及限制、父进程复核；不收敛/网格错先于KFE和汇总停止，超时/内存/崩溃/重复意图均保留。各版累计21中性进程，均非科研worker，未重开任何旧科学预算。测试过程的防覆盖阶段拒绝和异常类实例不匹配已保留，修夹具未放宽授权。科学网格/初始化/root/HJB/KFE/HA执行0，NumPy/SciPy和原科学模块未导入。
+
+环境只读核Python3.11.9/NumPy2.4.6/SciPy1.17.1分发元数据及10个指定运行文件大小/SHA，对应摘要4dd77c75ee2b6743aff07e6875171fcdec3e8f7e32d1c326e81159d0b11256e8；完整动态依赖和科学数值资格仍未验证。科学分支包括固定11模块/原网格/净19/新a*r_a初始化、实际对象/闭包代码与C调用观察、KFE算子谱系和独占原始返回保存，但未执行；新源码为编排/工程，不改原科学核心、工资消费者或参数/网格/容差。
+
+代码候选仅本地，原589和最初565路径保持，现593。固定Owner CURRENT记录明确PENDING/owner_approved=FALSE/decision_record=null，不能由“继续”或调用标志放行。已登记可审阅S2单次提案：A来源地合成首轮、原800格/现有P0价格及参数、1进程含导入120秒/2GiB、初始化≤1与Python/native根≤800、HJB≤1/100迭代、收敛后KFE≤1及汇总≤1，其他生产/31省/GE/IRF/真实数据/MATLAB0，重试0/自动后继0，失败停且保存。此为申请，不是Owner已批准；只有Owner明确新运行同意后才可落不可变决定、绑定固定记录并执行唯一尝试。
+
+科学接受/严格资格/Results不随运行许可自动获得，criteria仍null。初始化3/10余7、工资/补录1/1关闭、旧dirty树/HEAD/index、R12/R13/WASM/未授权保护重绑定及16义务保持；原科学核心未改，无分支删除/main合并/原件清理/全局配置修改。本轮验收是工程自审，不是独立科学评议或科学通过。

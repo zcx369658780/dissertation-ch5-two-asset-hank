@@ -1,6 +1,6 @@
 # TEMP31 当前生产接线方案 · 2026-11-01
 
-STATUS=COMPILE_CATALOG_NEUTRAL_ASSEMBLY_CALL_OBSERVER_AND_DECLARATION_CHECKS_READY__SCIENTIFIC_DISPATCH_ABSENT
+STATUS=LOCKED_SCIENTIFIC_WORKER_AND_PARENT_CHILD_LIMIT_BINDING_IMPLEMENTED__OWNER_S2_RUN_AUTHORITY_PENDING
 OWNER_SOURCE_ADOPTION=56447829ce0e6c3c85552c53c351b26a2452a4bd__DEVELOPMENT_SOURCE_ANCHOR
 SOURCE_ROOT_TREE=7b7cb29dd5b37be92561e7f1bc688c0d29789732
 LOCAL_SOURCE_MATERIALIZATION_COMMIT=91941302f966f12d5f206691f74c800cadf3e797__LOCAL_ONLY_NOT_PUSHED
@@ -199,3 +199,9 @@ Owner批准上述具体预算后，只启动1个新worker，墙钟1.157秒，源
 [实施记录](CH5_TEMP31_DORMANT_ASSEMBLY_OBSERVER_IMPLEMENTATION_20261102.md)：candidate a22afb8.../c83349a...只在本地，新增6路径后589，原583/565保持。27项行为检查通过；11科学源大小/Blob/SHA与compile匹配、177条符号元数据，未exec科学代码。中性两模块相对导入和四标签阶段完成，持久claim先于任何fixture模块执行；代码/global与C对象/调用者、阶段顺序/缺尾/超额/失钩/重复意图/授权声明等拒绝路径已覆盖。
 
 当前科学入口没有dispatch分支，任何声明匹配都不自动成为Owner科学权限。观察器只对当前线程受管路径负责，异常return事件不等于成功，真实SciPy/科学调用未验证。下一工程为仍锁闭的实际科学worker编排与父进程约束接合，先中性替身测试和不导入科学模块的环境元数据登记；具体驱动/最终pins可审阅后才交Owner新S2运行门。原800格/800根与120秒/2GiB仍未授权，旧8格余7不适用，科学判据、生产兼容与输入采纳门保持独立，Results FALSE。
+
+## 2026-11-02 锁闭科学worker就绪到申请门；尚无HA执行
+
+[本轮实施/单次S2申请](CH5_TEMP31_LOCKED_WORKER_BINDING_IMPLEMENTATION_20261102.md)及[固定权限记录](CH5_TEMP31_SINGLE_ORIGIN_HA_AUTHORITY_CURRENT.json)已具备。candidate 41eb300...仅本地，新worker/监督器/两测试后593路径，原589/565保持。16项不同检查通过；父/子实际Job约束相互核验，21个累计中性进程均保留；科学分支写成但未执行。环境版本/元数据与10个指定运行文件已核，不导入科学包，不冒称运行依赖或数值通过。
+
+当前owner_approved=FALSE、决定null，S2提案仅等待Owner明确新科学运行选择。拟仅一次合成A/index0、原800格/净19/P0价格及原数值控制，1进程120秒/2GiB、初始化≤1/根≤800、HJB≤1/100迭代，收敛后KFE/汇总各≤1、重试0/后继0；原余7次8格余额不适用。源/环境/域/不收敛/算子/密度/资源/未知返回任何失败即停，原值与检查点LOCAL_ONLY保留。即使诊断完成也不判严格HA或科学接受，真实31省生产兼容/严格判据/GE/IRF与Results仍独立待门。
