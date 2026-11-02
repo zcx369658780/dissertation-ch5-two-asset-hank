@@ -1,0 +1,115 @@
+{
+  "schema": "ch5.temp31.owner_decision.v1",
+  "date": "2026-11-02T21:43:41.513369+08:00",
+  "decision_type": "NEW_FINITE_HA_DIAGNOSTIC",
+  "action": "RUN_TEMP31_FIRST_ORIGIN_HA",
+  "owner_exact_statement": "请继续，我授权。",
+  "authorization_interpretation": "Owner approves the exact pending S2 proposal, one attempt only; no retry or scientific acceptance.",
+  "proposal_id": "TEMP31_FIRST_ORIGIN_HA_DIAGNOSTIC_20261102",
+  "intent_id": "temp31_s2_first_origin_a_20261102",
+  "mode": "science",
+  "case": "return",
+  "limits": {
+    "worker_processes": 1,
+    "wall_seconds": 120,
+    "memory_bytes": 2147483648,
+    "origin_attempts": 1,
+    "initializer_calls": 1,
+    "brent_python_max": 800,
+    "brent_native_max": 800,
+    "hjb_calls": 1,
+    "hjb_linear_solves_max": 100,
+    "policy_calls_max": 80000,
+    "kfe_calls_max": 1,
+    "kfe_linear_solves_max": 1,
+    "aggregate_calls_max": 1,
+    "producer_calls": 0,
+    "other_science_calls": 0,
+    "retries": 0
+  },
+  "code_pins": {
+    "worker": "10889cb0e1f225378185f2c658e39392b89b0376aa16c0b2193ee8a3998fd784",
+    "supervisor": "e5e33f7c736ddbeaef40455df65c11f6d4d42ecfd128fc209999511cbc3ce455",
+    "support": {
+      "temp31_toy_supervisor.py": "61a60f431eaa5bb6cf539419788299c6cdb1fbf388e916a21d5d55833443c099",
+      "temp31_execution_preflight.py": "a83905dcc8ceb1d5228f679f7be63a084efdf9269215827085c0cc60491baf75",
+      "temp31_call_observer.py": "e318102cdc57a0eb1ccc50022575d4ca16d563352a2aa6eb860b00f1a1bc96fb",
+      "temp31_dormant_assembly.py": "3c88fb81a598d3d6d274f9a168231128d9ee7c94b128b5a4d89ddf80b636825f"
+    }
+  },
+  "environment_sha256": "4dd77c75ee2b6743aff07e6875171fcdec3e8f7e32d1c326e81159d0b11256e8",
+  "fixture_sha256": "f8efc2443a2facdcc4720ddf48866a527579623083dbb006b9ace0fd1b5c1a65",
+  "source_bundle_sha256": "0655861a536372db05ad7f6938d0999763c6135bd2e67b82fc513000cada211b",
+  "fixed_plan_sha256": "aea2f06db3bb05bfc3b7ea6ee29e3a46ae2e5cd9f96448ee4e843ee90d2152fc",
+  "code_candidate": "41eb30005c223eced9b25d744f5253c288256864",
+  "code_tree": "de19a6390431afacbb6fa7fcc183c1b4f854753b",
+  "fixture_summary": {
+    "province_order": [
+      "A",
+      "B"
+    ],
+    "origin": "A",
+    "origin_index": 0,
+    "entering_iteration": 1,
+    "generated_after_iteration": null,
+    "calendar_year": null,
+    "scope": "FIXED_SYNTHETIC_NUMERICAL_GUESS_ONLY",
+    "grid_shape": [
+      20,
+      20,
+      2
+    ],
+    "b": "linspace(-2,5,20)",
+    "a": "linspace(0,10,20)",
+    "z": [
+      0.8,
+      1.3
+    ],
+    "switch": "[[-1/3,1/3],[1/3,-1/3]]",
+    "rah": 0.09,
+    "rb": 0.02,
+    "rb_gap": 0.07,
+    "Tt": 0.1,
+    "net_wage": 19.0,
+    "labor_weight": 1.0,
+    "resource_convention": "V010_TOTAL_WEALTH_NUMERICAL_INITIAL_GUESS",
+    "parameters": {
+      "rho": 0.05,
+      "gamma_c": 2.0,
+      "phi": 5.0,
+      "chi_0": 0.1,
+      "chi_1": 2.0,
+      "a_bar": 1e-06,
+      "mu_z": 0.0,
+      "sigma_z": 0.0
+    },
+    "hjb_controls": {
+      "delta": 1000.0,
+      "convergence_tolerance": 1e-07,
+      "max_iterations": 100,
+      "drift_tolerance": 1e-12
+    },
+    "root_controls": {
+      "xtol": 1e-12,
+      "rtol": 1e-12,
+      "maxiter": 100,
+      "upper_bracket": 1024.0,
+      "lower_bracket": "max(0,-resources/wage)+1e-12"
+    }
+  },
+  "stop_policy": [
+    "any input/source/environment/protection mismatch",
+    "initializer domain/root/slope failure",
+    "HJB exception/nonfinite/nonconverged",
+    "grid/operator lineage change",
+    "KFE or density/normalization failure",
+    "timeout/memory/process/observer loss",
+    "unknown/missing return"
+  ],
+  "failure_policy": "Preserve all existing inputs/checkpoints/returns/logs; spend this single attempt; no retry, renamed intent or automatic successor",
+  "auto_next": false,
+  "scientific_acceptance": false,
+  "consumer_ready": false,
+  "formal_ha_accepted": false,
+  "Results": false
+}

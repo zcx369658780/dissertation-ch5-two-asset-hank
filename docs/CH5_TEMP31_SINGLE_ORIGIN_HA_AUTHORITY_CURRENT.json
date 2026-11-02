@@ -1,9 +1,9 @@
 {
   "schema": "ch5.temp31.single_origin_ha_authority.current.v1",
-  "status": "PENDING_OWNER_AUTHORIZATION",
-  "owner_approved": false,
-  "decision_record": null,
-  "decision_sha256": null,
+  "status": "CLOSED_STOP_NO_RETRY",
+  "owner_approved": true,
+  "decision_record": "CH5_TEMP31_S2_OWNER_DECISION_20261102_01.json",
+  "decision_sha256": "77572df42b18fa401ef1ea940822f1b1893184a7c55c373bcdd1f011f54afa20",
   "proposal_id": "TEMP31_FIRST_ORIGIN_HA_DIAGNOSTIC_20261102",
   "proposal": {
     "proposal_id": "TEMP31_FIRST_ORIGIN_HA_DIAGNOSTIC_20261102",
@@ -131,5 +131,54 @@
   },
   "scientific_acceptance": false,
   "Results": false,
-  "note": "Engineering preparation only; continue messages have not authorized this HA run"
+  "note": "Owner approval is historical and single-use. Intent consumed by one stopped process; no second attempt authorized. Original proposal and decision retained.",
+  "execution_summary": {
+    "state": "CLOSED_STOP_NO_RETRY",
+    "attempts_used": 1,
+    "attempts_limit": 1,
+    "retries": 0,
+    "intent_id": "temp31_s2_first_origin_a_20261102",
+    "outcome": "WORKER_STOP_RECORDED",
+    "stop_reason": "DUPLICATE_BINDING",
+    "elapsed_seconds": 2.875,
+    "peak_process_commit_bytes": 1344159744,
+    "cleanup_verified": true,
+    "scientific_dependency_imports_performed": true,
+    "loaded_numpy_scipy_modules": 465,
+    "scientific_source_module_imports": "11 loaded before binding construction per fixed control flow",
+    "stop_stage": "CallObserver construction before sequence/prepare",
+    "model_grid_constructions": 0,
+    "model_initializer_calls": 0,
+    "model_brent_calls": 0,
+    "hjb_calls": 0,
+    "kfe_calls": 0,
+    "aggregate_calls": 0,
+    "counter_evidence": "pre-sequence exception plus fixed code control flow; no observer call ledger created",
+    "scientific_acceptance": false,
+    "consumer_ready": false,
+    "Results": false,
+    "next_scientific_attempt": "REQUIRES_NEW_OWNER_DECISION__NO_RETRY"
+  },
+  "engineering_repair": {
+    "code_candidate": "c8a323dec6662221b377240921408e7905f2e1a9",
+    "code_tree": "73ef8ce15768918eb26b426ba816d8989da504d7",
+    "code_pins": {
+      "worker": "56f6be029551f79657ce5d56c8a06447b9ec5caf0fda497510df9b51b409a874",
+      "supervisor": "e5e33f7c736ddbeaef40455df65c11f6d4d42ecfd128fc209999511cbc3ce455",
+      "support": {
+        "temp31_toy_supervisor.py": "61a60f431eaa5bb6cf539419788299c6cdb1fbf388e916a21d5d55833443c099",
+        "temp31_execution_preflight.py": "a83905dcc8ceb1d5228f679f7be63a084efdf9269215827085c0cc60491baf75",
+        "temp31_call_observer.py": "e318102cdc57a0eb1ccc50022575d4ca16d563352a2aa6eb860b00f1a1bc96fb",
+        "temp31_dormant_assembly.py": "3c88fb81a598d3d6d274f9a168231128d9ee7c94b128b5a4d89ddf80b636825f"
+      }
+    },
+    "report": "CH5_TEMP31_S2_DIAGNOSTIC_STOP_AND_LABEL_REPAIR_20261102.md",
+    "focused_checks_passed": 9,
+    "scientific_retry_authorized": false
+  },
+  "next_attempt_proposal": {
+    "path": "CH5_TEMP31_S2_AFTER_LABEL_REPAIR_PROPOSAL_20261102.json",
+    "sha256": "ae54a9b02f0e0d559a08ab474ac72269cb8aa9b4d2d739cfa433a4c38314f07b",
+    "status": "PENDING_NEW_OWNER_DECISION__NOT_AUTHORIZED"
+  }
 }

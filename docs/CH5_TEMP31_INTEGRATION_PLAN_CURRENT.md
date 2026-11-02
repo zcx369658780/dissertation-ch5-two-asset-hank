@@ -205,3 +205,9 @@ Owner批准上述具体预算后，只启动1个新worker，墙钟1.157秒，源
 [本轮实施/单次S2申请](CH5_TEMP31_LOCKED_WORKER_BINDING_IMPLEMENTATION_20261102.md)及[固定权限记录](CH5_TEMP31_SINGLE_ORIGIN_HA_AUTHORITY_CURRENT.json)已具备。candidate 41eb300...仅本地，新worker/监督器/两测试后593路径，原589/565保持。16项不同检查通过；父/子实际Job约束相互核验，21个累计中性进程均保留；科学分支写成但未执行。环境版本/元数据与10个指定运行文件已核，不导入科学包，不冒称运行依赖或数值通过。
 
 当前owner_approved=FALSE、决定null，S2提案仅等待Owner明确新科学运行选择。拟仅一次合成A/index0、原800格/净19/P0价格及原数值控制，1进程120秒/2GiB、初始化≤1/根≤800、HJB≤1/100迭代，收敛后KFE/汇总各≤1、重试0/后继0；原余7次8格余额不适用。源/环境/域/不收敛/算子/密度/资源/未知返回任何失败即停，原值与检查点LOCAL_ONLY保留。即使诊断完成也不判严格HA或科学接受，真实31省生产兼容/严格判据/GE/IRF与Results仍独立待门。
+
+## 2026-11-02 S2唯一尝试停止；标签修复完成并重新停在Owner门
+
+[停止与工程修复](CH5_TEMP31_S2_DIAGNOSTIC_STOP_AND_LABEL_REPAIR_20261102.md)记录Owner明确授权后的1/1进程：2.875秒、1344159744字节峰值提交内存，NumPy/SciPy与原11源模块加载后在观察器构造DUPLICATE_BINDING停止；网格/初始化/模型根/HJB/KFE/汇总均未进入，无数值结果，退出清理确认。CURRENT=CLOSED_STOP_NO_RETRY，不因历史owner_approved=true续期。
+
+同一行不同生成器共用来源标签的工程缺陷已用两个中性夹具复现并修复；修后9项相关检查通过，阶段与code/global/native保护和限额不变，工程阶段科学导入/worker0。修复candidate c8a323dec6662221b377240921408e7905f2e1a9仅本地，原科学核心/网格/价格/参数/容差保持。固定[新一次提案](CH5_TEMP31_S2_AFTER_LABEL_REPAIR_PROPOSAL_20261102.json)仅请求同输入、1进程120秒/2GiB和同调用上限的新尝试，尚未授权/启动；不重开旧意图，不改旧预算或零自动重试。严格接受、生产兼容选择、31省/GE/IRF与Results仍分开待门。

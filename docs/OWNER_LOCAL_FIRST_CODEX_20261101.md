@@ -581,3 +581,20 @@ AUTHORITY=ENGINEERING_WORKER_PREPARATION_AND_NEUTRAL_PROCESS_TESTS_ONLY__NO_ACTU
 代码候选仅本地，原589和最初565路径保持，现593。固定Owner CURRENT记录明确PENDING/owner_approved=FALSE/decision_record=null，不能由“继续”或调用标志放行。已登记可审阅S2单次提案：A来源地合成首轮、原800格/现有P0价格及参数、1进程含导入120秒/2GiB、初始化≤1与Python/native根≤800、HJB≤1/100迭代、收敛后KFE≤1及汇总≤1，其他生产/31省/GE/IRF/真实数据/MATLAB0，重试0/自动后继0，失败停且保存。此为申请，不是Owner已批准；只有Owner明确新运行同意后才可落不可变决定、绑定固定记录并执行唯一尝试。
 
 科学接受/严格资格/Results不随运行许可自动获得，criteria仍null。初始化3/10余7、工资/补录1/1关闭、旧dirty树/HEAD/index、R12/R13/WASM/未授权保护重绑定及16义务保持；原科学核心未改，无分支删除/main合并/原件清理/全局配置修改。本轮验收是工程自审，不是独立科学评议或科学通过。
+
+## 2026-11-02 Owner批准固定S2单次诊断
+
+OWNER_EXACT_STATEMENT=请继续，我授权。
+AUTHORIZATION_PARENT=7e0fc7bcaefd9a5a61dda727d23c2b73ad02e7ca
+OWNER_DECISION=CH5_TEMP31_S2_OWNER_DECISION_20261102_01.json
+OWNER_DECISION_SHA256=77572df42b18fa401ef1ea940822f1b1893184a7c55c373bcdd1f011f54afa20
+
+批准既定合成A/index0首轮、原20×20×2网格、既定输入和代码41eb300的单次诊断；1进程含导入120秒、2GiB，初始化≤1/Brent各≤800/HJB≤1及100迭代，只有HJB收敛且网格不变才KFE≤1与汇总≤1。重试0、自动后继0，失败/未知保留并停；不改公式/网格/参数/容差。旧预算不动，严格判据null、科学接受/消费者/Results FALSE，其他科学与保护门保持。执行前来源目录摘要、fixture、代码和环境身份均匹配，历史dirty树/index保持。
+
+## 2026-11-02 S2唯一尝试已停止；标签工程修复完成
+
+EXECUTION_REPORT=CH5_TEMP31_S2_DIAGNOSTIC_STOP_AND_LABEL_REPAIR_20261102.md
+EXECUTION_BUDGET=1_OF1_USED__RETRIES0__CLOSED_STOP_NO_RETRY
+REPAIR_CODE=c8a323dec6662221b377240921408e7905f2e1a9__LOCAL_ONLY_NOT_PUSHED
+
+实际单进程2.875秒，峰值提交内存1344159744字节，资源约束与退出清理确认；NumPy/SciPy和原11源已加载，在CallObserver构造被DUPLICATE_BINDING拒绝，网格/初始化/模型根/HJB/KFE/汇总尚未进入。停止原件/账本保留，无数值结果或科学接受。静态定位同一行不同生成器标签冲突，标签唯一性工程修复后相关9项纯工程检查通过（2个新夹具先失败后通过），不放宽保护和调用限制，未重跑科研进程。原授权已用完；新的同输入/同限额单次提案已备，仍须新Owner明确决定，不使用原初始化余额、不自动后继。原科学源码/网格/参数/容差、dirty树/index/旧预算与STOP保持，科学接受/Results FALSE。
