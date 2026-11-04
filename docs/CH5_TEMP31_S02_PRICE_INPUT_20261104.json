@@ -1,0 +1,290 @@
+{
+  "schema": "ch5.temp31.fixed_external_price_input.v1",
+  "point_id": "S02",
+  "base_fixed_plan_sha256": "aea2f06db3bb05bfc3b7ea6ee29e3a46ae2e5cd9f96448ee4e843ee90d2152fc",
+  "base_fixture_sha256": "f8efc2443a2facdcc4720ddf48866a527579623083dbb006b9ace0fd1b5c1a65",
+  "design_reference": "CH5_TEMP31_PRICE_DIAGNOSTIC_DESIGN_20261102.json",
+  "design_sha256": "00487866b05da31f063dda856f545785db897c4dfba9203fdfcce056c609cfd1",
+  "change": {
+    "field": "state.rb",
+    "from": 0.02,
+    "to": 0.015
+  },
+  "fixture_metadata_sha256": "6ebdab1ad8441fbbbcdc1d7f2d29577d6d1603335a90470dceff7082edaa7491",
+  "fixture": {
+    "status": "NOT_AUTHORIZED__NOT_READY_TO_RUN__NO_LAUNCHER_IMPLEMENTED",
+    "purpose": "One fixed synthetic first-origin diagnostic on immutable original HA grid; no production receipt, batch, GE or qualification acceptance",
+    "independent_of_production_option": "Uses existing numerical_bootstrap19 path; need not implement new production guard first",
+    "context_id": "TEMP31_FIRST_ORIGIN_HA_DIAGNOSTIC_PROPOSAL_20261102",
+    "province_order": [
+      "A",
+      "B"
+    ],
+    "origin": "A",
+    "origin_index": 0,
+    "entering_iteration": 1,
+    "generated_after_iteration": null,
+    "calendar_year": null,
+    "scope": "SYNTHETIC_NUMERICAL_GUESS_ONLY__NOT_EMPIRICAL_PROVINCE",
+    "state": {
+      "rah": 0.05,
+      "rb": 0.015,
+      "rb_gap": 0.07,
+      "Tt": 0.1
+    },
+    "wage": {
+      "kind": "NUMERICAL_BOOTSTRAP19",
+      "value": 19.0,
+      "w_initial": 20.0,
+      "tau_legacy_reference": 0.05,
+      "tax_by_destination": [
+        0.05,
+        0.05
+      ],
+      "sigma_destination_origin": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "labor_weights": [
+        1.0
+      ],
+      "new_wage_producer_calls": 0,
+      "not_old_saved_return": "Do not round the saved 19.000000000000004 return into this exact numerical guess"
+    },
+    "parameters": {
+      "rho": 0.05,
+      "gamma_c": 2.0,
+      "phi": 5.0,
+      "chi_0": 0.1,
+      "chi_1": 2.0,
+      "a_bar": 1e-06,
+      "mu_z": 0.0,
+      "sigma_z": 0.0
+    },
+    "grid": {
+      "shape": [
+        20,
+        20,
+        2
+      ],
+      "b_expression": "np.linspace(-2,5,20)",
+      "a_expression": "np.linspace(0,10,20)",
+      "z": [
+        0.8,
+        1.3
+      ],
+      "switch_matrix_expression": "[[-1/3,1/3],[1/3,-1/3]]",
+      "class": "fixed export MatlabFaithfulHJBGrid",
+      "identity": "construct original grid once under future grant, pass the same object through all stages, hash before/after including arrays/dtypes/shapes/strides/flags; no grid conversions or flags changes",
+      "runtime_hash": null,
+      "not_8_cell_fixture": true,
+      "nodes_now_generated": 0
+    },
+    "initializer": {
+      "entry": "temp31_asset_return_initial_arrays",
+      "resource_convention": "V010_TOTAL_WEALTH_NUMERICAL_INITIAL_GUESS",
+      "labor_roots_max": 800,
+      "brent_xtol": 1e-12,
+      "brent_rtol": 1e-12,
+      "brent_maxiter": 100,
+      "upper_bracket": 1024.0,
+      "lower_bracket": "max(0,-resources/wage)+1e-12",
+      "semantic_note": "Numerical total-wealth guess; does not alter two-account drift/transfer/adjustment cost"
+    },
+    "hjb_controls_proposed_from_annual_source": {
+      "delta": 1000.0,
+      "convergence_tolerance": 1e-07,
+      "max_iterations": 100,
+      "drift_tolerance": 1e-12,
+      "not_strict_acceptance_thresholds": true,
+      "new_use_requires_owner_approval": true
+    },
+    "budget_proposal_not_grant": {
+      "worker_processes": 1,
+      "wall_seconds_including_import": 120,
+      "process_memory_limit_bytes": 2147483648,
+      "origin_diagnostic_attempts": 1,
+      "initializer_array_calls": 1,
+      "brent_python_entries_max": 800,
+      "brent_native_calls_max": 800,
+      "hjb_entries": 1,
+      "hjb_linear_solves_max": 100,
+      "local_policy_calls_max": 80000,
+      "kfe_entries_max": 1,
+      "kfe_linear_solves_max": 1,
+      "aggregate_entries_max": 1,
+      "wage_producer_calls": 0,
+      "GE_IRF_calibration_MATLAB_real_data_calls": 0,
+      "retries": 0,
+      "actual_expected_wall_and_memory": "UNKNOWN__CAPS_ARE_PROPOSAL_NOT_MEASUREMENTS",
+      "budget_source": "New Owner HA-specific authorization only; not the old 7 initializer workers or closed wage/capture grants"
+    },
+    "planned_module_loader": {
+      "status": "PASS_STATIC_LOCAL_IMPORT_EDGES_IN_PROPOSED_EXACT_LOADER_SET",
+      "module_count": 11,
+      "modules": [
+        "src/ch5_two_asset_hank/contracts.py",
+        "src/ch5_two_asset_hank/matlab_faithful_operator.py",
+        "src/ch5_two_asset_hank/multi_province/temp31_worksite_tax.py",
+        "src/ch5_two_asset_hank/multi_province/temp31_ha_wage_debug.py",
+        "src/ch5_two_asset_hank/multi_province/temp31_ha_taxfree_bootstrap.py",
+        "src/ch5_two_asset_hank/temp31_netwage_economics.py",
+        "src/ch5_two_asset_hank/multi_province/temp31_asset_return_initializer.py",
+        "src/ch5_two_asset_hank/temp31_netwage_policy.py",
+        "src/ch5_two_asset_hank/temp31_netwage_hjb.py",
+        "src/ch5_two_asset_hank/matlab_faithful_kfe.py",
+        "exports/matlab_faithful_two_asset_ha.py"
+      ],
+      "local_edges": [
+        {
+          "from": "src/ch5_two_asset_hank/multi_province/temp31_ha_wage_debug.py",
+          "to": "src/ch5_two_asset_hank/multi_province/temp31_worksite_tax.py",
+          "line": 11,
+          "type_only": false
+        },
+        {
+          "from": "src/ch5_two_asset_hank/multi_province/temp31_ha_taxfree_bootstrap.py",
+          "to": "src/ch5_two_asset_hank/multi_province/temp31_ha_wage_debug.py",
+          "line": 13,
+          "type_only": false
+        },
+        {
+          "from": "src/ch5_two_asset_hank/multi_province/temp31_ha_taxfree_bootstrap.py",
+          "to": "src/ch5_two_asset_hank/temp31_netwage_economics.py",
+          "line": 204,
+          "type_only": false
+        },
+        {
+          "from": "src/ch5_two_asset_hank/temp31_netwage_economics.py",
+          "to": "src/ch5_two_asset_hank/contracts.py",
+          "line": 7,
+          "type_only": false
+        },
+        {
+          "from": "src/ch5_two_asset_hank/temp31_netwage_economics.py",
+          "to": "src/ch5_two_asset_hank/multi_province/temp31_ha_taxfree_bootstrap.py",
+          "line": 8,
+          "type_only": false
+        },
+        {
+          "from": "src/ch5_two_asset_hank/multi_province/temp31_asset_return_initializer.py",
+          "to": "src/ch5_two_asset_hank/contracts.py",
+          "line": 14,
+          "type_only": false
+        },
+        {
+          "from": "src/ch5_two_asset_hank/multi_province/temp31_asset_return_initializer.py",
+          "to": "src/ch5_two_asset_hank/temp31_netwage_economics.py",
+          "line": 15,
+          "type_only": false
+        },
+        {
+          "from": "src/ch5_two_asset_hank/multi_province/temp31_asset_return_initializer.py",
+          "to": "src/ch5_two_asset_hank/multi_province/temp31_ha_taxfree_bootstrap.py",
+          "line": 16,
+          "type_only": false
+        },
+        {
+          "from": "src/ch5_two_asset_hank/multi_province/temp31_asset_return_initializer.py",
+          "to": "src/ch5_two_asset_hank/temp31_netwage_hjb.py",
+          "line": 19,
+          "type_only": true
+        },
+        {
+          "from": "src/ch5_two_asset_hank/temp31_netwage_policy.py",
+          "to": "src/ch5_two_asset_hank/contracts.py",
+          "line": 9,
+          "type_only": false
+        },
+        {
+          "from": "src/ch5_two_asset_hank/temp31_netwage_policy.py",
+          "to": "src/ch5_two_asset_hank/multi_province/temp31_ha_taxfree_bootstrap.py",
+          "line": 10,
+          "type_only": false
+        },
+        {
+          "from": "src/ch5_two_asset_hank/temp31_netwage_policy.py",
+          "to": "src/ch5_two_asset_hank/temp31_netwage_economics.py",
+          "line": 11,
+          "type_only": false
+        },
+        {
+          "from": "src/ch5_two_asset_hank/temp31_netwage_hjb.py",
+          "to": "src/ch5_two_asset_hank/contracts.py",
+          "line": 11,
+          "type_only": false
+        },
+        {
+          "from": "src/ch5_two_asset_hank/temp31_netwage_hjb.py",
+          "to": "src/ch5_two_asset_hank/multi_province/temp31_ha_taxfree_bootstrap.py",
+          "line": 12,
+          "type_only": false
+        },
+        {
+          "from": "src/ch5_two_asset_hank/temp31_netwage_hjb.py",
+          "to": "src/ch5_two_asset_hank/matlab_faithful_operator.py",
+          "line": 13,
+          "type_only": false
+        },
+        {
+          "from": "src/ch5_two_asset_hank/temp31_netwage_hjb.py",
+          "to": "src/ch5_two_asset_hank/temp31_netwage_policy.py",
+          "line": 14,
+          "type_only": false
+        }
+      ],
+      "external_top_level_modules": [
+        "__future__",
+        "dataclasses",
+        "math",
+        "numpy",
+        "scipy",
+        "typing"
+      ],
+      "normal_package_initializers_excluded_only_in_proposed_isolated_loader": true,
+      "loader_implemented": false,
+      "actual_import_or_dependency_environment_closure_verified": false,
+      "warning": "Module AST import containment does not prove dynamic imports, native/library dependencies or runtime compatibility"
+    },
+    "call_sequence": [
+      "Create durable exclusive intent before launch; parent enforces one process, timeout and memory cap before any scientific entry",
+      "Set up exact local module loader in private namespace without running package __init__, no scientific function replacement or legacy bootstrap",
+      "Verify complete module file pins, environment and original grid/fixture identities under allowed import budget",
+      "Claim single origin attempt before initializer; build existing bootstrap19 inputs and new a*r_a initializer once",
+      "Invoke named net-wage HJB once; record raw converged/statistic and both operators; if nonconverged stop before KFE",
+      "Only after HJB convergence and unchanged grid invoke original KFE on same post_convergence_operator.full once",
+      "Record raw contaminated residual, full original-operator normalized-density diagnostic and unaltered density identities; aggregate once for diagnostics only",
+      "Stop with no next origin, population scaling, firm/outer iteration or scientific acceptance"
+    ],
+    "stop_conditions": [
+      "pin/protection/unknown reparse/environment enforcement failure before science",
+      "attempted undeclared source function or forbidden bootstrap/old square initializer/old HJB",
+      "initializer domain/bracket/slope/nonfinite failure",
+      "HJB exception/nonfinite/nonconverged result",
+      "operator lineage or grid identity changes",
+      "KFE exception, nonfinite or zero normalization factor",
+      "timeout, memory limit, lost worker/witness or incomplete return treated as execution unknown, no retry"
+    ],
+    "runtime_prerequisites_not_met": [
+      "launcher/observer/timeout-memory enforcement and fixture failure tests not implemented",
+      "future concrete input/source/module/environment pins not registered at launch",
+      "HA-specific Owner budget and proposed fixture/numerics approval not present"
+    ],
+    "strict_criteria_reference": null,
+    "strict_thresholds": null,
+    "formal_ha_accepted": false
+  },
+  "meaning": "Exact S02 proposed external rb substitution relative to saved S01; not a run grant or scientific acceptance.",
+  "comparison_input": {
+    "path": "docs/CH5_TEMP31_S01_PRICE_INPUT_20261102.json",
+    "point_id": "S01",
+    "sha256": "a5178cbf9d74df7f9eebd0e2cd51f7e1dfcd0baf6e52db1c0a92c3676f584776",
+    "fixture_sha256": "3722cd0883d495bc774d9bd780efd806d1c4d9648fb585a3bf37dda1a17f9862"
+  }
+}
