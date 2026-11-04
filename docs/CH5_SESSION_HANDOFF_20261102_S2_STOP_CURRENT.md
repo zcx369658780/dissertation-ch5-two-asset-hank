@@ -94,3 +94,14 @@ LATEST_ENGINEERING_REPORT=CH5_TEMP31_HJB_KFE_INTERFACE_AUDIT_20261104.md
 新增限定：历史MATLAB迭代求解前有A行和/homecrit检查，选定Python没有；它不覆盖历史post A。未保存实际迭代A/mu/分支，不能声称原S01/S02的迭代A守恒或恢复检查就会修复。当前五文件来源一致不等于完整跨语言数值语义等价。
 
 推荐先设计最小观测增强（保存已返回迭代/分量A、post A、mu、转移与分支，不额外调用求解器），再与Owner决定边界语义。此轮只交付选项/代价，未修改worker或科学源、未运行测试/模型、未新解码数组；5/5关闭/当前门字节和旧证据保持，严格阈值null/科学接受FALSE。GitHub只读来源认证已完成，写入仍待同步且未重试；历史dirty树本轮未操作。
+
+## 2026-11-04 最新Owner约束与比较：HA算法不可改，观测计划仍待讨论
+
+LATEST_REPORT=CH5_TEMP31_MATLAB_BLACKBOX_AND_NEXT_PLAN_COMPARISON_20261104.md
+HA_ALGORITHM_POLICY=IMMUTABLE_BLACK_BOX__ONLY_EXPLICITLY_ALLOWED_PARAMETER_WORK__GRID_STAYS_LOCKED
+
+Owner再次明确HA程序并非本人编写，不允许更改其算法，最多调整参数；要求先比较MATLAB流程与后续计划，好好讨论是否修改计划。已将该约束写入AGENTS。前报告的边界/算子/归一化修复等仅为历史选项，已撤出当前路线；不能借只读审计发现差异实施修复或恢复旧检查。
+
+已只读比较原MATLAB HA及直接一轮调用者，并核对Python现有公开返回字段。基本流程同为初猜/HJB/重建后置A/KFE/汇总；外层按逐省家户、劳动资本配置、企业与下一轮价格推进。已有初始化、工资税口径、迭代守恒检查、失败后KFE调用及输出权重差异均列明，未宣称两版完全等价。
+
+建议只讨论在HA原调用返回后，外层复制已有公开operator/post/mu/分支字段；不新增HA内部钩子/输出字段/科学调用，不替换或修补输出。如果Owner只接受输入/汇总输出黑箱，可取消该记录候选。尚未改worker或实施观测增强，尚无第6次预算/意图；CURRENT字节保持5/5关闭、严格阈值null/科学接受FALSE，旧预算和保护门保持。科学源/原MATLAB未改，历史dirty树未操作。治理文档仍PENDING_SYNC，未推送或换身份/协议。
