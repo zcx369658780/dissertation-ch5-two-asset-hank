@@ -115,3 +115,15 @@ DECISION_SHA256=7975c4f35307b5fa61433c6ec5e38cad2a53b36ed334d167bdf05e720685fe3d
 Owner明确KFE保留MATLAB原方法，并指令全部HA算法冻结后继续。实际原件为已核验HANK_2ASSETS_HJB.m，Owner.md原措辞保留为引用备注；本次原件和11运行科学模块pins已登记，不创建/重命名原件。使用同次最终漂移重建的post算子，原固定行/raw求解/网格权重归一化不变，不能替换迭代算子或补项救通过。已知外置初始化/净工资及历史检查差异不自动回退或宣称全等价。
 
 算法锁已生效，可继续仅外层既有返回字段保存工程，不修改HA内部或增加科学调用。当前仍5/5关闭、无第6次授权/意图，参数、grid及接受标准不开放；FORMAL_SOURCE_FREEZE和科学接受/Results等FALSE保持。旧预算、原证据与全部保护门保持，GitHub仍待同步。
+
+## 2026-11-04 冻结后外层保存已实现；同S02观测提案待新批准
+
+ENGINEERING_REPORT=CH5_TEMP31_EXISTING_RETURN_OBSERVATION_ENGINEERING_20261104.md
+PENDING_PROPOSAL=CH5_TEMP31_EXISTING_RETURN_OBSERVATION_PROPOSAL_20261104.json
+NEW_CODE=56b0081c112d1c9239797785b7bca484012535cb
+NEW_CODE_TREE=3ad359c878b054fcbb7301d89d833daf677d8bde
+NEW_WORKER_SHA256=4dce5b4abe1dc4137049109930ac0b7a6b9bdabf015b8623c30c212e63f76332
+
+先冻结提交后，仅外层worker在原HJB返回和原见证后保存36个现有公开数组/CSR字段及8矩阵shape。原结果按身份返回，KFE仍用原post，11冻结科学模块不改。8新行为检查、56项限定检查通过；原workerAST去新增方法/调用后一致。1中性进程通过/清理，科学导入/worker0，真实科学采集NOT_RUN。测试中旧worker整文件S01相等断言已按登记范围改为原科学源pins/限额相等，未放宽科学保护。
+
+可审阅新提案仅同S02=(.05,.015,净19)新1进程120秒/2GiB，初始化1/根各800/HJB100、收敛后原KFE/汇总各≤1，失败即停零重试、无S03。用于补缺失的原返回见证，不改算法/参数，不将旧S02价格假设重新判为成功。尚未新批准、未开第6次意图；旧5/5关闭及CURRENT原字节保持。若批准先登记新不可变决定/累计账本，再复核代码/冻结/来源/环境/保护唯一执行。模型代码未推，GitHub仍PENDING_SYNC，全部旧硬门保持。
