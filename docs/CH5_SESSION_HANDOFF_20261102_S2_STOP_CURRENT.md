@@ -105,3 +105,13 @@ Owner再次明确HA程序并非本人编写，不允许更改其算法，最多�
 已只读比较原MATLAB HA及直接一轮调用者，并核对Python现有公开返回字段。基本流程同为初猜/HJB/重建后置A/KFE/汇总；外层按逐省家户、劳动资本配置、企业与下一轮价格推进。已有初始化、工资税口径、迭代守恒检查、失败后KFE调用及输出权重差异均列明，未宣称两版完全等价。
 
 建议只讨论在HA原调用返回后，外层复制已有公开operator/post/mu/分支字段；不新增HA内部钩子/输出字段/科学调用，不替换或修补输出。如果Owner只接受输入/汇总输出黑箱，可取消该记录候选。尚未改worker或实施观测增强，尚无第6次预算/意图；CURRENT字节保持5/5关闭、严格阈值null/科学接受FALSE，旧预算和保护门保持。科学源/原MATLAB未改，历史dirty树未操作。治理文档仍PENDING_SYNC，未推送或换身份/协议。
+
+## 2026-11-04 最新：HA全部算法及KFE原重建/归一化已按Owner锁定
+
+FREEZE_CONTRACT=CH5_TEMP31_HA_ALGORITHM_FREEZE_CURRENT.md
+IMMUTABLE_DECISION=CH5_TEMP31_HA_ALGORITHM_FREEZE_OWNER_DECISION_20261104.json
+DECISION_SHA256=7975c4f35307b5fa61433c6ec5e38cad2a53b36ed334d167bdf05e720685fe3d
+
+Owner明确KFE保留MATLAB原方法，并指令全部HA算法冻结后继续。实际原件为已核验HANK_2ASSETS_HJB.m，Owner.md原措辞保留为引用备注；本次原件和11运行科学模块pins已登记，不创建/重命名原件。使用同次最终漂移重建的post算子，原固定行/raw求解/网格权重归一化不变，不能替换迭代算子或补项救通过。已知外置初始化/净工资及历史检查差异不自动回退或宣称全等价。
+
+算法锁已生效，可继续仅外层既有返回字段保存工程，不修改HA内部或增加科学调用。当前仍5/5关闭、无第6次授权/意图，参数、grid及接受标准不开放；FORMAL_SOURCE_FREEZE和科学接受/Results等FALSE保持。旧预算、原证据与全部保护门保持，GitHub仍待同步。
