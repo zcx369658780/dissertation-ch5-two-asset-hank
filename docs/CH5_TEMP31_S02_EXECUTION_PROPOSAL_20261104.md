@@ -60,3 +60,5 @@ INPUT=CH5_TEMP31_S02_PRICE_INPUT_20261104.json
 CURRENT=CLOSED_COMPLETED_NO_RETRY，原4/4、零重试保持；旧初始化3/10余7、工资/补录各1/1关闭保持。S02本轮科学运行0、S03仍未授权；原科学源码与历史证据不改，未操作或重新盘点历史dirty树，执行前保护复核不省略。模型分支及代码仍本地未推送，仅脱敏输入/提案/进度文档同步GitHub。
 
 FORMAL_SOURCE_FREEZE/consumer_ready/formal_ha_accepted/科学接受/Results/model_activation/REAL_GE均FALSE；R12 STOP、R13未授权、WASM六路径STOP、OWNER_BASELINE_REBIND未授权及16义务保持。Python为主动主线，MATLAB/真实数据/31省/GE/IRF/校准/福利不在本请求内。
+
+同步状态：本地提案已提交；本轮治理分支推送因SSH公钥认证拒绝而失败，PENDING_SYNC，远端交付未确认。保留失败回执，不更换身份/协议/凭据重试。模型分支仍未推送。此同步问题不构成科学运行批准。
