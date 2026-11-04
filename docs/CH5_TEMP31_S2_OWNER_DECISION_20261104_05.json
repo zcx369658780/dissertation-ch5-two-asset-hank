@@ -1,0 +1,137 @@
+{
+  "proposal_id": "TEMP31_S02_RAH005_RB0015_NET19_20261104",
+  "action": "RUN_TEMP31_FIRST_ORIGIN_HA",
+  "code_candidate": "6a3d443840757f3f1e003cbd6554a0c43afa7eb8",
+  "code_tree": "053d1238b8a21236e7d87a3ffaa0d94a500e4e72",
+  "code_pins": {
+    "worker": "67174a715918589b89e9062c2904b05e604d755636e6a827bbeaa4ccdf8492d9",
+    "supervisor": "547954ee618f07dc90c5759ed7005a38c32d2f13a3b94313d57cd6d0db1d71e7",
+    "support": {
+      "temp31_toy_supervisor.py": "61a60f431eaa5bb6cf539419788299c6cdb1fbf388e916a21d5d55833443c099",
+      "temp31_execution_preflight.py": "a83905dcc8ceb1d5228f679f7be63a084efdf9269215827085c0cc60491baf75",
+      "temp31_call_observer.py": "b61a4c46ac47e0e9cabdc5f82ed05ac8bcb2fd84a74b47ecec050343412fdad3",
+      "temp31_dormant_assembly.py": "0aa36f017748959873546e2d2df2916b667bf107c05e4500b1606e905345a431"
+    }
+  },
+  "environment_sha256": "4dd77c75ee2b6743aff07e6875171fcdec3e8f7e32d1c326e81159d0b11256e8",
+  "source_bundle_sha256": "0655861a536372db05ad7f6938d0999763c6135bd2e67b82fc513000cada211b",
+  "fixture_sha256": "6ebdab1ad8441fbbbcdc1d7f2d29577d6d1603335a90470dceff7082edaa7491",
+  "fixed_plan_sha256": "aea2f06db3bb05bfc3b7ea6ee29e3a46ae2e5cd9f96448ee4e843ee90d2152fc",
+  "price_design_sha256": "00487866b05da31f063dda856f545785db897c4dfba9203fdfcce056c609cfd1",
+  "external_price_input": {
+    "path": "docs/CH5_TEMP31_S02_PRICE_INPUT_20261104.json",
+    "point_id": "S02",
+    "sha256": "fd0b02ef1e50130f0a10b24f94bf6026d46c1cd9bfb42a805168f785fd4d8187"
+  },
+  "limits": {
+    "worker_processes": 1,
+    "wall_seconds": 120,
+    "memory_bytes": 2147483648,
+    "origin_attempts": 1,
+    "initializer_calls": 1,
+    "brent_python_max": 800,
+    "brent_native_max": 800,
+    "hjb_calls": 1,
+    "hjb_linear_solves_max": 100,
+    "policy_calls_max": 80000,
+    "kfe_calls_max": 1,
+    "kfe_linear_solves_max": 1,
+    "aggregate_calls_max": 1,
+    "producer_calls": 0,
+    "other_science_calls": 0,
+    "retries": 0
+  },
+  "helper_budgets": {
+    "generic_per_phase_limit_unchanged": 1000000,
+    "hjb_validator_call_bound": 560001,
+    "hjb_validator_nested_code_bound": 3360006,
+    "observer_binding_validation_max": 3360006,
+    "other_core_function_limits": "UNCHANGED",
+    "source11_modules": "BYTE_IDENTICAL; do not relocate validation or memoize source calls"
+  },
+  "stop_policy": [
+    "any input/source/environment/protection mismatch",
+    "initializer domain/root/slope failure",
+    "HJB exception/nonfinite/nonconverged",
+    "grid/operator lineage change",
+    "KFE or density/normalization failure",
+    "timeout/memory/process/observer loss",
+    "unknown/missing return"
+  ],
+  "auto_next": false,
+  "scientific_acceptance": false,
+  "consumer_ready": false,
+  "formal_ha_accepted": false,
+  "Results": false,
+  "schema": "ch5.temp31.owner_decision.v1",
+  "date": "2026-11-04T19:36:25.071999+08:00",
+  "decision_type": "NEW_FINITE_HA_DIAGNOSTIC",
+  "owner_exact_statement": "好的我授权，请继续",
+  "authorization_context": "Explicit approval immediately following the frozen S02-only proposal, one process120s/2GiB/maxHJB100, zero retry and no S03",
+  "authorization_interpretation": "New fifth finite grant; register and verify first, execute one original chain and saved-array diagnostics, then stop",
+  "approved_proposal_path": "docs/CH5_TEMP31_S02_EXECUTION_PROPOSAL_20261104.json",
+  "approved_proposal_sha256": "804f5fa4a5b18bbcd77110068b8ab680c981922e4b15f4300b1234c0828b034c",
+  "intent_id": "temp31_s2_s02_rah005_rb0015_net19_20261104",
+  "mode": "science",
+  "case": "return",
+  "previous_attempts_used": 4,
+  "new_attempt_limit": 1,
+  "total_attempt_limit": 5,
+  "prior_decisions_closed": [
+    {
+      "record": "CH5_TEMP31_S2_OWNER_DECISION_20261102_01.json",
+      "sha256": "77572df42b18fa401ef1ea940822f1b1893184a7c55c373bcdd1f011f54afa20"
+    },
+    {
+      "record": "CH5_TEMP31_S2_OWNER_DECISION_20261102_02.json",
+      "sha256": "bfb8a75a4ed1a303079373d57ea81189b4c745844bf1ac6016dc243167973944"
+    },
+    {
+      "record": "CH5_TEMP31_S2_OWNER_DECISION_20261102_03.json",
+      "sha256": "cad0a70b875bc41dd28dd95f25212f3648d002754242384b23c081747a66562e"
+    },
+    {
+      "record": "CH5_TEMP31_S2_OWNER_DECISION_20261103_04.json",
+      "sha256": "45597c53e677a3dc7e80d151edcf452fc59ef0cf17316eac6da24f1590d49de8"
+    }
+  ],
+  "reserve_points_authorized": false,
+  "only_scientific_input_change_from_S01": {
+    "field": "state.rb/consumer.r_b",
+    "previous": 0.02,
+    "approved": 0.015
+  },
+  "proposed_point": {
+    "rah": 0.05,
+    "rb": 0.015,
+    "net_wage": 19.0,
+    "rb_gap": 0.07,
+    "borrowing_rate_at_negative_b": 0.085
+  },
+  "endpoints": {
+    "primary": "original_post_operator_row_sum_inf = max(abs(A_post @ 1))",
+    "primary_comparison": "S02 value minus saved S01 4.296031910596614; record exact difference, no new acceptance threshold",
+    "prerequisites": "Actual HJB converged true under original value-change<1e-7 and max100, then original KFE/aggregate returned under same operator lineage",
+    "secondary": [
+      "conditional mass at b=5",
+      "original max(abs(A_post.T @ g))",
+      "all row-sum defect locations",
+      "residual at replaced row and other equations",
+      "mass/density finite/negative mass",
+      "full saved HJB trajectory and actual returned fields"
+    ],
+    "auxiliary_bins": "1e-10 row-sum and +/-1e-12 sign bins for continuity with prior audit, not scientific acceptance thresholds",
+    "unavailable": "Do not reconstruct missing drift or iteration operators by rerunning",
+    "analysis_unit": "One deterministic fixed synthetic point; iterations/grid cells are not independent samples",
+    "statistical_tests": "NOT_APPLICABLE; no p-values/power/seed replication"
+  },
+  "outcome_rules": {
+    "directional_support": "HJB converges and both primary row-sum norm and upper-b mass are strictly lower; still not formal HA acceptance",
+    "falsifier": "Valid HJB100 nonconvergence, or after valid chain primary norm >=4.296031910596614 or upper-b mass >=0.852467456654401, fails this joint directional prediction",
+    "mixed": "Record each change and retain mixed outcome; do not substitute another primary or cherry-pick historical comparisons",
+    "rounding": "Changes comparable to arithmetic accumulation variation are inconclusive, not positive evidence",
+    "inconclusive": "Timeout/memory/domain/observer/pin/grid/return failure; keep bounded failure, no retry or label of scientific nonconvergence",
+    "completion": "Stop after the one chain and saved-array diagnostics, whatever the outcome; no S03, firm/GE or 31-origin successor"
+  },
+  "failure_policy": "Spend sole dispatch, preserve bounded failure, no retry or renamed successor"
+}
