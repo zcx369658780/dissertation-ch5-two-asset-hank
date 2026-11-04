@@ -1,4 +1,4 @@
-# CH5 唯一短状态 · 2026-11-04
+# CH5 唯一短状态 · 2026-11-05
 本页由 AGENTS.md 唯一指向。Owner 决策：OWNER_LOCAL_FIRST_CODEX_20261101.md；工作流：CH5_ASTRA_WORKFLOW_CURRENT.md。
 这是当前工程进度与治理状态；不替代科学合同，也不授权新的科学运行或原件上传。
 
@@ -44,8 +44,8 @@ G1_MOVE_RENAME_BUDGET=0
 G1_RERUN_THIS_ALIGNMENT=NOT_RUN
 
 ## 路线定位与下一工程目标
-ROADMAP_POSITION=TEMP31_S02_HJB_CONVERGED22__BOUNDARY_MASS_SLIGHTLY_LOWER_BUT_CONSERVATION_RESIDUAL_HIGHER__STRICT_HA_NOT_CERTIFIED__5_OF5_USED
-NEXT_ENGINEERING_TARGET=OWNER_DECISION_ON_SAME_S02_EXISTING_RETURN_OBSERVATION__ENGINEERING56_PASS__FROZEN_HA_UNCHANGED__NO_NEW_RUN
+ROADMAP_POSITION=TEMP31_S02_EXISTING_RETURN_CAPTURED__HJB22__POST_BOUNDARY_CONSERVATION_AND_STATIONARITY_GAP__STRICT_HA_NOT_CERTIFIED__6_OF6_CLOSED
+NEXT_ENGINEERING_TARGET=DISCUSS_SAVED_ITERATION_POST_BOUNDARY_EVIDENCE_AND_PARAMETER_ONLY_ROUTE__NO_NEW_RUN_OR_SUCCESSOR
 G1B_STATUS=DEVELOPMENT_SOURCE_ADOPTED__565_CODE_PATHS_MATERIALIZED__FULL_ASSET_RECOVERY_AND_SCIENCE_INCOMPLETE
 G1B_PUBLIC_ALLOWLIST=NOT_FROZEN
 G1B_SCOPE_CHECK_PARENT=700383670711dc218451ba6e001709f81db556dd
@@ -419,3 +419,19 @@ EXISTING_RETURN_CAPTURE=36_EXISTING_FIELDS_PLUS8_MATRIX_SHAPES__NO_COMPUTATION_O
 仅外层worker增加原返回后的保存方法，1测试新增/1相关回归更新；11冻结科学模块、MATLAB原件、监督器/观察器/限额、原KFE接线/归一化和输入/网格未改。AST剔除新增方法/调用后全部原worker语句一致；原对象/CSR引用保持，缺字段不重建、写入失败停止、已有文件不覆盖。56限定检查通过、1中性进程资源/退出确认，科学导入/worker0；真实科学数组新保存路径NOT_RUN。
 
 已备相同S02一次120秒/2GiB/零重试的新观测提案，目标为补既有公开返回值而非调参或重写旧价格假设。新代码/来源/输入/环境/算法冻结pins齐，仍需Owner新具体决定及累计账本；当前门字节保持5/5关闭、S03及第6次意图0。严格标准/接受/全部旧保护保持，GitHub仍待同步，无推送重试。
+
+## 2026-11-05 第6次同S02观测完成；关闭后只读分析并停止
+
+OWNER_EXACT_STATEMENT=好的我授权
+LATEST_REPORT=CH5_TEMP31_S02_EXISTING_RETURN_OBSERVATION_RESULT_20261105.md
+IMMUTABLE_SIXTH_DECISION=CH5_TEMP31_S2_OWNER_DECISION_20261105_06.json
+SIXTH_DECISION_SHA256=d312214ba37980330e3f2c101a78b187907ebb16a6152afabfc109b74baaad2e
+CURRENT=CLOSED_COMPLETED_NO_RETRY__6_OF6_USED__RETRY0__NO_SUCCESSOR
+
+本次新具体批准绑定既定同S02原输入/原网格/原限额及算法冻结，未续用旧意图。先登记不可变决定/累计账本，复核11科学源、代码/fixture/环境及历史保护后唯一执行。24.406秒/峰值1,377,935,360 bytes/exit0，Job资源和退出清理确认。初始化1、根各800、HJB22轮true/变化2.126348430664393e-9，原KFE/汇总各1；36已有字段/8矩阵shape保存完成，原对象/原post接线和HA算法保持。
+
+与第5次保存的5个NPZ共29数组header/值逐项完全相同，最大差0。迭代full行和范数.47898600898711785/38缺口/8负非对角；post full行和范数4.301780456264862/14缺口/负非对角0。明显行和缺口均在b上边界；post的14格逐一对应mu_b向外，标签F/B，row_sum=-mu_b/db，全网格对应误差≤5.94e-15。原KFE完整驻定残差3.6435094863120474、上b质量.8514208544985201；HJB收敛与固定行求解/归一化完成不等于严格HA。
+
+41原文件解码前封存；双路径矩阵/标签算术及7格式夹具核验，离线科学导入/求解0。首次initial_value存储核查失败系原copy的C/F布局不同、逐格差0，失败脚本/发现保留；只改离线读法，未重跑模型。前56工程检查未重复。无独立科学评议，严格阈值null，科学接受/Results等FALSE，旧S02联合价格假设仍不受支持。
+
+下一步先与Owner讨论黑箱价格路线及后置算子/严格驻定目标；未创建S03、新点位提案或后继意图。旧初始化3/10余7和工资/补录1/1关闭保持，算法锁/原件/历史dirty树及全部保护STOP不变。模型源码仍本地，GitHub PENDING_SYNC，未推送重试或身份/协议/API绕过。所有原载荷LOCAL_ONLY，停止。
