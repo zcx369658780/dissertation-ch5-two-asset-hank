@@ -45,7 +45,7 @@ G1_RERUN_THIS_ALIGNMENT=NOT_RUN
 
 ## 路线定位与下一工程目标
 ROADMAP_POSITION=TEMP31_S02_EXISTING_RETURN_CAPTURED__HJB22__POST_BOUNDARY_CONSERVATION_AND_STATIONARITY_GAP__STRICT_HA_NOT_CERTIFIED__6_OF6_CLOSED
-NEXT_ENGINEERING_TARGET=DISCUSS_SAVED_ITERATION_POST_BOUNDARY_EVIDENCE_AND_PARAMETER_ONLY_ROUTE__NO_NEW_RUN_OR_SUCCESSOR
+NEXT_ENGINEERING_TARGET=OWNER_DECISION_ON_EXACT_S03_ONE_PROCESS__ENGINEERING34_PASS__6_OF6_CLOSED
 G1B_STATUS=DEVELOPMENT_SOURCE_ADOPTED__565_CODE_PATHS_MATERIALIZED__FULL_ASSET_RECOVERY_AND_SCIENCE_INCOMPLETE
 G1B_PUBLIC_ALLOWLIST=NOT_FROZEN
 G1B_SCOPE_CHECK_PARENT=700383670711dc218451ba6e001709f81db556dd
@@ -435,3 +435,20 @@ CURRENT=CLOSED_COMPLETED_NO_RETRY__6_OF6_USED__RETRY0__NO_SUCCESSOR
 41原文件解码前封存；双路径矩阵/标签算术及7格式夹具核验，离线科学导入/求解0。首次initial_value存储核查失败系原copy的C/F布局不同、逐格差0，失败脚本/发现保留；只改离线读法，未重跑模型。前56工程检查未重复。无独立科学评议，严格阈值null，科学接受/Results等FALSE，旧S02联合价格假设仍不受支持。
 
 下一步先与Owner讨论黑箱价格路线及后置算子/严格驻定目标；未创建S03、新点位提案或后继意图。旧初始化3/10余7和工资/补录1/1关闭保持，算法锁/原件/历史dirty树及全部保护STOP不变。模型源码仍本地，GitHub PENDING_SYNC，未推送重试或身份/协议/API绕过。所有原载荷LOCAL_ONLY，停止。
+
+## 2026-11-05 接续：S03精确价格提案就绪，6/6门保持关闭
+
+OWNER_EXACT_STATEMENT=可以请继续
+SCOPE=保存证据讨论与具体后继工程准备，不是第7次科学批准
+ROUTE_REVIEW=CH5_TEMP31_BLACKBOX_PRICE_ROUTE_REVIEW_20261105.md
+S03_PROPOSAL=CH5_TEMP31_S03_EXECUTION_PROPOSAL_20261105.json
+S03_PROPOSAL_SHA256=e23e318fe40105bdd35eee3a2f3b56dc59333b8ce053c62e204e9ba96e41e7f1
+S03_CODE_CANDIDATE=da92d31a96572ae43eb187698fbf40321029cfda
+S03_CODE_TREE=d76835226dc2e2a689f4be43f5a4c803aa9f87df
+S03_RUNTIME=NOT_RUN__OWNER_RUN_DECISION_PENDING__NO_SEVENTH_DECISION_OR_INTENT
+
+候选S03=(rah .05,rb .025,净19)，与原储备点/历史R2 D04一致；相对保存S01仅rb升.005，原负b借款利率同步变.095，不隔离归因某一渠道。历史31点严格驻定认证0、初始化与当前不同，不能保证新点成功或推断连续域。新H03固定检验原HJB收敛且后置最大绝对行和低于保存S01的4.296031910596614；其他原驻定/边界质量/迭代符号问题另列，方向改善不等于稳态合格。旧S02联合假设不改写。
+
+只扩展外层监督器精确S03白名单和新增1测试，原worker、11科学模块/限额/Job/其它监督器AST不改。9新测试及相关S01/S02/返回保存回归共34通过，失败错误skip0；科学导入/进程/中性进程0。研究方案启发式公平/可证伪通过，消融warning保留、功效skip；非独立科学审查或完整研究包接受。代码候选仅本地。
+
+拟请求未来新1进程120秒/2GiB、初始化≤1/根各≤800/HJB100、原收敛后原KFE/汇总各≤1，36已有字段见证，失败即停、零重试、分析后停。待Owner批准该具体方案后才登记第7份新决定/累计账本；CURRENT原字节保持6/6关闭、无新科学意图，不借旧余额。算法锁/旧预算/历史保护与全部STOP保持，严格阈值null及科学接受/Results FALSE。GitHub PENDING_SYNC，无新推送或绕过。

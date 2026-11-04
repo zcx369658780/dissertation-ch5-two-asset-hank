@@ -1,0 +1,211 @@
+{
+  "action": "RUN_TEMP31_FIRST_ORIGIN_HA",
+  "source_bundle_sha256": "0655861a536372db05ad7f6938d0999763c6135bd2e67b82fc513000cada211b",
+  "selected_development_source": "56447829ce0e6c3c85552c53c351b26a2452a4bd",
+  "fixed_plan_sha256": "aea2f06db3bb05bfc3b7ea6ee29e3a46ae2e5cd9f96448ee4e843ee90d2152fc",
+  "price_design_sha256": "00487866b05da31f063dda856f545785db897c4dfba9203fdfcce056c609cfd1",
+  "limits": {
+    "worker_processes": 1,
+    "wall_seconds": 120,
+    "memory_bytes": 2147483648,
+    "origin_attempts": 1,
+    "initializer_calls": 1,
+    "brent_python_max": 800,
+    "brent_native_max": 800,
+    "hjb_calls": 1,
+    "hjb_linear_solves_max": 100,
+    "policy_calls_max": 80000,
+    "kfe_calls_max": 1,
+    "kfe_linear_solves_max": 1,
+    "aggregate_calls_max": 1,
+    "producer_calls": 0,
+    "other_science_calls": 0,
+    "retries": 0
+  },
+  "helper_budgets": {
+    "generic_per_phase_limit_unchanged": 1000000,
+    "hjb_validator_call_bound": 560001,
+    "hjb_validator_nested_code_bound": 3360006,
+    "observer_binding_validation_max": 3360006,
+    "other_core_function_limits": "UNCHANGED",
+    "source11_modules": "BYTE_IDENTICAL; do not relocate validation or memoize source calls"
+  },
+  "HA_algorithm_lock": true,
+  "algorithm_freeze_decision": "CH5_TEMP31_HA_ALGORITHM_FREEZE_OWNER_DECISION_20261104.json",
+  "algorithm_freeze_sha256": "7975c4f35307b5fa61433c6ec5e38cad2a53b36ed334d167bdf05e720685fe3d",
+  "strict_criteria_reference": null,
+  "strict_thresholds": null,
+  "FORMAL_SOURCE_FREEZE": false,
+  "consumer_ready": false,
+  "formal_ha_accepted": false,
+  "scientific_acceptance": false,
+  "Results": false,
+  "model_activation": false,
+  "REAL_GE": false,
+  "preserved_protections": "R12 STOP/R13 NOT_AUTHORIZED/WASM6 STOP/OWNER_BASELINE_REBIND NOT_AUTHORIZED/16 obligations unchanged",
+  "schema": "ch5.temp31.s03_blackbox_price_proposal.v1",
+  "proposal_id": "TEMP31_S03_RAH005_RB0025_NET19_20261105",
+  "date": "2026-11-05",
+  "status": "ENGINEERING_READY__OWNER_RUN_DECISION_PENDING",
+  "owner_run_approved": false,
+  "owner_continuation_statement": "可以请继续",
+  "authorization_interpretation": "Continue saved-evidence discussion and prospective exact-point preparation; not approval of an unspecified seventh scientific grant",
+  "code_candidate": "da92d31a96572ae43eb187698fbf40321029cfda",
+  "code_tree": "d76835226dc2e2a689f4be43f5a4c803aa9f87df",
+  "code_pins": {
+    "worker": "4dce5b4abe1dc4137049109930ac0b7a6b9bdabf015b8623c30c212e63f76332",
+    "supervisor": "cf98aef3e8e87d9322f5e5749bf044b60cae04f3916e0cffd362a3e9cd1794f6",
+    "support": {
+      "temp31_toy_supervisor.py": "61a60f431eaa5bb6cf539419788299c6cdb1fbf388e916a21d5d55833443c099",
+      "temp31_execution_preflight.py": "a83905dcc8ceb1d5228f679f7be63a084efdf9269215827085c0cc60491baf75",
+      "temp31_call_observer.py": "b61a4c46ac47e0e9cabdc5f82ed05ac8bcb2fd84a74b47ecec050343412fdad3",
+      "temp31_dormant_assembly.py": "0aa36f017748959873546e2d2df2916b667bf107c05e4500b1606e905345a431"
+    }
+  },
+  "environment_sha256": "4dd77c75ee2b6743aff07e6875171fcdec3e8f7e32d1c326e81159d0b11256e8",
+  "fixture_sha256": "7af86fe6e2cbedef49d68d83d64f1b5f5c27d2cdd114b2283ad5119c9ff81a27",
+  "external_price_input": {
+    "path": "docs/CH5_TEMP31_S03_PRICE_INPUT_20261105.json",
+    "point_id": "S03",
+    "sha256": "0feb89446ba4c658d6c8b846183fabb88dbb0340d2a8e475a842674794ffc1d5"
+  },
+  "intent_id_when_approved": "temp31_s2_s03_rah005_rb0025_net19_20261105",
+  "question": "At fixed rah .05 and net wage19, does rb .02 -> .025 retain original HJB convergence and lower original post-operator row-sum defect relative to saved S01?",
+  "hypothesis_id": "H03_PROSPECTIVE_DIRECTION_ONLY",
+  "hypothesis": "HJB returns converged true and max(abs(A_post @ 1)) < saved S01 4.296031910596614",
+  "hypothesis_status": "PROSPECTIVE_NOT_RUN__NO_CLAIM_OF_COMPLETE_KFE_REPAIR",
+  "historical_reference": {
+    "point": "R2/D04",
+    "ref": "ffb156712e56bd2fe24924ba40295858ad67e18f",
+    "hjb_iterations": 16,
+    "original_stationarity_residual": 0.3184571,
+    "upper_b_mass": 0.25682885,
+    "strict_stationarity_certified": false,
+    "initializer": "Historical return-squared, unlike current approved a*r_a"
+  },
+  "control": {
+    "point": "S01",
+    "reuse_saved_only": true,
+    "rerun": false,
+    "rah": 0.05,
+    "rb": 0.02,
+    "net_wage": 19,
+    "hjb_iterations": 25,
+    "hjb_converged": true,
+    "hjb_value_change": 3.85018072979193e-10,
+    "original_operator_row_sum_inf": 4.296031910596614,
+    "original_stationarity_residual_inf": 3.618851426605556,
+    "upper_b_mass": 0.852467456654401,
+    "report": "CH5_TEMP31_S01_KFE_OFFLINE_AUDIT_20261103.md",
+    "report_sha256": "d58f41e1bd86fc2febbde1eebb189c256878c381aaa045664e40d1d0299b0ad6"
+  },
+  "saved_lower_neighbor": {
+    "point": "S02",
+    "reuse_saved_only": true,
+    "rb": 0.015,
+    "hjb_iterations": 22,
+    "operator_row_sum_inf": 4.301780456264862,
+    "original_stationarity_residual_inf": 3.6435094863120474,
+    "upper_b_mass": 0.8514208544985201,
+    "joint_hypothesis_supported": false
+  },
+  "proposed_point": {
+    "rah": 0.05,
+    "rb": 0.025,
+    "net_wage": 19.0,
+    "rb_gap": 0.07,
+    "borrowing_rate_at_negative_b": 0.095
+  },
+  "one_factor_comparison": "Relative to saved S01 only rb changes .02 -> .025; relative to original P0 rah and rb both differ. No recomputation of controls.",
+  "channels": "Both nonnegative-b lending return and negative-b borrowing return rb+gap change; do not isolate either channel. Same initializer algorithm recomputes new price-dependent arrays.",
+  "endpoints": {
+    "primary": "max(abs(A_post @ 1)); after original HJB-converged admission and same original chain",
+    "primary_comparison": "S03 minus saved S01 4.296031910596614; negative is directional only, never strict acceptance",
+    "secondary": [
+      "max(abs(A_post.T @ original normalized density)) versus saved S01 3.618851426605556",
+      "upper-b conditional mass versus saved S01 .852467456654401, reported separately; no prediction it decreases",
+      "same-return iteration/post full and bb/aah/bswitch row sums, entry differences and negative offdiagonals",
+      "boundary mu_b/mu_a, original Unicode labels and exact defect locations",
+      "original modified-system residual, mass and negative mass"
+    ],
+    "measurement": "Copy existing 36 public returned arrays/CSR vectors and8matrix shapes; stdlib saved-array CSR and dense arithmetic; no new policy/operator/solver call",
+    "auxiliary_bins": "abs(row sum)>1e-10, offdiag<−1e-12 and drift sign bins ±1e-12 are exploratory diagnostics, not new acceptance tolerances",
+    "analysis_unit": "One deterministic synthetic point; grid cells, iterations and repeated S02 witness are not independent statistical observations",
+    "statistical_tests": "NOT_APPLICABLE; no p-values or sample-size/power claims",
+    "strict_scientific_qualification": "Still unbound; report HJB criterion, iteration-generator signs, post conservation and original stationarity separately; all acceptance flags false"
+  },
+  "outcome_rules": {
+    "directional_support": "Valid original chain with HJB converged and primary strictly below 4.296031910596614; report exact delta; still not a solved steady state",
+    "falsifier": "Valid HJB return is nonconverged by100 iterations, or valid original chain returns primary>=4.296031910596614; H03 not supported. Do not rescue with a secondary endpoint.",
+    "mixed": "Primary improves while original stationary residual or mass/sign diagnostics worsen: retain mixed outcome; no strict acceptance",
+    "arithmetic_uncertainty": "If a difference is comparable to separately recorded CSR/dense arithmetic variation, call direction inconclusive; do not add an acceptance tolerance",
+    "inconclusive": "Timeout/memory/domain/observer/pin/grid/capture/unknown or missing return stops; do not call these100-iteration nonconvergence",
+    "completion": "Whatever result, seal, offline analysis and stop; no automatic next price or widened grid"
+  },
+  "runtime_admission": "UNCHANGED: original HJB convergence and unchanged grid -> original same-return post KFE and aggregate. Qualification diagnostics do not change runtime algorithms or add admission branches.",
+  "stop_policy": [
+    "any input/source/environment/protection mismatch",
+    "initializer domain/root/slope failure",
+    "HJB exception/nonfinite/nonconverged",
+    "grid/operator lineage change",
+    "KFE or density/normalization failure",
+    "timeout/memory/process/observer loss",
+    "unknown/missing return",
+    "existing-return capture write/schema/missing-field failure"
+  ],
+  "engineering_checks": {
+    "unique_focused_checks": 34,
+    "new_tests": 9,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "tracer": "Exact S03 rejected before implementation, then focused suite passed",
+    "changed_code_paths": [
+      "src/ch5_two_asset_hank/multi_province/temp31_worker_supervisor.py",
+      "tests/test_temp31_s03_price_input.py"
+    ],
+    "worker_unchanged": true,
+    "frozen_scientific_modules_unchanged": 11,
+    "all_other_supervisor_AST_identical": true,
+    "scientific_imports": 0,
+    "scientific_workers": 0,
+    "neutral_processes": 0,
+    "independent_scientific_review": "NOT_RUN"
+  },
+  "new_attempts_requested": 1,
+  "previous_attempts_used": 6,
+  "total_attempts_if_approved": 7,
+  "current_authority": "CLOSED_COMPLETED_NO_RETRY",
+  "current_authority_bytes_unchanged": true,
+  "decision_created": false,
+  "scientific_intent_created": false,
+  "S03_authorized": false,
+  "auto_next": false,
+  "retries": 0,
+  "predispatch_requirements": [
+    "New explicit Owner approval of this exact S03 one-process120s/2GiB/zero-retry point",
+    "Register a new immutable seventh decision and cumulative ledger; do not reuse closed sixth intent",
+    "Recheck final code/source/fixture/environment/algorithm freeze/protection before one dispatch"
+  ],
+  "old_budgets": {
+    "S2": "6/6 consumed and closed; proposed seventh is separate",
+    "initializer": "3/10 used,7 reserved in original8-cell scope",
+    "wage_capture": "1/1 closed each"
+  },
+  "alternatives_deferred": [
+    "D01/D02 change rah and historically have higher original residual; not automatic backups",
+    "D10 historical residual .06356418 is lower but rah/rb/net wage all change; current bootstrap19 does not admit net20; no wage-interface bypass",
+    "No continuous price box, scanning, interpolation, initializer change, grid or algorithm change"
+  ],
+  "plan_review": {
+    "tool": "light-research-plan plan_gate.py",
+    "exit_code": 0,
+    "verdict": "warn",
+    "fair_baseline": "pass",
+    "falsifiable": "pass",
+    "ablation_isolation": "warn retained: one fixed external-price diagnostic, no component novelty or isolated lending/borrowing mechanism claim; immutable HA excludes component ablations",
+    "statistical_power": "skip: deterministic fixed point; no statistical independent-unit claim",
+    "scope": "Heuristic review only; not full research-package acceptance, scientific review, grant or Results",
+    "full_research_package_gate": "NOT_RUN__BOUNDED_PROPOSAL_ONLY"
+  }
+}
