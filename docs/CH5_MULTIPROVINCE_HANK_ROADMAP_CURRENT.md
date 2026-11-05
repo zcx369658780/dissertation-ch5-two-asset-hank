@@ -1,11 +1,11 @@
 # 第五章Python多省份HANK主路线图：HA黑箱与外层闭环
 
-最新O3进度：[A1 H/p/E接口与预给定劳动矩阵适配](CH5_O3_A1_SCALE_INTERFACE_IMPLEMENTATION_20261105.md)已完成15项限定检查。H绑定进入快照，p须显式声明来源/同H分母，E=pH；原H尺度劳动矩阵按来源列乘p一次，不归一化，p=0保留零列。现有记录仍不足以提供可采纳的31省p，真实数据和完整O3未完成；本轮未改旧科学源码或HA，实际科学调用0。
+最新O3进度：[预给定阶段结果的独立外层一轮拼装](CH5_O3_SUPPLIED_ONE_TURN_ASSEMBLY_20261105.md)已完成23项限定检查，连接O2现有字段视图、A1劳动、预给定资本/企业/净工资/货币与已定财政账，生成只读候选下一轮。O2仅字段/AST兼容，原工厂未执行；真实生产者调度未实现、模型运行0，原pending门仍拒绝HA消费。下一目标是具体有限实调用验证方案，不再追加同用途包装层。
 
 
 DATE=2026-11-05
 DECISION_ID=CH5_MULTIPROVINCE_OUTER_CLOSURE_OWNER_ROUTE_20261105
-STATUS=OWNER_APPROVED_MAINLINE__A1_SCALE_AND_SUPPLIED_LABOR_ADAPTATION_ENGINEERING_COMPLETE
+STATUS=OWNER_APPROVED_MAINLINE__SUPPLIED_ONE_TURN_ASSEMBLY_ENGINEERING_COMPLETE
 ACTIVE_RESEARCH_MAINLINE=PYTHON_MULTI_PROVINCE_HANK_OUTER_CLOSURE
 FORMER_TEMP31_DIAGNOSTIC_ROUTE=HISTORICAL_CLOSED__NOT_ACTIVE_MAINLINE
 NEW_SCIENTIFIC_RUN_GRANT=NONE
@@ -42,7 +42,7 @@ Local-first职责保持：Codex负责具体授权内工程，Owner保留经济�
 
 | 阶段 | 目标与限定范围 | 交付及完成标志 | 运行安排 |
 | --- | --- | --- | --- |
-| 1 外层生产链接线 | 固定来源中的外层入口、价格/净工资、省份状态 → HA黑箱 → 劳动与资本配置、企业、汇总及价格更新 | 完整调用与数据流图；逐项标记已接通、缺接线、待Owner经济口径；明确省份方向、维度、单位、工资税单次应用及外层残差入口 | 静态定位、O1输入结构和O2批次工程已完成；O3实际组合/运行未执行 |
+| 1 外层生产链接线 | 固定来源中的外层入口、价格/净工资、省份状态 → HA黑箱 → 劳动与资本配置、企业、汇总及价格更新 | 完整调用与数据流图；逐项标记已接通、缺接线、待Owner经济口径；明确省份方向、维度、单位、工资税单次应用及外层残差入口 | 静态定位、O1/O2接口、A1与财政及预给定阶段一轮拼装已完成；真实O3调度/运行未执行 |
 | 2 数据与校准口径 | 对齐31省居民地/工作地、人口/就业/有效劳动、工资、税收及资产口径 | 参数分为文献给定、数据构造、待校准三类，逐项对应观测矩；复用既有来源资格与缺口记录，不以合成值冒充观测 | 可与阶段1并行准备方案；真实数据读取、正式采用和校准另按具体授权 |
 | 3 最小外层闭环 | 保持HA原样，贯通价格 → 各省HA → 配置与企业 → 价格更新 | 有界多省一轮接线验证；随后按依赖推进31省一轮与外层稳态；每轮可追溯经济汇总、市场清算残差和退出原因 | 未来有具体代码/输入/次数/时限/退出保护的前瞻有限授权后执行；不复用旧7/7 |
 | 4 31省基准经济 | 以确定的数据口径和参数构建政策比较基准 | 校准目标表、观测矩拟合、省际基准汇总与外层均衡记录；接受口径由Owner确定，不预填通过 | 校准及真实均衡运行须具体科学决定；当前NOT_RUN |
@@ -54,9 +54,11 @@ Local-first职责保持：Codex负责具体授权内工程，Owner保留经济�
 
 外层调用链及已接通/缺接线/待Owner经济口径矩阵已完成：[缺口定位与最小闭环方案](CH5_OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN_20261105.md)。静态源码定位不等于生产接线、数值运行或均衡接受；本次未导入/执行科学代码。
 
-NEXT_ENGINEERING_TARGET=O3_INDEPENDENT_ONE_TURN_COMPOSITION
-NEXT_TASK_TITLE=连接O2批次、原工作地劳动结果、A1尺度与资本企业工资财政，保持企业E和家庭H分离
-NEXT_TASK_STATUS=A1_SCALE_INTERFACE15_CHECKS_PASS__REAL_P_AND_FULL_O3_NOT_DONE
+NEXT_ENGINEERING_TARGET=O3_BOUNDED_REAL_COMPONENT_VALIDATION_PLAN
+NEXT_TASK_TITLE=固定外层组件源码/输入/次数/时限及退出保护，准备具体有限实调用验证方案
+NEXT_TASK_STATUS=SUPPLIED_ONE_TURN23_CHECKS_PASS__O2_NATIVE_FACTORY_AND_REAL_DISPATCH_NOT_RUN
+
+[预给定一轮拼装记录](CH5_O3_SUPPLIED_ONE_TURN_ASSEMBLY_20261105.md)已交付，O2只作现有字段视图/AST兼容，新净工资原pending消费门保持关闭；不是完整生产执行或科学接受。下一步准备实调用方案，不自动执行或重开额度。
 
 [A1尺度接口记录](CH5_O3_A1_SCALE_INTERFACE_IMPLEMENTATION_20261105.md)已完成历史角色恢复和预给定H/p/E、原劳动矩阵按列乘p的工程片；真实p面板尚未采纳，不填默认值，不将历史O/I/S记录改写为完整数据。
 
@@ -91,4 +93,4 @@ REMOTE_BRANCH=governance/ch5-codex-local-first-20261101
 
 仅同步脱敏治理文档，不推模型分支/科学代码或原载荷，不合并main。已有SSH路径和身份保持；推送失败不自动重试或切换身份/协议。同步完成以实际远端提交及文件Blob/字节数/SHA256回读为准，本地私有回执保存最终身份。旧PENDING_SYNC段落保留为历史，不代表本次交付结果。
 
-O2结果：[多来源批次适配](CH5_OUTER_MULTI_ORIGIN_BATCH_ADAPTER_20261105.md)。O3以[既有决定恢复记录](CH5_O3_LABOR_WAGE_TAX_DECISIONS_RECOVERED_20261105.md)纠正此前遗漏：A1已选、A2未选；工资税子合同已由Owner采纳并完成独立工程，Tt/AtTax内部H聚合也已采纳并独立实现；预给定财政金额组合也已完成18项限定检查；A1规模接口及预给定劳动适配也已完成15项限定检查；下一步连接独立外层一轮，真实p、实际单位/来源和收入兼容继续保留，不回到HA内部算法研究。
+O2结果：[多来源批次适配](CH5_OUTER_MULTI_ORIGIN_BATCH_ADAPTER_20261105.md)。O3以[既有决定恢复记录](CH5_O3_LABOR_WAGE_TAX_DECISIONS_RECOVERED_20261105.md)纠正此前遗漏：A1已选、A2未选；工资税子合同已由Owner采纳并完成独立工程，Tt/AtTax内部H聚合也已采纳并独立实现；预给定财政金额组合也已完成18项限定检查；A1规模接口及预给定劳动适配也已完成15项限定检查；预给定一轮拼装也已完成23项限定检查；下一步准备有限实调用验证方案，O2原工厂整合、真实调度及真实p/单位/来源/收入兼容继续保留，不回到HA内部算法研究。
