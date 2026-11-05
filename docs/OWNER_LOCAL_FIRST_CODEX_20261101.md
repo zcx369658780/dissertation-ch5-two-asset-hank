@@ -798,3 +798,19 @@ Owner确认HJB求V、原post重建KFE正式求g应分开理解；临时算子8�
 Owner要求类似非线性近似算法问题先停下讨论；已写AGENTS/当前工作流。Owner称原作者有判据，印象“10e-7还是10e-12”，正在下载Moll备份；保留原文，具体数值、指标/单位、阶段、固定行口径及版本待备份核实。不说作者没有标准，不以记忆绑定容差，不搜索网盘或改源码/来源。
 
 只读3个封存S03输入及标准库双路径算术，模型导入/新科学进程/求解/代码修改0。CURRENT原字节保持7/7关闭、零重试，无后继决定或意图。原科学模块/证据与旧保护保持，严格标准仍null、科学接受/Results FALSE；下一步等待Owner备份定位后先核查并讨论。GitHub PENDING_SYNC。
+
+OWNER_REFERENCE_RUN_STATEMENT=请你分析相关代码，可以直接运行看看重构KFE的精度
+OWNER_REFERENCE_MAXIT_APPROVAL=允许，仅恢复35次上限
+
+## 2026-11-05 Owner提供Moll参考：三处容差已核对，真实g采集未完成
+
+LATEST_REFERENCE_REPORT=CH5_MOLL_TWO_ASSET_SOURCE_ANALYSIS_AND_CAPTURE_STOP_20261105.md
+REFERENCE_SOURCE=two_asset_kinked.m__SHA2561f71d6bf53fd268946aa8a43ab481ee6e5c74437acede9a2362a1add44760878
+REFERENCE_THRESHOLDS=HJB_ITERATION_A_ROWSUM1E_MINUS9__VCHANGE1E_MINUS5__FORMAL_KFE_RESIDUAL_THRESHOLD_NOT_SEEN_IN_THIS_SCRIPT
+REFERENCE_STATE=HJB9_CONVERGENCE_LOGGED__G_PRECISION_NOT_OBSERVED__CAPTURE_REPAIR_READY_PENDING_NEW_RUN
+
+Owner授权分析指定本地Moll参考及直接运行，并批准仅独立副本去掉第85行maxit1覆盖恢复原35。原网格100×50×2和其它参数/算法不改，原件3源字节保持；此为新历史参考例外，不开放TEMP31旧7/7或改变主动Python路线。
+
+原样启动因-nojvm绘图限制在HJB前停止；未使用的35次副本额度纠正启动参数后执行，HJB9轮日志收敛，原KFE段执行，但外层which路径检查失败，g未保存，精度NOT_OBSERVED。两次均退出清理，证据保留、不重跑旧意图。独立人工数组工程夹具验证保存修复成功，原模型/求解调用0；新增1次真实35次采集请求已备，待Owner具体批准。不得以夹具或HJB日志冒充KFE精度。
+
+临时A1e-9和Vchange1e-5不能作为正式post残差阈值；当前1e-7数值更小100倍但并非同模型精度对比。正式post段无显式残差判断，循环后亦无额外HJB收敛门。科学接受/Results保持FALSE、当前标准null；原件/冻结科学源/旧预算与保护不变，原载荷LOCAL_ONLY，GitHub PENDING_SYNC。
