@@ -1,11 +1,11 @@
 # 第五章Python多省份HANK主路线图：HA黑箱与外层闭环
 
-最新O2进度：[多来源批次适配工程](CH5_OUTER_MULTI_ORIGIN_BATCH_ADAPTER_20261105.md)已完成35项限定检查（20新增＋15相关O1回归），原源码/HA算法/网格未改，实际工资/HA/外层调用0。下一目标为先讨论O3劳动与财政口径；实际生产消费仍关闭。
+最新O3进度：[既有劳动/税收决定恢复](CH5_O3_LABOR_WAGE_TAX_DECISIONS_RECOVERED_20261105.md)已完成。Owner此前已选A1：企业劳动用E=pH、家庭聚合仍用H，目的地税/单次扣税保持；不再把A1/A2列为待选。财政金额税基G04及单位/收入兼容缺口仍保留；O3代码未实施，本轮科学调用0。O1/O2既有工程结果不重跑，实际生产消费仍关闭。
 
 
 DATE=2026-11-05
 DECISION_ID=CH5_MULTIPROVINCE_OUTER_CLOSURE_OWNER_ROUTE_20261105
-STATUS=OWNER_APPROVED_MAINLINE__STAGE1_MAP_O1_O2_ENGINEERING_COMPLETE
+STATUS=OWNER_APPROVED_MAINLINE__O1_O2_ENGINEERING_COMPLETE__O3_A1_DECISIONS_RECOVERED
 ACTIVE_RESEARCH_MAINLINE=PYTHON_MULTI_PROVINCE_HANK_OUTER_CLOSURE
 FORMER_TEMP31_DIAGNOSTIC_ROUTE=HISTORICAL_CLOSED__NOT_ACTIVE_MAINLINE
 NEW_SCIENTIFIC_RUN_GRANT=NONE
@@ -54,13 +54,13 @@ Local-first职责保持：Codex负责具体授权内工程，Owner保留经济�
 
 外层调用链及已接通/缺接线/待Owner经济口径矩阵已完成：[缺口定位与最小闭环方案](CH5_OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN_20261105.md)。静态源码定位不等于生产接线、数值运行或均衡接受；本次未导入/执行科学代码。
 
-NEXT_ENGINEERING_TARGET=O3_LABOR_FISCAL_CONTRACT_DISCUSSION
-NEXT_TASK_TITLE=先明确企业劳动映射与工资税收入的外部经济口径
-NEXT_TASK_STATUS=OWNER_ECONOMIC_DEFINITIONS_PENDING__NO_FORMULA_OR_RUN_CHANGE
+NEXT_ENGINEERING_TARGET=O3_A1_DECISIONS_RECOVERED__FISCAL_AMOUNT_CONTRACT_PENDING
+NEXT_TASK_TITLE=沿既定A1准备企业劳动接线，明确未采纳的财政金额税基及必要单位
+NEXT_TASK_STATUS=PLAN_CORRECTED__NO_SOURCE_OR_RUN_CHANGE
 
 已有批次/工资结构优先复用，不重建同用途stub框架。O1结构适配结果见[接口工程记录](CH5_OUTER_PRODUCTION_WAGE_INTERFACE_ADAPTATION_20261105.md)；Owner已明确允许纯接口适配；O1结构兼容已实施并验证，原pending科学消费门仍关闭。具体任务、完成标准与依赖见[任务清单](../tasks/todo.md)。
 
-真实组合前仍须明确劳动/财政的外部经济口径、真实后轮工资与冻结校验器的兼容边界，以及基准拟合/均衡目标。不得绕过已有门或以此重开HA内部研究。本轮已完成O2批次工程适配，不自动实现O3或启动科学后继任务；普通工程不恢复旧网页GPT派单制度。
+真实组合沿既定A1（企业劳动E=pH、家庭聚合H不变）及目的地税/单次扣税推进，不重新选择归一化；财政金额税基G04、必要单位/收入兼容与基准拟合/均衡目标仍待具体采纳。O1仅完成后轮工资结构兼容，真实生产来源资格仍未建立。不得绕过已有门或以此重开HA内部研究。本轮已完成O2批次工程适配，不自动实现O3或启动科学后继任务；普通工程不恢复旧网页GPT派单制度。
 
 ## 历史预算、接受状态及保护保持
 
@@ -83,4 +83,4 @@ REMOTE_BRANCH=governance/ch5-codex-local-first-20261101
 
 仅同步脱敏治理文档，不推模型分支/科学代码或原载荷，不合并main。已有SSH路径和身份保持；推送失败不自动重试或切换身份/协议。同步完成以实际远端提交及文件Blob/字节数/SHA256回读为准，本地私有回执保存最终身份。旧PENDING_SYNC段落保留为历史，不代表本次交付结果。
 
-O2结果：[多来源批次适配](CH5_OUTER_MULTI_ORIGIN_BATCH_ADAPTER_20261105.md)。O3讨论劳动源量式/归一化选择与工资税税基，不回到HA内部算法研究。
+O2结果：[多来源批次适配](CH5_OUTER_MULTI_ORIGIN_BATCH_ADAPTER_20261105.md)。O3以[既有决定恢复记录](CH5_O3_LABOR_WAGE_TAX_DECISIONS_RECOVERED_20261105.md)纠正此前遗漏：A1已选、A2未选；只讨论尚未采纳的财政金额税基及必要单位/收入兼容，不回到HA内部算法研究。

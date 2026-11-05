@@ -1,6 +1,6 @@
 # CH5 current workflow — Local-first Codex
 
-最新O2进度：[多来源批次适配工程](CH5_OUTER_MULTI_ORIGIN_BATCH_ADAPTER_20261105.md)已完成35项限定检查（20新增＋15相关O1回归），原源码/HA算法/网格未改，实际工资/HA/外层调用0。下一目标为先讨论O3劳动与财政口径；实际生产消费仍关闭。
+最新O3进度：[既有劳动/税收决定恢复](CH5_O3_LABOR_WAGE_TAX_DECISIONS_RECOVERED_20261105.md)已完成。Owner此前已选A1：企业劳动用E=pH、家庭聚合仍用H，目的地税/单次扣税保持；不再把A1/A2列为待选。财政金额税基G04及单位/收入兼容缺口仍保留；O3代码未实施，本轮科学调用0。O1/O2既有工程结果不重跑，实际生产消费仍关闭。
 
 
 

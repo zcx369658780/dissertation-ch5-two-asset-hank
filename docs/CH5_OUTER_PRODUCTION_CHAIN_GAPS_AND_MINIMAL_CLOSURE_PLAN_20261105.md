@@ -1,6 +1,6 @@
 # 第五章多省份外层生产链：缺口定位与最小闭环方案
 
-最新O2进度：[多来源批次适配工程](CH5_OUTER_MULTI_ORIGIN_BATCH_ADAPTER_20261105.md)已完成35项限定检查（20新增＋15相关O1回归），原源码/HA算法/网格未改，实际工资/HA/外层调用0。下一目标为先讨论O3劳动与财政口径；实际生产消费仍关闭。
+最新O3进度：[既有劳动/税收决定恢复](CH5_O3_LABOR_WAGE_TAX_DECISIONS_RECOVERED_20261105.md)已完成。Owner此前已选A1：企业劳动用E=pH、家庭聚合仍用H，目的地税/单次扣税保持；不再把A1/A2列为待选。财政金额税基G04及单位/收入兼容缺口仍保留；O3代码未实施，本轮科学调用0。O1/O2既有工程结果不重跑，实际生产消费仍关闭。
 
 
 DATE=2026-11-05
@@ -30,7 +30,7 @@ HA_POLICY=COMPLETE_IMMUTABLE_BLACK_BOX
 | 新HA单来源入口 | `validators/multi_province/temp31_first_origin_worker.py:263`固定numerical_bootstrap19和origin_index=0；`validators/multi_province/temp31_first_origin_worker.py:96`串接原HA阶段 | 仅有已关闭的单来源诊断编排，不是多来源批次工厂；不复用/改写7/7监督器或复制HA算法来拓展 |
 | 首轮/后轮净工资 | `src/ch5_two_asset_hank/multi_province/temp31_ha_taxfree_bootstrap.py:80`已有首轮数值初猜；`src/ch5_two_asset_hank/multi_province/temp31_ha_taxfree_bootstrap.py:95`和`src/ch5_two_asset_hank/multi_province/temp31_ha_wage_debug.py:161`限定旧合成见证 | 首轮19保持数值初猜资格；真实后轮输入尚无兼容通道。此后轮资格问题不由新建外部标签自动解决 |
 | 工资生产 | `src/ch5_two_asset_hank/multi_province/wage.py:11`已按目的地税及迁移楔子生成各来源地净综合工资；后轮合同要求生成t→进入t+1 | 算术函数已有；缺该轮实际状态、输入/返回及消费上下文之间的生产交接。旧一次合成工资观测不可重新标成现场生产 |
-| 劳动映射 | `src/ch5_two_asset_hank/multi_province/migration_labor.py:98`仍按来源地税；`src/ch5_two_asset_hank/multi_province/temp31_worksite_tax.py:106`与`src/ch5_two_asset_hank/multi_province/temp31_worksite_tax.py:115`为独立候选 | 工作地税候选缺生产接线；原量式与按来源地家户劳动归一化式的经济含义不同，选择及人口/效率单位待Owner，不能静默归一化 |
+| 劳动映射 | `src/ch5_two_asset_hank/multi_province/migration_labor.py:98`仍按来源地税；`src/ch5_two_asset_hank/multi_province/temp31_worksite_tax.py:106`与`src/ch5_two_asset_hank/multi_province/temp31_worksite_tax.py:115`为独立候选 | 工作地税候选缺生产接线；已恢复Owner的A1决定：消费核保持、企业劳动E=pH、家庭H不变；A2未选。实际p/工时/效率及收入兼容证据仍未闭合，不能归一化 |
 | 资本与收益 | `src/ch5_two_asset_hank/multi_province/capital_allocation.py:70`输入家户At、N、inter_province_ratio及旧企业ra，不含Bt | 旧一轮内已接。未来显式记录其输入/输出单位及旧ra→新rah的时序，不自动切换双边资本网络或修改公式 |
 | 企业/工资税收入 | `src/ch5_two_asset_hank/multi_province/firm.py:44`已计算企业价格与收入，其工资税项当前为Lt×tau；`src/ch5_two_asset_hank/multi_province/temp31_worksite_tax.py:199`中的tau×wjt×Lt仅为条件诊断 | 企业函数已有；税基、工资及劳动单位/财政采纳待Owner。当前不能将条件诊断直接替换正式Govinc |
 | 下一轮反馈 | `src/ch5_two_asset_hank/multi_province/steady_state.py:147`已有新w、rb、rah、企业状态写回；旧runner在HA回调内更新phi并依靠共享数组供一轮使用 | 反馈骨架已有；新链应显式绑定当轮phi、工资生成轮次及前后快照，保持既定时序，不凭隐式共享数组声称身份闭合 |
@@ -43,7 +43,7 @@ flowchart LR
   S["进入轮快照与既有工资来源"] --> B["来源地批次适配：缺接线"]
   B --> H["HA整体黑箱"]
   H --> O["完整家户汇总批次"]
-  O --> L["工作地劳动：口径待选"]
+  O --> L["工作地劳动：既定A1，企业E=pH"]
   O --> K["既有资本配置"]
   L --> F["企业与财政"]
   K --> F
@@ -63,7 +63,7 @@ HA输出的Ct、有效家户Lt、At、Bt保持原汇总口径；批次适配器�
 | --- | --- | --- | --- |
 | O1 真实后轮工资输入兼容 | 拟新增`src/ch5_two_asset_hank/multi_province/outer_production_wage_bridge.py`及对应测试；如Owner明确允许，仅在既有`temp31_ha_taxfree_bootstrap.py`的共享来源/类型校验增加显式生产分支 | 不继承/伪装旧合成类型，不改旧SOURCE_COMMIT或scope；不重算生产者来证明来源。旧首轮/合成分支保留；陈旧期次/错省序/上下文/来源及未知执行拒绝；数值HA定义与网格不变 | **Owner已允许纯接口适配，结构工程已完成**；具体改动/检查见最新O1记录，科学消费仍关闭。采用历史兼容方案中独立类型/显式分派的方向作可审阅候选，不先实施 |
 | O2 多来源HA批次适配 | 拟新增`outer_ha_batch_adapter.py`及对应测试，复用已有完整批次字段及来源上下文，不复制HA求解 | 同一进入轮快照、一个省序，每来源恰好对应一次原HA结果；Initializer和HA消费同一净工资/价格身份；Ct/Lt/At/Bt不重复乘人口/效率/税，AtTax明确外层来源；失败不提交部分批次。工程检查可注入预给定回复，不能写成真实执行 | 依赖O1及外层单位合同；真正HA调用和实际数值检查需要前瞻有限许可，不动7/7单来源worker或其旧额度 |
-| O3 工作地税外层一轮组合 | 口径确定后新增`outer_closure_one_turn.py`及对应测试，复用资本、企业、工资、货币/财政组件，保留旧one_turn | 明确采用的劳动映射与企业工资税项、旧/新状态和生成t→进入t+1；检查不重扣净工资、无静默人口放大、无隐式phi副作用；不为接线重新推导HA | 劳动/财政定义待Owner；没有按现成代码自动选择归一化、改税基或切换资本网络。实际科学算术执行需相应许可 |
+| O3 工作地税外层一轮组合 | 口径确定后新增`outer_closure_one_turn.py`及对应测试，复用资本、企业、工资、货币/财政组件，保留旧one_turn | 沿既定A1显式分离企业E与家庭H，目的地税/单次扣税不重开；财政金额税基G04、旧/新状态和生成t→进入t+1分别标明；检查不重扣净工资、无静默人口放大、无隐式phi副作用；不为接线重新推导HA | A1已选，A2未选；财政金额税基/必要单位与收入兼容仍保留。没有按现成代码自动改税基或切换资本网络。实际科学算术执行需相应许可 |
 | O4 控制器与最小有界运行准备 | 拟新增命名明确的新外层控制入口，分片2—4文件；参考既有记录/更新格式而不覆盖旧年度runner | 外层调用新组合；显式记录原HA返回、各轮价格、经济汇总及退出原因。区分基准拟合与均衡目标，固定代码/输入/次数/时限/退出保护后才验证多省一轮 | 依赖O1—O3及Owner明确的均衡口径/具体运行许可；不自动保留或删除旧Zt/GovInv自适应，不把旧converged字段当完整GE |
 
 检查点：O1接口边界已获准，窄结构兼容及拒绝行为检查已完成；后续O2/O3继续保持实际来源资格和科学运行门，不以重复的占位类型或stub建设代替推进。HA运行、工资/企业真实调用及数值验证均未在本轮启动。
@@ -71,10 +71,10 @@ HA输出的Ct、有效家户Lt、At、Bt保持原汇总口径；批次适配器�
 ## 后续真实接线前需要明确的三个事项
 
 1. **真实后轮工资接口边界。** 当前共享校验只接受旧首轮/合成后轮来源。Owner已回答“允许纯接口适配，数值算法与网格冻结（建议）”。O1仅实施结构兼容及类型/来源分派，原科学资格门仍关闭；不把历史合成记录改标签成现场生产。该批准不等于运行许可。
-2. **劳动与财政口径。** 工作地税方向和净工资单次应用沿既有方向；企业L的定义、源量式/归一化式选择及tau×L或tau×wjt×L对应的税基仍需按第五章经济合同确定。该决定会改变外层结果，不能按“代码已存在”自动选。
+2. **既定A1与未定财政金额。** 已恢复Owner选择：保留消费驱动源量核，企业劳动E=pH，家庭资产/消费/财政H不变；目的地tau_j和净工资单次应用保持，A2归一化未选。真正未采纳的是G04的tau×L或tau×wjt×L财政金额税基、必要单位及收入/激励兼容，不因静态审计通过自动关闭。
 3. **基准经济的外层闭合。** 明确哪些变量用于校准，哪些用于均衡更新，是否保留旧Zt/GovInv自适应规则，以及各经济残差/停止口径。不能只把旧converged字段当作完整均衡，也不自行增加财政平衡或新阈值。
 
-本篇静态阶段完成后，Owner已明确接口边界并完成O1结构工程，见顶部更新；劳动/财政与均衡事项仍待相应科学决定；不重开HA内部研究，不复跑旧测试或科学观察。
+本篇静态阶段完成后，Owner已明确接口边界并完成O1结构工程，见顶部更新；A1不重开；财政金额、必要单位/收入兼容与均衡事项仍待相应科学决定；不重开HA内部研究，不复跑旧测试或科学观察。
 
 ## 验证、接受与保护
 
@@ -96,4 +96,4 @@ TEMP31既有7/7和Moll3/3关闭、零自动重试；旧初始化余量仍仅原8
 
 ## 后续里程碑：O2已完成工程适配
 
-见[O2批次适配记录](CH5_OUTER_MULTI_ORIGIN_BATCH_ADAPTER_20261105.md)。20项新增与15项相关回归通过，原数值源码未改，实际科学调用0；本篇原审计HEAD/行号及静态阶段事实仍按其时点保留。下一步先讨论O3的劳动/税收口径，不从现成候选自动推导科学采纳。
+见[O2批次适配记录](CH5_OUTER_MULTI_ORIGIN_BATCH_ADAPTER_20261105.md)。20项新增与15项相关回归通过，原数值源码未改，实际科学调用0；本篇原审计HEAD/行号及静态阶段事实仍按其时点保留。此前泛称O3劳动口径待选已由[既有决定恢复](CH5_O3_LABOR_WAGE_TAX_DECISIONS_RECOVERED_20261105.md)纠正：A1已选；下一步只处理真正未采纳的财政金额、必要单位/收入兼容，不从现成候选推导科学采纳。
