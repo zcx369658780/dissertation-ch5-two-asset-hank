@@ -1,6 +1,8 @@
 # CH5 current workflow — Local-first Codex
 
-最新进度：外层生产链静态定位与实施方案已完成，见[缺口与最小闭环方案](CH5_OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN_20261105.md)。下一目标为O1真实后轮工资接口兼容（纯接口边界已向Owner澄清）；复用已有批次/见证结构，劳动/财政和均衡口径另列待决，模型/测试未运行。
+最新O1进度：Owner已明确允许纯接口适配，数值算法与网格冻结；[结构适配工程](CH5_OUTER_PRODUCTION_WAGE_INTERFACE_ADAPTATION_20261105.md)已完成15项限定检查，实际生产来源资格及科学消费仍关闭。下一工程目标为O2批次适配准备，本轮未执行。
+
+最新进度：外层生产链静态定位与实施方案已完成，见[缺口与最小闭环方案](CH5_OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN_20261105.md)。外层静态定位已完成；O1接口边界现已获准并完成结构适配，复用已有结构，劳动/财政和均衡口径仍另列待决，模型/测试未运行。
 
 ## 2026-11-05 当前主路线优先说明
 

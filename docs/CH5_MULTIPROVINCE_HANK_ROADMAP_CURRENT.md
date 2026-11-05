@@ -1,8 +1,10 @@
 # 第五章Python多省份HANK主路线图：HA黑箱与外层闭环
 
+最新O1进度：Owner已明确允许纯接口适配，数值算法与网格冻结；[结构适配工程](CH5_OUTER_PRODUCTION_WAGE_INTERFACE_ADAPTATION_20261105.md)已完成15项限定检查，实际生产来源资格及科学消费仍关闭。下一工程目标为O2批次适配准备，本轮未执行。
+
 DATE=2026-11-05
 DECISION_ID=CH5_MULTIPROVINCE_OUTER_CLOSURE_OWNER_ROUTE_20261105
-STATUS=OWNER_APPROVED_MAINLINE__STAGE1_STATIC_MAP_COMPLETE__IMPLEMENTATION_NOT_RUN
+STATUS=OWNER_APPROVED_MAINLINE__STAGE1_MAP_AND_O1_STRUCTURAL_INTERFACE_COMPLETE
 ACTIVE_RESEARCH_MAINLINE=PYTHON_MULTI_PROVINCE_HANK_OUTER_CLOSURE
 FORMER_TEMP31_DIAGNOSTIC_ROUTE=HISTORICAL_CLOSED__NOT_ACTIVE_MAINLINE
 NEW_SCIENTIFIC_RUN_GRANT=NONE
@@ -51,13 +53,13 @@ Local-first职责保持：Codex负责具体授权内工程，Owner保留经济�
 
 外层调用链及已接通/缺接线/待Owner经济口径矩阵已完成：[缺口定位与最小闭环方案](CH5_OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN_20261105.md)。静态源码定位不等于生产接线、数值运行或均衡接受；本次未导入/执行科学代码。
 
-NEXT_ENGINEERING_TARGET=O1_PRODUCTION_WAGE_INTERFACE_ADAPTATION__OWNER_BOUNDARY_CLARIFICATION_PENDING
-NEXT_TASK_TITLE=真实后轮工资接口兼容（纯接口边界待Owner澄清）
+NEXT_ENGINEERING_TARGET=O2_MULTI_ORIGIN_BATCH_ADAPTER_PREPARATION
+NEXT_TASK_TITLE=复用现有完整汇总结构的多来源批次适配（仅工程准备）
 NEXT_TASK_STATUS=PLANNED_NOT_IMPLEMENTED
 
-已有批次/工资结构优先复用，不重建同用途stub框架。下一目标为纯生产工资接口兼容；其共享校验门位于冻结文件内，已向Owner澄清是否允许仅扩展输入来源/类型验证，答复前不实施。具体任务、完成标准与依赖见[任务清单](../tasks/todo.md)。
+已有批次/工资结构优先复用，不重建同用途stub框架。O1结构适配结果见[接口工程记录](CH5_OUTER_PRODUCTION_WAGE_INTERFACE_ADAPTATION_20261105.md)；Owner已明确允许纯接口适配；O1结构兼容已实施并验证，原pending科学消费门仍关闭。具体任务、完成标准与依赖见[任务清单](../tasks/todo.md)。
 
-真实组合前仍须明确劳动/财政的外部经济口径、真实后轮工资与冻结校验器的兼容边界，以及基准拟合/均衡目标。不得绕过已有门或以此重开HA内部研究。本次仅完成静态方案和文档，不实现O1或运行后继任务；普通工程不恢复旧网页GPT派单制度。
+真实组合前仍须明确劳动/财政的外部经济口径、真实后轮工资与冻结校验器的兼容边界，以及基准拟合/均衡目标。不得绕过已有门或以此重开HA内部研究。本轮已完成静态方案及O1结构适配，不自动启动O2或科学后继任务；普通工程不恢复旧网页GPT派单制度。
 
 ## 历史预算、接受状态及保护保持
 

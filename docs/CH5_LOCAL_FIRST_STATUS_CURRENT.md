@@ -1,6 +1,8 @@
 # CH5 唯一短状态 · 2026-11-05
 
-最新进度：外层生产链静态定位与实施方案已完成，见[缺口与最小闭环方案](CH5_OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN_20261105.md)。下一目标为O1真实后轮工资接口兼容（纯接口边界已向Owner澄清）；复用已有批次/见证结构，劳动/财政和均衡口径另列待决，模型/测试未运行。
+最新O1进度：Owner已明确允许纯接口适配，数值算法与网格冻结；[结构适配工程](CH5_OUTER_PRODUCTION_WAGE_INTERFACE_ADAPTATION_20261105.md)已完成15项限定检查，实际生产来源资格及科学消费仍关闭。下一工程目标为O2批次适配准备，本轮未执行。
+
+最新进度：外层生产链静态定位与实施方案已完成，见[缺口与最小闭环方案](CH5_OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN_20261105.md)。外层静态定位已完成；O1接口边界现已获准并完成结构适配，复用已有结构，劳动/财政和均衡口径仍另列待决，模型/测试未运行。
 
 ## 2026-11-05 当前主路线优先说明
 
@@ -51,8 +53,8 @@ G1_MOVE_RENAME_BUDGET=0
 G1_RERUN_THIS_ALIGNMENT=NOT_RUN
 
 ## 路线定位与下一工程目标
-ROADMAP_POSITION=STAGE1_BOUNDED_STATIC_MAP_AND_PLAN_COMPLETED__HA_BLACK_BOX__IMPLEMENTATION_NOT_RUN
-NEXT_ENGINEERING_TARGET=O1_PRODUCTION_WAGE_INTERFACE_ADAPTATION__OWNER_BOUNDARY_CLARIFICATION_PENDING
+ROADMAP_POSITION=STAGE1_MAP_AND_O1_STRUCTURAL_INTERFACE_COMPLETED__REAL_PRODUCTION_NOT_RUN
+NEXT_ENGINEERING_TARGET=O2_MULTI_ORIGIN_BATCH_ADAPTER_PREPARATION__NO_MODEL_CALLS
 G1B_STATUS=DEVELOPMENT_SOURCE_ADOPTED__565_CODE_PATHS_MATERIALIZED__FULL_ASSET_RECOVERY_AND_SCIENCE_INCOMPLETE
 G1B_PUBLIC_ALLOWLIST=NOT_FROZEN
 G1B_SCOPE_CHECK_PARENT=700383670711dc218451ba6e001709f81db556dd
@@ -553,3 +555,15 @@ NEXT_ENGINEERING_TARGET=O1_PRODUCTION_WAGE_INTERFACE_ADAPTATION__OWNER_BOUNDARY_
 核对固定工作树外层源码，确认一轮和迭代骨架已有；旧批量入口仍用旧含税输入，工作地税候选未接旧one_turn，后轮净工资校验限定合成见证。企业当前工资税项仍Lt*tau，tau*wjt*Lt仅为待采纳条件诊断；劳动映射和外层均衡/校准控制的经济口径留待Owner。真实生产输入适配如触及冻结共同门，须先明确具体接口边界，不能改标签或绕校验。
 
 已给出逐环节精确路径及O1生产工资接口兼容、O2原HA批次适配、O3工作地税外层组合、O4控制器与有界运行准备的依赖/检查点。代码图谱仅用于定位，关键边由源码/AST核实；选定25份源码/测试身份在私有回执保存。没有重做S01—S03/Moll测试，没有新增HA诊断或改算法。测试NOT_RUN，模型导入/科学调用/源码改动/新预算均0，默认0子代理；原关闭预算、接受FALSE、严格标准null及全部保护保持。
+
+
+## 2026-11-05 Owner允许纯接口适配，O1结构工程完成
+
+OWNER_EXACT_STATEMENT=允许纯接口适配，数值算法与网格冻结（建议）
+LATEST_REPORT=CH5_OUTER_PRODUCTION_WAGE_INTERFACE_ADAPTATION_20261105.md
+ENGINEERING_STATUS=STRUCTURAL_INPUT_BRIDGE_COMPLETE__15_CHECKS_PASS
+MODEL_CODE_CANDIDATE=479c4f4f5777c64fe16529b3421b70b86e89a90f__LOCAL_ONLY_NOT_PUSHED
+REAL_PRODUCTION_CONSUMER_READY=FALSE
+NEXT_ENGINEERING_TARGET=O2_MULTI_ORIGIN_BATCH_ADAPTER_PREPARATION__NOT_STARTED
+
+只新增外部封存工资载荷的数值/身份适配，并扩展共享工资记录的类型/来源校验；复用既有输入容器以兼容政策内重建。旧首轮与合成分支保持，原pending科学消费门继续拒绝。原模块完整AST在移除声明的纯接口变更后精确复原，HA数值定义/网格/原worker与旧pins不变。15项工程检查、零工资生产或HA调用；科学接受与所有旧额度/保护保持。6个本轮工程缓存未跟踪，留原处不提交/移动/删除。接口批准不再待确认，实际来源资格/运行兼容仍未建立。
