@@ -1,6 +1,6 @@
 # CH5 current workflow — Local-first Codex
 
-最新O3进度：[工作地工资税采纳及独立子账工程](CH5_O3_PAYROLL_TAX_IMPLEMENTATION_20261105.md)已完成：Owner采纳目的地tau×当轮企业gross输出工资×已聚合A1劳动，14项玩具记账检查通过。仅新增独立模块/测试，已有科学源码、HA算法/网格及完整Govinc未改；实际科学调用0。Tt/AtTax省级单位、收入兼容及完整O3组合仍未完成，真实生产资格和运行额度未开放。
+最新O3进度：[Tt/AtTax单位追踪与财政边界决策稿](CH5_O3_TT_ATTAX_UNIT_CONTRACT_PROPOSAL_20261105.md)已完成。论文财政Tt为总额，当前Tt进入家户接口、O2的AtTax明确未乘人口；建议保留家户原量，只在财政边界按同一来源地H各聚合一次，等待Owner采纳。本轮仅文档/只读核查，代码与科学调用0；工资税既定决定保持，真实单位及完整O3仍未完成。
 
 
 

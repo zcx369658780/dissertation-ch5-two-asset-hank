@@ -1,6 +1,6 @@
 # 第五章Python多省份HANK主路线图：HA黑箱与外层闭环
 
-最新O3进度：[工作地工资税采纳及独立子账工程](CH5_O3_PAYROLL_TAX_IMPLEMENTATION_20261105.md)已完成：Owner采纳目的地tau×当轮企业gross输出工资×已聚合A1劳动，14项玩具记账检查通过。仅新增独立模块/测试，已有科学源码、HA算法/网格及完整Govinc未改；实际科学调用0。Tt/AtTax省级单位、收入兼容及完整O3组合仍未完成，真实生产资格和运行额度未开放。
+最新O3进度：[Tt/AtTax单位追踪与财政边界决策稿](CH5_O3_TT_ATTAX_UNIT_CONTRACT_PROPOSAL_20261105.md)已完成。论文财政Tt为总额，当前Tt进入家户接口、O2的AtTax明确未乘人口；建议保留家户原量，只在财政边界按同一来源地H各聚合一次，等待Owner采纳。本轮仅文档/只读核查，代码与科学调用0；工资税既定决定保持，真实单位及完整O3仍未完成。
 
 
 DATE=2026-11-05
@@ -55,8 +55,10 @@ Local-first职责保持：Codex负责具体授权内工程，Owner保留经济�
 外层调用链及已接通/缺接线/待Owner经济口径矩阵已完成：[缺口定位与最小闭环方案](CH5_OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN_20261105.md)。静态源码定位不等于生产接线、数值运行或均衡接受；本次未导入/执行科学代码。
 
 NEXT_ENGINEERING_TARGET=O3_TT_ATTAX_PROVINCIAL_UNIT_CONTRACT
-NEXT_TASK_TITLE=核清Tt/AtTax家户到省级金额的单位合同，再接受其影响的财政组合
-NEXT_TASK_STATUS=PAYROLL_OWNER_ADOPTED_AND_LEDGER_ENGINEERING_COMPLETE__FULL_O3_PENDING
+NEXT_TASK_TITLE=Owner决定Tt/AtTax家户每H金额在财政边界各乘同源H一次的聚合合同
+NEXT_TASK_STATUS=STATIC_UNIT_TRACE_AND_CONCRETE_PROPOSAL_READY__NOT_ADOPTED_OR_IMPLEMENTED
+
+[Tt/AtTax决策稿](CH5_O3_TT_ATTAX_UNIT_CONTRACT_PROPOSAL_20261105.md)已核对论文转移总额、当前家户输入及O2未放大输出，分列家户量与省级金额；建议的财政聚合尚待Owner采纳，不将它当作真实货币/人口/年频单位认证。
 
 已形成[财政工资税金额合同决策稿](CH5_O3_FISCAL_PAYROLL_CONTRACT_PROPOSAL_20261105.md)：建议tau乘同轮企业输出gross工资与已聚合A1劳动；迭代工资版本、原裁切补偿及省级财政单位门分别记录。Owner随后已采纳工资税子合同，独立子账14项限定检查通过，见[实施记录](CH5_O3_PAYROLL_TAX_IMPLEMENTATION_20261105.md)。其余G04单位/E3与完整O3保持未完成，不建立财政平衡目标或运行许可。
 
