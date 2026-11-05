@@ -879,3 +879,14 @@ REAL_PRODUCTION_CONSUMER_READY=FALSE
 NEXT_ENGINEERING_TARGET=O2_MULTI_ORIGIN_BATCH_ADAPTER_PREPARATION__NOT_STARTED
 
 只新增外部封存工资载荷的数值/身份适配，并扩展共享工资记录的类型/来源校验；复用既有输入容器以兼容政策内重建。旧首轮与合成分支保持，原pending科学消费门继续拒绝。原模块完整AST在移除声明的纯接口变更后精确复原，HA数值定义/网格/原worker与旧pins不变。15项工程检查、零工资生产或HA调用；科学接受与所有旧额度/保护保持。6个本轮工程缓存未跟踪，留原处不提交/移动/删除。接口批准不再待确认，实际来源资格/运行兼容仍未建立。
+
+
+## 2026-11-05 Owner继续：O2多来源批次适配
+
+OWNER_EXACT_STATEMENT=可以请继续
+LATEST_REPORT=CH5_OUTER_MULTI_ORIGIN_BATCH_ADAPTER_20261105.md
+ENGINEERING_STATUS=O2_PRECOMPUTED_BATCH_ROUTING_COMPLETE__35_CHECKS_PASS
+MODEL_CODE_CANDIDATE=23d8ac8fe622d604f89dece6585769a969d16d9a__LOCAL_ONLY_NOT_PUSHED
+NEXT_ENGINEERING_TARGET=O3_LABOR_FISCAL_CONTRACT_DISCUSSION__NO_IMPLEMENTATION
+
+新增outer_ha_batch_adapter和行为测试，复用原BindingContext、O1净工资容器及PreFrozenHouseholdOutputBatch；预给定回复按同一快照/省序/期次/输入与网格标签完整组装，失败不提交部分批次，Ct/Lt/At/Bt/AtTax不重复乘人口/效率/税。35项检查通过（20新增、15相关回归），原源码改动0、实际科学调用0。原科学消费门保持关闭，未将工程回复、converged或网格标签当作真实执行/接受证据。旧6个缓存字节保持，新增0。下一步先明确O3企业劳动和工资税收入口径，不自动采纳归一化或改Govinc。原预算、接受FALSE、阈值null及全部保护不变。

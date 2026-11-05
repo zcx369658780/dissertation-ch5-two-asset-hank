@@ -5,7 +5,8 @@
 先核真实本地身份；日常启动只读短状态、唯一工作流和本次必要合同/证据。Local Codex 负责授权内工程，Web GPT 按需咨询，Owner 最终科学决定。
 | 分类 | 精确入口 | 读取与适用范围 |
 |---|---|---|
-| CURRENT_ENGINEERING_MILESTONE | [O1外部工资接口适配](CH5_OUTER_PRODUCTION_WAGE_INTERFACE_ADAPTATION_20261105.md) | Owner允许纯接口适配；15项工程检查；实际生产/科学消费未放行 |
+| CURRENT_ENGINEERING_MILESTONE | [O2多来源批次适配](CH5_OUTER_MULTI_ORIGIN_BATCH_ADAPTER_20261105.md) | 35项限定检查，原源码0改动、科学调用0；下一步O3劳动/财政口径讨论 |
+| HISTORICAL_ENGINEERING_MILESTONE | [O1外部工资接口适配](CH5_OUTER_PRODUCTION_WAGE_INTERFACE_ADAPTATION_20261105.md) | Owner允许纯接口适配；15项工程检查；实际生产/科学消费未放行 |
 | CURRENT_ENGINEERING_PLAN | [外层生产链缺口与最小闭环方案](CH5_OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN_20261105.md) | 静态定位完成；复用已有结构，接口边界已获准且O1结构适配完成，真实来源资格/劳动财政/均衡口径另列待决；运行0 |
 | CURRENT_RESEARCH_ROADMAP | [多省份HANK主路线：HA黑箱与外层闭环](CH5_MULTIPROVINCE_HANK_ROADMAP_CURRENT.md) | Owner于2026-11-05批准，取代旧TEMP31诊断路线；阶段1外层接线、阶段2数据口径可并行准备，旧预算不重开 |
 | CURRENT_GOVERNANCE | [AGENTS](../AGENTS.md) | 当前职责、短启动与权限边界 |
