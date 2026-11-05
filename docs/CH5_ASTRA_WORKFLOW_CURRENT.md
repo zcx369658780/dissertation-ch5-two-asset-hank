@@ -1,6 +1,6 @@
 # CH5 current workflow — Local-first Codex
 
-最新O3进度：[Tt/AtTax的H聚合采纳与独立实现](CH5_O3_HOUSEHOLD_FISCAL_IMPLEMENTATION_20261105.md)已完成。Owner采纳家户Tt/AtTax保持、财政边界各乘同源H一次；13项玩具工程检查通过，只新增模块/测试，已有科学源码和HA未改、实际科学调用0。模型内部聚合口径不再待选；真实单位/来源资格、完整财政及O3组合仍未建立。
+最新O3进度：[预给定省级财政金额账组合](CH5_O3_PROVINCIAL_FISCAL_COMPOSITION_20261105.md)已完成18项限定检查，复用已采纳工资税和家户H聚合账，连接原Corptax/GovInv*ra；复核子账、单位、迭代与当轮企业gross工资一致性。仅新增独立组合/测试，旧科学源码和HA未改，实际科学生产调用0。财政金额工程完成不等于真实财政/GE接受；完整O3一轮仍未接通。
 
 
 

@@ -1,11 +1,11 @@
 # 第五章Python多省份HANK主路线图：HA黑箱与外层闭环
 
-最新O3进度：[Tt/AtTax的H聚合采纳与独立实现](CH5_O3_HOUSEHOLD_FISCAL_IMPLEMENTATION_20261105.md)已完成。Owner采纳家户Tt/AtTax保持、财政边界各乘同源H一次；13项玩具工程检查通过，只新增模块/测试，已有科学源码和HA未改、实际科学调用0。模型内部聚合口径不再待选；真实单位/来源资格、完整财政及O3组合仍未建立。
+最新O3进度：[预给定省级财政金额账组合](CH5_O3_PROVINCIAL_FISCAL_COMPOSITION_20261105.md)已完成18项限定检查，复用已采纳工资税和家户H聚合账，连接原Corptax/GovInv*ra；复核子账、单位、迭代与当轮企业gross工资一致性。仅新增独立组合/测试，旧科学源码和HA未改，实际科学生产调用0。财政金额工程完成不等于真实财政/GE接受；完整O3一轮仍未接通。
 
 
 DATE=2026-11-05
 DECISION_ID=CH5_MULTIPROVINCE_OUTER_CLOSURE_OWNER_ROUTE_20261105
-STATUS=OWNER_APPROVED_MAINLINE__PAYROLL_AND_HOUSEHOLD_FISCAL_SUBLEDGERS_ENGINEERING_COMPLETE
+STATUS=OWNER_APPROVED_MAINLINE__SUPPLIED_FISCAL_AMOUNT_COMPOSITION_ENGINEERING_COMPLETE
 ACTIVE_RESEARCH_MAINLINE=PYTHON_MULTI_PROVINCE_HANK_OUTER_CLOSURE
 FORMER_TEMP31_DIAGNOSTIC_ROUTE=HISTORICAL_CLOSED__NOT_ACTIVE_MAINLINE
 NEW_SCIENTIFIC_RUN_GRANT=NONE
@@ -54,9 +54,11 @@ Local-first职责保持：Codex负责具体授权内工程，Owner保留经济�
 
 外层调用链及已接通/缺接线/待Owner经济口径矩阵已完成：[缺口定位与最小闭环方案](CH5_OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN_20261105.md)。静态源码定位不等于生产接线、数值运行或均衡接受；本次未导入/执行科学代码。
 
-NEXT_ENGINEERING_TARGET=O3_PROVINCIAL_FISCAL_LEDGER_COMPOSITION
-NEXT_TASK_TITLE=组合既定工资税和家户财政子账与原企业其它金额项，明确来源/单位一致性
-NEXT_TASK_STATUS=HOUSEHOLD_H_AGGREGATION_ADOPTED_AND13_CHECKS_PASS__FULL_O3_PENDING
+NEXT_ENGINEERING_TARGET=O3_A1_SCALE_INPUT_AND_ONE_TURN_WIRING
+NEXT_TASK_TITLE=核对既有H/p/E输入与单位，准备企业E和家庭H分离的独立外层一轮组合
+NEXT_TASK_STATUS=SUPPLIED_FISCAL_COMPOSITION18_CHECKS_PASS__FULL_O3_AND_SCIENTIFIC_RUN_NOT_DONE
+
+[财政金额组合记录](CH5_O3_PROVINCIAL_FISCAL_COMPOSITION_20261105.md)已交付，连接已采纳账项与原企业其它金额项；旧生产链不改，真实来源/单位、财政/GE接受和运行门保持。
 
 [Tt/AtTax决策稿](CH5_O3_TT_ATTAX_UNIT_CONTRACT_PROPOSAL_20261105.md)已核对论文转移总额、当前家户输入及O2未放大输出，分列家户量与省级金额；Owner已采纳财政边界各乘H一次，独立模块13项限定检查通过，见[实施记录](CH5_O3_HOUSEHOLD_FISCAL_IMPLEMENTATION_20261105.md)；不将内部合同当作真实货币/人口/年频单位认证。
 
@@ -64,7 +66,7 @@ NEXT_TASK_STATUS=HOUSEHOLD_H_AGGREGATION_ADOPTED_AND13_CHECKS_PASS__FULL_O3_PEND
 
 已有批次/工资结构优先复用，不重建同用途stub框架。O1结构适配结果见[接口工程记录](CH5_OUTER_PRODUCTION_WAGE_INTERFACE_ADAPTATION_20261105.md)；Owner已明确允许纯接口适配；O1结构兼容已实施并验证，原pending科学消费门仍关闭。具体任务、完成标准与依赖见[任务清单](../tasks/todo.md)。
 
-真实组合沿既定A1（企业劳动E=pH、家庭聚合H不变）及目的地税/单次扣税推进，不重新选择归一化；工资税金额子合同已采纳；Tt/AtTax的内部H聚合已采纳，实际物理单位/来源资格、收入兼容与基准拟合/均衡目标仍待具体证据/采纳。O1仅完成后轮工资结构兼容，真实生产来源资格仍未建立。不得绕过已有门或以此重开HA内部研究。O1/O2结构工程、O3工资税与家户财政两份独立子账已完成，完整O3未组合，不启动科学后继任务；普通工程不恢复旧网页GPT派单制度。
+真实组合沿既定A1（企业劳动E=pH、家庭聚合H不变）及目的地税/单次扣税推进，不重新选择归一化；工资税金额子合同已采纳；Tt/AtTax的内部H聚合已采纳，实际物理单位/来源资格、收入兼容与基准拟合/均衡目标仍待具体证据/采纳。O1仅完成后轮工资结构兼容，真实生产来源资格仍未建立。不得绕过已有门或以此重开HA内部研究。O1/O2结构工程、O3两份子账及预给定省级财政金额组合已完成，完整O3一轮未接通，不启动科学后继任务；普通工程不恢复旧网页GPT派单制度。
 
 ## 历史预算、接受状态及保护保持
 
@@ -87,4 +89,4 @@ REMOTE_BRANCH=governance/ch5-codex-local-first-20261101
 
 仅同步脱敏治理文档，不推模型分支/科学代码或原载荷，不合并main。已有SSH路径和身份保持；推送失败不自动重试或切换身份/协议。同步完成以实际远端提交及文件Blob/字节数/SHA256回读为准，本地私有回执保存最终身份。旧PENDING_SYNC段落保留为历史，不代表本次交付结果。
 
-O2结果：[多来源批次适配](CH5_OUTER_MULTI_ORIGIN_BATCH_ADAPTER_20261105.md)。O3以[既有决定恢复记录](CH5_O3_LABOR_WAGE_TAX_DECISIONS_RECOVERED_20261105.md)纠正此前遗漏：A1已选、A2未选；工资税子合同已由Owner采纳并完成独立工程，Tt/AtTax内部H聚合也已采纳并独立实现；下一步组合外层财政金额账，实际单位/来源和收入兼容继续保留，不回到HA内部算法研究。
+O2结果：[多来源批次适配](CH5_OUTER_MULTI_ORIGIN_BATCH_ADAPTER_20261105.md)。O3以[既有决定恢复记录](CH5_O3_LABOR_WAGE_TAX_DECISIONS_RECOVERED_20261105.md)纠正此前遗漏：A1已选、A2未选；工资税子合同已由Owner采纳并完成独立工程，Tt/AtTax内部H聚合也已采纳并独立实现；预给定财政金额组合也已完成18项限定检查；下一步核对A1规模输入并准备完整外层一轮，实际单位/来源和收入兼容继续保留，不回到HA内部算法研究。
