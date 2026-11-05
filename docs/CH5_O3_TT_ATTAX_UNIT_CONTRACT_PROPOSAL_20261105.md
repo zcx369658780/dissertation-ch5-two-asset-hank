@@ -1,7 +1,9 @@
 # O3转移支付与资产收益差额：单位追踪及财政边界决策稿
 
 DATE=2026-11-05
-STATUS=STATIC_UNIT_TRACE_COMPLETE__PROPOSED_FISCAL_AGGREGATION_PENDING_OWNER
+STATUS=OWNER_ADOPTED_INTERNAL_H_AGGREGATION__SEE_IMPLEMENTATION_RECORD
+
+后续Owner决定：已回答“采用财政边界各乘H一次（建议）”，仅采纳模型内部H聚合。独立实现及13项限定工程检查见[实施记录](CH5_O3_HOUSEHOLD_FISCAL_IMPLEMENTATION_20261105.md)。下文“尚未采纳”等表述是提案时点事实；真实单位/来源与完整财政不自动接受。
 GOVERNANCE_PARENT=ef98f7907cc6dc7c70d05b4344011245e671e07a
 MODEL_DOCUMENT_HEAD_AT_RECHECK=41af56d32868a361d828291b3b089388ec848b3d
 MODEL_CODE_CANDIDATE=caa5a83c6b480f616286ffb7eabbae6abdb1f9e8
@@ -74,5 +76,5 @@ Govinc_candidate[i] = ExistingCorptax[i] + AdoptedWageTax[i]
 
 工资税[已采纳实施记录](CH5_O3_PAYROLL_TAX_IMPLEMENTATION_20261105.md)保持；HA整体黑箱及原算法/网格冻结。TEMP31 7/7、Moll 3/3、工资/补录关闭，初始化旧余量仅原8格；严格reference/thresholds仍null，科学接受、FORMAL_SOURCE_FREEZE、consumer_ready、formal_ha_accepted、Results、model_activation、REAL_GE均FALSE。保护义务、历史dirty树、缓存、索引及LOCAL_ONLY载荷保持；只同步脱敏治理文档，不推模型分支或代码，不合并main。
 
-OWNER_TT_ATTAX_AGGREGATION_DECISION=NOT_RECEIVED
-NEXT=Owner决定是否按上述每H角色在财政边界各乘H一次；真实物理单位与其它E3缺口不自动关闭。
+OWNER_TT_ATTAX_AGGREGATION_DECISION=ADOPTED_FISCAL_BOUNDARY_H_ONCE
+NEXT=外层财政金额账组合；真实物理单位/来源与其它E3缺口不自动关闭。

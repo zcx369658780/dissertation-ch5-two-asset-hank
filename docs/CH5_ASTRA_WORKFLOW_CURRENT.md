@@ -1,6 +1,6 @@
 # CH5 current workflow — Local-first Codex
 
-最新O3进度：[Tt/AtTax单位追踪与财政边界决策稿](CH5_O3_TT_ATTAX_UNIT_CONTRACT_PROPOSAL_20261105.md)已完成。论文财政Tt为总额，当前Tt进入家户接口、O2的AtTax明确未乘人口；建议保留家户原量，只在财政边界按同一来源地H各聚合一次，等待Owner采纳。本轮仅文档/只读核查，代码与科学调用0；工资税既定决定保持，真实单位及完整O3仍未完成。
+最新O3进度：[Tt/AtTax的H聚合采纳与独立实现](CH5_O3_HOUSEHOLD_FISCAL_IMPLEMENTATION_20261105.md)已完成。Owner采纳家户Tt/AtTax保持、财政边界各乘同源H一次；13项玩具工程检查通过，只新增模块/测试，已有科学源码和HA未改、实际科学调用0。模型内部聚合口径不再待选；真实单位/来源资格、完整财政及O3组合仍未建立。
 
 
 
