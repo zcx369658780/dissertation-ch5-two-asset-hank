@@ -1,6 +1,6 @@
 # CH5 current workflow — Local-first Codex
 
-最新O3进度：[既有劳动/税收决定恢复](CH5_O3_LABOR_WAGE_TAX_DECISIONS_RECOVERED_20261105.md)已完成。Owner此前已选A1：企业劳动用E=pH、家庭聚合仍用H，目的地税/单次扣税保持；不再把A1/A2列为待选。财政金额税基G04及单位/收入兼容缺口仍保留；O3代码未实施，本轮科学调用0。O1/O2既有工程结果不重跑，实际生产消费仍关闭。
+最新O3进度：[工作地工资税采纳及独立子账工程](CH5_O3_PAYROLL_TAX_IMPLEMENTATION_20261105.md)已完成：Owner采纳目的地tau×当轮企业gross输出工资×已聚合A1劳动，14项玩具记账检查通过。仅新增独立模块/测试，已有科学源码、HA算法/网格及完整Govinc未改；实际科学调用0。Tt/AtTax省级单位、收入兼容及完整O3组合仍未完成，真实生产资格和运行额度未开放。
 
 
 

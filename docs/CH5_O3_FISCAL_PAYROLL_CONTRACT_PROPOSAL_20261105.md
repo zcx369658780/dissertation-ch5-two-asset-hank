@@ -1,7 +1,9 @@
 # O3财政工资税金额合同：Owner决策稿
 
 DATE=2026-11-05
-STATUS=PROPOSAL_READY__OWNER_DECISION_PENDING__NOT_IMPLEMENTED
+STATUS=OWNER_ADOPTED_PAYROLL_SUBCONTRACT__SEE_IMPLEMENTATION_RECORD
+
+后续更新：Owner回答“采用该工资总额税基（建议）”，仅采纳目的地比例工资税金额与所用gross工资版本。独立子账及14项限定工程检查见[实施记录](CH5_O3_PAYROLL_TAX_IMPLEMENTATION_20261105.md)。下文推导与“当时尚未采纳”文字按原提案时点保留，其余单位/财政建议没有自动获准。
 GOVERNANCE_PARENT=b21d611fe6f8e40a6f4b66ee5a7549bdf75a1095
 MODEL_DOCUMENT_HEAD_AT_RECHECK=017a631ce3db0cd117115c0a5370b8cf042b0324
 MODEL_CODE_CANDIDATE=23d8ac8fe622d604f89dece6585769a969d16d9a
@@ -77,5 +79,5 @@ A1的L已包含pH，工资税账不得再乘H、p、E或z。Sigma仍不自动作
 
 本轮新增产出为决策稿及当前入口更新，源代码未改；TESTS=NOT_RUN_DOCUMENT_ONLY，MODEL_IMPORTS=0，SCIENTIFIC_CALLS=0，NEW_RUN_GRANTS=0，SUBAGENTS=0。TEMP31 7/7、Moll 3/3关闭；其它旧有限范围与保护保持。严格reference/thresholds仍null；科学接受、FORMAL_SOURCE_FREEZE、consumer_ready、formal_ha_accepted、Results、model_activation、REAL_GE均FALSE。
 
-OWNER_DECISION=NOT_RECEIVED
-NEXT=Owner仅决定工作地比例工资税的gross payroll税基及所用工资版本；其它单位/收入兼容缺口不自动关闭。
+OWNER_DECISION=ADOPTED_WORKSITE_GROSS_PAYROLL_BASE_AND_CURRENT_FIRM_OUTPUT_WAGE
+NEXT=Tt/AtTax省级单位及收入兼容缺口继续保留；完整O3未组合，不运行模型。
