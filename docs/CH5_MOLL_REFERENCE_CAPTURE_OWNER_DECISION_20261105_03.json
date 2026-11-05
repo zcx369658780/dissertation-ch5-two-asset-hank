@@ -1,0 +1,85 @@
+{
+  "schema": "ch5.moll.reference.capture_repair.owner_decision.v1",
+  "date": "2026-11-05T14:25:18.252320+08:00",
+  "owner_exact_statement": "授权新增1次采集",
+  "scope": "One additional same35 historical-reference capture only; not a retry of old intents or a TEMP31 grant",
+  "approved_proposal_sha256": "7a300f62a4669821012495431adf970e043830922e55979c720d4fcf9b25fcfb",
+  "cases": [
+    {
+      "case": "owner_approved_maxit35_capture_repair",
+      "main_sha256": "b966b995755287dbc9d8a62cb72e2d2c1b7f3376d85335978c942598e4358a0b"
+    }
+  ],
+  "owner_approved": true,
+  "previous_reference_invocations_used": 2,
+  "new_reference_invocation_limit": 1,
+  "total_reference_invocation_limit": 3,
+  "retries": 0,
+  "wall_seconds": 180,
+  "job_memory_bytes": 4294967296,
+  "per_process_memory_bytes": 4294967296,
+  "active_process_limit": 8,
+  "file_pins": {
+    "driver.m": "9a3eac933f8fd8581129fcd74947d815a9d230636bfff093facc5549120edce8",
+    "capture.m": "3b7aa683bac0aa128dc8df375b8c515ac5c962674035d9f587f7c5c1989225c4",
+    "code\\two_asset_kinked.m": "b966b995755287dbc9d8a62cb72e2d2c1b7f3376d85335978c942598e4358a0b",
+    "code\\two_asset_kinked_cost.m": "b0a327a7630694d1f40aa395f2994f84f7f96b5c8c02aaec25b64f71d2adb202",
+    "code\\two_asset_kinked_FOC.m": "76cae4d10183bee0dad24eae1070b4b21f636518183be05d30d2066054243186"
+  },
+  "controller_sha256": "97447631c85c3691889e8163eea2a8890893c77559a1f49a99691a70162c84f1",
+  "science_source_edits": "Only previously approved maxit1 override removal; otherwise identical science to preceding35 case",
+  "collector_repair": [
+    "Persist code directory in process-local MATLAB path so run(capture.m) cwd change does not invalidate helper lookup",
+    "Save original post-source returned arrays before external diagnostic validation"
+  ],
+  "prior_cases_closed": [
+    {
+      "case": "as_received_maxit1",
+      "supervisor_sha256": "3143a17190e5e1781e17fcaec36e1101e108955fe3247f8905dc5e849eafcbd3",
+      "outcome": "EXIT_WITHOUT_RESULT"
+    },
+    {
+      "case": "owner_approved_maxit35",
+      "supervisor_sha256": "f1fe75b98eb5ce2b5e42d78642b838d173c3b9a73c330f9cd1c422821c603276",
+      "outcome": "EXIT_WITHOUT_RESULT"
+    },
+    {
+      "case": "capture_engineering_smoke",
+      "supervisor_sha256": "78b106300363797b9dc5d7195f35198862044413e51e0650482258102613cf13",
+      "outcome": "RETURN_VERIFIED"
+    }
+  ],
+  "baseline_original_source_files": [
+    {
+      "name": "two_asset_kinked.m",
+      "bytes": 13412,
+      "sha256": "1f71d6bf53fd268946aa8a43ab481ee6e5c74437acede9a2362a1add44760878",
+      "git_blob": "ea5e6068625875dcc86e8d153e1169ae9b11d6f3"
+    },
+    {
+      "name": "two_asset_kinked_FOC.m",
+      "bytes": 133,
+      "sha256": "76cae4d10183bee0dad24eae1070b4b21f636518183be05d30d2066054243186",
+      "git_blob": "4065f2451ad0a6d2b59d8f68d8277c384c593c5d"
+    },
+    {
+      "name": "two_asset_kinked_cost.m",
+      "bytes": 115,
+      "sha256": "b0a327a7630694d1f40aa395f2994f84f7f96b5c8c02aaec25b64f71d2adb202",
+      "git_blob": "b5fd76856ea3d1577ea18966a879efc1a92920c3"
+    }
+  ],
+  "TEMP31_current_authority_sha256": "600cf1c3e66b028efd190235ef1848732745b1a8d80df577622bf1eea03bf2d2",
+  "TEMP31_7of7_unchanged": true,
+  "auto_next": false,
+  "scientific_acceptance": false,
+  "Results": false,
+  "record_status": "CLOSED_COMPLETE_NO_RETRY",
+  "new_invocations_used": 1,
+  "total_reference_invocations_used": 3,
+  "source_private_decision_sha256": "510aa0a42095c36fab8108d9407d2f518b972f6690dd54276d48a4d5354121be",
+  "actual_case": "owner_approved_maxit35_capture_repair",
+  "actual_hjb_iterations": 9,
+  "formal_KFE_precision_observed": true,
+  "cleanup_verified": true
+}

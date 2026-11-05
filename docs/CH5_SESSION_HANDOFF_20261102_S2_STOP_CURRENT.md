@@ -201,3 +201,18 @@ Owner授权分析指定本地Moll参考及直接运行，并批准仅独立副�
 原样启动因-nojvm绘图限制在HJB前停止；未使用的35次副本额度纠正启动参数后执行，HJB9轮日志收敛，原KFE段执行，但外层which路径检查失败，g未保存，精度NOT_OBSERVED。两次均退出清理，证据保留、不重跑旧意图。独立人工数组工程夹具验证保存修复成功，原模型/求解调用0；新增1次真实35次采集请求已备，待Owner具体批准。不得以夹具或HJB日志冒充KFE精度。
 
 临时A1e-9和Vchange1e-5不能作为正式post残差阈值；当前1e-7数值更小100倍但并非同模型精度对比。正式post段无显式残差判断，循环后亦无额外HJB收敛门。科学接受/Results保持FALSE、当前标准null；原件/冻结科学源/旧预算与保护不变，原载荷LOCAL_ONLY，GitHub PENDING_SYNC。
+
+## 2026-11-05 Moll真实g采集完成：正式KFE残差近舍入量级
+
+LATEST_REFERENCE_RESULT=CH5_MOLL_TWO_ASSET_TRUE_REFERENCE_KFE_PRECISION_20261105.md
+OWNER_CAPTURE_EXACT_STATEMENT=授权新增1次采集
+REFERENCE_DECISION=CH5_MOLL_REFERENCE_CAPTURE_OWNER_DECISION_20261105_03.json
+REFERENCE_STATE=TRUE_G_SAVED__HJB9__FORMAL_RESIDUAL6_36E_MINUS16__REFERENCE3_OF3_CLOSED
+
+独立新增1次180秒/4GiB/零自动重试已登记后执行，原科学副本仅保留先前批准的35上限恢复，其它源/参数/网格不动。58.734秒、Job峰值2,208,010,240 bytes、1launcher/6进程、exit0清理确认。HJB9轮true/Vchange3.6618449024139466e-6，正式原post密度驻定残差6.3558617705611294e-16、质量1.0000000000000016、负质量2.89e-15。真实A/g与检查点已保存，标准库39,836系数/10,000密度列点积复核，无新模型导入/求解。
+
+原post全域行和仍2.35264、162个缺口在a上边界，但其实际分布质量仅1.25e-18；S03保存的14缺口在b上边界承载约76.86%质量。模型/网格不同，仅作解释性对照。这修正过度以全域post行和单独否定g的表述，应结合正式A' g及实际质量平衡；不改旧H03主指标/结果，不自动设新接受标准或移植网格/源码。临时A诊断仍不直接裁决正式g。
+
+原g_sum约−1.46e14及固定点g近0的缩放稳定性保留待讨论，不改固定行或追加求解。首次离线元数据1ulp差异检查失败已保留并只修表示核对，科学容差/原值不变、未重跑。两次先前失败与无模型夹具独立保留。
+
+新增1/1及参考3/3关闭，TEMP31 CURRENT原字节7/7关闭，无第8次主线或新价格意图。待与Owner讨论后再定科学动作；算法锁/旧余额/历史保护及全部STOP保持，当前科学接受/Results等FALSE、严格标准null。原载荷LOCAL_ONLY，GitHub PENDING_SYNC，无新推送或绕过。
