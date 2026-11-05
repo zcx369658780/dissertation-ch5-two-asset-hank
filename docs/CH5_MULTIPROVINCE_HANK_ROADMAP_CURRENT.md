@@ -1,6 +1,6 @@
 # 第五章Python多省份HANK主路线图：HA黑箱与外层闭环
 
-最新O3进度：[既有劳动/税收决定恢复](CH5_O3_LABOR_WAGE_TAX_DECISIONS_RECOVERED_20261105.md)已完成。Owner此前已选A1：企业劳动用E=pH、家庭聚合仍用H，目的地税/单次扣税保持；不再把A1/A2列为待选。财政金额税基G04及单位/收入兼容缺口仍保留；O3代码未实施，本轮科学调用0。O1/O2既有工程结果不重跑，实际生产消费仍关闭。
+最新O3进度：[财政工资税金额合同决策稿](CH5_O3_FISCAL_PAYROLL_CONTRACT_PROPOSAL_20261105.md)已形成，建议工作地比例工资税采用同轮企业输出gross工资×已聚合A1劳动的工资总额税基，等待Owner科学决定，尚未采纳/实施。A1、家庭H和单次扣税决定保持；Tt/AtTax省级单位、收入兼容与完整财政闭合仍未解决。本轮代码/科学调用0，未重开额度。
 
 
 DATE=2026-11-05
@@ -54,9 +54,11 @@ Local-first职责保持：Codex负责具体授权内工程，Owner保留经济�
 
 外层调用链及已接通/缺接线/待Owner经济口径矩阵已完成：[缺口定位与最小闭环方案](CH5_OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN_20261105.md)。静态源码定位不等于生产接线、数值运行或均衡接受；本次未导入/执行科学代码。
 
-NEXT_ENGINEERING_TARGET=O3_A1_DECISIONS_RECOVERED__FISCAL_AMOUNT_CONTRACT_PENDING
-NEXT_TASK_TITLE=沿既定A1准备企业劳动接线，明确未采纳的财政金额税基及必要单位
-NEXT_TASK_STATUS=PLAN_CORRECTED__NO_SOURCE_OR_RUN_CHANGE
+NEXT_ENGINEERING_TARGET=O3_FISCAL_PAYROLL_PROPOSAL_READY__OWNER_DECISION_PENDING
+NEXT_TASK_TITLE=Owner决定工作地比例工资税金额合同，Tt/AtTax等单位桥分别保留
+NEXT_TASK_STATUS=PROPOSAL_READY__NOT_ADOPTED_OR_IMPLEMENTED
+
+已形成[财政工资税金额合同决策稿](CH5_O3_FISCAL_PAYROLL_CONTRACT_PROPOSAL_20261105.md)：建议tau乘同轮企业输出gross工资与已聚合A1劳动；迭代工资版本、原裁切补偿及省级财政单位门分别记录。该建议尚未采纳，未改代码、未运行，不自动关闭G04/E3或建立财政平衡目标。
 
 已有批次/工资结构优先复用，不重建同用途stub框架。O1结构适配结果见[接口工程记录](CH5_OUTER_PRODUCTION_WAGE_INTERFACE_ADAPTATION_20261105.md)；Owner已明确允许纯接口适配；O1结构兼容已实施并验证，原pending科学消费门仍关闭。具体任务、完成标准与依赖见[任务清单](../tasks/todo.md)。
 
