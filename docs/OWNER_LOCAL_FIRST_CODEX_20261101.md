@@ -829,3 +829,13 @@ REFERENCE_STATE=TRUE_G_SAVED__HJB9__FORMAL_RESIDUAL6_36E_MINUS16__REFERENCE3_OF3
 原g_sum约−1.46e14及固定点g近0的缩放稳定性保留待讨论，不改固定行或追加求解。首次离线元数据1ulp差异检查失败已保留并只修表示核对，科学容差/原值不变、未重跑。两次先前失败与无模型夹具独立保留。
 
 新增1/1及参考3/3关闭，TEMP31 CURRENT原字节7/7关闭，无第8次主线或新价格意图。待与Owner讨论后再定科学动作；算法锁/旧余额/历史保护及全部STOP保持，当前科学接受/Results等FALSE、严格标准null。原载荷LOCAL_ONLY，GitHub PENDING_SYNC，无新推送或绕过。
+
+## 2026-11-05 本会话交接存档（不启动后继）
+
+OWNER_EXACT_STATEMENT=你好，当前会话太长，请立即在github端文档、本地文档中保存当前会话的任务进度、Owner决策等信息，同步github，然后给我当前会话的交接prompt。
+CURRENT_HANDOFF=CH5_SESSION_HANDOFF_20261105_MOLL_KFE_CURRENT.md
+SCOPE=本地/GitHub治理文档及交接prompt，明确不授权新的模型/科学运行或原载荷发布。
+
+已将本会话S02补证、S03、HA算法冻结、HJB临时A/正式post区分、先讨论约定、Moll原始容差定位、maxit35副本批准、两次参考失败和新增真实g采集结果汇总在新交接卡。TEMP317/7、参考3/3均关闭，严格标准null及全部接受FALSE保持，先讨论正式g加权平衡/固定行尺度，不自动接续运行。旧证据/历史dirty树保护保持。
+
+模型代码候选da92d31a96572ae43eb187698fbf40321029cfda仅本地；科学源11个未改。原始科学载荷/完整本地定位与最终回执LOCAL_ONLY。GitHub仅当前治理分支的脱敏文档，最终提交身份和回读由交付回执记录；旧失败/PENDING历史保留，不能把URL存在当作同步完成。

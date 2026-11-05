@@ -29,3 +29,15 @@ Owner clarification, 2026-11-05: Separate the temporary HJB value-iteration oper
 Owner reference exception, 2026-11-05: Owner supplied a local two_asset_kinked.m reference and authorized bounded MATLAB reference execution, then explicitly allowed only removing its maxit=1 override to retain the original35 limit in a separate copy. This is historical-reference work, not TEMP31 activation, source/parameter/grid adoption or reopening its closed7/7 grant. Iteration A guard1e-9 and Vchange1e-5 were located; do not relabel them formal-post KFE residual tolerances. Preserve both failed reference starts and the no-model capture fixture separately; new real capture needs its own recorded finite decision, never substitute fake-array or HJB-log evidence for g precision.
 
 Owner-authorized reference capture completed, 2026-11-05: A separate additional1/1 Moll reference capture returned true g with HJB9 and full formal-post residual about6.36e-16. Global post row sums are not by themselves a verdict on g: reference defect states carry about1.25e-18 probability, versus substantial saved TEMP31 S03 mass. Keep temporary-HJB diagnostics, formal post/g balance and scaling distinct; no automatic threshold, grid, source or algorithm adoption. Reference3/3 and TEMP31 7/7 are now closed, zero automatic retry; discuss scientific implications and fixed-row scaling with Owner before new actions.
+
+Latest session handoff: [CH5_SESSION_HANDOFF_20261105_MOLL_KFE_CURRENT.md](CH5_SESSION_HANDOFF_20261105_MOLL_KFE_CURRENT.md). Both TEMP317/7 and MATLAB reference3/3 are closed.
+
+## 2026-11-05 本会话交接存档（不启动后继）
+
+OWNER_EXACT_STATEMENT=你好，当前会话太长，请立即在github端文档、本地文档中保存当前会话的任务进度、Owner决策等信息，同步github，然后给我当前会话的交接prompt。
+CURRENT_HANDOFF=CH5_SESSION_HANDOFF_20261105_MOLL_KFE_CURRENT.md
+SCOPE=本地/GitHub治理文档及交接prompt，明确不授权新的模型/科学运行或原载荷发布。
+
+已将本会话S02补证、S03、HA算法冻结、HJB临时A/正式post区分、先讨论约定、Moll原始容差定位、maxit35副本批准、两次参考失败和新增真实g采集结果汇总在新交接卡。TEMP317/7、参考3/3均关闭，严格标准null及全部接受FALSE保持，先讨论正式g加权平衡/固定行尺度，不自动接续运行。旧证据/历史dirty树保护保持。
+
+模型代码候选da92d31a96572ae43eb187698fbf40321029cfda仅本地；科学源11个未改。原始科学载荷/完整本地定位与最终回执LOCAL_ONLY。GitHub仅当前治理分支的脱敏文档，最终提交身份和回读由交付回执记录；旧失败/PENDING历史保留，不能把URL存在当作同步完成。

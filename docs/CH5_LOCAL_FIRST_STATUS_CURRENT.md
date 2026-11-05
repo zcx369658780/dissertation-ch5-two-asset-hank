@@ -1,5 +1,5 @@
 # CH5 唯一短状态 · 2026-11-05
-本页由 AGENTS.md 唯一指向。Owner 决策：OWNER_LOCAL_FIRST_CODEX_20261101.md；工作流：CH5_ASTRA_WORKFLOW_CURRENT.md。
+本页由 AGENTS.md 唯一指向。最新交接：CH5_SESSION_HANDOFF_20261105_MOLL_KFE_CURRENT.md。Owner 决策：OWNER_LOCAL_FIRST_CODEX_20261101.md；工作流：CH5_ASTRA_WORKFLOW_CURRENT.md。
 这是当前工程进度与治理状态；不替代科学合同，也不授权新的科学运行或原件上传。
 
 ## 治理与身份
@@ -45,7 +45,7 @@ G1_RERUN_THIS_ALIGNMENT=NOT_RUN
 
 ## 路线定位与下一工程目标
 ROADMAP_POSITION=TEMP31_S03_HJB49__PRIMARY_SLIGHTLY_LOWER_BOUNDARY_MASS_HIGHER__POST_AND_ITERATION_GAPS_PERSIST__7_OF7_CLOSED
-NEXT_ENGINEERING_TARGET=DISCUSS_TRUE_MOLL_POST_G_PRECISION_WEIGHTED_BOUNDARIES_AND_PIN_SCALING__NO_NEW_RUN__TEMP31_7OF7_CLOSED
+NEXT_ENGINEERING_TARGET=OWNER_DISCUSSION_OR_NEW_TASK_AFTER_HANDOFF__NO_AUTO_SCIENCE__BOTH_FINITE_RUN_LEDGERS_CLOSED
 G1B_STATUS=DEVELOPMENT_SOURCE_ADOPTED__565_CODE_PATHS_MATERIALIZED__FULL_ASSET_RECOVERY_AND_SCIENCE_INCOMPLETE
 G1B_PUBLIC_ALLOWLIST=NOT_FROZEN
 G1B_SCOPE_CHECK_PARENT=700383670711dc218451ba6e001709f81db556dd
@@ -508,3 +508,13 @@ REFERENCE_STATE=TRUE_G_SAVED__HJB9__FORMAL_RESIDUAL6_36E_MINUS16__REFERENCE3_OF3
 原g_sum约−1.46e14及固定点g近0的缩放稳定性保留待讨论，不改固定行或追加求解。首次离线元数据1ulp差异检查失败已保留并只修表示核对，科学容差/原值不变、未重跑。两次先前失败与无模型夹具独立保留。
 
 新增1/1及参考3/3关闭，TEMP31 CURRENT原字节7/7关闭，无第8次主线或新价格意图。待与Owner讨论后再定科学动作；算法锁/旧余额/历史保护及全部STOP保持，当前科学接受/Results等FALSE、严格标准null。原载荷LOCAL_ONLY，GitHub PENDING_SYNC，无新推送或绕过。
+
+## 2026-11-05 本会话交接存档（不启动后继）
+
+OWNER_EXACT_STATEMENT=你好，当前会话太长，请立即在github端文档、本地文档中保存当前会话的任务进度、Owner决策等信息，同步github，然后给我当前会话的交接prompt。
+CURRENT_HANDOFF=CH5_SESSION_HANDOFF_20261105_MOLL_KFE_CURRENT.md
+SCOPE=本地/GitHub治理文档及交接prompt，明确不授权新的模型/科学运行或原载荷发布。
+
+已将本会话S02补证、S03、HA算法冻结、HJB临时A/正式post区分、先讨论约定、Moll原始容差定位、maxit35副本批准、两次参考失败和新增真实g采集结果汇总在新交接卡。TEMP317/7、参考3/3均关闭，严格标准null及全部接受FALSE保持，先讨论正式g加权平衡/固定行尺度，不自动接续运行。旧证据/历史dirty树保护保持。
+
+模型代码候选da92d31a96572ae43eb187698fbf40321029cfda仅本地；科学源11个未改。原始科学载荷/完整本地定位与最终回执LOCAL_ONLY。GitHub仅当前治理分支的脱敏文档，最终提交身份和回读由交付回执记录；旧失败/PENDING历史保留，不能把URL存在当作同步完成。
