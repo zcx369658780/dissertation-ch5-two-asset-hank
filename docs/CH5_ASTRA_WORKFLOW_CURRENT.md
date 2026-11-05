@@ -21,3 +21,7 @@ Superseded routine-workflow routes: `CH5_GITHUB_WORKFLOW_AUTHORITY_CURRENT_20261
 G1 report progress and G1B planning are recorded in the single short state. The original G1 task text remains ISSUED with FILE_MUTATION_BUDGET=0, GIT_MUTATION_BUDGET=0, DELETE_BUDGET=0 and MOVE_RENAME_BUDGET=0. Report delivery/Owner confirmation does not establish full asset identity, archive acceptance or science; no G1 rerun or budget reuse.
 WASM protection STOP, R12 privacy/delivery STOP, R13 NOT_AUTHORIZED, all unresolved obligations and exhausted budgets remain. No automatic scientific task, Issue/PR, main merge, archive, cleanup or protected rebind.
 This governance migration's completion STOP ends this phase only. No next task is launched.
+
+## Owner discussion rule, 2026-11-05
+
+Owner clarification, 2026-11-05: Separate the temporary HJB value-iteration operator from the rebuilt formal post operator used to solve KFE. Temporary-operator diagnostics are auxiliary and cannot alone reject formal g or authorize algorithm changes. When nonlinear approximation semantics, error definitions or acceptance interpretations are uncertain, stop the affected scientific progression and discuss with Owner first; continue only already-authorized factual work independent of that uncertainty. Owner reports an original-author tolerance exists; its exact value, metric, stage and version await the Moll backup, so do not invent or bind a threshold. All HA algorithms remain frozen; the current seventh grant is closed7/7, zero retry, no successor.
