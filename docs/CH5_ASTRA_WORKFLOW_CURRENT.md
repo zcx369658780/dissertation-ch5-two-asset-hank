@@ -1,6 +1,6 @@
 # CH5 current workflow — Local-first Codex
 
-最新O3进度：[预给定省级财政金额账组合](CH5_O3_PROVINCIAL_FISCAL_COMPOSITION_20261105.md)已完成18项限定检查，复用已采纳工资税和家户H聚合账，连接原Corptax/GovInv*ra；复核子账、单位、迭代与当轮企业gross工资一致性。仅新增独立组合/测试，旧科学源码和HA未改，实际科学生产调用0。财政金额工程完成不等于真实财政/GE接受；完整O3一轮仍未接通。
+最新O3进度：[A1 H/p/E接口与预给定劳动矩阵适配](CH5_O3_A1_SCALE_INTERFACE_IMPLEMENTATION_20261105.md)已完成15项限定检查。H绑定进入快照，p须显式声明来源/同H分母，E=pH；原H尺度劳动矩阵按来源列乘p一次，不归一化，p=0保留零列。现有记录仍不足以提供可采纳的31省p，真实数据和完整O3未完成；本轮未改旧科学源码或HA，实际科学调用0。
 
 
 

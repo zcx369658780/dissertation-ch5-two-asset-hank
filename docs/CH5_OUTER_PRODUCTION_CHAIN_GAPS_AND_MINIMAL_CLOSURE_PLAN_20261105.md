@@ -1,6 +1,6 @@
 # 第五章多省份外层生产链：缺口定位与最小闭环方案
 
-最新O3进度：[预给定省级财政金额账组合](CH5_O3_PROVINCIAL_FISCAL_COMPOSITION_20261105.md)已完成18项限定检查，复用已采纳工资税和家户H聚合账，连接原Corptax/GovInv*ra；复核子账、单位、迭代与当轮企业gross工资一致性。仅新增独立组合/测试，旧科学源码和HA未改，实际科学生产调用0。财政金额工程完成不等于真实财政/GE接受；完整O3一轮仍未接通。
+最新O3进度：[A1 H/p/E接口与预给定劳动矩阵适配](CH5_O3_A1_SCALE_INTERFACE_IMPLEMENTATION_20261105.md)已完成15项限定检查。H绑定进入快照，p须显式声明来源/同H分母，E=pH；原H尺度劳动矩阵按来源列乘p一次，不归一化，p=0保留零列。现有记录仍不足以提供可采纳的31省p，真实数据和完整O3未完成；本轮未改旧科学源码或HA，实际科学调用0。
 
 
 DATE=2026-11-05
@@ -30,7 +30,7 @@ HA_POLICY=COMPLETE_IMMUTABLE_BLACK_BOX
 | 新HA单来源入口 | `validators/multi_province/temp31_first_origin_worker.py:263`固定numerical_bootstrap19和origin_index=0；`validators/multi_province/temp31_first_origin_worker.py:96`串接原HA阶段 | 仅有已关闭的单来源诊断编排，不是多来源批次工厂；不复用/改写7/7监督器或复制HA算法来拓展 |
 | 首轮/后轮净工资 | `src/ch5_two_asset_hank/multi_province/temp31_ha_taxfree_bootstrap.py:80`已有首轮数值初猜；`src/ch5_two_asset_hank/multi_province/temp31_ha_taxfree_bootstrap.py:95`和`src/ch5_two_asset_hank/multi_province/temp31_ha_wage_debug.py:161`限定旧合成见证 | 首轮19保持数值初猜资格；真实后轮输入尚无兼容通道。此后轮资格问题不由新建外部标签自动解决 |
 | 工资生产 | `src/ch5_two_asset_hank/multi_province/wage.py:11`已按目的地税及迁移楔子生成各来源地净综合工资；后轮合同要求生成t→进入t+1 | 算术函数已有；缺该轮实际状态、输入/返回及消费上下文之间的生产交接。旧一次合成工资观测不可重新标成现场生产 |
-| 劳动映射 | `src/ch5_two_asset_hank/multi_province/migration_labor.py:98`仍按来源地税；`src/ch5_two_asset_hank/multi_province/temp31_worksite_tax.py:106`与`src/ch5_two_asset_hank/multi_province/temp31_worksite_tax.py:115`为独立候选 | 工作地税候选缺生产接线；已恢复Owner的A1决定：消费核保持、企业劳动E=pH、家庭H不变；A2未选。实际p/工时/效率及收入兼容证据仍未闭合，不能归一化 |
+| 劳动映射 | `src/ch5_two_asset_hank/multi_province/migration_labor.py:98`仍按来源地税；`src/ch5_two_asset_hank/multi_province/temp31_worksite_tax.py:106`与`src/ch5_two_asset_hank/multi_province/temp31_worksite_tax.py:115`为独立候选 | 工作地税原函数保留、缺真实生产接线；A1 H/p/E及预给定原劳动矩阵按列乘p接口已完成15项限定检查，消费核不重算，家庭H不变，A2未选。真实p/工时/效率及收入兼容证据仍未闭合，不归一化 |
 | 资本与收益 | `src/ch5_two_asset_hank/multi_province/capital_allocation.py:70`输入家户At、N、inter_province_ratio及旧企业ra，不含Bt | 旧一轮内已接。未来显式记录其输入/输出单位及旧ra→新rah的时序，不自动切换双边资本网络或修改公式 |
 | 企业/工资税收入 | `src/ch5_two_asset_hank/multi_province/firm.py:44`已计算企业价格与收入，其工资税项当前为Lt×tau；`src/ch5_two_asset_hank/multi_province/temp31_worksite_tax.py:199`中的tau×wjt×Lt仅为条件诊断 | 企业函数已有；Owner已采纳tau×当前企业输出gross工资×已聚合A1劳动，独立子账14项检查通过。Tt/AtTax内部各乘H一次也已获采纳并独立实现；预给定省级财政金额组合也已完成18项限定检查；实际生产劳动/金额物理单位、来源资格及完整财政仍待证，旧正式Govinc未替换 |
 | 下一轮反馈 | `src/ch5_two_asset_hank/multi_province/steady_state.py:147`已有新w、rb、rah、企业状态写回；旧runner在HA回调内更新phi并依靠共享数组供一轮使用 | 反馈骨架已有；新链应显式绑定当轮phi、工资生成轮次及前后快照，保持既定时序，不凭隐式共享数组声称身份闭合 |
@@ -96,4 +96,4 @@ TEMP31既有7/7和Moll3/3关闭、零自动重试；旧初始化余量仍仅原8
 
 ## 后续里程碑：O2已完成工程适配
 
-见[O2批次适配记录](CH5_OUTER_MULTI_ORIGIN_BATCH_ADAPTER_20261105.md)。20项新增与15项相关回归通过，原数值源码未改，实际科学调用0；本篇原审计HEAD/行号及静态阶段事实仍按其时点保留。此前泛称O3劳动口径待选已由[既有决定恢复](CH5_O3_LABOR_WAGE_TAX_DECISIONS_RECOVERED_20261105.md)纠正：A1已选；后续Owner已采纳工资税金额子合同，见[工资税实施记录](CH5_O3_PAYROLL_TAX_IMPLEMENTATION_20261105.md)；上述预给定金额组合已完成，见[财政组合记录](CH5_O3_PROVINCIAL_FISCAL_COMPOSITION_20261105.md)；下一步核对A1规模输入并准备完整外层一轮，实际单位/来源和收入兼容继续保留，不推导其它科学采纳。
+见[O2批次适配记录](CH5_OUTER_MULTI_ORIGIN_BATCH_ADAPTER_20261105.md)。20项新增与15项相关回归通过，原数值源码未改，实际科学调用0；本篇原审计HEAD/行号及静态阶段事实仍按其时点保留。此前泛称O3劳动口径待选已由[既有决定恢复](CH5_O3_LABOR_WAGE_TAX_DECISIONS_RECOVERED_20261105.md)纠正：A1已选；后续Owner已采纳工资税金额子合同，见[工资税实施记录](CH5_O3_PAYROLL_TAX_IMPLEMENTATION_20261105.md)；上述预给定金额组合已完成，见[财政组合记录](CH5_O3_PROVINCIAL_FISCAL_COMPOSITION_20261105.md)；A1规模接口及预给定劳动适配也已完成，见[记录](CH5_O3_A1_SCALE_INTERFACE_IMPLEMENTATION_20261105.md)；下一步连接独立外层一轮，真实p/单位/来源和收入兼容继续保留，不推导其它科学采纳。

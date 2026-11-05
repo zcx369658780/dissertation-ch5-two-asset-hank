@@ -1,11 +1,11 @@
 # 第五章Python多省份HANK主路线图：HA黑箱与外层闭环
 
-最新O3进度：[预给定省级财政金额账组合](CH5_O3_PROVINCIAL_FISCAL_COMPOSITION_20261105.md)已完成18项限定检查，复用已采纳工资税和家户H聚合账，连接原Corptax/GovInv*ra；复核子账、单位、迭代与当轮企业gross工资一致性。仅新增独立组合/测试，旧科学源码和HA未改，实际科学生产调用0。财政金额工程完成不等于真实财政/GE接受；完整O3一轮仍未接通。
+最新O3进度：[A1 H/p/E接口与预给定劳动矩阵适配](CH5_O3_A1_SCALE_INTERFACE_IMPLEMENTATION_20261105.md)已完成15项限定检查。H绑定进入快照，p须显式声明来源/同H分母，E=pH；原H尺度劳动矩阵按来源列乘p一次，不归一化，p=0保留零列。现有记录仍不足以提供可采纳的31省p，真实数据和完整O3未完成；本轮未改旧科学源码或HA，实际科学调用0。
 
 
 DATE=2026-11-05
 DECISION_ID=CH5_MULTIPROVINCE_OUTER_CLOSURE_OWNER_ROUTE_20261105
-STATUS=OWNER_APPROVED_MAINLINE__SUPPLIED_FISCAL_AMOUNT_COMPOSITION_ENGINEERING_COMPLETE
+STATUS=OWNER_APPROVED_MAINLINE__A1_SCALE_AND_SUPPLIED_LABOR_ADAPTATION_ENGINEERING_COMPLETE
 ACTIVE_RESEARCH_MAINLINE=PYTHON_MULTI_PROVINCE_HANK_OUTER_CLOSURE
 FORMER_TEMP31_DIAGNOSTIC_ROUTE=HISTORICAL_CLOSED__NOT_ACTIVE_MAINLINE
 NEW_SCIENTIFIC_RUN_GRANT=NONE
@@ -54,9 +54,11 @@ Local-first职责保持：Codex负责具体授权内工程，Owner保留经济�
 
 外层调用链及已接通/缺接线/待Owner经济口径矩阵已完成：[缺口定位与最小闭环方案](CH5_OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN_20261105.md)。静态源码定位不等于生产接线、数值运行或均衡接受；本次未导入/执行科学代码。
 
-NEXT_ENGINEERING_TARGET=O3_A1_SCALE_INPUT_AND_ONE_TURN_WIRING
-NEXT_TASK_TITLE=核对既有H/p/E输入与单位，准备企业E和家庭H分离的独立外层一轮组合
-NEXT_TASK_STATUS=SUPPLIED_FISCAL_COMPOSITION18_CHECKS_PASS__FULL_O3_AND_SCIENTIFIC_RUN_NOT_DONE
+NEXT_ENGINEERING_TARGET=O3_INDEPENDENT_ONE_TURN_COMPOSITION
+NEXT_TASK_TITLE=连接O2批次、原工作地劳动结果、A1尺度与资本企业工资财政，保持企业E和家庭H分离
+NEXT_TASK_STATUS=A1_SCALE_INTERFACE15_CHECKS_PASS__REAL_P_AND_FULL_O3_NOT_DONE
+
+[A1尺度接口记录](CH5_O3_A1_SCALE_INTERFACE_IMPLEMENTATION_20261105.md)已完成历史角色恢复和预给定H/p/E、原劳动矩阵按列乘p的工程片；真实p面板尚未采纳，不填默认值，不将历史O/I/S记录改写为完整数据。
 
 [财政金额组合记录](CH5_O3_PROVINCIAL_FISCAL_COMPOSITION_20261105.md)已交付，连接已采纳账项与原企业其它金额项；旧生产链不改，真实来源/单位、财政/GE接受和运行门保持。
 
@@ -89,4 +91,4 @@ REMOTE_BRANCH=governance/ch5-codex-local-first-20261101
 
 仅同步脱敏治理文档，不推模型分支/科学代码或原载荷，不合并main。已有SSH路径和身份保持；推送失败不自动重试或切换身份/协议。同步完成以实际远端提交及文件Blob/字节数/SHA256回读为准，本地私有回执保存最终身份。旧PENDING_SYNC段落保留为历史，不代表本次交付结果。
 
-O2结果：[多来源批次适配](CH5_OUTER_MULTI_ORIGIN_BATCH_ADAPTER_20261105.md)。O3以[既有决定恢复记录](CH5_O3_LABOR_WAGE_TAX_DECISIONS_RECOVERED_20261105.md)纠正此前遗漏：A1已选、A2未选；工资税子合同已由Owner采纳并完成独立工程，Tt/AtTax内部H聚合也已采纳并独立实现；预给定财政金额组合也已完成18项限定检查；下一步核对A1规模输入并准备完整外层一轮，实际单位/来源和收入兼容继续保留，不回到HA内部算法研究。
+O2结果：[多来源批次适配](CH5_OUTER_MULTI_ORIGIN_BATCH_ADAPTER_20261105.md)。O3以[既有决定恢复记录](CH5_O3_LABOR_WAGE_TAX_DECISIONS_RECOVERED_20261105.md)纠正此前遗漏：A1已选、A2未选；工资税子合同已由Owner采纳并完成独立工程，Tt/AtTax内部H聚合也已采纳并独立实现；预给定财政金额组合也已完成18项限定检查；A1规模接口及预给定劳动适配也已完成15项限定检查；下一步连接独立外层一轮，真实p、实际单位/来源和收入兼容继续保留，不回到HA内部算法研究。
