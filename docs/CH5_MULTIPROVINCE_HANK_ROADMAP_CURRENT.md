@@ -2,7 +2,7 @@
 
 DATE=2026-11-05
 DECISION_ID=CH5_MULTIPROVINCE_OUTER_CLOSURE_OWNER_ROUTE_20261105
-STATUS=OWNER_APPROVED_MAINLINE__DOCUMENTATION_MILESTONE_ONLY
+STATUS=OWNER_APPROVED_MAINLINE__STAGE1_STATIC_MAP_COMPLETE__IMPLEMENTATION_NOT_RUN
 ACTIVE_RESEARCH_MAINLINE=PYTHON_MULTI_PROVINCE_HANK_OUTER_CLOSURE
 FORMER_TEMP31_DIAGNOSTIC_ROUTE=HISTORICAL_CLOSED__NOT_ACTIVE_MAINLINE
 NEW_SCIENTIFIC_RUN_GRANT=NONE
@@ -39,7 +39,7 @@ Local-first职责保持：Codex负责具体授权内工程，Owner保留经济�
 
 | 阶段 | 目标与限定范围 | 交付及完成标志 | 运行安排 |
 | --- | --- | --- | --- |
-| 1 外层生产链接线 | 固定来源中的外层入口、价格/净工资、省份状态 → HA黑箱 → 劳动与资本配置、企业、汇总及价格更新 | 完整调用与数据流图；逐项标记已接通、缺接线、待Owner经济口径；明确省份方向、维度、单位、工资税单次应用及外层残差入口 | 首先只读静态定位和实施计划；本轮未执行 |
+| 1 外层生产链接线 | 固定来源中的外层入口、价格/净工资、省份状态 → HA黑箱 → 劳动与资本配置、企业、汇总及价格更新 | 完整调用与数据流图；逐项标记已接通、缺接线、待Owner经济口径；明确省份方向、维度、单位、工资税单次应用及外层残差入口 | 静态定位和实施计划已完成，见下方报告；外层实现/运行未执行 |
 | 2 数据与校准口径 | 对齐31省居民地/工作地、人口/就业/有效劳动、工资、税收及资产口径 | 参数分为文献给定、数据构造、待校准三类，逐项对应观测矩；复用既有来源资格与缺口记录，不以合成值冒充观测 | 可与阶段1并行准备方案；真实数据读取、正式采用和校准另按具体授权 |
 | 3 最小外层闭环 | 保持HA原样，贯通价格 → 各省HA → 配置与企业 → 价格更新 | 有界多省一轮接线验证；随后按依赖推进31省一轮与外层稳态；每轮可追溯经济汇总、市场清算残差和退出原因 | 未来有具体代码/输入/次数/时限/退出保护的前瞻有限授权后执行；不复用旧7/7 |
 | 4 31省基准经济 | 以确定的数据口径和参数构建政策比较基准 | 校准目标表、观测矩拟合、省际基准汇总与外层均衡记录；接受口径由Owner确定，不预填通过 | 校准及真实均衡运行须具体科学决定；当前NOT_RUN |
@@ -47,15 +47,17 @@ Local-first职责保持：Codex负责具体授权内工程，Owner保留经济�
 
 当前已记录完整31省生产接线尚未认证，真实31省校准和REAL_GE未建立。下一目标针对外层链条缺口，不重复已完成的资产盘点或S01—S03/参考测试。本路线是Owner批准的任务顺序，不是上述阶段已完成的声明。
 
-## 下一具体目标及本次停点
+## 阶段1进度与下一具体目标
 
-NEXT_ENGINEERING_TARGET=OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN
-NEXT_TASK_TITLE=HA黑箱约束下，第五章多省份外层生产链的缺口定位与最小闭环方案
-NEXT_TASK_STATUS=PLANNED_NOT_EXECUTED_THIS_MILESTONE
+外层调用链及已接通/缺接线/待Owner经济口径矩阵已完成：[缺口定位与最小闭环方案](CH5_OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN_20261105.md)。静态源码定位不等于生产接线、数值运行或均衡接受；本次未导入/执行科学代码。
 
-下一目标限定在选定来源的外层入口、工资税、劳动映射、企业、汇总和均衡更新。交付一份有精确代码路径的“已接通／缺接线／待Owner经济口径”矩阵、最短实施顺序及所需检查。遇到经济制度或公式口径待决，列清具体问题交Owner；不回退HA内部研究，也不自行替换科学规则。
+NEXT_ENGINEERING_TARGET=O1_PRODUCTION_WAGE_INTERFACE_ADAPTATION__OWNER_BOUNDARY_CLARIFICATION_PENDING
+NEXT_TASK_TITLE=真实后轮工资接口兼容（纯接口边界待Owner澄清）
+NEXT_TASK_STATUS=PLANNED_NOT_IMPLEMENTED
 
-本次授权范围仅为主路线修正、本地当前入口对齐及GitHub治理分支文档同步。文档回读完成后结束本轮；不同时启动阶段1实现、模型运行、数据加载或后继任务。后续普通工程继续遵循Local-first，不恢复旧网页GPT派单制度。
+已有批次/工资结构优先复用，不重建同用途stub框架。下一目标为纯生产工资接口兼容；其共享校验门位于冻结文件内，已向Owner澄清是否允许仅扩展输入来源/类型验证，答复前不实施。具体任务、完成标准与依赖见[任务清单](../tasks/todo.md)。
+
+真实组合前仍须明确劳动/财政的外部经济口径、真实后轮工资与冻结校验器的兼容边界，以及基准拟合/均衡目标。不得绕过已有门或以此重开HA内部研究。本次仅完成静态方案和文档，不实现O1或运行后继任务；普通工程不恢复旧网页GPT派单制度。
 
 ## 历史预算、接受状态及保护保持
 

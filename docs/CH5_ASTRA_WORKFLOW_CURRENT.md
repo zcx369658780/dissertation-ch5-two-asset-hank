@@ -1,8 +1,10 @@
 # CH5 current workflow — Local-first Codex
 
+最新进度：外层生产链静态定位与实施方案已完成，见[缺口与最小闭环方案](CH5_OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN_20261105.md)。下一目标为O1真实后轮工资接口兼容（纯接口边界已向Owner澄清）；复用已有批次/见证结构，劳动/财政和均衡口径另列待决，模型/测试未运行。
+
 ## 2026-11-05 当前主路线优先说明
 
-当前主线为 **Python多省份HANK外层闭环（HA整体黑箱）**，唯一路线图为 [CH5_MULTIPROVINCE_HANK_ROADMAP_CURRENT.md](CH5_MULTIPROVINCE_HANK_ROADMAP_CURRENT.md)。Owner已批准它取代旧TEMP31诊断推进路线；既有TEMP31源码作为开发基础保留。旧“继续解释正式g/固定点尺度”等下一步已覆盖，历史证据、HA冻结、关闭预算及全部保护保持。本轮只交付路线文档并同步GitHub，不运行后继任务。
+当前主线为 **Python多省份HANK外层闭环（HA整体黑箱）**，唯一路线图为 [CH5_MULTIPROVINCE_HANK_ROADMAP_CURRENT.md](CH5_MULTIPROVINCE_HANK_ROADMAP_CURRENT.md)。Owner已批准它取代旧TEMP31诊断推进路线；既有TEMP31源码作为开发基础保留。旧“继续解释正式g/固定点尺度”等下一步已覆盖，历史证据、HA冻结、关闭预算及全部保护保持。路线修正文档已交付；后续按Owner明确继续推进具体外层工程目标，不自动开放科学运行。
 
 Effective 2026-11-01. Sole current workflow entry; retains this existing filename to avoid a second workflow system.
 Owner decision: [OWNER_LOCAL_FIRST_CODEX_20261101.md](OWNER_LOCAL_FIRST_CODEX_20261101.md).

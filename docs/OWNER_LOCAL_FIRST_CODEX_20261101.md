@@ -854,3 +854,16 @@ Owner将完整HJB+KFE HA模块指定为黑箱，算法引用Kaplan、Moll和Viol
 下一具体目标为“HA黑箱约束下，第五章多省份外层生产链的缺口定位与最小闭环方案”，限定外层入口、工资税、劳动映射、企业、汇总及均衡更新，交付已接通/缺接线/待Owner经济口径矩阵和最短实施顺序。本次文档交付后结束，不自动实现或运行。
 
 原56447829开发来源、既有a*r_a/净工资接口及代码/网格不变；旧S01—S03和Moll结果保持历史证据资格。TEMP31 7/7与参考3/3关闭、零自动重试，旧余额范围不变，无新科学预算。全部科学接受/Results等FALSE、严格标准null及R12/R13/WASM/保护重绑定/16义务保持。旧PENDING_SYNC文字是历史，最终同步结果按本次实际提交、远端回读与私有回执记录；模型分支和科学载荷不推送。
+
+
+## 2026-11-05 Owner继续：外层静态定位及实施计划
+
+OWNER_EXACT_STATEMENT=可以，请继续
+SCOPE=HA黑箱外层生产链静态定位与最小闭环实施方案
+LATEST_REPORT=CH5_OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN_20261105.md
+ENGINEERING_VERDICT=COMPLETED_BOUNDED_STATIC_MAPPING_AND_PLAN__NOT_IMPLEMENTATION_ACCEPTANCE
+NEXT_ENGINEERING_TARGET=O1_PRODUCTION_WAGE_INTERFACE_ADAPTATION__OWNER_BOUNDARY_CLARIFICATION_PENDING
+
+核对固定工作树外层源码，确认一轮和迭代骨架已有；旧批量入口仍用旧含税输入，工作地税候选未接旧one_turn，后轮净工资校验限定合成见证。企业当前工资税项仍Lt*tau，tau*wjt*Lt仅为待采纳条件诊断；劳动映射和外层均衡/校准控制的经济口径留待Owner。真实生产输入适配如触及冻结共同门，须先明确具体接口边界，不能改标签或绕校验。
+
+已给出逐环节精确路径及O1生产工资接口兼容、O2原HA批次适配、O3工作地税外层组合、O4控制器与有界运行准备的依赖/检查点。代码图谱仅用于定位，关键边由源码/AST核实；选定25份源码/测试身份在私有回执保存。没有重做S01—S03/Moll测试，没有新增HA诊断或改算法。测试NOT_RUN，模型导入/科学调用/源码改动/新预算均0，默认0子代理；原关闭预算、接受FALSE、严格标准null及全部保护保持。
