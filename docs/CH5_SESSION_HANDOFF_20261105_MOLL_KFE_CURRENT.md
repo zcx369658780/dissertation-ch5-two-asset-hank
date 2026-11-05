@@ -1,5 +1,12 @@
 # CH5会话交接 · 2026-11-05 · 正式KFE与Moll参考验证
 
+## 2026-11-05 当前主路线优先说明
+
+当前主线为 **Python多省份HANK外层闭环（HA整体黑箱）**，唯一路线图为 [CH5_MULTIPROVINCE_HANK_ROADMAP_CURRENT.md](CH5_MULTIPROVINCE_HANK_ROADMAP_CURRENT.md)。Owner已批准它取代旧TEMP31诊断推进路线；既有TEMP31源码作为开发基础保留。旧“继续解释正式g/固定点尺度”等下一步已覆盖，历史证据、HA冻结、关闭预算及全部保护保持。本轮只交付路线文档并同步GitHub，不运行后继任务。
+
+以下为原交接记录；原STATUS及“TEMP31唯一主线／下一步讨论”描述按存档时点理解。新的当前路线和下一目标见上方路线图；原预算、代码身份与保护条款保持。
+
+
 STATUS=SESSION_ARCHIVED__TEMP31_7OF7_AND_MOLL_REFERENCE3OF3_CLOSED__NO_AUTO_SCIENCE
 OWNER_LATEST_TASK=立即保存本会话进度、Owner决定、本地/GitHub文档同步，并交付交接prompt；不授权后继科研运行。
 GOVERNANCE_BRANCH=governance/ch5-codex-local-first-20261101

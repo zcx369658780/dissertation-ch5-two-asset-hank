@@ -1,4 +1,9 @@
 # CH5 current workflow — Local-first Codex
+
+## 2026-11-05 当前主路线优先说明
+
+当前主线为 **Python多省份HANK外层闭环（HA整体黑箱）**，唯一路线图为 [CH5_MULTIPROVINCE_HANK_ROADMAP_CURRENT.md](CH5_MULTIPROVINCE_HANK_ROADMAP_CURRENT.md)。Owner已批准它取代旧TEMP31诊断推进路线；既有TEMP31源码作为开发基础保留。旧“继续解释正式g/固定点尺度”等下一步已覆盖，历史证据、HA冻结、关闭预算及全部保护保持。本轮只交付路线文档并同步GitHub，不运行后继任务。
+
 Effective 2026-11-01. Sole current workflow entry; retains this existing filename to avoid a second workflow system.
 Owner decision: [OWNER_LOCAL_FIRST_CODEX_20261101.md](OWNER_LOCAL_FIRST_CODEX_20261101.md).
 Classified navigation: [DOC_INDEX current section](DOC_INDEX_CURRENT.md#local-first-current-navigation).
@@ -12,7 +17,7 @@ No generic autonomy grants scientific-source/formula changes, data adoption, num
 Specific 2026-11-02 Owner delegation: [equivalent bounded debug grants](CH5_TEMP31_DELEGATED_DEBUG_AUTHORITY_CURRENT.md) may be issued prospectively by Local Codex within that fixed scope, without asking Owner again. This does not renew a closed grant or open solver/real-data/production/scientific-acceptance gates.
 
 Keep these verdicts separate: engineering acceptance; numerical validation; scientific-contract compliance; independent scientific review; Owner scientific acceptance; formal Results. A self-check cannot be labelled independent review, and cannot release a scientific gate.
-Python TEMP31 is the chosen active research mainline. MATLAB is historical reference, broad parity is not a prerequisite, and corrected legacy errors must not be reintroduced.
+Python multi-province HANK outer closure with HA as a complete black box is the active research mainline. TEMP31 remains the selected development source and historical diagnostic evidence, not the active task route. MATLAB is historical reference, broad parity is not a prerequisite, and corrected legacy errors must not be reintroduced.
 
 Records should contain date, matter, scope, code/commit identity, actual checks/tests, unfinished items, next authorized step and sync state. Preserve one short status, Owner decisions and Git history; retrieve long research history only when needed.
 GitHub is the remote mirror and adviser viewing surface. Ordinary engineering need not push every step; meaningful Owner decisions/status/results must have corresponding local and remote identities. A failed remote readback is PENDING_SYNC, not a completed backup. No identity/protocol/credential switch to bypass a refusal.

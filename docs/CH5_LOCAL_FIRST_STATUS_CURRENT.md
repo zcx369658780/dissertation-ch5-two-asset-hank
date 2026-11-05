@@ -1,4 +1,9 @@
 # CH5 唯一短状态 · 2026-11-05
+
+## 2026-11-05 当前主路线优先说明
+
+当前主线为 **Python多省份HANK外层闭环（HA整体黑箱）**，唯一路线图为 [CH5_MULTIPROVINCE_HANK_ROADMAP_CURRENT.md](CH5_MULTIPROVINCE_HANK_ROADMAP_CURRENT.md)。Owner已批准它取代旧TEMP31诊断推进路线；既有TEMP31源码作为开发基础保留。旧“继续解释正式g/固定点尺度”等下一步已覆盖，历史证据、HA冻结、关闭预算及全部保护保持。本轮只交付路线文档并同步GitHub，不运行后继任务。
+
 本页由 AGENTS.md 唯一指向。最新交接：CH5_SESSION_HANDOFF_20261105_MOLL_KFE_CURRENT.md。Owner 决策：OWNER_LOCAL_FIRST_CODEX_20261101.md；工作流：CH5_ASTRA_WORKFLOW_CURRENT.md。
 这是当前工程进度与治理状态；不替代科学合同，也不授权新的科学运行或原件上传。
 
@@ -44,8 +49,8 @@ G1_MOVE_RENAME_BUDGET=0
 G1_RERUN_THIS_ALIGNMENT=NOT_RUN
 
 ## 路线定位与下一工程目标
-ROADMAP_POSITION=TEMP31_S03_HJB49__PRIMARY_SLIGHTLY_LOWER_BOUNDARY_MASS_HIGHER__POST_AND_ITERATION_GAPS_PERSIST__7_OF7_CLOSED
-NEXT_ENGINEERING_TARGET=OWNER_DISCUSSION_OR_NEW_TASK_AFTER_HANDOFF__NO_AUTO_SCIENCE__BOTH_FINITE_RUN_LEDGERS_CLOSED
+ROADMAP_POSITION=OWNER_APPROVED_OUTER_CLOSURE_MAINLINE__HA_BLACK_BOX__FORMER_TEMP31_DIAGNOSTICS_HISTORICAL
+NEXT_ENGINEERING_TARGET=OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN__NOT_EXECUTED_THIS_DOC_MILESTONE
 G1B_STATUS=DEVELOPMENT_SOURCE_ADOPTED__565_CODE_PATHS_MATERIALIZED__FULL_ASSET_RECOVERY_AND_SCIENCE_INCOMPLETE
 G1B_PUBLIC_ALLOWLIST=NOT_FROZEN
 G1B_SCOPE_CHECK_PARENT=700383670711dc218451ba6e001709f81db556dd
@@ -131,7 +136,7 @@ CURRENT_SYNTHETIC_PRICE_POINT=HOUSEHOLD_RAH_0_09__RB_0_02__NET_WT_19__EXACT_HIST
 2026-11-01 G1B 范围核对已完成上述公开子集；固定 ref、清单与换行证据见 Owner 决策文末的工程记录。R2/R3 是路径/Blob/可返回大小核对，未逐件重新计算 SHA-256；九月两组的18份文件已重算 Git Blob/SHA-256。两份 CSV 的历史清单大小差异均由 LF→CRLF 表示转换精确解释，不据此报缺件或损坏。没有为重复文件或空恢复载荷创建候选分支。LOCAL_ONLY 不等于漏传；完整原件恢复、正式来源采纳、科学接受均未完成。
 
 ## 原科研硬门完整保持
-ACTIVE_RESEARCH_MAINLINE=PYTHON_MULTI_PROVINCE_HANK_TEMP31
+ACTIVE_RESEARCH_MAINLINE=PYTHON_MULTI_PROVINCE_HANK_OUTER_CLOSURE
 MATLAB_ROLE=HISTORICAL_REFERENCE_ONLY
 FORMAL_SOURCE_FREEZE=FALSE
 V010=UNCHANGED
@@ -518,3 +523,18 @@ SCOPE=本地/GitHub治理文档及交接prompt，明确不授权新的模型/科
 已将本会话S02补证、S03、HA算法冻结、HJB临时A/正式post区分、先讨论约定、Moll原始容差定位、maxit35副本批准、两次参考失败和新增真实g采集结果汇总在新交接卡。TEMP317/7、参考3/3均关闭，严格标准null及全部接受FALSE保持，先讨论正式g加权平衡/固定行尺度，不自动接续运行。旧证据/历史dirty树保护保持。
 
 模型代码候选da92d31a96572ae43eb187698fbf40321029cfda仅本地；科学源11个未改。原始科学载荷/完整本地定位与最终回执LOCAL_ONLY。GitHub仅当前治理分支的脱敏文档，最终提交身份和回读由交付回执记录；旧失败/PENDING历史保留，不能把URL存在当作同步完成。
+
+
+## 2026-11-05 Owner批准新主路线，旧TEMP31诊断路线退出当前队列
+
+OWNER_EXACT_STATEMENT=可以，我认为你这个顺序可以，请修正目前线路为主要线路（取代原先temp31线路），保存github路线图文档后我们再继续
+ACTIVE_RESEARCH_MAINLINE=PYTHON_MULTI_PROVINCE_HANK_OUTER_CLOSURE
+ROADMAP=CH5_MULTIPROVINCE_HANK_ROADMAP_CURRENT.md
+FORMER_TEMP31_DIAGNOSTIC_ROUTE=HISTORICAL_CLOSED__NOT_ACTIVE_MAINLINE
+SCOPE=路线修正及本地/GitHub治理文档同步，未运行后继任务
+
+Owner将完整HJB+KFE HA模块指定为黑箱，算法引用Kaplan、Moll和Violante（2018），当前不再追查或解释内部算法、固定点/行和、Moll精度或为其增加价格诊断。新顺序为外层生产链闭环、31省数据与校准口径、最小多省外层运行、31省基准经济、政策实验与第五章写作；前两阶段可并行准备。
+
+下一具体目标为“HA黑箱约束下，第五章多省份外层生产链的缺口定位与最小闭环方案”，限定外层入口、工资税、劳动映射、企业、汇总及均衡更新，交付已接通/缺接线/待Owner经济口径矩阵和最短实施顺序。本次文档交付后结束，不自动实现或运行。
+
+原56447829开发来源、既有a*r_a/净工资接口及代码/网格不变；旧S01—S03和Moll结果保持历史证据资格。TEMP31 7/7与参考3/3关闭、零自动重试，旧余额范围不变，无新科学预算。全部科学接受/Results等FALSE、严格标准null及R12/R13/WASM/保护重绑定/16义务保持。旧PENDING_SYNC文字是历史，最终同步结果按本次实际提交、远端回读与私有回执记录；模型分支和科学载荷不推送。

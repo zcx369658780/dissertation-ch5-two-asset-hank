@@ -5,6 +5,7 @@
 先核真实本地身份；日常启动只读短状态、唯一工作流和本次必要合同/证据。Local Codex 负责授权内工程，Web GPT 按需咨询，Owner 最终科学决定。
 | 分类 | 精确入口 | 读取与适用范围 |
 |---|---|---|
+| CURRENT_RESEARCH_ROADMAP | [多省份HANK主路线：HA黑箱与外层闭环](CH5_MULTIPROVINCE_HANK_ROADMAP_CURRENT.md) | Owner于2026-11-05批准，取代旧TEMP31诊断路线；阶段1外层接线、阶段2数据口径可并行准备，旧预算不重开 |
 | CURRENT_GOVERNANCE | [AGENTS](../AGENTS.md) | 当前职责、短启动与权限边界 |
 | CURRENT_GOVERNANCE | [唯一工作流](CH5_ASTRA_WORKFLOW_CURRENT.md) / [唯一短状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md) | 日常工程推进与当前状态；不用旧 CURRENT/TASK 代替本导航 |
 | CURRENT_GOVERNANCE | [Owner 决策及本阶段记录](OWNER_LOCAL_FIRST_CODEX_20261101.md) | 决策原意、覆盖关系、固定版本和同步回执定位 |
