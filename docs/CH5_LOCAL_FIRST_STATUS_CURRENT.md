@@ -1,6 +1,6 @@
 # CH5 唯一短状态 · 2026-11-06
 
-最新B3进度：[子进程环境与停止回报修复准备](CH5_B3_CHILD_ENVIRONMENT_STOP_REPAIR_PREPARATION_20261106.md)完成，12项离线检查通过。补丁尚未应用：仅拟预置子环境OPENBLAS_MAIN_FREE=1并修复停止结果回报，原审计拒绝保持；旧四份执行文件/合同及四项关闭额度不改。本轮真实worker/NumPy/SciPy导入/HA调用/新额度均0。下一步仅准备未来版本与独立合同绑定方案，不自动重跑。
+最新B3进度：[独立环境V2与合同绑定](CH5_B3_ENVIRONMENT_V2_BINDING_PLAN_20261106.md)完成，14项离线检查通过。修复已落实到两个独立V2文件，旧执行文件/合同/修复草稿保持；V2仅环境项，合同锁5基础文件及原24源码。独立执行决定未登记，公开入口在输出/支持装载前拒绝，本轮真实worker/数值包导入/科学调用均0。下一步是明确前瞻登记固定1次、30秒、2GiB、Job2进程的无模型环境决定后，仅执行该项；旧额度不重开。
 
 
 
@@ -54,7 +54,7 @@ G1_RERUN_THIS_ALIGNMENT=NOT_RUN
 
 ## 路线定位与下一工程目标
 ROADMAP_POSITION=STAGE1_LIMITED_TWO_PROVINCE_COMPONENT_CAPTURE_COMPLETE__O2_HA_NOT_RUN
-NEXT_ENGINEERING_TARGET=B3_FUTURE_NO_MODEL_VERSION_CONTRACT_BINDING_PREPARATION__NO_RUN
+NEXT_ENGINEERING_TARGET=B3_ENVIRONMENT_V2_EXPLICIT_FINITE_DECISION_THEN_SINGLE_NO_MODEL_CHECK
 G1B_STATUS=DEVELOPMENT_SOURCE_ADOPTED__565_CODE_PATHS_MATERIALIZED__FULL_ASSET_RECOVERY_AND_SCIENCE_INCOMPLETE
 G1B_PUBLIC_ALLOWLIST=NOT_FROZEN
 G1B_SCOPE_CHECK_PARENT=700383670711dc218451ba6e001709f81db556dd
@@ -711,3 +711,19 @@ REAL_WORKERS_NUMERICAL_IMPORTS_SCIENTIFIC_CALLS_NEW_GRANTS=ALL0
 保存停止结果离线复现原父端KeyError；候选补丁只对成功结果读取成功字段，停止结果原错误传到mock父端回执，成功/身份/诊断要求不放宽。仅在未来子进程环境块拟预置OPENBLAS_MAIN_FREE=1，父/全局环境不改，子证明及准备合同新增明确核对，原审计函数AST保持。已锁安装源码的环境分支仅在假os对象上检验，无NumPy/SciPy真实导入或24定义装载，不证明实际兼容。
 
 新增未应用补丁/准备清单/测试三路径。12项最终通过，早期单测预期及清单路径/补丁格式检查问题和修复日志保留；旧四执行文件、四检查20回执、上片14准备证据、原24定义源码及六缓存长度/SHA均保持。下一项仅未来版本与独立合同绑定方案；四项旧额度关闭不重试，本轮新额度0。科学/消费者/Results/激活FALSE和严格标准null、原全部STOP/16义务保持。代码仅本地，GitHub仅治理文档，最终身份与回读按私有交付回执。
+
+## 2026-11-06 B3独立环境V2源码/合同绑定完成（未登记执行决定）
+
+LATEST_REPORT=CH5_B3_ENVIRONMENT_V2_BINDING_PLAN_20261106.md
+ENGINEERING_STATUS=ENVIRONMENT_ONLY_V2_BINDING_COMPLETE__14_OFFLINE_CHECKS_PASS__NOT_RUN
+MODEL_ENGINEERING_CANDIDATE=aa3fdc2574901d4aca33dc0c299f4db784741bf3__LOCAL_ONLY
+CONTRACT_SHA256=5f310241781c853fc45d40b4f2a616baed7c9e5bc820f24795754683d642f204
+EXECUTION_DECISION=NOT_ISSUED
+ACTUAL_OUTPUT_DIRECTORY=NOT_CREATED
+REAL_WORKERS_NUMERICAL_IMPORTS_SCIENTIFIC_CALLS_NEW_SCIENTIFIC_GRANTS=ALL0
+
+修复落实到两个新V2文件、独立合同和测试共4路径；旧四执行文件/合同及三修复草稿保持，原24科学源码/HA算法/网格不改。V2仅environment_case，独立决定绑定scope/合同SHA/输出/1次/30秒/每进程2GiB/Job2进程/可选固定ver1次/科学0。决定缺失时真实公开入口在输出与支持装载前拒绝；worker再核同一决定SHA。claim在环境设置前独占登记，设置失败也有终态且不能沿同case再跑。
+
+14项离线合同/身份/决定/来源与mock设置失败/停止原错误/超时/清理/反例通过；mock不作真实环境证据，未导入NumPy/SciPy或实际装载24定义。初次生成缩进编译失败在写入新源码前停止，修正后完整编译/独占写入，私有记录保留。7旧执行/草稿、20旧回执、14上片准备、24源码和6缓存字节/SHA保持，新缓存0。
+
+下一步只针对当前V2明确前瞻登记具体无模型单次决定后执行该项，原三个资源用例不再跑。科学/HA后继仍须适用Owner具体有限决定；严格标准null、科学/消费者/Results/激活FALSE及全部关闭额度/STOP/16义务保持。代码仅本地，治理文档同步按最终回读回执。
