@@ -1,6 +1,6 @@
 # CH5 current workflow — Local-first Codex
 
-最新Owner决定：[采纳保存的A第2轮输入候选](CH5_B3_A_ROUND2_INPUT_OWNER_DECISION_20261106.md)，保留A/B上下文、仅来源A，原值不重算/舍入/裁切/重标19。输入选择已完成；原提案及8项静态检查作为历史保留，新本地伴随记录标记已采纳。本决定不授权网格生成、HA或预算，实际grid hash仍null，科学/消费/Results/激活仍FALSE。本次导入/网格/科学调用/worker/新额度全0。
+本会话已按Owner要求保存：[2026-11-06外层闭环交接卡](CH5_SESSION_HANDOFF_20261106_OUTER_HA_CURRENT.md)。A第2轮保存输入已采纳；V2环境1/1关闭、实际grid hash仍null，网格生成/HA/运行预算均未授权。恢复时先核现场一致性、读当前入口和本卡，再接收Owner最新任务；交接不自动启动后继科研或重开额度。最终提交与GitHub逐件回读见本次私有交付回执。
 
 
 
@@ -39,7 +39,7 @@ Owner reference exception, 2026-11-05: Owner supplied a local two_asset_kinked.m
 
 Owner-authorized reference capture completed, 2026-11-05: A separate additional1/1 Moll reference capture returned true g with HJB9 and full formal-post residual about6.36e-16. Global post row sums are not by themselves a verdict on g: reference defect states carry about1.25e-18 probability, versus substantial saved TEMP31 S03 mass. Keep temporary-HJB diagnostics, formal post/g balance and scaling distinct; no automatic threshold, grid, source or algorithm adoption. Reference3/3 and TEMP31 7/7 are now closed, zero automatic retry; discuss scientific implications and fixed-row scaling with Owner before new actions.
 
-Latest session handoff: [CH5_SESSION_HANDOFF_20261105_MOLL_KFE_CURRENT.md](CH5_SESSION_HANDOFF_20261105_MOLL_KFE_CURRENT.md). Both TEMP317/7 and MATLAB reference3/3 are closed.
+Latest session handoff: [CH5_SESSION_HANDOFF_20261106_OUTER_HA_CURRENT.md](CH5_SESSION_HANDOFF_20261106_OUTER_HA_CURRENT.md). The older Moll handoff is historical; TEMP317/7, reference3/3, seven-entry1/1, old no-model cases and V2 environment1/1 stay closed.
 
 ## 2026-11-05 本会话交接存档（不启动后继）
 
@@ -50,3 +50,7 @@ SCOPE=本地/GitHub治理文档及交接prompt，明确不授权新的模型/科
 已将本会话S02补证、S03、HA算法冻结、HJB临时A/正式post区分、先讨论约定、Moll原始容差定位、maxit35副本批准、两次参考失败和新增真实g采集结果汇总在新交接卡。TEMP317/7、参考3/3均关闭，严格标准null及全部接受FALSE保持，先讨论正式g加权平衡/固定行尺度，不自动接续运行。旧证据/历史dirty树保护保持。
 
 模型代码候选da92d31a96572ae43eb187698fbf40321029cfda仅本地；科学源11个未改。原始科学载荷/完整本地定位与最终回执LOCAL_ONLY。GitHub仅当前治理分支的脱敏文档，最终提交身份和回读由交付回执记录；旧失败/PENDING历史保留，不能把URL存在当作同步完成。
+
+## 2026-11-06 Owner要求会话保存/交接
+
+当前交接为CH5_SESSION_HANDOFF_20261106_OUTER_HA_CURRENT.md，含本会话工程结果与Owner输入采纳决定；完整私有回执及精确恢复prompt仅本地。保存不授予网格/模型/科学后继、重试或额度；恢复先报告真实Git/dirty/身份一致性，再接收Owner最新任务。本次同步最终身份按独立交付回执，旧历史失败保留。

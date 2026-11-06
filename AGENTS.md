@@ -1,6 +1,8 @@
 # Chapter 5 — Local-first execution rules
 Effective Owner decision: 2026-11-01. This is the current execution policy.
 
+Current session handoff: docs/CH5_SESSION_HANDOFF_20261106_OUTER_HA_CURRENT.md. This is a save-only handoff, not a successor grant. On restoration verify the actual two worktrees/refs/dirty state, read current entries and this handoff, report consistency, then receive Owner latest task; no automatic grid/model/scientific launch or budget renewal.
+
 ## Start small
 1. Verify the actual Git root, branch/HEAD, remote, worktree or snapshot identity, and relevant dirty/staged/untracked state. A mirror, snapshot or Zotero repository is not a model worktree.
 2. Read only `docs/CH5_LOCAL_FIRST_STATUS_CURRENT.md`, then `docs/CH5_ASTRA_WORKFLOW_CURRENT.md` and the exact contracts/code/evidence needed for the authorized work.

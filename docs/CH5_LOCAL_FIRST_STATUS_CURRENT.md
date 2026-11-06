@@ -1,6 +1,6 @@
 # CH5 唯一短状态 · 2026-11-06
 
-最新Owner决定：[采纳保存的A第2轮输入候选](CH5_B3_A_ROUND2_INPUT_OWNER_DECISION_20261106.md)，保留A/B上下文、仅来源A，原值不重算/舍入/裁切/重标19。输入选择已完成；原提案及8项静态检查作为历史保留，新本地伴随记录标记已采纳。本决定不授权网格生成、HA或预算，实际grid hash仍null，科学/消费/Results/激活仍FALSE。本次导入/网格/科学调用/worker/新额度全0。
+本会话已按Owner要求保存：[2026-11-06外层闭环交接卡](CH5_SESSION_HANDOFF_20261106_OUTER_HA_CURRENT.md)。A第2轮保存输入已采纳；V2环境1/1关闭、实际grid hash仍null，网格生成/HA/运行预算均未授权。恢复时先核现场一致性、读当前入口和本卡，再接收Owner最新任务；交接不自动启动后继科研或重开额度。最终提交与GitHub逐件回读见本次私有交付回执。
 
 
 
@@ -8,7 +8,7 @@
 
 当前主线为 **Python多省份HANK外层闭环（HA整体黑箱）**，唯一路线图为 [CH5_MULTIPROVINCE_HANK_ROADMAP_CURRENT.md](CH5_MULTIPROVINCE_HANK_ROADMAP_CURRENT.md)。Owner已批准它取代旧TEMP31诊断推进路线；既有TEMP31源码作为开发基础保留。旧“继续解释正式g/固定点尺度”等下一步已覆盖，历史证据、HA冻结、关闭预算及全部保护保持。路线修正文档已交付；后续按Owner明确继续推进具体外层工程目标，不自动开放科学运行。
 
-本页由 AGENTS.md 唯一指向。最新交接：CH5_SESSION_HANDOFF_20261105_MOLL_KFE_CURRENT.md。Owner 决策：OWNER_LOCAL_FIRST_CODEX_20261101.md；工作流：CH5_ASTRA_WORKFLOW_CURRENT.md。
+本页由 AGENTS.md 唯一指向。最新交接：CH5_SESSION_HANDOFF_20261106_OUTER_HA_CURRENT.md（旧Moll交接仅历史参考）。Owner 决策：OWNER_LOCAL_FIRST_CODEX_20261101.md；工作流：CH5_ASTRA_WORKFLOW_CURRENT.md。
 这是当前工程进度与治理状态；不替代科学合同，也不授权新的科学运行或原件上传。
 
 ## 治理与身份
@@ -777,3 +777,15 @@ ACTUAL_GRID_SHA256=null
 新本地owner_input_adoption.json单独绑定该封存候选/原静态计划/来源A/索引0/省序A-B/生成1进入2及进入快照SHA，五项原值逐项匹配Owner问题。原候选、待决策稿、plan.json及检查文件保留当时状态，不反向改写；当前输入已采纳以新决定为准，不能将其扩大为运行许可。来源B/完整批次未放行，19不替代、原值不重算舍入或补扣税。
 
 仅登记决策和核对引用，未重跑原8项检查；导入/网格/科学调用/worker/新额度全0，旧回执/已消费V2决定/6缓存原字节保持。下一步仅准备实际网格身份/外部保护/同record消费及完整计数/唯一worker，不生成网格或运行HA；旧所有额度/STOP/16义务、严格标准null及科学/消费者/Results/激活FALSE保持。原值和Owner原问题/答复仅LOCAL_ONLY，GitHub只同步脱敏记录，API写入0。
+
+## 2026-11-06 会话保存与交接（不启动后继）
+
+OWNER_EXACT_REQUEST=你好，当前会话太长，请立即在github端文档、本地文档中保存当前会话的任务进度、Owner决策等信息，然后给我当前会话的交接prompt。
+CURRENT_HANDOFF=CH5_SESSION_HANDOFF_20261106_OUTER_HA_CURRENT.md
+SESSION_STATE=SAVED_HANDOFF__AWAIT_OWNER_LATEST_TASK
+SAVE_SCOPE=LOCAL_AND_GITHUB_DOCS_AND_COPYABLE_PROMPT_ONLY
+NEW_GRID_SCIENTIFIC_WORKERS_GRANTS=ALL0
+
+已将当前外层主线、A1/工资税/财政H/a*r_a决定、O1—O3/B1/B2/B3、旧无模型环境失败/修复/V2真实1/1、输入/冻结网格计划及Owner已采纳A第2轮候选汇总到新卡。旧PENDING/ISSUED/owner_approved仅按原历史解释，所有关闭额度不恢复；actual grid hash及严格标准null、消费/科学/Results/激活FALSE保持。精确本机位置、已采纳原值、最终HEAD及回读回执仅本地完整交接。
+
+本轮只文档/决定保存和GitHub治理同步，不改科学源、不生成网格、不运行模型/测试、不改保护基线。模型两缓存目录6文件及已消费execution_decision.json保留，历史dirty树和全部LOCAL_ONLY载荷不动。恢复先核现场一致性，再接收Owner任务；未经具体授权不自动续跑。
