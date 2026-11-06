@@ -1,6 +1,6 @@
 # CH5 唯一短状态 · 2026-11-06
 
-最新O2进度：[接入方案与B1原生集成检查](CH5_O2_NATIVE_FACTORY_AND_HA_CONSUMER_BOUNDARY_PLAN_20261106.md)已完成：6项检查通过，实际O2工厂/原容器接入既有一轮，候选状态与保存结果JSON字节相同；轮1→2工资可准备原生请求，原HA消费门仍拒绝。原科学生产函数/HA/外部命令调用均0，只新增一份测试，生产源码与旧缓存未变。SciPy未使用求解依赖以一触即停哨兵隔离，不认证其运行兼容。下一项B2外部见证/有限许可绑定，B3未实现，无新科研额度。
+最新B2进度：[保存工资观察与待许可消费目标绑定](CH5_B2_SAVED_WAGE_OBSERVATION_PENDING_BINDING_20261106.md)工程完成，最终25项检查通过（17保存证据＋2原生输入＋6相关B1回归）。原记录可附加历史观察并绑定进入快照/来源省/声明消费者manifest，同一record经原输入重建及O2请求完整保留；原门仍拒绝，新目标门也始终拒绝。可执行消费许可未实现/未授予，HA及新科学生产调用0。仅外部元数据接口变更，旧14来源记录/清单不重封；下一项B3外部执行器与有限准入准备，不自动运行。
 
 
 
@@ -54,7 +54,7 @@ G1_RERUN_THIS_ALIGNMENT=NOT_RUN
 
 ## 路线定位与下一工程目标
 ROADMAP_POSITION=STAGE1_LIMITED_TWO_PROVINCE_COMPONENT_CAPTURE_COMPLETE__O2_HA_NOT_RUN
-NEXT_ENGINEERING_TARGET=B2_SAVED_OBSERVATION_AND_SCOPED_CONSUMER_PERMISSION_BINDING_ENGINEERING_ONLY
+NEXT_ENGINEERING_TARGET=B3_EXTERNAL_HA_EXECUTOR_AND_FINITE_ADMISSION_PREPARATION_ONLY__NO_RUN
 G1B_STATUS=DEVELOPMENT_SOURCE_ADOPTED__565_CODE_PATHS_MATERIALIZED__FULL_ASSET_RECOVERY_AND_SCIENCE_INCOMPLETE
 G1B_PUBLIC_ALLOWLIST=NOT_FROZEN
 G1B_SCOPE_CHECK_PARENT=700383670711dc218451ba6e001709f81db556dd
@@ -648,3 +648,20 @@ NEW_SCIENTIFIC_GRANTS=0
 首次依赖Windows版本查询setup拦截（0项）和随后新测试误判容器数据生成式的失败均保留；仅修新测试隔离/分类。最终六项全程监视通过：原生产源码未改，SciPy未用求解依赖为一触即停哨兵、实际调用0，命令/网络保护未放宽；原O2/输入/数值容器与NumPy数据构造真实，SciPy/HA运行兼容未认证。15原文件、6旧缓存及关闭probe证据不变，无新缓存。
 
 下一片B2仍只工程；B3未实现，消费资格/科学接受/激活等FALSE、严格标准null、全部旧额度和保护不变。模型代码/测试不推送，治理入口与完整方案/结果按最终实际提交及逐文件回读同步。
+
+
+## 2026-11-06 B2保存观察及待许可消费目标绑定完成（无放行）
+
+LATEST_REPORT=CH5_B2_SAVED_WAGE_OBSERVATION_PENDING_BINDING_20261106.md
+ENGINEERING_STATUS=B2_SAVED_BINDING_COMPLETE__25_CHECKS_PASS_FINAL
+MODEL_ENGINEERING_CANDIDATE=61f04f1f4dae47a2a063f64c29a2309f95424468__LOCAL_ONLY
+CHECKS=17_SAVED_EVIDENCE_PLUS2_NATIVE_INPUT_PLUS6_B1_REGRESSION
+EXECUTABLE_CONSUMER_PERMISSION=NOT_IMPLEMENTED_NOT_GRANTED
+SCIENTIFIC_KERNEL_CALLS=0
+NEW_SCIENTIFIC_GRANTS=0
+
+新增标准库专用reader核对已关闭七入口的9份载荷/21条trace、原工资六输入/返回/14模块身份；附加到同一ProductionWageRecord，所有旧资格FALSE。新待许可目标绑定现有BindingContext/来源省/进入快照与声明consumer_manifest，始终拒绝消费；原消费门AST逐字不变。19项新增加6项相关回归全部通过，原输入重建及O2请求保留同一个附加record，实际共享门仍拒绝。标准库模式无数值导入；原生模式保留B1的未用SciPy求解依赖哨兵限制，不认证SciPy/HA运行。
+
+只改外部工资桥元数据接口，新增reader/测试，共3代码路径。HA/网格/原数值与旧门未改，闭合probe证据和6缓存原字节保持/新缓存0。当前工资桥已不同于旧探针14源pin，旧清单与claim原样留存、不重封、不续用；历史来源范围与当前消费者manifest分开。源码归属依固定worker guard，不伪造未保存的frame filename。
+
+下一项仅B3外部执行器/完整source-grid-input锁定、原AtTax交接及有限准入准备，具体许可未实现未授予，不新增HA输入或运行。旧全部关闭额度/STOP/16义务、严格标准null和科学/消费者/Results/激活FALSE保持；模型工程代码/测试仅本地，GitHub仅治理文档，最终同步按提交及远端逐件回读回执。

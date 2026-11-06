@@ -1,7 +1,9 @@
 # O2原生工厂整合、B1集成检查与HA黑箱消费边界
 
+最新覆盖说明：[B2保存观察与待许可消费目标绑定](CH5_B2_SAVED_WAGE_OBSERVATION_PENDING_BINDING_20261106.md)现已完成25项限定检查；本页B2设计小节保留当时方案语境，实际可执行许可和B3仍未实现/未授权，消费门未放行。
+
 DATE=2026-11-06
-STATUS=B1_NATIVE_O2_INTEGRATION_ENGINEERING_COMPLETE__B2_NOT_IMPLEMENTED__NO_HA_OR_GATE_RELEASE
+STATUS=B1_AND_B2_SAVED_BINDING_ENGINEERING_COMPLETE__EXECUTABLE_PERMISSION_NOT_IMPLEMENTED
 OWNER_CONTINUATION=可以请继续
 MODEL_SOURCE_HEAD=a05ba804489d7e8c93ea6e0fcaf9ad41fb69370b
 GOVERNANCE_PARENT=34da5e0305f02a0c96f3d8a254704d211d82c31f
@@ -64,7 +66,7 @@ HA原HJB/KFE/原汇总、算法/网格/参数控制/原post选择/原归一化�
 
 第二轮误把PreFrozenHouseholdOutputBatch.__post_init__内部的数据校验生成式当成数值函数拦截；该轮失败，不作为最终验收。修正新测试的限定代码分类，仍禁止one_turn实际生产入口和所有原劳动/资本/企业/工资/货币/财政/HA数值入口；最终6项全程监视通过。三份独立日志与保护回执LOCAL_ONLY，以上工程检查修复未消费或重开任何科学额度。主代理自审不称独立科学审查。
 
-## B2：工资生产见证与有限消费许可的最小外部扩展（拟工程设计，未实现）
+## B2：工资生产见证与有限消费许可的原外部设计（保存绑定现已实现）
 
 2026-11-06的21条trace可证明固定合成输入下原工资函数调用/进入/返回的对应关系；它不是完整生产来源资格或新的HA许可。旧SavedWageWitness核对函数则固定了另一套9源/10角色/单工资调用记录格式，不接受新七入口trace；不能通过改旧schema、补假角色或重封旧pin硬套进去。
 
@@ -77,7 +79,7 @@ HA原HJB/KFE/原汇总、算法/网格/参数控制/原post选择/原归一化�
 - 若将来接入限定消费分支，必须再匹配新的Owner明确许可、当前唯一worker的claim、原记录上下文/省序/期次、精确输入/网格与完整消费者源码manifest；历史观察或宽泛ready参数不能代替。每次原require_netwage_inputs仍经同一外部消费门，数值文件无需绕过或取消检查。许可针对整个被批准worker，不能把policy中的重复类型检查计作新运行或发放新额度。
 - 伴随信息须由显式工厂生成并保持原工资数值不变；禁止伪造旧Temp31EffectiveWageRecord、绕过类型校验、把后轮工资重标为首轮19、monkeypatch门或修改policy/HJB内部。若同一原记录无法在原输入重建链中完整保留伴随信息，先停止该工程分支，不暗中更换输入对象/接口语义。
 
-这只是接入设计，尚未实现或授权任何消费分支。Owner此前允许纯接口适配，但没有因此批准新HA运行、科学接受或全局model_activation。设计中的记录/许可核对是主代理受Owner约束的执行证据，不是密码学身份认证或OS隔离。
+保存观察/待许可目标绑定已按新B2记录实现；本小节涉及的可执行消费分支仍未实现或授权。Owner此前允许纯接口适配，但没有因此批准新HA运行、科学接受或全局model_activation。设计中的记录/许可核对是主代理受Owner约束的执行证据，不是密码学身份认证或OS隔离。
 
 **源码身份分开记**：七入口探针的14模块身份集合、旧9角色SourceBundleReceipt和未来O2+HA完整运行manifest是三种不同范围。原工资记录/BindingContext现有source_bundle字段须保留它实际绑定的来源范围；完整消费者manifest另列并交叉引用，不为了相等而给旧记录换hash，也不把14模块标签宣称覆盖HA/网格全体源码。具体新方案需在实施/执行前锁定这些范围和关系。
 
