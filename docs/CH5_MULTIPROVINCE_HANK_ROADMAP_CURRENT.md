@@ -1,11 +1,11 @@
 # 第五章Python多省份HANK主路线图：HA黑箱与外层闭环
 
-最新O3进度：[预给定阶段结果的独立外层一轮拼装](CH5_O3_SUPPLIED_ONE_TURN_ASSEMBLY_20261105.md)已完成23项限定检查，连接O2现有字段视图、A1劳动、预给定资本/企业/净工资/货币与已定财政账，生成只读候选下一轮。O2仅字段/AST兼容，原工厂未执行；真实生产者调度未实现、模型运行0，原pending门仍拒绝HA消费。下一目标是具体有限实调用验证方案，不再追加同用途包装层。
+最新O3进度：[原外层组件单次有限验证方案](CH5_O3_OUTER_COMPONENT_SINGLE_PROBE_PLAN_20261106.md)与执行器准备完成，21项标准库/mock保护检查及16文件身份核对通过。拟定两省合成输入、1个worker/30秒、7次原组件入口及至多1次只读Windows版本查询，零重试；尚未获新运行批准，真实worker/原组件/HA调用均0。预给定一轮23项是既有工程证据，O2原工厂、完整生产链与科学接受仍未建立。下一步仅等待Owner对该具体新方案的有限许可。
 
 
 DATE=2026-11-05
 DECISION_ID=CH5_MULTIPROVINCE_OUTER_CLOSURE_OWNER_ROUTE_20261105
-STATUS=OWNER_APPROVED_MAINLINE__SUPPLIED_ONE_TURN_ASSEMBLY_ENGINEERING_COMPLETE
+STATUS=OWNER_APPROVED_MAINLINE__COMPONENT_PROBE_PREPARED_NOT_AUTHORIZED
 ACTIVE_RESEARCH_MAINLINE=PYTHON_MULTI_PROVINCE_HANK_OUTER_CLOSURE
 FORMER_TEMP31_DIAGNOSTIC_ROUTE=HISTORICAL_CLOSED__NOT_ACTIVE_MAINLINE
 NEW_SCIENTIFIC_RUN_GRANT=NONE
@@ -54,11 +54,11 @@ Local-first职责保持：Codex负责具体授权内工程，Owner保留经济�
 
 外层调用链及已接通/缺接线/待Owner经济口径矩阵已完成：[缺口定位与最小闭环方案](CH5_OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN_20261105.md)。静态源码定位不等于生产接线、数值运行或均衡接受；本次未导入/执行科学代码。
 
-NEXT_ENGINEERING_TARGET=O3_BOUNDED_REAL_COMPONENT_VALIDATION_PLAN
-NEXT_TASK_TITLE=固定外层组件源码/输入/次数/时限及退出保护，准备具体有限实调用验证方案
-NEXT_TASK_STATUS=SUPPLIED_ONE_TURN23_CHECKS_PASS__O2_NATIVE_FACTORY_AND_REAL_DISPATCH_NOT_RUN
+NEXT_ENGINEERING_TARGET=O3_COMPONENT_PROBE_OWNER_DECISION_PENDING
+NEXT_TASK_TITLE=审阅已锁定两省单次外层组件方案并等待Owner新有限许可
+NEXT_TASK_STATUS=PROBE_PREPARATION21_CHECKS_PASS__16_PINS_MATCH__REAL_CALLS0
 
-[预给定一轮拼装记录](CH5_O3_SUPPLIED_ONE_TURN_ASSEMBLY_20261105.md)已交付，O2只作现有字段视图/AST兼容，新净工资原pending消费门保持关闭；不是完整生产执行或科学接受。下一步准备实调用方案，不自动执行或重开额度。
+[预给定一轮拼装记录](CH5_O3_SUPPLIED_ONE_TURN_ASSEMBLY_20261105.md)已交付，O2只作现有字段视图/AST兼容，新净工资原pending消费门保持关闭；不是完整生产执行或科学接受。具体实调用方案已在2026-11-06准备完成，等待Owner新独立有限许可；不自动执行或重开额度。
 
 [A1尺度接口记录](CH5_O3_A1_SCALE_INTERFACE_IMPLEMENTATION_20261105.md)已完成历史角色恢复和预给定H/p/E、原劳动矩阵按列乘p的工程片；真实p面板尚未采纳，不填默认值，不将历史O/I/S记录改写为完整数据。
 
