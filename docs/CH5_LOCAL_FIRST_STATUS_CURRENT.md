@@ -1,6 +1,6 @@
 # CH5 唯一短状态 · 2026-11-06
 
-最新O3进度：[Owner授权的原外层组件单次验证](CH5_O3_OUTER_COMPONENT_SINGLE_PROBE_RESULT_20261106.md)已完成：1个worker约1.062秒，劳动1/资本1/企业2/工资1/货币1/财政诊断1全部成功，21条调用记录及外部交接复核通过；只读Windows版本查询0、HA调用0。该独立额度1/1关闭、零重试；O2原工厂、完整HA生产一轮、真实31省及科学接受仍未建立。下一项仅为O2整合/HA消费边界的接入方案准备，不自动运行后继。
+最新O2进度：[接入方案与B1原生集成检查](CH5_O2_NATIVE_FACTORY_AND_HA_CONSUMER_BOUNDARY_PLAN_20261106.md)已完成：6项检查通过，实际O2工厂/原容器接入既有一轮，候选状态与保存结果JSON字节相同；轮1→2工资可准备原生请求，原HA消费门仍拒绝。原科学生产函数/HA/外部命令调用均0，只新增一份测试，生产源码与旧缓存未变。SciPy未使用求解依赖以一触即停哨兵隔离，不认证其运行兼容。下一项B2外部见证/有限许可绑定，B3未实现，无新科研额度。
 
 
 
@@ -54,7 +54,7 @@ G1_RERUN_THIS_ALIGNMENT=NOT_RUN
 
 ## 路线定位与下一工程目标
 ROADMAP_POSITION=STAGE1_LIMITED_TWO_PROVINCE_COMPONENT_CAPTURE_COMPLETE__O2_HA_NOT_RUN
-NEXT_ENGINEERING_TARGET=O2_NATIVE_INTEGRATION_AND_HA_CONSUMER_BOUNDARY_PLAN_ONLY__NO_AUTO_RUN
+NEXT_ENGINEERING_TARGET=B2_SAVED_OBSERVATION_AND_SCOPED_CONSUMER_PERMISSION_BINDING_ENGINEERING_ONLY
 G1B_STATUS=DEVELOPMENT_SOURCE_ADOPTED__565_CODE_PATHS_MATERIALIZED__FULL_ASSET_RECOVERY_AND_SCIENCE_INCOMPLETE
 G1B_PUBLIC_ALLOWLIST=NOT_FROZEN
 G1B_SCOPE_CHECK_PARENT=700383670711dc218451ba6e001709f81db556dd
@@ -612,3 +612,39 @@ AUTOMATIC_RETRIES=0
 先核源码/输入/16pin/6缓存并登记Owner决定和独占claim，唯一worker exit0、约1.062秒、stdout/stderr空。21条trace组成7组三事件；保存数据离线核对A1按p一次、资本H、旧Lt_prev家户输入、同轮gross工资、财政各乘H一次、原财政诊断与拼装精确一致、候选期次。未再运行或导入原模型重算；候选convergent仅合成声明，不是HA收敛。原科学源码/执行器/夹具/合同及16pin保持，旧6缓存不变/新增0。
 
 本次代码仍848feaf候选仅本地；完整原返回/trace/决定/离线清单LOCAL_ONLY。旧TEMP31 7/7/Moll 3/3等额度不借用，新1/1也已关闭；严格标准null、全部科学/消费者/Results/激活资格FALSE及所有STOP/16义务保持。下一项接入方案可以准备，但本次许可不开放O2原工厂、HA、31省或GE，不自动启动后继。先前准备段待批文字是历史状态，不重复申请已完成许可；治理同步以实际最终提交及回读回执为准。
+
+
+## 2026-11-06 O2原生工厂与HA消费边界方案完成（无科学运行）
+
+LATEST_REPORT=CH5_O2_NATIVE_FACTORY_AND_HA_CONSUMER_BOUNDARY_PLAN_20261106.md
+SCOPE=STATIC_NATIVE_FACTORY_INTEGRATION_AND_CONSUMER_BOUNDARY_PLAN
+ENGINEERING_STATUS=PLAN_COMPLETE__B1_INTEGRATION_CHECKS_NEXT
+SCIENTIFIC_IMPORTS_OR_CALLS_THIS_TASK=0
+SOURCE_EDITS=0
+TESTS=NOT_RUN_DOCUMENTATION_AST_ONLY
+NEW_SCIENTIFIC_RUN_GRANTS=0
+
+澄清O2专项20项曾运行prepare/assemble工程工厂，七入口观察及一轮23项在其组合链只用了字段视图，缺的是原生对象组合见证，不重造同用途包装层。B1拟新增一份集成测试，使用同一模块命名空间、首轮19原生O2→保存外层返回→既有拼装，并单独核对轮1→2工资准备及原消费门拒绝；无HA/科学生产者调用。
+
+B2仅规划外部见证与未来具体有限消费许可的独立绑定，不改旧pending/ready标签；旧9源格式、七入口14模块集合和未来完整消费者manifest不混同。B3未来黑箱外部执行器须保留同一inputs、原a*r_a初始化/正式post KFE/原汇总及原AtTax外部重构；旧来源0/19worker与旧年度runner不能直接充当新多省生产器。当前15份代码/测试只读身份与AST记录LOCAL_ONLY，图谱缺新节点/入边以源码核实，未导入或索引其它项目。
+
+新方案未实施B1/B2/B3或开放消费门。本轮只文档及静态核对，旧缓存/源码/证据与全部STOP/16义务保持；7入口1/1和TEMP31/Moll等已关闭，严格标准null、接受与激活等FALSE。下一项普通工程可直接做B1，不重问已采纳经济口径，也不据此新增科研运行。模型代码仍848feaf候选仅本地；最终治理同步按实际提交及回读回执记录。
+
+
+## 2026-11-06 B1原生O2→既有一轮集成检查完成
+
+LATEST_REPORT=CH5_O2_NATIVE_FACTORY_AND_HA_CONSUMER_BOUNDARY_PLAN_20261106.md
+ENGINEERING_STATUS=B1_COMPLETE__6_CHECKS_PASS_FINAL
+ENGINEERING_CODE_CANDIDATE=ab156e3b7f54c9abf53ed9261a5c5ddc168598c9__LOCAL_ONLY
+NEW_TEST_PATHS=1
+EXISTING_PRODUCTION_SOURCE_EDITS=0
+SCIENTIFIC_SOURCE_FUNCTION_CALLS_FINAL_CHECK=0
+EXTERNAL_ACTIONS_FINAL_CHECK=0
+SCIPY_SOLVER_SENTINEL_CALLS_FINAL_CHECK=0
+NEW_SCIENTIFIC_GRANTS=0
+
+原生O2工厂与真实PreFrozen类型组成一轮候选状态，与保存原探针候选JSON字节完全相同；轮1→2工资原生请求成功准备，生成/进入快照分开，原消费门对两来源仍拒绝。错期次/来源集合及跨轮复用阶段结果均拒绝。预给定家户回复/合成converged身份不变，不是HA观察或接受。
+
+首次依赖Windows版本查询setup拦截（0项）和随后新测试误判容器数据生成式的失败均保留；仅修新测试隔离/分类。最终六项全程监视通过：原生产源码未改，SciPy未用求解依赖为一触即停哨兵、实际调用0，命令/网络保护未放宽；原O2/输入/数值容器与NumPy数据构造真实，SciPy/HA运行兼容未认证。15原文件、6旧缓存及关闭probe证据不变，无新缓存。
+
+下一片B2仍只工程；B3未实现，消费资格/科学接受/激活等FALSE、严格标准null、全部旧额度和保护不变。模型代码/测试不推送，治理入口与完整方案/结果按最终实际提交及逐文件回读同步。
