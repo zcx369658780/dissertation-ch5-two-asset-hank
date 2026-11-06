@@ -1,6 +1,6 @@
-# CH5 唯一短状态 · 2026-11-05
+# CH5 唯一短状态 · 2026-11-06
 
-最新O3进度：[预给定阶段结果的独立外层一轮拼装](CH5_O3_SUPPLIED_ONE_TURN_ASSEMBLY_20261105.md)已完成23项限定检查，连接O2现有字段视图、A1劳动、预给定资本/企业/净工资/货币与已定财政账，生成只读候选下一轮。O2仅字段/AST兼容，原工厂未执行；真实生产者调度未实现、模型运行0，原pending门仍拒绝HA消费。下一目标是具体有限实调用验证方案，不再追加同用途包装层。
+最新O3进度：[原外层组件单次有限验证方案](CH5_O3_OUTER_COMPONENT_SINGLE_PROBE_PLAN_20261106.md)与执行器准备完成，21项标准库/mock保护检查及16文件身份核对通过。拟定两省合成输入、1个worker/30秒、7次原组件入口及至多1次只读Windows版本查询，零重试；尚未获新运行批准，真实worker/原组件/HA调用均0。预给定一轮23项是既有工程证据，O2原工厂、完整生产链与科学接受仍未建立。下一步仅等待Owner对该具体新方案的有限许可。
 
 
 
@@ -54,7 +54,7 @@ G1_RERUN_THIS_ALIGNMENT=NOT_RUN
 
 ## 路线定位与下一工程目标
 ROADMAP_POSITION=STAGE1_MAP_O1_AND_O2_ENGINEERING_COMPLETE__REAL_PRODUCTION_NOT_RUN
-NEXT_ENGINEERING_TARGET=O3_SUPPLIED_ONE_TURN_ENGINEERING_COMPLETE__BOUNDED_REAL_COMPONENT_VALIDATION_PLAN_NEXT
+NEXT_ENGINEERING_TARGET=O3_COMPONENT_PROBE_PREPARED__OWNER_SINGLE_PROBE_APPROVAL_PENDING
 G1B_STATUS=DEVELOPMENT_SOURCE_ADOPTED__565_CODE_PATHS_MATERIALIZED__FULL_ASSET_RECOVERY_AND_SCIENCE_INCOMPLETE
 G1B_PUBLIC_ALLOWLIST=NOT_FROZEN
 G1B_SCOPE_CHECK_PARENT=700383670711dc218451ba6e001709f81db556dd
@@ -578,3 +578,19 @@ MODEL_CODE_CANDIDATE=23d8ac8fe622d604f89dece6585769a969d16d9a__LOCAL_ONLY_NOT_PU
 NEXT_ENGINEERING_TARGET=O3_LABOR_FISCAL_CONTRACT_DISCUSSION__NO_IMPLEMENTATION
 
 新增outer_ha_batch_adapter和行为测试，复用原BindingContext、O1净工资容器及PreFrozenHouseholdOutputBatch；预给定回复按同一快照/省序/期次/输入与网格标签完整组装，失败不提交部分批次，Ct/Lt/At/Bt/AtTax不重复乘人口/效率/税。35项检查通过（20新增、15相关回归），原源码改动0、实际科学调用0。原科学消费门保持关闭，未将工程回复、converged或网格标签当作真实执行/接受证据。旧6个缓存字节保持，新增0。下一步先明确O3企业劳动和工资税收入口径，不自动采纳归一化或改Govinc。原预算、接受FALSE、阈值null及全部保护不变。
+
+
+## 2026-11-06 原外层组件单次验证准备完成（未运行）
+
+LATEST_REPORT=CH5_O3_OUTER_COMPONENT_SINGLE_PROBE_PLAN_20261106.md
+ENGINEERING_STATUS=PREPARATION_COMPLETE__21_STDLIB_MOCK_CHECKS_PASS__16_PINS_MATCH
+MODEL_CODE_CANDIDATE=848feafec5e7e01ff96c38251e3f0ef4a44b91f0__LOCAL_ONLY_NOT_PUSHED
+PROPOSED_GRANT=CH5_O3_OUTER_COMPONENT_SINGLE_PROBE_20261106
+OWNER_NEW_PROBE_APPROVAL=NOT_RECEIVED
+REAL_WORKERS=0
+ORIGINAL_COMPONENT_CALLS=0
+HA_HJB_KFE_CALLS=0
+
+固定两省合成家户数据，准备调用劳动1/资本1/企业2/工资1/货币1/财政诊断1，1worker/30秒/零重试；如依赖需要，至多1次固定系统cmd只读ver查询，另计上限。合同/执行器/夹具和14模块物理字节锁定，待Owner具体批准才独占登记正式claim并启动；本轮未创建正式grant目录或Owner批准。保留旧Lt_prev=家户Lt输入语义并明确未科学采纳，不改变原算法。
+
+21项仅标准库/mock和人工函数，未导入原科学模块或真实子进程，check-plan只读身份通过。原科学源码改动0、旧6缓存字节保持/新增0；保护是Python审计/profile和父超时，不声称OS隔离、内存硬限额或关闭旧保护。模型代码只本地；本次治理同步状态由最终实际提交和逐文件远端回读回执记录。旧额度全部按原范围，TEMP31 7/7/Moll 3/3关闭，资格全FALSE/严格标准null及全部STOP和16义务保持。下一决定仅本方案的新独立1次有限许可，不自动HA、31省或GE。
