@@ -1,14 +1,15 @@
 # 第五章Python多省份HANK主路线图：HA黑箱与外层闭环
 
-最新O3进度：[原外层组件单次有限验证方案](CH5_O3_OUTER_COMPONENT_SINGLE_PROBE_PLAN_20261106.md)与执行器准备完成，21项标准库/mock保护检查及16文件身份核对通过。拟定两省合成输入、1个worker/30秒、7次原组件入口及至多1次只读Windows版本查询，零重试；尚未获新运行批准，真实worker/原组件/HA调用均0。预给定一轮23项是既有工程证据，O2原工厂、完整生产链与科学接受仍未建立。下一步仅等待Owner对该具体新方案的有限许可。
+最新O3进度：[Owner授权的原外层组件单次验证](CH5_O3_OUTER_COMPONENT_SINGLE_PROBE_RESULT_20261106.md)已完成：1个worker约1.062秒，劳动1/资本1/企业2/工资1/货币1/财政诊断1全部成功，21条调用记录及外部交接复核通过；只读Windows版本查询0、HA调用0。该独立额度1/1关闭、零重试；O2原工厂、完整HA生产一轮、真实31省及科学接受仍未建立。下一项仅为O2整合/HA消费边界的接入方案准备，不自动运行后继。
 
 
 DATE=2026-11-05
 DECISION_ID=CH5_MULTIPROVINCE_OUTER_CLOSURE_OWNER_ROUTE_20261105
-STATUS=OWNER_APPROVED_MAINLINE__COMPONENT_PROBE_PREPARED_NOT_AUTHORIZED
+STATUS=OWNER_APPROVED_MAINLINE__SINGLE_COMPONENT_CAPTURE_COMPLETE_1_OF1_CLOSED
 ACTIVE_RESEARCH_MAINLINE=PYTHON_MULTI_PROVINCE_HANK_OUTER_CLOSURE
 FORMER_TEMP31_DIAGNOSTIC_ROUTE=HISTORICAL_CLOSED__NOT_ACTIVE_MAINLINE
-NEW_SCIENTIFIC_RUN_GRANT=NONE
+CURRENT_COMPONENT_GRANT=CH5_O3_OUTER_COMPONENT_SINGLE_PROBE_20261106__1_OF1_CLOSED
+NEW_SUCCESSOR_SCIENTIFIC_RUN_GRANT=NONE
 
 ## Owner决定及覆盖关系
 
@@ -42,7 +43,7 @@ Local-first职责保持：Codex负责具体授权内工程，Owner保留经济�
 
 | 阶段 | 目标与限定范围 | 交付及完成标志 | 运行安排 |
 | --- | --- | --- | --- |
-| 1 外层生产链接线 | 固定来源中的外层入口、价格/净工资、省份状态 → HA黑箱 → 劳动与资本配置、企业、汇总及价格更新 | 完整调用与数据流图；逐项标记已接通、缺接线、待Owner经济口径；明确省份方向、维度、单位、工资税单次应用及外层残差入口 | 静态定位、O1/O2接口、A1与财政及预给定阶段一轮拼装已完成；真实O3调度/运行未执行 |
+| 1 外层生产链接线 | 固定来源中的外层入口、价格/净工资、省份状态 → HA黑箱 → 劳动与资本配置、企业、汇总及价格更新 | 完整调用与数据流图；逐项标记已接通、缺接线、待Owner经济口径；明确省份方向、维度、单位、工资税单次应用及外层残差入口 | 静态定位、O1/O2接口、A1/财政和预给定一轮完成；固定两省原组件7次观察及交接完成，O2原工厂/HA/完整生产一轮未运行 |
 | 2 数据与校准口径 | 对齐31省居民地/工作地、人口/就业/有效劳动、工资、税收及资产口径 | 参数分为文献给定、数据构造、待校准三类，逐项对应观测矩；复用既有来源资格与缺口记录，不以合成值冒充观测 | 可与阶段1并行准备方案；真实数据读取、正式采用和校准另按具体授权 |
 | 3 最小外层闭环 | 保持HA原样，贯通价格 → 各省HA → 配置与企业 → 价格更新 | 有界多省一轮接线验证；随后按依赖推进31省一轮与外层稳态；每轮可追溯经济汇总、市场清算残差和退出原因 | 未来有具体代码/输入/次数/时限/退出保护的前瞻有限授权后执行；不复用旧7/7 |
 | 4 31省基准经济 | 以确定的数据口径和参数构建政策比较基准 | 校准目标表、观测矩拟合、省际基准汇总与外层均衡记录；接受口径由Owner确定，不预填通过 | 校准及真实均衡运行须具体科学决定；当前NOT_RUN |
@@ -52,13 +53,13 @@ Local-first职责保持：Codex负责具体授权内工程，Owner保留经济�
 
 ## 阶段1进度与下一具体目标
 
-外层调用链及已接通/缺接线/待Owner经济口径矩阵已完成：[缺口定位与最小闭环方案](CH5_OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN_20261105.md)。静态源码定位不等于生产接线、数值运行或均衡接受；本次未导入/执行科学代码。
+外层调用链及已接通/缺接线/待Owner经济口径矩阵已完成：[缺口定位与最小闭环方案](CH5_OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN_20261105.md)。该历史静态定位不等于生产接线、数值运行或均衡接受；2026-11-06新增的有限原组件观察按下述独立完成记录区分。
 
-NEXT_ENGINEERING_TARGET=O3_COMPONENT_PROBE_OWNER_DECISION_PENDING
-NEXT_TASK_TITLE=审阅已锁定两省单次外层组件方案并等待Owner新有限许可
-NEXT_TASK_STATUS=PROBE_PREPARATION21_CHECKS_PASS__16_PINS_MATCH__REAL_CALLS0
+NEXT_ENGINEERING_TARGET=O2_NATIVE_INTEGRATION_AND_HA_CONSUMER_BOUNDARY_PLAN_ONLY
+NEXT_TASK_TITLE=复用已有组件见证，准备O2原工厂整合与HA黑箱消费边界的具体接入方案
+NEXT_TASK_STATUS=COMPONENT_CAPTURE7_SOURCE_CALLS_PASS__1_OF1_CLOSED__NO_AUTO_SUCCESSOR
 
-[预给定一轮拼装记录](CH5_O3_SUPPLIED_ONE_TURN_ASSEMBLY_20261105.md)已交付，O2只作现有字段视图/AST兼容，新净工资原pending消费门保持关闭；不是完整生产执行或科学接受。具体实调用方案已在2026-11-06准备完成，等待Owner新独立有限许可；不自动执行或重开额度。
+[预给定一轮拼装记录](CH5_O3_SUPPLIED_ONE_TURN_ASSEMBLY_20261105.md)已交付，O2只作现有字段视图/AST兼容，新净工资原pending消费门保持关闭；不是完整生产执行或科学接受。具体原组件单次观察已获Owner授权并完成，见[1/1关闭记录](CH5_O3_OUTER_COMPONENT_SINGLE_PROBE_RESULT_20261106.md)；原O2工厂和HA消费仍未运行，本次许可不能用于后继。
 
 [A1尺度接口记录](CH5_O3_A1_SCALE_INTERFACE_IMPLEMENTATION_20261105.md)已完成历史角色恢复和预给定H/p/E、原劳动矩阵按列乘p的工程片；真实p面板尚未采纳，不填默认值，不将历史O/I/S记录改写为完整数据。
 

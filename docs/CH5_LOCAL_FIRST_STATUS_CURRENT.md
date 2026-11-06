@@ -1,6 +1,6 @@
 # CH5 唯一短状态 · 2026-11-06
 
-最新O3进度：[原外层组件单次有限验证方案](CH5_O3_OUTER_COMPONENT_SINGLE_PROBE_PLAN_20261106.md)与执行器准备完成，21项标准库/mock保护检查及16文件身份核对通过。拟定两省合成输入、1个worker/30秒、7次原组件入口及至多1次只读Windows版本查询，零重试；尚未获新运行批准，真实worker/原组件/HA调用均0。预给定一轮23项是既有工程证据，O2原工厂、完整生产链与科学接受仍未建立。下一步仅等待Owner对该具体新方案的有限许可。
+最新O3进度：[Owner授权的原外层组件单次验证](CH5_O3_OUTER_COMPONENT_SINGLE_PROBE_RESULT_20261106.md)已完成：1个worker约1.062秒，劳动1/资本1/企业2/工资1/货币1/财政诊断1全部成功，21条调用记录及外部交接复核通过；只读Windows版本查询0、HA调用0。该独立额度1/1关闭、零重试；O2原工厂、完整HA生产一轮、真实31省及科学接受仍未建立。下一项仅为O2整合/HA消费边界的接入方案准备，不自动运行后继。
 
 
 
@@ -53,8 +53,8 @@ G1_MOVE_RENAME_BUDGET=0
 G1_RERUN_THIS_ALIGNMENT=NOT_RUN
 
 ## 路线定位与下一工程目标
-ROADMAP_POSITION=STAGE1_MAP_O1_AND_O2_ENGINEERING_COMPLETE__REAL_PRODUCTION_NOT_RUN
-NEXT_ENGINEERING_TARGET=O3_COMPONENT_PROBE_PREPARED__OWNER_SINGLE_PROBE_APPROVAL_PENDING
+ROADMAP_POSITION=STAGE1_LIMITED_TWO_PROVINCE_COMPONENT_CAPTURE_COMPLETE__O2_HA_NOT_RUN
+NEXT_ENGINEERING_TARGET=O2_NATIVE_INTEGRATION_AND_HA_CONSUMER_BOUNDARY_PLAN_ONLY__NO_AUTO_RUN
 G1B_STATUS=DEVELOPMENT_SOURCE_ADOPTED__565_CODE_PATHS_MATERIALIZED__FULL_ASSET_RECOVERY_AND_SCIENCE_INCOMPLETE
 G1B_PUBLIC_ALLOWLIST=NOT_FROZEN
 G1B_SCOPE_CHECK_PARENT=700383670711dc218451ba6e001709f81db556dd
@@ -594,3 +594,21 @@ HA_HJB_KFE_CALLS=0
 固定两省合成家户数据，准备调用劳动1/资本1/企业2/工资1/货币1/财政诊断1，1worker/30秒/零重试；如依赖需要，至多1次固定系统cmd只读ver查询，另计上限。合同/执行器/夹具和14模块物理字节锁定，待Owner具体批准才独占登记正式claim并启动；本轮未创建正式grant目录或Owner批准。保留旧Lt_prev=家户Lt输入语义并明确未科学采纳，不改变原算法。
 
 21项仅标准库/mock和人工函数，未导入原科学模块或真实子进程，check-plan只读身份通过。原科学源码改动0、旧6缓存字节保持/新增0；保护是Python审计/profile和父超时，不声称OS隔离、内存硬限额或关闭旧保护。模型代码只本地；本次治理同步状态由最终实际提交和逐文件远端回读回执记录。旧额度全部按原范围，TEMP31 7/7/Moll 3/3关闭，资格全FALSE/严格标准null及全部STOP和16义务保持。下一决定仅本方案的新独立1次有限许可，不自动HA、31省或GE。
+
+
+## 2026-11-06 Owner单次授权执行完成（1/1关闭）
+
+OWNER_EXACT_STATEMENT=授权该一次性方案
+LATEST_REPORT=CH5_O3_OUTER_COMPONENT_SINGLE_PROBE_RESULT_20261106.md
+GRANT=CH5_O3_OUTER_COMPONENT_SINGLE_PROBE_20261106
+CURRENT=CLOSED_CAPTURED_NO_RETRY__1_OF1_USED__NO_SUCCESSOR
+OWNER_APPROVAL=TRUE_HISTORICAL_THIS_GRANT_ONLY
+REAL_WORKERS=1
+ORIGINAL_COMPONENT_ATTEMPTS_ENTRIES_RETURNS=7_EACH
+HA_HJB_KFE_CALLS=0
+WINDOWS_VER_QUERIES=0
+AUTOMATIC_RETRIES=0
+
+先核源码/输入/16pin/6缓存并登记Owner决定和独占claim，唯一worker exit0、约1.062秒、stdout/stderr空。21条trace组成7组三事件；保存数据离线核对A1按p一次、资本H、旧Lt_prev家户输入、同轮gross工资、财政各乘H一次、原财政诊断与拼装精确一致、候选期次。未再运行或导入原模型重算；候选convergent仅合成声明，不是HA收敛。原科学源码/执行器/夹具/合同及16pin保持，旧6缓存不变/新增0。
+
+本次代码仍848feaf候选仅本地；完整原返回/trace/决定/离线清单LOCAL_ONLY。旧TEMP31 7/7/Moll 3/3等额度不借用，新1/1也已关闭；严格标准null、全部科学/消费者/Results/激活资格FALSE及所有STOP/16义务保持。下一项接入方案可以准备，但本次许可不开放O2原工厂、HA、31省或GE，不自动启动后继。先前准备段待批文字是历史状态，不重复申请已完成许可；治理同步以实际最终提交及回读回执为准。
