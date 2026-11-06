@@ -1,6 +1,6 @@
 # CH5 current workflow — Local-first Codex
 
-最新B3进度：[输入、冻结网格与有限准入方案](CH5_B3_INPUT_GRID_AND_FINITE_HA_ADMISSION_PLAN_20261106.md)完成8项静态核对。候选为保存的A第2轮原输入，完整值仅LOCAL_ONLY，是否采纳已提交Owner决定；原20×20×2定义/参数/controls锁定，实际grid hash仍null，外部flags与完整调用预算未完成。本轮模型导入/网格生成/科学调用/worker/新额度均0。V2环境1/1继续关闭；输入选择不授权HA或网格生成。
+最新Owner决定：[采纳保存的A第2轮输入候选](CH5_B3_A_ROUND2_INPUT_OWNER_DECISION_20261106.md)，保留A/B上下文、仅来源A，原值不重算/舍入/裁切/重标19。输入选择已完成；原提案及8项静态检查作为历史保留，新本地伴随记录标记已采纳。本决定不授权网格生成、HA或预算，实际grid hash仍null，科学/消费/Results/激活仍FALSE。本次导入/网格/科学调用/worker/新额度全0。
 
 
 

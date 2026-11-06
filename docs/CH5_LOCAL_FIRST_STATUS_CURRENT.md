@@ -1,6 +1,6 @@
 # CH5 唯一短状态 · 2026-11-06
 
-最新B3进度：[输入、冻结网格与有限准入方案](CH5_B3_INPUT_GRID_AND_FINITE_HA_ADMISSION_PLAN_20261106.md)完成8项静态核对。候选为保存的A第2轮原输入，完整值仅LOCAL_ONLY，是否采纳已提交Owner决定；原20×20×2定义/参数/controls锁定，实际grid hash仍null，外部flags与完整调用预算未完成。本轮模型导入/网格生成/科学调用/worker/新额度均0。V2环境1/1继续关闭；输入选择不授权HA或网格生成。
+最新Owner决定：[采纳保存的A第2轮输入候选](CH5_B3_A_ROUND2_INPUT_OWNER_DECISION_20261106.md)，保留A/B上下文、仅来源A，原值不重算/舍入/裁切/重标19。输入选择已完成；原提案及8项静态检查作为历史保留，新本地伴随记录标记已采纳。本决定不授权网格生成、HA或预算，实际grid hash仍null，科学/消费/Results/激活仍FALSE。本次导入/网格/科学调用/worker/新额度全0。
 
 
 
@@ -54,7 +54,7 @@ G1_RERUN_THIS_ALIGNMENT=NOT_RUN
 
 ## 路线定位与下一工程目标
 ROADMAP_POSITION=STAGE1_LIMITED_TWO_PROVINCE_COMPONENT_CAPTURE_COMPLETE__O2_HA_NOT_RUN
-NEXT_ENGINEERING_TARGET=B3_OWNER_INPUT_ADOPTION_CHOICE_THEN_ACTUAL_GRID_AND_EXTERNAL_ADMISSION_PREPARATION__NO_HA
+NEXT_ENGINEERING_TARGET=B3_ADOPTED_INPUT_ACTUAL_GRID_IDENTITY_AND_EXTERNAL_ADMISSION_PREPARATION__NO_GRID_GENERATION_OR_HA
 G1B_STATUS=DEVELOPMENT_SOURCE_ADOPTED__565_CODE_PATHS_MATERIALIZED__FULL_ASSET_RECOVERY_AND_SCIENCE_INCOMPLETE
 G1B_PUBLIC_ALLOWLIST=NOT_FROZEN
 G1B_SCOPE_CHECK_PARENT=700383670711dc218451ba6e001709f81db556dd
@@ -761,3 +761,19 @@ MODEL_IMPORTS_GRID_GENERATIONS_SCIENTIFIC_CALLS_REAL_WORKERS_NEW_GRANTS=ALL0
 机器计划及静态检查两新路径、8项通过，无生产代码变更。拟议1worker/120秒/2GiB与主要原调用上限不是额度；有效回报/native完整计数、实际网格/同record消费分支及唯一worker尚未闭合。V2上片14交接/5输出/已消费决定与6缓存保持，新缓存0；V2 1/1不重开。严格标准null及科学/消费者/Results/激活FALSE、全部STOP/16义务保持；GitHub仅脱敏文档，候选原值与本机定位LOCAL_ONLY。
 
 下一步先待Owner决定是否采纳该输入候选，再做依赖该选择的实际网格身份和外部准入工程。输入采纳不授权网格生成、HA运行或预算；科学运行须最后对具体已就绪执行器/来源/输入/次数/资源/STOP另有适用有限决定。
+
+## 2026-11-06 Owner已采纳保存的A第2轮输入候选（仅输入方案）
+
+LATEST_REPORT=CH5_B3_A_ROUND2_INPUT_OWNER_DECISION_20261106.md
+OWNER_ANSWER=采纳该保存输入候选
+STATUS=OWNER_ADOPTED_EXACT_SAVED_A_ROUND2_INPUT_CANDIDATE_ONLY
+MODEL_RECORD_COMMIT=9e8787cc2e9ed60b32e79297f4a6e392faa354c4__LOCAL_ONLY
+INPUT_CANDIDATE_SHA256=8ed0fb98445ed02debfee0a971e0c728dbd583f6cc323ccfba22406b8191b225
+INPUT_CANDIDATE_ADOPTED=TRUE
+GRID_GENERATION_SCIENTIFIC_RUN_CONSUMER_PERMISSION=NOT_AUTHORIZED
+NEW_RUN_BUDGET=0
+ACTUAL_GRID_SHA256=null
+
+新本地owner_input_adoption.json单独绑定该封存候选/原静态计划/来源A/索引0/省序A-B/生成1进入2及进入快照SHA，五项原值逐项匹配Owner问题。原候选、待决策稿、plan.json及检查文件保留当时状态，不反向改写；当前输入已采纳以新决定为准，不能将其扩大为运行许可。来源B/完整批次未放行，19不替代、原值不重算舍入或补扣税。
+
+仅登记决策和核对引用，未重跑原8项检查；导入/网格/科学调用/worker/新额度全0，旧回执/已消费V2决定/6缓存原字节保持。下一步仅准备实际网格身份/外部保护/同record消费及完整计数/唯一worker，不生成网格或运行HA；旧所有额度/STOP/16义务、严格标准null及科学/消费者/Results/激活FALSE保持。原值和Owner原问题/答复仅LOCAL_ONLY，GitHub只同步脱敏记录，API写入0。

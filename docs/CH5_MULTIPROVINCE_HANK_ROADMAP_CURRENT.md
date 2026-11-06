@@ -1,11 +1,11 @@
 # 第五章Python多省份HANK主路线图：HA黑箱与外层闭环
 
-最新B3进度：[输入、冻结网格与有限准入方案](CH5_B3_INPUT_GRID_AND_FINITE_HA_ADMISSION_PLAN_20261106.md)完成8项静态核对。候选为保存的A第2轮原输入，完整值仅LOCAL_ONLY，是否采纳已提交Owner决定；原20×20×2定义/参数/controls锁定，实际grid hash仍null，外部flags与完整调用预算未完成。本轮模型导入/网格生成/科学调用/worker/新额度均0。V2环境1/1继续关闭；输入选择不授权HA或网格生成。
+最新Owner决定：[采纳保存的A第2轮输入候选](CH5_B3_A_ROUND2_INPUT_OWNER_DECISION_20261106.md)，保留A/B上下文、仅来源A，原值不重算/舍入/裁切/重标19。输入选择已完成；原提案及8项静态检查作为历史保留，新本地伴随记录标记已采纳。本决定不授权网格生成、HA或预算，实际grid hash仍null，科学/消费/Results/激活仍FALSE。本次导入/网格/科学调用/worker/新额度全0。
 
 
 DATE=2026-11-05
 DECISION_ID=CH5_MULTIPROVINCE_OUTER_CLOSURE_OWNER_ROUTE_20261105
-STATUS=OWNER_APPROVED_MAINLINE__B3_STATIC_INPUT_GRID8_PASS_OWNER_INPUT_PENDING
+STATUS=OWNER_APPROVED_MAINLINE__B3_A_ROUND2_INPUT_ADOPTED_NO_RUN_GRANT
 ACTIVE_RESEARCH_MAINLINE=PYTHON_MULTI_PROVINCE_HANK_OUTER_CLOSURE
 FORMER_TEMP31_DIAGNOSTIC_ROUTE=HISTORICAL_CLOSED__NOT_ACTIVE_MAINLINE
 CURRENT_COMPONENT_GRANT=CH5_O3_OUTER_COMPONENT_SINGLE_PROBE_20261106__1_OF1_CLOSED
@@ -55,9 +55,11 @@ Local-first职责保持：Codex负责具体授权内工程，Owner保留经济�
 
 外层调用链及已接通/缺接线/待Owner经济口径矩阵已完成：[缺口定位与最小闭环方案](CH5_OUTER_PRODUCTION_CHAIN_GAPS_AND_MINIMAL_CLOSURE_PLAN_20261105.md)。该历史静态定位不等于生产接线、数值运行或均衡接受；2026-11-06新增的有限原组件观察按下述独立完成记录区分。
 
-NEXT_ENGINEERING_TARGET=B3_OWNER_INPUT_ADOPTION_CHOICE_THEN_ACTUAL_GRID_AND_EXTERNAL_ADMISSION_PREPARATION
-NEXT_TASK_TITLE=待Owner选择保存A第2轮输入候选，再准备实际网格身份/外部准入；不生成网格或运行HA
-NEXT_TASK_STATUS=B3_STATIC_INPUT_GRID8_PASS__OWNER_INPUT_PENDING__GRID_HASH_NULL__HA0
+NEXT_ENGINEERING_TARGET=B3_ADOPTED_INPUT_ACTUAL_GRID_IDENTITY_AND_EXTERNAL_ADMISSION_PREPARATION
+NEXT_TASK_TITLE=输入已采纳，准备实际网格身份/外部保护与完整准入；不生成网格或运行HA
+NEXT_TASK_STATUS=B3_INPUT_ADOPTED__GRID_HASH_NULL__NO_GRID_OR_HA_GRANT
+
+[Owner采纳A第2轮保存输入](CH5_B3_A_ROUND2_INPUT_OWNER_DECISION_20261106.md)已登记：候选原值及A/B上下文保持、仅来源A，输入选择不再待定；原提案/8项检查保留历史，新记录独立标记采纳，不批准网格生成/HA/预算或消费许可。实际grid hash仍null，下一步仅外部身份/保护/准入工程准备。
 
 [输入、冻结网格与有限准入方案](CH5_B3_INPUT_GRID_AND_FINITE_HA_ADMISSION_PLAN_20261106.md)8项静态核对通过；A第2轮保存原值仅作为待Owner采纳候选，原20×20×2定义/参数/controls锁定、实际hash仍null。完整调用预算/同record消费/唯一HA worker未就绪，本轮无导入、网格、科学调用或新额度，输入选择不等于运行许可。
 
