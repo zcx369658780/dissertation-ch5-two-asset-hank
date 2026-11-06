@@ -1,6 +1,6 @@
 # CH5 唯一短状态 · 2026-11-06
 
-最新B3进度：[无模型资源与环境检查](CH5_B3_NO_MODEL_RESOURCE_ENVIRONMENT_RESULT_20261106.md)已封存：19项单测通过，正常退出/超时终止/内存拒绝三项真实检查通过；环境一次在NumPy导入时被os.putenv审计拦截，24定义装载未开始，父端另记录缺失成功字段的汇总问题。四项各1/1关闭、零重试，清理全部确认；HA调用0、新科学额度0。下一步仅准备子进程环境与停止回报修复方案，不自动重跑。
+最新B3进度：[子进程环境与停止回报修复准备](CH5_B3_CHILD_ENVIRONMENT_STOP_REPAIR_PREPARATION_20261106.md)完成，12项离线检查通过。补丁尚未应用：仅拟预置子环境OPENBLAS_MAIN_FREE=1并修复停止结果回报，原审计拒绝保持；旧四份执行文件/合同及四项关闭额度不改。本轮真实worker/NumPy/SciPy导入/HA调用/新额度均0。下一步仅准备未来版本与独立合同绑定方案，不自动重跑。
 
 
 
@@ -54,7 +54,7 @@ G1_RERUN_THIS_ALIGNMENT=NOT_RUN
 
 ## 路线定位与下一工程目标
 ROADMAP_POSITION=STAGE1_LIMITED_TWO_PROVINCE_COMPONENT_CAPTURE_COMPLETE__O2_HA_NOT_RUN
-NEXT_ENGINEERING_TARGET=B3_CHILD_ENVIRONMENT_AND_STOP_REPORTING_REPAIR_PREPARATION__NO_AUTOMATIC_RETRY__NO_HA
+NEXT_ENGINEERING_TARGET=B3_FUTURE_NO_MODEL_VERSION_CONTRACT_BINDING_PREPARATION__NO_RUN
 G1B_STATUS=DEVELOPMENT_SOURCE_ADOPTED__565_CODE_PATHS_MATERIALIZED__FULL_ASSET_RECOVERY_AND_SCIENCE_INCOMPLETE
 G1B_PUBLIC_ALLOWLIST=NOT_FROZEN
 G1B_SCOPE_CHECK_PARENT=700383670711dc218451ba6e001709f81db556dd
@@ -698,3 +698,16 @@ NEW_SCIENTIFIC_GRANTS=0
 正常返回0.296秒、超时终止1.015秒、256MiB分配在96MiB进程限制下拒绝0.297秒，三项通过；环境项0.343秒退出70，原worker记录AUDIT_DENIED:os.putenv，父端另报KeyError:definitions_loaded。四项实际Job/挂接/子证明及最终活跃进程0、句柄关闭确认；环境项Job进程上限2，不是单进程HA资源资格。ver0、HA0、24定义实际装载0，未自动重试或重封旧合同。安装元数据仍为Python3.11.9/NumPy2.4.6/SciPy1.17.1，不认证真实导入或HA兼容。
 
 下一步仅准备子进程内环境预置和停止回报修复方案；先保留旧失败/版本，不改目录续跑。完整运行输入/实际网格/可执行消费许可、科学预算及HA运行均未放行；严格标准null、接受/Results/激活FALSE保持。原24源码不改，旧闭合七入口14份证据字节/SHA一致，6缓存保留/新增0；代码仅本地，GitHub仅治理文档，终态与回读以私有交付回执为准。
+
+## 2026-11-06 B3子进程环境/停止回报修复准备完成（补丁未应用）
+
+LATEST_REPORT=CH5_B3_CHILD_ENVIRONMENT_STOP_REPAIR_PREPARATION_20261106.md
+ENGINEERING_STATUS=UNAPPLIED_REPAIR_PREPARATION_COMPLETE__12_OFFLINE_CHECKS_PASS
+MODEL_ENGINEERING_CANDIDATE=0bc66c0eda5539f86dfb757bfbf60011b2eed945__LOCAL_ONLY
+PATCH_APPLIED=FALSE
+NEW_EXECUTABLE_CONTRACT_CREATED=FALSE
+REAL_WORKERS_NUMERICAL_IMPORTS_SCIENTIFIC_CALLS_NEW_GRANTS=ALL0
+
+保存停止结果离线复现原父端KeyError；候选补丁只对成功结果读取成功字段，停止结果原错误传到mock父端回执，成功/身份/诊断要求不放宽。仅在未来子进程环境块拟预置OPENBLAS_MAIN_FREE=1，父/全局环境不改，子证明及准备合同新增明确核对，原审计函数AST保持。已锁安装源码的环境分支仅在假os对象上检验，无NumPy/SciPy真实导入或24定义装载，不证明实际兼容。
+
+新增未应用补丁/准备清单/测试三路径。12项最终通过，早期单测预期及清单路径/补丁格式检查问题和修复日志保留；旧四执行文件、四检查20回执、上片14准备证据、原24定义源码及六缓存长度/SHA均保持。下一项仅未来版本与独立合同绑定方案；四项旧额度关闭不重试，本轮新额度0。科学/消费者/Results/激活FALSE和严格标准null、原全部STOP/16义务保持。代码仅本地，GitHub仅治理文档，最终身份与回读按私有交付回执。

@@ -1,6 +1,6 @@
 # CH5 current workflow — Local-first Codex
 
-最新B3进度：[无模型资源与环境检查](CH5_B3_NO_MODEL_RESOURCE_ENVIRONMENT_RESULT_20261106.md)已封存：19项单测通过，正常退出/超时终止/内存拒绝三项真实检查通过；环境一次在NumPy导入时被os.putenv审计拦截，24定义装载未开始，父端另记录缺失成功字段的汇总问题。四项各1/1关闭、零重试，清理全部确认；HA调用0、新科学额度0。下一步仅准备子进程环境与停止回报修复方案，不自动重跑。
+最新B3进度：[子进程环境与停止回报修复准备](CH5_B3_CHILD_ENVIRONMENT_STOP_REPAIR_PREPARATION_20261106.md)完成，12项离线检查通过。补丁尚未应用：仅拟预置子环境OPENBLAS_MAIN_FREE=1并修复停止结果回报，原审计拒绝保持；旧四份执行文件/合同及四项关闭额度不改。本轮真实worker/NumPy/SciPy导入/HA调用/新额度均0。下一步仅准备未来版本与独立合同绑定方案，不自动重跑。
 
 
 
