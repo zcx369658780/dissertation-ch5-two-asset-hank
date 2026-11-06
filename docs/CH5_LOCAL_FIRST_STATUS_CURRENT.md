@@ -1,6 +1,6 @@
 # CH5 唯一短状态 · 2026-11-06
 
-最新B3进度：[V2单次环境检查](CH5_B3_ENVIRONMENT_V2_SINGLE_CHECK_RESULT_20261106.md)已通过并关闭1/1，零重试。1个worker约3.063秒正常退出，峰值提交内存62,586,880字节；真实NumPy2.4.6/SciPy1.17.1导入及24定义装载完成，项目科学函数进入/HA/ver均0，实际Job与清理确认。原源码/旧失败/额度保持，科学与消费者/Results/激活仍FALSE。下一步仅准备具体输入、冻结网格身份及HA外部有限准入方案，不自动运行HA。
+最新B3进度：[输入、冻结网格与有限准入方案](CH5_B3_INPUT_GRID_AND_FINITE_HA_ADMISSION_PLAN_20261106.md)完成8项静态核对。候选为保存的A第2轮原输入，完整值仅LOCAL_ONLY，是否采纳已提交Owner决定；原20×20×2定义/参数/controls锁定，实际grid hash仍null，外部flags与完整调用预算未完成。本轮模型导入/网格生成/科学调用/worker/新额度均0。V2环境1/1继续关闭；输入选择不授权HA或网格生成。
 
 
 
@@ -54,7 +54,7 @@ G1_RERUN_THIS_ALIGNMENT=NOT_RUN
 
 ## 路线定位与下一工程目标
 ROADMAP_POSITION=STAGE1_LIMITED_TWO_PROVINCE_COMPONENT_CAPTURE_COMPLETE__O2_HA_NOT_RUN
-NEXT_ENGINEERING_TARGET=B3_FIXED_INPUT_FROZEN_GRID_IDENTITY_AND_EXTERNAL_HA_ADMISSION_PLAN_PREPARATION__NO_HA
+NEXT_ENGINEERING_TARGET=B3_OWNER_INPUT_ADOPTION_CHOICE_THEN_ACTUAL_GRID_AND_EXTERNAL_ADMISSION_PREPARATION__NO_HA
 G1B_STATUS=DEVELOPMENT_SOURCE_ADOPTED__565_CODE_PATHS_MATERIALIZED__FULL_ASSET_RECOVERY_AND_SCIENCE_INCOMPLETE
 G1B_PUBLIC_ALLOWLIST=NOT_FROZEN
 G1B_SCOPE_CHECK_PARENT=700383670711dc218451ba6e001709f81db556dd
@@ -744,3 +744,20 @@ Owner在具体方案后继续，先登记独立决定与合同/次数/资源/STO
 旧7执行/草稿、20旧回执、15上一片准备、原24源码、V2四文件及6缓存长度/SHA保持，新缓存0；旧环境失败不改写、三个旧资源用例不重跑。固定execution_decision.json原字节在模型树本地保留且不提交/推送，ISSUED仅历史登记事实，真实claim与本回执已关闭1/1，不授权第二次。
 
 下一步仅准备具体运行输入、冻结网格实际身份与HA外部有限准入方案；本轮没有选新参数/价格/数据、生成网格、发放科学额度或运行HA。旧全部关闭额度/STOP/16义务保持，模型代码未推，治理同步按最终回读回执。
+
+## 2026-11-06 B3输入/冻结网格/有限准入静态方案完成（待Owner输入选择）
+
+LATEST_REPORT=CH5_B3_INPUT_GRID_AND_FINITE_HA_ADMISSION_PLAN_20261106.md
+ENGINEERING_STATUS=STATIC_INPUT_GRID_PLAN8_CHECKS_PASS__OWNER_INPUT_ADOPTION_PENDING
+MODEL_PLAN_CANDIDATE=cd0c235fab990209e28a97a4cfa98a6c20b9279b__LOCAL_ONLY
+UNCHANGED_HA_ENVIRONMENT_CODE_CANDIDATE=aa3fdc2574901d4aca33dc0c299f4db784741bf3
+PRIVATE_INPUT_CANDIDATE_SHA256=8ed0fb98445ed02debfee0a971e0c728dbd583f6cc323ccfba22406b8191b225
+OWNER_INPUT_ADOPTED=FALSE
+ACTUAL_GRID_SHA256=null
+MODEL_IMPORTS_GRID_GENERATIONS_SCIENTIFIC_CALLS_REAL_WORKERS_NEW_GRANTS=ALL0
+
+保存A第2轮净工资与rah/rb/rb_gap/Tt原值封存，保留A/B上下文、仅拟来源A，不重标19、舍入/重算或拿B合成回复充完整批次；新输入属于科学选择，已明确询问Owner，未自行采纳。原网格20×20×2/参数/controls与原年度构造及封存参考一致，不生成数组，不把原合成grid标签当真实字节；原后端shape/dtype/内容摘要与待装外部strides/flags保护分列。
+
+机器计划及静态检查两新路径、8项通过，无生产代码变更。拟议1worker/120秒/2GiB与主要原调用上限不是额度；有效回报/native完整计数、实际网格/同record消费分支及唯一worker尚未闭合。V2上片14交接/5输出/已消费决定与6缓存保持，新缓存0；V2 1/1不重开。严格标准null及科学/消费者/Results/激活FALSE、全部STOP/16义务保持；GitHub仅脱敏文档，候选原值与本机定位LOCAL_ONLY。
+
+下一步先待Owner决定是否采纳该输入候选，再做依赖该选择的实际网格身份和外部准入工程。输入采纳不授权网格生成、HA运行或预算；科学运行须最后对具体已就绪执行器/来源/输入/次数/资源/STOP另有适用有限决定。

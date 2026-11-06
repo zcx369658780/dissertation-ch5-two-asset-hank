@@ -1,6 +1,6 @@
 # CH5 current workflow — Local-first Codex
 
-最新B3进度：[V2单次环境检查](CH5_B3_ENVIRONMENT_V2_SINGLE_CHECK_RESULT_20261106.md)已通过并关闭1/1，零重试。1个worker约3.063秒正常退出，峰值提交内存62,586,880字节；真实NumPy2.4.6/SciPy1.17.1导入及24定义装载完成，项目科学函数进入/HA/ver均0，实际Job与清理确认。原源码/旧失败/额度保持，科学与消费者/Results/激活仍FALSE。下一步仅准备具体输入、冻结网格身份及HA外部有限准入方案，不自动运行HA。
+最新B3进度：[输入、冻结网格与有限准入方案](CH5_B3_INPUT_GRID_AND_FINITE_HA_ADMISSION_PLAN_20261106.md)完成8项静态核对。候选为保存的A第2轮原输入，完整值仅LOCAL_ONLY，是否采纳已提交Owner决定；原20×20×2定义/参数/controls锁定，实际grid hash仍null，外部flags与完整调用预算未完成。本轮模型导入/网格生成/科学调用/worker/新额度均0。V2环境1/1继续关闭；输入选择不授权HA或网格生成。
 
 
 
