@@ -2,10 +2,10 @@
 
 依据[Owner最新决定](CH5_OWNER_A_RETURN_PRIORITY_20261107.md)，主路线保持HA黑箱→外层闭环→31省数据/校准→基准→政策实验/第五章写作。近期里程碑调整为[具体A/0返回验证包](CH5_A_ORIGIN_RETURN_VALIDATION_PACKAGE_20261107.md)，[31省数据字典与校准口径](CH5_31PROVINCE_DATA_CALIBRATION_PARALLEL_20261107.md)并行准备。
 
-当前V1a/record进展：A包直接值/快照核对完成，九份工资见证已获准并沿原reader/工厂复建本进程ProductionWageRecord，见[九见证结果](CH5_NINE_WAGE_EVIDENCE_READONLY_RECONCILIATION_20261107.md)。六历史摘要锚与三份首读/交叉依据分列，原消费门仍拒绝；下一是冻结grid/参数/controls实际身份，原定义已列静态recipe，当前未授权构造，worker/保护/有限决定仍缺，不运行。
+当前V1b工件进展：A包直接字段/快照及九见证本进程数据record已核对；本轮长期中小规模网格授权已生效，冻结20×20×2网格及参数/controls实际生成封存回读，见[长期网格授权与实际工件记录](CH5_OWNER_STANDING_GRID_AUTHORITY_AND_ARTIFACT_20261107.md)。实际grid SHA256为`1cc6002840d6a3dfef899c98d09f4796a8e14ccb9116a7952cdf78ab50305258`；目标worker原生输入/合格传输、来源/环境/模块/保护接线及有限HA决定仍缺，原消费门拒绝。
 
 ACTIVE_NEXT_ENGINEERING_TARGET=A_ORIGIN_RETURN_VALIDATION_PACKAGE
-CURRENT_PACKAGE_STATUS=SAVED_LINEAGE_RECORD_RECONSTRUCTED_NOT_RUNTIME_QUALIFIED
+CURRENT_PACKAGE_STATUS=ACTUAL_FROZEN_GRID_SAVED_AND_READBACK_VERIFIED_NOT_RUNTIME_QUALIFIED
 OWNER_PRIORITY_ADOPTED=TRUE
 NEW_RUN_BUDGET=0
 RUN_GATE_CHANGES_AUTHORIZED=FALSE
@@ -19,7 +19,7 @@ RUN_GATE_CHANGES_AUTHORIZED=FALSE
 | V4 后续 | 31省数据采用、校准与基准 | 完整数据/单位/观测矩、运行和科学接受；数据方案可提前并行 |
 | V5 后续 | 政策实验与结果写作 | 基准成立及预定政策问题/对照/指标；方法与数据文字可先准备 |
 
-工程围绕V1的必要依赖连续完成，不再默认先扩展全部通用计数/包装。输入与固定程序归运行前，OS/模块等证明沿受保护生命周期取得，真实root/Cg归运行后产物。现有完整计数/严格接受/保护硬门保持；首次返回与正式科学接受的具体分阶段规则尚未决定。全部预算、actual grid/严格标准null，公开门和全部运行/科学资格FALSE。
+工程围绕V1的必要依赖连续完成，不再默认先扩展全部通用计数/包装。输入与固定程序归运行前，OS/模块等证明沿受保护生命周期取得，真实root/Cg归运行后产物。现有完整计数/严格接受/保护硬门保持；首次返回与正式科学接受的具体分阶段规则尚未决定。actual grid已具备；15实际HA预算及严格标准仍null，公开门和全部运行/科学资格FALSE。
 
 下文保留历史正文原字节，其旧NEXT字段、待派单和PENDING叙述只适用于当时；当前近期顺序以上述Owner决定、A包和CURRENT为准，不撤销已采纳科学合同、旧STOP或保护。
 

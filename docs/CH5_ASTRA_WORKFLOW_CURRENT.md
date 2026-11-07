@@ -1,31 +1,23 @@
 # CH5 当前工作流
 
-保存与发布：前轮治理ec7d2fad逐字节回读已完成；本轮八份脱敏文档以最终交付回执为准。源码/测试/机器记录只本地，main不合并。
+更新：2026-11-07。依据[普通工程自主推进决定](CH5_OWNER_ENGINEERING_AUTONOMY_20261107.md)、[真实A返回优先级](CH5_OWNER_A_RETURN_PRIORITY_20261107.md)及[长期网格授权与实际工件记录](CH5_OWNER_STANDING_GRID_AUTHORITY_AND_ARTIFACT_20261107.md)。
 
-更新：2026-11-07。执行依据：[Owner自主推进决定](CH5_OWNER_ENGINEERING_AUTONOMY_20261107.md)及既有Local-first决定。
+恢复先核两树真实Git根/工作树、分支/HEAD、remote和staged/dirty/untracked，再读AGENTS、[短状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md)及[交接](CH5_SESSION_HANDOFF_20261107_OUTER_HA_CURRENT.md)。历史仅为具体问题读取，默认0子代理，外层Zotero旧任务不适用。
 
-恢复先核两棵实际Git根/工作树、分支/HEAD、remote、staged/dirty/untracked，再读AGENTS、[短状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md)和[最新交接](CH5_SESSION_HANDOFF_20261107_OUTER_HA_CURRENT.md)。历史只为具体问题定点读；外层Zotero旧R40不授权CH5，默认0子代理。
+授权内完成集成成果的实现、必要检查/修复、工程审查和集中保存；不为helper/测试/commit重复请示。AUTO_NEXT=FALSE不阻塞普通工程或已授权的中小规模网格生成。只暂停依赖真实科学/预算/保护决定的部分，独立工程继续；已通过且未变的检查不重复。
 
-普通工程按完整集成结果连续完成：既有合同→实现→必要检查/修复→工程审查/验收→集中保存。内部切片和commit不是Owner停点。只有真实科学方程/值/来源采纳、路线、接受标准、有限运行范围/预算、保护或不可逆决定才交Owner；先完成独立工程。自审不冒充独立科学审查。
+## 当前推进路径
 
-风险检查通过后，仅因新改动、失败或未解风险扩大/重复。来源在集成候选精确绑定；里程碑集中同步文档，CURRENT保持短，历史留报告/Git。旧一次性观察、STOP及关闭额度不因工程修复重开。
+已完成：A原包六直接字段/快照只读核对→九见证原reader/工厂复建本进程数据record→本轮实际冻结20×20×2网格和参数/controls保存及回读。旧plan/recipe授权FALSE和null不反写，新增伴随记录给出实际身份。
 
-## 本轮只读进展
+下一必要工程：A/0目标worker原生输入/record合格传输、来源/环境/模块与保护的具体接线。实际grid已具备，长期生成授权不再当Owner停点；科学定义仍冻结。不无限扩展通用helper/计数，不重复已定输入/Frisch/A1/税/H/Lt_prev。
 
-见[九见证核对与原数据record复建](CH5_NINE_WAGE_EVIDENCE_READONLY_RECONCILIATION_20261107.md)。Owner明确开放的九份原文件稳定读取，六份历史摘要锚匹配，三份首读/结构交叉依据单列；原reader/工厂接受并复建本进程ProductionWageRecord，A工资和A/B快照与采纳包相同。21条trace只读、原七入口未重放，当前消费门拒绝。生产源码/测试未改，旧93项未重跑，科学/网格/新额度0。
+原消费门仍PRODUCER_INVOCATION_NOT_VERIFIED。未来真实返回依赖适用的有限HA范围/15实际预算、首次返回与严格科学接受门的具体适用规则；root/原C/g/权重只能在未来获准运行后取得。strict reference/thresholds及15实际预算null，NEW_RUN_BUDGET=0。科学worker/HA/初始化/求解器未获本次授权，不启动。
 
-下一必要工件是原冻结20×20×2网格/八项参数/四项controls的实际身份。静态recipe准备好，实际生成未授权；如已有精确工件则走只读绑定，否则Owner明确限定构造范围后再推进。目标worker/原生输入/限定消费/保护及实际有限决定仍缺，不扩大成通用计数或诊断研究。
+本次为实际数据工件核对，未导入整个科学包，未创建request/worker或获得当前环境/科学资格。76件基线/原七件未跟踪保持，生产源码和测试未改，旧93项未重跑。HA黑箱、算法/科学网格定义/controls及原劳动/税/收入合同保持。
 
-## 当前执行目标
+## 保存和证据
 
-依据[Owner新优先级](CH5_OWNER_A_RETURN_PRIORITY_20261107.md)，以[真实A返回验证包](CH5_A_ORIGIN_RETURN_VALIDATION_PACKAGE_20261107.md)为近期目标，先经济输入/输出与核对，再必要工程和适用有限执行。指定A原包已获准并完成六个直接字段/快照摘要只读核对，原工资九见证已获准核对、本进程数据record已复建；网格/保护、有限决定及严格门未齐，不运行。31省数据字典/校准目标[并行整理](CH5_31PROVINCE_DATA_CALIBRATION_PARALLEL_20261107.md)。
+长期授权原话、实际身份、剩余依赖进入项目文档及新增本地伴随JSON；数组/参数/controls/完整manifest在本地。旧历史机器记录不回填，不借目录/占位/旧V2证据恢复预算或资格。运行/消费/科学接受、Results、REAL_GE、完整计数和live enforcement保持FALSE。
 
-不把扩大所有通用helper/计数当默认下一里程碑，不重复已采纳输入/Frisch/A1/税/H/Lt_prev，不绕过现有硬门。运行前条件、受保护启动/调用中证明、运行后root/Cg产物分别列明；首次返回与正式科学接受分层尚需具体规则。任务随依赖连续推进，只有实际私有载荷/科学值/预算/保护决定提交具体问题。
-
-沿用已完成候选6602117a5061294b575a7f2c2107f3725f14803b完成startup合同/原UTF-8来源投影的可选计数及入口/启动回查转接，同原counter到root/Cg输出组合通过。16新+77相关回归共93测试入口，复用检查不称唯一独立证据；52来源/103静态边。旧packet/保留字节、ensure_ascii=False投影及严格解析AST保持；渲染上界和UTF-8编码字节分别预留，失败保留容量。详见[startup与来源投影报告](CH5_B3_METERED_STARTUP_AND_SOURCE_PROJECTION_20261107.md)。
-
-局部路由不等于完整计数：工厂/工资证据协调、未接入身份/grid/初次guard、包重建/_check、其他复制/尾换行拼接/独立I/O、规划/验证/记账及loader/native仍缺。后续仅按A包具体执行路径处理必要成本；source overlay累计十一份固定SHA差异，不改旧pin。已开放A包的直接字段已核对；九见证已按明确范围读取并核对，额外链接载荷仍不自行打开，不调用真实后端或生成网格。
-
-主路线、HA整体黑箱、算法/网格/controls、同inputs、a*r_a、净工资及正式post→原KFE→原归一化保持。actual grid/严格标准及15实际预算null，NEW_RUN_BUDGET=0；公开执行和全部运行/科学资格FALSE。AUTO_NEXT=FALSE限制未授权科学后继及重试，不阻塞授权内普通工程；合成身份、替身及旧V2证据不转为真实资格。
-
-保存仅公开脱敏治理文档，模型代码/测试/机器记录/LOCAL_ONLY载荷不发布。原7未跟踪项、保护基线和全部关闭证据保持。远端与本地提交链可不同，不强推求同；逐文件Blob、实际字节与SHA256回读后才记同步完成。
+本轮GitHub首次传输失败，后续同工具/同分支读取已恢复，原失败记录保留；双树本地保存及十文档远端发布以最终交付回执为准。只发布脱敏文档，不发布代码/测试/机器记录/数组/私有载荷，不强推、不合main。全部旧STOP、关闭额度、原缓存、16义务及保护基线保持，不改Desktop/CUA/全局配置。

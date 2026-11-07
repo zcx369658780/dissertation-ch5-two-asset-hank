@@ -6,7 +6,7 @@
 
 本轮完成[已开放A包的直接字段和接口角色只读核对](../docs/CH5_A_INPUT_READONLY_SEMANTIC_MAPPING_20261107.md)，实证单位/年份桥仍缺；原输入/采纳/源/缓存未改。九份见证已获Owner开放并完成[原reader核对/本进程数据record复建](../docs/CH5_NINE_WAGE_EVIDENCE_READONLY_RECONCILIATION_20261107.md)，六历史摘要锚与三份首读/交叉依据分列。未构造目标worker原生数组/request/transport或调用模型。
 
-实施依赖：冻结grid/参数/controls实际工件身份（静态recipe已列，生成未授权）→必要worker/保护和Owner有限决定→真实A返回/原C-g回读；随后B/两省一轮→经济迭代→31省采用/校准/基准。普通工程连续推进，科学值/准入/预算/保护只问具体缺项。现有硬门保持，actual grid/严格标准/15预算null，NEW_RUN_BUDGET=0。
+本轮冻结20×20×2网格/参数/controls已实际生成并封存回读；Owner长期允许中小规模网格生成，见[新决定与实际工件](../docs/CH5_OWNER_STANDING_GRID_AUTHORITY_AND_ARTIFACT_20261107.md)。实施依赖：目标worker原生输入/record合格传输与来源/环境/模块接线→必要worker/保护和Owner有限决定→真实A返回/原C-g回读；随后B/两省一轮→经济迭代→31省采用/校准/基准。普通工程连续推进，科学值/准入/预算/保护只问具体缺项。现有硬门保持，actual grid已具备，严格标准/15实际HA预算null，NEW_RUN_BUDGET=0。
 
 阶段内具体任务和完成标准见[todo.md](todo.md)，不以补齐所有通用计数/包装代替实际返回里程碑。下文是原实施历史，旧下一目标以此处新顺序为准。
 
