@@ -11,7 +11,9 @@
 - [x] V1b-native-data：52完整原模块装载、32实际外部对象、原生A请求/inputs/record/context和原边界守卫接通；五项拒绝/替换检查通过，四工程停止/修复保留，详见[本轮集成](../docs/CH5_A_NATIVE_MODULE_DATA_ASSEMBLY_20261107.md)。仅同进程，不是科学worker/正式环境/OS/native资格。
 - [ ] V1b-worker：适用科学入口与同record受保护进程/可信消费工件；原科学消费/休眠门保持拒绝，不改FALSE绕过有限运行和接受规则。
 - [x] V1c-card：六处原门/来源核对及[首次返回准入方案A/B](../docs/CH5_A_FIRST_RETURN_OWNER_POLICY_DECISION_20261107.md)已形成，方案不是Owner决定。
-- [ ] V1c-policy：Owner明确采纳A或保持B；当前回答/选择null、原门保持。选A也不发运行额度，后续仍需最终运行包的15预算适用性/数值、STOP/保护/可信消费及具体有限决定。
+- [x] V1c-policy：Owner明确“可以我同意A，请继续”，A全部规则已采纳，新增owner_policy_adoption权威记录，旧草稿null保持历史。
+- [x] V1c-contract：政策合同可选接入原准入请求，默认字节保持；16新+17相关回归通过，真实A政策/53来源传输与startup保存回读通过。见[采纳与接线](../docs/CH5_OWNER_A_FIRST_RETURN_POLICY_ADOPTION_20261107.md)。
+- [ ] V1c-run-package：按A完成适用科学入口/执行消费/可信持久账本/实际保护，列15项预算适用性与数值提案，形成最终具体有限运行包并另获Owner有限决定。当前不发额度。
 - [ ] V1d：仅在适用决定齐备后取得A/0真实原返回、原C/g/权重及同输入/root/回读证据；按原失败门留存并停止，不自动重试。
 - [ ] V2：B输入及两省范围另行确定后，验证完整一轮和逐格Frisch→原g/权重→A1 pH/收入对应；A-only不补齐成完整O2。
 - [ ] V3：Owner明确RP/校准与更新变量/经济残差和停止标准后推进外层迭代，不把旧converged当GE。

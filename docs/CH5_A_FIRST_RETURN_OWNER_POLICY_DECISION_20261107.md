@@ -1,3 +1,5 @@
+> 2026-11-07后续Owner明确答复“可以我同意A，请继续”，方案A已采纳，见[采纳决定与接线](CH5_OWNER_A_FIRST_RETURN_POLICY_ADOPTION_20261107.md)。下文待选择/owner_answer=null仅为历史提案；不撤销采纳，也不发放运行额度。具体预算、保护与最终运行包仍须另批。
+
 # A/0首次返回：待Owner选择的准入规则
 
 日期：2026-11-07。状态：OWNER_POLICY_DECISION_REQUIRED_NO_RUN_AUTHORITY。本文是可审阅方案，不是已采纳决定、预算或执行许可；Owner回答/选择仍null，现有门未改。
