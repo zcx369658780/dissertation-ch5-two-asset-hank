@@ -6,9 +6,9 @@ Owner要求授权内普通工程连续完成实现、必要检查/修复、工�
 
 ## 当前工程结果
 
-最新代码候选009f0daa1b72a0a55fcab52423a8c3d40ceb1bc8：同record休眠启动包已与worker内原请求、输出目标及root回报接合，CounterIdentity必须为原对象，目标摘要与路径同时核对。复用原六阶段→原格式合成C/g回读→root封闭及待准入请求，回调前后守卫；错误包、目标碰撞、部分输出和失败重放均拒绝，失败证据保留。公开执行仍在I/O/分派前拒绝。
+最新代码候选5fc18aff950051e3fc074dfa6bdf411c78eb6955：已为五份声明启动工件、指定Python载荷读取及其显式SHA256输入接入原counter。重复操作逐次计费，读取/摘要前预留容量，失败不退还已占用量；实际载荷字节可知则记录，未知为null。可选入口与启动包共用原身份对象，并已在同counter的原root/Cg替身链路核对。
 
-本轮15新+启动16/root17相关回归共48通过；51源码/95静态内部边（4延迟），原63件启动基线含7未跟踪项原字节保持。修复非法现场身份造成停止回执失败；等字节身份替换的变异被捕获且源码恢复。NumPy仅合成容器；实际原包读取/解释、真实OS/HA、科学worker、实际网格与新额度均0。测试不跨历史片累计。详见[启动/root/Cg集成报告](CH5_B3_DORMANT_LAUNCH_ROOT_OUTPUT_JOIN_20261107.md)。
+本轮核心11+组合6新检查、启动16/counter31相关回归共64通过；52源码/98静态边（4延迟）。原64件基线中63件现场字节保持；唯一既有源码变更为外部启动回查的可选计数接线，旧字节已存Git及副本，其余50来源和原7未跟踪项保持。修复非法日志标签破坏失败回执；预算前置变异被捕获，源码恢复。实际原包读取/解释、真实OS/HA、科学worker、实际网格与新额度均0。详见[指定载荷计数报告](CH5_B3_SELECTED_ARTIFACT_BYTE_ACCOUNTING_20261107.md)。
 
 ## 已定与未决
 
@@ -20,8 +20,8 @@ Owner要求授权内普通工程连续完成实现、必要检查/修复、工�
 
 ## 当前缺口与边界
 
-实际原包适配/合格传输、当前科学worker/capsule/声明采纳、冻结grid/参数/controls、可信有限决定与消费账本、完整调用/native/重复字节计数及真实OS/source/module/root/Cg证明仍缺。actual grid hash/artifact、strict reference/thresholds及15实际预算仍null，NEW_RUN_BUDGET=0。实际工件槽位仍null。
+实际原包适配/合格传输、当前科学worker/capsule/声明采纳、冻结grid/参数/controls、可信有限决定与消费账本、完整调用/native/重复字节计数及真实OS/source/module/root/Cg证明仍缺；本轮只覆盖指定载荷，元数据/编解码、其他守卫读取、数组和native成本未覆盖。actual grid hash/artifact、strict reference/thresholds及15实际预算仍null，NEW_RUN_BUDGET=0。实际工件槽位仍null。
 
-全部运行/科学资格、FORMAL_SOURCE_FREEZE、consumer_ready、formal_ha_accepted、Results、model_activation、REAL_GE及live_counts_enforced均FALSE，公开门拒绝。AUTO_NEXT=FALSE不阻塞独立普通工程；当前启动/root/输出离线接合完成；后续重点为已开放字段来源支持下的实际原包适配、完整计数与保护资格准备。不读取未开放私有载荷、不生成实际grid、不调用真实后端。
+全部运行/科学资格、FORMAL_SOURCE_FREEZE、consumer_ready、formal_ha_accepted、Results、model_activation、REAL_GE及live_counts_enforced均FALSE，公开门拒绝。AUTO_NEXT=FALSE不阻塞独立普通工程；当前指定载荷已可在原counter计费，但默认只读入口未强制计费，complete_byte_accounting仍FALSE。后续重点为外部元数据/守卫/复制路径计数、已开放字段来源支持下的原包适配及保护资格准备。不读取未开放私有载荷、不生成实际grid、不调用真实后端。
 
 所有STOP/旧关闭额度/16义务、历史dirty及保护基线、原7未跟踪字节保持。不reset/stash/clean、强推/合main/删分支，不移动证据或保护重绑，不改Desktop/CUA/全局配置。模型代码/测试/机器记录仅本地；远端仅脱敏治理文档，API链与本地链不强求相同，以实际提交和逐文件回读回执为准。
