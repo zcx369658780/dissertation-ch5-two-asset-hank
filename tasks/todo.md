@@ -10,7 +10,8 @@
 - [x] V1b-compile：52完整核定源码沿原接口编译，11定义/103内部边/eager DAG核对通过，无内部未解析目标；目标模块执行/注册0，两项拒绝检查通过，见[完整模块准备](../docs/CH5_A_FULL_ORIGINAL_MODULE_PREPARATION_20261107.md)。
 - [x] V1b-native-data：52完整原模块装载、32实际外部对象、原生A请求/inputs/record/context和原边界守卫接通；五项拒绝/替换检查通过，四工程停止/修复保留，详见[本轮集成](../docs/CH5_A_NATIVE_MODULE_DATA_ASSEMBLY_20261107.md)。仅同进程，不是科学worker/正式环境/OS/native资格。
 - [ ] V1b-worker：适用科学入口与同record受保护进程/可信消费工件；原科学消费/休眠门保持拒绝，不改FALSE绕过有限运行和接受规则。
-- [ ] V1c：明确首次返回证据规则和现有严格/完整计数门的适用处置，固定15项有限预算/STOP与消费决定；缺失时拒绝，旧额度不复用。
+- [x] V1c-card：六处原门/来源核对及[首次返回准入方案A/B](../docs/CH5_A_FIRST_RETURN_OWNER_POLICY_DECISION_20261107.md)已形成，方案不是Owner决定。
+- [ ] V1c-policy：Owner明确采纳A或保持B；当前回答/选择null、原门保持。选A也不发运行额度，后续仍需最终运行包的15预算适用性/数值、STOP/保护/可信消费及具体有限决定。
 - [ ] V1d：仅在适用决定齐备后取得A/0真实原返回、原C/g/权重及同输入/root/回读证据；按原失败门留存并停止，不自动重试。
 - [ ] V2：B输入及两省范围另行确定后，验证完整一轮和逐格Frisch→原g/权重→A1 pH/收入对应；A-only不补齐成完整O2。
 - [ ] V3：Owner明确RP/校准与更新变量/经济残差和停止标准后推进外层迭代，不把旧converged当GE。
