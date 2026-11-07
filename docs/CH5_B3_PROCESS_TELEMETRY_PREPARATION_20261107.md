@@ -1,0 +1,43 @@
+# 指定进程遥测采样接口准备
+
+DATE=2026-11-07
+STATUS=OFFLINE_PROCESS_TELEMETRY_AND_TOY_COUNTER_LINK_PASS__ACTUAL_OS_BACKEND_UNQUALIFIED
+ENGINEERING_CODE_CANDIDATE=a009bc9d95af57f74a9a6ce73008b0bc6068ea9d
+NEW_TELEMETRY_CHECKS=21
+IMPORT_COUNTER_LINK_REGRESSIONS=23
+TOTAL_CHECKS=44
+ACTUAL_WINDOWS_SAMPLING_CALLS_SCIENTIFIC_MODULE_COMPILATIONS_IMPORTS_NUMERICAL_IMPORTS_GRID_HA_SCIENTIFIC_WORKERS_NEW_BUDGET=ALL0
+SUBAGENTS=0
+SYNC=PENDING_SYNC__NO_REMOTE_RETRY
+
+## 接口与完成范围
+
+新增outer_process_telemetry.py和对应测试。原37份来源源码不改，包括counter、import Link、SourceBundle、既有supervisor及冻结的HA/HJB/KFE、原汇总、网格/controls与劳动/税/财政口径。没有修改旧运行记录或重开其许可。
+
+准备函数显式接收CounterIdentity原对象、借用进程句柄、预期PID、进程创建FILETIME和监督端既有monotonic起点；不补默认身份或自动重启计时。准备阶段不读时钟、加载原生库或查询进程。采样时核对原身份/参数，输出既有CounterSample；真实句柄生命周期仍由监督端负责，本接口不打开、启动、恢复、终止或关闭进程。
+
+休眠的Windows读取器声明GetProcessId、GetProcessTimes和K32GetProcessMemoryInfo的ctypes签名，首次调用才加载kernel32。使用PagefileUsage/PeakPagefileUsage作为进程提交内存及其进程生命期峰值，避免把working set/RSS当作提交内存。每次核对PID、创建时间和未退出状态；同一PID的另一进程不能代替。单调时钟回退、类型错误、失效句柄/API读取失败或身份漂移保持首错并终止采样器，不切指标或重试查询。
+
+快照为不可变数据，保留有效样本数、绑定摘要、末次耗时及已观察峰值。边界采样不是连续监控，既不保证两次读取间的状态，也不负责超时/内存强制终止；原counter只会在收到样本时检查其声明限额。真实监督端的Job/进程保护、native次数覆盖和运行准入仍未接入。
+
+同一identity的注入采样器已在toy导入Link中接线，正常导入/返回/守卫验证及超时、峰值超限、查询失败传播均检查通过。它不构成真实counter到worker/句柄的资格证明，不完成HA六阶段或worker生命周期。原Link对样本的声明语义及其公开拒绝入口不改。
+
+## 检查与证据
+
+21项新增离线检查及23项原导入Link回归共44项通过。Win32读取均为替身，检查参数/结构、同句柄和提交内存字段选择、惰性库加载、非Windows拒绝、API失败及禁止fallback；没有实际调用Windows采样后端。测试审计中科研/数值库导入、进程启动、原生库查找/加载、网络及环境改写的禁止尝试均0。
+
+首轮RED确认模块缺失；首轮实现检查因测试夹具给CounterIdentity多传一个字段而停止。修正夹具后21项通过，原错误日志保留，未放宽生产检查。主代理完成工程自审和第二次静态回读，不称独立科学审查，也不将替身检查抬升为真实Windows ABI或运行验证。
+
+新来源目录validators/multi_province/outer_process_telemetry_binding_20261107/保存source_manifest、operation_inventory、historical_delta、binding_plan、import_context_plan及process_telemetry_plan六份JSON。实际38文件/66条内部边，66个选定接口/1354处静态调用位置；62条保守装载边无环、4条函数体延迟边。新建静态builder和目录，原记录不覆盖；全部来源字节/Git Blob、接口AST、摘要及导入顺序经过第二次回读。静态位置不是运行次数或预算。
+
+原37份来源、14份相关旧机器记录、7个未跟踪文件及已采纳A第2轮输入包原字节保持。全部真实科学定义编译/装载、数值导入、网格、HA及科研worker为0。
+
+## 当前边界
+
+实际进程句柄/PID/创建时间/计时起点、counter/worker身份、grid/Cg/输出目标、bundle声明/导入容量及严格reference/thresholds仍null；原15类实际预算仍未批准。actual_OS_backend_qualified、process_telemetry_wired_to_admitted_worker、actual_import_counter_link_qualified、OS_limit_enforcement、continuous_monitoring、live_counts_enforced及scientific_acceptance、FORMAL_SOURCE_FREEZE、consumer_ready、formal_ha_accepted、Results、model_activation、REAL_GE均FALSE。
+
+后续仍需为真实监督端固定同一worker/进程句柄、起点与采样调用，独立验证实际Windows后端和Job强制保护，并补齐外部/生成/native依赖、有效回报/native计数及同record输出接线。真实采样验证或进程运行按适用具体任务执行；本片未启动它们，也不授权网格/HA或新科学额度。保持A/索引0及A/B上下文，不运行B或冒充完整O2批次。
+
+代码、测试与机器记录仅本地；治理树仅保存本报告及三个入口。远端继续PENDING_SYNC，不重试SSH、不切协议、不合并main、不重绑保护或自动启动后继。
+
+关联：[导入事件与计数关联](CH5_B3_IMPORT_COUNTER_LINK_20261107.md)；[当前状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md)。

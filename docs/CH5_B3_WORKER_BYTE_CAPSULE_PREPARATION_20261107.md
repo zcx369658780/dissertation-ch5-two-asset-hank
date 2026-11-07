@@ -1,0 +1,45 @@
+# worker字节封存、内联装载与同记录持久占位准备
+
+DATE=2026-11-07
+STATUS=OFFLINE_CAPSULE_BYTE_EXECUTION_AND_RESERVATION_PASS__NO_RUN_AUTHORITY
+ENGINEERING_CODE_CANDIDATE=7949e694ff41619e99a72bacdabc98bb4379c25b
+NEW_CAPSULE_CHECKS=16
+NATIVE_WORKER_BACKEND_REGRESSIONS=16
+TOTAL_CHECKS=32
+ACTUAL_WIN32_PROCESS_JOB_CALLS_SCIENTIFIC_MODULE_COMPILATIONS_IMPORTS_NUMERICAL_IMPORTS_GRID_HA_SCIENTIFIC_WORKERS_NEW_BUDGET=ALL0
+SUBAGENTS=0
+SYNC=PENDING_SYNC__NO_REMOTE_RETRY
+
+## 本片实现
+
+新增outer_worker_capsule.py及对应测试，扩展outer_native_worker_backend.py的显式新schema分支，原V1磁盘worker路径保持。原42份来源中41份原字节不改，仅原生后端接入新分支；冻结的HA/HJB/KFE、原汇总/网格/controls、逐格Frisch/A1及税/财政口径保持。新分支仍受全部原公开执行门拒绝，不生成Owner决定或运行预算。
+
+封存包包含原始worker字节及SHA256、逻辑文件名、argv和执行/source manifest/声明record摘要，严格校验schema、重复键、类型、base64与内容摘要；只编码和独占保存，不编译或执行实际科学源码。这里record键显式取CounterIdentity.binding_sha256，只是元数据约定，不声称真实来源省record已具备资格。实际科学worker尚未选择、封存或采纳。
+
+新声明增加capsule路径/摘要、精确attempt路径及内联装载器代码摘要，旧worker/Python字节、cwd/argv/完整环境仍核对。准备时不创建占位或加载DLL。私有生命周期进入后，先独占写入声明record对应的attempt文件并flush/fsync，再取得任何Job/进程资源；已有文件或半写文件一律保留并停止，不覆盖、删除、释放后重试或为其伪造完成状态。
+
+占位正文明确ATTEMPT_RESERVED_NOT_RUN_AUTHORITY，绑定声明、封存包、record及counter身份摘要，runtime_admitted和scientific_acceptance均FALSE。它只解决同一明确路径的持久排他，不是Owner批准、可信全局消费账本或科学额度。不能通过移动目录、换记录路径或重建counter获得新的既有科学授权；跨账本全局防重放和正式消费仍未资格。
+
+新分支的命令使用固定-I -S -B -X utf8及-c内联装载器。装载器自身摘要纳入声明，准备时保存原字符串；摘要/代码漂移在原生资源取得前拒绝。子端先按命令中的外部摘要读取封存包与占位记录，再核对源码摘要、argv及record关系，编译并执行同一份已解码bytes，不重新打开原worker路径。声明和封存包变化均停止，不用新磁盘内容fallback。
+
+离线证明是在当前测试进程中执行新建toy字节：原worker文件被替换后仍执行封存的原值；包/占位/装载器摘要、record或argv不符均拒绝。没有实际子进程执行证明，没有实际科学worker绑定；解释器、装载器到实际命令/进程的受保护身份及完整外部依赖仍待核验，worker_source_runtime_binding_verified保持FALSE。
+
+## 检查与来源
+
+16项新检查与16项原生后端回归共32项通过。覆盖精确字节/不可变解码、独占保存、持续排他及半写证据保留、原文件替换不被执行、封存包/占位变动和错record拒绝、内联装载器漂移、空字符argv、准备/公开门无副作用、占位先于任何替身原生API、新counter仍不能复用同一路径，以及旧V1行为。RED缺模块及首轮14项通过日志保留；补齐装载器摘要和子端argv检查后16项通过。
+
+Win32进程/Job调用全部为替身，装载器只在当前测试进程处理新建toy源码。无真实worker、科学定义编译/装载、数值导入、网格或HA；测试审计中进程启动、DLL查找/加载、科研/数值导入、网络和父环境改写禁止尝试均0。主代理工程自审与第二次字节/AST回读不称独立科学审查或实际OS/worker验证。
+
+新目录validators/multi_province/outer_worker_capsule_binding_20261107/包含来源/接口/差异/绑定计划及导入、采样、Job、生命周期、原生后端和封存包计划十份JSON。当前43文件/72条内部边，121个选定接口/1909处静态位置；68条保守装载依赖无环、4条函数体延迟边。内联装载器字符串另做AST核对：50处调用，源码及AST摘要另存；这不补成完整native闭包或运行预算。
+
+新建builder和目标，旧记录不覆盖。所有来源原字节/Git Blob、摘要、接口AST/位置、依赖顺序及内联装载器摘要经过第二次回读；原44份机器记录、7个未跟踪文件及已采纳A第2轮输入包原字节保持。
+
+## 仍未开放的边界
+
+实际科学worker声明/来源及封存包、实际内联装载证明、可信全局准入账本/Owner运行决定/持久消费、Job/进程身份、计时起点、cleanup等待、grid/Cg/输出和严格reference/thresholds仍null。原15类实际预算未批准；新增封存/摘要/独占写入/fsync开销及运行期/最终峰值、有效回报/native计数与同record输出仍须完整计量和接线。
+
+actual_fixed_worker_declaration_adopted、worker_source_runtime_binding_verified、actual_trusted_global_claim_ledger_qualified、actual_OS_backend_qualified、actual_worker_lifecycle_qualified、OS_limit_enforcement、hard_wall_deadline_enforced、live_counts_enforced及scientific_acceptance、FORMAL_SOURCE_FREEZE、consumer_ready、formal_ha_accepted、Results、model_activation、REAL_GE均FALSE；attempt_reservation_is_run_authority明确FALSE。
+
+后续需固定真正的worker职责/来源与启动包，完成可信Owner准入/消费、受保护实际执行身份及运行/回报证明。本片不运行B、不冒充完整O2批次，不开科学额度或复用旧额度。代码/测试/机器记录仅本地，治理树只保存本脱敏报告和三个入口；远端PENDING_SYNC、不重试SSH、不切协议、不合并main、不重绑保护、不启动后继。
+
+关联：[原生后端准备](CH5_B3_NATIVE_WORKER_BACKEND_PREPARATION_20261107.md)；[当前状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md)。

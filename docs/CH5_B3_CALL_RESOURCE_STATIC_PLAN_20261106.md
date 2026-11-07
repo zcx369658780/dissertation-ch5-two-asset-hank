@@ -1,0 +1,50 @@
+# 当前候选调用与资源清单：静态范围和未决约束
+
+DATE=2026-11-06
+STATUS=PINNED_SOURCE_AST_ENUMERATION_AND_RESOURCE_SPEC_COMPLETE__NO_RUNTIME_ENFORCEMENT
+ENGINEERING_CODE_CANDIDATE=ea6e67c67b6892f0a90bf47890a2b4d9eb76df99
+SOURCE_MANIFEST=validators/multi_province/outer_record_output_source_binding_20261106/source_manifest.json
+SOURCE_FILES=33
+INTERNAL_IMPORT_EDGES=61
+FULL_AST_CALL_SITES=3632
+POTENTIAL_ARRAY_EXPRESSION_SITES=3304
+EXPLICIT_FOR_WHILE_SITES=113
+SOURCE_CODE_EDITS_PROJECT_IMPORTS_NUMERICAL_IMPORTS_TESTS_GRID_GENERATIONS_SCIENTIFIC_CALLS_WORKERS_NEW_BUDGET=ALL0
+SUBAGENTS=0
+SYNC=PENDING_SYNC__NO_REMOTE_RETRY
+
+## 范围与结果
+
+对已有33文件/61导入边清单作全文件AST枚举和逐字节核对，不扩展源码范围、不导入项目或数值库，也不重跑旧检查。33/33当前字节与固定提交Blob相同。代码候选仍ea6e67c，上一片27个选定接口/680个静态位置保留；本轮3632是这33文件中每个ast.Call节点各列一次的更广范围，不能与680相加。
+
+每个调用固定文件、起止行列、词法作用域、定义表达式/函数体等区域、外层显式循环和表达式名称；另列3304处可能涉及数组的运算/索引/推导式及113处显式for/while。调用位置同时保留导入别名提示与潜在资源标签，标签不互斥、不证明实际类型或调度。推导式迭代、分支可达性、隐式特殊方法和底层库工作均未转成运行次数。休眠/历史函数及定义表达式包含在内，不能把全文件枚举误写成当前A路径的可达闭包。
+
+按语法名称标出6处求解器候选位置、7处有效回报名称候选、124处数组物化或视图候选、27处摘要工作、36处序列化工作等。求解器候选同时含当前与历史文件中的brentq/spsolve；这些位置不等于实际调用、更不等于native内部微操作数量。未解释或改动HA内部经济/数值算法，未恢复诊断路线。
+
+## 条件性成功路径与未来计数口径
+
+1. 当前私有阶段驱动的六个命名阶段，语法上各调度一次；假设全部成功返回、使用当前休眠后端且无额外调用者复核，则边界身份复核共7次，源文件初读1遍加复读7遍。文件读尝试只写成(1+7)*M_declared；未来实际consumer清单、执行与次数仍未验证，不能把它作为预算。
+2. 单次目标准备加一次给定数据保存，含保存内部回读、无额外调用者读取时，保存内目标检查共4次，加准备过程后执行声明复核共5次；文件独占写入口1处、回读入口1处。失败路径、额外独立load或其他外部调用不在这个条件式中。
+3. 未来计数需分别记录派发前ATTEMPT、真实正常返回RETURN、首次失败STOP和资源事件。RETURN不等于科学接受或有效数据验证；原始输入/源码/网格/回报身份检查失败时仍需STOP。先计尝试，再核正常返回和来源，不准据成功文件补造未记录的尝试或重试。
+
+这只是计数语义及插入位置说明，没有安装observer、worker ledger或native hook。complete_native_inventory、complete_runtime_reachable_call_graph、counts_enforced均FALSE。
+
+## 资源项与仍未批准的预算
+
+资源计划明确15类槽位：worker、墙钟、进程提交内存、根求解入口、残差回调、有效回报入口、HJB迭代、稀疏求解入口、native子调用、源码读取字节、数组复制字节、编码/摘要字节、输出写字节、输出读字节和文件数。每项Owner批准上限、实际观察均null，enforced=FALSE；没有补默认值或采纳旧120秒/2GiB/800根/100步骨架。
+
+只登记符号成本：N=Nb*Na*Nz；原始C/g字节各为N乘dtype大小；base64长度为4*ceil(B_C/3)+4*ceil(B_g/3)，另有JSON元数据和Python对象。原数组、只读字节副本、校验/编码临时对象可能同时存在；源码复读、单文件回读和未来额外消费者读取都要单独收费。不得把payload长度相加冒充内存峰值；native因子分解、fill-in、回调、allocator和库工作区成本未知。没有用这些公式生成网格或合成实际grid身份。
+
+本清单限当前固定33文件；31省真实数据/生产者工作、动态装载、实际native内部闭包和全链内存峰值未完成。未来严格计数/资源执行方案与科学预算仍需具体化，不能因本次静态枚举覆盖全部ast.Call就放行。
+
+## 产物与核查
+
+新本地目录validators/multi_province/outer_call_resource_plan_20261106/保存full_static_call_inventory.json、scope_and_counter_spec.json、resource_constraint_plan.json和readback_manifest.json。机器计划钉住原33文件清单SHA及代码候选；最后一件固定前三件字节数/SHA和范围状态。第二次使用独立AST遍历逐节点核对3632个起止位置/表达式，并回读全部源码Blob和新产物摘要；均由主代理完成，不称独立科学审查。
+
+首版构建器仅用调用起始行列作为去重键，链式调用共用起点导致校验停止；未创建目标目录或写入产物。停止记录和首版脚本保留，另存V2，改用完整起止位置后构建及回读通过。本片没有测试运行或真实环境worker，不能据此更新旧V2资格。
+
+全部模型/测试源码、旧四件33文件绑定记录、已采纳A输入包和7个既存未跟踪文件原字节保持。实际grid/Cg/输出目标/worker及严格reference/thresholds仍null；consumer_ready、scientific_acceptance、FORMAL_SOURCE_FREEZE、formal_ha_accepted、Results、model_activation、REAL_GE和runtime_admitted均FALSE，新科学额度0。代码/机器记录仅本地，治理线只存脱敏文档；无远端重试、main合并、保护基线重绑或后继启动。
+
+后续工程仍须实现外部计数与资源enforcement、源码bytes到实际模块的绑定，以及唯一受保护worker和同record输出接线。实际网格或HA运行需适用的具体有限Owner决定；本片不发放决定。
+
+关联：[同一记录输出片](CH5_B3_SAME_RECORD_ORIGIN_OUTPUT_20261106.md)；[外部守卫片](CH5_B3_EXTERNAL_STATE_GUARDS_20261106.md)；[当前状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md)。

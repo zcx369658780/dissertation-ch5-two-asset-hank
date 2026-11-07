@@ -1,0 +1,44 @@
+# 外部计数回放与声明限额接口
+
+DATE=2026-11-06
+STATUS=SYNTHETIC_COUNTER_REPLAY_PRIMITIVE_COMPLETE__NO_LIVE_ENFORCEMENT
+ENGINEERING_CODE_CANDIDATE=90dcd5d1eecb40d7a4ccccf43fe6401675e419c8
+SOURCE_SNAPSHOT_COMMIT=90dcd5d1eecb40d7a4ccccf43fe6401675e419c8
+NEW_PURE_CHECKS=31
+EXISTING_SOURCE_EDITS_NUMERICAL_IMPORTS_SCIENTIFIC_BACKEND_IMPORTS_GRID_GENERATIONS_HA_INSTANCES_SCIENTIFIC_WORKERS_NEW_BUDGET=ALL0
+SUBAGENTS=0
+SYNC=PENDING_SYNC__NO_REMOTE_RETRY
+
+## 本片实现
+
+仅新增outer_counter_replay.py及对应测试，不修改任何已有科学或外层源码。模块仅依赖标准库，处理调用者提交的合成事件、身份及时间/内存样本；不提供科学callback、不派发/监控/终止worker，不装载HA、生成网格或创建输出文件。固定scope=SYNTHETIC_EVENT_REPLAY_ONLY_NOT_RUNTIME_ADMISSION。
+
+prepare_counter_replay要求显式给出全部15类非负整数限额和单独的事件条数上限；None、缺项、额外项、bool、负值和浮点限额均拒绝。墙钟限额单位为整数秒，样本elapsed单位为非负整数纳秒，不隐式舍入。实际旧计划的15项null经过新检查仍不能创建回放。测试中的整数均为合成回放夹具，不是Owner科学预算，也不写回实际计划。
+
+CounterIdentity声明context、来源省及execution/source manifest/binding/worker claim/output target/grid摘要；保留原身份对象与原字节。等值新身份、字段改变或缺摘要不能提交事件。所有摘要仍为调用者声明；语法正确不证明存在真实worker、网格或权限。
+
+事件分别记录ATTEMPT、RETURN、VALIDATED_RETURN、RESOURCE、STOP和SEALED。ATTEMPT在可能派发前核查并预留次数/字节；被拒绝请求可以记录为allowed=False，但不占成功预留额度、不生成返回。RETURN与VALIDATED_RETURN分开，后者仍只是调用者声明通过数据校验。首次STOP后账本终止，后续调用不覆盖原原因或增加事件；SEALED仅表示声明的阶段序列完整。
+
+同一回放内worker结构最多一次，六阶段顺序固定；子调用必须先正常返回并校验，父调用才能返回。阶段外的根求解等科学标签会被拒绝。根入口、残差、有效回报、稀疏求解、迭代、native标签及各类字节分别计数；字节金额必须显式提供。事件凭据保持同对象且核对原字段，不能复制、跨账本使用、重复返回或原地改名。
+
+每次事件核查非倒退elapsed和进程提交内存样本，等于限额允许、超过即STOP，并保留超限样本。样本缺失、类型错误或非有限值拒绝。事件上限给STOP保留位置，避免零字节重复事件无限增长。快照是冻结对象、JSON bytes与事件bytes元组，事件按摘要串联；这是回读一致性，不是事件真实性认证。
+
+## 检查及限制
+
+31项纯离线检查通过：包括实际null预算拒绝、与既有15类槽位及六阶段定义一致、缺额度不补默认、正常/异常顺序、不同记录/伪造及变造凭据、嵌套返回、重复worker/阶段、各独立次数和字节槽位、第二次稀疏求解请求超限、时间/内存边界、事件容量、首错保留、只读快照与哈希串联。只装载新纯标准库模块，没有导入数值库或科学后端，没有运行旧环境/模型测试。RED、首轮27项和最终31项记录分别保留。
+
+本模块不产生独立遥测，不能验证调用者是否漏报、错报或实际执行；也不能在原生求解阻塞时强制超时或限制真实内存。重新创建一个合成回放不是新运行claim，不承担跨进程一次性授权/消费台账。真实observer、完整native覆盖、受保护OS限额、唯一worker及其同record输出接线仍未实现。计数器自身的事件存储、摘要、快照复制和样本处理也必须计入未来资源预算。
+
+回放限额检查可用，不等于live_counts_enforced或counts_enforced。模块及快照的consumer_ready、runtime_admitted、scientific_acceptance、FORMAL_SOURCE_FREEZE、formal_ha_accepted、Results、model_activation、REAL_GE、live_counts_enforced和complete_native_inventory保持FALSE；调用者声明的VALIDATED_RETURN/SEALED不能抬升这些资格。
+
+## 来源与原证据
+
+新本地validators/multi_province/outer_counter_replay_source_binding_20261106/保存source_manifest.json、operation_inventory.json、historical_delta.json及binding_plan.json。固定34文件/61导入边，34/34字节与候选Blob一致；新增标准库计数模块1个，原33个文件全保持，因此导入边未新增。计数模块作为单独准备根纳入，原executor并未引用或接入它。
+
+36个选定接口、770处静态调用位置不是实际次数或可执行上限。旧33文件/3632处全AST清单和旧27接口/680处记录保留原字节，不能直接标成当前34文件的全调用清单；新模块自身另有146处AST调用位置，未借旧native或环境资格。新来源回读和自审由主代理完成，不称外部独立科学审查。
+
+原33份源码、8份旧机器记录、7个既存未跟踪文件及已采纳A输入包均回读保持。HA/原汇总/controls/网格、逐格C/g Frisch、A1及税/财政决定不变；原公开执行门仍拒绝。实际counter身份、grid/Cg/输出目标/worker与严格reference/thresholds仍null，实际15类预算未批准。仅A的原值及A/B上下文保持，不运行B或冒充完整批次。
+
+下一工程仍需把事件/遥测关联到真实受保护执行边界，完成源码bytes到实际模块绑定及唯一worker/同record输出接线，并依据适用Owner具体有限决定才可运行。所有关闭额度/STOP和保护基线不变。代码/测试/机器记录仅本地，治理线只保存脱敏文档；未远端重试、未合并main、未启动后继。
+
+关联：[调用与资源静态计划](CH5_B3_CALL_RESOURCE_STATIC_PLAN_20261106.md)；[同一记录输出片](CH5_B3_SAME_RECORD_ORIGIN_OUTPUT_20261106.md)；[当前状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md)。

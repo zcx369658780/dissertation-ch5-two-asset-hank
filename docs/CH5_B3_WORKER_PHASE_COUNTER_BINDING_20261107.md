@@ -1,0 +1,45 @@
+# 原六阶段worker职责与同counter记账接线准备
+
+DATE=2026-11-07
+STATUS=OPAQUE_ORIGINAL_PHASE_COUNTER_LINK_PASS__PUBLIC_RUNTIME_DENIED
+ENGINEERING_CODE_CANDIDATE=de139a0a5e7ba2313276a0713c0123bad8921a51
+NEW_WORKER_PHASE_CHECKS=15
+COUNTER_REPLAY_REGRESSIONS=31
+TOTAL_CHECKS=46
+ACTUAL_HA_BACKEND_INSTANCES_SCIENTIFIC_MODULE_COMPILATIONS_IMPORTS_NUMERICAL_IMPORTS_GRID_HA_SCIENTIFIC_WORKERS_NEW_BUDGET=ALL0
+SUBAGENTS=0
+SYNC=PENDING_SYNC__NO_REMOTE_RETRY
+
+## 本片完成范围
+
+新增outer_worker_phase_binding.py与对应测试，原43份来源全部原字节保持。新接口将单来源A/索引0的声明request/context/inputs/wage-record原对象与原CounterReplay/CounterIdentity、seed、全部声明限额/事件容量及明确execution/source-manifest摘要固定。一个counter只关联一次，准备不采样、不产生事件、不调用backend；公开执行门始终拒绝。
+
+私有接线直接调用既有outer_ha_blackbox_executor._drive_origin_phases，不复制六阶段排序或改写HA。顺序仍为initializer→hjb→kfe→aggregate→at_tax→reply；HJB布尔收敛与正式post存在的原结构前提保持，正式post仍由原序列传给原KFE，原汇总和原归一化不改。仅在不透明标签替身上执行这些控制路径，真实_OriginalHABackend从未实例化。
+
+阶段包装在调用前记录phase尝试；正常返回与身份/结构声明校验分开。原序列检查原inputs及backend身份后，才记录相应counter.validate_return。原backend方法的owner/function/code引用在边界核对；request、record、counter seed/限额/容量漂移或方法替换会停止。HJB不收敛/非布尔、缺正式post不进入KFE；回报须保留同request和initializer/hjb inputs原对象。
+
+方法已正常返回但后续输入/身份校验失败时，保留正常返回而不登记校验成功；返回后采样失败等情况下，另保留阶段物理返回标记，不能把它冒充counter校验事件。首错和部分不可变阶段记录随停止快照保留，不重试、不启动后继阶段。样本仍来自显式调用者，既不是独立native观察，也不是科学有效回报证明。
+
+即使六项声明校验均完成，也不登记根worker正常/有效返回、不封闭counter、不保存C/g或同record输出，不产生科学接受。reply只是给定对象引用，阶段日记为不可变bytes；没有给reply对象补造不可变科学数据或原始消费分布证明。
+
+## 检查与来源
+
+15项新检查及31项原counter回归共46项通过。覆盖同对象/摘要/context/A0限定、准备/公开门无副作用、原顺序和正式post路径、六阶段声明事件、每阶段异常停止、正常返回后身份失败不校验、输入替换、收敛/post前提、错回报、方法引用替换、counter限额/事件容量漂移与资源/采样失败，以及完整阶段仍不能封闭根worker。RED缺模块和首轮13项通过日志保留；补齐限额/容量固定及两个场景后15项通过。
+
+检查只用不透明标签和显式合成样本，没有创建真实HA后端、科学定义编译/装载、数值库导入、实际网格、HA或worker。31项counter回归仍只是合成事件。测试审计中的进程启动、DLL查找/加载、科研/数值导入、网络与环境改写禁止尝试均0。主代理工程自审与第二次字节/AST回读不称独立科学审查。
+
+新目录validators/multi_province/outer_worker_phase_binding_20261107/保存source_manifest、operation_inventory、historical_delta、binding_plan及导入/采样/Job/生命周期/原生后端/封存包/阶段接线计划共十一份JSON。当前44份来源/74条内部边，134个选定接口/2017处静态位置；70条保守装载依赖无环、4条函数体延迟边。内联bootstrap仍另有50处静态调用；这些位置不构成运行预算或完整native闭包。
+
+新建builder和目标，旧记录不覆盖。全部来源原字节/Git Blob、摘要、接口AST/位置、导入顺序及内联bootstrap经过第二次回读。原43份来源、54份相关机器记录、7个未跟踪文件及已采纳A第2轮输入包原字节保持。算法/网格/controls、逐格Frisch/A1、净工资和税/财政决定不变；不运行B或冒充完整O2批次。
+
+## 尚未完成的准入和实际worker
+
+本接口只接声明元数据与既有顺序，不把简化request等同于已核验的PreparedOriginExecution，不取代真实grid/数组/参数的外部保护、source bundle/模块执行身份、同记录输出目标或Owner许可。实际科学worker程序/职责采纳、启动包、可信全局Owner准入及持久消费仍未完成；本片未生成批准记录，也未把已有非授权占位抬升为许可。
+
+实际worker阶段绑定、worker声明/来源、capsule/装载证明、全局账本/Owner运行决定/持久claim、Job/进程身份/计时起点/cleanup等待、grid/Cg/输出目标和严格reference/thresholds仍null；原15类实际预算未批准。HJB迭代、root/residual/稀疏求解与所有native及重复有效返回没有因六阶段记账而获得覆盖。
+
+actual_worker_phase_dispatch_qualified、actual_fixed_worker_declaration_adopted、worker_source_runtime_binding_verified、actual_trusted_global_claim_ledger_qualified、actual_OS_backend_qualified、actual_worker_lifecycle_qualified、OS_limit_enforcement、hard_wall_deadline_enforced、live_counts_enforced及scientific_acceptance、FORMAL_SOURCE_FREEZE、consumer_ready、formal_ha_accepted、Results、model_activation、REAL_GE均FALSE；阶段声明校验不是科学接受，根worker和输出仍未接受。
+
+后续需补真实request/来源/输出与worker包的完整接线、可信Owner准入消费及受保护运行/回报证明，再按适用具体任务和有限Owner科学决定推进。代码/测试/机器记录仅本地，治理树仅本脱敏报告和三个入口；远端PENDING_SYNC、不重试SSH、不切协议、不合并main、不重绑保护、不新开或借用旧额度、不启动后继。
+
+关联：[worker字节封存](CH5_B3_WORKER_BYTE_CAPSULE_PREPARATION_20261107.md)；[原外层序列准备](CH5_B3_EXTERNAL_SEQUENCE_SOURCE_PREPARATION_20261106.md)；[当前状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md)。

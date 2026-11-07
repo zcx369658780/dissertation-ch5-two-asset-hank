@@ -1,0 +1,45 @@
+# 借用Job、进程采样器与同一计数器绑定准备
+
+DATE=2026-11-07
+STATUS=OFFLINE_SUPERVISED_PROCESS_BINDING_PASS__PUBLIC_RUNTIME_DENIED
+ENGINEERING_CODE_CANDIDATE=c3139243a1eb5ff77cdfdb5e9b154ba6972b1802
+NEW_BINDING_CHECKS=23
+PROCESS_TELEMETRY_REGRESSIONS=21
+TOTAL_CHECKS=44
+ACTUAL_WINDOWS_CALLS_SCIENTIFIC_MODULE_COMPILATIONS_IMPORTS_NUMERICAL_IMPORTS_GRID_HA_SCIENTIFIC_WORKERS_NEW_BUDGET=ALL0
+SUBAGENTS=0
+SYNC=PENDING_SYNC__NO_REMOTE_RETRY
+
+## 本片实现
+
+新增outer_supervised_process_binding.py及对应测试。准备接口关联原CounterReplay、CounterIdentity原对象/字节、counter seed及其全部15类声明限额、未消费的同identity采样器和显式借用Job句柄。一个counter和一个采样器只能各关联一次，不替换身份、重启时钟或新建运行claim。准备阶段不查询、不采样、不产生counter事件；公开执行入口始终拒绝。
+
+每次采样先核对绑定与仍开启的根worker元数据段，再读取指定进程对指定Job的成员关系、限额与进程计数。要求0x2108既有Job flags、ActiveProcessLimit=1、提交内存限额等于同一counter声明值，以及TotalProcesses/ActiveProcesses/TotalTerminatedProcesses=1/1/0。这里的整数是唯一worker接口约束与夹具取值，不是Owner采纳了新的实际运行预算；实际15预算仍null且未批准。
+
+随后复用原进程采样器核对PID/创建时间和既有单调起点，复查绑定后调用同一counter.observe记录RESOURCE，输出原CounterSample供已有导入Link消费。每次采样会增加资源事件开销，不隐去事件容量成本；样本记录不计为native调用，也未完成native观察或计费覆盖。
+
+Job不匹配、限额漂移、多进程/退出、查询或进程采样错误、counter耗时/内存超限等，均停止绑定与counter并保留各自首错。不查询重试、不更换Job或指标、不重新创建绑定续用旧counter/采样器。快照保留有效采样数、绑定/末次有效Job观察摘要、counter hash head与原counter/采样器快照。
+
+Windows读取器仅声明IsProcessInJob与QueryInformationJobObject的惰性只读调用。复用temp31_toy_supervisor.py中原_Extended布局定义，该模块字节不改，旧run_toy_probe及其运行入口从未调用。没有调用旧supervisor执行函数、设置/分配Job、创建/恢复/等待/终止进程或清理句柄。旧环境worker、许可、记录与来源pin保持关闭。
+
+## 检查和来源
+
+23项新离线检查与21项原采样接口回归共44项通过。覆盖同对象/seed/限额/采样器/Job绑定、重复绑定拒绝、成员和单进程状态、读取/身份/限额失败、首错保留、不可变快照、公开门拒绝，以及同counter的toy导入关联和失败传播。原RED缺模块日志保留；实现后的首轮23项通过，回归21项通过。主代理工程自审及第二次来源回读不称独立科学审查。
+
+测试确有装载外层帮助模块和旧Job结构定义，但全部Job/进程Windows读取均为替身；没有真实Windows查询、科学定义编译/装载、数值库导入、网格、HA或科研worker。测试审计中进程启动、原生库查找/加载、网络、环境改写及科研/数值导入禁止尝试均0。原HA/HJB/KFE/汇总/网格/controls、逐格Frisch/A1及税/财政口径不改。
+
+新来源目录validators/multi_province/outer_supervised_process_binding_20261107/保存source_manifest、operation_inventory、historical_delta、binding_plan、import_context_plan、process_telemetry_plan及job_counter_binding_plan七份JSON。清单40文件/68条内部边、75个选定接口/1452处静态位置；64条保守装载依赖无环，4条函数体延迟边。相对上片新增绑定模块一份，额外纳入原有Job结构模块一份，原38份来源不改；额外纳入不代表旧toy运行资格迁移。
+
+新建静态builder和目录，原记录不覆盖。第二次回读核对所有来源原字节与Git Blob、摘要、接口AST、静态位置及依赖顺序。静态位置不是执行次数或预算。原20份相关机器记录、7个未跟踪文件及已采纳A第2轮输入包原字节保持。
+
+## 未完成的真实运行边界
+
+本片只完成借用对象的边界核对与资源事件接线，不设置OS限额，不连续监控，也不实施硬墙钟超时或负责终止/清理。现有监督器虽有Job设置代码，其旧证据不能直接接纳本片候选；真实启动前设置/分配、恢复顺序、独立计时等待与失败清理接线仍待完成。
+
+实际Job/进程句柄、PID/创建时间/起点、counter/worker身份、grid/Cg/输出目标、bundle声明/导入容量和严格reference/thresholds仍null。actual_supervised_process_binding_qualified、supervised_binding_wired_to_admitted_worker、actual_OS_backend_qualified、OS_limit_enforcement、hard_wall_deadline_enforced、live_counts_enforced及scientific_acceptance、FORMAL_SOURCE_FREEZE、consumer_ready、formal_ha_accepted、Results、model_activation、REAL_GE均FALSE。
+
+后续仍需把真实监督端的受保护生命周期与本接口接线，核对实际Windows ABI/后端、外部/生成/native依赖、有效回报/native计数及同record输出；实际进程验证、网格/HA须适用的具体任务与有限Owner科学决定。本片未启动这些工作，不复用旧额度。保持A/索引0及A/B上下文，不运行B或冒充完整O2批次。
+
+代码、测试和机器记录仅本地；治理树仅保存脱敏报告及三个入口。远端PENDING_SYNC、不重试SSH、不切协议、不合并main、不重绑保护、不自动启动后继。
+
+关联：[指定进程采样准备](CH5_B3_PROCESS_TELEMETRY_PREPARATION_20261107.md)；[导入事件计数关联](CH5_B3_IMPORT_COUNTER_LINK_20261107.md)；[当前状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md)。

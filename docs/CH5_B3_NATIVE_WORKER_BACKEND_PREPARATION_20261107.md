@@ -1,0 +1,45 @@
+# 固定声明的Win32生命周期后端准备
+
+DATE=2026-11-07
+STATUS=NATIVE_BACKEND_CODE_IMPLEMENTED__FAKE_WIN32_ONLY__PUBLIC_RUNTIME_DENIED
+ENGINEERING_CODE_CANDIDATE=22cd354ee3d20db3601e6e127b78025cf483798d
+NEW_NATIVE_BACKEND_CHECKS=16
+WORKER_LIFECYCLE_REGRESSIONS=24
+TOTAL_CHECKS=40
+NATIVE_LIFECYCLE_BACKEND_IMPLEMENTED=TRUE
+ACTUAL_OS_BACKEND_QUALIFIED=FALSE
+ACTUAL_WINDOWS_CALLS_SCIENTIFIC_MODULE_COMPILATIONS_IMPORTS_NUMERICAL_IMPORTS_GRID_HA_SCIENTIFIC_WORKERS_NEW_BUDGET=ALL0
+SUBAGENTS=0
+SYNC=PENDING_SYNC__NO_REMOTE_RETRY
+
+## 本片完成
+
+新增outer_native_worker_backend.py及对应测试，提供惰性的Win32生命周期适配器与固定Python worker声明接口。声明精确绑定worker文件/hash、当前Python程序/hash、工作目录、argv及完整子进程环境，并与原生命周期计划/worker_claim摘要一致。严格字段、重复JSON键、路径/根目录/文件类型、摘要、参数和环境类型均核对；准备阶段只读声明和指定文件，不加载DLL、创建进程或消费运行claim，公开执行入口始终拒绝。
+
+worker与cwd必须在显式允许根内，拒绝重解析路径；只允许当前Python程序。准备时、取得Job前以及创建进程前分别回读指定worker和Python原字节，实际科学worker尚未提供或采纳，测试worker仅为新建私有夹具。这些磁盘回读不能证明执行时字节身份，检查与子进程打开文件之间的竞态尚未消除；worker_source_runtime_binding_verified仍FALSE。
+
+原生调用复用旧Job/启动/进程布局和API签名帮助函数，未调用旧toy/环境监督器的运行入口。适配器建立新的私有未命名Job，设置并回读原单进程/提交内存限制，按CreateProcessW的明确应用程序及固定-I -S -B -X utf8参数构造命令。创建flags为0x08000404：挂起、无窗口、Unicode子环境；不继承句柄、不继承父环境、不经shell、不使用breakaway或协议fallback。子环境须显式提供必需字段和既定线程数，Windows命令和环境块按UTF-16代码单元限长。
+
+CreateProcessW成功后立即登记进程/线程句柄和PID，再做可能失败的创建时间/内存查询，后续失败由原生命周期清理。返回失败时PROCESS_INFORMATION未定义，绝不将其中值当作已取得的资源。本片自审修正了该语义并增补相应检查，早期成功日志作为开发历史保留。外来句柄拒绝，清理只操作已登记的所有权句柄；关闭失败保留所有权记录，并由原驱动记清理未确认。有限等待、恢复、退出码、Job/进程终止和查询均已接原生命周期接口。
+
+原41份来源中40份原字节保持；仅outer_worker_lifecycle.py回执的后端实现状态表达式及其声明来源字段改变。排除这两项元数据后AST一致，公开门、驱动顺序、算法与所有资格字段保持。原固定FALSE是上一片没有后端时的历史状态；当前native_lifecycle_backend_implemented为代码已实现TRUE，来自后端的实现声明，不是OS/worker验证或科学许可。
+
+## 检查与来源
+
+16项新检查与24项原生命周期回归共40项通过。覆盖严格声明、路径/文件摘要、重复键、明确子环境/线程、UTF-16限长、Job设置后再回读字节、禁止外来句柄/无限等待、单次绑定与公开门拒绝；使用替身Win32完成正常退出未接受、挂起创建失败的未定义输出不收养、成功后时间查询失败仍清理、超时/未知等待、失败关闭与所有权保留。原RED及13/15项开发检查日志保留，最后16项通过。
+
+全部Win32调用使用替身，真实DLL加载/系统API、worker、科学定义编译/装载、数值导入、网格和HA均0；测试审计中进程启动、原生库查找/加载、科研/数值导入、网络和父环境改写的禁止尝试均0。原24项生命周期检查在回执元数据修改后通过；其后仅修改新增后端和测试，驱动未再改变，不重复无变化的回归。主代理工程自审及第二次来源回读不称独立科学审查或真实ABI验证。
+
+新目录validators/multi_province/outer_native_worker_backend_binding_20261107/保存source_manifest、operation_inventory、historical_delta、binding_plan、import_context_plan、process_telemetry_plan、job_counter_binding_plan、worker_lifecycle_plan和native_worker_backend_plan九份JSON。当前42文件/71条内部边，109个选定接口/1804处静态调用位置；67条保守装载依赖无环、4条函数体延迟边。静态位置不是运行上限。
+
+新建builder和目录，旧记录不覆盖。所有来源原字节/Git Blob、摘要、接口AST与调用位置、依赖顺序及资格/空值字段经过第二次回读；原35份机器记录、7个未跟踪文件及已采纳A第2轮输入包保持原字节。冻结的HA/HJB/KFE、原汇总/网格/controls、逐格Frisch/A1及税/财政决定均不改。
+
+## 尚未开放的真实运行边界
+
+实际科学worker声明/路径/argv/环境、持久准入claim、cleanup等待、Job/进程句柄、PID/创建时间/计时起点、counter/worker身份、grid/Cg/输出目标、bundle声明/导入容量及严格reference/thresholds仍null；原15类实际预算未批准。实际worker来源到执行字节身份、外部/生成/native依赖、运行期/最终峰值、有效回报/native计数及同record输出证明仍未完成。
+
+actual_fixed_worker_declaration_adopted、worker_source_runtime_binding_verified、actual_OS_backend_qualified、actual_worker_lifecycle_qualified、OS_limit_enforcement、hard_wall_deadline_enforced、live_counts_enforced及scientific_acceptance、FORMAL_SOURCE_FREEZE、consumer_ready、formal_ha_accepted、Results、model_activation、REAL_GE均FALSE。后端代码实现TRUE和完整替身流程通过不能改变这些资格。
+
+后续需固定真实worker来源和启动包/执行身份，补持久准入与返回证明，再按具体任务及适用有限Owner决定核验实际OS/worker。当前不运行B或冒充完整O2批次，不新开科学额度或复用旧额度。代码/测试/机器记录仅本地，治理树只保存脱敏报告及三个入口；远端PENDING_SYNC、不重试SSH、不切协议、不合并main、不重绑保护、不自动启动后继。
+
+关联：[生命周期驱动准备](CH5_B3_WORKER_LIFECYCLE_PREPARATION_20261107.md)；[当前状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md)。

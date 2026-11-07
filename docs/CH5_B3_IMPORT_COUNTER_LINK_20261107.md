@@ -1,0 +1,44 @@
+# 模块导入事件与外部计数器关联准备
+
+DATE=2026-11-07
+STATUS=TOY_IMPORT_COUNTER_LINK_PASS__PUBLIC_RUNTIME_DENIED
+ENGINEERING_CODE_CANDIDATE=3f0fe242bf9e5e7214a4d139c93dafe79cfd5e44
+NEW_LINK_TOY_CHECKS=23
+COUNTER_REGRESSIONS=31
+SOURCE_BUNDLE_REGRESSIONS=29
+TOTAL_CHECKS=83
+ACTUAL_SCIENTIFIC_MODULE_COMPILATIONS_IMPORTS_NUMERICAL_IMPORTS_GRID_HA_SCIENTIFIC_WORKERS_NEW_BUDGET=ALL0
+SUBAGENTS=0
+SYNC=PENDING_SYNC__NO_REMOTE_RETRY
+
+## 完成范围
+
+新增outer_import_counter_link.py及其测试；仅修改外部counter和source bundle两个模块。counter增加module_import元数据操作，不计入native调用，不新增或改变原15类预算槽位；仍消耗声明事件容量。source bundle私有核心增加可选_import_observer，默认不注入时保持原行为。原HA/HJB/KFE、原汇总、算法、网格、controls、逐格Frisch、A1及税/财政选择均不变。
+
+Link固定同一bundle声明摘要、source/execution摘要、CounterIdentity原对象及counter seed；一个counter只能绑定一个Link。必须在已记录的根worker元数据段开始。这个段是合成台账，并未启动真实worker。准备函数本身不采样、不导入、不创建事件或消费运行许可；公开执行入口始终拒绝。
+
+有效导入上下文确认后先记尝试，再检查导入容量和解析依赖；正常返回回调后才写入成功导入日记。初次装载的返回须等待整个包守卫通过才标记VALIDATED_RETURN，后续延迟导入逐次守卫和校验。保留实际回调绑定、代码引用与importer闭包中的callbacks身份核对；不增加全局导入钩子或磁盘fallback。
+
+导入失败被源码吞掉、样本错误、计数/事件容量超限、别名或日记篡改等都停止Link、SourceBundle和counter，保留首错与部分证据。快照保存不可变导入记录和counter快照/hash head；声明校验成功不等于科学接受，也不补全HA六阶段或worker生命周期。
+
+遥测由显式夹具样本注入，尚无独立OS观测、真实进程限时/限内存、完整有效回报/native观察或唯一worker接线。导入事件关联仅是普通工程准备，不能称为真实运行计数或系统资源强制保护。
+
+## 检查与来源
+
+23项新Link检查、31项counter回归、29项source bundle回归共83项通过。覆盖同对象绑定、正常/延迟导入、尝试/返回/守卫校验、吞错仍停、事件/样本/别名/日记失败及公开门拒绝。红阶段与修订日志保留。末次仅补充观察器长度核对后重跑23+29项；counter此后未再改变，既有31项回归有效。主代理完成工程自审，不称独立科学审查。
+
+新来源目录为validators/multi_province/outer_import_counter_link_binding_20261107/，包含source_manifest.json、operation_inventory.json、historical_delta.json、binding_plan.json及import_context_plan.json。新建目录与静态构建器，未重跑或覆盖旧builder目标。
+
+实际清单37份源码/65条内部边，60个选定接口/1276处静态调用位置。新增Link一份，原36份中34份原字节保持，仅两个外层模块改变。第二次回读核对工作树原字节、候选Git Blob、摘要、接口AST与调用位置。导入图61条保守装载依赖无环、4条函数体延迟边；静态位置不是运行预算，AST解析未编译或装载真实科学模块。
+
+旧9份机器记录、7个未跟踪文件及已采纳A第2轮输入包原字节保持。旧import_context_plan的CRLF及SHA256保持，不规范化旧记录。科学/数值库导入、真实网格、HA与科研worker均0，未重开旧额度。
+
+## 仍未开放的边界
+
+实际grid hash、C/g、输出目标、counter/worker身份、bundle声明/导入容量和严格reference/thresholds仍null；实际15类预算未批准。actual_import_counter_link_qualified、import_counter_link_wired_to_worker、live_counts_enforced、完整native覆盖及scientific_acceptance、FORMAL_SOURCE_FREEZE、consumer_ready、formal_ha_accepted、Results、model_activation、REAL_GE均FALSE。
+
+后续仍需明确实际模块/外部/生成/native对象资格、真实导入时机与独立遥测/OS限额，将同record输出接入唯一受保护worker。实际网格或HA运行仍须适用的具体有限Owner决定。仅保留A/索引0候选及A/B上下文，不运行B或冒充完整O2批次。
+
+本片代码、测试和机器记录仅本地，治理树仅保存脱敏报告及三个入口。远端继续PENDING_SYNC，不重试SSH、不切协议、不合并main、不重绑保护或自动启动后继。
+
+关联：[显式模块包绑定](CH5_B3_SOURCE_BUNDLE_BINDING_20261107.md)；[外部计数回放](CH5_B3_COUNTER_REPLAY_PRIMITIVE_20261106.md)；[当前状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md)。

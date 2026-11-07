@@ -1,0 +1,45 @@
+# 同一记录的来源省输出绑定：给定数据接口
+
+DATE=2026-11-06
+STATUS=SUPPLIED_DATA_SAME_RECORD_OUTPUT_INTERFACE_COMPLETE__NO_RUNTIME_CONSUMPTION
+ENGINEERING_CODE_CANDIDATE=ea6e67c67b6892f0a90bf47890a2b4d9eb76df99
+SOURCE_SNAPSHOT_COMMIT=ea6e67c67b6892f0a90bf47890a2b4d9eb76df99
+NEW_OFFLINE_CHECKS=21
+RELATED_PERSISTENCE_REPLY_REGRESSIONS=9
+ACTUAL_GRID_GENERATIONS_HA_BACKEND_INSTANCES_SCIENTIFIC_CALLS_SCIENTIFIC_WORKERS_NEW_BUDGET=ALL0
+SUBAGENTS=0
+SYNC=PENDING_SYNC__NO_REMOTE_RETRY
+
+## 本片完成
+
+新增outer_origin_output_binding.py，只处理给定的执行准备对象、既存回报和合成/既存快照，不派发模型。prepare_origin_output_target要求外部传入预期execution摘要、明确绝对输出根和单个JSON文件名；根必须已存在，准备目标本身不创建文件或目录。所有资格标记保持FALSE，不能把目标或回读结果当作消费许可。
+
+目标持有原plan、binding、request、inputs、context、工资record及工资/权重数组的强引用，并记录精确值、数组布局与内容；写入/读取前后复核。等值的新record、request或inputs也拒绝。目标声明包含execution/binding、source plan与consumer manifest摘要、工资观察/输出摘要、来源省及轮次/grid声明、输出根摘要、文件名和唯一目标标识。唯一目标标识区分内容和路径相同的两次准备，不是运行claim、次数预算或权限。
+
+保存接口检查同request、initializer/HJB的同inputs、grid声明、原units、给定converged=True、有限标量回报及必需的原始C/g快照。随后将回报、未加权C、原g/权重和完整目标声明放在一个文件，独占新建，避免两文件交叉拼接。已有文件不覆盖；部分写入或回读失败保留原文件，不清理后重试。回报标量按既有接口复制，不重算HA汇总或强行建立科学等式。
+
+读取接口要求外部保存的整个文件SHA，复核内部摘要、完整目标、资格标记及原快照校验后才返回只读数据。仅接受原来保留的同一活体目标；不会从文件自行恢复权限，也未实现跨会话目标恢复或OS级路径锁定。目录/文件检查会拒绝链接、reparse和路径身份漂移，但不是对并发路径替换的OS隔离证明。
+
+outer_consumption_snapshot.py仅提取encode/decode字节接口供单文件封装复用；旧save/load仍在，原JSON schema、base64数组表示及保存字节格式保持。原capture、原始C/g校验、binding及摘要函数等12处AST不变；executor、外部守卫、batch adapter、逐格Frisch、A1和外层拼装6份源码字节不变。
+
+## 检查与停止证据
+
+21项新检查及9项相关持久化/原生reply回归通过，共30项。覆盖原C/g/权重及标量往返、旧格式兼容、同记录身份、错来源省/错grid/units、缺快照、错误外部摘要、重算外层摘要仍不能绕过损坏快照或资格标记、等值记录同路径但不同目标拒绝、路径/reparse和部分写入保留。使用保存的元数据及合成矩阵，实际科学函数、HA后端和外部动作均被测试守卫禁止；没有调用真实SciPy求解器。
+
+首次运行的新测试断言工具惰性导入numpy.testing，触发1次Windows平台查询子进程尝试，被现有audit禁令拦截，实际启动0。停止日志保留；改为直接比较数组形状、dtype和字节，没有放宽禁令。最终21项和9项回归的科学调用/外部动作尝试均0。RED、初次停止和后续结果分开保存，不覆盖旧证据。主代理自审及第二次字节回读不称外部独立科学审查。
+
+## 当前源码绑定
+
+新本地目录validators/multi_province/outer_record_output_source_binding_20261106/分别保存source_manifest.json、operation_inventory.json、historical_delta.json、binding_plan.json。固定33文件/61条包内导入边、未解析0；33/33字节与来源提交Blob一致。相对上一32/56清单，新增输出绑定模块1个、快照模块改变1个、共有31个不变；旧四件记录保持原字节。
+
+27个选定接口、680处静态调用位置是语法清单，不是实际次数、完整native闭包或资源预算。编码/解码、复制、哈希和文件回读的成本仍需纳入未来完整调用与资源约束。旧环境V2证据不自动覆盖新33文件候选。
+
+## 仍未开放
+
+本片没有接入真实HA worker或给O2提供科学callback；同record运行时消费与worker/输出接线尚未验证。新接口当前只处理给定数据，不能据此说实际HA输出已有来源证明。完整输出目标/真实C/g产物仍null，实际grid hash/artifact仍null；测试沿用的grid元数据身份不替代真实网格身份。
+
+后续仍缺：验证源码bytes与实际执行模块绑定、唯一受保护worker中的同record输出接线、完整有效回报/native/重复调用计数和资源enforcement，以及适用Owner有限科学决定。不能借旧120秒/2GiB等骨架执行。严格reference/thresholds仍null；consumer_ready、scientific_acceptance、FORMAL_SOURCE_FREEZE、formal_ha_accepted、Results、model_activation、REAL_GE均FALSE。实际A输入原值及A/B上下文保持，不运行B、不冒充完整批次。
+
+7个既存未跟踪文件（6缓存与已消费决定）、已采纳输入包、旧源码记录及全部关闭额度/STOP保持。代码/测试/机器计划仅本地；治理线只保存脱敏文档。本轮无远端重试/API写入、无main合并、无保护基线重绑，未启动后继工程或科研。
+
+关联：[上一外部守卫片](CH5_B3_EXTERNAL_STATE_GUARDS_20261106.md)；[逐格消费分配](CH5_O3_RAW_CONSUMPTION_MATRIX_ALLOCATION_20261106.md)；[当前状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md)。

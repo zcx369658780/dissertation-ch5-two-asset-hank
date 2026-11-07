@@ -1,0 +1,44 @@
+# 受保护worker生命周期休眠驱动准备
+
+DATE=2026-11-07
+STATUS=OFFLINE_INJECTED_LIFECYCLE_DRIVER_PASS__PUBLIC_RUNTIME_DENIED
+ENGINEERING_CODE_CANDIDATE=84d3b533e9ea18075acc8a8708539666e8f6d988
+NEW_LIFECYCLE_CHECKS=24
+SUPERVISED_PROCESS_BINDING_REGRESSIONS=23
+TOTAL_CHECKS=47
+ACTUAL_WINDOWS_CALLS_SCIENTIFIC_MODULE_COMPILATIONS_IMPORTS_NUMERICAL_IMPORTS_GRID_HA_SCIENTIFIC_WORKERS_NEW_BUDGET=ALL0
+NATIVE_LIFECYCLE_BACKEND_IMPLEMENTED=FALSE
+SUBAGENTS=0
+SYNC=PENDING_SYNC__NO_REMOTE_RETRY
+
+## 本片实现与范围
+
+新增outer_worker_lifecycle.py及对应测试，不改原40份来源。准备函数固定原counter/identity/seed/全部声明限额、同worker_claim摘要及显式有限cleanup_wait_ms；要求尚未进入科学阶段的根worker元数据段，一个counter只关联一个计划。准备阶段不产生counter事件、进程或新claim。公开执行入口始终拒绝；私有驱动没有默认或生产Win32创建/终止后端，仅由本片离线替身执行。
+
+驱动从资源取得之前的单调起点计算同一绝对截止时间。替身依次执行：取得并登记Job句柄，设置并回读新空Job的既有flags/单进程/提交内存限制，检查创建前期限，挂起创建并立即登记进程/线程句柄，分配Job，复用原采样器及同counter绑定核对成员/身份/限额并记录资源样本，检查恢复前期限，再确认Resume返回的单次挂起计数。
+
+等待只使用扣除准备时间后的剩余毫秒，向下取整，不重新给满额时间；等待后再次核对截止时间。创建前或恢复前期限耗尽就停止对应动作。计时回退、Job设置/回读/成员错误、恢复状态不明、等待异常和非零退出均进入停止与清理路径。这是替身中验证的顺序和时间算术，不能据此声称真实硬超时已强制实施。
+
+清理针对所有已登记资源，分别处理尚未分配与已分配Job的进程：必要时请求终止进程或Job，使用显式有限清理等待确认退出，并核对Job为空。线程、进程、Job句柄逐个尝试关闭，前一个失败也继续其余关闭。执行首错和各清理错误分别保留；退出、Job为空或句柄关闭未确认时，结果为CLEANUP_UNCONFIRMED_STOP，不隐藏失败或重跑。后端必须在取得句柄后、任何后续可失败操作之前登记资源；真实后端仍须独立核查此约定。
+
+退出0仅记EXIT_REPORTED_UNVALIDATED。驱动不写worker正常/有效返回、不补HA六阶段，counter以未有科学回报的原因停止，CLOSED也不等于科学接受。该单次attempt仅指内存夹具计划，不是新的科学额度、持久claim或Owner消费许可。
+
+## 检查与来源
+
+24项新离线检查及23项原Job/counter绑定回归共47项通过。覆盖顺序、同counter/起点接线、准备耗时扣除、创建前/恢复前及等待后期限、超时、部分资源登记后异常、未分配/已分配清理、未知恢复/等待状态、失败终止、Job非空、关闭失败、等待异常下仍尝试清理、首错及零退出不接受。RED缺模块日志和首轮21项成功日志保留；自审补上创建前期限检查与三项场景后24项通过。
+
+所有创建、设置、分配、恢复、等待、终止、查询和关闭调用都是显式离线替身，没有真实Windows调用、worker或旧supervisor执行。测试审计中的科研/数值导入、进程启动、原生库查找/加载、网络及环境改写禁止尝试均0。主代理工程自审与第二次字节/AST回读不称独立科学审查。
+
+新目录validators/multi_province/outer_worker_lifecycle_binding_20261107/保存source_manifest、operation_inventory、historical_delta、binding_plan、import_context_plan、process_telemetry_plan、job_counter_binding_plan及worker_lifecycle_plan八份JSON。当前41份来源/69条内部边、83个选定接口/1577处静态调用位置；65条保守装载依赖无环，4条函数体延迟边。静态位置不是运行预算。新建builder和目标，不覆盖旧记录；所有来源原字节/Git Blob、摘要、接口AST及依赖顺序经过第二次回读。
+
+原40份来源、27份相关机器记录、7个未跟踪文件及已采纳A第2轮输入包原字节保持。HA/HJB/KFE/原汇总/网格/controls、逐格Frisch/A1与既定税/财政口径均不变；未重开旧额度或调用旧toy/环境worker。
+
+## 真实运行边界仍未开放
+
+真实Win32生命周期后端尚未实现，固定worker声明/启动参数、持久准入消费记录和真实运行接线未完成。当前仅恢复前采样；运行期事件、最终提交内存峰值、同record输出及科学回报证明不由本片伪造或补齐。后续须实现并核验真实后端、资源登记/失败清理、独立OS保护、外部/生成/native依赖与有效回报/native计数，再按适用具体任务和有限Owner科学决定推进实际运行。
+
+实际lifecycle计划、worker声明/持久claim、cleanup等待、Job/进程句柄、PID/创建时间/计时起点、counter/worker身份、grid/Cg/输出目标、bundle声明/导入容量及严格reference/thresholds仍null；原15类实际预算未批准。native_lifecycle_backend_implemented、actual_worker_lifecycle_qualified、actual_OS_backend_qualified、OS_limit_enforcement、hard_wall_deadline_enforced、live_counts_enforced及scientific_acceptance、FORMAL_SOURCE_FREEZE、consumer_ready、formal_ha_accepted、Results、model_activation、REAL_GE均FALSE。
+
+本片无真实科学定义编译/装载、数值导入、网格、HA、科研worker或新额度；不运行B、不冒充完整O2批次。代码、测试和机器记录仅本地，治理树只保存脱敏报告与三个入口。远端PENDING_SYNC，不重试SSH、不切协议、不合并main、不重绑保护或启动后继。
+
+关联：[Job/counter绑定准备](CH5_B3_SUPERVISED_PROCESS_BINDING_20261107.md)；[当前状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md)。

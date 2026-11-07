@@ -1,0 +1,52 @@
+# 显式模块包与延迟导入绑定准备
+
+DATE=2026-11-07
+STATUS=TOY_EXPLICIT_BUNDLE_AND_IMPORT_CONTEXT_PASS__PUBLIC_RUNTIME_DENIED
+ENGINEERING_CODE_CANDIDATE=cb52a5e61ed870eb1d3cae26fc3f66c939e15a22
+NEW_BUNDLE_TOY_CHECKS=29
+SOURCE_MODULE_REGRESSIONS=28
+TOTAL_CHECKS=57
+ACTUAL_SCIENTIFIC_MODULE_BYTECODE_COMPILATIONS_IMPORTS_NUMERICAL_IMPORTS_GRID_GENERATIONS_HA_INSTANCES_SCIENTIFIC_WORKERS_NEW_BUDGET=ALL0
+SUBAGENTS=0
+SYNC=PENDING_SYNC__NO_REMOTE_RETRY
+
+## 完成范围
+
+新增outer_source_bundle.py及测试，复用上一片已核验bytes/代码/模块绑定。单模块私有核心仅增加可选的显式builtins字典参数，省略时旧行为保持；其余单模块函数/类AST及全部HA科学源码未改。公开单模块及包执行门始终拒绝，不产生科学或消费许可。私有包核心只在新建toy文件上执行，非沙箱，未接入真实worker。
+
+包准备要求全部已声明文件各映射一次、明确私有命名空间、显式外部模块对象和非负整数导入事件容量；不补默认容量。源码包__init__.py、模块同时充当父包、通配导入、缺模块及真正的装载期循环提前拒绝，未尝试编译这些无效包。父包仅为空占位对象，不执行初始化代码。
+
+每个源模块使用单独复制的builtins导入函数：只返回声明内且已装载的模块/父包或显式提供的外部对象，不调用默认磁盘finder、不使用环境fallback、不触发外部模块的惰性__getattr__。没有修改全局builtins.__import__、sys.meta_path、sys.path或Desktop/CUA/全局配置。支持声明内相对、绝对和子模块导入；既有私有命名空间不覆盖。
+
+绑定核对父包/子模块属性、sys.modules、空__path__、导入函数代码和每模块builtins映射，并调用原单模块代码/函数守卫。顶层from/import别名与定义方对象同时核对；只替换引用方或同步替换定义方和引用方都不能通过。外部对象登记/成员漂移会停止，但其真实版本、生成函数及native实现仍未获资格。
+
+首次导入失败、容量超限或后续身份检查失败保持终态；源码即使捕获ImportError也不能让包变为成功。已装载和部分失败模块保留，不清理后重试。导入事件为不可变bytes快照，容量有界；这是夹具/声明范围内的导入证据，不是完整native或科研次数台账。
+
+## 真实源码的静态导入核查
+
+只读当前固定36文件/63条包内边，未生成真实科学模块bytecode或执行模块体。全静态图有一组bootstrap与netwage economics的循环；定点检查发现回边位于bootstrap的函数体内。它不等于装载期立即执行的循环，也不支持删除或改写科学源码。
+
+协调器据此将依赖分为装载期保守依赖与函数体延迟依赖：当前63条边中59条属于前者且无环，4条位于函数体内。函数体导入保留在清单和受控导入路径中，不强加初始装载顺序。若初始化代码提前调用这类函数，而目标还没装载，仍停止；不递归猜测加载、不临时重排或重试。条件分支和类体导入仍作保守装载依赖，不凭科学取值猜测分支。
+
+这只是静态必要条件，不是实际模块包准备或科学运行成功。没有调用prepare_source_bundle编译实际科学文件，没有提供真实外部数值模块，也没有科学命名空间或worker装载。函数局部/条件导入的初始别名核查未完成，保持deferred标记；有意重绑导入别名、包初始化器、实际外来/生成/native及可变状态覆盖仍须资格核对。不得为让协调器通过而改动冻结的科学源码。
+
+## 检查与证据
+
+29项新toy检查及28项单模块回归共57项通过。覆盖静态循环拒绝、函数延迟回边、初始化时过早延迟导入停止、相对/绝对导入和跨模块别名、双侧替换、命名空间/父包/内建表、显式外部对象、无惰性fallback、延迟导入容量、吞错仍停、部分失败保留及公开门拒绝。未导入NumPy/SciPy、真实HA定义或运行旧环境worker。
+
+扩展夹具曾缺少显式globals，先在导入上下文检查处停止；日志保留，补齐夹具后验证吞错仍停，没有放宽检查。修订版静态构建器在最后写摘要时目录名误替换而停止；四件来源文件已完整产生，保留原件后逐字节/Blob/摘要回读恢复，没有删除、覆盖或重跑目标。修正版脚本和恢复回执另存。主代理自审与第二次回读不称外部独立科学审查。
+
+## 来源记录及仍未开放的边界
+
+当前本地validators/multi_province/outer_source_bundle_deferred_binding_20261107/保存source_manifest.json、operation_inventory.json、historical_delta.json、binding_plan.json及import_context_plan.json。36文件/63边全部与当前候选Blob一致；49个选定接口/1142处静态位置不是运行次数或预算。import_context_plan绑定当前manifest摘要、59/4分类及相对路径顺序，不绑定实际worker或外部依赖。
+
+先前保守全图DAG候选5b3c821的四件记录另在outer_source_bundle_binding_20261107/保留，未重贴为修订候选。相对会话起点35文件，新增包协调模块1个、仅改单模块私有核心1个，其余34份原源码保持；科学算法/controls/原汇总/网格/Frisch/A1/税与财政均不变。旧来源/全AST记录、已采纳A输入包和7个未跟踪文件原字节保持。
+
+actual_bundle_declaration、实际import event limit、grid/Cg/输出/counter/worker与严格reference/thresholds仍null，实际15类预算未批准。complete_module_dependency_closure、actual_source_bundle_qualification_verified、source_bundle_wired_to_worker、counts_enforced、live_counts_enforced及科学接受/Results/激活/REAL_GE均FALSE。静态59边无环和toy导入通过不能抬升这些资格。
+
+后续仍需将声明的模块映射、外部/生成/native依赖及导入时机资格具体化，接入真实受保护worker、外部事件/遥测/OS限额和同record输出。实际网格/HA须适用Owner具体有限决定；不借旧额度，不运行B或冒充完整批次。代码/测试/机器记录仅本地，治理线只存脱敏文档；无远端重试、main合并、保护重绑定或后继启动。
+
+关联：[单模块源码绑定](CH5_B3_SOURCE_MODULE_BINDING_20261107.md)；[外部计数回放](CH5_B3_COUNTER_REPLAY_PRIMITIVE_20261106.md)；[当前状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md)。
+
+
+本地交付修正：import_context_plan.json原件为CRLF，Git暂存曾规范化为LF；提交前检查未中止命令，产生了一个仅换行不同的本地记录版本。原件及旧提交保留，追加提交固定原字节，不重写历史。原始字节、全部来源Blob、两树文档及新增记录随后分别回读；按原生CRLF核查无尾随空格/制表符，未修改持久Git配置，未推送。科学源码、检查结论、预算及授权均未改变。

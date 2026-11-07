@@ -1,0 +1,44 @@
+# 已核验源码到模块绑定：休眠基础接口与夹具证明
+
+DATE=2026-11-07
+STATUS=TOY_VERIFIED_BYTES_CODE_MODULE_BINDING_PASS__PUBLIC_RUNTIME_DENIED
+ENGINEERING_CODE_CANDIDATE=e7b5358bfd88e947db87b4e088e97513ae04904f
+SOURCE_SNAPSHOT_COMMIT=e7b5358bfd88e947db87b4e088e97513ae04904f
+NEW_TOY_CHECKS=28
+EXISTING_SOURCE_EDITS_ACTUAL_SCIENTIFIC_MODULE_BYTECODE_COMPILATIONS_SCIENTIFIC_MODULE_IMPORTS_NUMERICAL_IMPORTS_HA_INSTANCES_GRID_GENERATIONS_SCIENTIFIC_WORKERS_NEW_BUDGET=ALL0
+SUBAGENTS=0
+SYNC=PENDING_SYNC__NO_REMOTE_RETRY
+
+## 本片完成
+
+新增outer_source_module_binding.py及对应测试。沿用VerifiedSourceBytes，从明确外部manifest摘要重新回读来源，不仅信任一个手工构造的bytes对象。准备时核对原文件映射、来源路径及私有模块名，直接从已核验内存bytes编译；不执行模块体。固定dont_inherit=True、optimize=0，并保存解释器版本/cache tag、原编译代码对象和结构摘要。源码图谱未覆盖新外层模块，使用定点读取和AST，未扩大索引范围。
+
+公开execute_source_module对所有准备对象均拒绝，在调用私有执行核心之前停止，不创建模块或发放权限。私有核心作为未来适用授权worker的休眠基础保留；它能执行Python，并非沙箱或独立准入门。本片只对新建的无模型toy文件调用它，未对真实HA/科学模块生成可执行bytecode、导入或装载。
+
+在toy核心路径中，先独占登记一次尝试，拒绝已有模块槽；随后使用保存的同一个代码对象执行到一个新模块字典，登记模块及实际函数代码引用。成功后保留模块对象、执行代码、可直接对应原编译常量的函数代码、类及staticmethod/classmethod/property等描述符引用。边界check核对sys.modules、元数据、函数/类绑定、代码、函数globals对象、支持的默认参数值及闭包cell内容引用，并回读原源码。替换等值函数、修改__code__、描述符、默认值或闭包绑定、源码/根/映射漂移均停止。
+
+__file__和spec.origin只是另行核对的元数据，不承担来源证明。核心执行代码的co_filename使用manifest摘要和相对源码路径的虚拟定位，不暴露私有根。源对象原根及文件映射被固定，不能改变根后越出既定读取范围。首次失败保留原原因和已登记的部分模块，准备不能重复执行，已有模块不覆盖；不会删掉失败对象后重试。
+
+外来builtin、其他模块/类、运行时生成或装饰器产生而不属于原编译常量的函数单列为uncovered，不伪称已核验源码。完整相对导入/模块包、生成函数来源、原生依赖、可变global数据、深层闭包状态及OS隔离未获证明。此接口只核对边界，不连续监控，也不能撤销调用者已持有的函数引用或替代受保护worker停止。
+
+## 检查与摘要修正
+
+28项新夹具检查通过，覆盖公开门拒绝、真实编译/执行代码引用、类/描述符、等值替换、原地代码修改、默认参数/闭包、registry及__file__/spec伪造、root/文件映射、源文件漂移、部分失败保留、重复尝试拒绝、外来/动态生成函数未覆盖标记和只读回执。仅执行新toy文件及少量纯toy函数，未导入NumPy/SciPy或真实科学后端，未运行旧环境/模型测试。
+
+首轮固定marshal序列化摘要的方案在校验中停止。一个额外的新字面toy复现确认：同一代码对象执行前后marshal字节摘要会变化，函数仍引用原编译代码，因此不能据它判定代码被替换。停止日志和最小复现保留。修正为代码不可变结构字段及递归常量的规范化摘要，同时继续严格保留代码对象身份和原始源码SHA；没有放宽来源检查。结构摘要经toy执行、重复函数调用及多类型常量核对保持。摘要仅在所记录解释器契约内使用，不冒充跨Python版本兼容证明。
+
+RED、首轮停止、24项及最终28项结果分别保存。实际科学调用/HA/网格/worker均0，旧关闭额度无变化。主代理自审及第二次字节回读不称外部独立科学审查。
+
+## 新来源记录与保持项
+
+本地validators/multi_province/outer_source_module_binding_20261107/另存source_manifest.json、operation_inventory.json、historical_delta.json、binding_plan.json。固定35文件/62导入边，35/35工作树字节与候选Blob一致；原34文件全保持，新增模块仅导入原标准库守卫模块。42个选定接口、889处静态调用位置不是实际次数或native预算。
+
+原34文件来源清单、旧33文件/3632处全AST清单等记录保持，不改写为新候选；原executor未接入新模块，公开HA门仍拒绝。新基础接口未与真实worker、counter或同record输出连通，不产生真实环境或完整源闭包资格。源码验证、结构摘要、编译、绑定扫描和重复回读自身成本还须纳入未来完整资源约束。
+
+原34份源码、8份旧机器记录、7个既存未跟踪文件及已采纳A输入包回读保持。HA/原汇总/网格/controls、逐格C/g Frisch、A1及税/财政决定不变。actual_scientific_module_binding_verified、source_module_wired_to_worker、complete_module_dependency_closure、counts_enforced、live_counts_enforced及所有运行/消费/科学接受资格均FALSE。
+
+实际grid/Cg/输出目标/counter/worker和严格reference/thresholds仍null；实际15类预算仍null且未批准，新科学额度0。不运行B、不冒充完整O2批次，不借旧V2或其他关闭额度。代码/测试/机器记录仅本地；治理线仅脱敏文档，无远端重试、main合并、保护基线重绑或后继启动。
+
+后续仍需完整模块包/外来生成及native覆盖、受保护worker中的来源及事件接线、真实遥测/OS限额与同record输出绑定；适用Owner具体有限决定之前不运行实际网格或HA。本片不是该决定。
+
+关联：[外部计数回放](CH5_B3_COUNTER_REPLAY_PRIMITIVE_20261106.md)；[来源字节守卫](CH5_B3_EXTERNAL_STATE_GUARDS_20261106.md)；[当前状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md)。
