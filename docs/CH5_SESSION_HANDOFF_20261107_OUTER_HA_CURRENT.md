@@ -1,8 +1,8 @@
-# CH5会话交接：优先真实A返回验证包
+# CH5会话交接：A原包已获准只读映射，工资血缘待核
 
-保存与发布：前轮治理dc047266已逐文件回读。本轮起点为模型bd16e5ff、治理ae2871bd；最终保存提交及九文档回读以交付回执为准，源码/测试/机器记录只本地，main不合并。
+保存与发布：前轮治理a9f2ca9b已逐文件回读。本轮起点为模型a65a7458、治理ce2b7455；最终保存提交及八文档回读以交付回执为准，源码/测试/机器记录只本地，main不合并。
 
-日期：2026-11-07。本轮Owner同意以真实A/0返回验证包为下一里程碑，31省数据/校准字典并行，主科学路线不变。已完成九份脱敏文档及源字段/工件/决策卡机器方案的一致性检查；生产源码/测试未改，旧93检查未重跑。实际原包/网格/真实OS/HA/科学worker/新预算0，子代理0；方案可审阅但不可运行，全部运行/科学资格FALSE。
+日期：2026-11-07。Owner明确允许只读核对指定封存A包；实际3257字节/完整SHA、六个直接值路径/A快照标量位模式及原canonical快照摘要核对完成，原包未改，包外载荷未读。状态DIRECT_FIELDS_VERIFIED_RECORD_LINEAGE_NOT_REHYDRATED。下一具体缺口为原工资record的九份封存见证原字节；实际grid/worker/保护/预算与严格门仍缺。69基线保持，生产源码/测试未改、旧93项未重跑，HA/网格/新预算0，子代理0。
 
 ## 现场恢复
 
@@ -22,7 +22,7 @@
 
 机器包validators/multi_province/outer_metered_startup_source_plan_20261107/四份JSON，52来源/103边（4延迟，保守装载图无环），全部AST导入坐标重新解析；不是native闭包或调用次数。source overlay累计十一份固定SHA差异，旧清单/pin不改。65件基线中60件现场保持，五源码旧字节存Git/副本，其余47来源、前片记录、两份adoption和原7未跟踪项保持。
 
-详见[本轮报告](CH5_B3_METERED_STARTUP_AND_SOURCE_PROJECTION_20261107.md)及[前轮传输/capsule报告](CH5_B3_METERED_INPUT_TRANSPORT_AND_CAPSULE_20261107.md)。实际原包未读取/解释，original_packet_semantic_mapping=null；既定原C/g/权重、输入/劳动/税合同保持。
+详见[本轮报告](CH5_B3_METERED_STARTUP_AND_SOURCE_PROJECTION_20261107.md)及[前轮传输/capsule报告](CH5_B3_METERED_INPUT_TRANSPORT_AND_CAPSULE_20261107.md)。当时实际原包未读取/解释；本轮指定A包只读映射结果以新报告和伴随记录为准，旧机器空槽/回执不反写，原C/g/权重、输入/劳动/税合同保持。
 
 ## 固定路线和Owner已定决定
 
@@ -36,7 +36,9 @@
 
 按[Owner决定](CH5_OWNER_A_RETURN_PRIORITY_20261107.md)推进[真实A/0返回验证包](CH5_A_ORIGIN_RETURN_VALIDATION_PACKAGE_20261107.md)，并行[31省数据字典](CH5_31PROVINCE_DATA_CALIBRATION_PARALLEL_20261107.md)。本轮已完成原请求/inputs/回复/Cg字段AST定位、八项核对、工件生命周期/缺口和Owner决策卡；本地机器记录在validators/multi_province/a_origin_return_validation_package_20261107/。没有新增生产wrapper、执行器或权限系统。
 
-下一直接依赖：明确开放已采纳封存A包的本地只读语义映射，保留原字节；实际grid/参数/controls、当前worker/环境/模块/保护和可信有限决定仍缺。运行后真实root/Cg是目标产物，不列为运行前已有文件。现有严格标准/完整计数等硬门保持；首次返回层与正式科学接受层如何分阶段仍需具体决定，优先级同意不等于放宽。
+下一直接依赖：原工资record所需九份既有封存见证的受限只读核对。精确路径来自既有测试源码，文件范围提案只本地；本轮只获准A包，九份均未打开，不能用快照工资列表冒充原output_bytes或重跑生产者。见[本轮映射结果](CH5_A_INPUT_READONLY_SEMANTIC_MAPPING_20261107.md)。六个直接取值路径已核对，实证单位/年份桥未采用，包中labor_weights不是p；原生数组/record/request/传输尚未构造。
+
+实际grid/参数/controls、当前worker/环境/模块/保护和可信有限决定仍缺。运行后root/Cg仍为目标产物，首次返回与正式科学接受分层尚需具体处置，现有严格/完整计数门不变。读取授权不扩大到包外载荷、网格或科学运行。
 
 A-only先取得并保存原返回及原C/g，不直接进入当前要求完整来源的劳动矩阵入口。B输入/两省一轮、真实p/单位/劳动激励、RP/更新/停止分别按依赖推进。原包直接依赖经语义核对确定，不默认p=1，不重问已采纳A输入，不补B。普通工程连续完成，不为helper再问继续。
 
@@ -50,4 +52,4 @@ scientific_acceptance、FORMAL_SOURCE_FREEZE、consumer_ready、formal_ha_accept
 
 原6缓存和已消费execution_decision.json共7件未跟踪原字节保持。TEMP31 7/7、Moll3/3、七入口1/1、工资/补录、旧无模型四项及V2环境1/1全部关闭，零自动重试；旧初始化3/10、余7仅原8格，不跨借。R12 STOP、R13未授权、WASM六路径STOP、保护重绑未授权及16义务保持。
 
-历史dirty/HEAD/index保护基线不重审重绑。禁止reset/stash/clean、强推、合main、删分支、移动缓存证据、公开LOCAL_ONLY载荷/完整私有路径或改Desktop/CUA/全局配置。远端仅本轮九份脱敏文档；历史PENDING_SYNC与旧SSH失败只代表当时状态，本次以实际提交/Blob/字节/SHA256回读回执为准。
+历史dirty/HEAD/index保护基线不重审重绑。禁止reset/stash/clean、强推、合main、删分支、移动缓存证据、公开LOCAL_ONLY载荷/完整私有路径或改Desktop/CUA/全局配置。远端仅本轮八份脱敏文档；历史PENDING_SYNC与旧SSH失败只代表当时状态，本次以实际提交/Blob/字节/SHA256回读回执为准。

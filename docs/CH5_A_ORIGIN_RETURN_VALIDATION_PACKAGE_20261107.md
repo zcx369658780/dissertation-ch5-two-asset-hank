@@ -1,3 +1,13 @@
+# 2026-11-07 最新进度：A原包已获准只读核对
+
+Owner已明确允许只读核对指定封存A包，实际3257字节/完整摘要与采纳记录吻合；六个直接取值路径、A标量位模式及进入快照canonical摘要核对完成。见[只读语义结果](CH5_A_INPUT_READONLY_SEMANTIC_MAPPING_20261107.md)。包内无实证单位/年份桥，单元素劳动权重不是p。旧owner_adopted=false保留，后来的采纳决定仍有效。
+
+当前状态DIRECT_FIELDS_VERIFIED_RECORD_LINEAGE_NOT_REHYDRATED；仍不可运行。原包只含三份见证引用，原工资record需要九份封存见证字节，精确下一范围已列本地提案但尚未开放。实际原生数组/record/request/transport未构造，实际grid/worker/保护/15预算与严格门继续缺失。运行后root/Cg未取得，A-only不拼完整批次。
+
+下文保留原包准备阶段方案原字节；其中“原包未读/字段未映射/D_INPUT_ACCESS待答复”属于该时点，现以本更新和新报告为准。其余网格、科学值、准入/预算/保护要求保持，不把读取授权扩大为链接工件或运行许可。
+
+---
+
 # 真实A/0返回验证包：输入、输出、核对与实际缺口
 
 日期：2026-11-07。依据[Owner优先级决定](CH5_OWNER_A_RETURN_PRIORITY_20261107.md)。状态：REVIEWABLE_PLAN_NOT_RUNNABLE。本文和本地机器记录形成具体可审阅方案；实际原包语义适配、真实worker与运行证据尚未取得。
