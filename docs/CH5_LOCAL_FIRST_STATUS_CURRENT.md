@@ -1,6 +1,6 @@
 # CH5 当前短状态
 
-更新：2026-11-07。前轮冻结实际网格已保存；本轮实际A输入/启动合同已接入并回读重建。两树及八份脱敏文档发布/回读以最终交付回执为准。
+更新：2026-11-07。实际网格及A传输/startup已保存；本轮52完整原源码编译准备完成，目标模块执行0。两树及八份脱敏文档发布/回读以最终交付回执为准。
 
 Owner新增[长期网格授权与实际工件记录](CH5_OWNER_STANDING_GRID_AUTHORITY_AND_ARTIFACT_20261107.md)：从现在起允许生成中小规模网格，长期有效。授权内不逐次请示；不改变冻结科学定义、不授予HA/求解器或新科学运行预算。普通工程继续按完整成果推进，默认0子代理，外层Zotero旧R40不适用。
 
@@ -8,13 +8,15 @@ Owner新增[长期网格授权与实际工件记录](CH5_OWNER_STANDING_GRID_AUT
 
 近期目标仍为[真实A/0返回验证包](CH5_A_ORIGIN_RETURN_VALIDATION_PACKAGE_20261107.md)，[31省数据/校准字典](CH5_31PROVINCE_DATA_CALIBRATION_PARALLEL_20261107.md)并行；随后两省一轮→外层迭代→31省校准/基准→政策实验/第五章写作。TEMP31内部诊断退休，56447829为开发基础。
 
-本轮按原源码数据类/构造表达式生成一套20×20×2、800格网格，原四数组文件及原八参数/四controls回读一致；shape/dtype/strides/原flags保持。实际grid SHA256为`1cc6002840d6a3dfef899c98d09f4796a8e14ccb9116a7952cdf78ab50305258`。旧recipe/plan中的null和未授权字样保留为历史，当前实际值见新增伴随记录。
+前轮已按原源码数据类/构造表达式生成一套20×20×2、800格网格，原四数组文件及原八参数/四controls回读一致；shape/dtype/strides/原flags保持。实际grid SHA256为`1cc6002840d6a3dfef899c98d09f4796a8e14ccb9116a7952cdf78ab50305258`。旧recipe/plan中的null和未授权字样保留为历史，当前实际值见新增伴随记录。
 
-本轮完成[实际A输入与休眠worker传输集成](CH5_ACTUAL_A_INPUT_TRANSPORT_INTEGRATION_20261107.md)：原3257字节A包、九份原见证和实际grid身份沿原数据定义/工厂进入67217字节输入传输及66819字节startup。保存回读后原codec重建新请求/输入/record/context，浮点位模式/向量字节/快照/源计划及同record引用一致；原entry prepare接受。
+前轮完成[实际A输入与休眠worker传输集成](CH5_ACTUAL_A_INPUT_TRANSPORT_INTEGRATION_20261107.md)：原3257字节A包、九份原见证和实际grid身份沿原数据定义/工厂进入67217字节输入传输及66819字节startup。保存回读后原codec重建新请求/输入/record/context，浮点位模式/向量字节/快照/源计划及同record引用一致；原entry prepare接受。
 
-11份原标准库元数据模块及两份原数据AST在任务隔离命名空间装载；未导入整个科学包，不是目标科学worker原生模块或真正跨进程运行。五项定点拒绝检查通过，原价格/摘要/消费/休眠入口门保持。79件基线/原七件未跟踪及获准原件保持，生产源码/测试未改、旧93项未重跑；HA/初始化/科学OS/worker/attempt/新额度均0。
+本轮完成[完整原模块编译准备](CH5_A_FULL_ORIGINAL_MODULE_PREPARATION_20261107.md)：52份核定完整源码沿原接口compile，11必要定义在完整代码中核对；52模块/103内部边/eager DAG一致，未解析内部目标0。27外部导入名称尚未绑定目标bundle真实对象，不用假模块补齐。目标模块主体执行/注册0，NumPy/SciPy/公开模型包导入0。
 
-已解决实际A数据传输工件，尚非合格科学运行传输。下一必要部分为完整原模块的科学worker入口、当前来源/环境/模块与OS保护接线。原消费门仍PRODUCER_INVOCATION_NOT_VERIFIED，保存工资record不自动获准消费；此门的有限首次返回适用处置、15实际HA预算、可信消费决定及首次返回/严格接受分层仍缺。strict reference/thresholds与15预算null，NEW_RUN_BUDGET=0；原root/C/g/权重尚未取得。
+原公开执行门及真实DAG缺外部对象拒绝检查通过（两项）。81基线/原七件未跟踪及原传输/startup保持，生产源码/测试未改；旧93项/前轮五检查未重跑，科学worker/HA/初始化/求解/OS/attempt/新额度0。
+
+下一必要部分为真实外部依赖/解释器对象、完整模块装载与科学入口同源绑定、同record保护/消费工件。完整编译对象仅本进程，摘要不等于目标worker代码/类型或当前环境资格。保存工资record的消费处置、有限HA决定/15预算及首次返回/严格接受规则仍缺，strict reference/thresholds与15实际预算null，NEW_RUN_BUDGET=0；原root/C/g/权重尚未取得。
 
 ## 保持的科学与保护边界
 
