@@ -1,3 +1,13 @@
+# 2026-11-07 最新进度：九份工资见证已获准核对，数据record已复建
+
+Owner明确开放九份封存见证只读核对。六份历史摘要匹配，三份按首读基线/原交叉关系核对且独立历史摘要缺口披露；沿未改的原标准库数据reader/工厂，在本次隔离命名空间复建原ProductionWageRecord，A工资及A/B进入快照与已采纳A包吻合。原消费门仍拒绝，不是目标worker或传输资格。详见[九见证只读复建结果](CH5_NINE_WAGE_EVIDENCE_READONLY_RECONCILIATION_20261107.md)。
+
+当前状态SAVED_LINEAGE_RECORD_RECONSTRUCTED_NOT_RUNTIME_QUALIFIED。下一直接依赖转为实际冻结grid/参数/controls工件身份及目标worker/原生输入/限定消费/保护与有限决定；既有定义已列静态recipe，但实际工件/构造许可/15实际预算仍未取得。尚未生成网格、原生请求或真实HA返回。
+
+以下保留此前准备/只读阶段原字节，其“九份待授权/未读/record未复建”以本更新为准；所有科学、预算、保护及接受边界保持，旧数据和claim不反写。
+
+---
+
 # 2026-11-07 最新进度：A原包已获准只读核对
 
 Owner已明确允许只读核对指定封存A包，实际3257字节/完整摘要与采纳记录吻合；六个直接取值路径、A标量位模式及进入快照canonical摘要核对完成。见[只读语义结果](CH5_A_INPUT_READONLY_SEMANTIC_MAPPING_20261107.md)。包内无实证单位/年份桥，单元素劳动权重不是p。旧owner_adopted=false保留，后来的采纳决定仍有效。

@@ -1,8 +1,8 @@
-# CH5会话交接：A原包已获准只读映射，工资血缘待核
+# CH5会话交接：工资见证核对及数据record复建完成，冻结工件身份待准备
 
-保存与发布：前轮治理a9f2ca9b已逐文件回读。本轮起点为模型a65a7458、治理ce2b7455；最终保存提交及八文档回读以交付回执为准，源码/测试/机器记录只本地，main不合并。
+保存与发布：前轮治理ec7d2fad已逐文件回读。本轮起点为模型393760e8、治理e927b272；最终保存提交及八文档回读以交付回执为准，源码/测试/机器记录只本地，main不合并。
 
-日期：2026-11-07。Owner明确允许只读核对指定封存A包；实际3257字节/完整SHA、六个直接值路径/A快照标量位模式及原canonical快照摘要核对完成，原包未改，包外载荷未读。状态DIRECT_FIELDS_VERIFIED_RECORD_LINEAGE_NOT_REHYDRATED。下一具体缺口为原工资record的九份封存见证原字节；实际grid/worker/保护/预算与严格门仍缺。69基线保持，生产源码/测试未改、旧93项未重跑，HA/网格/新预算0，子代理0。
+日期：2026-11-07。Owner明确允许九份已列封存工资见证只读核对；九文件稳定，六历史摘要锚匹配，三份首读/交叉依据如实披露。原数据reader/工厂在本次隔离命名空间复建ProductionWageRecord，A工资位模式和A/B快照与已采纳A包一致；原消费门拒绝，未获运行资格。状态SAVED_LINEAGE_RECORD_RECONSTRUCTED_NOT_RUNTIME_QUALIFIED。72基线/52源/原七件未跟踪保持，生产源码/测试未改，旧93项未重跑，HA/网格/新预算0，子代理0。
 
 ## 现场恢复
 
@@ -36,9 +36,11 @@
 
 按[Owner决定](CH5_OWNER_A_RETURN_PRIORITY_20261107.md)推进[真实A/0返回验证包](CH5_A_ORIGIN_RETURN_VALIDATION_PACKAGE_20261107.md)，并行[31省数据字典](CH5_31PROVINCE_DATA_CALIBRATION_PARALLEL_20261107.md)。本轮已完成原请求/inputs/回复/Cg字段AST定位、八项核对、工件生命周期/缺口和Owner决策卡；本地机器记录在validators/multi_province/a_origin_return_validation_package_20261107/。没有新增生产wrapper、执行器或权限系统。
 
-下一直接依赖：原工资record所需九份既有封存见证的受限只读核对。精确路径来自既有测试源码，文件范围提案只本地；本轮只获准A包，九份均未打开，不能用快照工资列表冒充原output_bytes或重跑生产者。见[本轮映射结果](CH5_A_INPUT_READONLY_SEMANTIC_MAPPING_20261107.md)。六个直接取值路径已核对，实证单位/年份桥未采用，包中labor_weights不是p；原生数组/record/request/传输尚未构造。
+九份原工资见证已获准并核对，原reader/工厂复建本进程数据record；见[本轮结果](CH5_NINE_WAGE_EVIDENCE_READONLY_RECONCILIATION_20261107.md)。九文件和A包原字节保持。六历史SHA独立匹配，claim/entry/process三份无单列历史SHA，首读基线/交叉结构依据保留，不称完整独立认证。21条trace只读，不重放生产者，原record输出源于原reader对捕获trace的canonical编码，不是快照替身。
 
-实际grid/参数/controls、当前worker/环境/模块/保护和可信有限决定仍缺。运行后root/Cg仍为目标产物，首次返回与正式科学接受分层尚需具体处置，现有严格/完整计数门不变。读取授权不扩大到包外载荷、网格或科学运行。
+下一直接依赖转为实际冻结grid/参数/controls身份。原定义已静态整理为frozen_artifact_recipe，未求值；Owner需明确既存工件的只读目标，或限定允许按原冻结定义构造一套工件供身份核对。当前生成仍未授权，actual grid/hash、参数/controls工件、目标worker/环境/模块/原生输入/限定消费/保护与可信有限决定仍缺。原消费门保持PRODUCER_INVOCATION_NOT_VERIFIED，不因保存数据record恢复而开启。
+
+运行后root/Cg仍待未来获准取得；首次返回/正式科学接受分层及当前严格/完整计数门仍需具体处置。额外私有载荷、网格、HA运行和新预算不从九文件只读授权自动扩展。数据record命名空间只限本次，不是目标worker原生类型/装载证明。
 
 A-only先取得并保存原返回及原C/g，不直接进入当前要求完整来源的劳动矩阵入口。B输入/两省一轮、真实p/单位/劳动激励、RP/更新/停止分别按依赖推进。原包直接依赖经语义核对确定，不默认p=1，不重问已采纳A输入，不补B。普通工程连续完成，不为helper再问继续。
 

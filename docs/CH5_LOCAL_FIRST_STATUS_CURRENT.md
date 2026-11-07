@@ -1,6 +1,6 @@
 # CH5 当前短状态
 
-保存与发布：前轮A返回方案在治理a9f2ca9b完成逐字节回读。本轮同步A原包只读结果、验证包/当前入口及路线/计划任务等八份脱敏文档，最终以交付回执为准；源码/测试/机器记录只本地，main不合并。
+保存与发布：前轮A包只读结果在治理ec7d2fad完成逐字节回读。本轮同步九见证复建结果、验证包/当前入口及路线/计划任务等八份脱敏文档，最终以交付回执为准；源码/测试/机器记录只本地，main不合并。
 
 更新：2026-11-07。路线：Python多省份外层闭环→31省数据/校准→基准经济→政策实验/第五章写作。TEMP31内部诊断退休，56447829仍为选定开发基础。
 
@@ -10,9 +10,9 @@ Owner要求授权内普通工程连续完成实现、必要检查/修复、工�
 
 Owner已同意下一里程碑改为[真实A/0返回验证包](CH5_A_ORIGIN_RETURN_VALIDATION_PACKAGE_20261107.md)，按其经济输入/原始输出/核对项目收敛工程；[31省数据与校准字典](CH5_31PROVINCE_DATA_CALIBRATION_PARALLEL_20261107.md)并行。见[决定](CH5_OWNER_A_RETURN_PRIORITY_20261107.md)。不再默认继续扩展全部通用helper/计数；必要现有硬门保持。
 
-本轮完成获准的[封存A包只读语义核对](CH5_A_INPUT_READONLY_SEMANTIC_MAPPING_20261107.md)：3257字节/完整SHA及原快照摘要匹配，六个直接取值路径与A快照标量位模式一致。原包未改；旧owner_adopted=false由后来的采纳决定覆盖。包scope为合成保存输出，calendar_year/null、显式单位桥缺失，劳动权重不是p。未重新选择A值、计算工资或税。
+本轮完成获准的[九份原工资见证只读核对与数据record复建](CH5_NINE_WAGE_EVIDENCE_READONLY_RECONCILIATION_20261107.md)。九文件稳定，六份与独立历史摘要一致；其余三份按首读基线和原交叉关系核对，历史摘要覆盖缺口未补造。原reader接受，在本次隔离数据命名空间中经原工厂得到ProductionWageRecord；A工资位模式、A/B进入快照及摘要与已采纳A包吻合。原消费门仍拒绝，未重算工资或重跑旧七入口。
 
-状态DIRECT_FIELDS_VERIFIED_RECORD_LINEAGE_NOT_REHYDRATED。下一直接缺口收敛到原ProductionWageRecord：包内只有三份来源引用，现有reader需要九份封存见证原字节；精确只读范围提案已本地列明，包外载荷尚未打开/授权。原生数组/record/request/transport未构造；实际grid/参数/controls、当前worker/环境/保护、有限决定及严格门仍缺。69基线与原七件未跟踪字节保持；生产源码/测试未改，旧93项未重跑，HA/网格/新额度0。
+状态SAVED_LINEAGE_RECORD_RECONSTRUCTED_NOT_RUNTIME_QUALIFIED。下一直接依赖是实际冻结grid/参数/controls身份，再到目标worker/原生输入/限定消费/环境与保护、有限决定和严格门。静态冻结recipe已列出，当前未授权构造、actual grid/hash与15实际预算仍null。72基线/52来源/原七件未跟踪字节保持；生产源码/测试未改，旧93项未重跑，HA/网格/新额度0。
 
 ## 沿用的已完成工程（本轮未重跑）
 
@@ -26,7 +26,7 @@ Owner已同意下一里程碑改为[真实A/0返回验证包](CH5_A_ORIGIN_RETUR
 
 保存A第2轮原值以owner_input_adoption.json及最新决定为准，仅A/0、生成1进入2，保留A/B上下文；逐格以owner_pointwise_adoption.json为准。旧PENDING/FALSE不撤销采纳，不重算/舍入/裁切/补税、不重标19、不运行B或声称完整O2。
 
-真实p/单位/劳动激励、RP、外层经济停止及严格科学标准待Owner，不补默认。家庭收入等价尚非源码数值等价已验证。指定A原包已获准只读核对，直接值字段已映射；原工资血缘/原生record与合格运行传输尚未建立，实证单位桥未采用。
+真实p/单位/劳动激励、RP、外层经济停止及严格科学标准待Owner，不补默认。家庭收入等价尚非源码数值等价已验证。指定A原包已获准只读核对，直接值字段已映射；保存工资血缘及本进程数据record已复建，目标worker原生record与合格运行传输尚未建立，实证单位桥未采用。
 
 ## 当前缺口与边界
 

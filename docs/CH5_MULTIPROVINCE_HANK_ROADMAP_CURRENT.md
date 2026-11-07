@@ -2,10 +2,10 @@
 
 依据[Owner最新决定](CH5_OWNER_A_RETURN_PRIORITY_20261107.md)，主路线保持HA黑箱→外层闭环→31省数据/校准→基准→政策实验/第五章写作。近期里程碑调整为[具体A/0返回验证包](CH5_A_ORIGIN_RETURN_VALIDATION_PACKAGE_20261107.md)，[31省数据字典与校准口径](CH5_31PROVINCE_DATA_CALIBRATION_PARALLEL_20261107.md)并行准备。
 
-当前V1a进展：Owner已允许指定A包只读核对，3257字节/摘要、六个直接值路径与快照核对完成，见[语义映射结果](CH5_A_INPUT_READONLY_SEMANTIC_MAPPING_20261107.md)。原工资record需要九份封存见证原字节，下一只读范围已列提案但未开放；实际grid/worker/保护与有限决定仍缺，不运行。
+当前V1a/record进展：A包直接值/快照核对完成，九份工资见证已获准并沿原reader/工厂复建本进程ProductionWageRecord，见[九见证结果](CH5_NINE_WAGE_EVIDENCE_READONLY_RECONCILIATION_20261107.md)。六历史摘要锚与三份首读/交叉依据分列，原消费门仍拒绝；下一是冻结grid/参数/controls实际身份，原定义已列静态recipe，当前未授权构造，worker/保护/有限决定仍缺，不运行。
 
 ACTIVE_NEXT_ENGINEERING_TARGET=A_ORIGIN_RETURN_VALIDATION_PACKAGE
-CURRENT_PACKAGE_STATUS=DIRECT_FIELDS_VERIFIED_RECORD_LINEAGE_NOT_REHYDRATED
+CURRENT_PACKAGE_STATUS=SAVED_LINEAGE_RECORD_RECONSTRUCTED_NOT_RUNTIME_QUALIFIED
 OWNER_PRIORITY_ADOPTED=TRUE
 NEW_RUN_BUDGET=0
 RUN_GATE_CHANGES_AUTHORIZED=FALSE

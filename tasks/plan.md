@@ -4,9 +4,9 @@
 
 此前已完成[可审阅A/0返回验证包](../docs/CH5_A_ORIGIN_RETURN_VALIDATION_PACKAGE_20261107.md)：输入/输出拥有者字段、八项检查、运行前/中/后工件、实际缺口与Owner决策卡；[31省数据字典](../docs/CH5_31PROVINCE_DATA_CALIBRATION_PARALLEL_20261107.md)并行。验收为标准库AST/元数据/文档一致性，生产源码/测试未改，旧93项不重跑；当时实际原包和科学函数未读取/调用；本轮指定A包已获准并只读核对，科学函数仍0。
 
-本轮完成[已开放A包的直接字段和接口角色只读核对](../docs/CH5_A_INPUT_READONLY_SEMANTIC_MAPPING_20261107.md)，实证单位/年份桥仍缺；原输入/采纳/源/缓存未改。原工资record需要九份封存见证原字节，下一范围已列提案但未开放。未构造原生数组/record/request/transport或调用模型。
+本轮完成[已开放A包的直接字段和接口角色只读核对](../docs/CH5_A_INPUT_READONLY_SEMANTIC_MAPPING_20261107.md)，实证单位/年份桥仍缺；原输入/采纳/源/缓存未改。九份见证已获Owner开放并完成[原reader核对/本进程数据record复建](../docs/CH5_NINE_WAGE_EVIDENCE_READONLY_RECONCILIATION_20261107.md)，六历史摘要锚与三份首读/交叉依据分列。未构造目标worker原生数组/request/transport或调用模型。
 
-实施依赖：九份工资见证受限开放/原record血缘→固定实际工件→必要worker/保护和Owner有限决定→真实A返回/原C-g回读；随后B/两省一轮→经济迭代→31省采用/校准/基准。普通工程连续推进，科学值/准入/预算/保护只问具体缺项。现有硬门保持，actual grid/严格标准/15预算null，NEW_RUN_BUDGET=0。
+实施依赖：冻结grid/参数/controls实际工件身份（静态recipe已列，生成未授权）→必要worker/保护和Owner有限决定→真实A返回/原C-g回读；随后B/两省一轮→经济迭代→31省采用/校准/基准。普通工程连续推进，科学值/准入/预算/保护只问具体缺项。现有硬门保持，actual grid/严格标准/15预算null，NEW_RUN_BUDGET=0。
 
 阶段内具体任务和完成标准见[todo.md](todo.md)，不以补齐所有通用计数/包装代替实际返回里程碑。下文是原实施历史，旧下一目标以此处新顺序为准。
 
