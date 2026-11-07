@@ -10,10 +10,10 @@
 
 检查按风险执行，通过后仅因新改动、失败或未解风险扩大/重复。关闭的一次性科学观察不重跑。来源绑定在集成候选/执行版本精确固定；文档在里程碑、重要决定、Owner要求或交接时更新，历史留报告与Git，不堆CURRENT。
 
-AUTO_NEXT=FALSE禁止未授权科学后继、模型运行和STOP重试；不阻塞现有授权内独立工程。本次保存不启动后继代码工程。以后恢复同一路线普通工程，可按上述规则连续完成工作包，无需再次逐片派单。
+AUTO_NEXT=FALSE禁止未授权科学后继、模型运行和STOP重试；不阻塞现有授权内独立工程。本轮按Owner接续要求完成根回报/Cg/准入离线集成与保存。以后恢复同一路线普通工程，可按上述规则连续完成工作包，无需再次逐片派单。
 
 HA整体黑箱、算法/网格/controls和正式post→原KFE→原归一化不变。科学资格FALSE与工程进展分开；禁止用静态/替身/旧V2环境证据抬升真实worker、HA、Results或科学接受。actual grid hash/严格标准与实际15预算仍null，NEW_RUN_BUDGET=0。
 
-最新集成候选de139a0：原六阶段同counter接线准备完成；44源码/74边，真实worker根回报、原始C/g输出、可信Owner准入、实际工件/OS证明尚未形成。下一完整工程目标见[最新交接](CH5_SESSION_HANDOFF_20261107_OUTER_HA_CURRENT.md)。主科学路线见[路线图](CH5_MULTIPROVINCE_HANK_ROADMAP_CURRENT.md)；历史条目不作为当前派单或新预算。
+最新集成候选84778bf：原六阶段→同record C/g排他写入/回读→声明root返回/校验/封闭→拒绝执行的准入请求已接通；45源码/76静态边，17新+80回归通过。实际worker根回报/Cg、可信全局准入、完整native/字节计数与OS证明仍缺。后续独立工程为固定worker包/同源装载、可信许可消费接口及完整计数的离线组合；详见[集成报告](CH5_B3_WORKER_ROOT_OUTPUT_INTEGRATION_20261107.md)及[最新交接](CH5_SESSION_HANDOFF_20261107_OUTER_HA_CURRENT.md)。主科学路线见[路线图](CH5_MULTIPROVINCE_HANK_ROADMAP_CURRENT.md)；历史条目不作为当前派单或新预算。
 
 保存只公开脱敏治理文档；模型代码/测试/机器记录/LOCAL_ONLY载荷不发布，原七个未跟踪文件与所有关闭证据保持。远端同步以实际提交和本地逐文件回读回执为准，不以旧PENDING或URL存在作结论。

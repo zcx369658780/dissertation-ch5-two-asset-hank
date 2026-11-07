@@ -1,12 +1,12 @@
-# CH5会话交接：劳动决定、外部准入工程与自主推进
+# CH5会话交接：同record根回报/Cg/准入离线集成
 
-日期：2026-11-07。范围：工作流优化、本地及GitHub脱敏文档保存、交接；本轮后继工程/测试/科学运行/网格生成/新额度均0，子代理0。
+日期：2026-11-07。本轮按Owner接续要求完成普通工程集成、必要检查、工程验收和保存：17项新检查+80项回归通过；科学运行/真实OS后端/网格生成/新额度均0，子代理0。此前“仅保存、后继工程0”描述保留在先前Git提交中，是上一轮事实。
 
 ## 恢复与当前路线
 
-先核实际两树Git根、分支、HEAD、remote及staged/dirty/untracked。读AGENTS、当前短状态、当前工作流和本卡；历史只按具体问题读相关报告。外层Zotero旧R40不是CH5授权。后续普通工程按[Owner自主推进决定](CH5_OWNER_ENGINEERING_AUTONOMY_20261107.md)连续完成工作包，不为内部切片再请示；保存轮本身不启动新工程。
+先核实际两树Git根、分支、HEAD、remote及staged/dirty/untracked。读AGENTS、当前短状态、当前工作流、[Owner自主推进决定](CH5_OWNER_ENGINEERING_AUTONOMY_20261107.md)和本卡；历史只按具体问题读相关报告。外层Zotero旧R40不是CH5授权。普通工程连续完成工作包，不为内部切片再请示；科学预算、保护和接受边界不变。
 
-模型分支codex/ch5-temp31-local-first-source-20261101；保存前HEAD 336dbabd821fdaaa46b122e2400b19b23a77b7c5。治理分支governance/ch5-codex-local-first-20261101；保存前HEAD 2e729ccf272cf62475ee3458bf8dcc09d76d363f。最新代码候选de139a0a5e7ba2313276a0713c0123bad8921a51。最终本地/远端保存提交和逐文件Blob/字节/SHA256回读见本地交付回执；API发布提交可与本地提交不同，不冒称相同HEAD。
+模型分支codex/ch5-temp31-local-first-source-20261101；本轮启动HEAD 6c4544e31ab3a0b686546774c836281ea0027e66。治理分支governance/ch5-codex-local-first-20261101；启动HEAD 2b555106732f6a3682fd6bf64a8f7bcd9c8e6a29；启动远端治理HEAD 02889870858a393418f142272cbdecbf61bfeb13。以上均已现场核实，原入口两树字节一致。最新工程代码候选84778bf74b09dae29292cd38796259e0aeba14a0。最终本地/远端保存提交和逐文件Blob/字节/SHA256回读见本地交付回执；API发布提交可与本地提交不同，不强推求同。
 
 路线保持Python多省份外层闭环→31省数据/校准→基准经济→政策实验/第五章写作。TEMP31内部诊断退休，56447829是选定开发基础。HA整体HJB+KFE及原汇总黑箱、算法/网格/controls冻结，正式post→原KFE→原归一化和同inputs、净工资、a*r_a不变。
 
@@ -37,16 +37,19 @@
 | Win32后端代码 | `22cd354` | 16+24 | [CH5_B3_NATIVE_WORKER_BACKEND_PREPARATION_20261107.md](CH5_B3_NATIVE_WORKER_BACKEND_PREPARATION_20261107.md) |
 | worker字节封存/内联loader/持久占位 | `7949e69` | 16+16 | [CH5_B3_WORKER_BYTE_CAPSULE_PREPARATION_20261107.md](CH5_B3_WORKER_BYTE_CAPSULE_PREPARATION_20261107.md) |
 | 原六阶段与同counter接线 | `de139a0` | 15+31 | [CH5_B3_WORKER_PHASE_COUNTER_BINDING_20261107.md](CH5_B3_WORKER_PHASE_COUNTER_BINDING_20261107.md) |
+| 同record根回报/Cg/准入集成准备 | `84778bf` | 17+80 | [CH5_B3_WORKER_ROOT_OUTPUT_INTEGRATION_20261107.md](CH5_B3_WORKER_ROOT_OUTPUT_INTEGRATION_20261107.md) |
 
 各片包含重复回归，不能相加为唯一总测试数。另有[劳动口径](CH5_O3_EFFECTIVE_LABOR_OWNER_CLARIFICATION_20261106.md)、[收入对应账](CH5_O3_LABOR_INCOME_ACCOUNT_MAP_20261106.md)、[Lt_prev准备](CH5_O3_PREVIOUS_FIRM_LABOR_INPUT_BINDING_20261106.md)、[原始C来源静态绑定](CH5_O3_RAW_C_SOURCE_BINDING_20261106.md)、[计数/资源静态计划](CH5_B3_CALL_RESOURCE_STATIC_PLAN_20261106.md)。
 
-最新静态绑定44源码/74内部边、134接口/2017静态调用位置；70条保守装载边无环，4条函数体延迟边，内联bootstrap另50处。最新11份JSON留本地，原43源码与54旧机器记录按上片记录保持。本次保存轮不重新跑科学/替身检查，不把本轮文件完整性核对称为新模型测试。
+本轮新增outer_worker_return_binding及对应检查，只从原输出模块提取编码函数。原六阶段后，同counter预登记输出创建/写/读，原C/g胶囊排他写入并回读核对后再登记声明root返回/校验和封闭。公开入口继续拒绝；准入请求只列声明身份与真实缺件。异常/部分文件保留，零自动重试。实际root有效性不由声明回放推出。
 
-本会话新增工程均未实例化实际HA后端，未启动真实Win32进程/Job、科学worker或网格/HA求解。早期V2真实环境1/1已关闭，仅证明当时环境装载和资源事实，不迁移为当前候选的HA/OS运行资格。实际C/g输出尚未取得。
+最新45源码/76内部边（4延迟），新增三份本地JSON，不复制上片11份大型清单。17项新检查和输出21/快照13/阶段15/counter31项回归共97通过；新旧历史片不累计为全项目唯一总数。封闭后配置漂移经失败测试复现并修复，短写条件变异被捕获且源码原字节恢复。编码提取经AST等价核对；另外43旧来源、上片11机器记录、7未跟踪文件及两份Owner adoption记录保持原字节。工程自审不冒充独立科学审查。
+
+本轮真实NumPy仅用于合成C/g及原容器接口，科学函数/HA实例化/外部动作禁入检查有效；未实例化实际HA后端，未调用真实Win32后端/Job、科学worker或网格/HA求解。早期V2真实环境1/1已关闭，不迁移为当前候选的HA/OS运行资格。实际科学C/g输出尚未取得。
 
 ## 缺口、下一完整工程包与Owner事项
 
-下一普通工程包是同record worker根回报、原始C/g输出及准入接口的集成准备与必要离线验证，集中交付剩余缺口。可连续推进独立工程，不再逐helper等“继续”；不得以此调用真实OS/科学后端或生成网格。实际source/input/worker/output身份、可信Owner准入与受保护运行证据仍待形成。根worker未验证/封闭，不能把阶段完成写成根回报有效。
+本轮根回报/Cg/准入离线集成准备已完整交付，剩余实际工件/许可清单集中在集成报告。后续独立工程重点为固定worker包与同源装载、可信许可消费接口及完整计数的离线组合；不得以此调用真实OS/科学后端或生成网格。实际source/input/worker/output身份、可信全局Owner准入和受保护运行证据仍待形成。只有声明root回放封闭，实际根worker未被科学验证。
 
 Owner仍需决定真实p/单位/劳动激励、RP/外层经济停止和严格科学接受标准，及未来具体网格/科学运行的有限范围/预算。不要重问已定口径，不补默认值；科学事项不阻塞独立普通工程。
 
