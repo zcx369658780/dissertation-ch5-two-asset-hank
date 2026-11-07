@@ -1,6 +1,6 @@
-# CH5交接：52完整原源码编译准备完成，尚未装载
+# CH5交接：完整原模块已装载，原生A数据与边界守卫已接通
 
-日期：2026-11-07。本轮起点模型89b97b786e12d08f7db4135301ab925699bcfd22，治理72d60ead04bca7c22019efcf6aaeb28ba95747f8。前轮远端8f4e45a7bbb5f7d4fb3638d1219e7b4dffb5ebfc已核八文档/两树Blob、实际字节/SHA256，main保持b7e595ceb1cd7ffb5adfbf54e2de4e65f01090a5。最终本轮提交/远端现场以新交付回执为准。
+日期：2026-11-07。本轮起点模型10e565540eb7db95bd67ae4955da7f9e98a12dab，治理f872b9a05fb4616975371fb440f7be1a125914c0。前轮治理远端bc32a11de66679e900527c73b58c5db5008e6543已核八文档/两树Blob、实际字节/SHA256，main保持b7e595ceb1cd7ffb5adfbf54e2de4e65f01090a5。最终本轮提交/远端现场以新交付回执为准。
 
 ## 恢复与权威
 
@@ -14,18 +14,20 @@ Owner新增原话：
 
 ## 本轮完成
 
-本轮完成[完整原模块编译准备](CH5_A_FULL_ORIGINAL_MODULE_PREPARATION_20261107.md)：52份核定完整源码沿原接口compile，11必要定义在完整代码中核对；52模块/103内部边/eager DAG一致，未解析内部目标0。27外部导入名称尚未绑定目标bundle真实对象，不用假模块补齐。目标模块主体执行/注册0，NumPy/SciPy/公开模型包导入0。
+本轮[完整原模块/原生A数据守卫集成](CH5_A_NATIVE_MODULE_DATA_ASSEMBLY_20261107.md)已完成：52份原模块实际装载，32真实外部模块对象接入，A请求/inputs由完整原模块类型重建，52来源/代码/对象/数组布局及值的边界守卫通过。360条显式导入事件是本次观察，不是唯一依赖/native库存。实际grid及原传输/startup身份保持。
 
-原公开执行门及真实DAG缺外部对象拒绝检查通过（两项）。81基线/原七件未跟踪及原传输/startup保持，生产源码/测试未改；旧93项/前轮五检查未重跑，科学worker/HA/初始化/求解/OS/attempt/新额度0。
+五项定点拒绝/对象替换检查通过，原消费、休眠入口和公开bundle门保持。四次工程停止及守卫/显式NumPy依赖修复原文保留，完成检查另记1次只读Windows版本查询。HA/初始化/求解/原汇总、原OS/Job后端/科学worker/新科学attempt均0；83基线和原七件未跟踪保持，生产源码/测试未改，旧93项/上轮两检查未重跑。
 
-下一必要部分为真实外部依赖/解释器对象、完整模块装载与科学入口同源绑定、同record保护/消费工件。完整编译对象仅本进程，摘要不等于目标worker代码/类型或当前环境资格。保存工资record的消费处置、有限HA决定/15预算及首次返回/严格接受规则仍缺，strict reference/thresholds与15实际预算null，NEW_RUN_BUDGET=0；原root/C/g/权重尚未取得。
-本地validators/multi_province/a_full_module_preparation_20261107/两JSON为module_preparation、remaining_requirements，编译审计和FULL_MODULE_PREPARATION_RECEIPT只本地。仅执行三份标准库编译元数据模块，没有实际PreparedSourceBundle；import_event_limit=0仅拒绝用例，不是运行预算。生产候选仍6602117a5061294b575a7f2c2107f3725f14803b。
+下一真实调用依赖科学入口/同record受保护进程及可信消费工件、保存工资来源消费处置、适用有限Owner决定/15预算和首次返回/严格接受规则。当前仅同进程原生类型及守卫接线，不是正式环境/跨进程worker或完整native资格；strict reference/thresholds及15实际预算仍null，NEW_RUN_BUDGET=0，原root/C/g/权重未取得。
+本地validators/multi_province/a_native_module_assembly_20261107/两JSON：assembly、remaining_requirements。完整依赖位置、导入日志、52绑定回执及原worker数据守卫/四停止/修复证据只本地。前三停止主体进入0/1/43，第四52；各自失败不回填为成功，不恢复旧额度。最终完成检查为52装载、32实际外部对象和360显式导入事件，4096仅离线元数据守卫上限，不是15项实际HA预算。
 
-沿用：原3257字节A包/九见证/实际grid已沿原数据AST/工厂进入67217字节传输及66819字节startup并保存重建，五项拒绝检查通过。九见证六历史锚/三首读交叉依据分列；grid SHA256仍1cc6002840d6a3dfef899c98d09f4796a8e14ccb9116a7952cdf78ab50305258，实际20×20×2/八参数/四controls封存。本轮未再生成或另读私有原A包/见证/数组，长期网格授权持续有效。
+仅同进程完整原模块类型及原边界守卫核对，不是正式环境/未来科学worker、连续保护、全局可变状态或完整native证明。原生消费/休眠/公开bundle门均拒绝。生产源码/测试未改，代码候选仍6602117a5061294b575a7f2c2107f3725f14803b。
+
+实际20×20×2/八参数/四controls由上轮文件只读重建，grid SHA256仍1cc6002840d6a3dfef899c98d09f4796a8e14ccb9116a7952cdf78ab50305258。原3257字节A包/九见证随67217字节传输及66819字节startup保留，六历史锚/三首读交叉依据分列；旧私有原件不改，历史plan/PENDING/null不反写，长期网格授权持续有效。
 
 ## 下一完整工程目标与真实缺口
 
-近期仍为[真实A/0返回包](CH5_A_ORIGIN_RETURN_VALIDATION_PACKAGE_20261107.md)，[31省字典](CH5_31PROVINCE_DATA_CALIBRATION_PARALLEL_20261107.md)并行。实际A传输和完整源码编译准备已具备；下一为真实外部依赖/解释器对象、完整原模块装载、科学入口同源绑定/必要OS保护。现有休眠入口main明确拒绝，不称科学worker已存在。原科学消费门适用处置、有限运行及接受规则不能靠改FALSE绕过；不扩通用helper框架，不再把实际grid或实际数据codec当缺件。长期网格授权已解决当前生成许可。
+近期仍为[真实A/0返回包](CH5_A_ORIGIN_RETURN_VALIDATION_PACKAGE_20261107.md)，[31省字典](CH5_31PROVINCE_DATA_CALIBRATION_PARALLEL_20261107.md)并行。实际完整模块装载及同进程原生A守卫工程已具备；下一真实调用需科学入口/受保护进程/可信消费及适用有限运行/接受决定。不要再把52模块未装载或原生A类型不存在当当前缺口，也不要把本进程观察迁移为未来worker资格。现有休眠入口main明确拒绝，不称科学worker已存在。原科学消费门适用处置、有限运行及接受规则不能靠改FALSE绕过；不扩通用helper框架，不再把实际grid或实际数据codec当缺件。长期网格授权已解决当前生成许可。
 
 真实返回仍缺适用有限HA决定及15项实际预算、首次返回/严格科学门适用规则，原root/C/g/权重待未来获准运行后取得。strict reference/thresholds及15实际预算继续null，NEW_RUN_BUDGET=0。不得借旧V2或旧停止/关闭额度，不换目录续额度，不把本轮NumPy数据构造当当前科学环境准入。
 

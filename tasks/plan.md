@@ -6,7 +6,7 @@
 
 本轮完成[已开放A包的直接字段和接口角色只读核对](../docs/CH5_A_INPUT_READONLY_SEMANTIC_MAPPING_20261107.md)，实证单位/年份桥仍缺；原输入/采纳/源/缓存未改。九份见证已获Owner开放并完成[原reader核对/本进程数据record复建](../docs/CH5_NINE_WAGE_EVIDENCE_READONLY_RECONCILIATION_20261107.md)，六历史摘要锚与三份首读/交叉依据分列。未构造目标worker原生数组/request/transport或调用模型。
 
-本轮冻结20×20×2网格/参数/controls已实际生成并封存回读；Owner长期允许中小规模网格生成，见[新决定与实际工件](../docs/CH5_OWNER_STANDING_GRID_AUTHORITY_AND_ARTIFACT_20261107.md)。本轮[实际A数据传输/startup已保存重建](../docs/CH5_ACTUAL_A_INPUT_TRANSPORT_INTEGRATION_20261107.md)，原数据定义/原工厂接受且原拒绝门保持。本轮[52完整原源码编译准备](../docs/CH5_A_FULL_ORIGINAL_MODULE_PREPARATION_20261107.md)完成，目标模块主体执行0，不造依赖占位。实施依赖：真实外部依赖/解释器→完整模块装载/科学入口同源绑定/OS保护→明确消费/有限运行/首次返回接受规则→真实A返回/原C-g回读；随后B/两省一轮→经济迭代→31省采用/校准/基准。普通工程连续推进，科学值/准入/预算/保护只问具体缺项。现有硬门保持，actual grid已具备，严格标准/15实际HA预算null，NEW_RUN_BUDGET=0。
+本轮冻结20×20×2网格/参数/controls已实际生成并封存回读；Owner长期允许中小规模网格生成，见[新决定与实际工件](../docs/CH5_OWNER_STANDING_GRID_AUTHORITY_AND_ARTIFACT_20261107.md)。本轮[实际A数据传输/startup已保存重建](../docs/CH5_ACTUAL_A_INPUT_TRANSPORT_INTEGRATION_20261107.md)，原数据定义/原工厂接受且原拒绝门保持。本轮[52完整原源码编译准备](../docs/CH5_A_FULL_ORIGINAL_MODULE_PREPARATION_20261107.md)完成，目标模块主体执行0，不造依赖占位。本轮[52完整模块装载/32真实外部对象/原生A守卫](../docs/CH5_A_NATIVE_MODULE_DATA_ASSEMBLY_20261107.md)工程完成，四停止/修复保留、科学调用0。实施依赖：科学入口/同record受保护进程/可信消费工件→明确消费/有限运行/首次返回接受规则→真实A返回/原C-g回读；随后B/两省一轮→经济迭代→31省采用/校准/基准。普通工程连续推进，科学值/准入/预算/保护只问具体缺项。现有硬门保持，actual grid已具备，严格标准/15实际HA预算null，NEW_RUN_BUDGET=0。
 
 阶段内具体任务和完成标准见[todo.md](todo.md)，不以补齐所有通用计数/包装代替实际返回里程碑。下文是原实施历史，旧下一目标以此处新顺序为准。
 
