@@ -14,7 +14,8 @@
 - [x] V1c-policy：Owner明确“可以我同意A，请继续”，A全部规则已采纳，新增owner_policy_adoption权威记录，旧草稿null保持历史。
 - [x] V1c-contract：政策合同可选接入原准入请求，默认字节保持；16新+17相关回归通过，真实A政策/53来源传输与startup保存回读通过。见[采纳与接线](../docs/CH5_OWNER_A_FIRST_RETURN_POLICY_ADOPTION_20261107.md)。
 - [x] V1c-budget：六有限/九后置声明与实际A当前来源绑定、数值提案及离线检查完成，见[预算准备](../docs/CH5_A_FIRST_RETURN_BUDGET_PREPARATION_20261107.md)；实际批准仍null。
-- [ ] V1c-run-package：按A完成适用科学入口/执行消费/可信持久账本/实际保护及监督日志有限计量，将已备预算提案和实际worker/capsule/output身份组成最终具体有限包，再获Owner有限决定。当前不发额度。
+- [x] V1c-attempt-contract：固定scope账本/外部摘要有限决定/一次保存输入交付契约接原生取得之前，22新+两组各16回归，实际A当前54源/111边准备通过。见[本轮接线](../docs/CH5_A_FIRST_RETURN_ATTEMPT_CONTRACT_20261107.md)；未预约、未交付实际输入、未运行。
+- [ ] V1c-run-package：按A沿新契约完成实际科学worker/受保护调度、Owner账本信任与当前环境/同record实际保护及监督日志有限计量，将已备预算提案和实际worker/capsule/output身份组成最终具体有限包，再获Owner有限决定。当前不发额度。
 - [ ] V1d：仅在适用决定齐备后取得A/0真实原返回、原C/g/权重及同输入/root/回读证据；按原失败门留存并停止，不自动重试。
 - [ ] V2：B输入及两省范围另行确定后，验证完整一轮和逐格Frisch→原g/权重→A1 pH/收入对应；A-only不补齐成完整O2。
 - [ ] V3：Owner明确RP/校准与更新变量/经济残差和停止标准后推进外层迭代，不把旧converged当GE。
