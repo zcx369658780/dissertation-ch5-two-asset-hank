@@ -1,26 +1,28 @@
-# CH5会话交接：指定启动载荷的字节计数
+# CH5会话交接：来源/数组守卫的计数接线
 
-日期：2026-11-07。本轮指定载荷字节计数完整工程交付：17新+47相关回归共64通过；52来源/98静态边（4延迟）。真实OS/HA/科学worker/实际网格/实际原包读取解释/新额度0，子代理0；完整计数和全部科学/运行资格未建立。
+日期：2026-11-07。本轮来源与数组守卫计数完整工程交付：13新+77相关回归共90通过，52来源/99静态边（4延迟）。真实OS/HA/科学worker/实际网格/实际原包读取解释/新额度0，子代理0；全部运行/科学资格和完整计数FALSE。
 
 ## 现场恢复
 
 先核两树真实Git根、工作树、分支/HEAD、remote及staged/dirty/untracked，读AGENTS、当前短状态、当前工作流、[Owner自主推进决定](CH5_OWNER_ENGINEERING_AUTONOMY_20261107.md)和本卡。历史只定点读取；外层Zotero旧R40不授权CH5。授权内普通工程连续完成，不逐helper/测试/commit请示。
 
-模型分支codex/ch5-temp31-local-first-source-20261101，启动HEAD b0e6c02d5d8214d2a2bfa192fd601448349231da；治理分支governance/ch5-codex-local-first-20261101，启动HEAD 00c46f4cbd8bc0f5be4ea697187410193d95ae18；启动远端治理d6a211da4c200ca97b0f2d1b5221c20b20e42703。两树tracked/staged原干净，原7未跟踪项吻合。main保持b7e595ceb1cd7ffb5adfbf54e2de4e65f01090a5，不合并。
+模型分支codex/ch5-temp31-local-first-source-20261101，启动HEAD 6e111aa7b2ddc6e1ff06352e6b075178aee4979e；治理分支governance/ch5-codex-local-first-20261101，启动HEAD 7c350580d715a454986de53963e837476c93963f；启动远端治理9d30d151c6c297a956d483008d307642a2aaaf1f。两树tracked/staged原干净，原7未跟踪项吻合。main保持b7e595ceb1cd7ffb5adfbf54e2de4e65f01090a5，不合并。
 
-最新代码候选5fc18aff950051e3fc074dfa6bdf411c78eb6955。最终本地/远端保存提交及逐文件回读见本地交付回执；API快照与本地链不同，不强推求同。模型代码/测试/机器记录仅本地。
+最新代码候选a8ac09735d9a4b372d7af56c3bb51ea2c3ad1113。最终本地/远端提交与逐文件回读见本地交付回执；API快照与本地链不同，不强推求同。模型代码/测试/机器记录仅本地。
 
 ## 当前工程成果
 
-新增ArtifactByteMeter，为既有显式启动回查增加可选计数入口。五份启动工件及指定Python载荷读取、Python载荷SHA256输入绑定原counter/CounterIdentity。读取/摘要前预留容量，重复操作逐次计费；记录请求/获准预留/可知实际字节和返回/校验状态。失败不退还预留量，未知字节为null，不伪装0；坏工件、短读、异常、reparse、配置/回调漂移和预算耗尽均停止并保留证据。
+既有字节计数器新增显式buffer物化、空载荷处理与采样重入拒绝。来源守卫重新捕获和重复读取、声明/源码摘要、grid及工资/权重数组守卫的物化和摘要可接入同一原counter；预算先于载荷工作，失败不退还已预留容量，实际字节可知/未知分开记录。
 
-同counter“计费回查→原worker内对象/守卫→六阶段替身→原格式合成C/g回读→root封闭/待准入请求”通过。局部计数不是完整运行覆盖：元数据/JSON/base64及身份摘要、其他守卫/source/loader读取、数组复制和求解器/native均未覆盖。未启用时原只读路径仍可用，完整计数/live_counts_enforced均FALSE，公开科学执行门不变。回查不消费attempt或Owner账本，不装载真实worker；原root的materialized_launch_verified仍FALSE。
+meter_worker_entry_guards在原counter已建立后重新捕获带计数守卫，保留原声明、inputs、plan、request和roots；初次反序列化/初次守卫准备未追溯计费。基础守卫通过显式端口接线，不新增项目/数值依赖；worker挂接入口要求精确ArtifactByteMeter和同record/context/execution/source/grid身份。原公开执行/独立main拒绝边界保持。
 
-本轮核心11+组合6新检查、启动16/counter31回归共64通过；非法标签导致失败回执丢失先复现后修复，预算前置变异被捕获且源码恢复。新机器包52来源/98边，四份JSON。64件启动基线中63件现场字节保持；唯一既有源码更新为外部启动回查计数接线，原字节保留Git及本地副本，旧清单/pin不重写。其余50源码、前片记录、两份adoption和原7未跟踪项保持。主代理工程自审不称独立科学审查。详见[本轮报告](CH5_B3_SELECTED_ARTIFACT_BYTE_ACCOUNTING_20261107.md)。
+修复先物化前面正常数组再发现后面坏布局的问题：先核全部布局再读数组字节。A顺序转置/步长buffer与原语义一致；同counter阶段内守卫→原格式合成C/g回读→root封闭通过。并不覆盖C/g快照复制或其他未接入成本，complete_byte_accounting/live_counts_enforced仍FALSE，不证明实际来源/OS/内存峰值或科学运行。
 
-仅为具体问题读取：[启动/root/Cg接合](CH5_B3_DORMANT_LAUNCH_ROOT_OUTPUT_JOIN_20261107.md)、[启动封装](CH5_B3_DORMANT_LAUNCH_PACKAGE_INTEGRATION_20261107.md)、[休眠entry/守卫](CH5_B3_DORMANT_WORKER_ENTRY_REHYDRATION_20261107.md)、[启动合同/计数义务](CH5_B3_STARTUP_ARTIFACT_CONTRACT_AND_COUNT_COVERAGE_20261107.md)。历史检查数不跨片相加，静态边不是实际次数/native预算。
+本轮核心8+组合5新检查，守卫28/entry16/计数核心11与组合6/启动16回归，共90通过，不跨历史相加。全布局先拒绝先失败复现后修复，提前复制变异被捕获且源码恢复。两处旧fixture使用统一测试工具，仅在合成副本叠加三份外部源码的固定摘要，标记test_only和非旧提交Blob；旧清单/reference/pin不反写、不忽略其他来源变化。自审不冒充独立科学审查。
 
-实际原包仍未读取/解释；给定请求字段仍来自既有进入快照A和封存工资record，original_packet_semantic_mapping为null。原始C/g/权重及同record外层链路保持，不把摘要或替身当作实际原包语义或科学证明。
+当前机器包52来源/99边、四份JSON。65件启动基线中62件现场字节不变；三份外部源码的原字节存Git与本地副本，其余49来源、前片记录、两份adoption和七件未跟踪项保持。详见[本轮报告](CH5_B3_METERED_SOURCE_AND_ARRAY_GUARDS_20261107.md)。按具体问题读[指定载荷计数](CH5_B3_SELECTED_ARTIFACT_BYTE_ACCOUNTING_20261107.md)、[启动/root/Cg接合](CH5_B3_DORMANT_LAUNCH_ROOT_OUTPUT_JOIN_20261107.md)、[启动合同](CH5_B3_STARTUP_ARTIFACT_CONTRACT_AND_COUNT_COVERAGE_20261107.md)。
+
+原包仍未读取/解释；请求字段仍来自既有进入快照A和封存工资record，original_packet_semantic_mapping=null。原C/g与权重、Frisch/A1/税/输入合同保持，不把摘要/替身当实际语义、网格或科学资格。
 
 ## 固定路线和Owner已定决定
 
@@ -32,7 +34,7 @@
 
 ## 缺口与下一完整工程目标
 
-本轮指定载荷计数及同counter外层组合已交付。后续可完善外部元数据/编解码、守卫重复读取与数组复制等未覆盖路径，并准备已开放来源支持下的原包适配及保护资格；不因局部计费消除未观察缺口。不读取未开放私有载荷、不生成实际网格、不调用真实OS/科学后端。真实工件获取与科学动作须有适用授权。
+本轮指定载荷与挂接守卫计数已交付。后续可完善初次准备之外的外部编解码、身份/grid计算、Cg快照及其他未接入计数，并准备已开放来源支持下的原包适配与保护资格。不把局部计费称完整覆盖；实际工件获取/科学动作仍需适用授权，不读取未开放私有载荷、不生成实际网格、不调用真实OS/科学后端。
 
 实际原包语义适配及合格传输，科学worker/capsule/声明采纳，冻结grid/参数/controls资格，可信有限Owner决定/消费账本，完整求解器/native/重复字节计数，真实OS/source/module/root/Cg证明仍缺。actual_worker_program/transport/capsule/声明仍null，actual grid hash/artifact、strict reference/thresholds及15实际预算仍null，NEW_RUN_BUDGET=0。合成grid_metadata_identity不是实际网格，后端代码存在不是实际运行资格，五工件回查不是模块装载或全局信任证明。
 
