@@ -1,3 +1,5 @@
+> 2026-11-07后续工程已将输出提案补齐为全局5文件：原结果1份、两预约、工人/监督日志，见[最新分配](CH5_A_FINITE_OUTPUT_AND_WORKER_CORE_20261107.md)。总写/读各2 MiB仍仅提案，原结果分区512 KiB；旧机器提案不反写，15实际批准仍null，新额度0。下文1文件是该轮只覆盖原结果时的历史提案。
+
 # A/0首次返回预算适用性与有限额度提案
 
 日期：2026-11-07。工程状态：ACTUAL_A_PARTIAL_BUDGET_DECLARATIONS_VALIDATED_NOT_EXECUTABLE。候选95fbdd4eca230bb3df9fbb3e2bf6089724fbfbbb。本报告完成预算声明及实际A数据集成，最终可执行运行包尚未完成，不是运行批准。
