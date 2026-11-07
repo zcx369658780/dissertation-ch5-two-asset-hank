@@ -2,18 +2,16 @@
 
 更新：2026-11-07。执行依据：[Owner自主推进决定](CH5_OWNER_ENGINEERING_AUTONOMY_20261107.md)及既有Local-first决定。
 
-恢复时先核两棵真实工作树、分支/HEAD、remote、staged/dirty/untracked，再读[短状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md)和[最新交接](CH5_SESSION_HANDOFF_20261107_OUTER_HA_CURRENT.md)。历史只按具体问题读取，不递归盘点；外层Zotero旧任务不产生本项目授权，默认0子代理。
+恢复先核两棵实际Git根/工作树、分支/HEAD、remote、staged/dirty/untracked，再读AGENTS、[短状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md)和[最新交接](CH5_SESSION_HANDOFF_20261107_OUTER_HA_CURRENT.md)。历史只为具体问题定点读；外层Zotero旧R40不授权CH5，默认0子代理。
 
-普通工程按完整可验收成果连续推进：明确工程目标和现有合同→实现→按影响范围检查/修复→工程审查/验收→集中保存。内部薄切片与commit不需要Owner逐项批准；没有真实待决事项时不要以“请继续”结束普通工程包。
+普通工程按完整集成结果连续完成：既有合同→实现→必要检查/修复→工程审查/验收→集中保存。内部切片和commit不是Owner停点。只有真实科学方程/值/来源采纳、路线、接受标准、有限运行范围/预算、保护或不可逆决定才交Owner；先完成独立工程。自审不冒充独立科学审查。
 
-只有科学方程/取值/来源采纳、路线变化、接受标准、科学运行范围/预算、受保护或不可逆决定才提交Owner。先完成不依赖答案的工程；阻塞仅限相关部分。具体合同要求的独立科学审查继续有效，自审不冒充独立审查。
+风险检查通过后，仅因新改动、失败或未解风险扩大/重复。来源在集成候选精确绑定；里程碑集中同步文档，CURRENT保持短，历史留报告/Git。旧一次性观察、STOP及关闭额度不因工程修复重开。
 
-检查按风险执行，通过后仅因新改动、失败或未解风险扩大/重复。关闭的一次性科学观察不重跑。来源绑定在集成候选/执行版本精确固定；文档在里程碑、重要决定、Owner要求或交接时更新，历史留报告与Git，不堆CURRENT。
+最新候选299a427完成同record休眠启动封装及字段对应核对：16新+48回归通过，50源码/93静态边。入口/startup/传输/capsule/argv/声明/counter绑定，复核原record/binding/execution；五工件只读回查不消费attempt，现有native解析器在真实kernel禁入下兼容。详见[启动封装报告](CH5_B3_DORMANT_LAUNCH_PACKAGE_INTEGRATION_20261107.md)。
 
-AUTO_NEXT=FALSE禁止未授权科学后继、模型运行和STOP重试；不阻塞授权内独立工程。本轮完成worker休眠入口/给定请求反序列化/外部守卫接线及保存。恢复同一路线普通工程可连续完成工作包，无需逐片派单。
+后续独立工程可把给定请求的启动身份与已有输出目标/root合同接合，离线核对跨包拒绝与失败保留。实际原包未读取/解释，原包语义适配仍需明确已开放来源，不以摘要补语义。实际worker/capsule/声明、grid/参数/controls、可信账本及完整计数/真实证明资格未建立。
 
-HA整体黑箱、算法/网格/controls和正式post→原KFE→原归一化不变。科学资格FALSE与工程进展分开；禁止用静态/替身/旧V2环境证据抬升真实worker、HA、Results或科学接受。actual grid hash/严格标准与实际15预算仍null，NEW_RUN_BUDGET=0。
+主路线、HA整体黑箱、算法/网格/controls、同inputs、a*r_a、净工资及正式post→原KFE→原归一化保持。actual grid/严格标准及15实际预算null，NEW_RUN_BUDGET=0；公开执行和全部运行/科学资格FALSE。AUTO_NEXT=FALSE限制未授权科学后继及重试，不阻塞授权内普通工程；合成身份、替身及旧V2证据不转为真实资格。
 
-最新候选56ce293：输入传输精确保留字节并重建worker内原类型/同对象关系，接入源码/布局守卫；独立main先拒绝。16新+63回归通过，49源码/90静态边。原实际packet仍未读取/解释，工件资格和15实际预算不填值。后续可将休眠入口/传输摘要接入capsule/固定启动声明的同record静态封装，并准备原包适配，不调用真实后端/生成实际网格。详见[休眠入口报告](CH5_B3_DORMANT_WORKER_ENTRY_REHYDRATION_20261107.md)及[最新交接](CH5_SESSION_HANDOFF_20261107_OUTER_HA_CURRENT.md)。主路线见[路线图](CH5_MULTIPROVINCE_HANK_ROADMAP_CURRENT.md)；历史条目不是当前派单或预算。
-
-保存只公开脱敏治理文档；模型代码/测试/机器记录/LOCAL_ONLY载荷不发布，原七个未跟踪文件与所有关闭证据保持。远端同步以实际提交和本地逐文件回读回执为准，不以旧PENDING或URL存在作结论。
+保存仅公开脱敏治理文档，模型代码/测试/机器记录/LOCAL_ONLY载荷不发布。原7未跟踪项、保护基线和全部关闭证据保持。远端与本地提交链可不同，不强推求同；逐文件Blob、实际字节与SHA256回读后才记同步完成。
