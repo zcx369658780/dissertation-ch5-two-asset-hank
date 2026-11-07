@@ -8,9 +8,9 @@
 
 风险检查通过后，仅因新改动、失败或未解风险扩大/重复。来源在集成候选精确绑定；里程碑集中同步文档，CURRENT保持短，历史留报告/Git。旧一次性观察、STOP及关闭额度不因工程修复重开。
 
-最新候选299a427完成同record休眠启动封装及字段对应核对：16新+48回归通过，50源码/93静态边。入口/startup/传输/capsule/argv/声明/counter绑定，复核原record/binding/execution；五工件只读回查不消费attempt，现有native解析器在真实kernel禁入下兼容。详见[启动封装报告](CH5_B3_DORMANT_LAUNCH_PACKAGE_INTEGRATION_20261107.md)。
+最新候选009f0daa1b72a0a55fcab52423a8c3d40ceb1bc8完成启动包→worker内原对象→原C/g输出/root→待准入请求接合，15新+33回归通过，51源码/95静态边。启动/phase/counter必须共用原身份对象，目标摘要/路径核对，回调前后守卫，失败日志/部分文件保留且不重放；公开门在I/O/分派前拒绝。详见[启动/root/Cg集成报告](CH5_B3_DORMANT_LAUNCH_ROOT_OUTPUT_JOIN_20261107.md)。
 
-后续独立工程可把给定请求的启动身份与已有输出目标/root合同接合，离线核对跨包拒绝与失败保留。实际原包未读取/解释，原包语义适配仍需明确已开放来源，不以摘要补语义。实际worker/capsule/声明、grid/参数/controls、可信账本及完整计数/真实证明资格未建立。
+当前给定请求的离线集成已完成。后续重点为明确已开放字段来源支持下的实际原包语义适配、完整计数及保护资格准备。实际原包仍未读取/解释，不以摘要或替身补语义/资格；实际worker/capsule/声明、grid/参数/controls、可信账本及完整计数/真实证明尚缺。不因普通工程连续推进而自动调用真实后端或生成网格。
 
 主路线、HA整体黑箱、算法/网格/controls、同inputs、a*r_a、净工资及正式post→原KFE→原归一化保持。actual grid/严格标准及15实际预算null，NEW_RUN_BUDGET=0；公开执行和全部运行/科学资格FALSE。AUTO_NEXT=FALSE限制未授权科学后继及重试，不阻塞授权内普通工程；合成身份、替身及旧V2证据不转为真实资格。
 

@@ -1,26 +1,28 @@
-# CH5会话交接：同record休眠启动封装
+# CH5会话交接：休眠启动包/root/Cg输出接合
 
-日期：2026-11-07。本轮完整普通工程包完成：16新+48相关回归共64通过，源码50份/静态内部边93条（4延迟）。真实OS/HA/科学worker/实际网格/实际原包读取解释/新额度均0，子代理0。科学资格未提升。
+日期：2026-11-07。本轮完整普通工程包完成：15新+33相关回归共48通过，51源码/95静态内部边（4延迟）。真实OS/HA/科学worker/实际网格/实际原包读取解释/新额度均0，子代理0。科学资格未提升。
 
 ## 现场恢复
 
 先核两树真实Git根、工作树、分支/HEAD、remote及staged/dirty/untracked，读AGENTS、当前短状态、当前工作流、[Owner自主推进决定](CH5_OWNER_ENGINEERING_AUTONOMY_20261107.md)和本卡。历史只定点读取；外层Zotero旧R40不授权CH5。授权内普通工程连续完成，不逐helper/测试/commit请示。
 
-模型分支codex/ch5-temp31-local-first-source-20261101，启动HEAD ee4bfc93bd6ec9cb4493a31668bd5b289412aef7；治理分支governance/ch5-codex-local-first-20261101，启动HEAD cdd6db56b22d607ec7553c802131336620b9cc87；启动远端治理685be08a4be390fd945ad636969e05f54c7e8623。启动时另有本轮未提交启动源码/测试，已接续实现。main保持b7e595ceb1cd7ffb5adfbf54e2de4e65f01090a5，不合并治理线。
+模型分支codex/ch5-temp31-local-first-source-20261101，启动HEAD 22ad11cfba7546d36259085ac649953594de0b37；治理分支governance/ch5-codex-local-first-20261101，启动HEAD f29baaf2f8a98ee6852bd362409ec6a6d8a6d431；启动远端治理d659ffadda33f4e80ae65cfde88faec266d984fa。两树tracked/staged干净，原7未跟踪项吻合。main保持b7e595ceb1cd7ffb5adfbf54e2de4e65f01090a5，不合并治理线。
 
-最新代码候选299a427e6fedd8284c855d302b2c089e5c4f2f98。最终模型/治理/远端保存提交及逐文件回读见本地交付回执。API文档快照与本地链不同，不强推求同；模型代码、测试和机器记录仅本地。
+最新代码候选009f0daa1b72a0a55fcab52423a8c3d40ceb1bc8。最终模型/治理/远端保存提交及逐文件回读见本地交付回执；API快照与本地链不同，不强推求同。模型源码、测试、机器记录只在本地。
 
 ## 当前集成成果
 
-本轮将入口源码、startup合同、输入传输、capsule、argv、固定native声明及counter身份绑定到同record。复用原工资证据与record/binding工厂，按原元数据合同复核execution摘要。显式只读回查核对五份已物化工件及指定Python字节，目录/reparse/身份/漂移或既存attempt即拒绝，保留失败工件；准备和回查不创建或消费attempt。
+启动包、worker内守卫保留的entry和原root/输出合同已接合。启动entry、target.plan、phase.request及CounterIdentity必须分别就是原对象，等字节替身不代替；原root合同继续核对execution/source/binding/grid/输出摘要，输出路径不能碰撞启动或attempt工件，也不能越出指定包根。
 
-既有native解析器在合成工件上兼容，真实kernel禁入；公开执行仍在I/O/占位/实际后端动作前拒绝，worker独立main仍在import前拒绝。原始C/g与root替身链、封存worker、休眠输入反序列化和外部保护接线保持。
+准备不推进counter或消费attempt；公开执行在文件读取/阶段分派前拒绝。私有离线组合只注入原不透明后端替身，复用原六阶段→合成原C/g写入/回读→root封闭及待准入请求。C/g的dtype、shape、原字节和cell_weight保持，同request绑定；回调前后核对启动/来源/状态守卫。
 
-字段对应仅是原进入快照/封存record到已准备请求：r_a←rah、r_b←rb、transfer_income←Tt、borrowing_rate_gap←rb_gap，wages←record的A输出，labor_weights←原单来源单位权重。实际原候选packet未读取/解释，original_packet_semantic_mapping仍null；摘要匹配不能证明原包语义已适配。
+同counter只接合一次、组合只回放一次。阶段/保护/路径/输出失败保留日志、碰撞/部分文件，不回滚或重试；停止回执保留准备时固定的声明/身份摘要，非法现场字段也能留证。局部一次性约束不是全局可信账本。当前组合不验证已物化启动文件，materialized_launch_verified=FALSE，不装载真实worker、不调用native后端。
 
-16新+entry16/native替身16/capsule16共64通过，不跨历史片累加。record核对先失败复现后修复，删除execution比较的变异被捕获且源码原字节恢复，后续定点复核不另计。新四份机器JSON固定50源码/93边；原49来源、前片4机器记录、两份adoption及原7未跟踪项共62件启动基线原字节保持。主代理工程自审不冒充独立科学审查。详见[本轮报告](CH5_B3_DORMANT_LAUNCH_PACKAGE_INTEGRATION_20261107.md)。
+本轮15新+启动16/root17共48通过，不跨历史累加。首轮14新通过后复现非法身份导致失败回执丢失，修复并最终15通过；删除同一CounterIdentity对象条件的变异被等字节外包检查捕获，源码恢复。新机器包51来源/95边，四份JSON；原50源码、前片4机器记录、两份adoption和7未跟踪项共63件启动基线原字节保持。自审不冒充独立科学审查。详见[本轮报告](CH5_B3_DORMANT_LAUNCH_ROOT_OUTPUT_JOIN_20261107.md)。
 
-相关既有工程仅按需要读取：[休眠入口/反序列化/守卫](CH5_B3_DORMANT_WORKER_ENTRY_REHYDRATION_20261107.md)、[启动合同/全部资源义务](CH5_B3_STARTUP_ARTIFACT_CONTRACT_AND_COUNT_COVERAGE_20261107.md)、[封存worker组合](CH5_B3_SEALED_WORKER_PACKAGE_INTEGRATION_20261107.md)、[root/Cg准入集成](CH5_B3_WORKER_ROOT_OUTPUT_INTEGRATION_20261107.md)。历史证据不反向改写。
+实际原包未读取/解释；既有请求字段对应仍是进入快照A的rah/rb/Tt/rb_gap、封存工资record的A输出及原单位劳动权重。original_packet_semantic_mapping仍null，不把不透明原包摘要匹配称为原包语义已适配。
+
+仅按具体问题读取：[启动封装](CH5_B3_DORMANT_LAUNCH_PACKAGE_INTEGRATION_20261107.md)、[休眠入口/守卫](CH5_B3_DORMANT_WORKER_ENTRY_REHYDRATION_20261107.md)、[启动合同/全部资源义务](CH5_B3_STARTUP_ARTIFACT_CONTRACT_AND_COUNT_COVERAGE_20261107.md)、[原root/Cg合同](CH5_B3_WORKER_ROOT_OUTPUT_INTEGRATION_20261107.md)。历史证据不反向改写。
 
 ## 固定路线和Owner已定决定
 
@@ -32,7 +34,7 @@
 
 ## 缺口与下一完整工程目标
 
-本轮启动封装工程已完整交付。后续独立普通工程可将给定请求的启动包身份与已有输出目标/root回报合同接合，替身核对跨包拒绝、失败保留及同record输入/输出身份一致；不调用真实OS/科学后端、不生成实际网格、不读取未开放私有载荷。真实原包适配需要明确已开放字段来源，不能从摘要补语义。
+本轮给定请求的启动→worker内原对象→输出/root→待准入请求离线链路已完整交付。后续工程重点是已开放字段来源支持下的实际原包适配、完整求解器/native/重复字节计数覆盖及保护资格准备；独立工程继续，实际工件获取/科学动作须有适用授权。不读取未开放私有载荷、不生成实际网格、不调用真实OS/科学后端。原包语义不能从摘要或旧proposal补出。
 
 实际原包语义适配及合格传输，科学worker/capsule/声明采纳，冻结grid/参数/controls资格，可信有限Owner决定/消费账本，完整求解器/native/重复字节计数，真实OS/source/module/root/Cg证明仍缺。actual_worker_program/transport/capsule/声明仍null，actual grid hash/artifact、strict reference/thresholds及15实际预算仍null，NEW_RUN_BUDGET=0。合成grid_metadata_identity不是实际网格，后端代码存在不是实际运行资格，五工件回查不是模块装载或全局信任证明。
 
