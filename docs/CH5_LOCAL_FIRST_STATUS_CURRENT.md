@@ -6,9 +6,9 @@ Owner要求授权内普通工程连续完成实现、必要检查/修复、工�
 
 ## 当前工程结果
 
-最新代码候选a8ac09735d9a4b372d7af56c3bb51ea2c3ad1113：来源守卫重新捕获与重复读取、grid及工资/权重数组守卫的复制/显式摘要已可接入原counter。保留原worker声明/inputs/plan/request/roots；先核全部布局，再物化数组字节，预算前置、失败容量保留。空载荷和采样重入有明确处理，阶段内守卫与原root/Cg组合通过。
+最新代码候选8e73a2cb9b51d50f6b8fccec6bf1ced2f94e428b：原始C/g不可变复制、快照/输出Base64/JSON/显式摘要及回读已可接入原counter，休眠组合可转接同一meter到root。保存字节、dtype/shape/布局、原C/g与权重经固定旧编码器严格对照一致；JSON先预留保守表示容量，再核对实际长度，回调扩大容量时先拒绝。
 
-本轮13新+77相关回归共90通过；52源码/99静态内部边（4延迟）。65件启动基线中62件现场字节保持，三份外部源码的旧字节存Git及副本，其余49来源与原7未跟踪项保持。历史测试清单仅在合成副本中叠加固定三源差异，旧机器pin未改。初次准备和C/g快照复制等未覆盖，实际原包/真实OS/HA/科学worker/实际网格/新额度0。详见[来源与数组守卫计数报告](CH5_B3_METERED_SOURCE_AND_ARRAY_GUARDS_20261107.md)。
+本轮20新+62相关回归共82通过；52来源/100静态边（4延迟）。65件启动基线中60件现场字节保持，五份外部源码旧字节存Git及副本，其余47来源和七件未跟踪项保持。JSON提前渲染变异被捕获并恢复；计数不升级科学资格。实际原包/真实OS/HA/科学worker/实际网格/新额度0。详见[C/g快照与输出编解码报告](CH5_B3_METERED_CG_SNAPSHOT_AND_OUTPUT_CODEC_20261107.md)。
 
 ## 已定与未决
 
@@ -20,8 +20,8 @@ Owner要求授权内普通工程连续完成实现、必要检查/修复、工�
 
 ## 当前缺口与边界
 
-实际原包适配/合格传输、当前科学worker/capsule/声明采纳、冻结grid/参数/controls、可信有限决定与消费账本、完整调用/native/重复字节计数及真实OS/source/module/root/Cg证明仍缺；已覆盖指定载荷及挂接守卫；初次准备、未接入编解码/身份/grid计算、C/g快照与其他loader/数组/native成本仍未完整覆盖。actual grid hash/artifact、strict reference/thresholds及15实际预算仍null，NEW_RUN_BUDGET=0。实际工件槽位仍null。
+实际原包适配/合格传输、当前科学worker/capsule/声明采纳、冻结grid/参数/controls、可信有限决定与消费账本、完整调用/native/重复字节计数及真实OS/source/module/root/Cg证明仍缺；已覆盖指定载荷、挂接守卫及路由的C/g/输出编解码；初次准备、其他传输/capsule、未接入身份/grid/loader、规划/校验/记账及native仍未完整覆盖。actual grid hash/artifact、strict reference/thresholds及15实际预算仍null，NEW_RUN_BUDGET=0。实际工件槽位仍null。
 
-全部运行/科学资格、FORMAL_SOURCE_FREEZE、consumer_ready、formal_ha_accepted、Results、model_activation、REAL_GE及live_counts_enforced均FALSE，公开门拒绝。AUTO_NEXT=FALSE不阻塞独立普通工程；当前指定载荷与挂接守卫可在原counter计费，未挂接路径仍可用，complete_byte_accounting仍FALSE。后续重点为剩余外部编解码/快照/身份计数，以及已开放来源支持下的原包适配与保护资格准备。不读取未开放私有载荷、不生成实际grid、不调用真实后端。
+全部运行/科学资格、FORMAL_SOURCE_FREEZE、consumer_ready、formal_ha_accepted、Results、model_activation、REAL_GE及live_counts_enforced均FALSE，公开门拒绝。AUTO_NEXT=FALSE不阻塞独立普通工程；当前计数为可选显式路由，JSON预留容量不是实际消耗，complete_byte_accounting仍FALSE。后续重点为外部传输工件编解码及其余明确计数，已开放来源支持下的原包适配与保护资格仍缺。不读取未开放私有载荷、不生成实际grid、不调用真实后端。
 
 所有STOP/旧关闭额度/16义务、历史dirty及保护基线、原7未跟踪字节保持。不reset/stash/clean、强推/合main/删分支，不移动证据或保护重绑，不改Desktop/CUA/全局配置。模型代码/测试/机器记录仅本地；远端仅脱敏治理文档，API链与本地链不强求相同，以实际提交和逐文件回读回执为准。
