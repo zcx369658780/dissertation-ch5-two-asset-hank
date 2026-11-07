@@ -1,6 +1,6 @@
-# CH5交接：长期网格授权已落地，冻结实际工件已保存
+# CH5交接：实际A输入与休眠worker传输已保存重建
 
-日期：2026-11-07。本轮起点模型4e5583ee2c0904b67f9a83bb51a07d3ca61dd989，治理63a395bbdd8885066e474dda4627270c4df1d1bf。两树本地保存提交以交付回执为准。GitHub首次读取传输失败，后续同工具/分支读取恢复，治理ref现场为98f22379f96b9d074ea9367cb602a6511b093d9b；本轮十文档发布后HEAD、main及逐字节核对以交付回执为准，不把历史值当发布后的现场。
+日期：2026-11-07。本轮起点模型4162a53a4fefb24df2d047222f9459d5fb73d034，治理2b78f2c9c51b6ea320ed1ce59894a3f593ff2f25；前轮远端ccb24dbe4246c2ed65d288e205237f840af9bd59已核十文档/两树Blob、实际字节/SHA256。最终本轮两树提交、远端及main现场以新交付回执为准。
 
 ## 恢复与权威
 
@@ -14,17 +14,21 @@ Owner新增原话：
 
 ## 本轮完成
 
-实际生成一套原20×20×2、b/a/z顺序800格网格及原switch_matrix，封存四NumPy文件、原八参数/四controls。沿原后端身份算法得到grid SHA256：`1cc6002840d6a3dfef899c98d09f4796a8e14ccb9116a7952cdf78ab50305258`。数组原载荷368字节，保存回读核原字节/shape/dtype/strides/原可写与C/F标志，参数/controls浮点位模式和canonical摘要一致。
+见[实际A输入传输集成](CH5_ACTUAL_A_INPUT_TRANSPORT_INTEGRATION_20261107.md)。原3257字节A包、九份原工资见证和实际grid身份沿原数据定义/工厂接入67217字节传输和66819字节startup；保存回读、原codec重建新的request/inputs/record/context。原A包/见证/工资输出/A-B快照/源计划字节及标量位模式/只读向量字节、binding/execution摘要一致，接收端同record/context引用正确，原entry prepare接受。
 
-原数据类和身份函数经定点AST隔离装载，原构造参数由annual源码AST取得、与recipe摘要匹配；exports/contracts的EconomicParams AST一致。没有导入整个科学包或调用annual/初始化/HA/求解器。当前对象不是目标worker原生类型/模块/环境资格；同对象证明仅本进程，回读对象按字节/布局核对，未安装运行时worker守卫。
+11份原标准库元数据模块与bootstrap/adapter两份原数据AST在隔离命名空间装载，未导入科学包。此为原源码定义的数据对象，不是目标worker完整原生模块、跨进程或环境/保护准入。原A包JSON没有旧ndarray字节；本轮按原dtype=float构造，再验证codec字节一致，不虚称恢复未存历史数组。旧grid_metadata_identity未改，新消费者context使用实际grid摘要。
 
-本地机器目录validators/multi_province/frozen_grid_artifact_20261107/三JSON为owner_standing_grid_authority、artifact_identity、remaining_requirements。数组/参数/controls、完整manifest和BUILD_RECEIPT留本地证据目录；不发布机器记录/私有载荷。76件基线（上轮72+四JSON）和原七未跟踪项保持，生产源码/测试未改，旧93项未重跑；HA/初始化/科学OS/worker/新科学额度0。最新工程代码候选仍6602117a5061294b575a7f2c2107f3725f14803b。
+五项实际数据定点拒绝检查通过：原摘要pin、改价并重算摘要仍被快照拒绝、原生产消费门、pending许可门和休眠入口拒绝。未修改生产源码/测试、未重跑旧93项。79基线及原七件未跟踪、九见证/A包/四数组原字节保持；HA/初始化/科学OS/worker/attempt/新额度0，子代理0。
 
-沿用A/0包六直接字段/快照核对及九见证原reader的数据record复建。六份历史SHA匹配，claim/entry/process三份首读/交叉依据不冒充独立历史摘要；原消费门仍PRODUCER_INVOCATION_NOT_VERIFIED。A工资及A/B上下文保持，未重放生产者/旧七入口。
+本地validators/multi_province/a_input_transport_20261107/两JSON为integration、remaining_requirements。实际传输、startup、私有工件保护清单和OFFLINE_INTEGRATION_RECEIPT只本地。最新生产代码候选仍6602117a5061294b575a7f2c2107f3725f14803b。
+
+前轮实际20×20×2网格及八参数/四controls仍封存，grid SHA256为1cc6002840d6a3dfef899c98d09f4796a8e14ccb9116a7952cdf78ab50305258。本轮只读数组，未再生成。长期授权继续适用，旧plan/回执不反写。
+
+沿用九见证六份历史SHA/三份首读交叉依据分列；工资生产者未重跑、record未升格为producer_invocation_verified，原科学消费门拒绝。
 
 ## 下一完整工程目标与真实缺口
 
-近期仍为[真实A/0返回包](CH5_A_ORIGIN_RETURN_VALIDATION_PACKAGE_20261107.md)，[31省字典](CH5_31PROVINCE_DATA_CALIBRATION_PARALLEL_20261107.md)并行。下一必要工程为目标worker原生输入/原record的合格传输、来源/环境/模块/保护接线，不再扩通用helper框架，不再把实际grid当缺件。长期网格授权已解决当前生成许可。
+近期仍为[真实A/0返回包](CH5_A_ORIGIN_RETURN_VALIDATION_PACKAGE_20261107.md)，[31省字典](CH5_31PROVINCE_DATA_CALIBRATION_PARALLEL_20261107.md)并行。实际A数据传输已准备；下一必要部分为完整原模块的科学worker入口、来源/当前环境/模块装载及必要OS保护。现有休眠入口main明确拒绝，不称科学worker已存在。原科学消费门适用处置、有限运行及接受规则不能靠改FALSE绕过；不扩通用helper框架，不再把实际grid或实际数据codec当缺件。长期网格授权已解决当前生成许可。
 
 真实返回仍缺适用有限HA决定及15项实际预算、首次返回/严格科学门适用规则，原root/C/g/权重待未来获准运行后取得。strict reference/thresholds及15实际预算继续null，NEW_RUN_BUDGET=0。不得借旧V2或旧停止/关闭额度，不换目录续额度，不把本轮NumPy数据构造当当前科学环境准入。
 
@@ -34,4 +38,4 @@ Owner新增原话：
 
 ## 保护与保存
 
-全部STOP/旧关闭额度/16义务、历史dirty及保护基线保持。禁止reset/stash/clean、强推/合main/删分支、移动原证据/缓存、保护重绑或改Desktop/CUA/全局配置。两树精确保存十份脱敏入口/文档，模型另保存本地三JSON；远端连接已恢复，本轮按同分支租约/allowlist发布及Blob/实际字节/SHA256回读，最终提交与结果以交付回执为准，不强推求同。
+全部STOP/旧关闭额度/16义务、历史dirty及保护基线保持。禁止reset/stash/clean、强推/合main/删分支、移动原证据/缓存、保护重绑或改Desktop/CUA/全局配置。两树精确保存本轮八份脱敏入口/文档，模型另保存两JSON；远端按同分支租约/allowlist发布并核Blob/实际字节/SHA256，最终提交与结果以新交付回执为准，不强推求同。

@@ -6,7 +6,8 @@
 - [x] V1a：Owner已明确只读开放指定A包；3257字节/完整SHA、六个直接值路径/A快照位模式及canonical摘要核对完成，原包未改。已确认实证单位/年份桥缺失、labor_weights不是p；此项完成阅读核对，不代表原record或传输已合格。
 - [x] V1a-record：Owner已明确开放九份封存工资见证并完成原reader核对，在本次隔离数据命名空间复建原ProductionWageRecord；A工资/快照相同，原消费门仍拒绝。六历史摘要锚与三份首读/交叉依据分列，不冒充目标worker原生/运行资格，不重跑生产者。
 - [x] V1b-grid：Owner已长期允许生成中小规模网格；原20×20×2网格及八参数/四controls已实际生成封存回读，原字节/布局/flags与后端摘要核对一致，详见[新决定与实际工件](../docs/CH5_OWNER_STANDING_GRID_AUTHORITY_AND_ARTIFACT_20261107.md)。不等于目标worker原生/运行资格。
-- [ ] V1b-worker：准备A/0原生输入/record合格传输、来源/环境/模块及必要保护接线；当前消费门仍拒绝，不扩大通用框架。
+- [x] V1b-data：实际A包/九见证/grid身份沿原数据定义/工厂进入保存传输及startup并回读重建，原标量位模式/向量字节/record/context引用一致；五项定点拒绝检查通过。见[本轮集成](../docs/CH5_ACTUAL_A_INPUT_TRANSPORT_INTEGRATION_20261107.md)，不称目标worker完整原生/跨进程资格。
+- [ ] V1b-worker：完整原模块的科学worker入口、来源/当前环境/模块装载及必要OS保护；现有休眠入口和原消费门拒绝，不能直接调FALSE放行。
 - [ ] V1c：明确首次返回证据规则和现有严格/完整计数门的适用处置，固定15项有限预算/STOP与消费决定；缺失时拒绝，旧额度不复用。
 - [ ] V1d：仅在适用决定齐备后取得A/0真实原返回、原C/g/权重及同输入/root/回读证据；按原失败门留存并停止，不自动重试。
 - [ ] V2：B输入及两省范围另行确定后，验证完整一轮和逐格Frisch→原g/权重→A1 pH/收入对应；A-only不补齐成完整O2。
@@ -15,7 +16,7 @@
 - [ ] D2—D4：沿开放来源准备逐变量/省/年覆盖、H/p/E/工资/财政单位桥及参数三分类/校准观测矩；真实来源和科学采用按具体决定。
 - [ ] V4—V5：31省校准/基准和政策结果须依赖真实外层/数据与科学接受，当前未运行。
 
-当前下一直接缺项为V1b-worker原生输入/合格传输及来源/环境/模块/保护。实际grid及参数/controls已具备，长期生成授权不再是许可缺口；严格标准/15实际HA预算仍null，NEW_RUN_BUDGET=0。科学/运行资格、Results和REAL_GE仍FALSE。下文保留原任务清单与历史未完成项。
+当前实际A数据传输、startup及冻结grid已准备；下一为V1b-worker和消费/运行/接受门具体处置。15实际HA预算/strict reference/thresholds仍null，NEW_RUN_BUDGET=0，科学/运行资格、Results及REAL_GE仍FALSE。下文历史清单保留。
 
 ---
 

@@ -1,6 +1,6 @@
 # CH5 当前短状态
 
-更新：2026-11-07。本轮实际冻结网格已生成、保存并回读，两树本地保存。GitHub首次传输失败后，同一工具/分支的后续读取已恢复；本轮十份脱敏文档发布及回读以最终交付回执为准。
+更新：2026-11-07。前轮冻结实际网格已保存；本轮实际A输入/启动合同已接入并回读重建。两树及八份脱敏文档发布/回读以最终交付回执为准。
 
 Owner新增[长期网格授权与实际工件记录](CH5_OWNER_STANDING_GRID_AUTHORITY_AND_ARTIFACT_20261107.md)：从现在起允许生成中小规模网格，长期有效。授权内不逐次请示；不改变冻结科学定义、不授予HA/求解器或新科学运行预算。普通工程继续按完整成果推进，默认0子代理，外层Zotero旧R40不适用。
 
@@ -10,11 +10,11 @@ Owner新增[长期网格授权与实际工件记录](CH5_OWNER_STANDING_GRID_AUT
 
 本轮按原源码数据类/构造表达式生成一套20×20×2、800格网格，原四数组文件及原八参数/四controls回读一致；shape/dtype/strides/原flags保持。实际grid SHA256为`1cc6002840d6a3dfef899c98d09f4796a8e14ccb9116a7952cdf78ab50305258`。旧recipe/plan中的null和未授权字样保留为历史，当前实际值见新增伴随记录。
 
-仅执行隔离的原数据类AST/身份函数，未导入科学包或调用求解路径。不是目标worker原生实例/环境/模块准入。76件启动基线和原七件未跟踪文件保持；生产源码/测试未改，旧93项未重跑；本轮HA/初始化/科学OS/worker/新额度均0。
+本轮完成[实际A输入与休眠worker传输集成](CH5_ACTUAL_A_INPUT_TRANSPORT_INTEGRATION_20261107.md)：原3257字节A包、九份原见证和实际grid身份沿原数据定义/工厂进入67217字节输入传输及66819字节startup。保存回读后原codec重建新请求/输入/record/context，浮点位模式/向量字节/快照/源计划及同record引用一致；原entry prepare接受。
 
-沿用A包六直接字段/快照核对，以及[九见证原reader的数据record复建](CH5_NINE_WAGE_EVIDENCE_READONLY_RECONCILIATION_20261107.md)；六份独立历史摘要与三份首读/交叉依据分列。当前消费门仍拒绝PRODUCER_INVOCATION_NOT_VERIFIED，不因网格授权开启。
+11份原标准库元数据模块及两份原数据AST在任务隔离命名空间装载；未导入整个科学包，不是目标科学worker原生模块或真正跨进程运行。五项定点拒绝检查通过，原价格/摘要/消费/休眠入口门保持。79件基线/原七件未跟踪及获准原件保持，生产源码/测试未改、旧93项未重跑；HA/初始化/科学OS/worker/attempt/新额度均0。
 
-下一必要工程为目标worker原生输入/合格record传输及具体来源/环境/模块/保护接线；不再把实际grid生成作为待Owner许可。真实A返回仍缺适用有限HA决定/15实际预算、首次返回与严格接受门具体规则，以及将来的原root/C/g/权重。strict reference/thresholds和15实际预算仍null，NEW_RUN_BUDGET=0。
+已解决实际A数据传输工件，尚非合格科学运行传输。下一必要部分为完整原模块的科学worker入口、当前来源/环境/模块与OS保护接线。原消费门仍PRODUCER_INVOCATION_NOT_VERIFIED，保存工资record不自动获准消费；此门的有限首次返回适用处置、15实际HA预算、可信消费决定及首次返回/严格接受分层仍缺。strict reference/thresholds与15预算null，NEW_RUN_BUDGET=0；原root/C/g/权重尚未取得。
 
 ## 保持的科学与保护边界
 
