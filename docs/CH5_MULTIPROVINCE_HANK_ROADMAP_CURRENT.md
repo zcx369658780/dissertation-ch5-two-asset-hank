@@ -1,3 +1,28 @@
+# 2026-11-07 当前路线优先级：真实A返回验证包
+
+依据[Owner最新决定](CH5_OWNER_A_RETURN_PRIORITY_20261107.md)，主路线保持HA黑箱→外层闭环→31省数据/校准→基准→政策实验/第五章写作。近期里程碑调整为[具体A/0返回验证包](CH5_A_ORIGIN_RETURN_VALIDATION_PACKAGE_20261107.md)，[31省数据字典与校准口径](CH5_31PROVINCE_DATA_CALIBRATION_PARALLEL_20261107.md)并行准备。
+
+ACTIVE_NEXT_ENGINEERING_TARGET=A_ORIGIN_RETURN_VALIDATION_PACKAGE
+CURRENT_PACKAGE_STATUS=REVIEWABLE_PLAN_NOT_RUNNABLE
+OWNER_PRIORITY_ADOPTED=TRUE
+NEW_RUN_BUDGET=0
+RUN_GATE_CHANGES_AUTHORIZED=FALSE
+
+| 顺序 | 近期成果 | 进入下一阶段的依赖 |
+| --- | --- | --- |
+| V0 本轮已完成 | A/0输入/输出拥有者定位、八项检查、工件生命周期/缺口和决策卡 | 方案可审阅；实际原包未读、运行未获准 |
+| V1 当前目标 | 获准后取得已采纳A/0的真实原返回和原C/g/权重并回读 | 实际输入适配、冻结工件、必要保护、现有硬门和适用有限决定 |
+| V2 后续 | A/B完整来源的一轮外层接线验证 | B输入及执行范围、真实p/单位/收入关系等具体口径；不补B或用A-only矩阵入口 |
+| V3 后续 | 价格更新和外层经济迭代 | RP、校准/更新变量、残差与停止/接受标准；不沿用旧converged判GE |
+| V4 后续 | 31省数据采用、校准与基准 | 完整数据/单位/观测矩、运行和科学接受；数据方案可提前并行 |
+| V5 后续 | 政策实验与结果写作 | 基准成立及预定政策问题/对照/指标；方法与数据文字可先准备 |
+
+工程围绕V1的必要依赖连续完成，不再默认先扩展全部通用计数/包装。输入与固定程序归运行前，OS/模块等证明沿受保护生命周期取得，真实root/Cg归运行后产物。现有完整计数/严格接受/保护硬门保持；首次返回与正式科学接受的具体分阶段规则尚未决定。全部预算、actual grid/严格标准null，公开门和全部运行/科学资格FALSE。
+
+下文保留历史正文原字节，其旧NEXT字段、待派单和PENDING叙述只适用于当时；当前近期顺序以上述Owner决定、A包和CURRENT为准，不撤销已采纳科学合同、旧STOP或保护。
+
+---
+
 > 2026-11-07入口说明：本文件科学路线与历史正文保持。当前状态/已采纳决定/工程下一步以[短状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md)、[最新交接](CH5_SESSION_HANDOFF_20261107_OUTER_HA_CURRENT.md)及[Owner自主推进决定](CH5_OWNER_ENGINEERING_AUTONOMY_20261107.md)为准。下文各日期的PENDING_SYNC、旧Ct讨论、Lt_prev未决和“先接收任务/不启动后继”等是当时记录；不撤销后来的Owner采纳，不把普通工程切片变成Owner审批点。无新增科学运行、网格或预算授权。
 
 # 第五章Python多省份HANK主路线图：HA黑箱与外层闭环

@@ -1,8 +1,8 @@
-# CH5会话交接：startup与UTF-8来源投影计数集成
+# CH5会话交接：优先真实A返回验证包
 
-保存与发布：前轮四份传输/capsule文档已在治理8d9dceb完成Blob、实际字节和SHA256回读；旧网络失败记录保留。本轮仍仅同步四份脱敏文档，最终以交付回执为准。源码/测试/机器记录只在本地，main不合并。
+保存与发布：前轮治理dc047266已逐文件回读。本轮起点为模型bd16e5ff、治理ae2871bd；最终保存提交及九文档回读以交付回执为准，源码/测试/机器记录只本地，main不合并。
 
-日期：2026-11-07。先完成前轮四文档发布恢复和逐字节回读，再交付startup/原UTF-8来源投影计数及入口/回查到原root/Cg组合。16新+77相关回归共93测试入口，复用检查不称唯一独立证据；52来源/103静态边（4延迟）。真实OS/HA/科学worker/实际网格/实际原包读取解释/新额度0，子代理0；完整计数和全部运行/科学资格FALSE。
+日期：2026-11-07。本轮Owner同意以真实A/0返回验证包为下一里程碑，31省数据/校准字典并行，主科学路线不变。已完成九份脱敏文档及源字段/工件/决策卡机器方案的一致性检查；生产源码/测试未改，旧93检查未重跑。实际原包/网格/真实OS/HA/科学worker/新预算0，子代理0；方案可审阅但不可运行，全部运行/科学资格FALSE。
 
 ## 现场恢复
 
@@ -12,7 +12,7 @@
 
 最新代码候选6602117a5061294b575a7f2c2107f3725f14803b。最终本地/远端保存提交及Blob、实际字节和SHA256回读见交付回执；API快照与本地链不同，不强推求同。前次网络失败和待发布回执原字节保留，以新增恢复回执闭合；源码/测试/机器记录只本地。
 
-## 当前工程成果
+## 沿用的已完成工程（本轮未重跑）
 
 五份外部源码接入startup严格解析/显式摘要/保留元数据Base64、原UTF-8来源投影和入口/启动回查转接。json_utf8_bytes使用保守ASCII表示上界预留渲染，样本回调后再核容量，再按UTF-8文本长度单独预留encode；不把字符数当UTF-8字节，不改变ensure_ascii=False原格式。长度规划/验证和Python对象存储不在载荷计数中，容量不是实际消耗或峰值，失败不退款。
 
@@ -34,7 +34,11 @@
 
 ## 缺口与下一完整工程目标
 
-startup/来源投影与现有root/Cg的可选计数集成已交付。剩余字节面集中记录在binding_plan：工厂/工资证据协调，未接入身份/grid及初次source/state守卫，包重建/_check，其他复制/尾换行拼接/独立I/O，规划/验证/记账，loader/native/求解器与峰值/真实跨进程证明。下一独立工程可按拥有者边界整理并路由工厂/身份/包重建成本，不追溯声称默认准备已全计数。实际原包适配需已开放来源；不读取未开放私有载荷、不生成实际网格、不调用真实OS/科学后端。
+按[Owner决定](CH5_OWNER_A_RETURN_PRIORITY_20261107.md)推进[真实A/0返回验证包](CH5_A_ORIGIN_RETURN_VALIDATION_PACKAGE_20261107.md)，并行[31省数据字典](CH5_31PROVINCE_DATA_CALIBRATION_PARALLEL_20261107.md)。本轮已完成原请求/inputs/回复/Cg字段AST定位、八项核对、工件生命周期/缺口和Owner决策卡；本地机器记录在validators/multi_province/a_origin_return_validation_package_20261107/。没有新增生产wrapper、执行器或权限系统。
+
+下一直接依赖：明确开放已采纳封存A包的本地只读语义映射，保留原字节；实际grid/参数/controls、当前worker/环境/模块/保护和可信有限决定仍缺。运行后真实root/Cg是目标产物，不列为运行前已有文件。现有严格标准/完整计数等硬门保持；首次返回层与正式科学接受层如何分阶段仍需具体决定，优先级同意不等于放宽。
+
+A-only先取得并保存原返回及原C/g，不直接进入当前要求完整来源的劳动矩阵入口。B输入/两省一轮、真实p/单位/劳动激励、RP/更新/停止分别按依赖推进。原包直接依赖经语义核对确定，不默认p=1，不重问已采纳A输入，不补B。普通工程连续完成，不为helper再问继续。
 
 实际原包语义适配及合格传输，科学worker/capsule/声明采纳，冻结grid/参数/controls资格，可信有限Owner决定/消费账本，完整求解器/native/重复字节计数，真实OS/source/module/root/Cg证明仍缺。actual_worker_program/transport/capsule/声明仍null，actual grid hash/artifact、strict reference/thresholds及15实际预算仍null，NEW_RUN_BUDGET=0。合成grid_metadata_identity不是实际网格，后端代码存在不是实际运行资格，五工件回查不是模块装载或全局信任证明。
 
@@ -46,4 +50,4 @@ scientific_acceptance、FORMAL_SOURCE_FREEZE、consumer_ready、formal_ha_accept
 
 原6缓存和已消费execution_decision.json共7件未跟踪原字节保持。TEMP31 7/7、Moll3/3、七入口1/1、工资/补录、旧无模型四项及V2环境1/1全部关闭，零自动重试；旧初始化3/10、余7仅原8格，不跨借。R12 STOP、R13未授权、WASM六路径STOP、保护重绑未授权及16义务保持。
 
-历史dirty/HEAD/index保护基线不重审重绑。禁止reset/stash/clean、强推、合main、删分支、移动缓存证据、公开LOCAL_ONLY载荷/完整私有路径或改Desktop/CUA/全局配置。远端仅本轮四份脱敏文档；历史PENDING_SYNC与旧SSH失败只代表当时状态，本次以实际提交/Blob/字节/SHA256回读回执为准。
+历史dirty/HEAD/index保护基线不重审重绑。禁止reset/stash/clean、强推、合main、删分支、移动缓存证据、公开LOCAL_ONLY载荷/完整私有路径或改Desktop/CUA/全局配置。远端仅本轮九份脱敏文档；历史PENDING_SYNC与旧SSH失败只代表当时状态，本次以实际提交/Blob/字节/SHA256回读回执为准。
