@@ -1,12 +1,12 @@
-# CH5会话交接：同record根回报/Cg/准入离线集成
+# CH5会话交接：封存worker/同源装载/占位协议/root离线组合
 
-日期：2026-11-07。本轮按Owner接续要求完成普通工程集成、必要检查、工程验收和保存：17项新检查+80项回归通过；科学运行/真实OS后端/网格生成/新额度均0，子代理0。此前“仅保存、后继工程0”描述保留在先前Git提交中，是上一轮事实。
+日期：2026-11-07。Owner继续后，本轮完成封存worker/同源装载/占位协议/root离线组合、必要检查、工程验收和保存：17新+85回归共102通过；科学运行/真实OS后端/网格生成/新额度均0，子代理0。之前仅保存轮、根/Cg轮均作为各自历史记录保留，测试数不跨轮累加。
 
 ## 恢复与当前路线
 
 先核实际两树Git根、分支、HEAD、remote及staged/dirty/untracked。读AGENTS、当前短状态、当前工作流、[Owner自主推进决定](CH5_OWNER_ENGINEERING_AUTONOMY_20261107.md)和本卡；历史只按具体问题读相关报告。外层Zotero旧R40不是CH5授权。普通工程连续完成工作包，不为内部切片再请示；科学预算、保护和接受边界不变。
 
-模型分支codex/ch5-temp31-local-first-source-20261101；本轮启动HEAD 6c4544e31ab3a0b686546774c836281ea0027e66。治理分支governance/ch5-codex-local-first-20261101；启动HEAD 2b555106732f6a3682fd6bf64a8f7bcd9c8e6a29；启动远端治理HEAD 02889870858a393418f142272cbdecbf61bfeb13。以上均已现场核实，原入口两树字节一致。最新工程代码候选84778bf74b09dae29292cd38796259e0aeba14a0。最终本地/远端保存提交和逐文件Blob/字节/SHA256回读见本地交付回执；API发布提交可与本地提交不同，不强推求同。
+模型分支codex/ch5-temp31-local-first-source-20261101；本轮启动HEAD b582368c631126bb5b12c3a5685a89dcf94c3c2e。治理分支governance/ch5-codex-local-first-20261101；启动HEAD 48b5a6fdf4f54fee4035e1fd6b262694edc6e9ee；启动远端治理HEAD cc274e6fa1097f1c86a63b32277402a1f0fe4653。现场分支/根/remote及原7未跟踪项吻合，main未变。最新代码候选c71f580c479753568012915c8c4a51b936c1702e。最终本地/远端保存提交和逐文件Blob/字节/SHA256回读见本地交付回执；API提交与本地链可不同，不强推求同。
 
 路线保持Python多省份外层闭环→31省数据/校准→基准经济→政策实验/第五章写作。TEMP31内部诊断退休，56447829是选定开发基础。HA整体HJB+KFE及原汇总黑箱、算法/网格/controls冻结，正式post→原KFE→原归一化和同inputs、净工资、a*r_a不变。
 
@@ -38,18 +38,21 @@
 | worker字节封存/内联loader/持久占位 | `7949e69` | 16+16 | [CH5_B3_WORKER_BYTE_CAPSULE_PREPARATION_20261107.md](CH5_B3_WORKER_BYTE_CAPSULE_PREPARATION_20261107.md) |
 | 原六阶段与同counter接线 | `de139a0` | 15+31 | [CH5_B3_WORKER_PHASE_COUNTER_BINDING_20261107.md](CH5_B3_WORKER_PHASE_COUNTER_BINDING_20261107.md) |
 | 同record根回报/Cg/准入集成准备 | `84778bf` | 17+80 | [CH5_B3_WORKER_ROOT_OUTPUT_INTEGRATION_20261107.md](CH5_B3_WORKER_ROOT_OUTPUT_INTEGRATION_20261107.md) |
+| 封存worker/装载/占位/root离线组合 | `c71f580` | 17+85 | [CH5_B3_SEALED_WORKER_PACKAGE_INTEGRATION_20261107.md](CH5_B3_SEALED_WORKER_PACKAGE_INTEGRATION_20261107.md) |
 
 各片包含重复回归，不能相加为唯一总测试数。另有[劳动口径](CH5_O3_EFFECTIVE_LABOR_OWNER_CLARIFICATION_20261106.md)、[收入对应账](CH5_O3_LABOR_INCOME_ACCOUNT_MAP_20261106.md)、[Lt_prev准备](CH5_O3_PREVIOUS_FIRM_LABOR_INPUT_BINDING_20261106.md)、[原始C来源静态绑定](CH5_O3_RAW_C_SOURCE_BINDING_20261106.md)、[计数/资源静态计划](CH5_B3_CALL_RESOURCE_STATIC_PLAN_20261106.md)。
 
-本轮新增outer_worker_return_binding及对应检查，只从原输出模块提取编码函数。原六阶段后，同counter预登记输出创建/写/读，原C/g胶囊排他写入并回读核对后再登记声明root返回/校验和封闭。公开入口继续拒绝；准入请求只列声明身份与真实缺件。异常/部分文件保留，零自动重试。实际root有效性不由声明回放推出。
+上轮原六阶段→同record C/g→声明root封闭及准入请求保持。本轮只新增outer_worker_package与检查，将原胶囊字节/来源声明/模块类/导入counter接到该根链路：替身占位原字节回读后才装载，从已校验模块取得类并核对构造器及阶段方法来源，再执行即时/延迟import、六阶段和输出/root。公开门继续拒绝，不把替身回放推成实际root有效。
 
-最新45源码/76内部边（4延迟），新增三份本地JSON，不复制上片11份大型清单。17项新检查和输出21/快照13/阶段15/counter31项回归共97通过；新旧历史片不累计为全项目唯一总数。封闭后配置漂移经失败测试复现并修复，短写条件变异被捕获且源码原字节恢复。编码提取经AST等价核对；另外43旧来源、上片11机器记录、7未跟踪文件及两份Owner adoption记录保持原字节。工程自审不冒充独立科学审查。
+最新46源码/79内部边（4延迟，保守装载图无环），新增三份本地JSON；17新+根17/导入23/bundle29/capsule16共102通过，不跨历史片累计。回读bytes类型问题先失败复现再修复，变异删除该判断也被捕获并恢复原源码字节。原45来源、上片3机器记录、两份adoption和原7未跟踪文件共57件启动基线原字节保持。工程自审不冒充独立科学审查。
 
-本轮真实NumPy仅用于合成C/g及原容器接口，科学函数/HA实例化/外部动作禁入检查有效；未实例化实际HA后端，未调用真实Win32后端/Job、科学worker或网格/HA求解。早期V2真实环境1/1已关闭，不迁移为当前候选的HA/OS运行资格。实际科学C/g输出尚未取得。
+占位接口仅测试注入：OFFLINE请求、实际Owner/grid/15预算null，所有真实权限FALSE。替身共享存储按claim_id防重复，换包/目录不复用同一记录；失败不回滚。未证明跨存储/进程、重启持久性、并发原子性或真实全局信任，不是Owner许可账本。完整求解器/native及所有重复源读取/复制/摘要/序列化字节计数仍缺。
+
+package装载执行的全部是本轮新建替身源码，真实NumPy仅用于合成C/g及原容器接口；科学函数/HA实例化/外部动作禁入检查有效。未实例化真实HA、调用实际Win32/Job、科学worker或网格/HA求解。旧V2关闭、不迁移资格；实际科学worker程序/启动输入包及C/g/root输出尚未取得。
 
 ## 缺口、下一完整工程包与Owner事项
 
-本轮根回报/Cg/准入离线集成准备已完整交付，剩余实际工件/许可清单集中在集成报告。后续独立工程重点为固定worker包与同源装载、可信许可消费接口及完整计数的离线组合；不得以此调用真实OS/科学后端或生成网格。实际source/input/worker/output身份、可信全局Owner准入和受保护运行证据仍待形成。只有声明root回放封闭，实际根worker未被科学验证。
+本轮封存worker/同源装载/占位/root离线组合已完整交付，实际工件与许可缺口集中在封存包报告。后续普通工程可准备实际worker启动/输入工件的静态装配合同及完整计数覆盖计划，不调用真实OS/科学后端、不生成网格。实际source/input/worker/output身份、可信Owner账本和受保护运行证据仍待形成；actual_worker_program/capsule仍null，只有替身来源与声明root组合验证。
 
 Owner仍需决定真实p/单位/劳动激励、RP/外层经济停止和严格科学接受标准，及未来具体网格/科学运行的有限范围/预算。不要重问已定口径，不补默认值；科学事项不阻塞独立普通工程。
 
