@@ -1,23 +1,21 @@
-# CH5当前交接：31省候选传输与准备表已保存
+# CH5当前交接：原请求工厂与冻结数据原类型已接通
 
-最新工程见[31省独立候选传输与准备表](CH5_PROVINCIAL_INPUT_TRANSPORT_20261108.md)，代码4561abea0ac8bc97f7dfb934a3bdcf5659e910e4。完整候选codec可保持31路输入和12类组件原字节，后续轮次已接原待验证工资记录；15项合成检查通过。两期62条参考/123收入目标和冻结身份已对应准备表，实际完整31省包/新工资记录/HA测试0。原A codec/58源/134边不改，未把其专用旧工资见证迁移给31省。原HA请求工厂、实例装载与受保护worker尚未接通，新预算0。
+更新：2026-11-08。最新见[原工厂与冻结工件原类型集成](CH5_PROVINCIAL_ORIGINAL_REQUEST_FACTORY_20261108.md)，代码5a46db64ccba3ea94dbd65535148fcef9f890a6a。本轮起点模型615af79446c5ba1e296e71a3e8e794528c328281、治理本地3013c28dc7ab423d34d5775724fff34c96122d5f、远端14762a16efe970486e0500fb141c08da36dbe5d1；main b7e595ceb1cd7ffb5adfbf54e2de4e65f01090a5未合治理。最终HEAD/逐文件回读见LOCAL_ONLY_CH5_PROVINCIAL_NATIVE_REQUESTS_20261108交付回执，回执非运行/重放许可。
 
-最新完成[工资收入目标与校准桥](CH5_OBSERVED_PAY_TARGETS_AND_CALIBRATION_BRIDGE_20261108.md)，代码候选b9cbe57453eba09d908dc740fa353c0336287217：123条年薪已形成带尺度条件的收入参照，未生成wt；新增同工作地/同群体/全年平均人数的gross工资总额比对接口，最终13项检查通过。统计分母由官方说明核实，不能用年底就业或居民H替代；原劳动语义已定，不重问。本接口是事后解释/校准工具，不新增单省价格HA准入门。实际比对/HA/新attempt均0，新预算0。
+启动核真实两树根/工作树/分支/HEAD/remote与staged/dirty/untracked；模型codex/ch5-temp31-local-first-source-20261101、治理governance/ch5-codex-local-first-20261101。定点读AGENTS、短状态、工作流、Owner自主权、本卡和最新报告，默认0子代理；外层旧R40不授权CH5。API脱敏快照链不同，不强推求同。
 
-更新：2026-11-08。最新完整说明为[工资接入/年度时间/原源码单位核查](CH5_OBSERVED_WAGE_UNITS_AND_ANNUAL_TIME_20261108.md)。本轮起点模型566c339326b3b163cd889049d555cc2bd3201112，治理本地6d63077b364f8da6dca876da5a5bac9701556f0c、远端48fe4c57a1ecfbc60da85e11151ccb9e1d405673；main b7e595ceb1cd7ffb5adfbf54e2de4e65f01090a5未合治理。工程代码40bc2d011daacdf171b040c262f158cc8a4e2f80；最终保存位置以LOCAL_ONLY_CH5_OBSERVED_WAGE_BRIDGE_20261108交付回执为准，回执不是重放/运行许可。
+新增outer_provincial_request_bridge已调用原prepare_household_batch，组装31个原OriginHouseholdRequest/Temp31NetWageInputs。原grid/参数/controls从保存字节装载原Python类型，grid身份仍1cc6002840d6a3dfef899c98d09f4796a8e14ccb9116a7952cdf78ab50305258；原输入标量/负零、净工资、只读单元素向量、同context/record与原对象身份守卫保持。三类共享冻结组件和31请求合成演示仅本地；实际31省科学输入/完整包0，没有从年薪填w或采用新Tt/利差。
 
-启动核真实两树根/工作树/分支/HEAD/remote及staged/dirty/untracked，定点读AGENTS、短状态、工作流、Owner自主决定与本卡/最新说明。默认0子代理，Zotero旧R40不转移。模型codex/ch5-temp31-local-first-source-20261101，治理governance/ch5-codex-local-first-20261101；API脱敏快照链与本地链不同，不强推求同。
+最终10项检查通过。前两次设置错误（ctypes初始化保护顺序、旧Python无Path.is_junction）均tests_run0且保留，修复后通过，补根对象守卫后必要复核；未变15/13/14组不重跑或累计。使用已定位实际Python/NumPy/SciPy和完整原源码定义，无AST替代工厂/数据类，未执行包__init__或重写缓存；最终进程3个版本子进程请求拒绝、实际子进程0。原Python类型核对不继承旧环境资格，原工资/初始化/HJB/KFE/汇总/项目Win32/Job/科学worker0。
 
-Owner已定2022主基准/2017对照，并明确时间“就是年”。随后要求查看load_GDPdata，回忆“千人”；定点核当前保护源码：原注释万人×POP_multiplier100，得到百人刻度；GDP亿元×1000得到10万元总货币单位。原N=加载人口、初始Lt=N，后续个人劳动时长×人口；它不证明工时单位或后续ell恒1。总口径当前选常住人口，就业行注释；缓存返回可能绕过构造，未读历史表/缓存作单位认证。源码前后哈希保持。
+原31候选codec的12组件/逐省原字节传输保留；后续轮次待验证工资record仍saved_observation=None，不伪造A专用旧见证。新原工厂集成适用合法后续工资envelope，首轮候选不自动造生成第0轮生产证明，不改原bootstrap。下一工程是同批真实来源/输入采用与同record受保护worker接线：源码/生产者证明、可信父端/IPC/peer、环境/Job/native防绕写仍未齐，不因类型组装完成而打开公开运行门。
 
-新增outer_observed_wage_units及测试，观测年薪/gross系数/原工资参数分层；必须显式时间、货币和有效劳动桥，税/迁移交原函数一次。14项检查通过，本次恢复不重跑；真实资料按省/年/统计群体/源哈希/单元格核对，四批共123条观测、2017西藏私营缺1，不填0或替换/平均。完整工资值仅本地，没有生成新gross/net HA工资。owner_annual_time追加年度决定，source_scale_audit追加源码事实，早期progress未答字段仅历史。
+Owner已定2022主基准/2017对照、年度时间、外部有效劳动与原Frisch。两期62条省级参考、四工资批123收入目标/西藏2017私营缺失保留；资本后期代理/福建2负投资、就业历史差异及GDP版本不自动修复。源倍数推得10万元/百人，不是千人，缓存单位未认证；前向单位采用与劳动桥不默认ell=1。年薪gross收入参照不是HA净综合工资，统计分母须同群体全年平均工作地人数，非年底就业/居民H。
 
-已有两期62条省级参考、资本2157原源/713候选、后期代理/福建2负投资/就业37历史差异/2017陕西新疆及GDP版本问题见[数据接入](CH5_REAL_DATA_BASELINE_2022_CONTROL_2017_20261108.md)，不自动改值或生成Z/G。五组利率候选围绕(.025,.08)，步长仍为方案，不是预算或连续稳态域。
+HA不直接读GDP/K；相同利率、净工资、转移、利差和冻结grid/偏好等直接输入不因省名不同就成为不同数值问题。未来点集需识别重复，不将一次检查冒充31个校准结果，本轮不授权克隆/复用科学结果。工资收入核对不是单省HA新门槛，完整外层Z/alpha/H/p/G单列。
 
-下述为此前直接系数桥计划；当前收入目标已按最新报告实现，直接工资系数仍不默认ell：若采用10万元/百人尺度，w_gross=年薪/(1000×ell)，不默认ell=1，不改Frisch/偏好；再形成31省同批税/迁移/劳动权重/转移/借贷利差/冻结grid参数controls合法初值表。现有worker transport只支持A/0第2轮，不是31省接口。本轮input_contract_map只是静态来源表，没有复制A为31省值。完整外层Z/H/p/G等另列，不全部提前设为单省门。
+路线仍外层→31省校准→基准→政策/写作；四阶段、五组近中心利率候选、财政差额仅诊断、资本本金/rah同权（本省1−q_i/其余q_i/(n−1)，At×H、不乘p不含Bt、企业加G一次）保持。A优先、首次返回A、长期中小网格和工程自主权不重问。HA黑箱/冻结算法网格controls、a*r_a/净工资一次/同inputs/post→原KFE→原归一化、原C/g逐格Frisch→原权重→A1 pH/无额外z/税/H/Lt_prev保持。
 
-原A仍PREPARED，58源/134边、原包/快照/工资/参数/grid/controls及首次返回A政策保持，不重绑/重跑；新模块不并入原A闭包，原root/C/g未取得。真实IPC/peer、同record保护/环境/Job、native绕写防护及最终worker仍不完整。A counter/输出/预约/消费/bootstrap读0，HA/初始化/HJB/KFE/汇总/科学worker/新attempt0；15实际限制/批准次数/运行决定null，新预算0。失败省份/比例null，不把未测试31省算失败。全部运行/科学/Results/REAL_GE/激活/producer/消费/环境/跨进程/完整计量/live/native保护FALSE。
+原A仍PREPARED，58源/134边/原包/快照/工资/grid/参数/controls不重绑或重跑，原root/C/g未得。A counter/输出/预约/消费/bootstrap读0，真实HA测试省份/新attempt0，失败数/比例null；15实际限制/批准次数/运行决定null，新预算0。运行/科学/Results/REAL_GE/激活/producer/消费/环境/跨进程/完整计量/live/native保护FALSE。
 
-Owner路线与四阶段、财政差额仅诊断、资本本金/rah同权（本省1−q_i/跨省q_i/(n−1)，At×H、不乘p不含Bt、企业加G一次）保持。HA黑箱/冻结算法网格controls、a*r_a、净工资一次/同inputs/post→原KFE→原归一化、原C/g逐格Frisch→原权重→A1 pH/无额外z/同源税/H/Lt_prev不改。普通工程连续完成，不逐片段再问继续；实际数值采纳/有限运行/保护决定仍由Owner保留。
-
-保存原六缓存+已消费execution_decision共七未跟踪原字节；fixture status M但字节/Blob等于提交，不重写暂存。旧STOP/关闭额度/16义务/历史dirty/保护不动。禁止reset/stash/clean、强推、合main、删分支、搬移证据缓存、重绑保护/换目录续额、公开私有原值/完整路径，或改Desktop/CUA/全局配置/memory。源码测试机器私有包只留本地，仅五份脱敏文档同步治理。
+六缓存+已消费execution_decision共七未跟踪、fixture status M但原字节/Blob等于提交，不清理重写暂存。旧STOP/关闭额度/16义务/历史dirty/保护不动。源码/测试/机器/私有包本地，仅四份脱敏文档同步；禁止reset/stash/clean、强推、合main、删分支、搬移证据缓存、重绑保护/换目录续额、公开私有原值/完整路径或改Desktop/CUA/全局配置/memory。普通工程连续完成，不逐helper/测试/commit再问继续。
