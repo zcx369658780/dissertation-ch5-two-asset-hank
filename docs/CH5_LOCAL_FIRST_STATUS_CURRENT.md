@@ -1,13 +1,13 @@
 # CH5 当前短状态
 
-更新：2026-11-08。[父端代写与一次handoff](CH5_A_OUTPUT_CHANNEL_20261108.md)已完成离线集成，代码候选b2cd776891e7c5b9e3a566935588d1beb116e05e；完整受保护可执行worker包仍INCOMPLETE。默认0子代理，按Owner普通工程自主权持续推进，不把内部切片当Owner门。
+更新：2026-11-08。Owner已采纳[资本持仓修正与闭合/校准分层](CH5_OWNER_CAPITAL_CLOSURE_ADOPTION_20261108.md)，代码候选5bc766a11b7c257ca4e8d79f4bc3fa7d33e65510。本金与rah共用来源持仓权重，本省1−q_i、其余q_i/(n−1)；补齐本省私人资产，企业只加一次政府资本，资本用H不乘p，Bt不入生产资本。
 
-工人已路由write/read通过固定角色有界消息交给父端原预算处理，禁止删除通道后回退直写；分区/独占创建/累计量/失败留存保持。MAC、方向、同record/session、顺序和请求绑定阻断篡改/重放，回包丢失不重复写。原六byte handoff与预付早读保字节单次交付，已串通原session→六阶段opaque→broker原C/g/权重回读。MAC不认证Owner/OS peer，真实IPC/native写隔离尚未安装。
+新增outer_capital_ownership和outer_capital_one_turn，后续外层资本阶段选择prepare_owned_capital_stage→assemble_owned_capital_outer_one_turn。原MATLAB同源资本/控制器及已采纳A输入原字节保留；新增入口不冒充历史已执行结果。新11/7项及相关原拼装23项分组通过，只用合成/31虚拟省记账，无真实HA/企业/OS调用或运行预算。
 
-新协议12/集成6项通过，受影响旧预算12/bootstrap19分组回归通过，不累加中间重叠。当前原来源58/134边，仅工程预算模块变化；父端准备和工人重建各58模块、共116编译，实际依赖32，导入父404/工414分列。当前58源字节匹配最终候选Blob；最后codec变化未动58源，未为恢复重跑组装。
+Owner明确财政差额作诊断、不要求为零，不保证所有市场出清；旧外层方案可作临时参考，最终Z/GovInv倾向数据或文献，尚无新值采纳。给定参数迭代与校准分开记录，不能把自动调参值当数据估计或把局部数值收敛当完整GE。GovInv按当前公式为政府资本存量，不直接用当期投资流量替代。
 
-实际A当前来源PREPARED，原包/快照/工资/向量/标量/context/grid/参数/controls保持。新候选合同描述当前来源，旧合同/target不改；固定scope和原ledger/anchor不变，结果目录空。实际通道/密钥未绑定发行，counter/输出/预约/消费/bootstrap读0；HA/初始化/HJB/KFE/汇总/真实OS/外部进程/科学worker/新attempt0，原root/C/g未取得。
+真实A/0优先级保持。[原父端代写/单次handoff](CH5_A_OUTPUT_CHANNEL_20261108.md)离线集成仍有效，但完整受保护worker仍INCOMPLETE；真实IPC/peer、环境/Job、OS禁止绕写及最终capsule待实现。当前A58源/134边未变，原PREPARED不重跑/重绑；新资本只用于后续外层阶段，已采纳A第2轮原包/快照/工资/向量/参数/grid不追改。
 
-15实际预算/批准次数/运行决定null，NEW_RUN_BUDGET=0；全部运行/科学/Results/REAL_GE/激活/producer/消费/环境/跨进程/完整计量/live/native写保护FALSE。真实受保护IPC/peer身份、当前环境和Job证明、OS禁止绕写、最终capsule仍待实现；最终Owner运行请求未就绪，普通工程不因此请求泛化“继续”。
+实际A counter/输出/预约/消费/bootstrap读、HA/初始化/HJB/KFE/汇总/真实OS/外部进程/科学worker/新attempt均0，原root/C/g未得。15实际预算/批准次数/运行决定null，新预算0；全部运行/科学/Results/REAL_GE/激活/producer/消费/环境/跨进程/完整计量/live/native保护FALSE。
 
-既定A政策/长期中小网格许可/科学路线、HA黑箱与冻结原算法网格controls、劳动/税/H/A1/Lt_prev保持，不补科学缺值。147基线145保持，授权改动仅工程预算与测试helper；原七未跟踪及fixture原字节、旧STOP/关闭额度/16义务/保护不动。源码测试机器私有包仅本地，四份脱敏文档双端保存；最终HEAD/回读见交付回执。
+本轮153件既存基线全保持，只新增六件代码/测试/机器文件；原七未跟踪及fixture原字节/Blob保持。HA黑箱/冻结算法网格controls、a*r_a/净工资/同inputs/post→原KFE→原归一化、原C/g逐格Frisch→原g权重→A1 pH/无额外z/税/H/Lt_prev保持。旧STOP/关闭额度/16义务/保护不动，默认0子代理，外层旧R40不授权CH5；源码测试机器私有包本地，仅四份脱敏文档双端保存。
