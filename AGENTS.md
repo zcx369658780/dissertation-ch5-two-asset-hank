@@ -1,6 +1,6 @@
 # Chapter 5 — Local-first execution rules
 
-Effective update: 2026-11-07. This file is a short execution entry, not a historical task ledger.
+Effective update: 2026-11-08. This file is a short execution entry, not a historical task ledger.
 
 ## Startup and precedence
 Verify the actual Git root/worktree, branch, HEAD, remote and staged/dirty/untracked state first. Read only `docs/CH5_LOCAL_FIRST_STATUS_CURRENT.md`, `docs/CH5_ASTRA_WORKFLOW_CURRENT.md` and `docs/CH5_SESSION_HANDOFF_20261107_OUTER_HA_CURRENT.md`; follow exact evidence links only for a concrete question. The outer Zotero repository and its old R40 do not authorize this model project. Default subagents: 0.
@@ -8,7 +8,13 @@ Verify the actual Git root/worktree, branch, HEAD, remote and staged/dirty/untra
 The latest Owner autonomy decision is `docs/CH5_OWNER_ENGINEERING_AUTONOMY_20261107.md`. Owner has now adopted first-return option A: `docs/CH5_OWNER_A_FIRST_RETURN_POLICY_ADOPTION_20261107.md`; do not ask for that policy choice again. Existing `docs/OWNER_LOCAL_FIRST_CODEX_20261101.md` remains the authority baseline. Supersede historical routine-dispatch and per-slice permission wording only; scientific, asset-protection, finite-budget and specifically required independent-review clauses remain effective. Do not bulk-read historical rules.
 
 ## Autonomous engineering
-Within the adopted route/contracts, Codex owns ordinary planning, implementation, necessary checks, repairs, engineering review/acceptance, Git and meaningful documentation synchronization. Work toward a complete integrated engineering outcome without asking Owner to approve each helper, adapter, test, commit or documentation slice. An internal slice is not an Owner gate. Use risk-based checks; do not repeat unchanged completed evidence without a new reason.
+Within the adopted route/contracts, Codex owns ordinary planning, implementation, necessary checks, repairs, engineering review/acceptance, Git and meaningful documentation synchronization. Work toward a complete integrated engineering outcome without asking Owner to approve each helper, adapter, test, commit or documentation slice. An internal slice is not an Owner gate.
+
+Owner's latest advice is to reduce overly strict engineering gates: see `docs/CH5_OWNER_LEAN_ENGINEERING_20261108.md`. Use one integrated preparation/checkpoint per package and reuse checked immutable inputs inside it. Prefer the single provincial worker-input preparation entry and iterate the original request tuple; do not re-decode the full batch for each ordinary lookup. Keep full checks at actual external/trust/launch boundaries. Do not stop after each helper, test or commit to await another generic continuation.
+
+Do not reintroduce first-return A prerequisites already deferred by the adopted A policy. Scientific input/acceptance choices, applicable finite run limits and real asset protection remain substantive decisions; runtime/scientific FALSE flags do not block independent authorized engineering. This workflow advice grants no new scientific budget or protected OS action.
+
+Owner has explicitly adopted light file protection for the first bounded local HA trial: `docs/CH5_LOCAL_TRIAL_PROTECTION_OPTIONS_20261108.md`. Use separate run copies, actual hard resource limits, original/copy before-and-after hashes and retained failures. Full OS/native write isolation is deferred until before expanded runs; it is no longer a prerequisite for that first trial. Acknowledge that light protection cannot prevent same-user native writes to originals. Adoption is design authority only, not implementation evidence, permission to change original ACLs/global settings, or a scientific run grant. Keep native protection qualification FALSE until actually established. Use risk-based checks; do not repeat unchanged completed evidence without a new reason.
 
 `AUTO_NEXT=FALSE` prohibits unauthorized scientific successors, model runs, exhausted-budget retries and protected actions. It does not block authorized ordinary engineering. Stop only the affected dependent work when a real Owner decision is required; continue useful independent engineering. Report a concrete decision and its consequence, never a generic request to continue.
 
