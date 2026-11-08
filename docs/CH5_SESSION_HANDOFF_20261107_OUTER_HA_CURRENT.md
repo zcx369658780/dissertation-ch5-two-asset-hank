@@ -1,5 +1,7 @@
 # CH5当前交接：资本本金/rah同权修正及校准决定已保存
 
+2026-11-08后续更新：[现实数据/TFP/工资可行性核查](CH5_REAL_DATA_TFP_WAGE_PLAN_20261108.md)已按Owner新指令开展。相关购买科研资料开放，三工作簿/一说明/两图只读核查、近期5篇论文记录交叉核实；省级就业1240省年有37项总数/产业合计差异待回源，城市TFP不可直接填省级Z。保留张军资本估计方向，旧加载路径实际资本缓存、投资单位/价格、原第21行Z与年份仍须核。下一工作先形成同口径现实输入候选及净工资桥；准备合理rb/rah下有限wt候选方案，不假定单调、不无限扩点，不把局部HA成功称GE。新基准年/数值/价格区间/次数预算/运行决定尚未采纳，真实HA/新attempt0，原A封存输入和既有保护均不变。私有盘点及网页原响应留本地，不公开购买载荷。
+
 日期：2026-11-08。[最新Owner决定与实现](CH5_OWNER_CAPITAL_CLOSURE_ADOPTION_20261108.md)代码候选5bc766a11b7c257ca4e8d79f4bc3fa7d33e65510。本轮起点模型ecd07840c6ea5d9ca703575606c548a7ca466218、治理本地f0ba2fb20aa24e02491e6e139bc33260bbe7b174、治理远端8adf846280bc6ea89937324fb4f13b80719b4a97；main b7e595ceb1cd7ffb5adfbf54e2de4e65f01090a5未合治理。最终HEAD/Blob/原字节回读见本轮交付回执；API链不强推求同。
 
 启动核真实两树根/工作树/分支/HEAD/remote和staged/dirty/untracked；模型codex/ch5-temp31-local-first-source-20261101，治理governance/ch5-codex-local-first-20261101。定点读AGENTS、短状态、工作流、Owner自主决定、本卡和最新资本决定；默认0子代理，外层旧R40/多代理规则不转移。
