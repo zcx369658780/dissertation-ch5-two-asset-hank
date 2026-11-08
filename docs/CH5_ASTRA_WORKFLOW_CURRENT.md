@@ -1,17 +1,15 @@
 # CH5 当前工作流
 
-更新：2026-11-08。依[工程自主决定](CH5_OWNER_ENGINEERING_AUTONOMY_20261107.md)、已定A优先级/首次返回方案A和长期中小网格许可，连续完成授权内实现、必要检查/修复、工程审查/保存，不逐helper/commit请示。AUTO_NEXT=FALSE只限制未授权科学/保护后继，默认0子代理。
+更新：2026-11-08。沿Owner已定工程自主权、A优先级/首次返回A及长期中小网格许可，连续实现/检查/修复/工程验收/保存，不逐helper/测试/commit请示；AUTO_NEXT=FALSE不阻塞授权内工程。默认0子代理，外层旧R40不转移。
 
-恢复先核两树真实Git根/工作树/分支/HEAD/remote和staged/dirty/untracked，再读AGENTS、短状态、本卡、Owner自主决定与当前交接。历史仅为具体问题读取，外层Zotero旧R40/多代理要求不转移；[旧集中保存](CH5_SESSION_SAVE_20261108_OUTER_HA.md)保留其历史事实。
+恢复核两树真实根/工作树/分支/HEAD/remote及staged/dirty/untracked，定点读AGENTS、短状态、本卡、Owner自主决定与当前交接，具体问题才读历史。当前[父端代写与一次handoff](CH5_A_OUTPUT_CHANNEL_20261108.md)代码候选b2cd776891e7c5b9e3a566935588d1beb116e05e；先前[启动组装](CH5_A_STARTUP_ENTRY_OFFLINE_20261108.md)保留历史。
 
-当前[离线启动组装](CH5_A_STARTUP_ENTRY_OFFLINE_20261108.md)代码候选7329680724d53a982f8eade6d43e50991331080d。新支持把58原模块装载、封存grid/参数/controls恢复、原A数据/session及模块guard接成一条路径，真实本进程观察58/32/414；原合同/输出身份与原58源保持，新增支持尚非最终capsule闭包。17个不同新检查分组通过，不累加中间重叠，不重跑原字节未变的旧回归。
+工人固定角色有界消息→父端原预算代写/读，单调序列/MAC/请求绑定/单次handoff，通道丢失或变更不回退直写；两端配额为同一分区镜像，不是双份额度。父端写完而回包丢失时保留工件和工人已用容量，不重发/再预约。原handoff bytes/两8 KiB早读沿用，session→六阶段opaque→原C/g/权重链已离线通过。
 
-接线沿同record传递有限决定context、原scope及两已用claim；保护口必须核验或抛错，布尔声明/JSON/同摘要不作认证。阶段前核父端/进程/环境/native写保护，封存后单独只读核验，不放宽原OPEN合同。最终失败保留输出及封存计数而不接受；任何失败不重新预约或重试。
+新增协议12/集成6，相关旧预算12/bootstrap19分组通过，不与中间轮累加。当前58源/134边只改工程预算模块，父/工各58加载、共116编译，32依赖与父404/工414导入分列；当前原源码字节匹配候选Blob。最后仅通道codec变化，未影响58来源，不为恢复重复组装。
 
-四保护回调仅离线注入缝。完整worker包仍INCOMPLETE：继续实现可信跨进程交付、同record真实保护/当前环境适配、未路由/native写隔离或受控输出、最终精确capsule。普通工程继续可做；在完整包可审阅前不提交最终Owner有限运行请求，不把接口通过冒充真实保护或完整live计量。
+下一完整工程仍为实际受保护IPC/OS peer同record认证、当前环境/Job证明、OS防native绕写以及最终capsule。已核Windows受限token/桌面隔离/权限/有效句柄要求，未调用API、不改保护ACL/桌面、不自动提升权限或转凭据。MAC、PID观察、JSON、Job内存限制和broker路由都不能单独证明完整保护；最终精确包未完成前不提交有限Owner运行请求。
 
-实际A仅PREPARED；counter/输出/预约/消费/早读0，候选anchor外无新账本记录、原结果目录空。原HA/初始化/HJB/KFE/汇总/真实OS/科学worker/新科学attempt0。3个版本子进程请求拒绝、实际外部进程0；正式环境资格不迁移。15实际限制/批准次数/运行决定null，新预算0，全部运行/科学/Results/REAL_GE/激活/producer/消费/完整计量/live/native写保护资格FALSE。
+实际A仅当前来源PREPARED，真实通道/密钥未绑定发行；scope/原ledger保持，旧合同/target保留，新候选合同只反映工程来源变化。结果目录空，counter/输出/预约/消费/早读0，HA/初始化/HJB/KFE/汇总/真实OS/实际外部进程/科学worker/新attempt0。15实际限制/批准次数/运行决定null，新预算0，全部运行/科学/Results/REAL_GE/激活/producer/消费/环境/跨进程/完整计量/live/native保护FALSE。
 
-主路线与HA黑箱/原冻结算法网格controls、a*r_a/净工资/同inputs/正式post→原KFE→原归一化、原C/g逐格Frisch→g权重→A1 pH/无额外z/税/H/Lt_prev保持，不补真实科学缺值。原七未跟踪/143基线/fixture/STOP/关闭额度/16义务/保护保持；不重绑、换目录续额或改全局配置/memory。
-
-里程碑只按精确allowlist同步脱敏文档：本轮报告/短状态/本卡/交接四份。模型源码/测试/机器/私有包留本地。API快照链与本地不同，先核候选Blob原字节，再比对精确文件集，expected_sha非强制租约更新并回读治理ref/main；不强推求同或合main。
+主路线、HA整体黑箱/冻结原算法网格controls、a*r_a/净工资/同inputs/正式post→原KFE→原归一化、原C/g逐格Frisch→原g权重→A1 pH/无额外z/税/H/Lt_prev保持；不补未定科学值。原七未跟踪/fixture/旧STOP/关闭额度/16义务/保护保持，147选定基线仅两授权工程路径变化。源码/测试/机器/私有包本地；本轮仅四份脱敏文档以精确allowlist、原字节/Blob核对、expected_sha非强制租约与两ref回读同步。API链不同，不强推求同/合main/重绑或改全局配置/memory。
