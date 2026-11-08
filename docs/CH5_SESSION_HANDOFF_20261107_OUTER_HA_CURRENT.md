@@ -1,4 +1,6 @@
-# CH5当前交接：年度时间已定，工资观测与原程序单位已核
+# CH5当前交接：工资收入目标与统计分母已核
+
+最新完成[工资收入目标与校准桥](CH5_OBSERVED_PAY_TARGETS_AND_CALIBRATION_BRIDGE_20261108.md)，代码候选b9cbe57453eba09d908dc740fa353c0336287217：123条年薪已形成带尺度条件的收入参照，未生成wt；新增同工作地/同群体/全年平均人数的gross工资总额比对接口，最终13项检查通过。统计分母由官方说明核实，不能用年底就业或居民H替代；原劳动语义已定，不重问。本接口是事后解释/校准工具，不新增单省价格HA准入门。实际比对/HA/新attempt均0，新预算0。
 
 更新：2026-11-08。最新完整说明为[工资接入/年度时间/原源码单位核查](CH5_OBSERVED_WAGE_UNITS_AND_ANNUAL_TIME_20261108.md)。本轮起点模型566c339326b3b163cd889049d555cc2bd3201112，治理本地6d63077b364f8da6dca876da5a5bac9701556f0c、远端48fe4c57a1ecfbc60da85e11151ccb9e1d405673；main b7e595ceb1cd7ffb5adfbf54e2de4e65f01090a5未合治理。工程代码40bc2d011daacdf171b040c262f158cc8a4e2f80；最终保存位置以LOCAL_ONLY_CH5_OBSERVED_WAGE_BRIDGE_20261108交付回执为准，回执不是重放/运行许可。
 
@@ -10,7 +12,7 @@ Owner已定2022主基准/2017对照，并明确时间“就是年”。随后要
 
 已有两期62条省级参考、资本2157原源/713候选、后期代理/福建2负投资/就业37历史差异/2017陕西新疆及GDP版本问题见[数据接入](CH5_REAL_DATA_BASELINE_2022_CONTROL_2017_20261108.md)，不自动改值或生成Z/G。五组利率候选围绕(.025,.08)，步长仍为方案，不是预算或连续稳态域。
 
-下一工作从已核单位拟定同群体有效劳动/收入目标桥：若采用10万元/百人尺度，w_gross=年薪/(1000×ell)，不默认ell=1，不改Frisch/偏好；再形成31省同批税/迁移/劳动权重/转移/借贷利差/冻结grid参数controls合法初值表。现有worker transport只支持A/0第2轮，不是31省接口。本轮input_contract_map只是静态来源表，没有复制A为31省值。完整外层Z/H/p/G等另列，不全部提前设为单省门。
+下述为此前直接系数桥计划；当前收入目标已按最新报告实现，直接工资系数仍不默认ell：若采用10万元/百人尺度，w_gross=年薪/(1000×ell)，不默认ell=1，不改Frisch/偏好；再形成31省同批税/迁移/劳动权重/转移/借贷利差/冻结grid参数controls合法初值表。现有worker transport只支持A/0第2轮，不是31省接口。本轮input_contract_map只是静态来源表，没有复制A为31省值。完整外层Z/H/p/G等另列，不全部提前设为单省门。
 
 原A仍PREPARED，58源/134边、原包/快照/工资/参数/grid/controls及首次返回A政策保持，不重绑/重跑；新模块不并入原A闭包，原root/C/g未取得。真实IPC/peer、同record保护/环境/Job、native绕写防护及最终worker仍不完整。A counter/输出/预约/消费/bootstrap读0，HA/初始化/HJB/KFE/汇总/科学worker/新attempt0；15实际限制/批准次数/运行决定null，新预算0。失败省份/比例null，不把未测试31省算失败。全部运行/科学/Results/REAL_GE/激活/producer/消费/环境/跨进程/完整计量/live/native保护FALSE。
 
