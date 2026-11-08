@@ -17,6 +17,7 @@
 - [x] V1c-attempt-contract：固定scope账本/外部摘要有限决定/一次保存输入交付契约接原生取得之前，22新+两组各16回归，实际A当前54源/111边准备通过。见[本轮接线](../docs/CH5_A_FIRST_RETURN_ATTEMPT_CONTRACT_20261107.md)；未预约、未交付实际输入、未运行。
 - [x] V1c-output-core：五类有限输出分配接预约/root-Cg/工人流/监督日志及本进程守卫核心，两组各12新检查和分组回归通过；实际A56源/124边准备回读通过。见[本轮集成](../docs/CH5_A_FINITE_OUTPUT_AND_WORKER_CORE_20261107.md)；非跨进程worker资格。
 - [x] V1c-bootstrap：决定/已用预约/V2分配跨进程协议与新本地counter绑定、两早读各8 KiB预付完成；19新检查及分组回归通过，实际A57源/131边准备回读。见[本轮集成](../docs/CH5_A_BOOTSTRAP_HANDOFF_20261108.md)；不是实际认证/科学worker资格。
+- [x] V1c-session：工人本地contract/counter/目标/V2预算/六阶段组装与原输出身份封存；14新检查及分组回归通过，实际A58源/134边准备和新输入对象同目标/同合同重建通过。见[本轮集成](../docs/CH5_A_WORKER_SESSION_20261108.md)；实际科学session未实例化。
 - [ ] V1c-run-package：按A完成实际科学worker/当前模块环境、可信有限决定消费、同record受保护调度及未路由/native写保护，将已备预算提案和实际worker/capsule/output身份组成最终具体有限包，再获Owner有限决定。当前不发额度。
 - [ ] V1d：仅在适用决定齐备后取得A/0真实原返回、原C/g/权重及同输入/root/回读证据；按原失败门留存并停止，不自动重试。
 - [ ] V2：B输入及两省范围另行确定后，验证完整一轮和逐格Frisch→原g/权重→A1 pH/收入对应；A-only不补齐成完整O2。
