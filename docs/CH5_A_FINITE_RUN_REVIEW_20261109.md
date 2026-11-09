@@ -1,3 +1,5 @@
+> 2026-11-09执行后更新：Owner已批准这一次；现消费1/1并在创建工人前停止，无自动重试。见[实际结果与修复](CH5_A_FINITE_RUN_RESULT_20261109.md)。下文“待批准/null”等保留为当时精确提案，非当前授权状态；原合同/清单及已消费scope不得复用。
+
 # A/0单次有限首次返回：最终运行审阅单
 
 日期：2026-11-09。状态：READY_FOR_EXPLICIT_FINITE_OWNER_DECISION_NOT_APPROVED。工程候选73cec042f8086360bea70a69f7162342d7ba9acc，32项离线检查通过；详见[完整工程记录](CH5_PARENT_WORKER_LAUNCH_PACKAGE_20261109.md)。
