@@ -1,3 +1,5 @@
+> 2026-11-10恢复入口更新：本卡下文为11月9日历史。当前Owner已转向区域财政外溢研究设计，恢复请先读[最新交接](CH5_SESSION_HANDOFF_20261110_CLAWSGO_RESEARCH_CURRENT.md)和[Owner目标/工作流](CH5_OWNER_RESEARCH_OBJECTIVE_AND_WORKFLOW_20261110.md)。最新ClawsGO“阶段与闭合”材料下一会话继续验收；不自动重开旧工程或05运行候选，NEW_RUN_BUDGET=0。
+
 # CH5当前交接：一次批准已消费，启动前停止，离线修复已保存
 
 更新：2026-11-09。
