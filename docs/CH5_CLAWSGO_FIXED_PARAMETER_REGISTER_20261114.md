@@ -1,3 +1,21 @@
+# 2026-11-14 当前工资试验冻结登记
+
+当前B固定rah=.07、rb=.02、Tt=.1、rb_gap=.07、labor_weights=[1.0]。仅按Owner已采用的四点净工资变化。A行完整保留P05的rah=.09200000000000001、rb=.02、Tt=.5、rb_gap=.07、w=1.1878074705479353。历史固定B/1的rah=.146/Tt=1属于较早诊断包。
+
+| 类别 | 当前冻结值 |
+| --- | --- |
+| 家户偏好与成本 | rho=.05，gamma_c=2，phi=5，chi_0=.1，chi_1=2，a_bar=1e-6，mu_z=0，sigma_z=0 |
+| HJB controls | Δ1000，max_iterations=100，convergence_tolerance=1e-7，drift_tolerance=1e-12 |
+| 原数组 | 20×20×2，轴b/a/z，b∈[-2,5]、a∈[0,10]、z=[.8,1.3]，原切换矩阵和全部节点字节 |
+| 外层参考 | delta=.025，alphal=1，epsilon=10，epsilon_pi=0，ga=2，istar=.015，phi_l=5，rho_pi=1.25，theta=100，totalpit=.02 |
+| 初始化和算法 | 原初始化、已采用有限政策候选、原HJB更新/停止、formal post→原KFE→原归一化→原聚合 |
+
+原网格身份1cc6002840d6a3dfef899c98d09f4796a8e14ccb9116a7952cdf78ab50305258，家户参数规范摘要417b40aa43688490f25afb4729afceaf8e1704683d1d228c2ceaa1d51941447c，controls规范摘要86b23cf83e2394601ea0a93f0e9a5e24c0531e752037f2287a8db55dfaf076d0。家户HJB Δ与厂商折旧delta分别登记。参数与算法调整建议另审。
+
+当前采用source_set为3c69422094e074f2260031575a4f73d08db4cb4a9a5a2326909b32e3f665e91b，执行包清单19f45bf66f6d4c71963d823ed558623012ef0316a31142ce9267b78c9962d826。W03失败和W04未派发沿该来源保存。
+
+---
+
 # ClawsGO固定参数登记 2026-11-14
 
 本表依据同次冻结B输入、66源诊断候选及Owner最新决定。当前家户HJB模拟折现/收敛控制Δ固定1000，字段为Temp31NetWageHJBNumerics.delta。HJB原方程中的系数为1/Δ；家户偏好折现参数rho固定0.05。厂商折旧率字段为企业参数delta，保存的同源外层记录取0.025。
