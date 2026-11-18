@@ -1,5 +1,7 @@
 # 第五章当前工作流 2026-11-17
 
+2026-11-18 最新会话已保存。北京首次真实试算及三次定点诊断均已结清，首轮稳态卡在原 HJB 第 24 轮保护停止。全局残差仍待首批真实家户返回。 [当前交接](CH5_SESSION_HANDOFF_20261118_CURRENT.md) · [进度](CH5_SESSION_PROGRESS_20261118.md) · [Owner 决策](CH5_OWNER_DECISIONS_AND_SCOPE_20261118.md) · [工作流](CH5_WORKFLOW_20261118.md)
+
 实际Git根、分支、HEAD、dirty/staged/untracked及模型AGENTS决定恢复入口。模型与治理工作树各按自身身份核查，模型AGENTS默认0子代理。
 
 普通工程、必要检查、修复、工程验收、精确路径Git和文档自主连续推进。按完整集成结果组织交付，未变证据按风险复用，ClawsGO沿Owner手动转交和Codex独立验收流程。科学输入采用、实际科学运行范围/次数/限额及科学接受由Owner具体决定。
