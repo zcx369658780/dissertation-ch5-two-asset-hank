@@ -1,5 +1,7 @@
 # 第五章当前工作流 2026-11-17
 
+2026-11-18 本次 Owner 开放的联合边界接线与一次北京试算已完成。HJB 第 20 轮收敛，原正式后算子与 KFE 完整返回，C/g/权重及实际结算回读通过，科学消费 1/1、24.062 秒。当前家户真实返回为 1/31，后续进入扩大运行的保护及运行准备。 [本次范围](CH5_OWNER_JOINT_BOUNDARY_BEIJING_TRIAL_20261118.md) · [完整返回](CH5_JOINT_BOUNDARY_BEIJING_RETURN_20261118.md)
+
 2026-11-18 Owner 已开放原方程下联合状态约束边界策略定义与离线验证，该项已完成。9 测试、22 个参考案例、两次同环境结果与实际限额清理通过，原家户相位调用 0。下一步具体审议独立运行副本的生产边界接线及 HJB 冻结范围。 [采用决定](CH5_OWNER_JOINT_BOUNDARY_OFFLINE_ADOPTION_20261118.md) · [离线结果](CH5_JOINT_BOUNDARY_OFFLINE_RESULT_20261118.md)
 
 2026-11-18 最新会话已保存。北京首次真实试算及三次定点诊断均已结清，首轮稳态卡在原 HJB 第 24 轮保护停止。全局残差仍待首批真实家户返回。 [当前交接](CH5_SESSION_HANDOFF_20261118_CURRENT.md) · [进度](CH5_SESSION_PROGRESS_20261118.md) · [Owner 决策](CH5_OWNER_DECISIONS_AND_SCOPE_20261118.md) · [工作流](CH5_WORKFLOW_20261118.md)
