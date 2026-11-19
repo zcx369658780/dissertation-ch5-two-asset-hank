@@ -1,11 +1,16 @@
 # Chapter 5 — Local-first execution rules
 
-Effective update: 2026-11-08. This file is a short execution entry, not a historical task ledger.
+Effective update: 2026-11-20. This file is a short execution entry, not a historical task ledger.
 
 ## Startup and precedence
-Verify the actual Git root/worktree, branch, HEAD, remote and staged/dirty/untracked state first. Read only `docs/CH5_LOCAL_FIRST_STATUS_CURRENT.md`, `docs/CH5_ASTRA_WORKFLOW_CURRENT.md` and `docs/CH5_SESSION_HANDOFF_20261107_OUTER_HA_CURRENT.md`; follow exact evidence links only for a concrete question. The outer Zotero repository and its old R40 do not authorize this model project. Default subagents: 0.
+Verify the actual Git root/worktree, branch, HEAD, remote and staged/dirty/untracked state first. Read only `docs/CH5_LOCAL_FIRST_STATUS_CURRENT.md`, `docs/CH5_ASTRA_WORKFLOW_CURRENT.md` and `docs/CH5_SESSION_HANDOFF_20261120_CURRENT.md`; follow exact evidence links only for a concrete question. The outer Zotero repository and its old R40 do not authorize this model project. Default subagents: 0.
 
 The latest Owner autonomy decision is `docs/CH5_OWNER_ENGINEERING_AUTONOMY_20261107.md`. Owner has now adopted first-return option A: `docs/CH5_OWNER_A_FIRST_RETURN_POLICY_ADOPTION_20261107.md`; do not ask for that policy choice again. Existing `docs/OWNER_LOCAL_FIRST_CODEX_20261101.md` remains the authority baseline. Supersede historical routine-dispatch and per-slice permission wording only; scientific, asset-protection, finite-budget and specifically required independent-review clauses remain effective. Do not bulk-read historical rules.
+
+## Model and helper configuration
+The main session and generic helpers default to GPT-6.2 Sol / high. Simple lookups may use low. Complex read-only research planning may use GPT-6.2 Astra / high. Chapter 5 starts with zero subagents. The Zotero Analytical governance minimums apply only to that project. In Chapter 5, start a helper only when explicitly authorized for the task and scope. Retain at most two active bounded helpers by default where expressly enabled and follow any invocation-specific disable marker.
+
+Use the global role definitions when authorized: `code_mapper`, `docs_reader`, and `docs_writer` use GPT-6 Luna / medium. `impl_worker` uses GPT-6.2 Sol / medium. `code_reviewer` uses GPT-6.2 Sol / high. `planner_high` uses GPT-6.2 Astra / high for read-only planning. Use an explicitly configured independent generic GPT-6.2 Astra / high helper when an Astra review is specifically required. Assign disjoint write paths and keep integration, Git, protected actions and final decisions with the main agent. Owner retains scientific authority. ClawsGO is reserved for paper writing and text checks.
 
 ## Autonomous engineering
 Within the adopted route/contracts, Codex owns ordinary planning, implementation, necessary checks, repairs, engineering review/acceptance, Git and meaningful documentation synchronization. Work toward a complete integrated engineering outcome without asking Owner to approve each helper, adapter, test, commit or documentation slice. An internal slice is not an Owner gate.
