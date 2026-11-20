@@ -1,7 +1,7 @@
-# 第五章当前工作流 2026-11-20
+# 第五章当前工作流｜2026-11-20
 
-按[当前交接](CH5_SESSION_HANDOFF_20261120_CURRENT.md)和[项目 AGENTS](../AGENTS.md)启动。普通工程在授权范围内连续推进。主会话和通用子代理默认 GPT-6.2 Sol / high，本项目默认启动0个子代理。ClawsGO 用于论文写作和文字检查。
+按[当前交接](CH5_SESSION_HANDOFF_20261120_CURRENT.md)和[项目AGENTS](../AGENTS.md)启动。普通工程连续推进。主会话和通用子代理默认GPT-6.2 Sol / high，本项目默认0子代理。ClawsGO用于论文写作和文字检查。
 
-当前按资本存量和回报方向开展统计来源与校准候选的离线核对。方案C的生产率状态内平均劳动收入、既有联合闭合和精确复用规则沿已采用口径。历史试算与恢复均已结清，新的科学采用和运行按 Owner 决定。
+当前按Owner确认的方向，离线补足GovInv和At的数据基础。2022基准、2017对照，优先全国量级参照和统一分省汇总。资金来源、当年完成投资、资产交付、期末在用存量、金融资产和对应回报均按各自统计口径核查。方案C第57轮保留为数值候选。正式数据采用、方程、财政闭合、科学参数及实际试算按Owner对应决定。
 
-[完整工作流](CH5_WORKFLOW_20261120.md) · [Owner 决策](CH5_OWNER_DECISIONS_AND_SCOPE_20261120.md) · [短状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md)
+[完整工作流](CH5_WORKFLOW_20261120_02.md) · [Owner决定](CH5_OWNER_DECISIONS_AND_SCOPE_20261120_02.md) · [短状态](CH5_LOCAL_FIRST_STATUS_CURRENT.md)
